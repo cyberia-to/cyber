@@ -1,0 +1,29 @@
+- [github](https://github.com/cyberia-to/rockets/issues/1126)
+- weekly
+	- inspect leaves (aphids/spider mites/whiteflies), tighten ties, top up mulch to 5–8 cm, remove yellowing leaves and thin overcrowded growth.
+	- every 7–10 days: pinch side vines after the 4th–5th leaf for better flowering and airflow.
+	- every 3–4 weeks: feed — compost tea 2–4 l per plant or vermicompost 0.5–1 l per plant + wood ash 1 handful/m².
+	- every 7–10 days (fungal prevention): spray baking soda 1 tsp/l + a drop of soap; target the leaf underside, morning/evening.
+- seasonal adjustments
+	- dry season: water 2–3 times per week, 15–20 l each; mulch up to 8–10 cm; if heat >32°c, provide midday shade.
+	- rainy season: ensure water runoff, lift vines, bare the stem 30–40 cm from the base for airflow.
+- pollination & fruit
+	- if it’s humid/calm and fruit set is low: in the mornings, 2–3 times per week, transfer pollen from a male flower to a female stigma.
+	- harvest fruits young (8–12 cm) — this stimulates a new wave of fruit set.
+- organic protection
+	- aphids/whiteflies/spider mites: morning leaf rinse + soap solution 1–2% or neem 5 ml/l; repeat every 3–5 days until gone.
+	- powdery mildew/leaf spots: baking soda 1 tsp/l + horsetail infusion; improve airflow, avoid wetting leaves in the evening.
+- quick diagnostics
+	- lower leaves yellowing → overwatering/poor soil: let dry, add compost and ash.
+	- leaves curled, webbing → spider mite: increase morning leaf humidity + treat with neem/soap.
+	- flowers but no fruit → excess nitrogen/low sun/poor pollination: reduce nitrogen, pinch tips, assist pollination.
+- keep on hand
+	- watering can/hose with diffuser;
+	- pruners;
+	- twine;
+	- mulch;
+	- compost/vermicompost;
+	- ash;
+	- sprayer;
+	- soap solution/neem oil;
+	- baking soda;

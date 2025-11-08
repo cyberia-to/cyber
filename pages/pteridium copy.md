@@ -1,0 +1,4 @@
+tags:: genus
+
+- [[pteridium aquilinum]]
+-

@@ -1,0 +1,32 @@
+- **alias**: butyrate, butyric acid
+- ![Butyrate.pdf](../assets/Butyrate_1719303309556_0.pdf)
+- [[butyrate]] is a short-chain fatty acid (SCFA) produced in the colon by the fermentation of dietary fiber by gut bacteria. it is known for its critical role in gut health, [[anti-inflammatory]] properties, and metabolic benefits.
+- ### chemical properties
+	- **molecular weight**: 88.11 g/mol
+	- **density**: 0.96 g/cm³
+	- **melting point**: -5°C
+	- **boiling point**: 163°C
+	- **solubility**: soluble in water, ethanol, and ether
+	- **chemical formula**: C₄H₈O₂
+- ### usefulness in medicine
+	- **[[gut health]]**: butyrate is a primary energy source for colonic cells, promoting gut lining integrity and reducing the risk of [[leaky gut]].
+	- **anti-inflammatory**: it modulates immune responses and reduces intestinal and systemic inflammation, which is beneficial in conditions like [[inflammatory bowel disease]] (IBD) and [[colitis]].
+	- **[[colon cancer prevention]]**: butyrate induces apoptosis in colon cancer cells and reduces tumor-promoting inflammation.
+	- ** [[metabolic health]]**: it improves insulin sensitivity, reduces blood sugar levels, and plays a role in obesity management.
+	- **[[brain health]]**: butyrate exhibits neuroprotective effects by promoting [[brain-derived neurotrophic factor]] (BDNF) production and reducing neuroinflammation.
+- ### sources of butyrate
+	- **[[dietary]]**: not directly present in foods but produced in the colon by fermentation of fibers found in:
+		- [[resistant starch]] (e.g., green bananas, cooked and cooled rice).
+		- [[dietary fiber]] (e.g., from fruits, vegetables, and whole grains).
+	- **[[fermented foods]]**: small amounts in [[butter]], [[cheese]], and other dairy products.
+	- **supplements**: sodium butyrate and calcium butyrate are available as supplements.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- butyrate indirectly exhibits antimicrobial properties by [[lowering the colonic pH]] creating an unfavorable environment for pathogenic bacteria.
+	- research highlights:
+		- **bacteria**:
+			- inhibits the growth of harmful bacteria like **[[clostridium difficile]]** and **[[salmonella]]**.
+		- **beneficial bacteria**:
+			- promotes the growth of **[[bifidobacterium]]** and **[[lactobacillus]]**.
+- ### research links
+	- [butyrate and gut health](https://scholar.google.com/scholar?q=butyrate+gut+health)
+	- [butyrate and anti-inflammatory effects](https://scholar.google.com/scholar?q=butyrate+anti-inflammatory)

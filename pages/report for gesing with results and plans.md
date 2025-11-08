@@ -1,0 +1,104 @@
+- last time we met more than year ago
+- since than we advanced rapidly in our understanding of cyber valley project
+- that was mostly research phase
+- it helped us to identify a lot of opportunities and resources
+- so i want to start from the first part: reporting our results to the community
+	- energy: we are able to sustain our energy needs
+		- 30 kw of solar panels
+		- 30 kw of energy storage
+		- 4 kw biogas reserve generator
+		- working on wind generation
+		- first test of a stove with pyrolysis for biochar production
+	- water: supply 90% of water from rain
+		- started water collection system
+		- storing 60m3 closed and 60m of open water
+		- research on quality and filtration is still ongoing
+	- outstanding native biodiversity
+		- 200 useful plant species in gardens
+		- 100 plant species in the forest
+		- 100 fungi species
+		- 50+ species of birds according to independent researchers and universitas udayana
+		- hundreeds of insect species
+		- more than 20 wild animal species
+	- on our sites we invest heavily in biodiversity
+		- adding around 500 useful species to our gardens
+		- likely one of the biggest collection of utility plants in semi wild conditions
+		- giving shelter to 5 animal species
+	- damaged soils
+		- research of 10 ha of land
+		- in collaboration with independent researchers and universitas udayana
+		- nutrient rich andosol soils
+		- mercury on fertilized plantations
+		- needs 3 year remediation program for productive permanent garden
+		- pretty good quality on not fertilized
+	- construction
+		- outstanding opportunities for sustainable wood production
+		- more than 10 fast growing wood species for different applications
+		- using our own wood for construction from fallen trees
+	- network of trails
+		- 5 km and growing on site
+		- ~50 km of wild trails in batuka forest
+	- roads
+		- damaged road network
+		- helped several times to recover major problems with roads
+	- plastic
+		- canyons, roads and fields are filled with plastic
+		- researching ways for recycling
+	- information
+		- first version of sensor network
+		- data published on https://sensors.social
+			- micro particles 2.5 and 10
+			- temperature and humidity
+		- public knowledge graph on https://cv.land
+		- collaboration is open source through https://github.com
+	- community: around 100 workers and 300 visitors from all around the world
+	- bioluminescence: fireflies, caterpillars and roots of some plants are glowing
+- second part: plans
+	- establish two companies
+		- for development operations with our indonesian partners
+		- for our family needs of small business
+	- cyber valley opportunities research
+		- geographic region around firefly canyon from gesing to seririt
+		- project presented to some major bali entrepreneurs
+	- bridge master planing
+		- commercial district on 7.5 at [[cyber valley]] highlands
+	- citadel genesis structuring
+		- sustainable village on 30 ha on the slope of [[sang hyuang]]
+		- [[rocket estate]] as part of citadel genesis on 10 ha
+	- ai square and organiq in gesing center
+	- hostel for gesing guests not far from the waterfall
+	- roadmap for more tourists in gesing
+		- munduk handles at least 10 times more touristic flow
+		- the key gesing attractors are
+			- local culture with access to gesing waterfall
+			- access to several volcanos and magic forest
+			- innovative citadel construction and alta site
+		- cleanup from plastic as unique value proposition
+		- low noise environment is also a priority
+		- big idea to become the cleanest eco desa on bali
+		- we want to reach results this year
+	- roadmap for more companies established in gesing
+		- idea of experimental special economic zone for tech and it cluster
+		- we can provide presentation of the idea discussed with leading bali entrouprenours
+		- the biggest issue we heard is transfer of knowledge from foreigners to locals and back
+		- we are running free english classroom for our workers for more than 1 year
+		- soon we will find a way to teach bahasa to foreigners
+		- we invest heavily into deep knowledge exchange between locals and foreigners
+		- and hope on your support in this direction
+- third part: our needs
+	- help to spread our initiative to cleanup gesing from plastic
+	- in some months we will be ready to buy plastic
+		- at 1000 rupia per kg of random plastic
+		- at 2000 rupia per kg of sorted plastic
+		- plastic accepted only from gesing members
+	- road access to eastern citadel genesis part: 2 meter width ready to build it
+	- allow to reshape gesing waterfall: our funding and execution
+	- but gesing waterfalls remains non commercial free to go public place
+	- discussion of the idea of tech focused special economic zone in gesing
+- fourth part: our thanks
+	- we are very thank full for the trust our community provide
+	- we switched our production calendar to the moon calendar
+	- to align with Balinese rhythms
+	- we love to live here
+	- and still amazed buy the nature its provide
+	-

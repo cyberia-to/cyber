@@ -1,0 +1,110 @@
+- source: Bryan Johnson protocol
+	- [presentation](https://drive.google.com/drive/folders/1s6fTvQY1NnhrApZeVQxRkact8Q7Wj-d6)
+	- [site](https://protocol.bryanjohnson.com/)
+- in this knowledge graph blueprint is being used as a reference for [[lifeforce]] r&d
+- super veggie: [prep video](https://www.youtube.com/watch?v=wHx51zMqmcg)
+	- [[black lentils]] 45 grams dry, ~150 grams cooked
+	- [[broccoli]] 250 grams
+	- [[cauliflower]] 150 grams
+	- [[shiitake]] or [[maitake]] 50 grams
+	- [[garlic]] 1 clove
+	- [[ginger root]] 3 grams
+	- [[lime]] 1
+	- [[cumin]] 1 tbsp
+	- [[apple cider vinegar]] 1 tbsp
+	- [[hemp seeds]] 1 tbsp
+	- [[olive oil]] 1 tbsp
+- nutty pudding: [prep video](https://www.youtube.com/watch?v=8eb_41ZpyOQ)
+	- [[macadamia nut milk]] 50-100 mL
+	- [[ground macadamia nut]] 3 tbsp
+	- [[ground walnut]] 2 tsp
+	- [[chia seeds]] 2 tbsp
+	- [[ground flaxseed]] 1 tsp
+	- [[brazil nut]]
+	- [[cocoa]] 6 grams
+	- [[sunflower lecithin]] 1 tsp
+	- [[ceylon cinnamon]] 1/2 tsp
+	- [[blueberry]] or [[raspberry]] or [[strawberry]] 1/2 cup
+	- [[cherry]] 3
+	- [[pomegranate juice]] 2 oz
+- example third meals
+	- asparagus almond beet salad, 500 cal
+		- [[beets]] 500 grams cooked
+		- [[asparagus]] 300 grams cooked
+		- [[almond]] 21 grams
+		- [[arugula]] 1 cup
+		- [[shallot]] 1 large
+		- [[balsamic]] 3 tbsp
+		- [[dijon]] 3 tbsp
+		- [[mustard seeds]] 1 tbsp
+	- orange fennel salad, 500 calories
+		- [[cara cara orange]] 1 segmented orange
+		- [[fennel]] ¼ cup shredded
+		- [[goji]] Berries 30 grams
+		- [[pecan]] 30 grams
+		- [[grape tomatoes]] 14
+		- [[spring mix]] 3 cups
+		- [[arugula leaf]] or [[aragula sprouts]] 1 cup
+		- [[fresh mint]] ¼ cup
+		- [[fig balsamic vinegar]] 2 tbsp
+	- stuffed sweet potato, 500 calories
+		- [[sweet potato]] 300 grams cooked
+		- [[chickpeas]] 45 grams cooked
+		- [[grape tomatoes]] 12
+		- [[avocado]] ½
+		- [[radishes]] 4
+		- [[cilantro]] ¼ cup
+		- [[jalapeno pepper]] 1 large
+		- [[lime]] 2 whole
+		- [[lemon]] 1 whole
+		- [[chile powder]] 1 teaspoon
+- upon waking
+	- [[acarbose]] 200 mg (rx)
+	- [[ashwagandha]] 600 mg
+	- [[b complex]] .25 pill (mon & thur)
+	- [[broccomax]] 17.5 mg
+	- [[c]] 500 mg
+	- [[ca-akg]] 1 g
+	- [[cocoa flavanols]] 500 mg
+	- [[coq10]] 100 mg
+	- [[d-3]] 2,000 iu
+	- [[dhea]] 25 mg
+	- [[e]] 67 mg
+	- [[epa]] 500 mg
+	- [[garlic]] 2.4 g equivalent
+	- [[garlic]] 1.2 g (kyolic)
+	- [[genistein]] 125 mg
+	- [[ginger root]] 2.2 g
+	- [[glucosamine sulphate]] 2kcl
+	- [[potassium iodine]] 125 mcg
+	- [[k2-mk4]] 5 mg
+	- [[k1]] 1.5 mg
+	- [[k2 mk-7]] 600 mcg
+	- [[lithium]] 1000 mcg
+	- [[lycopene]] 10 mg
+	- [[l-lysine]] 1 g
+	- [[metformin er]] 1,500 mg (rx)
+	- [[nr]] 375 mg or [[nmn]] 500 mg (6x/wk)
+	- [[n-acetyl-l-cysteine]] (nac) 1,800 mg
+	- [[taurine]] 2 g
+	- [[zeaxanthin]] (20 mg lutein, 4 mg zeaxanthin, 3x/wk)
+	- [[zinc]] 15 mg
+	- [[astaxanthin]] 12 mg
+	- [[fisetin]] 200 mg
+- dinner at 11 am
+	- [[acarbose]] 200 mg (rx)
+	- [[broccomax]] 17.5 mg
+	- [[ca-akg]] 1 g
+	- [[cocoa flavanols]] 500 mg (contains caffeine)
+	- [[vitamin e]] 67 mg
+	- [[epa]] 500 mg
+	- [[garlic]] 2.4 g equivalent
+	- [[garlic]] 1.2 g (kyolic)
+	- [[ginger root]] 2.2 g
+	- [[glucosamine sulphate]] 2kcl 1,500 mg
+	- [[hyaluronic acid]] 300 mg
+- before bed
+	- [[melatonin]] 300 mcg
+- other
+	- [[pea protein]] 29 g daily
+	- [[b12 methylcobalamin]] 1x/wk

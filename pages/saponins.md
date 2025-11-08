@@ -1,0 +1,28 @@
+- **alias**: saponins
+- ![Saponins.pdf](../assets/Saponins_1719303309556_0.pdf)
+- [[saponins]] are a class of naturally occurring [[glycosides]] found in a variety of plants, including [[legumes]], [[quinoa]], and [[herbs]]. they are known for their [[foaming properties]], [[antioxidant]] activity, and numerous health benefits, including [[antimicrobial]] and [[cholesterol-lowering]] effects.
+- ### chemical properties
+	- **molecular structure**: composed of a [[hydrophobic aglycone]] ([[sapogenin]]) and one or more [[hydrophilic sugar]] chains.
+	- **molecular weight**: varies widely depending on the specific saponin.
+	- **density**: not widely reported.
+	- **melting point**: decomposes before melting.
+	- **solubility**: soluble in water and ethanol; **foams when dissolved in water**.
+- ### usefulness in medicine
+	- saponins are used to lower [[cholesterol]] levels by binding to bile acids and preventing their reabsorption.
+	- they exhibit strong [[antioxidant]] properties, protecting cells from oxidative stress.
+	- saponins support [[immune health]] by enhancing immune cell activity.
+	- they promote [[gut health]] by inhibiting harmful bacteria and supporting a healthy microbiome.
+	- saponins are used in traditional medicine for treating [[inflammation]], [[respiratory issues]], and [[skin conditions]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- saponins show broad-spectrum [[antimicrobial]] activity by [[disrupting microbial membranes]] and interfering with their growth and function.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+saponins)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+saponins)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+saponins)
+		- **viruses**:
+			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+saponins)
+- ### research links
+	- [saponins and antimicrobial activity](https://scholar.google.com/scholar?q=saponins+antimicrobial+activity)
+	- [saponins and cholesterol reduction](https://scholar.google.com/scholar?q=saponins+cholesterol+reduction)

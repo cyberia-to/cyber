@@ -1,0 +1,22 @@
+tags:: phenolic compound
+
+- ferulic acid is a naturally occurring phenolic compound belonging to the group of hydroxycinnamic acids. widely found in plant cell walls, seeds, grains (especially rice, wheat, oats), fruits, and vegetables, it serves as a potent antioxidant protecting against [[oxidative stress]], [[uv radiation]], and [[pathogens]].
+- ## 	chemical properties
+	- chemical formula: C₁₀H₁₀O₄
+	- molecular weight: 194.18 g/mol
+	- solubility: slightly soluble in water; freely soluble in ethanol and organic solvents
+	- melting point: 168–172°C
+	- structure: phenolic compound containing a benzene ring with hydroxyl and methoxy groups
+- ## usefulness in medicine
+	- ferulic acid has potent [[antioxidant]] properties, protecting cells from oxidative damage and inflammation.
+	- frequently used in dermatological products to reduce signs of [[skin aging]], [[pigmentation]], and damage from uv exposure.
+	- demonstrates [[neuroprotective properties]], potentially beneficial in managing neurodegenerative diseases such as [[alzheimer’s]] and [[parkinson’s disease]] .
+	- supports [[cardiovascular health]] by improving endothelial function, [[reducing blood pressure]], and [[lowering inflammation]].
+- ## [[antimicrobial]] activity
+	- ferulic acid exhibits antimicrobial properties, effectively inhibiting the growth of bacteria and fungi by disrupting microbial cell integrity and enzyme activities.
+		- bacteria
+			- [[staphylococcus aureus]]
+			- [[escherichia coli]]
+			- [[listeria monocytogenes]]
+		- fungi
+			- [[candida albicans]]

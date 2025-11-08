@@ -1,0 +1,29 @@
+- ![Tricyclene_synthase.pdf](../assets/Tricyclene_synthase_1719301849258_0.pdf)
+- **general description**:
+- tricyclene is a bicyclic monoterpene with a distinctive camphor-like odor. it is naturally found in various essential oils, including those of some conifers.
+- **chemical properties**:
+	- **molecular weight**: 136.23 g/mol
+	- **density**: 0.901 g/cm³
+	- **boiling point**: 162-164°c
+	- **solubility**: insoluble in water, soluble in organic solvents
+	- **optical rotation**: +40° to +50°
+	- **chemical formula**: C10H16
+- **usefulness in medicine**:
+	- tricyclene has been studied for its [[antimicrobial]] properties, although it is not widely used in mainstream medicine. it is more commonly found in the context of essential oils and traditional medicine practices.
+	- **traditional medicine practices**:
+		- tricyclene, often in the form of essential oils containing it, has been used in traditional medicine for its antimicrobial, anti-inflammatory, and aromatic properties. it is typically employed for:
+			- **treating [[respiratory infections]] :**
+				- inhalation of essential oils containing tricyclene can help alleviate symptoms of [[colds]], [[bronchitis]], and [[sinusitis]] due to its [[expectorant]] and [[antimicrobial]] effects.
+			- **[[skin infections]] and [[wounds]]:**
+				- tricyclene-containing oils are applied topically to disinfect cuts, wounds, and minor skin infections, leveraging its antibacterial and antifungal properties.
+			- **[[muscle pain]] and [[inflammation]]**:
+				- essential oils with tricyclene are used in massage therapy to relieve muscle pain and inflammation.
+			- **[[improving mood]] and [[reducing stress]]**:
+				- the aromatic properties of tricyclene are utilized in aromatherapy to reduce stress and improve mood.
+	- **antimicrobial activity**:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [link on medical research paper](https://scholar.google.com/scholar?q=tricyclene+antimicrobial+activity)
+			- **[[escherichia coli]]** [link on medical research paper](https://scholar.google.com/scholar?q=tricyclene+antimicrobial+activity)
+		- **fungi**:
+			- **[[candida albicans]]** [link on medical research paper](https://scholar.google.com/scholar?q=tricyclene+antimicrobial+activity)
+- for detailed studies and research on the antimicrobial properties of tricyclene, you can refer to sources available on google scholar [here](https://scholar.google.com/scholar?q=tricyclene+antimicrobial+activity).

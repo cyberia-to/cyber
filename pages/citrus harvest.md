@@ -1,0 +1,40 @@
+- [github](https://github.com/cyberia-to/rockets/issues/1124)
+- **moisture check:**
+	- feel top 3–5 cm soil.
+	- if dry → deep-water to the **dripline** (in pots: water to slight runoff).
+	- avoid standing water >1 h.
+- **drainage pass (after rain):**
+	- clear channels;
+	- make sure root collar stays dry/exposed.
+- **mulch:**
+	- keep 5–8 cm organic mulch;
+	- pull back **10 cm from the trunk**;
+	- top up thin spots.
+- **pests on new flush:**
+	- look for leaf miner trails, soft scales/mealy fluff, aphids, mites.
+	- action: morning rinse + **soap 1–2%** or **neem 5 ml/l** (spray undersides at dusk); repeat in 5–7 days if needed.
+- **sooty mold check:
+	- ** if leaves blackened, wipe a spot—then **treat sap-suckers first**, rinse foliage next morning.
+- **canopy & light:**
+	- remove water sprouts, dead or crossing twigs;
+	- lift branches touching soil; don’t hard-prune.
+- **fruit load:**
+	- thin crowded clusters on young trees;
+	- prop/support heavy limbs;
+	- pick up any fallen fruit/leaves.
+- **weed-free ring:**
+	- keep a clean 50–100 cm circle around the trunk (no tools scraping bark).
+- **feeding (if it’s a feeding week):**
+	- in-ground: side-dress mature compost around dripline; water in.
+	- pots: compost tea/vermicompost extract **2–4 l per tree**;
+	- leach salts with a deep flush once/month.
+- **micronutrient watch:**
+	- note pale new leaves (iron) or interveinal yellowing on old leaves (magnesium).
+	- plan chelate/epsom salt fixes on your next feed day.
+- **log it:**
+	- date, rainfall (mm), liters watered, feed (y/n), pests seen, actions, fruit drop count.
+- **quick cues**
+	- edges crisping → under-watering/heat: deepen mulch, water earlier.
+	- sticky leaves/ants → sap-suckers active: treat pests, then rinse sooty mold.
+	- many flowers, few fruit → heat/irregular water/nutrients: keep moisture steady; add potassium (seaweed/wood ash lightly).
+-

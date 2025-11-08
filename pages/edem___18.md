@@ -1,0 +1,72 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/17]]
+	- [[edem/19]]
+- [[magnolia champaca]] [[guild]]
+- [[persea americana]]
+- [[ficus carica]] [[guild]]
+- [[torenia foureri]]
+- TODO [[artemisia absinthium]]
+- [[cananga odorata]] [[guild]]
+- [[hibiscus rosa-sinensis]]
+- [[angelonia angustifolia]]
+- TODO [[mangifera caesia]] [[guild]]
+- TODO [[ludwigia palustris]]
+- TODO [[malus pumila]] [[guild]]
+- TODO [[malus pumila]] [[guild]]
+- TODO [[acanthocereus tetragonus]]
+- TODO [[acenthocereus tetragonus]]
+- [[mangifera indica]] [[guild]]
+- TODO [[antigonon leptopus]]
+- [[averrhoa carambola]] [[guild]]
+- TODO [[averrhoa carambola]] [[guild]]
+- [[thunbergia grandiflora]]
+- [[thunbergia grandiflora]]
+- TODO [[ipomoea horsfalliae]]
+- TODO [[malus pumila]]
+- TODO [[selenicereus undatus]]
+- [[eugenia brasiliensis]]
+- [[centella asiatica]]
+- [[plantago]]
+- [[acmella repens]]
+- [[salvia leucantha]]: 3
+- [[rubus rosifolius]]: 4
+- [[musa acuminata]]: 2
+- [[plumeria rubra]]: 2
+- [[portulaca pilosa]]
+- [[daucus carota]]: 5
+- [[eupatorium capillifolium]]
+- [[chamaecyparis pisifera]]
+- [[oxalis corniculata]]
+- [[gynura procumbens]]: 2
+- [[melastoma malabathricum]]: 2
+- [[passiflora foetida]]: 2
+- [[canna indica]]
+- [[erigeron bonariensis]]
+- [[tabernaemontana divaricata]]
+- [[callistemon citrinus]]
+- [[dalbergia latifolia]]
+- [[nopalea cochenillifera]]
+- [[passiflora edulis]]
+- [[artocarpus altilis]]
+- [[artocarpus integer]]: 2
+- [[calliandra calothyrsus]]
+- [[saccharum officinarum]]
+- [[symphytum officinale]]
+- [[xanthostemon verdugonianus]]
+- wall:
+	- [[calliandra calothyrsus]]: 2
+	- [[eupatorium capillifolium]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[debregeasia longifolia]]
+	- [[inga edulis]]
+	- [[ageratina riparia]]
+	- [[rubus rosifolius]]
+	- [[austroeupatorium inulifolium]]
+	- [[macrothelypteris torresiana]]
+	- [[dahlia imperialis]]
+-
+-

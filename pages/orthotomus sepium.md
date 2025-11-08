@@ -1,0 +1,39 @@
+tags:: species, birds, major
+alias:: olive-backed tailorbird
+
+- voice:: https://ebird.org/species/olbtai1
+- ![image](https://ipfs.io/ipfs/QmYZZbH4GiSSafma5dwqpgAQHWX8bCzFUuBotXVUC2ndB1)
+- ![image](https://ipfs.io/ipfs/QmRg44BKp95vy9tMPJUTQk3yR1bDwrDMoF9RkQM5yyWkJj)
+- general description
+	- appearance
+		- the javan tailorbird is a small, slender bird with a distinctive, pointed bill.
+		- it has olive-green upperparts and a pale underside, with a slightly rufous or orange-brown crown and forehead.
+		- the wings and tail are relatively short, and the tail is often held upright.
+	- size: typically measures about 11-13 cm in length.
+	- behavior:
+		- known for its active and agile behavior, often seen moving quickly through dense foliage.
+		- it has a distinctive, repetitive call that is often heard in its habitat.
+		- the bird is named for its unique nesting behavior, where it "sews" leaves together to create a hidden nest.
+- habitat
+	- range
+		- found on the island of java in indonesia.
+	- environment
+		- prefers dense undergrowth in forests, shrublands, gardens, and plantations.
+	- often found in lowland and foothill areas with plenty of vegetation for cover.
+- diet
+	- primarily insectivorous, feeding on insects, spiders, and other small invertebrates.
+	- may also consume nectar and small fruits occasionally.
+- breeding
+	- nesting
+		- builds a nest by sewing together leaves with plant fibers, creating a secure and concealed structure.
+		- the nest is often well-hidden in dense foliage, providing protection from predators.
+	- reproduction
+		- breeding season varies but generally occurs during periods of abundant food supply.
+		- female lays 2-4 eggs, which are incubated for about two weeks.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the javan tailorbird's nest-building behavior is a remarkable example of avian ingenuity, as it uses plant fibers to stitch leaves together.
+	- its distinctive call and active foraging behavior make it a noticeable presence in its native habitat.

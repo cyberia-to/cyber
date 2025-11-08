@@ -1,0 +1,42 @@
+tags:: species, birds
+alias:: yellow-throated hanging-parrot, lesser green leafbird
+
+- voice:: https://ebird.org/species/ythpar1
+- ![image](https://ipfs.io/ipfs/QmS9qQrdsZxJS3N46CSfHQqYXvjVCg16mgb9PqkU34FxzN)
+- ![image](https://ipfs.io/ipfs/QmWHL6ZsQu32dYCC2msREa1x7HBCUU9PioKTu9JStDXdio)
+- general description
+	- appearance
+		- the yellow-throated hanging parrot is a small, brightly colored parrot with predominantly green plumage.
+		- it has a distinctive yellow throat and red patches on the head and upper chest.
+		- the wings and tail are green with blue tips.
+		- males typically have more vivid red markings compared to females.
+	- size
+		- measures about 12-14 cm in length.
+		- typically weighs around 20-25 grams.
+	- behavior
+		- known for its active and agile behavior, often seen hanging upside down while feeding, which is characteristic of hanging parrots.
+		- usually found in pairs or small groups.
+		- emits high-pitched, piercing calls, especially in flight.
+- habitat
+	- range
+		- endemic to the island of java in indonesia.
+	- environment:
+		- inhabits tropical and subtropical lowland forests, mangroves, as well as gardens and plantations.
+		- prefers dense vegetation and forest canopies.
+- diet
+	- primarily frugivorous, feeding on fruits, flowers, and nectar.
+	- may also consume small insects.
+- breeding
+	- nesting
+		- nests in tree cavities or uses artificial nest boxes.
+		- nests are usually lined with soft materials such as leaves and feathers.
+	- reproduction
+		- breeding occurs during the rainy season.
+		- the female lays 3-5 eggs, which are incubated for about 20 days.
+		- both parents participate in feeding the chicks, which fledge approximately 30 days after hatching.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the yellow-throated hanging parrot gets its name from its habit of hanging upside down while feeding, a unique behavior among parrots.
+	- its bright plumage helps it blend in among flowers and leaves, despite its small size.

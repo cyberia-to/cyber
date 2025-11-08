@@ -1,0 +1,27 @@
+- ![Terpinene.pdf](../assets/Terpinene_1719299798177_0.pdf)
+- **general description**:
+	- terpinolene is a naturally occurring [[monoterpene]]. it is one of the many isomeric forms of terpinene and has a pleasant aroma often described as piney or floral. it is commonly found in the essential oils of a variety of plants, including [[sage]], [[rosemary]], and [[conifer]]s.
+- **chemical properties**:
+	- **molecular weight**: 136.23 g/mol
+	- **density**: 0.858 g/cm³
+	- **boiling point**: 186-188 °c
+	- **solubility**: insoluble in water, soluble in organic solvents
+	- **optical rotation**: -61.7° (neat)
+	- **chemical formula**: C10H16
+- **usefulness in medicine**:
+	- terpinolene has been studied for its various potential medicinal properties. it is believed to have [[antioxidant]], [[anti-cancer]], and [[antimicrobial]] activities.
+	- **antimicrobial activity**:
+		- terpinolene has shown antimicrobial activity against several bacteria, fungi, and viruses.
+			- **bacteria**:
+				- **[[escherichia coli]]**: [research on antimicrobial activity](https://scholar.google.com/scholar?q=terpinolene+antimicrobial+Escherichia+coli)
+				- **[[staphylococcus aureus]]**: [research on antimicrobial activity](https://scholar.google.com/scholar?q=terpinolene+antimicrobial+Staphylococcus+aureus)
+				- **[[pseudomonas aeruginosa]]**: [research on antimicrobial activity](https://scholar.google.com/scholar?q=terpinolene+antimicrobial+Pseudomonas+aeruginosa)
+			- **fungi**:
+				- **[[candida albicans]]**: [research on antifungal activity](https://scholar.google.com/scholar?q=terpinolene+antifungal+Candida+albicans)
+				- **[[aspergillus niger]]**: [research on antifungal activity](https://scholar.google.com/scholar?q=terpinolene+antifungal+Aspergillus+niger)
+- **research links**:
+- [terpinolene and its antimicrobial properties](https://scholar.google.com/scholar?q=terpinolene+antimicrobial+properties)
+- [terpinolene: a review of its therapeutic potential](https://scholar.google.com/scholar?q=terpinolene+therapeutic+potential)
+- [antifungal and antibacterial activity of terpinolene](https://scholar.google.com/scholar?q=terpinolene+antifungal+antibacterial)
+  
+  this information provides an overview of the chemical properties and antimicrobial activities of terpinolene. for more detailed research, please refer to the provided google scholar links.

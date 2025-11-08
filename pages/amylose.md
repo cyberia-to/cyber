@@ -1,0 +1,18 @@
+- **alias**: amylose
+- ![Amylose.pdf](../assets/Amylose_1719303309556_0.pdf)
+- [[amylose]] is a [[polysaccharide]] composed of glucose molecules linked by α-1,4-glycosidic bonds. it is one of the two main components of starch (the other being [[amylopectin]]) and is known for its linear structure and [[slow digestion]] rate, which contributes to its role in resistant starch.
+- ### chemical properties
+	- **molecular weight**: varies, typically between 10,000 and 500,000 g/mol depending on the source.
+	- **density**: not widely reported.
+	- **solubility**: insoluble in cold water; forms a gel-like structure when heated in water.
+	- **chemical formula**: (C₆H₁₀O₅)ₙ (n varies depending on polymer length).
+- ### usefulness in medicine
+	- amylose is a significant component of [[resistant starch]], which acts as a prebiotic by promoting the growth of beneficial gut bacteria.
+	- it has a[[low glycemic index,]]  making it beneficial for managing [[diabetes]] and [[blood sugar levels]].
+	- amylose supports [[digestive health]] by slowing down digestion and improving gut motility.
+	- it may reduce the risk of [[colon cancer]] by producing short-chain fatty acids (e.g., [[butyrate]]) during fermentation in the gut.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- while amylose itself does not exhibit direct antimicrobial properties, its fermentation products (e.g., butyrate) indirectly support gut health and inhibit the growth of harmful bacteria.
+- ### research links
+	- [amylose and digestive health](https://scholar.google.com/scholar?q=amylose+digestive+health)
+	- [amylose and resistant starch benefits](https://scholar.google.com/scholar?q=amylose+resistant+starch)

@@ -1,0 +1,44 @@
+tags:: species, birds
+alias:: lesser shortwing
+
+- voice:: https://ebird.org/species/lessho1
+- ![image](https://ipfs.io/ipfs/QmUxkrsyQkLKdvprGmrHn4tpBv38egX2NSb5bi31K9mAz4)
+- ![image](https://ipfs.io/ipfs/QmSzWSVbFrXdrd2mr3B4TgYqcVkV72nhVC7ki4n4P9R1o3)
+- general description
+	- appearance
+		- the white-browed shortwing is a small, compact bird with a relatively short tail and rounded wings.
+		- males have dark blue to blue-black plumage with a distinctive white eyebrow stripe that gives the bird its name.
+		- females are typically brown with a paler, slightly buffy underpart and lack the bold white eyebrow of the males.
+		- both sexes have a slender bill and dark eyes, with pinkish legs and feet.
+	- size
+		- measures about 14-16 cm in length.
+		- typically weighs around 25-35 grams.
+	- behavior
+		- known for its shy and elusive nature, often staying hidden in dense undergrowth.
+		- it has a rich, melodious song that can be quite complex, often heard at dawn and dusk.
+		- primarily terrestrial, it forages close to the ground, hopping along and flicking its wings and tail as it searches for insects.
+- habitat
+	- range
+		- found in parts of south asia and southeast asia, including india, bhutan, nepal, myanmar, thailand, laos, and vietnam.
+		- several subspecies are distributed across montane regions in these countries.
+	- environment
+		- inhabits montane and subtropical forests, preferring dense undergrowth and thick, moist habitats such as rhododendron thickets, bamboo groves, and forest edges.
+		- often found at elevations ranging from 1,500 to 3,500 meters, depending on the region.
+	- diet
+		- primarily insectivorous, feeding on a variety of insects, spiders, and other small invertebrates.
+		- forages mainly on the ground, turning over leaves and debris to uncover prey.
+- breeding
+	- nesting
+		- builds a dome-shaped nest made of moss, leaves, and plant fibers, usually placed on or near the ground in dense vegetation.
+		- nests are well-hidden to protect against predators and are often placed on steep banks or under overhanging vegetation.
+	- reproduction
+		- breeding season varies depending on the region but generally occurs during the spring and early summer months.
+		- female lays 2-3 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 12-15 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its stable population and relatively wide distribution across montane habitats.
+- interesting facts
+	- the white-browed shortwing is known for its beautiful song, which is often used to establish territory and attract mates.
+	- its elusive nature and preference for dense undergrowth make it a challenging bird to observe in the wild, often being heard more often than seen.
+	- the species is well-adapted to high-altitude environments, thriving in cool, moist forest habitats.

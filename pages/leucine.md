@@ -1,0 +1,24 @@
+- **alias**: leucine
+- ![Leucine.pdf](../assets/Leucine_1719303309556_0.pdf)
+- [[leucine]] is an essential [[branched-chain amino acid]]  (bcaa) found in protein-rich foods such as [[meat]], [[dairy]], [[eggs]], and [[legumes]]. it is crucial for [[muscle protein synthesis]], [[energy production]], and overall [[metabolic health]].
+- ### chemical properties
+	- **molecular weight**: 131.17 g/mol
+	- **density**: 1.293 g/cm³
+	- **melting point**: 293°C (decomposes)
+	- **solubility**: soluble in water and acids; slightly soluble in alcohol
+	- **chemical formula**: C₆H₁₃NO₂
+- ### usefulness in medicine
+	- leucine plays a central role in [[muscle protein synthesis]] and is vital for muscle repair and growth, making it **popular among athletes and bodybuilders**.
+- it supports [[wound healing]] by promoting tissue regeneration.
+- leucine helps regulate [[blood sugar levels]] by improving insulin sensitivity and glucose uptake.
+- it contributes to [[energy production]] during exercise by being metabolized in muscles.
+- leucine may slow the progression of [[age-related muscle loss]] (sarcopenia) by stimulating muscle protein synthesis.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- while leucine does not have direct antimicrobial activity, it indirectly supports immune function and tissue health, which are critical for fighting infections.
+	- research highlights:
+		- **bacteria**:
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+leucine)
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+leucine)
+- ### research links
+	- [leucine and muscle protein synthesis](https://scholar.google.com/scholar?q=leucine+muscle+protein+synthesis)
+	- [leucine and metabolic health](https://scholar.google.com/scholar?q=leucine+metabolic+health)

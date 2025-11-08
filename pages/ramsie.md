@@ -1,0 +1,6 @@
+- textile produced from [[boehmeria nivea]]
+- clean processing possible
+- enzymes for processing: [[pectinase]], [[cellulase]], [[protease]]
+- 10m2 of land outputs ~1 kg of fiber
+- 10 liters of water for processing
+- ~$3 costs of processing to fiber

@@ -1,0 +1,28 @@
+- **alias**: tannic acid
+- ![Tannic_Acid.pdf](../assets/Tannic_Acid_1719303309556_0.pdf)
+- [[tannic acid]] is a type of [[hydrolyzable tannin]] found in plants, particularly in [[bark]], [[fruits]], and [[leaves]]. it is known for its [[astringent]] properties and is widely used for its [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] effects.
+- ### chemical properties
+	- **molecular weight**: 1701.2 g/mol (approximate, depending on the source)
+	- **density**: not widely reported
+	- **melting point**: decomposes before melting
+	- **solubility**: highly soluble in water, alcohol, and acetone
+	- **chemical formula**: C₇₆H₅₂O₄₆ (average composition)
+- ### usefulness in medicine
+	- tannic acid is used to treat [[diarrhea]] and [[intestinal inflammation]] due to its [[astringent effects]].
+	- it promotes [[wound healing]] and is used in dressings for [[burns]] and [[cuts]].
+	- its [[antioxidant]] properties protect cells from oxidative damage and slow the [[aging process]].
+	- tannic acid is studied for its potential role in preventing and managing [[cancer]] and [[cardiovascular diseases]].
+	- it supports [[oral health]] by reducing plaque formation and bacterial growth.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- tannic acid exhibits strong antimicrobial properties by binding to microbial proteins, disrupting membranes, and [[inhibiting enzymes]].
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+tannic+acid)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+tannic+acid)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+tannic+acid)
+		- **viruses**:
+			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+tannic+acid)
+- ### research links
+	- [tannic acid and antimicrobial activity](https://scholar.google.com/scholar?q=tannic+acid+antimicrobial+activity)
+	- [tannic acid and antioxidant properties](https://scholar.google.com/scholar?q=tannic+acid+antioxidant+properties)

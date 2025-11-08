@@ -1,0 +1,28 @@
+tags:: aromatic compound
+
+- syringol is a naturally occurring [[methoxyphenol]] compound derived from the breakdown of [[lignin]] during thermal degradation of plant biomass. it is a key component of wood smoke and contributes to the distinctive [[smoky aroma]] in smoked foods. syringol is found in the volatile fractions of many burned, roasted, or grilled plant materials and is studied for its potential [[antioxidant]] and [[antimicrobial]] properties.
+	- ### chemical and physical properties
+		- **compound type**: dimethoxyphenol
+		- **molecular weight**: 154.17 g/mol
+		- **chemical formula**: C₈H₁₀O₃
+		- **boiling point**: ~260°C
+		- **solubility**: slightly soluble in water; soluble in ethanol and organic solvents
+		- **appearance**: colorless to pale yellow liquid with a characteristic smoky, sweet odor
+	- ### usefulness in food, fragrance, and material science
+		- contributes to **flavor and aroma** in **smoked meats**, **cheeses**, and **barbecue sauces**.
+		- used in the formulation of **natural smoke flavorings** and **aroma chemicals** in perfumery.
+		- investigated as a **biomarker** of wood combustion and forest fires in atmospheric studies.
+		- serves as a platform molecule in **green chemistry** for synthesizing value-added compounds from lignocellulosic biomass.
+		- possesses mild **antioxidant** activity due to its phenolic structure.
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- syringol demonstrates **bacteriostatic** properties against some gram-positive and gram-negative bacteria.
+		- its phenolic ring and methoxy substitutions may disrupt microbial membranes and oxidative pathways.
+		- considered a potential **natural preservative** or synergistic agent in food preservation.
+		- research highlights:
+			- **bacteria**:
+				- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=syringol+staphylococcus+aureus)
+				- **[[bacillus subtilis]]** [research link](https://scholar.google.com/scholar?q=syringol+bacillus+subtilis)
+- ### research links
+	- [syringol smoke aroma compound](https://scholar.google.com/scholar?q=syringol+smoke+aroma)
+	- [syringol antimicrobial activity](https://scholar.google.com/scholar?q=syringol+antimicrobial)
+	- [syringol from lignin pyrolysis](https://scholar.google.com/scholar?q=syringol+lignin+pyrolysis)

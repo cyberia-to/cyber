@@ -1,0 +1,91 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/24]]
+	- [[edem/26]]
+- [[durio zibethinus]] super tembaga
+- [[dysoxylum densiflorum]]
+- [[elaeocarpus angustifolius]]
+- TODO [[chrysophyllum cainito]]
+- TODO [[santalum album]]
+- [[citrus reticulata]]
+- [[toona ciliata]]
+- [[manilkara zapota]]
+	- [[tradescantia pallida]]
+- [[coleus amboinicus]]
+- [[origanum majorana]]
+- [[lansium parasiticum]]: 2
+- [[pouteria sapota]]
+- [[boesenbergia rotunda]]
+- [[aloe vera]]
+- [[thymus vulgaris]]
+- [[oreganum vulgare]]
+- [[acmella repens]]
+- unknown: 2
+- [[musa acuminata]]: 3
+- [[plumeria rubra]]
+- [[ziziphus mauritiana]]
+- [[cnidoscolus aconitifolius]]: 2
+- [[syzygium polyanthum]]: 6
+- [[rumex sanguineus]]: 5
+- [[piper siriboa]]
+- [[dimocarpus longan]]
+- [[nephelium lappaceum]]
+- [[strobilanthes reptans]]
+- [[cocos nucifera]]: 5
+- [[amaranthus spinosus]]!
+- [[kalanchoe pinnata]]
+- [[syzygium myrtifolium]]
+- [[mentha aquatica]]
+- [[passiflora ligularis]]: 2
+- [[hedychium gardenerianum]]: 22
+- [[sida rhombifolia]]
+- [[murraya koenigii]]
+- [[andrographis paniculata]]
+- [[medicago sativa]]
+- [[mentha suaveolens]]
+- [[ocimum basilicum]]
+- [[lansium domesticum]]
+- [[psidium guajava]]
+- [[salvia officinalis]]
+- [[orthosiphon aristatus]]: 4
+- [[erigeron bonariensis]]
+- [[cyclea barbata miers]]: 2
+- [[syzygium aqueum]]: 2
+- [[persicaria hydropiper]]
+- [[pogostemon cablin]]
+- [[eupatorium capillifolium]]
+- [[kalanchoe daigremontiana]]: 4
+- [[jasminum sambac]]: 2
+- [[montanoa hibiscifolia]]
+- [[oxalis corniculata]]
+- [[vitis vinifera]]
+- [[calliandra calothyrsus]]
+- unknown: 3
+- [[callistemon viminalis]]!
+- [[magnolia cempaka]]
+-
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[debregeasia longifolia]]
+	- [[ageratina riparia]]
+	- [[austroeupatorium inulifolium]]
+	- [[inga edulis]]
+	- [[macrothelypteris torresiana]]: 3
+	- [[glaphyropteridopsis erubescens]]
+	- [[trema orientalis]]
+- Dead
+	- DONE [[pouteria sapota]]
+	  :LOGBOOK:
+	  CLOCK: [2024-04-26 Fri 04:38:45]--[2024-04-26 Fri 07:18:20] =>  02:39:35
+	  :END:
+	- DONE [[citrus sinensis]]
+	- DONE [[litchi chinensis]]
+	- DONE [[selaginella apoda]]
+	- DONE [[clitoria ternatea]]
+	- DONE [[solanum melongena]]

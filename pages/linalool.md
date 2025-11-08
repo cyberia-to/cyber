@@ -1,0 +1,21 @@
+- ![Linalool.pdf](../assets/Linalool_1719300492811_0.pdf)
+- **general description:**
+	- linalool is a naturally occurring terpene alcohol found in many flowers and spice plants. it is widely used for its pleasant scent and is a common ingredient in perfumes, essential oils, and various personal care products. linalool is also known for its therapeutic properties, including anti-inflammatory, analgesic, and sedative effects.
+- **chemical properties:**
+	- **molecular weight:** 154.25 g/mol
+	- **density:** 0.860 g/cm³
+	- **boiling point:** 198-199 °c
+	- **solubility:** soluble in ethanol, diethyl ether, and chloroform; slightly soluble in water
+	- **optical rotation:** (+)-linalool has [α]D +20.4°
+	- **chemical formula:** C10H18O
+- **usefulness in medicine:**
+	- linalool has been investigated for various medicinal properties. it is known for its potential use as an [[antimicrobial]] agent, [[anxiolytic]], and [[anticonvulsant]].
+- **[[antibacterial]] [[antifungal]] properties:**
+	- linalool exhibits antibacterial activity against several types of bacteria. research has shown its effectiveness in inhibiting the growth of various bacterial strains.
+	- **bacteria:**
+		- **[[escherichia coli]]**
+		- **[[staphylococcus aureus]]**
+		- **[[pseudomonas aeruginosa]]**
+	- **fungi:**
+		- **[[candida albicans]]**
+		- **[[aspergillus niger]]**

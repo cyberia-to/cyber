@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: pied bushchat
+
+- voice:: https://ebird.org/species/piebus1
+- ![image](https://ipfs.io/ipfs/QmXWfV7UWRra5d9KCxerrrTKF3b1mC43mAo6YxFthY5ZJJ)
+- ![image](https://ipfs.io/ipfs/QmRQexh5KoughDAsVsFxAPhsps87mrav1ob7xopUVxPAoE)
+- general description
+	- appearance
+		- the pied bush chat is a small, compact bird with striking sexual dimorphism.
+		- males are predominantly black with a distinctive white patch on the lower belly and white wing patches.
+		- females are brown with a paler underbelly and faint streaking, providing camouflage in their natural habitat.
+		- both sexes have short, rounded wings and a relatively long tail, which they often flick up and down.
+	- size
+		- measures about 13-14 cm in length.
+		- typically weighs around 13-20 grams.
+	- behavior
+		- known for its active and alert nature, often seen perched on low shrubs, fences, or rocks, watching for insects.
+		- it frequently engages in characteristic tail flicking and wing stretching behaviors.
+		- has a melodious and varied song, used to communicate and establish territory, especially during the breeding season.
+- habitat
+	- range
+		- widely distributed across south asia and southeast asia, including india, sri lanka, bangladesh, pakistan, nepal, bhutan, myanmar, thailand, and indonesia.
+	- environment
+		- inhabits a variety of environments including grasslands, scrublands, open woodlands, agricultural fields, and gardens.
+		- prefers areas with open spaces and sparse vegetation where it can easily spot and catch insects.
+	- diet
+		- primarily insectivorous, feeding on a variety of insects such as beetles, grasshoppers, ants, and caterpillars.
+		- occasionally consumes small berries and seeds.
+- breeding
+	- nesting
+		- builds a small, cup-shaped nest made of grass, twigs, and plant fibers, often placed in a bush, grass tuft, or low tree.
+		- nests are usually well-concealed and lined with softer materials for insulation.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the spring and summer months.
+		- female lays 3-5 eggs, which are incubated for about 12-14 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 14-18 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the pied bush chat is known for its adaptability and can thrive in both rural and urban environments.
+	- it is often seen perched conspicuously, making it easier to spot than many other small birds.
+	- the species’ melodious song and distinctive black-and-white plumage make it a favorite among birdwatchers.

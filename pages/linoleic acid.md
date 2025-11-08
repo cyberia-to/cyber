@@ -1,0 +1,23 @@
+tags:: omega-6
+
+- linoleic acid is a polyunsaturated omega-6 fatty acid essential for human nutrition, meaning it must be obtained from the diet because the body cannot synthesize it. linoleic acid serves critical roles in maintaining healthy cell membranes, supporting skin barrier function, and acting as a precursor for other bioactive lipids involved in inflammation and cellular signaling.
+- ## chemical properties
+	- chemical formula: C₁₈H₃₂O₂
+	- molecular weight: 280.45 g/mol
+	- structure: contains 18 carbon atoms with 2 cis double bonds at positions 9 and 12
+	- solubility: insoluble in water; soluble in organic solvents and fats
+	- density: 0.90 g/cm³
+	- melting point: approximately -5°C
+- ## usefulness in medicine
+	- linoleic acid supports [[skin health]], improving hydration and barrier function, and is widely used in dermatological preparations.
+	- it plays an essential role in growth, [[brain development]], and maintaining [[cardiovascular health]], reducing [[ldl cholesterol]] levels when replacing saturated fats in diets.
+	- linoleic acid is converted to [[gamma-linolenic acid (gla)]] and [[arachidonic acid (aa)]], involved in inflammatory responses, immune function, and hormone-like signaling molecules ([[prostaglandins]], [[leukotrienes]]).
+- ## [[antimicrobial]] activity
+	- linoleic acid exhibits direct antimicrobial activity, particularly effective against various bacteria and fungi, disrupting microbial membranes and inhibiting their growth.
+	- bacteria:
+		- [[staphylococcus aureus]]
+		- [[streptococcus pyogenes]]
+		- [[escherichia coli]]
+		- [[helicobacter pylori]]
+	- fungi:
+		- [[candida albicans]]

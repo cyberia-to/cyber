@@ -1,0 +1,26 @@
+- **alias**: arsenic
+-
+- [[arsenic]] is a naturally occurring element found in the earth's crust, typically in combination with other elements. it is known for its toxicity and has historically been used in pesticides, herbicides, and certain medicinal compounds. despite its potential harmful effects, arsenic has been studied for its therapeutic uses in controlled doses.
+- ### chemical properties
+- **molecular weight**: 74.92 g/mol
+- **density**: 5.727 g/cm³
+- **melting point**: 817°C (1503°F, under high pressure)
+- **boiling point**: sublimes at 614°C (1137°F)
+- **solubility**: insoluble in water in its elemental form; arsenic compounds like arsenic trioxide are soluble.
+- **chemical formula**: As
+- ### usefulness in medicine
+- arsenic trioxide (As₂O₃) is used as a treatment for [[acute promyelocytic leukemia]] (APL), effectively inducing cancer cell apoptosis.
+- it has been studied for its potential antimicrobial properties, particularly in controlling certain parasitic infections.
+- arsenic compounds have been historically used in traditional medicine for treating [[syphilis]] and [[skin diseases]], though these uses are now obsolete due to toxicity concerns.
+- research is ongoing to explore its role in [[nanomedicine]] for drug delivery systems.
+- ### [[antibacterial]] and [[antimicrobial]] activity  
+  arsenic compounds have demonstrated antimicrobial activity in specific applications. research highlights:
+- **bacteria**:
+	- **[[mycobacterium tuberculosis]]** [research link](https://scholar.google.com/scholar?q=Mycobacterium+tuberculosis+arsenic)
+	- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+arsenic)
+- **parasites**:
+	- **[[leishmania]]** [research link](https://scholar.google.com/scholar?q=Leishmania+arsenic)
+- ### research links
+- [arsenic trioxide in leukemia treatment](https://ashpublications.org/blood/article/89/9/3354/139279/Use-of-Arsenic-Trioxide-As2O3-in-the-Treatment-of)
+- [arsenic and antimicrobial properties](https://scholar.google.com/scholar?q=arsenic+antimicrobial+properties)
+-

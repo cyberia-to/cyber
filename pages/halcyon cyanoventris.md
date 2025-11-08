@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: javan kingfisher
+
+- voice:: https://ebird.org/species/javkin1
+- ![image](https://ipfs.io/ipfs/QmZsZfr5pwvWJys9cZP9GjusonmCe1dsQxfEWpU8Ptj2RU)
+- ![image](https://ipfs.io/ipfs/QmUNqGWst2dkMiaNgQ3tmRidHS2X83G51kZ2cWz3MUbA2L)
+- general description
+	- appearance
+		- the javan kingfisher is a medium-sized bird with striking and vibrant plumage.
+		- it has a bright blue head, wings, and back, with a contrasting rich chestnut or dark brown face, throat, and underparts.
+		- the beak is large, strong, and red, which is typical of many kingfisher species.
+		- its tail is blue with a lighter underside, and the eyes are dark.
+	- size
+		- measures about 25-28 cm in length.
+		- typically weighs around 60-90 grams.
+	- behavior
+		- known for its solitary and territorial nature, often seen perched conspicuously on branches or wires while scanning for prey.
+		- it has a loud, sharp, and repetitive call, often heard early in the morning or late in the afternoon.
+		- typically hunts by diving from a perch to catch prey in water or on the ground.
+- habitat
+	- range
+		- endemic to the island of java in indonesia.
+	- environment:
+		- inhabits a variety of environments, including freshwater wetlands, mangroves, rice fields, open woodlands, and gardens.
+		- often found near bodies of water such as rivers, lakes, ponds, and marshes, as well as in agricultural landscapes.
+	- diet
+		- primarily carnivorous, feeding on a wide variety of prey, including insects, small fish, frogs, lizards, and small rodents.
+		- hunts from a perch and uses its strong beak to catch and kill prey before swallowing it whole.
+- breeding
+	- nesting
+		- nests in burrows dug into earth banks, often along riverbanks or in earthen walls.
+		- the burrow is usually dug by both members of a pair and can be quite deep to provide protection for the eggs and chicks.
+	- reproduction
+		- breeding season varies but generally occurs during the wet season when food is abundant.
+		- female lays 3-5 eggs, which are incubated by both parents for about 18-20 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 25-30 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its stable population and adaptability to different habitats.
+- interesting facts
+	- the javan kingfisher's bright blue and chestnut plumage makes it one of the most striking birds on the island of java.
+	- despite being a solitary species, it is often heard before it is seen, thanks to its loud and distinctive calls.
+	- this species is highly adaptable and can thrive in a variety of habitats, including human-modified landscapes such as rice fields and gardens, making it a common sight in both rural and semi-urban areas on java.

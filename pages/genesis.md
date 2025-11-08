@@ -1,0 +1,106 @@
+alias:: citadel genesis, vision
+icon:: 🧬
+
+- # Regenerative event infrastructure
+- ## From temporary spectacle to enduring system
+  
+  In a world where massive festivals, retreats, and temporary gatherings explode into life and collapse into waste, citadel genesis proposes a radical alternative: a regenerative event infrastructure designed not to be torn down, but to nurture the land, empower the people, and serve as a permanent node in the cultural, ecological, and social web of the future.
+-
+- This isn’t just an event venue. it’s an operating system for a new civilization.
+-
+- ## The problem with nature-based mass events
+- From burning man to jungle raves to healing retreats, we’ve seen the same pattern:
+	- diesel generators humming under sacred chants
+	- imported plastic domes cracking under heat and storms
+	- water trucked in, waste trucked out, culture left behind
+	- zero continuity, zero legacy, zero respect for the biome
+- Even the most well-intentioned festivals often become ephemeral consumption zones, not true cultural emergence.
+-
+- ## The citadel alternative: permanent, light, alive
+- Citadel genesis flips the paradigm.
+- It is a permanently rooted, regeneratively designed forest infrastructure built for:
+	- recurring festivals
+	- collaborative residencies
+	- ceremonial gatherings
+	- digital nomad migrations
+	- post-tech healing arcs
+	- global movement assemblies
+-
+- Instead of starting from scratch each time, citadel becomes a living stage — one that gets stronger with every gathering.
+-
+- ## Five pillars of regenerative event design
+	- Spatial coherence
+		- citadel is built like a forest brain:
+		- modular clearings
+		- trails that invite movement, not trample roots
+		- shaded camp rings that remember their purpose
+		- morphic fields: camps with identities, storylines, and return cycles
+		- hidden infrastructure (tanks, mesh routers, solar banks) beneath the canopy
+	- Material evolution
+		- no tarps. no rebar. no waste.
+		- locally sourced abundant materials, e.g. bamboo, sengon, basalt, sand, clay
+		- use of forgotten but eternal tech such as pozzolanic concrete
+		- mycelium or plant based insulation
+		- firewood as heat source using pyrolysis stoves with massive biochar production
+		- every material returns to earth or transforms into permanence
+	- Energy and network autonomy
+		- solar microgrids with inverter backups
+		- mesh wifi reaching every dome and grove
+		- starlink access when needed, but forest-first protocols
+		- all lights low-voltage, path-sensitive, wildlife-safe
+	- Compost & water alchemy
+		- humanure toilets designed for beauty and dignity
+		- urinals that feed mushroom colonies
+		- greywater flows into banana spirals, taro pits, and herbal filtration beds
+		- each event improves the hydration and fertility of the land
+	- Restability and ritual
+		- events are not erased — they are composted into the memory of the land
+		- replanting rituals after closing
+		- participants join in the "repair day", leaving the space more potent than found
+-
+- The forest holds story, not residue
+-
+- ## Business model: the infrastructure of movements
+- Citadel genesis doesn’t host events. it hosts emergence.
+-
+- Aligned festivals and retreats rent the land with built-in regeneration protocols
+- moon or season-based residencies allow for slow culture weaving
+- co-creation programs build the next layer of infrastructure
+- a published forest event protocol becomes an open-source OS for future villages
+-
+- Citadel kit replicates this model across the world
+- ## Competitors? None serious yet
+- Burning man builds everything and burns it.
+- Eco-retreats struggle to host 200 without collapse.
+- Digital nomad camps overheat at scale.
+-
+- Citadel genesis is the first to prototype:
+- a sacred, scalable, functional, and regenerative architecture for gatherings of 50 to 5,000,
+- with no waste, no burnout — and no expiry date
+- ## Beyond hosting: anchoring culture
+- each person who arrives isn’t just attending — they are building.
+  citadel genesis is a village that breathes with the rhythm of the planet,
+  where humans gather not to consume moments,
+  but to cultivate new civilizational seeds.
+- welcome to the future of presence.
+  welcome to the infrastructure of the next renaissance.
+-
+- region in [[cyber valley]] on 30 ha of land
+- ![image.png](../assets/image_1725878222276_0.png)
+-
+- ## dive into [[citadel/vision]]
+- ## [[citadel/strategy]]
+- ## districts
+	- [[rockets estate]]: 10 ha
+	- other 5 districts are being structured
+- ## projects
+	- [[sensor network]]
+	- [[soil research]]
+	- [[birds research]]
+	- [[plants research]]
+	- TODO [[fungi research]]
+	- TODO water research
+- ## surrounded by the following districts
+	- [[batuka]]: relict forest
+	- [[bridge]]: commercial street
+	- [[canyon]]: commercial street

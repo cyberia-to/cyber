@@ -1,0 +1,37 @@
+tags:: species, birds
+alias:: striated grassbird, striate prinia
+
+- voice:: https://ebird.org/species/strgra1
+- ![image](https://ipfs.io/ipfs/QmXGXhffadzTAQ7pHG3hqyor7jpTBEpdx7mftjnyLvcwu9)
+- ![image](https://ipfs.io/ipfs/QmZj968MCKn64cpqhjat7tiY4k3b397Sok5roTc8Exw71R)
+- ![image](https://ipfs.io/ipfs/QmRKNoVRQhqAS1fmxsPBwmhqZ2ZHY2NYUWE1x2s2c7Xhp3)
+- general description
+	- appearance:
+		- the striate prinia is a small, brownish bird with streaked plumage.
+		- it has a long, slightly curved bill and a long tail that is often held upright.
+		- the underparts are lighter with distinct streaking on the breast and flanks.
+	- size: typically measures about 16-18 cm in length.
+	- behavior:
+		- known for its active and restless behavior, often seen hopping through vegetation.
+		- it has a distinctive, repetitive call often heard in its habitat.
+		- generally seen in pairs or small groups.
+- habitat
+	- range: found in south and southeast asia, including countries like india, bangladesh, myanmar, thailand, and vietnam.
+	- environment: prefers tall grasslands, marshes, and reed beds. often found in lowland areas with dense vegetation near water bodies.
+- diet
+	- primarily insectivorous, feeding on insects, spiders, and other small invertebrates.
+	- may also consume seeds and small fruits occasionally.
+- breeding
+	- nesting:
+		- builds a cup-shaped nest made of grass and other plant materials.
+		- nests are usually well-concealed in tall grass or reeds.
+	- reproduction:
+		- breeding season varies across its range but generally occurs during the wet season.
+		- female lays 3-5 eggs, which are incubated for about two weeks.
+		- both parents participate in feeding the chicks.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the striate prinia is known for its loud and persistent song, which is often used to establish territory and attract mates.
+	- it is highly adaptable and can thrive in disturbed habitats, such as agricultural fields and roadside vegetation.

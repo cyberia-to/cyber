@@ -1,0 +1,35 @@
+- ingredient estimation
+	- 1/2 cup rolled oats (for 1 person)
+	- 1 cup water or milk (or a mix of both)
+- optional (different additional cooking options)
+	- 1 tablespoon ghee butter
+	- 1/8 teaspoon turmeric
+	- 2-3 prunes (chopped)
+	- 2-3 dried apricots (chopped)
+	- 1 tablespoon goji berries
+- optional toppings
+	- fresh fruits, nuts, honey, cinnamon
+- instructions
+	- prepare the base (per person):
+		- in a small saucepan, combine 1/2 cup oats and 1 cup of liquid (water, milk, or a mix of both)
+	- add dried fruits, prunes/apricots/goji berries/mixed (optional)
+		- chopped
+		- soaked for a ~~5 minutes in hot boiling water
+	- add turmeric (optional):
+		- stir in 1/8 teaspoon turmeric for added flavor and health benefits.
+	- start cooking:
+		- bring the mixture to a boil over medium heat, stirring occasionally to prevent sticking.
+	- simmer the oats:
+		- once the mixture starts to boil, reduce the heat to low.
+		- simmer the oats for 10-12 minutes, stirring occasionally, until they reach a creamy consistency.
+	- check consistency:
+		- for a thicker oatmeal, cook a minute or two longer.
+		- for a thinner consistency, add a splash of water or milk and stir.
+	- serve and garnish:
+		- transfer the oatmeal to a bowl.
+		- top with extras (optional)
+			- fresh fruits
+			- nuts
+			- honey
+			- cinnamon
+			- mixed any ingredients

@@ -1,0 +1,13 @@
+- ![Salmonella_enterica.pdf](../assets/Salmonella_enterica_1719125563781_0.pdf)
+- salmonella enterica is a gram-negative bacterium that is a major cause of foodborne illness worldwide. it has numerous serotypes, some of which are responsible for different types of infections in humans.
+- **diseases caused by salmonella enterica:**
+	- 1. **[[gastroenteritis]]:** the most common illness caused by salmonella, leading to symptoms like [[diarrhea]], [[abdominal cramps]], [[fever]], and [[vomiting]]. this is often referred to as "salmonellosis."
+	- 2. **[[typhoid fever]]:** caused by the serotype salmonella typhi, characterized by high fever, [[weakness]], [[stomach pains]], [[headache]], and[[loss of appetite]].  some infected individuals may also develop a [[rash]].
+	- 3. **[[paratyphoid fever]]:** similar to typhoid fever but generally less severe, caused by the serotypes salmonella paratyphi a, b, and c.
+	- 4. **[[bacteremia]]:** bloodstream infections that can occur in immunocompromised individuals, leading to severe systemic infections.
+	- 5. **[[localized infections]]:** can occur in various body parts, including bones ([[osteomyelitis]]), joints ([[septic arthritis]]), and the heart ([[endocarditis]]).
+- **habitats and transmission:**
+	- **human and animal intestines:** salmonella is naturally found in the intestines of humans and many animals, including birds, reptiles, and mammals.
+	- **environment:** can be found in soil, water, and on various surfaces contaminated with feces from infected individuals or animals.
+	- **transmission:** primarily occurs through ingestion of contaminated food or water, including undercooked poultry, eggs, meat, and unpasteurized milk. it can also be transmitted through contact with infected animals or their environments, and from person to person via the fecal-oral route.
+- preventing salmonella infections involves proper food handling, cooking meat and eggs thoroughly, avoiding consumption of raw or unpasteurized products, and maintaining good hygiene practices. treatment of salmonella infections typically focuses on hydration and managing symptoms, with antibiotics reserved for severe cases, such as typhoid fever or systemic infections. antibiotic resistance is an increasing concern, necessitating careful use of these medications.

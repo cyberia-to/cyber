@@ -1,0 +1,1 @@
+- all stem [[pruning]] method

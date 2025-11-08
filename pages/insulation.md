@@ -1,0 +1,13 @@
+- | material             | thermal (W/m·K) | acoustic performance      | moisture behavior               | durability        | density (kg/m³) | fire resistance        | sustainability                  |
+  |----------------------|------------------|----------------------------|----------------------------------|-------------------|------------------|--------------------------|----------------------------------|
+  | dadap (erythrina)    | ~0.04–0.06       | good (fibrous absorption) | breathable, seal to protect     | low–moderate      | 150–250          | moderate (chars)        | very high (fast, local biomass)  |
+  | cyathea trunk        | ~0.03–0.05       | excellent (open-cell)     | absorbent, needs sealing        | low (if raw)      | 100–200          | moderate                | high (regrows in wet forests)    |
+  | coco peat            | ~0.04–0.06       | good (mid-high frequency) | retains water, risk of mold     | low               | 100–250          | low (smolders)          | very high (waste product)        |
+  | sugar palm fiber     | ~0.04–0.06       | good                      | hydrophilic, air-dry needed     | moderate (if sealed) | 120–200        | moderate                | high (local fiber resource)      |
+  | areca sheath         | ~0.05–0.07       | fair                      | prone to fungi, slow to dry     | low               | 200–300          | low                     | moderate (leaf waste)            |
+  | oil palm trunk pith  | ~0.05–0.08       | good (low-freq dampening) | holds moisture, degrades fast   | low               | 150–250          | low                     | high (abundant waste stream)     |
+  | balsa                | ~0.04            | fair–good                 | fragile in humidity             | low               | 120–200          | low                     | moderate (plantation grown)      |
+  | hempcrete            | ~0.07            | very good                 | breathable and humidity-buffering | high            | 300–400          | high (lime matrix)      | very high (hemp + lime)          |
+  | sheep wool           | ~0.035           | excellent (full range)    | regulates humidity              | moderate          | 30–50            | self-extinguishing       | renewable (animal fiber)         |
+  | mycelium panel       | ~0.03–0.05       | excellent                 | biodegradable, seal to protect | moderate          | 40–80            | fire-resistant           | extreme (grown on biomass waste) |
+  | rockwool             | ~0.035–0.045     | excellent (industrial)    | hydrophobic                     | very high         | 40–150           | non-combustible          | low (high-energy manufacture)    |

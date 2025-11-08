@@ -1,0 +1,13 @@
+- ![Bornyl_acetate.pdf](../assets/Bornyl_acetate_1719039644164_0.pdf)
+- [[antiinflamation]] https://www.sciencedirect.com/science/article/abs/pii/S0944711323001423
+- [[anti-cancer]] https://avesis.bozok.edu.tr/yayin/97cf9f55-4c1f-4f32-8aff-69034918ee6c/inhibition-of-various-cancer-cells-proliferation-of-bornyl-acetate-and-essential-oil-from-inula-graveolens-linnaeus-desf
+- [[antioxidant]] https://onlinelibrary.wiley.com/doi/abs/10.1111/ics.12069
+- [[anti-rheumatoid]] https://iubmb.onlinelibrary.wiley.com/doi/full/10.1002/iub.1338
+- [[neuroprotective]] https://www.sciencedirect.com/science/article/abs/pii/S0944711322006572
+- [[calming]]
+	- bornyl acetate induces autonomic relaxation: bornyl acetate has a calming effect on the autonomic nervous system. the autonomic nervous system controls involuntary body functions, such as heart rate, digestion, and respiratory rate. autonomic relaxation implies a reduction in stress and anxiety, leading to a state of calmness.
+	- reduces arousal level: arousal level refers to the state of being alert, awake, and attentive. reducing arousal level means lowering the body's state of alertness and vigilance, which can help in achieving a more relaxed state.
+	- after visual display terminal work: visual display terminal (vdt) work refers to tasks that involve using computer screens or other electronic displays for extended periods. this kind of work can often lead to eye strain, fatigue, and mental stress.
+	- without any influences of task performance: this means that the use of bornyl acetate does not negatively affect the ability to perform tasks. in other words, while it induces relaxation and reduces arousal, it does not impair cognitive or motor performance.
+	- in low-dose condition: this specifies that the effects mentioned (relaxation and reduced arousal) are observed even when bornyl acetate is used in low doses.
+-

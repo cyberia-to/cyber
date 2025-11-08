@@ -1,0 +1,42 @@
+tags:: species, birds, major
+alias:: ornate sunbird
+
+- voice:: https://ebird.org/species/olbsun4
+- ![image](https://ipfs.io/ipfs/QmcybhopqTg9fRmfLWfRZSRtBrPyi2RqpsKPEK47Z7EU2c)
+- ![image](https://ipfs.io/ipfs/QmR2rEsPpNpaK6cK9DZF3kQHaU3VHumAkCHRLcsUUcHf4x)
+- ![image](https://ipfs.io/ipfs/QmYmcd3dnwwCjtTEzBmKFPGCqgc86b6s5yWon42Xnt3C5a)
+- general description
+	- appearance
+		- the olive-backed sunbird is a small, brightly colored bird with a distinctive olive-green back.
+		- males have a bright metallic blue throat and upper chest, while females are more subdued with yellow underparts and a grayish-olive back.
+		- both sexes have a slender, curved bill adapted for nectar feeding.
+	- size
+		- measures about 10-12 cm in length.
+		- typically weighs around 6-10 grams.
+	- behavior
+		- known for its active and agile behavior, often seen flitting between flowers in search of nectar.
+		- emits a high-pitched, rapid series of chirps and whistles.
+		- males often perform elaborate flight displays to attract females during the breeding season.
+- habitat
+	- range
+		- found in southeast asia, including indonesia, malaysia, the philippines, and thailand.
+	- environment
+		- inhabits a variety of environments including gardens, mangroves, forests, and urban areas.
+		- often found in areas with abundant flowering plants.
+- diet
+	- primarily nectarivorous, feeding on the nectar of various flowers.
+	- also consumes insects and spiders, particularly during the breeding season when they need more protein.
+- breeding
+	- nesting
+		- builds a hanging, purse-shaped nest made of plant fibers, leaves, and spider silk.
+		- nests are usually suspended from tree branches or other structures, often well-hidden among foliage.
+	- reproduction
+		- breeding season varies across its range but generally occurs during periods of abundant flower availability.
+		- female lays 1-3 eggs, which are incubated for about two weeks.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the olive-backed sunbird is highly adaptable and can thrive in both natural and urban environments.
+	- its long, curved bill and brush-tipped tongue are specially adapted for extracting nectar from flowers, making it an important pollinator in its ecosystem.

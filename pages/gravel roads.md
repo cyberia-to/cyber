@@ -1,0 +1,15 @@
+- standarts:
+	- width:
+		- 1 m
+	- thickness:
+		- 1 sqm = ?
+	- height:
+		- 10 cm
+- geotextile
+- gravel
+- bamboo
+- pipes
+- cables
+- light
+-
+-

@@ -1,0 +1,13 @@
+- ![Aspergillus_nidulans.pdf](../assets/Aspergillus_nidulans_1719127084883_0.pdf)
+- aspergillus nidulans is a species of fungus commonly found in soil and decaying organic matter. it is less commonly associated with human disease compared to other aspergillus species, but it can still cause infections, particularly in immunocompromised individuals.
+	- **diseases caused by aspergillus nidulans:**
+		- 1. **aspergillosis:** a range of infections caused by aspergillus species, affecting various body systems.
+			- **[[allergic bronchopulmonary aspergillosis]] (abpa):** an allergic reaction in the lungs, more commonly associated with [[asthma]] or [[cystic fibrosis]].
+			- **[[aspergilloma]] (fungus ball):** a mass of fungal hyphae that can develop in pre-existing lung cavities, leading to symptoms such as coughing and hemoptysis (coughing up blood).
+			- **[[invasive aspergillosis]]:** a severe infection where the fungus invades and damages tissues, primarily affecting immunocompromised individuals, leading to lung infections and potentially spreading to other organs like the brain and heart.
+		- 2. **skin and wound infections:** though less common, aspergillus nidulans can infect skin and wounds, particularly in individuals with compromised immune systems or those with chronic conditions.
+	- **habitats and transmission:**
+		- **environment:** found in soil, decaying vegetation, compost, and organic debris. it thrives in warm, humid conditions.
+		- **transmission:** primarily occurs through inhalation of airborne spores. direct human-to-human transmission is rare.
+- preventing aspergillus nidulans infections involves maintaining good hygiene, reducing exposure to environments with high spore counts (such as construction sites), and protecting immunocompromised individuals from exposure to contaminated air. in healthcare settings, measures to prevent infection include air filtration systems and minimizing exposure to potential sources of spores.
+- treatment of aspergillus nidulans infections typically involves antifungal medications, such as voriconazole or amphotericin b, depending on the severity and location of the infection. early diagnosis and treatment are crucial, especially for invasive infections, to improve outcomes and prevent complications.

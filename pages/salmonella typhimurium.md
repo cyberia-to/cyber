@@ -1,0 +1,14 @@
+- ![Salmonella_enterica_subsp._enterica.pdf](../assets/Salmonella_enterica_subsp._enterica_1719300297886_0.pdf)
+-
+- salmonella typhimurium is a gram-negative bacterium that is one of the most common causes of foodborne illness worldwide. it is a serotype of the species salmonella enterica and can cause a range of gastrointestinal diseases.
+- **diseases caused by salmonella typhimurium:**
+	- 1. **[[gastroenteritis]]:** the most common illness caused by salmonella typhimurium, characterized by diarrhea, abdominal cramps, fever, nausea, and vomiting. symptoms usually appear 6 to 72 hours after ingestion of contaminated food or water and typically last 4 to 7 days.
+	- 2. ** [[bacteremia]] :** in some cases, the infection can spread to the bloodstream, leading to bacteremia. this is more likely to occur in immunocompromised individuals, infants, and the elderly.
+	- 3. ** [[localized infections]] :** after bacteremia, salmonella typhimurium can infect various body sites, including the bones (osteomyelitis), joints (septic arthritis), and the lining of the heart and valves (endocarditis).
+	- 4. ** [[enteric fever]] :** although less common than salmonella typhi (which causes [[typhoid fever]] ), salmonella typhimurium can sometimes cause a similar syndrome known as enteric fever, with prolonged fever, abdominal pain, and systemic involvement.
+- **habitats and transmission:**
+	- **environment:** found in the intestines of many animals, including birds, reptiles, and mammals. it can contaminate food and water through fecal matter.
+	- **food:** commonly associated with raw or undercooked poultry, eggs, meat, unpasteurized milk, and contaminated fruits and vegetables.
+	- **transmission:** primarily occurs through ingestion of contaminated food or water. it can also spread through direct contact with infected animals or their environments, and from person to person via the fecal-oral route.
+- preventing salmonella typhimurium infections involves proper food handling, cooking meat and eggs thoroughly, avoiding consumption of raw or unpasteurized products, and maintaining good hygiene practices. washing hands after handling raw meat, eggs, or animals, and keeping kitchen surfaces clean, are also crucial.
+- treatment for salmonella typhimurium infections is typically supportive, focusing on hydration and managing symptoms. most cases resolve without the need for antibiotics. however, in severe cases, especially those involving bacteremia or enteric fever, antibiotics such as fluoroquinolones, azithromycin, or third-generation cephalosporins may be necessary. early diagnosis and appropriate treatment are essential to prevent complications and improve outcomes, particularly in vulnerable populations.

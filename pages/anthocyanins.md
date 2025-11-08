@@ -1,0 +1,28 @@
+- **alias**: anthocyanins
+- ![Anthocyanins.pdf](../assets/Anthocyanins_1719303309556_0.pdf)
+- [[anthocyanins]] are [[water-soluble pigments]] belonging to the [[flavonoid]] group, responsible for the [[red]], [[purple]], and [[blue]] colors in many [[fruits]], [[vegetables]], and [[flowers]]. they are known for their potent [[antioxidant]], [[anti-inflammatory]], and [[anti-cancer]] properties.
+- ### chemical properties
+	- **molecular weight**: varies depending on the specific anthocyanin (e.g., cyanidin-3-glucoside: 449.39 g/mol).
+	- **density**: not widely reported.
+	- **melting point**: decomposes before melting.
+	- **solubility**: highly soluble in water and slightly soluble in alcohol.
+	- **chemical formula**: varies; general structure includes a flavylium cation (C₁₅H₁₁O⁺).
+- ### usefulness in medicine
+	- anthocyanins act as powerful [[antioxidants]], neutralizing free radicals and reducing [[oxidative stress]], which helps prevent chronic diseases.
+	- they promote [[cardiovascular health]] by improving blood vessel elasticity and reducing inflammation.
+	- anthocyanins support [[eye health]] by protecting against retinal damage and improving vision.
+	- they have [[anti-cancer]] properties, showing potential in inhibiting tumor growth and inducing apoptosis.
+	- anthocyanins contribute to [[skin health]] by reducing UV-induced damage and enhancing hydration.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- anthocyanins exhibit antimicrobial properties by disrupting microbial membranes and inhibiting bacterial growth.
+	- research highlights:
+		- **bacteria**:
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+anthocyanins)
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+anthocyanins)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+anthocyanins)
+		- **viruses**:
+			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+anthocyanins)
+- ### research links
+	- [anthocyanins and cardiovascular health](https://scholar.google.com/scholar?q=anthocyanins+cardiovascular+health)
+	- [anthocyanins and antioxidant activity](https://scholar.google.com/scholar?q=anthocyanins+antioxidant+activity)

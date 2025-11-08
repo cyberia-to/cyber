@@ -1,0 +1,30 @@
+# Aman-Caliber Hillside Estate Land — Gesing, North Bali
+- ## 4.8 Ha | Leasehold 24 years | Underlying Title: HGB
+- **Essentials**
+	- • Elevated west-facing hillside with uninterrupted ocean–mountain panoramas and nightly sunsets
+	- • Rare contiguous **4.8-hectare** plot, **set back from the main road** via a private access corridor (privacy, no traffic noise)
+	- • ~**50 min** by car to **Singaraja**; trekking access toward **Mt. Sanghyang**, **Mt. Lesung**
+	- • **Tenure:** **Leasehold 23 years** (notarial lease; underlying land **HGB**)
+	- • **Utilities (installed upon deposit):** off-grid **solar power**, **rainwater harvesting & purification**, **Starlink internet**
+- **Location & Neighbourhood**
+	- • **Directly neighboring cv.land (Cyber Valley)** — the area’s **anchor project** for sustainable mountain development; brand adjacency and destination halo support premium positioning
+	- • Private, low-density surroundings; green belts nearby preserve lifelong view corridors
+		- *No affiliation or rights to cv.land amenities are implied; any cooperation is subject to separate agreements.*
+- **Zoning & Compliance (RTRW)**
+	- • **Kawasan Pertanian (Agricultural)** — suited to **low-density private estate** development; buyer to obtain **KKPR** and follow slope/setback guidelines
+	- • Adjoins **Kawasan Lindung** (protective green belt) — **no construction** inside the green zone; natural buffer for privacy and vistas
+	- • **Topography:** elevated, naturally terraced slopes, predominant **W–NW aspect**; buildable area/site coverage to be confirmed during KKPR/engineering
+- **Ultra-Luxury Estate Potential**
+	- Curate an **Aman-caliber private estate**: one signature residence with satellite pavilion, service/core facilities and generous landscape buffers. Low density by design — privacy, silence, long view lines.
+- **Existing Orchard & Food Forest (conveys with lease)**
+	- • **Coffee ~300 bushes**, **bananas ~300 clumps**, **taro ~500 plants**
+	- • **Figs ~50 trees**, **avocado ~50**, **jackfruit ~50**, **citrus ~30**
+	- • **Water apple  ~20**, **cinnamon ~20**, **bamboo ~40 clumps**
+	- • **Passion fruit (markisa) ~100 vines**, **chayote ~100 vines**, **sweet potato ~50 vines**
+	- • Mature nitrogen-fixing and ornamental species frame the landscape and enhance privacy
+- **Investment Notes**
+	- • Anchor-project adjacency (**cv.land**) and scarcity of west-facing panoramic hillsides in Gesing underpin **premium value**
+	- • Regional infrastructure momentum in North Bali supports long-term desirability
+- **Inspections**
+	- Private viewings by appointment only. **Contact: [Name] | WhatsApp: [link] | Email: [email]**
+	- *Non-binding marketing material. Buyers to conduct independent due diligence (RTRW/RDTR, KKPR, engineering). Counts approximate.*

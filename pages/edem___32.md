@@ -1,0 +1,57 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/31]]
+- [[neoregelia carolinae]]
+- [[litchi chinensis]]
+- [[malus domestica]]
+- [[coleus amboinicus]]: 2
+- [[garcinia mangostana]]: 5
+- [[trema orientalis]]: 2
+- [[thymus vulgaris]]
+- [[oreganum vulgare]]
+- [[acmella repens]]
+- [[centella asiatica]]
+- [[hydrocotyle bonariensis]]
+- [[erigeron bonariensis]]
+- [[citrus amblycarpa]]
+- [[symphytum officinale]]
+- [[punica granatum]]: 2
+- [[musa acuminata]]: 3
+- [[acanthus ilicifolius]]: 4
+- [[hibiscus acetosella]]: 9
+- [[psidium guajava]]: 2
+- [[averrhoa bilimbi]]
+- [[talinum paniculatum]]: 2
+- [[cnidoscolus aconitifolius]]: 4
+- unknown (citrus): 2
+- [[plantago]]
+- [[syzygium aqueum]]
+- [[medicago sativa]]
+- [[prunus dulcis]]: 2
+- [[justicia gendarussa]]: 23
+- [[mentha spicata]]
+- [[colocasia esculenta]]: 3
+- [[persea americana]]
+- [[citrus maxima]]
+- [[begonia maculata]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[calliandra calothyrsus]]
+	- [[eupatorium capillifolium]]
+	- [[melastoma malabathricum]]
+	- [[stachytarpheta urticifolia]]
+	- [[debregeasia longifolia]]
+	- [[ageratina riparia]]
+	- [[austroeupatorium inulifolium]]
+	- [[lantana camara]]
+	- [[trema orientalis]]
+	- [[leucaena leucocephala]]
+- dead:
+	- DONE [[juglans regia]]
+	- DONE [[juglans regia]]
+	- DONE [[terminalia catappa]]
+	- DONE [[juglans regia]]
+	- DONE [[phoenix dactylifera]]
+	- DONE [[phoenix dactylifera]]
+	- DONE [[bertholletia excelsa]]

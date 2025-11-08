@@ -1,0 +1,27 @@
+tags:: genus, research
+
+- [[commiphora myrrha]]
+- [tokopedia](https://www.tokopedia.com/search?st=&q=Commiphora&srp_component_id=02.01.00.00&srp_page_id=&srp_page_title=&navsource=)
+- monstrousa
+- simlicifoila
+- edilus
+- wightii
+- incisa
+- mildbraedii
+- mollis
+- kua
+- baluensis
+- unilobata
+- africana
+- eminii
+- holtziana
+- pseudopaolii
+- abyssinica
+- madagascariensis
+- habesinica
+- kraeuseliana
+- tanzania
+- turkanensis
+- kataf
+- eyl
+- myrrha

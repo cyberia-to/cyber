@@ -1,0 +1,11 @@
+-
+- violet portion (around 400–500 nm) of the visible light spectrum, often emitted by sunlight, digital screens (phones, tablets, computers), and artificial lighting (LEDs).
+- how blue light damages the eyes:
+	- **oxidative stress**: exposure increases production of free radicals, damaging retinal cells.
+	- **retinal damage**: particularly harmful to photoreceptor cells (rods and cones) and retinal pigment epithelial cells in the macula.
+	- **circadian rhythm disruption**: excessive blue-light exposure, especially at night, disrupts melatonin production, leading to sleep disturbances.
+- potential health impacts:
+	- increased risk of [[age-related macular degeneration (AMD)]]
+	- digital eye strain (also called “[[computer vision syndrome]]”)
+	- sleep disturbances and related health issues
+	- accelerated aging of retinal cells, potentially causing visual impairment

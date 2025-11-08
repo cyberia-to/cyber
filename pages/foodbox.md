@@ -1,0 +1,79 @@
+- fresh set of the product for living from cyber valley
+- 7 fruits, 39 herbs, meat, fish, honey.
+- the following is an example of foodbox we can send to you
+- numbers are grams
+- [[animals]]
+	- [[goat meat]]: 1900
+	- [[chicken meat]]: 1300
+	- [[tilapia meat]]: 890
+	- [[chicken eggs]]: 1500
+- [[fruits]]
+	- [[papaya]]: 2260
+	- [[mandarin]]: 335
+	- [[markiza]]: 630
+	- [[banana]]: 510
+	- [[mango]]: 715
+	- [[salak]]: 245
+	- [[ananas]]: 495
+	- [[coffee berry]]: 130
+- [[vegetables]]
+	- [[chayote]]: 965
+	- [[carrot]]: 370
+- [[roots]]
+	- [[taro]]: 2025
+	- [[cassava]]: 2030
+	- [[batat]]: 525
+	- [[ginger]]: 65
+	- [[garlic]]: 90
+- [[honey]]: 200
+- [[herbs]]
+	- [[diplazium esculentum]]: 790
+	- [[salads]] : 300
+	- [[centella asiatica]]: 20
+	- [[syzygium aromaticum]]: 10
+	- [[salvia officinalis]]: 5
+	- [[galansoga parviflora]]: 15
+	- [[bidens pilosa]]: 15
+	- [[talinum fruticosum]]: 10
+	- [[spondias dulcis]] leaves: 5
+	- [[nopalea cochenillifera]]: 35
+	- [[allium tuberosum]]: 35
+	- [[acmella repens]]: 5
+	- [[hydrocotyle bonariensis]]: 5
+	- [[morus nigra]] leaves: 10
+	- [[foeniculum vulgare]]: 5
+	- [[plantago]]: 15
+	- [[pouzolzia zeylanica]]: 5
+	- [[murraya koenigii]]: 5
+	- [[citrus reticulata]] leaves: 5
+	- [[rumex acetosa]]: 5
+	- [[medicago sativa]]: 5
+	- [[salvia rosmarinus]]: 5
+	- [[lavandula latifolia]]: 5
+	- [[spinacia oleracea]]: 5
+	- [[hibiscus acetosella]]: 15
+	- [[sonchus oleraceus]]: 20
+	- [[mentha spicata]]: 25
+	- [[pogostemon cablin]]: 40
+	- [[oreganum vulgare]]: 15
+	- [[stevia rebaudiana]]: 25
+	- [[coleus amboinicus]]: 10
+	- [[basella alba]]: 5
+	- [[melissa officinalis]]: 10
+	- [[thymus vulgaris]]: 15
+	- [[artemisia dracunculus]]: 15
+	- [[mentha piperita]]: 10
+	- [[mentha citrata]]: 20
+	- [[mentha spicata]]: 25
+	- [[mentha suaveolens]]: 25
+	- [[mentha aquatica]]: 15
+	- [[ocimum basilicum]]: 5
+- [[cooked]] products
+	- [[roasted coffee]]: 200
+	- [[taro chips]]: 70
+	- [[batat chips]]: 70
+- [[cosmetics]]
+	- [[sapindus soap]]: 1000
+	- [[coffee scrub]]: 300
+- [[boxes]]
+	- [[albizia chinensis]]

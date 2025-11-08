@@ -1,0 +1,1 @@
+- **ringworm (tinea)**: a fungal infection causing circular, itchy, scaly patches on the skin or scalp.

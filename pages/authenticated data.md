@@ -1,0 +1,1 @@
+- cryptographically authenticated data distributed using web3 stack

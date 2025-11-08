@@ -1,0 +1,15 @@
+- ![Listeria_monocytogenes.pdf](../assets/Listeria_monocytogenes_1719128753997_0.pdf)
+- listeria monocytogenes is a gram-positive, rod-shaped bacterium that causes listeriosis, a serious infection primarily affecting pregnant women, newborns, older adults, and individuals with weakened immune systems. it is commonly found in soil, water, and contaminated food.
+	- **diseases caused by listeria monocytogenes:**
+		- 1. **listeriosis:** a range of infections caused by listeria monocytogenes.
+			- **[[febrile gastroenteritis]]:** mild form of listeriosis with symptoms like [[fever]], [[muscle aches]], [[nausea]], and [[diarrhea]].
+			- **[[invasive listeriosis]]:** more severe form that can lead to [[bacteremia]] and [[meningitis]]. symptoms include [[headache]], [[stiff neck]], [[confusion]], [[loss of balance]], and [[convulsions]].
+			- **[[pregnancy-related listeriosis]]:** can cause [[miscarriage]], [[stillbirth]], [[premature delivery]], or life-threatening infection in the newborn.
+			- **[[meningitis]]:** inflammation of the membranes covering the brain and spinal cord, particularly in newborns, elderly, or immunocompromised individuals.
+			- **[[septicemia]]:** bloodstream infection leading to sepsis, a life-threatening systemic response to infection.
+	- **habitats and transmission:**
+		- **environment:** found in soil, water, decaying vegetation, and animal feces.
+		- **food:** commonly associated with raw or contaminated food products, including unpasteurized dairy products, soft cheeses, deli meats, hot dogs, smoked seafood, and raw vegetables.
+		- **transmission:** primarily occurs through ingestion of contaminated food. it can also be transmitted from mother to fetus during pregnancy or childbirth.
+- preventing listeria monocytogenes infections involves practicing proper food safety measures. this includes thoroughly cooking raw food from animal sources, washing raw vegetables, avoiding unpasteurized dairy products, and practicing good hygiene in food preparation and storage. pregnant women and immunocompromised individuals should avoid high-risk foods like soft cheeses and deli meats.
+- treatment for listeriosis typically involves antibiotics. ampicillin, often in combination with gentamicin, is commonly used. early diagnosis and treatment are crucial, especially for invasive forms of the disease, to reduce the risk of severe complications and improve outcomes. pregnant women, newborns, elderly, and immunocompromised individuals require special attention to prevent and manage listeria infections effectively.

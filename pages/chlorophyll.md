@@ -1,0 +1,30 @@
+-
+- chlorophyll is a vital green [[pigment]] found in the [[chloroplasts]] of [[plants]], [[algae]], and [[cyanobacteria]]. it is essential for [[photosynthesis]], the process by which light energy is converted into chemical energy to fuel plant growth. chlorophyll absorbs light most efficiently in the blue and red wavelengths and reflects green, giving plants their characteristic color. it also serves as a source of the compound [[phytol]], used in the synthesis of [[vitamin e]] and [[vitamin k1]] in humans.
+	- ### chemical properties
+		- **molecular weight**:
+			- chlorophyll a: 893.49 g/mol
+			- chlorophyll b: 907.50 g/mol
+		- **structure**: porphyrin ring with a central magnesium ion (Mg<sup>2+</sup>)
+		- **types**: chlorophyll a, b, c, d, and f (a and b are most common in higher plants)
+		- **solubility**: soluble in ethanol, acetone, and lipids; insoluble in water
+		- **chemical formula**:
+	- ### usefulness in biology and medicine
+		- chlorophyll plays a critical role in capturing solar energy for photosynthesis.
+		- it may act as an [[antioxidant]] in the human body and has been linked to [[detoxification]] and [[wound healing]].
+		- dietary chlorophyll and derivatives (like [[chlorophyllin]]) are used in supplements for [[odor control]], [[skin health]], and [[liver support]].
+		- some studies suggest potential [[anticancer]], [[anti-inflammatory]], and [[antimutagenic]] effects.
+		- chlorophyll is explored in [[photodynamic therapy]] and as a natural [[food coloring agent]] (e140).
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- chlorophyll and its derivatives exhibit [[bacteriostatic]] and [[bactericidal]] effects, especially when exposed to light.
+		- mechanisms include disruption of bacterial membranes and oxidative stress via photosensitization.
+		- used in mouthwashes, wound dressings, and topical gels for microbial control.
+		- research highlights:
+			- **bacteria**:
+				- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=chlorophyll+staphylococcus+aureus)
+				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=chlorophyll+escherichia+coli)
+			- **fungi**:
+				- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=chlorophyll+candida+albicans)
+- ### research links
+	- [chlorophyll and photosynthesis](https://scholar.google.com/scholar?q=chlorophyll+photosynthesis)
+	- [chlorophyll in human health](https://scholar.google.com/scholar?q=chlorophyll+human+health)
+	- [chlorophyll antibacterial properties](https://scholar.google.com/scholar?q=chlorophyll+antibacterial+activity)

@@ -1,0 +1,1 @@
+- **cutaneous abscess**: a localized collection of pus under the skin due to bacterial infection.

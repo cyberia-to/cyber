@@ -1,0 +1,22 @@
+- discover the transformative exercise of yielding—a holistic practice that combines physical activity with mindfulness. like yoga, yielding engages your entire body through natural movements such as bending, lifting, and stretching. this practice builds strength and flexibility while connecting you deeply with nature. immerse yourself in the rhythm of the earth as you gather fresh produce, nourishing both body and soul. yielding reduces stress, enhances mental clarity, and provides a profound sense of purpose. it's a sustainable way to stay fit and contribute to your own well-being. no gym memberships or special equipment needed—just you and the great outdoors. embrace yielding as your new wellness routine and experience the myriad benefits it brings to your life.
+- equipment:
+	- [[pruning shears]]
+	- [[shovel]]
+	- [[bucket or basket]]
+	- [[gloves]]
+	- [[telescopic fruit picker]]
+- **squats and bends to pick crops from the ground**:
+	- **muscles involved**: [[quadriceps]], [[hamstrings]], [[glutes]], and [[lower back]].
+	- **description**: squatting engages the leg muscles (quads, hamstrings, glutes) as they provide strength and stability, while bending activates the lower back muscles ([[erector spinae]]) to support the spine and prevent strain.
+- **lifting and carrying to transport heavy baskets or tools**:
+	- **muscles involved**: [[biceps]], [[triceps]], [[shoulders]], [[upper back]], [[core]], [[quadriceps]], [[hamstrings]], [[glutes]], and [[calves]].
+	- **description**: lifting requires arm strength (biceps and triceps), as well as upper back (trapezius, rhomboids) and shoulder muscles (deltoids). the core muscles (abdominals, obliques) are engaged to maintain balance and stability, while leg muscles help with the lift and support during carrying.
+- **reaching and stretching to harvest crops from higher locations**:
+	- **muscles involved**: [[shoulders]], [[upper back]], [[biceps]], [[triceps]], [[forearm flexors]], [[deltoids]] and [[core]].
+	- **description**: reaching upwards activates the shoulder muscles (deltoids), upper back muscles (trapezius, [[rhomboids]]), and arm muscles (biceps, triceps). the core muscles help maintain stability during the stretch.
+- **twisting and turning to reach difficult angles or to pick in awkward positions**:
+	- **muscles involved**: core ([[abdominals]], [[obliques]]), [[erector spinae]], [[quadratus lumborum]], [[multifidus]], [[latissimus dorsi]], [[quadriceps]], [[quadriceps]], [[glutes]], [[calves]] and [[adductors]].
+	- **description**: twisting movements engage the core muscles, especially the obliques and lower abdominals, to provide rotation and stability. the lower back and leg muscles help to stabilize the body during these twisting motions.
+- **gripping and holding for controlling tools, baskets, or heavy crops**:
+	- **muscles involved**: [[digitorum superficialis]], [[digitorum profundus]], [[pollicis longus]], [[extensor digitorum]], [[lumbricals]], [[dorsal interossei]], [[palmar interossei]],  [[thenar muscles]], [[hypothenar muscles]], [[forearm flexors]], [[biceps]], and [[deltoids]].
+	- **description**: grip strength primarily uses the muscles in the hands and forearms (forearm flexors), while holding heavier items requires additional support from the biceps and shoulder muscles (deltoids) for stability.

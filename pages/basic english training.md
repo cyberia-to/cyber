@@ -1,0 +1,57 @@
+#### goal
+	- develop fundamental english vocabulary (200 words) through structured learning and practical application.
+- #### numbers and metrics
+	- digits
+		- 1-10
+		- tens, hundreds, thousands
+		- millions, billions
+	- measurements
+		- weight (kg)
+		- length (cm, m, km)
+		- area (sq.m)
+		- volume
+		- heavy/light, far/near
+- #### time
+	- 24-hour format
+	- utc & time zones
+	- spatial time expressions
+- #### basic grammar
+	- pronouns
+		- i, you, he, she
+		- my, your
+	- parts of speech
+		- basic verbs (walk, sleep)
+		- basic adjectives
+		- basic nouns
+- #### colors
+	- rainbow
+	- black/white
+	- shades
+- #### noun categories
+	- human body
+	- environment (natural objects, road, forest)
+	- transportation (basic types)
+	- tools (computers, engineering, gardening, plumbing)
+- #### food
+	- roots & tubers: taro, cassava, sweet potato
+	- bamboo: young bamboo shoots
+	- tropical fruits: avocado, passion fruit (markisa), snake fruit (salak), banana, coconut
+	- ferns & greens: edible ferns, moringa, cassava leaves
+	- permaculture plants: papaya, soursop, cacao, mangosteen, durian
+	- grains & spices: oatmeal with turmeric, buckwheat
+	- proteins: eggs, chicken, duck, tofu, tempeh
+	- drinks: cold brew, coconut water, jamu (turmeric herbal drink)
+- #### abstract concepts
+	- meditation
+	- brain function
+	- thinking & reasoning
+- #### simple sentences
+	- subject + verb + object
+- #### learning materials
+	- notebook
+	- pictures
+	- printed sheets
+- #### quantity concepts
+	- many/few
+	- measuring amounts
+	- basic math operations

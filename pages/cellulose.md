@@ -1,0 +1,22 @@
+- **alias**: cellulose
+- ![Cellulose.pdf](../assets/Cellulose_1719303309556_0.pdf)
+- [[cellulose]] is a complex [[carbohydrate]] and a [[polysaccharide]] consisting of glucose units linked by [[β-1,4-glycosidic]] bonds. it is the primary structural component of plant [[cell walls]] and the most abundant [[organic polymer]] on earth.
+- ### chemical properties
+	- **molecular weight**: varies, typically in the range of 162.14 g/mol per glucose unit (C₆H₁₀O₅)ₙ, where "n" can reach up to several thousand.
+	- **density**: 1.5 g/cm³
+	- **melting point**: decomposes before melting (around 260–270°C)
+	- **solubility**: insoluble in water and most organic solvents; soluble in certain ionic liquids and strong alkali solutions.
+	- **chemical formula**: (C₆H₁₀O₅)ₙ
+- ### usefulness in medicine
+	- ** [[dietary fiber]] **: cellulose acts as an insoluble dietary fiber, promoting [[digestive health]] by improving bowel regularity and preventing constipation.
+	- **[[blood sugar regulation]]**: its role as a fiber slows digestion and helps maintain stable [[blood sugar levels]].
+	- [[cholesterol management]]: cellulose binds to bile acids, helping reduce [[cholesterol]] levels.
+	- **pharmaceutical use**: cellulose derivatives, such as [[microcrystalline cellulose]] and [[hydroxypropyl cellulose]], are used as excipients in drug formulations for [[tablet binding]] and coating.
+	- **[[skin care]]**: cellulose derivatives are used in [[cosmetic products]] as [[thickeners]] and [[stabilizers]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- cellulose itself does not have direct antimicrobial activity but can be functionalized or chemically modified to create antimicrobial materials. examples:
+	- **nanocellulose**: used in [[wound dressings]] and [[antimicrobial coatings]] for medical applications.
+	- **cellulose derivatives**: can be modified with antimicrobial agents like [[silver nanoparticles]].
+- ### research links
+	- [cellulose and dietary fiber benefits](https://scholar.google.com/scholar?q=cellulose+dietary+fiber+benefits)
+	- [nanocellulose in medical applications](https://scholar.google.com/scholar?q=nanocellulose+medical+applications)

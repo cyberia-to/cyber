@@ -1,0 +1,13 @@
+- mission: create the most powerful seed and seedling source in indonesia highlands
+- schedule
+	- 00:00 - morning harvest
+	- after or not later than 01:00  - special orders, if not => follow up
+	- [[propagate plants]] : [[seed collection]], [[cuttings]], [[air layering]]
+	- 02:00 - construction of new beds
+	- 05:00 - lunch harvest
+	- after or not later than 06:00 - soil and compost production
+	- inventory by 3 species and by 1 sector
+	- 09:00 - evening harvest
+	-
+	-
+-

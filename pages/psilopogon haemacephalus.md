@@ -1,0 +1,44 @@
+tags:: species, birds
+alias:: coppersmith barbet
+
+- voice:: https://ebird.org/species/copbar1
+- ![image](https://ipfs.io/ipfs/QmQetmQ5JkVa2d7AMgdjbTJC7XLnXUadP7znpVjEhDFUQg)
+- ![image](https://ipfs.io/ipfs/Qmbb9zyRYjVz9Evs5hVF7TeptjGmL2PVcCZAsk91UdejdT)
+- ![image](https://ipfs.io/ipfs/QmUgESVRGh1t2HgJGeSQ2jejT1mTS4bGKdn845TxzGhLXu)
+- general description
+	- appearance
+		- the coppersmith barbet is a small to medium-sized bird with vibrant and colorful plumage.
+		- it has a distinctive red forehead and throat, which are the most striking features.
+		- the face and underparts are yellow, with green streaks on the breast and flanks.
+		- the upperparts are green, and the bird has a thick, black beak and red eye-rings.
+	- size
+		- measures about 17-20 cm in length.
+		- typically weighs around 30-44 grams.
+	- behavior
+		- known for its repetitive and metallic "tuk-tuk-tuk" call, resembling the sound of a coppersmith striking metal, hence its name.
+		- often seen solitary or in pairs, foraging in trees for fruits and insects.
+		- uses its strong beak to excavate nest holes in tree trunks and branches.
+- habitat
+	- range
+		- widely distributed across south and southeast asia, including india, sri lanka, bangladesh, myanmar, thailand, laos, cambodia, vietnam, malaysia, indonesia, and the philippines.
+	- environment
+		- inhabits a variety of environments including tropical and subtropical forests, woodlands, gardens, and urban areas.
+		- often found in areas with abundant fruiting trees.
+- diet
+	- primarily frugivorous, feeding on a variety of fruits and berries.
+	- also consumes insects and other small invertebrates, especially during the breeding season.
+- breeding
+	- nesting
+		- excavates nest cavities in dead or decaying trees, often choosing a site with soft wood.
+		- the nest is typically a simple hole without additional lining.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the warm months when food is abundant.
+		- female lays 2-4 eggs, which are incubated for about 13-15 days.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the coppersmith barbet's distinctive call is a common sound in its habitat and is often used to locate the bird.
+	- its role in seed dispersal is crucial for maintaining the health and diversity of its forest ecosystem, as it spreads the seeds of the fruits it eats.
+	- the coppersmith barbet is highly adaptable and thrives in both natural and urban environments, making it a familiar sight in many areas.

@@ -1,0 +1,10 @@
+- what is [[startup society]]?
+-
+- list of recognized startup societies
+	- [[cyber valley]]
+	- [[add your startup society]]
+-
+- don't confuse startup societies with [[network states]]
+- [[startup society]] are about physical land, [[network states]] about virtual one
+-
+- [[start societies and network states]]

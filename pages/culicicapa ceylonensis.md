@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: grey-headed canary-flycatcher
+
+- voice:: https://ebird.org/species/gyhcaf1
+- ![image](https://ipfs.io/ipfs/Qmbpse82kJ1vDXzQWPgra5vpS6aGiugvZZrgTVohVPaQwf)
+- ![image](https://ipfs.io/ipfs/QmTQr5E1inAXMPfoSdT4dDaje9kwd5ujadKa5mDqZddBwH)
+- general description
+	- appearance
+		- the grey-headed canary-flycatcher is a small bird with a distinctive appearance.
+		- it has a grey head, contrasting sharply with its bright yellow underparts and olive-green upperparts.
+		- the tail is relatively long and dark, often flicked upwards in a characteristic manner.
+		- the eyes are dark, and the bill is fine and slightly hooked at the tip, adapted for catching insects.
+	- size
+		- measures about 12-14 cm in length.
+		- typically weighs around 8-10 grams.
+	- behavior
+		- known for its active and restless behavior, often seen flitting through the canopy and mid-levels of forests.
+		- it frequently flicks its tail and wings, especially while perched, giving it a distinctive look.
+		- has a high-pitched, melodious song that consists of a series of whistles and trills, often heard in its habitat.
+- habitat
+	- range
+		- found across south asia and southeast asia, including india, sri lanka, bangladesh, myanmar, thailand, malaysia, indonesia, and parts of southern china.
+	- environment
+		- inhabits a variety of forested environments, including evergreen forests, deciduous forests, and forest edges.
+		- often found in hilly or montane regions, typically at elevations ranging from lowland forests up to 2,500 meters.
+	- diet
+		- primarily insectivorous, feeding on a wide range of insects, including flies, beetles, and moths.
+		- catches prey in flight with agile aerial maneuvers or by gleaning from leaves and branches.
+- breeding
+	- nesting
+		- builds a cup-shaped nest made of moss, grass, and other plant fibers, usually placed on a tree branch, in a crevice, or among roots.
+		- nests are often well-concealed and sometimes attached to the side of a mossy trunk or rock face.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the warmer months when insects are plentiful.
+		- female lays 2-4 eggs, which are incubated for about 12-14 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 14-18 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the grey-headed canary-flycatcher is named for its flycatcher-like hunting style and canary-like yellow plumage.
+	- it is often seen in mixed-species flocks, where it can be quite vocal and active.
+	- its habit of flicking its tail and wings makes it easy to identify, even when it is moving quickly through dense foliage.

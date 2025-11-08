@@ -1,0 +1,9 @@
+- important knowledges
+	- good english lang
+	- plants (uses, propagations etc)
+	- local animals
+	- bugs
+	- paths
+	- birds
+	- wise
+	- strong

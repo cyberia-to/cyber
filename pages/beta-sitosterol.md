@@ -1,0 +1,30 @@
+tags:: phytosterol
+
+-
+- beta-sitosterol is a naturally occurring [[phytosterol]] found in many plants, including nuts, seeds, fruits, and vegetables. it has a chemical structure similar to [[cholesterol]] and is known for its ability to reduce [[cholesterol absorption]] in the human gut. beta-sitosterol is used for supporting [[cardiovascular health]], managing symptoms of [[benign prostatic hyperplasia (bph)]], and enhancing [[immune function]].
+	- ### chemical properties
+		- **molecular weight**: 414.7 g/mol
+		- **structure**: steroid nucleus with a side chain; structurally similar to cholesterol
+		- **melting point**: ~137–139°C
+		- **solubility**: insoluble in water; soluble in ethanol, chloroform, and oils
+		- **chemical formula**: C₂₉H₅₀O
+	- ### usefulness in medicine
+		- beta-sitosterol helps lower [[ldl cholesterol]] levels by competing with dietary cholesterol for absorption.
+		- it is used in the treatment of [[bph]] to improve urinary symptoms in men.
+		- it has [[anti-inflammatory]] effects that may benefit people with [[arthritis]] and [[autoimmune conditions]].
+		- beta-sitosterol is also investigated for potential [[anticancer]] effects, particularly in [[prostate]] and [[breast cancer]] models.
+		- it may support [[immune balance]] and [[oxidative stress reduction]].
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- beta-sitosterol exhibits moderate antimicrobial effects against certain [[bacteria]] and [[fungi]].
+		- it can disrupt microbial cell membranes and reduce inflammation caused by infection.
+		- often works synergistically with other plant compounds in extracts.
+		- research highlights:
+			- **bacteria**:
+				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=beta-sitosterol+escherichia+coli)
+				- **[[salmonella typhi]]** [research link](https://scholar.google.com/scholar?q=beta-sitosterol+salmonella+typhi)
+			- **fungi**:
+				- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=beta-sitosterol+candida+albicans)
+- ### research links
+	- [beta-sitosterol and cholesterol](https://scholar.google.com/scholar?q=beta-sitosterol+cholesterol+absorption)
+	- [beta-sitosterol and bph](https://scholar.google.com/scholar?q=beta-sitosterol+bph)
+	- [beta-sitosterol antimicrobial activity](https://scholar.google.com/scholar?q=beta-sitosterol+antimicrobial)

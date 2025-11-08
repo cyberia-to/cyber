@@ -1,0 +1,8 @@
+- [[sector]] [[shapes]]
+	- [[bed]]
+	- [[wall]]
+	- [[path]]
+- [[block]]
+- [[district]]
+- [[region]]
+-

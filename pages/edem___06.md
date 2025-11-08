@@ -1,0 +1,38 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/05]]
+	- [[edem/07]]
+- [[guilds]]
+	- [[citrus japonica]]
+	- [[inga edulis]]
+	- [[persea americana]] aligator
+	- [[ficus carica]] jordan
+	- [[psidium guajava]]
+	- [[trema tomentosa]]
+- [[beds]]
+	- [[heliconia psittacorum]]: 12
+	- [[irresine diffusa herbstii]]: 3
+	- [[vitis vinifera]]
+	- [[musa acuminata]]: 2
+	- [[plantago]]
+	- [[centella asiatica]]
+	- [[lantana camara]]
+	- [[fragaria ananassa]]
+	- [[thymus vulgaris]]
+	- [[origanum vulgare]]
+	- [[acmella repens]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[trema orientalis]]
+	- [[inga edilus]]
+	- [[macrothelypteris torresiana]]
+	- [[debregeasia longifolia]]
+- dead:
+	- [[aloe vera]]
+	- [[melaleuca viminalis]]

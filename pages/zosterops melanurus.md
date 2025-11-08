@@ -1,0 +1,39 @@
+tags:: species, birds
+alias:: sangkar white-eye, cape white-eye
+
+- voice:: https://ebird.org/species/sanwhe2
+- ![image](https://ipfs.io/ipfs/Qmeg2qcwjAd747j4X7Ay9wGPEdBUk4sjZSg7kYhGMpY6FL)
+- ![image](https://ipfs.io/ipfs/QmaqQdvmBcfJt51WT122PUUbvTcr6QKUwPj2RZbfwTxSFL)
+- general description
+	- appearance
+		- the cape white-eye is a small, olive-green bird with a distinctive white eye-ring, giving it its name.
+		- the underparts are lighter, often yellowish or grayish, depending on the subspecies.
+		- the beak and legs are generally dark, and the eyes are a striking white surrounded by black.
+	- size: typically measures about 11-13 cm in length.
+	- behavior
+		- known for its active and social behavior, often seen in flocks.
+		- it has a high-pitched, melodious song used for communication and establishing territory.
+		- frequently flits through foliage and branches in search of food, often hovering to pick insects off leaves.
+- habitat
+	- range: found primarily in southern africa, including south africa, lesotho, and swaziland.
+	- environment:
+		- prefers a variety of habitats including forests, woodlands, gardens, and urban areas.
+		- often found in areas with dense vegetation and ample food sources.
+- diet
+	- primarily insectivorous, feeding on insects and small invertebrates.
+	- also consumes fruits, nectar, and sometimes small seeds.
+- breeding
+	- nesting
+		- builds a small, cup-shaped nest made of plant fibers, leaves, and twigs.
+		- nests are usually well-concealed in dense foliage, often in trees or shrubs.
+	- reproduction
+		- breeding season varies across its range but generally coincides with the availability of food.
+		- female lays 2-4 eggs, which are incubated for about 11-13 days.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the cape white-eye is named for its distinctive white eye-ring, which is a key identifying feature.
+	- it plays an important role in controlling insect populations and pollination due to its diet and foraging behavior.
+	- the species is known for its adaptability, thriving in both natural and urban environments.

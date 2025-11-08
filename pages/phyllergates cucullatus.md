@@ -1,0 +1,44 @@
+tags:: species, birds
+alias:: mountain tailorbird
+
+- voice:: https://ebird.org/species/moutai2
+- ![image](https://ipfs.io/ipfs/QmWewt1Rupe1ALt86BRGJbWjqmiVqFTm8BmcfoQ8qEnLr2)
+- ![image](https://ipfs.io/ipfs/QmWb7unvYXH57jJibriDKN5yWtLu6efGoi4rHrBVwXBeqX)
+- ![image](https://ipfs.io/ipfs/QmPdEjP6EdtyGSeLDhrmGxY1MZvGgMcfcSUxJSREZTdo25)
+- general description
+	- appearance
+		- the mountain tailorbird is a small, active bird with a distinctive appearance.
+		- it has olive-green upperparts and pale underparts, typically white or light gray.
+		- the head has a notable rufous or chestnut cap, which is a key identifying feature.
+		- it has a fine, pointed bill, and its eyes are dark.
+	- size
+		- measures about 11-12 cm in length.
+		- typically weighs around 6-10 grams.
+	- behavior
+		- known for its energetic and restless behavior, often seen hopping through dense foliage and low vegetation in search of food.
+		- it emits a series of high-pitched, rapid calls and trills, often used for communication and to establish territory.
+		- like other tailorbirds, it is known for its unique nesting behavior, where it "sews" leaves together to create a hidden nest.
+- habitat
+	- range
+		- found in southeast asia, including parts of indonesia, the philippines, malaysia, and thailand.
+	- environment
+		- inhabits montane forests and forest edges, often at higher elevations.
+		- prefers areas with dense undergrowth and thick foliage, where it can forage and nest.
+	- diet
+		- primarily insectivorous, feeding on insects, spiders, and other small invertebrates.
+		- forages actively among leaves and branches, often in the lower to mid-levels of the forest.
+- breeding
+	- nesting
+		- builds a unique, purse-shaped nest by sewing together large leaves with plant fibers or spider silk.
+		- the nest is usually well-concealed in dense foliage, often in a bush or low tree.
+	- reproduction
+		- breeding season varies across its range but generally coincides with the wet season when food is abundant.
+		- female lays 2-4 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 12-15 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its stable population and adaptability to different habitats.
+- interesting facts
+	- the mountain tailorbird is named for its remarkable nesting behavior, which involves sewing leaves together to create a secure and concealed nest.
+	- its high-pitched calls and constant movement through the undergrowth make it a challenging bird to spot, despite its small size.
+	- the species is well-adapted to high-altitude environments and can thrive in a range of montane habitats, from dense forests to scrubby hillsides.

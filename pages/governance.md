@@ -1,0 +1,10 @@
+- key methods
+	- quadratic measurements
+	- yuma consensus => Shapley value
+	- dutarchy => d/futarchy
+	- collective focus
+- secondary
+	- time locks
+	- dynamic thresholds
+	- decay
+	- ...

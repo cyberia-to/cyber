@@ -1,0 +1,39 @@
+- plants are amazing in serving a purpose while they live
+- consider roles as bricks of the [[biome]]
+- the more roles you add, the more powerful a biome become
+-
+- features by [[stratification]]
+	- [[pioneer]] bootstrap [[biome]] from hard conditions
+	- [[succeder]] thrive after [[pioneer]] establishment
+	- [[climaxer]] settle in well established biome
+- [[worker]] do the most important work for [[biome]] fertility
+	- [[nitrogener]] supply [[guild]] the most essential [[mineral]]
+	- [[accumulator]] have powerful [[roots]] and mine [[minerals]]
+	- [[attractor]] facilitate [[guild]] fertility by attracting [[pollinators]]
+	- [[phreatophyte]] collect excess water and release it during droughts
+	- [[phytominer]] clean up soil from [[metals]]
+- [[builder]] help build [[biome]] infrastructure
+	- [[giants]] support [[shaders]] and balance [[biome]]
+	- [[shader]] create [[guild]] shelter, provide [[canopy]] shade and heat at night
+	- [[fencer]] protect from [[wind]] and [[pollution]]
+	- [[trellis]] support [[climbers]] allowing them to ascend
+	- [[climber]] able to climb and connect
+	- [[armature]] can slow down soil movement
+	- [[cover]] plants that spread out across the ground
+- [[guard]] works as protectors of the [[biome]]
+	- [[repeller]]: protect from pests
+	- [[antifungal]]: protect from excess fungal activity
+	- [[suppressor]]: don't allow other plants to settle
+	- [[firefighter]]: resistant to fires
+	- [[distractor]]: diverts malicious activity to itself
+- [[agressor]]: non symbiotic invasive species for biomass production
+- [[longevity]]
+	- annual: short lived so can walk and appear here and there
+	- short-lived: 2-10 years
+	- medium-lived: 10-100 years
+	- long-lived: 100+ years
+- [[photosynthesis]]
+- other features
+	- [[rhizome]]
+	- [[stolon]]
+	- [[tuber]]

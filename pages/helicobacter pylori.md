@@ -1,0 +1,11 @@
+- helicobacter pylori (h. pylori) is a gram-negative, spiral-shaped bacterium that colonizes the [[stomach]] lining of humans. it has adapted to survive acidic conditions by producing [[urease]], an enzyme that neutralizes stomach acid, enabling persistent infection and chronic inflammation.
+- ## diseases caused by helicobacter pylori:
+	- [[gastritis]]: chronic inflammation of the stomach lining, often asymptomatic initially.
+	- [[peptic ulcer disease]]: ulcers in the stomach or duodenum, causing abdominal pain, nausea, and bleeding.
+	- [[gastric cancer]]: long-term infection significantly increases the risk of stomach cancer.
+	- [[mucosa-associated lymphoid tissue (malt) lymphoma]]: a form of stomach lymphoma associated with chronic inflammation.
+- ## habitats and transmission:
+	- human stomach: primary habitat, where the bacterium persists in gastric mucosa.
+	- environmental presence: less commonly detected in environmental sources but may contaminate water and food occasionally.
+	- transmission: primarily occurs via oral-oral or fecal-oral routes, commonly spread through contaminated food or water, or direct human contact.
+- helicobacter pylori infections typically require antibiotic therapy combined with proton pump inhibitors to eradicate the bacteria effectively. preventing infection involves good hygiene practices, clean water access, and avoiding contaminated food or utensils. chronic infections require monitoring due to their strong link with gastric ulcers and cancer.

@@ -1,0 +1,25 @@
+tags:: genus
+- TODO identify which cinnamomum species are growing in [[sinwood]], [[edem]] and [[batuka]]
+- [[bali]] is home to several cinnamomum species, wild and cultivated
+	- [[cinnamomum verum]]
+	- [[cinnamomum burmannii]]
+	- [[cinnamomum iners]]
+	- [[cinnamomum camphora]]
+- how to distinguish?
+	- scratch the bark lightly
+		- does it smell sweet and mild? → [[cinnamomum verum]]
+		- strong, spicy, woody? → [[cinnamomum burmannii]]
+		- weak or no scent? → [[cinnamomum iners]]
+		- rough, gray-brown, fragrant medicianl smell, resinous when cut [[cinnamomum camphora]]
+	- bark characteristics
+		- thin, papery, curls into quills easily, light brown → likely [[cinnamomum verum]]
+		- thick, hard bark, reddish-brown, difficult to break or roll → likely [[cinnamomum burmannii]]
+		- grayish, rough, no significant aroma when scratched → [[cinnamomum iners]]
+		- strong, medicinal, camphor → [[cinnamomum camphora]]
+	- rub the leaf and smell it
+		- weak aroma or bitter green scent usually points to [[cinnamomum iners]]
+		- strong camphor scent points to [[cinnamomum camphora]]
+	- fruit and flower examination during fruiting
+		- [[cinnamomum verum]] : small bluish-black drupe
+		- [[cinnamomum burmannii]] : purple-black drupe
+		- [[cinnamomum iners]] : ellipsoid drupe, turns black, not aromatic

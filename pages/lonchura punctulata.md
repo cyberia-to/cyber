@@ -1,0 +1,45 @@
+tags:: species, birds
+alias:: scaly-breasted munia
+
+- voice:: https://ebird.org/species/nutman
+- ![image](https://ipfs.io/ipfs/QmXPDnz1m6eo5hXrmi5DYrKTwx5EaLnu9Ro6n6p3Z2drkF)
+- ![image](https://ipfs.io/ipfs/QmdzBtSVRNUF7vDV6JKo2jHLTMvKLdtcqXKrcdgp5JfsUx)
+- ![image](https://ipfs.io/ipfs/QmR1nSrtX1usSmFZUDrWhiQnrL4tisySaMa7qNRfp9gwci)
+- general description
+	- appearance
+		- the scaly-breasted munia is a small, sparrow-sized bird with a distinctive scaly pattern on its breast and belly.
+		- it has a brown upper body with a lighter brown head and a thick, dark conical beak, which is well-suited for seed-eating.
+		- the underparts are white or buff with black scalloping, giving the appearance of scales, hence the name.
+		- both sexes look similar, but juveniles are more uniformly brown without the distinctive scaling.
+	- size
+		- measures about 11-12 cm in length.
+		- typically weighs around 12-16 grams.
+	- behavior
+		- known for its social and gregarious nature, often seen in flocks, especially outside the breeding season.
+		- emits a series of soft, chirping calls.
+		- frequently seen foraging on the ground for seeds and small grains, often in grasslands, rice fields, and open areas.
+- habitat
+	- range
+		- widely distributed across south asia and southeast asia, including india, sri lanka, bangladesh, myanmar, thailand, malaysia, indonesia, and the philippines.
+		- has been introduced to many other regions, including parts of the united states and the pacific islands.
+	- environment
+		- inhabits a variety of environments including grasslands, open woodlands, gardens, agricultural fields, and wetlands.
+		- often found near human habitation and in areas with abundant seed resources.
+	- diet
+		- primarily granivorous, feeding on a variety of seeds and grains.
+		- also consumes insects and small invertebrates, especially during the breeding season.
+- breeding
+	- nesting
+		- builds a large, dome-shaped nest made of grass, leaves, and plant fibers, usually placed in a bush, tree, or sometimes in tall grass.
+		- nests are often built in colonies, with multiple pairs nesting close to each other.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the wet season when food is abundant.
+		- female lays 4-6 eggs, which are incubated for about 10-14 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 21-23 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the scaly-breasted munia is also known as the nutmeg mannikin or spice finch.
+	- it is a popular bird in the pet trade due to its attractive plumage and pleasant song.
+	- this species is highly adaptable and can thrive in a variety of habitats, making it a common sight in both rural and urban areas.

@@ -1,0 +1,24 @@
+- **alias**: magnesium
+- ![Magnesium.pdf](../assets/Magnesium_1719303309556_0.pdf)
+- [[magnesium]] is an essential [[mineral]] involved in over 300 [[enzymatic reactions]] in the body. it is crucial for [[energy production]], [[muscle]] and [[nerve]] function, [[bone health]], and [[maintaining a steady heartbeat]]. magnesium also plays a key role in [[cellular repair]] and [[reducing inflammation]].
+- ### chemical properties
+	- **molecular weight**: 24.305 g/mol
+	- **density**: 1.738 g/cm³
+	- **melting point**: 650°C (1202°F)
+	- **boiling point**: 1090°C (1994°F)
+	- **solubility**: reacts with water to form magnesium hydroxide (Mg(OH)₂); soluble in acids
+	- **chemical formula**: Mg
+- ### usefulness in medicine
+	- magnesium is widely used to treat and prevent [[magnesium deficiency]], which can lead to [[muscle cramps]], [[fatigue]], and [[irregular heart rhythms]].
+	- it is effective in managing [[hypertension]], [[migraines]], and [[premenstrual syndrome]] (PMS).
+	- magnesium supports [[bone health]] by enhancing [[calcium absorption]] and improving [[bone density]].
+	- it is used to promote [[skin health]] by reducing inflammation, hydrating the skin, and supporting [[cellular repair]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- magnesium supports the immune system and skin's natural defenses, indirectly aiding in protection against microbial infections.
+	- research highlights:
+	- **bacteria**:
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+magnesium)
+		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+magnesium)
+- ### research links
+	- [magnesium and bone health](https://scholar.google.com/scholar?q=magnesium+bone+health)
+	- [magnesium and immune function](https://scholar.google.com/scholar?q=magnesium+immune+function)

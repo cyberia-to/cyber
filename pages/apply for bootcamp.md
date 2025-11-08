@@ -1,0 +1,109 @@
+icon:: 🥕
+
+- TODO not actual anymore, rewrite the process
+- ## steps
+	- ## go to [our github forum](https://github.com/orgs/cyber-valley/discussions/1)
+	- ## submit post with essay
+	- ## star [cyber-valley/cvland](https://github.com/cyber-valley/cvland) repo
+	- ## engage with other people on forum
+- ## wait
+-
+- ## details on current allocation
+	- 1 round: 01 November - 16 November
+		- [[vitalik]]: not available
+		- [[gavin]]: available
+		- [[satoshi]]: available
+		- [[nick]]: available
+		- [[andrej]]: not available
+- ## essay instructions
+	- ---
+	  name: Application for a free bootcamp
+	  about: Collection of bootcamp applications
+	  title: Name the issue as a character, or simply by your nickname
+	  labels: bootcamp application
+	  assignees: DiotimaEva
+	  
+	  ---
+	- ## personal info
+		- name:
+		- twitter:
+		- telegram:
+		- site:
+		- .eth name
+		- gender: physical, not emotional
+		- age: can be approximated
+		- languages you can use:
+	- ## write an essay
+		- ### Free form
+			- you must not needed to touch all of mentioned topics
+			- however the topics we mention are specially important for us
+			- feel free to add yours
+			- if you feel that answering question is just easier, do that.
+		- ### Your story
+			- Pitch your personal and/or professional story!
+			- We want to know everything about you — your passions, skills, and strengths
+		- ### What is you purpose with BOOTcamp?
+			- Describe why you want to participate
+			- homesteading at citadel genesis, looking for community, curiosity, etc.
+		- ### Estimate your physical power
+			- What do you do with your hands?
+			- Pushing buttons and mentoring don’t count
+			- If you currently don’t engage in physical tasks, which is unfortunately common nowadays
+			- Estimate your willingness and capacity to contribute to the physical world
+		- ### How do you estimate your health
+			- Lets as know how you estimate your health
+			- and what body limits you have
+		- ### What is your experience with ai?
+			- You can describe tools you use here or
+			- just throw a line on your attitude to phenomena
+		- ### Shill your tokens
+			- Describe your experience with blockchain technology
+			- shill tokens you love
+			- or just drop a line on your attitude to phenomena
+		- ### Do you use knowledge graphs?
+			- If you are using some knowledge graph tool for taking notes and structured information
+			- such as logseq, obsidian, foam or whatever tell us that
+			- If you have experience with collective knowledge graph tech such as [cyber](https://cyber.page) it counts twice
+		- ### What is the most loved software?
+			- We are geeks and love to know about some software smart people truly love
+		- ### What experience you have with growing food?
+			- Let us know if you have had practical experience in growing even if it was your childhood.
+			- If you researched or practices sustainable growing methods
+			- such as permaculture or syntropic farming shout out this to the world!
+		- ### Have you heard about biochar?
+			- If you have some special feelings regarding this rediscovery
+			- share your ideas on the technology
+		- ### What is your educational background
+			- Can be related to formal institutions as well as online and offline experiences
+			- If you have PhD please provide links to papers you worked on
+		- ### Do you write a code?
+			- If you have experience in programming list languages and frameworks of choice
+			- Don't hesitate to send links to the software you built
+		- ### How can you be useful in building the [citadel genesis](https://cv.land/#/page/genesis)
+			- and network state ecosystem?
+			- Brainstorm the potential roles you wish to take on
+			- Everything counts!
+	- ## Household details
+		- ### What rounds are preferable for you?
+			- You can input your requirements depending on the plans you have.
+			- e.g. can choose specific round, or say that its ok participate in any.
+			- there is also an option to stay in camp as long as [[citadel genesis]] residents feel you are ultimately useful
+			- with such intention we earlier you join the more likely you win the competition
+		- ### Are you alone or with someone?
+			- If you have partners, kids or pets who must be with you during bootcamp let us know that
+			- however in this case let them apply too
+			- In case of dogs and pets generate application form for them using some ai tools
+		- ### Wha is your privacy preference
+			- We are going to film [[game of freedom]]
+			- However we have deep belief and respect in privacy
+			- Lets us know if you are not happy to be on camera
+			- Or if revealing the fact of participation is unacceptable for you
+		- ### Are you willing to share living space with 1-2 humans?
+			- Please share your preferences, requirements, and any limitations you may have regarding shared accommodations
+			- In case of premium participation you can decide your company yourself
+		- ### Type of application
+			- What is your preference: paid or free participation?
+			- Free participation is competitive
+			- Premium participation is allocated on a first-come, first-served basis
+	- ## Questions
+		- Feel free to ask us any questions! We will answer them shortly

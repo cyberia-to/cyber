@@ -1,0 +1,71 @@
+tags:: kitchen/menu, duck, mains, stewed, with vegetables, slow-cooked
+<img src="https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeiejpylbgdltxhm5obchime35u4wgzycjd2akh2vjac5ms2ysjeury" style="width:500px; height:auto;" />
+
+- ### 🧾 🦆 stewed duck
+  slow-cooked tender duck pieces simmered with seasonal vegetables and simple spices — rich, hearty, and full of flavor.
+- ### 🍴 meal/type
+	- [[mains]]
+	- [[dinner]]
+	- [[stewed]]
+	- [[duck-based]]
+	- [[slow-cooked]]
+- ## 🍃 ingredients
+	- [[duck]] (whole or parts) – 500–800 g · source: [[local farmers]]
+	- [[carrots]] – 2 · source: [[local farmers]]
+	- [[chayote]] – 1 · source: grown on site / [[local farmers]]
+	- [[taro]] or [[sweet potato]] – 2 roots · source: grown on site
+	- [[garlic]] – 2–3 cloves · source: grown on site / [[local farmers]]
+	- [[dill]] – to taste · source: grown on site
+	- [[spices]] ([[black pepper]], [[cumin]], [[turmeric]]) · source:  grown on site / [[local farmers]]
+	- water or broth – enough to cover
+- ### 🔧 [[equipment needed]]
+	- large pot with lid
+	- knife
+	- spoon
+	- ladle
+- ## 📝 step-by-step instructions
+	- ### 1. prepare the duck
+		- cut duck into medium pieces if needed
+		- rinse and pat dry
+	- ### 2. brown the duck (optional)
+		- in a dry pan or with minimal oil, sear duck pieces skin side down until lightly browned
+	- ### 3. start the stew
+		- place duck into a pot
+		- add roughly chopped carrots, chayote, taro, and garlic
+		- sprinkle with spices
+		- pour in enough water or broth to cover
+	- ### 4. slow cook
+		- bring to a gentle boil
+		- reduce heat to low
+		- cover and simmer under closed lid for 1.5–2 hours until duck is tender and vegetables are soft
+	- ### 5. finish
+		- stir in fresh herbs before serving
+	- ### 6. serve
+		- serve hot with broth or as a hearty dish with flatbread or steamed veggies
+- ### ⏳ timing
+	- prep time: 15–20 minutes
+	- cook time: 1.5–2 hours
+	- total: ~2–2.5 hours
+- ### 🔥 [[nutrition]] (per 100 g)
+	- calories: ~210–240 kcal
+	- protein: ~18–20 g
+	- fat: ~15–18 g
+	- carbohydrates: ~2–4 g
+- ### 🧪 variations & substitutions
+	- add more root vegetables for a thicker stew
+	- for a lighter version, remove duck skin before cooking
+	- season additionally with chili flakes or smoked paprika if desired
+	- save rendered duck fat and use it as [[animal fat oil]] for pan-cooking, roasting vegetables, or making savory pancakes
+- ### 🧭 food pairing
+	- [[flatbread]]
+	- [[steamed veggies]]
+	- [[avocado sliced]]
+	- [[herbal tea]]
+- ### ♻️ waste use
+	- duck bones: broth or [[animal feed]]
+	- vegetable scraps: [[animal feed]]
+	- duck fat: collect and use as [[animal fat oil]] for cooking and frying
+- ### 💡 tips
+	- duck will naturally release fat — you can skim some off during cooking if preferred
+	- letting the stew rest 10–15 minutes after cooking improves flavor depth
+- > **enjoy your meal!** 🦆🥘🌿

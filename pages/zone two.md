@@ -1,0 +1,21 @@
+tags:: carrot house
+
+- [[batuka]] biome
+	- [[boehmeria nivea]]
+	- [[sicyos edulis]]
+	- [[tabernaemontana pandacaqui]]
+	- [[homolanthus giganteus]]
+	- [[cayaponia racemosa]]
+	- [[cinnamomum iners]]
+	- [[symplocos stellaris]]
+	- [[smilax bracteata]]
+	- [[ardisia sieboldii]]
+	- [[diplazium dilatatum]]
+	- [[syzygium formosanum]]
+	- [[blumea lanceolaria]]
+	- [[rhododendron simsii]]
+- [[kavo]] biome
+	- [[trema]]: 7
+- [[edem]] biome
+	- [[citrus sinensis]]: 3
+	- [[inga edulis]]

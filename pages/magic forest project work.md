@@ -1,0 +1,8 @@
+- pruning [[ageratina riparia]]
+- search and mark glowing areas
+- measure:
+	- glowing area
+	- soil Ph
+	- soil moisture
+	- soil temperature
+- log data in to the [spreadsheet](https://docs.google.com/spreadsheets/d/1NR_UHiz4Ml2v3ijr968jWm50GmxhyeSQGJji3nfm2Zs/edit?usp=sharing)

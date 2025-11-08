@@ -1,0 +1,3 @@
+- rule: requires 34% indonesian ownership
+-
+-

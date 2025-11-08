@@ -1,0 +1,22 @@
+- the [[citadel]] is a thriving ecosystem where humans and nature coexist in harmony
+- spread across 22 hectares, it grows organically as people arrive
+- each contributing their skills and energy to build decentralized structures and systems
+- at its core is a small community-driven web3 data center
+- providing the digital backbone for decentralized governance and communication
+- this data center powered by renewable [[energy]] and [[sensor network]]
+- enables secure, peer-to-peer transactions, supports community decision-making, and ensures transparency in resource management
+- it functions simply as a tool for efficiency, empowering the community without central control
+- modular housing is constructed using local, natural materials, designed to expand as needed
+- every home blends seamlessly with the environment, with [[magic forest]] surrounding them providing nourishment to the residents
+- animals play a key role in maintaining soil fertility and food supply
+- energy systems are decentralized, relying on wind, solar, and biomass, ensuring that every household is self-sustaining
+- water is managed through rainwater harvesting and natural filtration systems, integrated into the land to make the most of every resource
+- there are no rigid borders: homes flow into gardens, gardens into forests
+- knowledge is shared freely, with each newcomer quickly learning to contribute to the community's growth and well-being
+- skills in construction, farming, and digital literacy pass from one person to the next
+- reinforcing the resilience and self-sufficiency of the citadel
+- ## the vision is simple
+- a self-sustaining, decentralized community where organic growth and innovation merge
+- powered by both natural and digital ecosystems
+- the citadel adapts to the evolving needs of its habitats
+- offering a sustainable and resilient future

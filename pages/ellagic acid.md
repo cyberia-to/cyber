@@ -1,0 +1,28 @@
+- **alias**: ellagic acid
+- ![Ellagic_Acid.pdf](../assets/Ellagic_Acid_1719303309556_0.pdf)
+- [[ellagic acid]] is a natural [[polyphenol]] compound found in many fruits and nuts, such as [[pomegranates]], [[strawberries]], [[raspberries]], and [[walnuts]]. it is known for its strong [[antioxidant]], [[anti-inflammatory]], and [[anti-cancer]] properties.
+- ### chemical properties
+	- **molecular weight**: 302.19 g/mol
+	- **density**: not widely reported
+	- **melting point**: 360°C (decomposes)
+	- **solubility**: slightly soluble in water; soluble in alcohol, acetone, and DMSO
+	- **chemical formula**: C₁₄H₆O₈
+- ### usefulness in medicine
+	- ellagic acid acts as a potent [[antioxidant]], neutralizing free radicals and reducing [[oxidative stress]], which helps prevent chronic diseases.
+	- it exhibits strong [[anti-inflammatory]] properties, aiding in the management of conditions like [[arthritis]] and [[inflammatory bowel diseases]].
+	- ellagic acid has been studied for its [[anti-cancer]] potential, as it can inhibit tumor growth and induce apoptosis in cancer cells.
+	- it supports [[liver health]] by protecting against toxin-induced damage.
+	- ellagic acid may improve [[skin health]] by r[[educing UV-induced]] damage and preventing premature aging.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- ellagic acid demonstrates broad-spectrum antimicrobial activity by disrupting microbial membranes and inhibiting growth.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+ellagic+acid)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+ellagic+acid)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+ellagic+acid)
+		- **viruses**:
+			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+ellagic+acid)
+- ### research links
+	- [ellagic acid and anti-cancer properties](https://scholar.google.com/scholar?q=ellagic+acid+anti-cancer)
+	- [ellagic acid and antioxidant activity](https://scholar.google.com/scholar?q=ellagic+acid+antioxidant+activity)

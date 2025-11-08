@@ -1,0 +1,26 @@
+- **alias**: flavonoids
+- ![Flavonoids.pdf](../assets/Flavonoids_1719303309556_0.pdf)
+- [[flavonoids]] are a group of natural compounds found in fruits, vegetables, teas, and other plant-based foods. they are known for their strong antioxidant, anti-inflammatory, and immune-modulating properties, playing a key role in promoting overall health and protecting against chronic diseases.
+- ### chemical properties
+- **molecular structure**: based on a 15-carbon skeleton (C₆-C₃-C₆) with two aromatic rings connected by a three-carbon bridge.
+- **molecular weight**: varies depending on the specific flavonoid (e.g., quercetin: 302.24 g/mol, kaempferol: 286.23 g/mol).
+- **solubility**: most flavonoids are poorly soluble in water; soluble in organic solvents like ethanol and DMSO.
+- ### usefulness in medicine
+- flavonoids act as potent [[antioxidants]], neutralizing free radicals and reducing [[oxidative stress]].
+- they exhibit [[anti-inflammatory]] properties, helping manage conditions like [[arthritis]], [[cardiovascular diseases]], and [[diabetes]].
+- flavonoids support [[skin health]] by protecting against uv damage, reducing inflammation, and promoting collagen synthesis.
+- they are being studied for their [[anticancer]] properties, as they can inhibit tumor cell proliferation and induce apoptosis.
+- flavonoids improve [[brain health]], potentially lowering the risk of [[neurodegenerative diseases]] like Alzheimer's.
+- ### [[antibacterial]] and [[antimicrobial]] activity  
+  flavonoids are known for their broad-spectrum antimicrobial activity, targeting bacteria, fungi, and viruses by disrupting microbial membranes, inhibiting enzyme activity, and modulating immune responses. research highlights:
+- **bacteria**:
+	- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+flavonoids)
+	- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+flavonoids)
+- **fungi**:
+	- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+flavonoids)
+- **viruses**:
+	- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+flavonoids)
+	- **[[herpes simplex virus]]** [research link](https://scholar.google.com/scholar?q=herpes+simplex+virus+flavonoids)
+- ### research links
+- [flavonoids and antioxidant activity](https://scholar.google.com/scholar?q=flavonoids+antioxidant+activity)
+- [flavonoids and antimicrobial activity](https://scholar.google.com/scholar?q=flavonoids+antimicrobial+activity)

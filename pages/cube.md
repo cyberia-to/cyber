@@ -1,0 +1,40 @@
+tags:: tech
+
+- the idea is to create modular, but simple architecture for cubic autonomous building
+- must be able to use for industrial, commercial and housing
+- local specifics: building from [[sengon]] which is not very reliable
+- thre types of walls with ability to configure using 1m2 grid
+	- fixed double glass
+	- opening double glass
+	- [[photobioreactor]] panel
+- [[foundation]]
+	- cold water tank: 4m3
+	- hot water tank: 4m3
+	- [[anaerobic composting]]: 4m3
+	- [[water purification]]
+	- equipment: 3 m3
+		- invertor 5 kw
+		- battery 5 kw
+		- gas generator
+		- heat pump
+		- air dryer & water generator
+		- computer: raspberry or mac mini
+		- computer
+		- gas water heater
+		- electric water heater
+		- electric automatics
+		- gas storage: 1 m3
+- frame
+	- `4*4*4` `meter by outside borders
+	- 1*1 grid
+	- 5 cm teak square beams
+- roof
+	- starlink
+	- solar panels
+- stove
+	- sk-34 bricks
+	- metal pipes
+	- sk-36 fireproof concrete
+	- fireproof glass inside
+	- metal plates outside
+	- cleaning pond with geomembrane

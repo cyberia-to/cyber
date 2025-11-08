@@ -1,0 +1,40 @@
+tags:: market
+alias:: carbohidrate, carbohydrates, carb
+
+- the most important species for [[eat]] carbs
+	- [[cassava]]
+	- [[taro]]
+	- [[batat]]
+	- [[banana]]
+	- [[jackfruit]]
+	- [[breadfruit]]
+	- [[gude]]
+	- [[sugar palm]]
+	- [[yam]]
+	- [[canna]]
+	- [[breadnut]]
+	- [[plantain]]
+	- [[sago palm]]
+- ![Carbohydrates.pdf](../assets/Carbohydrates_1719303309556_0.pdf)
+- [[carbohydrates]], commonly known as carbs, are organic molecules consisting of carbon, hydrogen, and oxygen. they are one of the primary macronutrients and serve as the body's main source of energy.
+- ### chemical properties
+	- **molecular structure**: composed of [[monosaccharides]] (simple sugars), [[disaccharides]], or [[polysaccharides]].
+	- **molecular weight**: varies depending on the specific carbohydrate (e.g., glucose: 180.16 g/mol).
+	- **solubility**: simple carbohydrates are highly soluble in water, while complex carbohydrates like cellulose are less soluble.
+	- **chemical formula**: varies; general formula is (CH₂O)ₙ.
+- ### usefulness in medicine
+	- carbohydrates are the body’s primary source of [[energy]], particularly in the form of [[glucose]], which fuels cellular activities.
+	- they are essential for [[brain function]], as glucose is the brain's preferred energy source.
+	- complex carbohydrates contribute to [[digestive health]] by providing dietary fiber, which [[supports gut microbiota]] and regular [[bowel movements]].
+	- carbohydrates play a role in managing [[blood sugar levels]] and are central to treating conditions like [[hypoglycemia]].
+	- they are critical in [[sports nutrition]] for replenishing glycogen stores in muscles and enhancing athletic performance.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- certain carbohydrate derivatives, such as [[oligosaccharides]] and [[polysaccharides]], exhibit [[antimicrobial]] properties by interfering with microbial adhesion and growth. research highlights:
+	- **bacteria**:
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+carbohydrates)
+		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+carbohydrates)
+	- **fungi**:
+		- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+carbohydrates)
+- ### research links
+- [carbohydrates and energy metabolism](https://scholar.google.com/scholar?q=carbohydrates+energy+metabolism)
+- [carbohydrates and digestive health](https://scholar.google.com/scholar?q=carbohydrates+digestive+health)

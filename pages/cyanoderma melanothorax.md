@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: crescent-chested babbler
+
+- voice:: https://ebird.org/species/crcbab1
+- ![image](https://ipfs.io/ipfs/QmPTbzsPk4UMXeEi6hjeKJNDQKgvYcGH2n1vC3hfuCXU77)
+- ![image](https://ipfs.io/ipfs/QmP1Lou3jwJBLY6eymQnB2LH1h1TmtvdGWBjdHL5hdpcAc)
+- general description
+	- appearance
+		- the javan babbler is a small, stocky bird with a distinctive appearance.
+		- it has olive-brown upperparts and a grayish-brown head.
+		- the underparts are a mix of white and brown with prominent black streaks across the throat and upper chest, giving it a "black-throated" appearance, which is a key identifying feature.
+		- its eyes are reddish-brown, and the bill is short, stout, and dark.
+	- size
+		- measures about 15-16 cm in length.
+		- typically weighs around 20-30 grams.
+	- behavior
+		- known for its social behavior, often seen in small groups or family parties moving through dense undergrowth.
+		- it is an active and noisy bird, frequently calling with a series of harsh, chattering notes.
+		- forages on or near the ground, often turning over leaves and debris in search of insects.
+- habitat
+	- range
+		- endemic to the island of java in indonesia.
+	- environment
+		- inhabits lowland and montane forests, particularly in dense undergrowth and bamboo thickets.
+		- also found in secondary forests, scrublands, and gardens with dense vegetation.
+	- diet
+		- primarily insectivorous, feeding on a variety of insects, spiders, and other small invertebrates.
+		- occasionally consumes small fruits and seeds.
+- breeding
+	- nesting
+		- builds a small, cup-shaped nest made of grass, leaves, and plant fibers, usually placed low in a bush or on the ground in dense cover.
+		- nests are well-concealed among the dense foliage to protect against predators.
+	- reproduction
+		- breeding season varies but generally occurs during the wetter months when food is more plentiful.
+		- female lays 2-4 eggs, which are incubated for about 13-15 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 12-16 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its stable population and adaptability to different habitats.
+- interesting facts
+	- the javan babbler's social nature and habit of foraging in small groups make it a conspicuous bird in its native habitat.
+	- its loud, chattering calls are often heard before the bird is seen, providing a helpful cue for birdwatchers.
+	- despite its limited range, the javan babbler is quite adaptable and can thrive in various habitats, including areas affected by human activities such as gardens and plantations.

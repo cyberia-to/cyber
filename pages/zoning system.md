@@ -1,0 +1,65 @@
+tags:: cyberia, draft
+
+- ## Sustainable land use code
+	- Why a new system is needed? The 20th-century model of land use divided cities into zones: residential, industrial, agricultural, commercial, and recreational. This approach assumed that:
+		- industry is inherently dirty and must be isolated,
+		- food can only be produced in rural fields,
+		- housing must be separated from production and commerce,
+		- nature is a decorative afterthought in designated “green zones.”
+	- The result has been cities that are fragmented, energy-hungry, and ecologically fragile. People must travel long distances between home, work, food, and nature. Soil is sealed under asphalt. Sunlight is wasted on bare rooftops. Food, energy, and water are imported from outside, creating systemic vulnerability.
+	- Future city must follow different principles. Instead of separation, it must be based on integration:
+		- food production is embedded everywhere — in courtyards, roofs, green corridors.
+		- industry is clean, local, and compatible with daily life: crafts, printing, digital, bio-production
+		- every surface serves multiple purposes: housing plus agriculture, energy plus cooling, recreation plus biodiversity, etc.
+	- The city functions as an ecosystem, where sunlight, water, and soil cycles are consciously managed.
+	- The following rules codify this new paradigm. They replace rigid zoning maps with functional and energetic balances that guide development while preserving ecological resilience and local autonomy.
+- ## Light balance
+	- light absorbents, e.g. photovoltaics, heat collectors
+		- min: 1% due to energy security
+		- max: 10% for biome balance
+	- water bodies
+		- min: 1% due to water security
+		- max: 10% for biome balance
+	- transparent surfaces, e.g. greenhouses
+		- min: 2% due to food security
+		- max 10% for biome balance
+	- the rest is photosynthesis surfaces, e.g. vegetation:
+		- [[lawn]] or [[cover]]: max: 5%
+		- [[herb]] or [[shrub]]: min 30%
+		- [[dwarf]] or [[canopy]]: min 40%
+	- rule: 100% of solar energy must be allocated across these receivers
+- ## Construction area
+	- maximum ground footprint of construction: `10%`
+	- multiplier: `×2` if two floors are used (20% effective usage with the same footprint)
+	- purpose: protect soil, enable water infiltration, and preserve living ecosystems
+- ## Construction distribution
+	- private: include residential, or unknown function
+		- min: 3%
+		- max: 5%
+	- public: include commercial, education, health, services
+		- must offer products or services
+		- min:
+		- max:
+	- productive: include greenhouses, animal shelters, crafts, clean industry
+		- must offer jobs
+		- min:
+		- max:
+	- logistic:
+		- heavy roads
+			- min:
+			- max:
+		- light paths
+			- min:
+			- max:
+		- foot trails
+			- min:
+			- max:
+- ## Biodiversity
+	- 20 plant species per hectare
+- ## Incentives
+	- cyberia tax income at the rate of 10% from revenue generated within its area
+	- if the district is designed to become 100% sustaniable in terms of
+		- energy
+		- water
+		- food
+	- that is, the distribt export more energy, water and food when consume it gain the right for 5% tax

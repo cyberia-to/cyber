@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: blue-breasted quail, king quail
+
+- voice:: https://ebird.org/species/blbqua1
+- ![image](https://ipfs.io/ipfs/QmV5jwZAFs5UK1Qt6qB8nFqfuvnKiabW5JVjwoxUbYiCCn)
+- ![image](https://ipfs.io/ipfs/QmQfHCp2xYaCKJRPhxJyba5Z7aCZvc2fooo1yPfmCYqgFh)
+- general description
+	- appearance
+		- the blue-breasted quail is a small, plump bird with a rounded body and short tail.
+		- males are brightly colored with blue-gray upperparts, a reddish-brown breast, and a distinctive white throat and face mask.
+		- females are more subdued, with brown upperparts and a mottled appearance, providing good camouflage.
+		- both sexes have short, rounded wings and a short tail.
+	- size
+		- measures about 12-14 cm in length.
+		- typically weighs around 30-40 grams.
+	- behavior
+		- known for its ground-dwelling habits, often seen running through grass and underbrush rather than flying.
+		- generally shy and secretive, often hiding in dense vegetation when threatened.
+		- has a soft, whistling call and a distinctive "chip-chip-chip" sound.
+- habitat
+	- range
+		- widely distributed across southeast asia, including india, china, indonesia, the philippines, and australia.
+	- environment
+		- inhabits a variety of environments including grasslands, rice paddies, wetlands, and scrublands.
+		- often found in areas with dense ground cover and plenty of insects.
+- diet
+	- primarily omnivorous, feeding on seeds, grains, insects, and small invertebrates.
+	- also consumes green vegetation and fruit.
+- breeding
+	- nesting
+		- builds a simple nest on the ground, usually a shallow scrape lined with grass and leaves.
+		- nests are well-concealed in dense vegetation.
+	- reproduction:
+		- breeding season varies across its range but generally occurs during the wet season.
+		- female lays 5-8 eggs, which are incubated for about 16-18 days.
+		- chicks are precocial, meaning they are well-developed and able to leave the nest shortly after hatching.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the blue-breasted quail is also known as the king quail or Chinese painted quail.
+	- despite their small size, blue-breasted quails are prolific breeders and are often kept in captivity for their attractive appearance and ease of care.
+	- their ability to blend into their environment with their camouflaged plumage makes them difficult to spot in the wild.

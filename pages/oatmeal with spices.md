@@ -1,0 +1,18 @@
+- ingredient estimation per person
+	- 1/2 cup rolled oats
+	- 1 cup water or milk (or a mix of both)
+	- 1 teaspoon turmeric
+	- 1/3 teaspoon black pepper (enhances turmeric absorption)
+	- 1/3 teaspoon ground ginger
+	- 1/4 teaspoon ground clove
+	- 1 tablespoon ghee (to be added after serving)
+- instructions
+	- in a small saucepan, heat the water or milk until it starts to simmer gently.
+	- add the rolled oats, reduce the heat, and cook, stirring occasionally, for about 5 minutes or until the desired consistency is reached.
+	- stir in the turmeric, black pepper, ginger, and clove. Mix well to combine.
+	- cook for another 1-2 minutes to allow the spices to release their full flavors.
+	- remove from heat, cover, and let it rest for 1-2 minutes.
+- serving
+	- serve the oatmeal into a bowl and top with 1 tablespoon of ghee per person.
+		- the ghee will melt into the warm oatmeal, enhancing the flavor and adding a rich, creamy texture.
+	- optionally, sweeten with honey before serving.

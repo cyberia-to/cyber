@@ -1,0 +1,54 @@
+tags:: term
+
+- every life form serve a purpose
+- classifier of products produced by [[plants]], [[animals]] and [[fungi]]
+-
+- [[biome]] products
+	- [[plant/features]]: intrinsic features related to [[boime]] services
+	- [[brown]] and [[green]]: [[soil]] production function
+	- [[diversity]]: if the sole purpose of life form is to support genetic diversity
+	- [[seeds]] and [[seedlings]]
+- staple [[eat]] and [[fodder]]
+	- [[oil]]: the most energy dense product
+	- [[carbs]]: carbs dense product
+	- [[proteins]]: protein rich product
+- wellness
+	- [[health]]: can be eaten for improving essential body functions
+	- [[cosmetics]]: applied externally for body care
+	- [[aroma]]: for olfactory pleasure and for [[essential oil]] extraction
+	- [[mental]]: have mental effects
+	- [[medicine]]: deals with treatment in case of trauma or acute conditions
+	- [[flower]]: beautiful flowers for [[floristics]]
+	- [[indoor]]: plants for aesthetics and air purification
+- [[eat]] by types
+	- [[drink]]: can produce [[juice]], [[tea]], [[sap]] or [[milk]]
+	- [[meat]]: can produce meaty structure
+	- [[starch]]: thickening, stabilizing and binding food
+	- [[egg]]: can produce breakfast
+	- [[salads]]: can be eaten raw
+	- [[stew]]: can be eaten cooked
+	- [[flour]]: may be ground for cooking needs
+	- [[fruit]]: fleshy and sweet products including berries
+	- [[vegetable]]: fleshy and sour products
+	- [[grains]]: small nutrient dense food
+	- [[nuts]]: bigger nutrient dense food
+	- [[spice]]: produce unque taste
+- [[fuel]]: lifeform used as [[fuel]]
+	- [[solid]]: wood source
+	- [[liquid]]: bioethanol or biodiesel source
+	- [[gas]]: good biogas source
+- industrial applications
+	- [[timber]]: fundamental resource for [[carpentry]], [[construction]], and [[furniture]]
+	- [[plastic]]: bio-based material used in biodegradable and sustainable products
+	- [[resin]]: natural adhesive and protective material for industrial apps
+	- [[pulp]]: raw material for paper, packaging, and bio-composites
+	- [[textile]]: plant or animal-derived fibers for wearing, fabric, and industrial textiles
+	- [[chemical]]: solvents, and industrial processes
+	- [[metal]]: extracted through phytomining by metal-accumulating plants
+	- [[dye]]: natural source for sustainable colorants
+	- [[landscape]]: landscape design and aesthetics
+- security
+	- [[windbreak]]
+	- [[firefighter]]
+	- [[soil hold]]
+	-

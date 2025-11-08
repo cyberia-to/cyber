@@ -1,0 +1,27 @@
+alias:: phylloquinone
+
+- vitamin k1 (also known as [[phylloquinone]]) is a vital [[fat-soluble vitamin]] that plays a key role in [[blood clotting]], [[bone metabolism]], and the regulation of [[calcium levels]] in the blood. it is primarily found in green leafy vegetables and is essential for the synthesis of clotting factors in the liver.
+	- ### chemical properties
+		- **molecular weight**: 450.70 g/mol
+		- **density**: 0.97 g/cm³
+		- **melting point**: 5°C
+		- **boiling point**: decomposes before boiling
+		- **solubility**: fat-soluble; insoluble in water; soluble in lipids and organic solvents
+		- **chemical formula**: C<sub>31</sub>H<sub>46</sub>O<sub>2</sub>
+	- ### usefulness in medicine
+		- vitamin k1 is essential for the production of [[prothrombin]], a protein and clotting factor that is critical in [[blood coagulation]].
+		- it supports [[bone health]] by helping regulate [[osteocalcin]], a protein that binds calcium to the bone matrix.
+		- it plays a role in preventing [[vascular calcification]], thereby supporting [[cardiovascular health]].
+		- vitamin k1 is used medically to treat or prevent [[vitamin k deficiency bleeding]] in newborns and patients with [[malabsorption syndromes]] or on [[blood thinners]] like warfarin.
+		- adequate intake contributes to maintaining healthy [[arterial flexibility]] and may reduce the risk of [[fractures]] in older adults.
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- vitamin k1 is not directly [[antibacterial]], but its role in supporting [[immune function]] and [[tissue repair]] indirectly strengthens the body's defense.
+		- its antioxidant properties help maintain [[cell membrane integrity]] during microbial infections.
+		- research highlights:
+			- **bacteria**:
+				- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+vitamin+k1)
+				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+vitamin+k1)
+- ### research links
+	- [vitamin k1 and blood clotting](https://scholar.google.com/scholar?q=vitamin+k1+blood+coagulation)
+	- [vitamin k1 and bone metabolism](https://scholar.google.com/scholar?q=vitamin+k1+bone+health)
+	- [vitamin k1 antioxidant properties](https://scholar.google.com/scholar?q=vitamin+k1+antioxidant+activity)

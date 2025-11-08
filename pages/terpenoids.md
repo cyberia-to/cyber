@@ -1,0 +1,28 @@
+-
+- terpenoids (also known as isoprenoids) are a large, diverse class of organic compounds derived from [[isoprene]] units, widely produced by plants, fungi, and some animals. terpenoids serve important ecological roles, including plant defense against herbivores, pathogens, and environmental stresses, as well as attracting pollinators.
+-
+- ## chemical properties
+	- chemical structure: composed of repeating five-carbon isoprene units (C₅H₈)
+	- classes: monoterpenoids (C₁₀), sesquiterpenoids (C₁₅), diterpenoids (C₂₀), triterpenoids (C₃₀), tetraterpenoids (carotenoids, C₄₀)
+	- solubility: generally insoluble in water; soluble in organic solvents
+	- volatility: varies significantly; monoterpenes are often volatile aromatic compounds
+- ## usefulness in medicine
+	- possess diverse pharmacological activities including anti-inflammatory, antioxidant, anticancer, antiviral, and antimicrobial effects
+	- widely used in traditional and modern medicine for their therapeutic properties (e.g., [[artemisinin]], a sesquiterpenoid used as antimalarial drug)
+	- common terpenoids include [[menthol]] (analgesic, cooling), [[limonene]] (anti-inflammatory), [[carotenoids]] (antioxidants), [[taxol]] (anticancer drug)
+- ## [[antimicrobial]] activity
+	- terpenoids exhibit potent antimicrobial activities by disrupting microbial cell membranes, inhibiting growth, and interfering with microbial enzymes
+	- bacteria:
+		- [[staphylococcus aureus]]
+		- [[escherichia coli]]
+		- [[pseudomonas aeruginosa]]
+		- [[salmonella spp.]]
+	- fungi:
+		- [[candida albicans]]
+		- [[aspergillus flavus]]
+	- viruses:
+		- [[herpes simplex virus]]
+		- [[influenza virus]]
+- ## research highlights
+	- [antimicrobial properties of plant terpenoids](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10061749/)
+	- [therapeutic potential of terpenoids in chronic diseases](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7756048/)

@@ -1,0 +1,24 @@
+- **alias**: riboflavin, vitamin b2
+- ![Vitamin_B2.pdf](../assets/Vitamin_B2_1719303309556_0.pdf)
+- [[vitamin]] b2, also known as riboflavin, is a [[water-soluble vitamin]] essential for [[energy production]], [[cellular function]], and [[overall health]]. it is a key component of the [[coenzymes]] [[FAD]] (flavin adenine dinucleotide) and [[FMN]] (flavin mononucleotide), which are involved in redox reactions crucial for [[metabolism]].
+- ### chemical properties
+	- **molecular weight**: 376.36 g/mol
+	- **density**: 1.65 g/cm³
+	- **boiling point**: decomposes before boiling
+	- **solubility**: soluble in water; slightly soluble in ethanol
+	- **optical rotation**: +48.5° (c=0.2, water)
+	- **chemical formula**: C₁₇H₂₀N₄O₆
+- ### usefulness in medicine
+	- vitamin b2 is essential for preventing and treating [[riboflavin deficiency]], which can cause [[ariboflavinosis]], characterized by cracks at the corners of the mouth, sore throat, and sensitivity to light.
+	- it supports [[healthy skin]], [[eyes]], and [[mucous membranes]].
+	- it is used in managing [[migraine headaches]] and promoting energy metabolism.
+	- riboflavin also plays a role in reducing [[oxidative stress]] by aiding in the regeneration of [[glutathione]], a powerful antioxidant.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- vitamin b2 has been studied for its potential [[antimicrobial]] effects, primarily due to its role in [[boosting immune responses]] and disrupting bacterial metabolic pathways.
+	- research highlights:
+	- **bacteria**:
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+vitamin+B2)
+		- **[[pseudomonas aeruginosa]]** [research link](https://scholar.google.com/scholar?q=Pseudomonas+aeruginosa+vitamin+B2)
+- ### research links
+	- [vitamin b2 and energy metabolism](https://scholar.google.com/scholar?q=vitamin+B2+energy+metabolism)
+	- [antimicrobial properties of vitamin b2](https://scholar.google.com/scholar?q=antimicrobial+properties+of+vitamin+B2)

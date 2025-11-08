@@ -1,0 +1,25 @@
+tags:: lipid
+
+- sitosterol (β-sitosterol) is one of the most abundant [[phytosterols]] found widely in plants, nuts, seeds, vegetable oils, fruits, and legumes. structurally similar to cholesterol, sitosterol is known for its cholesterol-lowering properties and beneficial effects on prostate health, inflammation, and immune modulation
+- ## chemical properties
+	- chemical formula: C₂₉H₅₀O
+	- molecular weight: 414.71 g/mol
+	- solubility: insoluble in water; soluble in fats, oils, and organic solvents
+	- melting point: approximately 136–140°C
+	- structure: steroid structure closely related to cholesterol with minor differences in side-chain
+- ## usefulness in medicine
+	- effectively reduces [[ldl cholesterol]] levels by blocking cholesterol absorption in the intestines, significantly lowering [[cardiovascular disease]] risk
+	- widely used for managing symptoms of [[benign prostatic hyperplasia]] ([[bph]]) and promoting [[prostate health]]
+	- demonstrates [[anti-inflammatory]] effects, beneficial in conditions such as [[arthritis]] and [[autoimmune disorders]]
+	- studied for [[anticancer]] potential, particularly against breast, prostate, and colon cancers
+- ## [[antimicrobial]] activity
+	- sitosterol shows antimicrobial effects through immune enhancement, inflammation reduction, and direct inhibition of microbial growth and biofilm formation
+	- bacteria:
+		- [[staphylococcus aureus]]
+		- [[escherichia coli]]
+		- [[pseudomonas aeruginosa]]
+	- fungi:
+		- [[candida albicans]]
+- ## research highlights
+	- [cholesterol-lowering and cardiovascular benefits of sitosterol](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8435736/)
+	- [anti-inflammatory and anticancer activities of β-sitosterol](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11609894/)

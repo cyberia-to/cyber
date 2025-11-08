@@ -1,0 +1,62 @@
+alias:: walls
+
+- [[layer]] for productivity
+- vertical or semi vertical slopes used for supporting species
+- the idea is to put everything needed for supporting [[beds]] on the wall
+- goals
+	- utilize vertical or semi-vertical slopes and wall structures to host support species
+	- maximize flat surface area of beds for high-value or productive species
+	- integrate species that fulfill key regenerative functions:
+		- [[nitrogener]]
+		- [[accumulator]]
+		- [[attractor]]
+		- [[phreatophyte]]
+		- [[phytominer]]
+- selection criteria for wall species
+	- fast-growing biomass producers
+	- aggressive rooting for erosion control
+	- tolerate shallow soil or rock wall crevices
+	- easy to propagate: [[cuttings]] or [[seeds]]
+	- multi-role functionality
+	- tolerates pruning or coppicing
+- species used for walls in [[edem]]
+	- [[crown]]: every 0.5-0.8 m - herb + herb + shrub + herb + herb
+		- [[herb]]
+			- [[cymbopogon]]
+			- [[vetiver]]
+			- [[imperata]]
+			- [[symphytum]]
+		- [[shurb]]
+			- [[lantana]]
+			- [[melastoma]]
+	- [[facewall]]: every 0.5 m in zigzag or diagonal lines
+		- [[austroeupatorium]]
+		- [[eupatorium]]
+		- [[ageratina]]
+		- [[kalanchoe pinnata]]
+		- [[stachytarpheta]]
+	- [[footwall]]: every ~2 m
+		- [[dwarf]] for [[coppice]]
+			- [[gamal]]
+			- [[kaliandra]]
+			- [[lamtoro]]
+			- [[dadap]]
+			- [[sesbania]]
+		- [[shrub]] for [[coppice]]
+			- [[senna septemtrionalis]]
+			- [[tithonia diversifolia]]
+			- [[dahlia imperialis]]
+			- [[boehmeria nivea]]
+			-
+	- [[edge]]: every ~3 m
+		- [[heartleave]]
+		- [[debregeasia]]
+		- [[trema]]
+		- [[inga]]
+		- [[vegy fern]]
+		-
+- key advantages
+	- reduced competition for resources in productive [[beds]]
+	- vertical surfaces become extremely functional ecological zones
+	- species offer secondary outputs: medicine, fodder, mulch, flowers
+	- enable structured pruning cycles for biomass or compost input

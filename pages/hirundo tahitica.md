@@ -1,0 +1,45 @@
+tags:: species, birds
+alias:: pacific swallow
+
+- voice:: https://ebird.org/species/pacswa1
+- ![image](https://ipfs.io/ipfs/QmTqh4wN2dt8XSW6szbizCzUQqBDUkYGLe2m8Kahycf2NM)
+- ![image](https://ipfs.io/ipfs/QmWTFALLfp1Qr8Uq8AbqfPCPHpf5bNdMW3uJABSyzLyHvV)
+- ![image](https://ipfs.io/ipfs/QmSFgGcAn62VwUTbnLW2PdGWf2UTVwUz5scdZcnS3MmFtB)
+- general description
+	- appearance
+		- the pacific swallow is a small, sleek bird with a streamlined body and long, pointed wings.
+		- it has a glossy blue-black head and upperparts, with a chestnut forehead and throat.
+		- the underparts are pale buff to whitish, and the tail is slightly forked with white spots on the outer feathers.
+		- both sexes look similar, but males may have slightly longer tail streamers.
+	- size
+		- measures about 13-14 cm in length.
+		- typically weighs around 10-12 grams.
+	- behavior
+		- known for its agile and acrobatic flight, often seen swooping and gliding in pursuit of flying insects.
+		- it is highly social, often seen in small flocks, especially outside the breeding season.
+		- pacific swallows emit a series of high-pitched, twittering calls, especially while in flight.
+- habitat
+	- range
+		- widely distributed across the tropical and subtropical regions of the pacific, including indonesia, the philippines, new guinea, the solomon islands, and other pacific islands.
+		- also found in parts of southeast asia and northern australia.
+	- environment
+		- inhabits a variety of environments, including open countryside, coastal areas, wetlands, and human-made structures.
+		- often found near water bodies such as rivers, lakes, and estuaries, where insect prey is abundant.
+	- diet
+		- primarily insectivorous, feeding on a variety of flying insects such as flies, beetles, and moths.
+		- catches prey in mid-air using its agile flight and quick maneuvers.
+- breeding
+	- nesting
+		- builds a cup-shaped nest made of mud and lined with feathers, grass, and other soft materials.
+		- nests are typically attached to vertical surfaces such as cliffs, under bridges, or on buildings and other structures.
+	- reproduction
+		- breeding season varies depending on location but generally occurs during periods of abundant insect activity.
+		- female lays 2-4 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 20-23 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the pacific swallow is highly adaptable and often nests in proximity to human settlements, taking advantage of structures for nesting sites.
+	- its acrobatic flight and ability to catch insects on the wing make it an efficient hunter.
+	- the species plays an important role in controlling insect populations, particularly in areas close to water bodies.

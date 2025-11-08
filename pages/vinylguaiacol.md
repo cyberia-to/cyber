@@ -1,0 +1,27 @@
+tags:: aromatic compound
+
+- vinylguaiacol is a naturally occurring [[phenolic]] compound derived from [[ferulic acid]] and found in plants, fermented foods, and as a volatile product in thermal processing. it has a distinct clove-like aroma and plays a significant role in the flavor profile of certain beers, wines, breads, and smoked foods. it is also a metabolic product of some yeast and bacterial strains.
+	- ### chemical and physical properties
+		- **compound type**: phenolic vinyl ether
+		- **molecular weight**: 150.17 g/mol
+		- **chemical formula**: C₉H₁₀O₂
+		- **boiling point**: ~240–250°C
+		- **solubility**: slightly soluble in water; soluble in ethanol and organic solvents
+		- **appearance**: colorless to pale yellow liquid with strong spicy odor
+	- ### usefulness in food and biotechnology
+		- contributes to the **spicy/clove-like aroma** in **wheat beers** (e.g., hefeweizen) due to yeast metabolism of [[ferulic acid]].
+		- found in **roasted coffee**, **smoked foods**, and **cooked vegetables** as a product of thermal degradation of lignin or ferulates.
+		- can be used as a **flavoring agent** or **fragrance** in food and cosmetic products.
+		- produced biotechnologically using microbial fermentation, particularly by [[bacillus]], [[saccharomyces]], or [[lactobacillus]] strains.
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- exhibits moderate **antibacterial** properties due to its **phenolic structure**, which can disrupt microbial membranes.
+		- effective against foodborne pathogens and spoilage organisms in some studies.
+		- potential use in **natural preservatives** or as a **bioactive food compound**.
+		- research highlights:
+			- **bacteria**:
+				- **[[listeria monocytogenes]]** [research link](https://scholar.google.com/scholar?q=vinylguaiacol+listeria+monocytogenes)
+				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=vinylguaiacol+escherichia+coli)
+- ### research links
+	- [vinylguaiacol aroma compound](https://scholar.google.com/scholar?q=vinylguaiacol+aroma+compound)
+	- [vinylguaiacol in food fermentation](https://scholar.google.com/scholar?q=vinylguaiacol+fermentation+yeast)
+	- [vinylguaiacol antimicrobial activity](https://scholar.google.com/scholar?q=vinylguaiacol+antimicrobial)

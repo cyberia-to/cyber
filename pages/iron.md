@@ -1,0 +1,25 @@
+- **alias**: iron
+- ![Iron.pdf](../assets/Iron_1719303309556_0.pdf)
+- [[iron]] is an essential mineral crucial for producing [[hemoglobin]], the protein in red blood cells that carries oxygen throughout the body. it is also involved in energy production, DNA synthesis, and maintaining a healthy immune system.
+- ### chemical properties
+	- **molecular weight**: 55.845 g/mol
+	- **density**: 7.87 g/cm³
+	- **melting point**: 1538°C (2800°F)
+	- **boiling point**: 2862°C (5182°F)
+	- **solubility**: insoluble in water; soluble in acids
+	- **chemical formula**: Fe
+- ### usefulness in medicine
+	- iron is used to treat and prevent [[iron deficiency anemia]], a condition characterized by fatigue, weakness, and shortness of breath.
+	- it supports [[oxygen transport]] in the body and promotes energy production.
+	- iron is essential for [[immune function]] and helps combat infections.
+	- it contributes to [[healthy skin]] by supporting cell repair and regeneration, reducing dryness, and preventing brittle nails.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- iron does not directly act as an antimicrobial agent but plays a critical role in immune defense by supporting the growth and activity of immune cells. however, excess iron can promote the growth of certain pathogens.
+	- research highlights:
+		- **bacteria**:
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+iron)
+			- **[[salmonella enterica]]** [research link](https://scholar.google.com/scholar?q=Salmonella+enterica+iron)
+- ### research links
+	- [iron and anemia treatment](https://scholar.google.com/scholar?q=iron+anemia+treatment)
+	- [iron and immune function](https://scholar.google.com/scholar?q=iron+immune+function)
+-

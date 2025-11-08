@@ -1,0 +1,24 @@
+- **alias**: lysine
+- ![Lysine.pdf](../assets/Lysine_1719303309556_0.pdf)
+- [[lysine]] is an essential [[amino acid]] found in protein-rich foods such as [[meat]], [[fish]], [[eggs]], [[dairy]], and [[legumes]]. it is crucial for [[protein synthesis]], [[tissue repair,]] and the [[production of enzymes]], [[hormones]], and [[antibodies]].
+- ### chemical properties
+	- **molecular weight**: 146.19 g/mol
+	- **density**: 1.7 g/cm³
+	- **melting point**: 224°C (decomposes)
+	- **solubility**: highly soluble in water; slightly soluble in alcohol
+	- **chemical formula**: C₆H₁₄N₂O₂
+- ### usefulness in medicine
+	- lysine supports [[collagen synthesis]], making it essential for [[skin health]], [[wound healing]], and [[maintaining strong bones]].
+	- it is used to treat and prevent [[cold sores]] caused by the [[herpes simplex virus]] by inhibiting viral replication.
+	- lysine plays a role in [[calcium absorption]] and retention, helping to prevent [[osteoporosis]].
+	- it supports [[immune function]] by aiding in the [[production of antibodies]].
+	- lysine may help manage [[anxiety]] and [[stress]] by [[modulating neurotransmitter levels]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- lysine itself does not have direct antimicrobial effects but supports immune responses and cellular repair, indirectly enhancing the body’s defense [[against infections]].
+	- research highlights:
+		- **bacteria**:
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+lysine)
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+lysine)
+- ### research links
+	- [lysine and collagen synthesis](https://scholar.google.com/scholar?q=lysine+collagen+synthesis)
+	- [lysine and immune function](https://scholar.google.com/scholar?q=lysine+immune+function)

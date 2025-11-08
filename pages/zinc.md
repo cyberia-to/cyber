@@ -1,0 +1,26 @@
+- **alias**: zinc
+- ![Zinc.pdf](../assets/Zinc_1719303309556_0.pdf)
+- [[zinc]] is an essential trace mineral required for numerous biological processes, including enzyme function, immune response, DNA synthesis, and wound healing. it plays a key role in supporting skin health and cellular repair.
+- ### chemical properties
+	- **molecular weight**: 65.38 g/mol
+	- **density**: 7.14 g/cm³
+	- **melting point**: 419.5°C (787.1°F)
+	- **boiling point**: 907°C (1665°F)
+	- **solubility**: insoluble in water; soluble in acids and alkalis
+	- **chemical formula**: Zn
+- ### usefulness in medicine
+	- zinc is widely used to treat and prevent [[zinc deficiency]], which can lead to weakened immune function, delayed wound healing, and hair loss.
+	- it supports [[immune health]] by enhancing the activity of immune cells and reducing inflammation.
+	- zinc is crucial for [[skin health]], promoting wound healing, reducing acne, and managing inflammatory skin conditions like eczema.
+	- it also supports [[growth and development]] during pregnancy, childhood, and adolescence.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- zinc has significant antimicrobial properties and is often used in products like creams, lozenges, and shampoos to combat infections.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+zinc)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+zinc)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+zinc)
+- ### research links
+	- [zinc and immune function](https://scholar.google.com/scholar?q=zinc+immune+function)
+	- [zinc and skin health](https://scholar.google.com/scholar?q=zinc+skin+health)

@@ -1,0 +1,14 @@
+- concept where groups of people, often with shared values or goals
+- are digitally connected and organized
+- functioning as quasi-sovereign entity across the internet
+-
+- [[network states]] utilize blockchain technology, cryptocgraphic tokens, and digital tools
+- to coordinate governance, resources, and economic activities
+- without relying on geographic boundaries
+-
+- network states operate solely online
+- they could eventually seek physical representation in the real world
+-
+- for this they must obtain the land and materialize as [[startup societies]]
+-
+- list of recognized [[network states]]

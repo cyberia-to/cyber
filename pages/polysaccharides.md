@@ -1,0 +1,13 @@
+-
+- polysaccharides are large, complex carbohydrate molecules composed of long chains of monosaccharide units linked by glycosidic bonds. they serve critical biological roles as energy storage compounds ([[starch]], [[glycogen]]) and structural components ([[cellulose]], [[chitin]]) in plants, fungi, animals, and microorganisms.
+- ## chemical properties
+	- composition: repeated monosaccharide units (e.g., glucose, fructose, galactose, xylose, mannose)
+	- solubility: varies significantly; some are water-soluble (e.g., gums, mucilages), others insoluble (e.g., cellulose, chitin)
+	- molecular weight: very high, often ranging from thousands to millions of daltons
+	- viscosity: high viscosity in aqueous solutions for soluble polysaccharides, influencing texture and stability
+- ## usefulness in medicine
+	- polysaccharides exhibit immunomodulatory properties, enhancing immune response and reducing inflammation (e.g., [[beta-glucans]], mushroom polysaccharides).
+	- soluble polysaccharides (such as gums and mucilages) aid [[gastrointestinal health]], reducing [[cholesterol levels]], stabilizing [[blood sugar]] , and supporting digestive function.
+	- polysaccharides from aloe vera, mushrooms, and seaweed are widely used in traditional medicine to promote [[wound healing]], [[skin hydration]], and tissue regeneration.
+	- [[antimicrobial]] and therapeutic activity
+	- polysaccharides demonstrate antimicrobial activity through immune system modulation, barrier formation, and direct inhibitory effects on bacterial adhesion and biofilm formation.

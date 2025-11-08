@@ -1,0 +1,42 @@
+tags:: species, birds
+alias:: bush-warbler
+
+- voice:: https://avibase.bsc-eoc.org/species.jsp?avibaseid=8C91ADCBD3FA353B
+- ![image](https://ipfs.io/ipfs/QmZrafbw47Qrm27PSdfvj6fEQZZHb38Py66a45tFQnT2oK)
+- ![image](https://ipfs.io/ipfs/QmZMX8PQCeSJR74DUagjbvhFZA45abZKQZpd19pQia82Wk)
+- general description
+	- appearance
+		- the javan bush warbler is a small, nondescript bird with brownish upperparts and paler underparts.
+		- it has a slightly rounded tail and a fine, pointed bill.
+		- its plumage is generally plain, with no distinctive markings, which helps it blend into its dense habitat.
+	- size
+		- measures about 12-14 cm in length.
+		- typically weighs around 10-15 grams.
+	- behavior
+		- known for its secretive and elusive nature, often remaining hidden in dense undergrowth.
+		- it has a melodious, soft, and varied song, which is often the first sign of its presence in an area.
+		- primarily ground-dwelling, it moves through the vegetation with quick, darting movements, foraging for insects close to the ground.
+- habitat
+	- range
+		- found on the island of Java in Indonesia.
+	- environment
+		- inhabits montane forests and dense scrub at higher elevations, typically from 1,200 to 2,800 meters.
+		- prefers areas with dense undergrowth and moist, cool conditions, often found near streams or in bamboo thickets.
+	- diet
+		- primarily insectivorous, feeding on a variety of insects, spiders, and other small invertebrates.
+		- forages mainly on the ground or in low vegetation, often seen flicking through leaf litter and underbrush.
+- breeding
+	- nesting
+		- builds a small, cup-shaped nest made of grass, leaves, and other plant materials, usually placed close to the ground in dense cover.
+		- nests are well-concealed to protect against predators and are often located in thick vegetation or at the base of shrubs.
+	- reproduction
+		- breeding season varies but generally occurs during the wet season when food is abundant.
+		- female lays 2-4 eggs, which are incubated for about 12-14 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 10-12 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its stable population and adaptability to different montane habitats.
+- interesting facts
+	- the javan bush warbler’s secretive nature and preference for dense undergrowth make it a challenging bird to observe in the wild.
+	- its song is often heard more frequently than the bird is seen, providing an auditory clue to its presence in its dense habitat.
+	- despite its plain appearance, it is an important part of its ecosystem, helping control insect populations and contributing to the health of the forest floor.

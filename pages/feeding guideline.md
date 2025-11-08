@@ -1,0 +1,62 @@
+status:: draft
+
+- general principles ㅤ
+	- weekly macro average: 35 % carbohydrate, 22 % protein, 43 % fat ㅤ
+	- adapt daily macro split to workload (see activity categories) ㅤ
+	- default eating window: 07 h–15 h (≈ 8 h feed / 16 h fast) ㅤ
+	- one 24 h water-and-herbal fast every new moon ㅤ
+	- meet sodium need (≈ 1 000–1 500 mg d⁻¹) with mineral-rich leafy greens or halophytic herbs; avoid refined or sea salt ㅤ
+	- keep at least 3 h between calories to let the migrating motor complex sweep the small intestine ㅤ
+- activity-linked macro targets ㅤ
+	- heavy labour or sprint days: 40 % carbohydrate · 22 % protein · 38 % fat reason – rapid glycogen turnover and lower oxygen cost ㅤ
+	- normal active days: 35 % carbohydrate · 22 % protein · 43 % fat reason – balanced endurance and power ㅤ
+	- low-exertion or design days: 28 % carbohydrate · 25 % protein · 47 % fat reason – sustained cognition, satiety, mild ketosis ㅤ
+	- averaging these days over the week yields the 35 : 22 : 43 baseline ㅤ
+- daily meal structure inside the 8 h window ㅤ
+	- 07 h 30 breakfast ≈ 35 % of daily energy ㅤ
+		- fermented milk or plant yoghurt ㅤ
+		- fresh whole fruit ㅤ
+		- nuts or seeds ㅤ
+		- powdered leafy greens ㅤ
+		- purpose – rehydrate, supply fast amino-acids and minerals, blunt glucose rise with fibre and fat ㅤ
+	- 12 h 00 communal main meal ≈ 45 % ㅤ
+		- starchy perennial staple ㅤ
+		- legume, seed or leaf protein ㅤ
+		- raw leafy salad with cold-pressed oil ㅤ
+		- live-culture vegetables ㅤ
+		- purpose – largest anabolic pulse when daylight insulin sensitivity peaks ㅤ
+	- 14 h 30 light close (optional) ≈ 20 % ㅤ
+		- cultured broth or yoghurt ㅤ
+		- low-glycaemic fruit or root crisps ㅤ
+		- purpose – gentle micronutrient top-up, ease transition into fasting phase ㅤ
+	- opportunistic grazing ㅤ
+		- allowed 07 h 30–10 h 30 and 13 h–14 h ㅤ
+		- handfuls of whole fruit, young pods or edible flowers ㅤ
+		- stop ≥ 90 min before the next sit-down meal to respect migrating motor complex ㅤ
+- weekly and seasonal modulation ㅤ
+	- high-carb refeed (~ 45 % carbohydrate) every 14 days during peak labour to restore glycogen and thyroid–leptin loops ㅤ
+	- three low-protein, polyphenol-rich days (~ 12 % protein) every eight weeks; anchor the new-moon fast within this block ㅤ
+- food group framework ㅤ
+	- perennial starches: roots, tubers, tree-borne or palm starch fruits ㅤ
+	- plant proteins: nitrogen-fixing shrubs, high-protein seeds, edible leafy shoots ㅤ
+	- animal or aquatic proteins: eggs, small fish or pond species, occasional pasture-raised meat, fermented milk or plant yoghurt ㅤ
+	- fats: cold-pressed oils from nuts, seeds or mesocarp; limit highly saturated sources to < 5 % energy ㅤ
+	- fruits: three-to-four handfuls whole fruit daily; emphasise high-fibre, mid-sugar varieties earlier in the window; reserve very sweet fruit for labour days or refeeds ㅤ
+	- mineral greens and herbs: daily salads, blended drinks, “green electrolyte” infusions for sodium, potassium and magnesium ㅤ
+	- fermented foods: include at least one live-culture item in each meal to seed and diversify gut microbiome ㅤ
+- hydration and electrolytes ㅤ
+	- plain spring or rain water ad libitum ㅤ
+	- labour-day electrolyte: 500 ml water blended with a small handful of mineral-rich leaves or halophyte powder, plus acidic herbs for flavour ㅤ
+- fasting schedule and rationale ㅤ
+	- nightly 16 h fast enables autophagy, hormone balance and completion of two migrating motor complex cycles ㅤ
+	- monthly 24 h fast at new moon deepens cellular clean-up while aligning with the darkest night for better sleep quality ㅤ
+- monitoring and feedback ㅤ
+	- quarterly labs: hba1c < 5.4 %, apoB < 0.8 g l⁻¹, morning ketones 0.3–0.7 mmol l⁻¹ ㅤ
+	- seasonal continuous-glucose sampling; aim for < 1 mmol l⁻¹ rise after fruit-inclusive meals ㅤ
+	- communal log tracking energy, sleep and digestion; tweak meal sizes and macro splits as patterns emerge ㅤ
+- why this system works ㅤ
+	- matches fuel type to oxygen demand and labour intensity, preventing altitude-related fatigue ㅤ
+	- preserves gut motility and microbial balance through meal spacing, high fibre and daily live cultures ㅤ
+	- supplies electrolytes and trace minerals entirely from whole plants, avoiding the vascular risks of refined salt ㅤ
+	- aligns feeding and fasting with circadian and lunar cues, supporting endocrine health and restorative sleep ㅤ
+	- remains crop-agnostic: any locally successful perennial foods can slot into the defined groups and macro targets without redesigning the schedule ㅤ

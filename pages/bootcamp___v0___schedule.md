@@ -1,0 +1,27 @@
+icon:: ⚙️
+
+- ## default day: utc time
+	- sunrise: wakeup and invest time into your body and mind
+		- [[meditation and yoga]]
+		- [[hiking trails]]
+		- watever
+	- 00:00 coordination and breakfast
+	- 00:30: workouts
+	- 03:00: lectures
+	- 04:00: lunch
+	- 05:00: workouts
+	- 07:00: personal time
+	- 09:00: dinner
+	- after sunset: personal time or evening events
+- ## 4 travel days: options from
+	- new land discovery: flexible
+	- wild huyang trip: flexible
+	- licking lesung whole: 3 hours
+	- rising sang huyang: 4 hours
+	- magic waterfalls: 4 hours
+	- jatiluwih trail: 9 hours
+	- rafting on pandora: 12 hours
+	- wet west of bali: 12 hours
+	- batukaru shoot: 12 hours
+-
+- ## looking for [[game of freedom]] schedule?

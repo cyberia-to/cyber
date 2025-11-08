@@ -1,0 +1,26 @@
+alias:: kitchen/storage
+
+- ### cold storage
+- temperature
+	- fridge: keep between 0–4 °c
+	- freezer: -18 °c or below
+- food placement
+	- left fridge (solid door): ready-to-eat food → dairy, cooked meals, leftovers
+	- right fridge (glass door): raw produce → vegetables, fruits, herbs
+	- freezer + lower fridge shelves: raw meat, poultry → prevent cross-contamination
+- labeling: everything stored must be labeled
+	- name of item
+	- date of preparation or delivery
+	- expiration date (if known)
+- containers
+	- store everything in airtight containers or properly wrapped
+	- don’t use damaged packaging → re-pack if needed
+- rotation
+	- use FIFO → first in, first out
+	- check contents regularly → remove expired items
+- hygiene
+	- wipe shelves and containers → no spills, no residues
+	- clean fridges and freezer on a regular schedule
+- separation
+	- store allergen-containing items separately
+	- keep raw and cooked food apart at all times

@@ -1,0 +1,9 @@
+- we want [[cyber valley]] lead the tech of tomorrow
+- let us ask the question: how does existing tech regions appeared?
+- success of silicon valley, bangalore, singapore and zurich analyzed
+- the following factors seems the most influential
+	- powerful education
+	- unique culture
+	- wining location
+	- stable leadership
+	- investment climate

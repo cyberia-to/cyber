@@ -1,0 +1,237 @@
+- [[echa]]
+	- garden: 3
+	- cook: 2
+	- clean: 3
+	- animals: 3
+	- kids: 2
+	- massage: 3
+	- guests: 4
+	- english: 3 month
+	- math: 3
+	- social:
+		- tiktok: 1000
+		- instagram: 150
+	- gpt: 3 months
+	- hobby: sleeping
+	- team
+		- important
+			- kadek
+			- echa
+			- juli
+- [[mega]]
+	- garden: 3
+	- cook: 3
+	- clean: 4
+	- animals: 4
+	- kids: 4
+	- massage: want to learn
+	- guests: 3
+	- english: 3 month
+	- math: 4
+	- social:
+		- facebook: 600
+	- gpt: not used
+	- hobby: sport
+	- team
+		- important
+			- kadek
+			- juli
+			- echa
+- [[juli]]
+	- garden: 4
+		- chemicals
+	- cook: 4
+	- clean: 4
+	- animals: 2
+	- kids: 3
+	- massage: want to learn
+	- guests: 3
+	- english: 3 month
+	- math: 3
+	- social:
+		- facebook: 2000
+		- tiktok: 1000
+		- instagram: 500
+	- gpt: not used
+	- hobby: sport
+	- team
+		- important
+			- kadek
+			- gina
+			- nanic
+- [[suri]]
+	- garden: 5
+	- cook: 4
+	- clean: 5
+	- animals: 3
+	- kids: 4
+	- massage: 3
+	- guests: 3
+	- english: 3 month
+	- math: 4
+	- social
+		- facebook: 100
+	- gpt: not used
+	- team
+		- important
+			- echa
+			- sri
+			- juli
+- [[au]]
+	- garden: 4
+	- cook: 3
+	- clean: 4
+	- animals: 3
+	- kids: 4
+	- massage: 5
+	- guests: 3
+	- english: 3 month
+	- math: 4
+	- social: tiktok 7500 followers
+	- gpt: not used
+	- team
+		- important
+			- suri
+			- lia
+			- mega
+- [[lia]]
+	- garden: 4
+	- cook: 2
+	- clean: 4
+	- animals: 3
+	- kids: 3
+	- massage: 3
+	- guests: 3
+	- english: 3 month
+	- math: 4
+	- social
+		- facebook: 1000
+		- instagram: 200
+	- gpt: less than 1 year
+	- team
+		- important
+			- suri
+			- au
+			- duri
+- [[duri]]
+	- garden: 4
+	- cook: 2
+	- clean: 3
+	- animals: 3
+	- kids: 3
+	- massage: have experience
+	- guests: 3
+	- english: 6 month
+	- math: 2
+	- social:
+		- tiktok: 1400
+		- facebook: 1000
+	- gpt:
+	- team
+		- important
+			- echa
+			- darsana
+			- kadek
+- [[meli]]
+	- garden: 3
+	- cook: 3
+	- clean: 4
+	- animals: 2
+	- kids: 2
+	- massage: want to learn
+	- guests: 2
+	- english: 5 month
+	- math: 3
+	- social:
+		- tiktok: 400
+		- instagram: 800
+		- facebook: 1500
+	- gpt: never used
+	- team
+		- important
+			- kadek
+			- echa
+			- sudi
+- [[nik]]
+	- garden: 3
+	- cook: 4
+	- clean: 3
+	- animals: 3
+	- kids: 2
+	- massage: 2
+	- guests: 4
+	- english: 3 month
+	- math: 4
+	- social:
+		- facebook 200 followers
+		- tiktok 100 follow
+	- gpt: not used
+	- hobby: cooking
+	- team
+		- important
+			- putu
+			- meli
+			- juli
+- [[gina]]
+	- garden: 3
+	- cook: 4
+	- clean: 3
+	- animals: 3
+	- kids: 4
+	- massage: want to learn
+	- guests: 4
+	- english: 3 month
+	- math: 3
+	- social:
+		- instagram: 25
+		- facebook: 1000
+	- gpt: never used
+	- team
+		- important
+			- kadek
+			- sudi
+			- echa
+			  id:: 6862484e-6c07-45b7-8760-f1c963a9042f
+- [[nanic]]
+	- garden: 4
+	- cook: 4
+	- clean: 4
+	- animals: 3
+	- kids: 2
+	- massage: want to learn
+	- guests: 3
+	- english: 4 month
+	- math: 3
+	- social:
+		- tiktok: 1000
+		- facebook: 1000
+		- instagram: 500
+	- gpt: not used
+	- hobby: sport
+	- team
+		- important
+			- juli
+			- kadek
+			- gina
+- arima: 0
+	- garden: 3
+	- cook: 3
+	- clean: 5
+	- animals: 3
+	- kids: 5
+	- massage: want to learn
+	- guests: 3
+	- english: 1 year
+	- math: 3
+	- social:
+		- tiktok: 70
+		- facebook: 200
+	- gpt: not used
+	- hobby: shopping
+	- team
+		- important
+			- budi
+			- tika
+			  id:: 6862484e-af4b-452a-8d9e-9d93e7a171c0
+			- duri
+-

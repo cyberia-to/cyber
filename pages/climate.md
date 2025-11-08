@@ -1,0 +1,13 @@
+- macro pattern governing biome dynamics
+- it is the invisible hand define by
+	- [[temperature]]: average, range, seasonal
+	- [[precipitation]]: amount, rhythm
+	- [[humidity]]: water in air
+	- [[sun]]: exposure, angle, duration
+	- [[wind]]: direction, intensity, flow pattern
+- the key to climate, is microclimate
+	- sunlight exposure: south-facing vs north-facing slopes
+	- wind protection: behind a hedge vs in open field
+	- moisture: near a pond vs on a rocky slope
+	- thermal mass: near stone wall vs open air
+	- canopy cover: shade vs full sun

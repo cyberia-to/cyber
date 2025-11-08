@@ -1,0 +1,44 @@
+tags:: species, birds
+alias:: little cuckoo-dove
+
+- voice:: https://ebird.org/species/licdov1
+- ![image](https://ipfs.io/ipfs/QmTGcvCfSi7YqrcYt3cMmLKDDszVUEwkJ4qFAyeK1BnktD)
+- ![image](https://ipfs.io/ipfs/QmTKvJERG4DJxf6vb5nmW6jEoc9gnD9YSQ1wEUjsxv6Dyx)
+- ![image](https://ipfs.io/ipfs/QmXUmN2KoTpUFTxEztp5j7hFgYSSuXy5PSG68eUHBJHN6A)
+- general description
+	- appearance
+		- the little cuckoo-dove is a medium-sized bird with a slender build and long tail.
+		- it has a distinctive rufous (reddish-brown) head and neck.
+		- the upperparts are generally brown with darker streaks, while the underparts are lighter with a buff or grayish hue.
+		- males and females look similar, though males may have slightly brighter plumage.
+		- the eyes are dark, and the legs and feet are pinkish.
+	- size
+		- measures about 27-30 cm in length.
+		- typically weighs around 80-120 grams.
+	- behavior
+		- known for its solitary and secretive behavior, often staying hidden in dense vegetation.
+		- usually forages on the ground for seeds and fallen fruits, but can also be seen feeding in trees.
+		- produces a soft, repetitive cooing call, especially during the breeding season.
+- habitat
+	- range
+		- found in southeast asia, including indonesia, malaysia, and the philippines.
+	- environment
+		- inhabits a variety of environments including forests, forest edges, secondary growth, and gardens.
+		- often found in lowland and montane areas with dense undergrowth for cover.
+- diet
+	- primarily granivorous, feeding on seeds, grains, and small fruits.
+	- also consumes insects and other small invertebrates occasionally.
+- breeding
+	- nesting
+		- builds a flimsy platform nest made of twigs and leaves, usually placed in a tree or shrub.
+		- nests are often well-concealed within dense foliage.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the warmer months.
+		- female lays 1-2 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the little cuckoo-dove is known for its distinctive head coloration, which sets it apart from other doves and pigeons in its range.
+	- despite its name, it is not closely related to true cuckoos but gets its name from its slender build and long tail reminiscent of cuckoos.

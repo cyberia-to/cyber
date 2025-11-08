@@ -1,0 +1,44 @@
+tags:: cv.land
+
+- land
+	- link to the map
+- estates
+	- estate
+- equity
+	- section 1: our vision
+		- we are building cyber valley: the first sustainable nature-tech society in the world
+		- it is rising now in the bali mountains, on 37 ha of land owned by our team
+		- cyber valley blends biointelligence, ai, ancient ecosystem knowledge with the most advanced network state concepts
+		- we are creating a citadel that offers not just a unique living space — but a model for the future of human society: open, autonomous, resilient, deeply connected to life on earth
+	- section 2: why this is a rare opportunity
+		- you are not investing in a typical bali project or simple resort
+		- you are joining the effort to build something meaningful
+		- among that the investment part is also sound
+	- section 3: why gesing?
+		- planned north bali airport
+		- overcrowded batur => sanghyang as superior offer: sunset + sunrise + miracle
+		- currently 15x land price difference with south
+		- top mountain infrastructure priced not less then seaside worldwide (alps, colorado, etc)
+		- every hectare of this land will be more valuable tomorrow than today
+		- because it is part of a working vision the world is hungry for
+	- section 3: what makes us unique
+		- deep founder vision
+		- prime owned land in the most biodiverse part of bali
+		- bioluminescent forest under development — no other such asset worldwide
+		- designed from day one as a regenerative living space
+		- fully legal pma structure, scalable in indonesia and internationally
+	- section 4: how to participate
+		- equity partnership in pt pma cyber valley estate
+		- project-based co-investment in specific layers
+		- early investor terms available now — with land-backed security and priority access
+	- section 5: who we are inviting
+		- vision-aligned private investors, especially from indonesia
+		- family offices seeking long-term value, legacy and impact
+		- venture partners looking for extraordinary asymmetric returns in real assets
+		- tech founders who want to live what they help build
+	- section 6: next steps, legal & clarity
+		- contact us for private conversation
+		- site visits by invitation
+		- this is not a public offering
+		- all investments are private and subject to indonesian law and pma regulation
+		- our commitment: full transparency, strong compliance, and long-term alignment

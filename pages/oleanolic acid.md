@@ -1,0 +1,29 @@
+alias:: oleanolic acid
+
+- ![Oleanolic_Acid.pdf](../assets/Oleanolic_Acid_1719303309556_0.pdf)
+- [[oleanolic acid]] is a natural [[triterpenoid]] compound found in various plants, fruits, and medicinal herbs, such as [[olive]] leaves, [[apples]], and [[hawthorn]]. it is widely recognized for its [[anti-inflammatory]], [[antioxidant]], and [[anti-cancer]] properties.
+- ### chemical properties
+	- **molecular weight**: 456.70 g/mol
+	- **density**: not widely reported
+	- **melting point**: 310–315°C
+	- **solubility**: poorly soluble in water; soluble in ethanol, methanol, and DMSO
+	- **chemical formula**: C₃₀H₄₈O₃
+- ### usefulness in medicine
+	- oleanolic acid has strong [[anti-inflammatory]] properties, making it effective in managing conditions like [[arthritis]] and [[chronic inflammation]].
+	- it exhibits potent [[antioxidant]] activity, protecting cells from oxidative damage and preventing chronic diseases.
+	- it supports [[liver health]] by protecting against toxin-induced liver damage and promoting [[detoxification]].
+	- oleanolic acid shows promising [[anti-cancer]] potential by inhibiting tumor growth and inducing apoptosis in cancer cells.
+	- it aids in [[cardiovascular health]] by [[reducing cholesterol levels]] and improving blood vessel function.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- oleanolic acid demonstrates significant antimicrobial activity by disrupting microbial membranes and inhibiting growth.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+oleanolic+acid)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+oleanolic+acid)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+oleanolic+acid)
+		- **viruses**:
+			- **[[herpes simplex virus]]** [research link](https://scholar.google.com/scholar?q=herpes+simplex+virus+oleanolic+acid)
+- ### research links
+	- [oleanolic acid and anti-inflammatory properties](https://scholar.google.com/scholar?q=oleanolic+acid+anti-inflammatory)
+	- [oleanolic acid and antimicrobial activity](https://scholar.google.com/scholar?q=oleanolic+acid+antimicrobial+activity)

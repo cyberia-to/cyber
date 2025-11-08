@@ -1,0 +1,25 @@
+- **alias**: moringinine
+- ![Moringinine.pdf](../assets/Moringinine_1719303309556_0.pdf)
+- [[moringinine]] is an [[alkaloid]] compound found in the moringa plant ([[moringa oleifera]]). it is known for its potential [[adaptogenic]], [[neuroprotective]], and [[antimicrobial]] properties. moringinine has been studied for its effects on the [[nervous system]] and [[overall health]] benefits.
+- ### chemical properties
+	- **molecular weight**: 177.23 g/mol
+	- **density**: not widely reported
+	- **melting point**: not widely reported
+	- **solubility**: soluble in water and ethanol
+	- **chemical formula**: C₁₀H₁₃NO₂
+- ### usefulness in medicine
+	- moringinine has been studied for its role as a potential [[neuroprotective]] agent, helping to [[protect nerve cells]] from damage caused by oxidative stress.
+	- it exhibits [[adaptogenic]] properties, which may help the body adapt to stress and maintain balance.
+	- moringinine supports [[cardiovascular health]] by improving [[blood flow]] and [[reducing inflammation]].
+	- it has been studied for its potential benefits in managing [[anxiety]] and [[depression]] due to its effects on the nervous system.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- moringinine has demonstrated antimicrobial properties by disrupting the growth and function of various pathogens.
+	- research highlights:
+	- **bacteria**:
+		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+moringinine)
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+moringinine)
+	- **fungi**:
+		- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+moringinine)
+- ### research links
+	- [moringinine and neuroprotection](https://scholar.google.com/scholar?q=moringinine+neuroprotection)
+	- [moringinine and antimicrobial activity](https://scholar.google.com/scholar?q=moringinine+antimicrobial+activity)

@@ -1,0 +1,47 @@
+- [[@master]]
+- posits that the universe operates on a principle of interconnectedness
+	- where elements coalesce
+	- in increasingly complex and harmonious forms
+- framework suggests that
+	- the natural world, human society, and even abstract systems like language
+	- follow a common trajectory of integration and balance
+	- driven by the principles of togetherness
+- seeks to explore the underlying principles
+	- that govern the interconnectedness of elements in various systems
+	- whether biological, artificial, technological, social, artistic, or linguistic
+- built upon the interrelation of 8 beautiful phenomena
+	- [[symbiosis]]: all entities in the universe are interconnected, and their survival and flourishing depend on mutual cooperation
+	- [[synergy]]: the combined effect of interacting elements is greater than the sum of their individual effects
+	- [[synthesis]]: elements can be combined to form a unified whole
+	- [[symphony]]: diverse elements must be integrated to create a cohesive and harmonious whole
+	- [[syntropy]]: systems have an inherent tendency toward increasing order and complexity
+	- [[synchrony]]: events and actions are often most effective when they occur in a coordinated and timely manner
+	- [[symmetry]]: tends to balance and proportionality in the arrangement of parts
+	- [[syntax]]: governs the structured arrangement of elements to convey meaning
+-
+- once i noticed that
+	- each of these words have very deep meaning
+	- which is tightly coupled with math equations
+	- and all of them have either `syn` or `sym` root
+- it turns out `sym` and `syn` come from the greek word `σύν,` meaning `together`
+-
+- i decide to integrate this observation into design framework for fusing
+	- societies
+	- biomes
+	- technology
+	- and architecture
+- while building my dream in [[cyber valley]]
+-
+- examples
+	- biology: the evolution of species through symbiotic relationships and the emergence of complex ecosystems
+	- society: the formation of communities and civilizations through synergistic collaboration and cultural synthesis
+	- art and music: the creation of works that balance diverse elements in harmonious compositions
+	- technology: the development of systems and algorithms that rely on synchronized processes and structured syntax
+- harmonious complexity offers a holistic view of reality
+	- where the interplay of cooperation, integration, order, and timing
+	- creates the intricate and beautiful patterns observed in
+	- nature, society, and human creativity
+- harmonious complexity invites us
+	- to recognize the underlying connections
+	- that bind the universe together
+	- and to embrace the potential for harmony in all aspects of life

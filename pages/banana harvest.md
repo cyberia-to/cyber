@@ -1,0 +1,49 @@
+- [github](https://github.com/cyberia-to/rockets/issues/1116)
+- # banana cultivation: practical care checklist
+	- distilled from a banana-cultivation video transcript (shared by user)
+- ## site, light, and climate
+	- provide ≥ 12 hours of light per day; use windbreaks to reduce damage
+	- keep temperatures ideally between 20–30 °c; growth slows < 10 °c; heat stress > 35 °c
+- ## soil, ph, and nutrition
+	- grow in soil rich in organic matter (compost, green manure, leaf mold)
+	- maintain soil ph 6.5–7.0; avoid < 5.0 or > 7.5 to prevent micronutrient lockout
+	- prioritize n–p–k with emphasis on potassium (k)
+	- keep a mulch layer (straw/shredded banana residues) to feed shallow roots and retain moisture
+- ## planting material and depth
+	- choose larger suckers/plants for faster harvest (~1–1.5 years); small plants may take > 2 years
+	- plant deep (hole ~60–70 cm) to reduce toppling (“high mat” risk)
+- ## roots and leaves
+	- protect shallow roots: avoid deep tillage; maintain mulch cover
+	- do not cut green leaves unless necessary; before severe storms, trim at most ~⅓
+	- remove yellowing/dying leaves to reduce banana weevil pressure
+- ## mat management (suckers)
+	- maintain 3 plants per mat: mother + follower + next generation sucker; remove extras
+	- when dividing/transplanting suckers, dig carefully and sever with corm intact; clean soil from roots
+	- sanitary dip: soak suckers at ~43 °c (~109 °f) for ~3 hours to kill weevil eggs/larvae
+	- after planting, water thoroughly; if leaves wilt, shorten temporarily to reduce transpiration
+- ## growth stages and flowering
+	- expect transition to flowering after ~40–50 leaves
+	- watch for flag/terminal leaf and emerging inflorescence
+- ## flower and fruit management
+	- rule of thumb: keep ~1 fruit tier (“hand”) per healthy leaf
+	- 1–2 weeks after the final fruit tier appears, remove male flowers
+	- thin small/undeveloped hands to size up the bunch
+- ## bunch bagging
+	- bag after the final tier appears; use breathable, vented plastic or nonwoven fabric
+	- leave a small bottom opening for drainage; avoid bruising
+	- purpose: protect from pests/birds/uv/wind/rain and stabilize the microclimate (especially in cool periods)
+- ## spacing, airflow, and health
+	- avoid overcrowding; maintain airflow to reduce disease and pest pressure
+	- monitor for black sigatoka and banana bunchy top virus; remove affected leaves promptly
+- ## harvest and ripening
+	- harvest when fruits are plump and angular ridges have smoothed; for home use, slight on-plant yellowing is fine
+	- typical interval from flowering to harvest: ~90–120 days (depends on conditions)
+	- bananas are climacteric; ripen at room temperature, not in the refrigerator
+- ## post-harvest hygiene
+	- do not leave the harvested pseudostem standing; fell, chop, and return to soil as mulch to avoid weevil buildup
+- ## handy tools & supplies
+	- spade/sharp knife or machete; pruners
+	- perforated bunch bags or nonwoven fabric
+	- mulch materials (straw/shredded banana residues)
+	- compost/vermicompost + potassium-forward fertilizer
+	- soil ph tester; thermometer for the 43 °c soak

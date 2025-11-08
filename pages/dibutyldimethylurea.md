@@ -1,0 +1,27 @@
+-
+- dibutyldimethylurea is a synthetic [[urea derivative]] characterized by two [[butyl]] and two [[methyl]] groups attached to a central urea structure. it is a chemically modified compound with reported [[antimicrobial]] and [[antifungal]] properties, and has been identified in the root extracts of certain [[medicinal plants]]. although not naturally abundant, it may serve as a lead compound for developing new [[antibacterial agents]].
+	- ### chemical properties
+		- **molecular weight**: 230.37 g/mol
+		- **structure**: symmetrical urea molecule substituted with two butyl and two methyl groups
+		- **appearance**: white to off-white crystalline solid (depending on purity)
+		- **solubility**: soluble in organic solvents such as ethanol, ether, and chloroform; poorly soluble in water
+		- **chemical formula**: **C₁₀H₂₂N₂O**
+	- ### usefulness in medicine
+		- dibutyldimethylurea has shown potential [[antimicrobial]] activity in early screening studies.
+		- it may act as a [[membrane disruptor]] or [[enzyme inhibitor]], although its mechanism is not well-characterized.
+		- due to its urea backbone, it may be investigated for [[urease inhibition]] in microbial pathogens.
+		- its bioactivity is of interest in natural product chemistry and [[drug development]] from plant-derived compounds.
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- it has been shown to inhibit growth of certain [[gram-positive]] and [[gram-negative bacteria]] in vitro.
+		- some studies suggest potential action against [[fungal pathogens]] such as [[candida]] species.
+		- may work synergistically with other phytochemicals in plant extracts.
+		- research highlights:
+			- **bacteria**:
+				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=dibutyldimethylurea+escherichia+coli)
+				- **[[bacillus subtilis]]** [research link](https://scholar.google.com/scholar?q=dibutyldimethylurea+bacillus+subtilis)
+			- **fungi**:
+				- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=dibutyldimethylurea+candida+albicans)
+- ### research links
+	- [dibutyldimethylurea antimicrobial activity](https://scholar.google.com/scholar?q=dibutyldimethylurea+antimicrobial)
+	- [urea derivatives in drug discovery](https://scholar.google.com/scholar?q=urea+derivatives+drug+development)
+	- [plant-derived urea compounds](https://scholar.google.com/scholar?q=plant+urea+compounds+bioactivity)

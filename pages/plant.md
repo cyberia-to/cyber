@@ -1,0 +1,41 @@
+alias:: the plant
+
+- plant description structure
+	- [[plant/type]] is for botanical description of plant structure
+		- properties are plant parts with botanical description
+			- properties of parts are compounds: what is in each part?
+	- environment:: information dense one line text summary of optimal environment
+		- climate:: information dense one line text summary of optimal climate
+			- sun:: optimal solar irradiance in W/m²
+			- no-sun-days:: number in days a plant can survive without sun
+			- water:: optimal amount of mm of yearly rains
+			- no-water-days:: number in days a plant can survive without water
+			- humidity:: number in %
+			- fog-resistance:: amount of days a plant can survive in fog
+			- max-temp:: number in celsius
+			- optimal-temp:: number in celsius
+			- min-temp:: number in celsius
+			- wind-damage:: array of non tolerated [[wind/type]]
+		- soil: information dense one line text summary of optimal soil
+			- soil-ph:: number
+			- soil-type:: array of [[soil/type]]
+		- spacing: information dense one line text summary of optimal spacing
+			- good-neighbors:: array of [[species]] or [[genus]]
+			- bad-neighbors:: array of [[species]] or [[genus]]
+			- max-height:: number in cm
+			- max-spread:: number in cm
+	- lifecycle
+		- longevity:: number of max known lifespan in years
+		- germination:: text description
+		- seedling:: text description
+		- mature:: text description
+		- death:: text description
+	- [[plant/features]]: array of plant features
+	- [[layer]]: array of applicable layers
+	- [[products]]: array of posible products
+	- [[chemical compounds]]: description of compounds that are in each part of the plant (root, leaves, flowers, fruits, bark, timber)
+	- operations: how to manage the plant
+		- [[propagate plants]]: text description
+		- [[maintenance]]: text description
+		- [[harvest]]: text description through the lense of [[products]]
+	- [[margin]]

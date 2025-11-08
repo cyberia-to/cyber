@@ -1,0 +1,76 @@
+- [gihub](https://github.com/cyberia-to/rockets/issues/1151)
+- # weekly maintenance checklist
+	- moisture check:
+		- feel top 3–5 cm soil.
+			- if dry → deep-water ~10–15 l per clump;
+			- no standing water >1 hour.
+	- mulch:
+		- keep 5–8 cm organic mulch;
+		- fluff/top up;
+		- pull back 3–5 cm from the crown.
+	- feeding (if it’s a feeding week):
+		- compost tea or vermicompost extract 2–4 l/plant;
+		- rinse in with water.
+	- canopy & sanitation:
+		- remove yellow/old/diseased fronds;
+		- keep ≥3–5 strong fronds per clump;
+		- tie floppy fronds to open the crown.
+	- harvest for stimulus:
+		- cut tender shoots at 15–20 cm before unrolling;
+		- take ≤⅓ of new shoots per clump;
+		- rotate clumps.
+	- pests:
+		- check leaf undersides.
+		- if aphids/scale/mites → morning rinse + 1–2% soap or neem 5 ml/l;
+		- repeat in 3–5 days if needed.
+		- hand-pick slugs/snails or set traps.
+	- fungal watch:
+		- if spots/powder → spray baking soda 1 tsp/l + a drop of soap;
+		- improve airflow;
+		- avoid evening overhead watering.
+	- structure & spacing:
+		- clear debris in a 20–30 cm ring;
+		- thin encroaching shoots to keep 45–60 cm between clumps.
+	- drainage pass:
+		- after heavy rain, open channels so crowns never sit in puddles.
+	- log it:
+		- note date, rainfall, liters watered, feed (y/n), pests seen, and record amount of shoots harvested.
+- **site & soil**
+	- bright shade (50–70% shade), high humidity, wind-sheltered
+	- deep, rich, constantly moist soil; lots of compost; ph ~5.5–6.5
+	- mulch 5–8 cm (leaves/coco husk/ straw) to keep roots cool and moist
+- **watering (maximize flushes)**
+	- keep evenly moist, never waterlogged
+	- dry season: deep water 2–3×/week; rainy season: improve drainage, loosen mulch if soggy
+- **feeding (organic)**
+	- every 2 weeks: compost tea or diluted vermicompost extract (2–4 l/plant)
+	- monthly: side-dress 1–2 kg mature compost/plant
+	- every 6–8 weeks: potassium boost for thicker shoots—seaweed extract or a small handful of wood ash/m² (rinse in next watering)
+- **canopy management**
+	- always leave 3–5 strong fronds per clump for photosynthesis
+	- remove old/yellow or congested fronds weekly for airflow (less disease, more new shoots)
+- **harvest rules (don’t stunt the plant)**
+	- cut tender shoots at 15–20 cm length, before unrolling
+	- never take more than ⅓ of emergent shoots from a clump at once; rotate clumps
+	- check every 2–3 days in warm, wet weather—frequent light harvests trigger more flushes
+- **spacing & renewal**
+	- maintain 45–60 cm between clumps; thin crowded plants
+	- divide vigorous clumps every 8–12 months (rainy season): replant healthiest crowns at original depth with fresh compost
+- **pests & diseases (organic)**
+	- slugs/snails: handpick, beer traps, copper barriers
+	- sap pests (aphids/scale): morning water rinse + 1–2% soap spray; encourage ants away from crowns
+	- crown/leaf spots: improve airflow, avoid evening overhead watering; weekly baking soda 1 tsp/l + a drop of soap if needed
+- **weekly checklist**
+	- inspect fronds (pests/spots), remove old leaves
+	- top up mulch, ensure soil stays evenly moist
+	- harvest young shoots; rotate clumps
+	- tie up floppy fronds to keep crown open
+- **monthly checklist**
+	- side-dress compost; potassium boost if shoots thin
+	- divide or thin any overcrowded clumps
+- **temperate note (ostrich fern, *matteuccia struthiopteris*)**
+	- similar care but cooler, moist woodland shade; ph ~6–7
+	- harvest only 2–5 fiddleheads per crown per spring, then stop and let fronds grow out
+	- divide every 3–5 years in early spring
+- **important safety note**
+	- avoid **bracken fern (*pteridium aquilinum*)**—it’s not recommended for eating.

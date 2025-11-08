@@ -1,0 +1,44 @@
+tags:: species, birds
+alias:: black-winged flycatcher-shrike
+
+- voice:: https://ebird.org/species/bwfshr2
+- ![image](https://ipfs.io/ipfs/QmX7TMTUuZ7PFg9rBAXCaSdPDoBxRGYTiXdgt3mw1HkQsK)
+- ![image](https://ipfs.io/ipfs/QmNZybr6LuL7iSGtterkEY9AZDeKMwxLzHpE26MNDpphXo)
+- ![image](https://ipfs.io/ipfs/QmatC2T2pUBLmH5Nh2Au2Xn6AFzNqyn8ZQ3iK548YRxMNu)
+- general description
+	- appearance
+		- the bar-winged flycatcher-shrike is a small bird with a slender build and a distinctive plumage.
+		- it has a grayish-black head and upperparts, with a prominent white bar on the wings, which gives the species its name.
+		- the underparts are white, and the tail is dark with a contrasting white edge.
+		- both sexes have similar plumage, although females may appear slightly duller.
+	- size
+		- measures about 12-14 cm in length.
+		- typically weighs around 10-15 grams.
+	- behavior
+		- known for its active foraging behavior, often seen flitting about in the mid-canopy or along forest edges.
+		- it is a social species, frequently found in pairs or small groups, and often joins mixed-species foraging flocks.
+		- the bar-winged flycatcher-shrike has a distinctive high-pitched, sharp call, which is often heard in its habitat.
+- habitat
+	- range
+		- found in parts of southeast asia, including the malay peninsula, sumatra, borneo, and java.
+	- environment
+		- inhabits a variety of forested environments, including lowland and montane forests, forest edges, and secondary growth.
+		- prefers areas with dense tree cover but can also be found in gardens and plantations.
+	- diet
+		- primarily insectivorous, feeding on a variety of insects, spiders, and other small arthropods.
+		- forages actively by sallying from perches to catch prey in flight or gleaning from leaves and branches.
+- breeding
+	- nesting
+		- builds a small, cup-shaped nest made of plant fibers, bark, and spider webs, usually placed high in a tree or on a horizontal branch.
+		- nests are well-camouflaged and often placed in dense foliage to protect against predators.
+	- reproduction
+		- breeding season varies across its range but generally coincides with periods of abundant food.
+		- female lays 2-3 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 12-15 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the IUCN due to its wide range and stable population.
+- interesting facts
+	- the bar-winged flycatcher-shrike's distinctive wing bars and active foraging behavior make it a noticeable bird in its native habitat.
+	- it is known to join mixed-species flocks, which helps reduce the risk of predation and increases foraging efficiency.
+	- despite its small size, the bar-winged flycatcher-shrike is a bold and inquisitive bird, often exploring new areas within its habitat.

@@ -1,0 +1,23 @@
+- **alias**: pyridoxine, vitamin b6
+- ![Vitamin_B6.pdf](../assets/Vitamin_B6_1719303309556_0.pdf)
+- [[vitamin]] b6, also known as [[pyridoxine]], is a [[water-soluble vitamin]] essential for numerous physiological functions. it plays a critical role in [[amino acid metabolism]], [[neurotransmitter synthesis]], [[hemoglobin production]], and maintaining a healthy [[immune system]]. vitamin b6 also supports [[brain development]] and function, making it vital for overall health.
+- ### chemical properties
+	- **molecular weight**: 169.18 g/mol
+	- **density**: 1.4 g/cm³
+	- **boiling point**: decomposes before boiling
+	- **solubility**: soluble in water
+	- **optical rotation**: +26° to +29° (c=10, H₂O)
+	- **chemical formula**: C₈H₁₁NO₃
+- ### usefulness in medicine
+	- vitamin b6 is widely used to treat and prevent [[pyridoxine deficiency]], which can result in [[anemia]], [[dermatitis]], and [[peripheral neuropathy]]. it is also prescribed to manage symptoms of [[morning sickness]] in pregnancy, [[premenstrual syndrome]] (pms), and [[depression]] by supporting neurotransmitter balance.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- vitamin b6 has shown potential [[antimicrobial]] properties in specific contexts, particularly through its role in metabolic pathways essential for microbial growth.
+	- research highlights:
+		- **bacteria**:
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+vitamin+B6)
+			- **[[lactobacillus acidophilus]]** [research link](https://scholar.google.com/scholar?q=Lactobacillus+acidophilus+vitamin+B6)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+vitamin+B6)
+- ### research links
+	- [vitamin b6 and neurotransmitter synthesis](https://scholar.google.com/scholar?q=vitamin+B6+neurotransmitter)
+	- [antimicrobial properties of vitamin b6](https://scholar.google.com/scholar?q=antimicrobial+properties+of+vitamin+B6)

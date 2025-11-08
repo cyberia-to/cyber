@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: white-crowned forktail
+
+- voice:: https://ebird.org/species/whcfor1
+- ![image](https://ipfs.io/ipfs/QmUmskySEYxBnDPujdy4YxzZnZhH45ut2nTb2XJH6cfbrt)
+- ![image](https://ipfs.io/ipfs/Qmbuw6Yob8XZ2vd99J5WPKRqn9gaM5ZND9G4uoDNktv6qA)
+- general description
+	- appearance
+		- the white-crowned forktail is a medium-sized bird with striking black and white plumage.
+		- it has a distinctive white crown and nape, contrasting with its black face, throat, and upperparts.
+		- the wings and tail are black with bold white bands.
+		- its long, forked tail is a prominent feature, often held upright.
+	- size
+		- measures about 25-28 cm in length, including the tail.
+		- typically weighs around 30-40 grams.
+	- behavior
+		- known for its active and agile behavior, often seen foraging near streams and rivers.
+		- it has a distinctive bobbing and tail-flicking motion while foraging.
+		- produces a series of melodious whistles and sharp calls.
+- habitat
+	- range
+		- found in southeast asia, including parts of india, myanmar, thailand, malaysia, and indonesia.
+	- environment
+		- inhabits forested areas, particularly near streams, rivers, and waterfalls.
+		- prefers dense undergrowth and rocky stream banks in both lowland and montane forests.
+- diet
+	- primarily insectivorous, feeding on insects, small invertebrates, and occasionally small fish.
+	- often forages on the ground, turning over leaves and debris to find food.
+- breeding
+	- nesting
+		- builds a cup-shaped nest made of moss, leaves, and twigs, usually placed on a rock ledge or tree root near water.
+		- nests are often well-concealed and camouflaged.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the wet season.
+		- female lays 2-4 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the white-crowned forktail is often used as an indicator species for healthy freshwater ecosystems due to its preference for clean, fast-flowing streams.
+	- its distinctive foraging behavior, including the characteristic tail-flicking, makes it a favorite among birdwatchers.
+	- the bird's melodious song is often heard over the sound of running water, adding to the tranquility of its natural habitat.

@@ -1,0 +1,2 @@
+- [[skincare]]
+- [[skin disease]]

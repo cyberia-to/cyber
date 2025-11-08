@@ -1,0 +1,45 @@
+tags:: species, birds
+alias:: himalayan cuckoo
+
+- voice:: https://ebird.org/species/himcuc1
+- ![image](https://ipfs.io/ipfs/QmVmRzpGcWRNTJ4SPuSs66s5yBYLg1ma8gGh1XNqcYhzNR)
+- ![image](https://ipfs.io/ipfs/QmPJ8seKWhuWntLkhvNKJzr6qAdw2XB5Esb1VnHuri3wQY)
+- ![image](https://ipfs.io/ipfs/QmU342anm73Gvr8TunymshWP2WMwaZ81ktjPasWvKvVCg2)
+- general description
+	- appearance
+		- a medium-sized bird with a slender body and long tail.
+		- it has gray upperparts and pale underparts with fine dark barring.
+		- the throat and upper chest are unbarred and slightly paler than the rest of the underparts.
+		- the wings are rounded, and the tail is long and slightly graduated.
+		- the eyes are yellow, and the beak is dark and slightly curved.
+	- size
+		- measures about 28-32 cm in length.
+		- typically weighs around 80-120 grams.
+	- behavior
+		- known for its distinctive and repetitive "coo-coo" call, often heard during the breeding season.
+		- solitary and secretive, often perching quietly in dense foliage.
+		- practices brood parasitism, laying its eggs in the nests of other bird species.
+- habitat
+	- range
+		- found across the Himalayas and parts of east esia, including northern india, nepal, bhutan, china, taiwan, korea, and japan.
+	- environment
+		- inhabits a variety of forested environments, including montane and temperate forests, as well as mixed and deciduous woodlands.
+		- prefers areas with dense tree cover for foraging and nesting.
+- diet
+	- primarily insectivorous, feeding on caterpillars, beetles, and other insects.
+	- also consumes small vertebrates and occasionally fruits and berries.
+- breeding
+	- nesting
+		- does not build its own nest; instead, it lays its eggs in the nests of other bird species, particularly warblers and other small songbirds.
+		- the host species incubates the eggs and raises the cuckoo chick, often to the detriment of its own offspring.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the warmer months.
+		- female lays a single egg in the host's nest.
+		- the cuckoo chick hatches earlier and grows faster than the host chicks, often outcompeting them for food.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the himalayan cuckoo's brood parasitism strategy allows it to reproduce without the need to build a nest or care for its young, which can increase its reproductive success.
+	- its distinctive "coo-coo" call is often one of the first signs of its presence in an area.
+	- the cuckoo's diet includes many hairy caterpillars that are avoided by other birds, helping to control pest populations.

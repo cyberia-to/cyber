@@ -1,0 +1,42 @@
+tags:: species, birds
+alias:: lesser coucal
+
+- voice:: https://ebird.org/species/lescou1
+- ![image](https://ipfs.io/ipfs/QmcKDFbcGognFZozswhYC8Dj4Qe8A7NPRy7eZV7y7pCQb3)
+- ![image](https://ipfs.io/ipfs/QmV5jwZAFs5UK1Qt6qB8nFqfuvnKiabW5JVjwoxUbYiCCn)
+- general description
+	- appearance
+		- the lesser coucal is a medium-sized bird with a distinctive glossy black head, neck, and upperparts.
+		- its wings and tail are reddish-brown with a greenish sheen.
+		- it has a strong, slightly curved bill and red eyes.
+		- juveniles are brown with heavy streaking on the underparts.
+	- size
+		- measures about 39-42 cm in length.
+		- typically weighs around 160-240 grams.
+	- behavior
+		- known for its secretive and solitary nature, often seen skulking in dense vegetation.
+		- it has a slow, deliberate flight and is more likely to be seen walking or hopping on the ground.
+		- produces a variety of calls, including a deep, resonant "coo-coo" sound.
+- habitat
+	- range
+		- widely distributed across south and southeast asia, including india, bangladesh, myanmar, thailand, malaysia, indonesia, and the philippines.
+	- environment
+		- inhabits a variety of environments including grasslands, marshes, reed beds, and agricultural fields.
+		- often found in areas with dense vegetation near water bodies.
+- diet
+	- primarily carnivorous, feeding on insects, small mammals, reptiles, and amphibians.
+	- also consumes bird eggs and nestlings, and occasionally fruits.
+- breeding
+	- nesting
+		- builds a large, dome-shaped nest made of grasses and leaves, usually placed close to the ground in dense vegetation.
+		- the nest is well-concealed and has a side entrance.
+	- reproduction
+		- breeding season varies across its range but generally occurs during the rainy season.
+		- female lays 3-5 eggs, which are incubated for about 15-18 days.
+		- both parents participate in feeding the chicks until they fledge.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the lesser coucal is known for its role in controlling insect populations, as it consumes a large number of agricultural pests.
+	- unlike many other cuckoo species, the lesser coucal does not practice brood parasitism but rather builds its own nest and raises its young.

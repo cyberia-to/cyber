@@ -1,0 +1,6 @@
+- border collie
+- poodle
+- golden retriever
+- siberian husky
+- papillon
+- belgian shepherd

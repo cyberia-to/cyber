@@ -1,0 +1,11 @@
+- shifts:
+	- [[06:00-08:00]]
+	- [[08:00-10:00]]
+	- [[10:00-12:00]]
+	- [[12:00-14:00]]
+	- [[14:00-16:00]]
+	- [[16:00-18:00]]
+	- [[18:00-20:00]]
+	- [[20:00-22:00]]
+- the task list is posted on the GitHub board for [Soft Force](https://github.com/orgs/cyberia-to/projects/2/views/4).
+-

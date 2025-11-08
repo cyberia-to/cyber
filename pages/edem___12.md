@@ -1,0 +1,48 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/11]]
+	- [[edem/13]]
+- [[plumeria]]: 3
+- [[musa acuminata]]
+- [[morus nigra]]: 11
+- [[galphimia glauca]]
+- [[cordyline fruticosa]]
+- [[sapindus mukorossi]]
+- [[schleichera oleosa]]
+- [[plinia cauliflora]]
+- [[calliandra tergemina]]
+- [[tabebuia aurea]]
+- [[acalypha hispida]]
+- [[melaleuca viminalis]]
+- [[areca palm]]
+- [[carica papaya]]: 2
+- [[thymus vulgaris]]
+- [[origanum vulgare]]
+- [[eupatorium capillifolium]]: 4
+- [[talinum fruticosum]]
+- [[rumex sanguineus]]: 2
+- [[lantana camara]]
+- [[calliandra calothyrsus]]
+- [[ficus carica]]
+- [[centella asiatica]]
+- [[plantago]]
+- [[lavandula angustifolia]]: 2
+- [[caesalpinia pulcherrima]]
+- [[acmella repens]]
+- [[pouzolzia zeylanica]]
+- [[diplazium esculentum]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[debregeasia longifolia]]
+	- [[trema orientalis]]
+	- [[stachytarpheta urticifolia]]
+	- [[macrothelypteris torresiana]]: 2
+	-
+-
+-
+-

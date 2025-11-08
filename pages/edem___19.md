@@ -1,0 +1,93 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/18]]
+	- [[edem/20]]
+- [[osmanthus fragrans]]
+	- [[epidendrum ibaguense]]
+	- [[peperomia magnoliifolia]]
+	- [[coleus scutellarioides]]
+	- [[plumeria rubra]]
+- [[pinus halepensis]]
+	- DONE [[celosia argentea]]
+- [[mussaenda philippica]]
+- DONE [[calla palustris]] unknown
+- [[persea americana]]
+- [[hibiscus rosa-sinensis]]
+- [[vachellia karroo]]
+- [[solanum pseudocapsicum]]
+- [[nephelium lappaceum]]
+  :LOGBOOK:
+  CLOCK: [2024-04-26 Fri 04:34:46]
+  CLOCK: [2024-04-26 Fri 04:34:47]--[2024-04-26 Fri 06:42:26] =>  02:07:39
+  :END:
+	- DONE [[torenia fournieri]]
+	- [portulaca pilosa]]
+- TODO [[plinia phitrantha]]
+- [[passiflora alata]]
+- TODO [[nerium oleander]]
+- TODO [[neoregelia carolinae]]
+- [[inga edulis]]
+- DONE [[melaleuca]]
+- [[alternanthera ficoidea]]: 4
+- TODO [[pouteria sapota]]
+	- [[tradescantia pallida]]
+- TODO [[phyllanthus emblica]]
+	- TODO [[cryptomeria japonica]]
+	- [[asparagus densiflorus]]
+- [[dioscorea analalavensis]]
+- TODO [[annona squamosa]] jambo
+- [[malus domestica]] anna
+- [[buxus sempervirens]]
+- DONE [[tagetes minuta]]
+- [[centella asiatica]]
+- [[plantago]]
+- [[acmella repens]]
+- [[rubus rosifolius]]: 4
+- [[musa acuminata]]: 3
+- [[plumeria rubra]]: 3
+- [[asparagus densiflorus]]
+- [[morus alba]]: 3
+- [[zephyranthes candida]]
+- [[tabernaemontana divaricata]]
+- [[aptenia cordifolia]]
+- [[gynura procumbens]]
+- [[nopalea cochenillifera]]: 2
+- [[artemisia vulgaris]]
+- [[alternanthera sissoo]]: 5
+- [[aloe perfoliata]]: 2
+- [[blumea balsamifera]]
+- [[polyscias fruticosa]]
+- unknown: 5
+- [[colocasia esculenta]]: 3
+- [[cupressus sempervirens]]
+- [[cyclea barbata miers]]
+- [[lavandula angustifolia]]
+- [[aechmea blanchetiana]]
+- [[iresine diffusa herbstii]]
+- [[salvia leucantha]]: 3
+- [[salvia rosmarinus]]
+- [[cleome rutidosperma]]
+- [[symphytum officinale]]: 2
+- [[debregeasia longifolia]]: 2
+- [[calliandra calothyrsus]]
+- [[ligustrum lucidum]]
+- [[melastoma malabathricum]]
+- wall
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[debregeasia longifolia]]
+	- [[ageratina riparia]]
+	- [[rubus rosifolius]]
+	- [[austroeupatorium inulifolium]]
+	- [[macrothelypteris torresiana]]
+	- [[cymbopogon citratus]]: 2
+- dead:
+	- [[canna indica]]
+	- [[chrysanthemum morifolium]]
+	- [[hibiscus trionum]]
+	- [[codiaeum variegatum]]
+	- [[mangifera indica]]

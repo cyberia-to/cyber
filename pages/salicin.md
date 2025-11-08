@@ -1,0 +1,30 @@
+- salicin is a naturally occurring glycoside compound found primarily in the bark of willow trees (Salix species). It is notable as a precursor to salicylic acid and has historically been used for its medicinal properties, particularly as an [[analgesic]] and [[anti-inflammatory]] agent.
+-
+- ### chemical properties
+	- **molecular weight**: 286.28 g/mol
+	- **density**: approximately 1.55 g/cm³
+	- **boiling point**: decomposes before boiling
+	- **solubility**: soluble in water, alcohol, and acetone; slightly soluble in ether
+	- **optical rotation**: [α]D +34.5° (in water)
+	- **chemical formula**: C13H18O7
+-
+- ### usefulness in medicine
+	- salicin has been traditionally used for its analgesic, anti-inflammatory, antipyretic, and antirheumatic properties. Modern medical research highlights its potential in treating headaches, arthritis, muscle pains, and fever through conversion to salicylic acid, an active metabolite closely related to aspirin.
+-
+- ### antimicrobial activity
+	-
+- #### **bacteria**
+	- **[[staphylococcus aureus]]**:
+	- **[[escherichia coli]]**:
+	- **[[bacillus subtilis]]**:
+	-
+- #### **fungi**
+	- **[[candida albicans]]**:
+	- **[[aspergillus flavus]]**:
+	-
+- #### **viruses**
+	- **[[influenza virus]]**:
+	- **[[herpes simplex virus]]**:
+-
+-
+-

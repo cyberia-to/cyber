@@ -1,0 +1,8 @@
+- [[ananas]]
+- [[coconut]]
+- [[banana]]
+- [[papaya]]
+- [[naga]]
+- [[mango]]
+- [[apple]]
+- [[salak]]

@@ -1,0 +1,25 @@
+- ![Caryophyllene.pdf](../assets/Caryophyllene_1719299809273_0.pdf)
+- ### β-caryophyllene
+  
+  **general description**:
+	- β-caryophyllene is a natural bicyclic sesquiterpene found in essential oils of various plants, particularly in the oils of cloves, cannabis, rosemary, and hops. it is known for its spicy and woody aroma and is commonly used in the fragrance and flavoring industries.
+- **chemical properties**:
+	- **molecular weight**: 204.35 g/mol
+	- **density**: 0.900-0.910 g/cm³
+	- **boiling point**: 259 °c
+	- **solubility**: insoluble in water, soluble in organic solvents like ethanol and ether
+	- **optical rotation**: +10.0° to +20.0°
+	- **chemical formula**: C15H24
+- **usefulness in medicine**:
+	- β-caryophyllene exhibits a range of biological activities, making it useful in medicinal applications. it has been studied for its anti-inflammatory, analgesic, and antimicrobial properties. its ability to interact with the cb2 receptors in the endocannabinoid system also indicates potential benefits in treating pain and inflammation.
+	- **antimicrobial activity**:
+		- **bacteria**:
+		- [[staphylococcus aureus]] [link on medical research paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=staphylococcus+aureus+%CE%B2-caryophyllene&btnG=)
+		- [[escherichia coli]] [link on medical research paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=escherichia+coli+%CE%B2-caryophyllene&btnG=)
+		- [[salmonella typhimurium]] [link on medical research paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=salmonella+typhimurium+%CE%B2-caryophyllene&btnG=)
+	- **fungi**:
+		- [[candida albicans]] [link on medical research paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=candida+albicans+%CE%B2-caryophyllene&btnG=)
+		- [[aspergillus niger]] [link on medical research paper](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=aspergillus+niger+%CE%B2-caryophyllene&btnG=)
+- **research links**:
+- [β-caryophyllene and its anti-inflammatory properties](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=anti-inflammatory+properties+of+%CE%B2-caryophyllene&btnG=)
+- [antimicrobial activity of β-caryophyllene](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=antimicrobial+activity+of+%CE%B2-caryophyllene&btnG=)

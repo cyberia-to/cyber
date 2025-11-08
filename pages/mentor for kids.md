@@ -1,0 +1,54 @@
+- We are looking for a mentor for our kids
+- currently two kids: 0.9 years and 2.9 years girls
+- fierce curiosity, incredible energy and persistent disposition
+- ## Who are we?
+	- [[amazing family]]
+	- building [cyber valley](https://cv.land) autonomous community
+	- we focus on [renewable energy](https://en.wikipedia.org/wiki/Renewable_energy), [permaculture](https://en.wikipedia.org/wiki/Permaculture) and [superintelligence](https://en.wikipedia.org/wiki/Superintelligence)
+	- proficient in modern technology including [ai](https://en.wikipedia.org/wiki/Artificial_intelligence) and [blockchain](https://en.wikipedia.org/wiki/Blockchain)
+	- [[open minded and freedom-loving persons]]
+- ## About you
+	- woman 30 max
+	- love kids and looking for a career with kids
+	- comprehensive english
+	- love arithmetics and learns more advanced math
+	- erudition about how the universe works
+	- interested in knowing more about [[plants]], [[animals]] and [[insects]]
+	- [[open minded]] for different cultures and customs
+	- [[critical thinking]]
+	- ability to experiment with learning methodologies
+	- skilled in modern [[ai tools]]
+	- desire to mentor more kids
+	- able to relocate to Bali
+	- willing to live in a remote, natural environment with strong lack of infrastructure
+- ## Responsibilities
+	- monitor kids safety
+	- help kids solve everyday problems
+	- inspire kids for learning about [[universe]]
+	- teach kids english and bahasa
+	- play with kids [[math focused games]]
+	- play with kids [[body developing games]]
+	- manage local private [[kindergardern]]
+- ## Terms
+	- work and live in [cyber valley](https://maps.app.goo.gl/5z1HoB3B6crzv7fV6)
+	- full working day
+	- flexible holidays
+	- $500 monthly
+	- ready to pay extra for extra personality and strong scientific or engeneering background
+	- ability to travel with our family
+	- ability to commit for 3+ years of mentorship after 2 month of work
+	- 300$ compensation for rent or shared room in guesthouse 10 minutes from village
+- ## Opportunity
+	- work with advanced and intelligent family
+	- participate in one of the [biggest development project](https://cv.land) in Bali
+	- you can learn a lot of [[cool and inspiring things]] with us
+	- ability to grow develop next generation humans for cyber valley
+	- significant growth in case of strategic match
+- ## I want to work now!
+	- contact [@mliubov](https://t.me/mliubov) in telegram
+	- introduce youself in a greeting message
+		- write your life story
+		- outline your goals
+		- do not be shy
+		- describe why we have to choose you
+	- be able to meet and start shortly

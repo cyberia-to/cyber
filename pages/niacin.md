@@ -1,0 +1,24 @@
+alias:: niacin, vitamin b3
+
+- ![Vitamin_B3.pdf](../assets/Vitamin_B3_1719303309556_0.pdf)
+- [[vitamin]] b3, also known as niacin, is a [[water-soluble vitamin]] essential for [[energy metabolism]] and maintaining [[healthy skin]], [[nerves]], and [[digestion]]. it plays a key role in the synthesis of [[NAD]] and [[NADP]], [[coenzymes]] involved in [[cellular energy production]] and [[cellular repair]].
+- ### chemical properties
+	- **molecular weight**: 123.11 g/mol
+	- **density**: 1.47 g/cm³
+	- **boiling point**: 237°C (459°F)
+	- **solubility**: soluble in water, ethanol
+	- **optical rotation**: not applicable
+	- **chemical formula**: C₆H₅NO₂
+- ### usefulness in medicine
+	- vitamin b3 is used to treat and prevent [[pellagra]], a disease caused by niacin deficiency, characterized by [[dermatitis]], [[diarrhea]], and [[dementia]].
+	- it is effective in lowering [[cholesterol]] levels, improving [[cardiovascular health]], and managing conditions like [[hyperlipidemia]].
+	- it also supports healthy skin and may [[reduce acne]] by [[improving skin barrier function]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- vitamin b3 has been studied for its potential [[antimicrobial]] effects, particularly its ability to [[boost the immune system]] responses and inhibit bacterial growth.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+vitamin+B3)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+vitamin+B3)
+- ### research links
+	- [vitamin b3 and cholesterol management](https://scholar.google.com/scholar?q=vitamin+B3+cholesterol)
+	- [antimicrobial properties of vitamin b3](https://scholar.google.com/scholar?q=antimicrobial+properties+of+vitamin+B3)

@@ -1,0 +1,103 @@
+- scene 1: @joy
+	- voice:
+		- imagine living on your own terms—
+		- a sanctuary not just for survival
+		- but for a better life
+		- a place where you’re protected from whatever the world throws at you
+		- and in good times, you don’t just live, you thrive—happier, more fulfilled
+	- vision
+	  collapsed:: true
+		- warm, inviting visuals of people enjoying a natural, serene environment
+		- a mix of lush green forests, cozy wooden homes, and smiles. soft, inspiring background music begins
+- scene 2: @master
+	- did you know that this kind of autonomy and freedom could cost about the same as a car?
+	- think about it
+	- we spend so much on cars that lose value, locking us into routines, limiting our lives to the everyday grind
+	- but what if you could invest in a life where you control the rules, the pace, the future!
+- scene 3: @joy
+	- now, picture your ideal environment
+	- a lush, green forest where you feel deeply connected to nature
+	- but also its a sleek, high-tech space where innovation surrounds you
+	- at citadel genesis, you choose the life that matches your vision
+	- whether it’s nature’s tranquility or a fortress of advanced technology
+	- here, you don’t just survive; you thrive
+- scene 4: @joy
+	- so, which world will you choose? with citadel genesis, it’s up to you.
+- scene 5: @joy
+	- your personal autonomy starts with the basics.
+	- energy?
+		- the sun is shining, and the wind is blowing,
+		- providing you with the power you need—3 to 5 kilowatts per hour
+	- water?
+		- it’s right there, gathered from the land
+		- enough to sustain your home and more
+	- and plants?
+		- they’re more than just food
+		- they give you medicine, heat, timber, textiles and advanced sensations
+		- everything you need to live a full life
+- scene 6: @master
+	- modeling shows that just several species on 500-1000 square meters of land
+	- can grow everything you want
+	- and will supply energy and water you need
+	- this 100% autonomy allows you to focus your attention inward
+	- on what truly matters
+	- no more chasing after a system that never lets you rest
+	- but autonomy isn’t easy—it demands knowledge, skills, and community coordination
+- scene 7: @joy
+	- that understanding led us to cybervalley
+	- and the start of citadel genesis
+	- we decided to reengineer nearly everything from the ground up
+	- like a tech tree in civilization
+	- optimizing technological and cultural processes to live in harmony
+	- with the planet, the community, and yourself
+- scene 8: @joy
+	- cybervalley is in one of the world’s most attractive islands—bali, indonesia
+	- this beautiful, islandic country with lush nature and straightforward relocation rules
+	- cybervalley, up in bali’s mountains
+	- offers the perfect climate, stunning views, enormous biodiversity, and still affordable land
+- scene 9: @joy
+	- citadel genesis is a 38-hectare settlement in cybervalley
+	- featuring sustainable infrastructure
+	- a magic forest that provides everything you need
+	- and a community empowered by superintelligence
+	- it’s an experiment in marrying tech with nature
+- scene 10: @master
+	- after just one year of autonomous life here
+	- we’ve discovered how to build the next generation of societies
+	- with affordable, low-tech solutions
+- scene 11: joy and @master
+	- we invite you to join this venture
+	- on november 1st, we begin our eduhealth program: BOOTcamp
+	- in just two weeks, you’ll experience
+		- 20 hours of cutting-edge lectures in 10 topics on autonomy
+			- energy systems
+			- water systems
+			- soil, heat and recycling
+			- biome engineering
+			- longevity and health
+			- cryptography and web3
+			- learning and ai
+			- lowtech construction
+			- sensors, dev and control
+			- token engineering
+		- mixed with 30 hours of real-life workouts
+		- connections with like-minded people
+		- and improvements to your health and mind
+- scene 12: @joy
+	- during the bootcamp, you’ll enjoy the comforts of full autonomy
+	- stay in fully equipped tents designed for sustainability and ease
+	- you’ll have everything you need — from cozy bedding to all the amenities
+	- we’ll also provide nourishing
+	- organic meals sourced from the surrounding environment
+	- so you can focus on what truly matters—your growth, learning, and connection
+	- and of course, we’ve planned stunning hikes through the local landscape
+	- and relaxing evening entertainment to unwind
+- scene 13: @joy
+	- bootcamp will help you answer these crucial questions:
+	- is autonomous life for you?
+	- how can you save time and money while moving off-grid?
+	- and how do you launch your own community anywhere in the world?
+- scene 14: @joy and @master
+	- with citadel genesis, the choice is yours
+	- take control
+	- create the life you’ve always imagined

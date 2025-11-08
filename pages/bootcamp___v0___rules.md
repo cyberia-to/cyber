@@ -1,0 +1,32 @@
+icon:: 🌶
+
+- ## you get to the point at your expense
+- ## golden rule
+	- do not do to others
+	- what you would not want them do to you
+- ## goal
+	- learn to survive
+	- details are in [[game of freedom]]
+- ## participation
+	- 1 hour of [[lectures]] on default days
+		- every lecture will charge you to the next level of personal autonomy
+		- all lectures will give you the full picture
+	- at least 4 hours of workouts on default days
+		- every default day during workout hours [[game masters]]
+	- traveling and evening events are completely optional
+- ## resource limitations
+	- energy is limited and can be quoted on per tent basis during low or no sun
+	- during rainy season water is unlimited, during dry season it is precious resource
+	- you must not bring your cosmetics, soaps, shampoo
+		- 99% of modern cosmetics is really bad for [[soil]]
+		- try to leave it alone
+		- we cook beautiful cosmetics from [[sapindus]] and [[essential oils]]
+		- you skin and body will give you deep respect
+	- try to minimize usage of light and sound after sunset
+		- [[sound policy]]
+		- [[light policy]]
+		- [[carbon policy]]
+- [[smart vipassana option]]
+- ## game of freedom
+	- participation in [[game of freedom]] is optional
+	- you can left bootcamp anytime at your will

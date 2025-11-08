@@ -1,0 +1,3 @@
+alias:: athlete's foot
+
+-

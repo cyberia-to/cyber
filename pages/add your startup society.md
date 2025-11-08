@@ -1,0 +1,8 @@
+- make a pull request to [this repo](https://github.com/cyber-valley/cvland/)
+-
+- checklist
+	- dedicated page for startup society
+	- link to the dedicated page on [[startup societies]] page
+-
+- have network state?
+	- [[add your network state]]

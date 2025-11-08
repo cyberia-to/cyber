@@ -1,0 +1,67 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/28]]
+	- [[edem/30]]
+- [[dimocarpus longan]]
+- [[selenicereus undatus]]
+- [[selenicereus undatus]]
+- [[selenicereus undatus]]
+- [[magnolia cempaka]]: 2
+- [[thymus vulgaris]]
+- [[oreganum vulgare]]
+- [[acmella repens]]
+- [[musa acuminata]]: 2
+- [[plumeria rubra]]: 3
+- [[centella asiatica]]
+- [[plantago]]
+- [[sonchus asper]]
+- [[erigeron bonariensis]]
+- [[kalanchoe blossfeldiana]]
+- [[chrysanthemum morifolium]]
+- [[murraya paniculata]]
+- [[allium cepa]]: 2
+- unknown: 1
+- [[cananga odorata]]
+- [[eleutherine bulbosa]]
+- [[cnidoscolus aconitifolius]]: 2
+- [[cocos nucifera]]: 7
+- [[hibiscus sabdariffa]]: 3
+- [[callistemon viminalis]]
+- [[citrus limon]]
+- [[antidesma bunius]]
+- [[durio graveolens]]: 4
+- [[citrus hystrix]]: 2
+- [[syzygium myrtifolium]]
+- [[cnidoscolus aconitifolius]]: 2
+- [[citrus amlblycarpa]]
+- unknown: 2 (citrus)
+- [[eupatorium capillifolium]]
+- [[citrus maxima]] : 2
+- [[colocasia esculenta]]: 5
+- [[dimocarpus longan]] white
+- unknown (citrus)
+- [[hibiscus sabdariffa]]: 5
+- [[curcuma zedoaria]]
+- [[garcinia mangostana]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[calliandra calothyrsus]]
+	- [[eupatorium capillifolium]]
+	- [[melastoma malabathricum]]
+	- [[stachytarpheta urticifolia]]
+	- [[debregeasia longifolia]]
+	- [[ageratina riparia]]
+	- [[austroeupatorium inulifolium]]
+	- [[lantana camara]]
+	- [[inga edulis]]
+	- [[leucaena leucocephala]]
+	- [[macrothelypteris torresiana]]
+	- [[christella dentata]]: 2
+	- [[pitorogramma calomenalos]] gold
+- dead
+	- DONE [[durio zibethinus]]
+	  :LOGBOOK:
+	  CLOCK: [2024-04-26 Fri 04:42:19]--[2024-04-26 Fri 07:38:55] =>  02:56:36
+	  :END:
+	- DONE [[malus domestica]]

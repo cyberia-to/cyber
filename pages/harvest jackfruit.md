@@ -1,0 +1,56 @@
+- [github](https://github.com/cyberia-to/rockets/issues/1118)
+- harvest on the growing moon
+- during harvest
+	- check the health of the tree
+	- check soil acidity - if less then 7.0 add limestone to the soil
+	- remove allelopathy and grass 3-4 meters around the trunk
+	- apply to the most weak trees
+- # weekly jackfruit care checklist (*artocarpus heterophyllus*)
+- [ ] moisture check:
+	- feel top 3–5 cm soil; if dry → deep-water to the dripline
+		- • young trees: ~10–20
+		- • mature: ~30–60
+		- • no puddling >1 h
+- [ ] drainage pass (after rain):
+	- open channels;
+	- keep root collar dry/exposed.
+- [ ] mulch:
+	- maintain 5–10 cm organic mulch;
+	- pull back 10–15 cm from trunk.
+- [ ] weed-free ring:
+	- keep a clean 60–100 cm circle;
+	- no tools scraping bark.
+- [ ] canopy & sanitation:
+	- remove dead/diseased/crossing twigs;
+	- lift branches touching soil;
+	- avoid hard pruning in one go.
+- [ ] training (young trees):
+	- guide 3–4 strong scaffold branches;
+	- remove water sprouts and suckers.
+- [ ] flowers & fruit set:
+	- note male (slender, fuzzy) vs female (rounder, firm) heads;
+	- on still/humid mornings you may hand-dust pollen from male to female to boost set.
+- [ ] fruit management:
+	- thin crowded young fruits (aim ≈1 fruit per 30–45 cm of branch);
+	- bag fruits with breathable sacks; sling/support heavy fruit clusters.
+- [ ] pests:
+	- check peduncles/undersides for mealybugs, scale, mites, borers;
+	- manage ants.
+	- action → morning rinse + soap 1–2% or neem 5 ml/l; repeat in 3–5 days if needed; discard badly infested fruit.
+- [ ] disease watch:
+	- leaf/fruit spots or sooty mold → remove affected parts, improve airflow;
+	- optional spray baking soda 1 tsp/l + drop of soap (avoid evening wetting).
+- [ ] feeding (if it’s a feed week):
+	- compost tea/vermicompost extract 4–8 l/tree; keep n moderate;
+	- add a light potassium boost (seaweed/wood ash sprinkled thinly, then water in).
+- [ ] micronutrients note:
+	- • interveinal yellowing on older leaves → magnesium (plan epsom 1–2 g/l next feed)
+	- • small rosetted leaves → zinc (plan seaweed/trace foliar next week)
+- [ ] ground hygiene:
+	- collect and bin fallen fruit/leaves;
+	- keep trunk area dry.
+- [ ] stake/ties (young trees):
+	- check and loosen to prevent girdling;
+	- protect from wind rock.
+- [ ] log it:
+	- date, rainfall, liters watered, feed (y/n), pests/disease seen, # fruits set, # fruits bagged/supported.

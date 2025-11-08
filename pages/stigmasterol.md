@@ -1,0 +1,25 @@
+tags:: phytosterol
+
+- stigmasterol is a naturally occurring [[phytosterol]] structurally related to cholesterol, commonly found in vegetable oils, nuts, seeds, legumes, fruits, and medicinal plants. stigmasterol plays a significant role as a precursor in the biosynthesis of plant hormones such as [[brassinosteroids]], and possesses notable health-promoting properties.
+- ## chemical properties
+	- chemical formula: C₂₉H₄₈O
+	- molecular weight: 412.69 g/mol
+	- solubility: insoluble in water; soluble in fats, oils, and organic solvents
+	- melting point: approximately 170°C
+	- structure: steroid nucleus closely related to cholesterol, with an unsaturated side-chain
+- ## usefulness in medicine
+	- stigmasterol effectively lowers [[ldl cholesterol]] by competing with dietary cholesterol absorption, potentially reducing [[cardiovascular disease]] risk
+	- exhibits anti-inflammatory effects, useful in managing conditions like [[arthritis]] and [[chronic inflammatory disorders]]
+	- possesses [[anticancer]] potential, especially noted in breast, prostate, colon, and ovarian cancers
+	- beneficial for hormone-related conditions due to its structural similarity to cholesterol and involvement in hormone metabolism
+- ## [[antimicrobial]] activity
+	- stigmasterol demonstrates antimicrobial effects through immune system modulation, inflammation reduction, and direct inhibition of microbial growth
+	- bacteria:
+		- [[staphylococcus aureus]]
+		- [[escherichia coli]]
+		- [[pseudomonas aeruginosa]]
+	- fungi:
+		- [[candida albicans]]
+- ## research highlights
+	- [anticancer and anti-inflammatory activities of stigmasterol](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9649067/)
+	- [cholesterol-lowering effects and cardiovascular benefits of stigmasterol](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7153217/)

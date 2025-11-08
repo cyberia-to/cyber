@@ -1,0 +1,38 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/06]]
+	- [[edem/15]]
+	- [[edem/08]]
+- [[guilds]]
+	- [[eucalyptus deglupta]]
+	- [[citrus limon]]
+	- [[citrus sinensis]]
+	- [[bergera koenigii]]
+	- [[trema micrantha]]
+	- [[salvia leucantha]]
+	- [[iresine diffusa herbstii]]
+	- [[vitis vinifera]]
+	- [[salvia rosmarinus]]: 2
+	- [[plumeria rubra]]
+	- [[musa acuminata]]
+	- [[plantago]]: 2
+	- [[nephelium lappaceum]]
+	- [[rubus rosifolius]]
+	- [[thymus vulgaris]]
+	- [[origanum vulgare]]
+	- [[eupatorium capillifolium]]
+	- [[centella asiatica]]
+	- [[acmella repens]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[trema orientalis]]
+	- [[inga edilus]]
+	- [[macrothelypteris torresiana]]
+-
+	-

@@ -1,0 +1,63 @@
+- the idea of [[magic forest]] adopted to a highlands of [[cyber valley]]
+- criteria for species selection
+	- [[adopted]]: known to be productive, hardy and low maintenance
+	- [[scalable]]: they are easy to propagate
+	- [[high margin]]: together cover need for [[food]] system
+- key idea behind highland magic
+	- you are not producing and selling one successful crop
+	- but you are producing full menu to serve in your family restaurant
+	- here are several examples
+		- you sell coffee for $0.8 per kg, however you can earn $300 if cooked and sold by cups
+		- you sell taro, batat and casava for $0.5 per kg, however you can earn $100 if cooked and sold by chips
+		- you sell avocado for $0.8 per kg, however it costs $30 being sold as salad
+	- main problem with cloth: you will always depend on the cigaretes market
+	- currently you sell your crops for $1-2 per kg, however you can earn at least $50 if served as lunch
+	- there is a huge demand from tourism on the non toxic, natural food they can see how its being grown
+	- the approach allow you to become more resilient agains crop failures and market fluctuations
+	- and rise margin of your farm significantly
+	- but to switch you must shift your mind from mono culture to poly culture food systems
+	- this include plants, animal, fungi and aquatics
+	- altogether the produce reliable and abundant system
+- garden
+	- [[canopy]]: not so much can effectively grow in [[highland]] on that layer
+		- main: [[jackfruit]]
+		- secondary: [[aren]], [[bamboo]]
+		- support: [[casuarina]], [[pine]], [[hesperocyparis]], [[sengon]], [[trema]]
+		- long term: [[nagasari]] , [[sandal]], [[gaharu]], [[sonokeling]]
+		- conifers: [[damar]],  [[platycladus]], [[thuja]], [[chamaecyparis]], [[leda]]
+	- [[dwarf]]:
+		- main: [[avocado]], [[banana]]
+		- secondary: [[inga]], [[cinnamon]], [[fig]], [[sapodilla]], [[melaleuca]], [[clove]]
+		- walls: [[kaliandra]], [[dadap]], [[lamtoro]]
+	- [[shrub]]
+		- main: [[coffee]], [[mulberry]]
+		- secondary
+			- species: [[syzigium polianthum]]
+			- fruits: [[guava]], [[jeruk]], [[cassava]], [[syzygium jambos]], [[spondias dulcis]]
+			- aromatics: [[champaka]], [[ylang-ylang]], [[plumeria]], [[osmanthus]]
+			- walls: [[debregaesia]], [[melastoma]], [[lantana]]
+	- [[herb]] - super productive, diverse layer
+		- main: [[taro]], [[rubus]], [[rosemary]]
+		- secondary:
+			- self growing annuals: [[carrot]], [[amaranthus]]
+			- managed annuals: [[kale]], [[swiss chard]], [[radish]], [[lettuce]], [[broccoli]], [[peas]], [[cabbage]]
+			- greens: [[nopal]], [[hibaceto]], [[talinum]], [[vegy fern]], [[pandan]]
+			- aromatics: [[lavandula]], [[patchouli]], [[lemongrass]], [[tarragon]], [[salvia]], [[fennel]], [[coleus amboinicus]], [[tulsi]]
+			- medicine: [[chaikonchai]], [[artemisia]], [[sambiloto]]
+			- rhizomes: [[ginger]], [[curcuma]]
+			- edible flowers: [[rosa]],  [[china rose]], [[bauhinia]], [[tagetes erecta]], [[malvaviscus]], [[callianthe]]
+			- flowers: [[lily]], [[orchid]], [[anthurium]], [[jasmine]]
+	- [[cover]]
+		- main: [[batat]], [[strawberry]]
+		- secondary: [[mint]], [[thyme]], [[oregano]], [[gotu kola]], [[plantago]], [[stevia]], [[acmella]]
+		- support: [[comfrey]], [[alfalfa]], [[clover]], [[arachis]]
+	- [[vine]]
+		- main: [[chayote]]
+		- secondary: [[markiza]], [[basella]], [[betel]]
+- fungi: [[oyster]]
+- animal system
+	- [[chicken]]
+	- [[sheep]] or [[goat]]
+	- [[bees]]
+- aquatics system
+	- [[catfish]] + [[kangkung]]

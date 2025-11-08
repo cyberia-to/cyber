@@ -1,0 +1,8 @@
+- mantras are short, repeatable statements that express the core principles. they are designed to be spoken or recalled daily by workers, creating alignment, discipline, and shared focus. unlike formal rules, mantras are simple and memorable — a practical way to embed values into everyday actions.
+-
+- do the right things, not just things right.
+- if you don’t know why, don’t do it.
+- everything has its place.
+- keep the space clean.
+- respect the environment — never defile it by word, deed, or waste.
+-

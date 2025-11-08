@@ -1,0 +1,2 @@
+- main rule: requires strong local connections
+-

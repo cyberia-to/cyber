@@ -1,0 +1,3 @@
+- coast: below 300m
+- ridge: 300-800m
+- highland: 800+

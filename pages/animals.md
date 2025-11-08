@@ -1,0 +1,44 @@
+tags:: class
+
+- animals are foundational for biome development
+- we try to support as many animals as possible
+- trying to provide them comfortable habitat
+-
+- we integrate support for native species
+- and introduce only the most useful for biome
+- which are smart enough for cooperation
+-
+- native for [[batuka]]
+	- [[tiger]]
+	- [[birds]]
+	- [[deer]]
+	- [[luwak]]
+	- [[monkey]]
+	- [[squirrel]]
+	- [[worm]]
+	- [[mouse]]
+- selected for [[citadel genesis]]
+	- [[sheep]]
+	- [[chicken]]
+	- [[bees]]
+- [[research]]
+	- TODO [[felis catus]]
+	- [[rabbit]]
+	- [[minipig]]
+	- [[raven]]
+	- [[grey parrot]]
+	- [[dogs]]
+	- [[snail]]
+	- [[firefly]]
+	- [[glowworm]]
+	- [[silk spider]]
+	- [[cricket]]
+	- [[frog]]
+	- [[silk moth]]
+	- [[mealworm]]
+	- [[silkworm]]
+	- [[alpaca]]
+	- [[ostrich]]
+	- [[guinea pig]]
+	- [[aquatics]]
+-

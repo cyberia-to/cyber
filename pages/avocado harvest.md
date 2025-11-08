@@ -1,0 +1,54 @@
+- [github](https://github.com/cyberia-to/rockets/issues/1117)
+- # weekly avocado care checklist (tropics-friendly)
+- **moisture check:**
+	- feel top 3–5 cm soil; if dry → deep-water to the **dripline**
+	  • young trees: ~10–15 l
+	- • mature: ~20–40 l
+	- • avoid puddling >1 h
+- **drainage pass (after rain):**
+	- open channels;
+	- keep root collar dry/exposed.
+- **mulch:**
+	- maintain 5–10 cm organic mulch;
+	- pull back **10–15 cm from trunk**.
+- **weed-free ring:**
+	- keep a clean 60–100 cm circle;
+	- no tools scraping bark.
+- **canopy & sanitation:**
+	- remove dead/crossing twigs, water sprouts, soil-touching branches;
+	- no hard pruning.
+- **stake/support (young trees):**
+	- check ties;
+	- prevent wind rock.
+- **flowers & fruit:**
+	- in bloom, avoid spraying;
+	- watch pollinators.
+	- thin heavy sets on young trees;
+	- prop heavy limbs;
+	- pick up fallen fruit.
+- **feeding (if it’s a feed week):**
+	- compost tea/vermicompost extract **2–4 l/tree**;
+	- keep N moderate;
+	- add a light **potassium** source (seaweed/wood ash) if fruiting.
+- **micronutrient watch:**
+	- • pale new leaves → iron issue
+	- • older leaves yellow w/ green veins → magnesium
+	- plan next-week fix (chelate/epsom), avoid leaf burn salts.
+- **pests:**
+	- check undersides for mites, thrips, scale, leaf miner;
+		- manage ants.
+		- action → morning rinse + **soap 1–2%** or **neem 5 ml/l**;
+		- repeat in 3–5 days if needed.
+- **disease watch:**
+	- black leaf/fruit spots (anthracnose) or sooty mold → remove affected leaves, improve airflow;
+	- optional spray **baking soda 1 tsp/l + drop of soap** (not in evening).
+	- watch for root-rot signs (wilt/dieback) → improve drainage immediately.
+- **ground hygiene:**
+	- clear litter from under canopy;
+	- keep trunk area dry.
+- **container extras (if potted):**
+	- rotate 90° for even light;
+	- ensure pot feet/air gap;
+	- deep-flush salts once/month.
+- **log it:**
+	- date, rainfall, liters watered, feed (y/n), pests/disease seen, fruit drop count.

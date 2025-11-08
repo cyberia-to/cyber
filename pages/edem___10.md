@@ -1,0 +1,42 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/09]]
+	- [[edem/11]]
+- [[cinnamomum verum]]: 2 [[guild]]
+- [[persea americana]] [[guild]]
+	- [[thunbergia mysorensis]]
+	- [[clerodendrum thomsoniae]]
+	- [[mansoa alliacea]]
+- [[inga edulis]] [[guild]]
+- [[stevia rebaudiana]]
+- [[coleus scutellarioides]]
+- [[inga edulis]] [[guild]]
+- [[mangifera indica]] [[guild]]
+- [[lantana camara]] [[guild]]
+- [[salvia leucantha]]
+- [[plumeria rubra]]
+- [[musa acuminata]]
+- [[thymus vulgaris]]
+- [[origanum vulgare]]
+- [[phyllanthus buxifolius]]
+- [[ocimum tenuiflorum]]
+- [[salvia rosmarinus]]
+- [[carica papaya]]: 2
+- [[eupatorium capillifolium]]: 2
+- [[sonchus asper]]
+- [[plantago]]
+- [[pouzolzia zeylanica]]
+- [[acmella repens]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[debregeasia longifolia]]
+	- [[rubus rosifolius]]
+- dead:
+	- [[loropetalum chinense]]
+	- [[graptophyllum pictum]]
+-

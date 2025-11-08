@@ -1,0 +1,44 @@
+- [github](https://github.com/cyberia-to/rockets/issues/1152)
+- # passion fruit — weekly care checklist (*passiflora edulis*)
+- **moisture check:**
+	- feel top 3–5 cm of soil;
+	- if dry → deep-water ~15–25 l per vine (pots: until slight runoff).
+	- avoid puddling >1 h.
+- **mulch:**
+	- keep 5–8 cm organic mulch;
+	- pull back 5–10 cm from the stem;
+	- top up thin spots.
+- **trellis & training:**
+	- tie new shoots **horizontally** along wires;
+	- lift any growth off the ground;
+	- spread vines for airflow.
+- **pruning & sanitation:**
+	- remove dead/diseased leaves and suckers;
+	- thin congested interior;
+	- clip overly vigorous runners after 6–8 nodes.
+- **flowers & fruit set:**
+	- mornings, check blooms;
+	- if humid/still, hand-pollinate (dab pollen from anther to stigma).
+- **feeding (if it’s a feeding week):**
+	- compost tea or vermicompost extract **2–4 l per vine**;
+	- keep nitrogen moderate;
+	- add **potassium** (seaweed or a light sprinkle of wood ash).
+- **pests:**
+	- inspect undersides for aphids, mealybugs, mites;
+	- action → morning rinse + **soap 1–2%** or **neem 5 ml/l**;
+	- repeat in 3–5 days if needed. manage ants.
+- **fruit fly protection:**
+	- bag young fruits or refresh traps/baits;
+	- collect and bin any stung or fallen fruit.
+- **disease watch:**
+	- leaf/fruit spots → remove affected tissue;
+	- improve airflow;
+	- optional spray **baking soda 1 tsp/l + a drop of soap** (avoid evening wetting).
+- **support & cleanup:**
+	- prop heavy clusters;
+	- clear weeds in a 50–80 cm ring around the stem.
+- **drainage pass:**
+	- after rain, open channels so roots never sit waterlogged.
+- **log it:**
+	- date, rainfall, liters watered, feed (y/n),
+	- № flowers seen, № fruits set, pests/disease noted.

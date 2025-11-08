@@ -1,0 +1,91 @@
+tags:: market
+alias:: protein
+
+- system synergy potential (micro-ecosystem stacking)
+	- animal hotels
+		- species:: [[chicken]]
+	- surface ponds
+		- species:: [[duckweed]], [[azolla]], [[pomacea]], [[achatina]], [[tilapia]], [[catfish]], [[carp]]
+		- function:: protein + aquatic biomass
+	- compost units
+		- species:: [[bsf]], [[crickets]], [[mealworms]]
+		- function:: protein conversion from food scraps
+	- vertical towers
+		- species:: [[basella]], [[moringa]], [[chaya]]
+		- function:: continuous leafy greens
+	- dry terraces
+		- species:: [[chaya]] , [[amaranth]], [[cassava]]
+		- function:: leaf/starch protein base
+	- logs/shade layer
+		- species:: [[hericium]], [[ganoderma]]
+		- function:: medicinal + supplemental protein
+- plant based protein in raw form
+	- [[ipomoea batatas]]
+	- [[basella alba]]
+	- [[gynura]]
+	- [[talinum fruticosum]]
+	- [[phyllanthus androgynus]]
+	- [[morus]]
+	- [[ulmus parvifolia]]
+	- [[morinda citrifolia]]
+	- [[moringa oleifera]]
+- need to check
+	- [[celtis sinensis]]
+	- [[honey locust]]
+	- [[broussonetia papyrifera]]
+	- [[pterocarpus indicus]]
+	- [[ficus racemosa]]
+- plant based protein in cooked form
+	- [[cnidoscolus aconitifolius]]
+	- [[artocarpus]]
+	- [[diplazium esculentum]]
+	- [[urtica dioica]]
+	- [[inocarpus fagifer]]
+	- [[bamboo]]
+	- [[manihot esculenta]]
+	- [[cajanus cajan]]
+- insects
+	- [[black soldier fly]]
+- ![Proteins.pdf](../assets/Proteins_1719303309556_0.pdf)
+- [[proteins]] are large, complex molecules made up of [[amino acids]] that perform a wide variety of functions in the body. they are essential for structure, function, and regulation of tissues and organs, serving as [[enzymes]], [[hormones]], and [[antibodies]].
+- ### chemical properties
+	- **molecular structure**: composed of amino acids linked by [[peptide]] bonds, forming [[polypeptides]] that fold into specific three-dimensional shapes.
+	- **molecular weight**: varies significantly depending on the protein (e.g., [[hemoglobin]]: ~64,500 g/mol).
+	- **solubility**: solubility depends on the protein and its environment (e.g., pH, temperature); proteins can be soluble (e.g., [[albumin]]) or insoluble (e.g., [[keratin]]).
+	- **chemical formula**: varies; general composition includes carbon, hydrogen, oxygen, nitrogen, and sometimes sulfur (CHON).
+- ### usefulness in medicine
+	- proteins are vital for [[muscle repair]] and [[growth]], making them crucial for athletes and those recovering from injuries.
+	- they play a central role in [[enzyme production]], which facilitates biochemical reactions in the body.
+	- proteins like [[antibodies]] are essential for [[immune defense]] against pathogens.
+	- structural proteins like [[collagen]] and [[keratin]] maintain skin, hair, nails, and connective [[tissue health]].
+	- therapeutic proteins, such as [[insulin]] and [[monoclonal antibodies]], are used to treat diseases like diabetes and cancer.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- certain proteins, such as [[defensins]] and [[lysozymes]], exhibit direct antimicrobial activity by disrupting microbial cell walls and membranes. research highlights:
+	- **bacteria**:
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+proteins)
+		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+proteins)
+	- **viruses**:
+		- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+proteins)
+- ### research links
+	- [proteins and muscle health](https://scholar.google.com/scholar?q=proteins+muscle+health)
+	- [proteins and immune defense](https://scholar.google.com/scholar?q=proteins+immune+defense)
+- **[[hemoglobin]]**: transports oxygen in the blood.
+- **[[myosin]]**: involved in muscle contraction and movement.
+- **[[collagen]]**: provides structure to skin, bones, and connective tissues.
+- **[[keratin]]**: strengthens hair, skin, and nails.
+- **[[insulin]]**: regulates blood sugar levels.
+- **[[albumin]]**: maintains fluid balance in the blood and carries hormones, vitamins, and enzymes.
+- **[[fibrinogen]]**: essential for blood clotting.
+- **[[amylase]]**: breaks down carbohydrates into sugars during digestion.
+- **[[trypsin]]**: aids in protein digestion in the small intestine.
+- **[[antibodies]] ([[immunoglobulins]])**: help the immune system fight infections.
+- **[[actin]]**: works with myosin for cell movement and muscle contraction.
+- **[[elastin]]**: provides elasticity to tissues like skin and blood vessels.
+- **[[cytochrome c]]**: involved in energy production within mitochondria.
+- **[[casein]]**: a protein found in milk, providing essential amino acids.
+- **[[lysozyme]]**: destroys bacterial cell walls, offering antimicrobial defense.
+- **[[enzymes]]**: catalyze biochemical reactions in the body (e.g., lactase for lactose digestion).
+- **[[monoclonal antibodies]]**: laboratory-made proteins used in treating diseases like cancer.
+- **[[hormones]]**: protein-based signaling molecules (e.g., growth hormone).
+- **[[transport proteins]]**: facilitate the movement of molecules (e.g., sodium-potassium pump).
+-

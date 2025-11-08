@@ -1,0 +1,27 @@
+- **alias**: palmitic acid
+- ![Palmitic_Acid.pdf](../assets/Palmitic_Acid_1719303309556_0.pdf)
+- [[palmitic acid]] is a saturated fatty acid commonly found in palm oil, dairy products, and animal fats. it is one of the most abundant fatty acids in the human body and serves as a major energy source and structural component of cell membranes.
+- ### chemical properties
+	- **molecular weight**: 256.42 g/mol
+	- **density**: 0.853 g/cm³
+	- **melting point**: 63–64°C (145–147°F)
+	- **boiling point**: 351°C (664°F)
+	- **solubility**: insoluble in water; soluble in ethanol and organic solvents
+	- **chemical formula**: C₁₆H₃₂O₂
+- ### usefulness in medicine
+	- palmitic acid is a primary component of [[lipid metabolism]], serving as an energy source for cells.
+	- it supports [[skin health]] by providing a protective barrier and aiding in moisture retention.
+	- it is used in [[cosmetics]] and [[pharmaceutical products]] for its emollient and stabilizing properties.
+	- palmitic acid plays a role in [[immune function]] by being a precursor for certain signaling molecules.
+	- while beneficial in moderation, excessive consumption of palmitic acid is associated with increased [[cardiovascular risk]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- palmitic acid demonstrates mild antimicrobial properties, primarily by disrupting microbial membranes.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+palmitic+acid)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+palmitic+acid)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+palmitic+acid)
+- ### research links
+	- [palmitic acid and lipid metabolism](https://scholar.google.com/scholar?q=palmitic+acid+lipid+metabolism)
+	- [palmitic acid and antimicrobial properties](https://scholar.google.com/scholar?q=palmitic+acid+antimicrobial+properties)

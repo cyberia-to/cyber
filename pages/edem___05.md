@@ -1,0 +1,55 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/04]]
+	- [[edem/06]]
+- [[guilds]]
+	- [[inga edulis]]
+	- [[melaleuca quinquenervia]]
+	- [[garcinia mangostana]]
+	- [[garcinia mangostana]]
+	- [[prunus persica]]
+	- [[cinnamomum verum]]
+	- [[melaleuca viminalis]]
+	- [[phyllanthus casticum]]
+	- [[mangifera indica]]
+	- [[inga edulis]]
+- [[bed]]
+	- [[manihot esculenta]]: 10
+	- [[fragaria ananassa]]: 3
+	- [[canna indica]]: 13
+	- [[trema orientalis]]
+	- [[piper siriboa]]
+	- [[salvia leucantha]]
+	- [[carica papaya]]: 3
+	- [[musa acuminata]]: 2
+	- [[centella asiatica]]
+	- [[plantago]]
+	- [[iresine diffusa herbstii]]
+	- [[passiflora ligularis]]: 2
+	- [[phyllanthus buxifolius]]
+	- [[salvia rosmarinus]]
+	- [[plumeria rubra]]
+	- [[pteridium aquilinum]]: 2
+	- [[eupatorium capillifolium]]: 3
+	- [[thymus vulgaris]]
+	- [[origanum vulgare]]
+	- [[acmella repens]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[trema orientalis]]
+	- [[inga edulis]]
+	- [[glaphyropteridopsis erubescens]]
+	- [[macrothelypteris torresiana]]
+	- [[cyathea arborea]]
+	- [[debregeasia longifolia]]
+- dead:
+	- [[apium graveolens]]
+	-
+-
+-

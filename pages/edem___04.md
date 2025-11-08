@@ -1,0 +1,61 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/03]]
+	- [[edem/05]]
+- [[guilds]]
+	- [[pandorea jasminoides]]
+	- [[petrea volubilis]]
+	- [[bougainvillea spectabilis]]
+	- [[olea europaea]]
+	- [[garcinia mangostana]]
+	- [[trema tomentosa]]
+		- [[passiflora edulis]]
+		- [[inga edulis]]
+	- [[cinnamomum verum]]
+	- [[cananga odorata]]
+	- [[prunus persica]]: 2
+	- [[aleurites moluccanus]]
+	- [[prunus persica]]
+	- [[magnolia champaca]]
+	- [[cinnamomum verum]]
+	- [[macadamia tetraphylla]]
+	- [[bunchosia armeniaca]]
+	- [[sapindus mukorossi]]
+- [[beds]]
+	- [[colocasia esculenta]]: 17
+	- [[hibiscus acetosella]]
+	- [[manihot esculenta]]: 11
+	- [[carica papaya]]: 6
+- [[centella asiatica]]
+- [[curcuma xanthorrhiza]]
+- [[salvia leucantha]]: 4
+- [[morus alba]]
+- [[musa acuminata]]: 2
+- [[persicaria hydropiper]]
+- [[melaleuca viminalis]]
+- [[melaleuca quinquenervia]]
+- [[plantago]]
+- [[salvia rosmarinus]]
+- [[calliandra calothyrsus]]
+- [[cuphea hyssopifolia]]
+- [[rubus rosifolius]]
+- [[thymus vulgaris]]
+- [[origanum vulgare]]
+- [[acmella repens]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[symphytum officinale]]
+	- [[trema orientalis]]
+	- [[inga edulis]]
+	- [[macrothelypteris torresiana]]
+	- [[debregeasia longifolia]]
+- dead:
+	- [[moringa oleifera]]
+	- [[bergera koenigii]]
+-

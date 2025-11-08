@@ -1,0 +1,27 @@
+- **alias**: glucomoringin
+- ![Glucomoringin.pdf](../assets/Glucomoringin_1719303309556_0.pdf)
+- [[glucomoringin]] is a [[glucosinolate]] compound found primarily in the seeds and leaves of the moringa plant ([[moringa oleifera]]). it is known for its potent [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] properties, as well as its potential t[[herapeutic applications]].
+- ### chemical properties
+	- **molecular weight**: 437.51 g/mol
+	- **density**: not widely reported
+	- **melting point**: decomposes before melting
+	- **solubility**: soluble in water and polar solvents
+	- **chemical formula**: C₁₀H₁₈NO₉S₂
+- ### usefulness in medicine
+	- glucomoringin is known for its ability to act as an [[antioxidant]], neutralizing free radicals and protecting cells from oxidative damage.
+	- it exhibits strong [[anti-inflammatory]] effects, making it useful for managing conditions such as [[arthritis]] and [[chronic inflammation]].
+	- its derivatives, like moringin (isothiocyanate), are studied for their [[anticancer]] properties, as they can [[inhibit tumor growth]] and [[induce apoptosis]].
+	- glucomoringin supports [[immune health]] and enhances [[cellular defense]] mechanisms.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- glucomoringin and its derivatives have shown significant antimicrobial activity by [[disrupting microbial membranes]] and inhibiting growth.
+	- research highlights:
+	- **bacteria**:
+		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+glucomoringin)
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+glucomoringin)
+	- **fungi**:
+		- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+glucomoringin)
+	- **viruses**:
+		- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+glucomoringin)
+- ### research links
+	- [glucomoringin and antioxidant properties](https://scholar.google.com/scholar?q=glucomoringin+antioxidant+properties)
+	- [glucomoringin and antimicrobial activity](https://scholar.google.com/scholar?q=glucomoringin+antimicrobial+activity)

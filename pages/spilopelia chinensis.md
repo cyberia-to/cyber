@@ -1,0 +1,44 @@
+tags:: species, birds
+alias:: spotted dove
+
+- voice:: https://ebird.org/species/spodov
+- ![image](https://ipfs.io/ipfs/QmWGvAt22JfkifkLJWrKXxtJkQxYSqhBTZNyBioQHkAbPx)
+- ![image](https://ipfs.io/ipfs/QmRCcVvcz5h4HEVNEZcyuU5touzWdBFjp91pes4ovshstU)
+- general description
+	- appearance
+		- the spotted dove is a medium-sized bird with a distinctive spotted pattern on its neck, which consists of white spots on a black background.
+		- its upperparts are generally light brown with darker streaks, and the underparts are a pale pinkish-brown.
+		- it has a long, rounded tail with white tips on the outer feathers.
+		- the eyes are red, and the legs and feet are pinkish.
+	- size
+		- measures about 30-33 cm in length.
+		- typically weighs around 150-200 grams.
+	- behavior
+		- known for its gentle and calm demeanor, often seen foraging on the ground in pairs or small groups.
+		- it has a distinctive, soft cooing call that is often heard in the early morning and late afternoon.
+		- the spotted dove is a strong flier but typically prefers to walk or run when foraging.
+- habitat
+	- range
+		- widely distributed across south asia and southeast asia, including countries like india, china, indonesia, malaysia, and the philippines.
+		- has been introduced to many other regions, including australia and the united states.
+	- environment
+		- inhabits a variety of environments including urban areas, gardens, parks, forests, and agricultural fields.
+	- often found in areas with ample tree cover and open spaces for foraging.
+- diet
+	- primarily granivorous, feeding on seeds, grains, and small fruits.
+	- also consumes small insects and invertebrates occasionally.
+- breeding
+	- nesting
+		- builds a flimsy platform nest made of twigs and grass, usually placed in trees or shrubs.
+		- nests are often located at a low to moderate height above the ground.
+	- reproduction
+		- breeding season varies across its range but generally occurs throughout the year in warm climates.
+		- female lays 1-2 eggs, which are incubated for about 14-16 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 15-18 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the spotted dove's distinctive cooing call is often used in traditional music and cultural practices in various asian countries.
+	- it is highly adaptable and thrives in both urban and rural environments, making it one of the most commonly seen doves in its range.
+	- the spotted dove has been successfully introduced to several non-native regions, where it has established stable populations.

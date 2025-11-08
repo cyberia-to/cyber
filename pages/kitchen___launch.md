@@ -1,0 +1,56 @@
+- opening kitchen
+	- step-by-step instructions (8am)
+		- open and enter the kitchen tent:
+		- open doors and the window flaps, leaving only the ventilation mesh to allow fresh air in.
+	- air and dry the space:
+		- ensure the area is well-ventilated and allow the air to circulate.
+	- turn on the gas stove.
+		- dry any damp areas.
+	- turn on the fan
+		- if the fan is off, turn it on to improve airflow and ventilatioт (exception: heavy rain and fog).
+	- remove flies:
+		- use an electric fly swatter or a manual one to eliminate any flies in the space.
+	- clean and dry the floors
+		- mop the floors thoroughly.
+		- use a dry mop to ensure the floors are completely dry.
+	- clean surfaces and dishes
+		- wash any dirty surfaces or dishes left from the previous use.
+		- load and turn on dishwasher (only if it's not rain and sunny wheather)
+	- store leftover food
+		- check for any leftover food and place it in the refrigerator.
+	- empty and clean trash bins
+		- check all trash bins.
+		- empty the trash if full or contains leftover waste.
+		- clean the bins with water and disinfectant if necessary.
+	- ready to work
+		- once all tasks are completed, proceed with kitchen operations.
+-
+- closing the kitchen
+	- step-by-step instructions before leaving
+		- turn off the gas stove
+			- ensure all burners are turned off properly.
+		- clean all surfaces and dishes
+			- put all used dishes, utensils, and cookware to dishwasher (prepare for use, pour soap, but do not turn on)
+			- wipe down countertops and cooking surfaces.
+		- sweep and mop the floors
+			- sweep away crumbs or debris.
+			- mop the floors to leave them clean for the next use.
+		- prepare and cover dinner (if it wasnt other instructions)
+			- leave the prepared dinner ready for use.
+			- cover the food securely with lids, foil, or food-safe covers to keep it fresh and protected.
+		- check and store food
+			- place any leftover food in the refrigerator or designated storage containers.
+			- ensure food is properly sealed to avoid pests.
+		- empty and clean trash bins:
+			- remove all trash from the bins and dispose of it in the designated area.
+			- clean and disinfect the bins if needed.
+		- turn off the fan
+			- if the fan is on, switch it off.
+		- close windows and doors
+			- leave a few ventilation windows slightly open to allow airflow and prevent mold growth.
+			- close and secure the remaining windows and lock the tent doors.
+		- check appliances
+			- ensure all appliances (e.g., kettle, blender) are unplugged.
+			- check that water pumps are turned off and placed on charge.
+		- final inspection
+			- take a final walk through the kitchen to ensure everything is clean and organized.

@@ -1,0 +1,28 @@
+- **alias**: chlorogenic acid
+- ![Chlorogenic_Acid.pdf](../assets/Chlorogenic_Acid_1719303309556_0.pdf)
+- [[chlorogenic acid]] is a [[polyphenolic]] compound found in various plants, including [[coffee]] beans, [[fruits]], and [[vegetables]]. it is widely known for its [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] properties, playing a role in promoting overall health and [[preventing chronic diseases]].
+- ### chemical properties
+	- **molecular weight**: 354.31 g/mol
+	- **density**: 1.65 g/cm³
+	- **melting point**: 210–215°C (decomposes upon heating)
+	- **solubility**: soluble in water, ethanol, and methanol
+	- **chemical formula**: C₁₆H₁₈O₉
+- ### usefulness in medicine
+	- chlorogenic acid is known for its potent [[antioxidant]] properties, protecting cells from oxidative stress and slowing the aging process.
+	- it may help regulate [[blood sugar levels]], making it beneficial for managing [[diabetes]] and [[metabolic syndrome]].
+	- it supports [[cardiovascular health]] by reducing blood pressure and improving lipid profiles.
+	- chlorogenic acid promotes [[weight loss]] by modulating fat metabolism and reducing fat absorption.
+	- it contributes to [[skin health]] by reducing inflammation, protecting against [[UV damage]], and enhancing [[skin repair]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- chlorogenic acid exhibits strong [[antimicrobial]] activity against a variety of pathogens by [[disrupting cell membranes]] and inhibiting bacterial growth.
+	- research highlights:
+		- **bacteria**:
+			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+chlorogenic+acid)
+			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+chlorogenic+acid)
+		- **fungi**:
+			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+chlorogenic+acid)
+		- **viruses**:
+			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+chlorogenic+acid)
+- ### research links
+	- [chlorogenic acid and antioxidant properties](https://scholar.google.com/scholar?q=chlorogenic+acid+antioxidant+properties)
+	- [chlorogenic acid and antimicrobial activity](https://scholar.google.com/scholar?q=chlorogenic+acid+antimicrobial+activity)

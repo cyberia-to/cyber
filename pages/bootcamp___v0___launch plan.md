@@ -1,0 +1,38 @@
+- deadline: 31 october
+- setup media channel youtube.com/@cybervalleyland
+	- boost channel to 100k subscribers [[@master]]
+		- video with game of freedom
+		- video with details of pilot
+		- interview with applicants
+		- last preparations
+	- find producer for game of freedom [[@master]]
+		- with professional operator
+		- and experienced youtube manager
+		- organize live streaming of construction: [[@robonomics]] ?
+		- target for pilot: 14 every day updates during [[pilot]]
+		- target for all the game: 12 videos covering topics of autonomy
+		- placement for producer and operator
+		- bootcamp participants preferable
+- construct infrastructure [[@joe]]
+	- [[edu]]: creative space
+	- 6 [[residential buildings]]
+		- make them cozy: [[@joy]] and [[@love]]
+	- [[organiq]] construction [[@joe]]
+	- launch processes in resto and market by [[@joy]] + [[@love]]
+	- [[perma]]: kitchen [[@joy]] + [[@love]]
+	- [[edem]] and [[pasture]]: [[love]]
+	- [[@robonomics]] + [[joe]]: water system, energy system, network
+	- [[recycling]]
+- prepare [[pilot]]
+	- target
+		- demonstrate that [[fully autonomous tent]] is possible
+		- in 2 weeks
+		- for $10k (could be more on the pilot)
+		- using some reasonable amount of physical and intellectual force
+	- schedule: [[@joe]] [[@master]] [[@love]] [[@joy]]
+		- [[cyberman]]
+	- materials: [[@joe]]
+	- tools: [[@joy]]
+	- plants: [[@love]]
+	- compost: [[@love]]
+	- equipment: [[@love]] and [[@joy]]

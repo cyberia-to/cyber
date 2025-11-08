@@ -1,0 +1,105 @@
+alias:: giant sequoia
+tags:: species, research, unavailable
+supply:: wishlist
+
+- [[high margin]]
+- [[conifer]]
+- the largest trees by volume
+- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZj7RNtjgsQ14pvjt2rv1DwPDjHndcZVpaRzNdSKk9ZNE)
+-
+- [[plant/iconic]], [[long-living]]
+- [[products]]
+	- [[wood]]: durable but brittle, used historically for [[construction]], [[fencing]], and [[shingles]]
+	- [[resin]]: contains [[tannins]] with potential [[antimicrobial]] properties
+	- [[ornamental]]: cultivated worldwide as a decorative tree in parks and estates
+	- [[carbon sink]]: one of the most effective trees for [[carbon sequestration]]
+- [[plant/features]]
+	- [[largest living tree]]: by volume, not height
+	- [[fire-resistant]]: thick bark and tannins provide high resistance to wildfires
+	- [[longevity]]: can live for more than 3,000 years
+	- [[fast initial growth]]: young trees grow quickly under the right conditions
+- [[layer]]:
+	- [[canopy]],
+	- [[titan]]
+- [[plant/type]]: [[tree]]
+	- [[root]]:
+		- shallow but wide-spreading root system, lacks a taproot
+	- [[trunk]]:
+		- massive, reddish-brown, deeply furrowed bark up to 90 cm thick
+	- [[bark]]:
+		- fibrous, fire-resistant, and rich in tannins
+		- [[tannins]]:
+			- provides natural fungal and insect resistance
+	- [[leaves]]:
+		- scale-like, evergreen, bluish-green in color
+		- [[photosynthesis]]:
+			- occurs even in winter due to year-round foliage
+	- [[cone]]:
+		- small (4-7 cm), oval, contains up to 200 seeds per cone
+	- [[seeds]]:
+		- winged, tiny (4-5 mm), wind-dispersed but often require fire to release
+- [[environment]]:
+	- native to [[California's Sierra Nevada mountains]]
+	- [[climate]]: humid montane climate with wet winters and dry summers
+		- sun:: 600
+			- no-sun-days:: 50
+		- water:: 1200
+			- no-water-days:: 90
+		- humidity:: 65%
+		- fog-resistance:: moderate
+		- max-temp:: 35°C
+			- optimal-temp:: 20°C
+				- min-temp:: -15°C
+		- wind-damage:: resistant to moderate winds
+	- [[soil]]:
+		- prefers deep, well-drained sandy loam or granitic soil
+		- soil-ph::
+			- 6.0 - 7.5
+		- soil-type::
+			- sandy loam,
+			- granite-derived,
+			- moist but well-drained
+	- [[spacing]]:
+		- requires large space for full growth potential
+		- good-neighbors::
+			- [[Douglas fir]],
+			- [[Ponderosa pine]]
+		- bad-neighbors::
+			- [[dense shrubbery]] that competes for water
+		- max-height::
+			- 95,000 cm
+		- max-spread::
+			- 8000 cm
+- [[lifecycle]]
+	- longevity::
+		- 3 000 yers
+	- germination:
+		- requires stratification and exposure to light for optimal germination
+	- seedling:
+		- slow initial growth, vulnerable to drought and competition
+	- mature:
+		- starts producing cones at 12-20 years but reaches full size in centuries
+	- death:
+		- can die from [[root disease]], [[lightning strikes]], or fire suppression issues
+- operations
+	- propagation
+		- [[seeds]]: best germination rates after exposure to fire or heat
+		- [[cuttings]]: difficult to propagate vegetatively
+	- maintenance
+		- [[fire]]: occasional low-intensity burns promote seed dispersal
+		- [[watering]]: young trees require supplemental watering in dry regions
+	- harvest:
+		- [[cones]]: can be collected and dried for seed extraction
+		- [[wood]]: rarely harvested today due to conservation protections
+- links
+	- [wiki](https://en.wikipedia.org/wiki/Sequoiadendron_giganteum)
+	- [nps.gov](https://www.nps.gov/seki/learn/nature/bigtrees.htm)
+	- [arboretum](https://www.arboretum.harvard.edu/sequoiadendron-giganteum/)
+- ## chemical compounds
+	- | **compound** | **part of plant** | **amount (approx.)** | **properties/usefulness** |
+	  |---|---|---|---|
+	  | [[tannic acid]] | bark | 20-30% | [[antimicrobial]], fire-resistant |
+	  | [[terpenoids]] | bark, resin | trace amounts | [[antifungal]], insect-repelling |
+	  | [[lignin]] | wood | 40% | structural strength, decay resistance |
+	  | [[flavonoids]] | leaves | small amounts | antioxidant, UV protection |
+	  | [[polyphenols]] | bark | varies | anti-inflammatory, protective properties |

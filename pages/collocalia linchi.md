@@ -1,0 +1,43 @@
+tags:: species, birds
+alias:: cave swiftlet, linchi swiftlet
+
+- voice:: https://ebird.org/species/cavswi2
+- ![image](https://ipfs.io/ipfs/QmdsYrf1H9L2eejfh7YY3mMmT8dX4UDzK1or8dGsDwQEhN)
+- ![image](https://ipfs.io/ipfs/Qmf59cnayizpV31mmiXqVuYNZEYYTP6BoJRkHs2e5MH57B)
+- general description
+	- appearance
+		- the linchi swiftlet is a small, fast-flying bird with a uniformly dark, sooty-brown to blackish plumage.
+		- it has a slightly paler underbelly, but overall, it lacks distinctive markings.
+		- its wings are long and narrow, and its tail is slightly forked.
+		- the legs are short and adapted for clinging to vertical surfaces rather than perching.
+	- size
+		- measures about 9-10 cm in length.
+		- typically weighs around 8-10 grams.
+	- behavior
+		- known for its swift and agile flight, often seen flying rapidly and maneuvering deftly to catch insects.
+		- spends most of its time on the wing, similar to other swiftlets.
+		- emits high-pitched, twittering calls while in flight.
+- habitat
+	- range
+		- found in southeast asia, particularly in indonesia on the islands of java, bali, and nearby smaller islands.
+	- environment
+		- inhabits a variety of environments including forests, coastal cliffs, caves, and sometimes urban areas.
+	- often nests in caves and under the eaves of buildings.
+- diet
+	- primarily insectivorous, feeding on flying insects caught in flight.
+	- capable of catching a large number of insects daily, contributing to natural pest control.
+- breeding
+	- nesting
+		- builds a nest primarily of plant material and feathers glued together with saliva, typically placed on cave walls or under eaves.
+		- nests are usually small, cup-shaped, and adhere to vertical surfaces.
+	- reproduction
+		- breeding season varies but often coincides with the availability of abundant food sources.
+		- female lays 1-2 eggs, which are incubated for about 17-20 days.
+		- both parents participate in feeding the chicks until they fledge, which takes about 30-35 days.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the linchi swiftlet is known for its echolocation ability, which it uses to navigate and find nests in the dark caves where it often roosts and breeds.
+	- swiftlets are unique among birds for their use of echolocation, a trait more commonly associated with bats.
+	- their nests are sometimes harvested for the production of bird's nest soup, a delicacy in some cultures, though sustainable practices are essential to avoid negative impacts on populations.

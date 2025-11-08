@@ -1,0 +1,20 @@
+- [[dietary fiber]] refers to the indigestible parts of plant foods, including fruits, vegetables, grains, and legumes. it plays a critical role in maintaining digestive health and supporting overall well-being.
+- ### chemical properties
+	- **molecular structure**: composed of [[polysaccharides]] (e.g., [[cellulose]], [[hemicellulose]]) and [[non-polysaccharide]] components (e.g., lignin).
+	- **molecular weight**: varies based on the type of fiber.
+	- **solubility**: classified into two types:
+		- **soluble fiber**: dissolves in water to form a gel-like substance (e.g., pectin, beta-glucans).
+		- **insoluble fiber**: does not dissolve in water and adds bulk to stool (e.g., cellulose, lignin).
+- ### usefulness in medicine
+	- **digestive health**: dietary fiber promotes [[regular bowel movements]], prevents [[constipation]], and supports a healthy gut microbiome.
+	- **heart health**: soluble fiber helps lower [[LDL cholesterol]] levels and reduces the risk of [[cardiovascular disease]].
+	- **blood sugar regulation**: fiber slows the absorption of sugar, helping to manage [[diabetes]] and prevent spikes in blood sugar levels.
+	- **weight management**: fiber promotes a feeling of fullness, aiding in [[appetite control]] and weight loss.
+	- **colon health**: a high-fiber diet reduces the risk of [[colorectal cancer]] by supporting healthy colon function and reducing inflammation.
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- while dietary fiber itself does not directly exhibit antimicrobial properties, it indirectly supports the immune system by nourishing beneficial gut bacteria and improving gut barrier integrity. research highlights:
+	- **gut microbiota**: promotes the growth of beneficial bacteria such as **[[bifidobacterium]]** and **[[lactobacillus]]**.
+	- **pathogen inhibition**: helps suppress harmful bacteria such as **[[clostridium perfringens]]** and **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=fiber+gut+microbiota).
+- ### research links
+	- [dietary fiber and digestive health](https://scholar.google.com/scholar?q=dietary+fiber+digestive+health)
+	- [dietary fiber and cardiovascular benefits](https://scholar.google.com/scholar?q=dietary+fiber+cardiovascular+benefits)

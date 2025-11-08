@@ -1,0 +1,26 @@
+tags:: vital compound
+
+- ![Calcium.pdf](../assets/Calcium_1719303309556_0.pdf)
+- [[calcium]] is a vital [[mineral]] that plays an essential role in building and [[maintaining strong bones]] and [[teeth]], [[muscle contraction]], [[nerve function]], and [[blood clotting]]. it is the most abundant mineral in the human body and is critical for [[cellular signaling]] and overall health.
+	- ### chemical properties
+		- **molecular weight**: 40.08 g/mol
+		- **density**: 1.55 g/cm³
+		- **melting point**: 842°C (1548°F)
+		- **boiling point**: 1484°C (2703°F)
+		- **solubility**: slightly soluble in water; forms calcium hydroxide when dissolved
+		- **chemical formula**: Ca
+	- ### usefulness in medicine
+		- calcium is essential for preventing and treating [[osteoporosis]] by maintaining bone density and strength.
+		- it supports proper [[muscle function]] and helps regulate [[heart rhythm]].
+		- calcium is critical for [[blood clotting]], aiding in the body's healing process.
+		- it plays a role in managing conditions like [[hypocalcemia]] (low calcium levels) and [[rickets]].
+		- adequate calcium intake contributes to healthy skin by supporting [[cell regeneration]] and [[barrier function]].
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- calcium indirectly supports antimicrobial defense by maintaining the integrity of skin and [[mucosal barriers]], which act as the first line of defense against pathogens.
+		- research highlights:
+			- **bacteria**:
+				- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+calcium)
+				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+calcium)
+- ### research links
+	- [calcium and bone health](https://scholar.google.com/scholar?q=calcium+bone+health)
+	- [calcium and antimicrobial defense](https://scholar.google.com/scholar?q=calcium+antimicrobial+defense)

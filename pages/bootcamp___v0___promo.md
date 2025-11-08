@@ -1,0 +1,19 @@
+- from my part i would bet on participation in youtube podcasts
+- youtube - not complete
+	- {{video https://www.youtube.com/watch?v=6MogEQSRVuE}}
+	- podcasts
+		- https://www.youtube.com/@ScopeofScience 178k
+		- https://www.youtube.com/@futurethinkers 74k
+		- https://www.youtube.com/@saifedean 46k
+		- https://www.youtube.com/c/unchainedpodcastЖ 63k
+		- https://www.youtube.com/@thenetworkstate 19k
+- reddit - kinda complete
+	- https://www.reddit.com/r/Futurology 21m
+	- https://www.reddit.com/r/homestead 3.2m
+	- https://www.reddit.com/r/digitalnomad 2.2m
+	- https://www.reddit.com/r/simpleliving 1.4m
+	- https://www.reddit.com/r/Permaculture 295k
+	- https://www.reddit.com/r/solarpunk 141k
+	- https://www.reddit.com/r/SelfSufficiency 128k
+	- https://www.reddit.com/r/OffGrid 112k
+	- https://www.reddit.com/r/intentionalcommunity 19k

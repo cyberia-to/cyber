@@ -1,0 +1,16 @@
+- ![Bacillus_cereus.pdf](../assets/Bacillus_cereus_1719128568348_0.pdf)
+- bacillus cereus is a gram-positive, rod-shaped bacterium commonly found in soil and food. it is known for causing foodborne illnesses through the production of toxins and can also cause other types of infections.
+	- **diseases caused by bacillus cereus:**
+		- 1. **food poisoning:** two types of foodborne illness are caused by different toxins produced by bacillus cereus.
+			- **emetic type:** characterized by [[nausea]] and [[vomiting]], typically occurring within 1-6 hours after consuming contaminated food. it is often associated with rice and pasta dishes.
+			- **diarrheal type:** characterized by [[diarrhea]] and [[abdominal cramps]], typically occurring 6-15 hours after consuming contaminated food. it is associated with a variety of foods, including meats, vegetables, and sauces.
+		- 2. **non-gastrointestinal infections:** though less common, bacillus cereus can cause infections outside the gastrointestinal tract, particularly in immunocompromised individuals.
+			- ** [[wound infections]] :** can occur in traumatic or surgical wounds, leading to localized infection and inflammation.
+			- **[[endophthalmitis]]:** a severe eye infection that can result from trauma or surgical procedures involving the eye.
+			- **[[bacteremia]] and [[septicemia]]:** bloodstream infections that can lead to sepsis, particularly in immunocompromised or critically ill patients.
+	- **habitats and transmission:**
+		- **environment:** widely distributed in soil, dust, and plant materials. it can contaminate a variety of foods during growth, harvesting, or processing.
+		- **food:** frequently found in improperly stored or reheated foods, particularly rice, pasta, meats, and dairy products.
+		- **transmission:** primarily occurs through ingestion of contaminated food. non-gastrointestinal infections can occur through direct contact with contaminated materials or environmental surfaces.
+- preventing bacillus cereus infections involves proper food handling, storage, and cooking practices. it is important to keep cooked foods at appropriate temperatures, avoid cross-contamination, and maintain good kitchen hygiene. for non-gastrointestinal infections, proper wound care and sterile techniques during medical procedures are essential.
+- treatment for bacillus cereus food poisoning is typically supportive, focusing on hydration and symptom management. most cases resolve without the need for antibiotics. for non-gastrointestinal infections, treatment may involve antibiotics such as vancomycin or clindamycin, depending on the severity and location of the infection. early diagnosis and appropriate management are important to prevent complications.

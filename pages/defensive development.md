@@ -1,0 +1,7 @@
+- planting for long-term growth and security.
+	- **[[sequoia]] trees**
+	- [[conifer]]
+	- [[oak]]
+	- [[casuarina]]
+	- [[buxus]]
+-

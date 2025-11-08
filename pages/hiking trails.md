@@ -1,0 +1,6 @@
+- new land discovery: flexible
+- wild huyang trip: flexible
+- licking lesung whole: 3 hours
+- rising sang huyang: 4 hours
+- jatiluwih trail: 9 hours
+- batukaru shoot: 12 hours

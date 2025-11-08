@@ -1,0 +1,42 @@
+tags:: district
+
+- [[rockets estate]] [[district]]
+- bali's biodiversity hub
+	- market the site as a regional center
+	- for high-utility plant access
+	- and sustainable village support
+- TODO map and aggregate local suppliers: create a database of nurseries, farmers, and seed banks
+- TODO host monthly seed exchange gatherings
+- TODO improve nursery signage: label each plant with name, price, uses, and qr codes linking to online info
+- TODO buy laser engraver
+- TODO build demonstration gardens: plant mature examples of useful species and create mini food forests and herb gardens
+- TODO scale up seedling production
+	- expand nursery beds
+	- use biochar-enriched media
+	- organize teams for propagation
+	- and maintain stock buffer
+- TODO develop tech-based plant catalog
+- TODO host training and outreach: hold workshops, invite local designers/farmers
+- TODO design starter kits
+- [[building]]
+	- [[kitchen]]: facility for food processing
+- primary plant [[species]]
+	- [[coffea arabica]]
+	- [[taro]], [[cassava]] and [[batat]]
+	- [[diplazium esculentum]]
+	- [[persea americana]]
+	- [[musa acuminata]]
+	- [[passiflora edulis]]
+	- [[artocarpus heterophyllus]]
+	- [[citrus sinensis]]
+	- [[bambusa oldhamii]]
+	- [[lavandula]], [[rosemary]] and [[mint]]
+	- [[thyme]], [[oregano]]
+	- [[aloe vera]], [[kalanchoe pinnata]] and [[sapindus mukorossi]]
+	- [[orchidaceae]]
+- support system
+	- [[erythrina variegata]]
+	- [[melastoma malabathricum]]
+	- [[montanoa hibiscifolia]]
+	- [[ageratina riparia]]
+	- [[austroeupatorium inulifolium]]

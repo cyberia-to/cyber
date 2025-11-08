@@ -1,0 +1,60 @@
+### how we store and manage food
+- > this page describes how we store food in refrigerators and freezers, how we label and organize items, and how we manage stock through regular inventory checks.
+- #### cold storage: use and maintenance
+- #### temperature
+	- fridges stay between 0–4°c
+	- freezer stays at -18°c or lower
+- #### what goes where
+- left fridge: ready-to-eat food  
+  > dairy, cooked meals, leftovers
+- right fridge: raw produce  
+  > vegetables, fruits, herbs
+- freezer and lower fridge shelves: raw meat and poultry  
+  > avoid cross-contamination
+- #### labeling
+- everything stored must be labeled:
+	- item name
+	- date of preparation or delivery
+	- expiration date (if applicable)
+- #### containers
+	- use airtight containers or food-safe wrapping
+	- if original packaging is damaged → re-pack it
+- #### rotation
+	- always use FIFO: first in, first out
+	- older stock is used before newer
+	- check expiration dates regularly and remove anything expired
+- #### segregation
+	- store allergen-containing items separately
+	- keep raw and cooked foods apart
+- #### hygiene
+	- clean fridges and freezers regularly
+	- wipe up spills and residues immediately
+- ---
+- ### inventory: how we keep track
+- routine
+	- quick inventory checks happen weekly
+	- full inventory happens at the end of each month
+- organizing
+	- group items by category:
+		- dry goods
+		- perishables
+		- frozen items
+	- use FIFO in cooking and ordering → older stock is used first
+- record keeping
+	- all stock movement is logged
+	- we maintain a shared sheet (physical or digital) with:
+		- item name
+		- quantity
+		- expiration date (if relevant)
+- inspection
+- during inventory checks:
+	- check for spoilage, contamination, or damage
+	- remove expired or spoiled products immediately
+- #### reordering
+	- we track minimum stock levels for critical items
+	- if anything is running low → send a message to the shared channel before it’s gone
+- #### food delivery
+	- deliveries are checked before storing
+	- items are inspected for freshness and condition
+	- anything damaged, leaking, or not meeting quality is not accepted
+- [[kitchen/ingredients/cheese]]

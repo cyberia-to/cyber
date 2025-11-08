@@ -1,0 +1,28 @@
+- **alias**: moringin
+- ![Moringin.pdf](../assets/Moringin_1719303309556_0.pdf)
+- [[moringin]], also known as [[moringa isothiocyanate]], is a bioactive compound derived from [[glucomoringin]], a [[glucosinolate]] found in the moringa plant ([[moringa oleifera]]). it is known for its potent [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] properties, as well as its promising [[therapeutic potential]].
+- ### chemical properties
+	- **molecular weight**: 209.31 g/mol
+	- **density**: not widely reported
+	- **melting point**: not widely reported
+	- **solubility**: soluble in water and polar solvents
+	- **chemical formula**: C₆H₉NOS₂
+- ### usefulness in medicine
+	- moringin exhibits strong [[antioxidant]] properties, protecting cells from oxidative stress and [[reducing inflammation]].
+	- it has been studied for its [[anticancer]] potential, showing the ability to inhibit [[tumor cell]] proliferation and induce [[apoptosis]].
+	- moringin supports [[immune function]] by enhancing the body’s defense against infections.
+	- it promotes [[skin health]] by reducing inflammation, enhancing wound healing, and protecting against microbial infections.
+	- its anti-inflammatory effects make it beneficial for managing conditions such as [[arthritis]] and [[chronic inflammation]].
+- ### [[antibacterial]] and [[antimicrobial]] activity
+	- moringin demonstrates broad-spectrum antimicrobial activity by disrupting microbial cell membranes and inhibiting growth.
+	- research highlights:
+	- **bacteria**:
+		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+moringin)
+		- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+moringin)
+	- **fungi**:
+		- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+moringin)
+	- **viruses**:
+		- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+moringin)
+- ### research links
+	- [moringin and antioxidant properties](https://scholar.google.com/scholar?q=moringin+antioxidant+properties)
+	- [moringin and antimicrobial activity](https://scholar.google.com/scholar?q=moringin+antimicrobial+activity)

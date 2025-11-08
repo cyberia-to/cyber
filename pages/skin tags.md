@@ -1,0 +1,1 @@
+- **skin tags**: small, soft growths of skin caused by friction or hormonal changes.

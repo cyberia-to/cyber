@@ -1,0 +1,33 @@
+- antioxidants are molecules that neutralize or prevent cellular damage caused by [[free radicals]] and reactive oxygen species (ros). they protect cells from [[oxidative stress]], which can lead to cellular injury, inflammation, aging, and chronic diseases such as [[cardiovascular diseases]], [[cancer]], and [[neurodegenerative disorders]].
+	- types:
+	- [[vitamins]]
+		- [[vitamin c]],
+		- [[vitamin e]],
+	- [[carotenoids]]
+		- [[lutein]],
+		- [[zeaxanthin]],
+		- [[β-carotene]],
+	- [[polyphenols]]
+		- [[flavonoids]],
+		- [[phenolic acids]],
+	- [[enzymes]]
+		- [[superoxide dismutase]],
+		- [[glutathione peroxidase]],
+		- [[catalase]]
+	- mechanism of action: donates electrons to stabilize free radicals, preventing them from causing cellular damage
+	- solubility: varies; some antioxidants are water-soluble (e.g., vitamin c), others fat-soluble (e.g., vitamin e, carotenoids)
+	- ## usefulness in medicine
+		- antioxidants are widely used to prevent and manage conditions related to oxidative stress, such as cardiovascular diseases, certain cancers, and age-related degenerative diseases (e.g., [[alzheimer’s]], [[parkinson’s disease]]).
+		- topical antioxidants protect skin from oxidative damage caused by [[uv radiation]], reducing skin aging and improving wound healing.
+		- antioxidants support immune function by protecting immune cells from oxidative damage and enhancing their effectiveness.
+	- ## [[antimicrobial]] activity
+		- antioxidants indirectly exhibit antimicrobial activity by reducing oxidative stress, thereby enhancing immune function and limiting microbial virulence factors like biofilm formation and bacterial adhesion.
+		- **bacteria**:
+			- [[escherichia coli]]
+			- [[staphylococcus aureus]]
+			- [[pseudomonas aeruginosa]]
+			- [[salmonella spp.]]
+			- [[helicobacter pylori]]
+		- fungi:
+			- [[candida albicans]]
+			- [[aspergillus flavus]]

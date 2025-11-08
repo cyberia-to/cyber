@@ -1,0 +1,32 @@
+alias:: IGG, igg
+tags:: vital glycoprotein
+
+- immunoglobulin g is the most abundant [[antibody]] class in the human body, comprising about 75% of all serum antibodies. it is a vital [[glycoprotein]] produced by [[b cells]] and plays a central role in the [[adaptive immune system]]. igg is responsible for identifying and neutralizing [[bacteria]], [[viruses]], and [[toxins]]. it can cross the [[placenta]], providing passive immunity to newborns.
+	- ### chemical properties
+		- **molecular weight**: ~150 kDa
+		- **structure**: Y-shaped molecule with two [[antigen-binding (fab)]] regions and one [[fc region]]
+		- **glycosylation**: n-linked glycan on the fc region affects immune activity
+		- **half-life in serum**: ~21 days
+		- **subclasses**: igg1, igg2, igg3, igg4 — each with specialized functions
+	- ### usefulness in medicine
+		- igg provides long-term protection following [[infection]] or [[vaccination]].
+		- it is used in [[passive immunotherapy]] to treat [[infections]], [[autoimmune diseases]], and [[immunodeficiencies]].
+		- intravenous immunoglobulin (IVIG) is a therapeutic preparation of pooled igg from healthy donors.
+		- low igg levels (hypogammaglobulinemia) can lead to [[recurrent infections]].
+		- elevated igg may indicate [[chronic inflammation]], [[autoimmune disease]], or [[multiple myeloma]].
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- igg binds to [[pathogen antigens]], marking them for [[phagocytosis]] and activating the [[complement system]].
+		- it neutralizes bacterial toxins and prevents virus entry into host cells.
+		- igg plays a key role in [[antibody-dependent cellular cytotoxicity (ADCC)]], aiding in the destruction of infected or abnormal cells.
+		- research highlights:
+			- **bacteria**:
+				- **[[streptococcus pneumoniae]]** [research link](https://scholar.google.com/scholar?q=igg+streptococcus+pneumoniae)
+				- **[[haemophilus influenzae]]** [research link](https://scholar.google.com/scholar?q=igg+haemophilus+influenzae)
+			- **viruses**:
+				- **[[hepatitis b virus]]** [research link](https://scholar.google.com/scholar?q=igg+hepatitis+b+virus)
+				- **[[herpes simplex virus]]** [research link](https://scholar.google.com/scholar?q=igg+herpes+simplex+virus)
+- ### research links
+	- [igg and immune response](https://scholar.google.com/scholar?q=igg+immune+response)
+	- [ivig therapy](https://scholar.google.com/scholar?q=ivig+immunotherapy)
+	- [igg subclasses and function](https://scholar.google.com/scholar?q=igg+subclasses+function)
+-

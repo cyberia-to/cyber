@@ -1,0 +1,29 @@
+tags:: protective glycoprotein
+
+- mucins are high-molecular-weight [[glycoproteins]] that are the main components of [[mucus]], a protective secretion found on the surfaces of the [[respiratory]], [[gastrointestinal]], [[urogenital]], and [[ocular]] systems. mucins are produced by [[epithelial cells]] and function to trap pathogens, lubricate tissues, and create a physical barrier that protects against [[chemical]], [[mechanical]], and [[microbial damage]].
+	- ### chemical properties
+		- **molecular weight**: typically >200 kDa, some exceeding several MDa
+		- **structure**: heavily glycosylated proteins with tandem repeat domains rich in serine, threonine, and proline
+		- **types**: secreted (e.g. MUC2, MUC5AC) and membrane-bound (e.g. MUC1, MUC4)
+		- **solubility**: hydrophilic; forms viscous gels in aqueous environments
+	- ### usefulness in biology and medicine
+		- mucins protect epithelial surfaces by trapping dust, bacteria, and viruses in mucus layers.
+		- they facilitate smooth passage of materials (e.g., food, waste) through mucosal linings.
+		- altered mucin expression is associated with diseases like [[cystic fibrosis]], [[chronic bronchitis]], [[ulcerative colitis]], and [[cancer]].
+		- mucins serve as [[biomarkers]] in oncology; for example, overexpression of MUC1 is linked to [[breast]] and [[pancreatic cancer]].
+		- synthetic mucin-like materials are being explored in drug delivery and tissue engineering.
+	- ### [[antibacterial]] and [[antimicrobial]] activity
+		- mucins trap and aggregate [[pathogens]], preventing their attachment to epithelial cells.
+		- their glycan structures can bind to microbial surface proteins, neutralizing them or directing them for clearance.
+		- they support the activity of [[antimicrobial peptides]] and maintain microbiome balance.
+		- research highlights:
+			- **bacteria**:
+				- **[[pseudomonas aeruginosa]]** [research link](https://scholar.google.com/scholar?q=mucins+pseudomonas+aeruginosa)
+				- **[[helicobacter pylori]]** [research link](https://scholar.google.com/scholar?q=mucins+helicobacter+pylori)
+			- **viruses**:
+				- **[[norovirus]]** [research link](https://scholar.google.com/scholar?q=mucins+norovirus)
+				- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=mucins+influenza)
+- ### research links
+	- [mucins in mucosal immunity](https://scholar.google.com/scholar?q=mucins+mucosal+immunity)
+	- [mucins and cancer](https://scholar.google.com/scholar?q=mucins+cancer+biomarker)
+	- [mucins and microbiome interaction](https://scholar.google.com/scholar?q=mucins+microbiome+interaction)

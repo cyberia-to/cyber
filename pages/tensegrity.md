@@ -1,0 +1,17 @@
+- systems that are structural frameworks where tension and compression elements work together
+- often in ways that look counterintuitive, extremely light, or even floating
+- the term comes from tensional integrity
+	- describes a principle where rigid elements are held not by direct contact
+	- but by network of tensioned components that suspend and stabilize them
+- permaculture & off-grid
+	- lightweight and low material use
+	- less mass = less labor, fewer resources
+	- resilient to earthquakes and wind
+	- absorbs vibration without snapping
+	- adaptable to local materials
+	- easy to scale: modules can be combined or nested
+- real-world inspirations
+	- buckminster fuller’s domes
+	- kenneth snelson’s floating sculptures
+	- spider webs and plant root systems
+	- nasa’s deployable space structures

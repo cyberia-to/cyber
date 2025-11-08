@@ -1,0 +1,3 @@
+- its a collective intelligence blockchain build using [cyber-sdk](https://github.com/cybercongress/go-cyber)
+- experimental bootloader for superintelligence
+- bostrom on [coingecko](https://www.coingecko.com/en/coins/bostrom)

@@ -1,0 +1,13 @@
+- ![Escherichia_coli.pdf](../assets/Escherichia_coli_1719124711365_0.pdf)
+- escherichia coli (e. coli) is a gram-negative bacterium that is commonly found in the intestines of humans and animals. while most strains are harmless and play a crucial role in maintaining gut health, some strains can cause serious illnesses.
+- **diseases caused by escherichia coli:**
+	- **[[gastrointestinal infections:]]** [[diarrhea]], which can range from mild to severe. specific strains like e. coli o157 can cause [[bloody diarrhea]].
+	- **[[urinary tract infections]] (utis):** one of the most common causes of utis, especially in women.
+	- **[[neonatal meningitis]]:** e. coli can cause [[meningitis]] in newborns.
+	- **[[septicemia]]:** bloodstream infections that can lead to sepsis, a life-threatening condition.
+	- **[[hemolytic uremic syndrome]] (hus):** a severe complication, especially associated with e. coli o157, leading to [[kidney failure]].
+- **habitats and transmission:**
+	- **human and animal intestines:** e. coli is a natural inhabitant of the gut flora.
+	- **environment:** can be found in water, soil, and food contaminated with fecal matter.
+	- **transmission:** occurs through ingestion of contaminated food or water, person-to-person contact, and poor hygiene practices.
+- e. coli infections are often linked to contaminated food and water, improper handling of food, and inadequate sanitation. maintaining good hygiene, proper food handling, and cooking food thoroughly are essential preventive measures. treatment depends on the severity and type of infection, with hydration and antibiotics being commonly used for serious cases. some strains of e. coli, particularly those producing shiga toxin, can cause more severe illnesses requiring specialized care.

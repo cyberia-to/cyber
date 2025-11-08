@@ -1,0 +1,36 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/08]]
+	- [[edem/10]]
+- [[guilds]]
+	- [[platycladus orientalis]]
+	- [[theobroma cacao]]
+	- [[theobroma cacao]]
+	- [[theobroma cacao]]
+	- [[graptophyllum pictum]]
+	- [[thymus vulgaris]]
+	- [[origanum vulgare]]
+	- [[centella asiatica]]
+	- [[rubus rosifolius]]
+	- [[plumeria rubra]]
+	- [[musa acuminata]]
+	- [[colocasia esculenta]]: 12
+	- [[salvia rosmarinus]]
+	- [[salvia leucantha]]: 3
+	- [[ginkgo biloba]]
+	- [[plantago]]
+	- [[acmella repens]]
+	- [[pouzolzia zeylanica]]
+- wall
+	- [[cymbopogon citratus]]
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[debregeasia longifolia]]
+	- [[trema orientalis]]
+- dead:
+	- [[persea americana]]
+	- [[passiflora ligularis]]
+-

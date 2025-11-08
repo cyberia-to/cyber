@@ -1,0 +1,31 @@
+- within 1 month (very fast return)
+	- [[oregano]] & [[thyme]] : fresh herbs, rapid harvest cycles
+	- [[mentha]]: mint fresh leaves harvested continuously
+	- [[nasturtium]]: edible greens and flowers, harvestable within weeks
+	- [[azolla]]: rapid biomass doubling every 1–2 weeks, livestock/fertilizer
+	- [[kangkung]]: continuous edible greens
+	- [[gotu kola]]: leaf harvestable within weeks, salads/herbal products
+	- [[black soldier fly]]: larvae insect protein/fertilizer
+- within 3 months
+	- [[lemongrass]] & [[citronella]]: first leaves and essential oils within 3 months
+	- [[vetiver]], initial roots harvestable around 3 months
+	- [[rosemary]] & [[lavandula]]: early herb and flower yields
+	- [[clitoria]]: butterfly pea, edible flowers within 2–3 months
+	- [[oyster mushrooms]]: initial fruiting in 6–12 weeks
+	- [[shiitake mushrooms]]: initial fruiting 10–12 weeks
+- within 6 months
+	- [[ginger]], [[curcuma]], [[galangal]], [[temu rapet]], [[kantan]]: young rhizomes harvestable fast
+	- [[patchouli]]: initial leaves harvested at 4–6 months, essential oils
+	- [[selenicereus]]: dragon fruit initial small-scale flowering around 6–9 months in good conditions
+	- [[morus]]: mulberry initial berry yields at 6 months from cuttings
+	- [[rubus]]: [[rosiberry]], [[strawberry]], [[blackberry]], [[raspberry]]: initial small yields in ~6 months from advanced starts
+- within 9 months
+	- [[anthurium]], [[heliconia]]: initial marketable flowers around 6–9 months, steady flowering afterward
+	- [[orchidaceae]]: fast hybrids initial blooms at 9–12 months
+	- [[ganoderma]] & [[lions mane]] mushrooms fruiting bodies on logs or substrates
+	- [[water chestnut]]: harvestable edible tubers within 8–9 months
+- within 1 year
+	- [[vanilla]]: initial flowering typically 12 months+; first pods 18–24 months
+	- [[moringa]]: productive leaf harvesting from around 8–12 months, seed pods within ~12–18 months
+	- [[pandan]]: good leaf yields within 12 months, increasingly productive afterward
+	- [[citrus]]: leaf yields at ~12 months, fruits typically 1–2 years depending on variety

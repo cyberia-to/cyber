@@ -1,0 +1,72 @@
+type:: sector
+
+- connected to [[edem/sectors]]
+	- [[edem/15]]
+	- [[edem/17]]
+- [[casuarina equisetifolia]]
+- [[inga edulis]]
+- [[juniperus virginiana]]
+- [[juniperus virginiana]]
+- [[juniperus virginiana]]
+- [[prunus domestica]]
+- TODO [[eugenia uniflora]]
+- TODO [[pyrus communis]]
+- [[ficus carica]]
+- [[mangifera indica]] miazaki
+- TODO [[mangifera indica]] miazaki
+- [[persea americana]] markus
+- [[calliandra angustifolia]]
+- TODO [[prunus dulcis]]
+- [[melaleuca viminalis]]
+- [[persea americana]] miki
+- [[mangifera indica]] irwin
+- [[mangifera indica]] irwin
+- TODO [[elaeagnus pungens]]
+- TODO [[eriobotrya japonica]]
+- [[psidium guajava]] crystal
+- [[malus pumila]]
+- [[calliandra calothyrsus]]
+- [[calliandra calothyrsus]]
+- [[lycium barbarum]] merati
+- [[trema orientalis]]
+- [[melastoma malabathricum]]
+- [[acacia podalyriifolia]]
+- [[debregeasia longifolia]]: 2
+- [[thymus vulgaris]]
+- [[origanum vulgare]]
+- [[centella asiatica]]
+- [[plantago]]
+- [[acmella repens]]
+- [[plumeria rubra]]:3
+- [[areca catechu]]
+- [[daucus carota]]: 5
+- unknown: 1
+- [[musa acuminata]]: 2
+- [[diplazium caudatum]]
+- [[salvia leucantha]]: 4
+- [[symphytum officinale]]: 3
+- [[eupatorium capillifolium]]
+- [[medicago sativa]]
+- [[digitaria ciliaris]]
+- Unknown:2
+- [[erigeron bonariensis]]
+- wall:
+	- [[eupatorium capillifolium]]
+	- [[calliandra calothyrsus]]
+	- [[melastoma malabathricum]]
+	- [[lantana camara]]
+	- [[stachytarpheta urticifolia]]
+	- [[trema orientalis]]
+	- [[inga edulis]]
+	- [[debregeasia longifolia]]
+	- [[ageratina riparia]]
+	- [[macrothelypteris torresiana]]
+	- [[austroeupatorium inulifolium]]
+	- [[diplazium caudatum]]
+	-
+- dead:
+	- [[chrysanthemum morifolium]]
+	- [[syzygium samarangense]]
+	- [[syzygium samarangense]] jamaica
+	- [[azadirachta indica]]
+	- [[averrhoa carambola]]
