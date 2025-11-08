@@ -1,0 +1,80 @@
+- in this post, i will outline a short-term roadmap with a clear purpose
+- for recovering from chernobyl: the bug introduced in the recent update
+- as well as actions needed to address the price crisis
+- the main goal is to deliver short, impactful changes to shift swap price dynamics from negative to positive
+- ## [[main loop]]
+	- this is the core of the cyber and cyb idea, which must always be the top priority for the team
+	- we currently have something very close to grok like link-based content response system
+	- optimizing this system is a growth point, including the funnel for selling [[the product]]
+- ## optimize the team
+	- currently, all [[cybercongress]] rewards flow into the [[cybercongress fellows]] program
+	- this significantly impacts the price negatively
+	- however, program efficiency is low: only ~7 out of ~20 fellows are really active and helpful
+	- the solution is as follows:
+		- form a cyber core team from active members and pay them in external tokens
+		- reduce fellowship rewards by 7 times
+	- as a result, we will have an agile, dedicated team supported by a broad community that contributes as volunteers with some rewards
+	- [[cyber congress]] has 10 ETH remaining in the Euler Foundation smart contract and about $70,000 in liquidity
+	- we will use these resources to pay the core team temporarily
+- ## reduce validator set to 42
+	- during the recent update, more than half of the validators showed indifference to the project
+	- this indifference has continuously impacted [[$BOOT]] price negatively
+	- in reality, a reliable network does not require so many validators
+	- we have decided to focus on an agile, proactive validator set
+	- in the coming days, we will propose reducing the validator set
+	- once the economics improve, we can consider expanding the validator set again
+- ## close gift
+	- the stake in the gift increases staking rewards threefold
+	- this action alone can significantly impact $BOOT sell pressure
+	- the simplest solution is to burn it
+	- we will need a consensus update for this
+	- notes on this are available in the following [[cip]]: [[finalization of $BOOT distribution]]
+- ## fix channels
+	- approximately $100,000 is stuck in channels
+	- it will take several months to resolve this
+	- this must remain a top priority
+- ## bridge to ethereum
+	- we need a simple, functional bridge with the largest ecosystem
+	- focus will be on building the UX and necessary infrastructure using [[graviton]]
+	- this action also enables listing [[$BOOT]] on Uniswap
+- ## [[energy reform]]
+	- the only possible fix for [[$A]] and [[$V]] is to redeploy tokens
+	- we realized it is a good time for a complete redesign of energy tokenomics
+	- it will take a month or two
+	- in the end, we will have tokenomics designed to add value rather than extract it from the system
+	- actions include the following [[cips]]:
+		- [[energy mint using curve]]
+		- [change economics](https://x.com/cyber_devs/status/1853233551468122554) of cyberlink creation
+		- [[collect fee on moving A and V]]
+		- [[staking on particles]] and [[eternal particles]]
+		- [[staking on cyberlinks]] and [[eternal cyberlinks]]
+	- until we redeploy tokens, the only way to obtain energy is to mint it using the old rules
+	- energy will also remain non-transferable until redeployment
+- ## deploy new dex
+	- the fastest and most reliable solution is to [deploy astroport](https://github.com/cybercongress/warp)
+	- after migrating the frontend to the new dex, we will deploy a network upgrade to phase out old liquidity
+- ## deploy [[cybernet]]
+	- we have already tested [[cybernet]] in spacepussy
+	- what remains is reaching consensus on the root rewarding token and its economics
+	- deploying it as soon as possible is essential
+- ## [[burn gas in H]]
+	- this is a core business model for any blockchain
+	- the sooner we implement it, the better
+	- the goal is to implement an [[eip1559]]-like mechanism
+- ## deploy [[dao dao]]
+	- an excellent software addition that could add significant utility to the network
+	- includes [[daodao for senate]] and more
+- ## cybergraph and memes
+	- memes are the future and an ideal use case for [[cybergraph]]
+	- transforming [[nebula]] into memebula is a straightforward and efficient action
+	- we will design a simple interface for minting memes with robust yet simple economics
+	- this approach allows us to harness the power of memes and [[cybergraph]] together
+- ## multinetwork support in cyb
+	- we have a strong [[spacepussy]] narrative
+	- however, there is currently no support in [[cyb]]
+	- adding this support will bring [[cyber-sdk]] closer to its vision
+	- this addition will also bring the power of memes to the [[cyber]] project
+- ## conclusion
+	- we presented a roadmap for actions during upcoming hype
+	- that must change price dynamics and economics of the project
+	- we believe each of this actions will immediately bring positive outcome for all [[moon]] citizens

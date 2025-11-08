@@ -1,0 +1,1 @@
+alias:: skill, skills, axon

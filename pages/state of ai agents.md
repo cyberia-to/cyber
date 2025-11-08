@@ -1,0 +1,25 @@
+- [source](http://langchain.com/stateofaiagents)
+- ## adoption and use cases
+	- [[ai agents]] are mainstream: 51% of companies use them, with 78% planning adoption soon
+	- top applications include
+		- summarization: 58%
+		- personal productivity: 54%
+		- customer service: 46%
+	- interest spans tech and non-tech industries alike, showing cross-sector relevance
+- ## key challenges
+	- performance quality is the biggest barrier
+		- especially for small companies
+		- followed by knowledge gaps and time demands
+	- safety concerns and regulatory compliance are significant for enterprises handling sensitive data
+	- understanding and explaining agent behavior remains a [[black box problem]].
+- ## controls and trends
+	- companies rely on tracing, restricted permissions, and offline testing for quality assurance
+	- large firms use more comprehensive guardrails, while startups focus on rapid iteration and monitoring results
+	- multi-agent systems and open-source innovation are driving the next wave of adoption
+- ## actionable takeaways
+	- start small with routine tasks and scale as expertise grows
+	- prioritize performance and safety with tracing, guardrails, and evaluations
+	- leverage open-source tools to accelerate innovation and reduce costs
+	- prepare for future breakthroughs in autonomous multi-agent systems powered by larger ai models
+- ## competitive edge
+	- organizations mastering reliable agents will dominate the shift toward intelligent automation, reshaping workflows with efficiency and precision

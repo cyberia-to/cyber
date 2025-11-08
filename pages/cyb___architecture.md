@@ -1,0 +1,9 @@
+- [[ipfs]] for data publishing and distribution
+- [[cyber]] search and learning
+- [[rune]] scripting for dynamic execution
+- [[cozodb]] graph storage in the core
+- gamified with [[aos]]
+- interactions with [[cosmos-sdk]] chains
+- [[ibc]] integration
+- builds for [[web]], [[desktop]]
+- [[mobile]] soon

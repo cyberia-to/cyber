@@ -1,0 +1,38 @@
+alias:: pos
+- class of [[consensus]] mechanism used in most [[blockchains]]
+- [[token]] [[vested staking]] which secure creation of new valid [[blocks]]
+- unlike [[proof of work]]
+	- which relies on computational power to solve complex mathematical problems
+	- pos assigns the right to validate transactions based on the number of tokens a validator holds
+	- and is willing to stake as collateral
+	- validators are chosen randomly
+	- with the probability of being selected typically proportional to the amount of stake they have
+- method aims to be more energy-efficient and scalable compared to [[proof of work]]
+- pros
+	- energy efficiency
+		- significantly reduces the energy consumption associated with mining
+		- as it doesn't require extensive computational power
+	- scalability
+		- can handle higher transaction volumes more efficiently
+		- making it suitable for large-scale blockchain networks
+- cons
+	- security
+		- security assumption are usually lower with [[honest majority assumption]] ~67%
+		- while classical [[nakamoto]] consensus assume 51% acting honestly
+	- decentralization
+		- [[rich get richer]] problem in pos which is less impactful in [[pow]]
+		- [[pow]] leaves minor ability for securing transactions without significant capital
+	- fairness
+		- pos network does not allow to start a network from 0 token supply by design
+		- in this sense [[pow]] is abjectively more fair: enables identical rules for [[vimputer]] lifetime
+	- accsability
+		- in pos network its impossible to mint tokens without owning any prior tokens
+		- [[pow]] is powerful [[transmuter]] enable to bypass existing financial system for onboarding
+- proof of stake is implemented in token of leading [[blockchains]]
+	- [[$ETH]]
+	- [[$DOT]]
+	- [[$SOL]]
+	- [[$BOOT]]
+	- [[$ATOM]]
+	- [[$TON]]
+	- and others

@@ -1,0 +1,1 @@
+- process of computing [[hash]]

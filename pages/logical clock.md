@@ -1,0 +1,20 @@
+- concept used in distributed systems to provide a way of ordering events without relying on synchronized physical clocks
+- logical clocks proposed by leslie lamport in 1978
+	- one of the most well-known logical clock mechanisms
+	- each process in the system maintains its own logical clock, which is a simple counter
+	- the logical clock is incremented by 1 for every event that occurs within a process
+	- when a process sends a message, it includes its current clock value in the message
+	- when a process receives a message, it updates its clock to be the maximum of its current clock
+		- and the received clock, and then increments the clock by 1
+- logical clocks help establish causal relationships between events
+	- if event A occurs before event B
+	- then the logical clock of A will be less than the logical clock of B
+	- however, if two events are concurrent, i.e., there is no causal relationship
+	- their logical clocks might not indicate a specific order
+- while logical clocks provide a partial ordering of events based on causality
+	- they do not guarantee a total ordering of all events
+	- to achieve total ordering, other mechanisms are required
+- modern cryptographic techinics include
+	- [[vector clocks]]
+	- [[verifiable delay functions]]
+	- [[proof of history]]

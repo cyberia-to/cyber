@@ -1,0 +1,61 @@
+- TODO create illustrated book like robonomics did
+	- format 24-32 pages
+	- horizontal view A5
+	- [[cyber/style]]
+- the product
+	- decentralized knowledge graph
+	- content distribution and storage
+	- decentralized search engine
+	- decentralized ai alignment
+	- your power to teach ai with your data
+	- your power to create your own ai [[avatar]]
+	- your power to distribute your ai
+	- decentralised datasets curation
+	- decentralised ai training
+	- [[cybergraph]] as [[git]]
+	- information dex
+	- prediction markets
+- llms integration
+	- cloud
+	- local
+	- progs
+- cyber-sdk for network states
+	- ai governance
+- general
+	- [[ipfs]]
+	- cyberlink
+	- particle
+	- cybergraph
+	- cyb
+	- moon citizenship
+	- network state
+	- cyber rank
+	- search
+	- episodes (1+2)
+	- TODO [[manifest]]
+	- moon constitution
+	- tokens
+		- [[$BOOT]]
+		- [[$H]]
+		- [[$V]]
+		- [[$A]]
+- cyb apps
+	- robot
+	- oracle
+	- portal
+	- teleport
+	- warp
+	- sphere
+	- senate
+	- nebula
+	- [[reactor]]
+	- grid
+	- drive
+	- soul
+- [[cybercongress]]
+	- dao
+	- mission
+	- values
+	- team
+-
+	-

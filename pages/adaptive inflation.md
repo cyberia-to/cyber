@@ -1,0 +1,11 @@
+- mechanism that adjusts the rate of [[token]] [[mint]] based on [[network]] conditions
+- in [[bostrom]] [[tendermint]]
+	- as [[tendermint]] have [[honest majority assumption]] which is ~67%
+	- the goal is to maintain staking above this threshold
+	- by rewarding those who stake by costs of those who not
+	- inflation adopts to [[goal bonded]] maintaining security
+- [[params]]
+	- [[inflation rate change]]
+	- [[inflation max]]
+	- [[inflation min]]
+	- [[goal bonded]]

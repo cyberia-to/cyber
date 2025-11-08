@@ -1,0 +1,7 @@
+- shapes
+	- input
+	- [[actions]]
+	- conformation
+	- event
+	- notification
+-

@@ -1,0 +1,21 @@
+tags:: bostrom, spacepussy
+- TODO
+- fundamentals
+	- asset management
+	- understanding state
+	- staking, voting and trade
+	- manage clans
+- master learning of [[superintelligence]]
+	- supported gpu
+	- using cy for learning
+	- learn your brain locally
+	- learn spacepussy
+	- learn bostrom
+- [[become a hero]] by [[runing validator]]
+	- validator commands
+	- network upgrade guide
+	- daemon configuration
+- meta
+	- deep dive into essential features of cli
+	- every tutorial could take an hour or so
+	- finishing tutorial must give reader comprehensive understanding

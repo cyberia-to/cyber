@@ -1,0 +1,5 @@
+- what is [[probabilistic model]]?
+- [[examples]]
+	- bayesian networks
+	- markov chains
+	- [[relevance machine]]

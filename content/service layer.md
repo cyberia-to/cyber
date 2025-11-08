@@ -1,6 +1,13 @@
 alias:: services
 tags:: aos
 
+- contracts
+	- bostrom182jzjwdyl5fw43yujnlljddgtrkr04dpd30ywp2yn724u7qhtaqstjzlcu
+	- bostrom1jkte0pytr85qg0whmgux3vmz9ehmh82w40h8gaqeg435fnkyfxqq9qaku3
+	- bostrom10fqy0npt7djm8lg847v9rqlng88kqfdvl8tyt4ge204wf52sy68qlq7nz2
+	- bostrom16y344e8ryydmeu2g8yyfznq79j7jfnar4p59ngpvaazcj83jzsmsts7qxt
+	- bostrom1xut80d09q0tgtch8p0z4k5f88d3uvt8cvtzm5h3tu3tsy4jk9xlsfzhxel
+	- bostrom16t6tucgcqdmegye6c9ltlkr237z8yfndmasrhvh7ucrfuqaev6xq7cpvek
 - energy layer
 	- H
 	- V

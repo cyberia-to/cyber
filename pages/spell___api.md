@@ -1,0 +1,2 @@
+- [[learn spell]]
+- [[forget spell]]

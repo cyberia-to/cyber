@@ -1,0 +1,3 @@
+- sequence of characters, used to represent text in programming and computing
+- can include letters, numbers, symbols, and spaces
+- strings are used to store and manipulate text data

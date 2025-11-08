@@ -1,0 +1,6 @@
+- internal mode in [[cyb]]
+- that offer limit features
+- for [[robot]] without [[cyber/energy]]
+- for activation of [[energetic]] mode [[cyb]] must detect
+- availability of all 3 [[tokens]] of [[cyber/energy]] pack
+- for any [[cyber-sdk]] [[vimputer]] in [[hub]]

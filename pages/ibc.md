@@ -1,0 +1,2 @@
+- inter blockchain communication protocol
+- [cosmos.network/ibc](https://cosmos.network/ibc)

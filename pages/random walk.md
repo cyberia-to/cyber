@@ -1,0 +1,39 @@
+alias:: random walking, random surfer
+- process of simulating a [[neuron]] randomly navigating the [[cybergraph]]
+- by clicking on links from one page to another
+- idea
+	- rooted in the simplicity
+	- of making successive steps
+	- in random directions
+- concept with wide-ranging applications in both natural and artificial systems
+- significance and impact
+	- despite its simplicity
+	- this concept has profound implications
+	- and is foundational in various fields
+- mathematics and physics
+	- brownian motion: in physics, random walk describes the erratic movement of particles suspended in a fluid, providing insights into diffusion processes
+	- stochastic processes: in mathematics, random walk models form the basis of stochastic processes, used to describe systems that evolve over time in a probabilistic manner.
+- finance
+	- stock prices: random walk theory is used to model the seemingly unpredictable movements of stock prices, suggesting that future movements are independent of past behavior
+- computer science
+	- [[page rank]]: uses random walk to determine the importance of web pages, simulating a user randomly clicking on links to measure the likelihood of landing on a particular page
+	- optimization: algorithms like simulated annealing use random walk to explore solution spaces, helping find optimal or near-optimal solutions in complex problems
+- phenomena in natural systems
+	- animal foraging: many animals exhibit random walk patterns when searching for food, which can optimize their search efficiency in environments where resources are sparsely and unpredictably distributed.
+	- genetics: genetic drift, a mechanism of evolution, can be modeled as a random walk, describing how allele frequencies in a population change over generations due to random sampling
+	- ecology: dispersal patterns of seeds and organisms often follow random walk dynamics, influencing the spread and distribution of species within ecosystems.
+- phenomena in artificial systems
+	- network analysis: random walk models help analyze complex networks like social networks, transportation systems, and communication networks, providing insights into connectivity and centrality.
+	- robotics: robots can use random walk algorithms for exploration and mapping unknown environments, allowing them to cover areas efficiently without prior knowledge of the terrain
+	- machine learning: random walk is used in reinforcement learning algorithms, where agents learn optimal strategies by exploring action spaces in a stochastic manner
+- the amazingness of random walk lies in its ability to generate order and predictability from randomness:
+	- [[emergence]]: simple random steps can lead to complex emergent behaviors, demonstrating how local randomness can result in global patterns and structures.
+	- universality: random walk models apply across diverse domains, from physical and biological systems to social and technological networks, highlighting their universal applicability and power
+	- predictive power: despite the inherent randomness, random walk models can make accurate predictions about system behavior, providing valuable insights in fields like finance, ecology, and network theory.
+	- optimization and exploration: random walk algorithms are effective in exploring large and complex solution spaces, often finding solutions that deterministic methods might miss
+- in summary
+	- the concept of random walk is remarkable for its simplicity
+	- and the profound insights it offers into the behavior of complex systems
+- [[cyberank]] implements
+	- [[attention]] and [[will]] weighted random walk
+	- as foundation to measure [[syntropy]] of [[superintelligence]]

@@ -1,0 +1,60 @@
+tags:: module
+- create-pool
+	- pool-creator-address
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- pool-type-id
+		- LATER 1
+	- deposit-coins
+		- denom
+			- boot
+			- 1000000
+		- denom
+			- hydrogen
+			- 1000000
+- withdraw
+  
+  collapsed:: true
+	- withdrawer-address
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- poolId
+		- 1
+	- poolCoin
+		- denom
+			- pool70D7610CBA8E94B27BAD7806EBD826F5626C486BBF5C490D1463D72314353C6,
+		- amount
+			- 1
+- deposit
+  
+  collapsed:: true
+	- depositorAddress
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+		- poolId
+			- 1
+		- depositCoins
+			- denom
+				- boot
+				- 1000000
+			- denom
+				- hydrogen
+				- 1000000
+- swap
+  
+  collapsed:: true
+	- swap-requester-address
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- poolId
+		- 1
+	- swap-type-id
+		- 1
+	- demand-coin-denom
+		- hydrogen
+	- order-price
+		- 10000000000000000,
+	- offer-coin
+		- denom
+			- boot
+			- 1000000
+	- offer-coin-fee
+		- denom
+			- boot
+			- 1

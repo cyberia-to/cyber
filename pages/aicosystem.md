@@ -1,0 +1,75 @@
+icon:: 👽
+alias:: awesome cyber, cyber ecosystem
+- the only reliable source of [[knowledge]] is [[cybergraph]] of [bostrom](https://cyb.ai/particles) and [spacepussy](https://spacepussy.ai/particles)
+- cyber is a decentralized entity, meaning no central organization or person owns it
+- consequently, no official support channels exist
+- it's important to recognize this to avoid scammers posing as official cyber support
+- your best defense is self-education and serious security measures
+- while official support is absent,
+- numerous groups and communities within the cyber ecosystem are willing to assist
+- this page offers a wealth of helpful information and resources
+- cyb.ai logs
+	- [cyb.ai/@congress/log](https://cyb.ai/@congress/log): the only trusted [[cyber/congress]] channel
+	- [[cybercongress fellows]]
+	- heroes of [bostrom](https://cyb.ai/sphere) and [spacepussy](https://spacepussy.ai/sphere)
+- github organizations
+	- [github.com/cybercongress](https://github.com/cybercongress)
+	- [github.com/bro-n-bro](https://github.com/bro-n-bro)
+	- [github.com/Snedashkovsky](https://github.com/Snedashkovsky) - [[cybergift]], on-chain-registry
+	- [github.com/cyber-prophet](https://github.com/cyber-prophet) - cy and bostrom-journal
+- github products
+	- [cybercongress/go-cyber](https://github.com/cybercongress/go-cyber) - reference implementation of [[cyber]]
+	- [cybercongress/cyb-ts](https://github.com/cybercongress/cyb-ts) - experimental [[cyb]] interface
+	- [cyber-prophet/cy](https://github.com/cyber-prophet/cy) - [[cybergraph]] tool, nushell based
+	- [cyber-prophet/nu-cyber-tools](https://github.com/cyber-prophet/nu-cyber-tools) - wrapper for [[cyber]] , [[ipfs]] clis for [[cybergraph]] interactions
+	- [bro-n-bro/spacebox](https://github.com/bro-n-bro/spacebox) - clickhouse indexer for [[go-cyber]]
+	- [bro-n-bro/bro.app](https://github.com/bro-n-bro/bro.app) - portfolio manager based on [[bostrom]] [[passport]] system
+	- [cybercongress/cybernet](https://github.com/cybercongress/cybernet) - cosmwasm contract for [[cybernet]] [[learning incentives]]
+	- [cybercongress/cybertensor](https://github.com/cybercongress/cybertensor) - cli and python package for [[cybernet]]
+	- [cybercongress/cybertensor-subnet-template](https://github.com/cybercongress/cybertensor-subnet-template) - [[cybernet]] subnet template
+	- [cybercongress/ton-connect-wasm](https://github.com/cybercongress/ton-connect-wasm) - telegram connect [[cosmwasm]]
+	- [github.com/cyborgshead/cyber-ts](https://github.com/cyborgshead/cyber-ts) - [available in npm](https://www.npmjs.com/package/cyber-ts)
+- docs
+	- [docs.spacepussy.ai](https://docs.spacepussy.ai) - docs for [[cybernet]]
+	- [lcd.bostrom.cybernode.ai](https://lcd.bostrom.cybernode.ai) - lcd api for [[bostrom]]
+- telegram
+	- [t.me/bostrom_news](https://t.me/bostrom_news) - [[blockchain]] for [[bootloading]] [[superintelligence]]
+	- [t.me/cyber](https://t.me/cyber) - uncensored
+	- [t.me/CyberGlobalHub](https://t.me/CyberGlobalHub) - cyber global community
+	- [t.me/fameofcyber](https://t.me/fameofcyber) - hardware infrastructure for superintelligence
+	- [t.me/cyberacademy](https://t.me/cyberacademy) - educational space for web3 builders
+	- [t.me/CyberProphet](https://t.me/CyberProphet) - about [[cybergraph]] in the [[bostrom]] blockchain
+	- [t.me/cyb_ai](https://t.me/cyb_ai) - chat of an active community member
+	- [t.me/CyberForever](https://t.me/CyberForever) - how to train bostrom (ru)
+- twitter
+	- [x.com/cyber_devs](https://x.com/cyber_devs)
+	- [x.com/SpacePussy_ai](https://x.com/SpacePussy_ai)
+	- [x.com/cyb_ai](https://x.com/cyb_ai)
+- farcaster
+	- [warpcast.com/bostrom](https://warpcast.com/bostrom)
+- discord
+	- [discord chat](https://discord.com/invite/ARwv74ZyGH) - cyber community
+- youtube
+	- [youtube.com/@cybercommhub](https://www.youtube.com/@cybercommhub) - cyber community hub
+- ai docs
+	- [cyber](https://wiki.mutable.ai/cybercongress/cyber)
+	- [go-cyber](https://wiki.mutable.ai/cybercongress/go-cyber)
+	- [cyb-ts](https://wiki.mutable.ai/cybercongress/cyb-ts)
+- analytics
+	- [cybernode.ai](https://cybernode.ai/grafana/d/cyber_stats/computer?orgId=2&from=now-7d&to=now) - network and API monitor
+	- [monitor.bronbro.io/d/bostrom-stats](https://monitor.bronbro.io/d/bostrom-stats/bostrom-stats?orgId=2) - monitor bronbro
+	- [metrics.cyb.ai/cyb.ai](https://metrics.cyb.ai/cyb.ai) - public analytics of usage
+	- [metrics.cyb.ai/docs.cyb.ai](https://metrics.cyb.ai/docs.cyb.ai) - public analytics of usage
+	- celatone.cyb.ai - explorer
+- osmosis
+	- [[$BOOT]] on [pro.osmosis.zone](https://pro.osmosis.zone/osmosis/trade/analytics/tokens/ibc%252FFE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4?from=uosmo&to=ibc%2F498A0751C798A0D9A389AA3691123DADA57DAA4FE165D5C75894505B876BA6E4&market=Osmosis)
+- dashboards
+	- [atomscan.com/bostrom](https://atomscan.com/bostrom)
+	- [ping.pub/bostrom](https://ping.pub/bostrom)
+	- [wallet.keplr.app/chains/bostrom](https://wallet.keplr.app/chains/bostrom)
+	- [app.osmosis.zone/assets/BOOT](https://app.osmosis.zone/assets/BOOT)
+	- [coingecko.com/en/coins/bostrom](https://www.coingecko.com/en/coins/bostrom)
+	- [coinmarketcap.com/currencies/bostrom](https://coinmarketcap.com/currencies/bostrom/)
+	- [defillama.com/chain/Bostrom](https://defillama.com/chain/Bostrom)
+- running a node
+	- [join cyber as a validator](https://github.com/cybercongress/go-cyber/blob/main/docs/run_validator.md)

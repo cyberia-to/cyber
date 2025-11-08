@@ -1,0 +1,4 @@
+- background: black
+- font color: white
+- font bold: green
+- font type: play

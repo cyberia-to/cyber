@@ -1,0 +1,22 @@
+alias:: true false problem
+- we discussed for a while one property of the [[cyberank]]
+- which rise huge concerns into the answering capabilities of [[cyber]]
+- lets call it true-false problem
+-
+- let us imagine that `true` particle have cyberank `10`, and `false` particle have cyberank `9`
+- the environment allow to link [[any particle with any]]
+- that means that for any questions which cyberlinked to `true` and `false`
+- the winning answer will always be `true`
+-
+- of course such behavior does not feels like something superintelligent
+- we always emphasize that [[cyberank]] is a first ranking factor
+- but [[not the only one]] which is possible on top the cyber architecture
+-
+- in order to solve true-false problem
+- we have to extend our [[universe model]] into [[two factor]] model
+- we must compute [[weights of links]] in a context
+-
+- [[standard inference]] introduce simplistic algorithm for solving this problem
+- giving as result contextual statements which are [[truthful]] by design
+-
+- [source of discussion](https://github.com/cybercongress/go-cyber/issues/694)

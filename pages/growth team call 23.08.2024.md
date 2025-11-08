@@ -1,0 +1,6 @@
+- @Medniyy discussion of the latest Community at X Space
+- @mastercyb and @el-nivvo introduced Buy Energy Page
+- Cito team made upgrade of our booth at Cosmoverse
+- growth team project on [github](https://github.com/orgs/cybercongress/projects/52/views/1)
+- @CyberFFtod first iteration on [NFTs badges](https://hackmd.io/D1Xm0BiQRcqDAIYK6CWG-A)
+- next meeting need to prepare cyb's neurons survey questions

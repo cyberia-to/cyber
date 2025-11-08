@@ -1,0 +1,8 @@
+- continuous process of [[cooperative games]] between [[neurons]]
+-
+- nowdays is strictly defined system with [[feedback loops]]
+-
+- in [[cyber]] implemented as independent layer: [[cybernet]] project
+- in [[bittensor]] is part of low level [[consensus]]
+-
+- dive into [[collective intelligence]]

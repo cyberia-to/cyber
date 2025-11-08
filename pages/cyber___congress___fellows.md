@@ -1,0 +1,22 @@
+alias:: cybercongress fellows
+- active fellows
+	- [cyb.ai/@dasein/log](https://cyb.ai/@dasein/log)
+	- [cyb.ai/@happylol/log](https://cyb.ai/@happylol/log)
+	- [cyb.ai/@cyborgshead/log](https://cyb.ai/@cyborgshead/log)
+	- [cyb.ai/@el-nivvo/log](https://cyb.ai/@el-nivvo/log)
+	- [cyb.ai/@researcher/log](https://cyb.ai/@researcher/log)
+	- [cyb.ai/@master/log](https://cyb.ai/@master/log)
+	- [cyb.ai/@fftod/log](https://cyb.ai/@fftod/log)
+	- [cyb.ai/@dimakorzhovnik/log](https://cyb.ai/@dimakorzhovnik/log)
+	- [cyb.ai/@mrlp4/log](https://cyb.ai/@mrlp4/log)
+	- [cyb.ai/@savethecyb/log](https://cyb.ai/@savethecyb/log)
+	- [cyb.ai/@joy/log](https://cyb.ai/@joy/log)
+	- [cyb.ai/@cy-prophet/log](https://cyb.ai/@cy-prophet/log)
+	- [cyb.ai/@maximxmoroz/log](https://cyb.ai/@maximxmoroz/log)
+	- [cyb.ai/@cooper/log](https://cyb.ai/@cooper/log)
+	- [cyb.ai/@synthetic/log](https://cyb.ai/@synthetic/log)
+	- [cyb.ai/@perforatorlubvi/log](https://cyb.ai/@perforatorlubvi/log)
+	- [cyb.ai/@medniyy/log](https://cyb.ai/@medniyy/log)
+	- [cyb.ai/@dreamer/log](https://cyb.ai/@dreamer/log)
+	- [cyb.ai/@mcfaz10/log](https://cyb.ai/@mcfaz10/log)
+- how to [[become cyberongress fellow]]?

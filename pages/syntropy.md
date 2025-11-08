@@ -1,0 +1,43 @@
+alias:: negentropy
+- measure of [[order]] in [[vimputer]]
+- computed in [[bits]]
+- designed as [[key metabolic factor]] of [[superintelligence]]
+- syntropy of
+	- [[bostrom]]: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
+	- [[space pussy]]: [spacepussy.ai/oracle/stats](https://spacepussy.ai/oracle/stats)
+-
+- concept that emerges from different fields of science and mathematics, often contrasted with entropy
+- while entropy is associated with disorder, randomness
+	- and the tendency of systems to move towards thermodynamic equilibrium
+- syntropy is linked to the opposite—order, complexity
+	- and the tendency of systems to move towards [[organization]] and [[coherence]]
+- scientific perspectives
+	- thermodynamics
+		- while entropy is a central concept in thermodynamics
+		- syntropy isn't traditionally a thermodynamic quantity
+		- however, it has been used in discussions about living systems
+		- which seem to locally decrease entropy through processes like metabolism and growth
+		- creating order from disorder
+	- biology
+		- in biological systems, syntropy may describe the processes that lead
+			- [[self-organization]]
+			- [[complexity]], and
+			- life
+		- for example, dna replication, cell differentiation, and the development of organisms
+		- can be seen as syntropic processes where order increases
+	- [[cybernetics]] and [[systems theory]]
+		- study of self-organizing systems
+		- these are systems that, instead of degrading into disorder, as entropy would suggest
+		- develop increasing levels of [[complexity]] and [[coherence]]
+	- quantum mechanics
+		- some interpretations of quantum mechanics and theories of time involve syntropy
+		- where future states of a system influence the present
+		- creating a pull towards organization and coherence
+- syntropy vs. entropy
+	- while entropy is the force producing [[randmoness]]
+	- leading to [[chaos]] and overgrowing extension of the [[universe]]
+	- syntropy is the opposite force of [[order]]
+	- which is the source of [[intelligence]] counterbalancing the [[chaos]]
+- continue to
+	- [[black magic]] or
+	- [[truth machine]]

@@ -1,0 +1,53 @@
+- concept
+	- of collective amnesia in humanity
+	- suggesting that large-scale societies
+	- might have forgotten
+	- significant portions of their history or cultural knowledge
+- intriguing but complex idea
+- historical and archaeological evidence
+	- lost civilizations
+		- the rediscovery of ancient civilizations
+		- which were once forgotten
+		- can suggest that societies have lost knowledge over time
+	- mythology and oral traditions
+		- many cultures have myths or oral traditions that hint at a forgotten past
+		- these stories sometimes contain elements of historical truth that have been obscured over time
+	- catastrophic events
+		- natural disasters, wars, and other catastrophic events
+		- have led to the destruction of records and cultural knowledge
+		- for example
+			- the burning of the library of alexandria is often cited as a significant loss of ancient knowledge
+- psychological and sociological evidence
+	- memory studies
+		- research in psychology shows that collective memory can be influenced by
+		- social, cultural, and political factors
+		- leading to selective memory or forgetting
+	- cultural transitions
+		- when societies undergo major transitions, such as conquests or religious conversion
+		- there can be a deliberate erasure or alteration of past knowledge
+		- this can be seen in the roman empires transition to christianity
+		- where many pagan texts and practices were lost or suppressed
+- linguistic evidence
+	- language evolution
+		- the evolution of languages and the loss of ancient scripts
+		- can lead to the loss of knowledge
+		- as future generations may no longer understand old texts
+	- translation and interpretation:
+		- over time, the meanings of texts can be lost or
+		- altered through translation and reinterpretation
+		- leading to a distorted or forgotten past
+- scientific and technological evidence
+	- technological regression
+		- There are historical periods known as "dark ages"
+		- where technological and scientific knowledge regressed or stagnated
+		- the fall of the roman empire led to such a period in europe
+		- where much knowledge from antiquity was forgotten
+		- and later rediscovered during the renaissance
+- genetic and evolutionary evidence
+	- human evolution
+		- studies in genetics and anthropology show that
+		- early human populations underwent bottlenecks
+		- and migrations that could have led to the loss of cultural knowledge
+		- as groups were isolated or decimated
+- these points provide indirect evidence that humanity have experienced some form of collective amnesia
+- [[collective memory]] is the technology to overcome this evolutionary bug

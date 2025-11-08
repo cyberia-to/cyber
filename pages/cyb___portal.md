@@ -1,0 +1,12 @@
+- currently portal is useless for returning users and do not offer ability to create avatar second time
+- [[cyb/avatar/create]] is very powerful feature which affects semantic organization and app development capabilities
+- rearrangement of logic based on mostly existing current state
+	- main for new user: display entrance and flow from citizenship page (steps from registration)
+	- main for returning user: display passport and gift status. must be the same as for returning user
+	- main must
+	- citizenship for new user: flow for avatar creation
+	- citizenship for returning user: display of passport
+	- gift for new user: display step 1
+	- gift for returning users: display step 1, but must display step 0
+	- map leaves unchanged
+- after this changes we could have very different dynamic in demand for naming

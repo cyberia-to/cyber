@@ -1,0 +1,76 @@
+- emerging paradigm of computations
+- [[soft3]] as example implementation
+- involve the use of probabilistic models to handle and process collective data and computations
+- particularly useful in scenarios where there is uncertainty or variability in the data
+- [[reality of foundation models]] is highly relevant read
+- key concepts
+	- [[probabilistic models]]
+	- [[collective computation]]
+	- [[uncertainty handling]]
+- applications
+	- [[politics]] and [[art]]
+		- predict [[information]] trends
+		- manage [[attention]] space
+		- compete over [[intelligence]]
+	- [[economics]] and [[finance]]
+		- predict [[market]] trends
+		- manage risks
+		- optimize investment portfolios
+	- [[soft3 and machine learning]]
+	- [[distributed systems]]
+		- [[store and distribute popular content]]
+		- [[global semantic cores]]
+		- [[social peer to peer]]
+		- [[optimizing resource usage]]
+	- [[swarm robotics]]
+		- guide collective behaviors
+		- and decision-making processes
+		- among multiple robots
+	- [[sensor networks]]
+		- fuse data from multiple sensors
+		- handle missing data
+		- improve the accuracy of the overall system
+	- [[soft]] and [[engeneering]]
+		- speed up software and hardware engeneering
+		- increase quality of software and hardware
+		- autonomous decision making by apps
+- advantages
+	- [[robustness]]: ability to handle incomplete and noisy data effectively
+	- [[scalability]]: suitable for large-scale systems and applications
+	- [[flexibility]]: applicable to a wide range of domains and problems
+- examples of probabilistic models
+	- [[cybergraph]] with [[black magic]]: model [[probability of observation]] of [[information]] by [[neuron]]
+	- bayesian networks: graphical models that represent the probabilistic relationships among a set of variables
+	- markov chains: models that describe systems that transition from one state to another on a state space
+- have the potential to significantly impact the future of [[civilization]] and [[computation]]
+	- technological advancements
+		- smarter decision-making ai systems with better predictions
+		- secure, efficient, and fair financial system with fraud prevention and equitable resource distribution
+		- more efficient use of computational resources in distributed computing across networks
+		- safer autonomous vehicles and smart manufacturing with adaptive systems in [[robotics]]
+	- societal impact
+		- [[improved public health]] based on disease modeling with personalized medicine
+		- more efficient supply and demand prediction for [[environmental sustainability]]
+		- fairer markets and reduced economic inequality
+		- enhanced governance where decisions are made based on collective inputs and probabilistic assessments
+	- scientific research
+		- accelerated discovery through data-driven research
+		- enhanced collaboration in research
+		- collaborative research with interdisciplinary insights
+		- understanding complex systems through emergent behavior analysisemergent behavior
+- challenges
+	- ethical implications: bias, fairness and privacy concerns
+	- interpretability: results from probabilistic models can be difficult to interpret
+	- computational complexity coupled with enormous data requirements
+- solution
+	- [[relevance machine]] removes complexity of design and implementation
+	- [[cyb]] soft offer vast ecosystem with universal access
+	- [[bostrom]] blockchain ever grows to support needs of [[civilization]]
+- conclusion
+	- probabilistic collective computations
+	- represent a significant step forward in the evolution of technology and society
+	- by leveraging the collective intelligence of multiple [[agents]] and managing [[uncertainty]]
+	- these systems can lead to smarter, more adaptive, and more efficient solutions across various domains
+	- the future of [[civilization]] and [[computation]] may very well be shaped
+	- by the advancements and applications of these powerful probabilistic models
+	- paving the way for a more connected, informed, and equitable world

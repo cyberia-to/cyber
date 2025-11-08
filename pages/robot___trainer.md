@@ -1,0 +1,1 @@
+- tool for training memorization of [[spells]]

@@ -1,0 +1,56 @@
+tags:: module
+- [[store-code]]
+	- [[sender]]
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq
+	- [[wasmByteCode]]
+		- particle
+- [[clear-admin]]
+	- sender
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- contract
+		- bostrom1nwnejwsdpqktusvh8qhxe5arsznjd5asdwutmaz9n5qcpl3dcmhsujhemd
+- [[update-admin]]
+	- sender
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- new-admin
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlw,
+	- contract
+		- bostrom1nwnejwsdpqktusvh8qhxe5arsznjd5asdwutmaz9n5qcpl3dcmhsujhemd
+- [[execute-contract]]
+	- [[sender]]
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- [[contract]]
+		- bostrom1nwnejwsdpqktusvh8qhxe5arsznjd5asdwutmaz9n5qcpl3dcmhsujhemd,
+	- [[msg]]
+		- TODO provide better example
+	- [[funds]]
+		- denom
+			- boot
+			- 1000000
+- [[instantiate-contract]]
+	- sender
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- admin
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- codeId
+		- LATER low: 1, high: 0, unsigned: false,
+	- label
+		- labelname
+	- msg
+		- TODO provide better example
+	- funds
+		- denom
+		  
+		  collapsed:: true
+			- boot
+			- 1000000
+- [[migrate-contract]]
+	- sender
+		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq,
+	- contract
+		- bostrom1nwnejwsdpqktusvh8qhxe5arsznjd5asdwutmaz9n5qcpl3dcmhsujhemd,
+	- codeId
+		- 1
+	- msg
+		- TODO provide better example
+- TODO [[verify-contract]]

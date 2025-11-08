@@ -1,0 +1,8 @@
+- in a [[proof of stake]] [[consensus]]
+- [[token]] holder can delegate their tokens to [[validator]]
+- the [[validator]] then use the combined [[stake]] to participate in the [[consensus]] process
+- in return, both the [[validator]] and the delegator
+- receive rewards from the transaction fees and block rewards
+- proportional to the amount of tokens delegated
+- [[validator]] cut announced commission for delegated stake from [[delegate]]
+- that is how any [[neuron]] can participate in consensus process and [[get rewards]]

@@ -1,0 +1,3 @@
+- one place for producing energy
+- merge [[bsr]] and [[hfr]] in one convenient interface
+- dependency on [[energy reform]]

@@ -1,0 +1,17 @@
+- cybergraph extension: [[create cyberlink twice]]
+- {{embed [[energy reform]]}}
+- essential features
+	- [[finalization of $BOOT distribution]]
+	- [[using progs instead of modules]]
+	- [[usable tokens]]
+- progs
+	- [[cybernet]]: [[cybernomics of O]]
+	- [[daodao for senate]]
+	- [[neutron progs for warp]]
+	- [[new hub contracts]]
+	- [[social layer]]
+	- [[avatar namespaces]]
+-
+-
+-
+- [[daodao for senate]]

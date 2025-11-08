@@ -1,0 +1,4 @@
+- TODO [[cyber/genesis]] protocol
+- point in [[time]] when [[cyber]] become activated after rigorous completion
+- target launch date: 8.10.57
+- probably higher complexity when [[launching rocket]]

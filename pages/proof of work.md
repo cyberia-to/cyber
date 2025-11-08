@@ -1,0 +1,38 @@
+alias:: pow
+- class of [[consensus]] mechanism used in [[blockchains]]
+- [[computational power]] which secure creation of new valid [[blocks]]
+- unlike [[proof of stake]]
+	- which relies on vested staking to assign validation rights
+	- pow relies on computational power to solve complex mathematical problems
+	- miners compete to solve these problems
+	- with the first one to solve it earning the right to validate transactions and create a new block
+- method aims to secure the network through [[computational difficulty]] and resource expenditure
+- pros
+	- security
+		- relies on the [[nakamoto]] consensus with an honest majority assumption of 51%
+		- making it difficult and costly to attack the network
+	- decentralization
+		- enables anyone with computational resources to participate
+		- without the need for holding a significant amount of tokens
+	- fairness
+		- allows the network to start from 0 token supply
+		- ensuring identical rules for all participants throughout the network's lifetime
+	- accessibility
+		- enables minting tokens through computational effort
+		- acting as a [[transmuter]] to bypass the existing financial system for onboarding
+- cons
+	- energy efficiency
+		- significantly increases energy consumption
+		- due to the need for extensive computational power
+	- scalability
+		- handles lower transaction volumes less efficiently
+		- making it less suitable for large-scale blockchain networks
+- proof of work is implemented in token of leading [[blockchain]]
+	- [[$BTC]]
+	- [[$DOGE]]
+	- [[$LTC]]
+	- [[$ETC]]
+	- [[$KAS]]
+	- [[$CKB]]
+	- [[$ERG]]
+	- and others

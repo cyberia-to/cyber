@@ -1,0 +1,49 @@
+icon:: 🌓
+tags:: aos
+- [[earth]] only natural satellite
+	- average distance to [[earth]]:  ~[384 400 km]
+	- area: 37 930 000 km2
+- supervised by [[bostrom]] under [[moon code]]
+- moon flag
+	- ![](https://emerald-raw-leopon-384.mypinata.cloud/ipfs/QmefefoJkLWc1ay1EBzK3bgmig2Gb1TUJrKXnZiDRQE2vZ)
+- feautres
+	- gravitation is key source of rhythms on [[earth]]
+	- gravity is not even
+	- have peaks of eternal light in the north pole
+	- south pole is crazy cold
+	- dust could be a problem or opportunity: oxygen and silicon
+	- 300,000 craters wider than 1 km
+- perfect fit
+	- space exploration
+	- robotics production
+	- space tourism
+- competitive advantage over [[earth]]
+	- cheap energy
+	- low gravity
+	- no atmosphere
+- problems
+	- coordination
+	- the most complex project in the human history
+	- ephemeral ownership exists
+- one of the less obvious difficulties lies not with the [[moon]] itself
+	- but rather with the political and national interests of the nations engaged in colonization
+	- assuming that colonization efforts were able to overcome the difficulties outlined above
+	- there would likely be issues
+		- regarding the rights of nations and their colonies
+		- to exploit resources on the lunar surface
+		- to stake territorial claims
+		- and other issues of sovereignty
+		- which would have to be agreed upon
+		- before one or more nations
+		- established a permanent presence on the moon
+	- the ongoing negotiations and debate regarding the antarctic
+		- is a good case study for prospective lunar colonization efforts
+		- in that it highlights the numerous pitfalls of developing/inhabiting a location
+		- that is subject to the claims of multiple sovereign nations
+- the key to overcompete moon disputes
+	- is to move physical [[bostrom]] infrastructure on the moon
+	- and bootstrap there proof-of-location services
+	- making communications faster and more affordable there
+- before moving hardware there is a room
+	- for building basic software infrastructure
+	- in parallel learning dia [[bostrom]] how to [[recover earth]]

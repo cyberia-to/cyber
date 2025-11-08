@@ -1,0 +1,7 @@
+- inspired by the behavior of social animals
+- these algorithms guide decentralized coordination among [[agents]]
+- examples include
+	- [[ant colony optimization]]
+		- where agents find optimal paths by simulating the behavior of ants searching for food
+	- [[particle swarm optimization]]
+		- which simulates the social behavior of birds or fish to find optimal solutions

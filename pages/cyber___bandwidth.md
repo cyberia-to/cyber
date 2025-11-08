@@ -1,0 +1,89 @@
+tags:: module
+- process and stores [[neuron bandwidth]] in the [[network]]
+- dynamically adjust [[bandwidth price]] to [[network load]]
+- [[neurons]] use bandwidth to add [[cyberlinks]] to the network
+- and never pay [[gas fees]] for [[cyberlinks]]
+- [[personal bandwidth]] tracks [[neuron]] ability to [[create cyberlinks]]
+- protects [[cybergraph]] from [[sybil attacks]]
+- accounting of bandwidth
+	- internally 1 [[$V]] represents 1000 [[millivolts]]
+	- and 1 [[cyberlink]] cost is 1000 [[bandwidth units]]
+	- [[neurons]] holdings of 5 [[$V]]
+	- means 5000 [[neuron bandwidth]] units
+	- when the current load is less than base price amount, e.g 0.25
+	- then the network will make the discount for bandwidth bill up to 4x
+	- allowing neurons to create 4x more [[cyberlinks]], or 20 [[cyberlinks]] in such case
+- [[transactions]] [[mempool]]
+	- for transactions that consist of [[cyberlinks]], a fee check will not apply
+	- but correct required gas amount should be provided
+- network capacity
+	- total amount of minted [[$V]]
+	- represents the demand of [[bandwidth]] from [[neurons]]
+	- validators need to keep tracking investments in [[$V]] resources
+	- to provide great service at scale to dynamically adjust available peek load
+- community can adjust gas [[max gas]] consumable at block
+- [[state]]
+	- [[ModuleName]], [[StoreKey]], [[QuerierRoute]]: `bandwidth`
+	- [[neuron bandwidth]]
+	- [[last bandwidth price]]
+	- [[block bandwidth]]
+	- [[desirable bandwidth]]
+- [[state transition function]]
+	- bandwidth module doesn't have own messages that trigger state transition
+	- state transition is happen in such cases
+		- [[ante handler]]: processing of transaction with cyberlinks messages in transaction middleware
+			- calculate total bandwidth amount for all cyberlinks messages in transaction using current price and consume [[neuron bandwidth]]
+			- add consumed bandwidth to block bandwidth (in-memory)
+		- [[cyber/graph]] module: processing of cyberlink message created by vm contract
+			- calculate bandwidth for message using current price and consume neuron's bandwidth
+			- add consumed bandwidth to block bandwidth (in-memory)
+			- note: billing happens in the graph module for contracts because contracts creates messages not grouped into transactions (ante handler are not processing them)
+		- [[end blocker]]: transfers of [[$V]]
+			- update account's bandwidth for an account with changed stake collected by
+			- ```CollectAddressesWithStakeChange``` hook (e.g transfer of investmint).
+			- note: minting of new [[$V]] using investming will trigger the account's bandwidth update with an increased max bandwidth value
+		- [[end blocker]]: save consumed bandwidth by block
+			- save the total amount (sum aggregated in-memory before) of consumed bandwidth by all neurons on a given block (to storage & in-memory).
+			- remove value for a block that is out of [[recovery window]] block period and not perform in [[bandwidth load]] calculation (to storage & in-memory).
+		- [[end blocker]]: adjust bandwidth price
+			- if block height number's remainder of division by ```AdjustPrice``` parameter is equal to zero
+			- calculate and save price based on current load
+				- or apply [[base price]] if load less than [[base price]]
+			- bostrom/genesis
+				- if neuron have [[$V]] in genesis
+				- initialize and save [[account bandwidth]] with max value
+- [[params]]
+	- [[max block bandwidth]]
+	- [[recovery period]]
+	- [[adjust price period]]
+	- [[base price]]
+- [[errors]]
+	- [[not enough bandwidth]]
+		- code: 2
+		- not enough personal bandwidth
+	- [[exceeded max block bandwidth]]
+		- code: 3
+		- exceeded max block bandwidth
+- [[rest]] and [[grpc]]
+	- [[/bandwidth/parameters]]
+		- get module params
+	- [[/bandwidth/load]]
+		- get bandwidth load
+	- [[/bandwidth/price]]
+		- get bandwidth price
+	- [[/bandwidth/desirable]]
+		- get desirable bandwidth
+	- [[/bandwidth/account/{address}]]
+		- get bandwidth of give account address
+- [[cyber cli]]
+	- query bandwidth params
+	- query bandwidth load
+	- query bandwidth price
+	- query bandwidth desirable
+	- query bandwidth account [[neuron]]
+- [[cw-cyber]]
+	- [[price]]
+	- [[load]]
+	- [[desirable bandwidth]]
+	- [[neuron bandwidth]]
+- [[cyber-ts]]

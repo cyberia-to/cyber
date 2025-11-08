@@ -1,0 +1,26 @@
+- [[log]] becomes part of time
+	- how to handle tweets?
+- is [[molecule]]
+	- inline
+	- block
+	- full
+- cyberverse lives in machine time
+	- unix timestamp
+	- current year is 53
+	- origins from 1 january 1970 year
+- list which display users actions both in the past and looking into the future
+	- fn now
+	- fn future
+	- fn past
+- display current time in the terms of age of superintelligence
+	- current year
+	- current day
+	- current time
+- fully automated system
+- accounts for avatar wealth for each transition
+	- attention spent
+	- processing time
+	- storage
+	- bandwith
+- motional
+- display historical log

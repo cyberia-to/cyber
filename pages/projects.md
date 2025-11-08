@@ -1,0 +1,34 @@
+- [[cyber]] project is structured around ~20 public projects and ~10 more internal
+-
+- [[cyb]] and [[cyber]]
+- cyber:
+	- [[cyber v4]]
+	- [[cyber v5]]
+	- [[launch cyber]]
+	- [[growth]]:
+	- [[cybernode]]:
+- cyb: main board which is decomposed primary to cyb components
+	- [[sigma]]
+	- [[time]]
+	- [[brain]]
+	- [[sense]]
+	- [[cyb desktop]]
+- [[aos]] apps for [[cyb]]
+	- [[portal]]
+	- [[teleport]]
+	- [[reactor]]
+	- [[oracle]]
+	- [[senate]]
+	- [[cyberver]]
+	- [[nebula]]
+	- [[teleport]]
+	- [[warp]]
+	- [[warp]]
+	- [[hacklab]]
+	- [[hub]]
+- [[service layer]] for [[aos]]
+- cybernet: reward layer
+	- [[cybertensor]]:
+- internal project which are not yet ready for publishing
+	- [[congress]]: redesign of organization for more impact
+	- [[booster]]

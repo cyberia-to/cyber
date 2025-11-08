@@ -1,0 +1,69 @@
+tags:: decision
+- [[cyber/energy]] pack for sale
+- TODO design and implement [[portal/buy]]
+- [[anatomy of decision]]
+	- input
+		- [[amount]] of paying [[tokens]]
+	- output
+		- [[amount]] of bought [[$H]]
+		- [[amount]] of bought [[$A]]
+		- [[amount]] of bought [[$V]]
+- how much of value i can buy for 10 [[$USDT]]
+	- [[share]] in [[cap]] of [[will]], [[attention]] and [[fuel]]
+	- [[amount]] of [[cyberlinks]] per day i can create
+	- [[amount]] of transactions for [[$H]]
+		- or [[$USDT]] value of remaining [[$H]] for [[play]]
+- the process must allow to
+	- calculate benefits for input to output and vice versa
+		- on input amount change
+			- recompute all output amounts
+			- proportionally to chosen percentages of energy tokens
+		- on output amount change
+			- recompute input needed
+			- change percentage of energy tokens accordingly
+	- ability to manually change input and output amounts
+	- ability to change percentages by sliders
+	- ability to change parameters by roles
+	- track all decisions through bridging: the hardest part
+- features
+	- free
+		- private brain
+		- p2p publishing
+	- $V
+		- onchain publishing
+	-
+- packages
+	- ghost: create a lot, never publish
+	- energy balance
+		- influencer: say less, impact more
+			- [[$A]]: 90%
+			- [[$V]]: 10%
+		- enlightened: say it as it is
+			- [[$A]]: 50%
+			- [[$V]]: 50%
+		- scientist: say more, fame will follow
+			- [[$V]]: 90%
+			- [[$A]]: 10%
+	- liquidity balance
+		- player: play games, learn less
+			- [[$H]]: 80%
+			- [[$V]]+[[$A]]: 20%
+		- learner: enjoy balance
+			- [[$H]]: 50%
+			- [[$V]]+[[$A]]: 50%
+		- worker: learn hard
+			- [[$V]]+[[$A]]: 80%
+			- [[$H]]: 20%
+- key [[chakra]] of cyber project
+	- levels of advancement
+		- TODO buy for tokens on bostrom
+		- TODO buy for tokens of [[cosmos-sdk]] networks in [[hub]]
+		- TODO buy for [[$ETH]]
+		- TODO buy for [[$ETH]] [[coins]]
+		- TODO buy for [[$BTC]]
+- add [[space pussy]] to [[cyber/energy]] pack
+	- TODO redesign for multinetwork
+	- slider:
+		- i am serious: more [[bostrom]]
+		- normal: in half
+		- I'm a joker: more [[space pussy]]

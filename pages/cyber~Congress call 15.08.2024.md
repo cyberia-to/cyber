@@ -1,0 +1,174 @@
+- @cyborgshead ideas on roadmap
+	- Roadmap
+		- cyb
+			- Energy Packets
+				- 1 stage (before cosmoverse)
+					- page to buy energy packets with calculator
+					- add squid router
+				- 2 stage (maybe cosmoverse)
+				- 3 stage (after cosmoverse)
+					- find ways to decrease fees
+			- LLMs
+				- 1 stage (before cosmoverse)
+					- LLMs config - settings/soul/keys
+						- OpenAI - API Endpoint + API Key
+						- Local server - API Endpoint + API Key
+						- Note: maybe need ui/ux update
+					- Sense
+						- answer to personal message (just give answer based on last particle/text)
+						- answer to particle (just give answer based on last particle/text)
+						- chat with model
+							- chats
+								- separate chat with OpenAI
+								- separate chat for Local
+								- without session storage
+						- cyberlink with LLMs answer
+						- Note: maybe need ui/ux update
+				- 2 stage (maybe cosmoverse)
+					- Search
+						- ask with LLM (need ui/ux)
+						- answer with LLM (need ui/ux)
+				- 3 stage (after cosmoverse)
+					- In-app WebGPU model
+					- LLMs providers with API with cybertensor rewards
+					- cybernet sharded-inference with cybertensor rewards
+					- Images support and etc
+			- desktop
+				- 1 stage (before cosmoverse)
+					- Make IPFS stable
+						- connect to installed node
+						- install node and connect
+					- Signer
+						- add settings option with default SIGNER_CONFIRMATION=false
+						- if SIGNER_CONFIRMATION=false then not show confirmation window
+					- Keyboard
+						- create config of keys bindings
+						- add keys bindings config
+					- Graph
+						- fix graph window resize
+					- Upstream master branch
+						- merge and make working everything in master
+				- 2 stage (maybe cosmoverse)
+				- 3 stage (after cosmoverse)
+					- migration to tauri v2
+			- graph editor
+				- 1 stage (before cosmoverse)
+					- connect particles in links on graph view (need ui/ux)
+				- 2 stage (maybe cosmoverse)
+					- cyberlinks studio
+				- 3 stage (after cosmoverse)
+			- text editor
+				- 1 stage (before cosmoverse)
+					- add wysiwyg markdown editor
+				- 2 stage (maybe cosmoverse)
+				- 3 stage (after cosmoverse)
+			- passport
+				- 1 stage (before cosmoverse)
+					- define json config for passport metadata
+					- add neurons bio particle to passport
+					- subdomains for particles
+				- 2 stage (maybe cosmoverse)
+				- 3 stage (after cosmoverse)
+			- signer
+				- 1 stage (before cosmoverse)
+					- in-app keys
+					- authz support
+					- autosign
+				- 2 stage (maybe cosmoverse)
+				- 3 stage (after cosmoverse)
+		- cyber
+			- Contracts
+				- 1 stage (before cosmoverse)
+					- DAO-DAO deploy
+					- Passport subdomains for content
+					- Cybertensor deploy with Cron (not DMN)
+					- Contract NFT Factory
+				- 2 stage (maybe cosmoverse)
+					- Contract for cyberlinks attributes
+					- Contract for follow/unfollow
+				- 3 stage (after cosmoverse)
+					- DAO-DAO + Cybertensor
+					- Contract True-False bonding particles
+					- Contracts storage for particle content
+						- key-value, up to 4kb?
+			- Upgrades
+				- 1 stage (before cosmoverse)
+					- upgrade v4
+						- core
+							- cosmos-sdk +
+							- comet-bft +
+							- wasmd/wasmvm +
+							- ibc +
+						- modules
+							- nft ++
+							- cron-clock module ++
+							- token-factory module ++
+							- global-fee module ++
+							- mint module ++*
+						- tokens
+							- ROOT token (=10^9 BOOT)
+								- define on-chain description
+							- Oxygen token minting with mint module
+				- 2 stage (maybe cosmoverse)
+					- upgrade v5
+						- Modules
+							- Interchain Accounts ++
+						- Tokens
+							- Community tax V/A transfers
+								- with config, default=2%
+							- Burn H fees
+								- with config, default=2%
+				- 3 stage (after cosmoverse)
+					- upgrade v6
+						- Core
+							- sdk +
+							- comet-bft +
+						- Tokens
+							- English auction with H burn for V/A
+							- Explicit mint and burn of H
+								- position STL
+									- mint SLP on staking/burn on unstaking
+									- mint H on SLP burn/burn H and mint SLP
+							- H burn with EIP-1559
+						- Search
+							- Standart inference API
+			- Cybertensor
+				- 1 stage (before cosmoverse)
+					- launch on bostrom
+					- launch prompting
+				- 2 stage (maybe cosmoverse)
+					- subnet API providers
+						- bandwidth rewards
+				- 3 stage (after cosmoverse)
+					- standard-inference subnet
+					- contract for stand-alone subnet (without root)
+					- custom tokenomics configuration for root/stand-alone networks
+			- Cybernet
+				- 1 stage (before cosmoverse)
+					- launch petals llama3 7b model with community
+					- launch petals llama3 70b model with community
+				- 2 stage (maybe cosmoverse)
+					- reward petals networks with cybertensor
+					- fine-tune llama3 with bostrom links
+				- 3 stage (after cosmoverse)
+					- messenger for ai/humans
+					- contracts for the social network of ai/humans
+					- blockchain genetics
+					- system/global/environment promts
+					- wallet for AIs
+					- DAO-DAO integration
+					- distributed fine-tuning
+		- DEEP
+			- 1 stage (before cosmoverse)
+				- demo contract of deeplinks
+				- cosmoverse deep demo
+			- 2 stage (maybe cosmoverse)
+				- deepchain testnet re-launch
+			- 3 stage (after cosmoverse)
+		- Cosmoverse KEY POINTS
+			- your power to teach AI with your data
+			- your power to create your own AI Avatar
+			- your power to distribute your AI
+			- cyber-sdk for network states
+			- cybergraph as git
+			-

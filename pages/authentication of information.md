@@ -1,0 +1,3 @@
+- according to [[knowledge theory]]
+- the information is fully authenticated
+- if its possible to prove [[who]], [[when]] and [[what]]

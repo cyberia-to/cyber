@@ -1,0 +1,30 @@
+alias:: account, name, avatar system
+- its a [[uniq]] [[token]]
+- which links [[particles]] and [[neurons]]
+- with one simple name
+-
+- any name system of [[vimputers]]
+- based on [[dot notation]]
+- is avatar system
+-
+- because name can be treated by [[cyb]]
+- both
+	- as [[subject]] or [[object]] or
+	- as [[neuron]] or [[particle]]
+- its possible to get from the idea
+- something really [[intelligent]]
+- which actually behave like [[new liveform]]
+-
+- examples in [[great web]]
+	- [[.moon names]]
+	- [[.eth names]]
+	-
+- names from [[legacy web]] does not support
+	- ownership
+	- transferability
+	- persistence of links
+- hence could not work as [[avatars]]
+-
+- different avatar systems could have very different features though
+- [[aos/avatars]] deployed in [[bostrom]] are powerful and offers unique features
+- such as [[moon citizenship]] and [[semantic neural proofs]]

@@ -1,0 +1,26 @@
+- conceptual framework or structure
+- that is used to describe relationships between graphs
+- or to represent higher-level relationships within a single graph
+-
+- it's essentially a graph of graphs, where each node in the metagraph
+- could represent an entire graph or a complex substructure within a larger system
+-
+- aspects of a metagraph
+	- modes represent graphs
+		- in a metagraph, the nodes themselves can represent entire graphs or networks
+		- this allows for modeling complex systems where each component is itself a complex structure
+- edges represent relationships
+	- the edges in a metagraph represent relationships between these component graphs
+	- these relationships can be as simple as connections
+	- or as complex as interactions involving multiple parameters or conditions
+- hierarchical structure
+	- metagraphs can represent hierarchical structures
+	- where each level of the hierarchy represents a different level of abstraction or detail
+- applications
+	- machine learning
+	- data science
+	- network theory
+	- computational biology
+- used in situations where complex systems need to be modeled at multiple levels of abstraction
+- provides a way to organize and model complex relationships by considering entire graphs
+- as single entities and then analyzing the relationships between these entities

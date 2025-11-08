@@ -1,0 +1,5 @@
+- concept of organizing [[files]]
+- through graph of [[links]]
+- combined with classical hierarchy
+-
+- [[brain]] of [[cyb]] is the first graph file manager we aware of

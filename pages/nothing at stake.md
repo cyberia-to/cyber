@@ -1,0 +1,9 @@
+- potential issue in proof of stake consensus mechanisms
+- where validators have little to no disincentive to sign multiple competing blocks
+- since they don't risk losing significant resources like in [[proof of work]]
+- this can lead to validators supporting multiple forks in [[double signing attack]]
+- undermining the integrity and security of the blockchain network
+- to mitigate this, mechanisms like [[double sign protection]] are implemented
+- to penalize validators who engage in such behavior
+- ensuring they have a tangible stake in maintaining the network's consensus
+- and discouraging dishonest actions

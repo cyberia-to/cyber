@@ -1,0 +1,68 @@
+tags:: cip
+status:: draft
+- most of [[$BOOT]] stake is unstaked due to complexities related to multisig management
+- we need a tool for [[stake]] outsourcing to [[prog]]
+- successful deployment remove 2/3 of selling pressure from the market
+- details in [[finalization of $BOOT distribution]]
+- architecture of staking pools
+	- pools have owners
+		- create and delete staking pool
+		- add and remove strategy
+		- set weights of strategies
+		- manual [[delegate]], [[undelegate]], [[redelegate]]
+		- update param
+	- [[neurons]] can pool [[$BOOT]] for automatic staking according to strategy
+		- deposit to pool
+			- adds deposit to contract balance
+			- mints pool [[coin]]: fungible and transferable token
+			- add deposit position to prog state
+			- increase `current deposit reserve`
+		- withdraw from pool
+			- burns pool coin
+			- increase `current withdraw reserve`
+			- add withdrawal position to prog state
+			- when time comes
+				- subtract contract balance
+	- every strategy is standalone [[prog]] with strictly defined interface
+		- input: empty call
+		- output: array of validators with weights
+	- [[prog]] have params according to which it self executes using [[dmn]]
+		- `execution window` in blocks
+		- `max rebalance actions`
+	- on every execution step [[prog]]
+		- [[claim rewards]]
+		- calls each strategy
+		- read
+			- current validator set including reserve
+			- current staking positions of pool
+			- current balance of contract
+			- `current withdraw reserve`: measure of tokens for withdrawal
+		- executes expired withdrawals
+		- merge outputs recieved from strategies
+			- normalization of strategy inputs
+			- compute weights according to `aggregated strategy`
+		- make [[undelegate]] decisions
+			- sum all withdrawals in current [[execution window]]
+			- evaluate against `aggregated strategy` and sort by impact
+			- executes top amount of [[undelegate]] limited by `max rebalance actions`
+		- make [[delegate]] decisions
+			- sum all deposits in current [[execution window]]
+			- evaluate against `aggregated strategy` and sort by impact
+			- executes top amount of [[delegate]] limited by `max rebalance actions`
+		- make [[redelegate]] decisions
+			- compute diff between current and target
+			- sort list by the most impactful differences
+			- execute top amount of [[redelegate]] limited by `max rebalance actions`
+- list of default strategies
+	- specific validator
+		- ability to assign some relative percent to specific validator by pool owner
+	- random validatory
+		- ability to make decision randomly
+		- support long tail of validators
+		- awesome to include validators from not active sets
+		- param: amount of validators chosen randomly
+	- profitable validators
+		- contract compute apy of validators
+		- and responds with weights based on apy
+- this proposal does not include necessity to develop interface for staking pools
+- its expected to use them in [[hacklab]] with preloaded abi

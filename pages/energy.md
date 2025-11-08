@@ -1,0 +1,16 @@
+- fundamental concept in [[physics]] and [[information]]
+- refers to the capacity to do work or produce change
+- exists in various forms
+- can be transferred or transformed from one form to another
+- but cannot be created or destroyed
+- some common forms of energy include
+	- kinetic energy: energy of motion
+	- potential energy: energy stored in an object due to its position or state
+	- thermal energy: energy related to the temperature of an object
+	- chemical energy: energy stored in chemical bonds between atoms and molecules
+	- electrical energy: energy associated with electric charges and their movement
+	- nuclear energy: energy stored in the nucleus of an atom
+	- radiant energy: energy of electromagnetic waves, including light
+	- [[informational energy]]: the energy stored in [[particles]] of [[information]]
+	- [[knowledge energy]]:: the energy stored in [[cyberlinks]] of [[cybergraph]]
+	- [[intelligence energy]]: the energy behind [[black magic]] in [[rm]]
