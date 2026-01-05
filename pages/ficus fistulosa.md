@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: benying
+wood:: yes
+grow-speed:: 4
 
 - availability:: tokopedia
 	- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmbE22n4E8c3HUUfxPZVpj2RXASShP7JUFc2LDm5irugTr)

@@ -9,3 +9,13 @@
 	- organized with contemporary tech
 	- is extension of beautiful tradition: [Nyepi](https://en.wikipedia.org/wiki/Nyepi)
 - # first festival: 17-20 march 2026
+- positioning
+	- movement
+	- tribe
+	- university
+	- lifestyle
+	-
+	- campus
+	- festival
+	- tradition
+	- city

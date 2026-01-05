@@ -4,6 +4,8 @@ abundance:: yes
 supply:: no
 margin:: medium
 autonomy:: staple
+wood:: yes
+grow-speed:: 5
 
 - [[staple]]
 - fermented [[leave]] for [[health]]: [[sterols]]

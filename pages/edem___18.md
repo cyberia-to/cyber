@@ -55,6 +55,7 @@ type:: sector
 - [[saccharum officinarum]]
 - [[symphytum officinale]]
 - [[xanthostemon verdugonianus]]
+  id:: 6911fa67-7cb9-4295-a518-7a6c0499fd7b
 - wall:
 	- [[calliandra calothyrsus]]: 2
 	- [[eupatorium capillifolium]]

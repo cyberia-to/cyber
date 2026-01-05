@@ -1,0 +1,101 @@
+## current state
+	- investments
+	  collapsed:: true
+		- land: $3.5m
+		- buildings: $1.5m
+		- software: ...
+	- valuation (not startup)
+	  collapsed:: true
+		- assets: $10m
+			- land: $8m
+			- buildings: $2m
+			- 12% average grow
+		- lean ops:
+			- $20k monthly burn
+			- 35 ppl
+			- include slow construction
+			- and food production
+	- vehicle
+		- Marshall Islands non profit
+		- shares in the form of Ethereum ERC-20
+		- 1 month or so
+		- functions
+			- land accumulation: shares of local companies, e.g. indonesian PT PMA
+			- crypto asset management
+			- software development
+		- token
+			- member benefits
+			- gas for in-village tx
+			- services within the protocol (incl franchise)
+- ## product
+	- ## audience
+		- 50m nomads
+		- high income, high quality
+		- size of the nation
+	- ## complete lifestyle
+		- $2000 for accommodation (high retention, high arpu)
+		- events and
+		- 80% discounted food, $ with some prepaid amount
+		- discounts
+			- 40% for locals
+			- 50% for woman
+			- 70% for local woman
+			- for volunteers
+		- deurbanization
+			- $1k per ha
+			- $100 per m2
+			- starlink + solar
+	- ## program
+		- univercity campus like, but 1 moon cycle
+		- purpose
+			- build your tribe
+			- 137 max ppl
+			- focus on quality
+		- basic faculties
+			- mind control
+			- longevity
+			- media
+			- code
+			- invest
+			- crypto
+			- build
+			- grow
+		- advanced tracks
+- ## how to bootstrap? burn.city
+	- 17 Feb - 20 March: popup
+	- 17 March - 20 March: festival
+	- global alt to burning man
+	- from temp to perm: burn to biochar not to ashes
+	- after burn.city => every moon (unique topics)
+	- population
+		- 42 ppl on site
+		- other - outside
+		- during festival - tents
+- ## opportunities
+	- current stage
+		- agency ppl
+		- high risk => high reward
+		- time or capital at stake
+	- looking for leaders
+		- revenue structure
+			- 20% to leaders and faculties dev
+			- 10% to cybaca (global company)
+	- token
+		- options: after evaluation and several moon cycles
+		- vested offer: for strategic partners
+		- retail
+	- land
+		- bridge district: art district
+			- leashold: $2M
+		- sinwood: biolum forest
+			- leasehold: $2M
+		- [[rocket estate]]
+			- leasehold: $4M
+			- HGB: $7M
+		- 8+ districts
+		- retail lease
+			- for leaders after several months
+			- only or after district partnerships
+		-
+		-
+	-

@@ -1,8 +1,10 @@
 alias:: sumatran pine
-tags:: species, major
+tags:: species, major, super
 wood-density:: 450
 wood-availability:: high
 wood-durability:: low
+wood:: yes
+grow-speed:: 4
 
 - [[conifer]]
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaRm8Cpjp8ReBGA4X8ugxwKUeo4jyCcuofqAz5jCazW4G)

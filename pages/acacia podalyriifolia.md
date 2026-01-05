@@ -1,4 +1,6 @@
 tags:: species, major
+wood:: yes
+grow-speed:: 4
 
 - nitrogener:: 100
 - ![image](https://gateway.ipfs.cybernode.ai/ipfs/QmSQAeA5LB4Fcq6re92BjWtjptZ2GusPMwK6fC9kEV3P4x)

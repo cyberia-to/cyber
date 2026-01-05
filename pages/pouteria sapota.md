@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: sapote, mamey sapote
+wood:: yes
+grow-speed:: 2
 
 - ![Screenshot 2024-05-18 at 08.30.16.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmNLmu8DbVBPf2SiTTZC9A7FjuXTCkiXS5GCDx23CdLizY)
 - ![Mamey - Buy Mamey Sapote online from Miami Fruit](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmXdDi5tGzZP6AfPARiHb25JvADxujXseEAxiiQVUqY1hE)

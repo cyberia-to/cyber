@@ -1,5 +1,7 @@
 alias:: persimmon, kesemek
 tags:: species, major
+wood:: yes
+grow-speed:: 3
 
 - wood-density:: 650
 - [[dioecious]]

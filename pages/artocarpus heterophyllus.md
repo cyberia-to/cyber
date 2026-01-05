@@ -6,6 +6,8 @@ abundance:: yes
 supply:: no
 margin:: medium
 autonomy:: staple
+wood:: yes
+grow-speed:: 4
 
 - [[staple]]
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmYEJQa6yCb2DgVUY9zrHKEipQ6CjVXsWUC1KC2NMhdoJ9)

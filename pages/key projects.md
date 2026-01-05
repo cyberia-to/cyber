@@ -1,0 +1,26 @@
+- [cyberia](https://github.com/orgs/cyberia-to/projects/50): core cyberstate development
+	- [cyber valley](https://github.com/orgs/cyberia-to/projects/10): regional development
+		- [rockets](https://github.com/orgs/cyberia-to/projects/2): main tasks and onsite priorities
+			- [carrot house](https://github.com/orgs/cyberia-to/projects/15): homestead optimization
+- soft
+	- [cyb](https://github.com/orgs/cyberia-to/projects/52): earth superintelligence
+	- [sensor network](https://github.com/orgs/cyberia-to/projects/32): end-to-end community automation system
+	- [cybaca](https://github.com/orgs/cyberia-to/projects/48): coworking and gathering place
+	- [button](https://github.com/orgs/cyberia-to/projects/36): land management system
+	- [mimi president](https://github.com/orgs/cyberia-to/projects/37): ai of the village
+- brands
+	- [elons](https://github.com/orgs/cyberia-to/projects/25): sustainability center: animals, soil, energy, kitchen
+	- [organiq](https://github.com/orgs/cyberia-to/projects/4): shelves with organic food and cafe
+	- [soft](https://github.com/orgs/cyberia-to/projects/39): coworking and gathering place
+	- [agency](https://github.com/orgs/cyberia-to/projects/21): land survey and real estate agency
+	- [satoshi](https://github.com/orgs/cyberia-to/projects/43): space for kids
+	- [laba](https://github.com/orgs/cyberia-to/projects/41): production facility for autonomous estate
+	- [banya](https://github.com/orgs/cyberia-to/projects/40): spa and sauna
+	- [vitalik](https://github.com/orgs/cyberia-to/projects/42): gym + camping + glamping
+	- [parking](https://github.com/orgs/cyberia-to/projects/20): convenient place for vehicles with charging
+- processes
+	- [moonly](https://github.com/orgs/cyberia-to/projects/46): core regular process
+	- [estates](https://github.com/orgs/cyberia-to/projects/16): land, buildings and road management
+	- [people](https://github.com/orgs/cyberia-to/projects/51): manage and improvement of the team
+	- [inventory](https://github.com/orgs/cyberia-to/projects/3): tracking of inventory: supply, inventorization, orders
+	- [species](https://github.com/orgs/cyberia-to/projects/53): strategic species board

@@ -1,4 +1,5 @@
 tags:: genus, major, super
+alias:: mint
 
 - selected for [[edem]]
 	- {{embed [[mentha piperita]]}}

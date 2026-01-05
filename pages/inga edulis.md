@@ -1,5 +1,7 @@
 tags:: species, genus major, super
 alias:: inga, snowfruit, inga edilus
+wood:: yes
+grow-speed:: 5
 
 - availability:: cv
 - nitrogener:: 250

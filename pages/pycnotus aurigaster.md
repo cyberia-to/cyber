@@ -1,3 +1,3 @@
-tags:: species, birds, super
+tags:: species, birds
 
 -

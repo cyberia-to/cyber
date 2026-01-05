@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: fig
+wood:: yes
+grow-speed:: 4
 
 - [[dioecious]]
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmUnqR7nkzgzuiCCjWwUMKEKs5QggMhN7E5uqFoBSKAtkW)

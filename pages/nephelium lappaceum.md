@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: rambutan
+wood:: yes
+grow-speed:: 2
 
 - ![Screenshot 2024-05-24 at 14.50.24.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmQF9GKLRYsJwNA4sUUYspL9yuPGv3xYEmuNig2JNNtRQ6)
 - ![Screenshot 2024-05-24 at 14.50.50.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmNnFgFueLuk1Uny4yQEuamhTuQ4AxY9XLqQviy9Q3ZUr5)

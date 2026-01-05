@@ -1,5 +1,7 @@
 tags:: genus, major, collectable, super
 scalable:: true
+wood:: yes
+grow-speed:: 3
 
 - selected
 	- {{embed [[melaleuca viminalis]]}}

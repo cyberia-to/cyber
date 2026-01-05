@@ -1,5 +1,7 @@
-tags:: genus, major
+tags:: genus, major, super
 alias:: apple, apel
+wood:: yes
+grow-speed:: 3
 
 - wood-density:: 750
 - selected for [[edem]]

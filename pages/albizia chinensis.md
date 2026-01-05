@@ -7,6 +7,8 @@ abundance:: yes
 supply:: no
 margin:: low
 autonomy:: support
+wood:: yes
+grow-speed:: 5
 
 - nitrogener:: 120
 -

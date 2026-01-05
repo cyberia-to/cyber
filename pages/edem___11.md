@@ -10,6 +10,7 @@ type:: sector
 - [[breynia disticha]]
 - [[murraya paniculata]]
 - [[xanthostemon chrysanthus]] [[guild]]
+  id:: 6911fa66-d3a8-4cc4-8088-730ecf0cc0ff
 - TODO [[brunfelsia uniflora]] [[guild]]
 - TODO [[syzygium aqueum]] [[guild]]
 - TODO [[diospyros nigra]] [[guild]]

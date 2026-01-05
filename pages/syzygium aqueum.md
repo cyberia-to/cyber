@@ -1,4 +1,6 @@
-tags:: species
+tags:: species, super
+wood:: yes
+grow-speed:: 3
 alias:: water apple
 
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmdfzFigpXyhurgyFHvtZKyAYXypH8XSXKWuayKpYLeNq2){:height 338, :width 558}

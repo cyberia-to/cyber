@@ -1,5 +1,7 @@
 alias:: gamal
 tags:: species, major
+wood:: yes
+grow-speed:: 4
 
 - wood-density:: 500
 - nitrogener:: 200

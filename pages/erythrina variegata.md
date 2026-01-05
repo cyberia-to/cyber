@@ -1,9 +1,11 @@
 alias:: dadap
-tags:: species, major
+tags:: species, major, super
 abundance:: yes
 supply:: no
 margin:: low
 autonomy:: support
+wood:: yes
+grow-speed:: 4
 
 - nitrogener:: 150
 - wood-density:: 220

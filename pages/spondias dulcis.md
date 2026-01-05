@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: ambarella, kedongdong
+wood:: yes
+grow-speed:: 3
 
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/Qmb1EQm9qNC3EfPr8XVDTmYsL3pqq2pCiNgQFGYZakDhvH){:height 267, :width 408}
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPFiWtuWrtdDExqKY2dgCFwa89VmoPv42R4erh26FoFQ1)

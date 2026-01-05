@@ -1,4 +1,5 @@
 tags:: district, leasehold, hgb
+alias:: rocket estate
 
 - We bring a unique offer to the market
 - > Largest, highest, offgrid estate in [[Cyber Valley]], Bali

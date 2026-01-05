@@ -3,6 +3,8 @@ tags:: species, genus, major, super
 wood-density:: 500
 market:: resins
 supply:: next-month
+wood:: yes
+grow-speed:: 4
 
 - [[high margin]]
 - [[conifer]] with [[resin]]

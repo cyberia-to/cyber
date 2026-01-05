@@ -1,5 +1,7 @@
 tags:: species, major, super
 alias:: cendana, sandal
+wood:: yes
+grow-speed:: 2
 wood-density:: 900
 wood-durability:: high
 market:: resins

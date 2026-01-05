@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: durian
+wood:: yes
+grow-speed:: 3
 wood-density:: 500
 wood-availability:: local
 wood-durability:: low

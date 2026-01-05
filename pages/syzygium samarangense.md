@@ -1,5 +1,7 @@
 tags:: species
 alias:: wax apple, jambu air, jambu semarang
+wood:: yes
+grow-speed:: 3
 
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmP4J5hUxqStWxQa1EMycX2mzuACL64ugkdLpKAuStCixA)
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmRXYepxCbYiQe2GygUuLF3s4MNnQZUmPZ9yJFZVm7phCR)

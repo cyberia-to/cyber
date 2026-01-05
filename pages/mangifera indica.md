@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: mango, mangga
+wood:: yes
+grow-speed:: 3
 
 - wood-density:: 600
 - ![Screenshot 2024-06-03 at 08.07.24.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmbTU1UdHYvbLxEbyYjEmRN6QXNSmvd6ZGj6g8JpXWuXyH){:height 527, :width 676}

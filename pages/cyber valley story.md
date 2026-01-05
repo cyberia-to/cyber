@@ -32,7 +32,6 @@ tags:: autonomy course
 		- ![telegram-cloud-photo-size-2-5463248050790201940-y.jpg](../assets/telegram-cloud-photo-size-2-5463248050790201940-y_1761223317718_0.jpg)
 		- ![telegram-cloud-photo-size-2-5346049899499748818-y.jpg](../assets/telegram-cloud-photo-size-2-5346049899499748818-y_1761227568416_0.jpg){:height 742, :width 978}
 - cyber valley stats
-  collapsed:: true
 	- population: 4 people
 	- population produced: 2 human
 	- size: 37 ha
@@ -139,7 +138,6 @@ tags:: autonomy course
 			- first 3 years is cool and hard
 			- years after cool and easy (likely)
 - invitation to join Cyberia
-  collapsed:: true
 	- join course
 	- starting a burn.city: popup, but permanent
 	- 20 feb - 20 march 2026 (end in nyepi)

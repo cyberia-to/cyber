@@ -1,5 +1,7 @@
 alias:: lamtoro
-tags:: species, major
+tags:: species, major, super
+wood:: yes
+grow-speed:: 5
 
 - nitrogener:: 500
 - wood-density:: 500

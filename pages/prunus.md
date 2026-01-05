@@ -1,4 +1,4 @@
-tags:: genus, collectable
+tags:: genus, collectable, super
 scalable:: true
 
 - {{embed [[prunus domestica]]}}

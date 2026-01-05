@@ -1,5 +1,7 @@
 alias:: longan, klengkeng
 tags:: species, major
+wood:: yes
+grow-speed:: 2
 
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPUfJrZpZjg2KotQtbtvqUNDJJ5bjLDcmmAbx6q28Wddt){:height 390, :width 573}
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaaXDNhrrq3osSRNeghThn82E79zj2MsepFUiKSfLFfRw)

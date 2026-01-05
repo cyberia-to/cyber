@@ -1,4 +1,6 @@
 tags:: species, major
+wood:: yes
+grow-speed:: 4
 
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmVqpBEGnjXQHg2XCnaRS6LVpVRabRx4S8kRsnmnKx6EXF)
 - height: up to 25m

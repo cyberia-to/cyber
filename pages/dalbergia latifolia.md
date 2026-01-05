@@ -4,6 +4,8 @@ wood-density:: 875
 wood-durability:: high
 market:: hardwoods
 supply:: next-month
+wood:: yes
+grow-speed:: 1
 
 - [[high margin]]
 - nitrogener:: 70

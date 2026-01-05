@@ -4,6 +4,8 @@ nitrogener:: 250
 wood-density:: 800
 market:: hardwoods
 supply:: next-month
+wood:: yes
+grow-speed:: 3
 
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmYcVAErcg1D2iXsNSj62FZEQJn5bREDzGAcyvoBpuaBeS)
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmU6u5WptKJa1dnHDJVUL9SjcFiqUKzen7oipqghCLgZEb)

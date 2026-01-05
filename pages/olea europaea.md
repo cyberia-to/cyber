@@ -1,5 +1,7 @@
 alias:: olive, zaitun
 tags:: species
+wood:: yes
+grow-speed:: 3
 
 - [[staple]]
 - supply:: next-month

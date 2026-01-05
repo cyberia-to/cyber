@@ -1,4 +1,6 @@
 tags:: species
+wood:: yes
+grow-speed:: 2
 
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmexB91p4qSNtLrx2ZY5TQVndm9bxnBpQvPnrRRWgaUout)
 -

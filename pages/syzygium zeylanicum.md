@@ -1,5 +1,7 @@
 tags:: species, major
 alias:: kelat, spicate eugenia
+wood:: yes
+grow-speed:: 3
 
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmXy1SDFV9AKrtns2bV6NzUQkm6R6xH1XqncNQxHJaCW5W)
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmNyLuDJTvSMyqpK3WMLaPd42EkuMKV2x5QpxDcrCWkJpJ){:height 235, :width 408}

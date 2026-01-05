@@ -4,6 +4,8 @@ wood-density:: 1100
 wood-durability:: very-high
 market:: ironwoods
 supply:: next-month
+wood:: yes
+grow-speed:: 1
 
 - [[high margin]]
 - ![Screenshot 2024-05-27 at 08.19.04.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmQ1YkPs8Bc2NA2nUewxgGHPHHZvarSUHQEhvQabaFihm9)

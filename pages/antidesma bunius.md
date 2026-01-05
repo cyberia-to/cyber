@@ -1,5 +1,7 @@
 alias:: buni, boni, bignai
 tags:: species
+wood:: yes
+grow-speed:: 3
 
 - ![image](https://ipfs.io/ipfs/QmWJFKi1psMX846MH6bYyecUDgjezVRXCCBN3xeLS3pfnw)
 - {{video https://www.youtube.com/watch?v=IMh0ujN8OX0}}

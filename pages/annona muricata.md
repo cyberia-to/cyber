@@ -1,5 +1,7 @@
 alias:: soursup, soursop, sersak
 tags:: species, major
+wood:: yes
+grow-speed:: 3
 
 - availability:: cv
 - ![image](https://ipfs.io/ipfs/QmRWZ93SQGBHYGL82E9r2HFFu4nDcUmr6tSEBXPnxd9w1G)

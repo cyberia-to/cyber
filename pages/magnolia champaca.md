@@ -1,5 +1,7 @@
-tags:: species, major
+tags:: species, major, super
 alias:: cempaka, champaсa, white champaca
+wood:: yes
+grow-speed:: 4
 
 -
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeiapmu3yu6gy6kdonf4xp4q3lg33wrqtsr44mfkbkepqlqzp4bqkhm)

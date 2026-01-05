@@ -4,7 +4,10 @@ abundance:: yes
 supply:: no
 margin:: high
 autonomy:: extra
+wood:: yes
+grow-speed:: 3
 
+-
 - [[staple]] for [[health]]
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmViy3gvZDRdoexz6oKLUuSJtCPMFcrbfpJ7fByPd39vYL)
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZv7vaBfQVyLWvVMPxKhtbZNwevyKQs3ya9dBK3nLuj6s)

@@ -1,8 +1,10 @@
 alias:: ylang-ylang, sandat klungkung
 tags:: species, major
 title:: cananga odorata
+wood:: yes
+grow-speed:: 3
 
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcFTqwzBsbRj8s8EGtzNDYAFGTANUitzePLGvUUidMWGo){:height 369, :width 558}
+- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcFTqwzBsbRj8s8EGtzNDYAFGTANUitzePLGvUUidMWGo){:height 377, :width 262}
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmfWeGeLzFWEe2kxoYQ8CU8THHfnPtcUzLHVSHPjZJTfCY){:height 312, :width 417}
 - products
 	- [[flower]]:
