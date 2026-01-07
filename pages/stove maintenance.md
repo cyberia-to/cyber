@@ -1,0 +1,32 @@
+tags:: order
+
+- [[cyber stove]] enable clean burn
+- this document describe necessary processes to run [[banya]] non stop
+- optimal wood
+	- [[kaliandra]]
+	- [[lamtoro]]
+	- [[trema]]
+- wood preparation: [[hard force]] is responsible
+	- done on a daily basis
+	- one guy with [[chain saw]]
+	- fill the dryer every day
+	- cut by a size of the stove
+	- max length: 48 cm
+	- 5% of wood must be prepared for ignition
+- wood replenishment: [[soft force]] is responsible
+	- the resource must be renewable
+	- seeds of [[kaliandra]], [[lamtoro]] and [[trema]] must be gathered seasonly
+	- spread on the marginal areas of the [[frontier]]
+- burn schedule in [[banya]]: [[soft force]] is responsible
+	- 06:00
+	- 08:00
+	- 16:00
+	- 18:00
+- how to burn?
+	- collect [[ash]] before next load
+	- use good gas lighter
+	- put big pieces
+	- spread small pieces for ignition
+	- ignite
+	- close the door
+	- do not open the door until the next batch to save energy
