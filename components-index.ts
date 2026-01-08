@@ -23,6 +23,7 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
+import SidebarToggle from "./SidebarToggle"
 import Favorites from "./Favorites"
 
 export {
@@ -51,5 +52,6 @@ export {
   Comments,
   Flex,
   ConditionalRender,
+  SidebarToggle,
   Favorites,
 }
