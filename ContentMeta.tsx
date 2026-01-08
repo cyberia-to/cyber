@@ -28,7 +28,15 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
     if (text) {
       const segments: (string | JSX.Element)[] = []
 
-      // Date display removed - Logseq files aren't git-tracked so dates are inaccurate
+      // Display modified date from frontmatter (git dates added during preprocessing)
+      if (fileData.dates?.modified) {
+        const dateStr = new Date(fileData.dates.modified).toLocaleDateString(cfg.locale, {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        })
+        segments.push(<span>Updated {dateStr}</span>)
+      }
 
       // Display reading time if enabled
       if (options.showReadingTime) {
