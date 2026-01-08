@@ -192,3 +192,15 @@ code:not(pre code) {
 .favorites li {
   margin: 0.3rem 0;
 }
+
+// Fix mobile search showing on desktop
+@media (min-width: 801px) {
+  .search.mobile-only {
+    display: none !important;
+  }
+
+  .darkmode.mobile-only {
+    display: none !important;
+  }
+}
+
