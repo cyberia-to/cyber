@@ -1,15 +1,14 @@
 @use "./base.scss";
 
-// put your custom CSS here!
-/ Custom styles to make Quartz look more like Logseq
+/* Custom styles to make Quartz look more like Logseq */
 
-// Logseq-like outliner styling
+/* Logseq-like outliner styling */
 .center article {
-  // More compact text
+  /* More compact text */
   font-size: 0.95rem;
   line-height: 1.7;
 
-  // Bullet list styling (outliner)
+  /* Bullet list styling (outliner) */
   ul {
     list-style: disc;
     padding-left: 1.5rem;
@@ -19,12 +18,12 @@
       margin: 0.15rem 0;
       padding-left: 0.25rem;
 
-      // Nested lists
+      /* Nested lists */
       ul {
         margin-top: 0.15rem;
       }
 
-      // Empty list items (spacers)
+      /* Empty list items (spacers) */
       &:empty,
       &:has(> br:only-child) {
         list-style: none;
@@ -33,12 +32,12 @@
     }
   }
 
-  // Bullet points color
+  /* Bullet points color */
   ul li::marker {
     color: var(--secondary);
   }
 
-  // Wikilinks styling (like Logseq)
+  /* Wikilinks styling (like Logseq) */
   a.internal {
     color: var(--secondary);
     text-decoration: none;
@@ -49,19 +48,19 @@
     }
   }
 
-  // External links
+  /* External links */
   a.external {
     color: var(--tertiary);
   }
 
-  // Block references style
+  /* Block references style */
   .block-ref {
     background: var(--highlight);
     padding: 0.1rem 0.3rem;
     border-radius: 3px;
   }
 
-  // Properties (if shown)
+  /* Properties (if shown) */
   .property {
     font-size: 0.85rem;
     color: var(--gray);
