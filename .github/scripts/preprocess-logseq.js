@@ -7,7 +7,7 @@
  * - Publish all pages EXCEPT those with private:: true
  * - Convert Logseq properties (key:: value) to YAML frontmatter
  * - Convert {{embed [[page]]}} to ![[page]] (Quartz transclusion)
- * - Replace {{query ...}} with info callout placeholder
+ * - Execute {{query ...}} and replace with actual page links
  * - Remove inline properties (collapsed::, logseq.order-list-type::, id::)
  * - Copy files from pages/ to content/
  * - Copy assets/ to content/
@@ -15,6 +15,9 @@
 
 const fs = require('fs');
 const path = require('path');
+
+// Global page index for query execution
+let PAGE_INDEX = [];
 
 const SOURCE_DIR = path.join(__dirname, '../../pages');
 const OUTPUT_DIR = path.join(__dirname, '../../quartz-content');
@@ -194,6 +197,277 @@ function toYamlFrontmatter(properties, filename) {
 }
 
 /**
+ * Build page index from all source files for query execution
+ */
+function buildPageIndex(sourceDir) {
+  const index = [];
+  const files = fs.readdirSync(sourceDir).filter(f => f.endsWith('.md'));
+
+  for (const file of files) {
+    const filepath = path.join(sourceDir, file);
+    const content = fs.readFileSync(filepath, 'utf-8');
+    const { properties } = parseLogseqProperties(content);
+
+    // Skip private pages
+    if (properties.private === 'true') continue;
+
+    // Parse tags - Logseq tags can be [[tag]] or just tag
+    let tags = [];
+    if (properties.tags) {
+      // Extract tags, handling both [[tag]] and plain tag formats
+      const tagStr = properties.tags;
+      const tagMatches = tagStr.match(/\[\[([^\]]+)\]\]/g);
+      if (tagMatches) {
+        tags = tagMatches.map(t => t.replace(/\[\[|\]\]/g, '').toLowerCase());
+      } else {
+        tags = tagStr.split(/[,\s]+/).map(t => t.trim().toLowerCase()).filter(Boolean);
+      }
+    }
+
+    // Page name from filename (without extension, with namespace)
+    const pageName = file.replace('.md', '').replace(/___/g, '/');
+    const pageNameLower = pageName.toLowerCase();
+
+    // Get namespace (folder part before the last /)
+    const namespace = pageName.includes('/') ? pageName.split('/').slice(0, -1).join('/') : null;
+
+    index.push({
+      name: pageName,
+      nameLower: pageNameLower,
+      filename: file,
+      tags: tags,
+      properties: properties,
+      namespace: namespace,
+      content: content.toLowerCase() // For full-text search
+    });
+  }
+
+  return index;
+}
+
+/**
+ * Parse a Logseq query expression and return matching pages
+ * Supports: page-tags, property, page-property, and, or, not, namespace
+ */
+function executeQuery(queryStr) {
+  // Extract the query content from {{query ...}}
+  const match = queryStr.match(/\{\{query\s+([\s\S]*?)\}\}/i);
+  if (!match) return [];
+
+  const query = match[1].trim();
+
+  try {
+    return evaluateQuery(query);
+  } catch (err) {
+    console.error(`Query error: ${err.message} in: ${queryStr.substring(0, 80)}`);
+    return [];
+  }
+}
+
+/**
+ * Evaluate a parsed query expression
+ */
+function evaluateQuery(expr) {
+  expr = expr.trim();
+
+  // Handle (and ...)
+  if (expr.startsWith('(and ')) {
+    return evaluateAnd(expr);
+  }
+
+  // Handle (or ...)
+  if (expr.startsWith('(or ')) {
+    return evaluateOr(expr);
+  }
+
+  // Handle (not ...)
+  if (expr.startsWith('(not ')) {
+    return evaluateNot(expr);
+  }
+
+  // Handle (page-tags [[tag]])
+  const pageTagsMatch = expr.match(/^\(page-tags\s+\[\[([^\]]+)\]\]\)$/i);
+  if (pageTagsMatch) {
+    const tag = pageTagsMatch[1].toLowerCase();
+    return PAGE_INDEX.filter(p => p.tags.includes(tag));
+  }
+
+  // Handle (property :key value) or (property :key "value")
+  const propertyMatch = expr.match(/^\((?:page-)?property\s+:?(\w+)(?:\s+(?:"([^"]+)"|(\S+)))?\)$/i);
+  if (propertyMatch) {
+    const key = propertyMatch[1].toLowerCase();
+    const value = (propertyMatch[2] || propertyMatch[3] || '').toLowerCase();
+    return PAGE_INDEX.filter(p => {
+      const propVal = (p.properties[key] || '').toLowerCase();
+      if (!value) {
+        // Property exists check
+        return propVal !== '';
+      }
+      return propVal === value || propVal.includes(value);
+    });
+  }
+
+  // Handle (namespace [[x]])
+  const namespaceMatch = expr.match(/^\(namespace\s+\[\[([^\]]+)\]\]\)$/i);
+  if (namespaceMatch) {
+    const ns = namespaceMatch[1].toLowerCase();
+    return PAGE_INDEX.filter(p => p.namespace && p.namespace.toLowerCase() === ns);
+  }
+
+  // Handle [[page]] reference (exact page match)
+  const pageRefMatch = expr.match(/^\[\[([^\]]+)\]\]$/);
+  if (pageRefMatch) {
+    const pageName = pageRefMatch[1].toLowerCase();
+    return PAGE_INDEX.filter(p => p.nameLower === pageName);
+  }
+
+  // Handle "text" full-text search
+  const textMatch = expr.match(/^"([^"]+)"$/);
+  if (textMatch) {
+    const searchText = textMatch[1].toLowerCase();
+    return PAGE_INDEX.filter(p => p.content.includes(searchText));
+  }
+
+  // Handle plain text search (unquoted)
+  if (!expr.startsWith('(') && !expr.startsWith('[')) {
+    const searchText = expr.toLowerCase().replace(/['"]/g, '');
+    if (searchText.length > 2) {
+      return PAGE_INDEX.filter(p => p.content.includes(searchText));
+    }
+  }
+
+  return [];
+}
+
+/**
+ * Parse and evaluate (and ...) expressions
+ */
+function evaluateAnd(expr) {
+  // Remove outer (and ) and parse inner expressions
+  const inner = expr.slice(5, -1).trim();
+  const parts = parseExpressionParts(inner);
+
+  if (parts.length === 0) return PAGE_INDEX;
+
+  let results = PAGE_INDEX;
+  for (const part of parts) {
+    if (!part.trim()) continue;
+
+    // Handle (not ...) specially
+    if (part.trim().startsWith('(not ')) {
+      const notResults = evaluateNot(part.trim());
+      const notNames = new Set(notResults.map(p => p.nameLower));
+      results = results.filter(p => !notNames.has(p.nameLower));
+    } else {
+      const partResults = evaluateQuery(`{{query ${part}}}`);
+      const partNames = new Set(partResults.map(p => p.nameLower));
+      results = results.filter(p => partNames.has(p.nameLower));
+    }
+  }
+
+  return results;
+}
+
+/**
+ * Parse and evaluate (or ...) expressions
+ */
+function evaluateOr(expr) {
+  const inner = expr.slice(4, -1).trim();
+  const parts = parseExpressionParts(inner);
+
+  const resultMap = new Map();
+  for (const part of parts) {
+    if (!part.trim()) continue;
+    const partResults = evaluateQuery(`{{query ${part}}}`);
+    for (const page of partResults) {
+      resultMap.set(page.nameLower, page);
+    }
+  }
+
+  return Array.from(resultMap.values());
+}
+
+/**
+ * Parse and evaluate (not ...) expressions
+ */
+function evaluateNot(expr) {
+  const inner = expr.slice(5, -1).trim();
+  const excludeResults = evaluateQuery(`{{query ${inner}}}`);
+  const excludeNames = new Set(excludeResults.map(p => p.nameLower));
+  return PAGE_INDEX.filter(p => excludeNames.has(p.nameLower));
+}
+
+/**
+ * Parse expression parts, respecting nested parentheses
+ */
+function parseExpressionParts(expr) {
+  const parts = [];
+  let current = '';
+  let depth = 0;
+  let inBracket = 0;
+
+  for (let i = 0; i < expr.length; i++) {
+    const char = expr[i];
+
+    if (char === '(' && expr[i+1] !== ')') {
+      depth++;
+      current += char;
+    } else if (char === ')') {
+      depth--;
+      current += char;
+      if (depth === 0 && current.trim()) {
+        parts.push(current.trim());
+        current = '';
+      }
+    } else if (char === '[') {
+      inBracket++;
+      current += char;
+    } else if (char === ']') {
+      inBracket--;
+      current += char;
+    } else if (char === ' ' && depth === 0 && inBracket === 0 && current.trim()) {
+      // Space at top level - might be separator
+      // But only split if current looks complete
+      if (current.match(/^\([^)]+\)$/) || current.match(/^\[\[[^\]]+\]\]$/)) {
+        parts.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    } else {
+      current += char;
+    }
+  }
+
+  if (current.trim()) {
+    parts.push(current.trim());
+  }
+
+  return parts.filter(p => p && p !== '(and)' && p !== '(or)');
+}
+
+/**
+ * Convert query results to markdown links
+ */
+function queryResultsToMarkdown(results, queryStr) {
+  if (results.length === 0) {
+    return `> [!info] Query Results\n> No pages match this query.\n> \`${queryStr.substring(0, 80)}${queryStr.length > 80 ? '...' : ''}\``;
+  }
+
+  // Sort results alphabetically by name
+  results.sort((a, b) => a.name.localeCompare(b.name));
+
+  // Generate list of links
+  const links = results.map(p => {
+    const icon = p.properties.icon || '';
+    const title = p.properties.title || p.name.replace(/_/g, ' ');
+    return `- [[${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
+  });
+
+  return links.join('\n');
+}
+
+/**
  * Convert Logseq-style tables to proper GFM tables
  * Logseq tables: lines starting with | after list markers, without separator row
  * GFM tables: need |---|---| separator after header row
@@ -329,12 +603,11 @@ function convertLogseqSyntax(content) {
   // These reference specific blocks by their UUID
   result = result.replace(/\(\(([a-f0-9-]{36})\)\)/gi, '[→ block](#^$1)');
 
-  // Replace {{query ...}} with info callout
+  // Execute {{query ...}} and replace with actual results
   // Match multiline queries that can span multiple lines
   result = result.replace(/\{\{query[\s\S]*?\}\}/gi, (match) => {
-    // Extract a preview of the query for context
-    const preview = match.substring(0, 100).replace(/\n/g, ' ').trim();
-    return `> [!info] Dynamic Query\n> This content is dynamically generated in Logseq and not available in the static export.\n> \`${preview}${match.length > 100 ? '...' : ''}\``;
+    const results = executeQuery(match);
+    return queryResultsToMarkdown(results, match);
   });
 
   // Convert {{youtube URL}} to YouTube embed
@@ -619,6 +892,11 @@ stub: true
  */
 function main() {
   console.log('Preprocessing Logseq content for Quartz...\n');
+
+  // Build page index for query execution
+  console.log('Building page index for query execution...');
+  PAGE_INDEX = buildPageIndex(SOURCE_DIR);
+  console.log(`Indexed ${PAGE_INDEX.length} pages\n`);
 
   // Clean output directory
   if (fs.existsSync(OUTPUT_DIR)) {
