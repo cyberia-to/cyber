@@ -447,17 +447,40 @@ function parseExpressionParts(expr) {
 }
 
 /**
- * Convert query results to markdown links
+ * Convert query results to markdown (list or table)
+ * @param {Array} results - Matching pages
+ * @param {string} queryStr - Original query string
+ * @param {Array} columns - Optional column properties for table format
+ * @param {string} sortBy - Optional sort column
+ * @param {boolean} sortDesc - Sort descending
  */
-function queryResultsToMarkdown(results, queryStr) {
+function queryResultsToMarkdown(results, queryStr, columns = null, sortBy = null, sortDesc = false) {
   if (results.length === 0) {
     return `> [!info] Query Results\n> No pages match this query.\n> \`${queryStr.substring(0, 80)}${queryStr.length > 80 ? '...' : ''}\``;
   }
 
-  // Sort results alphabetically by name
-  results.sort((a, b) => a.name.localeCompare(b.name));
+  // Sort results
+  if (sortBy && sortBy !== 'page') {
+    results.sort((a, b) => {
+      const aVal = (a.properties[sortBy] || '').toString();
+      const bVal = (b.properties[sortBy] || '').toString();
+      const cmp = aVal.localeCompare(bVal, undefined, { numeric: true });
+      return sortDesc ? -cmp : cmp;
+    });
+  } else {
+    // Default: sort by name
+    results.sort((a, b) => {
+      const cmp = a.name.localeCompare(b.name);
+      return sortDesc ? -cmp : cmp;
+    });
+  }
 
-  // Generate list of links
+  // If columns specified, render as table
+  if (columns && columns.length > 0) {
+    return queryResultsToTable(results, columns);
+  }
+
+  // Default: render as list
   const links = results.map(p => {
     const icon = p.properties.icon || '';
     const title = p.properties.title || p.name.replace(/_/g, ' ');
@@ -465,6 +488,90 @@ function queryResultsToMarkdown(results, queryStr) {
   });
 
   return links.join('\n');
+}
+
+/**
+ * Render query results as a markdown table
+ */
+function queryResultsToTable(results, columns) {
+  // Map column names to display headers
+  const headerMap = {
+    'page': 'Page',
+    'block': 'Block',
+    'updated-at': 'Updated',
+    'created-at': 'Created',
+    'tags': 'Tags',
+    'alias': 'Alias',
+    'size': 'Size',
+    'shape': 'Shape',
+    'supply': 'Supply',
+    'margin': 'Margin',
+    'autonomy': 'Autonomy',
+    'abundance': 'Abundance',
+    'status': 'Status',
+    'type': 'Type',
+  };
+
+  // Build header row
+  const headers = columns.map(col => headerMap[col] || col.charAt(0).toUpperCase() + col.slice(1));
+  const headerRow = '| ' + headers.join(' | ') + ' |';
+  const separatorRow = '|' + columns.map(() => ' --- ').join('|') + '|';
+
+  // Build data rows
+  const dataRows = results.map(p => {
+    const cells = columns.map(col => {
+      if (col === 'page') {
+        const icon = p.properties.icon || '';
+        const title = p.properties.title || p.name.replace(/_/g, ' ');
+        return `[[${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
+      } else if (col === 'block') {
+        return ''; // Block content not available in static export
+      } else if (col === 'tags') {
+        return p.tags.join(', ');
+      } else {
+        return p.properties[col] || '';
+      }
+    });
+    return '| ' + cells.join(' | ') + ' |';
+  });
+
+  return [headerRow, separatorRow, ...dataRows].join('\n');
+}
+
+/**
+ * Parse query-properties from content following a query
+ * Returns { columns: [...], sortBy: string, sortDesc: boolean }
+ */
+function parseQueryOptions(content, startIndex) {
+  const options = { columns: null, sortBy: null, sortDesc: false };
+
+  // Look at next few lines for query options
+  const lines = content.substring(startIndex).split('\n').slice(0, 5);
+
+  for (const line of lines) {
+    // Match query-properties:: [:page :column1 :column2]
+    const propsMatch = line.match(/query-properties::\s*\[([^\]]+)\]/i);
+    if (propsMatch) {
+      options.columns = propsMatch[1]
+        .split(/\s+/)
+        .map(c => c.replace(/^:/, '').trim())
+        .filter(Boolean);
+    }
+
+    // Match query-sort-by:: column
+    const sortMatch = line.match(/query-sort-by::\s*(\S+)/i);
+    if (sortMatch) {
+      options.sortBy = sortMatch[1].replace(/^:/, '');
+    }
+
+    // Match query-sort-desc:: true/false
+    const descMatch = line.match(/query-sort-desc::\s*(true|false)/i);
+    if (descMatch) {
+      options.sortDesc = descMatch[1].toLowerCase() === 'true';
+    }
+  }
+
+  return options;
 }
 
 /**
@@ -605,9 +712,20 @@ function convertLogseqSyntax(content) {
 
   // Execute {{query ...}} and replace with actual results
   // Match multiline queries that can span multiple lines
-  result = result.replace(/\{\{query[\s\S]*?\}\}/gi, (match) => {
-    const results = executeQuery(match);
-    return queryResultsToMarkdown(results, match);
+  // Also capture any leading list marker (- ) to handle queries in lists
+  result = result.replace(/^(\s*-\s*)?\{\{query[\s\S]*?\}\}/gim, (match, listMarker, offset) => {
+    const queryMatch = match.replace(/^\s*-\s*/, ''); // Remove list marker if present
+    const results = executeQuery(queryMatch);
+    // Look for query options (query-properties, query-sort-by, etc.) after this query
+    const options = parseQueryOptions(result, offset + match.length);
+    const output = queryResultsToMarkdown(results, queryMatch, options.columns, options.sortBy, options.sortDesc);
+
+    // If it's a table (has columns) and was in a list, add blank line before to break out of list
+    if (options.columns && options.columns.length > 0) {
+      return '\n\n' + output;
+    }
+    // For lists, keep the list marker
+    return listMarker ? listMarker + output.split('\n').join('\n' + listMarker) : output;
   });
 
   // Convert {{youtube URL}} to YouTube embed
