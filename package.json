@@ -1,0 +1,9 @@
+{
+  "name": "cyber-docs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cyber project documentation - Quartz-based static site",
+  "scripts": {
+    "preprocess": "node .github/scripts/preprocess-logseq.js"
+  }
+}
