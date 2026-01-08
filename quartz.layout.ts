@@ -63,8 +63,8 @@ const sharedLeftSidebar = [
   })),
   Component.MobileOnly(Component.Search()),
   Component.MobileOnly(Component.Darkmode()),
-  Component.DesktopOnly(Component.Favorites({ title: "Favorites", favorites })),
-  Component.DesktopOnly(Component.Explorer()),
+  Component.Favorites({ title: "Favorites", favorites }),
+  Component.Explorer(),
 ]
 
 // Components for pages that display a single piece of content
