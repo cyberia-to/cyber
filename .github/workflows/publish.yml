@@ -75,5 +75,5 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_MESSAGE: "Deployed with Quartz"
           NETLIFY_DEPLOY_TO_PROD: true
-          install_command: "echo Skipping install"
+          install_command: "npm install -g netlify-cli"
           build_command: "echo Skipping build"
