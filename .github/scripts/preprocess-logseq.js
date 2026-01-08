@@ -252,6 +252,13 @@ function buildPageIndex(sourceDir) {
     // Skip private pages
     if (properties.private === 'true') continue;
 
+    // Get git dates and add to properties for query tables
+    const gitDates = getGitDates(filepath);
+    if (gitDates) {
+      properties['updated-at'] = gitDates.modified;
+      properties['created-at'] = gitDates.created;
+    }
+
     // Parse tags - Logseq tags can be [[tag]] or just tag
     let tags = [];
     if (properties.tags) {
