@@ -15,6 +15,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 // Global page index for query execution
 let PAGE_INDEX = [];
@@ -30,6 +31,37 @@ const FRONTMATTER_PROPERTIES = ['tags', 'alias', 'title', 'icon', 'public', 'pri
 // Properties to remove entirely (inline block properties and query config)
 // Match properties at start of line or after list markers (- )
 const INLINE_PROPERTIES_REGEX = /^(\s*)(?:-\s*)?(collapsed|logseq\.order-list-type|id|query-table|query-sort-by|query-sort-desc|query-properties):: .+$/gm;
+
+/**
+ * Get git dates for a file
+ * Returns { modified: 'YYYY-MM-DD', created: 'YYYY-MM-DD' } or null if not tracked
+ */
+function getGitDates(filepath) {
+  try {
+    // Get last modified date (most recent commit that touched this file)
+    const modified = execSync(
+      `git log -1 --format=%aI -- "${filepath}"`,
+      { encoding: 'utf-8', cwd: path.dirname(filepath) }
+    ).trim();
+
+    // Get created date (first commit that added this file)
+    const created = execSync(
+      `git log --diff-filter=A --format=%aI -- "${filepath}"`,
+      { encoding: 'utf-8', cwd: path.dirname(filepath) }
+    ).trim();
+
+    if (!modified) return null;
+
+    // Convert to YYYY-MM-DD format
+    return {
+      modified: modified.split('T')[0],
+      created: created ? created.split('T')[0] : modified.split('T')[0]
+    };
+  } catch (err) {
+    // File not tracked by git or git not available
+    return null;
+  }
+}
 
 /**
  * Parse Logseq properties from the beginning of content
@@ -119,8 +151,11 @@ function parseAliases(aliasString) {
 
 /**
  * Convert properties object to YAML frontmatter string
+ * @param {Object} properties - Logseq properties
+ * @param {string} filename - Source filename
+ * @param {Object} gitDates - Git dates { modified, created } or null
  */
-function toYamlFrontmatter(properties, filename) {
+function toYamlFrontmatter(properties, filename, gitDates = null) {
   // Convert filename to title: extract just the filename part, replace _ with space
   // Filename may contain / for namespaces (e.g., oracle/ask.md)
   const baseName = path.basename(filename, '.md');
@@ -189,6 +224,12 @@ function toYamlFrontmatter(properties, filename) {
 
   if (frontmatter.date) {
     yaml += `date: ${frontmatter.date}\n`;
+  }
+
+  // Add git dates if available
+  if (gitDates) {
+    yaml += `modified: ${gitDates.modified}\n`;
+    yaml += `created: ${gitDates.created}\n`;
   }
 
   yaml += '---\n\n';
@@ -801,8 +842,11 @@ function processFile(sourcePath, outputPath) {
     return { published: false, properties: Object.keys(properties).length };
   }
 
-  // Generate YAML frontmatter
-  const frontmatter = toYamlFrontmatter(properties, filename);
+  // Get git dates for the source file
+  const gitDates = getGitDates(sourcePath);
+
+  // Generate YAML frontmatter with git dates
+  const frontmatter = toYamlFrontmatter(properties, filename, gitDates);
 
   // Convert Logseq-specific syntax
   let convertedContent = convertLogseqSyntax(remainingContent);
