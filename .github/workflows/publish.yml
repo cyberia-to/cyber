@@ -40,6 +40,7 @@ jobs:
           cp PageTitle.tsx quartz-build/quartz/components/PageTitle.tsx
           cp ContentMeta.tsx quartz-build/quartz/components/ContentMeta.tsx
           cp renderPage.tsx quartz-build/quartz/components/renderPage.tsx
+          cp SidebarToggle.tsx quartz-build/quartz/components/SidebarToggle.tsx
           cp components-index.ts quartz-build/quartz/components/index.ts
           # Move preprocessed content to Quartz content directory
           rm -rf quartz-build/content
