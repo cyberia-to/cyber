@@ -67,13 +67,11 @@ jobs:
           BUILD_DIR: quartz-build/public
         run: ./.github/scripts/modify_html/add_meta.sh
 
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli
+
       - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@v2.2.0
-        with:
-          build_directory: quartz-build/public
+        run: netlify deploy --prod --dir=quartz-build/public --message="Deployed with Quartz"
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Deployed with Quartz"
-          NETLIFY_DEPLOY_TO_PROD: true
-          install_command: "npm install -g netlify-cli"
-          build_command: "echo Skipping build"
