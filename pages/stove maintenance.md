@@ -2,11 +2,8 @@ tags:: order
 
 - [[cyber stove]] enable clean burn
 - this document describe necessary processes to run [[banya]] non stop
-- optimal wood
-	- [[kaliandra]]
-	- [[lamtoro]]
-	- [[trema]]
-- wood preparation: [[hard force]] is responsible
+- {{embed [[firewood]]}}
+- [[firewood]] preparation: [[hard force]] is responsible
 	- done on a daily basis
 	- one guy with [[chain saw]]
 	- fill the dryer every day
