@@ -12,6 +12,55 @@ const SidebarToggle: QuartzComponent = ({ displayClass }: QuartzComponentProps) 
   )
 }
 
+SidebarToggle.css = `
+.sidebar-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-toggle svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--darkgray);
+  transition: fill 0.2s;
+}
+
+.sidebar-toggle:hover svg {
+  fill: var(--secondary);
+}
+
+/* Hide right sidebar when toggle is active */
+body.hide-right-sidebar .sidebar.right {
+  display: none;
+}
+
+body.hide-right-sidebar .page > #quartz-body {
+  grid-template:
+    "grid-sidebar-left grid-header"
+    "grid-sidebar-left grid-center"
+    "grid-sidebar-left grid-footer" / 320px auto;
+}
+
+@media (max-width: 800px) {
+  body.hide-right-sidebar .page > #quartz-body {
+    grid-template:
+      "grid-sidebar-left"
+      "grid-header"
+      "grid-center"
+      "grid-footer" / auto;
+  }
+}
+`
+
 SidebarToggle.afterDOMLoaded = `
   const toggle = document.getElementById('sidebar-toggle')
   if (toggle) {

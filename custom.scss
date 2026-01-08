@@ -157,3 +157,38 @@ code:not(pre code) {
   padding-left: 1rem;
   margin: 0.5rem 0;
 }
+
+// Sidebar layout fixes
+.page > #quartz-body .sidebar {
+  padding-top: 2rem; // Reduce top padding
+}
+
+.page > #quartz-body .sidebar.left {
+  overflow-y: auto; // Enable scrolling on left sidebar
+}
+
+// Explorer visibility fix
+.explorer {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.explorer-content {
+  overflow-y: auto;
+  max-height: calc(100vh - 400px);
+}
+
+// Favorites section
+.favorites {
+  margin-bottom: 1rem;
+}
+
+.favorites ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favorites li {
+  margin: 0.3rem 0;
+}
