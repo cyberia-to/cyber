@@ -63,25 +63,12 @@ const config: QuartzConfig = {
           light: "github-dark",
           dark: "github-dark",
         },
+        keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({
-        enableInHtmlEmbed: false,
-        enableCheckbox: true,  // Enable interactive TODO checkboxes
-        parseBlockReferences: true,  // Enable ^block-id references
-        mermaid: true,  // Enable mermaid diagrams
-        callouts: true,  // Enable callout blocks
-        wikilinks: true,  // Enable [[wikilinks]]
-        highlight: true,  // Enable ==highlights==
-        parseTags: true,  // Enable #tags
-        enableYouTubeEmbed: true,  // Embed YouTube videos
-        enableVideoEmbed: true,  // Embed video files
-      }),
-      Plugin.GitHubFlavoredMarkdown({
-        enableSmartyPants: true,  // Smart quotes and dashes
-        linkHeadings: true,  // Add anchor links to headings
-      }),
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "relative" }),
+      Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
@@ -98,6 +85,7 @@ const config: QuartzConfig = {
       }),
       Plugin.Assets(),
       Plugin.Static(),
+      Plugin.Favicon(),
       Plugin.NotFoundPage(),
     ],
   },

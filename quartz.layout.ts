@@ -17,68 +17,32 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
-// Shared favorites list
-const favorites = [
-  "cyber",
-  "aicosystem",
-  "ask",
-  "learn",
-  "truth",
-  "brain",
-  "the product",
-  "collective intelligence",
-  "superintelligence",
-  "concepts",
-  "space pussy",
-  "knowledge theory",
-  "bostrom",
-  "neuron",
-  "particle",
-  "tokens",
-  "cyberlink",
-  "cybergraph",
-  "truth machine",
-  "cybernet",
-  "soft3",
-  "projects",
-  "todo",
-  "energy reform",
-  "aips",
-  "cyb",
-  "about this metagraph",
-]
-
-// Shared left sidebar components
-const sharedLeftSidebar = [
-  Component.PageTitle(),
-  Component.MobileOnly(Component.Spacer()),
-  Component.DesktopOnly(Component.Flex({
-    components: [
-      { Component: Component.Search(), grow: true },
-      { Component: Component.Darkmode(), shrink: false },
-      { Component: Component.SidebarToggle(), shrink: false },
-    ],
-    direction: "row",
-    gap: "0.75rem",
-  })),
-  Component.MobileOnly(Component.Search()),
-  Component.MobileOnly(Component.Darkmode()),
-  Component.Favorites({ title: "Favorites", favorites }),
-  Component.Explorer(),
-]
-
 // Components for pages that display a single piece of content
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
+    Component.ConditionalRender({
+      component: Component.Breadcrumbs(),
+      condition: (page) => page.fileData.slug !== "index",
+    }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
   ],
-  left: sharedLeftSidebar,
+  left: [
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        { Component: Component.Search(), grow: true },
+        { Component: Component.Darkmode() },
+        { Component: Component.ReaderMode() },
+      ],
+    }),
+    Component.Explorer(),
+  ],
   right: [
     Component.Graph(),
-    Component.TableOfContents(),
+    Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
   ],
 }
@@ -86,7 +50,17 @@ export const defaultContentPageLayout: PageLayout = {
 // Components for pages that display lists of pages
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: sharedLeftSidebar,
+  left: [
+    Component.PageTitle(),
+    Component.MobileOnly(Component.Spacer()),
+    Component.Flex({
+      components: [
+        { Component: Component.Search(), grow: true },
+        { Component: Component.Darkmode() },
+      ],
+    }),
+    Component.Explorer(),
+  ],
   right: [
     Component.Graph(),
     Component.Backlinks(),

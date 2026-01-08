@@ -252,6 +252,23 @@ function buildPageIndex(sourceDir) {
     // Skip private pages
     if (properties.private === 'true') continue;
 
+    // Also extract inline/block properties from content (key:: value)
+    // This captures properties like "- revenue:: $100" in the body
+    const inlineProps = content.match(/^[\s-]*(\w+[-\w]*):: (.+)$/gm);
+    if (inlineProps) {
+      for (const prop of inlineProps) {
+        const match = prop.match(/(\w+[-\w]*):: (.+)/);
+        if (match) {
+          const key = match[1].toLowerCase();
+          const value = match[2].trim();
+          // Don't overwrite page-level properties, just add if not exists
+          if (!properties[key]) {
+            properties[key] = value;
+          }
+        }
+      }
+    }
+
     // Get git dates and add to properties for query tables
     const gitDates = getGitDates(filepath);
     if (gitDates) {
@@ -318,19 +335,44 @@ function executeQuery(queryStr) {
 function evaluateQuery(expr) {
   expr = expr.trim();
 
+  // Extract from {{query ...}} format if wrapped
+  const queryMatch = expr.match(/^\{\{query\s+([\s\S]*?)\}\}$/i);
+  if (queryMatch) {
+    expr = queryMatch[1].trim();
+  }
+
+  // Skip empty expressions
+  if (!expr || expr === '(and)' || expr === '(or)' || expr === '(not)') {
+    return PAGE_INDEX;
+  }
+
   // Handle (and ...)
-  if (expr.startsWith('(and ')) {
+  if (expr.startsWith('(and ') || expr === '(and)') {
     return evaluateAnd(expr);
   }
 
   // Handle (or ...)
-  if (expr.startsWith('(or ')) {
+  if (expr.startsWith('(or ') || expr === '(or)') {
     return evaluateOr(expr);
   }
 
-  // Handle (not ...)
+  // Handle (not ...) - standalone not returns empty (used within and/or)
   if (expr.startsWith('(not ')) {
     return evaluateNot(expr);
+  }
+
+  // Handle (task TODO) or (task DONE) etc.
+  const taskMatch = expr.match(/^\(task\s+(\w+)\)$/i);
+  if (taskMatch) {
+    const taskState = taskMatch[1].toUpperCase();
+    return PAGE_INDEX.filter(p => p.content.includes(`- ${taskState} `) || p.content.includes(`\n${taskState} `));
+  }
+
+  // Handle (page [[name]]) - exact page match
+  const pageMatch = expr.match(/^\(page\s+\[\[([^\]]+)\]\]\)$/i);
+  if (pageMatch) {
+    const pageName = pageMatch[1].toLowerCase();
+    return PAGE_INDEX.filter(p => p.nameLower === pageName);
   }
 
   // Handle (page-tags [[tag]])
@@ -340,17 +382,31 @@ function evaluateQuery(expr) {
     return PAGE_INDEX.filter(p => p.tags.includes(tag));
   }
 
-  // Handle (property :key value) or (property :key "value")
-  const propertyMatch = expr.match(/^\((?:page-)?property\s+:?(\w+)(?:\s+(?:"([^"]+)"|(\S+)))?\)$/i);
+  // Handle (property :key value) or (property :key "value") or (page-property :key value)
+  const propertyMatch = expr.match(/^\((?:page-)?property\s+:?(\w+[-\w]*)(?:\s+(?:"([^"]+)"|(\S+)))?\)$/i);
   if (propertyMatch) {
-    const key = propertyMatch[1].toLowerCase();
-    const value = (propertyMatch[2] || propertyMatch[3] || '').toLowerCase();
+    const key = propertyMatch[1].toLowerCase().replace(/-/g, '');
+    // Strip [[]] from wikilink-formatted values
+    let value = (propertyMatch[2] || propertyMatch[3] || '').toLowerCase().replace(/"/g, '');
+    value = value.replace(/^\[\[/, '').replace(/\]\]$/, '');
     return PAGE_INDEX.filter(p => {
-      const propVal = (p.properties[key] || '').toLowerCase();
+      // Try both with and without hyphens
+      const propVal = (p.properties[key] || p.properties[key.replace(/-/g, '')] || '').toLowerCase();
       if (!value) {
         // Property exists check
         return propVal !== '';
       }
+      return propVal === value || propVal.includes(value);
+    });
+  }
+
+  // Handle [:page-property key value] syntax
+  const bracketPropMatch = expr.match(/^\[:?page-property\s+(\w+)\s+(\w+)\]$/i);
+  if (bracketPropMatch) {
+    const key = bracketPropMatch[1].toLowerCase();
+    const value = bracketPropMatch[2].toLowerCase();
+    return PAGE_INDEX.filter(p => {
+      const propVal = (p.properties[key] || '').toLowerCase();
       return propVal === value || propVal.includes(value);
     });
   }
@@ -362,11 +418,15 @@ function evaluateQuery(expr) {
     return PAGE_INDEX.filter(p => p.namespace && p.namespace.toLowerCase() === ns);
   }
 
-  // Handle [[page]] reference (exact page match)
+  // Handle [[page]] reference (pages that contain this link or have this name)
   const pageRefMatch = expr.match(/^\[\[([^\]]+)\]\]$/);
   if (pageRefMatch) {
     const pageName = pageRefMatch[1].toLowerCase();
-    return PAGE_INDEX.filter(p => p.nameLower === pageName);
+    return PAGE_INDEX.filter(p =>
+      p.nameLower === pageName ||
+      p.content.includes(`[[${pageName}]]`) ||
+      p.content.includes(`[[${pageRefMatch[1]}]]`)
+    );
   }
 
   // Handle "text" full-text search
@@ -391,6 +451,9 @@ function evaluateQuery(expr) {
  * Parse and evaluate (and ...) expressions
  */
 function evaluateAnd(expr) {
+  // Handle empty (and)
+  if (expr === '(and)' || expr === '(and )') return PAGE_INDEX;
+
   // Remove outer (and ) and parse inner expressions
   const inner = expr.slice(5, -1).trim();
   const parts = parseExpressionParts(inner);
@@ -400,17 +463,12 @@ function evaluateAnd(expr) {
   let results = PAGE_INDEX;
   for (const part of parts) {
     if (!part.trim()) continue;
+    // Skip empty expressions
+    if (part === '(and)' || part === '(or)' || part === '(not)') continue;
 
-    // Handle (not ...) specially
-    if (part.trim().startsWith('(not ')) {
-      const notResults = evaluateNot(part.trim());
-      const notNames = new Set(notResults.map(p => p.nameLower));
-      results = results.filter(p => !notNames.has(p.nameLower));
-    } else {
-      const partResults = evaluateQuery(`{{query ${part}}}`);
-      const partNames = new Set(partResults.map(p => p.nameLower));
-      results = results.filter(p => partNames.has(p.nameLower));
-    }
+    const partResults = evaluateQuery(`{{query ${part}}}`);
+    const partNames = new Set(partResults.map(p => p.nameLower));
+    results = results.filter(p => partNames.has(p.nameLower));
   }
 
   return results;
@@ -437,12 +495,23 @@ function evaluateOr(expr) {
 
 /**
  * Parse and evaluate (not ...) expressions
+ * Returns pages that DON'T match the inner expression
  */
 function evaluateNot(expr) {
-  const inner = expr.slice(5, -1).trim();
+  let inner = expr.slice(5, -1).trim();
+  if (!inner) return PAGE_INDEX;
+
+  // Handle malformed expressions like "(page [[x]]) (not)" - take only the first valid part
+  const parts = parseExpressionParts(inner);
+  if (parts.length > 0) {
+    // Use only the first valid expression, ignore trailing garbage
+    inner = parts[0];
+  }
+
   const excludeResults = evaluateQuery(`{{query ${inner}}}`);
   const excludeNames = new Set(excludeResults.map(p => p.nameLower));
-  return PAGE_INDEX.filter(p => excludeNames.has(p.nameLower));
+  // Return pages that are NOT in the exclude set
+  return PAGE_INDEX.filter(p => !excludeNames.has(p.nameLower));
 }
 
 /**
@@ -491,7 +560,7 @@ function parseExpressionParts(expr) {
     parts.push(current.trim());
   }
 
-  return parts.filter(p => p && p !== '(and)' && p !== '(or)');
+  return parts.filter(p => p && p !== '(and)' && p !== '(or)' && p !== '(not)');
 }
 
 /**
