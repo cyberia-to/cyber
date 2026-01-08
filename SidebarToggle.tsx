@@ -40,23 +40,35 @@ SidebarToggle.css = `
 
 /* Hide right sidebar when toggle is active */
 body.hide-right-sidebar .sidebar.right {
-  display: none;
+  display: none !important;
 }
 
 body.hide-right-sidebar .page > #quartz-body {
-  grid-template:
+  grid-template-columns: 320px auto !important;
+  grid-template-areas:
     "grid-sidebar-left grid-header"
     "grid-sidebar-left grid-center"
-    "grid-sidebar-left grid-footer" / 320px auto;
+    "grid-sidebar-left grid-footer" !important;
+}
+
+@media (max-width: 1200px) {
+  body.hide-right-sidebar .page > #quartz-body {
+    grid-template-columns: 320px auto !important;
+    grid-template-areas:
+      "grid-sidebar-left grid-header"
+      "grid-sidebar-left grid-center"
+      "grid-sidebar-left grid-footer" !important;
+  }
 }
 
 @media (max-width: 800px) {
   body.hide-right-sidebar .page > #quartz-body {
-    grid-template:
+    grid-template-columns: auto !important;
+    grid-template-areas:
       "grid-sidebar-left"
       "grid-header"
       "grid-center"
-      "grid-footer" / auto;
+      "grid-footer" !important;
   }
 }
 `
