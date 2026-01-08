@@ -42,6 +42,8 @@ jobs:
           cp renderPage.tsx quartz-build/quartz/components/renderPage.tsx
           cp SidebarToggle.tsx quartz-build/quartz/components/SidebarToggle.tsx
           cp components-index.ts quartz-build/quartz/components/index.ts
+          # Copy fixed path utilities (for transcluded content link resolution)
+          cp path.ts quartz-build/quartz/util/path.ts
           # Move preprocessed content to Quartz content directory
           rm -rf quartz-build/content
           mv quartz-content quartz-build/content
