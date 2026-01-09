@@ -1,5 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import { resolveRelative } from "../util/path"
+import { pathToRoot, joinSegments } from "../util/path"
 import { classNames } from "../util/lang"
 
 interface Options {
@@ -28,7 +28,9 @@ export default ((userOpts?: Partial<Options>) => {
       })
       .slice(0, opts.limit)
 
-    const journalsLink = resolveRelative(fileData.slug!, "journals/")
+    // Use root-relative path so Journals links work from any page
+    const baseDir = pathToRoot(fileData.slug!)
+    const journalsLink = joinSegments(baseDir, "journals/")
 
     return (
       <div class={classNames(displayClass, "journals")} data-collapsed={opts.defaultCollapsed}>
@@ -58,7 +60,7 @@ export default ((userOpts?: Partial<Options>) => {
             <ul class="journal-list">
               {journals.map((journal) => {
                 const title = journal.frontmatter?.title ?? journal.slug
-                const link = resolveRelative(fileData.slug!, journal.slug!)
+                const link = joinSegments(baseDir, journal.slug!)
                 return (
                   <li>
                     <a href={link} class="internal">

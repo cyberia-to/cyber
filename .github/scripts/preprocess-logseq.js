@@ -713,9 +713,25 @@ function convertLogseqTables(content) {
       const indent = tableMatch[1] || '';
       const tableRows = [];
 
-      // Collect consecutive table rows
+      // Collect table rows, skipping blank lines between them
       while (i < lines.length) {
         const currentLine = lines[i];
+
+        // Skip blank lines (they might separate table rows in Logseq)
+        if (currentLine.trim() === '') {
+          // Look ahead to see if there's another table row
+          let nextIdx = i + 1;
+          while (nextIdx < lines.length && lines[nextIdx].trim() === '') {
+            nextIdx++;
+          }
+          if (nextIdx < lines.length && lines[nextIdx].match(/^(\s*)(?:-\s*)?\|(.+)\|(\s*)$/)) {
+            i++;
+            continue;
+          } else {
+            break;
+          }
+        }
+
         // Match table row: optional indent, optional list marker, pipe content
         const rowMatch = currentLine.match(/^(\s*)(?:-\s*)?\|(.+)\|(\s*)$/);
 
@@ -933,6 +949,60 @@ function processFile(sourcePath, outputPath) {
   // Convert tabs to spaces to prevent markdown from treating indented content as code blocks
   // Logseq uses tabs for indentation, but markdown interprets tabs as code blocks
   convertedContent = convertedContent.replace(/\t/g, '  ');
+
+  // Fix list items that have leading spaces after headings
+  // In Logseq, items under headings are indented by one tab (now 2 spaces), but in markdown they shouldn't be
+  // We need to "dedent" all content under headings by one level (2 spaces)
+  const lines = convertedContent.split('\n');
+  const fixedLines = [];
+  let inListSection = false;
+  let inTable = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    // Headings mark the start of a new section - content after should be dedented
+    if (line.match(/^#{1,6}\s/)) {
+      inListSection = true;
+      inTable = false;
+      fixedLines.push(line);
+      continue;
+    }
+
+    // Check if line is blank (only whitespace)
+    if (line.trim() === '') {
+      // If we're in a table context, skip blank lines between table rows
+      if (inTable) {
+        // Check if next non-blank line is a table row
+        let nextLineIdx = i + 1;
+        while (nextLineIdx < lines.length && lines[nextLineIdx].trim() === '') {
+          nextLineIdx++;
+        }
+        if (nextLineIdx < lines.length && lines[nextLineIdx].trim().startsWith('|')) {
+          // Skip this blank line - don't add it
+          continue;
+        }
+      }
+      fixedLines.push(line);
+      continue;
+    }
+
+    // Track table context
+    if (line.trim().startsWith('|')) {
+      inTable = true;
+    } else {
+      inTable = false;
+    }
+
+    // In a list section, remove one level of indentation (2 spaces) from lines that have it
+    if (inListSection && line.startsWith('  ')) {
+      line = line.slice(2);
+    }
+
+    fixedLines.push(line);
+  }
+
+  convertedContent = fixedLines.join('\n');
 
   // Fix asset paths based on file depth
   // Quartz creates folder/index.html for each .md file, so we need to go up one more level
@@ -1207,6 +1277,36 @@ function processJournalFile(sourcePath, outputPath) {
 
   // Convert tabs to spaces to prevent markdown from treating indented content as code blocks
   convertedContent = convertedContent.replace(/\t/g, '  ');
+
+  // Fix list items that have leading spaces (same as in processFile)
+  // Journal content is at top level, so we start in "dedent mode"
+  const lines = convertedContent.split('\n');
+  const fixedLines = [];
+  let inListSection = true; // Start as true since journal content is at top level
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    if (line.match(/^#{1,6}\s/)) {
+      inListSection = true;
+      fixedLines.push(line);
+      continue;
+    }
+
+    if (line.trim() === '') {
+      fixedLines.push(line);
+      continue;
+    }
+
+    // Remove one level of indentation (2 spaces) from lines that have it
+    if (inListSection && line.startsWith('  ')) {
+      line = line.slice(2);
+    }
+
+    fixedLines.push(line);
+  }
+
+  convertedContent = fixedLines.join('\n');
 
   // Fix asset paths (journals are one level deep: journals/2024-08-16.md)
   convertedContent = convertedContent.replace(/\]?\(\.\.\/assets\//g, (match) => {
