@@ -1,0 +1,83 @@
+@use "./base.scss";
+
+/* Force dark theme - no light mode */
+:root {
+  color-scheme: dark;
+}
+
+/* Ensure black background everywhere */
+html, body {
+  background-color: #000000 !important;
+}
+
+/* Hide dark mode toggle if it somehow appears */
+.darkmode {
+  display: none !important;
+}
+
+/* Custom styles to make Quartz look more like Logseq */
+
+/* Logseq-like outliner styling */
+.center article {
+  /* More compact text */
+  font-size: 0.95rem;
+  line-height: 1.7;
+
+  /* Bullet list styling (outliner) */
+  ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin: 0.25rem 0;
+
+    li {
+      margin: 0.15rem 0;
+      padding-left: 0.25rem;
+
+      /* Nested lists */
+      ul {
+        margin-top: 0.15rem;
+      }
+
+      /* Empty list items (spacers) */
+      &:empty,
+      &:has(> br:only-child) {
+        list-style: none;
+        height: 0.5rem;
+      }
+    }
+  }
+
+  /* Bullet points color */
+  ul li::marker {
+    color: var(--secondary);
+  }
+
+  /* Wikilinks styling (like Logseq) */
+  a.internal {
+    color: var(--secondary);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: var(--secondary);
+    }
+  }
+
+  /* External links */
+  a.external {
+    color: var(--tertiary);
+  }
+
+  /* Block references style */
+  .block-ref {
+    background: var(--highlight);
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+  }
+
+  /* Properties (if shown) */
+  .property {
+    font-size: 0.85rem;
+    color: var(--gray);
+  }
+}

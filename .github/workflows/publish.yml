@@ -5,40 +5,75 @@ on:
 
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Publish Logseq graph
+    name: Publish with Quartz
     steps:
-      - uses: actions/checkout@v4.2.0
-      - uses: logseq/publish-spa@v0.3.1
+      - name: Checkout cyber repo
+        uses: actions/checkout@v4
         with:
-          version: 0.10.9
-          theme-mode: dark
-          accent-color: green
-          output-directory: build
-      - name: Add a nojekyll file # to make sure asset paths are correctly identified
-        run: touch $GITHUB_WORKSPACE/build/.nojekyll
-      - name: Replace logo file
-        run: cp assets/logo.png $GITHUB_WORKSPACE/build/static/img/logo.png
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Clone Quartz
+        run: |
+          git clone --depth 1 https://github.com/jackyzha0/quartz.git quartz-build
+          cd quartz-build && npm ci
+
+      - name: Preprocess Logseq content
+        run: node .github/scripts/preprocess-logseq.js
+
+      - name: Copy config files to Quartz
+        run: |
+          cp quartz.config.ts quartz-build/
+          cp quartz.layout.ts quartz-build/
+          # Copy custom CSS for Logseq-like styling
+          cp custom.scss quartz-build/quartz/styles/custom.scss
+          # Copy custom components
+          cp Favorites.tsx quartz-build/quartz/components/Favorites.tsx
+          cp PageTitle.tsx quartz-build/quartz/components/PageTitle.tsx
+          cp ContentMeta.tsx quartz-build/quartz/components/ContentMeta.tsx
+          cp renderPage.tsx quartz-build/quartz/components/renderPage.tsx
+          cp SidebarToggle.tsx quartz-build/quartz/components/SidebarToggle.tsx
+          cp components-index.ts quartz-build/quartz/components/index.ts
+          # Copy fixed path utilities (for transcluded content link resolution)
+          cp path.ts quartz-build/quartz/util/path.ts
+          # Move preprocessed content to Quartz content directory
+          rm -rf quartz-build/content
+          mv quartz-content quartz-build/content
+
+      - name: Build Quartz
+        run: |
+          cd quartz-build
+          npx quartz build
+
+      - name: Add nojekyll file
+        run: touch quartz-build/public/.nojekyll
+
+      - name: Copy logo
+        run: |
+          mkdir -p quartz-build/public/static/img
+          cp assets/logo.png quartz-build/public/static/img/logo.png 2>/dev/null || true
 
       - name: Set execute permissions for scripts
         run: chmod +x ./.github/scripts/modify_html/*.sh
-      - name: Add meta
+
+      - name: Add meta tags
+        env:
+          BUILD_DIR: quartz-build/public
         run: ./.github/scripts/modify_html/add_meta.sh
-      - name: Add analytics script
-        run: ./.github/scripts/modify_html/add_analytics.sh
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
 
       - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@v2.2.0
-        with:
-          build_directory: build
+        run: netlify deploy --prod --dir=quartz-build/public --message="Deployed with Quartz"
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Deployed on new master commit"
-          NETLIFY_DEPLOY_TO_PROD: true
-          install_command: "echo Skipping installing deps"
-          build_command: "echo Skipping building"
