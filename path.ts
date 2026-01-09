@@ -208,6 +208,21 @@ export function resolveRelative(
   target: FullSlug | SimpleSlug,
   allSlugs?: FullSlug[],
 ): RelativeURL {
+  // Handle same page case - if current and target are the same, return "./"
+  const simpleCurrent = simplifySlug(current)
+  const simpleTarget = simplifySlug(target as FullSlug)
+  if (simpleCurrent === simpleTarget) {
+    return "./" as RelativeURL
+  }
+
+  // Also handle folder page case: if current is "cyber/index" and target is "cyber"
+  if (current.endsWith("/index")) {
+    const currentWithoutIndex = current.slice(0, -6) // remove "/index"
+    if (currentWithoutIndex === simpleTarget || simplifySlug(currentWithoutIndex as FullSlug) === simpleTarget) {
+      return "./" as RelativeURL
+    }
+  }
+
   // Check if current is a folder page (has child pages under it)
   // If so, use current/index for path calculation since it outputs to current/index.html
   let effectiveCurrent = current

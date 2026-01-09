@@ -1,5 +1,20 @@
 @use "./base.scss";
 
+/* Force dark theme - no light mode */
+:root {
+  color-scheme: dark;
+}
+
+/* Ensure black background everywhere */
+html, body {
+  background-color: #000000 !important;
+}
+
+/* Hide dark mode toggle if it somehow appears */
+.darkmode {
+  display: none !important;
+}
+
 /* Custom styles to make Quartz look more like Logseq */
 
 /* Logseq-like outliner styling */

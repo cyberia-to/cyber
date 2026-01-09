@@ -6,7 +6,7 @@ import * as Plugin from "./quartz/plugins"
 
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "cyber docs",
+    pageTitle: "Cyber",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -22,16 +22,16 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Inter",
-        body: "Inter",
+        header: "Play",
+        body: "Play",
         code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
-          light: "#1a1a1a",
-          lightgray: "#2a2a2a",
-          gray: "#4a4a4a",
-          darkgray: "#b0b0b0",
+          light: "#000000",
+          lightgray: "#141414",
+          gray: "#3a3a3a",
+          darkgray: "#a0a0a0",
           dark: "#e0e0e0",
           secondary: "#4cc38a",
           tertiary: "#3cb179",
