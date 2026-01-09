@@ -930,6 +930,10 @@ function processFile(sourcePath, outputPath) {
   // Convert Logseq-specific syntax
   let convertedContent = convertLogseqSyntax(remainingContent);
 
+  // Convert tabs to spaces to prevent markdown from treating indented content as code blocks
+  // Logseq uses tabs for indentation, but markdown interprets tabs as code blocks
+  convertedContent = convertedContent.replace(/\t/g, '  ');
+
   // Fix asset paths based on file depth
   // Quartz creates folder/index.html for each .md file, so we need to go up one more level
   // Root file: content/page.md → public/page/index.html → ../assets/ (up from page/, into assets/)
@@ -1201,6 +1205,9 @@ function processJournalFile(sourcePath, outputPath) {
   // Convert Logseq-specific syntax
   let convertedContent = convertLogseqSyntax(remainingContent);
 
+  // Convert tabs to spaces to prevent markdown from treating indented content as code blocks
+  convertedContent = convertedContent.replace(/\t/g, '  ');
+
   // Fix asset paths (journals are one level deep: journals/2024-08-16.md)
   convertedContent = convertedContent.replace(/\]?\(\.\.\/assets\//g, (match) => {
     const prefix = match.startsWith('](') ? '](' : '(';
@@ -1219,7 +1226,7 @@ function processJournalFile(sourcePath, outputPath) {
   // Write output file
   fs.writeFileSync(outputPath, finalContent);
 
-  return { published: true, date: dateInfo.date };
+  return { published: true, date: dateInfo.date, title: dateInfo.title, content: convertedContent };
 }
 
 /**
@@ -1255,7 +1262,9 @@ function processJournals() {
         processed++;
         entries.push({
           date: result.date,
+          title: result.title,
           filename: outputFile.replace('.md', ''),
+          content: result.content,
         });
       } else {
         skipped++;
@@ -1283,56 +1292,24 @@ function createJournalIndex(entries) {
   // Sort entries by date (newest first)
   entries.sort((a, b) => b.date.localeCompare(a.date));
 
-  // Group by year and month
-  const grouped = {};
-  for (const entry of entries) {
-    const [year, month] = entry.date.split('-');
-    const monthName = new Date(parseInt(year), parseInt(month) - 1, 1)
-      .toLocaleDateString('en-US', { month: 'long' });
-    const key = `${year}-${month}`;
-
-    if (!grouped[key]) {
-      grouped[key] = {
-        year,
-        month: monthName,
-        entries: []
-      };
-    }
-    grouped[key].entries.push(entry);
-  }
-
-  // Build index content
+  // Build index content - Logseq style with full content under each date
   let content = `---
 title: "Journal"
 ---
 
-Daily notes and journal entries.
-
 `;
 
-  // Add entries grouped by month
-  const sortedKeys = Object.keys(grouped).sort().reverse();
-  let currentYear = null;
+  // Show each entry with date header and full content (like Logseq)
+  for (const entry of entries) {
+    // Date header as a link to the individual journal page
+    content += `## [[journals/${entry.filename}|${entry.title}]]\n\n`;
 
-  for (const key of sortedKeys) {
-    const group = grouped[key];
-
-    // Add year header if changed
-    if (group.year !== currentYear) {
-      content += `## ${group.year}\n\n`;
-      currentYear = group.year;
+    // Add the journal content directly
+    if (entry.content && entry.content.trim()) {
+      content += entry.content.trim() + '\n\n';
     }
 
-    content += `### ${group.month}\n\n`;
-
-    for (const entry of group.entries) {
-      const dateObj = new Date(entry.date + 'T00:00:00');
-      const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
-      const dayNum = dateObj.getDate();
-      content += `- [[journals/${entry.filename}|${dayName} ${dayNum}]]\n`;
-    }
-
-    content += '\n';
+    content += '---\n\n';
   }
 
   // Write index file
