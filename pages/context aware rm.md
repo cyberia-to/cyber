@@ -1,0 +1,35 @@
+tags:: true-false problem, published
+- # context aware relevance machine
+	- we discuss for a while one property of the ranking mechanism
+	- which rise huge concerns into the answering capabilities of cyber
+	- lets call it true-false problem
+- ## [[true-false problem]]
+	- let us imagine that 'true' particle have cyberank '10', and 'false' particle have cyberank '9'
+	- the environment allow to link any particle with any
+	- that means that for any questions which cyberlinked to 'true' and 'false' the winning answer will always be 'true'
+	- of course such behavior does not feels like something superintelligent
+	- we always emphasize that cyberank is a core ranking factor
+	- but not the only one which is possible on top the cyber architecture
+	- in order to solve true-false problem we have to compute weights of links in a context
+	- in this post i introduce an algo i will call standard inference
+		- does not introduce additional complexity
+		- requeres zero additional information
+		- the most simple algorithm you can imagine
+- ## standard inference
+	- get all particles cyberlinked with asking particle sorted by rank
+		- for each particle get all cyberlinks
+			- for each cyberlink get address
+				- for each address
+					- get [[$V]] balance
+					- get number of cyberlinks
+					- compute average [[$V]] per cyberlink
+			- sum (average V) votes for every particle
+	- multiplay rank of each particle by sum (average V)
+-
+- ## staking on cyberlinks
+	- Lets focus on raising the cost of attack, e.g. linking anything with anything, higher. Our proposal is to add ability to stake 'V' for cyberlinks. Hence overall sorting will count not only for the rank of the particle, but also for cyberlink modificator which will depends on the amount which is staked on the cyberlink. Such simple mechanics will make content oracle adoptable to any answers.
+- **## wen mainnet?**
+	- Although our focus now is on finalizing the distribution and [opening the portal](https://rebyc.cyber.page/search/portal) we recognize the importance of deployment staking mechanism as this will make content oracle practical enough for building bootloader.
+- history
+	- [QmfZHFbnBfMDQECWhbeohYvBsBKBgx5gHXRW3fKWLCXLSW](https://cyb.ai/ipfs/QmfZHFbnBfMDQECWhbeohYvBsBKBgx5gHXRW3fKWLCXLSW)
+-

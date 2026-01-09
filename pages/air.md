@@ -1,0 +1,11 @@
+- | gas        | estimated amount in air | extraction method           | purity achievable         | efficiency | typical applications                                              |
+  |------------|-------------------------|-----------------------------|---------------------------|------------|-------------------------------------------------------------------|
+  | [[N₂]]     | ~78.08%                 | [[cryogenic distillation]] , [[pressure swing adsorption]], [[membrane separation]] | up to 99.999% | high       | chemical processes, electronics, food packaging, metal processing |
+  | [[O₂]]     | ~20.95%                 | [[cryogenic distillation]] , [[pressure swing adsorption]], [[membrane separation]] | up to 99.7%   | high       | medical use, industrial processes, water treatment                |
+  | [[$AR]]     | ~0.93%                  | [[cryogenic distillation]]      | up to 99.999%             | high       | welding, lighting, semiconductor manufacturing                     |
+  | [[CO₂]]    | ~0.041%                 | [[chemical scrubbing]], [[cryogenic distillation]] | varies, high concentrations possible | varies     | beverage carbonation, greenhouse cultivation, industrial processes |
+  | [[NE]]     | less than 0.002%        | [[cryogenic distillation]]      | up to 99.999%             | moderate to high | lighting, lasers, refrigerants                                     |
+  | [[HE]]     | about 0.0005%           | [[cryogenic distillation]]      | up to 99.999%             | moderate to high | balloons, medical imaging, scientific research                     |
+  | [[CH₄]]    | about 0.0002%           | [[adsorption techniques]], [[membrane separation]] | varies, high for specific setups | moderate to high | fuel, chemical feedstock, energy production                        |
+  | [[KR]]     | about 0.0001%           | [[cryogenic distillation]]      | up to 99.999%             | moderate to high | lighting, insulation in double-glazed windows                     |
+  | [[H₂]]     | about 0.00005%          | [[pressure swing adsorption]], [[membrane separation]], [[electrolysis]] | up to 99.999% | moderate to high | fuel cells, refining, chemical synthesis                           |

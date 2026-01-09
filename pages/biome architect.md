@@ -1,0 +1,39 @@
+- build highly productive, sustainable and harmonic biome for autonomous community
+- read carefully about [cyber valley](https://hackmd.io/@cybervalley/cv-intro) first
+- currently 10 locals are managing operations
+	- 7 ha of mixed coffee plantations
+	- 1 ha field for sheep and chickens
+	- 4 ha sengon forest
+	- 8 ha of resting fields
+	- other is more like wilderness
+- your responsibility is to lead the following efforts while effectively managing the team
+	- currently we identified or brought ~200 species
+	- you goal is meet 1000 species target
+	- creation of a comprehensive knowledge graph for managed species
+	- setup and control of biogas, biochar, compost, and organic fertilizer production at scale
+	- setup and control the propagation system of plants using seeds, cuttings, air layering and grafting
+	- ability to design a scalable prune and harvesting system
+	- setup processes of post processing: cutting, washing, drying and packaging
+	- capable of building a small research lab
+	- setup facility of samples for internal use
+	- able to scale all this operations to the entire area
+- about you
+	- able to relocate to bali
+	- willing to live in a remote close to nature environment with strong lack of infrastructure
+	- able to learn bahasa fast if you are not local
+	- have strong scientific and practical background in plant and animal biology, ecology, genetics and tech
+	- self learning and self motivated person with a strong sense of freedom
+	- admit that existing civilization processes are rotten, including agriculture system
+	- powerful enough to make all-in bet on opportunity to build better system for our future
+- what we offer
+	- unique opportunity to realize bold professional ideas
+	- mentorship in cutting edge fields such as blockchain and ai technology
+	- opportunity to learn how to live autonomously, sustainably and in balance with nature
+	- competitive income which will allow you to live and accumulate your capital
+	- 7 year contract with an option to purchase land in cyber valley at a symbolic price
+	- 3 month trial period is necessary to sign into long term contract
+	- ability to build a home of you dream on you land
+	- crazy and exciting life changing experience
+	- beautiful environment in bali mountains
+	- help with living permits
+	- room in a cosy guest house 10 minutes from the village

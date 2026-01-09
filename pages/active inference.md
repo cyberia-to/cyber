@@ -1,0 +1,4 @@
+- ![active-inference.pdf](../assets/active-inference_1704097335959_0.pdf)
+- formal definition of intelligence as the capacity of systems to generate evidence for their own existence
+- the system uses its inpute from its environment to build a model of how its environment behaves, and acts on its environment to test and refine this model to improve its predictions
+- [[free energy principle]]
