@@ -38,6 +38,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.Journals({ title: "Journals", limit: 5 }),
   ],
   right: [
     Component.Graph(),
@@ -58,6 +59,7 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.Journals({ title: "Journals", limit: 5 }),
   ],
   right: [
     Component.Graph(),

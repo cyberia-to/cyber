@@ -21,7 +21,9 @@ const { execSync } = require('child_process');
 let PAGE_INDEX = [];
 
 const SOURCE_DIR = path.join(__dirname, '../../pages');
+const JOURNALS_DIR = path.join(__dirname, '../../journals');
 const OUTPUT_DIR = path.join(__dirname, '../../quartz-content');
+const JOURNALS_OUTPUT = path.join(OUTPUT_DIR, 'journals');
 const ASSETS_SOURCE = path.join(__dirname, '../../assets');
 const ASSETS_OUTPUT = path.join(OUTPUT_DIR, 'assets');
 
@@ -1126,6 +1128,219 @@ stub: true
 }
 
 /**
+ * Parse date from journal filename
+ * Logseq uses formats like: 2024_08_16.md or 2024-08-16.md
+ * Returns { date: 'YYYY-MM-DD', title: 'Month Day, Year' } or null
+ */
+function parseJournalDate(filename) {
+  // Remove .md extension
+  const basename = filename.replace('.md', '');
+
+  // Try underscore format: 2024_08_16
+  let match = basename.match(/^(\d{4})_(\d{2})_(\d{2})$/);
+  if (!match) {
+    // Try dash format: 2024-08-16
+    match = basename.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  }
+
+  if (!match) return null;
+
+  const [, year, month, day] = match;
+  const date = `${year}-${month}-${day}`;
+
+  // Create human-readable title
+  const dateObj = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const title = dateObj.toLocaleDateString('en-US', options);
+
+  return { date, title, year, month, day };
+}
+
+/**
+ * Process a single journal file
+ * Returns { published: true/false, date: string }
+ */
+function processJournalFile(sourcePath, outputPath) {
+  const content = fs.readFileSync(sourcePath, 'utf-8');
+  const filename = path.basename(sourcePath);
+
+  // Parse date from filename
+  const dateInfo = parseJournalDate(filename);
+  if (!dateInfo) {
+    console.warn(`Skipping journal file with invalid date format: ${filename}`);
+    return { published: false, date: null };
+  }
+
+  // Parse Logseq properties
+  const { properties, remainingContent } = parseLogseqProperties(content);
+
+  // Skip pages with private:: true
+  if (properties.private === 'true') {
+    return { published: false, date: dateInfo.date };
+  }
+
+  // Build frontmatter for journal entry
+  let yaml = '---\n';
+  yaml += `title: "${dateInfo.title}"\n`;
+  yaml += `date: ${dateInfo.date}\n`;
+  yaml += `tags:\n  - journal\n`;
+
+  // Add any additional tags from properties
+  if (properties.tags) {
+    const tags = properties.tags.split(/[,\s]+/).map(t => t.trim()).filter(Boolean);
+    for (const tag of tags) {
+      if (tag !== 'journal') {
+        yaml += `  - ${tag}\n`;
+      }
+    }
+  }
+
+  yaml += '---\n\n';
+
+  // Convert Logseq-specific syntax
+  let convertedContent = convertLogseqSyntax(remainingContent);
+
+  // Fix asset paths (journals are one level deep: journals/2024-08-16.md)
+  convertedContent = convertedContent.replace(/\]?\(\.\.\/assets\//g, (match) => {
+    const prefix = match.startsWith('](') ? '](' : '(';
+    return prefix + '../../assets/';
+  });
+
+  // Combine frontmatter and content
+  const finalContent = yaml + convertedContent;
+
+  // Ensure output directory exists
+  const outputDir = path.dirname(outputPath);
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  // Write output file
+  fs.writeFileSync(outputPath, finalContent);
+
+  return { published: true, date: dateInfo.date };
+}
+
+/**
+ * Process all journal files and create journal index
+ */
+function processJournals() {
+  if (!fs.existsSync(JOURNALS_DIR)) {
+    console.log('No journals directory found, skipping...');
+    return { processed: 0, entries: [] };
+  }
+
+  const files = fs.readdirSync(JOURNALS_DIR).filter(f => f.endsWith('.md'));
+  console.log(`\nProcessing ${files.length} journal files...`);
+
+  // Ensure journals output directory exists
+  if (!fs.existsSync(JOURNALS_OUTPUT)) {
+    fs.mkdirSync(JOURNALS_OUTPUT, { recursive: true });
+  }
+
+  const entries = [];
+  let processed = 0;
+  let skipped = 0;
+
+  for (const file of files) {
+    const sourcePath = path.join(JOURNALS_DIR, file);
+    // Convert underscore to dash for cleaner URLs: 2024_08_16.md -> 2024-08-16.md
+    const outputFile = file.replace(/_/g, '-');
+    const outputPath = path.join(JOURNALS_OUTPUT, outputFile);
+
+    try {
+      const result = processJournalFile(sourcePath, outputPath);
+      if (result.published) {
+        processed++;
+        entries.push({
+          date: result.date,
+          filename: outputFile.replace('.md', ''),
+        });
+      } else {
+        skipped++;
+      }
+    } catch (err) {
+      console.error(`Error processing journal ${file}: ${err.message}`);
+    }
+  }
+
+  console.log(`Published: ${processed} journal entries`);
+  console.log(`Skipped: ${skipped} journal entries (private or invalid)`);
+
+  return { processed, entries };
+}
+
+/**
+ * Create journal index page listing all entries by date
+ */
+function createJournalIndex(entries) {
+  if (entries.length === 0) {
+    console.log('No journal entries to index');
+    return;
+  }
+
+  // Sort entries by date (newest first)
+  entries.sort((a, b) => b.date.localeCompare(a.date));
+
+  // Group by year and month
+  const grouped = {};
+  for (const entry of entries) {
+    const [year, month] = entry.date.split('-');
+    const monthName = new Date(parseInt(year), parseInt(month) - 1, 1)
+      .toLocaleDateString('en-US', { month: 'long' });
+    const key = `${year}-${month}`;
+
+    if (!grouped[key]) {
+      grouped[key] = {
+        year,
+        month: monthName,
+        entries: []
+      };
+    }
+    grouped[key].entries.push(entry);
+  }
+
+  // Build index content
+  let content = `---
+title: "Journal"
+---
+
+Daily notes and journal entries.
+
+`;
+
+  // Add entries grouped by month
+  const sortedKeys = Object.keys(grouped).sort().reverse();
+  let currentYear = null;
+
+  for (const key of sortedKeys) {
+    const group = grouped[key];
+
+    // Add year header if changed
+    if (group.year !== currentYear) {
+      content += `## ${group.year}\n\n`;
+      currentYear = group.year;
+    }
+
+    content += `### ${group.month}\n\n`;
+
+    for (const entry of group.entries) {
+      const dateObj = new Date(entry.date + 'T00:00:00');
+      const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
+      const dayNum = dateObj.getDate();
+      content += `- [[journals/${entry.filename}|${dayName} ${dayNum}]]\n`;
+    }
+
+    content += '\n';
+  }
+
+  // Write index file
+  const indexPath = path.join(JOURNALS_OUTPUT, 'index.md');
+  fs.writeFileSync(indexPath, content);
+  console.log(`Created journal index with ${entries.length} entries`);
+}
+
+/**
  * Main processing function
  */
 function main() {
@@ -1180,6 +1395,12 @@ function main() {
   const assetCount = copyDirectory(ASSETS_SOURCE, ASSETS_OUTPUT);
   console.log(`Copied: ${assetCount} asset files`);
 
+  // Process journal files
+  const journalResult = processJournals();
+  if (journalResult.entries.length > 0) {
+    createJournalIndex(journalResult.entries);
+  }
+
   // Create index.md pointing to cyber.md if it doesn't exist
   const indexPath = path.join(OUTPUT_DIR, 'index.md');
   if (!fs.existsSync(indexPath)) {
@@ -1187,7 +1408,7 @@ function main() {
     if (fs.existsSync(cyberPath)) {
       // Create index that redirects to cyber
       fs.writeFileSync(indexPath, `---
-title: "cyber docs"
+title: "Cyber"
 ---
 
 ![[cyber]]
