@@ -1,3 +1,5 @@
+icon:: 🌏
+
 - > belong anywhere
 - sustainable cities for nomads
 - # what is?
