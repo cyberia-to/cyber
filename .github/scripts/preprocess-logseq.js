@@ -823,7 +823,8 @@ function convertLogseqSyntax(content) {
   result = result.replace(/\{\{embed\s+\[\[([^\]]+)\]\]\s*\}\}/gi, '![[$1]]');
 
   // Convert {{embed ((block-id))}} to placeholder (block UUIDs can't be resolved without Logseq)
-  result = result.replace(/\{\{embed\s+\(\(([^)]+)\)\)\s*\}\}/gi, '> [!note] Embedded block\n> View in Logseq to see this embedded content.');
+  // Use single-line callout to avoid indentation issues when inside list items
+  result = result.replace(/\{\{embed\s+\(\(([^)]+)\)\)\s*\}\}/gi, '*Block embed - view in Logseq*');
 
   // Convert block references ((block-id)) to links
   // These reference specific blocks by their UUID

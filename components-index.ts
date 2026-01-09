@@ -25,6 +25,7 @@ import Flex from "./Flex"
 import ConditionalRender from "./ConditionalRender"
 import SidebarToggle from "./SidebarToggle"
 import Favorites from "./Favorites"
+import Journals from "./Journals"
 
 export {
   ArticleTitle,
@@ -54,4 +55,5 @@ export {
   ConditionalRender,
   SidebarToggle,
   Favorites,
+  Journals,
 }

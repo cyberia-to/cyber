@@ -41,7 +41,10 @@ jobs:
           cp ContentMeta.tsx quartz-build/quartz/components/ContentMeta.tsx
           cp renderPage.tsx quartz-build/quartz/components/renderPage.tsx
           cp SidebarToggle.tsx quartz-build/quartz/components/SidebarToggle.tsx
+          cp Journals.tsx quartz-build/quartz/components/Journals.tsx
           cp components-index.ts quartz-build/quartz/components/index.ts
+          # Copy fixed SPA navigation (same-page click handling)
+          cp spa.inline.ts quartz-build/quartz/components/scripts/spa.inline.ts
           # Copy fixed path utilities (for transcluded content link resolution)
           cp path.ts quartz-build/quartz/util/path.ts
           # Move preprocessed content to Quartz content directory
