@@ -1610,8 +1610,8 @@ title: "📚 All Pages"
 All pages in the knowledge base.
 `);
 
-  // Create stub pages for missing linked pages
-  createStubPages(OUTPUT_DIR);
+  // Create stub pages for missing linked pages (in the pages folder)
+  createStubPages(PAGES_OUTPUT);
 
   console.log('\nPreprocessing complete!');
   console.log(`Output directory: ${OUTPUT_DIR}`);
