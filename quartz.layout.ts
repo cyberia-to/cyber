@@ -37,7 +37,30 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        // Favorites from Logseq config + journals at top
+        // Favorites, journals, then pages folder
+        const priority = ["favorites", "journals", "pages"]
+        const aIdx = priority.indexOf(a.slugSegment)
+        const bIdx = priority.indexOf(b.slugSegment)
+
+        // Both are priority items - sort by priority order
+        if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
+        // Only a is priority - a comes first
+        if (aIdx !== -1) return -1
+        // Only b is priority - b comes first
+        if (bIdx !== -1) return 1
+
+        // Neither is priority - folders first, then alphabetical
+        if (a.isFolder && !b.isFolder) return -1
+        if (!a.isFolder && b.isFolder) return 1
+        return a.displayName.localeCompare(b.displayName, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        })
+      },
+    }),
   ],
   right: [
     Component.Graph(),
@@ -57,7 +80,30 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Search(), grow: true },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        // Favorites from Logseq config + journals at top
+        // Favorites, journals, then pages folder
+        const priority = ["favorites", "journals", "pages"]
+        const aIdx = priority.indexOf(a.slugSegment)
+        const bIdx = priority.indexOf(b.slugSegment)
+
+        // Both are priority items - sort by priority order
+        if (aIdx !== -1 && bIdx !== -1) return aIdx - bIdx
+        // Only a is priority - a comes first
+        if (aIdx !== -1) return -1
+        // Only b is priority - b comes first
+        if (bIdx !== -1) return 1
+
+        // Neither is priority - folders first, then alphabetical
+        if (a.isFolder && !b.isFolder) return -1
+        if (!a.isFolder && b.isFolder) return 1
+        return a.displayName.localeCompare(b.displayName, undefined, {
+          numeric: true,
+          sensitivity: "base",
+        })
+      },
+    }),
   ],
   right: [
     Component.Graph(),

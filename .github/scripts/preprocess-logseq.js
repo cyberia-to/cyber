@@ -1418,6 +1418,104 @@ title: "Journal"
   console.log(`Created journal index with ${entries.length} entries`);
 }
 
+const FAVORITES_OUTPUT = path.join(OUTPUT_DIR, 'favorites');
+const LOGSEQ_CONFIG = path.join(__dirname, '../../logseq/config.edn');
+
+/**
+ * Extract favorites from logseq/config.edn
+ */
+function getFavorites() {
+  if (!fs.existsSync(LOGSEQ_CONFIG)) {
+    console.log('No logseq/config.edn found, skipping favorites');
+    return [];
+  }
+
+  const config = fs.readFileSync(LOGSEQ_CONFIG, 'utf8');
+  const match = config.match(/:favorites\s+\[([\s\S]*?)\]/);
+  if (!match) {
+    console.log('No favorites found in config.edn');
+    return [];
+  }
+
+  const items = [];
+  const itemRegex = /"([^"]+)"/g;
+  let itemMatch;
+  while ((itemMatch = itemRegex.exec(match[1])) !== null) {
+    items.push(itemMatch[1]);
+  }
+
+  return items;
+}
+
+/**
+ * Process favorites - create favorites folder with embed files
+ */
+function processFavorites() {
+  const favorites = getFavorites();
+  if (favorites.length === 0) return { count: 0 };
+
+  // Create favorites directory
+  fs.mkdirSync(FAVORITES_OUTPUT, { recursive: true });
+
+  console.log(`\nProcessing ${favorites.length} favorites...`);
+
+  let created = 0;
+  const validFavorites = [];
+
+  for (const fav of favorites) {
+    // Convert to slug (lowercase, spaces to hyphens)
+    const slug = fav.toLowerCase()
+      .replace(/[🫦]/g, '') // Remove emojis
+      .trim()
+      .replace(/\s+/g, '-');
+
+    // Check if the source page exists (in pages/ folder)
+    const sourcePath = path.join(OUTPUT_DIR, 'pages', `${slug}.md`);
+    if (!fs.existsSync(sourcePath)) {
+      // Try with underscores (old Logseq format)
+      const altSlug = slug.replace(/-/g, '_');
+      const altPath = path.join(OUTPUT_DIR, 'pages', `${altSlug}.md`);
+      if (!fs.existsSync(altPath)) {
+        console.log(`  Favorite "${fav}" (${slug}) not found, skipping`);
+        continue;
+      }
+    }
+
+    validFavorites.push({ name: fav, slug });
+
+    // Create embed file for this favorite
+    const favPath = path.join(FAVORITES_OUTPUT, `${slug}.md`);
+    const icon = PAGE_INDEX.find(p => p.nameLower === slug)?.properties?.icon || '';
+
+    fs.writeFileSync(favPath, `---
+title: "${icon ? icon + ' ' : ''}${fav}"
+---
+
+![[pages/${slug}]]
+`);
+    created++;
+  }
+
+  // Create favorites index
+  if (validFavorites.length > 0) {
+    let indexContent = `---
+title: "⭐ Favorites"
+---
+
+`;
+    for (const { name, slug } of validFavorites) {
+      const icon = PAGE_INDEX.find(p => p.nameLower === slug)?.properties?.icon || '';
+      // Link directly to the page in pages/ folder
+      indexContent += `- [[pages/${slug}|${icon ? icon + ' ' : ''}${name}]]\n`;
+    }
+
+    fs.writeFileSync(path.join(FAVORITES_OUTPUT, 'index.md'), indexContent);
+  }
+
+  console.log(`Created ${created} favorite pages`);
+  return { count: created };
+}
+
 /**
  * Main processing function
  */
@@ -1442,12 +1540,17 @@ function main() {
 
   console.log(`Processing ${files.length} markdown files from pages/...`);
 
+  // Create "pages" subfolder for all regular pages
+  const PAGES_OUTPUT = path.join(OUTPUT_DIR, 'pages');
+  fs.mkdirSync(PAGES_OUTPUT, { recursive: true });
+
   let skipped = 0;
   for (const file of files) {
     const sourcePath = path.join(SOURCE_DIR, file);
     // Convert namespace files (oracle___ask.md) to folder structure (oracle/ask.md)
     const outputFile = file.replace(/___/g, '/');
-    const outputPath = path.join(OUTPUT_DIR, outputFile);
+    // Put all pages in the "pages" subfolder
+    const outputPath = path.join(PAGES_OUTPUT, outputFile);
 
     try {
       const result = processFile(sourcePath, outputPath);
@@ -1479,21 +1582,33 @@ function main() {
     createJournalIndex(journalResult.entries);
   }
 
-  // Create index.md pointing to cyber.md if it doesn't exist
+  // Process favorites from logseq/config.edn
+  processFavorites();
+
+  // Create index.md pointing to pages/cyber.md if it doesn't exist
   const indexPath = path.join(OUTPUT_DIR, 'index.md');
   if (!fs.existsSync(indexPath)) {
-    const cyberPath = path.join(OUTPUT_DIR, 'cyber.md');
+    const cyberPath = path.join(OUTPUT_DIR, 'pages/cyber.md');
     if (fs.existsSync(cyberPath)) {
       // Create index that redirects to cyber
       fs.writeFileSync(indexPath, `---
 title: "Cyber"
 ---
 
-![[cyber]]
+![[pages/cyber]]
 `);
-      console.log('\nCreated index.md pointing to cyber.md');
+      console.log('\nCreated index.md pointing to pages/cyber.md');
     }
   }
+
+  // Create pages/index.md listing all pages
+  const pagesIndexPath = path.join(OUTPUT_DIR, 'pages/index.md');
+  fs.writeFileSync(pagesIndexPath, `---
+title: "📚 All Pages"
+---
+
+All pages in the knowledge base.
+`);
 
   // Create stub pages for missing linked pages
   createStubPages(OUTPUT_DIR);
