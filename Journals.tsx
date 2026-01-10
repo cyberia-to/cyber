@@ -2,6 +2,11 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { resolveRelative } from "../util/path"
 import { classNames } from "../util/lang"
 
+// @ts-ignore
+import style from "./styles/journals.scss"
+// @ts-ignore
+import script from "./scripts/journals.inline"
+
 interface Options {
   title: string
   limit: number
@@ -17,7 +22,11 @@ const defaultOptions: Options = {
 export default ((userOpts?: Partial<Options>) => {
   const opts = { ...defaultOptions, ...userOpts }
 
-  const Journals: QuartzComponent = ({ allFiles, fileData, displayClass }: QuartzComponentProps) => {
+  const Journals: QuartzComponent = ({
+    allFiles,
+    fileData,
+    displayClass,
+  }: QuartzComponentProps) => {
     // Filter journal entries
     const journals = allFiles
       .filter((f) => f.slug?.startsWith("journals/") && f.slug !== "journals/index")
@@ -28,16 +37,22 @@ export default ((userOpts?: Partial<Options>) => {
       })
       .slice(0, opts.limit)
 
-    const journalsLink = resolveRelative(fileData.slug!, "journals/")
+    // Get all slugs for proper folder-page detection in resolveRelative
+    const allSlugs = allFiles.map((f) => f.slug!)
+    const journalsLink = resolveRelative(fileData.slug!, "journals", allSlugs) + "/"
 
     return (
-      <div class={classNames(displayClass, "journals")} data-collapsed={opts.defaultCollapsed}>
-        <button type="button" class="journals-toggle" aria-expanded={!opts.defaultCollapsed}>
-          <h3>
-            <a href={journalsLink} class="internal" onClick="event.stopPropagation()">
+      <div class={classNames(displayClass, "journals")}>
+        <button
+          type="button"
+          class="journals-toggle"
+          aria-expanded={!opts.defaultCollapsed}
+        >
+          <h2>
+            <a href={journalsLink} class="internal">
               {opts.title}
             </a>
-          </h3>
+          </h2>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -55,13 +70,13 @@ export default ((userOpts?: Partial<Options>) => {
         </button>
         <div class="journals-content">
           {journals.length > 0 ? (
-            <ul class="journal-list">
+            <ul>
               {journals.map((journal) => {
                 const title = journal.frontmatter?.title ?? journal.slug
-                const link = resolveRelative(fileData.slug!, journal.slug!)
+                const link = resolveRelative(fileData.slug!, journal.slug!, allSlugs)
                 return (
                   <li>
-                    <a href={link} class="internal">
+                    <a href={link} class="internal" data-for={journal.slug}>
                       {title}
                     </a>
                   </li>
@@ -83,87 +98,8 @@ export default ((userOpts?: Partial<Options>) => {
     )
   }
 
-  Journals.css = `
-    .journals {
-      margin-top: 1rem;
-    }
-    .journals-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      text-align: left;
-    }
-    .journals-toggle h3 {
-      margin: 0;
-      font-size: 1rem;
-    }
-    .journals-toggle h3 a {
-      color: var(--dark);
-      font-weight: 600;
-    }
-    .journals-toggle h3 a:hover {
-      color: var(--secondary);
-    }
-    .journals-toggle .fold {
-      transition: transform 0.3s ease;
-      color: var(--dark);
-    }
-    .journals[data-collapsed="true"] .journals-toggle .fold {
-      transform: rotate(-90deg);
-    }
-    .journals-content {
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-      overflow: hidden;
-    }
-    .journals[data-collapsed="true"] .journals-content {
-      max-height: 0;
-      opacity: 0;
-    }
-    .journals[data-collapsed="false"] .journals-content {
-      max-height: 500px;
-      opacity: 1;
-    }
-    .journal-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0;
-    }
-    .journal-list li {
-      margin: 0.25rem 0;
-      font-size: 0.9rem;
-    }
-    .journal-list a {
-      color: var(--darkgray);
-    }
-    .journal-list a:hover {
-      color: var(--secondary);
-    }
-    .journal-empty {
-      color: var(--gray);
-      font-size: 0.85rem;
-    }
-    .journal-see-more {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-    }
-  `
-
-  Journals.afterDOMLoaded = `
-    document.querySelectorAll('.journals-toggle').forEach(button => {
-      button.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return; // Don't toggle if clicking the link
-        const journals = button.closest('.journals');
-        const isCollapsed = journals.getAttribute('data-collapsed') === 'true';
-        journals.setAttribute('data-collapsed', !isCollapsed);
-        button.setAttribute('aria-expanded', isCollapsed);
-      });
-    });
-  `
+  Journals.css = style
+  Journals.afterDOMLoaded = script
 
   return Journals
 }) satisfies QuartzComponentConstructor

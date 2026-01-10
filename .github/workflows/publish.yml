@@ -43,6 +43,12 @@ jobs:
           cp SidebarToggle.tsx quartz-build/quartz/components/SidebarToggle.tsx
           cp Journals.tsx quartz-build/quartz/components/Journals.tsx
           cp components-index.ts quartz-build/quartz/components/index.ts
+          # Copy custom component styles
+          cp styles/favorites.scss quartz-build/quartz/components/styles/favorites.scss
+          cp styles/journals.scss quartz-build/quartz/components/styles/journals.scss
+          # Copy custom component scripts
+          cp scripts/favorites.inline.ts quartz-build/quartz/components/scripts/favorites.inline.ts
+          cp scripts/journals.inline.ts quartz-build/quartz/components/scripts/journals.inline.ts
           # Copy fixed SPA navigation (same-page click handling)
           cp spa.inline.ts quartz-build/quartz/components/scripts/spa.inline.ts
           # Copy fixed path utilities (for transcluded content link resolution)

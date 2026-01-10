@@ -15,6 +15,20 @@ copy-config:
 	cp quartz.layout.ts quartz-build/
 	cp custom.scss quartz-build/quartz/styles/
 	cp path.ts quartz-build/quartz/util/
+	# Copy custom components
+	cp Favorites.tsx quartz-build/quartz/components/
+	cp Journals.tsx quartz-build/quartz/components/
+	cp PageTitle.tsx quartz-build/quartz/components/
+	cp ContentMeta.tsx quartz-build/quartz/components/
+	cp renderPage.tsx quartz-build/quartz/components/
+	cp SidebarToggle.tsx quartz-build/quartz/components/
+	cp components-index.ts quartz-build/quartz/components/index.ts
+	cp spa.inline.ts quartz-build/quartz/components/scripts/
+	# Copy custom component styles and scripts
+	cp styles/favorites.scss quartz-build/quartz/components/styles/
+	cp styles/journals.scss quartz-build/quartz/components/styles/
+	cp scripts/favorites.inline.ts quartz-build/quartz/components/scripts/
+	cp scripts/journals.inline.ts quartz-build/quartz/components/scripts/
 
 # Preprocess Logseq content to Quartz format and sync to quartz-build
 preprocess:

@@ -373,14 +373,18 @@ function evaluateQuery(expr) {
   // Handle (page [[name]]) - exact page match
   const pageMatch = expr.match(/^\(page\s+\[\[([^\]]+)\]\]\)$/i);
   if (pageMatch) {
-    const pageName = pageMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let pageName = pageMatch[1].toLowerCase();
+    pageName = pageName.replace(/^pages\//, '');
     return PAGE_INDEX.filter(p => p.nameLower === pageName);
   }
 
   // Handle (page-tags [[tag]])
   const pageTagsMatch = expr.match(/^\(page-tags\s+\[\[([^\]]+)\]\]\)$/i);
   if (pageTagsMatch) {
-    const tag = pageTagsMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let tag = pageTagsMatch[1].toLowerCase();
+    tag = tag.replace(/^pages\//, '');
     return PAGE_INDEX.filter(p => p.tags.includes(tag));
   }
 
@@ -416,18 +420,23 @@ function evaluateQuery(expr) {
   // Handle (namespace [[x]])
   const namespaceMatch = expr.match(/^\(namespace\s+\[\[([^\]]+)\]\]\)$/i);
   if (namespaceMatch) {
-    const ns = namespaceMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let ns = namespaceMatch[1].toLowerCase();
+    ns = ns.replace(/^pages\//, '');
     return PAGE_INDEX.filter(p => p.namespace && p.namespace.toLowerCase() === ns);
   }
 
   // Handle [[page]] reference (pages that contain this link or have this name)
   const pageRefMatch = expr.match(/^\[\[([^\]]+)\]\]$/);
   if (pageRefMatch) {
-    const pageName = pageRefMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let pageName = pageRefMatch[1].toLowerCase();
+    pageName = pageName.replace(/^pages\//, '');
+    const originalName = pageRefMatch[1].replace(/^pages\//, '');
     return PAGE_INDEX.filter(p =>
       p.nameLower === pageName ||
       p.content.includes(`[[${pageName}]]`) ||
-      p.content.includes(`[[${pageRefMatch[1]}]]`)
+      p.content.includes(`[[${originalName}]]`)
     );
   }
 
@@ -603,7 +612,7 @@ function queryResultsToMarkdown(results, queryStr, columns = null, sortBy = null
   const links = results.map(p => {
     const icon = p.properties.icon || '';
     const title = p.properties.title || p.name.replace(/_/g, ' ');
-    return `- [[${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
+    return `- [[pages/${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
   });
 
   return links.join('\n');
@@ -642,7 +651,7 @@ function queryResultsToTable(results, columns) {
       if (col === 'page') {
         const icon = p.properties.icon || '';
         const title = p.properties.title || p.name.replace(/_/g, ' ');
-        return `[[${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
+        return `[[pages/${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
       } else if (col === 'block') {
         return ''; // Block content not available in static export
       } else if (col === 'tags') {
@@ -713,9 +722,25 @@ function convertLogseqTables(content) {
       const indent = tableMatch[1] || '';
       const tableRows = [];
 
-      // Collect consecutive table rows
+      // Collect table rows, skipping blank lines between them
       while (i < lines.length) {
         const currentLine = lines[i];
+
+        // Skip blank lines (they might separate table rows in Logseq)
+        if (currentLine.trim() === '') {
+          // Look ahead to see if there's another table row
+          let nextIdx = i + 1;
+          while (nextIdx < lines.length && lines[nextIdx].trim() === '') {
+            nextIdx++;
+          }
+          if (nextIdx < lines.length && lines[nextIdx].match(/^(\s*)(?:-\s*)?\|(.+)\|(\s*)$/)) {
+            i++;
+            continue;
+          } else {
+            break;
+          }
+        }
+
         // Match table row: optional indent, optional list marker, pipe content
         const rowMatch = currentLine.match(/^(\s*)(?:-\s*)?\|(.+)\|(\s*)$/);
 
@@ -821,6 +846,29 @@ function convertLogseqSyntax(content) {
 
   // Convert {{embed [[page]]}} to ![[page]] (Quartz transclusion)
   result = result.replace(/\{\{embed\s+\[\[([^\]]+)\]\]\s*\}\}/gi, '![[$1]]');
+
+  // Add pages/ prefix to wikilinks that don't already have a folder prefix
+  // This is needed because all pages are now in the pages/ folder
+  // Skip links that already have a path (journals/, favorites/, pages/, or any folder with /)
+  // Also skip external links (http://, https://) and asset links (starting with /)
+  const prefixWikilink = (match, embed, content) => {
+    // Check if link already has a path prefix or is a special link
+    if (content.includes('/') || content.startsWith('http') || content.startsWith('#')) {
+      return match; // Keep as-is
+    }
+    // Add pages/ prefix
+    return (embed || '') + '[[pages/' + content + ']]';
+  };
+
+  // Handle both regular wikilinks [[page]] and embeds ![[page]]
+  result = result.replace(/(!\s*)?\[\[([^\]|]+)(\|[^\]]*)?\]\]/g, (match, embed, content, alias) => {
+    // Check if link already has a path prefix or is a special link
+    if (content.includes('/') || content.startsWith('http') || content.startsWith('#')) {
+      return match; // Keep as-is
+    }
+    // Add pages/ prefix, preserve alias if present
+    return (embed || '') + '[[pages/' + content + (alias || '') + ']]';
+  });
 
   // Convert {{embed ((block-id))}} to placeholder (block UUIDs can't be resolved without Logseq)
   // Use single-line callout to avoid indentation issues when inside list items
@@ -930,6 +978,64 @@ function processFile(sourcePath, outputPath) {
   // Convert Logseq-specific syntax
   let convertedContent = convertLogseqSyntax(remainingContent);
 
+  // Convert tabs to spaces to prevent markdown from treating indented content as code blocks
+  // Logseq uses tabs for indentation, but markdown interprets tabs as code blocks
+  convertedContent = convertedContent.replace(/\t/g, '  ');
+
+  // Fix list items that have leading spaces after headings
+  // In Logseq, items under headings are indented by one tab (now 2 spaces), but in markdown they shouldn't be
+  // We need to "dedent" all content under headings by one level (2 spaces)
+  const lines = convertedContent.split('\n');
+  const fixedLines = [];
+  let inListSection = false;
+  let inTable = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    // Headings mark the start of a new section - content after should be dedented
+    if (line.match(/^#{1,6}\s/)) {
+      inListSection = true;
+      inTable = false;
+      fixedLines.push(line);
+      continue;
+    }
+
+    // Check if line is blank (only whitespace)
+    if (line.trim() === '') {
+      // If we're in a table context, skip blank lines between table rows
+      if (inTable) {
+        // Check if next non-blank line is a table row
+        let nextLineIdx = i + 1;
+        while (nextLineIdx < lines.length && lines[nextLineIdx].trim() === '') {
+          nextLineIdx++;
+        }
+        if (nextLineIdx < lines.length && lines[nextLineIdx].trim().startsWith('|')) {
+          // Skip this blank line - don't add it
+          continue;
+        }
+      }
+      fixedLines.push(line);
+      continue;
+    }
+
+    // Track table context
+    if (line.trim().startsWith('|')) {
+      inTable = true;
+    } else {
+      inTable = false;
+    }
+
+    // In a list section, remove one level of indentation (2 spaces) from lines that have it
+    if (inListSection && line.startsWith('  ')) {
+      line = line.slice(2);
+    }
+
+    fixedLines.push(line);
+  }
+
+  convertedContent = fixedLines.join('\n');
+
   // Fix asset paths based on file depth
   // Quartz creates folder/index.html for each .md file, so we need to go up one more level
   // Root file: content/page.md → public/page/index.html → ../assets/ (up from page/, into assets/)
@@ -991,6 +1097,7 @@ function copyDirectory(source, destination) {
 
 /**
  * Extract all wikilinks from content
+ * Returns links normalized to be relative (strips pages/ prefix since stub pages go in pages folder)
  */
 function extractWikilinks(content) {
   const links = new Set();
@@ -1003,6 +1110,10 @@ function extractWikilinks(content) {
     if (link.startsWith('http') || link.startsWith('#') || link.startsWith('!')) continue;
     // Clean up the link
     link = link.replace(/^\.\//, ''); // Remove leading ./
+    // Strip pages/ prefix since we create stubs in the pages folder
+    link = link.replace(/^pages\//, '');
+    // Skip links to other special folders (journals, favorites, assets)
+    if (link.startsWith('journals/') || link.startsWith('favorites/') || link.startsWith('assets/')) continue;
     links.add(link);
   }
   return links;
@@ -1201,6 +1312,39 @@ function processJournalFile(sourcePath, outputPath) {
   // Convert Logseq-specific syntax
   let convertedContent = convertLogseqSyntax(remainingContent);
 
+  // Convert tabs to spaces to prevent markdown from treating indented content as code blocks
+  convertedContent = convertedContent.replace(/\t/g, '  ');
+
+  // Fix list items that have leading spaces (same as in processFile)
+  // Journal content is at top level, so we start in "dedent mode"
+  const lines = convertedContent.split('\n');
+  const fixedLines = [];
+  let inListSection = true; // Start as true since journal content is at top level
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i];
+
+    if (line.match(/^#{1,6}\s/)) {
+      inListSection = true;
+      fixedLines.push(line);
+      continue;
+    }
+
+    if (line.trim() === '') {
+      fixedLines.push(line);
+      continue;
+    }
+
+    // Remove one level of indentation (2 spaces) from lines that have it
+    if (inListSection && line.startsWith('  ')) {
+      line = line.slice(2);
+    }
+
+    fixedLines.push(line);
+  }
+
+  convertedContent = fixedLines.join('\n');
+
   // Fix asset paths (journals are one level deep: journals/2024-08-16.md)
   convertedContent = convertedContent.replace(/\]?\(\.\.\/assets\//g, (match) => {
     const prefix = match.startsWith('](') ? '](' : '(';
@@ -1219,7 +1363,7 @@ function processJournalFile(sourcePath, outputPath) {
   // Write output file
   fs.writeFileSync(outputPath, finalContent);
 
-  return { published: true, date: dateInfo.date };
+  return { published: true, date: dateInfo.date, title: dateInfo.title, content: convertedContent };
 }
 
 /**
@@ -1255,7 +1399,9 @@ function processJournals() {
         processed++;
         entries.push({
           date: result.date,
+          title: result.title,
           filename: outputFile.replace('.md', ''),
+          content: result.content,
         });
       } else {
         skipped++;
@@ -1283,62 +1429,128 @@ function createJournalIndex(entries) {
   // Sort entries by date (newest first)
   entries.sort((a, b) => b.date.localeCompare(a.date));
 
-  // Group by year and month
-  const grouped = {};
-  for (const entry of entries) {
-    const [year, month] = entry.date.split('-');
-    const monthName = new Date(parseInt(year), parseInt(month) - 1, 1)
-      .toLocaleDateString('en-US', { month: 'long' });
-    const key = `${year}-${month}`;
-
-    if (!grouped[key]) {
-      grouped[key] = {
-        year,
-        month: monthName,
-        entries: []
-      };
-    }
-    grouped[key].entries.push(entry);
-  }
-
-  // Build index content
+  // Build index content - Logseq style with full content under each date
   let content = `---
 title: "Journal"
 ---
 
-Daily notes and journal entries.
-
 `;
 
-  // Add entries grouped by month
-  const sortedKeys = Object.keys(grouped).sort().reverse();
-  let currentYear = null;
+  // Show each entry with date header and full content (like Logseq)
+  for (const entry of entries) {
+    // Date header as a link to the individual journal page
+    content += `## [[journals/${entry.filename}|${entry.title}]]\n\n`;
 
-  for (const key of sortedKeys) {
-    const group = grouped[key];
-
-    // Add year header if changed
-    if (group.year !== currentYear) {
-      content += `## ${group.year}\n\n`;
-      currentYear = group.year;
+    // Add the journal content directly
+    if (entry.content && entry.content.trim()) {
+      content += entry.content.trim() + '\n\n';
     }
 
-    content += `### ${group.month}\n\n`;
-
-    for (const entry of group.entries) {
-      const dateObj = new Date(entry.date + 'T00:00:00');
-      const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
-      const dayNum = dateObj.getDate();
-      content += `- [[journals/${entry.filename}|${dayName} ${dayNum}]]\n`;
-    }
-
-    content += '\n';
+    content += '---\n\n';
   }
 
   // Write index file
   const indexPath = path.join(JOURNALS_OUTPUT, 'index.md');
   fs.writeFileSync(indexPath, content);
   console.log(`Created journal index with ${entries.length} entries`);
+}
+
+const FAVORITES_OUTPUT = path.join(OUTPUT_DIR, 'favorites');
+const LOGSEQ_CONFIG = path.join(__dirname, '../../logseq/config.edn');
+
+/**
+ * Extract favorites from logseq/config.edn
+ */
+function getFavorites() {
+  if (!fs.existsSync(LOGSEQ_CONFIG)) {
+    console.log('No logseq/config.edn found, skipping favorites');
+    return [];
+  }
+
+  const config = fs.readFileSync(LOGSEQ_CONFIG, 'utf8');
+  const match = config.match(/:favorites\s+\[([\s\S]*?)\]/);
+  if (!match) {
+    console.log('No favorites found in config.edn');
+    return [];
+  }
+
+  const items = [];
+  const itemRegex = /"([^"]+)"/g;
+  let itemMatch;
+  while ((itemMatch = itemRegex.exec(match[1])) !== null) {
+    items.push(itemMatch[1]);
+  }
+
+  return items;
+}
+
+/**
+ * Process favorites - create favorites folder with embed files
+ */
+function processFavorites() {
+  const favorites = getFavorites();
+  if (favorites.length === 0) return { count: 0 };
+
+  // Create favorites directory
+  fs.mkdirSync(FAVORITES_OUTPUT, { recursive: true });
+
+  console.log(`\nProcessing ${favorites.length} favorites...`);
+
+  let created = 0;
+  const validFavorites = [];
+
+  for (const fav of favorites) {
+    // Convert to slug (lowercase, spaces to hyphens)
+    const slug = fav.toLowerCase()
+      .replace(/[🫦]/g, '') // Remove emojis
+      .trim()
+      .replace(/\s+/g, '-');
+
+    // Check if the source page exists (in pages/ folder)
+    const sourcePath = path.join(OUTPUT_DIR, 'pages', `${slug}.md`);
+    if (!fs.existsSync(sourcePath)) {
+      // Try with underscores (old Logseq format)
+      const altSlug = slug.replace(/-/g, '_');
+      const altPath = path.join(OUTPUT_DIR, 'pages', `${altSlug}.md`);
+      if (!fs.existsSync(altPath)) {
+        console.log(`  Favorite "${fav}" (${slug}) not found, skipping`);
+        continue;
+      }
+    }
+
+    validFavorites.push({ name: fav, slug });
+
+    // Create embed file for this favorite
+    const favPath = path.join(FAVORITES_OUTPUT, `${slug}.md`);
+    const icon = PAGE_INDEX.find(p => p.nameLower === slug)?.properties?.icon || '';
+
+    fs.writeFileSync(favPath, `---
+title: "${icon ? icon + ' ' : ''}${fav}"
+---
+
+![[pages/${slug}]]
+`);
+    created++;
+  }
+
+  // Create favorites index
+  if (validFavorites.length > 0) {
+    let indexContent = `---
+title: "⭐ Favorites"
+---
+
+`;
+    for (const { name, slug } of validFavorites) {
+      const icon = PAGE_INDEX.find(p => p.nameLower === slug)?.properties?.icon || '';
+      // Link directly to the page in pages/ folder
+      indexContent += `- [[pages/${slug}|${icon ? icon + ' ' : ''}${name}]]\n`;
+    }
+
+    fs.writeFileSync(path.join(FAVORITES_OUTPUT, 'index.md'), indexContent);
+  }
+
+  console.log(`Created ${created} favorite pages`);
+  return { count: created };
 }
 
 /**
@@ -1365,12 +1577,17 @@ function main() {
 
   console.log(`Processing ${files.length} markdown files from pages/...`);
 
+  // Create "pages" subfolder for all regular pages
+  const PAGES_OUTPUT = path.join(OUTPUT_DIR, 'pages');
+  fs.mkdirSync(PAGES_OUTPUT, { recursive: true });
+
   let skipped = 0;
   for (const file of files) {
     const sourcePath = path.join(SOURCE_DIR, file);
     // Convert namespace files (oracle___ask.md) to folder structure (oracle/ask.md)
     const outputFile = file.replace(/___/g, '/');
-    const outputPath = path.join(OUTPUT_DIR, outputFile);
+    // Put all pages in the "pages" subfolder
+    const outputPath = path.join(PAGES_OUTPUT, outputFile);
 
     try {
       const result = processFile(sourcePath, outputPath);
@@ -1402,24 +1619,36 @@ function main() {
     createJournalIndex(journalResult.entries);
   }
 
-  // Create index.md pointing to cyber.md if it doesn't exist
+  // Process favorites from logseq/config.edn
+  processFavorites();
+
+  // Create index.md pointing to pages/cyber.md if it doesn't exist
   const indexPath = path.join(OUTPUT_DIR, 'index.md');
   if (!fs.existsSync(indexPath)) {
-    const cyberPath = path.join(OUTPUT_DIR, 'cyber.md');
+    const cyberPath = path.join(OUTPUT_DIR, 'pages/cyber.md');
     if (fs.existsSync(cyberPath)) {
       // Create index that redirects to cyber
       fs.writeFileSync(indexPath, `---
 title: "Cyber"
 ---
 
-![[cyber]]
+![[pages/cyber]]
 `);
-      console.log('\nCreated index.md pointing to cyber.md');
+      console.log('\nCreated index.md pointing to pages/cyber.md');
     }
   }
 
-  // Create stub pages for missing linked pages
-  createStubPages(OUTPUT_DIR);
+  // Create pages/index.md listing all pages
+  const pagesIndexPath = path.join(OUTPUT_DIR, 'pages/index.md');
+  fs.writeFileSync(pagesIndexPath, `---
+title: "📚 All Pages"
+---
+
+All pages in the knowledge base.
+`);
+
+  // Create stub pages for missing linked pages (in the pages folder)
+  createStubPages(PAGES_OUTPUT);
 
   console.log('\nPreprocessing complete!');
   console.log(`Output directory: ${OUTPUT_DIR}`);
