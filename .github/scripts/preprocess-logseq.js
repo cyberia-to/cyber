@@ -838,6 +838,29 @@ function convertLogseqSyntax(content) {
   // Convert {{embed [[page]]}} to ![[page]] (Quartz transclusion)
   result = result.replace(/\{\{embed\s+\[\[([^\]]+)\]\]\s*\}\}/gi, '![[$1]]');
 
+  // Add pages/ prefix to wikilinks that don't already have a folder prefix
+  // This is needed because all pages are now in the pages/ folder
+  // Skip links that already have a path (journals/, favorites/, pages/, or any folder with /)
+  // Also skip external links (http://, https://) and asset links (starting with /)
+  const prefixWikilink = (match, embed, content) => {
+    // Check if link already has a path prefix or is a special link
+    if (content.includes('/') || content.startsWith('http') || content.startsWith('#')) {
+      return match; // Keep as-is
+    }
+    // Add pages/ prefix
+    return (embed || '') + '[[pages/' + content + ']]';
+  };
+
+  // Handle both regular wikilinks [[page]] and embeds ![[page]]
+  result = result.replace(/(!\s*)?\[\[([^\]|]+)(\|[^\]]*)?\]\]/g, (match, embed, content, alias) => {
+    // Check if link already has a path prefix or is a special link
+    if (content.includes('/') || content.startsWith('http') || content.startsWith('#')) {
+      return match; // Keep as-is
+    }
+    // Add pages/ prefix, preserve alias if present
+    return (embed || '') + '[[pages/' + content + (alias || '') + ']]';
+  });
+
   // Convert {{embed ((block-id))}} to placeholder (block UUIDs can't be resolved without Logseq)
   // Use single-line callout to avoid indentation issues when inside list items
   result = result.replace(/\{\{embed\s+\(\(([^)]+)\)\)\s*\}\}/gi, '*Block embed - view in Logseq*');
@@ -1065,6 +1088,7 @@ function copyDirectory(source, destination) {
 
 /**
  * Extract all wikilinks from content
+ * Returns links normalized to be relative (strips pages/ prefix since stub pages go in pages folder)
  */
 function extractWikilinks(content) {
   const links = new Set();
@@ -1077,6 +1101,10 @@ function extractWikilinks(content) {
     if (link.startsWith('http') || link.startsWith('#') || link.startsWith('!')) continue;
     // Clean up the link
     link = link.replace(/^\.\//, ''); // Remove leading ./
+    // Strip pages/ prefix since we create stubs in the pages folder
+    link = link.replace(/^pages\//, '');
+    // Skip links to other special folders (journals, favorites, assets)
+    if (link.startsWith('journals/') || link.startsWith('favorites/') || link.startsWith('assets/')) continue;
     links.add(link);
   }
   return links;
