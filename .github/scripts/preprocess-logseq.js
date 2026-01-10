@@ -373,14 +373,18 @@ function evaluateQuery(expr) {
   // Handle (page [[name]]) - exact page match
   const pageMatch = expr.match(/^\(page\s+\[\[([^\]]+)\]\]\)$/i);
   if (pageMatch) {
-    const pageName = pageMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let pageName = pageMatch[1].toLowerCase();
+    pageName = pageName.replace(/^pages\//, '');
     return PAGE_INDEX.filter(p => p.nameLower === pageName);
   }
 
   // Handle (page-tags [[tag]])
   const pageTagsMatch = expr.match(/^\(page-tags\s+\[\[([^\]]+)\]\]\)$/i);
   if (pageTagsMatch) {
-    const tag = pageTagsMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let tag = pageTagsMatch[1].toLowerCase();
+    tag = tag.replace(/^pages\//, '');
     return PAGE_INDEX.filter(p => p.tags.includes(tag));
   }
 
@@ -416,18 +420,23 @@ function evaluateQuery(expr) {
   // Handle (namespace [[x]])
   const namespaceMatch = expr.match(/^\(namespace\s+\[\[([^\]]+)\]\]\)$/i);
   if (namespaceMatch) {
-    const ns = namespaceMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let ns = namespaceMatch[1].toLowerCase();
+    ns = ns.replace(/^pages\//, '');
     return PAGE_INDEX.filter(p => p.namespace && p.namespace.toLowerCase() === ns);
   }
 
   // Handle [[page]] reference (pages that contain this link or have this name)
   const pageRefMatch = expr.match(/^\[\[([^\]]+)\]\]$/);
   if (pageRefMatch) {
-    const pageName = pageRefMatch[1].toLowerCase();
+    // Strip pages/ prefix if present (added by wikilink transformation)
+    let pageName = pageRefMatch[1].toLowerCase();
+    pageName = pageName.replace(/^pages\//, '');
+    const originalName = pageRefMatch[1].replace(/^pages\//, '');
     return PAGE_INDEX.filter(p =>
       p.nameLower === pageName ||
       p.content.includes(`[[${pageName}]]`) ||
-      p.content.includes(`[[${pageRefMatch[1]}]]`)
+      p.content.includes(`[[${originalName}]]`)
     );
   }
 
@@ -603,7 +612,7 @@ function queryResultsToMarkdown(results, queryStr, columns = null, sortBy = null
   const links = results.map(p => {
     const icon = p.properties.icon || '';
     const title = p.properties.title || p.name.replace(/_/g, ' ');
-    return `- [[${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
+    return `- [[pages/${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
   });
 
   return links.join('\n');
@@ -642,7 +651,7 @@ function queryResultsToTable(results, columns) {
       if (col === 'page') {
         const icon = p.properties.icon || '';
         const title = p.properties.title || p.name.replace(/_/g, ' ');
-        return `[[${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
+        return `[[pages/${p.name}|${icon ? icon + ' ' : ''}${title}]]`;
       } else if (col === 'block') {
         return ''; // Block content not available in static export
       } else if (col === 'tags') {
