@@ -21,3 +21,7 @@ build/
 # Claude Code
 .claude/
 /logseq/version-files
+quartz-content-rust/
+
+# Rust build artifacts
+preprocessor/target/

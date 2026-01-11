@@ -1,9 +1,18 @@
-.PHONY: preprocess build serve dev clean kill copy-config
+.PHONY: preprocess build serve dev clean kill copy-config build-rust
 
 # Use node version from .node-version
 SHELL := /bin/bash
 NODE_VERSION := $(shell cat .node-version)
 NVM_USE := source $$HOME/.nvm/nvm.sh && nvm use $(NODE_VERSION)
+
+# Rust preprocessor binary
+RUST_PREPROCESSOR := preprocessor/target/release/logseq-to-quartz
+
+# Build Rust preprocessor if not exists
+$(RUST_PREPROCESSOR):
+	cd preprocessor && cargo build --release
+
+build-rust: $(RUST_PREPROCESSOR)
 
 # Kill any existing Quartz server on port 8080
 kill:
@@ -31,8 +40,8 @@ copy-config:
 	cp scripts/journals.inline.ts quartz-build/quartz/components/scripts/
 
 # Preprocess Logseq content to Quartz format and sync to quartz-build
-preprocess:
-	node .github/scripts/preprocess-logseq.js
+preprocess: $(RUST_PREPROCESSOR)
+	$(RUST_PREPROCESSOR) --input . --output quartz-content
 	rm -rf quartz-build/content
 	cp -r quartz-content quartz-build/content
 
