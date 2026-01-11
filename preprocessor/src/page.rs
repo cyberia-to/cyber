@@ -293,14 +293,20 @@ pub fn create_stubs(output_dir: &Path, page_index: &PageIndex) -> Result<usize> 
             continue;
         }
 
-        let stub_path = pages_dir.join(format!("{}.md", link));
+        // Sanitize link for filesystem
+        let safe_link = link.replace(['/', '\\', ':', '*', '?', '"', '<', '>', '|'], "_");
+
+        let stub_path = pages_dir.join(format!("{}.md", safe_link));
         if stub_path.exists() {
             continue;
         }
 
         // Create stub
         if let Some(parent) = stub_path.parent() {
-            fs::create_dir_all(parent)?;
+            if let Err(e) = fs::create_dir_all(parent) {
+                eprintln!("Failed to create dir for stub '{}': {}", link, e);
+                continue;
+            }
         }
 
         let title = link.replace('_', " ");
@@ -309,8 +315,9 @@ pub fn create_stubs(output_dir: &Path, page_index: &PageIndex) -> Result<usize> 
             title
         );
 
-        if fs::write(&stub_path, stub_content).is_ok() {
-            created += 1;
+        match fs::write(&stub_path, &stub_content) {
+            Ok(_) => created += 1,
+            Err(e) => eprintln!("Failed to write stub '{}': {}", stub_path.display(), e),
         }
     }
 

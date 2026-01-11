@@ -11,6 +11,9 @@ mod journals;
 mod page;
 mod query;
 
+#[cfg(test)]
+mod tests;
+
 use config::Config;
 
 #[derive(Parser, Debug)]

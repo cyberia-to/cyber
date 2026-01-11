@@ -1,4 +1,4 @@
-.PHONY: preprocess build serve dev clean kill copy-config build-rust
+.PHONY: preprocess build serve dev clean kill copy-config build-rust test
 
 # Use node version from .node-version
 SHELL := /bin/bash
@@ -41,7 +41,7 @@ copy-config:
 
 # Preprocess Logseq content to Quartz format and sync to quartz-build
 preprocess: $(RUST_PREPROCESSOR)
-	$(RUST_PREPROCESSOR) --input . --output quartz-content
+	$(RUST_PREPROCESSOR) --input . --output quartz-content --create-stubs
 	rm -rf quartz-build/content
 	cp -r quartz-content quartz-build/content
 
@@ -55,6 +55,10 @@ serve: kill copy-config
 
 # Full dev workflow: preprocess + serve
 dev: preprocess serve
+
+# Run preprocessor tests
+test:
+	cd preprocessor && cargo test
 
 # Clean generated content
 clean:

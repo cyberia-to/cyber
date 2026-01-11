@@ -25,3 +25,4 @@ quartz-content-rust/
 
 # Rust build artifacts
 preprocessor/target/
+quartz-content-test/
