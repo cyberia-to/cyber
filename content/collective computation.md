@@ -1,6 +1,0 @@
-- involves multiple agents or systems working together
-- to solve a problem or process data
-- applied in
-	- distributed computing
-	- swarm intelligence
-	- multi-agent systems

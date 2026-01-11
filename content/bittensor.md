@@ -1,1 +1,0 @@
-- original source of [[yuma]] [[cooperation]] mechanism

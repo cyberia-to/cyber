@@ -1,1 +1,0 @@
-- [[state]] of any [[vimputer]]

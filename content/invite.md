@@ -1,2 +1,0 @@
-- [[claim gift]]
-- [[release gift]]

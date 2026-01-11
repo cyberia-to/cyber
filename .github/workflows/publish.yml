@@ -1,3 +1,5 @@
+name: Publish to Netlify
+
 on:
   push:
     branches:
@@ -16,73 +18,37 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout publish-quartz
+        uses: actions/checkout@v4
         with:
-          node-version: 22
+          repository: cyberia-to/publish-quartz
+          path: publish-quartz
 
-      - name: Clone Quartz
-        run: |
-          git clone --depth 1 https://github.com/jackyzha0/quartz.git quartz-build
-          cd quartz-build && npm ci
-
-      - name: Preprocess Logseq content
-        run: node .github/scripts/preprocess-logseq.js
-
-      - name: Copy config files to Quartz
-        run: |
-          cp quartz.config.ts quartz-build/
-          cp quartz.layout.ts quartz-build/
-          # Copy custom CSS for Logseq-like styling
-          cp custom.scss quartz-build/quartz/styles/custom.scss
-          # Copy custom components
-          cp Favorites.tsx quartz-build/quartz/components/Favorites.tsx
-          cp PageTitle.tsx quartz-build/quartz/components/PageTitle.tsx
-          cp ContentMeta.tsx quartz-build/quartz/components/ContentMeta.tsx
-          cp renderPage.tsx quartz-build/quartz/components/renderPage.tsx
-          cp SidebarToggle.tsx quartz-build/quartz/components/SidebarToggle.tsx
-          cp Journals.tsx quartz-build/quartz/components/Journals.tsx
-          cp components-index.ts quartz-build/quartz/components/index.ts
-          # Copy custom component styles
-          cp styles/favorites.scss quartz-build/quartz/components/styles/favorites.scss
-          cp styles/journals.scss quartz-build/quartz/components/styles/journals.scss
-          # Copy custom component scripts
-          cp scripts/favorites.inline.ts quartz-build/quartz/components/scripts/favorites.inline.ts
-          cp scripts/journals.inline.ts quartz-build/quartz/components/scripts/journals.inline.ts
-          # Copy fixed SPA navigation (same-page click handling)
-          cp spa.inline.ts quartz-build/quartz/components/scripts/spa.inline.ts
-          # Copy fixed path utilities (for transcluded content link resolution)
-          cp path.ts quartz-build/quartz/util/path.ts
-          # Move preprocessed content to Quartz content directory
-          rm -rf quartz-build/content
-          mv quartz-content quartz-build/content
-
-      - name: Build Quartz
-        run: |
-          cd quartz-build
-          npx quartz build
+      - name: Build site
+        uses: ./publish-quartz
+        with:
+          graph-path: '.'
+          output-path: 'public'
 
       - name: Add nojekyll file
-        run: touch quartz-build/public/.nojekyll
+        run: touch public/.nojekyll
 
       - name: Copy logo
         run: |
-          mkdir -p quartz-build/public/static/img
-          cp assets/logo.png quartz-build/public/static/img/logo.png 2>/dev/null || true
-
-      - name: Set execute permissions for scripts
-        run: chmod +x ./.github/scripts/modify_html/*.sh
+          mkdir -p public/static/img
+          cp assets/logo.png public/static/img/logo.png 2>/dev/null || true
 
       - name: Add meta tags
         env:
-          BUILD_DIR: quartz-build/public
-        run: ./.github/scripts/modify_html/add_meta.sh
-
-      - name: Install Netlify CLI
-        run: npm install -g netlify-cli
+          BUILD_DIR: public
+        run: |
+          chmod +x ./.github/scripts/modify_html/*.sh
+          ./.github/scripts/modify_html/add_meta.sh
 
       - name: Deploy to Netlify
-        run: netlify deploy --prod --dir=quartz-build/public --message="Deployed with Quartz"
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --prod --dir=public --message="Deployed with publish-quartz"
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

@@ -1,2 +1,0 @@
-- active [[particle]] in [[cyb]]
-- [[from]] part of [[state transition]]

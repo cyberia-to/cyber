@@ -1,6 +1,0 @@
-- input
-	- text: name of call action
-	- icon: small optional picture
-	- emotion: color that robot feels
-	- action: what button does
-	- advisor:
