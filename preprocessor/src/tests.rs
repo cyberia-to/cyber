@@ -19,12 +19,34 @@ mod path_tests {
     }
 
     #[test]
-    fn test_wikilink_preserves_existing_path() {
-        let input = "See [[cyber/energy]] for details.";
+    fn test_wikilink_namespace_gets_prefix() {
+        let input = "See [[terrabyte/garden]] for details.";
         let result = content::transform(input, &empty_index());
         assert!(
-            result.contains("[[cyber/energy]]"),
-            "Should preserve existing path, got: {}",
+            result.contains("[[pages/terrabyte/garden]]"),
+            "Namespace pages should get pages/ prefix, got: {}",
+            result
+        );
+    }
+
+    #[test]
+    fn test_wikilink_preserves_pages_prefix() {
+        let input = "See [[pages/cyber]] for details.";
+        let result = content::transform(input, &empty_index());
+        assert!(
+            result.contains("[[pages/cyber]]"),
+            "Should preserve existing pages/ prefix, got: {}",
+            result
+        );
+    }
+
+    #[test]
+    fn test_wikilink_preserves_journals_prefix() {
+        let input = "See [[journals/2025-01-01]] for details.";
+        let result = content::transform(input, &empty_index());
+        assert!(
+            result.contains("[[journals/2025-01-01]]"),
+            "Should preserve journals/ prefix, got: {}",
             result
         );
     }

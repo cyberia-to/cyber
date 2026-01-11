@@ -39,6 +39,9 @@ lazy_static! {
     // Cloze
     static ref CLOZE_RE: Regex = Regex::new(r"\{\{cloze\s+([^\}]+)\}\}").unwrap();
 
+    // Hiccup/EDN syntax (Clojure-style [:tag ...] blocks)
+    static ref HICCUP_RE: Regex = Regex::new(r"(?s)\[:[\w.-]+(?:\s+\{[^}]*\})?\s+(?:\[[\s\S]*?\])+\]").unwrap();
+
     // Task markers
     static ref DONE_RE: Regex = Regex::new(r"(?m)^(\s*)-\s+DONE\s+").unwrap();
     static ref TODO_RE: Regex = Regex::new(r"(?m)^(\s*)-\s+TODO\s+").unwrap();
@@ -97,8 +100,14 @@ pub fn transform(content: &str, page_index: &PageIndex) -> String {
             let link = &caps[2];
             let alias = caps.get(3).map_or("", |m| m.as_str());
 
-            // Skip if already has path or is special
-            if link.contains('/') || link.starts_with("http") || link.starts_with('#') {
+            // Skip if already has pages/, journals/, favorites/, assets/ prefix or is special
+            if link.starts_with("pages/")
+                || link.starts_with("journals/")
+                || link.starts_with("favorites/")
+                || link.starts_with("assets/")
+                || link.starts_with("http")
+                || link.starts_with('#')
+            {
                 return format!("{}[[{}{}]]", embed, link, alias);
             }
 
@@ -141,6 +150,13 @@ pub fn transform(content: &str, page_index: &PageIndex) -> String {
 
     // Renderer placeholder
     result = RENDERER_RE.replace_all(&result, "`[renderer]`").to_string();
+
+    // Hiccup/EDN syntax - wrap in code block
+    result = HICCUP_RE
+        .replace_all(&result, |caps: &Captures| {
+            format!("```clojure\n{}\n```", &caps[0])
+        })
+        .to_string();
 
     // Cloze to highlight
     result = CLOZE_RE.replace_all(&result, "==$1==").to_string();
