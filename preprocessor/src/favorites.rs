@@ -56,7 +56,7 @@ pub fn process_favorites(
 
         // Add to index
         index_content.push_str(&format!(
-            "- [[favorites/{}|{}{})]\n",
+            "- [[favorites/{}|{}{}]]\n",
             slug,
             if icon.is_empty() { String::new() } else { format!("{} ", icon) },
             fav

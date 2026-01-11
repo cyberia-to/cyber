@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod path_tests {
     use crate::content;
-    use crate::page::{self, PageIndex};
+    use crate::page::PageIndex;
 
     fn empty_index() -> PageIndex {
         Vec::new()
@@ -187,6 +187,52 @@ mod frontmatter_tests {
 
         let fm = frontmatter::generate("test", &props, None);
         assert!(fm.contains("Test \\\"quoted\\\" page"));
+    }
+}
+
+#[cfg(test)]
+mod favorites_tests {
+    use std::fs;
+    use tempfile::tempdir;
+
+    #[test]
+    fn test_favorites_index_format() {
+        // Create temp directories
+        let temp = tempdir().unwrap();
+        let favorites_dir = temp.path().join("favorites");
+        let pages_dir = temp.path().join("pages");
+        fs::create_dir_all(&favorites_dir).unwrap();
+        fs::create_dir_all(&pages_dir).unwrap();
+
+        // Create a test page
+        fs::write(
+            pages_dir.join("test-page.md"),
+            "---\ntitle: Test\nicon: 🔵\n---\nContent",
+        ).unwrap();
+
+        // Create config.edn with favorites
+        let config_content = r#"{:favorites ["test-page"]}"#;
+        let config_path = temp.path().join("config.edn");
+        fs::write(&config_path, config_content).unwrap();
+
+        // Process favorites
+        let result = crate::favorites::process_favorites(&config_path, &favorites_dir, &pages_dir);
+        assert!(result.is_ok());
+
+        // Check index.md format
+        let index_content = fs::read_to_string(favorites_dir.join("index.md")).unwrap();
+
+        // Should have proper wikilink format with ]] not )]
+        assert!(
+            !index_content.contains(")]"),
+            "Index should not contain ')' in wikilinks, got: {}",
+            index_content
+        );
+        assert!(
+            index_content.contains("]]"),
+            "Index should contain proper ']]' closing, got: {}",
+            index_content
+        );
     }
 }
 
