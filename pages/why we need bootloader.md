@@ -1,4 +1,5 @@
 tags:: cyber
+
 - first of all [[superintelligence]] does not exist yet
 	- deploy such a thing requires enormous effort from smartest minds
 	- the scale and consequences of mistakes are nothign to compare with in our history
