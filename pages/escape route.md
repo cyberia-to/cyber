@@ -1,0 +1,25 @@
+tags:: war
+
+- # The Last Escape Route: Privacy Mining in Hostile Territories
+- If you're in Russia, Belarus, or any country where buying crypto is dangerous or impossible, there's only ONE way out: mine it yourself.
+- But not just any crypto. Your token must meet 2 critical criteria:
+	- ✅ CPU/GPU mineable (ASICs are hard to get and more traceable)
+	- ✅ Provably private (transparent chains = prison)
+- Surprisingly, only 9 (!) blockchains out of 1000+ qualify:
+	- 👑 [Monero](https://www.getmonero.org/) : [$XMR](https://x.com/search?q=%24XMR&src=cashtag_click)
+	- The undisputed queen. Battle-tested, liquid, impossible to trace
+- ## Fully programable alternatives:
+	- [Neptune cash](https://neptune.cash/) : [$NPT](https://x.com/search?q=%24NPT&src=cashtag_click) gpu minable, quantum resistan programable STARKS
+	- [Neptune](https://neptune.io/) : [$XNT](https://x.com/search?q=%24XNT&src=cashtag_click) fork of NPT
+	- [Dero](https://wiki.dero.io/) : [$DERO](https://x.com/search?q=%24DERO&src=cashtag_click) cpu minable, programmable FHE
+- ## Alternatives with private tokens:
+	- [Iron Fish](https://ironfish.network/): [$IRON](https://x.com/search?q=%24IRON&src=cashtag_click) gpu minable, zk-SNARKs, bridge to base
+	- [Tari](https://www.tari.com/) : [$XTM](https://x.com/search?q=%24XTM&src=cashtag_click) cpu and gpu minable, merged mining with  [$XMR](https://x.com/search?q=%24XMR&src=cashtag_click)
+	- [Zano](https://zano.org/) : [$ZANO](https://x.com/search?q=%24ZANO&src=cashtag_click) gpu minable, pos hybrid
+	- [Firo](https://firo.org/): [$FIRO](https://x.com/search?q=%24FIRO&src=cashtag_click) gpu minable, pos hybrid
+	- [Zephyr](https://zephyrprotocol.com/) : [$ZEPH](https://x.com/search?q=%24ZEPH&src=cashtag_click) cpu minable, stablecoin included
+-
+- This isn't investment advice. This is survival tech for people living under financial authoritarianism.
+- Full watchlist: [https://www.coingecko.com/en/portfolios/21801871](https://www.coingecko.com/en/portfolios/21801871)
+- Know more nonasic mineable blockchain that support strong privacy?
+- [Drop them below](https://x.com/mastercyb/status/2010293319939887108). This list could save someone's life.
