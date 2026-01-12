@@ -15,9 +15,12 @@ build/
 /node_modules
 /public
 /quartz-build
-/quartz-content
 /.quartz-cache
 
 # Claude Code
 .claude/
 /logseq/version-files
+
+# Temporary preprocessor test outputs
+quartz-content-test/
+quartz-content-rust/

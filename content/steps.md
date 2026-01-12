@@ -1,2 +1,0 @@
-alias:: blocks
-tags:: page

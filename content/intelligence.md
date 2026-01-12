@@ -1,3 +1,0 @@
-alias:: intelligent
-
-- TODO

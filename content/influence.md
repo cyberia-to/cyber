@@ -1,1 +1,0 @@
-- total sigma of following [[neurons]]

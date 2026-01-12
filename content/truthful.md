@@ -1,1 +1,0 @@
-- either [[knowledge]] more [[truth]] or not

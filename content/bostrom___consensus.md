@@ -1,4 +1,0 @@
-- [[double sign protection]]
-- [[uptime slashing]]
-- [[delegation rewards]]
-- [[adaptive inflation]]

@@ -1,1 +1,0 @@
-- root resolver of [[avatar]]

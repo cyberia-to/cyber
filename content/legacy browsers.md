@@ -1,4 +1,0 @@
-- chrome
-- firefox
-- safari
-- brave
