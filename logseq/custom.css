@@ -1,0 +1,34 @@
+.dark {
+    --ls-main-content-background: black;
+  
+    /* --rx-green-09: #30a46c; */
+    /* --rx-green-10: #3cb179; */
+    /* --rx-green-11: #4cc38a; */
+  }
+  
+  html body {
+    background-color: black;
+  }
+  
+  .dark #app-container,
+  .dark .left-sidebar-inner {
+    background-color: black !important;
+  }
+  
+  #right-sidebar .cp__right-sidebar-topbar {
+    background-color: black !important;
+  }
+  
+  #right-sidebar-container {
+    background-color: black !important;
+  }
+  
+  .dark .sidebar-item-list,
+  .dark .sidebar-item {
+    background-color: black !important;
+  }
+  
+  #logseq-tabs_lsp_main {
+    background-color: black !important;
+  }
+  
