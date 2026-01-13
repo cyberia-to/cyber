@@ -24,3 +24,4 @@ build/
 # Temporary preprocessor test outputs
 quartz-content-test/
 quartz-content-rust/
+logseq/graphs-txid.edn
