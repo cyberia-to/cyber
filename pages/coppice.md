@@ -1,1 +1,1 @@
-- all stem [[pruning]] method
+- all stem [[prune]] method

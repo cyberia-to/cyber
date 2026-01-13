@@ -1,2 +1,2 @@
 tags:: operation, critical
-team-size:: 2
+team-size:: 4

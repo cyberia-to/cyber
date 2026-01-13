@@ -1,4 +1,4 @@
-- [[pruning]]
+- [[prune]]
 - [[cuttings]]
 - [[grafting]]
 - [[seeds]]

@@ -1,5 +1,6 @@
 tags:: building type
 type:: private
+alias:: camp
 
 - flat space for setting up the [[tents]]
 - revenue:: guided tour

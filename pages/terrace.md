@@ -1,1 +1,1 @@
-tags:: term
+tags:: term, building type

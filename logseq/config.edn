@@ -293,7 +293,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["product" "cyber" "aicosystem" "ask" "learn" "truth" "brain" "the product" "collective intelligence" "superintelligence" "concepts" "🫦 space pussy" "knowledge theory" "space pussy" "bostrom" "neuron" "particle" "tokens" "cyberlink" "cybergraph" "truth machine" "cybernet" "soft3" "projects" "todo" "energy reform" "aips" "cyb" "about this metagraph"]
+ :favorites ["cyberia" "cyber valley" "bostrom" "cyber" "aicosystem" "ask" "learn" "collective intelligence" "superintelligence" "concepts" "🫦 space pussy" "knowledge theory" "space pussy" "neuron" "particle" "tokens" "cyberlink" "cybergraph" "truth machine" "cybernet" "soft3" "projects" "todo" "aips" "cyb" "about this metagraph"]
 
  ;; Set flashcards interval.
  ;; Expected value:

@@ -1,4 +1,5 @@
-tags:: operation
+tags:: operation, critical
+team-size:: 2
 
 - its currently the biggest bottleneck in construction
 - its heavy, we need it a lot, we need it everywhere

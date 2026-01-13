@@ -1,1 +1,1 @@
-tags:: tech
+tags:: tech, building type

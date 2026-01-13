@@ -38,7 +38,7 @@ tags:: species
 	- plant, harvest, pruning calendar in months:
 		- **[[planting]]**: [[spring]] or early summer
 		- **harvest**: not applicable for fruit; flowers can be harvested when blooming
-		- **[[pruning]]**: late [[winter]] or early [[spring]]
+		- **[[prune]]**: late [[winter]] or early [[spring]]
 	- **[[good neighbors]]**: tropical plants, [[palms]], [[hibiscus]]
 	- bad neighbors: plants requiring consistently wet soil
 - chemical compounds

@@ -69,13 +69,13 @@ wood-density::
 	- germination: seeds germinate quickly, usually within 5-12 days
 	- seedling: young seedlings need protection from extreme sun and wind
 	- mature: reaches in 1-2 years; rapid grower and can flower within 6 months
-	- death: tends to weaken after 15 years but can be extended with [[pruning]]
+	- death: tends to weaken after 15 years but can be extended with [[prune]]
 - operations
 	- propagation
 		- [[seeds]] are efficient
 		- [[cuttings]] are more reliable
 	- maintenance
-		- [[pruning]]: every 3 months
+		- [[prune]]: every 3 months
 	- harvest:
 		- [[leave]]: can be harvested multiple times per year, dried, and powdered
 		- [[pods]]: harvested when young for vegetable use or mature for seed extraction

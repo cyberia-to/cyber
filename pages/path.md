@@ -1,3 +1,0 @@
-alias:: trail
-
-- {{embed [[lawn]]}}

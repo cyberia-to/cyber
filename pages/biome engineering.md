@@ -74,7 +74,7 @@
 		- ![image.png](../assets/image_1762173966717_0.png)
 		- ![image.png](../assets/image_1762173931391_0.png)
 		- ![image.png](../assets/image_1762172850246_0.png)
-	- [[pruning]]
+	- [[prune]]
 	- [[layers]]
 		- ![image.png](../assets/image_1762173581792_0.png)
 	- [[stratification]]
@@ -111,7 +111,7 @@
 	- Biome engeneering is the art of designing living systems in resonance with nature’s intelligence—not against it. Rooted in the [[philosophy of harmonious complexity]] it assumes that life does not thrive through control, but through coherence — where every element, human and non-human, contributes to a whole. The aim is not to dominate the earth, but to inhabit it wisely.
 	- At the same time, biome engineering is an emerging interdisciplinary field that blends ecology, technology, anthropology, and design. It focuses on modifying and optimizing ecosystems to meet human needs, restore natural balance, and cultivate self-sufficient environments. It treats life systems not as chaotic wilderness nor as exploitable machinery, but as intelligent, self-organizing structures that can be observed, guided, and co-created.
 	- We begin with structure. Land is read through [[maps]], which divide territory across nested spatial scales:
-		- [[sector]] is the smallest operative unit—defined by forms like [[bed]], [[wall]], and [[path]]
+		- [[sector]] is the smallest operative unit—defined by forms like [[bed]], [[wall]], and [[trail]]
 		- [[block]] is a homestead — enough to sustain a [[family]]
 		- [[district]] is a shared commons — supporting a [[clan]] through social, hydrological, and economic integration
 		- [[region]] hosts a [[tribe]]—a complete biome cell with cultural and ecological sovereignty
@@ -123,7 +123,7 @@
 		- [[observation]]: perceive rhythm, structure, and signal
 		- [[formation]] prepares the land—groundwork for water, light, and structure
 		- [[propagate plants]] initiate new life
-		- [[harvesting]] return and redirect energy
+		- [[harvest]] return and redirect energy
 		- [[support]] maintain and adapt to living conditions
 	- These actions follow the [[lifecycle]]: germination, growth, reproduction, decline, and decay. Every method is a dance with timing. We don’t impose control—we enter rhythm.
 	- [[climate]] sets the canvas. But [[microclimate]] draws the lines: the slope behind the wall, the shade under a tree, the breeze by the pond. This is where life truly negotiates space.

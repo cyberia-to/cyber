@@ -1,7 +1,7 @@
 - [[sector]] [[shapes]]
 	- [[bed]]
 	- [[wall]]
-	- [[path]]
+	- [[trail]]
 - [[block]]
 - [[district]]
 - [[region]]
