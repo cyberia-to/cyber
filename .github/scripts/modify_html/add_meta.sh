@@ -11,8 +11,7 @@ metas='<meta property="og:title" content="cyber docs">
 <meta property="og:image" content="/static/img/logo.png">
 
 <!-- Privacy-friendly analytics by Plausible -->
-<script async src="https://plausible.io/js/pa-Q95R4OPpKf6e0wpViwLqF.js"></script>
-<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>'
+<script defer data-domain="cyber.page" src="https://plausible.io/js/script.js"></script>'
 
 # Add to all HTML files
 find "$BUILD_DIR" -name "*.html" | while read -r file; do
