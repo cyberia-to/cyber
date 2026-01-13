@@ -15,7 +15,7 @@ alias:: layers
 		- [[vine]]
 		- [[moss]]
 		- [[bromelia]]
-	- [[trail]]
+	- [[path]]
 	- [[bed]]
 	- [[wall]] for vertical spaces
 - [[aqua]]
