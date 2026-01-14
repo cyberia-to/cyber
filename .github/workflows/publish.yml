@@ -21,7 +21,7 @@ jobs:
       - name: Upload local images to Pinata
         env:
           PINATA_JWT: ${{ secrets.PINATA_JWT }}
-          PINATA_GATEWAY: "peach-geographical-bat-397.mypinata.cloud"
+          PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
         run: |
           # Find local image references in markdown (not already IPFS)
           grep -rohE '\((\.\./)?assets/[^)]+\.(png|jpg|jpeg|gif|webp|svg)\)' pages/ 2>/dev/null | \
