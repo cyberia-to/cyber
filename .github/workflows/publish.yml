@@ -24,21 +24,18 @@ jobs:
           PINATA_GATEWAY: "peach-geographical-bat-397.mypinata.cloud"
         run: |
           # Find local image references in markdown (not already IPFS)
-          IMAGES=$(grep -rohE '\((\.\./)?assets/[^)]+\.(png|jpg|jpeg|gif|webp|svg)\)' pages/ 2>/dev/null | \
-                   tr -d '()' | sort -u || true)
+          grep -rohE '\((\.\./)?assets/[^)]+\.(png|jpg|jpeg|gif|webp|svg)\)' pages/ 2>/dev/null | \
+            tr -d '()' | sed 's|^\.\./||' | sort -u > /tmp/images.txt || true
 
-          [ -z "$IMAGES" ] && echo "No local images found" && exit 0
+          [ ! -s /tmp/images.txt ] && echo "No local images found" && exit 0
 
-          echo "$IMAGES" | while read -r img_path; do
-            [ -z "$img_path" ] && continue
-            FILE_PATH=$(echo "$img_path" | sed 's|^\.\./||')
+          echo "Found $(wc -l < /tmp/images.txt) images to upload"
 
-            if [ ! -f "$FILE_PATH" ]; then
-              echo "⚠ Not found: $FILE_PATH"
-              continue
-            fi
+          # Upload function for parallel execution
+          upload_image() {
+            FILE_PATH="$1"
+            [ ! -f "$FILE_PATH" ] && echo "⚠ Not found: $FILE_PATH" && return
 
-            echo "Uploading: $FILE_PATH"
             RESPONSE=$(curl -s -X POST "https://uploads.pinata.cloud/v3/files" \
               -H "Authorization: Bearer $PINATA_JWT" \
               -F "file=@$FILE_PATH" \
@@ -46,19 +43,28 @@ jobs:
 
             CID=$(echo "$RESPONSE" | jq -r '.data.cid // empty')
 
-            if [ -z "$CID" ]; then
-              echo "✗ Upload failed: $FILE_PATH"
-              continue
+            if [ -n "$CID" ]; then
+              echo "$(basename "$FILE_PATH")|https://$PINATA_GATEWAY/ipfs/$CID" >> /tmp/mappings.txt
+              echo "✓ $FILE_PATH"
+            else
+              echo "✗ $FILE_PATH"
             fi
+          }
+          export -f upload_image
+          export PINATA_JWT PINATA_GATEWAY
 
-            IPFS_URL="https://$PINATA_GATEWAY/ipfs/$CID"
-            echo "✓ $FILE_PATH → $IPFS_URL"
+          # Upload 10 images concurrently
+          cat /tmp/images.txt | xargs -P 10 -I {} bash -c 'upload_image "$@"' _ {}
 
-            # Replace references in markdown
-            BASENAME=$(basename "$FILE_PATH")
-            find pages/ -name "*.md" -exec sed -i "s|(\.\./assets/$BASENAME)|($IPFS_URL)|g" {} \;
-            find pages/ -name "*.md" -exec sed -i "s|(assets/$BASENAME)|($IPFS_URL)|g" {} \;
-          done
+          # Apply replacements from mapping file
+          if [ -f /tmp/mappings.txt ]; then
+            echo "Updating markdown files..."
+            while IFS='|' read -r BASENAME IPFS_URL; do
+              find pages/ -name "*.md" -exec sed -i "s|(\.\./assets/$BASENAME)|($IPFS_URL)|g" {} \;
+              find pages/ -name "*.md" -exec sed -i "s|(assets/$BASENAME)|($IPFS_URL)|g" {} \;
+            done < /tmp/mappings.txt
+            echo "✓ Updated $(wc -l < /tmp/mappings.txt) references"
+          fi
 
       - name: Checkout publish-quartz
         uses: actions/checkout@v4
