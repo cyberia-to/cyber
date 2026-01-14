@@ -18,6 +18,48 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Upload local images to Pinata
+        env:
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+          PINATA_GATEWAY: "peach-geographical-bat-397.mypinata.cloud"
+        run: |
+          # Find local image references in markdown (not already IPFS)
+          IMAGES=$(grep -rohE '\((\.\./)?assets/[^)]+\.(png|jpg|jpeg|gif|webp|svg)\)' pages/ 2>/dev/null | \
+                   tr -d '()' | sort -u || true)
+
+          [ -z "$IMAGES" ] && echo "No local images found" && exit 0
+
+          echo "$IMAGES" | while read -r img_path; do
+            [ -z "$img_path" ] && continue
+            FILE_PATH=$(echo "$img_path" | sed 's|^\.\./||')
+
+            if [ ! -f "$FILE_PATH" ]; then
+              echo "⚠ Not found: $FILE_PATH"
+              continue
+            fi
+
+            echo "Uploading: $FILE_PATH"
+            RESPONSE=$(curl -s -X POST "https://uploads.pinata.cloud/v3/files" \
+              -H "Authorization: Bearer $PINATA_JWT" \
+              -F "file=@$FILE_PATH" \
+              -F "network=public")
+
+            CID=$(echo "$RESPONSE" | jq -r '.data.cid // empty')
+
+            if [ -z "$CID" ]; then
+              echo "✗ Upload failed: $FILE_PATH"
+              continue
+            fi
+
+            IPFS_URL="https://$PINATA_GATEWAY/ipfs/$CID"
+            echo "✓ $FILE_PATH → $IPFS_URL"
+
+            # Replace references in markdown
+            BASENAME=$(basename "$FILE_PATH")
+            find pages/ -name "*.md" -exec sed -i "s|(\.\./assets/$BASENAME)|($IPFS_URL)|g" {} \;
+            find pages/ -name "*.md" -exec sed -i "s|(assets/$BASENAME)|($IPFS_URL)|g" {} \;
+          done
+
       - name: Checkout publish-quartz
         uses: actions/checkout@v4
         with:
