@@ -18,10 +18,62 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Upload local images to Pinata
+        env:
+          PINATA_JWT: ${{ secrets.PINATA_JWT }}
+          PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
+        run: |
+          # Find local image references in markdown (not already IPFS)
+          grep -rohE '\((\.\./)?assets/[^)]+\.(png|jpg|jpeg|gif|webp|svg)\)' pages/ 2>/dev/null | \
+            tr -d '()' | sed 's|^\.\./||' | sort -u > /tmp/images.txt || true
+
+          [ ! -s /tmp/images.txt ] && echo "No local images found" && exit 0
+
+          echo "Found $(wc -l < /tmp/images.txt) images to upload"
+
+          # Upload function for parallel execution
+          upload_image() {
+            FILE_PATH="$1"
+            [ ! -f "$FILE_PATH" ] && echo "⚠ Not found: $FILE_PATH" && return
+
+            RESPONSE=$(curl -s -X POST "https://uploads.pinata.cloud/v3/files" \
+              -H "Authorization: Bearer $PINATA_JWT" \
+              -F "file=@$FILE_PATH" \
+              -F "network=public")
+
+            CID=$(echo "$RESPONSE" | jq -r '.data.cid // empty')
+
+            if [ -n "$CID" ]; then
+              echo "$(basename "$FILE_PATH")|https://$PINATA_GATEWAY/ipfs/$CID" >> /tmp/mappings.txt
+              echo "✓ $FILE_PATH"
+            else
+              echo "✗ $FILE_PATH"
+            fi
+          }
+          export -f upload_image
+          export PINATA_JWT PINATA_GATEWAY
+
+          # Upload 10 images concurrently
+          cat /tmp/images.txt | xargs -P 10 -I {} bash -c 'upload_image "$@"' _ {}
+
+          # Build single sed script and apply all replacements at once
+          if [ -f /tmp/mappings.txt ]; then
+            echo "Building replacement script..."
+            while IFS='|' read -r BASENAME IPFS_URL; do
+              echo "s|(\.\./assets/$BASENAME)|($IPFS_URL)|g"
+              echo "s|(assets/$BASENAME)|($IPFS_URL)|g"
+            done < /tmp/mappings.txt > /tmp/sed_script.txt
+
+            echo "Updating $(wc -l < /tmp/mappings.txt) references in markdown..."
+            find pages/ -name "*.md" -exec sed -i -f /tmp/sed_script.txt {} +
+            echo "✓ Done"
+          fi
+
       - name: Checkout publish-quartz
         uses: actions/checkout@v4
         with:
           repository: cyberia-to/publish-quartz
+          ref: v0.3.2
           path: publish-quartz
 
       - name: Build site
