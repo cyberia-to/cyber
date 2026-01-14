@@ -56,14 +56,17 @@ jobs:
           # Upload 10 images concurrently
           cat /tmp/images.txt | xargs -P 10 -I {} bash -c 'upload_image "$@"' _ {}
 
-          # Apply replacements from mapping file
+          # Build single sed script and apply all replacements at once
           if [ -f /tmp/mappings.txt ]; then
-            echo "Updating markdown files..."
+            echo "Building replacement script..."
             while IFS='|' read -r BASENAME IPFS_URL; do
-              find pages/ -name "*.md" -exec sed -i "s|(\.\./assets/$BASENAME)|($IPFS_URL)|g" {} \;
-              find pages/ -name "*.md" -exec sed -i "s|(assets/$BASENAME)|($IPFS_URL)|g" {} \;
-            done < /tmp/mappings.txt
-            echo "✓ Updated $(wc -l < /tmp/mappings.txt) references"
+              echo "s|(\.\./assets/$BASENAME)|($IPFS_URL)|g"
+              echo "s|(assets/$BASENAME)|($IPFS_URL)|g"
+            done < /tmp/mappings.txt > /tmp/sed_script.txt
+
+            echo "Updating $(wc -l < /tmp/mappings.txt) references in markdown..."
+            find pages/ -name "*.md" -exec sed -i -f /tmp/sed_script.txt {} +
+            echo "✓ Done"
           fi
 
       - name: Checkout publish-quartz
