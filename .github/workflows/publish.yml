@@ -10,7 +10,7 @@ jobs:
     uses: cyberia-to/.github/.github/workflows/publish-to-netlify.yml@main
     with:
       site-name: "cyber docs"
-      plausible-script: "https://plausible.io/js/pa-Q95R4OPpKf6e0wpViwLqF.js"
+      plausible-domain: "cyber.page"
     secrets:
       PINATA_JWT: ${{ secrets.PINATA_JWT }}
       PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
