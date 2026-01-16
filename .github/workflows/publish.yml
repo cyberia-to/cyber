@@ -10,9 +10,9 @@ jobs:
     uses: cyberia-to/.github/.github/workflows/publish-to-netlify.yml@main
     with:
       site-name: "cyber docs"
-      plausible-domain: "cyber.page"
     secrets:
       PINATA_JWT: ${{ secrets.PINATA_JWT }}
       PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
       NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
       NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      PLAUSIBLE_SCRIPT_ID: ${{ secrets.PLAUSIBLE_SCRIPT_ID }}
