@@ -1,4 +1,95 @@
 - ![soil_lab_test_report.pdf](../assets/soil_lab_test_report_1724741272780_0.pdf)
+- [[compost]] and [[biochar]]
+- [[soil/production]]
+- [[mycorrhizal]]
+- simple tests
+	- [[percolation]]
+	- ph
+	- type
+		- sand
+		- silt
+		- clay
+		- https://www.alibaba.com/product-detail/OZEO-Ex-factory-Price-Automatic-1_1600972412085.html?spm=a2700.7735675.0.0.68d9UqTmUqTms0&s=p
+		  id:: 65aab609-cbba-4a4a-a999-6d805273d81f
+	- worms
+		- https://labmart.id/product/m200-microscope-with-contrast-phase-binocular-trinocular-camera/
+	-
+- | Property                       | [[sand]]                        | [[silt]]                         | [[clay]]                        |
+  |----------------------------|-----------------------------|------------------------------|-----------------------------|
+  | [[particle size]]                  | 0.05 mm to 2 mm             | 0.002 mm to 0.05 mm          | Less than 0.002 mm          |
+  | [[texture]]                          | Grainy                      | Silky/Floury                 | Sticky when wet             |
+  | [[water drainage]]                 | High                        | Moderate                     | Poor                        |
+  | nutrient retention             | Low                         | Moderate                     | High                        |
+  | aeration                       | High                        | Moderate                     | Poor                        |
+  | compaction                     | Low                         | Moderate                     | High                        |
+  | thermal conductivity           | High                        | Moderate                     | Low                         |
+  | heat capacity                  | Low                         | Moderate                     | High                        |
+  | [[ph level]]                       | Slightly Acidic to Neutral  | Neutral to Slightly Alkaline | Usually Alkaline            |
+  | organic Matter Content         | Low                         | Moderate                     | High                        |
+  | bulk density                   | Low                         | Moderate                     | High                        |
+  | porosity                       | High                        | Moderate                     | Low                         |
+  | [[cation exchange capacity]] | Low                         | Moderate                     | High                        |
+  | electrical conductivity        | Low                         | Moderate                     | High                        |
+  | soil structure                 | Loose                       | Stable                       | Dense                       |
+  | infiltration rate              | High                        | Moderate                     | Low                         |
+  | erodibility                    | High                        | Moderate                     | Low                         |
+  | permeability                   | High                        | Moderate                     | Low                         |
+  | soil color                     | Light                       | Variable                     | Dark                        |
+-
+- [[moisture]]
+- water drainage:
+- nutrient retention: the capacity of the soil to hold nutrients. clay has high nutrient retention, while sand has low.
+- aeration: the movement of air through the soil. sandy soils are well-aerated, clay soils are not.
+- compaction: the tendency of the soil to compact under pressure. clay is prone to compaction, while sand is not.
+- thermal conductivity: how well the soil conducts heat. sandy soils have high thermal conductivity, clay soils have low.
+- heat capacity: the amount of heat the soil can hold. clay has a high heat capacity, sand has a low.
+- ph level: the measure of acidity or alkalinity of the soil. sand tends to be slightly acidic, clay is often alkaline.
+- organic matter content: the amount of decomposed plant and animal material in the soil. clay soils generally have more organic matter.
+- bulk density: the mass of soil per unit volume. clay has a high bulk density, sand has a low.
+- porosity: the volume of pore space in the soil. sand is more porous than clay.
+- ![Jar of water test : to estimate the soil's texture | Space for life](https://espacepourlavie.ca/sites/espacepourlavie.ca/files/styles/nocrop-gr8/public/jar_water_soil_test_eplv_en_final-07.jpg?itok=dZ81KceI){:height 571, :width 620}
+- ![Soil food web with organic matter inputs and trophic feeding levels](https://projectblue.blob.core.windows.net/media/Default/Horticulture/Publications%20Team/SoilFoodWeb.jpg)
+- electrical conductivity: the soil's ability to conduct electrical current, often related to its salinity. clay tends to have higher electrical conductivity.
+- soil structure: the arrangement of soil particles into aggregates. sandy soils are loose, clay soils are dense.
+- infiltration rate: the rate at which water enters the soil. it's high in sandy soils and low in clay soils.
+- erodibility: the susceptibility of soil to erosion. sandy soils are more easily eroded than clay soils.
+- permeability: the ability of soil to transmit water and air. high in sandy soils, low in clay soils.
+- soil color: the color of the soil, which can indicate organic matter content and mineral composition. sandy soils are often lighter, clay soils darker.
+- ![Soil and Water Analysis.pdf](../assets/Soil_and_Water_Analysis_1706326674515_0.pdf)
+- [[terra preta]]
+	- biochar
+	- manure
+	- compost
+	- [[worms]]
+	- [[fetrilzer]]
+- ![What Is The Difference Between Sand Silt And Clay - Micro B Life](https://i.ytimg.com/vi/Gt5JMikpZTA/maxresdefault.jpg)
+- nutrients for plants
+	- pond
+		- water
+		- soil from bottom
+		- mulch from plants
+	- trees
+		- leaves
+		- mulch
+	- animals => micronutrients
+		- manure
+		- bones, carcasses and innards
+			- composted
+			- buried under new fruit trees
+	- legumes => nitrogen
+	- wood ash => potassium
+	- rock dust
+	- human urine
+- fertiliser
+- compost
+- worm farm
+- As the user selects a soil texture, they will realize each texture has a unique colour. The idea behind this stems from both the colour triangle and the soil texture triangle. Such that 100% sand is yellow, 100% silt is cyan, and 100% clay is magenta. By giving each texture class a percent sand silt and clay value which adds to 100, we can retrieve a unique colour for each class.
+	- https://open-source-agriculture.github.io/2021-01-09-soil-mate-texture-app/
+	- ![colour triangle](https://i.pinimg.com/originals/44/35/aa/4435aa33a1a194344730eda010ae609d.png)
+	- ![texture triangle](https://www.qld.gov.au/__data/assets/image/0031/65758/soil-texture-large.jpg)
+- ![Soil triangle chart displaying the soil types: clay, sand, and silt soils.  Includes sandy clay, clay loam sandy clay loam, silty clay, silty clay loam, clay loam, sandy loam, loamy sand, silt loam,.](https://i.shgcdn.com/80087a1c-8acd-4588-810c-c2e5daf9fcf7/-/format/auto/-/preview/3000x3000/-/quality/lighter/)
+- [[soil/production]]
+-
 - ### soil fertility assessment
 	- physical characteristics of the soil
 		- texture and water content

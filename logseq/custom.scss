@@ -1,0 +1,21 @@
+html[data-theme="dark"] {
+  --ls-main-content-background: black;
+
+  /* --rx-green-09: #30a46c; */
+  /* --rx-green-10: #3cb179; */
+  /* --rx-green-11: #4cc38a; */
+
+  body {
+    background-color: black;
+  }
+
+  #app-container,
+  .left-sidebar-inner,
+  #right-sidebar .cp__right-sidebar-topbar,
+  #right-sidebar-container,
+  .sidebar-item-list,
+  .sidebar-item,
+  #logseq-tabs_lsp_main {
+    background-color: black !important;
+  }
+}
