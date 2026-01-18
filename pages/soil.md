@@ -9,10 +9,10 @@
 		- sand
 		- silt
 		- clay
-		- https://www.alibaba.com/product-detail/OZEO-Ex-factory-Price-Automatic-1_1600972412085.html?spm=a2700.7735675.0.0.68d9UqTmUqTms0&s=p
+		- [Soil Laboratory Test Sieve for Particle Analysis](https://www.alibaba.com/product-detail/OZEO-Ex-factory-Price-Automatic-1_1600972412085.html?spm=a2700.7735675.0.0.68d9UqTmUqTms0&s=p)
 		  id:: 65aab609-cbba-4a4a-a999-6d805273d81f
 	- worms
-		- https://labmart.id/product/m200-microscope-with-contrast-phase-binocular-trinocular-camera/
+		- [Microscope with Contrast Phase](https://labmart.id/product/m200-microscope-with-contrast-phase-binocular-trinocular-camera/)
 	-
 - | Property                       | [[sand]]                        | [[silt]]                         | [[clay]]                        |
   |----------------------------|-----------------------------|------------------------------|-----------------------------|
@@ -84,7 +84,7 @@
 - compost
 - worm farm
 - As the user selects a soil texture, they will realize each texture has a unique colour. The idea behind this stems from both the colour triangle and the soil texture triangle. Such that 100% sand is yellow, 100% silt is cyan, and 100% clay is magenta. By giving each texture class a percent sand silt and clay value which adds to 100, we can retrieve a unique colour for each class.
-	- https://open-source-agriculture.github.io/2021-01-09-soil-mate-texture-app/
+	- [soil texture app](https://open-source-agriculture.github.io/2021-01-09-soil-mate-texture-app/)
 	- ![colour triangle](https://i.pinimg.com/originals/44/35/aa/4435aa33a1a194344730eda010ae609d.png)
 	- ![texture triangle](https://www.qld.gov.au/__data/assets/image/0031/65758/soil-texture-large.jpg)
 - ![Soil triangle chart displaying the soil types: clay, sand, and silt soils.  Includes sandy clay, clay loam sandy clay loam, silty clay, silty clay loam, clay loam, sandy loam, loamy sand, silt loam,.](https://i.shgcdn.com/80087a1c-8acd-4588-810c-c2e5daf9fcf7/-/format/auto/-/preview/3000x3000/-/quality/lighter/)
