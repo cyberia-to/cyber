@@ -5,7 +5,7 @@ group:: harvest
 - we need to win herbal layer around key areas
 - enemies: [[fragrant]], [[ageratina]], almost all [[grass]]
 - instead we can produce around 40 [[herbs]]
-- 1 worker spending 2 hours can control and effeciently yield from 100 m2 every month
+- 1 worker spending 2 hours can control and efficiently yield from 100 m2 every month
 - that means that 1 worker can control around 20 ares
 - this translate into ~1 ha of yielding surface
 - [[edem]]
