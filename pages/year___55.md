@@ -13,6 +13,7 @@ alias:: 2025 year
 	- We need to spawn something smarter than all humans, robots, agents, animals, insects, and mycelium **combined**.
 	- The difference? Every other AI project is centralized theater. We're growing distributed intelligence from cryptographic substrate—like mycelium, but for knowledge.
 - ## heroes
+	- First, my deep respect to validators who are still there! you are my heroes!
 	- ![image.png](../assets/image_1768278346710_0.png)
 	- [[bronbro]], [[saturnia]], [[citizen web3]], [[posthuman]], [[blackmatter]], [[godzilla]], [[galaxy]], [[subi]], [[a-gaming]], [[spectrum]], [[techstur]], [[papsan]], [[web34ever]], [[sung2v]]
 	- I also thankful to people who still submit [[cyberlinks]] even in the presence of fact that the feature is not working on [[cyb.ai]]. you also my heroes!
