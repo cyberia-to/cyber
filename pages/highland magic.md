@@ -10,7 +10,7 @@
 		- you sell coffee for $0.8 per kg, however you can earn $300 if cooked and sold by cups
 		- you sell taro, batat and casava for $0.5 per kg, however you can earn $100 if cooked and sold by chips
 		- you sell avocado for $0.8 per kg, however it costs $30 being sold as salad
-	- main problem with cloth: you will always depend on the cigaretes market
+	- main problem with clove: you will always depend on the cigaretes market
 	- currently you sell your crops for $1-2 per kg, however you can earn at least $50 if served as lunch
 	- there is a huge demand from tourism on the non toxic, natural food they can see how its being grown
 	- the approach allow you to become more resilient agains crop failures and market fluctuations
