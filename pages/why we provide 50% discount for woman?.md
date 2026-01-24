@@ -45,7 +45,7 @@ tag:: article
 - After all, agree with us: the scientific method and a rational mindset have never bankrupted anyone—in fact, they've done quite the opposite.
 - Our 50% discount for women is bold by design: it's not just closing an 18% gap—it's overcorrecting to create massive incentive, lower barriers to entry, and signal that burn.city is serious about accelerating female participation in the tech redesign of civilization. More women in the room means faster progress toward Type I.
 - ### Conclusion
-  In Cyberia, we refuse to inherit the fractured, inefficient civilization we've been handed.
+- In Cyberia, we refuse to inherit the fractured, inefficient civilization we've been handed.
   To ascend to **Type I**—a planetary-scale society that commands the full energy budget of Earth, eliminates waste, and unites humanity in pursuit of cosmic potential—we must first redesign the foundations. No civilization reaches Type I while half its talent pool is systematically undervalued, underpaid, and overburdened with invisible labor.
 - The gender pay gap is a massive drag on collective progress. It wastes human capital, slows innovation, perpetuates inequality cycles, and fragments the very cooperation needed for planetary mastery. Every dollar (or ruble, or euro) denied to women is energy not invested in education, invention, health, and resilience—the exact resources a Type I civilization demands.
 - In Cyberia, we start the redesign now—one tangible act at a time.
