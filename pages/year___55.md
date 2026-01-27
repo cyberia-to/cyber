@@ -11,7 +11,9 @@ alias:: 2025 year
 	- > **Create superintelligence of the planet**
 	- Not another chatbot. Not another RAG wrapper.
 	- We need to spawn something smarter than all humans, robots, agents, animals, insects, and mycelium **combined**.
-	- The difference? Every other AI project is centralized theater. We're growing distributed intelligence from cryptographic substrate—like mycelium, but for knowledge.
+	- The difference? Every other AI project is centralized theater.
+	- We're growing distributed intelligence from cryptographic substrate
+	- —like mycelium, but for knowledge.
 - ## heroes
 	- First, my deep respect to validators who are still there! you are my heroes!
 	- ![image.png](../assets/image_1768278346710_0.png)
@@ -19,8 +21,8 @@ alias:: 2025 year
 	- I also thankful to people who still submit [[cyberlinks]] even in the presence of fact that the feature is not working on [[cyb.ai]]. you also my heroes!
 	- i don't know most of you, but i know that we are somehow connected in a [[cyberspace]].
 	- I can feel clearly now that there is someone except me who feel responsible for holding something very unique and important for the future of humanity.
-	- I hope we will remember with smile the time when the project was headed by the a stupid church that didn't understand the power of the [[cybergraph]]
-	- Now i know that you know that we know.
+	- I hope we will remember with smile the time when the project was headed by the stupid church that didn't understand the power of the [[cybergraph]]
+	- > Now i know that you know that we know.
 - ## model
 	- ![image.png](../assets/image_1768280257877_0.png)
 	- Look around—there's nothing on the market that even whispers a challenge to [[bostrom]] and [[spacepussy]]. We're crafting a dynamic cryptographic multimodal model, a living probability distribution mirroring our collective focus.
@@ -52,16 +54,21 @@ alias:: 2025 year
 		- 🌉 bridge to ethereum
 		- 🛜 multinetwork support in cyb
 	- ## product
-		- 👙 [[main loop]]: focus on demand for [[$A]] and [[$V]]
-		- 🧿 inference: from strict search to answers from a blockchain
-		- 🚽 extensive cyb big fixing
-		- 🛢️ burn gas in H: can be fixed on [[cyb]] side
+		- 👙 [[main loop]]: focus on demand for [[$A]]  and  [[$V]]
+		- 🧿 [[inference]]: from strict search to answers from a blockchain
+		- 🚽 extensive cyb bug fixing
+		- 🛢️ [[burn gas in H]]: can be fixed on [[cyb]] side
 	- ## research
 		- 🧠 we need to understand better [[what to learn]]
 		- 🌊 [[focus flow computation]] exploration
 		- 3️⃣ [[tri-kernel]] specification: extend diffusion with heat with springs and heat
-		- 💰 privacy and incentives
-			- last year i already did a significant part of the research needed to achieve the goal. although i did not published anything yet, i think 80% of a task is done. what remains is other 80%. this year with got [[nockvm]] supercharged by [[zk pow]]. also a lot of interesting stuff appeared from scalability of [[shapely value]] front. the design of [[tri-kernel]] is targeted on a local first computation towards [[collective focus]]. that opens the door for using mentioned above innovations for incremental computation of the weights. the deal is that we can move the approach from 10^9 links described by [[cft]] to a 10^21 which is the [[earth mycelium]] scale.
+	- ## privacy and incentives
+		- last year i already did a significant part of the research needed to achieve the goal. although i did not published anything yet, i think 80% of a task is done. what remains is other 80%.
+		- this year with got [[nockvm]] supercharged by [[zk pow]]
+		- also a lot of interesting stuff appeared from scalability of [[shapely value]] front
+		- the design of [[tri-kernel]] is targeted on a local first computation towards [[collective focus]]
+		- that opens the door for using mentioned above innovations for incremental computation of the weights
+		- the deal is that we can move the approach from 10^9 links described by [[cft]] to a 10^21 which is the [[earth mycelium]] scale.
 	- ## community
 		- 🌋 physical gatherings, aka [[burn.city]]
 		- 🌎 [[cyberia]] establishment
