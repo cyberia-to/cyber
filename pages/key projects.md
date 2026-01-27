@@ -15,7 +15,7 @@
 	- [agency](https://github.com/orgs/cyberia-to/projects/21): land survey and real estate agency
 	- [satoshi](https://github.com/orgs/cyberia-to/projects/43): space for kids
 	- [laba](https://github.com/orgs/cyberia-to/projects/41): production facility for autonomous estate
-	- [banya](https://github.com/orgs/cyberia-to/projects/40): spa and sauna
+	- [[banya]]: spa and sauna. [board](https://github.com/orgs/cyberia-to/projects/40) & [chat](https://t.me/c/2245058785/9569)
 	- [vitalik](https://github.com/orgs/cyberia-to/projects/42): gym + camping + glamping
 	- [parking](https://github.com/orgs/cyberia-to/projects/20): convenient place for vehicles with charging
 - processes
