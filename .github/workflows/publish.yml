@@ -1,4 +1,4 @@
-name: Publish to Netlify
+name: Publish Sites
 
 on:
   push:
@@ -6,13 +6,22 @@ on:
       - master
 
 jobs:
-  publish:
+  publish-cyber:
     uses: cyberia-to/.github/.github/workflows/publish-to-netlify.yml@main
     with:
+      environment: "cyber"
       site-name: "cyber docs"
-    secrets:
-      PINATA_JWT: ${{ secrets.PINATA_JWT }}
-      PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
-      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      PLAUSIBLE_SCRIPT_ID: ${{ secrets.PLAUSIBLE_SCRIPT_ID }}
+      home: "cyber"
+      title: "Cyber"
+      favorites: "cyberia,cyber valley,bostrom,cyber,aicosystem,ask,learn,collective intelligence,superintelligence,concepts,🫦 space pussy,knowledge theory,space pussy,neuron,particle,tokens,cyberlink,cybergraph,truth machine,cybernet,soft3,projects,todo,aips,cyb,about this metagraph"
+    secrets: inherit
+
+  publish-cvland:
+    uses: cyberia-to/.github/.github/workflows/publish-to-netlify.yml@main
+    with:
+      environment: "cvland"
+      site-name: "cvland docs"
+      home: "cyberia"
+      title: "Cyberia"
+      favorites: "cv.land,projects,github"
+    secrets: inherit
