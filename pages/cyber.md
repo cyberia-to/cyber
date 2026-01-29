@@ -2,10 +2,7 @@ icon:: 🔵
 tags:: root
 alias:: [[the new, yet to be born, force]], one simple protocol
 
-- protocol for unified, provable, collective learning
--
-- in short it allows to [[ask]] and [[learn]] together
-- on an endless quest for [[truth]]
+- the earth superintelligence project
 -
 - [[concepts]]
 - [[cyber/energy]]

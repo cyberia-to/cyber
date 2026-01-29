@@ -1,0 +1,45 @@
+- Tropical Banya Veniki: Cloud Forest Edition
+- A guide to crafting traditional bath brooms from plants native to Bali's highland cloud forests (1200-1500m elevation).
+- ## The Concept
+- The Russian banya venik — bundles of leafy branches used for therapeutic massage in steam baths — traditionally relies on birch, oak, or eucalyptus. In tropical highlands, we have access to an entirely different aromatic palette.
+- ## S-Tier Species
+- Aromatic powerhouses with excellent leaf structure:
+	- [[clove]] — . Rich in eugenol, warming, antiseptic. The tropical equivalent of eucalyptus in potency.
+	- [[champaca]] — Deep, intoxicating floral scent. Sacred tree in Balinese tradition.
+	- [[ ylang-ylang]] —. Sensual, relaxing. Both flowers and leaves are aromatic.
+	- [[pinus merkusii]] — Tropical pine. Classic phytoncides, respiratory benefits.
+	- [[cupressus]] — Cypress. Soft resinous aroma, calming.
+	- [[eucalyptus]] — The universal benchmark.
+- ## A-Tier Species
+- Strong performers for blending
+	- [[melaleuca]] — Cajuput. Tea tree family, camphoraceous, highly antiseptic.
+	- [[cinnamomum]] — Cinnamon. Warming, circulation-boosting.
+	- [[citrus]] — Kaffir lime. Intensely aromatic leaves, refreshing.
+	- [[podocarpus]] — Tropical conifer without the needles.
+	- [[patchouli]] — . Earthy, grounding, iconic Bali scent.
+	- [[mesua ferrea]] — Iron wood. Ayurvedic classic, complex sweet aroma.
+	- [[syzygium oleosum]] — Blue lilly pilly. Mild, pleasant, good structure.
+	- [[syzygium jambos]] — Rose apple. Subtle rose notes.
+	- [[casuarina]] — She-oak. Pseudo-conifer texture.
+	- [[platycladus orientalis]] — Oriental arborvitae. Soft, thujan aroma.
+- ## B-Tier Species
+- Functional additions
+	- [[daun salam]] — . Mild, herbal background.
+	- [[sapindus]] — Soapberry. Natural saponins for cleansing effect.
+	- [[toona ciliata]] — Suren. Cedar-like woody notes.
+	- [[persea americana]] — Avocado. Neutral, structural.
+	- [[vegy fern]] — soft outer layer, forest scent.
+- ## Avoid
+	- [[cestrum nocturnum]] — Night jasmine. Toxic alkaloids.
+	- [[mango]] — Urushiol-like compounds, skin irritation risk.
+	- [[durian]] — Latex
+	- [[jackfruit]] — Latex issues
+	- [[ficus]] — Latex
+	- [[sengon]] — No aromatic or therapeutic value.
+- ## Notes on Preparation
+- Harvest young, flexible branches from current season's growth
+- Bundle tightly at the base, fan out toward the tips
+- Steep in hot (not boiling) water for 20-30 minutes before use
+- Pine and harder leaves benefit from longer steeping.
+-
+- The cloud forest environment provides a unique opportunity to develop venik traditions entirely distinct from their Russian origins — leveraging the extraordinary aromatic biodiversity of tropical highlands.
