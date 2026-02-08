@@ -1,5 +1,5 @@
-tags:: species, super
-wood:: yes
+tags:: genus, species, super
+alias:: cyatheawood:: yes
 grow-speed:: 5
 
 - [[fern]]

@@ -1,5 +1,5 @@
-tags:: species
-alias:: sansevieria cylindrica
+tags:: genus, species
+alias:: dracaena, sansevieria cylindrica
 
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaCA6S6cPVBPTKAMdKdazdR3t1B7YwHZWdDtZ7cxUaFz2)
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmYCkWgYgxTWsDvrECZHBNMEd6mYv3BjQrngHEnuoXHVK2)

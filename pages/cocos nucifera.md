@@ -1,5 +1,6 @@
-alias:: coconut, kelapa
-tags:: species, major, super
+alias:: cocos, coconut, kelapa
+tags:: genus, species, major, super
+scalable:: true
 supply:: next-month
 market:: edible oils
 wood-density:: 750

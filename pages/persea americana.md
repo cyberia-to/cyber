@@ -1,5 +1,6 @@
-tags:: species, major, collectable, super
-alias:: avocado, alpukat
+tags:: genus, species, major, collectable, super
+scalable:: true
+alias:: persea, avocado, alpukat
 abundance:: yes
 supply:: no
 margin:: medium

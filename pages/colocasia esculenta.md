@@ -1,5 +1,6 @@
-alias:: taro
-tags:: species, major, super
+alias:: colocasia, taro
+tags:: genus, species, major, super
+scalable:: true
 abundance:: yes
 supply:: no
 margin:: medium

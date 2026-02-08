@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: pomegranate, delima
+tags:: genus, species, major, super
+scalable:: true
+alias:: punica, pomegranate, delima
 wood:: yes
 grow-speed:: 3
 

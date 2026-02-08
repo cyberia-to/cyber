@@ -1,5 +1,6 @@
-tags:: species, major, super, psycho
-alias:: kopi
+tags:: genus, species, major, super, psycho
+scalable:: true
+alias:: coffea, kopi
 abundance:: yes
 supply:: no
 margin:: high

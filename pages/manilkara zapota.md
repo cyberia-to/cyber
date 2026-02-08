@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: sawo, sapodilla
+tags:: genus, species, major, super
+scalable:: true
+alias:: manilkara, sawo, sapodilla
 wood:: yes
 grow-speed:: 3
 

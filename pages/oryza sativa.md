@@ -1,5 +1,5 @@
-tags:: species
-alias:: rice
+tags:: genus, species
+alias:: oryza, rice
 
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmY9k7CXY6hgYCqvgPDKZ26P9Jm4ipekkEktYFpTCNCdLY)
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmegHoJiwuig5s6XcNf9GbkhohBKoqA3KvCkoFBih8gfoc)

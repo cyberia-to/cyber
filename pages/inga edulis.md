@@ -1,4 +1,5 @@
 tags:: species, genus major, super
+scalable:: true
 alias:: inga, snowfruit, inga edilus
 wood:: yes
 grow-speed:: 5

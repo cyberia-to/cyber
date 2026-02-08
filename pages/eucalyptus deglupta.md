@@ -1,5 +1,6 @@
-tags:: species, major
-alias:: rainbow tree, leda
+tags:: genus, species, major
+scalable:: true
+alias:: eucalyptus, rainbow tree, leda
 wood:: yes
 grow-speed:: 4
 

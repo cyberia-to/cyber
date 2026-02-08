@@ -1,5 +1,5 @@
-tags:: species, major
-alias:: arum dalu, night jasmine
+tags:: genus, species, major
+alias:: cestrum, arum dalu, night jasmine
 
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/Qmd6EQWPFV7YMhzWzQgzyRmKXUzUVb9N6kTMUspVWkEKJ2)
 - [[night]] [[polinator]]

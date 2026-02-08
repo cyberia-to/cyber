@@ -1,5 +1,5 @@
-tags:: species
-alias:: oldhami
+tags:: genus, species
+alias:: bambusa, oldhami
 abundance:: yes
 supply:: no
 margin:: low

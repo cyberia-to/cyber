@@ -1,5 +1,6 @@
-alias:: sumatran pine
-tags:: species, major, super
+alias:: pinus, sumatran pine
+tags:: genus, species, major, super
+scalable:: true
 wood-density:: 450
 wood-availability:: high
 wood-durability:: low

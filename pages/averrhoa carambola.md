@@ -1,5 +1,5 @@
-tags:: species
-alias:: belimbing, star fruit, carambola
+tags:: genus, species
+alias:: averrhoa, belimbing, star fruit, carambola
 wood:: yes
 grow-speed:: 3
 

@@ -1,6 +1,6 @@
-alias:: chaya
-tags:: species, major, super
-
+alias:: cnidoscolus, chaya
+tags:: genus, species, major, super
+scalable:: true
 - [[staple]]
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmdFi3icmhGh4qewfNzJ8RtGEC3RFK8p5jYeGif2FfrmJs)
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcaY8aEWzp6SGQF9kPdew9EMRpc4uKNvgiTZZR6S9WECv)

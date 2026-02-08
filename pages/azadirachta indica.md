@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: neem, mimba
+tags:: genus, species, major, super
+scalable:: true
+alias:: azadirachta, neem, mimba
 wood-density:: 600
 supply:: next-month
 market:: technical oil

@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: oregano
+tags:: genus, species, major, super
+scalable:: true
+alias:: origanum, oregano
 
 - [[cover]]
 - [[staple]]

@@ -1,5 +1,5 @@
-tags:: species, major, super
-abundance:: yes
+tags:: genus, species, major, super
+alias:: kalanchoeabundance:: yes
 supply:: no
 margin:: low
 autonomy:: staple

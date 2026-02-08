@@ -1,5 +1,6 @@
-alias:: ylang-ylang, sandat klungkung
-tags:: species, major
+alias:: cananga, ylang-ylang, sandat klungkung
+tags:: genus, species, major
+scalable:: true
 title:: cananga odorata
 wood:: yes
 grow-speed:: 3

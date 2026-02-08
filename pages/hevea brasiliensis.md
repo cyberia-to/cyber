@@ -1,5 +1,6 @@
-tags:: species, major, research
-alias:: karet
+tags:: genus, species, major, research
+scalable:: true
+alias:: hevea, karet
 wood-availability:: high
 wood-durability:: low
 wood-density:: 600

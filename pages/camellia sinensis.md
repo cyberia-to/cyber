@@ -1,5 +1,6 @@
-tags:: species, research, major, super
-
+tags:: genus, species, research, major, super
+scalable:: true
+alias:: camellia
 - [[staple]] [[drink]] and [[health]] as [[green tea]]
 - supply:: next-month
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmWxtGPaS17of2eQj55rHFaSJs1uWBeyFddUS5TWp9mZNf){:height 450, :width 596}

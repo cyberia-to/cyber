@@ -1,5 +1,6 @@
-tags:: species, major
-alias:: mango, mangga
+tags:: genus, species, major
+scalable:: true
+alias:: mangifera, mango, mangga
 wood:: yes
 grow-speed:: 3
 

@@ -1,5 +1,5 @@
-tags:: species
-alias:: arsenic bush
+tags:: genus, species
+alias:: senna, arsenic bush
 
 - nitrogener:: 10
 - toxicity:: poisonous

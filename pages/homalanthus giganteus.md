@@ -1,5 +1,5 @@
-tags:: species
-wood:: yes
+tags:: genus, species
+alias:: homalanthuswood:: yes
 grow-speed:: 5
 
 - availability:: cv

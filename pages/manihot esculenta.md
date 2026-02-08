@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: cassava, tapioca, singkong
+tags:: genus, species, major, super
+scalable:: true
+alias:: manihot, cassava, tapioca, singkong
 
 - [[staple]]
 - ![Screenshot 2024-06-02 at 08.51.47.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmXKSRAJo3N553gjb46EKxrS3buLdzK6PRU9VxhUvRJ6aM)

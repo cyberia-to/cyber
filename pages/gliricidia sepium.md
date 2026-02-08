@@ -1,5 +1,6 @@
-alias:: gamal
-tags:: species, major
+alias:: gliricidia, gamal
+tags:: genus, species, major
+scalable:: true
 wood:: yes
 grow-speed:: 4
 

@@ -1,5 +1,6 @@
-alias:: napier
-tags:: species, major, super
+alias:: cenchrus, napier
+tags:: genus, species, major, super
+scalable:: true
 abundance:: yes
 supply:: no
 margin:: low

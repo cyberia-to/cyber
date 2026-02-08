@@ -1,5 +1,6 @@
-tags:: species, major
-alias:: nutmeg
+tags:: genus, species, major
+scalable:: true
+alias:: myristica, nutmeg
 
 - ![Screenshot 2024-05-26 at 02.46.24.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmR2H3DHGKGeYmGZGrv9JE7pu51Ti7A3dyZaQPAanbMfwN)
 - ![Screenshot 2024-05-26 at 02.45.51.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmTHkoF4ee4AhenD6hfEsKm3uV7T3FfwTexhFzu8fjN418)

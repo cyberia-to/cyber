@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: cendana, sandal
+tags:: genus, species, major, super
+scalable:: true
+alias:: santalum, cendana, sandal
 wood:: yes
 grow-speed:: 2
 wood-density:: 900

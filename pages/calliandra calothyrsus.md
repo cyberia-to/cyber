@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: kaliandra
+tags:: genus, species, major, super
+scalable:: true
+alias:: calliandra, kaliandra
 abundance:: yes
 supply:: no
 margin:: low

@@ -1,5 +1,6 @@
-alias:: olive, zaitun
-tags:: species
+alias:: olea, olive, zaitun
+tags:: genus, species
+scalable:: true
 wood:: yes
 grow-speed:: 3
 

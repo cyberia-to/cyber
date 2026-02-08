@@ -1,5 +1,5 @@
-alias:: loquat
-tags:: species
+alias:: eriobotrya, loquat
+tags:: genus, species
 wood:: yes
 grow-speed:: 3
 

@@ -1,5 +1,6 @@
-alias:: lamtoro
-tags:: species, major, super
+alias:: leucaena, lamtoro
+tags:: genus, species, major, super
+scalable:: true
 wood:: yes
 grow-speed:: 5
 

@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: sengon
+tags:: genus, species, major, super
+scalable:: true
+alias:: albizia, sengon
 wood-density:: 350
 wood-durability:: low
 wood-availability:: site

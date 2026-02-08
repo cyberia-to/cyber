@@ -1,5 +1,5 @@
 alias:: rhea, debregeasia, dedara
-tags:: species, major, super
+tags:: genus, species, major, super
 abundance:: yes
 supply:: no
 margin:: low

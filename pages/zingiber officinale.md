@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: ginger
+tags:: genus, species, major, super
+scalable:: true
+alias:: zingiber, ginger
 market:: rhizomes
 
 - [[high margin]] [[rhizome]] for [[health]]

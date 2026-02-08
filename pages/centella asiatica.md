@@ -1,5 +1,6 @@
-tags:: species, major, super
-alias:: gotu kola
+tags:: genus, species, major, super
+scalable:: true
+alias:: centella, gotu kola
 abundance:: yes
 supply:: no
 margin:: high

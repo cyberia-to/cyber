@@ -1,5 +1,6 @@
-tags:: species, major, super
-supply:: next-month
+tags:: genus, species, major, super
+scalable:: true
+alias:: macadamiasupply:: next-month
 market:: edible oils
 wood-density::
 wood:: yes

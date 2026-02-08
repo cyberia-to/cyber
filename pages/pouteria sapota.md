@@ -1,5 +1,5 @@
-tags:: species, major
-alias:: sapote, mamey sapote
+tags:: genus, species, major
+alias:: pouteria, sapote, mamey sapote
 wood:: yes
 grow-speed:: 2
 

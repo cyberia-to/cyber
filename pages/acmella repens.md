@@ -1,5 +1,6 @@
-tags:: species, plant, major
-abundance:: yes
+tags:: genus, species, plant, major
+scalable:: true
+alias:: acmellaabundance:: yes
 supply:: no
 margin:: high
 autonomy:: extra

@@ -1,5 +1,6 @@
-tags:: species, major
-alias:: meniran hijau
+tags:: genus, species, major
+scalable:: true
+alias:: phyllanthus, meniran hijau
 
 - [[plants/healh]]
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPtc57JipzFViQvx5QVxNsuzqwUGteGertBqCFU5mYtZP)

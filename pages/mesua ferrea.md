@@ -1,5 +1,5 @@
-tags:: species, major, super
-alias:: nagasari
+tags:: genus, species, major, super
+alias:: mesua, nagasari
 wood-density:: 1100
 wood-durability:: very-high
 market:: ironwoods

@@ -1,5 +1,5 @@
-tags:: species, research
-alias:: siberian fir
+tags:: genus, species, research
+alias:: abies, siberian fir
 supply:: wishlist
 
 - [[conifer]]

@@ -1,3 +1,3 @@
-tags:: species
-
+tags:: genus, species
+alias:: blumea
 -

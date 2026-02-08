@@ -1,4 +1,5 @@
-tags:: species, major, super
+tags:: genus, species, major, super
+scalable:: true
 alias:: aloe
 
 - ![image](https://ipfs.io/ipfs/QmZ1abuZCRKnrxDVibUn8h13PouvRYvV1tAmNMmNssfHwm){:height 409, :width 408}

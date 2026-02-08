@@ -1,6 +1,6 @@
-alias:: pepper
-tags:: species, super
-
+alias:: piper, pepper
+tags:: genus, species, super
+scalable:: true
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmbDu6WE4VYoSZGfTN7vkvDVpwy7t6uoQLD2uNamj7wv7k)
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPT7g4XAMTqXh3mSUhYVAe6JcR5jUrG3X36ETBqAVMJqz)
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmS97AedXGKv3g8G1QpbvhCf6Y1fbXmdz4cC6S1bRXKPqk)

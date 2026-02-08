@@ -1,6 +1,6 @@
-alias:: mangosteen, manggis
-tags:: species, major
-
+alias:: garcinia, mangosteen, manggis
+tags:: genus, species, major
+scalable:: true
 - wood-density:: 600
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmUmbbVvK8tmdAUerzeGjYokUDht4EEDh8DY6zkdAcZKmt){:height 638, :width 628}
 - ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmXSqAbm1iWKJWpdtaCfjvxLxMsytRm7sutshqn5VasXRL)

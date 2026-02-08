@@ -1,5 +1,6 @@
-tags:: species, major, research
-alias:: vetiver
+tags:: genus, species, major, research
+scalable:: true
+alias:: chrysopogon, vetiver
 supply:: next-month
 market:: herbs
 
