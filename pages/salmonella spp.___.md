@@ -1,5 +1,3 @@
-tags:: bacteria
-
 - spiecies:
 	- [[salmonella typhi]]
 	- [[salmonella paratyphi]]

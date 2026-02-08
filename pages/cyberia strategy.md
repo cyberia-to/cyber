@@ -1,4 +1,3 @@
-tags:: cyberia, draft
 
 - unified document
 	- pitch

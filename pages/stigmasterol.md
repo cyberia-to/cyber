@@ -1,4 +1,3 @@
-tags:: phytosterol
 
 - stigmasterol is a naturally occurring [[phytosterol]] structurally related to cholesterol, commonly found in vegetable oils, nuts, seeds, legumes, fruits, and medicinal plants. stigmasterol plays a significant role as a precursor in the biosynthesis of plant hormones such as [[brassinosteroids]], and possesses notable health-promoting properties.
 - ## chemical properties

@@ -1,3 +1,2 @@
-tags:: respiratory disease, allergic disease, fungal disease
-
+tags:: respiratory disease, fungal disease
 -

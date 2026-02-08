@@ -1,6 +1,5 @@
-tags:: cyberlink, cyber
+tags:: cyber
 alias:: amper, milliamper, ampers, milliampers
-
 - [[token]] of [[attention]] in [[bostrom]]
 - part of [[cyber/energy]] pack
 -

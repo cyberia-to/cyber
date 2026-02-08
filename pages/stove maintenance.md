@@ -1,5 +1,3 @@
-tags:: order
-
 - [[cyber stove]] enable clean burn
 - this document describe necessary processes to run [[banya]] non stop
 - {{embed [[firewood]]}}

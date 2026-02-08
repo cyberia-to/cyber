@@ -1,4 +1,3 @@
-tags:: omega-6
 
 - linoleic acid is a polyunsaturated omega-6 fatty acid essential for human nutrition, meaning it must be obtained from the diet because the body cannot synthesize it. linoleic acid serves critical roles in maintaining healthy cell membranes, supporting skin barrier function, and acting as a precursor for other bioactive lipids involved in inflammation and cellular signaling.
 - ## chemical properties

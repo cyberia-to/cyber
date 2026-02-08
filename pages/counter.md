@@ -1,4 +1,3 @@
-tags:: atom
 - input
 	- number is main argument
 	- emotion optionally defines color

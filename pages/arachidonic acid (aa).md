@@ -1,3 +1,1 @@
-tags:: omega-6
-
 -

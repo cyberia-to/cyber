@@ -1,5 +1,3 @@
-tags:: protective glycoprotein
-
 - mucins are high-molecular-weight [[glycoproteins]] that are the main components of [[mucus]], a protective secretion found on the surfaces of the [[respiratory]], [[gastrointestinal]], [[urogenital]], and [[ocular]] systems. mucins are produced by [[epithelial cells]] and function to trap pathogens, lubricate tissues, and create a physical barrier that protects against [[chemical]], [[mechanical]], and [[microbial damage]].
 	- ### chemical properties
 		- **molecular weight**: typically >200 kDa, some exceeding several MDa

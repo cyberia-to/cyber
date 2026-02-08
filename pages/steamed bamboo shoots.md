@@ -1,5 +1,4 @@
-tags:: kitchen/menu, sides, steam, bamboo
-
+tags:: kitchen/menu
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeidkex5qzkyils24uggelozmtmjykgo5nf7lw6ygo32k73ipbd3sru)
 - ### 🧾 🎋 steamed bamboo shoots
   young bamboo shoots gently steamed until tender — naturally crisp, fresh, and perfect for salads, sides, or stir-fries.

@@ -1,5 +1,3 @@
-tags:: carboxylic acids, lipid components
-
 - fatty acids are organic compounds composed of a hydrocarbon chain terminating with a carboxyl group (–COOH). they are crucial components of lipids, essential for energy storage, cellular membrane structure, hormone synthesis, and signaling processes in living organisms.
 - ## chemical properties
 	- structure: hydrocarbon chains (saturated or unsaturated), carboxyl functional group

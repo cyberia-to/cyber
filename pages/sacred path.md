@@ -1,1 +1,1 @@
-tags:: cv.land, attraction
+tags:: cv.land

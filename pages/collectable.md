@@ -1,5 +1,4 @@
-tags:: market, cv
-
+tags:: market, cv.land
 - {{query (page-tags [[collectable]])}}
   query-properties:: [:page :tags :alias]
   query-sort-by:: page

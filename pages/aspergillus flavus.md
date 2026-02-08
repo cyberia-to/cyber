@@ -1,5 +1,4 @@
 tags:: fungi
-
 - aspergillus flavus is a pathogenic fungus belonging to the genus [[aspergillus]], known primarily for contaminating agricultural crops such as grains, nuts (especially peanuts), and spices. it produces toxic metabolites called [[aflatoxins]], potent carcinogens harmful to humans and animals
 - ## diseases caused by aspergillus flavus
   id:: 68109a76-7875-4bb9-8bcb-92f060b4681f

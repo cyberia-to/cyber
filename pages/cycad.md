@@ -1,5 +1,4 @@
-tags:: division, collectable
-
+tags:: collectable
 - {{query "cycad"}}
   query-sort-by:: page
   query-table:: true

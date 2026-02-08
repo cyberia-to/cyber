@@ -1,5 +1,4 @@
-tags:: kitchen/menu, banana, cassava, breakfast, pancakes, grain-free, gluten-free, plant-based
-
+tags:: kitchen/menu, breakfast
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeidwml64usnhbsukq3l52iyatp4po3nzfacwcojfus7plsd3yqghv4)
 - ### 🧾 🍌🌿 [[banana cassava pancake]]
 - dense yet tender pancakes combining grated cassava and mashed green banana — naturally sweet, grain-free, and perfect for both sweet and savory pairings.

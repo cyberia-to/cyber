@@ -1,1 +1,1 @@
-tags:: building, camp, planned
+tags:: building, camp

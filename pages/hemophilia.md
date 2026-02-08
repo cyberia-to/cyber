@@ -1,3 +1,2 @@
-tags:: blood disease
 
 -

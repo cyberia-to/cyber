@@ -1,1 +1,1 @@
-tags:: respiratory disease, allergic disease
+tags:: respiratory disease

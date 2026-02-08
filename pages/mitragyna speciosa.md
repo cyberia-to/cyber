@@ -1,4 +1,4 @@
-tags:: genus, species, prohibited, psycho
+tags:: genus, species, psycho
 supply:: prohibited
 alias:: mitragyna, kratom
 

@@ -1,1 +1,0 @@
-tags:: autonomous shelters

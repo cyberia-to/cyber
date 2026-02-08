@@ -1,5 +1,3 @@
-tags:: malaria parasite
-
 - [[plasmodium falciparum]] is a protozoan parasite belonging to the genus [[plasmodium]], responsible for causing the most severe form of [[malaria]] in humans. transmitted primarily through the bite of infected female [[anopheles mosquitoes]], p. falciparum infects red blood cells, causing widespread cellular destruction, inflammation, and systemic complications.
 	- ## disease caused by plasmodium falciparum:
 		- [[falciparum malaria]]: characterized by high fever, chills, headache, nausea, severe anemia, and potentially life-threatening complications such as cerebral malaria, respiratory distress, kidney failure, shock, and multi-organ failure.

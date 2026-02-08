@@ -1,4 +1,4 @@
-tags:: genus, animal
+tags:: genus, animals
 alias:: stingless bee
 
 - trigona laeviceps

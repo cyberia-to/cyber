@@ -1,4 +1,3 @@
-tags:: tips
 - collection of [[primitive learning acts]]
 - sum of stored [[links]] formates knowledge of [[neuron]]
 -

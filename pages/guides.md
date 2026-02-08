@@ -1,4 +1,4 @@
-tags:: bostrom, spacepussy
+tags:: bostrom
 - TODO
 - fundamentals
 	- asset management

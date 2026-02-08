@@ -1,4 +1,4 @@
-tags:: episode two, bostrom
+tags:: bostrom
 status:: TODO
 - [[$H]]
 - burn % H on unstake depending on the time held

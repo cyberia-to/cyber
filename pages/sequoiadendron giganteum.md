@@ -1,5 +1,5 @@
 alias:: giant sequoia
-tags:: species, research, unavailable
+tags:: species, research
 supply:: wishlist
 
 - [[high margin]]

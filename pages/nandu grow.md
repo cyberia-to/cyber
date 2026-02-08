@@ -1,4 +1,4 @@
-tags:: cve
+tags:: cv.land
 
 - ## Why?
 	- everyone have land, even 4 ares is the resource

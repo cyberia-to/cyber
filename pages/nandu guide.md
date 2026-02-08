@@ -1,5 +1,4 @@
-tags:: [[cve]]
-
+tags:: cv.land
 - ## revenue split
 	- level 1: sherpa
 		- role: physical support, gear carrying

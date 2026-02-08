@@ -1,6 +1,5 @@
-tags:: kitchen/menu, duck, mains, stewed, with vegetables, slow-cooked
+tags:: kitchen/menu, mains
 <img src="https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeiejpylbgdltxhm5obchime35u4wgzycjd2akh2vjac5ms2ysjeury" style="width:500px; height:auto;" />
-
 - ### 🧾 🦆 stewed duck
   slow-cooked tender duck pieces simmered with seasonal vegetables and simple spices — rich, hearty, and full of flavor.
 - ### 🍴 meal/type

@@ -1,4 +1,3 @@
-tags:: mt
 alias:: 2025 year
 
 - ## Dear heroes and neurons,

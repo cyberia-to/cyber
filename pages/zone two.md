@@ -1,5 +1,3 @@
-tags:: carrot house
-
 - [[batuka]] biome
 	- [[boehmeria nivea]]
 	- [[sicyos edulis]]

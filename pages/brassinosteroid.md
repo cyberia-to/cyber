@@ -1,4 +1,3 @@
-tags:: phytosterol
 
 - brassinosteroids are a class of steroidal plant hormones derived from [[phytosterols]] such as [[campesterol]], [[sitosterol]], and [[stigmasterol]]. they regulate numerous essential processes in plant development, growth, stress responses, and immunity, acting similarly to animal steroid hormones but uniquely in plants
 - ## chemical properties

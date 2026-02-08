@@ -1,4 +1,4 @@
-tags:: genus, prohibited, psycho, fungi, shroom
+tags:: genus, psycho, fungi, shroom
 alias:: magic shroom
 supply:: prohibited
 

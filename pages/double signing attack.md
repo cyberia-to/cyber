@@ -1,4 +1,3 @@
-tags:: attack
 - type of [[cyber/attacks]] involving malicious behavior
 - in proof of stake consensus
 - where a validator signs two different blocks at the same block height

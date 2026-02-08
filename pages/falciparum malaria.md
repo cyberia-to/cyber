@@ -1,3 +1,2 @@
-tags:: parasitic disease, infectious disease, systemic disease
-
+tags:: infectious disease
 -

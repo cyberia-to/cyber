@@ -1,4 +1,3 @@
-tags:: true-false problem, published
 - # context aware relevance machine
 	- we discuss for a while one property of the ranking mechanism
 	- which rise huge concerns into the answering capabilities of cyber

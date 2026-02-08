@@ -1,4 +1,3 @@
-tags:: kitchen/basics, zero waste, natural soap, diy, concentrate
 
 - ### 🧾 🧼 preparing soap concentrate
   simple natural soap concentrate from soap nuts — for use in cleaning and laundry, fully biodegradable and zero waste.

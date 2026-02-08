@@ -1,5 +1,4 @@
-tags:: kitchen/menu, poultry, cheese, mains, baked
-
+tags:: kitchen/menu, mains
 - <img src="https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeic5hgfkytyxnfygntf43rkeleeoh2z6gupomw64nsisshfmpjvejm" style="width:500px; height:auto;" />
 - <img src="https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeicrsxdguztlatok66zjnilw4goyrekwvr2ccfvtlyoln5s2pg2qqe" style="width:500px; height:auto;" />
 - ### 🧾 🍗🧀 baked poultry with cheese

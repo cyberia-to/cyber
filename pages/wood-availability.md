@@ -1,6 +1,4 @@
-tags:: indonesia
 local:: true
-
 - ## available by [[wood-durability]] class
   
   | durability class | species | avg price (idr / m³) |

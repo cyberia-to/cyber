@@ -1,2 +1,2 @@
-tags:: species, fungi, , shroom
+tags:: species, fungi, shroom
 alias:: wood ear

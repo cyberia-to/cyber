@@ -1,4 +1,3 @@
-tags:: superintelligence
 - 25 %: scalable alignment and interpretability:
 	- invest in mechanistic interpretability, agent foundations, preference learning and formal verification tools that keep any path to superintelligence on track for human values. these efforts protect returns across all ai architectures.
 - 20 % neuromorphic and analog hardware

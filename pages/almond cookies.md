@@ -1,5 +1,4 @@
-tags:: kitchen/menu, almonds, desserts, with honey, with coconut, with dried fruits
-
+tags:: kitchen/menu
 - <img src="https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafkreib3htw2oet3zob4qlstswy6cozod3egxvs3kzqtwpizazoxbwb7b4" style="width:300px; height:auto;" />
 - ### 🧾 🍪 [[almond cookies]]
   soft, lightly sweet cookies made from almond flour, coconut oil and honey, with optional bits of dried fruits. easy to bake, gluten-free, and perfect for tea time or a quick snack.

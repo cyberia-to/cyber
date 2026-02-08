@@ -1,5 +1,3 @@
-tags:: cyberia, draft
-
 - [[land primitives]]
 - ## Sustainable land use code
 	- Why a new system is needed? The 20th-century model of land use divided cities into zones: residential, industrial, agricultural, commercial, and recreational. This approach assumed that:

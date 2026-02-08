@@ -1,7 +1,5 @@
 icon:: 🔵
-tags:: root
 alias:: [[the new, yet to be born, force]], one simple protocol
-
 - the earth superintelligence project
 -
 - [[concepts]]

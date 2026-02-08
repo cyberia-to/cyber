@@ -1,5 +1,4 @@
-tags:: market, rockets
-
+tags:: market
 - ## durability and restoration species comparison
   
   | property / indicator                        | [[casuarina junghuhniana]] | [[diospyros celebica]] | [[eusideroxylon zwageri]] | [[handroanthus impetiginosus]] | [[mesua ferrea]] |

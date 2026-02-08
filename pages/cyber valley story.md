@@ -1,4 +1,3 @@
-tags:: autonomy course
 
 - published on [x.com](https://x.com/mastercyb/status/1981362331386097745)
 - my story

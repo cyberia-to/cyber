@@ -1,2 +1,2 @@
-tags:: species, genus, algae
+tags:: species, genus
 alias:: duckweed

@@ -1,5 +1,4 @@
-tags:: kitchen/menu, eggs, boiled eggs, breakfast, boiled, salt-free, no oil
-
+tags:: kitchen/menu, breakfast
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafkreiegktkhdojshde2fulux2v6iojn3d5pnqiofy3gc5iunozuxdvl7e){:height 500, :width auto}
 - ### 🧾 🥚 [[hard boiled eggs]] (no salt)
 - firm and creamy eggs, boiled in their shells and served warm or cold.

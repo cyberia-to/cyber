@@ -1,7 +1,6 @@
 title:: kitchen/ingredients/cheese
 
-tags:: #kitchen #storage #ingredients
-
+tags:: kitchen/menu
 - #### cheese storage guide
 - temperature
 	- store cheese at +2 to +8°c

@@ -1,1 +1,1 @@
-tags:: fungal disease, infectious disease, systemic disease
+tags:: fungal disease, infectious disease

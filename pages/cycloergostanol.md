@@ -1,5 +1,3 @@
-tags:: steroid derivative
-
 -
 - cycloergostanol is a complex [[steroid derivative]] belonging to the class of [[phytosterols]] or ergostane-type steroids, often found in [[fungi]], [[lichens]], and some [[medicinal plants]]. structurally related to [[ergosterol]], cycloergostanol compounds have been studied for their potential [[anticancer]], [[antimicrobial]], and [[anti-inflammatory]] activities. they feature a [[cyclopropane ring]] and multiple methyl substitutions in their sterol backbone.
 	- ### chemical properties

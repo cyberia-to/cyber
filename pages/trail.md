@@ -1,3 +1,2 @@
-tags:: building type, path type
-
+tags:: building type
 - {{embed [[lawn]]}}

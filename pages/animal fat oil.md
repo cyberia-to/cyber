@@ -1,4 +1,3 @@
-tags:: kitchen/basics, animal fat, cooking oil, slow-cooked, zero waste
 
 - ### 🧾 🥄 animal fat oil
   traditional, nutrient-dense cooking fat collected from slow-cooked or roasted meat — ideal for pan-frying, roasting, and enhancing savory dishes.

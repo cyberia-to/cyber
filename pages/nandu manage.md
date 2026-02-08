@@ -1,5 +1,4 @@
-tags:: [[cve]]
-
+tags:: cv.land
 - earn starting from 10% up to 25% of business revenue
 - opportunity to learn to manage business while earning extra
 - available opportunities

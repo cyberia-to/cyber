@@ -1,7 +1,6 @@
 icon:: 🐦
 alias:: bird, birds research
-tags:: cv
-
+tags:: cv.land
 - [birds observation by urban biologist 2024](https://ipfs.io/ipfs/QmUQWE2PB5bDkCCRJ6imBbsdMCRWD6p1nyya9yxvBhUAWA)
 - handy
 	- [[pycnotus aurigaster]]: [[ptich]]

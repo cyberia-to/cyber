@@ -1,5 +1,4 @@
 icon:: ⛑
-tags:: model
 - simplistic way to understand nature of [[information]] and [[intelligence]]
 -
 - definition:: [[neurons]] [[link]] [[particles]] in [[time]] is the [[knowledge]]

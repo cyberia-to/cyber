@@ -1,8 +1,7 @@
-tags:: building, private
+tags:: building
 alias:: elon, elona
 size:: 96
 shape:: 12*8
-
 - multipurpose facility
 - components
 	- [[energy]]

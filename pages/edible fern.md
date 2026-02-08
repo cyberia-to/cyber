@@ -1,5 +1,4 @@
-tags:: kitchen/menu, fern, vegetables, sides, steamed, stir-fried, plant-based, simple
-
+tags:: kitchen/menu
 - ### 🧾 🌿 steamed or stir-fried edible fern
   young edible fern shoots quickly steamed or stir-fried — tender, earthy, and rich in minerals, perfect as a fresh seasonal side.
 - ### 🍴 meal/type
