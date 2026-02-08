@@ -1,4 +1,5 @@
 tags:: aip
+
 - [[network oriented aip]] for [[cybernet]] and [[oracle]] interactions
 - [[pages]]
 	- [[main]]: [[cyberver/rewards]]

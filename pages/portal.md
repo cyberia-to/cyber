@@ -1,7 +1,8 @@
 tags:: aip
+
 - current state on [[cyb/portal]]
 - place for onboarding
-- [[pages]]
+-
 	- [[main]]: [[buy energy]]
 	- [[create avatar]]
 	- [[map]]

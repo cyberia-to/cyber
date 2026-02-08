@@ -10,10 +10,12 @@ language = "en"
 # favicon = ""              # Emoji or path to favicon file
 
 [nav]
-# menu = [
-#   { label = "Home", page = "Cyber" },
-#   { label = "Bostrom", page = "Bostrom" },
-# ]
+menu = [
+  { label = "Pages", url = "/pages" },
+  { label = "Topics", url = "/tags" },
+  { label = "Graph", url = "/graph" },
+  { label = "Blog", url = "/blog" },
+]
 
 [nav.sidebar]
 show_namespaces = true
@@ -30,7 +32,7 @@ output_dir = "public"
 [content]
 public_only = true
 exclude_patterns = ["logseq/*", "draws/*", ".git/*"]
-include_journals = false
+include_journals = true
 default_public = true
 
 [urls]
@@ -66,8 +68,8 @@ border_color = "#e2e2e0"
 [style.dark]
 bg_color = "#000000"
 text_color = "#f0f0f0"
-surface_color = "#111111"
-border_color = "#222222"
+surface_color = "#000000"
+border_color = "#111111"
 
 [style.typography]
 font_body = "system-ui, -apple-system, 'Segoe UI', sans-serif"

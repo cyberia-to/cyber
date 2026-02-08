@@ -1,5 +1,6 @@
 alias:: my
 tags:: aip
+
 - offline value:: opens [[great web]] access
 	- core
 		- through the lense of [[file]] and [[link]]
