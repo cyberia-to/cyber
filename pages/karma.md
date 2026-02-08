@@ -1,5 +1,5 @@
 alias:: neurons weight, neurons weights
 - contribution measure of [[neuron]] into [[collective intelligence]]
 - according to [[token theory]] karma is [[score]]
-- TODO explain reputation aglorithm
+- TODO explain reputation algorithm
 - discover all [[concepts]]

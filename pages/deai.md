@@ -1,1 +1,7 @@
-alias:: decetralized ai
+alias:: decentralized ai
+tags:: cyber
+- [[ai]] systems that operate without centralized control
+- leveraging [[blockchain]], [[cybergraph]] and [[consensus]] for trustless coordination
+- [[cyber]] provides foundation through [[collective learning]] of [[simulated brains]]
+- key components: [[cyberlink]], [[relevance machine]], [[cybernet]]
+- discover all [[concepts]]

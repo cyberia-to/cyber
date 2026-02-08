@@ -1,3 +1,0 @@
-- look into [cyber.page](https://cyber.page)
-- or dive into the [theory of collective focus](https://mirror.xyz/mastercyb.eth/4KfzSr4_Z2C91hsMdkWMRTHpFGnpBd5tVHI5R9vxoUo)
-- current state: several mainnets

@@ -24,7 +24,7 @@ alias:: cyberlinks, unit of knowledge, simple interactions, expert opinions, ess
 	- eventually the request to this link resolves to a particular machine which will show your old god
 	- you cant know for sure what you get
 	- cyberlinks are different
-	- link between two pieces of content particles there each content is addressed by its [[hash]]
+	- link between two pieces of content particles where each content is addressed by its [[hash]]
 	- this makes information searchable through the spacetime
 - changing the way we [[learn]]
 - discover all [[concepts]]

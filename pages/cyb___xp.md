@@ -1,5 +1,5 @@
-alias:: cyb/xp
 tags:: cyb
+
 status:: TODO
 
 	- TODO [[loading]] [[knowledge]]
@@ -80,5 +80,3 @@ status:: TODO
 	- [[time]]
 	- [[actions]]
 	- [signer](cyb/signer)
--
--

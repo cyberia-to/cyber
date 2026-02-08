@@ -1,6 +1,7 @@
 alias:: cyberlinks weight, cyberlinks weights
+
 -
-- algorithm addressed to solve [[true false problem]] for inference of truthful [[answers]] from [[cybergraph]]
+- algorithm addressed to solve [[true-false problem]] for inference of truthful [[answers]] from [[cybergraph]]
 - algorithm features
 	- does not introduce additional complexity
 	- requires zero additional information

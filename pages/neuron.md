@@ -8,7 +8,7 @@ tags:: cyber
 	- either can prove correctness of [[signature]]
 	- or can act as a [[prog]] in accordance to [[consensus]] of [[vimputer]]
 - in [[cyber]] neurons are fundamental
-	- [[neuron]] use [[spell]] to [[sign]] and [[cast]] [[signal]]
+	- [[neuron]] uses [[spell]] to [[sign]] and [[cast]] [[signal]]
 	- and as result are able to do literally anything
 - in [[bostrom]] and [[spacepussy]] standard [cosmos-sdk](https://docs.cosmos.network/) addresses are used as neurons
 	- support all [[cyber-sdk]] and [[cosmos-sdk]] [[signal types]]

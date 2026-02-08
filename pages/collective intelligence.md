@@ -46,5 +46,13 @@ alias:: collective intelligence theory, collective artificial intelligence
 		- groups that are moderately diverse in [cognitive style](https://en.wikipedia.org/wiki/Cognitive_style)
 			- have higher collective intelligence
 			- than those who are very similar in cognitive style or very different
+- ## historical context
+	- Aristotle: wisdom of the crowds
+	- Condorcet: jury theorem
+	- Wheeler: superorganism
+	- Vernadsky, Teilhard: noosphere
+	- Engelbart: three people working together in augmented mode seem more than three times as effective
+	- Dorigo: ant colony optimization
+	- boundaries between human and machine collective intelligence are blurring
 - [[bostrom]] and [[spacepussy]] offers simple [[collective learning]]
 - discover all [[concepts]]

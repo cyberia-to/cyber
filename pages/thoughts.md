@@ -1,1 +1,2 @@
 - TODO
+- internal representations processed by [[neurons]] and expressed as [[cyberlinks]]

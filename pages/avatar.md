@@ -1,4 +1,5 @@
 alias:: account, name, avatar system
+tags:: cyber
 - its a [[uniq]] [[token]]
 - which links [[particles]] and [[neurons]]
 - with one simple name

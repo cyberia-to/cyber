@@ -22,4 +22,4 @@
 	- [cyber](https://wiki.mutable.ai/cybercongress/cyber)
 	- [go-cyber](https://wiki.mutable.ai/cybercongress/go-cyber)
 	- [cyb-ts](https://wiki.mutable.ai/cybercongress/cyb-ts)
-- TODO [[cyb]]: personal data aware assitant
+- TODO [[cyb]]: personal data aware assistant

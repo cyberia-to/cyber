@@ -1,8 +1,9 @@
 alias:: relevance machine, truth medium, rm, tm
 icon:: 🖖🏽
+tags:: cyber
 - collective [[vm]] for [[soft3]] computations
 - offers [[probabilistic collective computations]]
-- arhitecture
+- architecture
 	- input
 		- [[will]] of [[neurons]]
 		- [[attention]] of [[neurons]]

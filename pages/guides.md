@@ -11,7 +11,7 @@ tags:: bostrom, spacepussy
 	- learn your brain locally
 	- learn spacepussy
 	- learn bostrom
-- [[become a hero]] by [[runing validator]]
+- [[become a hero]] by [[running validator]]
 	- validator commands
 	- network upgrade guide
 	- daemon configuration
