@@ -1,4 +1,0 @@
-- [[fern]]
-  tags:: species
-- [[fern]]
--

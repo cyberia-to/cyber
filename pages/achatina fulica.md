@@ -1,4 +1,0 @@
-tags:: species, animal
-
-- [[snail]]
--

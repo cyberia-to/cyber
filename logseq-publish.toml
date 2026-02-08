@@ -56,18 +56,18 @@ show_minimap = true
 minimap_depth = 2
 
 [style]
-primary_color = "#2d6a4f"
-secondary_color = "#264653"
+primary_color = "#22c55e"
+secondary_color = "#06b6d4"
 bg_color = "#fafaf9"
 text_color = "#1a1a1a"
 surface_color = "#ffffff"
 border_color = "#e2e2e0"
 
 [style.dark]
-bg_color = "#0f0f0f"
-text_color = "#e5e5e3"
-surface_color = "#1a1a1a"
-border_color = "#2a2a28"
+bg_color = "#000000"
+text_color = "#f0f0f0"
+surface_color = "#111111"
+border_color = "#222222"
 
 [style.typography]
 font_body = "system-ui, -apple-system, 'Segoe UI', sans-serif"

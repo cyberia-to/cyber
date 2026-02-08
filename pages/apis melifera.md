@@ -1,7 +1,0 @@
-tags:: species
-
-- ![image](https://ipfs.io/ipfs/QmPp3FL6yDtCeYWfYzpWRb75JZYxgrS9GmKcn4aWZj9GVd)
-- **General Characteristics**: *Apis mellifera*, commonly known as the Western honeybee, is the most widely known and studied bee species due to its importance in agriculture as pollinators and as producers of honey and beeswax. Native to Europe, Africa, and parts of Asia, this species has been introduced to many other parts of the world, including the Americas and Australia.
-- **Social Structure**: *Apis mellifera* lives in highly organized social colonies that can contain tens of thousands of individuals, including a single queen, many workers, and, during breeding seasons, drones. Their complex social behavior and communication methods, such as the waggle dance, are well-documented.
-- **Honey Production**: *Apis mellifera* is renowned for its ability to produce large quantities of honey, which is stored in the wax comb within their hives. The efficiency and scale of their honey production, along with the ease of managing their hives, make them the primary species used in commercial beekeeping and honey production around the world.
-- **Pollination**: Beyond honey production, *Apis mellifera* is critically important for the pollination of a wide variety of crops and wild plants, contributing significantly to global agriculture and biodiversity.
