@@ -8,7 +8,7 @@ wood-durability:: high
 market:: resins
 supply:: next-month
 
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmTvWmfaiadRKJapuwBSnd1W1epZ2WuFzcFscJLCW1KYX5)
+- ![](https://ipfs.io/ipfs/QmTvWmfaiadRKJapuwBSnd1W1epZ2WuFzcFscJLCW1KYX5)
 - [plantsofasia](http://www.plantsofasia.com/index/santalum/0-862)
 - height: 4-9 m
 - [wiki](https://en.wikipedia.org/wiki/Santalum_album)

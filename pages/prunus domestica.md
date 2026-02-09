@@ -3,7 +3,7 @@ alias:: plum
 
 - products
 - [[fruit]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmeZ1RYaxEy4TS7KnVXDfPTz7ikpoahRyVBWGFTGghBnkr)
+- ![](https://ipfs.io/ipfs/QmeZ1RYaxEy4TS7KnVXDfPTz7ikpoahRyVBWGFTGghBnkr)
 - [prunus_domestica](https://en.wikipedia.org/wiki/Prunus_domestica)
 - [[plant/type]]: deciduous [[fruit tree]] of the [[rosaceae]] family
 - properties

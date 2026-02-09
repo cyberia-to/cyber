@@ -1,11 +1,11 @@
 alias:: roselle
 tags:: species
 
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmeCFx9a4RHz81djR62ytQNAcWkrCSG3CB2DfB8oj2KTPj)
+- ![image.png](https://ipfs.io/ipfs/QmeCFx9a4RHz81djR62ytQNAcWkrCSG3CB2DfB8oj2KTPj)
 - [[salads]]: [[leave]] is amazing
 - products
 	- [[leave]]
-- [document](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmQVv2k6Zz79NQXKem19cnJUe8AqKVUAP7fsMme6jEZCTh)
+- [document](https://ipfs.io/ipfs/QmQVv2k6Zz79NQXKem19cnJUe8AqKVUAP7fsMme6jEZCTh)
 - roselle is an annual or perennial herb or shrub that grows up to 2-2.5 meters tall. The leaves are dark green with a red stem, and the flowers are typically red or sometimes pale yellow with a dark red center.
   
   **culinary uses**

@@ -3,7 +3,7 @@ scalable:: true
 alias:: phyllanthus, meniran hijau
 
 - [[plants/healh]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPtc57JipzFViQvx5QVxNsuzqwUGteGertBqCFU5mYtZP)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcpjKioGjMQysHqVWg9zQZUjzv1qJPnxpnJQdZtzcabUt)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcfjGxvxEutWkthFWqXoHwDssf4kUCjQgAtmYGgkXQWKM)
+- ![](https://ipfs.io/ipfs/QmPtc57JipzFViQvx5QVxNsuzqwUGteGertBqCFU5mYtZP)
+- ![](https://ipfs.io/ipfs/QmcpjKioGjMQysHqVWg9zQZUjzv1qJPnxpnJQdZtzcabUt)
+- ![](https://ipfs.io/ipfs/QmcfjGxvxEutWkthFWqXoHwDssf4kUCjQgAtmYGgkXQWKM)
 - [[health]]

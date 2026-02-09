@@ -9,6 +9,6 @@ grow-speed:: 1
 
 - [[high margin]]
 - nitrogener:: 70
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmW91Kx4pUqV1GAS3Qr2vco3ewnbPH3tH6UFU9iHm1AMeA)
+- ![image.png](https://ipfs.io/ipfs/QmW91Kx4pUqV1GAS3Qr2vco3ewnbPH3tH6UFU9iHm1AMeA)
 - [[wood]]
 -

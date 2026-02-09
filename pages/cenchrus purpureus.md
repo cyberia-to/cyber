@@ -7,8 +7,8 @@ margin:: low
 autonomy:: support
 
 - [[grass]]
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaVAi9bsUXC4DQC4bPQCL17C1VSfeTWFbxy3PqbrK4TAa)
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmSEgYo831AxL2tAETCbcK4VJm4Q5FwfjnoRM1BKRMxrke)
+- ![image](https://ipfs.io/ipfs/QmaVAi9bsUXC4DQC4bPQCL17C1VSfeTWFbxy3PqbrK4TAa)
+- ![image](https://ipfs.io/ipfs/QmSEgYo831AxL2tAETCbcK4VJm4Q5FwfjnoRM1BKRMxrke)
 - Napier grass (*Pennisetum purpureum*), also known as elephant grass, is primarily grown for its use as fodder, bioenergy, and in some regions for erosion control. It is not traditionally known for the production of essential oils like some other aromatic plants. However, there has been some research into the volatile compounds present in Napier grass, which can be extracted and analyzed, though these compounds are not typically extracted for commercial essential oil production.
 - ### Essential Oil Composition in Napier Grass
   

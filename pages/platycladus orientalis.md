@@ -3,6 +3,6 @@ scalable:: true
 alias:: platycladus, chinese thuja
 
 - [[conifer]]
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPnZBU6qAvuzv6VKU3kPTwzhVQFYWLkpZCVnwtuFBaU2x)
+- ![image.png](https://ipfs.io/ipfs/QmPnZBU6qAvuzv6VKU3kPTwzhVQFYWLkpZCVnwtuFBaU2x)
 - products
 	- [[leave]]

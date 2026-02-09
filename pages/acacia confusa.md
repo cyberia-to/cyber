@@ -1,9 +1,9 @@
 tags:: species, major, research
 
 - nitrogener:: 100
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmV3tKTy3v9ec57WpFRgiyWrSF9isnYjmY79EixcaxZvRy)
+- ![image](https://ipfs.io/ipfs/QmV3tKTy3v9ec57WpFRgiyWrSF9isnYjmY79EixcaxZvRy)
 - [tokopedia](https://www.tokopedia.com/sahacing1-1/top-sale-biji-benih-bunga-pohon-acacia-confusa-silahkan-langsung?extParam=ivf%3Dfalse%26src%3Dsearch)
-- [acacia_confusa.pdf](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcvX9U2XEQoJBq2qx8j5tV94i2fjmbabpC85dTdk2Kyce)
+- [acacia_confusa.pdf](https://ipfs.io/ipfs/QmcvX9U2XEQoJBq2qx8j5tV94i2fjmbabpC85dTdk2Kyce)
 - **products**:
 	- **root**: can be used for medicinal purposes and dye extraction
 	- **stem**: can be harvested for timber and fuel wood

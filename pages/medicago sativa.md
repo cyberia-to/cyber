@@ -6,7 +6,7 @@ supply:: next-month
 
 -
 - nitrogener:: 200
-- ![Alfalfa | Nutritious Forage Crop, Livestock Feed & Soil Enhancer |  Britannica](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmSQyjhWYg3iiPCYQHZ4ZKGEygHFVCgZNrxX1kT4TYKTYr)
+- ![Alfalfa | Nutritious Forage Crop, Livestock Feed & Soil Enhancer |  Britannica](https://ipfs.io/ipfs/QmSQyjhWYg3iiPCYQHZ4ZKGEygHFVCgZNrxX1kT4TYKTYr)
 - [[floor]]
 - germination
 	- typically germinate within 7-10 days after plantin

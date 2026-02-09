@@ -12,9 +12,9 @@ grow-speed:: 5
 - [[legume]]
 - [[canopy layer]]
 - [[shader]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmWydt72tNvQizZmCb7ZCvtut6didjT5uqSxvmXbBUxs5P)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmNSBkfGTpPK5pXFFD9C2iapHtsRkpZZ86cB2c74oPvV5M)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmR84KRKJ5hawM7dbqqGwvkauwNgh4Wn9y1s9Ghfy6pE38)
+- ![](https://ipfs.io/ipfs/QmWydt72tNvQizZmCb7ZCvtut6didjT5uqSxvmXbBUxs5P)
+- ![](https://ipfs.io/ipfs/QmNSBkfGTpPK5pXFFD9C2iapHtsRkpZZ86cB2c74oPvV5M)
+- ![](https://ipfs.io/ipfs/QmR84KRKJ5hawM7dbqqGwvkauwNgh4Wn9y1s9Ghfy6pE38)
 - [wiki](https://en.wikipedia.org/wiki/Inga_edulis)
 - [[plant/type]]: [[fast growing]] [[nitrogen-fixing]] tropical tree
 - properties

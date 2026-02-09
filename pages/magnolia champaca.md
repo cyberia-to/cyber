@@ -4,9 +4,9 @@ wood:: yes
 grow-speed:: 4
 
 -
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeiapmu3yu6gy6kdonf4xp4q3lg33wrqtsr44mfkbkepqlqzp4bqkhm)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeihkuav2sxohnpxagvqhidqj4xbns2hyvgzjfsxwgua7r2sbfkq2xu)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeigya5s63qrx6cnqkrfhvnd54tmqtduhbzof6t3roh6ycplrdzpx4i)
+- ![](https://ipfs.io/ipfs/bafybeiapmu3yu6gy6kdonf4xp4q3lg33wrqtsr44mfkbkepqlqzp4bqkhm)
+- ![](https://ipfs.io/ipfs/bafybeihkuav2sxohnpxagvqhidqj4xbns2hyvgzjfsxwgua7r2sbfkq2xu)
+- ![](https://ipfs.io/ipfs/bafybeigya5s63qrx6cnqkrfhvnd54tmqtduhbzof6t3roh6ycplrdzpx4i)
 - [[health]]
 - product
 	- [[flower]]
@@ -86,9 +86,9 @@ grow-speed:: 4
 			- [[wood]]: harvested selectively after natural fall or pruning. used in artisanal [[woodcraft]], [[incense]], and [[carving]]
 - tags:: species, major
 - wood
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmW9v9T8Usp1mPqqFGMt6AUU1dWHw22tApWPrBAc8rK7cN)
-- ![Screenshot 2024-05-27 at 07.04.08.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPd2jAHjMBRQrV9BeuZTVPaZ83YWBySq7H39t6Ru9QDXe)
-- ![Screenshot 2024-05-27 at 07.03.51.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/Qmc2FpzaWTvhK18wVJJQkv4Ych9vSt1txmPBFP1K1XUa5K)
+- ![image.png](https://ipfs.io/ipfs/QmW9v9T8Usp1mPqqFGMt6AUU1dWHw22tApWPrBAc8rK7cN)
+- ![Screenshot 2024-05-27 at 07.04.08.png](https://ipfs.io/ipfs/QmPd2jAHjMBRQrV9BeuZTVPaZ83YWBySq7H39t6Ru9QDXe)
+- ![Screenshot 2024-05-27 at 07.03.51.png](https://ipfs.io/ipfs/Qmc2FpzaWTvhK18wVJJQkv4Ych9vSt1txmPBFP1K1XUa5K)
 - products
 	- [[flower]]
 	  tags:: species

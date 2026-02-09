@@ -6,8 +6,8 @@ grow-speed:: 5
 
 - nitrogener:: 500
 - wood-density:: 500
-- ![Leucaena](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmRFr6siC54zvG6YQmDxCxx2yjLTkKwmtzSfRWoasFARKx)
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmUxrbBQ6dvTeCR49YDjAHNhwdDLc1V3Mc6wxhVcYLz6su)
+- ![Leucaena](https://ipfs.io/ipfs/QmRFr6siC54zvG6YQmDxCxx2yjLTkKwmtzSfRWoasFARKx)
+- ![image.png](https://ipfs.io/ipfs/QmUxrbBQ6dvTeCR49YDjAHNhwdDLc1V3Mc6wxhVcYLz6su)
 - [[plant/miracle]]
 - [[plant/tree]] :
 	- tree or shrub; [[fast growing]], [[perennial]] [[legume]], reaching up to 20 meters tall, with bipinnate leaves, white spherical flower heads, and elongated flat seed pods containing multiple seeds.

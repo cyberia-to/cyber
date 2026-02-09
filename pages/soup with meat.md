@@ -1,6 +1,6 @@
 tags:: kitchen/menu, mains
 
-<img src="https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeifpwtxfx3h5xqtnobp633df7ugk27kjhvwkms3ggadds5cnhypede" style="width:500px; height:auto;" />
+<img src="https://ipfs.io/ipfs/bafybeifpwtxfx3h5xqtnobp633df7ugk27kjhvwkms3ggadds5cnhypede" style="width:500px; height:auto;" />
 - ### 🧾 🥘 stewed meat with vegetables and spices  
   a comforting, slow-cooked stew made with tender shredded meat, soft taro, and seasonal vegetables like chayote and carrot. simmered in a fragrant blend of curry, turmeric, white pepper, and garam masala, then finished with fresh dill leaves.
 - ### 🍴 meal/type

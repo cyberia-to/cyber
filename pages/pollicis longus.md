@@ -1,2 +1,2 @@
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaBbvZHu2c4cSaeHfxPzhSTof351YMitjsYz1ja9zrf18)
+- ![](https://ipfs.io/ipfs/QmaBbvZHu2c4cSaeHfxPzhSTof351YMitjsYz1ja9zrf18)
 -
