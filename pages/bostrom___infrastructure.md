@@ -18,6 +18,7 @@ tags:: bostrom, infrastructure, cybernode
 	- [[chain config]] — Chain ID, RPC, token info for wallets
 	- [[API endpoints]] — Public API endpoints for developers
 	- [[bostrom architecture]] — How the infrastructure is organized
+	- [[cybernode servers]] — Server fleet, specs, and services
 	- [[bostrom monitoring]] — Network status and uptime
 	- [[bostrom IBC]] — Cross-chain connectivity
 	- [[bostrom security]] — Security practices and considerations
