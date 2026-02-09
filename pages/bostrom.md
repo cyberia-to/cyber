@@ -1,11 +1,13 @@
 icon:: 🟢
 tags:: aos, cyber
 alias:: enhanced blockchain
+
 - [[bootloader]] of [[cyber]]
 - and [[moon]] [[network state]]
 - named after [[nick bostrom]]
 - secure [[proof of stake]] [[bostrom/consensus]]
 - fair [[bostrom/genesis]] distribution of [[$BOOT]]
+- [[bostrom infrastructure]]
 - [[cybergraph]]
 	- [[cyberlink]]
 	- [[will minting]]

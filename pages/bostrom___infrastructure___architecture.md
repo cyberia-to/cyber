@@ -1,0 +1,79 @@
+icon:: 🏗️
+alias:: [[bostrom architecture]]
+tags:: bostrom, infrastructure, architecture
+
+- # Architecture
+	- Back to [[bostrom infrastructure]]
+-
+- ## System Overview
+	- ```
+	  ┌─────────────────────────────────────────────────────────────────┐
+	  │                     PUBLIC ENTRY POINT                          │
+	  │              rpc.bostrom.cybernode.ai                           │
+	  │              (Reverse Proxy with SSL)                           │
+	  └───────────────────────┬─────────────────────────────────────────┘
+	                          │
+	          ┌───────────────┴───────────────┐
+	          │                               │
+	  ┌───────▼───────┐               ┌───────▼───────┐
+	  │  Archive Node │               │   RPC Node    │
+	  │               │               │               │
+	  │ Full history  │               │ Pruned data   │
+	  │ + Cyberindex  │               │ + IBC Relayer │
+	  └───────────────┘               └───────────────┘
+
+	  ┌───────────────┐    ┌───────────────┐
+	  │ IPFS Storage  │    │  Monitoring   │
+	  │               │    │               │
+	  │ Content pins  │    │ Grafana       │
+	  │ Gateway       │    │ Prometheus    │
+	  └───────────────┘    └───────────────┘
+	  ```
+-
+- ## Node Roles
+	- ### Archive Node
+		- Maintains complete blockchain history from genesis
+		- Powers the [[cyberindex]] GraphQL API
+		- Used for historical queries and block explorer
+		- **NOT a validator** — infrastructure node only
+	- ### RPC Node
+		- Pruned node with recent blockchain state
+		- Serves public RPC, LCD, and gRPC endpoints
+		- Runs [[Hermes]] IBC relayer for cross-chain connectivity
+		- **NOT a validator** — infrastructure node only
+	- ### IPFS Storage
+		- Stores content-addressed data for the [[knowledge graph]]
+		- Provides public IPFS gateway
+		- Runs IPFS cluster for redundancy
+-
+- ## Hardware Requirements
+	- Running a Bostrom node requires:
+		- **GPU**: NVIDIA GTX 1080 or better (required for consensus)
+		- **RAM**: 64GB recommended
+		- **Storage**:
+			- Archive node: 5TB+ (grows over time)
+			- Pruned node: 500GB
+		- **CPU**: Modern multi-core processor
+	- #+BEGIN_NOTE
+	  GPU is **required** for Bostrom consensus. The network uses GPU-accelerated PageRank for the [[knowledge graph]] ranking.
+	  #+END_NOTE
+-
+- ## Data Flow
+	- 1. Users interact with [[cyb.ai]] web interface
+	  2. Frontend connects to RPC/LCD endpoints via reverse proxy
+	  3. Queries that need historical data go to the indexer (Archive Node)
+	  4. Content is fetched from IPFS gateway
+	  5. Cross-chain transfers use IBC through the relayer
+-
+- ## Redundancy
+	- | Service | Redundancy |
+	  |---------|------------|
+	  | RPC endpoints | Multiple nodes behind load balancer |
+	  | Blockchain data | ZFS snapshots (12h intervals) |
+	  | IPFS content | Cluster replication |
+	  | IBC relaying | Automatic restart on failure |
+-
+- ## Related
+	- [[API endpoints]]
+	- [[bostrom monitoring]]
+	- [[go-cyber]]
