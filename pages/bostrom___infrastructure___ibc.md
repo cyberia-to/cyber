@@ -11,8 +11,8 @@ tags:: bostrom, infrastructure, ibc, interchain
 - ## Active Channels
 	- | Counterparty | Bostrom Channel | Remote Channel | Status |
 	  |--------------|-----------------|----------------|--------|
-	  | [[Osmosis]] | `channel-2` | `channel-95` | ✅ Active |
-	  | [[Cosmos Hub]] | `channel-8` | `channel-341` | ✅ Active |
+	  | [[Osmosis]] | `channel-2` | `channel-95` | ✅ Active (restored Feb 2026) |
+	  | [[Cosmos Hub]] | `channel-8` | `channel-341` | ❌ Expired (proposal #1023 failed quorum) |
 -
 - ## Supported Tokens
 	- ### Bostrom → Other Chains
@@ -63,7 +63,14 @@ tags:: bostrom, infrastructure, ibc, interchain
 		- 1. A new "substitute" client is created
 		  2. A governance proposal recovers the expired client using the substitute
 		  3. Both chains must pass the recovery proposal
-	- This process was completed for Osmosis and Cosmos Hub channels in February 2026.
+	- ### Recovery Status (Feb 2026)
+		- | Chain | Bostrom Prop | Remote Prop | Result |
+		  |-------|--------------|-------------|--------|
+		  | Osmosis | #32 ✅ | #1002 ✅ | **RESTORED** |
+		  | Cosmos Hub | #33 ✅ | #1023 ❌ | Failed quorum (36.7% vs 40% needed) |
+		- #+BEGIN_WARNING
+		  Cosmos Hub IBC requires a new proposal. The previous attempt (#1023) had 92.5% YES but failed due to insufficient voter turnout. Top validators didn't participate.
+		  #+END_WARNING
 -
 - ## Troubleshooting
 	- ### Transfer Stuck

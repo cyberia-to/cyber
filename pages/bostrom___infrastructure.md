@@ -31,6 +31,7 @@ tags:: bostrom, infrastructure, cybernode
 		- **IPFS Storage** — Decentralized content storage for the [[knowledge graph]]
 		- **Reverse Proxy** — Load balancing and SSL termination
 		- **IBC Relayer** — Cross-chain packet relay to [[Osmosis]] and [[Cosmos Hub]]
+		-
 -
 - ## Networks
 	- | Network | Chain ID | Status |
@@ -68,6 +69,22 @@ tags:: bostrom, infrastructure, cybernode
 -
 - ## Contributing
 	- Infrastructure is open source. Contributions welcome:
-		- [[go-cyber]] — Blockchain node
+	- ### Core Repos (cyberia-to)
+		- [[go-cyber]] — Blockchain node (fork)
 		- [[cyb-ts]] — Web frontend
+		- [[cyber-ts]] — TypeScript client library
+		- [[soft3.js]] — JavaScript API library
 		- [[cyberindex]] — GraphQL indexer
+		- [[cw-cyber]] — CosmWasm semantic libs
+		- [[warp]] — DEX contracts
+		- [[prism]] — Design system
+		- [[localbostrom]] — Development environment
+		- [[celatone-frontend]] — Block explorer
+		- [[cybernet]] — DAO network
+		- [[space-pussy]] — Space Pussy chain
+	- ### External Dependencies
+		- cybercongress/go-cyber — Upstream node
+		- bro-n-bro/spacebox-crawler — Blockchain crawler
+		- informalsystems/hermes — IBC relayer
+		- hasura/graphql-engine — GraphQL API
+		- ipfs/kubo — IPFS daemon

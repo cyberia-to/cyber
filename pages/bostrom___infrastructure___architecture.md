@@ -6,29 +6,18 @@ tags:: bostrom, infrastructure, architecture
 	- Back to [[bostrom infrastructure]]
 -
 - ## System Overview
-	- ```
-	  ┌─────────────────────────────────────────────────────────────────┐
-	  │                     PUBLIC ENTRY POINT                          │
-	  │              rpc.bostrom.cybernode.ai                           │
-	  │              (Reverse Proxy with SSL)                           │
-	  └───────────────────────┬─────────────────────────────────────────┘
-	                          │
-	          ┌───────────────┴───────────────┐
-	          │                               │
-	  ┌───────▼───────┐               ┌───────▼───────┐
-	  │  Archive Node │               │   RPC Node    │
-	  │               │               │               │
-	  │ Full history  │               │ Pruned data   │
-	  │ + Cyberindex  │               │ + IBC Relayer │
-	  └───────────────┘               └───────────────┘
-
-	  ┌───────────────┐    ┌───────────────┐
-	  │ IPFS Storage  │    │  Monitoring   │
-	  │               │    │               │
-	  │ Content pins  │    │ Grafana       │
-	  │ Gateway       │    │ Prometheus    │
-	  └───────────────┘    └───────────────┘
-	  ```
+	- ![Infrastructure Diagram](../assets/Bostrom_infra.drawio.svg)
+	- 📎 [[../assets/cyber-full-architecture.drawio][Full Architecture Map (Draw.io)]]
+	- ### Server Details
+		- | Server | Role | Specs |
+		  |--------|------|-------|
+		  | Cyberproxy | Nginx, Frontend | CX31 |
+		  | Deimos | Archive + Cyberindex | GTX 1080, 62GB, 6.8TB |
+		  | Jupiter | RPC + IBC Hermes | GTX 1080, 62GB, 6.9TB |
+		  | IO | IPFS + Cluster | 62GB, 3.5TB |
+		  | Mimas | Grafana + Prometheus | CX41 |
+		  | Port | Market APIs | CX21 |
+		  | Helia-Relay | libp2p relay | CX32 |
 -
 - ## Node Roles
 	- ### Archive Node
