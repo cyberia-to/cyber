@@ -1,8 +1,6 @@
-alias:: public
-- each [[neuron]] is derived from a public key
-- multiple [[neurons]] can be generated from the same public key
-	- through different encoding schemes or by using different prefixes in various [[vimputers]]
-	- however, a single [[neuron]] corresponds to a single public key
-- public keys are being used behind the scene for [[signing]]
-	- while [[neurons]] are being used for as shorter, user-friendly representation
-	- derived from the public key
+tags:: cyber
+- the open half of a cryptographic keypair. derived from the [[private key]]
+- a [[neuron]] is identified by the [[hash]] of its public key
+- anyone can verify a [[signature]] using the public key without knowing the private key
+- in [[cyber]]: public keys are the addresses of [[neurons]] in the [[cybergraph]]
+- see [[neuron]]
