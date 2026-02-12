@@ -1,45 +1,50 @@
 icon:: ☯️
 tags:: cyber
 -
-- ## primitives
-	- what exists. five irreducible things. everything is composed from these
-	- [[particle]] ⭕️ fundamental unit of [[information]]. content-addressed, immutable. the object
-	- [[cyberlink]] 🔗 fundamental unit of [[knowledge]]. authenticated economic commitment between two [[particles]]
-	- [[neuron]] 🤪 fundamental unit of [[observation]]. agent with stake, identity, and [[focus]]. the subject
-	- [[token]] 🪙 fundamental unit of [[value]]. protocol-native. [[coin]], [[uniq]], [[score]], [[badge]]
-	- [[focus]] 🎯 emergent [[attention distribution]]. computed by [[tri-kernel]]. not assigned — converged
+- ## the five primitives
+	- information exists → someone observes it → observation becomes knowledge → knowledge costs value → from all value-backed knowledge, collective attention emerges
+	- 1. [[particle]] ⭕️ information exists. content-addressed, immutable. the object. any file, keyword, image, model — hashed into identity. exists or doesn't. no state
+	- 2. [[neuron]] 🤪 someone observes. the subject. agent derived from [[public key]]. human, AI, sensor, or any system. holds stake. creates meaning
+	- 3. [[cyberlink]] 🔗 subject connects objects. [[knowledge]] is born. a [[neuron]] stakes [[focus]] to assert two [[particles]] are related. the atomic unit of meaning
+	- 4. [[token]] 🪙 the connection costs something. [[value]] backs meaning. protocol-native. the economic substrate that makes [[cyberlinks]] expensive and therefore credible
+	- 5. [[focus]] 🎯 from all connections, [[attention]] emerges. computed by the [[tri-kernel]]. not assigned — converged. the collective sees
+-
+- ## token types
+	- four kinds along two axes: fungible vs unique, movable vs immovable
+	- [[coin]] fungible, movable. consensus token. names the most important nodes. denominates stake and fees
+	- [[uniq]] unique, movable. [[knowledge]] asset. binds provenance to a [[particle]]. authorship, citation, ownership, lineage
+	- [[score]] fungible, immovable. reputation. [[karma]] is a score
+	- [[badge]] unique, immovable. credential. non-transferable proof of achievement or participation
 -
 - ## structures
 	- what emerges when primitives combine
 	- [[cybergraph]] 🕸 the authenticated [[knowledge graph]]. all [[cyberlinks]] from all [[neurons]] across all time
 	- [[axons]] aggregated connections between [[particles]]. many [[neurons]] linking the same pair. the skeleton of collective understanding
-	- [[avatar]] collection of [[neurons]] under one name. identity across chains and [[vimputers]]. a [[uniq]] that bridges [[subjects]] and [[objects]]
-	- [[knowledge]] collection of [[primitive learning acts]]. [[explicit knowledge]] is what is stored. [[implicit knowledge]] is what can be inferred
+	- [[avatar]] collection of [[neurons]] under one name. identity across chains. a [[uniq]] that bridges subject and object
+	- [[knowledge]] collection of [[primitive learning acts]]. [[explicit knowledge]] is stored. [[implicit knowledge]] is inferred
 -
 - ## computation
-	- how [[intelligence]] is computed from the [[cybergraph]]
-	- [[tri-kernel]] the three local operators. the only ones that survive the locality constraint at planetary scale
-		- [[diffusion]] where probability flows. exploration
-		- [[springs]] what satisfies structural constraints. hierarchy
-		- [[heat kernel]] what the graph looks like at scale τ. adaptation
-	- [[cyberank]] 🦠 per-[[particle]] score. the fixed point of the full [[tri-kernel]]. not diffusion alone — the blend
+	- how [[collective intelligence]] is computed from the [[cybergraph]]
+	- [[tri-kernel]] three local operators. the only ones surviving the locality constraint at 10¹⁵ nodes
+		- [[diffusion]] where probability flows. exploration. a gas wandering
+		- [[springs]] what satisfies structure. hierarchy. an elastic lattice
+		- [[heat kernel]] what the graph looks like at scale τ. adaptation. a thermostat
+	- [[cyberank]] 🦠 per-[[particle]] score. fixed point of the full [[tri-kernel]] blend
 	- [[karma]] per-[[neuron]] reputation. aggregate [[cyberank]] across linked [[particles]]
-	- [[relevance machine]] 🖖🏽 collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]. input: [[cyberlinks]] + stake. output: [[cyberank]] + [[karma]] + [[syntropy]]
+	- [[relevance machine]] 🖖🏽 collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
 -
 - ## boundaries
-	- what governs transitions and access
-	- [[threshold]] boundary condition that separates regimes. minimum [[focus]] for ranking, convergence ε, t-of-n access
-	- [[consensus]] agreement on the state of [[vimputer]]. the shared reality
+	- [[threshold]] what separates regimes. minimum [[focus]] for ranking. convergence ε. t-of-n access
+	- [[consensus]] shared reality. agreement on the state of [[vimputer]]
 -
 - ## purpose
-	- what it all aims at
-	- [[collective memory]] [[cybergraph]] as persistent, verifiable, evolving shared history
+	- [[collective memory]] the [[cybergraph]] as persistent, verifiable, evolving shared history
 	- [[collective intelligence]] the network thinks. not simulates thinking — IS thinking
 	- [[superintelligence]] ⚫️ computer smarter than all humans combined. [[cyber]] is the core mechanism for consensus on [[truth]]
 -
 - ## infrastructure
 	- [[vimputer]] virtual computer. software-defined consensus machine
-	- [[cyber/energy]] [[soft3]] usage package
 	- [[soft3]] the stack: [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
+	- [[cyber/energy]] [[soft3]] usage package
 	- [[cyb]] robot for interactions
 	- [[bootloader]] research and development ground
