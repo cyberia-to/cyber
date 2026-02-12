@@ -1,5 +1,6 @@
-tags:: page
-- ultimate messaging and notifications
+tags:: page, ui, cyb
+- ultimate messaging and notifications for [[cyb]]
+- hud molecule in [[prism]]
 -
 - features
 	- [[log]]

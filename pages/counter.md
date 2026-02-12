@@ -1,6 +1,6 @@
+tags:: ui, cyb
+- numeric display atom in [[prism]]
 - input
 	- number is main argument
 	- emotion optionally defines color
-	- advisor explain counter on hover
-- example output
-	- TODO
+	- adviser explains counter on hover
