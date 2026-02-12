@@ -2,11 +2,12 @@ icon:: ☯️
 tags:: cyber
 -
 - ## the five primitives
-	- any [[information]] — a file, a word, an image, a model — hashed into permanent identity. this is a [[particle]] ⭕️. the object. exists or doesn't. no state, no owner. just content and its [[hash]]
-	- information alone is dead. a [[neuron]] 🤪 observes it. any agent — human, AI, sensor — derived from a [[public key]], carrying stake. the subject. [[particles]] are what is known. neurons are who knows
-	- a neuron asserts two particles are related — a [[cyberlink]] 🔗. not a hyperlink: an authenticated commitment. the neuron spends [[focus]] to create [[knowledge]]. the atomic unit of meaning
-	- [[tokens]] 🪙 back the system. protocol-native [[value]] — stake, fees, commitment. tokens make [[cyberlinks]] expensive. expense makes them credible. costly signals produce [[knowledge]], cheap talk produces noise
-	- from millions of value-backed cyberlinks, [[focus]] 🎯 emerges — the stationary vector of the [[tri-kernel]] on the [[cybergraph]]. nobody assigns it. it converges. the collective sees
+	- three targets and two tools. the targets are what the system stores — [[information]], [[knowledge]], [[intelligence]]. the tools are what makes the journey possible
+	- [[particle]] ⭕️ is [[information]]. any file, word, image, model — hashed into permanent identity. the object. exists or doesn't. no state, no owner. just content and its [[hash]]
+	- [[cyberlink]] 🔗 is [[knowledge]]. a [[neuron]] asserts two [[particles]] are related — not a hyperlink but an authenticated commitment backed by [[focus]]. the atomic unit of meaning
+	- [[focus]] 🎯 is [[intelligence]]. from millions of value-backed cyberlinks, a global attention distribution emerges — the stationary vector of the [[tri-kernel]] on the [[cybergraph]]. nobody assigns it. it converges. the collective sees
+	- [[neuron]] 🤪 is the tool of observation. the subject. any agent — human, AI, sensor — derived from a [[public key]], carrying stake. [[particles]] are what is known. neurons are who knows
+	- [[token]] 🪙 is the tool of commitment. protocol-native [[value]] — stake, fees, economic weight. tokens make [[cyberlinks]] expensive. expense makes them credible. costly signals produce [[knowledge]], cheap talk produces noise
 -
 - ## token types
 	- two axes: fungible vs unique, movable vs immovable
