@@ -4,8 +4,8 @@ supply:: wishlist
 
 - [[conifer]]
 - ![image](https://ipfs.io/ipfs/QmZ6tLZ79ygJzbh6cPwUGVnw8LxEK3HQcmzHJQYENjr2bX)
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZq9PxC66ZdKTyFKsCKWxNTsNxPAidZo9XSouAif3QBAq)
-- [Abies_sibirica.pdf](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmVeW68byCzoebpeAe3iTz1149z8xrC2esZP4Ranhtok9D)
+- ![image](https://ipfs.io/ipfs/QmZq9PxC66ZdKTyFKsCKWxNTsNxPAidZo9XSouAif3QBAq)
+- [Abies_sibirica.pdf](https://ipfs.io/ipfs/QmVeW68byCzoebpeAe3iTz1149z8xrC2esZP4Ranhtok9D)
 - ### review of abies sibirica (siberian fir)
 	- abies sibirica, commonly known as the siberian fir, is a coniferous tree native to siberia and parts of northeastern europe. this evergreen tree is known for its aromatic needles and essential oils. it grows in cold, temperate climates and has several uses in various industries.
 - #### parts of the plant and their uses

@@ -4,7 +4,7 @@ supply:: wishlist
 - [[high margin]]
 - [[conifer]]
 - the largest trees by volume
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZj7RNtjgsQ14pvjt2rv1DwPDjHndcZVpaRzNdSKk9ZNE)
+- ![](https://ipfs.io/ipfs/QmZj7RNtjgsQ14pvjt2rv1DwPDjHndcZVpaRzNdSKk9ZNE)
 -
 - [[plant/iconic]], [[long-living]]
 - [[products]]

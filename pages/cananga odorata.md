@@ -5,8 +5,8 @@ title:: cananga odorata
 wood:: yes
 grow-speed:: 3
 
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmcFTqwzBsbRj8s8EGtzNDYAFGTANUitzePLGvUUidMWGo){:height 377, :width 262}
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmfWeGeLzFWEe2kxoYQ8CU8THHfnPtcUzLHVSHPjZJTfCY){:height 312, :width 417}
+- ![image.png](https://ipfs.io/ipfs/QmcFTqwzBsbRj8s8EGtzNDYAFGTANUitzePLGvUUidMWGo){:height 377, :width 262}
+- ![image.png](https://ipfs.io/ipfs/QmfWeGeLzFWEe2kxoYQ8CU8THHfnPtcUzLHVSHPjZJTfCY){:height 312, :width 417}
 - products
 	- [[flower]]:
 - [[high margin]] [[health]]

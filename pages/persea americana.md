@@ -10,7 +10,7 @@ grow-speed:: 5
 
 - [[staple]]
 - fermented [[leave]] for [[health]]: [[sterols]]
-- ![Screenshot 2024-05-23 at 09.25.18.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPBzCPrsA6BnSSKcXxHRHxXPWgRUicFuJzEy89APzSkM7)
+- ![Screenshot 2024-05-23 at 09.25.18.png](https://ipfs.io/ipfs/QmPBzCPrsA6BnSSKcXxHRHxXPWgRUicFuJzEy89APzSkM7)
 - wood-density:: 500
 -
 - products
@@ -22,12 +22,12 @@ grow-speed:: 5
 - Avocado varieties with Type A flowers open their female bits in the morning of Day One and their male parts in Day Two’s afternoon, while those with Type B flowers open their female parts in the afternoon of Day One and their male parts in the morning of Day Two.
 - Each opening only lasts for about half a day.
 - This behavior, known as “protogynous dichogamy,” encourages the cross-pollination and genetic diversity that leads to more robust organisms.
-- [avocado.pdf](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZx4LQuNeCRBKM6QPBu9BkdD5v5bYUEUB1wPbX3149ukH)
-- [avocado-production-cultivation.pdf](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmXkJ1NY7c6SZYBLjz9ynMteFtjfZf7vVDC4vjhEZLfwSv)
-- [Avocado_Pruning_June_2018.pdf](https://peach-geographical-bat-397.mypinata.cloud/ipfs/Qmbzow9ZQn64MFNjMj3SCtwSDEkqaynjqwGK5ufiW4DEeJ)
+- [avocado.pdf](https://ipfs.io/ipfs/QmZx4LQuNeCRBKM6QPBu9BkdD5v5bYUEUB1wPbX3149ukH)
+- [avocado-production-cultivation.pdf](https://ipfs.io/ipfs/QmXkJ1NY7c6SZYBLjz9ynMteFtjfZf7vVDC4vjhEZLfwSv)
+- [Avocado_Pruning_June_2018.pdf](https://ipfs.io/ipfs/Qmbzow9ZQn64MFNjMj3SCtwSDEkqaynjqwGK5ufiW4DEeJ)
 - [info](https://wikifarmer.com/all-avocado-varieties-explained-characteristics-and-advantages/)
-- ![How many types of avocados are there in California, USA? How do they taste  compared to Mexican avocados (tucumans)? - Quora](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmWNWJWq1GrdgeHdgWF2JJjH1A2x1P5LPGGovooEManLeM)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmNfvEyBAzteDte8VnY2sCEjYo5th1ZzRbpSYYz3FtxyHy)
+- ![How many types of avocados are there in California, USA? How do they taste  compared to Mexican avocados (tucumans)? - Quora](https://ipfs.io/ipfs/QmWNWJWq1GrdgeHdgWF2JJjH1A2x1P5LPGGovooEManLeM)
+- ![](https://ipfs.io/ipfs/QmNfvEyBAzteDte8VnY2sCEjYo5th1ZzRbpSYYz3FtxyHy)
 - {{video https://www.youtube.com/watch?v=k50-f74LUfI}}
 - {{video https://www.youtube.com/watch?v=rwc_WeASo2E}}
 - optical observations

@@ -3,5 +3,5 @@ alias:: cyatheawood:: yes
 grow-speed:: 5
 
 - [[fern]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmUgojRPEeoHuhTcE4ASjFGDJh2stBADGvhmQgpaeVMqKD)
+- ![](https://ipfs.io/ipfs/QmUgojRPEeoHuhTcE4ASjFGDJh2stBADGvhmQgpaeVMqKD)
 -

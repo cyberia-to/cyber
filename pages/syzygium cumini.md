@@ -7,8 +7,8 @@ alias:: jamblang
 - [[firewood]]
 - [[fodder]]
 - [[shader]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeia7ju24nyclvd6ockwyy7n5ntyjifkwmxc4leqjeqwq3zxjw4la4m)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafybeiandcgnl3fx2zuurrbp2ddejepecucmuvkzml6g6s4m4oviphw6hy)
+- ![](https://ipfs.io/ipfs/bafybeia7ju24nyclvd6ockwyy7n5ntyjifkwmxc4leqjeqwq3zxjw4la4m)
+- ![](https://ipfs.io/ipfs/bafybeiandcgnl3fx2zuurrbp2ddejepecucmuvkzml6g6s4m4oviphw6hy)
 - [wiki_syzygium_cumini](https://en.wikipedia.org/wiki/Syzygium_cumini)
 - [[plant/type]]: tropical [[fruit]] [[evergreen tree]]
 - high chance for [[highland magic]]
@@ -90,8 +90,8 @@ alias:: jamblang
 			- bark and leaf: harvested selectively for [[infusions]] or [[decoctions]]
 			- timber: harvested from old trees. used in [[carpentry]], [[tools]], and rural [[construction]]
 			  =======
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmdS5g9oV1SxePvi6gKJHzBVtgQFkdqT5JKYZSUEQ2bYNG)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmVf8zoFxtjA6VDEmCESD8f7Gc1DupyV1JFTs5Yzqe7aE4){:height 646, :width 408}
+- ![](https://ipfs.io/ipfs/QmdS5g9oV1SxePvi6gKJHzBVtgQFkdqT5JKYZSUEQ2bYNG)
+- ![](https://ipfs.io/ipfs/QmVf8zoFxtjA6VDEmCESD8f7Gc1DupyV1JFTs5Yzqe7aE4){:height 646, :width 408}
 - height: up to 30 m
 - [wiki](https://en.wikipedia.org/wiki/Syzygium_cumini)
 - [plantsofasia](http://www.plantsofasia.com/index/syzygium_cumini/0-302)

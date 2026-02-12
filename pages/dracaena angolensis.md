@@ -1,9 +1,9 @@
 tags:: genus, species
 alias:: dracaena, sansevieria cylindrica
 
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaCA6S6cPVBPTKAMdKdazdR3t1B7YwHZWdDtZ7cxUaFz2)
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmYCkWgYgxTWsDvrECZHBNMEd6mYv3BjQrngHEnuoXHVK2)
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmRFqFKnNW6oKjTVLQogesFUSdkpYYhouQoLV3suMTH7wA){:height 456, :width 676}
+- ![image.png](https://ipfs.io/ipfs/QmaCA6S6cPVBPTKAMdKdazdR3t1B7YwHZWdDtZ7cxUaFz2)
+- ![image.png](https://ipfs.io/ipfs/QmYCkWgYgxTWsDvrECZHBNMEd6mYv3BjQrngHEnuoXHVK2)
+- ![image.png](https://ipfs.io/ipfs/QmRFqFKnNW6oKjTVLQogesFUSdkpYYhouQoLV3suMTH7wA){:height 456, :width 676}
 - ### Overview of Research on Dracaena Angolensis
   
   The literature on Dracaena angolensis, while limited, intersects with broader research on the Dracaena genus and other related species. The papers reviewed provide insights into the taxonomy, medicinal uses, and horticultural aspects of various Dracaena species and closely related plants.

@@ -2,10 +2,10 @@ tags:: species, major, super
 alias:: rosemary
 
 - [[staple]] for [[health]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmShosAvG1ETXzo729TXsLM6tiuPKBMWr6LE9j9xCRhAgQ){:height 483, :width 634}
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZFd6jkjrWtF81j3bAuWkmzfdkBkbWdP9Cu3rXB5RMq2Y)
+- ![](https://ipfs.io/ipfs/QmShosAvG1ETXzo729TXsLM6tiuPKBMWr6LE9j9xCRhAgQ){:height 483, :width 634}
+- ![](https://ipfs.io/ipfs/QmZFd6jkjrWtF81j3bAuWkmzfdkBkbWdP9Cu3rXB5RMq2Y)
 - difference with [[lavandula]]
-	- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmQaUedL3JErd2VfpbxU1NDhiysNMryRCnY1ndzXrt5Ax8)
+	- ![](https://ipfs.io/ipfs/QmQaUedL3JErd2VfpbxU1NDhiysNMryRCnY1ndzXrt5Ax8)
 -
 - ### review of the salvia rosmarinus
 - [[salvia rosmarinus]], formerly known as [[rosmarinus officinalis]] and commonly called [[rosemary]], is a [[perennial]], [[woody herb]] native to the mediterranean region. it is widely cultivated for [[culinary]], [[medicinal,]] and [[ornamental]] purposes, and it plays a valuable role in regenerative and [[permaculture]] systems due to its [[drought resistance]] and [[insect-repelling]] properties.

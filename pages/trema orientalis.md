@@ -9,8 +9,8 @@ wood-density:: 400
 wood-durability:: low
 
 - nitrogener:: 100
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/Qmf8ZzSrWP4tHT7tECRNWeQZEdywEcEK27HpxishxRpb3V){:height 531, :width 408}
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaRWMQcMoSWUTLiT7pC5S2E8ywb1kd1CnJZXB2QR4SyEy)
+- ![](https://ipfs.io/ipfs/Qmf8ZzSrWP4tHT7tECRNWeQZEdywEcEK27HpxishxRpb3V){:height 531, :width 408}
+- ![](https://ipfs.io/ipfs/QmaRWMQcMoSWUTLiT7pC5S2E8ywb1kd1CnJZXB2QR4SyEy)
 - [wiki](https://en.wikipedia.org/wiki/Trema_orientale)
 - [info](https://apps.worldagroforestry.org/treedb/AFTPDFS/Trema_orientalis.PDF)
 - uses

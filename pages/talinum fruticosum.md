@@ -2,8 +2,8 @@ tags:: species, major, super
 alias:: ceylon spinach, waterleaf, cariru, gbure
 
 - [[staple]]
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmaLL3a3keWYizb9haTeogeV14a9CGjk7fESbU5UPFzkMh)
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmSNGFxVY3pmHKRhQZYRBtMzRjX1KtexWsR4TZjryvvS8o){:height 296, :width 388}
+- ![](https://ipfs.io/ipfs/QmaLL3a3keWYizb9haTeogeV14a9CGjk7fESbU5UPFzkMh)
+- ![](https://ipfs.io/ipfs/QmSNGFxVY3pmHKRhQZYRBtMzRjX1KtexWsR4TZjryvvS8o){:height 296, :width 388}
 - [wiki](https://en.wikipedia.org/wiki/Talinum_fruticosum)
 - products
 	- [[leave]]

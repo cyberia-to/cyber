@@ -7,9 +7,9 @@ autonomy:: support
 wood:: yes
 grow-speed:: 5
 
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmPTsuUveBovcEgX9Feee9sVqb6La2b5xCU4J4Jx1t5mvo)
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmSM1BBoPWAZP8SmPR2VFX8rCEe4dkFiXcVxDH6LNGGmXf)
-- ![image](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmWCg36ZuawF466Jgc955KAJt3S9c5DoinFzXbLEu5NKw9)
+- ![image](https://ipfs.io/ipfs/QmPTsuUveBovcEgX9Feee9sVqb6La2b5xCU4J4Jx1t5mvo)
+- ![image](https://ipfs.io/ipfs/QmSM1BBoPWAZP8SmPR2VFX8rCEe4dkFiXcVxDH6LNGGmXf)
+- ![image](https://ipfs.io/ipfs/QmWCg36ZuawF466Jgc955KAJt3S9c5DoinFzXbLEu5NKw9)
 - ![soil_lab_test_report.pdf](../assets/soil_lab_test_report_1724741272780_0.pdf)
 - ### the bio-properties of [[debregeasia longifolia]] berries
 - nutrient and chemical composition

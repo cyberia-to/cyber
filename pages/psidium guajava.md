@@ -3,7 +3,7 @@ alias:: psidium, guava, jambu batu
 wood:: yes
 grow-speed:: 3
 
-- ![Screenshot 2024-05-17 at 05.54.42.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmZsJZdhQpxh8yt24xL8W6xgp67BL1AYR3BcNQ2z8ErEmo)
+- ![Screenshot 2024-05-17 at 05.54.42.png](https://ipfs.io/ipfs/QmZsJZdhQpxh8yt24xL8W6xgp67BL1AYR3BcNQ2z8ErEmo)
 - wood-density:: 650
 - products
 	- [[fruit]]

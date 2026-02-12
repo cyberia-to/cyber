@@ -1,5 +1,5 @@
 tags:: kitchen/menu, breakfast
-- ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/bafkreid4xke6bwgcebgrtzovq36x5qemxokuoci5rodvgyj6djhxzc5tnq)
+- ![](https://ipfs.io/ipfs/bafkreid4xke6bwgcebgrtzovq36x5qemxokuoci5rodvgyj6djhxzc5tnq)
 - ## 🧾 🍳 scrambled eggs
   creamy and soft scrambled eggs made with just eggs and a touch of oil — no salt, no milk.
 - ### 🍴 meal/type

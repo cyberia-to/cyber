@@ -4,7 +4,7 @@ wood:: yes
 grow-speed:: 4
 
 - [[dioecious]]
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmUnqR7nkzgzuiCCjWwUMKEKs5QggMhN7E5uqFoBSKAtkW)
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmT4CmWGS4QFSZDtxQCGTkRqAuWugYVrckbTQaTiLthFLJ)
+- ![image.png](https://ipfs.io/ipfs/QmUnqR7nkzgzuiCCjWwUMKEKs5QggMhN7E5uqFoBSKAtkW)
+- ![image.png](https://ipfs.io/ipfs/QmT4CmWGS4QFSZDtxQCGTkRqAuWugYVrckbTQaTiLthFLJ)
 - products
 	- [[fruit]]

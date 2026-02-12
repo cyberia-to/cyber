@@ -1,8 +1,8 @@
 tags:: genus, species
 alias:: plumeria
-- ![image.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmUQpXCGd4zxeDRxJQHZw5PEAB2b86sDCEYSGMJSQUwvAC)
-- ![Screenshot 2024-05-10 at 04.53.50.png](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmTwebcPF2k8ZV74cCZsNzNUqw5hjAZ5fFvP5mBYfowVCq)
-- [wiki plumeria rubra](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmU3DUzdExw7cqbgugyxB96zmBhK7YaPARKbkmuQodtzMt)
+- ![image.png](https://ipfs.io/ipfs/QmUQpXCGd4zxeDRxJQHZw5PEAB2b86sDCEYSGMJSQUwvAC)
+- ![Screenshot 2024-05-10 at 04.53.50.png](https://ipfs.io/ipfs/QmTwebcPF2k8ZV74cCZsNzNUqw5hjAZ5fFvP5mBYfowVCq)
+- [wiki plumeria rubra](https://ipfs.io/ipfs/QmU3DUzdExw7cqbgugyxB96zmBhK7YaPARKbkmuQodtzMt)
 - height: 7-8m
 - [[health]]
 - [info](http://www.plantsofasia.com/index/plumeria_rubra/0-444)

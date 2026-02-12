@@ -13,6 +13,7 @@ jobs:
       site-name: "cyber docs"
       home: "cyber"
       title: "Cyber"
+      base-url: "cyber.page"
       favorites: "cyberia,cyber valley,bostrom,cyber,aicosystem,ask,learn,collective intelligence,superintelligence,concepts,🫦 space pussy,knowledge theory,space pussy,neuron,particle,tokens,cyberlink,cybergraph,truth machine,cybernet,soft3,projects,todo,aips,cyb,about this metagraph"
     secrets: inherit
 
@@ -23,5 +24,6 @@ jobs:
       site-name: "cvland docs"
       home: "cyberia"
       title: "Cyberia"
+      base-url: "cv.land"
       favorites: "cv.land,projects,github"
     secrets: inherit
