@@ -1,4 +1,4 @@
-- sitosterol (β-sitosterol) is one of the most abundant [[phytosterols]] found widely in plants, nuts, seeds, vegetable oils, fruits, and legumes. structurally similar to cholesterol, sitosterol is known for its cholesterol-lowering properties and beneficial effects on prostate health, inflammation, and immune modulation
+tags:: compound- sitosterol (β-sitosterol) is one of the most abundant [[phytosterols]] found widely in plants, nuts, seeds, vegetable oils, fruits, and legumes. structurally similar to cholesterol, sitosterol is known for its cholesterol-lowering properties and beneficial effects on prostate health, inflammation, and immune modulation
 - ## chemical properties
 	- chemical formula: C₂₉H₅₀O
 	- molecular weight: 414.71 g/mol

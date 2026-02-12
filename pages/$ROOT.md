@@ -1,1 +1,1 @@
-- [[$BOOT]] token denominated to 10^9
+tags:: ticker, cybernomics- [[$BOOT]] token denominated to 10^9

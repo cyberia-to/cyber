@@ -1,4 +1,4 @@
-alias:: oleanolic acid
+tags:: compoundalias:: oleanolic acid
 
 - ![Oleanolic_Acid.pdf](../assets/Oleanolic_Acid_1719303309556_0.pdf)
 - [[oleanolic acid]] is a natural [[triterpenoid]] compound found in various plants, fruits, and medicinal herbs, such as [[olive]] leaves, [[apples]], and [[hawthorn]]. it is widely recognized for its [[anti-inflammatory]], [[antioxidant]], and [[anti-cancer]] properties.

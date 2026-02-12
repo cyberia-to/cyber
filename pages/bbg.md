@@ -1,5 +1,5 @@
 alias:: big badass graph
-
+tags:: cyber
 - [origin](https://claude.ai/public/artifacts/1a81f4ea-ab5a-4485-80ad-67ee96947efc)
 - # Big Badass Graph
 - A Self-Verifying Substrate for Planetary Collective Intelligence

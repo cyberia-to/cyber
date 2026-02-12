@@ -1,4 +1,4 @@
-## abstract
+tags:: article, cyber## abstract
 
 this document unifies insights from multiple foundational texts: *foundational ranking system*, *cybergraph free energy focus*, *cybergraph contextual free energy model*, *cybergraph llm architecture*, and *universality of diffusion, springs, and heat flow*. it presents **focus flow computation** as a physics-inspired, decentralisable process for computing collective focus, ranking, and generative intelligence on a cybergraph.
 

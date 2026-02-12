@@ -1,4 +1,4 @@
-# On the Nature of Distributed Computation
+tags:: article, cyber# On the Nature of Distributed Computation
 
 ## Aggregation, Proving, and Verification as Irreducible Primitives
 

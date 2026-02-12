@@ -1,1 +1,1 @@
-alias:: ala
+tags:: compoundalias:: ala

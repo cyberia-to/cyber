@@ -1,5 +1,5 @@
 icon:: 👙
-alias:: soft3 stack
+tags:: cyberalias:: soft3 stack
 - collective probabilistic computation stack for [[superintelligence]]
 - [presentation from cosmosverse](https://cyb.ai/oracle/ask/QmTsBLAHC1Lk7n76GX4P3EvbAfNjBmZxwjknWy41SJZBGg)
 - [video translation](https://www.youtube.com/watch?v=bd_PziPbl74&t=29810s)

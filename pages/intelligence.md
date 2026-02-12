@@ -1,5 +1,5 @@
 alias:: intelligent
-- product of [[implicit knowledge]] derived from [[explicit knowledge]] in the [[cybergraph]]
+tags:: cyber- product of [[implicit knowledge]] derived from [[explicit knowledge]] in the [[cybergraph]]
 - what can be inferred beyond what was directly stated
 - in [[cyber]]: the converged [[focus]] distribution computed by the [[tri-kernel]]
 	- [[neurons]] create [[cyberlinks]] — this is [[explicit knowledge]]

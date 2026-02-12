@@ -1,5 +1,5 @@
 alias:: file
-- phenomena related to the reduction in uncertainty
+tags:: cyber- phenomena related to the reduction in uncertainty
 - measured in [[bits]]
 - any file can be expressed by [[neurons]] as [[particle]] of [[information]]
 - in [[cyber]] [[neurons]] measure information by computing its [[hash]]

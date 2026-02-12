@@ -1,4 +1,4 @@
-- [[information]] that is not directly stated
+tags:: cyber- [[information]] that is not directly stated
 - but can be inferred from the [[explicit knowledge]] in the [[cybergraph]]
 - orthogonal to [[explicit knowledge]]
 - explanation

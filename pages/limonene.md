@@ -1,4 +1,4 @@
-- ![Limonene.pdf](../assets/Limonene_1719127859472_0.pdf)
+tags:: compound- ![Limonene.pdf](../assets/Limonene_1719127859472_0.pdf)
 - limonene is a naturally occurring chemical compound found in the peels of citrus fruits. it is a monoterpene and a major component in the oil of citrus fruit peels. the chemical formula for limonene is C10H16.
 - ## chemical properties:
 	- **molecular weight**: 136.24 g/mol

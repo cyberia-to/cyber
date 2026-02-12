@@ -1,1 +1,1 @@
-alias:: ampussy
+tags:: ticker, cybernomicsalias:: ampussy

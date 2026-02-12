@@ -1,5 +1,5 @@
 alias:: path hash accumulator, hash path accumulators
-tags:: cryptographic proofs
+tags:: cyber, cryptographic proofs
 - authenticated data structure that represents a path in a graph as a balanced or biased binary tree of [[hash]] digests
 - internal nodes store hashes of concatenated sub-paths
 - enables logarithmic-size [[cryptographic proofs]] for graph properties: connectivity, distance, type queries

@@ -1,5 +1,5 @@
 icon:: 🦠
-alias:: cyber rank, particles weight, particles weights, cyberanks
+tags:: cyberalias:: cyber rank, particles weight, particles weights, cyberanks
 - per-[[particle]] score computed by the [[tri-kernel]]
 - the fixed point φ* of the composite operator: [[diffusion]] + [[springs]] + [[heat kernel]]
 - `φ* = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)]`

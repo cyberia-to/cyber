@@ -1,4 +1,4 @@
-- ![Camphene.pdf](../assets/Camphene_1719106845776_0.pdf)
+tags:: compound- ![Camphene.pdf](../assets/Camphene_1719106845776_0.pdf)
 - ### camphene: overview and medical uses
   
   **camphene** is a bicyclic monoterpene, which is a type of organic compound. it is a colorless crystal with a pungent smell and is found in many essential oils, including camphor oil, citronella oil, and ginger oil.

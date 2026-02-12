@@ -1,5 +1,5 @@
 alias:: objective function, advanced algorithms
-- the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
+tags:: cyber- the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
 	- computed on [[gpu]] in [[consensus]]
 	- over [[cybergraph]] by the [[truth machine]]
 - algorithms

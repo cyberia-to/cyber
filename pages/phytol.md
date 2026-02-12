@@ -1,4 +1,4 @@
--
+tags:: compound-
 - tags:: precursor vitamin k1, precursor vitamin e
 -
 - [[phytol]] is a vital [[diterpenoid alcohol]] primarily found in [[chlorophyll]] and is an important precursor in the synthesis of [[vitamin e]] and [[vitamin k1]]. it plays a significant role in [[antioxidant defense]], [[cellular signaling]], and [[metabolic processes]]. it is naturally present in many green plants and [[essential oils]].

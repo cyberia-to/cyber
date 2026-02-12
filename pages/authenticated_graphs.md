@@ -1,4 +1,4 @@
-### introduction
+tags:: cyber### introduction
 
 authenticated graph data structures (agds) offer cryptographic proofs that answers to graph queries are correct without trusting the server. while their theory has existed for two decades, they remain under‑used. yet, as we build earth‑scale superintelligence on the collective focus theorem (cft) and fractional focus cascading (ffc), verifiable graph integrity becomes a hard requirement.
 ### recap of classic agds

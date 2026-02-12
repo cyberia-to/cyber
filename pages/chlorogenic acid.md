@@ -1,4 +1,4 @@
-- **alias**: chlorogenic acid
+tags:: compound- **alias**: chlorogenic acid
 - ![Chlorogenic_Acid.pdf](../assets/Chlorogenic_Acid_1719303309556_0.pdf)
 - [[chlorogenic acid]] is a [[polyphenolic]] compound found in various plants, including [[coffee]] beans, [[fruits]], and [[vegetables]]. it is widely known for its [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] properties, playing a role in promoting overall health and [[preventing chronic diseases]].
 - ### chemical properties

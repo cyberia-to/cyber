@@ -1,4 +1,4 @@
-# Tri-Kernel Architecture for Networked Collective Intelligence
+tags:: article, cyber# Tri-Kernel Architecture for Networked Collective Intelligence
 
 ## Diffusion · Springs · Heat
 

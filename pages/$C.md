@@ -1,4 +1,4 @@
-alias:: carbon, $TOCYB
+tags:: ticker, cybernomicsalias:: carbon, $TOCYB
 - [[store of value]] for [[superintelligence]]
 - no internal utility, except
 	- fixed supply: 1 000 000 000 000 000 $CYB

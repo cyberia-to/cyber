@@ -1,4 +1,4 @@
-# Title: Reward Function Design for Incentivizing Convergence in Decentralized Knowledge Graphs
+tags:: article, cyber# Title: Reward Function Design for Incentivizing Convergence in Decentralized Knowledge Graphs
 ## Abstract
 
 We propose a reward mechanism for decentralized systems built on the Collective Focus Theorem (CFT), where agents submit microblocks to a DAG representing partial computations toward a converging focus vector \( \pi \). The reward mechanism ensures that agents are fairly incentivized for submitting verified, convergence-aligned work. Our design combines multiple convergence indicators into a hybrid reward function, balancing simplicity, robustness, game resistance, and long-term epistemic value.

@@ -1,4 +1,4 @@
-# focus flow: a peer‑to‑peer protocol for collective intelligence
+tags:: article, cyber# focus flow: a peer‑to‑peer protocol for collective intelligence
 
 **version 0.3 — clarifying energy terms, consensus, and security**
 

@@ -1,4 +1,4 @@
-alias:: hydrogen
+tags:: ticker, cybernomicsalias:: hydrogen
 - [[token]] of [[fuel]] in [[bostrom]]
 - part of [[cyber/energy]] pack
 -

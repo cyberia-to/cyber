@@ -1,3 +1,3 @@
-alias:: vitamin a
+tags:: compoundalias:: vitamin a
 
 -

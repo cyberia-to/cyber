@@ -1,4 +1,4 @@
-- [[neurons]] [[link]] [[particles]] in [[time]]
+tags:: cyber- [[neurons]] [[link]] [[particles]] in [[time]]
 - the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]
 - a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment that two [[particles]] are related
 - [[cybergraph]] consolidates [[knowledge]] on

@@ -1,4 +1,4 @@
-- phytosterols are naturally occurring, plant-derived sterols structurally similar to cholesterol. they are abundant in vegetable oils, nuts, seeds, legumes, grains, fruits, and vegetables. phytosterols are primarily known for their cholesterol-lowering effects and their role as precursors to plant hormones such as [[brassinosteroids]]
+tags:: compound- phytosterols are naturally occurring, plant-derived sterols structurally similar to cholesterol. they are abundant in vegetable oils, nuts, seeds, legumes, grains, fruits, and vegetables. phytosterols are primarily known for their cholesterol-lowering effects and their role as precursors to plant hormones such as [[brassinosteroids]]
 - ## chemical properties
 	- chemical structure: steroid nucleus with hydroxyl group, similar to cholesterol
 	- solubility: insoluble in water; soluble in fats, oils, and organic solvents

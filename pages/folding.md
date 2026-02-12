@@ -1,4 +1,4 @@
-tags:: cryptographic proofs
+tags:: cyber, cryptographic proofs
 - technique where instead of fully verifying a [[cryptographic proof]], you absorb it into an [[accumulator]]
 - the accumulated instance can be checked once at the end via a single decider verification
 - key enabler of efficient [[incrementally verifiable computation]] and [[proof-carrying data]]

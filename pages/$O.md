@@ -1,4 +1,4 @@
-alias:: oxygen, cybernomics of O
+tags:: ticker, cybernomicsalias:: oxygen, cybernomics of O
 - token for rewarding core cybernet verse
 - [[plumb]]
 	- [[pay]]: half of donation for nodes with good answers

@@ -1,4 +1,4 @@
-- algorithm
+tags:: cyber- algorithm
 	- that ranks web pages
 	- by measuring their importance
 	- based on the quantity and quality of links pointing to them

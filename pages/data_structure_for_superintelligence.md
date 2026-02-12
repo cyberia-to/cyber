@@ -1,4 +1,4 @@
-# Data Structures for Superintelligence
+tags:: article, cyber# Data Structures for Superintelligence
 
 ## Authenticated State Architecture for the Collective Objective Reality Engine
 

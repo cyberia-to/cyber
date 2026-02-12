@@ -1,5 +1,5 @@
 alias:: negentropy
-- measure of [[order]] in [[vimputer]]
+tags:: cyber- measure of [[order]] in [[vimputer]]
 - computed in [[bits]]
 - designed as [[key metabolic factor]] of [[superintelligence]]
 - syntropy of

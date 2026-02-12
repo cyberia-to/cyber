@@ -1,4 +1,4 @@
-alias:: alkaloid
+tags:: compoundalias:: alkaloid
 - alkaloids are naturally occurring organic compounds containing nitrogen, primarily found in plants, fungi, bacteria, and certain animals. characterized by their significant physiological and pharmacological activities, alkaloids often act as defense mechanisms against herbivores and pathogens.
 - ## chemical properties
 	- composition: nitrogen-containing organic bases, typically derived from amino acids
