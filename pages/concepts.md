@@ -2,45 +2,42 @@ icon:: ☯️
 tags:: cyber
 -
 - ## the five primitives
-	- three targets and two tools. the targets are what the system stores — [[information]], [[knowledge]], [[intelligence]]. the tools are what makes the journey possible
-	- [[particle]] ⭕️ is [[information]]. any file, word, image, model — hashed into permanent identity. the object. exists or doesn't. no state, no owner. just content and its [[hash]]
-	- [[cyberlink]] 🔗 is [[knowledge]]. a [[neuron]] asserts two [[particles]] are related — not a hyperlink but an authenticated commitment backed by [[focus]]. the atomic unit of meaning
-	- [[focus]] 🎯 is [[intelligence]]. from millions of value-backed cyberlinks, a global attention distribution emerges — the stationary vector of the [[tri-kernel]] on the [[cybergraph]]. nobody assigns it. it converges. the collective sees
-	- [[neuron]] 🤪 is the tool of observation. the subject. any agent — human, AI, sensor — that can sign with a [[public key]] and put skin in the game. [[particles]] are what is known. neurons are who knows
-	- [[token]] 🪙 is the tool of commitment. protocol-native [[value]] that makes every [[cyberlink]] cost something real. cheap talk produces noise. costly signals produce [[knowledge]]
+	- three targets: [[information]], [[knowledge]], [[intelligence]]. two tools: observation and commitment
+	- [[particle]] ⭕️ is [[information]] — any content hashed into permanent identity. the object. no state, no owner. just a [[hash]]
+	- [[cyberlink]] 🔗 is [[knowledge]] — a [[neuron]] stakes [[focus]] to bind two [[particles]]. not a hyperlink. an economic commitment. the atom of meaning
+	- [[focus]] 🎯 is [[intelligence]] — from all value-backed [[cyberlinks]], attention converges via the [[tri-kernel]]. nobody assigns it. the [[cybergraph]] computes it. the collective sees
+	- [[neuron]] 🤪 is the observer — any agent that can sign and put skin in the game. the subject. particles are what is known. neurons are who knows
+	- [[token]] 🪙 is the commitment — protocol-native [[value]] that makes every [[cyberlink]] cost something real. cheap talk produces noise. costly signals produce [[knowledge]]
 -
 - ## token types
-	- two axes: fungible vs unique, movable vs immovable
-	- [[coin]]: fungible, movable. consensus token. denominates stake and fees
-	- [[uniq]]: unique, movable. [[knowledge]] asset. provenance bound to a [[particle]]. authorship, citation, ownership, lineage
+	- [[coin]]: fungible, movable. consensus token
+	- [[uniq]]: unique, movable. [[knowledge]] asset — provenance bound to a [[particle]]
 	- [[score]]: fungible, immovable. reputation. [[karma]] is a score
 	- [[badge]]: unique, immovable. non-transferable credential
 -
 - ## structures
-	- the [[cybergraph]] 🕸 is all [[cyberlinks]] from all [[neurons]] across all time — the authenticated [[knowledge graph]], the total [[collective memory]] of the network
-	- when many neurons link the same pair, individual cyberlinks merge into [[axons]] — aggregated connections. if a cyberlink is a synapse, an axon is the nerve fiber. the skeleton of collective understanding
-	- an [[avatar]] is a collection of [[neurons]] under one name — identity across chains. a [[uniq]] bridging subject and object
-	- [[knowledge]] is the sum of all [[cyberlinks]]. what is stored is [[explicit knowledge]]. what can be inferred is [[implicit knowledge]] — where [[intelligence]] begins
+	- the [[cybergraph]] 🕸 is all [[cyberlinks]] from all [[neurons]] across all time. the [[collective memory]] of the network
+	- [[axons]] are what emerge when many neurons link the same pair — aggregated connections. if a cyberlink is a synapse, an axon is the nerve. the skeleton of understanding
+	- an [[avatar]] is many [[neurons]] under one name. identity across chains. a [[uniq]] bridging subject and object
+	- [[knowledge]] is the sum of all [[cyberlinks]]. stored: [[explicit knowledge]]. inferred: [[implicit knowledge]] — where [[intelligence]] begins
 -
 - ## computation
-	- the [[relevance machine]] 🖖🏽 runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]. three local operators — the only ones surviving the locality constraint at planetary scale:
+	- the [[relevance machine]] 🖖🏽 runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]] — three operators, the only ones surviving locality at planetary scale:
 		- [[diffusion]]: where probability flows. exploration
 		- [[springs]]: what satisfies structure. hierarchy
 		- [[heat kernel]]: what the graph looks like at scale τ. adaptation
-	- the fixed point is [[cyberank]] 🦠 — per-[[particle]] score. [[karma]] is the per-[[neuron]] aggregate: how much cyberank earned across everything linked
+	- their fixed point is [[cyberank]] 🦠 — per-[[particle]] score. [[karma]] is the per-[[neuron]] mirror: how much cyberank earned across everything linked
 -
 - ## boundaries
-	- [[threshold]]: what separates regimes. minimum [[focus]] for ranking. convergence ε. t-of-n cryptographic access
+	- [[threshold]]: the line between noise and signal. minimum [[focus]] for ranking. convergence ε. t-of-n cryptographic access
 	- [[consensus]]: shared reality. agreement on state of the [[vimputer]]
 -
 - ## purpose
-	- [[collective memory]]: the [[cybergraph]] as persistent, verifiable, evolving shared history
+	- [[collective memory]]: the [[cybergraph]] as evolving shared history that cannot be erased or forged
 	- [[collective intelligence]]: the network IS thinking
 	- [[superintelligence]] ⚫️: [[cyber]] is the core mechanism for consensus on [[truth]]
 -
 - ## infrastructure
 	- [[vimputer]]: software-defined consensus machine
 	- [[soft3]]: the stack — [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
-	- [[cyber/energy]]: [[soft3]] usage package
-	- [[cyb]]: robot for interactions
-	- [[bootloader]]: research and development ground
+	- [[cyber/energy]]: usage package. [[cyb]]: the interface. [[bootloader]]: the proving ground
