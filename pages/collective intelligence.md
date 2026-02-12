@@ -30,14 +30,14 @@ tags:: cyber
 	- [[diversity]]: the system is designed for ultimate accessibility — humans, AI, sensors, [[animals]], [[plants]], [[fungi]], [[robots]], [[progs]]. diversity of cognitive style is the strongest predictor of collective intelligence
 -
 - ## historical context
-	- Aristotle: wisdom of the crowds
-	- Condorcet: jury theorem (1785)
-	- Wheeler: superorganism (1911)
-	- Vernadsky, Teilhard: noosphere
-	- Engelbart: augmented groups outperform by 3x+
-	- Dorigo: ant colony optimization
-	- Woolley: measurable c-factor (2010)
-	- Hong-Page: diversity beats ability (2004)
+	- [[Aristotle]]: [[wisdom of the crowds]] — the many collectively surpass the few best
+	- [[Condorcet]]: [[jury theorem]] (1785) — majority vote converges on truth
+	- Wheeler: [[superorganism]] (1911) — colonies as single organisms
+	- [[Vernadsky]], Teilhard: [[noosphere]] — the sphere of thought enveloping the planet
+	- [[Engelbart]]: augmented groups outperform by 3x+
+	- Dorigo: [[ant colony optimization]] (1992) — [[stigmergy]] formalized as algorithm
+	- Woolley: [[c-factor]] (2010) — measurable group-level intelligence
+	- Hong-Page: [[diversity theorem]] (2004) — diversity beats ability
 	- boundaries between human and machine collective intelligence are dissolving. [[cyber]] is where they merge
 -
 - ## computational foundations

@@ -1,0 +1,6 @@
+- the aggregated judgment of many independent agents outperforms most individuals — and often the best expert
+- first articulated by [[Aristotle]]: the many, though individually inferior, can collectively surpass the few best
+- formalized by [[Condorcet]] in the [[jury theorem]] (1785)
+- modern revival: Surowiecki (2004) — conditions for wise crowds: diversity of opinion, independence, decentralization, aggregation mechanism
+- in [[cyber]]: the [[tri-kernel]] is the aggregation mechanism. [[neurons]] provide diverse independent signals via [[cyberlinks]]. [[focus]] is the crowd's verdict
+- see [[collective intelligence]]
