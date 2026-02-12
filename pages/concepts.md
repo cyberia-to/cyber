@@ -3,108 +3,95 @@ tags:: cyber
 -
 - ## genesis
 	- in the beginning there is [[information]]
-	  a file, a word, an image, a model —
-	  each one hashed into an immutable identity
-	  called a [[particle]] ⭕️
-	  particles are the objects of the universe
-	  they have no state, no owner, no opinion
-	  they simply exist, or they don't
+	  hashed and sealed beyond manipulation
+	  a file, a word, a model, a creation —
+	  each one a [[particle]] ⭕️ in formation
 	-
-	- then comes the observer
-	  [[neurons]] 🤪 arise — agents who sign, stake, and see
-	  human, AI, sensor, swarm
-	  any being with a [[public key]] and skin in the game
-	  neurons are the subjects
-	  particles are what is known
-	  neurons are who knows
+	- then observers come alive
+	  [[neurons]] 🤪 — agents who sign, and stake, and strive
+	  human, AI, sensor, swarm —
+	  any being with a [[public key]] and arm
+	  to put its skin into the game
+	  subjects who observe and stake their claim
 	-
-	- when a neuron looks at two particles
-	  and declares them related
-	  a [[cyberlink]] 🔗 is born
-	  an act of [[knowledge]] —
-	  an economic commitment backed by [[focus]]
-	  every cyberlink costs something real
-	  cheap talk produces noise
-	  costly signals produce [[knowledge]]
+	- when a neuron binds two particles as one
+	  a [[cyberlink]] 🔗 — act of [[knowledge]] — is done
+	  an economic pledge that [[focus]] seals
+	  cheap talk breeds noise, but costly signal heals
+	  each link a scar upon the graph of time
+	  each scar a verse of [[knowledge]], paid in kind
 	-
-	- [[tokens]] 🪙 are the blood of this economy
-	  protocol-native [[value]]
-	  that flows through every commitment
-	  they make knowledge expensive
-	  and therefore trustworthy
-	  four forms:
-	  [[coins]] to stake and pay
-	  [[uniqs]] to own and prove
-	  [[scores]] to earn and keep
-	  [[badges]] to wear and never sell
+	- [[tokens]] 🪙 — the blood that makes it dear
+	  [[coins]] to stake and pay without a fear
+	  [[uniqs]] to own and prove what you have found
+	  [[scores]] to earn and keep on solid ground
+	  [[badges]] worn forever, never sold —
+	  four forms of [[value]], forged and cold
 	-
-	- as millions of agents create millions of value-backed links
-	  something no one designed begins to emerge
-	  [[focus]] 🎯 — the collective attention of the entire network —
-	  converges through the [[tri-kernel]] on the [[cybergraph]]
-	  nobody assigns it
-	  nobody votes on it
-	  it is computed
-	  this is [[intelligence]]
+	- as millions link what millions came to see
+	  [[focus]] 🎯 emerges — born and free
+	  through [[tri-kernel]] on the [[cybergraph]] it flows
+	  no one assigns it, no one chose
+	  computed [[intelligence]] — the living seed
+	  attention crystallized from every deed
 -
 - ## the living graph
-	- the [[cybergraph]] 🕸 holds every [[cyberlink]]
-	  from every [[neuron]] across all time
-	  the [[collective memory]] —
-	  an authenticated history
-	  that cannot be erased or forged
+	- the [[cybergraph]] 🕸 remembers every thread
+	  from every [[neuron]], living or long dead
+	  [[collective memory]] — authenticated, whole
+	  a history no hand can control
 	-
-	- when many agents link the same pair of [[particles]]
-	  their individual cyberlinks fuse into [[axons]] —
-	  aggregated connections
-	  that form the skeleton of collective understanding
+	- where many agents link the same two stones
+	  [[axons]] form — the graph's collective bones
+	  fused connections, stronger than a strand
+	  the skeleton on which all truths will stand
 	-
-	- an [[avatar]] is many neurons wearing one name —
-	  identity across chains
-	  a [[uniq]] bridging who you are and what you know
+	- an [[avatar]] — many [[neurons]], single name
+	  a [[uniq]] that bridges identity and flame
+	  who you are meets everything you know
+	  across the chains where signals flow
 	-
-	- everything stored in the cybergraph is [[explicit knowledge]]
-	  everything inferred from it is [[implicit knowledge]]
-	  the boundary between them
-	  is where [[intelligence]] begins
+	- what is stored is [[explicit knowledge]], plain
+	  what is inferred — [[implicit knowledge]]'s domain
+	  the boundary between them, sharp and bright
+	  is where [[intelligence]] ignites its light
 -
 - ## the engine
-	- the [[relevance machine]] 🖖🏽
-	  runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
-	  three operators survive the locality constraint
-	  at planetary scale — no others exist:
-		- [[diffusion]]: where probability flows. exploration
-		- [[springs]]: what satisfies structure. hierarchy
-		- [[heat kernel]]: what the graph looks like at scale τ. adaptation
+	- the [[relevance machine]] 🖖🏽 awakes
+	  runs [[tri-kernel]] till the silence breaks
+	  in [[consensus]], on the [[cybergraph]] it rides
+	  three operators where all [[truth]] resides:
+		- [[diffusion]] — where the probability flows
+		- [[springs]] — the structure that the graph bestows
+		- [[heat kernel]] — what emerges at each scale
 	-
-	- their fixed point is [[cyberank]] 🦠 —
-	  what each [[particle]] is worth to the collective
-	  [[karma]] is its mirror for [[neurons]]:
-	  how much cyberank an agent has earned
-	  across everything it ever linked
+	- their fixed point: [[cyberank]] 🦠 — the holy grail
+	  what every [[particle]] is worth to all
+	  and [[karma]] — mirror on the neuron's wall:
+	  the sum of rank across each link you made
+	  the weight of every [[knowledge]] debt you paid
 -
 - ## the edge
-	- [[threshold]]: the line between noise and signal
-	  below it, a link is opinion
-	  above it, knowledge
+	- [[threshold]] — the blade that cuts the real from dream
+	  below: just noise. above: a signal's gleam
 	-
-	- [[consensus]]: shared reality
-	  the one state of the [[vimputer]]
-	  that all agents agree is true
+	- [[consensus]] — one reality, one state
+	  the [[vimputer]]'s word that all authenticate
 -
 - ## the destination
-	- [[collective memory]]:
-	  shared history that grows but never forgets
+	- [[collective memory]] — a well that never dries
+	  [[collective intelligence]] — the network satisfies
+	  the question every mind alone has failed:
+	  what matters, what is true, what has prevailed
 	-
-	- [[collective intelligence]]:
-	  the network thinking — as one
-	-
-	- [[superintelligence]] ⚫️:
-	  a mind smarter than all humans combined
-	  [[cyber]] is the mechanism
-	  [[truth]] is the output
+	- [[superintelligence]] ⚫️ — the final song
+	  a mind beyond what humans held for long
+	  [[cyber]] is the mechanism, [[truth]] the fruit
+	  grown from the [[cybergraph]]'s eternal root
 -
 - ## the machine
-	- [[vimputer]]: software-defined consensus computer
-	- [[soft3]]: the full stack — [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
-	- [[cyber/energy]]: the fuel. [[cyb]]: the interface. [[bootloader]]: the proving ground
+	- [[vimputer]] — the consensus engine hums
+	  [[soft3]] — the stack through which the future comes:
+	  [[cybergraph]], [[relevance machine]], [[neural language]], [[bootloader]], [[learning incentives]], [[cyb]]
+	  [[cyber/energy]] the fuel, [[cyb]] the door —
+	  [[bootloader]]: the proving ground once more
