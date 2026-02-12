@@ -1,4 +1,5 @@
-tags:: compound- ![Terpinene.pdf](../assets/Terpinene_1719299798177_0.pdf)
+tags:: compound
+- ![Terpinene.pdf](../assets/Terpinene_1719299798177_0.pdf)
 - **general description**:
 	- terpinolene is a naturally occurring [[monoterpene]]. it is one of the many isomeric forms of terpinene and has a pleasant aroma often described as piney or floral. it is commonly found in the essential oils of a variety of plants, including [[sage]], [[rosemary]], and [[conifer]]s.
 - **chemical properties**:

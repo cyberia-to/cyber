@@ -1,5 +1,6 @@
 alias:: random walking, random surfer
-tags:: cyber- process of simulating a [[neuron]] randomly navigating the [[cybergraph]]
+tags:: cyber
+- process of simulating a [[neuron]] randomly navigating the [[cybergraph]]
 - by clicking on links from one page to another
 - idea
 	- rooted in the simplicity

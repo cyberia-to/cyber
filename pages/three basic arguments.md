@@ -1,4 +1,5 @@
-tags:: cyber- of [[knowledge]]
+tags:: cyber
+- of [[knowledge]]
 -
 - defined by [[cyberlink]] in one [[signal]]
 -

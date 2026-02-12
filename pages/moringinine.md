@@ -1,4 +1,5 @@
-tags:: compound- **alias**: moringinine
+tags:: compound
+- **alias**: moringinine
 - ![Moringinine.pdf](../assets/Moringinine_1719303309556_0.pdf)
 - [[moringinine]] is an [[alkaloid]] compound found in the moringa plant ([[moringa oleifera]]). it is known for its potential [[adaptogenic]], [[neuroprotective]], and [[antimicrobial]] properties. moringinine has been studied for its effects on the [[nervous system]] and [[overall health]] benefits.
 - ### chemical properties

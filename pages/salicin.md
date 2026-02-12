@@ -1,4 +1,5 @@
-tags:: compound- salicin is a naturally occurring glycoside compound found primarily in the bark of willow trees (Salix species). It is notable as a precursor to salicylic acid and has historically been used for its medicinal properties, particularly as an [[analgesic]] and [[anti-inflammatory]] agent.
+tags:: compound
+- salicin is a naturally occurring glycoside compound found primarily in the bark of willow trees (Salix species). It is notable as a precursor to salicylic acid and has historically been used for its medicinal properties, particularly as an [[analgesic]] and [[anti-inflammatory]] agent.
 -
 - ### chemical properties
 	- **molecular weight**: 286.28 g/mol

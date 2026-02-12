@@ -1,4 +1,5 @@
-tags:: compound- caffeic acid is a naturally occurring [[phenolic acid]] belonging to the group of hydroxycinnamic acids, widely present in plants such as coffee, fruits, vegetables, grains, and herbs. it exhibits strong [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] activities, playing a significant role in plant defense and human health.
+tags:: compound
+- caffeic acid is a naturally occurring [[phenolic acid]] belonging to the group of hydroxycinnamic acids, widely present in plants such as coffee, fruits, vegetables, grains, and herbs. it exhibits strong [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] activities, playing a significant role in plant defense and human health.
 - ## chemical properties
 	- chemical formula: C₉H₈O₄
 	- molecular weight: 180.16 g/mol

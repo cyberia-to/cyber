@@ -1,4 +1,5 @@
-tags:: compound- **alias**: ellagic acid
+tags:: compound
+- **alias**: ellagic acid
 - ![Ellagic_Acid.pdf](../assets/Ellagic_Acid_1719303309556_0.pdf)
 - [[ellagic acid]] is a natural [[polyphenol]] compound found in many fruits and nuts, such as [[pomegranates]], [[strawberries]], [[raspberries]], and [[walnuts]]. it is known for its strong [[antioxidant]], [[anti-inflammatory]], and [[anti-cancer]] properties.
 - ### chemical properties

@@ -1,4 +1,5 @@
-tags:: cyber- the study of meaning
+tags:: cyber
+- the study of meaning
 - is inherently relative concept
 - [[cybergraph]] define meaning by [[cyberlinks]]
 - more

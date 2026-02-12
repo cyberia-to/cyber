@@ -1,4 +1,5 @@
-tags:: compound- **alias**: b-carotene, β-carotene, b-carotene
+tags:: compound
+- **alias**: b-carotene, β-carotene, b-carotene
 - ![Beta-Carotene.pdf](../assets/Beta-Carotene_1719303309556_0.pdf)
 - [[beta-carotene]] is a red-orange pigment found in fruits and vegetables such as carrots, sweet potatoes, and spinach. it is a precursor to vitamin a (provitamin a) and is known for its powerful antioxidant properties, promoting overall health and protecting against oxidative stress.
 	- ### chemical properties

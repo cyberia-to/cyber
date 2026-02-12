@@ -1,5 +1,6 @@
 icon:: ⛑
-tags:: cyber- simplistic way to understand nature of [[information]] and [[intelligence]]
+tags:: cyber
+- simplistic way to understand nature of [[information]] and [[intelligence]]
 -
 - definition:: [[neurons]] [[link]] [[particles]] in [[time]] is the [[knowledge]]
 -

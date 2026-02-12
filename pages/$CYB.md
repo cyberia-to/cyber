@@ -1,3 +1,4 @@
-tags:: ticker, cybernomics- root [[token]] for [[consensus]] of imaginary [[cyber]] [[superintelligence]]
+tags:: ticker, cybernomics
+- root [[token]] for [[consensus]] of imaginary [[cyber]] [[superintelligence]]
 - currently minted as [[$C]] in [[bostrom]] [[bootloader]]
 -

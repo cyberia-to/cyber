@@ -1,4 +1,5 @@
-tags:: compound- **alias**: stearic acid
+tags:: compound
+- **alias**: stearic acid
 - ![Stearic_Acid.pdf](../assets/Stearic_Acid_1719303309556_0.pdf)
 - [[stearic acid]] is a saturated fatty acid commonly found in [[animal fats]], [[cocoa]] butter, and [[shea]] butter. it is widely used in the [[cosmetics]], [[pharmaceutical]], and [[eat]] industries for its [[emollient]] and [[stabilizing]] properties.
 - ### chemical properties
