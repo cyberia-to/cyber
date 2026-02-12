@@ -1,30 +1,32 @@
 alias:: relevance machine, truth medium, rm, tm
 icon:: 🖖🏽
 tags:: cyber
-- collective [[vm]] for [[soft3]] computations
-- offers [[probabilistic collective computations]]
-- architecture
-	- input
-		- [[will]] of [[neurons]]
-		- [[attention]] of [[neurons]]
-		- [[cyberlinks]] created by [[neurons]]
-	- computation on [[gpu]] in [[consensus]]
-		- [[black magic]]
-	- output
-		- [[particles weights]]
-		- [[cyberlinks weights]]
-		- [[neurons weights]]
-		- [[syntropy]] of [[vimputer]]
+- collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
+- input
+	- [[will]] of [[neurons]]
+	- [[attention]] of [[neurons]]
+	- [[cyberlinks]] created by [[neurons]]
+- computation
+	- [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat kernel]]
+	- runs on [[gpu]] in [[consensus]]
+- output
+	- [[cyberank]]: per-[[particle]] score
+	- [[karma]]: per-[[neuron]] reputation
+	- [[syntropy]] of [[vimputer]]
 - properties
 	- [[no gas fees]] for [[learning]]
-	- [[extremely dynamic]]: each [[cyberlink]] change all weights
+	- [[extremely dynamic]]: each [[cyberlink]] changes all weights
 	- [[memoization]]: no need to recompute stuff twice
-- TODO [[create visualization]]
-- in essence rm
+	- bounded locality: updates cost O(degree) not O(graph size)
+- in essence the relevance machine
 	- provided with enormous but primitively structured input
 	- can provide comprehensive [[universe model]]
 	- with [[strong predictive power]]
-- related articles
+- why "truth machine"
+	- consensus on [[relevance]] is consensus on what matters
+	- what the collective attends to is the collective's [[truth]]
+	- the name is earned when the system demonstrates [[collective intelligence]] factor c > 0
+- related
 	- [[reality of foundation models]]
 	- [[knowledge graphs and llms]]
 	- [[soft3 and machine learning]]
