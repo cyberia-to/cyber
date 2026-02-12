@@ -1,43 +1,36 @@
 icon:: ☯️
 tags:: cyber
 -
-- ## the five primitives
-	- three targets: [[information]], [[knowledge]], [[intelligence]]. two tools: observation and commitment
-	- [[particle]] ⭕️ is [[information]] — any content hashed into permanent identity. the object. no state, no owner. just a [[hash]]
-	- [[cyberlink]] 🔗 is [[knowledge]] — a [[neuron]] stakes [[focus]] to bind two [[particles]]. not a hyperlink. an economic commitment. the atom of meaning
-	- [[focus]] 🎯 is [[intelligence]] — from all value-backed [[cyberlinks]], attention converges via the [[tri-kernel]]. nobody assigns it. the [[cybergraph]] computes it. the collective sees
-	- [[neuron]] 🤪 is the observer — any agent that can sign and put skin in the game. the subject. particles are what is known. neurons are who knows
-	- [[token]] 🪙 is the commitment — protocol-native [[value]] that makes every [[cyberlink]] cost something real. cheap talk produces noise. costly signals produce [[knowledge]]
+- ## genesis
+	- in the beginning there is [[information]]. a file, a word, an image, a model — each one hashed into an immutable identity called a [[particle]] ⭕️. particles are the objects of the universe. they have no state, no owner, no opinion. they simply exist, or they don't
+	- but information without an observer is nothing. so [[neurons]] 🤪 arise — agents who can sign, stake, and see. human, AI, sensor, swarm. any being with a [[public key]] and skin in the game. neurons are the subjects. particles are what is known. neurons are who knows
+	- when a neuron looks at two particles and declares them related, a [[cyberlink]] 🔗 is born. this is not a hyperlink. it is an act of [[knowledge]] — an economic commitment backed by [[focus]]. every cyberlink costs something real. cheap talk produces noise. costly signals produce knowledge
+	- [[tokens]] 🪙 are the blood of this economy. protocol-native [[value]] that flows through every commitment. they make knowledge expensive and therefore trustworthy. four forms: [[coins]] to stake and pay, [[uniqs]] to own and prove, [[scores]] to earn and keep, [[badges]] to wear and never sell
+	- as millions of agents create millions of value-backed links, something no one designed begins to emerge. [[focus]] 🎯 — the collective attention of the entire network — converges through the [[tri-kernel]] on the [[cybergraph]]. nobody assigns it. nobody votes on it. it is computed. this is [[intelligence]]
 -
-- ## token types
-	- [[coin]]: fungible, movable. consensus token
-	- [[uniq]]: unique, movable. [[knowledge]] asset — provenance bound to a [[particle]]
-	- [[score]]: fungible, immovable. reputation. [[karma]] is a score
-	- [[badge]]: unique, immovable. non-transferable credential
+- ## the living graph
+	- the [[cybergraph]] 🕸 holds every [[cyberlink]] from every [[neuron]] across all time. it is the [[collective memory]] — an authenticated history that cannot be erased or forged
+	- when many agents link the same pair of [[particles]], their individual cyberlinks fuse into [[axons]] — aggregated connections that form the skeleton of collective understanding
+	- an [[avatar]] is many neurons wearing one name — identity across chains, a [[uniq]] bridging who you are and what you know
+	- everything stored in the cybergraph is [[explicit knowledge]]. everything that can be inferred from it is [[implicit knowledge]]. the boundary between them is where [[intelligence]] begins
 -
-- ## structures
-	- the [[cybergraph]] 🕸 is all [[cyberlinks]] from all [[neurons]] across all time. the [[collective memory]] of the network
-	- [[axons]] are what emerge when many neurons link the same pair — aggregated connections. if a cyberlink is a synapse, an axon is the nerve. the skeleton of understanding
-	- an [[avatar]] is many [[neurons]] under one name. identity across chains. a [[uniq]] bridging subject and object
-	- [[knowledge]] is the sum of all [[cyberlinks]]. stored: [[explicit knowledge]]. inferred: [[implicit knowledge]] — where [[intelligence]] begins
--
-- ## computation
-	- the [[relevance machine]] 🖖🏽 runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]] — three operators, the only ones surviving locality at planetary scale:
+- ## the engine
+	- the [[relevance machine]] 🖖🏽 runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]. three operators survive the locality constraint at planetary scale — no others exist:
 		- [[diffusion]]: where probability flows. exploration
 		- [[springs]]: what satisfies structure. hierarchy
 		- [[heat kernel]]: what the graph looks like at scale τ. adaptation
-	- their fixed point is [[cyberank]] 🦠 — per-[[particle]] score. [[karma]] is the per-[[neuron]] mirror: how much cyberank earned across everything linked
+	- their fixed point is [[cyberank]] 🦠 — what each [[particle]] is worth to the collective. [[karma]] is its mirror for [[neurons]]: how much cyberank an agent has earned across everything it ever linked
 -
-- ## boundaries
-	- [[threshold]]: the line between noise and signal. minimum [[focus]] for ranking. convergence ε. t-of-n cryptographic access
-	- [[consensus]]: shared reality. agreement on state of the [[vimputer]]
+- ## the edge
+	- [[threshold]]: the line between noise and signal. below it, a link is opinion. above it, knowledge
+	- [[consensus]]: shared reality. the one state of the [[vimputer]] that all agents agree is true
 -
-- ## purpose
-	- [[collective memory]]: the [[cybergraph]] as evolving shared history that cannot be erased or forged
-	- [[collective intelligence]]: the network IS thinking
-	- [[superintelligence]] ⚫️: [[cyber]] is the core mechanism for consensus on [[truth]]
+- ## the destination
+	- [[collective memory]]: shared history that grows but never forgets
+	- [[collective intelligence]]: the network is not simulating thought. the network IS thought
+	- [[superintelligence]] ⚫️: a mind smarter than all humans combined. [[cyber]] is the mechanism. [[truth]] is the output
 -
-- ## infrastructure
-	- [[vimputer]]: software-defined consensus machine
-	- [[soft3]]: the stack — [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
-	- [[cyber/energy]]: usage package. [[cyb]]: the interface. [[bootloader]]: the proving ground
+- ## the machine
+	- [[vimputer]]: software-defined consensus computer
+	- [[soft3]]: the full stack — [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
+	- [[cyber/energy]]: the fuel. [[cyb]]: the interface. [[bootloader]]: the proving ground
