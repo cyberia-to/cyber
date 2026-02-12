@@ -1,7 +1,10 @@
-tags:: aip
+tags:: aip, cyb, ui
+- the onboarding [[aip]] in [[cyb]]
+- cell in [[prism]]
 - current state on [[cyb/portal]]
-- place for onboarding
--
+- where new [[neurons]] enter the [[cyber]] network
+- guides through [[avatar]] creation, [[cyber/energy]] acquisition, and first [[cyberlinks]]
+- pages
 	- [[main]]: [[buy energy]]
 	- [[create avatar]]
 	- [[map]]
@@ -23,4 +26,3 @@ tags:: aip
 	- [[robot/passport]]
 	- [[robot/karma]]
 	- [[robot/levels]]
--
