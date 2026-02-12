@@ -69,3 +69,4 @@ alias:: cyber rank, particles weight, particles weights, cyberanks
 	- examples
 		- full number: 176 711 938 🦠
 		- game number: 176 🦠🦠🦠
+- discover all [[concepts]]
