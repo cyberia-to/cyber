@@ -2,7 +2,6 @@ tags:: district, team, cv.land
 
 ops:: false
 dev:: false
-
 - TODO move to dedicated graph altogether with majority of [[species]]
 - experimental high labour [[magic forest]]
 - with 240+ [[genus]] and 300+ species

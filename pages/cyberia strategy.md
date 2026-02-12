@@ -1,4 +1,3 @@
-
 - unified document
 	- pitch
 	- strategy

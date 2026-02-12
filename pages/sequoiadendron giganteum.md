@@ -1,7 +1,6 @@
 alias:: giant sequoia
 tags:: species, research
 supply:: wishlist
-
 - [[high margin]]
 - [[conifer]]
 - the largest trees by volume

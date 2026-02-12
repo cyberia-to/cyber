@@ -1,6 +1,5 @@
 tags:: genus, psycho
 alias:: hemp
-
 - [[cannabis sativa]]
 - [[cannabis indica]]
 - [[cannabis ruderalis]]
