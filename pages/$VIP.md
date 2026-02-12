@@ -1,1 +1,2 @@
-tags:: ticker, cybernomicsalias:: vpussy
+tags:: ticker, cybernomics
+alias:: vpussy

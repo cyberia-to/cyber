@@ -1,4 +1,5 @@
-tags:: ticker, cybernomicsalias:: volt, millivolt, volts, millivolts
+tags:: ticker, cybernomics
+alias:: volt, millivolt, volts, millivolts
 
 - [[token]] of [[will]] in [[bostrom]]
 - part of [[cyber/energy]] pack
