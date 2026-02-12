@@ -1,5 +1,9 @@
 alias:: signatures, digital signature, cryptographic signature
-- cryptographic method used to prove the authenticity and integrity of [[signals]]
+tags:: cyber
+- cryptographic proof that a [[neuron]] authored a [[signal]]
 - uses [[asymmetric encryption]] involving a pair of keys
 	- [[private key]] for [[signing]]
 	- [[public key]] for [[verification]]
+- every [[cyberlink]] carries a signature — this is what makes [[knowledge]] in the [[cybergraph]] authenticated
+- without signatures, the [[truth machine]] would rank anonymous noise; with them, [[karma]] traces back to real [[neurons]]
+- discover all [[concepts]]

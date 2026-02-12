@@ -1,10 +1,10 @@
-tags:: aip
-- [[network oriented aip]] for [[cybernet]] and [[oracle]] interactions
+tags:: aip, cyb, ui
+- the [[cybernet]] [[aip]] in [[cyb]]
+- cell in [[prism]]
+- where [[neurons]] interact with [[learning incentives]]: stake, grade, learn, earn
 - [[pages]]
 	- [[main]]: [[cyberver/rewards]]
-	- [[cyberver/stake]]
-	- [[cyberver/grade]]
-	- [[cyberver/learn]]
-	- [[cyberver/own]]
-- [[actions]]
-	-
+	- [[cyberver/stake]]: delegate [[tokens]] to subnets
+	- [[cyberver/grade]]: evaluate subnet performance
+	- [[cyberver/learn]]: participate in [[collective learning]]
+	- [[cyberver/own]]: manage owned subnets
