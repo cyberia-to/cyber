@@ -13,6 +13,25 @@
 - **Conventional commits.** Use prefixes: `feat:`, `fix:`, `refactor:`,
   `docs:`, `test:`, `chore:`.
 
+## Knowledge Graph Purpose
+
+This Logseq graph is the seed knowledge base for planetary
+superintelligence. It contains only the essential concepts needed for
+further development and survival — not everything, just the core.
+
+## Tagging Conventions
+
+Every page should have a `tags::` line. Key project tags (lenses):
+- `cyber` — the superintelligence protocol
+- `cyb` — the browser/interface
+- `cyberia` — the cyber network state
+- `bostrom` — the bootloader chain
+- `cyber valley` — the physical city/estate
+
+Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
+`ui`, `recipe`. Biology pages use `species`, `genus`. Body pages use
+`muscle`. Ops pages use `operation`.
+
 ## Writing Style
 
 - **Never define by negation.** Do not write "this is not X" or "not a Y
