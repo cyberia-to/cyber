@@ -1,63 +1,43 @@
 icon:: 🎭
 alias:: collective intelligence theory, collective artificial intelligence
-- scientific field, which examines how
-	- groups of individuals collaborate and pool their [[knowledge]] and [[tokens]]
-	- to [[solve problems]], [[make decisions]], and generate [[knowledge]]
-- foundations are built on principles from: biology, sociology, psychology, computer science, and economics
-- [[cyber]] built collective artificial intelligence system
-- this short list of articles explain how [[cyber]] apply the most fundamental concepts observed in nature
-- ## key concepts
-	- [[consensus]]
-	- [[collective memory]]
-	- [[distributed cognition]]
-	- [[diversity]]
-	- [[coordination]]
-	- [[cooperation]]
-	- [[self-organization]]
-	- [[stigmergy]]
-	- [[emergence]]
-- ## key algorithms
-	- [[delphi method]]
-	- [[random walk]]
-	- [[trust systems]]
-	- [[cooperative games]]
-	- [[prediction markets]]
-	- [[truth machine]]
-	- more to embrace
-	  collapsed:: true
-		- swarm intelligence
-		- genetic algorithms
-		- crowd sourcing
-		- collaborative filtering
-		- ensemble learning
-		- network analysis
-- basic evidence which is interesting proof of [[diversity]]
-  id:: 66bae09d-886c-418a-aac3-ddaf68864fd9
-	- `c` as measure of collective intelligence
-	- according to woolley is not correlated with `c`
-		- team cohesion
-		- motivation
-		- satisfaction
-	- they claim that factors were found as significant correlates
-		- the variance in the number of speaking turns
-		- group members average social sensitivity
-		- proportion of females => women are collectively smarter
-		- providing multiple team members the chance to speak up made a group more intelligent
-		- groups that are moderately diverse in [cognitive style](https://en.wikipedia.org/wiki/Cognitive_style)
-			- have higher collective intelligence
-			- than those who are very similar in cognitive style or very different
+tags:: cyber
+-
+- when many agents observe the same world and share what they see, something greater than any one of them emerges. this is collective intelligence — the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual
+-
+- ## why it works
+	- three independent results explain why groups outperform individuals:
+	- **Condorcet jury theorem**: aggregating weakly correct signals from many agents yields increasingly accurate answers as the group grows
+	- **Hong-Page diversity theorem**: diverse heuristics outperform the best homogeneous expert on complex problems. variety of search modes explores more of the landscape
+	- **Woolley c-factor**: groups have a measurable collective intelligence factor `c` — a first principal component across diverse tasks that predicts performance better than average or max individual IQ
+		- `c` correlates with: equal distribution of speaking turns, social sensitivity, cognitive style diversity
+		- `c` does not correlate with: team cohesion, motivation, satisfaction
+-
+- ## how cyber implements it
+	- [[neurons]] create [[cyberlinks]] — value-backed assertions that two [[particles]] are related. this is [[collective learning]]
+	- the [[cybergraph]] accumulates all links from all agents across all time. this is [[collective memory]]
+	- the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat kernel]]) computes [[focus]] — the converged attention distribution. this is [[collective focus]]
+	- the [[truth machine]] runs this computation in [[consensus]]. the output: [[cyberank]] per [[particle]], [[karma]] per [[neuron]]
+	- the result is [[collective computation]] — probabilistic inference that no single agent could perform alone
+	- [[syntropy]] measures how much order the collective has produced: the metabolic pulse of the system
+-
+- ## the mechanisms
+	- [[self-organization]]: [[neurons]] structure the [[cybergraph]] without central control. order emerges from local [[cyberlinks]]
+	- [[stigmergy]]: agents coordinate indirectly through the graph itself. each [[cyberlink]] modifies the shared environment for all
+	- [[emergence]]: global patterns — [[focus]], [[cyberank]], [[truth]] — arise from simple local interactions at scale
+	- [[distributed cognition]]: reasoning is spread across agents and the [[cybergraph]]. no single [[neuron]] holds the full picture
+	- [[coordination]]: [[consensus]], [[automated market maker]], [[prediction markets]], and [[cybernet]] align agents toward shared goals
+	- [[cooperation]]: [[cybernet]] implements [[cooperative games]] with [[feedback loops]] rewarding aligned behavior
+	- [[diversity]]: the system is designed for ultimate accessibility — humans, AI, sensors, [[animals]], [[plants]], [[fungi]], [[robots]], [[progs]]. diversity of cognitive style is the strongest predictor of collective intelligence
+-
 - ## historical context
 	- Aristotle: wisdom of the crowds
-	- Condorcet: jury theorem
-	- Wheeler: superorganism
+	- Condorcet: jury theorem (1785)
+	- Wheeler: superorganism (1911)
 	- Vernadsky, Teilhard: noosphere
-	- Engelbart: three people working together in augmented mode seem more than three times as effective
+	- Engelbart: augmented groups outperform by 3x+
 	- Dorigo: ant colony optimization
-	- boundaries between human and machine collective intelligence are blurring
-- ## collective in cyber
-	- [[collective learning]]: [[learning]] on the same [[vimputer]]. product of collective intelligence
-	- [[collective computation]]: multiple agents working together to solve problems via [[distributed systems]] and [[swarm intelligence algorithms]]
-	- [[collective focus]]: the emergent [[focus]] distribution over the [[cybergraph]] — see [[focus]] for full definition
-	- [[collective memory]]: authenticated shared history that grows and never forgets
-- [[bostrom]] and [[spacepussy]] offers simple [[collective learning]]
+	- Woolley: measurable c-factor (2010)
+	- Hong-Page: diversity beats ability (2004)
+	- boundaries between human and machine collective intelligence are dissolving. [[cyber]] is where they merge
+-
 - discover all [[concepts]]

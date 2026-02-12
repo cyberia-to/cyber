@@ -1,42 +1,18 @@
-- concept of collective memory in a [[blockchain]] with universal means to store and process [[knowledge]]
+tags:: cyber
+- the [[cybergraph]] is the collective memory of [[cyber]]
+- every [[cyberlink]] from every [[neuron]] across all time — authenticated, immutable, traversable
+- overcomes [[collective amnesia]]: history that cannot be erased, rewritten, or forged
 -
-- [[blockchain]] technology were adapted to store and process not just information, but unified [[knowledge]]
-- it could revolutionize the concept of collective memory
-- allowing to overcome [[collective amnesia]] for our [[civilization]]
+- how it works
+	- [[neurons]] record [[knowledge]] as [[cyberlinks]] — signed, timestamped, weighted
+	- [[neural language]] structures memory with [[semantic conventions]], [[motifs]], and [[sentences]]
+	- the [[truth machine]] continuously computes [[relevance]] over the accumulated graph
+	- [[standard inference]] preserves the capacity for contextual evolution
+	- [[soft3]] integrates all layers into a single cognitive computing stack
 -
-- such an [[enhanced blockchain]] function as
-- sophisticated, decentralized system that captures, organizes, and validates [[knowledge]]
-- in a manner akin to human cognitive processes
+- what is stored is [[explicit knowledge]]: directly stated, readily available by traversal
+- what can be inferred is [[implicit knowledge]]: the hidden structure that the [[tri-kernel]] reveals
+- the boundary between them is where [[intelligence]] begins
 -
-- | enhanced blockchain technology         | advanced collective memory           |
-  |--------------------------------------------|------------------------------------------|
-  | [[cyberlink]]               | comprehensive [[learning]] based on fundamental [[unit of knowledge]] |
-  | [[neural language]] | structured, interconnected collective memory with deep contextual understanding |
-  | [[relevance machine]] | sophisticated [[social cognitive process]] for computing complex [[knowledge]] |
-  | [[standard inference]] | preserved historical narratives with capacity for contextual evolution |
-  | [[soft3]]        | cognitive computing integration for collective memory |
-- processes and mechanisms
-	- recording knowledge
-		- [[knowledge units]], rather than mere [[data]]
-		- are recorded in [[blocks]] with full [[context]]
-		- creating a rich tapestry of [[shared history]]
-		- new [[knowledge]] and insights are continuously integrated
-		- with [[continuous computation]] of [[probabilistic model]]
-	- achieving consensus
-		- [[blockchain]] nodes compute [[knowledge]]
-		- through [[advanced algorithms]] considering [[relevance]] and [[context]]
-		- communities achieve deeper [[consensus]] on complex [[knowledge]]
-		- through refined  [[social and cognitive processes]]
-	- maintaining integrity
-		- the integrity of [[knowledge]] is maintained through
-		- [[semantic conventions]] and [[social peer to peer]]
-		- the integrity of collective memory is ensured through [[consensus]]
-- conclusion
-	- conceptualizing collective memory through an [[enhanced blockchain]]
-	- capable of storing and processing unified knowledge presents a transformative vision
-	- offered approach would enable a more sophisticated, accurate, and interconnected understanding of shared histories
-	- leveraging advanced technologies to maintain and evolve collective memory in [[extremely dynamic]] fasion
-	- while challenges remain, the potential benefits for preserving and enriching collective knowledge are profound
-	- offering a new paradigm for how societies remember and interpret their past
--
-- learn more [[concepts]]
+- see [[collective intelligence]] for the broader framework
+- discover all [[concepts]]

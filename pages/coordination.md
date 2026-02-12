@@ -1,32 +1,11 @@
-- process by which [[avatars]] or [[neurons]] within a [[collective intelligence]]
-- align their [[actions]], [[decisions]], and [[behaviors]]
-- to achieve a [[common goal]] with a help of [[game theory]]
--
-- this involves
-	- organizing and synchronizing efforts
-	- sharing information
-	- making decisions
-- leverages the collective knowledge, skills, and resources of the group
-- effective coordination enhances the groups ability to
-	- solve complex problems
-	- innovate, and
-	- adapt to changing circumstances
-- ensure that
-	- members work together
-	- efficiently and effectively
-	- minimizing conflicts and redundancies
--
-- key algorithms used in [[cyberverse]]
-	- [[consensus]]: coordination on establishing single sequence of events
-	- [[amm]]: coordination on value measurements
+tags:: cyber
+- aligning agents toward shared goals using [[game theory]] and protocol mechanisms
+- in [[cyber]]:
+	- [[consensus]]: coordination on establishing a single sequence of events
+	- [[automated market maker]]: coordination on value measurements
 	- [[auction]]: coordination on value establishment
-	- [[yuma]]: cooperative incentives for optimizing for win to win actions
-	- [[prediction markets]]: cooperative positive sum decisions with zero sum elements
-- TODO algorithms to research for coordination breakthroughs
-	- [[coordination graphs]]
-	- [[swarm intelligence algorithms]]
-	- [[reinforcement learning]]
-	- [[consensus clustering]]
-	- [[distributed constraint optimization]]
--
-- dive into [[collective intelligence]]
+	- [[cybernet]]: [[cooperative games]] optimizing for positive-sum outcomes ([[yuma]])
+	- [[prediction markets]]: positive-sum decisions with zero-sum elements
+- effective coordination ensures that [[neurons]] work together efficiently, minimizing conflict and redundancy
+- the [[cybergraph]] itself is a coordination tool: each [[cyberlink]] is a public signal that guides others
+- see [[collective intelligence]] for the broader framework

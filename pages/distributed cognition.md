@@ -1,8 +1,7 @@
-- TODO
-- cognitive processes distributed across members of a group
-- and mediated by tools and technologies
-- theory leverages distributed cognition to enhance
-	- problem-solving
-	- decision-making
--
-- or dive into [[collective intelligence]]
+tags:: cyber
+- cognition spread across agents and their shared environment
+- no single [[neuron]] holds the full picture — reasoning happens through the [[cybergraph]] itself
+- agents contribute [[cyberlinks]] from their local perspective
+- the [[tri-kernel]] integrates these partial views into a coherent global [[focus]]
+- the graph is both the medium and the product of distributed thought
+- see [[collective intelligence]] for the broader framework

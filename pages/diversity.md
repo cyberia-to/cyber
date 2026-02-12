@@ -1,20 +1,9 @@
-- diversity in skills, knowledge, perspectives, and cognitive styles is crucial for collective intelligence
-- diverse groups are better at exploring a wider range of solutions and avoiding groupthink
-- {{embed ((66bae09d-886c-418a-aac3-ddaf68864fd9))}}
-- [[cyber]] and its implementation is by neutral design
-- out take is that target audiences which are not widely discussed but which very powerful are
-	- animals
-	- plants
-	- fungi
-	- robots
-	- and [[progs]]
-- so when we speak about diversity
-	- we does not mean only gender, age or other boring social demographics
-	- we mean ultimate accessibility for all living things
-- majority of initial [[bostrom]] stake is difined by [[cybergift]]
-	- social demographics research of [[ethereum]] and [[cosmos]] blockchains
-	- which ensure highly diverse set of people in foundation
-- the only foundational limiting factor for diversity is economical hierarchy
-- but we believe that hierarchy in nature is essential thing for something function as a whole
--
-- dive into [[collective intelligence]]
+tags:: cyber
+- diversity in cognitive style is the strongest predictor of [[collective intelligence]]
+- groups that are moderately diverse outperform both homogeneous groups and maximally different ones (Hong-Page)
+- [[cyber]] is designed for ultimate accessibility — the target audience includes
+	- humans, AI, sensors, [[animals]], [[plants]], [[fungi]], [[robots]], and [[progs]]
+- when we speak about diversity, we mean access for all living and computing things
+- the majority of initial [[bostrom]] stake is defined by [[cybergift]] — a social demographics study of [[ethereum]] and [[cosmos]] ensuring a highly diverse foundation
+- hierarchy in nature is essential for systems to function as a whole. diversity feeds the hierarchy, hierarchy channels the diversity
+- see [[collective intelligence]] for the broader framework

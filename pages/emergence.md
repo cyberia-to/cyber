@@ -1,7 +1,7 @@
-- refers to complex patterns and behaviors that arise from [[simple interactions]] among [[individuals]]
-- explains how group-level intelligence can arise from the interactions of individuals without centralized control
-- [[llm]] is excellent case of emergence
-- [[vimputer]] is a good example of emergent behaviors in collective setting
-- in [[bostrom]] we expect emergence happens on a scale of 10^12 [[cyberlinks]]
--
-- [[collective intelligence]] is the thing!
+tags:: cyber
+- complex patterns arising from simple local interactions without centralized control
+- [[focus]], [[cyberank]], [[truth]] — none are programmed. all emerge from millions of [[cyberlinks]]
+- an [[llm]] is emergence from statistics. a [[vimputer]] is emergence from economic commitments
+- in [[bostrom]]: emergence is expected at the scale of 10^12 [[cyberlinks]]
+- the [[tri-kernel]]'s fixed point is itself an emergent phenomenon — a global distribution that no agent designed
+- see [[collective intelligence]] for the broader framework

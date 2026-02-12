@@ -1,10 +1,7 @@
-- mechanism of indirect coordination through the environment
-- often observed in social insects
-- in human collective intelligent systems
-	- digital platforms can serve as stigmergic environments
-	- where individuals contribute to and modify
-	- shared [[information spaces]]
-- we consider [[cyberlink]] as foundational stigmergy [[signal]]
-- TODO advanced research for deeper utilization by [[cyber]]
--
-- dive into [[collective intelligence]]
+tags:: cyber
+- indirect coordination through a shared environment
+- ants leave pheromones. [[neurons]] leave [[cyberlinks]]
+- each link modifies the [[cybergraph]] for all who follow — a signal that persists, accumulates, and guides
+- the [[cyberlink]] is the foundational stigmergic signal of [[cyber]]
+- agents coordinate without communicating directly: the graph mediates everything
+- see [[collective intelligence]] for the broader framework

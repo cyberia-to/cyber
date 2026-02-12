@@ -38,6 +38,6 @@ alias:: negentropy
 	- leading to [[chaos]] and overgrowing extension of the [[universe]]
 	- syntropy is the opposite force of [[order]]
 	- which is the source of [[intelligence]] counterbalancing the [[chaos]]
-- continue to
-	- [[black magic]] or
-	- [[truth machine]]
+- see [[truth machine]] for the computation pipeline
+- see [[collective intelligence]] for the broader framework
+- discover all [[concepts]]

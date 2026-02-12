@@ -1,4 +1,9 @@
 alias:: collective attention
-- emergent [[focus]] distribution over the [[cybergraph]]
-- see [[focus]] for full definition and [[tri-kernel]] for computation
-- see [[collective intelligence]]
+tags:: cyber
+- the emergent attention distribution over the [[cybergraph]]
+- computed by the [[tri-kernel]] in [[consensus]]: [[diffusion]] explores, [[springs]] enforce structure, [[heat kernel]] adapts
+- the fixed point is [[focus]] — what the collective actually attends to
+- [[cyberank]] is focus per [[particle]]. [[karma]] is focus per [[neuron]]
+- no one assigns it. no one votes on it. it is computed
+- see [[focus]] for the full definition
+- see [[collective intelligence]] for the broader framework
