@@ -1,17 +1,31 @@
 icon:: ☯️
 tags:: cyber
-- [[neuron]] as universal model for the [[observer]]
-- [[consensus]] on the state of [[vimputer]]
-- [[particle]] as fundamental unit of [[information]]
-- [[token]] as fundamental unit of [[value]]
-- [[cyberlink]] as fundamental unit of [[knowledge]] and [[learning]]
-- [[cybergraph]]: essential data structure for [[collective memory]]
-- [[truth machine]] : virtual machine for [[collective intelligence]]
-- [[cyber/energy]]: [[soft3]] usage package
-- [[avatar]] with [[features]]
-- [[learning incentives]] based on [[yuma]]
-- [[bootloader]] as research and development ground
-- [[knowledge graphs and llms]]
-- [[cyb]] robot for interactions
--
-- [[distributed neural network]] as foundation for [[superintelligence]]
+- five irreducible primitives
+	- [[particle]]: fundamental unit of [[information]]. content-addressed, immutable
+	- [[cyberlink]]: fundamental unit of [[knowledge]] and [[learning]]. authenticated economic commitment
+	- [[neuron]]: universal model for the [[observer]]. subject of the [[cybergraph]]
+	- [[token]]: fundamental unit of [[value]]. [[coin]], [[uniq]], [[score]], [[badge]]
+	- [[focus]]: emergent [[attention distribution]]. computed by [[tri-kernel]], not assigned
+- [[tri-kernel]]: the three local operators for collective intelligence
+	- [[diffusion]]: where probability flows. exploration. the [[cyberank]]
+	- [[springs]]: what satisfies structural constraints. hierarchy
+	- [[heat kernel]]: what the graph looks like at scale τ. adaptation
+- emergent structures
+	- [[axons]]: aggregated connections between [[particles]]. the skeleton of collective understanding
+	- [[cybergraph]]: essential data structure for [[collective memory]]
+	- [[cyberank]]: per-particle relevance from [[diffusion]]
+	- [[karma]]: per-neuron reputation. aggregate [[focus]] across linked [[particles]]
+	- [[threshold]]: boundary conditions that separate regimes. minimum focus, convergence, access
+- machines
+	- [[truth machine]]: virtual machine for [[collective intelligence]]
+	- [[knowledge]]: collection of [[primitive learning acts]]
+- systems
+	- [[consensus]] on the state of [[vimputer]]
+	- [[cyber/energy]]: [[soft3]] usage package
+	- [[avatar]] with [[features]]
+	- [[learning incentives]] based on [[yuma]]
+	- [[bootloader]] as research and development ground
+- foundations
+	- [[knowledge graphs and llms]]
+	- [[cyb]] robot for interactions
+	- [[distributed neural network]] as foundation for [[superintelligence]]

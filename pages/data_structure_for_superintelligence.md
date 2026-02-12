@@ -14,7 +14,7 @@ This document specifies the complete authenticated state architecture for CORE �
 
 The architecture emerges from a single constraint: every operation must be provable, every proof must be verifiable, and verification cost must remain within a constant factor of computation — at any scale.
 
-Six ontological primitives (particle, cyberlink, neuron, token, focus, record) authenticated by five cryptographic data structures, each proven in production:
+Five ontological primitives (particle, cyberlink, neuron, token, focus) authenticated by five cryptographic data structures, each proven in production:
 
 | Primitive | Role | Production Heritage |
 |-----------|------|-------------------|
@@ -42,79 +42,24 @@ Unified by a single hash function (Poseidon2-Goldilocks), a single field (p = 2�
 
 ### 1.2 The Ontology
 
-Six irreducible primitives. Everything in the system is composed from these.
+Five irreducible primitives. Everything in the system is composed from these. See [[concepts]] for the full reference.
 
-```
-PARTICLE     Content-addressed node. Identity = hash of content.
-             Immutable. Exists or doesn't. No state.
-             The atom of knowledge. Every file, keyword, image, model weight,
-             or program reduces to a particle.
-             CID format: (version, algorithm, parameters, field, digest).
+| Primitive | Role | Identity |
+|-----------|------|----------|
+| [[particle]] ⭕️ | content-addressed node, atom of knowledge | hash of content |
+| [[cyberlink]] 🔗 | authenticated directed edge, unit of meaning | hash of (neuron, from, to, weight, time) |
+| [[neuron]] 🤪 | agent with stake, identity, and focus | hash of public key |
+| [[token]] 🪙 | protocol-native value: [[coin]], [[uniq]], [[score]], [[badge]] | denomination hash / content hash |
+| [[focus]] 🎯 | emergent attention distribution (π), computed by [[tri-kernel]] | [[diffusion]], [[springs]], [[heat kernel]] |
 
-CYBERLINK    Signed, weighted, timestamped directed edge.
-             edge = (neuron, from_particle, to_particle, weight, time)
-             The atomic unit of meaning.
-             A cyberlink is not a hyperlink — it is an authenticated
-             economic commitment: the neuron stakes focus to assert
-             that from and to are related.
-             Three scalars per link: hierarchy (h), transport (d), context (c).
-
-NEURON       Agent with stake, identity, and focus.
-             Creates cyberlinks. Holds balance. Earns focus.
-             Can be human, AI agent, sensor, or any system.
-             Identity = hash of public key. Proves signature correctness.
-             Neurons are the subjects of the knowledge graph —
-             particles are the objects.
-
-TOKEN        Protocol-native unit of value. Two kinds:
-             COIN  — fungible, movable. Consensus token of the network.
-                     Names the most important nodes. Denominates stake,
-                     fees, and economic commitment. Examples: $CYB, $BOOT.
-             UNIQ  — non-fungible, movable. Knowledge asset.
-                     Binds provenance to a particle. Enables new-age
-                     epistemology: authorship proofs, citation rights,
-                     dataset ownership, model lineage certificates.
-                     Every uniq is itself a particle (content-addressed).
-             Both coin and uniq are protocol-native — not smart contract
-             artifacts. The protocol enforces conservation, transfer rules,
-             and authenticated ownership at the consensus layer.
-             Immovable variants: SCORE (fungible) and BADGE (unique)
-             for reputation, karma, and non-transferable credentials.
-
-FOCUS (π)    Emergent attention distribution.
-             Stationary vector of the token-weighted random walk.
-             Not assigned — computed. Not voted — converged.
-             Three ranks are computed from the cybergraph:
-               RANK 1 — particle rank: probability of particle observation
-                 by a random-walking neuron, weighted by stake.
-                 Determines content relevance. The cyberank.
-               RANK 2 — neuron rank: aggregate focus earned by a neuron
-                 across all particles it has linked. Determines reputation
-                 and karma. Neurons with high rank have demonstrated
-                 sustained alignment with collective attention.
-               RANK 3 — topic rank: focus concentration within a namespace
-                 or semantic cluster. Determines which domains of knowledge
-                 the network is currently attending to. Enables context-aware
-                 search and inference routing.
-             Focus regenerates proportionally to stake.
-             Focus is consumed by cyberlinks and computation.
-             Conservation: Σ π_i = 1. Emphasizing one thing defocuses others.
-
-RECORD       Private value bound to a particle and an owner.
-             Hidden behind commitments. Spent via ZK proofs.
-             The economic substrate of the system.
-             Records enable private transfers without revealing
-             sender, receiver, or amount — while proving conservation.
-             The mutator set (AOCL + SWBF) tracks record lifecycle
-             without ever exposing which record was spent.
-```
+Focus is computed by three local operators — the [[tri-kernel]]: [[diffusion]] (where probability flows), [[springs]] (what satisfies structural constraints), [[heat kernel]] (what the graph looks like at scale τ). These are the only operator families that survive the locality constraint. See [[tri-kernel]] for the completeness proof.
 
 ### 1.3 Naming Convention
 
 Three layers, three names:
 
 - **CORE** — the computation model (16 reduction patterns, deterministic costs)
-- **Cybergraph** — the data model (particles, cyberlinks, neurons, tokens, focus, records)
+- **Cybergraph** — the data model (particles, cyberlinks, neurons, tokens, focus)
 - **BBG** — the authenticated state structure (this document)
 
 BBG = Big Badass Graph. The name is earned.
@@ -1132,150 +1077,140 @@ Verification: O(k log n) — linear in row size, logarithmic in block size
 
 # Part VIII: Temporal Dynamics
 
-## 11. Focus Computation
+## 11. Focus Computation via Tri-Kernel
 
-### 11.1 Focus Flow Equation
+### 11.1 The Locality Constraint
 
-Focus π is the stationary distribution of the token-weighted random walk on the cybergraph:
+At 10¹⁵ nodes, any algorithm requiring global recomputation for a local change is physically impossible (Law 1). Systematic elimination of all graph ranking algorithms under this constraint leaves exactly three operator families. No others survive. See [[tri-kernel]] for the completeness proof.
 
-$$\pi_i = \sum_j P_{ij} \cdot \pi_j + r_i - c_i$$
+These three operators — [[diffusion]], [[springs]], [[heat kernel]] — are not design choices. They are what remains after impossibility eliminates everything else.
 
-where:
-
-$$P_{ij} = \frac{w_{ij} \cdot b_j}{\sum_k w_{kj} \cdot b_k}$$
-
-- $w_{ij}$ = edge weight from neuron i to j
-- $b_j$ = balance of neuron j
-- $r_i$ = focus regeneration for neuron i (proportional to balance)
-- $c_i$ = focus consumption by neuron i (computation + cyberlinks)
-
-### 11.2 Three Ranks
-
-From the stationary distribution π, three ranks are computed. Each captures a different dimension of collective attention.
+### 11.2 The Three Operators
 
 ```
-RANK 1 — PARTICLE RANK (cyberank)
-──────────────────────────────────
+OPERATOR 1 — DIFFUSION (Markov/Random Walk)
+───────────────────────────────────────────
 
-Definition:
-  π_p = Σ_n Σ_{e: e.to = p} (w_e · π_n) / (Σ_{e': e'.neuron = n} w_{e'})
+  π^(t+1) = α P^T π^(t) + (1-α)u
 
-  Probability that a random-walking neuron, weighted by stake,
-  arrives at particle p.
+  Transition matrix P = AD⁻¹, teleport α, prior u (stake-weighted).
+  Powers remain local. Converges to unique stationary distribution
+  under ergodicity.
 
-Computation:
-  Standard power iteration on the particle-projected transition matrix.
-  Input: cyberlinks + neuron balances.
-  Output: one F_p value per particle.
+  Answers: "Where does probability flow?"
+  This is the cyberank — probability of particle observation
+  by a random-walking neuron, weighted by stake.
 
-What it measures:
-  Content relevance. The collective judgment of what matters.
-  High particle rank = many staked neurons link to this content.
-
-Stored in: by_particle NMT (inbound_weight field aggregates this).
-STARK cost: O(deg(p)) field operations per particle update.
+  Properties: row-stochastic, preserves probability mass.
+  Locality: geometric decay via teleport parameter α.
+  STARK cost: O(deg(v)) field operations per node update.
 
 
-RANK 2 — NEURON RANK (karma)
-─────────────────────────────
+OPERATOR 2 — SPRINGS (Screened Laplacian)
+─────────────────────────────────────────
 
-Definition:
-  κ_n = Σ_{e: e.neuron = n} (w_e · π_{e.to}) / (Σ_{e': e'.neuron = n} w_{e'})
+  (L + μI)x* = μx₀
 
-  Weighted average of particle ranks across all cyberlinks
-  created by neuron n.
+  Graph Laplacian L = D - A, screening μ > 0, reference x₀.
+  The screened Green's function (L+μI)⁻¹ has exponential decay.
 
-Computation:
-  For each neuron, sum the particle ranks of targets weighted by edge weights.
-  Input: particle ranks (Rank 1) + neuron's outbound edges.
-  Output: one F_p value per neuron.
+  Answers: "What satisfies structural constraints?"
+  Encodes hierarchy — keeps connected nodes at consistent levels.
+  Deviation from structural equilibrium is detectable via residual.
 
-What it measures:
-  Reputation. A neuron earns high karma by consistently linking
-  to particles that the network values. Neurons that link to noise
-  or spam earn low karma. This is not self-reported — it is computed
-  from the behavior of the entire graph.
-
-Stored in: focus NMT (derived field, updated after Rank 1 converges).
-STARK cost: O(deg(n)) field operations per neuron update.
+  Properties: positive semi-definite, null space = constant vectors.
+  Locality: exponential decay via screening parameter μ.
+  STARK cost: O(deg(v)) field operations per node update.
 
 
-RANK 3 — TOPIC RANK (attention field)
-──────────────────────────────────────
+OPERATOR 3 — HEAT KERNEL (Multi-scale Smoothing)
+─────────────────────────────────────────────────
 
-Definition:
-  τ_T = Σ_{p ∈ T} π_p
+  ∂H/∂τ = -LH,  H₀ = I
+  H_τ = exp(-τL)
 
-  where T is a namespace, semantic cluster, or set of particles
-  grouped by ontological proximity.
+  Temperature τ controls scale. Chebyshev polynomial approximation
+  gives h-local computation with bounded error.
 
-Computation:
-  Aggregate particle ranks within each namespace.
-  NMT completeness proofs guarantee the sum covers ALL particles
-  in the namespace — nothing hidden.
-  Input: particle ranks (Rank 1) + namespace boundaries.
-  Output: one F_p value per namespace/topic.
+  Answers: "What does the graph look like at scale τ?"
+  High τ explores (annealing), low τ commits (crystallization).
+  Provides adaptive context — the thermostat of collective attention.
 
-What it measures:
-  Where the network is looking right now. Topic rank reveals
-  which domains of knowledge are under active collective attention.
-  Enables:
-    - Context-aware search: route queries to high-attention topics.
-    - Inference routing: prioritize computation on hot topics.
-    - Anomaly detection: sudden topic rank spikes signal emerging events.
-    - Resource allocation: shards with high topic rank get more validators.
-
-Stored in: derivable from by_particle NMT namespace aggregation.
-STARK cost: O(log n) per namespace (NMT completeness proof + sum).
+  Properties: positivity-preserving, semigroup (H_{τ₁}H_{τ₂} = H_{τ₁+τ₂}).
+  Locality: Gaussian tail decay, h = O(log(1/ε)) hops.
+  STARK cost: O(K · deg(v)) for K-term Chebyshev approximation.
 
 
-RANK DEPENDENCIES:
-  Rank 1 (particle) ← cyberlinks + balances (primary computation)
-  Rank 2 (neuron)   ← Rank 1 + outbound edges (one pass after convergence)
-  Rank 3 (topic)    ← Rank 1 + namespace structure (aggregation, no iteration)
+COMPOSITE UPDATE:
+  φ^(t+1) = norm[λ_d · D(φ^t) + λ_s · S(φ^t) + λ_h · H_τ(φ^t)]
 
-  Total: one power iteration (Rank 1) + two linear passes (Ranks 2 and 3).
-  All three ranks update with bounded locality.
+  where λ_d + λ_s + λ_h = 1.
+  Fixed point minimizes the free-energy functional:
+    F(φ) = λ_s[½φ^T Lφ + μ/2‖φ-x₀‖²]
+          + λ_h[½‖φ - H_τφ‖²]
+          + λ_d · D_KL(φ ‖ Dφ)
+
+  Structure (springs) + context (heat) + exploration (diffusion).
+  The tri-kernel is complete: no other local operators exist.
 ```
 
 ### 11.3 Convergence
 
-By the Perron-Frobenius theorem, if the transition matrix P is irreducible and aperiodic, there exists a unique stationary distribution π with $\pi P = \pi$, $\sum \pi_i = 1$, $\pi_i > 0$.
+The composite operator ℛ = norm[λ_d·D + λ_s·S + λ_h·H_τ] is a contraction under standard conditions:
 
-Convergence rate: $\|f^{(t)} - \pi\| \leq C \cdot (1 - \lambda)^t$ where $\lambda = 1 - |\lambda_2|$ is the spectral gap.
+- **Diffusion:** Perron-Frobenius guarantees unique stationary distribution under ergodicity (strong connectivity + aperiodicity). Geometric convergence via teleport.
+- **Springs:** Screening μ > 0 ensures (L+μI) is strictly positive definite. Exponential decay of Green's function.
+- **Heat:** Bounded τ ensures H_τ is contractive. Gaussian tail decay.
+
+**Composite contraction:** Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
+
+Convergence rate: $\|\phi^{(t)} - \phi^*\| \leq C \cdot \kappa^t$ where κ < 1 depends on the spectral gap, screening parameter, and temperature.
 
 ### 11.4 Bounded-Locality Focus Update
 
 Focus updates must be local — recomputing the global π for every edge change is O(n), violating Law 1.
 
 ```
-LOCAL FOCUS UPDATE
-──────────────────
+LOCAL TRI-KERNEL UPDATE
+───────────────────────
 
 When edge (i → j, weight w) is created:
 
-  Affected neurons: {i, j, neighbors of i, neighbors of j}
-  Unaffected neurons: everyone else (focus unchanged)
-  
-  Update:
-    1. Recompute P_{ij} and all P_{*j} (column j of transition matrix)
-    2. Run k local iterations of power method on affected subgraph
-    3. Δπ for affected neurons propagates outward with exponential decay
-    
-  Cost: O(degree(i) + degree(j)) — proportional to LOCAL connectivity
-  Not: O(|V|) — NOT proportional to total graph size
-  
-  Convergence: Local perturbation theory guarantees Δπ decreases
-  exponentially with graph distance from the modified edge.
-  After O(1/λ) local iterations, residual error < ε.
+  1. DETECT affected neighborhood N_h around edit batch
+     h = O(log(1/ε)) hops. All three operators have decay guarantees:
+       Diffusion: geometric (teleport α)
+       Springs:   exponential (screening μ)
+       Heat:      Gaussian tail (temperature τ)
+     Beyond h hops, perturbation < ε. Everything outside N_h is unchanged.
 
-  After Rank 1 converges locally:
-    Rank 2 (neuron rank): recompute for affected neurons only — O(deg(n))
-    Rank 3 (topic rank): recompute for affected namespaces only — O(log n)
+  2. PULL boundary conditions from cached φ, boundary flows, Laplacian blocks
+
+  3. APPLY local diffusion on N_h
+     Recompute P columns for affected neurons.
+     Fixed-point iteration with boundary injection.
+     Cost: O(deg(i) + deg(j)) per iteration
+
+  4. APPLY local springs on N_h
+     Solve (L + μI)x* = μx₀ on affected subgraph via local CG.
+     Cost: O(deg(v)) per affected node
+
+  5. APPLY local heat on N_h
+     K-term Chebyshev polynomial filter on affected neighborhood.
+     Cost: O(K · deg(v)) per affected node
+
+  6. BLEND: φ_new = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)]
+     Normalize and splice back into global φ.
+
+  Total cost: O(|N_h| · c) per kernel for average degree c
+  NOT: O(|V|) — bounded by what you TOUCH, not by graph size
 
 FOCUS NMT UPDATE:
   Only leaves for affected neurons need NMT path recomputation.
   O(k · log n) hash operations where k = |affected neurons|.
+
+TELEMETRY per epoch:
+  Entropy H(π), negentropy J(π), spectral gap estimate,
+  ℓ₁ drift ‖π^t - π^(t-1)‖, locality radius h, nodes touched.
 ```
 
 ## 12. Temporal Decay (Forgetting Law)
@@ -1419,7 +1354,7 @@ COMPOSITE OPERATIONS:
   Cyberlink transaction (1 edge):             ~12,000
   Private transfer (4 in, 4 out):             ~50,000
   Block verification (10K edges):             ~5,000,000
-  Focus update (local, k neighbors):          ~1,000 × k
+  Tri-kernel update (local, k neighbors):      ~1,000 × k (diffusion + springs + heat)
 ```
 
 ### 13.4 FRI → STIR Migration
@@ -1672,7 +1607,7 @@ Post-quantum            Hash-based (no pairings)     Grover bounded by output si
 Data availability       NMT + 2D erasure coding      Honest minority sampling
 Fork resistance         Focus-weighted BFT           2/3 focus-weighted honest
 Verification closure    Self-verifying STARK         CORE expressiveness
-Bounded locality        LogUp + local focus update   Spectral gap of transition matrix
+Bounded locality        LogUp + local tri-kernel     Spectral gap + screening μ + temperature τ
 ```
 
 ## 19. Complexity Summary
@@ -1683,10 +1618,10 @@ OPERATION                           TIME          SPACE         CONSTRAINTS
 Create cyberlink                    O(log n)      O(log n)      ~12,000
 Sync namespace (neuron)             O(k + log n)  O(k + log n)  N/A (verifier)
 Private transfer (4 in, 4 out)      O(log N)      O(log N)      ~50,000
-Focus update (local, 3 ranks)       O(deg(v))     O(deg(v))     ~1,000 × k
-  Rank 1 (particle rank)            O(deg(p))     O(1)          ~500 × deg(p)
-  Rank 2 (neuron rank)              O(deg(n))     O(1)          ~500 × deg(n)
-  Rank 3 (topic rank)               O(log n)      O(log n)      ~8,000 (NMT sum)
+Focus update (tri-kernel, local)     O(deg(v))     O(deg(v))     ~1,000 × k
+  Diffusion (random walk)           O(deg(v))     O(1)          ~500 × deg(v)
+  Springs (screened Laplacian)      O(deg(v))     O(1)          ~500 × deg(v)
+  Heat kernel (Chebyshev)           O(K·deg(v))   O(K)          ~500 × K × deg(v)
 Light client join                   O(1)          O(1)          ~100,000 (one-time)
 Light client per-block              O(log N)      O(1)          ~1,000
 UTXO proof maintenance              O(log N)/blk  O(log N)      ~12,500
