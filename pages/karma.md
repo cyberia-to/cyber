@@ -7,4 +7,6 @@ tags:: cyber
 - not self-reported — computed from the behavior of the entire [[cybergraph]]
 - derived from [[cyberank]]: weighted average of [[tri-kernel]] scores across a neuron's outbound [[cyberlinks]]
 - according to [[token theory]] karma is [[score]] (fungible and immovable)
+- high karma unlocks [[learning incentives]] — rewarding [[neurons]] who sustain the quality of [[knowledge]]
+- karma drives [[syntropy]]: the graph's tendency toward order rather than noise
 - discover all [[concepts]]

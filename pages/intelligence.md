@@ -6,6 +6,7 @@ tags:: cyber- product of [[implicit knowledge]] derived from [[explicit knowledg
 	- the [[truth machine]] infers structure, relevance, and hierarchy — this is [[implicit knowledge]]
 	- the boundary between explicit and implicit is where intelligence begins
 - intelligence is adaptive equilibrium-finding: the capacity to converge on useful distributions under novel conditions
+- [[emergence]] is the mechanism — local [[cyberlinks]] produce global structure no single [[neuron]] designed
 - see [[knowledge theory]] for the full framework
 - see [[collective intelligence]] for the group-level phenomenon
 - see [[superintelligence]] for the destination

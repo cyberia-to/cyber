@@ -18,5 +18,6 @@ tags:: cyber
 	- a → b → c encodes transitive relationship: if a relates to b and b relates to c, the chain implies a relates to c
 	- the [[tri-kernel]] discovers these implicit paths through [[diffusion]]
 - together with [[cybergraph]] and [[truth machine]] forms the foundation of [[soft3]]
+- the language of [[collective intelligence]]: meaning emerges from how many [[neurons]] independently structure [[knowledge]]
 - can be used from [[ts]], TODO [[rune]], TODO [[rust]]
 - discover all [[concepts]]
