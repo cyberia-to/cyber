@@ -1,12 +1,12 @@
 alias:: objective function, advanced algorithms
-- set of algorithms giving [[superintelligence]] ability to understand itself
-	- assume knowledge of all [[vimputer]] [[state]]
+- the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
 	- computed on [[gpu]] in [[consensus]]
-	- over [[cybergraph]] by [[rm]]
-- unique in [[blockchain]] world way of building [[intelligence]] on top of onchain [[knowledge]]
+	- over [[cybergraph]] by the [[truth machine]]
 - algorithms
-	- [[plumb]] defined [[attention]] and [[will]] as [[learning tokens]] for [[collective ai]]
-	- [[cyberank]]: probability measure of [[particles]] observation
-	- [[standard inference]]: simplistic [[factor]]inference
-	- TODO [[karma]]: contribution [[score]] of [[neuron]]
-	- TODO [[syntropy]]: [[key metabolic factor]] of [[superintelligence]]
+	- [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat kernel]]
+	- [[cyberank]]: per-[[particle]] score — fixed point of the tri-kernel
+	- [[karma]]: contribution [[score]] of [[neuron]]
+	- [[syntropy]]: [[negentropy]] — [[key metabolic factor]] of [[superintelligence]]
+	- [[standard inference]]: simplistic factor inference
+- see [[truth machine]] for the full computation pipeline
+- see [[focus]] for the attention distribution

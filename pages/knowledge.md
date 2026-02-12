@@ -1,11 +1,12 @@
-- collection of [[primitive learning acts]]
-- sum of stored [[links]] formates knowledge of [[neuron]]
--
-- [[cybergraph]] consolidates [[information]] on
-	- [[who]]
-	- [[when]]
-	- [[what]]
--
-- discover [[knowledge theory]] topics
-	- [[explicit knowledge]] is the [[knowledge]]
-	- [[implicit knowledge]] can be [[intelligence]]
+- [[neurons]] [[link]] [[particles]] in [[time]]
+- the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]
+- a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment that two [[particles]] are related
+- [[cybergraph]] consolidates [[knowledge]] on
+	- [[who]]: which [[neuron]] linked
+	- [[when]]: in which block
+	- [[what]]: which [[particles]] were linked
+- [[explicit knowledge]]: directly stated in the [[cybergraph]]
+- [[implicit knowledge]]: inferred from explicit. this inference is [[intelligence]]
+- cheap talk produces noise. costly signals produce knowledge
+- see [[knowledge theory]] for the full framework
+- discover all [[concepts]]

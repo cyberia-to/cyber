@@ -1,6 +1,3 @@
-- involves multiple agents or systems working together
-- to solve a problem or process data
-- applied in
-	- distributed computing
-	- swarm intelligence
-	- multi-agent systems
+- multiple agents working together to solve problems or process data
+- applied in [[distributed systems]], [[swarm intelligence algorithms]], and [[multi-agent systems]]
+- see [[collective intelligence]] for broader context

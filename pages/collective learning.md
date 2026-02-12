@@ -1,6 +1,5 @@
 alias:: colearning
-- [[learning]] on same [[cyber]] [[vimputer]]
--
+- [[learning]] on the same [[cyber]] [[vimputer]]
+- product of [[collective intelligence]]
 - [[buy energy]] for collective learning
--
-- [[collective intelligence]] is product of collective learning
+- see [[collective intelligence]] for broader context

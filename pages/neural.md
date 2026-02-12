@@ -1,17 +1,22 @@
 alias:: neural language, .nl
-- powerful semantic language for [[neurons]] using [[cybergraph]]
-- neural is young language which works as semantic extension over [[cybergraph]]
-- its likely you cant compare neural with anything you met in computer science
-- neural is designed as convergent successor for both formal and natural languages
-- [[semantic core]] is dynamic
-	- current core defined by [[bostrom]]
-	- top [[particles]] by rank
-	- explore semantic core at [cyb.ai/particles](https://cyb.ai/particles)
-- [[patterns]]
-	- [[semcon]]: semantic agreements, aka erc for [[cybergraph]]
-	- [[sentence]]: ordered instruction set of [[cyberlinks]]
-	- [[motif]]: geometric expressions of meanings
-- can be used from
-	- [[ts]]
-	- TODO [[rune]]
-	- TODO [[rust]]
+tags:: cyber
+- semantic language for [[neurons]] over the [[cybergraph]]
+- convergent successor for both formal and natural languages
+- meaning is defined by [[cyberlinks]] — structure emerges from how agents link [[particles]]
+- ## patterns
+	- [[semcon]]: semantic conventions — mutual agreements to use the same [[particles]] for structuring thought. the grammar of the graph
+	- [[sentence]]: ordered instruction set of [[cyberlinks]]. a sequence that carries meaning through order
+	- [[motif]]: geometric expression of meaning — recurring subgraph patterns (triadic closure, co-citation, star, chain) that encode relationships beyond single links
+	- [[cyberlink as particle]]: a link stored as a particle itself, enabling meta-knowledge — links about links
+- ## semantic core
+	- the dynamic vocabulary of the network
+	- defined by top [[particles]] by [[cyberank]]
+	- current core shaped by [[bostrom]] [[bootloader]]
+	- explore at [cyb.ai/particles](https://cyb.ai/particles)
+- ## linkchains
+	- sequences of [[cyberlinks]] that form paths of meaning through the [[cybergraph]]
+	- a → b → c encodes transitive relationship: if a relates to b and b relates to c, the chain implies a relates to c
+	- the [[tri-kernel]] discovers these implicit paths through [[diffusion]]
+- together with [[cybergraph]] and [[truth machine]] forms the foundation of [[soft3]]
+- can be used from [[ts]], TODO [[rune]], TODO [[rust]]
+- discover all [[concepts]]

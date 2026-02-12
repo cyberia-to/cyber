@@ -54,5 +54,10 @@ alias:: collective intelligence theory, collective artificial intelligence
 	- Engelbart: three people working together in augmented mode seem more than three times as effective
 	- Dorigo: ant colony optimization
 	- boundaries between human and machine collective intelligence are blurring
+- ## collective in cyber
+	- [[collective learning]]: [[learning]] on the same [[vimputer]]. product of collective intelligence
+	- [[collective computation]]: multiple agents working together to solve problems via [[distributed systems]] and [[swarm intelligence algorithms]]
+	- [[collective focus]]: the emergent [[focus]] distribution over the [[cybergraph]] — see [[focus]] for full definition
+	- [[collective memory]]: authenticated shared history that grows and never forgets
 - [[bostrom]] and [[spacepussy]] offers simple [[collective learning]]
 - discover all [[concepts]]
