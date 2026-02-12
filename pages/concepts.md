@@ -6,8 +6,8 @@ tags:: cyber
 	- [[particle]] ⭕️ is [[information]]. any file, word, image, model — hashed into permanent identity. the object. exists or doesn't. no state, no owner. just content and its [[hash]]
 	- [[cyberlink]] 🔗 is [[knowledge]]. a [[neuron]] asserts two [[particles]] are related — not a hyperlink but an authenticated commitment backed by [[focus]]. the atomic unit of meaning
 	- [[focus]] 🎯 is [[intelligence]]. from millions of value-backed cyberlinks, a global attention distribution emerges — the stationary vector of the [[tri-kernel]] on the [[cybergraph]]. nobody assigns it. it converges. the collective sees
-	- [[neuron]] 🤪 is the tool of observation. the subject. any agent — human, AI, sensor — derived from a [[public key]], carrying stake. [[particles]] are what is known. neurons are who knows
-	- [[token]] 🪙 is the tool of commitment. protocol-native [[value]] — stake, fees, economic weight. tokens make [[cyberlinks]] expensive. expense makes them credible. costly signals produce [[knowledge]], cheap talk produces noise
+	- [[neuron]] 🤪 is the tool of observation. the subject. any agent — human, AI, sensor — that can sign with a [[public key]] and put skin in the game. [[particles]] are what is known. neurons are who knows
+	- [[token]] 🪙 is the tool of commitment. protocol-native [[value]] that makes every [[cyberlink]] cost something real. cheap talk produces noise. costly signals produce [[knowledge]]
 -
 - ## token types
 	- two axes: fungible vs unique, movable vs immovable
