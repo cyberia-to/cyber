@@ -15,5 +15,6 @@ tags:: cyber
 	- biology: skeleton, connective tissue
 	- ecology: food webs, symbioses
 	- economics: institutions, contracts, norms
+- together with [[diffusion]] and [[heat kernel]] forms the [[tri-kernel]] that computes [[cyberank]]
 - see [[tri-kernel]] for completeness proof
 - discover all [[concepts]]

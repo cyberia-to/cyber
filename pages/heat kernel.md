@@ -15,5 +15,6 @@ tags:: cyber
 	- biology: metabolism, immune plasticity
 	- ecology: seasons, succession, disturbance
 	- economics: booms, busts, revolutions
+- together with [[diffusion]] and [[springs]] forms the [[tri-kernel]] that computes [[cyberank]]
 - see [[tri-kernel]] for completeness proof
 - discover all [[concepts]]

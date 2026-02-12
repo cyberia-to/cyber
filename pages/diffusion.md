@@ -16,5 +16,6 @@ tags:: cyber
 	- biology: synaptic chatter, neural noise
 	- ecology: species dispersal, seed rain
 	- economics: trade, migration, meme flow
+- together with [[springs]] and [[heat kernel]] forms the [[tri-kernel]]
 - see [[tri-kernel]] for completeness proof
 - discover all [[concepts]]

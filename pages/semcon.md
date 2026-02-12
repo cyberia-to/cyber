@@ -1,7 +1,8 @@
-alias:: semantic convention
+alias:: semantic convention, semantic conventions, semcons
 tags:: cyber
-- short from semantic convention
-- mutual agreement of [[neurons]] to use exactly the same particles to structure their thought
-- powerful tool to program semantics of [[cybergraph]]
--
+- mutual agreement of [[neurons]] to use the same [[particles]] for structuring thought
+- the grammar of the [[cybergraph]] — shared vocabulary that makes [[neural language]] intelligible
+- a semcon binds a [[particle]] (e.g. a keyword hash) to a structural role
+- examples: using the same hash for "follows", "tags", "replies-to" enables consistent [[motifs]]
 - list of adopted [[semantic conventions]]
+- discover all [[concepts]]
