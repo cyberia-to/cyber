@@ -14,7 +14,7 @@ This document specifies the complete authenticated state architecture for CORE �
 
 The architecture emerges from a single constraint: every operation must be provable, every proof must be verifiable, and verification cost must remain within a constant factor of computation — at any scale.
 
-Five cryptographic primitives, each proven in production, each doing exactly what it was designed for:
+Six ontological primitives (particle, cyberlink, neuron, token, focus, record) authenticated by five cryptographic data structures, each proven in production:
 
 | Primitive | Role | Production Heritage |
 |-----------|------|-------------------|
@@ -42,27 +42,71 @@ Unified by a single hash function (Poseidon2-Goldilocks), a single field (p = 2�
 
 ### 1.2 The Ontology
 
-Five irreducible primitives. Everything in the system is composed from these.
+Six irreducible primitives. Everything in the system is composed from these.
 
 ```
 PARTICLE     Content-addressed node. Identity = hash of content.
              Immutable. Exists or doesn't. No state.
+             The atom of knowledge. Every file, keyword, image, model weight,
+             or program reduces to a particle.
+             CID format: (version, algorithm, parameters, field, digest).
 
 CYBERLINK    Signed, weighted, timestamped directed edge.
              edge = (neuron, from_particle, to_particle, weight, time)
              The atomic unit of meaning.
+             A cyberlink is not a hyperlink — it is an authenticated
+             economic commitment: the neuron stakes focus to assert
+             that from and to are related.
+             Three scalars per link: hierarchy (h), transport (d), context (c).
 
 NEURON       Agent with stake, identity, and focus.
              Creates cyberlinks. Holds balance. Earns focus.
              Can be human, AI agent, sensor, or any system.
+             Identity = hash of public key. Proves signature correctness.
+             Neurons are the subjects of the knowledge graph —
+             particles are the objects.
+
+TOKEN        Protocol-native unit of value. Two kinds:
+             COIN  — fungible, movable. Consensus token of the network.
+                     Names the most important nodes. Denominates stake,
+                     fees, and economic commitment. Examples: $CYB, $BOOT.
+             UNIQ  — non-fungible, movable. Knowledge asset.
+                     Binds provenance to a particle. Enables new-age
+                     epistemology: authorship proofs, citation rights,
+                     dataset ownership, model lineage certificates.
+                     Every uniq is itself a particle (content-addressed).
+             Both coin and uniq are protocol-native — not smart contract
+             artifacts. The protocol enforces conservation, transfer rules,
+             and authenticated ownership at the consensus layer.
+             Immovable variants: SCORE (fungible) and BADGE (unique)
+             for reputation, karma, and non-transferable credentials.
 
 FOCUS (π)    Emergent attention distribution.
              Stationary vector of the token-weighted random walk.
              Not assigned — computed. Not voted — converged.
+             Three ranks are computed from the cybergraph:
+               RANK 1 — particle rank: probability of particle observation
+                 by a random-walking neuron, weighted by stake.
+                 Determines content relevance. The cyberank.
+               RANK 2 — neuron rank: aggregate focus earned by a neuron
+                 across all particles it has linked. Determines reputation
+                 and karma. Neurons with high rank have demonstrated
+                 sustained alignment with collective attention.
+               RANK 3 — topic rank: focus concentration within a namespace
+                 or semantic cluster. Determines which domains of knowledge
+                 the network is currently attending to. Enables context-aware
+                 search and inference routing.
+             Focus regenerates proportionally to stake.
+             Focus is consumed by cyberlinks and computation.
+             Conservation: Σ π_i = 1. Emphasizing one thing defocuses others.
 
 RECORD       Private value bound to a particle and an owner.
              Hidden behind commitments. Spent via ZK proofs.
              The economic substrate of the system.
+             Records enable private transfers without revealing
+             sender, receiver, or amount — while proving conservation.
+             The mutator set (AOCL + SWBF) tracks record lifecycle
+             without ever exposing which record was spent.
 ```
 
 ### 1.3 Naming Convention
@@ -70,7 +114,7 @@ RECORD       Private value bound to a particle and an owner.
 Three layers, three names:
 
 - **CORE** — the computation model (16 reduction patterns, deterministic costs)
-- **Cybergraph** — the data model (particles, neurons, cyberlinks, focus)
+- **Cybergraph** — the data model (particles, cyberlinks, neurons, tokens, focus, records)
 - **BBG** — the authenticated state structure (this document)
 
 BBG = Big Badass Graph. The name is earned.
@@ -206,9 +250,9 @@ Production evidence: Celestia has processed millions of blocks with NMT-based DA
 
 ---
 
-## 4. The Four Indexes
+## 4. The Six Indexes
 
-The cybergraph maintains four NMT indexes over the same edge data. Edges are stored once; indexes contain only hashes and commitments.
+The cybergraph maintains six NMT indexes over the same edge and token data. Edges and tokens are stored once; indexes contain only hashes and commitments.
 
 ### 4.1 Architecture
 
@@ -244,6 +288,24 @@ The cybergraph maintains four NMT indexes over the same edge data. Edges are sto
 ║    Namespace: neuron_id                                              ║
 ║    Leaf payload: current balance                                     ║
 ║    Proves: "Neuron N has balance B, and this is the complete set"    ║
+║                                                                       ║
+║  INDEX 5: coins                                                      ║
+║  ──────────────                                                      ║
+║    Structure: NMT[ denom_hash → supply_record ]                      ║
+║    Namespace: denomination hash (e.g. H("CYB"), H("BOOT"))          ║
+║    Leaf payload: total supply, mint authority, transfer rules         ║
+║    Proves: "Denomination D has supply S, and this is complete"       ║
+║    Per-neuron coin balances tracked in INDEX 4 (balance).            ║
+║                                                                       ║
+║  INDEX 6: uniqs                                                      ║
+║  ──────────────                                                      ║
+║    Structure: NMT[ uniq_id → uniq_record ]                           ║
+║    Namespace: uniq_id (content-addressed: H(particle ‖ creator))     ║
+║    Leaf payload: bound particle, current owner, provenance chain     ║
+║    Proves: "Uniq U exists, is bound to particle P, owned by N"      ║
+║    Enables: knowledge assets, authorship proofs, citation rights,    ║
+║             dataset ownership, model lineage certificates.           ║
+║    Every uniq is itself a particle — content-addressed, immutable.   ║
 ║                                                                       ║
 ╚═══════════════════════════════════════════════════════════════════════╝
 ```
@@ -320,6 +382,26 @@ balance leaf:
   │ payload:                               │
   │   balance_value: F_p                   │
   │   nonce: u64                          │
+  └────────────────────────────────────────┘
+
+coins leaf:
+  ┌────────────────────────────────────────┐
+  │ namespace: denom_hash (32 bytes)       │
+  │ payload:                               │
+  │   total_supply: F_p                    │
+  │   mint_authority: F_p⁴ (neuron hash)  │
+  │   max_supply: F_p (0 = unlimited)     │
+  │   transfer_rules: u8 (bitfield)       │
+  └────────────────────────────────────────┘
+
+uniqs leaf:
+  ┌────────────────────────────────────────┐
+  │ namespace: uniq_id (32 bytes)          │
+  │ payload:                               │
+  │   bound_particle: F_p⁴                │
+  │   current_owner: F_p⁴ (neuron hash)  │
+  │   creator: F_p⁴ (neuron hash)        │
+  │   creation_time: u64                  │
   └────────────────────────────────────────┘
 ```
 
@@ -882,6 +964,8 @@ BBG_root = H_merkle(
   by_particle.root     ‖    NMT root (cybergraph by endpoint)
   focus.root           ‖    NMT root (focus distribution)
   balance.root         ‖    NMT root (public balances)
+  coins.root           ‖    NMT root (fungible token denominations)
+  uniqs.root           ‖    NMT root (non-fungible knowledge assets)
   aocl.peaks_hash      ‖    H(peak₀ ‖ peak₁ ‖ ... ‖ peak_k)
   swbf.inactive_root   ‖    MMR root (inactive SWBF chunks)
   swbf.window_hash     ‖    H(active window bits)
@@ -892,29 +976,29 @@ BBG_root = H_merkle(
 ### 9.2 State Diagram
 
 ```
-                         ┌──────────────┐
-                         │   BBG_root   │
-                         └──────┬───────┘
-                                │
-        ┌──────────┬────────────┼────────────┬───────────┐
-        │          │            │            │           │
-   ┌────┴─────┐ ┌──┴───────┐ ┌─┴──────┐ ┌──┴─────┐ ┌──┴──────────┐
-   │by_neuron │ │by_particle│ │ focus  │ │balance │ │ mutator_set │
-   │  (NMT)   │ │  (NMT)    │ │ (NMT) │ │ (NMT)  │ │(AOCL+SWBF)  │
-   └────┬─────┘ └──┬───────┘ └────────┘ └────────┘ └──┬──────────┘
-        │          │                                    │
-   ┌────┴─────┐ ┌──┴───────┐                      ┌───┴────────┐
-   │ EdgeSets │ │ EdgeSets │                      │    AOCL    │
-   │  (FRI)   │ │  (FRI)   │                      │   (MMR)    │
-   └──────────┘ └──────────┘                      ├────────────┤
-        │              │                           │    SWBF    │
-        └──────┬───────┘                           │(MMR+Window)│
-               │                                   └────────────┘
-        ┌──────┴───────┐
-        │  edge_store   │
-        │(content-addr) │
-        │  H(e) → e     │
-        └──────────────┘
+                              ┌──────────────┐
+                              │   BBG_root   │
+                              └──────┬───────┘
+                                     │
+     ┌──────────┬────────────┬───────┼───────┬──────────┬───────────┐
+     │          │            │       │       │          │           │
+┌────┴─────┐ ┌─┴────────┐ ┌─┴────┐ ┌┴─────┐ ┌┴──────┐ ┌┴─────┐ ┌──┴──────────┐
+│by_neuron │ │by_particle│ │focus │ │balance│ │coins │ │uniqs │ │ mutator_set │
+│  (NMT)   │ │  (NMT)    │ │(NMT)│ │(NMT) │ │(NMT) │ │(NMT) │ │(AOCL+SWBF)  │
+└────┬─────┘ └──┬───────┘ └──────┘ └──────┘ └──────┘ └──────┘ └──┬──────────┘
+     │          │                                                   │
+┌────┴─────┐ ┌──┴───────┐                                    ┌───┴────────┐
+│ EdgeSets │ │ EdgeSets │                                    │    AOCL    │
+│  (FRI)   │ │  (FRI)   │                                    │   (MMR)    │
+└──────────┘ └──────────┘                                    ├────────────┤
+     │              │                                         │    SWBF    │
+     └──────┬───────┘                                         │(MMR+Window)│
+            │                                                 └────────────┘
+     ┌──────┴───────┐
+     │  edge_store   │
+     │(content-addr) │
+     │  H(e) → e     │
+     └──────────────┘
 ```
 
 ### 9.3 State Transition
@@ -948,6 +1032,19 @@ TRANSACTION TYPES:
    Effect: Consumes focus, produces result
    Cost:   focus proportional to computation steps
    Proof:  STARK proving reduction trace + focus deduction
+
+5. MINT UNIQ — Create a non-fungible knowledge asset
+   Input:  (neuron, bound_particle, signature)
+   Effect: Insert into uniqs NMT, creator = owner = neuron
+   Cost:   focus fee (prevents spam minting)
+   Proof:  STARK proving particle exists in by_particle + uniq_id uniqueness
+   The uniq is itself content-addressed: uniq_id = H(particle ‖ creator)
+
+6. TRANSFER UNIQ — Transfer knowledge asset ownership
+   Input:  (from_neuron, to_neuron, uniq_id, signature)
+   Effect: Update owner field in uniqs NMT leaf
+   Cost:   fixed fee
+   Proof:  STARK proving current ownership + signature validity
 
 VALIDITY CONDITIONS:
 ────────────────────
@@ -1052,13 +1149,102 @@ $$P_{ij} = \frac{w_{ij} \cdot b_j}{\sum_k w_{kj} \cdot b_k}$$
 - $r_i$ = focus regeneration for neuron i (proportional to balance)
 - $c_i$ = focus consumption by neuron i (computation + cyberlinks)
 
-### 11.2 Convergence
+### 11.2 Three Ranks
+
+From the stationary distribution π, three ranks are computed. Each captures a different dimension of collective attention.
+
+```
+RANK 1 — PARTICLE RANK (cyberank)
+──────────────────────────────────
+
+Definition:
+  π_p = Σ_n Σ_{e: e.to = p} (w_e · π_n) / (Σ_{e': e'.neuron = n} w_{e'})
+
+  Probability that a random-walking neuron, weighted by stake,
+  arrives at particle p.
+
+Computation:
+  Standard power iteration on the particle-projected transition matrix.
+  Input: cyberlinks + neuron balances.
+  Output: one F_p value per particle.
+
+What it measures:
+  Content relevance. The collective judgment of what matters.
+  High particle rank = many staked neurons link to this content.
+
+Stored in: by_particle NMT (inbound_weight field aggregates this).
+STARK cost: O(deg(p)) field operations per particle update.
+
+
+RANK 2 — NEURON RANK (karma)
+─────────────────────────────
+
+Definition:
+  κ_n = Σ_{e: e.neuron = n} (w_e · π_{e.to}) / (Σ_{e': e'.neuron = n} w_{e'})
+
+  Weighted average of particle ranks across all cyberlinks
+  created by neuron n.
+
+Computation:
+  For each neuron, sum the particle ranks of targets weighted by edge weights.
+  Input: particle ranks (Rank 1) + neuron's outbound edges.
+  Output: one F_p value per neuron.
+
+What it measures:
+  Reputation. A neuron earns high karma by consistently linking
+  to particles that the network values. Neurons that link to noise
+  or spam earn low karma. This is not self-reported — it is computed
+  from the behavior of the entire graph.
+
+Stored in: focus NMT (derived field, updated after Rank 1 converges).
+STARK cost: O(deg(n)) field operations per neuron update.
+
+
+RANK 3 — TOPIC RANK (attention field)
+──────────────────────────────────────
+
+Definition:
+  τ_T = Σ_{p ∈ T} π_p
+
+  where T is a namespace, semantic cluster, or set of particles
+  grouped by ontological proximity.
+
+Computation:
+  Aggregate particle ranks within each namespace.
+  NMT completeness proofs guarantee the sum covers ALL particles
+  in the namespace — nothing hidden.
+  Input: particle ranks (Rank 1) + namespace boundaries.
+  Output: one F_p value per namespace/topic.
+
+What it measures:
+  Where the network is looking right now. Topic rank reveals
+  which domains of knowledge are under active collective attention.
+  Enables:
+    - Context-aware search: route queries to high-attention topics.
+    - Inference routing: prioritize computation on hot topics.
+    - Anomaly detection: sudden topic rank spikes signal emerging events.
+    - Resource allocation: shards with high topic rank get more validators.
+
+Stored in: derivable from by_particle NMT namespace aggregation.
+STARK cost: O(log n) per namespace (NMT completeness proof + sum).
+
+
+RANK DEPENDENCIES:
+  Rank 1 (particle) ← cyberlinks + balances (primary computation)
+  Rank 2 (neuron)   ← Rank 1 + outbound edges (one pass after convergence)
+  Rank 3 (topic)    ← Rank 1 + namespace structure (aggregation, no iteration)
+
+  Total: one power iteration (Rank 1) + two linear passes (Ranks 2 and 3).
+  All three ranks update with bounded locality.
+```
+
+### 11.3 Convergence
 
 By the Perron-Frobenius theorem, if the transition matrix P is irreducible and aperiodic, there exists a unique stationary distribution π with $\pi P = \pi$, $\sum \pi_i = 1$, $\pi_i > 0$.
 
 Convergence rate: $\|f^{(t)} - \pi\| \leq C \cdot (1 - \lambda)^t$ where $\lambda = 1 - |\lambda_2|$ is the spectral gap.
 
-### 11.3 Bounded-Locality Focus Update
+### 11.4 Bounded-Locality Focus Update
 
 Focus updates must be local — recomputing the global π for every edge change is O(n), violating Law 1.
 
@@ -1082,6 +1268,10 @@ When edge (i → j, weight w) is created:
   Convergence: Local perturbation theory guarantees Δπ decreases
   exponentially with graph distance from the modified edge.
   After O(1/λ) local iterations, residual error < ε.
+
+  After Rank 1 converges locally:
+    Rank 2 (neuron rank): recompute for affected neurons only — O(deg(n))
+    Rank 3 (topic rank): recompute for affected namespaces only — O(log n)
 
 FOCUS NMT UPDATE:
   Only leaves for affected neurons need NMT path recomputation.
@@ -1493,12 +1683,17 @@ OPERATION                           TIME          SPACE         CONSTRAINTS
 Create cyberlink                    O(log n)      O(log n)      ~12,000
 Sync namespace (neuron)             O(k + log n)  O(k + log n)  N/A (verifier)
 Private transfer (4 in, 4 out)      O(log N)      O(log N)      ~50,000
-Focus update (local)                O(deg(v))     O(deg(v))     ~1,000 × k
+Focus update (local, 3 ranks)       O(deg(v))     O(deg(v))     ~1,000 × k
+  Rank 1 (particle rank)            O(deg(p))     O(1)          ~500 × deg(p)
+  Rank 2 (neuron rank)              O(deg(n))     O(1)          ~500 × deg(n)
+  Rank 3 (topic rank)               O(log n)      O(log n)      ~8,000 (NMT sum)
 Light client join                   O(1)          O(1)          ~100,000 (one-time)
 Light client per-block              O(log N)      O(1)          ~1,000
 UTXO proof maintenance              O(log N)/blk  O(log N)      ~12,500
 DAS sampling                        O(√n)         O(√n log n)   N/A (verifier)
 Edge pruning                        O(log n)      O(log n)      ~8,000
+Mint uniq                           O(log n)      O(log n)      ~4,000
+Transfer uniq                       O(log n)      O(log n)      ~3,000
 Block verification (B tx, E edges)  O(E log E)    O(E)          ~5,000 × E
 ```
 
