@@ -5,6 +5,6 @@ tags:: cyber
 - neurons with high karma have demonstrated sustained alignment with collective attention
 - neurons that link to noise or spam earn low karma
 - not self-reported — computed from the behavior of the entire [[cybergraph]]
-- derived from [[diffusion]] operator of the [[tri-kernel]]: weighted average of [[cyberank]] across a neuron's outbound [[cyberlinks]]
+- derived from [[cyberank]]: weighted average of [[tri-kernel]] scores across a neuron's outbound [[cyberlinks]]
 - according to [[token theory]] karma is [[score]] (fungible and immovable)
 - discover all [[concepts]]

@@ -1098,8 +1098,7 @@ OPERATOR 1 — DIFFUSION (Markov/Random Walk)
   under ergodicity.
 
   Answers: "Where does probability flow?"
-  This is the cyberank — probability of particle observation
-  by a random-walking neuron, weighted by stake.
+  The exploration component of the cyberank.
 
   Properties: row-stochastic, preserves probability mass.
   Locality: geometric decay via teleport parameter α.
@@ -1151,6 +1150,8 @@ COMPOSITE UPDATE:
           + λ_d · D_KL(φ ‖ Dφ)
 
   Structure (springs) + context (heat) + exploration (diffusion).
+  The fixed point φ* is the cyberank — the per-particle score
+  of the cybergraph. Not diffusion alone. The full blend.
   The tri-kernel is complete: no other local operators exist.
 ```
 

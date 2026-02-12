@@ -6,7 +6,7 @@ tags:: cyber
 	- α = teleport parameter
 	- u = prior (stake-weighted)
 - answers: "where does probability flow?"
-- this is the [[cyberank]] — probability of [[particle]] observation by random-walking [[neuron]], weighted by stake
+- the exploration component of the [[cyberank]]. the full cyberank is the fixed point of all three [[tri-kernel]] operators blended together
 - row-stochastic, preserves probability mass
 - powers remain local. converges to unique stationary distribution under ergodicity
 - locality: geometric decay via teleport parameter α

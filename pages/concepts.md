@@ -7,13 +7,13 @@ tags:: cyber
 	- [[token]]: fundamental unit of [[value]]. [[coin]], [[uniq]], [[score]], [[badge]]
 	- [[focus]]: emergent [[attention distribution]]. computed by [[tri-kernel]], not assigned
 - [[tri-kernel]]: the three local operators for collective intelligence
-	- [[diffusion]]: where probability flows. exploration. the [[cyberank]]
+	- [[diffusion]]: where probability flows. exploration
 	- [[springs]]: what satisfies structural constraints. hierarchy
 	- [[heat kernel]]: what the graph looks like at scale τ. adaptation
 - emergent structures
 	- [[axons]]: aggregated connections between [[particles]]. the skeleton of collective understanding
 	- [[cybergraph]]: essential data structure for [[collective memory]]
-	- [[cyberank]]: per-particle relevance from [[diffusion]]
+	- [[cyberank]]: per-particle score from the full [[tri-kernel]]
 	- [[karma]]: per-neuron reputation. aggregate [[focus]] across linked [[particles]]
 	- [[threshold]]: boundary conditions that separate regimes. minimum focus, convergence, access
 - machines

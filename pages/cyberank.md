@@ -1,18 +1,24 @@
 icon:: 🦠
 alias:: cyber rank, particles weight, particles weights, cyberanks
-- probability of [[particle]] observation by [[random walking]] [[neuron]]
-- weighted on [[attention]] and [[will]] of [[neuron]]
+- per-[[particle]] score computed by the [[tri-kernel]]
+- the fixed point φ* of the composite operator: [[diffusion]] + [[springs]] + [[heat kernel]]
+- `φ* = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)]`
+- not just a random walk — it integrates exploration (diffusion), structural consistency (springs), and adaptive context (heat)
+- probability of [[particle]] observation by [[random walking]] [[neuron]], weighted on [[attention]] and [[will]]
 - fundamental factor of [[implicit knowledge]]
-- basically its plain old [[pagerank]] weighted by specific [[tokens]]
+- evolution from [[pagerank]]
+	- pagerank is diffusion-only (one kernel). cyberank is the full [[tri-kernel]]
 	- | feature                | [[pagerank]]                                     | cyberank                                                                 |
 	  |------------------------|----------------------------------------------|--------------------------------------------------------------------------|
 	  | input structure    | directed graph with edges indicating links   |  [[cybergraph]]          |
+	  | operators          | diffusion only                               | [[diffusion]] + [[springs]] + [[heat kernel]]                            |
 	  | damping factor     | typically set to 0.85                        | [[consensus parameter]]                  |
-	  | link representation| edges with equal weight     | [[attention]] and [[will]] token                  |
+	  | link representation| edges with equal weight     | [[attention]] and [[will]] token, three scalars (h, d, c)                |
 	  | handling dangling nodes | distributed uniformly among all nodes      | adjusted rank calculation considering dangling nodes explicitly          |
 	  | rank initialization| uniformly distributed initial ranks          | starts with all ranks initialized to zero                                |
 	  | normalization     | ensures rank sum equals one                   | implicit normalization through rank adjustments and damping factor       |
-- pseudocode in python
+	  | locality           | global recompute                             | bounded locality: O(deg(v)) per update                                   |
+- pseudocode in python (diffusion component, legacy reference)
 	- ```python
 	  import functools
 	  import operator
