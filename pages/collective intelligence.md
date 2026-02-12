@@ -38,6 +38,7 @@ tags:: cyber
 	- Dorigo: [[ant colony optimization]] (1992) — [[stigmergy]] formalized as algorithm
 	- Woolley: [[c-factor]] (2010) — measurable group-level intelligence
 	- Hong-Page: [[diversity theorem]] (2004) — diversity beats ability
+	- [[collective amnesia]]: the evolutionary bug — civilizations forget. [[collective memory]] is the cure
 	- boundaries between human and machine collective intelligence are dissolving. [[cyber]] is where they merge
 -
 - ## computational foundations

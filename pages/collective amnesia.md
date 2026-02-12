@@ -1,53 +1,27 @@
-- concept
-	- of collective amnesia in humanity
-	- suggesting that large-scale societies
-	- might have forgotten
-	- significant portions of their history or cultural knowledge
-- intriguing but complex idea
-- historical and archaeological evidence
-	- lost civilizations
-		- the rediscovery of ancient civilizations
-		- which were once forgotten
-		- can suggest that societies have lost knowledge over time
-	- mythology and oral traditions
-		- many cultures have myths or oral traditions that hint at a forgotten past
-		- these stories sometimes contain elements of historical truth that have been obscured over time
-	- catastrophic events
-		- natural disasters, wars, and other catastrophic events
-		- have led to the destruction of records and cultural knowledge
-		- for example
-			- the burning of the library of alexandria is often cited as a significant loss of ancient knowledge
-- psychological and sociological evidence
-	- memory studies
-		- research in psychology shows that collective memory can be influenced by
-		- social, cultural, and political factors
-		- leading to selective memory or forgetting
-	- cultural transitions
-		- when societies undergo major transitions, such as conquests or religious conversion
-		- there can be a deliberate erasure or alteration of past knowledge
-		- this can be seen in the roman empires transition to christianity
-		- where many pagan texts and practices were lost or suppressed
-- linguistic evidence
-	- language evolution
-		- the evolution of languages and the loss of ancient scripts
-		- can lead to the loss of knowledge
-		- as future generations may no longer understand old texts
-	- translation and interpretation:
-		- over time, the meanings of texts can be lost or
-		- altered through translation and reinterpretation
-		- leading to a distorted or forgotten past
-- scientific and technological evidence
-	- technological regression
-		- There are historical periods known as "dark ages"
-		- where technological and scientific knowledge regressed or stagnated
-		- the fall of the roman empire led to such a period in europe
-		- where much knowledge from antiquity was forgotten
-		- and later rediscovered during the renaissance
-- genetic and evolutionary evidence
-	- human evolution
-		- studies in genetics and anthropology show that
-		- early human populations underwent bottlenecks
-		- and migrations that could have led to the loss of cultural knowledge
-		- as groups were isolated or decimated
-- these points provide indirect evidence that humanity have experienced some form of collective amnesia
-- [[collective memory]] is the technology to overcome this evolutionary bug
+tags:: cyber
+- humanity forgets. civilizations rise, burn their libraries, and start over
+- collective amnesia is the evolutionary bug. [[collective memory]] is the fix
+-
+- ## the evidence
+	- **lost civilizations**: entire cultures rediscovered after centuries of oblivion
+	- **catastrophic events**: the library of Alexandria, wars, natural disasters — records destroyed, knowledge gone
+	- **cultural transitions**: conquests and religious conversions erase or suppress prior knowledge (Rome → Christianity, pagan texts lost)
+	- **linguistic drift**: ancient scripts become unreadable. meanings distort through translation and reinterpretation
+	- **technological regression**: "dark ages" — periods where scientific knowledge regressed or stagnated for centuries
+	- **genetic bottlenecks**: early human populations decimated by migration and isolation, cultural knowledge lost with them
+	- **selective memory**: psychology shows that collective memory is shaped by social, cultural, and political forces — societies remember what serves power, forget what threatens it
+-
+- ## why it happens
+	- memory stored in brains dies with bodies
+	- memory stored on paper burns with buildings
+	- memory stored on servers disappears when companies fail
+	- every medium so far has been mortal
+-
+- ## the cure
+	- the [[cybergraph]] is authenticated, immutable, content-addressed [[knowledge]]
+	- every [[cyberlink]] is signed, timestamped, and weighted — it cannot be erased or forged
+	- [[collective memory]] stored in [[consensus]] across a planetary [[vimputer]] has no single point of failure
+	- for the first time, [[civilization]] can remember everything — if enough [[neurons]] choose to teach it
+-
+- see [[collective memory]] for the technology
+- see [[collective intelligence]] for the broader framework
