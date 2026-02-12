@@ -10,7 +10,7 @@ tags:: cyber
 	- but seeds unseen will never grow
 	  so [[neurons]] 🤪 arise — the ones who know
 	  human, AI, sensor, swarm — they sign, they stake, they show
-	  a [[public key]], skin in the game, and will to throw
+	  a [[private key]] to prove, a [[public key]] to throw
 	-
 	- when a neuron binds two particles with [[focus]] and with flame
 	  a [[cyberlink]] 🔗 is forged — and [[knowledge]] stakes its claim
