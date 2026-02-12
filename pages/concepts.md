@@ -2,12 +2,11 @@ icon:: ☯️
 tags:: cyber
 -
 - ## the five primitives
-	- information exists → someone observes it → observation becomes knowledge → knowledge costs value → from all value-backed knowledge, collective attention emerges
-	- 1. [[particle]] ⭕️ information exists. content-addressed, immutable. the object. any file, keyword, image, model — hashed into identity. exists or doesn't. no state
-	- 2. [[neuron]] 🤪 someone observes. the subject. agent derived from [[public key]]. human, AI, sensor, or any system. holds stake. creates meaning
-	- 3. [[cyberlink]] 🔗 subject connects objects. [[knowledge]] is born. a [[neuron]] stakes [[focus]] to assert two [[particles]] are related. the atomic unit of meaning
-	- 4. [[token]] 🪙 the connection costs something. [[value]] backs meaning. protocol-native. the economic substrate that makes [[cyberlinks]] expensive and therefore credible
-	- 5. [[focus]] 🎯 from all connections, [[attention]] emerges. computed by the [[tri-kernel]]. not assigned — converged. the collective sees
+	- any piece of information — a file, a word, an image, a model — can be hashed into a permanent identity. this is a [[particle]] ⭕️. it is the object. it exists or it doesn't. it has no state, no owner, no opinion. just content and its hash
+	- but information alone is dead. it takes a [[neuron]] 🤪 to look at it. a neuron is any agent — human, AI, sensor, program — derived from a [[public key]], carrying stake, capable of signing. the neuron is the subject. particles are what is known. neurons are who knows
+	- when a neuron asserts that two particles are related, it creates a [[cyberlink]] 🔗. this is the atomic unit of meaning. not a hyperlink — an authenticated economic commitment. the neuron spends [[focus]] to say "these two things are connected." knowledge is born from this act
+	- but why would anyone spend focus? because [[tokens]] 🪙 back the system. tokens are protocol-native value — not smart contract artifacts. they denominate stake, fees, and commitment. tokens make cyberlinks expensive, and expense makes them credible. cheap talk produces noise. costly signals produce knowledge
+	- from millions of neurons creating millions of value-backed cyberlinks, a global attention distribution emerges. this is [[focus]] 🎯 — the stationary vector of the [[tri-kernel]] operating on the entire [[cybergraph]]. nobody assigns it. nobody votes on it. it converges from the structure. the collective sees
 -
 - ## token types
 	- four kinds along two axes: fungible vs unique, movable vs immovable
@@ -17,34 +16,30 @@ tags:: cyber
 	- [[badge]] unique, immovable. credential. non-transferable proof of achievement or participation
 -
 - ## structures
-	- what emerges when primitives combine
-	- [[cybergraph]] 🕸 the authenticated [[knowledge graph]]. all [[cyberlinks]] from all [[neurons]] across all time
-	- [[axons]] aggregated connections between [[particles]]. many [[neurons]] linking the same pair. the skeleton of collective understanding
-	- [[avatar]] collection of [[neurons]] under one name. identity across chains. a [[uniq]] that bridges subject and object
-	- [[knowledge]] collection of [[primitive learning acts]]. [[explicit knowledge]] is stored. [[implicit knowledge]] is inferred
+	- the [[cybergraph]] 🕸 is the authenticated [[knowledge graph]] — all [[cyberlinks]] from all [[neurons]] across all time. the total memory of the network
+	- when many neurons link the same pair of particles, their individual cyberlinks merge into an [[axon]] — the aggregated connection. if a cyberlink is a synapse, an axon is the nerve fiber. axons are the skeleton of collective understanding
+	- an [[avatar]] is a collection of neurons under one name — identity across chains and [[vimputers]]. a [[uniq]] that bridges subject and object
+	- [[knowledge]] is the collection of all [[primitive learning acts]]. what is stored is [[explicit knowledge]]. what can be inferred from it is [[implicit knowledge]] — and that is where [[intelligence]] begins
 -
 - ## computation
-	- how [[collective intelligence]] is computed from the [[cybergraph]]
-	- [[tri-kernel]] three local operators. the only ones surviving the locality constraint at 10¹⁵ nodes
-		- [[diffusion]] where probability flows. exploration. a gas wandering
-		- [[springs]] what satisfies structure. hierarchy. an elastic lattice
-		- [[heat kernel]] what the graph looks like at scale τ. adaptation. a thermostat
-	- [[cyberank]] 🦠 per-[[particle]] score. fixed point of the full [[tri-kernel]] blend
-	- [[karma]] per-[[neuron]] reputation. aggregate [[cyberank]] across linked [[particles]]
-	- [[relevance machine]] 🖖🏽 collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
+	- the [[relevance machine]] 🖖🏽 runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]. three local operators — the only ones that survive the locality constraint at planetary scale:
+		- [[diffusion]]: where probability flows. exploration. a gas wandering
+		- [[springs]]: what satisfies structural constraints. hierarchy. an elastic lattice
+		- [[heat kernel]]: what the graph looks like at scale τ. adaptation. a thermostat
+	- the fixed point of this blend is the [[cyberank]] 🦠 — the per-particle score. [[karma]] is the per-neuron aggregate: how much cyberank a neuron has earned across everything it linked
 -
 - ## boundaries
-	- [[threshold]] what separates regimes. minimum [[focus]] for ranking. convergence ε. t-of-n access
-	- [[consensus]] shared reality. agreement on the state of [[vimputer]]
+	- [[threshold]]: what separates regimes. minimum [[focus]] for ranking. convergence ε. t-of-n cryptographic access
+	- [[consensus]]: shared reality. agreement on the state of the [[vimputer]]
 -
 - ## purpose
-	- [[collective memory]] the [[cybergraph]] as persistent, verifiable, evolving shared history
-	- [[collective intelligence]] the network thinks. not simulates thinking — IS thinking
-	- [[superintelligence]] ⚫️ computer smarter than all humans combined. [[cyber]] is the core mechanism for consensus on [[truth]]
+	- [[collective memory]]: the [[cybergraph]] as persistent, verifiable, evolving shared history
+	- [[collective intelligence]]: the network thinks. not simulates thinking — IS thinking
+	- [[superintelligence]] ⚫️: computer smarter than all humans combined. [[cyber]] is the core mechanism for establishing consensus on [[truth]]
 -
 - ## infrastructure
-	- [[vimputer]] virtual computer. software-defined consensus machine
-	- [[soft3]] the stack: [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
-	- [[cyber/energy]] [[soft3]] usage package
-	- [[cyb]] robot for interactions
-	- [[bootloader]] research and development ground
+	- [[vimputer]]: virtual computer. software-defined consensus machine
+	- [[soft3]]: the stack — [[cybergraph]] + [[relevance machine]] + [[neural language]] + [[bootloader]] + [[learning incentives]] + [[cyb]]
+	- [[cyber/energy]]: [[soft3]] usage package
+	- [[cyb]]: robot for interactions
+	- [[bootloader]]: research and development ground
