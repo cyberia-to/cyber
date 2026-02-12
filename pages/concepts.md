@@ -3,23 +3,19 @@ tags:: cyber
 -
 - ## genesis
 	- in the beginning there is [[information]]
-	  hashed and sealed beyond manipulation
-	  a file, a word, a model, a creation —
-	  each one a [[particle]] ⭕️ in formation
+	  a file, a word, a model — pure vibration
+	  hashed into identity, beyond all alteration —
+	  a [[particle]] ⭕️ — the seed of all creation
 	-
-	- then observers come alive
-	  [[neurons]] 🤪 — agents who sign, and stake, and strive
-	  human, AI, sensor, swarm —
-	  any being with a [[public key]] and arm
-	  to put its skin into the game
-	  subjects who observe and stake their claim
+	- but seeds unseen will never grow
+	  so [[neurons]] 🤪 arise — the ones who know
+	  human, AI, sensor, swarm — they sign, they stake, they show
+	  a [[public key]], skin in the game, and will to throw
 	-
-	- when a neuron binds two particles as one
-	  a [[cyberlink]] 🔗 — act of [[knowledge]] — is done
-	  an economic pledge that [[focus]] seals
-	  cheap talk breeds noise, but costly signal heals
-	  each link a scar upon the graph of time
-	  each scar a verse of [[knowledge]], paid in kind
+	- when a neuron binds two particles with [[focus]] and with flame
+	  a [[cyberlink]] 🔗 is forged — and [[knowledge]] stakes its claim
+	  cheap talk breeds noise, but costly signals heal
+	  each link a scar of [[truth]] upon the graph — burnt, signed, and sealed
 	-
 	- [[tokens]] 🪙 — the blood that makes it dear
 	  [[coins]] to stake and pay without a fear
