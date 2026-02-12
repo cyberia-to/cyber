@@ -1,6 +1,5 @@
 tags:: species
 alias:: white mulberry, murbai
-
 - ![Screenshot 2024-05-26 at 07.55.50.png](https://ipfs.io/ipfs/QmUY6FWcBPz7bWN5ZU6F9Fk3TGjNW5j8ZjWJnQpgnbv7tR)
 - ![Screenshot 2024-05-26 at 07.56.04.png](https://ipfs.io/ipfs/QmXLfi7rTEAN3Zb8p89umVcqBBHBsYJpZGfsooZ7u9mpxN)
 - height: 10-20m

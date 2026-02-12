@@ -1,6 +1,5 @@
 tags:: species
 alias:: snow-in-summer
-
 - ![Screenshot 2024-06-02 at 06.03.03.png](https://ipfs.io/ipfs/QmSDWCwbgr3LoA1Btwwce7WnY6EeqZKX3BN9nGGhSiCN5j)
 - ![Screenshot 2024-06-02 at 06.02.53.png](https://ipfs.io/ipfs/QmQopaMickLGDXNRwY88F5paZP692HF9TeKdKyRUvv9PCj)
 - ![Screenshot 2024-06-02 at 06.03.24.png](https://ipfs.io/ipfs/Qmd7cLhBK9JnhLmY2cLwXEuyroj9uJnQTn16cV2tJ5pEuX)

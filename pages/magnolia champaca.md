@@ -2,7 +2,6 @@ tags:: species, major, super
 alias:: cempaka, champaсa, white champaca
 wood:: yes
 grow-speed:: 4
-
 -
 - ![](https://ipfs.io/ipfs/bafybeiapmu3yu6gy6kdonf4xp4q3lg33wrqtsr44mfkbkepqlqzp4bqkhm)
 - ![](https://ipfs.io/ipfs/bafybeihkuav2sxohnpxagvqhidqj4xbns2hyvgzjfsxwgua7r2sbfkq2xu)

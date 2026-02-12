@@ -1,7 +1,6 @@
 tags:: genus, species, research
 alias:: abies, siberian fir
 supply:: wishlist
-
 - [[conifer]]
 - ![image](https://ipfs.io/ipfs/QmZ6tLZ79ygJzbh6cPwUGVnw8LxEK3HQcmzHJQYENjr2bX)
 - ![image](https://ipfs.io/ipfs/QmZq9PxC66ZdKTyFKsCKWxNTsNxPAidZo9XSouAif3QBAq)

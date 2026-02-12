@@ -4,7 +4,6 @@ abundance:: yes
 supply:: no
 margin:: medium
 autonomy:: staple
-
 - availability:: cv
 - ![](https://ipfs.io/ipfs/QmR24VjmWmFzphF9bXMhKHSqTA9YMSxGkpZzdXCUSedFMb)
 - ![](https://ipfs.io/ipfs/QmPK71vF87G9tCrmnvwV84akMDC2jmVSpCUokCBXTps2uu)

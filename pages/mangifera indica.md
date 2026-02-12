@@ -3,7 +3,6 @@ scalable:: true
 alias:: mangifera, mango, mangga
 wood:: yes
 grow-speed:: 3
-
 - wood-density:: 600
 - ![Screenshot 2024-06-03 at 08.07.24.png](https://ipfs.io/ipfs/QmbTU1UdHYvbLxEbyYjEmRN6QXNSmvd6ZGj6g8JpXWuXyH){:height 527, :width 676}
 - ![Screenshot 2024-06-03 at 08.07.15.png](https://ipfs.io/ipfs/QmYhT92AjFapybwNsGCCmm76YVVp62BCBuGFSf63FFS4D3)

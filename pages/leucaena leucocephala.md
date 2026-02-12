@@ -3,7 +3,6 @@ tags:: genus, species, major, super
 scalable:: true
 wood:: yes
 grow-speed:: 5
-
 - nitrogener:: 500
 - wood-density:: 500
 - ![Leucaena](https://ipfs.io/ipfs/QmRFr6siC54zvG6YQmDxCxx2yjLTkKwmtzSfRWoasFARKx)

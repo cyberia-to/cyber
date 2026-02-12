@@ -4,7 +4,6 @@ abundance:: yes
 supply:: no
 margin:: high
 autonomy:: staple
-
 - [[high margin]] [[fern]] for [[health]] if processed to powder
 - ![image.png](https://ipfs.io/ipfs/QmRM1XK3AMdsfkH6Rwoncj4LSyHjvdD1Kw7uMUBxDqWmbs){:height 648, :width 908}
 - ![image.png](https://ipfs.io/ipfs/QmUbytvdpNcvZTHztkLEmqHWiorm6cNnpujrvGjTByzf9A)

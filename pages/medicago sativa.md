@@ -3,7 +3,6 @@ tags:: genus, species, major, super
 scalable:: true
 market:: fodder
 supply:: next-month
-
 -
 - nitrogener:: 200
 - ![Alfalfa | Nutritious Forage Crop, Livestock Feed & Soil Enhancer |  Britannica](https://ipfs.io/ipfs/QmSQyjhWYg3iiPCYQHZ4ZKGEygHFVCgZNrxX1kT4TYKTYr)

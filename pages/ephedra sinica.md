@@ -1,5 +1,4 @@
 tags:: species, psycho
-
 - availability:: unknown
 - [[ephedrine]]
 - ![](https://ipfs.io/ipfs/QmdAmh34GtF4FbTCMCcG5oV6a8XyMrsmnojXHyEVcLxTfq)

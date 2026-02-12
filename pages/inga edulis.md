@@ -3,7 +3,6 @@ scalable:: true
 alias:: inga, snowfruit, inga edilus
 wood:: yes
 grow-speed:: 5
-
 - availability:: cv
 - nitrogener:: 250
 - [[plant/miracle]]

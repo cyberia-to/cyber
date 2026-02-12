@@ -1,6 +1,5 @@
 tags:: species
 alias:: paperbark
-
 - ![Screenshot 2024-06-02 at 07.56.14.png](https://ipfs.io/ipfs/QmZfKR7T3anWpavhVHMkYLSssc6jxwhD4XUHMxRVLBw23F)
 - ![Screenshot 2024-06-02 at 07.56.06.png](https://ipfs.io/ipfs/QmS2RfbkvcAfsM3MczyezaaUSsxihoAKn5aKzaBSFgwpWq)
 - ![Screenshot 2024-06-02 at 07.56.28.png](https://ipfs.io/ipfs/Qmc4mUFuMbXdRDEg8f9iPN5zevgJVJeLsgafVJCaVggw9z)

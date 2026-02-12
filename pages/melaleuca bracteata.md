@@ -1,6 +1,5 @@
 tags:: species
 alias:: black tea-tree, mock olive
-
 - ![Screenshot 2024-06-02 at 07.53.20.png](https://ipfs.io/ipfs/QmYzirokM9CWGWRZM9hRKZXcZqxfesTzb2M7yWcJ78QHgT)
 - ![Screenshot 2024-06-02 at 07.53.29.png](https://ipfs.io/ipfs/QmVGmhfiMYXCkcLEP3rPZsT7m8cZ7iGfGk8vNBijA1PEqN)
 - ![Screenshot 2024-06-02 at 07.53.09.png](https://ipfs.io/ipfs/QmaQF4NEUfhEtfh2BoHbonMtwdnM7SPboQrEQvKSvGenLU)

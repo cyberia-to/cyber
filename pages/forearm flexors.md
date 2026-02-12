@@ -1,5 +1,4 @@
 tags:: muscle
-
 - ![](https://ipfs.io/ipfs/Qmcj7d15i6E5hKhw1fvMjYp5jippWoV587b95NYmWuYpDk)
 - [[flexor carpi radialis]]
 - [[flexor carpi ulnaris]]

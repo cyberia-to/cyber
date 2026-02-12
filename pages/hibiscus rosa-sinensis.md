@@ -1,6 +1,5 @@
 tags:: species, major
 alias:: china rose, hawaiian hibiscus
-
 - supply:: next-month
 - ![](https://ipfs.io/ipfs/QmQtjNEhWwZ2QfqfjSpSA6xd3P9GnqyLxTXRZLQEy2c5we)
 - ![](https://ipfs.io/ipfs/QmStAijaHaerZdScEDNykE5mEDsgnKqTGVdjU3PkN1W8cw)

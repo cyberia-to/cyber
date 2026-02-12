@@ -4,7 +4,6 @@ abundance:: yes
 supply:: no
 margin:: low
 autonomy:: support
-
 - ![image.png](https://ipfs.io/ipfs/QmcvAzhLTwkwVf4kZx6ZpUJinScXvtiwmBaLRSeuQXES99)
 - very talented bush
 	- can grow to a 3 meter bush in 3 months

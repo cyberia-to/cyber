@@ -3,7 +3,6 @@ tags:: genus, species, major
 scalable:: true
 wood:: yes
 grow-speed:: 4
-
 - wood-density:: 700
 - ![undefined](https://ipfs.io/ipfs/QmUh8aHEmRoBjmLgREgBo23Rc26zXmRPvGBxudR4Wi72J6){:height 358, :width 534}
 - ![image.png](https://ipfs.io/ipfs/QmS8S3ZCpVGnVXspmj6qYaHfs9m8ssxuoV13MSmLuzVgpP)

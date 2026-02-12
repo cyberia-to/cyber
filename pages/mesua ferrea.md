@@ -6,7 +6,6 @@ market:: ironwoods
 supply:: next-month
 wood:: yes
 grow-speed:: 1
-
 - [[high margin]]
 - ![Screenshot 2024-05-27 at 08.19.04.png](https://ipfs.io/ipfs/QmQ1YkPs8Bc2NA2nUewxgGHPHHZvarSUHQEhvQabaFihm9)
 - ![Screenshot 2024-05-27 at 08.19.22.png](https://ipfs.io/ipfs/QmadTSCGfeLi1MG2EgWP8Yn8zUVoE2NCTYHFgpT3cNCTbM)

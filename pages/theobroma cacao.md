@@ -1,7 +1,6 @@
 tags:: genus, species, major, super, psycho
 scalable:: true
 alias:: theobroma, cacao, coklat, kakao
-
 - wood-density:: 450
 - ![](https://ipfs.io/ipfs/QmXij4UgeYZMTcrNiTWN42KJnTAvusrKuCSkmPaGZAZiMF){:height 411, :width 628}
 - [[staple]] for [[health]]

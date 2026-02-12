@@ -1,6 +1,5 @@
 tags:: species, research
 alias:: saga rambat, rosary pea
-
 - ![image.png](https://ipfs.io/ipfs/QmaMeMMzfZzYt5sUn6wBEFxSv8wtRuBSLG6yZLAvM9yZ3n)
 - wiki:: [abrus_precatorius.pdf](https://ipfs.io/ipfs/QmU3yg2MFujJZTdeEmecgV1xmPvS2TAKKrKKJNAaFefyc7)
 - ### abrus precatorius review

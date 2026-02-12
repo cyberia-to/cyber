@@ -1,7 +1,6 @@
 icon:: 🟢
 tags:: aos, cyber
 alias:: enhanced blockchain
-
 - [[bootloader]] of [[cyber]]
 - and [[moon]] [[network state]]
 - named after [[nick bostrom]]

@@ -3,7 +3,6 @@ scalable:: true
 alias:: chrysopogon, vetiver
 supply:: next-month
 market:: herbs
-
 - [[high margin]] [[oil]]
 - ![image.png](https://ipfs.io/ipfs/QmZGTT1ro7t6LXqASYXhbFNC1t2ftrSQFqTx9wCeaFym7t)
 - ![6 Manfaat Rumput Vetiver untuk Kesehatan dan Kecantikan | Orami](https://ipfs.io/ipfs/QmcHFeMJcBTo5SGnyLbJBi15X4ADyrNgVEBqaZbieprQ4j)

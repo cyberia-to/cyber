@@ -7,7 +7,6 @@ margin:: medium
 autonomy:: staple
 wood:: yes
 grow-speed:: 5
-
 - [[staple]]
 - fermented [[leave]] for [[health]]: [[sterols]]
 - ![Screenshot 2024-05-23 at 09.25.18.png](https://ipfs.io/ipfs/QmPBzCPrsA6BnSSKcXxHRHxXPWgRUicFuJzEy89APzSkM7)

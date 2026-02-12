@@ -3,7 +3,6 @@ tags:: genus, species, major
 scalable:: true
 wood:: yes
 grow-speed:: 4
-
 - wood-density:: 500
 - nitrogener:: 200
 - supply:: next-month

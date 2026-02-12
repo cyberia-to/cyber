@@ -6,7 +6,6 @@ wood-availability:: high
 wood-durability:: low
 wood:: yes
 grow-speed:: 4
-
 - [[conifer]]
 - ![image.png](https://ipfs.io/ipfs/QmaRm8Cpjp8ReBGA4X8ugxwKUeo4jyCcuofqAz5jCazW4G)
 - ![image.png](https://ipfs.io/ipfs/QmdknGZ4DYEDFb1PG2h3dddBBrmefFznmq2k6PkHMmycsw)

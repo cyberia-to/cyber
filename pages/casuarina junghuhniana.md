@@ -1,6 +1,5 @@
 tags:: species, major
 alias:: cemara gunung, mountain ru
-
 - availability:: batuka
 - nitrogener:: 250
 - wood-density:: 1050

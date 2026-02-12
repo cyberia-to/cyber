@@ -1,6 +1,5 @@
 alias:: melati, jasmine
 tags:: species
-
 - ![image.png](https://ipfs.io/ipfs/QmRLSv5fpGhZyme5Y5wrogcBWrzn7BufAQwVhPsLSYQb6G){:height 406, :width 408}
 - [[health]]
 - ![image.png](https://ipfs.io/ipfs/QmZQGumkYR4syavZjLcS7UVAvA8wtbg6ZGZs6P1T6tbYx2)

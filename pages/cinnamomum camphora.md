@@ -5,7 +5,6 @@ wood-availability:: high
 wood-durability:: moderate
 market:: hardwoods
 supply:: next-month
-
 - [tokopedia](https://www.tokopedia.com/mitraplant/bibit-pohon-kayu-kamper-tanaman-kayu-kamper-cinnamomum-camphora?extParam=ivf%3Dfalse%26src%3Dsearch)
 - [[high margin]]
 - ![image](https://ipfs.io/ipfs/QmUhESoUp3j1qPCs3wQJcRzt7hJy59ftbeqBifftbkbdQo)

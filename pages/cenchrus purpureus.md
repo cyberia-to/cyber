@@ -5,7 +5,6 @@ abundance:: yes
 supply:: no
 margin:: low
 autonomy:: support
-
 - [[grass]]
 - ![image](https://ipfs.io/ipfs/QmaVAi9bsUXC4DQC4bPQCL17C1VSfeTWFbxy3PqbrK4TAa)
 - ![image](https://ipfs.io/ipfs/QmSEgYo831AxL2tAETCbcK4VJm4Q5FwfjnoRM1BKRMxrke)

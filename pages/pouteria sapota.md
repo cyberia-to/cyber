@@ -2,7 +2,6 @@ tags:: genus, species, major
 alias:: pouteria, sapote, mamey sapote
 wood:: yes
 grow-speed:: 2
-
 - ![Screenshot 2024-05-18 at 08.30.16.png](https://ipfs.io/ipfs/QmNLmu8DbVBPf2SiTTZC9A7FjuXTCkiXS5GCDx23CdLizY)
 - ![Mamey - Buy Mamey Sapote online from Miami Fruit](https://ipfs.io/ipfs/QmXdDi5tGzZP6AfPARiHb25JvADxujXseEAxiiQVUqY1hE)
 - ![image.png](https://ipfs.io/ipfs/QmPu3ahAhvbJnvNZgNaX7g7PVBgGpUdDdqziZKhAXhosQp){:height 554, :width 676}

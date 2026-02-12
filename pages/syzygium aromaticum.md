@@ -3,7 +3,6 @@ alias:: clove, chengkeh,
 wood-availability:: local
 wood-density:: 900
 wood-durability:: high
-
 - [[high margin]] [[oil]] for [[health]]
 - ![](https://ipfs.io/ipfs/QmPq1ahzKyDJbtbbHFyBXKv78B2Z9iEbk9DUdsV4w4zrpV)
 - ![](https://ipfs.io/ipfs/QmcmzcjiWaTewqRFEFfnXQPdWvwL9Nf64fWuVaw8G8EEqP)

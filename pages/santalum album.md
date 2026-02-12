@@ -7,7 +7,6 @@ wood-density:: 900
 wood-durability:: high
 market:: resins
 supply:: next-month
-
 - ![](https://ipfs.io/ipfs/QmTvWmfaiadRKJapuwBSnd1W1epZ2WuFzcFscJLCW1KYX5)
 - [plantsofasia](http://www.plantsofasia.com/index/santalum/0-862)
 - height: 4-9 m

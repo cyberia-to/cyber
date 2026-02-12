@@ -3,7 +3,6 @@ scalable:: true
 alias:: eucalyptus, rainbow tree, leda
 wood:: yes
 grow-speed:: 4
-
 - wood-density:: 500
 - ![](https://ipfs.io/ipfs/Qmb1AXnjLDowod535ZgSC5x35rp4gzJQHwadsqvBT3DFEJ)
 - ![image.png](https://ipfs.io/ipfs/QmNQ8jLBNrc1Fm9e7XDPHWwN32ioY82b6i8Gt8znnoX6uS)

@@ -1,6 +1,5 @@
 tags:: genus, species
 alias:: dracaena, sansevieria cylindrica
-
 - ![image.png](https://ipfs.io/ipfs/QmaCA6S6cPVBPTKAMdKdazdR3t1B7YwHZWdDtZ7cxUaFz2)
 - ![image.png](https://ipfs.io/ipfs/QmYCkWgYgxTWsDvrECZHBNMEd6mYv3BjQrngHEnuoXHVK2)
 - ![image.png](https://ipfs.io/ipfs/QmRFqFKnNW6oKjTVLQogesFUSdkpYYhouQoLV3suMTH7wA){:height 456, :width 676}

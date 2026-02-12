@@ -1,6 +1,5 @@
 tags:: species, major
 alias:: plum
-
 - products
 - [[fruit]]
 - ![](https://ipfs.io/ipfs/QmeZ1RYaxEy4TS7KnVXDfPTz7ikpoahRyVBWGFTGghBnkr)

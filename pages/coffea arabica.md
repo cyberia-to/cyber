@@ -7,7 +7,6 @@ margin:: high
 autonomy:: staple
 wood:: yes
 grow-speed:: 3
-
 - ![What Does a Coffee Plant Look Like? - Square Coffee Co.](https://ipfs.io/ipfs/QmQYWS8DM2s9meBH8YAGSSXMYayKcLxdh1N6FfyNLc4YZE)
 - products
 	- [[fruit]]

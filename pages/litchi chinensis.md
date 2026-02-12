@@ -1,7 +1,6 @@
 tags:: species, major
 wood:: yes
 grow-speed:: 3
-
 - [Lychee.pdf](https://ipfs.io/ipfs/QmfCM3LqMjARu2uPudnjHENngi3P8J7BWCDRyhqR7pEtG9)
 - ![Screenshot 2024-05-10 at 12.11.44.png](https://ipfs.io/ipfs/QmWzMDVUdzTLHr6DUZ9LMyuvFa7kZRKbnyTQmWrbDdBKMb)
 - ![image.png](https://ipfs.io/ipfs/QmcZcC6jdUAFzduCnoKr4pmzYM2txSxqeThP2KvfeBoo6J)

@@ -1,7 +1,11 @@
 icon:: 🔗
 tags:: cyber
 alias:: cyberlinks, unit of knowledge, simple interactions, expert opinions, essential learning ability, cyberlinking, primitive learning acts
-- directed link between two [[particles]] of [[information]] signed by [[neuron]] and recorded into [[cyber]] [[vimputer]]
+- signed, weighted, timestamped directed edge between two [[particles]]
+- `edge = ([[neuron]], from [[particle]], to [[particle]], weight, time)`
+- the atomic unit of meaning in the [[cybergraph]]
+- a cyberlink is not a hyperlink — it is an authenticated economic commitment: the [[neuron]] stakes [[focus]] to assert that from and to are related
+- three scalars per link: hierarchy (h), transport (d), context (c)
 - primitive [[learning]] act
 - fully authenticated quadruple
 	- | block hash | neuron | from particle | to particle |

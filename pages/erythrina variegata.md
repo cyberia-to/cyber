@@ -6,7 +6,6 @@ margin:: low
 autonomy:: support
 wood:: yes
 grow-speed:: 4
-
 - nitrogener:: 150
 - wood-density:: 220
 -

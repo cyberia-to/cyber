@@ -4,7 +4,6 @@ abundance:: yes
 supply:: no
 margin:: high
 autonomy:: staple
-
 - best staple for [[salad]] from young [[leave]]
 - ![image.png](https://ipfs.io/ipfs/QmeFcaMSdE1HgnmEn6VUgfqyMjqWqLhXHd29Bb3t4vYP19){:height 266, :width 388}
 - products

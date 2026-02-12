@@ -1,6 +1,5 @@
 tags:: species, major
 alias:: jamblang
-
 - availability:: cv
 - **products**
 - [[fruit]]

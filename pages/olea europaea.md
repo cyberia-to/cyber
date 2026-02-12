@@ -3,7 +3,6 @@ tags:: genus, species
 scalable:: true
 wood:: yes
 grow-speed:: 3
-
 - [[staple]]
 - supply:: next-month
   wood-density::
