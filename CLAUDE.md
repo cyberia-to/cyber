@@ -43,6 +43,19 @@ Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
   concepts. If a term does not deserve its own page, it does not need
   emphasis — just write it plain.
 
+## Shell: Nushell
+
+Use `nu -c '...'` or `nu script.nu` for all scripting. Nushell has
+structured data pipelines, built-in dataframes, and powerful search/filter
+commands — use them instead of bash+sed+awk+grep chains. Examples:
+
+- list pages: `ls pages/*.md | get name`
+- find untagged: `ls pages/*.md | where { (open $it.name | lines | first) !~ '^tags::' }`
+- count by tag: `glob pages/*.md | each {|f| open $f | lines | first } | where $it =~ 'species' | length`
+- dataframe ops: `dfr open`, `dfr filter`, `dfr group-by` for bulk analysis
+
+Reserve bash only for git commands and system tools that have no nu equivalent.
+
 ## Parallel Agents for Graph-Wide Tasks
 
 When a task touches many pages across the graph (bulk tagging, renaming,
