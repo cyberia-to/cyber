@@ -1,4 +1,5 @@
 tags:: disease
+
 - alias: iron
 - ![Iron.pdf](../assets/Iron_1719303309556_0.pdf)
 - [[iron]] is an essential mineral crucial for producing [[hemoglobin]], the protein in red blood cells that carries oxygen throughout the body. it is also involved in energy production, DNA synthesis, and maintaining a healthy immune system.

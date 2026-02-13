@@ -1,2 +1,0 @@
-tags:: genus
-- [[diplazium esculentum]]

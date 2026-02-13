@@ -1,4 +1,5 @@
 tags:: compound
+
 - ![Camphene.pdf](../assets/Camphene_1719106845776_0.pdf)
 - ### camphene: overview and medical uses
   

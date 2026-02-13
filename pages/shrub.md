@@ -1,2 +1,0 @@
-alias:: bush
-tags:: genus

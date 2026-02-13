@@ -1,4 +1,5 @@
 tags:: cyberia
+
 - > the art of designing living systems in resonance with nature’s intelligence—not against it
 - part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 - ## purpose

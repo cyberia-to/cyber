@@ -1,4 +1,5 @@
 tags:: compound
+
 - alias: cellulose
 - ![Cellulose.pdf](../assets/Cellulose_1719303309556_0.pdf)
 - [[cellulose]] is a complex [[carbohydrate]] and a [[polysaccharide]] consisting of glucose units linked by [[β-1,4-glycosidic]] bonds. it is the primary structural component of plant [[cell walls]] and the most abundant [[organic polymer]] on earth.
@@ -9,7 +10,7 @@ tags:: compound
 	- solubility: insoluble in water and most organic solvents; soluble in certain ionic liquids and strong alkali solutions.
 	- chemical formula: (C₆H₁₀O₅)ₙ
 - ### usefulness in medicine
-	-  [[dietary fiber]] : cellulose acts as an insoluble dietary fiber, promoting [[digestive health]] by improving bowel regularity and preventing constipation.
+	- [[dietary fiber]] : cellulose acts as an insoluble dietary fiber, promoting [[digestive health]] by improving bowel regularity and preventing constipation.
 	- [[blood sugar regulation]]: its role as a fiber slows digestion and helps maintain stable [[blood sugar levels]].
 	- [[cholesterol management]]: cellulose binds to bile acids, helping reduce [[cholesterol]] levels.
 	- pharmaceutical use: cellulose derivatives, such as [[microcrystalline cellulose]] and [[hydroxypropyl cellulose]], are used as excipients in drug formulations for [[tablet binding]] and coating.

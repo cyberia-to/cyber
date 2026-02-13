@@ -1,4 +1,5 @@
 tags:: compound
+
 - ![Linalool.pdf](../assets/Linalool_1719300492811_0.pdf)
 - general description:
 	- linalool is a naturally occurring terpene alcohol found in many flowers and spice plants. it is widely used for its pleasant scent and is a common ingredient in perfumes, essential oils, and various personal care products. linalool is also known for its therapeutic properties, including anti-inflammatory, analgesic, and sedative effects.

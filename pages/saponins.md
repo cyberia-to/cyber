@@ -1,4 +1,5 @@
 tags:: compound
+
 - alias: saponins
 - ![Saponins.pdf](../assets/Saponins_1719303309556_0.pdf)
 - [[saponins]] are a class of naturally occurring [[glycosides]] found in a variety of plants, including [[legumes]], [[quinoa]], and [[herbs]]. they are known for their [[foaming properties]], [[antioxidant]] activity, and numerous health benefits, including [[antimicrobial]] and [[cholesterol-lowering]] effects.

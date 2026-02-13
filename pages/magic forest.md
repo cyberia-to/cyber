@@ -1,5 +1,6 @@
 icon:: 🪷
 tags:: cv.land, tech
+
 - scalable, sustainable, multipurpose ecosystem regeneration
 - idea that combining thoughtful set of species in one ecosystem is very efficient form of sustainability
 - think of the list of species as menu from which you can assemble magic forest specifically adopted to you climate and needs

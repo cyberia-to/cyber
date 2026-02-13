@@ -1,6 +1,7 @@
 icon:: 🎯
 alias:: attention distribution, π
 tags:: cyber
+
 - emergent attention distribution over the [[cybergraph]]
 - stationary vector of the [[token]]-weighted random walk
 - not assigned — computed. not voted — converged

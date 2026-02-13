@@ -1,4 +1,5 @@
 tags:: compound
+
 - ![Β-Pinene.pdf](../assets/Β-Pinene_1719123065228_0.pdf)
 - b-pinene is a naturally occurring organic compound found in the essential oils of many plants, particularly coniferous trees such as pine. it belongs to the class of compounds known as [[monoterpenes]]. here is some detailed information about b-pinene:
 - #### chemical information

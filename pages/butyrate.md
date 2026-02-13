@@ -1,4 +1,5 @@
 tags:: compound
+
 - alias: butyrate, butyric acid
 - ![Butyrate.pdf](../assets/Butyrate_1719303309556_0.pdf)
 - [[butyrate]] is a short-chain fatty acid (SCFA) produced in the colon by the fermentation of dietary fiber by gut bacteria. it is known for its critical role in gut health, [[anti-inflammatory]] properties, and metabolic benefits.
@@ -13,7 +14,7 @@ tags:: compound
 	- [[gut health]]: butyrate is a primary energy source for colonic cells, promoting gut lining integrity and reducing the risk of [[leaky gut]].
 	- anti-inflammatory: it modulates immune responses and reduces intestinal and systemic inflammation, which is beneficial in conditions like [[inflammatory bowel disease]] (IBD) and [[colitis]].
 	- [[colon cancer prevention]]: butyrate induces apoptosis in colon cancer cells and reduces tumor-promoting inflammation.
-	-  [[metabolic health]]: it improves insulin sensitivity, reduces blood sugar levels, and plays a role in obesity management.
+	- [[metabolic health]]: it improves insulin sensitivity, reduces blood sugar levels, and plays a role in obesity management.
 	- [[brain health]]: butyrate exhibits neuroprotective effects by promoting [[brain-derived neurotrophic factor]] (BDNF) production and reducing neuroinflammation.
 - ### sources of butyrate
 	- [[dietary]]: not directly present in foods but produced in the colon by fermentation of fibers found in:

@@ -1,4 +1,5 @@
 tags:: cv.land
+
 - ## Why?
 	- everyone have land, even 4 ares is the resource
 	- almost everyone work on [[nandu]] terms with other landlords

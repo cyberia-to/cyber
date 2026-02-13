@@ -6,6 +6,7 @@ margin:: high
 autonomy:: extra
 wood:: yes
 grow-speed:: 3
+
 -
 - [[staple]] for [[health]]
 - ![image.png](https://ipfs.io/ipfs/QmViy3gvZDRdoexz6oKLUuSJtCPMFcrbfpJ7fByPd39vYL)

@@ -1,5 +1,6 @@
 alias:: beds
 tags:: cyberia
+
 - currently 2 types for [[terrace]]
 	- breezy beds
 		- [[medicago sativa]], [[melaleuca]], [[morus]], [[origanum vulgare]], [[plumeria]], [[psidium guajava]], [[ricinus communis]], [[salvia rosmarinus]], [[thymus vulgaris]], [[lavandula angustifolia]], [[cymbopogon citratus]], [[capsicum annuum]], [[casuarina equisetifolia]], [[cynodon dactylon]], [[imperata cylindrica]], [[azadirachta indica]], [[agathis dammara]], [[albizia chinensis]], [[aloe vera]], [[arachis pintoi]]

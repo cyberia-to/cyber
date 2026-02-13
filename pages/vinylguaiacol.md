@@ -1,4 +1,5 @@
 tags:: compound
+
 - vinylguaiacol is a naturally occurring [[phenolic]] compound derived from [[ferulic acid]] and found in plants, fermented foods, and as a volatile product in thermal processing. it has a distinct clove-like aroma and plays a significant role in the flavor profile of certain beers, wines, breads, and smoked foods. it is also a metabolic product of some yeast and bacterial strains.
 	- ### chemical and physical properties
 		- compound type: phenolic vinyl ether

@@ -1,3 +1,0 @@
-tags:: species
-- ![image.png](../assets/image_1746404403927_0.png)
--

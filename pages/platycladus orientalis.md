@@ -1,7 +1,0 @@
-tags:: genus, species, major
-scalable:: true
-alias:: platycladus, chinese thuja
-- [[conifer]]
-- ![image.png](https://ipfs.io/ipfs/QmPnZBU6qAvuzv6VKU3kPTwzhVQFYWLkpZCVnwtuFBaU2x)
-- products
-	- [[leave]]

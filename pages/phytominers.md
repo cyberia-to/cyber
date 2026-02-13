@@ -1,5 +1,6 @@
 alias:: plants/metal, phytominer, hyperaccumulator, hyperaccumulators
 tags:: cyberia
+
 - [[plants]] which are able to extract metals from [[soil]]
 - chosen
 	- [[melastoma malabathricum]]

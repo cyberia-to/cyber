@@ -1,4 +1,5 @@
 tags:: compound
+
 - ferulic acid is a naturally occurring phenolic compound belonging to the group of hydroxycinnamic acids. widely found in plant cell walls, seeds, grains (especially rice, wheat, oats), fruits, and vegetables, it serves as a potent antioxidant protecting against [[oxidative stress]], [[uv radiation]], and [[pathogens]].
 - ## 	chemical properties
 	- chemical formula: C₁₀H₁₀O₄

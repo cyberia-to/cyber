@@ -1,4 +1,5 @@
 tags:: cyber
+
 - [[focusflow blueprint]]
 - [[network architecture]]
 - [[ranking system]]

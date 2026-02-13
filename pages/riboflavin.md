@@ -1,4 +1,5 @@
 tags:: compound
+
 - alias: riboflavin, vitamin b2
 - ![Vitamin_B2.pdf](../assets/Vitamin_B2_1719303309556_0.pdf)
 - [[vitamin]] b2, also known as riboflavin, is a [[water-soluble vitamin]] essential for [[energy production]], [[cellular function]], and [[overall health]]. it is a key component of the [[coenzymes]] [[FAD]] (flavin adenine dinucleotide) and [[FMN]] (flavin mononucleotide), which are involved in redox reactions crucial for [[metabolism]].

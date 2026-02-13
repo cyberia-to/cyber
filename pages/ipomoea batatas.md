@@ -4,6 +4,7 @@ abundance:: yes
 supply:: no
 margin:: medium
 autonomy:: staple
+
 - [[staple]] [[health]]
 - source of beta carotine
 - ![](https://ipfs.io/ipfs/QmSYjzBhW5iy6WcNPkMMrALbabnAbV8Kutft9XHA5hWbsm)

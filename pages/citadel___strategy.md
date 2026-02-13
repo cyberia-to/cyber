@@ -1,4 +1,5 @@
 tags:: cyberia
+
 - tourism
 	- [[nomad hub]]
 	- [[tourism star]]

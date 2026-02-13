@@ -1,5 +1,6 @@
 tags:: district
 alias:: rocket estate
+
 - We bring a unique offer to the market
 - > Largest, highest, offgrid estate in [[Cyber Valley]], Bali
 - The property is situated on the slope of Sanghuyang location not far from Munduk at ~1400m elevation, offering unique views of 2 oceans and 12 volcanos: 4 on Bali and 8 on Java. The estate is designed to operate completely autonomously. That is, it is completely of the grid and constantly supply you with needed energy, water and food. 5.6 ha of fertile land with and 664 m2 of buildings supports both options: either exceptional business opportunity or extraordinary living paradise. In case of business investments it offers you a world class place for establishing a luxury hotel or event space. If you are looking for personal estate it will open unique access to silence, tranquility and health features just unavailable anywhere on Bali.

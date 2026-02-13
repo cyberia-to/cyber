@@ -1,5 +1,6 @@
 tags:: cyberia
-### how meals work
+
+- ### how meals work
 	- all meals ([[breakfast]], [[lunch]], [[dinner]]) are prepared by our kitchen team
 	- we cook from ingredients we grow, forage, or order regularly
 	- the current structure is described in [[kitchen/menu]]

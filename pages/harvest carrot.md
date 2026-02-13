@@ -1,3 +1,0 @@
-tags:: species
-- [github](https://github.com/cyberia-to/rockets/issues/1121)
-- harvest carrot and spread seeds

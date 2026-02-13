@@ -1,5 +1,6 @@
 alias:: walls
 tags:: cyber
+
 - [[layer]] for productivity
 - vertical or semi vertical slopes used for supporting species
 - the idea is to put everything needed for supporting [[beds]] on the wall
