@@ -1,2 +1,3 @@
 alias:: bio synthesis reactor
-tags:: note- produce [[liquid energy]]
+tags:: note
+- produce [[liquid energy]]

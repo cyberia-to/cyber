@@ -1,5 +1,6 @@
 alias:: cyber-sdk
-tags:: cyber- [github.com/cybercongress/go-cyber](https://github.com/cybercongress/go-cyber)
+tags:: cyber
+- [github.com/cybercongress/go-cyber](https://github.com/cybercongress/go-cyber)
 - proof of concept implementation of [[cyber]] protocol in [[go]]
 - production use in [[bostrom]]
 - sdk for building [[superintelligence]] applications

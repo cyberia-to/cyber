@@ -1,5 +1,6 @@
 alias:: 2025 year
-tags:: article- ## Dear heroes and neurons,
+tags:: article
+- ## Dear heroes and neurons,
 	- 2025 was the hardest year.
 	- [[$BOOT]] collapsed 90%. Our team dissolved. The market called us dead.
 	- But we got something worth more than any token price: clarity.

@@ -1,5 +1,6 @@
 icon:: 🍓
-tags:: cyber- how to consolidate [[bostrom]], [[cyber]] and [[cyb]] in one coherent product?
+tags:: cyber
+- how to consolidate [[bostrom]], [[cyber]] and [[cyb]] in one coherent product?
 -
 - bet on selling [[cyber/energy]] packages
 - for [[soft3]] [[collective learning]] of [[superintelligence]]

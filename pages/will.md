@@ -1,5 +1,6 @@
 alias:: bandwidth unit, bandwidth units, cyber/will
-tags:: cyber- mental capacity by which [[neuron]] determines [[knowledge]]
+tags:: cyber
+- mental capacity by which [[neuron]] determines [[knowledge]]
 - allow [[neuron]] to create [[knowledge]]
 - affects probability of using [[particle]] by other [[neuron]]
 - limits [[bandwidth]] of [[neuron]]

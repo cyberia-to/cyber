@@ -1,5 +1,6 @@
 alias:: true false problem
-tags:: cyber- we discussed for a while one property of the [[cyberank]]
+tags:: cyber
+- we discussed for a while one property of the [[cyberank]]
 - which rise huge concerns into the answering capabilities of [[cyber]]
 - lets call it true-false problem
 -

@@ -1,4 +1,5 @@
-tags:: speciesalias:: temulawak
+tags:: species
+alias:: temulawak
 
 - [[staple]]
 - [[rhizome]]

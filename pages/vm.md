@@ -1,5 +1,6 @@
 alias:: virtual machine
-tags:: cyber- examples
+tags:: cyber
+- examples
 	- [[rm]]
 	- [[evm]]
 	- [[wasm]]

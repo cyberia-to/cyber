@@ -1,5 +1,6 @@
 alias:: keys, secrets
-tags:: cyber- personal collection of
+tags:: cyber
+- personal collection of
 - use in [[go-cyber]]
 	- comand `cyber keys`
 - use in [[cyb-ts]]

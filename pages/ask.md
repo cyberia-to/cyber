@@ -1,5 +1,6 @@
 icon:: 👽
-tags:: cyberalias:: infer
+tags:: cyber
+alias:: infer
 - ask [[cyber]] protocol
 - they will [[answer truth]]
 -

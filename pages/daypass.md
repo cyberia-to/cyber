@@ -1,5 +1,6 @@
 icon:: 🧀
-tags:: notealias:: day pass, visit us
+tags:: note
+alias:: day pass, visit us
 
 - our friends, including us, complain that
 - there aren’t many places to walk in silence on bali

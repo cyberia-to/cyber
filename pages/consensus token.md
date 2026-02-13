@@ -1,5 +1,6 @@
 alias:: consensus tokens
-tags:: cyber- [[tokens]] necessary to maintain [[consensus]] of [[vimputer]]
+tags:: cyber
+- [[tokens]] necessary to maintain [[consensus]] of [[vimputer]]
 - in [[bostrom]]
 	- [[$BOOT]]: [[security]]
 	- [[$H]]: [[fuel]]

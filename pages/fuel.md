@@ -1,5 +1,6 @@
 alias:: liquid energy, liquid fuel
-tags:: cyber- paying [[token]] for [[gas]]
+tags:: cyber
+- paying [[token]] for [[gas]]
 - due to fundamental utility
 - can morph into different [[value shapes]]
 - different [[networks]] require to pay for [[gas]] in different [[tokens]]

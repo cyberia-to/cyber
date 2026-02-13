@@ -1,2 +1,3 @@
 alias:: casting signals
-tags:: note- [[spell]] and [[signal]]
+tags:: note
+- [[spell]] and [[signal]]

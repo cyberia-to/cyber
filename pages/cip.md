@@ -1,5 +1,6 @@
 alias:: cyber improvement proposal
-tags:: cyber- ## what is cip?
+tags:: cyber
+- ## what is cip?
 	- cyber improvement proposal
 	- the process of implementing consensus wide changes in
 		- [[go-cyber]]

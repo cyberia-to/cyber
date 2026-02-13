@@ -1,5 +1,6 @@
 alias:: dema
-tags:: cyberia- #dema is a concept of the search market without a single ranking center
+tags:: cyberia
+- #dema is a concept of the search market without a single ranking center
 - although we are building an ecosystem around the idea of a common knowledge graph it is only one ranking factor in #dema
 - there could be a hundred other ranking factors for which a common knowledge graph can be a trust anchor
 -

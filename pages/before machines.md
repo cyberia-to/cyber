@@ -1,2 +1,3 @@
 alias:: bm
-tags:: note- epoch in development of [[civilization]] before which is impossible to cryptographically prove events in [[time]]
+tags:: note
+- epoch in development of [[civilization]] before which is impossible to cryptographically prove events in [[time]]
