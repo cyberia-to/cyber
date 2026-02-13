@@ -8,13 +8,43 @@ tags:: cyber, uhash
   |--------|--------|-------------|
   | T | R+ | total token supply |
   | S | [0, 1] | staking ratio (staked / T) |
-  | H | R+ | hashrate (normalized) |
-  | F | R+ | fees collected per epoch (tokens) |
+  | D_rate | R+ | aggregate difficulty per second (from sliding window) |
+  | F | R+ | fees collected (tokens, measured over window) |
+  | d | Z+ | proof difficulty (leading zero bits, chosen by client) |
+  | N | Z+ | sliding window size (number of proofs) |
+  | K | Z+ | PID update interval (every K proofs) |
   | alpha | [0.3, 0.7] | allocation curve exponent |
-  | phi | [phi_min, 0.05] | issuance rate (fraction of T per epoch) |
+  | phi | [phi_min, 0.05] | annual issuance rate (fraction of T) |
   | beta | [0, 0.9] | fee burn rate |
-- ## 2. Allocation Curve
-- rewards split between stakers and miners:
+- ## 2. Per-Proof Instant Payout
+- no epochs. every valid proof is paid immediately on-chain
+- client chooses difficulty `d` (number of leading zero bits)
+- reward per proof:
+  ```
+  reward(d) = base_rate * d
+  ```
+- `base_rate` adapts via sliding window so total emission tracks target curve
+- ### Sliding Window
+  ```
+  W = last N proofs: [(d_i, t_i), ...]
+  D_rate = sum(d_i for i in W) / (t_last - t_first)   // total difficulty per second
+  E_target = phi * T / seconds_per_year                 // target emission per second
+  base_rate = E_target / D_rate
+  ```
+- when more miners join (D_rate rises), base_rate drops — same total emission
+- when miners leave (D_rate falls), base_rate rises — incentivizes return
+- window size N: 1000-10000 proofs (tunable). larger = smoother, slower response
+- ### Client Optimization
+  client picks d to maximize net profit:
+  ```
+  net_profit(d) = base_rate * d - gas_cost
+  expected_time(d) = 2^d / hashrate_client
+  profit_rate(d) = net_profit(d) / expected_time(d)
+  ```
+  low d: fast first reward, high gas overhead → good for onboarding
+  high d: rare proofs, big rewards, low gas ratio → optimal for steady mining
+- ### Allocation Curve
+  rewards split between stakers and miners:
   ```
   R_PoS = G * S^alpha
   R_PoW = G * (1 - S^alpha)
@@ -23,12 +53,13 @@ tags:: cyber, uhash
 	- alpha = 0.5: neutral prior (square root). equal marginal treatment
 	- alpha < 0.5: favors stakers at low participation
 	- alpha > 0.5: favors miners, penalizes excessive staking
+- miner reward comes from R_PoW share: `base_rate` is calibrated against R_PoW, not G
 - ## 3. Gross vs Net Emission
-- gross rewards (total tokens emitted + redistributed per epoch):
+- gross rewards (annualized: total tokens emitted + redistributed):
   ```
   G = phi * T + F * (1 - beta)
   ```
-- net new supply per epoch:
+- net new supply (annualized):
   ```
   net_emission = phi * T - F * beta
   ```
@@ -48,7 +79,7 @@ tags:: cyber, uhash
   e_efficiency = eta_PoW - eta_PoS
   e_fee_coverage = F / (phi * T) - 1
   ```
-  where eta_PoW = H / R_PoW, eta_PoS = (S * T) / R_PoS
+  where eta_PoW = D_rate / R_PoW, eta_PoS = (S * T) / R_PoS
 - alpha update (balance PoW vs PoS efficiency):
   ```
   alpha += Kp_a * e_efficiency + Kd_a * d(e_efficiency)/dt
@@ -72,36 +103,59 @@ tags:: cyber, uhash
   d_est(t) = lambda * (e(t) - e(t-1)) + (1 - lambda) * d_est(t-1)
   ```
   typical lambda: 0.2-0.4
-- ## 7. Epoch Update
+- ## 7. On-Proof Handler
 - ```
-  function epoch_update(state, params, history):
+  function on_proof(proof, state, params, window):
+      // 1. validate proof against claimed difficulty
+      assert verify(proof.hash, proof.d)
+  
+      // 2. compute instant reward
+      D_rate = window.total_d / window.time_span
+      E_target = params.phi * state.T / SECONDS_PER_YEAR
+      R_pow_share = 1 - state.S^params.alpha
+      base_rate = (E_target * R_pow_share) / D_rate
+      reward = base_rate * proof.d
+  
+      // 3. pay miner + referrals immediately
+      mint(proof.miner, reward * (1 - referral_share))
+      mint(proof.referral, reward * referral_share)
+  
+      // 4. update sliding window
+      window.push(proof.d, now())
+      window.evict_older_than(N)
+  
+      // 5. PID update (every K proofs or on timer)
+      if window.count % K == 0:
+          pid_update(state, params, window)
+  
+      return reward
+  ```
+- ```
+  function pid_update(state, params, window):
       T = total_supply()
       S = staked() / T
-      H = hashrate()
-      F = fees()
+      F = recent_fees(window.time_span)
   
       G = params.phi * T + F * (1 - params.beta)
       R_pow = G * (1 - S^params.alpha)
       R_pos = G * S^params.alpha
   
-      eta_pow = H / R_pow
+      eta_pow = window.total_d / R_pow
       eta_pos = (S * T) / R_pos
       e_eff = eta_pow - eta_pos
       e_cov = F / (params.phi * T) - 1
   
-      de_eff = ema(e_eff - history.e_eff_prev, history.de_eff)
-      de_cov = ema(e_cov - history.e_cov_prev, history.de_cov)
+      de_eff = ema(e_eff - params.e_eff_prev, params.de_eff)
+      de_cov = ema(e_cov - params.e_cov_prev, params.de_cov)
   
       params.alpha = clamp(params.alpha + Kp_a * e_eff + Kd_a * de_eff, 0.3, 0.7)
       params.beta  = clamp(params.beta  + Kp_b * e_cov + Kd_b * de_cov, 0.0, 0.9)
       params.phi   = clamp(params.phi   - Kp_f * e_cov, PHI_MIN, 0.05)
   
-      history.e_eff_prev = e_eff
-      history.e_cov_prev = e_cov
-      history.de_eff = de_eff
-      history.de_cov = de_cov
-  
-      return params, history
+      params.e_eff_prev = e_eff
+      params.e_cov_prev = e_cov
+      params.de_eff = de_eff
+      params.de_cov = de_cov
   ```
 - ## 8. Genesis
 - | Parameter | Initial | Rationale |
@@ -109,4 +163,6 @@ tags:: cyber, uhash
   | alpha | 0.5 | neutral prior |
   | beta | 0.0 | no burn until stable |
   | phi | 0.03 | conservative floor |
-- warmup: first ~52 epochs use P-only, wider bounds, no integral term
+  | N | 5000 | ~hours of proofs at moderate load |
+  | K | 100 | PID updates every 100 proofs |
+- warmup: first N proofs use fixed base_rate (no sliding average yet). P-only PID, wider bounds
