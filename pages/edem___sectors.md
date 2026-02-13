@@ -1,3 +1,4 @@
+tags:: cyberia
 - {{query (page-property :type "sector")}}
   query-sort-by:: page
   query-table:: true

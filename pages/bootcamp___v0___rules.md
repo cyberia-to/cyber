@@ -1,5 +1,4 @@
 icon:: 🌶
-
 - ## you get to the point at your expense
 - ## golden rule
 	- do not do to others

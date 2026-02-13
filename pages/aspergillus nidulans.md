@@ -1,4 +1,4 @@
-- ![Aspergillus_nidulans.pdf](../assets/Aspergillus_nidulans_1719127084883_0.pdf)
+tags:: species- ![Aspergillus_nidulans.pdf](../assets/Aspergillus_nidulans_1719127084883_0.pdf)
 - aspergillus nidulans is a species of fungus commonly found in soil and decaying organic matter. it is less commonly associated with human disease compared to other aspergillus species, but it can still cause infections, particularly in immunocompromised individuals.
 	- **diseases caused by aspergillus nidulans:**
 		- 1. **aspergillosis:** a range of infections caused by aspergillus species, affecting various body systems.

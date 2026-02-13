@@ -1,3 +1,4 @@
+tags:: species
 - ![Streptococcus.pdf](../assets/Streptococcus_1719125841442_0.pdf)
 - streptococcus species are gram-positive bacteria that are part of the normal flora of humans but can also cause a wide range of diseases. they are classified into several groups based on their hemolytic properties and antigenic characteristics.
 	- **diseases caused by streptococcus species:**

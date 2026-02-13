@@ -1,3 +1,4 @@
+tags:: species
 - ![Pseudomonas_aeruginosa.pdf](../assets/Pseudomonas_aeruginosa_1719128987632_0.pdf)
 - pseudomonas aeruginosa is a gram-negative, rod-shaped bacterium known for its versatility and resistance to antibiotics. it is an opportunistic pathogen, primarily affecting individuals with weakened immune systems, and is a common cause of healthcare-associated infections.
 	- **diseases caused by pseudomonas aeruginosa:**

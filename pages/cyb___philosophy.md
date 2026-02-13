@@ -1,3 +1,4 @@
+tags:: article
 ## vision
 	- soft that make dreams come true
 	- TODO [[browser without tabs]]

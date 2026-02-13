@@ -1,5 +1,5 @@
+tags:: species
 alias:: mrsa
-
 - ![Methicillin-resistant_Staphylococcus_aureus.pdf](../assets/Methicillin-resistant_Staphylococcus_aureus_1719129303652_0.pdf)
 - methicillin-resistant staphylococcus aureus (mrsa) is a type of [[staphylococcus aureus]] bacterium that has developed resistance to many antibiotics, including methicillin and other beta-lactam antibiotics. it is known for causing a variety of infections, particularly in healthcare settings, but also in the community.
 - **diseases caused by mrsa:**

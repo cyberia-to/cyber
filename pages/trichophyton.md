@@ -1,3 +1,4 @@
+tags:: species
 
 - ![Trichophyton.pdf](../assets/Trichophyton_1719130225760_0.pdf)
 - trichophyton species are a group of fungi that commonly cause dermatophytosis, also known as ringworm, in humans and animals. these fungi primarily infect keratinized tissues such as skin, hair, and nails.

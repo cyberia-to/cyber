@@ -1,3 +1,4 @@
+tags:: species
 - ![Bacillus_cereus.pdf](../assets/Bacillus_cereus_1719128568348_0.pdf)
 - bacillus cereus is a gram-positive, rod-shaped bacterium commonly found in soil and food. it is known for causing foodborne illnesses through the production of toxins and can also cause other types of infections.
 	- **diseases caused by bacillus cereus:**

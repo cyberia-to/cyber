@@ -1,3 +1,4 @@
+tags:: species
 - ![Salmonella_enterica_subsp._enterica.pdf](../assets/Salmonella_enterica_subsp._enterica_1719300297886_0.pdf)
 -
 - salmonella typhimurium is a gram-negative bacterium that is one of the most common causes of foodborne illness worldwide. it is a serotype of the species salmonella enterica and can cause a range of gastrointestinal diseases.

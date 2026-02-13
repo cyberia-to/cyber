@@ -1,3 +1,4 @@
+tags:: species
 
 - ![Fusarium.pdf](../assets/Fusarium_1719129992557_0.pdf)
 - fusarium species are a group of filamentous fungi found in soil and organic matter. while they are primarily known for causing plant diseases, some species can cause infections in humans, particularly in immunocompromised individuals. these infections can be challenging to treat due to the fungi's resistance to many antifungal medications.

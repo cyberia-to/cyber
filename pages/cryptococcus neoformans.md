@@ -1,3 +1,4 @@
+tags:: species
 - ![Cryptococcus_neoformans.pdf](../assets/Cryptococcus_neoformans_1719127310203_0.pdf)
 - cryptococcus neoformans is a pathogenic yeast (fungus) that primarily affects individuals with weakened immune systems. it is known for causing serious infections, particularly in people with hiv/aids, but can also affect those with other immunocompromising conditions.
 	- **diseases caused by cryptococcus neoformans:**

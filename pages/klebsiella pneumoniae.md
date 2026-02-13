@@ -1,3 +1,4 @@
+tags:: species
 - ![Klebsiella_pneumoniae.pdf](../assets/Klebsiella_pneumoniae_1719125164073_0.pdf)
 - klebsiella pneumoniae is a gram-negative bacterium that is part of the normal flora of the human intestines but can cause a range of infections, particularly in healthcare settings. it is known for its ability to cause severe infections and its increasing resistance to antibiotics.
 - **diseases caused by klebsiella pneumoniae:**

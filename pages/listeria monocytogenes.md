@@ -1,3 +1,4 @@
+tags:: species
 - ![Listeria_monocytogenes.pdf](../assets/Listeria_monocytogenes_1719128753997_0.pdf)
 - listeria monocytogenes is a gram-positive, rod-shaped bacterium that causes listeriosis, a serious infection primarily affecting pregnant women, newborns, older adults, and individuals with weakened immune systems. it is commonly found in soil, water, and contaminated food.
 	- **diseases caused by listeria monocytogenes:**

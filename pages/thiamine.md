@@ -1,3 +1,4 @@
+tags:: compound
 - **alias**: thiamine, vitamin b1
 - ![Vitamin_B1.pdf](../assets/Vitamin_B1_1719303309556_0.pdf)
 - [[vitamin]] b1, also known as thiamine, is a [[water-soluble vitamin]] essential for [[energy production]], [[nerve function]], and overall [[cellular health]]. it plays a critical role in the [[metabolism]] of [[carbohydrates]], converting them into energy and supporting the proper functioning of the nervous system.

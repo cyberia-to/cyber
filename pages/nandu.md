@@ -1,3 +1,4 @@
+tags:: cyberia
 - balinese tradition to share profits and risks from farming between farmer and landlord
 - [[cve]] have the following programs
 	- [[nandu grow]]

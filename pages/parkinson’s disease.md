@@ -1,5 +1,5 @@
 alias:: parkinson
-
+tags:: disease
 - parkinson’s disease is a progressive [[neurodegenerative disorder]] characterized by the gradual loss of dopamine-producing neurons, primarily in the [[substantia nigra]] region of the brain. dopamine deficiency disrupts normal motor function, resulting in characteristic symptoms and affecting quality of life significantly.
 - ## symptoms:
 	- tremors (typically starting in one hand)

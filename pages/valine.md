@@ -1,3 +1,4 @@
+tags:: compound
 - **alias**: valine
 - ![Valine.pdf](../assets/Valine_1719303309556_0.pdf)
 - [[valine]] is an essential branched-chain [[amino acid]]  (bcaa) found in protein-rich foods such as [[meat]], [[dairy]], [[soy]], and [[legumes]]. it plays a critical role in [[muscle growth]], [[energy production]], and [[tissue repair]].

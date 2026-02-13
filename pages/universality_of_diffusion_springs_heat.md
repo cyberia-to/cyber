@@ -1,3 +1,4 @@
+tags:: article
 - description: diffusion is the random spreading of particles or quantities from high to low concentration, described by fick’s laws and the diffusion equation.
 - universality: emerges from the central limit theorem; unbiased random motion always leads to diffusion in the large-scale limit. examples: gas mixing, population migration, electron transport, and information spread in networks.
 - fundamentality: the simplest irreversible process embodying entropy growth and the arrow of time.

@@ -1,3 +1,4 @@
+tags:: article
 # ADR-001: Hash Function Selection for Cybergraph Particles
 
 **Status:** PROPOSED  

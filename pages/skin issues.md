@@ -1,5 +1,5 @@
 alias:: skin ailments, skin diseases, skin conditions
-
+tags:: disease
 -
 - [[acne]]
 - [[eczema (atopic dermatitis)]]

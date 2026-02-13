@@ -1,3 +1,4 @@
+tags:: article
 ## protocol structure insights
 ### 1. creation model options
 

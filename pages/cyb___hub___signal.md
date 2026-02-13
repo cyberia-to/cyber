@@ -1,3 +1,4 @@
+tags:: cyberia
 - shapes
 	- input
 	- [[actions]]

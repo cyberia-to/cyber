@@ -1,1 +1,2 @@
+tags:: disease
 - **candidiasis**: a fungal infection caused by candida species, often affecting warm, moist areas like skin folds.

@@ -1,5 +1,5 @@
 icon:: 🔮
-
+tags:: cyberia
 - main
 	- [[cyber valley]]: Bali's new rising star
 	- hike high, touch sky

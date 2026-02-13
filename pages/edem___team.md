@@ -1,3 +1,4 @@
+tags:: cyberia
 - mission: create the most powerful seed and seedling source in indonesia highlands
 - schedule
 	- 00:00 - morning harvest

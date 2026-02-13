@@ -1,3 +1,4 @@
+tags:: compound
 - phytol acetate is a naturally occurring or semi-synthetic [[acetate ester]] formed from the esterification of [[phytol]], a branched-chain diterpene alcohol, with [[acetic acid]]. it may be found in trace amounts in [[chlorophyll-containing plants]], fermented products, or generated during **processing of phytol-rich plant materials**. this compound is being studied for its **bioactivity**, including [[anti-inflammatory]], [[antimicrobial]], and [[insect-repellent]] properties.
   
   ---

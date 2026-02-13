@@ -1,3 +1,4 @@
+tags:: article
 - particles chart
 - avatars chart
 - cyberlinks chart

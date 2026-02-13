@@ -1,5 +1,5 @@
 alias:: skin infections
-
+tags:: disease
 - [[cellulitis]]
 - [[impetigo]]
 - [[folliculitis]]

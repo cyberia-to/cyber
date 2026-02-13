@@ -1,3 +1,4 @@
+tags:: species
 - enterococcus hirae is a gram-positive bacterium that is part of the enterococcus genus. it is commonly found in the intestines of humans and animals and is generally considered less pathogenic compared to other enterococci like enterococcus faecalis and enterococcus faecium. however, it can still cause infections, particularly in immunocompromised individuals.
 - **diseases caused by enterococcus hirae:**
 	- 1. **[[urinary tract infections]] (utis):** can cause utis, especially in hospitalized patients or those with underlying conditions.

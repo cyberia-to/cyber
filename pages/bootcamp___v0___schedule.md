@@ -1,5 +1,4 @@
 icon:: ⚙️
-
 - ## default day: utc time
 	- sunrise: wakeup and invest time into your body and mind
 		- [[meditation and yoga]]

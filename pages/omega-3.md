@@ -1,3 +1,4 @@
+tags:: compound
 - omega-3 fatty acids are essential fats that plays a crucial role in maintaining
 	- [[cardiovascular health]]
 	- [[reducing inflammation]]

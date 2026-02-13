@@ -1,3 +1,4 @@
+tags:: species
 - ![Salmonella_enterica.pdf](../assets/Salmonella_enterica_1719125563781_0.pdf)
 - salmonella enterica is a gram-negative bacterium that is a major cause of foodborne illness worldwide. it has numerous serotypes, some of which are responsible for different types of infections in humans.
 - **diseases caused by salmonella enterica:**

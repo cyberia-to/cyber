@@ -1,3 +1,4 @@
+tags:: compound
 - **alias**: methionine
 - ![Methionine.pdf](../assets/Methionine_1719303309556_0.pdf)
 - [[methionine]] is an essential sulfur-containing [[amino acid]] found in protein-rich foods like [[meat]], [[fish]], [[eggs]], and [[nuts]]. it plays a vital role in [[protein synthesis]], [[detoxification]], and overall [[metabolic health]]
