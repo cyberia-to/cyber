@@ -43,6 +43,15 @@ Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
   concepts. If a term does not deserve its own page, it does not need
   emphasis — just write it plain.
 
+## Parallel Agents for Graph-Wide Tasks
+
+When a task touches many pages across the graph (bulk tagging, renaming,
+formatting fixes), split the work into non-overlapping scopes by filename
+or other criteria, then launch several agents in parallel. Before
+splitting: enumerate the full file list, partition it into disjoint sets
+(e.g. by alphabetical range, by tag, by namespace), and assign each set
+to a separate agent. No two agents should ever touch the same file.
+
 ## License
 
 Cyber License: Don't trust. Don't fear. Don't beg.
