@@ -6,14 +6,17 @@ title = "Cyber"
 description = "Root Knowledge graph"
 base_url = "http://localhost:8888"
 language = "en"
-# root_page = "Index"      # Page to render as homepage
+root_page = "Cyber"      # Page to render as homepage
 # favicon = ""              # Emoji or path to favicon file
 
 [nav]
-# menu = [
-#   { label = "Home", page = "Cyber" },
-#   { label = "Bostrom", page = "Bostrom" },
-# ]
+menu = [
+  { label = "Cyb", page = "Cyb", icon = "🤖" },
+  { label = "Cyber", page = "Cyber", icon = "🔵" },
+  { label = "Cyberia", page = "Cyberia", icon = "🌌" },
+  { label = "Cyber Valley", page = "Cyber Valley", icon = "🏔️" },
+  { label = "Bostrom", page = "Bostrom", icon = "🧬" },
+]
 
 [nav.sidebar]
 show_namespaces = true
@@ -30,7 +33,7 @@ output_dir = "public"
 [content]
 public_only = true
 exclude_patterns = ["logseq/*", "draws/*", ".git/*"]
-include_journals = false
+include_journals = true
 default_public = true
 
 [urls]
@@ -58,10 +61,10 @@ minimap_depth = 2
 [style]
 primary_color = "#22c55e"
 secondary_color = "#06b6d4"
-bg_color = "#fafaf9"
-text_color = "#1a1a1a"
-surface_color = "#ffffff"
-border_color = "#e2e2e0"
+bg_color = "#000000"
+text_color = "#f0f0f0"
+surface_color = "#111111"
+border_color = "#222222"
 
 [style.dark]
 bg_color = "#000000"
