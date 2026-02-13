@@ -1,18 +1,18 @@
 tags:: cyber, uhash
 - # Adaptive Hybrid Economics
 - ## Minimal Implementation Spec
+- all values in tokens. no price oracle needed.
 - ---
 - ## 1. Parameters
 - | Symbol | Domain | Description |
   |--------|--------|-------------|
-  | S | [0, 1] | staking ratio (fraction of supply staked) |
+  | T | R+ | total token supply |
+  | S | [0, 1] | staking ratio (staked / T) |
   | H | R+ | hashrate (normalized) |
-  | F | R+ | fees collected per epoch |
-  | M | R+ | market capitalization |
+  | F | R+ | fees collected per epoch (tokens) |
   | alpha | [0.3, 0.7] | allocation curve exponent |
-  | phi | [phi_min, 0.05] | security floor (minimum issuance rate) |
+  | phi | [phi_min, 0.05] | issuance rate (fraction of T per epoch) |
   | beta | [0, 0.9] | fee burn rate |
-  | r | ~0.05 | opportunity cost of capital |
 - ## 2. Allocation Curve
 - rewards split between stakers and miners:
   ```
@@ -23,37 +23,37 @@ tags:: cyber, uhash
 	- alpha = 0.5: neutral prior (square root). equal marginal treatment
 	- alpha < 0.5: favors stakers at low participation
 	- alpha > 0.5: favors miners, penalizes excessive staking
-- ## 3. Staking Equilibrium
-- rational stakers stake until yield equals opportunity cost:
+- ## 3. Gross vs Net Emission
+- gross rewards (total tokens emitted + redistributed per epoch):
   ```
-  r_staking = G * S^(alpha-1) / M = r
+  G = phi * T + F * (1 - beta)
   ```
-- closed-form solution:
+- net new supply per epoch:
   ```
-  S* = min(1, (G / (r * M))^(1 / (1 - alpha)))
+  net_emission = phi * T - F * beta
   ```
-- ## 4. Gross vs Net Inflation
-- gross rewards (what security providers earn):
+- when F * beta > phi * T: net deflation. emission funded by fees, supply shrinks
+- ## 4. Staking Equilibrium
+- per-token staking yield:
   ```
-  G = phi * M + F * (1 - beta)
+  yield = G * S^(alpha-1) / T
   ```
-- net inflation (what holders experience):
+- stakers stake until yield equals opportunity cost r:
   ```
-  I_net = phi - F * beta / M
+  S* = min(1, (G / (r * T))^(1 / (1 - alpha)))
   ```
-- when F * beta > phi * M: net deflation. security funded by fees, holders gain
 - ## 5. PID Update Rules
 - error signals:
   ```
   e_efficiency = eta_PoW - eta_PoS
-  e_fee_coverage = F / (phi * M) - 1
+  e_fee_coverage = F / (phi * T) - 1
   ```
-  where eta_PoW = H / mining_rewards, eta_PoS = S * M / staking_rewards
+  where eta_PoW = H / R_PoW, eta_PoS = (S * T) / R_PoS
 - alpha update (balance PoW vs PoS efficiency):
   ```
   alpha += Kp_a * e_efficiency + Kd_a * d(e_efficiency)/dt
   ```
-- beta update (balance burn vs security):
+- beta update (balance burn vs emission):
   ```
   beta += Kp_b * e_fee_coverage + Kd_b * d(e_fee_coverage)/dt
   ```
@@ -75,17 +75,19 @@ tags:: cyber, uhash
 - ## 7. Epoch Update
 - ```
   function epoch_update(state, params, history):
-      S = staking_ratio()
+      T = total_supply()
+      S = staked() / T
       H = hashrate()
       F = fees()
-      M = market_cap()
   
-      G = params.phi * M + F * (1 - params.beta)
+      G = params.phi * T + F * (1 - params.beta)
+      R_pow = G * (1 - S^params.alpha)
+      R_pos = G * S^params.alpha
   
-      eta_pow = H / (G * (1 - S^params.alpha))
-      eta_pos = (S * M) / (G * S^params.alpha)
+      eta_pow = H / R_pow
+      eta_pos = (S * T) / R_pos
       e_eff = eta_pow - eta_pos
-      e_cov = F / (params.phi * M) - 1
+      e_cov = F / (params.phi * T) - 1
   
       de_eff = ema(e_eff - history.e_eff_prev, history.de_eff)
       de_cov = ema(e_cov - history.e_cov_prev, history.de_cov)
