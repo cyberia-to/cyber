@@ -1,4 +1,4 @@
-tags:: cyber
+tags:: cyber, uhash
 - [technicals origin](https://claude.ai/public/artifacts/5b6fd084-a7fb-40b6-8423-06278247fe2d)
 - # Adaptive Hybrid Consensus Economics
 - ## A Self-Calibrating Reward Mechanism for PoW/PoS Systems
@@ -435,7 +435,6 @@ tags:: cyber
   This paper answers that question.
   
   ---
-  
   # proofs and technicals
 - # Adaptive Hybrid Consensus Economics
 - ## A Self-Calibrating Reward Mechanism for PoW/PoS Systems
@@ -675,7 +674,7 @@ tags:: cyber
 - ### 3.3 Closed-Form Solution
   
   Corollary 3.2: The equilibrium staking ratio is:
-  $$S^* = \min\left{1, \left(\frac{G}{r \cdot M}\right)^{\frac{1}{1-\alpha}}\right}$$
+  $$S^* = \min\left\{1, \left(\frac{G}{r \cdot M}\right)^{\frac{1}{1-\alpha}}\right\}$$
   
   *Proof*: Solve $G \cdot S^{\alpha-1}/M = r$ for $S$:
   $$S^{\alpha - 1} = \frac{r \cdot M}{G}$$
