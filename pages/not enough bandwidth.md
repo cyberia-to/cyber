@@ -1,2 +1,2 @@
 alias:: NotEnoughBandwidth
-tags:: note-
+tags:: cyber

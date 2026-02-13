@@ -1,4 +1,4 @@
-tags:: disease
+tags:: cyber
 - mechanism that adjusts the rate of [[token]] [[mint]] based on [[network]] conditions
 - in [[bostrom]] [[tendermint]]
 	- as [[tendermint]] have [[honest majority assumption]] which is ~67%

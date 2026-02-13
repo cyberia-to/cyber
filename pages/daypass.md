@@ -1,5 +1,5 @@
 icon:: 🧀
-tags:: note
+tags:: cyberia
 alias:: day pass, visit us
 
 - our friends, including us, complain that

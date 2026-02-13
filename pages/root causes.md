@@ -1,4 +1,4 @@
-tags:: disease
+tags:: health
 # The 10 Root Causes Framework
 - ## A Simplified Model of Human Disease
   

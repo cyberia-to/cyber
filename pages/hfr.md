@@ -1,3 +1,3 @@
 alias:: hydrogen fusion reactor
-tags:: note
+tags:: cyb
 - produce [[will]] and [[attention]]

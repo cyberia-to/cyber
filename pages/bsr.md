@@ -1,3 +1,3 @@
 alias:: bio synthesis reactor
-tags:: note
+tags:: cyberia
 - produce [[liquid energy]]

@@ -1,3 +1,3 @@
 alias:: casting signals
-tags:: note
+tags:: cyber
 - [[spell]] and [[signal]]

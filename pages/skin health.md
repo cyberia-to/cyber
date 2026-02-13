@@ -1,5 +1,5 @@
 alias::
-tags:: disease
+tags:: health
 - [[skin]]
 - [[skin healing]]
 - [[skin issues]]
