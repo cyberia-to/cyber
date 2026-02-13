@@ -1,0 +1,2 @@
+alias:: resins
+tags:: genus

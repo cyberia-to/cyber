@@ -1,0 +1,46 @@
+tags:: species, birds
+alias:: red junglefowl
+
+- voice:: https://ebird.org/species/redjun
+- ![image](https://ipfs.io/ipfs/QmeLJsNYthCcpAEpTLD3XRCXLjcoe4mnYZYEVAHTJKMiDS)
+- ![image](https://ipfs.io/ipfs/QmZ5icUBssKYPSvaKkXX74JDusswUMKxehjAE6Lg9YtJLa)
+- ![image](https://ipfs.io/ipfs/QmNvWinDUhj7gyg9uQuhk6QDaFmWWxjqFwUHpawsG7GoCu)
+  general description
+	- appearance
+		- the red junglefowl is a medium-sized bird with strikingly colorful plumage, especially in males.
+		- males, known as roosters, have vibrant orange-red plumage on the head and neck, a dark greenish-black body, and long, curved tail feathers that shimmer with iridescent blue and green.
+		- females, known as hens, are more subdued in color, with mottled brown and buff plumage that provides camouflage in their natural habitat.
+		- both sexes have a red comb on top of the head and wattles hanging below the beak, though these are more pronounced in males.
+	- size
+		- measures about 70-90 cm in length for males and 40-50 cm for females.
+		- typically weighs around 1-3 kg, with males generally being larger and heavier than females.
+	- behavior
+		- known for its foraging behavior, the red junglefowl scratches the ground to uncover seeds, insects, and other food items.
+		- it is a ground-dwelling bird that prefers to run rather than fly when alarmed, although it can fly short distances if necessary.
+		- males are known for their distinctive crowing, a loud call that can be heard over long distances and is used to establish territory and attract mates.
+- habitat
+	- range
+		- native to southeast asia, including india, bangladesh, myanmar, thailand, laos, cambodia, vietnam, malaysia, and indonesia.
+		- it has also been introduced to other regions worldwide, including parts of the pacific, the caribbean, and the united states.
+	- environment
+		- inhabits a variety of environments, including tropical and subtropical forests, bamboo thickets, scrublands, and agricultural areas.
+		- often found near human settlements where food resources are abundant.
+	- diet
+		- omnivorous, feeding on a wide variety of food, including seeds, grains, fruits, insects, and small invertebrates.
+		- forages on the ground, using its feet to scratch the leaf litter and soil to uncover food.
+- breeding
+	- nesting
+		- nests are simple scrapes on the ground, usually lined with leaves and other plant material, often placed in dense vegetation or underbrush for concealment.
+		- females are responsible for incubating the eggs and raising the chicks.
+	- reproduction
+		- breeding season varies depending on the region but generally occurs during the spring and summer when food is abundant.
+		- females lay 5-10 eggs per clutch, which are incubated for about 19-21 days.
+		- chicks are precocial, meaning they are well-developed and able to leave the nest shortly after hatching.
+- conservation status
+	- currently not considered endangered or vulnerable.
+	- listed as least concern by the iucn due to its wide range and stable population.
+- interesting facts
+	- the red junglefowl is considered the wild ancestor of the domestic chicken, and many of its behaviors and characteristics are similar to those seen in domesticated chickens.
+	- it plays a significant role in its ecosystem by controlling insect populations and dispersing seeds.
+	- the bird's distinctive crowing and colorful plumage have made it a symbol in various cultures and a popular bird in both folklore and art.
+-
