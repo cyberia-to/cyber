@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - in this article i describe a conceptual framework for creating artificial general intelligence
 - from the first glance our intelligence seems complicated
 - but there exist simplistic view now on general intelligence, and how to reproduce it using modern compute

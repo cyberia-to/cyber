@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - inability to transparently explain decisions of [[llm]]
 - making it hard to understand how [[llm]] process inputs and generate outputs
 - this creates challenges in debugging, trust, and accountability

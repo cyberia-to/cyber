@@ -1,4 +1,4 @@
-tags:: note
+tags:: genus
 - [[oregano]]
 - [[thyme]]
 - [[gotu kola]]

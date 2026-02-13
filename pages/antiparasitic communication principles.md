@@ -1,4 +1,4 @@
-tags:: note
+tags:: health
 ## The Builder's Creed
 	- We value agency over dependency
 	- In this community, we distinguish between two modes of participation:

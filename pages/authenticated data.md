@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyber
 - cryptographically authenticated data distributed using web3 stack

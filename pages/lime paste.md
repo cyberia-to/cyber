@@ -1,3 +1,3 @@
 alias:: [[kapur sirih]]
-tags:: note
+tags:: cyberia
 - paste from [[limestone]]

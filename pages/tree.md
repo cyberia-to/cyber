@@ -1,4 +1,4 @@
-tags:: note
+tags:: genus
 - [[root]]
 - [[leave]]
 - [[flower]]

@@ -1,4 +1,4 @@
-tags:: note
+tags:: genus
 - [[ananas]]
 - [[coconut]]
 - [[banana]]

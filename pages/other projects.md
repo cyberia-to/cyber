@@ -1,3 +1,3 @@
-tags:: note
+tags:: cyberia
 - [[embassy]]: shelling point for city people in Forest City, Malaysia near Singapore
 - [[portal]]: residency marketplace

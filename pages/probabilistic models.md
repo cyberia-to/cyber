@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - what is [[probabilistic model]]?
 - [[examples]]
 	- bayesian networks

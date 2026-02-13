@@ -1,2 +1,2 @@
 alias:: crickets, jangkrik
-tags:: note
+tags:: cyberia

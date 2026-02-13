@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - do not trust
 - do not fear
 - do not beg

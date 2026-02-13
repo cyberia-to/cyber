@@ -1,3 +1,3 @@
 alias:: machine time
-tags:: note
+tags:: cyber
 - year after first unix time second

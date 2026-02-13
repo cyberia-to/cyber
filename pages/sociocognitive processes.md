@@ -1,3 +1,3 @@
-tags:: note
+tags:: cyber
 - TODO
 - mental processes shaped by social interaction, enabling [[collective intelligence]]

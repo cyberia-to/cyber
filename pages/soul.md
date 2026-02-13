@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyber
 - root resolver of [[avatar]]

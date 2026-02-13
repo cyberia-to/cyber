@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - {{query (property :supply "yes")}}
   query-table:: true
   query-properties:: [:page :alias :margin]

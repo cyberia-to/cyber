@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyberia
 - [[brand book]]

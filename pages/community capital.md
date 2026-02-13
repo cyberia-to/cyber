@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyberia
 - finding the way for crowdsourcing projects is amazing way to create efficient local bussineses

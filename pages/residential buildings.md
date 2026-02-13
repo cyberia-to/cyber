@@ -1,2 +1,2 @@
 alias:: tents
-tags:: note
+tags:: cyberia

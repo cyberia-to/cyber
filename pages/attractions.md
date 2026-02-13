@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - [[sunrise]]
 	- [[sacred path]]
 	- [[sanghyang]]

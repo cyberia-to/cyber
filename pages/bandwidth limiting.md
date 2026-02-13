@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - [[params]]
 	- [[recovery period]]
 	- [[adjust price period]]

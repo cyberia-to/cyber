@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - solve [[techtree]] accounting for
 	- [[why we need bootloader]]
 	- and more factors

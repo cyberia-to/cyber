@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - [[size]]
 	- [[amount of links]]
 	- [[amount of unique links]]

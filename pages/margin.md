@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 labor:: [[10 h/year/are]]
 
 	- capital:: [[eth/are]]

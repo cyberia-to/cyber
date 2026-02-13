@@ -1,2 +1,2 @@
 alias:: dha
-tags:: note
+tags:: compound

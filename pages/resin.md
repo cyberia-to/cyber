@@ -1,2 +1,2 @@
 alias:: resins
-tags:: note
+tags:: genus

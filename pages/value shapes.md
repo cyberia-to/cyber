@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - [[fuel]] usually become [[medium of exchange]] and [[unit of account]]
 - [[store of value]]
 - [[medium of exchange]]

@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 query-table:: true
 #+BEGIN_QUERY
 {:title "TODO tasks"

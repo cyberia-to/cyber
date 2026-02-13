@@ -1,5 +1,5 @@
 icon:: 🦚
-tags:: note
+tags:: genus
 - ## selected genus for [[citadel genesis]]
 - {{query (and (page-tags [[genus]]) (not (page-tags [[class]])) (not (page-tags [[research]])) (not (page-tags [[prohibited]])))}}
   query-sort-by:: page

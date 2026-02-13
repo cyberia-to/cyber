@@ -1,3 +1,3 @@
-tags:: note
+tags:: disease
 
 -

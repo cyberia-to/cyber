@@ -1,3 +1,3 @@
-tags:: note
+tags:: cyber
 - you win by increasing your [[sigma]]
 - [[play games]]

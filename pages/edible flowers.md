@@ -1,4 +1,4 @@
-tags:: note
+tags:: genus
 - [[hibiscus rosa-sinensis]]
 - [[sesbania sesban]]
 - [[bauhinia]]

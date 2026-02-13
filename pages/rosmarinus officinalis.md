@@ -1,2 +1,2 @@
 alias:: salvia rosmarinus
-tags:: note
+tags:: genus

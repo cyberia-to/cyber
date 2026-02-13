@@ -1,2 +1,2 @@
 alias:: rockets
-tags:: note
+tags:: cyberia

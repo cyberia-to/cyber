@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - [[tokens]] with [[amount]]
 	- [[chooser]]
 	- [[input]]

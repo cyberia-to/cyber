@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - this article is not about comparing both phenomena
 - but about taking best from both worlds
 - | feature                     | [[network states]]                                      | [[startup societies]]                                  |

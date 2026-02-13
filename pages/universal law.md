@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 # exponential optimality under constraint
 ### overview
 

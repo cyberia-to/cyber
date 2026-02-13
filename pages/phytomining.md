@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - class of plants which can extract [[metals]] from [[soil]] called [[phytominers]]
   
   | [[metals/factors]] | [[hyperaccumulator plants]] | [[incineration]] | [[extraction method]] | [[purification method]] | [[recovery yield]] |

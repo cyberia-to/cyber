@@ -1,5 +1,5 @@
 alias:: workers
-tags:: note
+tags:: cyberia
 -
 - {{query (page-tags [[worker]])}}
   query-properties:: [:page :tags]

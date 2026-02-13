@@ -1,3 +1,3 @@
 alias:: athlete's foot
-tags:: note
+tags:: disease
 -

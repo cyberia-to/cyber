@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - we must be example of carbon negative society
 - factors
 	- [[energy and water system]]

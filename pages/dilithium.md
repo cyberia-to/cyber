@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - Key/Sig Sizes: Med (1-5 KB)
 - sign speed: Fast sign
 - verify speed: med verify

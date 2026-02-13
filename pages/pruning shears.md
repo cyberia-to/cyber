@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyberia
 - ![](https://ipfs.io/ipfs/QmZ128UtxoVxzS7RxDm5qTWSjxKXnKLgMVacFFznRGCNe2)

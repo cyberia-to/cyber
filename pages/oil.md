@@ -1,3 +1,3 @@
-tags:: note
+tags:: genus
 ## [[edible oils]]
 - ## [[technical oils]]

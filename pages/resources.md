@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyberia
 - what is [[resource]]?

@@ -1,5 +1,5 @@
 icon:: ⚖️
-tags:: note
+tags:: cyber
 - The project is established according to the idea of [[7 level of compliance]]
 	- | Name       | Type                | Compliance Strategy |
 	  |---------------|-----------------------|------------------------|

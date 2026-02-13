@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - 10: friends
 - 100: community
 - 1k: village

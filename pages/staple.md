@@ -1,4 +1,4 @@
-tags:: note
+tags:: genus
 - {{query (and "staple" (page-tags [[species]]))}}
   query-table:: true
   query-properties:: [:page]

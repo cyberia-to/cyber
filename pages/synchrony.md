@@ -1,4 +1,4 @@
 alias:: coordinated timing
-tags:: note
+tags:: cyber
 - underscores the importance of timing in the unfolding of events
 - suggesting that harmony often arises from the alignment of processes in time

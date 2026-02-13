@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - pruning [[ageratina riparia]]
 - search and mark glowing areas
 - measure:

@@ -1,2 +1,2 @@
 alias:: epa
-tags:: note
+tags:: compound

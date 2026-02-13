@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - [[sector]] [[shapes]]
 	- [[bed]]
 	- [[wall]]

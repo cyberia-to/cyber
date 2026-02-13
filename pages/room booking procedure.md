@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 #### goal:
 	- ensure booking accuracy by confirming all essential details.
 - #### procedure

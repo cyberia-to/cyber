@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - existing foundation models are not foundational
 	- contain only [[implicit knowledge]]
 	- unable to work in [[full content space]]

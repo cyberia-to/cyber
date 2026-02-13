@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - [[@master]]
 - posits that the universe operates on a principle of interconnectedness
 	- where elements coalesce

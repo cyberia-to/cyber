@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - {{query (page-tags [[front]])}}
   query-properties:: [:page :workers :users]
   query-sort-by:: users

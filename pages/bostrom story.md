@@ -1,5 +1,5 @@
 alias:: the story of bostrom
-tags:: note
+tags:: cyber
 - ## History
 	- December 2016: cyberChain - the idea of decentralized knowledge graph
 	- Aug 2017: first version of Cyb - first decentralized uncensorable browser

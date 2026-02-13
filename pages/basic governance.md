@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - [[collective funding]]
 - [[binary surveys]]
 - [[collective parametrization]]

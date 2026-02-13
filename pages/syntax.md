@@ -1,5 +1,5 @@
 alias:: structured arrangement
-tags:: note
+tags:: cyber
 - embodies the rules and patterns
 - that enable communication and understanding,
 - representing the logical structure

@@ -1,2 +1,2 @@
 alias:: emergent
-tags:: note
+tags:: cyber

@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyber
 - chrome
 - firefox
 - safari

@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - Cosmosverse
 	- booth prints is ready and sent
 	- TODO:

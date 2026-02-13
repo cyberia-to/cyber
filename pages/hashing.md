@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyber
 - process of computing [[hash]]

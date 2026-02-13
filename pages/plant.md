@@ -1,5 +1,5 @@
 alias:: the plant
-tags:: note
+tags:: genus
 - plant description structure
 	- [[plant/type]] is for botanical description of plant structure
 		- properties are plant parts with botanical description

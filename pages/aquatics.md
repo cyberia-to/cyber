@@ -1,2 +1,2 @@
-tags:: note
+tags:: genus
 - bioluminescent plankton

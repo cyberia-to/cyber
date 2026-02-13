@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - guideline on how to maintain organiq 🍀properly.
   
   rule 📜:

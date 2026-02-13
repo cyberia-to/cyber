@@ -1,4 +1,4 @@
-tags:: note
+tags:: genus
 query-table:: true
 query-properties:: [:page]
 

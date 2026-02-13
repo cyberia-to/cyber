@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyber
 - see [[focus_flow_computation]] for the full specification

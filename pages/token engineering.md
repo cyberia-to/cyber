@@ -1,5 +1,5 @@
 icon:: 💰
-tags:: note
+tags:: cyber
 - TODO lecture at [[edge city residency]]
 - @mastercyb
 - ## abstract

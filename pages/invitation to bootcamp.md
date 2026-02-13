@@ -1,4 +1,4 @@
-tags:: note
+tags:: cyberia
 - scene 1: @joy
 	- voice:
 		- imagine living on your own terms—

@@ -1,2 +1,2 @@
-tags:: note
+tags:: cyber
 - : This algorithm helps in combining different clustering results from multiple agents or systems to reach a consensus cluster that best represents the collective knowledge.
