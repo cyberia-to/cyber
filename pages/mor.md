@@ -1,5 +1,5 @@
 alias:: modulus of rupture
-
+tags:: note
 - maximum load-carrying capacity in bending
 - the breaking point of wood when subjected to a bending force
 - measured in megapascals, MPa

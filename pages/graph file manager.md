@@ -1,3 +1,4 @@
+tags:: cyber
 - concept of organizing [[files]]
 - through graph of [[links]]
 - combined with classical hierarchy

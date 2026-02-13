@@ -1,1 +1,2 @@
+tags:: note
 - TODO ::sick

@@ -1,1 +1,2 @@
 alias:: rockets
+tags:: note

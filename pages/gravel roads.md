@@ -1,3 +1,4 @@
+tags:: species
 - standarts:
 	- width:
 		- 1 m

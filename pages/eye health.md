@@ -1,2 +1,3 @@
+tags:: disease
 - [[eyes disease]]
 -

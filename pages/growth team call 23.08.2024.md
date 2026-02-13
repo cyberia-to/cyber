@@ -1,3 +1,4 @@
+tags:: cyberia
 - @Medniyy discussion of the latest Community at X Space
 - @mastercyb and @el-nivvo introduced Buy Energy Page
 - Cito team made upgrade of our booth at Cosmoverse

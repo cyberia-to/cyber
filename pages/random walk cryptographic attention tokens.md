@@ -1,3 +1,4 @@
+tags:: cyber
 - in this article i want to share mostly unedited output from chatgpt
 - so you can judge for youself potential impact of [[truth machine]] and [[cyber]] protocol
 - ## intro

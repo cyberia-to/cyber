@@ -1,3 +1,4 @@
+tags:: cyber
 - [[menu]] item in [[cyb]] [[aip]]
 -
 - {{query (page-tags [[page]])}}

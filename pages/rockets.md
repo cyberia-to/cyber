@@ -1,3 +1,4 @@
+tags:: cyber
 - family clan established by [[@master]] and [[@joy]]
 - ![rockets](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeihedtdjtrxqnbks3wovlhhd766xm36dbkl7q6issvn7rsyzjuffva){:height 288, :width 505}
 -

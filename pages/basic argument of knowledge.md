@@ -1,1 +1,2 @@
+tags:: cyber
 - is [[cyberlink]]

@@ -1,3 +1,4 @@
+tags:: species
 - 1. stop feeding sheeps inside their home. most of parasites come from fecal mass
   2. every day you must start from moving sheeps to the place with meal, and move them back at the end of the day
   3. you must clean their home

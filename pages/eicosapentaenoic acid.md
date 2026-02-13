@@ -1,1 +1,2 @@
 alias:: epa
+tags:: note

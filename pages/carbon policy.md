@@ -1,3 +1,4 @@
+tags:: note
 - we must be example of carbon negative society
 - factors
 	- [[energy and water system]]

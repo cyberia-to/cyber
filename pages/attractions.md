@@ -1,3 +1,4 @@
+tags:: note
 - [[sunrise]]
 	- [[sacred path]]
 	- [[sanghyang]]

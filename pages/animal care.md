@@ -1,3 +1,4 @@
+tags:: species
 - sheep
 	- check weight
 	- treatment procedure

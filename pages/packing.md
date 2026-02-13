@@ -1,3 +1,4 @@
+tags:: cyberia
 ## current state
 	- investments
 	  collapsed:: true

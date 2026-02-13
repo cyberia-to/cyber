@@ -1,5 +1,5 @@
 alias:: buildings
-
+tags:: cyberia
 - {{query (page-tags [[building]])}}
   query-table:: true
   query-properties:: [:page :size :tags]

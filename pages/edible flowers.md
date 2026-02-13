@@ -1,3 +1,4 @@
+tags:: note
 - [[hibiscus rosa-sinensis]]
 - [[sesbania sesban]]
 - [[bauhinia]]

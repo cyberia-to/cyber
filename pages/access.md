@@ -1,3 +1,4 @@
+tags:: cyber
 - implementations
 	- [[cyb/access]]
 - two types of access rights

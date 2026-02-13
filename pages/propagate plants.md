@@ -1,3 +1,4 @@
+tags:: species
 - [[prune]]
 - [[cuttings]]
 - [[grafting]]

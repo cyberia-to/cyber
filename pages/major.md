@@ -1,3 +1,4 @@
+tags:: note
 - {{query (and (page-tags [[major]]) (not (page-tags [[research]])))}}
   query-sort-by:: page
   query-sort-desc:: false

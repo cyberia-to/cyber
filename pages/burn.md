@@ -1,2 +1,3 @@
+tags:: cyber
 - deduct [[supply]] of [[token]] from [[neuron]] balance
 - key type in [[plumb]]

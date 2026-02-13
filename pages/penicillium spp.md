@@ -1,3 +1,4 @@
+tags:: species
 - ![Penicillium.pdf](../assets/Penicillium_1719129725397_0.pdf)
 - penicillium species are a group of fungi commonly found in the environment, particularly in soil, decaying vegetation, and indoor environments. while many species of penicillium are beneficial and used in food production and antibiotic synthesis, some can cause infections, particularly in immunocompromised individuals.
   

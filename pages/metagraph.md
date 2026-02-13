@@ -1,3 +1,4 @@
+tags:: disease
 - conceptual framework or structure
 - that is used to describe relationships between graphs
 - or to represent higher-level relationships within a single graph

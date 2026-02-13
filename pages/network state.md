@@ -1,3 +1,4 @@
+tags:: cyber
 - concept where groups of people, often with shared values or goals
 - are digitally connected and organized
 - functioning as quasi-sovereign entity across the internet

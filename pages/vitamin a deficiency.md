@@ -1,3 +1,4 @@
+tags:: disease
 -
 - vitamin a deficiency is a nutritional condition caused by insufficient intake of [[retinol]], leading primarily to vision problems and weakened immunity.
 - common symptoms include

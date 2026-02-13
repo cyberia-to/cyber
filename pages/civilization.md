@@ -1,3 +1,4 @@
+tags:: cyber
 - > its when humans get together, build cities, create art, make laws
   and occasionally invent bureaucracy just to keep things interesting
 - key attributes

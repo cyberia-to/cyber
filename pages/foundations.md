@@ -1,5 +1,5 @@
 icon:: ♻️
-alias:: and more, sytech
+tags:: cyberalias:: and more, sytech
 - welcome to the cyberia foundations
 - created by [[rockets]]
 - for [[cyber valley]] and [[citadel genesis]]

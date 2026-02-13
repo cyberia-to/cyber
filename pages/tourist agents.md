@@ -1,1 +1,2 @@
+tags:: note
 - we offer 10% discount for all kind of agents

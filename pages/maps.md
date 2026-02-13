@@ -1,3 +1,4 @@
+tags:: note
 - [[sector]] [[shapes]]
 	- [[bed]]
 	- [[wall]]

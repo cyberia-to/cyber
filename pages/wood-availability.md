@@ -1,3 +1,4 @@
+tags:: cyberia
 local:: true
 - ## available by [[wood-durability]] class
   

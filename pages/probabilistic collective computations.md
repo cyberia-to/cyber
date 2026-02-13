@@ -1,3 +1,4 @@
+tags:: note
 - emerging paradigm of computations
 - [[soft3]] as example implementation
 - involve the use of probabilistic models to handle and process collective data and computations

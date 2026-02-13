@@ -1,5 +1,5 @@
 alias:: citadel genesis, vision
-icon:: 🧬
+tags:: cybericon:: 🧬
 
 - # Regenerative event infrastructure
 - ## From temporary spectacle to enduring system

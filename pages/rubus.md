@@ -1,3 +1,4 @@
+tags:: genus
 - selected for [[edem]]
 	- {{embed [[rubus rosifolius]]}}
 	- {{embed [[rubus niveus]]}}

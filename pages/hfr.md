@@ -1,2 +1,2 @@
 alias:: hydrogen fusion reactor
-- produce [[will]] and [[attention]]
+tags:: note- produce [[will]] and [[attention]]

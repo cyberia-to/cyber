@@ -1,3 +1,4 @@
+tags:: disease
 - helicobacter pylori (h. pylori) is a gram-negative, spiral-shaped bacterium that colonizes the [[stomach]] lining of humans. it has adapted to survive acidic conditions by producing [[urease]], an enzyme that neutralizes stomach acid, enabling persistent infection and chronic inflammation.
 - ## diseases caused by helicobacter pylori:
 	- [[gastritis]]: chronic inflammation of the stomach lining, often asymptomatic initially.

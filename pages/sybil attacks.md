@@ -1,3 +1,4 @@
+tags:: cyber
 - type of [[cyber/attacks]] in which a single adversary controls multiple fake identities in a [[network]]
 - this term is commonly used in the context of
 	- peer-to-peer networks

@@ -1,3 +1,4 @@
+tags:: species
 - **bacillus subtilis** is a gram-positive, rod-shaped, aerobic bacterium widely found in soil, plant roots, and the gastrointestinal tract of animals. it is known for its ability to form resilient spores and produce natural antibiotics. while not typically pathogenic, it is considered a beneficial microbe in medicine and agriculture.
 - **beneficial effects and applications of bacillus subtilis:**
 	- **[[probiotic activity]]:** used to support [[gut health]] in both humans and animals. promotes a balanced microbiome and inhibits pathogenic bacteria.

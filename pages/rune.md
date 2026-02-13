@@ -1,2 +1,3 @@
+tags:: cyber
 - TODO
 - symbolic unit used in [[cyber]] [[token]] mechanics

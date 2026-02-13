@@ -1,3 +1,4 @@
+tags:: cyberia
 - what is [[startup society]]?
 -
 - list of recognized startup societies

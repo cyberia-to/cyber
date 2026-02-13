@@ -1,3 +1,4 @@
+tags:: cyber
 - overfitting & underfitting
 - Fitting in machine learning refers to the process of training a model on a dataset so that it can make predictions or perform a specific task. Fitting is a key step in the machine learning pipeline, as it is the process of creating the model that will be used for prediction or inference.
 - The goal of fitting a model is to find the model parameters that best describe the relationship between the input data and the output variable. This is typically done by minimizing a loss function, which measures the difference between the predicted output and the true output for each data point in the training dataset. The loss function is a measure of the model's performance, and the goal is to find the model parameters that minimize the loss function.

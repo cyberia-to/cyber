@@ -1,3 +1,4 @@
+tags:: species
 - species and genus pages removed from the graph to reduce scope
 - the graph retains ~120 essential survivability species
 - these names are preserved here as plain text reference

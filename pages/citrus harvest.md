@@ -1,3 +1,4 @@
+tags:: genus
 - [github](https://github.com/cyberia-to/rockets/issues/1124)
 - **moisture check:**
 	- feel top 3–5 cm soil.

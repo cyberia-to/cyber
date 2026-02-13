@@ -1,3 +1,4 @@
+tags:: cyber
 - Init: DEV structure
 	- 51% - CVE
 	- 34% - locals

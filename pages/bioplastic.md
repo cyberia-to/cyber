@@ -1,3 +1,4 @@
+tags:: disease
 - vision
 	- build durable, living structures using fully local, regenerative, biodegradable materials
 	- create a closed-loop, fully soil-safe architecture system able to rival industrial materials like polycarbonate

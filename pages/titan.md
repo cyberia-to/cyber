@@ -1,1 +1,2 @@
 alias:: emergent
+tags:: note

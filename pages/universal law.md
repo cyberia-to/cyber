@@ -1,3 +1,4 @@
+tags:: note
 # exponential optimality under constraint
 ### overview
 

@@ -1,5 +1,5 @@
 alias:: cyber/attention, rank unit, rank units
-- mental focus directed towards a [[particle]]
+tags:: cyber- mental focus directed towards a [[particle]]
 - allow [[neuron]] to optimize [[observability]] of [[information]]
 - affects probability of using [[particle]] by other [[neuron]]
 - used in [[cyberank]] as fundamental measure of [[intelligence]] projected on [[particles]]

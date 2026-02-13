@@ -1,3 +1,4 @@
+tags:: cyberia
 - [[gloves]]
 - [[pruner]]
 - [[shovel]]

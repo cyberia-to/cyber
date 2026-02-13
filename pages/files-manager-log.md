@@ -1,3 +1,4 @@
+tags:: cyber
 source:: [[files-manager]]
 icon:: 
 

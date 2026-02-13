@@ -1,5 +1,5 @@
 icon:: 🔍
--
+tags:: cyber-
 - [[cyber]] protocol allow to search for [[particles]] in [[cybergraph]]
 -
 - philosophy

@@ -1,5 +1,5 @@
 alias:: decision making
-
+tags:: cyber
 - discussing only for dunbar scale (150 ppl)
 	- <7 => simple threshold multisig
 	- <150 =>

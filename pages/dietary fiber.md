@@ -1,3 +1,4 @@
+tags:: species
 - [[dietary fiber]] refers to the indigestible parts of plant foods, including fruits, vegetables, grains, and legumes. it plays a critical role in maintaining digestive health and supporting overall well-being.
 - ### chemical properties
 	- **molecular structure**: composed of [[polysaccharides]] (e.g., [[cellulose]], [[hemicellulose]]) and [[non-polysaccharide]] components (e.g., lignin).

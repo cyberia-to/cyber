@@ -1,3 +1,4 @@
+tags:: cyber
 - Data sampling is a technique used in machine learning to create a subset of the original data for training, validation, or testing a machine learning model. The goal of data sampling is to reduce the computational complexity and memory requirements of the machine learning algorithm, while still preserving the important characteristics of the data and avoiding overfitting.
 - There are several types of data sampling methods used in machine learning, including:
 	- 1. Random sampling: Random sampling is a simple and widely used method for creating a subset of the original data. In random sampling, a fixed number or percentage of data points are randomly selected from the original data, without any consideration of the underlying distribution or characteristics of the data.

@@ -1,3 +1,4 @@
+tags:: cyber
 # Trident: Universal Language for Provable Computation
 
 **Design Document — v0.2 Draft**

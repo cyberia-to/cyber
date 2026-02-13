@@ -1,3 +1,4 @@
+tags:: cyber
 - TODO
 - measure of cognitive effort invested into [[cybergraph]] by [[neurons]]
 - [[cyber/energy]]

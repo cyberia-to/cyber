@@ -1,3 +1,4 @@
+tags:: note
 - [[focusflow blueprint]]
 - [[network architecture]]
 - [[ranking system]]

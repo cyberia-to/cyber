@@ -1,3 +1,4 @@
+tags:: note
 - i am gona dump the data here
 - it does not renders properly, [origin is here](https://claude.ai/public/artifacts/97cdfd1f-5d3e-447e-a918-7ca99ce76bd4)
 - # UniversalHash v4: A Democratic Proof-of-Work Algorithm

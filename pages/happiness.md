@@ -1,3 +1,4 @@
+tags:: cyber
 - happiness index according to ralph merkle
 - idea is simple
 	- any [[neuron]] submit privately a number from 0 to 100

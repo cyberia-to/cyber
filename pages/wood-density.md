@@ -1,3 +1,4 @@
+tags:: cyberia
 - {{query (property :wood-density)}}
   query-table:: true
   query-properties:: [:page :wood-density]

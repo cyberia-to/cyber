@@ -1,3 +1,4 @@
+tags:: cyberia
 - five primitives for all land operations
 - ## Primitives
   | Element | Purpose | Surface |

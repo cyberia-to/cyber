@@ -1,3 +1,4 @@
+tags:: note
 - [[@master]]
 - posits that the universe operates on a principle of interconnectedness
 	- where elements coalesce

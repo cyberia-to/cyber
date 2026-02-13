@@ -1,3 +1,4 @@
+tags:: cyber
 - structured communication technique
 - that gathers [[expert opinions]] through multiple rounds of questionnaires
 - with [[feedback provided]] after each round to converge on a [[consensus]]

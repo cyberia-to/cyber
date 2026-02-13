@@ -1,3 +1,4 @@
+tags:: species
 - attracting females first could seems like a miracle
 - the key is to create unique environment for wellness
 	- baths and spas

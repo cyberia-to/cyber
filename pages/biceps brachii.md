@@ -1,4 +1,4 @@
 alias:: 
-tag:: muscules
+tags:: muscletag:: muscules
 
 -

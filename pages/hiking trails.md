@@ -1,3 +1,4 @@
+tags:: note
 - new land discovery: flexible
 - wild huyang trip: flexible
 - licking lesung whole: 3 hours

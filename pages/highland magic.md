@@ -1,3 +1,4 @@
+tags:: cyberia
 - the idea of [[magic forest]] adopted to a highlands of [[cyber valley]]
 - criteria for species selection
 	- [[adopted]]: known to be productive, hardy and low maintenance

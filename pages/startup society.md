@@ -1,3 +1,4 @@
+tags:: cyberia
 - small-scale, experimental community
 - that aim to innovate on technology, governance, economics, and social structures
 - by testing new ideas in a controlled environment

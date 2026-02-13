@@ -1,3 +1,4 @@
+tags:: species
 - [github](https://github.com/cyberia-to/rockets/issues/1118)
 - harvest on the growing moon
 - during harvest

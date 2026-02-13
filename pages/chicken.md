@@ -1,3 +1,4 @@
+tags:: cyberia
 - one of the most important animal for [[biome engineering]]
 - products
 	- [[meat]]

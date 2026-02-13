@@ -1,3 +1,4 @@
+tags:: note
 #### goal
 	- develop fundamental english vocabulary (200 words) through structured learning and practical application.
 - #### numbers and metrics

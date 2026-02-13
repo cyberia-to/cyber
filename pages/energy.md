@@ -1,3 +1,4 @@
+tags:: cyber
 - fundamental concept in [[physics]] and [[information]]
 - refers to the capacity to do work or produce change
 - exists in various forms

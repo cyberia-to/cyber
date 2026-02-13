@@ -1,2 +1,2 @@
 alias:: triples
-- foundational [[data]] unit in [[knowledge graph]] theory
+tags:: cyber- foundational [[data]] unit in [[knowledge graph]] theory

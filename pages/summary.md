@@ -1,3 +1,4 @@
+tags:: note
 ## Summary of Findings: Collective Focus Theorem & Foculus Architecture
 ### 1. Exponential Optimality Under Constraint
 - The **exponential allocation principle** explains why base-*e* distributions appear in least-action physics, maximum-entropy thermodynamics, and attention economics.

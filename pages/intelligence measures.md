@@ -1,3 +1,4 @@
+tags:: note
 - [[size]]
 	- [[amount of links]]
 	- [[amount of unique links]]

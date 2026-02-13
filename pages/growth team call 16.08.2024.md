@@ -1,3 +1,4 @@
+tags:: note
 - Cosmosverse
 	- booth prints is ready and sent
 	- TODO:

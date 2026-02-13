@@ -1,2 +1,2 @@
 alias:: citizen, ai agents, agents
-- what is [[avatar]]?
+tags:: cyber- what is [[avatar]]?

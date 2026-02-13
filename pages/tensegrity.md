@@ -1,3 +1,4 @@
+tags:: cyber
 - systems that are structural frameworks where tension and compression elements work together
 - often in ways that look counterintuitive, extremely light, or even floating
 - the term comes from tensional integrity

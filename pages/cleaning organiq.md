@@ -1,3 +1,4 @@
+tags:: note
 - guideline on how to maintain organiq 🍀properly.
   
   rule 📜:

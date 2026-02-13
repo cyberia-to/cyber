@@ -1,3 +1,4 @@
+tags:: species
 - [github](https://github.com/cyberia-to/rockets/issues/1126)
 - weekly
 	- inspect leaves (aphids/spider mites/whiteflies), tighten ties, top up mulch to 5–8 cm, remove yellowing leaves and thin overcrowded growth.

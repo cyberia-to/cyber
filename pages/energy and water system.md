@@ -1,5 +1,5 @@
 icon:: ⚡️
-
+tags:: cyberia
 - part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 - published on [x.com](https://x.com/mastercyb/status/1983218412320108803)
 - | scale | total consumption | per hour | population | per capita |

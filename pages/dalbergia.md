@@ -1,1 +1,2 @@
+tags:: genus
 - [[dalbergia latifolia]]

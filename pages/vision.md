@@ -1,3 +1,4 @@
+tags:: cyber
 - [[bitcoin]]: [[pelvis]]
 - [[ethereum]]: [[backbone]]
 - [[cosmos]]: [[nerves]]

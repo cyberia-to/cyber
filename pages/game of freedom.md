@@ -1,5 +1,5 @@
 icon:: 🥕
-
+tags:: note
 - due to regulatory issues we rejected idea of game of freedom
 - we change the rules. details [[update on game of freedom]]
 - ## Unlock 2 weeks of transformative living

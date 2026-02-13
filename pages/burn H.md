@@ -1,3 +1,4 @@
+tags:: cyberia
 - fundamentally burning [[$H]] for some usable operations
 - can create enormous value loop
 - this includes several effects

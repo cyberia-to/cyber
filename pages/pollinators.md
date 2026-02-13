@@ -1,3 +1,4 @@
+tags:: note
 - [[buddleia]]
 - [[allium schoenoprasum]]
 - [[lavandula]]

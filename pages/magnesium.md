@@ -1,3 +1,4 @@
+tags:: disease
 - **alias**: magnesium
 - ![Magnesium.pdf](../assets/Magnesium_1719303309556_0.pdf)
 - [[magnesium]] is an essential [[mineral]] involved in over 300 [[enzymatic reactions]] in the body. it is crucial for [[energy production]], [[muscle]] and [[nerve]] function, [[bone health]], and [[maintaining a steady heartbeat]]. magnesium also plays a key role in [[cellular repair]] and [[reducing inflammation]].

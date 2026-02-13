@@ -1,5 +1,5 @@
 alias:: cyber improvement proposals, list of cips
-- ## what is [[cip]]?
+tags:: cyber- ## what is [[cip]]?
 - ## implemented
 	- {{query (and (page-tags [[cip]]) (page-property :status "implemented"))}}
 	  query-properties:: [:page]

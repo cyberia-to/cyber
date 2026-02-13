@@ -1,1 +1,2 @@
 alias:: block
+tags:: cyber

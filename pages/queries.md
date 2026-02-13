@@ -1,3 +1,4 @@
+tags:: note
 query-table:: true
 #+BEGIN_QUERY
 {:title "TODO tasks"

@@ -1,3 +1,4 @@
+tags:: cyber
 - TODO
 - explore the [[aicosystem]] for community channels and resources
 - learn [[concepts]] to understand the protocol

@@ -1,3 +1,3 @@
 alias:: monastery
-
+tags:: cyberia
 -

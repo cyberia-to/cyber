@@ -1,5 +1,5 @@
 alias:: mushroom, shrooms
-
+tags:: genus
 - fruiting body of some [[fungi]]
 - {{query (page-tags [[shroom]])}}
   query-properties:: [:page :alias]

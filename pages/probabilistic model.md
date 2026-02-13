@@ -1,3 +1,4 @@
+tags:: note
 - models incorporating randomness
 - are used to predict outcomes based on certain probabilities
 - more on [[probabilistic models]]

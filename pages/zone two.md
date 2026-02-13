@@ -1,3 +1,4 @@
+tags:: cyberia
 - [[batuka]] biome
 	- [[boehmeria nivea]]
 	- [[sicyos edulis]]

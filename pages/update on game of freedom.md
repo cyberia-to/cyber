@@ -1,3 +1,4 @@
+tags:: cyberia
 - since [[game of freedom]] announcement a lot have been happened
 -
 - what we learned?

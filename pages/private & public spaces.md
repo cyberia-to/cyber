@@ -1,3 +1,4 @@
+tags:: cyberia
 - [[satoshi]]
 - [[nick]]
 - [[andrej]]

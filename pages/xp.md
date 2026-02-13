@@ -1,3 +1,4 @@
+tags:: cyber
 - [[score]] produced by [[robot]] for particles [[observation]]
 - 1 second spend on particle gives 1 xp score
 - intended for personal use as its hard to prove

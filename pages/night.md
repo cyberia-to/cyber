@@ -1,3 +1,4 @@
+tags:: note
 - [[cereus]]
 - [[mirabilis jalapa]]
 - [[ipomoea alba]]

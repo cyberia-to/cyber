@@ -1,3 +1,4 @@
+tags:: note
 - scene 1: @joy
 	- voice:
 		- imagine living on your own terms—

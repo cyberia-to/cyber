@@ -1,3 +1,4 @@
+tags:: health
 - [[skin moisturizing]]
 - [[skin cleansing]]
 - [[sunscreen application]]

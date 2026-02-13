@@ -1,5 +1,5 @@
 alias:: pow
-- class of [[consensus]] mechanism used in [[blockchains]]
+tags:: cyber- class of [[consensus]] mechanism used in [[blockchains]]
 - [[computational power]] which secure creation of new valid [[blocks]]
 - unlike [[proof of stake]]
 	- which relies on vested staking to assign validation rights

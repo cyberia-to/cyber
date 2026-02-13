@@ -1,3 +1,4 @@
+tags:: species
 - important knowledges
 	- good english lang
 	- plants (uses, propagations etc)

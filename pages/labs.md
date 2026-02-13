@@ -1,3 +1,4 @@
+tags:: note
 - experimental founders high performance bed
 - [[populus alba]]
 - [[justicia gendarussa]]

@@ -1,5 +1,5 @@
 alias:: cyber: the metagraph
-icon:: 🦄
+tags:: cybericon:: 🦄
 - [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 -
 - you are reading [[metagraph]] of [[cyber]]

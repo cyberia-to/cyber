@@ -1,3 +1,4 @@
+tags:: genus
 - textile produced from [[boehmeria nivea]]
 - clean processing possible
 - enzymes for processing: [[pectinase]], [[cellulase]], [[protease]]

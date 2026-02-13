@@ -1,5 +1,5 @@
 icon:: ☀️
-
+tags:: cyber
 - seven [[cips]] with [[cyber/energy]] optimizations
 - with a purpose to deliver [[the product]]
 - and emphasize sustainability of [[bostrom]] business model

@@ -1,3 +1,4 @@
+tags:: cyber
 # Foculus Foundation: Decentralized Super-Intelligence Protocol
 ## Abstract
 

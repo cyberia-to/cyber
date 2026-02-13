@@ -1,3 +1,4 @@
+tags:: note
 ### choosing wood in bali
 - common hardwoods available:
 	- albizia (sengon),

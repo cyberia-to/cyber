@@ -1,5 +1,5 @@
 alias:: app, application, aipp
-- any [[avatar]] can become [[aip]]
+tags:: cyber- any [[avatar]] can become [[aip]]
 - [[avatar/name]]
 - [[avatar/image]]
 - [[features/api]]

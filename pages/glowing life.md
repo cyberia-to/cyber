@@ -1,3 +1,4 @@
+tags:: species
 - [[fungi]]
 - [[plankton]]
 - [[firefly]]

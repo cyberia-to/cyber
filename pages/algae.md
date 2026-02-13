@@ -1,3 +1,4 @@
+tags:: health
 - micro
 	- [[spirulina]] → protein, phycocyanin/pcb, gla
 	- [[chlorella]] → lutein, minerals, chlorophyll, possible b12

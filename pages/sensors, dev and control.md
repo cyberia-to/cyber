@@ -1,3 +1,4 @@
+tags:: cyberia
 - TODO lecture at [[bootcamp/v0]]
 - efforts
 	- we are building sensor network with our old friends: [robonomics](https://robonomics.network/)

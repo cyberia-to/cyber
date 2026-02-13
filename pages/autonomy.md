@@ -1,5 +1,5 @@
 alias:: autonomous, autonomously
-
+tags:: note
 - skill to harness full power of life
 - through the provision of basic needs by yourself
 - with support of close community

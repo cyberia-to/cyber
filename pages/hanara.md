@@ -1,3 +1,4 @@
+tags:: genus
 - {{query (property :availability "hanara")}}
   query-table:: true
   query-properties:: [:page]

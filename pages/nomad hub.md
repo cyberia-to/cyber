@@ -1,3 +1,4 @@
+tags:: cyberia
 ## digital nomad needs
 	- stable internet access
 		- fast, reliable wi-fi or wired ethernet

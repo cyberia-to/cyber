@@ -1,5 +1,5 @@
 alias:: smart contract
-- program that can act based on predefined rules autonomously
+tags:: cyber- program that can act based on predefined rules autonomously
 - subset of [[neurons]]
 - in [[bostrom]] progs executed using [[wasm]] defined by [[cosmwasm]] module
 	- can execute themselves thanks to [[dmn]]

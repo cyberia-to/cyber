@@ -1,3 +1,4 @@
+tags:: note
 - TODO
 - mathematical proof that a statement is true without revealing underlying data
 - [[cryptography]]

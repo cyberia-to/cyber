@@ -1,3 +1,4 @@
+tags:: note
 - [[oregano]]
 - [[thyme]]
 - [[gotu kola]]

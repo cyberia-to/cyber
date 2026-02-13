@@ -1,1 +1,2 @@
+tags:: note
 - solution space for all possible unique [[particles]]

@@ -1,3 +1,4 @@
+tags:: cyber
 - | concept     | cyber term            | meaning                        |
   |-------------|------------------------|--------------------------------|
   | [[file]]        | data particle          | hashed content                 |

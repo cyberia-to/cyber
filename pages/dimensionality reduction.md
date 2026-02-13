@@ -1,3 +1,4 @@
+tags:: species
 - Dimensionality reduction is a technique in machine learning and data science that is used to reduce the number of features or variables in a dataset, while retaining as much relevant information as possible. The goal of dimensionality reduction is to simplify the dataset and make it easier to analyze, visualize, and model.
 - There are two main types of dimensionality reduction techniques: feature selection and feature extraction.
 - Feature selection is a technique that selects a subset of the original features based on some criteria, such as their relevance to the target variable, their correlation with other features, or their predictive power. Feature selection techniques can be either supervised or unsupervised, depending on whether they use information about the target variable or not.

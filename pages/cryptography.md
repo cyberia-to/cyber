@@ -1,5 +1,5 @@
 alias:: modern cryptography
-- basics
+tags:: cyber- basics
 	- [[hashing]]
 	- TODO [[encryption]]
 	- [[signature]]

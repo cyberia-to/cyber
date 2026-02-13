@@ -1,3 +1,4 @@
+tags:: cyberia
 - #+BEGIN_QUERY
   {
     :title "Unique Species with Amounts"

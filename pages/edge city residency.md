@@ -1,5 +1,5 @@
 alias:: pirates of cyber states
-
+tags:: cyberia
 - the residency is dedicated to the creation of [[cyberia]]
 - > permissionless countries. greenfield villages. edge tech for real territory.
 - Join builders, hackers, and homesteaders who treat statecraft like open-source. across two weeks we swap field-tested tactics for founding autonomous villages, wire up energy and water, design resilient biomes, harden personal security, and prototype governance. bring your curiosity, a mask for halloween, and good boots for the morning hikes.

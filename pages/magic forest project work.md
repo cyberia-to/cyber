@@ -1,3 +1,4 @@
+tags:: note
 - pruning [[ageratina riparia]]
 - search and mark glowing areas
 - measure:

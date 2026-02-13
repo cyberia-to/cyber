@@ -1,2 +1,2 @@
 alias:: interplanetary file system
-- [ipfs.io](https://ipfs.io)
+tags:: cyber- [ipfs.io](https://ipfs.io)

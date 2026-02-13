@@ -1,3 +1,4 @@
+tags:: genus
 - [[dioscorea alata]]
 - [[dioscorea bulbifera]]
 - [[dioscorea alata]]

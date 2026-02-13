@@ -1,3 +1,4 @@
+tags:: cyber
 - mitigation of [[nothing at stake]] problem
   an integral security mechanism in consensus algorithms, such as [[tendermint]]
 - that detects and penalizes validators

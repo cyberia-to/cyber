@@ -1,3 +1,4 @@
+tags:: cyber
 - what is [[network state]]?
 -
 - ## list of recognized [[network states]]

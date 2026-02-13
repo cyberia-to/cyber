@@ -1,3 +1,4 @@
+tags:: cyberia
 - alternative to bryan johnson [[blueprint]] menu
 - with focus on sourcing from perenial permaculture garden
 - disclaimer: r&d phase and is not intended for practical use

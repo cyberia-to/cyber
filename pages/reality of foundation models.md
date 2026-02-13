@@ -1,3 +1,4 @@
+tags:: note
 - existing foundation models are not foundational
 	- contain only [[implicit knowledge]]
 	- unable to work in [[full content space]]

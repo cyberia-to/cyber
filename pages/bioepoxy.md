@@ -1,3 +1,4 @@
+tags:: note
 - [[cashew]]
 - [[agathis dammara]]
 - [[melaleuca alternifolia]]

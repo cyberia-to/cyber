@@ -1,1 +1,2 @@
 alias:: animals
+tags:: note

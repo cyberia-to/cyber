@@ -1,3 +1,4 @@
+tags:: cyber
 - immersion
 	- narrative
 		- aos

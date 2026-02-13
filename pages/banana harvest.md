@@ -1,3 +1,4 @@
+tags:: species
 - [github](https://github.com/cyberia-to/rockets/issues/1116)
 - # banana cultivation: practical care checklist
 	- distilled from a banana-cultivation video transcript (shared by user)

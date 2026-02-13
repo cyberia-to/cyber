@@ -1,5 +1,5 @@
 alias:: cyberlinks weight, cyberlinks weights
-
+tags:: cyber
 -
 - algorithm addressed to solve [[true-false problem]] for inference of truthful [[answers]] from [[cybergraph]]
 - algorithm features

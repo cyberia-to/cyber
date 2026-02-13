@@ -1,3 +1,4 @@
+tags:: cyberia
 - TODO lecture at [[bootcamp/v0]]
 - we are developers of [cyber](https://cyber.page) and [cyb](https://cyb.ai): web3 powertools for collective learning
 - we are early adopters and researchers of modern ai, llms and [deai](https://cyb.ai/oracle/ask/QmVcAr1wVdL17GfA5PXu9fHHk6NrpoWsxnb861P7CjoHbk) tech

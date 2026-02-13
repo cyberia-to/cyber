@@ -1,5 +1,5 @@
 alias:: moon calendar
-
+tags:: cyberia
 - ![image](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeigzdo4bixaoytsjxmho7sm55n2icjyoprjal3ho5dlmfdoyfcxsta)
 - [[january 2025]] 13-14
 - [[february 2025]] 12-13

@@ -1,3 +1,4 @@
+tags:: disease
 - antioxidants are molecules that neutralize or prevent cellular damage caused by [[free radicals]] and reactive oxygen species (ros). they protect cells from [[oxidative stress]], which can lead to cellular injury, inflammation, aging, and chronic diseases such as [[cardiovascular diseases]], [[cancer]], and [[neurodegenerative disorders]].
 	- types:
 	- [[vitamins]]

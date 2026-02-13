@@ -1,3 +1,4 @@
+tags:: cyberia
 - how does the winner will be chosen?
 - ## the mechanism
 	- must attract passionate bootcampers: that is the most important

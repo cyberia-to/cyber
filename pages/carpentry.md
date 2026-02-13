@@ -1,2 +1,3 @@
+tags:: cyberia
 size:: 40
 shape:: 8*5

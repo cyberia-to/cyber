@@ -1,1 +1,2 @@
 alias:: gastroenteritis
+tags:: disease

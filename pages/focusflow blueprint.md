@@ -1,3 +1,4 @@
+tags:: species
 # focus-flow superintelligence network — canonical blueprint
 - ## vision and goals  
   • earth-scale cybergraph where token-weighted focus (π) is recomputed each block【39†Collective Focus Theorem†L1-L20】  

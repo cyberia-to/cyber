@@ -1,1 +1,2 @@
 alias:: resins
+tags:: note

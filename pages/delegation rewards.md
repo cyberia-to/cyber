@@ -1,3 +1,4 @@
+tags:: cyber
 - in a [[proof of stake]] [[consensus]]
 - [[token]] holder can delegate their tokens to [[validator]]
 - the [[validator]] then use the combined [[stake]] to participate in the [[consensus]] process

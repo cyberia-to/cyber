@@ -1,3 +1,4 @@
+tags:: cyber
 - [[tokens]] for [[collective learning]]
 - examples
 	- [[will]]

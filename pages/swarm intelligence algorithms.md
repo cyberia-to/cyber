@@ -1,3 +1,4 @@
+tags:: cyberia
 - inspired by the behavior of social animals
 - these algorithms guide decentralized coordination among [[agents]]
 - examples include

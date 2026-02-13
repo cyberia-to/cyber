@@ -1,3 +1,4 @@
+tags:: cyberia
 - target
 	- demonstrate that [[fully autonomous tent]] is possible
 	- in 2 weeks

@@ -1,3 +1,4 @@
+tags:: article
 - [[soft3]] can significantly enhance various machine learning tasks
 - classification
 	- ensemble methods

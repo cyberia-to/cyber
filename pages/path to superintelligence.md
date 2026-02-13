@@ -1,3 +1,4 @@
+tags:: note
 - solve [[techtree]] accounting for
 	- [[why we need bootloader]]
 	- and more factors

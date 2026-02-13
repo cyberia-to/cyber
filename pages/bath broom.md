@@ -1,3 +1,4 @@
+tags:: species
 - Tropical Banya Veniki: Cloud Forest Edition
 - A guide to crafting traditional bath brooms from plants native to Bali's highland cloud forests (1200-1500m elevation).
 - ## The Concept

@@ -1,3 +1,4 @@
+tags:: note
 - algorithms which use economic principles
 - to coordinate actions among agents
 - terms

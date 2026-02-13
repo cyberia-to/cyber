@@ -1,2 +1,3 @@
+tags:: note
 - [sensors.sosial](https://sensors.social/#/remote/pm10/3/-8.2332/115.1367)
 -

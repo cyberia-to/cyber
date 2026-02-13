@@ -1,3 +1,4 @@
+tags:: note
 - [[ananas]]
 - [[coconut]]
 - [[banana]]

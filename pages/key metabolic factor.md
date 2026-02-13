@@ -1,3 +1,4 @@
+tags:: note
 - factor which define all decisions of [[superintelligence]]
 - considered options
 	- [[cap]]: fundamental feedback from environment

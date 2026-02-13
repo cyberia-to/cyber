@@ -1,1 +1,2 @@
 alias:: bush
+tags:: genus

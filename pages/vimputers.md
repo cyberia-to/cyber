@@ -1,5 +1,5 @@
 alias:: networks, blockchains, chains, ledgers
-- [[bitcoin]]
+tags:: cyber- [[bitcoin]]
 - [[ethereum]]
 - [[spacepussy]]
 - [[bostrom]]

@@ -1,3 +1,4 @@
+tags:: cyber
 - penalty mechanism that reduces the staked tokens of validators
 - who fail to maintain a agreed level of availability or uptime
 - if a [[validator]] node goes offline or fails to participate in the [[consensus]] process

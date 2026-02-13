@@ -1,3 +1,4 @@
+tags:: cyber
 - [[cyber]] project is structured around ~20 public projects and ~10 more internal
 -
 - [[cyb]] and [[cyber]]

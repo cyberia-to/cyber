@@ -1,3 +1,4 @@
+tags:: cyber
 - [[avatar]] system in [[bostrom]]
 - allow to buy name with powerful [[avatar]] features
 - component of [[cw-cyber]]

@@ -1,3 +1,4 @@
+tags:: species
 - spiecies:
 	- [[salmonella typhi]]
 	- [[salmonella paratyphi]]

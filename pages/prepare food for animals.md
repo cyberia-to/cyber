@@ -1,3 +1,4 @@
+tags:: cyberia
 - for sheep
 	- cut 2 big papayas
 	- make rice porrige

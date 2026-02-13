@@ -1,3 +1,4 @@
+tags:: species
 - within 1 month (very fast return)
 	- [[oregano]] & [[thyme]] : fresh herbs, rapid harvest cycles
 	- [[mentha]]: mint fresh leaves harvested continuously

@@ -1,3 +1,4 @@
+tags:: cyberia
 - input
 	- any dry [[wood]]
 	- some types of [[plastic]]

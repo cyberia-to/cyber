@@ -1,3 +1,4 @@
+tags:: cyberia
 - {{query (and [[salad]] (not (property :tags "research")))}}
   query-table:: true
   query-properties:: [:page :block]

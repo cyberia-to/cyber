@@ -1,3 +1,4 @@
+tags:: note
 - if you want to join our game you must play the rules for basic software environment
 - if you don't have skills related to basic collaborative software engineering you have to master them
 - luckily we are using plain text for core matters

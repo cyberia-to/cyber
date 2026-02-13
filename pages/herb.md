@@ -1,1 +1,2 @@
 alias:: herbaceous
+tags:: genus

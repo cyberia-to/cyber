@@ -1,3 +1,4 @@
+tags:: disease
 - | gas        | estimated amount in air | extraction method           | purity achievable         | efficiency | typical applications                                              |
   |------------|-------------------------|-----------------------------|---------------------------|------------|-------------------------------------------------------------------|
   | [[N₂]]     | ~78.08%                 | [[cryogenic distillation]] , [[pressure swing adsorption]], [[membrane separation]] | up to 99.999% | high       | chemical processes, electronics, food packaging, metal processing |

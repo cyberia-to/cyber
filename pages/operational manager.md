@@ -1,3 +1,4 @@
+tags:: cyberia
 - the job: operational manager for [[rockets estate]]
 	- managing projects
 	- generating products

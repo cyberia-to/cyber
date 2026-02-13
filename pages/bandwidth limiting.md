@@ -1,3 +1,4 @@
+tags:: note
 - [[params]]
 	- [[recovery period]]
 	- [[adjust price period]]

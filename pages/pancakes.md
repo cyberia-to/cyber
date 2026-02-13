@@ -1,3 +1,4 @@
+tags:: note
 - [[green buckwheat pancake]]
 - [[lentil pancake]]
 - [[banana cassava pancake]]

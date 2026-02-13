@@ -1,2 +1,2 @@
 alias:: artificial intelligence
-- [[reality of foundation models]]
+tags:: cyber- [[reality of foundation models]]

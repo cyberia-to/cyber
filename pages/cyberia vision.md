@@ -1,3 +1,4 @@
+tags:: cyberia
 # Cyberia vision: re-design of civilization
 title:: cyberia vision
 

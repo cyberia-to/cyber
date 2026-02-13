@@ -1,1 +1,2 @@
 alias:: muscules
+tags:: muscle

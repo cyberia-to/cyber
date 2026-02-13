@@ -1,5 +1,5 @@
 icon:: 🍏
-alias:: learning, labeling, answer
+tags:: cyberalias:: learning, labeling, answer
 - [[create links]] between [[particles]] of [[information]]
 - in a joyful process of [[knowledge mining]]
 -

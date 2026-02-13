@@ -1,3 +1,4 @@
+tags:: disease
 - [gihub](https://github.com/cyberia-to/rockets/issues/1151)
 - # weekly maintenance checklist
 	- moisture check:

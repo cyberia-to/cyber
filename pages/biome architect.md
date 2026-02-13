@@ -1,3 +1,4 @@
+tags:: species
 - build highly productive, sustainable and harmonic biome for autonomous community
 - read carefully about [cyber valley](https://hackmd.io/@cybervalley/cv-intro) first
 - currently 10 locals are managing operations

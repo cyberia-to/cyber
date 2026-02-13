@@ -1,1 +1,2 @@
+tags:: note
 - [[setup environment]]

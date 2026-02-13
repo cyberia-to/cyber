@@ -1,3 +1,4 @@
+tags:: cyberia
 - [github](https://github.com/cyberia-to/rockets/issues/1115)
 - [[taro]]
 - [[batat]]

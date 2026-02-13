@@ -1,3 +1,4 @@
+tags:: species
 - # The Last Escape Route: Privacy Mining in Hostile Territories
 - If you're in Russia, Belarus, or any country where buying crypto is dangerous or impossible, there's only ONE way out: mine it yourself.
 - But not just any crypto. Your token must meet 2 critical criteria:

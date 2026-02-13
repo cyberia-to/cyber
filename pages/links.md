@@ -1,2 +1,2 @@
 alias:: edges
-- [[cyberlinks]]
+tags:: cyber- [[cyberlinks]]

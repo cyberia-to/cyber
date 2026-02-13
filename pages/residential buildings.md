@@ -1,1 +1,2 @@
 alias:: tents
+tags:: note

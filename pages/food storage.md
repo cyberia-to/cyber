@@ -1,5 +1,5 @@
 alias:: kitchen/storage
-
+tags:: species
 - ### cold storage
 - temperature
 	- fridge: keep between 0–4 °c

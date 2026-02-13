@@ -1,3 +1,4 @@
+tags:: cyber
 - internal mode in [[cyb]]
 - that offer limit features
 - for [[robot]] without [[cyber/energy]]

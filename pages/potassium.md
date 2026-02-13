@@ -1,3 +1,4 @@
+tags:: muscle
 - **alias**: potassium
 - ![Potassium.pdf](../assets/Potassium_1719303309556_0.pdf)
 - [[potassium]] is a vital [[mineral]] and [[electrolyte]] essential for maintaining [[fluid balance]], [[proper nerve signaling]], and [[muscle contraction]]. it plays a critical role in [[heart function]], [[cellular metabolism]], and [[overall health]].

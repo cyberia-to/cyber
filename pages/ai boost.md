@@ -1,3 +1,4 @@
+tags:: note
 - page to gather experience of [[cybercongress]] team related to cutting edge ai tools
   title:: ai boost
 -

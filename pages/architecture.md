@@ -1,3 +1,4 @@
+tags:: cyber
 - unit types
 	- [[pyramid]]: 1
 	- [[sphere]]: 7

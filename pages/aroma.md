@@ -1,3 +1,4 @@
+tags:: note
 query-table:: true
 query-properties:: [:page]
 

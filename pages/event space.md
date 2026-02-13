@@ -1,3 +1,4 @@
+tags:: species
 # citadel genesis: regenerative event infrastructure
 
 *from temporary spectacle to enduring system*

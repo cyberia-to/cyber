@@ -1,3 +1,4 @@
+tags:: cyber
 - potential issue in proof of stake consensus mechanisms
 - where validators have little to no disincentive to sign multiple competing blocks
 - since they don't risk losing significant resources like in [[proof of work]]

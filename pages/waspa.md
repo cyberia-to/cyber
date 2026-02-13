@@ -1,3 +1,4 @@
+tags:: note
 - essential order in which design of the land must be made
 - [[water]]
 - [[access]]

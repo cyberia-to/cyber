@@ -1,5 +1,5 @@
 alias:: knowledge mining
-- [[aos]] game mechanics
+tags:: cyber- [[aos]] game mechanics
 - simple idea to gamify the process of [[cybergraph]] discovery by [[avatar]]
 -
 - on a [[first visit]] [[cyb]] downloads in background

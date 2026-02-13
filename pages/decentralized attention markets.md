@@ -1,3 +1,4 @@
+tags:: note
 - The Problem
 	- Current AI models (GPT, Claude, etc.) have fixed attention mechanisms
 	- Users can't influence what the model focuses on
