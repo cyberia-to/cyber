@@ -1,3 +1,4 @@
+tags:: cyber
 - data retention
   - Необходимо сохранять все логи графаны
 - Transactional structure

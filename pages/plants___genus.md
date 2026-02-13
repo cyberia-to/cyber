@@ -1,3 +1,4 @@
+tags:: genus
 -
 - {{query (and [] (page-tags [[genus]]))}}
   query-properties:: [:page]

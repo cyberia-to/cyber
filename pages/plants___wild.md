@@ -1,3 +1,4 @@
+tags:: genus
 - [[batuka]] and surrounding have extraordinary introduced nature mixed with native vegetation
 - that is why we want to preserve the heritage that nature gives us
 - that is why we issue recommendations on the utility and management of species that

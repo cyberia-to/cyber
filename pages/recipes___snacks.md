@@ -1,3 +1,4 @@
+tags:: recipe
 - [[baked cheese sandwich]]
 - [[taro / cassava/  sweet potato chips]]
 - [[cheese-on-flax bite]]

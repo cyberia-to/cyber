@@ -1,3 +1,4 @@
+tags:: cyb
 - overall the following state of the projects
 - [[cy]] in [[nu]]
 	- terminal implementation in [[nu]]

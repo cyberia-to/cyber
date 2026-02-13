@@ -1,3 +1,4 @@
+tags:: cyberia
 - from my part i would bet on participation in youtube podcasts
 - youtube - not complete
 	- {{video https://www.youtube.com/watch?v=6MogEQSRVuE}}

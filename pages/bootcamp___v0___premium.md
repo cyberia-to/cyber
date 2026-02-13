@@ -1,5 +1,5 @@
 icon:: 💰
-- ## premium will not be available unless
+tags:: cyberia- ## premium will not be available unless
 	- we have excess demand for [[bootcamp/v0]]
 	- we complete [[legal engineering]]
 -

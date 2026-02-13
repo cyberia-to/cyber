@@ -1,3 +1,4 @@
+tags:: cyber
 - [[go-cyber]]
 	- [[cyber/bandwidth]]
 	- [[cyber/clocks]]

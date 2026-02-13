@@ -1,3 +1,4 @@
+tags:: cyberia
 ## 🕐  meal schedule (UTC)
 	- breakfast: 1:00 UTC
 	- lunch: 4:00 UTC

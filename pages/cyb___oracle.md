@@ -1,3 +1,4 @@
+tags:: cyb
 - pages left
 	- [[cyb/oracle/ask]]
 	- [[cyb/oracle/neuron]]

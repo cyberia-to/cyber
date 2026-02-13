@@ -1,3 +1,4 @@
+tags:: cyber
 - feature of [[go-cyber]]
 - cyber query bandwidth
 	- load: query the [[bandwidth load]]

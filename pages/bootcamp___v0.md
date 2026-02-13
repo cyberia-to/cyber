@@ -1,5 +1,5 @@
 icon:: 🏕️
-- not actual anymore: [[bootcamp]] now is a space for cool events
+tags:: cyberia- not actual anymore: [[bootcamp]] now is a space for cool events
 - 14 day eduhealth program will be delayed until infrastructure needs does not meet our demand
 	- for creators of [[sustainable community]], [[startup societies]] and [[network states]]
 	- place: [[citadel genesis]], [[cyber valley]], [[bali]]

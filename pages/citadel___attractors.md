@@ -1,3 +1,4 @@
+tags:: cyberia
 - [[truly calm]]
 - TODO structure development of attractors
 	- [[best internet]]

@@ -1,3 +1,4 @@
+tags:: genus
 - Including the requested formatting for the names:
   | name              | scientific name          | indonesian name | height    | value of tree                    |
   |-------------------|--------------------------|-----------------|-----------|----------------------------------|

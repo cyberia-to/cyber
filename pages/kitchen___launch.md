@@ -1,3 +1,4 @@
+tags:: cyberia
 - opening kitchen
 	- step-by-step instructions (8am)
 		- open and enter the kitchen tent:

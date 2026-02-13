@@ -1,3 +1,4 @@
+tags:: cyberia
 - [[echa]]
 	- garden: 3
 	- cook: 2

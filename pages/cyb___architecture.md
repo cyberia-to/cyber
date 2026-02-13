@@ -1,3 +1,4 @@
+tags:: cyb
 - [[ipfs]] for data publishing and distribution
 - [[cyber]] search and learning
 - [[rune]] scripting for dynamic execution

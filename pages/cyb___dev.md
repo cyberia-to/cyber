@@ -1,3 +1,4 @@
+tags:: cyb
 - one [high level board](https://github.com/orgs/cybercongress/projects/41/views/1) for the project
 - feature branches for atomic conscious changes
 - TODO once ready feature branches go to `staging` branch and deployed to [ready.cyb.ai](https://ready.cyb.ai)

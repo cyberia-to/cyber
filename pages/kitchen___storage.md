@@ -1,3 +1,4 @@
+tags:: cyberia
 ### how we store and manage food
 - > this page describes how we store food in refrigerators and freezers, how we label and organize items, and how we manage stock through regular inventory checks.
 - #### cold storage: use and maintenance

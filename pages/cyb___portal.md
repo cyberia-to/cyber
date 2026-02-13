@@ -1,3 +1,4 @@
+tags:: cyb
 - currently portal is useless for returning users and do not offer ability to create avatar second time
 - [[cyb/avatar/create]] is very powerful feature which affects semantic organization and app development capabilities
 - rearrangement of logic based on mostly existing current state

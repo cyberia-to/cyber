@@ -1,3 +1,4 @@
+tags:: recipe
 - [[simple lentil base]]
 - [[edible fern]]
 - [[steamed bamboo shoots]]

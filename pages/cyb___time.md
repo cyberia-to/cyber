@@ -1,3 +1,4 @@
+tags:: cyb
 - [[log]] becomes part of time
 	- how to handle tweets?
 - is [[molecule]]

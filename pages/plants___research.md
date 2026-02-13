@@ -1,3 +1,4 @@
+tags:: genus
 - list of plants i currently actively researching
 - if you are looking for info about methods of research: [[research/plants]]
 - [flora fauna web](https://www.nparks.gov.sg/florafaunaweb/species-search)

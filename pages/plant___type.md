@@ -1,3 +1,4 @@
+tags:: genus
 - purpopse of types
 	- plants can be classified by their type
 	- every type have very unique, distinct parts

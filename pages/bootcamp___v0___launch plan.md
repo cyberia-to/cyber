@@ -1,3 +1,4 @@
+tags:: cyberia
 - deadline: 31 october
 - setup media channel youtube.com/@cybervalleyland
 	- boost channel to 100k subscribers [[@master]]

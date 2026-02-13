@@ -1,3 +1,4 @@
+tags:: genus
 - plants are amazing in serving a purpose while they live
 - consider roles as bricks of the [[biome]]
 - the more roles you add, the more powerful a biome become

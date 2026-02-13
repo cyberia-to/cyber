@@ -1,3 +1,4 @@
+tags:: recipe
 - [[stewed duck]]
 - [[soup with meat]]
 - [[stewed veggies]]

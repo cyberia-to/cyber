@@ -1,3 +1,4 @@
+tags:: cyber
 - [[cyb-ts]]
 	- [[connect neuron]]
 	- [[prove neuron]]

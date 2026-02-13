@@ -1,3 +1,4 @@
+tags:: cyberia
 - according to the [legend](https://www.reddit.com/r/Bitcoin/comments/1lfobc/i_am_a_timetraveler_from_the_future_here_to_beg/) citadel is a computing fortress with perfect autonomy
 -
 - [[citadel genesis]] is a modern take on this legend

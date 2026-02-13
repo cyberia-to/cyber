@@ -1,3 +1,4 @@
+tags:: cyberia
 - [[recipes/breakfast]]
 - [[recipes/mains]]
 - [[recipes/snacks]]

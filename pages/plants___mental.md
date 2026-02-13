@@ -1,3 +1,4 @@
+tags:: genus
 query-table:: true
 
 - {{query (page-tags [[psycho]])}}

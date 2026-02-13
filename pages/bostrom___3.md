@@ -1,3 +1,4 @@
+tags:: bostrom
 - [[close energy loop]]
 - [[rm]] module
 - [[webgpu]] module

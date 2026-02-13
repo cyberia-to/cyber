@@ -1,5 +1,5 @@
 alias:: kemenyan, styrax benzoin
-
+tags:: annotation
 - ![image.png](../assets/image_1713954173310_0.png)
 - ![image.png](../assets/image_1713954202129_0.png)
 - ![image.png](../assets/image_1713954247968_0.png)

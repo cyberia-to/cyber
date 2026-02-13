@@ -1,5 +1,5 @@
 alias:: cybercongress fellows
-- active fellows
+tags:: cyber- active fellows
 	- [cyb.ai/@dasein/log](https://cyb.ai/@dasein/log)
 	- [cyb.ai/@happylol/log](https://cyb.ai/@happylol/log)
 	- [cyb.ai/@cyborgshead/log](https://cyb.ai/@cyborgshead/log)

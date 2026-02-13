@@ -1,3 +1,4 @@
+tags:: cyb
 - no easy way to [[buy energy]]
 - [[cyb/oracle]]
 	- [[standard inference]]

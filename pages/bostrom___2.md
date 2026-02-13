@@ -1,3 +1,4 @@
+tags:: bostrom
 - cybergraph extension: [[create cyberlink twice]]
 - {{embed [[energy reform]]}}
 - essential features

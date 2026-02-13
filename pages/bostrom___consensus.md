@@ -1,3 +1,4 @@
+tags:: bostrom
 - [[double sign protection]]
 - [[uptime slashing]]
 - [[delegation rewards]]

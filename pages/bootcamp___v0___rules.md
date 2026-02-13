@@ -1,5 +1,5 @@
 icon:: 🌶
-- ## you get to the point at your expense
+tags:: cyberia- ## you get to the point at your expense
 - ## golden rule
 	- do not do to others
 	- what you would not want them do to you

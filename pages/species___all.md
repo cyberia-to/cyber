@@ -1,3 +1,4 @@
+tags:: species
 - [[species/all/list]]
 - {{query (and (page-tags [[species]]) )}}
   query-sort-by:: page

@@ -1,3 +1,4 @@
+tags:: cyb
 - one function extension for [[legacy browsers]]
 - on click
 	- parse full content of web page
