@@ -6,7 +6,7 @@ tags:: cyber, uhash
 - ## 1. Parameters
 - | Symbol | Domain | Description |
   |--------|--------|-------------|
-  | T | R+ | total token supply |
+  | T | R+ | token supply |
   | S | [0, 1] | staking ratio (staked / T) |
   | D_rate | R+ | aggregate difficulty per second (from sliding window) |
   | F | R+ | fees collected (tokens, measured over window) |
@@ -14,7 +14,7 @@ tags:: cyber, uhash
   | N | Z+ | sliding window size (number of proofs) |
   | K | Z+ | PID update interval (every K proofs) |
   | alpha | [0.3, 0.7] | allocation curve exponent |
-  | phi | [phi_min, 0.05] | annual issuance rate (fraction of T) |
+  | E(t) | R+ | composite emission rate (from stepped decay curve, see [[bostrom__lithium]]) |
   | beta | [0, 0.9] | fee burn rate |
 - ## 2. Per-Proof Instant Payout
 - no epochs. every valid proof is paid immediately on-chain
@@ -28,7 +28,7 @@ tags:: cyber, uhash
   ```
   W = last N proofs: [(d_i, t_i), ...]
   D_rate = sum(d_i for i in W) / (t_last - t_first)   // total difficulty per second
-  E_target = phi * T / seconds_per_year                 // target emission per second
+  E_target = E(t)                                        // from stepped decay curve
   base_rate = E_target / D_rate
   ```
 - when more miners join (D_rate rises), base_rate drops — same total emission
@@ -55,15 +55,15 @@ tags:: cyber, uhash
 	- alpha > 0.5: favors miners, penalizes excessive staking
 - miner reward comes from R_PoW share: `base_rate` is calibrated against R_PoW, not G
 - ## 3. Gross vs Net Emission
-- gross rewards (annualized: total tokens emitted + redistributed):
+- gross rewards (emission + redistributed fees):
   ```
-  G = phi * T + F * (1 - beta)
+  G = E(t) + F * (1 - beta)
   ```
-- net new supply (annualized):
+- net new supply:
   ```
-  net_emission = phi * T - F * beta
+  net_emission = E(t) - F * beta
   ```
-- when F * beta > phi * T: net deflation. emission funded by fees, supply shrinks
+- when F * beta > E(t): net deflation. emission funded by fees, supply shrinks
 - ## 4. Staking Equilibrium
 - per-token staking yield:
   ```
@@ -77,7 +77,7 @@ tags:: cyber, uhash
 - error signals:
   ```
   e_efficiency = eta_PoW - eta_PoS
-  e_fee_coverage = F / (phi * T) - 1
+  e_fee_coverage = F / E(t) - 1
   ```
   where eta_PoW = D_rate / R_PoW, eta_PoS = (S * T) / R_PoS
 - alpha update (balance PoW vs PoS efficiency):
@@ -88,16 +88,13 @@ tags:: cyber, uhash
   ```
   beta += Kp_b * e_fee_coverage + Kd_b * d(e_fee_coverage)/dt
   ```
-- phi update (adjust floor when fees cover it):
-  ```
-  phi -= Kp_f * e_fee_coverage    (only when system is healthy)
-  ```
+- E(t) is not PID-controlled — it follows the fixed stepped decay curve from [[bostrom__lithium]]
 - ## 6. Gains
-- | Mode | Kp_a | Kd_a | Kp_b | Kd_b | Kp_f |
-  |------|------|------|------|------|------|
-  | conservative (P-only) | 0.005 | 0 | 0.02 | 0 | 0.005 |
-  | moderate (PD) | 0.004 | 0.008 | 0.015 | 0.03 | 0.004 |
-  | aggressive (PID) | 0.003 | 0.006 | 0.012 | 0.025 | 0.003 |
+- | Mode | Kp_a | Kd_a | Kp_b | Kd_b |
+  |------|------|------|------|------|
+  | conservative (P-only) | 0.005 | 0 | 0.02 | 0 |
+  | moderate (PD) | 0.004 | 0.008 | 0.015 | 0.03 |
+  | aggressive (PID) | 0.003 | 0.006 | 0.012 | 0.025 |
 - derivatives estimated via EMA:
   ```
   d_est(t) = lambda * (e(t) - e(t-1)) + (1 - lambda) * d_est(t-1)
@@ -111,7 +108,7 @@ tags:: cyber, uhash
   
       // 2. compute instant reward
       D_rate = window.total_d / window.time_span
-      E_target = params.phi * state.T / SECONDS_PER_YEAR
+      E_target = emission_rate(now())                    // from stepped decay curve
       R_pow_share = 1 - state.S^params.alpha
       base_rate = (E_target * R_pow_share) / D_rate
       reward = base_rate * proof.d
@@ -136,21 +133,21 @@ tags:: cyber, uhash
       S = staked() / T
       F = recent_fees(window.time_span)
   
-      G = params.phi * T + F * (1 - params.beta)
+      E = emission_rate(now())
+      G = E + F * (1 - params.beta)
       R_pow = G * (1 - S^params.alpha)
       R_pos = G * S^params.alpha
   
       eta_pow = window.total_d / R_pow
       eta_pos = (S * T) / R_pos
       e_eff = eta_pow - eta_pos
-      e_cov = F / (params.phi * T) - 1
+      e_cov = F / E - 1
   
       de_eff = ema(e_eff - params.e_eff_prev, params.de_eff)
       de_cov = ema(e_cov - params.e_cov_prev, params.de_cov)
   
       params.alpha = clamp(params.alpha + Kp_a * e_eff + Kd_a * de_eff, 0.3, 0.7)
       params.beta  = clamp(params.beta  + Kp_b * e_cov + Kd_b * de_cov, 0.0, 0.9)
-      params.phi   = clamp(params.phi   - Kp_f * e_cov, PHI_MIN, 0.05)
   
       params.e_eff_prev = e_eff
       params.e_cov_prev = e_cov
@@ -162,7 +159,6 @@ tags:: cyber, uhash
   |-----------|---------|-----------|
   | alpha | 0.5 | neutral prior |
   | beta | 0.0 | no burn until stable |
-  | phi | 0.03 | conservative floor |
   | N | 5000 | ~hours of proofs at moderate load |
   | K | 100 | PID updates every 100 proofs |
 - warmup: first N proofs use fixed base_rate (no sliding average yet). P-only PID, wider bounds
