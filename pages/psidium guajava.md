@@ -71,72 +71,72 @@ grow-speed:: 3
 			- leaves: collected for [[tea]] or [[extract]], young, mature green leaves preferred
 			- bark: harvested from mature trees for decoction in [[traditional medicine]]
 			- timber: used from old or pruned trees, applied in basic [[carpentry]] and [[firewood]]
-- ### **traditional medicine uses of [[psidium guajava]]**
-- **leaves**:
+- ### traditional medicine uses of [[psidium guajava]]
+- leaves:
 	- infused or decocted to treat [[diarrhea]], [[dysentery]], and [[stomach pains]]
 	- used as a [[gargle]] for [[sore throats]], [[mouth ulcers]], and [[gum infections]]
 	- applied topically as a [[wound cleanser]] or [[anti-inflammatory]] poultice
 	- brewed into tea for [[fever]], [[cough]], and [[flu]] symptoms
 	- powdered leaves used in traditional [[diabetes]] control
-- **bark**:
+- bark:
 	- decoction used as an [[antibacterial]] wash for [[skin infections]] and [[wounds]]
 	- traditionally used for [[menstrual regulation]], [[bleeding]], and [[fever]]
-- **fruit**:
+- fruit:
 	- eaten raw or in preparations to boost [[immunity]] and [[digestive health]]
 	- used in folk remedies to treat [[constipation]], [[high blood pressure]], and [[scurvy]]
-- **roots**:
+- roots:
 	- root extracts are occasionally used for [[intestinal worms]] and chronic [[diarrhea]]
 - ### traditional medicine recipes
-- **guava leaf tea for [[diarrhea]] and [[digestion]]**
-	- **ingredients**
+- guava leaf tea for [[diarrhea]] and [[digestion]]
+	- ingredients
 		- 5–7 fresh guava leaves (or 1 tablespoon dried)
 		- 2 cups water
-	- **instructions**
+	- instructions
 		- wash the leaves thoroughly.
 		- boil the leaves in 2 cups of water for 10–15 minutes.
 		- strain and let cool slightly.
 		- drink 1/2 cup, 2–3 times per day.
-	- **uses**
+	- uses
 		- traditionally used to treat [[diarrhea]], [[stomach]] cramps, and [[dysentery]] due to the [[antimicrobia]]l and [[astringent]] properties of [[tannins]] and [[flavonoids]] in the leaves.
-- **guava leaf rinse for [[oral health]]**
-	- **ingredients**
+- guava leaf rinse for [[oral health]]
+	- ingredients
 		- 4–5 guava leaves
 		- 1 cup of water
-	- **instructions**
+	- instructions
 		- boil the leaves in water for 10 minutes.
 		- let the infusion cool to room temperature.
 		- use as a mouth rinse twice daily.
-	- **uses**
+	- uses
 		- used to treat [[gum inflammation]], [[mouth ulcers]], and [[bad breath]]. the [[antibacterial]] compounds in guava leaves help [[reduce oral bacteria]] and promote [[gum healing]].
-- **guava leaf poultice for [[wounds]] and [[infections]]**
-	- **ingredients**
+- guava leaf poultice for [[wounds]] and [[infections]]
+	- ingredients
 		- a handful of fresh guava leaves
 		- mortar and pestle or blender
-	- **instructions**
+	- instructions
 		- crush or blend the guava leaves into a thick paste.
 		- apply directly to the wound or infected area.
 		- cover with clean gauze and leave for 1–2 hours.
 		- repeat 2–3 times daily.
-	- **uses**
+	- uses
 		- used for treating [[cuts]], [[boils]], and [[skin infections]]. guava leaves have [[antisepti]]c and [[anti-inflammatory]] properties that promote [[healing]] and [[prevent infection]].
-- **guava fruit decoction for [[cough]] and [[cold]]**
-	- **ingredients**
+- guava fruit decoction for [[cough]] and [[cold]]
+	- ingredients
 		- 1 ripe guava (chopped)
 		- 1 cup of water
 		- optional: a pinch of salt or ginger
-	- **instructions**
+	- instructions
 		- boil chopped guava in water for 10 minutes.
 		- mash and strain.
 		- drink warm once or twice a day.
-	- **uses**
+	- uses
 		- used to soothe [[sore throat]], [[cough]], and mild [[respiratory infections]]. guava [[fruit]] contains [[vitamin c]] and [[antioxidants]] that [[boost immunity]] and soothe the [[throat]].
-- **guava leaf steam for [[skin]] and [[respiratory health]]**
-	- **ingredients:**
+- guava leaf steam for [[skin]] and [[respiratory health]]
+	- ingredients:
 		- 10–12 guava leaves
 		- 1 liter of boiling water
-	- **instructions**
+	- instructions
 		- place guava leaves in a bowl.
 		- pour boiling water over the leaves.
 		- lean over the bowl, cover head with a towel, and inhale steam for 10–15 minutes.
-	- **uses**
+	- uses
 		- helps open [[pores]], [[cleanses skin]], and relieve [[nasal congestion]]. used in [[traditional medicine]] for [[acne]] and [[sinus relief]].

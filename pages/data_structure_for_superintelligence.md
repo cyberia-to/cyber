@@ -2,7 +2,7 @@ tags:: article, cyber# Data Structures for Superintelligence
 
 ## Authenticated State Architecture for the Collective Objective Reality Engine
 
-**Version 1.0 — February 2026**
+Version 1.0 — February 2026
 
 *"The network doesn't simulate thinking. The network IS thinking."*
 
@@ -34,11 +34,11 @@ Unified by a single hash function (Poseidon2-Goldilocks), a single field (p = 2�
 
 ### 1.1 The Three Laws
 
-**Law 1: Bounded Locality.** No global recompute for local change. Every operation's cost must be proportional to what it touches, not to the total graph size. At 10¹⁵ nodes, global operations are physically impossible — light-speed delays across Earth exceed any acceptable latency bound.
+Law 1: Bounded Locality. No global recompute for local change. Every operation's cost must be proportional to what it touches, not to the total graph size. At 10¹⁵ nodes, global operations are physically impossible — light-speed delays across Earth exceed any acceptable latency bound.
 
-**Law 2: Compute-Verify Symmetry.** Verification cost ≤ c · computation cost, where c is a small constant. A system where verification is cheaper than computation can scale through delegation. A system where verification is MORE expensive than computation cannot scale at all.
+Law 2: Compute-Verify Symmetry. Verification cost ≤ c · computation cost, where c is a small constant. A system where verification is cheaper than computation can scale through delegation. A system where verification is MORE expensive than computation cannot scale at all.
 
-**Law 3: Structural Security.** Security guarantees must emerge from data structure invariants, not from protocol correctness. A protocol can have bugs. A tree whose internal nodes carry min/max namespace labels cannot lie about completeness — the structure itself prevents it.
+Law 3: Structural Security. Security guarantees must emerge from data structure invariants, not from protocol correctness. A protocol can have bugs. A tree whose internal nodes carry min/max namespace labels cannot lie about completeness — the structure itself prevents it.
 
 ### 1.2 The Ontology
 
@@ -58,9 +58,9 @@ Focus is computed by three local operators — the [[tri-kernel]]: [[diffusion]]
 
 Three layers, three names:
 
-- **CORE** — the computation model (16 reduction patterns, deterministic costs)
-- **Cybergraph** — the data model (particles, cyberlinks, neurons, tokens, focus)
-- **BBG** — the authenticated state structure (this document)
+- CORE — the computation model (16 reduction patterns, deterministic costs)
+- Cybergraph — the data model (particles, cyberlinks, neurons, tokens, focus)
+- BBG — the authenticated state structure (this document)
 
 BBG = Big Badass Graph. The name is earned.
 
@@ -76,10 +76,10 @@ $$p = 2^{64} - 2^{32} + 1 = 18446744069414584321$$
 
 Properties that make this field optimal:
 
-- **Fast reduction**: a mod p = a_lo − a_hi × (2³² − 1) + correction. Two 64-bit operations.
-- **Large 2-adic subgroup**: 2³² divides p−1, enabling FFTs up to length 2³² without extension fields.
-- **Native word size**: Fits in a single 64-bit register on all modern hardware.
-- **STARK-optimal**: FRI folding operates directly on F_p without embedding overhead.
+- Fast reduction: a mod p = a_lo − a_hi × (2³² − 1) + correction. Two 64-bit operations.
+- Large 2-adic subgroup: 2³² divides p−1, enabling FFTs up to length 2³² without extension fields.
+- Native word size: Fits in a single 64-bit register on all modern hardware.
+- STARK-optimal: FRI folding operates directly on F_p without embedding overhead.
 
 Every value in the system — balances, weights, hashes, commitments, proofs — is one or more elements of F_p.
 
@@ -186,10 +186,10 @@ Cost:
 
 Sorted polynomial commitments (as proposed in v0.9) can approximate completeness but lack structural guarantees:
 
-- **Polynomial completeness requires a protocol**: Prove boundary entries, prove contiguity, prove sorting was maintained. Each step requires a separate argument. Any step can have bugs.
-- **NMT completeness is a structural invariant**: The tree physically cannot represent a valid root over misordered leaves. There is no protocol to debug because there is no protocol — just a tree.
-- **DAS requires NMTs**: Namespace-aware Data Availability Sampling (Celestia model) needs namespace labels propagated through internal nodes. Polynomials don't have internal nodes.
-- **Sync requires NMTs**: "Give me everything for neuron N with proof nothing is hidden" is the cybergraph's fundamental operation. NMT completeness proofs make this trustless. Polynomial approaches require trusting that sorting was maintained by consensus.
+- Polynomial completeness requires a protocol: Prove boundary entries, prove contiguity, prove sorting was maintained. Each step requires a separate argument. Any step can have bugs.
+- NMT completeness is a structural invariant: The tree physically cannot represent a valid root over misordered leaves. There is no protocol to debug because there is no protocol — just a tree.
+- DAS requires NMTs: Namespace-aware Data Availability Sampling (Celestia model) needs namespace labels propagated through internal nodes. Polynomials don't have internal nodes.
+- Sync requires NMTs: "Give me everything for neuron N with proof nothing is hidden" is the cybergraph's fundamental operation. NMT completeness proofs make this trustless. Polynomial approaches require trusting that sorting was maintained by consensus.
 
 Production evidence: Celestia has processed millions of blocks with NMT-based DAS since October 2023. No production system uses sorted polynomial completeness proofs.
 
@@ -452,7 +452,7 @@ The mutator set provides: private ownership, unlinkable transactions, no trusted
 
 The standard approach (Zcash, v0.9) uses polynomial commitments for the UTXO set and a sorted nullifier set for double-spend prevention. This has a fatal flaw at planetary scale:
 
-**The nullifier set grows monotonically with every spend, forever.**
+The nullifier set grows monotonically with every spend, forever.
 
 ```
 Year 1:   10⁸ transactions  → 10⁸ nullifiers → prover stores 800 MB
@@ -1159,11 +1159,11 @@ COMPOSITE UPDATE:
 
 The composite operator ℛ = norm[λ_d·D + λ_s·S + λ_h·H_τ] is a contraction under standard conditions:
 
-- **Diffusion:** Perron-Frobenius guarantees unique stationary distribution under ergodicity (strong connectivity + aperiodicity). Geometric convergence via teleport.
-- **Springs:** Screening μ > 0 ensures (L+μI) is strictly positive definite. Exponential decay of Green's function.
-- **Heat:** Bounded τ ensures H_τ is contractive. Gaussian tail decay.
+- Diffusion: Perron-Frobenius guarantees unique stationary distribution under ergodicity (strong connectivity + aperiodicity). Geometric convergence via teleport.
+- Springs: Screening μ > 0 ensures (L+μI) is strictly positive definite. Exponential decay of Green's function.
+- Heat: Bounded τ ensures H_τ is contractive. Gaussian tail decay.
 
-**Composite contraction:** Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
+Composite contraction: Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
 
 Convergence rate: $\|\phi^{(t)} - \phi^*\| \leq C \cdot \kappa^t$ where κ < 1 depends on the spectral gap, screening parameter, and temperature.
 

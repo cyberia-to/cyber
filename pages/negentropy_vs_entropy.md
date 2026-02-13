@@ -41,7 +41,7 @@ let π = [π₁, … , πₙ] be the stationary focus distribution.
   
 entropy of focus  
   
-**h(π) = − Σⱼ πⱼ log πⱼ**  
+h(π) = − Σⱼ πⱼ log πⱼ  
   
 high h → dispersed attention; low h → consensus.  
 
@@ -50,14 +50,14 @@ high h → dispersed attention; low h → consensus.
 
 maximum entropy for n particles is log n.  
   
-**j(π) = log n − h(π) = Σⱼ πⱼ log (πⱼ · n)**  
+j(π) = log n − h(π) = Σⱼ πⱼ log (πⱼ · n)  
   
 positive j signals emergent order.  
 
 ---
 ## 5. negentropy flux
 
-**ϕᵗ = j(πᵗ) − j(πᵗ⁻¹)**  
+ϕᵗ = j(πᵗ) − j(πᵗ⁻¹)  
   
 ϕᵗ > 0 indicates the system gained semantic order between timesteps.  
 
@@ -66,11 +66,11 @@ positive j signals emergent order.
 
 focus behaves like an informational potential field.
 
-* **semantic energy**: Φⱼ = −log πⱼ  
+* semantic energy: Φⱼ = −log πⱼ  
   represents the latent potential carried by particle j; rare or highly focused particles possess higher Φ and thus contribute more capacity to perform semantic work  
-* **expected energy**: E = Σⱼ πⱼ Φⱼ = h(π)
+* expected energy: E = Σⱼ πⱼ Φⱼ = h(π)
 
-negentropy therefore measures the **free energy** available to do semantic work:
+negentropy therefore measures the free energy available to do semantic work:
 
 > F = J(π) = log n − E
 ### 6.1 effective temperature
@@ -87,7 +87,7 @@ an infinitesimal update splits into reversible work (dW, structural reinforcemen
 > dJ_sys = − δQ / T_eff + dW
 ### 6.3 landauer bound for meaning
 
-a bit of negentropy requires at least **k_B ln2** joules of physical energy to create (landauer 1961). thus hardware power **P ≥ k_B ln2 · dJ/dt**. this links GPU watts to growth of collective meaning.
+a bit of negentropy requires at least k_B ln2 joules of physical energy to create (landauer 1961). thus hardware power P ≥ k_B ln2 · dJ/dt. this links GPU watts to growth of collective meaning.
 ### 6.4 focus capacity
 
 > C_F = ∂J / ∂E
@@ -95,7 +95,7 @@ a bit of negentropy requires at least **k_B ln2** joules of physical energy to c
 captures how efficiently additional energy translates into semantic order—an analogue of heat capacity.
 ### 6.5 stability criterion
 
-a cybergraph stays far‑from‑equilibrium while **σ = dH_env/dt > 0** and **dJ_sys/dt ≥ 0**. drop energy inflow → π drifts to uniform → F → 0, mirroring biological death.
+a cybergraph stays far‑from‑equilibrium while σ = dH_env/dt > 0 and dJ_sys/dt ≥ 0. drop energy inflow → π drifts to uniform → F → 0, mirroring biological death.
 
 ---
 ## 7. objective functions

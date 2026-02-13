@@ -1,3 +1,3 @@
 tags:: disease
-- **psoriasis**: an autoimmune condition leading to rapid skin cell production; symptoms include red patches of skin with silvery scales.
+- psoriasis: an autoimmune condition leading to rapid skin cell production; symptoms include red patches of skin with silvery scales.
 -

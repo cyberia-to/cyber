@@ -53,4 +53,4 @@ tags:: kitchen/menu
 	- slice roots using slicer for consistent frying
 	- fry in small batches to avoid overcrowding and soggy chips
 	- monitor heat carefully: oil should bubble gently, not smoke
-- > **enjoy your treat!** 🥔🌿
+- > enjoy your treat! 🥔🌿

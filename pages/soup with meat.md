@@ -62,4 +62,4 @@ tags:: kitchen/menu, mains
 - ### 💡 tips
 	- for deeper flavor, toast spices in oil before combining
 	- taro should be cooked no more than 20 - 25 minutes
-- >**enjoy your meal!** 🥘🌿
+- >enjoy your meal! 🥘🌿

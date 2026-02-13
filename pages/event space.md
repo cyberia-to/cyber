@@ -3,9 +3,9 @@ tags:: species
 
 *from temporary spectacle to enduring system*
 
-in a world where massive festivals, retreats, and temporary gatherings explode into life and collapse into waste, **citadel genesis** proposes a radical alternative:
+in a world where massive festivals, retreats, and temporary gatherings explode into life and collapse into waste, citadel genesis proposes a radical alternative:
 
-a **regenerative event infrastructure** designed not to be torn down, but to **nurture the land**, **empower the people**, and **serve as a permanent node** in the cultural, ecological, and social web of the future.
+a regenerative event infrastructure designed not to be torn down, but to nurture the land, empower the people, and serve as a permanent node in the cultural, ecological, and social web of the future.
 
 this isn’t just an event venue. it’s an operating system for a new civilization.
 
@@ -18,12 +18,12 @@ this isn’t just an event venue. it’s an operating system for a new civilizat
 - water trucked in, waste trucked out, culture left behind
 - zero continuity, zero legacy, zero respect for the biome
   
-  even the most well-intentioned festivals often become **ephemeral consumption zones**, not true cultural emergence.
+  even the most well-intentioned festivals often become ephemeral consumption zones, not true cultural emergence.
   
   ---
 - ## the citadel alternative: permanent, light, alive
   
-  citadel genesis flips the paradigm. it is a **permanently rooted, regeneratively designed forest infrastructure** built for:
+  citadel genesis flips the paradigm. it is a permanently rooted, regeneratively designed forest infrastructure built for:
 - recurring festivals
 - collaborative residencies
 - ceremonial gatherings
@@ -31,7 +31,7 @@ this isn’t just an event venue. it’s an operating system for a new civilizat
 - post-tech healing arcs
 - global movement assemblies
   
-  instead of starting from scratch each time, citadel becomes a **living stage** — one that **gets stronger with every gathering**.
+  instead of starting from scratch each time, citadel becomes a living stage — one that gets stronger with every gathering.
   
   ---
 - ## five pillars of regenerative event design
@@ -69,11 +69,11 @@ this isn’t just an event venue. it’s an operating system for a new civilizat
   ---
 - ## business model: the infrastructure of movements
   
-  citadel genesis doesn’t host events. it **hosts emergence**.
+  citadel genesis doesn’t host events. it hosts emergence.
 - aligned festivals and retreats rent the land with built-in regeneration protocols
 - moon or season-based residencies allow for slow culture weaving
 - co-creation programs build the next layer of infrastructure
-- a published **forest event protocol** becomes an open-source OS for future villages
+- a published forest event protocol becomes an open-source OS for future villages
 - a “citadel kit” replicates this model across the world
   
   ---
@@ -89,20 +89,20 @@ this isn’t just an event venue. it’s an operating system for a new civilizat
   
   > 
   
-  a **sacred, scalable, functional**, and **regenerative architecture for gatherings of 50 to 5,000**,
+  a sacred, scalable, functional, and regenerative architecture for gatherings of 50 to 5,000,
   
   with no waste, no burnout — and no expiry date.
   
   ---
 - ## beyond hosting: anchoring culture
   
-  each person who arrives isn’t just attending — they are **building**.
+  each person who arrives isn’t just attending — they are building.
   
   citadel genesis is a village that breathes with the rhythm of the planet,
   
   where humans gather not to consume moments,
   
-  but to **cultivate new civilizational seeds**.
+  but to cultivate new civilizational seeds.
   
   welcome to the future of presence.
   

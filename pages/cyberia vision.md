@@ -10,7 +10,7 @@ At its heart is Cyber Valley, our 37-hectare pilot site in northern Bali.
 ![cyber valley](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeictdhenwxcbnc5c7ev2wurzimyulcjmc47yehjnhowjkldrqz472u)
 
 And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstart this cyber state from February 17 to March 20, 2026. Drawing on our cypherpunk roots, blockchain enablers, and a philosophy of vertical integration, we're aiming to redefine how we live, work, and thrive in the age of superintelligence.
-***
+*
 - ## What Is Cyberia?
   
   Cyberia is the superintelligent nation we've been building — a growing network of autonomous cities that prioritize energy, water, food, and data sovereignty. We've embedded a commitment to collective intelligence into its architecture, culture, and software, where decisions are guided by tokenized systems and authenticated networks. 
@@ -33,7 +33,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   
   It starts as a month-long gathering limited to 150 people ([Dunbar's number](https://en.wikipedia.org/wiki/Dunbar's_number) for optimal tribal cohesion), but evolves into an ongoing hub, with the final three days channeling Burning Man's spirit through a rational, solarpunk lens, culminating in [Bali's Nyepi](https://en.wikipedia.org/wiki/Nyepi) (Day of Silence) for reflection.
   
-  ***
+  *
 - ## The Philosophy: Cyber State is Collective Intelligence
   
   Our philosophy for Cyberia is rooted in the interplay between collective intelligence and the creation of a cyber state. 
@@ -81,7 +81,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   The path to immortality - is our explicit, shared target, woven into every aspect of our lifestyle as the ultimate cultural north star.
   
   1+1=7 — our main principle for family building. Fast-growing, genetically strong, smart civilization.
-  ***
+  *
 - ## Cypherpunk Ethos
   
   Juan Benet recently [distilled the cypherpunk methodology](https://www.youtube.com/watch?v=B08IXHLOQp4&list=PLSsVHWrO8Yh06WlNcYKtIDMjPiUXJjADu) into six principles: build utopias and protopias, enable secure and private communications, make money to develop and fund, face legal battles when necessary, build together, and solve open problems. Cyberia implements this framework through direct action rather than manifestos.
@@ -102,14 +102,14 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   This model funds continued [open source development](https://github.com/orgs/cyberia-to). So we may be the first open source development (yep, we mean physical building) company in existence.
   
   ![organiq](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeifs5t56en5ub3u4p4xglybqo45o4zxtiot3dzhfvxuh3a4brramii)
-  ***
+  *
 - ## Investments
   
   The project has accumulated $5 million of direct investments and after 4 years of operations (including land price appreciation) comprise at least $20m in assests under management. That fact, according to the list of projects provided by [nsnodes.com](http://nsnodes.com) made Cyber Valley, Cyberia - second-biggest project after [Prospera](https://www.prospera.co/en) within the network state community. 
   
   After the token launch, Cyberia will be available for capital investments for anyone in the world in just one click.
   
-  ***
+  *
 - ## Soil, Biodiversity, and Growing: The Existential Foundation
   
   At the core of Cyberia's sustainability is our deep respect for soil, biodiversity, and regenerative growing practices—these are existential pillars for any future civilization. Soil is the skin of the Earth, underpinning 95% of global food production, filtering water, storing carbon to combat climate change, and harboring immense biodiversity. Healthy soil production is vital for human civilization, as it sustains permaculture, prevents erosion, regulates the water cycle, and supports ecosystems that have enabled societies to thrive for millennia. In Burn.City, our "burn to biochar" ethos transforms waste into nutrient-rich amendments, rebuilding topsoil that's been depleted globally at alarming rates. Some of our land was agricultural farmland where the previous farmer grew carrots in a monocultural way with chemical pesticides and herbicides.  
@@ -128,7 +128,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   We've planted, improved existing gardens and harvested a diverse array of crops, emphasizing perennial and healing plants: 500 kg avocados, 1 tonne  coffee, 140 kg taro, and more. New discoveries include black sapote, olives, and various herbs, all grown using low-impact techniques that build soil rather than deplete it.
   
   This growing perspective—regenerative, biodiverse, soil-centric—is key to our vision. By producing biochar and fostering natural systems, we're not just sustaining Cyberia; we're modeling how civilizations can regenerate the planet's most precious resource.
-  ***
+  *
 - ## Product. For Whom Is It?
   
   Cyberia targets digital nomads, pop-up city enthusiasts, and cypherpunks seeking permanence — people tired of rebuilding social circles monthly, dealing with fragmented rentals, and externalizing costs for food and events. 
@@ -144,7 +144,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   We align with Burn.City's critique of pop-up cities as "fires" that inspire but fade — Cyberia functions as a "kiln" for mastery and production, favoring committed relationships over transactional ones and deep education over chaotic networking. Our objective is to create defensible, high-margin ecosystems that compound value across daily, weekly, and monthly experiences while proving that remote land can transform into thriving communities within several years.
   
   ![burn.city](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafkreifguqy6upn4u5kzldztzvzkbbi7ukhkem6gwraiwrmowbcklfw5mq)
-  ***
+  *
 - ## Zones
 - ### Rockets estate
   6 Ha event space fully equipped with all essential infrastructure — this is the heart of Burn.City operations.
@@ -167,7 +167,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   In just a 40-minute drive, you can reach 20 waterfalls that visitors mark as the most beautiful in the region. 
   ![waterfall](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeigte7mq4fyzom3fbhelvpbfcmnrm3u7cwr3gudnwtiug22sy5i5gi)
   
-  ***
+  *
 - ## Venues and Features on the Site
   Cyber Valley is already a living ecosystem we've built, with venues designed for escalating engagement: from 1-hour visits to monthly residencies. Key spots include:
 - ### cyberCube 
@@ -199,7 +199,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
   5 parking zones → up to 130 cars + 200 motorbikes
   Extensive road & path network for transport, trekking, access & daily walking
   
-  We are solving a massive island-wide problem: **Lack of safe, beautiful walking spaces**.
+  We are solving a massive island-wide problem: Lack of safe, beautiful walking spaces.
   We offer a thoughtful network — not boring gym stairs, but a natural part of daily life that supports health and well-being.
   * 14 km of paths with varied elevation
   * 1 km trail to the volcano summit
@@ -207,7 +207,7 @@ And [Burn.City](https://burn.city/), our upcoming "moonly" event set to kickstar
 - ### Other Infrastructure 
   3 experimental aquaponic ponds (Baikal, Titikaka, Toba), animal farm (sheep, chickens, fruit dragon) and plants nursery. 
   ![silky](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeiaimbmmea3dspyfd3hwi4yv6gqjbhyfijagymepqps4xsryupe4m4)
-  ***
+  *
 - ## Conclusion
   Building a civilization from scratch means re-examining everything we currently have from the perspective of first principles. Unfortunately, we don't find ready-made solutions for our civilization. Most of what we have now, we develop ourselves using our passion and experience enforced by AI.
   We are convinced that upgrading our culture to a more rational, we can achieve longevity, immortality, and become a [Type I civilization](https://en.wikipedia.org/wiki/Planetary_civilization) in several decades.

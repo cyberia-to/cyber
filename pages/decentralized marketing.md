@@ -16,16 +16,16 @@ tags:: cyberia- #dema is a concept of the search market without a single ranking
 - [ipfs](https://cyber.page/ipfs/QmUGY1PE8xRKAaRwy7Z63vG49FP9WmykbWxUxahriTELgA)
 - [telegram]
   
-  **## Next**
+  ## Next
   
   Decentralized marketing stake on hash not on price
   
-  **## Cases for DeMa**
+  ## Cases for DeMa
 - nft создателю контента
 - бондинг кривые для семантического ядра
 - дао для управления графа
   
-  **## Ad app**
+  ## Ad app
   
   Введите ключевое слово
   

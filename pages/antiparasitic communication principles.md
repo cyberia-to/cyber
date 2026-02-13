@@ -10,8 +10,8 @@ tags:: note
 - ## The Sovereignty Principle
 	- Before raising a need, ask yourself:
 	- > *"Am I proposing something within my control, or requesting something outside of it?"*
-	- **Sovereign contribution** = specific person + specific action + your commitment to facilitate
-	- **Parasitic pattern** = abstract category + vague expectation + zero personal stake
+	- Sovereign contribution = specific person + specific action + your commitment to facilitate
+	- Parasitic pattern = abstract category + vague expectation + zero personal stake
 - ## Examples
 	- | ❌ Parasitic | ✅ Sovereign |
 	  |-------------|-------------|

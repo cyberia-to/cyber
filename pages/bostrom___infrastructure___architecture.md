@@ -24,12 +24,12 @@ tags:: bostrom, infrastructure, architecture
 		- Maintains complete blockchain history from genesis
 		- Powers the [[cyberindex]] GraphQL API
 		- Used for historical queries and block explorer
-		- **NOT a validator** — infrastructure node only
+		- NOT a validator — infrastructure node only
 	- ### RPC Node
 		- Pruned node with recent blockchain state
 		- Serves public RPC, LCD, and gRPC endpoints
 		- Runs [[Hermes]] IBC relayer for cross-chain connectivity
-		- **NOT a validator** — infrastructure node only
+		- NOT a validator — infrastructure node only
 	- ### IPFS Storage
 		- Stores content-addressed data for the [[knowledge graph]]
 		- Provides public IPFS gateway
@@ -37,14 +37,14 @@ tags:: bostrom, infrastructure, architecture
 -
 - ## Hardware Requirements
 	- Running a Bostrom node requires:
-		- **GPU**: NVIDIA GTX 1080 or better (required for consensus)
-		- **RAM**: 64GB recommended
-		- **Storage**:
+		- GPU: NVIDIA GTX 1080 or better (required for consensus)
+		- RAM: 64GB recommended
+		- Storage:
 			- Archive node: 5TB+ (grows over time)
 			- Pruned node: 500GB
-		- **CPU**: Modern multi-core processor
+		- CPU: Modern multi-core processor
 	- #+BEGIN_NOTE
-	  GPU is **required** for Bostrom consensus. The network uses GPU-accelerated PageRank for the [[knowledge graph]] ranking.
+	  GPU is required for Bostrom consensus. The network uses GPU-accelerated PageRank for the [[knowledge graph]] ranking.
 	  #+END_NOTE
 -
 - ## Data Flow

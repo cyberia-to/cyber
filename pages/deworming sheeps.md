@@ -48,7 +48,7 @@ tags:: species
 - Some anthelmintics are more commonly used in certain situations than others, and the choice of drug might be influenced by factors such as the age of the sheep, pregnancy status, and known resistance patterns.
 - It's crucial to rotate between different classes of anthelmintics to prevent or slow the development of resistance.
   
-  **Consultation with a Veterinarian**:
+  Consultation with a Veterinarian:
   Before implementing any deworming program, it's essential to consult with a veterinarian. A professional can provide advice tailored to your specific situation, including the selection of the most appropriate anthelmintic, the correct dosage, and the optimal treatment schedule based on the parasite risk and resistance patterns in your area.
 -
 -

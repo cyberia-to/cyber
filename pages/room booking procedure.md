@@ -30,4 +30,4 @@ tags:: note
 	- agent: please note that check-out must be completed by 04:00 utc (12:00 bali time). will that work for you?
 	- guest: yes, that’s fine.
 	- agent: great! your booking is confirmed.
-- ⚠ important: a booking is not considered complete without confirming **all** required details.
+- ⚠ important: a booking is not considered complete without confirming all required details.

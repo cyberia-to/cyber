@@ -1,7 +1,7 @@
 tags:: note
 - class of plants which can extract [[metals]] from [[soil]] called [[phytominers]]
   
-  | **[[metals/factors]]** | **[[hyperaccumulator plants]]** | **[[incineration]]** | **[[extraction method]]** | **[[purification method]]** | **[[recovery yield]]** |
+  | [[metals/factors]] | [[hyperaccumulator plants]] | [[incineration]] | [[extraction method]] | [[purification method]] | [[recovery yield]] |
   |------------------------|---------------------------------|----------------------------|---------------------------|-----------------------------|--------------------------------|
   | [[nickel]]             | [[alyssum]], [[thlaspi]], [[brassica juncea]], [[salix]], [[berkheya coddii]], [[hypericum perforatum]] | 800°C - 1000°C | [[acid leaching]] | [[electrolysis]], [[solvent extraction]] | 1-3% |
   | [[zinc]]               | [[thlaspi]], [[chrysopogon zizanioides]], [[brassica juncea]], [[salix]], [[arabidopsis halleri]], [[populus]], [[phragmites australis]] | 650°C - 800°C | [[acid leaching]] | [[precipitation]], [[ion exchange]] | 1-5% |

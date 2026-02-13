@@ -1,37 +1,37 @@
 tags:: article
-- **GFlowNet**: a proposal engine that *samples edits* (small graph changes) in proportion to how good they look.
-- **Focus‑Flow**: a physics‑style process that keeps a live **attention field** \(π\) over the graph (what the network cares about now).
+- GFlowNet: a proposal engine that *samples edits* (small graph changes) in proportion to how good they look.
+- Focus‑Flow: a physics‑style process that keeps a live attention field \(π\) over the graph (what the network cares about now).
 
-**Why marry them**
-- Let **π steer what to try next**; let accepted edits **reshape π**. That closes the loop so exploration stays useful and the network keeps learning.
+Why marry them
+- Let π steer what to try next; let accepted edits reshape π. That closes the loop so exploration stays useful and the network keeps learning.
 
-**The loop (5 steps)**
+The loop (5 steps)
 1) Snapshot the current focus \(π_t\).  
 2) GFlowNet proposes a batch of edits (add link, up‑weight, attach evidence…).  
-3) Score each edit with a *fast local* focus‑gain estimate **Δπ̂** (no global recompute).  
+3) Score each edit with a *fast local* focus‑gain estimate Δπ̂ (no global recompute).  
 4) Pass budget/guard checks → commit the best subset.  
-5) Recompute focus **π_{t+1}**, train GFlowNet on what worked, repeat.
+5) Recompute focus π_{t+1}, train GFlowNet on what worked, repeat.
 
-**What’s rewarded**
-- Edits that **increase order/information** (lower free energy / raise useful focus) get paid; noise burns fees. Incentives match the global objective.
+What’s rewarded
+- Edits that increase order/information (lower free energy / raise useful focus) get paid; noise burns fees. Incentives match the global objective.
 
-**Guardrails (so it doesn’t go off the rails)**
+Guardrails (so it doesn’t go off the rails)
 - Quotas per topic, fees, and rate limits at hot nodes.
 - Proofs/audits for suspicious Δπ̂.
 - Costs in the reward: storage/compute/network all counted.
 - Rollback window + revert metrics keep reliability in check.
 
-**Glossary (one‑liners)**
-- **π**: the network’s current attention allocation over nodes.
-- **Δπ̂**: quick estimate of how much an edit would shift π locally.
-- **Edit/Diff**: a small set of graph changes (e.g., add_link u→v with weight/tag).
-- **R(x)**: the reward used by GFlowNet when proposing edits.
-- **SubTB**: a training trick (sub‑trajectory balance) that spreads credit over long edit sequences.
-- **Cyberlink**: a signed edge; the atomic “fact” we add.
+Glossary (one‑liners)
+- π: the network’s current attention allocation over nodes.
+- Δπ̂: quick estimate of how much an edit would shift π locally.
+- Edit/Diff: a small set of graph changes (e.g., add_link u→v with weight/tag).
+- R(x): the reward used by GFlowNet when proposing edits.
+- SubTB: a training trick (sub‑trajectory balance) that spreads credit over long edit sequences.
+- Cyberlink: a signed edge; the atomic “fact” we add.
 
-**Tiny worked example (concrete)**
+Tiny worked example (concrete)
 1) Question spikes interest in *Cat*.  
-2) π raises near **Cat**; GFlowNet proposes: (Cat→Animal [h‑edge]), (Cat→Wikipedia‑Cat [d‑edge]).  
+2) π raises near Cat; GFlowNet proposes: (Cat→Animal [h‑edge]), (Cat→Wikipedia‑Cat [d‑edge]).  
 3) Δπ̂ says both improve coverage with low cost; budgets OK.  
 4) Commit; Focus‑Flow diffuses attention to Animal + sources.  
 5) π_{t+1} stabilises with better hierarchy & references.  

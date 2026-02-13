@@ -1,8 +1,8 @@
 tags:: cyber
 # Trident: Universal Language for Provable Computation
 
-**Design Document — v0.2 Draft**
-**February 2026**
+Design Document — v0.2 Draft
+February 2026
 
 *From single-target ZK language to universal compilation source for all provable virtual machines.*
 
@@ -10,11 +10,11 @@ tags:: cyber
 
 ## 1. Executive Summary
 
-Trident is a minimal, security-first programming language originally targeting Triton VM for zero-knowledge provable computation. This document outlines the design for evolving Trident into a **universal source language** capable of compiling to any zkVM — including Triton VM, Miden VM, Cairo VM (StarkWare), SP1/RISC Zero (RISC-V zkVMs), and NockVM — while preserving the core properties that make it valuable: bounded execution, cost transparency, and auditability.
+Trident is a minimal, security-first programming language originally targeting Triton VM for zero-knowledge provable computation. This document outlines the design for evolving Trident into a universal source language capable of compiling to any zkVM — including Triton VM, Miden VM, Cairo VM (StarkWare), SP1/RISC Zero (RISC-V zkVMs), and NockVM — while preserving the core properties that make it valuable: bounded execution, cost transparency, and auditability.
 
 ### 1.1 Thesis
 
-Approximately **76% of Trident's language surface** is already portable or trivially abstractable across zkVMs. The remaining ~24% consists of **backend extensions** — target-specific capabilities that each VM exposes through a uniform extension mechanism. This makes Trident an unusually strong candidate for a universal provable computation language, requiring architectural refactoring rather than language redesign.
+Approximately 76% of Trident's language surface is already portable or trivially abstractable across zkVMs. The remaining ~24% consists of backend extensions — target-specific capabilities that each VM exposes through a uniform extension mechanism. This makes Trident an unusually strong candidate for a universal provable computation language, requiring architectural refactoring rather than language redesign.
 
 ### 1.2 Core Insight
 
@@ -41,15 +41,15 @@ This is analogous to how `int` in C means "integer of platform-native width." Yo
 └─────────┴─────────┴─────────┴────────────┘
 ```
 
-Each backend implements the abstraction layer for its target VM and may publish **backend extensions** — additional types, intrinsics, and standard library modules that expose target-specific capabilities. Programs that use extensions are explicitly bound to that backend.
+Each backend implements the abstraction layer for its target VM and may publish backend extensions — additional types, intrinsics, and standard library modules that expose target-specific capabilities. Programs that use extensions are explicitly bound to that backend.
 
 ### 1.4 Design Goals
 
-1. **Write once, prove anywhere.** A single Trident program compiles to multiple zkVM targets with target-appropriate optimizations.
-2. **Preserve auditability.** Direct emission (no IR) for stack-machine targets; minimal IR for register-machine targets.
-3. **Cost transparency per target.** Every function annotated with proving cost in the target VM's native cost model.
-4. **Backend extensions, not limitations.** Target-specific features are capabilities a backend *adds* to the universal core, not restrictions on portability.
-5. **Incremental adoption.** Existing Triton-targeting Trident programs continue to compile unchanged.
+1. Write once, prove anywhere. A single Trident program compiles to multiple zkVM targets with target-appropriate optimizations.
+2. Preserve auditability. Direct emission (no IR) for stack-machine targets; minimal IR for register-machine targets.
+3. Cost transparency per target. Every function annotated with proving cost in the target VM's native cost model.
+4. Backend extensions, not limitations. Target-specific features are capabilities a backend *adds* to the universal core, not restrictions on portability.
+5. Incremental adoption. Existing Triton-targeting Trident programs continue to compile unchanged.
 
 ### 1.5 Non-Goals
 
@@ -66,28 +66,28 @@ Each backend implements the abstraction layer for its target VM and may publish 
 
 | Target | Architecture | Field | Hash | Proof System | Priority |
 |--------|-------------|-------|------|-------------|:--------:|
-| **Triton VM** | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | Tip5 | STARK | Native |
-| **Miden VM** | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | RPO | STARK | 1 |
-| **Cairo VM** | Register (AP, FP, PC) | 252-bit prime | Poseidon/Pedersen | STARK | 2 |
-| **SP1 / RISC Zero** | Register (RISC-V rv32im) | Various | Various | STARK | 3 |
-| **NockVM (Zorp)** | Combinator reduction | Arbitrary-precision | TBD | STARK | 4 (exploratory) |
+| Triton VM | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | Tip5 | STARK | Native |
+| Miden VM | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | RPO | STARK | 1 |
+| Cairo VM | Register (AP, FP, PC) | 252-bit prime | Poseidon/Pedersen | STARK | 2 |
+| SP1 / RISC Zero | Register (RISC-V rv32im) | Various | Various | STARK | 3 |
+| NockVM (Zorp) | Combinator reduction | Arbitrary-precision | TBD | STARK | 4 (exploratory) |
 
 ### 2.2 Architectural Families
 
-**Family A: Stack Machines** — Triton VM, Miden VM
+Family A: Stack Machines — Triton VM, Miden VM
 
 - 16-element operational stack
 - Stack manipulation instructions (swap, dup, pop)
 - Direct emission from AST traversal (no IR needed)
 - Trident's current emission model works with minor adaptation
 
-**Family B: Register Machines** — Cairo VM, RISC-V zkVMs (SP1, RISC Zero)
+Family B: Register Machines — Cairo VM, RISC-V zkVMs (SP1, RISC Zero)
 
 - Named registers or register file
 - Requires register allocation
 - Needs a lightweight IR between type checking and emission
 
-**Family C: Reduction Machines** — NockVM
+Family C: Reduction Machines — NockVM
 
 - Binary tree (noun) data model
 - Combinator-based computation
@@ -196,7 +196,7 @@ Features that exist on all zkVMs but with different concrete representations. Ea
 
 ### 4.1 I/O Primitives
 
-Every zkVM distinguishes **public input**, **public output**, and **private witness**. The mechanism differs but the semantic model is identical.
+Every zkVM distinguishes public input, public output, and private witness. The mechanism differs but the semantic model is identical.
 
 | Operation | Triton | Miden | Cairo | SP1 |
 |-----------|--------|-------|-------|-----|
@@ -204,7 +204,7 @@ Every zkVM distinguishes **public input**, **public output**, and **private witn
 | Write public output | `write_io N` | Output stack | Program output segment | `sp1_io::commit()` |
 | Read private witness | `divine N` | Advice provider | Hint block | `sp1_io::read()` (witness) |
 
-**User-facing syntax unchanged:**
+User-facing syntax unchanged:
 
 ```
 let a: Field = pub_read()       // Read from public input
@@ -212,7 +212,7 @@ pub_write(result)               // Write to public output
 let s: Field = divine()         // Read from private witness
 ```
 
-**Backend interface:**
+Backend interface:
 
 ```rust
 trait IOBackend {
@@ -230,14 +230,14 @@ trait IOBackend {
 | First read (uninitialized) | Prover-supplied value (non-deterministic) | Undefined | Returns zero |
 | Block read/write | Native instructions | Loop of single reads | Load/store instructions |
 
-**User-facing syntax unchanged:**
+User-facing syntax unchanged:
 
 ```
 ram_write(address, value)
 let v: Field = ram_read(address)
 ```
 
-**Backend interface:**
+Backend interface:
 
 ```rust
 trait MemoryBackend {
@@ -260,7 +260,7 @@ The compiler emits warnings when targeting write-once memory (Cairo) if a progra
 | Spill strategy | RAM spill when >16 live variables | Register spill to stack frame |
 | Operand access | `swap N` / `dup N` to bring to top | Direct register addressing |
 
-**Backend interface:**
+Backend interface:
 
 ```rust
 trait AllocationStrategy {
@@ -285,7 +285,7 @@ Hash functions are the cryptographic backbone of every zkVM but each uses a diff
 | Cairo | Poseidon / Pedersen | Varies | Builtin coprocessor |
 | SP1 | SHA-256, Keccak, Poseidon (precompiles) | 32 bytes | Precompile cost |
 
-**User-facing syntax unchanged:**
+User-facing syntax unchanged:
 
 ```
 let d: Digest = hash(input)
@@ -294,7 +294,7 @@ sponge_absorb(elements)
 let squeezed = sponge_squeeze()
 ```
 
-**Target constants exposed to programs:**
+Target constants exposed to programs:
 
 ```
 DIGEST_WIDTH    → 5 (Triton/Tip5), 4 (Miden/RPO), varies (others)
@@ -302,9 +302,9 @@ HASH_RATE       → 10 (Tip5), 8 (RPO), 3 (Poseidon), varies
 FIELD_LIMBS     → 2 (Goldilocks), 8 (252-bit Cairo)
 ```
 
-**`Digest` type:** Defined as `[Field; DIGEST_WIDTH]` where `DIGEST_WIDTH` is a compile-time constant set by the target. This preserves Trident's "what you see is what you prove" philosophy — the width is visible, not hidden behind an opaque type.
+`Digest` type: Defined as `[Field; DIGEST_WIDTH]` where `DIGEST_WIDTH` is a compile-time constant set by the target. This preserves Trident's "what you see is what you prove" philosophy — the width is visible, not hidden behind an opaque type.
 
-**Backend interface:**
+Backend interface:
 
 ```rust
 struct HashConfig {
@@ -326,7 +326,7 @@ Merkle verification is algorithmically identical across all zkVMs: iterate from 
 | Cairo | Library code using Poseidon | Hash loop |
 | SP1/RZ | Library code using precompile | Hash loop |
 
-**Abstraction strategy:** `std.merkle` becomes target-polymorphic. On VMs with native Merkle instructions, the body compiles to a single instruction. On others, it compiles to a loop of hash operations with `divine()` for sibling digests:
+Abstraction strategy: `std.merkle` becomes target-polymorphic. On VMs with native Merkle instructions, the body compiles to a single instruction. On others, it compiles to a loop of hash operations with `divine()` for sibling digests:
 
 ```
 pub fn verify(root: Digest, leaf: Digest, index: U32, depth: U32) {
@@ -353,7 +353,7 @@ Every zkVM has a proving cost; the specific dimensions change but the computatio
 | `--costs` / `--hotspots` CLI | ✅ Same framework | Numbers differ |
 | Boundary proximity warnings | STARK-based VMs only | — |
 
-**Backend interface:**
+Backend interface:
 
 ```rust
 trait CostModel {
@@ -382,7 +382,7 @@ Events compose from I/O and hash abstractions — `emit` serializes to public ou
 
 ## 5. Backend Extensions
 
-Backend extensions are capabilities that a target VM **adds** to the universal core. They are not limitations or second-class features — they are the mechanism by which each backend exposes its unique power.
+Backend extensions are capabilities that a target VM adds to the universal core. They are not limitations or second-class features — they are the mechanism by which each backend exposes its unique power.
 
 ### 5.1 Extension Model
 
@@ -410,16 +410,16 @@ Each backend may provide extensions in four categories:
 
 | Category | What it provides | Example |
 |----------|-----------------|---------|
-| **Types** | Additional primitive or composite types | `XField` (Triton), `Felt252` (Cairo) |
-| **Intrinsics** | Native VM instructions exposed as functions | `xx_dot_step` (Triton), `mtree_set` (Miden) |
-| **Inline Assembly** | Direct access to target instruction set | `asm(triton) { dup 0 add }` |
-| **Standard Library Modules** | Higher-level APIs built on target capabilities | `ext.triton.kernel`, `ext.miden.account` |
+| Types | Additional primitive or composite types | `XField` (Triton), `Felt252` (Cairo) |
+| Intrinsics | Native VM instructions exposed as functions | `xx_dot_step` (Triton), `mtree_set` (Miden) |
+| Inline Assembly | Direct access to target instruction set | `asm(triton) { dup 0 add }` |
+| Standard Library Modules | Higher-level APIs built on target capabilities | `ext.triton.kernel`, `ext.miden.account` |
 
 ### 5.3 Triton Backend Extensions
 
 The Triton backend extends the universal core with capabilities specific to Triton VM's ISA and the Neptune Cash ecosystem.
 
-**Extension Types:**
+Extension Types:
 
 ```
 XField          → Cubic extension field F_p[X]/(X³−X+1)
@@ -427,7 +427,7 @@ XField          → Cubic extension field F_p[X]/(X³−X+1)
                   Native arithmetic: xx_add, xx_mul, x_invert, xb_mul
 ```
 
-**Extension Intrinsics:**
+Extension Intrinsics:
 
 | Function | TASM Instruction | Purpose |
 |----------|-----------------|---------|
@@ -436,7 +436,7 @@ XField          → Cubic extension field F_p[X]/(X³−X+1)
 | `sponge_absorb_mem(ptr)` | `sponge_absorb_mem` | Absorb from RAM (combines sponge + memory read) |
 | `merkle_step_mem(ptr, idx, d)` | `merkle_step_mem` | Merkle step from RAM (reusable auth paths) |
 
-**Extension Standard Library:**
+Extension Standard Library:
 
 ```
 ext.triton.xfield       → XField type, arithmetic, dot products
@@ -445,7 +445,7 @@ ext.triton.utxo          → UTXO verification
 ext.triton.stark         → Recursive STARK verifier components
 ```
 
-**Inline Assembly:**
+Inline Assembly:
 
 ```
 asm(triton) {
@@ -459,7 +459,7 @@ asm(triton) {
 
 The Miden backend extends the universal core with Miden VM's account model and advanced advice provider capabilities.
 
-**Extension Intrinsics:**
+Extension Intrinsics:
 
 | Function | Miden Instruction | Purpose |
 |----------|------------------|---------|
@@ -467,7 +467,7 @@ The Miden backend extends the universal core with Miden VM's account model and a
 | `adv_pipe(ptr, count)` | `adv_pipe` | Batch read from advice provider to memory |
 | `exec_kernel(proc)` | `exec.kernel::proc` | Execute kernel procedure |
 
-**Extension Standard Library:**
+Extension Standard Library:
 
 ```
 ext.miden.account        → Miden account model (account ID, nonce, storage)
@@ -476,7 +476,7 @@ ext.miden.advice         → Extended advice provider API
 ext.miden.wallet         → Wallet operations (send, receive)
 ```
 
-**Inline Assembly:**
+Inline Assembly:
 
 ```
 asm(miden) {
@@ -490,14 +490,14 @@ asm(miden) {
 
 The Cairo backend extends the universal core with StarkNet-specific capabilities and Cairo's 252-bit field properties.
 
-**Extension Types:**
+Extension Types:
 
 ```
 Felt252         → Explicit 252-bit field element
                   (alias for Field on Cairo target, distinct type for clarity)
 ```
 
-**Extension Intrinsics:**
+Extension Intrinsics:
 
 | Function | Cairo Builtin | Purpose |
 |----------|--------------|---------|
@@ -505,7 +505,7 @@ Felt252         → Explicit 252-bit field element
 | `ec_point_add(p, q)` | EC_OP builtin | Elliptic curve point addition |
 | `bitwise_and(a, b)` | Bitwise builtin | Native bitwise operations |
 
-**Extension Standard Library:**
+Extension Standard Library:
 
 ```
 ext.cairo.starknet       → StarkNet contract interface
@@ -513,7 +513,7 @@ ext.cairo.felt252        → 252-bit field specific utilities
 ext.cairo.builtin        → Builtin runner access (range_check, ECDSA, etc.)
 ```
 
-**Inline Assembly:**
+Inline Assembly:
 
 ```
 asm(cairo) {
@@ -525,7 +525,7 @@ asm(cairo) {
 
 The RISC-V zkVM backends extend the universal core with precompile access and standard RISC-V capabilities.
 
-**Extension Intrinsics:**
+Extension Intrinsics:
 
 | Function | Precompile | Purpose |
 |----------|-----------|---------|
@@ -533,7 +533,7 @@ The RISC-V zkVM backends extend the universal core with precompile access and st
 | `keccak256(data)` | Keccak precompile | Keccak-256 hash (Ethereum compatible) |
 | `secp256k1_verify(sig, msg, pk)` | secp256k1 precompile | ECDSA signature verification |
 
-**Extension Standard Library:**
+Extension Standard Library:
 
 ```
 ext.sp1.io               → SP1-specific I/O patterns
@@ -554,7 +554,7 @@ This means future zkVMs can be supported without modifying the Trident core comp
 
 ### 5.8 Extension Usage Patterns
 
-**Portable program (no extensions):**
+Portable program (no extensions):
 
 ```
 program portable_verifier
@@ -570,7 +570,7 @@ fn main() {
 // Compiles to: triton, miden, cairo, sp1
 ```
 
-**Program with backend extension (target-bound):**
+Program with backend extension (target-bound):
 
 ```
 program triton_stark_verifier
@@ -586,7 +586,7 @@ fn main() {
 // Compiles to: triton only
 ```
 
-**Program with conditional extensions (multi-target with specialization):**
+Program with conditional extensions (multi-target with specialization):
 
 ```
 program optimized_verifier
@@ -672,7 +672,7 @@ Source (.tri)
 | `diagnostic.rs` | ~200 | None |
 | `lsp.rs` | ~800 | Target-aware completions and hover |
 | `span.rs` | ~100 | None |
-| **Total shared** | **~6100** | **~90% unchanged** |
+| Total shared | ~6100 | ~90% unchanged |
 
 ### 6.4 Target Configuration
 
@@ -797,7 +797,7 @@ modules = ["ext.cairo.starknet", "ext.cairo.felt252", "ext.cairo.builtin"]
 
 ### 6.5 Backend Trait System
 
-**Stack VM Backend:**
+Stack VM Backend:
 
 ```rust
 trait StackBackend {
@@ -827,7 +827,7 @@ trait StackBackend {
 
 `TritonBackend` and `MidenBackend` share ~70% of emission logic (function prologue/epilogue, loop structure, if/else branching, stack layout). They differ in instruction mnemonics, hash operations, and extension intrinsics.
 
-**Register VM Backend (IR-based):**
+Register VM Backend (IR-based):
 
 ```rust
 // Minimal SSA-like IR for register machines
@@ -1028,7 +1028,7 @@ When a native intrinsic exists, the function body is ignored and the native inst
 | `sponge_absorb()` arity changes | 10 args on Triton, 8 on Miden, 3 on Cairo | Array argument: `sponge_absorb(elements: [Field; HASH_RATE])` |
 | Bare `asm { }` deprecated | Needs target tag for multi-target builds | Bare `asm { }` treated as `asm(triton) { }` with deprecation warning |
 
-**Edition strategy:**
+Edition strategy:
 
 ```toml
 [project]
@@ -1045,7 +1045,7 @@ Programs without an edition default to Triton-compatible behavior. Edition `"202
 
 ### 9.1 Phase 0 — Internal Refactoring (No New Targets)
 
-**Duration:** 2-3 weeks | **Risk:** Zero — no external-facing changes
+Duration: 2-3 weeks | Risk: Zero — no external-facing changes
 
 Restructure compiler internals to support pluggable backends without changing any output.
 
@@ -1059,13 +1059,13 @@ Restructure compiler internals to support pluggable backends without changing an
 | Add `--target` CLI flag (only `triton` accepted) | `main.rs` | 1 day |
 | Add target TOML loading | `target.rs` | 1 day |
 | Restructure `std/` into layered directories, create `ext/` | `std/`, `resolve.rs` | 1 day |
-| **Validation:** all 350+ existing tests pass unchanged | | 1 day |
+| Validation: all 350+ existing tests pass unchanged | | 1 day |
 
-**Deliverable:** Same compiler, same output, cleaner architecture. `TritonBackend` is the only backend but accessed through the trait interface.
+Deliverable: Same compiler, same output, cleaner architecture. `TritonBackend` is the only backend but accessed through the trait interface.
 
 ### 9.2 Phase 1 — Miden VM Backend
 
-**Duration:** 6-8 weeks | **Prerequisite:** Phase 0
+Duration: 6-8 weeks | Prerequisite: Phase 0
 
 Why Miden first: same field (Goldilocks), same architecture (stack, 16-element), same proof system family (STARK). Maximum code reuse, minimum risk.
 
@@ -1082,11 +1082,11 @@ Why Miden first: same field (Goldilocks), same architecture (stack, 16-element),
 | Port examples to dual-target | 1 week |
 | Test suite (~100 new tests) | 1 week |
 
-**Deliverable:** `trident build --target miden` produces valid Miden Assembly. Programs using only universal core + abstraction layer compile to both targets unchanged.
+Deliverable: `trident build --target miden` produces valid Miden Assembly. Programs using only universal core + abstraction layer compile to both targets unchanged.
 
 ### 9.3 Phase 2 — Cairo/Sierra Backend
 
-**Duration:** 3-4 months | **Prerequisite:** Phase 1
+Duration: 3-4 months | Prerequisite: Phase 1
 
 Introduces the register-machine IR and first non-stack backend.
 
@@ -1103,11 +1103,11 @@ Introduces the register-machine IR and first non-stack backend.
 | Cairo backend extension modules (`ext.cairo.*`) | 1 week |
 | Test suite (~150 new tests) | 2 weeks |
 
-**Deliverable:** `trident build --target cairo` produces valid Sierra IR. The IR infrastructure enables SP1/RISC Zero with significantly less effort.
+Deliverable: `trident build --target cairo` produces valid Sierra IR. The IR infrastructure enables SP1/RISC Zero with significantly less effort.
 
 ### 9.4 Phase 3 — SP1/RISC Zero Backend
 
-**Duration:** 3-4 months | **Prerequisite:** Phase 2 (reuses IR)
+Duration: 3-4 months | Prerequisite: Phase 2 (reuses IR)
 
 | Task | Effort |
 |------|--------|
@@ -1121,14 +1121,14 @@ Introduces the register-machine IR and first non-stack backend.
 
 ### 9.5 Phase 4 — NockVM (Exploratory)
 
-**Duration:** TBD (research phase) | **Prerequisite:** Phase 2+
+Duration: TBD (research phase) | Prerequisite: Phase 2+
 
 | Task | Effort |
 |------|--------|
 | Research Nock compilation targets and Zorp proving model | 2 weeks |
 | Prototype: Trident subset → Nock formulas (arithmetic + conditionals) | 4 weeks |
 | Evaluate feasibility of full backend | 2 weeks |
-| **Decision point:** proceed to full backend or park | — |
+| Decision point: proceed to full backend or park | — |
 
 ### 9.6 Timeline Summary
 
@@ -1166,7 +1166,7 @@ trident test main.tri --target all --equivalence
 | Hash/Merkle | ~50 per target | Run per-target; verify against reference implementations |
 | Backend extensions | ~30 per target | Run only on matching target |
 | Existing regression | ~350 | Triton regression suite (must never break) |
-| **Total** | **~800+** | |
+| Total | ~800+ | |
 
 ### 10.3 Cross-Target Fuzzing
 
@@ -1227,7 +1227,7 @@ Catches semantic divergences between backends that unit tests might miss.
 
 | # | Feature | Layer | Triton | Miden | Cairo | SP1/RZ | NockVM |
 |:-:|---------|:-----:|:------:|:-----:|:-----:|:------:|:------:|
-| | **Types** | | | | | | |
+| | Types | | | | | | |
 | 1 | `Field` (native field element) | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 2 | `Bool` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 3 | `U32` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -1237,25 +1237,25 @@ Catches semantic divergences between backends that unit tests might miss.
 | 7 | `Digest` (`[Field; DIGEST_WIDTH]`) | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 8 | `XField` (cubic extension) | Extension | ✅ | — | — | — | — |
 | 9 | `Felt252` (explicit 252-bit) | Extension | — | — | ✅ | — | — |
-| | **Field Arithmetic** | | | | | | |
+| | Field Arithmetic | | | | | | |
 | 10 | `a + b` (field add) | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 11 | `a * b` (field mul) | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 12 | `inv(a)` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 13 | `neg(a)` / `sub(a, b)` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 14 | `a == b` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 15 | `split(a)` → `[U32; FIELD_LIMBS]` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Integer Arithmetic** | | | | | | |
+| | Integer Arithmetic | | | | | | |
 | 16 | `a < b` (u32 compare) | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 17 | `a & b`, `a ^ b` (bitwise) | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 18 | `a /% b` (divmod) | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 19 | `log2`, `pow`, `popcount` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Control Flow** | | | | | | |
+| | Control Flow | | | | | | |
 | 20 | `if / else` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 21 | `for` bounded loops | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 22 | `match` expressions | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 23 | `assert()` / `assert_eq()` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 24 | `assert_digest()` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Functions & Modules** | | | | | | |
+| | Functions & Modules | | | | | | |
 | 25 | `fn` definitions | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 26 | `pub` / private visibility | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 27 | `module` / `use` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -1263,24 +1263,24 @@ Catches semantic divergences between backends that unit tests might miss.
 | 29 | Size-generic `fn<N>()` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 30 | `#[cfg()]` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 31 | `#[test]` | Core | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **I/O** | | | | | | |
+| | I/O | | | | | | |
 | 32 | `pub_read()` / `pub_write()` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 33 | `divine()` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 34 | `pub input` / `pub output` / `sec input` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Memory** | | | | | | |
+| | Memory | | | | | | |
 | 35 | `ram_read()` / `ram_write()` | Abstraction | ✅ | ✅ | ⚠️¹ | ✅ | ✅ |
 | 36 | `ram_read_block` / `ram_write_block` | Abstraction | ✅ | ✅ | ⚠️¹ | ✅ | ✅ |
-| | **Cryptographic Primitives** | | | | | | |
+| | Cryptographic Primitives | | | | | | |
 | 37 | `hash()` → `Digest` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 38 | `sponge_init/absorb/squeeze` | Abstraction | ✅ | ✅ | ✅ | ⚠️² | ⚠️ |
 | 39 | `merkle.verify()` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Events** | | | | | | |
+| | Events | | | | | | |
 | 40 | `emit Event { ... }` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 41 | `seal Event { ... }` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Cost Model** | | | | | | |
+| | Cost Model | | | | | | |
 | 42 | `--costs` / `--hotspots` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
 | 43 | `--annotate` / `--compare` | Abstraction | ✅ | ✅ | ✅ | ✅ | ✅ |
-| | **Backend Extensions** | | | | | | |
+| | Backend Extensions | | | | | | |
 | 44 | `XField` arithmetic | Extension | ✅ | — | — | — | — |
 | 45 | `xx_dot_step` / `xb_dot_step` | Extension | ✅ | — | — | — | — |
 | 46 | `sponge_absorb_mem` | Extension | ✅ | — | — | — | — |
@@ -1294,7 +1294,7 @@ Catches semantic divergences between backends that unit tests might miss.
 | 54 | secp256k1 verification | Extension | — | — | — | ✅ | — |
 | 55 | Inline assembly | Extension | ✅³ | ✅³ | ✅³ | ✅³ | ✅³ |
 
-**Notes:**
+Notes:
 ¹ Cairo memory is write-once; compiler warns on multiple writes to same address
 ² Software sponge implementation via precompile; higher cost than native
 ³ Target-tagged: `asm(triton) { ... }`, `asm(miden) { ... }`, etc. Each backend accepts only its own assembly syntax
@@ -1303,9 +1303,9 @@ Catches semantic divergences between backends that unit tests might miss.
 
 | Layer | Feature count | % of language | Description |
 |:-----:|:------------:|:-------------:|-------------|
-| **Universal Core** | 31 | **56%** | Compiles identically to all targets |
-| **Abstraction Layer** | 12 | **22%** | Same syntax, per-target dispatch |
-| **Backend Extensions** | 12+ | **22%** | Target-specific capabilities (open-ended) |
+| Universal Core | 31 | 56% | Compiles identically to all targets |
+| Abstraction Layer | 12 | 22% | Same syntax, per-target dispatch |
+| Backend Extensions | 12+ | 22% | Target-specific capabilities (open-ended) |
 
 ---
 

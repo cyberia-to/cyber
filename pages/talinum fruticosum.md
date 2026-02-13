@@ -67,6 +67,6 @@ alias:: ceylon spinach, waterleaf, cariru, gbure
 	  | [[phytosterols]]              | leaves     | present                         | [[campesterol]], [[sitosterol]]; [[brassinosteroid]] (growth hormones)|
 	  | [[terpenoids]]                | leaves     | present                         | plant defense and growth regulators                               |
 	- ## operations:
-		- **propagation**: propagated easily by seed or stem cuttings, stem cuttings root readily in moist soil or water within 7–10 days
-		- **maintenance**: minimal maintenance; regular watering during dry periods, occasional fertilization with organic compost improves leaf yield
-		- **harvest**: leaves harvested regularly once plants mature, ideally picking younger leaves for culinary uses and medicinal extracts, flowers harvested occasionally for ornamental purposes or extracts
+		- propagation: propagated easily by seed or stem cuttings, stem cuttings root readily in moist soil or water within 7–10 days
+		- maintenance: minimal maintenance; regular watering during dry periods, occasional fertilization with organic compost improves leaf yield
+		- harvest: leaves harvested regularly once plants mature, ideally picking younger leaves for culinary uses and medicinal extracts, flowers harvested occasionally for ornamental purposes or extracts

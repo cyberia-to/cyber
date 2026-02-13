@@ -67,56 +67,56 @@ alias:: plum
 -
 - ### traditional medicine recipes
   
-  **prune decoction for [[constipation]] and [[digestion]]**
-	- **ingredients**
+  prune decoction for [[constipation]] and [[digestion]]
+	- ingredients
 		- 5–7 dried prunes
 		- 2 cups of water
-	- **instructions**
+	- instructions
 		- soak the prunes in water overnight.
 		- in the morning, boil the mixture for 10–15 minutes.
 		- strain and let cool slightly.
 		- drink 1 cup in the morning on an empty stomach.
-	- **uses**
+	- uses
 		- traditionally used as a natural [[laxative]] for [[relieve constipation]]. prunes are rich in [[sorbitol]] and [[dietary fiber]], which promote [[bowel movements]] and [[digestive health]].
-- **plum bark tea for [[diarrhea]]**
-	- **ingredients**
+- plum bark tea for [[diarrhea]]
+	- ingredients
 		- 1 tablespoon of dried plum bark (shredded)
 		- 1.5 cups of water
-	- **instructions**
+	- instructions
 		- boil the bark in water for 15 minutes.
 		- strain and cool.
 		- drink 1/2 cup, 2 times per day until symptoms subside.
-	- **uses**
+	- uses
 		- used in [[folk medicine]] to treat mild [[diarrhea]] and intestinal [[inflammation]] due to the [[astringent]] [[tannins]] in the bark.
-- **fresh [[plum]] [[juice]] for [[liver]] and [[skin health]]**
-	- **ingredients**
+- fresh [[plum]] [[juice]] for [[liver]] and [[skin health]]
+	- ingredients
 		- 4–5 ripe plums
 		- optional: a few [[mint]] leaves
-	- **instructions**
+	- instructions
 		- wash and remove seeds from the plums.
 		- blend the pulp with 1/2 cup of water until smooth.
 		- strain (optional) and drink once daily.
-	- **uses**
+	- uses
 		- consumed to support [[liver]] function and [[skin clarity]] due to the [[antioxidant]] compounds like [[vitamin c]] and [[phenolics]].
-- **plum [[leaf compress]] for [[skin rashes]] and [[inflammation]]**
-	- **ingredients**
+- plum [[leaf compress]] for [[skin rashes]] and [[inflammation]]
+	- ingredients
 		- 6–8 fresh plum leaves
 		- a small amount of warm water
-	- **instructions**
+	- instructions
 		- crush the leaves into a coarse paste.
 		- apply directly to irritated or inflamed skin.
 		- cover with a clean cloth or gauze.
 		- leave for 20–30 minutes, then rinse gently.
-	- **uses**
+	- uses
 		- used topically to [[reduce inflammation]] and [[soothe rashes]]. plum leaves contain [[tannins]] and [[chlorogenic acid]], which have [[calming]] and [[antimicrobial]] properties.
-- **[[plum]] [[flower]] [[infusion]] for [[relaxation]]**
-	- **ingredients**
+- [[plum]] [[flower]] [[infusion]] for [[relaxation]]
+	- ingredients
 		- 1 tablespoon dried plum flowers
 		- 1 cup hot water
-	- **instructions**
+	- instructions
 		- steep flowers in hot water for 10 minutes.
 		- strain and drink warm.
 		- use once daily in the evening.
-	- **uses**
+	- uses
 		- mildly [[calming]], used in traditional practices to [[reduce anxiety]] and [[promote sleep]]. the floral [[infusion]] is gentle and safe for most people.
 - high potential for [[highland magic]]

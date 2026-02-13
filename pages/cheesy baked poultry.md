@@ -61,4 +61,4 @@ tags:: kitchen/menu, mains
 - ### 💡 tips
 	- if cheese browns too quickly, cover loosely with foil for part of the baking time
 	- let poultry rest for 5 minutes after baking for juicier meat
-- > **enjoy your meal!** 🍗🧀🌿
+- > enjoy your meal! 🍗🧀🌿

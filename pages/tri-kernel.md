@@ -8,7 +8,7 @@ tags:: article, cyber# Tri-Kernel Architecture for Networked Collective Intellig
 
 ## Abstract
 
-We present a minimal architecture for collective intelligence on graphs based on three local operators: **Diffusion** (exploration via random walks), **Springs** (structural consistency via screened Laplacian), and **Heat** (adaptation via graph heat kernel). This tri-kernel emerges not from design preference but from a completeness result: these are the only operator families that survive the locality constraint required for planetary-scale computation.
+We present a minimal architecture for collective intelligence on graphs based on three local operators: Diffusion (exploration via random walks), Springs (structural consistency via screened Laplacian), and Heat (adaptation via graph heat kernel). This tri-kernel emerges not from design preference but from a completeness result: these are the only operator families that survive the locality constraint required for planetary-scale computation.
 
 We prove: (1) the tri-kernel performs inference by minimizing a well-defined free-energy functional; (2) it exhibits positive collective intelligence factor (c > 0) under standard conditions; (3) it provides the necessary and sufficient local operators for any convergent graph ranking algorithm. The architecture satisfies bounded locality, compute-verify symmetry, and scales to 10¹⁵ nodes with logarithmic neighborhood dependence.
 
@@ -22,7 +22,7 @@ The tri-kernel was not designed—it was discovered through systematic eliminati
 
 For planetary-scale networks (10¹⁵ nodes), any algorithm requiring global recomputation for local changes is physically impossible. Light-speed delays across Earth (and eventually Mars at 3-22 minute delays) make global synchronization infeasible. Therefore:
 
-**Definition (h-Local Operator):** An operator T is h-local if the value at node i depends only on nodes within h hops: (Tf)ᵢ = g({fⱼ : d(i,j) ≤ h}).
+Definition (h-Local Operator): An operator T is h-local if the value at node i depends only on nodes within h hops: (Tf)ᵢ = g({fⱼ : d(i,j) ≤ h}).
 
 An operator family is *eventually local* if it admits h-local approximations with error ε using h = O(log(1/ε)).
 
@@ -32,7 +32,7 @@ We scored algorithms on critical properties, filtering by locality first:
 
 | Property | Why Critical | Filter Type |
 |----------|--------------|-------------|
-| **Locality** | No global recompute for local change | HARD (must have) |
+| Locality | No global recompute for local change | HARD (must have) |
 | Convergence | Need stable equilibrium | Required |
 | Uniqueness | Consensus requires one answer | Required |
 | Verifiability | Light clients must check | Required |
@@ -45,14 +45,14 @@ Applying the locality filter:
 | Algorithm | Local? | Status |
 |-----------|--------|--------|
 | PageRank (power iteration) | No (global) | ✂️ Cut |
-| Personalized PageRank (truncated) | **Yes** | ✓ Survives |
+| Personalized PageRank (truncated) | Yes | ✓ Survives |
 | HITS | No (global) | ✂️ Cut |
 | Eigenvector centrality | No (global) | ✂️ Cut |
 | SpringRank (global solve) | No (global) | ✂️ Cut |
-| Screened Laplacian (local CG) | **Yes** | ✓ Survives |
+| Screened Laplacian (local CG) | Yes | ✓ Survives |
 | Heat kernel (full matrix exp) | No (global) | ✂️ Cut |
-| Heat kernel (Chebyshev) | **Yes** | ✓ Survives |
-| Belief propagation | **Yes** | ✓ Survives |
+| Heat kernel (Chebyshev) | Yes | ✓ Survives |
+| Belief propagation | Yes | ✓ Survives |
 
 ### 1.3 What Survived
 
@@ -62,7 +62,7 @@ After filtering, exactly three families of local operators remained:
 - Local screened Laplacian solve (springs with boundary pinning)
 - Local heat kernel approximation (Chebyshev polynomial truncation)
 
-These are not three options among many—they are the **complete set** of local operators for graph ranking. The tri-kernel is what remains after impossibility eliminates everything else.
+These are not three options among many—they are the complete set of local operators for graph ranking. The tri-kernel is what remains after impossibility eliminates everything else.
 
 ---
 
@@ -76,9 +76,9 @@ $$\pi^{(t+1)} = \alpha P^\top \pi^{(t)} + (1-\alpha)u$$
 
 where α ∈ (0,1) is the teleport parameter and u is a prior (often uniform or stake-weighted).
 
-**Properties:** Row-stochastic, preserves probability mass, powers remain local. Under ergodicity (strong connectivity + aperiodicity), converges to unique stationary distribution π*.
+Properties: Row-stochastic, preserves probability mass, powers remain local. Under ergodicity (strong connectivity + aperiodicity), converges to unique stationary distribution π*.
 
-**Answers:** *"Where does probability flow?"*
+Answers: *"Where does probability flow?"*
 
 ### 2.2 Primitive L: Laplacian/Springs
 
@@ -88,9 +88,9 @@ $$(L + \mu I)x^* = \mu x_0$$
 
 where μ > 0 is the screening/stiffness parameter and x₀ is a reference state.
 
-**Properties:** Positive semi-definite, null space = constant vectors. The screened Green's function (L+μI)⁻¹ has exponential decay, ensuring locality.
+Properties: Positive semi-definite, null space = constant vectors. The screened Green's function (L+μI)⁻¹ has exponential decay, ensuring locality.
 
-**Answers:** *"What satisfies structural constraints?"*
+Answers: *"What satisfies structural constraints?"*
 
 ### 2.3 Primitive H: Heat Kernel
 
@@ -100,9 +100,9 @@ $$\frac{\partial H}{\partial \tau} = -LH, \quad H_0 = I$$
 
 where τ ≥ 0 is the temperature/time parameter.
 
-**Properties:** Positivity-preserving, semigroup (H_{τ₁}H_{τ₂} = H_{τ₁+τ₂}). Admits Chebyshev polynomial approximation for locality.
+Properties: Positivity-preserving, semigroup (H_{τ₁}H_{τ₂} = H_{τ₁+τ₂}). Admits Chebyshev polynomial approximation for locality.
 
-**Answers:** *"What does the graph look like at scale τ?"*
+Answers: *"What does the graph look like at scale τ?"*
 
 ---
 
@@ -126,9 +126,9 @@ This is a free-energy functional: the first term is elastic structure, the secon
 
 ### 3.3 Convergence and Locality
 
-**Theorem (Composite Contraction):** Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
+Theorem (Composite Contraction): Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
 
-**Theorem (Locality Radius):** For edit batch e_Δ, there exists h = O(log(1/ε)) such that recomputing only on N_h (the h-hop neighborhood) achieves global error ≤ ε.
+Theorem (Locality Radius): For edit batch e_Δ, there exists h = O(log(1/ε)) such that recomputing only on N_h (the h-hop neighborhood) achieves global error ≤ ε.
 
 This follows from: geometric decay for diffusion (teleport), exponential decay for springs (screening), Gaussian tail for heat (kernel bandwidth).
 
@@ -148,16 +148,16 @@ We establish that the tri-kernel satisfies formal definitions of intelligence.
 
 ### 4.1 Operational Definitions
 
-- **Legg-Hutter:** Intelligence = ability to achieve goals across a wide range of environments.
-- **Friston/FEP:** Intelligence = minimizing expected variational free energy (prediction error + model complexity).
+- Legg-Hutter: Intelligence = ability to achieve goals across a wide range of environments.
+- Friston/FEP: Intelligence = minimizing expected variational free energy (prediction error + model complexity).
 
 ### 4.2 Claims
 
-**Claim A (Inference):** The fixed point of ℛ minimizes a free-energy functional. Therefore the update π^(t+1) ← ℛπ^t reduces a well-defined energy and converges—which is precisely "doing inference."
+Claim A (Inference): The fixed point of ℛ minimizes a free-energy functional. Therefore the update π^(t+1) ← ℛπ^t reduces a well-defined energy and converges—which is precisely "doing inference."
 
-**Claim B (Compression):** Diffusion maps/heat kernels compress high-dimensional relations while preserving geometry. The resulting π concentrates mass (negentropy rises) subject to structural constraints—the "accurate yet parsimonious" balance of free-energy minimization.
+Claim B (Compression): Diffusion maps/heat kernels compress high-dimensional relations while preserving geometry. The resulting π concentrates mass (negentropy rises) subject to structural constraints—the "accurate yet parsimonious" balance of free-energy minimization.
 
-**Claim C (Adaptation):** Temperature τ in the heat kernel provides simulated annealing: high τ explores, low τ commits. This is the textbook mechanism for adaptive intelligence.
+Claim C (Adaptation): Temperature τ in the heat kernel provides simulated annealing: high τ explores, low τ commits. This is the textbook mechanism for adaptive intelligence.
 
 ### 4.3 Falsification Protocol
 
@@ -178,26 +178,26 @@ We establish positive collective intelligence factor (c > 0): the group outperfo
 
 | Theory | Claim | Mechanism |
 |--------|-------|-----------|
-| **Woolley c-factor** | Group-level intelligence predicts performance beyond individual IQ | First principal component across diverse tasks |
-| **Condorcet Jury Theorem** | Aggregation of p > ½ signals improves with n | Weighted majority over independent signals |
-| **Hong-Page Diversity** | Diverse heuristics > best homogeneous expert | Multiple search modes on complex landscapes |
+| Woolley c-factor | Group-level intelligence predicts performance beyond individual IQ | First principal component across diverse tasks |
+| Condorcet Jury Theorem | Aggregation of p > ½ signals improves with n | Weighted majority over independent signals |
+| Hong-Page Diversity | Diverse heuristics > best homogeneous expert | Multiple search modes on complex landscapes |
 
 ### 5.2 Mapping to Tri-Kernel
 
-**Aggregation:** Focus π is computed from all agents' cyberlinks via Markov/harmonic/heat operators—formal aggregation of many partial signals.
+Aggregation: Focus π is computed from all agents' cyberlinks via Markov/harmonic/heat operators—formal aggregation of many partial signals.
 
-**Diversity:** Diffusion explores remote regions; springs encode structural priors; heat rebalances on drift. Three kernels sample different solution modes.
+Diversity: Diffusion explores remote regions; springs encode structural priors; heat rebalances on drift. Three kernels sample different solution modes.
 
-**Mixing:** Adding non-redundant edges increases algebraic connectivity (Fiedler) and conductance, improving mixing and information aggregation.
+Mixing: Adding non-redundant edges increases algebraic connectivity (Fiedler) and conductance, improving mixing and information aggregation.
 
 ### 5.3 Claim D: Superadditivity
 
 Under standard conditions (bounded correlation ρ < 1, individual competence p_a > ½, non-trivial diversity), the aggregation must yield c > 0: group performance beats the mean individual—and often the best individual.
 
 This follows from three independent lines:
-- **Condorcet:** weighted aggregation over weakly correlated signals
-- **Hong-Page:** diversity of search modes explores more landscape
-- **Spectral:** better mixing ⇒ lower variance ⇒ better global inference
+- Condorcet: weighted aggregation over weakly correlated signals
+- Hong-Page: diversity of search modes explores more landscape
+- Spectral: better mixing ⇒ lower variance ⇒ better global inference
 
 ### 5.4 Measurement Protocol
 
@@ -217,19 +217,19 @@ Expect c > 0 when diversity and independence are non-trivial.
 
 We conjecture that the tri-kernel is not merely useful but complete:
 
-**Conjecture (Weak Completeness):** Any h-local linear operator T can be written as T = p(M) + q(L) for polynomials p, q of degree ≤ h.
+Conjecture (Weak Completeness): Any h-local linear operator T can be written as T = p(M) + q(L) for polynomials p, q of degree ≤ h.
 
-**Conjecture (Strong Completeness):** Any eventually-local operator that is equivariant, continuous, and convergent can be expressed as T = α·f(M) + β·g(L) + γ·H_τ for spectral functions f, g and scale τ.
+Conjecture (Strong Completeness): Any eventually-local operator that is equivariant, continuous, and convergent can be expressed as T = α·f(M) + β·g(L) + γ·H_τ for spectral functions f, g and scale τ.
 
 ### 6.2 Lemmas Toward Proof
 
-**Lemma 1:** Any 1-local linear operator is a linear combination of {I, A, D}.
+Lemma 1: Any 1-local linear operator is a linear combination of {I, A, D}.
 
-**Lemma 2:** Any k-local linear operator is a polynomial of degree ≤ k in {A, D}.
+Lemma 2: Any k-local linear operator is a polynomial of degree ≤ k in {A, D}.
 
-**Lemma 3:** Polynomials in {A, D} can be rewritten as polynomials in {M, L}.
+Lemma 3: Polynomials in {A, D} can be rewritten as polynomials in {M, L}.
 
-**Theorem (Linear Local Completeness):** Every k-local linear operator on a graph is a polynomial of degree ≤ k in M and L.
+Theorem (Linear Local Completeness): Every k-local linear operator on a graph is a polynomial of degree ≤ k in M and L.
 
 The heat kernel H_τ = exp(-τL) is required for multi-scale analysis—it is the unique generator of resolution-dependent queries. Together {M, L, H_τ} span the space of meaningful local graph computations.
 
@@ -241,16 +241,16 @@ The tri-kernel maps coherently across domains, suggesting these are scale-invari
 
 | Domain | Diffusion (Explore) | Springs (Structure) | Heat (Adapt) |
 |--------|---------------------|---------------------|--------------|
-| **Physics** | Gas wandering, sampling | Elastic lattice, tensegrity | Thermostat, phase changes |
-| **Biology** | Synaptic chatter, neural noise | Skeleton, connective tissue | Metabolism, immune plasticity |
-| **Cosmology** | Starlight, cosmic rays | Gravity, spacetime curvature | Cosmic temperature, entropy |
-| **Quantum** | Probability waves, tunneling | Binding fields, molecular bonds | Decoherence, environment coupling |
-| **Ecology** | Species dispersal, seed rain | Food webs, symbioses | Seasons, succession, disturbance |
-| **Psychology** | Imagination, free association | Logic, cognitive constraints | Emotion as arousal thermostat |
-| **Music** | Improvisation, melodic roaming | Harmony, voice-leading | Rhythm and tempo dynamics |
-| **Economics** | Trade, migration, meme flow | Institutions, contracts, norms | Booms, busts, revolutions |
-| **Information** | Entropy spread, random coding | Redundancy, error-correction | Adaptive compression |
-| **Mathematics** | Random walk sampler | Constraints, Lagrange multipliers | Annealing, step-size schedule |
+| Physics | Gas wandering, sampling | Elastic lattice, tensegrity | Thermostat, phase changes |
+| Biology | Synaptic chatter, neural noise | Skeleton, connective tissue | Metabolism, immune plasticity |
+| Cosmology | Starlight, cosmic rays | Gravity, spacetime curvature | Cosmic temperature, entropy |
+| Quantum | Probability waves, tunneling | Binding fields, molecular bonds | Decoherence, environment coupling |
+| Ecology | Species dispersal, seed rain | Food webs, symbioses | Seasons, succession, disturbance |
+| Psychology | Imagination, free association | Logic, cognitive constraints | Emotion as arousal thermostat |
+| Music | Improvisation, melodic roaming | Harmony, voice-leading | Rhythm and tempo dynamics |
+| Economics | Trade, migration, meme flow | Institutions, contracts, norms | Booms, busts, revolutions |
+| Information | Entropy spread, random coding | Redundancy, error-correction | Adaptive compression |
+| Mathematics | Random walk sampler | Constraints, Lagrange multipliers | Annealing, step-size schedule |
 
 This universality is not coincidence. Every domain achieving complex adaptive behavior implements these three forces because they are the only mechanisms that balance exploration, coherence, and adaptation under locality constraints.
 
@@ -273,10 +273,10 @@ The Collective Focus Theorem predicts intelligence emergence through phase trans
 
 At 10¹⁵ nodes with physical communication delays, any architecture requiring global coordination is impossible. The tri-kernel satisfies:
 
-- **Bounded locality:** h = O(log(1/ε)) neighborhood dependence
-- **Compute-verify symmetry:** light clients can check with constant overhead
-- **Shard-friendly:** regions update independently
-- **Interplanetary-compatible:** coherence without constant synchronization
+- Bounded locality: h = O(log(1/ε)) neighborhood dependence
+- Compute-verify symmetry: light clients can check with constant overhead
+- Shard-friendly: regions update independently
+- Interplanetary-compatible: coherence without constant synchronization
 
 ### 8.3 Adversarial Resistance
 
@@ -299,8 +299,8 @@ An adversary optimizing against one kernel worsens their position against anothe
 
 The correct implementation separates timescales:
 
-- **Structure (slow, amortized):** Springs precompute effective distances, modify diffusion tensor D
-- **Focus flow (fast, local):** Diffusion + heat operate on fixed structure, converge to equilibrium
+- Structure (slow, amortized): Springs precompute effective distances, modify diffusion tensor D
+- Focus flow (fast, local): Diffusion + heat operate on fixed structure, converge to equilibrium
 
 Springs as a separate runtime kernel was a category error. Springs compute *where nodes are*; ranking computes *how attention flows*. Different questions, different timescales.
 
@@ -315,7 +315,7 @@ Per epoch on neighborhood N_h:
 5. Normalize and splice back into global φ
 6. Emit attention_root and locality report for verification
 
-**Complexity:** O(|N_h| · c) per kernel for average degree c.
+Complexity: O(|N_h| · c) per kernel for average degree c.
 
 ### 9.3 Telemetry
 
@@ -326,7 +326,7 @@ Monitor per epoch:
 - Locality radius h, nodes touched
 - Compute vs verify wall-time
 
-**Safety policies:** degree caps, spectral sparsification, novelty floor, auto-rollback to diffusion-only on threshold breach.
+Safety policies: degree caps, spectral sparsification, novelty floor, auto-rollback to diffusion-only on threshold breach.
 
 ---
 

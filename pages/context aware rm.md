@@ -28,7 +28,7 @@ tags:: note
 -
 - ## staking on cyberlinks
 	- Lets focus on raising the cost of attack, e.g. linking anything with anything, higher. Our proposal is to add ability to stake 'V' for cyberlinks. Hence overall sorting will count not only for the rank of the particle, but also for cyberlink modificator which will depends on the amount which is staked on the cyberlink. Such simple mechanics will make content oracle adoptable to any answers.
-- **## wen mainnet?**
+- ## wen mainnet?
 	- Although our focus now is on finalizing the distribution and [opening the portal](https://rebyc.cyber.page/search/portal) we recognize the importance of deployment staking mechanism as this will make content oracle practical enough for building bootloader.
 - history
 	- [QmfZHFbnBfMDQECWhbeohYvBsBKBgx5gHXRW3fKWLCXLSW](https://cyb.ai/ipfs/QmfZHFbnBfMDQECWhbeohYvBsBKBgx5gHXRW3fKWLCXLSW)

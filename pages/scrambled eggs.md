@@ -40,4 +40,4 @@ tags:: kitchen/menu, breakfast
 - ## 💡 Tips
 	- low heat = soft texture
 	- avoid overcooking to prevent dryness
-- > **enjoy your treat!** 🍳🌿
+- > enjoy your treat! 🍳🌿

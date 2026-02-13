@@ -2,13 +2,13 @@ alias:: 2025 year
 tags:: article- ## Dear heroes and neurons,
 	- 2025 was the hardest year.
 	- [[$BOOT]] collapsed 90%. Our team dissolved. The market called us dead.
-	- But we got something worth more than any token price: **clarity**.
+	- But we got something worth more than any token price: clarity.
 	- We cleared everything that bloated our [[focus]]—and everyone who didn't truly believe in what we're building.
 	- What remains is diamond hands and pure signal.
 	- For those still here, let me remind you of our mission:
-	- > **Create superintelligence of the planet**
+	- > Create superintelligence of the planet
 	- Not another chatbot. Not another RAG wrapper.
-	- We need to spawn something smarter than all humans, robots, agents, animals, insects, and mycelium **combined**.
+	- We need to spawn something smarter than all humans, robots, agents, animals, insects, and mycelium combined.
 	- The difference? Every other AI project is centralized theater.
 	- We're growing distributed intelligence from cryptographic substrate
 	- —like mycelium, but for knowledge.

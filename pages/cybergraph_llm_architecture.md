@@ -6,14 +6,14 @@ we propose a generative language model (llm) built on the cybergraph free-energy
 ---
 ## core principles
 
-1. **nodes = tokens or concepts**
+1. nodes = tokens or concepts
    - each node represents a word, subword, or semantic unit.
 
-2. **edges = cyberlinks**
+2. edges = cyberlinks
    - edges represent statistical and semantic relationships (co-occurrence, syntactic, causal links).
    - edge weights can be learned from corpus statistics or embedding similarity.
 
-3. **free-energy equilibrium**
+3. free-energy equilibrium
    - global focus is computed as the minimiser of a free-energy functional:
 
 \[
@@ -24,7 +24,7 @@ we propose a generative language model (llm) built on the cybergraph free-energy
 - \(C(p|context)\): context potential from active nodes.
 - \(S(p)\): entropy.
 
-4. **next-token prediction**
+4. next-token prediction
    - the equilibrium distribution \(p^*\) provides probabilities for the next token.
    - sampling or argmax generates the next token.
 
@@ -37,13 +37,13 @@ we propose a generative language model (llm) built on the cybergraph free-energy
 - compute initial eigenvector centrality and springrank for the graph.
 ### 2. online generation pipeline
 
-**step 1 – context encoding:**
+step 1 – context encoding:
 - map current context tokens to active nodes.
 
-**step 2 – context potential:**
+step 2 – context potential:
 - compute \(C_i\) for candidate tokens using standard inference from active nodes.
 
-**step 3 – focus update:**
+step 3 – focus update:
 - iteratively compute \(p_i^{(t+1)}\) using:
 
 \[
@@ -51,10 +51,10 @@ p_i^{(t+1)} = \frac{\exp(-\beta [E_{spring,i} + \lambda E_{diffusion,i} + \gamma
 \]
 - gossip or message-passing protocols compute updates in a decentralised way.
 
-**step 4 – token selection:**
+step 4 – token selection:
 - sample or select argmax token from \(p^*\).
 
-**step 5 – context expansion:**
+step 5 – context expansion:
 - add the new token node to the active set.
 - repeat from step 2 until sequence end.
 
@@ -76,18 +76,18 @@ p_i^{(t+1)} = \frac{\exp(-\beta [E_{spring,i} + \lambda E_{diffusion,i} + \gamma
 
 ---
 ## advantages over transformer llms
-- **explainable probabilities:** focus distribution derived from physics-like principles.
-- **dynamic and extensible:** new tokens or facts can be added by inserting nodes and edges.
-- **context-aware by design:** avoids dominance of high-rank nodes (true-false problem solved natively).
-- **decentralisable:** suitable for peer-to-peer or on-chain inference.
+- explainable probabilities: focus distribution derived from physics-like principles.
+- dynamic and extensible: new tokens or facts can be added by inserting nodes and edges.
+- context-aware by design: avoids dominance of high-rank nodes (true-false problem solved natively).
+- decentralisable: suitable for peer-to-peer or on-chain inference.
 
 ---
 ## future extensions
-- **multi-modal integration:** add sensory nodes for images, audio, or real-world data.
-- **continual learning:** incrementally update edge weights as new data arrives.
-- **hierarchical memory:** maintain long-term springrank/eigenvector centrality but compute short-term context via \(C(p|context)\).
+- multi-modal integration: add sensory nodes for images, audio, or real-world data.
+- continual learning: incrementally update edge weights as new data arrives.
+- hierarchical memory: maintain long-term springrank/eigenvector centrality but compute short-term context via \(C(p|context)\).
 
 ---
 ## conclusion
 
-this architecture defines a novel class of generative models where language production emerges from a **free-energy equilibrium on a cybergraph**. by uniting diffusion, springs, and entropy with contextual inference, it provides a principled, transparent, and extendable alternative to transformer-based llms.
+this architecture defines a novel class of generative models where language production emerges from a free-energy equilibrium on a cybergraph. by uniting diffusion, springs, and entropy with contextual inference, it provides a principled, transparent, and extendable alternative to transformer-based llms.

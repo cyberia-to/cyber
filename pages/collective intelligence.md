@@ -6,9 +6,9 @@ tags:: cyber
 -
 - ## why it works
 	- three independent results explain why groups outperform individuals:
-	- **Condorcet jury theorem**: aggregating weakly correct signals from many agents yields increasingly accurate answers as the group grows
-	- **Hong-Page diversity theorem**: diverse heuristics outperform the best homogeneous expert on complex problems. variety of search modes explores more of the landscape
-	- **Woolley c-factor**: groups have a measurable collective intelligence factor `c` — a first principal component across diverse tasks that predicts performance better than average or max individual IQ
+	- Condorcet jury theorem: aggregating weakly correct signals from many agents yields increasingly accurate answers as the group grows
+	- Hong-Page diversity theorem: diverse heuristics outperform the best homogeneous expert on complex problems. variety of search modes explores more of the landscape
+	- Woolley c-factor: groups have a measurable collective intelligence factor `c` — a first principal component across diverse tasks that predicts performance better than average or max individual IQ
 		- `c` correlates with: equal distribution of speaking turns, social sensitivity, cognitive style diversity
 		- `c` does not correlate with: team cohesion, motivation, satisfaction
 -

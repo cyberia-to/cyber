@@ -42,9 +42,9 @@ tags:: bostrom, infrastructure, security
 		- ✅ Verify transaction details before signing
 		- ⚠️ Be cautious of phishing sites claiming to be cyb.ai
 	- ### Verifying Authenticity
-		- **Official domain**: `cyb.ai` (not cyb.io, cyb.net, etc.)
-		- **Check SSL certificate**: Should be valid and issued to the correct domain
-		- **IPFS version**: cyb.ai is also available via IPFS for censorship resistance
+		- Official domain: `cyb.ai` (not cyb.io, cyb.net, etc.)
+		- Check SSL certificate: Should be valid and issued to the correct domain
+		- IPFS version: cyb.ai is also available via IPFS for censorship resistance
 	- ### IBC Transfers
 		- Always double-check recipient addresses
 		- Use small test transfers first for new addresses
@@ -52,7 +52,7 @@ tags:: bostrom, infrastructure, security
 -
 - ## Responsible Disclosure
 	- If you discover a security vulnerability:
-		- **DO NOT** disclose publicly before it's fixed
+		- DO NOT disclose publicly before it's fixed
 		- Contact the team via:
 			- Telegram: DM to @groovybear (mastercyb)
 			- Email: security concerns to the core team

@@ -1,33 +1,33 @@
 tags:: cyberia
 -
-- **structure & bulk**
+- structure & bulk
 - compost
 - topsoil
 - coconut coir
 - cyathea trunk
 - wood fiber
   
-  **aeration & drainage**
+  aeration & drainage
 - sand
 - perlite
 - pumice
 - gravel
 - biochar (when activated)
   
-  **water retention**
+  water retention
 - coconut coir
 - vermiculite
 - clay
 - wood fiber
 - cyathea trunk (moderate)
   
-  **nutrition**
+  nutrition
 - compost
 - worm castings
 - comfrey tea
 - rock dust
   
-  **biological activation**
+  biological activation
 - worm castings
 - comfrey tea
 - compost

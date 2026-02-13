@@ -36,42 +36,42 @@ tags:: disease
 		- after heavy rain, open channels so crowns never sit in puddles.
 	- log it:
 		- note date, rainfall, liters watered, feed (y/n), pests seen, and record amount of shoots harvested.
-- **site & soil**
+- site & soil
 	- bright shade (50–70% shade), high humidity, wind-sheltered
 	- deep, rich, constantly moist soil; lots of compost; ph ~5.5–6.5
 	- mulch 5–8 cm (leaves/coco husk/ straw) to keep roots cool and moist
-- **watering (maximize flushes)**
+- watering (maximize flushes)
 	- keep evenly moist, never waterlogged
 	- dry season: deep water 2–3×/week; rainy season: improve drainage, loosen mulch if soggy
-- **feeding (organic)**
+- feeding (organic)
 	- every 2 weeks: compost tea or diluted vermicompost extract (2–4 l/plant)
 	- monthly: side-dress 1–2 kg mature compost/plant
 	- every 6–8 weeks: potassium boost for thicker shoots—seaweed extract or a small handful of wood ash/m² (rinse in next watering)
-- **canopy management**
+- canopy management
 	- always leave 3–5 strong fronds per clump for photosynthesis
 	- remove old/yellow or congested fronds weekly for airflow (less disease, more new shoots)
-- **harvest rules (don’t stunt the plant)**
+- harvest rules (don’t stunt the plant)
 	- cut tender shoots at 15–20 cm length, before unrolling
 	- never take more than ⅓ of emergent shoots from a clump at once; rotate clumps
 	- check every 2–3 days in warm, wet weather—frequent light harvests trigger more flushes
-- **spacing & renewal**
+- spacing & renewal
 	- maintain 45–60 cm between clumps; thin crowded plants
 	- divide vigorous clumps every 8–12 months (rainy season): replant healthiest crowns at original depth with fresh compost
-- **pests & diseases (organic)**
+- pests & diseases (organic)
 	- slugs/snails: handpick, beer traps, copper barriers
 	- sap pests (aphids/scale): morning water rinse + 1–2% soap spray; encourage ants away from crowns
 	- crown/leaf spots: improve airflow, avoid evening overhead watering; weekly baking soda 1 tsp/l + a drop of soap if needed
-- **weekly checklist**
+- weekly checklist
 	- inspect fronds (pests/spots), remove old leaves
 	- top up mulch, ensure soil stays evenly moist
 	- harvest young shoots; rotate clumps
 	- tie up floppy fronds to keep crown open
-- **monthly checklist**
+- monthly checklist
 	- side-dress compost; potassium boost if shoots thin
 	- divide or thin any overcrowded clumps
-- **temperate note (ostrich fern, *matteuccia struthiopteris*)**
+- temperate note (ostrich fern, *matteuccia struthiopteris*)
 	- similar care but cooler, moist woodland shade; ph ~6–7
 	- harvest only 2–5 fiddleheads per crown per spring, then stop and let fronds grow out
 	- divide every 3–5 years in early spring
-- **important safety note**
-	- avoid **bracken fern (*pteridium aquilinum*)**—it’s not recommended for eating.
+- important safety note
+	- avoid bracken fern (*pteridium aquilinum*)—it’s not recommended for eating.

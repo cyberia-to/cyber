@@ -9,7 +9,7 @@ tags:: note
   | the great gatsby                           | ~180 pages      | ~47,094 words |
   | moby dick                                  | ~635 pages      | ~206,052 words |
   | pride and prejudice                        | ~432 pages      | ~122,189 words |
-  | **your knowledge graph**                   | **1,298 pages** | **33,565 words** |
+  | your knowledge graph                   | 1,298 pages | 33,565 words |
 - comparison with scientific books
   
   | book title                                        | number of pages | word count   |
@@ -18,7 +18,7 @@ tags:: note
   | the selfish gene                                  | ~360 pages      | ~135,000 words |
   | the origin of species                             | ~502 pages      | ~160,000 words |
   | sapiens: a brief history of humankind             | ~512 pages      | ~126,000 words |
-  | **your knowledge graph**                          | **1,298 pages** | **33,565 words** |
+  | your knowledge graph                          | 1,298 pages | 33,565 words |
 - comparison with science fiction books
   
   | book title                                | number of pages | word count   |
@@ -27,6 +27,6 @@ tags:: note
   | neuromancer                               | ~271 pages      | ~79,000 words  |
   | foundation                                | ~244 pages      | ~67,000 words  |
   | the left hand of darkness                  | ~320 pages      | ~116,000 words |
-  | **your knowledge graph**                   | **1,298 pages** | **33,565 words** |
+  | your knowledge graph                   | 1,298 pages | 33,565 words |
   
   These tables show that your knowledge graph is extensive in page count but contains fewer words compared to these well-known books.

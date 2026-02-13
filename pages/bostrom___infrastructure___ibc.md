@@ -29,10 +29,10 @@ tags:: bostrom, infrastructure, ibc, interchain
 		  | ATOM | Cosmos Hub | `ibc/15E9C5CF5969080539DB395FA7D9C0868265217EFC528433671AAF9B1912D159` |
 -
 - ## How IBC Works
-	- 1. **Light Clients**: Each chain maintains a light client that tracks the other chain's consensus
-	  2. **Channels**: Ordered or unordered channels for packet delivery
-	  3. **Relayers**: Off-chain processes that submit proofs between chains
-	  4. **Packets**: Messages (like token transfers) sent through channels
+	- 1. Light Clients: Each chain maintains a light client that tracks the other chain's consensus
+	  2. Channels: Ordered or unordered channels for packet delivery
+	  3. Relayers: Off-chain processes that submit proofs between chains
+	  4. Packets: Messages (like token transfers) sent through channels
 -
 - ## Using IBC Transfers
 	- ### Via cyb.ai
@@ -66,7 +66,7 @@ tags:: bostrom, infrastructure, ibc, interchain
 	- ### Recovery Status (Feb 2026)
 		- | Chain | Bostrom Prop | Remote Prop | Result |
 		  |-------|--------------|-------------|--------|
-		  | Osmosis | #32 ✅ | #1002 ✅ | **RESTORED** |
+		  | Osmosis | #32 ✅ | #1002 ✅ | RESTORED |
 		  | Cosmos Hub | #33 ✅ | #1023 ❌ | Failed quorum (36.7% vs 40% needed) |
 		- #+BEGIN_WARNING
 		  Cosmos Hub IBC requires a new proposal. The previous attempt (#1023) had 92.5% YES but failed due to insufficient voter turnout. Top validators didn't participate.

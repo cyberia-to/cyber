@@ -1,13 +1,13 @@
 tags:: compound
-- **alias**: valine
+- alias: valine
 - ![Valine.pdf](../assets/Valine_1719303309556_0.pdf)
 - [[valine]] is an essential branched-chain [[amino acid]]  (bcaa) found in protein-rich foods such as [[meat]], [[dairy]], [[soy]], and [[legumes]]. it plays a critical role in [[muscle growth]], [[energy production]], and [[tissue repair]].
 - ### chemical properties
-	- **molecular weight**: 117.15 g/mol
-	- **density**: 1.23 g/cm³
-	- **melting point**: 315°C (decomposes)
-	- **solubility**: soluble in water; slightly soluble in alcohol
-	- **chemical formula**: C₅H₁₁NO₂
+	- molecular weight: 117.15 g/mol
+	- density: 1.23 g/cm³
+	- melting point: 315°C (decomposes)
+	- solubility: soluble in water; slightly soluble in alcohol
+	- chemical formula: C₅H₁₁NO₂
 - ### usefulness in medicine
 	- valine is essential for [[muscle protein synthesis]] and repair, making it vital for athletes and individuals recovering from injuries.
 	- it helps maintain [[energy levels]] during exercise by serving as a [[fuel source for [[muscle cells]]]].
@@ -17,9 +17,9 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- valine itself does not exhibit direct antimicrobial effects but [[contributes to immune health]] and [[cellular repair]], indirectly aiding the body’s defense mechanisms.
 	- research highlights:
-		- **bacteria**:
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+valine)
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+valine)
+		- bacteria:
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+valine)
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+valine)
 - ### research links
 	- [valine and muscle protein synthesis](https://scholar.google.com/scholar?q=valine+muscle+protein+synthesis)
 	- [valine and energy metabolism](https://scholar.google.com/scholar?q=valine+energy+metabolism)

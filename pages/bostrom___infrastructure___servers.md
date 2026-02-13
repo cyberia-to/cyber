@@ -11,114 +11,114 @@ tags:: bostrom, infrastructure, servers, hardware
 - ## Server Fleet
 -
 - ### Deimos — Archive Node
-	- **Role:** Full blockchain history + [[cyberindex]] GraphQL API
-	- **Type:** Dedicated server with GPU
-	- **Location:** Falkenstein, Germany
-	- **Hardware:**
+	- Role: Full blockchain history + [[cyberindex]] GraphQL API
+	- Type: Dedicated server with GPU
+	- Location: Falkenstein, Germany
+	- Hardware:
 		- CPU: Intel Xeon (8 cores)
 		- RAM: 64 GB
 		- GPU: NVIDIA GTX 1080 8GB (required for consensus)
 		- Storage: 6.8 TB ZFS (RAID + NVMe)
-	- **Services:**
+	- Services:
 		- `bostrom_arch` — Archive node container (full history from genesis)
 		- `cyberindex` — Blockchain indexer
 		- `hasura` — GraphQL API engine
 		- `postgres` — Index database
-	- **Endpoints powered:**
+	- Endpoints powered:
 		- `index.bostrom.cybernode.ai` — GraphQL API
 -
 - ### Jupiter — RPC Node + IBC Relayer
-	- **Role:** Public RPC/LCD/gRPC endpoints + IBC packet relay
-	- **Type:** Dedicated server with GPU
-	- **Location:** Falkenstein, Germany
-	- **Hardware:**
+	- Role: Public RPC/LCD/gRPC endpoints + IBC packet relay
+	- Type: Dedicated server with GPU
+	- Location: Falkenstein, Germany
+	- Hardware:
 		- CPU: Intel Xeon (8 cores)
 		- RAM: 64 GB
 		- GPU: NVIDIA GTX 1080 8GB (required for consensus)
 		- Storage: 6.9 TB (ZFS + NVMe)
-	- **Services:**
+	- Services:
 		- `bostrom_pruned` — Pruned RPC node (recent state only)
 		- `space-pussy-arch` — Space Pussy testnet archive
 		- [[Hermes]] IBC relayer (systemd service)
-	- **Endpoints powered:**
+	- Endpoints powered:
 		- `rpc.bostrom.cybernode.ai` — Tendermint RPC
 		- `lcd.bostrom.cybernode.ai` — Cosmos REST API
 		- `grpc.bostrom.cybernode.ai` — gRPC-Web proxy
 -
 - ### IO — IPFS Storage
-	- **Role:** Content-addressed storage for [[knowledge graph]]
-	- **Type:** Dedicated server
-	- **Location:** Falkenstein, Germany
-	- **Hardware:**
+	- Role: Content-addressed storage for [[knowledge graph]]
+	- Type: Dedicated server
+	- Location: Falkenstein, Germany
+	- Hardware:
 		- CPU: Intel Xeon
 		- RAM: 64 GB
 		- Storage: 3.5 TB HDD RAID1
-	- **Services:**
+	- Services:
 		- IPFS daemon (Kubo 0.22)
 		- IPFS cluster (replication)
 		- libp2p swarm bootstrap
-	- **Endpoints powered:**
+	- Endpoints powered:
 		- `gateway.ipfs.cybernode.ai` — Public IPFS gateway
 		- `swarm.io.cybernode.ai` — libp2p bootstrap
 -
 - ### Cyberproxy — Reverse Proxy + Frontend
-	- **Role:** SSL termination, load balancing, static hosting
-	- **Type:** Cloud VPS (CX31)
-	- **Location:** Nuremberg, Germany
-	- **Hardware:**
+	- Role: SSL termination, load balancing, static hosting
+	- Type: Cloud VPS (CX31)
+	- Location: Nuremberg, Germany
+	- Hardware:
 		- vCPU: 2 cores
 		- RAM: 8 GB
 		- Storage: 80 GB SSD
-	- **Services:**
+	- Services:
 		- Nginx reverse proxy
 		- [[cyb.ai]] static frontend
 		- Webhook receiver for CI/CD
-	- **Endpoints powered:**
+	- Endpoints powered:
 		- `cyb.ai` — Web interface
 		- `*.bostrom.cybernode.ai` — API proxy
 -
 - ### Mimas — Monitoring
-	- **Role:** Metrics collection, visualization, alerting
-	- **Type:** Cloud VPS (CX41)
-	- **Location:** Falkenstein, Germany
-	- **Hardware:**
+	- Role: Metrics collection, visualization, alerting
+	- Type: Cloud VPS (CX41)
+	- Location: Falkenstein, Germany
+	- Hardware:
 		- vCPU: 4 cores
 		- RAM: 16 GB
 		- Storage: 160 GB SSD
-	- **Services:**
+	- Services:
 		- Grafana 12.3 — Dashboards and alerting
 		- Prometheus 2.54 — Metrics collection
 		- Blackbox exporter — HTTP/SSL probing
-	- **Endpoints powered:**
+	- Endpoints powered:
 		- `cybernode.ai` — Public status dashboard
 		- `cybernode.ai/grafana/` — Grafana dashboards
 -
 - ### Port — API Services
-	- **Role:** Market data and DEX APIs
-	- **Type:** Cloud VPS (CX21)
-	- **Location:** Falkenstein, Germany
-	- **Hardware:**
+	- Role: Market data and DEX APIs
+	- Type: Cloud VPS (CX21)
+	- Location: Falkenstein, Germany
+	- Hardware:
 		- vCPU: 2 cores
 		- RAM: 4 GB
 		- Storage: 40 GB SSD
-	- **Services:**
+	- Services:
 		- market-data API — Token supply endpoints
 		- warp-dex API — DEX trading data (when available)
-	- **Endpoints powered:**
+	- Endpoints powered:
 		- `market-data.cybernode.ai` — Supply/price data
 -
 - ### Helia-Relay — libp2p Circuit Relay
-	- **Role:** Browser-to-browser IPFS connectivity
-	- **Type:** Cloud VPS (CX32)
-	- **Location:** Helsinki, Finland
-	- **Hardware:**
+	- Role: Browser-to-browser IPFS connectivity
+	- Type: Cloud VPS (CX32)
+	- Location: Helsinki, Finland
+	- Hardware:
 		- vCPU: 4 cores
 		- RAM: 8 GB
 		- Storage: 80 GB SSD
-	- **Services:**
+	- Services:
 		- libp2p circuit relay
 		- Caddy (auto-renewing SSL)
-	- **Purpose:**
+	- Purpose:
 		- Enables browsers to connect to IPFS network
 		- Relay for NAT-traversal
 -
@@ -135,8 +135,8 @@ tags:: bostrom, infrastructure, servers, hardware
 -
 - ## GPU Requirement
 	- Bostrom uses GPU-accelerated PageRank for the [[knowledge graph]] ranking algorithm.
-	- **Minimum:** NVIDIA GTX 1080 (8GB VRAM)
-	- **CUDA:** 11.4+
+	- Minimum: NVIDIA GTX 1080 (8GB VRAM)
+	- CUDA: 11.4+
 	- Both Deimos and Jupiter run GPU nodes for consensus participation.
 	- #+BEGIN_NOTE
 	  Without GPU, a node cannot participate in consensus or validate blocks. Read-only nodes (for querying) can run without GPU.

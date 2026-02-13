@@ -1,2 +1,2 @@
 tags:: disease
-- **keratosis pilaris**: caused by a build-up of keratin in hair follicles; symptoms include small, rough bumps on arms, thighs, or cheeks.
+- keratosis pilaris: caused by a build-up of keratin in hair follicles; symptoms include small, rough bumps on arms, thighs, or cheeks.

@@ -66,4 +66,4 @@ tags:: kitchen/menu, mains
 	- meat scraps/broth: [[animal feed]]
 - ### 💡 tips
 	- chayote skins hold shape well, firm but edible
-- > **enjoy your meal!** 🍽️ 🌿
+- > enjoy your meal! 🍽️ 🌿

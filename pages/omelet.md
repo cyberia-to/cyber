@@ -51,4 +51,4 @@ tags:: kitchen/menu, breakfast
 - ### 💡 tips
 	- cook on low heat for a tender texture
 	- no salt — cheese gives enough savory flavor
-- > **enjoy your treat!** 🍳🌿
+- > enjoy your treat! 🍳🌿

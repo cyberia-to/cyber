@@ -6,7 +6,7 @@ tags:: bostrom, infrastructure, monitoring, status
 	- Back to [[bostrom infrastructure]]
 -
 - ## Public Status Dashboard
-	- **URL**: https://cybernode.ai
+	- URL: https://cybernode.ai
 	- The status page shows real-time health of all public services with 90-day uptime history.
 -
 - ## What's Monitored
@@ -27,7 +27,7 @@ tags:: bostrom, infrastructure, monitoring, status
 -
 - ## Dashboards
 	- Public Grafana dashboards (no login required):
-		- **HTTPS Endpoints Status**: https://cybernode.ai/grafana/public-dashboards/48ffa0bb018e424bb6aa71c2bcab42c9
+		- HTTPS Endpoints Status: https://cybernode.ai/grafana/public-dashboards/48ffa0bb018e424bb6aa71c2bcab42c9
 		- Real-time HTTP probe results for all public endpoints
 -
 - ## Metrics Stack

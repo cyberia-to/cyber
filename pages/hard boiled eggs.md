@@ -48,4 +48,4 @@ tags:: kitchen/menu, breakfast
 - ### 💡 tips
 	- store unpeeled in fridge up to 5 days
 	- perfect for picnics, bento, or grab-and-go meals
-- > **enjoy your treat!** 🥚🌿
+- > enjoy your treat! 🥚🌿

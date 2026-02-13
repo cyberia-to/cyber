@@ -67,60 +67,60 @@ tags:: species
 			- leaves: occasionally used in teas or as poultices for inflammation or stress relief
 - ### traditional medicine use
 	- these traditional recipes show how [[jasminum officinale]] is used for [[mental clarity]], [[skin care]], [[stress relief]], and [[minor physical ailments]].
-- **[[jasmine]] flower [[tea]] for [[anxiety]] and [[relaxation]]**
-	- **ingredients**
+- [[jasmine]] flower [[tea]] for [[anxiety]] and [[relaxation]]
+	- ingredients
 		- 1 tablespoon dried [[jasminum officinale]] flowers
 		- 1 cup boiling water
 		- honey or lemon (optional)
-	- **instructions**
+	- instructions
 		- place dried jasmine flowers in a teacup.
 		- pour boiling water over them and steep for 5–7 minutes.
 		- strain and add honey or lemon to taste.
 		- drink 1–2 times per day, especially in the evening.
-	- **uses**
+	- uses
 		- calms the [[nervous system]], reduces [[anxiety]] and [[stress]], and promotes restful [[sleep]].
-- **jasmine [[oil infusion]] for [[muscle pain]] and [[stress relief]]**
-	- **ingredients**
+- jasmine [[oil infusion]] for [[muscle pain]] and [[stress relief]]
+	- ingredients
 		- 1 cup fresh jasmine flowers
 		- 1 cup carrier oil (e.g., [[olive]], [[coconut]], or [[almond oil]])
-	- **instructions**
+	- instructions
 		- fill a glass jar with fresh [[jasmine flowers]].
 		- pour oil over them to submerge completely.
 		- seal and let sit in a warm, sunny spot for 1–2 weeks, shaking gently each day.
 		- strain and store in a dark bottle.
 		- apply topically for [[massage]] or as a [[calming]] [[body oil]].
-	- **uses**
+	- uses
 		- relieves [[muscle tension]], [[soothes skin]], and provides mild [[antidepressant]] and [[anti-inflammatory]] effects.
-- **jasmine flower [[poultice]] for [[headache]] relief**
-	- **ingredients:**
+- jasmine flower [[poultice]] for [[headache]] relief
+	- ingredients:
 		- a handful of fresh jasmine flowers
 		- a small amount of warm water
-	- **instructions**
+	- instructions
 		- crush the flowers into a paste with a mortar and pestle.
 		- add a few drops of warm water to soften.
 		- apply the paste to the temples or forehead.
 		- leave on for 20 minutes, then rinse off with cool water.
-	- **uses:**
+	- uses:
 		- relieves [[headaches]] and [[mental fatigue]] with its soothing and [[cooling]] properties.
-- **jasmine face steam for [[skin]] and [[mood]]**
-	- **ingredients**
+- jasmine face steam for [[skin]] and [[mood]]
+	- ingredients
 		- 1 handful of jasmine flowers (fresh or dried)
 		- 1 liter boiling water
-	- **instructions**
+	- instructions
 		- place flowers in a large bowl.
 		- pour boiling water over them.
 		- cover your head with a towel and lean over the bowl to inhale the steam for 10–15 minutes.
 		- rinse your face with cool water afterward.
-	- **uses**
+	- uses
 		- opens [[pores]], [[cleanses skin]], [[reduces acne]] and [[inflammation]], and lifts the [[mood]] with [[calming]] aroma.
-- **jasmine flower [[bath soak]] for [[skin nourishment]] and [[relaxation]]**
-	- **ingredients**
+- jasmine flower [[bath soak]] for [[skin nourishment]] and [[relaxation]]
+	- ingredients
 		- 2 cups jasmine flowers (fresh or dried)
 		- optional: 1 cup epsom salt
-	- **instructions**
+	- instructions
 		- add jasmine flowers and [[epsom salt]] to warm bathwater.
 		- soak for 20–30 minutes.
 		- pat skin dry after bath.
-	- **uses**
+	- uses
 		- nourishes and softens the skin, [[reduces inflammation]], and promotes full-body [[relaxation]].
 -

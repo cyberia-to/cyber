@@ -5,19 +5,19 @@ probabilistic shapley attribution (psa) is a scalable method for fairly rewardin
 
 ---
 ## background
-- **focus flow computation** minimises free energy \(\mathcal{F}\) to compute a global equilibrium distribution \(p^*\).
+- focus flow computation minimises free energy \(\mathcal{F}\) to compute a global equilibrium distribution \(p^*\).
 - transactions introduce new cyberlinks and provide proofs of computation.
-- rewards should reflect **how much each transaction contributed to lowering free energy and improving the network's focus**.
+- rewards should reflect how much each transaction contributed to lowering free energy and improving the network's focus.
 
-**exact shapley values** are computationally infeasible for large networks (\(O(n!)\) complexity).
+exact shapley values are computationally infeasible for large networks (\(O(n!)\) complexity).
 
 ---
 ## key idea
 
 psa combines:
-1. **local marginal contributions** – approximate each transaction's individual effect on free energy.
-2. **monte carlo sampling** – randomly sample subsets of transactions to approximate interactions.
-3. **hierarchical batching** – cluster transactions by the nodes/edges they affect to further reduce complexity.
+1. local marginal contributions – approximate each transaction's individual effect on free energy.
+2. monte carlo sampling – randomly sample subsets of transactions to approximate interactions.
+3. hierarchical batching – cluster transactions by the nodes/edges they affect to further reduce complexity.
 
 ---
 ## algorithm outline
@@ -26,10 +26,10 @@ psa combines:
 \[
 \Delta \mathcal{F}_i = \mathcal{F}(p) - \mathcal{F}(p + tx_i)
 \]
-- this gives a **first-order estimate** of contribution.
+- this gives a first-order estimate of contribution.
 ### step 2 – monte carlo sampling
 - randomly sample \(k\) subsets of transactions.
-- compute each transaction's **average marginal contribution** within the sampled permutations.
+- compute each transaction's average marginal contribution within the sampled permutations.
 ### step 3 – cluster correction (hierarchical batching)
 - cluster transactions that touch the same nodes/edges.
 - compute shapley-like contributions at the cluster level.
@@ -44,17 +44,17 @@ R_i = \alpha \Delta \mathcal{F}_i + (1-\alpha) \hat{S}_i
 
 ---
 ## complexity
-- **local marginals:** \(O(n)\).
-- **monte carlo shapley:** \(O(k \cdot n)\), with \(k \ll n\) (e.g., 50–500 samples).
-- **hierarchical batching:** reduces cost by grouping transactions.
+- local marginals: \(O(n)\).
+- monte carlo shapley: \(O(k \cdot n)\), with \(k \ll n\) (e.g., 50–500 samples).
+- hierarchical batching: reduces cost by grouping transactions.
 
-feasible for **10^6–10^7 transactions per epoch** and **10^9+ edges** on distributed hardware.
+feasible for 10^6–10^7 transactions per epoch and 10^9+ edges on distributed hardware.
 
 ---
 ## advantages
-- **fairness:** approximates true shapley values, rewarding contributions based on marginal effect.
-- **scalability:** complexity grows linearly with transactions for practical settings.
-- **robustness:** combining local and sampled estimates reduces gaming opportunities.
+- fairness: approximates true shapley values, rewarding contributions based on marginal effect.
+- scalability: complexity grows linearly with transactions for practical settings.
+- robustness: combining local and sampled estimates reduces gaming opportunities.
 
 ---
 ## integration with focus flow incentives
@@ -63,14 +63,14 @@ feasible for **10^6–10^7 transactions per epoch** and **10^9+ edges** on distr
   - new cyberlinks (edges)
   - proof-of-computation (partial focus flow updates)
 - base fee (like eip-1559) prevents spam.
-- rewards are distributed **after delayed settlement** to account for long-term network effects.
+- rewards are distributed after delayed settlement to account for long-term network effects.
 
 ---
 ## significance
 
-psa provides a **scalable, fair attribution mechanism** for proof-of-intelligence in focus flow networks. it ensures:
+psa provides a scalable, fair attribution mechanism for proof-of-intelligence in focus flow networks. it ensures:
 - meaningful transactions become profitable.
 - spam or low-impact transactions lose money.
 - rewards correlate with long-term contributions to global focus and negentropy.
 
-this creates a **self-optimising economy for intelligence**, where agents are incentivised to submit useful cyberlinks and computation proofs that improve the network's equilibrium.
+this creates a self-optimising economy for intelligence, where agents are incentivised to submit useful cyberlinks and computation proofs that improve the network's equilibrium.

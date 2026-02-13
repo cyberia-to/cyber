@@ -3,9 +3,9 @@ tags:: note
 - it does not renders properly, [origin is here](https://claude.ai/public/artifacts/97cdfd1f-5d3e-447e-a918-7ca99ce76bd4)
 - # UniversalHash v4: A Democratic Proof-of-Work Algorithm
   
-  **Version 1.0 — January 2026**
+  Version 1.0 — January 2026
   
-  **Abstract:** UniversalHash v4 is a novel proof-of-work algorithm designed to minimize the performance gap between consumer devices (smartphones, laptops) and specialized hardware (servers, GPUs, ASICs). By combining memory-hard techniques with parallel chain constraints, hardware-accelerated cryptographic primitives, and sequential dependencies, UniversalHash achieves a phone-to-desktop ratio of approximately 1:3-5, compared to 1:50-100+ in traditional PoW algorithms. This paper presents the complete design rationale, comparative analysis with existing CPU-oriented algorithms, security considerations, and reference implementations for both provers and verifiers.
+  Abstract: UniversalHash v4 is a novel proof-of-work algorithm designed to minimize the performance gap between consumer devices (smartphones, laptops) and specialized hardware (servers, GPUs, ASICs). By combining memory-hard techniques with parallel chain constraints, hardware-accelerated cryptographic primitives, and sequential dependencies, UniversalHash achieves a phone-to-desktop ratio of approximately 1:3-5, compared to 1:50-100+ in traditional PoW algorithms. This paper presents the complete design rationale, comparative analysis with existing CPU-oriented algorithms, security considerations, and reference implementations for both provers and verifiers.
   
   ---
 - ## Table of Contents
@@ -30,13 +30,13 @@ tags:: note
   
   The centralization of cryptocurrency mining represents one of the most significant threats to blockchain decentralization. Despite Bitcoin's original vision of "one CPU, one vote," modern mining is dominated by specialized hardware that excludes ordinary participants. This concentration of hash power creates systemic risks: 51% attacks become economically feasible, geographic centralization around cheap electricity introduces geopolitical vulnerabilities, and the barrier to participation undermines the democratic foundations of decentralized systems.
   
-  UniversalHash v4 addresses these challenges by designing a proof-of-work algorithm from first principles with democratic participation as the primary objective. Rather than optimizing for raw throughput or energy efficiency in isolation, we optimize for **accessibility** — ensuring that the billions of smartphones and consumer devices worldwide can meaningfully contribute to network security.
+  UniversalHash v4 addresses these challenges by designing a proof-of-work algorithm from first principles with democratic participation as the primary objective. Rather than optimizing for raw throughput or energy efficiency in isolation, we optimize for accessibility — ensuring that the billions of smartphones and consumer devices worldwide can meaningfully contribute to network security.
 - ### 1.1 Key Contributions
-- **Parallel Chain Architecture**: A 4-chain structure that naturally caps parallelism advantages while fitting perfectly on 4-core budget phones
-- **Triple Primitive Rotation**: Mandatory efficient implementation of AES, SHA-256, and BLAKE3 raises ASIC development costs
-- **Memory-Optimized Parameters**: 2MB total scratchpad (512KB × 4 chains) fits in phone L3 cache while preventing GPU memory coalescing
-- **Sequential Dependency Chains**: Each round depends on the previous, defeating massive parallelism
-- **Hardware Acceleration Utilization**: Leverages AES-NI, SHA extensions, and ARM crypto instructions present in 95%+ of post-2015 devices
+- Parallel Chain Architecture: A 4-chain structure that naturally caps parallelism advantages while fitting perfectly on 4-core budget phones
+- Triple Primitive Rotation: Mandatory efficient implementation of AES, SHA-256, and BLAKE3 raises ASIC development costs
+- Memory-Optimized Parameters: 2MB total scratchpad (512KB × 4 chains) fits in phone L3 cache while preventing GPU memory coalescing
+- Sequential Dependency Chains: Each round depends on the previous, defeating massive parallelism
+- Hardware Acceleration Utilization: Leverages AES-NI, SHA extensions, and ARM crypto instructions present in 95%+ of post-2015 devices
   
   ---
 - ## 2. Problem Statement
@@ -78,45 +78,45 @@ tags:: note
 - ### 2.2 Economic Barriers
   
   Beyond raw performance, economic factors compound centralization:
-- **Capital Requirements**: ASIC miners cost $2,000-$15,000+ per unit
-- **Electricity Costs**: Industrial operations access $0.02-0.05/kWh rates unavailable to consumers
-- **Technical Expertise**: Operating mining farms requires specialized knowledge
-- **Geographic Concentration**: Mining gravitates toward regions with cheap power and favorable regulations
+- Capital Requirements: ASIC miners cost $2,000-$15,000+ per unit
+- Electricity Costs: Industrial operations access $0.02-0.05/kWh rates unavailable to consumers
+- Technical Expertise: Operating mining farms requires specialized knowledge
+- Geographic Concentration: Mining gravitates toward regions with cheap power and favorable regulations
 - ### 2.3 Previous Attempts
   
   Several algorithms have attempted to address these issues:
   
-  **CryptoNight** (Monero, pre-2019): 2MB scratchpad with random reads/writes. Ultimately defeated by ASICs due to predictable memory access patterns.
+  CryptoNight (Monero, pre-2019): 2MB scratchpad with random reads/writes. Ultimately defeated by ASICs due to predictable memory access patterns.
   
-  **RandomX** (Monero, 2019-present): Virtual machine executing random programs. Highly effective against ASICs but requires 2GB memory, excluding phones and resource-constrained devices.
+  RandomX (Monero, 2019-present): Virtual machine executing random programs. Highly effective against ASICs but requires 2GB memory, excluding phones and resource-constrained devices.
   
-  **VerusHash 2.1** (Verus): Haraka512-based, optimized for AES-NI. Excellent CPU/GPU parity but not designed for mobile devices.
+  VerusHash 2.1 (Verus): Haraka512-based, optimized for AES-NI. Excellent CPU/GPU parity but not designed for mobile devices.
   
-  **XelisHash v3** (Xelis, 2024): ChaCha8 + BLAKE3 with "parallelism tax." Achieves ~1:1 CPU/GPU ratio but borderline for phone L3 cache (544KB scratchpad).
+  XelisHash v3 (Xelis, 2024): ChaCha8 + BLAKE3 with "parallelism tax." Achieves ~1:1 CPU/GPU ratio but borderline for phone L3 cache (544KB scratchpad).
   
   ---
 - ## 3. Design Goals
   
   UniversalHash v4 was designed with the following prioritized objectives:
 - ### 3.1 Primary Goals
-- **Democratic Accessibility** (Phone:Desktop ≤ 1:5)
+- Democratic Accessibility (Phone:Desktop ≤ 1:5)
 	- Any smartphone manufactured after 2018 should meaningfully participate
 	- Budget devices ($150) should compete reasonably with high-end hardware ($5,000)
-- **ASIC Resistance** (Custom silicon advantage < 3×)
+- ASIC Resistance (Custom silicon advantage < 3×)
 	- Economic infeasibility of ASIC development
 	- Natural adaptation through algorithm parameters if ASICs emerge
-- **GPU Neutralization** (GPU advantage < 5×)
+- GPU Neutralization (GPU advantage < 5×)
 	- Sequential dependencies that prevent massive parallelism
 	- Random memory access patterns hostile to coalesced reads
 - ### 3.2 Secondary Goals
-- **Implementation Simplicity**
+- Implementation Simplicity
 	- Core algorithm expressible in < 50 lines of code
 	- Easy auditing and verification
 	- Portable to WASM, ARM, x86 without exotic dependencies
-- **Verification Efficiency**
+- Verification Efficiency
 	- Block validation in < 5ms on consumer hardware
 	- Light clients can verify without full scratchpad computation
-- **Future-Proofing**
+- Future-Proofing
 	- Adjustable parameters without hard forks
 	- Graceful degradation if hardware landscape changes
 	  
@@ -136,7 +136,7 @@ tags:: note
   | ---- |
   
   | 
-  | **RandomX** | 
+  | RandomX | 
   | 2080 MB (fast) / 256 MB (light) | 
   | VM + AES + Blake2b + Argon2 | 
   | ❌ No (memory) | 
@@ -145,7 +145,7 @@ tags:: note
   |
   
   | 
-  | **VerusHash 2.1** | 
+  | VerusHash 2.1 | 
   | ~4 KB | 
   | Haraka512 (AES-based) | 
   | ⚠️ Limited | 
@@ -154,7 +154,7 @@ tags:: note
   |
   
   | 
-  | **XelisHash v3** | 
+  | XelisHash v3 | 
   | 544 KB | 
   | ChaCha8 + Blake3 + AES | 
   | ⚠️ Borderline | 
@@ -163,7 +163,7 @@ tags:: note
   |
   
   | 
-  | **Yescrypt R32** | 
+  | Yescrypt R32 | 
   | Variable (8-32 MB) | 
   | Scrypt-based | 
   | ❌ No | 
@@ -172,7 +172,7 @@ tags:: note
   |
   
   | 
-  | **GhostRider** | 
+  | GhostRider | 
   | 2 MB | 
   | 15 algorithms rotating | 
   | ⚠️ Limited | 
@@ -181,7 +181,7 @@ tags:: note
   |
   
   | 
-  | **UniversalHash v4** | 
+  | UniversalHash v4 | 
   | 2 MB (4×512KB) | 
   | AES + SHA-256 + Blake3 | 
   | ✅ Yes | 
@@ -191,49 +191,49 @@ tags:: note
 - ### 4.2 Detailed Algorithm Comparison
 - #### RandomX
   
-  **Strengths:**
+  Strengths:
 - Gold standard for ASIC resistance (no efficient ASIC after 6+ years)
 - Virtual machine makes optimization extremely difficult
 - Audited by 4 independent security teams
 - Successfully deployed on Monero since November 2019
   
-  **Weaknesses:**
+  Weaknesses:
 - 2GB memory requirement excludes phones (256MB light mode is 4-6× slower)
 - Complex implementation (~15,000 lines of C++)
 - JIT compilation required for competitive performance
 - 32-bit devices cannot run efficiently
   
-  **ASIC Resistance Mechanism:** Random program execution with data-dependent branches, floating-point operations, and memory-hard SuperscalarHash.
+  ASIC Resistance Mechanism: Random program execution with data-dependent branches, floating-point operations, and memory-hard SuperscalarHash.
 - #### VerusHash 2.1
   
-  **Strengths:**
+  Strengths:
 - CPU actually faster than GPU (unique achievement)
 - Simple construction based on well-studied Haraka512
 - Successfully defeated FPGA attack via algorithm revision
 - Hybrid PoW/PoS reduces pure hashrate dependence
   
-  **Weaknesses:**
+  Weaknesses:
 - Limited adoption and ecosystem
 - Relies heavily on AES-NI availability
 - Not optimized for mobile devices
 - Smaller scratchpad may be vulnerable to future attacks
   
-  **ASIC Resistance Mechanism:** Extreme reliance on AES-NI acceleration; custom silicon would need to match Intel/AMD AES performance.
+  ASIC Resistance Mechanism: Extreme reliance on AES-NI acceleration; custom silicon would need to match Intel/AMD AES performance.
 - #### XelisHash v3
   
-  **Strengths:**
+  Strengths:
 - Elegant "parallelism tax" — memory scales with thread count
 - CPU/GPU parity (~1:1 ratio achieved)
 - Production-tested on live network (December 2024 hard fork)
 - Simpler than RandomX
   
-  **Weaknesses:**
+  Weaknesses:
 - 544KB scratchpad is borderline for budget phone L3 cache
 - Not designed with phones as primary target
 - Branching logic adds implementation complexity
 - Relatively new, less battle-tested
   
-  **ASIC Resistance Mechanism:** Memory bandwidth wall that scales with parallelism; 16-way branching hurts fixed-function hardware.
+  ASIC Resistance Mechanism: Memory bandwidth wall that scales with parallelism; 16-way branching hurts fixed-function hardware.
 - ### 4.3 UniversalHash v4 Design Decisions
   
   Based on this analysis, UniversalHash v4 makes the following design choices:
@@ -390,27 +390,27 @@ tags:: note
 - ## 6. Security Analysis
 - ### 6.1 ASIC Resistance
   
-  **Multi-Primitive Requirement:** An efficient ASIC must implement optimized circuits for:
+  Multi-Primitive Requirement: An efficient ASIC must implement optimized circuits for:
 - AES encryption (well-understood, ~0.1mm² in modern process)
 - SHA-256 compression (well-understood, ~0.05mm²)
 - BLAKE3 compression (less common, ~0.15mm² estimated)
   
   The rotation between primitives prevents specialization. An ASIC optimized for only one primitive would spend 66% of cycles underutilized.
   
-  **Memory Latency Wall:** With 12,288 rounds per chain and random addressing:
+  Memory Latency Wall: With 12,288 rounds per chain and random addressing:
 - Each round requires a memory read with unpredictable address
 - Minimum latency: ~40-80ns for DRAM access
 - Theoretical minimum time: 12,288 × 4 chains × 50ns = ~2.5ms per hash
   
   Adding more memory channels provides diminishing returns; the sequential dependency chain is the bottleneck.
   
-  **Economic Analysis:**
+  Economic Analysis:
 - Custom ASIC development: $5-20M
 - Expected advantage over CPU: <3× (latency-bound)
 - Break-even hashrate: Economically infeasible for reasonable network sizes
 - ### 6.2 GPU Resistance
   
-  **Sequential Dependencies:** Each round's address computation depends on the previous round's state:
+  Sequential Dependencies: Each round's address computation depends on the previous round's state:
   
   ```
   mixed[i] = f(state[i-1])  // Cannot precompute
@@ -420,26 +420,26 @@ tags:: note
   
   This creates a latency chain that limits effective GPU parallelism to 4 (one per chain).
   
-  **Random Memory Access:** GPU memory systems are optimized for coalesced access (adjacent threads reading adjacent addresses). UniversalHash's random addressing pattern causes:
+  Random Memory Access: GPU memory systems are optimized for coalesced access (adjacent threads reading adjacent addresses). UniversalHash's random addressing pattern causes:
 - Cache thrashing in L1/L2
 - Uncoalesced global memory reads
 - Memory bandwidth utilization <10% of theoretical peak
   
-  **Parallel Chain Limit:** With only 4 chains, a GPU with 10,000+ cores can only execute 4 concurrent hash attempts per SM. The massive parallelism advantage is eliminated.
+  Parallel Chain Limit: With only 4 chains, a GPU with 10,000+ cores can only execute 4 concurrent hash attempts per SM. The massive parallelism advantage is eliminated.
 - ### 6.3 Cryptographic Security
   
-  **Pre-image Resistance:** Finding an input that produces a specific output requires inverting BLAKE3(SHA256(state)), which inherits the security of both primitives (~256-bit security).
+  Pre-image Resistance: Finding an input that produces a specific output requires inverting BLAKE3(SHA256(state)), which inherits the security of both primitives (~256-bit security).
   
-  **Collision Resistance:** The double-hash finalization provides collision resistance from both SHA-256 (~128-bit birthday bound) and BLAKE3.
+  Collision Resistance: The double-hash finalization provides collision resistance from both SHA-256 (~128-bit birthday bound) and BLAKE3.
   
-  **Grinding Resistance:** The multi-chain XOR merge ensures all chains must be computed; an attacker cannot selectively compute favorable chains.
+  Grinding Resistance: The multi-chain XOR merge ensures all chains must be computed; an attacker cannot selectively compute favorable chains.
 - ### 6.4 Known Attack Vectors
   
-  **Time-Memory Tradeoff:** The 2MB scratchpad is small enough that precomputation attacks are theoretically possible but impractical:
+  Time-Memory Tradeoff: The 2MB scratchpad is small enough that precomputation attacks are theoretically possible but impractical:
 - Storing all possible scratchpad states: 2^256 × 2MB = infeasible
 - Partial precomputation: Benefits limited by write-back operation that modifies scratchpad
   
-  **Side-Channel Attacks:** The deterministic primitive rotation (0→1→2→0...) is timing-predictable. However:
+  Side-Channel Attacks: The deterministic primitive rotation (0→1→2→0...) is timing-predictable. However:
 - All three primitives have constant-time implementations available
 - Rotation pattern is public and identical for all miners
   
@@ -541,7 +541,7 @@ tags:: note
   | 3.5-5× | 
   |
   
-  **Key Observations:**
+  Key Observations:
 - Phone vs Desktop: 1:3-5 (target achieved)
 - Phone vs Server: 1:5-8 (capped by parallel chain limit)
 - Phone vs GPU: 1:3.5-5 (GPU advantage nearly eliminated)
@@ -587,10 +587,10 @@ tags:: note
   |
   
   | 
-  | **UniversalHash v4** | 
-  | **1:3-5** | 
-  | **1:3.5-5** | 
-  | **1:5-8** | 
+  | UniversalHash v4 | 
+  | 1:3-5 | 
+  | 1:3.5-5 | 
+  | 1:5-8 | 
   |
 - ### 7.3 Network Security Implications
   
@@ -647,14 +647,14 @@ tags:: note
   |
   
   | 
-  | **Total** | 
+  | Total | 
   |  | 
-  | **~981 GH/s ≈ 1 TH/s** | 
+  | ~981 GH/s ≈ 1 TH/s | 
   |
   
-  In this model, consumer phones contribute **86%** of network hashrate despite having lower individual performance, achieving true democratization. Servers and GPUs combined contribute less than 1%.
+  In this model, consumer phones contribute 86% of network hashrate despite having lower individual performance, achieving true democratization. Servers and GPUs combined contribute less than 1%.
   
-  **Realistic Active Mining Scenario:**
+  Realistic Active Mining Scenario:
   
   Not all devices mine continuously. Assuming 1% active participation:
   
@@ -686,17 +686,17 @@ tags:: note
   |
   
   | 
-  | **Total Active** | 
-  | **~10 GH/s** | 
+  | Total Active | 
+  | ~10 GH/s | 
   |
   
   ---
 - ## 8. Economic Model: Self-Regulating Proof Density
   
-  A critical innovation in UniversalHash v4 is its self-regulating economic model. Rather than relying on difficulty adjustment alone to control proof submission rates, we introduce a **gas-deducted reward system** that creates natural market equilibrium for proof density.
+  A critical innovation in UniversalHash v4 is its self-regulating economic model. Rather than relying on difficulty adjustment alone to control proof submission rates, we introduce a gas-deducted reward system that creates natural market equilibrium for proof density.
 - ### 8.1 Core Economics
   
-  **Net Reward Formula:**
+  Net Reward Formula:
   
   ```
   net_reward = (epoch_reward × proof_difficulty / total_difficulty) - gas_cost
@@ -708,7 +708,7 @@ tags:: note
   proof_difficulty > gas_cost × total_difficulty / epoch_reward
   ```
   
-  This creates a **dynamic density threshold** that emerges from market forces:
+  This creates a dynamic density threshold that emerges from market forces:
   
   ```
   ┌─────────────────────────────────────────────────────────────────────┐
@@ -725,7 +725,7 @@ tags:: note
   ```
 - ### 8.2 Permissionless Entry: Deferred Gas Model
   
-  The key insight: **a valid PoW proof is its own authentication**. No signature needed, no prior token balance needed.
+  The key insight: a valid PoW proof is its own authentication. No signature needed, no prior token balance needed.
   
   ```
   // Special transaction type - no upfront payment required
@@ -745,7 +745,7 @@ tags:: note
   }
   ```
   
-  **New Miner Journey (Zero Tokens Required):**
+  New Miner Journey (Zero Tokens Required):
   
   ```
   1. Download app, generate keypair
@@ -856,7 +856,7 @@ tags:: note
   ```
 - ### 8.6 Equilibrium Analysis
   
-  **Simulation: How the market finds equilibrium (10-minute epoch, 10M miners):**
+  Simulation: How the market finds equilibrium (10-minute epoch, 10M miners):
   
   | 
   | Gas Price | 
@@ -901,11 +901,11 @@ tags:: note
   |
   
   | 
-  | **1.0** | 
-  | **10000× target** | 
-  | **~0.048** | 
-  | **480K** | 
-  | **~800** ✅ | 
+  | 1.0 | 
+  | 10000× target | 
+  | ~0.048 | 
+  | 480K | 
+  | ~800 ✅ | 
   |
   
   The market naturally converges to ~500-1000 tx/s when gas price adjusts to make only dense proofs profitable.
@@ -979,7 +979,7 @@ tags:: note
   ---
 - ## 9. Bostrom Integration: Pool-less Epoch Mining
   
-  UniversalHash v4 is designed for integration with Bostrom's high-performance PoS consensus. Rather than traditional PoW block production, we propose an **epoch-based proof submission** model that leverages Bostrom's existing infrastructure.
+  UniversalHash v4 is designed for integration with Bostrom's high-performance PoS consensus. Rather than traditional PoW block production, we propose an epoch-based proof submission model that leverages Bostrom's existing infrastructure.
 - ### 9.1 Architecture Overview
   
   ```
@@ -995,7 +995,7 @@ tags:: note
   └─────────────────────────────────────────────────────────────────┘
   ```
   
-  **Key Insight:** PoW doesn't require separate blocks. Miners submit PoW proofs as regular Bostrom transactions, and rewards are distributed at epoch boundaries.
+  Key Insight: PoW doesn't require separate blocks. Miners submit PoW proofs as regular Bostrom transactions, and rewards are distributed at epoch boundaries.
 - ### 9.2 Pool-less Mining Model
   
   Traditional pools exist because:
@@ -1003,7 +1003,7 @@ tags:: note
 - Payout smoothing
 - Infrastructure (stratum servers, etc.)
   
-  **Why pools aren't needed here:**
+  Why pools aren't needed here:
   
   | 
   | Factor | 
@@ -1038,7 +1038,7 @@ tags:: note
   |
 - ### 9.3 Proof Submission Protocol
   
-  **Miner Workflow:**
+  Miner Workflow:
   
   ```
   1. Fetch current epoch parameters (seed, difficulty, gas price)
@@ -1048,7 +1048,7 @@ tags:: note
   5. At epoch boundary: receive (reward - gas) minted to address
   ```
   
-  **Proof Transaction Structure (Self-Authenticating):**
+  Proof Transaction Structure (Self-Authenticating):
   
   ```
   struct PoWProofTx {
@@ -1063,7 +1063,7 @@ tags:: note
   }
   ```
   
-  **Why No Signature?**
+  Why No Signature?
   
   ```
   hash = UniversalHash(epoch_seed || miner_address || timestamp || nonce)
@@ -1075,7 +1075,7 @@ tags:: note
   This enables permissionless mining with zero prior tokens.
   ```
   
-  **Verification (on-chain):**
+  Verification (on-chain):
   
   ```
   fn verify_pow_proof(proof: &PoWProofTx, epoch: &EpochParams, state: &ChainState) -> bool {
@@ -1105,7 +1105,7 @@ tags:: note
   ```
 - ### 9.4 Epoch Parameters
   
-  **Recommended Configuration:**
+  Recommended Configuration:
   
   | 
   | Parameter | 
@@ -1139,7 +1139,7 @@ tags:: note
   | Minimal (no signature needed) | 
   |
   
-  **Difficulty Targeting:**
+  Difficulty Targeting:
   
   ```
   target_proofs_per_epoch = 300,000
@@ -1152,7 +1152,7 @@ tags:: note
   Note: The gas market (Section 8) provides additional self-regulation on top of difficulty adjustment.
 - ### 9.5 Transaction Load Analysis
   
-  **Scenario: 10M Active Miners with Self-Regulating Economics**
+  Scenario: 10M Active Miners with Self-Regulating Economics
   
   With the gas-deducted reward model (Section 8), the market naturally finds equilibrium:
   
@@ -1164,7 +1164,7 @@ tags:: note
   Proof submissions: 300K / 600s = 500 tx/s
   ```
   
-  **This leaves 9,500 tx/s for cyberlinks and other operations.**
+  This leaves 9,500 tx/s for cyberlinks and other operations.
   
   | 
   | Scenario | 
@@ -1183,10 +1183,10 @@ tags:: note
   |
   
   | 
-  | **Equilibrium** | 
-  | **300K** | 
-  | **500** | 
-  | **9,500 tx/s** | 
+  | Equilibrium | 
+  | 300K | 
+  | 500 | 
+  | 9,500 tx/s | 
   |
   
   | 
@@ -1199,7 +1199,7 @@ tags:: note
   The gas market automatically throttles proof density when network is congested.
 - ### 9.6 PoW DAG for Fast Sync (Kaspa-inspired)
   
-  For blockchain synchronization without frequent blocks, we can use a **lightweight DAG structure**:
+  For blockchain synchronization without frequent blocks, we can use a lightweight DAG structure:
   
   ```
   Epoch N Seed ────┬────────────────────────────────────────┐
@@ -1216,7 +1216,7 @@ tags:: note
                         Epoch N+1 Seed
   ```
   
-  **DAG Proof Structure:**
+  DAG Proof Structure:
   
   ```
   struct DAGProof {
@@ -1229,13 +1229,13 @@ tags:: note
   }
   ```
   
-  **Benefits:**
+  Benefits:
 - Fast sync: New nodes download DAG proofs, verify PoW chain
 - Ordering: DAG provides partial ordering within epoch
 - No separate PoW blocks: Everything lives on Bostrom chain
 - Parallel verification: Multiple proofs can reference same parents
   
-  **DAG Parameters:**
+  DAG Parameters:
   
   | 
   | Parameter | 
@@ -1264,7 +1264,7 @@ tags:: note
   |
 - ### 9.7 Reward Distribution
   
-  **Per-Epoch Distribution:**
+  Per-Epoch Distribution:
   
   ```
   epoch_reward = base_emission × epoch_duration
@@ -1274,7 +1274,7 @@ tags:: note
     reward[m] = epoch_reward × work_share[m]
   ```
   
-  **Difficulty-Weighted Shares:**
+  Difficulty-Weighted Shares:
   
   Rather than counting proofs, weight by actual difficulty beaten:
   
@@ -1300,10 +1300,10 @@ tags:: note
   | ---- |
   
   | 
-  | **10 minutes** | 
-  | **~300K** | 
-  | **~500 tx/s** | 
-  | **Excellent** | 
+  | 10 minutes | 
+  | ~300K | 
+  | ~500 tx/s | 
+  | Excellent | 
   | ❌ (max distance) | 
   |
   
@@ -1339,26 +1339,26 @@ tags:: note
   | ✅ (63% window) | 
   |
   
-  **Note:** Proof count is approximately constant due to gas-market equilibrium. Longer epochs just spread the same proofs over more time.
+  Note: Proof count is approximately constant due to gas-market equilibrium. Longer epochs just spread the same proofs over more time.
   
-  **Recommendation: 10-minute epochs (Earth default)** provide:
+  Recommendation: 10-minute epochs (Earth default) provide:
 - Fast feedback loop for miners
 - ~500 tx/s leaves 9,500 tx/s for other operations
 - Self-regulating via gas market (no manual tuning)
 - Can extend to 45-60 minutes when Mars participation required (see Section 10)
 - ### 9.9 Sync Without Pools
   
-  **Traditional sync problem:**
+  Traditional sync problem:
 - Light clients need to verify PoW chain
 - Without pools, many small miners = slow block times = slow sync
   
-  **Bostrom solution:**
+  Bostrom solution:
 - PoS chain is canonical (fast finality)
 - PoW proofs are just transactions
 - Sync PoS chain normally
 - PoW history is fully embedded
   
-  **Fast sync protocol:**
+  Fast sync protocol:
   
   ```
   1. Sync Bostrom PoS chain (existing fast sync)
@@ -1396,8 +1396,8 @@ tags:: note
   |
   
   | 
-  | **Epoch duration** | 
-  | **10 minutes (Earth default)** | 
+  | Epoch duration | 
+  | 10 minutes (Earth default) | 
   |
   
   | 
@@ -1457,7 +1457,7 @@ tags:: note
   | ~44 min | 
   |
   
-  **Critical insight:** For a miner to participate in an epoch, they need:
+  Critical insight: For a miner to participate in an epoch, they need:
 - Receive epoch parameters (or compute them deterministically)
 - Mine proofs
 - Submit proofs before epoch ends (plus grace period)
@@ -1475,7 +1475,7 @@ tags:: note
   Mars literally cannot participate in 10-minute epochs at maximum distance.
 - ### 10.3 Epoch Length vs Mars Mining Window
   
-  Assuming **deterministic epoch seeds** (best case, Mars can start immediately):
+  Assuming deterministic epoch seeds (best case, Mars can start immediately):
   
   | 
   | Epoch Length | 
@@ -1522,7 +1522,7 @@ tags:: note
   |
 - ### 10.4 Astronomical Epoch Duration
   
-  Since Earth-Mars distance is **deterministically computable** from orbital mechanics, epochs can adapt automatically:
+  Since Earth-Mars distance is deterministically computable from orbital mechanics, epochs can adapt automatically:
   
   ```
   // JPL ephemeris simplified - production uses SPICE kernels
@@ -1563,7 +1563,7 @@ tags:: note
   }
   ```
   
-  **Epoch schedule over 26-month Mars synodic period:**
+  Epoch schedule over 26-month Mars synodic period:
   
   ```
   ┌─────────────────────────────────────────────────────────────────┐
@@ -1590,10 +1590,10 @@ tags:: note
   }
   ```
   
-  With deterministic seeds, Mars can **pre-compute** future epoch seeds and start mining immediately when each epoch begins.
+  With deterministic seeds, Mars can pre-compute future epoch seeds and start mining immediately when each epoch begins.
 - ### 10.6 Grace Period for Deep Space
   
-  Even with adaptive epochs, edge cases exist. Add a **grace window** for late arrivals:
+  Even with adaptive epochs, edge cases exist. Add a grace window for late arrivals:
   
   ```
   struct ProofSubmission {
@@ -2016,7 +2016,7 @@ tags:: note
 - ### 9.1 C Reference Implementation (Portable)
   
   ```
-  /**
+  /
   * UniversalHash v4 - Portable C Implementation
   * 
   * Compile with: gcc -O3 -march=native -o prover prover.c -lcrypto -lblake3
@@ -2276,7 +2276,7 @@ tags:: note
 - ### 9.2 ARM-Optimized Implementation (Mobile/Apple Silicon)
   
   ```
-  /**
+  /
   * UniversalHash v4 - ARM NEON + Crypto Extensions
   * 
   * Optimized for: iPhone, Android (ARMv8+), Apple Silicon
@@ -2369,7 +2369,7 @@ tags:: note
 - ### 9.3 x86-64 Optimized Implementation (Intel/AMD)
   
   ```
-  /**
+  /
   * UniversalHash v4 - x86-64 with AES-NI and SHA Extensions
   * 
   * Compile with: gcc -O3 -march=native -maes -msha -o prover_x86 prover_x86.c
@@ -2465,7 +2465,7 @@ tags:: note
 - ### 9.4 WebAssembly Implementation (Browser Mining)
   
   ```
-  /**
+  /
   * UniversalHash v4 - WebAssembly Implementation
   * 
   * For browser-based mining via WASM
@@ -2568,7 +2568,7 @@ tags:: note
 - ## 13. Integration Guidelines
 - ### 10.1 Blockchain Integration
   
-  **Difficulty Adjustment:**
+  Difficulty Adjustment:
   
   ```
   new_difficulty = old_difficulty × (target_time / actual_time)
@@ -2577,7 +2577,7 @@ tags:: note
   max_adjustment = 4× per period
   ```
   
-  **Block Header Structure:**
+  Block Header Structure:
   
   ```
   struct BlockHeader {
@@ -2591,7 +2591,7 @@ tags:: note
   }
   ```
   
-  **Validation:**
+  Validation:
   
   ```
   fn validate_block(block: &Block) -> bool {
@@ -2606,7 +2606,7 @@ tags:: note
   ```
 - ### 10.2 Mining Pool Protocol
   
-  **Stratum-compatible work distribution:**
+  Stratum-compatible work distribution:
   
   ```
   {
@@ -2625,7 +2625,7 @@ tags:: note
   }
   ```
   
-  **Share submission:**
+  Share submission:
   
   ```
   {
@@ -2686,7 +2686,7 @@ tags:: note
   
   UniversalHash v4 represents a practical approach to democratic proof-of-work mining. By carefully balancing memory requirements, parallel chain constraints, and cryptographic primitive selection, we achieve unprecedented device accessibility without sacrificing security.
   
-  **Key Achievements:**
+  Key Achievements:
 - Phone:Desktop ratio of 1:3-5 (vs 1:50-100 in RandomX)
 - GPU advantage reduced to 3.5-5× (vs 10-100× in traditional algorithms)
 - Server advantage capped at 5-8× (vs 1000× in SHA-256)

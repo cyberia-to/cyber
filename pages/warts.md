@@ -1,2 +1,2 @@
 tags:: disease
-- **warts**: caused by the human papillomavirus (hpv); symptoms include rough, grainy growths, often on hands or feet.
+- warts: caused by the human papillomavirus (hpv); symptoms include rough, grainy growths, often on hands or feet.

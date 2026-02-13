@@ -1,14 +1,14 @@
 tags:: compound
-- **alias**: retinol
+- alias: retinol
 - ![Vitamin_A.pdf](../assets/Vitamin_A_1719303309556_0.pdf)
 - [[vitamin]] a, also known as retinol, is a [[fat-soluble vitamin]] essential for maintaining [[healthy vision]], [[skin]], [[immune function]], and [[cellular growth]]. it plays a critical role in the production of [[retinal]], a molecule necessary for low-light and color vision, as well as supporting [[epithelial health]] and repair.
 - ### chemical properties
-	- **molecular weight**: 286.45 g/mol
-	- **density**: 0.953 g/cm³
-	- **boiling point**: 137–138°C (under reduced pressure)
-	- **solubility**: soluble in fats and organic solvents; insoluble in water
-	- **optical rotation**: +47° to +52° (c=10, ethanol)
-	- **chemical formula**: C₂₀H₃₀O
+	- molecular weight: 286.45 g/mol
+	- density: 0.953 g/cm³
+	- boiling point: 137–138°C (under reduced pressure)
+	- solubility: soluble in fats and organic solvents; insoluble in water
+	- optical rotation: +47° to +52° (c=10, ethanol)
+	- chemical formula: C₂₀H₃₀O
 - ### usefulness in medicine
 	- vitamin a is widely used to treat and prevent [[vitamin a deficiency]], which can lead to [[night blindness]] and [[xerophthalmia]] (dry eyes).
 	- it supports healthy skin, [[reduces acne]], and promotes [[wound healing]].
@@ -17,9 +17,9 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- vitamin a has shown [[antimicrobial]] properties by [[boosting the immune system]] and supporting the health of [[mucosal barriers]], which act as the body's first line of defense.
 	- research highlights:
-	- **bacteria**:
-		- **[[mycobacterium tuberculosis]]** [research link](https://scholar.google.com/scholar?q=Mycobacterium+tuberculosis+vitamin+A)
-		- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+vitamin+A)
+	- bacteria:
+		- [[mycobacterium tuberculosis]] [research link](https://scholar.google.com/scholar?q=Mycobacterium+tuberculosis+vitamin+A)
+		- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+vitamin+A)
 - ### research links
 	- [vitamin a and vision health](https://scholar.google.com/scholar?q=vitamin+A+vision)
 	- [antimicrobial properties of vitamin a](https://scholar.google.com/scholar?q=antimicrobial+properties+of+vitamin+A)

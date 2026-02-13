@@ -1,2 +1,2 @@
 tags:: disease
-- **sunburn**: skin damage caused by uv radiation; symptoms include red, painful, and peeling skin.
+- sunburn: skin damage caused by uv radiation; symptoms include red, painful, and peeling skin.

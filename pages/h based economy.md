@@ -2,38 +2,38 @@ tags:: disease
 # H-Based Economy Whitepaper
 - ## Overview
   We propose a dual-token economic system with two distinct roles:
-- **CYB**: the value anchor, designed to be scarce, stable, and accrue long-term value.
-- **H**: the liquidity engine, designed for high velocity, stability in price, and functional utility.
+- CYB: the value anchor, designed to be scarce, stable, and accrue long-term value.
+- H: the liquidity engine, designed for high velocity, stability in price, and functional utility.
   
   The system balances scarcity (CYB) and liquidity (H) through adaptive monetary policy, guided by a premium/discount mechanism.
   
   ---
 - ## Core Principles
-  1. **CYB benefits from stability**, H benefits from activity.
+  1. CYB benefits from stability, H benefits from activity.
   2. Scarcity and liquidity are opposing forces — we assign one to each token to avoid conflict.
   3. No zero-sum wins — policy ensures cooperation between CYB and H holders.
   4. Adaptive responses to market conditions based on a single macro signal: premium = (H price / structural D/E ratio).
   
   ---
 - ## Key Metrics
-- **Price (p)**: market rate of H in CYB.
-- **Structural D/E (d)**: H supply / CYB staked (nominal units).
-- **Premium (prem)**: p / d.
-- **Velocity (vel)**: proportion of H used for gas per period.
-- **Spread (spr)**: average market bid-ask spread for H pairs.
+- Price (p): market rate of H in CYB.
+- Structural D/E (d): H supply / CYB staked (nominal units).
+- Premium (prem): p / d.
+- Velocity (vel): proportion of H used for gas per period.
+- Spread (spr): average market bid-ask spread for H pairs.
   
   ---
 - ## Monetary Policy Mechanisms
 - ### 1. Adaptive Gas-H Allocation
   Gas fees paid in H are split into three buckets:
-- **CYB Buyback/Burn**: funds scarcity of CYB.
-- **H-holder Rewards**: tenure yield, spend rebates, LP incentives.
-- **Liquidity Safety**: PD/MM subsidies, circuit breakers.
+- CYB Buyback/Burn: funds scarcity of CYB.
+- H-holder Rewards: tenure yield, spend rebates, LP incentives.
+- Liquidity Safety: PD/MM subsidies, circuit breakers.
   
-  **Adaptive Split:**
-- **Premium > 1 (H scarce)**: More to H rewards, less to CYB buybacks.
-- **Premium ~ 1 (Balanced)**: Even split.
-- **Premium < 1 (H cheap)**: More to CYB buybacks, less to H rewards.
+  Adaptive Split:
+- Premium > 1 (H scarce): More to H rewards, less to CYB buybacks.
+- Premium ~ 1 (Balanced): Even split.
+- Premium < 1 (H cheap): More to CYB buybacks, less to H rewards.
 - ### 2. Optional Minting of H
   Stakers may choose whether to mint H upon staking CYB. This self-selection prevents oversupply and allows the market to adjust naturally.
 - Mint rebates when H scarce.

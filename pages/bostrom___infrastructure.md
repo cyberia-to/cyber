@@ -8,11 +8,11 @@ tags:: bostrom, infrastructure, cybernode
 - ## Quick Start
 	- | I want to... | Go to... |
 	  |--------------|----------|
-	  | **Connect my wallet** | [[chain config]] |
-	  | **Use the API** | [[API endpoints]] |
-	  | **Bridge tokens** | [[IBC bridge]] |
-	  | **Check network status** | https://cybernode.ai |
-	  | **Run a node** | [[go-cyber]] |
+	  | Connect my wallet | [[chain config]] |
+	  | Use the API | [[API endpoints]] |
+	  | Bridge tokens | [[IBC bridge]] |
+	  | Check network status | https://cybernode.ai |
+	  | Run a node | [[go-cyber]] |
 -
 - ## Documentation
 	- [[chain config]] — Chain ID, RPC, token info for wallets
@@ -25,19 +25,19 @@ tags:: bostrom, infrastructure, cybernode
 -
 - ## Overview
 	- The infrastructure consists of several components:
-		- **Archive Node** — Full blockchain history for indexing and historical queries
-		- **RPC Node** — Pruned node for fast public API access
-		- **Indexer** — [[cyberindex]] GraphQL API for complex queries
-		- **IPFS Storage** — Decentralized content storage for the [[knowledge graph]]
-		- **Reverse Proxy** — Load balancing and SSL termination
-		- **IBC Relayer** — Cross-chain packet relay to [[Osmosis]] and [[Cosmos Hub]]
+		- Archive Node — Full blockchain history for indexing and historical queries
+		- RPC Node — Pruned node for fast public API access
+		- Indexer — [[cyberindex]] GraphQL API for complex queries
+		- IPFS Storage — Decentralized content storage for the [[knowledge graph]]
+		- Reverse Proxy — Load balancing and SSL termination
+		- IBC Relayer — Cross-chain packet relay to [[Osmosis]] and [[Cosmos Hub]]
 		-
 -
 - ## Networks
 	- | Network | Chain ID | Status |
 	  |---------|----------|--------|
-	  | **Bostrom** | `bostrom` | ✅ Mainnet |
-	  | **Space Pussy** | `space-pussy-1` | 🧪 Experimental |
+	  | Bostrom | `bostrom` | ✅ Mainnet |
+	  | Space Pussy | `space-pussy-1` | 🧪 Experimental |
 -
 - ## Software Stack
 	- | Component | Technology |
@@ -57,14 +57,14 @@ tags:: bostrom, infrastructure, cybernode
 - ## Community & Support
 	- | Resource | Link |
 	  |----------|------|
-	  | **Telegram** | https://t.me/bostrom_news |
-	  | **Discord** | https://discord.gg/cyber |
-	  | **GitHub** | https://github.com/cybercongress |
-	  | **Forum** | https://commonwealth.im/bostrom |
-	  | **Twitter/X** | https://x.com/cyber_devs |
+	  | Telegram | https://t.me/bostrom_news |
+	  | Discord | https://discord.gg/cyber |
+	  | GitHub | https://github.com/cybercongress |
+	  | Forum | https://commonwealth.im/bostrom |
+	  | Twitter/X | https://x.com/cyber_devs |
 -
 - ## Status
-	- **Live Status**: https://cybernode.ai
+	- Live Status: https://cybernode.ai
 	- Real-time monitoring of all endpoints and services with 90-day uptime history
 -
 - ## Contributing

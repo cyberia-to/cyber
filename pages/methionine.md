@@ -1,13 +1,13 @@
 tags:: compound
-- **alias**: methionine
+- alias: methionine
 - ![Methionine.pdf](../assets/Methionine_1719303309556_0.pdf)
 - [[methionine]] is an essential sulfur-containing [[amino acid]] found in protein-rich foods like [[meat]], [[fish]], [[eggs]], and [[nuts]]. it plays a vital role in [[protein synthesis]], [[detoxification]], and overall [[metabolic health]]
 - ### chemical properties
-	- **molecular weight**: 149.21 g/mol
-	- **density**: 1.34 g/cm³
-	- **melting point**: 281°C (decomposes)
-	- **solubility**: soluble in water; slightly soluble in alcohol
-	- **chemical formula**: C₅H₁₁NO₂S
+	- molecular weight: 149.21 g/mol
+	- density: 1.34 g/cm³
+	- melting point: 281°C (decomposes)
+	- solubility: soluble in water; slightly soluble in alcohol
+	- chemical formula: C₅H₁₁NO₂S
 - ### usefulness in medicine
 	- methionine is a precursor for [[glutathione]], a powerful [[antioxidant]] that protects cells from oxidative stress.
 	- it aids in [[liver detoxification]] by facilitating the removal of heavy metals and other toxins.
@@ -17,9 +17,9 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- methionine itself does not exhibit direct antimicrobial properties but supports immune function and detoxification processes, indirectly aiding in infection control.
 	- research highlights:
-		- **bacteria**:
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+methionine)
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+methionine)
+		- bacteria:
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+methionine)
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+methionine)
 - ### research links
 	- [methionine and glutathione synthesis](https://scholar.google.com/scholar?q=methionine+glutathione+synthesis)
 	- [methionine and liver detoxification](https://scholar.google.com/scholar?q=methionine+liver+detoxification)

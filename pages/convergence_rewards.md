@@ -28,36 +28,36 @@ Each microblock includes:
 
 \[ R_1 = \alpha \cdot \sum_j |\pi_j^{(t+1)} - \pi_j^t| \]
 
-**Pros:** Simple, easy to verify  
-**Cons:** Gameable by oscillation
+Pros: Simple, easy to verify  
+Cons: Gameable by oscillation
 ### 4.2 Entropy Reduction Reward
 
 \[ R_2 = \beta \cdot (H(\pi^t) - H(\pi^{t+1})) \]
 
 Where entropy is \( H(\pi) = -\sum_j \pi_j \log \pi_j \)
 
-**Pros:** Rewards semantic sharpening  
-**Cons:** Computationally heavier
+Pros: Rewards semantic sharpening  
+Cons: Computationally heavier
 ### 4.3 Cosine Similarity to Target
 
 \[ R_3 = \gamma \cdot \text{cos}(\pi^{(t+1)}, \pi^*) \]
 
-**Pros:** Alignment with oracle\( \pi^* \)  
-**Cons:** Requires trusted reference; hard for local compute
+Pros: Alignment with oracle\( \pi^* \)  
+Cons: Requires trusted reference; hard for local compute
 ### 4.4 Spectral Gap Improvement
 
 \[ R_4 = \delta \cdot (\lambda_2^t - \lambda_2^{t+1}) \]
 
 Where \( \lambda_2 \) is the second eigenvalue of the transition matrix
 
-**Pros:** Measures global convergence speedup  
-**Cons:** Expensive and non-local
+Pros: Measures global convergence speedup  
+Cons: Expensive and non-local
 ### 4.5 Predictive Alignment Reward
 
 \[ R_5 = \epsilon \cdot \text{align}(\pi_j^{(t+1)}, \pi_j^{T}) \]
 
-**Pros:** Favors early correct contributions  
-**Cons:** Requires delayed validation
+Pros: Favors early correct contributions  
+Cons: Requires delayed validation
 ## 5. Composite Hybrid Model
 
 We propose the following hybrid reward function:

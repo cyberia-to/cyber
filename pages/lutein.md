@@ -16,7 +16,7 @@ alias:: xanthophyll
 	- lutein also plays a role in strengthening [[immune response]], enhancing overall health and resistance to oxidative damage.
 	- [[antibacterial]] and [[antimicrobial]] activity
 	- lutein exhibits antimicrobial effects primarily through potent antioxidant activity and immune system modulation, thereby enhancing the body’s defenses against microbial infections.
-- **bacteria**:
+- bacteria:
 	- [[staphylococcus aureus]]
 	- [[escherichia coli]]
 -

@@ -1,14 +1,14 @@
 tags:: compound
-- **alias**: stearic acid
+- alias: stearic acid
 - ![Stearic_Acid.pdf](../assets/Stearic_Acid_1719303309556_0.pdf)
 - [[stearic acid]] is a saturated fatty acid commonly found in [[animal fats]], [[cocoa]] butter, and [[shea]] butter. it is widely used in the [[cosmetics]], [[pharmaceutical]], and [[eat]] industries for its [[emollient]] and [[stabilizing]] properties.
 - ### chemical properties
-	- **molecular weight**: 284.48 g/mol
-	- **density**: 0.847 g/cm³
-	- **melting point**: 69–70°C (156–158°F)
-	- **boiling point**: 383°C (721°F)
-	- **solubility**: insoluble in water; soluble in ethanol, chloroform, and ether
-	- **chemical formula**: C₁₈H₃₆O₂
+	- molecular weight: 284.48 g/mol
+	- density: 0.847 g/cm³
+	- melting point: 69–70°C (156–158°F)
+	- boiling point: 383°C (721°F)
+	- solubility: insoluble in water; soluble in ethanol, chloroform, and ether
+	- chemical formula: C₁₈H₃₆O₂
 - ### usefulness in medicine
 	- stearic acid is used in [[pharmaceutical formulations]] as a lubricant and stabilizer for tablets and capsules.
 	- it supports [[skin health]] by acting as an [[emollient]], helping to soften and hydrate the skin.
@@ -18,11 +18,11 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- stearic acid exhibits mild antimicrobial properties by disrupting the lipid membranes of certain microbes.
 	- research highlights:
-		- **bacteria**:
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+stearic+acid)
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+stearic+acid)
-		- **fungi**:
-			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+stearic+acid)
+		- bacteria:
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+stearic+acid)
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+stearic+acid)
+		- fungi:
+			- [[candida albicans]] [research link](https://scholar.google.com/scholar?q=Candida+albicans+stearic+acid)
 - ### research links
 	- [stearic acid and cosmetic applications](https://scholar.google.com/scholar?q=stearic+acid+cosmetic+applications)
 	- [stearic acid and antimicrobial properties](https://scholar.google.com/scholar?q=stearic+acid+antimicrobial+properties)

@@ -67,4 +67,4 @@ tags:: kitchen/menu, mains
 - ### 💡 tips
 	- duck will naturally release fat — you can skim some off during cooking if preferred
 	- letting the stew rest 10–15 minutes after cooking improves flavor depth
-- > **enjoy your meal!** 🦆🥘🌿
+- > enjoy your meal! 🦆🥘🌿

@@ -32,12 +32,12 @@ autonomy:: staple
 	- [[corm]]: primary edible part, starchy and rich in carbohydrates
 - [[environment]]: thrives in tropical and subtropical regions with ample moisture
 	- [[climate]]: requires warm, humid conditions; grows best in wetlands or well-irrigated areas
-		- **water needs**: high
-		- **optimal temp**: 25–30°C
-		- **humidity**: >70%
-		- **flood-tolerance**: excellent
+		- water needs: high
+		- optimal temp: 25–30°C
+		- humidity: >70%
+		- flood-tolerance: excellent
 	- [[soil]]: prefers loamy, well-drained soil but can tolerate clay-rich soils
-		- **soil pH**: 5.5–6.5
+		- soil pH: 5.5–6.5
 - [[lifecycle]]
 	- germination: sprouts in 10–15 days from corms
 	- growth: develops large leaves and matures in 6–12 months depending on variety
@@ -52,8 +52,8 @@ autonomy:: staple
 		- [[leaves]]: can be harvested multiple times before maturity
 - [[links]]
 	- [wiki](https://en.wikipedia.org/wiki/Colocasia_esculenta)
-- ## **chemical compounds**
-	- | **compound**        | **part of plant** | **amount (approx.)** | **properties/usefulness**              |  
+- ## chemical compounds
+	- | compound        | part of plant | amount (approx.) | properties/usefulness              |  
 	  |---------------------|-------------------|-----------------------|-----------------------------------------|  
 	  | [[amylose]]             | corm             | 60% of starch         | energy storage, slow digestion          |  
 	  | [[cellulose]]           | leaves, corm     | trace amounts         | supports digestion, dietary fiber       |  

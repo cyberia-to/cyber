@@ -1,14 +1,14 @@
 tags:: compound
-- **alias**: b-carotene, β-carotene, b-carotene
+- alias: b-carotene, β-carotene, b-carotene
 - ![Beta-Carotene.pdf](../assets/Beta-Carotene_1719303309556_0.pdf)
 - [[beta-carotene]] is a red-orange pigment found in fruits and vegetables such as carrots, sweet potatoes, and spinach. it is a precursor to vitamin a (provitamin a) and is known for its powerful antioxidant properties, promoting overall health and protecting against oxidative stress.
 	- ### chemical properties
-		- **molecular weight**: 536.87 g/mol
-		- **density**: 0.94 g/cm³
-		- **melting point**: 183°C (361°F)
-		- **boiling point**: decomposes before boiling
-		- **solubility**: insoluble in water; soluble in fats and organic solvents
-		- **chemical formula**: C₄₀H₅₆
+		- molecular weight: 536.87 g/mol
+		- density: 0.94 g/cm³
+		- melting point: 183°C (361°F)
+		- boiling point: decomposes before boiling
+		- solubility: insoluble in water; soluble in fats and organic solvents
+		- chemical formula: C₄₀H₅₆
 	- ### usefulness in medicine
 		- beta-carotene is a major source of [[vitamin a]], which supports healthy [[vision]], [[immune function]], and [[skin health]].
 		- its [[antioxidant]] properties help neutralize free radicals, reducing the risk of [[chronic diseases]] such as [[cancer]] and [[cardiovascular disorders]].
@@ -18,11 +18,11 @@ tags:: compound
 	- ### [[antibacterial]] and [[antimicrobial]] activity
 		- while beta-carotene itself does not exhibit direct antimicrobial properties, its role in boosting immune function indirectly supports the body’s defense against infections.
 		- research highlights:
-			- **bacteria**:
-				- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+beta-carotene)
-				- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+beta-carotene)
-			- **viruses**:
-				- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+beta-carotene)
+			- bacteria:
+				- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+beta-carotene)
+				- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+beta-carotene)
+			- viruses:
+				- [[influenza virus]] [research link](https://scholar.google.com/scholar?q=influenza+virus+beta-carotene)
 - ### research links
 	- [beta-carotene and vitamin a synthesis](https://scholar.google.com/scholar?q=beta-carotene+vitamin+a+synthesis)
 	- [beta-carotene and antioxidant properties](https://scholar.google.com/scholar?q=beta-carotene+antioxidant+properties)

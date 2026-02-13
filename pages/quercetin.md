@@ -1,14 +1,14 @@
 tags:: compound
-- **alias**: quercetin
+- alias: quercetin
 - ![Quercetin.pdf](../assets/Quercetin_1719303309556_0.pdf)
 - [[quercetin]] is a natural [[flavonoid]] found in many [[fruits]], [[vegetables]], and [[grains]]. it is known for its potent [[antioxidant]], [[anti-inflammatory]], and [[immune-modulating]] properties. quercetin supports [[overall health]] by [[neutralizing free radicals]] and protecting cells from damage.
 - ### chemical properties
-	- **molecular weight**: 302.24 g/mol
-	- **density**: 1.799 g/cm³
-	- **melting point**: 316°C (600.8°F)
-	- **boiling point**: decomposes before boiling
-	- **solubility**: poorly soluble in water; soluble in ethanol and DMSO
-	- **chemical formula**: C₁₅H₁₀O₇
+	- molecular weight: 302.24 g/mol
+	- density: 1.799 g/cm³
+	- melting point: 316°C (600.8°F)
+	- boiling point: decomposes before boiling
+	- solubility: poorly soluble in water; soluble in ethanol and DMSO
+	- chemical formula: C₁₅H₁₀O₇
 - ### usefulness in medicine
 	- quercetin is used to reduce [[inflammation]] and support [[immune function]], making it beneficial for managing allergies and autoimmune conditions.
 	- it may lower the risk of [[chronic diseases]] like [[cardiovascular disorders]] and [[diabetes]] by improving blood pressure and blood sugar regulation.
@@ -17,12 +17,12 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- quercetin exhibits antimicrobial properties against a range of pathogens by disrupting cell membranes, inhibiting bacterial growth, and modulating immune responses.
 	- research highlights:
-		- **bacteria**:
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+quercetin)
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+quercetin)
-		- **viruses**:
-			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+quercetin)
-			- **[[herpes simplex virus]]** [research link](https://scholar.google.com/scholar?q=herpes+simplex+virus+quercetin)
+		- bacteria:
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+quercetin)
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+quercetin)
+		- viruses:
+			- [[influenza virus]] [research link](https://scholar.google.com/scholar?q=influenza+virus+quercetin)
+			- [[herpes simplex virus]] [research link](https://scholar.google.com/scholar?q=herpes+simplex+virus+quercetin)
 - ### research links
 	- [quercetin and antioxidant properties](https://scholar.google.com/scholar?q=quercetin+antioxidant)
 	- [quercetin and immune function](https://scholar.google.com/scholar?q=quercetin+immune+function)

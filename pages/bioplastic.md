@@ -52,8 +52,8 @@ tags:: disease
   | every 10 years | partial or full alang-alang rethatching |
   | every 15–20 years | refresh bioplastic panels if necessary |
 - ### performance summary
-	- structures expected lifespan: **40–50+ years** (core frame)
-	- bioplastic roofing elements lifespan: **8–12 years** per cycle
+	- structures expected lifespan: 40–50+ years (core frame)
+	- bioplastic roofing elements lifespan: 8–12 years per cycle
 	- all components compostable or recyclable onsite
 - ### regenerative architecture model
 	- 1. grow materials within agroforest modules.

@@ -8,16 +8,16 @@ alias:: fameflower, jewels-of-opar
 	- [[leave]]
 - [[plants/food]] : talinum paniculatum is a perennial, erect succulent herbaceous plant with smooth, fleshy branching stems, glossy succulent elliptic leaves, small pink star-shaped flowers in loose panicles, and round capsules containing tiny black seeds.
 - ## properties
-	- **roots**: fibrous, moderately fleshy, shallow-rooted
-		- **compounds**: saponins, alkaloids (trace amounts)
-	- **leaves**: succulent, edible, elliptic to spatulate, glossy green
-		- **compounds**: [[vitamin a]], [[ascorbic acid]], [[vitamin e]]; [[calcium]], [[iron]], [[magnesium]]; [[flavonoids]], [[phenolic acids]], [[mucilage]], [[carotenoids]]
-	- **flowers**: small, pink, star-shaped, arranged in airy panicles
-		- **compounds**: [[flavonoids]], [[phenolic compounds]]
-	- **fruits**: small round capsules with numerous tiny black seeds
-		- **compounds**: [[fatty acids]], [[alkaloids]], [[antioxidants]]
-	- **seeds**: tiny, shiny, black
-		- **compounds**: essential fatty acids, proteins
+	- roots: fibrous, moderately fleshy, shallow-rooted
+		- compounds: saponins, alkaloids (trace amounts)
+	- leaves: succulent, edible, elliptic to spatulate, glossy green
+		- compounds: [[vitamin a]], [[ascorbic acid]], [[vitamin e]]; [[calcium]], [[iron]], [[magnesium]]; [[flavonoids]], [[phenolic acids]], [[mucilage]], [[carotenoids]]
+	- flowers: small, pink, star-shaped, arranged in airy panicles
+		- compounds: [[flavonoids]], [[phenolic compounds]]
+	- fruits: small round capsules with numerous tiny black seeds
+		- compounds: [[fatty acids]], [[alkaloids]], [[antioxidants]]
+	- seeds: tiny, shiny, black
+		- compounds: essential fatty acids, proteins
 	- ## environment:
 		- grows optimally in warm, humid conditions with fertile, well-drained soils under partial to full sun
 		- ### climate:

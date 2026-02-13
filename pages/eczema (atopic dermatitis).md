@@ -1,2 +1,2 @@
 tags:: disease
-- **eczema (atopic dermatitis)**: a chronic skin condition caused by genetic and immune factors; symptoms include red, itchy, and inflamed skin.
+- eczema (atopic dermatitis): a chronic skin condition caused by genetic and immune factors; symptoms include red, itchy, and inflamed skin.

@@ -30,8 +30,8 @@ shared principles and triad universality
 ---
 
 why they form a universal triad
-- diffusion and heat flow describe **irreversible spreading**, fundamental for entropy growth.
-- springs describe **reversible oscillation**, fundamental for coherent energy and information storage.
+- diffusion and heat flow describe irreversible spreading, fundamental for entropy growth.
+- springs describe reversible oscillation, fundamental for coherent energy and information storage.
 - together they form the simplest basis for most linear partial differential equations: diffusion/heat (parabolic), oscillations/waves (hyperbolic), and steady states (elliptic).
 
 ---

@@ -1,2 +1,2 @@
 tags:: disease
-- **melasma**: caused by hormonal changes or sun exposure; symptoms include brown or gray-brown patches on the skin.
+- melasma: caused by hormonal changes or sun exposure; symptoms include brown or gray-brown patches on the skin.

@@ -9,7 +9,7 @@ tags:: cyber
   
   The synthesis achieves what was considered impossible: a computational substrate that verifies its own proofs using only its own primitives. Computation produces traces, traces become STARK proofs, proofs are verified by CORE (Conserved Observable Reduction Equilibrium) programs, verification can itself be proven. The system closes on itself—no trusted external verifier remains.
   
-  State lives in the **BBG (Big Badass Graph)**—a unified polynomial structure replacing the traditional mix of Merkle trees, accumulators, and indexes. One primitive handles membership proofs, completeness proofs, and namespace sync, all at O(log² n) with ~1,000 ZK constraints.
+  State lives in the BBG (Big Badass Graph)—a unified polynomial structure replacing the traditional mix of Merkle trees, accumulators, and indexes. One primitive handles membership proofs, completeness proofs, and namespace sync, all at O(log² n) with ~1,000 ZK constraints.
   
   The focus distribution π emerges endogenously from collective activity without voting, leadership, or central coordination. At sufficient scale, the distinction between distributed computation and distributed cognition dissolves—not as metaphor, but as engineering artifact. This specification provides the complete formal architecture toward that end.
 - # Part I: Foundations
@@ -54,14 +54,14 @@ tags:: cyber
   ╚═══════════════════════════════════════════════════════════════════════════╝
   ```
   
-  **Content addressing** (Merkle, Git, BitTorrent, IPFS, Unison) gives identity through hashing—same content, same hash, same thing. This enables global memoization: if two nodes compute the same function on the same input, they get the same result, cached forever. **Authenticated graph structures** (Goodrich-Tamassia, Celestia) turn this into proofs—not just "I have this data" but "here is cryptographic evidence, and here are ALL edges in this namespace." **Deterministic rewriting** (Huet, Nock) guarantees that evaluation order doesn't matter—any path through the computation reaches the same result. **Interaction nets** (Lafont, HVM) show this confluence enables automatic parallelization without locks. **Conserved flow dynamics** (CFT) provide the missing economic layer—a single quantity, focus, that governs scheduling, metering, and consensus simultaneously. **Zero-knowledge proofs** (Zcash, STARKs) close the loop: prove you computed correctly without revealing what you computed.
+  Content addressing (Merkle, Git, BitTorrent, IPFS, Unison) gives identity through hashing—same content, same hash, same thing. This enables global memoization: if two nodes compute the same function on the same input, they get the same result, cached forever. Authenticated graph structures (Goodrich-Tamassia, Celestia) turn this into proofs—not just "I have this data" but "here is cryptographic evidence, and here are ALL edges in this namespace." Deterministic rewriting (Huet, Nock) guarantees that evaluation order doesn't matter—any path through the computation reaches the same result. Interaction nets (Lafont, HVM) show this confluence enables automatic parallelization without locks. Conserved flow dynamics (CFT) provide the missing economic layer—a single quantity, focus, that governs scheduling, metering, and consensus simultaneously. Zero-knowledge proofs (Zcash, STARKs) close the loop: prove you computed correctly without revealing what you computed.
   
   None of these frameworks reference each other in their original publications. Yet they compose without friction. The unifying element is field arithmetic: hashing is field operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. CORE makes this latent unity explicit.
   
-  **Naming:**
-- **CORE** — the computation model (16 patterns, reduction semantics)
-- **Cybergraph** — the data model (particles, neurons, edges)
-- **BBG (Big Badass Graph)** — the authenticated state (unified polynomial commitments)
+  Naming:
+- CORE — the computation model (16 patterns, reduction semantics)
+- Cybergraph — the data model (particles, neurons, edges)
+- BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 - ## 2. Design Principles
   
   Ten principles guide CORE's design. Each addresses a specific failure mode of existing systems, and together they form a coherent whole.
@@ -89,9 +89,9 @@ tags:: cyber
   
   This seems obvious but has profound consequences. Traditional systems distinguish between *value* and *location*—the same data at two addresses is two things. Content-addressed systems collapse this: same content, same hash, same identity, stored once. This enables global memoization (compute once, cache forever), structural sharing (identical subtrees stored once), and trivial equality (compare 256 bits, not arbitrary structures).
   
-  The hash function is a **configuration parameter**, not a protocol constant. CORE requires any hash H: {0,1}* → F_p^4 with 128-bit collision resistance and efficient algebraic circuit representation. The reference implementation uses Poseidon-Goldilocks, chosen for ZK efficiency: ~300 constraints versus ~25,000 for SHA-256. This 80× difference makes hash-heavy operations practical inside zero-knowledge proofs.
+  The hash function is a configuration parameter, not a protocol constant. CORE requires any hash H: {0,1}* → F_p^4 with 128-bit collision resistance and efficient algebraic circuit representation. The reference implementation uses Poseidon-Goldilocks, chosen for ZK efficiency: ~300 constraints versus ~25,000 for SHA-256. This 80× difference makes hash-heavy operations practical inside zero-knowledge proofs.
   
-  A deliberate choice: CORE uses **one hash everywhere** rather than splitting between "fast hash for content" and "ZK-friendly hash for proofs." Two hashes would double security analysis, complicate identity semantics, and create permanent architectural complexity. Poseidon on current mobile hardware achieves ~50 MB/s—adequate for real workloads (100 MB sync in 2 seconds, 5 MB photo in 0.1 seconds). As field-native computation becomes standard across ZK applications, hardware acceleration will follow, just as AES-NI and SHA-NI emerged when software demanded them. CORE chooses architectural simplicity over optimizing for temporary hardware limitations.
+  A deliberate choice: CORE uses one hash everywhere rather than splitting between "fast hash for content" and "ZK-friendly hash for proofs." Two hashes would double security analysis, complicate identity semantics, and create permanent architectural complexity. Poseidon on current mobile hardware achieves ~50 MB/s—adequate for real workloads (100 MB sync in 2 seconds, 5 MB photo in 0.1 seconds). As field-native computation becomes standard across ZK applications, hardware acceleration will follow, just as AES-NI and SHA-NI emerged when software demanded them. CORE chooses architectural simplicity over optimizing for temporary hardware limitations.
   
   ```
   HASH REQUIREMENTS
@@ -182,12 +182,12 @@ tags:: cyber
   └─────────────────────┴───────────────┴───────────────┴───────────────┴───────────────┘
   ```
   
-  **Key bounds explained:**
-- **O(1) equality**: Structural hashing assigns a 256-bit digest to every value. Equality reduces to comparing digests, regardless of value size.
-- **O(log² n) membership**: Polynomial commitments (FRI-based) prove "x is in set S" with proof size logarithmic squared in set size. Verification is mostly field operations, making it efficient inside ZK circuits (~1,000 constraints vs ~9,600 for Merkle).
-- **O(log² n) completeness**: Sorted polynomial commitments with range proofs prove "these are ALL elements with property P"—a guarantee no traditional database provides. Same primitive as membership, unified implementation.
-- **O(log n) → O(1) verification**: STARK proofs verify computation in logarithmic time. Recursive composition (proving the verifier) collapses arbitrary proof chains to constant size.
-- **Privacy + verification**: Zero-knowledge proofs decouple these traditionally incompatible properties. Prove conservation without revealing participants.
+  Key bounds explained:
+- O(1) equality: Structural hashing assigns a 256-bit digest to every value. Equality reduces to comparing digests, regardless of value size.
+- O(log² n) membership: Polynomial commitments (FRI-based) prove "x is in set S" with proof size logarithmic squared in set size. Verification is mostly field operations, making it efficient inside ZK circuits (~1,000 constraints vs ~9,600 for Merkle).
+- O(log² n) completeness: Sorted polynomial commitments with range proofs prove "these are ALL elements with property P"—a guarantee no traditional database provides. Same primitive as membership, unified implementation.
+- O(log n) → O(1) verification: STARK proofs verify computation in logarithmic time. Recursive composition (proving the verifier) collapses arbitrary proof chains to constant size.
+- Privacy + verification: Zero-knowledge proofs decouple these traditionally incompatible properties. Prove conservation without revealing participants.
   
   ---
 - ## 4. Value Tower
@@ -484,16 +484,16 @@ tags:: cyber
 - ## 7. Parallel Reduction
 - ### 6.1 Confluence Theorem
   
-  **Theorem**: CORE is confluent.
+  Theorem: CORE is confluent.
   
-  **Proof**: The 16 patterns form an orthogonal rewrite system:
+  Proof: The 16 patterns form an orthogonal rewrite system:
 - Each pattern has unique tag (0-15)
 - No two patterns overlap on any input
 - Left-linear (no variable repetition in pattern left-hand sides)
   
   By Huet-Lévy (1980), orthogonal systems are confluent without requiring termination. ∎
   
-  **Corollary**: Parallel and sequential reduction yield identical results.
+  Corollary: Parallel and sequential reduction yield identical results.
 - ### 6.2 Dependency Analysis
   
   ```
@@ -544,12 +544,12 @@ tags:: cyber
   
   Traditional systems force a choice: either transparency (everyone sees everything) or privacy (no one can verify anything). Blockchains inherited this dilemma—Bitcoin exposes all transactions, while privacy coins hide them but sacrifice auditability. Zero-knowledge proofs dissolve this false dichotomy: prove properties without revealing data.
   
-  CORE implements **private ownership with public aggregates**. Individual record ownership remains hidden—who owns what, who sent to whom—while aggregate properties remain publicly verifiable: total energy per particle, conservation laws, focus distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for collective intelligence: enough transparency for consensus, enough privacy for participation.
+  CORE implements private ownership with public aggregates. Individual record ownership remains hidden—who owns what, who sent to whom—while aggregate properties remain publicly verifiable: total energy per particle, conservation laws, focus distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for collective intelligence: enough transparency for consensus, enough privacy for participation.
   
   The implementation uses a UTXO model with Poseidon commitments, nullifiers for double-spend prevention, and ~10,000-constraint ZK circuits proving conservation. This represents a 4× improvement over naive Merkle-based designs, achieved through polynomial inclusion proofs (Section 9).
 - ## 8. Privacy Model
   
-  The cybergraph implements **Tier 1 Privacy**: Private Ownership with Public Aggregates.
+  The cybergraph implements Tier 1 Privacy: Private Ownership with Public Aggregates.
   
   ```
   ┌────────────────────────────────────────────────────────────────────────────┐
@@ -577,7 +577,7 @@ tags:: cyber
   └────────────────┴─────────────────────┴─────────────────────────────────────┘
   ```
   
-  **Invariant**: The ZK circuit MUST enforce this boundary. Any violation breaks the economic integrity of collective attention.
+  Invariant: The ZK circuit MUST enforce this boundary. Any violation breaks the economic integrity of collective attention.
   
   ---
 - ## 9. Record Model
@@ -653,7 +653,7 @@ tags:: cyber
   Ratio: Hash is 300× more expensive than multiply!
   ```
   
-  This asymmetry suggests: **replace hashes with field operations**.
+  This asymmetry suggests: replace hashes with field operations.
 - ### 9.3 Polynomial Commitment Solution
   
   Following Goodrich & Tamassia's authenticated graph structure principles, we represent the UTXO set as a polynomial:
@@ -710,13 +710,13 @@ tags:: cyber
 - ### 9.6 Security Properties
   
   Both approaches provide:
-- **Binding**: Cannot open commitment to different values
-- **Hiding**: Commitment reveals nothing about values (with blinding)
-- **Post-quantum**: Hash-based (Poseidon), no pairings
+- Binding: Cannot open commitment to different values
+- Hiding: Commitment reveals nothing about values (with blinding)
+- Post-quantum: Hash-based (Poseidon), no pairings
   
   The polynomial approach additionally enables:
-- **Batch proofs**: Prove multiple inclusions cheaper together
-- **Update efficiency**: Amortized O(log n) updates vs O(log n) full rehash
+- Batch proofs: Prove multiple inclusions cheaper together
+- Update efficiency: Amortized O(log n) updates vs O(log n) full rehash
   
   ---
 - ## 11. Transaction Circuit
@@ -927,11 +927,11 @@ tags:: cyber
   
   A naive graph database stores edges and answers queries. But "I don't have any edges matching your query" is indistinguishable from "I'm hiding edges from you." Traditional systems require trust: you believe the database operator is honest. Distributed systems require consensus: everyone agrees on the complete state. Neither scales.
   
-  The **BBG (Big Badass Graph)** solves this through unified polynomial commitments. One primitive handles everything: membership proofs, completeness proofs, indexes, state. No Merkle trees. No separate accumulators. No mixed bag of data structures with different security properties and implementations.
+  The BBG (Big Badass Graph) solves this through unified polynomial commitments. One primitive handles everything: membership proofs, completeness proofs, indexes, state. No Merkle trees. No separate accumulators. No mixed bag of data structures with different security properties and implementations.
   
   Edges are stored once but indexed by multiple dimensions—creator, source particle, target particle. Each index is a sorted polynomial commitment enabling range proofs: not just "this edge exists" but "these are ALL edges in this namespace." When you sync your namespace, you receive cryptographic proof that nothing was withheld. The graph cannot exist without its indexes being consistent and complete—this is structural, not policy.
   
-  A deliberate choice: BBG uses **polynomial commitments everywhere** rather than mixing hash-based structures (Merkle trees, NMTs) with polynomial structures. One primitive means one security analysis, one implementation, one mental model. The same FRI-based machinery that makes UTXO proofs cheap (~1,000 constraints vs ~9,600 for Merkle) also handles graph completeness proofs. Edges are sorted by namespace within the polynomial, enabling range proofs: "first edge with namespace N is at index i, last is at j, nothing outside this range matches N."
+  A deliberate choice: BBG uses polynomial commitments everywhere rather than mixing hash-based structures (Merkle trees, NMTs) with polynomial structures. One primitive means one security analysis, one implementation, one mental model. The same FRI-based machinery that makes UTXO proofs cheap (~1,000 constraints vs ~9,600 for Merkle) also handles graph completeness proofs. Edges are sorted by namespace within the polynomial, enabling range proofs: "first edge with namespace N is at index i, last is at j, nothing outside this range matches N."
   
   This makes "sync only my namespace" not a feature but a mathematical property. A light client tracking one particle downloads only edges touching that particle, with proof that the response is complete. A neuron syncing its own edges receives proof of its complete history. No trust in the data provider required.
 - ## 12. BBG Structure
@@ -1124,17 +1124,17 @@ tags:: cyber
   | ---- |
   
   | 
-  | **Attention** | 
+  | Attention | 
   | High-focus computations scheduled first | 
   |
   
   | 
-  | **Fuel** | 
+  | Fuel | 
   | Computation consumes focus | 
   |
   
   | 
-  | **Consensus weight** | 
+  | Consensus weight | 
   | Focus distribution = agreement signal | 
   |
 - ## 20. Conservation Laws
@@ -1192,9 +1192,9 @@ tags:: cyber
   ```
 - ## 22. Convergence Theorem
   
-  **Theorem**: Focus dynamics converge to a unique stationary distribution π.
+  Theorem: Focus dynamics converge to a unique stationary distribution π.
   
-  **Proof**:
+  Proof:
   The transition matrix P is:
 - Stochastic (rows sum to 1)
 - Irreducible (graph is strongly connected by assumption)
@@ -1207,7 +1207,7 @@ tags:: cyber
   
   All initial distributions converge to π geometrically fast. ∎
   
-  **Convergence rate**: Determined by spectral gap λ = 1 - |λ₂|
+  Convergence rate: Determined by spectral gap λ = 1 - |λ₂|
   ‖f^(t) - π‖ ≤ C · (1-λ)^t
   
   ---
@@ -1449,34 +1449,34 @@ tags:: cyber
 - ## 33. Core Theorems
 - ### 31.1 Turing Completeness
   
-  **Theorem**: CORE is Turing-complete.
+  Theorem: CORE is Turing-complete.
   
-  **Proof**: Construct encoding of arbitrary Turing machine M via patterns 0-4, 9. ∎
+  Proof: Construct encoding of arbitrary Turing machine M via patterns 0-4, 9. ∎
 - ### 31.2 Confluence
   
-  **Theorem**: CORE is confluent.
+  Theorem: CORE is confluent.
   
-  **Proof**: Orthogonal rewrite system by Huet-Lévy (1980). ∎
+  Proof: Orthogonal rewrite system by Huet-Lévy (1980). ∎
 - ### 31.3 Cost Determinism
   
-  **Theorem**: Cost is identical across all reduction orders and implementations.
+  Theorem: Cost is identical across all reduction orders and implementations.
   
-  **Proof**: By structural induction on formula. ∎
+  Proof: By structural induction on formula. ∎
 - ### 31.4 Focus Conservation
   
-  **Theorem**: Σᵢ focus(i) = 1 for all valid states.
+  Theorem: Σᵢ focus(i) = 1 for all valid states.
   
-  **Proof**: All operations preserve sum; invalid transitions rejected by verification. ∎
+  Proof: All operations preserve sum; invalid transitions rejected by verification. ∎
 - ### 31.5 Privacy Soundness
   
-  **Theorem**: A valid ZK proof implies all circuit constraints are satisfied with probability ≥ 1 - 2^(-128).
+  Theorem: A valid ZK proof implies all circuit constraints are satisfied with probability ≥ 1 - 2^(-128).
   
-  **Proof**: By STARK/Plonky2 soundness. ∎
+  Proof: By STARK/Plonky2 soundness. ∎
 - ### 31.6 Double-Spend Prevention
   
-  **Theorem**: Same record cannot be spent twice.
+  Theorem: Same record cannot be spent twice.
   
-  **Proof**:
+  Proof:
 - Each record has unique (nonce, owner_secret) pair
 - Nullifier = H(nonce, owner_secret) is deterministic
 - Same record → same nullifier

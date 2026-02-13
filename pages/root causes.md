@@ -80,16 +80,16 @@ tags:: disease
   ---
 - ## 1. INFECTION
   
-  **What it is:** Pathogenic organisms (bacteria, viruses, fungi, parasites) invading and disrupting body systems.
+  What it is: Pathogenic organisms (bacteria, viruses, fungi, parasites) invading and disrupting body systems.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Acute illness (fever, inflammation, tissue damage)
 - Chronic inflammation
 - Organ damage
 - Cancer (~15-20% of cancers are infection-driven: HPV, Hepatitis B/C, H. pylori, EBV)
 - Autoimmune triggering (molecular mimicry)
   
-  **Simple fixes:**
+  Simple fixes:
 - Hygiene: handwashing, food safety, water quality
 - Vaccination for major pathogens
 - Avoid unnecessary antibiotic use (preserves microbiome)
@@ -100,9 +100,9 @@ tags:: disease
   ---
 - ## 2. METABOLIC IMBALANCE
   
-  **What it is:** Dysregulation of energy processing — blood sugar, insulin, lipids, hormones out of optimal range.
+  What it is: Dysregulation of energy processing — blood sugar, insulin, lipids, hormones out of optimal range.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Vascular damage (atherosclerosis, hypertension)
 - Organ failure (heart, kidney, liver)
 - Neuropathy
@@ -110,7 +110,7 @@ tags:: disease
 - Chronic inflammation
 - Hormonal cascades (thyroid, reproductive, adrenal)
   
-  **Simple fixes:**
+  Simple fixes:
 - Reduce refined carbohydrates and sugar
 - Time-restricted eating / fasting periods
 - Regular movement (glucose disposal)
@@ -121,9 +121,9 @@ tags:: disease
   ---
 - ## 3. IMMUNE DYSREGULATION
   
-  **What it is:** Immune system either overactive (attacks self/harmless substances) or underactive (fails to eliminate threats).
+  What it is: Immune system either overactive (attacks self/harmless substances) or underactive (fails to eliminate threats).
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Autoimmune diseases (100+ types)
 - Allergies and hypersensitivities
 - Chronic inflammation
@@ -131,7 +131,7 @@ tags:: disease
 - Increased infection susceptibility
 - Tissue destruction
   
-  **Simple fixes:**
+  Simple fixes:
 - Reduce chronic inflammation triggers (processed food, excess omega-6)
 - Support gut health (70% of immune system is gut-associated)
 - Adequate vitamin D (immune modulation)
@@ -143,9 +143,9 @@ tags:: disease
   ---
 - ## 4. TOXIC EXPOSURE
   
-  **What it is:** Accumulation of harmful substances that damage cells, disrupt signaling, or cause mutations.
+  What it is: Accumulation of harmful substances that damage cells, disrupt signaling, or cause mutations.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - DNA damage → cancer
 - Organ damage (liver, kidney, brain, lung)
 - Hormonal disruption (endocrine disruptors)
@@ -153,7 +153,7 @@ tags:: disease
 - Immune dysfunction
 - Metabolic disruption
   
-  **Common toxins:**
+  Common toxins:
 - Alcohol, tobacco, drugs
 - Heavy metals (lead, mercury, cadmium, arsenic)
 - Pesticides, herbicides
@@ -162,7 +162,7 @@ tags:: disease
 - Mycotoxins (mold)
 - Excessive medications
   
-  **Simple fixes:**
+  Simple fixes:
 - Eliminate or minimize alcohol and tobacco
 - Filter drinking water
 - Choose organic for high-pesticide foods
@@ -175,9 +175,9 @@ tags:: disease
   ---
 - ## 5. NUTRIENT DEFICIENCY
   
-  **What it is:** Insufficient essential compounds for normal cellular function — vitamins, minerals, amino acids, fatty acids.
+  What it is: Insufficient essential compounds for normal cellular function — vitamins, minerals, amino acids, fatty acids.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Impaired energy production
 - Weakened immunity
 - Poor tissue repair
@@ -187,7 +187,7 @@ tags:: disease
 - Developmental problems
 - Increased vulnerability to all other causes
   
-  **Most common deficiencies globally:**
+  Most common deficiencies globally:
 - Iron (anemia, fatigue)
 - Vitamin D (immune, bone, mood)
 - B12 (nerve function, energy)
@@ -196,7 +196,7 @@ tags:: disease
 - Iodine (thyroid)
 - Zinc (immune, wound healing)
   
-  **Simple fixes:**
+  Simple fixes:
 - Eat whole foods, diverse colors
 - Prioritize nutrient density over calories
 - Consider testing for common deficiencies
@@ -207,9 +207,9 @@ tags:: disease
   ---
 - ## 6. PHYSICAL TRAUMA
   
-  **What it is:** Mechanical damage to tissues — injury, accidents, repetitive strain, surgical damage.
+  What it is: Mechanical damage to tissues — injury, accidents, repetitive strain, surgical damage.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Acute tissue damage
 - Chronic pain syndromes
 - Scar tissue and adhesions
@@ -218,7 +218,7 @@ tags:: disease
 - Disability
 - Secondary psychological effects
   
-  **Simple fixes:**
+  Simple fixes:
 - Prevention: safety equipment, ergonomics, fall prevention
 - Proper movement mechanics (lifting, posture)
 - Adequate recovery time after injury
@@ -230,9 +230,9 @@ tags:: disease
   ---
 - ## 7. GENETIC ERROR
   
-  **What it is:** Inherited or spontaneous mutations that disrupt normal cellular function.
+  What it is: Inherited or spontaneous mutations that disrupt normal cellular function.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Single-gene disorders (cystic fibrosis, sickle cell, etc.)
 - Increased disease susceptibility
 - Metabolic disorders
@@ -240,9 +240,9 @@ tags:: disease
 - Developmental abnormalities
 - Premature aging syndromes
   
-  **Reality check:** Only ~5-8% of disease is purely genetic. Most "genetic risk" requires environmental triggers.
+  Reality check: Only ~5-8% of disease is purely genetic. Most "genetic risk" requires environmental triggers.
   
-  **Simple fixes:**
+  Simple fixes:
 - Know your family history
 - Genetic testing for high-risk conditions
 - Epigenetic optimization (lifestyle modifies gene expression)
@@ -253,9 +253,9 @@ tags:: disease
   ---
 - ## 8. PSYCHO-NEURO STRESS
   
-  **What it is:** Chronic activation of stress pathways — psychological trauma, anxiety, depression, unresolved emotional patterns.
+  What it is: Chronic activation of stress pathways — psychological trauma, anxiety, depression, unresolved emotional patterns.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Elevated cortisol → immune suppression, metabolic disruption
 - Chronic inflammation
 - Cardiovascular disease
@@ -265,7 +265,7 @@ tags:: disease
 - Behavioral cascades (poor eating, substance use, isolation)
 - Pain amplification
   
-  **Simple fixes:**
+  Simple fixes:
 - Daily stress discharge: movement, breathwork, nature
 - Address unresolved trauma (therapy, EMDR, somatic work)
 - Social connection (isolation is a major risk factor)
@@ -278,9 +278,9 @@ tags:: disease
   ---
 - ## 9. SLEEP DISRUPTION
   
-  **What it is:** Insufficient or poor-quality sleep disrupting repair, consolidation, and regulation processes.
+  What it is: Insufficient or poor-quality sleep disrupting repair, consolidation, and regulation processes.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Immune suppression
 - Metabolic dysfunction (insulin resistance after one bad night)
 - Cognitive impairment
@@ -291,7 +291,7 @@ tags:: disease
 - Impaired memory consolidation
 - Reduced cellular repair (including cancer surveillance)
   
-  **Simple fixes:**
+  Simple fixes:
 - Consistent sleep/wake times (circadian rhythm)
 - 7-9 hours for most adults
 - Dark, cool, quiet sleep environment
@@ -305,9 +305,9 @@ tags:: disease
   ---
 - ## 10. DEGENERATION / AGING
   
-  **What it is:** Accumulated cellular damage, telomere shortening, stem cell exhaustion, loss of repair capacity.
+  What it is: Accumulated cellular damage, telomere shortening, stem cell exhaustion, loss of repair capacity.
   
-  **What it causes downstream:**
+  What it causes downstream:
 - Tissue weakness and failure
 - Reduced regeneration
 - Sarcopenia (muscle loss)
@@ -315,7 +315,7 @@ tags:: disease
 - Sensory loss
 - Increased vulnerability to all other causes
   
-  **Simple fixes (slow the rate):**
+  Simple fixes (slow the rate):
 - Address all other 9 causes (aging accelerates when they're present)
 - Regular movement (maintains muscle, bone, cardiovascular function)
 - Caloric moderation / fasting (activates repair pathways)
@@ -330,7 +330,7 @@ tags:: disease
   
   These causes rarely act alone. Most chronic disease involves multiple interacting causes:
   
-  **Example: Type 2 Diabetes**
+  Example: Type 2 Diabetes
 - Metabolic imbalance (primary)
 - Nutrient deficiency (magnesium, chromium)
 - Psycho-neuro stress (cortisol → blood sugar)
@@ -338,7 +338,7 @@ tags:: disease
 - Toxic exposure (certain pollutants)
 - Genetic susceptibility (modifier)
   
-  **Example: Heart Disease**
+  Example: Heart Disease
 - Metabolic imbalance (lipids, glucose)
 - Immune dysregulation (inflammation)
 - Psycho-neuro stress (cortisol, blood pressure)
@@ -346,7 +346,7 @@ tags:: disease
 - Nutrient deficiency (omega-3, magnesium)
 - Sleep disruption
   
-  **Example: Cancer**
+  Example: Cancer
 - Toxic exposure (carcinogens, radiation)
 - Infection (viral oncogenesis)
 - Immune dysregulation (surveillance failure)
@@ -358,11 +358,11 @@ tags:: disease
 - ## THE SIMPLE PROTOCOL
   
   If addressing all 10 feels overwhelming, these 5 interventions impact multiple causes simultaneously:
-- **Move daily** → metabolic, immune, psycho-neuro, sleep, degeneration
-- **Eat whole foods** → metabolic, nutrient, immune, toxic
-- **Sleep 7-9 hours** → immune, metabolic, psycho-neuro, degeneration
-- **Manage stress** → psycho-neuro, immune, metabolic, sleep
-- **Avoid toxins** (alcohol, tobacco, processed food, pollution) → toxic, metabolic, immune
+- Move daily → metabolic, immune, psycho-neuro, sleep, degeneration
+- Eat whole foods → metabolic, nutrient, immune, toxic
+- Sleep 7-9 hours → immune, metabolic, psycho-neuro, degeneration
+- Manage stress → psycho-neuro, immune, metabolic, sleep
+- Avoid toxins (alcohol, tobacco, processed food, pollution) → toxic, metabolic, immune
   
   These five actions address 80%+ of modifiable disease risk.
   
@@ -373,11 +373,11 @@ tags:: disease
   
   The human body has remarkable repair capacity when causes of damage are removed. Most chronic disease is not inevitable — it's the predictable result of cause accumulation over time.
   
-  **The framework:**
+  The framework:
 - 10 causes
 - 15 core symptoms
 - 10 body systems
   
-  **= ~1,500 meaningful combinations instead of 55,000 arbitrary disease names.**
+  = ~1,500 meaningful combinations instead of 55,000 arbitrary disease names.
   
   Simple. Actionable. Effective.

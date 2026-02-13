@@ -84,7 +84,7 @@ wood-density::
 	- [tokopedia](https://www.tokopedia.com/bataviaherbalshop/biji-kelor-kupas-moringa-seeds-kernel-kelor-premium-herbs-time?extParam=ivf%3Dfalse&src=topads)
 	- [plantsofasia](http://www.plantsofasia.com/index/moringa_oleifera/0-913)
 - ## chemical compounds
-	- | **compound**            | **part of plant**      | **amount (approx.)**                   | **properties/usefulness**                                                   |
+	- | compound            | part of plant      | amount (approx.)                   | properties/usefulness                                                   |
 	  |--------------------------|-------------------------|-----------------------------------------|------------------------------------------------------------------------------|
 	  | [[vitamin a]]           | leaves, pods           | 6,780 IU per 100g (fresh leaves)       | antioxidant, supports vision and skin health                                |
 	  | [[thiamine]] | leaves                | 0.06 mg per 100g (fresh leaves)        | energy metabolism, nerve function                                           |

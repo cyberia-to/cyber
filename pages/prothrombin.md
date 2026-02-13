@@ -1,10 +1,10 @@
 alias:: coagulation factor ii
 tags:: compound- [[prothrombin]], also known as [[coagulation factor ii]], is a vital [[plasma protein]] produced by the [[liver]] that plays a central role in the [[blood clotting cascade]]. it is the inactive precursor of [[thrombin]], an enzyme that converts [[fibrinogen]] into [[fibrin]], forming the structural basis of a blood clot. [[vitamin k]] is essential for the synthesis of prothrombin.
 	- ### chemical properties
-		- **molecular weight**: ~72 kDa
-		- **structure**: glycoprotein composed of several domains, including a [[gla domain]] that requires vitamin k for function
-		- **synthesis site**: liver
-		- **activation**: activated to thrombin by factor xa in the presence of calcium ions, phospholipids, and factor v
+		- molecular weight: ~72 kDa
+		- structure: glycoprotein composed of several domains, including a [[gla domain]] that requires vitamin k for function
+		- synthesis site: liver
+		- activation: activated to thrombin by factor xa in the presence of calcium ions, phospholipids, and factor v
 	- ### usefulness in medicine
 		- prothrombin levels are measured in prothrombin time (pt) tests to assess [[coagulation disorders]] and monitor [[warfarin therapy]].
 		- deficiencies or mutations in prothrombin (e.g., [[prothrombin gene mutation 20210a]]) can lead to [[bleeding disorders]] or [[increased risk of thrombosis]].

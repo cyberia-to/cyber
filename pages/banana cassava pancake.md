@@ -54,4 +54,4 @@ tags:: kitchen/menu, breakfast
 - ### 💡 tips
 	- squeeze excess moisture from cassava if too wet
 	- keep pancakes small for easier flipping
-- > **enjoy your treat!** 🍌🌿🥞
+- > enjoy your treat! 🍌🌿🥞

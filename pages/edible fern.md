@@ -59,4 +59,4 @@ tags:: kitchen/menu
 - ### 💡 tips
 	- do not overcook: fern shoots should stay bright green and slightly crisp
 	- store raw fern shoots wrapped in a damp cloth in the fridge for up to 1 day
-- > **enjoy your meal!** 🌿🥢
+- > enjoy your meal! 🌿🥢

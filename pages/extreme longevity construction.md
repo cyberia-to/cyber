@@ -1,29 +1,29 @@
 tags:: health
 - 🛡️ architectural rules for a truly eternal wall (target: 10,000–100,000+ years)
 - blocks
-	- block shape: **hexagonal prism**
+	- block shape: hexagonal prism
 	- block size:
-	- flat-to-flat diameter: **30–40 cm**
-	- block thickness: **20–25 cm**
-	- block height per row: **15–25 cm**
-	- block weight: **20–35 kg** (manageable manually)
+	- flat-to-flat diameter: 30–40 cm
+	- block thickness: 20–25 cm
+	- block height per row: 15–25 cm
+	- block weight: 20–35 kg (manageable manually)
 	- material: pure basalt or comparable ultra-dense stone (density >2800 kg/m³)
 - joints
-	- joint thickness: **0.3–0.5 mm**
+	- joint thickness: 0.3–0.5 mm
 	- mortar: improved [[roman concrete]]
 	- no organic additives: pure mineralization
 	- joint firing
-	- after laying, heat joints to **400–600 °c**
+	- after laying, heat joints to 400–600 °c
 	- slow and even heating and cooling to avoid cracks
 - block arrangement
 	- alternating rows (every block overlaps at least 3 lower blocks)
 	- honeycomb-type staggered pattern
 	- special trimmed hexagonal blocks at corners
 - roofing and drainage
-	- roof overhang minimum **1.5 meters** on all sides
-	- steep roof pitch: **>35°**
-	- raised foundation: minimum **50 cm** above ground level
-	- foundation sits on **40–50 cm** layer of coarse basalt gravel
+	- roof overhang minimum 1.5 meters on all sides
+	- steep roof pitch: >35°
+	- raised foundation: minimum 50 cm above ground level
+	- foundation sits on 40–50 cm layer of coarse basalt gravel
 	- full perimeter drainage system (channels or rock trenches)
 - protection of joints and walls
 	- thin mineral wash coating:
@@ -47,11 +47,11 @@ tags:: health
 	- continuous water mist or inert gas (N₂, air) cooling required
 	- ideally pre-heat the stone slightly to avoid thermal shock
 - results
-	- cutting precision: **<0.3 mm** joint tolerance
+	- cutting precision: <0.3 mm joint tolerance
 	- no mechanical vibration, no micro-cracks
 	- highly polished contact surfaces
 - practical notes
-	- cutting should be done **on-site** if possible to avoid transportation damage
+	- cutting should be done on-site if possible to avoid transportation damage
 	- portable gantry systems or modular laser rails can be deployed
 - ✨ final summary
 	- hexagonal basalt blocks

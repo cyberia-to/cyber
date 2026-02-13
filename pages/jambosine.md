@@ -2,11 +2,11 @@ tags:: compound
 - ![Jambosine.pdf](../assets/Jambosine_1719303309556_0.pdf)
 - [[jambosine]] is an [[alkaloid]] compound found in certain plants, most notably in the seeds of the rose apple (syzygium jambos). it has gained attention for its potential medicinal properties, particularly in [[regulating blood sugar]] levels and supporting metabolic health.
 - ### chemical properties
-	- **molecular weight**: not widely reported (depends on extraction source).
-	- **density**: not widely reported.
-	- **melting point**: not widely reported.
-	- **solubility**: soluble in water and polar solvents.
-	- **chemical formula**: C₁₄H₁₈N₂O₂
+	- molecular weight: not widely reported (depends on extraction source).
+	- density: not widely reported.
+	- melting point: not widely reported.
+	- solubility: soluble in water and polar solvents.
+	- chemical formula: C₁₄H₁₈N₂O₂
 - ### usefulness in medicine
 	- jambosine is studied for its potential role in [[blood sugar regulation]], helping to manage [[diabetes]] by influencing carbohydrate metabolism.
 	- it may exhibit [[antioxidant]] activity, reducing oxidative stress and protecting cells from damage.
@@ -16,11 +16,11 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- jambosine has shown promise as an antimicrobial agent, particularly against bacteria and fungi.
 	- research highlights:
-		- **bacteria**:
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+jambosine)
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+jambosine)
-		- **fungi**:
-			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+jambosine)
+		- bacteria:
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+jambosine)
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+jambosine)
+		- fungi:
+			- [[candida albicans]] [research link](https://scholar.google.com/scholar?q=Candida+albicans+jambosine)
 - ### research links
 	- [jambosine and blood sugar regulation](https://scholar.google.com/scholar?q=jambosine+blood+sugar+regulation)
 	- [jambosine and antimicrobial properties](https://scholar.google.com/scholar?q=jambosine+antimicrobial+properties)

@@ -56,6 +56,6 @@ tags:: species, major, genus
 - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7885186/#:~:text=camara%20leaves%20is%20mostly%20used,and%20ulcer%20%5B9%5D%20L.
 	- anti aging
 - https://www.acepnow.com/article/dont-eat-those-berries/
-	- **Toxin**
+	- Toxin
 		- L. camara contains a variety of toxic chemicals located throughout its structure: primarily toxic pentacyclic triterpenoids known as lantadenes; additionally toxic flavonoids, lantadene A, and icterogenin; taxa and oleanic oil, are found in roots; in leaves and flowers bisabolene, traces of monterpenes, and sesquiterpenes have been found.1
 - https://plantcaretoday.com/lantana-berries.html

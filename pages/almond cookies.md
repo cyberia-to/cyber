@@ -50,4 +50,4 @@ tags:: kitchen/menu
 	- minimal waste if using bulk ingredients
 - ### 💡 tips
 	- cookies firm up as they cool — store in an airtight jar if needed
-- > **enjoy your treat!** 🍪🌿
+- > enjoy your treat! 🍪🌿

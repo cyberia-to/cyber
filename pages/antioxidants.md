@@ -23,7 +23,7 @@ tags:: disease
 		- antioxidants support immune function by protecting immune cells from oxidative damage and enhancing their effectiveness.
 	- ## [[antimicrobial]] activity
 		- antioxidants indirectly exhibit antimicrobial activity by reducing oxidative stress, thereby enhancing immune function and limiting microbial virulence factors like biofilm formation and bacterial adhesion.
-		- **bacteria**:
+		- bacteria:
 			- [[escherichia coli]]
 			- [[staphylococcus aureus]]
 			- [[pseudomonas aeruginosa]]

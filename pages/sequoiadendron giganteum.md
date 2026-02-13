@@ -95,7 +95,7 @@ supply:: wishlist
 	- [nps.gov](https://www.nps.gov/seki/learn/nature/bigtrees.htm)
 	- [arboretum](https://www.arboretum.harvard.edu/sequoiadendron-giganteum/)
 - ## chemical compounds
-	- | **compound** | **part of plant** | **amount (approx.)** | **properties/usefulness** |
+	- | compound | part of plant | amount (approx.) | properties/usefulness |
 	  |---|---|---|---|
 	  | [[tannic acid]] | bark | 20-30% | [[antimicrobial]], fire-resistant |
 	  | [[terpenoids]] | bark, resin | trace amounts | [[antifungal]], insect-repelling |

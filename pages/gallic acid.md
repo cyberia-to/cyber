@@ -2,11 +2,11 @@ tags:: compound
 - ![Gallic_Acid.pdf](../assets/Gallic_Acid_1719303309556_0.pdf)
 - [[gallic acid]] is a naturally occurring [[polyphenol]] found in various plants, fruits, and seeds, including [[green tea]], [[grapes]], and [[berries]]. it is well known for its potent [[antioxidant]], [[anti-inflammatory]] and [[antimicrobial]] properties.
 - ### chemical properties
-	- **molecular weight**: 170.12 g/mol
-	- **density**: 1.694 g/cm³
-	- **melting point**: 235–240°C
-	- **solubility**: highly soluble in water, ethanol, and acetone
-	- **chemical formula**: C₇H₆O₅
+	- molecular weight: 170.12 g/mol
+	- density: 1.694 g/cm³
+	- melting point: 235–240°C
+	- solubility: highly soluble in water, ethanol, and acetone
+	- chemical formula: C₇H₆O₅
 - ### usefulness in medicine
 	- gallic acid is a powerful [[antioxidant]], protecting cells from oxidative stress and reducing the risk of chronic diseases.
 	- it exhibits strong [[anti-inflammatory]] properties, helping to manage conditions like [[arthritis]] and [[inflammatory bowel diseases]].
@@ -16,13 +16,13 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- gallic acid demonstrates significant antimicrobial activity by disrupting microbial cell walls and inhibiting microbial growth.
 	- research highlights:
-		- **bacteria**:
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+gallic+acid)
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+gallic+acid)
-		- **fungi**:
-			- **[[candida albicans]]** [research link](https://scholar.google.com/scholar?q=Candida+albicans+gallic+acid)
-		- **viruses**:
-			- **[[influenza virus]]** [research link](https://scholar.google.com/scholar?q=influenza+virus+gallic+acid)
+		- bacteria:
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+gallic+acid)
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+gallic+acid)
+		- fungi:
+			- [[candida albicans]] [research link](https://scholar.google.com/scholar?q=Candida+albicans+gallic+acid)
+		- viruses:
+			- [[influenza virus]] [research link](https://scholar.google.com/scholar?q=influenza+virus+gallic+acid)
 - ### research links
 	- [gallic acid and antioxidant activity](https://scholar.google.com/scholar?q=gallic+acid+antioxidant+activity)
 	- [gallic acid and antimicrobial properties](https://scholar.google.com/scholar?q=gallic+acid+antimicrobial+properties)

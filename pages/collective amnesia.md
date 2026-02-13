@@ -3,13 +3,13 @@ tags:: cyber
 - collective amnesia is the evolutionary bug. [[collective memory]] is the fix
 -
 - ## the evidence
-	- **lost civilizations**: entire cultures rediscovered after centuries of oblivion
-	- **catastrophic events**: the library of Alexandria, wars, natural disasters — records destroyed, knowledge gone
-	- **cultural transitions**: conquests and religious conversions erase or suppress prior knowledge (Rome → Christianity, pagan texts lost)
-	- **linguistic drift**: ancient scripts become unreadable. meanings distort through translation and reinterpretation
-	- **technological regression**: "dark ages" — periods where scientific knowledge regressed or stagnated for centuries
-	- **genetic bottlenecks**: early human populations decimated by migration and isolation, cultural knowledge lost with them
-	- **selective memory**: psychology shows that collective memory is shaped by social, cultural, and political forces — societies remember what serves power, forget what threatens it
+	- lost civilizations: entire cultures rediscovered after centuries of oblivion
+	- catastrophic events: the library of Alexandria, wars, natural disasters — records destroyed, knowledge gone
+	- cultural transitions: conquests and religious conversions erase or suppress prior knowledge (Rome → Christianity, pagan texts lost)
+	- linguistic drift: ancient scripts become unreadable. meanings distort through translation and reinterpretation
+	- technological regression: "dark ages" — periods where scientific knowledge regressed or stagnated for centuries
+	- genetic bottlenecks: early human populations decimated by migration and isolation, cultural knowledge lost with them
+	- selective memory: psychology shows that collective memory is shaped by social, cultural, and political forces — societies remember what serves power, forget what threatens it
 -
 - ## why it happens
 	- memory stored in brains dies with bodies

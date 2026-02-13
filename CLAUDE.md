@@ -37,6 +37,11 @@ Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
 - **Never define by negation.** Do not write "this is not X" or "not a Y
   but a Z". Say what something IS. Negation is a crutch — state the
   positive identity directly.
+- **Never use bold (`**text**`).** Bold is banned from the graph. For
+  emphasis use: `property::` for key-value pairs at the start of a line,
+  `# heading` for section titles, `[[wiki-link]]` for inline emphasis on
+  concepts. If a term does not deserve its own page, it does not need
+  emphasis — just write it plain.
 
 ## License
 

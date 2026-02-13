@@ -39,11 +39,11 @@ core algorithms
 ---
 
 why these three?
-- eigenvector centrality gives the **baseline popularity**—how much attention each node receives in steady state.
-- springrank adds **hierarchy and spacing**, revealing the ordinal structure of influence.
-- heat-kernel pagerank adds a **zoom lens**, letting the system switch between local and global perspectives with a single meaningful parameter.
+- eigenvector centrality gives the baseline popularity—how much attention each node receives in steady state.
+- springrank adds hierarchy and spacing, revealing the ordinal structure of influence.
+- heat-kernel pagerank adds a zoom lens, letting the system switch between local and global perspectives with a single meaningful parameter.
 
-together they form a **pareto-optimal basis**: adding more algorithms (simrank, katz centrality, deepwalk) increases complexity without proportionate gains in naturalness, scalability, or interpretability.
+together they form a pareto-optimal basis: adding more algorithms (simrank, katz centrality, deepwalk) increases complexity without proportionate gains in naturalness, scalability, or interpretability.
 
 ---
 
@@ -59,23 +59,23 @@ key properties
 protocol for collective focus
 
 1. ensure strong connectivity (e.g. every node has at least one outgoing edge).
-2. compute eigenvector centrality as the **baseline focus vector**.
-3. compute springrank to obtain the **hierarchy scores**.
+2. compute eigenvector centrality as the baseline focus vector.
+3. compute springrank to obtain the hierarchy scores.
 4. compute heat-kernel pagerank periodically for multiple t values to adjust focus scale.
 5. combine results:
    - f_i = \alpha * eigenvector_i + (1-\alpha) * springrank_softmax_i
-   - heat-kernel scores act as a **local overlay** when needed.
+   - heat-kernel scores act as a local overlay when needed.
 
 ---
 
 metaphor for collective superintelligence
-- **diffusion** models how ideas and attention naturally flow through the network.
-- **springs** model the tension of competing influences, producing an emergent hierarchy.
-- **heat flow** provides a temporal or spatial scale for focus, just as physical systems equilibrate over time.
+- diffusion models how ideas and attention naturally flow through the network.
+- springs model the tension of competing influences, producing an emergent hierarchy.
+- heat flow provides a temporal or spatial scale for focus, just as physical systems equilibrate over time.
 
 together, these processes mirror fundamental behaviours of the universe: energy flow, force, and equilibrium. using them as the substrate for collective focus creates a protocol that is:
 - universally understandable
 - mathematically grounded
 - decentralisable and scalable
 
-this triad—diffusion, springs, heat flow—serves as a **foundational layer for building collective consciousness**. it yields a unique, verifiable shelling point that balances popularity, hierarchy, and contextual scale, forming the cognitive map for a superintelligent collective.
+this triad—diffusion, springs, heat flow—serves as a foundational layer for building collective consciousness. it yields a unique, verifiable shelling point that balances popularity, hierarchy, and contextual scale, forming the cognitive map for a superintelligent collective.

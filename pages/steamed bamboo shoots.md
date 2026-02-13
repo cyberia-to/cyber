@@ -53,4 +53,4 @@ tags:: kitchen/menu
 - ### 💡 tips
 	- always boil bamboo shoots first to remove natural bitterness
 	- store steamed bamboo shoots in cold water in the fridge for up to 2–3 days
-- > **enjoy your meal!** 🎋🌿
+- > enjoy your meal! 🎋🌿

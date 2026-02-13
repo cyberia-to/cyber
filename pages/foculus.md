@@ -5,10 +5,10 @@ tags:: cyber
 This document outlines the Foculus protocol, a decentralized blockchain designed to secure state efficiently while simultaneously driving collective intelligence.
 
 Core components:
-- **Foculus Consensus**: Consensus achieved via graph-based focus computations, eliminating traditional block-based limitations.
-- **Public-Good Minting**: Incentivizes valuable computation by embedding proofs of useful work directly into graph edges.
-- **Quantum Resilience**: Uses periodic lattice-based checkpoints to ensure long-term security against quantum computing threats.
-- **Adaptive Parameterization**: Critical system parameters dynamically adjusted via reinforcement learning, eliminating governance overhead.
+- Foculus Consensus: Consensus achieved via graph-based focus computations, eliminating traditional block-based limitations.
+- Public-Good Minting: Incentivizes valuable computation by embedding proofs of useful work directly into graph edges.
+- Quantum Resilience: Uses periodic lattice-based checkpoints to ensure long-term security against quantum computing threats.
+- Adaptive Parameterization: Critical system parameters dynamically adjusted via reinforcement learning, eliminating governance overhead.
 ## 1. Introduction
 
 Existing blockchain systems suffer from two main problems:
@@ -40,8 +40,8 @@ Foculus is built upon the collective focus theorem, which guarantees convergence
 ### 4.1 Reward Architecture
 
 To ensure predictable minting behavior and minimize complexity in reward prediction, the system uses a hybrid incentive split:
-- **Minted tokens are exclusively allocated to Flow Focus Update proofs** (the backbone of consensus).
-- **All other proof particles (e.g., checkpoint anchoring, compression, availability, routing) are rewarded via a shared allocation from transaction fees.**
+- Minted tokens are exclusively allocated to Flow Focus Update proofs (the backbone of consensus).
+- All other proof particles (e.g., checkpoint anchoring, compression, availability, routing) are rewarded via a shared allocation from transaction fees.
 - 50% of transaction fees are burned to preserve long-term scarcity; the other 50% funds all auxiliary proofs.
 
 This ensures:
@@ -172,11 +172,11 @@ This models attention as a dynamic, evolving field—just as natural intelligenc
 - Periodic checkpoints embed quantum-resistant lattice puzzles, providing an additional layer of long-term security.
 - Finality anchored by regular quantum-resilient checkpoints, ensuring historical chain integrity.
 ## 10. Implementation Roadmap
-- **Phase 1**: Launch test network; prototype consensus and economic layers.
-- **Phase 2**: Integrate lattice checkpoints; optimize resource allocation.
-- **Phase 3**: Launch public-good computation incentive mechanism.
-- **Phase 4**: Enhance data availability and bundling structures.
-- **Phase 5**: Mainnet beta release, continuous adaptive optimizations.
+- Phase 1: Launch test network; prototype consensus and economic layers.
+- Phase 2: Integrate lattice checkpoints; optimize resource allocation.
+- Phase 3: Launch public-good computation incentive mechanism.
+- Phase 4: Enhance data availability and bundling structures.
+- Phase 5: Mainnet beta release, continuous adaptive optimizations.
 ## Conclusion
 
 The Foculus Foundation establishes a secure, scalable, and meaningful blockchain by aligning economic incentives, computation, and consensus. Its unique blend of quantum resilience, adaptive parameterization, and useful computation sets a robust foundation for a decentralized, earth-scale super-intelligence network.

@@ -1,14 +1,14 @@
 tags:: compound
-- **alias**: tocopherol
+- alias: tocopherol
 - ![Vitamin_E.pdf](../assets/Vitamin_E_1719303309556_0.pdf)
 - [[vitamin]] e, also known as tocopherol, is a [[fat-soluble vitamin]] and a powerful antioxidant that helps protect cells from damage caused by free radicals. it is essential for maintaining [[healthy skin]], [[eyes]], and [[immune function]]. vitamin e also supports [[cellular repair]] and promotes overall [[skin health]].
 - ### chemical properties
-	- **molecular weight**: 430.71 g/mol (alpha-tocopherol)
-	- **density**: 0.95 g/cm³
-	- **boiling point**: decomposes before boiling
-	- **solubility**: insoluble in water; soluble in fats and organic solvents
-	- **optical rotation**: +24° to +27° (alpha-tocopherol, in ethanol)
-	- **chemical formula**: C₂₉H₅₀O₂
+	- molecular weight: 430.71 g/mol (alpha-tocopherol)
+	- density: 0.95 g/cm³
+	- boiling point: decomposes before boiling
+	- solubility: insoluble in water; soluble in fats and organic solvents
+	- optical rotation: +24° to +27° (alpha-tocopherol, in ethanol)
+	- chemical formula: C₂₉H₅₀O₂
 - ### usefulness in medicine
 	- vitamin e is widely used to prevent and treat [[skin damage]] caused by [[uv radiation]] and oxidative stress.
 	- it promotes [[wound healing]] and [[reduces scarring]].
@@ -17,9 +17,9 @@ tags:: compound
 - ### [[antibacterial]] and [[antimicrobial]] activity
 	- while vitamin e is not a direct antimicrobial agent, its antioxidant properties can support the immune system and enhance the skin's natural barrier function, indirectly protecting against infections.
 	- research highlights:
-		- **bacteria**:
-			- **[[staphylococcus aureus]]** [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+vitamin+E)
-			- **[[escherichia coli]]** [research link](https://scholar.google.com/scholar?q=Escherichia+coli+vitamin+E)
+		- bacteria:
+			- [[staphylococcus aureus]] [research link](https://scholar.google.com/scholar?q=Staphylococcus+aureus+vitamin+E)
+			- [[escherichia coli]] [research link](https://scholar.google.com/scholar?q=Escherichia+coli+vitamin+E)
 - ### research links
 	- [vitamin e and skin health](https://scholar.google.com/scholar?q=vitamin+E+skin+health)
 	- [antioxidant properties of vitamin e](https://scholar.google.com/scholar?q=antioxidant+properties+of+vitamin+E)

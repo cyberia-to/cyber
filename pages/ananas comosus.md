@@ -53,13 +53,13 @@ tags:: genus, species, major
 	- family: bromeliaceae
 	- growth habit
 	- rosette of tough, waxy leaves with central fruiting stalk
-- **flowering:** produces multiple flowers that coalesce to form the fruit
-- **fruit:** large, compound fruit with rough, spiky exterior and sweet, juicy interior
-- **aroma:** sweet, tropical scent with notes of citrus and apple
+- flowering: produces multiple flowers that coalesce to form the fruit
+- fruit: large, compound fruit with rough, spiky exterior and sweet, juicy interior
+- aroma: sweet, tropical scent with notes of citrus and apple
 - ### additional details
-- **climate:** thrives in tropical and subtropical climates with well-drained soil
-- **sun exposure:** full sun
-- **water requirements:** moderate, prefers consistent moisture but not waterlogged conditions
-- **propagation:** by crowns (tops of the fruit), suckers (shoots from the base of the plant), or slips (side shoots from the fruit stalk)
+- climate: thrives in tropical and subtropical climates with well-drained soil
+- sun exposure: full sun
+- water requirements: moderate, prefers consistent moisture but not waterlogged conditions
+- propagation: by crowns (tops of the fruit), suckers (shoots from the base of the plant), or slips (side shoots from the fruit stalk)
   
-  **ananas comosus** is a versatile plant with significant economic and ecological importance. Its fruit is widely enjoyed for its sweet flavor and nutritional benefits, while the plant itself contributes to sustainable agricultural practices in permaculture systems.
+  ananas comosus is a versatile plant with significant economic and ecological importance. Its fruit is widely enjoyed for its sweet flavor and nutritional benefits, while the plant itself contributes to sustainable agricultural practices in permaculture systems.
