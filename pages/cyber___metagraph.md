@@ -134,7 +134,7 @@ tags:: cyber, article
 		- [[mathematics]] as universal language
 		- the [[cyber]] [[neural language]]: the formal language of the protocol
 - ## domain coverage
-	- total pages: 2005. the domain table below accounts for every page in the graph
+	- total pages: ~2005. the domain table below accounts for every page in the graph
 	- ### by knowledge domain
 		- | domain | tags | current | target | gap |
 		  |--------|------|---------|--------|-----|
@@ -159,10 +159,8 @@ tags:: cyber, article
 		  | materials & elements | `material` | 10 | 250 | 240 |
 		  | color & emotion | `color` | 17 | 20 | 3 |
 		  | meta (structural) | `article`, `annotation`, `research`, `term` | 110 | 150 | 40 |
-		  | unclear | `major`, `super` | 200 | 0 | -200 |
-		  | total | | 2005 | 5000-7000 | |
+		  | total | | ~2005 | 5000-7000 | |
 	- ### structural problems
-		- 200 pages tagged `major` or `super` with no clear domain assignment — these need review and retagging
 		- `cyberia` is the second largest domain by page count but absent from the metagraph design — it covers buildings, operations, land, teams, infrastructure
 		- `disease` (76 pages) maps to "the body" but the metagraph only mentions health in passing — diseases are a significant knowledge cluster
 		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded from the count or converted
@@ -177,8 +175,7 @@ tags:: cyber, article
 		  | measure (unit) | ~12 | 150 | ~138 |
 		  | pattern (structure) | ~15 | 150 | ~135 |
 		  | meta/structural | ~110 | 150 | ~40 |
-		  | unclear/needs review | ~200 | 0 | -200 |
-		  | total | 2005 | 5000-7000 | |
+		  | total | ~2005 | 5000-7000 | |
 	- ### observations
 		- the graph is still ~80% entities — verbs, properties, and relations remain the critical gap
 		- processes are the most important missing layer: a superintelligence needs dynamics, transformations, actions — verbs are the reasoning engine
@@ -187,7 +184,6 @@ tags:: cyber, article
 		- measures ground the graph in quantification: without units, no calculation, no comparison, no physics
 		- patterns are the highest abstraction: a [[feedback loop]] in ecology and a [[feedback loop]] in economics are the same structure
 		- [[cyberia]] emerged as a major domain organically — the metagraph must account for operational knowledge (buildings, land, teams, schedules) alongside academic knowledge
-		- 200 pages tagged `major`/`super` need domain assignment — this is the largest cleanup task
 		- domain × type matrix: every cell should have symbols. most cells in verb/property/relation columns are empty
 - ## graph properties
 	- | metric | target |
