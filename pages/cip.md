@@ -12,17 +12,62 @@ tags:: cyber
 	- testing: deployed to [[spacepussy]]
 	- implemented: deployed to [[bostrom]]
 - ## implemented
-	- {{query (and (page-tags [[cip]]) (page-property :status "implemented"))}}
-	  query-table:: false
+	- #+BEGIN_QUERY
+	  {:query [:find (pull ?p [:block/name])
+	   :where
+	   [?p :block/tags ?t]
+	   [?t :block/name "cip"]
+	   [?p :block/properties ?props]
+	   [(get ?props :status) ?s]
+	   [(= ?s "implemented")]]
+	   :result-transform (fn [r] (sort-by :block/name r))
+	   :breadcrumb-show? false}
+	  #+END_QUERY
 - ## tested
-	- {{query (and (page-tags [[cip]]) (page-property :status "tested"))}}
-	  query-table:: false
+	- #+BEGIN_QUERY
+	  {:query [:find (pull ?p [:block/name])
+	   :where
+	   [?p :block/tags ?t]
+	   [?t :block/name "cip"]
+	   [?p :block/properties ?props]
+	   [(get ?props :status) ?s]
+	   [(= ?s "tested")]]
+	   :result-transform (fn [r] (sort-by :block/name r))
+	   :breadcrumb-show? false}
+	  #+END_QUERY
 - ## accepted
-	- {{query (and (page-tags [[cip]]) (page-property :status "accepted"))}}
-	  query-table:: false
+	- #+BEGIN_QUERY
+	  {:query [:find (pull ?p [:block/name])
+	   :where
+	   [?p :block/tags ?t]
+	   [?t :block/name "cip"]
+	   [?p :block/properties ?props]
+	   [(get ?props :status) ?s]
+	   [(= ?s "accepted")]]
+	   :result-transform (fn [r] (sort-by :block/name r))
+	   :breadcrumb-show? false}
+	  #+END_QUERY
 - ## draft
-	- {{query (and (page-tags [[cip]]) (page-property :status "draft"))}}
-	  query-table:: false
+	- #+BEGIN_QUERY
+	  {:query [:find (pull ?p [:block/name])
+	   :where
+	   [?p :block/tags ?t]
+	   [?t :block/name "cip"]
+	   [?p :block/properties ?props]
+	   [(get ?props :status) ?s]
+	   [(= ?s "draft")]]
+	   :result-transform (fn [r] (sort-by :block/name r))
+	   :breadcrumb-show? false}
+	  #+END_QUERY
 - ## rejected
-	- {{query (and (page-tags [[cip]]) (page-property :status "rejected"))}}
-	  query-table:: false
+	- #+BEGIN_QUERY
+	  {:query [:find (pull ?p [:block/name])
+	   :where
+	   [?p :block/tags ?t]
+	   [?t :block/name "cip"]
+	   [?p :block/properties ?props]
+	   [(get ?props :status) ?s]
+	   [(= ?s "rejected")]]
+	   :result-transform (fn [r] (sort-by :block/name r))
+	   :breadcrumb-show? false}
+	  #+END_QUERY
