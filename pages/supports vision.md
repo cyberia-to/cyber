@@ -1,2 +1,2 @@
-tags:: health
+tags:: superhuman
 - [[human vision]]

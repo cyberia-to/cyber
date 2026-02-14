@@ -1,1 +1,1 @@
-tags:: disease
+tags:: superhuman

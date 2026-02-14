@@ -1,3 +1,3 @@
 alias:: body ringworm
-tags:: disease
+tags:: superhuman
 -

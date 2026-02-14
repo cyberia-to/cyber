@@ -1,4 +1,4 @@
-tags:: muscle
+tags:: superhuman
 
 - alias: potassium
 - ![Potassium.pdf](../assets/Potassium_1719303309556_0.pdf)

@@ -1,4 +1,4 @@
 alias::
-tags:: health
+tags:: superhuman
 - [[skin toning]]
 -

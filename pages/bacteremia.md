@@ -1,3 +1,3 @@
-tags:: infectious disease
+tags:: superhuman
 
 - bloodstream infection

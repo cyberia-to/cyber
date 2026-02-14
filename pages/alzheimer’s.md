@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - alias

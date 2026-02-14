@@ -1,1 +1,1 @@
-tags:: fungal disease, infectious disease
+tags:: superhuman

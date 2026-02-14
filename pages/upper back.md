@@ -1,3 +1,3 @@
-tags:: muscle
+tags:: superhuman
 - ![](https://ipfs.io/ipfs/QmUTg5GqEZeYHwyMbRuXZdCjwDt7LaEuiQCmhAc6cSG3uf)
 -

@@ -1,3 +1,3 @@
 alias:: varicella
-tags:: disease
+tags:: superhuman
 - highly contagious viral infection causing an itchy, blister-like rash

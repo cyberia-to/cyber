@@ -1,4 +1,4 @@
-tags:: muscle
+tags:: superhuman
 
 - [[passiflora edulis]]
 	- part::  [[leaves]] and [[flower]]

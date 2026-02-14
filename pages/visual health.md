@@ -1,3 +1,3 @@
 alias:: eye health
-tags:: health
+tags:: superhuman
 -

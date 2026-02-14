@@ -1,3 +1,3 @@
 alias:: skin moisturizer
-tags:: health
+tags:: superhuman
 - moisturizing: applying creams or lotions to hydrate and protect the skin, preventing dryness and irritation.

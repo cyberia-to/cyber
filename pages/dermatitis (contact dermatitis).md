@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - dermatitis (contact dermatitis): inflammation caused by contact with irritants or allergens; symptoms include red, inflamed, and itchy skin.

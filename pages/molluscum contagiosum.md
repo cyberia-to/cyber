@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - molluscum contagiosum: a viral infection causing small, raised, pearly bumps on the skin.

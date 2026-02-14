@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - seborrheic dermatitis (dandruff): caused by overactive oil glands or yeast growth; symptoms include flaky and itchy scalp or skin.

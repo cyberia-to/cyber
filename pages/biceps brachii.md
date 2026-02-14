@@ -1,5 +1,5 @@
 alias:: 
-tags:: muscle
+tags:: superhuman
 tag:: muscules
 
 -

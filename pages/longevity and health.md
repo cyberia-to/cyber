@@ -1,4 +1,4 @@
-tags:: health
+tags:: superhuman
 - TODO lecture at [[bootcamp/v0]]
 - it is a complex topic which looks like the most important for advanced societies
 - recent efforts in longevity research demonstrate that

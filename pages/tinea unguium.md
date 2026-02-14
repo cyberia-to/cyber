@@ -1,3 +1,3 @@
 alias:: onychomycosis
-tags:: disease
+tags:: superhuman
 -

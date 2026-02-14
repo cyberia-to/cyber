@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 - alias: zinc
 - ![Zinc.pdf](../assets/Zinc_1719303309556_0.pdf)
 - [[zinc]] is an essential trace mineral required for numerous biological processes, including enzyme function, immune response, DNA synthesis, and wound healing. it plays a key role in supporting skin health and cellular repair.

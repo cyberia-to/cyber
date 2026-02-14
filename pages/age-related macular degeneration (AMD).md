@@ -1,2 +1,2 @@
 alias:: AMD
-tags:: eyes disease
+tags:: superhuman

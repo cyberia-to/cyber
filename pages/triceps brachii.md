@@ -1,2 +1,2 @@
 alias:: muscules
-tags:: muscle
+tags:: superhuman

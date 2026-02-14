@@ -1,4 +1,4 @@
 alias:: core
-tags:: muscle
+tags:: superhuman
 
 -

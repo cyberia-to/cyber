@@ -1,3 +1,3 @@
 alias:: reduce inflamation
-tags:: health
+tags:: superhuman
 -

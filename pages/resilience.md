@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 - ....(1) The measure of a system's ability to remain
   within a domain of stability in response to fluctuations of the
   system by a disturbance, and the ability of the system to return

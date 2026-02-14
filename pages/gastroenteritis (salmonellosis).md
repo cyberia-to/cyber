@@ -1,2 +1,2 @@
 alias:: gastroenteritis
-tags:: disease
+tags:: superhuman

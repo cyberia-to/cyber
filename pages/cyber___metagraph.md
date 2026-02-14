@@ -141,7 +141,7 @@ tags:: cyber, article
 		  | itself (protocol) | `cyber`, `cyb`, `bostrom`, `module`, `cip`, `aip`, `param`, `state`, `prism` | 180 | 250 | 70 |
 		  | [[cyberia]] | `cyberia`, `cv.land`, `building`, `operation`, `camp`, `district`, `worker`, `team`, `hero` | 160 | 300 | 140 |
 		  | biology | `species`, `genus`, `fungi`, `family`, `plant`, `animals`, `birds` | 420 | 1000 | 580 |
-		  | the body | `muscle`, `health`, `disease`, `skin disease`, `respiratory disease`, `infectious disease` | 170 | 300 | 130 |
+		  | [[superhuman]] | `superhuman` | 170 | 300 | 130 |
 		  | chemistry | `compound` | 90 | 350 | 260 |
 		  | physics | `physics` | 50 | 150 | 100 |
 		  | mathematics | `mathematics` | 18 | 150 | 132 |

@@ -1,1 +1,1 @@
-tags:: respiratory disease
+tags:: superhuman

@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 - A consequence is a result of a COURSE OF ACTION (or of a decision) taken by the DECISION MAKER (Synonym: outcome; see IMPACT)
 - In analysis, the consequences of a course of action are determined (predicted) by the use of MODELS.  The consequences that one would like to have, particularly  those
   that contribute positively to the attainment of OBJECTIVES,  are referred to as [benefits;] the consequences that one would  like to avoid or minimize are costs

@@ -1,4 +1,4 @@
 alias:: skin irrations
-tags:: health
+tags:: superhuman
 -
 -

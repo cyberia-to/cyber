@@ -1,1 +1,1 @@
-tags:: skin disease
+tags:: superhuman

@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - staphylococcal scalded skin syndrome (ssss): a severe bacterial infection caused by staphylococcus aureus, leading to widespread peeling of the skin.

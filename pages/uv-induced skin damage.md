@@ -1,4 +1,4 @@
-tags:: skin disease
+tags:: superhuman
 
 - [[sunburn]],
 - [[aging]],

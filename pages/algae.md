@@ -1,4 +1,4 @@
-tags:: health
+tags:: superhuman
 
 - micro
 	- [[spirulina]] → protein, phycocyanin/pcb, gla

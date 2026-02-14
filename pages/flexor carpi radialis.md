@@ -1,4 +1,4 @@
-tags:: muscle
+tags:: superhuman
 
 - list of important muscles being developed during useful physical work in [[magic forest]]
 - {{query (page-tags [[muscle]])}}

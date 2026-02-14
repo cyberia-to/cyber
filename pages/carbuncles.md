@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - carbuncles: clusters of boils that are deeper and more severe, caused by bacterial infection.

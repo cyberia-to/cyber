@@ -1,1 +1,1 @@
-tags:: fungal disease, respiratory disease
+tags:: superhuman

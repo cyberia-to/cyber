@@ -1,2 +1,2 @@
 alias:: blood sugar levels
-tags:: health
+tags:: superhuman

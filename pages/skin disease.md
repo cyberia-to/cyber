@@ -1,4 +1,4 @@
 alias:: skin diseases
-tags:: disease
+tags:: superhuman
 - [[uv-induced skin damage]]
 -

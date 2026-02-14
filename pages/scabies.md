@@ -1,2 +1,2 @@
-tags:: disease
+tags:: superhuman
 - scabies: a skin infestation caused by the [[mite]] [[sarcoptes scabiei]], leading to intense itching and a pimple-like rash.

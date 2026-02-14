@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 
 - mucilage is a thick, viscous, gel-like substance composed primarily of complex [[polysaccharides]], produced by many plants, algae, and microorganisms. mucilage serves critical roles in plant physiology, including water storage, seed germination support, protection against dehydration, and facilitating nutrient uptake.
 - ## chemical properties

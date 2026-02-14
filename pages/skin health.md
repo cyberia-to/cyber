@@ -1,5 +1,5 @@
 alias::
-tags:: health
+tags:: superhuman
 - [[skin]]
 - [[skin healing]]
 - [[skin issues]]

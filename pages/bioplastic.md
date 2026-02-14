@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 
 - vision
 	- build durable, living structures using fully local, regenerative, biodegradable materials

@@ -1,3 +1,3 @@
-tags:: disease
+tags:: superhuman
 - [[skincare]]
 - [[skin disease]]

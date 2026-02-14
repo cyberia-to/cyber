@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 - [[fibrinogen]] is a vital [[glycoprotein]] produced by the [[liver]] that plays a central role in [[blood clot formation]]. it circulates in the plasma as a soluble protein and is converted by [[thrombin]] into insoluble [[fibrin]] strands, which weave into a [[mesh]] to stabilize blood clots. fibrinogen is also involved in [[inflammation]], [[wound healing]], and acts as a binding agent for [[platelets]].
 	- ### chemical properties
 		- molecular weight: ~340 kDa

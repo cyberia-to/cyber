@@ -1,3 +1,3 @@
 alias:: jock itch
-tags:: disease
+tags:: superhuman
 -

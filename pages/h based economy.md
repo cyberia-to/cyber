@@ -1,4 +1,4 @@
-tags:: disease
+tags:: superhuman
 # H-Based Economy Whitepaper
 - ## Overview
   We propose a dual-token economic system with two distinct roles:

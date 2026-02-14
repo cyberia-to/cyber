@@ -1,5 +1,5 @@
 alias:: enteric fever
-tags:: infectious disease
+tags:: superhuman
 
 - prolonged fever, abdominal pain, and systemic involvement.
 -

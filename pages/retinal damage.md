@@ -1,3 +1,3 @@
-tags:: eyes disease
+tags:: superhuman
 
 -
