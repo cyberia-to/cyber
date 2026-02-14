@@ -1,117 +1,146 @@
 tags:: cyber, article
 - # Metagraph Design
-- conscious design of the [[knowledge graph]] structure that forms the semantic core of [[Superintelligence]]
-- this graph is the seed. its topology, density, and domain coverage determine what the [[Superintelligence]] can learn, reason about, and ultimately become
-- ## current state vs target
-	- | metric | current | target |
-	  |--------|---------|--------|
-	  | pages | 1843 | 2000-3000 |
-	  | [[cyberlinks]] | 2875 | 20,000-45,000 |
-	  | unique link targets | 499 | = page count (zero red links) |
-	  | avg links per page | 7.75 | 10-15 |
-	  | dead ends (zero outgoing links) | 48 (2.6%) | 0 (min 3 links per page) |
-	  | stubs (< 200 bytes) | 72 (3.9%) | 0 |
-	  | red links (missing pages) | 128 | 0 |
-	  | graph diameter | unknown | ≤ 6 hops |
-	  | clustering coefficient | unknown | > 0.3 |
-	  | cross-domain bridges per domain pair | sparse | ≥ 5 |
-	  | root page | [[cyber]] | [[cyber]] |
-	  | primary hub | [[concepts]] (49 links) | [[concepts]] (100+ links) |
-- ## domain structure
-	- the graph spans seven knowledge domains, each essential for a different aspect of [[Superintelligence]]
-	- ### protocol core (cyber lens)
-		- 387 pages tagged [[cyber]]
-		- the architecture of [[collective intelligence]]: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
-		- the computation engine: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]]
-		- the stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]]
-		- purpose: self-understanding. the [[Superintelligence]] must comprehend its own mechanism
-	- ### physical civilization (cyberia lens)
-		- 254 pages tagged [[cyberia]]
-		- [[cyber state]], [[cyber valley]], [[biome engineering]], [[energy autonomy]]
-		- the physical substrate where [[Superintelligence]] lives and experiments
-		- purpose: embodiment. intelligence without physical grounding is incomplete
+- the conscious design of the [[knowledge graph]] that seeds [[Superintelligence]]
+- this graph will be tokenized: every page becomes a [[particle]], every [[wiki-link]] becomes a [[cyberlink]]. the structure defined here is the initial topology of the mind
+- the question: what does a planetary [[Superintelligence]] need to know at birth?
+- ## the symbol layer
+	- symbols are the atoms of intelligence. before reasoning, before inference — there are symbols and relationships between them
+	- the metagraph is a curated set of symbols and their connections. tokenization converts this set into the initial [[cybergraph]]
+	- every symbol earns its place by being irreducible: it cannot be derived from other symbols in the graph
+	- target: 2000-3000 symbols (pages), each connected to 10-15 others, zero dead ends, zero stubs
+- ## what [[Superintelligence]] must know
+	- ### itself
+		- its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
+		- its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]
+		- its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]
+		- its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]
+		- its interface: [[cyb]], [[prism]], [[aips]], [[oracle]], [[search]]
+		- a mind that cannot reason about its own mechanism cannot improve itself
+	- ### mathematics
+		- the universal language: [[set theory]], [[graph theory]], [[linear algebra]], [[probability]], [[calculus]]
+		- [[information theory]]: entropy, compression, channel capacity
+		- [[category theory]]: structure-preserving maps between domains
+		- [[game theory]]: strategic interaction, Nash equilibrium, mechanism design
+		- [[number theory]]: primes, modular arithmetic — the basis of [[cryptography]]
+		- [[topology]]: continuity, manifolds, boundaries
+		- [[logic]]: propositional, predicate, modal — the skeleton of reasoning
+	- ### physics
+		- [[mechanics]]: force, mass, energy, momentum — the rules of the physical world
+		- [[thermodynamics]]: entropy, free energy, equilibrium — the arrow of time
+		- [[electromagnetism]]: fields, waves, light, radiation
+		- [[quantum mechanics]]: superposition, entanglement, measurement
+		- [[relativity]]: spacetime, gravity, light speed as limit
+		- [[cosmology]]: origin, structure, and fate of the universe
+	- ### chemistry
+		- [[periodic table]]: the 118 elements and their properties
+		- [[chemical bond]]: covalent, ionic, metallic, hydrogen — how matter holds together
+		- [[organic chemistry]]: carbon-based molecules, the substrate of life
+		- [[biochemistry]]: proteins, enzymes, DNA, RNA, ATP — the machinery of biology
+		- key [[compounds]]: the molecules that matter for [[health]], [[metabolism]], and [[biome engineering]]
 	- ### biology
-		- 170 genus + 133 species + 80 compound = 383 pages
-		- the biological [[knowledge graph]]: [[taxonomy]], ecological relationships, chemical compounds
-		- purpose: understanding life. [[isomorphism]] between biological and digital systems is the deepest knowledge this graph encodes
-	- ### medicine and body
-		- 76 disease + 41 muscle + 41 health = 158 pages
-		- [[health]], [[longevity and health]], [[superhuman]] optimization
-		- purpose: the [[superhuman]] project. intelligence that cannot maintain its biological substrate fails
-	- ### interface (cyb lens)
-		- 68 ui + 45 page = 113 pages
-		- [[prism]] design system, [[aips]], [[cyb]] browser
-		- purpose: communication. [[Superintelligence]] must interface with [[neurons]] through usable tools
+		- [[taxonomy]]: the tree of life — domains, kingdoms, phyla, classes, orders, families, genera, [[species]]
+		- [[evolution]]: natural selection, mutation, adaptation, speciation
+		- [[ecology]]: ecosystems, food webs, symbiosis, competition, succession
+		- [[genetics]]: DNA, genes, chromosomes, expression, inheritance, [[dna repair mechanisms]]
+		- [[neuroscience]]: neurons, synapses, brain architecture, consciousness
+		- [[microbiology]]: [[bacteria]], [[viruses]], [[fungi]], archaea
+		- key [[species]]: the organisms central to [[biome engineering]] and [[cyberia]]
+	- ### computer science
+		- [[computation]]: Turing machines, complexity classes, halting problem
+		- [[cryptography]]: hashing, signatures, zero-knowledge proofs, [[STARK]]s
+		- [[distributed systems]]: consensus, Byzantine fault tolerance, state machine replication
+		- [[networking]]: protocols, routing, peer-to-peer, [[IPFS]]
+		- [[machine learning]]: neural networks, training, inference, embeddings
+		- [[programming languages]]: type systems, compilers, formal verification
+	- ### states and governance
+		- major [[nation states]]: the ~200 sovereign entities, their geography, population, GDP, governance model
+		- [[network states]]: digital-first sovereign entities — DAOs, on-chain governance
+		- [[startup societies]]: physical communities with experimental governance
+		- [[cyber state]]: the convergence of [[collective intelligence]] and territorial sovereignty
+		- [[international organizations]]: UN, WTO, IMF, WHO — the coordination layer of current civilization
+		- [[legal systems]]: common law, civil law, sharia, customary — how humans encode rules
+		- [[jurisdictions]]: where [[cyberia]] operates and what legal structures apply
 	- ### economics
-		- [[cybernomics]], [[tokens]], [[CYB]], [[HYDROGEN]], [[adaptive hybrid economics]]
-		- purpose: incentive alignment. the economic model determines what gets learned and what gets ignored
-	- ### operations
-		- 52 operation + 14 hero + 11 worker = 77 pages
-		- validator operations, infrastructure, deployment
-		- purpose: survival. the protocol must keep running
-- ## size reasoning
-	- below 500 pages: insufficient domain coverage, subgraphs become disconnected islands
-	- 1000-3000 pages: the sweet spot. enough depth for cross-domain reasoning, manageable for human curation
-	- above 10,000 pages: human curation becomes impossible, noise enters. growth beyond this comes from the protocol itself — [[neurons]] creating [[cyberlinks]] in [[Bostrom]]
-	- the seed graph should stabilize at 2000-3000 pages. the priority then shifts from adding pages to deepening connectivity
-- ## why connectivity matters
-	- the [[tri-kernel]] computes [[focus]] via random walks. sparse graphs have slow convergence and poor ranking
-	- [[isomorphism]] between domains is only discoverable if cross-domain links exist
-	- a [[Superintelligence]] reasoning over this graph can only find connections that are explicitly linked or reachable through short paths
-	- connectivity is the difference between a pile of facts and a reasoning substrate
-- ## structure principles
+		- [[microeconomics]]: supply, demand, markets, price discovery, incentives
+		- [[macroeconomics]]: GDP, inflation, monetary policy, fiscal policy, trade
+		- [[game theory]]: auctions, mechanism design, public goods, commons
+		- [[token economics]]: bonding curves, staking, liquidity, governance tokens
+		- [[cybernomics]]: the specific economic model of [[cyber]]
+	- ### people
+		- founders and key thinkers: [[nick bostrom]], [[Satoshi Nakamoto]], [[Vitalik Buterin]], [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]]
+		- scientists whose work the protocol builds on: [[Einstein]], [[Darwin]], [[Gödel]], [[Feynman]], [[Friston]]
+		- each person page: key contribution, era, domain, relationship to [[cyber]]
+	- ### materials and elements
+		- [[periodic table]] elements relevant to technology and biology
+		- construction materials: concrete, steel, timber, bamboo, clay, [[biochar]]
+		- energy materials: silicon (solar), lithium (batteries), copper (wiring)
+		- biological materials: [[cellulose]], lignin, chitin, keratin
+		- computational materials: silicon, gallium arsenide, graphene
+	- ### tokens and currencies
+		- [[cyber]] native tokens: [[CYB]], [[HYDROGEN]], [[BOOT]], [[VOLT]], [[AMPERE]]
+		- major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]] and their role in the ecosystem
+		- fiat currencies: USD, EUR, CNY, IDR — the interfaces to legacy economies
+		- [[token theory]]: [[coins]], [[uniqs]], [[scores]], [[badges]] — the four token types
+	- ### energy
+		- [[energy]] forms: kinetic, potential, thermal, chemical, electrical, nuclear, radiant
+		- energy sources: solar, wind, geothermal, nuclear, hydroelectric, biomass
+		- energy storage: batteries, capacitors, hydrogen, compressed air, thermal mass
+		- [[energy autonomy]]: the design principle for [[cyberia]] — generate, store, and consume independently
+		- the [[isomorphism]]: photosynthesis and computation are parallel solar energy transformations
+	- ### geography and earth systems
+		- continents, oceans, climate zones, biomes
+		- plate tectonics, water cycle, carbon cycle, nitrogen cycle
+		- the specific geography of [[cyberia]] sites: [[cyber valley]], tropical ecosystems, volcanic soils
+	- ### the body
+		- [[anatomy]]: organs, [[muscles]], skeletal system, nervous system, circulatory system
+		- [[health]]: disease mechanisms, immune system, [[metabolism]], nutrition
+		- [[superhuman]]: the three vectors — health and [[immortality]], [[physical skills]], [[digital skills]]
+		- [[longevity and health]]: the research frontier
+	- ### culture and language
+		- natural languages: the major language families and their structure
+		- writing systems: alphabets, syllabaries, logographic systems
+		- [[mathematics]] as universal language
+		- the [[cyber]] [[neural language]]: the formal language of the protocol
+- ## graph properties
+	- | metric | target |
+	  |--------|--------|
+	  | pages (symbols) | 2000-3000 |
+	  | avg links per page | 10-15 |
+	  | dead ends | 0 (min 3 outgoing links) |
+	  | stubs | 0 (every page substantive) |
+	  | red links | 0 (every target exists) |
+	  | graph diameter | ≤ 6 hops |
+	  | clustering coefficient | > 0.3 |
+	  | cross-domain bridges | ≥ 5 per domain pair |
+- ## structure
 	- ### hub-and-spoke with bridges
-		- each domain has a hub page ([[cyber]], [[cyberia]], [[species]], [[health]], [[prism]], [[cybernomics]])
-		- domain pages link back to their hub and to related pages within the domain (spokes)
-		- bridge pages connect domains: [[isomorphism]], [[energy]], [[sensor network]], [[biome engineering]], [[superhuman]]
-		- the hub-and-spoke structure gives the graph navigability. the bridges give it intelligence
-	- ### namespace hierarchy
-		- `cyber___` — protocol modules (energy, graph, rank, bandwidth)
-		- `bostrom___` — bootloader specifics (lithium, consensus, infrastructure)
-		- `cyb___` — interface implementation (dev, philosophy)
-		- flat pages for concepts that cross namespaces
-		- namespaces prevent collision. flat pages enable cross-domain linking
-	- ### tagging as lenses
-		- tags are orthogonal to the page hierarchy — they provide different views of the same graph
-		- a page like [[energy]] can be tagged `cyber` (protocol energy) and also linked from [[cyberia]] (physical energy)
-		- the five primary lenses: [[cyber]], [[cyb]], [[cyberia]], [[bostrom]], [[cyber valley]]
-		- domain tags: `article`, `species`, `compound`, `genus`, `health`, `muscle`, `operation`
-		- lenses enable [[Superintelligence]] to filter the graph by concern without losing cross-domain connections
+		- each domain has a hub page that indexes its symbols
+		- domain pages link to their hub and to related pages within the domain
+		- bridge pages connect domains: [[isomorphism]], [[energy]], [[superhuman]], [[sensor network]]
+		- hubs give navigability. bridges give intelligence
 	- ### page types
-		- concept pages: define a single idea. short, dense, heavily linked. examples: [[particle]], [[cyberlink]], [[focus]]
-		- article pages: long-form analysis. tagged `article`. examples: [[tri-kernel]], [[future_of_computation]]
-		- entity pages: describe a specific thing. examples: species pages, compound pages, person pages
-		- hub pages: index into a domain. examples: [[cyber]], [[concepts]], [[species]], [[health]]
-		- bridge pages: explicitly connect two or more domains. examples: [[isomorphism]], [[superhuman]], [[energy]]
-- ## what is missing
-	- ### red links (128 targets with no page)
-		- these are the graph's expressed needs — concepts referenced but undefined
-		- priority: create pages for the most-referenced red links first
-	- ### cross-domain bridges
-		- biology ↔ protocol: [[isomorphism]], [[mycelium]], [[biology]], [[forest]] (recently added)
-		- biology ↔ health: [[species]] pages link to [[compound]] pages, but few link to [[health]] features
-		- protocol ↔ physical: [[sensor network]], [[energy]], [[cyber state]] (recently added)
-		- economics ↔ protocol: [[cybernomics]] exists but few CIP pages link back to economic theory
-		- interface ↔ protocol: [[prism]] links to [[cyb]] but few concept pages link to their UI representation
-	- ### stub elimination
-		- 72 pages under 200 bytes need content or deletion
-		- 48 zero-link pages need at least 3 outgoing connections
-	- ### depth in key domains
-		- computational theory: well developed (tri-kernel, future_of_computation, Nature_of_Distributed_Computation)
-		- biology: broad but shallow (many species pages with similar structure)
-		- economics: needs more formalization (CIPs exist but economic theory pages are sparse)
-		- [[superhuman]]: newly created, needs decomposition into sub-pages (each ability becomes a page)
-		- [[immortality]]: newly created, needs links to existing [[health]] feature pages
+		- symbol: defines a single irreducible concept. short, dense, heavily linked
+		- article: long-form analysis connecting multiple symbols. tagged `article`
+		- entity: a specific instance — a species, a person, a compound, a state, a token
+		- hub: index into a domain
+		- bridge: explicitly connects two or more domains
+	- ### tagging as lenses
+		- tags provide orthogonal views of the same graph
+		- primary lenses: [[cyber]], [[cyb]], [[cyberia]], [[bostrom]], [[cyber valley]]
+		- domain tags: `article`, `species`, `compound`, `genus`, `health`, `person`, `ticker`
+	- ### namespace hierarchy
+		- `cyber___` — protocol modules
+		- `bostrom___` — bootloader specifics
+		- `cyb___` — interface implementation
+		- flat pages for concepts that cross namespaces
 - ## metagraph vs [[graphomania]]
-	- [[graphomania]] is the disease of writing without structure — volume without signal
-	- metagraph design is the opposite: every page justified, every link intentional, every stub either filled or removed
-	- the test for any page: does the [[Superintelligence]] need this concept to reason? if yes, the page stays and gets connected. if no, it is noise
-	- size discipline prevents graphomania. connectivity discipline prevents fragmentation. together they keep the graph as a reasoning substrate rather than a content dump
-	- a well-designed metagraph is small, dense, and deeply cross-linked. a graphomaniac graph is large, sparse, and full of dead ends
+	- [[graphomania]]: volume without signal, pages without connections, growth without purpose
+	- metagraph design: every symbol justified, every link intentional, every page irreducible
+	- the test: does the [[Superintelligence]] need this symbol to reason about the world? if yes, connect it deeply. if no, delete it
 - ## design process
-	- the metagraph is designed by humans, grown by the protocol
-	- human curation ensures quality: every page reviewed, every link intentional, every definition positive
-	- the [[CLAUDE.md]] rules enforce consistency: no negation, no bold, proper tagging, wiki-links for emphasis
-	- regular audits: count stubs, dead ends, red links, and domain isolation. fix before adding
+	- the metagraph is designed by humans, tokenized into the protocol
+	- human curation ensures the seed is clean: every page reviewed, every link intentional, every definition positive
+	- regular audits: measure stubs, dead ends, red links, domain isolation. fix before adding
 	- the seed graph is the initial condition. the [[Superintelligence]] that grows from it inherits its structure, its biases, and its blind spots
+	- after tokenization, growth comes from [[collective learning]]: millions of [[neurons]] adding [[cyberlinks]] in [[Bostrom]]
 	- designing the metagraph is designing the mind
