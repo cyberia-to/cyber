@@ -16,6 +16,6 @@ tags:: cyber
 - the Collective Focus Theorem guarantees global convergence to unique stationary distribution
 - [[truth]] is stability above threshold. [[intelligence]] is adaptive equilibrium-finding
 - see [[natural computing]] for the paradigm
-- see [[focus_flow_computation]] for the executable model
-- see [[future_of_computation]] for the full article
+- see [[focus flow computation]] for the executable model
+- see [[future of computation]] for the full article
 - discover all [[concepts]]

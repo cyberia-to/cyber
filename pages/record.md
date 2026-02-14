@@ -6,5 +6,5 @@ tags:: cybernomics
 - commitment: `H_commit(particle ‖ value ‖ owner ‖ nonce ‖ ρ)` where ρ is hiding randomness
 - spending a record requires a ZK proof of ownership without revealing which record was spent
 - the mutator set (AOCL + SWBF) tracks record lifecycle
-- see [[data_structure_for_superintelligence]] for full mutator set architecture
+- see [[data structure for superintelligence]] for full mutator set architecture
 - discover all [[concepts]]

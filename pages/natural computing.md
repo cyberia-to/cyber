@@ -14,5 +14,5 @@ tags:: cyber
 	- springs: elastic lattice, skeleton, food webs
 	- heat: thermostat, metabolism, seasons
 - see [[convergent computation]] for the formal foundation
-- see [[future_of_computation]] for the full article
+- see [[future of computation]] for the full article
 - discover all [[concepts]]

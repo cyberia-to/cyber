@@ -47,9 +47,9 @@ tags:: cyber
 	- [[focus flow computation]]: the executable model — patterns of attention flow through particle networks
 	- [[tri-kernel]]: the only three local operators surviving the locality constraint — [[diffusion]], [[springs]], [[heat kernel]]
 	- [[ranking system]]: why this specific free-energy formulation — minimal, local, verifiable, incentive-compatible
-	- [[focus_flow_whitepaper]]: the full protocol specification with VDF, rewards, and security
-	- [[convergence_rewards]]: reward function design for incentivizing convergence
-	- [[data_structure_for_superintelligence]]: BBG — the authenticated state architecture
+	- [[focus flow whitepaper]]: the full protocol specification with VDF, rewards, and security
+	- [[convergence rewards]]: reward function design for incentivizing convergence
+	- [[data structure for superintelligence]]: BBG — the authenticated state architecture
 	- [[incrementally verifiable computation]]: proving computation without re-executing it
 	- [[proof-carrying data]]: proofs that travel with data through DAGs
 	- [[folding]]: fold instead of verify — the key to efficient recursive proofs

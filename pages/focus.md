@@ -19,6 +19,6 @@ tags:: cyber
 	- [[cyberank]]: per-[[particle]] score from the full [[tri-kernel]]
 	- [[karma]]: per-[[neuron]] aggregate focus across linked [[particles]]
 - see [[tri-kernel]] for the completeness proof
-- see [[focus_flow_whitepaper]] for full protocol specification
+- see [[focus flow whitepaper]] for full protocol specification
 - see [[focusflow blueprint]] for implementation architecture
 - discover all [[concepts]]

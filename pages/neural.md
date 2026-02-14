@@ -1,6 +1,6 @@
 alias:: neural language, .nl
 tags:: cyber
-whitepaper:: [[Neural Language for Superintelligence]]
+whitepaper:: [[neural language for superintelligence]]
 - semantic [[language]] for [[neuron]]s over the [[cybergraph]]
 - convergent successor for both formal and natural [[language]]s
 - meaning is defined by [[cyberlink]]s — structure emerges from how agents link [[particle]]s
