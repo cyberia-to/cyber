@@ -1,3 +1,4 @@
+icon:: 🔴
 alias:: economics
 tags:: cyber, cybernomics
 - the economic theory of [[cyber]]
