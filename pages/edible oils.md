@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 -
 - goal:: produce seeds, seedlings and fruits of the most useful edible oil species adopted to [[indonesia]]

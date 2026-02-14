@@ -1,5 +1,7 @@
 alias:: skill, skills, axon
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - aggregated connection between [[particles]] within the [[cybergraph]]
 - where a [[cyberlink]] is a single directed edge from one [[neuron]], an axon is the bundle of all [[cyberlinks]] connecting two [[particles]] across all [[neurons]] and time
 - axon weight = aggregate of individual [[cyberlink]] weights between two particles

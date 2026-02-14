@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: kaempferol
 - ![Kaempferol.pdf](../assets/Kaempferol_1719303309556_0.pdf)
 - [[kaempferol]] is a natural flavonoid found in many fruits, [[vegetables]], [[tea]], and [[medicinal plants]]. it is known for its strong [[antioxidant]] and [[anti-inflammatory]] properties, which contribute to overall health and protection against chronic diseases.

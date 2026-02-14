@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 - earn starting from 10% up to 25% of business revenue
 - opportunity to learn to manage business while earning extra
 - available opportunities

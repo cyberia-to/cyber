@@ -1,5 +1,7 @@
 tags:: species
 alias:: cempaka, champaсa, white champaca
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 4
 -

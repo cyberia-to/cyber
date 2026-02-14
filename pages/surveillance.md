@@ -1,4 +1,6 @@
 tags:: governance, computer science
+crystal-type:: entity
+crystal-domain:: computer science
 - systematic observation, collection, and analysis of information about individuals or populations
 - state surveillance: intelligence agencies, CCTV networks, communications interception, mass metadata collection
 - corporate surveillance: behavioral tracking, data brokerage, advertising profiles, location history

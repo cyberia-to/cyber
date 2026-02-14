@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 ## repair
 	- lead:: [[@sutar]]
 	- team:: [[@witaya]], [[@lupus]]

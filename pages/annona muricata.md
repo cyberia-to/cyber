@@ -1,5 +1,7 @@
 alias:: soursup, soursop, sersak
 tags:: species
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 3
 

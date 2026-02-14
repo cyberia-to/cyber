@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - organized system of beliefs, practices, rituals, and community centered on the sacred or transcendent
 - major world religions by adherents: Christianity (~2.4B), Islam (~1.9B), Hinduism (~1.2B), Buddhism (~500M), folk religions, Judaism, Sikhism
 - components: cosmology (origin stories), [[ethics]] (moral codes), ritual (prayer, sacrifice, meditation), community (congregation, sangha, ummah)

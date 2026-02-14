@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 
 - [[passiflora edulis]]
 	- part::  [[leaves]] and [[flower]]

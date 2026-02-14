@@ -1,4 +1,6 @@
 tags:: genus, species, research
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: camellia
 - [[staple]] [[drink]] and [[health]] as [[green tea]]

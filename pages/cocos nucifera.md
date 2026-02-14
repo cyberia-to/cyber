@@ -1,5 +1,7 @@
 alias:: cocos, coconut, kelapa
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 supply:: next-month
 market:: edible oils

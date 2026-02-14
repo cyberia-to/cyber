@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - process of computing that statement is true
 - example: verification of signature
 	- given [[neuron]], [[signal]] and [[signature]]

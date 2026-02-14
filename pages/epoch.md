@@ -1,4 +1,6 @@
 tags:: time
+crystal-type:: entity
+crystal-domain:: history
 - major division of [[geological time]] or civilizational time
 - geological epochs: Paleocene, Eocene, Oligocene, Miocene, Pliocene, Pleistocene, Holocene
 - civilizational epochs: [[Neolithic revolution]], [[Bronze Age]], [[Iron Age]], [[Renaissance]], [[Industrial Revolution]], [[Information Age]]

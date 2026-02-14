@@ -1,5 +1,7 @@
 tags:: species
 alias:: she-oak, cemara udang, cemara laut
+crystal-type:: entity
+crystal-domain:: biology
 nitrogener:: 250
 wood-density:: 800
 market:: hardwoods

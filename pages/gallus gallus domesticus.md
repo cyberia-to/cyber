@@ -1,4 +1,6 @@
 tags:: species, birds
+crystal-type:: entity
+crystal-domain:: biology
 
 - selected for [[citadel genesis]]
 	- [[silkie]]

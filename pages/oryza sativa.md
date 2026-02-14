@@ -1,5 +1,7 @@
 tags:: genus, species
 alias:: oryza, rice
+crystal-type:: entity
+crystal-domain:: biology
 - ![](https://ipfs.io/ipfs/QmY9k7CXY6hgYCqvgPDKZ26P9Jm4ipekkEktYFpTCNCdLY)
 - ![](https://ipfs.io/ipfs/QmegHoJiwuig5s6XcNf9GbkhohBKoqA3KvCkoFBih8gfoc)
 - The amount of labor required to manage 1 hectare of rice field can vary significantly depending on several factors such as the level of mechanization, the type of rice cultivation (e.g., irrigated, rain-fed, or upland), and local farming practices. However, I can provide a general estimate based on traditional methods often used in regions like Bali where manual labor is still prevalent.

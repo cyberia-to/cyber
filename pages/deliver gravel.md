@@ -1,4 +1,6 @@
 tags:: operation, critical
+crystal-type:: process
+crystal-domain:: cyberia
 team-size:: 2
 
 - its currently the biggest bottleneck in construction

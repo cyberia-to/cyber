@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - fundamental and rapid transformation of political power, social structures, or technological paradigms
 - political revolutions
 	- American Revolution (1776): colonial independence, constitutional republic, [[sovereignty]] from empire

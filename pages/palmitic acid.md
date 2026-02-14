@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: palmitic acid
 - ![Palmitic_Acid.pdf](../assets/Palmitic_Acid_1719303309556_0.pdf)
 - [[palmitic acid]] is a saturated fatty acid commonly found in palm oil, dairy products, and animal fats. it is one of the most abundant fatty acids in the human body and serves as a major energy source and structural component of cell membranes.

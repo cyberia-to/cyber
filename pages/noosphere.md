@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - the sphere of human thought enveloping the planet — conceived independently by [[Vernadsky]] and Teilhard de Chardin (1920s)
 - Vernadsky: as life transformed the geosphere into the biosphere, so thought transforms the biosphere into the noosphere
 - Teilhard: the noosphere converges toward an Omega Point — a state of maximum collective consciousness

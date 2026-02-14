@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 # Cyberia vision: re-design of civilization
 title:: cyberia vision
 

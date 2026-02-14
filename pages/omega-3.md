@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - omega-3 fatty acids are essential fats that plays a crucial role in maintaining
 	- [[cardiovascular health]]
 	- [[reducing inflammation]]

@@ -1,6 +1,8 @@
 icon:: 🌉
 alias:: [[bostrom IBC]], [[IBC bridge]]
 tags:: bostrom, infrastructure, ibc, interchain
+crystal-type:: entity
+crystal-domain:: cyber
 
 - # IBC (Inter-Blockchain Communication)
 	- Back to [[bostrom infrastructure]]

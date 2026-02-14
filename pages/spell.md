@@ -1,5 +1,7 @@
 alias:: private key, secret, key, mnemonic
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - used in cryptographic operations for [[signaling]] and [[encryption]]
 - the only way to own [[tokens]] is to know the spell
 - the only way to not lose [[tokens]] is to never lose the spell

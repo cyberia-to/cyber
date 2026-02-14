@@ -1,4 +1,6 @@
 tags:: culture, philosophy
+crystal-type:: entity
+crystal-domain:: culture
 - branch of [[philosophy]] studying moral principles, right action, and the good life
 - major frameworks:
 	- consequentialism: rightness determined by outcomes (utilitarianism: maximize well-being)

@@ -1,4 +1,6 @@
 tags:: kitchen/menu
+crystal-type:: process
+crystal-domain:: agriculture
 
 - ## 🥥✨ ginger [[ginger kombucha]] with coconut sugar
 - a delicious kombucha recipe using coconut sugar, adding pleasant caramel notes with a hint of ginger spice.

@@ -1,4 +1,6 @@
 tags:: color, cyber
+crystal-type:: property
+crystal-domain:: culture
 - # Indigo
 - wavelength:: 420-450 nm
 - emotion:: [[sadness]]

@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: draft
 - propose simple mechanism for optimization of [[cyber/energy]] [[tokens]] [[value]]
 - idea

@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - management of relations between sovereign entities through negotiation, dialogue, and protocol
 - instruments: embassies, ambassadors, consulates, summits, back-channel communications
 - functions: representation, information gathering, negotiation, protection of nationals abroad

@@ -1,4 +1,6 @@
 tags:: geography
+crystal-type:: entity
+crystal-domain:: geography
 - continuous body of salt [[water]] covering 71% of Earth's surface
 - five oceans: [[Pacific]], [[Atlantic]], [[Indian]], [[Southern]], [[Arctic]]
 - primary driver of [[climate]] through heat distribution, [[water cycle]], and [[carbon cycle]] absorption

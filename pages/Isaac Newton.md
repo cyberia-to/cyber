@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1643-1727, English mathematician, physicist, and natural philosopher
 - three laws of motion: inertia, F=ma, action-reaction, the foundation of classical mechanics
 - law of universal gravitation: every mass attracts every other mass with force proportional to the product of masses and inversely proportional to distance squared

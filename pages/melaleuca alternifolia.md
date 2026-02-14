@@ -1,5 +1,7 @@
 tags:: species
 alias:: tea tree
+crystal-type:: entity
+crystal-domain:: biology
 - [[high margin]]
 - ![image.png](https://ipfs.io/ipfs/QmciP7r3sQg6VxyAhjA71wNDfRwZjLxiAwrExKkSbW31Pf)
 - ![Screenshot 2024-06-02 at 07.59.23.png](https://ipfs.io/ipfs/QmTVHrqChLqVmqxanx5eVVpp6cs4vfVK76DnKTQFvSnKbP)

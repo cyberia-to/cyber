@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - since [[game of freedom]] announcement a lot have been happened
 -
 - what we learned?

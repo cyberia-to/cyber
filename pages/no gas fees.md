@@ -1,3 +1,5 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - instead rm offer to use [[$V]] token for [[bandwidth subscription]]
 - all [[cyberlinks]] consume [[bandwidth]] which recovers with [[time]]

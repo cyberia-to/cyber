@@ -1,5 +1,7 @@
 alias:: PCD
 tags:: cyber, cryptographic proofs
+crystal-type:: entity
+crystal-domain:: computer science
 - generalization of [[incrementally verifiable computation]] from sequential chains to arbitrary DAGs
 - allows multiple independent computations to be combined into a single proof
 - each node in the DAG carries a proof that

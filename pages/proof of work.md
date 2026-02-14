@@ -1,5 +1,7 @@
 alias:: pow
 tags:: cyber
+crystal-type:: process
+crystal-domain:: computer science
 - class of [[consensus]] mechanism used in [[blockchains]]
 - [[computational power]] which secure creation of new valid [[blocks]]
 - unlike [[proof of stake]]

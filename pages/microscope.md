@@ -1,4 +1,6 @@
 tags:: technology, biology
+crystal-type:: entity
+crystal-domain:: biology
 - instrument for observing objects too small for the unaided eye
 - optical (light) microscope: magnification up to ~1500x, resolves to ~200 nm
 - electron microscope: transmission (TEM) and scanning (SEM), resolves to atomic scale

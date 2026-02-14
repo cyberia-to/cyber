@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: hydrogen
+crystal-type:: entity
+crystal-domain:: economics
 - [[token]] of [[fuel]] in [[bostrom]]
 - part of [[cyber/energy]] pack
 -

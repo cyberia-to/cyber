@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 - the ability of a model, theory, or hypothesis
 - to accurately forecast the outcomes of future observations or experiments
 - model with strong predictive power is one that

@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 #### goal:
 	- ensure booking accuracy by confirming all essential details.
 - #### procedure

@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: pattern
+crystal-domain:: cyber
 status:: draft
 - 0\. introduction and scope
 -

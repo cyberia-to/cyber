@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - @cyborgshead ideas on roadmap
 	- Roadmap
 		- cyb

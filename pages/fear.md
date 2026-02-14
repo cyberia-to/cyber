@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Fear
 - the [[emotion]] of [[violet]] — response to invisible threat
 - wavelength:: 380-420 nm

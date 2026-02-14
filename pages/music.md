@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - organized sound in time, structured by rhythm, melody, harmony, and timbre
 - mathematical foundation: pitch is [[frequency]], harmony is frequency ratios, rhythm is time division
 - universal human expression: every known culture produces [[music]]

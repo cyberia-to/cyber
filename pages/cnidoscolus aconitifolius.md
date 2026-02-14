@@ -1,5 +1,7 @@
 alias:: cnidoscolus, chaya
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 - [[staple]]
 - ![image.png](https://ipfs.io/ipfs/QmdFi3icmhGh4qewfNzJ8RtGEC3RFK8p5jYeGif2FfrmJs)

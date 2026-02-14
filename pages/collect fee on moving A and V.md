@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: draft
 
 - add to 2 consensus [[params]]

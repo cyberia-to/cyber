@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - framework for efficient design, modeling and simulation of [[cybernomics]] for [[token]] creators
 - plumb from first letters of [[basic token operations]]
 - {{embed [[basic token operations]]}}

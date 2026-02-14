@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - [[portal]]
 - [[hub]]
 - [[signer]]

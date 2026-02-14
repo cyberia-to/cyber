@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - legal system where law emerges from judicial decisions and precedent rather than codified statutes
 - originated in medieval England, spread through the British Empire
 - core principle: stare decisis (let the decision stand), each ruling becomes binding precedent for future cases

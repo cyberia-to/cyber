@@ -1,4 +1,6 @@
 tags:: tech
+crystal-type:: entity
+crystal-domain:: materials
 
 - the idea is to create modular, but simple architecture for cubic autonomous building
 - must be able to use for industrial, commercial and housing

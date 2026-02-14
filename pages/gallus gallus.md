@@ -1,5 +1,7 @@
 tags:: species, birds
 alias:: red junglefowl
+crystal-type:: entity
+crystal-domain:: biology
 
 - voice:: https://ebird.org/species/redjun
 - ![image](https://ipfs.io/ipfs/QmeLJsNYthCcpAEpTLD3XRCXLjcoe4mnYZYEVAHTJKMiDS)

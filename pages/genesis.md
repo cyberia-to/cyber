@@ -1,6 +1,8 @@
 alias:: citadel genesis, vision
 tags:: cyber
 icon:: 🧬
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - # Regenerative event infrastructure
 - ## From temporary spectacle to enduring system

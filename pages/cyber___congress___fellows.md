@@ -1,5 +1,7 @@
 alias:: cybercongress fellows
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - active fellows
 	- [cyb.ai/@dasein/log](https://cyb.ai/@dasein/log)
 	- [cyb.ai/@happylol/log](https://cyb.ai/@happylol/log)

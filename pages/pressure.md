@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - [[force]] per unit area, measured in [[pascal]] (Pa)
 - atmospheric pressure at sea level: ~101325 Pa (1 atm)

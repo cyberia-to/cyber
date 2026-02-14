@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: draft
 ## protocol structure insights
 ### 1. creation model options

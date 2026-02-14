@@ -1,4 +1,6 @@
 tags:: computer science, cryptography
+crystal-type:: entity
+crystal-domain:: computer science
 
 # encryption
 

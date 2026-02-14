@@ -1,4 +1,6 @@
 tags:: time, geography
+crystal-type:: entity
+crystal-domain:: geography
 - framework for 4.54 billion years of Earth history, divided into hierarchical units
 - eons: Hadean, Archean, Proterozoic, Phanerozoic
 - eras: Paleozoic, Mesozoic, Cenozoic (within Phanerozoic)

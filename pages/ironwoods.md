@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 - ## durability and restoration species comparison
   

@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: draft
 - allow [[neuron]] to stake on [[particles]] and gain rewards
 - staking

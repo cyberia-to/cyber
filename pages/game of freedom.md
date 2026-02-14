@@ -1,5 +1,7 @@
 icon:: 🥕
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 
 - due to regulatory issues we rejected idea of game of freedom
 - we change the rules. details [[update on game of freedom]]

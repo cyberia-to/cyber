@@ -1,5 +1,7 @@
 tags:: species, plant
 alias:: ben oil tree, kelor
+crystal-type:: entity
+crystal-domain:: biology
 supply:: next-month
 market:: edible oils
 wood-density::

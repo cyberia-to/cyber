@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - Key/Sig Sizes: Med (1-5 KB)
 - sign speed: Fast sign
 - verify speed: med verify

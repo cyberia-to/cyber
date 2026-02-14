@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: oxalates, oxalic acid salts
 - ![Oxalates.pdf](../assets/Oxalates_1719303309556_0.pdf)
 - [[oxalates]] are naturally occurring organic compounds found in many plants, including vegetables, fruits, nuts, and seeds. they are salts or esters of oxalic acid and are commonly associated with calcium to form calcium oxalate.

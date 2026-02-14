@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - supreme authority over a territory, population, or domain
 - Westphalian [[sovereignty]] emerged from the 1648 Peace of Westphalia: each state holds exclusive authority within its borders
 - three scales

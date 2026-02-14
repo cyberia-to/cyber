@@ -1,5 +1,7 @@
 tags:: species
 alias:: bridge tree
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 4
 -

@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1912-1954. British mathematician and logician.
 - Invented the [[Turing machine]], a universal model of [[computation]] that defines what is computable.
 - Proved the [[halting problem]] is undecidable, establishing fundamental limits of [[computation]].

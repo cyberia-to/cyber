@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - body of rules governing relations between states, international organizations, and increasingly, individuals
 - sources: treaties, customary international law, general principles, judicial decisions
 - foundational instruments

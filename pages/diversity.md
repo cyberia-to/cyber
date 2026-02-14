@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - diversity in cognitive style is the strongest predictor of [[collective intelligence]]
 - groups that are moderately diverse outperform both homogeneous groups and maximally different ones (Hong-Page)
 - [[cyber]] is designed for ultimate accessibility — the target audience includes

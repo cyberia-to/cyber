@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - collect firewood near storage places
   logseq.order-list-type:: number
 - chop wood only in case it cant to be stored in storage place

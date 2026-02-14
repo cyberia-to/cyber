@@ -1,4 +1,6 @@
 tags:: aip
+crystal-type:: entity
+crystal-domain:: cyber
 - store for [[aips]]
 - [[pages]]
 	- [[main]]: [[tokens]]

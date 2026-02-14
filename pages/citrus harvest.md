@@ -1,4 +1,6 @@
 tags:: genus
+crystal-type:: entity
+crystal-domain:: biology
 - [github](https://github.com/cyberia-to/rockets/issues/1124)
 - moisture check:
 	- feel top 3–5 cm soil.

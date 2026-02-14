@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - printing of new [[token]]s into existence
 - the rate at which new units enter circulation through [[emission]] schedules
 - in [[cybernomics]]: inflation is governed by transparent code, replacing central bank discretion with algorithmic [[emission]] curves

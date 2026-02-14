@@ -1,4 +1,6 @@
 tags:: time, measure
+crystal-type:: measure
+crystal-domain:: physics
 - system for organizing days into repeating cycles aligned to astronomical events
 - solar calendars: Gregorian (365.2425 days), Julian, Egyptian
 - lunar calendars: Islamic Hijri (354 days), Hebrew

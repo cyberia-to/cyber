@@ -1,4 +1,6 @@
 tags:: article, cyber, cip
+crystal-type:: entity
+crystal-domain:: computer science
 status:: draft
 # Data Structures for Superintelligence
 

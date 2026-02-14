@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - emission must go to partial compute towards `pi`
 - nodes verify correctness and propose blocks to the dag
 - balances must be hidden

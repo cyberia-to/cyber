@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 - ## revenue split
 	- level 1: sherpa
 		- role: physical support, gear carrying

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - internal mode in [[cyb]]
 - that offer complete features
 - for [[robot]] with [[cyber/energy]]

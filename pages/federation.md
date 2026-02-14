@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - union of partially self-governing states or regions under a shared central authority
 - examples: United States, Russia, Germany, Switzerland, India, Brazil, Australia
 - division of powers: federal government handles defense, foreign affairs, currency; member states handle local law, education, policing

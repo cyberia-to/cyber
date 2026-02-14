@@ -1,4 +1,6 @@
 tags:: geography
+crystal-type:: entity
+crystal-domain:: geography
 - a major continuous landmass on [[Earth]]
 - seven continents: [[Africa]], [[Antarctica]], [[Asia]], [[Australia]], [[Europe]], [[North America]], [[South America]]
 - shaped by [[plate tectonics]] over billions of years through rifting, collision, and drift

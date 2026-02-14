@@ -1,5 +1,7 @@
 alias:: markiza, passion fruit
 tags:: genus, cybernomics
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: medium

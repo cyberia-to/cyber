@@ -1,5 +1,7 @@
 icon:: ☯️
 tags:: cyber
+crystal-type:: measure
+crystal-domain:: cyber
 -
 - ## genesis
 	- in the beginning there is [[information]]

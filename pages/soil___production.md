@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - | step                                                       | strengths                                                                                                                                               | considerations                                                                                                                        |
   |------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
   | 1. anaerobic composting with biogas extractions            | captures biogas, reducing greenhouse gas emissions and providing renewable energy. begins the breakdown of organic matter.                               | requires careful management to ensure optimal gas production and avoid odors or pathogens in the output.                              |

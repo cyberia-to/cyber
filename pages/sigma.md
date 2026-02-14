@@ -1,4 +1,6 @@
 tags:: page, prism, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Sigma
 - wallet and balance [[aip]] in [[cyb]]
 - widget molecule and full application in [[prism]]

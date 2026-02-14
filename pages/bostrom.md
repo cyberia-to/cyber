@@ -1,6 +1,8 @@
 icon:: 🟢
 tags:: aos, cyber
 alias:: enhanced blockchain
+crystal-type:: entity
+crystal-domain:: cyber
 - [[bootloader]] of [[cyber]]
 - and [[moon]] [[network state]]
 - named after [[nick bostrom]]

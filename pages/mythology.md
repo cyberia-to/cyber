@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - traditional narratives explaining origins, natural phenomena, social order, and human purpose
 - creation myths: cosmogonic stories of how the world began (Genesis, Enuma Elish, Pangu, Dreamtime)
 - hero narratives: the monomyth (Joseph Campbell): departure, initiation, return

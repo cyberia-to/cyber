@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1815-1852. British mathematician and writer.
 - Wrote the first algorithm intended for machine execution, for [[Charles Babbage]]'s Analytical Engine.
 - Recognized that a general-purpose [[computation]] engine could manipulate symbols beyond pure arithmetic, foreseeing software.

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[focusflow blueprint]]
 - [[network architecture]]
 - [[ranking system]]

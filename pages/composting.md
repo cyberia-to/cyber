@@ -1,4 +1,6 @@
 tags:: food, biology
+crystal-type:: process
+crystal-domain:: agriculture
 - aerobic decomposition of organic matter into humus by bacteria, fungi, and invertebrates
 - inputs: kitchen scraps, crop residue, manure, leaf litter
 - outputs: stable [[soil]] amendment rich in nutrients and microbial life

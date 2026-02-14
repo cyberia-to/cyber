@@ -1,4 +1,6 @@
 tags:: biology, chemistry
+crystal-type:: process
+crystal-domain:: biology
 
 # fermentation
 

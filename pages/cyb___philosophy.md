@@ -1,4 +1,6 @@
 tags:: article
+crystal-type:: entity
+crystal-domain:: cyber
 ## vision
 	- soft that make dreams come true
 	- TODO [[browser without tabs]]

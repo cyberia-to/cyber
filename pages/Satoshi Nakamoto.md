@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - pseudonymous creator of [[Bitcoin]], published the whitepaper in 2008 and launched the network in 2009
 - invented [[proof-of-work]] consensus for trustless distributed agreement among anonymous participants
 - demonstrated [[digital scarcity]]: a fixed 21 million coin supply enforced by code, creating [[scarcity]] without physical constraint

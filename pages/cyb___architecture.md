@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - [[ipfs]] for data publishing and distribution
 - [[cyber]] search and learning
 - [[rune]] scripting for dynamic execution

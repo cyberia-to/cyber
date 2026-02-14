@@ -1,4 +1,6 @@
 tags:: computer science
+crystal-type:: entity
+crystal-domain:: computer science
 
 # algorithms
 

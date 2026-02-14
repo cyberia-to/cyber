@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Surprise
 - the [[emotion]] of [[yellow]] — orienting response to sudden change
 - wavelength:: 570-590 nm

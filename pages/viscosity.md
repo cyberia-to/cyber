@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - resistance of a fluid to flow under applied [[force]]
 - measured in pascal-seconds (Pa-s) or poise

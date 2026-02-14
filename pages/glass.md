@@ -1,4 +1,6 @@
 tags:: prism, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Glass
 - the foundational surface atom in [[prism]]
 - translucent pane that contains other components. all composition in [[cyb]] happens on glass

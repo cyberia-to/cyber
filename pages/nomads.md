@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - # From Urban Survival to Forest Arrival
 - we are working on a product for digital nomads

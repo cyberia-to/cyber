@@ -1,5 +1,7 @@
 alias:: liquid energy, liquid fuel
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - paying [[token]] for [[gas]]
 - due to fundamental utility
 - can morph into different [[value shapes]]

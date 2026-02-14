@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - [[mass]] per unit volume, measured in kg/m3
 - determines [[buoyancy]]: objects float when less dense than the surrounding fluid

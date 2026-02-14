@@ -1,5 +1,7 @@
 alias:: 2025 year
 tags:: article
+crystal-type:: entity
+crystal-domain:: cyber
 - ## Dear heroes and neurons,
 	- 2025 was the hardest year.
 	- [[$BOOT]] collapsed 90%. Our team dissolved. The market called us dead.

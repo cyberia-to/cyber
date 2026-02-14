@@ -1,6 +1,8 @@
 icon:: 🎯
 alias:: attention distribution, π
 tags:: cyber
+crystal-type:: property
+crystal-domain:: cyber
 - emergent attention distribution over the [[cybergraph]]
 - stationary vector of the [[token]]-weighted random walk
 - assigned by computation. converged from collective dynamics

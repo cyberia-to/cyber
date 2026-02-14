@@ -1,5 +1,7 @@
 alias:: autonomous, autonomously
 tags:: cyber
+crystal-type:: property
+crystal-domain:: cyber
 - skill to harness full power of life
 - through the provision of basic needs by yourself
 - with support of close community

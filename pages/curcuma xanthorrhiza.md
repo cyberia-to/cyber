@@ -1,5 +1,7 @@
 tags:: species
 alias:: temulawak
+crystal-type:: entity
+crystal-domain:: biology
 
 - [[staple]]
 - [[rhizome]]

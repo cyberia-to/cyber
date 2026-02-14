@@ -1,4 +1,6 @@
 tags:: prism, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Counter
 - numeric display atom in [[prism]]
 - renders a single number with optional [[emotion]] color. used wherever [[cyb]] shows a quantity: [[karma]], token balance, [[cyberank]] score, link count

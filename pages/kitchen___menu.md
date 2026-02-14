@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - ## 🕐  meal schedule (UTC)
 	- breakfast: 1:00 UTC

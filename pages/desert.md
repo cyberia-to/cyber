@@ -1,4 +1,6 @@
 tags:: geography, biome
+crystal-type:: entity
+crystal-domain:: geography
 - [[biome]] receiving less than 250mm precipitation per year
 - extreme diurnal temperature variation: scorching days, freezing nights
 - covers ~33% of Earth's land surface including hot, cold, and coastal types

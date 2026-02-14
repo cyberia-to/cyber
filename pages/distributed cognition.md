@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - cognition spread across agents and their shared environment
 - no single [[neuron]] holds the full picture — reasoning happens through the [[cybergraph]] itself
 - agents contribute [[cyberlinks]] from their local perspective

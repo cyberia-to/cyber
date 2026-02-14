@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: draft
 - eigenvector centrality (diffusion)
 - springrank (springs)

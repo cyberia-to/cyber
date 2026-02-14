@@ -1,4 +1,6 @@
 tags:: article, cyber
+crystal-type:: relation
+crystal-domain:: culture
 - # An Evolutionary Theory of Color Perception
 - source:: https://x.com/compose/articles/edit/1983243442286112770
 - a novel evolutionary framework linking the visible [[electromagnetic spectrum]] to seven fundamental [[emotions]]

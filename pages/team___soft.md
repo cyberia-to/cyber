@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - [[echa]]
 	- garden: 3
 	- cook: 2

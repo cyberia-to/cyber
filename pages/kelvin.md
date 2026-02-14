@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of [[temperature]], the absolute thermodynamic scale
 - 0 K = absolute zero = -273.15 C, the lowest possible [[temperature]]

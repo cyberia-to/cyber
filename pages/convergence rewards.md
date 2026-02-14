@@ -1,4 +1,6 @@
 tags:: article, cyber, cip
+crystal-type:: process
+crystal-domain:: economics
 status:: draft
 # Reward Function Design for Incentivizing Convergence in Decentralized Knowledge Graphs
 ## Abstract

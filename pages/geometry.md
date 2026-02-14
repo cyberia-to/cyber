@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Geometry
 The study of shape, [[space]], position, and measurement.
 - [[Euclidean geometry]]:: flat space governed by five postulates, the classical framework

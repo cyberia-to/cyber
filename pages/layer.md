@@ -1,5 +1,7 @@
 alias:: layers
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 
 - [[sky]]
 - [[surface]]

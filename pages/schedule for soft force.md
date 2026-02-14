@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - shifts:
 	- [[06:00-08:00]]
 	- [[08:00-10:00]]

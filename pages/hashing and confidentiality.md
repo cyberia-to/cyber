@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - long-term integrity: 64-byte (512-bit) digests provide full 256-bit post-quantum pre-image margin (grover only halves the exponent). this keeps verification sound well past 2040 without needing a risky, late migration.
 - migration risk: recomputing hashes later requires the original bytes. if some chunks are only available on third-party nodes, coordination and bandwidth become the bottleneck. starting at 64 bytes now avoids this systemic risk.
 - negligible performance cost: blake3’s cost is dominated by message compression, not output size. moving from 32 to 64 bytes adds <5% cpu on large streams and only tens of nanoseconds on small items, while storage proofs roughly double but remain <2% of payload.

@@ -1,4 +1,6 @@
 tags:: uhash
+crystal-type:: entity
+crystal-domain:: meta
 # Litium (LI)
 
 **A token to every agent**

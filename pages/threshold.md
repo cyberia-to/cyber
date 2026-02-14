@@ -1,5 +1,7 @@
 alias:: threshold cryptography, thresholds
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - boundary condition that separates one regime from another
 - in the [[cybergraph]], thresholds govern transitions and access
 - threshold cryptography

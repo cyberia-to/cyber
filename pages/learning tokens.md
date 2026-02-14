@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[tokens]] for [[collective learning]]
 - examples
 	- [[will]]

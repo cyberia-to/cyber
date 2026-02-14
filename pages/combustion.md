@@ -1,4 +1,6 @@
 tags:: chemistry, physics
+crystal-type:: process
+crystal-domain:: chemistry
 
 # combustion
 

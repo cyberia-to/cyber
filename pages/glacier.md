@@ -1,4 +1,6 @@
 tags:: geography
+crystal-type:: entity
+crystal-domain:: geography
 - a persistent body of dense ice formed from compressed snow over centuries
 - covers ~10% of Earth's land surface, stores ~69% of freshwater
 - two types: continental ice sheets (Greenland, Antarctica) and alpine/valley glaciers

@@ -1,5 +1,7 @@
 alias:: mushroom, shrooms
 tags:: genus
+crystal-type:: entity
+crystal-domain:: biology
 - fruiting body of some [[fungi]]
 - {{query (page-tags [[shroom]])}}
   query-properties:: [:page :alias]

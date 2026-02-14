@@ -1,5 +1,7 @@
 icon:: 🪷
 tags:: cv.land, tech
+crystal-type:: entity
+crystal-domain:: biology
 
 - scalable, sustainable, multipurpose ecosystem regeneration
 - idea that combining thoughtful set of species in one ecosystem is very efficient form of sustainability

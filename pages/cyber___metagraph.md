@@ -1,5 +1,7 @@
 tags:: cyber
 alias:: cyber metagraph
+crystal-type:: entity
+crystal-domain:: cyber
 
 - the [[metagraph]] of [[cyber]] — the multi-scale view of the protocol's knowledge architecture
 - ## layers

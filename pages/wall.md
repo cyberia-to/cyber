@@ -1,5 +1,7 @@
 alias:: walls
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: agriculture
 
 - [[layer]] for productivity
 - vertical or semi vertical slopes used for supporting species

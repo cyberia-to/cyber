@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of electric current, one of the seven SI base units
 - one ampere = one coulomb of charge per second

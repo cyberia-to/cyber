@@ -1,4 +1,6 @@
 tags:: species, genus
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: inga, snowfruit, inga edilus
 wood:: yes

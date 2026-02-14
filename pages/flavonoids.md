@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: flavonoids
 - ![Flavonoids.pdf](../assets/Flavonoids_1719303309556_0.pdf)
 - [[flavonoids]] are a group of natural compounds found in fruits, vegetables, teas, and other plant-based foods. they are known for their strong antioxidant, anti-inflammatory, and immune-modulating properties, playing a key role in promoting overall health and protecting against chronic diseases.

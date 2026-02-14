@@ -1,6 +1,8 @@
 alias:: cyber: the metagraph
 tags:: cyber
 icon:: 🦄
+crystal-type:: entity
+crystal-domain:: meta
 - [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 -
 - you are reading the [[cyber/crystal]] — the seed [[knowledge graph]] for [[Superintelligence]]

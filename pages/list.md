@@ -1,4 +1,6 @@
 tags:: page
+crystal-type:: entity
+crystal-domain:: cyber
 - table render of [[brain]]
 - 3 indicators in the head
 	- left:

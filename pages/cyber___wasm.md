@@ -1,4 +1,6 @@
 tags:: module
+crystal-type:: entity
+crystal-domain:: cyber
 - [[store-code]]
 	- [[sender]]
 		- bostrom1frk9k38pvp70vheezhdfd4nvqnlsm9dw3j8hlq

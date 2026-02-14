@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - time required for half of a quantity of radioactive atoms to decay
 - follows [[exponential decay]]: N(t) = N0 * (1/2)^(t / t_half)

@@ -1,5 +1,7 @@
 alias:: collective attention
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - the emergent attention distribution over the [[cybergraph]]
 - computed by the [[tri-kernel]] in [[consensus]]: [[diffusion]] explores, [[springs]] enforce structure, [[heat kernel]] adapts
 - the fixed point is [[focus]] — what the collective actually attends to

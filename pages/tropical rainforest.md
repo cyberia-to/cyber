@@ -1,4 +1,6 @@
 tags:: geography, biology, biome
+crystal-type:: entity
+crystal-domain:: biology
 - equatorial [[biome]] with the highest terrestrial biodiversity on Earth
 - receives 2000+ mm rainfall per year, with minimal seasonal temperature variation
 - layered canopy structure: emergent, canopy, understory, forest floor

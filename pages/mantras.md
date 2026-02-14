@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - mantras are short, repeatable statements that express the core principles. they are designed to be spoken or recalled daily by workers, creating alignment, discipline, and shared focus. unlike formal rules, mantras are simple and memorable — a practical way to embed values into everyday actions.
 -
 - do the right things, not just things right.

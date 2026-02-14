@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: accepted
 - currently [[bostrom]] [[mint]] [[$H]] on every staking operation automatically
 - burn happens also automatically when [[neuron]] during unstake operation

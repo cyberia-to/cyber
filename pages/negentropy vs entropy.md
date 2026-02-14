@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: property
+crystal-domain:: physics
 status:: draft
 # from entropy reduction to negentropy maximization: the dual thermodynamics of decentralized intelligence
 ## abstract

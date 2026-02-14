@@ -1,4 +1,6 @@
 tags:: pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 
 - sequential chain reaction where each step triggers the next, amplifying the initial signal
 - enzymatic cascades: blood clotting cascade amplifies a small injury signal into a full clot

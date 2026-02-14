@@ -1,4 +1,6 @@
 tags:: cyber, article
+crystal-type:: entity
+crystal-domain:: cyber
 - # Superhuman
 - a biological body evolved beyond human limits, integrated with [[collective intelligence]], and capable of [[immortality]]
 - three vectors of becoming superhuman: [[health]] and [[immortality]], [[physical skills]], and [[digital skills]]

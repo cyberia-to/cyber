@@ -1,4 +1,6 @@
 tags:: module
+crystal-type:: entity
+crystal-domain:: cyber
 - [[create-route]]
 	- source
 	  

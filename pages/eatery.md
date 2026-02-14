@@ -1,4 +1,6 @@
 tags:: building type
+crystal-type:: entity
+crystal-domain:: cyberia
 type:: private
 
 - revenue:: breakfast $10

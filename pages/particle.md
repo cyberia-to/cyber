@@ -1,6 +1,8 @@
 icon:: ⭕️ 
 alias:: particles, object, cid, content address, data, content
 tags:: cyber, cyb, page
+crystal-type:: entity
+crystal-domain:: cyber
 - content-addressed node in the [[cybergraph]]
 - identity = [[hash]] of content. immutable. exists or doesn't. no state
 - the atom of [[knowledge]]. every file, keyword, image, model weight, or program reduces to a particle

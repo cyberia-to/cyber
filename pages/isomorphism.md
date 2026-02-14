@@ -1,4 +1,6 @@
 tags:: cyber, article
+crystal-type:: relation
+crystal-domain:: mathematics
 - # Isomorphism
 - A structure-preserving correspondence between two systems that reveals identical mathematical patterns operating at different scales or in different substrates.
 - In [[cyber]], isomorphism is the recognition that [[biology]] and [[digital]] systems often implement the same computational structures through different physical mechanisms.

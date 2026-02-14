@@ -1,6 +1,8 @@
 icon:: ⚫️
 tags:: aos, cyber
 alias:: asi, singleton, collective ai
+crystal-type:: entity
+crystal-domain:: cyber
 - computer that is smarter than all humans combined
 - term coined by [[nick bostrom]] in [his book](https://cyb.ai/ipfs/QmYHo4oKHvm33pPnou9M1iRww2PYQu9Kmb3DWJ4DJgrUkb)
 - according to [[nick bostrom]] there are four major paths of creating superintelligence

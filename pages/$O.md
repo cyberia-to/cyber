@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: oxygen, cybernomics of O
+crystal-type:: entity
+crystal-domain:: economics
 - token for rewarding core cybernet verse
 - [[plumb]]
 	- [[pay]]: half of donation for nodes with good answers

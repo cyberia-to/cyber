@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 # H-Based Economy Whitepaper
 - ## Overview
   We propose a dual-token economic system with two distinct roles:

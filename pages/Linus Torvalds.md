@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1969-, Finnish-American software engineer
 - created the [[Linux]] kernel in 1991, the open-source operating system kernel running the majority of servers, supercomputers, and Android devices
 - invented [[Git]] in 2005: distributed version control system enabling massively parallel open-source collaboration

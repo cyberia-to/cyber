@@ -1,5 +1,7 @@
 tags:: species
 alias:: surian, limpaga, iron redwood, suren
+crystal-type:: entity
+crystal-domain:: biology
 - wood-density:: 500
 - ![](https://ipfs.io/ipfs/QmVz852FrRWpZn748J3M7WveSwZrMJUaidfXDHce3kvkXp)
 - [wiki](https://en.wikipedia.org/wiki/Toona_sureni)

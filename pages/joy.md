@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Joy
 - the [[emotion]] of [[green]] — life reward, the center of the spectrum
 - wavelength:: 495-570 nm

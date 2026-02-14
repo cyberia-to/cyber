@@ -1,5 +1,7 @@
 alias:: bandwidth unit, bandwidth units, cyber/will
 tags:: cyber
+crystal-type:: property
+crystal-domain:: cyber
 - mental capacity by which [[neuron]] determines [[knowledge]]
 - allow [[neuron]] to create [[knowledge]]
 - affects probability of using [[particle]] by other [[neuron]]

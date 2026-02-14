@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - status: idea
 - TODO to launch need to understand how to rank quality parameters
 - the team which will be able to build the tent faster and better when any other teams during [[game of freedom]] when any other as a result of [[game of freedom]]

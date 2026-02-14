@@ -1,4 +1,6 @@
 tags:: kitchen/menu
+crystal-type:: process
+crystal-domain:: agriculture
 
 - <img src="https://ipfs.io/ipfs/bafkreib3htw2oet3zob4qlstswy6cozod3egxvs3kzqtwpizazoxbwb7b4" style="width:300px; height:auto;" />
 - ### 🧾 🍪 [[almond cookies]]

@@ -1,4 +1,6 @@
 tags:: cyber, uhash
+crystal-type:: entity
+crystal-domain:: meta
 
 - # Adaptive Hybrid Economics
 - ## Minimal Implementation Spec

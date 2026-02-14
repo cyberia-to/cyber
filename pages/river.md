@@ -1,4 +1,6 @@
 tags:: geography
+crystal-type:: entity
+crystal-domain:: geography
 - a flowing [[water]] channel moving from source (headwaters) to mouth (delta/estuary/[[ocean]])
 - organized into drainage basins (watersheds) separated by ridges
 - agents of erosion, sediment transport, and deposition shaping landscapes

@@ -1,4 +1,6 @@
 tags:: module
+crystal-type:: entity
+crystal-domain:: cyber
 - process and stores [[neuron bandwidth]] in the [[network]]
 - dynamically adjust [[bandwidth price]] to [[network load]]
 - [[neurons]] use bandwidth to add [[cyberlinks]] to the network

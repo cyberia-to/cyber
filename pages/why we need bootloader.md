@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 
 - first of all [[superintelligence]] does not exist yet
 	- deploy such a thing requires enormous effort from smartest minds

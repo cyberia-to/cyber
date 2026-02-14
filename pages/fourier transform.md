@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Fourier Transform
 A decomposition of a [[signal]] into constituent frequencies, mapping functions from time domain to frequency domain.
 - transforms a function f(t) into F(w) by integrating against complex exponentials

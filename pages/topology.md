@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Topology
 The study of properties of [[space]] preserved under continuous deformation (stretching, bending, twisting).
 - core concept:: [[continuity]] defined through open sets, independent of distance

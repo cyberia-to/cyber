@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[cosmwasm]] fat protocol suite for network states and beyond
 - integration of [[cyb]], [[aos]] and [[cyber]]
 - dependencies

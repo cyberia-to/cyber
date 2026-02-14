@@ -1,5 +1,7 @@
 icon:: 💰
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - [[token]] which is fungible and movable
 - consensus token of the network
 - names the most important nodes

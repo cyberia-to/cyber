@@ -1,5 +1,7 @@
 tags:: species
 alias:: batat
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: medium

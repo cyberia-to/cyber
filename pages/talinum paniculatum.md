@@ -1,5 +1,7 @@
 tags:: species
 alias:: fameflower, jewels-of-opar
+crystal-type:: entity
+crystal-domain:: biology
 - ![](https://ipfs.io/ipfs/QmY78iNwt1QHjrTNxNimphV6v59CcoRL6b8D2MTs9pkSQY)
 - ![](https://ipfs.io/ipfs/QmXvCqv7LfM7Dtazh8YhL9agQWYV72bB34vx9erk6m81dy)
 - [wiki](https://en.wikipedia.org/wiki/Talinum_paniculatum)

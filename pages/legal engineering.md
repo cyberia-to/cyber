@@ -1,5 +1,7 @@
 icon:: ⚖️
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - The project is established according to the idea of [[7 level of compliance]]
 	- | Name       | Type                | Compliance Strategy |
 	  |---------------|-----------------------|------------------------|

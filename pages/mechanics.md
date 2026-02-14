@@ -1,4 +1,6 @@
 tags:: physics
+crystal-type:: entity
+crystal-domain:: physics
 # mechanics
 The branch of [[physics]] describing motion of bodies under the action of [[force]].
 - governed by [[Newton]]'s three laws of motion

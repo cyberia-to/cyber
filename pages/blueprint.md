@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - source: Bryan Johnson protocol
 	- [presentation](https://drive.google.com/drive/folders/1s6fTvQY1NnhrApZeVQxRkact8Q7Wj-d6)

@@ -1,4 +1,6 @@
 tags:: pattern, physics
+crystal-type:: pattern
+crystal-domain:: physics
 
 - phenomenon where a system [[oscillation]] reaches maximum [[amplitude]] at specific driving [[frequency]]
 - every physical system has one or more natural frequencies determined by its structure

@@ -1,4 +1,6 @@
 tags:: genus, species, psycho
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: theobroma, cacao, coklat, kakao
 - wood-density:: 450

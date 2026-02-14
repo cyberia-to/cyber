@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - of [[knowledge]]
 -
 - defined by [[cyberlink]] in one [[signal]]

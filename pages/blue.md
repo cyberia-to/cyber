@@ -1,4 +1,6 @@
 tags:: color, cyber
+crystal-type:: property
+crystal-domain:: culture
 - # Blue
 - wavelength:: 450-495 nm
 - emotion:: [[interest]]

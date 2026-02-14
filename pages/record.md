@@ -1,5 +1,7 @@
 icon:: 🔒
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: cyber
 - private value instance within the [[cybergraph]]
 - a pattern built on [[cyberlinks]] and [[tokens]]
 - a record binds a value to a [[particle]] and an owner ([[neuron]]), hidden behind a commitment

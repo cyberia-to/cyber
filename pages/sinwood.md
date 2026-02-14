@@ -1,4 +1,6 @@
 tags:: district, team, cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 type:: attraction
 alias:: senwood, miracle, glowing forest
 ops:: false

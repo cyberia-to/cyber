@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1777-1855. German mathematician, physicist, and astronomer.
 - The "Prince of Mathematicians," with foundational contributions to [[number theory]], algebra, statistics, analysis, and geometry.
 - Proved the fundamental theorem of algebra and developed modular arithmetic.

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 query-table:: true
 #+BEGIN_QUERY
 {:title "TODO tasks"

@@ -1,5 +1,7 @@
 alias:: cyberlinks weight, cyberlinks weights
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 -
 - algorithm addressed to solve [[true-false problem]] for inference of truthful [[answers]] from [[cybergraph]]
 - algorithm features

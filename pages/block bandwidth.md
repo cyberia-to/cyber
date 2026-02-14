@@ -1,4 +1,6 @@
 tags:: state
+crystal-type:: entity
+crystal-domain:: cyber
 - key: `0x02 | sdk.Uint64ToBigEndian(blockNumber) -> sdk.Uint64ToBigEndian(value)`
 - storing used bandwidth for each block
 - used for calculation of load using sum of used bandwidth in blocks

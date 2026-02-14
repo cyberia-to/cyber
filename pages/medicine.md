@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 - [[adenium obesum]]
 - [[artemisia absinthium]]

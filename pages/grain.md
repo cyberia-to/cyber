@@ -1,4 +1,6 @@
 tags:: food
+crystal-type:: entity
+crystal-domain:: agriculture
 - cereal [[crops]]: wheat, rice, corn, barley, oats, sorghum, millet
 - foundation of civilization's caloric supply, storable for years
 - grass family ([[species]] Poaceae), domesticated across every continent

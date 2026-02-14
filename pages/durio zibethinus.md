@@ -1,5 +1,7 @@
 tags:: species
 alias:: durian
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 3
 wood-density:: 500

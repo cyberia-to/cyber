@@ -1,4 +1,6 @@
 tags:: technology
+crystal-type:: entity
+crystal-domain:: materials
 - device that moves fluids (liquids or gases) by mechanical action
 - types: centrifugal, positive displacement (piston, gear, peristaltic), vacuum
 - centrifugal: rotating impeller ([[wheel]]) converts kinetic [[energy]] to pressure

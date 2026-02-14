@@ -1,6 +1,8 @@
 icon:: 🔗
 tags:: cyber
 alias:: cyberlinks, unit of knowledge, simple interactions, expert opinions, essential learning ability, cyberlinking, primitive learning acts
+crystal-type:: relation
+crystal-domain:: cyber
 - signed, weighted, timestamped directed edge between two [[particles]]
 - `edge = ([[neuron]], from [[particle]], to [[particle]], weight, time)`
 - the atomic unit of meaning in the [[cybergraph]]

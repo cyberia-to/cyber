@@ -1,4 +1,6 @@
 tags:: geography, physics
+crystal-type:: entity
+crystal-domain:: physics
 - sudden release of [[energy]] in Earth's lithosphere producing seismic waves
 - caused by movement along faults at [[plate tectonics]] boundaries
 - measured by magnitude (Richter/moment magnitude scale) and intensity (Modified Mercalli)

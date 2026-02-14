@@ -1,4 +1,6 @@
 tags:: prism, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Images
 - icon library atom in [[prism]]
 - the complete set of glyphs used across [[cyb]]. every icon has a semantic meaning tied to a protocol concept

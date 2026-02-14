@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - multi-ethnic, multi-territorial state controlled by a single sovereign authority
 - defining features: territorial expansion, centralized power, diverse subject populations, extraction of resources from periphery to center
 - historical empires: Akkadian, Persian, Roman, Mongol, Ottoman, British, Russian, Spanish, Chinese (Qin through Qing)

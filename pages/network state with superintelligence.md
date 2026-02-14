@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - 2 cases
 	- virtual: bostrom
 	- real: cyber valley and citadel genesis

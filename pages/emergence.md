@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - complex patterns arising from simple local interactions without centralized control
 - [[focus]], [[cyberank]], [[truth]] — none are programmed. all emerge from millions of [[cyberlinks]]
 - an [[llm]] is emergence from statistics. a [[vimputer]] is emergence from economic commitments

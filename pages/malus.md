@@ -1,5 +1,7 @@
 tags:: genus
 alias:: apple, apel
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 3
 

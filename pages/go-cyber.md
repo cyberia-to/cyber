@@ -1,5 +1,7 @@
 alias:: cyber-sdk
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [github.com/cybercongress/go-cyber](https://github.com/cybercongress/go-cyber)
 - proof of concept implementation of [[cyber]] protocol in [[go]]
 - production use in [[bostrom]]

@@ -1,5 +1,7 @@
 alias:: garcinia, mangosteen, manggis
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 - wood-density:: 600
 - ![image.png](https://ipfs.io/ipfs/QmUmbbVvK8tmdAUerzeGjYokUDht4EEDh8DY6zkdAcZKmt){:height 638, :width 628}

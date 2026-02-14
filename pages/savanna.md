@@ -1,4 +1,6 @@
 tags:: geography, biology, biome
+crystal-type:: entity
+crystal-domain:: biology
 - tropical and subtropical grassland [[biome]] with scattered trees
 - characterized by distinct wet and dry seasons
 - covers ~20% of Earth's land surface, primarily in [[Africa]], South America, and [[Australia]]

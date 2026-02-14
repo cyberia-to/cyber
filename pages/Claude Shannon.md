@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1916-2001. American mathematician and electrical engineer.
 - Founded [[information theory]] with "A Mathematical Theory of Communication" (1948).
 - Defined the [[bit]] as the fundamental unit of information.

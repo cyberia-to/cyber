@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - distance between consecutive peaks (or troughs) of a [[wave]]
 - measured in meters; light wavelengths typically in nanometers (nm)

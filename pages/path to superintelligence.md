@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - solve [[techtree]] accounting for
 	- [[why we need bootloader]]
 	- and more factors

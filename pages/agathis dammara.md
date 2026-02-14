@@ -1,5 +1,7 @@
 alias:: damar, kauri, agathis
 tags:: species, genus
+crystal-type:: entity
+crystal-domain:: biology
 wood-density:: 500
 market:: resins
 supply:: next-month

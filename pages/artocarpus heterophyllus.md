@@ -1,5 +1,7 @@
 tags:: species
 alias:: jackfruit, nangka
+crystal-type:: entity
+crystal-domain:: biology
 wood-density:: 650
 wood-durability:: low
 abundance:: yes

@@ -1,4 +1,6 @@
 tags:: cyber, article
+crystal-type:: entity
+crystal-domain:: cyber
 
 # Neural Language for Superintelligence
 

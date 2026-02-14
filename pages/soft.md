@@ -1,4 +1,6 @@
 tags:: building, team
+crystal-type:: entity
+crystal-domain:: cyberia
 size:: 74
 shape:: 12*6
 

@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - macro pattern governing biome dynamics
 - it is the invisible hand define by
 	- [[temperature]]: average, range, seasonal

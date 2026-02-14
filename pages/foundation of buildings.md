@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - Base technologies
 	- Materials for "4x4x1" m with 0.2 m wall = 10 m3 concrete
 		- Tube 160mm 1$ selfmade or 3-5$ buy

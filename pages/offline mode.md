@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - what is working?
 	- [[cyb/brain]]
 	- [[cyb/sigma]]

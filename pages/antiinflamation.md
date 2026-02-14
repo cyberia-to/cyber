@@ -1,2 +1,4 @@
 alias:: anti-inflamatory, anti-inflomation,
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body

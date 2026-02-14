@@ -1,5 +1,7 @@
 alias:: cyber/attention, rank unit, rank units
 tags:: cyber
+crystal-type:: measure
+crystal-domain:: cyber
 - mental focus directed towards a [[particle]]
 - allow [[neuron]] to optimize [[observability]] of [[information]]
 - affects probability of using [[particle]] by other [[neuron]]

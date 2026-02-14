@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[size]]
 	- [[amount of links]]
 	- [[amount of unique links]]

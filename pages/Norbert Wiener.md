@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1894-1964. American mathematician and philosopher.
 - Founded [[cybernetics]]: the study of communication and control in machines and living organisms (1948).
 - Defined feedback loops as the core mechanism of self-regulating systems, from thermostats to nervous systems to protocols.

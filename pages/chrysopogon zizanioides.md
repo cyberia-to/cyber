@@ -1,4 +1,6 @@
 tags:: genus, species, research
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: chrysopogon, vetiver
 supply:: next-month

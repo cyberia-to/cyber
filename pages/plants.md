@@ -1,4 +1,6 @@
 tags:: class
+crystal-type:: entity
+crystal-domain:: biology
 
 - how to describe [[the plant]]?
 - [[genus]]: all living brands selected for [[citadel genesis]]

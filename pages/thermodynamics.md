@@ -1,4 +1,6 @@
 tags:: physics
+crystal-type:: entity
+crystal-domain:: physics
 # thermodynamics
 The branch of [[physics]] governing [[energy]] transfer as heat and work, and the evolution of [[entropy]].
 - zeroth law: thermal equilibrium defines [[temperature]]

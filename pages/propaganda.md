@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - systematic shaping of perception, belief, and behavior through selective presentation of information
 - techniques: repetition, emotional appeal, framing, omission, false dichotomy, appeal to authority, manufactured consensus
 - historical: Roman triumph ceremonies, Catholic Propaganda Fide (1622), WWI/WWII poster campaigns, Soviet agitprop, Nazi ministry of propaganda

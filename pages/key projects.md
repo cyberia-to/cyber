@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - [cyberia](https://github.com/orgs/cyberia-to/projects/50): core cyberstate development
 	- [cyber valley](https://github.com/orgs/cyberia-to/projects/10): regional development
 		- [rockets](https://github.com/orgs/cyberia-to/projects/2): main tasks and onsite priorities

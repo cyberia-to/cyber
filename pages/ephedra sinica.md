@@ -1,4 +1,6 @@
 tags:: species, psycho
+crystal-type:: entity
+crystal-domain:: biology
 - availability:: unknown
 - [[ephedrine]]
 - ![](https://ipfs.io/ipfs/QmdAmh34GtF4FbTCMCcG5oV6a8XyMrsmnojXHyEVcLxTfq)

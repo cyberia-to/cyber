@@ -1,4 +1,6 @@
 tags:: kitchen/menu, breakfast
+crystal-type:: process
+crystal-domain:: agriculture
 - ![](https://ipfs.io/ipfs/bafybeidwml64usnhbsukq3l52iyatp4po3nzfacwcojfus7plsd3yqghv4)
 - ### 🧾 🍌🌿 [[banana cassava pancake]]
 - dense yet tender pancakes combining grated cassava and mashed green banana — naturally sweet, grain-free, and perfect for both sweet and savory pairings.

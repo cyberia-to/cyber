@@ -1,5 +1,7 @@
 tags:: species
 alias:: sonokeling, rosewood
+crystal-type:: entity
+crystal-domain:: biology
 wood-density:: 875
 wood-durability:: high
 market:: hardwoods

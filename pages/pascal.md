@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of [[pressure]], equal to one [[newton]] per square meter
 - named after Blaise Pascal, pioneer of fluid mechanics and probability

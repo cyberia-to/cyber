@@ -1,4 +1,6 @@
 tags:: relation
+crystal-type:: relation
+crystal-domain:: mathematics
 
 - relationship where one event (cause) produces another (effect)
 - requires temporal ordering: cause precedes effect

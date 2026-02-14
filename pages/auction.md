@@ -1,4 +1,6 @@
 tags:: cybernomics, game theory
+crystal-type:: entity
+crystal-domain:: mathematics
 - mechanism for [[price]] discovery through competitive bidding among participants
 - English auction: ascending open bids, highest bidder wins, most common format
 - Dutch auction: descending price from high start, first bidder to accept wins

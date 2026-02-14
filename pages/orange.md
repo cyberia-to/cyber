@@ -1,4 +1,6 @@
 tags:: color, cyber
+crystal-type:: property
+crystal-domain:: culture
 - # Orange
 - wavelength:: 590-620 nm
 - emotion:: [[disgust]]

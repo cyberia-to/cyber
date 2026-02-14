@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 
 - alias: iron
 - ![Iron.pdf](../assets/Iron_1719303309556_0.pdf)

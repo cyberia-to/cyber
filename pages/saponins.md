@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - alias: saponins
 - ![Saponins.pdf](../assets/Saponins_1719303309556_0.pdf)

@@ -1,4 +1,6 @@
 tags:: kitchen/menu, breakfast
+crystal-type:: process
+crystal-domain:: agriculture
 
 - ![](https://ipfs.io/ipfs/bafkreid4xke6bwgcebgrtzovq36x5qemxokuoci5rodvgyj6djhxzc5tnq)
 - ## 🧾 🍳 scrambled eggs

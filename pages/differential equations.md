@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Differential Equations
 Equations relating [[function]]s to their [[derivative]]s, modeling how systems evolve over time and space.
 - [[ODE]] (ordinary differential equation):: involves derivatives with respect to a single variable

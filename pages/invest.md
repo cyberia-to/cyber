@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - land
 	- link to the map

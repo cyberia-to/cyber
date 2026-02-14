@@ -1,4 +1,6 @@
 tags:: pattern, physics, chemistry
+crystal-type:: pattern
+crystal-domain:: physics
 
 - state where opposing forces, flows, or rates balance, producing no net change
 - static equilibrium: object at rest with zero net [[force]] and zero net torque

@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - formal binding agreement between two or more sovereign entities under [[international law]]
 - types
 	- bilateral: between two states (trade agreements, border settlements)

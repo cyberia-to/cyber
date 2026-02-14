@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - a graph of graphs
 - each node in a metagraph represents an entire graph or a complex substructure within a larger system
 - edges represent relationships between these component graphs — connections, interactions, dependencies

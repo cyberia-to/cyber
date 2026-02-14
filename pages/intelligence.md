@@ -1,5 +1,7 @@
 alias:: intelligent
 tags:: cyber
+crystal-type:: property
+crystal-domain:: cyber
 - product of [[implicit knowledge]] derived from [[explicit knowledge]] in the [[cybergraph]]
 - what can be inferred beyond what was directly stated
 - in [[cyber]]: the converged [[focus]] distribution computed by the [[tri-kernel]]

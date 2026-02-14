@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1879-1955. German-born theoretical physicist.
 - Developed special and general [[relativity]], redefining [[spacetime]], gravity, and the relationship between mass and energy (E=mc²).
 - Explained the photoelectric effect, confirming the quantum nature of light and contributing to the birth of [[quantum mechanics]].

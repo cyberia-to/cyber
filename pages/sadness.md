@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Sadness
 - the [[emotion]] of [[indigo]] — withdrawal and introspection
 - wavelength:: 420-450 nm

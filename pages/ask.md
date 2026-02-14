@@ -1,6 +1,8 @@
 icon:: 👽
 tags:: cyber
 alias:: infer
+crystal-type:: process
+crystal-domain:: cyber
 - ask [[cyber]] protocol
 - they will [[answer truth]]
 -

@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - | layer | species | count | spacing | notes | source |  | 
   | canopy | [[casuarina]] | 16 | 7 × 3 m | ridge windbreak line | edem cuttings |

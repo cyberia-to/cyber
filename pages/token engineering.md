@@ -1,5 +1,7 @@
 icon:: 💰
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - TODO lecture at [[edge city residency]]
 - @mastercyb
 - ## abstract

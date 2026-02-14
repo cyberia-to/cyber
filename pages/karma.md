@@ -1,5 +1,7 @@
 alias:: neurons weight, neurons weights, neuron rank
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - contribution measure of [[neuron]] into [[collective intelligence]]
 - aggregate [[focus]] earned by a [[neuron]] across all [[particles]] it has linked
 - neurons with high karma have demonstrated sustained alignment with collective attention

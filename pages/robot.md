@@ -1,5 +1,7 @@
 alias:: my
 tags:: aip
+crystal-type:: entity
+crystal-domain:: cyber
 - offline value:: opens [[great web]] access
 	- core
 		- through the lense of [[file]] and [[link]]

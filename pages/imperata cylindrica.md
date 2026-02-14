@@ -1,5 +1,7 @@
 tags:: species
 alias:: imperata, alang-alang
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: low

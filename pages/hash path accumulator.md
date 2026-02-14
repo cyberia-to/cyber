@@ -1,5 +1,7 @@
 alias:: path hash accumulator, hash path accumulators
 tags:: cyber, cryptographic proofs
+crystal-type:: entity
+crystal-domain:: computer science
 - authenticated data structure that represents a path in a graph as a balanced or biased binary tree of [[hash]] digests
 - internal nodes store hashes of concatenated sub-paths
 - enables logarithmic-size [[cryptographic proofs]] for graph properties: connectivity, distance, type queries

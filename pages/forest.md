@@ -1,4 +1,6 @@
 tags:: cyber, species
+crystal-type:: entity
+crystal-domain:: biology
 - # Forest
 - forests are distributed systems where thousands of organisms coordinate resource allocation through chemical signaling and physical competition. consensus emerges from local interactions between [[tree]] roots, fungal networks, and microbial communities
 - ## coordination in forests

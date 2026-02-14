@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - fundamental market mechanism where [[price]] acts as a signal coordinating [[scarcity]] and desire
 - demand curve: quantity buyers seek at each price level, inversely related to price
 - supply curve: quantity sellers offer at each price level, directly related to price

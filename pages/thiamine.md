@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - alias: thiamine, vitamin b1
 - ![Vitamin_B1.pdf](../assets/Vitamin_B1_1719303309556_0.pdf)

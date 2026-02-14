@@ -1,4 +1,6 @@
 tags:: geography, biology
+crystal-type:: entity
+crystal-domain:: biology
 - a large ecological region defined by distinct [[climate zone]], flora, and fauna
 - major terrestrial biomes: [[tropical rainforest]], [[savanna]], [[desert]], temperate forest, taiga/boreal, [[tundra]], grassland
 - aquatic biomes: [[coral reef]], open [[ocean]], freshwater, estuary, wetland

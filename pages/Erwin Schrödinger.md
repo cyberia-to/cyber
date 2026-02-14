@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1887-1961. Austrian-Irish physicist.
 - Formulated the Schrodinger equation, the fundamental wave equation of [[quantum mechanics]] governing how quantum states evolve in time.
 - His wave mechanics provided an equivalent and often more intuitive formulation than Heisenberg's matrix mechanics.

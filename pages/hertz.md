@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of [[frequency]], equal to one [[oscillation]] per second
 - named after Heinrich Hertz, who first demonstrated electromagnetic waves

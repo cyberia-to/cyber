@@ -1,4 +1,6 @@
 tags:: geography, physics
+crystal-type:: entity
+crystal-domain:: physics
 - theory describing the movement of lithospheric plates on Earth's asthenosphere
 - driven by mantle convection, ridge push, and slab pull
 - three boundary types: divergent (spreading), convergent (collision/subduction), transform (sliding)

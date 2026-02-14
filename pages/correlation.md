@@ -1,4 +1,6 @@
 tags:: relation, statistics
+crystal-type:: relation
+crystal-domain:: mathematics
 
 - statistical relationship where two variables change together
 - Pearson coefficient (r) ranges from -1 (perfect negative) through 0 (none) to +1 (perfect positive)

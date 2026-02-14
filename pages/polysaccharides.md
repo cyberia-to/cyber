@@ -1,4 +1,6 @@
 tags:: compound-
+crystal-type:: entity
+crystal-domain:: chemistry
 - polysaccharides are large, complex carbohydrate molecules composed of long chains of monosaccharide units linked by glycosidic bonds. they serve critical biological roles as energy storage compounds ([[starch]], [[glycogen]]) and structural components ([[cellulose]], [[chitin]]) in plants, fungi, animals, and microorganisms.
 - ## chemical properties
 	- composition: repeated monosaccharide units (e.g., glucose, fructose, galactose, xylose, mannose)

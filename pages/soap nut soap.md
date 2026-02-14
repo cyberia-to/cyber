@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - ### 🧾 🧼 preparing soap concentrate
   simple natural soap concentrate from soap nuts — for use in cleaning and laundry, fully biodegradable and zero waste.
 - ## 📝 step-by-step instructions

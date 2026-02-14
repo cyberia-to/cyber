@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - [[@master]]
 - posits that the universe operates on a principle of interconnectedness
 	- where elements coalesce

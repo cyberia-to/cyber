@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: pattern
+crystal-domain:: mathematics
 status:: draft
 ## marrying topos theory and focus flow computation
 ### 1. philosophical and mathematical motivation

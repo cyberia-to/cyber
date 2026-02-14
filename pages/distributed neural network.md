@@ -1,5 +1,7 @@
 alias:: dnn
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: computer science
 - TODO make visualization of [[soft3]] architecture
 - here we present new architecture of distributed neural network
 - layers

@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - [[writing system]] where each symbol represents a single phoneme (consonant or vowel)
 - origin: Proto-Sinaitic script (~1800 BCE) -> Phoenician (~1050 BCE) -> Greek (~800 BCE)
 - the Greek innovation: adding vowel letters to a consonant-only Phoenician system

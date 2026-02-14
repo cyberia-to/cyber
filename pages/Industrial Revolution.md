@@ -1,4 +1,6 @@
 tags:: time, history
+crystal-type:: entity
+crystal-domain:: history
 - transformation of production and society, 1760-1840, originating in Britain
 - steam engine, spinning jenny, power loom, [[iron]] smelting with coke
 - shift from manual labor and animal power to mechanized [[energy]] systems

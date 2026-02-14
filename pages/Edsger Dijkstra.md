@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1930-2002. Dutch computer scientist.
 - Invented Dijkstra's algorithm for shortest paths in [[graph theory]], foundational to routing and network search.
 - Pioneered structured programming, advocating clarity and provability over ad-hoc coding.

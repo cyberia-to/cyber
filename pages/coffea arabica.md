@@ -1,4 +1,6 @@
 tags:: genus, species, psycho
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: coffea, kopi
 abundance:: yes

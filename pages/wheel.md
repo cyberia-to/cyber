@@ -1,4 +1,6 @@
 tags:: technology
+crystal-type:: entity
+crystal-domain:: materials
 - circular component rotating on an axle
 - one of six simple machines, alongside [[lever]], wedge, screw, pulley, inclined plane
 - invented circa 3500 BCE in Mesopotamia, first for pottery then transport

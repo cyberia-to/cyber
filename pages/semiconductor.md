@@ -1,4 +1,6 @@
 tags:: technology, physics
+crystal-type:: entity
+crystal-domain:: physics
 - material with electrical conductivity between conductor and insulator
 - silicon and germanium are the primary elemental semiconductors
 - doping with impurities creates n-type (electron excess) and p-type (hole excess) regions

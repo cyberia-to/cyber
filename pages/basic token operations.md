@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - [[pay]]: change two [[neuron]] balances
 - [[lock]]: freeze balance of [[neuron]]'s [[token]] for some [[time]]
 - [[uber]]: change [[state]] without any [[token]] [[value]] change of [[neuron]]

@@ -1,5 +1,7 @@
 tags:: species
 alias:: cemara gunung, mountain ru
+crystal-type:: entity
+crystal-domain:: biology
 - availability:: batuka
 - nitrogener:: 250
 - wood-density:: 1050

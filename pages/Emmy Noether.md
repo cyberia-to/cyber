@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1882-1935. German mathematician.
 - Proved Noether's theorem (1918): every continuous symmetry of a physical system corresponds to a conserved quantity.
 - Symmetry in time yields conservation of energy; symmetry in space yields conservation of momentum.

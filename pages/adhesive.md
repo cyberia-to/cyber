@@ -1,4 +1,6 @@
 tags:: material
+crystal-type:: entity
+crystal-domain:: materials
 
 - ## epoxy adhesive
 	- best for: structural applications requiring maximum strength and rigidity

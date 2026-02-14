@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - status: draft
 - in this article i describe the new type of policy for a more adoptable societies
 - i am going to bet on it while building [[citadel genesis]]

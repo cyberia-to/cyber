@@ -1,4 +1,6 @@
 tags:: color, cyber
+crystal-type:: property
+crystal-domain:: culture
 - # Yellow
 - wavelength:: 570-590 nm
 - emotion:: [[surprise]]

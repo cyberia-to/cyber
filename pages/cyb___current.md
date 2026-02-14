@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - overall the following state of the projects
 - [[cy]] in [[nu]]
 	- terminal implementation in [[nu]]

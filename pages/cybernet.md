@@ -1,5 +1,7 @@
 icon:: 🍄
 tags:: cyber, cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: tested
 - experimental [[learning incentives]] layer for [[cyber]] using [[cosmwasm]] [[progs]]
 - effort to incentivize [[soft3]] learning

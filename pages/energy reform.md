@@ -1,5 +1,7 @@
 icon:: ☀️
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - seven [[cips]] with [[cyber/energy]] optimizations
 - with a purpose to deliver [[the product]]
 - and emphasize sustainability of [[bostrom]] business model

@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - systematic inquiry into fundamental questions: existence, [[knowledge]], [[truth]], value, reason, mind, [[language]]
 - branches: metaphysics (what exists), epistemology (what can be known), [[ethics]] (what is right), logic (valid reasoning), [[aesthetics]] (beauty and [[art]])
 - originated independently in Greece, India, and China during the [[Iron Age]] Axial Age (~800-200 BCE)

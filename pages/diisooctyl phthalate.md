@@ -1,5 +1,7 @@
 alias:: DIOP, diop, dioctyl isophthalate
 tags:: compound
+crystal-type:: entity
+crystal-domain:: biology
 - diisooctyl phthalate (diop or dioctyl isophthalate) is a synthetic [[phthalate ester]] widely used as a [[plasticizer]] to increase the flexibility, transparency, and durability of [[plastics]], particularly in [[polyvinyl chloride]] (pvc) products. it is a colorless, oily liquid with low volatility and is primarily used in industrial and commercial applications.
 	- ### chemical and physical properties
 		- compound type: aromatic diester (phthalate)

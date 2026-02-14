@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 ## species to research
 - {{query (and (page-tags [[species]]) (not (page-tags [[class]])) (and (page-tags [[research]])))}}
   query-sort-by:: page

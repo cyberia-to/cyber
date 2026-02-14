@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Statistics
 The science of collecting, analyzing, and interpreting data to draw inferences about populations from samples.
 - [[inference]]:: estimating population parameters from sample data

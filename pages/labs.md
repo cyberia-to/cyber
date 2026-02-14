@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 
 - experimental founders high performance bed
 - [[populus alba]]

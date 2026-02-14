@@ -1,5 +1,7 @@
 tags:: state
 alias:: personal bandwidth, account bandwidth
+crystal-type:: entity
+crystal-domain:: cyber
 - used for tracking bandwidth of [[neurons]] in the network
 - the [[$V]] stake of the given [[neuron]] are easy to understand as the size of his battery
 - the creation of [[cyberlinks]] will consume battery charge

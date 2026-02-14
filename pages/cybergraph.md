@@ -1,6 +1,8 @@
 icon:: 🕸
 tags:: cyber
 alias:: content oracle
+crystal-type:: entity
+crystal-domain:: cyber
 - cybergraph is authenticated [[knowledge graph]] data structure stored in [[vimputer]]
 - cybergraph implements simplified [[knowledge theory]]
 - cybergraph enables one important ability: append [[cyberlinks]] to the [[state]]

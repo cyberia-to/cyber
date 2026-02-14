@@ -1,5 +1,7 @@
 alias:: Hong-Page diversity theorem
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - diverse problem solvers outperform groups of high-ability homogeneous solvers — Hong & Page (2004)
 - the mechanism: diverse heuristics explore more of the solution landscape. ability hits diminishing returns; diversity opens new regions
 - formally: a random collection of agents with diverse search strategies outperforms a curated collection of the best-performing agents

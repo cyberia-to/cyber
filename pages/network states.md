@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - what is [[network state]]?
 -
 - ## list of recognized [[network states]]

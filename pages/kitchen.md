@@ -1,4 +1,6 @@
 tags:: building, building type
+crystal-type:: entity
+crystal-domain:: cyberia
 type:: private
 alias:: permabase kitchen
 

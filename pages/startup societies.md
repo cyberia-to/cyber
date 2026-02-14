@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - what is [[startup society]]?
 -
 - list of recognized startup societies

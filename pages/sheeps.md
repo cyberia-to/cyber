@@ -1,4 +1,6 @@
 tags:: genus, species, class
+crystal-type:: entity
+crystal-domain:: biology
 
 - | operation                     | frequency for sheep          | frequency for goats          | notes                          |
   |-------------------------------|------------------------------|------------------------------|--------------------------------|

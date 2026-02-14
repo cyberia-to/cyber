@@ -1,5 +1,7 @@
 alias:: negentropy
 tags:: cyber
+crystal-type:: measure
+crystal-domain:: cyber
 - measure of [[order]] in [[vimputer]]
 - computed in [[bits]]
 - designed as [[key metabolic factor]] of [[superintelligence]]

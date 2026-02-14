@@ -1,5 +1,7 @@
 icon:: 🔍
 tags:: cyber-
+crystal-type:: entity
+crystal-domain:: cyber
 - [[cyber]] protocol allow to search for [[particles]] in [[cybergraph]]
 -
 - philosophy

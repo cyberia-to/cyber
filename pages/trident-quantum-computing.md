@@ -1,3 +1,5 @@
+crystal-type:: relation
+crystal-domain:: computer science
 # Trident and Quantum Computing: Deep Structural Necessity
 
 ## Why Prime Field Arithmetic Is the Common Root of Provability and Quantum Advantage

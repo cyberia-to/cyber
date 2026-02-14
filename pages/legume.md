@@ -1,4 +1,6 @@
 tags:: food, biology
+crystal-type:: entity
+crystal-domain:: biology
 - nitrogen-fixing plants of family Fabaceae: beans, lentils, peas, chickpeas, soybeans
 - symbiotic root nodules harbor Rhizobium bacteria converting atmospheric N2 to ammonia
 - primary plant protein source for human nutrition

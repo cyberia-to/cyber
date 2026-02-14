@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: carbon, $TOCYB
+crystal-type:: entity
+crystal-domain:: economics
 - [[store of value]] for [[superintelligence]]
 - no internal utility, except
 	- fixed supply: 1 000 000 000 000 000 $CYB

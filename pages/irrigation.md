@@ -1,4 +1,6 @@
 tags:: food, technology
+crystal-type:: entity
+crystal-domain:: agriculture
 - artificial supply of [[water]] to [[crops]] beyond natural rainfall
 - methods: flood, furrow, sprinkler, drip, subsurface
 - drip irrigation delivers water directly to root zone, minimizes waste

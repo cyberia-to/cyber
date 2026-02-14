@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - this article explores the synergy between both phenomena
 - taking the best from both worlds
 - | feature                     | [[network states]]                                      | [[startup societies]]                                  |

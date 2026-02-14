@@ -1,5 +1,7 @@
 tags:: cyber
 alias:: amper, milliamper, ampers, milliampers
+crystal-type:: entity
+crystal-domain:: economics
 - [[token]] of [[attention]] in [[bostrom]]
 - part of [[cyber/energy]] pack
 -

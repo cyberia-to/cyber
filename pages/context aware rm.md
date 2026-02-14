@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - # context aware relevance machine
 	- we discuss for a while one property of the ranking mechanism
 	- which rise huge concerns into the answering capabilities of cyber

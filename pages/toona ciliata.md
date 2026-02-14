@@ -1,5 +1,7 @@
 tags:: species
 alias:: australian toon, burma cedar
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 5
 

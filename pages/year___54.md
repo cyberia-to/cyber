@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - tags::mt
   alias:: 2024 year, 54
 - [report](https://x.com/mastercyb/status/1873919968041119800)

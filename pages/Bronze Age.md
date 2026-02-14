@@ -1,4 +1,6 @@
 tags:: time, history
+crystal-type:: entity
+crystal-domain:: history
 - period ~3300-1200 BCE defined by widespread use of bronze (copper + tin alloy)
 - first [[writing system]]s: cuneiform in Sumer, hieroglyphics in Egypt
 - first empires: Akkadian, Egyptian, Hittite, Shang, Minoan, Mycenaean

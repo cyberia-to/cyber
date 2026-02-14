@@ -1,4 +1,6 @@
 tags:: geography, physics
+crystal-type:: entity
+crystal-domain:: physics
 - an opening in Earth's crust where magma, gases, and ash reach the surface
 - formed at [[plate tectonics]] boundaries: subduction zones, divergent ridges, and hotspots
 - types: shield (broad, effusive), stratovolcano (steep, explosive), cinder cone, caldera

@@ -1,4 +1,6 @@
 tags:: article, cyber, cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: draft
 # Why this ranking system?
 - ## 1) What we need a ranking system to do

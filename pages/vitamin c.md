@@ -1,5 +1,7 @@
 alias:: ascorbic acid
 tags:: compound
+crystal-type:: entity
+crystal-domain:: biology
 - ![Vitamin_C.pdf](../assets/Vitamin_C_1719303309556_0.pdf)
 - [[vitamin]] c, also known as ascorbic acid, is a water-soluble vitamin that is essential for normal growth and development. it is known for its [[antioxidant]] properties, which help protect cells from damage by free radicals. vitamin c is crucial for the [[biosynthesis of collagen]], [[L-carnitine]], and certain neurotransmitters. it also aids in the [[absorption of non-heme iron]], the form of iron present in plant-based foods.
 - ### chemical properties

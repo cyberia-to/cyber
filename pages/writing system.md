@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - visual representation of [[language]] using persistent marks on a surface
 - types:
 	- alphabetic: one symbol per phoneme ([[alphabet]]): Latin, Greek, Cyrillic, Arabic, Hebrew

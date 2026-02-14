@@ -1,5 +1,7 @@
 tags:: service, cv.land
 alias:: internet
+crystal-type:: entity
+crystal-domain:: cyberia
 type:: public
 
 - cyberlink is the internet in cyber valley

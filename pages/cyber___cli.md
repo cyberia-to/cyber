@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - feature of [[go-cyber]]
 - cyber query bandwidth
 	- load: query the [[bandwidth load]]

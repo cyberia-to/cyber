@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - mental mechanisms by which [[neurons]] acquire, interpret, and apply information in [[social]] contexts
 - these processes involve
 	- understanding and predicting the behavior of others

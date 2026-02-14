@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - we cant control your internet connection
 - but you can choose to treat you mind with very simple technic: no information from outside
 - try first 10 days - no connection to global internet

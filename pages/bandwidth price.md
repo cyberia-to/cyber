@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - it's a multiplier for default bandwidth price
 - as 1 [[$V]] allows creating 1 [[cyberlink]] per given period
 - if the price is lower than 1, the network will consume less of [[bandwidth]]

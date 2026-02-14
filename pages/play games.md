@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - get high [[karma]] by [[learning]] [[cybergraph]]
 - bet on future value of tokens in [[teleport/swap]]
 - stake on reliable heroes in [[sphere]]

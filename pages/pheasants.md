@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - research
 	- ringneck pheasants
 	  collapsed:: true

@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 ## The Builder's Creed
 	- We value agency over dependency
 	- In this community, we distinguish between two modes of participation:

@@ -1,4 +1,6 @@
 tags:: time, history, technology
+crystal-type:: entity
+crystal-domain:: history
 - movable type printing system invented by Johannes Gutenberg ~1440 in Mainz
 - mechanical reproduction of text: metal type, oil-based ink, screw press
 - Gutenberg Bible (1455): first mass-produced book in Europe

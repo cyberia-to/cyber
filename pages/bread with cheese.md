@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - ![](https://ipfs.io/ipfs/bafkreibzpewkd54qluxjes2rnygtvlbnzsdnkm7oogenokubkbtfyu2eze)
 - turn on oven
 - prepare the baking tray

@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - multifunctional retail format that mixes the following
 	- [[portal]] : residency marketplace
 	- [[organiq]] food store and cafe

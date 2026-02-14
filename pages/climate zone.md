@@ -1,4 +1,6 @@
 tags:: geography
+crystal-type:: entity
+crystal-domain:: geography
 - regions of Earth classified by temperature and precipitation patterns
 - five major zones: tropical, subtropical, temperate, continental, polar
 - tropical: warm year-round, high rainfall, supports [[tropical rainforest]] and [[savanna]]

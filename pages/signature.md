@@ -1,5 +1,7 @@
 alias:: signatures, digital signature, cryptographic signature
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: computer science
 - cryptographic proof that a [[neuron]] authored a [[signal]]
 - uses [[asymmetric encryption]] involving a pair of keys
 	- [[private key]] for [[signing]]

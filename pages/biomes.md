@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - list of biomes in [[rockets estate]]
 	- huge [[sinwood]] biome
 	- pure [[jurasic]] zone

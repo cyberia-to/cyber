@@ -1,4 +1,6 @@
 tags:: food
+crystal-type:: entity
+crystal-domain:: agriculture
 - cultivation of plants and animals for sustenance and materials
 - origin in the [[Neolithic]] revolution, approximately 10,000 years ago
 - transforms [[soil]], [[water]], and [[energy]] into food through managed ecosystems

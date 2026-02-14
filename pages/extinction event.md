@@ -1,4 +1,6 @@
 tags:: time, biology
+crystal-type:: entity
+crystal-domain:: biology
 - rapid, widespread loss of species across multiple taxa and habitats
 - five major mass extinctions in Earth's [[geological time]]:
 	- Ordovician-Silurian (~445 Ma): glaciation, sea level drop

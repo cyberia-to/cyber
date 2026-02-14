@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - ## glamping
 	- | period | price |

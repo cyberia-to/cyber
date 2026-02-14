@@ -1,4 +1,6 @@
 tags:: geography, biome
+crystal-type:: entity
+crystal-domain:: geography
 - [[biome]] characterized by permafrost, minimal tree growth, and extreme cold
 - two types: arctic tundra (high latitude) and alpine tundra (high altitude)
 - short growing season of 50-60 days limits vegetation to mosses, lichens, grasses, and dwarf shrubs

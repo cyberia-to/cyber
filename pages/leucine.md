@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: leucine
 - ![Leucine.pdf](../assets/Leucine_1719303309556_0.pdf)
 - [[leucine]] is an essential [[branched-chain amino acid]]  (bcaa) found in protein-rich foods such as [[meat]], [[dairy]], [[eggs]], and [[legumes]]. it is crucial for [[muscle protein synthesis]], [[energy production]], and overall [[metabolic health]].

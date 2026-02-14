@@ -1,4 +1,6 @@
 tags:: page
+crystal-type:: entity
+crystal-domain:: cyber
 -
 - and [[learn]] and [[search]] => [[cyberlink]] and [[cyberlink]]
 -

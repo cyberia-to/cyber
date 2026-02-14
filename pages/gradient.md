@@ -1,4 +1,6 @@
 tags:: pattern, physics, mathematics
+crystal-type:: pattern
+crystal-domain:: physics
 
 - rate of change of a quantity across space or along a dimension
 - mathematically: vector of partial derivatives pointing in the direction of steepest increase

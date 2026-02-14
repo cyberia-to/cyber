@@ -1,5 +1,7 @@
 tags:: page
 alias:: buy name
+crystal-type:: entity
+crystal-domain:: cyber
 -
 - [[portal entrance]] always on start
 - starting page is [[citizenship]]

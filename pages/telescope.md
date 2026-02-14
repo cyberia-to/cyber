@@ -1,4 +1,6 @@
 tags:: technology, physics
+crystal-type:: entity
+crystal-domain:: physics
 - instrument for observing distant objects by collecting electromagnetic radiation
 - optical telescope: refracting (lens) or reflecting (mirror), invented 1608
 - radio telescope: dish [[antenna]] collecting radio waves, reveals cold gas and pulsars

@@ -1,4 +1,6 @@
 tags:: genus, species, cybernomics
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: persea, avocado, alpukat
 abundance:: yes

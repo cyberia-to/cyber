@@ -1,4 +1,6 @@
 tags:: building, block
+crystal-type:: entity
+crystal-domain:: cyberia
 size:: 324
 shape:: 18*9
 - founders house

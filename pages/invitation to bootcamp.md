@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - scene 1: @joy
 	- voice:
 		- imagine living on your own terms—

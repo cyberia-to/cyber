@@ -1,4 +1,6 @@
 tags:: pattern, physics
+crystal-type:: pattern
+crystal-domain:: physics
 
 - periodic motion between two states or extremes
 - characterized by [[frequency]], [[amplitude]], period, and phase

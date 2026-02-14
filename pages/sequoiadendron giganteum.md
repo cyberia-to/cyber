@@ -1,5 +1,7 @@
 alias:: giant sequoia
 tags:: species, research
+crystal-type:: entity
+crystal-domain:: biology
 supply:: wishlist
 
 - [[high margin]]

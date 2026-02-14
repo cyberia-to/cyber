@@ -1,5 +1,7 @@
 tags:: genus, species
 alias:: bambusa, oldhami
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: low

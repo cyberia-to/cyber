@@ -1,5 +1,7 @@
 tags:: genus, species
 alias:: kalanchoeabundance:: yes
+crystal-type:: entity
+crystal-domain:: biology
 supply:: no
 margin:: low
 autonomy:: staple

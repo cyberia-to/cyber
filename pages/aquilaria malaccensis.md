@@ -1,5 +1,7 @@
 alias:: agarwood, gaharu, aquilaria
 tags:: species
+crystal-type:: entity
+crystal-domain:: biology
 wood-density:: 500
 supply:: next-month
 market:: resins

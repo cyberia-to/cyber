@@ -1,5 +1,7 @@
 alias:: lawn grass
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: agriculture
 
 - high trafic more sun
 	- [[cynodon dactylon]]

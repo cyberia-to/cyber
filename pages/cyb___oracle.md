@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - pages left
 	- [[cyb/oracle/ask]]
 	- [[cyb/oracle/neuron]]

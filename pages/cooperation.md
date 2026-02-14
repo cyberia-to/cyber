@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - continuous process of [[cooperative games]] between [[neurons]]
 - implemented in [[cyber]] as an independent layer: [[cybernet]]
 - agents are rewarded for actions that increase the system's [[syntropy]] — order created from chaos

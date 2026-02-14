@@ -1,4 +1,6 @@
 tags:: color, cyber
+crystal-type:: property
+crystal-domain:: culture
 - # Green
 - wavelength:: 495-570 nm
 - emotion:: [[joy]]

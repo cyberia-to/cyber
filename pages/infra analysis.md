@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - {{query (page-tags [[front]])}}
   query-properties:: [:page :workers :users]
   query-sort-by:: users

@@ -1,5 +1,7 @@
 alias:: colocasia, taro
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 abundance:: yes
 supply:: no

@@ -1,4 +1,6 @@
 tags:: kitchen/menu
+crystal-type:: process
+crystal-domain:: agriculture
 
 - ![](https://ipfs.io/ipfs/bafybeidkex5qzkyils24uggelozmtmjykgo5nf7lw6ygo32k73ipbd3sru)
 - ### 🧾 🎋 steamed bamboo shoots

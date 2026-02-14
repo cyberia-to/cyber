@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of electric potential difference (voltage)
 - one volt = one [[joule]] per coulomb of charge

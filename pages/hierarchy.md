@@ -1,4 +1,6 @@
 tags:: pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 
 - ordered ranking of levels where each level contains or governs the one below
 - biological taxonomy: domain, kingdom, phylum, class, order, family, [[genus]], [[species]]

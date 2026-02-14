@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - #+BEGIN_QUERY
   {
     :title "Unique Species with Amounts"

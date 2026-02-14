@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Category Theory
 The study of structure-preserving maps between mathematical objects, expressed through objects, arrows ([[morphism]]s), and [[functor]]s.
 - A category consists of objects and composable morphisms satisfying identity and associativity

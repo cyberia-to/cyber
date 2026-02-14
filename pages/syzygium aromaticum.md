@@ -1,5 +1,7 @@
 tags:: species
 alias:: clove, chengkeh,
+crystal-type:: entity
+crystal-domain:: biology
 wood-availability:: local
 wood-density:: 900
 wood-durability:: high

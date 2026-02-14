@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - for sheep
 	- cut 2 big papayas
 	- make rice porrige

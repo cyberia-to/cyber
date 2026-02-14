@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 labor:: [[10 h/year/are]]
 
 	- capital:: [[eth/are]]

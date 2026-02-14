@@ -1,5 +1,7 @@
 tags:: building
 alias:: elon, elona
+crystal-type:: entity
+crystal-domain:: cyberia
 size:: 96
 shape:: 12*8
 - multipurpose facility

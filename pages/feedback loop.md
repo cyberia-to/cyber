@@ -1,4 +1,6 @@
 tags:: pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 
 - system structure where output feeds back as input, modifying subsequent behavior
 - positive (amplifying) feedback: output reinforces the process, driving exponential growth or collapse

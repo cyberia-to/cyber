@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - largest [[language]] family by number of speakers: ~3.2 billion
 - branches: Germanic (English, German, Dutch), Romance (Spanish, French, Italian, Portuguese), Slavic (Russian, Polish, Ukrainian), Indo-Iranian (Hindi, Urdu, Persian, Bengali), Celtic, Greek, Armenian, Albanian, Baltic
 - proto-Indo-European spoken ~4500-2500 BCE, likely in the Pontic-Caspian steppe

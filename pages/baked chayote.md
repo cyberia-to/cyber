@@ -1,4 +1,6 @@
 tags:: kitchen/menu, mains
+crystal-type:: process
+crystal-domain:: agriculture
 - ![](https://ipfs.io/ipfs/bafybeiciaj7urvylkbdir2f7pnadkyegkhkc4riu65uvhg3vza7gl3gfn4)
 - ### 🧾 🔥 baked chayote with spiced meat & cheese
 - slow-baked chayote halves filled with tender curried meat, sweet carrots, and herbs, topped with golden melted cheese. rich, aromatic, and served warm — a full, satisfying plate in one.

@@ -1,5 +1,7 @@
 icon:: 🤖
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - use at [cyb.ai](https://cyb.ai)
 - [[prism]] design system
 - personal [[robot]] with [[avatars]]

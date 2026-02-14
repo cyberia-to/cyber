@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - ### how meals work
 	- all meals ([[breakfast]], [[lunch]], [[dinner]]) are prepared by our kitchen team

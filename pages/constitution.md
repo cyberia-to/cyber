@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - foundational document defining the structure of a state, the rights of its members, and the limits of power
 - encodes the [[social contract]] into enforceable rules
 - historical milestones: Magna Carta (1215), US Constitution (1787), French Declaration of Rights (1789)

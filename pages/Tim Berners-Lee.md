@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1955-, British computer scientist, inventor of the World Wide Web
 - created HTML (hypertext markup language), HTTP (hypertext transfer protocol), and URL (uniform resource locator) in 1989-1991 at CERN
 - the first web browser and web server ran on a NeXT computer at CERN

@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1707-1783. Swiss mathematician and physicist.
 - Founded [[graph theory]] by solving the Seven Bridges of Königsberg problem (1736).
 - The most prolific mathematician in history, contributing to calculus, [[number theory]], topology, mechanics, optics, and astronomy.

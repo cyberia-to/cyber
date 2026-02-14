@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - new land discovery: flexible
 - wild huyang trip: flexible
 - licking lesung whole: 3 hours

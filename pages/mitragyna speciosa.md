@@ -1,4 +1,6 @@
 tags:: genus, species, psycho
+crystal-type:: entity
+crystal-domain:: biology
 supply:: prohibited
 alias:: mitragyna, kratom
 - prohibited in [[indonesia]] and many other countries

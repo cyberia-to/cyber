@@ -1,4 +1,6 @@
 tags:: building type
+crystal-type:: entity
+crystal-domain:: cyberia
 type:: public
 
 - TODO signs on the road to [[cyber valley]] and [[citadel genesis]]

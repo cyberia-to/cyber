@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1918-1988. American theoretical physicist.
 - Developed [[quantum electrodynamics]] (QED), the most precisely tested theory in physics.
 - Invented the path integral formulation of [[quantum mechanics]], summing over all possible histories.

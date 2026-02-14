@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - modern philosopher who contributed to ideas behind
 	- [[superintelligence]]
 	- [simulation argument](https://cyb.ai/oracle/ask/QmPiXWg9RV4bH78Qm2CeHwRq1KGn47BkxUXc5hk4ULzyup)

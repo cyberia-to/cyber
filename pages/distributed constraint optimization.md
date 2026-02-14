@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - algorithms which are used to solve problems
 - where multiple agents must coordinate their actions
 - to optimize a global objective while satisfying local constraints

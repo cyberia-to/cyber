@@ -1,5 +1,7 @@
 tags:: genus, psycho
 alias:: hemp
+crystal-type:: entity
+crystal-domain:: biology
 
 - [[cannabis sativa]]
 - [[cannabis indica]]

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[ask]] [[chatgpt]]
 	- consider you creating a blockchain which have its own [[neuron]]
 	- and can make decisions completely autonomously

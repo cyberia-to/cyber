@@ -1,4 +1,6 @@
 tags:: class
+crystal-type:: entity
+crystal-domain:: biology
 
 - animals are foundational for biome development
 - we try to support as many animals as possible

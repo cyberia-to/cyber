@@ -1,5 +1,7 @@
 alias:: keys, secrets
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - personal collection of
 - use in [[go-cyber]]
 	- comand `cyber keys`

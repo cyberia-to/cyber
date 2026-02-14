@@ -1,4 +1,6 @@
 tags:: culture, philosophy
+crystal-type:: entity
+crystal-domain:: culture
 - branch of [[philosophy]] studying beauty, [[art]], taste, and sensory experience
 - questions: what is beauty, is aesthetic judgment objective or subjective, what is the purpose of [[art]]
 - Plato: beauty as ideal form; Aristotle: beauty as proportion and order; Kant: beauty as disinterested pleasure

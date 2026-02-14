@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - make a pull request to [this repo](https://github.com/cyber-valley/cvland/)
 -
 - checklist

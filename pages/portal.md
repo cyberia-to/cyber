@@ -1,4 +1,6 @@
 tags:: aip, cyb, prism
+crystal-type:: entity
+crystal-domain:: cyber
 - the onboarding [[aip]] in [[cyb]]
 - cell in [[prism]]
 - current state on [[cyb/portal]]

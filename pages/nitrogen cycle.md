@@ -1,4 +1,6 @@
 tags:: geography, biology, pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 - biogeochemical cycle converting nitrogen between chemical forms across Earth's systems
 - stages: N2 fixation, nitrification, assimilation, ammonification, denitrification
 - N2 fixation: bacteria (Rhizobium, cyanobacteria) and lightning convert atmospheric N2 to ammonia

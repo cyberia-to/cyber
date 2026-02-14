@@ -1,6 +1,8 @@
 icon:: 🎨
 alias:: nft, uniqs, knowledge asset
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: cyber
 - [[token]] which is unique and movable
 - knowledge asset. binds provenance to a [[particle]]
 - enables new-age epistemology

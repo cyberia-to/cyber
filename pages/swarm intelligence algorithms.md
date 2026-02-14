@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - inspired by the behavior of social animals
 - these algorithms guide decentralized coordination among [[agents]]
 - examples include

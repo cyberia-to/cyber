@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 - ## [[genus]] presented in [[edem]]
 - {{query (and [[conifer]] (and) (page-tags [[genus]]))}}

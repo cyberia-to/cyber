@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - data retention
   - Необходимо сохранять все логи графаны
 - Transactional structure

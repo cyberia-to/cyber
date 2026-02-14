@@ -1,5 +1,7 @@
 alias:: colearning
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - [[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — learning together
 - each link is a [[primitive learning act]]: a signed economic commitment that two [[particles]] are related
 - the sum of all learning acts is the [[cybergraph]] — the [[collective memory]]

@@ -1,5 +1,7 @@
 tags:: species, research
 alias:: akasia
+crystal-type:: entity
+crystal-domain:: biology
 wood-availability:: high
 wood-durability:: moderate
 wood-density:: 700

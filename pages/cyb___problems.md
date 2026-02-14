@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - no easy way to [[buy energy]]
 - [[cyb/oracle]]
 	- [[standard inference]]

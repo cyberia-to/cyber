@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[bitcoin]]: [[pelvis]]
 - [[ethereum]]: [[backbone]]
 - [[cosmos]]: [[nerves]]

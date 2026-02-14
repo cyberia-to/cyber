@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: protein
+crystal-type:: entity
+crystal-domain:: economics
 
 - system synergy potential (micro-ecosystem stacking)
 	- animal hotels

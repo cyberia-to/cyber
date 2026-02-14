@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - governance system where authority derives from the collective will of the people
 - forms
 	- direct democracy: citizens vote on every decision (Athens, Swiss cantons, referenda)

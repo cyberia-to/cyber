@@ -1,5 +1,7 @@
 alias:: erythrina, dadap
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: low

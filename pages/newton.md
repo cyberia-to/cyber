@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of [[force]], equal to the force needed to accelerate 1 kg at 1 m/s2
 - 1 N = 1 kg-m/s2

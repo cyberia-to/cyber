@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - in this post, i will outline a short-term roadmap with a clear purpose
   title:: year/54/roadmap
 - for recovering from chernobyl: the bug introduced in the recent update

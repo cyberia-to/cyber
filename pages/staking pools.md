@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: draft
 - most of [[$BOOT]] stake is unstaked due to complexities related to multisig management
 - we need a tool for [[stake]] outsourcing to [[prog]]

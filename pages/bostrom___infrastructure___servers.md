@@ -1,6 +1,8 @@
 icon:: 🖥️
 alias:: [[cybernode servers]], [[bostrom servers]]
 tags:: bostrom, infrastructure, servers, hardware
+crystal-type:: entity
+crystal-domain:: cyber
 
 - # Servers
 	- Back to [[bostrom infrastructure]]

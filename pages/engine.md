@@ -1,4 +1,6 @@
 tags:: technology, physics
+crystal-type:: entity
+crystal-domain:: physics
 - device converting [[energy]] into mechanical work
 - types: internal combustion (gasoline, diesel), electric motor, steam, jet, rocket
 - internal combustion: fuel-air mixture ignites in cylinders, drives pistons and crankshaft

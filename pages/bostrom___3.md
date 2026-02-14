@@ -1,4 +1,6 @@
 tags:: bostrom
+crystal-type:: entity
+crystal-domain:: cyber
 - [[close energy loop]]
 - [[rm]] module
 - [[webgpu]] module

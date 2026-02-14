@@ -1,4 +1,6 @@
 tags:: time, computer science
+crystal-type:: entity
+crystal-domain:: computer science
 - hypothetical point where [[AI]] surpasses human cognitive capacity across all domains
 - concept articulated by Vernor Vinge (1993) and elaborated in [[Superintelligence]] by Nick Bostrom
 - technological acceleration: each generation of [[AI]] designs the next, compressing innovation cycles

@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - fresh set of the product for living from cyber valley
 - 7 fruits, 39 herbs, meat, fish, honey.

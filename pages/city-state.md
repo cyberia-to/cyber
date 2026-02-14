@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - sovereign state consisting of a single city and its immediate surroundings
 - historical city-states: Athens, Sparta, Corinth (ancient Greece), Venice, Florence, Genoa (Renaissance Italy), Carthage, Tyre (ancient Mediterranean)
 - modern city-states: Singapore, Monaco, Vatican City, historically Hong Kong

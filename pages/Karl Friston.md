@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1959-. British neuroscientist and physicist.
 - Originated the [[free energy principle]]: biological systems minimize variational free energy to persist.
 - Developed [[active inference]], a unified framework where perception, action, and learning are aspects of the same optimization process.

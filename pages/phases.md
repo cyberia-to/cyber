@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - 1 phase: tourism star
 - 2 phase: iconic event space

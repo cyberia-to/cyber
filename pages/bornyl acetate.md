@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - ![Bornyl_acetate.pdf](../assets/Bornyl_acetate_1719039644164_0.pdf)
 - [[antiinflamation]] https://www.sciencedirect.com/science/article/abs/pii/S0944711323001423
 - [[anti-cancer]] https://avesis.bozok.edu.tr/yayin/97cf9f55-4c1f-4f32-8aff-69034918ee6c/inhibition-of-various-cancer-cells-proliferation-of-bornyl-acetate-and-essential-oil-from-inula-graveolens-linnaeus-desf

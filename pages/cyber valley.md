@@ -1,6 +1,8 @@
 icon:: ⛰
 alias:: cv, about
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: biology
 
 - # From Urban Survival to Forest Arrival
 - what is cyber valley?

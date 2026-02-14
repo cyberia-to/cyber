@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1844-1906. Austrian physicist and philosopher.
 - Founded [[statistical mechanics]], connecting microscopic particle behavior to macroscopic [[thermodynamics]].
 - Derived the entropy formula S = k * ln(W), linking [[entropy]] to the number of accessible microstates.

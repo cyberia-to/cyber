@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of [[energy]], work, and [[heat]]
 - 1 joule = 1 [[newton]] times 1 meter = 1 kg-m2/s2

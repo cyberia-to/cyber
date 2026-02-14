@@ -1,4 +1,6 @@
 tags:: geography, biology, biome
+crystal-type:: entity
+crystal-domain:: biology
 - marine [[biome]] built from calcium carbonate skeletons secreted by coral polyps
 - the rainforest of the sea: hosts 25% of all marine species on less than 1% of [[ocean]] floor
 - symbiosis between coral and zooxanthellae algae drives reef productivity through [[photosynthesis]]

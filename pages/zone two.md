@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - [[batuka]] biome
 	- [[boehmeria nivea]]

@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Anger
 - the [[emotion]] of [[red]] — high-arousal threat response
 - wavelength:: 620-750 nm

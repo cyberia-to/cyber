@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Algebra
 The study of mathematical structure through [[group]]s, [[ring]]s, [[field]]s, and their operations.
 - A [[group]] is a set with an associative binary operation, identity element, and inverses

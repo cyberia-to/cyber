@@ -1,4 +1,6 @@
 tags:: technology, physics, energy
+crystal-type:: entity
+crystal-domain:: physics
 - device storing chemical [[energy]] and converting it to electrical energy on demand
 - electrochemical cell: anode, cathode, electrolyte, separator
 - types: lithium-ion, lead-acid, nickel-metal hydride, solid-state, sodium-ion, flow

@@ -1,4 +1,6 @@
 tags:: genus
+crystal-type:: entity
+crystal-domain:: biology
 
 - TODO identify which cinnamomum species are growing in [[sinwood]], [[edem]] and [[batuka]]
 - [[bali]] is home to several cinnamomum species, wild and cultivated

@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - measure of the average [[kinetic energy]] of particles in a system
 - three principal scales: [[Celsius]], [[Fahrenheit]], [[kelvin]]

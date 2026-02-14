@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - alias: riboflavin, vitamin b2
 - ![Vitamin_B2.pdf](../assets/Vitamin_B2_1719303309556_0.pdf)

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - humanity forgets. civilizations rise, burn their libraries, and start over
 - collective amnesia is the evolutionary bug. [[collective memory]] is the fix
 -

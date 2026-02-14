@@ -1,5 +1,7 @@
 alias:: tomato
 tags:: species
+crystal-type:: entity
+crystal-domain:: biology
 
 - longevity:: year
 - ![](https://peach-geographical-bat-397.mypinata.cloud/ipfs/QmYmxtUBHrVxy6dyGFnW1GFmuPWXjiVvEHnDM3v6zegpg2)

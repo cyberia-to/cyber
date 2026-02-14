@@ -1,5 +1,7 @@
 icon:: 🏅
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - [[token]] which is unique and immovable
 - non-transferable unique credential
 - bound to a [[neuron]] permanently

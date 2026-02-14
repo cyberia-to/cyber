@@ -1,4 +1,6 @@
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: manilkara, sawo, sapodilla
 wood:: yes

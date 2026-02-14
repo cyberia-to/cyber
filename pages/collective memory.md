@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - the [[cybergraph]] is the collective memory of [[cyber]]
 - every [[cyberlink]] from every [[neuron]] across all time — authenticated, immutable, traversable
 - overcomes [[collective amnesia]]: history that cannot be erased, rewritten, or forged

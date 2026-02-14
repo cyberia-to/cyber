@@ -1,4 +1,6 @@
 tags:: page
+crystal-type:: entity
+crystal-domain:: cyber
 - space:: gamify the process of launching [[superintelligence]]
 	- center:: [[techtree]] to reach the goal
 	- upleft:: spread of [[cyber-sdk]] [[vimputers]]

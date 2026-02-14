@@ -1,5 +1,7 @@
 alias:: pakis sayur, vegy fern
 tags:: species, genus
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: high

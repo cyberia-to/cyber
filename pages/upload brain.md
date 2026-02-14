@@ -1,4 +1,6 @@
 tags:: page
+crystal-type:: entity
+crystal-domain:: cyber
 - purpose
 	- translate idea of brain uploading
 	- convenient way to upload folder from local filesystem

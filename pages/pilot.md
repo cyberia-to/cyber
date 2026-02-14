@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - target
 	- demonstrate that [[fully autonomous tent]] is possible
 	- in 2 weeks

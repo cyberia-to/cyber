@@ -1,5 +1,7 @@
 alias:: phylloquinone
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - vitamin k1 (also known as [[phylloquinone]]) is a vital [[fat-soluble vitamin]] that plays a key role in [[blood clotting]], [[bone metabolism]], and the regulation of [[calcium levels]] in the blood. it is primarily found in green leafy vegetables and is essential for the synthesis of clotting factors in the liver.
 	- ### chemical properties
 		- molecular weight: 450.70 g/mol

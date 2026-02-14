@@ -1,5 +1,7 @@
 alias:: learning rewards
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - mechanisms that reward [[neurons]] for creating valuable [[cyberlinks]]
 - the core problem: [[knowledge]] creation is costly, but its benefits are collective
 - without incentives, rational agents free-ride on others' [[cyberlinks]]

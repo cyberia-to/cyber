@@ -1,4 +1,6 @@
 tags:: bostrom
+crystal-type:: entity
+crystal-domain:: cyber
 - concepts
 	- [[introduction to bostrom for ai geeks]]
 	- [[knowledge graphs and llms]]

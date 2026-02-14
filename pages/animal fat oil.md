@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - ### 🧾 🥄 animal fat oil
   traditional, nutrient-dense cooking fat collected from slow-cooked or roasted meat — ideal for pan-frying, roasting, and enhancing savory dishes.

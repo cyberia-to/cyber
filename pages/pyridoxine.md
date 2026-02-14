@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - alias: pyridoxine, vitamin b6
 - ![Vitamin_B6.pdf](../assets/Vitamin_B6_1719303309556_0.pdf)

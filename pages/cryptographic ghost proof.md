@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 # integrating sparsely activated tensors and cryptographic ghost proofs into the collective focus & focus-flow architecture
 - ## 1. purpose
   

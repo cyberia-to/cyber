@@ -1,5 +1,7 @@
 tags:: species, research
 alias:: kamper
+crystal-type:: entity
+crystal-domain:: biology
 wood-density:: 800
 wood-availability:: high
 wood-durability:: moderate

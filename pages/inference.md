@@ -1,5 +1,7 @@
 tags:: cyber
 alias:: infer
+crystal-type:: entity
+crystal-domain:: cyber
 - deriving [[implicit knowledge]] from [[explicit knowledge]] in the [[cybergraph]]
 - the [[truth machine]] performs inference by running the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat kernel]]) on the graph of [[cyberlinks]]
 - the result is [[cyberank]]: a probability distribution over all [[particles]] that encodes the collective judgment of all [[neurons]]

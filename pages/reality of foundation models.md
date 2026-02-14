@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - existing foundation models lack a foundation
 	- contain only [[implicit knowledge]]
 	- unable to work in [[full content space]]

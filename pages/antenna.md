@@ -1,4 +1,6 @@
 tags:: technology, physics
+crystal-type:: entity
+crystal-domain:: physics
 - device converting electric signals to electromagnetic (radio) waves and back
 - transmitting antenna: accelerates electrons, radiating energy into space
 - receiving antenna: electromagnetic waves induce current in conductor

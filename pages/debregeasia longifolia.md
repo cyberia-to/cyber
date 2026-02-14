@@ -1,5 +1,7 @@
 alias:: rhea, debregeasia, dedara
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 abundance:: yes
 supply:: no
 margin:: low

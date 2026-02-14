@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - one of the most important animal for [[biome engineering]]
 - products
 	- [[meat]]

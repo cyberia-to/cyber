@@ -1,4 +1,6 @@
 tags:: building, block, product
+crystal-type:: entity
+crystal-domain:: cyberia
 size:: 16
 shape:: 4*4
 

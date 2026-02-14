@@ -1,5 +1,7 @@
 alias:: heat, multi-scale smoothing, adaptation, thermostat
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - third operator of the [[tri-kernel]]
 - `∂H/∂τ = -LH`, `H₀ = I`, so `H_τ = exp(-τL)`
 - temperature τ controls scale

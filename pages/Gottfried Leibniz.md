@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1646-1716. German polymath: mathematician, philosopher, logician, diplomat.
 - Co-invented calculus independently of Newton, contributing the notation (dx, integral sign) still used today.
 - Pioneered binary arithmetic, the foundation of all digital [[computation]].

@@ -1,4 +1,6 @@
 tags:: prism, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Button
 - call-to-action atom in [[prism]]
 - the primary interaction primitive. every action a [[neuron]] takes in [[cyb]] flows through a button

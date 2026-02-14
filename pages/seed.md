@@ -1,4 +1,6 @@
 tags:: food, biology
+crystal-type:: entity
+crystal-domain:: agriculture
 - embryonic plant enclosed in a protective coat, carrier of genetic information
 - contains embryo, endosperm (nutrient store), and seed coat (testa)
 - dormancy mechanisms: physical, chemical, thermal, light-dependent

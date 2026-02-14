@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Emotion
 - a computed color signal in [[prism]] grounded in the [[color-emotion spectrum]]
 - emotion encodes protocol state as feeling: [[cyberank]], [[karma]], [[bandwidth]], and context are translated into a wavelength that a human perceives as affect

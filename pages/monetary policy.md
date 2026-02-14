@@ -1,4 +1,6 @@
 tags:: cybernomics, governance
+crystal-type:: entity
+crystal-domain:: economics
 - control of money supply and interest rates by a central authority to influence economic activity
 - expansionary policy: increasing money supply, lowering interest rates to stimulate growth
 - contractionary policy: reducing money supply, raising interest rates to cool [[inflation]]

@@ -1,4 +1,6 @@
 tags:: segment
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - rhizome guilds are mixable and [[high margin]] multi layer system
 - to reach retail-scale, continuous micro-supply, your minimum efficient guild unit should be 6–8 are (600–800 m²) of mixed rhizomes, this allows:

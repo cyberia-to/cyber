@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - ![Tricyclene_synthase.pdf](../assets/Tricyclene_synthase_1719301849258_0.pdf)
 - general description:
 - tricyclene is a bicyclic monoterpene with a distinctive camphor-like odor. it is naturally found in various essential oils, including those of some conifers.

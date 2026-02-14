@@ -1,5 +1,7 @@
 alias:: objective function, advanced algorithms
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
 	- computed on [[gpu]] in [[consensus]]
 	- over [[cybergraph]] by the [[truth machine]]

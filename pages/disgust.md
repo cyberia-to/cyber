@@ -1,4 +1,6 @@
 tags:: cyber, cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - # Disgust
 - the [[emotion]] of [[orange]] — contamination avoidance
 - wavelength:: 590-620 nm

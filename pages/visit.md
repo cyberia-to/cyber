@@ -1,5 +1,7 @@
 tags:: cv.land
 alias:: residency
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - ## white ticket
 	- day experience

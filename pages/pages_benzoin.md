@@ -1,5 +1,7 @@
 alias:: kemenyan, styrax benzoin
 tags:: annotation
+crystal-type:: entity
+crystal-domain:: chemistry
 - ![image.png](../assets/image_1713954173310_0.png)
 - ![image.png](../assets/image_1713954202129_0.png)
 - ![image.png](../assets/image_1713954247968_0.png)

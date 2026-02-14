@@ -1,5 +1,7 @@
 alias:: knowledge mining
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - [[aos]] game mechanics
 - simple idea to gamify the process of [[cybergraph]] discovery by [[avatar]]
 -

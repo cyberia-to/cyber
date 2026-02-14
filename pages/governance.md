@@ -1,5 +1,7 @@
 alias:: decision making
 tags:: cyber
+crystal-type:: process
+crystal-domain:: governance
 - discussing only for dunbar scale (150 ppl)
 	- <7 => simple threshold multisig
 	- <150 =>

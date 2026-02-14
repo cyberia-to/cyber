@@ -1,4 +1,6 @@
 tags:: district
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - [[rockets estate]] [[district]]
 - bali's biodiversity hub

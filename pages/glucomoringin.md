@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - alias: glucomoringin
 - ![Glucomoringin.pdf](../assets/Glucomoringin_1719303309556_0.pdf)

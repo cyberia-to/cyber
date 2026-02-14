@@ -1,4 +1,6 @@
 tags:: article
+crystal-type:: entity
+crystal-domain:: cyber
 - particles chart
 - avatars chart
 - cyberlinks chart

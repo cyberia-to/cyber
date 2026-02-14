@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: fruit
+crystal-type:: entity
+crystal-domain:: economics
 
 - [[staple]]
 	- [[ananas]]

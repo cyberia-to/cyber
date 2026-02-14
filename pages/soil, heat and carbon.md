@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 - published on [x.com](https://x.com/mastercyb/status/1983552837964661224)
 - ## Intro

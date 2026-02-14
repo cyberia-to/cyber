@@ -1,5 +1,7 @@
 alias:: cyber improvement proposal, cyber improvement proposals, list of cips, cips
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - ## what is cip?
 	- cyber improvement proposal
 	- the process of implementing consensus wide changes in

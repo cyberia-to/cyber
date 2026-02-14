@@ -1,4 +1,6 @@
 tags:: time, biology
+crystal-type:: entity
+crystal-domain:: biology
 - rapid diversification of multicellular animal life ~541 million years ago
 - most major animal phyla appeared within a ~25 million year window
 - origin of eyes, shells, exoskeletons, predation, bilateral symmetry

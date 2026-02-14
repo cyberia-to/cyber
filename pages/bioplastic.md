@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 
 - vision
 	- build durable, living structures using fully local, regenerative, biodegradable materials

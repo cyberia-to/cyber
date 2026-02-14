@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: carbohidrate, carbohydrates, carb
+crystal-type:: entity
+crystal-domain:: economics
 
 - the most important species for [[eat]] carbs
 	- [[cassava]]

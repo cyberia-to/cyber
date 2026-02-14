@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - concept used in distributed systems to provide a way of ordering events without relying on synchronized physical clocks
 - logical clocks proposed by leslie lamport in 1978
 	- one of the most well-known logical clock mechanisms

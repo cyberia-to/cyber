@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 - [[log]] becomes part of time
 	- how to handle tweets?
 - is [[molecule]]

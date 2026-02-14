@@ -1,5 +1,7 @@
 alias:: neural language, .nl
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 whitepaper:: [[neural language for superintelligence]]
 - semantic [[language]] for [[neuron]]s over the [[cybergraph]]
 - convergent successor for both formal and natural [[language]]s

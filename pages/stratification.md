@@ -1,5 +1,7 @@
 alias:: unified structure
 tags:: cyberia
+crystal-type:: pattern
+crystal-domain:: biology
 - stratification = layered unfolding
 - time and space are one ecological fabric
 - everything grows in relation: vertical and temporal

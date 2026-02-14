@@ -1,4 +1,6 @@
 tags:: chemistry, property
+crystal-type:: property
+crystal-domain:: physics
 
 - measure of [[hydrogen]] ion concentration in a solution
 - scale runs from 0 (strongly acidic) through 7 (neutral) to 14 (strongly alkaline)

@@ -1,4 +1,6 @@
 tags:: cryptography, cybernomics
+crystal-type:: entity
+crystal-domain:: computer science
 source:: https://github.com/monero-project/monero/blob/master/src/mnemonics/english.h
 words:: 1626
 

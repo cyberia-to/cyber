@@ -1,5 +1,7 @@
 alias:: collective intelligence factor
 tags:: cyber
+crystal-type:: measure
+crystal-domain:: cyber
 - measurable group-level intelligence — discovered by Woolley et al. (2010)
 - `c` is the first principal component across diverse group tasks, analogous to `g` (general intelligence) for individuals
 - `c` predicts group performance on novel tasks better than average or max individual IQ

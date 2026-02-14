@@ -1,5 +1,7 @@
 alias:: interactivity
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - category of computations
 - where a [[prover]] and [[verifier]]
 - engage in a [[protocol]]

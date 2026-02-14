@@ -1,5 +1,7 @@
 tags:: species
 alias:: jamblang
+crystal-type:: entity
+crystal-domain:: biology
 - availability:: cv
 - products
 - [[fruit]]

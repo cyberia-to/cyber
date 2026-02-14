@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1867-1934, Polish-French physicist and chemist
 - discovered [[radioactivity]] as an atomic property (term she coined), demonstrating it originates from within the atom itself
 - isolated two new elements: [[polonium]] (named for Poland) and [[radium]]

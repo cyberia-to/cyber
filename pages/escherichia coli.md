@@ -1,4 +1,6 @@
 tags:: species
+crystal-type:: entity
+crystal-domain:: biology
 - ![Escherichia_coli.pdf](../assets/Escherichia_coli_1719124711365_0.pdf)
 - escherichia coli (e. coli) is a gram-negative bacterium that is commonly found in the intestines of humans and animals. while most strains are harmless and play a crucial role in maintaining gut health, some strains can cause serious illnesses.
 - diseases caused by escherichia coli:

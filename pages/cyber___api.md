@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[go-cyber]]
 	- [[cyber/bandwidth]]
 	- [[cyber/clocks]]

@@ -1,4 +1,6 @@
 tags:: time, history, culture
+crystal-type:: entity
+crystal-domain:: history
 - invention of visible [[language]] ~3400 BCE in Mesopotamia
 - earliest form: cuneiform on clay tablets for accounting and trade records
 - independent inventions: Egyptian hieroglyphics (~3200 BCE), Chinese oracle bones (~1200 BCE), Mesoamerican glyphs (~600 BCE)

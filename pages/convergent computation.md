@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - formal foundation: computation = convergence to equilibrium
 - traditional paradigm: computation = derivation from axioms ([[Turing]])
 - convergent paradigm: computation = convergence to stable state

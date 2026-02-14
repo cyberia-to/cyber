@@ -1,4 +1,6 @@
 tags:: kitchen/menu
+crystal-type:: process
+crystal-domain:: agriculture
 - ![](https://ipfs.io/ipfs/bafybeidlcgmbi5z4vvrtr7zzygzumazbyjqtjqt5kw6cwpzhvc6hmhjfoe)
 - ### 🧾 🥔 taro / sweet potato chips
   crispy homemade chips made from thinly sliced taro or sweet potato, fried in coconut oil until golden and crunchy.

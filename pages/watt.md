@@ -1,4 +1,6 @@
 tags:: physics, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of [[power]], equal to one [[joule]] per second
 - named after James Watt, who improved the steam engine

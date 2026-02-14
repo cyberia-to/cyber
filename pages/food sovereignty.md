@@ -1,4 +1,6 @@
 tags:: food, governance
+crystal-type:: entity
+crystal-domain:: governance
 - right of peoples to define their own food systems: production, distribution, consumption
 - local production over global commodity dependence
 - control over [[seed]], [[water]], [[soil]], and [[agriculture]] practices

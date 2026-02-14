@@ -1,5 +1,7 @@
 alias:: app, application, aipp
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - any [[avatar]] can become [[aip]]
 - [[avatar/name]]
 - [[avatar/image]]

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - algorithm that ranks web pages by measuring their importance based on the quantity and quality of links pointing to them
 - [[diffusion]]-only ranking: a single random walk operator on the link graph
 - [[cyberank]] evolves pagerank by adding [[springs]] and [[heat kernel]] — the full [[tri-kernel]]

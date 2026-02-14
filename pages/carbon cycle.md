@@ -1,4 +1,6 @@
 tags:: geography, biology, pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 - biogeochemical cycle moving carbon through [[atmosphere]], biosphere, [[ocean]], and lithosphere
 - [[photosynthesis]] fixes atmospheric CO2 into organic molecules using [[solar]] [[energy]]
 - respiration and decomposition release CO2 back to the atmosphere

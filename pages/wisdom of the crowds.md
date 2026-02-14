@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - the aggregated judgment of many independent agents outperforms most individuals — and often the best expert
 - first articulated by [[Aristotle]]: the many, though individually inferior, can collectively surpass the few best
 - formalized by [[Condorcet]] in the [[jury theorem]] (1785)

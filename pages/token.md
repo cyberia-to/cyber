@@ -1,6 +1,8 @@
 icon:: 🪙
 alias:: token theory
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - protocol-native unit of [[value]]
 - stored in [[vimputer]] which can be computed according to some rules for [[neurons]]
 - could be

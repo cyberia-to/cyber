@@ -1,4 +1,6 @@
 tags:: food, biology
+crystal-type:: process
+crystal-domain:: agriculture
 - microbial transformation of organic substrates into preserved, nutrient-enhanced food
 - anaerobic and aerobic pathways driven by bacteria, yeast, and molds
 - products: yogurt, cheese, kimchi, sauerkraut, kombucha, tempeh, bread, beer, wine

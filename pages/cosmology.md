@@ -1,4 +1,6 @@
 tags:: physics
+crystal-type:: entity
+crystal-domain:: physics
 # cosmology
 The study of the origin, structure, evolution, and fate of the universe as a whole.
 - big bang: the universe expanded from an initial hot, dense state ~13.8 billion years ago

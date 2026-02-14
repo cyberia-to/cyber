@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - alias: moringinine
 - ![Moringinine.pdf](../assets/Moringinine_1719303309556_0.pdf)

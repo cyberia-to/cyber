@@ -1,6 +1,8 @@
 icon:: 🔴
 alias:: economics
 tags:: cyber, cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - the economic theory of [[cyber]]
 - how [[tokens]], [[focus]], [[karma]], and [[learning incentives]] create a self-sustaining [[knowledge]] economy
 - [[token]]: fundamental unit of [[value]] — four types defined by [[token theory]]

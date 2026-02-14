@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - {{query (property :wood-density)}}
   query-table:: true
   query-properties:: [:page :wood-density]

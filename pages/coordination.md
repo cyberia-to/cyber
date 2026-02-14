@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - aligning agents toward shared goals using [[game theory]] and protocol mechanisms
 - in [[cyber]]:
 	- [[consensus]]: coordination on establishing a single sequence of events

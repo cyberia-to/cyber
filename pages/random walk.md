@@ -1,5 +1,7 @@
 alias:: random walking, random surfer
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - process of simulating a [[neuron]] randomly navigating the [[cybergraph]]
 - by clicking on links from one page to another
 - idea

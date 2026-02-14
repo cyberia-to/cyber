@@ -1,4 +1,6 @@
 tags:: biome, block
+crystal-type:: entity
+crystal-domain:: geography
 
 - [[block]] in [[perma]] with reproduction of life from jurassic period
 - collection of

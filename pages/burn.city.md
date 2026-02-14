@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 # first festival: 17-20 march 2026
 - https://burn.city
 - permanent pop up city

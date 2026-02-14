@@ -1,6 +1,8 @@
 icon:: 💎
 tags:: cyb, prism
 alias:: design system
+crystal-type:: entity
+crystal-domain:: cyber
 - # Prism
 - the design system of [[cyb]] — a visual language for interfacing with [[Superintelligence]]
 - every screen in [[cyb]] is a composition of prism components. the system defines how humans perceive, navigate, and interact with the [[cybergraph]]

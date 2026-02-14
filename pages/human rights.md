@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - universal moral and legal principles inherent to every person regardless of nationality, ethnicity, or status
 - core rights
 	- life and security of person

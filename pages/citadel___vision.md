@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - the [[citadel]] is a thriving ecosystem where humans and nature coexist in harmony
 - spread across 22 hectares, it grows organically as people arrive
 - each contributing their skills and energy to build decentralized structures and systems

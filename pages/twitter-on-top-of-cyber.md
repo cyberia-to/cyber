@@ -1,4 +1,6 @@
 tags:: article
+crystal-type:: pattern
+crystal-domain:: cyber
 - Yesterday become apparent that Twitter as we know it ends. The inability to bring cryptographic assurance was lead to the program's behaviour, which we, as a society, must not accept. There are tons of ways to implement tweets on top of a blockchain. One of which is using the payload of a transaction for content and follow intentions. But I would argue that implementation on top content-addressable knowledge graph has drastic advantages.
 ## Benefits
 - The blockchain is not bloated as only content addresses are being stored.

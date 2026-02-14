@@ -1,4 +1,6 @@
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: azadirachta, neem, mimba
 wood-density:: 600

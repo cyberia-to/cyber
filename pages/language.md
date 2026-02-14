@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - system of structured symbols enabling communication, thought, and [[knowledge]] transmission
 - ~7000 living languages, grouped into families: [[Indo-European]], [[Sino-Tibetan]], [[Afroasiatic]], Niger-Congo, Austronesian, Dravidian, Turkic
 - components: phonology (sounds), morphology (word structure), syntax (sentence structure), semantics (meaning), pragmatics (context)

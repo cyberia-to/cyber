@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - second largest [[language]] family by number of speakers: ~1.3 billion
 - branches: Sinitic (Mandarin, Cantonese, Wu, Min, Hakka) and Tibeto-Burman (Tibetan, Burmese, Bodo, Tamang)
 - Mandarin Chinese: most spoken [[language]] on Earth (~920 million native speakers)

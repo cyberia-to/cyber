@@ -1,5 +1,7 @@
 alias:: oracle/cyberlink
 tags:: page
+crystal-type:: entity
+crystal-domain:: cyber
 - [[cyberlinks]] composer
 - TODO page details
 - actions

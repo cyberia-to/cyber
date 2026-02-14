@@ -1,5 +1,7 @@
 tags:: term
 icon:: 🌈
+crystal-type:: entity
+crystal-domain:: meta
 
 - [[plants]]: hundreds of species in [[citadel genesis]] and [[batuka]]
 - [[animals]]: dozens of species in [[citadel genesis]] and [[batuka]]

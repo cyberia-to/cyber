@@ -1,4 +1,6 @@
 tags:: technology, physics
+crystal-type:: entity
+crystal-domain:: physics
 - rigid bar pivoting on a fulcrum, producing mechanical advantage
 - one of six simple machines, alongside [[wheel]], wedge, screw, pulley, inclined plane
 - three classes defined by relative positions of effort, load, and fulcrum

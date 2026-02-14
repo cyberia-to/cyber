@@ -1,5 +1,7 @@
 alias:: kitchen/storage
 tags:: species
+crystal-type:: entity
+crystal-domain:: biology
 - ### cold storage
 - temperature
 	- fridge: keep between 0–4 °c

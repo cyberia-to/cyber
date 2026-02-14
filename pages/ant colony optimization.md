@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - metaheuristic inspired by the foraging behavior of ants — introduced by Dorigo (1992)
 - ants deposit pheromones on paths. good paths accumulate more pheromone. the colony converges on optimal routes
 - a pure example of [[stigmergy]]: indirect coordination through environmental modification

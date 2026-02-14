@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - integrated command line tooling for learning [[cybergraph]]
 - maintainer: [@maxim-uvarov](https://github.com/maxim-uvarov)
 - [github repo](https://github.com/cyber-prophet/cy)

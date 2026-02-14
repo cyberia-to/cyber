@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - {{query (page-property :wood-durability)}}
   query-sort-by:: wood-density
   query-sort-desc:: true

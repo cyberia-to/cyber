@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - TODO create illustrated book like robonomics did
 	- format 24-32 pages
 	- horizontal view A5

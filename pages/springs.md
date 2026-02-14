@@ -1,5 +1,7 @@
 alias:: screened laplacian, structural constraints, hierarchy
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: mathematics
 - second operator of the [[tri-kernel]]
 - graph Laplacian `L = D - A`, screening `μ > 0`, reference `x₀`
 - `(L + μI)x* = μx₀`

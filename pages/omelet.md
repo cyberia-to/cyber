@@ -1,4 +1,6 @@
 tags:: kitchen/menu, breakfast
+crystal-type:: process
+crystal-domain:: agriculture
 
 - ![](https://ipfs.io/ipfs/bafkreidgjcy2hevbzsqpaxuqetfna5hutl2qi7uwtg2lhdtcl77fbekrqu)
 - ### 🧾 🍳 cheese omelette

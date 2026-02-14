@@ -1,4 +1,6 @@
 tags:: chemistry
+crystal-type:: process
+crystal-domain:: chemistry
 
 # oxidation
 

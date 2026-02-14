@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - {{query (property :supply "yes")}}
   query-table:: true
   query-properties:: [:page :alias :margin]

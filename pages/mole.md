@@ -1,4 +1,6 @@
 tags:: chemistry, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - SI unit of amount of substance
 - one mole contains exactly 6.02214076e23 entities (Avogadro's number)

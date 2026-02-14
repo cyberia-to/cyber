@@ -1,4 +1,6 @@
 tags:: food, biology
+crystal-type:: entity
+crystal-domain:: biology
 - plants cultivated by humans for food, fiber, and fuel
 - major categories: [[grain]], [[legume]], vegetables, fruits, oilseeds, roots
 - each crop [[species]] shaped by millennia of selective breeding

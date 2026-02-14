@@ -1,4 +1,6 @@
 tags:: computer science, machine learning
+crystal-type:: entity
+crystal-domain:: computer science
 
 # neural networks
 

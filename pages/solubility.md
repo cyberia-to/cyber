@@ -1,4 +1,6 @@
 tags:: chemistry, property
+crystal-type:: property
+crystal-domain:: physics
 
 - maximum amount of a substance (solute) that dissolves in a given [[solvent]] at a specific [[temperature]]
 - "like dissolves like": polar solutes dissolve in polar solvents ([[water]]), nonpolar in nonpolar

@@ -1,5 +1,7 @@
 tags:: species, birds
 alias:: green junglefowl
+crystal-type:: entity
+crystal-domain:: biology
 
 - voice:: https://ebird.org/species/grejun1
 - ![image](https://ipfs.io/ipfs/QmQcciRGXiTnSL3NroCNsC9MuHtS2o7DHELdoj4kwMiT47)

@@ -1,4 +1,6 @@
 tags:: geography, physics
+crystal-type:: entity
+crystal-domain:: physics
 - the gas envelope surrounding Earth, held by [[gravity]]
 - composition: 78% nitrogen, 21% oxygen, 0.9% argon, 0.04% CO2, trace gases, [[water]] vapor
 - layers: troposphere (weather), stratosphere (ozone), mesosphere, thermosphere, exosphere

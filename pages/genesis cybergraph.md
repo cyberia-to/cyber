@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: draft
 # Genesis Cybergraph: Foundational Semantic Core
 ## Purpose

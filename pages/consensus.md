@@ -1,5 +1,7 @@
 tags:: cyber
 alias:: consensus mechanism, consensus algorithm
+crystal-type:: entity
+crystal-domain:: cyber
 - process in [[vimputer]]
 	- that ensures all nodes agree on a single [[state]]
 	- according to predefined [[state transition function]]

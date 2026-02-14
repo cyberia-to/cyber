@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: spice
+crystal-type:: entity
+crystal-domain:: economics
 
 - [[rosemary]]
 - [[lavandula]]

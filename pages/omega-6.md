@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 -
 - omega-6 fatty acids are polyunsaturated fatty acids essential for human nutrition, characterized by the first double bond located at the sixth carbon from the methyl end. they are crucial for skin health, [[cellular membrane integrity]],[[inflammation regulation]] , and [[immune function]]. since the body cannot produce omega-6 fatty acids, dietary intake is necessary.

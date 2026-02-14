@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1994-. Russian-Canadian programmer and writer.
 - Co-founded [[Ethereum]] (2015), the first programmable blockchain with Turing-complete smart contracts.
 - Enabled decentralized applications, [[DeFi]], DAOs, and on-chain governance as composable primitives.

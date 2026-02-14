@@ -1,5 +1,7 @@
 alias:: IVC
 tags:: cyber, cryptographic proofs
+crystal-type:: process
+crystal-domain:: computer science
 - paradigm where a long computation is broken into steps, and each step produces a [[cryptographic proof]] that
 	- the previous step's proof was valid
 	- one more unit of computation was performed correctly

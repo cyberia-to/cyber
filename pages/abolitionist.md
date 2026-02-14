@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - abolitionist project and biotechnology: the text outlines how biotechnology could abolish suffering throughout the living world, leading to a future where our descendants experience genetically preprogrammed well-being far richer than today's peak experiences
 - technical feasibility: it is technically feasible to abolish the biological substrates of any unpleasant experience. this includes psychological and physical pain, through advancements like wireheading, utopian designer drugs, and genetic engineering
 - moral urgency: the text argues for the moral urgency of the abolitionist project, emphasizing that alleviating suffering is an ethical imperative, regardless of one's ethical framework

@@ -1,5 +1,7 @@
 tags:: species
 alias:: ceylon spinach, waterleaf, cariru, gbure
+crystal-type:: entity
+crystal-domain:: biology
 - [[staple]]
 - ![](https://ipfs.io/ipfs/QmaLL3a3keWYizb9haTeogeV14a9CGjk7fESbU5UPFzkMh)
 - ![](https://ipfs.io/ipfs/QmSNGFxVY3pmHKRhQZYRBtMzRjX1KtexWsR4TZjryvvS8o){:height 296, :width 388}

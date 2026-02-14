@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - ability of a material to transmit [[electricity]] or [[heat]]
 - electrical conductivity: measured in siemens per meter (S/m)

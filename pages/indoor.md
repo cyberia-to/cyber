@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 - top species by indoor popularity
 	- [[chlorophytum comosum]]

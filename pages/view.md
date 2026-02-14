@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - concept of giving [[attention]] to [[particle]] by [[neuron]]
 - locally measured by [[cyb/link]]
 - and proved to the world by [[cyberlink]]

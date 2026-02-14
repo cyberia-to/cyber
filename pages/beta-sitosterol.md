@@ -1,4 +1,6 @@
 tags:: compound-
+crystal-type:: entity
+crystal-domain:: chemistry
 - beta-sitosterol is a naturally occurring [[phytosterol]] found in many plants, including nuts, seeds, fruits, and vegetables. it has a chemical structure similar to [[cholesterol]] and is known for its ability to reduce [[cholesterol absorption]] in the human gut. beta-sitosterol is used for supporting [[cardiovascular health]], managing symptoms of [[benign prostatic hyperplasia (bph)]], and enhancing [[immune function]].
 	- ### chemical properties
 		- molecular weight: 414.7 g/mol

@@ -1,5 +1,7 @@
 tags:: tech
 alias:: grid
+crystal-type:: entity
+crystal-domain:: materials
 
 - [[water]]
 	- [[clean water]]

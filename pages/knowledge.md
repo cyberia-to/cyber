@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[neurons]] [[link]] [[particles]] in [[time]]
 - the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]
 - a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment that two [[particles]] are related

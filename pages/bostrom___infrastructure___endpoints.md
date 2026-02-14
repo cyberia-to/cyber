@@ -1,6 +1,8 @@
 icon:: 🔌
 alias:: [[API endpoints]], [[bostrom endpoints]]
 tags:: bostrom, infrastructure, api, endpoints
+crystal-type:: entity
+crystal-domain:: cyber
 
 - # Public Endpoints
 	- Back to [[bostrom infrastructure]]

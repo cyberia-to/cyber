@@ -1,6 +1,8 @@
 icon:: ⛓️
 alias:: [[chain config]], [[bostrom chain config]]
 tags:: bostrom, infrastructure, wallet, keplr, config
+crystal-type:: entity
+crystal-domain:: cyber
 
 - # Chain Configuration
 	- Back to [[bostrom infrastructure]]

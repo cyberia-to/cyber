@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - last time we met more than year ago
 - since than we advanced rapidly in our understanding of cyber valley project
 - that was mostly research phase

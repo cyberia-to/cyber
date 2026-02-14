@@ -1,5 +1,7 @@
 alias:: medicago, lucerne, alfalfa
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 market:: fodder
 supply:: next-month

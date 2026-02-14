@@ -1,5 +1,7 @@
 alias:: beds
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: agriculture
 
 - currently 2 types for [[terrace]]
 	- breezy beds

@@ -1,6 +1,8 @@
 alias:: relevance machine, truth medium, rm, tm
 icon:: 🖖🏽
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
 - input
 	- [[will]] of [[neurons]]

@@ -1,4 +1,6 @@
 tags:: kitchen/menu
+crystal-type:: process
+crystal-domain:: agriculture
 - ### 🧾 🌿 steamed or stir-fried edible fern
   young edible fern shoots quickly steamed or stir-fried — tender, earthy, and rich in minerals, perfect as a fresh seasonal side.
 - ### 🍴 meal/type

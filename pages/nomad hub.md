@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 ## digital nomad needs
 	- stable internet access
 		- fast, reliable wi-fi or wired ethernet

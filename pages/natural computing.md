@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - the paradigm that nature has been computing all along
 - forests compute nutrient allocation through mycorrhizal networks
 - brains compute through parallel firing of billions of neurons

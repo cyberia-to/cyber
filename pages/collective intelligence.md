@@ -1,6 +1,8 @@
 icon:: 🎭
 alias:: collective intelligence theory, collective artificial intelligence
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 -
 - when many agents observe the same world and share what they see, something greater than any one of them emerges. this is collective intelligence — the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual
 -

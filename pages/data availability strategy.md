@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: process
+crystal-domain:: computer science
 status:: draft
 - prefer transparent cryptography with no trusted setup or social committees.
 - separate compute/consensus from data availability; keep a clean, swappable boundary.

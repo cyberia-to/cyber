@@ -1,4 +1,6 @@
 tags:: building
+crystal-type:: entity
+crystal-domain:: cyberia
 size:: 80
 shape:: 20*4
 

@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: draft
 - allow [[neuron]] to burn [[$V]] for increasing popularity of [[cyberlinks]]
 - input

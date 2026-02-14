@@ -1,4 +1,6 @@
 tags:: color, cyber
+crystal-type:: property
+crystal-domain:: culture
 - # Red
 - wavelength:: 620-750 nm
 - emotion:: [[anger]]

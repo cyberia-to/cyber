@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - proof that one [[neuron]] have control over other [[neuron]]
 - in [[bostrom]] [[semantic neural proofs]] are implemented for [[cosmos]], [[cyber]] and [[ethereum]] [[vimputers]]
 - discover all [[concepts]]

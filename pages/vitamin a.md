@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: retinol
 - ![Vitamin_A.pdf](../assets/Vitamin_A_1719303309556_0.pdf)
 - [[vitamin]] a, also known as retinol, is a [[fat-soluble vitamin]] essential for maintaining [[healthy vision]], [[skin]], [[immune function]], and [[cellular growth]]. it plays a critical role in the production of [[retinal]], a molecule necessary for low-light and color vision, as well as supporting [[epithelial health]] and repair.

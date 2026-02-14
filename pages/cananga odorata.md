@@ -1,5 +1,7 @@
 alias:: cananga, ylang-ylang, sandat klungkung
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 title:: cananga odorata
 wood:: yes

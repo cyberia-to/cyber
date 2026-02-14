@@ -1,5 +1,7 @@
 alias:: ulin
 tags:: species, research
+crystal-type:: entity
+crystal-domain:: biology
 wood-density:: 1050
 wood-durability:: extreme
 wood-availability:: high

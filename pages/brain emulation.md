@@ -1,5 +1,7 @@
 alias:: whole brain emulation, simulated brains, far from it
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - whole brain emulation looks feasible at current state of technology
 - [[cyberlinks]] offer amazing opportunity for modeling physical and artificial [[brains]]
 - | characteristic        | mycelium network                         | human brain                              | biggest computer          | [[bostrom]] |

@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 - ![Calcium.pdf](../assets/Calcium_1719303309556_0.pdf)
 - [[calcium]] is a vital [[mineral]] that plays an essential role in building and [[maintaining strong bones]] and [[teeth]], [[muscle contraction]], [[nerve function]], and [[blood clotting]]. it is the most abundant mineral in the human body and is critical for [[cellular signaling]] and overall health.
 	- ### chemical properties

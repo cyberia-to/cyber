@@ -1,4 +1,6 @@
 tags:: cryptography, cybernomics
+crystal-type:: entity
+crystal-domain:: computer science
 source:: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
 words:: 2048
 

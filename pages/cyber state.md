@@ -1,4 +1,6 @@
 tags:: cyber, cyberia, article
+crystal-type:: entity
+crystal-domain:: cyberia
 - # Cyber State
 - a sovereign entity where governance, economics, and coordination emerge from [[collective intelligence]] rather than geographic accident
 - ## convergence theorem

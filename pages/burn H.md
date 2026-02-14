@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - fundamentally burning [[$H]] for some usable operations
 - can create enormous value loop
 - this includes several effects

@@ -1,5 +1,7 @@
 alias:: random walk, markov, exploration
 tags:: cyber
+crystal-type:: process
+crystal-domain:: cyber
 - first operator of the [[tri-kernel]]
 - transition matrix `P = AD⁻¹` governs probability flow across the [[cybergraph]]
 - `π^(t+1) = α P^T π^(t) + (1-α)u`

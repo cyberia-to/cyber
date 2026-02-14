@@ -1,4 +1,6 @@
 tags:: time, history
+crystal-type:: entity
+crystal-domain:: history
 - transition from nomadic hunter-gatherer life to settled [[agriculture]] ~10000 BCE
 - domestication of [[wheat]], barley, rice, sheep, goats, cattle
 - first permanent settlements: Jericho, Catalhoyuk, Mehrgarh

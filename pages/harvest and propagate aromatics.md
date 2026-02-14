@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - [github](https://github.com/cyberia-to/rockets/issues/1114)
 - do it during full moon

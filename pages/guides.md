@@ -1,4 +1,6 @@
 tags:: bostrom
+crystal-type:: entity
+crystal-domain:: cyber
 - TODO
 - fundamentals
 	- asset management

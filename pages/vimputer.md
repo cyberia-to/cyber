@@ -1,5 +1,7 @@
 alias:: virtual computer, blockchain, chain, network, consensus computer
 tags:: cyber, cybernomics
+crystal-type:: entity
+crystal-domain:: cyber
 - short for virtual computer
 - a software-defined computer that coordinates several physical machines into a single computing entity through [[consensus]]
 - marketable term for the following tightly related phenomena

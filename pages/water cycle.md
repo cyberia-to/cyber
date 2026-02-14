@@ -1,4 +1,6 @@
 tags:: geography, pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 - continuous movement of [[water]] through Earth's systems
 - stages: evaporation, condensation, precipitation, runoff, collection
 - driven by [[solar]] [[energy]] and [[gravity]]

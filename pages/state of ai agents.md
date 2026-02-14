@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [source](http://langchain.com/stateofaiagents)
 - ## adoption and use cases
 	- [[ai agents]] are mainstream: 51% of companies use them, with 78% planning adoption soon

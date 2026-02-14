@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 - 🛡️ architectural rules for a truly eternal wall (target: 10,000–100,000+ years)
 - blocks
 	- block shape: hexagonal prism

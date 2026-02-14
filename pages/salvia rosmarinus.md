@@ -1,5 +1,7 @@
 tags:: species
 alias:: rosemary
+crystal-type:: entity
+crystal-domain:: biology
 
 - [[staple]] for [[health]]
 - ![](https://ipfs.io/ipfs/QmShosAvG1ETXzo729TXsLM6tiuPKBMWr6LE9j9xCRhAgQ){:height 483, :width 634}

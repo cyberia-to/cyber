@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 - nitrogen-fixing plants are species capable of converting atmospheric nitrogen (n₂)
 - into forms usable by plants, primarily ammonium (nh₄⁺)

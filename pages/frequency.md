@@ -1,4 +1,6 @@
 tags:: physics, property
+crystal-type:: property
+crystal-domain:: physics
 
 - number of oscillations or cycles per unit time
 - measured in [[hertz]] (Hz): 1 Hz = one cycle per second

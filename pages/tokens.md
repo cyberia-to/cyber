@@ -1,5 +1,7 @@
 icon:: 💵
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: economics
 
 status:: DONE
 - ## [[bostrom]]

@@ -1,4 +1,6 @@
 tags:: kitchen/menu, breakfast
+crystal-type:: process
+crystal-domain:: agriculture
 - ![](https://ipfs.io/ipfs/bafkreiegktkhdojshde2fulux2v6iojn3d5pnqiofy3gc5iunozuxdvl7e){:height 500, :width auto}
 - ### 🧾 🥚 [[hard boiled eggs]] (no salt)
 - firm and creamy eggs, boiled in their shells and served warm or cold.

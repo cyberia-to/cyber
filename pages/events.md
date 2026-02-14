@@ -1,4 +1,6 @@
 tags:: cybernomics, cv.land
+crystal-type:: entity
+crystal-domain:: economics
 focus:: true
 
 - we are working on a permanent event platform for iconic events

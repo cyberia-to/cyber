@@ -1,4 +1,6 @@
 tags:: cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 
 - ## [[species]] presented in [[edem]]
 - {{query (and [[fern]] (and) (page-tags [[species]] ))}}

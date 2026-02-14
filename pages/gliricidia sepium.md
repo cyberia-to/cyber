@@ -1,5 +1,7 @@
 alias:: gliricidia, gamal
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 wood:: yes
 grow-speed:: 4

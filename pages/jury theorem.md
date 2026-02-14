@@ -1,5 +1,7 @@
 alias:: Condorcet jury theorem
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - if each voter is right more often than wrong (p > 0.5), majority vote approaches certainty as the group grows
 - proved by [[Condorcet]] in 1785
 - the mathematical foundation of [[wisdom of the crowds]]

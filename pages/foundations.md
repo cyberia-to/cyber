@@ -1,6 +1,8 @@
 icon:: ♻️
 tags:: cyber
 alias:: and more, sytech
+crystal-type:: entity
+crystal-domain:: cyberia
 - welcome to the cyberia foundations
 - created by [[rockets]]
 - for [[cyber valley]] and [[citadel genesis]]

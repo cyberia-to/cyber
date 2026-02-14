@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - input
 	- any dry [[wood]]
 	- some types of [[plastic]]

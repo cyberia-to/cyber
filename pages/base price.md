@@ -1,4 +1,6 @@
 tags:: param
+crystal-type:: entity
+crystal-domain:: cyber
 - multiplier for bandwidth billing
 - [[bandwidth]] discount for moments of low activity of [[neurons]]
 - if load rise more than value of base price

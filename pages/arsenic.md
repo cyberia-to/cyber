@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: arsenic
 -
 - [[arsenic]] is a naturally occurring element found in the earth's crust, typically in combination with other elements. it is known for its toxicity and has historically been used in pesticides, herbicides, and certain medicinal compounds. despite its potential harmful effects, arsenic has been studied for its therapeutic uses in controlled doses.

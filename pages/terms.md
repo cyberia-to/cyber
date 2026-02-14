@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - | concept     | cyber term            | meaning                        |
   |-------------|------------------------|--------------------------------|
   | [[file]]        | data particle          | hashed content                 |

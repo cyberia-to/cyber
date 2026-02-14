@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - implementations
 	- [[cyb/access]]
 - two types of access rights

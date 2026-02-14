@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - pruning [[ageratina riparia]]
 - search and mark glowing areas

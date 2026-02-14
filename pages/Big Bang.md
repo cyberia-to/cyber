@@ -1,4 +1,6 @@
 tags:: time, physics
+crystal-type:: entity
+crystal-domain:: physics
 - origin of the observable universe ~13.8 billion years ago
 - initial state of extreme density and temperature, expanding and cooling ever since
 - first seconds: quarks, leptons, photons; first minutes: hydrogen, helium nucleosynthesis

@@ -1,5 +1,7 @@
 alias:: skin ailments, skin diseases, skin conditions
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: biology
 -
 - [[acne]]
 - [[eczema (atopic dermatitis)]]

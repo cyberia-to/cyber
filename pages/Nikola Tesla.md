@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1856-1943, Serbian-American inventor and electrical engineer
 - developed alternating current (AC) induction motor and polyphase AC power system, the foundation of modern electricity distribution
 - pioneered wireless energy transmission experiments at Colorado Springs and [[Wardenclyffe Tower]]

@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - > the art of designing living systems in resonance with nature’s intelligence
 - part of [[pirates of cyber states]] course on off grid living in [[cyberia]]

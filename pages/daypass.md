@@ -1,6 +1,8 @@
 icon:: 🧀
 tags:: cyberia
 alias:: day pass, visit us
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - our friends, including us, complain that
 - there aren’t many places to walk in silence on bali

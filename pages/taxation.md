@@ -1,4 +1,6 @@
 tags:: governance, cybernomics
+crystal-type:: entity
+crystal-domain:: economics
 - compulsory transfer of resources from individuals and organizations to the state
 - types
 	- income tax: levy on earnings

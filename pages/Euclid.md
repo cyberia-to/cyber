@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - ~300 BCE, Greek mathematician active in Alexandria
 - Elements: thirteen books systematizing geometry, number theory, and mathematical logic from five axioms and five postulates
 - established the axiomatic method: start from self-evident truths, derive all results through rigorous logical proof

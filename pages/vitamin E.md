@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - alias: tocopherol
 - ![Vitamin_E.pdf](../assets/Vitamin_E_1719303309556_0.pdf)
 - [[vitamin]] e, also known as tocopherol, is a [[fat-soluble vitamin]] and a powerful antioxidant that helps protect cells from damage caused by free radicals. it is essential for maintaining [[healthy skin]], [[eyes]], and [[immune function]]. vitamin e also supports [[cellular repair]] and promotes overall [[skin health]].

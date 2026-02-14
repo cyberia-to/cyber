@@ -1,5 +1,7 @@
 icon:: 🌓
 tags:: aos
+crystal-type:: entity
+crystal-domain:: geography
 - [[earth]] only natural satellite
 	- average distance to [[earth]]:  ~[384 400 km]
 	- area: 37 930 000 km2

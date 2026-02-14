@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 
 - ![Α-Pinene.pdf](../assets/Α-Pinene_1719122884582_0.pdf)
 - α-pinene is a naturally occurring organic compound belonging to the terpene class. it is one of the most common [[terpenes]] found in nature and is notably present in the oils of many coniferous trees, particularly pine trees. here is a detailed overview of its medicinal uses and chemical information:

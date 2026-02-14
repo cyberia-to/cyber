@@ -1,4 +1,6 @@
 tags:: physics
+crystal-type:: entity
+crystal-domain:: physics
 # mass
 The intrinsic property of matter that resists [[acceleration]] and generates [[gravity]].
 - inertial mass: resistance to change in [[momentum]] under applied [[force]]

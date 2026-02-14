@@ -1,4 +1,6 @@
 tags:: biology
+crystal-type:: process
+crystal-domain:: biology
 
 # transcription
 

@@ -1,4 +1,6 @@
 tags:: governance
+crystal-type:: entity
+crystal-domain:: governance
 - suppression, prohibition, or restriction of information, speech, or media by an authority
 - forms: prior restraint (pre-publication), post-publication removal, platform deplatforming, DNS seizure, IP blocking, search delisting
 - state censorship: Great Firewall of China, internet shutdowns (Iran, Myanmar, Russia), book banning, press control

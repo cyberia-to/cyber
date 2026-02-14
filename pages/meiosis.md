@@ -1,4 +1,6 @@
 tags:: biology
+crystal-type:: entity
+crystal-domain:: biology
 
 # meiosis
 

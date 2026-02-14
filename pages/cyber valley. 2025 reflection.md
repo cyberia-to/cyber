@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - ppl
 	- 49 uniq ppl
 	- 26 now

@@ -1,4 +1,6 @@
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - Cyb
 	- [Cyb - 41](https://github.com/orgs/cybercongress/projects/41/views/1)
 	- [Cyberver - 42](https://github.com/orgs/cybercongress/projects/42/views/2)

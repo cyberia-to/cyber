@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - ![soil_lab_test_report.pdf](../assets/soil_lab_test_report_1724741272780_0.pdf)
 - [[compost]] and [[biochar]]
 - [[soil/production]]

@@ -1,4 +1,6 @@
 tags:: genus
+crystal-type:: entity
+crystal-domain:: biology
 
 - [[conifer]]
 - selected for [[edem]]

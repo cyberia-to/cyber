@@ -1,4 +1,6 @@
 tags:: physics
+crystal-type:: entity
+crystal-domain:: physics
 # relativity
 Einstein's framework unifying [[spacetime]], [[gravity]], [[energy]], and [[mass]].
 - special relativity: the speed of light is constant for all observers in [[spacetime]]

@@ -1,4 +1,6 @@
 tags:: kitchen/menu, mains
+crystal-type:: process
+crystal-domain:: agriculture
 
 <img src="https://ipfs.io/ipfs/bafybeifpwtxfx3h5xqtnobp633df7ugk27kjhvwkms3ggadds5cnhypede" style="width:500px; height:auto;" />
 

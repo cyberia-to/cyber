@@ -1,4 +1,6 @@
 tags:: pattern
+crystal-type:: pattern
+crystal-domain:: mathematics
 
 - recurring sequence of events or states that returns to its starting point
 - biogeochemical cycles: [[carbon]] cycle, [[nitrogen]] cycle, [[water]] cycle, [[phosphorus]] cycle

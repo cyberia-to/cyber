@@ -1,4 +1,6 @@
 tags:: compound
+crystal-type:: entity
+crystal-domain:: chemistry
 - ![Myrcene.pdf](../assets/Myrcene_1719296526716_0.pdf)
 - general description about myrcene:
 	- myrcene is a naturally occurring [[monoterpene]] hydrocarbon found in essential oils of various plants such as [[bay]], [[ylang-ylang]], [[wild thyme]], [[parsley]], and [[cannabis]]. it has a pleasant aroma often described as earthy, musky, and herbal with hints of citrus. myrcene is widely used in the fragrance and flavor industry.

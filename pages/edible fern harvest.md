@@ -1,4 +1,6 @@
 tags:: superhuman
+crystal-type:: entity
+crystal-domain:: body
 - [gihub](https://github.com/cyberia-to/rockets/issues/1151)
 - # weekly maintenance checklist
 	- moisture check:

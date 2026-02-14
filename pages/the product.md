@@ -1,5 +1,7 @@
 icon:: 🍓
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - how to consolidate [[bostrom]], [[cyber]] and [[cyb]] in one coherent product?
 -
 - bet on selling [[cyber/energy]] packages

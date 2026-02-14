@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 287-212 BCE, Greek mathematician, physicist, engineer, and astronomer from Syracuse
 - principle of buoyancy (Archimedes' principle): a body immersed in fluid experiences upward force equal to the weight of displaced fluid
 - lever principle: "give me a place to stand and I will move the Earth," formalizing mechanical advantage

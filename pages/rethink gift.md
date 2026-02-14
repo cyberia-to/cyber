@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: entity
+crystal-domain:: cyber
 status:: implemented
 
 - implemented in [[v6]]

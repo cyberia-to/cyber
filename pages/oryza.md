@@ -1,5 +1,7 @@
 tags:: genus, research
 alias:: rice
+crystal-type:: entity
+crystal-domain:: biology
 
 - [[oryza sativa]]
 - [[oryza sativa black]]

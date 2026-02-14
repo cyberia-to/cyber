@@ -1,5 +1,7 @@
 alias:: pos
 tags:: cyber
+crystal-type:: process
+crystal-domain:: cyber
 - class of [[consensus]] mechanism used in most [[blockchains]]
 - [[token]] [[vested staking]] which secure creation of new valid [[blocks]]
 - unlike [[proof of work]]

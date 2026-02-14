@@ -1,5 +1,7 @@
 alias:: modern cryptography
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: computer science
 - basics
 	- [[hashing]]
 	- TODO [[encryption]]

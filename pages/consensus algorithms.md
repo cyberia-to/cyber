@@ -1,4 +1,6 @@
 tags:: computer science, cyber
+crystal-type:: entity
+crystal-domain:: computer science
 
 # consensus algorithms
 

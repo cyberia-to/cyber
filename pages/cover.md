@@ -1,5 +1,7 @@
 alias:: ground cover, carpet
 tags:: segment
+crystal-type:: entity
+crystal-domain:: agriculture
 
 - [[high margin]] species chosen for the layer
 	- [[full sun]]

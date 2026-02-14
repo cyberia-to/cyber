@@ -1,5 +1,7 @@
 alias:: diospyros, sapote hitam, sapote black, nigra
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 wood:: yes
 grow-speed:: 4

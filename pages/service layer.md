@@ -1,5 +1,7 @@
 alias:: services
 tags:: aos
+crystal-type:: entity
+crystal-domain:: biology
 - energy layer
 	- H
 	- V

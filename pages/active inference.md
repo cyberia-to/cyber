@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: pattern
+crystal-domain:: cyber
 status:: draft
 # active inference x cft: summary and integration plan
 ## executive summary

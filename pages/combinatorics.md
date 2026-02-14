@@ -1,4 +1,6 @@
 tags:: mathematics
+crystal-type:: entity
+crystal-domain:: mathematics
 # Combinatorics
 The study of counting, arrangement, and selection of discrete structures.
 - [[permutation]]s count ordered arrangements; [[combination]]s count unordered selections

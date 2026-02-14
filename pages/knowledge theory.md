@@ -1,5 +1,7 @@
 icon:: ⛑
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: biology
 - simplistic way to understand nature of [[information]] and [[intelligence]]
 -
 - definition:: [[neurons]] [[link]] [[particles]] in [[time]] is the [[knowledge]]

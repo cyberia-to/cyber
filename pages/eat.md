@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - # organiq: free flow local products only restaurant
 	- ## day dose price

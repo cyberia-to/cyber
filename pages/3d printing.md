@@ -1,4 +1,6 @@
 tags:: technology
+crystal-type:: entity
+crystal-domain:: materials
 - additive manufacturing: building objects layer by layer from digital models
 - materials: polymer (FDM, SLA), metal (SLM, DMLS), concrete, ceramic, biological tissue
 - FDM (fused deposition modeling): thermoplastic filament extruded through heated nozzle

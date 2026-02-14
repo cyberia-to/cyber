@@ -1,4 +1,6 @@
 tags:: cyberia
+crystal-type:: entity
+crystal-domain:: cyberia
 - [[recipes/breakfast]]
 - [[recipes/mains]]
 - [[recipes/snacks]]

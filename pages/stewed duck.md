@@ -1,4 +1,6 @@
 tags:: kitchen/menu, mains
+crystal-type:: process
+crystal-domain:: agriculture
 <img src="https://ipfs.io/ipfs/bafybeiejpylbgdltxhm5obchime35u4wgzycjd2akh2vjac5ms2ysjeury" style="width:500px; height:auto;" />
 
 - ### 🧾 🦆 stewed duck

@@ -1,4 +1,6 @@
 tags:: cyb
+crystal-type:: entity
+crystal-domain:: cyber
 status:: DONE
 
 - 2 basic computations on [[particles]]

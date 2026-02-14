@@ -1,5 +1,7 @@
 tags:: cybernomics
 alias:: nutraceuticals, biohacking
+crystal-type:: entity
+crystal-domain:: economics
 focus:: true
 
 - [[plants/wishlist]]

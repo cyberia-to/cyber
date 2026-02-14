@@ -1,4 +1,6 @@
 tags:: article, cip
+crystal-type:: measure
+crystal-domain:: economics
 status:: draft
 ## abstract
 

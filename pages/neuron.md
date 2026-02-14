@@ -1,6 +1,8 @@
 icon:: 🤪
 alias:: address, subject, agent, user, observer, actor
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - [[subject]] of [[information]]
 - agent with stake, identity, and [[focus]]
 - creates [[cyberlinks]]. holds balance. earns [[focus]]

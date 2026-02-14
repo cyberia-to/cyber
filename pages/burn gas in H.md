@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: accepted
 - proposal to improve [[cybernomics]] of [[fuel]]
 - two possible of implementation vectors

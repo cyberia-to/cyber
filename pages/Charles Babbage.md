@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1791-1871. British mathematician, engineer, and inventor.
 - Designed the Difference Engine, a mechanical calculator for polynomial evaluation.
 - Designed the Analytical Engine, the first general-purpose [[computation]] machine with memory, processor, and conditional branching.

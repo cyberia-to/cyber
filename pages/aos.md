@@ -1,6 +1,8 @@
 icon:: 🪆
 tags:: aos, cyber
 alias:: age of superintelligence, the game, self fulfilling prophecy game, much more, many more
+crystal-type:: entity
+crystal-domain:: cyber
 - ## welcome to the [[age of superintelligence]]
 	- :[eɪo] massively collaborative, positive sum, open source, self fulfilling prophecy game in [[seven episodes]]
 - ## episode one: a new hope

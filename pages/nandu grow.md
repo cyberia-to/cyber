@@ -1,4 +1,6 @@
 tags:: cv.land
+crystal-type:: entity
+crystal-domain:: cyberia
 
 - ## Why?
 	- everyone have land, even 4 ares is the resource

@@ -1,4 +1,6 @@
 tags:: aip, cyb, prism
+crystal-type:: entity
+crystal-domain:: cyber
 - the search and discovery [[aip]] in [[cyb]]
 - cell in [[prism]]
 - current state in [[cyb-ts]] at [[cyb/oracle]]

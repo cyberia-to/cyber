@@ -1,4 +1,6 @@
 tags:: culture
+crystal-type:: entity
+crystal-domain:: culture
 - systematic study of the natural world through observation, hypothesis, experiment, and theory
 - the scientific method: observe, hypothesize, predict, test, replicate, revise
 - branches: physics (matter, [[energy]], [[gravity]], [[wave]]s), chemistry (atoms, molecules, reactions), biology (life, evolution, genetics), earth sciences ([[geological time]], climate)

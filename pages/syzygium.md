@@ -1,4 +1,6 @@
 tags:: genus, cybernomics
+crystal-type:: entity
+crystal-domain:: biology
 
 - selected for [[edem]]
 	- [[syzygium cumini]]

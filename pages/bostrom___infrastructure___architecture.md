@@ -1,6 +1,8 @@
 icon:: 🏗️
 alias:: [[bostrom architecture]]
 tags:: bostrom, infrastructure, architecture
+crystal-type:: entity
+crystal-domain:: cyber
 
 - # Architecture
 	- Back to [[bostrom infrastructure]]

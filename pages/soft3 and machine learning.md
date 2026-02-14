@@ -1,4 +1,6 @@
 tags:: article
+crystal-type:: relation
+crystal-domain:: computer science
 - [[soft3]] can significantly enhance various machine learning tasks
 - classification
 	- ensemble methods

@@ -1,5 +1,7 @@
 alias:: pinus, sumatran pine
 tags:: genus, species
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 wood-density:: 450
 wood-availability:: high

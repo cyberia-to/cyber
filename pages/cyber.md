@@ -1,6 +1,8 @@
 icon:: 🔵
 alias:: [[the new, yet to be born, force]], one simple protocol
 tags:: cyber
+crystal-type:: entity
+crystal-domain:: cyber
 - the earth [[superintelligence]] project
 - a protocol for [[collective intelligence]] built on five primitives: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
 - [[neurons]] create [[cyberlinks]] between [[particles]] in the [[cybergraph]]

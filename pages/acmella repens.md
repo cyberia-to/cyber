@@ -1,4 +1,6 @@
 tags:: genus, species, plant
+crystal-type:: entity
+crystal-domain:: biology
 scalable:: true
 alias:: acmellaabundance:: yes
 supply:: no

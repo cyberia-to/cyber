@@ -1,4 +1,6 @@
 tags:: person
+crystal-type:: entity
+crystal-domain:: meta
 - 1906-1978. Austrian-American logician and mathematician.
 - Proved the incompleteness theorems (1931): every consistent formal system capable of arithmetic contains true statements it cannot prove.
 - Established fundamental limits of [[computation]], logic, and formal verification.

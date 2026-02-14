@@ -1,4 +1,6 @@
 tags:: computer science, measure
+crystal-type:: measure
+crystal-domain:: physics
 
 - fundamental unit of [[information]], a binary digit: 0 or 1
 - coined by Claude Shannon in his 1948 paper founding [[information theory]]

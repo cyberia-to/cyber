@@ -1,4 +1,6 @@
 tags:: governance, cyber
+crystal-type:: entity
+crystal-domain:: governance
 - legal membership in a state, carrying rights and obligations
 - acquisition: birth (jus soli, jus sanguinis), naturalization, investment, marriage
 - rights: vote, reside, work, access public services, consular protection

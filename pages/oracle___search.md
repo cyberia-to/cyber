@@ -1,4 +1,6 @@
 tags:: page
+crystal-type:: entity
+crystal-domain:: cyber
 - instantly and censorfree
 - find and deliver content
 - decentralized search is just one [[aip]]

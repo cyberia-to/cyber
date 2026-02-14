@@ -1,5 +1,7 @@
 tags:: genus, cybernomics
 alias:: srikaya, anona
+crystal-type:: entity
+crystal-domain:: biology
 
 - selected for [[edem]]
 	- {{embed [[annona muricata]]}}

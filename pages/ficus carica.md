@@ -1,5 +1,7 @@
 tags:: species
 alias:: fig
+crystal-type:: entity
+crystal-domain:: biology
 wood:: yes
 grow-speed:: 4
 

@@ -1,4 +1,6 @@
 tags:: physics
+crystal-type:: entity
+crystal-domain:: physics
 # entropy
 A measure of the number of microscopic configurations consistent with a macroscopic state — quantifying disorder and missing [[information theory]].
 - second law of [[thermodynamics]]: entropy of an isolated system never decreases

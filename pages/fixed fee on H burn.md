@@ -1,4 +1,6 @@
 tags:: cip
+crystal-type:: process
+crystal-domain:: cyber
 status:: accepted
 - [[$H]] [[staking loan]] proved its utility and reliability during last several years
 - simplicity of initial implementation did not include any [[value extraction]] from discussed mechanism

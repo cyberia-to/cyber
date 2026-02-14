@@ -1,6 +1,8 @@
 icon:: 🍏
 tags:: cyber
 alias:: learning, labeling, answer
+crystal-type:: process
+crystal-domain:: cyber
 - [[create links]] between [[particles]] of [[information]]
 - in a joyful process of [[knowledge mining]]
 -
