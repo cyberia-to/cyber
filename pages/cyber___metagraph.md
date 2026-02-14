@@ -8,6 +8,17 @@ tags:: cyber, article
 	- the metagraph is a curated set of symbols and their connections. tokenization converts this set into the initial [[cybergraph]]
 	- every symbol earns its place by being irreducible: it cannot be derived from other symbols in the graph
 	- target: 5000-7000 symbols (pages), each connected to 10-15 others, zero dead ends, zero stubs
+	- ### symbol types
+		- symbols carry grammatical roles — the part of speech determines how a symbol functions in reasoning
+		- entity (noun): what exists — a species, an element, a person, a protocol, a place
+		- process (verb): what happens — fermentation, delegation, hashing, photosynthesis, combustion, evolution, staking
+		- property (adjective): what characterizes — temperature, conductivity, toxicity, solubility, volatility, pH, hardness, bandwidth
+		- relation (connective): how things connect — [[symbiosis]], [[isomorphism]], causation, dependency, inheritance, antagonism, [[convergence]]
+		- measure (unit): how things are quantified — joule, kelvin, mole, bit, hertz, pascal, token, cycle, block
+		- pattern (structure): what recurs — feedback loop, gradient, oscillation, cascade, equilibrium, hierarchy, cycle, spiral
+		- these types are orthogonal to knowledge domains: "fermentation" is a process in biology, "hashing" is a process in computer science, "staking" is a process in economics
+		- when tokenized into [[cyberlinks]], processes and relations become the semantic edge types of the [[cybergraph]]. entities are nodes. properties are attributes. measures are weights. patterns are subgraph motifs
+		- a graph of only nouns cannot reason. verbs give it dynamics, properties give it discrimination, relations give it inference, patterns give it abstraction
 - ## what [[Superintelligence]] must know
 	- ### itself
 		- its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
@@ -96,34 +107,75 @@ tags:: cyber, article
 		- [[health]]: disease mechanisms, immune system, [[metabolism]], nutrition
 		- [[superhuman]]: the three vectors — health and [[immortality]], [[physical skills]], [[digital skills]]
 		- [[longevity and health]]: the research frontier
+	- ### food and agriculture
+		- [[crops]]: the plants humans cultivate — grains, vegetables, fruits, legumes, spices, herbs
+		- [[agriculture]]: cultivation methods, soil management, permaculture, irrigation, composting
+		- [[food processing]]: fermentation, drying, cooking, preservation — transformations that make nutrients available
+		- [[nutrition]]: macronutrients, micronutrients, dietary patterns, deficiencies
+		- [[food systems]]: supply chains, storage, distribution, food sovereignty
+		- the connection to [[cyberia]]: [[clean food]], [[food supply]], local production, [[food delivery acceptance rules]]
+	- ### tools and technology
+		- [[instruments]]: microscope, telescope, spectrometer, oscilloscope — extensions of perception
+		- [[machines]]: engine, pump, turbine, generator, motor — extensions of force
+		- [[software]]: operating systems, databases, compilers, protocols — extensions of mind
+		- [[infrastructure]]: roads, bridges, power grids, communication networks, water systems
+		- [[construction]]: materials, methods, structural principles, [[tensegrity]], [[biochar]]
+		- the relationship: tools are crystallized processes — a hammer is "striking" made permanent, a database is "remembering" made reliable
+	- ### time and history
+		- [[epochs]]: geological eras, civilizational ages, technological revolutions
+		- [[events]]: pivotal moments — inventions, discoveries, wars, treaties, launches
+		- [[calendars]]: Gregorian, lunar, Unix epoch, block height — systems for measuring time
+		- [[timelines]]: the chronological structure that connects people, events, and innovations
+		- history of [[computation]]: from abacus to Turing machine to [[cyber]]
+		- history of [[money]]: from barter to gold to fiat to [[cryptocurrency]] to [[CYB]]
 	- ### culture and language
 		- natural languages: the major language families and their structure
 		- writing systems: alphabets, syllabaries, logographic systems
 		- [[mathematics]] as universal language
 		- the [[cyber]] [[neural language]]: the formal language of the protocol
 - ## domain coverage
-	- | domain | current | target | gap |
-	  |--------|---------|--------|-----|
-	  | itself (protocol) | 87 | 200 | 113 |
-	  | mathematics | 4 | 150 | 146 |
-	  | physics | 0 | 120 | 120 |
-	  | chemistry (compounds) | 87 | 350 | 263 |
-	  | biology (species+genus) | 308 | 1000 | 692 |
-	  | computer science | 8 | 150 | 142 |
-	  | states & governance | 11 | 350 | 339 |
-	  | economics | 27 | 100 | 73 |
-	  | people | 5 | 500 | 495 |
-	  | materials & elements | 7 | 250 | 243 |
-	  | tokens & currencies | 16 | 100 | 84 |
-	  | energy | 8 | 80 | 72 |
-	  | geography | 8 | 300 | 292 |
-	  | the body | 50 | 200 | 150 |
-	  | culture & language | 2 | 200 | 198 |
-	  | total | 628 | 4050 | 3422 |
-	- remaining ~2000 pages: articles, bridges, hubs, and cross-domain concepts that span multiple domains
-	- biology dominates because taxonomy is fractal: every species page links to genus, family, order, creating dense subgraph structure
-	- people is the second largest target: every scientist, founder, and thinker whose ideas are embedded in the protocol deserves a page with key contribution, era, and links to their domain
-	- states and geography together cover the physical world the [[Superintelligence]] must reason about
+	- ### by knowledge domain
+		- | domain | current | target | gap |
+		  |--------|---------|--------|-----|
+		  | itself (protocol) | 87 | 200 | 113 |
+		  | mathematics | 4 | 150 | 146 |
+		  | physics | 0 | 120 | 120 |
+		  | chemistry | 87 | 350 | 263 |
+		  | biology | 308 | 1000 | 692 |
+		  | computer science | 8 | 150 | 142 |
+		  | states & governance | 11 | 350 | 339 |
+		  | economics | 27 | 100 | 73 |
+		  | people | 5 | 500 | 495 |
+		  | materials & elements | 7 | 250 | 243 |
+		  | tokens & currencies | 16 | 100 | 84 |
+		  | energy | 8 | 80 | 72 |
+		  | geography & earth | 8 | 300 | 292 |
+		  | the body | 50 | 200 | 150 |
+		  | culture & language | 2 | 200 | 198 |
+		  | food & agriculture | ~30 | 150 | ~120 |
+		  | tools & technology | ~10 | 100 | ~90 |
+		  | time & history | 0 | 80 | 80 |
+		  | total | ~661 | 3880 | ~3219 |
+	- ### by symbol type
+		- | type | current | target | gap |
+		  |------|---------|--------|-----|
+		  | entity (noun) | ~550 | 3000 | ~2450 |
+		  | process (verb) | ~60 | 800 | ~740 |
+		  | property (adjective) | ~20 | 400 | ~380 |
+		  | relation (connective) | ~5 | 200 | ~195 |
+		  | measure (unit) | ~1 | 150 | ~149 |
+		  | pattern (structure) | ~5 | 150 | ~145 |
+		  | total | ~641 | 4700 | ~4059 |
+	- ### observations
+		- the graph is 85% entities — almost entirely nouns. this creates a static snapshot, a dictionary without grammar
+		- processes are the most critical gap: a superintelligence must know what happens, what transforms, what evolves — verbs are the dynamics of reasoning
+		- properties enable discrimination: without adjectives, the graph cannot distinguish iron from copper, hot from cold, toxic from safe
+		- relations are the inference engine: [[symbiosis]], [[isomorphism]], causation, antagonism — these are the logical connectives that enable deduction across domains
+		- measures ground the graph in quantification: without units, no calculation, no comparison, no physics
+		- patterns are the highest abstraction: recognizing that a feedback loop in ecology and a feedback loop in economics are the same structure
+		- biology dominates entities because taxonomy is fractal: every species links to genus, family, order
+		- people is the second largest entity target: scientists, founders, thinkers whose ideas seed the protocol
+		- domain table and type table are orthogonal: every cell in the domain×type matrix should have symbols
 - ## graph properties
 	- | metric | target |
 	  |--------|--------|
@@ -142,10 +194,14 @@ tags:: cyber, article
 		- bridge pages connect domains: [[isomorphism]], [[energy]], [[superhuman]], [[sensor network]]
 		- hubs give navigability. bridges give intelligence
 	- ### page types
-		- symbol: defines a single irreducible concept. short, dense, heavily linked
+		- entity: a specific noun — a species, a person, a compound, a state, a token. tagged by domain: `species`, `compound`, `person`, `ticker`
+		- process: a verb — a transformation, action, or dynamic. examples: fermentation, hashing, staking, photosynthesis
+		- property: an adjective — a measurable characteristic. examples: temperature, conductivity, toxicity, bandwidth
+		- relation: a connective — how two things relate. examples: [[symbiosis]], [[isomorphism]], causation, dependency
+		- measure: a unit — a quantification standard. examples: joule, kelvin, mole, bit, block
+		- pattern: a recurring structure — a motif found across domains. examples: feedback loop, gradient, cascade, equilibrium
 		- article: long-form analysis connecting multiple symbols. tagged `article`
-		- entity: a specific instance — a species, a person, a compound, a state, a token
-		- hub: index into a domain
+		- hub: index into a domain — links to all symbols within
 		- bridge: explicitly connects two or more domains
 	- ### tagging as lenses
 		- tags provide orthogonal views of the same graph
