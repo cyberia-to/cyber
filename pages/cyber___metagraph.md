@@ -7,7 +7,7 @@ tags:: cyber, article
 	- symbols are the atoms of intelligence. before reasoning, before inference — there are symbols and relationships between them
 	- the metagraph is a curated set of symbols and their connections. tokenization converts this set into the initial [[cybergraph]]
 	- every symbol earns its place by being irreducible: it cannot be derived from other symbols in the graph
-	- target: 2000-3000 symbols (pages), each connected to 10-15 others, zero dead ends, zero stubs
+	- target: 5000-7000 symbols (pages), each connected to 10-15 others, zero dead ends, zero stubs
 - ## what [[Superintelligence]] must know
 	- ### itself
 		- its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
@@ -104,27 +104,30 @@ tags:: cyber, article
 - ## domain coverage
 	- | domain | current | target | gap |
 	  |--------|---------|--------|-----|
-	  | itself (protocol) | 87 | 120 | 33 |
-	  | mathematics | 4 | 50 | 46 |
-	  | physics | 0 | 40 | 40 |
-	  | chemistry (compounds) | 87 | 150 | 63 |
-	  | biology (species+genus) | 308 | 400 | 92 |
-	  | computer science | 8 | 60 | 52 |
-	  | states & governance | 11 | 250 | 239 |
-	  | economics | 27 | 50 | 23 |
-	  | people | 5 | 100 | 95 |
-	  | materials & elements | 7 | 120 | 113 |
-	  | tokens & currencies | 16 | 50 | 34 |
-	  | energy | 8 | 30 | 22 |
-	  | geography | 8 | 50 | 42 |
-	  | the body | 50 | 80 | 30 |
-	  | culture & language | 2 | 30 | 28 |
-	  | total | 628 | 1580 | 952 |
-	- remaining ~500-1400 pages: articles, bridges, hubs, and cross-domain concepts that span multiple domains
+	  | itself (protocol) | 87 | 200 | 113 |
+	  | mathematics | 4 | 150 | 146 |
+	  | physics | 0 | 120 | 120 |
+	  | chemistry (compounds) | 87 | 350 | 263 |
+	  | biology (species+genus) | 308 | 1000 | 692 |
+	  | computer science | 8 | 150 | 142 |
+	  | states & governance | 11 | 350 | 339 |
+	  | economics | 27 | 100 | 73 |
+	  | people | 5 | 500 | 495 |
+	  | materials & elements | 7 | 250 | 243 |
+	  | tokens & currencies | 16 | 100 | 84 |
+	  | energy | 8 | 80 | 72 |
+	  | geography | 8 | 300 | 292 |
+	  | the body | 50 | 200 | 150 |
+	  | culture & language | 2 | 200 | 198 |
+	  | total | 628 | 4050 | 3422 |
+	- remaining ~2000 pages: articles, bridges, hubs, and cross-domain concepts that span multiple domains
+	- biology dominates because taxonomy is fractal: every species page links to genus, family, order, creating dense subgraph structure
+	- people is the second largest target: every scientist, founder, and thinker whose ideas are embedded in the protocol deserves a page with key contribution, era, and links to their domain
+	- states and geography together cover the physical world the [[Superintelligence]] must reason about
 - ## graph properties
 	- | metric | target |
 	  |--------|--------|
-	  | pages (symbols) | 2000-3000 |
+	  | pages (symbols) | 5000-7000 |
 	  | avg links per page | 10-15 |
 	  | dead ends | 0 (min 3 outgoing links) |
 	  | stubs | 0 (every page substantive) |
