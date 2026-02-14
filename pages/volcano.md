@@ -6,7 +6,7 @@ crystal-domain:: physics
 - types: shield (broad, effusive), stratovolcano (steep, explosive), cinder cone, caldera
 - the Ring of Fire around the [[Pacific]] [[ocean]] contains 75% of active volcanoes
 - eruptions release CO2, SO2, and aerosols, connecting to the [[carbon cycle]] and [[climate]]
-- volcanic [[soil]]s (andisols) are among the most fertile on Earth
+- volcanic [[soils]] (andisols) are among the most fertile on Earth
 - [[cyber valley]] sits on volcanic soils in Bali, enriched by centuries of eruptions
 - major eruptions alter global temperature: Tambora 1815 caused the "year without a summer"
 - volcanic islands create isolated [[ecology]] and drive [[evolution]] (Galapagos, Hawaii)

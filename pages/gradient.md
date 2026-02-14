@@ -1,4 +1,5 @@
 tags:: pattern, physics, mathematics
+alias:: gradients
 crystal-type:: pattern
 crystal-domain:: physics
 

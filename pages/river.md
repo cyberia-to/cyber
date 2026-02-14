@@ -1,4 +1,5 @@
 tags:: geography
+alias:: rivers
 crystal-type:: entity
 crystal-domain:: geography
 - a flowing [[water]] channel moving from source (headwaters) to mouth (delta/estuary/[[ocean]])
@@ -10,5 +11,5 @@ crystal-domain:: geography
 - freshwater habitat for fish, amphibians, invertebrates, and riparian ecosystems
 - transport corridor for nutrients, connecting the [[water cycle]], [[carbon cycle]], and [[nitrogen cycle]]
 - dams alter flow regimes, sediment delivery, and [[ecology]]
-- river deltas are among the most productive and most vulnerable [[biome]]s
+- river deltas are among the most productive and most vulnerable [[biomes]]
 - carries dissolved minerals from [[weathering]], linking [[atmosphere]] chemistry to [[ocean]] composition

@@ -21,7 +21,7 @@ crystal-domain:: mathematics
 	- Both are content-addressed nodes in a graph
 	- Identity determined by structure and relationships
 	- Classification emerges from network position
-- Ecological relationships ↔ [[cyberlink]]s
+- Ecological relationships ↔ [[cyberlinks]]
 	- Predation, symbiosis, competition become typed directed edges
 	- Energy flows in ecosystems map to value flows in economic graphs
 	- Trophic levels correspond to knowledge graph layers
@@ -39,4 +39,4 @@ crystal-domain:: mathematics
 - Understanding [[consensus]] in forests suggests fault-tolerant architectures for [[cyberia]].
 - The ability to map structure between substrates is the foundation of general intelligence.
 - Isomorphism transforms domain-specific knowledge into reusable patterns.
-- [[cyber]] is built on the recognition that [[knowledge graph]]s, [[blockchain]]s, and [[biology]] share deep structural similarities that can be exploited for [[coordination]] and [[governance]].
+- [[cyber]] is built on the recognition that [[knowledge graphs]], [[blockchains]], and [[biology]] share deep structural similarities that can be exploited for [[coordination]] and [[governance]].

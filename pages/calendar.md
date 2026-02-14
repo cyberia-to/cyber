@@ -1,4 +1,5 @@
 tags:: time, measure
+alias:: calendars
 crystal-type:: measure
 crystal-domain:: physics
 - system for organizing days into repeating cycles aligned to astronomical events

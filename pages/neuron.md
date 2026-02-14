@@ -1,5 +1,5 @@
 icon:: 🤪
-alias:: address, subject, agent, user, observer, actor
+alias:: address, subject, agent, user, observer, actor, neurons
 tags:: cyber
 crystal-type:: entity
 crystal-domain:: cyber

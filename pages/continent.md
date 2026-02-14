@@ -1,4 +1,5 @@
 tags:: geography
+alias:: continents
 crystal-type:: entity
 crystal-domain:: geography
 - a major continuous landmass on [[Earth]]

@@ -10,13 +10,13 @@ version 0.4 — unified specification
 ---
 ## abstract
 
-We present [[Focus-Flow Computation]] (FFC), a peer-to-peer [[protocol]] that unifies [[computation]], [[inference]], and [[consensus]]. [[Transaction]]s add [[cyberlink]]s (typed edges) and supply proofs-of-computation (local focus-flow updates). Peers collectively minimise a graph [[free energy]] functional, converging to an [[equilibrium]] [[probability]] field \(p^*\) — the network's collective focus. [[Reward]]s follow each transaction's marginal reduction in free energy, turning [[entropy]]-reducing work into profit while burning fees for noise. This document consolidates the full FFC specification: graph substrate, [[energy]] terms, labeling, [[semantic]] accounting, iterative computation, [[LLM]] architecture, universality primitives, [[complexity]] analysis, [[security]], and [[thermodynamics]].
+We present [[Focus-Flow Computation]] (FFC), a peer-to-peer [[protocol]] that unifies [[computation]], [[inference]], and [[consensus]]. [[Transactions]] add [[cyberlinks]] (typed edges) and supply proofs-of-computation (local focus-flow updates). Peers collectively minimise a graph [[free energy]] functional, converging to an [[equilibrium]] [[probability]] field \(p^*\) — the network's collective focus. [[Rewards]] follow each transaction's marginal reduction in free energy, turning [[entropy]]-reducing work into profit while burning fees for noise. This document consolidates the full FFC specification: graph substrate, [[energy]] terms, labeling, [[semantic]] accounting, iterative computation, [[LLM]] architecture, universality primitives, [[complexity]] analysis, [[security]], and [[thermodynamics]].
 
 ---
 
 ## 1 introduction
 
-Large [[language]] models imitate patterns without verifiable world state; [[blockchain]]s achieve truth by wasting energy on hashes. FFC fuses the two: computation is consensus and useful work earns weight. [[Focus]] is an adaptive flow of mass that continuously organises itself by minimising free energy. This creates a self-adjusting marketplace where [[attention]], [[compute]], and energy gravitate to what matters now and decay from what does not.
+Large [[language]] models imitate patterns without verifiable world state; [[blockchains]] achieve truth by wasting energy on hashes. FFC fuses the two: computation is consensus and useful work earns weight. [[Focus]] is an adaptive flow of mass that continuously organises itself by minimising free energy. This creates a self-adjusting marketplace where [[attention]], [[compute]], and energy gravitate to what matters now and decay from what does not.
 
 ---
 
@@ -24,8 +24,8 @@ Large [[language]] models imitate patterns without verifiable world state; [[blo
 
 ### 2.1 cybergraph
 
-- [[Node]]s `v` = [[token]]s, concepts, [[agent]]s (store local state `s_v`).
-- [[Edge]]s `(i,j)` carry a triple of scalars *(h, d, c)*:
+- [[Nodes]] `v` = [[tokens]], concepts, [[agents]] (store local state `s_v`).
+- [[Edges]] `(i,j)` carry a triple of scalars *(h, d, c)*:
   - `h` — [[hierarchy]] stiffness weight (feeds [[spring]] term)
   - `d` — transport weight (feeds [[diffusion]] term)
   - `c` — context coefficient (feeds potential term)
@@ -38,7 +38,7 @@ Large [[language]] models imitate patterns without verifiable world state; [[blo
 | --- | --- | --- |
 | [[atom]] | integer / byte-string | base data, constants |
 | pair | two edge slots `left, right` | builds lists, trees, maps |
-| [[function]] | pointer to body sub-graph + argument port | encodes [[lambda calculus]] / [[SK combinator]]s |
+| [[function]] | pointer to body sub-graph + argument port | encodes [[lambda calculus]] / [[SK combinators]] |
 
 ### 2.3 edge types — the semantic layer
 
@@ -50,7 +50,7 @@ Three labels map structural links onto energy terms:
 | d-edge | reference / citation / transport path | diffusion \(E_{diff}\) |
 | c-edge | transient vote / query / context injection | context \(C_i\) |
 
-All other relations — causal, vote, ref, meta — are aliases that map onto one of these three for energy accounting. Semantics can be refined later by splitting labels without touching [[algorithm]]s.
+All other relations — causal, vote, ref, meta — are aliases that map onto one of these three for energy accounting. Semantics can be refined later by splitting labels without touching [[algorithms]].
 
 ---
 
@@ -121,7 +121,7 @@ Five operations give full [[Turing]] power while remaining local and determinist
 4. rewrite — substitute argument references inside a function body, producing a new active subgraph
 5. delete — remove nodes or edges that are no longer referenced
 
-Focus flow acts as a probabilistic scheduler, selecting which application to reduce next based on energy and context. [[Recursion]] is achieved through self-referential edges. With these primitives, focus flow can encode [[SK combinator]]s or [[lambda calculus]], proving [[Turing completeness]]. It merges execution, inference, and prioritisation into a single dynamical process.
+Focus flow acts as a probabilistic scheduler, selecting which application to reduce next based on energy and context. [[Recursion]] is achieved through self-referential edges. With these primitives, focus flow can encode [[SK combinators]] or [[lambda calculus]], proving [[Turing completeness]]. It merges execution, inference, and prioritisation into a single dynamical process.
 
 ### 5.1 determinism and probabilism combined
 
@@ -138,7 +138,7 @@ Transaction = (ΔEdges, proof)
 
 1. Submit: user adds/updates edges and provides a [[zk-SNARK]] attesting they applied the local update rule to all affected nodes (proof size ~O(log n)). A base fee ([[EIP-1559]]) is burned.
 2. Verify: peers check proof deterministically in O(polylog n) time; no global recompute.
-3. Checkpoint: every N [[block]]s, a [[BFT]] committee finalises the current \(p\) snapshot \(\tilde p\). Between checkpoints asynchronous updates continue.
+3. Checkpoint: every N [[blocks]], a [[BFT]] committee finalises the current \(p\) snapshot \(\tilde p\). Between checkpoints asynchronous updates continue.
 
 ---
 
@@ -229,7 +229,7 @@ v = 1e10, c = v^{0.25} ≈ 100 (densifying):
 | --- | --- |
 | Sybil spam | base fee + stake-weighted participation; stake slashed if tx increases global free energy |
 | Edge-weight gaming | curvature-aware decay prunes edges with negative contribution; rewards tied to long-term \(\Delta\mathcal F\) |
-| Proof forgery | [[zk-SNARK]]s guarantee local rule correctness |
+| Proof forgery | [[zk-SNARKs]] guarantee local rule correctness |
 | Focus inflation | total mass \(\sum_i p_i=1\) conserved by gossip normalisation |
 
 ---
@@ -272,8 +272,8 @@ Edge decay uses curvature-aware exponential pruning: \(w_{ij}\leftarrow w_{ij}\,
 
 ## 14 connections to broader theories
 
-- [[Potemkin understanding]]: [[transformer]]s mimic intelligence statistically. Focus flow avoids this by grounding probabilities in [[network]] dynamics and context, producing emergent understanding.
-- [[Topos theory]]: each context defines a local [[topos]], where focus flow computes probabilities relative to that context. Nodes and edges act as objects and [[morphism]]s in a base [[category]].
+- [[Potemkin understanding]]: [[transformers]] mimic intelligence statistically. Focus flow avoids this by grounding probabilities in [[network]] dynamics and context, producing emergent understanding.
+- [[Topos theory]]: each context defines a local [[topos]], where focus flow computes probabilities relative to that context. Nodes and edges act as objects and [[morphisms]] in a base [[category]].
 - [[Active inference]]: the framework directly realises active inference by minimising free energy under observations (context potentials) while maintaining exploration.
 - Beautiful loop ([[Shumskiy]]): focus flow forms a self-sustaining cycle: new context → updated focus distribution → actions/tokens → edge/weight adaptation → new context.
 
@@ -281,7 +281,7 @@ Edge decay uses curvature-aware exponential pruning: \(w_{ij}\leftarrow w_{ij}\,
 
 ## 15 universality of the triad
 
-[[Diffusion]], [[spring]]s, and [[heat]] flow are universal primitives of [[nature]]:
+[[Diffusion]], [[springs]], and [[heat]] flow are universal primitives of [[nature]]:
 - Diffusion → entropy growth and spreading
 - Springs → reversible energy storage and oscillations
 - Heat flow → temporal [[evolution]] toward equilibrium

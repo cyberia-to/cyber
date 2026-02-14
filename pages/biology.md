@@ -19,7 +19,7 @@ crystal-domain:: biology
   in [[cyber]], a [[particle]] is any content-addressed piece of knowledge. a species page is a particle:
 	- content: morphology, ecology, uses, observations
 	- address: hash of the content ([[IPFS]] CID)
-	- links: [[cyberlink]]s to other species, compounds, locations, observations
+	- links: [[cyberlinks]] to other species, compounds, locations, observations
 - 205 species already exist in this graph. each could be a particle in [[Bostrom]]. the botanical knowledge IS the knowledge graph
 - ## ecological cyberlinks
   every observation creates a [[cyberlink]]:

@@ -1,4 +1,5 @@
 tags:: geography, biology, biome
+alias:: coral reefs
 crystal-type:: entity
 crystal-domain:: biology
 - marine [[biome]] built from calcium carbonate skeletons secreted by coral polyps

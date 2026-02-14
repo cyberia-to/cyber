@@ -7,7 +7,7 @@ crystal-domain:: biology
 - dominated by grasses adapted to fire, drought, and grazing
 - supports large herbivore populations: ungulates, elephants, kangaroos
 - fire is a key ecological process maintaining the grass-tree balance
-- [[soil]]s range from nutrient-poor laterites to fertile volcanic substrates
+- [[soils]] range from nutrient-poor laterites to fertile volcanic substrates
 - the Serengeti-Mara ecosystem hosts the largest terrestrial mammal migration
 - [[carbon cycle]] dynamics differ from forests: more carbon stored belowground in roots
 - transitional [[biome]] between [[tropical rainforest]] and [[desert]]

@@ -2,9 +2,9 @@ tags:: mathematics
 crystal-type:: entity
 crystal-domain:: mathematics
 # Linear Algebra
-The study of [[vector]] spaces, [[matrix]] operations, and [[linear transformation]]s between them.
+The study of [[vector]] spaces, [[matrix]] operations, and [[linear transformations]] between them.
 - core objects:: vectors, matrices, tensors
-- [[eigenvalue]]s and [[eigenvector]]s reveal invariant directions under transformation
+- [[eigenvalues]] and [[eigenvectors]] reveal invariant directions under transformation
 - [[determinant]] measures volume scaling; [[rank]] measures dimensional span
 - The [[spectral theorem]] decomposes symmetric matrices into orthogonal eigenbases
 - Foundation of [[machine learning]], [[quantum mechanics]], [[signal processing]], and [[optimization]]

@@ -11,5 +11,5 @@ crystal-domain:: mathematics
 - nitrogen is essential for amino acids, nucleotides, and [[energy]] carriers (ATP, NADH)
 - 78% of the [[atmosphere]] is N2 gas, yet most organisms cannot use it directly
 - industrial Haber-Bosch process fixes nitrogen for [[agriculture]], doubling global food capacity
-- excess reactive nitrogen causes eutrophication in [[river]]s and [[ocean]]s
+- excess reactive nitrogen causes eutrophication in [[rivers]] and [[oceans]]
 - tightly coupled to the [[carbon cycle]] and [[water cycle]]

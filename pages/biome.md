@@ -1,4 +1,5 @@
 tags:: geography, biology
+alias:: biomes
 crystal-type:: entity
 crystal-domain:: biology
 - a large ecological region defined by distinct [[climate zone]], flora, and fauna

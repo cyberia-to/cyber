@@ -1,4 +1,5 @@
 tags:: culture
+alias:: writing systems
 crystal-type:: entity
 crystal-domain:: culture
 - visual representation of [[language]] using persistent marks on a surface

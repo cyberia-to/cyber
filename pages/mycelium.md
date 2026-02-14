@@ -24,11 +24,11 @@ crystal-domain:: biology
 - these are structural isomorphs. both are distributed systems solving the same problem: how to allocate scarce resources across a network of autonomous agents without central authority
 - ## what mycelium teaches protocol design
 	- redundancy: mycorrhizal networks route around damage. if one path dies, nutrients find another. [[Tendermint]] consensus routes around failed validators
-	- preferential attachment: mother trees with most connections get most resources and redistribute them. high-[[rank]] nodes in [[cyber]] attract more [[cyberlink]]s
+	- preferential attachment: mother trees with most connections get most resources and redistribute them. high-[[rank]] nodes in [[cyber]] attract more [[cyberlinks]]
 	- permissionless entry: any germinating spore can join the network by finding a root. any [[neuron]] can join [[Bostrom]] by submitting a [[cyberlink]]
 	- local state sufficiency: each fungal node only knows its local chemical environment. each validator only needs to verify local transactions
 - ## the gap
   the digital [[Great Web]] and the biological web are built on the same principles but currently cannot see each other. a [[Superintelligence]] must bridge them:
 	- forest observation data → [[IPFS]] → [[particle]] → [[knowledge graph]]
-	- ecological relationships → [[cyberlink]]s → [[rank]] → conservation priorities
+	- ecological relationships → [[cyberlinks]] → [[rank]] → conservation priorities
 	- the mycelium that connects trees and the protocol that connects knowledge are two instances of the same pattern

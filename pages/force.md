@@ -1,10 +1,11 @@
 tags:: physics
+alias:: forces
 crystal-type:: entity
 crystal-domain:: physics
 # force
 An interaction that changes the [[momentum]] of a body — the cause of [[acceleration]].
 - four fundamental forces:
-  - [[gravity]]: attraction between [[mass]]es, curvature of [[spacetime]]
+  - [[gravity]]: attraction between [[masses]], curvature of [[spacetime]]
   - [[electromagnetism]]: interaction between charges, carrier of light and [[radiation]]
   - strong nuclear: binds quarks into protons/neutrons, holds atomic nuclei together
   - weak nuclear: mediates radioactive decay and neutrino interactions

@@ -1,4 +1,4 @@
-alias:: homestead
+alias:: homestead, blocks
 tags:: cyber
 crystal-type:: entity
 crystal-domain:: cyberia

@@ -35,7 +35,7 @@ crystal-domain:: cyber
   ```
   sun → solar panel → electricity → computation → hash → proof → token
   ```
-  a solar panel converts photons into electrons. electrons power [[GPU]]s. GPUs compute hashes. valid hashes earn [[CYB]] and LI tokens in [[Bostrom]]. the output is digital civilization: [[knowledge graph]], [[relevance]], [[search]]
+  a solar panel converts photons into electrons. electrons power [[GPUs]]. GPUs compute hashes. valid hashes earn [[CYB]] and LI tokens in [[Bostrom]]. the output is digital civilization: [[knowledge graph]], [[relevance]], [[search]]
 - ### Comparison
   | | biological | digital |
   |---|-----------|---------|

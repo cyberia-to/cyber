@@ -51,7 +51,7 @@ crystal-domain:: meta
   ```
   the observation is permanent, verifiable, and linked to the [[knowledge graph]]
 - ### what 205 species create
-  with ~10 [[cyberlink]]s per species (conservative):
+  with ~10 [[cyberlinks]] per species (conservative):
 	- 2050 cyberlinks encoding ecological relationships
 	- a queryable biological [[knowledge graph]] inside [[Bostrom]]
 	- [[rank]] computation reveals: which species is most connected (ecologically central), which location has highest biodiversity, which compounds appear across most species

@@ -12,7 +12,7 @@ crystal-domain:: biology
 - these mechanisms parallel protocol design:
 	- transaction validity ([[consensus]])
 	- content relevance ([[rank]])
-	- [[bandwidth]] allocation to [[neuron]]s
+	- [[bandwidth]] allocation to [[neurons]]
 	- Byzantine fault tolerance in distributed systems
 - the same class of problem manifests in biological and computational substrates
 - ## consensus mechanisms compared

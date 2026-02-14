@@ -30,7 +30,7 @@ crystal-domain:: chemistry
 	- ### [[anti-inflammatory]]
 		- limonene exhibits anti-inflammatory properties, which can be beneficial in reducing inflammation and associated pain. this makes it useful in conditions such as [[arthritis]] and other inflammatory diseases.
 	- ### [[anti-cancer]] potential:
-		- research has indicated that limonene may have anticancer properties. it has been found to induce apoptosis (programmed cell death) in cancer cells and inhibit tumor growth. this has been observed in various types of cancers, including [[breast cancer]], [[colorectal cancer]], and [[prostate cancer]]s.
+		- research has indicated that limonene may have anticancer properties. it has been found to induce apoptosis (programmed cell death) in cancer cells and inhibit tumor growth. this has been observed in various types of cancers, including [[breast cancer]], [[colorectal cancer]], and [[prostate cancers]].
 	- ### [[antioxidant]]
 		- limonene is a potent antioxidant, which helps in neutralizing free radicals in the body. this can prevent oxidative stress and reduce the risk of chronic diseases such as [[heart disease]] and [[neurodegenerative disorders]].
 	- ### [[digestive]] aid:

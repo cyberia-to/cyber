@@ -501,7 +501,7 @@ The universal language: [[set theory]], [[graph theory]], [[linear algebra]], [[
 
 ### 16.6 Computer Science
 
-[[computation]]: Turing machines, complexity classes, halting problem. [[cryptography]]: hashing, signatures, zero-knowledge proofs, [[STARK]]s. [[distributed systems]]: consensus, Byzantine fault tolerance, state machine replication. [[networking]]: protocols, routing, peer-to-peer, [[IPFS]]. [[machine learning]]: neural networks, training, inference, embeddings. [[programming languages]]: type systems, compilers, formal verification.
+[[computation]]: Turing machines, complexity classes, halting problem. [[cryptography]]: hashing, signatures, zero-knowledge proofs, [[STARKs]]. [[distributed systems]]: consensus, Byzantine fault tolerance, state machine replication. [[networking]]: protocols, routing, peer-to-peer, [[IPFS]]. [[machine learning]]: neural networks, training, inference, embeddings. [[programming languages]]: type systems, compilers, formal verification.
 
 ### 16.7 States and Governance
 

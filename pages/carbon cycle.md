@@ -4,7 +4,7 @@ crystal-domain:: mathematics
 - biogeochemical cycle moving carbon through [[atmosphere]], biosphere, [[ocean]], and lithosphere
 - [[photosynthesis]] fixes atmospheric CO2 into organic molecules using [[solar]] [[energy]]
 - respiration and decomposition release CO2 back to the atmosphere
-- [[ocean]]s absorb and release CO2 at the surface, store it in deep waters
+- [[oceans]] absorb and release CO2 at the surface, store it in deep waters
 - combustion of fossil fuels transfers geological carbon to the atmosphere rapidly
 - weathering of silicate rocks consumes CO2 over geological timescales
 - volcanic outgassing from [[plate tectonics]] returns deep carbon to the atmosphere

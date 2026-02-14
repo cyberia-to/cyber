@@ -1,4 +1,5 @@
 tags:: physics
+alias:: masses
 crystal-type:: entity
 crystal-domain:: physics
 # mass

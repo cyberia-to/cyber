@@ -102,7 +102,7 @@ cybics exists because the three operators appear universally. this universality 
 | [[biology]] | synaptic noise, neural exploration | skeleton, connective tissue, [[hierarchy]] | [[metabolism]], immune response, seasons |
 | [[ecology]] | species dispersal, seed rain | food webs, [[symbiosis]], trophic levels | [[succession]], disturbance recovery |
 | cognition | free association, imagination | [[logic]], constraints, syntax | emotion as arousal, context weighting |
-| [[economics]] | trade flows, migration, memes | institutions, contracts, norms | booms, busts, market [[cycle]]s |
+| [[economics]] | trade flows, migration, memes | institutions, contracts, norms | booms, busts, market [[cycles]] |
 | [[information theory]] | [[entropy]] spread, random coding | redundancy, error correction | adaptive compression, learning |
 | [[mathematics]] | random walk sampler | constraints, Lagrange multipliers | simulated annealing |
 

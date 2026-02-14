@@ -1,4 +1,5 @@
 tags:: cybernomics
+alias:: conifers
 crystal-type:: entity
 crystal-domain:: economics
 

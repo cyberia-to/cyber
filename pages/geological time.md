@@ -5,8 +5,8 @@ crystal-domain:: geography
 - eons: Hadean, Archean, Proterozoic, Phanerozoic
 - eras: Paleozoic, Mesozoic, Cenozoic (within Phanerozoic)
 - periods: Cambrian, Ordovician, Silurian, Devonian, Carboniferous, Permian, Triassic, Jurassic, Cretaceous, Paleogene, Neogene, Quaternary
-- [[epoch]]s: subdivisions of periods (Holocene, Pleistocene, Miocene)
-- boundaries defined by [[extinction event]]s, tectonic shifts, climate transitions
+- [[epochs]]: subdivisions of periods (Holocene, Pleistocene, Miocene)
+- boundaries defined by [[extinction events]], tectonic shifts, climate transitions
 - radiometric dating (uranium-lead, potassium-argon, carbon-14) provides absolute ages
 - deep time: the recognition that Earth's age dwarfs human history by six orders of magnitude
 - stratigraphy reads rock layers as a record of planetary [[entropy]] and renewal

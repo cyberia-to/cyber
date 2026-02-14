@@ -1,6 +1,6 @@
 icon:: 🕸
 tags:: cyber
-alias:: content oracle
+alias:: content oracle, cybergraphs
 crystal-type:: entity
 crystal-domain:: cyber
 - cybergraph is authenticated [[knowledge graph]] data structure stored in [[vimputer]]

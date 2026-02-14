@@ -1,4 +1,5 @@
 tags:: pattern
+alias:: cycles
 crystal-type:: pattern
 crystal-domain:: mathematics
 

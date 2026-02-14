@@ -2,7 +2,7 @@ tags:: physics
 crystal-type:: entity
 crystal-domain:: physics
 # radiation
-The emission and propagation of [[energy]] as electromagnetic [[wave]]s or subatomic particles.
+The emission and propagation of [[energy]] as electromagnetic [[waves]] or subatomic particles.
 - electromagnetic spectrum: radio, microwave, infrared, visible light, ultraviolet, X-ray, gamma
 - visible light occupies a narrow band — perception mapped in [[color-emotion spectrum]]
 - ionizing radiation (UV, X-ray, gamma) carries enough [[energy]] to strip electrons from atoms

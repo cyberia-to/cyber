@@ -26,7 +26,7 @@ crystal-domain:: cyber
 - ## knowledge architecture
 	- [[cyber/crystal]] — the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar
 	- [[cyber/metagraph]] — the multi-scale view: crystal, cybergraph, network of graphs
-	- [[neural language]] — the formal language of the protocol: [[semcon]]s, sentences, motifs, linkchains
+	- [[neural language]] — the formal language of the protocol: [[semcons]], sentences, motifs, linkchains
 	- [[concepts]] — core concept index
 - ## economics
 	- [[cybernomics]] — the native economic theory

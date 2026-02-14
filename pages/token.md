@@ -1,5 +1,5 @@
 icon:: 🪙
-alias:: token theory
+alias:: token theory, tokens
 tags:: cybernomics
 crystal-type:: entity
 crystal-domain:: economics

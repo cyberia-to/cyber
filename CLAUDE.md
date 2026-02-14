@@ -36,6 +36,13 @@ Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
   `# heading` for section titles, `[[wiki-link]]` for inline emphasis on
   concepts. If a term does not deserve its own page, it does not need
   emphasis — just write it plain.
+## Wiki-Link Plurals
+
+Never write `[[term]]s` with a floating `s` outside the link. Every
+concept page that has a meaningful plural must include both forms in its
+`alias::` line (e.g. `alias:: isomorphisms` on the `isomorphism` page).
+Then link the plural directly: `[[isomorphisms]]` instead of
+`[[isomorphism]]s`. This keeps links clean and resolvable.
 ## Shell: Nushell
 
 Use `nu -c '...'` or `nu script.nu` for all scripting. Nushell has

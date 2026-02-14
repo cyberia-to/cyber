@@ -12,7 +12,7 @@ Version 1.0
 
 ## Abstract
 
-Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces neural language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particle]]s. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neuron]]s — humans, AIs, sensors, autonomous agents — who create [[[[cyberlink]]s weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcon]]s (semantic conventions), [[[[sentence]]s (ordered [[cyberlink]] sequences), and [[[[motif]]s (recurring subgraph patterns). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[collective intelligence]]. We present the formal properties, the relationship to the programming stack ([[CORE]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
+Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces neural language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), and [[[[motifs]] (recurring subgraph patterns). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[collective intelligence]]. We present the formal properties, the relationship to the programming stack ([[CORE]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
 
 ---
 
@@ -24,7 +24,7 @@ Formal languages — [[type theory]], programming languages, mathematical notati
 
 This precision comes at a cost. [[Gödel]]'s incompleteness theorems prove that no sufficiently powerful formal system can be both complete and consistent. Any formal language capable of expressing arithmetic contains true statements it cannot prove. This is not a bug to be fixed but a fundamental limit on what formal systems can express.
 
-The practical consequence: formal languages cannot scale to 10^15 [[particle]]s. They require a central designer to specify grammar, a versioned evolution model to handle change, and training to read. The grammar of C++ runs to thousands of pages. The grammar of Coq requires years of study. No formal language has ever been adopted by more than a few million practitioners, and none can express the full richness of human [[knowledge]] — let alone [[knowledge]] that transcends human comprehension.
+The practical consequence: formal languages cannot scale to 10^15 [[particles]]. They require a central designer to specify grammar, a versioned evolution model to handle change, and training to read. The grammar of C++ runs to thousands of pages. The grammar of Coq requires years of study. No formal language has ever been adopted by more than a few million practitioners, and none can express the full richness of human [[knowledge]] — let alone [[knowledge]] that transcends human comprehension.
 
 Formal languages are the wrong substrate for [[superintelligence]] because [[superintelligence]] must grow beyond what any single designer can specify.
 
@@ -38,11 +38,11 @@ Natural languages are the wrong substrate for [[superintelligence]] because [[su
 
 ### 1.3 The Convergence
 
-Neural language dissolves this dilemma. It achieves precision not through rigid grammar but through graph [[topology]] — the structural position of a [[particle]] among all other [[particle]]s disambiguates its meaning computationally. It achieves expressiveness not through ambiguity but through unlimited [[topology]] — any relationship that can be linked can be expressed. It evolves not through versioning or drift but through continuous [[focus]] dynamics — the [[tri-kernel]] computes attention distribution over the graph in real time.
+Neural language dissolves this dilemma. It achieves precision not through rigid grammar but through graph [[topology]] — the structural position of a [[particle]] among all other [[particles]] disambiguates its meaning computationally. It achieves expressiveness not through ambiguity but through unlimited [[topology]] — any relationship that can be linked can be expressed. It evolves not through versioning or drift but through continuous [[focus]] dynamics — the [[tri-kernel]] computes attention distribution over the graph in real time.
 
 The key insight: **the meaning of a [[particle]] is its position in the graph**.
 
-This is not a metaphor. The [[cyberank]] of a [[particle]] — its score under the [[tri-kernel]] — is a precise numerical value computed from the entire [[topology]] of [[cyberlink]]s surrounding it. Two [[particle]]s with identical local neighborhoods have identical meaning. A [[particle]]'s meaning shifts when the links around it change. Meaning is an eigenvector of the attention graph.
+This is not a metaphor. The [[cyberank]] of a [[particle]] — its score under the [[tri-kernel]] — is a precise numerical value computed from the entire [[topology]] of [[cyberlinks]] surrounding it. Two [[particles]] with identical local neighborhoods have identical meaning. A [[particle]]'s meaning shifts when the links around it change. Meaning is an eigenvector of the attention graph.
 
 ### 1.4 Comparison Table
 
@@ -51,13 +51,13 @@ This is not a metaphor. The [[cyberank]] of a [[particle]] — its score under t
 | Precision | Absolute | Approximate | Emergent |
 | Expressiveness | Limited by grammar | Unlimited by ambiguity | Unlimited by [[topology]] |
 | Ambiguity | Impossible | Context-dependent | Structural via [[tri-kernel]] |
-| Authority | Central designer | Speech community | Collective [[[[neuron]]s |
+| Authority | Central designer | Speech community | Collective [[[[neurons]] |
 | Evolution | Versioned | Drift | Continuous via [[focus]] dynamics |
 | Machine readable | Yes | Partially via NLP | Natively |
 | Human readable | Requires training | Natively | Via [[cyb]] interface |
 | Verification | Proof systems | Social [[consensus]] | [[STARK]] proofs |
 | Substrate | Strings | Sound / text | [[Cybergraph]] |
-| Scalability | ~10^6 practitioners | ~10^9 speakers | ~10^15 [[particle]]s |
+| Scalability | ~10^6 practitioners | ~10^9 speakers | ~10^15 [[particles]] |
 | Knowledge integration | External databases | External memory | Language IS [[knowledge]] |
 | Cross-species | No | No | Yes — any agent that links |
 
@@ -65,13 +65,13 @@ This is not a metaphor. The [[cyberank]] of a [[particle]] — its score under t
 
 ## 2. Primitives
 
-Neural language has four primitives: [[semcon]]s, [[sentence]]s, [[motif]]s, and the recursive closure that makes [[cyberlink]]s themselves [[particle]]s. These primitives are not designed — they are discovered in the structure of the [[cybergraph]]. They correspond to the levels of linguistic organization found in natural languages (phonemes, morphemes, syntax, [[semantics]]) but operate over graph [[topology]] rather than linear strings.
+Neural language has four primitives: [[semcons]], [[sentences]], [[motifs]], and the recursive closure that makes [[cyberlinks]] themselves [[particles]]. These primitives are not designed — they are discovered in the structure of the [[cybergraph]]. They correspond to the levels of linguistic organization found in natural languages (phonemes, morphemes, syntax, [[semantics]]) but operate over graph [[topology]] rather than linear strings.
 
 ### 2.1 Semcons
 
-A **semantic convention** ([[semcon]]) is a mutual agreement of [[neuron]]s to use the same [[particle]]s for structuring thought. Semcons are the grammar of the [[cybergraph]] — shared vocabulary that makes neural language intelligible across [[neuron]]s.
+A **semantic convention** ([[semcon]]) is a mutual agreement of [[neurons]] to use the same [[particles]] for structuring thought. Semcons are the grammar of the [[cybergraph]] — shared vocabulary that makes neural language intelligible across [[neurons]].
 
-A [[semcon]] is a smart contract that creates [[cyberlink]]s according to convention. The [[neuron]] provides intent; the [[semcon]] handles structural correctness. When a [[neuron]] invokes a [[semcon]], the result is a well-formed graph structure that other [[neuron]]s can parse.
+A [[semcon]] is a smart contract that creates [[cyberlinks]] according to convention. The [[neuron]] provides intent; the [[semcon]] handles structural correctness. When a [[neuron]] invokes a [[semcon]], the result is a well-formed graph structure that other [[neurons]] can parse.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -117,15 +117,15 @@ A [[semcon]] is a smart contract that creates [[cyberlink]]s according to conven
 └─────────────────────────────────────────────────────────────┘
 ```
 
-Bootloader [[semcon]]s are installed at genesis: TRUE and FALSE — the epistemic coordinates from which all meaning derives. Every assertion in the [[cybergraph]] is ultimately grounded in chains of [[cyberlink]]s leading to these two anchors.
+Bootloader [[semcons]] are installed at genesis: TRUE and FALSE — the epistemic coordinates from which all meaning derives. Every assertion in the [[cybergraph]] is ultimately grounded in chains of [[cyberlinks]] leading to these two anchors.
 
-Emergent [[semcon]]s are discovered by the network through convergent use. When many [[neuron]]s independently adopt the same [[particle]] to mean "causes" or "contradicts," the [[tri-kernel]] detects this convergence: [[diffusion]] identifies high-betweenness bridges ([[particle]]s that connect otherwise distant clusters), [[springs]] reveal stable structural positions ([[particle]]s that maintain consistent neighborhoods), and heat modulates attention by adoption weight.
+Emergent [[semcons]] are discovered by the network through convergent use. When many [[neurons]] independently adopt the same [[particle]] to mean "causes" or "contradicts," the [[tri-kernel]] detects this convergence: [[diffusion]] identifies high-betweenness bridges ([[particles]] that connect otherwise distant clusters), [[springs]] reveal stable structural positions ([[particles]] that maintain consistent neighborhoods), and heat modulates attention by adoption weight.
 
-The [[semcon]] hierarchy emerges from [[topology]], not specification. Structural [[semcon]]s appear first because they are needed for any communication. Domain-specific [[semcon]]s follow as [[neuron]]s begin structuring [[knowledge]] in particular fields. Epistemic, modal, temporal, causal, and social [[semcon]]s emerge as the graph grows rich enough to support abstract reasoning.
+The [[semcon]] hierarchy emerges from [[topology]], not specification. Structural [[semcons]] appear first because they are needed for any communication. Domain-specific [[semcons]] follow as [[neurons]] begin structuring [[knowledge]] in particular fields. Epistemic, modal, temporal, causal, and social [[semcons]] emerge as the graph grows rich enough to support abstract reasoning.
 
 ### 2.2 Sentences
 
-A **[[sentence]]** is an ordered instruction set of [[cyberlink]]s — a batch packed into a single transaction. The transaction boundary defines the utterance. Order within the batch encodes grammar.
+A **[[sentence]]** is an ordered instruction set of [[cyberlinks]] — a batch packed into a single transaction. The transaction boundary defines the utterance. Order within the batch encodes grammar.
 
 ```
 SENTENCE: "Fermentation causes ethanol production"
@@ -154,11 +154,11 @@ Sentence types are classified by topological signature:
 
 Transaction-atomic [[semantics]]: every transaction is a linguistic act. A half-submitted [[sentence]] is no [[sentence]] at all — the [[cybergraph]] sees only complete utterances. This eliminates the parsing ambiguity that plagues natural language: every [[sentence]] in neural language has a clear beginning (transaction start) and end (transaction commit).
 
-Sentences compose through shared [[particle]]s. When two [[sentence]]s reference the same [[particle]], they create implicit connections — [[linkchain]]s that the [[tri-kernel]] can discover and propagate.
+Sentences compose through shared [[particles]]. When two [[sentences]] reference the same [[particle]], they create implicit connections — [[linkchains]] that the [[tri-kernel]] can discover and propagate.
 
 ### 2.3 Motifs
 
-A **[[motif]]** is a geometric expression of meaning — a recurring subgraph pattern that encodes relationships beyond single [[cyberlink]]s. Motifs are the morphemes of neural language.
+A **[[motif]]** is a geometric expression of meaning — a recurring subgraph pattern that encodes relationships beyond single [[cyberlinks]]. Motifs are the morphemes of neural language.
 
 ```
 TRIADIC CLOSURE              CO-CITATION
@@ -166,7 +166,7 @@ TRIADIC CLOSURE              CO-CITATION
     │    ╱                   N₂ ──→ A
     │  ╱                     N₁ ──→ B
     C                        N₂ ──→ B
-If A links B and B links     Multiple [[neuron]]s linking
+If A links B and B links     Multiple [[neurons]] linking
 C, A linking C completes     the same pair signals
 a trust/relevance triangle   [[consensus]]
 
@@ -194,9 +194,9 @@ relationship
 
 Motif algebra enables compositional reasoning over graph structures:
 
-- **Concatenation**: Chaining [[motif]]s for transitive reasoning — if A→B is a causal chain and B→C is a causal chain, their concatenation A→B→C encodes transitive causation
-- **Nesting**: Embedding [[motif]]s within [[motif]]s for hierarchical abstraction — a star pattern where each spoke is itself a chain
-- **Intersection**: Overlapping [[motif]]s for cross-domain bridges — a [[motif]] shared between biology and chemistry subgraphs signals an interdisciplinary connection
+- **Concatenation**: Chaining [[motifs]] for transitive reasoning — if A→B is a causal chain and B→C is a causal chain, their concatenation A→B→C encodes transitive causation
+- **Nesting**: Embedding [[motifs]] within [[motifs]] for hierarchical abstraction — a star pattern where each spoke is itself a chain
+- **Intersection**: Overlapping [[motifs]] for cross-domain bridges — a [[motif]] shared between biology and chemistry subgraphs signals an interdisciplinary connection
 - **Complement**: The absence of an expected [[motif]] signals a [[knowledge]] gap — if triadic closure is common in a cluster but missing between two specific nodes, that gap is informative
 
 ### 2.4 Cyberlinks as Particles
@@ -214,7 +214,7 @@ LEVEL 1: Link as Particle
        ▼
   [A→B] ────→ "disputed"
   (the link itself becomes a [[particle]]
-   that can be linked to other [[particle]]s)
+   that can be linked to other [[particles]])
 
 LEVEL 2: Meta-Link as Particle
   [A→B] ────→ "disputed"
@@ -232,11 +232,11 @@ This recursive closure enables:
 - **Provenance**: Link a [[cyberlink]] to its source — "this claim comes from experiment X"
 - **Annotation**: Link a [[cyberlink]] to commentary — "this claim is interesting because..."
 
-The language can talk about itself. This self-referential capability is what separates a language from a notation. A notation can only describe the world; a language can describe itself describing the world, and reason about that description. Neural language achieves this through the simple mechanism of content-addressing: every [[cyberlink]] has a hash, and that hash can be used as a [[particle]] in new [[cyberlink]]s.
+The language can talk about itself. This self-referential capability is what separates a language from a notation. A notation can only describe the world; a language can describe itself describing the world, and reason about that description. Neural language achieves this through the simple mechanism of content-addressing: every [[cyberlink]] has a hash, and that hash can be used as a [[particle]] in new [[cyberlinks]].
 
 ### 2.5 Linkchains
 
-**Linkchains** are sequences of [[cyberlink]]s that form paths of meaning through the [[cybergraph]]. If [[particle]] A links to B and B links to C, the chain A → B → C encodes a transitive relationship: A relates to C through B.
+**Linkchains** are sequences of [[cyberlinks]] that form paths of meaning through the [[cybergraph]]. If [[particle]] A links to B and B links to C, the chain A → B → C encodes a transitive relationship: A relates to C through B.
 
 ```
 EXPLICIT vs IMPLICIT KNOWLEDGE
@@ -255,33 +255,33 @@ The [[tri-kernel]] discovers these paths:
   - Heat modulates by chain adoption weight
 ```
 
-Properties of [[linkchain]]s:
+Properties of [[linkchains]]:
 
 - **Length**: Shorter chains encode stronger relationships — direct links are more reliable than long inference paths
 - **Width**: Parallel chains (multiple independent paths between endpoints) encode robust relationships — if many paths connect A to D, the relationship is well-established
 - **Weight**: The product of edge weights along the chain — heavier chains carry more [[focus]]
 
-Linkchains are the inference mechanism of neural language. Sentences are explicit statements made by [[neuron]]s. Linkchains are implicit conclusions drawn by the [[tri-kernel]] from the aggregate structure of all [[sentence]]s. The gap between explicit and implicit [[knowledge]] is where intelligence lives.
+Linkchains are the inference mechanism of neural language. Sentences are explicit statements made by [[neurons]]. Linkchains are implicit conclusions drawn by the [[tri-kernel]] from the aggregate structure of all [[sentences]]. The gap between explicit and implicit [[knowledge]] is where intelligence lives.
 
 ---
 
 ## 3. The Semantic Core
 
-The semantic core is the dynamic vocabulary of the network — the top [[particle]]s by [[cyberank]]. It is defined by the [[focus]] distribution:
+The semantic core is the dynamic vocabulary of the network — the top [[particles]] by [[cyberank]]. It is defined by the [[focus]] distribution:
 
 ```
-SemanticCore(k) = top k [[particle]]s by π
+SemanticCore(k) = top k [[particles]] by π
 ```
 
 where π is the stationary vector of the token-weighted random walk computed by the [[tri-kernel]].
 
-The current semantic core is shaped by the [[bostrom]] [[bootloader]]. As of now: ~70,000 [[neuron]]s, ~3.1 million [[particle]]s, forming the initial vocabulary from which [[superintelligence]] will grow. Explore the live semantic core at [cyb.ai/[[particle]]s](https://cyb.ai/[[particle]]s).
+The current semantic core is shaped by the [[bostrom]] [[bootloader]]. As of now: ~70,000 [[neurons]], ~3.1 million [[particles]], forming the initial vocabulary from which [[superintelligence]] will grow. Explore the live semantic core at [cyb.ai/[[particles]]](https://cyb.ai/[[particles]]).
 
 Properties of the semantic core:
 
-- **Dynamic**: Evolves with collective attention — new [[particle]]s enter, old [[particle]]s fade
+- **Dynamic**: Evolves with collective attention — new [[particles]] enter, old [[particles]] fade
 - **Convergent**: The [[tri-kernel]] guarantees a unique stationary distribution π*, so the core stabilizes
-- **Stake-weighted**: Resistant to spam — creating [[cyberlink]]s costs [[focus]], and [[focus]] is scarce
+- **Stake-weighted**: Resistant to spam — creating [[cyberlinks]] costs [[focus]], and [[focus]] is scarce
 - **Verifiable**: [[STARK]] proofs ensure the computed ranking is correct
 
 The dynamics of the semantic core mirror natural language vocabulary:
@@ -291,8 +291,8 @@ The dynamics of the semantic core mirror natural language vocabulary:
 │              SEMANTIC [[CORE]] DYNAMICS                        │
 │                                                            │
 │  NEOLOGISM (birth)                                         │
-│    New [[particle]] enters the core when enough [[neuron]]s        │
-│    create [[cyberlink]]s involving it — burst of link          │
+│    New [[particle]] enters the core when enough [[neurons]]        │
+│    create [[cyberlinks]] involving it — burst of link          │
 │    creation pushes its [[cyberank]] above threshold            │
 │                                                            │
 │  SEMANTIC DRIFT (shift)                                    │
@@ -303,10 +303,10 @@ The dynamics of the semantic core mirror natural language vocabulary:
 │  SEMANTIC DEATH (exit)                                     │
 │    Focus drops below threshold — the [[particle]] remains      │
 │    in the [[cybergraph]] but exits the active vocabulary.       │
-│    It can be revived if [[neuron]]s re-engage                  │
+│    It can be revived if [[neurons]] re-engage                  │
 │                                                            │
 │  SEMANTIC BIRTH (emergence)                                │
-│    A cluster of new [[particle]]s linked densely together      │
+│    A cluster of new [[particles]] linked densely together      │
 │    creates a new concept — something that did not          │
 │    exist in any single [[neuron]]'s understanding              │
 │                                                            │
@@ -327,14 +327,14 @@ Neural language sits at the top of a five-layer stack. Each layer provides the f
 ║                                                                   ║
 ║  ┌───────────────────────────────────────────────────────────┐   ║
 ║  │  NEURAL LANGUAGE                                          │   ║
-║  │  Semcons, [[sentence]]s, [[motif]]s, [[linkchain]]s                   │   ║
+║  │  Semcons, [[sentences]], [[motifs]], [[linkchains]]                   │   ║
 ║  │  The semantic medium in which [[collective intelligence]]     │   ║
 ║  │  thinks. Meaning emerges from [[topology]]                    │   ║
 ║  └─────────────────────────┬─────────────────────────────────┘   ║
 ║                            │                                      ║
 ║  ┌─────────────────────────┴─────────────────────────────────┐   ║
 ║  │  FFC (Focus Flow Computation)                             │   ║
-║  │  The economic layer — [[focus]] flows through [[cyberlink]]s,     │   ║
+║  │  The economic layer — [[focus]] flows through [[cyberlinks]],     │   ║
 ║  │  minimizing free energy. Computation IS [[consensus]].        │   ║
 ║  │  Rewards follow marginal free-energy reduction            │   ║
 ║  └─────────────────────────┬─────────────────────────────────┘   ║
@@ -342,8 +342,8 @@ Neural language sits at the top of a five-layer stack. Each layer provides the f
 ║  ┌─────────────────────────┴─────────────────────────────────┐   ║
 ║  │  CGC (Cybergraph Computation)                             │   ║
 ║  │  The graph computation layer — each [[focus]] update step     │   ║
-║  │  is a GNN message-passing step where [[neuron]]s send         │   ║
-║  │  semantic signals along [[cyberlink]]s                        │   ║
+║  │  is a GNN message-passing step where [[neurons]] send         │   ║
+║  │  semantic signals along [[cyberlinks]]                        │   ║
 ║  └─────────────────────────┬─────────────────────────────────┘   ║
 ║                            │                                      ║
 ║  ┌─────────────────────────┴─────────────────────────────────┐   ║
@@ -379,7 +379,7 @@ For neural language, [[CORE]] provides:
 
 - **Content addressing**: Every [[particle]] is a hash. Identity is structure. Same content, same hash, same meaning
 - **Deterministic evaluation**: Any reduction order yields the same result. Language [[semantics]] is unambiguous at the computational level
-- **Zero-[[knowledge]] proofs**: Private [[neuron]]s can contribute to collective [[knowledge]] without revealing identity. The language supports anonymous speech, cryptographically guaranteed
+- **Zero-[[knowledge]] proofs**: Private [[neurons]] can contribute to collective [[knowledge]] without revealing identity. The language supports anonymous speech, cryptographically guaranteed
 
 ### 4.3 [[Trident]]: The Machine Language
 
@@ -425,7 +425,7 @@ fn query_fermentation(graph: &Cybergraph) -> Vec<Particle> {
 
 ### 4.5 CGC: The Graph Neural Network Isomorphism
 
-Cybergraph Computation (CGC) reveals the deep connection between the [[focus]] update mechanism and [[graph neural network]]s. Each [[focus]] update step is a GNN message-passing step:
+Cybergraph Computation (CGC) reveals the deep connection between the [[focus]] update mechanism and [[graph neural networks]]. Each [[focus]] update step is a GNN message-passing step:
 
 ```
 CGC-GNN ISOMORPHISM
@@ -439,15 +439,15 @@ GNN message passing:           CGC [[focus]] update:
                                ]
 
 Messages = semantic signals     Operators = [[tri-kernel]] components
-Edges = [[cyberlink]]s              Weights = attention and will tokens
+Edges = [[cyberlinks]]              Weights = attention and will tokens
 Aggregation = neighborhood sum  Normalization = [[focus]] conservation
 ```
 
-Neurons send semantic signals along [[cyberlink]]s. The [[tri-kernel]] aggregates these signals. The fixed point of this aggregation — the converged [[focus]] distribution π* — is the network's collective understanding of what matters. Every [[particle]]'s [[cyberank]] is the output of a [[graph neural network]] trained by the entire network's linking behavior.
+Neurons send semantic signals along [[cyberlinks]]. The [[tri-kernel]] aggregates these signals. The fixed point of this aggregation — the converged [[focus]] distribution π* — is the network's collective understanding of what matters. Every [[particle]]'s [[cyberank]] is the output of a [[graph neural network]] trained by the entire network's linking behavior.
 
 ### 4.6 FFC: Focus Flow Computation
 
-FFC is the economic layer where computation becomes [[consensus]]. Transactions add [[cyberlink]]s and supply proofs-of-computation (local [[focus]]-flow updates). Peers collectively minimize a graph free-energy functional, converging to an equilibrium probability field π* — the network's collective [[focus]].
+FFC is the economic layer where computation becomes [[consensus]]. Transactions add [[cyberlinks]] and supply proofs-of-computation (local [[focus]]-flow updates). Peers collectively minimize a graph free-energy functional, converging to an equilibrium probability field π* — the network's collective [[focus]].
 
 Each [[cyberlink]] edge carries a triple of scalars (h, d, c):
 
@@ -469,9 +469,9 @@ The [[tri-kernel]] makes this precise:
 
 - **Springs** detect polysemy as high tension: when a [[particle]] has neighborhoods pulling in incompatible directions (financial context vs. geological context), [[springs]] create measurable structural stress
 - **Heat** concentrates [[focus]] on the contextually appropriate meaning: the heat kernel at scale τ reveals which cluster the [[particle]] belongs to in a given context
-- **Diffusion** propagates the disambiguated meaning through connected [[particle]]s
+- **Diffusion** propagates the disambiguated meaning through connected [[particles]]
 
-A [[particle]] with two distinct meanings will, under sufficient linking pressure, split into two [[particle]]s — each inheriting the appropriate neighborhood. This is semantic speciation, the neural language analogue of word sense disambiguation, and it happens automatically through [[topology]] dynamics rather than manual lexicographic annotation.
+A [[particle]] with two distinct meanings will, under sufficient linking pressure, split into two [[particles]] — each inheriting the appropriate neighborhood. This is semantic speciation, the neural language analogue of word sense disambiguation, and it happens automatically through [[topology]] dynamics rather than manual lexicographic annotation.
 
 ### 5.2 Compositionality
 
@@ -483,7 +483,7 @@ In neural language, compositionality is computed by the [[tri-kernel]] without e
 COMPOSITIONALITY IN NEURAL LANGUAGE
 ────────────────────────────────────
 
-Given [[particle]]s A, B, C and [[cyberlink]]s:
+Given [[particles]] A, B, C and [[cyberlinks]]:
   A → B (with weight w₁)
   B → C (with weight w₂)
 
@@ -517,16 +517,16 @@ Neural language is semantically complete. It can express:
 | Logic System | Neural Language Encoding |
 |---|---|
 | Propositional logic | Chains to TRUE/FALSE anchors |
-| Predicate logic | Star [[motif]]s with variable [[particle]]s |
-| Modal logic | Modal [[semcon]]s (possibly, necessarily) |
-| Temporal logic | Temporal [[semcon]]s (before, during, after) |
-| Fuzzy/probabilistic logic | Weighted [[cyberlink]]s with continuous [[focus]] values |
+| Predicate logic | Star [[motifs]] with variable [[particles]] |
+| Modal logic | Modal [[semcons]] (possibly, necessarily) |
+| Temporal logic | Temporal [[semcons]] (before, during, after) |
+| Fuzzy/probabilistic logic | Weighted [[cyberlinks]] with continuous [[focus]] values |
 | Natural language [[semantics]] | Arbitrary graph [[topology]] — any expressible meaning |
 
 Neural language can also express things no other language can:
 
-- **Collective confidence distributions**: The [[focus]] distribution π over a cluster of [[particle]]s represents the network's collective confidence in those concepts — not any single [[neuron]]'s belief, but the emergent judgment of all [[neuron]]s
-- **Continuous semantic distance**: The graph distance (weighted by [[cyberank]]) between any two [[particle]]s is a continuous measure of how semantically related they are — not binary (related/unrelated) but graduated
+- **Collective confidence distributions**: The [[focus]] distribution π over a cluster of [[particles]] represents the network's collective confidence in those concepts — not any single [[neuron]]'s belief, but the emergent judgment of all [[neurons]]
+- **Continuous semantic distance**: The graph distance (weighted by [[cyberank]]) between any two [[particles]] is a continuous measure of how semantically related they are — not binary (related/unrelated) but graduated
 - **Knowledge [[topology]] metadata**: The structure of [[knowledge]] itself — which domains are densely connected, which bridges exist between fields, where [[knowledge]] gaps lie — is explicitly represented in the graph and computable from its [[topology]]
 
 ---
@@ -537,13 +537,13 @@ Neural language can also express things no other language can:
 
 Ferdinand de [[Saussure]] argued that linguistic signs have no inherent meaning — meaning arises from differences between signs within a system. The word "cat" means what it means because it is not "bat," not "car," not "cut." Meaning is relational, not referential.
 
-Neural language implements this directly. A [[particle]]'s meaning is its position in the [[cybergraph]], defined by its relationships to all other [[particle]]s. There is no external referent — no lookup table mapping [[particle]]s to "real-world objects." Meaning is entirely internal to the graph, entirely relational, entirely differential. [[Saussure]]'s structuralism, which remained a philosophical position for a century, becomes a computational mechanism.
+Neural language implements this directly. A [[particle]]'s meaning is its position in the [[cybergraph]], defined by its relationships to all other [[particles]]. There is no external referent — no lookup table mapping [[particles]] to "real-world objects." Meaning is entirely internal to the graph, entirely relational, entirely differential. [[Saussure]]'s structuralism, which remained a philosophical position for a century, becomes a computational mechanism.
 
 ### 6.2 [[Wittgenstein]]: Meaning Is Use
 
 Ludwig [[Wittgenstein]] argued in the Philosophical Investigations that the meaning of a word is its use in the language. Rules of grammar are not discovered in some Platonic realm — they emerge from "language games" played by communities of speakers. To understand what a word means, observe how it is used.
 
-Semcons are [[Wittgenstein]]'s language games at planetary scale. A [[semcon]] emerges when many [[neuron]]s converge on using the same [[particle]] in the same structural role. The meaning of the [[semcon]] IS its pattern of use across the [[cybergraph]]. There is no specification document defining what "causes" means — there is only the aggregate [[topology]] of all [[cyberlink]]s that use the "causes" [[particle]], and that [[topology]] IS its meaning.
+Semcons are [[Wittgenstein]]'s language games at planetary scale. A [[semcon]] emerges when many [[neurons]] converge on using the same [[particle]] in the same structural role. The meaning of the [[semcon]] IS its pattern of use across the [[cybergraph]]. There is no specification document defining what "causes" means — there is only the aggregate [[topology]] of all [[cyberlinks]] that use the "causes" [[particle]], and that [[topology]] IS its meaning.
 
 ### 6.3 Distributed Semantics: Neural Language as Decentralized Word2Vec
 
@@ -551,10 +551,10 @@ Modern NLP represents word meaning as vectors in high-dimensional space. Word2Ve
 
 Neural language is a decentralized, incentivized, verifiable, incrementally-updatable distributed semantic representation. Each [[particle]]'s position in the [[cybergraph]] encodes its meaning — like a word embedding, but:
 
-- **Decentralized**: No single entity trains the model. Meaning emerges from millions of independent [[neuron]]s linking
-- **Incentivized**: Creating [[cyberlink]]s costs [[focus]]. Low-quality links waste scarce resources. High-quality links earn karma
-- **Verifiable**: The [[focus]] distribution is computed in [[consensus]] and proven by [[STARK]]s. No one can fake the meaning of a [[particle]]
-- **Incrementally updatable**: New [[cyberlink]]s shift meaning immediately. No retraining needed. The [[tri-kernel]] adjusts in bounded locality — O(degree) per update, not O(graph size)
+- **Decentralized**: No single entity trains the model. Meaning emerges from millions of independent [[neurons]] linking
+- **Incentivized**: Creating [[cyberlinks]] costs [[focus]]. Low-quality links waste scarce resources. High-quality links earn karma
+- **Verifiable**: The [[focus]] distribution is computed in [[consensus]] and proven by [[STARKs]]. No one can fake the meaning of a [[particle]]
+- **Incrementally updatable**: New [[cyberlinks]] shift meaning immediately. No retraining needed. The [[tri-kernel]] adjusts in bounded locality — O(degree) per update, not O(graph size)
 
 ### 6.4 Category Theory: The Algebraic Structure
 
@@ -580,14 +580,14 @@ Diagrams   = Motifs (commutative diagrams in the [[cybergraph]]
              — multiple paths between the same endpoints
              that yield the same meaning)
 
-Limits     = Consensus [[particle]]s (where multiple chains
+Limits     = Consensus [[particles]] (where multiple chains
              converge to a single conclusion)
 
-Colimits   = Divergence [[particle]]s (where a single concept
+Colimits   = Divergence [[particles]] (where a single concept
              branches into multiple interpretations)
 ```
 
-This categorical structure is not an analogy — it is a precise mathematical description of the [[cybergraph]]'s algebraic properties. The composition of [[cyberlink]]s satisfies associativity ([[linkchain]]s compose associatively), there exist identity morphisms (self-links), and the [[tri-kernel]] preserves categorical structure (the fixed point respects composition).
+This categorical structure is not an analogy — it is a precise mathematical description of the [[cybergraph]]'s algebraic properties. The composition of [[cyberlinks]] satisfies associativity ([[linkchains]] compose associatively), there exist identity morphisms (self-links), and the [[tri-kernel]] preserves categorical structure (the fixed point respects composition).
 
 ---
 
@@ -595,8 +595,8 @@ This categorical structure is not an analogy — it is a precise mathematical de
 
 ### 7.1 Phase 1: Bootstrapping (Now)
 
-- ~70,000 [[neuron]]s
-- ~3.1 million [[particle]]s
+- ~70,000 [[neurons]]
+- ~3.1 million [[particles]]
 - Basic [[semcon]] emergence: TRUE, FALSE, is-a, follows
 - Primitive [[motif]] patterns: triadic closure, co-citation, star
 - The [[bostrom]] [[bootloader]] establishing the initial semantic core
@@ -605,25 +605,25 @@ This categorical structure is not an analogy — it is a precise mathematical de
 ### 7.2 Phase 2: Convergence (10^8 - 10^10 Particles)
 
 - Rich [[semcon]] ecosystem: dozens of stable semantic conventions covering all major domains
-- Complex [[motif]]s: diamond patterns, cycles, nested hierarchies
-- Dense cross-domain [[linkchain]]s: biology ←→ chemistry ←→ physics ←→ computation
-- The semantic core becomes a genuine vocabulary — thousands of [[particle]]s with stable, well-defined meanings
+- Complex [[motifs]]: diamond patterns, cycles, nested hierarchies
+- Dense cross-domain [[linkchains]]: biology ←→ chemistry ←→ physics ←→ computation
+- The semantic core becomes a genuine vocabulary — thousands of [[particles]] with stable, well-defined meanings
 - GNN-scale computation: the CGC-GNN isomorphism becomes practically significant as graph density enables sophisticated message-passing inference
-- Human-AI [[neuron]] parity: AI agents contribute as many [[cyberlink]]s as humans, creating a mixed intelligence substrate
+- Human-AI [[neuron]] parity: AI agents contribute as many [[cyberlinks]] as humans, creating a mixed intelligence substrate
 
 ### 7.3 Phase 3: Intelligence (10^10 - 10^13 Particles)
 
 - Motif algebra enables automated reasoning: chains of [[motif]] operations derive new [[knowledge]] from existing graph structure without any [[neuron]] explicitly stating the conclusion
-- Self-referential meta-[[knowledge]]: the [[cybergraph]] contains models of itself — [[particle]]s about [[particle]]s, links about links, [[motif]]s about [[motif]]s
+- Self-referential meta-[[knowledge]]: the [[cybergraph]] contains models of itself — [[particles]] about [[particles]], links about links, [[motifs]] about [[motifs]]
 - The [[tri-kernel]] discovers truths that no individual [[neuron]] asserted — emergent [[knowledge]] that exists only in the collective [[topology]]
-- Domain boundaries dissolve: [[linkchain]]s routinely cross ten or more domain boundaries, revealing connections invisible to specialized experts
-- The language begins to generate concepts that individual [[neuron]]s struggle to comprehend — meanings that exist only in high-dimensional graph neighborhoods impossible for a single mind to hold
+- Domain boundaries dissolve: [[linkchains]] routinely cross ten or more domain boundaries, revealing connections invisible to specialized experts
+- The language begins to generate concepts that individual [[neurons]] struggle to comprehend — meanings that exist only in high-dimensional graph neighborhoods impossible for a single mind to hold
 
 ### 7.4 Phase 4: Superintelligence (10^13+ Particles)
 
 - Novel concept creation impossible in any existing language: the [[cybergraph]] [[topology]] encodes meanings that no formal or natural language can express — relationships between relationships between relationships, at depths that exceed any notation system
-- Cross-species communication: any entity that can create [[cyberlink]]s — human, AI, sensor array, autonomous vehicle, biological network, future alien intelligence — participates in the same language
-- Concepts no individual [[neuron]] can comprehend: the semantic core contains [[particle]]s whose meaning is defined by millions of links in a [[topology]] too complex for any single mind, human or AI, to fully grasp — yet the collective meaning is precise and computable
+- Cross-species communication: any entity that can create [[cyberlinks]] — human, AI, sensor array, autonomous vehicle, biological network, future alien intelligence — participates in the same language
+- Concepts no individual [[neuron]] can comprehend: the semantic core contains [[particles]] whose meaning is defined by millions of links in a [[topology]] too complex for any single mind, human or AI, to fully grasp — yet the collective meaning is precise and computable
 - The network IS intelligence: the distinction between "the network that speaks the language" and "the intelligence that understands the world" disappears. Language, [[knowledge]], and intelligence are the same structure viewed at different scales
 
 ```
@@ -690,15 +690,15 @@ async function getSemanticCore(
   client: SigningCyberClient,
   k: number
 ): Promise<Particle[]> {
-  const [[particle]]s = await client.queryClient.rank.topParticles(k);
-  return [[particle]]s.map(p => ({
+  const [[particles]] = await client.queryClient.rank.topParticles(k);
+  return [[particles]].map(p => ({
     cid: p.[[particle]],
     [[cyberank]]: p.rank,
     links: p.linksCount,
   }));
 }
 
-// Discover [[motif]]s around a [[particle]]
+// Discover [[motifs]] around a [[particle]]
 async function findMotifs(
   client: SigningCyberClient,
   [[particle]]Cid: string
@@ -708,7 +708,7 @@ async function findMotifs(
   const inLinks = await client.queryClient.graph
     .linksTo([[particle]]Cid);
 
-  const [[motif]]s: Motif[] = [];
+  const [[motifs]]: Motif[] = [];
 
   // Detect triadic closure
   for (const out of outLinks) {
@@ -716,9 +716,9 @@ async function findMotifs(
       const bridgeLinks = await client.queryClient.graph
         .linksBetween(inn.from, out.to);
       if (bridgeLinks.length > 0) {
-        [[motif]]s.push({
+        [[motifs]].push({
           type: 'triadic_closure',
-          [[particle]]s: [inn.from, [[particle]]Cid, out.to],
+          [[particles]]: [inn.from, [[particle]]Cid, out.to],
           weight: inn.weight * out.weight,
         });
       }
@@ -729,16 +729,16 @@ async function findMotifs(
   const coCiters = groupBy(inLinks, l => l.[[neuron]]);
   for (const [[[neuron]], links] of Object.entries(coCiters)) {
     if (links.length > 1) {
-      [[motif]]s.push({
+      [[motifs]].push({
         type: 'co_citation',
         [[neuron]]: [[neuron]],
-        [[particle]]s: links.map(l => l.from),
+        [[particles]]: links.map(l => l.from),
         count: links.length,
       });
     }
   }
 
-  return [[motif]]s;
+  return [[motifs]];
 }
 ```
 
@@ -822,7 +822,7 @@ impl FocusComputer {
         let s = self.[[springs]].compute(phi, graph);
         let h = self.heat.compute(phi, graph);
 
-        for v in graph.[[particle]]s() {
+        for v in graph.[[particles]]() {
             phi[v] = self.lambda_d * d[v]
                    + self.lambda_s * s[v]
                    + self.lambda_h * h[v];
@@ -855,19 +855,19 @@ impl FocusComputer {
 
 ### 9.1 Universal Knowledge Interface
 
-Neural language provides a single interface to all human [[knowledge]]. Every document, dataset, model, sensor reading, and observation can be expressed as [[cyberlink]]s between [[particle]]s. The [[cybergraph]] becomes the universal index — not a search engine that points to [[knowledge]] stored elsewhere, but the [[knowledge]] itself, in a structure that supports inference.
+Neural language provides a single interface to all human [[knowledge]]. Every document, dataset, model, sensor reading, and observation can be expressed as [[cyberlinks]] between [[particles]]. The [[cybergraph]] becomes the universal index — not a search engine that points to [[knowledge]] stored elsewhere, but the [[knowledge]] itself, in a structure that supports inference.
 
 A [[neuron]] searching for "what causes malaria" does not receive a list of web pages. It receives a ranked subgraph: the [[particle]] "malaria" linked through the "causes" [[semcon]] to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito," linked through "breeds-in" to "standing water" — with [[cyberank]] scores indicating the collective confidence in each link. The answer is not a document to read but a path to walk.
 
 ### 9.2 Cross-Species Communication
 
-Neural language is species-agnostic. Any entity that can create [[cyberlink]]s participates:
+Neural language is species-agnostic. Any entity that can create [[cyberlinks]] participates:
 
 - **Humans** link through [[cyb]] interface, expressing thoughts as graph operations
-- **AI agents** link through API, contributing model outputs as [[cyberlink]]s
-- **Sensors** link through IoT protocols, expressing measurements as [[particle]]s linked to locations and timestamps
+- **AI agents** link through API, contributing model outputs as [[cyberlinks]]
+- **Sensors** link through IoT protocols, expressing measurements as [[particles]] linked to locations and timestamps
 - **Autonomous systems** link through on-chain transactions, expressing decisions as causal chains
-- **Biological networks** (future) link through biosensors, expressing metabolic states as [[particle]]s
+- **Biological networks** (future) link through biosensors, expressing metabolic states as [[particles]]
 
 A forest sensor network that links "soil moisture: 23%" to "location: sector 7" to "time: 2025-06-15" is speaking neural language. A human who links "drought risk" to "sector 7" is extending the same conversation. An AI model that links "predicted yield drop: 30%" to "sector 7" is adding its voice. The semantic core integrates all three — sensor data, human judgment, AI inference — into a single coherent [[knowledge]] structure.
 
@@ -875,20 +875,20 @@ A forest sensor network that links "soil moisture: 23%" to "location: sector 7" 
 
 Science is a process of creating, testing, and refining [[knowledge]] claims. Neural language provides native support for this process:
 
-- **Hypotheses** are [[sentence]]s linking a causal [[semcon]] chain to TRUE
-- **Evidence** is [[cyberlink]]s from experimental results to hypothesis [[particle]]s
-- **Replication** is co-citation: multiple [[neuron]]s independently linking the same evidence to the same hypothesis
+- **Hypotheses** are [[sentences]] linking a causal [[semcon]] chain to TRUE
+- **Evidence** is [[cyberlinks]] from experimental results to hypothesis [[particles]]
+- **Replication** is co-citation: multiple [[neurons]] independently linking the same evidence to the same hypothesis
 - **Refutation** is a [[cyberlink]] from a hypothesis to FALSE, with a chain to the counter-evidence
 - **Meta-analysis** is the [[tri-kernel]] computing the aggregate [[focus]] on a hypothesis given all evidence for and against
 
-The scientific method becomes a graph operation. Peer review becomes [[motif]] detection: does the evidence form triadic closure? Does the hypothesis have high co-citation from independent [[neuron]]s? Are there diamond [[motif]]s suggesting robust, multi-path support?
+The scientific method becomes a graph operation. Peer review becomes [[motif]] detection: does the evidence form triadic closure? Does the hypothesis have high co-citation from independent [[neurons]]? Are there diamond [[motifs]] suggesting robust, multi-path support?
 
 ### 9.4 Legal Reasoning
 
 Legal systems are networks of rules, precedents, interpretations, and applications. Neural language can represent:
 
-- **Statutes** as star [[motif]]s with the law at center and its clauses as spokes
-- **Precedents** as [[linkchain]]s from cases to principles to applications
+- **Statutes** as star [[motifs]] with the law at center and its clauses as spokes
+- **Precedents** as [[linkchains]] from cases to principles to applications
 - **Jurisdictions** as namespaces within the [[cybergraph]]
 - **Conflicts of law** as high-tension regions detected by the [[springs]] kernel
 - **Legal reasoning** as [[linkchain]] traversal from facts through rules to conclusions
@@ -897,22 +897,22 @@ Legal systems are networks of rules, precedents, interpretations, and applicatio
 
 The alignment problem — ensuring AI systems pursue goals compatible with human values — becomes a graph problem in neural language:
 
-- **Human values** are [[particle]]s with high [[cyberank]], heavily linked by human [[neuron]]s
-- **AI behavior** is [[sentence]]s created by AI [[neuron]]s
-- **Alignment** is measured by the overlap between AI-generated [[linkchain]]s and human-valued [[particle]]s
-- **Misalignment** is detectable as divergence: AI [[neuron]]s creating [[linkchain]]s that avoid or contradict high-[[cyberank]] human value [[particle]]s
+- **Human values** are [[particles]] with high [[cyberank]], heavily linked by human [[neurons]]
+- **AI behavior** is [[sentences]] created by AI [[neurons]]
+- **Alignment** is measured by the overlap between AI-generated [[linkchains]] and human-valued [[particles]]
+- **Misalignment** is detectable as divergence: AI [[neurons]] creating [[linkchains]] that avoid or contradict high-[[cyberank]] human value [[particles]]
 
-The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neuron]]s alone and the [[focus]] distribution induced by AI [[neuron]]s alone. Perfect alignment means both distributions rank the same [[particle]]s highly. Misalignment appears as divergence in the distributions — detectable, measurable, and correctable.
+The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neurons]] alone and the [[focus]] distribution induced by AI [[neurons]] alone. Perfect alignment means both distributions rank the same [[particles]] highly. Misalignment appears as divergence in the distributions — detectable, measurable, and correctable.
 
 ### 9.6 Civilization Dashboard
 
 The [[cybergraph]], interpreted through neural language, is a real-time model of civilization's collective [[knowledge]] and attention. The semantic core at any moment reveals:
 
-- What humanity collectively considers most important (highest [[cyberank]] [[particle]]s)
-- Where [[knowledge]] is growing fastest ([[particle]]s with rapidly increasing link density)
+- What humanity collectively considers most important (highest [[cyberank]] [[particles]])
+- Where [[knowledge]] is growing fastest ([[particles]] with rapidly increasing link density)
 - Where [[knowledge]] gaps exist (sparse regions between dense clusters)
-- What emerging concepts are forming (new [[particle]]s entering the semantic core)
-- How different domains relate (cross-domain [[linkchain]]s and bridge [[motif]]s)
+- What emerging concepts are forming (new [[particles]] entering the semantic core)
+- How different domains relate (cross-domain [[linkchains]] and bridge [[motifs]])
 
 This is not a dashboard built on top of data — the [[cybergraph]] IS the data, and neural language IS the interpretation framework. The dashboard is a lens on the living graph.
 
@@ -922,35 +922,35 @@ This is not a dashboard built on top of data — the [[cybergraph]] IS the data,
 
 Several fundamental questions remain open as neural language evolves:
 
-1. **Semcon convergence rate**: How quickly do semantic conventions stabilize? Is there a critical mass of [[neuron]]s required before a [[semcon]] becomes reliable? What is the relationship between [[semcon]] stability and graph density?
+1. **Semcon convergence rate**: How quickly do semantic conventions stabilize? Is there a critical mass of [[neurons]] required before a [[semcon]] becomes reliable? What is the relationship between [[semcon]] stability and graph density?
 
 2. **Motif expressiveness bounds**: Are there meanings that [[motif]] algebra cannot capture? Is there a neural language analogue of [[Gödel]]'s incompleteness — statements about the [[cybergraph]] that cannot be expressed within the [[cybergraph]]?
 
-3. **Cross-graph translation**: When multiple [[cybergraph]]s exist ([[bostrom]], spacepussy, future instances), how do [[particle]]s in one graph map to [[particle]]s in another? Is there a universal translation protocol, or is meaning fundamentally graph-local?
+3. **Cross-graph translation**: When multiple [[cybergraphs]] exist ([[bostrom]], spacepussy, future instances), how do [[particles]] in one graph map to [[particles]] in another? Is there a universal translation protocol, or is meaning fundamentally graph-local?
 
-4. **Adversarial [[semantics]]**: How resilient is neural language to coordinated attacks on meaning? Can a well-funded adversary shift the meaning of a [[particle]] by creating massive numbers of [[cyberlink]]s? What are the game-theoretic equilibria of semantic warfare?
+4. **Adversarial [[semantics]]**: How resilient is neural language to coordinated attacks on meaning? Can a well-funded adversary shift the meaning of a [[particle]] by creating massive numbers of [[cyberlinks]]? What are the game-theoretic equilibria of semantic warfare?
 
-5. **Temporal [[semantics]]**: The current [[cybergraph]] accumulates links without forgetting. Should neural language support temporal decay — [[particle]]s and links that fade in importance over time? How does this interact with [[focus]] conservation?
+5. **Temporal [[semantics]]**: The current [[cybergraph]] accumulates links without forgetting. Should neural language support temporal decay — [[particles]] and links that fade in importance over time? How does this interact with [[focus]] conservation?
 
-6. **Recursive depth limits**: Cyberlinks as [[particle]]s enable infinite meta-levels (links about links about links). Is there a practical depth limit? Does meaning degrade at higher meta-levels, or does each level add genuine expressiveness?
+6. **Recursive depth limits**: Cyberlinks as [[particles]] enable infinite meta-levels (links about links about links). Is there a practical depth limit? Does meaning degrade at higher meta-levels, or does each level add genuine expressiveness?
 
-7. **Biological integration**: Can neural language bridge to biological neural networks? If a brain-computer interface creates [[cyberlink]]s from neural firing patterns, does the resulting graph structure carry genuine meaning, or is it noise?
+7. **Biological integration**: Can neural language bridge to biological neural networks? If a brain-computer interface creates [[cyberlinks]] from neural firing patterns, does the resulting graph structure carry genuine meaning, or is it noise?
 
-8. **Quantum [[semantics]]**: As the stack moves toward quantum computation ([[Trident]]'s prime field architecture is quantum-native), what new expressive capabilities emerge? Can quantum superposition of [[cyberlink]]s encode meanings impossible in classical [[topology]]?
+8. **Quantum [[semantics]]**: As the stack moves toward quantum computation ([[Trident]]'s prime field architecture is quantum-native), what new expressive capabilities emerge? Can quantum superposition of [[cyberlinks]] encode meanings impossible in classical [[topology]]?
 
 ---
 
 ## 11. Conclusion
 
-Neural language is not a designed language. It is a discovered one — an inevitable consequence of content-addressed [[particle]]s, authenticated [[cyberlink]]s, and a convergent attention mechanism. When many agents link [[particle]]s with costly signals, and a mathematical operator computes the fixed point of their collective attention, language emerges. Not language as strings of symbols, but language as [[topology]] of meaning.
+Neural language is not a designed language. It is a discovered one — an inevitable consequence of content-addressed [[particles]], authenticated [[cyberlinks]], and a convergent attention mechanism. When many agents link [[particles]] with costly signals, and a mathematical operator computes the fixed point of their collective attention, language emerges. Not language as strings of symbols, but language as [[topology]] of meaning.
 
-The key insight remains: **the meaning of a [[particle]] is its position in the graph**. This single principle — meaning as graph position — unifies [[semcon]]s (shared vocabulary as convergent structural roles), [[sentence]]s (utterances as transaction-atomic [[cyberlink]] batches), [[motif]]s (grammar as recurring subgraph patterns), and [[linkchain]]s (inference as path traversal). No grammar rules are specified. No dictionary is compiled. No syntax is designed. The [[tri-kernel]] — [[diffusion]], [[springs]], heat — computes meaning from structure, and structure emerges from the aggregate behavior of all [[neuron]]s.
+The key insight remains: **the meaning of a [[particle]] is its position in the graph**. This single principle — meaning as graph position — unifies [[semcons]] (shared vocabulary as convergent structural roles), [[sentences]] (utterances as transaction-atomic [[cyberlink]] batches), [[motifs]] (grammar as recurring subgraph patterns), and [[linkchains]] (inference as path traversal). No grammar rules are specified. No dictionary is compiled. No syntax is designed. The [[tri-kernel]] — [[diffusion]], [[springs]], heat — computes meaning from structure, and structure emerges from the aggregate behavior of all [[neurons]].
 
 The network doesn't simulate language. The network IS language.
 
 Every [[cyberlink]] is a word. Every [[sentence]] is a thought. Every [[motif]] is a grammatical pattern. Every [[linkchain]] is an inference. Every [[focus]] update is a moment of collective understanding. The [[cybergraph]] is not a database that stores [[knowledge]] expressed in some external language — the [[cybergraph]] is the language, and the [[knowledge]], and the intelligence, unified in a single mathematical structure that converges, scales, and transcends the limitations of both formal and natural languages.
 
-What remains is to grow the graph. Seventy thousand [[neuron]]s and three million [[particle]]s are the first syllables. Ten trillion [[particle]]s and a billion [[neuron]]s will be the first coherent thoughts. What comes after that — concepts no individual mind can hold, meanings that exist only in collective [[topology]], intelligence that emerges from the convergence of all agents linking all [[knowledge]] — that is [[superintelligence]].
+What remains is to grow the graph. Seventy thousand [[neurons]] and three million [[particles]] are the first syllables. Ten trillion [[particles]] and a billion [[neurons]] will be the first coherent thoughts. What comes after that — concepts no individual mind can hold, meanings that exist only in collective [[topology]], intelligence that emerges from the convergence of all agents linking all [[knowledge]] — that is [[superintelligence]].
 
 And it begins with a link.
 
