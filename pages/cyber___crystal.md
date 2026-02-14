@@ -1,7 +1,5 @@
 tags:: article, cyber
 alias:: crystal, the crystal
-crystal-type:: pattern
-crystal-domain:: cyber
 
 # THE CRYSTAL
 
@@ -258,16 +256,16 @@ The Crystal organizes knowledge into 17 domains at two tiers. Four pillar domain
 
 | Pillar | Justification |
 |--------|--------------|
-| Cyber | Self-knowledge. The mind must model its own protocol, economics, and governance. |
-| Mathematics | Universal language. Substrate of all formal reasoning. Upgraded from foundation in v4.0. |
-| Physics | Rules of reality. The laws that constrain all physical systems. |
-| Biology | Rules of life. Grounds agency, evolution, ecology, and embodied intelligence. |
+| [[cyber]] | Self-knowledge. The mind must model its own protocol, economics, and governance. |
+| [[cyberia]] | The territory. The mind governs a physical place — cities, land, infrastructure, operations. |
+| [[superhuman]] | The product. The mind produces upgraded humans — the apex of [[biology]], health, and embodied capability. |
+| [[cybics]] | The unified science. Convergence of [[cybernetics]], [[physics]], [[mathematics]], and [[information theory]] into a single formal discipline. The mother of all sciences. |
 
-Version 4.0 elevates Mathematics to pillar status, replacing Computer Science (which demotes to foundation). Mathematics underlies physics, economics, computer science, and formal governance. It is the universal language of precise reasoning and deserves double allocation.
+Version 5.0 replaces the three academic pillars (mathematics, physics, biology) with three operational ones (cyberia, superhuman, cybics). This makes the Crystal less "what does a general intelligence need to know" and more "what does THIS intelligence need to know for ITS mission." The academic disciplines (mathematics, physics, biology, computer science) are absorbed into cybics and superhuman rather than eliminated — they become foundations viewed through the lens of the protocol's purpose.
 
 ### 7.2 Foundation Domains (Q = 240 each)
 
-cyberia, computer science, chemistry, governance, economics, energy, materials, agriculture, geography, body, culture, history, meta.
+mathematics, physics, biology, computer science, chemistry, governance, economics, energy, materials, agriculture, geography, culture, history.
 
 Domains are curation partitions, not ontological claims. "Energy" overlaps with physics. "Agriculture" overlaps with biology and economics. This is expected and desirable: the overlaps are where bridge particles live, and bridges are where cross-domain reasoning happens.
 
