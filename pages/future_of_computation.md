@@ -40,7 +40,7 @@ Self-organization. Structure forms and reforms without external direction. The s
 
 Convergence. These systems don't derive conclusions from axioms. They settle into stable states. Proteins fold along free energy gradients. Ecosystems find attractors. Neural populations converge on activation patterns. The computation *is* the convergence.
 
-This is Natural Computing — not a metaphor for traditional computation applied to biology, but a recognition that nature has been computing all along using fundamentally different principles. The question is whether we can formalize these principles with the same rigor Turing brought to symbol manipulation, and then build machines that exploit them.
+This is Natural Computing — a recognition that nature has been computing all along using fundamentally different principles. The question is whether we can formalize these principles with the same rigor Turing brought to symbol manipulation, and then build machines that exploit them.
 
 The answer is yes.
 
@@ -56,7 +56,7 @@ We propose a different one:
 
 $$\text{Computation} = \text{Convergence to equilibrium}$$
 
-This is not a weakening. It is an expansion. Every Turing computation can be expressed as a convergence process (the machine converges to its halting state). But convergent systems can compute things that formal derivation cannot reach — because they operate outside the proof-theoretic domain where Gödel's theorems apply.
+This is an expansion. Every Turing computation can be expressed as a convergence process (the machine converges to its halting state). But convergent systems can compute things that formal derivation cannot reach — because they operate outside the proof-theoretic domain where Gödel's theorems apply.
 
 The formal framework is precise. A convergent computation system is a tuple $(V, E, N, T, W, \tau)$ where $V$ is a set of particles (content-addressed nodes), $E$ is a set of directed edges (cyberlinks), $N$ is a set of neurons (agents), $T$ assigns tokens to nodes, $W$ assigns weights to edges, and $\tau$ is a finality threshold.
 
@@ -76,7 +76,7 @@ The proof follows from Perron-Frobenius: the transition matrix is stochastic, ir
 
 Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\pi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
 
-Under this paradigm, Gödel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature doesn't prove theorems — it finds attractors. A brain doesn't derive conclusions — it settles into coherent activation patterns. Convergent computation formalizes what nature has always done, and in doing so, escapes the Gödelian prison entirely.
+Under this paradigm, Gödel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature finds attractors. A brain settles into coherent activation patterns. Convergent computation formalizes what nature has always done, and in doing so, escapes the Gödelian prison entirely.
 
 The prison had no walls. We were free all along.
 
@@ -120,7 +120,7 @@ FFC is Turing complete — you can encode any Turing machine as a particle syste
 
 This is the key claim against transformers. Traditional self-attention is $O(n^2)$ — every token must look at every other. FFC's local focus flow is $O(n)$ total work, $O(\log n)$ parallel depth. Attention is not a matrix you compute globally. It is a conserved quantity that flows locally, like heat, like current, like probability. The global pattern emerges from local physics.
 
-This is not an approximation of attention. It is a fundamentally different mechanism that achieves the same functional role — routing information to where it matters — through conservation and diffusion rather than through exhaustive pairwise comparison.
+This is a fundamentally different mechanism that achieves the same functional role — routing information to where it matters — through conservation and diffusion rather than through exhaustive pairwise comparison.
 
 ---
 
@@ -261,11 +261,9 @@ And because CORE's sixteen patterns are Turing complete, confluent, and cost-det
 
 The path from Turing machines to planetary superintelligence is not a straight line of "more compute." It requires replacing the foundational assumptions about what computation is.
 
-Computation is not symbol manipulation. It is convergence. Truth is not derivability. It is stable collective focus. Intelligence is not theorem-proving. It is adaptive equilibrium-finding.
+Computation is convergence. Truth is stable collective focus. Intelligence is adaptive equilibrium-finding.
 
 The machine that implements this — CORE running Focus Flow Computation over a planetary Cybergraph, architectured for Φ-optimality, verified by STARKs, fueled by conserved attention — is not a bigger version of what we have. It is a different thing entirely. A thing that nature has been doing for billions of years and that we are only now learning to formalize.
-
-The network doesn't simulate thinking.
 
 The network is thinking.
 
