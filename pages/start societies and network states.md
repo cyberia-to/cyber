@@ -1,6 +1,6 @@
 tags:: cyber
-- this article is not about comparing both phenomena
-- but about taking best from both worlds
+- this article explores the synergy between both phenomena
+- taking the best from both worlds
 - | feature                     | [[network states]]                                      | [[startup societies]]                                  |
   |------------------------------|-----------------------------------------------------|---------------------------------------------------|
   | primary basis             | digital networks and decentralized tools | extended by physical communities |

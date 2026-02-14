@@ -1,8 +1,8 @@
 tags:: cyber
-- existing foundation models are not foundational
+- existing foundation models lack a foundation
 	- contain only [[implicit knowledge]]
 	- unable to work in [[full content space]]
-	- does not use [[cryptographic proofs]] for [[authentication of information]]
+	- lacks [[cryptographic proofs]] for [[authentication of information]]
 - [[rm]] is foundational model
 	- [[implicit knowledge]] is derived from [[explicit knowledge]]
 	- operates in [[full content space]]

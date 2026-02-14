@@ -1,6 +1,6 @@
 tags:: cyberia
 
-- > the art of designing living systems in resonance with nature’s intelligence—not against it
+- > the art of designing living systems in resonance with nature’s intelligence
 - part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 - ## purpose
   collapsed:: true
@@ -110,17 +110,17 @@ tags:: cyberia
 		- ![qr-code (5).svg](../assets/qr-code_(5)_1761668827066_0.svg)
 - old notes
   collapsed:: true
-	- Biome engeneering is the art of designing living systems in resonance with nature’s intelligence—not against it. Rooted in the [[philosophy of harmonious complexity]] it assumes that life does not thrive through control, but through coherence — where every element, human and non-human, contributes to a whole. The aim is not to dominate the earth, but to inhabit it wisely.
-	- At the same time, biome engineering is an emerging interdisciplinary field that blends ecology, technology, anthropology, and design. It focuses on modifying and optimizing ecosystems to meet human needs, restore natural balance, and cultivate self-sufficient environments. It treats life systems not as chaotic wilderness nor as exploitable machinery, but as intelligent, self-organizing structures that can be observed, guided, and co-created.
+	- Biome engeneering is the art of designing living systems in resonance with nature’s intelligence. Rooted in the [[philosophy of harmonious complexity]] it assumes that life thrives through coherence — where every element, human and non-human, contributes to a whole. The aim is to inhabit the earth wisely.
+	- At the same time, biome engineering is an emerging interdisciplinary field that blends ecology, technology, anthropology, and design. It focuses on modifying and optimizing ecosystems to meet human needs, restore natural balance, and cultivate self-sufficient environments. It treats life systems as intelligent, self-organizing structures that can be observed, guided, and co-created.
 	- We begin with structure. Land is read through [[maps]], which divide territory across nested spatial scales:
 		- [[sector]] is the smallest operative unit—defined by forms like [[bed]], [[wall]], and [[trail]]
 		- [[block]] is a homestead — enough to sustain a [[family]]
 		- [[district]] is a shared commons — supporting a [[clan]] through social, hydrological, and economic integration
 		- [[region]] hosts a [[tribe]]—a complete biome cell with cultural and ecological sovereignty
-	- This division isn't arbitrary. It's grounded in the surface area a human needs to meet their basic food, material, and waste cycle needs — amplified through collaboration and layered design.
+	- This division is grounded in function. It's grounded in the surface area a human needs to meet their basic food, material, and waste cycle needs — amplified through collaboration and layered design.
 	- Within these maps, [[zones]] optimize activity: what’s closest is used most. [[shapes]] — like terraces or ponds —sculpt terrain for energy flow. [[patterns]] embed natural logic: branches distribute, spirals expand, pulses regulate.
-	- Life is not flat. Vertical [[layers]] — from [[canopy]] to [[mycelium]] — allow multiple species to coexist in the same space. Through [[succession]], we understand how ecosystems change in time — from [[pioneers]] to [[climax]] species. [[stratification]] is the fusion: a structural view that connects time and space as one living continuum.
-	- A healthy biome is not a monoculture. it is a [[guild]]: a polyculture of mutualists where each species supports the others. [[plant/features]] reveal their roles: builders, accumulators, protectors, attractors, and decomposers.
+	- Life has depth. Vertical [[layers]] — from [[canopy]] to [[mycelium]] — allow multiple species to coexist in the same space. Through [[succession]], we understand how ecosystems change in time — from [[pioneers]] to [[climax]] species. [[stratification]] is the fusion: a structural view that connects time and space as one living continuum.
+	- A healthy biome is a [[guild]]: a polyculture of mutualists where each species supports the others. [[plant/features]] reveal their roles: builders, accumulators, protectors, attractors, and decomposers.
 	- To guide this complexity, biome engineers use a simple set of [[methods]]:
 		- [[observation]]: perceive rhythm, structure, and signal
 		- [[formation]] prepares the land—groundwork for water, light, and structure
@@ -130,7 +130,7 @@ tags:: cyberia
 	- These actions follow the [[lifecycle]]: germination, growth, reproduction, decline, and decay. Every method is a dance with timing. We don’t impose control—we enter rhythm.
 	- [[climate]] sets the canvas. But [[microclimate]] draws the lines: the slope behind the wall, the shade under a tree, the breeze by the pond. This is where life truly negotiates space.
 	- Biome engineers classify species by their [[plant/type]] and the [[products]] they yield: food, fuel, fodder, fiber, medicine, aroma, soil, and structure. But classification runs deeper: we ask what role it plays, what cycle it joins, and what relationships it forges.
-	- a system is not alive because it grows. it is alive because it holds itself together. the purpose of biome engineering is not production—it is integration. a truly intelligent biome is one where every part multiplies the wholeness of every other part.
-	- This is not farming. This is not agriculture. This is not landscaping
+	- a system is alive because it holds itself together. the purpose of biome engineering is integration. a truly intelligent biome is one where every part multiplies the wholeness of every other part.
+	- This is how life builds itself
 	- This is how life builds itself — through us, with us, as us. As part of the planetary mind.
 -
