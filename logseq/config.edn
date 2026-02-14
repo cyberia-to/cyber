@@ -293,8 +293,7 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- ;; Favorites are built dynamically from pages with tags:: menu (see custom.js)
- :favorites []
+ :favorites ["cyb" "cyber" "cyberia" "cyber valley" "bostrom" "cybernomics" "cybics" "superhuman"]
 
  ;; Set flashcards interval.
  ;; Expected value:
