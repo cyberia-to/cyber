@@ -1,5 +1,4 @@
 tags:: compound
-
 - alias: cellulose
 - ![Cellulose.pdf](../assets/Cellulose_1719303309556_0.pdf)
 - [[cellulose]] is a complex [[carbohydrate]] and a [[polysaccharide]] consisting of glucose units linked by [[β-1,4-glycosidic]] bonds. it is the primary structural component of plant [[cell walls]] and the most abundant [[organic polymer]] on earth.

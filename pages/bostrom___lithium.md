@@ -340,11 +340,11 @@ The composite emission curve E(t) is computed on-chain:
 fn emission_rate(block_time: u64) -> Uint128 {
     let t = days_since_genesis(block_time);
     let mut total = Uint128::zero();
-    
+
     for component in COMPONENTS {
         total += component.rate_at(t);
     }
-    
+
     total
 }
 ```

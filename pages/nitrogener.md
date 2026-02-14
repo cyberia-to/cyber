@@ -1,4 +1,4 @@
-tags:: collectable
+tags:: cybernomics
 
 - nitrogen-fixing plants are species capable of converting atmospheric nitrogen (n₂)
 - into forms usable by plants, primarily ammonium (nh₄⁺)

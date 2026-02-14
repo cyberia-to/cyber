@@ -1,4 +1,4 @@
-tags:: economics
+tags:: cybernomics
 - cost or benefit imposed on third parties who are not direct participants in a transaction
 - negative externality: harm to others (pollution, congestion, noise), leads to overproduction by the market
 - positive externality: benefit to others (education, vaccination, open-source software), leads to underproduction

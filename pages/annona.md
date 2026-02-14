@@ -1,4 +1,4 @@
-tags:: genus, collectable
+tags:: genus, cybernomics
 alias:: srikaya, anona
 
 - selected for [[edem]]

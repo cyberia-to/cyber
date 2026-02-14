@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 focus:: true
 
 - definition

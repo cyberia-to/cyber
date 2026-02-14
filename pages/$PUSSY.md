@@ -1,2 +1,2 @@
-tags:: ticker, cybernomics
+tags:: cybernomics
 - [[cyber-sdk]] based memecoin with [[balls]] and [[vision]]

@@ -1,4 +1,4 @@
-tags:: genus, collectable
+tags:: genus, cybernomics
 
 - selected for [[edem]]
 	- [[syzygium cumini]]

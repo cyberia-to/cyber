@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 alias:: protein
 
 - system synergy potential (micro-ecosystem stacking)

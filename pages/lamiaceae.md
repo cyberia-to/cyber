@@ -1,4 +1,4 @@
-tags:: family, collectable
+tags:: family, cybernomics
 alias:: mints
 
 - [[mentha]]

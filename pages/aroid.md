@@ -1,4 +1,4 @@
-tags:: collectable
+tags:: cybernomics
 alias:: arachae, arum
 market:: collectable
 

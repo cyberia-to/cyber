@@ -1,4 +1,5 @@
 tags:: cyber, uhash
+
 - # Adaptive Hybrid Economics
 - ## Minimal Implementation Spec
 - all values in tokens. no price oracle needed.
@@ -14,7 +15,7 @@ tags:: cyber, uhash
   | N | Z+ | sliding window size (number of proofs) |
   | K | Z+ | PID update interval (every K proofs) |
   | alpha | [0.3, 0.7] | allocation curve exponent |
-  | E(t) | R+ | composite emission rate (from stepped decay curve, see [[bostrom__lithium]]) |
+  | E(t) | R+ | composite emission rate (from stepped decay curve, see [[bostrom/lithium]]) |
   | beta | [0, 0.9] | fee burn rate |
 - ## 2. Per-Proof Instant Payout
 - no epochs. every valid proof is paid immediately on-chain
@@ -88,7 +89,7 @@ tags:: cyber, uhash
   ```
   beta += Kp_b * e_fee_coverage + Kd_b * d(e_fee_coverage)/dt
   ```
-- E(t) is not PID-controlled — it follows the fixed stepped decay curve from [[bostrom__lithium]]
+- E(t) is not PID-controlled — it follows the fixed stepped decay curve from [[bostrom/lithium]]
 - ## 6. Gains
 - | Mode | Kp_a | Kd_a | Kp_b | Kd_b |
   |------|------|------|------|------|

@@ -1,4 +1,4 @@
-tags:: collectable, market
+tags:: cybernomics
 
 - [[adenium obesum]]
 - [[artemisia absinthium]]

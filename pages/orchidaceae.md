@@ -1,4 +1,4 @@
-tags:: genus, family, collectable
+tags:: genus, family, cybernomics
 alias:: orchid
 
 - [[high margin]]

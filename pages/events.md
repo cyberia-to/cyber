@@ -1,4 +1,4 @@
-tags:: market, cv.land
+tags:: cybernomics, cv.land
 focus:: true
 
 - we are working on a permanent event platform for iconic events

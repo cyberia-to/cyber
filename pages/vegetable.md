@@ -1,2 +1,2 @@
-tags:: market
+tags:: cybernomics
 alias:: veg

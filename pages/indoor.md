@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 
 - top species by indoor popularity
 	- [[chlorophytum comosum]]

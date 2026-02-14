@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 alias:: nutraceuticals, biohacking
 focus:: true
 

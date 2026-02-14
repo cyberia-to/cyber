@@ -1,4 +1,4 @@
-tags:: ticker, cybernomics
+tags:: cybernomics
 alias:: carbon, $TOCYB
 - [[store of value]] for [[superintelligence]]
 - no internal utility, except

@@ -1,4 +1,4 @@
-tags:: market, cv.land
+tags:: cybernomics, cv.land
 - {{query (page-tags [[collectable]])}}
   query-properties:: [:page :tags :alias]
   query-sort-by:: page

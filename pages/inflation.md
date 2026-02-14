@@ -1,4 +1,4 @@
-tags:: economics
+tags:: cybernomics
 - sustained increase in the general price level of goods and services over time
 - monetary expansion: more money chasing the same goods drives prices up
 - purchasing power decline: each unit of currency buys less as inflation rises

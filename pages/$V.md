@@ -1,4 +1,4 @@
-tags:: ticker, cybernomics
+tags:: cybernomics
 alias:: volt, millivolt, volts, millivolts
 
 - [[token]] of [[will]] in [[bostrom]]

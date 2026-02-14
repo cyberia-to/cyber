@@ -1,4 +1,4 @@
-tags:: economics
+tags:: cybernomics
 - fundamental economic condition: limited resources confronting unlimited wants
 - drives all allocation decisions, trade-offs, and opportunity costs
 - natural scarcity: finite physical resources (land, minerals, energy)

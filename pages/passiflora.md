@@ -1,5 +1,5 @@
 alias:: markiza, passion fruit
-tags:: genus, collectable
+tags:: genus, cybernomics
 abundance:: yes
 supply:: no
 margin:: medium

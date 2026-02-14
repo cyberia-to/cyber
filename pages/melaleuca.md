@@ -1,4 +1,4 @@
-tags:: genus, collectable
+tags:: genus, cybernomics
 scalable:: true
 wood:: yes
 grow-speed:: 3

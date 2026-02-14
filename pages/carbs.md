@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 alias:: carbohidrate, carbohydrates, carb
 
 - the most important species for [[eat]] carbs

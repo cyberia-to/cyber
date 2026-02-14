@@ -1,4 +1,4 @@
-tags:: collectable
+tags:: cybernomics
 - {{query "cycad"}}
   query-sort-by:: page
   query-table:: true

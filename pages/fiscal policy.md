@@ -1,4 +1,4 @@
-tags:: economics, governance
+tags:: cybernomics, governance
 - government decisions on spending and taxation that shape aggregate demand and resource allocation
 - expansionary fiscal policy: increased spending or tax cuts to stimulate economic activity during downturns
 - contractionary fiscal policy: reduced spending or tax increases to restrain [[inflation]] and overheating

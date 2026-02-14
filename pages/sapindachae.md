@@ -1,4 +1,4 @@
-tags:: family, collectable
+tags:: family, cybernomics
 
 - [[dimocarpus longan]]
 - [[nephelium lappaceum]]

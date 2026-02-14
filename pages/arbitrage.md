@@ -1,4 +1,4 @@
-tags:: economics
+tags:: cybernomics
 - simultaneous purchase and sale of an asset across different markets to profit from price differences
 - core mechanism driving market efficiency: arbitrageurs close price gaps, aligning values across venues
 - risk-free arbitrage: guaranteed profit from mispricing, theoretically eliminated instantly in efficient markets

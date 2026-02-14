@@ -146,8 +146,7 @@ tags:: cyber, article
 		  | physics | `physics` | 50 | 150 | 100 |
 		  | mathematics | `mathematics` | 18 | 150 | 132 |
 		  | computer science | `computer science`, `cryptography` | 22 | 150 | 128 |
-		  | economics | `economics`, `cybernomics`, `market`, `collectable` | 80 | 150 | 70 |
-		  | tokens & currencies | `ticker` | 18 | 100 | 82 |
+		  | [[cybernomics]] | `cybernomics` | 98 | 250 | 152 |
 		  | states & governance | `governance` | 30 | 350 | 320 |
 		  | people | `person` | 34 | 500 | 466 |
 		  | geography & earth | `geography`, `biome` | 30 | 300 | 270 |

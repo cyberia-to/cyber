@@ -1,1 +1,1 @@
-tags:: ticker
+tags:: cybernomics

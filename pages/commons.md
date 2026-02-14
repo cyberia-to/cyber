@@ -1,4 +1,4 @@
-tags:: economics, governance
+tags:: cybernomics, governance
 - shared resources accessible to a community, governed by collective rules rather than private ownership or state control
 - tragedy of the commons: overuse and depletion when individual incentives diverge from collective interest ([[Garrett Hardin]], 1968)
 - [[Elinor Ostrom]]'s eight principles for successful commons governance: clear boundaries, proportional costs/benefits, collective choice, monitoring, graduated sanctions, conflict resolution, self-determination, nested enterprises

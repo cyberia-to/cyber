@@ -1,4 +1,4 @@
-tags:: genus, collectable
+tags:: genus, cybernomics
 alias:: pir, pear
 wood:: yes
 grow-speed:: 3

@@ -1,2 +1,2 @@
-tags:: ticker, cybernomics
+tags:: cybernomics
 - [[$BOOT]] token denominated to 10^9

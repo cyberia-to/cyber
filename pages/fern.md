@@ -1,4 +1,4 @@
-tags:: collectable
+tags:: cybernomics
 
 - ## [[species]] presented in [[edem]]
 - {{query (and [[fern]] (and) (page-tags [[species]] ))}}

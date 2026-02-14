@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 alias:: segment
 
 - opportunities for better salads

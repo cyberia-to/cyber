@@ -1,4 +1,4 @@
-tags:: market
+tags:: cybernomics
 
 - wood species with highest [[heat]] and [[biochar]] yield per ha
 	- [[kaliandra]]

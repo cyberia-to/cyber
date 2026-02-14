@@ -1,4 +1,4 @@
-tags:: governance, economics
+tags:: governance, cybernomics
 - compulsory transfer of resources from individuals and organizations to the state
 - types
 	- income tax: levy on earnings

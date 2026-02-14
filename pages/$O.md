@@ -1,4 +1,4 @@
-tags:: ticker, cybernomics
+tags:: cybernomics
 alias:: oxygen, cybernomics of O
 - token for rewarding core cybernet verse
 - [[plumb]]

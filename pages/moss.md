@@ -1,1 +1,1 @@
-tags:: collectable
+tags:: cybernomics

@@ -1,4 +1,4 @@
-tags:: collectable
+tags:: cybernomics
 
 - ## [[genus]] presented in [[edem]]
 - {{query (and [[conifer]] (and) (page-tags [[genus]]))}}

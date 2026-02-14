@@ -1,4 +1,4 @@
-tags:: genus, collectable
+tags:: genus, cybernomics
 scalable:: true
 
 - selected for [[edem]]
