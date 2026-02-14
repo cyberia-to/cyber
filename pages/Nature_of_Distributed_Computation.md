@@ -6,7 +6,7 @@ tags:: article, cyber# On the Nature of Distributed Computation
 
 Abstract
 
-We argue that all distributed consensus computation decomposes into exactly three irreducible operations: *aggregation* (combining distributed signals into global state), *proving* (generating cryptographic evidence of computational correctness), and *verification* (checking such evidence). We show that what has historically been called "distributed computation" — the paradigm of replicated general-purpose execution pioneered by Ethereum — is not a fundamental category but a transient fusion of aggregation and verification, necessitated by the absence of practical proof systems at the time of its invention. We trace the evolutionary arc from fused execution through progressive separation to the emerging architecture of accountable aggregation, and demonstrate that this trajectory is driven by an inherent tension between replication and throughput that admits only one resolution. We conclude by characterizing the minimal computational substrate for planetary-scale consensus: specialized aggregation engines united by a universal verification layer, with proving as the bridge between them.
+We argue that all distributed consensus computation decomposes into exactly three irreducible operations: *aggregation* (combining distributed signals into global state), *proving* (generating cryptographic evidence of computational correctness), and *verification* (checking such evidence). We show that what has historically been called "distributed computation" — the paradigm of replicated general-purpose execution pioneered by Ethereum — is a transient fusion of aggregation and verification, necessitated by the absence of practical proof systems at the time of its invention. We trace the evolutionary arc from fused execution through progressive separation to the emerging architecture of accountable aggregation, and demonstrate that this trajectory is driven by an inherent tension between replication and throughput that admits only one resolution. We conclude by characterizing the minimal computational substrate for planetary-scale consensus: specialized aggregation engines united by a universal verification layer, with proving as the bridge between them.
 
 ---
 
@@ -95,7 +95,7 @@ The answer is historical, not architectural. In 2015:
 
 3. General-purpose VMs were the available tool. The WebAssembly specification was incomplete. Domain-specific languages for financial aggregation didn't exist in the blockchain context. The EVM provided a universal substrate because specialized substrates hadn't been invented yet.
 
-The EVM was the right engineering decision given the technological landscape of 2015. It was not, however, the discovery of a fundamental computational paradigm. It was the application of an existing paradigm (replicated state machine) to a problem (trustless multi-party coordination) that would later be decomposed into more specific operations.
+The EVM was the right engineering decision given the technological landscape of 2015. It was the application of an existing paradigm (replicated state machine) to a problem (trustless multi-party coordination) that would later be decomposed into more specific operations.
 
 ---
 
@@ -366,7 +366,7 @@ Specialized aggregation engines — each optimized for its domain's specific agg
 - Social aggregation: governance, voting, coordination (optimized for participation and Sybil resistance)
 - Physical aggregation: sensor fusion, environmental modeling (optimized for volume and noise tolerance)
 
-Universal verification substrate — a single, domain-agnostic layer that checks proofs from any aggregation engine. Lightweight, universally accessible, horizontally scalable. This is the "trust anchor" of the system — not a computer, not a database, but a mathematical judge that confirms or denies the correctness of any claimed aggregation.
+Universal verification substrate — a single, domain-agnostic layer that checks proofs from any aggregation engine. Lightweight, universally accessible, horizontally scalable. This is the "trust anchor" of the system — a mathematical judge that confirms or denies the correctness of any claimed aggregation.
 
 Proving as productive work — the economic engine of the system. Provers convert computational energy into cryptographic evidence, earning rewards for making aggregation verifiable. This is the modern analogue of mining: useful work that secures the network, where the "usefulness" is provable computation rather than hash collision search.
 
@@ -430,7 +430,7 @@ The distributed computing landscape, viewed through mechanism (PoW vs. PoS, EVM 
 
 This separation is driven by a mathematical constraint — the replication-throughput tension — that admits no resolution within the fused model. Replicated execution cannot scale to planetary demand without sacrificing decentralization. Separation, enabled by advances in proof systems (STARKs, SNARKs, folding schemes, recursive composition), allows each operation to scale independently: aggregation by algorithm efficiency and dedicated hardware, proving by market competition among provers, and verification by universal lightweight proof checking.
 
-The trajectory converges toward a stable architecture: specialized aggregation engines for each domain, a universal verification substrate accessible to any device, and proving as the productive bridge between them. In this architecture, the network doesn't compute — it aggregates. It doesn't trust — it verifies. Proving makes both possible.
+The trajectory converges toward a stable architecture: specialized aggregation engines for each domain, a universal verification substrate accessible to any device, and proving as the productive bridge between them. In this architecture, the network aggregates. It verifies. Proving makes both possible.
 
 Computing is aggregation, proving, and verification. It always was. We are only now building the tools to treat them as such.
 
