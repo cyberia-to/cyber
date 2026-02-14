@@ -136,29 +136,29 @@ tags:: cyber, article
 - ## domain coverage
 	- total pages: 2005
 	- ### by knowledge domain
-		- | domain | tags | current | target | gap |
-		  |--------|------|---------|--------|-----|
-		  | itself (protocol) | `cyber`, `cyb`, `bostrom`, `module`, `cip`, `aip`, `param`, `state`, `prism` | 514 | 600 | 86 |
-		  | [[cyberia]] | `cyberia`, `cv.land`, `building`, `operation`, `camp`, `district`, `worker`, `team`, `hero` | 413 | 500 | 87 |
-		  | biology | `species`, `genus`, `fungi`, `family`, `plant`, `animals`, `birds` | 312 | 1000 | 688 |
-		  | [[superhuman]] | `superhuman` | 193 | 500 | 307 |
-		  | chemistry | `compound` | 80 | 350 | 270 |
-		  | physics | `physics` | 48 | 200 | 152 |
-		  | mathematics | `mathematics` | 15 | 150 | 135 |
-		  | computer science | `computer science`, `cryptography` | 18 | 150 | 132 |
-		  | [[cybernomics]] | `cybernomics` | 95 | 250 | 155 |
-		  | states & governance | `governance` | 25 | 350 | 325 |
-		  | people | `person` | 34 | 500 | 466 |
-		  | geography & earth | `geography`, `biome` | 23 | 300 | 277 |
-		  | culture & language | `culture` | 14 | 200 | 186 |
-		  | food & agriculture | `food`, `kitchen/menu`, `recipe` | 29 | 150 | 121 |
-		  | tools & technology | `technology`, `tech` | 38 | 150 | 112 |
-		  | energy | `energy` | 1 | 80 | 79 |
-		  | time & history | `time`, `history` | 15 | 100 | 85 |
-		  | materials & elements | `material` | 1 | 250 | 249 |
-		  | color & emotion | `color` | 7 | 20 | 13 |
-		  | meta (structural) | `article`, `annotation`, `research`, `term` | 109 | 150 | 41 |
-		  | total | | 2005 | 5000-7000 | |
+		- | domain | current | target | gap |
+		  |--------|---------|--------|-----|
+		  | itself (protocol) | 514 | 600 | 86 |
+		  | [[cyberia]] | 413 | 500 | 87 |
+		  | [[biology]] | 312 | 1000 | 688 |
+		  | [[superhuman]] | 193 | 500 | 307 |
+		  | [[meta]] (structural) | 109 | 150 | 41 |
+		  | [[cybernomics]] | 95 | 250 | 155 |
+		  | [[chemistry]] | 80 | 350 | 270 |
+		  | [[physics]] | 48 | 200 | 152 |
+		  | [[tools & technology]] | 38 | 150 | 112 |
+		  | [[people]] | 34 | 500 | 466 |
+		  | [[food & agriculture]] | 29 | 150 | 121 |
+		  | [[states & governance]] | 25 | 350 | 325 |
+		  | [[geography & earth]] | 23 | 300 | 277 |
+		  | [[computer science]] | 18 | 150 | 132 |
+		  | [[mathematics]] | 15 | 150 | 135 |
+		  | [[time & history]] | 15 | 100 | 85 |
+		  | [[culture & language]] | 14 | 200 | 186 |
+		  | [[color & emotion]] | 7 | 20 | 13 |
+		  | [[energy]] | 1 | 80 | 79 |
+		  | [[materials & elements]] | 1 | 250 | 249 |
+		  | total | 2005 | 5000-7000 | |
 	- ### structural problems
 		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded or converted
 		- `energy` and `materials & elements` have only 1 page each — need seeding
