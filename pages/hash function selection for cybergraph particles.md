@@ -1,10 +1,11 @@
-tags:: article
-# ADR-001: Hash Function Selection for Cybergraph Particles
+tags:: cyber, cip, article
+status:: draft
 
-Status: PROPOSED  
-Date: 2026-02-10  
-Author: mastercyb  
-Context: CORE (Collective Objective Reality Engine) — content-addressed knowledge graph at planetary scale
+# hash function selection for cybergraph particles
+
+date: 2026-02-10
+author: mastercyb
+context: [[CORE]] — content-addressed [[knowledge]] graph at planetary scale
 
 ---
 

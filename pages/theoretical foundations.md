@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 - 0\. introduction and scope
 -
   1. primitives and notation

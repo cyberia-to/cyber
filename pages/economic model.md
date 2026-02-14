@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 ## economic model
 
 1. minting for focus computation  

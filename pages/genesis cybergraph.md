@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 # Genesis Cybergraph: Foundational Semantic Core
 ## Purpose
 The genesis cybergraph should embed a minimal yet universal semantic core, enabling the network to self-organize, learn, and scale without replacing early primitives. This core must:

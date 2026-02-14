@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 # active inference x cft: summary and integration plan
 ## executive summary
 - active inference gives a single principle for agents to perceive, learn, and act by minimising variational free energy.

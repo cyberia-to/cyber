@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 - GFlowNet: a proposal engine that *samples edits* (small graph changes) in proportion to how good they look.
 - Focus‑Flow: a physics‑style process that keeps a live attention field \(π\) over the graph (what the network cares about now).
 

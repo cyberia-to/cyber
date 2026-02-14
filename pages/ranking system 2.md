@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 - eigenvector centrality (diffusion)
 - springrank (springs)
 - heat-kernel pagerank (heat flow)

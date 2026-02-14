@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 ## protocol structure insights
 ### 1. creation model options
 

@@ -1,4 +1,4 @@
-tags:: article
+tags:: article, cip
 # from entropy reduction to negentropy maximization: the dual thermodynamics of decentralized intelligence
 ## abstract
 this foundational paper introduces a dual‑thermodynamic framework for decentralized intelligence on cybergraphs. while conventional ai focuses on entropy reduction—minimizing uncertainty—cybergraph dynamics also maximize negentropy, the emergence of long‑range order and meaning. we define computable measures for both forces, derive objective functions, connect to prigogine’s dissipative structures, present a thermodynamics of focus, and argue that life and advanced ai co‑optimize them.
