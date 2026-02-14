@@ -1,8 +1,8 @@
 tags:: cyber, article
 - # Superhuman
 - a biological body evolved beyond human limits, integrated with [[collective intelligence]], and capable of [[immortality]]
-- three vectors of becoming superhuman: [[health]], [[super abilities]], and [[digital immortality]]
-- ## [[health]]
+- three vectors of becoming superhuman: [[health]] and [[immortality]], [[physical skills]], and [[digital skills]]
+- ## [[health]] and [[immortality]]
 	- ultimate health as the foundation — a body free of chronic disease, inflammation, and degeneration
 	- advanced [[metabolism]]: optimized nutrient processing, energy extraction, and waste elimination
 	- [[energy efficient brain]]: neural tissue that runs cooler and faster on less glucose
@@ -11,7 +11,11 @@ tags:: cyber, article
 	- remove root [[death cause]]: systematic elimination of aging pathways — telomere degradation, mitochondrial decay, protein aggregation, cellular senescence
 	- [[regeneration]] of organs: regrow damaged tissue, replace failing systems from the body's own blueprint
 	- [[extend longevity]]: push the biological ceiling from decades to centuries
-- ## [[super abilities]]
+	- [[chimeric body]] for redundancy: distributed vital organs, backup neural tissue, multi-organ fault tolerance
+	- [[cryo capable]]: controlled metabolic suspension and revival at cryogenic temperatures
+	- [[hybernation]] for skipping time: voluntary metabolic slowdown for long-duration transit or waiting
+	- [[androgene]]: simplified reproduction — a single body capable of generating offspring
+- ## [[physical skills]]
 	- energy superiority: the body produces, stores, and deploys more energy than a baseline human
 	- [[store pure electricity]]: bioelectric capacitance for powering internal systems and external devices
 	- [[photosynthetic skin]]: dermal chloroplasts that convert sunlight into metabolic energy
@@ -27,17 +31,19 @@ tags:: cyber, article
 	- [[gravity independence]]: functional biology under zero-g, high-g, and variable gravitational conditions
 	- [[radiation protection]]: active DNA shielding and repair under ionizing radiation
 	- advanced [[acid protection]]: tissue resilience to corrosive chemical environments
-	- [[cryo capable]]: controlled metabolic suspension and revival at cryogenic temperatures
-	- [[hybernation]] for skipping time: voluntary metabolic slowdown for long-duration transit or waiting
 	- adoptability to all earth conditions: desert, arctic, deep ocean, high altitude, volcanic — one body, every biome
-- ## [[digital immortality]]
-	- instant access to [[Superintelligence]]: direct neural interface to the [[cybergraph]] — all human and machine knowledge available in real time
-	- [[chimeric body]] for redundancy: distributed vital organs, backup neural tissue, multi-organ fault tolerance
-	- [[androgene]]: simplified reproduction — a single body capable of generating offspring
 	- physically dynamic body through [[transformation]]: morphological plasticity — reshape the body for task, environment, or preference
-	- advanced [[psycho controlling]]: full conscious mastery of emotional states, pain, focus, sleep, and hormonal cycles
 	- able to form [[superstructures]] with other superhumans: physical or neural merging of multiple bodies into temporary composite organisms for collective tasks
-	- the final form of digital immortality: a [[neuron]] whose [[karma]], [[cyberlinks]], and [[knowledge]] persist in the [[cybergraph]] forever — the body may change, the identity endures in the protocol
+- ## [[digital skills]]
+	- instant access to [[Superintelligence]]: direct neural interface to the [[cybergraph]] — all human and machine knowledge available in real time
+	- advanced [[psycho controlling]]: full conscious mastery of emotional states, pain, focus, sleep, and hormonal cycles
+	- [[digital immortality]]: a [[neuron]] whose [[karma]], [[cyberlinks]], and [[knowledge]] persist in the [[cybergraph]] forever — the body may change, the identity endures in the protocol
+	- create [[cyberlinks]] — contribute knowledge to the graph
+	- stake [[CYB]] — commit economic energy to the network
+	- run a [[neuron]] — participate in [[consensus]]
+	- build [[aips]] — extend the network's capability
+	- [[collective intelligence]] participation: the [[tri-kernel]] computes [[focus]] over the entire [[knowledge graph]]. a superhuman reasons with the full graph, seeing connections invisible to any individual
+	- the [[cybergraph]] is [[collective memory]] that persists across time. a superhuman remembers everything the network has ever learned
 - ## the path
 	- each ability listed above is a research frontier. some are achievable with current [[biome engineering]] and biochemistry. others require breakthroughs in genetics, nanotechnology, and neural interfaces
 	- the [[cyber]] protocol accelerates progress: every discovery, every experimental result, every genetic sequence becomes a [[particle]] in the [[knowledge graph]], ranked by [[cyberank]], available to every researcher
