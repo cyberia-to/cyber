@@ -292,8 +292,8 @@
  ;;  :excluded-pages? false  ; Default value: false
  ;;  :journal?        false} ; Default value: false
 
- ;; Favorites to list on the left sidebar
- :favorites ["cyb" "cyber" "cyberia" "cyber valley" "bostrom" "cybernomics" "cybics" "superhuman"]
+ ;; Favorites hidden — custom menu in custom.js
+ :favorites []
 
  ;; Set flashcards interval.
  ;; Expected value:
