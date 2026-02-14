@@ -1,4 +1,5 @@
 icon:: ⛰
+menu-order:: 4
 alias:: cv, about
 tags:: cv.land, menu
 crystal-type:: entity

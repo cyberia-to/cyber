@@ -1,4 +1,5 @@
 icon:: 🧠
+menu-order:: 6
 tags:: cyber, article, menu
 crystal-type:: entity
 crystal-domain:: cyber

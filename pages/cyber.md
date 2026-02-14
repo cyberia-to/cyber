@@ -1,4 +1,5 @@
 icon:: 🔵
+menu-order:: 2
 alias:: the superintelligence protocol
 tags:: cyber, menu
 crystal-type:: entity

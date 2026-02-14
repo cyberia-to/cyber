@@ -1,4 +1,5 @@
 icon:: 🟢
+menu-order:: 5
 tags:: aos, cyber, menu
 alias:: enhanced blockchain
 crystal-type:: entity

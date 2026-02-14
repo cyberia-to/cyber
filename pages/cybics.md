@@ -1,4 +1,5 @@
 icon:: 🌀
+menu-order:: 7
 tags:: cyber, article, menu
 crystal-type:: pattern
 crystal-domain:: cyber

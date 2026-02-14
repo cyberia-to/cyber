@@ -10,13 +10,7 @@ root_page = "Cyber"      # Page to render as homepage
 # favicon = ""              # Emoji or path to favicon file
 
 [nav]
-menu = [
-  { label = "Cyb", page = "Cyb", icon = "🤖" },
-  { label = "Cyber", page = "Cyber", icon = "🔵" },
-  { label = "Cyberia", page = "Cyberia", icon = "🌌" },
-  { label = "Cyber Valley", page = "Cyber Valley", icon = "🏔️" },
-  { label = "Bostrom", page = "Bostrom", icon = "🧬" },
-]
+menu_tag = "menu"
 
 [nav.sidebar]
 show_namespaces = true

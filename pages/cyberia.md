@@ -1,4 +1,5 @@
 icon:: 🌏
+menu-order:: 3
 tags:: cyberia, menu
 
 - > belong anywhere

@@ -1,4 +1,5 @@
 icon:: 🤖
+menu-order:: 1
 tags:: cyb, menu
 crystal-type:: entity
 crystal-domain:: cyber
