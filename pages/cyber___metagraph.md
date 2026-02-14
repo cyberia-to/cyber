@@ -159,6 +159,15 @@ tags:: cyber, article
 		  | [[energy]] | [[joule]], [[watt]] | 1 | 80 |
 		  | [[materials]] | [[elements]], [[material]] | 1 | 250 |
 		  | total | | 2005 | 5000-7000 |
+	- ### seed wordlists
+		- | wordlist | words | in graph | missing |
+		  |---|---|---|---|
+		  | [[bip-39 wordlist]] | 2048 | 149 | 1899 |
+		  | [[monero wordlist]] | 1626 | 57 | 1569 |
+		  | combined unique | 3249 | 175 | 3074 |
+		- these wordlists are the atoms of crypto identity — nothing works without them
+		- every word is a valid symbol for the graph: common english vocabulary selected for unambiguity
+		- materializing all 3074 missing words as pages would take the graph from 2005 to ~5000
 	- ### structural problems
 		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded or converted
 		- `energy` and `materials & elements` have only 1 page each — need seeding
