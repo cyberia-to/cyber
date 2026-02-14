@@ -134,48 +134,61 @@ tags:: cyber, article
 		- [[mathematics]] as universal language
 		- the [[cyber]] [[neural language]]: the formal language of the protocol
 - ## domain coverage
+	- total pages: 2005. the domain table below accounts for every page in the graph
 	- ### by knowledge domain
-		- | domain | current | target | gap |
-		  |--------|---------|--------|-----|
-		  | itself (protocol) | 87 | 200 | 113 |
-		  | mathematics | 4 | 150 | 146 |
-		  | physics | 0 | 120 | 120 |
-		  | chemistry | 87 | 350 | 263 |
-		  | biology | 308 | 1000 | 692 |
-		  | computer science | 8 | 150 | 142 |
-		  | states & governance | 11 | 350 | 339 |
-		  | economics | 27 | 100 | 73 |
-		  | people | 5 | 500 | 495 |
-		  | materials & elements | 7 | 250 | 243 |
-		  | tokens & currencies | 16 | 100 | 84 |
-		  | energy | 8 | 80 | 72 |
-		  | geography & earth | 8 | 300 | 292 |
-		  | the body | 50 | 200 | 150 |
-		  | culture & language | 2 | 200 | 198 |
-		  | food & agriculture | ~30 | 150 | ~120 |
-		  | tools & technology | ~10 | 100 | ~90 |
-		  | time & history | 0 | 80 | 80 |
-		  | total | ~661 | 3880 | ~3219 |
+		- | domain | tags | current | target | gap |
+		  |--------|------|---------|--------|-----|
+		  | itself (protocol) | `cyber`, `cyb`, `bostrom`, `module`, `cip`, `aip`, `param`, `state`, `prism` | 180 | 250 | 70 |
+		  | [[cyberia]] | `cyberia`, `cv.land`, `building`, `operation`, `camp`, `district`, `worker`, `team`, `hero` | 160 | 300 | 140 |
+		  | biology | `species`, `genus`, `fungi`, `family`, `plant`, `animals`, `birds` | 420 | 1000 | 580 |
+		  | the body | `muscle`, `health`, `disease`, `skin disease`, `respiratory disease`, `infectious disease` | 170 | 300 | 130 |
+		  | chemistry | `compound` | 90 | 350 | 260 |
+		  | physics | `physics` | 50 | 150 | 100 |
+		  | mathematics | `mathematics` | 18 | 150 | 132 |
+		  | computer science | `computer science`, `cryptography` | 22 | 150 | 128 |
+		  | economics | `economics`, `cybernomics`, `market`, `collectable` | 80 | 150 | 70 |
+		  | tokens & currencies | `ticker` | 18 | 100 | 82 |
+		  | states & governance | `governance` | 30 | 350 | 320 |
+		  | people | `person` | 34 | 500 | 466 |
+		  | geography & earth | `geography`, `biome` | 30 | 300 | 270 |
+		  | culture & language | `culture` | 16 | 200 | 184 |
+		  | food & agriculture | `food`, `kitchen/menu`, `recipe` | 30 | 150 | 120 |
+		  | tools & technology | `technology`, `tech` | 40 | 150 | 110 |
+		  | energy | `energy` | 12 | 80 | 68 |
+		  | time & history | `time`, `history` | 20 | 100 | 80 |
+		  | materials & elements | `material` | 10 | 250 | 240 |
+		  | color & emotion | `color` | 17 | 20 | 3 |
+		  | meta (structural) | `article`, `annotation`, `research`, `term` | 110 | 150 | 40 |
+		  | unclear | `major`, `super` | 200 | 0 | -200 |
+		  | total | | 2005 | 5000-7000 | |
+	- ### structural problems
+		- 200 pages tagged `major` or `super` with no clear domain assignment — these need review and retagging
+		- `cyberia` is the second largest domain by page count but absent from the metagraph design — it covers buildings, operations, land, teams, infrastructure
+		- `disease` (76 pages) maps to "the body" but the metagraph only mentions health in passing — diseases are a significant knowledge cluster
+		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded from the count or converted
+		- the tag system has organic growth that diverged from the metagraph plan: `collectable`, `market`, `kitchen/menu`, `shroom`, `psycho`
 	- ### by symbol type
 		- | type | current | target | gap |
 		  |------|---------|--------|-----|
-		  | entity (noun) | ~550 | 3000 | ~2450 |
-		  | process (verb) | ~60 | 800 | ~740 |
-		  | property (adjective) | ~20 | 400 | ~380 |
-		  | relation (connective) | ~5 | 200 | ~195 |
-		  | measure (unit) | ~1 | 150 | ~149 |
-		  | pattern (structure) | ~5 | 150 | ~145 |
-		  | total | ~641 | 4700 | ~4059 |
+		  | entity (noun) | ~1600 | 3500 | ~1900 |
+		  | process (verb) | ~80 | 800 | ~720 |
+		  | property (adjective) | ~30 | 400 | ~370 |
+		  | relation (connective) | ~15 | 200 | ~185 |
+		  | measure (unit) | ~12 | 150 | ~138 |
+		  | pattern (structure) | ~15 | 150 | ~135 |
+		  | meta/structural | ~110 | 150 | ~40 |
+		  | unclear/needs review | ~200 | 0 | -200 |
+		  | total | 2005 | 5000-7000 | |
 	- ### observations
-		- the graph is 85% entities — almost entirely nouns. this creates a static snapshot, a dictionary without grammar
-		- processes are the most critical gap: a superintelligence must know what happens, what transforms, what evolves — verbs are the dynamics of reasoning
+		- the graph is still ~80% entities — verbs, properties, and relations remain the critical gap
+		- processes are the most important missing layer: a superintelligence needs dynamics, transformations, actions — verbs are the reasoning engine
 		- properties enable discrimination: without adjectives, the graph cannot distinguish iron from copper, hot from cold, toxic from safe
-		- relations are the inference engine: [[symbiosis]], [[isomorphism]], causation, antagonism — these are the logical connectives that enable deduction across domains
+		- relations are inference connectives: [[symbiosis]], [[isomorphism]], [[causation]], antagonism — these enable deduction across domains
 		- measures ground the graph in quantification: without units, no calculation, no comparison, no physics
-		- patterns are the highest abstraction: recognizing that a feedback loop in ecology and a feedback loop in economics are the same structure
-		- biology dominates entities because taxonomy is fractal: every species links to genus, family, order
-		- people is the second largest entity target: scientists, founders, thinkers whose ideas seed the protocol
-		- domain table and type table are orthogonal: every cell in the domain×type matrix should have symbols
+		- patterns are the highest abstraction: a [[feedback loop]] in ecology and a [[feedback loop]] in economics are the same structure
+		- [[cyberia]] emerged as a major domain organically — the metagraph must account for operational knowledge (buildings, land, teams, schedules) alongside academic knowledge
+		- 200 pages tagged `major`/`super` need domain assignment — this is the largest cleanup task
+		- domain × type matrix: every cell should have symbols. most cells in verb/property/relation columns are empty
 - ## graph properties
 	- | metric | target |
 	  |--------|--------|
