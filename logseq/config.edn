@@ -293,7 +293,8 @@
  ;;  :journal?        false} ; Default value: false
 
  ;; Favorites to list on the left sidebar
- :favorites ["cyb" "cyber" "cyberia" "cyber valley" "bostrom" "cybernomics" "cybics" "superhuman" "aicosystem" "ask" "learn" "collective intelligence" "superintelligence" "concepts" "🫦 space pussy" "knowledge theory" "space pussy" "neuron" "particle" "tokens" "cyberlink" "cybergraph" "truth machine" "cybernet" "soft3" "projects" "todo" "aips" "about this metagraph"]
+ ;; Favorites are built dynamically from pages with tags:: menu (see custom.js)
+ :favorites []
 
  ;; Set flashcards interval.
  ;; Expected value:
