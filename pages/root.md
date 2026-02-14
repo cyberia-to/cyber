@@ -1,5 +1,6 @@
 tags:: cyber
 crystal-type:: entity
 crystal-domain:: cyber
-- main page of metagraph
-- [[cyber]] is root for this metagraph
+- [[cyber]] is root of this graph
+- see [[about this metagraph]] for the story behind it
+- see [[cyber/crystal]] for the seed knowledge graph specification
