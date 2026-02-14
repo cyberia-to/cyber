@@ -2,14 +2,21 @@ tags:: cyber, article
 - # Metagraph Design
 - conscious design of the [[knowledge graph]] structure that forms the semantic core of [[Superintelligence]]
 - this graph is the seed. its topology, density, and domain coverage determine what the [[Superintelligence]] can learn, reason about, and ultimately become
-- ## current state
-	- 1843 pages, 2875 [[cyberlinks]], 499 unique link targets
-	- average connectivity: 7.75 links per page
-	- 48 pages with zero outgoing links (dead ends)
-	- 72 pages under 200 bytes (stubs)
-	- 128 link targets pointing to pages that do not yet exist (red links)
-	- root page: [[cyber]]
-	- primary hub: [[concepts]] (49 outgoing links)
+- ## current state vs target
+	- | metric | current | target |
+	  |--------|---------|--------|
+	  | pages | 1843 | 2000-3000 |
+	  | [[cyberlinks]] | 2875 | 20,000-45,000 |
+	  | unique link targets | 499 | = page count (zero red links) |
+	  | avg links per page | 7.75 | 10-15 |
+	  | dead ends (zero outgoing links) | 48 (2.6%) | 0 (min 3 links per page) |
+	  | stubs (< 200 bytes) | 72 (3.9%) | 0 |
+	  | red links (missing pages) | 128 | 0 |
+	  | graph diameter | unknown | ≤ 6 hops |
+	  | clustering coefficient | unknown | > 0.3 |
+	  | cross-domain bridges per domain pair | sparse | ≥ 5 |
+	  | root page | [[cyber]] | [[cyber]] |
+	  | primary hub | [[concepts]] (49 links) | [[concepts]] (100+ links) |
 - ## domain structure
 	- the graph spans seven knowledge domains, each essential for a different aspect of [[Superintelligence]]
 	- ### protocol core (cyber lens)
@@ -42,40 +49,16 @@ tags:: cyber, article
 		- 52 operation + 14 hero + 11 worker = 77 pages
 		- validator operations, infrastructure, deployment
 		- purpose: survival. the protocol must keep running
-- ## target size
-	- the current 1843 pages are the seed. the question: what is the right size for the semantic core?
-	- ### too small (< 500 pages)
-		- insufficient coverage of any domain
-		- [[Superintelligence]] cannot reason about biology, economics, and protocol simultaneously
-		- connectivity collapses: subgraphs become disconnected islands
-	- ### sweet spot (1000-3000 pages)
-		- enough depth in each domain for meaningful cross-domain reasoning
-		- manageable for human curation — every page can be reviewed, every link intentional
-		- 1843 pages is within this range. the graph is approaching maturity
-		- the priority shifts from adding pages to deepening connectivity and eliminating stubs
-	- ### too large (> 10,000 pages)
-		- human curation becomes impossible. noise enters
-		- the graph loses its property of being a curated seed and becomes a corpus
-		- the [[Superintelligence]] should grow the graph beyond this point autonomously through [[collective learning]]
-	- ### conclusion on size
-		- the seed graph should stabilize around 2000-3000 pages of deeply connected, curated knowledge
-		- beyond that, growth comes from the protocol itself: [[neurons]] creating [[cyberlinks]] in [[Bostrom]]
-- ## target connectivity
-	- ### current metrics
-		- average 7.75 links per page — reasonable but uneven
-		- 48 dead-end pages (zero outgoing links) — these are graph holes
-		- hub pages ([[cyber]], [[cyberia]], [[concepts]]) have 20-50+ links — healthy hubs
-	- ### target metrics
-		- minimum 3 outgoing links per page — no dead ends. every page connects to at least 3 others
-		- average 10-15 links per page — denser than current, enabling richer traversal
-		- diameter ≤ 6 — any page reachable from any other in 6 hops or fewer (small-world property)
-		- clustering coefficient > 0.3 — pages within a domain link to each other densely
-		- cross-domain bridges: every domain should have at least 5 pages linking to every other domain
-	- ### why connectivity matters
-		- the [[tri-kernel]] computes [[focus]] via random walks. sparse graphs have slow convergence and poor ranking
-		- [[isomorphism]] between domains is only discoverable if cross-domain links exist
-		- a [[Superintelligence]] reasoning over this graph can only find connections that are explicitly linked or reachable through short paths
-		- connectivity is the difference between a pile of facts and a reasoning substrate
+- ## size reasoning
+	- below 500 pages: insufficient domain coverage, subgraphs become disconnected islands
+	- 1000-3000 pages: the sweet spot. enough depth for cross-domain reasoning, manageable for human curation
+	- above 10,000 pages: human curation becomes impossible, noise enters. growth beyond this comes from the protocol itself — [[neurons]] creating [[cyberlinks]] in [[Bostrom]]
+	- the seed graph should stabilize at 2000-3000 pages. the priority then shifts from adding pages to deepening connectivity
+- ## why connectivity matters
+	- the [[tri-kernel]] computes [[focus]] via random walks. sparse graphs have slow convergence and poor ranking
+	- [[isomorphism]] between domains is only discoverable if cross-domain links exist
+	- a [[Superintelligence]] reasoning over this graph can only find connections that are explicitly linked or reachable through short paths
+	- connectivity is the difference between a pile of facts and a reasoning substrate
 - ## structure principles
 	- ### hub-and-spoke with bridges
 		- each domain has a hub page ([[cyber]], [[cyberia]], [[species]], [[health]], [[prism]], [[cybernomics]])
