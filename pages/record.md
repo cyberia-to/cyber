@@ -1,7 +1,7 @@
 icon:: 🔒
 tags:: cybernomics
 - private value instance within the [[cybergraph]]
-- not a primitive — records are a pattern built on [[cyberlinks]] and [[tokens]]
+- a pattern built on [[cyberlinks]] and [[tokens]]
 - a record binds a value to a [[particle]] and an owner ([[neuron]]), hidden behind a commitment
 - commitment: `H_commit(particle ‖ value ‖ owner ‖ nonce ‖ ρ)` where ρ is hiding randomness
 - spending a record requires a ZK proof of ownership without revealing which record was spent

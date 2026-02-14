@@ -4,7 +4,7 @@ alias:: cyber rank, particles weight, particles weights, cyberanks
 - per-[[particle]] score computed by the [[tri-kernel]]
 - the fixed point φ* of the composite operator: [[diffusion]] + [[springs]] + [[heat kernel]]
 - `φ* = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)]`
-- not just a random walk — it integrates exploration (diffusion), structural consistency (springs), and adaptive context (heat)
+- integrates exploration (diffusion), structural consistency (springs), and adaptive context (heat)
 - probability of [[particle]] observation by [[random walking]] [[neuron]], weighted on [[attention]] and [[will]]
 - fundamental factor of [[implicit knowledge]]
 - evolution from [[pagerank]]

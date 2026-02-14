@@ -1,10 +1,9 @@
 icon:: 🎯
 alias:: attention distribution, π
 tags:: cyber
-
 - emergent attention distribution over the [[cybergraph]]
 - stationary vector of the [[token]]-weighted random walk
-- not assigned — computed. not voted — converged
+- assigned by computation. converged from collective dynamics
 - computed by the [[tri-kernel]]: three local operators that are the only ones surviving the locality constraint
 	- [[diffusion]]: where probability flows. exploration
 	- [[springs]]: what satisfies structural constraints. hierarchy
