@@ -134,36 +134,35 @@ tags:: cyber, article
 		- [[mathematics]] as universal language
 		- the [[cyber]] [[neural language]]: the formal language of the protocol
 - ## domain coverage
-	- total pages: ~2005. the domain table below accounts for every page in the graph
+	- total pages: 2005
 	- ### by knowledge domain
 		- | domain | tags | current | target | gap |
 		  |--------|------|---------|--------|-----|
-		  | itself (protocol) | `cyber`, `cyb`, `bostrom`, `module`, `cip`, `aip`, `param`, `state`, `prism` | 180 | 250 | 70 |
-		  | [[cyberia]] | `cyberia`, `cv.land`, `building`, `operation`, `camp`, `district`, `worker`, `team`, `hero` | 160 | 300 | 140 |
-		  | biology | `species`, `genus`, `fungi`, `family`, `plant`, `animals`, `birds` | 420 | 1000 | 580 |
-		  | [[superhuman]] | `superhuman` | 170 | 300 | 130 |
-		  | chemistry | `compound` | 90 | 350 | 260 |
-		  | physics | `physics` | 50 | 150 | 100 |
-		  | mathematics | `mathematics` | 18 | 150 | 132 |
-		  | computer science | `computer science`, `cryptography` | 22 | 150 | 128 |
-		  | [[cybernomics]] | `cybernomics` | 98 | 250 | 152 |
-		  | states & governance | `governance` | 30 | 350 | 320 |
+		  | itself (protocol) | `cyber`, `cyb`, `bostrom`, `module`, `cip`, `aip`, `param`, `state`, `prism` | 514 | 600 | 86 |
+		  | [[cyberia]] | `cyberia`, `cv.land`, `building`, `operation`, `camp`, `district`, `worker`, `team`, `hero` | 413 | 500 | 87 |
+		  | biology | `species`, `genus`, `fungi`, `family`, `plant`, `animals`, `birds` | 312 | 1000 | 688 |
+		  | [[superhuman]] | `superhuman` | 193 | 500 | 307 |
+		  | chemistry | `compound` | 80 | 350 | 270 |
+		  | physics | `physics` | 48 | 200 | 152 |
+		  | mathematics | `mathematics` | 15 | 150 | 135 |
+		  | computer science | `computer science`, `cryptography` | 18 | 150 | 132 |
+		  | [[cybernomics]] | `cybernomics` | 95 | 250 | 155 |
+		  | states & governance | `governance` | 25 | 350 | 325 |
 		  | people | `person` | 34 | 500 | 466 |
-		  | geography & earth | `geography`, `biome` | 30 | 300 | 270 |
-		  | culture & language | `culture` | 16 | 200 | 184 |
-		  | food & agriculture | `food`, `kitchen/menu`, `recipe` | 30 | 150 | 120 |
-		  | tools & technology | `technology`, `tech` | 40 | 150 | 110 |
-		  | energy | `energy` | 12 | 80 | 68 |
-		  | time & history | `time`, `history` | 20 | 100 | 80 |
-		  | materials & elements | `material` | 10 | 250 | 240 |
-		  | color & emotion | `color` | 17 | 20 | 3 |
-		  | meta (structural) | `article`, `annotation`, `research`, `term` | 110 | 150 | 40 |
-		  | total | | ~2005 | 5000-7000 | |
+		  | geography & earth | `geography`, `biome` | 23 | 300 | 277 |
+		  | culture & language | `culture` | 14 | 200 | 186 |
+		  | food & agriculture | `food`, `kitchen/menu`, `recipe` | 29 | 150 | 121 |
+		  | tools & technology | `technology`, `tech` | 38 | 150 | 112 |
+		  | energy | `energy` | 1 | 80 | 79 |
+		  | time & history | `time`, `history` | 15 | 100 | 85 |
+		  | materials & elements | `material` | 1 | 250 | 249 |
+		  | color & emotion | `color` | 7 | 20 | 13 |
+		  | meta (structural) | `article`, `annotation`, `research`, `term` | 109 | 150 | 41 |
+		  | total | | 2005 | 5000-7000 | |
 	- ### structural problems
-		- `cyberia` is the second largest domain by page count but absent from the metagraph design — it covers buildings, operations, land, teams, infrastructure
-		- `disease` (76 pages) maps to "the body" but the metagraph only mentions health in passing — diseases are a significant knowledge cluster
-		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded from the count or converted
-		- the tag system has organic growth that diverged from the metagraph plan: `collectable`, `market`, `kitchen/menu`, `shroom`, `psycho`
+		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded or converted
+		- `energy` and `materials & elements` have only 1 page each — need seeding
+		- some organic tags remain outside the domain system: `kitchen/menu`, `shroom`, `psycho`
 	- ### by symbol type
 		- | type | current | target | gap |
 		  |------|---------|--------|-----|
