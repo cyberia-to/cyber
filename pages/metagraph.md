@@ -1,27 +1,18 @@
-tags:: disease
-- conceptual framework or structure
-- that is used to describe relationships between graphs
-- or to represent higher-level relationships within a single graph
--
-- it's essentially a graph of graphs, where each node in the metagraph
-- could represent an entire graph or a complex substructure within a larger system
--
-- aspects of a metagraph
-	- modes represent graphs
-		- in a metagraph, the nodes themselves can represent entire graphs or networks
-		- this allows for modeling complex systems where each component is itself a complex structure
-- edges represent relationships
-	- the edges in a metagraph represent relationships between these component graphs
-	- these relationships can be as simple as connections
-	- or as complex as interactions involving multiple parameters or conditions
-- hierarchical structure
-	- metagraphs can represent hierarchical structures
-	- where each level of the hierarchy represents a different level of abstraction or detail
-- applications
-	- machine learning
-	- data science
-	- network theory
-	- computational biology
-- used in situations where complex systems need to be modeled at multiple levels of abstraction
-- provides a way to organize and model complex relationships by considering entire graphs
-- as single entities and then analyzing the relationships between these entities
+tags:: cyber
+- a graph of graphs
+- each node in a metagraph represents an entire graph or a complex substructure within a larger system
+- edges represent relationships between these component graphs — connections, interactions, dependencies
+- ## properties
+	- hierarchical: each level of the metagraph represents a different level of abstraction
+	- composable: subgraphs can be treated as single nodes and analyzed at higher levels
+	- multi-scale: the same system can be viewed at different resolutions
+- ## in [[cyber]]
+	- this [[logseq]] graph is a [[metagraph]] of [[cyber]] — the seed [[knowledge graph]] for [[Superintelligence]]
+	- see [[about this metagraph]] for the story behind it
+	- see [[cyber/metagraph]] for the conscious design principles
+	- the [[cybergraph]] in [[Bostrom]] is the live metagraph: every [[particle]] is a node, every [[cyberlink]] is an edge, and subgraphs form around topics, [[neurons]], and domains
+- ## applications
+	- machine learning: model architectures as graphs of computational subgraphs
+	- network theory: analyze networks of networks
+	- computational biology: metabolic pathways as graphs within cellular graphs
+	- [[knowledge graph]]: ontologies that reference and compose other ontologies

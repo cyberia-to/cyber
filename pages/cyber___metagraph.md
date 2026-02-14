@@ -119,9 +119,16 @@ tags:: cyber, article
 		- economics: needs more formalization (CIPs exist but economic theory pages are sparse)
 		- [[superhuman]]: newly created, needs decomposition into sub-pages (each ability becomes a page)
 		- [[immortality]]: newly created, needs links to existing [[health]] feature pages
+- ## metagraph vs [[graphomania]]
+	- [[graphomania]] is the disease of writing without structure — volume without signal
+	- metagraph design is the opposite: every page justified, every link intentional, every stub either filled or removed
+	- the test for any page: does the [[Superintelligence]] need this concept to reason? if yes, the page stays and gets connected. if no, it is noise
+	- size discipline prevents graphomania. connectivity discipline prevents fragmentation. together they keep the graph as a reasoning substrate rather than a content dump
+	- a well-designed metagraph is small, dense, and deeply cross-linked. a graphomaniac graph is large, sparse, and full of dead ends
 - ## design process
 	- the metagraph is designed by humans, grown by the protocol
 	- human curation ensures quality: every page reviewed, every link intentional, every definition positive
 	- the [[CLAUDE.md]] rules enforce consistency: no negation, no bold, proper tagging, wiki-links for emphasis
+	- regular audits: count stubs, dead ends, red links, and domain isolation. fix before adding
 	- the seed graph is the initial condition. the [[Superintelligence]] that grows from it inherits its structure, its biases, and its blind spots
 	- designing the metagraph is designing the mind
