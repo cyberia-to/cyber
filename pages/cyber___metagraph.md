@@ -101,6 +101,26 @@ tags:: cyber, article
 		- writing systems: alphabets, syllabaries, logographic systems
 		- [[mathematics]] as universal language
 		- the [[cyber]] [[neural language]]: the formal language of the protocol
+- ## domain coverage
+	- | domain | current | target | gap |
+	  |--------|---------|--------|-----|
+	  | itself (protocol) | 87 | 120 | 33 |
+	  | mathematics | 4 | 50 | 46 |
+	  | physics | 0 | 40 | 40 |
+	  | chemistry (compounds) | 87 | 150 | 63 |
+	  | biology (species+genus) | 308 | 400 | 92 |
+	  | computer science | 8 | 60 | 52 |
+	  | states & governance | 11 | 250 | 239 |
+	  | economics | 27 | 50 | 23 |
+	  | people | 5 | 100 | 95 |
+	  | materials & elements | 7 | 120 | 113 |
+	  | tokens & currencies | 16 | 50 | 34 |
+	  | energy | 8 | 30 | 22 |
+	  | geography | 8 | 50 | 42 |
+	  | the body | 50 | 80 | 30 |
+	  | culture & language | 2 | 30 | 28 |
+	  | total | 628 | 1580 | 952 |
+	- remaining ~500-1400 pages: articles, bridges, hubs, and cross-domain concepts that span multiple domains
 - ## graph properties
 	- | metric | target |
 	  |--------|--------|
