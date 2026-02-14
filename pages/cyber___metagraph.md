@@ -62,10 +62,10 @@ tags:: cyber, article
 		- [[jurisdictions]]: where [[cyberia]] operates and what legal structures apply
 	- ### economics
 		- [[microeconomics]]: supply, demand, markets, price discovery, incentives
-		- [[macroeconomics]]: GDP, inflation, monetary policy, fiscal policy, trade
+		- [[macroeconomics]] through [[cybernomics]] lens: energy throughput, knowledge accumulation rate, [[syntropy]] production — measurable outputs, not legacy abstractions
 		- [[game theory]]: auctions, mechanism design, public goods, commons
 		- [[token economics]]: bonding curves, staking, liquidity, governance tokens
-		- [[cybernomics]]: the specific economic model of [[cyber]]
+		- [[cybernomics]]: the native economic theory — [[focus]] as attention currency, [[karma]] as contribution measure, [[bandwidth]] as resource, [[learning incentives]] as growth engine
 	- ### people
 		- founders and key thinkers: [[nick bostrom]], [[Satoshi Nakamoto]], [[Vitalik Buterin]], [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]]
 		- scientists whose work the protocol builds on: [[Einstein]], [[Darwin]], [[Gödel]], [[Feynman]], [[Friston]]
