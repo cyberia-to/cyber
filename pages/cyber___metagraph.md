@@ -136,41 +136,29 @@ tags:: cyber, article
 - ## domain coverage
 	- total pages: 2005
 	- ### by knowledge domain
-		- | domain | now | target |
-		  |--------|-----|--------|
-		  | [[cyber]] (protocol) | 514 | 600 |
-		  | [[cyberia]] | 413 | 500 |
-		  | [[biology]] | 312 | 1000 |
-		  | [[superhuman]] | 193 | 500 |
-		  | [[meta]] | 109 | 150 |
-		  | [[cybernomics]] | 95 | 250 |
-		  | [[chemistry]] | 80 | 350 |
-		  | [[physics]] | 48 | 200 |
-		  | [[tools]] & [[technology]] | 38 | 150 |
-		  | [[people]] | 34 | 500 |
-		  | [[food]] & [[agriculture]] | 29 | 150 |
-		  | [[states]] & [[governance]] | 25 | 350 |
-		  | [[geography]] & [[earth]] | 23 | 300 |
-		  | [[computer science]] | 18 | 150 |
-		  | [[mathematics]] | 15 | 150 |
-		  | [[time]] & [[history]] | 15 | 100 |
-		  | [[culture]] & [[language]] | 14 | 200 |
-		  | [[color]] & [[emotion]] | 7 | 20 |
-		  | [[energy]] | 1 | 80 |
-		  | [[materials]] & [[elements]] | 1 | 250 |
-		  | total | 2005 | 5000-7000 |
-	- ### tag mapping
-		- [[cyber]], [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[param]], [[state]], [[prism]] → protocol
-		- [[cyberia]], [[cv.land]], [[building]], [[operation]], [[camp]], [[district]], [[worker]], [[team]], [[hero]] → cyberia
-		- [[species]], [[genus]], [[fungi]], [[family]], [[plant]], [[animals]], [[birds]] → biology
-		- [[compound]] → chemistry
-		- [[computer science]], [[cryptography]] → computer science
-		- [[food]], [[kitchen/menu]], [[recipe]] → food & agriculture
-		- [[geography]], [[biome]] → geography & earth
-		- [[technology]], [[tech]] → tools & technology
-		- [[article]], [[annotation]], [[research]], [[term]] → meta
-		- [[time]], [[history]] → time & history
-		- [[material]] → materials & elements
+		- | domain | tags | now | target |
+		  |---|---|---|---|
+		  | [[cyber]] | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prism]] | 514 | 600 |
+		  | [[cyberia]] | [[cv.land]], [[building]], [[operation]], [[camp]], [[district]] | 413 | 500 |
+		  | [[biology]] | [[species]], [[genus]], [[fungi]], [[family]], [[plant]] | 312 | 1000 |
+		  | [[superhuman]] | [[muscle]], [[disease]], [[longevity]] | 193 | 500 |
+		  | [[meta]] | [[article]], [[annotation]], [[research]], [[term]] | 109 | 150 |
+		  | [[cybernomics]] | [[token]], [[value]], [[delegation]] | 95 | 250 |
+		  | [[chemistry]] | [[compound]] | 80 | 350 |
+		  | [[physics]] | [[force]], [[wave]], [[field]], [[entropy]] | 48 | 200 |
+		  | [[tools]] | [[technology]], [[tech]] | 38 | 150 |
+		  | [[people]] | [[person]] | 34 | 500 |
+		  | [[food]] | [[recipe]], [[kitchen/menu]], [[agriculture]] | 29 | 150 |
+		  | [[governance]] | [[states]], [[sovereignty]], [[law]] | 25 | 350 |
+		  | [[geography]] | [[earth]], [[biome]], [[continent]] | 23 | 300 |
+		  | [[computer science]] | [[cryptography]], [[algorithms]] | 18 | 150 |
+		  | [[mathematics]] | [[algebra]], [[geometry]], [[topology]] | 15 | 150 |
+		  | [[history]] | [[time]], [[epoch]], [[revolution]] | 15 | 100 |
+		  | [[culture]] | [[language]], [[philosophy]], [[music]] | 14 | 200 |
+		  | [[color]] | [[emotion]], [[spectrum]] | 7 | 20 |
+		  | [[energy]] | [[joule]], [[watt]] | 1 | 80 |
+		  | [[materials]] | [[elements]], [[material]] | 1 | 250 |
+		  | total | | 2005 | 5000-7000 |
 	- ### structural problems
 		- 21 `annotation` pages are logseq PDF highlights — not curated symbols, should be excluded or converted
 		- `energy` and `materials & elements` have only 1 page each — need seeding
