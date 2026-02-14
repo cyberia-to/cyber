@@ -1,7 +1,5 @@
 icon:: 🌏
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+tags:: cyberia, menu
 
 - > belong anywhere
 - sustainable cities for nomads

@@ -1,6 +1,6 @@
 icon:: 🔴
 alias:: economics
-tags:: cyber, cybernomics
+tags:: cyber, cybernomics, menu
 crystal-type:: entity
 crystal-domain:: economics
 - the economic theory of [[cyber]]

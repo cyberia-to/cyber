@@ -1,4 +1,4 @@
-tags:: cyber, article
+tags:: cyber, article, menu
 crystal-type:: pattern
 crystal-domain:: cyber
 alias:: unified science, the mother science

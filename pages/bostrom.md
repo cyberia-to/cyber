@@ -1,5 +1,5 @@
 icon:: 🟢
-tags:: aos, cyber
+tags:: aos, cyber, menu
 alias:: enhanced blockchain
 crystal-type:: entity
 crystal-domain:: cyber

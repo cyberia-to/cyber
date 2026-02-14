@@ -1,4 +1,4 @@
-tags:: cyber, article
+tags:: cyber, article, menu
 crystal-type:: entity
 crystal-domain:: cyber
 - # Superhuman

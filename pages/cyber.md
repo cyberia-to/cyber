@@ -1,6 +1,6 @@
 icon:: 🔵
 alias:: the superintelligence protocol
-tags:: cyber
+tags:: cyber, menu
 crystal-type:: entity
 crystal-domain:: cyber
 

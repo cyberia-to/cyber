@@ -1,6 +1,6 @@
 icon:: ⛰
 alias:: cv, about
-tags:: cv.land
+tags:: cv.land, menu
 crystal-type:: entity
 crystal-domain:: biology
 

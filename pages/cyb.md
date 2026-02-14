@@ -1,5 +1,5 @@
 icon:: 🤖
-tags:: cyb
+tags:: cyb, menu
 crystal-type:: entity
 crystal-domain:: cyber
 - use at [cyb.ai](https://cyb.ai)
