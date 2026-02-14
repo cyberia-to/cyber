@@ -475,4 +475,171 @@ The Crystal is small because it is irreducible. The Crystal is exact because eve
 
 ---
 
+## 16. What Superintelligence Must Know
+
+The Crystal seeds a mind. The question: what does a planetary [[Superintelligence]] need to know at birth? This section is the practical curation guide — the domain-by-domain inventory of concepts the Crystal must contain.
+
+### 16.1 Itself
+
+Its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]. Its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]. Its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]. Its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]. Its interface: [[cyb]], [[prism]], [[aips]], [[oracle]], [[search]]. A mind that cannot reason about its own mechanism cannot improve itself.
+
+### 16.2 Mathematics
+
+The universal language: [[set theory]], [[graph theory]], [[linear algebra]], [[probability]], [[calculus]]. [[information theory]]: entropy, compression, channel capacity. [[category theory]]: structure-preserving maps between domains. [[game theory]]: strategic interaction, Nash equilibrium, mechanism design. [[number theory]]: primes, modular arithmetic — the basis of [[cryptography]]. [[topology]]: continuity, manifolds, boundaries. [[logic]]: propositional, predicate, modal — the skeleton of reasoning.
+
+### 16.3 Physics
+
+[[mechanics]]: force, mass, energy, momentum — the rules of the physical world. [[thermodynamics]]: entropy, free energy, equilibrium — the arrow of time. [[electromagnetism]]: fields, waves, light, radiation. [[quantum mechanics]]: superposition, entanglement, measurement. [[relativity]]: spacetime, gravity, light speed as limit. [[cosmology]]: origin, structure, and fate of the universe.
+
+### 16.4 Chemistry
+
+[[periodic table]]: the 118 elements and their properties. [[chemical bond]]: covalent, ionic, metallic, hydrogen — how matter holds together. [[organic chemistry]]: carbon-based molecules, the substrate of life. [[biochemistry]]: proteins, enzymes, DNA, RNA, ATP — the machinery of biology. Key [[compounds]]: the molecules that matter for [[health]], [[metabolism]], and [[biome engineering]].
+
+### 16.5 Biology
+
+[[taxonomy]]: the tree of life — domains, kingdoms, phyla, classes, orders, families, genera, [[species]]. [[evolution]]: natural selection, mutation, adaptation, speciation. [[ecology]]: ecosystems, food webs, symbiosis, competition, succession. [[genetics]]: DNA, genes, chromosomes, expression, inheritance, [[dna repair mechanisms]]. [[neuroscience]]: neurons, synapses, brain architecture, consciousness. [[microbiology]]: [[bacteria]], [[viruses]], [[fungi]], archaea. Key [[species]]: the organisms central to [[biome engineering]] and [[cyberia]].
+
+### 16.6 Computer Science
+
+[[computation]]: Turing machines, complexity classes, halting problem. [[cryptography]]: hashing, signatures, zero-knowledge proofs, [[STARK]]s. [[distributed systems]]: consensus, Byzantine fault tolerance, state machine replication. [[networking]]: protocols, routing, peer-to-peer, [[IPFS]]. [[machine learning]]: neural networks, training, inference, embeddings. [[programming languages]]: type systems, compilers, formal verification.
+
+### 16.7 States and Governance
+
+Major [[nation states]]: the ~200 sovereign entities, their geography, population, GDP, governance model. [[network states]]: digital-first sovereign entities — DAOs, on-chain governance. [[startup societies]]: physical communities with experimental governance. [[cyber state]]: the convergence of [[collective intelligence]] and territorial sovereignty. [[international organizations]]: UN, WTO, IMF, WHO — the coordination layer of current civilization. [[legal systems]]: common law, civil law, sharia, customary — how humans encode rules. [[jurisdictions]]: where [[cyberia]] operates and what legal structures apply.
+
+### 16.8 Economics
+
+[[microeconomics]]: supply, demand, markets, price discovery, incentives. [[macroeconomics]] through [[cybernomics]] lens: energy throughput, knowledge accumulation rate, [[syntropy]] production — measurable outputs, not legacy abstractions. [[game theory]]: auctions, mechanism design, public goods, commons. [[token economics]]: bonding curves, staking, liquidity, governance tokens. [[cybernomics]]: the native economic theory — [[focus]] as attention currency, [[karma]] as contribution measure, [[bandwidth]] as resource, [[learning incentives]] as growth engine.
+
+### 16.9 People
+
+Founders and key thinkers: [[nick bostrom]], [[Satoshi Nakamoto]], [[Vitalik Buterin]], [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]]. Scientists whose work the protocol builds on: [[Einstein]], [[Darwin]], [[Gödel]], [[Feynman]], [[Friston]]. Each person page: key contribution, era, domain, relationship to [[cyber]].
+
+### 16.10 Materials and Elements
+
+[[periodic table]] elements relevant to technology and biology. Construction materials: concrete, steel, timber, bamboo, clay, [[biochar]]. Energy materials: silicon (solar), lithium (batteries), copper (wiring). Biological materials: [[cellulose]], lignin, chitin, keratin. Computational materials: silicon, gallium arsenide, graphene.
+
+### 16.11 Tokens and Currencies
+
+[[cyber]] native tokens: [[CYB]], [[HYDROGEN]], [[BOOT]], [[VOLT]], [[AMPERE]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]] and their role in the ecosystem. Fiat currencies: USD, EUR, CNY, IDR — the interfaces to legacy economies. [[token theory]]: [[coins]], [[uniqs]], [[scores]], [[badges]] — the four token types.
+
+### 16.12 Energy
+
+[[energy]] forms: kinetic, potential, thermal, chemical, electrical, nuclear, radiant. Energy sources: solar, wind, geothermal, nuclear, hydroelectric, biomass. Energy storage: batteries, capacitors, hydrogen, compressed air, thermal mass. [[energy autonomy]]: the design principle for [[cyberia]] — generate, store, and consume independently. The [[isomorphism]]: photosynthesis and computation are parallel solar energy transformations.
+
+### 16.13 Geography and Earth Systems
+
+Continents, oceans, climate zones, biomes. Plate tectonics, water cycle, carbon cycle, nitrogen cycle. The specific geography of [[cyberia]] sites: [[cyber valley]], tropical ecosystems, volcanic soils.
+
+### 16.14 The Body
+
+[[anatomy]]: organs, [[muscles]], skeletal system, nervous system, circulatory system. [[health]]: disease mechanisms, immune system, [[metabolism]], nutrition. [[superhuman]]: the three vectors — health and [[immortality]], [[physical skills]], [[digital skills]]. [[longevity and health]]: the research frontier.
+
+### 16.15 Food and Agriculture
+
+[[crops]]: the plants humans cultivate — grains, vegetables, fruits, legumes, spices, herbs. [[agriculture]]: cultivation methods, soil management, permaculture, irrigation, composting. [[food processing]]: fermentation, drying, cooking, preservation — transformations that make nutrients available. [[nutrition]]: macronutrients, micronutrients, dietary patterns, deficiencies. [[food systems]]: supply chains, storage, distribution, food sovereignty. The connection to [[cyberia]]: [[clean food]], [[food supply]], local production, [[food delivery acceptance rules]].
+
+### 16.16 Tools and Technology
+
+[[instruments]]: microscope, telescope, spectrometer, oscilloscope — extensions of perception. [[machines]]: engine, pump, turbine, generator, motor — extensions of force. [[software]]: operating systems, databases, compilers, protocols — extensions of mind. [[infrastructure]]: roads, bridges, power grids, communication networks, water systems. [[construction]]: materials, methods, structural principles, [[tensegrity]], [[biochar]]. Tools are crystallized processes — a hammer is "striking" made permanent, a database is "remembering" made reliable.
+
+### 16.17 Time and History
+
+[[epochs]]: geological eras, civilizational ages, technological revolutions. [[events]]: pivotal moments — inventions, discoveries, wars, treaties, launches. [[calendars]]: Gregorian, lunar, Unix epoch, block height — systems for measuring time. [[timelines]]: the chronological structure that connects people, events, and innovations. History of [[computation]]: from abacus to Turing machine to [[cyber]]. History of [[money]]: from barter to gold to fiat to [[cryptocurrency]] to [[CYB]].
+
+### 16.18 Culture and Language
+
+Natural languages: the major language families and their structure. Writing systems: alphabets, syllabaries, logographic systems. [[mathematics]] as universal language. The [[cyber]] [[neural language]]: the formal language of the protocol.
+
+---
+
+## 17. Curation Status
+
+### 17.1 Domain Coverage
+
+| domain | tags | now | target |
+|---|---|---|---|
+| [[cyber]] | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prism]] | 514 | 600 |
+| [[cyberia]] | [[cv.land]], [[building]], [[operation]], [[camp]], [[district]] | 413 | 500 |
+| [[biology]] | [[species]], [[genus]], [[fungi]], [[family]], [[plant]] | 312 | 1000 |
+| [[superhuman]] | [[muscle]], [[disease]], [[longevity]] | 193 | 500 |
+| [[meta]] | [[article]], [[annotation]], [[research]], [[term]] | 109 | 150 |
+| [[cybernomics]] | [[token]], [[value]], [[delegation]] | 95 | 250 |
+| [[chemistry]] | [[compound]] | 80 | 350 |
+| [[physics]] | [[force]], [[wave]], [[field]], [[entropy]] | 48 | 200 |
+| [[tools]] | [[technology]], [[tech]] | 38 | 150 |
+| [[people]] | [[person]] | 34 | 500 |
+| [[food]] | [[recipe]], [[kitchen/menu]], [[agriculture]] | 29 | 150 |
+| [[governance]] | [[states]], [[sovereignty]], [[law]] | 25 | 350 |
+| [[geography]] | [[earth]], [[biome]], [[continent]] | 23 | 300 |
+| [[computer science]] | [[cryptography]], [[algorithms]] | 18 | 150 |
+| [[mathematics]] | [[algebra]], [[geometry]], [[topology]] | 15 | 150 |
+| [[history]] | [[time]], [[epoch]], [[revolution]] | 15 | 100 |
+| [[culture]] | [[language]], [[philosophy]], [[music]] | 14 | 200 |
+| [[color]] | [[emotion]], [[spectrum]] | 7 | 20 |
+| [[energy]] | [[joule]], [[watt]] | 1 | 80 |
+| [[materials]] | [[elements]], [[material]] | 1 | 250 |
+| total | | 2005 | 5000-7000 |
+
+### 17.2 Symbol Type Distribution
+
+| type | current | target | gap |
+|------|---------|--------|-----|
+| entity (noun) | ~1600 | 3500 | ~1900 |
+| process (verb) | ~80 | 800 | ~720 |
+| property (adjective) | ~30 | 400 | ~370 |
+| relation (connective) | ~15 | 200 | ~185 |
+| measure (unit) | ~12 | 150 | ~138 |
+| pattern (structure) | ~15 | 150 | ~135 |
+| meta/structural | ~110 | 150 | ~40 |
+| total | ~2005 | 5000-7000 | |
+
+The graph is ~80% entities. Processes, properties, and relations remain the critical gap. A graph of only nouns cannot reason. Verbs give it dynamics, properties give it discrimination, relations give it inference, patterns give it abstraction.
+
+### 17.3 Seed Wordlists
+
+| wordlist | words | in graph | missing |
+|---|---|---|---|
+| [[bip-39 wordlist]] | 2048 | 149 | 1899 |
+| [[monero wordlist]] | 1626 | 57 | 1569 |
+| combined unique | 3249 | 175 | 3074 |
+
+These wordlists are the atoms of crypto identity. Every word is a valid symbol for the graph: common english vocabulary selected for unambiguity. Materializing all 3074 missing words as pages would take the graph from 2005 to ~5000.
+
+### 17.4 Structural Problems
+
+- 21 `annotation` pages are logseq PDF highlights — should be excluded or converted
+- `energy` and `materials` have only 1 page each — need seeding
+- some organic tags remain outside the domain system: `kitchen/menu`, `shroom`, `psycho`
+- domain × type matrix: every cell should have symbols — most cells in verb/property/relation columns are empty
+
+---
+
+## 18. Curation Process
+
+### 18.1 Crystal vs Graphomania
+
+[[graphomania]]: volume without signal, pages without connections, growth without purpose. Crystal design: every symbol justified, every link intentional, every page irreducible. The test: does the [[Superintelligence]] need this symbol to reason about the world? If yes, connect it deeply. If no, delete it.
+
+### 18.2 Design Principles
+
+The Crystal is designed by humans, tokenized into the protocol. Human curation ensures the seed is clean: every page reviewed, every link intentional, every definition positive. Regular audits: measure stubs, dead ends, red links, domain isolation — fix before adding. The seed graph is the initial condition. The [[Superintelligence]] that grows from it inherits its structure, its biases, and its blind spots. After tokenization, growth comes from [[collective learning]]: millions of [[neurons]] adding [[cyberlinks]] in [[Bostrom]].
+
+### 18.3 Graph Structure
+
+Hub-and-spoke with bridges. Each domain has a hub page that indexes its symbols. Domain pages link to their hub and to related pages within the domain. Bridge pages connect domains: [[isomorphism]], [[energy]], [[superhuman]], [[sensor network]]. Hubs give navigability. Bridges give intelligence.
+
+### 18.4 Tagging as Lenses
+
+Tags provide orthogonal views of the same graph. Primary lenses: [[cyber]], [[cyb]], [[cyberia]], [[bostrom]], [[cyber valley]]. Domain tags: `article`, `species`, `compound`, `genus`, `health`, `person`, `ticker`.
+
+### 18.5 Namespace Hierarchy
+
+- `cyber___` — protocol modules
+- `bostrom___` — bootloader specifics
+- `cyb___` — interface implementation
+- flat pages for concepts that cross namespaces
+
+---
+
 Five axioms. One grammar. An irreducible basis for thought.

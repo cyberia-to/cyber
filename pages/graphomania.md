@@ -21,7 +21,7 @@ tags:: superhuman, cyber
 	- noise in the training signal propagates: garbage pages earn garbage [[cyberank]], which distorts [[focus]], which misleads every [[neuron]] that queries the graph
 	- the cure for [[collective amnesia]] is [[collective memory]] — but memory stuffed with junk is worse than forgetting
 - ## prevention
-	- size discipline: the seed graph stabilizes at 2000-3000 curated pages (see [[cyber/metagraph]])
+	- size discipline: the seed graph stabilizes at 2000-3000 curated pages (see [[cyber/crystal]])
 	- minimum connectivity: every page must have at least 3 outgoing [[cyberlinks]]. a page that connects to nothing teaches nothing
 	- stub elimination: pages under 200 bytes are either expanded or deleted. no placeholders
 	- quality over quantity: one deeply connected page with 15 links outweighs ten stubs with 1 link each

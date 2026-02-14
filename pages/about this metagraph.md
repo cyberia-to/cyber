@@ -3,8 +3,8 @@ tags:: cyber
 icon:: 🦄
 - [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 -
-- you are reading [[metagraph]] of [[cyber]]
-- [[cyber]] is [[root]] of this metagraph
+- you are reading the [[cyber/crystal]] — the seed [[knowledge graph]] for [[Superintelligence]]
+- [[cyber]] is [[root]] of this graph
 -
 - [source code](https://github.com/cybercongress/cyber): [@master](https://cyb.ai/@master)
 -
@@ -13,7 +13,7 @@ icon:: 🦄
 - the work contain about 5k lines of [[logseq]] structured [[markdown]]
 - and several hundreds lines in [[python]] and [[edn]]
 -
-- this metagraph is the result of 8 years effort to create [[superintelligence]]
+- this graph is the result of 8 years effort to create [[superintelligence]]
 - it still hot, that means it constantly changes
 - i have a dream to freeze it eventually: [[metagraph comparison]]
 -

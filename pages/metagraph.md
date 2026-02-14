@@ -7,10 +7,9 @@ tags:: cyber
 	- composable: subgraphs can be treated as single nodes and analyzed at higher levels
 	- multi-scale: the same system can be viewed at different resolutions
 - ## in [[cyber]]
-	- this [[logseq]] graph is a [[metagraph]] of [[cyber]] — the seed [[knowledge graph]] for [[Superintelligence]]
-	- see [[about this metagraph]] for the story behind it
-	- see [[cyber/metagraph]] for the conscious design principles
-	- the [[cybergraph]] in [[Bostrom]] is the live metagraph: every [[particle]] is a node, every [[cyberlink]] is an edge, and subgraphs form around topics, [[neurons]], and domains
+	- [[cyber/metagraph]] describes the multi-scale view: [[cyber/crystal]] (the seed graph), the [[cybergraph]] (on-chain), and the network of cybergraphs
+	- see [[cyber/crystal]] for the seed knowledge graph specification
+	- see [[about this metagraph]] for the story behind this [[logseq]] graph
 - ## applications
 	- machine learning: model architectures as graphs of computational subgraphs
 	- network theory: analyze networks of networks
