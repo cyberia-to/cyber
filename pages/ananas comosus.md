@@ -1,5 +1,5 @@
 alias:: ananas, pineapple
-tags:: genus, species, major
+tags:: genus, species
 
 - ![image](https://ipfs.io/ipfs/QmQ4ebij2qVq5SN1tgGfwejsQrdVfgmYPMHgxFnthGwuaU)
 - ![image](https://ipfs.io/ipfs/QmZnmAnw9LBCKRpBvRxN1dX19qacGm1GaHcCTvTDkhgtjS)

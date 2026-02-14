@@ -1,5 +1,5 @@
 alias:: musa, banana
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 abundance:: yes
 supply:: no

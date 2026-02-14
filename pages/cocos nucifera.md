@@ -1,5 +1,5 @@
 alias:: cocos, coconut, kelapa
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 supply:: next-month
 market:: edible oils

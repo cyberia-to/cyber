@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 alias:: thymus, thyme
 - ![](https://ipfs.io/ipfs/QmRjCnZVkRiGqcaaXbz7ysYMaYizwpFVd4wvBWq3rWfJFY)

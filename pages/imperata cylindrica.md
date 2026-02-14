@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: imperata, alang-alang
 abundance:: yes
 supply:: no

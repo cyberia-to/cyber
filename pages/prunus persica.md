@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: peach
 wood:: yes
 grow-speed:: 3

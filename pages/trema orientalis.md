@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: mengkirai
 abundance:: yes
 supply:: no

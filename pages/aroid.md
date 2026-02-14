@@ -1,4 +1,4 @@
-tags:: collectable, major
+tags:: collectable
 alias:: arachae, arum
 market:: collectable
 

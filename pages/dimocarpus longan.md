@@ -1,5 +1,5 @@
 alias:: longan, klengkeng
-tags:: species, major
+tags:: species
 wood:: yes
 grow-speed:: 2
 - ![image.png](https://ipfs.io/ipfs/QmPUfJrZpZjg2KotQtbtvqUNDJJ5bjLDcmmAbx6q28Wddt){:height 390, :width 573}

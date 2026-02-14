@@ -1,5 +1,5 @@
 alias:: pakis sayur, vegy fern
-tags:: species, genus, major, super
+tags:: species, genus
 abundance:: yes
 supply:: no
 margin:: high

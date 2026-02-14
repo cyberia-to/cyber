@@ -1,5 +1,5 @@
 alias:: erythrina, dadap
-tags:: genus, species, major, super
+tags:: genus, species
 abundance:: yes
 supply:: no
 margin:: low

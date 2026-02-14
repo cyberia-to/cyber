@@ -1,4 +1,4 @@
-tags:: genus, species, super
+tags:: genus, species
 alias:: cyatheawood:: yes
 grow-speed:: 5
 - [[fern]]

@@ -1,4 +1,4 @@
-tags:: species, super
+tags:: species
 alias:: australian toon, burma cedar
 wood:: yes
 grow-speed:: 5

@@ -1,4 +1,4 @@
-tags:: genus, species, major, super, psycho
+tags:: genus, species, psycho
 scalable:: true
 alias:: coffea, kopi
 abundance:: yes

@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: sukun, breadfruit
 - wood-density:: 350
 - [[staple]]

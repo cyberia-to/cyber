@@ -1,4 +1,4 @@
-tags:: genus, species, research, major, super
+tags:: genus, species, research
 scalable:: true
 alias:: camellia
 - [[staple]] [[drink]] and [[health]] as [[green tea]]

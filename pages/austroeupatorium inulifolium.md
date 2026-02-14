@@ -1,5 +1,5 @@
 alias:: fragrant, austroeupatorium
-tags:: species, genus, major
+tags:: species, genus
 abundance:: yes
 supply:: no
 margin:: low

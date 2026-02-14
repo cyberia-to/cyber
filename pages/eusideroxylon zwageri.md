@@ -1,5 +1,5 @@
 alias:: ulin
-tags:: species, major, research, super
+tags:: species, research
 wood-density:: 1050
 wood-durability:: extreme
 wood-availability:: high

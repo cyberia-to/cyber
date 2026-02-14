@@ -1,5 +1,5 @@
 alias:: soursup, soursop, sersak
-tags:: species, major
+tags:: species
 wood:: yes
 grow-speed:: 3
 

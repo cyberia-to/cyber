@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 alias:: psidium, guava, jambu batu
 wood:: yes
 grow-speed:: 3

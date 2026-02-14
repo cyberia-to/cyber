@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 alias:: azadirachta, neem, mimba
 wood-density:: 600

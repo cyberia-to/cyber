@@ -1,4 +1,4 @@
-tags:: genus, major, collectable, super
+tags:: genus, collectable
 scalable:: true
 wood:: yes
 grow-speed:: 3

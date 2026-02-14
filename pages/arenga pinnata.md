@@ -1,5 +1,5 @@
 alias:: aren, enau, sugar palm
-tags:: species, major, super
+tags:: species
 abundance:: yes
 supply:: no
 margin:: medium

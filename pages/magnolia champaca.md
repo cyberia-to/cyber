@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: cempaka, champaсa, white champaca
 wood:: yes
 grow-speed:: 4

@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: pendejera, devils fig
 - ![](https://ipfs.io/ipfs/QmWjrDJhW4s7GPYiPajpvsz4qFzDb7gyJRw2vYqUxxy7zr)
 - height: 2-3 m

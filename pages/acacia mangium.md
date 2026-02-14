@@ -1,4 +1,4 @@
-tags:: species, major, research
+tags:: species, research
 alias:: akasia
 wood-availability:: high
 wood-durability:: moderate

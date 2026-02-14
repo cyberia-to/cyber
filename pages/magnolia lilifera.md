@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 abundance:: yes
 supply:: no
 margin:: low

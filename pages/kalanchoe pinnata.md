@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 alias:: kalanchoeabundance:: yes
 supply:: no
 margin:: low

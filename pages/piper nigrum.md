@@ -1,5 +1,5 @@
 alias:: piper, pepper
-tags:: genus, species, super
+tags:: genus, species
 scalable:: true
 - ![](https://ipfs.io/ipfs/QmbDu6WE4VYoSZGfTN7vkvDVpwy7t6uoQLD2uNamj7wv7k)
 - ![](https://ipfs.io/ipfs/QmPT7g4XAMTqXh3mSUhYVAe6JcR5jUrG3X36ETBqAVMJqz)

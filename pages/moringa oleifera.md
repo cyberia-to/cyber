@@ -1,4 +1,4 @@
-tags:: species, plant, major
+tags:: species, plant
 alias:: ben oil tree, kelor
 supply:: next-month
 market:: edible oils

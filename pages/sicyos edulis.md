@@ -1,5 +1,5 @@
 alias:: sicyos, chayote, sechium edule
-tags:: genus, species, major, super
+tags:: genus, species
 abundance:: yes
 supply:: no
 margin:: medium

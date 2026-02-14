@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: she-oak, cemara udang, cemara laut
 nitrogener:: 250
 wood-density:: 800

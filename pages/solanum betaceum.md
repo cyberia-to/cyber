@@ -1,5 +1,5 @@
 alias:: tamarillo
-tags:: species, major, super
+tags:: species
 wood:: yes
 grow-speed:: 3
 - ![](https://ipfs.io/ipfs/QmSjYZ4u4rWzoqVFrSy2s17gxSF6je4ERF8LFYywHu4Yid){:height 324, :width 408}

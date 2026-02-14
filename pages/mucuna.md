@@ -1,4 +1,4 @@
-tags:: genus, research, major
+tags:: genus, research
 scalable:: true
 
 - {{embed [[mucuna pruriens]]}}

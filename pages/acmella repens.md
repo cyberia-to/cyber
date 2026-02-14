@@ -1,4 +1,4 @@
-tags:: genus, species, plant, major
+tags:: genus, species, plant
 scalable:: true
 alias:: acmellaabundance:: yes
 supply:: no

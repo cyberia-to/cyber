@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: cemara gunung, mountain ru
 - availability:: batuka
 - nitrogener:: 250

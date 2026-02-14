@@ -1,4 +1,4 @@
-tags:: super
+tags:: species
 
 - [[phyllostachys]]
 - [[gigantochloa]]

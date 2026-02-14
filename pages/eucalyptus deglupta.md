@@ -1,4 +1,4 @@
-tags:: genus, species, major
+tags:: genus, species
 scalable:: true
 alias:: eucalyptus, rainbow tree, leda
 wood:: yes

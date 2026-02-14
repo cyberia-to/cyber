@@ -1,4 +1,4 @@
-tags:: species, research, major
+tags:: species, research
 alias:: kamper
 wood-density:: 800
 wood-availability:: high

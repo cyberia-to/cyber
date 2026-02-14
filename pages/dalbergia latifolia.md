@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: sonokeling, rosewood
 wood-density:: 875
 wood-durability:: high

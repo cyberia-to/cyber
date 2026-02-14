@@ -1,5 +1,5 @@
 alias:: elettaria, cardamom
-tags:: genus, species, major
+tags:: genus, species
 scalable:: true
 - ![image.png](https://ipfs.io/ipfs/QmZBQWS2SMyehVvwKsKNDhD6yPxfv3RbpdugUdn4YhmpUN){:height 456, :width 596}
 - [tokopedia](https://www.tokopedia.com/hilalstore9/terbaru-bibit-biji-kapulaga-india-kapolaga-hijau-cardamom-terlaris?extParam=whid%3D15161872)

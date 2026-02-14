@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: castor, jarak
 - ![Screenshot 2024-05-17 at 03.21.53.png](https://ipfs.io/ipfs/QmQtpWT9cTzVC1WzgNUmdEuP73M8sNs7qzc3pFKdFvkYTj)
 - height: up to 12 m

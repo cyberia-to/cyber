@@ -1,5 +1,5 @@
 alias:: damar, kauri, agathis
-tags:: species, genus, major, super
+tags:: species, genus
 wood-density:: 500
 market:: resins
 supply:: next-month

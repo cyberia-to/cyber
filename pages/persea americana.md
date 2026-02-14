@@ -1,4 +1,4 @@
-tags:: genus, species, major, collectable, super
+tags:: genus, species, collectable
 scalable:: true
 alias:: persea, avocado, alpukat
 abundance:: yes

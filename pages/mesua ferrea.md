@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 alias:: mesua, nagasari
 wood-density:: 1100
 wood-durability:: very-high

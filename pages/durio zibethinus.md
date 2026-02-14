@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: durian
 wood:: yes
 grow-speed:: 3

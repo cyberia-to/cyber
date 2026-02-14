@@ -1,5 +1,5 @@
 alias:: aleurites, kemiri, candlenut, kukui
-tags:: genus, species, major
+tags:: genus, species
 
 - wood-density:: 450
   market:: edible oils

@@ -1,5 +1,5 @@
 alias:: medicago, lucerne, alfalfa
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 market:: fodder
 supply:: next-month

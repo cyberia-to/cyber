@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: leucantha
 - ![](https://ipfs.io/ipfs/QmbC3z3oJ481Dri3mR5GYqscD9vYSGTeRZwimMauBNaAha)
 - ![](https://ipfs.io/ipfs/Qmbrsbp8x7WqDZ28yGLxVwFVLvTpbYN4qidK4Jychpargk)

@@ -1,4 +1,4 @@
-tags:: species, birds, major, super
+tags:: species, birds
 
 - selected for [[citadel genesis]]
 	- [[silkie]]

@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: cinnamon
 abundance:: yes
 supply:: no

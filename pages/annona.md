@@ -1,4 +1,4 @@
-tags:: genus, collectable, major
+tags:: genus, collectable
 alias:: srikaya, anona
 
 - selected for [[edem]]

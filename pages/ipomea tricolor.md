@@ -1,3 +1,3 @@
-tags:: species, major, psycho
+tags:: species, psycho
 alias:: morning glory
 supply:: unknown

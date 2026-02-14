@@ -1,4 +1,4 @@
-tags:: genus, super
+tags:: genus
 alias::
 scalable:: true
 wood:: yes

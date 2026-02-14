@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 alias:: santalum, cendana, sandal
 wood:: yes

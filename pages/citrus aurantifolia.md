@@ -1,2 +1,2 @@
-tags:: species, major
+tags:: species
 alias:: lime

@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: jeruk, mandarin
 wood:: yes
 grow-speed:: 3

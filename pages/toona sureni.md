@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: surian, limpaga, iron redwood, suren
 - wood-density:: 500
 - ![](https://ipfs.io/ipfs/QmVz852FrRWpZn748J3M7WveSwZrMJUaidfXDHce3kvkXp)

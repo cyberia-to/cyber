@@ -1,4 +1,4 @@
-tags:: genus, major, super
+tags:: genus
 alias:: mora
 wood:: yes
 grow-speed:: 3

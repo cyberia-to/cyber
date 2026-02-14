@@ -1,5 +1,5 @@
 alias:: cnidoscolus, chaya
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 - [[staple]]
 - ![image.png](https://ipfs.io/ipfs/QmdFi3icmhGh4qewfNzJ8RtGEC3RFK8p5jYeGif2FfrmJs)

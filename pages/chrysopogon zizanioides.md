@@ -1,4 +1,4 @@
-tags:: genus, species, major, research
+tags:: genus, species, research
 scalable:: true
 alias:: chrysopogon, vetiver
 supply:: next-month

@@ -1,4 +1,4 @@
-tags:: species, major
+tags:: species
 alias:: bridge tree
 wood:: yes
 grow-speed:: 4

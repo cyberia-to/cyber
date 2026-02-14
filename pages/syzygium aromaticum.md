@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: clove, chengkeh,
 wood-availability:: local
 wood-density:: 900

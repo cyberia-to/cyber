@@ -1,4 +1,4 @@
-tags:: genus, species, major, super
+tags:: genus, species
 alias:: tropaeolum, nasturtium
 
 - [[salad]] : [[flower]], [[leave]] and [[stem]]

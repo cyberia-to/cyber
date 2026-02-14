@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: jackfruit, nangka
 wood-density:: 650
 wood-durability:: low

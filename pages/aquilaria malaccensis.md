@@ -1,5 +1,5 @@
 alias:: agarwood, gaharu, aquilaria
-tags:: species, major, super
+tags:: species
 wood-density:: 500
 supply:: next-month
 market:: resins

@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: batat
 abundance:: yes
 supply:: no

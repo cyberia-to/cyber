@@ -1,4 +1,4 @@
-tags:: genus, major, super
+tags:: genus
 alias:: mint
 
 - selected for [[edem]]

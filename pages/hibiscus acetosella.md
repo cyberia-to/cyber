@@ -1,4 +1,4 @@
-tags:: species, major, super
+tags:: species
 alias:: hibiscus merah, hibaceto
 - [[staple]]
 - ![image.png](https://ipfs.io/ipfs/QmQFiFkgSjYYddS4Q89FB482hR63dazh5cfE7jsoYDamFn){:height 634, :width 840}

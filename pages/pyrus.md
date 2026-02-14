@@ -1,4 +1,4 @@
-tags:: genus, major, collectable, super
+tags:: genus, collectable
 alias:: pir, pear
 wood:: yes
 grow-speed:: 3

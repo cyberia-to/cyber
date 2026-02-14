@@ -1,5 +1,5 @@
 alias:: sapindus, soapnut, soapberry, lerak
-tags:: genus, species, major, super
+tags:: genus, species
 scalable:: true
 wood:: yes
 grow-speed:: 4
