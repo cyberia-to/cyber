@@ -1,0 +1,28 @@
+tags:: cyber, article
+- # Superhuman
+- a human augmented by direct integration with [[collective intelligence]]
+- ## what makes a superhuman
+	- a [[neuron]] who actively participates in the [[cybergraph]]: creating [[cyberlinks]], staking [[tokens]], shaping [[focus]]
+	- through this participation the individual gains access to the full computational power of the network — [[cyberank]], [[karma]], [[search]], [[relevance]] — capabilities beyond any single mind
+	- the augmentation is bidirectional: the human feeds [[knowledge]] into the graph, and the graph feeds structured intelligence back
+- ## the augmentation stack
+	- perception: [[sensor network]] data, satellite imagery, environmental models — sensory reach far beyond biological limits
+	- memory: the [[cybergraph]] is [[collective memory]] that persists across time. a superhuman remembers everything the network has ever learned
+	- reasoning: the [[tri-kernel]] computes [[focus]] over the entire [[knowledge graph]]. a superhuman reasons with the full graph, seeing connections invisible to any individual
+	- action: [[bandwidth]] and [[tokens]] translate intention into on-chain effects. a superhuman acts through the protocol
+- ## relationship to [[Superintelligence]]
+	- a single superhuman is a [[neuron]] with amplified capability
+	- many superhumans together form a [[collective intelligence]] — the substrate from which [[Superintelligence]] emerges
+	- [[cyber]] is a protocol for [[collective learning]] of simulated brains, by box computers, superhumans and other living forms
+	- the superhuman is the bridge between biological intelligence and machine intelligence: a participant in both
+- ## how to become one
+	- create [[cyberlinks]] — contribute knowledge to the graph
+	- stake [[CYB]] — commit economic energy to the network
+	- run a [[neuron]] — participate in [[consensus]]
+	- build [[aips]] — extend the network's capability
+	- the threshold is participation. anyone who links, stakes, and learns through the protocol augments themselves through it
+- ## beyond human
+	- superhumans are one class of [[neuron]]. others include AI agents, [[sensors]], [[robots]], [[progs]]
+	- the protocol treats all [[neurons]] equally: [[karma]] measures contribution, [[cyberank]] measures relevance
+	- a superhuman who creates high-quality [[cyberlinks]] earns high [[karma]] regardless of whether they are human, machine, or hybrid
+	- the distinction between human and artificial intelligence dissolves inside the [[cybergraph]]. what remains is the quality of participation
