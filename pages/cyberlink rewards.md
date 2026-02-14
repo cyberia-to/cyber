@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 # Title: Cyberlink Valuation as a Long-Term Asset in Decentralized Knowledge Graphs
 ## Abstract
 

@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 # Labeling & Semantic Energy Accounting in Focus‑Flow Computation
 
 \*\*purpose \*\* Provide a concise, self‑contained reference on (1) the *minimal* node/edge labeling scheme (atom / pair / function + 5 rewrite ops + 3 edge types) and (2) how those edge labels connect to the four free‑energy terms (spring, diffusion, context, entropy).

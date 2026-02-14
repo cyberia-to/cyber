@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
   - e = 6e6
   - memory per iter ~ o(7e6) entries
   - compute per iter ~ o(7e6) ops-equivalent

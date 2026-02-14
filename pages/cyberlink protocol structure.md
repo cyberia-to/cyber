@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 ## protocol structure insights
 ### 1. creation model options
 

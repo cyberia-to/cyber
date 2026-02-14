@@ -1,4 +1,6 @@
-tags:: article, cyber# Tri-Kernel Architecture for Networked Collective Intelligence, cip
+tags:: article, cyber, cip
+status:: draft
+# Tri-Kernel Architecture for Networked Collective Intelligence
 
 ## Diffusion · Springs · Heat
 

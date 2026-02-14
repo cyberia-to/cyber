@@ -1,4 +1,6 @@
-tags:: article, cyber# focus flow: a peer‑to‑peer protocol for collective intelligence, cip
+tags:: article, cyber, cip
+status:: draft
+# focus flow: a peer-to-peer protocol for collective intelligence
 
 version 0.3 — clarifying energy terms, consensus, and security
 

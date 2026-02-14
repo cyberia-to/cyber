@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 # Design Rationale of the State Model for Superintelligence
 ## Objective
 To define a decentralized, scalable, and expressive state model that enables the emergence of collective intelligence and eventually superintelligence, as formalized by the Collective Focus Theorem (CFT).

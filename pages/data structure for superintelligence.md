@@ -1,4 +1,6 @@
-tags:: article, cyber# Data Structures for Superintelligence, cip
+tags:: article, cyber, cip
+status:: draft
+# Data Structures for Superintelligence
 
 ## Authenticated State Architecture for the Collective Objective Reality Engine
 

@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 # CORE v0.9: Conserved Observable Reduction Equilibrium
 
 ## A Self-Verifying Substrate for Planetary Collective Intelligence

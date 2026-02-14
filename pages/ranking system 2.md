@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 - eigenvector centrality (diffusion)
 - springrank (springs)
 - heat-kernel pagerank (heat flow)

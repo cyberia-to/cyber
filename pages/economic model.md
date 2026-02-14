@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 ## economic model
 
 1. minting for focus computation  

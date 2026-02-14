@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 - prefer transparent cryptography with no trusted setup or social committees.
 - separate compute/consensus from data availability; keep a clean, swappable boundary.
 - tier data by criticality and expected half-life to optimize cost versus permanence.

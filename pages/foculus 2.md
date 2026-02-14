@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 # foculus consensus (fc) whitepaper
 
 *version 0.1 — draft for internal review*

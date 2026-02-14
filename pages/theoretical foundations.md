@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 - 0\. introduction and scope
 -
   1. primitives and notation

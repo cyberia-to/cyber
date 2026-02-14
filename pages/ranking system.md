@@ -1,4 +1,6 @@
-tags:: article, cyber# Why this ranking system?, cip
+tags:: article, cyber, cip
+status:: draft
+# Why this ranking system?
 - ## 1) What we need a ranking system to do
   
   We’re not ranking web pages; we’re steering a living, decentralized computation. The rank must simultaneously:

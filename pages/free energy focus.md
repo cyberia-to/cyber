@@ -1,4 +1,5 @@
 tags:: article, cip
+status:: draft
 ## abstract
 
 we propose a natural, physics-inspired method for computing collective focus on a cybergraph. instead of manually weighting different ranking algorithms, we derive a unified focus vector as the minimum of a free energy functional that combines diffusion (eigenvector centrality), springs (springrank), and heat flow (locality control). this approach ensures that focus emerges as an equilibrium state, requiring no arbitrary tuning. the result is a scalable, decentralisable, and universal protocol for collective intelligence.
