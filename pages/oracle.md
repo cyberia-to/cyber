@@ -1,4 +1,4 @@
-tags:: aip, cyb, ui
+tags:: aip, cyb, prism
 - the search and discovery [[aip]] in [[cyb]]
 - cell in [[prism]]
 - current state in [[cyb-ts]] at [[cyb/oracle]]

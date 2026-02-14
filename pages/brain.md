@@ -1,5 +1,5 @@
 icon:: 🧠
-tags:: page, ui, cyb
+tags:: page, prism, cyb
 - graph file manager
   id:: 66c601a9-024a-4466-978e-afccd41f64ad
 - addressed to close [[main loop]]

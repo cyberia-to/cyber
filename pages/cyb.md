@@ -1,7 +1,7 @@
 icon:: 🤖
 tags:: cyb
 - use at [cyb.ai](https://cyb.ai)
-- TODO [[prism]] design system
+- [[prism]] design system
 - personal [[robot]] with [[avatars]]
 	- new generation messaging [[sense]]
 	- crypto wallet [[sigma]]

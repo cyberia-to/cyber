@@ -1,4 +1,4 @@
-tags:: aip, cyb, ui
+tags:: aip, cyb, prism
 - the [[cybernet]] [[aip]] in [[cyb]]
 - cell in [[prism]]
 - where [[neurons]] interact with [[learning incentives]]: stake, grade, learn, earn

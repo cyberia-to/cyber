@@ -1,4 +1,4 @@
-tags:: aip, cyb, ui
+tags:: aip, cyb, prism
 - the onboarding [[aip]] in [[cyb]]
 - cell in [[prism]]
 - current state on [[cyb/portal]]
