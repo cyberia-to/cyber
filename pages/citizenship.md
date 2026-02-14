@@ -1,26 +1,11 @@
-tags:: page
-- translate idea of [[moon passport]]
-	- [[moon/flag]]
-	- [[moon/code]]
-	- [[moon/area]]
-	- [[population]]: amount of [[avatars]]
-	- [[citizens]]: [[avatars]] of [[aos]]
-- if [[energetic]]
-	-
-- if [[alien]]
-	-
-- if [[neuron]] have [[avatars]]
-	- display [[my avatars]]
-	- display best [[services]] from [[map]]
-	- display best [[avatars]]
-	- display recent [[avatars]]
-	- display best [[particles]]
-- if [[neuron]] does not have [[avatars]]
-	- does not display [[my avatars]] from previous list
-- actions
-	- button:: [[check name]]
-		- text input
-			-
-		- button:: [[create avatar]]
-			-
-			-
+tags:: governance, cyber
+- legal membership in a state, carrying rights and obligations
+- acquisition: birth (jus soli, jus sanguinis), naturalization, investment, marriage
+- rights: vote, reside, work, access public services, consular protection
+- obligations: obey laws, pay [[taxation]], military service (in some states)
+- dual/multiple citizenship: simultaneous membership in several states
+- digital citizenship: membership in [[network state]] communities, verified through cryptographic identity
+- [[portal]] serves as the gateway to [[cyber state]] citizenship: identity registration, reputation accumulation, access to governance
+- [[cyberia]] citizenship: on-chain identity linked to participation in [[governance]], staking, and knowledge contribution
+- statelessness: absence of citizenship, affecting ~10 million people globally, a failure of the nation-state system
+- see also [[sovereignty]], [[social contract]], [[democracy]], [[human rights]]
