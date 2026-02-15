@@ -44,8 +44,8 @@ enabled = true
 engine = "json"
 
 [analytics]
-# plausible_domain = ""
-# plausible_script = "https://plausible.io/js/script.js"
+plausible_domain = "cyber.page"
+plausible_script = "https://plausible.io/js/script.js"
 
 [graph]
 enabled = true

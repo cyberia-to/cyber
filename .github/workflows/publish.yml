@@ -73,17 +73,6 @@ jobs:
             cp assets/logo.png public/
           fi
 
-      - name: Inject analytics
-        env:
-          PLAUSIBLE_SCRIPT_ID: ${{ secrets.PLAUSIBLE_SCRIPT_ID }}
-        run: |
-          if [ -z "$PLAUSIBLE_SCRIPT_ID" ]; then
-            echo "PLAUSIBLE_SCRIPT_ID not set, skipping analytics"
-            exit 0
-          fi
-          SCRIPT_TAG="<script defer data-domain=\"cyber.page\" src=\"https://plausible.io/js/script.js\" data-api=\"https://plausible.io/api/event\"></script>"
-          find public -name "*.html" -exec sed -i "s|</head>|${SCRIPT_TAG}</head>|" {} +
-
       - name: Deploy to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

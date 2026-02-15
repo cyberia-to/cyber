@@ -39,7 +39,7 @@
         <script
             defer
             data-domain="{{ analytics.plausible_domain }}"
-            src="{{ analytics.plausible_script | default('https://plausible.io/js/script.js') }}"
+            src="{{ analytics.plausible_script | default('https://plausible.io/js/script.js') | safe }}"
         ></script>
         {% endif %}
         <link
