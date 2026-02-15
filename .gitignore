@@ -3,12 +3,6 @@
 .ipynb_checkpoints/
 __pycache__/
 
-# Logseq runtime
-logseq/bak
-logseq/.recycle
-logseq/graphs-txid.edn
-logseq/version-files
-
 # Build outputs
 /public
 /build
