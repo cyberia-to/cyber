@@ -186,6 +186,8 @@ impl Default for SearchSection {
 pub struct AnalyticsSection {
     pub plausible_domain: Option<String>,
     pub plausible_script: String,
+    /// Raw HTML snippet to inject into <head>. When set, overrides plausible_script template.
+    pub snippet: Option<String>,
 }
 
 impl Default for AnalyticsSection {
@@ -193,6 +195,7 @@ impl Default for AnalyticsSection {
         Self {
             plausible_domain: None,
             plausible_script: "https://plausible.io/js/script.js".to_string(),
+            snippet: None,
         }
     }
 }

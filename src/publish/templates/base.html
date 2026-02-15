@@ -35,26 +35,14 @@
             href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{ site.favicon }}</text></svg>"
         />
         {% endif %} {% endif %} {% if analytics is defined
-        and analytics.plausible_script %}
+        and analytics.snippet %} {{ analytics.snippet | safe
+        }} {% elif analytics is defined and
+        analytics.plausible_domain %}
         <script
-            async
+            defer
+            data-domain="{{ analytics.plausible_domain }}"
             src="{{ analytics.plausible_script | safe }}"
         ></script>
-        <script>
-            ((window.plausible =
-                window.plausible ||
-                function () {
-                    (plausible.q = plausible.q || []).push(
-                        arguments,
-                    );
-                }),
-                (plausible.init =
-                    plausible.init ||
-                    function (i) {
-                        plausible.o = i || {};
-                    }));
-            plausible.init();
-        </script>
         {% endif %}
         <link
             rel="stylesheet"
