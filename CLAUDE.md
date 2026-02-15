@@ -95,7 +95,7 @@ Scripts:
 - `nu/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
 - `nu/stats.nu` — graph statistics (orphans, broken links, content types)
 - `nu/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
-- `nu/ipfs.nu` — pre-commit hook: upload assets/ to Pinata IPFS, rewrite URLs in markdown
+- `nu/ipfs.nu` — pre-commit hook: upload assets/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
 
 When adding a new script: place it in `nu/`, accept `graph_path` as first
 arg, and update this list.

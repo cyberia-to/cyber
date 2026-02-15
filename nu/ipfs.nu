@@ -1,27 +1,28 @@
 # IPFS pre-commit hook: upload local assets to Pinata, rewrite URLs in markdown
 # Usage: nu nu/ipfs.nu <graph-path>
-# Reads PINATA_JWT and PINATA_GATEWAY from <graph-path>/.env
+# Reads PINATA_JWT and PINATA_GATEWAY from ~/.config/cyber/env
 
 def main [graph_path: string] {
-    let env_file = ([$graph_path ".env"] | path join)
+    let env_file = ($"($env.HOME)/.config/cyber/env")
     if not ($env_file | path exists) {
-        print "No .env file found, skipping IPFS upload"
+        print "No ~/.config/cyber/env file found, skipping IPFS upload"
+        print "Create it with: PINATA_JWT=<your-jwt> and PINATA_GATEWAY=<your-gateway>"
         return
     }
 
-    # Parse .env file
-    let env = (open $env_file | lines | where {|l| $l =~ '=' and not ($l | str starts-with '#')} | each {|l|
+    # Parse env file
+    let env_vars = (open $env_file | lines | where {|l| $l =~ '=' and not ($l | str starts-with '#')} | each {|l|
         let parts = ($l | split row '=' | collect)
         let key = ($parts | first | str trim)
         let val = ($parts | skip 1 | str join '=' | str trim)
         {key: $key, val: $val}
     } | reduce -f {} {|it, acc| $acc | insert $it.key $it.val})
 
-    let jwt = ($env | get -i PINATA_JWT | default '')
-    let gateway = ($env | get -i PINATA_GATEWAY | default '')
+    let jwt = ($env_vars | get -i PINATA_JWT | default '')
+    let gateway = ($env_vars | get -i PINATA_GATEWAY | default '')
 
     if ($jwt | is-empty) or ($gateway | is-empty) {
-        print "PINATA_JWT or PINATA_GATEWAY not set in .env, skipping"
+        print "PINATA_JWT or PINATA_GATEWAY not set in ~/.config/cyber/env, skipping"
         return
     }
 
