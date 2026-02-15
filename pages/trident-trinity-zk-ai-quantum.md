@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # The Trident Thesis: One Language for Quantum, AI, and Zero-Knowledge
 
 ## How Prime Field Arithmetic Unifies Three Computational Revolutions

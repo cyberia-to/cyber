@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # std.quantum: A Quantum Standard Library for Trident
 
 ## Provable Quantum Computing Through Prime Field Arithmetic

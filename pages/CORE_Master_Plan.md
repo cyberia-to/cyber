@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # CORE Master Plan: Earth-Scale Superintelligence
 
 **Collective Objective Reality Engine**

@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # Trident and the Future of Verifiable AI
 
 ## Why the Next Generation of zkML Won't Start from ONNX — It Will Start from Prime Fields

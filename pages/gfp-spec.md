@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # The Goldilocks Field Processor
 
 ## Hardware Specification, Proof of Useful Work, and Unified Economics

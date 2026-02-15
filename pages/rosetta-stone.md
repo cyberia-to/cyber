@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # The Rosetta Stone
 
 ## How One Table Over One Field Unifies Cryptography, Intelligence, and Encrypted Computation

@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # The Privacy Trilateral: ZK + FHE + MPC
 
 *How three cryptographic technologies combine to provide full-spectrum privacy for planetary collective intelligence.*

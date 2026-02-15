@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # Goldilocks Homomorphic Encryption: FHE Native to Trident
 
 ## The Construction That Unifies Privacy, Provability, Intelligence, and Quantum Power Over One Field

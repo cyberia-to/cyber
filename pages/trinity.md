@@ -1,3 +1,4 @@
+tags:: trident, cyber, article
 # Trinity: Quantum · Privacy · AI
 
 ```

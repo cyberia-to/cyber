@@ -1,3 +1,4 @@
+tags:: trident, cyber
 # Trident Development Review Passes
 
 > Instead of "make it perfect", invoke passes by number.
