@@ -3,7 +3,7 @@
 .ipynb_checkpoints/
 __pycache__/
 
-# Logseq (legacy, can be removed after full migration)
+# Logseq runtime
 logseq/bak
 logseq/.recycle
 logseq/graphs-txid.edn

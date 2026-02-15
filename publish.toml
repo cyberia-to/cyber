@@ -1,5 +1,5 @@
-# logseq-publish configuration
-# See https://github.com/cybercongress/logseq-publish for documentation.
+# cyber-publish configuration
+# See src/publish/README.md for documentation.
 
 [site]
 title = "Cyber"

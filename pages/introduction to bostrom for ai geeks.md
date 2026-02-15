@@ -42,7 +42,7 @@ in this article i will boil down all essential ideas into coherent understanding
 
 - jump for a second to this article: [Unifying Large Language Models and Knowledge Graphs: A Roadmap](https://cyb.ai/oracle/ask/QmdGEYVKo1sRURzbj83UMtr77EL6GHUB2taJbnpTynEQKT)
 - ![image.png](https://emerald-raw-leopon-384.mypinata.cloud/ipfs/QmPnEpPhd77ysSfaACJd5Kc6prrrsUfTCAmPo977n2tcih)
-- {{embed ((66b2fb4e-c73b-4133-aab3-11df2e8d1436))}}
+
 - the article explain why [[llm]] will never be enough to reach general intelligence alone
 - in short [[knowledge graph]] advantage is
 	- easy to understand and structure as they are more about [[explicit knowledge]]
