@@ -1,3 +1,7 @@
+tags:: trident, cyber, article
+alias:: trident stdlib, std.*, standard library
+crystal-type:: article
+crystal-domain:: cyber
 # The Trident Standard Library: Complete Architecture
 
 ## std.* — A Unified Framework for Verifiable Intelligence, Privacy, and Quantum Computation
@@ -6,7 +10,7 @@
 
 ## The Shape of the Library
 
-Trident's standard library reflects a mathematical reality: three computational revolutions — artificial intelligence, zero-knowledge privacy, and quantum computing — share a common algebraic foundation in prime field arithmetic. The stdlib is organized not as three separate libraries bolted together, but as a single coherent structure where the foundation layer serves all three domains, and the intersection layers enable capabilities impossible in any single domain.
+[[trident]]'s standard library reflects a mathematical reality: three computational revolutions — artificial intelligence, zero-knowledge privacy, and quantum computing — share a common algebraic foundation in prime field arithmetic. The stdlib is organized as a single coherent structure where the foundation layer serves all three domains, and the intersection layers enable capabilities impossible in any single domain.
 
 ```
                         ┌─────────────────────┐
@@ -43,7 +47,7 @@ Trident's standard library reflects a mathematical reality: three computational 
                         └─────────────────────┘
 ```
 
-The dependency flows upward. Every module ultimately reduces to field arithmetic. Every function ultimately compiles to an arithmetic circuit over $\mathbb{F}_p$. Every computation ultimately produces a STARK proof.
+The dependency flows upward. Every module ultimately reduces to field arithmetic. Every function ultimately compiles to an arithmetic circuit over $\mathbb{F}_p$. Every computation ultimately produces a [[STARK]] proof via [[Triton VM]].
 
 ---
 
@@ -53,7 +57,7 @@ Everything builds on this. These modules provide the mathematical and data infra
 
 ### std.field — Prime Field Arithmetic
 
-The bedrock. Every computation in Trident reduces to operations over the Goldilocks field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$.
+The bedrock. Every computation in [[trident]] reduces to operations over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. See [[gfp-spec]] for hardware acceleration of field primitives.
 
 ```
 std.field
@@ -64,7 +68,7 @@ std.field
 ├── poly            Polynomial arithmetic over F_p
 │   ├── eval        Evaluation, multi-point evaluation
 │   ├── interp      Lagrange interpolation
-│   ├── ntt         Number Theoretic Transform (FFT over F_p)
+│   ├── ntt         [[NTT]] — Number Theoretic Transform (FFT over F_p)
 │   ├── inv_ntt     Inverse NTT
 │   └── commit      Polynomial commitment (FRI)
 ├── matrix          Matrix operations over F_p and extensions
@@ -77,10 +81,10 @@ std.field
                     + divine()-based randomness injection
 ```
 
-**Why this matters for each pillar:**
-- **AI**: Matrix multiplication IS neural network inference. `std.field.matrix.mul` is the workhorse of `std.nn`.
-- **Privacy**: Polynomial arithmetic IS STARK proving. `std.field.poly.ntt` and `std.field.poly.commit` are the core of the proof system.
-- **Quantum**: Extension field $\mathbb{F}_{p^2}$ IS quantum amplitude arithmetic. `std.field.ext2` represents complex numbers for quantum state evolution.
+Why this matters for each pillar:
+- AI: Matrix multiplication IS neural network inference. `std.field.matrix.mul` is the workhorse of `std.nn`.
+- Privacy: Polynomial arithmetic IS [[STARK]] proving. `std.field.poly.ntt` and `std.field.poly.commit` are the core of the proof system.
+- Quantum: Extension field $\mathbb{F}_{p^2}$ IS quantum amplitude arithmetic. `std.field.ext2` represents complex numbers for quantum state evolution.
 
 Single implementation. Three domains. Zero redundancy.
 
@@ -115,9 +119,9 @@ std.math
 └── constants       Precomputed field constants (roots of unity, sqrt_inv, etc.)
 ```
 
-**Key insight: exact arithmetic.** Classical numerical computing uses floating-point approximations. Trident uses exact field arithmetic. Linear regression over $\mathbb{F}_p$ gives exact solutions (no numerical instability, no condition number problems). This is a feature, not a limitation — the exactness is what makes the STARK proof possible.
+Key insight: exact arithmetic. Classical numerical computing uses floating-point approximations. [[trident]] uses exact field arithmetic. Linear regression over $\mathbb{F}_p$ gives exact solutions (no numerical instability, no condition number problems). This is a feature, not a limitation — the exactness is what makes the STARK proof possible.
 
-**The `approx` submodule** bridges the gap between continuous mathematics and field arithmetic. Functions like $\exp$, $\log$, $\sin$ have no exact field representation, but they can be approximated to arbitrary precision via polynomial approximation or lookup tables. The approximation itself is exact in $\mathbb{F}_p$ — the error is quantified and bounded, not accumulated silently as in floating-point.
+The `approx` submodule bridges the gap between continuous mathematics and field arithmetic. Functions like $\exp$, $\log$, $\sin$ have no exact field representation, but they can be approximated to arbitrary precision via polynomial approximation or lookup tables. The approximation itself is exact in $\mathbb{F}_p$ — the error is quantified and bounded, not accumulated silently as in floating-point.
 
 ### std.data — Data Structures over $\mathbb{F}_p$
 
@@ -157,9 +161,9 @@ std.data
     └── json        JSON parsing into field element structures
 ```
 
-**Why authenticated data structures matter**: Every data structure in Trident can be Merkle-authenticated. A neural network's weights stored in a `std.data.tree.merkle` tree have a root hash that commits to the exact model. The STARK proof can reference this commitment — proving inference used the claimed model without revealing the weights.
+Why authenticated data structures matter: Every data structure in Trident can be Merkle-authenticated. A neural network's weights stored in a `std.data.tree.merkle` tree have a root hash that commits to the exact model. The STARK proof can reference this commitment — proving inference used the claimed model without revealing the weights.
 
-**Tensors for AI**: `std.data.tensor` provides NumPy/PyTorch-compatible semantics. `einsum` (Einstein summation) is a universal tensor operation that subsumes matrix multiplication, batch operations, attention computation, and convolution. Implementing `einsum` over $\mathbb{F}_p$ gives `std.nn` its entire linear algebra backbone in one function.
+Tensors for AI: `std.data.tensor` provides NumPy/PyTorch-compatible semantics. `einsum` (Einstein summation) is a universal tensor operation that subsumes matrix multiplication, batch operations, attention computation, and convolution. Implementing `einsum` over $\mathbb{F}_p$ gives `std.nn` its entire linear algebra backbone in one function.
 
 ### std.graph — Graph Algorithms over $\mathbb{F}_p$
 
@@ -190,7 +194,7 @@ std.graph
     └── continuous  Continuous-time quantum walk
 ```
 
-**The `quantum_walk` submodule** is the bridge between `std.graph` and `std.quantum`. A quantum walk on a graph is both a graph algorithm and a quantum algorithm. Classically simulated, it provides STARK-proven graph search. Quantum-executed, it provides exponential speedup for certain graph topologies.
+The `quantum_walk` submodule is the bridge between `std.graph` and `std.quantum`. A quantum walk on a graph is both a graph algorithm and a quantum algorithm. Classically simulated, it provides STARK-proven graph search. Quantum-executed, it provides exponential speedup for certain graph topologies.
 
 CyberRank lives here: `std.graph.algorithms.pagerank` for classical computation, `std.graph.quantum_walk.szegedy` for quantum-accelerated computation. Same algorithm, same proof format, different execution speed.
 
@@ -201,8 +205,8 @@ The security foundation. Most of this already exists in Triton VM; the stdlib ex
 ```
 std.crypto
 ├── hash            Hash functions
-│   ├── tip5        Tip5 (algebraic hash, STARK-native)
-│   ├── poseidon2   Poseidon2 (alternative algebraic hash)
+│   ├── tip5        [[Tip5]] (algebraic hash, STARK-native)
+│   ├── poseidon2   [[Poseidon2]] (alternative algebraic hash)
 │   ├── rescue      Rescue-Prime (alternative)
 │   └── sponge      Sponge construction (generic over permutation)
 ├── commitment      Commitment schemes
@@ -225,7 +229,7 @@ std.crypto
     └── hash_based  Hash-based constructions (primary)
 ```
 
-**Every hash function is also an activation function.** Tip5's S-box is a nonlinear map $\mathbb{F}_p \to \mathbb{F}_p$. It is used for hashing (security) and for neural network activation (expressiveness). The lookup argument that proves the S-box in a STARK is the same mechanism that proves a ReLU. This duality is exposed explicitly: `std.crypto.hash.tip5.sbox` and `std.nn.activation.tip5_sbox` are the same function, imported from different namespaces for clarity.
+Every hash function is also an activation function. [[Tip5]]'s S-box is a nonlinear map $\mathbb{F}_p \to \mathbb{F}_p$. It is used for hashing (security) and for neural network activation (expressiveness). The lookup argument that proves the S-box in a STARK is the same mechanism that proves a ReLU. This duality is exposed explicitly: `std.crypto.hash.tip5.sbox` and `std.nn.activation.tip5_sbox` are the same function, imported from different namespaces for clarity. See [[rosetta-stone]] for why the lookup table mechanism unifies all domains.
 
 ### std.io — Blockchain and External Interaction
 
@@ -250,7 +254,7 @@ std.io
 └── time            Block time, timestamps (public inputs)
 ```
 
-`std.io.divine` is the universal witness injection — and the universal oracle. For privacy: it injects secret data. For AI: it injects model weights, optimization results, adversarial examples. For quantum: it injects measurement outcomes. Same mechanism, different semantics, one proof.
+`std.io.divine` is the universal witness injection — and the universal oracle. For privacy: it injects secret data. For AI: it injects model weights, optimization results, adversarial examples. For quantum: it injects measurement outcomes. Same mechanism, different semantics, one proof. See [[rosetta-stone]] for how this lookup mechanism unifies all domains.
 
 ---
 
@@ -336,13 +340,13 @@ std.nn
         └── custom          Custom operator registration
 ```
 
-**Design decisions:**
+Design decisions:
 
-**All activations are lookup tables.** This is the insight from Part I. ReLU, GELU, SiLU — all are precomputed maps $\mathbb{F}_p \to \mathbb{F}_p$, proven via the same lookup argument as Tip5's S-box. The proof cost is constant regardless of the activation function's mathematical complexity. This means custom activations — designed specifically for field arithmetic expressiveness — cost the same to prove as standard ones.
+All activations are lookup tables. This is the insight from Part I. ReLU, GELU, SiLU — all are precomputed maps $\mathbb{F}_p \to \mathbb{F}_p$, proven via the same lookup argument as Tip5's S-box. The proof cost is constant regardless of the activation function's mathematical complexity. This means custom activations — designed specifically for field arithmetic expressiveness — cost the same to prove as standard ones.
 
-**Graph neural networks are first-class.** Bostrom's knowledge graph, social networks, molecular graphs, mycorrhizal networks — all require GNN inference. `std.nn.model.gnn` provides message-passing architectures that compose with `std.graph` for structure and `std.quantum.walk` for quantum-accelerated propagation.
+Graph neural networks are first-class. [[bostrom]]'s knowledge graph, social networks, molecular graphs, mycorrhizal networks — all require GNN inference. `std.nn.model.gnn` provides message-passing architectures that compose with `std.graph` for structure and `std.quantum.walk` for quantum-accelerated propagation.
 
-**Training is included.** Not just inference. `std.nn.optim` provides full optimizers over $\mathbb{F}_p$. This enables provable training — STARK proof that a model was trained with the claimed algorithm on the claimed data for the claimed number of steps.
+Training is included. `std.nn.optim` provides full optimizers over $\mathbb{F}_p$. This enables provable training — STARK proof that a model was trained with the claimed algorithm on the claimed data for the claimed number of steps.
 
 ### std.private — Privacy
 
@@ -405,13 +409,13 @@ std.private
     └── selective           Selective disclosure from existing proof
 ```
 
-**Design decisions:**
+Design decisions:
 
-**Privacy is more than encryption.** `std.private` provides high-level patterns — not raw cryptographic operations but composable privacy primitives. A developer building a private auction calls `std.private.computation.auction.sealed_bid`, not raw commitment schemes.
+Privacy is more than encryption. `std.private` provides high-level patterns — composable privacy primitives rather than raw cryptographic operations. A developer building a private auction calls `std.private.computation.auction.sealed_bid`, not raw commitment schemes.
 
-**Compliance and privacy coexist.** `std.private.compliance` is the module that makes enterprise adoption possible. Private transactions that can selectively reveal data to auditors. Regulatory reporting that triggers on aggregate thresholds without revealing individual values. Sanctions screening that proves non-membership without revealing the address being checked.
+Compliance and privacy coexist. `std.private.compliance` is the module that makes enterprise adoption possible. Private transactions that can selectively reveal data to auditors. Regulatory reporting that triggers on aggregate thresholds without revealing individual values. Sanctions screening that proves non-membership without revealing the address being checked.
 
-**MPC building blocks.** Multi-party computation allows multiple parties to compute a function over their combined inputs without revealing individual inputs. `std.private.computation.mpc` provides the building blocks over $\mathbb{F}_p$ — secret sharing, threshold schemes, garbled circuits — that compose with `std.nn` for private collaborative machine learning and with `std.quantum` for quantum-secure MPC.
+MPC building blocks. Multi-party computation allows multiple parties to compute a function over their combined inputs without revealing individual inputs. `std.private.computation.mpc` provides the building blocks over $\mathbb{F}_p$ — secret sharing, threshold schemes, garbled circuits — that compose with `std.nn` for private collaborative machine learning and with `std.quantum` for quantum-secure MPC.
 
 ### std.quantum — Quantum Power
 
@@ -506,13 +510,13 @@ std.quantum
         └── photonic        Photonic quantum computing
 ```
 
-**Design decisions:**
+Design decisions:
 
-**Chemistry is included.** Quantum chemistry is the most likely near-term quantum advantage. Having `std.quantum.chemistry.vqe` out of the box means Trident can prove quantum chemistry results — drug discovery, materials science, carbon modeling — as a first-class capability.
+Chemistry is included. Quantum chemistry is the most likely near-term quantum advantage. Having `std.quantum.chemistry.vqe` out of the box means Trident can prove quantum chemistry results — drug discovery, materials science, carbon modeling — as a first-class capability.
 
-**Error mitigation is first-class.** Real quantum hardware is noisy. `std.quantum.error.mitigation` provides ZNE, PEC, and DD — the standard techniques for extracting useful results from noisy hardware. These techniques are classical post-processing that can be STARK-proven — verifying that the error mitigation was applied correctly to the raw quantum results.
+Error mitigation is first-class. Real quantum hardware is noisy. `std.quantum.error.mitigation` provides ZNE, PEC, and DD — the standard techniques for extracting useful results from noisy hardware. These techniques are classical post-processing that can be STARK-proven — verifying that the error mitigation was applied correctly to the raw quantum results.
 
-**Multiple compilation backends.** The same quantum circuit compiles to classical simulation (for development and small instances), Cirq (for Google quantum hardware), QuForge (for GPU-accelerated simulation), and hardware-specific native gates (for optimal execution on specific quantum processors). The STARK proof format is identical regardless of backend.
+Multiple compilation backends. The same quantum circuit compiles to classical simulation (for development and small instances), Cirq (for Google quantum hardware), QuForge (for GPU-accelerated simulation), and hardware-specific native gates (for optimal execution on specific quantum processors). The STARK proof format is identical regardless of backend.
 
 ---
 
@@ -566,9 +570,9 @@ std.nn_private
     └── reasoning_trace     Full execution trace as explanation (STARK-native)
 ```
 
-**This is where Trident kills EZKL.** Every capability above is simultaneously post-quantum secure (STARK), cross-chain deployable (Level 1), and quantum-accelerable (via divine() → Grover). EZKL can do private inference with SNARK proofs. It cannot do provable fairness, provable robustness, provable training, or any of this with post-quantum security.
+This is where Trident surpasses EZKL. Every capability above is simultaneously post-quantum secure (STARK), cross-chain deployable (Level 1), and quantum-accelerable (via divine() → Grover). EZKL can do private inference with SNARK proofs. It cannot do provable fairness, provable robustness, provable training, or any of this with post-quantum security.
 
-**`std.nn_private.explainability.reasoning_trace` is the killer feature.** A STARK proof contains the complete execution trace. Every neuron activation, every attention weight, every intermediate value. This IS the explanation. It's not an approximation (like SHAP or LIME) — it's the actual computation path, mathematically guaranteed to be honest, yet the model weights remain private. Explainable AI via zero-knowledge proofs.
+`std.nn_private.explainability.reasoning_trace` is the killer feature. A [[STARK]] proof contains the complete execution trace. Every [[neuron]] activation, every attention weight, every intermediate value. This IS the explanation. It is the actual computation path, mathematically guaranteed to be honest, yet the model weights remain private. Explainable AI via zero-knowledge proofs. See [[trinity]] for the three-pillar architecture this stdlib implements.
 
 ### std.nn_quantum — Quantum Machine Learning
 
@@ -626,9 +630,9 @@ std.nn_quantum
     └── anomaly_detect      Quantum anomaly detection
 ```
 
-**The qtransformer is the long-term vision.** Classical transformers scale as $O(n^2)$ in sequence length for attention. Quantum attention can potentially reduce this through quantum amplitude estimation and quantum inner product computation. A quantum-enhanced transformer in Trident would be: quantum attention for $O(n\sqrt{n})$ scaling → classical feed-forward for expressiveness → STARK proof of the entire forward pass. Post-quantum-secure verifiable quantum transformers.
+The qtransformer is the long-term vision. Classical transformers scale as $O(n^2)$ in sequence length for attention. Quantum attention can potentially reduce this through quantum amplitude estimation and quantum inner product computation. A quantum-enhanced transformer in Trident would be: quantum attention for $O(n\sqrt{n})$ scaling → classical feed-forward for expressiveness → STARK proof of the entire forward pass. Post-quantum-secure verifiable quantum transformers.
 
-**`std.nn_quantum.train.barren_plateau`** addresses the biggest practical problem in quantum ML: barren plateaus (exponentially vanishing gradients in deep variational circuits). Detection and mitigation strategies, STARK-proven to have been applied correctly.
+`std.nn_quantum.train.barren_plateau` addresses the biggest practical problem in quantum ML: barren plateaus (exponentially vanishing gradients in deep variational circuits). Detection and mitigation strategies, STARK-proven to have been applied correctly.
 
 ### std.quantum_private — Quantum Cryptography
 
@@ -678,9 +682,9 @@ std.quantum_private
     └── quantum_auction     Quantum sealed-bid auction (no-cloning security)
 ```
 
-**`std.quantum_private.quantum_random.certifiable` is remarkable.** Generate a random number on quantum hardware. Use a Bell inequality violation to certify the randomness is genuine (device-independent). Generate a STARK proof that the Bell test was correctly evaluated. Publish on-chain as a certified random beacon. Physics-guaranteed randomness with mathematical proof of certification, available to any smart contract.
+`std.quantum_private.quantum_random.certifiable` is remarkable. Generate a random number on quantum hardware. Use a Bell inequality violation to certify the randomness is genuine (device-independent). Generate a STARK proof that the Bell test was correctly evaluated. Publish on-chain as a certified random beacon. Physics-guaranteed randomness with mathematical proof of certification, available to any smart contract.
 
-**Blind quantum computing** (`std.quantum_private.quantum_mpc.verifiable_qc.blind`): send a quantum computation to a quantum cloud provider such that the provider cannot see what you're computing. Combined with STARK proof of the classical portion, this gives fully private verifiable quantum computation — the provider learns nothing about your data or algorithm, you learn nothing about their hardware beyond the result, and both sides can verify correctness.
+Blind quantum computing (`std.quantum_private.quantum_mpc.verifiable_qc.blind`): send a quantum computation to a quantum cloud provider such that the provider cannot see what you're computing. Combined with STARK proof of the classical portion, this gives fully private verifiable quantum computation — the provider learns nothing about your data or algorithm, you learn nothing about their hardware beyond the result, and both sides can verify correctness.
 
 ---
 
@@ -721,12 +725,12 @@ std.agent
     ├── keeper              Liquidation / maintenance agent
     ├── oracle              Data oracle agent
     ├── governance          DAO governance agent
-    └── search              Knowledge graph search agent (Bostrom)
+    └── search              Knowledge graph search agent ([[bostrom]])
 ```
 
-**Every agent decision produces a STARK proof.** The proof covers perception (which inputs were used), reasoning (which model was applied), and decision (which action resulted). The proof IS the agent's audit trail — complete, honest, and verifiable by anyone.
+Every agent decision produces a STARK proof. The proof covers perception (which inputs were used), reasoning (which model was applied), and decision (which action resulted). The proof IS the agent's audit trail — complete, honest, and verifiable by anyone.
 
-**`std.agent.safety` is how you build AI that stays safe.** Hard constraints proven in the STARK mean the agent provably cannot violate its safety envelope — not because of software checks (which can be buggy) but because of mathematical proof (which is sound). A trading agent with `std.agent.safety.budget` set to max $10,000 per trade literally cannot exceed this because the STARK proof would be invalid.
+`std.agent.safety` is how you build AI that stays safe. Hard constraints proven in the STARK mean the agent provably cannot violate its safety envelope — because of mathematical proof (which is sound), not software checks (which can be buggy). A trading agent with `std.agent.safety.budget` set to max $10,000 per trade literally cannot exceed this because the STARK proof would be invalid.
 
 ### std.defi — Decentralized Finance
 
@@ -798,7 +802,7 @@ std.science
     └── drug_candidate      Proven pharmaceutical computation
 ```
 
-**`std.science.certificate`** turns computational science into economic instruments. A carbon credit backed by quantum chemistry simulation, STARK-proven, settled on-chain. Not "trust the lab's spreadsheet" — trust the mathematics.
+`std.science.certificate` turns computational science into economic instruments. A carbon credit backed by quantum chemistry simulation, STARK-proven, settled on-chain via [[neptune]]. Trust the mathematics, not the lab's spreadsheet.
 
 ---
 
@@ -866,3 +870,5 @@ std.science ────► std.data ──────────────�
 Every arrow is a dependency. Every dependency reduces to field arithmetic. Every field operation produces a constraint. Every constraint is proven by STARK.
 
 One language. One field. One proof. Fifteen modules. The complete standard library for verifiable intelligence, privacy, and quantum computation.
+
+Within the cyber protocol, this stdlib powers the [[cybergraph]]: every [[particle]] connected by [[cyberlink]] through [[neuron]] agents, with [[focus]] routing computation through the [[tri-kernel]]. The [[GFP]] hardware layer accelerates the [[Goldilocks field]] primitives that underpin every module. [[TFHE]] integration extends the three pillars to four — see [[goldilocks-fhe-construction]] for the complete FHE construction over this same field.
