@@ -16,19 +16,15 @@ jobs:
           fetch-depth: 0
 
       - name: Upload images to IPFS
-        if: ${{ secrets.PINATA_JWT != '' }}
         env:
           PINATA_JWT: ${{ secrets.PINATA_JWT }}
           PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
         run: |
-          # Find markdown files referencing local assets
-          ASSET_REFS=$(grep -rl 'assets/' pages/ journals/ --include="*.md" 2>/dev/null || true)
-          if [ -z "$ASSET_REFS" ]; then
-            echo "No local asset references found, skipping IPFS upload"
+          if [ -z "$PINATA_JWT" ]; then
+            echo "PINATA_JWT not set, skipping IPFS upload"
             exit 0
           fi
 
-          # Find unique asset files referenced in markdown
           ASSETS=$(grep -roh 'assets/[^)]*\.\(png\|jpg\|jpeg\|gif\|webp\|svg\)' pages/ journals/ --include="*.md" 2>/dev/null | sort -u || true)
           if [ -z "$ASSETS" ]; then
             echo "No image assets to upload"
@@ -44,7 +40,6 @@ jobs:
               HASH=$(echo "$RESPONSE" | jq -r '.IpfsHash // empty')
               if [ -n "$HASH" ]; then
                 IPFS_URL="${PINATA_GATEWAY}/ipfs/${HASH}"
-                # Replace local path with IPFS URL in all markdown files
                 find pages/ journals/ -name "*.md" -exec sed -i "s|${asset}|${IPFS_URL}|g" {} +
                 echo "  $asset → $IPFS_URL"
               else
@@ -79,10 +74,13 @@ jobs:
           fi
 
       - name: Inject analytics
-        if: ${{ secrets.PLAUSIBLE_SCRIPT_ID != '' }}
         env:
           PLAUSIBLE_SCRIPT_ID: ${{ secrets.PLAUSIBLE_SCRIPT_ID }}
         run: |
+          if [ -z "$PLAUSIBLE_SCRIPT_ID" ]; then
+            echo "PLAUSIBLE_SCRIPT_ID not set, skipping analytics"
+            exit 0
+          fi
           SCRIPT_TAG="<script defer data-domain=\"cyber.page\" src=\"https://plausible.io/js/script.js\" data-api=\"https://plausible.io/api/event\"></script>"
           find public -name "*.html" -exec sed -i "s|</head>|${SCRIPT_TAG}</head>|" {} +
 
