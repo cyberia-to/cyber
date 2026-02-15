@@ -1,4 +1,4 @@
-name: Publish Sites
+name: Publish
 
 on:
   push:
@@ -85,41 +85,6 @@ jobs:
         run: |
           SCRIPT_TAG="<script defer data-domain=\"cyber.page\" src=\"https://plausible.io/js/script.js\" data-api=\"https://plausible.io/api/event\"></script>"
           find public -name "*.html" -exec sed -i "s|</head>|${SCRIPT_TAG}</head>|" {} +
-
-      - name: Deploy to Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx netlify-cli deploy --dir=public --prod
-
-  publish-cvland:
-    runs-on: ubuntu-latest
-    environment: cvland
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache Rust build
-        uses: actions/cache@v4
-        with:
-          path: |
-            src/publish/target
-            ~/.cargo/registry
-            ~/.cargo/git
-          key: ${{ runner.os }}-cargo-${{ hashFiles('src/publish/Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-cargo-
-
-      - name: Build site
-        run: cd src/publish && cargo run --release -- build ../.. --base-url "https://cv.land"
-
-      - name: Add deploy files
-        run: touch public/.nojekyll
 
       - name: Deploy to Netlify
         env:
