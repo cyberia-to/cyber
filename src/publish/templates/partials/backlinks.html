@@ -1,0 +1,12 @@
+{% if backlinks %}
+<section class="backlinks" aria-label="Backlinks">
+  <h2>Linked References</h2>
+  <ul class="backlinks-list">
+    {% for bl in backlinks %}
+    <li>
+      <a href="{{ bl.url }}" class="backlink-title">{{ bl.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

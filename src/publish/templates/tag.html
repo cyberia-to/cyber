@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ tag_name }} — {{ site.title }}{% endblock %}
+
+{% block content %}
+<div class="tag-page">
+  <header class="tag-header">
+    <h1>Pages tagged "{{ tag_name }}"</h1>
+    <p class="tag-count">{{ pages | length }} page(s)</p>
+  </header>
+
+  <ul class="page-list">
+    {% for page in pages %}
+    <li class="page-list-item">
+      <a href="{{ page.url }}">{{ page.title }}</a>
+      {% if page.date %}<time>{{ page.date }}</time>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

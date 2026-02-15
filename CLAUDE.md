@@ -12,12 +12,29 @@
   `docs:`, `test:`, `chore:`.
 ## Knowledge Graph Purpose
 
-This Logseq graph is the seed knowledge base for planetary
-superintelligence. It contains only the essential concepts needed for
-further development and survival — not everything, just the core.
+This is the seed knowledge base for planetary superintelligence. Pages
+are pure markdown with YAML frontmatter. The publisher lives at
+`src/publish/` (Rust crate `cyber-publish`).
+
+## Page Format
+
+Pages use YAML frontmatter for metadata and standard markdown for content:
+```yaml
+---
+tags: cyber, menu
+crystal-type: entity
+crystal-domain: cyber
+icon: "\U0001F535"
+---
+```
+Wiki-links (`[[page]]`) and query expressions (`{{query (...)}}`,
+`{{embed [[page]]}}`) are the graph's own syntax, evaluated by the
+publisher.
+
+Namespaced pages live in directories: `pages/bostrom/infrastructure/servers.md`
 ## Tagging Conventions
 
-Every page should have a `tags::` line. Key project tags (lenses):
+Every page should have a `tags:` field in frontmatter. Key project tags (lenses):
 - `cyber` — the superintelligence protocol
 - `cyb` — the browser/interface
 - `cyberia` — the cyber network state
@@ -32,10 +49,10 @@ Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
   but a Z". Say what something IS. Negation is a crutch — state the
   positive identity directly.
 - **Never use bold (`**text**`).** Bold is banned from the graph. For
-  emphasis use: `property::` for key-value pairs at the start of a line,
-  `# heading` for section titles, `[[wiki-link]]` for inline emphasis on
-  concepts. If a term does not deserve its own page, it does not need
-  emphasis — just write it plain.
+  emphasis use: YAML frontmatter for key-value pairs, `# heading` for
+  section titles, `[[wiki-link]]` for inline emphasis on concepts. If a
+  term does not deserve its own page, it does not need emphasis — just
+  write it plain.
 ## Wiki-Link Plurals
 
 Never write `[[term]]s` with a floating `s` outside the link. Every
@@ -49,8 +66,8 @@ Use `nu -c '...'` or `nu script.nu` for all scripting. Nushell has
 structured data pipelines, built-in dataframes, and powerful search/filter
 commands — use them instead of bash+sed+awk+grep chains. Examples:
 - list pages: `ls pages/*.md | get name`
-- find untagged: `ls pages/*.md | where { (open $it.name | lines | first) !~ '^tags::' }`
-- count by tag: `glob pages/*.md | each {|f| open $f | lines | first } | where $it =~ 'species' | length`
+- find untagged: `glob pages/**/*.md | where {|f| not ((open --raw $f) | str starts-with "---\n") }`
+- count by tag: `glob pages/**/*.md | each {|f| open --raw $f | lines | where $it =~ 'tags:' | first } | where $it =~ 'species' | length`
 - dataframe ops: `dfr open`, `dfr filter`, `dfr group-by` for bulk analysis
 
 Reserve bash only for git commands and system tools that have no nu equivalent.
@@ -77,6 +94,7 @@ nu ~/git/cyber/nu/analyze.nu ~/git/cyber
 Scripts:
 - `nu/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
 - `nu/stats.nu` — graph statistics (orphans, broken links, content types)
+- `nu/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
 
 When adding a new script: place it in `nu/`, accept `graph_path` as first
 arg, and update this list.

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Blog — {{ site.title }}{% endblock %}
+
+{% block content %}
+<div class="blog-page">
+  <div class="timeline">
+    {% for post in posts %}
+    <div class="timeline-entry">
+      <div class="timeline-date">
+        <a href="{{ post.url }}" class="timeline-date-link">{{ post.title }}</a>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-body">{{ post.content_html | safe }}</div>
+        {% if post.truncated %}
+        <a href="{{ post.url }}" class="timeline-more">read more</a>
+        {% endif %}
+        {% if post.tags %}
+        <div class="timeline-tags">
+          {% for tag in post.tags %}
+          <a href="/tags/{{ tag | lower }}" class="tag tag-small">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="graph-stats">{{ posts | length }} journal entries</div>
+</div>
+{% endblock %}

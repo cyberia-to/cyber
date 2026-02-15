@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Topics — {{ site.title }}{% endblock %}
+
+{% block content %}
+<div class="fullscreen-viz">
+  <div id="topics-graph" class="fullscreen-viz-container"></div>
+</div>
+<script src="/static/topics.js"></script>
+<script>initTopicsGraph('topics-graph');</script>
+{% endblock %}

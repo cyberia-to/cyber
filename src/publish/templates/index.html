@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}{{ site.title
+}}{% endblock %} {% block content %}
+<div class="index-page">
+    <header class="index-header">
+        <h1>{{ site.title }}</h1>
+        {% if site.description %}
+        <p class="site-description">
+            {{ site.description }}
+        </p>
+        {% endif %} {% if page_count is defined %}
+        <p class="page-count">
+            {{ page_count }} pages in this knowledge base
+        </p>
+        {% endif %}
+    </header>
+
+    {% if tags %}
+    <section class="index-topics">
+        <h2>
+            <a
+                href="/tags"
+                style="
+                    color: inherit;
+                    text-decoration: none;
+                "
+                >Topics</a
+            >
+        </h2>
+        <div
+            id="topics-mini"
+            class="fullscreen-viz-container"
+        ></div>
+    </section>
+    {% endif %} {% if recent_pages %}
+    <section class="recent-pages">
+        <h2>Recent Pages</h2>
+        <ul class="page-list">
+            {% for page in recent_pages %}
+            <li class="page-list-item">
+                <a href="{{ page.url }}">
+                    {% if page.icon %}<span
+                        class="page-icon-small"
+                        >{{ page.icon }}</span
+                    >{% endif %}
+                    <span class="page-list-title"
+                        >{{ page.title }}</span
+                    >
+                </a>
+                {% if page.date %}<time
+                    >{{ page.date }}</time
+                >{% endif %} {% if page.tags %}
+                <span class="page-list-tags">
+                    {% for tag in page.tags %}
+                    <a
+                        href="/tags/{{ tag | lower }}"
+                        class="tag tag-small"
+                        >{{ tag }}</a
+                    >
+                    {% endfor %}
+                </span>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+</div>
+<script src="/static/topics.js"></script>
+<script>
+    initTopicsGraph("topics-mini", {
+        compact: true,
+        maxNodes: 50,
+    });
+</script>
+{% endblock %}

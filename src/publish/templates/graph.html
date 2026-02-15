@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Graph — {{ site.title }}{% endblock %}
+
+{% block content %}
+<div class="fullscreen-viz">
+  <div id="graph-container" class="fullscreen-viz-container"></div>
+</div>
+<script src="/static/graph-data.js"></script>
+<script src="/static/graph.js"></script>
+{% endblock %}

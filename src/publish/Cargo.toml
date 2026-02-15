@@ -1,0 +1,49 @@
+[package]
+name = "cyber-publish"
+version = "0.2.0"
+edition = "2021"
+rust-version = "1.75"
+description = "A fast, Rust-native static site publisher for the cyber knowledge graph"
+license = "MIT"
+repository = "https://github.com/cybercongress/cyber"
+homepage = "https://github.com/cybercongress/cyber"
+readme = "README.md"
+keywords = ["markdown", "static-site-generator", "knowledge-graph", "wiki", "cyber"]
+categories = ["command-line-utilities", "web-programming", "text-processing"]
+include = [
+    "src/**/*",
+    "templates/**/*",
+    "static/**/*",
+    "Cargo.toml",
+    "Cargo.lock",
+    "README.md",
+    "LICENSE",
+]
+
+[dependencies]
+comrak = { version = "0.36", default-features = false, features = ["syntect", "shortcodes"] }
+minijinja = { version = "2.15", features = ["loader"] }
+minijinja-autoreload = "2.15"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+toml = "0.8"
+clap = { version = "4", features = ["derive"] }
+notify = "7"
+notify-debouncer-mini = "0.5"
+tiny_http = "0.12"
+rss = "2.0"
+chrono = { version = "0.4", features = ["serde"] }
+slug = "0.1"
+regex = "1"
+lazy_static = "1"
+rayon = "1.10"
+colored = "2"
+anyhow = "1"
+thiserror = "2"
+walkdir = "2"
+ctrlc = { version = "3", features = ["termination"] }
+
+[dev-dependencies]
+tempfile = "3"
+pretty_assertions = "1"
