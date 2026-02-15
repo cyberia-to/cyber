@@ -18,8 +18,8 @@ def main [graph_path: string] {
         {key: $key, val: $val}
     } | reduce -f {} {|it, acc| $acc | insert $it.key $it.val})
 
-    let jwt = ($env_vars | get -i PINATA_JWT | default '')
-    let gateway = ($env_vars | get -i PINATA_GATEWAY | default '')
+    let jwt = ($env_vars | get -o PINATA_JWT | default '')
+    let gateway = ($env_vars | get -o PINATA_GATEWAY | default '')
 
     if ($jwt | is-empty) or ($gateway | is-empty) {
         print "PINATA_JWT or PINATA_GATEWAY not set in ~/.config/cyber/env, skipping"
@@ -77,7 +77,7 @@ def main [graph_path: string] {
             {file: (open $full_path --raw)}
         )
 
-        let cid = ($resp | get -i IpfsHash | default '')
+        let cid = ($resp | get -o IpfsHash | default '')
         if ($cid | is-empty) {
             print $"  WARNING: Failed to upload ($asset)"
             continue
