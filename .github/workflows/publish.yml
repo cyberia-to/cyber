@@ -77,4 +77,21 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx netlify-cli deploy --dir=public --prod
+        run: |
+          cd public && zip -qr /tmp/deploy.zip . && cd ..
+          echo "Deploying $(du -sh /tmp/deploy.zip | cut -f1) zip to Netlify..."
+          RESPONSE=$(curl -s -X POST \
+            "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}/deploys" \
+            -H "Authorization: Bearer ${NETLIFY_AUTH_TOKEN}" \
+            -H "Content-Type: application/zip" \
+            --data-binary @/tmp/deploy.zip)
+          STATE=$(echo "$RESPONSE" | jq -r '.state // .error // "unknown"')
+          URL=$(echo "$RESPONSE" | jq -r '.ssl_url // .url // empty')
+          echo "Deploy state: $STATE"
+          if [ -n "$URL" ]; then
+            echo "URL: $URL"
+          fi
+          if echo "$RESPONSE" | jq -e '.error' > /dev/null 2>&1; then
+            echo "Error: $(echo "$RESPONSE" | jq -r '.message // .error')"
+            exit 1
+          fi
