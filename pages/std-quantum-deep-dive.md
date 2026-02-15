@@ -1,5 +1,8 @@
 tags:: trident, cyber, article
-# std.quantum: A Quantum Standard Library for Trident
+alias:: std.quantum, quantum standard library, quantum deep dive
+crystal-type:: article
+crystal-domain:: cyber
+# std.quantum: A Quantum Standard Library for [[trident]]
 
 ## Provable Quantum Computing Through Prime Field Arithmetic
 
@@ -9,11 +12,11 @@ tags:: trident, cyber, article
 
 Trident's `std.nn` provides neural network primitives — linear layers, activations, normalization — all as native field arithmetic over $\mathbb{F}_p$. The same principle applies to quantum computing. Quantum operations are unitary transformations on Hilbert spaces. When the dimension is prime, these transformations are arithmetic over $\mathbb{F}_p$. A quantum standard library for Trident — `std.quantum` — would provide quantum computing primitives that are simultaneously:
 
-- **Classically simulatable** on Triton VM with STARK proofs
-- **Quantum-executable** on qudit hardware via compilation to Cirq/QuForge
-- **Composable** with `std.nn` for verifiable quantum machine learning
+- Classically simulatable on [[Triton VM]] with [[STARK]] proofs
+- Quantum-executable on qudit hardware via compilation to Cirq/QuForge
+- Composable with `std.nn` for verifiable quantum machine learning
 
-The library doesn't simulate quantum mechanics as an afterthought. It expresses quantum mechanics in its native algebra — the same algebra Trident already uses for everything else.
+The library does not simulate quantum mechanics as an afterthought. It expresses quantum mechanics in its native algebra — the same [[Goldilocks field]] algebra ([[GFP]]) that Trident already uses for everything else.
 
 ---
 
@@ -85,7 +88,7 @@ The `matvec` operation is multiply-accumulate over $\mathbb{F}_{p^2}$ — the sa
 
 The generalized Pauli gates for prime dimension $p$ are:
 
-**Shift gate (generalized X):** $X|j\rangle = |j+1 \bmod p\rangle$
+Shift gate (generalized X): $X|j\rangle = |j+1 \bmod p\rangle$
 
 This is field addition on the basis label. In Trident: a permutation of the amplitude vector, which is a reindexing — zero arithmetic cost.
 
@@ -100,7 +103,7 @@ fn shift_gate<const D: u32>() -> Gate<D> {
 }
 ```
 
-**Clock gate (generalized Z):** $Z|j\rangle = \omega^j |j\rangle$ where $\omega = e^{2\pi i/p}$
+Clock gate (generalized Z): $Z|j\rangle = \omega^j |j\rangle$ where $\omega = e^{2\pi i/p}$
 
 This is a diagonal phase gate. The phases are $p$-th roots of unity. In $\mathbb{F}_{p^2}$, we represent $\omega$ using the quadratic extension (or, for simulation purposes, as a lookup table of precomputed values).
 
@@ -117,7 +120,7 @@ fn clock_gate<const D: u32>(omega: Complex) -> Gate<D> {
 }
 ```
 
-**Hadamard gate (generalized):** $H|j\rangle = \frac{1}{\sqrt{p}} \sum_k \omega^{jk} |k\rangle$
+Hadamard gate (generalized): $H|j\rangle = \frac{1}{\sqrt{p}} \sum_k \omega^{jk} |k\rangle$
 
 This is the Quantum Fourier Transform on a single qudit — a dense matrix of roots of unity. In $\mathbb{F}_{p^2}$: a matrix-vector multiply with $p^2$ multiply-accumulate operations. Expensive classically, but this is exactly the operation that quantum hardware performs in one step.
 
@@ -138,7 +141,7 @@ fn hadamard_gate<const D: u32>(omega: Complex) -> Gate<D> {
 }
 ```
 
-**Controlled gates:** A controlled-U gate on two qudits applies U to the target qudit conditional on the control qudit's state.
+Controlled gates: A controlled-U gate on two qudits applies U to the target qudit conditional on the control qudit's state.
 
 ```
 fn controlled_gate<const D: u32>(
@@ -192,7 +195,7 @@ The `divine()` call is the bridge between classical simulation and quantum execu
 
 #### 5. The Quantum Fourier Transform
 
-The QFT over $\mathbb{Z}/p\mathbb{Z}$ is the workhorse of quantum algorithms — Shor's factoring, quantum phase estimation, and the quantum speedup for NTT in STARK proving all depend on it.
+The QFT over $\mathbb{Z}/p\mathbb{Z}$ is the workhorse of quantum algorithms — Shor's factoring, quantum phase estimation, and the quantum speedup for [[NTT]] in STARK proving all depend on it.
 
 For a single qudit, QFT is the Hadamard gate. For multiple qudits, it decomposes into single-qudit Hadamards and controlled phase gates:
 
@@ -255,7 +258,7 @@ The `oracle` parameter is any Trident function. On classical Triton VM, Grover's
 
 On quantum hardware, the `oracle` compiles to a quantum oracle circuit, and Grover's algorithm runs natively with $O(\sqrt{N})$ queries. The measurement result feeds back into the classical STARK prover for verification.
 
-The key insight: **the oracle is a regular Trident function.** Any constraint system — a lock script, a neural network classifier, a graph search predicate — can be passed as the oracle. Grover's algorithm becomes a generic accelerator for any Trident computation that involves searching.
+The key insight: the oracle is a regular Trident function. Any constraint system — a lock script, a neural network classifier, a graph search predicate — can be passed as the oracle. Grover's algorithm becomes a generic accelerator for any Trident computation that involves searching.
 
 #### Quantum Phase Estimation
 
@@ -392,7 +395,7 @@ On Triton VM: classical simulation with STARK proof. Verifiable inference of a q
 
 On quantum hardware: native quantum execution. The encoding, layers, and measurement all run on qudits. Quadratically fewer parameters than classical networks for certain tasks (proven for qutrits — 90× improvement on optimization).
 
-On both targets: **the proof is identical.** Whether the quantum classifier ran on classical simulation or quantum hardware, the STARK proof verifies the same arithmetic constraints. This is the key property — quantum and classical execution produce the same proof format, verifiable by the same verifier, on the same blockchain.
+On both targets: the proof is identical. Whether the quantum classifier ran on classical simulation or quantum hardware, the STARK proof verifies the same arithmetic constraints. This is the key property — quantum and classical execution produce the same proof format, verifiable by the same verifier, on the same blockchain.
 
 #### Hybrid Classical-Quantum Model
 
@@ -451,9 +454,9 @@ The quantum simulation is expensive — exponential in the number of qudits. But
 
 This is not just a development tool. Classical simulation with STARK proof has inherent value:
 
-- **Verifiable quantum algorithm development:** Write and test quantum algorithms on classical hardware with mathematical proof of correctness. When quantum hardware is available, the same code runs natively.
-- **Benchmark certification:** Prove that a claimed quantum speedup is genuine by proving the classical simulation took a specific number of operations.
-- **Quantum error analysis:** Simulate noisy quantum circuits classically, prove the simulation correct, compare with hardware results to characterize error rates.
+- Verifiable quantum algorithm development: Write and test quantum algorithms on classical hardware with mathematical proof of correctness. When quantum hardware is available, the same code runs natively.
+- Benchmark certification: Prove that a claimed quantum speedup is genuine by proving the classical simulation took a specific number of operations.
+- Quantum error analysis: Simulate noisy quantum circuits classically, prove the simulation correct, compare with hardware results to characterize error rates.
 
 #### Quantum Target: Cirq / QuForge
 
@@ -513,11 +516,11 @@ fn molecular_energy(
 
 Deploy this as a Neptune smart contract. Anyone can call it with a molecule specification. The result is a STARK-proven ground state energy. Use cases:
 
-- **Drug discovery:** Prove binding affinity computations on-chain. Pharmaceutical IP as verifiable proofs.
-- **Materials science:** Prove material property predictions. Supply chain quality assurance via verified simulation.
-- **Carbon credit verification:** Prove molecular-level photosynthesis simulation. Carbon absorption certificates backed by quantum chemistry.
+- Drug discovery: Prove binding affinity computations on-chain. Pharmaceutical IP as verifiable proofs.
+- Materials science: Prove material property predictions. Supply chain quality assurance via verified simulation.
+- Carbon credit verification: Prove molecular-level photosynthesis simulation. Carbon absorption certificates backed by quantum chemistry.
 
-#### 2. Quantum-Enhanced CyberRank for Bostrom
+#### 2. Quantum-Enhanced CyberRank for [[bostrom]]
 
 ```
 /// Quantum walk on knowledge graph
@@ -544,7 +547,7 @@ fn quantum_cyberrank(
 
 Classical simulation for small graphs (STARK-proven). Quantum execution for large graphs (exponential speedup on mixing time). The ranking is provably correct — not "trust the algorithm," but "here's a mathematical proof."
 
-For Bostrom: every knowledge graph query could carry a STARK proof of ranking correctness. Users don't trust the search engine — they verify it.
+For [[bostrom]]: every [[cybergraph]] query could carry a STARK proof of ranking correctness. Each [[neuron]] submits [[cyberlinks]] connecting [[particles]], and [[focus]] determines relevance. Users do not trust the search engine — they verify it.
 
 #### 3. Quantum Random Number Generation with Proof
 
@@ -695,19 +698,19 @@ std/
 │   └── train.tri          // Hybrid training loops (parameter shift rule)
 │
 └── crypto/
-    ├── hash.tri           // Tip5, Poseidon2
+    ├── hash.tri           // Tip5, [[Poseidon2]]
     ├── merkle.tri         // Merkle trees
     ├── commit.tri         // Commitments
     └── verify.tri         // STARK verification (recursive)
 ```
 
-The four directories represent four capabilities:
+The four directories represent the four capabilities of the [[tri-kernel]] architecture:
 - `std.quantum` — quantum computing primitives
 - `std.nn` — neural network primitives
 - `std.nn_quantum` — quantum machine learning (the intersection)
-- `std.crypto` — cryptographic primitives (already exists in Triton VM)
+- `std.crypto` — cryptographic primitives (already exists in [[Triton VM]])
 
-All four share the same foundation: arithmetic over $\mathbb{F}_p$. All four produce the same artifact: arithmetic circuits compiled to TASM, proven by STARK.
+All four share the same foundation: arithmetic over $\mathbb{F}_p$. All four produce the same artifact: arithmetic circuits compiled to TASM, proven by [[STARK]].
 
 ---
 
@@ -719,7 +722,7 @@ Current quantum programming (Q#, Qiskit, Cirq) produces unverifiable results. Yo
 
 `std.quantum` makes quantum results provable. The STARK proof verifies that the classical post-processing (or the classical simulation) was correct. For quantum hardware results, the proof covers everything except the quantum measurement itself — which is inherently probabilistic and outside any proof system's scope.
 
-This enables **trustless quantum cloud computing.** Send a Trident program to a quantum provider. Receive results plus STARK proof. Verify locally. No trust in the provider, the hardware, or the network.
+This enables trustless quantum cloud computing. Send a Trident program to a quantum provider. Receive results plus STARK proof. Verify locally. No trust in the provider, the hardware, or the network.
 
 #### For AI/ML
 
@@ -727,7 +730,7 @@ Current quantum ML (PennyLane, Qiskit ML, TensorFlow Quantum) is a research play
 
 `std.nn_quantum` makes quantum ML deployable. The hybrid model runs on production quantum hardware (or classical simulation), produces a STARK proof, and deploys on-chain as a smart contract. The proof covers training correctness, inference correctness, and constraint satisfaction.
 
-This enables **verifiable quantum AI agents** — the first AI systems that are simultaneously intelligent (learned models), quantum-enhanced (qudit circuits), and mathematically accountable (STARK proofs).
+This enables verifiable quantum AI agents — the first AI systems that are simultaneously intelligent (learned models), quantum-enhanced (qudit circuits), and mathematically accountable (STARK proofs).
 
 #### For Blockchain
 
@@ -735,11 +738,11 @@ Current blockchains have no quantum computing capability. Smart contracts are cl
 
 `std.quantum` makes quantum computing a blockchain-native capability. A Neptune smart contract can include quantum subroutines that execute on quantum hardware, with results verified on-chain via STARK proofs. The blockchain becomes a settlement layer for quantum computation.
 
-This enables **quantum DeFi** — financial instruments whose valuations, risk models, and optimizations leverage quantum advantage, with every computation proven and settled on-chain.
+This enables quantum DeFi — financial instruments whose valuations, risk models, and optimizations leverage quantum advantage, with every computation proven and settled on-chain.
 
 #### For the Trident Ecosystem
 
-`std.quantum` completes the trinity. Trident becomes not just a smart contract language, not just a provable computation language, not just a quantum-compatible language — but a **universal verifiable computation language** that spans classical, quantum, and AI workloads under one proof system.
+`std.quantum` completes the [[trinity]]. [[trident]] becomes not just a smart contract language, not just a provable computation language, not just a quantum-compatible language — but a universal verifiable computation language that spans classical, quantum, and AI workloads under one proof system.
 
 The developer writes one program. It compiles to classical execution (today), quantum execution (tomorrow), and hybrid execution (the transition). The proof is the same. The verification is the same. The blockchain is the same.
 
@@ -747,16 +750,16 @@ The developer writes one program. It compiles to classical execution (today), qu
 
 ### Implementation Roadmap
 
-**Phase 1: Core primitives (3-6 months)**
-Implement `Qstate`, `Gate`, `apply_gate`, `measure` for small qudit counts (1-4 qudits, dimension 3 or 5). Demonstrate: Grover's search on 2-qutrit system, STARK-proven, verified on Neptune. This is the "Hello World" of provable quantum computing.
+Phase 1 — Core primitives (3-6 months):
+Implement `Qstate`, `Gate`, `apply_gate`, `measure` for small qudit counts (1-4 qudits, dimension 3 or 5). Demonstrate: Grover's search on 2-qutrit system, STARK-proven, verified on [[neptune]]. This is the "Hello World" of provable quantum computing.
 
-**Phase 2: Algorithm library (6-12 months)**
+Phase 2 — Algorithm library (6-12 months):
 Implement QFT, phase estimation, VQE, QAOA. Build Cirq compilation backend. Demonstrate: VQE for a small molecule (H₂) classically simulated with STARK proof, then the same code running on trapped-ion qutrit hardware via Cirq.
 
-**Phase 3: std.nn_quantum (12-18 months)**
-Build quantum neural network layers, hybrid models, training loops. Demonstrate: hybrid classical-quantum classifier on a real dataset, STARK-proven inference, deployed as Neptune smart contract.
+Phase 3 — std.nn_quantum (12-18 months):
+Build quantum neural network layers, hybrid models, training loops. Demonstrate: hybrid classical-quantum classifier on a real dataset, STARK-proven inference, deployed as [[neptune]] smart contract.
 
-**Phase 4: Production applications (18-36 months)**
+Phase 4 — Production applications (18-36 months):
 Quantum portfolio optimization, quantum CyberRank, quantum chemistry as smart contracts. Integrate with quantum cloud providers (IBM, Google, IonQ) via Cirq backend.
 
 ---
@@ -777,3 +780,11 @@ A single Trident program can:
 This is the full stack of verifiable quantum AI. Not as a theoretical possibility — as a concrete library architecture with a concrete implementation roadmap, built on a concrete mathematical foundation.
 
 The field is prime. The algebra is shared. The library is waiting to be written.
+
+---
+
+### Cross-References
+
+See [[trinity]] for how quantum fits into the three-pillar architecture.
+See [[trident-complete-stdlib]] for the full stdlib specification including std.quantum.
+See [[trident-trinity-zk-ai-quantum]] for the unified thesis.
