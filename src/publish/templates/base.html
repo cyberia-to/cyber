@@ -24,19 +24,14 @@
             title="{{ site.title }}"
             href="/feed.xml"
         />
-        {% if site.favicon %} {% if site.favicon is
-        starting_with("http") or site.favicon is
-        ending_with(".png") or site.favicon is
-        ending_with(".ico") %}
-        <link rel="icon" href="{{ site.favicon }}" />
-        {% else %}
+        {% if favicon %}
         <link
             rel="icon"
-            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{ site.favicon }}</text></svg>"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>{{ favicon }}</text></svg>"
         />
-        {% endif %} {% endif %} {% if analytics is defined
-        and analytics.snippet %} {{ analytics.snippet | safe
-        }} {% elif analytics is defined and
+        {% endif %} {% if analytics is defined and
+        analytics.snippet %} {{ analytics.snippet | safe }}
+        {% elif analytics is defined and
         analytics.plausible_domain %}
         <script
             defer

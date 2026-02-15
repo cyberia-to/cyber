@@ -167,6 +167,29 @@ pub fn build_page_context(
         vec![]
     };
 
+    // Resolve favicon: page icon > namespace parent icon > site favicon
+    let favicon = page
+        .meta
+        .icon
+        .clone()
+        .or_else(|| {
+            // Walk up namespace parents to find an icon
+            if let Some(ref ns) = page.namespace {
+                let segments: Vec<&str> = ns.split('/').collect();
+                for i in (0..segments.len()).rev() {
+                    let parent_path = segments[..=i].join("/");
+                    let parent_slug = crate::parser::slugify_page_name(&parent_path);
+                    if let Some(parent) = store.pages.get(&parent_slug) {
+                        if parent.meta.icon.is_some() {
+                            return parent.meta.icon.clone();
+                        }
+                    }
+                }
+            }
+            None
+        })
+        .or_else(|| config.site.favicon.clone());
+
     minijinja::context! {
         site => config.site,
         style => config.style,
@@ -174,6 +197,7 @@ pub fn build_page_context(
         graph => config.graph,
         analytics => config.analytics,
         search => config.search,
+        favicon => favicon,
         page => minijinja::context! {
             title => page.meta.title.clone(),
             display_name => page.meta.title.rsplit('/').next().unwrap_or(&page.meta.title).to_string(),

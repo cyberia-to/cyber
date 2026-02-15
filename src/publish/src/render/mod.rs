@@ -206,6 +206,7 @@ fn render_index(
         search => config.search,
         analytics => config.analytics,
         graph => config.graph,
+        favicon => config.site.favicon,
         recent_pages => recent_data,
         tags => tag_data,
         page_count => public_count,
@@ -247,6 +248,7 @@ fn render_tags_index(
         search => config.search,
         analytics => config.analytics,
         graph => config.graph,
+        favicon => config.site.favicon,
         tags => tag_data,
         page_count => public_count,
     };
@@ -269,6 +271,7 @@ fn render_graph_page(
         search => config.search,
         analytics => config.analytics,
         graph => config.graph,
+        favicon => config.site.favicon,
         page_count => public_count,
     };
 
@@ -336,6 +339,7 @@ fn render_blog(
         search => config.search,
         analytics => config.analytics,
         graph => config.graph,
+        favicon => config.site.favicon,
         posts => page_data,
         page_count => public_count,
     };
@@ -387,6 +391,7 @@ fn render_pages_index(
         search => config.search,
         analytics => config.analytics,
         graph => config.graph,
+        favicon => config.site.favicon,
         pages => page_data,
         page_count => page_data.len(),
     };
@@ -422,6 +427,7 @@ fn render_tag_page(
         search => config.search,
         analytics => config.analytics,
         graph => config.graph,
+        favicon => config.site.favicon,
         tag_name => tag,
         pages => pages,
     };
