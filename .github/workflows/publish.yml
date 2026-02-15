@@ -37,37 +37,36 @@ jobs:
             echo "PINATA_JWT or PINATA_GATEWAY not set, skipping IPFS upload"
             exit 0
           fi
-          # Collect unique asset references from markdown files
-          ASSETS=$(grep -roh 'assets/[^)"'"'"' ]*\.\(png\|jpg\|jpeg\|gif\|webp\|svg\)' pages/ || true)
-          if [ -z "$ASSETS" ]; then
+          # Collect unique asset filenames from markdown (refs use ../assets/file)
+          FILENAMES=$(grep -roh '\.\./assets/[^)"'"'"' ]*' pages/ | sed 's|\.\./assets/||' | sort -u || true)
+          if [ -z "$FILENAMES" ]; then
             echo "No asset references found in pages"
             exit 0
           fi
-          UNIQUE=$(echo "$ASSETS" | sort -u)
-          COUNT=$(echo "$UNIQUE" | wc -l | tr -d ' ')
+          COUNT=$(echo "$FILENAMES" | wc -l | tr -d ' ')
           echo "Found $COUNT unique asset references"
           # Build sed script for all rewrites
           SED_SCRIPT=""
-          while IFS= read -r asset; do
-            [ -z "$asset" ] && continue
-            if [ ! -f "$asset" ]; then
-              echo "  SKIP: $asset (file not found)"
+          while IFS= read -r filename; do
+            [ -z "$filename" ] && continue
+            if [ ! -f "assets/$filename" ]; then
+              echo "  SKIP: assets/$filename (file not found)"
               continue
             fi
-            echo "  Uploading $asset..."
+            echo "  Uploading assets/$filename..."
             RESP=$(curl -s -X POST \
               "https://api.pinata.cloud/pinning/pinFileToIPFS" \
               -H "Authorization: Bearer ${PINATA_JWT}" \
-              -F "file=@${asset}")
+              -F "file=@assets/${filename}")
             CID=$(echo "$RESP" | jq -r '.IpfsHash // empty')
             if [ -z "$CID" ]; then
-              echo "  WARNING: Failed to upload $asset"
+              echo "  WARNING: Failed to upload assets/$filename"
               continue
             fi
             IPFS_URL="${PINATA_GATEWAY}/ipfs/${CID}"
-            echo "  $asset -> $IPFS_URL"
-            SED_SCRIPT="${SED_SCRIPT}s|${asset}|${IPFS_URL}|g;"
-          done <<< "$UNIQUE"
+            echo "  $filename -> $IPFS_URL"
+            SED_SCRIPT="${SED_SCRIPT}s|\.\./assets/${filename}|${IPFS_URL}|g;"
+          done <<< "$FILENAMES"
           if [ -n "$SED_SCRIPT" ]; then
             find pages/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
             echo "IPFS: rewrote asset URLs in markdown files"

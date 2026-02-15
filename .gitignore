@@ -2,8 +2,7 @@
 .idea/
 .ipynb_checkpoints/
 __pycache__/
-# Local media (uploaded to IPFS by pre-commit hook)
-assets/
+# Assets are tracked in git, uploaded to IPFS during CI
 
 # Build outputs
 /public
