@@ -69,7 +69,7 @@ surface_color = "#111111"
 border_color = "#222222"
 
 [style.typography]
-font_body = "system-ui, -apple-system, 'Segoe UI', sans-serif"
+font_body = "'Play', system-ui, sans-serif"
 font_mono = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
 font_size_base = "1rem"
 line_height = "1.7"
