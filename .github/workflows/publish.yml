@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Cache IPFS mappings
         uses: actions/cache@v4
@@ -32,53 +30,48 @@ jobs:
             exit 0
           fi
 
-          # Load cached IPFS mappings (asset path + sha256 → IPFS URL)
-          if [ ! -f .ipfs-cache.json ]; then
-            echo '{}' > .ipfs-cache.json
-          fi
+          [ -f .ipfs-cache.json ] || echo '{}' > .ipfs-cache.json
 
           ASSETS=$(grep -roh 'assets/[^)]*\.\(png\|jpg\|jpeg\|gif\|webp\|svg\)' pages/ journals/ --include="*.md" 2>/dev/null | sort -u || true)
           if [ -z "$ASSETS" ]; then
-            echo "No image assets to upload"
+            echo "No image assets found"
             exit 0
           fi
 
-          TOTAL=$(echo "$ASSETS" | wc -l | tr -d ' ')
-          SKIPPED=0
-          UPLOADED=0
+          TOTAL=0; SKIPPED=0; UPLOADED=0
+          SED_SCRIPT=""
 
+          # Build sed script: resolve each asset to IPFS URL (from cache or upload)
           for asset in $ASSETS; do
-            if [ ! -f "$asset" ]; then
-              continue
-            fi
-
-            # Check cache by file content hash
+            [ -f "$asset" ] || continue
+            TOTAL=$((TOTAL + 1))
             HASH=$(sha256sum "$asset" | cut -d' ' -f1)
-            CACHED_URL=$(jq -r --arg h "$HASH" '.[$h] // empty' .ipfs-cache.json)
+            URL=$(jq -r --arg h "$HASH" '.[$h] // empty' .ipfs-cache.json)
 
-            if [ -n "$CACHED_URL" ]; then
-              # Already pinned — just rewrite URLs in markdown
-              find pages/ journals/ -name "*.md" -exec sed -i "s|${asset}|${CACHED_URL}|g" {} +
-              SKIPPED=$((SKIPPED + 1))
-              continue
-            fi
-
-            # Upload to Pinata
-            RESPONSE=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
-              -H "Authorization: Bearer $PINATA_JWT" \
-              -F "file=@$asset")
-            CID=$(echo "$RESPONSE" | jq -r '.IpfsHash // empty')
-            if [ -n "$CID" ]; then
-              IPFS_URL="${PINATA_GATEWAY}/ipfs/${CID}"
-              find pages/ journals/ -name "*.md" -exec sed -i "s|${asset}|${IPFS_URL}|g" {} +
-              # Update cache
-              jq --arg h "$HASH" --arg u "$IPFS_URL" '.[$h] = $u' .ipfs-cache.json > .ipfs-cache.tmp && mv .ipfs-cache.tmp .ipfs-cache.json
-              echo "  $asset → $IPFS_URL"
-              UPLOADED=$((UPLOADED + 1))
+            if [ -z "$URL" ]; then
+              RESP=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
+                -H "Authorization: Bearer $PINATA_JWT" -F "file=@$asset")
+              CID=$(echo "$RESP" | jq -r '.IpfsHash // empty')
+              if [ -n "$CID" ]; then
+                URL="${PINATA_GATEWAY}/ipfs/${CID}"
+                jq --arg h "$HASH" --arg u "$URL" '.[$h] = $u' .ipfs-cache.json > .ipfs-cache.tmp && mv .ipfs-cache.tmp .ipfs-cache.json
+                echo "  $asset → $URL"
+                UPLOADED=$((UPLOADED + 1))
+              else
+                echo "  WARNING: Failed to upload $asset"
+                continue
+              fi
             else
-              echo "  WARNING: Failed to upload $asset"
+              SKIPPED=$((SKIPPED + 1))
             fi
+
+            SED_SCRIPT="${SED_SCRIPT}s|${asset}|${URL}|g;"
           done
+
+          # Single sed pass over all markdown files
+          if [ -n "$SED_SCRIPT" ]; then
+            find pages/ journals/ -name "*.md" -exec sed -i "$SED_SCRIPT" {} +
+          fi
 
           echo "IPFS: $TOTAL assets, $SKIPPED cached, $UPLOADED uploaded"
 
