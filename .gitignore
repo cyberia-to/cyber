@@ -12,6 +12,7 @@ logseq/version-files
 # Build outputs
 /public
 /build
+/node_modules
 
 # Claude Code
 .claude/
