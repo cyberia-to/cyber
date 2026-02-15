@@ -1,7 +1,8 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+list of important muscles being developed during useful physical work in [[magic forest]]
 
-- list of important muscles being developed during useful physical work in [[magic forest]]
-- {{query (page-tags [[muscle]])}}
-  query-properties:: [:page]
+{{query (page-tags [[muscle]])}}

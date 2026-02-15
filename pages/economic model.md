@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: entity
-crystal-domain:: economics
-status:: draft
+---
+tags: article, cip
+crystal-type: entity
+crystal-domain: economics
+status: draft
+---
 ## economic model
 
 1. minting for focus computation  

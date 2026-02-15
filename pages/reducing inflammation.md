@@ -1,5 +1,7 @@
-alias:: reduce inflamation
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: biology
+---
+alias: reduce inflamation
+tags: superhuman
+crystal-type: entity
+crystal-domain: biology
+---
 -

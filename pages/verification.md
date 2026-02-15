@@ -1,8 +1,12 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- process of computing that statement is true
-- example: verification of signature
-	- given [[neuron]], [[signal]] and [[signature]]
-	- validators of [[vimputer]] can verify
-	- that [[signal]] is indeed authenticated by signing [[neuron]]
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+process of computing that statement is true
+
+example: verification of signature
+
+- given [[neuron]], [[signal]] and [[signature]]
+- validators of [[vimputer]] can verify
+- that [[signal]] is indeed authenticated by signing [[neuron]]

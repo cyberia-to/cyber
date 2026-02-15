@@ -1,6 +1,8 @@
-tags:: state
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: state
+crystal-type: entity
+crystal-domain: cyber
+---
 - key: `0x00 | []byte("desirableBandwidth") -> sdk.Uint64ToBigEndian(value)`
 - represents amount of cyberlinks that network would like to process
   

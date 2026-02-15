@@ -1,13 +1,19 @@
-tags:: genus, cybernomics
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus, cybernomics
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+{{embed [[prunus domestica]]}}
 
-- {{embed [[prunus domestica]]}}
-- {{embed [[prunus dulcis]]}}
-- {{embed [[prunus persica]]}}
-- {{embed [[prunus armeniaca]]}}
-- {{embed [[prunus avium]]}}
-- {{embed [[prunus cerasus]]}}
-- {{embed [[prunus serrulata]]}}
--
+{{embed [[prunus dulcis]]}}
+
+{{embed [[prunus persica]]}}
+
+{{embed [[prunus armeniaca]]}}
+
+{{embed [[prunus avium]]}}
+
+{{embed [[prunus cerasus]]}}
+
+{{embed [[prunus serrulata]]}}

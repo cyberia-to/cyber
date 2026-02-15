@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: entity
-crystal-domain:: cyber
-status:: draft
+---
+tags: article, cip
+crystal-type: entity
+crystal-domain: cyber
+status: draft
+---
 # Design Rationale of the State Model for Superintelligence
 ## Objective
 To define a decentralized, scalable, and expressive state model that enables the emergence of collective intelligence and eventually superintelligence, as formalized by the Collective Focus Theorem (CFT).

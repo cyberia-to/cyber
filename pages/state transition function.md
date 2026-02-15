@@ -1,4 +1,6 @@
-alias:: stf
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: computer science
+---
+alias: stf
+tags: cyber
+crystal-type: entity
+crystal-domain: computer science
+---

@@ -1,5 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-- [[tilapia]]
-- [[catfish]]
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+[[tilapia]]
+
+[[catfish]]

@@ -1,12 +1,19 @@
-tags:: family, cybernomics
-alias:: mints
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: family, cybernomics
+alias: mints
+crystal-type: entity
+crystal-domain: biology
+---
+[[mentha]]
 
-- [[mentha]]
-- [[melissa]]
-- [[salvia]]
-- [[thyme]]
-- [[lavandula]]
-- [[tectona]]
-- and more ...
+[[melissa]]
+
+[[salvia]]
+
+[[thyme]]
+
+[[lavandula]]
+
+[[tectona]]
+
+and more ...

@@ -1,17 +1,21 @@
-tags:: genus, cybernomics
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
-wood:: yes
-grow-speed:: 3
+---
+tags: genus, cybernomics
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+wood: "yes"
+grow-speed: "3"
+---
+selected
 
-- selected
-	- {{embed [[melaleuca viminalis]]}}
-	- {{embed [[melaleuca quinquenervia]]}}
-	- {{embed [[melaleuca bracteata]]}}
-	- [[melaleuca alternifolia]]
-	- [[melaleuca linariifolia]]
-	- [[melaleuca citrinus]]
-- research
-	- [[melaleuca leucadendra]]
-	- [[melaleuca cajuputi]]
+- {{embed [[melaleuca viminalis]]}}
+- {{embed [[melaleuca quinquenervia]]}}
+- {{embed [[melaleuca bracteata]]}}
+- [[melaleuca alternifolia]]
+- [[melaleuca linariifolia]]
+- [[melaleuca citrinus]]
+
+research
+
+- [[melaleuca leucadendra]]
+- [[melaleuca cajuputi]]

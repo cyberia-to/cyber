@@ -1,6 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - | material             | thermal (W/m·K) | acoustic performance      | moisture behavior               | durability        | density (kg/m³) | fire resistance        | sustainability                  |
   |----------------------|------------------|----------------------------|----------------------------------|-------------------|------------------|--------------------------|----------------------------------|
   | dadap (erythrina)    | ~0.04–0.06       | good (fibrous absorption) | breathable, seal to protect     | low–moderate      | 150–250          | moderate (chars)        | very high (fast, local biomass)  |

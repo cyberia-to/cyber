@@ -1,7 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - | layer | species | count | spacing | notes | source |  | 
   | canopy | [[casuarina]] | 16 | 7 × 3 m | ridge windbreak line | edem cuttings |
   |  | [[trembesi]] | 16 | 7 × 7 m | central shade trees | seeds from tokopedia  |

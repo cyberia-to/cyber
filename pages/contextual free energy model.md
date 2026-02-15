@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: pattern
-crystal-domain:: cyber
-status:: draft
+---
+tags: article, cip
+crystal-type: pattern
+crystal-domain: cyber
+status: draft
+---
 ## abstract
 
 we propose a unified model that extends the cybergraph free-energy focus framework with a context-dependent potential derived from standard inference. this approach integrates global structure (diffusion, springs, entropy) with local contextual evidence (neurons’ will), solving the true-false problem while preserving the natural, physics-inspired foundation.

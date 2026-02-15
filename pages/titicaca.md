@@ -1,3 +1,5 @@
-tags:: pond
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: pond
+crystal-type: entity
+crystal-domain: cyberia
+---

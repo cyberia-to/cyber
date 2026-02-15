@@ -1,5 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-- grow without [[roots]] and [[soil]]
-- {{video https://www.youtube.com/watch?v=iu1Ikro3lVM}}
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+grow without [[roots]] and [[soil]]
+
+{{video https://www.youtube.com/watch?v=iu1Ikro3lVM}}

@@ -1,5 +1,6 @@
-tags:: term
-crystal-type:: entity
-crystal-domain:: meta
-
+---
+tags: term
+crystal-type: entity
+crystal-domain: meta
+---
 -

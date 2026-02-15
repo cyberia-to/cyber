@@ -1,7 +1,9 @@
-tags:: article, cyber, cip
-crystal-type:: entity
-crystal-domain:: computer science
-status:: draft
+---
+tags: article, cyber, cip
+crystal-type: entity
+crystal-domain: computer science
+status: draft
+---
 # Data Structures for Superintelligence
 
 ## Authenticated State Architecture for the Collective Objective Reality Engine

@@ -1,13 +1,16 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- of [[knowledge]]
--
-- defined by [[cyberlink]] in one [[signal]]
--
-- arguments
-	- [[who]] linked two [[particles]]
-	- [[when]] [[particles]] was linked
-	- [[what]] [[particles]] was linked
--
-- what is [[argument of knowledge]]?
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+of [[knowledge]]
+
+defined by [[cyberlink]] in one [[signal]]
+
+arguments
+
+- [[who]] linked two [[particles]]
+- [[when]] [[particles]] was linked
+- [[what]] [[particles]] was linked
+
+what is [[argument of knowledge]]?

@@ -1,8 +1,9 @@
-tags:: trident, cyber
-alias:: trident language, Trident
-crystal-type:: entity
-crystal-domain:: cyber
-
+---
+tags: trident, cyber
+alias: trident language, Trident
+crystal-type: entity
+crystal-domain: cyber
+---
 Smart contract language for [[neptune]] whose native data type is a [[Goldilocks field]] element. Every variable, every operation, every function call compiles to arithmetic over $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$.
 
 Compilation target is [[Triton VM]], which generates [[STARK]] proofs — hash-based, post-quantum secure, no trusted setup. Programs are arithmetic circuits by construction.

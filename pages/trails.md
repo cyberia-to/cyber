@@ -1,4 +1,6 @@
-tags:: service
-crystal-type:: entity
-crystal-domain:: cyber
-type:: public
+---
+tags: service
+crystal-type: entity
+crystal-domain: cyber
+type: public
+---

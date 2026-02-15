@@ -1,9 +1,14 @@
-tags:: family, cybernomics
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: family, cybernomics
+crystal-type: entity
+crystal-domain: biology
+---
+[[dimocarpus longan]]
 
-- [[dimocarpus longan]]
-- [[nephelium lappaceum]]
-- [[sapindus]]
-- [[acer]]
-- [[litchi chinensis]]
+[[nephelium lappaceum]]
+
+[[sapindus]]
+
+[[acer]]
+
+[[litchi chinensis]]

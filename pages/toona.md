@@ -1,7 +1,8 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[toona ciliata]]}}
--
+- {{embed [[toona ciliata]]}}

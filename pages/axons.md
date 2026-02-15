@@ -1,27 +1,42 @@
-alias:: skill, skills, axon
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- aggregated connection between [[particles]] within the [[cybergraph]]
-- where a [[cyberlink]] is a single directed edge from one [[neuron]], an axon is the bundle of all [[cyberlinks]] connecting two [[particles]] across all [[neurons]] and time
-- axon weight = aggregate of individual [[cyberlink]] weights between two particles
-	- sums contributions from many [[neurons]]
-	- reflects collective judgment, not individual opinion
-- axons emerge from the graph — they are not created directly
-- the [[cybergraph]] is made of [[cyberlinks]]; axons are what you see when you zoom out
-- if a [[cyberlink]] is a synapse, an axon is the nerve fiber
-- properties
-	- direction: from particle A to particle B (directional aggregate)
-	- weight: sum (or weighted sum) of all individual [[cyberlink]] weights on this path
-	- multiplicity: number of distinct [[neurons]] that have linked A to B
-	- temporal span: earliest and latest [[cyberlink]] timestamps
-- axons are the natural unit for the [[tri-kernel]] operators
-	- [[diffusion]] flows along axons (probability follows aggregate weight)
-	- [[springs]] constrain axons (structural consistency between particles)
-	- [[heat kernel]] smooths across axon bundles (multi-scale context)
-- applications
-	- [[relevance machine]]: ranking operates on axon-level aggregates, not raw cyberlinks
-	- search: query results ranked by axon weight between query particle and result particles
-	- knowledge structure: axons reveal the skeleton of collective understanding
-	- anomaly detection: axons with high multiplicity but low aggregate weight signal disagreement
-- discover all [[concepts]]
+---
+alias: skill, skills, axon
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+aggregated connection between [[particles]] within the [[cybergraph]]
+
+where a [[cyberlink]] is a single directed edge from one [[neuron]], an axon is the bundle of all [[cyberlinks]] connecting two [[particles]] across all [[neurons]] and time
+
+axon weight = aggregate of individual [[cyberlink]] weights between two particles
+
+- sums contributions from many [[neurons]]
+- reflects collective judgment, not individual opinion
+
+axons emerge from the graph — they are not created directly
+
+the [[cybergraph]] is made of [[cyberlinks]]; axons are what you see when you zoom out
+
+if a [[cyberlink]] is a synapse, an axon is the nerve fiber
+
+properties
+
+- direction: from particle A to particle B (directional aggregate)
+- weight: sum (or weighted sum) of all individual [[cyberlink]] weights on this path
+- multiplicity: number of distinct [[neurons]] that have linked A to B
+- temporal span: earliest and latest [[cyberlink]] timestamps
+
+axons are the natural unit for the [[tri-kernel]] operators
+
+- [[diffusion]] flows along axons (probability follows aggregate weight)
+- [[springs]] constrain axons (structural consistency between particles)
+- [[heat kernel]] smooths across axon bundles (multi-scale context)
+
+applications
+
+- [[relevance machine]]: ranking operates on axon-level aggregates, not raw cyberlinks
+- search: query results ranked by axon weight between query particle and result particles
+- knowledge structure: axons reveal the skeleton of collective understanding
+- anomaly detection: axons with high multiplicity but low aggregate weight signal disagreement
+
+discover all [[concepts]]

@@ -1,9 +1,12 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[talinum fruticosum]]}}
-	- {{embed [[talinum paniculatum]]}}
-- [how to distinguish](https://nwwildflowers.com/compare/?t=Talinum+paniculatum,+Talinum+fruticosum)
+- {{embed [[talinum fruticosum]]}}
+- {{embed [[talinum paniculatum]]}}
+
+[how to distinguish](https://nwwildflowers.com/compare/?t=Talinum+paniculatum,+Talinum+fruticosum)

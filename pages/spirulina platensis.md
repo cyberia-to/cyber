@@ -1,6 +1,8 @@
-tags:: species
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: species
+crystal-type: entity
+crystal-domain: biology
+---
+nutrient-dense blue-green algae rich in protein, vitamins, and minerals
 
-- nutrient-dense blue-green algae rich in protein, vitamins, and minerals
-- supports detoxification, boosts energy, and enhances immune function
+supports detoxification, boosts energy, and enhances immune function

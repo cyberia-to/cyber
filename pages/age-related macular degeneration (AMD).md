@@ -1,4 +1,6 @@
-alias:: AMD
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
+---
+alias: AMD
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---

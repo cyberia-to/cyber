@@ -1,7 +1,9 @@
-tags:: service
-crystal-type:: entity
-crystal-domain:: cyber
-type:: public
+---
+tags: service
+crystal-type: entity
+crystal-domain: cyber
+type: public
+---
+[[water purification]]
 
-- [[water purification]]
-- [[water research]]
+[[water research]]

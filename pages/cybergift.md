@@ -1,7 +1,10 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- [rationale and details](https://github.com/Snedashkovsky/cybergift/tree/main)
-- TODO refocus from primary distribution method
-- to the tool for incentivizing [[neural proofs]] and reach [[aos]] goals
--
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[rationale and details](https://github.com/Snedashkovsky/cybergift/tree/main)
+
+TODO refocus from primary distribution method
+
+to the tool for incentivizing [[neural proofs]] and reach [[aos]] goals

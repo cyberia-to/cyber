@@ -1,8 +1,10 @@
-alias:: focus flow computation, ffc labeling and semantics, focus flow complexity
-tags:: article, cyber, cip
-crystal-type:: process
-crystal-domain:: cyber
-status:: draft
+---
+alias: focus flow computation, ffc labeling and semantics, focus flow complexity
+tags: article, cyber, cip
+crystal-type: process
+crystal-domain: cyber
+status: draft
+---
 # focus flow: a peer-to-peer protocol for collective intelligence
 
 version 0.4 — unified specification

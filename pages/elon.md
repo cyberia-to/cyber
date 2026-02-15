@@ -1,6 +1,7 @@
-tags:: building
-crystal-type:: entity
-crystal-domain:: cyberia
-
+---
+tags: building
+crystal-type: entity
+crystal-domain: cyberia
+---
 - [github](https://github.com/orgs/cyber-valley/projects/25/views/1) link to board with limited access
 -

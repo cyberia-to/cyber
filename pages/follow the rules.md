@@ -1,8 +1,12 @@
-tags:: cv.land
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cv.land
+crystal-type: entity
+crystal-domain: cyberia
+---
+toilets on the nature
 
-- toilets on the nature
-- fire
-- noise
-- garbage
+fire
+
+noise
+
+garbage

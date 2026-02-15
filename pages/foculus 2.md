@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: process
-crystal-domain:: cyber
-status:: draft
+---
+tags: article, cip
+crystal-type: process
+crystal-domain: cyber
+status: draft
+---
 # foculus consensus (fc) whitepaper
 
 *version 0.1 — draft for internal review*

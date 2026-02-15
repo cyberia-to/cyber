@@ -1,15 +1,16 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
--
-- vitamin a deficiency is a nutritional condition caused by insufficient intake of [[retinol]], leading primarily to vision problems and weakened immunity.
-- common symptoms include
-	- [[night blindness]],
-	- dry eyes [[xerophthalmia]],
-	- increased risk of infections,
-	- [[dry skin]],
-	- and impaired growth.
-- severe deficiency can result in permanent blindness and higher susceptibility to serious illnesses.
--
--
--
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+vitamin a deficiency is a nutritional condition caused by insufficient intake of [[retinol]], leading primarily to vision problems and weakened immunity.
+
+common symptoms include
+
+- [[night blindness]],
+- dry eyes [[xerophthalmia]],
+- increased risk of infections,
+- [[dry skin]],
+- and impaired growth.
+
+severe deficiency can result in permanent blindness and higher susceptibility to serious illnesses.

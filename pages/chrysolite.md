@@ -1,6 +1,8 @@
-tags:: camp
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: camp
+crystal-type: entity
+crystal-domain: cyberia
+---
+in [[west tower]]
 
-- in [[west tower]]
-- founders camp: reserved for special invites
+founders camp: reserved for special invites

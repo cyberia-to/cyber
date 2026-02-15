@@ -1,6 +1,8 @@
-tags:: class
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: class
+crystal-type: entity
+crystal-domain: biology
+---
+[[hermetia illucens]]
 
-- [[hermetia illucens]]
-- [[acheta domesticus]]
+[[acheta domesticus]]

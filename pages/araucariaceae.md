@@ -1,7 +1,10 @@
-tags:: family
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: family
+crystal-type: entity
+crystal-domain: biology
+---
+[[araucaria]]
 
-- [[araucaria]]
-- [[agathis]]
-- [[wollemia nobilis]]
+[[agathis]]
+
+[[wollemia nobilis]]

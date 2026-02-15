@@ -1,35 +1,68 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- [[focusflow blueprint]]
-- [[network architecture]]
-- [[ranking system]]
-- [[ranking system 2]]
-- [[decision vectors: 10 tb/s]]
-- [[probabilistic shapley attribution]]
-- [[h based economy]]
-- [[focus flow whitepaper]]
-- [[cybergraph llm architecture]]
-- [[contextual free energy model]]
-- [[free energy focus]]
-- [[universality of diffusion springs heat]]
-- [[sparsely activate tensor and cryptographic ghost proofs]]
-- [[theoretical foundations]]
-- [[universal law]]
-- [[foculus]]
-- [[state model]]
-- [[economic model]]
-- [[foculus 2]]
-- [[data availability strategy]]
-- [[authenticated_graphs]]
-- [[hashing and confidentiality]]
-- [[negentropy vs entropy]]
-- [[cyberlink protocol structure]]
-- [[genesis cybergraph]]
-- [[rewards-ideas]]
-- [[cyberlink rewards]]
-- [[convergence rewards]]
-- [[topos ffc integration]]
-- [[active inference]]
-- [[summary]]
-- [[gflownet focus flow]]
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[[focusflow blueprint]]
+
+[[network architecture]]
+
+[[ranking system]]
+
+[[ranking system 2]]
+
+[[decision vectors: 10 tb/s]]
+
+[[probabilistic shapley attribution]]
+
+[[h based economy]]
+
+[[focus flow whitepaper]]
+
+[[cybergraph llm architecture]]
+
+[[contextual free energy model]]
+
+[[free energy focus]]
+
+[[universality of diffusion springs heat]]
+
+[[sparsely activate tensor and cryptographic ghost proofs]]
+
+[[theoretical foundations]]
+
+[[universal law]]
+
+[[foculus]]
+
+[[state model]]
+
+[[economic model]]
+
+[[foculus 2]]
+
+[[data availability strategy]]
+
+[[authenticated_graphs]]
+
+[[hashing and confidentiality]]
+
+[[negentropy vs entropy]]
+
+[[cyberlink protocol structure]]
+
+[[genesis cybergraph]]
+
+[[rewards-ideas]]
+
+[[cyberlink rewards]]
+
+[[convergence rewards]]
+
+[[topos ffc integration]]
+
+[[active inference]]
+
+[[summary]]
+
+[[gflownet focus flow]]

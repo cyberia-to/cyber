@@ -1,23 +1,26 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+[github](https://github.com/cyberia-to/rockets/issues/1114)
 
-- [github](https://github.com/cyberia-to/rockets/issues/1114)
-- do it during full moon
-	- [[rosemary]]
-	- [[lavandula]]
-	- [[mentha]]
-	- [[melissa]]
-	- [[catnip]]
-	- [[basil]]
-	- [[tarragon]]
-	- [[oregano]]
-	- [[thyme]]
-	- [[lemongrass]]
-	- [[citronella]]
-	- [[stevia]]
-	- [[tulsi]]
-	- [[sage]]
-	- [[leucantha]]
-	- [[fennel]]
-	- [[patchouli]]
+do it during full moon
+
+- [[rosemary]]
+- [[lavandula]]
+- [[mentha]]
+- [[melissa]]
+- [[catnip]]
+- [[basil]]
+- [[tarragon]]
+- [[oregano]]
+- [[thyme]]
+- [[lemongrass]]
+- [[citronella]]
+- [[stevia]]
+- [[tulsi]]
+- [[sage]]
+- [[leucantha]]
+- [[fennel]]
+- [[patchouli]]

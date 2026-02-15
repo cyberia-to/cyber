@@ -1,6 +1,8 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+---
+native to [[edem]]
 
-- native to [[edem]]
-	- {{embed [[daucus carota]]}}
+- {{embed [[daucus carota]]}}

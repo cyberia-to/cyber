@@ -1,11 +1,16 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+---
+[[conifer]]
 
-- [[conifer]]
-- selected for [[edem]]
-	- {{embed [[juniperus virginiana]]}}
-	- {{embed [[juniperus chinensis]]}}
-	- [[juniperus sabina]]
-- [[research]]
-	- {{embed [[juniperus communis]]}}
+selected for [[edem]]
+
+- {{embed [[juniperus virginiana]]}}
+- {{embed [[juniperus chinensis]]}}
+- [[juniperus sabina]]
+
+[[research]]
+
+- {{embed [[juniperus communis]]}}

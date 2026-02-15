@@ -1,7 +1,8 @@
-tags:: article, cyber# On the Nature of Distributed Computation
-crystal-type:: process
-crystal-domain:: computer science
-
+---
+tags: article, cyber# On the Nature of Distributed Computation
+crystal-type: process
+crystal-domain: computer science
+---
 ## Aggregation, Proving, and Verification as Irreducible Primitives
 
 ---

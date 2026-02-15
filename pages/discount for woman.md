@@ -1,8 +1,9 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-tag:: article
-
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+tag: article
+---
 - In the modern world, women's labor continues to be systematically undervalued. Despite equal (and often higher) levels of education, qualifications, and contributions to society, women on average earn significantly less than men for comparable work. This disparity is not accidental—it is deeply embedded in the economy, culture, and traditions of most countries.
   
   Our project is taking a step toward justice: we offer women a 50% discount on [Burn.city](https://burn.city/). This is not just a marketing gimmick, nor is it "reverse gender discrimination." It is a partial compensation for what women have been underpaid for decades in the labor market.

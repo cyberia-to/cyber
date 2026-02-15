@@ -1,8 +1,10 @@
-tags:: aos
-alias:: spacepussy
-icon:: 🫦
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: aos
+alias: spacepussy
+icon: 🫦
+crystal-type: entity
+crystal-domain: cyber
+---
 - memecoin with balls and vision
 - | Feature | [[$PUSSY]] chain | [[$PUSSY on $SOL]] |
   | utility | independent chain for memes | promo meme token |

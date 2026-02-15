@@ -1,7 +1,9 @@
-tags:: building type
-crystal-type:: entity
-crystal-domain:: cyberia
-type:: private
+---
+tags: building type
+crystal-type: entity
+crystal-domain: cyberia
+type: private
+---
+revenue:: master class
 
-- revenue:: master class
-- revenue:: craft
+revenue:: craft

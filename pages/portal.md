@@ -1,30 +1,42 @@
-tags:: aip, cyb, prism
-crystal-type:: entity
-crystal-domain:: cyber
-- the onboarding [[aip]] in [[cyb]]
-- cell in [[prism]]
-- current state on [[cyb/portal]]
-- where new [[neurons]] enter the [[cyber]] network
-- guides through [[avatar]] creation, [[cyber/energy]] acquisition, and first [[cyberlinks]]
-- pages
-	- [[main]]: [[buy energy]]
-	- [[create avatar]]
-	- [[map]]
-	- TODO [[invite]]
-	- [[gift]]
-- [[actions]]
-	- [[buy energy]]
-	- [[spell/api]]
-	- [[avatar/api]]
-	- [[neuron/api]]
-- [[features]]
-	- [[robot/trainer]]
-	- [[robot/spells]]
-	- [[robot/energy]]
-	- [[robot/avatars]]
-	- [[robot/neurons]]
-	- [[robot/psycho]]
-	- [[robot/soul]]
-	- [[robot/passport]]
-	- [[robot/karma]]
-	- [[robot/levels]]
+---
+tags: aip, cyb, prism
+crystal-type: entity
+crystal-domain: cyber
+---
+the onboarding [[aip]] in [[cyb]]
+
+cell in [[prism]]
+
+current state on [[cyb/portal]]
+
+where new [[neurons]] enter the [[cyber]] network
+
+guides through [[avatar]] creation, [[cyber/energy]] acquisition, and first [[cyberlinks]]
+
+pages
+
+- [[main]]: [[buy energy]]
+- [[create avatar]]
+- [[map]]
+- TODO [[invite]]
+- [[gift]]
+
+[[actions]]
+
+- [[buy energy]]
+- [[spell/api]]
+- [[avatar/api]]
+- [[neuron/api]]
+
+[[features]]
+
+- [[robot/trainer]]
+- [[robot/spells]]
+- [[robot/energy]]
+- [[robot/avatars]]
+- [[robot/neurons]]
+- [[robot/psycho]]
+- [[robot/soul]]
+- [[robot/passport]]
+- [[robot/karma]]
+- [[robot/levels]]

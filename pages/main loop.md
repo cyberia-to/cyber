@@ -1,4 +1,6 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- [[ask]] -> [[learn]] -> [[ask]]
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[[ask]] -> [[learn]] -> [[ask]]

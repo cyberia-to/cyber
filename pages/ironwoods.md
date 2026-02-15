@@ -1,7 +1,8 @@
-tags:: cybernomics
-crystal-type:: entity
-crystal-domain:: economics
-
+---
+tags: cybernomics
+crystal-type: entity
+crystal-domain: economics
+---
 - ## durability and restoration species comparison
   
   | property / indicator                        | [[casuarina junghuhniana]] | [[diospyros celebica]] | [[eusideroxylon zwageri]] | [[handroanthus impetiginosus]] | [[mesua ferrea]] |

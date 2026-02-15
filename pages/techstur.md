@@ -1,3 +1,5 @@
-tags:: hero
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: hero
+crystal-type: entity
+crystal-domain: cyber
+---

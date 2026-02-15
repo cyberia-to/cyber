@@ -1,6 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 # rewards — integrated model
 ## 1. core economic logic
 - rewards are given for computations and cyberlinks that measurably advance the collective focus toward convergence, as defined by the stationary distribution π.

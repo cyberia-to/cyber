@@ -1,7 +1,8 @@
-tags:: computer science
-crystal-type:: entity
-crystal-domain:: computer science
-
+---
+tags: computer science
+crystal-type: entity
+crystal-domain: computer science
+---
 # compilers
 
 Translators that convert programs written in a high-level language into machine code executable by hardware. The bridge from human intent to [[computation]].

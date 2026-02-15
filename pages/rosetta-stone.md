@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: Rosetta Stone, lookup table duality, rosetta stone
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: Rosetta Stone, lookup table duality, rosetta stone
+crystal-type: article
+crystal-domain: cyber
+---
 # The Rosetta Stone
 
 ## How One Table Over One Field Unifies Cryptography, Intelligence, and Encrypted Computation

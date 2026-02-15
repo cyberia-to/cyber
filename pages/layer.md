@@ -1,33 +1,40 @@
-alias:: layers
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
+---
+alias: layers
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[[sky]]
 
-- [[sky]]
-- [[surface]]
-	- [[tree]] size
-		- [[titan]] >50m
-		- [[giant]] <50m
-		- [[canopy]] <20m
-		- [[dwarf]] <5m
-		- [[shrub]] <2m
-	- [[herb]] <70cm
-	- [[cover]] <10cm
-	- [[lawn]] <1cm
-	- [[tree]] space
-		- [[vine]]
-		- [[moss]]
-		- [[bromelia]]
-	- [[trail]]
-	- [[bed]]
-	- [[wall]] for vertical spaces
-- [[aqua]]
-	- [[shore]]
-	- [[floats]]
-	- [[shallow]]
-	- [[water]]
-	- [[bottom]]
-- [[soil]]
-	- [[humus]]
-	- [[topsoil]]
-	- [[subsoil]]
+[[surface]]
+
+- [[tree]] size
+	- [[titan]] >50m
+	- [[giant]] <50m
+	- [[canopy]] <20m
+	- [[dwarf]] <5m
+	- [[shrub]] <2m
+- [[herb]] <70cm
+- [[cover]] <10cm
+- [[lawn]] <1cm
+- [[tree]] space
+	- [[vine]]
+	- [[moss]]
+	- [[bromelia]]
+- [[trail]]
+- [[bed]]
+- [[wall]] for vertical spaces
+
+[[aqua]]
+
+- [[shore]]
+- [[floats]]
+- [[shallow]]
+- [[water]]
+- [[bottom]]
+
+[[soil]]
+
+- [[humus]]
+- [[topsoil]]
+- [[subsoil]]

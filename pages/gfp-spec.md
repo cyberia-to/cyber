@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: GFP, Goldilocks Field Processor, AURUM, gfp spec
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: GFP, Goldilocks Field Processor, AURUM, gfp spec
+crystal-type: article
+crystal-domain: cyber
+---
 # The Goldilocks Field Processor
 
 ## Hardware Specification, Proof of Useful Work, and Unified Economics

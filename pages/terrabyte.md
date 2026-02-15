@@ -1,4 +1,6 @@
-tags:: building, camp
-crystal-type:: entity
-crystal-domain:: cyberia
-- [[terrabyte/garden]]
+---
+tags: building, camp
+crystal-type: entity
+crystal-domain: cyberia
+---
+[[terrabyte/garden]]

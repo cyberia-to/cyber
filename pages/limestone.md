@@ -1,4 +1,6 @@
-alias:: batu kapur
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: materials
+---
+alias: batu kapur
+tags: cyberia
+crystal-type: entity
+crystal-domain: materials
+---

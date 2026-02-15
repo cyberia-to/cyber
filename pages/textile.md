@@ -1,9 +1,14 @@
-tags:: cybernomics
-crystal-type:: entity
-crystal-domain:: economics
+---
+tags: cybernomics
+crystal-type: entity
+crystal-domain: economics
+---
+[[silk]]
 
-- [[silk]]
-- [[cotton]]
-- [[wool]]
-- [[ramsie]]
-- [[bamtex]]
+[[cotton]]
+
+[[wool]]
+
+[[ramsie]]
+
+[[bamtex]]

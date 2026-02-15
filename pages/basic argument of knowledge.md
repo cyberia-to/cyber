@@ -1,4 +1,6 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- is [[cyberlink]]
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+is [[cyberlink]]

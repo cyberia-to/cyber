@@ -1,4 +1,6 @@
-tags:: species, fungi, shroom
-alias:: enoki
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: species, fungi, shroom
+alias: enoki
+crystal-type: entity
+crystal-domain: biology
+---

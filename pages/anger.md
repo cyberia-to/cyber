@@ -1,12 +1,20 @@
-tags:: cyber, cyb
-crystal-type:: entity
-crystal-domain:: cyber
-- # Anger
-- the [[emotion]] of [[red]] — high-arousal threat response
-- wavelength:: 620-750 nm
-- evolutionary origin:: fire, blood, thermal injury — death from burn
-- flushed faces during aggression signal dominance. perceiving red heightens anger responses from ancestral threats like fire or wounds
-- ## in [[prism]]
-	- signals danger, overload, critical failure
-	- a [[counter]] in anger state: resource depleted, threshold crossed, system under attack
-	- the strongest warning the interface can give
+---
+tags: cyber, cyb
+crystal-type: entity
+crystal-domain: cyber
+---
+# Anger
+
+the [[emotion]] of [[red]] — high-arousal threat response
+
+wavelength:: 620-750 nm
+
+evolutionary origin:: fire, blood, thermal injury — death from burn
+
+flushed faces during aggression signal dominance. perceiving red heightens anger responses from ancestral threats like fire or wounds
+
+## in [[prism]]
+
+- signals danger, overload, critical failure
+- a [[counter]] in anger state: resource depleted, threshold crossed, system under attack
+- the strongest warning the interface can give

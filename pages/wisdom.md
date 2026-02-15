@@ -1,4 +1,6 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- beta of [[brain]]
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+beta of [[brain]]

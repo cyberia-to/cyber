@@ -1,9 +1,12 @@
-tags:: tech
-crystal-type:: entity
-crystal-domain:: materials
+---
+tags: tech
+crystal-type: entity
+crystal-domain: materials
+---
+[[soil, heat and carbon]]
 
-- [[soil, heat and carbon]]
-- optimal species
-	- [[kaliandra]]
-	- [[trema]]
-	- [[lamtoro]]
+optimal species
+
+- [[kaliandra]]
+- [[trema]]
+- [[lamtoro]]

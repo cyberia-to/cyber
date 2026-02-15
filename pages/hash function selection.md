@@ -1,8 +1,9 @@
-tags:: cyber, cip, article
-crystal-type:: process
-crystal-domain:: cyber
-status:: draft
-
+---
+tags: cyber, cip, article
+crystal-type: process
+crystal-domain: cyber
+status: draft
+---
 # hash function selection for cybergraph particles
 
 date: 2026-02-10

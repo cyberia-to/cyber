@@ -1,7 +1,9 @@
-tags:: genus, cybernomics
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus, cybernomics
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[rosa chinensis]]}}
+- {{embed [[rosa chinensis]]}}

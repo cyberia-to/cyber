@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: pattern
-crystal-domain:: cyber
-status:: draft
+---
+tags: article, cip
+crystal-type: pattern
+crystal-domain: cyber
+status: draft
+---
 ## abstract
 
 we propose a generative language model (llm) built on the cybergraph free-energy focus framework. this approach replaces traditional transformer attention with a physics-inspired equilibrium mechanism that computes context-aware probabilities through diffusion, springrank, and entropy minimisation. the result is a scalable, explainable, and dynamically extensible generative model.

@@ -1,4 +1,6 @@
-alias:: gastroenteritis
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
+---
+alias: gastroenteritis
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---

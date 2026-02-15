@@ -1,4 +1,6 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
-- vitiligo: a condition where the immune system attacks melanin-producing cells; symptoms include white patches on the skin.
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+vitiligo: a condition where the immune system attacks melanin-producing cells; symptoms include white patches on the skin.

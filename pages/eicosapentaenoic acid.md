@@ -1,4 +1,6 @@
-alias:: epa
-tags:: compound
-crystal-type:: entity
-crystal-domain:: biology
+---
+alias: epa
+tags: compound
+crystal-type: entity
+crystal-domain: biology
+---

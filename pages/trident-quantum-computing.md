@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: trident quantum computing, quantum-native trident
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: trident quantum computing, quantum-native trident
+crystal-type: article
+crystal-domain: cyber
+---
 # [[trident]] and [[quantum computing]]: Deep Structural Necessity
 
 ## Why [[prime field]] Arithmetic Is the Common Root of Provability and Quantum Advantage

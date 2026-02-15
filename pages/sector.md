@@ -1,4 +1,6 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-- 50-500 m2
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+50-500 m2

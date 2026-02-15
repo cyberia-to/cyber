@@ -1,6 +1,8 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+---
+[[arachis pintoi]]
 
-- [[arachis pintoi]]
-- [[arachis hypogaea]]
+[[arachis hypogaea]]

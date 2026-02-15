@@ -1,7 +1,10 @@
-tags:: param
-crystal-type:: entity
-crystal-domain:: cyber
-- amount of blocks that form period of [[bandwidth price]] recalculation adapting to [[current load]]
-- type: uint64
-- example: 5
--
+---
+tags: param
+crystal-type: entity
+crystal-domain: cyber
+---
+amount of blocks that form period of [[bandwidth price]] recalculation adapting to [[current load]]
+
+type: uint64
+
+example: 5

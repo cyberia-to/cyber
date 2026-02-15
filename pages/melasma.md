@@ -1,4 +1,6 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
-- melasma: caused by hormonal changes or sun exposure; symptoms include brown or gray-brown patches on the skin.
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+melasma: caused by hormonal changes or sun exposure; symptoms include brown or gray-brown patches on the skin.

@@ -1,14 +1,18 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 ### choosing wood in bali
-- common hardwoods available:
-	- albizia (sengon),
-	- jackfruit.
-	- avoid coconut palm or bamboo – too fibrous, not suitable for oysters.
-- best size: 10–15 cm diameter, 80–100 cm long.
-- ### placing
-	- keep logs under shade (banana grove, bamboo shelter).
--
--
--
+
+common hardwoods available:
+
+- albizia (sengon),
+- jackfruit.
+- avoid coconut palm or bamboo – too fibrous, not suitable for oysters.
+
+best size: 10–15 cm diameter, 80–100 cm long.
+
+### placing
+
+- keep logs under shade (banana grove, bamboo shelter).

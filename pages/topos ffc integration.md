@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: pattern
-crystal-domain:: mathematics
-status:: draft
+---
+tags: article, cip
+crystal-type: pattern
+crystal-domain: mathematics
+status: draft
+---
 ## marrying topos theory and focus flow computation
 ### 1. philosophical and mathematical motivation
 - topos theory gives a unifying categorical framework where different “universes of discourse” (contexts, logics, or worlds) are formalized as categories with internal logic.

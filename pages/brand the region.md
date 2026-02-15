@@ -1,4 +1,6 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-- [[brand book]]
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+[[brand book]]

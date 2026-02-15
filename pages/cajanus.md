@@ -1,6 +1,7 @@
-tags:: genus, research
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
-
-- {{embed [[cajanus cajan]]}}
+---
+tags: genus, research
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+{{embed [[cajanus cajan]]}}

@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: Goldilocks FHE, TFHE over Goldilocks, goldilocks FHE construction
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: Goldilocks FHE, TFHE over Goldilocks, goldilocks FHE construction
+crystal-type: article
+crystal-domain: cyber
+---
 # Goldilocks Homomorphic Encryption: FHE Native to Trident
 
 ## The Construction That Unifies Privacy, Provability, Intelligence, and Quantum Power Over One Field

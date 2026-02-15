@@ -1,7 +1,10 @@
-tags:: system
-crystal-type:: relation
-crystal-domain:: meta
+---
+tags: system
+crystal-type: relation
+crystal-domain: meta
+---
+[[mission]]
 
-- [[mission]]
-- [[vision]]
-- [[goal]]
+[[vision]]
+
+[[goal]]

@@ -1,34 +1,40 @@
-icon:: 🌏
-menu-order:: 3
-tags:: cyberia, menu
+---
+icon: 🌏
+menu-order: "3"
+tags: cyberia, menu
+---
+> belong anywhere
 
-- > belong anywhere
-- sustainable cities for nomads
-- # what is?
-	- [[superintelligence]] nation
-	- and a growing network of future cities
-	- featuring energy, water, food, and data sovereignty
-	- embedded into [[architecture]], culture and software
-	- guided by [[collective intelligence]]
--
-- ## Pilot
-	- [[cyber valley]]
-	- Bali North Star
-	- future city on 37 Ha
--
-- ## Projects
-	- [[edge city residency]]: government formation
-	- [[cyber]]: protocol for collective learning
-	- [[bostrom]]: bootloader of collective intelligence
-	- [[mimi]]: ai as president
-	- [[button]]: land management protocol
-	- [[cybaca]] : protocol for events
-	- [[burn.city]]: global, permanent alternative for burning man
-	- [[soft]]: franchisee for event spaces
-	- [[vitalik]]: franchise for hotels
-	- [[organiq]]: local food store and resto
-	- [[elona]]: sustainability center
-	- [[laba]]: fast, cheap and cool construction
-	- [[satoshi]]: place for kids
-	- [[banya]]: community sauna
-	- [[bridge]]: 4.8 HA fruit park inviting operators.
+sustainable cities for nomads
+
+# what is?
+
+- [[superintelligence]] nation
+- and a growing network of future cities
+- featuring energy, water, food, and data sovereignty
+- embedded into [[architecture]], culture and software
+- guided by [[collective intelligence]]
+
+## Pilot
+
+- [[cyber valley]]
+- Bali North Star
+- future city on 37 Ha
+
+## Projects
+
+- [[edge city residency]]: government formation
+- [[cyber]]: protocol for collective learning
+- [[bostrom]]: bootloader of collective intelligence
+- [[mimi]]: ai as president
+- [[button]]: land management protocol
+- [[cybaca]] : protocol for events
+- [[burn.city]]: global, permanent alternative for burning man
+- [[soft]]: franchisee for event spaces
+- [[vitalik]]: franchise for hotels
+- [[organiq]]: local food store and resto
+- [[elona]]: sustainability center
+- [[laba]]: fast, cheap and cool construction
+- [[satoshi]]: place for kids
+- [[banya]]: community sauna
+- [[bridge]]: 4.8 HA fruit park inviting operators.

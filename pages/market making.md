@@ -1,6 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - [[osmosis]]
 	- | base | quote | pool id | stats| fee |
 	  | H | BOOT | [1561](https://app.osmosis.zone/pool/1561) | | 0.2% |

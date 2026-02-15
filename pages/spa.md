@@ -1,8 +1,11 @@
-tags:: building type
-crystal-type:: entity
-crystal-domain:: cyberia
-type:: hybrid
+---
+tags: building type
+crystal-type: entity
+crystal-domain: cyberia
+type: hybrid
+---
+revenue:: space rent
 
-- revenue:: space rent
-- public:: true wooden banya
-- TODO opening soon
+public:: true wooden banya
+
+TODO opening soon

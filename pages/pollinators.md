@@ -1,23 +1,41 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-- [[buddleia]]
-- [[allium schoenoprasum]]
-- [[lavandula]]
-- [[oregano]]
-- [[mint]]
-- [[calendula]]
-- [[cosmo]]
-- [[zinnias]]
-- [[aster]]
-- [[fragaria ananassa]]
-- [[raspberry]]
-- [[blackberries]]
-- [[squash]]
-- [[pumpkin]]
-- [[zucchini]]
-- [[yarrow]]
-- by use:
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+---
+[[buddleia]]
+
+[[allium schoenoprasum]]
+
+[[lavandula]]
+
+[[oregano]]
+
+[[mint]]
+
+[[calendula]]
+
+[[cosmo]]
+
+[[zinnias]]
+
+[[aster]]
+
+[[fragaria ananassa]]
+
+[[raspberry]]
+
+[[blackberries]]
+
+[[squash]]
+
+[[pumpkin]]
+
+[[zucchini]]
+
+[[yarrow]]
+
+by use:
   | group                  | names |
   |------------------------|-----------------|
   | [[pollinators]] | [[cosmo]], [[tagetes patula]], [[zinnia]], [[ixora]], [[pentas]], [[butterfly pea]], [[strelitzia]], [[heliconia]], [[alpinia purpurata]], [[pagoda flower]], [[crape jasmine]], [[rangoon creeper]], [[wax flower]], [[bat flower]], [[yellow bells]], [[blue vervain]], [[spider lily]], [[sweet almond verbena]], [[angel's trumpet]], [[mexican sunflower]], [[periwinkle]], [[red hot poker]], [[scarlet sage]], [[verbena]], [[sweet william]] |
@@ -25,14 +43,16 @@ crystal-domain:: biology
   | [[plants/health]]  | [[moringa oleifera]], [[evening primrose]], [[creeping thyme]], [[pineapple sage]], [[foxtail orchid]], [[garden balsam]], [[water hyssop]], [[foxglove]], [[hibiscus]], [[blood lily]], [[night jasmine]] |
   | [[plants/beauty]]  | [[african tulip tree]], [[delonix regia]], [[moringa oleifera]], [[strelitzia]], [[heliconia]], [[torch ginger]], [[sky flower]] |
   | drought tolerant      | [[stonecrop]], [[sea holly]], [[lavandula]], [[heather]], [[blue sage]] |
-- by growth habit:
+
+by growth habit:
   | group                  | name |
   |------------------------|-----------------|
   | tubular | [[red hot poker]], [[foxglove]], [[pineapple sage]], [[scarlet sage]] |
   | vine             | [[butterfly pea]], [[rangoon creeper]], [[wax flower]], [[passion flower]], [[trumpet vine]], [[tabebuia chrysantha]], [[bougainvillea]], [[queen of the night]], [[chocolate vine]], [[star jasmine]] |
   | ground       | [[creeping thyme]], [[periwinkle]], [[stonecrop]] |
   | tree      | [[african tulip tree]], [[moringa oleifera]], [[delonix regia]], [[strelitzia]], [[heliconia]], [[torch ginger]] |
-- annuals
+
+annuals
   | name | scientific | features | spacing | height |
   | [[cosmo]]              | [[cosmos bipinnatus]]        | bright daisy-like flowers; attracts bees and butterflies                          | 0.5-1.2 meters     | 0.4-0.6 m        |
   | [[tagetes patula]]            | [[tagetes spp.]]             | bright orange and yellow flowers; attracts bees and butterflies                   | 0.3-1 meter        | 0.3-0.4 m        |
@@ -42,8 +62,8 @@ crystal-domain:: biology
   | [[globe amaranth]]      | [[gomphrena globosa]]        | vibrant globe-shaped flowers; attracts butterflies and bees                         | 0.3-1 meter        | 0.3-0.4 m        |
   | [[mexican sunflower]]   | [[tithonia rotundifolia]]  | bright orange flowers; attracts butterflies and hummingbirds                  | 1-2.5 meters       | 0.5-1 m          |
   | [[celosia]] | [[celosia]] | bright, flame-like flowers; attracts pollinators | 0.3-1 meters | 0.2-0.3 m |
--
-- perennials
+
+perennials
   | name | scientific | features | spacing | height |
   [[lavandula]]
   [[rosa]] 
@@ -87,7 +107,8 @@ crystal-domain:: biology
   | [[night jasmine]]       | [[nyctanthes arbor-tristis]] | fragrant, white flowers; attracts moths and nocturnal pollinators, [[plants/health]] | 3-10 meters        | 1-2 m            |
   | [[pineapple sage]]      | [[salvia elegans]]           | red tubular flowers with a pineapple scent; attracts hummingbirds, [[plants/greens]] | 0.9-1.2 meters     | 0.5-0.7 m        |
   | [[queen of the night]]  | [[epiphyllum oxypetalum]]    | large, fragrant white blooms at night; attracts moths, [[climber]], [[plants/health]] | 2-4 meters       | 1-1.5 m          |
-- | name | scientific | features | spacing | height |
+
+| name | scientific | features | spacing | height |
   | [[shrimp plant]]        | [[justicia brandegeeana]]    | unique, shrimp-like flower bracts; attracts hummingbirds and butterflies             | 0.3-1 meter        | 0.3-0.5 m        |
   | [[star jasmine]]        | [[trachelospermum jasminoides]] | fragrant, star-shaped flowers; attracts bees and butterflies, [[climber]]          | 1-2 meters         | 0.8-1 m          |
   | [[torch ginger]]        | [[etlingera elatior]]        | spectacular red or pink flowers; attracts birds and butterflies                      | 1.5-6 meters       | 1-2 m            |
@@ -112,5 +133,7 @@ crystal-domain:: biology
   | [[stonecrop]]           | [[sedum rupestre]]                  | succulent leaves and starry flowers; attracts bees and butterflies             | 0.1-0.6 meters     | 0.2-0.3 m        |
   | [[sweet william]]       | [[dianthus barbatus]]      | clustered flowers in a range of colors; attracts butterflies and bees          | 0.2-0.6 meters     | 0.2 m            |
   | [[verbena]]             | [[verbena bonariensis]]    | tall, airy clusters of purple flowers; attracts butterflies and bees           | 0.6-1.2 meters     | 0.4-0.6 m        |
-- [[chrysanth]]
-- [[viola]]
+
+[[chrysanth]]
+
+[[viola]]

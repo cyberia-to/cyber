@@ -1,5 +1,7 @@
-alias:: ear infection
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
+---
+alias: ear infection
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
 -

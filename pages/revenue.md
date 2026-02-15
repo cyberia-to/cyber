@@ -1,7 +1,6 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - {{query (and (property :revenue) (not (page [[margin]])))}}
-  query-table:: true
-  query-sort-by:: page
-  query-sort-desc:: false

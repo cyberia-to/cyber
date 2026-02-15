@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: trident AI, zkML, verifiable AI, trident ai deep dive
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: trident AI, zkML, verifiable AI, trident ai deep dive
+crystal-type: article
+crystal-domain: cyber
+---
 # Trident and the Future of Verifiable AI
 
 ## Why the Next Generation of zkML Won't Start from ONNX — It Will Start from Prime Fields

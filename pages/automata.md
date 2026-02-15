@@ -1,7 +1,8 @@
-tags:: computer science
-crystal-type:: entity
-crystal-domain:: computer science
-
+---
+tags: computer science
+crystal-type: entity
+crystal-domain: computer science
+---
 # automata
 
 Abstract machines that process input strings according to formal rules. The theoretical foundation of [[computation]] and [[compilers]].

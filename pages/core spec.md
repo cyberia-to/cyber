@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: entity
-crystal-domain:: cyber
-status:: draft
+---
+tags: article, cip
+crystal-type: entity
+crystal-domain: cyber
+status: draft
+---
 # CORE v0.9: Conserved Observable Reduction Equilibrium
 
 ## A Self-Verifying Substrate for Planetary Collective Intelligence

@@ -1,9 +1,12 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-- prune
-- watering
-- feeding
-- support
--
--
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+prune
+
+watering
+
+feeding
+
+support

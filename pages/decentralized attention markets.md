@@ -1,6 +1,8 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
 - The Problem
 	- Current AI models (GPT, Claude, etc.) have fixed attention mechanisms
 	- Users can't influence what the model focuses on

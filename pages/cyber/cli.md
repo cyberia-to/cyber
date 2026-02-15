@@ -1,0 +1,14 @@
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+feature of [[go-cyber]]
+
+cyber query bandwidth
+
+- load: query the [[bandwidth load]]
+- neuron: query the [[neuron bandwidth]]
+- params:  query the [[cyber/bandwidth]] module parameters information
+- price: query the [[bandwidth price]]
+- total: query the [[total bandwidth]]

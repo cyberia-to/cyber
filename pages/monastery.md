@@ -1,3 +1,5 @@
-tags:: building, camp
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: building, camp
+crystal-type: entity
+crystal-domain: cyberia
+---

@@ -1,7 +1,8 @@
-tags:: computer science
-crystal-type:: entity
-crystal-domain:: computer science
-
+---
+tags: computer science
+crystal-type: entity
+crystal-domain: computer science
+---
 # algorithms
 
 A step-by-step procedure that transforms input into output in a finite number of operations. The foundation of all [[computation]].

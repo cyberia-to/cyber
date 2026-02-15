@@ -1,3 +1,5 @@
-tags:: building type
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: building type
+crystal-type: entity
+crystal-domain: cyberia
+---

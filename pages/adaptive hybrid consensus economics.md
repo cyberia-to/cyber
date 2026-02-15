@@ -1,6 +1,8 @@
-tags:: cyber, uhash
-crystal-type:: entity
-crystal-domain:: meta
+---
+tags: cyber, uhash
+crystal-type: entity
+crystal-domain: meta
+---
 - [technicals origin](https://claude.ai/public/artifacts/5b6fd084-a7fb-40b6-8423-06278247fe2d)
 - # Adaptive Hybrid Consensus Economics
 - ## A Self-Calibrating Reward Mechanism for PoW/PoS Systems

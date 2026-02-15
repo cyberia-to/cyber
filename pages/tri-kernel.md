@@ -1,7 +1,9 @@
-tags:: article, cyber, cip
-crystal-type:: pattern
-crystal-domain:: cyber
-status:: draft
+---
+tags: article, cyber, cip
+crystal-type: pattern
+crystal-domain: cyber
+status: draft
+---
 # Tri-Kernel Architecture for Networked Collective Intelligence
 
 ## Diffusion · Springs · Heat

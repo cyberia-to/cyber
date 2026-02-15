@@ -1,9 +1,12 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+[[conifer]]
 
-- [[conifer]]
-- selected for [[edem]]
-	- {{embed [[pinus merkusii]]}}
-	- {{embed [[pinus halapensis]]}}
+selected for [[edem]]
+
+- {{embed [[pinus merkusii]]}}
+- {{embed [[pinus halapensis]]}}

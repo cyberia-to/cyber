@@ -1,7 +1,8 @@
-tags:: tech
-crystal-type:: entity
-crystal-domain:: materials
-
+---
+tags: tech
+crystal-type: entity
+crystal-domain: materials
+---
 - recipe for extreme longevity concrete with high thermal resistance
 - | component | bahasa name | weight (kg) | volume (liters) | density (kg/m³) | function |
   |:---|:---|:---|:---|:---|:---|

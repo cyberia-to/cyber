@@ -1,0 +1,26 @@
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+[[malvaviscus arboreus]]
+
+[[coleus scutellarioides]]
+
+[[codiaeum variegatum]]
+
+[[acalypha wilkesiana]]
+
+[[symphyotrichum laeve]]
+
+[[hydrocotyle acutiloba]]
+
+[[hydrangea macrophylla]]
+
+[[pandanus amaryllifolius]]
+
+[[ipomoea batatas]]
+
+[[euphorbia tithymaloides]]
+
+[[citrus]]

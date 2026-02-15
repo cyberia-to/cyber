@@ -1,6 +1,8 @@
-tags:: state
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: state
+crystal-type: entity
+crystal-domain: cyber
+---
 - value is used to store up-to-date price of bandwidth
 - ```
   type Price struct {

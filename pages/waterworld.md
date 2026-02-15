@@ -1,3 +1,5 @@
-tags:: district
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: district
+crystal-type: entity
+crystal-domain: cyberia
+---

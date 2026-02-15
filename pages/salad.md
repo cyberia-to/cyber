@@ -1,8 +1,6 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - {{query (and [[salad]] (not (property :tags "research")))}}
-  query-table:: true
-  query-properties:: [:page :block]
-  query-sort-by:: page
-  query-sort-desc:: false

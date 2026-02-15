@@ -1,8 +1,9 @@
-tags:: cybernomics, cv.land
-crystal-type:: entity
-crystal-domain:: economics
-focus:: true
-
+---
+tags: cybernomics, cv.land
+crystal-type: entity
+crystal-domain: economics
+focus: "true"
+---
 - we are working on a permanent event platform for iconic events
 - are you organizing events?
 - let us know what would you do here => tg
@@ -17,6 +18,3 @@ focus:: true
 	- ## private camps
 	- we have 7 private camps available for rent
 	- {{query (and (page-tags [[camp]]) (not (page-property :type "public")))}}
-	  query-properties:: [:page :tags :size :shape :type]
-	  query-sort-by:: size
-	  query-sort-desc:: true

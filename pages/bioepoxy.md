@@ -1,13 +1,22 @@
-tags:: compound
-crystal-type:: entity
-crystal-domain:: chemistry
+---
+tags: compound
+crystal-type: entity
+crystal-domain: chemistry
+---
+[[cashew]]
 
-- [[cashew]]
-- [[agathis dammara]]
-- [[melaleuca alternifolia]]
-- [[curcuma longa]]
-- [[debregeasia longifolia]]
-- [[bambusa]]
-- [[musa]]
-- [[ricinus communis]]
-- [[calophyllum inophyllum]]
+[[agathis dammara]]
+
+[[melaleuca alternifolia]]
+
+[[curcuma longa]]
+
+[[debregeasia longifolia]]
+
+[[bambusa]]
+
+[[musa]]
+
+[[ricinus communis]]
+
+[[calophyllum inophyllum]]

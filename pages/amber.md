@@ -1,6 +1,8 @@
-tags:: camp
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: camp
+crystal-type: entity
+crystal-domain: cyberia
+---
+near [[satoshi]]
 
-- near [[satoshi]]
-- founders camp: reserved for special invites
+founders camp: reserved for special invites

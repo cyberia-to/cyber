@@ -1,6 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - five primitives for all land operations
 - ## Primitives
   | Element | Purpose | Surface |

@@ -1,9 +1,13 @@
-tags:: building type
-crystal-type:: entity
-crystal-domain:: cyberia
-type:: public
+---
+tags: building type
+crystal-type: entity
+crystal-domain: cyberia
+type: public
+---
+revenue:: space rent
 
-- revenue:: space rent
-- public:: coworking and colab
-- buildings
-	- [[soft]]
+public:: coworking and colab
+
+buildings
+
+- [[soft]]

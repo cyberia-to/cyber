@@ -1,3 +1,5 @@
-tags:: worker
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: worker
+crystal-type: entity
+crystal-domain: cyberia
+---

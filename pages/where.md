@@ -1,6 +1,8 @@
-tags:: system
-crystal-type:: relation
-crystal-domain:: cyberia
+---
+tags: system
+crystal-type: relation
+crystal-domain: cyberia
+---
+[[buildings]]
 
-- [[buildings]]
-- [[district]]
+[[district]]

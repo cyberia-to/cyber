@@ -1,4 +1,6 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
-- carbuncles: clusters of boils that are deeper and more severe, caused by bacterial infection.
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+carbuncles: clusters of boils that are deeper and more severe, caused by bacterial infection.

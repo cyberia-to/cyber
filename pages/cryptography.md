@@ -1,17 +1,22 @@
-alias:: modern cryptography
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: computer science
-- basics
-	- [[hashing]]
-	- TODO [[encryption]]
-	- [[signature]]
-	- TODO [[threshold]]
-	- TODO [[merklezation]]
-- advanced
-	- [[interactivity]]
-	- [[knowledge completeness]]
-	- [[homomorphy]]
-	- TODO [[commitment scheme]]
-	- TODO [[random oracle]]
-	- TODO [[quantum cryptography]]
+---
+alias: modern cryptography
+tags: cyber
+crystal-type: entity
+crystal-domain: computer science
+---
+basics
+
+- [[hashing]]
+- TODO [[encryption]]
+- [[signature]]
+- TODO [[threshold]]
+- TODO [[merklezation]]
+
+advanced
+
+- [[interactivity]]
+- [[knowledge completeness]]
+- [[homomorphy]]
+- TODO [[commitment scheme]]
+- TODO [[random oracle]]
+- TODO [[quantum cryptography]]

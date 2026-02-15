@@ -1,7 +1,8 @@
-tags:: biology
-crystal-type:: process
-crystal-domain:: biology
-
+---
+tags: biology
+crystal-type: process
+crystal-domain: biology
+---
 # transcription
 
 Copying a DNA sequence into messenger RNA (mRNA). The first step of gene expression -- reading the genome.

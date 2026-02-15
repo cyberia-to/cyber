@@ -1,42 +1,67 @@
-icon:: 🟢
-menu-order:: 5
-tags:: aos, cyber, menu
-alias:: enhanced blockchain
-crystal-type:: entity
-crystal-domain:: cyber
-- [[bootloader]] of [[cyber]]
-- and [[moon]] [[network state]]
-- named after [[nick bostrom]]
-- secure [[proof of stake]] [[bostrom/consensus]]
-- fair [[bostrom/genesis]] distribution of [[$BOOT]]
-- [[bostrom infrastructure]]
-- [[cybergraph]]
-	- [[cyberlink]]
-	- [[will minting]]
-	- [[bandwidth limiting]]
-	- [[adaptive pricing]]
-- [[relevance machine]]
-	- [[attention minting]]
-	- [[energy routing]]
-	- [[karma]]
-	- [[syntropy]]
-- [[avatar]] with [[features]]
-	- [[.moon names]]
-	- [[semantic neural proofs]]
-	- [[soul]]
-	- [[moon citizenship]]
-	- and 20 more [[features]]
-- TODO [[learning incentives]]
-- [[staking loans]] and [[automatic fuel]]
-- [[cybergift]]
-- [[wasm]] [[vm]]
-	- [[deploy incentives]]
-	- [[soft3 access]]
-	- [[autonomous progs]]
-- [[ibc]]
-- [[warp]]
-- [[basic governance]]
-- [[store of value]]
-- ecosystem [[tokens]]
-- full [[cyb]] support
-- [source code](https://github.com/cybercongress/go-cyber) on github
+---
+icon: 🟢
+menu-order: "5"
+tags: aos, cyber, menu
+alias: enhanced blockchain
+crystal-type: entity
+crystal-domain: cyber
+---
+[[bootloader]] of [[cyber]]
+
+and [[moon]] [[network state]]
+
+named after [[nick bostrom]]
+
+secure [[proof of stake]] [[bostrom/consensus]]
+
+fair [[bostrom/genesis]] distribution of [[$BOOT]]
+
+[[bostrom infrastructure]]
+
+[[cybergraph]]
+
+- [[cyberlink]]
+- [[will minting]]
+- [[bandwidth limiting]]
+- [[adaptive pricing]]
+
+[[relevance machine]]
+
+- [[attention minting]]
+- [[energy routing]]
+- [[karma]]
+- [[syntropy]]
+
+[[avatar]] with [[features]]
+
+- [[.moon names]]
+- [[semantic neural proofs]]
+- [[soul]]
+- [[moon citizenship]]
+- and 20 more [[features]]
+
+TODO [[learning incentives]]
+
+[[staking loans]] and [[automatic fuel]]
+
+[[cybergift]]
+
+[[wasm]] [[vm]]
+
+- [[deploy incentives]]
+- [[soft3 access]]
+- [[autonomous progs]]
+
+[[ibc]]
+
+[[warp]]
+
+[[basic governance]]
+
+[[store of value]]
+
+ecosystem [[tokens]]
+
+full [[cyb]] support
+
+[source code](https://github.com/cybercongress/go-cyber) on github

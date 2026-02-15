@@ -1,7 +1,9 @@
-tags:: trident, cyber
-alias:: review passes, development review
-crystal-type:: reference
-crystal-domain:: cyber
+---
+tags: trident, cyber
+alias: review passes, development review
+crystal-type: reference
+crystal-domain: cyber
+---
 # [[trident]] Development Review Passes
 
 > Instead of "make it perfect", invoke passes by number.

@@ -1,9 +1,12 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- aggregate information from [[neurons]] by allowing them to trade shares in the outcome of future events
-- prices in these markets reflect the collective probability of an event occurring
--
-- TODO ongoing research by [[cyber]] community
--
-- can be implemented for predicting [[cyberank]] future values
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+aggregate information from [[neurons]] by allowing them to trade shares in the outcome of future events
+
+prices in these markets reflect the collective probability of an event occurring
+
+TODO ongoing research by [[cyber]] community
+
+can be implemented for predicting [[cyberank]] future values

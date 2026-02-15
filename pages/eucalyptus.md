@@ -1,22 +1,27 @@
-tags:: genus, cybernomics
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus, cybernomics
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[eucalyptus deglupta]]}}
-- research
-	- [[eucalyptus pulverulenta]]
-	- [[eucalyptus urophylla]]
-	- [[eucalyptus pellita]]
-	- [[eucalyptus alba]]
-	- [[eucalyptus globulus]]
-	- [[eucalyptus piperita]]
-	- [[eucalyptus robusta]]
-	- [[eucalyptus umbra]]
-	- [[eucalyptus argophloia]]
-	- [[eucalyptus microcorys]]
-- | name                    | height | oil constituents                                                                                     | density | roles                                    | scent                                   |
+- {{embed [[eucalyptus deglupta]]}}
+
+research
+
+- [[eucalyptus pulverulenta]]
+- [[eucalyptus urophylla]]
+- [[eucalyptus pellita]]
+- [[eucalyptus alba]]
+- [[eucalyptus globulus]]
+- [[eucalyptus piperita]]
+- [[eucalyptus robusta]]
+- [[eucalyptus umbra]]
+- [[eucalyptus argophloia]]
+- [[eucalyptus microcorys]]
+
+| name                    | height | oil constituents                                                                                     | density | roles                                    | scent                                   |
   |-------------------------|--------|------------------------------------------------------------------------------------------------------|---------|------------------------------------------|-----------------------------------------|
   | [[eucalyptus pulverulenta]] | 7 m   | [[cineole]], [[alpha-pinene]], [[beta-pinene]], [[limonene]], [[p-cymene]]                            | 850     | ornamental, erosion control              | aromatic, slightly medicinal            |
   | [[eucalyptus piperita]] | 18 m   | [[piperitone]] (40-50%), [[cineole]], [[alpha-pinene]], [[phellandrene]]                              | 870     | ornamental, medicinal uses               | strong peppermint-like, refreshing      |

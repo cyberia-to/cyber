@@ -1,5 +1,7 @@
-alias:: pms, PMS
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: biology
+---
+alias: pms, PMS
+tags: superhuman
+crystal-type: entity
+crystal-domain: biology
+---
 -

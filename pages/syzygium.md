@@ -1,16 +1,20 @@
-tags:: genus, cybernomics
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus, cybernomics
+crystal-type: entity
+crystal-domain: biology
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- [[syzygium cumini]]
-	- [[syzygium samarangense]]
-	- [[syzygium aqueum]]
-	- [[syzygium myrtifolium]]
-	- [[syzygium aromaticum]]
-	- [[syzygium jambos]]
-	- [[syzygium oleosum]]
-	- [[syzygium malaccense]]
-	- [[syzygium polyanthum]]
-- native to [[batuka]]
-	- [[syzygium zeylanicum]]
+- [[syzygium cumini]]
+- [[syzygium samarangense]]
+- [[syzygium aqueum]]
+- [[syzygium myrtifolium]]
+- [[syzygium aromaticum]]
+- [[syzygium jambos]]
+- [[syzygium oleosum]]
+- [[syzygium malaccense]]
+- [[syzygium polyanthum]]
+
+native to [[batuka]]
+
+- [[syzygium zeylanicum]]

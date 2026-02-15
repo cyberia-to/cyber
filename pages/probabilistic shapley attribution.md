@@ -1,7 +1,9 @@
-tags:: article, cip
-crystal-type:: measure
-crystal-domain:: economics
-status:: draft
+---
+tags: article, cip
+crystal-type: measure
+crystal-domain: economics
+status: draft
+---
 ## abstract
 
 probabilistic shapley attribution (psa) is a scalable method for fairly rewarding transactions in a focus flow computation (ffc) network. it approximates shapley values, which measure each transaction's marginal contribution to the final equilibrium distribution \(p^*\), using sampling and local influence metrics. psa enables superintelligence-scale attribution with millions of transactions and billions of edges per epoch.

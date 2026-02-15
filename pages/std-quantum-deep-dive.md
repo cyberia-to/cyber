@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: std.quantum, quantum standard library, quantum deep dive
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: std.quantum, quantum standard library, quantum deep dive
+crystal-type: article
+crystal-domain: cyber
+---
 # std.quantum: A Quantum Standard Library for [[trident]]
 
 ## Provable Quantum Computing Through Prime Field Arithmetic

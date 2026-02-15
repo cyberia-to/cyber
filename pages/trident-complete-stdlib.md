@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: trident stdlib, std.*, standard library
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: trident stdlib, std.*, standard library
+crystal-type: article
+crystal-domain: cyber
+---
 # The Trident Standard Library: Complete Architecture
 
 ## std.* — A Unified Framework for Verifiable Intelligence, Privacy, and Quantum Computation

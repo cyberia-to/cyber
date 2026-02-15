@@ -1,4 +1,6 @@
-tags:: team
-crystal-type:: entity
-crystal-domain:: cyberia
-people:: 4
+---
+tags: team
+crystal-type: entity
+crystal-domain: cyberia
+people: "4"
+---

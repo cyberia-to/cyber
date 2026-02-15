@@ -1,7 +1,8 @@
-tags:: skill
-crystal-type:: process
-crystal-domain:: body
+---
+tags: skill
+crystal-type: process
+crystal-domain: body
+---
+tool: power saw
 
-- tool: power saw
-- task: heave pruning of plants
--
+task: heave pruning of plants

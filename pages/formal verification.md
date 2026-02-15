@@ -1,7 +1,8 @@
-tags:: computer science
-crystal-type:: entity
-crystal-domain:: computer science
-
+---
+tags: computer science
+crystal-type: entity
+crystal-domain: computer science
+---
 # formal verification
 
 Mathematical proof that a system (software, hardware, protocol) meets its specification. Certainty beyond testing.

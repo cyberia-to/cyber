@@ -1,4 +1,6 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
-- sunburn: skin damage caused by uv radiation; symptoms include red, painful, and peeling skin.
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+sunburn: skin damage caused by uv radiation; symptoms include red, painful, and peeling skin.

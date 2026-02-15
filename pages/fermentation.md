@@ -1,7 +1,8 @@
-tags:: biology, chemistry
-crystal-type:: process
-crystal-domain:: biology
-
+---
+tags: biology, chemistry
+crystal-type: process
+crystal-domain: biology
+---
 # fermentation
 
 Anaerobic metabolism converting sugars into acids, gases, or alcohol. Life extracting energy without oxygen.

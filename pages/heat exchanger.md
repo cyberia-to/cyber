@@ -1,7 +1,10 @@
-tags:: tech
-crystal-type:: entity
-crystal-domain:: materials
+---
+tags: tech
+crystal-type: entity
+crystal-domain: materials
+---
+soil
 
-- soil
-- water
-- air
+water
+
+air

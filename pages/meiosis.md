@@ -1,7 +1,8 @@
-tags:: biology
-crystal-type:: entity
-crystal-domain:: biology
-
+---
+tags: biology
+crystal-type: entity
+crystal-domain: biology
+---
 # meiosis
 
 Cell division producing four genetically unique haploid gametes (sperm, eggs) from one diploid cell. The source of genetic diversity in sexually reproducing organisms.

@@ -1,5 +1,6 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
-
-- bloodstream infection
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+bloodstream infection

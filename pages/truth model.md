@@ -1,4 +1,6 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- [[two factor]] [[truth]]
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[[two factor]] [[truth]]

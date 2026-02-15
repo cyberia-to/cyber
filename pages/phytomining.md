@@ -1,7 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - class of plants which can extract [[metals]] from [[soil]] called [[phytominers]]
   
   | [[metals/factors]] | [[hyperaccumulator plants]] | [[incineration]] | [[extraction method]] | [[purification method]] | [[recovery yield]] |

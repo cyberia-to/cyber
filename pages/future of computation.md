@@ -1,6 +1,8 @@
-tags:: article
-crystal-type:: process
-crystal-domain:: cyber
+---
+tags: article
+crystal-type: process
+crystal-domain: cyber
+---
 -
 # The Future of Computation: From Turing Machines to Planetary Superintelligence
 

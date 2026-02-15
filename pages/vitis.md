@@ -1,9 +1,10 @@
-alias:: anggur, grape
-tags:: genus
-crystal-type:: entity
-crystal-domain:: body
-scalable:: true
+---
+alias: anggur, grape
+tags: genus
+crystal-type: entity
+crystal-domain: body
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[vitis vinifera]]}}
--
+- {{embed [[vitis vinifera]]}}

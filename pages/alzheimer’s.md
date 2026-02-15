@@ -1,4 +1,6 @@
-tags:: superhuman
-crystal-type:: entity
-crystal-domain:: body
-- alias
+---
+tags: superhuman
+crystal-type: entity
+crystal-domain: body
+---
+alias

@@ -1,7 +1,8 @@
-tags:: cyber, cybernomics
-crystal-type:: entity
-crystal-domain:: economics
-
+---
+tags: cyber, cybernomics
+crystal-type: entity
+crystal-domain: economics
+---
 # delegation
 
 Transferring [[staking]] power from one neuron to another, enabling token holders to participate in consensus and governance without running validator infrastructure.

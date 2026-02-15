@@ -1,36 +1,60 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
--
-- structure & bulk
-- compost
-- topsoil
-- coconut coir
-- cyathea trunk
-- wood fiber
-  
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
+structure & bulk
+
+compost
+
+topsoil
+
+coconut coir
+
+cyathea trunk
+
+wood fiber
+
   aeration & drainage
-- sand
-- perlite
-- pumice
-- gravel
-- biochar (when activated)
-  
+
+sand
+
+perlite
+
+pumice
+
+gravel
+
+biochar (when activated)
+
   water retention
-- coconut coir
-- vermiculite
-- clay
-- wood fiber
-- cyathea trunk (moderate)
-  
+
+coconut coir
+
+vermiculite
+
+clay
+
+wood fiber
+
+cyathea trunk (moderate)
+
   nutrition
-- compost
-- worm castings
-- comfrey tea
-- rock dust
-  
+
+compost
+
+worm castings
+
+comfrey tea
+
+rock dust
+
   biological activation
-- worm castings
-- comfrey tea
-- compost
-- biochar (after inoculation)
+
+worm castings
+
+comfrey tea
+
+compost
+
+biochar (after inoculation)

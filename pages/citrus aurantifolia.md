@@ -1,4 +1,6 @@
-tags:: species
-alias:: lime
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: species
+alias: lime
+crystal-type: entity
+crystal-domain: biology
+---

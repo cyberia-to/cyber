@@ -1,5 +1,7 @@
-alias:: hydrogen fusion reactor
-tags:: cyb
-crystal-type:: entity
-crystal-domain:: cyber
-- produce [[will]] and [[attention]]
+---
+alias: hydrogen fusion reactor
+tags: cyb
+crystal-type: entity
+crystal-domain: cyber
+---
+produce [[will]] and [[attention]]

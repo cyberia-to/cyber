@@ -1,7 +1,10 @@
-tags:: product
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: product
+crystal-type: entity
+crystal-domain: cyber
+---
+experimental (rather stupid) president of [[cyberia]]
 
-- experimental (rather stupid) president of [[cyberia]]
-- ## [try it](https://t.me/MimiThePresidentBot)
-- [source code](https://github.com/cyberia-to/mimi)
+## [try it](https://t.me/MimiThePresidentBot)
+
+[source code](https://github.com/cyberia-to/mimi)

@@ -1,9 +1,10 @@
-tags:: term
-crystal-type:: entity
-crystal-domain:: meta
+---
+tags: term
+crystal-type: entity
+crystal-domain: meta
+---
+something that satisfy the need of buyer
 
-- something that satisfy the need of buyer
-- list of products
-- {{query (property :tags "product")}}
-  query-table:: true
-  query-properties:: [:page :icon :tags]
+list of products
+
+{{query (property :tags "product")}}

@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: trinity thesis, trinity
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: trinity thesis, trinity
+crystal-type: article
+crystal-domain: cyber
+---
 # Trinity: Quantum · Privacy · AI
 
 ```

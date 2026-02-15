@@ -1,5 +1,6 @@
-tags:: cybernomics
-crystal-type:: entity
-crystal-domain:: economics
-
-- focus:: true
+---
+tags: cybernomics
+crystal-type: entity
+crystal-domain: economics
+---
+focus:: true

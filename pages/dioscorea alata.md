@@ -1,4 +1,6 @@
-tags:: genus, species
-alias:: dioscorea
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus, species
+alias: dioscorea
+crystal-type: entity
+crystal-domain: biology
+---

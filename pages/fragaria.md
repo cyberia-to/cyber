@@ -1,7 +1,9 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[fragaria ananassa]]}}
+- {{embed [[fragaria ananassa]]}}

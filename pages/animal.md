@@ -1,4 +1,6 @@
-alias:: animals
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: biology
+---
+alias: animals
+tags: cyberia
+crystal-type: entity
+crystal-domain: biology
+---

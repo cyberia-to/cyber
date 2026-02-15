@@ -1,7 +1,8 @@
-tags:: cyber, article
-crystal-type:: entity
-crystal-domain:: cyber
-
+---
+tags: cyber, article
+crystal-type: entity
+crystal-domain: cyber
+---
 # Neural Language for Superintelligence
 
 ## A Whitepaper on Convergent Semantic Communication for Collective Intelligence

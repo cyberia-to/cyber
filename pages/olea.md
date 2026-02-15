@@ -1,7 +1,9 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[olea europaea]]}}
+- {{embed [[olea europaea]]}}

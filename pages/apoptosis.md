@@ -1,7 +1,8 @@
-tags:: biology
-crystal-type:: entity
-crystal-domain:: biology
-
+---
+tags: biology
+crystal-type: entity
+crystal-domain: biology
+---
 # apoptosis
 
 Programmed cell death -- a controlled self-destruction sequence encoded in every cell. The organism sacrificing parts to preserve the whole.

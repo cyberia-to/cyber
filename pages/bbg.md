@@ -1,28 +1,35 @@
-alias:: big badass graph
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- [origin](https://claude.ai/public/artifacts/1a81f4ea-ab5a-4485-80ad-67ee96947efc)
-- # Big Badass Graph
-- A Self-Verifying Substrate for Planetary Collective Intelligence
-- ## Abstract
-  
+---
+alias: big badass graph
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[origin](https://claude.ai/public/artifacts/1a81f4ea-ab5a-4485-80ad-67ee96947efc)
+
+# Big Badass Graph
+
+A Self-Verifying Substrate for Planetary Collective Intelligence
+
+## Abstract
+
   Six research threads developed independently over four decades—content addressing, authenticated graph structures, confluent rewriting, interaction nets, conserved flows, zero-knowledge proofs—turn out to be fragments of a single architecture. A single decision unifies them: prime field arithmetic as primitive rather than derived. This resolves a decades-old tension between formal elegance and cryptographic capability, yielding a substrate where hash functions, polynomial commitments, and zero-knowledge proofs become native expressions rather than external oracles.
-  
+
   The synthesis achieves what was considered impossible: a computational substrate that verifies its own proofs using only its own primitives. Computation produces traces, traces become STARK proofs, proofs are verified by CORE (Conserved Observable Reduction Equilibrium) programs, verification can itself be proven. The system closes on itself—no trusted external verifier remains.
-  
+
   State lives in the BBG (Big Badass Graph)—a unified polynomial structure replacing the traditional mix of Merkle trees, accumulators, and indexes. One primitive handles membership proofs, completeness proofs, and namespace sync, all at O(log² n) with ~1,000 ZK constraints.
-  
+
   The focus distribution π emerges endogenously from collective activity without voting, leadership, or central coordination. At sufficient scale, the distinction between distributed computation and distributed cognition dissolves—not as metaphor, but as engineering artifact. This specification provides the complete formal architecture toward that end.
-- # Part I: Foundations
-- ## 1. The Core Synthesis
-  
+
+# Part I: Foundations
+
+## 1. The Core Synthesis
+
   The design of computational substrates for distributed consensus has proceeded along two divergent paths. Minimalist rewriting systems—Nock, lambda calculus, combinator logic—achieve formal elegance: small specifications, provable properties, mathematical clarity. But they treat cryptography as external, bolted on through foreign function interfaces or trusted oracles. Industrial virtual machines—EVM, WASM, eBPF—achieve practical capability: real cryptographic operations, real-world deployment, battle-tested security. But their specifications sprawl into thousands of pages, formal verification becomes intractable, and subtle bugs persist for years.
-  
+
   This bifurcation is unnecessary. It stems from a historical accident: these systems chose integer or byte arithmetic as primitive, making field operations expensive compositions rather than native instructions. Reverse this decision—take prime field arithmetic as the foundation—and the tension dissolves. Cryptographic operations become cheap. Formal semantics remain tractable. The minimal and the practical converge.
-  
+
   With field arithmetic as primitive, six previously separate research threads reveal themselves as fragments of a single architecture:
-  
+
   ```
   ╔═══════════════════════════════════════════════════════════════════════════╗
   ║                         THE CORE SYNTHESIS                                 ║
@@ -55,26 +62,31 @@ crystal-domain:: cyber
   ║                                                                            ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
   ```
-  
+
   Content addressing (Merkle, Git, BitTorrent, IPFS, Unison) gives identity through hashing—same content, same hash, same thing. This enables global memoization: if two nodes compute the same function on the same input, they get the same result, cached forever. Authenticated graph structures (Goodrich-Tamassia, Celestia) turn this into proofs—not just "I have this data" but "here is cryptographic evidence, and here are ALL edges in this namespace." Deterministic rewriting (Huet, Nock) guarantees that evaluation order doesn't matter—any path through the computation reaches the same result. Interaction nets (Lafont, HVM) show this confluence enables automatic parallelization without locks. Conserved flow dynamics (CFT) provide the missing economic layer—a single quantity, focus, that governs scheduling, metering, and consensus simultaneously. Zero-knowledge proofs (Zcash, STARKs) close the loop: prove you computed correctly without revealing what you computed.
-  
+
   None of these frameworks reference each other in their original publications. Yet they compose without friction. The unifying element is field arithmetic: hashing is field operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. CORE makes this latent unity explicit.
-  
+
   Naming:
-- CORE — the computation model (16 patterns, reduction semantics)
-- Cybergraph — the data model (particles, neurons, edges)
-- BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
-- ## 2. Design Principles
-  
+
+CORE — the computation model (16 patterns, reduction semantics)
+
+Cybergraph — the data model (particles, neurons, edges)
+
+BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
+
+## 2. Design Principles
+
   Ten principles guide CORE's design. Each addresses a specific failure mode of existing systems, and together they form a coherent whole.
-- ### 2.1 Field-First
-  
+
+### 2.1 Field-First
+
   Every value in CORE is a field element. This is the foundational decision from which everything else follows.
-  
+
   Traditional virtual machines build upward from bytes: 8-bit values combine into 32-bit integers, which combine into 256-bit big integers, which finally enable modular arithmetic for cryptography. Each layer adds complexity, special cases, and overhead. Cryptographic operations become expensive library calls rather than native instructions.
-  
+
   CORE inverts this. The primitive is a 64-bit prime field element. Bytes, integers, and larger structures are representations *within* the field, not foundations beneath it. This makes cryptography cheap—a field multiplication is a single CPU instruction—while arithmetic remains native. The specific choice is Goldilocks (p = 2^64 - 2^32 + 1), selected for 64-bit alignment and FFT-friendliness essential for STARKs.
-  
+
   ```
   FIELD: Goldilocks
   p = 2^64 - 2^32 + 1 = 18446744069414584321
@@ -85,16 +97,17 @@ crystal-domain:: cyber
   - Sparse form enables fast reduction (subtract, not divide)
   - Used by Plonky2, Polygon Miden, Neptune
   ```
-- ### 2.2 Hash-Universal
-  
+
+### 2.2 Hash-Universal
+
   Identity is hash. Two values are the same if and only if they hash to the same digest.
-  
+
   This seems obvious but has profound consequences. Traditional systems distinguish between *value* and *location*—the same data at two addresses is two things. Content-addressed systems collapse this: same content, same hash, same identity, stored once. This enables global memoization (compute once, cache forever), structural sharing (identical subtrees stored once), and trivial equality (compare 256 bits, not arbitrary structures).
-  
+
   The hash function is a configuration parameter, not a protocol constant. CORE requires any hash H: {0,1}* → F_p^4 with 128-bit collision resistance and efficient algebraic circuit representation. The reference implementation uses Poseidon-Goldilocks, chosen for ZK efficiency: ~300 constraints versus ~25,000 for SHA-256. This 80× difference makes hash-heavy operations practical inside zero-knowledge proofs.
-  
+
   A deliberate choice: CORE uses one hash everywhere rather than splitting between "fast hash for content" and "ZK-friendly hash for proofs." Two hashes would double security analysis, complicate identity semantics, and create permanent architectural complexity. Poseidon on current mobile hardware achieves ~50 MB/s—adequate for real workloads (100 MB sync in 2 seconds, 5 MB photo in 0.1 seconds). As field-native computation becomes standard across ZK applications, hardware acceleration will follow, just as AES-NI and SHA-NI emerged when software demanded them. CORE chooses architectural simplicity over optimizing for temporary hardware limitations.
-  
+
   ```
   HASH REQUIREMENTS
   ─────────────────
@@ -113,58 +126,67 @@ crystal-domain:: cyber
   - Mobile: ~50 MB/s (acceptable; hardware will adapt)
   - Status: CONFIGURABLE (Poseidon is reference, not mandated)
   ```
-- ### 2.3 Confluence-Guaranteed
-  
+
+### 2.3 Confluence-Guaranteed
+
   Any reduction order yields the same result. There is no "wrong" way to evaluate.
-  
+
   This property comes from orthogonal rewriting theory (Huet, 1980). CORE's sixteen patterns form an orthogonal system: each pattern has a unique tag, no two patterns overlap, and no variable appears twice in a pattern's left-hand side. Orthogonality implies confluence without requiring termination—even infinite computations have well-defined meaning.
-  
+
   The practical consequence: implementations can evaluate subexpressions in any order, speculatively, partially, or in parallel, and still reach the same answer. There are no evaluation strategies to choose, no call-by-value vs call-by-name debates. The semantics is the semantics.
-- ### 2.4 Parallel-Safe
-  
+
+### 2.4 Parallel-Safe
+
   Parallel execution requires no locks, synchronization, or coordination.
-  
+
   Confluence enables this directly. If evaluation order doesn't matter, then parallel evaluators can't produce race conditions—there's nothing to race toward. Two threads reducing different subexpressions will eventually agree, regardless of scheduling. This is the insight from interaction nets (Lafont, 1990) and HVM (2022): confluence isn't just a theoretical nicety, it's the foundation of automatic parallelization.
-  
+
   CORE inherits this property structurally. Pattern 2 (compose) and Pattern 3 (cons) both have independent subexpressions that can evaluate in parallel. No annotations, no async/await, no thread pools—parallelism emerges from the reduction rules themselves.
-- ### 2.5 Flow-Conserved
-  
+
+### 2.5 Flow-Conserved
+
   Focus is a conserved quantity. It flows, transforms, and redistributes, but never appears from nothing or vanishes into nothing.
-  
+
   This principle comes from the Collective Focus Theorem (CFT). Focus serves three roles simultaneously: attention (high-focus computations schedule first), fuel (computation consumes focus), and consensus weight (focus distribution defines agreement). A single conserved quantity unifies what other systems split into separate mechanisms—gas, stake, priority, reputation.
-  
+
   Conservation is enforced structurally: Σ focus = 1, always. Invalid states (sum ≠ 1) cannot be represented. This is stronger than runtime checks—the state space itself excludes violations.
-- ### 2.6 Namespace-Intrinsic
-  
+
+### 2.6 Namespace-Intrinsic
+
   The graph is multi-indexed from genesis. Every edge belongs to namespaces (creator, source particle, target particle), and completeness proofs are built into the structure.
-  
+
   Most databases add indexes as optimization—they speed up queries but aren't semantically required. CORE's indexes are constitutive: an edge without proper index entries is invalid. This means "give me all edges in namespace X" isn't a query that might be slow or incomplete—it's a request for data plus cryptographic proof that nothing was withheld. Light clients can sync only their namespaces, with mathematical certainty of completeness.
-- ### 2.7 Cost-Deterministic
-  
+
+### 2.7 Cost-Deterministic
+
   The cost of a computation depends only on its syntactic structure, never on runtime values, cache state, or execution environment.
-  
+
   This property is essential for consensus: all nodes must agree on resource consumption without executing the computation. Traditional gas metering approximates this but still depends on runtime (SSTORE costs vary with storage state). CORE achieves exact determinism: given a formula, its cost is computable by static analysis. Cache hits reduce *work* but not *cost*—you pay for the right to a result, not the labor of computing it.
-- ### 2.8 Privacy-Native
-  
+
+### 2.8 Privacy-Native
+
   Individual ownership remains private. Aggregate properties remain public and verifiable.
-  
+
   This is the minimal privacy boundary for collective intelligence. The network must verify conservation laws (energy not created from nothing) and compute focus distribution (aggregate attention). But it need not know who owns what or who transacted with whom. Zero-knowledge proofs make this precise: prove that inputs equal outputs plus fee, without revealing which inputs or which outputs.
-- ### 2.9 Self-Verifying
-  
+
+### 2.9 Self-Verifying
+
   The STARK verifier is a CORE program. Verification can itself be proven.
-  
+
   Most systems treat proof verification as an external oracle—a trusted function that returns true or false. CORE closes the loop: the verifier is written in CORE's sixteen patterns, operating on field elements with Poseidon hashes. This means verification can be proven (a STARK proving that verification succeeded), enabling recursive composition. Verify a proof of a proof of a proof, with constant final size.
-- ### 2.10 Post-Quantum
-  
+
+### 2.10 Post-Quantum
+
   Security relies only on hash functions. No pairings, no discrete log, no trusted setup.
-  
+
   Elliptic curve cryptography—the foundation of most blockchain systems—will break when large quantum computers exist. CORE avoids this entirely. Poseidon hashing, polynomial commitments via FRI, and STARK proofs all rely on hash function security alone. There is no trusted setup ceremony, no toxic waste, no cryptographic assumptions beyond collision resistance. The system is secure against known quantum algorithms today.
-  
+
   ---
-- ## 3. Complexity Analysis
-  
+
+## 3. Complexity Analysis
+
   The design principles yield complexity bounds that improve on or are impossible in traditional paradigms. This section summarizes the achieved properties; detailed proofs appear in subsequent sections.
-  
+
   ```
   ┌─────────────────────────────────────────────────────────────────────────────────────┐
   │                        COMPLEXITY COMPARISON ACROSS PARADIGMS                        │
@@ -183,19 +205,25 @@ crystal-domain:: cyber
   │ Parallel safety     │ ✗ explicit    │ ✗ sequential  │ ✗ locks       │ ✓ confluent   │
   └─────────────────────┴───────────────┴───────────────┴───────────────┴───────────────┘
   ```
-  
+
   Key bounds explained:
-- O(1) equality: Structural hashing assigns a 256-bit digest to every value. Equality reduces to comparing digests, regardless of value size.
-- O(log² n) membership: Polynomial commitments (FRI-based) prove "x is in set S" with proof size logarithmic squared in set size. Verification is mostly field operations, making it efficient inside ZK circuits (~1,000 constraints vs ~9,600 for Merkle).
-- O(log² n) completeness: Sorted polynomial commitments with range proofs prove "these are ALL elements with property P"—a guarantee no traditional database provides. Same primitive as membership, unified implementation.
-- O(log n) → O(1) verification: STARK proofs verify computation in logarithmic time. Recursive composition (proving the verifier) collapses arbitrary proof chains to constant size.
-- Privacy + verification: Zero-knowledge proofs decouple these traditionally incompatible properties. Prove conservation without revealing participants.
-  
+
+O(1) equality: Structural hashing assigns a 256-bit digest to every value. Equality reduces to comparing digests, regardless of value size.
+
+O(log² n) membership: Polynomial commitments (FRI-based) prove "x is in set S" with proof size logarithmic squared in set size. Verification is mostly field operations, making it efficient inside ZK circuits (~1,000 constraints vs ~9,600 for Merkle).
+
+O(log² n) completeness: Sorted polynomial commitments with range proofs prove "these are ALL elements with property P"—a guarantee no traditional database provides. Same primitive as membership, unified implementation.
+
+O(log n) → O(1) verification: STARK proofs verify computation in logarithmic time. Recursive composition (proving the verifier) collapses arbitrary proof chains to constant size.
+
+Privacy + verification: Zero-knowledge proofs decouple these traditionally incompatible properties. Prove conservation without revealing participants.
+
   ---
-- ## 4. Value Tower
-  
+
+## 4. Value Tower
+
   CORE distinguishes three semantic types within the field representation:
-  
+
   ```
   VALUE TOWER
   ───────────
@@ -219,13 +247,15 @@ crystal-domain:: cyber
   Bitwise op on hash → ⊥_error
   Arithmetic on hash (except equality) → ⊥_error
   ```
-  
+
   ---
-- ## 5. Cryptographic Primitives
-  
+
+## 5. Cryptographic Primitives
+
   The cryptographic primitives below use Poseidon-Goldilocks as the reference hash function. As noted in Section 2.2, the hash is a configuration parameter—alternative algebraic hashes (Rescue, Griffin, Anemoi) may be substituted provided they meet the stated requirements.
-- ### 5.1 Poseidon Hash
-  
+
+### 5.1 Poseidon Hash
+
   ```
   Poseidon permutation over 12 Goldilocks elements:
   
@@ -239,12 +269,13 @@ crystal-domain:: cyber
   3. Apply permutation
   4. Output state[0..3] (256 bits)
   ```
-- ### 5.2 Domain Separation
-  
+
+### 5.2 Domain Separation
+
   A single hash function serves multiple purposes in CORE: commitments, nullifiers, Merkle nodes, owner derivation. Without separation, different uses could accidentally collide—an attacker might find inputs where a valid commitment equals a valid nullifier, breaking security assumptions.
-  
+
   Domain separation prevents this by prefixing each hash with a unique constant. Commitments and nullifiers now live in separate "universes"—even if their remaining inputs match, the outputs cannot collide. This makes security analysis modular: each domain can be analyzed independently, and bugs in one domain cannot affect others.
-  
+
   ```
   DOMAIN CONSTANTS
   ────────────────
@@ -262,8 +293,9 @@ crystal-domain:: cyber
   The constants are human-readable ASCII for debugging, guaranteed unique,
   and fit in a single field element (64 bits).
   ```
-- ### 5.3 Structural Hashing
-  
+
+### 5.3 Structural Hashing
+
   ```
   STRUCTURAL HASH
   ───────────────
@@ -286,8 +318,9 @@ crystal-domain:: cyber
   Cryptographic assumption, not logical truth.
   Collision probability ≈ 2^-128, treated as negligible.
   ```
-- ### 5.4 Sparse Merkle Tree
-  
+
+### 5.4 Sparse Merkle Tree
+
   ```
   Depth: 32 levels
   Empty subtree hashes precomputed:
@@ -297,8 +330,9 @@ crystal-domain:: cyber
   Proof size: 32 field elements
   Verification: 32 Poseidon hashes
   ```
-- ### 5.5 Sorted Polynomial Commitments (Completeness Proofs)
-  
+
+### 5.5 Sorted Polynomial Commitments (Completeness Proofs)
+
   ```
   COMPLETENESS VIA SORTED POLYNOMIALS
   ───────────────────────────────────
@@ -326,12 +360,15 @@ crystal-domain:: cyber
   Cost: O(log² n) field operations — same as membership
   Unified primitive: one implementation for all proofs
   ```
-  
+
   ---
-- # Part II: Computation
-- ## 6. The Sixteen Patterns
-- ### 5.1 Overview
-  
+
+# Part II: Computation
+
+## 6. The Sixteen Patterns
+
+### 5.1 Overview
+
   ```
   ╔═══════════════════════════════════════════════════════════════════════════╗
   ║                       CORE REDUCTION PATTERNS                              ║
@@ -349,8 +386,9 @@ crystal-domain:: cyber
   ║  13: not    14: shl                                                       ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
   ```
-- ### 5.2 Reduction Signature
-  
+
+### 5.2 Reduction Signature
+
   ```
   reduce : (Subject, Formula, Focus) → Result
   
@@ -359,8 +397,9 @@ crystal-domain:: cyber
        | ⊥_error            — type/semantic error
        | ⊥_unavailable      — referenced content not retrievable
   ```
-- ### 5.3 Structural Patterns
-  
+
+### 5.3 Structural Patterns
+
   ```
   PATTERN 0: AXIS
   reduce(s, [0 a], f) → (axis(s, eval(a)), f - 1 - depth)
@@ -401,8 +440,9 @@ crystal-domain:: cyber
   
   CRITICAL: Only ONE branch evaluated. Prevents infinite recursion DoS.
   ```
-- ### 5.4 Arithmetic Patterns
-  
+
+### 5.4 Arithmetic Patterns
+
   ```
   PATTERN 5: ADD
   reduce(s, [5 [a b]], f) →
@@ -432,8 +472,9 @@ crystal-domain:: cyber
   PATTERN 10: LT
   reduce(s, [10 [a b]], f) → (0 if v_a < v_b else 1, f2)
   ```
-- ### 5.5 Bitwise Patterns
-  
+
+### 5.5 Bitwise Patterns
+
   ```
   Valid on word type [0, 2^64). Bitwise on hash → ⊥_error.
   
@@ -449,8 +490,9 @@ crystal-domain:: cyber
   PATTERN 14: SHL
   reduce(s, [14 [a n]], f) → ((v_a << v_n) mod 2^64, f2)
   ```
-- ### 5.6 Hash Pattern
-  
+
+### 5.6 Hash Pattern
+
   ```
   PATTERN 15: HASH
   reduce(s, [15 a], f) →
@@ -462,8 +504,9 @@ crystal-domain:: cyber
   NOTE: Hash CAN be expressed as pure patterns (~2800 field ops for Poseidon).
   Pattern 15 is OPTIMIZATION. Jets accelerate; semantics unchanged.
   ```
-- ### 5.7 Cost Table
-  
+
+### 5.7 Cost Table
+
   ```
   Pattern │ Exec Cost │ STARK Constraints
   ────────┼───────────┼───────────────────
@@ -481,23 +524,29 @@ crystal-domain:: cyber
   11-14   │ 1         │ ~64 each
   15 hash │ 300       │ ~300
   ```
-  
+
   ---
-- ## 7. Parallel Reduction
-- ### 6.1 Confluence Theorem
-  
+
+## 7. Parallel Reduction
+
+### 6.1 Confluence Theorem
+
   Theorem: CORE is confluent.
-  
+
   Proof: The 16 patterns form an orthogonal rewrite system:
-- Each pattern has unique tag (0-15)
-- No two patterns overlap on any input
-- Left-linear (no variable repetition in pattern left-hand sides)
-  
+
+Each pattern has unique tag (0-15)
+
+No two patterns overlap on any input
+
+Left-linear (no variable repetition in pattern left-hand sides)
+
   By Huet-Lévy (1980), orthogonal systems are confluent without requiring termination. ∎
-  
+
   Corollary: Parallel and sequential reduction yield identical results.
-- ### 6.2 Dependency Analysis
-  
+
+### 6.2 Dependency Analysis
+
   ```
   PATTERN PARALLELISM
   ───────────────────
@@ -518,8 +567,9 @@ crystal-domain:: cyber
   reduce(s,t) first
   Then: ONE of reduce(s,c) or reduce(s,d)  — NOT parallel (lazy)
   ```
-- ### 6.3 Global Memoization
-  
+
+### 6.3 Global Memoization
+
   ```
   GLOBAL CACHE
   ────────────
@@ -540,19 +590,21 @@ crystal-domain:: cyber
            All nodes must agree on cost (deterministic).
            Work savings are implementation optimization.
   ```
-  
+
   ---
-- # Part III: Privacy Layer
-  
+
+# Part III: Privacy Layer
+
   Traditional systems force a choice: either transparency (everyone sees everything) or privacy (no one can verify anything). Blockchains inherited this dilemma—Bitcoin exposes all transactions, while privacy coins hide them but sacrifice auditability. Zero-knowledge proofs dissolve this false dichotomy: prove properties without revealing data.
-  
+
   CORE implements private ownership with public aggregates. Individual record ownership remains hidden—who owns what, who sent to whom—while aggregate properties remain publicly verifiable: total energy per particle, conservation laws, focus distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for collective intelligence: enough transparency for consensus, enough privacy for participation.
-  
+
   The implementation uses a UTXO model with Poseidon commitments, nullifiers for double-spend prevention, and ~10,000-constraint ZK circuits proving conservation. This represents a 4× improvement over naive Merkle-based designs, achieved through polynomial inclusion proofs (Section 9).
-- ## 8. Privacy Model
-  
+
+## 8. Privacy Model
+
   The cybergraph implements Tier 1 Privacy: Private Ownership with Public Aggregates.
-  
+
   ```
   ┌────────────────────────────────────────────────────────────────────────────┐
   │                   PRIVACY BOUNDARY SPECIFICATION                            │
@@ -578,13 +630,15 @@ crystal-domain:: cyber
   │                │ ✓ Rankings          │                                     │
   └────────────────┴─────────────────────┴─────────────────────────────────────┘
   ```
-  
+
   Invariant: The ZK circuit MUST enforce this boundary. Any violation breaks the economic integrity of collective attention.
-  
+
   ---
-- ## 9. Record Model
-- ### 8.1 Record Structure
-  
+
+## 9. Record Model
+
+### 8.1 Record Structure
+
   ```
   struct Record {
     particle: Field,    // Content identifier (CID → field)
@@ -593,8 +647,9 @@ crystal-domain:: cyber
     nonce: Field,       // Random for uniqueness
   }
   ```
-- ### 8.2 Commitment
-  
+
+### 8.2 Commitment
+
   ```
   commitment(r) = Poseidon(
     COMMITMENT_DOMAIN,
@@ -604,8 +659,9 @@ crystal-domain:: cyber
     r.nonce
   )
   ```
-- ### 8.3 Nullifier
-  
+
+### 8.3 Nullifier
+
   ```
   nullifier(r, secret) = Poseidon(
     NULLIFIER_DOMAIN,
@@ -619,13 +675,15 @@ crystal-domain:: cyber
   - Unique per record
   - Deterministic (same record → same nullifier)
   ```
-  
+
   ---
-- ## 10. Authenticated Graph Structures in ZK
-- ### 9.1 The Core Problem
-  
+
+## 10. Authenticated Graph Structures in ZK
+
+### 9.1 The Core Problem
+
   Inside a ZK circuit, we must prove "this record exists in the UTXO set" while keeping the record private. The naive approach uses Merkle trees:
-  
+
   ```
   MERKLE TREE APPROACH (what most systems use)
   ────────────────────────────────────────────
@@ -640,10 +698,11 @@ crystal-domain:: cyber
   
   For 4 inputs: 38,400 constraints for inclusion alone
   ```
-- ### 9.2 The Insight: Field Ops are Cheap
-  
+
+### 9.2 The Insight: Field Ops are Cheap
+
   Inside a ZK circuit, different operations have vastly different costs:
-  
+
   ```
   OPERATION COSTS IN ZK CIRCUIT
   ─────────────────────────────
@@ -654,12 +713,13 @@ crystal-domain:: cyber
   
   Ratio: Hash is 300× more expensive than multiply!
   ```
-  
+
   This asymmetry suggests: replace hashes with field operations.
-- ### 9.3 Polynomial Commitment Solution
-  
+
+### 9.3 Polynomial Commitment Solution
+
   Following Goodrich & Tamassia's authenticated graph structure principles, we represent the UTXO set as a polynomial:
-  
+
   ```
   POLYNOMIAL REPRESENTATION
   ─────────────────────────
@@ -678,10 +738,11 @@ crystal-domain:: cyber
   - Verification: ~log²(n) field operations
   - Cost: ~1,000 constraints (vs 9,600 for Merkle)
   ```
-- ### 9.4 Why FRI Works Inside ZK
-  
+
+### 9.4 Why FRI Works Inside ZK
+
   FRI (Fast Reed-Solomon Interactive Oracle Proof) verification consists of:
-  
+
   ```
   FRI VERIFICATION STEPS
   ──────────────────────
@@ -696,8 +757,9 @@ crystal-domain:: cyber
   For n = 2³²: log²(32) ≈ 1,000 operations
   Cost: ~1,000 constraints
   ```
-- ### 9.5 Comparison
-  
+
+### 9.5 Comparison
+
   ```
   │ Merkle Tree    │ Polynomial (FRI)
   ─────────────────────┼────────────────┼──────────────────
@@ -709,28 +771,37 @@ crystal-domain:: cyber
   ─────────────────────┼────────────────┼──────────────────
   Improvement          │ baseline       │ ~10× fewer constraints
   ```
-- ### 9.6 Security Properties
-  
+
+### 9.6 Security Properties
+
   Both approaches provide:
-- Binding: Cannot open commitment to different values
-- Hiding: Commitment reveals nothing about values (with blinding)
-- Post-quantum: Hash-based (Poseidon), no pairings
-  
+
+Binding: Cannot open commitment to different values
+
+Hiding: Commitment reveals nothing about values (with blinding)
+
+Post-quantum: Hash-based (Poseidon), no pairings
+
   The polynomial approach additionally enables:
-- Batch proofs: Prove multiple inclusions cheaper together
-- Update efficiency: Amortized O(log n) updates vs O(log n) full rehash
-  
+
+Batch proofs: Prove multiple inclusions cheaper together
+
+Update efficiency: Amortized O(log n) updates vs O(log n) full rehash
+
   ---
-- ## 11. Transaction Circuit
-- ### 10.1 Constants
-  
+
+## 11. Transaction Circuit
+
+### 10.1 Constants
+
   ```
   MAX_INPUTS  = 4      // Maximum input records per tx
   MAX_OUTPUTS = 4      // Maximum output records per tx
   MAX_UTXOS   = 2^32   // Maximum UTXO set size (polynomial degree bound)
   ```
-- ### 10.2 Public Inputs
-  
+
+### 10.2 Public Inputs
+
   ```
   - state_commitment: Field         // Polynomial commitment to UTXO set
   - nullifiers[4]: Field            // Spent record nullifiers
@@ -738,8 +809,9 @@ crystal-domain:: cyber
   - deltas[8]: (Field, i64)         // Per-particle value changes
   - fee: u64                        // Transaction fee
   ```
-- ### 10.3 Private Witness
-  
+
+### 10.3 Private Witness
+
   ```
   - input_records[4]: Record        // Records being spent
   - input_secrets[4]: Field         // Ownership proofs
@@ -748,10 +820,11 @@ crystal-domain:: cyber
   - input_enabled[4]: bool          // Which inputs active
   - output_enabled[4]: bool         // Which outputs active
   ```
-- ### 10.4 Circuit Constraints
-  
+
+### 10.4 Circuit Constraints
+
   CORE uses polynomial commitment inclusion proofs instead of Merkle paths inside the ZK circuit. This replaces hash-heavy operations (~300 constraints per hash × 32 levels = 9,600 constraints) with field-operation-heavy polynomial evaluation (~1,000 constraints total).
-  
+
   ```
   KEY INSIGHT: AUTHENTICATED GRAPH STRUCTURES IN ZK
   ────────────────────────────────────────────────
@@ -832,8 +905,9 @@ crystal-domain:: cyber
   
   Improvement: 4× fewer constraints, 3× faster proofs, 2× smaller proofs
   ```
-- ### 10.5 Polynomial Inclusion Gadget
-  
+
+### 10.5 Polynomial Inclusion Gadget
+
   ```
   def polynomial_inclusion_gadget(
     cs: ConstraintSystem,
@@ -889,8 +963,9 @@ crystal-domain:: cyber
   #         Field ops cost 1 constraint each
   #         log²(2³²) ≈ 1,000 constraints
   ```
-- ### 10.6 Transaction Types
-  
+
+### 10.6 Transaction Types
+
   ```
   TRANSFER (Standard)
   PURPOSE: Move energy between particles
@@ -923,23 +998,25 @@ crystal-domain:: cyber
   OUTPUTS: 1 record
   CONSTRAINT: Conservation at single particle
   ```
-  
+
   ---
-- # Part IV: BBG — Big Badass Graph
-  
+
+# Part IV: BBG — Big Badass Graph
+
   A naive graph database stores edges and answers queries. But "I don't have any edges matching your query" is indistinguishable from "I'm hiding edges from you." Traditional systems require trust: you believe the database operator is honest. Distributed systems require consensus: everyone agrees on the complete state. Neither scales.
-  
+
   The BBG (Big Badass Graph) solves this through unified polynomial commitments. One primitive handles everything: membership proofs, completeness proofs, indexes, state. No Merkle trees. No separate accumulators. No mixed bag of data structures with different security properties and implementations.
-  
+
   Edges are stored once but indexed by multiple dimensions—creator, source particle, target particle. Each index is a sorted polynomial commitment enabling range proofs: not just "this edge exists" but "these are ALL edges in this namespace." When you sync your namespace, you receive cryptographic proof that nothing was withheld. The graph cannot exist without its indexes being consistent and complete—this is structural, not policy.
-  
+
   A deliberate choice: BBG uses polynomial commitments everywhere rather than mixing hash-based structures (Merkle trees, NMTs) with polynomial structures. One primitive means one security analysis, one implementation, one mental model. The same FRI-based machinery that makes UTXO proofs cheap (~1,000 constraints vs ~9,600 for Merkle) also handles graph completeness proofs. Edges are sorted by namespace within the polynomial, enabling range proofs: "first edge with namespace N is at index i, last is at j, nothing outside this range matches N."
-  
+
   This makes "sync only my namespace" not a feature but a mathematical property. A light client tracking one particle downloads only edges touching that particle, with proof that the response is complete. A neuron syncing its own edges receives proof of its complete history. No trust in the data provider required.
-- ## 12. BBG Structure
-  
+
+## 12. BBG Structure
+
   The BBG is multi-indexed from genesis. Edges are stored once but indexed by multiple dimensions, each with polynomial commitment completeness proofs.
-  
+
   ```
   ╔═══════════════════════════════════════════════════════════════════════════╗
   ║                    BBG: BIG BADASS GRAPH STRUCTURE                         ║
@@ -994,8 +1071,9 @@ crystal-domain:: cyber
   ║                                                                            ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
   ```
-- ## 13. Index Consistency Invariant
-  
+
+## 13. Index Consistency Invariant
+
   ```
   INVARIANT (enforced by STARK on every state transition)
   ───────────────────────────────────────────────────────
@@ -1017,8 +1095,9 @@ crystal-domain:: cyber
   
   Proof size: O(log² n). Verification: O(log² n) field operations.
   ```
-- ## 14. Namespace Sync Protocol
-  
+
+## 14. Namespace Sync Protocol
+
   ```
   NAMESPACE SYNC (Polynomial Range Proof)
   ───────────────────────────────────────
@@ -1051,11 +1130,13 @@ crystal-domain:: cyber
   
   Cost: O(|my_edges|) data + O(log² |G|) proof overhead
   ```
-  
+
   ---
-- # Part V: STARK Verification
-- ## 15. Why STARKs
-  
+
+# Part V: STARK Verification
+
+## 15. Why STARKs
+
   ```
   Property          │ SNARK         │ STARK
   ──────────────────┼───────────────┼─────────────────
@@ -1065,8 +1146,9 @@ crystal-domain:: cyber
   Security basis    │ Discrete log  │ Hash only
   Field compatible  │ Specific      │ Any (Goldilocks)
   ```
-- ## 16. Self-Verification Property
-  
+
+## 16. Self-Verification Property
+
   ```
   THEOREM: The STARK verifier for CORE is expressible as a CORE program.
   
@@ -1083,8 +1165,9 @@ crystal-domain:: cyber
   This enables recursive proof composition
   O(1) verification regardless of computation size
   ```
-- ## 17. Verifier Complexity
-  
+
+## 17. Verifier Complexity
+
   ```
   STARK VERIFIER COMPONENTS:
   1. Parse proof: ~1,000 patterns
@@ -1097,8 +1180,9 @@ crystal-domain:: cyber
   
   This cost is CONSTANT regardless of what was proven.
   ```
-- ## 18. Recursive Composition
-  
+
+## 18. Recursive Composition
+
   ```
   Level 0: Prove computation C → proof π₀
   Level 1: Prove verify(π₀) → proof π₁ (~100-200 KB)
@@ -1111,36 +1195,39 @@ crystal-domain:: cyber
   
   Result: O(1) on-chain verification for O(N) transactions
   ```
-  
+
   ---
-- # Part VI: Focus Dynamics
-- ## 19. Focus: The Universal Resource
-  
+
+# Part VI: Focus Dynamics
+
+## 19. Focus: The Universal Resource
+
   Focus is a single conserved quantity that serves three roles:
-  
+
   | 
   | Role | 
   | Mechanism | 
   |
-  
+
   | ---- |
-  
+
   | 
   | Attention | 
   | High-focus computations scheduled first | 
   |
-  
+
   | 
   | Fuel | 
   | Computation consumes focus | 
   |
-  
+
   | 
   | Consensus weight | 
   | Focus distribution = agreement signal | 
   |
-- ## 20. Conservation Laws
-  
+
+## 20. Conservation Laws
+
   ```
   FOCUS CONSERVATION
   ──────────────────
@@ -1169,8 +1256,9 @@ crystal-domain:: cyber
   
   Enforced by ZK circuit constraints.
   ```
-- ## 21. Focus Flow Equation
-  
+
+## 21. Focus Flow Equation
+
   ```
   CONTINUOUS FORM (for analysis)
   ──────────────────────────────
@@ -1192,30 +1280,36 @@ crystal-domain:: cyber
   rᵢ  = regeneration for neuron i
   cᵢ  = consumption by neuron i
   ```
-- ## 22. Convergence Theorem
-  
+
+## 22. Convergence Theorem
+
   Theorem: Focus dynamics converge to a unique stationary distribution π.
-  
+
   Proof:
   The transition matrix P is:
-- Stochastic (rows sum to 1)
-- Irreducible (graph is strongly connected by assumption)
-- Aperiodic (self-loops or odd cycles exist)
-  
+
+Stochastic (rows sum to 1)
+
+Irreducible (graph is strongly connected by assumption)
+
+Aperiodic (self-loops or odd cycles exist)
+
   By Perron-Frobenius theorem, there exists a unique π where:
   πP = π
   Σᵢ πᵢ = 1
   πᵢ > 0 for all i
-  
+
   All initial distributions converge to π geometrically fast. ∎
-  
+
   Convergence rate: Determined by spectral gap λ = 1 - |λ₂|
   ‖f^(t) - π‖ ≤ C · (1-λ)^t
-  
+
   ---
-- # Part VII: State Management
-- ## 23. World State
-  
+
+# Part VII: State Management
+
+## 23. World State
+
   ```
   WORLD STATE W
   ─────────────
@@ -1241,8 +1335,9 @@ crystal-domain:: cyber
   nullifier_set   : PolynomialCommitment
   total_energy    : u64
   ```
-- ## 24. State Transitions
-  
+
+## 24. State Transitions
+
   ```
   TRANSITION: W × Transaction → W' | ⊥
   
@@ -1281,11 +1376,13 @@ crystal-domain:: cyber
   Proof size: O(log |W|)
   Verification: O(log |W|)
   ```
-  
+
   ---
-- # Part VIII: Security Properties
-- ## 25. Guarantees
-  
+
+# Part VIII: Security Properties
+
+## 25. Guarantees
+
   ```
   SOUNDNESS:
   Invalid transactions rejected with probability ≥ 1 - 2^(-128)
@@ -1300,8 +1397,9 @@ crystal-domain:: cyber
   Hash-based security only
   ~128-bit post-quantum (Grover limit)
   ```
-- ## 26. Attack Resistance
-  
+
+## 26. Attack Resistance
+
   ```
   Attack          │ Defense
   ────────────────┼─────────────────────────────────────────────
@@ -1314,11 +1412,13 @@ crystal-domain:: cyber
   Replay          │ Nonces and nullifiers ensure uniqueness
   Forgery         │ ZK proofs unforgeable without witness
   ```
-  
+
   ---
-- # Part IX: Implementation Architecture
-- ## 27. Implementation Layers
-  
+
+# Part IX: Implementation Architecture
+
+## 27. Implementation Layers
+
   ```
   ╔═══════════════════════════════════════════════════════════════════════════╗
   ║                      IMPLEMENTATION LAYERS                                 ║
@@ -1365,8 +1465,9 @@ crystal-domain:: cyber
   ║                                                                            ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
   ```
-- ## 28. Current Implementation Status
-  
+
+## 28. Current Implementation Status
+
   ```
   IMPLEMENTED:
   ✓ Python interpreter (all 16 patterns)
@@ -1382,8 +1483,9 @@ crystal-domain:: cyber
   □ Recursive composition
   □ Privacy layer integration
   ```
-- ## 29. Roadmap
-  
+
+## 29. Roadmap
+
   ```
   Phase 1 (Complete): Specification + native interpreters
   Phase 2: Self-hosting (CORE-in-CORE)
@@ -1393,11 +1495,13 @@ crystal-domain:: cyber
   Phase 6: Network layer
   Phase 7: Testnet → Mainnet
   ```
-  
+
   ---
-- # Part X: Collective Intelligence
-- ## 30. Cybergraph Structure
-  
+
+# Part X: Collective Intelligence
+
+## 30. Cybergraph Structure
+
   ```
   STRUCTURE:
   - Particles: content-addressed nodes (CIDs)
@@ -1415,8 +1519,9 @@ crystal-domain:: cyber
   PUBLIC: Edge existence, aggregate energy, focus distribution
   PRIVATE: Who owns what, who created edges
   ```
-- ## 31. Collective Focus Theorem
-  
+
+## 31. Collective Focus Theorem
+
   ```
   FOCUS DISTRIBUTION π:
   
@@ -1435,8 +1540,9 @@ crystal-domain:: cyber
   Focus computable from PUBLIC aggregates only.
   No individual ownership revealed.
   ```
-- ## 32. Focus as Universal Resource
-  
+
+## 32. Focus as Universal Resource
+
   ```
   THREE ROLES:
   1. ATTENTION SIGNAL — higher π = more network attention
@@ -1445,50 +1551,65 @@ crystal-domain:: cyber
   
   CONSERVATION: Σ_i π_i = 1 (always)
   ```
-  
+
   ---
-- # Part XI: Formal Properties
-- ## 33. Core Theorems
-- ### 31.1 Turing Completeness
-  
+
+# Part XI: Formal Properties
+
+## 33. Core Theorems
+
+### 31.1 Turing Completeness
+
   Theorem: CORE is Turing-complete.
-  
+
   Proof: Construct encoding of arbitrary Turing machine M via patterns 0-4, 9. ∎
-- ### 31.2 Confluence
-  
+
+### 31.2 Confluence
+
   Theorem: CORE is confluent.
-  
+
   Proof: Orthogonal rewrite system by Huet-Lévy (1980). ∎
-- ### 31.3 Cost Determinism
-  
+
+### 31.3 Cost Determinism
+
   Theorem: Cost is identical across all reduction orders and implementations.
-  
+
   Proof: By structural induction on formula. ∎
-- ### 31.4 Focus Conservation
-  
+
+### 31.4 Focus Conservation
+
   Theorem: Σᵢ focus(i) = 1 for all valid states.
-  
+
   Proof: All operations preserve sum; invalid transitions rejected by verification. ∎
-- ### 31.5 Privacy Soundness
-  
+
+### 31.5 Privacy Soundness
+
   Theorem: A valid ZK proof implies all circuit constraints are satisfied with probability ≥ 1 - 2^(-128).
-  
+
   Proof: By STARK/Plonky2 soundness. ∎
-- ### 31.6 Double-Spend Prevention
-  
+
+### 31.6 Double-Spend Prevention
+
   Theorem: Same record cannot be spent twice.
-  
+
   Proof:
-- Each record has unique (nonce, owner_secret) pair
-- Nullifier = H(nonce, owner_secret) is deterministic
-- Same record → same nullifier
-- Nullifier set is append-only
-- Transaction rejected if nullifier already in set ∎
-  
+
+Each record has unique (nonce, owner_secret) pair
+
+Nullifier = H(nonce, owner_secret) is deterministic
+
+Same record → same nullifier
+
+Nullifier set is append-only
+
+Transaction rejected if nullifier already in set ∎
+
   ---
-- # Part XII: Appendices
-- ## A. Field Reference
-  
+
+# Part XII: Appendices
+
+## A. Field Reference
+
   ```
   p = 2^64 - 2^32 + 1 = 18446744069414584321
   Primitive root: 7
@@ -1497,8 +1618,9 @@ crystal-domain:: cyber
   Efficient reduction:
   a mod p = a_lo - a_hi × (2^32 - 1) + correction
   ```
-- ## B. Test Vectors
-  
+
+## B. Test Vectors
+
   ```
   add(1, 2) = 3
   mul(p-1, p-1) = 1
@@ -1507,8 +1629,9 @@ crystal-domain:: cyber
   reduce([1,2], [5 [[0 2] [0 3]]], 100) = (3, 96)
   // add(axis 2, axis 3) = add(1, 2) = 3
   ```
-- ## C. Cost Examples
-  
+
+## C. Cost Examples
+
   ```
   Simple addition: 4 patterns
   [5 [[0 2] [0 3]]]
@@ -1521,8 +1644,9 @@ crystal-domain:: cyber
   Merkle verification (32 levels): ~10,000 patterns
   32 × (hash + conditional) ≈ 32 × 310
   ```
-- ## D. Complete Specification Summary
-  
+
+## D. Complete Specification Summary
+
   ```
   ╔═══════════════════════════════════════════════════════════════════════════╗
   ║                              C O R E                                       ║
@@ -1610,33 +1734,47 @@ crystal-domain:: cyber
   ║                                                                            ║
   ╚═══════════════════════════════════════════════════════════════════════════╝
   ```
-  
+
   ---
-- ## E. References
-- Merkle, R. "A Digital Signature Based on a Conventional Encryption Function." CRYPTO 1987.
-- Goodrich, M.T., Tamassia, R. "Efficient Authenticated Data Structures." Algorithmica 2002.
-- Huet, G. "Confluent Reductions: Abstract Properties and Applications." JACM 1980.
-- Lafont, Y. "Interaction Nets." POPL 1990.
-- Al-Bassam, M. et al. "Fraud and Data Availability Proofs." FC 2019.
-- Grassi, L. et al. "Poseidon: A New Hash Function." USENIX 2021.
-- Taelin. "HVM: A Parallel Evaluator for Interaction Combinators." 2022.
-- Chiusano, P., Bjarnason, R. "Unison: A Friendly Programming Language." 2019.
-- Necula, G. "Proof-Carrying Code." POPL 1997.
-- Ben-Sasson, E. et al. "Scalable, Transparent Arguments of Knowledge." CRYPTO 2018.
-- Hopwood, D. et al. "Zcash Protocol Specification." 2014-2024.
-- Master. "Collective Focus Theorem." 2024.
-- Master. "Focus Flow Computation." 2024.
-  
+
+## E. References
+
+Merkle, R. "A Digital Signature Based on a Conventional Encryption Function." CRYPTO 1987.
+
+Goodrich, M.T., Tamassia, R. "Efficient Authenticated Data Structures." Algorithmica 2002.
+
+Huet, G. "Confluent Reductions: Abstract Properties and Applications." JACM 1980.
+
+Lafont, Y. "Interaction Nets." POPL 1990.
+
+Al-Bassam, M. et al. "Fraud and Data Availability Proofs." FC 2019.
+
+Grassi, L. et al. "Poseidon: A New Hash Function." USENIX 2021.
+
+Taelin. "HVM: A Parallel Evaluator for Interaction Combinators." 2022.
+
+Chiusano, P., Bjarnason, R. "Unison: A Friendly Programming Language." 2019.
+
+Necula, G. "Proof-Carrying Code." POPL 1997.
+
+Ben-Sasson, E. et al. "Scalable, Transparent Arguments of Knowledge." CRYPTO 2018.
+
+Hopwood, D. et al. "Zcash Protocol Specification." 2014-2024.
+
+Master. "Collective Focus Theorem." 2024.
+
+Master. "Focus Flow Computation." 2024.
+
   ---
-  
+
   *CORE v0.9*
-  
+
   *Six paradigms. Sixteen patterns. Multi-indexed graph. Privacy-native.*
-  
+
   *Content-addressed. Namespace-native. Parallel-confluent.*
-  
+
   *Focus-conserved. Proof-carrying. Sync-complete. Self-verifying.*
-  
+
   *The substrate for planetary collective intelligence.*
-  
+
   *"The network doesn't simulate thinking. The network IS thinking."*

@@ -1,8 +1,11 @@
-tags:: operation, critical
-crystal-type:: process
-crystal-domain:: cyberia
-team-size:: 4
+---
+tags: operation, critical
+crystal-type: process
+crystal-domain: cyberia
+team-size: "4"
+---
+composting
 
-- composting
-- logging
-- timber collection
+logging
+
+timber collection

@@ -1,9 +1,13 @@
-tags:: building type
-crystal-type:: entity
-crystal-domain:: cyberia
-type:: public
+---
+tags: building type
+crystal-type: entity
+crystal-domain: cyberia
+type: public
+---
+TODO signs on the road to [[cyber valley]] and [[citadel genesis]]
 
-- TODO signs on the road to [[cyber valley]] and [[citadel genesis]]
-- TODO publish instructions on how to get here
-- TODO pour gravel
-- TODO build repair box
+TODO publish instructions on how to get here
+
+TODO pour gravel
+
+TODO build repair box

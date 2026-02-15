@@ -1,28 +1,35 @@
-tags:: computer science
-crystal-type:: entity
-crystal-domain:: computer science
-
+---
+tags: computer science
+crystal-type: entity
+crystal-domain: computer science
+---
 # data structures
 
 Ways of organizing, storing, and accessing data so that [[algorithms]] can operate efficiently.
 
 ## linear
 
-- array: contiguous block of memory, O(1) random access
-- linked list: nodes connected by pointers, O(1) insertion/deletion
-- stack: last-in first-out (LIFO)
-- queue: first-in first-out (FIFO)
+array: contiguous block of memory, O(1) random access
+
+linked list: nodes connected by pointers, O(1) insertion/deletion
+
+stack: last-in first-out (LIFO)
+
+queue: first-in first-out (FIFO)
 
 ## hierarchical
 
-- tree: nodes with parent-child relationships, binary trees, B-trees
-- heap: tree satisfying the heap property, used in priority queues
-- trie: prefix tree for fast string lookup
+tree: nodes with parent-child relationships, binary trees, B-trees
+
+heap: tree satisfying the heap property, used in priority queues
+
+trie: prefix tree for fast string lookup
 
 ## associative
 
-- hash table: key-value storage with O(1) average lookup via hashing
-- [[graphs]]: nodes and edges representing relationships, directed/undirected, weighted
+hash table: key-value storage with O(1) average lookup via hashing
+
+[[graphs]]: nodes and edges representing relationships, directed/undirected, weighted
 
 ## graph
 

@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: privacy trilateral, ZK+FHE+MPC, privacy triangle
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: privacy trilateral, ZK+FHE+MPC, privacy triangle
+crystal-type: article
+crystal-domain: cyber
+---
 # The Privacy Trilateral: ZK + FHE + MPC
 
 *How three cryptographic technologies combine to provide full-spectrum privacy for planetary collective intelligence.*

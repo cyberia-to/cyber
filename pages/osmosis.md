@@ -1,7 +1,8 @@
-tags:: biology, chemistry
-crystal-type:: entity
-crystal-domain:: biology
-
+---
+tags: biology, chemistry
+crystal-type: entity
+crystal-domain: biology
+---
 # osmosis
 
 Movement of water across a semipermeable membrane from a region of low solute concentration to high solute concentration. Nature seeking equilibrium.

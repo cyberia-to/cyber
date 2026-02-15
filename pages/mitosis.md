@@ -1,7 +1,8 @@
-tags:: biology
-crystal-type:: entity
-crystal-domain:: biology
-
+---
+tags: biology
+crystal-type: entity
+crystal-domain: biology
+---
 # mitosis
 
 Cell division producing two genetically identical daughter cells. The engine of growth, repair, and asexual reproduction.

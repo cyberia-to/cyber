@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: master plan, CORE master plan
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: master plan, CORE master plan
+crystal-type: article
+crystal-domain: cyber
+---
 # CORE Master Plan: Earth-Scale Superintelligence
 
 Collective Objective Reality Engine

@@ -1,7 +1,9 @@
-tags:: species
-crystal-type:: entity
-crystal-domain:: biology
-supply:: next-month
+---
+tags: species
+crystal-type: entity
+crystal-domain: biology
+supply: next-month
+---
+[[high margin]]
 
-- [[high margin]]
-- source of artemisinin, used in antimalarial drugs
+source of artemisinin, used in antimalarial drugs

@@ -1,6 +1,8 @@
-tags:: cyber, cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyber, cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - # Sensor Network
 - a distributed system that transforms physical measurements into persistent, queryable knowledge
 - ## architecture

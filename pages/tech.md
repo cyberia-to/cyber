@@ -1,6 +1,7 @@
-tags:: term
-alias:: technology
-crystal-type:: entity
-crystal-domain:: meta
-
+---
+tags: term
+alias: technology
+crystal-type: entity
+crystal-domain: meta
+---
 -

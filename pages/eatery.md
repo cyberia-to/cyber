@@ -1,13 +1,21 @@
-tags:: building type
-crystal-type:: entity
-crystal-domain:: cyberia
-type:: private
+---
+tags: building type
+crystal-type: entity
+crystal-domain: cyberia
+type: private
+---
+revenue:: breakfast $10
 
-- revenue:: breakfast $10
-- revenue:: lunch $10
-- revenue:: dinner $10
-- revenue:: coffee $5
-- revenue:: fruit
-- revenue:: herbs
-- revenue:: honey
-- revenue:: luwak $100
+revenue:: lunch $10
+
+revenue:: dinner $10
+
+revenue:: coffee $5
+
+revenue:: fruit
+
+revenue:: herbs
+
+revenue:: honey
+
+revenue:: luwak $100

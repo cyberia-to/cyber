@@ -1,6 +1,8 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
 - # Color
 - wavelength of light in the visible [[electromagnetic spectrum]] (380-750 nm)
 - the perceptual dimension that encodes [[emotion]] in [[prism]] and carries evolutionary survival signals

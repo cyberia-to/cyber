@@ -1,7 +1,9 @@
-tags:: genus, research
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus, research
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+[[research]]
 
-- [[research]]
-	- {{embed [[salacca zalacca]]}}
+- {{embed [[salacca zalacca]]}}

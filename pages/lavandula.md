@@ -1,13 +1,17 @@
-alias:: lavender
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+alias: lavender
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[lavandula angustifolia]]}}
-- [[research]]
-	- [[lavandula stoechas]]
-	- [[lavandula latifolia]]
-	- [[lavandula dentata]]
-	- [[lavandula intermedia]]
+- {{embed [[lavandula angustifolia]]}}
+
+[[research]]
+
+- [[lavandula stoechas]]
+- [[lavandula latifolia]]
+- [[lavandula dentata]]
+- [[lavandula intermedia]]

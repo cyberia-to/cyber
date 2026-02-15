@@ -1,6 +1,8 @@
-tags:: system
-crystal-type:: entity
-crystal-domain:: meta
+---
+tags: system
+crystal-type: entity
+crystal-domain: meta
+---
+[[operations]]
 
-- [[operations]]
-- [[tech]]
+[[tech]]

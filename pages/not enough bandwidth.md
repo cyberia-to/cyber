@@ -1,4 +1,6 @@
-alias:: NotEnoughBandwidth
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
+---
+alias: NotEnoughBandwidth
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---

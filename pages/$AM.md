@@ -1,4 +1,6 @@
-tags:: cybernomics
-alias:: ampussy
-crystal-type:: entity
-crystal-domain:: economics
+---
+tags: cybernomics
+alias: ampussy
+crystal-type: entity
+crystal-domain: economics
+---

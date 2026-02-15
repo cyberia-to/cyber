@@ -1,23 +1,30 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- [[cosmwasm]] fat protocol suite for network states and beyond
-- integration of [[cyb]], [[aos]] and [[cyber]]
-- dependencies
-	- [[daodao]]
-	- [[neutron-sdk]]
-	- [[neutron-dex]]
-	- [[cybernet]]
-	- [[onchain-registry]]
-- [[progs]]
-	- [[avatar]]
-	- [[gift]]
-	- [[hub/networks]]
-	- [[hub/protocols]]
-	- [[hub/tokens]]
-	- [[hub/skills]]
-	- [[hub/progs]]
-	- [[staking pools]]
-	- [[kv store]]
-- randomness
-	-
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+[[cosmwasm]] fat protocol suite for network states and beyond
+
+integration of [[cyb]], [[aos]] and [[cyber]]
+
+dependencies
+
+- [[daodao]]
+- [[neutron-sdk]]
+- [[neutron-dex]]
+- [[cybernet]]
+- [[onchain-registry]]
+
+[[progs]]
+
+- [[avatar]]
+- [[gift]]
+- [[hub/networks]]
+- [[hub/protocols]]
+- [[hub/tokens]]
+- [[hub/skills]]
+- [[hub/progs]]
+- [[staking pools]]
+- [[kv store]]
+
+randomness

@@ -1,7 +1,9 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
-local:: true
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+local: "true"
+---
 - ## available by [[wood-durability]] class
   
   | durability class | species | avg price (idr / m³) |
@@ -13,7 +15,3 @@ local:: true
   | class 4 – low | [[akasia]] , [[eukaliptus]] , [[pine]] | 2 000 000 – 4 500 000 |
   | class 5 – light | [[sengon]], [[karet]], [[jabon]] | 1 200 000 – 2 500 000 |
 - {{query (property :wood-availability)}}
-  query-table:: true
-  query-properties:: [:page :wood-density :wood-availability :alias :tags :wood-durability]
-  query-sort-by:: page
-  query-sort-desc:: false

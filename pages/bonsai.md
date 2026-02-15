@@ -1,3 +1,5 @@
-tags:: segment
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: segment
+crystal-type: entity
+crystal-domain: cyberia
+---

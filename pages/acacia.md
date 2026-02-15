@@ -1,14 +1,18 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+---
+selected for [[edem]]
 
-- selected for [[edem]]
-	- {{embed [[acacia podalyriifolia]]}}
-- research
-	- [[acacia senegal]]
-	- [[acacia mangium]]
-	- [[acacia dealbata]]
-	- [[acacia auriculiformis]]
-	- [[acacia confusa]]
-	- [[acacia crassicarpa]]
-	- [[acacia decurrens]]
+- {{embed [[acacia podalyriifolia]]}}
+
+research
+
+- [[acacia senegal]]
+- [[acacia mangium]]
+- [[acacia dealbata]]
+- [[acacia auriculiformis]]
+- [[acacia confusa]]
+- [[acacia crassicarpa]]
+- [[acacia decurrens]]

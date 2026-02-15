@@ -1,5 +1,7 @@
-alias:: cve
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+alias: cve
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 -

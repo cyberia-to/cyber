@@ -1,5 +1,7 @@
-alias:: monastery
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+alias: monastery
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 -

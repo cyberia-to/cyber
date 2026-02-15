@@ -1,9 +1,11 @@
-tags:: camp
-crystal-type:: entity
-crystal-domain:: cyberia
-type:: private
-size:: 72
-shape:: 12*6
+---
+tags: camp
+crystal-type: entity
+crystal-domain: cyberia
+type: private
+size: "72"
+shape: 12*6
+---
+near [[banya]]
 
-- near [[banya]]
-- revenue:: massage
+revenue:: massage

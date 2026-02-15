@@ -1,3 +1,5 @@
-tags:: product
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: product
+crystal-type: entity
+crystal-domain: cyber
+---

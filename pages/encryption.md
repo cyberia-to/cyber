@@ -1,7 +1,8 @@
-tags:: computer science, cryptography
-crystal-type:: entity
-crystal-domain:: computer science
-
+---
+tags: computer science, cryptography
+crystal-type: entity
+crystal-domain: computer science
+---
 # encryption
 
 Transformation of plaintext into ciphertext using a key, rendering data unreadable to anyone without the corresponding decryption key. The guardian of secrets in digital systems.

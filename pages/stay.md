@@ -1,7 +1,8 @@
-tags:: cv.land
-crystal-type:: entity
-crystal-domain:: cyberia
-
+---
+tags: cv.land
+crystal-type: entity
+crystal-domain: cyberia
+---
 - ## glamping
 	- | period | price |
 	  | working day | $100 |
@@ -14,8 +15,6 @@ crystal-domain:: cyberia
 	- all residents have right for using tents in wilderness of cyber valley
 	- given that they [[follow the rules]]
 - ## equipment rents
-  query-table:: true
-  query-properties:: [:revenue]
 	- | equipment | price per day | 
 	  | family tent, 24 m2, 4-10 people | $40 |
 	  | open tent, 20 m2, best for kitchen | $40 |

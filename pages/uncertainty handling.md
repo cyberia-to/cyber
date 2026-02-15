@@ -1,6 +1,10 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-- probabilistic models help manage uncertainty
-- by providing a way to quantify and reason
-- about the likelihood of different outcomes
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
+probabilistic models help manage uncertainty
+
+by providing a way to quantify and reason
+
+about the likelihood of different outcomes

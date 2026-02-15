@@ -1,6 +1,8 @@
-tags:: cyberia
-crystal-type:: entity
-crystal-domain:: cyberia
+---
+tags: cyberia
+crystal-type: entity
+crystal-domain: cyberia
+---
 - title: regenerative volcanic-to-glacial water purification and revitalization system
   
   ---

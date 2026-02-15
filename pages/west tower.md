@@ -1,3 +1,5 @@
-tags:: biome, block
-crystal-type:: entity
-crystal-domain:: geography
+---
+tags: biome, block
+crystal-type: entity
+crystal-domain: geography
+---

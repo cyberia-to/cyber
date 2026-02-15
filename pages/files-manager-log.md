@@ -1,12 +1,11 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
-source:: [[files-manager]]
-icon:: 
-
-- query-sort-by:: date
-                                                      query-sort-desc:: true
-                                                      #+BEGIN_QUERY
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+source: files-manager
+icon: 
+---
+#+BEGIN_QUERY
                                                       {:title "All files operate log"
                                                       :query [:find (pull ?b [*])
                                                               :in $ ?current-page

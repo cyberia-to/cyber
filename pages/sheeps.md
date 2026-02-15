@@ -1,7 +1,8 @@
-tags:: genus, species, class
-crystal-type:: entity
-crystal-domain:: biology
-
+---
+tags: genus, species, class
+crystal-type: entity
+crystal-domain: biology
+---
 - | operation                     | frequency for sheep          | frequency for goats          | notes                          |
   |-------------------------------|------------------------------|------------------------------|--------------------------------|
   | washing                       | once or twice a year         | once or twice a year         | more frequent washing may be needed for show animals |

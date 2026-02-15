@@ -1,7 +1,8 @@
-tags:: district, team, cv.land
-crystal-type:: entity
-crystal-domain:: cyberia
-
+---
+tags: district, team, cv.land
+crystal-type: entity
+crystal-domain: cyberia
+---
 ops:: false
 dev:: false
 
@@ -10,9 +11,6 @@ dev:: false
 - with 240+ [[genus]] and 300+ species
 - TODO strategic supplier of [[organiq]] and genetics for [[citadel genesis]]
 - {{query (or (page-tags [[edem]]) (namespace [[edem]]))}}
-  query-properties:: [:page]
-  query-sort-by:: page
-  query-sort-desc:: false
 -
 - ## navigation
 	- [[edem/sectors]] from top to bottom
@@ -112,9 +110,6 @@ dev:: false
 		- [[ficus elastica]]: living bridges
 		- [[cynodon dactylon]]: perfect and easy lawn
 - ## [[research/plants]]
-  query-sort-by:: page
-  query-table:: true
-  query-sort-desc:: false
 - DONE [[plants/research]] available in indonesia
 - TODO identify major [[plants]]
 - TODO species description

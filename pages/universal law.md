@@ -1,6 +1,8 @@
-tags:: cyber
-crystal-type:: entity
-crystal-domain:: cyber
+---
+tags: cyber
+crystal-type: entity
+crystal-domain: cyber
+---
 # exponential optimality under constraint
 ### overview
 

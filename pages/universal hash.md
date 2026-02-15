@@ -1,6 +1,8 @@
-tags:: uhash
-crystal-type:: entity
-crystal-domain:: meta
+---
+tags: uhash
+crystal-type: entity
+crystal-domain: meta
+---
 # UniversalHash v4: A Democratic Proof-of-Work Algorithm
 
 **Version 1.0 — January 2026**

@@ -1,7 +1,9 @@
-tags:: trident, cyber, article
-alias:: trident thesis, ZK+AI+Quantum, trident trinity
-crystal-type:: article
-crystal-domain:: cyber
+---
+tags: trident, cyber, article
+alias: trident thesis, ZK+AI+Quantum, trident trinity
+crystal-type: article
+crystal-domain: cyber
+---
 # The [[trident]] Thesis: One Language for Quantum, AI, and Zero-Knowledge
 
 ## How Prime Field Arithmetic Unifies Three Computational Revolutions

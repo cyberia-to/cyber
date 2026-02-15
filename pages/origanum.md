@@ -1,7 +1,9 @@
-tags:: genus
-crystal-type:: entity
-crystal-domain:: biology
-scalable:: true
+---
+tags: genus
+crystal-type: entity
+crystal-domain: biology
+scalable: "true"
+---
+{{embed [[origanum vulgare]]}}
 
-- {{embed [[origanum vulgare]]}}
-- {{embed [[origanum majorana]]}}
+{{embed [[origanum majorana]]}}

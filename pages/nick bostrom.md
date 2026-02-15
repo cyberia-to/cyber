@@ -1,8 +1,12 @@
-tags:: person
-crystal-type:: entity
-crystal-domain:: meta
-- modern philosopher who contributed to ideas behind
-	- [[superintelligence]]
-	- [simulation argument](https://cyb.ai/oracle/ask/QmPiXWg9RV4bH78Qm2CeHwRq1KGn47BkxUXc5hk4ULzyup)
-	- [singleton](https://cyb.ai/oracle/ask/singleton)
-- [wikipedia](https://en.wikipedia.org/wiki/Nick_Bostrom) and [photo](https://cyb.ai/oracle/ask/QmTJfoSqoVDKcKmSg1SNm8GJjX5QnNFubRfvRUQrpoK4b3)
+---
+tags: person
+crystal-type: entity
+crystal-domain: meta
+---
+modern philosopher who contributed to ideas behind
+
+- [[superintelligence]]
+- [simulation argument](https://cyb.ai/oracle/ask/QmPiXWg9RV4bH78Qm2CeHwRq1KGn47BkxUXc5hk4ULzyup)
+- [singleton](https://cyb.ai/oracle/ask/singleton)
+
+[wikipedia](https://en.wikipedia.org/wiki/Nick_Bostrom) and [photo](https://cyb.ai/oracle/ask/QmTJfoSqoVDKcKmSg1SNm8GJjX5QnNFubRfvRUQrpoK4b3)
