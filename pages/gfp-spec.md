@@ -1,4 +1,7 @@
 tags:: trident, cyber, article
+alias:: GFP, Goldilocks Field Processor, AURUM, gfp spec
+crystal-type:: article
+crystal-domain:: cyber
 # The Goldilocks Field Processor
 
 ## Hardware Specification, Proof of Useful Work, and Unified Economics
@@ -31,14 +34,14 @@ Every useful operation in CORE — block proving, focus computation, private tra
 
 ## 1. Why Four and Only Four
 
-Every computation in the CORE stack reduces to a small set of operations over the Goldilocks field $p = 2^{64} - 2^{32} + 1$. By profiling every workload — STARK proving, BBG authentication, tri-kernel ranking, private transfers, FHE bootstrapping, neural inference — we find four primitive families that account for >95% of all cycles:
+Every computation in the CORE stack reduces to a small set of operations over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. By profiling every workload — [[STARK]] proving, BBG authentication, [[tri-kernel]] ranking, private transfers, FHE bootstrapping, neural inference — we find four primitive families that account for >95% of all cycles:
 
 | Primitive | Symbol | What it computes | % of typical workload |
 |-----------|--------|-----------------|----------------------|
-| **Field MAC** | `fma` | $c \leftarrow c + a \times b \bmod p$ | ~40% |
-| **NTT butterfly** | `ntt` | Paired multiply-add with twiddle factor | ~35% |
-| **Poseidon2 round** | `p2r` | Full-state permutation (MDS + S-box) | ~15% |
-| **Table lookup** | `lut` | $y \leftarrow T[x]$ with authentication | ~10% |
+| Field MAC | `fma` | $c \leftarrow c + a \times b \bmod p$ | ~40% |
+| [[NTT]] butterfly | `ntt` | Paired multiply-add with twiddle factor | ~35% |
+| [[Poseidon2]] round | `p2r` | Full-state permutation (MDS + S-box) | ~15% |
+| Table lookup | `lut` | $y \leftarrow T[x]$ with authentication | ~10% |
 
 These are not design choices — they are what survives when you ask "what operations does every workload need?" The answer is always: modular arithmetic, polynomial transforms, algebraic hashing, and nonlinear function evaluation.
 
@@ -65,10 +68,10 @@ Every workload uses at least three of four primitives. No workload uses only one
 
 GPUs optimize for IEEE 754 floating point. Goldilocks field arithmetic wastes GPU transistors:
 
-- **Float mantissa logic**: 52-bit mantissa handling is irrelevant for 64-bit modular arithmetic. ~30% wasted silicon.
-- **Denormal/NaN/Inf handling**: Entire circuits for edge cases that never occur in field arithmetic. ~5% wasted.
-- **Exponent processing**: 11-bit exponent path unused. ~10% wasted.
-- **Rounding modes**: 4 IEEE rounding modes, none applicable. ~3% wasted.
+- Float mantissa logic: 52-bit mantissa handling is irrelevant for 64-bit modular arithmetic. ~30% wasted silicon.
+- Denormal/NaN/Inf handling: Entire circuits for edge cases that never occur in field arithmetic. ~5% wasted.
+- Exponent processing: 11-bit exponent path unused. ~10% wasted.
+- Rounding modes: 4 IEEE rounding modes, none applicable. ~3% wasted.
 
 Net result: a GPU is ~50% efficient for Goldilocks work. A purpose-built GFP is 100% efficient — same transistor budget, 2× throughput, lower power.
 
@@ -82,7 +85,7 @@ FPGAs are the right prototyping platform but wrong production target:
 - The operation set is provably stable (see §1.4) — no need for reconfigurability
 - Cost per unit 100-1000× higher than mass-produced ASICs
 
-**Recommendation**: FPGA for GFP v0 prototyping, ASIC for GFP v1 production.
+Recommendation: FPGA for GFP v0 prototyping, ASIC for GFP v1 production.
 
 ### 1.4 Stability Proof
 
@@ -90,15 +93,15 @@ Why won't the instruction set change?
 
 The four primitives are mathematically necessary:
 
-1. **fma**: Field arithmetic IS the computation model. CORE's 16 patterns reduce to field ops. This cannot change without changing the field — which would break every existing proof, commitment, and hash. The field is a genesis parameter.
+1. fma: Field arithmetic IS the computation model. CORE's 16 patterns reduce to field ops. This cannot change without changing the field — which would break every existing proof, commitment, and hash. The field is a genesis parameter.
 
-2. **ntt**: NTT is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by STARK (FRI), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
+2. ntt: [[NTT]] is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by [[STARK]] (FRI), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
 
-3. **p2r**: Algebraic hashing over $\mathbb{F}_p$ requires a permutation with high algebraic degree. Poseidon2's MDS matrix + $x^7$ S-box is the current optimal choice. Even if the hash function changes (Poseidon3, Griffin, Anemoi), the hardware primitive is the same: full-width permutation over $\mathbb{F}_p^t$ with a power-map nonlinearity. The round function hardware is parametrizable.
+3. p2r: Algebraic hashing over $\mathbb{F}_p$ requires a permutation with high algebraic degree. [[Poseidon2]] MDS matrix + $x^7$ S-box is the current optimal choice. Even if the hash function changes (Poseidon3, Griffin, Anemoi), the hardware primitive is the same: full-width permutation over $\mathbb{F}_p^t$ with a power-map nonlinearity. The round function hardware is parametrizable.
 
-4. **lut**: Lookup tables are required for any non-polynomial function: neural network activations, cryptographic S-boxes, FHE test polynomials, comparison operations. The lookup mechanism is universal — only the table contents change. Hardware stores table values; software selects which table.
+4. lut: Lookup tables are required for any non-polynomial function: neural network activations, cryptographic S-boxes, FHE test polynomials, comparison operations. The lookup mechanism is universal — only the table contents change. Hardware stores table values; software selects which table.
 
-**Conclusion**: The four primitives will remain correct for any field-first computation over Goldilocks for as long as:
+Conclusion: The four primitives will remain correct for any field-first computation over Goldilocks for as long as:
 - The Goldilocks field remains secure (lattice/factoring hardness: decades)
 - STARKs remain the proof system family (hash-based: quantum-resistant)
 - Polynomial operations remain O(n log n) via NTT (information-theoretic lower bound)
@@ -213,7 +216,7 @@ LD    rd, [addr]        │ Load F_p from memory          │ 1-N cycles (cache 
 ST    [addr], rs        │ Store F_p to memory           │ 1-N cycles
 ```
 
-**Design principles**:
+Design principles:
 - Every instruction operates on $\mathbb{F}_p$ elements, not bytes
 - No integer arithmetic — everything is modular
 - No float — no IEEE 754 logic whatsoever
@@ -243,12 +246,12 @@ Based on 256 FMA units at 1.5 GHz:
 
 | Workload | CPU (Ryzen 9) | GPU (RTX 4090) | GFP-1 | Speedup vs CPU |
 |----------|---------------|----------------|-------|----------------|
-| STARK prove (1M constraints) | ~10 sec | ~2 sec | ~0.2 sec | **50×** |
-| Poseidon2 hash (1M inputs) | ~15 ms | ~3 ms | ~0.08 ms | **180×** |
-| NTT $2^{20}$ | ~50 ms | ~5 ms | ~0.7 ms | **70×** |
-| FHE bootstrap (PBS) | ~20 ms | ~4 ms | ~0.4 ms | **50×** |
-| Neural inference (MNIST enc) | ~60 sec | ~10 sec | ~1 sec | **60×** |
-| Tri-kernel focus (10K nodes) | ~100 ms | ~15 ms | ~1.5 ms | **65×** |
+| [[STARK]] prove (1M constraints) | ~10 sec | ~2 sec | ~0.2 sec | 50× |
+| [[Poseidon2]] hash (1M inputs) | ~15 ms | ~3 ms | ~0.08 ms | 180× |
+| [[NTT]] $2^{20}$ | ~50 ms | ~5 ms | ~0.7 ms | 70× |
+| [[TFHE]] bootstrap (PBS) | ~20 ms | ~4 ms | ~0.4 ms | 50× |
+| Neural inference (MNIST enc) | ~60 sec | ~10 sec | ~1 sec | 60× |
+| [[tri-kernel]] [[focus]] (10K nodes) | ~100 ms | ~15 ms | ~1.5 ms | 65× |
 
 These are conservative estimates assuming 50% utilization. Real workloads with tuned scheduling should achieve 70-80% utilization.
 
@@ -273,11 +276,11 @@ Multiple form factors enable the participation spectrum from phone miners to dat
 
 Traditional PoW: the puzzle is unrelated to useful computation (SHA-256 partial preimage). Energy is wasted. Hardware is single-purpose.
 
-**CORE PoUW**: the puzzle IS a STARK proof. STARK proving requires exactly the four GFP primitives (fma, ntt, p2r, lut) in exactly the proportions of real workloads. Therefore:
+CORE PoUW: the puzzle IS a [[STARK]] proof. STARK proving requires exactly the four GFP primitives (fma, ntt, p2r, lut) in exactly the proportions of real workloads. Therefore:
 
-- **Optimizing for mining = optimizing for utility**
-- **Mining hardware = proving hardware**
-- **Mining energy = proving energy** (not wasted)
+- Optimizing for mining = optimizing for utility
+- Mining hardware = proving hardware
+- Mining energy = proving energy (not wasted)
 
 The trick is designing the puzzle so that:
 1. It cannot be solved without exercising all four primitives
@@ -288,7 +291,7 @@ The trick is designing the puzzle so that:
 
 ### 3.2 The Benchmark Circuit
 
-The PoUW puzzle requires producing a valid STARK proof of a specific **benchmark circuit** $\mathcal{B}$. The circuit is designed to exercise all four GFP primitives in production-representative proportions.
+The PoUW puzzle requires producing a valid STARK proof of a specific benchmark circuit $\mathcal{B}$. The circuit is designed to exercise all four GFP primitives in production-representative proportions.
 
 ```
 BENCHMARK CIRCUIT B(challenge, nonce) → digest
@@ -360,7 +363,7 @@ PUZZLE CONDITION:
   digest < target    (standard partial preimage)
 ```
 
-**Why each phase is necessary**:
+Why each phase is necessary:
 - Remove Phase 1 → chip without FMA array. Cannot do matrix operations → useless for tri-kernel, neural nets.
 - Remove Phase 2 → chip without NTT. Cannot do polynomial ops → useless for STARK proving, FHE.
 - Remove Phase 3 → chip without Poseidon2. Cannot hash → useless for any authentication.
@@ -370,7 +373,7 @@ A chip that solves the puzzle efficiently MUST have all four units in roughly th
 
 ### 3.3 The Proof-of-Proof Structure
 
-The miner doesn't just find a nonce where digest < target. The miner produces a **STARK proof** that the benchmark circuit was evaluated correctly.
+The miner doesn't just find a nonce where digest < target. The miner produces a STARK proof that the benchmark circuit was evaluated correctly.
 
 ```
 MINING STEP:
@@ -386,7 +389,7 @@ VERIFICATION (by any node):
   3. Done. No re-execution of B needed.
 ```
 
-**Why proof-of-proof, not just proof-of-evaluation**:
+Why proof-of-proof, not just proof-of-evaluation:
 
 The STARK proof π itself requires producing an execution trace, committing it via FRI (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
 
@@ -423,11 +426,11 @@ RATIO ENFORCEMENT:
 
 ### 3.5 Progress-Freedom and Fairness
 
-**Progress-freedom**: The puzzle is memoryless — each nonce attempt has identical probability of success regardless of previous attempts. This ensures small miners earn proportionally to their hashrate (no pool requirement for variance reduction).
+Progress-freedom: The puzzle is memoryless — each nonce attempt has identical probability of success regardless of previous attempts. This ensures small miners earn proportionally to their hashrate (no pool requirement for variance reduction).
 
-**Proof**: The final digest is $\text{Poseidon2}(\ldots || \text{nonce})$. Poseidon2 is a pseudorandom permutation. For uniformly random nonce, the digest is uniformly distributed in $\mathbb{F}_p^4$. The probability $\text{digest} < \text{target}$ is $\text{target}/p^4$, independent of all previous attempts. QED.
+Proof: The final digest is $\text{Poseidon2}(\ldots || \text{nonce})$. Poseidon2 is a pseudorandom permutation. For uniformly random nonce, the digest is uniformly distributed in $\mathbb{F}_p^4$. The probability $\text{digest} < \text{target}$ is $\text{target}/p^4$, independent of all previous attempts. QED.
 
-**Non-reusability**: Each proof is bound to a specific block challenge (derived from the previous block hash). A proof generated for block $n$ cannot be submitted for block $n+1$ because the challenge changes. No proof stockpiling.
+Non-reusability: Each proof is bound to a specific block challenge (derived from the previous block hash). A proof generated for block $n$ cannot be submitted for block $n+1$ because the challenge changes. No proof stockpiling.
 
 ### 3.6 Anti-Gaming Analysis
 
@@ -464,7 +467,7 @@ BLOCK STRUCTURE:
 │   pow_proof      : STARK proof       │
 │   pow_digest     : 4 × F_p           │
 │   difficulty     : target threshold  │
-│   miner          : neuron address    │
+│   miner          : [[neuron]] address│
 │                                      │
 │ Body                                 │
 │   transactions   : [cyberlink, ...]  │
@@ -530,7 +533,7 @@ MINER ECONOMICS (per GFP-1 card, Year 1):
   This is the key economic difference from Bitcoin ASICs.
 ```
 
-**Why this works**: Bitcoin ASICs have zero utility beyond mining. When block rewards halve, miners' revenue halves and hardware becomes unprofitable. GFP hardware has perpetual utility — as long as the network has users, provers earn fees. Mining rewards bootstrap adoption; proving fees sustain it.
+Why this works: Bitcoin ASICs have zero utility beyond mining. When block rewards halve, miners' revenue halves and hardware becomes unprofitable. GFP hardware has perpetual utility — as long as the network has users, provers earn fees. Mining rewards bootstrap adoption; proving fees sustain it.
 
 ### 4.4 Participation Tiers
 
@@ -594,7 +597,7 @@ PROVING FEE EQUILIBRIUM:
 
 Previous "useful PoW" proposals (Primecoin, Gridcoin, AI PoW) bolt useful computation onto mining as an afterthought. The useful work and the puzzle are separate — the puzzle provides security, the useful work provides PR.
 
-CORE's PoUW is fundamentally different: **the puzzle and the utility are algebraically identical.**
+CORE's PoUW is fundamentally different: the puzzle and the utility are algebraically identical.
 
 ### 5.1 The Isomorphism
 
@@ -613,9 +616,9 @@ Every mining operation has a direct utility analog. The hardware path is identic
 
 ### 5.2 Formal Statement
 
-**Theorem (PoUW-Utility Isomorphism)**: Let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing PoUW puzzle solution time, and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing STARK proof generation time for CORE transactions. Then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$.
+Theorem (PoUW-Utility Isomorphism): Let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing PoUW puzzle solution time, and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing STARK proof generation time for CORE transactions. Then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$.
 
-**Proof sketch**:
+Proof sketch:
 1. The PoUW puzzle requires producing a STARK proof of the benchmark circuit $\mathcal{B}$.
 2. $\mathcal{B}$ exercises the four primitives (fma, ntt, p2r, lut) in ratios matching real CORE workloads.
 3. STARK proof generation for any circuit over $\mathbb{F}_p$ requires the same four primitives (trace computation uses fma/ntt/lut; proof commitment uses ntt; Fiat-Shamir uses p2r; lookup arguments use lut).
@@ -625,13 +628,13 @@ Every mining operation has a direct utility analog. The hardware path is identic
 
 ### 5.3 What This Enables
 
-**Bootstrapping**: Early network has few users → few fees. Mining rewards justify GFP development. As hardware is developed, proving capability increases. Increased capability attracts users. Users generate fees.
+Bootstrapping: Early network has few users → few fees. Mining rewards justify GFP development. As hardware is developed, proving capability increases. Increased capability attracts users. Users generate fees.
 
-**No stranded assets**: Unlike Bitcoin ASICs that become e-waste when mining is unprofitable, GFP hardware retains value as proving infrastructure indefinitely.
+No stranded assets: Unlike Bitcoin ASICs that become e-waste when mining is unprofitable, GFP hardware retains value as proving infrastructure indefinitely.
 
-**Hardware market alignment**: GFP manufacturers earn revenue from both miners (who want hashrate) and enterprises (who want proving throughput). Larger addressable market → more R&D investment → faster improvement.
+Hardware market alignment: GFP manufacturers earn revenue from both miners (who want hashrate) and enterprises (who want proving throughput). Larger addressable market → more R&D investment → faster improvement.
 
-**Decentralization via utility**: Home miners (Tier 2) can earn by proving their own transactions even when mining rewards are negligible. As long as they use the network, the hardware earns its keep.
+Decentralization via utility: Home miners (Tier 2) can earn by proving their own transactions even when mining rewards are negligible. As long as they use the network, the hardware earns its keep.
 
 ---
 
@@ -686,7 +689,7 @@ FULL BLOCK PRODUCTION CYCLE:
      // Any node verifies in O(log n) by checking pow_proof + tx proofs
 ```
 
-**Observation**: Steps 3-4 produce useful proofs (transaction validity, focus correctness). Step 6 produces the PoW proof. ALL steps use the same GFP. The GFP is never idle — when not solving the PoW puzzle, it's proving transactions. When not proving transactions, it's solving the puzzle. The scheduler interleaves both workloads on the same hardware.
+Observation: Steps 3-4 produce useful proofs (transaction validity, [[focus]] correctness). Step 6 produces the PoW proof. ALL steps use the same GFP. The GFP is never idle — when not solving the PoW puzzle, it's proving transactions. When not proving transactions, it's solving the puzzle. The scheduler interleaves both workloads on the same hardware.
 
 ### 6.1 Interleaved Scheduling
 
@@ -880,3 +883,13 @@ Targets:
 
 *purpose. link. energy.*
 *prove. mine. serve.*
+
+---
+
+## Cross-references
+
+- See [[CORE Master Plan]] for how GFP fits into the development roadmap
+- See [[rosetta-stone]] for why these four primitives unify all domains
+- See [[goldilocks-fhe-construction]] for [[TFHE]] over the [[Goldilocks field]]
+- See [[trinity]] for the three-pillar architecture
+- See [[privacy-trilateral]] for the full privacy stack
