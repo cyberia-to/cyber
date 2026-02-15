@@ -1,20 +1,24 @@
-{% extends "base.html" %}
-
-{% block title %}{{ page.title }} — {{ site.title }}{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% block title %}{{ page.title }}
+— {{ site.title }}{% endblock %} {% block description %}{{
+description }}{% endblock %} {% block og_title %}{{
+page.title }} — {{ site.title }}{% endblock %} {% block
+og_type %}article{% endblock %} {% block twitter_title %}{{
+page.title }} — {{ site.title }}{% endblock %} {% block
+content %}
 <article class="page journal-page">
-  <header class="page-header">
-    <h1>{{ page.title }}</h1>
-    {% if page.date %}
-    <time class="page-date" datetime="{{ page.date }}">{{ page.date }}</time>
-    {% endif %}
-  </header>
+    <header class="page-header">
+        <h1>{{ page.title }}</h1>
+        {% if page.date %}
+        <time class="page-date" datetime="{{ page.date }}"
+            >{{ page.date }}</time
+        >
+        {% endif %}
+    </header>
 
-  <div class="page-content">
-    {{ page.html_content|safe }}
-  </div>
+    <div class="page-content">
+        {{ page.html_content|safe }}
+    </div>
 
-  {% include "partials/backlinks.html" %}
+    {% include "partials/backlinks.html" %}
 </article>
 {% endblock %}

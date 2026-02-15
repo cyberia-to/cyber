@@ -11,7 +11,36 @@
         </title>
         <meta
             name="description"
-            content="{% block description %}{{ site.description }}{% endblock %}"
+            content="{% block description %}{{ description }}{% endblock %}"
+        />
+        <meta
+            property="og:title"
+            content="{% block og_title %}{{ site.title }}{% endblock %}"
+        />
+        <meta
+            property="og:description"
+            content="{{ description }}"
+        />
+        <meta
+            property="og:url"
+            content="{{ canonical_url | safe }}"
+        />
+        <meta
+            property="og:type"
+            content="{% block og_type %}website{% endblock %}"
+        />
+        <meta
+            property="og:site_name"
+            content="{{ site.title }}"
+        />
+        <meta name="twitter:card" content="summary" />
+        <meta
+            name="twitter:title"
+            content="{% block twitter_title %}{{ site.title }}{% endblock %}"
+        />
+        <meta
+            name="twitter:description"
+            content="{{ description }}"
         />
         <meta
             name="view-transition"

@@ -21,16 +21,7 @@ pub fn generate_search_index(
         .public_pages(&config.content)
         .into_iter()
         .map(|page| {
-            let excerpt = page
-                .content_md
-                .lines()
-                .filter(|l| !l.trim().is_empty())
-                .take(3)
-                .collect::<Vec<_>>()
-                .join(" ")
-                .chars()
-                .take(200)
-                .collect();
+            let excerpt = crate::render::context::generate_excerpt(&page.content_md, 200);
 
             SearchEntry {
                 title: page.meta.title.clone(),

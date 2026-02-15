@@ -35,12 +35,7 @@ pub fn generate_feed(store: &PageStore, config: &SiteConfig, output_dir: &Path) 
                 );
             }
 
-            // Use first ~200 chars of content as description
-            let desc = page
-                .content_md
-                .chars()
-                .take(200)
-                .collect::<String>();
+            let desc = crate::render::context::generate_excerpt(&page.content_md, 200);
             item.set_description(desc);
 
             item

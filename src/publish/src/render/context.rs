@@ -65,6 +65,117 @@ fn title_case(s: &str) -> String {
         .join(" ")
 }
 
+/// Generate a clean plain-text excerpt from raw markdown.
+/// Strips wikilinks, headings, bullets, code fences, and collapses whitespace.
+/// Truncates at word boundary to `max_chars` (default 160), appending `…`.
+pub fn generate_excerpt(md: &str, max_chars: usize) -> String {
+    let mut lines: Vec<&str> = Vec::new();
+    let mut in_code_fence = false;
+
+    for line in md.lines() {
+        let trimmed = line.trim();
+
+        // Skip code fences and their content
+        if trimmed.starts_with("```") {
+            in_code_fence = !in_code_fence;
+            continue;
+        }
+        if in_code_fence {
+            continue;
+        }
+
+        // Skip empty lines
+        if trimmed.is_empty() {
+            continue;
+        }
+
+        // Skip frontmatter markers
+        if trimmed == "---" {
+            continue;
+        }
+
+        // Skip heading markers but keep text
+        let text = if trimmed.starts_with('#') {
+            trimmed.trim_start_matches('#').trim()
+        } else {
+            trimmed
+        };
+
+        // Strip bullet prefixes
+        let text = text
+            .strip_prefix("- ")
+            .or_else(|| text.strip_prefix("* "))
+            .unwrap_or(text);
+
+        if text.is_empty() {
+            continue;
+        }
+
+        lines.push(text);
+    }
+
+    let joined = lines.join(" ");
+
+    // Strip [[wikilink]] syntax → keep inner text
+    let mut result = String::with_capacity(joined.len());
+    let chars: Vec<char> = joined.chars().collect();
+    let len = chars.len();
+    let mut i = 0;
+    while i < len {
+        if i + 1 < len && chars[i] == '[' && chars[i + 1] == '[' {
+            // Find closing ]]
+            i += 2;
+            while i + 1 < len && !(chars[i] == ']' && chars[i + 1] == ']') {
+                result.push(chars[i]);
+                i += 1;
+            }
+            if i + 1 < len {
+                i += 2; // skip ]]
+            }
+        } else {
+            result.push(chars[i]);
+            i += 1;
+        }
+    }
+
+    // Strip {{query ...}} and {{embed ...}} expressions
+    let mut clean = String::with_capacity(result.len());
+    let chars: Vec<char> = result.chars().collect();
+    let len = chars.len();
+    let mut i = 0;
+    while i < len {
+        if i + 1 < len && chars[i] == '{' && chars[i + 1] == '{' {
+            // Skip until }}
+            i += 2;
+            while i + 1 < len && !(chars[i] == '}' && chars[i + 1] == '}') {
+                i += 1;
+            }
+            if i + 1 < len {
+                i += 2;
+            }
+        } else {
+            clean.push(chars[i]);
+            i += 1;
+        }
+    }
+
+    // Collapse whitespace
+    let collapsed: String = clean.split_whitespace().collect::<Vec<_>>().join(" ");
+
+    // Truncate at word boundary (char-aware for UTF-8)
+    let char_count = collapsed.chars().count();
+    if char_count <= max_chars {
+        return collapsed;
+    }
+
+    let truncated: String = collapsed.chars().take(max_chars).collect();
+    if let Some(last_space) = truncated.rfind(' ') {
+        format!("{}…", &truncated[..last_space])
+    } else {
+        format!("{}…", truncated)
+    }
+}
+
 /// Build menu from static config entries (original behavior).
 fn resolve_nav_menu_from_config(config: &SiteConfig, store: &PageStore) -> Vec<Value> {
     config
@@ -167,6 +278,24 @@ pub fn build_page_context(
         vec![]
     };
 
+    // Resolve description: frontmatter description > auto-excerpt > title fallback
+    let description = page
+        .meta
+        .properties
+        .get("description")
+        .filter(|d| !d.is_empty())
+        .cloned()
+        .unwrap_or_else(|| {
+            let excerpt = generate_excerpt(&page.content_md, 160);
+            if excerpt.is_empty() {
+                page.meta.title.clone()
+            } else {
+                excerpt
+            }
+        });
+
+    let canonical_url = format!("{}/{}", config.site.base_url, page.id);
+
     // Resolve favicon: page icon > namespace parent icon > site favicon
     let favicon = page
         .meta
@@ -198,6 +327,8 @@ pub fn build_page_context(
         analytics => config.analytics,
         search => config.search,
         favicon => favicon,
+        description => description,
+        canonical_url => canonical_url,
         page => minijinja::context! {
             title => page.meta.title.clone(),
             display_name => page.meta.title.rsplit('/').next().unwrap_or(&page.meta.title).to_string(),

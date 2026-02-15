@@ -1,4 +1,4 @@
-mod context;
+pub mod context;
 mod templates;
 pub mod toc;
 mod transform;
@@ -207,6 +207,8 @@ fn render_index(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
+        description => config.site.description,
+        canonical_url => config.site.base_url,
         recent_pages => recent_data,
         tags => tag_data,
         page_count => public_count,
@@ -249,6 +251,8 @@ fn render_tags_index(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
+        description => format!("All tags — {}", config.site.title),
+        canonical_url => format!("{}/tags", config.site.base_url),
         tags => tag_data,
         page_count => public_count,
     };
@@ -272,6 +276,8 @@ fn render_graph_page(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
+        description => format!("Knowledge graph — {}", config.site.title),
+        canonical_url => format!("{}/graph", config.site.base_url),
         page_count => public_count,
     };
 
@@ -340,6 +346,8 @@ fn render_blog(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
+        description => format!("Blog — {}", config.site.title),
+        canonical_url => format!("{}/blog", config.site.base_url),
         posts => page_data,
         page_count => public_count,
     };
@@ -392,6 +400,8 @@ fn render_pages_index(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
+        description => format!("All pages — {}", config.site.title),
+        canonical_url => format!("{}/pages", config.site.base_url),
         pages => page_data,
         page_count => page_data.len(),
     };
@@ -428,6 +438,8 @@ fn render_tag_page(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
+        description => format!("Pages tagged '{}' — {}", tag, config.site.title),
+        canonical_url => format!("{}/tags/{}", config.site.base_url, slug::slugify(tag)),
         tag_name => tag,
         pages => pages,
     };

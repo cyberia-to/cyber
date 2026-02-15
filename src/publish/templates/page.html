@@ -1,6 +1,10 @@
 {% extends "base.html" %} {% block title %}{{ page.title }}
 — {{ site.title }}{% endblock %} {% block description %}{{
-page.title }}{% endblock %} {% block content %}
+description }}{% endblock %} {% block og_title %}{{
+page.title }} — {{ site.title }}{% endblock %} {% block
+og_type %}article{% endblock %} {% block twitter_title %}{{
+page.title }} — {{ site.title }}{% endblock %} {% block
+content %}
 <article class="page">
     <header class="page-header">
         <h1>
