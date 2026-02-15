@@ -1,4 +1,7 @@
 tags:: trident, cyber, article
+alias:: trident AI, zkML, verifiable AI, trident ai deep dive
+crystal-type:: article
+crystal-domain:: cyber
 # Trident and the Future of Verifiable AI
 
 ## Why the Next Generation of zkML Won't Start from ONNX — It Will Start from Prime Fields
@@ -17,13 +20,13 @@ Neural networks live in float32. Zero-knowledge proofs live in $\mathbb{F}_p$. T
 
 And there's a deeper problem that almost nobody talks about: most of these frameworks use SNARKs — proof systems built on elliptic curve pairings that will be broken by quantum computers. EZKL uses Halo2. Modulus Labs uses custom SNARKs. The proofs being generated today have an expiration date.
 
-Trident offers a different path. Not a better converter from floats to fields. A language where computation is born in the field.
+[[trident]] offers a different path. Not a better converter from floats to fields. A language where computation is born in the field.
 
 ---
 
 ### What Trident Actually Is
 
-Trident is a smart contract language for the Neptune blockchain. Its native data type is `Field` — an element of the Goldilocks prime field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. Every variable, every operation, every function call compiles to arithmetic over this field. The compilation target is Triton VM, which generates STARK proofs — hash-based, post-quantum secure, no trusted setup.
+Trident is a smart contract language for the [[neptune]] blockchain. Its native data type is `Field` — an element of the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. Every variable, every operation, every function call compiles to arithmetic over this field. The compilation target is [[Triton VM]], which generates [[STARK]] proofs — hash-based, post-quantum secure, no trusted setup.
 
 This was designed for provable financial computation: private transactions, verifiable lock scripts, recursive proof composition. But the architecture has a property that its designers may not have fully appreciated.
 
@@ -53,29 +56,29 @@ This isn't pseudocode. This is a function that compiles to Triton VM, executes, 
 
 Quantization is the single largest source of pain in zkML. Here is what happens when EZKL processes a neural network:
 
-**Step 1**: A PyTorch model uses float32 weights. A weight might be 0.00374291.
+Step 1: A PyTorch model uses float32 weights. A weight might be 0.00374291.
 
-**Step 2**: EZKL must represent this in a finite field. It multiplies by a scaling factor (say $2^{16}$) and rounds: $0.00374291 \times 65536 \approx 245$. The weight becomes the field element 245.
+Step 2: EZKL must represent this in a finite field. It multiplies by a scaling factor (say $2^{16}$) and rounds: $0.00374291 \times 65536 \approx 245$. The weight becomes the field element 245.
 
-**Step 3**: Every multiplication now produces results scaled by $2^{32}$ (the product of two $2^{16}$-scaled values). Rescaling is needed after every multiply — more field operations, more constraints, more proof overhead.
+Step 3: Every multiplication now produces results scaled by $2^{32}$ (the product of two $2^{16}$-scaled values). Rescaling is needed after every multiply — more field operations, more constraints, more proof overhead.
 
-**Step 4**: Nonlinear activations are catastrophic. ReLU requires a comparison (is x > 0?), which in a field has no natural meaning — field elements aren't ordered. Frameworks use range checks or bit decomposition, each adding hundreds of constraints per activation.
+Step 4: Nonlinear activations are catastrophic. ReLU requires a comparison (is x > 0?), which in a field has no natural meaning — field elements aren't ordered. Frameworks use range checks or bit decomposition, each adding hundreds of constraints per activation.
 
-**Step 5**: Softmax requires exponentiation and division over all elements. In a field, `exp(x)` must be approximated by polynomial, and division requires computing multiplicative inverses. A single softmax layer over 512 elements can generate tens of thousands of constraints.
+Step 5: Softmax requires exponentiation and division over all elements. In a field, `exp(x)` must be approximated by polynomial, and division requires computing multiplicative inverses. A single softmax layer over 512 elements can generate tens of thousands of constraints.
 
-**Step 6**: The accumulated quantization error means the ZK circuit's output may differ from the original model's output. EZKL's documentation acknowledges this explicitly.
+Step 6: The accumulated quantization error means the ZK circuit's output may differ from the original model's output. EZKL's documentation acknowledges this explicitly.
 
 Now consider Trident's approach.
 
-**There is no Step 1.** The model is trained directly in $\mathbb{F}_p$. Weights are field elements from the start. There is nothing to quantize because there were never any floats.
+There is no Step 1. The model is trained directly in $\mathbb{F}_p$. Weights are field elements from the start. There is nothing to quantize because there were never any floats.
 
-**There is no Step 3.** Field multiplication in $\mathbb{F}_p$ produces a field element. No rescaling. The result is already in the correct representation. $a \times b \mod p$ is a single field operation — one gate in the arithmetic circuit.
+There is no Step 3. Field multiplication in $\mathbb{F}_p$ produces a field element. No rescaling. The result is already in the correct representation. $a \times b \mod p$ is a single field operation — one gate in the arithmetic circuit.
 
-**Step 4 becomes elegant.** Nonlinear activations are implemented via lookup tables — the same mechanism Triton VM uses for its Tip5 hash function's S-box. The lookup argument in the STARK proof authenticates that the activation function was applied correctly, with zero additional constraints beyond the lookup itself. ReLU, GELU, SiLU — all become single lookup operations.
+Step 4 becomes elegant. Nonlinear activations are implemented via lookup tables — the same mechanism [[Triton VM]] uses for its Tip5 hash function's S-box. The lookup argument in the [[STARK]] proof authenticates that the activation function was applied correctly, with zero additional constraints beyond the lookup itself. ReLU, GELU, SiLU — all become single lookup operations.
 
-**Step 5 becomes tractable.** In $\mathbb{F}_p$ (prime field), every nonzero element has a multiplicative inverse. Division is a native operation: $a / b = a \times b^{p-2} \mod p$ (Fermat's little theorem). Softmax becomes: exponentiate each element (via lookup or polynomial), sum, divide each by the sum. All native field operations.
+Step 5 becomes tractable. In $\mathbb{F}_p$ (prime field), every nonzero element has a multiplicative inverse. Division is a native operation: $a / b = a \times b^{p-2} \mod p$ (Fermat's little theorem). Softmax becomes: exponentiate each element (via lookup or polynomial), sum, divide each by the sum. All native field operations.
 
-**Step 6 doesn't exist.** There is no quantization error because there is no quantization.
+Step 6 does not exist. There is no quantization error because there is no quantization.
 
 The difference is not incremental. It is categorical. EZKL adds constraints to handle the gap between floats and fields. Trident has no gap.
 
@@ -85,7 +88,7 @@ The difference is not incremental. It is categorical. EZKL adds constraints to h
 
 This is the deepest technical insight, and it deserves elaboration.
 
-Triton VM's STARK prover uses a cryptographic hash function called Tip5. Tip5's internal structure includes a nonlinear S-box — a function that maps field elements to field elements in a way that resists algebraic attacks. The S-box is implemented as a lookup table: a precomputed mapping from every possible input to its output, authenticated by a lookup argument in the STARK proof.
+[[Triton VM]]'s STARK prover uses a cryptographic hash function called Tip5. Tip5's internal structure includes a nonlinear S-box — a function that maps field elements to field elements in a way that resists algebraic attacks. The S-box is implemented as a lookup table: a precomputed mapping from every possible input to its output, authenticated by a lookup argument in the STARK proof.
 
 The lookup argument says: "the prover claims this input mapped to this output. The verifier checks that this (input, output) pair exists in the lookup table." The proof cost is essentially constant regardless of the function's complexity — it's one lookup, authenticated once.
 
@@ -105,19 +108,19 @@ This means Trident's activation functions are not approximations of the "real" a
 
 The `std.nn` library would provide:
 
-**Linear layers** — the foundation of every neural network. Matrix multiply-accumulate over $\mathbb{F}_p$. Native operations, zero overhead.
+Linear layers — the foundation of every neural network. Matrix multiply-accumulate over $\mathbb{F}_p$. Native operations, zero overhead.
 
-**Convolutional layers** — sliding window dot products. Same field arithmetic, different access pattern. Bounded loops over spatial dimensions compile to fixed-depth circuits.
+Convolutional layers — sliding window dot products. Same field arithmetic, different access pattern. Bounded loops over spatial dimensions compile to fixed-depth circuits.
 
-**Attention mechanisms** — the core of transformers. Query-key dot product, softmax over attention scores, value aggregation. All field arithmetic: dot products are native, softmax uses field inversion, aggregation is multiply-accumulate.
+Attention mechanisms — the core of transformers. Query-key dot product, softmax over attention scores, value aggregation. All field arithmetic: dot products are native, softmax uses field inversion, aggregation is multiply-accumulate.
 
-**Lookup-table activations** — ReLU, GELU, SiLU, Swish, and any custom activation. Implemented via Triton VM's lookup argument. Proof cost is independent of the activation function's mathematical complexity.
+Lookup-table activations — ReLU, GELU, SiLU, Swish, and any custom activation. Implemented via [[Triton VM]]'s lookup argument. Proof cost is independent of the activation function's mathematical complexity.
 
-**Normalization** — LayerNorm and BatchNorm require computing means and variances. In $\mathbb{F}_p$: sum elements (field addition), divide by count (field inversion), compute variance (sum of squared differences). All native.
+Normalization — LayerNorm and BatchNorm require computing means and variances. In $\mathbb{F}_p$: sum elements (field addition), divide by count (field inversion), compute variance (sum of squared differences). All native.
 
-**Embedding layers** — lookup from token ID to weight vector. This is literally a lookup table — the same mechanism as activations, reused for a different purpose.
+Embedding layers — lookup from token ID to weight vector. This is literally a lookup table — the same mechanism as activations, reused for a different purpose.
 
-**Loss functions** — cross-entropy, MSE, and others. Computable in field arithmetic. The entire training loop, not just inference, can be proven.
+Loss functions — cross-entropy, MSE, and others. Computable in field arithmetic. The entire training loop, not just inference, can be proven.
 
 Each function is pure Trident code — no external dependencies, no C++ kernels, no CUDA. The entire neural network compiles to a single arithmetic circuit over $\mathbb{F}_p$, which Triton VM proves as a unit.
 
@@ -129,17 +132,17 @@ Trident doesn't need to replace PyTorch. It needs to consume its output.
 
 The import path works as follows:
 
-**PyTorch → ONNX export.** Standard practice, well-supported, no changes needed.
+PyTorch to ONNX export. Standard practice, well-supported, no changes needed.
 
-**ONNX → Trident transpiler.** Each ONNX operator maps to a `std.nn` function call. The computational graph becomes a Trident program. Float32 weights are quantized to $\mathbb{F}_p$ elements — but this quantization happens once, at import time, not at proof time.
+ONNX to [[trident]] transpiler. Each ONNX operator maps to a `std.nn` function call. The computational graph becomes a [[trident]] program. Float32 weights are quantized to $\mathbb{F}_p$ elements — but this quantization happens once, at import time, not at proof time.
 
 The critical difference from EZKL's approach: EZKL converts ONNX directly to Halo2 constraints, producing a monolithic circuit. Trident produces readable source code — a `.tri` file that a developer can inspect, modify, optimize, and extend. The neural network becomes a program, not a black box.
 
-**Trident → TASM → STARK proof.** The transpiled program compiles and runs like any other Trident program. The proof is automatic.
+[[trident]] to TASM to [[STARK]] proof. The transpiled program compiles and runs like any other Trident program. The proof is automatic.
 
 The export path enables interoperability in the other direction:
 
-**Trident → ONNX export.** Extract the `std.nn` computational graph, convert $\mathbb{F}_p$ weights back to float32, generate an ONNX file. This allows Trident-native models to be inferenced in PyTorch, TensorFlow, or any ONNX-compatible runtime — useful for development, testing, and environments where ZK proof isn't needed.
+Trident to ONNX export. Extract the `std.nn` computational graph, convert $\mathbb{F}_p$ weights back to float32, generate an ONNX file. This allows Trident-native models to be inferenced in PyTorch, TensorFlow, or any ONNX-compatible runtime — useful for development, testing, and environments where ZK proof isn't needed.
 
 ---
 
@@ -149,11 +152,11 @@ Current zkML focuses almost entirely on proving inference — running a pre-trai
 
 Trident enables provable training. The entire training loop — forward pass, loss computation, backpropagation, weight update — is field arithmetic. The STARK proof covers the complete training process.
 
-**Gradient computation in $\mathbb{F}_p$:** Backpropagation is chain-rule multiplication of Jacobians — matrix operations over the same field. The gradient of a linear layer is a transpose-multiply. The gradient of a lookup-table activation is another lookup (the derivative table, precomputed alongside the activation table).
+Gradient computation in $\mathbb{F}_p$: Backpropagation is chain-rule multiplication of Jacobians — matrix operations over the same field. The gradient of a linear layer is a transpose-multiply. The gradient of a lookup-table activation is another lookup (the derivative table, precomputed alongside the activation table).
 
-**Optimizer in $\mathbb{F}_p$:** SGD is $w \leftarrow w - \eta \cdot g$ — field subtraction and multiplication. Adam requires running averages (field arithmetic) and square root (field exponentiation with appropriate exponent). All native.
+Optimizer in $\mathbb{F}_p$: SGD is $w \leftarrow w - \eta \cdot g$ — field subtraction and multiplication. Adam requires running averages (field arithmetic) and square root (field exponentiation with appropriate exponent). All native.
 
-**Provable training claims:**
+Provable training claims:
 
 - "This model was trained on this dataset for this many epochs with this optimizer" — proven by STARK
 - "This model achieves accuracy above threshold T on test set D" — proven by STARK
@@ -167,11 +170,11 @@ This enables a model marketplace where sellers prove their training claims witho
 
 Here is a fact that the zkML industry has not yet confronted: almost every deployed zkML system uses proof systems that will be broken by quantum computers.
 
-- **EZKL** uses Halo2 (polynomial commitments based on discrete log assumption)
-- **DeepProve** uses sumcheck + lookup arguments (security depends on collision-resistant hashing — survivable, but the polynomial commitment layer may not be)
-- **Modulus Labs / Remainder** uses custom SNARKs (elliptic curve dependent)
-- **ZK-DeepSeek** uses recursively composed SNARKs (elliptic curve dependent)
-- **Circom / Noir** use Groth16 / Plonk over BN254 (directly broken by Shor's algorithm)
+- EZKL uses Halo2 (polynomial commitments based on discrete log assumption)
+- DeepProve uses sumcheck + lookup arguments (security depends on collision-resistant hashing — survivable, but the polynomial commitment layer may not be)
+- Modulus Labs / Remainder uses custom SNARKs (elliptic curve dependent)
+- ZK-DeepSeek uses recursively composed SNARKs (elliptic curve dependent)
+- Circom / Noir use Groth16 / Plonk over BN254 (directly broken by Shor's algorithm)
 
 Giza, using StarkWare's STWO prover, is the exception — STARKs are hash-based and post-quantum.
 
@@ -187,31 +190,31 @@ Every zkML system built on SNARKs today will need to be rebuilt. Trident won't.
 
 ### Comparison with the Field
 
-**vs. EZKL (Halo2-based, ONNX → zkSNARK)**
+vs. EZKL (Halo2-based, ONNX to zkSNARK)
 
 EZKL is the most mature general-purpose zkML framework. It accepts any ONNX model and produces a Halo2 proof. This generality is its strength and its weakness. Proof sizes are 15× larger than alternatives. Verification keys can reach megabytes. Proving time for even medium models runs to minutes or hours. The SNARK-based proof system is not post-quantum.
 
 Trident's advantage: native field arithmetic eliminates quantization overhead, STARK proofs are post-quantum, and the compiled circuit is optimized for Triton VM rather than generic Halo2.
 
-**vs. DeepProve / Lagrange (GKR-based)**
+vs. DeepProve / Lagrange (GKR-based)
 
 DeepProve is the fastest zkML prover, achieving 50-150× speedup over EZKL through GKR (Goldwasser-Kalai-Rothblum) interactive proofs. It's optimized for the matrix multiplications that dominate neural network inference. But it still starts from ONNX, still quantizes, and its proof system security is still under analysis for post-quantum resistance.
 
 Trident's advantage: no ONNX conversion step, field-native computation, and proven post-quantum security via STARKs. DeepProve's GKR approach could potentially be integrated as an alternative backend for Trident's IR — the arithmetic circuit representation is compatible.
 
-**vs. Giza / Cairo (STARK-based, Starknet)**
+vs. Giza / Cairo (STARK-based, Starknet)
 
 Giza is closest to Trident's approach: STARK-based proofs, field-native arithmetic, on-chain deployment via Starknet. Its LuminAIR framework using STWO prover shows the viability of STARK-verified AI agents for DeFi.
 
 Trident's advantages: Goldilocks field ($2^{64} - 2^{32} + 1$) is computationally faster than Stark252 ($2^{251} + 17 \cdot 2^{192} + 1$) for 64-bit-native hardware. Trident's `divine()` primitive provides structured witness injection that maps cleanly to optimization algorithms (and to quantum oracles — a connection Cairo lacks entirely). Trident's three-level architecture (Execute Anywhere / Prove Anywhere / Platform Superpowers) enables cross-chain deployment that Cairo cannot offer.
 
-**vs. Ritual (EVM++ AI infrastructure)**
+vs. Ritual (EVM++ AI infrastructure)
 
 Ritual is not a proof system — it's an orchestration layer. Its EVM++ with ONNX sidecars enables any AI model to be called from smart contracts, with computational integrity verified through ZK proofs, TEE attestations, or optimistic verification. Ritual delegates the actual proving to external systems.
 
 Trident's advantage: Trident is the proving system. It doesn't delegate proof generation — it generates proofs as a first-class capability. A Trident neural network could run as a Ritual sidecar, providing STARK-verified inference to Ritual's network — making Trident the proving backend for Ritual's orchestration frontend.
 
-**vs. Inference Labs (ZK-Verified Inference Network)**
+vs. Inference Labs (ZK-Verified Inference Network)
 
 Inference Labs builds the verification layer for AI agents, using zero-knowledge proofs to verify inference honesty while preserving IP privacy. They've produced over 160 million ZK proofs via their Bittensor subnet. Their approach combines cryptographic verification with economic incentives (slashing for dishonest execution via EigenLayer).
 
@@ -225,7 +228,7 @@ Trident's `divine()` function tells the prover: "inject a value here that satisf
 
 For neural networks, `divine()` serves multiple purposes:
 
-**Private weights.** The model owner provides weights via `divine()`. The STARK proof verifies inference was correct without revealing the weights. This is privacy-preserving inference — the core use case of zkML — achieved as a natural consequence of Trident's proof architecture rather than as an additional cryptographic layer.
+Private weights. The model owner provides weights via `divine()`. The [[STARK]] proof verifies inference was correct without revealing the weights. This is privacy-preserving inference — the core use case of zkML — achieved as a natural consequence of Trident's proof architecture rather than as an additional cryptographic layer.
 
 ```
 fn private_inference(input: [Field; N]) -> [Field; M] {
@@ -237,7 +240,7 @@ fn private_inference(input: [Field; N]) -> [Field; M] {
 }
 ```
 
-**Optimization search.** For AI agents that must find optimal actions in a large space, `divine()` lets the prover inject the solution. The constraints verify optimality. The proof guarantees the solution is valid without revealing the search process.
+Optimization search. For AI agents that must find optimal actions in a large space, `divine()` lets the prover inject the solution. The constraints verify optimality. The proof guarantees the solution is valid without revealing the search process.
 
 ```
 fn optimal_action(state: [Field; S], constraints: &RiskParams) -> Field {
@@ -249,9 +252,9 @@ fn optimal_action(state: [Field; S], constraints: &RiskParams) -> Field {
 }
 ```
 
-**Knowledge distillation.** A large model provides outputs via `divine()`. A small model is trained to reproduce them. The STARK proof verifies that the distillation target was faithfully reproduced — provable knowledge transfer.
+Knowledge distillation. A large model provides outputs via `divine()`. A small model is trained to reproduce them. The STARK proof verifies that the distillation target was faithfully reproduced — provable knowledge transfer.
 
-**Adversarial robustness testing.** An adversary tries to find inputs that fool the model. `divine()` injects adversarial examples. The constraints check whether the model misclassifies. The proof either demonstrates a vulnerability (adversarial example found) or certifies robustness (no adversarial example satisfies constraints within the bounded search).
+Adversarial robustness testing. An adversary tries to find inputs that fool the model. `divine()` injects adversarial examples. The constraints check whether the model misclassifies. The proof either demonstrates a vulnerability (adversarial example found) or certifies robustness (no adversarial example satisfies constraints within the bounded search).
 
 In the quantum compilation target, every `divine()` becomes a Grover oracle query — providing quadratic speedup on witness search. The AI applications of `divine()` are simultaneously quantum-accelerable without code changes.
 
@@ -259,15 +262,15 @@ In the quantum compilation target, every `divine()` becomes a Grover oracle quer
 
 ### Concrete Use Cases
 
-**Verifiable Credit Scoring.** A bank's credit model runs in Trident. Applicant data is private input. Model weights are private witness. Credit decision is public output. STARK proof verifies the decision follows from the model and data — without revealing either. Regulators can verify the model was applied consistently across all applicants by checking proofs. The model's fairness properties (no discriminatory features used) can be encoded as constraints.
+Verifiable Credit Scoring. A bank's credit model runs in [[trident]]. Applicant data is private input. Model weights are private witness. Credit decision is public output. [[STARK]] proof verifies the decision follows from the model and data — without revealing either. Regulators can verify the model was applied consistently across all applicants by checking proofs. The model's fairness properties (no discriminatory features used) can be encoded as constraints.
 
-**Autonomous DeFi Agents.** A trading agent's neural network policy runs in Trident on Neptune. Each trade decision produces a STARK proof: "this specific model, with these frozen weights, evaluated this market data and produced this trade." The proof is on-chain. Investors can verify the agent follows its stated strategy. The model weights remain private (proprietary trading strategy). MEV attacks are detectable: any deviation from the proven policy is visible.
+Autonomous DeFi Agents. A trading agent's neural network policy runs in Trident on [[neptune]]. Each trade decision produces a STARK proof: "this specific model, with these frozen weights, evaluated this market data and produced this trade." The proof is on-chain. Investors can verify the agent follows its stated strategy. The model weights remain private (proprietary trading strategy). MEV attacks are detectable: any deviation from the proven policy is visible.
 
-**Decentralized Model Marketplace.** Model developers train in $\mathbb{F}_p$, prove training correctness and accuracy claims, list models on-chain. Buyers verify proofs before purchasing inference access. Inference runs in Trident, produces proofs, settles payments via smart contracts. The entire pipeline — training proof, accuracy proof, inference proof, payment — runs through one language on one field.
+Decentralized Model Marketplace. Model developers train in $\mathbb{F}_p$, prove training correctness and accuracy claims, list models on-chain. Buyers verify proofs before purchasing inference access. Inference runs in Trident, produces proofs, settles payments via smart contracts. The entire pipeline — training proof, accuracy proof, inference proof, payment — runs through one language on one field.
 
-**Provable Content Authenticity.** An AI-generated image has a Trident inference proof attached: "this specific model produced this specific output from this specific prompt." Deepfake detection becomes unnecessary — authentic AI content is provable, and non-proven content is suspect. The model identity (hash of weights) is committed on-chain without revealing the weights themselves.
+Provable Content Authenticity. An AI-generated image has a Trident inference proof attached: "this specific model produced this specific output from this specific prompt." Deepfake detection becomes unnecessary — authentic AI content is provable, and non-proven content is suspect. The model identity (hash of weights) is committed on-chain without revealing the weights themselves.
 
-**Medical AI with Regulatory Compliance.** A diagnostic model runs in Trident. Every diagnosis produces a STARK proof. The proof verifies: the FDA-approved model version was used, the input data was properly preprocessed, the output followed from correct execution. Regulators audit proofs rather than re-running computations. Patient data never leaves the proof system (zero-knowledge). Proof validity is permanent and post-quantum secure.
+Medical AI with Regulatory Compliance. A diagnostic model runs in Trident. Every diagnosis produces a STARK proof. The proof verifies: the FDA-approved model version was used, the input data was properly preprocessed, the output followed from correct execution. Regulators audit proofs rather than re-running computations. Patient data never leaves the proof system (zero-knowledge). Proof validity is permanent and post-quantum secure.
 
 ---
 
@@ -275,13 +278,13 @@ In the quantum compilation target, every `divine()` becomes a Grover oracle quer
 
 Building Trident into an AI platform requires concrete engineering steps:
 
-**Immediate (0-6 months):** Implement `std.nn` core — linear layers, lookup-table activations, basic loss functions. Build ONNX import for simple architectures (MLPs, small CNNs). Demonstrate: import a PyTorch MNIST classifier, prove inference on Triton VM, verify on Neptune.
+Immediate (0-6 months): Implement `std.nn` core — linear layers, lookup-table activations, basic loss functions. Build ONNX import for simple architectures (MLPs, small CNNs). Demonstrate: import a PyTorch MNIST classifier, prove inference on [[Triton VM]], verify on [[neptune]].
 
-**Near-term (6-18 months):** Extend `std.nn` to attention mechanisms, embedding layers, normalization. Build ONNX import for transformers. Implement provable training loop. Publish benchmarks against EZKL and DeepProve showing proof time reduction from eliminated quantization overhead.
+Near-term (6-18 months): Extend `std.nn` to attention mechanisms, embedding layers, normalization. Build ONNX import for transformers. Implement provable training loop. Publish benchmarks against EZKL and DeepProve showing proof time reduction from eliminated quantization overhead.
 
-**Medium-term (18-36 months):** Develop Trident AI agent framework with on-chain deployment. Build model marketplace contracts. Integrate with Ritual as STARK-verified sidecar. Integrate with Inference Labs as post-quantum proving backend. Develop quantum compilation backend for std.nn operations.
+Medium-term (18-36 months): Develop [[trident]] AI agent framework with on-chain deployment. Build model marketplace contracts. Integrate with Ritual as STARK-verified sidecar. Integrate with Inference Labs as post-quantum proving backend. Develop quantum compilation backend for std.nn operations.
 
-**Long-term (36+ months):** Field-native training frameworks that replace PyTorch for applications where provability matters more than raw speed. Quantum-accelerated proving for large models. Standardize Trident as the language of verifiable AI.
+Long-term (36+ months): Field-native training frameworks that replace PyTorch for applications where provability matters more than raw speed. Quantum-accelerated proving for large models. Standardize Trident as the language of verifiable AI.
 
 ---
 
@@ -293,8 +296,19 @@ The current approach — train in float, convert to field, prove with SNARKs —
 
 Trident offers something different: a world where computation starts in the field, lives in the field, and is proven in the field. Where the neural network IS the arithmetic circuit. Where the proof IS the execution trace. Where post-quantum security IS the default.
 
+Within the cyber protocol, every [[neuron]] submits [[cyberlinks]] that form the [[cybergraph]] — a knowledge graph where each node is a [[particle]] and relevance is computed by [[focus]]. On [[bostrom]], the bootloader chain, these operations run classically. With [[trident]] on [[neptune]], every [[cyberlink]] submission, every ranking computation, every AI-driven inference over the [[cybergraph]] becomes STARK-provable. The hash primitives ([[Poseidon2]], Tip5) secure the Merkle commitments. The [[NTT]] accelerates polynomial evaluation in the STARK prover. [[GFP]] arithmetic underlies every field operation. And [[TFHE]] offers an alternative path for encrypted inference where homomorphic computation complements zero-knowledge proof.
+
 The architecture already exists. The field is already prime. The only question is who builds the standard library first.
 
 ---
 
-*The Trident language specification and Triton VM implementation are open source. The ideas in this paper are meant to catalyze development, not gatekeep it. If you're building zkML tools, consider targeting Goldilocks-field STARK systems. The math is waiting.*
+*The Trident language specification and Triton VM implementation are open source. The ideas in this paper are meant to catalyze development, not gatekeep it. If you're building zkML tools, consider targeting [[Goldilocks field]] [[STARK]] systems. The math is waiting.*
+
+---
+
+### Cross-References
+
+See [[rosetta-stone]] for the full treatment of the lookup table identity.
+See [[trinity]] for the three-pillar overview.
+See [[trident-complete-stdlib]] for the full std.nn specification.
+See [[trident-trinity-zk-ai-quantum]] for the unified thesis including quantum.
