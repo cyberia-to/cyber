@@ -15,6 +15,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Cache IPFS mappings
+        uses: actions/cache@v4
+        with:
+          path: .ipfs-cache.json
+          key: ipfs-${{ github.run_id }}
+          restore-keys: ipfs-
+
       - name: Upload images to IPFS
         env:
           PINATA_JWT: ${{ secrets.PINATA_JWT }}
@@ -25,28 +32,55 @@ jobs:
             exit 0
           fi
 
+          # Load cached IPFS mappings (asset path + sha256 → IPFS URL)
+          if [ ! -f .ipfs-cache.json ]; then
+            echo '{}' > .ipfs-cache.json
+          fi
+
           ASSETS=$(grep -roh 'assets/[^)]*\.\(png\|jpg\|jpeg\|gif\|webp\|svg\)' pages/ journals/ --include="*.md" 2>/dev/null | sort -u || true)
           if [ -z "$ASSETS" ]; then
             echo "No image assets to upload"
             exit 0
           fi
 
-          echo "Uploading $(echo "$ASSETS" | wc -l) assets to IPFS..."
+          TOTAL=$(echo "$ASSETS" | wc -l | tr -d ' ')
+          SKIPPED=0
+          UPLOADED=0
+
           for asset in $ASSETS; do
-            if [ -f "$asset" ]; then
-              RESPONSE=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
-                -H "Authorization: Bearer $PINATA_JWT" \
-                -F "file=@$asset")
-              HASH=$(echo "$RESPONSE" | jq -r '.IpfsHash // empty')
-              if [ -n "$HASH" ]; then
-                IPFS_URL="${PINATA_GATEWAY}/ipfs/${HASH}"
-                find pages/ journals/ -name "*.md" -exec sed -i "s|${asset}|${IPFS_URL}|g" {} +
-                echo "  $asset → $IPFS_URL"
-              else
-                echo "  WARNING: Failed to upload $asset"
-              fi
+            if [ ! -f "$asset" ]; then
+              continue
+            fi
+
+            # Check cache by file content hash
+            HASH=$(sha256sum "$asset" | cut -d' ' -f1)
+            CACHED_URL=$(jq -r --arg h "$HASH" '.[$h] // empty' .ipfs-cache.json)
+
+            if [ -n "$CACHED_URL" ]; then
+              # Already pinned — just rewrite URLs in markdown
+              find pages/ journals/ -name "*.md" -exec sed -i "s|${asset}|${CACHED_URL}|g" {} +
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+
+            # Upload to Pinata
+            RESPONSE=$(curl -s -X POST "https://api.pinata.cloud/pinning/pinFileToIPFS" \
+              -H "Authorization: Bearer $PINATA_JWT" \
+              -F "file=@$asset")
+            CID=$(echo "$RESPONSE" | jq -r '.IpfsHash // empty')
+            if [ -n "$CID" ]; then
+              IPFS_URL="${PINATA_GATEWAY}/ipfs/${CID}"
+              find pages/ journals/ -name "*.md" -exec sed -i "s|${asset}|${IPFS_URL}|g" {} +
+              # Update cache
+              jq --arg h "$HASH" --arg u "$IPFS_URL" '.[$h] = $u' .ipfs-cache.json > .ipfs-cache.tmp && mv .ipfs-cache.tmp .ipfs-cache.json
+              echo "  $asset → $IPFS_URL"
+              UPLOADED=$((UPLOADED + 1))
+            else
+              echo "  WARNING: Failed to upload $asset"
             fi
           done
+
+          echo "IPFS: $TOTAL assets, $SKIPPED cached, $UPLOADED uploaded"
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
