@@ -18,6 +18,58 @@ const DEFAULT_SEARCH_JS: &str = include_str!("../../static/search.js");
 const DEFAULT_GRAPH_JS: &str = include_str!("../../static/graph.js");
 const DEFAULT_TOPICS_JS: &str = include_str!("../../static/topics.js");
 
+/// Play font files (woff2) baked into binary
+const FONT_FILES: &[(&str, &[u8])] = &[
+    (
+        "play-400-cyrillic-ext.woff2",
+        include_bytes!("../../static/fonts/play-400-cyrillic-ext.woff2"),
+    ),
+    (
+        "play-400-cyrillic.woff2",
+        include_bytes!("../../static/fonts/play-400-cyrillic.woff2"),
+    ),
+    (
+        "play-400-greek.woff2",
+        include_bytes!("../../static/fonts/play-400-greek.woff2"),
+    ),
+    (
+        "play-400-vietnamese.woff2",
+        include_bytes!("../../static/fonts/play-400-vietnamese.woff2"),
+    ),
+    (
+        "play-400-latin-ext.woff2",
+        include_bytes!("../../static/fonts/play-400-latin-ext.woff2"),
+    ),
+    (
+        "play-400-latin.woff2",
+        include_bytes!("../../static/fonts/play-400-latin.woff2"),
+    ),
+    (
+        "play-700-cyrillic-ext.woff2",
+        include_bytes!("../../static/fonts/play-700-cyrillic-ext.woff2"),
+    ),
+    (
+        "play-700-cyrillic.woff2",
+        include_bytes!("../../static/fonts/play-700-cyrillic.woff2"),
+    ),
+    (
+        "play-700-greek.woff2",
+        include_bytes!("../../static/fonts/play-700-greek.woff2"),
+    ),
+    (
+        "play-700-vietnamese.woff2",
+        include_bytes!("../../static/fonts/play-700-vietnamese.woff2"),
+    ),
+    (
+        "play-700-latin-ext.woff2",
+        include_bytes!("../../static/fonts/play-700-latin-ext.woff2"),
+    ),
+    (
+        "play-700-latin.woff2",
+        include_bytes!("../../static/fonts/play-700-latin.woff2"),
+    ),
+];
+
 pub fn write_output(
     rendered: &[RenderedPage],
     store: &PageStore,
@@ -114,6 +166,13 @@ fn write_default_static(output_dir: &Path, config: &SiteConfig) -> Result<()> {
 
     // Write topics JS
     fs::write(static_dir.join("topics.js"), DEFAULT_TOPICS_JS)?;
+
+    // Write font files
+    let fonts_dir = static_dir.join("fonts");
+    fs::create_dir_all(&fonts_dir)?;
+    for (name, data) in FONT_FILES {
+        fs::write(fonts_dir.join(name), data)?;
+    }
 
     Ok(())
 }
