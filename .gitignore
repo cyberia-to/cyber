@@ -1,28 +1,17 @@
 .DS_Store
-
 .idea/
-
 .ipynb_checkpoints/
-
 __pycache__/
 
-# Logseq
+# Logseq (legacy, can be removed after full migration)
 logseq/bak
 logseq/.recycle
+logseq/graphs-txid.edn
+logseq/version-files
 
 # Build outputs
-build/
-/node_modules
 /public
-/quartz-build
-/.quartz-cache
+/build
 
 # Claude Code
 .claude/
-/logseq/version-files
-
-# Temporary preprocessor test outputs
-quartz-content-test/
-quartz-content-rust/
-logseq/graphs-txid.edn
-logseq/graphs-txid.edn
