@@ -32,11 +32,18 @@ jobs:
         if: hashFiles('assets/**') != ''
         env:
           PINATA_JWT: ${{ secrets.PINATA_JWT }}
-          PINATA_GATEWAY: https://gateway.pinata.cloud
+          PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
         run: |
           if [ -z "$PINATA_JWT" ]; then
             echo "PINATA_JWT not set, skipping IPFS upload"
             exit 0
+          fi
+          PUBLIC_GATEWAY="https://gateway.pinata.cloud"
+          # Pick gateway: try custom, fall back to public
+          if [ -n "$PINATA_GATEWAY" ]; then
+            TEST_GATEWAY="$PINATA_GATEWAY"
+          else
+            TEST_GATEWAY="$PUBLIC_GATEWAY"
           fi
           # Collect unique asset filenames from markdown (refs use ../assets/file)
           FILENAMES=$(grep -roh '\.\./assets/[^)"'"'"' ]*' pages/ | sed 's|\.\./assets/||' | sort -u || true)
@@ -46,6 +53,9 @@ jobs:
           fi
           COUNT=$(echo "$FILENAMES" | wc -l | tr -d ' ')
           echo "Found $COUNT unique asset references"
+          # Upload first file and test gateway accessibility
+          GATEWAY="$TEST_GATEWAY"
+          FIRST_CID=""
           # Build sed script for all rewrites
           SED_SCRIPT=""
           while IFS= read -r filename; do
@@ -64,13 +74,26 @@ jobs:
               echo "  WARNING: Failed to upload assets/$filename"
               continue
             fi
-            IPFS_URL="${PINATA_GATEWAY}/ipfs/${CID}"
+            # Test gateway with first successful upload
+            if [ -z "$FIRST_CID" ]; then
+              FIRST_CID="$CID"
+              if [ "$GATEWAY" != "$PUBLIC_GATEWAY" ]; then
+                HTTP_CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 "$GATEWAY/ipfs/$CID")
+                if [ "$HTTP_CODE" != "200" ]; then
+                  echo "  Custom gateway returned $HTTP_CODE, falling back to public gateway"
+                  GATEWAY="$PUBLIC_GATEWAY"
+                else
+                  echo "  Custom gateway OK"
+                fi
+              fi
+            fi
+            IPFS_URL="${GATEWAY}/ipfs/${CID}"
             echo "  $filename -> $IPFS_URL"
             SED_SCRIPT="${SED_SCRIPT}s|\.\./assets/${filename}|${IPFS_URL}|g;"
           done <<< "$FILENAMES"
           if [ -n "$SED_SCRIPT" ]; then
             find pages/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
-            echo "IPFS: rewrote asset URLs in markdown files"
+            echo "IPFS: rewrote asset URLs using $GATEWAY"
           fi
 
       - name: Build site
