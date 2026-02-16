@@ -71,7 +71,7 @@ jobs:
               -F "file=@assets/${filename}")
             CID=$(echo "$RESP" | jq -r '.IpfsHash // empty')
             if [ -z "$CID" ]; then
-              echo "  WARNING: Failed to upload assets/$filename"
+              echo "  WARNING: Failed to upload assets/$filename: $(echo "$RESP" | jq -r '.error // .message // "unknown error"')"
               continue
             fi
             # Test gateway with first successful upload
