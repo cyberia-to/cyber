@@ -469,9 +469,12 @@ fn render_files_page(
 
     let files_data: Vec<_> = file_entries
         .iter()
-        .map(|f| {
+        .enumerate()
+        .map(|(i, f)| {
             minijinja::context! {
+                rank => i + 1,
                 filename => f.filename,
+                display_name => f.display_name,
                 ipfs_cid => f.ipfs_cid,
                 ipfs_url => f.ipfs_url,
                 file_type => f.file_type,
