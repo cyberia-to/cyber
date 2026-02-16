@@ -32,10 +32,10 @@ jobs:
         if: hashFiles('assets/**') != ''
         env:
           PINATA_JWT: ${{ secrets.PINATA_JWT }}
-          PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
+          PINATA_GATEWAY: https://gateway.pinata.cloud
         run: |
-          if [ -z "$PINATA_JWT" ] || [ -z "$PINATA_GATEWAY" ]; then
-            echo "PINATA_JWT or PINATA_GATEWAY not set, skipping IPFS upload"
+          if [ -z "$PINATA_JWT" ]; then
+            echo "PINATA_JWT not set, skipping IPFS upload"
             exit 0
           fi
           # Collect unique asset filenames from markdown (refs use ../assets/file)
