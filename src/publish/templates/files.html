@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Files — {{ site.title }}{% endblock %}
+{% block og_title %}Files — {{ site.title }}{% endblock %}
+{% block twitter_title %}Files — {{ site.title }}{% endblock %}
+{% block description %}{{ total_files }} files referenced across the knowledge graph{% endblock %}
+
+{% block content %}
+<div class="pages-discovery">
+  <table class="pages-table">
+    <thead>
+      <tr>
+        <th class="col-title">file</th>
+        <th>type</th>
+        <th>cid</th>
+        <th class="col-links">pages</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in files %}
+      <tr>
+        <td class="col-title">
+          {% if file.ipfs_url %}
+            <a href="{{ file.ipfs_url | safe }}" class="external-link" target="_blank" rel="noopener noreferrer">{{ file.filename }}</a>
+          {% else %}
+            {{ file.filename }}
+          {% endif %}
+        </td>
+        <td>{{ file.file_type }}</td>
+        <td>
+          {% if file.ipfs_cid %}
+            <code title="{{ file.ipfs_cid }}">{{ file.ipfs_cid[:12] }}</code>
+          {% else %}
+            —
+          {% endif %}
+        </td>
+        <td class="col-links">
+          {% for page in file.pages %}
+            <a href="{{ page.url }}" class="internal-link">{{ page.title }}</a>{% if not loop.last %}, {% endif %}
+          {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="graph-stats">{{ total_files }} files</div>
+</div>
+{% endblock %}

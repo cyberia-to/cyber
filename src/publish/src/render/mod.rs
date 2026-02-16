@@ -22,7 +22,9 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
 
     // Reserved URL slugs — synthetic pages take priority over regular pages
     let reserved_slugs: std::collections::HashSet<&str> =
-        ["pages", "tags", "blog", "graph"].into_iter().collect();
+        ["pages", "tags", "blog", "graph", "files"]
+            .into_iter()
+            .collect();
 
     for (page_id, page) in &store.pages {
         // Skip regular pages that conflict with synthetic page URLs
@@ -125,6 +127,16 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
             page_id: "__graph__".to_string(),
             html: graph_html,
             url_path: "/graph/index.html".to_string(),
+        });
+    }
+
+    // Render files page
+    {
+        let files_html = render_files_page(store, config, &env)?;
+        rendered.push(RenderedPage {
+            page_id: "__files__".to_string(),
+            html: files_html,
+            url_path: "/files/index.html".to_string(),
         });
     }
 
@@ -445,5 +457,48 @@ fn render_tag_page(
     };
 
     let tmpl = env.get_template("tag.html")?;
+    Ok(tmpl.render(&ctx)?)
+}
+
+fn render_files_page(
+    store: &PageStore,
+    config: &SiteConfig,
+    env: &minijinja::Environment,
+) -> Result<String> {
+    let file_entries = crate::output::files::build_file_index(store, config);
+
+    let files_data: Vec<_> = file_entries
+        .iter()
+        .map(|f| {
+            minijinja::context! {
+                filename => f.filename,
+                ipfs_cid => f.ipfs_cid,
+                ipfs_url => f.ipfs_url,
+                file_type => f.file_type,
+                pages => f.referencing_pages,
+                page_count => f.referencing_pages.len(),
+            }
+        })
+        .collect();
+
+    let total = file_entries.len();
+    let public_count = store.public_pages(&config.content).len();
+
+    let ctx = minijinja::context! {
+        site => config.site,
+        style => config.style,
+        nav_menu => context::resolve_nav_menu(config, store),
+        search => config.search,
+        analytics => config.analytics,
+        graph => config.graph,
+        favicon => config.site.favicon,
+        description => format!("{} files referenced across the knowledge graph", total),
+        canonical_url => format!("{}/files", config.site.base_url),
+        page_count => public_count,
+        files => files_data,
+        total_files => total,
+    };
+
+    let tmpl = env.get_template("files.html")?;
     Ok(tmpl.render(&ctx)?)
 }

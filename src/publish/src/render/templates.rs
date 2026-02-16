@@ -15,6 +15,7 @@ const DEFAULT_GRAPH: &str = include_str!("../../templates/graph.html");
 const DEFAULT_TAGS_INDEX: &str = include_str!("../../templates/tags-index.html");
 const DEFAULT_BLOG: &str = include_str!("../../templates/blog.html");
 const DEFAULT_PAGES_INDEX: &str = include_str!("../../templates/pages-index.html");
+const DEFAULT_FILES: &str = include_str!("../../templates/files.html");
 
 pub fn setup_environment(
     custom_template_dir: Option<&Path>,
@@ -39,6 +40,7 @@ pub fn setup_environment(
     env.add_template("tags-index.html", DEFAULT_TAGS_INDEX)?;
     env.add_template("blog.html", DEFAULT_BLOG)?;
     env.add_template("pages-index.html", DEFAULT_PAGES_INDEX)?;
+    env.add_template("files.html", DEFAULT_FILES)?;
 
     // If user has custom templates, override
     if let Some(dir) = custom_template_dir {
@@ -61,6 +63,7 @@ fn load_custom_templates(env: &mut Environment, dir: &Path) -> Result<()> {
         "tags-index.html",
         "blog.html",
         "pages-index.html",
+        "files.html",
         "partials/backlinks.html",
         "partials/nav.html",
     ];

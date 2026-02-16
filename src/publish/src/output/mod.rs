@@ -1,5 +1,6 @@
 mod assets;
 mod feed;
+pub mod files;
 pub mod graph;
 mod search;
 mod sitemap;
@@ -142,6 +143,10 @@ pub fn write_output(
 
     // Generate topics graph data (always — used by topics page and index)
     graph::generate_topics_data(store, config, output_dir)?;
+
+    // Generate files index
+    let file_entries = files::build_file_index(store, config);
+    files::write_files_index(&file_entries, output_dir)?;
 
     Ok(())
 }
