@@ -16,7 +16,7 @@ what is cyber valley?
 
 ## [[visit us]]
 
-![image.png](../assets/image_1725868123641_0.png)
+![image.png](../media/image_1725868123641_0.png)
 
 ## dive into [[foundations]]: practical philosophy of [[autonomy]]
 

@@ -17,14 +17,14 @@ pub struct DiscoveredFile {
 pub enum FileKind {
     Page,
     Journal,
-    Asset,
+    Media,
 }
 
 #[derive(Debug)]
 pub struct DiscoveredFiles {
     pub pages: Vec<DiscoveredFile>,
     pub journals: Vec<DiscoveredFile>,
-    pub assets: Vec<DiscoveredFile>,
+    pub media: Vec<DiscoveredFile>,
 }
 
 pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<DiscoveredFiles> {
@@ -33,12 +33,12 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         .unwrap_or_else(|_| input_dir.to_path_buf());
     let pages_dir = input_dir.join("pages");
     let journals_dir = input_dir.join("journals");
-    let assets_dir = input_dir.join("assets");
+    let media_dir = input_dir.join("media");
 
     let mut result = DiscoveredFiles {
         pages: Vec::new(),
         journals: Vec::new(),
-        assets: Vec::new(),
+        media: Vec::new(),
     };
 
     // Scan pages
@@ -90,9 +90,9 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         }
     }
 
-    // Scan assets
-    if assets_dir.exists() {
-        for entry in WalkDir::new(&assets_dir)
+    // Scan media
+    if media_dir.exists() {
+        for entry in WalkDir::new(&media_dir)
             .into_iter()
             .filter_map(|e| e.ok())
             .filter(|e| e.file_type().is_file())
@@ -102,9 +102,9 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                 .file_name()
                 .map(|n| n.to_string_lossy().to_string())
                 .unwrap_or_default();
-            result.assets.push(DiscoveredFile {
+            result.media.push(DiscoveredFile {
                 path,
-                kind: FileKind::Asset,
+                kind: FileKind::Media,
                 name,
             });
         }
@@ -133,17 +133,17 @@ mod tests {
     }
 
     #[test]
-    fn test_scan_discovers_assets() {
+    fn test_scan_discovers_media() {
         let tmp = TempDir::new().unwrap();
         let pages_dir = tmp.path().join("pages");
-        let assets_dir = tmp.path().join("assets");
+        let media_dir = tmp.path().join("media");
         fs::create_dir_all(&pages_dir).unwrap();
-        fs::create_dir_all(&assets_dir).unwrap();
-        fs::write(assets_dir.join("image.png"), b"PNG").unwrap();
+        fs::create_dir_all(&media_dir).unwrap();
+        fs::write(media_dir.join("image.png"), b"PNG").unwrap();
 
         let content = ContentSection::default();
         let result = scan(tmp.path(), &content).unwrap();
-        assert_eq!(result.assets.len(), 1);
+        assert_eq!(result.media.len(), 1);
     }
 
     #[test]

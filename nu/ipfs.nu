@@ -1,4 +1,4 @@
-# IPFS pre-commit hook: upload local assets to Pinata, rewrite URLs in markdown
+# IPFS pre-commit hook: upload local media to Pinata, rewrite URLs in markdown
 # Usage: nu nu/ipfs.nu <graph-path>
 # Reads PINATA_JWT and PINATA_GATEWAY from ~/.config/cyber/env
 
@@ -37,7 +37,7 @@ def main [graph_path: string] {
         let path = ([$graph_path $f] | path join)
         if ($path | path exists) {
             open $path | lines | each {|l|
-                $l | parse -r 'assets/[^)\s"]+\.(png|jpg|jpeg|gif|webp|svg)' | get capture0?
+                $l | parse -r 'media/[^)\s"]+\.(png|jpg|jpeg|gif|webp|svg)' | get capture0?
             } | flatten
         }
     } | flatten | where {|r| $r != null} | uniq)
@@ -49,7 +49,7 @@ def main [graph_path: string] {
     let asset_paths = ($staged | each {|f|
         let path = ([$graph_path $f] | path join)
         if ($path | path exists) {
-            open $path | parse -r '(assets/[^)\s"]+\.(?:png|jpg|jpeg|gif|webp|svg))' | get capture0
+            open $path | parse -r '(media/[^)\s"]+\.(?:png|jpg|jpeg|gif|webp|svg))' | get capture0
         }
     } | flatten | uniq)
 
@@ -57,7 +57,7 @@ def main [graph_path: string] {
         return
     }
 
-    print $"Found ($asset_paths | length) asset references in staged files"
+    print $"Found ($asset_paths | length) media references in staged files"
 
     mut rewrites = []
 
@@ -106,5 +106,5 @@ def main [graph_path: string] {
         git add $f
     }
 
-    print $"IPFS: ($rewrites | length) assets uploaded and rewritten"
+    print $"IPFS: ($rewrites | length) media files uploaded and rewritten"
 }

@@ -60,7 +60,7 @@ crystal-domain: cyberia
 	- [[bridge]] is 7.5 ha of land
 		- 5 ha never have been fertilized and have productive garden
 		- 2.5 ha are likely was fertilized and does not have garden
-	- ![image.png](../assets/image_1752476292601_0.png)
+	- ![image.png](../media/image_1752476292601_0.png)
 - can i work on the piece of land with the team?
 	- yes, but you manage your team yourself
 	- and take all the risks regarding the team

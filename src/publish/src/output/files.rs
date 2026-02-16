@@ -80,7 +80,7 @@ fn humanize_filename(filename: &str) -> String {
     }
 }
 
-/// Build file index by scanning all public pages for asset references.
+/// Build file index by scanning all public pages for media references.
 /// Loads ipfs-cache.json from input_dir if available to resolve CIDs.
 pub fn build_file_index(store: &PageStore, config: &SiteConfig) -> Vec<FileEntry> {
     // Load CID cache if available
@@ -94,11 +94,12 @@ pub fn build_file_index(store: &PageStore, config: &SiteConfig) -> Vec<FileEntry
         HashMap::new()
     };
 
-    // Regex for markdown image/link with alt text and local asset path
-    // Captures: ![alt text](../assets/filename) or [alt text](../assets/filename)
-    let alt_re = Regex::new(r"!?\[([^\]]*)\]\(\.\./assets/([^)\s]+)\)").unwrap();
-    // Regex for local asset references without alt text context
-    let local_re = Regex::new(r#"\.\./assets/([^)\s"']+)"#).unwrap();
+    // Regex for markdown image/link with alt text and local media path
+    // Captures: ![alt text](../media/filename) or [alt text](../media/filename)
+    // Also matches legacy ../assets/ references for backwards compatibility
+    let alt_re = Regex::new(r"!?\[([^\]]*)\]\(\.\./(?:media|assets)/([^)\s]+)\)").unwrap();
+    // Regex for local media references without alt text context
+    let local_re = Regex::new(r#"\.\./(?:media|assets)/([^)\s"']+)"#).unwrap();
     // Regex for IPFS URLs already rewritten
     let ipfs_re = Regex::new(r"https?://[^/]+/ipfs/(Qm[a-zA-Z0-9]{44,})").unwrap();
 

@@ -207,11 +207,11 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
     let discovered = cyber_publish::scanner::scan(&config.build.input_dir, &config.content)?;
     if !quiet {
         println!(
-            "  {} Discovered {} pages, {} journals, {} assets",
+            "  {} Discovered {} pages, {} journals, {} media",
             "Scan".dimmed(),
             discovered.pages.len(),
             discovered.journals.len(),
-            discovered.assets.len()
+            discovered.media.len()
         );
     }
 

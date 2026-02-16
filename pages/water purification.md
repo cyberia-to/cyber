@@ -17,7 +17,7 @@ crystal-domain: cyberia
   
   layered bed from top to bottom:
 - schmutzdecke
-	- ![image.png](../assets/image_1761668116018_0.png)
+	- ![image.png](../media/image_1761668116018_0.png)
 	- ![](https://colombiascaleup.wordpress.com/wp-content/uploads/2012/04/timelineshmuz.jpg)
 	- handles: most bacteria, protozoa, viruses
 - top layer: fine volcanic sand

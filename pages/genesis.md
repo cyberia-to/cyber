@@ -112,7 +112,7 @@ welcome to the future of presence.
 
 region in [[cyber valley]] on 30 ha of land
 
-![image.png](../assets/image_1725878222276_0.png)
+![image.png](../media/image_1725878222276_0.png)
 
 ## dive into [[citadel/vision]]
 

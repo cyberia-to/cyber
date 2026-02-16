@@ -29,8 +29,8 @@ crystal-domain: cyberia
 		- outstanding compaction is critical
 		- final density after compaction: ~1900–2100 kg/m³
 		- expected durability: 1000+ years in tropical open-air conditions
-- ![image.png](../assets/image_1748755982376_0.png)
-- ![image.png](../assets/image_1748756003428_0.png)
-- ![image.png](../assets/image_1748756072913_0.png)
-- ![image.png](../assets/image_1748756105177_0.png)
-- ![image.png](../assets/image_1748834231587_0.png)
+- ![image.png](../media/image_1748755982376_0.png)
+- ![image.png](../media/image_1748756003428_0.png)
+- ![image.png](../media/image_1748756072913_0.png)
+- ![image.png](../media/image_1748756105177_0.png)
+- ![image.png](../media/image_1748834231587_0.png)

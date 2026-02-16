@@ -35,7 +35,7 @@ jobs:
           key: ipfs-cids-${{ github.run_id }}
           restore-keys: ipfs-cids-
 
-      - name: Resolve IPFS assets
+      - name: Resolve IPFS media
         env:
           PINATA_JWT: ${{ secrets.PINATA_JWT }}
           PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
@@ -53,10 +53,10 @@ jobs:
             echo '{}' > "$CACHE_FILE"
           fi
 
-          # Collect unique asset filenames from markdown (refs use ../assets/file)
-          FILENAMES=$(grep -roh '\.\./assets/[^)"'"'"' ]*' pages/ | sed 's|\.\./assets/||' | sort -u || true)
+          # Collect unique media filenames from markdown (refs use ../media/file)
+          FILENAMES=$(grep -roh '\.\./media/[^)"'"'"' ]*' pages/ | sed 's|\.\./media/||' | sort -u || true)
           if [ -z "$FILENAMES" ]; then
-            echo "No asset references found"
+            echo "No media references found"
             # Prune entire cache if no references remain
             BEFORE=$(jq 'length' "$CACHE_FILE")
             if [ "$BEFORE" -gt 0 ]; then
@@ -67,7 +67,7 @@ jobs:
           fi
 
           COUNT=$(echo "$FILENAMES" | wc -l | tr -d ' ')
-          echo "Found $COUNT unique asset references"
+          echo "Found $COUNT unique media references"
 
           GATEWAY_TESTED=false
           SED_SCRIPT=""
@@ -88,15 +88,15 @@ jobs:
                 echo "  SKIP: $filename (no JWT, not in cache)"
                 continue
               fi
-              if [ ! -f "assets/$filename" ]; then
+              if [ ! -f "media/$filename" ]; then
                 echo "  SKIP: $filename (not in cache, file not found)"
                 continue
               fi
-              echo "  Uploading assets/$filename..."
+              echo "  Uploading media/$filename..."
               RESP=$(curl -s -X POST \
                 "https://api.pinata.cloud/pinning/pinFileToIPFS" \
                 -H "Authorization: Bearer ${PINATA_JWT}" \
-                -F "file=@assets/${filename}")
+                -F "file=@media/${filename}")
               CID=$(echo "$RESP" | jq -r '.IpfsHash // empty')
               if [ -z "$CID" ]; then
                 echo "  WARNING: Failed to upload $filename: $(echo "$RESP" | jq -r '.error // .message // "unknown"')"
@@ -120,7 +120,7 @@ jobs:
             fi
 
             IPFS_URL="${GATEWAY}/ipfs/${CID}"
-            SED_SCRIPT="${SED_SCRIPT}s|\.\./assets/${filename}|${IPFS_URL}|g;"
+            SED_SCRIPT="${SED_SCRIPT}s|\.\./media/${filename}|${IPFS_URL}|g;"
           done <<< "$FILENAMES"
 
           echo "Cached: $CACHED, Uploaded: $UPLOADED"
@@ -144,7 +144,7 @@ jobs:
 
           if [ -n "$SED_SCRIPT" ]; then
             find pages/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
-            echo "Rewrote asset URLs using $GATEWAY"
+            echo "Rewrote media URLs using $GATEWAY"
           fi
 
       - name: Build site

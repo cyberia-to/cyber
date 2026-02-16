@@ -14,4 +14,4 @@ y = premium for unstaking (1 - y)
 
 x = y^21
 
-![image.png](../assets/image_1678123960013_0.png)
+![image.png](../media/image_1678123960013_0.png)

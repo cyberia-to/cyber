@@ -40,10 +40,10 @@ main rule for autonomous energy system: diversification
 			- don't store on closed containers (unless a lot of pollution) => quality the same, costs 5x - 10x
 			- clay or stone: `$5 - `$10 m2 of the pond bottom
 			- hdpe or ppr (not pvc) geomembrane: `$1 - `$5 m2 of the pond bottom
-				- ![2025-10-28 15.04.35.jpg](../assets/2025-10-28_15.04.35_1761663905471_0.jpg)
+				- ![2025-10-28 15.04.35.jpg](../media/2025-10-28_15.04.35_1761663905471_0.jpg)
 	- filtration
 		- biofilter for [[water purification]]
-		- ![image.png](../assets/image_1761668037087_0.png)
+		- ![image.png](../media/image_1761668037087_0.png)
 		- schmutzdecke
 		- gravel + sand + biochar + limestone
 		- uv filter
@@ -58,11 +58,11 @@ main rule for autonomous energy system: diversification
 - ## sun
 	- solar is the key: [map](https://globalsolaratlas.info/map?c=20.996061,15.615692,3)
 	- current [[citadel genesis]] status
-		- ![image.png](../assets/image_1761667814502_0.png)
+		- ![image.png](../media/image_1761667814502_0.png)
 		- 30 kw of solar generation which cant be reliable in our environment
-			- ![image.png](../assets/image_1761667791638_0.png) `
+			- ![image.png](../media/image_1761667791638_0.png) `
 		- 30 kw of energy storage which is convenient for us
-			- ![image.png](../assets/image_1761667832497_0.png)
+			- ![image.png](../media/image_1761667832497_0.png)
 		- nominal power != real power output
 	- needs
 		- 1-2 kw of nominal power per human
@@ -84,17 +84,17 @@ main rule for autonomous energy system: diversification
 - ## bio (gas)
 	- affordable everywhere, cheap, clean
 	- costs: $100 - $200 per m3 => $5k - $10k household
-	- ![Biogas_plant.svg.png](../assets/Biogas_plant.svg_1761663517189_0.png)
+	- ![Biogas_plant.svg.png](../media/Biogas_plant.svg_1761663517189_0.png)
 		- ![R-290 Propane 2.5 5kg | Netherlands Industrial Gas Store](https://static.prd.echannel.linde.com/wcsstore/NL_RES_Industrial_Gas_CatalogueAS/images/product/en_NL/large/cilinder-gas-r-290-propaan-2.5.jpg)
 	- biogas generator
 		- 5 KW/h of reserve power => $5k
-		- ![2025-10-28 15.52.40.jpg](../assets/2025-10-28_15.52.40_1761666860191_0.jpg)
+		- ![2025-10-28 15.52.40.jpg](../media/2025-10-28_15.52.40_1761666860191_0.jpg)
 		- remove noise
 		- clean air
 	- wood => come to carbon lecture tomorrow
 - ## air
 	- low altitude winds
-		- ![2025-10-28 15.52.20.jpg](../assets/2025-10-28_15.52.20_1761667028694_0.jpg)
+		- ![2025-10-28 15.52.20.jpg](../media/2025-10-28_15.52.20_1761667028694_0.jpg)
 	- high altitude winds
 		- ![Massive wind power "kite" generator to be tested by Germany's biggest  utility](https://reneweconomy.com.au/wp-content/uploads/2021/01/SkySailsPower_200kW_site_Northern_Germany_2_irexht-copy.jpg)
 	- current [[citadel genesis]] status
@@ -115,9 +115,9 @@ main rule for autonomous energy system: diversification
 # Connect
 
 - ## t.me/cybervalleyland
-	- ![qr-code (4).svg](../assets/qr-code_(4)_1761668766957_0.svg)
+	- ![qr-code (4).svg](../media/qr-code_(4)_1761668766957_0.svg)
 - ## x.com/@mastercyb
-	- ![qr-code (5).svg](../assets/qr-code_(5)_1761668827066_0.svg)
+	- ![qr-code (5).svg](../media/qr-code_(5)_1761668827066_0.svg)
 
 other
 - two questions

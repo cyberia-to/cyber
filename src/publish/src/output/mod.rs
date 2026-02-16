@@ -1,7 +1,7 @@
-mod assets;
 mod feed;
 pub mod files;
 pub mod graph;
+mod media;
 mod search;
 mod sitemap;
 
@@ -116,12 +116,12 @@ pub fn write_output(
     if let Some(ref static_dir) = config.build.static_dir {
         let static_path = config.build.input_dir.join(static_dir);
         if static_path.exists() {
-            assets::copy_dir_recursive(&static_path, output_dir)?;
+            media::copy_dir_recursive(&static_path, output_dir)?;
         }
     }
 
-    // Copy assets from graph
-    assets::copy_assets(discovered, output_dir)?;
+    // Copy media from graph
+    media::copy_media(discovered, output_dir)?;
 
     // Generate RSS feed
     if config.feeds.enabled {

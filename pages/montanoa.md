@@ -5,6 +5,6 @@ crystal-domain: biology
 ---
 {{embed [[montanoa hibiscifolia]]}}
 
-![image.png](../assets/image_1714310192720_0.png)
+![image.png](../media/image_1714310192720_0.png)
 
 uterotonic properties

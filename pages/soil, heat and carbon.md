@@ -18,9 +18,9 @@ published on [x.com](https://x.com/mastercyb/status/1983552837964661224)
 - archaeological context: fertile patches surrounded by poor lateritic soil
 - composition: charcoal fragments, pottery shards, bones, plant residues
 - lasting fertility: stable carbon, microbial richness, nutrient retention for milenia (8000 years - 500 years ago)
-- ![TerraPreta.jpeg](../assets/TerraPreta_1761741784409_0.jpeg)
+- ![TerraPreta.jpeg](../media/TerraPreta_1761741784409_0.jpeg)
 - mystery solved: char as the foundation — the biochar effect
-- ![image.png](../assets/image_1761741909719_0.png)
+- ![image.png](../media/image_1761741909719_0.png)
 
 ## Science of Biochar
 
@@ -30,25 +30,25 @@ published on [x.com](https://x.com/mastercyb/status/1983552837964661224)
 	- pyrolysis: 200c - 400c + no oxygen → devolatilization → carbonization
 	- activation + inoculation
 	- output: heat, biogas + bio-oil, biochar
-	- ![image.png](../assets/image_1761742187874_0.png)
+	- ![image.png](../media/image_1761742187874_0.png)
 - difference between ash, charcoal and biochar
 	- the balance between carbon yield and energy recovery
-	- ![image.png](../assets/image_1761742823407_0.png)
+	- ![image.png](../media/image_1761742823407_0.png)
 	- charcoal is carbon made for fire
 	- biochar is carbon made for life
 - in the soil
 	- physical structure: porous carbon matrix as habitat for microbes
 	- chemical role: cation exchange, pH buffering, nutrient storage
 	- biological synergy: microbe housing + water retention + reduced leaching
-	- ![image.png](../assets/image_1761743624990_0.png)
+	- ![image.png](../media/image_1761743624990_0.png)
 
 ## How to produce?
 
 - fast start: kontiki kiln
-	- ![image.png](../assets/image_1761744343921_0.png)
-	- ![image.png](../assets/image_1761744405605_0.png)
-	- ![image.png](../assets/image_1761744432894_0.png)
-	- ![image.png](../assets/image_1761744460355_0.png)
+	- ![image.png](../media/image_1761744343921_0.png)
+	- ![image.png](../media/image_1761744405605_0.png)
+	- ![image.png](../media/image_1761744432894_0.png)
+	- ![image.png](../media/image_1761744460355_0.png)
 	- no smoke: {{video https://www.youtube.com/watch?v=1o0QqePtNM4}}
 - how much I need?
 	- 370 000 m2 => top 30 cm
@@ -58,27 +58,27 @@ published on [x.com](https://x.com/mastercyb/status/1983552837964661224)
 	- 370000000 kg of soil * 0.09 * 0.5 = ~20 mil kg
 	- # => $20M - $200M
 - scaled: too big - requires >10 km2 of forest to feed
-	- ![image.png](../assets/image_1761744124257_0.png)
+	- ![image.png](../media/image_1761744124257_0.png)
 - quite good designs, but does optimized for biochar only (not heat energy)
-	- ![image.png](../assets/image_1761745824070_0.png)
+	- ![image.png](../media/image_1761745824070_0.png)
 - we need a two purpose stove: biochar + heat
 	- foundation: https://batchrocket.eu/en/
-	- ![image.png](../assets/image_1761745856659_0.png)
+	- ![image.png](../media/image_1761745856659_0.png)
 	- the problem is still unsolved!
 
 ## Carbon negativity
 
 - biochar is the only technology to slow down
-	- ![image.png](../assets/image_1761745079029_0.png)
+	- ![image.png](../media/image_1761745079029_0.png)
 - reforestation is amazing, but it is too slow
 - biochar have positive feedback loop
-	- ![image.png](../assets/image_1761745366908_0.png)
+	- ![image.png](../media/image_1761745366908_0.png)
 - biochar - the tech we missed
-	- ![image.png](../assets/image_1761745327152_0.png)
-	- ![image.png](../assets/image_1761745570586_0.png)
+	- ![image.png](../media/image_1761745327152_0.png)
+	- ![image.png](../media/image_1761745570586_0.png)
 - biochar fusion is the future! ;-)
-	- ![image.png](../assets/image_1761745708461_0.png)
-	- ![image.png](../assets/image_1761745753112_0.png)
+	- ![image.png](../media/image_1761745708461_0.png)
+	- ![image.png](../media/image_1761745753112_0.png)
 
 ## Changing the culture
 
@@ -90,6 +90,6 @@ published on [x.com](https://x.com/mastercyb/status/1983552837964661224)
 # Connect
 
 - ## t.me/cybervalleyland
-	- ![qr-code (4).svg](../assets/qr-code_(4)_1761668766957_0.svg)
+	- ![qr-code (4).svg](../media/qr-code_(4)_1761668766957_0.svg)
 - ## x.com/@mastercyb
-	- ![qr-code (5).svg](../assets/qr-code_(5)_1761668827066_0.svg)
+	- ![qr-code (5).svg](../media/qr-code_(5)_1761668827066_0.svg)

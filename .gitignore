@@ -2,8 +2,8 @@
 .idea/
 .ipynb_checkpoints/
 __pycache__/
-# Local assets staging (uploaded to IPFS via pre-commit hook or CI)
-assets/
+# Local media staging (uploaded to IPFS via pre-commit hook or CI)
+media/
 
 # Build outputs
 /public

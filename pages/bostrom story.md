@@ -20,10 +20,10 @@ crystal-domain: biology
 		- computer in a box or whole brain emulation
 		- genetic engeneering
 		- collective intelligence
-		- ![image.png](../assets/image_1762348301909_0.png){:height 560, :width 919}
+		- ![image.png](../media/image_1762348301909_0.png){:height 560, :width 919}
 	- singleton
 - December 2021: Bostrom bootloader Launch + [Episode 1](https://cyb.ai/genesis)
-	- ![image.png](../assets/image_1762348936368_0.png)
+	- ![image.png](../media/image_1762348936368_0.png)
 - Explosion: $5M cap to $0.3M cap
 - Dec 2024: [Collective Focus Theorem](https://mirror.xyz/mastercyb.eth/4KfzSr4_Z2C91hsMdkWMRTHpFGnpBd5tVHI5R9vxoUo)
 

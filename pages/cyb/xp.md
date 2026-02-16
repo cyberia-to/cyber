@@ -7,7 +7,7 @@ status:: TODO
 
 - TODO [[loading]] [[knowledge]]
 - [[first meeting]]
-- ![image.png](../assets/image_1690483115247_0.png)
+- ![image.png](../media/image_1690483115247_0.png)
 - ![Quake - Start the Game - Screenshot by agentpalmer on DeviantArt](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1621d1b3-a50a-4dda-89bc-127a9ed7477a/d6u07m5-a8f19de4-9605-48ea-9cf9-50dd7a6297d2.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzE2MjFkMWIzLWE1MGEtNGRkYS04OWJjLTEyN2E5ZWQ3NDc3YVwvZDZ1MDdtNS1hOGYxOWRlNC05NjA1LTQ4ZWEtOWNmOS01MGRkN2E2Mjk3ZDIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.TgZlwOdvMDpCTYg3kalsI90gJYY98_p4uFPPYyIQ7LQ)
 - [[space]] for current [[particle]]
 	- TODO explain [[particle]]

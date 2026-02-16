@@ -11,8 +11,8 @@ crystal-domain: cyber
 
 ## System Overview
 
-- ![Infrastructure Diagram](../assets/Bostrom_infra.drawio.svg)
-- 📎 [[../assets/cyber-full-architecture.drawio][Full Architecture Map (Draw.io)]]
+- ![Infrastructure Diagram](../media/Bostrom_infra.drawio.svg)
+- 📎 [[../media/cyber-full-architecture.drawio][Full Architecture Map (Draw.io)]]
 - ### Server Details
 	- | Server | Role | Specs |
 		  |--------|------|-------|

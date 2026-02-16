@@ -18,7 +18,7 @@ Base technologies
 		- https://www.balibuildingsolutions.com/shop/membrane-plastic-1013?utm_source=chatgpt.com#attr=5648
 		- https://www.bpmgeosynthetics.com/top-6-hdpe-geomembrane-manufacturers-indonesia/?utm_source=chatgpt.com
 		- https://www.youtube.com/channel/UCepuFg5lYhglgty96lfXgTA
-- [Cube.skp](../assets/Cube_1746235140352_0.skp)
+- [Cube.skp](../media/Cube_1746235140352_0.skp)
 
 Engineering systems
 - Electical Energy

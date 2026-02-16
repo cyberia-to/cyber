@@ -43,7 +43,7 @@ surrounding
 - cluster size: typically 3 to 5 plants per cluster
 - cluster diameter: about 60–80 cm total
 - between clusters: 1 meter
-- ![image.png](../assets/image_1746603396587_0.png)
+- ![image.png](../media/image_1746603396587_0.png)
 
 yield max
 

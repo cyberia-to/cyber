@@ -20,23 +20,23 @@ part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 	- [[birds research]]
 	- [[water research]]
 - edem: 500 species => 400 survive => 200 can grow => 100 productive
-	- ![image.png](../assets/image_1762172102555_0.png)
+	- ![image.png](../media/image_1762172102555_0.png)
 - animals: 10 sheep => 3 sheep => 5 sheep
-	- ![image.png](../assets/image_1762172139687_0.png)
-	- ![image.png](../assets/image_1762172162504_0.png)
-	- ![2025-11-03 12.12.03.jpg](../assets/2025-11-03_12.12.03_1762172067680_0.jpg)
+	- ![image.png](../media/image_1762172139687_0.png)
+	- ![image.png](../media/image_1762172162504_0.png)
+	- ![2025-11-03 12.12.03.jpg](../media/2025-11-03_12.12.03_1762172067680_0.jpg)
 - chickens: mostly eaten by predators
-	- ![image.png](../assets/image_1762172197758_0.png)
-	- ![image.png](../assets/image_1762172218842_0.png)
+	- ![image.png](../media/image_1762172197758_0.png)
+	- ![image.png](../media/image_1762172218842_0.png)
 - 7 ha coffee plantation results
 	- 2 tones of coffee
 	- continuous avocado, taro, batat, fern, chayote
 	- banana and jackfruit under recovery
 	- greens, salads, aromatics teas
 	- foodbox (with the help of neighbors)
-		- ![image.png](../assets/image_1762172249073_0.png)
-		- ![image.png](../assets/image_1762172295928_0.png)
-		- ![image.png](../assets/image_1762172315599_0.png)
+		- ![image.png](../media/image_1762172249073_0.png)
+		- ![image.png](../media/image_1762172295928_0.png)
+		- ![image.png](../media/image_1762172315599_0.png)
 
 ## school of thoughts
 
@@ -52,18 +52,18 @@ part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 
 - one output => many outputs
 - many inputs => almost zero inputs
-- ![image.png](../assets/image_1762172597245_0.png){:height 966, :width 659}
+- ![image.png](../media/image_1762172597245_0.png){:height 966, :width 659}
 
 ## low margin => high margin
 
 - $0.8 per kg
-	- ![image.png](../assets/image_1762173055241_0.png)
+	- ![image.png](../media/image_1762173055241_0.png)
 - $500 per kg
-	- ![image.png](../assets/image_1762173103309_0.png)
+	- ![image.png](../media/image_1762173103309_0.png)
 - $0.7 per kg
-	- ![image.png](../assets/image_1762173149841_0.png)
+	- ![image.png](../media/image_1762173149841_0.png)
 - $50 per kg
-	- ![image.png](../assets/image_1762173196093_0.png)
+	- ![image.png](../media/image_1762173196093_0.png)
 - sell raw => sell menu
 - 2x margin on real estate investments
 	- higher utilization
@@ -74,18 +74,18 @@ part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 ## how to?
 
 - aqua + fungi + plant + animals
-	- ![image.png](../assets/image_1762174334494_0.png)
-	- ![image.png](../assets/image_1762174277351_0.png)
+	- ![image.png](../media/image_1762174334494_0.png)
+	- ![image.png](../media/image_1762174277351_0.png)
 - [[biochar]]
 - [[no dig]]
-	- ![image.png](../assets/image_1762173966717_0.png)
-	- ![image.png](../assets/image_1762173931391_0.png)
-	- ![image.png](../assets/image_1762172850246_0.png)
+	- ![image.png](../media/image_1762173966717_0.png)
+	- ![image.png](../media/image_1762173931391_0.png)
+	- ![image.png](../media/image_1762172850246_0.png)
 - [[prune]]
 - [[layers]]
-	- ![image.png](../assets/image_1762173581792_0.png)
+	- ![image.png](../media/image_1762173581792_0.png)
 - [[stratification]]
-	- ![image.png](../assets/image_1762173712918_0.png)
+	- ![image.png](../media/image_1762173712918_0.png)
 - [[plant/features]]
 	- [[nitrogener]]
 	- [[accumulator]]
@@ -97,7 +97,7 @@ part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 - 1*1 m grid
 - strict schedule
 - data mining
-- ![image.png](../assets/image_1762172686196_0.png)
+- ![image.png](../media/image_1762172686196_0.png)
 
 ## Summary
 
@@ -114,9 +114,9 @@ part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 # Connect
 
 - ## t.me/cybervalleyland
-	- ![qr-code (4).svg](../assets/qr-code_(4)_1761668766957_0.svg)
+	- ![qr-code (4).svg](../media/qr-code_(4)_1761668766957_0.svg)
 - ## x.com/@mastercyb
-	- ![qr-code (5).svg](../assets/qr-code_(5)_1761668827066_0.svg)
+	- ![qr-code (5).svg](../media/qr-code_(5)_1761668827066_0.svg)
 
 old notes
 - Biome engeneering is the art of designing living systems in resonance with nature’s intelligence. Rooted in the [[philosophy of harmonious complexity]] it assumes that life thrives through coherence — where every element, human and non-human, contributes to a whole. The aim is to inhabit the earth wisely.

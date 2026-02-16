@@ -44,7 +44,7 @@ The site is a master piece on a slope of [[sanghuyang]] volcano
 - sunrise and sunset views
 - 7 canyons, pristine forests and productive food gardens on terraces
 
-![image.png](../assets/image_1725868123641_0.png)
+![image.png](../media/image_1725868123641_0.png)
 
 The business model compounds value across daily, weekly, and monthly experiences
 
