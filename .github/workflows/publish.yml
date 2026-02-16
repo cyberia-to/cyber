@@ -57,6 +57,12 @@ jobs:
           FILENAMES=$(grep -roh '\.\./assets/[^)"'"'"' ]*' pages/ | sed 's|\.\./assets/||' | sort -u || true)
           if [ -z "$FILENAMES" ]; then
             echo "No asset references found"
+            # Prune entire cache if no references remain
+            BEFORE=$(jq 'length' "$CACHE_FILE")
+            if [ "$BEFORE" -gt 0 ]; then
+              echo '{}' > "$CACHE_FILE"
+              echo "Pruned all $BEFORE stale entries from cache"
+            fi
             exit 0
           fi
 
@@ -118,6 +124,23 @@ jobs:
           done <<< "$FILENAMES"
 
           echo "Cached: $CACHED, Uploaded: $UPLOADED"
+
+          # Prune cache: remove entries no longer referenced in pages
+          BEFORE=$(jq 'length' "$CACHE_FILE")
+          KEEP_FILTER="{"
+          while IFS= read -r filename; do
+            [ -z "$filename" ] && continue
+            KEEP_FILTER="${KEEP_FILTER}\"${filename}\": .\"${filename}\","
+          done <<< "$FILENAMES"
+          KEEP_FILTER="${KEEP_FILTER}}"
+          # Build jq filter that keeps only referenced keys
+          jq --argjson keys "$(echo "$FILENAMES" | jq -R -s 'split("\n") | map(select(length > 0))')" \
+            'with_entries(select(.key as $k | $keys | index($k)))' "$CACHE_FILE" > tmp.json && mv tmp.json "$CACHE_FILE"
+          AFTER=$(jq 'length' "$CACHE_FILE")
+          PRUNED=$((BEFORE - AFTER))
+          if [ "$PRUNED" -gt 0 ]; then
+            echo "Pruned $PRUNED stale entries from cache ($BEFORE → $AFTER)"
+          fi
 
           if [ -n "$SED_SCRIPT" ]; then
             find pages/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
