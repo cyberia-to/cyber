@@ -51,14 +51,82 @@ fn classify_file_type(filename: &str) -> &'static str {
     }
 }
 
+/// Check if a filename is "opaque" — has no meaningful human-readable name.
+/// Raw CIDs, generic image_TIMESTAMP, telegram blobs, bare dates.
+fn is_opaque_filename(filename: &str) -> bool {
+    let name = filename.split('.').next().unwrap_or(filename);
+    // Raw IPFS CID
+    if name.starts_with("Qm") && name.len() > 40 {
+        return true;
+    }
+    // Generic image_TIMESTAMP_0
+    let ts_re = Regex::new(r"^image_\d{13}_\d$").unwrap();
+    if ts_re.is_match(name) {
+        return true;
+    }
+    // Telegram blob filenames
+    if name.starts_with("telegram-cloud-") {
+        return true;
+    }
+    // Bare date filenames like 2025-10-28_15.04.35_TIMESTAMP_0 or 2025-10-23_13.26.04_...
+    let date_re = Regex::new(r"^\d{4}[-_]\d{2}[-_]\d{2}").unwrap();
+    if date_re.is_match(name) {
+        return true;
+    }
+    // Screenshot filenames like Screenshot_2024-05-12_at_14.30.39_...
+    if name.starts_with("Screenshot") {
+        return true;
+    }
+    // AI-generated image prompts (joyrocket._ or similar UUID-containing names)
+    if name.starts_with("joyrocket") {
+        return true;
+    }
+    // Long filenames with UUIDs embedded
+    let uuid_re = Regex::new(r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}").unwrap();
+    if uuid_re.is_match(name) {
+        return true;
+    }
+    // Regex artifacts (backtick, brackets, truncated filenames)
+    // Check full filename for ][ since it may appear after dots
+    if name.starts_with('`') || name.ends_with('`') || filename.contains("][") || name.len() < 2 {
+        return true;
+    }
+    false
+}
+
 /// Generate a human-readable display name from a filename.
-/// Strips Logseq timestamps (_1234567890123_0), replaces underscores/hyphens with spaces.
+/// Strips Logseq timestamps, parenthetical numbers, replaces separators with spaces.
 fn humanize_filename(filename: &str) -> String {
-    // Remove extension
-    let name = if let Some(pos) = filename.rfind('.') {
-        &filename[..pos]
-    } else {
-        filename
+    // Remove extension (handle double extensions like .drawio.svg)
+    let name = {
+        let mut n = filename;
+        // Strip known extensions from the end
+        for ext in &[
+            ".drawio.svg",
+            ".svg",
+            ".png",
+            ".jpg",
+            ".jpeg",
+            ".gif",
+            ".webp",
+            ".pdf",
+            ".mp4",
+            ".mov",
+            ".webm",
+            ".avi",
+            ".mp3",
+            ".wav",
+            ".ogg",
+            ".flac",
+            ".skp",
+            ".json",
+        ] {
+            if let Some(stripped) = n.strip_suffix(ext) {
+                n = stripped;
+                break;
+            }
+        }
+        n
     };
 
     // Strip Logseq timestamp suffix: _TIMESTAMP_0 (13-digit unix ms + _0)
@@ -67,8 +135,45 @@ fn humanize_filename(filename: &str) -> String {
         .replace(name, "")
         .to_string();
 
-    // Replace underscores and hyphens with spaces, collapse multiple spaces
-    let humanized = stripped.replace('_', " ").replace('-', " ");
+    // After timestamp removal, an embedded extension may remain (e.g. Biogas_plant.svg)
+    // Strip it if present
+    let stripped = {
+        let mut s = stripped.as_str();
+        for ext in &[
+            ".drawio.svg",
+            ".svg",
+            ".png",
+            ".jpg",
+            ".jpeg",
+            ".gif",
+            ".webp",
+            ".pdf",
+            ".mp4",
+            ".mov",
+            ".webm",
+            ".skp",
+        ] {
+            if let Some(inner) = s.strip_suffix(ext) {
+                s = inner;
+                break;
+            }
+        }
+        s.to_string()
+    };
+
+    // Remove parenthetical numbers like (4), (5) — also handles truncated parens
+    let no_parens = Regex::new(r"\s*\(?\d+\)?\s*$")
+        .unwrap()
+        .replace(&stripped, "")
+        .to_string();
+    // Also strip mid-string parenthetical like "qr-code_(4)"
+    let no_parens = Regex::new(r"[_\s]*\(\d+\)")
+        .unwrap()
+        .replace_all(&no_parens, "")
+        .to_string();
+
+    // Replace underscores and hyphens with spaces
+    let humanized = no_parens.replace('_', " ").replace('-', " ");
 
     // Collapse whitespace
     let collapsed: String = humanized.split_whitespace().collect::<Vec<_>>().join(" ");
@@ -77,6 +182,63 @@ fn humanize_filename(filename: &str) -> String {
         filename.to_string()
     } else {
         collapsed
+    }
+}
+
+/// Assign display names to file entries.
+/// Opaque filenames (CIDs, timestamps, telegram blobs) get named after their
+/// referencing page. When multiple opaque files share a page, they get numbered.
+fn assign_display_names(entries: &mut [FileEntry]) {
+    // First pass: count opaque files per page to know when numbering is needed
+    let mut page_opaque_count: HashMap<String, usize> = HashMap::new();
+    for entry in entries.iter() {
+        if is_opaque_filename(&entry.filename) {
+            if let Some(page) = entry.referencing_pages.first() {
+                *page_opaque_count.entry(page.title.clone()).or_insert(0) += 1;
+            }
+        }
+    }
+
+    // Second pass: track per-page index for numbering
+    let mut page_index: HashMap<String, usize> = HashMap::new();
+
+    for entry in entries.iter_mut() {
+        // If display_name from alt-text is meaningful, keep it even for opaque filenames.
+        // A display name is "meaningful" if it doesn't look like a raw filename/hash itself.
+        if !entry.display_name.is_empty() {
+            let dn = &entry.display_name;
+            // Check if the display name itself looks opaque/meaningless
+            let looks_opaque = is_opaque_filename(dn)
+                || dn.contains("][")
+                || dn.ends_with(".svg")
+                || dn.ends_with(".skp")
+                // Space-separated dates from humanized filenames
+                || Regex::new(r"^\d{4}\s+\d{2}\s+\d{2}").unwrap().is_match(dn);
+            if !looks_opaque {
+                continue;
+            }
+        }
+
+        if is_opaque_filename(&entry.filename) {
+            // Name after the referencing page
+            if let Some(page) = entry.referencing_pages.first() {
+                let total = page_opaque_count.get(&page.title).copied().unwrap_or(1);
+                if total > 1 {
+                    let idx = page_index.entry(page.title.clone()).or_insert(0);
+                    *idx += 1;
+                    entry.display_name = format!("{} {}", page.title, idx);
+                } else {
+                    entry.display_name = page.title.clone();
+                }
+            } else {
+                // No referencing page — use abbreviated CID
+                entry.display_name =
+                    format!("{}…", &entry.filename[..12.min(entry.filename.len())]);
+            }
+        } else {
+            // Has a real filename — humanize it
+            entry.display_name = humanize_filename(&entry.filename);
+        }
     }
 }
 
@@ -169,34 +331,33 @@ pub fn build_file_index(store: &PageStore, config: &SiteConfig) -> Vec<FileEntry
         .into_iter()
         .map(|(filename, (cid, alt_text, pages))| {
             let ipfs_url = cid.as_ref().map(|c| format!("{}/ipfs/{}", gateway, c));
+            // Initial display name: use meaningful alt-text if available, empty otherwise
             let display_name = alt_text
                 .filter(|a| {
-                    // Skip generic alt texts and those that are just the filename
-                    !a.ends_with(".pdf")
-                        && !a.ends_with(".png")
-                        && *a != "image.png"
-                        && *a != "image"
+                    // Reject generic/useless alt texts
+                    *a != "image.png" && *a != "image" && !a.is_empty()
                 })
-                .unwrap_or_else(|| {
-                    let name = humanize_filename(&filename);
-                    // If humanization yields a very short generic name, use first referencing page title
-                    if name == "image" || name.is_empty() {
-                        if let Some(first_page) = pages.first() {
-                            format!("{} (image)", first_page.title)
-                        } else {
-                            filename.clone()
-                        }
-                    } else if name.starts_with("Qm") && name.len() > 40 {
-                        // Raw CID as filename — use first referencing page
-                        if let Some(first_page) = pages.first() {
-                            format!("{} (file)", first_page.title)
-                        } else {
-                            format!("{}…", &name[..12])
-                        }
+                .map(|a| {
+                    // Strip file extension from alt text
+                    let stripped = Regex::new(r"\.(png|jpg|jpeg|gif|webp|svg|pdf|mp4|mov)$")
+                        .unwrap()
+                        .replace(&a, "")
+                        .to_string();
+                    // Remove parenthetical numbers like (4)
+                    let cleaned = Regex::new(r"\s*\(\d+\)\s*")
+                        .unwrap()
+                        .replace_all(&stripped, "")
+                        .to_string();
+                    // Replace hyphens with spaces
+                    let cleaned = cleaned.replace('-', " ");
+                    let cleaned = cleaned.trim().to_string();
+                    if cleaned.is_empty() {
+                        a
                     } else {
-                        name
+                        cleaned
                     }
-                });
+                })
+                .unwrap_or_default();
             FileEntry {
                 file_type: classify_file_type(&filename).to_string(),
                 display_name,
@@ -208,13 +369,16 @@ pub fn build_file_index(store: &PageStore, config: &SiteConfig) -> Vec<FileEntry
         })
         .collect();
 
-    // Sort by number of referencing pages (most referenced first)
+    // Sort by number of referencing pages (most referenced first), then by filename
     entries.sort_by(|a, b| {
         b.referencing_pages
             .len()
             .cmp(&a.referencing_pages.len())
             .then_with(|| a.filename.cmp(&b.filename))
     });
+
+    // Assign display names (handles opaque filenames, numbering, humanization)
+    assign_display_names(&mut entries);
 
     entries
 }
