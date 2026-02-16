@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: lysine
 
-![Lysine.pdf](../assets/Lysine_1719303309556_0.pdf)
 
 [[lysine]] is an essential [[amino acid]] found in protein-rich foods such as [[meat]], [[fish]], [[eggs]], [[dairy]], and [[legumes]]. it is crucial for [[protein synthesis]], [[tissue repair,]] and the [[production of enzymes]], [[hormones]], and [[antibodies]].
 

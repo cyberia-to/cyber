@@ -34,7 +34,6 @@ Engineering systems
 - Air system (depend on Electric 50% min)
 	- Solar heat collector (handmade) - polycarbonat?
 		  Article - Performance Evaluation of PVT Air Collector Coupled with a Triangular Block in Actual Climate Conditions in Korea
-		  ![energies-15-04150-with-cover.pdf](../assets/energies-15-04150-with-cover_1744963900923_0.pdf)
 
 Some important videos
 
@@ -45,4 +44,3 @@ Some important videos
 Proves that solar energy easily can be collected in 20% electric + 30-40% through air system.
 
 - Article - Performance Evaluation of PVT Air Collector Coupled with a Triangular Block in Actual Climate Conditions in Korea
-  ![energies-15-04150-with-cover.pdf](../assets/energies-15-04150-with-cover_1744963900923_0.pdf)

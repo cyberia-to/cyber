@@ -3,7 +3,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Terpinene.pdf](../assets/Terpinene_1719299798177_0.pdf)
 
 general description:
 

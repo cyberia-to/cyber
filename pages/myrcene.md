@@ -3,7 +3,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Myrcene.pdf](../assets/Myrcene_1719296526716_0.pdf)
 
 general description about myrcene:
 

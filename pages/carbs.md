@@ -20,7 +20,6 @@ the most important species for [[eat]] carbs
 - [[plantain]]
 - [[sago palm]]
 
-![Carbohydrates.pdf](../assets/Carbohydrates_1719303309556_0.pdf)
 
 [[carbohydrates]], commonly known as carbs, are organic molecules consisting of carbon, hydrogen, and oxygen. they are one of the primary macronutrients and serve as the body's main source of energy.
 

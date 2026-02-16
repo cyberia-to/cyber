@@ -3,7 +3,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Tricyclene_synthase.pdf](../assets/Tricyclene_synthase_1719301849258_0.pdf)
 
 general description:
 

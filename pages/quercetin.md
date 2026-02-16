@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: quercetin
 
-![Quercetin.pdf](../assets/Quercetin_1719303309556_0.pdf)
 
 [[quercetin]] is a natural [[flavonoid]] found in many [[fruits]], [[vegetables]], and [[grains]]. it is known for its potent [[antioxidant]], [[anti-inflammatory]], and [[immune-modulating]] properties. quercetin supports [[overall health]] by [[neutralizing free radicals]] and protecting cells from damage.
 

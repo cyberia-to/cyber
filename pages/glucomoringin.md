@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: glucomoringin
 
-![Glucomoringin.pdf](../assets/Glucomoringin_1719303309556_0.pdf)
 
 [[glucomoringin]] is a [[glucosinolate]] compound found primarily in the seeds and leaves of the moringa plant ([[moringa oleifera]]). it is known for its potent [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] properties, as well as its potential t[[herapeutic applications]].
 

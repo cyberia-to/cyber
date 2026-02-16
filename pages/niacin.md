@@ -4,7 +4,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Vitamin_B3.pdf](../assets/Vitamin_B3_1719303309556_0.pdf)
 
 [[vitamin]] b3, also known as niacin, is a [[water-soluble vitamin]] essential for [[energy metabolism]] and maintaining [[healthy skin]], [[nerves]], and [[digestion]]. it plays a key role in the synthesis of [[NAD]] and [[NADP]], [[coenzymes]] involved in [[cellular energy production]] and [[cellular repair]].
 

@@ -7,4 +7,3 @@ bali botanical garden in bedugul
 
 2500+ species
 
-![official species list](../assets/eka-karya_1748650642716_0.pdf)

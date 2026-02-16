@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: tannic acid
 
-![Tannic_Acid.pdf](../assets/Tannic_Acid_1719303309556_0.pdf)
 
 [[tannic acid]] is a type of [[hydrolyzable tannin]] found in plants, particularly in [[bark]], [[fruits]], and [[leaves]]. it is known for its [[astringent]] properties and is widely used for its [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] effects.
 

@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: butyrate, butyric acid
 
-![Butyrate.pdf](../assets/Butyrate_1719303309556_0.pdf)
 
 [[butyrate]] is a short-chain fatty acid (SCFA) produced in the colon by the fermentation of dietary fiber by gut bacteria. it is known for its critical role in gut health, [[anti-inflammatory]] properties, and metabolic benefits.
 

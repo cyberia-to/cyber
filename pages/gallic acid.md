@@ -3,7 +3,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Gallic_Acid.pdf](../assets/Gallic_Acid_1719303309556_0.pdf)
 
 [[gallic acid]] is a naturally occurring [[polyphenol]] found in various plants, fruits, and seeds, including [[green tea]], [[grapes]], and [[berries]]. it is well known for its potent [[antioxidant]], [[anti-inflammatory]] and [[antimicrobial]] properties.
 

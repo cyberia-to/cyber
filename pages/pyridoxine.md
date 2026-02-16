@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: pyridoxine, vitamin b6
 
-![Vitamin_B6.pdf](../assets/Vitamin_B6_1719303309556_0.pdf)
 
 [[vitamin]] b6, also known as [[pyridoxine]], is a [[water-soluble vitamin]] essential for numerous physiological functions. it plays a critical role in [[amino acid metabolism]], [[neurotransmitter synthesis]], [[hemoglobin production]], and maintaining a healthy [[immune system]]. vitamin b6 also supports [[brain development]] and function, making it vital for overall health.
 

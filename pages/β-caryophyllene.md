@@ -3,7 +3,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Caryophyllene.pdf](../assets/Caryophyllene_1719299809273_0.pdf)
 
 ### β-caryophyllene
 

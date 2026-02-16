@@ -16,7 +16,6 @@ grow-speed: "5"
 
 ![image](https://ipfs.io/ipfs/QmWCg36ZuawF466Jgc955KAJt3S9c5DoinFzXbLEu5NKw9)
 
-![soil_lab_test_report.pdf](../assets/soil_lab_test_report_1724741272780_0.pdf)
 
 ### the bio-properties of [[debregeasia longifolia]] berries
 

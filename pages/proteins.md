@@ -59,7 +59,6 @@ insects
 
 - [[black soldier fly]]
 
-![Proteins.pdf](../assets/Proteins_1719303309556_0.pdf)
 
 [[proteins]] are large, complex molecules made up of [[amino acids]] that perform a wide variety of functions in the body. they are essential for structure, function, and regulation of tissues and organs, serving as [[enzymes]], [[hormones]], and [[antibodies]].
 

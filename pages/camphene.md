@@ -3,7 +3,6 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 ---
-![Camphene.pdf](../assets/Camphene_1719106845776_0.pdf)
 
 ### camphene: overview and medical uses
 

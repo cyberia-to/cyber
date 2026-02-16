@@ -5,7 +5,6 @@ crystal-domain: cyberia
 ---
 alias: amylose
 
-![Amylose.pdf](../assets/Amylose_1719303309556_0.pdf)
 
 [[amylose]] is a [[polysaccharide]] composed of glucose molecules linked by α-1,4-glycosidic bonds. it is one of the two main components of starch (the other being [[amylopectin]]) and is known for its linear structure and [[slow digestion]] rate, which contributes to its role in resistant starch.
 

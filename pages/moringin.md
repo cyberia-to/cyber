@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: moringin
 
-![Moringin.pdf](../assets/Moringin_1719303309556_0.pdf)
 
 [[moringin]], also known as [[moringa isothiocyanate]], is a bioactive compound derived from [[glucomoringin]], a [[glucosinolate]] found in the moringa plant ([[moringa oleifera]]). it is known for its potent [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] properties, as well as its promising [[therapeutic potential]].
 

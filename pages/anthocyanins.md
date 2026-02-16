@@ -5,7 +5,6 @@ crystal-domain: chemistry
 ---
 alias: anthocyanins
 
-![Anthocyanins.pdf](../assets/Anthocyanins_1719303309556_0.pdf)
 
 [[anthocyanins]] are [[water-soluble pigments]] belonging to the [[flavonoid]] group, responsible for the [[red]], [[purple]], and [[blue]] colors in many [[fruits]], [[vegetables]], and [[flowers]]. they are known for their potent [[antioxidant]], [[anti-inflammatory]], and [[anti-cancer]] properties.
 

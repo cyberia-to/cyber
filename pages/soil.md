@@ -4,7 +4,6 @@ alias: soils
 crystal-type: entity
 crystal-domain: cyberia
 ---
-![soil_lab_test_report.pdf](../assets/soil_lab_test_report_1724741272780_0.pdf)
 
 [[compost]] and [[biochar]]
 
@@ -84,7 +83,6 @@ permeability: the ability of soil to transmit water and air. high in sandy soils
 
 soil color: the color of the soil, which can indicate organic matter content and mineral composition. sandy soils are often lighter, clay soils darker.
 
-![Soil and Water Analysis.pdf](../assets/Soil_and_Water_Analysis_1706326674515_0.pdf)
 
 [[terra preta]]
 
