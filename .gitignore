@@ -12,3 +12,4 @@ media/
 
 # Claude Code
 .claude/
+/logseq
