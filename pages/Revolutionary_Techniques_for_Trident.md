@@ -1,3 +1,6 @@
+---
+tags: trident
+---
 # Revolutionary Techniques for Trident
 
 ## Everything That Can Make a Proof-Native Language Unprecedented

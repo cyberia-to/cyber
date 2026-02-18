@@ -1,3 +1,6 @@
+---
+tags: trident
+---
 # Neural Network Techniques for Trident
 
 ## Compilation, Execution, Proving — Prioritized Roadmap v2

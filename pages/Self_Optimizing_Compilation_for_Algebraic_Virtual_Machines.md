@@ -1,3 +1,6 @@
+---
+tags: trident
+---
 # Self-Optimizing Compilation for Algebraic Virtual Machines
 
 ## Neural TIR→TASM Optimization with Provable Correctness and Evolutionary Self-Improvement
