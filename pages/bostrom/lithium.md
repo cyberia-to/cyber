@@ -128,6 +128,26 @@ H = SHA256(agent_address ‖ nonce ‖ block_hash ‖ cyberlinks_merkle)
 
 A valid proof satisfies H < target, where target adjusts every EPOCH blocks to maintain a target solution rate.
 
+### 3.4 Canonical Contract Schema (Implemented M1)
+
+Canonical execute message:
+
+- `submit_lithium_proof`
+  - `hash`
+  - `nonce`
+  - `miner_address`
+  - `block_hash`
+  - `cyberlinks_merkle`
+  - `epoch_id`
+  - `timestamp`
+
+Canonical query messages:
+
+- `epoch_status`
+- `target`
+- `proof_stats`
+- `lithium_miner_epoch_stats { address, epoch_id }`
+
 ### 3.2 Epoch Structure
 
 | Parameter | Value |
