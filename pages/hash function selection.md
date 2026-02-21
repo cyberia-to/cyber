@@ -24,16 +24,17 @@ Parameters (round counts, MDS matrix, round constants) are frozen at deployment 
 
 ## 2. Problem Statement
 
-[[CORE]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from six distinct domains:
+[[CORE]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from seven distinct domains:
 
 - Content addressing — deterministic, collision-resistant identity for all graph content
+- Deduplication — identical content must map to one CID, eliminating storage and bandwidth waste at planetary scale
 - [[Zero knowledge proofs]] — efficient arithmetization for STARK-based [[verification]]
 - Multi-party computation — viable for threshold operations and private collective computation
 - Fully homomorphic encryption — compatible with encrypted [[knowledge graph]] queries
 - Quantum resistance — survivable under quantum adversaries with Grover and algebraic quantum attacks
 - Planetary scale — functional at 10¹⁵ nodes with bounded locality constraints
 
-No [[hash]] function perfectly satisfies all six. The question is which one covers the most ground with the fewest compromises.
+No [[hash]] function perfectly satisfies all seven. The question is which one covers the most ground with the fewest compromises.
 
 ---
 
@@ -43,7 +44,7 @@ No [[hash]] function perfectly satisfies all six. The question is which one cove
 
 Strengths: Battle-tested (SHA-256: 23 years), extremely fast native execution (BLAKE3: ~2 GB/s), hardware acceleration, universal tooling, NIST standardization.
 
-Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than AO hashes when proved in STARKs. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into [[field]] arithmetic, turning a simple [[hash]] into thousands of constraints.
+Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than arithmetization-oriented (AO) hashes when proved in STARKs. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into [[field]] arithmetic, turning a simple [[hash]] into thousands of constraints.
 
 Verdict: Eliminated. A system that cannot efficiently prove its own state transitions cannot achieve [[verification]] closure.
 
@@ -129,12 +130,22 @@ Poseidon2 in sponge mode provides a standard hash-to-digest function suitable fo
 - Collision resistant: 128-bit security against collision attacks (with current round counts)
 - Preimage resistant: 128-bit security against preimage attacks
 - Variable-length input: Sponge construction handles arbitrary-length inputs
-- Fixed-length output: 5 [[Goldilocks field]] elements = 40 bytes (or fewer for smaller fields)
+- Fixed-length output: 5 [[Goldilocks field]] elements = 40 bytes
 - Compression mode: Available for fixed-length inputs ([[merklezation]] internal nodes)
 
 Critical requirement: Canonical byte-to-field-element encoding must be specified. For [[Goldilocks field]]: each [[field]] element holds ~7.5 bytes, padding and endianness must be deterministic and standardized. This encoding spec is as important as the [[hash]] function choice itself.
 
-### 4.5 Planetary Scale
+### 4.5 Deduplication
+
+Content addressing provides deduplication by construction: identical content produces identical CIDs, so duplicate [[particles]] are impossible at the protocol level. This is a structural guarantee of any deterministic [[hash]] function, not a feature that requires additional engineering.
+
+At planetary scale (10¹⁵ [[particles]]), deduplication is a storage and bandwidth survival requirement. Without it, redundant content multiplies storage costs, bloats replication proofs, and inflates [[merklezation]] overhead. With content-addressed identity, every unique piece of content exists exactly once in the graph regardless of how many [[neurons]] reference it.
+
+Poseidon2's deterministic algebraic structure over a canonical [[field]] encoding guarantees that byte-identical content always maps to the same CID. The critical dependency is the canonical encoding specification (§10.2) — any ambiguity in byte-to-field-element mapping (endianness, padding) would produce different CIDs for identical content, silently breaking deduplication. This makes encoding canonicalization a deduplication-critical requirement.
+
+Assessment: Fully satisfied by any deterministic [[hash]] function, including Poseidon2. The real risk is not the [[hash]] but the encoding layer — canonical encoding must be formalized and enforced at the protocol level before [[genesis]].
+
+### 4.6 Planetary Scale
 
 Poseidon2's compression mode enables efficient incremental [[merklezation]] updates. Combined with LtHash (additive homomorphic set commitment) for collection state, the architecture supports:
 
@@ -145,7 +156,7 @@ Poseidon2's compression mode enables efficient incremental [[merklezation]] upda
 
 Native [[hash]] rate on commodity hardware: ~50–100 MB/s over [[Goldilocks field]] (estimated). Slower than BLAKE3 by 20–40× for raw ingestion. Acceptable for steady-state operation but requires planning for initial bulk migration of existing content.
 
-### 4.6 Quantum Resistance
+### 4.7 Quantum Resistance
 
 A [[knowledge graph]] meant to persist for decades must account for quantum adversaries. Two quantum attack classes are relevant to hash functions:
 
@@ -224,9 +235,9 @@ The alternative to Poseidon2 is a multi-hash architecture:
 - PASTA for FHE
 - A lattice-based or SHA-3 construction for quantum resistance
 
-This requires five [[hash]] functions, five identity systems, five trust assumptions, five security analyses, and a coherence nightmare. Two identities for the same content means no identity.
+This requires five [[hash]] functions, five identity systems, five trust assumptions, five security analyses, and a coherence nightmare. Two identities for the same content means no identity — and deduplication, which depends on a single canonical CID per content, becomes impossible across domains.
 
-Poseidon2 is the only [[hash]] function that is viable (not optimal, but viable) across all six required domains. For a system whose design principle is "purpose. link. [[energy]]." — one [[universal hash]] that works everywhere is worth more than five specialists.
+Poseidon2 is the only [[hash]] function that is viable (not optimal, but viable) across all seven required domains. For a system whose design principle is "purpose. link. [[energy]]." — one [[universal hash]] that works everywhere is worth more than five specialists.
 
 ### 6.2 Ecosystem Gravity
 
@@ -430,18 +441,25 @@ If storage proofs are not operational when this happens, [[CORE]] cannot migrate
 
 ## 10. Open Questions
 
-### 10.1 [[Field]] Choice (Critical, Unresolved)
+### 10.1 [[Field]] Choice — [[Goldilocks field]]
 
-The [[hash]] function decision is incomplete without choosing the [[field]]. This determines the proving ecosystem:
+[[CORE]] operates over the [[Goldilocks field]] (p = 2⁶⁴ − 2³² + 1). This determines the Poseidon2 instantiation and the proving ecosystem.
 
-| [[Field]] | Proving Ecosystem | Throughput | Trade-off |
-|-------|-------------------|------------|-----------|
-| [[Goldilocks field]] | Miden, Triton VM | Moderate | 64-bit native arithmetic, Tip5 compatibility |
-| M31 | Stwo (Circle STARKs) | Highest (2M+ hashes/sec) | StarkWare ecosystem lock |
-| BabyBear | Plonky3, SP1, RISC Zero | Very high | Polygon/Succinct ecosystem |
-| BN254 | Ethereum L1 precompiles | Lower | Direct L1 settlement |
+Rationale: [[Goldilocks field]] provides 64-bit native arithmetic on commodity hardware, is the native [[field]] of Triton VM (the [[trident]] compilation target), and has the deepest integration with [[CORE]]'s proving stack. The 2-adicity (2³² | p−1) enables efficient NTT-based STARK proving.
 
-Recommendation: BabyBear or M31 for proving layer, with BN254 bridge for Ethereum settlement. Final decision requires separate [[cip]].
+Standard Poseidon2 parameters over [[Goldilocks field]] (the most widely deployed configuration):
+
+| Parameter | Sponge mode | Compression mode |
+|-----------|-------------|------------------|
+| State width (t) | 12 | 8 |
+| Full rounds (R_F) | 8 | 8 |
+| Partial rounds (R_P) | 22 | 22 |
+| S-box | x⁷ | x⁷ |
+| Security | 128-bit | 128-bit |
+| Capacity | 4 elements | — |
+| Rate | 8 elements | 8 elements |
+
+These parameters are used by Plonky2, Miden VM (Poseidon2 variant), and the HorizenLabs reference implementation. [[CORE]] should adopt these as the baseline, with the +25% round count margin from §9.2 applied before freezing at [[genesis]]. The exact frozen parameter set (including MDS matrix entries and round constants) must be published as an immutable protocol specification.
 
 ### 10.2 Canonical Encoding Specification
 
@@ -461,7 +479,7 @@ LtHash over 𝔽ₚ needs:
 
 ### 10.4 Poseidon2 Round Count Finalization
 
-The Ethereum Foundation's [[cryptography]] initiative (Phase 2 through Dec 2026) may result in updated round count recommendations. [[CORE]] should track these findings and be prepared to adopt updated parameters before mainnet launch.
+The baseline parameters (R_F = 8, R_P = 22 over [[Goldilocks field]]) are the ecosystem default used by Plonky2 and Miden. The Ethereum Foundation's [[cryptography]] initiative (Phase 2 through Dec 2026) may result in updated round count recommendations. [[CORE]] should track these findings and apply the +25% safety margin from §9.2 to the final EF-recommended counts before freezing at [[genesis]].
 
 ---
 
