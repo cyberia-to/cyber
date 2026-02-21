@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: GFP, Goldilocks Field Processor, AURUM, gfp spec
+alias: GFP, Goldilocks Field Processor, AURUM, gfp spec, gfp-spec
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -890,8 +890,8 @@ Targets:
 
 ## Cross-references
 
-- See [[CORE Master Plan]] for how GFP fits into the development roadmap
-- See [[rosetta-stone]] for why these four primitives unify all domains
-- See [[goldilocks-fhe-construction]] for [[TFHE]] over the [[Goldilocks field]]
+- See [[CORE master plan]] for how GFP fits into the development roadmap
+- See [[rosetta stone]] for why these four primitives unify all domains
+- See [[Goldilocks homomorphic encryption]] for [[TFHE]] over the [[Goldilocks field]]
 - See [[trinity]] for the three-pillar architecture
-- See [[privacy-trilateral]] for the full privacy stack
+- See [[privacy trilateral]] for the full privacy stack

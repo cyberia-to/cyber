@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: std.quantum, quantum standard library, quantum deep dive
+alias: std.quantum, quantum standard library, quantum deep dive, std-quantum-deep-dive
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -788,5 +788,5 @@ The field is prime. The algebra is shared. The library is waiting to be written.
 ### Cross-References
 
 See [[trinity]] for how quantum fits into the three-pillar architecture.
-See [[trident-complete-stdlib]] for the full stdlib specification including std.quantum.
-See [[trident-trinity-zk-ai-quantum]] for the unified thesis.
+See [[trident standard library]] for the full stdlib specification including std.quantum.
+See [[trident thesis]] for the unified thesis.

@@ -1,5 +1,6 @@
 ---
 tags: cyber, trident, neural
+alias: neural-tir-tasm-compiler
 crystal-type: entity
 crystal-domain: cyber
 type: research engineering task

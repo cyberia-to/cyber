@@ -22,8 +22,8 @@ The prime field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. Native arithmeti
 | FHE | polynomial ring $R_p = \mathbb{F}_p[X]/(X^N+1)$ | when ciphertext modulus $q = p$, proof impedance vanishes |
 | quantum | unitary matrices over $\mathbb{F}_{p^2}$ | prime dimension eliminates gate decomposition overhead |
 
-See [[rosetta-stone]] for why one lookup table over this field serves all four domains simultaneously.
+See [[rosetta stone]] for why one lookup table over this field serves all four domains simultaneously.
 
 ## hardware
 
-The [[GFP]] (Goldilocks Field Processor) has four primitives optimized for this field: `fma` (field multiply-accumulate), `ntt` ([[NTT]] butterfly), `p2r` ([[Poseidon2]] round), `lut` (lookup table). See [[gfp-spec]].
+The [[GFP]] (Goldilocks Field Processor) has four primitives optimized for this field: `fma` (field multiply-accumulate), `ntt` ([[NTT]] butterfly), `p2r` ([[Poseidon2]] round), `lut` (lookup table). See [[Goldilocks field processor]].

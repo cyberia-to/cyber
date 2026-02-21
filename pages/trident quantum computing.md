@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: trident quantum computing, quantum-native trident
+alias: trident quantum computing, quantum-native trident, trident-quantum-computing
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -357,10 +357,10 @@ The practical implications are immediate for the Neptune ecosystem: [[STARK]] [[
 
 See [[trident]] for the language overview.
 See [[Goldilocks field]] for the [[prime field]] $p = 2^{64} - 2^{32} + 1$.
-See [[trident-trinity-zk-ai-quantum]] for the convergence of ZK, AI, and quantum pillars.
-See [[trident-ai-zkml-deep-dive]] for [[trident]]'s AI and ZKML architecture.
-See [[trident-complete-stdlib]] for the standard library design.
-See [[std-quantum-deep-dive]] for quantum-specific standard library modules.
-See [[rosetta-stone]] for lookup table duality across [[cryptography]], AI, FHE, and [[STARK]]s.
+See [[trident thesis]] for the convergence of ZK, AI, and quantum pillars.
+See [[trident verifiable AI]] for [[trident]]'s AI and ZKML architecture.
+See [[trident standard library]] for the standard library design.
+See [[quantum standard library]] for quantum-specific standard library modules.
+See [[rosetta stone]] for lookup table duality across [[cryptography]], AI, FHE, and [[STARK]]s.
 See [[trinity]] for the three-pillar architecture.
-See [[goldilocks-fhe-construction]] for full FHE construction over the [[Goldilocks field]].
+See [[Goldilocks homomorphic encryption]] for full FHE construction over the [[Goldilocks field]].

@@ -1,5 +1,6 @@
 ---
 tags: trident
+alias: Neural_Techniques_for_Trident_v2
 ---
 # Neural Network Techniques for Trident
 

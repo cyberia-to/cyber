@@ -1,5 +1,6 @@
 ---
 tags: trident
+alias: Self_Optimizing_Compilation_for_Algebraic_Virtual_Machines
 ---
 # Self-Optimizing Compilation for Algebraic Virtual Machines
 

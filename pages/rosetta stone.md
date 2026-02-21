@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: Rosetta Stone, lookup table duality, rosetta stone
+alias: Rosetta Stone, lookup table duality, rosetta stone, rosetta-stone
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -335,7 +335,7 @@ $$\boxed{T_f : \{0, \ldots, D{-}1\} \to \mathbb{F}_p \quad = \quad \text{Securit
 
 ## Cross-references
 
-See [[gfp-spec]] for the hardware lookup engine that accelerates all four domains.
-See [[goldilocks-fhe-construction]] for the full FHE construction over Goldilocks.
-See [[privacy-trilateral]] for how the lookup table connects to the privacy stack.
+See [[Goldilocks field processor]] for the hardware lookup engine that accelerates all four domains.
+See [[Goldilocks homomorphic encryption]] for the full FHE construction over Goldilocks.
+See [[privacy trilateral]] for how the lookup table connects to the privacy stack.
 See [[trinity]] for the three-pillar architecture that the Rosetta Stone unifies.

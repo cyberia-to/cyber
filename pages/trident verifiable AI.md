@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: trident AI, zkML, verifiable AI, trident ai deep dive
+alias: trident AI, zkML, verifiable AI, trident ai deep dive, trident-ai-zkml-deep-dive
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -310,7 +310,7 @@ The architecture already exists. The field is already prime. The only question i
 
 ### Cross-References
 
-See [[rosetta-stone]] for the full treatment of the lookup table identity.
+See [[rosetta stone]] for the full treatment of the lookup table identity.
 See [[trinity]] for the three-pillar overview.
-See [[trident-complete-stdlib]] for the full std.nn specification.
-See [[trident-trinity-zk-ai-quantum]] for the unified thesis including quantum.
+See [[trident standard library]] for the full std.nn specification.
+See [[trident thesis]] for the unified thesis including quantum.

@@ -1,5 +1,6 @@
 ---
 tags: trident
+alias: Revolutionary_Techniques_for_Trident
 ---
 # Revolutionary Techniques for Trident
 
@@ -589,7 +590,7 @@ Every expression in the REPL shows its proof cost immediately. The developer bui
 
 # Part IX: Neural Network Techniques
 
-(Full detail in companion document [[Neural_Techniques_for_Trident]])
+(Full detail in companion document [[neural techniques for trident]])
 
 ## 9.1 Foundation: `nn.trd` + Evolutionary Training
 ## 9.2 Predictive Trace Analysis

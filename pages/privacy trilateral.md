@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: privacy trilateral, ZK+FHE+MPC, privacy triangle
+alias: privacy trilateral, ZK+FHE+MPC, privacy triangle, privacy-trilateral
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -97,7 +97,7 @@ Private [[cyberlink]]s. A [[neuron]] can create edges in the knowledge graph whe
 
 Encrypted model inference. A neural network evaluates on FHE-encrypted inputs. The linear layers (matrix multiplications) use homomorphic addition and multiplication. The nonlinear activations (ReLU, GELU) use Programmable Bootstrapping — the fundamental TFHE operation.
 
-PBS is where the [[rosetta-stone]] identity manifests most clearly. PBS evaluates a lookup table on encrypted data by encoding the function as a test polynomial $v(X) = \sum f(i) \cdot X^i$ and blind-rotating it by the encrypted input. The same lookup table that the STARK uses for proof authentication and the neural network uses for activation is now the FHE bootstrap function. One table, three uses, zero redundancy — because all three systems operate over $\mathbb{F}_p$.
+PBS is where the [[rosetta stone]] identity manifests most clearly. PBS evaluates a lookup table on encrypted data by encoding the function as a test polynomial $v(X) = \sum f(i) \cdot X^i$ and blind-rotating it by the encrypted input. The same lookup table that the STARK uses for proof authentication and the neural network uses for activation is now the FHE bootstrap function. One table, three uses, zero redundancy — because all three systems operate over $\mathbb{F}_p$.
 
 The FHE blind spot: Trust is concentrated. A single node holds the encrypted data and performs the computation. If that node is physically compromised (side-channel attacks, memory extraction), the ciphertexts are at risk. More fundamentally, the FHE decryption key is a single point of failure — whoever holds it can decrypt everything. FHE hides data from software but cannot distribute trust across parties.
 
@@ -297,7 +297,7 @@ SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but requi
 
 ### Why TFHE, not BGV/CKKS
 
-BGV and CKKS support SIMD-style batching (packing many plaintexts into one ciphertext) which can be faster for matrix operations. But TFHE's Programmable Bootstrapping is uniquely powerful: it evaluates an arbitrary function during noise refresh, eliminating the need for separate bootstrapping and evaluation steps. For CORE, where the primary FHE workload is function evaluation (activations, S-boxes, comparisons), TFHE's PBS is the right primitive. And when instantiated over Goldilocks, PBS uses the same lookup table as the STARK and the neural network — the [[rosetta-stone]] identity.
+BGV and CKKS support SIMD-style batching (packing many plaintexts into one ciphertext) which can be faster for matrix operations. But TFHE's Programmable Bootstrapping is uniquely powerful: it evaluates an arbitrary function during noise refresh, eliminating the need for separate bootstrapping and evaluation steps. For CORE, where the primary FHE workload is function evaluation (activations, S-boxes, comparisons), TFHE's PBS is the right primitive. And when instantiated over Goldilocks, PBS uses the same lookup table as the STARK and the neural network — the [[rosetta stone]] identity.
 
 ### Why Poseidon2, not SHA-256 or Tip5
 
@@ -353,7 +353,7 @@ ZK + FHE + MPC. Three technologies. One field. Complete privacy.
 
 ## Cross-references
 
-See [[rosetta-stone]] for the lookup table identity that connects all three technologies.
-See [[goldilocks-fhe-construction]] for the full FHE construction.
+See [[rosetta stone]] for the lookup table identity that connects all three technologies.
+See [[Goldilocks homomorphic encryption]] for the full FHE construction.
 See [[trinity]] for how privacy fits into the three-pillar architecture.
-See [[gfp-spec]] for the hardware that accelerates the entire privacy stack.
+See [[Goldilocks field processor]] for the hardware that accelerates the entire privacy stack.

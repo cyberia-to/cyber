@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: trident thesis, ZK+AI+Quantum, trident trinity
+alias: trident thesis, ZK+AI+Quantum, trident trinity, trident-trinity-zk-ai-quantum
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -127,7 +127,7 @@ Zero quantization overhead. Weights are already field elements. Inputs are field
 
 Zero proof overhead beyond computation. The arithmetic circuit IS the neural network. There is no ONNX conversion, no circuit compilation, no unsupported operators. If you can write it in Trident, it is automatically provable.
 
-Native nonlinearities. [[Triton VM]]'s Tip5 hash uses a lookup-table-based S-box over $\mathbb{F}_p$ — this is mathematically identical to a nonlinear activation function. The lookup argument that authenticates Tip5 in [[STARK]] proofs is the same mechanism that authenticates ReLU/GELU activations. Alongside Tip5, [[Poseidon2]] serves as an alternative hash primitive optimized for recursive proving. The hash function's security properties (resistance to algebraic attacks via maximal-degree polynomials) translate to desirable properties for neural network activation functions (high expressiveness in the field). See [[rosetta-stone]] for the full treatment of this lookup table identity. For privacy-preserving computation beyond zero-knowledge, [[TFHE]] enables fully homomorphic encrypted inference — see [[privacy-trilateral]] for the three-layer privacy architecture.
+Native nonlinearities. [[Triton VM]]'s Tip5 hash uses a lookup-table-based S-box over $\mathbb{F}_p$ — this is mathematically identical to a nonlinear activation function. The lookup argument that authenticates Tip5 in [[STARK]] proofs is the same mechanism that authenticates ReLU/GELU activations. Alongside Tip5, [[Poseidon2]] serves as an alternative hash primitive optimized for recursive proving. The hash function's security properties (resistance to algebraic attacks via maximal-degree polynomials) translate to desirable properties for neural network activation functions (high expressiveness in the field). See [[rosetta stone]] for the full treatment of this lookup table identity. For privacy-preserving computation beyond zero-knowledge, [[TFHE]] enables fully homomorphic encrypted inference — see [[privacy trilateral]] for the three-layer privacy architecture.
 
 ### 2.3 Trident as AI VM: The Architecture
 
@@ -580,6 +580,6 @@ Three revolutions. One language. One field element. This is not marketing — it
 ### Cross-References
 
 For the conceptual overview, see [[trinity]].
-See [[trident-ai-zkml-deep-dive]] for the AI/zkML deep dive.
-See [[std-quantum-deep-dive]] for the quantum standard library.
-See [[trident-complete-stdlib]] for the complete stdlib architecture.
+See [[trident verifiable AI]] for the AI/zkML deep dive.
+See [[quantum standard library]] for the quantum standard library.
+See [[trident standard library]] for the complete stdlib architecture.

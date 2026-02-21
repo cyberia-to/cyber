@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: master plan, CORE master plan
+alias: master plan, CORE master plan, CORE_Master_Plan
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -110,7 +110,7 @@ PUBLIC:  edge existence, aggregate energy per particle, focus distribution π
 PRIVATE: neuron identity behind edges, individual energy ownership, link authorship
 ```
 
-Key insight: [[focus]] is computable from PUBLIC aggregates only. No individual ownership is revealed. This is secure multi-party computation of a GNN forward pass — structural, not protocol-level. See [[privacy-trilateral]] for the full privacy stack.
+Key insight: [[focus]] is computable from PUBLIC aggregates only. No individual ownership is revealed. This is secure multi-party computation of a GNN forward pass — structural, not protocol-level. See [[privacy trilateral]] for the full privacy stack.
 
 Duration estimate: 6-9 months
 
@@ -503,8 +503,8 @@ All five green → launch. Any red → no launch. No exceptions. No "we'll fix i
 ## Cross-references
 
 - See [[trinity]] for the three-pillar architecture
-- See [[gfp-spec]] for hardware specification of the [[GFP]]
-- See [[privacy-trilateral]] for the full privacy stack
-- See [[rosetta-stone]] for how four primitives unify all domains
-- See [[goldilocks-fhe-construction]] for [[TFHE]] over the [[Goldilocks field]]
-- See [[trident-complete-stdlib]] for the [[trident]] standard library
+- See [[Goldilocks field processor]] for hardware specification of the [[GFP]]
+- See [[privacy trilateral]] for the full privacy stack
+- See [[rosetta stone]] for how four primitives unify all domains
+- See [[Goldilocks homomorphic encryption]] for [[TFHE]] over the [[Goldilocks field]]
+- See [[trident standard library]] for the [[trident]] standard library

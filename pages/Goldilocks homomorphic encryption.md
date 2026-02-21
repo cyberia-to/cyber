@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: Goldilocks FHE, TFHE over Goldilocks, goldilocks FHE construction
+alias: Goldilocks FHE, TFHE over Goldilocks, goldilocks FHE construction, goldilocks-fhe-construction
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -129,7 +129,7 @@ In [[Triton VM]] / [[STARK]]: The lookup argument proves that a claimed function
 
 In neural networks (std.nn): Activation functions (ReLU, GELU, SiLU) are proven via the same lookup argument — precomputed table of $(x, f(x))$ pairs, authenticated by the STARK.
 
-Three different systems. Three different purposes. One mechanism: lookup table over $\mathbb{F}_p$. See [[rosetta-stone]] for the full treatment of the lookup table unification.
+Three different systems. Three different purposes. One mechanism: lookup table over $\mathbb{F}_p$. See [[rosetta stone]] for the full treatment of the lookup table unification.
 
 | System | Lookup Table Purpose | Mechanism |
 |--------|---------------------|-----------|
@@ -193,7 +193,7 @@ NTT (Number Theoretic Transform) is the workhorse of three separate systems:
 
 All three use NTT over $\mathbb{F}_p$ or its extensions. In Trident, `std.field.poly.ntt` serves all three. One implementation. One hardware acceleration path. One optimization effort benefits FHE, STARK proving, and quantum simulation simultaneously.
 
-The [[Goldilocks field]] prime was *designed* for fast NTT: $p - 1 = 2^{32}(2^{32} - 1)$ gives $2^{32}$-th roots of unity. The same property that makes STARK proofs fast makes FHE bootstrapping fast makes quantum simulation fast. See [[gfp-spec]] for hardware acceleration of these primitives.
+The [[Goldilocks field]] prime was *designed* for fast NTT: $p - 1 = 2^{32}(2^{32} - 1)$ gives $2^{32}$-th roots of unity. The same property that makes STARK proofs fast makes FHE bootstrapping fast makes quantum simulation fast. See [[Goldilocks field processor]] for hardware acceleration of these primitives.
 
 ### Synergy 5: The divine() Bridge
 
@@ -257,7 +257,7 @@ For FHE, the mismatch is between $R_q$ (where ciphertexts live) and $\mathbb{F}_
 
 ### std.fhe — The Fourth Pillar
 
-See [[trident-complete-stdlib]] for the full std.fhe library specification.
+See [[trident standard library]] for the full std.fhe library specification.
 
 ```
 std.fhe
@@ -375,7 +375,7 @@ std.nn_fhe
     └── prove_accuracy       Prove model achieves claimed accuracy on encrypted test set
 ```
 
-The power play: A neural network model committed on-chain (`std.nn_private.marketplace.model_commit`). User encrypts their data with FHE (`std.fhe.lwe.encrypt`). Server runs inference on encrypted data (`std.nn_fhe.model_enc.mlp_enc`). Server generates STARK proof of correct execution (`std.nn_fhe.prove.prove_inference`). User verifies proof and decrypts result. See [[privacy-trilateral]] for the complete ZK+FHE+MPC privacy architecture.
+The power play: A neural network model committed on-chain (`std.nn_private.marketplace.model_commit`). User encrypts their data with FHE (`std.fhe.lwe.encrypt`). Server runs inference on encrypted data (`std.nn_fhe.model_enc.mlp_enc`). Server generates STARK proof of correct execution (`std.nn_fhe.prove.prove_inference`). User verifies proof and decrypts result. See [[privacy trilateral]] for the complete ZK+FHE+MPC privacy architecture.
 
 The model owner never sees the data. The data owner never sees the model weights. The STARK proof verifies correct execution. All over one field. No impedance mismatch anywhere in the pipeline.
 

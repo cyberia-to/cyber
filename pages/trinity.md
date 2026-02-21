@@ -98,7 +98,7 @@ CORE organizes these capabilities into escalating privacy tiers, where each tier
 
 Tier 1 is the baseline for all CORE transactions — every economic operation on the network enjoys private ownership from day one. Tiers 2 and 3 are available whenever a use case calls for deeper protection. The architecture supports all tiers from genesis, ready for any privacy requirement that participants may need.
 
-For the full technical treatment — mechanism details, pairwise compositions, design tradeoffs, threat model analysis — see [[privacy-trilateral]].
+For the full technical treatment — mechanism details, pairwise compositions, design tradeoffs, threat model analysis — see [[privacy trilateral]].
 
 ---
 
@@ -251,8 +251,8 @@ Three pillars. One field. One chip. One network that thinks.
 
 ## Cross-references
 
-For the full thesis with competitive analysis, see [[trident-trinity-zk-ai-quantum]].
-See [[privacy-trilateral]] for the complete privacy stack.
-See [[gfp-spec]] for hardware specification.
-See [[rosetta-stone]] for the lookup table unification.
-See [[goldilocks-fhe-construction]] for the full FHE construction.
+For the full thesis with competitive analysis, see [[trident thesis]].
+See [[privacy trilateral]] for the complete privacy stack.
+See [[Goldilocks field processor]] for hardware specification.
+See [[rosetta stone]] for the lookup table unification.
+See [[Goldilocks homomorphic encryption]] for the full FHE construction.

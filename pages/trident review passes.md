@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber
-alias: review passes, development review
+alias: review passes, development review, trident_review_passes
 crystal-type: reference
 crystal-domain: cyber
 ---

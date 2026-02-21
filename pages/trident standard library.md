@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: trident stdlib, std.*, standard library
+alias: trident stdlib, std.*, standard library, trident-complete-stdlib
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -59,7 +59,7 @@ Everything builds on this. These modules provide the mathematical and data infra
 
 ### std.field — Prime Field Arithmetic
 
-The bedrock. Every computation in [[trident]] reduces to operations over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. See [[gfp-spec]] for hardware acceleration of field primitives.
+The bedrock. Every computation in [[trident]] reduces to operations over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. See [[Goldilocks field processor]] for hardware acceleration of field primitives.
 
 ```
 std.field
@@ -231,7 +231,7 @@ std.crypto
     └── hash_based  Hash-based constructions (primary)
 ```
 
-Every hash function is also an activation function. [[Tip5]]'s S-box is a nonlinear map $\mathbb{F}_p \to \mathbb{F}_p$. It is used for hashing (security) and for neural network activation (expressiveness). The lookup argument that proves the S-box in a STARK is the same mechanism that proves a ReLU. This duality is exposed explicitly: `std.crypto.hash.tip5.sbox` and `std.nn.activation.tip5_sbox` are the same function, imported from different namespaces for clarity. See [[rosetta-stone]] for why the lookup table mechanism unifies all domains.
+Every hash function is also an activation function. [[Tip5]]'s S-box is a nonlinear map $\mathbb{F}_p \to \mathbb{F}_p$. It is used for hashing (security) and for neural network activation (expressiveness). The lookup argument that proves the S-box in a STARK is the same mechanism that proves a ReLU. This duality is exposed explicitly: `std.crypto.hash.tip5.sbox` and `std.nn.activation.tip5_sbox` are the same function, imported from different namespaces for clarity. See [[rosetta stone]] for why the lookup table mechanism unifies all domains.
 
 ### std.io — Blockchain and External Interaction
 
@@ -256,7 +256,7 @@ std.io
 └── time            Block time, timestamps (public inputs)
 ```
 
-`std.io.divine` is the universal witness injection — and the universal oracle. For privacy: it injects secret data. For AI: it injects model weights, optimization results, adversarial examples. For quantum: it injects measurement outcomes. Same mechanism, different semantics, one proof. See [[rosetta-stone]] for how this lookup mechanism unifies all domains.
+`std.io.divine` is the universal witness injection — and the universal oracle. For privacy: it injects secret data. For AI: it injects model weights, optimization results, adversarial examples. For quantum: it injects measurement outcomes. Same mechanism, different semantics, one proof. See [[rosetta stone]] for how this lookup mechanism unifies all domains.
 
 ---
 
@@ -873,4 +873,4 @@ Every arrow is a dependency. Every dependency reduces to field arithmetic. Every
 
 One language. One field. One proof. Fifteen modules. The complete standard library for verifiable intelligence, privacy, and quantum computation.
 
-Within the cyber protocol, this stdlib powers the [[cybergraph]]: every [[particle]] connected by [[cyberlink]] through [[neuron]] agents, with [[focus]] routing computation through the [[tri-kernel]]. The [[GFP]] hardware layer accelerates the [[Goldilocks field]] primitives that underpin every module. [[TFHE]] integration extends the three pillars to four — see [[goldilocks-fhe-construction]] for the complete FHE construction over this same field.
+Within the cyber protocol, this stdlib powers the [[cybergraph]]: every [[particle]] connected by [[cyberlink]] through [[neuron]] agents, with [[focus]] routing computation through the [[tri-kernel]]. The [[GFP]] hardware layer accelerates the [[Goldilocks field]] primitives that underpin every module. [[TFHE]] integration extends the three pillars to four — see [[Goldilocks homomorphic encryption]] for the complete FHE construction over this same field.
