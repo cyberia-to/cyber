@@ -4,35 +4,35 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 ---
-# hash function selection for cybergraph particles
+# hash function selection for [[cybergraph]] [[particles]]
 
 date: 2026-02-10
 author: mastercyb
-context: [[CORE]] — content-addressed [[knowledge]] graph at planetary scale
+context: [[CORE]] — content-addressed [[knowledge graph]] at planetary scale
 
 ---
 
 ## 1. Decision
 
-Poseidon2 as the primary hash function for particle content addressing, with frozen parameters at genesis and algorithm-agile CID format enabling future migration contingent on storage proof infrastructure.
+Poseidon2 as the primary [[hash]] function for [[particle]] content addressing, with frozen parameters at [[genesis]] and algorithm-agile CID format enabling future migration contingent on storage proof infrastructure.
 
-This is a pragmatic, not permanent choice. Poseidon2 is the best available option across the required capability surface. The architecture must assume this hash will eventually be replaced — but replacement is only possible if the content behind every CID remains retrievable. Storage and replication proofs are therefore a security-critical prerequisite, not a scaling optimization.
+This is a pragmatic, not permanent choice. Poseidon2 is the best available option across the required capability surface. The architecture must assume this [[hash]] will eventually be replaced — but replacement is only possible if the content behind every CID remains retrievable. Storage and replication proofs are therefore a security-critical prerequisite, not a scaling optimization.
 
-Parameters (round counts, MDS matrix, round constants) are frozen at deployment and never modified. Changing parameters changes the function, which changes every CID in the graph. Parameter updates are identity-breaking events. Conservative round counts with safety margins must be selected before genesis and treated as protocol constants thereafter.
+Parameters (round counts, MDS matrix, round constants) are frozen at deployment and never modified. Changing parameters changes the function, which changes every CID in the graph. Parameter updates are identity-breaking events. Conservative round counts with safety margins must be selected before [[genesis]] and treated as protocol constants thereafter.
 
 ---
 
 ## 2. Problem Statement
 
-CORE's cybergraph needs a single canonical hash function to serve as the identity primitive for particles (content-addressed nodes). This hash must simultaneously satisfy requirements from five distinct domains:
+[[CORE]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from five distinct domains:
 
 - Content addressing — deterministic, collision-resistant identity for all graph content
-- Zero-knowledge proofs — efficient arithmetization for STARK-based verification
-- Multi-party computation — viable for threshold operations and private collective computation  
-- Fully homomorphic encryption — compatible with encrypted knowledge graph queries
+- [[Zero knowledge proofs]] — efficient arithmetization for STARK-based [[verification]]
+- Multi-party computation — viable for threshold operations and private collective computation
+- Fully homomorphic encryption — compatible with encrypted [[knowledge graph]] queries
 - Planetary scale — functional at 10¹⁵ nodes with bounded locality constraints
 
-No hash function perfectly satisfies all five. The question is which one covers the most ground with the fewest compromises.
+No [[hash]] function perfectly satisfies all five. The question is which one covers the most ground with the fewest compromises.
 
 ---
 
@@ -42,17 +42,17 @@ No hash function perfectly satisfies all five. The question is which one covers 
 
 Strengths: Battle-tested (SHA-256: 23 years), extremely fast native execution (BLAKE3: ~2 GB/s), hardware acceleration, universal tooling, NIST standardization.
 
-Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than AO hashes when proved in STARKs. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into field arithmetic, turning a simple hash into thousands of constraints.
+Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than AO hashes when proved in STARKs. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into [[field]] arithmetic, turning a simple [[hash]] into thousands of constraints.
 
-Verdict: Eliminated. A system that cannot efficiently prove its own state transitions cannot achieve verification closure.
+Verdict: Eliminated. A system that cannot efficiently prove its own state transitions cannot achieve [[verification]] closure.
 
 ### 3.2 Algebraic (Lookup-based): Tip5, Monolith, Reinforced Concrete
 
 Strengths: Tip5 achieves ~2.68× faster STARK proving than Rescue-Prime in Triton VM. The split-and-lookup S-box design provides structural resistance to Gröbner basis attacks (algebraic degree ≈ p ≈ 2⁶⁴).
 
-Fatal weakness: The lookup S-box that gives Tip5 its ZK advantage makes it impossible for MPC and FHE. In MPC, you cannot "look up a table" on secret-shared data — the lookup must be represented as a degree-2⁶⁴ polynomial or an oblivious RAM protocol, both prohibitively expensive. In FHE, the same problem applies to encrypted data. Additionally, Tip5 is locked to the Goldilocks field while the proving ecosystem has moved to M31 and BabyBear for 2–4× faster proving.
+Fatal weakness: The lookup S-box that gives Tip5 its ZK advantage makes it impossible for MPC and FHE. In MPC, you cannot "look up a table" on secret-shared data — the lookup must be represented as a degree-2⁶⁴ polynomial or an oblivious RAM protocol, both prohibitively expensive. In FHE, the same problem applies to encrypted data. Additionally, Tip5 is locked to the [[Goldilocks field]] while the proving ecosystem has moved to M31 and BabyBear for 2–4× faster proving.
 
-Verdict: Eliminated. Specialist hash that excels in one domain (STARK proving in Triton VM) while being architecturally incompatible with two critical domains (MPC, FHE).
+Verdict: Eliminated. Specialist [[hash]] that excels in one domain (STARK proving in Triton VM) while being architecturally incompatible with two critical domains (MPC, FHE).
 
 ### 3.3 MPC-Optimized: Hydra/Ciminion, RAIN
 
@@ -66,7 +66,7 @@ Verdict: Eliminated. Too specialized.
 
 Strengths: Purpose-built for FHE transciphering with minimal AND-depth / multiplicative depth. PASTA achieves very low noise growth in homomorphic evaluation.
 
-Fatal weakness: Same as MPC-optimized — negligible ZK ecosystem, no content-addressing usage, no general-purpose hashing capability.
+Fatal weakness: Same as MPC-optimized — negligible ZK ecosystem, no content-addressing usage, no general-purpose [[hashing]] capability.
 
 Verdict: Eliminated. Too specialized.
 
@@ -82,7 +82,7 @@ Verdict: Selected. See Section 6 for rationale.
 
 ## 4. Poseidon2 — Capability Assessment
 
-### 4.1 Zero-Knowledge Proofs
+### 4.1 [[Zero Knowledge Proofs]]
 
 | Metric | Value | Source |
 |--------|-------|--------|
@@ -93,9 +93,9 @@ Verdict: Selected. See Section 6 for rationale.
 
 Poseidon2 is the fastest AO hash without lookups. The x⁷ power map S-box produces low-degree constraints (degree 7 per round), and the HADES partial-round structure minimizes total S-box count. Compression mode (not sponge) provides additional efficiency for Merkle tree computations — up to 5× improvement over Poseidon v1 in plain performance, ~30% in proving systems.
 
-Field portability: Instantiated and benchmarked over Goldilocks (2⁶⁴ − 2³² + 1), M31 (2³¹ − 1), BabyBear (2³¹ − 2²⁷ + 1), BN254, BLS12-381, and binary extensions (Poseidon2b, Jan 2026). This is unique — no other AO hash has been validated across this many fields.
+[[Field]] portability: Instantiated and benchmarked over [[Goldilocks field]] (2⁶⁴ − 2³² + 1), M31 (2³¹ − 1), BabyBear (2³¹ − 2²⁷ + 1), BN254, BLS12-381, and binary extensions (Poseidon2b, Jan 2026). This is unique — no other AO [[hash]] has been validated across this many fields.
 
-Ecosystem: Ethereum L1 candidate (EF-backed cryptanalysis program), Starknet, Polygon (Plonky3), Miden, SP1 (Succinct), Scroll (OpenVM), Zcash. Largest implementation base of any AO hash.
+Ecosystem: Ethereum L1 candidate (EF-backed [[cryptography]] program), Starknet, Polygon (Plonky3), Miden, SP1 (Succinct), Scroll (OpenVM), Zcash. Largest implementation base of any AO [[hash]].
 
 ### 4.2 Multi-Party Computation
 
@@ -110,15 +110,15 @@ Assessment: Not optimal (Hydra is purpose-built for MPC), but practical and benc
 
 ### 4.3 Fully Homomorphic Encryption
 
-Poseidon2 operates natively over 𝔽ₚ, making it compatible with word-level FHE schemes (BGV, BFV, CKKS over matching fields). The multiplicative depth per hash invocation is bounded by rounds × depth-per-S-box = (R_F + R_P) × 3.
+Poseidon2 operates natively over 𝔽ₚ, making it compatible with word-level FHE schemes (BGV, BFV, CKKS over matching fields). The multiplicative depth per [[hash]] invocation is bounded by rounds × depth-per-S-box = (R_F + R_P) × 3.
 
-For a typical Goldilocks instance (R_F = 8 full rounds, R_P = 56 partial rounds), total multiplicative depth ≈ 8×3 + 56×3 = 192. This is high for FHE — purpose-built ciphers like PASTA achieve depths of 4–8. However:
+For a typical [[Goldilocks field]] instance (R_F = 8 full rounds, R_P = 56 partial rounds), total multiplicative depth ≈ 8×3 + 56×3 = 192. This is high for FHE — purpose-built ciphers like PASTA achieve depths of 4–8. However:
 
 - Partial rounds apply only 1 S-box (not all 16), so effective noise growth is much lower than 192 sequential full-width multiplications
 - Bootstrapping-capable FHE schemes (TFHE, FHEW) can handle this with periodic refresh
 - The alternative (Tip5) is impossible for FHE, not merely expensive
 
-Assessment: Viable but expensive. For FHE-heavy workloads, a hybrid approach using PASTA for transciphering and Poseidon2 for identity verification is the pragmatic path. The critical point: Poseidon2 *can* be evaluated under FHE, unlike Tip5 which categorically cannot.
+Assessment: Viable but expensive. For FHE-heavy workloads, a hybrid approach using PASTA for transciphering and Poseidon2 for identity [[verification]] is the pragmatic path. The critical point: Poseidon2 *can* be evaluated under FHE, unlike Tip5 which categorically cannot.
 
 ### 4.4 Content Addressing
 
@@ -128,21 +128,21 @@ Poseidon2 in sponge mode provides a standard hash-to-digest function suitable fo
 - Collision resistant: 128-bit security against collision attacks (with current round counts)
 - Preimage resistant: 128-bit security against preimage attacks
 - Variable-length input: Sponge construction handles arbitrary-length inputs
-- Fixed-length output: 5 Goldilocks field elements = 40 bytes (or fewer for smaller fields)
-- Compression mode: Available for fixed-length inputs (Merkle tree internal nodes)
+- Fixed-length output: 5 [[Goldilocks field]] elements = 40 bytes (or fewer for smaller fields)
+- Compression mode: Available for fixed-length inputs ([[merklezation]] internal nodes)
 
-Critical requirement: Canonical byte-to-field-element encoding must be specified. For Goldilocks: each field element holds ~7.5 bytes, padding and endianness must be deterministic and standardized. This encoding spec is as important as the hash function choice itself.
+Critical requirement: Canonical byte-to-field-element encoding must be specified. For [[Goldilocks field]]: each [[field]] element holds ~7.5 bytes, padding and endianness must be deterministic and standardized. This encoding spec is as important as the [[hash]] function choice itself.
 
 ### 4.5 Planetary Scale
 
-Poseidon2's compression mode enables efficient incremental Merkle updates. Combined with LtHash (additive homomorphic set commitment) for collection state, the architecture supports:
+Poseidon2's compression mode enables efficient incremental [[merklezation]] updates. Combined with LtHash (additive homomorphic set commitment) for collection state, the architecture supports:
 
 - O(1) state updates for set mutations (via LtHash)
-- O(log n) Merkle proof paths for membership verification
-- O(1) verification per proof step (single Poseidon2 compression)
+- O(log n) Merkle proof paths for membership [[verification]]
+- O(1) [[verification]] per proof step (single Poseidon2 compression)
 - Bounded locality: all operations are local to the mutation point
 
-Native hash rate on commodity hardware: ~50–100 MB/s over Goldilocks (estimated). Slower than BLAKE3 by 20–40× for raw ingestion. Acceptable for steady-state operation but requires planning for initial bulk migration of existing content.
+Native [[hash]] rate on commodity hardware: ~50–100 MB/s over [[Goldilocks field]] (estimated). Slower than BLAKE3 by 20–40× for raw ingestion. Acceptable for steady-state operation but requires planning for initial bulk migration of existing content.
 
 ---
 
@@ -150,7 +150,7 @@ Native hash rate on commodity hardware: ~50–100 MB/s over Goldilocks (estimate
 
 ### 5.1 Cryptanalytic History
 
-Poseidon2's security derives from the HADES design strategy (Poseidon v1: USENIX 2021, Poseidon2: AFRICACRYPT 2023). It is the most attacked AO hash function in existence, which is both concerning and reassuring.
+Poseidon2's security derives from the HADES design strategy (Poseidon v1: USENIX 2021, Poseidon2: AFRICACRYPT 2023). It is the most attacked AO [[hash]] function in existence, which is both concerning and reassuring.
 
 Timeline of significant attacks:
 
@@ -192,9 +192,9 @@ Poseidon2 has more cryptanalytic attention than any competitor in its class. Thi
 
 ### 5.4 Long-Term Bet
 
-Would we bet CORE's permanent security on Poseidon2? No.
+Would we bet [[CORE]]'s permanent security on Poseidon2? No.
 
-Five years of cryptanalysis is insufficient for permanent trust. SHA-256 has 23 years. AES has 25 years. Confidence in hash functions comes from decades of failed attacks, not cleverness of design.
+Five years of [[cryptography]] is insufficient for permanent trust. SHA-256 has 23 years. AES has 25 years. Confidence in [[hash]] functions comes from decades of failed attacks, not cleverness of design.
 
 What we bet on instead: Algorithm agility. The CID format must support migration. Poseidon2 is the best available choice *today*, and the architecture must be designed so that "today" is the only timescale that matters.
 
@@ -210,17 +210,17 @@ The alternative to Poseidon2 is a multi-hash architecture:
 - Hydra for MPC
 - PASTA for FHE
 
-This requires four hash functions, four identity systems, four trust assumptions, four security analyses, and a coherence nightmare. Two identities for the same content means no identity.
+This requires four [[hash]] functions, four identity systems, four trust assumptions, four security analyses, and a coherence nightmare. Two identities for the same content means no identity.
 
-Poseidon2 is the only hash function that is viable (not optimal, but viable) across all five required domains. For a system whose design principle is "purpose. link. energy." — one universal primitive that works everywhere is worth more than four specialists.
+Poseidon2 is the only [[hash]] function that is viable (not optimal, but viable) across all five required domains. For a system whose design principle is "purpose. link. [[energy]]." — one [[universal hash]] that works everywhere is worth more than four specialists.
 
 ### 6.2 Ecosystem Gravity
 
-Poseidon2 has the largest ecosystem of any AO hash:
+Poseidon2 has the largest ecosystem of any AO [[hash]]:
 - Ethereum Foundation is evaluating it for L1 integration
 - StarkWare (Stwo), Polygon (Plonky3), Succinct (SP1), Scroll (OpenVM) all use it
 - Most implementations, most audits, most benchmarks, most papers
-- Field-portable: works over Goldilocks, M31, BabyBear, BN254, BLS12-381, binary extensions
+- [[Field]]-portable: works over [[Goldilocks field]], M31, BabyBear, BN254, BLS12-381, binary extensions
 
 If Poseidon2 breaks, it breaks Ethereum's ZK roadmap. This means the strongest incentive structure in crypto is aligned with keeping it secure, and the fastest response capability will be deployed if issues arise.
 
@@ -228,20 +228,20 @@ If Poseidon2 breaks, it breaks Ethereum's ZK roadmap. This means the strongest i
 
 Unlike execution-layer ZK systems where parameter updates are routine, content addressing demands permanent parameter commitment. This means:
 
-- CORE cannot benefit from post-deployment security improvements to Poseidon2
-- Round counts must be chosen conservatively before genesis, with margins for unknown future attacks
-- The EF's ongoing cryptanalysis program (through Dec 2026) should complete before CORE freezes parameters
-- Once frozen, CORE's Poseidon2 instantiation diverges from the broader ecosystem's evolving parameters — it becomes its own primitive
+- [[CORE]] cannot benefit from post-deployment security improvements to Poseidon2
+- Round counts must be chosen conservatively before [[genesis]], with margins for unknown future attacks
+- The EF's ongoing [[cryptography]] program (through Dec 2026) should complete before [[CORE]] freezes parameters
+- Once frozen, [[CORE]]'s Poseidon2 instantiation diverges from the broader ecosystem's evolving parameters — it becomes its own primitive
 
-This is the fundamental cost of using an AO hash for content addressing. Classical hashes (SHA-256) have stable parameters because they're 23 years old. AO hashes are still in their parameter-discovery phase. CORE must wait for parameter stabilization or accept the risk of choosing prematurely.
+This is the fundamental cost of using an AO [[hash]] for content addressing. Classical hashes (SHA-256) have stable parameters because they're 23 years old. AO hashes are still in their parameter-discovery phase. [[CORE]] must wait for parameter stabilization or accept the risk of choosing prematurely.
 
 ### 6.4 Storage Proofs as the Escape Hatch
 
 The only migration path from Poseidon2 to any successor requires rehashing original content. This is impossible without guaranteed content availability. Therefore:
 
-Storage proofs are the single highest-priority infrastructure component in CORE. Without them, the hash function choice is irreversible and CORE is permanently coupled to a 3-year-old primitive. With them, Poseidon2 becomes a replaceable component — the correct architectural relationship.
+Storage proofs are the single highest-priority infrastructure component in [[CORE]]. Without them, the [[hash]] function choice is irreversible and [[CORE]] is permanently coupled to a 3-year-old primitive. With them, Poseidon2 becomes a replaceable component — the correct architectural relationship.
 
-This dependency inverts the typical development sequence. Most blockchain projects build storage proofs after achieving consensus and execution. CORE must build storage proofs *before* or *simultaneously with* the hash function deployment, because the hash function's survivability depends on them.
+This dependency inverts the typical development sequence. Most blockchain projects build storage proofs after achieving [[consensus]] and execution. [[CORE]] must build storage proofs *before* or *simultaneously with* the [[hash]] function deployment, because the [[hash]] function's survivability depends on them.
 
 ---
 
@@ -292,7 +292,7 @@ For each field, the encoding must be deterministic:
 - Alignment: Each field element uses exactly its field's byte width
 - Normalization: All field elements must be in canonical range [0, p)
 
-### 7.5 Example: Particle CID over Goldilocks
+### 7.5 Example: [[Particle]] CID over [[Goldilocks field]]
 
 Content: "hello" (5 bytes)
 
@@ -308,7 +308,7 @@ CID: [0x01, 0x01, 0x01, 0x01, 0x05, <40 bytes>] = 45 bytes total
 
 ## 8. Commitment Layer Architecture
 
-The hash function serves only as the identity layer. Higher-order properties (set membership, similarity, ranking) are derived through the graph structure, not encoded in the CID.
+The [[hash]] function serves only as the identity layer. Higher-order properties (set membership, similarity, [[ranking system]]) are derived through the graph structure, not encoded in the CID.
 
 ```
 Layer 0 — Identity (immutable, stored)
@@ -328,11 +328,11 @@ Layer 3 — Indices (derived, ephemeral, rebuildable)
   Search:        HNSW/IVF indices over embedding cyberlinks
 ```
 
-Key principle: Similarity is a cyberlink, not a CID property. Different neurons may map the same content to different similarity coordinates because similarity is subjective and context-dependent. The base layer stays clean — pure cryptographic identity, no bloat.
+Key principle: Similarity is a [[cyberlink]], not a CID property. Different [[neurons]] may map the same content to different similarity coordinates because similarity is subjective and context-dependent. The base layer stays clean — pure [[cryptographic proof]] of identity, no bloat.
 
 Homomorphic property of Layer 1: LtHash over 𝔽ₚ provides:
-- Add cyberlink: new_state = old_state + H(new_link). O(1).
-- Remove cyberlink: new_state = old_state − H(old_link). O(1).
+- Add [[cyberlink]]: new_state = old_state + H(new_link). O(1).
+- Remove [[cyberlink]]: new_state = old_state − H(old_link). O(1).
 - Merge shards: merged = state_A + state_B. O(1).
 - STARK-provable: Addition is linear → free in arithmetization.
 
@@ -346,9 +346,9 @@ AO hash functions are not static. The Poseidon2 designers have updated round cou
 
 For content addressing, it is catastrophic.
 
-Content addressing requires a single, eternal function: H("hello") must produce the same CID today, in 5 years, and in 50 years. If round counts change, the function changes. If the function changes, the identity of every particle in the graph is broken. A parameter update in an identity-layer hash function is equivalent to a hard fork of all knowledge.
+Content addressing requires a single, eternal function: H("hello") must produce the same CID today, in 5 years, and in 50 years. If round counts change, the function changes. If the function changes, the identity of every [[particle]] in the graph is broken. A parameter update in an identity-layer [[hash]] function is equivalent to a hard fork of all [[knowledge]].
 
-Therefore: CORE must freeze Poseidon2 parameters at genesis and never modify them. Whatever round counts, MDS matrix, and round constants are deployed — those become part of the protocol specification, as immutable as SHA-256's initial hash values.
+Therefore: [[CORE]] must freeze Poseidon2 parameters at [[genesis]] and never modify them. Whatever round counts, MDS matrix, and round constants are deployed — those become part of the protocol specification, as immutable as SHA-256's initial [[hash]] values.
 
 ### 9.2 Parameter Freezing Strategy
 
@@ -365,11 +365,11 @@ If a second parameter set is ever needed (see §9.4), it creates a new identity 
 
 ### 9.3 Migration Requires Content Availability — Storage Proofs as Security Infrastructure
 
-The only possible migration path from one hash function to another is to rehash the original content. You cannot compute Poseidon3(content) from Poseidon2(content) — you need the content itself.
+The only possible migration path from one [[hash]] function to another is to rehash the original content. You cannot compute Poseidon3(content) from Poseidon2(content) — you need the content itself.
 
 This has a profound architectural consequence: storage and replication proofs are not a scaling feature — they are a security-critical prerequisite for hash function survivability.
 
-Without storage proofs guaranteeing that every particle's content remains retrievable, choosing Poseidon2 becomes a permanent, irreversible, single-point-of-failure commitment to a 3-year-old cryptographic primitive at planetary scale. This is unacceptable under zero-tolerance-for-error principles.
+Without storage proofs guaranteeing that every [[particle]]'s content remains retrievable, choosing Poseidon2 becomes a permanent, irreversible, single-point-of-failure commitment to a 3-year-old [[cryptography]] primitive at planetary scale. This is unacceptable under zero-tolerance-for-error principles.
 
 The dependency chain:
 
@@ -383,51 +383,51 @@ Hash function may need replacement (honest assessment)
 
 Requirements for storage proof system:
 
-- Coverage: Every particle in the graph must have at least k verified replicas (k ≥ 3 recommended)
-- Continuous verification: Storage proofs must be checked periodically, not just at creation time
+- Coverage: Every [[particle]] in the graph must have at least k verified replicas (k ≥ 3 recommended)
+- Continuous [[verification]]: Storage proofs must be checked periodically, not just at creation time
 - Content-complete: Proofs must verify the actual content bytes, not just the CID (otherwise rehashing is impossible)
 - Retrievability: The proof system must guarantee that content can be retrieved within bounded time, not just that it "exists somewhere"
-- Incentive-aligned: Neurons storing content must be economically rewarded for maintaining availability, and penalized for loss
+- Incentive-aligned: [[Neurons]] storing content must be economically rewarded for maintaining availability, and penalized for loss
 
-Without this system operational, CORE has no escape path from Poseidon2. This makes storage proofs the single highest-priority infrastructure component in the entire architecture.
+Without this system operational, [[CORE]] has no escape path from Poseidon2. This makes storage proofs the single highest-priority infrastructure component in the entire architecture.
 
 ### 9.4 Hash Function Migration Protocol (Requires §9.3)
 
 If and only if the storage proof system guarantees content availability, migration to a new hash function proceeds as follows:
 
-1. New identity space. The new hash function gets a new `param_set_id`. It does not replace the old one — it creates a parallel identity layer.
-2. Rehash campaign. Every particle's content is retrieved from the storage network and rehashed under the new function. The new CID is linked to the old CID via a canonical bridge cyberlink.
-3. Dual-CID period. Both old and new CIDs are valid references. Cyberlinks can reference either. Proofs accept both during transition.
-4. Cutoff. After full rehash coverage is verified, new content creation requires the new hash. Old CIDs remain valid as read-only historical references.
-5. Estimated duration at scale: For 10¹⁵ particles at ~50 MB/s algebraic hash throughput, full rehash takes approximately 10¹⁵ × 100 bytes / 50 MB/s ≈ 2 × 10⁹ seconds ≈ 63 years on one core. Parallelized across 10⁶ nodes: ~17 hours. Storage proof coverage and network bandwidth become the bottleneck, not hash speed.
+1. New identity space. The new [[hash]] function gets a new `param_set_id`. It does not replace the old one — it creates a parallel identity layer.
+2. Rehash campaign. Every [[particle]]'s content is retrieved from the storage network and rehashed under the new function. The new CID is linked to the old CID via a canonical bridge [[cyberlink]].
+3. Dual-CID period. Both old and new CIDs are valid references. [[Cyberlinks]] can reference either. Proofs accept both during transition.
+4. Cutoff. After full rehash coverage is verified, new content creation requires the new [[hash]]. Old CIDs remain valid as read-only historical references.
+5. Estimated duration at scale: For 10¹⁵ [[particles]] at ~50 MB/s algebraic [[hash]] throughput, full rehash takes approximately 10¹⁵ × 100 bytes / 50 MB/s ≈ 2 × 10⁹ seconds ≈ 63 years on one core. Parallelized across 10⁶ nodes: ~17 hours. Storage proof coverage and network bandwidth become the bottleneck, not [[hash]] speed.
 
 ### 9.5 Emergency Response (Poseidon2 Broken)
 
 If a practical attack breaks full-round Poseidon2 at 128-bit security:
 
-1. Immediate: Freeze new particle creation. Existing CIDs remain valid — collision resistance may be weakened but existing content identity is not retroactively compromised.
-2. 48 hours: Activate pre-staged fallback hash. The CID format's algorithm agility allows this without protocol redesign.
-3. Weeks 1–4: Begin rehash campaign under new hash (requires storage proof system from §9.3).
+1. Immediate: Freeze new [[particle]] creation. Existing CIDs remain valid — collision resistance may be weakened but existing content identity is not retroactively compromised.
+2. 48 hours: Activate pre-staged fallback [[hash]]. The CID format's algorithm agility allows this without protocol redesign.
+3. Weeks 1–4: Begin rehash campaign under new [[hash]] (requires storage proof system from §9.3).
 4. Months 1–6: Complete migration. Old CIDs archived as historical references.
 
-If storage proofs are not operational when this happens, CORE cannot migrate. This is the single most important reason to prioritize storage proof implementation.
+If storage proofs are not operational when this happens, [[CORE]] cannot migrate. This is the single most important reason to prioritize storage proof implementation.
 
 ---
 
 ## 10. Open Questions
 
-### 10.1 Field Choice (Critical, Unresolved)
+### 10.1 [[Field]] Choice (Critical, Unresolved)
 
-The hash function decision is incomplete without choosing the field. This determines the proving ecosystem:
+The [[hash]] function decision is incomplete without choosing the [[field]]. This determines the proving ecosystem:
 
-| Field | Proving Ecosystem | Throughput | Trade-off |
+| [[Field]] | Proving Ecosystem | Throughput | Trade-off |
 |-------|-------------------|------------|-----------|
-| Goldilocks | Miden, Triton VM | Moderate | 64-bit native arithmetic, Tip5 compatibility |
+| [[Goldilocks field]] | Miden, Triton VM | Moderate | 64-bit native arithmetic, Tip5 compatibility |
 | M31 | Stwo (Circle STARKs) | Highest (2M+ hashes/sec) | StarkWare ecosystem lock |
 | BabyBear | Plonky3, SP1, RISC Zero | Very high | Polygon/Succinct ecosystem |
 | BN254 | Ethereum L1 precompiles | Lower | Direct L1 settlement |
 
-Recommendation: BabyBear or M31 for proving layer, with BN254 bridge for Ethereum settlement. Final decision requires separate ADR.
+Recommendation: BabyBear or M31 for proving layer, with BN254 bridge for Ethereum settlement. Final decision requires separate [[cip]].
 
 ### 10.2 Canonical Encoding Specification
 
@@ -447,7 +447,7 @@ LtHash over 𝔽ₚ needs:
 
 ### 10.4 Poseidon2 Round Count Finalization
 
-The Ethereum Foundation's cryptanalysis initiative (Phase 2 through Dec 2026) may result in updated round count recommendations. CORE should track these findings and be prepared to adopt updated parameters before mainnet launch.
+The Ethereum Foundation's [[cryptography]] initiative (Phase 2 through Dec 2026) may result in updated round count recommendations. [[CORE]] should track these findings and be prepared to adopt updated parameters before mainnet launch.
 
 ---
 
