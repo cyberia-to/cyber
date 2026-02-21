@@ -9,21 +9,21 @@ tags: trident
 
 ## Scope
 
-Trident → TIR → TASM → Triton VM → STARK. The language, the compiler, the prover. Each section identifies techniques no existing programming language implements, because no existing programming language operates over a prime field with an algebraic proof system as its native execution target.
+[[trident]] → TIR → TASM → Triton [[vm]] → STARK. The language, the compiler, the prover. Each section identifies techniques no existing programming language implements, because no existing programming language operates over a prime field with an algebraic proof system as its native execution target.
 
 ---
 
 # Part I: Algebraic Compilation — The Unbounded Opportunity
 
-No general-purpose compiler has ever exploited the algebraic structure of its execution domain, because general-purpose execution domains (x86, ARM, WASM) have no algebraic structure worth exploiting. Trident operates over the Goldilocks field $p = 2^{64} - 2^{32} + 1$. This field has extraordinary mathematical properties that a sufficiently smart compiler can weaponize.
+No general-purpose [[compilers]] has ever exploited the algebraic structure of its execution domain, because general-purpose execution domains (x86, ARM, WASM) have no [[algebra]] worth exploiting. Trident operates over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. This field has extraordinary mathematical properties that a sufficiently smart compiler can weaponize.
 
 ## 1.1 Goldilocks Field Properties the Compiler Can Exploit
 
-The Goldilocks prime has structural properties no other execution substrate offers:
+The Goldilocks prime has structural [[field]] properties no other execution substrate offers:
 
 **The Golden Ratio Identity**: $\varphi = 2^{32}$ satisfies $\varphi^2 = \varphi - 1 \pmod{p}$, which means $2^{64} \equiv 2^{32} - 1 \pmod{p}$. Any 128-bit product reduces to 64 bits with one shift and one subtraction. The compiler can replace modular reduction with bit manipulation.
 
-**Roots of Unity Hierarchy**: $2^{32}$ is a 6th root of unity. $2$ is a 192nd root of unity. $2^{24}$ is an 8th root of unity. Multiplication by any of these is a bit shift — zero multiplications, zero Processor table rows for the multiply.
+**Roots of Unity Hierarchy** ([[number theory]]): $2^{32}$ is a 6th root of unity. $2$ is a 192nd root of unity. $2^{24}$ is an 8th root of unity. Multiplication by any of these is a bit shift — zero multiplications, zero Processor table rows for the multiply.
 
 **Root of Unity Ladder**:
 ```
@@ -37,9 +37,9 @@ The Goldilocks prime has structural properties no other execution substrate offe
 
 **Smallest Generator**: $g = 7$ generates the entire multiplicative group. Every non-zero element is $7^k$ for some $k$. The compiler can use discrete log tables for small constants.
 
-**Large 2-Adic Subgroup**: $p - 1 = 2^{32} \times (2^{32} - 1)$. NTTs up to size $2^{32}$ are supported natively. The compiler can replace convolutions with NTTs for any power-of-2 length up to 4 billion.
+**Large 2-Adic Subgroup**: $p - 1 = 2^{32} \times (2^{32} - 1)$. [[fourier transform]] (NTTs) up to size $2^{32}$ are supported natively. The compiler can replace convolutions with NTTs for any power-of-2 length up to 4 billion.
 
-**Quadratic Extension**: $\mathbb{F}_{p^2}$ via irreducible $x^2 - 7$. Complex-like arithmetic with elements $(a_0, a_1)$ where multiplication uses only 3 base-field multiplies (Karatsuba).
+**Quadratic Extension**: $\mathbb{F}_{p^2}$ via irreducible $x^2 - 7$. Complex-like arithmetic with elements $(a_0, a_1)$ where multiplication uses only 3 base-field multiplies ([[linear algebra]] / Karatsuba).
 
 ---
 
@@ -47,7 +47,7 @@ The Goldilocks prime has structural properties no other execution substrate offe
 
 These are compiler optimization passes that exploit field-theoretic identities. No existing compiler has them because no existing compiler targets a prime field.
 
-### Pass 1: Fermat Reduction
+### Pass 1: Fermat Reduction ([[number theory]])
 
 **Identity**: $a^{p-1} \equiv 1$ for $a \neq 0$.
 
@@ -75,7 +75,7 @@ These are compiler optimization passes that exploit field-theoretic identities. 
 
 **Hamming weight optimization**: For constant $C$ with Hamming weight $w$, multiplication costs $w - 1$ additions and some shifts. If $w < 6$, this is cheaper than a general multiply. The compiler computes the Hamming weight of every constant and chooses the cheaper path.
 
-### Pass 4: Batch Inversion (Montgomery's Trick)
+### Pass 4: Batch Inversion (Montgomery's Trick) ([[optimization]])
 
 **Identity**: Given $k$ elements to invert, compute all inverses using 1 inversion + $3(k-1)$ multiplications instead of $k$ inversions.
 
@@ -104,7 +104,7 @@ result[0] = inv_all
 
 **For conditionals**: Code like `if has_sqrt(x) { ... }` can be partially evaluated when `x` is a known constant or derived from known values.
 
-### Pass 6: Polynomial Identity Collapse
+### Pass 6: Polynomial Identity Collapse ([[complexity theory]])
 
 **Schwartz-Zippel**: Two polynomials of degree $d$ over a field of size $p$ agree on a random point with probability $\leq d/p$. For Goldilocks, $d/p < 2^{-32}$ for any polynomial of degree $< 2^{32}$.
 
@@ -114,7 +114,7 @@ result[0] = inv_all
 
 ### Pass 7: NTT Auto-Vectorization
 
-**Identity**: Convolution of two sequences in the field can be computed via NTT (Number Theoretic Transform) in $O(n \log n)$ instead of $O(n^2)$.
+**Identity**: Convolution of two sequences in the field can be computed via NTT ([[fourier transform]]) in $O(n \log n)$ instead of $O(n^2)$.
 
 **Compiler detection**: The compiler identifies nested loops of the form `for i: for j: result[i+j] += a[i] * b[j]` and replaces with NTT-based convolution. This is the field-arithmetic analogue of auto-vectorization in CPU compilers.
 
@@ -240,7 +240,7 @@ fn transfer(a: Account, b: Account, amount: Field) -> Result<(), Error>
 }
 ```
 
-The type system tracks *which AET tables* a function touches and *how many rows* it adds to each. The compiler statically verifies that the implementation's cost falls within the declared bounds. If it exceeds, compilation fails with a cost-violation error.
+The [[type theory]] system tracks *which AET tables* a function touches and *how many rows* it adds to each. The compiler statically verifies that the implementation's cost falls within the declared bounds. If it exceeds, compilation fails with a cost-violation error.
 
 **Implications**:
 - Developers see proof cost at the type level, before running anything
@@ -328,7 +328,7 @@ fn sqrt_approx(x: Field) -> Field
 }
 ```
 
-`requires` and `ensures` clauses compile to additional STARK constraints. The program's execution proof IS the specification compliance proof. One proof, two purposes. No separate verification tool.
+`requires` and `ensures` clauses compile to additional [[zero knowledge proofs]] (STARK constraints). The program's execution proof IS the [[formal verification]] compliance proof. One proof, two purposes. No separate verification tool.
 
 ## 3.2 Invariant-Carrying Loops
 
@@ -356,7 +356,7 @@ The termination proof is embedded in the STARK proof: the Processor table has ex
 
 # Part IV: Cryptographic Primitives as Language Features
 
-## 4.1 Zero-Knowledge as a Type Modifier
+## 4.1 [[zero knowledge proofs]] as a Type Modifier
 
 ```trident
 zk fn secret_transfer(
@@ -384,9 +384,9 @@ assert!(verify(c, v, proof));       // Verification
 let (c1, c2, c3) = commit_batch(v1, v2, v3);
 ```
 
-Not library calls — language primitives. The compiler can optimize across commitment boundaries (e.g., batching multiple commitments into one Tip5 sponge absorption, reducing Hash table rows).
+Not library calls — language primitives. The compiler can optimize across commitment boundaries (e.g., batching multiple commitments into one Tip5 [[hash]] sponge absorption, reducing Hash table rows).
 
-## 4.3 Merkle Proofs as Iterators
+## 4.3 [[merklezation]] Proofs as Iterators
 
 ```trident
 for (leaf, auth_path) in merkle_tree.verified_walk(root) {
@@ -409,7 +409,7 @@ The compiler generates `merkle_step` TASM instructions and manages the authentic
 The endgame: `trident.trd` — a single Trident source file that, when compiled and executed on Triton VM, takes a Trident source as input and produces TASM as output. The execution produces a STARK proof.
 
 **Implications**:
-- The compiler's correctness is not argued — it's proven, every time it runs
+- The compiler's correctness is not argued — it's proven via [[verification]], every time it runs
 - Any compiler bug produces an invalid proof (the STARK catches it)
 - You don't trust the developer (verify the proof of execution)
 - You don't trust the compiler (verify the proof of compilation)
@@ -480,7 +480,7 @@ Enables aggressive compiler optimizations that are *usually* correct. The proof 
 
 # Part VII: Interoperability
 
-## 7.1 Proof-Carrying Code
+## 7.1 [[proof-carrying data]]
 
 Trident programs distributed as (TASM + STARK_proof) bundles. The recipient doesn't trust the sender — they verify the proof. Like signed code, but with mathematical guarantees instead of identity-based trust.
 
@@ -589,7 +589,7 @@ Every expression in the REPL shows its proof cost immediately. The developer bui
 
 # Part IX: Neural Network Techniques
 
-(Full detail in companion document "Neural Techniques for Trident")
+(Full detail in companion document [[Neural_Techniques_for_Trident]])
 
 ## 9.1 Foundation: `nn.trd` + Evolutionary Training
 ## 9.2 Predictive Trace Analysis
@@ -612,13 +612,13 @@ Every expression in the REPL shows its proof cost immediately. The developer bui
 
 # Part X: Mathematical Foundations
 
-## 10.1 Categorical Semantics for the Type System
+## 10.1 [[category theory]] Semantics for the Type System
 
 Trident's types form a category. Functions are morphisms. The compiler is a functor from the Trident category to the TASM category. Proving that this functor preserves equivalences gives compiler correctness as a mathematical theorem, not a test suite.
 
 **Concrete application**: If two Trident programs are equivalent (produce the same output for all inputs), the compiled TASM must also be equivalent. The categorical framework makes this a *proven property of the compiler* rather than a hoped-for empirical observation.
 
-## 10.2 Galois Theory for Extension Fields
+## 10.2 Galois Theory ([[algebra]]) for Extension Fields
 
 When Trident operates over extension fields ($\mathbb{F}_{p^2}$, $\mathbb{F}_{p^4}$), the Galois group structure enables automatic optimization of extension field arithmetic. Frobenius automorphisms ($x \mapsto x^p$) are free in the base field and cheap in extensions. The compiler can use Galois theory to find the cheapest way to compute extension field operations.
 
@@ -669,4 +669,4 @@ This is the unbounded opportunity. The deeper you go into the field theory, the 
 
 *The language that proves itself. The compiler that optimizes itself. The proof system that verifies itself. Not by trust, but by algebra.*
 
-*purpose. link. energy.*
+*purpose. link. [[energy]].*
