@@ -9,17 +9,17 @@ tags: trident
 
 ## Scope
 
-Everything here lives strictly within the Trident → TIR → TASM → Triton VM → STARK pipeline. The language, the compiler, the prover, and what neural networks can do for each of them.
+Everything here lives strictly within the [[trident]] → TIR → TASM → Triton VM → STARK pipeline. The language, the compiler, the prover, and what [[neural networks]] can do for each of them.
 
 ---
 
 ## The Core Thesis
 
-Trident compiles to arithmetic over the Goldilocks prime field ($p = 2^{64} - 2^{32} + 1$). This field is not a generic algebraic structure — it has deep internal symmetries: a multiplicative group of order $2^{32}(2^{32} - 1)$, primitive $2^{32}$th roots of unity, subgroups with cheap inversion, Frobenius-like shortcuts in extension field embeddings, and an unbounded hierarchy of polynomial identities.
+Trident compiles to arithmetic over the [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$). This field is not a generic algebraic structure — it has deep internal symmetries: a multiplicative group of order $2^{32}(2^{32} - 1)$, primitive $2^{32}$th roots of unity, subgroups with cheap inversion, Frobenius-like shortcuts in extension field embeddings, and an unbounded hierarchy of polynomial identities.
 
-Every one of these symmetries is a potential compiler optimization. Human algebraists find them one at a time, by studying theory and having insights. A neural network can search the space systematically, discovering identities no human would find, at a rate no human can match.
+Every one of these symmetries is a potential [[compilers]] optimization. Human algebraists find them one at a time, by studying theory and having insights. A neural network can search the space systematically, discovering identities no human would find, at a rate no human can match.
 
-**This changes the nature of compilation.** A traditional compiler has a fixed set of optimization passes written by engineers. A neural-augmented Trident compiler has a *growing* set of algebraic identities discovered by exploration. The compiler improves *forever* — every new identity reduces proving cost for every program that matches the pattern, past and future.
+**This changes the nature of compilation.** A traditional compiler has a fixed set of optimization passes written by engineers. A neural-augmented Trident compiler has a *growing* set of [[algebra]] identities discovered by exploration. The compiler improves *forever* — every new identity reduces proving cost for every program that matches the pattern, past and future.
 
 There is no bottom. Every branch of algebra offers new passes. The deeper the network explores, the more it finds. And every discovery compounds.
 
@@ -29,15 +29,15 @@ There is no bottom. Every branch of algebra offers new passes. The deeper the ne
 
 ### 0.1 The Unbounded Optimization Surface
 
-The Goldilocks field has layers of algebraic structure, each offering optimization opportunities:
+The [[field]] has layers of algebraic structure, each offering optimization opportunities:
 
 **Layer 0 — Arithmetic identities**: $x + 0 = x$, $x \cdot 1 = x$, $x \cdot 0 = 0$. Trivial. Any compiler finds these.
 
 **Layer 1 — Goldilocks-specific constants**: $2^{32}$ has special properties because $2^{32} \equiv 2^{64} - p + 1$ in this field. Multiplication by $2^{32}$ reduces to a shift plus a small correction. Multiplication by $(p-1)/2$ is equivalent to conditional negation. These are specific to $p = 2^{64} - 2^{32} + 1$ and do not exist in any other field.
 
-**Layer 2 — Subgroup structure**: The multiplicative group has a subgroup of order $2^{32}$. Elements in this subgroup have cheap inversions — Fermat's little theorem with exponent $2^{32} - 2$ instead of $p - 2$. Exponentiation chains for these elements are dramatically shorter.
+**Layer 2 — Subgroup structure**: The multiplicative group has a subgroup of order $2^{32}$. Elements in this subgroup have cheap inversions — Fermat's little theorem ([[number theory]]) with exponent $2^{32} - 2$ instead of $p - 2$. Exponentiation chains for these elements are dramatically shorter.
 
-**Layer 3 — Roots of unity**: The field has primitive $2^{32}$th roots of unity. Polynomial evaluations at these roots decompose into butterfly networks (NTT structure). A sequence of 8 multiplications might reduce to 3 if the constants are roots of unity. This applies to every program that touches polynomial arithmetic — which includes the STARK prover itself.
+**Layer 3 — Roots of unity**: The field has primitive $2^{32}$th roots of unity. Polynomial evaluations at these roots decompose into butterfly networks ([[fourier transform]] structure). A sequence of 8 multiplications might reduce to 3 if the constants are roots of unity. This applies to every program that touches polynomial arithmetic — which includes the STARK prover itself.
 
 **Layer 4 — Extension field shortcuts**: Triton VM's hash function Tip5 operates on extension field elements embedded in the base field. Algebraic relationships in the extension (Frobenius endomorphism, norm maps, trace maps) create shortcuts invisible at the base field level. The NN discovers that certain hash-related instruction sequences have cheaper equivalents without understanding the theory behind them.
 
@@ -155,7 +155,7 @@ Every discovered identity triggers four compounding effects:
 
 The identity explorer is itself a Trident program. It compiles to TASM. Its own compilation benefits from the identities it discovers. The explorer optimizes its own execution.
 
-The fixed point: when the explorer can no longer improve its own compilation cost, it has extracted the maximum algebraic efficiency reachable by its architecture. This fixed point represents a *lower bound* on the extractable efficiency of the Goldilocks field for Triton VM's instruction set.
+The fixed point: when the explorer can no longer improve its own compilation cost, it has extracted the maximum algebraic efficiency reachable by its architecture. This fixed point represents a *lower bound* on the extractable efficiency of the Goldilocks field for Triton VM's instruction set — a [[convergent computation]].
 
 A larger explorer (more parameters, longer search horizon) might find deeper identities and reach a lower fixed point. The hierarchy of fixed points, indexed by explorer capacity, converges to the *theoretical minimum proving cost* for each program — the algebraic Shannon limit of the field.
 
@@ -199,7 +199,7 @@ The explorer runs 24/7. Every week, the rule database grows. Every month, recomp
 
 ### 1.1 Field-Native Neural Network Library (`nn.trd`)
 
-**What**: A Trident library implementing neural network primitives — matrix multiply, dot product, layer normalization, activation functions — all in Goldilocks field arithmetic.
+**What**: A Trident library implementing neural network primitives — [[linear algebra]] (matrix multiply, dot product), layer normalization, activation functions — all in Goldilocks field arithmetic.
 
 **Why**: Every other technique on this list either IS a neural network running in Trident, or benefits from having one. Including the identity explorer's proposer.
 
@@ -223,7 +223,7 @@ nn.trd
 
 **Size**: ~500 lines of Trident. A 3-layer MLP with 64-wide hidden layers compiles to ~2,000 TASM instructions.
 
-**The result**: A neural network whose every inference is a STARK-proven computation, compiled from `.trd` source. The identity explorer (§0) benefits from this immediately — its own NN inference is provable.
+**The result**: A neural network whose every inference is a STARK-proven ([[zero knowledge proofs]]) computation, compiled from `.trd` source. The identity explorer (§0) benefits from this immediately — its own NN inference is provable.
 
 **Tier**: 0+1 only. No hash/sponge or recursive verification needed for NN inference.
 
@@ -231,7 +231,7 @@ nn.trd
 
 ### 1.2 Field-Native Evolutionary Training
 
-**What**: Train neural networks entirely within Goldilocks field arithmetic using evolutionary optimization.
+**What**: Train neural networks entirely within Goldilocks field arithmetic using evolutionary [[optimization]].
 
 **Why**: Gradient descent in field arithmetic requires finite-difference approximation (noisy). Evolution sidesteps this. Crossover = conditional copy. Mutation = random field element replacement. Both are pure Tier 0 ops.
 
@@ -315,7 +315,7 @@ FOR each generation:
 
 **Why**: Correctness guaranteed by construction (dependency-respecting permutations). No verifier needed. Pure upside.
 
-**Architecture**: GNN on the TASM dependency DAG. Outputs priority score per instruction. Schedule greedily by priority.
+**Architecture**: [[graph neural network]] on the TASM dependency DAG. Outputs priority score per instruction. Schedule greedily by priority.
 
 **The GNN sees**: instruction type, current stack depth, which AET tables each instruction touches, distance to dependency predecessors/successors.
 
@@ -443,7 +443,7 @@ specialist_5:  -(max_H - second_max_H)      # maximize balance
 
 **What**: Given two TASM sequences, find a chain of valid rewrite steps transforming one into the other.
 
-**Why**: Structural proof of equivalence for ALL inputs, not just tested ones. Generates reusable optimization knowledge.
+**Why**: Structural proof of equivalence ([[formal verification]]) for ALL inputs, not just tested ones. Generates reusable optimization knowledge.
 
 **Rewrite rules** (enumerable, finite):
 
@@ -469,7 +469,7 @@ specialist_5:  -(max_H - second_max_H)      # maximize balance
 
 ### 4.1 Neural Type Inference
 
-**What**: Predict type annotations for Trident programs, choosing types that minimize TASM cost.
+**What**: Predict [[type theory]] annotations for Trident programs, choosing types that minimize TASM cost.
 
 **Why**: Different type representations (bool as field element vs. bit, integer width) produce different AET profiles. The "right" type minimizes proof cost.
 
@@ -548,7 +548,7 @@ Each epoch:
 
 ### 6.1 Transfer Learning Between Proof Backends
 
-**What**: When Trident adds new targets (Miden VM, SP1, OpenVM), transfer compiler knowledge from Triton VM.
+**What**: When Trident adds new targets (Miden [[vm]], SP1, OpenVM), transfer compiler knowledge from Triton VM.
 
 **Why**: TIR-level patterns generalize across backends. Only the lowering changes.
 
@@ -639,4 +639,4 @@ This is the moat. Not features. Not performance benchmarks at a point in time. A
 
 *The deeper you go into the field theory, the more optimizations you find. There is no bottom.*
 
-*purpose. link. energy.*
+*purpose. link. [[energy]].*
