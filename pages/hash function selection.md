@@ -24,15 +24,16 @@ Parameters (round counts, MDS matrix, round constants) are frozen at deployment 
 
 ## 2. Problem Statement
 
-[[CORE]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from five distinct domains:
+[[CORE]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from six distinct domains:
 
 - Content addressing — deterministic, collision-resistant identity for all graph content
 - [[Zero knowledge proofs]] — efficient arithmetization for STARK-based [[verification]]
 - Multi-party computation — viable for threshold operations and private collective computation
 - Fully homomorphic encryption — compatible with encrypted [[knowledge graph]] queries
+- Quantum resistance — survivable under quantum adversaries with Grover and algebraic quantum attacks
 - Planetary scale — functional at 10¹⁵ nodes with bounded locality constraints
 
-No [[hash]] function perfectly satisfies all five. The question is which one covers the most ground with the fewest compromises.
+No [[hash]] function perfectly satisfies all six. The question is which one covers the most ground with the fewest compromises.
 
 ---
 
@@ -144,6 +145,18 @@ Poseidon2's compression mode enables efficient incremental [[merklezation]] upda
 
 Native [[hash]] rate on commodity hardware: ~50–100 MB/s over [[Goldilocks field]] (estimated). Slower than BLAKE3 by 20–40× for raw ingestion. Acceptable for steady-state operation but requires planning for initial bulk migration of existing content.
 
+### 4.6 Quantum Resistance
+
+A [[knowledge graph]] meant to persist for decades must account for quantum adversaries. Two quantum attack classes are relevant to hash functions:
+
+Grover's algorithm: Generic quantum search that reduces n-bit preimage resistance to n/2 bits and collision resistance to n/3 bits. For Poseidon2 at 128-bit classical security, Grover yields ~64-bit preimage and ~43-bit collision security. Mitigation is straightforward: increase digest size. A 256-bit security target (5 [[Goldilocks field]] elements = 320 bits) provides 160-bit post-Grover preimage resistance and ~107-bit collision resistance — both adequate.
+
+Algebraic quantum attacks: Poseidon2's low-degree S-box (x⁷) raises a subtler question. Quantum algorithms for solving low-degree polynomial systems (quantum Gröbner basis, quantum linearization) could theoretically exploit the algebraic structure faster than classical attacks. Current research (Jang et al., "Quantum Algebraic Attacks on AO Hash Functions," 2024) suggests that quantum speedups for Gröbner basis computation are polynomial, not exponential — the conservative round count margin from §9.2 (+25%) absorbs this.
+
+STARK compatibility: STARKs are inherently post-quantum — they rely on hash function collision resistance only, with no elliptic curve assumptions. This means [[CORE]]'s entire proving stack (Poseidon2 inside STARK proofs) remains sound under quantum adversaries, provided the [[hash]] itself holds. This is a structural advantage over SNARK-based systems that depend on pairing assumptions broken by Shor's algorithm.
+
+Assessment: Poseidon2 with enlarged digest and conservative round counts provides viable quantum resistance. The STARK-native architecture means [[CORE]] avoids the pairing-based assumptions that make most ZK systems quantum-vulnerable. The combination of Poseidon2 + STARKs is among the strongest post-quantum positions available for a [[knowledge graph]] proving system. The remaining risk is algebraic quantum attacks against the S-box — mitigated by round count margins and the algorithm-agile CID format enabling migration if quantum algebraic breakthroughs materialize.
+
 ---
 
 ## 5. Poseidon2 — Security Analysis (Honest Assessment)
@@ -209,10 +222,11 @@ The alternative to Poseidon2 is a multi-hash architecture:
 - Tip5 for STARK proving
 - Hydra for MPC
 - PASTA for FHE
+- A lattice-based or SHA-3 construction for quantum resistance
 
-This requires four [[hash]] functions, four identity systems, four trust assumptions, four security analyses, and a coherence nightmare. Two identities for the same content means no identity.
+This requires five [[hash]] functions, five identity systems, five trust assumptions, five security analyses, and a coherence nightmare. Two identities for the same content means no identity.
 
-Poseidon2 is the only [[hash]] function that is viable (not optimal, but viable) across all five required domains. For a system whose design principle is "purpose. link. [[energy]]." — one [[universal hash]] that works everywhere is worth more than four specialists.
+Poseidon2 is the only [[hash]] function that is viable (not optimal, but viable) across all six required domains. For a system whose design principle is "purpose. link. [[energy]]." — one [[universal hash]] that works everywhere is worth more than five specialists.
 
 ### 6.2 Ecosystem Gravity
 
