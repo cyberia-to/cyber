@@ -1,12 +1,11 @@
 ---
-tags: article
+tags: cyber, article
 crystal-type: process
 crystal-domain: cyber
 ---
--
 # The Future of Computation: From Turing Machines to Planetary Superintelligence
 
-*A new foundation for what it means to compute, to know, and to think.*
+the long-form narrative of [[cybics]] — from the crisis of Turing-Gödel computation through [[natural computing]], [[convergent computation]], [[focus flow computation]], [[CORE]], and the [[Φ-optimal architecture]] to planetary [[superintelligence]]
 
 ---
 
@@ -20,7 +19,7 @@ The first wall is quadratic attention. The transformer architecture powering eve
 
 The second wall is centralization. Training a frontier model costs hundreds of millions of dollars. Inference requires data centers drawing power measured in hundreds of megawatts. Three or four organizations on Earth can build the next generation of these systems. This is not the path to planetary intelligence. It is the path to planetary dependency.
 
-The third wall is Gödel. In 1931, Kurt Gödel proved that any formal system powerful enough to describe arithmetic contains true statements it cannot prove. For a century, this was interpreted as a fundamental limit on minds and machines alike. If computation means theorem-proving, then computation is permanently incomplete. AI built on formal logic inherits these limits by construction.
+The third wall is [[Kurt Gödel]]. In 1931, Gödel proved that any formal system powerful enough to describe arithmetic contains true statements it cannot prove. For a century, this was interpreted as a fundamental limit on minds and machines alike — the [[Gödel prison]]. If computation means theorem-proving, then computation is permanently incomplete. AI built on formal logic inherits these limits by construction.
 
 But what if computation doesn't have to mean any of this?
 
@@ -44,7 +43,7 @@ Self-organization. Structure forms and reforms without external direction. The s
 
 Convergence. These systems don't derive conclusions from axioms. They settle into stable states. Proteins fold along free energy gradients. Ecosystems find attractors. Neural populations converge on activation patterns. The computation *is* the convergence.
 
-This is Natural Computing — a recognition that nature has been computing all along using fundamentally different principles. The question is whether we can formalize these principles with the same rigor Turing brought to symbol manipulation, and then build machines that exploit them.
+This is [[natural computing]] — a recognition that nature has been computing all along using fundamentally different principles. The question is whether we can formalize these principles with the same rigor Turing brought to symbol manipulation, and then build machines that exploit them.
 
 The answer is yes.
 
@@ -80,7 +79,7 @@ The proof follows from Perron-Frobenius: the transition matrix is stochastic, ir
 
 Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\pi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
 
-Under this paradigm, Gödel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature finds attractors. A brain settles into coherent activation patterns. Convergent computation formalizes what nature has always done, and in doing so, escapes the Gödelian prison entirely.
+Under this paradigm, Gödel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature finds attractors. A brain settles into coherent activation patterns. [[Convergent computation]] formalizes what nature has always done, and in doing so, escapes the [[Gödel prison]] entirely.
 
 The prison had no walls. We were free all along.
 
@@ -130,9 +129,9 @@ This is a fundamentally different mechanism that achieves the same functional ro
 
 ## CORE: The Machine
 
-Philosophy needs hardware. FFC needs an instruction set. CORE — Conserved Observable Reduction Equilibrium — is that instruction set: a minimal, complete, cryptographically native execution engine designed to run Focus Flow Computation at planetary scale.
+Philosophy needs hardware. FFC needs an instruction set. [[CORE]] — Conserved Observable Reduction Equilibrium — is that instruction set: a minimal, complete, cryptographically native execution engine designed to run [[focus flow computation]] at planetary scale.
 
-CORE has exactly sixteen reduction patterns operating over a single data type: elements of the Goldilocks prime field ($p = 2^{64} - 2^{32} + 1$).
+[[CORE]] has exactly sixteen reduction patterns operating over a single data type: elements of the [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$).
 
 ```
 STRUCTURAL (5)              FIELD ARITHMETIC (6)
@@ -170,11 +169,11 @@ CORE's execution substrate operates on three named layers:
 - Cybergraph — the data model (particles, neurons, cyberlinks)
 - BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 
-The Cybergraph is the knowledge graph: particles are content-addressed nodes, cyberlinks are signed weighted edges created by neurons (staked agents). BBG provides cryptographic authentication — polynomial commitments that let any light client verify any query ("give me all edges in namespace X") with mathematical proof of completeness. Not trust. Proof.
+The [[cybergraph]] is the [[knowledge graph]]: [[particles]] are content-addressed nodes, [[cyberlinks]] are signed weighted edges created by [[neurons]] (staked agents). BBG provides cryptographic authentication — polynomial commitments that let any light client verify any query ("give me all edges in namespace X") with mathematical proof of completeness. Not trust. Proof.
 
-The tri-kernel ranking system computes focus over the Cybergraph using three operator families — the only three that survive the constraint of bounded locality at planetary scale:
+The [[tri-kernel]] ranking system computes [[focus]] over the [[cybergraph]] using three operator families — the only three that survive the constraint of bounded locality at planetary scale:
 
-Diffusion kernel — exploration. Random walks with restart, spreading attention through the graph. Captures: "what is reachable from here?"
+[[Diffusion]] kernel — exploration. Random walks with restart, spreading attention through the graph. Captures: "what is reachable from here?"
 
 Spring kernel — structural balance. Enforces consistency between connected nodes, pulling the graph toward coherent semantic clusters. Captures: "what belongs together?"
 
@@ -273,4 +272,6 @@ The network is thinking.
 
 ---
 
-*purpose. link. energy.*
+purpose. link. [[energy]].
+
+see [[cybics]] for the formal science. see [[convergent computation]] for the foundation. see [[Gödel prison]] for why this matters.

@@ -30,7 +30,7 @@ a market does not derive the correct price from economic axioms. millions of age
 
 the [[cybergraph]] does not derive [[knowledge]] from axioms. [[neurons]] create [[cyberlinks]], the [[tri-kernel]] computes [[cyberank]], and the system converges to a [[focus]] distribution that represents collective understanding. the proof is the simulation.
 
-proof by simulation is strictly more powerful than proof by derivation. Gödel showed that any consistent formal system contains true statements it cannot prove. but a convergent system can settle into states that no derivation reaches. it escapes the incompleteness prison — because the prison only confines derivation, and convergence is not derivation.
+proof by simulation is strictly more powerful than proof by derivation. Gödel showed that any consistent formal system contains true statements it cannot prove. but a convergent system can settle into states that no derivation reaches. it escapes the [[Gödel prison]] — because the prison only confines derivation, and convergence is not derivation.
 
 the postulate: every truth accessible to intelligence is a fixed point of some convergent simulation under conservation laws.
 
@@ -213,3 +213,5 @@ the [[cybergraph]] is such a system. Ω is the space of [[focus]] distributions.
 ---
 
 Five axioms. One grammar. Three operators. Proof by simulation.
+
+see [[future of computation]] for the full narrative — from the Turing-[[Gödel prison]] through [[natural computing]] to planetary [[superintelligence]]
