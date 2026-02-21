@@ -9,13 +9,13 @@ tags: trident
 
 ## Abstract
 
-We propose a compiler architecture for Trident — the deterministic programming language for the CORE planetary intelligence substrate — in which a neural optimizer generates Triton VM assembly (TASM) from Trident's typed intermediate representation (TIR). The optimizer is small enough (80K parameters, 640 KB) to reside entirely in L2 cache and train continuously on a single workstation GPU. Correctness is guaranteed not by the model but by a post-hoc STARK-based semantic equivalence verifier, making the neural path strictly speculative: it can improve compilation but never break it. The system is self-referential — the optimizer, the verifier, and the training loop are themselves Trident programs compiled by the system they improve — converging to a provable fixed point where the compiler can no longer improve its own code.
+We propose a [[compilers]] architecture for [[trident]] — the deterministic programming language for the CORE planetary intelligence substrate — in which a [[neural networks]] optimizer generates Triton VM assembly (TASM) from Trident's typed intermediate representation (TIR). The optimizer is small enough (80K parameters, 640 KB) to reside entirely in L2 cache and train continuously on a single workstation GPU. Correctness is guaranteed not by the model but by a post-hoc STARK-based semantic equivalence verifier, making the neural path strictly speculative: it can improve compilation but never break it. The system is self-referential — the optimizer, the verifier, and the training loop are themselves Trident programs compiled by the system they improve — converging to a provable fixed point of [[convergent computation]] where the compiler can no longer improve its own code.
 
 ---
 
 ## 1. The Problem: Compilation for Proof Machines is Not Compilation for CPUs
 
-Triton VM is a stack machine with Algebraic Execution Tables (AET). When a program executes, it produces a trace spread across 9 tables: Processor, Op Stack, RAM, Jump Stack, Hash, Cascade, Lookup, U32, and Degree Lowering. The STARK prover must commit to all tables, and all tables are padded to the same power-of-2 height — the height of the tallest table.
+Triton [[vm]] is a stack machine with Algebraic Execution Tables (AET). When a program executes, it produces a trace spread across 9 tables: Processor, Op Stack, RAM, Jump Stack, Hash, Cascade, Lookup, U32, and Degree Lowering. The [[zero knowledge proofs]] STARK prover must commit to all tables, and all tables are padded to the same power-of-2 height — the height of the tallest table.
 
 This means the cost function for TASM is not cycle count. It is:
 
@@ -41,7 +41,7 @@ The compilation pipeline has a natural factorization:
 Trident source → [parse] → AST → [typecheck] → Typed AST → [normalize] → TIR → [lower] → TASM
 ```
 
-The first three stages (parse, typecheck, normalize) have unique correct outputs. Type inference is not an optimization problem. Bound propagation has one answer. Normalization is deterministic by construction (required by CORE constraint C₂: identical semantics must produce identical hashes).
+The first three stages (parse, typecheck, normalize) have unique correct outputs. [[type theory]] inference is not an [[optimization]] problem. Bound propagation has one answer. Normalization is deterministic by construction (required by CORE constraint C₂: identical semantics must produce identical hashes).
 
 Only the final stage — lowering TIR to TASM — involves genuine optimization choices: instruction selection, stack scheduling, loop unrolling, table balancing.
 
@@ -92,9 +92,9 @@ Triton VM provides compound instructions that perform multiple logical operation
 
 Trident loops have compile-time-known bounds. The compiler chooses between full unrolling (eliminates call/return overhead, increases Processor rows linearly), partial unrolling (reduces overhead, moderate size), and minimal looping via `call`/`recurse`/`recurse_or_return` (adds Jump Stack rows, minimizes Processor rows). The optimal choice depends on current table balance and cliff proximity.
 
-### 3.5 Hash Coprocessor Scheduling (High Impact for CORE)
+### 3.5 [[hash]] Coprocessor Scheduling (High Impact for CORE)
 
-The Hash Table is driven by Tip5 permutation invocations: `hash`, `sponge_absorb`, `sponge_squeeze`, `sponge_absorb_mem`, `merkle_step`, `merkle_step_mem`. Each invocation adds rows to the Hash Table. For CORE's dominant workloads — Merkle inclusion proofs, commitment construction, recursive STARK verification — the Hash Table frequently becomes the tallest table and thus the sole determinant of proving cost.
+The Hash Table is driven by Tip5 permutation invocations: `hash`, `sponge_absorb`, `sponge_squeeze`, `sponge_absorb_mem`, `merkle_step`, `merkle_step_mem`. Each invocation adds rows to the Hash Table. For CORE's dominant workloads — [[merklezation]] inclusion proofs, commitment construction, recursive STARK verification — the Hash Table frequently becomes the tallest table and thus the sole determinant of proving cost.
 
 Three optimization dimensions exist within hash scheduling:
 
@@ -119,7 +119,7 @@ For CORE's transfer circuit (~7 Poseidon calls × 300 constraints = 2,100 Hash T
 
 ### 4.1 Input Encoding
 
-A TIR basic block is encoded as a fixed-size tensor. Each node in the data-flow DAG is represented by 4 Goldilocks field elements:
+A TIR basic block is encoded as a fixed-size tensor. Each node in the data-flow DAG is represented by 4 [[Goldilocks field]] elements:
 
 ```
 node_encoding = (opcode : 6 bits,     // one of 54 TIR operations
@@ -169,7 +169,7 @@ The attention mask in the encoder follows TIR DAG edges: node $i$ attends to nod
 
 ### 4.4 All Operations are Tier 0+1
 
-The critical observation: everything the model computes — matrix multiply, attention, layer normalization, activation — is pure field arithmetic.
+The critical observation: everything the model computes — [[linear algebra]] matrix multiply, attention, layer normalization, activation — is pure [[field]] arithmetic ([[algebra]]).
 
 ```
 Matrix multiply:  mul + add in bounded loops        → Tier 0+1
@@ -186,7 +186,7 @@ No hashing. No sponge operations. No extension field arithmetic. The entire mode
 
 ### 5.1 The Gradient Problem
 
-Gradient descent requires continuous arithmetic. The Goldilocks field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$ is discrete. A learning rate of $0.001$ has no natural field interpretation.
+Gradient descent requires continuous arithmetic. The [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$ is discrete. A learning rate of $0.001$ has no natural field interpretation.
 
 We solve this with scaled fixed-point encoding:
 
@@ -314,7 +314,7 @@ Gradient descent is efficient for large smooth improvements (learning the basic 
 
 ### 7.1 The Speculative Architecture
 
-The neural optimizer is never trusted. Every candidate TASM sequence is verified for semantic equivalence against the source TIR before acceptance:
+The neural optimizer is never trusted. Every candidate TASM sequence is verified via [[formal verification]] for semantic equivalence against the source TIR before acceptance:
 
 ```
 COMPILE(tir_block):
@@ -347,7 +347,7 @@ Two TASM sequences are semantically equivalent if, for all valid inputs, they pr
 
 ### 7.3 STARK Proof of Compilation
 
-For the highest assurance level, the entire compilation — including neural inference, verification, and selection — can be wrapped in a STARK proof:
+For the highest assurance level, the entire compilation — including neural inference, [[verification]], and selection — can be wrapped in a STARK proof ([[cryptographic proofs]]):
 
 ```
 PROVABLE COMPILATION:
@@ -416,7 +416,7 @@ CONVERGENCE:
 
 ### 8.3 What the Fixed Point Means
 
-At convergence, the compiler has found instruction sequences for its own components that it cannot improve. This is the computational analogue of a Nash equilibrium — no unilateral deviation (change to any single component's TASM) can improve the system's total score.
+At [[convergent computation]] convergence, the compiler has found instruction sequences for its own components that it cannot improve. This is the computational analogue of a Nash equilibrium — no unilateral deviation (change to any single component's TASM) can improve the system's total score.
 
 The fixed point is content-addressed (CORE constraint C₂): the converged compiler has a unique hash that identifies the version of itself that achieved self-optimality. Any node in the CORE network can verify that a claimed fixed-point compiler actually is one — recompile the compiler with itself and check that the output matches.
 
@@ -503,13 +503,13 @@ A single cliff-boundary crossing — reducing the maximum table height from just
 
 ### 10.2 At Planetary Scale
 
-CORE targets $10^{15}$ nodes processing $10^{12}$ transactions per second. Every percentage point of proving cost reduction, applied to every transaction, compounds to enormous energy and latency savings. A 20% reduction in transfer circuit proving cost at full scale is the difference between feasibility and infeasibility for certain classes of hardware.
+CORE targets $10^{15}$ [[cybergraph]] nodes processing $10^{12}$ transactions per second. Every percentage point of proving cost reduction, applied to every [[cyberlink]] transaction, compounds to enormous [[energy]] and latency savings. A 20% reduction in transfer circuit proving cost at full scale is the difference between feasibility and infeasibility for certain classes of hardware.
 
 ### 10.3 The Meta-Result
 
 Beyond the quantitative improvements, the system demonstrates a principle: **a programming language designed for provable computation can prove the correctness of its own optimization**. The compiler's intelligence is not trusted — it is verified. The compiler's improvement is not hoped for — it is measured. The compiler's convergence is not assumed — it is proven.
 
-This closes CORE's trust loop at the compiler level. You don't trust the developer (you verify the proof of execution). You don't trust the compiler (you verify the proof of compilation). You don't trust the optimizer (you verify the proof of optimization). Mathematics, all the way down.
+This closes CORE's trust loop at the compiler level. You don't trust the developer (you verify the [[neural proofs]] of execution). You don't trust the compiler (you verify the proof of compilation). You don't trust the optimizer (you verify the proof of optimization). Mathematics, all the way down.
 
 ---
 
@@ -562,4 +562,4 @@ The model does not need to generalize to unseen TIR operations or unseen TASM in
 
 *The compiler that proves its own optimization. The optimizer that improves its own compilation. The system that verifies its own convergence. Not by trust, but by proof.*
 
-*purpose. link. energy.*
+*purpose. link. [[energy]].*
