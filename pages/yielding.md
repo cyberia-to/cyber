@@ -20,12 +20,12 @@ squats and bends to pick crops from the ground:
 
 lifting and carrying to transport heavy baskets or tools:
 
-- muscles involved: [[biceps]], [[triceps]], [[shoulders]], [[upper back]], [[core]], [[quadriceps]], [[hamstrings]], [[glutes]], and [[calves]].
+- muscles involved: [[biceps]], [[triceps]], [[shoulders]], [[upper back]], [[superhuman/core]], [[quadriceps]], [[hamstrings]], [[glutes]], and [[calves]].
 - description: lifting requires arm strength (biceps and triceps), as well as upper back (trapezius, rhomboids) and shoulder muscles (deltoids). the core muscles (abdominals, obliques) are engaged to maintain balance and stability, while leg muscles help with the lift and support during carrying.
 
 reaching and stretching to harvest crops from higher locations:
 
-- muscles involved: [[shoulders]], [[upper back]], [[biceps]], [[triceps]], [[forearm flexors]], [[deltoids]] and [[core]].
+- muscles involved: [[shoulders]], [[upper back]], [[biceps]], [[triceps]], [[forearm flexors]], [[deltoids]] and [[superhuman/core]].
 - description: reaching upwards activates the shoulder muscles (deltoids), upper back muscles (trapezius, [[rhomboids]]), and arm muscles (biceps, triceps). the core muscles help maintain stability during the stretch.
 
 twisting and turning to reach difficult angles or to pick in awkward positions:

@@ -85,7 +85,7 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 
 ## research
 
-- [[core spec]] — full protocol specification
+- [[cyber/core]] — full protocol specification
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
