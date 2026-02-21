@@ -56,7 +56,7 @@ the operator: (L + μI)x* = μx₀
 
 enforces structural coherence via the graph [[Laplacian]]. prevents chaotic dispersal. creates [[hierarchy]] without central authority. exponential decay guarantees [[locality]].
 
-### heat — adaptation
+### [[heat kernel]] — adaptation
 
 multi-scale smoothing across time. thermal diffusion anneals metals, [[metabolism]] adapts organisms, seasonal [[succession]] reshapes ecosystems, emotional arousal reshapes attention.
 
