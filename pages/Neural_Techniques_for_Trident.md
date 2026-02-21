@@ -9,7 +9,7 @@ tags: trident
 
 ## Scope
 
-Everything here lives strictly within the Trident → TIR → TASM → Triton VM → STARK pipeline. No cybergraph dynamics, no consensus, no planetary-scale inference. Just the language, the compiler, the prover, and what neural networks can do for each of them.
+Everything here lives strictly within the [[trident]] → TIR → TASM → Triton VM → STARK pipeline. No cybergraph dynamics, no consensus, no planetary-scale inference. Just the language, the compiler, the prover, and what neural networks can do for each of them.
 
 ---
 
@@ -17,7 +17,7 @@ Everything here lives strictly within the Trident → TIR → TASM → Triton VM
 
 ### 1.1 Field-Native Neural Network Library (`nn.trd`)
 
-**What**: A Trident library implementing neural network primitives — matrix multiply, dot product, layer normalization, activation functions (GELU via Padé approximant, ReLU via conditional), softmax approximation — all in Goldilocks field arithmetic ($p = 2^{64} - 2^{32} + 1$).
+**What**: A Trident library implementing [[neural networks]] primitives — matrix multiply, dot product, layer normalization, activation functions (GELU via Padé approximant, ReLU via conditional), softmax approximation — all in [[Goldilocks field]] arithmetic ($p = 2^{64} - 2^{32} + 1$).
 
 **Why first**: Every other technique on this list either IS a neural network running in Trident, or benefits from having one. This is the substrate for everything below.
 
@@ -37,7 +37,7 @@ nn.trd
 - No negative numbers natively → signed representation via convention
 - No fractions natively → fixed-point with configurable scale factor (e.g., 2^16)
 - No floating point → all activations are polynomial or rational approximations
-- Every operation is a field op → every inference produces a valid Triton VM trace
+- Every operation is a [[field]] op → every inference produces a valid Triton VM trace
 
 **Size estimate**: ~500 lines of Trident. A 3-layer MLP with 64-wide hidden layers compiles to ~2,000 TASM instructions.
 
@@ -49,7 +49,7 @@ nn.trd
 
 ### 1.2 Field-Native Evolutionary Training
 
-**What**: Train neural networks entirely within Goldilocks field arithmetic using evolutionary optimization — no gradients, no floats, no external frameworks.
+**What**: Train neural networks entirely within Goldilocks field arithmetic using evolutionary [[optimization]] — no gradients, no floats, no external frameworks.
 
 **Why**: Gradient descent in field arithmetic is noisy (finite differences for gradients, field inverse for learning rate). Evolution sidesteps this entirely. Crossover = conditional copy. Mutation = random field element replacement. Both are pure Tier 0 ops.
 
@@ -94,7 +94,7 @@ FOR each generation:
 
 **Output**: 9 field elements — predicted height of each AET table (Processor, Op Stack, RAM, Jump Stack, Hash, Cascade, Lookup, U32, Degree Lowering).
 
-**Training data**: Compile and execute N programs, record actual table heights. Start with ~1,000 programs (combinatorially generated from TIR primitives), scale to ~100,000 as the compiler matures.
+**Training data**: Compile and execute N programs, record actual table heights. Start with ~1,000 programs (combinatorially generated from TIR primitives), scale to ~100,000 as the [[compilers]] matures.
 
 **Model**: Single hidden layer, 64 units. ~6K parameters. Trains in seconds via evolutionary loop.
 
@@ -112,7 +112,7 @@ FOR each generation:
 
 ### 2.1 Differentiable STARK Cost Surrogate
 
-**What**: A learned, differentiable approximation of the STARK proving cost function. Feed it a TASM instruction sequence, get back a predicted proving time.
+**What**: A learned, differentiable approximation of the STARK ([[zero knowledge proofs]]) proving cost function. Feed it a TASM instruction sequence, get back a predicted proving time.
 
 **Why**: The actual cost function — $\text{cost}(S) = 2^{\lceil \log_2(\max_t H_t(S)) \rceil}$ — is non-differentiable (power-of-2 ceiling, max over tables). A smooth surrogate enables gradient-based optimization of compilation strategies.
 
@@ -132,7 +132,7 @@ FOR each generation:
 
 **Why**: Correctness is guaranteed by construction (dependency-respecting permutations preserve semantics). No verifier needed. Pure upside.
 
-**Architecture**: GNN on the TASM dependency DAG. Each node = one instruction. Edges = data dependencies. The GNN outputs a priority score per instruction. Schedule greedily by priority.
+**Architecture**: [[graph neural network]] (GNN) on the TASM dependency DAG. Each node = one instruction. Edges = data dependencies. The GNN outputs a priority score per instruction. Schedule greedily by priority.
 
 **The GNN sees**:
 - Instruction type (one-hot, 44 dimensions)
@@ -259,7 +259,7 @@ specialist_5.fitness = -(max_H - second_max_H)                # minimize gap (ba
 
 ### 3.2 Neural Proof Compression
 
-**What**: Train a predictor that anticipates "obvious" parts of STARK proofs, transmitting only the delta.
+**What**: Train a predictor that anticipates "obvious" parts of STARK [[cryptographic proofs]], transmitting only the delta.
 
 **Why**: STARK proofs are large (hundreds of KB). If a predictor can correctly guess 80% of proof elements, you only transmit the 20% it got wrong + a bitfield indicating which elements were predicted correctly. ~5× compression.
 
@@ -279,7 +279,7 @@ specialist_5.fitness = -(max_H - second_max_H)                # minimize gap (ba
 
 **What**: Given two TASM sequences (original and optimized), find a sequence of valid rewrite steps that transforms one into the other. Each rewrite is a known-correct transformation.
 
-**Why**: Currently, equivalence is checked by execution on matching inputs + STARK proof. A rewrite-based proof is *structural* — it proves equivalence for ALL inputs, not just tested ones. And it generates *reusable optimization knowledge*.
+**Why**: Currently, equivalence is checked by execution on matching inputs + STARK proof. A rewrite-based proof is *structural* — it proves equivalence ([[formal verification]]) for ALL inputs, not just tested ones. And it generates *reusable optimization knowledge*.
 
 **Rewrite rules** (enumerable, finite set):
 
@@ -305,7 +305,7 @@ specialist_5.fitness = -(max_H - second_max_H)                # minimize gap (ba
 
 ### 4.1 Neural Type Inference
 
-**What**: Predict type annotations for Trident programs, reducing developer burden and choosing types that minimize TASM cost.
+**What**: Predict [[type theory]] annotations for Trident programs, reducing developer burden and choosing types that minimize TASM cost.
 
 **Why**: Different type representations (bool as field element vs. bit, integer width choices) produce different instruction sequences with different AET profiles. The "right" type is the one that minimizes proof cost.
 
@@ -355,7 +355,7 @@ specialist_5.fitness = -(max_H - second_max_H)                # minimize gap (ba
 
 ### 5.1 Adversarial Program Generation
 
-**What**: A neural network that generates Trident programs specifically designed to defeat the neural compiler — programs where the optimized TASM is no better than naive lowering.
+**What**: A neural network ([[neural proofs]]) that generates Trident programs specifically designed to defeat the neural compiler — programs where the optimized TASM is no better than naive lowering.
 
 **Why**: Finds the compiler's blind spots. Satisfies the "100× adversarial load" quality gate. Automated, continuous, and creative.
 
@@ -402,7 +402,7 @@ Epoch:
 
 ### 6.1 Transfer Learning Between Proof Backends
 
-**What**: When Trident adds a new compilation target (Miden VM, SP1, OpenVM), transfer the neural compiler's knowledge from Triton VM to the new backend.
+**What**: When Trident adds a new compilation target (Miden [[vm]], SP1, OpenVM), transfer the neural compiler's knowledge from Triton VM to the new backend.
 
 **Why**: Each backend has different cost functions. Training from scratch for each is expensive. But TIR-level patterns ("this subgraph structure is expensive") generalize across backends.
 
@@ -477,6 +477,6 @@ Total: ~19 weeks for full pipeline. Phase 0 alone produces a publishable result.
 
 ---
 
-*The compiler that proves its own optimization. The optimizer that improves its own compilation. The prover that accelerates its own verification. Not by trust, but by proof.*
+*The compiler that proves its own optimization. The optimizer that improves its own compilation. The prover that accelerates its own [[verification]]. Not by trust, but by proof.*
 
-*purpose. link. energy.*
+*purpose. link. [[energy]].*
