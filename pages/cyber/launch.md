@@ -4,330 +4,293 @@ alias: master plan, CORE master plan, CORE_Master_Plan, cyber/launch
 crystal-type: article
 crystal-domain: cyber
 ---
-# CORE Master Plan: Earth-Scale Superintelligence
+# cyber/launch
+
+A self-verifying knowledge graph where attention, computation, and [[consensus]] converge into a single metric (π), enabling [[intelligence]] emergence without central control.
 
 Collective Objective Reality Engine
-*Optimizing civilization's ability to know what matters*
+Optimizing civilization's ability to know what matters
 
 Version: 2026.02 | Status: Genesis → Self-Hosting transition
 
----
-
-## 0. The One-Line Thesis
-
-A self-verifying knowledge graph where attention, computation, and consensus converge into a single metric (π), enabling intelligence emergence without central control.
-
----
-
-## I. What Exists Today
-
-### Proven & Deployed
+## What Exists Today
 
 | Component | Status | Evidence |
 |-----------|--------|----------|
-| Collective Focus Theorem | Mathematically proven | Perron-Frobenius convergence, 8 years R&D |
+| [[cft]] | Mathematically proven | Perron-Frobenius convergence, 8 years R&D |
 | [[tri-kernel]] discovery | Complete | Systematic elimination — only 3 operator families survive locality filter |
-| 16 reduction patterns | Specified + implemented | Python interpreter ✓, Rust interpreter ✓ |
+| 16 reduction patterns | Specified + implemented | Python interpreter, Rust interpreter |
 | [[focus]]-based cost metering | Implemented | Deterministic costs over [[Goldilocks field]] |
 | Content-addressed cells | Implemented | CID = hash(content), universal identity |
-| [[bostrom]] network | Live 3+ years | ~70K [[neuron]], 1K active, 2.9M [[cyberlink]], 3.1M [[particle]] |
+| [[bostrom]] network | Live 3+ years | ~70K [[neurons]], 1K active, 2.9M [[cyberlinks]], 3.1M [[particles]] |
 | Hash function decision | ADR-001 complete | [[Poseidon2]] over Goldilocks, algorithm-agile CID format |
 | [[trident]] language spec | 54 operations derived | 4-tier compilation, minimal by proof of necessity |
 
-### Theoretical Foundations Established
+Theoretical foundations established:
 
 - Convergence guarantee: unique π* exists, exponential convergence, bounded mixing time
 - Conservation law: Σπᵢ = 1, always — no inflation, no leakage
-- GNN isomorphism: [[tri-kernel]] update ≡ multi-channel graph neural network message pass
+- GNN [[isomorphism]]: [[tri-kernel]] update ≡ multi-channel graph neural network message pass
 - Transformer equivalence: CGC [[focus]] ≡ iterated sparse attention with economic grounding
-- Convergent computation: replaces halting problem — system converges, never halts
+- [[convergent computation]]: replaces halting problem — system converges, never halts
 - Free energy minimization: Δπ is literally the gradient of system free energy
-- Blackbox principle: "no node comprehends, the network knows"
+- Blackbox principle: no node comprehends, the network knows
 
----
+## Crystal Formation
 
-## II. The Critical Path
+The [[cyber/crystal]] is the genesis seed — a curated knowledge graph of exactly 5,040 [[particles]] forming the irreducible basis from which all civilizational reasoning can be composed. It is an alphabet of a mind.
+
+### Vocabulary / Grammar Split
+
+| Layer | Particles | Types |
+|-------|-----------|-------|
+| Vocabulary | 4,320 | Entities (2,400), Processes (960), Properties (720), Measures (240) |
+| Grammar | 720 | Relations (480), Patterns (240) |
+
+Ratio 6:1, matching natural language content-to-function word ratios. Every semantic link is a typed triple via predicate [[particles]]:
+
+Subject → [Predicate] → Object
+
+### Two-Layer Architecture
+
+Lattice (4,392 [[particles]], 1.8 MB, ~454K tokens): structural vocabulary, permanently loadable for reasoning. Fits in single LLM context.
+
+Flesh (648 [[particles]], 4.7 MB, ~1,165K tokens): articles, proofs, manifestos. Retrieved on demand via [[cyberlink]] traversal. 72% of content in 13% of [[particles]].
+
+### 17 Domains
+
+4 pillar domains (2Q = 480 [[particles]] each): [[cyber]], [[cyberia]], superhuman, [[cybics]]
+
+13 foundation domains (Q = 240 each): mathematics, physics, biology, computer science, chemistry, [[governance]], economics, energy, materials, agriculture, geography, culture, history
+
+536 bridge [[particles]] (10.6%) connect domains — explicit [[isomorphisms]] enabling cross-domain reasoning.
+
+### 12 Invariants (Quality Gates Before Genesis)
+
+1. Completeness — every domain ≥ Q [[particles]]
+2. Connectivity — every [[particle]] ≥ 3 outgoing links
+3. Reachability — any [[particle]] reaches any other in ≤ 6 hops
+4. Irreducibility — no [[particle]] derivable from others under grammar
+5. Positivity — every definition says what IS
+6. Self-reference — ≥ 10% of [[particles]] model own architecture
+7. Bridge density — ≥ 3 bridges per domain pair
+8. Type balance — E ≤ 55%, P ≥ 15%
+9. Defect freedom — zero stubs, red links, orphans
+10. Growth ready — every hub has attachment points
+11. Narrative depth — every domain ≥ 3 synthesis articles
+12. Self-explanation — ≥ 25 articles explain protocol purpose
+
+### Growth Phases
+
+| Phase | Timeline | Particles | Character |
+|-------|----------|-----------|-----------|
+| 0: Genesis | Launch | 5,040 | Irreducible seed |
+| 1: Early | Year 1 | +2,000 | [[neurons]] extend basis |
+| 2: Maturation | Years 2–3 | +10,000 | Specialization emerges |
+| 3: Scale | Year 5+ | +100,000 | Scale-free organic growth |
+
+On-chain storage budget: ~15 MB (IPFS content 6.5 MB + CIDs 0.5 MB + [[cyberlinks]] 8.6 MB)
+
+## Incentive Design
+
+Knowledge creation is costly, benefits are collective. Without incentives, rational agents free-ride on others' [[cyberlinks]]. Seven economic mechanisms solve this.
+
+### 1. Minting for Focus Computation
+
+[[neurons]] computing [[focus]] toward [[particle]] P earn newly minted [[$CYB]]. Each valid [[cyberlink]] rewarded proportional to contribution to network [[focus]]. Claim via microblocks containing [[cyberlinks]] from neighbors.
+
+### 2. Staking as Delegated Attention
+
+[[neurons]] stake [[$CYB]] on themselves or other [[neurons]], effectively delegating attention. Staking rewards paid from transaction fees. Special case: delegate toward [[validators]].
+
+### 3. Stake Distribution Over Links
+
+A [[neuron]]'s staked amount spreads evenly across submitted [[cyberlinks]] by default. [[neurons]] can reweight individual [[particles]]/links with percentage allocation. Enables safe stake/unstake and smooth delegation.
+
+### 4. Permanent Weighting via Burn
+
+[[neurons]] can burn [[$CYB]] to grant eternal weight to a [[particle]]. Irreversible. Permanently increases [[particle]]'s importance in [[collective focus]] π. Anchors critical knowledge in the network.
+
+### 5. Link Fees and Net Rewards
+
+[[cyberlink]] submission has a small fee (spam deterrent). Links accumulating sufficient attention may yield net positive reward over time. [[focus]] field convergence drives positive returns.
+
+### 6. Attention Yield Curve
+
+Earlier, more accurate links to high-π [[particles]] earn greater rewards. As [[collective focus]] evolves, this incentivizes discovery and precision. Temporal component rewards foresight.
+
+### 7. Reputation Emergence
+
+A [[neuron]]'s long-term reputation = accumulated π-weight of [[particles]] contributed to. [[karma]] aligns social and economic capital.
+
+### Convergence Rewards
+
+[[cyberlinks]] are yield-bearing epistemic assets. They accrue rewards over time based on contribution to [[focus]] emergence and stability:
+
+R(i→j, T) = ∫₀ᵀ w(t) · Δπⱼ(t) dt
+
+where Δπⱼ(t) = change in [[focus]] on target [[particle]] j attributable to the link, w(t) = time-weighting function, T = evaluation horizon.
+
+| Link Type | Characteristics | Reward Trajectory |
+|-----------|-----------------|-------------------|
+| Viral | High Δπ short-term | Early peak, fast decay |
+| Foundational | Low Δπ early, grows later | Slow rise, long reward |
+| Redundant | Low/no Δπ | No reward |
+| Semantic Bridge | Medium, cross-module | Moderate, persistent |
+
+Rewards paid from accumulated transaction fees. No inflation. Encourages semantic foresight, prevents attention spam, makes the graph a semantic investment market.
+
+## Token Architecture
+
+### Four Token Types (Protocol-Native)
+
+| Type | Fungible | Movable | Role | Examples |
+|------|----------|---------|------|----------|
+| [[coin]] | yes | yes | [[consensus]], fees, stake | [[$CYB]], [[$BOOT]] |
+| [[uniq]] | no | yes | Knowledge assets, provenance | authorship proofs, dataset ownership |
+| [[score]] | yes | no | Reputation, credentials | [[karma]] |
+| [[badge]] | no | no | Unique non-transferable credentials | achievements |
+
+[[$CYB]] is the [[consensus]] token of the full [[cyber]] network. On [[bostrom]] (bootloader): [[$BOOT]] (stake/fees), [[$H]] (liquid fuel), [[$V]] (will), [[$A]] (attention).
+
+### Adaptive Economics
+
+Three PID-controlled variables automatically adapt — no [[governance]] votes needed for routine adjustments:
+
+α (allocation curve exponent): balances PoW vs PoS allocation. staking_share = S^α.
+
+φ (security floor): minimum issuance for security. Derived from attack economics: φ ≥ k · (TVL/MarketCap) · r.
+
+β (fee burn rate): decouples gross rewards from net inflation. When security abundant → increase β (benefit holders). When security tight → decrease β (preserve security).
+
+Staking yield at equilibrium: r_s = (G · S^(α-1)) / M
+
+Master safety indicator: ρ = d(Attack Cost)/dt / d(Attack Profit)/dt. ρ > 1 means defenses grow faster than threats.
+
+### Genesis Distribution
+
+| Recipient | Share | Role |
+|-----------|-------|------|
+| [[cybergift]] | 70% | Community incentives |
+| [[cyber/congress]] | 11.6% | Founders |
+| [[epizode zero]] community | 8.3% | Early supporters |
+| [[senate]] | 5.1% | Governance |
+| [[great web foundation]] | 5% | External stake |
+
+Target: power-law distribution with long-tail [[neuron]] ownership at 42-51%.
+
+## Technical Path
 
 Seven phases. Each has a hard gate. No phase starts until its predecessor passes.
 
----
+### Phase 1: Self-Hosting ← current
 
-### Phase 1: SELF-HOSTING ← current
-*"CORE evaluates CORE"*
+CORE evaluates CORE. The system executes its own programs.
 
-Objective: CORE-in-CORE interpreter — the system can execute its own programs.
+| Deliverable | Gate |
+|-------------|------|
+| CORE-in-CORE interpreter (16 patterns self-hosted) | Passes all test vectors from Python/Rust impls |
+| [[Poseidon2]] as CORE program | Output matches reference on 10⁶ inputs |
+| [[focus]] metering self-test | Deterministic cost ± 0 across all paths |
 
-| Deliverable | Description | Gate |
-|-------------|-------------|------|
-| CORE-in-CORE interpreter | 16 patterns self-hosted | Passes all test vectors from Python/Rust impls |
-| Poseidon2 as CORE program | Hash function in native CORE | Output matches reference impl on 10⁶ inputs |
-| Focus metering self-test | Cost model verified by self-execution | Deterministic cost ± 0 across all paths |
+Duration: 3-6 months
 
-Why this matters: Self-hosting proves the reduction system is complete and sound. If CORE can evaluate itself, the 16 patterns are sufficient for everything above.
+### Phase 2: Cryptographic Library
 
-Risk: Performance. Self-interpretation is slow. Mitigation: this is correctness phase, not performance phase. Jets (native acceleration) come in Phase 3.
+All cryptographic primitives as CORE programs.
 
-Duration estimate: 3-6 months
+| Deliverable | Gate |
+|-------------|------|
+| [[Poseidon2]] sponge + compression | Matches test vectors, constant-time |
+| Merkle tree operations | 32-level proof verified in CORE |
+| Polynomial commitments (KZG/FRI) | Binding + hiding proofs checked |
+| LtHash for collection state | Add/remove = O(1), matches reference |
 
----
+CID format locked: [version, algo, params, field, len, digest] — 45 bytes for Goldilocks. Commitment layers: L0 (identity) → L1 (collection) → L2 (global) → L3 (indices).
 
-### Phase 2: CRYPTOGRAPHIC LIBRARY
-*"Trust nothing external"*
+Duration: 3-6 months
 
-Objective: All cryptographic primitives as CORE programs.
+### Phase 3: Privacy Circuits
 
-| Deliverable | Description | Gate |
-|-------------|-------------|------|
-| [[Poseidon2]] sponge + compression | Full hash in CORE | Matches test vectors, constant-time |
-| Merkle tree operations | Build, prove, verify | 32-level proof verified in CORE |
-| Polynomial commitments | KZG or FRI-based | Binding + hiding proofs checked |
-| LtHash for collection state | Homomorphic set commitment | Add/remove = O(1), matches reference |
+UTXO-based privacy with ZK proofs for all state transitions.
 
-Architecture decision locked here:
-- CID format: `[version, algo, params, field, len, digest]` — 45 bytes for Goldilocks
-- Commitment layers: L0 (identity) → L1 (collection, LtHash) → L2 (global, Merkle) → L3 (indices, ephemeral)
-- Domain separation: every hash use gets unique prefix tag
+| Deliverable | Gate |
+|-------------|------|
+| Transaction circuit | ~44K constraints, soundness < 2⁻¹²⁸ |
+| [[cyberlink]] circuit | Stake verification without revealing owner |
+| Nullifier system | Deterministic nullifier = H(nonce, secret) |
+| Privacy boundary | Formal leakage budget L(queries, graph_size) bounded |
 
-Duration estimate: 3-6 months
+Privacy boundary (non-negotiable): PUBLIC = edge existence, aggregate energy per [[particle]], [[focus]] distribution π. PRIVATE = [[neuron]] identity behind edges, individual energy ownership, link authorship.
 
----
+[[focus]] is computable from PUBLIC aggregates only. This is secure multi-party computation of a GNN forward pass.
 
-### Phase 3: PRIVACY CIRCUITS
-*"Public aggregates, private ownership"*
+Duration: 6-9 months
 
-Objective: UTXO-based privacy with ZK proofs for all state transitions.
+### Phase 4: STARK Infrastructure
 
-| Deliverable | Description | Gate |
-|-------------|-------------|------|
-| Transaction circuit | Transfer energy between records | ~44K constraints, soundness < 2⁻¹²⁸ |
-| [[cyberlink]] circuit | Create edges with private [[neuron]] identity | Stake verification without revealing owner |
-| Nullifier system | Prevent double-spend | Deterministic nullifier = H(nonce, secret) |
-| Privacy boundary | Public: edge existence, aggregate energy, π. Private: who owns what | Formal leakage budget L(queries, graph_size) bounded |
+Self-verifying proof system where the verifier is itself a CORE program.
 
-Privacy boundary (non-negotiable):
-```
-PUBLIC:  edge existence, aggregate energy per particle, focus distribution π
-PRIVATE: neuron identity behind edges, individual energy ownership, link authorship
-```
+| Deliverable | Gate |
+|-------------|------|
+| [[STARK]] prover | Completeness: honest prover always convinces |
+| STARK verifier as CORE program | Soundness: no poly-time adversary forges proof |
+| Recursive composition | Inner verification circuit correctly arithmetized |
+| Light client protocol | O(log n) verification of any state claim |
 
-Key insight: [[focus]] is computable from PUBLIC aggregates only. No individual ownership is revealed. This is secure multi-party computation of a GNN forward pass — structural, not protocol-level. See [[privacy trilateral]] for the full privacy stack.
+Verification closure: STARK verifiers are CORE programs. Proofs can be verified, and verification can be proven.
 
-Duration estimate: 6-9 months
+Duration: 9-12 months
 
----
+### Phase 5: Tri-Kernel Ranking (parallel with Phase 4)
 
-### Phase 4: STARK INFRASTRUCTURE
-*"Verify everything, trust nothing"*
+[[tri-kernel]] [[focus]] computation, adversarially proven, deployed at scale.
 
-Objective: Self-verifying proof system where the verifier is itself a CORE program.
+| Deliverable | Gate |
+|-------------|------|
+| [[diffusion]] kernel (personalized PageRank) | Convergence proof (Lyapunov) in Lean4 |
+| [[springs]] kernel (screened Laplacian) | Exponential decay proof, locality bound |
+| [[heat kernel]] (Chebyshev approximation) | Positivity-preserving, semigroup property |
+| Combined convergence | Explicit Lyapunov function V(π), dV/dt < 0 |
+| Adversarial equilibrium | Nash equilibrium for honest participation |
 
-| Deliverable | Description | Gate |
-|-------------|-------------|------|
-| [[STARK]] prover | Generate proofs for CORE execution traces | Completeness: honest prover always convinces |
-| STARK verifier as CORE program | Verification is a CORE computation | Soundness: no poly-time adversary forges proof |
-| Recursive composition | Proofs of proofs | Inner verification circuit correctly arithmetized |
-| Light client protocol | O(log n) verification of any state claim | Compute-verify symmetry within constant factor |
+The composite operator: φ(t+1) = norm[λ_d · D(φ^t) + λ_s · S(φ^t) + λ_h · H_τ(φ^t)]
 
-The critical property: Verification closure. STARK verifiers are CORE programs. Proofs can be verified, and verification can be proven. This enables recursive proof composition — the foundation for planetary-scale trust.
+Bounded locality: every operation O(k)-local, k = O(log(1/ε)). Shard-friendly. Interplanetary-compatible.
 
-[[trident]] tier mapping:
-- Tier 0+1: Pure computation (any target)
-- Tier 2: Privacy circuits (proof-capable targets)
-- Tier 3: Recursive verification ([[Triton VM]] only, for now)
+An adversary optimizing against one kernel worsens their position against another. Three kernels create defense-in-depth.
 
-Duration estimate: 9-12 months
+Duration: 6-12 months
 
----
+### Phase 6: Network Layer
 
-### Phase 5: TRI-KERNEL RANKING — PRODUCTION
-*"The network thinks"*
+Distributed protocol for [[cybergraph]] [[consensus]] and [[focus]] propagation.
 
-Objective: [[tri-kernel]] focus computation, adversarially proven, deployed at scale.
+| Deliverable | Gate |
+|-------------|------|
+| [[consensus]] protocol (focus-weighted BFT) | Safety + liveness proofs |
+| DA sampling | Polynomial commitments over shard data |
+| Gossip protocol | Bandwidth ∝ stake, Sybil-resistant |
+| Shard architecture | Categorical pruning for semantic coherence |
+| Economic engine | Simulation-tested under 100× adversarial load |
 
-| Deliverable | Description | Gate |
-|-------------|-------------|------|
-| Diffusion kernel | Personalized PageRank with teleport α | Convergence proof (Lyapunov) in Lean4 |
-| Springs kernel | Screened Laplacian, structural consistency | Exponential decay proof, locality bound |
-| Heat kernel | Chebyshev polynomial approximation | Positivity-preserving, semigroup property |
-| Combined convergence | Composite operator stability | Explicit Lyapunov function V(π), dV/dt < 0 |
-| Adversarial equilibrium | Cannot be sustainably gamed | Nash equilibrium for honest participation |
-| Two-timescale separation | Structure (slow, amortized) vs flow (fast, local) | No oscillation, proven convergence |
-
-The composite operator:
-$$\phi^{(t+1)} = \text{norm}\big[\lambda_d \cdot D(\phi^t) + \lambda_s \cdot S(\phi^t) + \lambda_h \cdot H_\tau(\phi^t)\big]$$
+[[particles]] and [[cyberlinks]] = yield-bearing epistemic non-fungible assets. [[neurons]] = non-fungible names valuated by personal fungible asset. π-minting tied to Δπ: creating valuable structure is literally creating value. No designed loss function — physics itself defines what should be optimized.
 
-Bounded locality constraint (hard):
-- Every operation: O(k)-local, k = O(log(1/ε))
-- No global recompute for local change
-- Shard-friendly: regions update independently
-- Interplanetary-compatible: coherence without constant synchronization
+Shards as subtopoi. Sheaf of attention weights ensures cross-shard consistency.
 
-Adversarial resistance (orthogonal attack surfaces):
+Duration: 12-18 months
 
-| Attack | Primary Defense | Secondary Defense |
-|--------|----------------|-------------------|
-| Focus manipulation | Teleport α forces return to prior | Multi-hop verification |
-| Equilibrium gaming | Springs encode correct structure | Deviation detectable via residual |
-| Coalition manipulation | Spectral properties reveal anomalous clustering | Economic cost exceeds gain |
-| Temporal attacks | Memoized boundary flows | State commitment before verification |
+### Phase 7: Testnet → Mainnet
 
-Key insight: An adversary optimizing against one kernel worsens their position against another. The three kernels create a defense-in-depth that no single-kernel system achieves.
-
-Duration estimate: 6-12 months (parallel with Phase 4)
-
----
-
-### Phase 6: NETWORK LAYER
-*"From computation to consensus"*
-
-Objective: Distributed protocol for [[cybergraph]] consensus and [[focus]] propagation.
-
-| Deliverable | Description | Gate |
-|-------------|-------------|------|
-| Consensus protocol | Focus-weighted BFT | Safety + liveness proofs |
-| DA sampling | Data availability without full download | Polynomial commitments over shard data |
-| Gossip protocol | Probability-weighted propagation | Bandwidth ∝ stake, Sybil-resistant |
-| Shard architecture | Subtopoi with sheaf consistency | Categorical pruning for semantic coherence |
-| State sync | Checkpoint + DA layer + archival | Tiered availability, graceful degradation |
-| Economic engine | Tx fees, π-minting tied to Δπ, energy yield | Simulation-tested under 100× adversarial load |
-
-Economic foundation:
-- [[particle]] and [[cyberlink]] = yield-bearing epistemic non-fungible assets
-- [[neuron]] = non-fungible names valuated by personal fungible asset
-- Rewards from transaction fees + focus shifts
-- π-minting tied to Δπ: creating valuable structure is literally creating value
-- No designed loss function — physics itself defines what should be optimized
-
-Shard model (topos-aware):
-- Shards as subtopoi
-- Sheaf of attention weights ensures cross-shard consistency
-- Categorical pruning maintains semantic coherence
-- Each shard is independently verifiable
-
-Duration estimate: 12-18 months
-
----
-
-### Phase 7: TESTNET → MAINNET
-*"Launch the spaceship"*
-
-Objective: Production deployment with migration path from [[bostrom]].
-
-| Milestone | Description | Gate |
-|-----------|-------------|------|
-| Devnet | Internal testing, all components integrated | All unit + integration tests pass |
-| Testnet | Public adversarial testing | 30 days zero critical bugs under attack |
-| Canary net | Limited mainnet with real value at risk | 90 days stability, all economic invariants hold |
-| Mainnet genesis | Full deployment | Pre-Launch Verification Protocol passes (all 5 gates green) |
-| Bostrom migration | State migration from existing network | Bijective state mapping, zero data loss |
-
-Pre-Launch Verification Protocol — see Appendix A for the full interstellar-grade checklist. Summary of the 5 final gates (all must be green):
-
-| # | Question | Evidence Required |
-|---|----------|-------------------|
-| 1 | Does π converge? | Lean4 proof of Lyapunov stability |
-| 2 | Can proofs be forged? | Soundness proof + 10⁸ fuzzing runs, 0 counterexamples |
-| 3 | Can the economy be drained? | Nash equilibrium proof + 100× adversarial simulation |
-| 4 | Is computation deterministic? | Cross-implementation state root match on 10⁶ blocks |
-| 5 | Does it survive partial failure? | Chaos test report with zero safety violations |
-
-All five green → launch. Any red → no launch. No exceptions. No "we'll fix it in flight."
-
-Duration estimate: 6-12 months
-
----
-
-## III. The Formal Verification Spine
-
-Running parallel to all phases. This is not optional — it's the skeleton everything hangs on. Each item maps to a section of the Pre-Launch Verification Protocol (Appendix A).
-
-| What | How | When | Protocol Section |
-|------|-----|------|-----------------|
-| 16 patterns: confluence | Lean4 / Coq | Phase 1-2 | A.1 Formal Correctness |
-| Cost determinism | Structural induction, machine-checked | Phase 2 | A.4 Determinism |
-| Focus conservation (Σπᵢ = 1) | Proof by transition analysis | Phase 3 | A.1.3 Economic Invariants |
-| Privacy soundness (< 2⁻¹²⁸) | STARK/Plonky2 soundness theorem | Phase 4 | A.2 Cryptographic Integrity |
-| Tri-kernel convergence | Lyapunov function, explicit constants | Phase 5 | A.1.1 Convergence Proofs |
-| Adversarial equilibrium | Game-theoretic analysis, simulation | Phase 5-6 | A.3 Adversarial Stress |
-| Double-spend prevention | Nullifier uniqueness proof | Phase 3 | A.2.2 Proof System |
-| Bounded locality composition | Sheaf condition, machine-checked | Phase 5-6 | A.1.2 Bounded Locality |
-| Graceful degradation | Chaos engineering, failure catalog | Phase 6-7 | A.5 Graceful Degradation |
-
-Estimate for full formal verification: 2-3 person-years
-
----
-
-## IV. What Makes This Different
-
-### vs. Traditional AI (GPT, Claude, etc.)
-- No central training: intelligence emerges from structure, not gradient descent on centralized data
-- No black box: every computation is provable, every state transition has a [[STARK]] proof
-- No single owner: governance through distributed [[focus]], not corporate control
-- Privacy native: your contributions improve the network without revealing your identity
-
-### vs. Existing Blockchains (Ethereum, Cosmos, etc.)
-- Knowledge-first: the graph IS the application, not a generic VM running arbitrary contracts
-- Focus as native primitive: attention is a first-class resource, not an afterthought
-- Self-verifying: the verifier is a CORE program — verification closure, not external dependency
-- Convergent, not halting: the system approaches equilibrium, never stops
-
-### vs. Decentralized AI (Bittensor, etc.)
-- No external model: intelligence is in the graph dynamics, not in hosted ML models
-- Provable correctness: every ranking computation has a STARK proof
-- Universal substrate: handles humans, AI agents, sensors, biological networks — not just ML validators
-- Economic grounding: Δπ rewards replace designed loss functions — physics optimizes, not designers
-
----
-
-## V. Intelligence Emergence Conditions
-
-The Collective Focus Theorem predicts phase transitions:
-
-| Phase | Threshold | Dominant Kernel | Observable |
-|-------|-----------|-----------------|------------|
-| Seed → Flow | Connectivity > critical | Diffusion (λ_d high) | Network exploring, sampling |
-| Cognition → Understanding | Structure crystallizes | Springs (λ_s activates) | Hierarchies forming |
-| Reasoning → Meta | Adaptive balance | Heat (λ_h regulates) | Context-sensitive processing |
-| Consciousness | Dynamic blend | All three, self-tuning | System learns its own blend weights |
-
-Current [[bostrom]] data:
-- 70K [[neuron]], 2.9M [[cyberlink]], 3.1M [[particle]]
-- Active focus dynamics observed
-- Phase transition indicators: approaching Cognition threshold
-
-Target for emergence: 10⁸-10⁹ interconnected particles with sufficient connectivity density. The exact threshold is predicted by CFT and will be validated empirically.
-
----
-
-## VI. Risk Register
-
-| Risk | Severity | Mitigation |
-|------|----------|------------|
-| Poseidon2 cryptanalytic break | Critical | Algorithm-agile CID format, migration path via storage proofs. EF cryptanalysis program (through Dec 2026) should complete before parameter freeze. |
-| Tri-kernel convergence failure under adversarial conditions | Critical | Formal Lyapunov proof required before Phase 6. Orthogonal kernel defense means single-vector attacks are insufficient. |
-| Economic attack (whale manipulation, dust spam) | High | 100× adversarial simulation required. Focus-based metering limits computation. Stake-weighted costs. |
-| Performance at 10¹⁵ scale | High | Bounded locality ensures O(log) neighborhood. Two-timescale separation. Sharding. Jets for hot paths. |
-| Quantum computing threat | Medium | Post-quantum from genesis. ≥256-bit pre-image security post-Grover. No lattice/EC assumptions without quantum margin. |
-| Adoption failure | Medium | Bostrom network provides live experimental base. Migration path preserves existing community. |
-| Regulatory interference | Medium | Privacy-native architecture. Decentralized governance. No central point of control. |
-| Formal verification bottleneck | Medium | 2-3 person-year estimate. Can parallelize across proof assistants. Community contribution possible. |
-
----
-
-## VII. Resource Requirements
-
-### Minimum Viable Team
-
-| Role | Count | Focus |
-|------|-------|-------|
-| Core protocol (Rust) | 2-3 | CORE evaluator, STARK prover, consensus |
-| Cryptography | 1-2 | Privacy circuits, proof systems, formal verification |
-| Language (Trident) | 1-2 | Compiler, tooling, developer experience |
-| Network / distributed systems | 1-2 | Gossip, sharding, DA layer |
-| Economics / game theory | 1 | Adversarial simulation, mechanism design |
-| Formal methods | 1 | Lean4/Coq proofs, machine-checked verification |
-
-### Timeline (Aggressive)
+| Milestone | Gate |
+|-----------|------|
+| Devnet | All unit + integration tests pass |
+| Testnet | 30 days zero critical bugs under attack |
+| Canary net | 90 days stability, all economic invariants hold |
+| Mainnet genesis | Pre-Launch Verification passes (all 5 gates green) |
+| [[bostrom]] migration | Bijective state mapping, zero data loss |
+
+### Timeline
 
 | Phase | Start | End | Parallel? |
 |-------|-------|-----|-----------|
@@ -339,172 +302,115 @@ Target for emergence: 10⁸-10⁹ interconnected particles with sufficient conne
 | 6. Network layer | +18mo | +36mo | After 4+5 |
 | 7. Testnet → Mainnet | +30mo | +42mo | After 6 |
 
-Total: ~3.5 years to mainnet (aggressive), ~5 years (realistic with formal verification)
+~3.5 years to mainnet (aggressive), ~5 years (realistic with formal verification)
 
----
+## Formal Verification Spine
 
-## VIII. The Endgame
+Running parallel to all phases. Each item maps to the Pre-Launch Verification Protocol.
 
-A living, self-optimizing knowledge network that:
+| What | How | When |
+|------|-----|------|
+| 16 patterns: confluence | Lean4 / Coq | Phase 1-2 |
+| Cost determinism | Structural induction, machine-checked | Phase 2 |
+| [[focus]] conservation (Σπᵢ = 1) | Proof by transition analysis | Phase 3 |
+| Privacy soundness (< 2⁻¹²⁸) | STARK/Plonky2 soundness theorem | Phase 4 |
+| [[tri-kernel]] convergence | Lyapunov function, explicit constants | Phase 5 |
+| Adversarial equilibrium | Game-theoretic analysis, simulation | Phase 5-6 |
+| Double-spend prevention | Nullifier uniqueness proof | Phase 3 |
+| Bounded locality composition | Sheaf condition, machine-checked | Phase 5-6 |
+| Graceful degradation | Chaos engineering, failure catalog | Phase 6-7 |
 
-1. Learns from all forms of input on Earth — humans, AI, sensors, biology
-2. Maintains security and coherence under extreme conditions — including interplanetary latency
-3. Evolves without central authority — governance through focus dynamics and futarchy
-4. Maximizes the survival, intelligence, and flourishing of the planet's entire biosphere
-5. Proves every claim — no trust required, only math
+Estimate: 2-3 person-years
 
-The network doesn't simulate thinking.
-The network IS thinking.
+## Intelligence Emergence
 
----
+The [[cft]] predicts phase transitions:
 
-## Appendix A: Pre-Launch Verification Protocol
+| Phase | Threshold | Dominant Kernel | Observable |
+|-------|-----------|-----------------|------------|
+| Seed → Flow | Connectivity > critical | [[diffusion]] (λ_d high) | Network exploring, sampling |
+| Cognition → Understanding | Structure crystallizes | [[springs]] (λ_s activates) | Hierarchies forming |
+| Reasoning → Meta | Adaptive balance | [[heat kernel]] (λ_h regulates) | Context-sensitive processing |
+| Consciousness | Dynamic blend | All three, self-tuning | System learns its own blend weights |
 
-*"No patch relay exists between stars. What launches must be correct."*
+Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching Cognition threshold.
 
-### 0. Mindset Gate
+Target for emergence: 10⁸-10⁹ interconnected [[particles]] with sufficient connectivity density.
 
-Before touching any checklist — ask: "If this fails silently at 10¹⁵ nodes, 4 light-years from intervention, what kills the mission?" Every item below exists because the answer was non-trivial.
+## What Makes This Different
 
----
+vs. Traditional AI (GPT, Claude): no central training, no black box, no single owner, privacy native.
 
-### 1. FORMAL CORRECTNESS — "Does the math hold?"
+vs. Existing Blockchains (Ethereum, Cosmos): knowledge-first, [[focus]] as native primitive, self-verifying, convergent.
 
-1.1 Convergence proofs
-- [[tri-kernel]] (diffusion + springs + heat) has explicit Lyapunov function V(π) with dV/dt < 0 proven for all non-equilibrium states
-- Perron-Frobenius conditions verified: irreducibility, aperiodicity, primitivity of the stochastic matrix under all valid graph mutations
-- Convergence rate bounds are *concrete* (not asymptotic) — specify ε-mixing time as function of graph diameter and spectral gap
+vs. Decentralized AI (Bittensor): no external model, provable correctness, universal substrate, Δπ rewards.
 
-1.2 Bounded locality
-- Every operation's write-set is provably O(k)-local for stated k
-- No hidden global dependency: trace every function's read-set through the full call graph — if it touches consensus state beyond k-hop, reject
-- Proof that local updates compose to global consistency (sheaf condition on attention weights)
+## Risk Register
 
-1.3 Economic invariants
-- Total π is conserved (or minted/burned only through proved channels)
-- No negative-balance reachable state
-- Reward function is Lipschitz-continuous in Δπ — no discontinuity exploits
+| Risk | Severity | Mitigation |
+|------|----------|------------|
+| [[Poseidon2]] cryptanalytic break | Critical | Algorithm-agile CID, migration path. EF program through Dec 2026. |
+| [[tri-kernel]] convergence failure | Critical | Formal Lyapunov proof required before Phase 6. Orthogonal kernel defense. |
+| Economic attack (whale, dust spam) | High | 100× adversarial simulation. [[focus]]-based metering. Stake-weighted costs. |
+| Performance at 10¹⁵ scale | High | Bounded locality O(log). Two-timescale separation. Sharding. Jets. |
+| Quantum computing threat | Medium | Post-quantum from genesis. ≥256-bit pre-image security post-Grover. |
+| Adoption failure | Medium | [[bostrom]] provides live base. Migration preserves community. |
+| Regulatory interference | Medium | Privacy-native. Decentralized [[governance]]. No central point of control. |
 
-Verification method: Machine-checked proofs (Lean4 / Coq). No hand-waving survives launch.
+## Resource Requirements
 
----
+| Role | Count | Focus |
+|------|-------|-------|
+| Core protocol (Rust) | 2-3 | CORE evaluator, STARK prover, [[consensus]] |
+| Cryptography | 1-2 | Privacy circuits, proof systems |
+| Language ([[trident]]) | 1-2 | Compiler, tooling |
+| Network / distributed systems | 1-2 | Gossip, sharding, DA layer |
+| Economics / game theory | 1 | Adversarial simulation, mechanism design |
+| Formal methods | 1 | Lean4/Coq proofs |
 
-### 2. CRYPTOGRAPHIC INTEGRITY — "Can it be broken?"
+## Pre-Launch Verification Protocol
 
-2.1 Primitives audit
-- [[Poseidon2]] over [[Goldilocks field]]: verify round constants, S-box algebraic degree, differential/linear trail bounds against known attacks
-- [[STARK]] arithmetization: confirm constraint degree, soundness error < 2⁻¹²⁸, no under-constrained registers
-- Polynomial commitments: binding and hiding proofs under stated hardness assumptions
+No patch relay exists between stars. What launches must be correct.
 
-2.2 Proof system
-- Completeness: honest prover always convinces verifier
-- Soundness: no polynomial-time adversary produces accepting proof for false statement (with concrete security parameter)
-- Zero-knowledge: simulator exists, transcript is indistinguishable
-- Recursive composition: verify that inner proof verification circuit is itself correctly arithmetized — this is where bugs hide
-
-2.3 Quantum resistance
-- All hash-based commitments use ≥256-bit pre-image security post-Grover
-- No lattice/elliptic-curve assumption without explicit quantum security margin
-- Key derivation paths are post-quantum end-to-end
-
-2.4 Privacy leakage budget
-- Formal leakage function L(query_count, graph_size) is bounded
-- Timing side-channels: all operations are constant-time or explicitly padded
-- Metadata leakage from [[cyberlink]] patterns — analyze via differential privacy ε accounting
-
-Verification method: Independent cryptographic audit + automated fuzzing of constraint systems (find under/over-constrained witnesses).
-
----
-
-### 3. ADVERSARIAL STRESS — "What does the attacker see?"
-
-3.1 Game-theoretic equilibrium
-- Nash equilibrium exists for honest participation under stated reward function
-- Deviation payoff is strictly negative for all known attack vectors:
-  - Sybil flooding (stake-weighted cost exceeds gain)
-  - Focus manipulation (Δπ gaming bounded by convergence dynamics)
-  - Collusion rings (coalition payoff < sum of individual honest payoffs up to threshold)
-- Griefing factor < stated bound (cost to attacker / cost to victim)
-
-3.2 Simulation battery
-- 100× adversarial load: run with 100× expected malicious traffic ratio
-- Byzantine fault injection: up to f < n/3 nodes behaving arbitrarily
-- Network partition simulation: verify graceful degradation, no state corruption on rejoin
-- Economic attack simulation: whale manipulation, dust spam, long-range nothing-at-stake
-
-3.3 Invariant fuzzing
-- Property-based testing on all state transitions: pre-condition → transition → post-condition holds
-- Symbolic execution of critical paths (focus update, reward distribution, proof verification)
-- Mutation testing on constraint systems: flip single constraints, verify test suite catches it
-
-Verification method: Adversarial red team with economic incentive to break it + automated property fuzzing (≥10⁸ iterations per invariant).
-
----
-
-### 4. DETERMINISM & REPRODUCIBILITY — "Same input, same output, always?"
-
-4.1 Consensus determinism
-- All computation over [[Goldilocks field]]: no floating point, no platform-dependent rounding
-- Serialization is canonical — no ambiguity in encoding order
-- Hash of (state + transition) is identical across all implementations (cross-implementation test suite)
-
-4.2 Upgrade safety
-- State migration function is proved bijective (old_state ↔ new_state roundtrip)
-- Version negotiation cannot deadlock or split the network
-- Rollback path exists and is tested for every migration
-
-Verification method: Run identical workloads on ≥3 independent implementations, compare state roots bit-for-bit.
-
----
-
-### 5. GRACEFUL DEGRADATION — "What survives partial death?"
-
-5.1 Failure modes catalog
-- For each component (consensus, ranking, proof generation, DA layer): document behavior when it fails, is slow, or lies
-- No single component failure causes data loss or safety violation
-- Proof: system maintains safety (no invalid state) even when liveness is temporarily lost
-
-5.2 Resource exhaustion
-- Memory: all buffers are bounded, no unbounded allocation paths
-- Compute: all loops have proven termination with explicit iteration bounds
-- Storage: garbage collection is proved to not delete live references
-- Network: backpressure mechanisms prevent queue overflow
-
-Verification method: Chaos engineering — kill components randomly under load, verify safety invariants hold continuously.
-
----
-
-### 6. THE FINAL GATE
-
-Before launch, answer these five questions with machine-checked evidence:
+Before launch, answer five questions with machine-checked evidence:
 
 | # | Question | Evidence Required |
 |---|----------|-------------------|
 | 1 | Does π converge? | Lean4 proof of Lyapunov stability |
 | 2 | Can proofs be forged? | Soundness proof + 10⁸ fuzzing runs, 0 counterexamples |
 | 3 | Can the economy be drained? | Nash equilibrium proof + 100× adversarial simulation |
-| 4 | Is computation deterministic? | Cross-implementation state root match on 10⁶ block corpus |
+| 4 | Is computation deterministic? | Cross-implementation state root match on 10⁶ blocks |
 | 5 | Does it survive partial failure? | Chaos test report with zero safety violations |
 
-All five green → launch. Any red → no launch. No exceptions. No "we'll fix it in flight."
+All five green → launch. Any red → no launch. No exceptions.
 
-*The light-cone is merciless. What you ship is what arrives.*
+The light-cone is merciless. What you ship is what arrives.
 
----
+## The Endgame
 
-*"No node comprehends. The network knows."*
+A living, self-optimizing knowledge network that:
 
-*"Gradient descent is not a technique. It's how water flows."*
+1. Learns from all forms of input on Earth — humans, AI, sensors, biology
+2. Maintains security and coherence under extreme conditions — including interplanetary latency
+3. Evolves without central authority — [[governance]] through [[focus]] dynamics and futarchy
+4. Maximizes the survival, [[intelligence]], and flourishing of the planet's entire biosphere
+5. Proves every claim — no trust required, only math
 
-*"What launches must be correct."*
+The network IS thinking.
 
----
+No node comprehends. The network knows.
 
 ## Cross-references
 
+- See [[cyber/crystal]] for the full crystal specification
+- See [[economic model]] for detailed incentive mechanics
+- See [[convergence rewards]] for the yield-bearing link model
+- See [[learning incentives]] for reward mechanisms
+- See [[cft]] for the [[collective focus]] Theorem
 - See [[trinity]] for the three-pillar architecture
-- See [[Goldilocks field processor]] for hardware specification of the [[GFP]]
+- See [[Goldilocks field processor]] for hardware specification
 - See [[privacy trilateral]] for the full privacy stack
 - See [[rosetta stone]] for how four primitives unify all domains
 - See [[Goldilocks homomorphic encryption]] for [[TFHE]] over the [[Goldilocks field]]
 - See [[trident standard library]] for the [[trident]] standard library
+- See [[manifesto]] for the declaration of the superintelligent nation
