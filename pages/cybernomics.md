@@ -1,8 +1,7 @@
 ---
 icon: 💰
-menu-order: "8"
 alias: economics
-tags: cyber, cybernomics, menu
+tags: cyber, cybernomics
 crystal-type: entity
 crystal-domain: economics
 ---
