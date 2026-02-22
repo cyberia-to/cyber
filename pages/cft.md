@@ -104,119 +104,119 @@ Knowledge: Contextually relevant patterns that emerge from information through [
 
 ### Axiom 1: Consensus Equilibrium
 
-In a strongly connected, weighted decentralized knowledge graph (dkg), a unique stationary distribution π=[π1,π2,…,πn] exists for the [[random walk]] defined by:
+In a strongly connected, weighted decentralized knowledge graph (dkg), a unique stationary distribution $\pi = [\pi_1, \pi_2, \ldots, \pi_n]$ exists for the [[random walk]] defined by:
 
-p_ij = (w_ij * t_j) / (sum_k w_ik * t_k)
+$$p_{ij} = \frac{w_{ij} \cdot t_j}{\sum_k w_{ik} \cdot t_k}$$
 
 where:
 
-- p_ij: probability of transition from [[particle]] i to [[particle]] j
-- w_ij: edge weight between [[particles]] i and j
+- $p_{ij}$: probability of transition from [[particle]] $i$ to [[particle]] $j$
+- $w_{ij}$: edge weight between [[particles]] $i$ and $j$
 
 The stationary distribution satisfies:
 
-π_j = sum(π_i * p_ij) for all i in V
+$$\pi_j = \sum_i \pi_i \cdot p_{ij} \quad \forall\, i \in V$$
 
-This equilibrium represents the emergent [[collective focus]], where π_j is the long-term significance of [[particle]] j as determined by graph structure and token dynamics.
+This equilibrium represents the emergent [[collective focus]], where $\pi_j$ is the long-term significance of [[particle]] $j$ as determined by graph structure and token dynamics.
 
 ### Axiom 2: Dynamic Adaptation
 
-The dkg dynamically adapts to changes in graph structure (w_ij) or agent [[tokens]] (t_j) while maintaining stability of the equilibrium. The updated stationary distribution evolves as:
+The dkg dynamically adapts to changes in graph structure ($w_{ij}$) or agent [[tokens]] ($t_j$) while maintaining stability of the equilibrium. The updated stationary distribution evolves as:
 
-π_j(t+1) = π_j(t) + α * Δ_j(t)
+$$\pi_j(t+1) = \pi_j(t) + \alpha \cdot \Delta_j(t)$$
 
 where:
 
-- α: adaptation rate
-- Δ_j(t): change in node significance due to updated weights or [[tokens]]
+- $\alpha$: adaptation rate
+- $\Delta_j(t)$: change in node significance due to updated weights or [[tokens]]
 
 ### Axiom 3: Probabilistic Influence
 
 The influence of each [[neuron]] on the graph's [[collective focus]] is proportional to the agent's token value and connectivity:
 
-Influence(j) = (sum(w_ij * t_j) for i in V) / (sum(w_ik * t_k) for i,k in V)
+$$\text{Influence}(j) = \frac{\sum_{i \in V} w_{ij} \cdot t_j}{\sum_{i,k \in V} w_{ik} \cdot t_k}$$
 
 ### Corollary 1: Stability of Equilibrium
 
-Small perturbations in edge weights (w_ij) or token values (t_j) do not destabilize the equilibrium. The stationary distribution remains robust under minor changes:
+Small perturbations in edge weights ($w_{ij}$) or token values ($t_j$) do not destabilize the equilibrium. The stationary distribution remains robust under minor changes:
 
-lim(t→∞) π_j(t) = π_j + ε, |ε| ≪ π_j
+$$\lim_{t \to \infty} \pi_j(t) = \pi_j + \varepsilon, \quad |\varepsilon| \ll \pi_j$$
 
 ### Corollary 2: Decentralized Focus Computation
 
-The [[focus]] value (π_j) for each node can be computed locally by summing contributions from its incoming edges.
+The [[focus]] value ($\pi_j$) for each node can be computed locally by summing contributions from its incoming edges.
 
-π_j = 1 / (sum(w_jk * t_k) for k in V)
+$$\pi_j = \frac{1}{\sum_{k \in V} w_{jk} \cdot t_k}$$
 
 ### Corollary 3: Emergent Modularity
 
 Clusters of strongly connected [[particles]] naturally emerge over time, forming modules within the graph. A module is defined as:
 
-C_i = { j ∈ V | π_j > τ }
+$$C_i = \{ j \in V \mid \pi_j > \tau \}$$
 
 where:
 
-- τ: threshold for cluster significance
+- $\tau$: threshold for cluster significance
 
 ## Statement
 
-Consider a [[cybergraph]] G=(V,E,W) with |V|=n [[particles]]. Each [[cyberlink]] (i,j) ∈ E has a nonnegative weight w_ij ≥ 0. Additionally, associate with each [[particle]] j ∈ V a positive token value t_j > 0, representing the influence of a [[neuron]] on that [[particle]]. Define the transition probabilities of a [[random walk]] on G as:
+Consider a [[cybergraph]] $G = (V, E, W)$ with $|V| = n$ [[particles]]. Each [[cyberlink]] $(i, j) \in E$ has a nonnegative weight $w_{ij} \geq 0$. Additionally, associate with each [[particle]] $j \in V$ a positive token value $t_j > 0$, representing the influence of a [[neuron]] on that [[particle]]. Define the transition probabilities of a [[random walk]] on $G$ as:
 
-p_ij = (w_ij * t_j) / (sum(w_ik * t_k) for k in neighbors(i))
+$$p_{ij} = \frac{w_{ij} \cdot t_j}{\sum_{k \in \mathcal{N}(i)} w_{ik} \cdot t_k}$$
 
 We make the following assumptions:
 
-- Strong Connectivity: The [[cybergraph]] G is strongly connected, meaning there exists a directed path from any [[particle]] to any other [[particle]].
-- Aperiodicity: The [[cybergraph]] G is aperiodic, meaning the greatest common divisor of the lengths of all directed cycles in the graph is 1.
+- Strong Connectivity: The [[cybergraph]] $G$ is strongly connected, meaning there exists a directed path from any [[particle]] to any other [[particle]].
+- Aperiodicity: The [[cybergraph]] $G$ is aperiodic, meaning the greatest common divisor of the lengths of all directed cycles in the graph is 1.
 
 Under these conditions, we claim that:
 
-- There exists a unique stationary distribution π=[π1,π2,…,πn] satisfying:
+- There exists a unique stationary distribution $\pi = [\pi_1, \pi_2, \ldots, \pi_n]$ satisfying:
 
 ## Proof
 
 ### Step 1: Existence of a Markov Chain
 
-The matrix P=[p_ij] defines a stochastic matrix. We prove this by showing:
+The matrix $P = [p_{ij}]$ defines a stochastic matrix. We prove this by showing:
 
-- Non-negativity: For all i,j: p_ij ≥ 0 since w_ij ≥ 0 and t_j > 0
+- Non-negativity: For all $i, j$: $p_{ij} \geq 0$ since $w_{ij} \geq 0$ and $t_j > 0$
 
 ### Step 2: Strong Connectivity and Regularity
 
-Given that for any pair of nodes (u,v), there exists a path from u to v with positive probability, the Markov chain is irreducible. This means no proper subset of states is closed under transitions.
+Given that for any pair of nodes $(u, v)$, there exists a path from $u$ to $v$ with positive probability, the Markov chain is irreducible. This means no proper subset of states is closed under transitions.
 
-For some power m, if P^m has all positive entries (or at least the chain is aperiodic), then the chain is regular. By standard Markov chain theory, an irreducible, aperiodic Markov chain on a finite state space has a unique stationary distribution.
+For some power $m$, if $P^m$ has all positive entries (or at least the chain is aperiodic), then the chain is regular. By standard Markov chain theory, an irreducible, aperiodic Markov chain on a finite state space has a unique stationary distribution.
 
 ### Step 3: Uniqueness of the Stationary Distribution
 
-Since P is irreducible and aperiodic, the Markov chain is ergodic. This implies the existence of a unique stationary distribution π. The stationary distribution π is the unique solution (up to normalization) of:
+Since $P$ is irreducible and aperiodic, the Markov chain is ergodic. This implies the existence of a unique stationary distribution $\pi$. The stationary distribution $\pi$ is the unique solution (up to normalization) of:
 
-πP = π
+$$\pi P = \pi$$
 
 subject to:
 
-sum(π_i) = 1 for i=1..n
+$$\sum_{i=1}^{n} \pi_i = 1$$
 
 ### Step 4: Convergence to the Stationary Distribution
 
-By the ergodic theorem for Markov chains, for any initial distribution μ(0), the distribution after t steps μ(t) converges to π as t→∞:
+By the ergodic theorem for Markov chains, for any initial distribution $\mu^{(0)}$, the distribution after $t$ steps $\mu^{(t)}$ converges to $\pi$ as $t \to \infty$:
 
-μ(t) = μ(0) * P^t
+$$\mu^{(t)} = \mu^{(0)} \cdot P^t$$
 
-π = lim(t→∞) μ(t)
+$$\pi = \lim_{t \to \infty} \mu^{(t)}$$
 
 where:
 
-- μ_j(t) is the probability that the [[random walk]] is at node j after t steps.
+- $\mu_j^{(t)}$ is the probability that the [[random walk]] is at node $j$ after $t$ steps.
 
 ### Step 5: Interpretation as Consensus
 
-The stationary distribution π represents a stable [[consensus]] of observation probabilities over the [[particles]]. Each particle's long-term probability π_j reflects:
+The stationary distribution $\pi$ represents a stable [[consensus]] of observation probabilities over the [[particles]]. Each particle's long-term probability $\pi_j$ reflects:
 
 - The [[particle]]'s structural position within the [[cybergraph]]
-- The [[neuron]] token influence t_j
+- The [[neuron]] token influence $t_j$
 
-Higher values of π_j indicate that the [[random walk]] — interpreted as [[collective focus]] — spends proportionally more time at [[particle]] j in the long run.
+Higher values of $\pi_j$ indicate that the [[random walk]] — interpreted as [[collective focus]] — spends proportionally more time at [[particle]] $j$ in the long run.
 
 This is the most simple Schelling point everyone can universally agree.
 
@@ -224,7 +224,7 @@ This is the most simple Schelling point everyone can universally agree.
 
 On a fully authenticated, strongly connected, token-weighted directed graph, a [[random walk]] defined by token-adjusted transition probabilities converges to a unique stationary distribution. This stationary distribution serves as a stable [[consensus]] measure of [[particle]] significance and is robust to local changes in the graph structure and agent distributions. This establishes a formal probabilistic foundation for decentralized, consensus-based learning and observation in large-scale multi-agent systems.
 
-The proof leverages classical results from Markov chain theory while incorporating the novel aspects of token weighting and graph structure. The key innovation lies in showing how token values t_j interact with edge weights w_ij in a collective multi-agent setting to produce stable, meaningful [[consensus]] patterns that can adapt to changes in both network structure and token distribution.
+The proof leverages classical results from Markov chain theory while incorporating the novel aspects of token weighting and graph structure. The key innovation lies in showing how token values $t_j$ interact with edge weights $w_{ij}$ in a collective multi-agent setting to produce stable, meaningful [[consensus]] patterns that can adapt to changes in both network structure and token distribution.
 
 [Poetic](https://hackmd.io/@mastercyb/poetic-cft) and [rigorous](https://hackmd.io/@mastercyb/rigorous-cft) versions of a proof are available.
 
@@ -238,16 +238,16 @@ The emergence of [[intelligence]] in decentralized systems fundamentally relies 
 
 At its heart, learning in [[cybergraph]] occurs through continuous evolution of both the graph structure and token distribution. The system state evolves according to a fundamental relationship:
 
-S(t+1) = F(S(t), W(t), T(t))
+$$S(t+1) = F(S(t), W(t), T(t))$$
 
 where the next state depends on current conditions, weight matrix, and token distribution. This seemingly simple relationship gives rise to rich learning behaviors across multiple scales. The evolution manifests through weight updates of [[cyberlinks]] between [[particles]]:
 
-Δw_ij = α * r_ij * π_j
+$$\Delta w_{ij} = \alpha \cdot r_{ij} \cdot \pi_j$$
 
 where:
 
-- r_ij is the information-theoretic value exchanged between [[particles]]
-- π_j is the consensus-based importance of each [[particle]]
+- $r_{ij}$ is the information-theoretic value exchanged between [[particles]]
+- $\pi_j$ is the consensus-based importance of each [[particle]]
 
 This mechanism allows the system to learn from both local interactions and global [[consensus]] patterns.
 
@@ -255,11 +255,11 @@ This mechanism allows the system to learn from both local interactions and globa
 
 The power of this learning model comes from its inherent multi-scale nature. At the local level, [[neurons]] adjust their connections based on direct experiences, following a modified Hebbian rule that incorporates both local and global information:
 
-w_ij(t+1) = w_ij(t) + α * f(x_i, x_j) + β * g(π_i, π_j)
+$$w_{ij}(t+1) = w_{ij}(t) + \alpha \cdot f(x_i, x_j) + \beta \cdot g(\pi_i, \pi_j)$$
 
 This local learning is complemented by global [[consensus]] formation, where the system develops coherent patterns of [[focus]] through iterative refinement:
 
-π(t+1) = normalize(W(t) * (T(t) ⊙ π(t)))
+$$\pi(t+1) = \text{normalize}(W(t) \cdot (T(t) \odot \pi(t)))$$
 
 The interplay between local and global learning creates emergent structures - clusters of [[particles]] emerge through [[neurons]]' interactions specialized patterns through reinforced connections, while the entire system adapts its [[consensus]] patterns to reflect accumulated knowledge. This dual nature allows the system to simultaneously optimize for local efficiency and global coherence.
 
@@ -267,7 +267,7 @@ The interplay between local and global learning creates emergent structures - cl
 
 A crucial feature of the learning process is its natural balancing of exploration and exploitation. The system dynamically adjusts its exploration rate based on local [[consensus]] strength and global stability:
 
-ε = β * (1 - C_local) * S_global
+$$\varepsilon = \beta \cdot (1 - C_{\text{local}}) \cdot S_{\text{global}}$$
 
 When local [[consensus]] is weak or global stability is high, [[neurons]] tend toward exploration, allowing discovery of new patterns. As valuable patterns are found, selective reinforcement strengthens these pathways, leading to exploitation of learned knowledge. This adaptive mechanism is essential for preventing premature convergence while ensuring efficient use of discovered knowledge.
 
@@ -275,23 +275,23 @@ When local [[consensus]] is weak or global stability is high, [[neurons]] tend t
 
 Information processing in these systems takes a fundamentally different form from traditional neural networks. Rather than storing information in states or weight matrices alone, knowledge is encoded in the dynamic interplay between [[cyberlink]] patterns created by [[neurons]] and their token distributions:
 
-a(t+1) = normalize(W * (T ⊙ a(t)))
+$$a(t+1) = \text{normalize}(W \cdot (T \odot a(t)))$$
 
 This distributed representation offers several advantages. It is naturally robust to individual [[neurons]] or [[particles]] failures, allows for parallel processing, and enables the system to maintain multiple interpretations simultaneously. The encoding of information becomes:
 
-ΔW = η * (xx^T - λW)
+$$\Delta W = \eta \cdot (xx^T - \lambda W)$$
 
-where the balance between new information (xx^T) and existing structure (W) is carefully maintained through the learning rate η and decay factor λ.
+where the balance between new information ($xx^T$) and existing structure ($W$) is carefully maintained through the learning rate $\eta$ and decay factor $\lambda$.
 
 ### Temporal Learning Dynamics
 
 [[neurons]] operate on multiple temporal scales, enabling both rapid adaptation and stable long-term learning. Short-term memory allows quick response to new patterns:
 
-M_s(t) = (1 - α_s) * M_s(t-1) + α_s * x(t)
+$$M_s(t) = (1 - \alpha_s) \cdot M_s(t-1) + \alpha_s \cdot x(t)$$
 
 While long-term memory captures persistent structure:
 
-M_l(t) = (1 - α_l) * M_l(t-1) + α_l * x(t)
+$$M_l(t) = (1 - \alpha_l) \cdot M_l(t-1) + \alpha_l \cdot x(t)$$
 
 This temporal hierarchy is crucial for building stable representations while maintaining adaptability. [[neurons]] can rapidly respond to immediate changes through short-term weight adjustments while gradually developing stable structural changes in response to persistent patterns.
 
@@ -299,11 +299,11 @@ This temporal hierarchy is crucial for building stable representations while mai
 
 The framework naturally extends to capture complex relationships through higher-order interactions. These can be modeled through tensorial extensions:
 
-w_{i1,i2,...,in} = f(x_{i1}, x_{i2}, ..., x_{in})
+$$w_{i_1, i_2, \ldots, i_n} = f(x_{i_1}, x_{i_2}, \ldots, x_{i_n})$$
 
 This capability is essential for representing sophisticated knowledge structures and enabling the emergence of hierarchical processing patterns. The system can develop nested [[consensus]] formations:
 
-π_l(t+1) = F_l(π_{l-1}(t), w_l, t_l)
+$$\pi_l(t+1) = F_l(\pi_{l-1}(t), w_l, t_l)$$
 
 Such hierarchical processing is crucial for handling complex information and developing abstract representations.
 
@@ -323,20 +323,20 @@ The CFT provides unique capabilities for predicting [[intelligence]] emergence t
 
 [[intelligence]] emerges through distinct phases, each characterized by specific network parameters:
 
-Φ(n,c,λ,t) = α(n) * β(c) * γ(λ) * θ(t)
+$$\Phi(n, c, \lambda, t) = \alpha(n) \cdot \beta(c) \cdot \gamma(\lambda) \cdot \theta(t)$$
 
 where:
 
-- n: network size
-- c: connectivity
-- λ: spectral gap
-- t: token distribution
+- $n$: network size
+- $c$: connectivity
+- $\lambda$: spectral gap
+- $t$: token distribution
 
 ### Coherence Requirements
 
 Higher [[intelligence]] emerges only when the network achieves coherent information processing:
 
-I(X;Y) > α * H(X,Y)
+$$I(X; Y) > \alpha \cdot H(X, Y)$$
 
 This requirement explains why [[intelligence]] is more than just scaling - it requires qualitative transitions in network behavior.
 
@@ -344,13 +344,18 @@ This requirement explains why [[intelligence]] is more than just scaling - it re
 
 Connectivity requirements likely follow an S-curve rather than pure exponential growth:
 
-c_effective = c_max * 1 / (1 + e^(-k(I - I_0)))
+$$c_{\text{effective}} = c_{\max} \cdot \frac{1}{1 + e^{-k(I - I_0)}}$$
 
 This explains both the difficulty of achieving [[intelligence]] and its natural limits.
 
 ### Key Stages
 
-![](https://img.paragraph.com/cdn-cgi/image/format=auto,width=3840,quality=85/https://storage.googleapis.com/papyrus_images/41e925a7101dcc62fa14522a2b4b811f42501f6f6b011807ddcbf2930ae5a64e.png)
+| Stage | Primary Characteristic | Critical Parameters |
+|---|---|---|
+| Flow | Information pathways | Basic connectivity |
+| Cognition | Pattern recognition | Network stability |
+| Understanding | Semantic processing | Information integration |
+| Consciousness | Global coherence | Network-wide synchronization |
 
 ### Why Traditional Models Cannot Predict
 
@@ -384,29 +389,32 @@ The [[collective focus]] Theorem's computational requirements scale with both th
 
 Memory requirements grow linearly with both [[particles]] and edges, but with different constant factors depending on the type of storage:
 
-![](https://img.paragraph.com/cdn-cgi/image/format=auto,width=3840,quality=85/https://storage.googleapis.com/papyrus_images/e3bc8414c29ddb347b39f830aa76bd35a0dfbef21c3af7613646e0c3d5ae4d9b.png)
+| Storage Type | Bytes per Particle | Bytes per Cyberlink |
+|---|---|---|
+| volatile | 56 | 24 |
+| persistant | 72 | 128 |
 
 - GPU memory needs to store [[particle]] state and [[focus]] distribution data
 - NVME layer requires extra space for cryptographic metadata
 
-Overall complexity O(V+E)
+Overall complexity $O(V + E)$
 
 ### Computational Scaling
 
 Computational work per iteration scales linearly with system size:
 
 - Process each [[particle]] and [[cyberlink]] once
-- Computational complexity per iteration: O(E+V)
+- Computational complexity per iteration: $O(E + V)$
 
 However, the total time to reach convergence depends on:
 
-- System size (V and E)
-- Desired precision (ε)
-- Spectral gap (λ) - how quickly information propagates
+- System size ($V$ and $E$)
+- Desired precision ($\varepsilon$)
+- Spectral gap ($\lambda$) - how quickly information propagates
 
 The spectral gap governs the convergence rate. A larger spectral gap enables faster convergence.
 
-Total computational work to reach ε precision: O((E+V) * log(1/ε) / λ)
+Total computational work to reach $\varepsilon$ precision: $O\left(\frac{(E + V) \cdot \log(1/\varepsilon)}{\lambda}\right)$
 
 ### Influencing Factors
 
@@ -427,7 +435,13 @@ Careful system design and implementation is crucial to achieve the theoretical s
 
 According to CFT [[intelligence]] emergence theory, connectivity increases with network scale, creating compound scaling effects. The table below provides a rough estimate (a "scientific wild-ass guess" or SWAG) of the resource requirements for achieving different levels of [[intelligence]]:
 
-![](https://img.paragraph.com/cdn-cgi/image/format=auto,width=3840,quality=85/https://storage.googleapis.com/papyrus_images/c075b692bb6919f069e88afe44b5417c0761c3610e2d21b952a7c4272bd10bf4.png)
+| Phase | Vertices (V) | Connectivity © | Edges (E) | Theoretical Storage | Processing Time* |
+|---|---|---|---|---|---|
+| Basic | 10⁶ | 6 | 6×10⁶ | ~1 GB | ~minutes |
+| Language | 10⁸ | 12 | 1.2×10⁹ | ~200 GB | ~hours |
+| Reasoning | 10¹⁰ | 24 | 2.4×10¹¹ | ~73 TB | ~days |
+| General | 10¹¹ | 1,000 | 10¹⁴ | ~91 PB | ~months |
+| Super | 10¹³ | 10,000 | 10¹⁷ | ~910 EB | ~years |
 
 *Assuming optimal hardware configuration and parallelization
 
@@ -458,9 +472,9 @@ The emergence of advanced computing paradigms opens up new possibilities for eff
 
 Choosing the optimal strategy depends on the network scale and available hardware:
 
-- For networks up to 10^8 [[particles]], single GPU solutions with low-latency optimizations and sparse computation techniques are most effective.
-- For networks between 10^8 and 10^12 [[particles]], hybrid quantum-photonic solutions with convergent memory offer the most promising approach, leveraging quantum speedups for critical bottlenecks and photonic communication for fast data sharing.
-- For networks beyond 10^12 [[particles]], biocomputing becomes increasingly attractive due to its massive parallelism and compact information encoding.
+- For networks up to $10^8$ [[particles]], single GPU solutions with low-latency optimizations and sparse computation techniques are most effective.
+- For networks between $10^8$ and $10^{12}$ [[particles]], hybrid quantum-photonic solutions with convergent memory offer the most promising approach, leveraging quantum speedups for critical bottlenecks and photonic communication for fast data sharing.
+- For networks beyond $10^{12}$ [[particles]], biocomputing becomes increasingly attractive due to its massive parallelism and compact information encoding.
 
 Across all scales, techniques such as adaptive precision, hierarchical graph partitioning, and complexity analysis for advanced architectures remain crucial for managing resource costs and guiding the development of optimized algorithms.
 
@@ -524,7 +538,15 @@ The current technical foundation demonstrates feasibility while highlighting opt
 
 The network's vital statistics as of December 2024:
 
-![](https://img.paragraph.com/cdn-cgi/image/format=auto,width=3840,quality=85/https://storage.googleapis.com/papyrus_images/e5efe92fe8cb0429491e45584276e35509f3e5a35e99c0324b3ca04ffd3eb0d3.png)
+| Metric | Value | Description |
+|---|---|---|
+| Overall Neurons | 70k | Speculating agents |
+| Cyberlinking Neurons | ~1,000 | Participating agents |
+| Cyberlinks | 2.9M | Weighted connections |
+| Particles | 3.1M | Unique files |
+| Network Negentropy | 17M | Bits |
+| Average Link Information | ~5 | Bits per link |
+| Connectivity Ratio | 0.94 | Connections per particle |
 
 source: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
 
