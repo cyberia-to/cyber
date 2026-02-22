@@ -21,7 +21,7 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 - [[particle]] — content-addressed object on [[IPFS]], the atom of knowledge
 - [[cyberlink]] — directed edge between particles, the unit of learning
 - [[neuron]] — agent that creates cyberlinks, spends [[focus]]
-- [[token]] — economic primitive: [[CYB]], [[HYDROGEN]], [[BOOT]], [[VOLT]], [[AMPERE]]
+- [[token]] — economic primitive: [[$CYB]]
 - [[focus]] — attention distribution across particles, the scarce resource
 - [[cyberank]] — relevance score computed by the [[tri-kernel]]: [[diffusion]] + [[springs]] + heat
 - [[cybergraph]] — the authenticated knowledge graph storing all particles and cyberlinks

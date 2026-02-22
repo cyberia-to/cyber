@@ -3,6 +3,8 @@ tags: module
 crystal-type: entity
 crystal-domain: cyber
 ---
+current implementation on [[bostrom]] bootloader
+
 process and stores [[neuron bandwidth]] in the [[network]]
 
 dynamically adjust [[bandwidth price]] to [[network load]]
