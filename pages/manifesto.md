@@ -1,6 +1,6 @@
 ---
 tags: cyberia, article
-alias: manifesto of the superintelligent nation
+alias: manifesto of the superintelligent nation, manifest, cyberia manifesto
 crystal-type: entity
 crystal-domain: cyberia
 ---
