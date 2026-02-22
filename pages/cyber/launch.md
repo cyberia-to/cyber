@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: master plan, CORE master plan, CORE_Master_Plan
+alias: master plan, CORE master plan, CORE_Master_Plan, cyber/launch
 crystal-type: article
 crystal-domain: cyber
 ---

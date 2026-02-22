@@ -890,7 +890,7 @@ Targets:
 
 ## Cross-references
 
-- See [[CORE master plan]] for how GFP fits into the development roadmap
+- See [[cyber/launch]] for how GFP fits into the development roadmap
 - See [[rosetta stone]] for why these four primitives unify all domains
 - See [[Goldilocks homomorphic encryption]] for [[TFHE]] over the [[Goldilocks field]]
 - See [[trinity]] for the three-pillar architecture
