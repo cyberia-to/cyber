@@ -42,8 +42,31 @@ fn extract_math_blocks(markdown: &str) -> (String, Vec<String>) {
     let chars: Vec<char> = markdown.chars().collect();
     let len = chars.len();
     let mut i = 0;
+    let mut inside_wikilink = false;
 
     while i < len {
+        // Track wiki-link boundaries: [[ opens, ]] closes
+        if i + 1 < len && chars[i] == '[' && chars[i + 1] == '[' {
+            inside_wikilink = true;
+            result.push('[');
+            result.push('[');
+            i += 2;
+            continue;
+        }
+        if inside_wikilink && i + 1 < len && chars[i] == ']' && chars[i + 1] == ']' {
+            inside_wikilink = false;
+            result.push(']');
+            result.push(']');
+            i += 2;
+            continue;
+        }
+        // Skip $ inside wiki-links — not math
+        if inside_wikilink && chars[i] == '$' {
+            result.push('$');
+            i += 1;
+            continue;
+        }
+
         // Check for $$ (display math) first
         if i + 1 < len && chars[i] == '$' && chars[i + 1] == '$' {
             // Find closing $$
