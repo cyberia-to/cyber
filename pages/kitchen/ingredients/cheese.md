@@ -1,9 +1,9 @@
 ---
 title: kitchen/ingredients/cheese
+tags: kitchen/menu
+crystal-type: entity
+crystal-domain: agriculture
 ---
-tags:: kitchen/menu
-crystal-type:: entity
-crystal-domain:: agriculture
 
 #### cheese storage guide
 

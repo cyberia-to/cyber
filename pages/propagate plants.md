@@ -1,5 +1,5 @@
 ---
-tags: species
+tags: species, operation
 crystal-type: entity
 crystal-domain: biology
 ---
@@ -12,5 +12,3 @@ crystal-domain: biology
 [[seeds]]
 
 [[airlayering]]
-
-tags:: operation

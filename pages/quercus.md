@@ -1,9 +1,9 @@
 ---
+tags: genus, research
 alias: oak
+crystal-type: entity
+crystal-domain: biology
 ---
-tags:: genus, research
-crystal-type:: entity
-crystal-domain:: biology
 
 [[quercus alba]]
 
