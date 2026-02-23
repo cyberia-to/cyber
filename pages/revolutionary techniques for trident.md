@@ -1,6 +1,8 @@
 ---
 tags: trident
 alias: Revolutionary_Techniques_for_Trident
+crystal-type: article
+crystal-domain: cyber
 ---
 # Revolutionary Techniques for Trident
 
