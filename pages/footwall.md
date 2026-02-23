@@ -2,6 +2,6 @@
 tags: term
 alias: base trench
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 part of the wall

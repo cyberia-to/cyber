@@ -1,6 +1,6 @@
 ---
 tags: term
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 target date for closing the [[market]]

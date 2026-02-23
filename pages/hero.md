@@ -2,7 +2,7 @@
 tags: term
 alias: heroes
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 validators of cyber networks
 

@@ -2,6 +2,6 @@
 tags: term
 alias: top rim
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 part of the [[wall]]

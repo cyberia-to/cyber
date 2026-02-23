@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 pseudonymous creator of [[Bitcoin]], published the whitepaper in 2008 and launched the network in 2009
 

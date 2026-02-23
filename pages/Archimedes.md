@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 287-212 BCE, Greek mathematician, physicist, engineer, and astronomer from Syracuse
 
