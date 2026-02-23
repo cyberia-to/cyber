@@ -304,5 +304,35 @@ fn check_site(config: &SiteConfig) -> Result<()> {
         );
     }
 
+    // Crystal metadata validation
+    let mut crystal_warnings = 0;
+    for (page_id, page) in &page_store.pages {
+        if page_store.stub_pages.contains(page_id) {
+            continue;
+        }
+        for warn in cyber_publish::validator::validate_page(page) {
+            println!(
+                "  {} {} — {}",
+                "Invalid:".red(),
+                warn.source_path.display(),
+                warn.message
+            );
+            crystal_warnings += 1;
+        }
+    }
+
+    if crystal_warnings == 0 {
+        println!(
+            "{} Crystal metadata valid on all pages!",
+            "OK".green().bold()
+        );
+    } else {
+        println!(
+            "\n{} {} crystal metadata warning(s) found",
+            "Warning:".yellow().bold(),
+            crystal_warnings
+        );
+    }
+
     Ok(())
 }
