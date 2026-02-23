@@ -35,21 +35,22 @@ crystal-domain: cyberia
 
 ## Comparison
 
-- | aspect                      | usual nandu                                    | cyber nandu                                                                 |
-	  |-----------------------------|-------------------------------------------------|------------------------------------------------------------------------------------------|
-	  | labor                       | worker                        | steward                                                               |
-	  | what to grow                   | [[plants]], [[animals]] | [[plants]], [[animals]], [[fungi]], [[insects]], [[aquatics]] |
-	  | investments (tools, materials, seeds)  | by worker                                 | shared 50/50 between steward and landlord |
-	  | landlord contribution     | only land                                       | land, deep support ecosystem                                   |
-	  | education                   | none                                            | cutting-edge education and mentorship                                                   |
-	  | sales access                | steward handles sales                           | access to curated channels (organiq, banya, vitalik, soft, elons, cybermarket upcoming) |
-	  | physical resources          | steward's own tools                             | access to infrastructure (laba, shared tools, venues)                                   |
-	  | ecosystem & community       | isolated                                        | strong peer group, cross-support, knowledge exchange                                    |
-	  | income security             | none                                            | 1 million idr / month for 40 hours "learn for pay" guarantee / base is 25k per hour                              |
-	  | social security fund        | none                                            | 10% of salary allocated to collective security fund                                     |
-	  | additional benefits         | —                                               | direct donations from tourists                              |
-	  | cyber valley revenue share  | none                                            | 5% of total cyber valley revenue distributed to stewards               |
-	  | return of investments in case of land sale or firing | no | yes |
+| aspect                      | usual nandu                                    | cyber nandu                                                                 |
+|-----------------------------|-------------------------------------------------|------------------------------------------------------------------------------------------|
+| labor                       | worker                        | steward                                                               |
+| what to grow                   | [[plants]], [[animals]] | [[plants]], [[animals]], [[fungi]], [[insects]], [[aquatics]] |
+| investments (tools, materials, seeds)  | by worker                                 | shared 50/50 between steward and landlord |
+| landlord contribution     | only land                                       | land, deep support ecosystem                                   |
+| education                   | none                                            | cutting-edge education and mentorship                                                   |
+| sales access                | steward handles sales                           | access to curated channels (organiq, banya, vitalik, soft, elons, cybermarket upcoming) |
+| physical resources          | steward's own tools                             | access to infrastructure (laba, shared tools, venues)                                   |
+| ecosystem & community       | isolated                                        | strong peer group, cross-support, knowledge exchange                                    |
+| income security             | none                                            | 1 million idr / month for 40 hours "learn for pay" guarantee / base is 25k per hour                              |
+| social security fund        | none                                            | 10% of salary allocated to collective security fund                                     |
+| additional benefits         | —                                               | direct donations from tourists                              |
+| cyber valley revenue share  | none                                            | 5% of total cyber valley revenue distributed to stewards               |
+| return of investments in case of land sale or firing | no | yes |
+
 - participants of the program have access to [[nandu guide]] and [[nandu manage]]
 
 ## Questions

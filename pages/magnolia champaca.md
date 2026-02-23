@@ -1,5 +1,5 @@
 ---
-tags: species
+tags: species, major
 alias: cempaka, champaсa, white champaca
 crystal-type: entity
 crystal-domain: biology
@@ -99,8 +99,6 @@ environment:: tropical lowland and mid-elevation climates with rich, well-draine
 		- [[floral water]]: [[byproduct]] of [[distillation]] used in [[cosmetics]] and rituals
 		- [[wood]]: harvested selectively after natural fall or pruning. used in artisanal [[woodcraft]], [[incense]], and [[carving]]
 
-tags:: species, major
-
 wood
 
 ![image.png](https://ipfs.io/ipfs/QmW9v9T8Usp1mPqqFGMt6AUU1dWHw22tApWPrBAc8rK7cN)
@@ -112,8 +110,6 @@ wood
 products
 
 - [[flower]]
-  tags:: species
-  alias:: champaсa, champak, white champaca, magnolia champaca
 
 height: 50 m
 

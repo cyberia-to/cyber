@@ -9,29 +9,37 @@ crystal-domain: cyber
 	- Back to [[bostrom infrastructure]]
 -
 - ## Bostrom Network
-	- | Service | URL | Description |
-	  |---------|-----|-------------|
-	  | RPC | `https://rpc.bostrom.cybernode.ai` | Tendermint RPC (WebSocket + HTTP) |
-	  | LCD/REST | `https://lcd.bostrom.cybernode.ai` | Cosmos SDK REST API |
-	  | gRPC-Web | `https://grpc.bostrom.cybernode.ai` | gRPC-Web proxy (for browser clients) |
-	  | GraphQL | `https://index.bostrom.cybernode.ai/v1/graphql` | Cyberindex GraphQL API |
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| RPC | `https://rpc.bostrom.cybernode.ai` | Tendermint RPC (WebSocket + HTTP) |
+| LCD/REST | `https://lcd.bostrom.cybernode.ai` | Cosmos SDK REST API |
+| gRPC-Web | `https://grpc.bostrom.cybernode.ai` | gRPC-Web proxy (for browser clients) |
+| GraphQL | `https://index.bostrom.cybernode.ai/v1/graphql` | Cyberindex GraphQL API |
+
 -
 - ## IPFS
-	- | Service | URL | Description |
-	  |---------|-----|-------------|
-	  | Gateway | `https://gateway.ipfs.cybernode.ai` | Public IPFS gateway |
-	  | Swarm | `swarm.io.cybernode.ai` | libp2p bootstrap node |
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| Gateway | `https://gateway.ipfs.cybernode.ai` | Public IPFS gateway |
+| Swarm | `swarm.io.cybernode.ai` | libp2p bootstrap node |
+
 -
 - ## Monitoring
-	- | Service | URL | Description |
-	  |---------|-----|-------------|
-	  | Status | `https://cybernode.ai` | Public status dashboard |
-	  | Grafana | `https://cybernode.ai/grafana/` | Detailed metrics (public dashboards) |
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| Status | `https://cybernode.ai` | Public status dashboard |
+| Grafana | `https://cybernode.ai/grafana/` | Detailed metrics (public dashboards) |
+
 -
 - ## Frontend
-	- | Service | URL | Description |
-	  |---------|-----|-------------|
-	  | cyb.ai | `https://cyb.ai` | Main web interface |
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| cyb.ai | `https://cyb.ai` | Main web interface |
+
 -
 - ## API Usage Examples
 	- ### RPC — Get Latest Block

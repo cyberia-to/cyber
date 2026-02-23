@@ -65,7 +65,7 @@ Prove a statement is true without revealing why it is true.
 
 Mechanism: The prover generates a mathematical proof $\pi$ that a computation was executed correctly. The proof reveals only the public inputs and the result — nothing about the private witness (the secret data used during computation). Verification is fast: $O(\log n)$ work regardless of computation size.
 
-CORE uses [[STARK]]s (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every STARK in CORE operates over the [[Goldilocks field]] $\mathbb{F}_p$.
+CORE uses [[STARKs]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every STARK in CORE operates over the [[Goldilocks field]] $\mathbb{F}_p$.
 
 Where ZK appears in CORE:
 
@@ -93,7 +93,7 @@ Private queries. A user encrypts a search query and sends it to a [[cybergraph]]
 
 This works because the tri-kernel focus computation decomposes into operations that FHE supports: matrix-vector products (homomorphic addition and multiplication), polynomial evaluation (NTT in $R_p$), and function application via Programmable Bootstrapping (PBS). The computation is expensive — orders of magnitude slower than plaintext — but it is mathematically guaranteed that the node learns nothing.
 
-Private [[cyberlink]]s. A [[neuron]] can create edges in the knowledge graph where the source [[particle]], target particle, and weight are all FHE-encrypted. The network cannot see who linked what to what, or with what weight. But the tri-kernel ranking can still compute aggregate focus over encrypted weights, because focus computation uses only addition (homomorphic) and normalization (achievable via bootstrapping). The collective intelligence benefits from the link without knowing its contents.
+Private [[cyberlinks]]. A [[neuron]] can create edges in the knowledge graph where the source [[particle]], target particle, and weight are all FHE-encrypted. The network cannot see who linked what to what, or with what weight. But the tri-kernel ranking can still compute aggregate focus over encrypted weights, because focus computation uses only addition (homomorphic) and normalization (achievable via bootstrapping). The collective intelligence benefits from the link without knowing its contents.
 
 Encrypted model inference. A neural network evaluates on FHE-encrypted inputs. The linear layers (matrix multiplications) use homomorphic addition and multiplication. The nonlinear activations (ReLU, GELU) use Programmable Bootstrapping — the fundamental TFHE operation.
 

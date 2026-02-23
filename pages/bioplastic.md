@@ -20,15 +20,15 @@ core material system
 
 material properties
 
-- | feature             | result                    |
-  |---------------------|----------------------------|
-  | waterproofness      | high (damar resin coating) |
-  | uv resistance       | moderate-high (clay and shading) |
-  | mechanical strength | medium-high (fiber core)   |
-  | lifespan            | 8–12 years (upgradable to 15+ with maintenance) |
-  | biodegradability    | full (soil-safe recycling) |
-  | transparency        | semi-translucent (milky diffuse light) |
-  | repairability       | easy (re-coating damar and slip patching) |
+| feature             | result                    |
+|---------------------|----------------------------|
+| waterproofness      | high (damar resin coating) |
+| uv resistance       | moderate-high (clay and shading) |
+| mechanical strength | medium-high (fiber core)   |
+| lifespan            | 8–12 years (upgradable to 15+ with maintenance) |
+| biodegradability    | full (soil-safe recycling) |
+| transparency        | semi-translucent (milky diffuse light) |
+| repairability       | easy (re-coating damar and slip patching) |
 
 material production system
 
@@ -60,11 +60,11 @@ architecture layering concept
 maintenance protocol
 
 | time      | action |
-  |-----------|--------|
-  | every 6 months | visual inspection, minor repairs |
-  | every 5 years  | re-apply damar resin layer if needed |
-  | every 10 years | partial or full alang-alang rethatching |
-  | every 15–20 years | refresh bioplastic panels if necessary |
+|-----------|--------|
+| every 6 months | visual inspection, minor repairs |
+| every 5 years  | re-apply damar resin layer if needed |
+| every 10 years | partial or full alang-alang rethatching |
+| every 15–20 years | refresh bioplastic panels if necessary |
 
 ### performance summary
 
@@ -89,12 +89,12 @@ outcome
 
 strategic advantages
 
-- | advantage            | reason |
-  |----------------------|--------|
-  | full material sovereignty | independence from global supply lines |
-  | resilience to climate | breathable, flexible architecture that adjusts naturally |
-  | community empowerment | local labor and knowledge centered construction |
-  | ecological restoration | buildings that support forest health, not destroy it |
+| advantage            | reason |
+|----------------------|--------|
+| full material sovereignty | independence from global supply lines |
+| resilience to climate | breathable, flexible architecture that adjusts naturally |
+| community empowerment | local labor and knowledge centered construction |
+| ecological restoration | buildings that support forest health, not destroy it |
 
 final philosophy
 

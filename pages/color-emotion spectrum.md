@@ -7,15 +7,17 @@ crystal-domain: culture
 - source:: https://x.com/compose/articles/edit/1983243442286112770
 - a novel evolutionary framework linking the visible [[electromagnetic spectrum]] to seven fundamental [[emotions]]
 - the ROYGBIV spectrum mirrors a gradient of emotional valences: high-arousal threats at longer wavelengths, subtle dangers at shorter wavelengths, positive states centered in the mid-spectrum
-- | [[color]] | [[emotion]] | evolutionary basis |
-  |-------|---------|-------------------|
-  | [[red]] | [[anger]] | fire, blood, thermal injury — death from burn |
-  | [[orange]] | [[disgust]] | decaying matter, toxic fruits — contamination avoidance |
-  | [[yellow]] | [[surprise]] | sudden brightness, dawn, alerting signals — orienting response |
-  | [[green]] | [[joy]] | vegetation, [[photosynthesis]], fertile environments — life reward |
-  | [[blue]] | [[interest]] | sky, water, horizons — exploration and calm focus |
-  | [[indigo]] | [[sadness]] | twilight, deep water, low light — withdrawal and introspection |
-  | [[violet]] | [[fear]] | UV radiation, [[apoptosis]], bruising — death from radiation |
+
+| [[color]] | [[emotion]] | evolutionary basis |
+|-------|---------|-------------------|
+| [[red]] | [[anger]] | fire, blood, thermal injury — death from burn |
+| [[orange]] | [[disgust]] | decaying matter, toxic fruits — contamination avoidance |
+| [[yellow]] | [[surprise]] | sudden brightness, dawn, alerting signals — orienting response |
+| [[green]] | [[joy]] | vegetation, [[photosynthesis]], fertile environments — life reward |
+| [[blue]] | [[interest]] | sky, water, horizons — exploration and calm focus |
+| [[indigo]] | [[sadness]] | twilight, deep water, low light — withdrawal and introspection |
+| [[violet]] | [[fear]] | UV radiation, [[apoptosis]], bruising — death from radiation |
+
 - ## evolutionary basis
 	- [[color]]-[[emotion]] links arose from adaptive pressures in ancestral environments where specific wavelengths correlated with survival-relevant stimuli
 	- primates developed trichromatic vision for foraging, associating colors with food, danger, and social cues

@@ -76,14 +76,14 @@ products
 
 ## chemical compounds
 
-- | compound        | part of plant | amount (approx.) | properties/usefulness              |  
-	  |---------------------|-------------------|-----------------------|-----------------------------------------|  
-	  | [[amylose]]             | corm             | 60% of starch         | energy storage, slow digestion          |  
-	  | [[cellulose]]           | leaves, corm     | trace amounts         | supports digestion, dietary fiber       |  
-	  | [[vitamin a]]           | leaves           | 5,000 IU per 100g     | antioxidant, supports vision            |  
-	  | [[vitamin c]]           | leaves, corm     | 20 mg per 100g        | immune booster, antioxidant             |  
-	  | [[calcium]]             | leaves, corm     | 50 mg per 100g        | bone health, muscle function            |  
-	  | [[potassium]]           | leaves, corm     | 650 mg per 100g       | regulates blood pressure and hydration  |  
-	  | [[magnesium]]           | corm             | 30 mg per 100g        | supports muscle and nerve function      |  
-	  | [[oxalates]]            | leaves, corm     | trace (toxic raw)     | reduced by cooking, can cause irritation |  
-	  | [[quercetin]]           | leaves           | trace amounts         | antioxidant, anti-inflammatory          |
+| compound        | part of plant | amount (approx.) | properties/usefulness              |
+|---------------------|-------------------|-----------------------|-----------------------------------------|
+| [[amylose]]             | corm             | 60% of starch         | energy storage, slow digestion          |
+| [[cellulose]]           | leaves, corm     | trace amounts         | supports digestion, dietary fiber       |
+| [[vitamin a]]           | leaves           | 5,000 IU per 100g     | antioxidant, supports vision            |
+| [[vitamin c]]           | leaves, corm     | 20 mg per 100g        | immune booster, antioxidant             |
+| [[calcium]]             | leaves, corm     | 50 mg per 100g        | bone health, muscle function            |
+| [[potassium]]           | leaves, corm     | 650 mg per 100g       | regulates blood pressure and hydration  |
+| [[magnesium]]           | corm             | 30 mg per 100g        | supports muscle and nerve function      |
+| [[oxalates]]            | leaves, corm     | trace (toxic raw)     | reduced by cooking, can cause irritation |
+| [[quercetin]]           | leaves           | trace amounts         | antioxidant, anti-inflammatory          |

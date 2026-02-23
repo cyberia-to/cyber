@@ -60,15 +60,15 @@ bad neighbors: walnut (juglone-sensitive plants).
 
 chemical compound
 
-- | part | chemical compound | amount (mg/100g) |
-  | ---- | ---- | ---- |
-  | fruit | [[vitamin c]] ([[ascorbic acid]]) | 71.5 |
-  |  | [[flavonoids]] ([[quercetin]], [[kaempferol]]) | varies |
-  |  | [[phenolic acids]] ([[gallic acid]], [[caffeic acid]]) | varies |
-  |  | sugar ([[fructose]], [[glucose]]) | 10-15% |
-  | seeds | [[methylene cyclopropyl glycine]] (mcpg) | trace amounts |
-  |  | [[saponins]] | varies |
-  | leaves | [[quercetin]], [[kaempferol]], [[epicatechin]], [[proanthocyanidins]] | varies |
-  |  | [[phenolic acids]]: [[chlorogenic acid]], [[ellagic acid]], [[gallic acid]], [[caffeic acid]], [[p-coumaric acid]], [[ferulic acid]] | varies |
-  | bark | [[tannins]] | varies |
-  | flowers | [[rutin]], [[myricetin]], [[catechins]], [[apigenin]] | varies |
+| part | chemical compound | amount (mg/100g) |
+| ---- | ---- | ---- |
+| fruit | [[vitamin c]] ([[ascorbic acid]]) | 71.5 |
+|  | [[flavonoids]] ([[quercetin]], [[kaempferol]]) | varies |
+|  | [[phenolic acids]] ([[gallic acid]], [[caffeic acid]]) | varies |
+|  | sugar ([[fructose]], [[glucose]]) | 10-15% |
+| seeds | [[methylene cyclopropyl glycine]] (mcpg) | trace amounts |
+|  | [[saponins]] | varies |
+| leaves | [[quercetin]], [[kaempferol]], [[epicatechin]], [[proanthocyanidins]] | varies |
+|  | [[phenolic acids]]: [[chlorogenic acid]], [[ellagic acid]], [[gallic acid]], [[caffeic acid]], [[p-coumaric acid]], [[ferulic acid]] | varies |
+| bark | [[tannins]] | varies |
+| flowers | [[rutin]], [[myricetin]], [[catechins]], [[apigenin]] | varies |

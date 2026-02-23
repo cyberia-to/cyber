@@ -48,14 +48,16 @@ protection of joints and walls
 
 🧬 evolution of the wall across epochs
 
-- | era | what happens | effect on the wall |
-  |:----|:-------------|:------------------|
-  | 0–10 years | initial micro-shrinkage and carbonation | pores close, mortar hardens, initial mineral bonding strengthens |
-  | 10–100 years | progressive crystallization and strengthening | wall becomes semi-monolithic, improved compressive strength |
-  | 100–1000 years | slow internal mineral growth | porosity decreases, structure self-heals minor imperfections |
-  | 1000–5000 years | complete inner pore stabilization | wall transitions into a synthetic rock, near-perfect mineral cohesion |
-  | 5000–10,000 years | surface micro-polishing by rain, wind | slight aesthetic smoothing, no structural damage |
-  | 10,000–100,000 years | geological-level stability phase | wall behaves as natural basalt formations, survival limited only by massive geological events |
+
+| era | what happens | effect on the wall |
+|:----|:-------------|:------------------|
+| 0–10 years | initial micro-shrinkage and carbonation | pores close, mortar hardens, initial mineral bonding strengthens |
+| 10–100 years | progressive crystallization and strengthening | wall becomes semi-monolithic, improved compressive strength |
+| 100–1000 years | slow internal mineral growth | porosity decreases, structure self-heals minor imperfections |
+| 1000–5000 years | complete inner pore stabilization | wall transitions into a synthetic rock, near-perfect mineral cohesion |
+| 5000–10,000 years | surface micro-polishing by rain, wind | slight aesthetic smoothing, no structural damage |
+| 10,000–100,000 years | geological-level stability phase | wall behaves as natural basalt formations, survival limited only by massive geological events |
+
 
 🔥 laser cutting technology for ultra-thin basalt joints
 

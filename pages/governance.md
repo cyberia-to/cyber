@@ -27,9 +27,12 @@ discussing only for dunbar scale (150 ppl)
 
 quadrant of governance
 
-- | | no personal incentive| personal incentive |
-  | discrete | democracy  | prediction markets  |
-  | continuous | gauge voting | shapely value |
+
+| | no personal incentive| personal incentive |
+|---|---|---|
+| discrete | democracy  | prediction markets  |
+| continuous | gauge voting | shapely value |
+
 
 decision types
 

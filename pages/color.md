@@ -7,15 +7,17 @@ crystal-domain: cyber
 - wavelength of light in the visible [[electromagnetic spectrum]] (380-750 nm)
 - the perceptual dimension that encodes [[emotion]] in [[prism]] and carries evolutionary survival signals
 - ## the visible spectrum
-	- | color | wavelength | emotion | arousal |
-	  |-------|------------|---------|---------|
-	  | [[red]] | 620-750 nm | [[anger]] | highest |
-	  | [[orange]] | 590-620 nm | [[disgust]] | high |
-	  | [[yellow]] | 570-590 nm | [[surprise]] | high |
-	  | [[green]] | 495-570 nm | [[joy]] | medium |
-	  | [[blue]] | 450-495 nm | [[interest]] | low |
-	  | [[indigo]] | 420-450 nm | [[sadness]] | low |
-	  | [[violet]] | 380-420 nm | [[fear]] | lowest |
+
+| color | wavelength | emotion | arousal |
+|-------|------------|---------|---------|
+| [[red]] | 620-750 nm | [[anger]] | highest |
+| [[orange]] | 590-620 nm | [[disgust]] | high |
+| [[yellow]] | 570-590 nm | [[surprise]] | high |
+| [[green]] | 495-570 nm | [[joy]] | medium |
+| [[blue]] | 450-495 nm | [[interest]] | low |
+| [[indigo]] | 420-450 nm | [[sadness]] | low |
+| [[violet]] | 380-420 nm | [[fear]] | lowest |
+
 - ## physics
 	- color is electromagnetic radiation — oscillating electric and magnetic fields
 	- wavelength determines energy: shorter wavelength = higher energy per photon

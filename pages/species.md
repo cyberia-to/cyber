@@ -38,7 +38,7 @@ sets
 - has content: description, ecology, uses, observations, images
 - gets content-addressed via [[IPFS]] → CID
 - becomes a [[particle]] in [[Bostrom]]
-- can be [[cyberlink]]ed to anything: other species, locations, compounds, observations
+- can be [[cyberlinked]] to anything: other species, locations, compounds, observations
 
 example: [[coffea arabica]]
   ```
@@ -92,7 +92,7 @@ example: [[coffea arabica]]
 
 ### from graph to protocol
 
-  this Logseq graph is a prototype. the [[species]] pages, the `[[wiki-links]]`, the tags — they ARE a knowledge graph. the step from markdown to [[Bostrom]] is mechanical:
+  this graph is a prototype. the [[species]] pages, the `[[wiki-links]]`, the tags — they ARE a knowledge graph. the step from markdown to [[Bostrom]] is mechanical:
 - markdown page → [[IPFS]] CID → [[particle]]
 - `[[wiki-link]]` → [[cyberlink]]
 - tag → typed edge

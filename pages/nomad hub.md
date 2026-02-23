@@ -57,7 +57,7 @@ example tier system
 
 - tagline
 	- from urban survival to forest arrival
-	- you weren’t made for concrete
+	- you weren't made for concrete
 	- citadel: nature is the interface
 	- citadel: the forest you were working for
 	- write history in roots and routers
@@ -70,32 +70,37 @@ example tier system
 	- network with nature.
 	- life as nature intended
 	- trade skylines for starlines
-	- nature's codebase, nomad’s homebase
+	- nature's codebase, nomad's homebase
 	- seed ideas. harvest impact
 - why so?
 
 ## residency program for one moon
 
-- | category | indonesian | foreigner |
-	  | normal price | $500 | $1000 |
-	  | discount: women under 42 | $250 | $500 |
-	  | discount: kids under 10 and animals | $120 | $250 |
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $500 | $1000 |
+| discount: women under 42 | $250 | $500 |
+| discount: kids under 10 and animals | $120 | $250 |
 
 ## healthy food for one moon
 
 - 3 healthy meals per day
-	- | category | indonesian | foreigner|
-		  | normal price | $400 | $700 |
-		  | discount: woman under 42 | $200 | $350 |
-		  | discount: kid under 10 | $100 | $175 |
+
+| category | indonesian | foreigner|
+|---|---|---|
+| normal price | $400 | $700 |
+| discount: woman under 42 | $200 | $350 |
+| discount: kid under 10 | $100 | $175 |
 
 ## private camp for one moon
 
 - the price is for the moon cycle ~29 days
 - the tent can acomodate 1-3 persons
-- | period | price |
-	  | average month | $500 |
-	  | burn.city month | $1000 |
+
+| period | price |
+|---|---|
+| average month | $500 |
+| burn.city month | $1000 |
 
 ## tents faq
 

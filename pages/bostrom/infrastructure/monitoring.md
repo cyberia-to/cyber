@@ -17,13 +17,14 @@ crystal-domain: cyber
 ## What's Monitored
 
 - ### Endpoint Health
-	- | Endpoint | Check |
-		  |----------|-------|
-		  | RPC | HTTP 200 + valid response |
-		  | LCD | HTTP 200 + valid JSON |
-		  | GraphQL | Query execution success |
-		  | IPFS Gateway | Content retrieval |
-		  | cyb.ai | Page load + content check |
+
+| Endpoint | Check |
+|----------|-------|
+| RPC | HTTP 200 + valid response |
+| LCD | HTTP 200 + valid JSON |
+| GraphQL | Query execution success |
+| IPFS Gateway | Content retrieval |
+| cyb.ai | Page load + content check |
 - ### SSL Certificates
 	- All endpoints are monitored for SSL certificate expiry with alerts 30 days before expiration.
 - ### Blockchain Sync
@@ -39,12 +40,12 @@ crystal-domain: cyber
 
 ## Metrics Stack
 
-- | Component | Purpose |
-	  |-----------|---------|
-	  | Prometheus | Time-series metrics collection |
-	  | Grafana | Visualization and alerting |
-	  | Blackbox Exporter | HTTP/SSL endpoint probing |
-	  | Node Exporter | Server hardware metrics |
+| Component | Purpose |
+|-----------|---------|
+| Prometheus | Time-series metrics collection |
+| Grafana | Visualization and alerting |
+| Blackbox Exporter | HTTP/SSL endpoint probing |
+| Node Exporter | Server hardware metrics |
 
 ## Alert Categories
 
@@ -61,12 +62,12 @@ crystal-domain: cyber
 
 ## Uptime Targets
 
-- | Service | Target |
-	  |---------|--------|
-	  | RPC/LCD | 99.9% |
-	  | GraphQL | 99.5% |
-	  | IPFS Gateway | 99% |
-	  | cyb.ai | 99.9% |
+| Service | Target |
+|---------|--------|
+| RPC/LCD | 99.9% |
+| GraphQL | 99.5% |
+| IPFS Gateway | 99% |
+| cyb.ai | 99.9% |
 
 ## Incident Response
 

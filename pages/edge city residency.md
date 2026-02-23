@@ -41,17 +41,17 @@ Join builders, hackers, and homesteaders who treat statecraft like open-source. 
 
 ## Course
 
-- | type | date | time | record | name | notes |
-	  | ----- | -----| ----- | ------ | ------| ------|
-	  | lecture | 23 oct | 11:00 | [video](https://x.com/mastercyb/status/1981362331386097745) |[[cyber valley story]] | autonomous village from scratch? |
-	  | lecture | 28 oct | 17:00 | [video](https://x.com/mastercyb/status/1983218412320108803) | [[energy and water system]] | practical advices |
-	  | lecture | 29 oct | 15:00 | [video](https://x.com/mastercyb/status/1983552837964661224) | [[soil, heat and carbon]] | the source of magic and the hope |
-	  | lecture | 03 nov | 11:00 | [video](https://x.com/mastercyb/status/1985348250787029110)| [[biome engineering]] | create [[magic forest]] |
-	  | lecture | 04 nov | 17:00 | [video](https://x.com/mastercyb/status/1985800930428928474)|  [[collective intelligence]] | miniconf: history and (bright) future |
-	  | lecture | 05 nov | 13:00 | [video](https://x.com/mastercyb/status/1986103838462668978)| [[bostrom story]] | 4 years of Bostrom network|
-	  | lecture | 10 nov | 17:00 | | [token engineering and governance](https://app.sola.day/event/detail/16959) | how to program society for good |
-	  | workshop |  13 nov | 13:00 | | [government formation](https://app.sola.day/event/detail/17046) | become the cyberia leader |
-	  | lecture | 14 nov | 16:00 | | [what is cyberia, seriously?](https://app.sola.day/event/detail/16961) | |
+| type | date | time | record | name | notes |
+| ----- | -----| ----- | ------ | ------| ------|
+| lecture | 23 oct | 11:00 | [video](https://x.com/mastercyb/status/1981362331386097745) |[[cyber valley story]] | autonomous village from scratch? |
+| lecture | 28 oct | 17:00 | [video](https://x.com/mastercyb/status/1983218412320108803) | [[energy and water system]] | practical advices |
+| lecture | 29 oct | 15:00 | [video](https://x.com/mastercyb/status/1983552837964661224) | [[soil, heat and carbon]] | the source of magic and the hope |
+| lecture | 03 nov | 11:00 | [video](https://x.com/mastercyb/status/1985348250787029110)| [[biome engineering]] | create [[magic forest]] |
+| lecture | 04 nov | 17:00 | [video](https://x.com/mastercyb/status/1985800930428928474)|  [[collective intelligence]] | miniconf: history and (bright) future |
+| lecture | 05 nov | 13:00 | [video](https://x.com/mastercyb/status/1986103838462668978)| [[bostrom story]] | 4 years of Bostrom network|
+| lecture | 10 nov | 17:00 | | [token engineering and governance](https://app.sola.day/event/detail/16959) | how to program society for good |
+| workshop |  13 nov | 13:00 | | [government formation](https://app.sola.day/event/detail/17046) | become the cyberia leader |
+| lecture | 14 nov | 16:00 | | [what is cyberia, seriously?](https://app.sola.day/event/detail/16961) | |
 
 ## Connect
 

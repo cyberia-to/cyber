@@ -70,25 +70,27 @@ products
 
 ## chemical compounds
 
-- | compound   | plant part | amount (approx.)                | notes                                             |
-	  |        |     |         |          |
-	  | [[mucilage]]                  | leaves     | 3–5% fresh weight               | digestion aid, moisture retention                                 |
-	  | [[flavonoids]]                | leaves     | 2–4 mg/g dry weight             | quercetin, kaempferol; antioxidants                               |
-	  | [[flavonoids]]                | flowers    | 1–3 mg/g dry weight             | pigmentation and antioxidant activity                             |
-	  | [[ascorbic acid]] | leaves     | 40–60 mg/100g fresh weight      | antioxidant; hormone biosynthesis cofactor                        |
-	  | [[β-carotene]] | leaves     | 3500–4500 IU/100g fresh weight  | vitamin a precursor; supports vision and growth                   |
-	  | [[calcium]]                   | leaves     | 120–200 mg/100g fresh weight    | cellular structure and signaling                                  |
-	  | [[iron]]                      | leaves     | 3–5 mg/100g fresh weight        | chlorophyll formation, metabolic function                         |
-	  | [[antioxidants]]              | leaves     | 5–8 µmol TE/g fresh weight      | combats oxidative stress                                          |
-	  | [[saponins]]                  | roots      | trace (<1%)                     | antimicrobial, anti-inflammatory potential                        |
-	  | [[alkaloids]]                 | roots      | trace (<0.5%)                   | potential bioactive properties                                    |
-	  | [[alkaloids]]                 | fruits     | trace (<0.5%)                   | potential bioactive properties                                    |
-	  | [[fatty acids]]               | fruits     | 2–4% dry weight                 | [[linoleic acid]] and [[oleic acid]]                                          |
-	  | essential fatty acids     | seeds      | 15–25% dry weight               | [[omega-3]] and [[omega-6]] fatty acids                                   |
-	  | [[proteins]]                  | seeds      | 12–18% dry weight               | essential amino acids                                             |
-	  | [[phenolic compounds]]        | flowers    | 0.5–1.5 mg/g dry weight         | [[ferulic acid]] , [[caffeic acid]] ; antioxidant                               |
-	  | [[phytosterols]]              | leaves     | present                         | [[campesterol]], [[sitosterol]]; [[brassinosteroid]] (growth hormones)|
-	  | [[terpenoids]]                | leaves     | present                         | plant defense and growth regulators                               |
+
+| compound   | plant part | amount (approx.)                | notes                                             |
+|---|---|---|---|
+| [[mucilage]]                  | leaves     | 3–5% fresh weight               | digestion aid, moisture retention                                 |
+| [[flavonoids]]                | leaves     | 2–4 mg/g dry weight             | quercetin, kaempferol; antioxidants                               |
+| [[flavonoids]]                | flowers    | 1–3 mg/g dry weight             | pigmentation and antioxidant activity                             |
+| [[ascorbic acid]] | leaves     | 40–60 mg/100g fresh weight      | antioxidant; hormone biosynthesis cofactor                        |
+| [[β-carotene]] | leaves     | 3500–4500 IU/100g fresh weight  | vitamin a precursor; supports vision and growth                   |
+| [[calcium]]                   | leaves     | 120–200 mg/100g fresh weight    | cellular structure and signaling                                  |
+| [[iron]]                      | leaves     | 3–5 mg/100g fresh weight        | chlorophyll formation, metabolic function                         |
+| [[antioxidants]]              | leaves     | 5–8 µmol TE/g fresh weight      | combats oxidative stress                                          |
+| [[saponins]]                  | roots      | trace (<1%)                     | antimicrobial, anti-inflammatory potential                        |
+| [[alkaloids]]                 | roots      | trace (<0.5%)                   | potential bioactive properties                                    |
+| [[alkaloids]]                 | fruits     | trace (<0.5%)                   | potential bioactive properties                                    |
+| [[fatty acids]]               | fruits     | 2–4% dry weight                 | [[linoleic acid]] and [[oleic acid]]                                          |
+| essential fatty acids     | seeds      | 15–25% dry weight               | [[omega-3]] and [[omega-6]] fatty acids                                   |
+| [[proteins]]                  | seeds      | 12–18% dry weight               | essential amino acids                                             |
+| [[phenolic compounds]]        | flowers    | 0.5–1.5 mg/g dry weight         | [[ferulic acid]] , [[caffeic acid]] ; antioxidant                               |
+| [[phytosterols]]              | leaves     | present                         | [[campesterol]], [[sitosterol]]; [[brassinosteroid]] (growth hormones)|
+| [[terpenoids]]                | leaves     | present                         | plant defense and growth regulators                               |
+
 - ## operations:
 	- propagation: propagated easily by seed or stem cuttings, stem cuttings root readily in moist soil or water within 7–10 days
 	- maintenance: minimal maintenance; regular watering during dry periods, occasional fertilization with organic compost improves leaf yield

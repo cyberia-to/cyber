@@ -20,16 +20,17 @@ fundamental factor of [[implicit knowledge]]
 evolution from [[pagerank]]
 
 - pagerank is diffusion-only (one kernel). cyberank is the full [[tri-kernel]]
-- | feature                | [[pagerank]]                                     | cyberank                                                                 |
-  |------------------------|----------------------------------------------|--------------------------------------------------------------------------|
-  | input structure    | directed graph with edges indicating links   |  [[cybergraph]]          |
-  | operators          | diffusion only                               | [[diffusion]] + [[springs]] + [[heat kernel]]                            |
-  | damping factor     | typically set to 0.85                        | [[consensus parameter]]                  |
-  | link representation| edges with equal weight     | [[attention]] and [[will]] token, three scalars (h, d, c)                |
-  | handling dangling nodes | distributed uniformly among all nodes      | adjusted rank calculation considering dangling nodes explicitly          |
-  | rank initialization| uniformly distributed initial ranks          | starts with all ranks initialized to zero                                |
-  | normalization     | ensures rank sum equals one                   | implicit normalization through rank adjustments and damping factor       |
-  | locality           | global recompute                             | bounded locality: O(deg(v)) per update                                   |
+
+| feature                | [[pagerank]]                                     | cyberank                                                                 |
+|------------------------|----------------------------------------------|--------------------------------------------------------------------------|
+| input structure    | directed graph with edges indicating links   |  [[cybergraph]]          |
+| operators          | diffusion only                               | [[diffusion]] + [[springs]] + [[heat kernel]]                            |
+| damping factor     | typically set to 0.85                        | [[consensus parameter]]                  |
+| link representation| edges with equal weight     | [[attention]] and [[will]] token, three scalars (h, d, c)                |
+| handling dangling nodes | distributed uniformly among all nodes      | adjusted rank calculation considering dangling nodes explicitly          |
+| rank initialization| uniformly distributed initial ranks          | starts with all ranks initialized to zero                                |
+| normalization     | ensures rank sum equals one                   | implicit normalization through rank adjustments and damping factor       |
+| locality           | global recompute                             | bounded locality: O(deg(v)) per update                                   |
 
 pseudocode in python (diffusion component, legacy reference)
 

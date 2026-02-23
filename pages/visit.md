@@ -18,20 +18,29 @@ crystal-domain: cyberia
 	- [[wilderness]] 10+ km of trails on 25 ha wilderness
 - ## price
 	- ## working days
-		- | category | indonesian | foreigner |
-			  | normal price | $7 | $15 |
-			  | discount: woman under 42 | $4 | $7 |
-			  | discount: kids under 10 | free | free |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $7 | $15 |
+| discount: woman under 42 | $4 | $7 |
+| discount: kids under 10 | free | free |
+
 	- ## weekends
-		- | category | indonesian | foreigner |
-			  | normal price | $10 | $20 |
-			  | discount: woman under 42 | $5 | $10 |
-			  | discount: kids under 10 | free | free |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $10 | $20 |
+| discount: woman under 42 | $5 | $10 |
+| discount: kids under 10 | free | free |
+
 	- ## holidays + moons
-		- | category | indonesian | foreigner |
-			  | normal price | $12 | $25 |
-			  | discount: woman under 42 | $6 | $12 |
-			  | discount: kids under 10 | free | free |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $12 | $25 |
+| discount: woman under 42 | $6 | $12 |
+| discount: kids under 10 | free | free |
+
 - ## include access to public infrastructure
 	- {{query (page-property :type "public")}}
 
@@ -46,17 +55,25 @@ crystal-domain: cyberia
 	- [[glamping]]: stay overnight in glowing forest [[sinwood]]
 - ## price
 	- ## working days
-	- | category | indonesian | foreigner |
-		  | normal price | $20 | $40 |
-		  | discount: woman under 42 | $10 | $20 |
-		  | discount: kids under 10 | $5 | $10 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $20 | $40 |
+| discount: woman under 42 | $10 | $20 |
+| discount: kids under 10 | $5 | $10 |
+
 	- ## weekends
-		  | category | indonesian | foreigner |
-		  | normal price | $25 | $50 |
-		  | discount: woman under 42 | $12 | $25 |
-		  | discount: kids under 10 | $6 | $12 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $25 | $50 |
+| discount: woman under 42 | $12 | $25 |
+| discount: kids under 10 | $6 | $12 |
+
 	- ## holidays + moons
-		  | category | indonesian | foreigner |
-		  | normal price | $30 | $60 |
-		  | discount: woman under 42 | $15 | $30 |
-		  | discount: kids under 10 | $7 | $15 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $30 | $60 |
+| discount: woman under 42 | $15 | $30 |
+| discount: kids under 10 | $7 | $15 |

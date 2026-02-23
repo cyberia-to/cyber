@@ -109,33 +109,33 @@ links
 
 ## chemical compounds
 
-- | compound            | part of plant      | amount (approx.)                   | properties/usefulness                                                   |
-	  |--------------------------|-------------------------|-----------------------------------------|------------------------------------------------------------------------------|
-	  | [[vitamin a]]           | leaves, pods           | 6,780 IU per 100g (fresh leaves)       | antioxidant, supports vision and skin health                                |
-	  | [[thiamine]] | leaves                | 0.06 mg per 100g (fresh leaves)        | energy metabolism, nerve function                                           |
-	  | [[riboflavin]] | leaves              | 0.05 mg per 100g (fresh leaves)        | energy production, antioxidant activity                                     |
-	  | [[niacin]] | leaves, seeds          | 0.8 mg per 100g (fresh leaves)         | supports digestion, skin health, and nervous system                         |
-	  | [[pyridoxine]] | leaves, seeds       | 1.2 mg per 100g (fresh leaves)         | amino acid metabolism, red blood cell production                            |
-	  | [[vitamin c]]           | leaves, pods           | 220 mg per 100g (fresh leaves)         | immune-boosting, antioxidant                                                |
-	  | [[vitamin e]]           | leaves, seeds          | 16 mg per 100g (seeds)                 | protects cell membranes, supports skin health                               |
-	  | [[calcium]]             | leaves                 | 185 mg per 100g (fresh leaves)         | bone and teeth health, muscle function                                      |
-	  | [[potassium]]           | leaves, pods           | 259 mg per 100g (fresh leaves)         | regulates fluid balance, muscle contractions, and nerve signals             |
-	  | [[magnesium]]           | leaves, seeds          | 42 mg per 100g (fresh leaves)          | muscle and nerve function, energy production                                |
-	  | [[iron]]                | leaves, seeds          | 4 mg per 100g (fresh leaves)           | oxygen transport, red blood cell production                                 |
-	  | [[zinc]]                | leaves, seeds          | 0.6 mg per 100g (fresh leaves)         | immune system support, wound healing                                        |
-	  | [[quercetin]]           | leaves, flowers        | 100 mg per 100g (fresh leaves)         | antioxidant, anti-inflammatory                                              |
-	  | [[kaempferol]]          | leaves, flowers        | 78 mg per 100g (fresh leaves)          | antioxidant, may support heart and brain health                             |
-	  | [[chlorogenic acid]]    | leaves                 | 120 mg per 100g (fresh leaves)         | strong antioxidant, may regulate blood sugar                                |
-	  | [[glucomoringin]]       | seeds, leaves          | 70 mg per 100g (fresh seeds)           | antimicrobial, anticancer                                                   |
-	  | [[moringin]]            | seeds, leaves          | 50 mg per 100g (fresh seeds)           | antimicrobial, anti-inflammatory                                            |
-	  | [[moringinine]]         | roots, seeds           | trace amounts                          | potential adaptogenic and neuroprotective properties                        |
-	  | [[tannic acid]]         | bark, seeds            | 30 mg per 100g (seeds)                 | antimicrobial, astringent                                                   |
-	  | [[saponins]]            | leaves, seeds          | 45 mg per 100g (seeds)                 | cholesterol-lowering, immune-modulating                                     |
-	  | [[leucine]]             | leaves, seeds          | 4.3 g per 100g (fresh leaves)          | protein synthesis, muscle repair                                            |
-	  | [[lysine]]              | leaves, seeds          | 2.6 g per 100g (fresh leaves)          | essential for growth, tissue repair                                         |
-	  | [[valine]]              | leaves, seeds          | 3.2 g per 100g (fresh leaves)          | energy production, muscle recovery                                          |
-	  | [[methionine]]          | leaves, seeds          | 1.4 g per 100g (fresh leaves)          | antioxidant, precursor for important molecules                              |
-	  | [[oleic acid]]          | seeds                  | 72% of seed oil content                | heart health, anti-inflammatory                                             |
-	  | [[palmitic acid]]       | seeds                  | 6% of seed oil content                 | energy storage, cell membrane component                                     |
-	  | [[stearic acid]]        | seeds                  | 8% of seed oil content                 | energy source, supports healthy cholesterol levels                          |
-	  | [[beta-carotene]]       | leaves                 | 3.7 mg per 100g (fresh leaves)         | antioxidant, precursor to vitamin a                                         |
+| compound            | part of plant      | amount (approx.)                   | properties/usefulness                                                   |
+|--------------------------|-------------------------|-----------------------------------------|------------------------------------------------------------------------------|
+| [[vitamin a]]           | leaves, pods           | 6,780 IU per 100g (fresh leaves)       | antioxidant, supports vision and skin health                                |
+| [[thiamine]] | leaves                | 0.06 mg per 100g (fresh leaves)        | energy metabolism, nerve function                                           |
+| [[riboflavin]] | leaves              | 0.05 mg per 100g (fresh leaves)        | energy production, antioxidant activity                                     |
+| [[niacin]] | leaves, seeds          | 0.8 mg per 100g (fresh leaves)         | supports digestion, skin health, and nervous system                         |
+| [[pyridoxine]] | leaves, seeds       | 1.2 mg per 100g (fresh leaves)         | amino acid metabolism, red blood cell production                            |
+| [[vitamin c]]           | leaves, pods           | 220 mg per 100g (fresh leaves)         | immune-boosting, antioxidant                                                |
+| [[vitamin e]]           | leaves, seeds          | 16 mg per 100g (seeds)                 | protects cell membranes, supports skin health                               |
+| [[calcium]]             | leaves                 | 185 mg per 100g (fresh leaves)         | bone and teeth health, muscle function                                      |
+| [[potassium]]           | leaves, pods           | 259 mg per 100g (fresh leaves)         | regulates fluid balance, muscle contractions, and nerve signals             |
+| [[magnesium]]           | leaves, seeds          | 42 mg per 100g (fresh leaves)          | muscle and nerve function, energy production                                |
+| [[iron]]                | leaves, seeds          | 4 mg per 100g (fresh leaves)           | oxygen transport, red blood cell production                                 |
+| [[zinc]]                | leaves, seeds          | 0.6 mg per 100g (fresh leaves)         | immune system support, wound healing                                        |
+| [[quercetin]]           | leaves, flowers        | 100 mg per 100g (fresh leaves)         | antioxidant, anti-inflammatory                                              |
+| [[kaempferol]]          | leaves, flowers        | 78 mg per 100g (fresh leaves)          | antioxidant, may support heart and brain health                             |
+| [[chlorogenic acid]]    | leaves                 | 120 mg per 100g (fresh leaves)         | strong antioxidant, may regulate blood sugar                                |
+| [[glucomoringin]]       | seeds, leaves          | 70 mg per 100g (fresh seeds)           | antimicrobial, anticancer                                                   |
+| [[moringin]]            | seeds, leaves          | 50 mg per 100g (fresh seeds)           | antimicrobial, anti-inflammatory                                            |
+| [[moringinine]]         | roots, seeds           | trace amounts                          | potential adaptogenic and neuroprotective properties                        |
+| [[tannic acid]]         | bark, seeds            | 30 mg per 100g (seeds)                 | antimicrobial, astringent                                                   |
+| [[saponins]]            | leaves, seeds          | 45 mg per 100g (seeds)                 | cholesterol-lowering, immune-modulating                                     |
+| [[leucine]]             | leaves, seeds          | 4.3 g per 100g (fresh leaves)          | protein synthesis, muscle repair                                            |
+| [[lysine]]              | leaves, seeds          | 2.6 g per 100g (fresh leaves)          | essential for growth, tissue repair                                         |
+| [[valine]]              | leaves, seeds          | 3.2 g per 100g (fresh leaves)          | energy production, muscle recovery                                          |
+| [[methionine]]          | leaves, seeds          | 1.4 g per 100g (fresh leaves)          | antioxidant, precursor for important molecules                              |
+| [[oleic acid]]          | seeds                  | 72% of seed oil content                | heart health, anti-inflammatory                                             |
+| [[palmitic acid]]       | seeds                  | 6% of seed oil content                 | energy storage, cell membrane component                                     |
+| [[stearic acid]]        | seeds                  | 8% of seed oil content                 | energy source, supports healthy cholesterol levels                          |
+| [[beta-carotene]]       | leaves                 | 3.7 mg per 100g (fresh leaves)         | antioxidant, precursor to vitamin a                                         |

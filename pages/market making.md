@@ -4,13 +4,16 @@ crystal-type: entity
 crystal-domain: cyberia
 ---
 - [[osmosis]]
-	- | base | quote | pool id | stats| fee |
-	  | H | BOOT | [1561](https://app.osmosis.zone/pool/1561) | | 0.2% |
-	  | H | BOOT | [1560](https://app.osmosis.zone/pool/1560) | | 0.5% |
-	  | H | BOOT | [3165](https://app.osmosis.zone/pool/3165) | | 2% |
-	  | ETH | BOOT | [3162](https://app.osmosis.zone/pool/3162) | | 2% |
-	  | ETH | BOOT | [3162](https://app.osmosis.zone/pool/912) | | 0.5% |
-	  | BTC | BOOT | [3164](https://app.osmosis.zone/pool/3164) | | 2% |
+
+| base | quote | pool id | stats| fee |
+|---|---|---|---|---|
+| H | BOOT | [1561](https://app.osmosis.zone/pool/1561) | | 0.2% |
+| H | BOOT | [1560](https://app.osmosis.zone/pool/1560) | | 0.5% |
+| H | BOOT | [3165](https://app.osmosis.zone/pool/3165) | | 2% |
+| ETH | BOOT | [3162](https://app.osmosis.zone/pool/3162) | | 2% |
+| ETH | BOOT | [3162](https://app.osmosis.zone/pool/912) | | 0.5% |
+| BTC | BOOT | [3164](https://app.osmosis.zone/pool/3164) | | 2% |
+
 		-
 		- [APT/BOOT](https://app.osmosis.zone/pool/1541), [USDC/BOOT](https://app.osmosis.zone/pool/1520), [ATOM/BOOT](https://app.osmosis.zone/pool/596), [BOOT/OSMO](https://app.osmosis.zone/pool/597),
 		- FIL/BOOT https://app.osmosis.zone/pool/1562

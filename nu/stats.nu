@@ -1,51 +1,61 @@
-# Статистика Logseq графа
-# запуск: nu nu/stats.nu <путь-к-графу>
-# пример: nu nu/stats.nu ~/git/cloud-forest
+# Graph statistics
+# run: nu nu/stats.nu <path-to-graph>
+# example: nu nu/stats.nu ~/git/cyber
 
 def main [graph_path: string] {
     let pages = ([$graph_path "pages"] | path join)
     let graph_name = ($graph_path | path basename)
-    let files = (glob $"($pages)/*.md" | each {|f| ls $f | first} | flatten)
+    let files = (glob $"($pages)/**/*.md" | each {|f| ls $f | first} | flatten)
     let total = ($files | length)
 
     print $"═══════════════════════════════════════════"
-    print $"  ($graph_name | str upcase) — СТАТИСТИКА ГРАФА"
+    print $"  ($graph_name | str upcase) — GRAPH STATS"
     print $"═══════════════════════════════════════════"
     print ""
 
-    # --- Общее ---
+    # --- General ---
     let total_size = ($files | get size | math sum)
     let avg_size = ($files | get size | each {|s| $s | into int} | math avg | math round -p 0)
     let lines_total = ($files | each {|f| open $f.name | lines | length} | math sum)
 
-    print "── Общее ──"
-    print $"Файлов:            ($total)"
-    print $"Общий размер:      ($total_size)"
-    print $"Средний размер:    ($avg_size) B"
-    print $"Всего строк:       ($lines_total)"
+    print "── General ──"
+    print $"Files:             ($total)"
+    print $"Total size:        ($total_size)"
+    print $"Avg size:          ($avg_size) B"
+    print $"Total lines:       ($lines_total)"
     print ""
 
-    # --- Теги ---
+    # --- Tags (YAML frontmatter) ---
     let tag_data = ($files | each {|f|
         let content = (open $f.name)
-        let tag_line = ($content | lines | where {|l| $l starts-with "tags::"} | first | default "")
-        let tags = if ($tag_line | is-empty) { [] } else {
-            $tag_line | str replace "tags::" "" | split row "," | each {|t| $t | str trim}
-        }
+        let ls = ($content | lines)
+        let has_fm = ($ls | length) > 0 and ($ls | first) == "---"
+        let tags = if $has_fm {
+            let tag_line = ($ls | skip 1 | take while {|l| $l != "---"} | where {|l| $l =~ "^tags:"} | first | default "")
+            if ($tag_line | is-empty) { [] } else {
+                $tag_line | str replace "tags:" "" | split row "," | each {|t| $t | str trim} | where {|t| not ($t | is-empty)}
+            }
+        } else { [] }
         {file: ($f.name | path basename | str replace ".md" ""), tags: $tags}
     })
 
     let all_tags = ($tag_data | get tags | flatten)
     let no_tags = ($tag_data | where {|r| ($r.tags | length) == 0})
 
-    print "── Теги ──"
-    print $"Уникальных тегов:  ($all_tags | uniq | length)"
-    print $"Файлов без тегов:  ($no_tags | length)"
+    print "── Tags ──"
+    print $"Unique tags:       ($all_tags | uniq | length)"
+    print $"Untagged files:    ($no_tags | length)"
     print ""
-    print ($all_tags | uniq -c | sort-by count -r | table)
+    print ($all_tags | uniq -c | sort-by count -r | first 30 | table)
     print ""
 
-    # --- Ссылки ---
+    if ($no_tags | length) > 0 {
+        print $"── Untagged pages: ($no_tags | length) ──"
+        print ($no_tags | get file | first 30 | table)
+        print ""
+    }
+
+    # --- Links ---
     let link_data = ($files | each {|f|
         let content = (open $f.name)
         let found = ($content | parse --regex "\\[\\[([^\\]]+)\\]\\]" | get capture0 | each {|l| $l | str downcase})
@@ -67,38 +77,38 @@ def main [graph_path: string] {
     let orphans = ($existing_pages | where {|p| $p not-in $referenced})
     let broken = ($referenced | where {|r| $r not-in $existing_pages})
 
-    print "── Связи ──"
-    print $"Всего ссылок:          ($total_links)"
-    print $"Уникальных целей:      ($unique_targets)"
-    print $"Файлов со ссылками:    ($files_with_links) / ($total)"
-    print $"Среднее ссылок/файл:   (($total_links / $total) | math round -p 1)"
+    print "── Links ──"
+    print $"Total links:           ($total_links)"
+    print $"Unique targets:        ($unique_targets)"
+    print $"Files with links:      ($files_with_links) / ($total)"
+    print $"Avg links/file:        (($total_links / $total) | math round -p 1)"
     print ""
 
-    print "── Топ-15 по входящим ссылкам ──"
+    print "── Top 15 by incoming links ──"
     print ($in_counts | first 15 | table)
     print ""
 
-    print "── Топ-10 по исходящим ссылкам ──"
+    print "── Top 10 by outgoing links ──"
     print ($link_data | sort-by out_count -r | first 10 | select file out_count | table)
     print ""
 
-    print $"── Осиротевшие страницы: ($orphans | length) ──"
-    print "  (на них никто не ссылается)"
-    print ($orphans | first 20 | table)
+    print $"── Orphan pages: ($orphans | length) ──"
+    print "  (no page links to them)"
+    print ($orphans | first 30 | table)
     print ""
 
-    print $"── Битые ссылки: ($broken | length) ──"
-    print "  (ведут на несуществующие страницы)"
-    print ($broken | first 20 | table)
+    print $"── Broken links: ($broken | length) ──"
+    print "  (point to non-existent pages)"
+    print ($broken | first 30 | table)
     print ""
 
-    # --- Контент ---
+    # --- Content ---
     let with_ipfs = ($files | where {|f| (open $f.name) | str contains "ipfs.io"} | length)
     let with_compounds = ($files | where {|f| (open $f.name) | str contains "chemical compound"} | length)
     let with_tables = ($files | where {|f| (open $f.name) =~ "\\|.*\\|.*\\|"} | length)
 
-    print "── Контент ──"
-    print $"С IPFS ссылками:       ($with_ipfs)"
-    print $"С хим. соединениями:   ($with_compounds)"
-    print $"С таблицами:           ($with_tables)"
+    print "── Content ──"
+    print $"With IPFS links:       ($with_ipfs)"
+    print $"With compounds:        ($with_compounds)"
+    print $"With tables:           ($with_tables)"
 }

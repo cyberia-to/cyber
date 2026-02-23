@@ -58,7 +58,7 @@ When $d$ is prime, $\mathbb{Z}/d\mathbb{Z}$ has no nontrivial subgroups. The [[h
 
 When $d$ is composite — say $d = 4 = 2 \times 2$ — the space decomposes into tensor products of smaller subsystems. Operations can act on factors independently. [[quantum decoherence]] channels form along the factorization. [[information]] leaks between the factors.
 
-A 2025 paper in Nature Communications proved this rigorously: constant-depth [[quantum circuit]]s over prime-dimensional qudits unconditionally surpass classical biased threshold circuits (which model [[neural network]]s), and this advantage is robust to noise across all prime dimensions. The [[proof]] structure relies essentially on the absence of nontrivial subgroups in $\mathbb{Z}/p\mathbb{Z}$ — the same property that makes prime fields algebraically complete.
+A 2025 paper in Nature Communications proved this rigorously: constant-depth [[quantum circuits]] over prime-dimensional qudits unconditionally surpass classical biased threshold circuits (which model [[neural networks]]), and this advantage is robust to noise across all prime dimensions. The [[proof]] structure relies essentially on the absence of nontrivial subgroups in $\mathbb{Z}/p\mathbb{Z}$ — the same property that makes prime fields algebraically complete.
 
 Quantum advantage demands prime-dimensional state spaces by structural necessity.
 
@@ -75,7 +75,7 @@ Both provability and [[quantum mechanics]] ask the same question: what algebraic
 
 The [[cyclic group]] $\mathbb{Z}/p\mathbb{Z}$ for prime $p$ is the shared algebraic skeleton. Classically, it defines the additive group of $\mathbb{F}_p$. Quantum mechanically, it defines the computational basis and generalized Pauli operators of a $p$-dimensional qudit. These are the same object viewed from two sides.
 
-The convergence is a [[theorem]] about [[prime number]]s.
+The convergence is a [[theorem]] about [[prime numbers]].
 
 ## 3. [[trident]]'s Architecture at the Convergence Point
 
@@ -117,7 +117,7 @@ A [[trident]] `Field` variable holds an element $a \in \mathbb{F}_p$. Quantumly,
 
 One variable. One qudit. No encoding overhead.
 
-In contrast, mapping a 64-bit integer to [[qubit]]s requires 64 [[qubit]]s and multi-[[qubit]] [[quantum entanglement]] to represent the correlations that a single prime-dimensional qudit captures natively.
+In contrast, mapping a 64-bit integer to [[qubits]] requires 64 [[qubits]] and multi-[[qubit]] [[quantum entanglement]] to represent the correlations that a single prime-dimensional qudit captures natively.
 
 ### 4.2 Field Addition → Quantum Addition Gate
 
@@ -125,7 +125,7 @@ The operation $a + b \mod p$ in [[trident]] becomes the unitary gate:
 
 $$|a\rangle|b\rangle \rightarrow |a\rangle|a + b \mod p\rangle$$
 
-This is a single two-qudit gate in prime dimension $p$. On [[qubit]]s, the same operation requires decomposition into $O(\log^2 p)$ binary gates with carry chains and ancilla management. The prime structure eliminates the carry problem entirely because $\mathbb{Z}/p\mathbb{Z}$ has no [[subgroup]] structure to create partial carries.
+This is a single two-qudit gate in prime dimension $p$. On [[qubits]], the same operation requires decomposition into $O(\log^2 p)$ binary gates with carry chains and ancilla management. The prime structure eliminates the carry problem entirely because $\mathbb{Z}/p\mathbb{Z}$ has no [[subgroup]] structure to create partial carries.
 
 ### 4.3 Field Multiplication → Quantum Multiplication Gate
 
@@ -150,11 +150,11 @@ In [[quantum computing]], an oracle is a black box that answers queries. The qua
 
 ### 4.5 Bounded Loops → Bounded-Depth Circuits
 
-[[trident]] requires all loops to have compile-time-known bounds. This maps directly to fixed-depth [[quantum circuit]]s — no need for quantum control flow or conditional halting, which remain hard unsolved problems in [[quantum computing]]. Every [[trident]] program produces a bounded-depth [[circuit]], which is exactly what near-term and intermediate-scale quantum hardware can execute.
+[[trident]] requires all loops to have compile-time-known bounds. This maps directly to fixed-depth [[quantum circuits]] — no need for quantum control flow or conditional halting, which remain hard unsolved problems in [[quantum computing]]. Every [[trident]] program produces a bounded-depth [[circuit]], which is exactly what near-term and intermediate-scale quantum hardware can execute.
 
 ### 4.6 [[STARK]] Verification → Quantum [[polynomial]] Identity Testing
 
-[[STARK]] verification reduces to checking that [[polynomial]]s over $\mathbb{F}_p$ satisfy certain identities at random evaluation points. Quantumly, [[polynomial]] evaluation over prime fields can be done in [[quantum superposition]] — evaluating the [[polynomial]] at all $p$ points simultaneously. This transforms probabilistic classical verification (sample random points, rely on Schwartz-Zippel for soundness) into deterministic quantum verification (check all points in [[quantum superposition]]).
+[[STARK]] verification reduces to checking that [[polynomials]] over $\mathbb{F}_p$ satisfy certain identities at random evaluation points. Quantumly, [[polynomial]] evaluation over prime fields can be done in [[quantum superposition]] — evaluating the [[polynomial]] at all $p$ points simultaneously. This transforms probabilistic classical verification (sample random points, rely on Schwartz-Zippel for soundness) into deterministic quantum verification (check all points in [[quantum superposition]]).
 
 ## 5. What [[trident]] Enables for [[quantum computing]]
 
@@ -163,7 +163,7 @@ In [[quantum computing]], an oracle is a black box that answers queries. The qua
 The computational bottleneck in [[STARK]]-based systems is the prover. The prover must:
 
 1. Find witnesses — solutions to the constraint system
-2. Compute large [[NTT]]s (Number Theoretic Transforms) — the finite [[field]] analogue of FFT, used for [[polynomial]] interpolation and evaluation over $\mathbb{F}_p$
+2. Compute large [[NTTs]] (Number Theoretic Transforms) — the finite [[field]] analogue of FFT, used for [[polynomial]] interpolation and evaluation over $\mathbb{F}_p$
 
 Both operations have established quantum speedups:
 
@@ -257,9 +257,9 @@ Each step operates over the same [[field]] $\mathbb{F}_p$. Data passes between c
 
 ### 5.5 Prime-Dimensional [[information]] Density
 
-A single qudit of prime dimension $p$ carries $\log_2 p$ [[qubit]]s of [[information]] but achieves higher [[quantum entanglement]] capacity per unit than equivalent [[qubit]] systems. Research has demonstrated that qutrits ($p = 3$) can improve solution quality by up to 90x compared to [[qubit]] approaches for [[optimization]] problems, and reduce [[circuit]] depth by using fewer but more expressive quantum units.
+A single qudit of prime dimension $p$ carries $\log_2 p$ [[qubits]] of [[information]] but achieves higher [[quantum entanglement]] capacity per unit than equivalent [[qubit]] systems. Research has demonstrated that qutrits ($p = 3$) can improve solution quality by up to 90x compared to [[qubit]] approaches for [[optimization]] problems, and reduce [[circuit]] depth by using fewer but more expressive quantum units.
 
-For [[trident]]'s [[Goldilocks field]], $p = 2^{64} - 2^{32} + 1$. A single Goldilocks qudit would carry approximately 64 [[qubit]]s of [[information]] in a single quantum unit — with the full algebraic completeness of a [[prime field]]. While building physical qudits of this dimension is beyond current hardware, the mathematical framework is clear: as qudit technology scales from qutrits ($p = 3$) to larger primes, [[trident]] programs become increasingly efficient to execute quantumly.
+For [[trident]]'s [[Goldilocks field]], $p = 2^{64} - 2^{32} + 1$. A single Goldilocks qudit would carry approximately 64 [[qubits]] of [[information]] in a single quantum unit — with the full algebraic completeness of a [[prime field]]. While building physical qudits of this dimension is beyond current hardware, the mathematical framework is clear: as qudit technology scales from qutrits ($p = 3$) to larger primes, [[trident]] programs become increasingly efficient to execute quantumly.
 
 The radix economy argument from Section 1 applies here at the quantum level: prime-dimensional qudits are more informationally efficient than [[qubit]] decompositions, just as base-3 representation is more efficient than binary for classical storage.
 
@@ -267,10 +267,10 @@ The radix economy argument from Section 1 applies here at the quantum level: pri
 
 While the focus of this paper is quantum advantage rather than quantum resistance, the latter follows as a corollary of the same architectural choices.
 
-[[Triton VM]] uses [[STARK]]s (Scalable Transparent Arguments of Knowledge), not SNARKs. The distinction is fundamental:
+[[Triton VM]] uses [[STARKs]] (Scalable Transparent Arguments of Knowledge), not SNARKs. The distinction is fundamental:
 
 - SNARKs (Groth16, PLONK with KZG commitments) rely on elliptic curve pairings — broken by Shor's [[algorithm]] on a quantum computer
-- [[STARK]]s rely on [[hash function]]s and [[polynomial]] commitments over $\mathbb{F}_p$ — no known quantum attack faster than Grover's square-root speedup, which is manageable by doubling hash output size
+- [[STARKs]] rely on [[hash functions]] and [[polynomial]] commitments over $\mathbb{F}_p$ — no known quantum attack faster than Grover's square-root speedup, which is manageable by doubling hash output size
 
 Every [[trident]] program is automatically post-quantum secure because the entire verification stack — from [[proof]] generation through verification — uses only hash-based [[cryptography]] over $\mathbb{F}_p$. The algebraic structures that quantum computers break (discrete logarithm, pairings) are entirely absent.
 
@@ -289,7 +289,7 @@ We can now state the core thesis precisely:
 
 > [[trident]] is a language whose every construct is a [[prime field]] operation. This makes it the natural language at the intersection of provable and quantum [[computation]] — by mathematical inevitability.
 
-The fact that [[trident]] was designed for [[STARK]]-based provable [[computation]] and "accidentally" became quantum-native is the strongest possible evidence for this structural necessity. The language was not optimized for quantum advantage. The Goldilocks prime was chosen for classical [[proof]] efficiency — it fits in 64-bit CPU words, allows fast modular reduction, and has a multiplicative group with high 2-adicity for efficient [[NTT]]s.
+The fact that [[trident]] was designed for [[STARK]]-based provable [[computation]] and "accidentally" became quantum-native is the strongest possible evidence for this structural necessity. The language was not optimized for quantum advantage. The Goldilocks prime was chosen for classical [[proof]] efficiency — it fits in 64-bit CPU words, allows fast modular reduction, and has a multiplicative group with high 2-adicity for efficient [[NTTs]].
 
 That this same choice simultaneously optimizes for quantum advantage demonstrates that the two properties share a common mathematical root: the algebraic completeness of prime fields.
 
@@ -343,9 +343,9 @@ The practical implications are immediate for the Neptune ecosystem: [[STARK]] [[
 
 2. Nature Physics (2025). Meth et al. First full-fledged qudit [[algorithm]] on quantum hardware using trapped-ion qudits at University of Innsbruck.
 
-3. npj Quantum Information (2025). "High dimensional counterdiabatic [[quantum computing]]." Demonstrates qutrits improving solution quality up to 90x over [[qubit]]s for [[optimization]] problems.
+3. npj Quantum Information (2025). "High dimensional counterdiabatic [[quantum computing]]." Demonstrates qutrits improving solution quality up to 90x over [[qubits]] for [[optimization]] problems.
 
-4. Frontiers in Physics (2020). Wang et al. "Qudits and High-Dimensional [[quantum computing]]." Comprehensive review of qudit gate universality, [[algorithm]]s, and physical realizations.
+4. Frontiers in Physics (2020). Wang et al. "Qudits and High-Dimensional [[quantum computing]]." Comprehensive review of qudit gate universality, [[algorithms]], and physical realizations.
 
 5. [[Triton VM]] Specification. TritonVM/triton-vm. [[STARK]]-based virtual machine over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$.
 
@@ -361,6 +361,6 @@ See [[trident thesis]] for the convergence of ZK, AI, and quantum pillars.
 See [[trident verifiable AI]] for [[trident]]'s AI and ZKML architecture.
 See [[trident standard library]] for the standard library design.
 See [[quantum standard library]] for quantum-specific standard library modules.
-See [[rosetta stone]] for lookup table duality across [[cryptography]], AI, FHE, and [[STARK]]s.
+See [[rosetta stone]] for lookup table duality across [[cryptography]], AI, FHE, and [[STARKs]].
 See [[trinity]] for the three-pillar architecture.
 See [[Goldilocks homomorphic encryption]] for full FHE construction over the [[Goldilocks field]].

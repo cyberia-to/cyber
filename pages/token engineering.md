@@ -25,14 +25,17 @@ TODO lecture at [[edge city residency]]
 
 ## tldr
 
-- | problem | mechanism |
-	  | complex taxation | 1% from transfers + burn on service use |
-	  | local overpopulation | staking mechanism for residentship |
-	  |no collective insurance | capital driven basic income |
-	  | broken ecology | automated slashing driven by sensor network |
-	  | high costs of human production | incentives for new humans |
-	  | lack of freedoms | public good infrastructure owned by community |
-	  | inefficient decision making | advanced [[decision making]] |
+
+| problem | mechanism |
+|---|---|
+| complex taxation | 1% from transfers + burn on service use |
+| local overpopulation | staking mechanism for residentship |
+| no collective insurance | capital driven basic income |
+| broken ecology | automated slashing driven by sensor network |
+| high costs of human production | incentives for new humans |
+| lack of freedoms | public good infrastructure owned by community |
+| inefficient decision making | advanced [[decision making]] |
+
 
 ## mechanisms
 

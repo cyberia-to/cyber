@@ -15,25 +15,27 @@ crystal-domain: cyber
 
 ## Active Channels
 
-- | Counterparty | Bostrom Channel | Remote Channel | Status |
-	  |--------------|-----------------|----------------|--------|
-	  | [[Osmosis]] | `channel-2` | `channel-95` | ✅ Active (restored Feb 2026) |
-	  | [[Cosmos Hub]] | `channel-8` | `channel-341` | ❌ Expired (proposal #1023 failed quorum) |
+| Counterparty | Bostrom Channel | Remote Channel | Status |
+|--------------|-----------------|----------------|--------|
+| [[Osmosis]] | `channel-2` | `channel-95` | ✅ Active (restored Feb 2026) |
+| [[Cosmos Hub]] | `channel-8` | `channel-341` | ❌ Expired (proposal #1023 failed quorum) |
 
 ## Supported Tokens
 
 - ### Bostrom → Other Chains
-	- | Token | Symbol | Can transfer to |
-		  |-------|--------|-----------------|
-		  | BOOT | Native staking token | Osmosis, Cosmos Hub |
-		  | HYDROGEN | Resource token | Osmosis |
-		  | MILLIAMPERE | Resource token | Osmosis |
-		  | MILLIVOLT | Resource token | Osmosis |
+
+| Token | Symbol | Can transfer to |
+|-------|--------|-----------------|
+| BOOT | Native staking token | Osmosis, Cosmos Hub |
+| HYDROGEN | Resource token | Osmosis |
+| MILLIAMPERE | Resource token | Osmosis |
+| MILLIVOLT | Resource token | Osmosis |
 - ### Other Chains → Bostrom
-	- | Token | From | IBC Denom |
-		  |-------|------|-----------|
-		  | OSMO | Osmosis | `ibc/13B2C536BB057AC79D5616B8EA1B9540EC1F2170718CAFF6F0083C966FFFED0B` |
-		  | ATOM | Cosmos Hub | `ibc/15E9C5CF5969080539DB395FA7D9C0868265217EFC528433671AAF9B1912D159` |
+
+| Token | From | IBC Denom |
+|-------|------|-----------|
+| OSMO | Osmosis | `ibc/13B2C536BB057AC79D5616B8EA1B9540EC1F2170718CAFF6F0083C966FFFED0B` |
+| ATOM | Cosmos Hub | `ibc/15E9C5CF5969080539DB395FA7D9C0868265217EFC528433671AAF9B1912D159` |
 
 ## How IBC Works
 
@@ -75,10 +77,11 @@ crystal-domain: cyber
 		  2. A governance proposal recovers the expired client using the substitute
 		  3. Both chains must pass the recovery proposal
 - ### Recovery Status (Feb 2026)
-	- | Chain | Bostrom Prop | Remote Prop | Result |
-		  |-------|--------------|-------------|--------|
-		  | Osmosis | #32 ✅ | #1002 ✅ | RESTORED |
-		  | Cosmos Hub | #33 ✅ | #1023 ❌ | Failed quorum (36.7% vs 40% needed) |
+
+| Chain | Bostrom Prop | Remote Prop | Result |
+|-------|--------------|-------------|--------|
+| Osmosis | #32 ✅ | #1002 ✅ | RESTORED |
+| Cosmos Hub | #33 ✅ | #1023 ❌ | Failed quorum (36.7% vs 40% needed) |
 	- #+BEGIN_WARNING
 		  Cosmos Hub IBC requires a new proposal. The previous attempt (#1023) had 92.5% YES but failed due to insufficient voter turnout. Top validators didn't participate.
 		  #+END_WARNING

@@ -76,11 +76,11 @@ crystal-domain: cyber
 
 ## Audits
 
-- | Component | Audit Status |
-	  |-----------|--------------|
-	  | go-cyber | Community reviewed, no formal audit |
-	  | CosmWasm contracts | Per-contract basis |
-	  | Infrastructure | Regular security reviews |
+| Component | Audit Status |
+|-----------|--------------|
+| go-cyber | Community reviewed, no formal audit |
+| CosmWasm contracts | Per-contract basis |
+| Infrastructure | Regular security reviews |
 
 ## Known Risks
 

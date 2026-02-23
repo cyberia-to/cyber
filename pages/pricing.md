@@ -45,34 +45,49 @@ product analysis
 # TODO residency
 
 - ## work days
-	- | category | indonesian | foreigner |
-		  | normal price | $25| $40 |
-		  | discount: women under 42 | $10 | $20 |
-		  | discount: kids under 10 and animals | $5 | $10 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $25| $40 |
+| discount: women under 42 | $10 | $20 |
+| discount: kids under 10 and animals | $5 | $10 |
+
 - ## peak days
 	- friday, saturday, sunday
-	- | category | indonesian | foreigner |
-		  | normal price | $30 | $50 |
-		  | discount: women under 42 | $12 | $25 |
-		  | discount: kids under 10 and animals | $6 | $12 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $30 | $50 |
+| discount: women under 42 | $12 | $25 |
+| discount: kids under 10 and animals | $6 | $12 |
+
 - ## holy days
 	- new year week, lebaran, imlek, full moon
-	- | category | indonesian | foreigner |
-		  | normal price | $60 | $100 |
-		  | discount: women under 42 | $30 | $50 |
-		  | discount: kids under 10 and animals | $15 | $25 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $60 | $100 |
+| discount: women under 42 | $30 | $50 |
+| discount: kids under 10 and animals | $15 | $25 |
+
 - ## glowing forest
 	- 3 days package: new moon, day before and after
-	- | category | indonesian | foreigner |
-		  | normal price | $250 | $400 |
-		  | discount: women under 42 | $100 | $200 |
-		  | discount: kids under 10 and animals | $50 | $100 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $250 | $400 |
+| discount: women under 42 | $100 | $200 |
+| discount: kids under 10 and animals | $50 | $100 |
+
 - ## burn.city
 	- 8 days package: yearly festival starting a week before niepi and finishing one day after
-	- | category | indonesian | foreigner |
-		  | normal price | $500 | $1000 |
-		  | discount: women under 42 | $250 | $500 |
-		  | discount: kids under 10 and animals | $120 | $250 |
+
+| category | indonesian | foreigner |
+|---|---|---|
+| normal price | $500 | $1000 |
+| discount: women under 42 | $250 | $500 |
+| discount: kids under 10 and animals | $120 | $250 |
+
 - ## and free access to public infrastructure
 	- {{query (page-property :type "public")}}
 - ## [[nomad hub]]
