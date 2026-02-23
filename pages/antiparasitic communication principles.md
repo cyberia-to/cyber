@@ -23,11 +23,11 @@ crystal-domain: body
 
 ## Examples
 
-- | ❌ Parasitic | ✅ Sovereign |
-	  |-------------|-------------|
-	  | "We need VCs" | "I know Alex at [Fund], I'll intro us next week" |
-	  | "We need marketing" | "I wrote a thread, here's the draft for feedback" |
-	  | "We need a market maker" | "I analyzed 3 MMs, here's comparison and my recommendation" |
+| Parasitic | Sovereign |
+|---|---|
+| "We need VCs" | "I know Alex at [Fund], I'll intro us next week" |
+| "We need marketing" | "I wrote a thread, here's the draft for feedback" |
+| "We need a market maker" | "I analyzed 3 MMs, here's comparison and my recommendation" |
 
 ## The Rule
 
