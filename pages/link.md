@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 ---
 directed link between two [[particles]] of [[information]]

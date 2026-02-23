@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 ---
 https://habr.com/ru/articles/656879/

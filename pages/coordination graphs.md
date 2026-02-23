@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 ---
 algorithms which model the dependencies among [[agents]] [[actions]] in a network

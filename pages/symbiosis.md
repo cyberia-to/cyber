@@ -1,7 +1,7 @@
 ---
 alias: mutual cooperation
 tags: cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: body
 ---
 reflects the interdependence of life

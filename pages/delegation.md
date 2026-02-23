@@ -1,6 +1,6 @@
 ---
 tags: cyber, cybernomics
-crystal-type: entity
+crystal-type: relation
 crystal-domain: economics
 ---
 # delegation

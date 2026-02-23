@@ -1,6 +1,6 @@
 ---
 tags: governance, cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: governance
 ---
 legal membership in a state, carrying rights and obligations

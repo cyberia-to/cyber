@@ -1,6 +1,6 @@
 ---
 tags: cip
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 status: draft
 ---

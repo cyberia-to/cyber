@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 ---
 continuous process of [[cooperative games]] between [[neurons]]
