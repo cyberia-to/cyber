@@ -1,6 +1,6 @@
 ---
 tags: species
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1118)

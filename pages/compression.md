@@ -1,6 +1,6 @@
 ---
 tags: computer science, information theory
-crystal-type: entity
+crystal-type: process
 crystal-domain: mathematics
 ---
 # compression

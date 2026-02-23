@@ -1,6 +1,6 @@
 ---
 tags: tech
 alias: biogas digestion
-crystal-type: entity
+crystal-type: process
 crystal-domain: materials
 ---

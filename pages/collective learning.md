@@ -1,7 +1,7 @@
 ---
 alias: colearning
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 [[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — learning together

@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 стратегия «разблокировки» андозолей для реальной доступности элементов и устойчивого плодородия

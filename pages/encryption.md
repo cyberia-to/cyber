@@ -1,6 +1,6 @@
 ---
 tags: computer science, cryptography
-crystal-type: entity
+crystal-type: process
 crystal-domain: computer science
 ---
 # encryption

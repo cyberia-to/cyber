@@ -1,6 +1,6 @@
 ---
 tags: technology
-crystal-type: entity
+crystal-type: process
 crystal-domain: materials
 ---
 additive manufacturing: building objects layer by layer from digital models

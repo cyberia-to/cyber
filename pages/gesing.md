@@ -1,6 +1,6 @@
 ---
 tags: team
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ops: "false"
 dev: "false"

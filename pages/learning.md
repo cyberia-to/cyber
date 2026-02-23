@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 the act of creating a [[cyberlink]] — a [[neuron]] binding two [[particles]] with [[focus]]

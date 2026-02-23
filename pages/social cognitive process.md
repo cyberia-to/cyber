@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 mental mechanisms by which [[neurons]] acquire, interpret, and apply information in [[social]] contexts

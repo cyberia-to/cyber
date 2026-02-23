@@ -1,7 +1,7 @@
 ---
 alias: knowledge mining
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 [[aos]] game mechanics

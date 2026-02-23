@@ -1,6 +1,6 @@
 ---
 tags: species, operation
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 [[prune]]
