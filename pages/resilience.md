@@ -1,6 +1,6 @@
 ---
 tags: superhuman
-crystal-type: entity
+crystal-type: property
 crystal-domain: body
 ---
 - ....(1) The measure of a system's ability to remain

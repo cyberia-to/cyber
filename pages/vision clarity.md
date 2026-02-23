@@ -1,5 +1,5 @@
 ---
 tags: superhuman
-crystal-type: entity
+crystal-type: property
 crystal-domain: body
 ---

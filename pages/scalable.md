@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyberia
 ---
 the property is applied to genus and species which satisfy the following criteria

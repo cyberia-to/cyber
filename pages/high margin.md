@@ -1,6 +1,6 @@
 ---
 tags: segment
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyberia
 ---
 ongoing research on extreme profitability of different species
