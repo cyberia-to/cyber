@@ -32,7 +32,7 @@ The Quantum pillar faces both directions at once. It shields CORE against quantu
 
 A planetary knowledge graph that stores humanity's collective intelligence deserves cryptography that lasts as long as the knowledge itself. CORE achieves this by building every cryptographic primitive on hash-based foundations — the one family of constructions that remains secure in a world of large-scale quantum computers.
 
-The proof system is [[STARK]]s — Scalable Transparent Arguments of Knowledge. STARKs are transparent (they require no trusted setup ceremony), post-quantum (their security rests entirely on collision resistance of hash functions), and natively aligned with the [[Goldilocks field]] that underpins the rest of the system. The hash function is [[Poseidon2]], an algebraic hash designed to be efficient inside arithmetic circuits.
+The proof system is [[STARKs]] — Scalable Transparent Arguments of Knowledge. STARKs are transparent (they require no trusted setup ceremony), post-quantum (their security rests entirely on collision resistance of hash functions), and natively aligned with the [[Goldilocks field]] that underpins the rest of the system. The hash function is [[Poseidon2]], an algebraic hash designed to be efficient inside arithmetic circuits.
 
 The security of every CORE proof reduces to a single, well-studied assumption: collision resistance of the hash function. Grover's algorithm offers quantum computers a quadratic speedup against this assumption, reducing $2^{128}$ security to $2^{64}$ — which remains computationally infeasible, and addressable by doubling the output size when needed. Hash-based cryptography is the one foundation that stands firm on both sides of the quantum divide.
 
@@ -106,9 +106,9 @@ For the full technical treatment — mechanism details, pairwise compositions, d
 
 Intelligence is what the network computes. It lives at the center of the architecture, woven into every state transition.
 
-CORE's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particle]]s of knowledge. The [[tri-kernel]] ranking (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
+CORE's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] ranking (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
 
-AI at the heart of a trustless system demands verifiable inference. Every claim that "the network ranks X above Y" carries a mathematical proof. Anyone can check that the ranking follows faithfully from the graph structure and the algorithm, on a phone, in milliseconds. [[neuron]]s create [[cyberlink]]s between particles, and each link carries weight in the collective computation.
+AI at the heart of a trustless system demands verifiable inference. Every claim that "the network ranks X above Y" carries a mathematical proof. Anyone can check that the ranking follows faithfully from the graph structure and the algorithm, on a phone, in milliseconds. [[neurons]] create [[cyberlinks]] between particles, and each link carries weight in the collective computation.
 
 Neural networks in CORE run natively over the Goldilocks field. Weights, activations, and outputs are field elements from the start — the natural language of the proof system. Inference produces a STARK proof alongside its result. Anyone can verify that a model produced a specific output from specific inputs, and they can do this while the model weights remain private (protecting intellectual property) and the input data remains encrypted (protecting user privacy).
 

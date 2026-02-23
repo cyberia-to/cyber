@@ -38,7 +38,7 @@ uses of salvia rosmarinus:
 - plants/timber: [[woody]] stems used for [[skewers]], [[crafts]], or as natural [[fire starter]].
 - plants/medicine: used for [[memory enhancement]], [[digestion]], [[joint pain]], [[respiratory issues]], and as an [[antimicrobial]] agent. both [[oil]] and [[tea]] have traditional [[therapeutic]] applications.
 - plants/fuel: dried stems and branches can be used as [[kindling]].
-- plants/fertilizer: trimmings and spent plant matter can be [[compost]]ed or used as [[aromatic]] [[mulch]] to [[deter pests]].
+- plants/fertilizer: trimmings and spent plant matter can be [[composted]] or used as [[aromatic]] [[mulch]] to [[deter pests]].
 
 data:
 
