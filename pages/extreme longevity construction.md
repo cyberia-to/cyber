@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: process
-crystal-domain: body
+crystal-domain: superhuman
 ---
 🛡️ architectural rules for a truly eternal wall (target: 10,000–100,000+ years)
 

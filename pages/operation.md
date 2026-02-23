@@ -1,7 +1,7 @@
 ---
 tags: term, cv.land
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 short repeatable tasks
 

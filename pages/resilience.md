@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: property
-crystal-domain: body
+crystal-domain: superhuman
 ---
 - ....(1) The measure of a system's ability to remain
   within a domain of stability in response to fluctuations of the

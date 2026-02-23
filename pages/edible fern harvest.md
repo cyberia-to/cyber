@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 [gihub](https://github.com/cyberia-to/rockets/issues/1151)
 

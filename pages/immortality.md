@@ -1,7 +1,7 @@
 ---
 tags: cyber, article
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 # Immortality
 

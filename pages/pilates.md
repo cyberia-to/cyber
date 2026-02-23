@@ -1,7 +1,7 @@
 ---
 tags: skill
 crystal-type: process
-crystal-domain: body
+crystal-domain: superhuman
 ---
 tool: power saw
 

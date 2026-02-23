@@ -3,7 +3,7 @@ alias: "cyber: the metagraph"
 tags: cyber
 icon: 🦄
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 

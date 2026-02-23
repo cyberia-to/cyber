@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 - ![](https://ipfs.io/ipfs/QmUfMNuLLgxA9pk5GkBU49Ev89pDr8KjUKmeTXkPcbKoLh)
 -

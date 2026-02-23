@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 1815-1852. British mathematician and writer.
 

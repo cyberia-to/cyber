@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 ## high
 - {{query (page-property :abundance "yes")}}

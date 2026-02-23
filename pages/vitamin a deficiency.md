@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 vitamin a deficiency is a nutritional condition caused by insufficient intake of [[retinol]], leading primarily to vision problems and weakened immunity.
 

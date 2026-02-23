@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 1906-1978. Austrian-American logician and mathematician.
 
