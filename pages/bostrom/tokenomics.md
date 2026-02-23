@@ -18,28 +18,28 @@ The core primitive is a provable [[knowledge graph]] — a permissionless, on-ch
 
 | Function | Token | Symbol |
 |---|---|---|
-| network [[bostrom/infrastructure/security]] and [[governance]] | [[$BOOT]] | `BOOT` |
+| network [[bostrom/infrastructure/security]] and [[governance]] | BOOT | `BOOT` |
 | liquid representation of [[staking]] | [[hydrogen]] | `H` |
 | write access to the [[knowledge graph]] | [[volt]] | `V` |
 | [[relevance machine]] ranking influence | [[amper]] | `A` |
 
-Every token derives from the one above it. [[hydrogen]] requires staked [[$BOOT]]. [[volt]] and [[amper]] require burned [[hydrogen]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
+Every token derives from the one above it. [[hydrogen]] requires staked BOOT. [[volt]] and [[amper]] require burned [[hydrogen]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
 ## Token: BOOT
 
 denom: `boot`
 
-[[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus]], enable [[governance]], and anchor the value of everything built on top.
+BOOT is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus]], enable [[governance]], and anchor the value of everything built on top.
 
 ### Staking
 
-[[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
+BOOT holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based BOOT rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
 
-[[delegation]] of [[$BOOT]] simultaneously creates [[hydrogen]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[hydrogen]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
+[[delegation]] of BOOT simultaneously creates [[hydrogen]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[hydrogen]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
 
 ### Governance
 
-On-chain [[basic governance]] uses [[$BOOT]]-weighted voting across four proposal types:
+On-chain [[basic governance]] uses BOOT-weighted voting across four proposal types:
 
 - ideas — non-binding signals and directional proposals
 - upgrades — binary software upgrade proposals
@@ -48,15 +48,15 @@ On-chain [[basic governance]] uses [[$BOOT]]-weighted voting across four proposa
 
 ### Smart Contract Execution Fees
 
-[[cosmwasm]] smart contracts on [[bostrom]] pay execution fees in [[$BOOT]]. The fee distribution is split 80/20: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool through standard distribution. This is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
+[[cosmwasm]] smart contracts on [[bostrom]] pay execution fees in BOOT. The fee distribution is split 80/20: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool through standard distribution. This is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
 
 ## Token: HYDROGEN
 
 denom: `hydrogen` (referred to as `scyb` throughout the codebase — the original name, short for staked CYB)
 
-[[hydrogen]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[bostrom/infrastructure/security]] layer, [[hydrogen]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[hydrogen]] in circulation, making [[hydrogen]] the canonical unit of account for the ecosystem.
+[[hydrogen]] is the liquid [[staking]] derivative of BOOT and the primary [[token]] of the [[bostrom]] network. While BOOT is the base [[bostrom/infrastructure/security]] layer, [[hydrogen]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[hydrogen]] in circulation, making [[hydrogen]] the canonical unit of account for the ecosystem.
 
-[[hydrogen]] is issued solely through [[$BOOT]] [[delegation]]; destroyed solely through [[$BOOT]] undelegation.
+[[hydrogen]] is issued solely through BOOT [[delegation]]; destroyed solely through BOOT undelegation.
 
 ```
 delegate 1000 BOOT  →  mint 1000 H
@@ -68,7 +68,7 @@ undelegate 1000 BOOT  →  burn 1000 H
 1. investmint input — [[burn]] to [[mint]] [[volt]] or [[amper]]
 2. [[cyber/liquidity]] — deposited into farm contracts, traded on the built-in [[automated market maker]], or used in any [[cosmwasm]] contract
 
-[[hydrogen]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[hydrogen]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
+[[hydrogen]] does not earn [[staking]] rewards itself. The underlying staked BOOT continues to earn rewards for the delegator. [[hydrogen]] is the spendable, transferable proof that the corresponding BOOT is at stake.
 
 ## Tokens: VOLT and AMPERE
 
@@ -177,7 +177,7 @@ The price adjusts every 5 blocks. A [[neuron]] depleted meter recovers to its ma
 
 ### Energy Grid
 
-The grid module allows [[volt]] and [[amper]] to be routed to [[cosmwasm]] programs via energy routes. A [[neuron]] or contract can create a route that continuously directs their resource allocation to [[autonomous progs]]. Programs that receive routed [[volt]] can themselves create [[cyberlinks]] — enabling self-sustaining, autonomous [[knowledge graph]] expansion. Programs earning [[$BOOT]] execution fees create a direct incentive for operators to reinvest those rewards back into the [[staking]] → [[hydrogen]] → [[volt]]/[[amper]] chain.
+The grid module allows [[volt]] and [[amper]] to be routed to [[cosmwasm]] programs via energy routes. A [[neuron]] or contract can create a route that continuously directs their resource allocation to [[autonomous progs]]. Programs that receive routed [[volt]] can themselves create [[cyberlinks]] — enabling self-sustaining, autonomous [[knowledge graph]] expansion. Programs earning BOOT execution fees create a direct incentive for operators to reinvest those rewards back into the [[staking]] → [[hydrogen]] → [[volt]]/[[amper]] chain.
 
 ## End-to-End Token Flow
 
@@ -198,19 +198,19 @@ BOOT ─────────────────────────
   └── 80% execution fees ◄── Autonomous Programs ◄── Energy Routes (V/A)
 ```
 
-1. acquire [[$BOOT]] — via secondary market, [[staking]] rewards, or airdrop
-2. [[delegation]] of [[$BOOT]] → receive [[hydrogen]] 1:1 — [[$BOOT]] earns [[staking]] rewards; [[hydrogen]] is the liquid representation
+1. acquire BOOT — via secondary market, [[staking]] rewards, or airdrop
+2. [[delegation]] of BOOT → receive [[hydrogen]] 1:1 — BOOT earns [[staking]] rewards; [[hydrogen]] is the liquid representation
 3. investmint [[hydrogen]] → [[hydrogen]] undergoes [[burn]] → receive [[volt]] and/or [[amper]] — quantity determined by halving factor (block height) x supply decay factor (cumulative supply)
 4. spend [[volt]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
 5. hold [[amper]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[amper]] = greater influence over graph [[relevance machine]]
-6. route [[volt]]/[[amper]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
-7. deposit into farm contracts → receive liquid position [[tokens]] → earn additional [[$BOOT]]/[[hydrogen]] rewards across configurable block schedules
+6. route [[volt]]/[[amper]] via the grid to power [[autonomous progs]] → programs earn 80% of BOOT execution fees → reinvest back into step 1
+7. deposit into farm contracts → receive liquid position [[tokens]] → earn additional BOOT/[[hydrogen]] rewards across configurable block schedules
 
 ## Economic Properties
 
 ### Everything costs stake
 
-Because [[volt]] and [[amper]] can only be created by the [[burn]] of [[hydrogen]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network [[bostrom/infrastructure/security]].
+Because [[volt]] and [[amper]] can only be created by the [[burn]] of [[hydrogen]] — which itself requires [[staking]] BOOT — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network [[bostrom/infrastructure/security]].
 
 ### Two independent deflationary forces
 
@@ -222,7 +222,7 @@ Because [[volt]] and [[amper]] can only be created by the [[burn]] of [[hydrogen
 
 ### 80% execution fee return
 
-[[cosmwasm]] smart contracts on [[bostrom]] return 80% of their execution fees directly to the program creator. This is hardcoded in the dmn module and creates a native revenue model for on-chain [[autonomous progs]] — a program that provides value to the network earns [[$BOOT]] proportional to how often it is called, with no intermediary taking the majority of the fee.
+[[cosmwasm]] smart contracts on [[bostrom]] return 80% of their execution fees directly to the program creator. This is hardcoded in the dmn module and creates a native revenue model for on-chain [[autonomous progs]] — a program that provides value to the network earns BOOT proportional to how often it is called, with no intermediary taking the majority of the fee.
 
 ## Source References
 
