@@ -1,6 +1,6 @@
 ---
 tags: state
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 - key: `0x00 | []byte("desirableBandwidth") -> sdk.Uint64ToBigEndian(value)`

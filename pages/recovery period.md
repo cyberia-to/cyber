@@ -1,6 +1,6 @@
 ---
 tags: param
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 recovery period is amount of [[blocks]]

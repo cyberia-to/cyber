@@ -1,6 +1,6 @@
 ---
 tags: cybernomics
-crystal-type: entity
+crystal-type: measure
 crystal-domain: economics
 ---
 printing of new [[tokens]] into existence

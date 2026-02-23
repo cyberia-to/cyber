@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 amount of input [[information]] processed by [[vimputer]]

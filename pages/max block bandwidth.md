@@ -1,6 +1,6 @@
 ---
 tags: param
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 amount of [[bandwidth]] from [[neurons]] that network can process for one block

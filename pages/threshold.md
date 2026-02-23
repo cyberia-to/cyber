@@ -1,7 +1,7 @@
 ---
 alias: threshold cryptography, thresholds
 tags: cyber
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 boundary condition that separates one regime from another

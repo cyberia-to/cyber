@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 it's a multiplier for default bandwidth price

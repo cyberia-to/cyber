@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 algorithm that ranks web pages by measuring their importance based on the quantity and quality of links pointing to them

@@ -1,7 +1,7 @@
 ---
 tags: state
 alias: personal bandwidth, account bandwidth
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 used for tracking bandwidth of [[neurons]] in the network
