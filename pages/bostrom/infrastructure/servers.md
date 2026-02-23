@@ -136,15 +136,15 @@ crystal-domain: cyber
 
 ## Hardware Summary
 
-- | Server | Type | RAM | Storage | GPU |
-	  |--------|------|-----|---------|-----|
-	  | Deimos | Dedicated | 64 GB | 6.8 TB | GTX 1080 |
-	  | Jupiter | Dedicated | 64 GB | 6.9 TB | GTX 1080 |
-	  | IO | Dedicated | 64 GB | 3.5 TB | — |
-	  | Cyberproxy | Cloud | 8 GB | 80 GB | — |
-	  | Mimas | Cloud | 16 GB | 160 GB | — |
-	  | Port | Cloud | 4 GB | 40 GB | — |
-	  | Helia-Relay | Cloud | 8 GB | 80 GB | — |
+| Server | Type | RAM | Storage | GPU |
+|--------|------|-----|---------|-----|
+| Deimos | Dedicated | 64 GB | 6.8 TB | GTX 1080 |
+| Jupiter | Dedicated | 64 GB | 6.9 TB | GTX 1080 |
+| IO | Dedicated | 64 GB | 3.5 TB | — |
+| Cyberproxy | Cloud | 8 GB | 80 GB | — |
+| Mimas | Cloud | 16 GB | 160 GB | — |
+| Port | Cloud | 4 GB | 40 GB | — |
+| Helia-Relay | Cloud | 8 GB | 80 GB | — |
 
 ## GPU Requirement
 
@@ -163,34 +163,35 @@ crystal-domain: cyber
 	- Automated snapshots every 12 hours with 2-day retention
 	- Manual snapshots before major upgrades
 - ### Data Volumes
-	- | Data | Size | Location |
-		  |------|------|----------|
-		  | Bostrom archive | ~4.4 TB | Deimos |
-		  | Bostrom pruned | ~500 GB | Jupiter |
-		  | Cyberindex DB | ~200 GB | Deimos |
-		  | IPFS blocks | ~1.7 TB | IO |
+
+| Data | Size | Location |
+|------|------|----------|
+| Bostrom archive | ~4.4 TB | Deimos |
+| Bostrom pruned | ~500 GB | Jupiter |
+| Cyberindex DB | ~200 GB | Deimos |
+| IPFS blocks | ~1.7 TB | IO |
 
 ## Software Versions
 
-- | Component | Version |
-	  |-----------|---------|
-	  | go-cyber | v7.0.1 |
-	  | Cosmos SDK | v0.47.16 |
-	  | CometBFT | v0.37.18 |
-	  | CosmWasm | v1.5.2 |
-	  | IPFS (Kubo) | 0.22.0 |
-	  | Hermes | 1.13.2 |
-	  | Grafana | 12.3.1 |
-	  | Prometheus | 2.54.1 |
+| Component | Version |
+|-----------|---------|
+| go-cyber | v7.0.1 |
+| Cosmos SDK | v0.47.16 |
+| CometBFT | v0.37.18 |
+| CosmWasm | v1.5.2 |
+| IPFS (Kubo) | 0.22.0 |
+| Hermes | 1.13.2 |
+| Grafana | 12.3.1 |
+| Prometheus | 2.54.1 |
 
 ## Redundancy & Backup
 
-- | Component | Strategy |
-	  |-----------|----------|
-	  | Blockchain data | ZFS snapshots + archive node |
-	  | IPFS content | Cluster replication |
-	  | Configuration | Git-managed |
-	  | Cloud servers | Hetzner snapshots |
+| Component | Strategy |
+|-----------|----------|
+| Blockchain data | ZFS snapshots + archive node |
+| IPFS content | Cluster replication |
+| Configuration | Git-managed |
+| Cloud servers | Hetzner snapshots |
 
 ## Related
 

@@ -9,30 +9,36 @@ crystal-domain: cyber
 	- Back to [[bostrom infrastructure]]
 -
 - ## Network Details
-	- | Parameter | Value |
-	  |-----------|-------|
-	  | Chain ID | `bostrom` |
-	  | Chain Name | Bostrom |
-	  | Native Token | BOOT |
-	  | Bech32 Prefix | `bostrom` |
-	  | Coin Type | 118 (Cosmos) |
-	  | Block Time | ~5 seconds |
-	  | Consensus | CometBFT (Tendermint) |
+
+| Parameter | Value |
+|-----------|-------|
+| Chain ID | `bostrom` |
+| Chain Name | Bostrom |
+| Native Token | BOOT |
+| Bech32 Prefix | `bostrom` |
+| Coin Type | 118 (Cosmos) |
+| Block Time | ~5 seconds |
+| Consensus | CometBFT (Tendermint) |
+
 -
 - ## RPC Endpoints
-	- | Type | URL |
-	  |------|-----|
-	  | RPC | `https://rpc.bostrom.cybernode.ai` |
-	  | REST/LCD | `https://lcd.bostrom.cybernode.ai` |
-	  | WebSocket | `wss://rpc.bostrom.cybernode.ai/websocket` |
+
+| Type | URL |
+|------|-----|
+| RPC | `https://rpc.bostrom.cybernode.ai` |
+| REST/LCD | `https://lcd.bostrom.cybernode.ai` |
+| WebSocket | `wss://rpc.bostrom.cybernode.ai/websocket` |
+
 -
 - ## Tokens
-	- | Token | Denom | Decimals | Description |
-	  |-------|-------|----------|-------------|
-	  | BOOT | `boot` | 0 | Native staking and gas token |
-	  | HYDROGEN | `hydrogen` | 0 | Resource token for bandwidth |
-	  | MILLIAMPERE | `milliampere` | 3 | Resource token (1/1000 AMPERE) |
-	  | MILLIVOLT | `millivolt` | 3 | Resource token (1/1000 VOLT) |
+
+| Token | Denom | Decimals | Description |
+|-------|-------|----------|-------------|
+| BOOT | `boot` | 0 | Native staking and gas token |
+| HYDROGEN | `hydrogen` | 0 | Resource token for bandwidth |
+| MILLIAMPERE | `milliampere` | 3 | Resource token (1/1000 AMPERE) |
+| MILLIVOLT | `millivolt` | 3 | Resource token (1/1000 VOLT) |
+
 -
 - ## Add to Keplr Wallet
 	- Bostrom is automatically suggested when you visit https://cyb.ai
@@ -88,11 +94,13 @@ crystal-domain: cyber
 	- Bostrom is listed in Cosmostation's default chains.
 -
 - ## Block Explorers
-	- | Explorer | URL |
-	  |----------|-----|
-	  | cyb.ai Oracle | https://cyb.ai/oracle |
-	  | Mintscan | https://mintscan.io/bostrom |
-	  | ATOMScan | https://atomscan.com/bostrom |
+
+| Explorer | URL |
+|----------|-----|
+| cyb.ai Oracle | https://cyb.ai/oracle |
+| Mintscan | https://mintscan.io/bostrom |
+| ATOMScan | https://atomscan.com/bostrom |
+
 -
 - ## Faucet
 	- There is no public faucet. To get BOOT:
@@ -107,22 +115,26 @@ crystal-domain: cyber
 		- Average transaction cost: < 1 BOOT
 -
 - ## Staking
-	- | Parameter | Value |
-	  |-----------|-------|
-	  | Unbonding Period | 21 days |
-	  | Max Validators | 100 |
-	  | Inflation | Dynamic (see governance) |
+
+| Parameter | Value |
+|-----------|-------|
+| Unbonding Period | 21 days |
+| Max Validators | 100 |
+| Inflation | Dynamic (see governance) |
+
 	- Stake via:
 		- https://cyb.ai/sphere (official)
 		- Keplr wallet staking interface
 		- Cosmostation
 -
 - ## Governance
-	- | Parameter | Value |
-	  |-----------|-------|
-	  | Voting Period | 7 days |
-	  | Min Deposit | 42,000,000,000 BOOT |
-	  | Quorum | 33.4% |
+
+| Parameter | Value |
+|-----------|-------|
+| Voting Period | 7 days |
+| Min Deposit | 42,000,000,000 BOOT |
+| Quorum | 33.4% |
+
 	- Vote on proposals at https://cyb.ai/senate
 -
 - ## Related

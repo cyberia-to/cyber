@@ -94,11 +94,12 @@ in this article i will boil down all essential ideas into coherent understanding
 	- [[when]] [[information]] was linked
 	- [[what]] [[information]] was linked
 - in essence cybergraph is an array of append only fully authenticated quadruples
-- | block height | neuron | from particle | to particle |
 
-	  | 42 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
+| block height | neuron | from particle | to particle |
+|---|---|---|---|
+| 42 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
+| 43 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
 
-	  | 43 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
 - i want to make it clear that notion of [[cyberlink]] is essential for the architecture described by this article
 - in conventional ai workflows you used to train over static datasets which already have been created
 - [[collective memory]] require to change our thinking on how [[knowledge]] emerge

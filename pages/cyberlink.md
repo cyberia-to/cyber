@@ -19,9 +19,10 @@ primitive [[learning]] act
 
 fully authenticated quadruple
 
-- | block hash | neuron | from particle | to particle |
-  | 42 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
-  | 43 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
+| block hash | neuron | from particle | to particle |
+|------------|--------|---------------|-------------|
+| 42 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
+| 43 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
 
 foundation of [[cybergraph]]
 

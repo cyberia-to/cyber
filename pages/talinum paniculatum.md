@@ -64,23 +64,24 @@ products
 - [[layer]]: herbaceous layer, understory, shrub layer
 - [[products]]: salad, ornamental flowers, medicinal extracts, seeds
 - ## chemical compounds
-	- | compound name                           | plant part | class              | reported activity                                  |
-		  |-----------------------------------------|------------|--------------------|----------------------------------------------------|
-		  | [[phytol]]                                  | stem       | prenol lipid       | anti-inflammatory, antioxidant                    |
-		  | [[beta-sitosterol]]                         | stem       | phytosterol        | cholesterol-lowering, anti-inflammatory           |
-		  | [[beta-sitosterol]]                         | root       | phytosterol        | cholesterol-lowering, anti-inflammatory           |
-		  | [[stigmasterol]]                            | stem       | phytosterol        | antioxidant, anti-inflammatory                    |
-		  | [[stigmasterol]]                            | root       | phytosterol        | antioxidant, anti-inflammatory                    |
-		  | [[cycloergostanol]] acetate derivative      | leaf       | steroid derivative | potential anticancer, anti-inflammatory           |
-		  | [[dibutyldimethylurea]]                     | root       | urea derivative    | antimicrobial                                     |
-		  | [[phytol]]                                  | leaf       | diterpenoid        | antioxidant, antimicrobial, anticancer            |
-		  | [[oleic acid]]                              | stem       | fatty acid         | anti-inflammatory, cardiovascular health          |
-		  | [[ethyl palmitate]]                         | stem       | fatty acid ester   | antimicrobial                                     |
-		  | [[phytol]]                                  | stem       | diterpenoid        | antioxidant, antimicrobial, anticancer            |
-		  | [[vinylguaiacol]]                           | leaf       | phenolic compound  | antioxidant, antimicrobial                        |
-		  | [[syringol]]                                | leaf       | phenolic compound  | antioxidant, antimicrobial                        |
-		  | [[eugenol]]                                 | leaf       | phenolic compound  | antioxidant, antimicrobial, analgesic             |
-		  | [[phytol acetate]]                          | stem       | diterpenoid ester  | antioxidant, antimicrobial                        |
+
+| compound name                           | plant part | class              | reported activity                                  |
+|-----------------------------------------|------------|--------------------|----------------------------------------------------|
+| [[phytol]]                                  | stem       | prenol lipid       | anti-inflammatory, antioxidant                    |
+| [[beta-sitosterol]]                         | stem       | phytosterol        | cholesterol-lowering, anti-inflammatory           |
+| [[beta-sitosterol]]                         | root       | phytosterol        | cholesterol-lowering, anti-inflammatory           |
+| [[stigmasterol]]                            | stem       | phytosterol        | antioxidant, anti-inflammatory                    |
+| [[stigmasterol]]                            | root       | phytosterol        | antioxidant, anti-inflammatory                    |
+| [[cycloergostanol]] acetate derivative      | leaf       | steroid derivative | potential anticancer, anti-inflammatory           |
+| [[dibutyldimethylurea]]                     | root       | urea derivative    | antimicrobial                                     |
+| [[phytol]]                                  | leaf       | diterpenoid        | antioxidant, antimicrobial, anticancer            |
+| [[oleic acid]]                              | stem       | fatty acid         | anti-inflammatory, cardiovascular health          |
+| [[ethyl palmitate]]                         | stem       | fatty acid ester   | antimicrobial                                     |
+| [[phytol]]                                  | stem       | diterpenoid        | antioxidant, antimicrobial, anticancer            |
+| [[vinylguaiacol]]                           | leaf       | phenolic compound  | antioxidant, antimicrobial                        |
+| [[syringol]]                                | leaf       | phenolic compound  | antioxidant, antimicrobial                        |
+| [[eugenol]]                                 | leaf       | phenolic compound  | antioxidant, antimicrobial, analgesic             |
+| [[phytol acetate]]                          | stem       | diterpenoid ester  | antioxidant, antimicrobial                        |
 
 ## operations
 

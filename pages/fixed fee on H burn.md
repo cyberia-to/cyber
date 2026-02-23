@@ -19,9 +19,12 @@ example
 - i want to burn 400 [[$H]]
 - my fee is 4 [[$H]]
 	-
-- | state | [[frozen]] [[$BOOT]] of [[neuron]] | [[$H]] of [[neuron]] | [[$H]] [[supply]] |
-  | starting | 1000 | 1000 | 10000 |
-  | ending | 604 | 600 | 9996 |
+
+| state | [[frozen]] [[$BOOT]] of [[neuron]] | [[$H]] of [[neuron]] | [[$H]] [[supply]] |
+|-------|--------------------------------------|----------------------|--------------------|
+| starting | 1000 | 1000 | 10000 |
+| ending | 604 | 600 | 9996 |
+
 
 you see that in proposed scenario [[neuron]] must [[supply]] a bit more [[$H]] in order to [[unstake]] all [[$BOOT]]
 

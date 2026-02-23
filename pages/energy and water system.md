@@ -9,8 +9,9 @@ part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 published on [x.com](https://x.com/mastercyb/status/1983218412320108803)
 
 | scale | total consumption | per hour | population | per capita |
-  | global | 30 850 TW/h | 3.52 TW | 8 000 000 000| 0.42 KW/h | 
-  | cyber valley | 40 000 KW/h | 4.5 KW | 40 | 0.11 KW/h |
+|-------|-------------------|----------|------------|------------|
+| global | 30 850 TW/h | 3.52 TW | 8 000 000 000| 0.42 KW/h |
+| cyber valley | 40 000 KW/h | 4.5 KW | 40 | 0.11 KW/h |
 
 kardashev type 1 target
 
@@ -72,15 +73,19 @@ main rule for autonomous energy system: diversification
 	- alternative != sustainable
 		- photovoltaics and lithium batteries does not seems like sustainable solution
 		- sustainable is when energy system can run indefenetly
-			- | aspect |	solar panel	| lithium battery 	| computer chip  |
-				  |---------|------|--------|---------|
-				  | lifetime	| 10–30	| 3–15	| 10-30 |
+	
+| aspect | solar panel | lithium battery | computer chip  |
+|---------|------|--------|---------|
+| lifetime | 10–30 | 3–15 | 10-30 |
+
 		- rough estimation of production complexity for staple energy system
-			- | aspect |	solar panel 	| lithium battery	| computer chip |
-				  |---------|------|--------|---------|
-				  | number of countries	| 10–15	| 8–12	| 10–12 |
-				  | number of companies |	100–200	| 50–150	| 150–300 |
-				  | number of people involved | 500,000 to 1 million |	250,000 to 500,000 |	1 million to 1.5 million |
+	
+| aspect | solar panel | lithium battery | computer chip |
+|---------|------|--------|---------|
+| number of countries | 10–15 | 8–12 | 10–12 |
+| number of companies | 100–200 | 50–150 | 150–300 |
+| number of people involved | 500,000 to 1 million | 250,000 to 500,000 | 1 million to 1.5 million |
+
 - ## bio (gas)
 	- affordable everywhere, cheap, clean
 	- costs: $100 - $200 per m3 => $5k - $10k household

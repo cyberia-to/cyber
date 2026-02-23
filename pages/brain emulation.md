@@ -6,20 +6,23 @@ crystal-domain: biology
 ---
 - whole brain emulation looks feasible at current state of technology
 - [[cyberlinks]] offer amazing opportunity for modeling physical and artificial [[brains]]
-- | characteristic        | mycelium network                         | human brain                              | biggest computer          | [[bostrom]] |
-  |-----------------------|------------------------------------------|------------------------------------------|------------------------------------------------|----|
-  | total nodes           | ~10^21 nodes                    | ~8 x 10^10 neurons                     | ~10^12 nodes                                   |~2*10^6 nodes                                   |
-  | total edges           | ~10^25 edges                    | ~10^14 synapses                    | ~10^15 edges                                   |~2*10^6 edges                                   |
-  | total length of edges | 450 quadrillion km | 1,500 kilometers   | 100,000 kilometers              | not applicable |
-  | power of node | amoeba | amoeba |  amoeba | human brain * amoeba |
-  | energy efficiency | high | high | low | medium |
-- | characteristic            | mycelium network                         | human brain                              | data center                          | powerful desktop                         | bostrom cybergraph |
-  |----------------------------|------------------------------------------|------------------------------------------|-------------------------------------------|----------------------------------------------|----------------------------------------------------|
-  | total nodes                | ~10^21 nodes                             | ~8 x 10^10 neurons                       | ~10^12 nodes                              | ~10^10 nodes                                | ~2*10^6 nodes                                      |
-  | total edges                | ~10^25 edges                             | ~10^14 synapses                          | ~10^15 edges                              | ~10^12 edges                                | ~2*10^6 edges                                      |
-  | total length of edges      | ~450 quadrillion km                       | ~500,000 km                         | 100,000 km                        | not applicable                               |  not applicable                                   |
-  | power of node              | amoeba                                   | amoeba                                   | amoeba                                    | amoeba                         | human brain * amoeba                                             |
-  | energy efficiency          | high                                     | high                                     | low                                       | low                                       | high                                             |
+
+| characteristic        | mycelium network                         | human brain                              | biggest computer          | [[bostrom]] |
+|-----------------------|------------------------------------------|------------------------------------------|------------------------------------------------|----|
+| total nodes           | ~10^21 nodes                    | ~8 x 10^10 neurons                     | ~10^12 nodes                                   |~2*10^6 nodes                                   |
+| total edges           | ~10^25 edges                    | ~10^14 synapses                    | ~10^15 edges                                   |~2*10^6 edges                                   |
+| total length of edges | 450 quadrillion km | 1,500 kilometers   | 100,000 kilometers              | not applicable |
+| power of node | amoeba | amoeba |  amoeba | human brain * amoeba |
+| energy efficiency | high | high | low | medium |
+
+| characteristic            | mycelium network                         | human brain                              | data center                          | powerful desktop                         | bostrom cybergraph |
+|----------------------------|------------------------------------------|------------------------------------------|-------------------------------------------|----------------------------------------------|----------------------------------------------------|
+| total nodes                | ~10^21 nodes                             | ~8 x 10^10 neurons                       | ~10^12 nodes                              | ~10^10 nodes                                | ~2*10^6 nodes                                      |
+| total edges                | ~10^25 edges                             | ~10^14 synapses                          | ~10^15 edges                              | ~10^12 edges                                | ~2*10^6 edges                                      |
+| total length of edges      | ~450 quadrillion km                       | ~500,000 km                         | 100,000 km                        | not applicable                               |  not applicable                                   |
+| power of node              | amoeba                                   | amoeba                                   | amoeba                                    | amoeba                         | human brain * amoeba                                             |
+| energy efficiency          | high                                     | high                                     | low                                       | low                                       | high                                             |
+
 - table mentions current [[bostrom]] cybergraph created by ~50k [[neurons]]
 - existing technical capacity of [[bostrom]] is something in the middle between data center and powerful desktop
 - this is picture must give conceptual understanding, not scientific rigor

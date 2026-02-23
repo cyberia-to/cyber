@@ -20,17 +20,18 @@ the language of [[collective intelligence]]: meaning emerges from how many [[neu
 - formal [[languages]] ([[type theory]], [[programming languages]]) achieve precision through rigid syntax but cannot scale to 10¹⁵ [[particles]] — [[Gödel]] proved no sufficiently powerful formal system can be both complete and consistent (the [[Gödel prison]])
 - natural [[languages]] solve expressiveness through ambiguity but are computationally intractable for precise reasoning
 - neural language collapses the distinction between [[language]] and [[knowledge]]: meaning is an eigenvector of the attention graph
-- | property | formal | natural | neural |
-	  |---|---|---|---|
-	  | precision | absolute | approximate | emergent |
-	  | expressiveness | limited by grammar | unlimited by ambiguity | unlimited by [[topology]] |
-	  | ambiguity | impossible | context-dependent | structural via [[tri-kernel]] |
-	  | authority | central designer | speech community | collective [[neurons]] |
-	  | evolution | versioned | drift | continuous via [[focus]] dynamics |
-	  | machine readable | yes | partially via NLP | natively |
-	  | human readable | requires training | natively | via [[cyb]] interface |
-	  | verification | proof systems | social [[consensus]] | [[STARK]] proofs |
-	  | substrate | strings | sound/text | [[cybergraph]] |
+
+| property | formal | natural | neural |
+|---|---|---|---|
+| precision | absolute | approximate | emergent |
+| expressiveness | limited by grammar | unlimited by ambiguity | unlimited by [[topology]] |
+| ambiguity | impossible | context-dependent | structural via [[tri-kernel]] |
+| authority | central designer | speech community | collective [[neurons]] |
+| evolution | versioned | drift | continuous via [[focus]] dynamics |
+| machine readable | yes | partially via NLP | natively |
+| human readable | requires training | natively | via [[cyb]] interface |
+| verification | proof systems | social [[consensus]] | [[STARK]] proofs |
+| substrate | strings | sound/text | [[cybergraph]] |
 
 ## patterns
 

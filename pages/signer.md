@@ -58,22 +58,24 @@ thoughts
 	- shamir secret sharing for splitting secrets
 - dapp to wallet interactions are important
 	- how to make wallet connect without servers?
-- | Blockchain       | Signing Scheme                    | Curve(s)            | Notes                                                                 |
-  |------------------|-----------------------------------|---------------------|-----------------------------------------------------------------------|
-  | Bitcoin (BTC)    | ECDSA                             | secp256k1           | -                                                                     |
-  | Ethereum (ETH)   | ECDSA (execution layer)           | secp256k1           | Uses ECDSA for transaction signing in the execution layer.            |
-  | Ethereum 2.0     | BLS (consensus layer)             | BLS12-381           | Uses BLS for validator signatures in the consensus layer.             |
-  | Polkadot         | SR25519, ED25519, ECDSA           | sr25519, ed25519, secp256k1 | Offers multiple schemes for flexibility and interoperability.          |
-  | Solana           | EdDSA                             | ed25519             | Chosen for speed and security, crucial for Solana's performance.      |
-  | Cosmos Ecosystem | ECDSA, EdDSA                      | secp256k1, ed25519  | Supports multiple schemes for versatility across Cosmos-based chains. |
+
+| Blockchain       | Signing Scheme                    | Curve(s)            | Notes                                                                 |
+|------------------|-----------------------------------|---------------------|-----------------------------------------------------------------------|
+| Bitcoin (BTC)    | ECDSA                             | secp256k1           | -                                                                     |
+| Ethereum (ETH)   | ECDSA (execution layer)           | secp256k1           | Uses ECDSA for transaction signing in the execution layer.            |
+| Ethereum 2.0     | BLS (consensus layer)             | BLS12-381           | Uses BLS for validator signatures in the consensus layer.             |
+| Polkadot         | SR25519, ED25519, ECDSA           | sr25519, ed25519, secp256k1 | Offers multiple schemes for flexibility and interoperability.          |
+| Solana           | EdDSA                             | ed25519             | Chosen for speed and security, crucial for Solana's performance.      |
+| Cosmos Ecosystem | ECDSA, EdDSA                      | secp256k1, ed25519  | Supports multiple schemes for versatility across Cosmos-based chains. |
+
 
 | Blockchain | Standard Derivation Path    | Coin Type | Remarks                                                |
-  |------------|-----------------------------|-----------|--------------------------------------------------------|
-  | Bitcoin    | `m/44'/0'/0'/0/x`           | `0'`      | BIP44 standard, `x` for address index                  |
-  | Ethereum   | `m/44'/60'/0'/0/x`          | `60'`     | Used for generating multiple addresses                 |
-  | Solana     | `m/44'/501'/0'/0'`          | `501'`    | Typically uses a single address, no address index (`x`)|
-  | Polkadot   | `m/44'/354'/0'/0'/x'`       | `354'`    | Account and address indexing, `x'` for address index   |
-  | Cosmos     | `m/44'/118'/0'/0/x`         | `118'`    | Similar to Bitcoin and Ethereum, `x` for address index |
+|------------|-----------------------------|-----------|--------------------------------------------------------|
+| Bitcoin    | `m/44'/0'/0'/0/x`           | `0'`      | BIP44 standard, `x` for address index                  |
+| Ethereum   | `m/44'/60'/0'/0/x`          | `60'`     | Used for generating multiple addresses                 |
+| Solana     | `m/44'/501'/0'/0'`          | `501'`    | Typically uses a single address, no address index (`x`)|
+| Polkadot   | `m/44'/354'/0'/0'/x'`       | `354'`    | Account and address indexing, `x'` for address index   |
+| Cosmos     | `m/44'/118'/0'/0/x`         | `118'`    | Similar to Bitcoin and Ethereum, `x` for address index |
 
 Yes, you've got the right idea. BIP44 and similar standards like BIP32 and BIP43 define the hierarchical structure for deriving public and private keys from a master seed, not the addresses directly. The process for generating an address from a public key can vary significantly between different blockchain networks, even if they use the same derivation path to generate the public key. Essentially, the derivation path leads to a public/private key pair, and then each blockchain network applies its own rules and formats to generate an address from the public key.
 
@@ -82,19 +84,19 @@ This distinction is crucial because it underlines that the same hierarchical pat
 Let's build a comparison table on the specifics of address computation across different blockchains like Bitcoin, Ethereum, Solana, Polkadot, and Cosmos to illustrate this further.
 
 | Blockchain | Public Key Derivation | Address Computation                                                                                   |
-  |------------|-----------------------|-------------------------------------------------------------------------------------------------------|
-  | Bitcoin    | BIP32/BIP44           | Bitcoin addresses are either Pay-to-Public-Key-Hash (P2PKH) or Pay-to-Script-Hash (P2SH), starting with '1' or '3', respectively. SHA-256 followed by RIPEMD-160 is applied to the public key. |
-  | Ethereum   | BIP32/BIP44           | Ethereum uses the 'keccak-256' hash of the public key, taking the last 20 bytes to form the address, prefixed with '0x'. |
-  | Solana     | BIP32/BIP44           | Solana addresses are derived by taking the SHA-256 hash of the public key and using the Base58 encoding, similar to Bitcoin but without the version byte and checksum. |
-  | Polkadot   | BIP32/BIP44           | Polkadot uses the SS58 address format. It involves hashing the public key and encoding it with a network-specific prefix. |
-  | Cosmos     | BIP32/BIP44           | Cosmos addresses use the 'sha256' hash of the public key, followed by RIPEMD-160. The result is base32 encoded with the Bech32 format, prefixed with the network's unique identifier (e.g., 'cosmos'). |
+|------------|-----------------------|-------------------------------------------------------------------------------------------------------|
+| Bitcoin    | BIP32/BIP44           | Bitcoin addresses are either Pay-to-Public-Key-Hash (P2PKH) or Pay-to-Script-Hash (P2SH), starting with '1' or '3', respectively. SHA-256 followed by RIPEMD-160 is applied to the public key. |
+| Ethereum   | BIP32/BIP44           | Ethereum uses the 'keccak-256' hash of the public key, taking the last 20 bytes to form the address, prefixed with '0x'. |
+| Solana     | BIP32/BIP44           | Solana addresses are derived by taking the SHA-256 hash of the public key and using the Base58 encoding, similar to Bitcoin but without the version byte and checksum. |
+| Polkadot   | BIP32/BIP44           | Polkadot uses the SS58 address format. It involves hashing the public key and encoding it with a network-specific prefix. |
+| Cosmos     | BIP32/BIP44           | Cosmos addresses use the 'sha256' hash of the public key, followed by RIPEMD-160. The result is base32 encoded with the Bech32 format, prefixed with the network's unique identifier (e.g., 'cosmos'). |
 
 | Feature               | Bitcoin                  | Ethereum                 | Solana                   | Polkadot                | Cosmos                   |
-  |-----------------------|--------------------------|--------------------------|--------------------------|-------------------------|--------------------------|
-  | Primary Cryptography | SHA-256 & RIPEMD-160     | Keccak-256               | Ed25519                  | Schnorrkel (sr25519) & Ed25519 | Secp256k1 & Ed25519      |
-  | Address Format    | Base58Check encoding     | Hex, prefixed with `0x`  | Base58                   | SS58                    | Bech32                    |
-  | Public Key to Address | Double hash (SHA-256 then RIPEMD-160) of the public key, add network byte, checksum with Base58Check | Hash the public key with Keccak-256 and take the last 20 bytes | Use the public key directly as the address, encode with Base58 | Public key is hashed and encoded using the SS58 format, which includes a prefix indicating the network | Hash the public key with SHA-256 (for Secp256k1) or directly use the public key (for Ed25519), then encode with Bech32 |
-  | Unique Characteristics | Uses a checksum for error detection. Addresses can start with `1`, `3` or bech32 `bc1` | Addresses are not checksum-cased by default, but EIP-55 proposes a mixed-case checksum variant | Addresses are the shortest among these blockchains, offering efficiency | Polkadot's SS58 address format includes a network identifier, enabling address reuse across networks with safety | Cosmos utilizes the Bech32 address format, enhancing readability and error detection |
+|-----------------------|--------------------------|--------------------------|--------------------------|-------------------------|--------------------------|
+| Primary Cryptography | SHA-256 & RIPEMD-160     | Keccak-256               | Ed25519                  | Schnorrkel (sr25519) & Ed25519 | Secp256k1 & Ed25519      |
+| Address Format    | Base58Check encoding     | Hex, prefixed with `0x`  | Base58                   | SS58                    | Bech32                    |
+| Public Key to Address | Double hash (SHA-256 then RIPEMD-160) of the public key, add network byte, checksum with Base58Check | Hash the public key with Keccak-256 and take the last 20 bytes | Use the public key directly as the address, encode with Base58 | Public key is hashed and encoded using the SS58 format, which includes a prefix indicating the network | Hash the public key with SHA-256 (for Secp256k1) or directly use the public key (for Ed25519), then encode with Bech32 |
+| Unique Characteristics | Uses a checksum for error detection. Addresses can start with `1`, `3` or bech32 `bc1` | Addresses are not checksum-cased by default, but EIP-55 proposes a mixed-case checksum variant | Addresses are the shortest among these blockchains, offering efficiency | Polkadot's SS58 address format includes a network identifier, enabling address reuse across networks with safety | Cosmos utilizes the Bech32 address format, enhancing readability and error detection |
 
 You're correct in noting that the construction of a transaction generally exists on a different layer from the signing process and indeed can be designed to operate without directly exposing keys from the signer. This separation between transaction construction and signing is a fundamental aspect of most blockchain architectures, enhancing security and modularity. Let's explore how this separation impacts the system's design and operation:
 
@@ -125,13 +127,13 @@ Interoperability: A modular approach facilitates the development of systems that
 Here's a comparison table that highlights the key differences between hardened and non-hardened (normal) addresses in the context of hierarchical deterministic (HD) wallets, as outlined in BIP32 and related standards:
 
 | Feature                      | Hardened Addresses                                           | Non-Hardened Addresses                                       |
-  |------------------------------|--------------------------------------------------------------|--------------------------------------------------------------|
-  | Derivation Path Notation     | Denoted by an apostrophe (`'`) after the index number. E.g., `m/44'/0'/0'` | No apostrophe after the index number. E.g., `m/44/0/0`      |
-  | Key Generation Input         | Uses the parent's private key as part of the input for generating the child key. | Uses the parent's public key as part of the input for generating the child key. |
-  | Backtracking Security        | If a child private key is exposed, it does not compromise the parent private key or other sibling keys. | If a child private key and the parent chain code are exposed, it could potentially allow backtracking to the parent private key and compromise other sibling keys. |
-  | Public Key Derivation        | Cannot generate child public keys without access to the parent's private key. | Can generate child public keys without access to the parent's private key, allowing for a more flexible key management structure. |
-  | Address Generation Visibility | Requires access to the private key, limiting the ability to generate addresses in less secure environments without exposing the key. | Public keys can be derived and used to generate addresses in less secure environments without exposing the private key. |
-  | Use Case                     | Used for higher security needs, where exposure of a single key should not risk other keys. Ideal for savings or high-value accounts. | Used where convenience and efficient key management are prioritized, such as for generating receiving addresses on a server without needing access to the private keys. |
+|------------------------------|--------------------------------------------------------------|--------------------------------------------------------------|
+| Derivation Path Notation     | Denoted by an apostrophe (`'`) after the index number. E.g., `m/44'/0'/0'` | No apostrophe after the index number. E.g., `m/44/0/0`      |
+| Key Generation Input         | Uses the parent's private key as part of the input for generating the child key. | Uses the parent's public key as part of the input for generating the child key. |
+| Backtracking Security        | If a child private key is exposed, it does not compromise the parent private key or other sibling keys. | If a child private key and the parent chain code are exposed, it could potentially allow backtracking to the parent private key and compromise other sibling keys. |
+| Public Key Derivation        | Cannot generate child public keys without access to the parent's private key. | Can generate child public keys without access to the parent's private key, allowing for a more flexible key management structure. |
+| Address Generation Visibility | Requires access to the private key, limiting the ability to generate addresses in less secure environments without exposing the key. | Public keys can be derived and used to generate addresses in less secure environments without exposing the private key. |
+| Use Case                     | Used for higher security needs, where exposure of a single key should not risk other keys. Ideal for savings or high-value accounts. | Used where convenience and efficient key management are prioritized, such as for generating receiving addresses on a server without needing access to the private keys. |
 
 The choice between using hardened or non-hardened addresses depends on the specific security needs, operational requirements, and risk profile of the use case. Hardened addresses provide enhanced security against certain types of attacks, making them suitable for protecting high-value keys. In contrast, non-hardened addresses offer more flexibility in key management, allowing for public key derivation and address generation without exposing private keys.
 

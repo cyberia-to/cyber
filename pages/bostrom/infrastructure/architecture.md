@@ -14,15 +14,16 @@ crystal-domain: cyber
 - ![Infrastructure Diagram](../media/Bostrom_infra.drawio.svg)
 - 📎 [[../media/cyber-full-architecture.drawio][Full Architecture Map (Draw.io)]]
 - ### Server Details
-	- | Server | Role | Specs |
-		  |--------|------|-------|
-		  | Cyberproxy | Nginx, Frontend | CX31 |
-		  | Deimos | Archive + Cyberindex | GTX 1080, 62GB, 6.8TB |
-		  | Jupiter | RPC + IBC Hermes | GTX 1080, 62GB, 6.9TB |
-		  | IO | IPFS + Cluster | 62GB, 3.5TB |
-		  | Mimas | Grafana + Prometheus | CX41 |
-		  | Port | Market APIs | CX21 |
-		  | Helia-Relay | libp2p relay | CX32 |
+
+| Server | Role | Specs |
+|--------|------|-------|
+| Cyberproxy | Nginx, Frontend | CX31 |
+| Deimos | Archive + Cyberindex | GTX 1080, 62GB, 6.8TB |
+| Jupiter | RPC + IBC Hermes | GTX 1080, 62GB, 6.9TB |
+| IO | IPFS + Cluster | 62GB, 3.5TB |
+| Mimas | Grafana + Prometheus | CX41 |
+| Port | Market APIs | CX21 |
+| Helia-Relay | libp2p relay | CX32 |
 
 ## Node Roles
 
@@ -64,12 +65,12 @@ crystal-domain: cyber
 
 ## Redundancy
 
-- | Service | Redundancy |
-	  |---------|------------|
-	  | RPC endpoints | Multiple nodes behind load balancer |
-	  | Blockchain data | ZFS snapshots (12h intervals) |
-	  | IPFS content | Cluster replication |
-	  | IBC relaying | Automatic restart on failure |
+| Service | Redundancy |
+|---------|------------|
+| RPC endpoints | Multiple nodes behind load balancer |
+| Blockchain data | ZFS snapshots (12h intervals) |
+| IPFS content | Cluster replication |
+| IBC relaying | Automatic restart on failure |
 
 ## Related
 

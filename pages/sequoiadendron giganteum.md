@@ -120,10 +120,11 @@ links
 
 ## chemical compounds
 
-- | compound | part of plant | amount (approx.) | properties/usefulness |
-	  |---|---|---|---|
-	  | [[tannic acid]] | bark | 20-30% | [[antimicrobial]], fire-resistant |
-	  | [[terpenoids]] | bark, resin | trace amounts | [[antifungal]], insect-repelling |
-	  | [[lignin]] | wood | 40% | structural strength, decay resistance |
-	  | [[flavonoids]] | leaves | small amounts | antioxidant, UV protection |
-	  | [[polyphenols]] | bark | varies | anti-inflammatory, protective properties |
+
+| compound | part of plant | amount (approx.) | properties/usefulness |
+|---|---|---|---|
+| [[tannic acid]] | bark | 20-30% | [[antimicrobial]], fire-resistant |
+| [[terpenoids]] | bark, resin | trace amounts | [[antifungal]], insect-repelling |
+| [[lignin]] | wood | 40% | structural strength, decay resistance |
+| [[flavonoids]] | leaves | small amounts | antioxidant, UV protection |
+| [[polyphenols]] | bark | varies | anti-inflammatory, protective properties |

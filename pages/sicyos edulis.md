@@ -71,17 +71,19 @@ availability: cv
 	- •	[[maintenance]]:: regular watering, mulching to maintain moisture; periodic pruning to encourage new growth; requires climbing supports; pest monitoring recommended.
 	- •	[[harvest]]:: fruits harvested young (5–15 cm), when tender and crisp; frequent harvesting promotes extended fruit production; mature fruits become fibrous and less palatable but seeds remain viable.
 - ### nutrition values per 100 grams (fresh fruit)
-	- | nutrient                 | amount                 | unit            | % daily value (approx.) |
-	  |--------------------------|------------------------|-----------------|-------------------------|
-	  | energy               | 17                     | kcal            | ~1%                     |
-	  | [[thiamine]] (vitamin B1)| 0.04                   | mg              | ~3%                      |
-	  | [[riboflavin]] (vitamin B2)| 0.04                 | mg              | ~3%                      |
-	  | [[niacin]] (vitamin B3)  | 0.5                    | mg              | ~3%                      |
-	  | [[calcium]]              | 14                     | mg              | ~1.5%                   |
-	  | [[phosphorus]]          | 30                     | mg              | ~4%                      |
-	  | [[iron]] | 0.4                    | mg              | ~2.5%                   |
-	  | [[potassium]]            | 120                    | mg              | ~3%                      |
-	  | [[water]]        | ~93                    | %               | –                        |
+
+| nutrient                 | amount                 | unit            | % daily value (approx.) |
+|--------------------------|------------------------|-----------------|-------------------------|
+| energy               | 17                     | kcal            | ~1%                     |
+| [[thiamine]] (vitamin B1)| 0.04                   | mg              | ~3%                      |
+| [[riboflavin]] (vitamin B2)| 0.04                 | mg              | ~3%                      |
+| [[niacin]] (vitamin B3)  | 0.5                    | mg              | ~3%                      |
+| [[calcium]]              | 14                     | mg              | ~1.5%                   |
+| [[phosphorus]]          | 30                     | mg              | ~4%                      |
+| [[iron]] | 0.4                    | mg              | ~2.5%                   |
+| [[potassium]]            | 120                    | mg              | ~3%                      |
+| [[water]]        | ~93                    | %               | –                        |
+
 - ### notes:
 	- chayote fruits are low in calories, fat, and protein, but rich in dietary fiber and vitamin C.
 	- they are valued for their nutritional benefits, aiding digestion and supporting immune function.

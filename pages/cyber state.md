@@ -23,14 +23,15 @@ a sovereign entity where governance, economics, and coordination emerge from [[c
 
 ## how it differs from a [[network state]]
 
-- | property | [[network state]] | cyber state |
-	  |----------|------------------|-------------|
-	  | coordination | social consensus among members | [[collective intelligence]] computed by protocol |
-	  | governance | voting and delegation | convergent [[focus]] via [[tri-kernel]] |
-	  | intelligence | human deliberation | [[superhuman]] augmentation through [[cybergraph]] |
-	  | knowledge | shared documents and forums | [[knowledge graph]] with [[cyberank]] and [[relevance]] |
-	  | sovereignty | digital-first, territory optional | dual: digital coordination + physical autonomy |
-	  | identity | reputation and social proof | [[karma]] computed from network behavior |
+| property | [[network state]] | cyber state |
+|----------|------------------|-------------|
+| coordination | social consensus among members | [[collective intelligence]] computed by protocol |
+| governance | voting and delegation | convergent [[focus]] via [[tri-kernel]] |
+| intelligence | human deliberation | [[superhuman]] augmentation through [[cybergraph]] |
+| knowledge | shared documents and forums | [[knowledge graph]] with [[cyberank]] and [[relevance]] |
+| sovereignty | digital-first, territory optional | dual: digital coordination + physical autonomy |
+| identity | reputation and social proof | [[karma]] computed from network behavior |
+
 - a network state coordinates people. a cyber state coordinates intelligence — human, machine, and biological — through a unified protocol
 
 ## [[cyberia]] as implementation

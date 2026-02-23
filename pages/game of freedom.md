@@ -50,15 +50,16 @@ we change the rules. details [[update on game of freedom]]
 # schedule
 
 - draft version: subject to update
-- | stage      | start date  | end date    | start moon phase | end moon phase | tents |
-	  |------------|-------------|-------------|------------------|----------------|----|
-	  | [[pilot]]      | 2024-11-01  | 2024-11-16  | New Moon         | Full Moon      | 5 |
-	  | 2 round    | 2024-11-16  | 2024-11-30  | Full Moon        | New Moon       | | 
-	  | 3 round    | 2024-11-30  | 2024-12-1  | New Moon         | Full Moon      | | 
-	  | 4 round    | 2024-12-14  | 2024-12-27  | Full Moon        | New Moon       | | 
-	  | 5 round    | 2024-12-28  | 2024-01-10  | New Moon         | Full Moon      | | 
-	  | 6 round    | 2025-01-11  | 2025-01-24  | Full Moon        | New Moon       | | 
-	  | 7 round    | 2025-01-25  | 2025-02-07  | New Moon         | Full Moon      | | 
-	  | [[final]]    | 2025-02-08  | 2025-02-21  | Full Moon        | New Moon       | |
+
+| stage      | start date  | end date    | start moon phase | end moon phase | tents |
+|------------|-------------|-------------|------------------|----------------|----|
+| [[pilot]]      | 2024-11-01  | 2024-11-16  | New Moon         | Full Moon      | 5 |
+| 2 round    | 2024-11-16  | 2024-11-30  | Full Moon        | New Moon       | |
+| 3 round    | 2024-11-30  | 2024-12-1  | New Moon         | Full Moon      | |
+| 4 round    | 2024-12-14  | 2024-12-27  | Full Moon        | New Moon       | |
+| 5 round    | 2024-12-28  | 2024-01-10  | New Moon         | Full Moon      | |
+| 6 round    | 2025-01-11  | 2025-01-24  | Full Moon        | New Moon       | |
+| 7 round    | 2025-01-25  | 2025-02-07  | New Moon         | Full Moon      | |
+| [[final]]    | 2025-02-08  | 2025-02-21  | Full Moon        | New Moon       | |
 
 # [[apply for bootcamp]] today — it’s free to join!

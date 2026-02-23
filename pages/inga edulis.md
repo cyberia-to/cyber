@@ -73,81 +73,83 @@ properties
 - [[chemical compounds]]
 - ### compounds in fruit
 
-  | [[compound]]                                   | [[amount per 100 g]]         |
-  |------------------------------------------------|-------------------------------|
-  | [[ascorbic acid]]                              | -                             |
-  | [[thiamine]]                                   | -                             |
-  | [[riboflavin]]                                 | -                             |
-  | [[linoleic acid]]                              | -                             |
-  | [[oleic acid]]                                 | -                             |
-  | [[arginine]]                                   | -                             |
-  | [[lysine]]                                     | -                             |
-  | [[glutamic acid]]                              | -                             |
-  | [[glucose]]                                    | -                             |
-  | [[fructose]]                                   | -                             |
-  | [[sucrose]]                                    | -                             |
-  | [[total sugars]]                               | ~25 g                         |
-  | total phenolics ([[gallic acid]] eq.)          | 3.86–33.4 mg GAE              |
-  | total flavonoids ([[quercetin]] eq.)           | 1.75–19.4 mg QE               |
-  | [[tannins]]                                     | -                             |
-  | [[citric acid]]                                | ~10.4 mg/g                    |
-  | [[protein (pulp)]]                             | 1.0 g                         |
-  | [[protein (seed)]]                             | 10.7 g                        |
-  | [[lipids (pulp)]]                              | 0.1 g                         |
-  | [[lipids (seed)]]                              | 0.7 g                         |
-  | [[carbohydrates (pulp)]]                       | 15.5 g                        |
-  | [[carbohydrates (seed)]]                       | 24.0 g                        |
-  | [[dietary fiber (pulp)]]                       | 1.2 g                         |
-  | [[dietary fiber (seed)]]                       | 1.6 g                         |
+| [[compound]]                                   | [[amount per 100 g]]         |
+|------------------------------------------------|-------------------------------|
+| [[ascorbic acid]]                              | -                             |
+| [[thiamine]]                                   | -                             |
+| [[riboflavin]]                                 | -                             |
+| [[linoleic acid]]                              | -                             |
+| [[oleic acid]]                                 | -                             |
+| [[arginine]]                                   | -                             |
+| [[lysine]]                                     | -                             |
+| [[glutamic acid]]                              | -                             |
+| [[glucose]]                                    | -                             |
+| [[fructose]]                                   | -                             |
+| [[sucrose]]                                    | -                             |
+| [[total sugars]]                               | ~25 g                         |
+| total phenolics ([[gallic acid]] eq.)          | 3.86–33.4 mg GAE              |
+| total flavonoids ([[quercetin]] eq.)           | 1.75–19.4 mg QE               |
+| [[tannins]]                                     | -                             |
+| [[citric acid]]                                | ~10.4 mg/g                    |
+| [[protein (pulp)]]                             | 1.0 g                         |
+| [[protein (seed)]]                             | 10.7 g                        |
+| [[lipids (pulp)]]                              | 0.1 g                         |
+| [[lipids (seed)]]                              | 0.7 g                         |
+| [[carbohydrates (pulp)]]                       | 15.5 g                        |
+| [[carbohydrates (seed)]]                       | 24.0 g                        |
+| [[dietary fiber (pulp)]]                       | 1.2 g                         |
+| [[dietary fiber (seed)]]                       | 1.6 g                         |
 
   ---
 - ### compounds in seed
 
-  | [[compound]]                                     | [[amount per 100 g]]         |
-  |--------------------------------------------------|-------------------------------|
-  | [[linoleic acid]]                                | -                             |
-  | [[oleic acid]]                                   | -                             |
-  | [[palmitic acid]]                                | -                             |
-  | [[stearic acid]]                                 | -                             |
-  | [[α-linolenic acid]]                             | -                             |
-  | [[γ-linolenic acid]]                             | -                             |
-  | [[eicosapentaenoic acid]]                        | -                             |
-  | [[tocopherols (β‑tocopherol, δ‑tocopherol)]]     | -                             |
-  | [[p‑hydroxybenzoic acid]]                        | -                             |
-  | [[4‑methoxybenzoic acid]]                        | -                             |
-  | [[p‑methoxycinnamic acid]]                       | -                             |
-  | [[ferulic acid]]                                 | -                             |
-  | [[caffeic acid]]                                 | -                             |
-  | [[anthocyanins]]                                 | -                             |
-  | [[protein]]                                      | ~20.1 g                       |
-  | [[carbohydrates]]                                | ~58 g                         |
-- | plant part | compound                                  | amount per 100 g |
-  |----------------|-------------------------------------------------|-----------------------|
-  | leaves         | [[epicatechin]]                                 | –                     |
-  | leaves         | [[apigenin c-di-hexoside]]                      | –                     |
-  | leaves         | [[myricetin-o-hexose-deoxyhexose]]              | –                     |
-  | leaves         | [[myricetin-o-deoxyhexose]]                     | –                     |
-  | leaves         | [[vicenin-2]]                                   | –                     |
-  | leaves         | [[gallic acid]]                                 | –                     |
-  | leaves         | [[catechin]]                                    | –                     |
-  | leaves         | [[epicatechin]]                                 | –                     |
-  | leaves         | [[myricetin-3-rhamnopyranoside]]                | –                     |
-  | leaves         | [[quercetin-3-glucopyranoside]]                 | –                     |
-  | leaves         | [[quercetin-3-rhamnopyranoside]]                | –                     |
-  | leaves         | [[delphinidin-3-glycoside (anthocyanin)]]       | –                     |
-  | leaves         | [[other acylated anthocyanins]]                 | –                     |
-  | leaves & bark  | [[lupeol]]                                      | –                     |
-  | leaves & bark  | [[α-amirin]]                                    | –                     |
-  | leaves & bark  | [[olean-18-ene acid (oleanolic-type triterpene)]] | –                   |
-  | leaves & bark  | [[frideline]]                                   | –                     |
-  | leaves & bark  | [[stigmasterol]]                                | –                     |
-  | leaves & bark  | [[prenol]]                                      | –                     |
-  | leaves & bark  | [[α-tocopherol]]                                | –                     |
-  | leaves & bark  | [[24-methylenecycloartan-3-one]]                | –                     |
-  | leaves & bark  | [[hexadecanoic acid methyl ester]]              | –                     |
-  | leaves & bark  | [[hexadecanoic acid ethyl ester]]               | –                     |
-  | leaves & bark  | [[octadecanoic acid methyl ester]]              | –                     |
-  | leaves & bark  | [[phytol]]                                      | –                     |
+| [[compound]]                                     | [[amount per 100 g]]         |
+|--------------------------------------------------|-------------------------------|
+| [[linoleic acid]]                                | -                             |
+| [[oleic acid]]                                   | -                             |
+| [[palmitic acid]]                                | -                             |
+| [[stearic acid]]                                 | -                             |
+| [[α-linolenic acid]]                             | -                             |
+| [[γ-linolenic acid]]                             | -                             |
+| [[eicosapentaenoic acid]]                        | -                             |
+| [[tocopherols (β‑tocopherol, δ‑tocopherol)]]     | -                             |
+| [[p‑hydroxybenzoic acid]]                        | -                             |
+| [[4‑methoxybenzoic acid]]                        | -                             |
+| [[p‑methoxycinnamic acid]]                       | -                             |
+| [[ferulic acid]]                                 | -                             |
+| [[caffeic acid]]                                 | -                             |
+| [[anthocyanins]]                                 | -                             |
+| [[protein]]                                      | ~20.1 g                       |
+| [[carbohydrates]]                                | ~58 g                         |
+
+| plant part | compound                                  | amount per 100 g |
+|----------------|-------------------------------------------------|-----------------------|
+| leaves         | [[epicatechin]]                                 | –                     |
+| leaves         | [[apigenin c-di-hexoside]]                      | –                     |
+| leaves         | [[myricetin-o-hexose-deoxyhexose]]              | –                     |
+| leaves         | [[myricetin-o-deoxyhexose]]                     | –                     |
+| leaves         | [[vicenin-2]]                                   | –                     |
+| leaves         | [[gallic acid]]                                 | –                     |
+| leaves         | [[catechin]]                                    | –                     |
+| leaves         | [[epicatechin]]                                 | –                     |
+| leaves         | [[myricetin-3-rhamnopyranoside]]                | –                     |
+| leaves         | [[quercetin-3-glucopyranoside]]                 | –                     |
+| leaves         | [[quercetin-3-rhamnopyranoside]]                | –                     |
+| leaves         | [[delphinidin-3-glycoside (anthocyanin)]]       | –                     |
+| leaves         | [[other acylated anthocyanins]]                 | –                     |
+| leaves & bark  | [[lupeol]]                                      | –                     |
+| leaves & bark  | [[α-amirin]]                                    | –                     |
+| leaves & bark  | [[olean-18-ene acid (oleanolic-type triterpene)]] | –                   |
+| leaves & bark  | [[frideline]]                                   | –                     |
+| leaves & bark  | [[stigmasterol]]                                | –                     |
+| leaves & bark  | [[prenol]]                                      | –                     |
+| leaves & bark  | [[α-tocopherol]]                                | –                     |
+| leaves & bark  | [[24-methylenecycloartan-3-one]]                | –                     |
+| leaves & bark  | [[hexadecanoic acid methyl ester]]              | –                     |
+| leaves & bark  | [[hexadecanoic acid ethyl ester]]               | –                     |
+| leaves & bark  | [[octadecanoic acid methyl ester]]              | –                     |
+| leaves & bark  | [[phytol]]                                      | –                     |
+
 - operations
 	- [[propagate plants]]: grown from [[seed]] immediately after harvest, can also propagate by stake or cutting in humid, protected beds
 	- [[maintenance]]: prune to manage height and shape, especially in [[agroforestry systems]], coppices well, add [[mulch]] and [[compost]] annually
@@ -158,11 +160,12 @@ properties
 		- wood: harvested from prunings or old trees for [[firewood]] and [[biochar]]
 
 | Age of tree (years) | Trees per ha | Pruning (%) | Spacing (m) | DM of leaves (kg/tree) | DM of wood (kg/tree) | DM of leaves (Mg/ha) | DM of wood (Mg/ha) | Total above-ground biomass (Mg/ha) |
-  |---------------------|--------------|-------------|-------------|------------------------|----------------------|----------------------|--------------------|-----------------------------------|
-  | 1                   | 5000         | 0           | 1 × 2       | 0.4                    | 0.3                  | 2.10                 | 1.65               | 3.75                              |
-  | 2                   | 2500         | 50          | 2 × 2       | 1.1                    | 2.4                  | 2.80                 | 6.08               | 8.88                              |
-  | 3                   | 1250         | 75          | 2 × 4       | 3.0                    | 17.7                 | 3.78                 | 22.11              | 25.89                             |
-  | 4                   | 625          | 88          | 4 × 4       | 4.3                    | 35.9                 | 2.69                 | 22.43              | 25.12                             |
-  | 5                   | 313          | 94          | 4 × 8       | 5.8                    | 65.4                 | 1.82                 | 20.48              | 22.29                             |
-  | 6                   | 156          | 97          | 8 × 8       | 6.1                    | 73.0                 | 0.95                 | 11.39              | 12.34                             |
+|---------------------|--------------|-------------|-------------|------------------------|----------------------|----------------------|--------------------|-----------------------------------|
+| 1                   | 5000         | 0           | 1 × 2       | 0.4                    | 0.3                  | 2.10                 | 1.65               | 3.75                              |
+| 2                   | 2500         | 50          | 2 × 2       | 1.1                    | 2.4                  | 2.80                 | 6.08               | 8.88                              |
+| 3                   | 1250         | 75          | 2 × 4       | 3.0                    | 17.7                 | 3.78                 | 22.11              | 25.89                             |
+| 4                   | 625          | 88          | 4 × 4       | 4.3                    | 35.9                 | 2.69                 | 22.43              | 25.12                             |
+| 5                   | 313          | 94          | 4 × 8       | 5.8                    | 65.4                 | 1.82                 | 20.48              | 22.29                             |
+| 6                   | 156          | 97          | 8 × 8       | 6.1                    | 73.0                 | 0.95                 | 11.39              | 12.34                             |
+
 - [source](http://www.icabr.com/agricultura/pdf_files/vol_43_4_pdf/lojka.pdf)
