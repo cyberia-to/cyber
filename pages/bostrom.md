@@ -60,6 +60,8 @@ TODO [[learning incentives]]
 
 [[store of value]]
 
+[[bostrom/tokenomics]]
+
 ecosystem [[tokens]]
 
 full [[cyb]] support
