@@ -12,24 +12,24 @@ crystal-domain: economics
 
 [[bostrom]] is a [[cosmos-sdk]] [[blockchain]] and the production deployment of the [[cyber]] [[knowledge graph]] protocol. It is the [[bootloader]] of [[superintelligence]] — the live network where the foundational mechanics of a provable, decentralized intelligence layer are built, tested, and proven in production.
 
-The core primitive is a provable [[knowledge graph]] — a permissionless, on-chain structure where any [[neuron]] can create permanent, content-addressed semantic [[cyberlinks]] between [[particles]], and the [[relevance]] of every link is computed transparently on-chain using token-weighted algorithms running on GPU.
+The core primitive is a provable [[knowledge graph]] — a permissionless, on-chain structure where any [[neuron]] can create permanent, content-addressed semantic [[cyberlinks]] between [[particles]], and the [[relevance machine|relevance]] of every link is computed transparently on-chain using token-weighted algorithms running on GPU.
 
 [[bostrom]] separates four economic functions that most [[blockchains]] compress into a single [[token]]:
 
 | Function | Token | Symbol |
 |---|---|---|
-| network [[security]] and [[governance]] | [[BOOT]] | `BOOT` |
-| liquid representation of [[staking]] | [[HYDROGEN]] | `H` |
-| write access to the [[knowledge graph]] | [[VOLT]] | `V` |
-| influence over graph [[relevance]] ranking | [[AMPERE]] | `A` |
+| network [[bostrom/infrastructure/security|security]] and [[governance]] | [[$BOOT]] | `BOOT` |
+| liquid representation of [[staking]] | [[$H]] | `H` |
+| write access to the [[knowledge graph]] | [[$V]] | `V` |
+| influence over graph [[relevance machine|relevance]] ranking | [[$A]] | `A` |
 
-Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain [[opportunity cost]] denominated in committed stake.
+Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
 ## Token: BOOT
 
 denom: `boot`
 
-[[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[consensus]], enable [[governance]], and anchor the value of everything built on top.
+[[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus|consensus]], enable [[governance]], and anchor the value of everything built on top.
 
 ### Staking
 
@@ -54,7 +54,7 @@ On-chain [[basic governance|governance]] uses [[$BOOT]]-weighted voting across f
 
 denom: `hydrogen` (referred to as `scyb` throughout the codebase — the original name, short for staked CYB)
 
-[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[security]] layer, [[$H]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[$H]] in circulation, making [[$H]] the canonical unit of account for the ecosystem.
+[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[bostrom/infrastructure/security|security]] layer, [[$H]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[$H]] in circulation, making [[$H]] the canonical unit of account for the ecosystem.
 
 [[$H]] is issued solely through [[$BOOT]] [[delegation]]; destroyed solely through [[$BOOT]] undelegation.
 
@@ -66,7 +66,7 @@ undelegate 1000 BOOT  →  burn 1000 H
 [[$H]] has two uses:
 
 1. investmint input — [[burn|burned]] to [[mint]] [[$V]] or [[$A]]
-2. [[liquidity]] — deposited into farm contracts, traded on the built-in [[automated market maker]], or used in any [[cosmwasm]] contract
+2. [[cyber/liquidity|liquidity]] — deposited into farm contracts, traded on the built-in [[automated market maker]], or used in any [[cosmwasm]] contract
 
 [[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[$H]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
 
@@ -160,7 +160,7 @@ If `final_return < 1000` (minimum threshold), the transaction is rejected. This 
 
 The [[bandwidth]] module governs [[$V]] consumption and throughput pricing.
 
-Each [[neuron]] has a [[$V]] [[neuron bandwidth|bandwidth meter]]. The meter fills as the [[neuron]] holds [[$V]] and depletes as they create [[cyberlinks]]. The cost per [[cyberlink]] is not fixed — it adjusts dynamically based on current network utilisation via [[adaptive pricing]]:
+Each [[neuron]] has a [[$V]] [[neuron bandwidth|bandwidth meter]]. The meter fills as the [[neuron]] holds [[$V]] and depletes as they create [[cyberlinks]]. The cost per [[cyberlink]] is not fixed — it adjusts dynamically based on current network utilisation via [[bandwidth price|adaptive pricing]]:
 
 - when load is below target (10% of max block [[bandwidth]]): price falls, encouraging usage
 - when load is above target: price rises, dampening demand without a mempool auction
@@ -202,7 +202,7 @@ BOOT ─────────────────────────
 2. [[delegation|delegate]] [[$BOOT]] → receive [[$H]] 1:1 — [[$BOOT]] earns [[staking]] rewards; [[$H]] is the liquid representation
 3. investmint [[$H]] → [[$H]] is [[burn|burned]] → receive [[$V]] and/or [[$A]] — quantity determined by halving factor (block height) x supply decay factor (cumulative supply)
 4. spend [[$V]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
-5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[$A]] = greater influence over graph [[relevance]]
+5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[$A]] = greater influence over graph [[relevance machine|relevance]]
 6. route [[$V]]/[[$A]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
 7. deposit into farm contracts → receive liquid position [[tokens]] → earn additional [[$BOOT]]/[[$H]] rewards across configurable block schedules
 
@@ -210,7 +210,7 @@ BOOT ─────────────────────────
 
 ### Everything costs stake
 
-Because [[$V]] and [[$A]] can only be [[mint|minted]] by [[burn|burning]] [[$H]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain [[opportunity cost]] denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network's [[security]].
+Because [[$V]] and [[$A]] can only be [[mint|minted]] by [[burn|burning]] [[$H]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network's [[bostrom/infrastructure/security|security]].
 
 ### Two independent deflationary forces
 
