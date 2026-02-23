@@ -6,8 +6,8 @@ The repo is a collection of mission critical information on the cyber project
     
   The social aspect is more about the common vision aka shelling point for every involved party, expanding protocol definition to answer the `why` questions
     
-  Information is structured in a [logseq](https://logseq.com/) knowledge graph notation
-    
+  Information is structured in a markdown knowledge graph with YAML frontmatter and wiki-links
+
   [Root page](pages/cyber.md) of metagraph
   
   <img width="874" alt="image" src="https://emerald-raw-leopon-384.mypinata.cloud/ipfs/QmPaun8GCGjzZhYhAqBXH8BGPBub45gyc8axKkM7CoH9Gj">
@@ -17,9 +17,8 @@ The repo is a collection of mission critical information on the cyber project
   go to [docs.cyb.ai](https://docs.cyb.ai)
 
 ## How to contribute?
-- [install logseq](https://github.com/logseq/logseq/releases)
 - git clone https://github.com/cybercongress/cyber.git
-- add the cyber folder as a new graph
+- edit pages in `pages/` using any markdown editor
 - make contribution into the feature branch
 - pull request
 ## Legacy
