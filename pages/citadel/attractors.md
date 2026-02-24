@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: cyberia
 ---
 [[truly calm]]

@@ -1,5 +1,5 @@
 ---
 tags: page
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: cyber
 ---

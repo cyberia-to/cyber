@@ -1,6 +1,6 @@
 ---
 tags: computer science
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: computer science
 ---
 # automata

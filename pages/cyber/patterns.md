@@ -1,6 +1,6 @@
 ---
 tags: cyber, cip
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: cyber
 alias: CORE patterns, reduction patterns, sixteen patterns
 ---
