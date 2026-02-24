@@ -17,17 +17,20 @@ denom: `boot`
 | | |
 |---|---|
 | Total supply | ~480T |
-| Bonded | ~260T (54%) |
 | [[inflation]] | 1.09% annually |
+
+## Staking
+
+[[delegation]] of [[$BOOT]] simultaneously creates [[$H]] at 1:1. Undelegation destroys the corresponding [[$H]]. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]].
+
+| | |
+|---|---|
+| Bonded | ~260T (54%) |
 | Target bonded ratio | 25.49% |
 | Max [[heroes]] | 92 |
 | Unbonding period | 8 days |
 
 ![staking distribution](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmcxR5vvh6hwKeo2rpCYVc6fABB8r5X4yyF9CTgBCsaUYa)
-
-## Staking
-
-[[delegation]] of [[$BOOT]] simultaneously creates [[$H]] at 1:1. Undelegation destroys the corresponding [[$H]]. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]].
 
 ## Governance
 
