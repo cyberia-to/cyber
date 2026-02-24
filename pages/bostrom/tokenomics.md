@@ -41,14 +41,17 @@ Total [[$BOOT]] supply: ~480 trillion (480T). [[inflation]] mints new [[$BOOT]] 
 | Minimum [[inflation]] | 1.09% |
 | Maximum [[inflation]] | 5.46% |
 | Target bonded ratio | 25.49% |
-| Max [[heroes]] (validators) | 92 |
-| Unbonding period | 8 days (691,200 s) |
 
 When the bonded ratio is below target, [[inflation]] increases toward the maximum to incentivize [[staking]]. When above target, it decreases toward the minimum. All parameters are adjustable by [[governance]].
 
 ### Staking
 
 [[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
+
+| Parameter | Value |
+|---|---|
+| Max [[heroes]] (validators) | 92 |
+| Unbonding period | 8 days (691,200 s) |
 
 [[delegation]] of [[$BOOT]] simultaneously creates [[$H]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[$H]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
 
