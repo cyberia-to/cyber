@@ -88,20 +88,22 @@ The price adjusts every 5 blocks. Burned [[$V]] is gone permanently — it count
 | Target network load | 10% of max block [[bandwidth]] |
 | Max block [[bandwidth]] | 10,000 [[cyberlinks]] per block |
 
-## Transfer Fees
+## Fees
 
-Every [[$V]] and [[$A]] transfer burns 2% of the transferred amount. This is implemented in [[v6]] via [[burn fee on moving A and V]]. Speculators who trade [[energy]] pay a tax that permanently reduces supply — speculation feeds [[scarcity]].
+### Live
 
-Accepted [[bip]] proposals will shift all fee economics to [[$H]] — making [[$H]] the sole token that gets burned across the protocol:
+- [[burn fee on moving A and V]] — 2% burn on every [[$V]] and [[$A]] transfer. Speculators pay a tax that permanently reduces supply.
+- [[collect fee on moving A and V]] — 1% fee on [[$V]] and [[$A]] transfers directed into reward pools for [[staking on particles]] and [[staking on cyberlinks]].
+- [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) — 0.3% swap fee (retained in pool reserves), 40M [[$BOOT]] pool creation fee (community pool).
+
+### Accepted
 
 - [[burn gas in H]] — all transaction gas fees paid in [[$H]] instead of [[$BOOT]]
 - [[fixed fee on H burn]] — 2% fee on every [[$H]] [[burn]] operation
 
-[[collect fee on moving A and V]] — 1% fee on [[$A]] and [[$V]] transfers directed into reward pools for [[staking on particles]] and [[staking on cyberlinks]].
+These two [[bip]] proposals shift all fee economics to [[$H]] — making [[$H]] the sole token that gets burned across the protocol.
 
-[[x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) charges 0.3% swap fee (retained in pool reserves) and a 40M [[$BOOT]] pool creation fee directed to the community pool.
-
-Draft [[bip]] proposals extend burn mechanics further:
+### Draft
 
 - [[eternal cyberlinks]] — [[burn]] [[$V]] to permanently boost the weight of a [[cyberlink]]
 - [[eternal particles]] — [[burn]] [[$A]] to permanently boost the weight of a [[particle]]
