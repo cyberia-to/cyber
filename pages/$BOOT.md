@@ -30,7 +30,7 @@ denom: `boot`
 | Max [[heroes]] | 92 |
 | Unbonding period | 8 days |
 
-![staking distribution](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmcxR5vvh6hwKeo2rpCYVc6fABB8r5X4yyF9CTgBCsaUYa)
+![staking distribution](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmaiVwe8YBZFHePGHXhHMmei2kj5h5SqLsq3UMxmBwKmVW)
 
 ## Governance
 

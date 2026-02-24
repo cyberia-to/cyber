@@ -142,13 +142,12 @@ def chart_boot():
 
     total = BOOT_SUPPLY
     bonded_pct = BONDED / total * 100
-    unbonding_pct = NOT_BONDED / total * 100
-    liquid_pct = 100 - bonded_pct - unbonding_pct
+    liquid_pct = 100 - bonded_pct
 
-    labels = [f'Bonded\n{bonded_pct:.1f}%', f'Unbonding\n{unbonding_pct:.1f}%', f'Liquid\n{liquid_pct:.1f}%']
-    sizes = [bonded_pct, unbonding_pct, liquid_pct]
-    colors_list = ['#A371F7', '#484f58', '#30363d']
-    explode = (0.05, 0, 0)
+    labels = [f'Bonded\n{bonded_pct:.1f}%', f'Liquid\n{liquid_pct:.1f}%']
+    sizes = [bonded_pct, liquid_pct]
+    colors_list = ['#A371F7', '#30363d']
+    explode = (0.05, 0)
 
     wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors_list,
                                        explode=explode, autopct='',
