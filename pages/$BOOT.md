@@ -10,6 +10,22 @@ denom: `boot`
 
 [[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus]], enable [[governance]], and anchor the value of everything built on top.
 
+### Supply
+
+Total [[$BOOT]] supply: ~480 trillion (480T). [[inflation]] mints new [[$BOOT]] each block and distributes it to [[heroes]] and delegators proportionally to their stake.
+
+| Parameter | Value |
+|---|---|
+| Current [[inflation]] rate | ~1.09% annually |
+| Minimum [[inflation]] | 1.09% |
+| Maximum [[inflation]] | 5.46% |
+| Target bonded ratio | 25.49% |
+| Max [[heroes]] (validators) | 92 |
+| Unbonding period | 8 days (691,200 s) |
+
+When the bonded ratio is below target, [[inflation]] increases toward the maximum to incentivize [[staking]]. When above target, it decreases toward the minimum. All parameters are adjustable by [[governance]].
+
+
 ## Staking
 
 [[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.

@@ -20,8 +20,9 @@ undelegate 1000 BOOT  →  burn 1000 H
 [[$H]] has two uses:
 
 1. [[mint]] input — [[burn]] to [[mint]] [[$V]] or [[$A]]
-2. [[cyber/liquidity]] — deposited into farm contracts, traded on the built-in [[automated market maker]], or used in any [[cosmwasm]] contract
+2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools to earn farming rewards, or used in any [[cosmwasm]] contract
 
 [[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[$H]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
+
 
 [[bostrom/tokenomics]]
