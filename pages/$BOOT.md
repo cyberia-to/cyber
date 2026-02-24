@@ -14,7 +14,7 @@ denom: `boot`
 
 [[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
 
-[[delegation]] of [[$BOOT]] simultaneously creates [[hydrogen]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[hydrogen]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
+[[delegation]] of [[$BOOT]] simultaneously creates [[$H]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[$H]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
 
 ## Governance
 
