@@ -24,7 +24,7 @@ undelegate 1000 BOOT  →  burn 1000 H
 | Total supply | ~297T |
 | % of [[$BOOT]] staked | 62% |
 
-![distribution](https://jade-gentle-pony-196.mypinata.cloud/ipfs/Qmd6m1KJE8gMxh1knuw1KdrbLsuLTHWLBWsaN9Frh3rcjt)
+![where H goes](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmZyAE3dvGcvzDPVxQxDc7QxPcPJRAtJ72fPFLynRq63Se)
 
 ## Uses
 

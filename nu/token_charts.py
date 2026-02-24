@@ -104,31 +104,37 @@ def chart_a():
     return save(fig, 'chart_a.png')
 
 
-# --- $H chart: supply composition (staked vs liquid vs burned) ---
+# --- $H chart: where H goes (burned on V, burned on A, liquid) ---
 def chart_h():
+    import math
     fig, ax = plt.subplots(figsize=(10, 6))
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
 
-    # H is minted 1:1 on delegation. Total H = all delegated BOOT.
-    # Bonded ratio shows how much of total BOOT is staked.
-    bonded_pct = BONDED / BOOT_SUPPLY * 100
-    h_of_boot = H_SUPPLY / BOOT_SUPPLY * 100
-    labels = ['$H in circulation\n(= staked $BOOT)', 'Unstaked $BOOT']
-    sizes = [H_SUPPLY, BOOT_SUPPLY - H_SUPPLY]
-    colors_list = ['#58A6FF', '#30363d']
-    explode = (0.05, 0)
+    ln2 = math.log(2)
+    # H burned = integral of price per milliunit from 0 to totalSupply
+    h_burned_v = 1_000_000 * HALF_LIFE_V / ln2 * (2**(V_SUPPLY / HALF_LIFE_V) - 1)
+    h_burned_a = 100_000 * HALF_LIFE_A / ln2 * (2**(A_SUPPLY / HALF_LIFE_A) - 1)
+
+    labels = [f'Burned on $V mint\n{h_burned_v/1e12:.0f}T',
+              f'Burned on $A mint\n{h_burned_a/1e12:.0f}T',
+              f'Liquid $H\n{H_SUPPLY/1e12:.0f}T']
+    sizes = [h_burned_v, h_burned_a, H_SUPPLY]
+    colors_list = ['#FF6B35', '#4ECDC4', '#58A6FF']
+    explode = (0.03, 0.03, 0.05)
 
     wedges, texts, autotexts = ax.pie(sizes, labels=labels, colors=colors_list,
                                        explode=explode, autopct='%1.0f%%',
                                        textprops={'color': TEXT, 'fontsize': 11},
-                                       pctdistance=0.6)
+                                       pctdistance=0.65)
     for t in autotexts:
         t.set_color('white')
         t.set_fontsize(12)
 
-    ax.set_title('$H distribution', fontsize=14, fontweight='bold', color='#58A6FF', pad=15)
-    fig.text(0.5, 0.02, f'Total $H: {H_SUPPLY/1e12:.0f}T  ·  Bonded $BOOT: {BONDED/1e12:.0f}T  ·  block {BLOCK:,}',
+    total = h_burned_v + h_burned_a + H_SUPPLY
+    ax.set_title('Where $H goes', fontsize=14, fontweight='bold', color='#58A6FF', pad=15)
+    fig.text(0.5, 0.02,
+             f'Total $H ever created: {total/1e12:.0f}T  ·  {(h_burned_v+h_burned_a)/total*100:.0f}% permanently burned  ·  block {BLOCK:,}',
              ha='center', fontsize=9, color='#484f58')
     plt.tight_layout(rect=[0, 0.05, 1, 1])
     return save(fig, 'chart_h.png')
