@@ -6,64 +6,54 @@ alias: enhanced blockchain
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[bootloader]] of [[cyber]]
+[[bootloader]] of [[cyber]], named after [[nick bostrom]]
 
-and [[moon]] [[network state]]
+proving ground for the [[cybergraph]] before mainnet. [[moon]] [[network state]]
 
-named after [[nick bostrom]]
+## cybergraph
 
-secure [[proof of stake]] [[bostrom/consensus]]
+- [[cyberlink]] — directed edge between [[particles]], the unit of learning
+- [[bandwidth]] — resource metering for cyberlinks
+- [[cyberank]] — relevance score computed by the [[relevance machine]]
+- [[karma]] — per-[[neuron]] aggregate contribution
+- [[syntropy]] — overall graph health metric
 
-fair [[bostrom/genesis]] distribution of [[$BOOT]]
+## tokens
 
-[[bostrom infrastructure]]
+- [[$BOOT]] — consensus token, staking and governance
+- [[$H]] — fuel token, minted from staking
+- [[$V]] — will token, consumed by cyberlinks
+- [[$A]] — attention token, routes energy to particles
+- [[bostrom/tokenomics]] — full economic design
 
-[[cybergraph]]
+## computation
 
-- [[cyberlink]]
-- [[will minting]]
-- [[bandwidth limiting]]
-- [[adaptive pricing]]
+- [[bostrom/consensus]] — [[proof of stake]] via [[tendermint]]
+- [[wasm]] [[vm]] — smart contract execution
+- [[progs]] — autonomous [[cosmwasm]] programs
+- [[cybernet]] — experimental [[learning incentives]] layer
 
-[[relevance machine]]
+## identity
 
-- [[attention minting]]
-- [[energy routing]]
-- [[karma]]
-- [[syntropy]]
+- [[avatar]] — onchain identity with [[features]]
+- [[.moon names]] — human-readable naming
+- [[soul]] — persistent identity record
+- [[moon citizenship]] — citizenship in the [[moon]] network state
 
-[[avatar]] with [[features]]
+## infrastructure
 
-- [[.moon names]]
-- [[semantic neural proofs]]
-- [[soul]]
-- [[moon citizenship]]
-- and 20 more [[features]]
+- [[bostrom/infrastructure]] — servers, config, monitoring
+- [[ibc]] — inter-blockchain communication
+- [[warp]] — liquidity pools (see [[aqua style dex]])
+- [[bostrom/genesis]] — genesis distribution
 
-TODO [[learning incentives]]
+## governance
 
-[[staking loans]] and [[automatic fuel]]
+- [[basic governance]] — current governance via [[senate]]
+- [[bip]] — bootloader improvement proposals
+- [[constitution]] — the social contract
 
-[[cybergift]]
+## source
 
-[[wasm]] [[vm]]
-
-- [[deploy incentives]]
-- [[soft3 access]]
-- [[autonomous progs]]
-
-[[ibc]]
-
-[[warp]]
-
-[[basic governance]]
-
-[[store of value]]
-
-[[bostrom/tokenomics]]
-
-ecosystem [[tokens]]
-
-full [[cyb]] support
-
-[source code](https://github.com/cybercongress/go-cyber) on github
+- [go-cyber](https://github.com/cybercongress/go-cyber) — node implementation
+- [[cyb]] — browser interface
