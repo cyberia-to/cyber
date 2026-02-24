@@ -16,12 +16,12 @@ The core primitive is a provable [[knowledge graph]] — a permissionless, on-ch
 
 [[bostrom]] separates four economic functions that most [[blockchains]] compress into a single [[token]]:
 
-| Function | Token | Symbol |
-|---|---|---|
-| network [[bostrom/infrastructure/security]] and [[governance]] | [[$BOOT]] | `BOOT` |
-| liquid representation of [[staking]] | [[$H]] | `H` |
-| write access to the [[knowledge graph]] | [[$V]] | `V` |
-| [[relevance machine]] ranking influence | [[$A]] | `A` |
+| Token | Function |
+|---|---|
+| [[$BOOT]] | network [[bostrom/security]] and [[governance]] |
+| [[$H]] | liquid representation of [[staking]] |
+| [[$V]] | write access to the [[knowledge graph]] |
+| [[$A]] | [[relevance machine]] ranking influence |
 
 Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
@@ -69,7 +69,7 @@ On-chain [[basic governance]] uses [[$BOOT]]-weighted voting across four proposa
 
 denom: `hydrogen` (referred to as `scyb` throughout the codebase — the original name, short for staked CYB)
 
-[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[bostrom/infrastructure/security]] layer, [[$H]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[$H]] in circulation, making [[$H]] the canonical unit of account for the ecosystem.
+[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[bostrom/security]] layer, [[$H]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[$H]] in circulation, making [[$H]] the canonical unit of account for the ecosystem.
 
 [[$H]] is issued solely through [[$BOOT]] [[delegation]]; destroyed solely through [[$BOOT]] undelegation.
 
@@ -216,7 +216,7 @@ BOOT ─────────────────────────
 
 ### Everything costs stake
 
-Because [[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network [[bostrom/infrastructure/security]].
+Because [[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network [[bostrom/security]].
 
 ### Continuous deflationary pressure
 
