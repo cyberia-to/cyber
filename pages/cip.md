@@ -21,70 +21,20 @@ crystal-domain: cyber
 
 ## implemented
 
-- #+BEGIN_QUERY
-	  {:query [:find (pull ?p [:block/name])
-	   :where
-	   [?p :block/tags ?t]
-	   [?t :block/name "cip"]
-	   [?p :block/properties ?props]
-	   [(get ?props :status) ?s]
-	   [(= ?s "implemented")]]
-	   :result-transform (fn [r] (sort-by :block/name r))
-	   :breadcrumb-show? false}
-	  #+END_QUERY
+{{query (and (page-tags [[cip]]) (property :status "implemented"))}}
 
 ## tested
 
-- #+BEGIN_QUERY
-	  {:query [:find (pull ?p [:block/name])
-	   :where
-	   [?p :block/tags ?t]
-	   [?t :block/name "cip"]
-	   [?p :block/properties ?props]
-	   [(get ?props :status) ?s]
-	   [(= ?s "tested")]]
-	   :result-transform (fn [r] (sort-by :block/name r))
-	   :breadcrumb-show? false}
-	  #+END_QUERY
+{{query (and (page-tags [[cip]]) (property :status "tested"))}}
 
 ## accepted
 
-- #+BEGIN_QUERY
-	  {:query [:find (pull ?p [:block/name])
-	   :where
-	   [?p :block/tags ?t]
-	   [?t :block/name "cip"]
-	   [?p :block/properties ?props]
-	   [(get ?props :status) ?s]
-	   [(= ?s "accepted")]]
-	   :result-transform (fn [r] (sort-by :block/name r))
-	   :breadcrumb-show? false}
-	  #+END_QUERY
+{{query (and (page-tags [[cip]]) (property :status "accepted"))}}
 
 ## draft
 
-- #+BEGIN_QUERY
-	  {:query [:find (pull ?p [:block/name])
-	   :where
-	   [?p :block/tags ?t]
-	   [?t :block/name "cip"]
-	   [?p :block/properties ?props]
-	   [(get ?props :status) ?s]
-	   [(= ?s "draft")]]
-	   :result-transform (fn [r] (sort-by :block/name r))
-	   :breadcrumb-show? false}
-	  #+END_QUERY
+{{query (and (page-tags [[cip]]) (property :status "draft"))}}
 
 ## rejected
 
-- #+BEGIN_QUERY
-	  {:query [:find (pull ?p [:block/name])
-	   :where
-	   [?p :block/tags ?t]
-	   [?t :block/name "cip"]
-	   [?p :block/properties ?props]
-	   [(get ?props :status) ?s]
-	   [(= ?s "rejected")]]
-	   :result-transform (fn [r] (sort-by :block/name r))
-	   :breadcrumb-show? false}
-	  #+END_QUERY
+{{query (and (page-tags [[cip]]) (property :status "rejected"))}}
