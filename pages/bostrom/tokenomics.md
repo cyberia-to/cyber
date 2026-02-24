@@ -21,6 +21,25 @@ crystal-domain: economics
 
 Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
+## The Learning Loop
+
+The [[knowledge graph]] is a machine that learns through economic incentives. Every token operation is part of a [[feedback loop]] that makes the graph more valuable over time.
+
+### The cycle
+
+1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] and [[$A]]
+2. [[neuron]] spends [[$V]] to create [[cyberlinks]] — each link is a [[costly signal]], an economic commitment that two [[particles]] are related
+3. the [[tri-kernel]] (diffusion + springs + heat) computes [[focus]] distribution across all [[particles]] on GPU
+4. [[cyberank]] measures particle quality; [[karma]] measures [[neuron]] quality — both emerge from the graph structure without external votes
+5. [[learning incentives]] reward [[neurons]] whose [[cyberlinks]] increase the system's [[syntropy]]
+6. rewards flow back into [[staking]] → more [[$V]] and [[$A]] → more [[cyberlinks]] → better graph
+
+### Why this is machine learning
+
+The parallel is exact. [[neurons]] are training data providers — their [[cyberlinks]] are labeled examples. The [[tri-kernel]] is the model — it learns [[focus]] distribution from the graph. [[karma]] is the loss function — it measures how much each [[neuron]] contributed to system quality. [[learning incentives]] are the gradient signal — they direct economic energy toward [[neurons]] that improve the graph.
+
+The result: a self-improving [[knowledge graph]] where the quality of [[collective learning]] increases with every block. The more [[neurons]] learn, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
+
 ## Mint
 
 [[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
@@ -95,25 +114,6 @@ Under design, planned for future upgrades:
 
 - [[eternal cyberlinks]] — [[burn]] [[$V]] to permanently boost the weight of a [[cyberlink]]
 - [[eternal particles]] — [[burn]] [[$A]] to permanently boost the weight of a [[particle]]
-
-## The Learning Loop
-
-The [[knowledge graph]] is a machine that learns through economic incentives. Every token operation is part of a [[feedback loop]] that makes the graph more valuable over time.
-
-### The cycle
-
-1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] and [[$A]]
-2. [[neuron]] spends [[$V]] to create [[cyberlinks]] — each link is a [[costly signal]], an economic commitment that two [[particles]] are related
-3. the [[tri-kernel]] (diffusion + springs + heat) computes [[focus]] distribution across all [[particles]] on GPU
-4. [[cyberank]] measures particle quality; [[karma]] measures [[neuron]] quality — both emerge from the graph structure without external votes
-5. [[learning incentives]] reward [[neurons]] whose [[cyberlinks]] increase the system's [[syntropy]]
-6. rewards flow back into [[staking]] → more [[$V]] and [[$A]] → more [[cyberlinks]] → better graph
-
-### Why this is machine learning
-
-The parallel is exact. [[neurons]] are training data providers — their [[cyberlinks]] are labeled examples. The [[tri-kernel]] is the model — it learns [[focus]] distribution from the graph. [[karma]] is the loss function — it measures how much each [[neuron]] contributed to system quality. [[learning incentives]] are the gradient signal — they direct economic energy toward [[neurons]] that improve the graph.
-
-The result: a self-improving [[knowledge graph]] where the quality of [[collective learning]] increases with every block. The more [[neurons]] learn, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
 
 ## Energy Grid
 
