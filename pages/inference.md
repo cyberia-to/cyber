@@ -1,7 +1,7 @@
 ---
 tags: cyber
 alias: infer
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 ---
 deriving [[implicit knowledge]] from [[explicit knowledge]] in the [[cybergraph]]
