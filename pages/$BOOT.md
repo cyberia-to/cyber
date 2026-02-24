@@ -41,8 +41,10 @@ On-chain [[basic governance]] uses [[$BOOT]]-weighted voting across four proposa
 - parameters — all protocol parameters are adjustable by [[governance]] within validated bounds
 - fund — disbursements from the community pool
 
-## Smart Contract Execution Fees
+## Fees
 
-[[cosmwasm]] smart contracts on [[bostrom]] pay execution fees in [[$BOOT]]. The fee distribution is split 80/20: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool through standard distribution. This is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
+All transactions on [[bostrom]] pay fees in [[$BOOT]]. Standard transaction fees are distributed to [[heroes]] and delegators through the [[cosmos-sdk]] distribution module (10% community tax, remainder to validators proportional to stake).
+
+[[cosmwasm]] contract execution fees follow a different path: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool. This split is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
 
 [[bostrom/tokenomics]]
