@@ -8,48 +8,33 @@ crystal-domain: economics
 
 denom: `boot`
 
-[[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus]], enable [[governance]], and anchor the value of everything built on top.
+## Role
 
-### Supply
+[[$BOOT]] secures [[bostrom/consensus]], enables [[governance]], and anchors the value of everything built on top. It does not grant direct access to network services — all utility flows through [[$H]], [[$V]], and [[$A]].
 
-Total [[$BOOT]] supply: ~480 trillion (480T). [[inflation]] mints new [[$BOOT]] each block and distributes it to [[heroes]] and delegators proportionally to their stake.
+## Supply
 
-| Parameter | Value |
+| | |
 |---|---|
-| Current [[inflation]] rate | ~1.09% annually |
-| Minimum [[inflation]] | 1.09% |
-| Maximum [[inflation]] | 5.46% |
+| Total supply | ~480T |
+| Bonded | ~260T (54%) |
+| [[inflation]] | 1.09% annually |
 | Target bonded ratio | 25.49% |
-| Max [[heroes]] (validators) | 92 |
-| Unbonding period | 8 days (691,200 s) |
+| Max [[heroes]] | 92 |
+| Unbonding period | 8 days |
 
-When the bonded ratio is below target, [[inflation]] increases toward the maximum to incentivize [[staking]]. When above target, it decreases toward the minimum. All parameters are adjustable by [[governance]].
-
+![staking distribution](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmcxR5vvh6hwKeo2rpCYVc6fABB8r5X4yyF9CTgBCsaUYa)
 
 ## Staking
 
-[[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
-
-[[delegation]] of [[$BOOT]] simultaneously creates [[$H]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[$H]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
+[[delegation]] of [[$BOOT]] simultaneously creates [[$H]] at 1:1. Undelegation destroys the corresponding [[$H]]. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]].
 
 ## Governance
 
-On-chain [[basic governance]] uses [[$BOOT]]-weighted voting across four proposal types:
-
-- ideas — non-binding signals and directional proposals
-- upgrades — binary software upgrade proposals
-- parameters — all protocol parameters are adjustable by [[governance]] within validated bounds
-- fund — disbursements from the community pool
+On-chain [[basic governance]] uses [[$BOOT]]-weighted voting: ideas, upgrades, parameters, fund disbursements.
 
 ## Fees
 
-All transactions on [[bostrom]] pay fees in [[$BOOT]]. Standard transaction fees are distributed to [[heroes]] and delegators through the [[cosmos-sdk]] distribution module (10% community tax, remainder to validators proportional to stake).
-
-[[cosmwasm]] contract execution fees follow a different path: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool. This split is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
-
-Two accepted [[cip]] proposals will transition fee economics to [[$H]]:
-
-- [[burn gas in H]] — transaction fees paid in [[$H]] instead of [[$BOOT]]
-- [[fixed fee on H burn]] — 2% fee on every [[$H]] [[burn]] operation
+Transaction fees paid in [[$BOOT]] (10% community tax, remainder to [[heroes]]). [[cosmwasm]] execution fees: 80% to program creator, 20% to [[heroes]] and community pool.
 
 [[bostrom/tokenomics]]

@@ -8,6 +8,33 @@ crystal-domain: economics
 
 denom: `millivolt`
 
-[[$V]] (VOLT) is [[bandwidth]]. Creating a [[cyberlink]] costs [[$V]] proportional to the current dynamic [[bandwidth price]]. A [[cyberlink]] is a permanent, content-addressed, directed edge in the on-chain [[knowledge graph]] connecting two [[ipfs]] CIDs.
+## Role
+
+[[$V]] is [[bandwidth]]. Creating a [[cyberlink]] costs [[$V]] proportional to the current dynamic [[bandwidth price]]. Each [[cyberlink]] is a permanent, content-addressed, directed edge in the on-chain [[knowledge graph]] connecting two [[ipfs]] CIDs.
+
+## Issuance
+
+[[$V]] is created by the [[burn]] of [[$H]] via [[mint]]. Early [[$V]] was issued via the original investmint mechanism; all new issuance goes through [[mint]].
+
+| | |
+|---|---|
+| Circulating supply | ~2.2B millivolt |
+| baseAmount | 1,000,000,000 H |
+| Supply half-life | 4,000,000,000 |
+| Current mint price | ~1,460M H per V |
+
+## Price curve
+
+The cost to [[mint]] 1 V grows exponentially with cumulative supply. Price doubles every 4B millivolt ever minted (including burned).
+
+![mint price curve](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmSgFNtjJRgC1VRee1gW13kvQkLEi4PHN8NwRaHpbYSJSi)
+
+## Burn sinks
+
+- [[cyberlinks]]: every link permanently burns [[$V]] at the current [[bandwidth price]]
+- [[burn fee on moving A and V]]: 2% burn on every [[$V]] transfer
+- [[eternal cyberlinks]] (roadmap): [[burn]] [[$V]] for permanent weight boost
+
+Burned [[$V]] counts toward cumulative supply — every burn makes the next [[mint]] more expensive.
 
 [[bostrom/tokenomics]]
