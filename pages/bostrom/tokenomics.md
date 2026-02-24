@@ -72,22 +72,6 @@ No oracle, [[governance]] vote, or external trigger required. [[scarcity]] incre
 | supply half-life | 4,000,000,000 | 32,000,000,000 |
 | minimum [[mint]] threshold | 1,000 milli-units | 1,000 milli-units |
 
-## Bandwidth Pricing
-
-Creating a [[cyberlink]] permanently burns [[$V]] from the [[neuron]] account. The amount burned per [[cyberlink]] is the current [[bandwidth price]], which adjusts dynamically based on network utilisation:
-
-- when load is below target (10% of max block [[bandwidth]]): price falls, encouraging usage
-- when load is above target: price rises, dampening demand without a mempool auction
-
-The price adjusts every 5 blocks. Burned [[$V]] is gone permanently — it counts toward total cumulative supply in the [[mint]] decay curve, increasing [[scarcity]] for all future minters.
-
-| Parameter | Default |
-|---|---|
-| Price adjustment period | 5 blocks |
-| Base price | 0.25 V per [[cyberlink]] |
-| Target network load | 10% of max block [[bandwidth]] |
-| Max block [[bandwidth]] | 10,000 [[cyberlinks]] per block |
-
 ## Fees
 
 ### Live
