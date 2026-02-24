@@ -140,7 +140,7 @@ This is a smooth curve — each additional unit of supply makes the next unit ma
 | 2.0 | 0.250 |
 | 3.0 | 0.125 |
 
-Burned [[$V]] and [[$A]] (consumed by [[cyberlinks]] and graph operations) are counted in `totalSupply` for the decay calculation. Once resources are spent, they permanently raise the cumulative supply floor — even destroyed resources contribute to increasing [[scarcity]].
+Burned [[$V]] (consumed by [[cyberlinks]]) is counted in `totalSupply` for the decay calculation. Once [[$V]] is spent, it permanently raises the cumulative supply floor — even destroyed [[$V]] contributes to increasing [[scarcity]]. [[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]].
 
 No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as usage grows.
 
