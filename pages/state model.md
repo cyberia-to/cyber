@@ -1,5 +1,5 @@
 ---
-tags: article, cip
+tags: article, bip
 crystal-type: entity
 crystal-domain: cyber
 status: draft

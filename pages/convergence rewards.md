@@ -1,5 +1,5 @@
 ---
-tags: article, cyber, cip
+tags: article, cyber, bip
 crystal-type: process
 crystal-domain: economics
 status: draft

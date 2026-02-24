@@ -1,5 +1,5 @@
 ---
-tags: cip
+tags: bip
 crystal-type: relation
 crystal-domain: cyber
 status: draft

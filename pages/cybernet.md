@@ -1,6 +1,6 @@
 ---
 icon: 🍄
-tags: cyber, cip
+tags: cyber, bip
 crystal-type: entity
 crystal-domain: cyber
 status: tested
