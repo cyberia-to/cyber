@@ -96,14 +96,18 @@ The price adjusts every 5 blocks. Burned [[$V]] is gone permanently — it count
 - [[collect fee on moving A and V]] — 1% fee on [[$V]] and [[$A]] transfers directed into reward pools for [[staking on particles]] and [[staking on cyberlinks]].
 - [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) — 0.3% swap fee (retained in pool reserves), 40M [[$BOOT]] pool creation fee (community pool).
 
-### Accepted
+### Coming next
+
+Approved by [[governance]], shipping in the next upgrade:
 
 - [[burn gas in H]] — all transaction gas fees paid in [[$H]] instead of [[$BOOT]]
 - [[fixed fee on H burn]] — 2% fee on every [[$H]] [[burn]] operation
 
-These two [[bip]] proposals shift all fee economics to [[$H]] — making [[$H]] the sole token that gets burned across the protocol.
+After this upgrade [[$H]] becomes the sole token that gets burned across the protocol.
 
-### Draft
+### On the roadmap
+
+Under design, planned for future upgrades:
 
 - [[eternal cyberlinks]] — [[burn]] [[$V]] to permanently boost the weight of a [[cyberlink]]
 - [[eternal particles]] — [[burn]] [[$A]] to permanently boost the weight of a [[particle]]
