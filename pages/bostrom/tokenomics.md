@@ -8,164 +8,71 @@ crystal-domain: economics
 
 [[bostrom]] launched November 5, 2021 at block 0. Node software: [[go-cyber]] v7.0.1. Live mainnet.
 
-## Overview
-
-[[bostrom]] is a [[cosmos-sdk]] [[blockchain]] and the production deployment of the [[cyber]] [[knowledge graph]] protocol. It is the [[bootloader]] of [[superintelligence]] — the live network where the foundational mechanics of a provable, decentralized intelligence layer are built, tested, and proven in production.
-
-The core primitive is a provable [[knowledge graph]] — a permissionless, on-chain structure where any [[neuron]] can create permanent, content-addressed semantic [[cyberlinks]] between [[particles]], and the [[relevance machine]] computes the relevance of every link transparently on-chain using token-weighted algorithms running on GPU.
+## The Four Tokens
 
 [[bostrom]] separates four economic functions that most [[blockchains]] compress into a single [[token]]:
 
-| Function | Token | Symbol |
+| Token | Role | Issuance |
 |---|---|---|
-| network [[bostrom/infrastructure/security]] and [[governance]] | [[$BOOT]] | `BOOT` |
-| liquid representation of [[staking]] | [[$H]] | `H` |
-| write access to the [[knowledge graph]] | [[$V]] | `V` |
-| [[relevance machine]] ranking influence | [[$A]] | `A` |
+| [[$BOOT]] | [[bostrom/security]] and [[governance]] | [[inflation]] (~1.09% annually) |
+| [[$H]] | liquid representation of [[staking]] | 1:1 on [[$BOOT]] [[delegation]] |
+| [[$V]] | write access to the [[knowledge graph]] | [[burn]] of [[$H]] via [[mint]] |
+| [[$A]] | [[relevance machine]] focus influence | [[burn]] of [[$H]] via [[mint]] |
 
 Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
-## Token: BOOT
+## Mint
 
-denom: `boot`
+[[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
 
-[[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus]], enable [[governance]], and anchor the value of everything built on top.
+### The Price
 
-### Supply
-
-Total [[$BOOT]] supply: ~480 trillion (480T). [[inflation]] mints new [[$BOOT]] each block and distributes it to [[heroes]] and delegators proportionally to their stake.
-
-| Parameter | Value |
-|---|---|
-| Current [[inflation]] rate | ~1.09% annually |
-| Minimum [[inflation]] | 1.09% |
-| Maximum [[inflation]] | 5.46% |
-| Target bonded ratio | 25.49% |
-| Max [[heroes]] (validators) | 92 |
-| Unbonding period | 8 days (691,200 s) |
-
-When the bonded ratio is below target, [[inflation]] increases toward the maximum to incentivize [[staking]]. When above target, it decreases toward the minimum. All parameters are adjustable by [[governance]].
-
-### Staking
-
-[[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
-
-[[delegation]] of [[$BOOT]] simultaneously creates [[$H]] in the delegator's account at 1:1. Undelegation destroys the corresponding [[$H]]. This is handled natively in the cyberbank module via [[delegation]] hooks — no separate liquid [[staking]] protocol is needed.
-
-### Governance
-
-On-chain [[basic governance]] uses [[$BOOT]]-weighted voting across four proposal types:
-
-- ideas — non-binding signals and directional proposals
-- upgrades — binary software upgrade proposals
-- parameters — all protocol parameters are adjustable by [[governance]] within validated bounds
-- fund — disbursements from the community pool
-
-### Smart Contract Execution Fees
-
-[[cosmwasm]] smart contracts on [[bostrom]] pay execution fees in [[$BOOT]]. The fee distribution is split 80/20: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool through standard distribution. This is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
-
-## Token: HYDROGEN
-
-denom: `hydrogen` (referred to as `scyb` throughout the codebase — the original name, short for staked CYB)
-
-[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[bostrom/infrastructure/security]] layer, [[$H]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[$H]] in circulation, making [[$H]] the canonical unit of account for the ecosystem.
-
-[[$H]] is issued solely through [[$BOOT]] [[delegation]]; destroyed solely through [[$BOOT]] undelegation.
+The cost to [[mint]] 1 unit of [[$V]] or [[$A]] in [[$H]]:
 
 ```
-delegate 1000 BOOT  →  mint 1000 H
-undelegate 1000 BOOT  →  burn 1000 H
+price = baseAmount / supplyDecay
 ```
 
-[[$H]] has two uses:
+`baseAmount` is fixed per token (1B H for [[$V]], 100M H for [[$A]]). `supplyDecay` falls with every [[mint]] ever made. The price can only go up.
 
-1. [[mint]] input — [[burn]] to [[mint]] [[$V]] or [[$A]]
-2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools to earn farming rewards, or used in any [[cosmwasm]] contract
-
-[[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[$H]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
-
-## Tokens: VOLT and AMPERE
-
-denoms: `millivolt`, `milliampere`
-
-[[$V]] and [[$A]] are the operational [[tokens]] of the [[knowledge graph]]. They are created exclusively through [[mint]] — there is no [[inflation]], no faucet, and no other issuance path. Every [[$V]] and [[$A]] in existence was produced by the [[burn]] of [[$H]].
-
-[[$V]] (VOLT) is [[bandwidth]]. Creating a [[cyberlink]] costs [[$V]] proportional to the current dynamic [[bandwidth price]]. A [[cyberlink]] is a permanent, content-addressed, directed edge in the on-chain [[knowledge graph]] connecting two [[ipfs]] CIDs.
-
-[[$A]] (AMPERE) is rank weight. The GPU-executed token-weighted [[pagerank]] and graph-entropy algorithms weight each [[neuron]] [[cyberlinks]] proportionally to their [[$A]] balance. More [[$A]] means greater influence over what the graph surfaces as relevant.
-
-## The Mint Mechanism
-
-[[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends a quantity of [[$H]] to the resources module — the [[$H]] undergoes [[burn]] immediately and permanently — and [[$V]] or [[$A]] are created in return. There is no lock, no vesting cliff, no retrieval. The [[$H]] is gone; the resources are yours.
-
-The amount created is shaped by a continuous exponential supply decay curve — the more resources that have ever been minted, the less each subsequent [[mint]] produces.
-
-### Base Rate
-
-[[mint]] is instant — one transaction, one block. The resources module computes the return from the [[$H]] amount and a cycle multiplier derived from chain maturity:
-
-```
-base   = H / baseAmount
-cycles = maxPeriod / basePeriod
-```
-
-| | baseAmount | basePeriod |
-|---|---|---|
-| V (millivolt) | 1,000,000,000 H | 2,592,000 s (30 days) |
-| A (milliampere) | 100,000,000 H | 2,592,000 s (30 days) |
-
-`maxPeriod` is computed on-chain and doubles at regular block intervals, increasing `cycles` over time. Early in the network `maxPeriod` is small and the cycle count is low; as the chain matures `maxPeriod` grows and the base return per [[$H]] increases — counterbalanced by the supply decay curve.
-
-The [[$A]] base amount is 10x lower than [[$V]]. The same [[$H]] at the same block height yields 10x more [[$A]] than [[$V]]. [[bandwidth]] ([[$V]]) is scarcer than computation weight ([[$A]]).
-
-### Supply Decay Curve
+### Supply Decay
 
 Every [[mint]] call computes a decay factor from the total cumulative supply of the resource (including burned units):
 
 ```
-decay = 0.5 ^ (totalSupply / halfLife)
+supplyDecay = 0.5 ^ (totalSupply / halfLife)
 
 halfLife(V) = 4,000,000,000
 halfLife(A) = 32,000,000,000
 ```
 
-This is a smooth curve — each additional unit of supply makes the next unit marginally harder to create. The [[$A]] half-life (32B) is 8x larger than [[$V]] (4B), so [[$A]] can accumulate 8x more before hitting the same penalty.
+This is the only factor that monotonically increases the cost of [[mint]] over time. Each unit of [[$V]] or [[$A]] ever minted — including [[$V]] burned by [[cyberlinks]] — permanently raises the cumulative supply floor and reduces the output of every subsequent [[mint]].
 
-| Supply / halfLife | Decay factor |
-|---|---|
-| 0 | 1.000 (no penalty) |
-| 0.5 | 0.707 |
-| 1.0 | 0.500 |
-| 2.0 | 0.250 |
-| 3.0 | 0.125 |
+| totalSupply / halfLife | supplyDecay | cost multiplier |
+|---|---|---|
+| 0 | 1.000 | 1x |
+| 0.5 | 0.707 | 1.4x |
+| 1.0 | 0.500 | 2x |
+| 2.0 | 0.250 | 4x |
+| 3.0 | 0.125 | 8x |
 
-Burned [[$V]] (consumed by [[cyberlinks]]) is counted in `totalSupply` for the decay calculation. Once [[$V]] is spent, it permanently raises the cumulative supply floor — even destroyed [[$V]] contributes to increasing [[scarcity]]. [[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]].
+![mint price chart](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmUGrVHDSReH6AHi54xkz9JAD1LGtAs4zeTH5dm1sL9zfY)
 
-No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as usage grows.
+The [[$A]] half-life (32B) is 8x larger than [[$V]] (4B). [[$V]] gets expensive 8x faster — writing to the graph ([[$V]]) is scarcer than influencing focus ([[$A]]).
 
-### Combined Mint Formula
+[[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]] via diffusion.
 
-```
-final_return = base × cycles × 1000 × decay
-```
+No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as the network is used.
 
-If `final_return < 1000` (minimum threshold in milli-units), the transaction is rejected. This prevents dust [[mint]] calls.
+### Input Parameters
 
-### Mint Parameters
+| Parameter | [[$V]] | [[$A]] |
+|---|---|---|
+| baseAmount | 1,000,000,000 H | 100,000,000 H |
+| supply half-life | 4,000,000,000 | 32,000,000,000 |
+| minimum [[mint]] threshold | 1,000 milli-units | 1,000 milli-units |
 
-| Parameter | Value |
-|---|---|
-| Base [[mint]] amount (V) | 1,000,000,000 H |
-| Base [[mint]] amount (A) | 100,000,000 H |
-| Cycle unit (`basePeriod`) | 2,592,000 s (30 days) |
-| V supply half-life | 4,000,000,000 |
-| A supply half-life | 32,000,000,000 |
-| Minimum [[mint]] threshold | 1,000 (milli-units) |
-
-## Bandwidth Model
-
-The [[bandwidth]] module governs [[$V]] consumption and throughput pricing.
+## Bandwidth Pricing
 
 Creating a [[cyberlink]] permanently burns [[$V]] from the [[neuron]] account. The amount burned per [[cyberlink]] is the current [[bandwidth price]], which adjusts dynamically based on network utilisation:
 
@@ -181,11 +88,56 @@ The price adjusts every 5 blocks. Burned [[$V]] is gone permanently — it count
 | Target network load | 10% of max block [[bandwidth]] |
 | Max block [[bandwidth]] | 10,000 [[cyberlinks]] per block |
 
-### Energy Grid
+## Fees
 
-The grid module allows [[$V]] and [[$A]] to be routed to [[cosmwasm]] programs via energy routes. A [[neuron]] or contract can create a route that continuously directs their resource allocation to [[autonomous progs]]. Programs that receive routed [[$V]] can themselves create [[cyberlinks]] — enabling self-sustaining, autonomous [[knowledge graph]] expansion. Programs earning [[$BOOT]] execution fees create a direct incentive for operators to reinvest those rewards back into the [[staking]] → [[$H]] → [[$V]]/[[$A]] chain.
+### Live
 
-## End-to-End Token Flow
+- [[burn fee on moving A and V]] — 2% burn on every [[$V]] and [[$A]] transfer. Speculators pay a tax that permanently reduces supply.
+- [[collect fee on moving A and V]] — 1% fee on [[$V]] and [[$A]] transfers directed into reward pools for [[staking on particles]] and [[staking on cyberlinks]].
+- [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) — 0.3% swap fee (retained in pool reserves), 40M [[$BOOT]] pool creation fee (community pool).
+
+### Coming next
+
+Approved by [[governance]], shipping in the next upgrade:
+
+- [[burn gas in H]] — all transaction gas fees paid in [[$H]] instead of [[$BOOT]]
+- [[fixed fee on H burn]] — 2% fee on every [[$H]] [[burn]] operation
+
+After this upgrade [[$H]] becomes the sole token that gets burned across the protocol.
+
+### On the roadmap
+
+Under design, planned for future upgrades:
+
+- [[eternal cyberlinks]] — [[burn]] [[$V]] to permanently boost the weight of a [[cyberlink]]
+- [[eternal particles]] — [[burn]] [[$A]] to permanently boost the weight of a [[particle]]
+
+## The Learning Loop
+
+The [[knowledge graph]] is a machine that learns through economic incentives. Every token operation is part of a [[feedback loop]] that makes the graph more valuable over time.
+
+### The cycle
+
+1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] and [[$A]]
+2. [[neuron]] spends [[$V]] to create [[cyberlinks]] — each link is a [[costly signal]], an economic commitment that two [[particles]] are related
+3. the [[tri-kernel]] (diffusion + springs + heat) computes [[focus]] distribution across all [[particles]] on GPU
+4. [[cyberank]] measures particle quality; [[karma]] measures [[neuron]] quality — both emerge from the graph structure without external votes
+5. [[learning incentives]] reward [[neurons]] whose [[cyberlinks]] increase the system's [[syntropy]]
+6. rewards flow back into [[staking]] → more [[$V]] and [[$A]] → more [[cyberlinks]] → better graph
+
+### Why this is machine learning
+
+The parallel is exact. [[neurons]] are training data providers — their [[cyberlinks]] are labeled examples. The [[tri-kernel]] is the model — it learns [[focus]] distribution from the graph. [[karma]] is the loss function — it measures how much each [[neuron]] contributed to system quality. [[learning incentives]] are the gradient signal — they direct economic energy toward [[neurons]] that improve the graph.
+
+The result: a self-improving [[knowledge graph]] where the quality of [[collective learning]] increases with every block. The more [[neurons]] learn, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
+
+## Energy Grid
+
+The grid module allows [[$V]] and [[$A]] to be routed to [[cosmwasm]] programs via energy routes. A [[neuron]] or contract can create a route that continuously directs their resource allocation to [[autonomous progs]]. Programs that receive routed [[$V]] can themselves create [[cyberlinks]] — enabling self-sustaining, autonomous [[knowledge graph]] expansion.
+
+[[cosmwasm]] contract execution fees return 80% directly to the program creator (hardcoded in the dmn module). Programs earning [[$BOOT]] execution fees create a direct incentive for operators to reinvest those rewards back into the [[staking]] → [[$H]] → [[$V]]/[[$A]] chain.
+
+## Token Flow
 
 ```
                     delegate
@@ -197,47 +149,53 @@ BOOT ─────────────────────────
   │                            ▼                 ▼
   │                            V                 A
   │                            │                 │
-  │                            │ cyberlinks       │ graph rank weight
+  │                  cyberlinks │                 │ focus weight
   │                            ▼                 ▼
-  │                     knowledge graph    PageRank / Graph-Entropy
-  │
-  └── 80% execution fees ◄── Autonomous Programs ◄── Energy Routes (V/A)
+  │                     knowledge graph ◄── Diffusion
+  │                            │
+  │                      karma + syntropy
+  │                            │
+  │                   learning incentives
+  │                            │
+  └── 80% exec fees ◄── Autonomous Programs ◄── Energy Routes (V/A)
 ```
 
 1. acquire [[$BOOT]] — via secondary market, [[staking]] rewards, or airdrop
-2. [[delegation]] of [[$BOOT]] → receive [[$H]] 1:1 — [[$BOOT]] earns [[staking]] rewards; [[$H]] is the liquid representation
-3. [[mint]] [[$H]] → [[$H]] undergoes [[burn]] → receive [[$V]] and/or [[$A]] — quantity determined by supply decay curve (cumulative supply)
-4. spend [[$V]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
-5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[$A]] = greater influence over graph [[relevance machine]]
-6. route [[$V]]/[[$A]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
-7. deposit [[$H]] into [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) pools → receive pool [[tokens]] → earn farming rewards across configurable block schedules
+2. [[delegation]] of [[$BOOT]] → receive [[$H]] 1:1
+3. [[mint]]: [[burn]] [[$H]] → receive [[$V]] and/or [[$A]] — quantity determined by supply decay curve
+4. spend [[$V]] to write [[cyberlinks]] — price adjusts dynamically with block utilisation
+5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed diffusion
+6. [[tri-kernel]] computes [[focus]] → [[cyberank]] and [[karma]] emerge → [[learning incentives]] reward quality
+7. route [[$V]]/[[$A]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest into step 1
 
-## Economic Properties
+## Why Tokens Grow
+
+### Supply decay is irreversible
+
+Every [[mint]] makes the next [[mint]] more expensive. Every [[cyberlink]] burns [[$V]] and adds to the cumulative supply floor. There are no resets, no rebases, no governance overrides. The cost curve is monotonically rising and embedded in the protocol math.
+
+### The graph gets more valuable
+
+As [[neurons]] create [[cyberlinks]], the [[knowledge graph]] accumulates [[syntropy]] — structured, provable knowledge. A more valuable graph attracts more [[neurons]], who create more [[cyberlinks]], which demands more [[$V]] and [[$A]]. Demand grows while supply gets scarcer.
+
+### Writing is scarcer than reading
+
+[[$V]] half-life (4B) is 8x smaller than [[$A]] half-life (32B). Writing to the graph — permanent, irreversible, [[consensus]]-verified — gets expensive 8x faster than influencing focus. The protocol values creation over attention.
+
+### Speculation feeds the machine
+
+The 2% [[burn fee on moving A and V]] ensures that every speculative transfer of [[$V]] or [[$A]] permanently destroys supply. Trading activity directly increases [[scarcity]] for all participants.
 
 ### Everything costs stake
 
-Because [[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network [[bostrom/infrastructure/security]].
-
-### Continuous deflationary pressure
-
-[[$V]] and [[$A]] issuance follows an exponential supply decay curve — every unit ever minted (including burned units) raises the cumulative supply floor and reduces the output of every subsequent [[mint]]. This creates a monotonically rising marginal cost for network resources without relying on hard supply caps. [[scarcity]] emerges from usage itself.
-
-### Scarcity is proportional to impact
-
-[[$V]] is scarcer than [[$A]] (lower base amount, smaller half-life). Writing to the graph ([[$V]]) is a final irreversible action that permanently expands the [[knowledge graph]] and costs [[consensus]] resources to process. Influencing rank ([[$A]]) is a continuous, reweightable state that costs GPU cycles. The 10x price difference and 8x half-life difference encode this distinction directly in the protocol.
-
-### 80% execution fee return
-
-[[cosmwasm]] smart contracts on [[bostrom]] return 80% of their execution fees directly to the program creator. This is hardcoded in the dmn module and creates a native revenue model for on-chain [[autonomous progs]] — a program that provides value to the network earns [[$BOOT]] proportional to how often it is called, with no intermediary taking the majority of the fee.
+[[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]], which requires [[staking]] [[$BOOT]]. You cannot interact with the [[knowledge graph]] without locking value into network [[bostrom/security]]. Spam is economically impossible.
 
 ## Source References
 
-All mechanics derived from:
-
-- [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, supply decay curve, max period
+- [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, halving, supply decay curve, maxPeriod
 - [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and [[$V]] burn parameters
 - [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[delegation]], [[burn]] on undelegation
-- [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted [[pagerank]] and graph-entropy (GPU/CUDA)
+- [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted diffusion (GPU/CUDA)
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — [[$V]]/[[$A]] energy routing to [[autonomous progs]]
 - [x/dmn](https://github.com/cyberia-to/go-cyber/tree/main/x/dmn) — 80% execution fee return mechanic
 - [x/graph](https://github.com/cyberia-to/go-cyber/tree/main/x/graph) — [[cyberlink]] creation, [[$V]] and [[$A]] tracking
