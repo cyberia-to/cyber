@@ -28,48 +28,12 @@ Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$
 ### The Formula
 
 ```
-finalMint = (H / baseAmount) × (maxPeriod / basePeriod) × halving × 1000 × supplyDecay
+finalMint = (H / baseAmount) × K × supplyDecay
 ```
 
-Three independent factors shape the output:
+`K` is an on-chain constant (~33,000) derived from block height. It combines two internal parameters — a cycle multiplier and a halving divisor — that grow and shrink at the same exponential rate, canceling each other out. The product is approximately flat across all block heights, so `K` has no material effect on price dynamics. The only factor that changes the cost of [[mint]] over time is `supplyDecay`.
 
-| Factor | Source | Direction |
-|---|---|---|
-| `cycles = maxPeriod / basePeriod` | chain maturity (block height) | grows over time |
-| `halving` | chain maturity (block height) | shrinks over time |
-| `supplyDecay` | cumulative minted supply | shrinks with usage |
-
-### Cycles and Halving — the balancer
-
-Both `cycles` and `halving` are derived from the same parameter: `halvingPeriod` (9,000,000 blocks for both [[$V]] and [[$A]]).
-
-`cycles` grows exponentially:
-
-```
-maxPeriod = 2^(blockHeight / halvingPeriod) × halvingPeriod × 6
-cycles = maxPeriod / basePeriod
-```
-
-`halving` shrinks exponentially (activates at block 15,000,000, retroactive to block 6,000,000):
-
-```
-halving = 0.5 ^ ((blockHeight - 6,000,000) / halvingPeriod)
-floor: 0.01
-```
-
-Because both derive from `2^(blockHeight / halvingPeriod)` — one as growth, one as decay — they cancel each other out. The product `cycles × halving` remains approximately constant over time:
-
-| Block | cycles | halving | cycles × halving |
-|---|---|---|---|
-| 9M | 41.7 | 1.0 | 41.7 |
-| 15M | 66.0 | 0.5 | 33.0 |
-| 18M | 83.3 | 0.25 | 20.8 |
-| 22.8M (current) | 120.4 | 0.274 | 33.0 |
-| 27M | 166.7 | 0.125 | 20.8 |
-
-Halving is the balancer — without it, `cycles` would grow unbounded and [[mint]] would produce more resources over time. With it, the block-height component stays flat, and the real price driver is supply decay alone.
-
-### Supply Decay — the price driver
+### Supply Decay
 
 Every [[mint]] call computes a decay factor from the total cumulative supply of the resource (including burned units):
 
