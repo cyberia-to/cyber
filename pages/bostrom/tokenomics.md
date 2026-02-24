@@ -107,71 +107,89 @@ denoms: `millivolt`, `milliampere`
 
 ## The Mint Mechanism
 
-[[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends a quantity of [[$H]] to the resources module — the [[$H]] undergoes [[burn]] immediately and permanently — and [[$V]] or [[$A]] are created in return. There is no lock, no vesting cliff, no retrieval. The [[$H]] is gone; the resources are yours.
+[[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
 
-The amount created is shaped by a continuous exponential supply decay curve — the more resources that have ever been minted, the less each subsequent [[mint]] produces.
-
-### Base Rate
-
-[[mint]] is instant — one transaction, one block. The resources module computes the return from the [[$H]] amount and a cycle multiplier derived from chain maturity:
+### The Formula
 
 ```
-base   = H / baseAmount
+finalMint = (H / baseAmount) × (maxPeriod / basePeriod) × halving × 1000 × supplyDecay
+```
+
+Three independent factors shape the output:
+
+| Factor | Source | Direction |
+|---|---|---|
+| `cycles = maxPeriod / basePeriod` | chain maturity (block height) | grows over time |
+| `halving` | chain maturity (block height) | shrinks over time |
+| `supplyDecay` | cumulative minted supply | shrinks with usage |
+
+### Cycles and Halving — the balancer
+
+Both `cycles` and `halving` are derived from the same parameter: `halvingPeriod` (9,000,000 blocks for both [[$V]] and [[$A]]).
+
+`cycles` grows exponentially:
+
+```
+maxPeriod = 2^(blockHeight / halvingPeriod) × halvingPeriod × 6
 cycles = maxPeriod / basePeriod
 ```
 
-| | baseAmount | basePeriod |
-|---|---|---|
-| V (millivolt) | 1,000,000,000 H | 2,592,000 s (30 days) |
-| A (milliampere) | 100,000,000 H | 2,592,000 s (30 days) |
+`halving` shrinks exponentially (activates at block 15,000,000, retroactive to block 6,000,000):
 
-`maxPeriod` is computed on-chain and doubles at regular block intervals, increasing `cycles` over time. Early in the network `maxPeriod` is small and the cycle count is low; as the chain matures `maxPeriod` grows and the base return per [[$H]] increases — counterbalanced by the supply decay curve.
+```
+halving = 0.5 ^ ((blockHeight - 6,000,000) / halvingPeriod)
+floor: 0.01
+```
 
-The [[$A]] base amount is 10x lower than [[$V]]. The same [[$H]] at the same block height yields 10x more [[$A]] than [[$V]]. [[bandwidth]] ([[$V]]) is scarcer than computation weight ([[$A]]).
+Because both derive from `2^(blockHeight / halvingPeriod)` — one as growth, one as decay — they cancel each other out. The product `cycles × halving` remains approximately constant over time:
 
-### Supply Decay Curve
+| Block | cycles | halving | cycles × halving |
+|---|---|---|---|
+| 9M | 41.7 | 1.0 | 41.7 |
+| 15M | 66.0 | 0.5 | 33.0 |
+| 18M | 83.3 | 0.25 | 20.8 |
+| 22.8M (current) | 120.4 | 0.274 | 33.0 |
+| 27M | 166.7 | 0.125 | 20.8 |
+
+Halving is the balancer — without it, `cycles` would grow unbounded and [[mint]] would produce more resources over time. With it, the block-height component stays flat, and the real price driver is supply decay alone.
+
+### Supply Decay — the price driver
 
 Every [[mint]] call computes a decay factor from the total cumulative supply of the resource (including burned units):
 
 ```
-decay = 0.5 ^ (totalSupply / halfLife)
+supplyDecay = 0.5 ^ (totalSupply / halfLife)
 
 halfLife(V) = 4,000,000,000
 halfLife(A) = 32,000,000,000
 ```
 
-This is a smooth curve — each additional unit of supply makes the next unit marginally harder to create. The [[$A]] half-life (32B) is 8x larger than [[$V]] (4B), so [[$A]] can accumulate 8x more before hitting the same penalty.
+This is the only factor that monotonically increases the cost of [[mint]] over time. Each unit of [[$V]] or [[$A]] ever minted — including [[$V]] burned by [[cyberlinks]] — permanently raises the cumulative supply floor and reduces the output of every subsequent [[mint]].
 
-| Supply / halfLife | Decay factor |
-|---|---|
-| 0 | 1.000 (no penalty) |
-| 0.5 | 0.707 |
-| 1.0 | 0.500 |
-| 2.0 | 0.250 |
-| 3.0 | 0.125 |
+| totalSupply / halfLife | supplyDecay | cost multiplier |
+|---|---|---|
+| 0 | 1.000 | 1x |
+| 0.5 | 0.707 | 1.4x |
+| 1.0 | 0.500 | 2x |
+| 2.0 | 0.250 | 4x |
+| 3.0 | 0.125 | 8x |
 
-Burned [[$V]] (consumed by [[cyberlinks]]) is counted in `totalSupply` for the decay calculation. Once [[$V]] is spent, it permanently raises the cumulative supply floor — even destroyed [[$V]] contributes to increasing [[scarcity]]. [[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]] via diffusion.
+The [[$A]] half-life (32B) is 8x larger than [[$V]] (4B). [[$V]] gets expensive 8x faster — writing to the graph ([[$V]]) is scarcer than influencing focus ([[$A]]).
 
-No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as usage grows.
+[[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]] via diffusion.
 
-### Combined Mint Formula
+No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as the network is used.
 
-```
-final_return = base × cycles × 1000 × decay
-```
+### Input Parameters
 
-If `final_return < 1000` (minimum threshold in milli-units), the transaction is rejected. This prevents dust [[mint]] calls.
-
-### Mint Parameters
-
-| Parameter | Value |
-|---|---|
-| Base [[mint]] amount (V) | 1,000,000,000 H |
-| Base [[mint]] amount (A) | 100,000,000 H |
-| Cycle unit (`basePeriod`) | 2,592,000 s (30 days) |
-| V supply half-life | 4,000,000,000 |
-| A supply half-life | 32,000,000,000 |
-| Minimum [[mint]] threshold | 1,000 (milli-units) |
+| Parameter | [[$V]] | [[$A]] |
+|---|---|---|
+| baseAmount | 1,000,000,000 H | 100,000,000 H |
+| basePeriod | 2,592,000 s (30 days) | 2,592,000 s (30 days) |
+| halvingPeriod | 9,000,000 blocks | 9,000,000 blocks |
+| supply half-life | 4,000,000,000 | 32,000,000,000 |
+| halving floor | 0.01 | 0.01 |
+| minimum [[mint]] threshold | 1,000 milli-units | 1,000 milli-units |
 
 ## Bandwidth Model
 
@@ -244,7 +262,7 @@ Because [[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]] — whic
 
 All mechanics derived from:
 
-- [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, supply decay curve, max period
+- [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, halving, supply decay curve, maxPeriod
 - [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and [[$V]] burn parameters
 - [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[delegation]], [[burn]] on undelegation
 - [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted diffusion (GPU/CUDA)
