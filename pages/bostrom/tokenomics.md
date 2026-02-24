@@ -25,13 +25,15 @@ Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$
 
 [[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
 
-### The Formula
+### The Price
+
+The cost to [[mint]] 1 unit of [[$V]] or [[$A]] in [[$H]]:
 
 ```
-mintOutput = (H / baseAmount) × supplyDecay × K
+price = baseAmount / supplyDecay
 ```
 
-`baseAmount` is the reference input (1B H for [[$V]], 100M H for [[$A]]). `K` (~33,000) is a protocol constant. The only variable that changes over time is `supplyDecay`.
+`baseAmount` is fixed per token (1B H for [[$V]], 100M H for [[$A]]). `supplyDecay` falls with every [[mint]] ever made. The price can only go up.
 
 ### Supply Decay
 
