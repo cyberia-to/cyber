@@ -174,6 +174,8 @@ This is the only factor that monotonically increases the cost of [[mint]] over t
 | 2.0 | 0.250 | 4x |
 | 3.0 | 0.125 | 8x |
 
+![mint price chart](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmUGrVHDSReH6AHi54xkz9JAD1LGtAs4zeTH5dm1sL9zfY)
+
 The [[$A]] half-life (32B) is 8x larger than [[$V]] (4B). [[$V]] gets expensive 8x faster — writing to the graph ([[$V]]) is scarcer than influencing focus ([[$A]]).
 
 [[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]] via diffusion.
