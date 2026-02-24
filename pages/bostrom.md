@@ -8,7 +8,7 @@ crystal-domain: cyber
 ---
 [[bootloader]] of [[cyber]], named after [[nick bostrom]]
 
-proving ground for the [[cybergraph]] before mainnet. [[moon]] [[network state]]
+proving ground for the [[cybergraph]] before complete [[superintelligence]]. [[moon]] [[network state]]
 
 ## cybergraph
 
