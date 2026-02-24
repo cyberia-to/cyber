@@ -6,35 +6,10 @@ crystal-domain: cyber
 ---
 ## what is cip?
 
-- cyber improvement proposal
-- the process of implementing consensus wide changes in
-	- [[go-cyber]]
-	- [[cw-cyber]]
+cyber improvement proposal: design documents for the [[cyber]] protocol
 
-## states
+CIPs define architecture, theory, and formal specifications. practical bootloader changes go to [[bip]]
 
-- draft: open for discussion
-- accepted: finalized for implementation
-- rejected: discounted after discussion
-- testing: deployed to [[spacepussy]]
-- implemented: deployed to [[bostrom]]
+## design documents
 
-## implemented
-
-{{query (and (page-tags [[cip]]) (property :status "implemented"))}}
-
-## tested
-
-{{query (and (page-tags [[cip]]) (property :status "tested"))}}
-
-## accepted
-
-{{query (and (page-tags [[cip]]) (property :status "accepted"))}}
-
-## draft
-
-{{query (and (page-tags [[cip]]) (property :status "draft"))}}
-
-## rejected
-
-{{query (and (page-tags [[cip]]) (property :status "rejected"))}}
+{{query (page-tags [[cip]])}}
