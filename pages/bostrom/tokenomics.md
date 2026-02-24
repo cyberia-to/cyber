@@ -105,7 +105,7 @@ denoms: `millivolt`, `milliampere`
 
 [[$A]] is focus. The GPU-computed diffusion weight each [[neuron]] [[cyberlinks]] proportionally to their [[$A]] balance. More [[$A]] means greater influence over what the graph surfaces as important.
 
-## The Mint Mechanism
+## Mint
 
 [[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
 
