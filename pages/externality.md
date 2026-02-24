@@ -1,6 +1,6 @@
 ---
 tags: cybernomics
-crystal-type: entity
+crystal-type: relation
 crystal-domain: economics
 ---
 cost or benefit imposed on third parties who are not direct participants in a transaction

@@ -1,6 +1,6 @@
 ---
 tags: superhuman
-crystal-type: entity
+crystal-type: relation
 crystal-domain: superhuman
 ---
 A consequence is a result of a COURSE OF ACTION (or of a decision) taken by the DECISION MAKER (Synonym: outcome; see IMPACT)
