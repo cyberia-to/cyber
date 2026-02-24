@@ -31,6 +31,21 @@ denom: `boot`
 
 [[$BOOT]] is the base layer. It does not grant direct access to network services — its role is to secure [[bostrom/consensus]], enable [[governance]], and anchor the value of everything built on top.
 
+### Supply
+
+Total [[$BOOT]] supply: ~480 trillion (480T). [[inflation]] mints new [[$BOOT]] each block and distributes it to [[heroes]] and delegators proportionally to their stake.
+
+| Parameter | Value |
+|---|---|
+| Current [[inflation]] rate | ~1.09% annually |
+| Minimum [[inflation]] | 1.09% |
+| Maximum [[inflation]] | 5.46% |
+| Target bonded ratio | 25.49% |
+| Max [[heroes]] (validators) | 92 |
+| Unbonding period | 8 days (691,200 s) |
+
+When the bonded ratio is below target, [[inflation]] increases toward the maximum to incentivize [[staking]]. When above target, it decreases toward the minimum. All parameters are adjustable by [[governance]].
+
 ### Staking
 
 [[$BOOT]] holders delegate to [[heroes]] via standard [[cosmos-sdk]] DPoS. [[heroes]] and delegators earn [[inflation]]-based [[$BOOT]] rewards through [[delegation rewards]]. The [[bostrom]] staking module is a custom fork of the [[cosmos-sdk]] staking module.
@@ -66,7 +81,7 @@ undelegate 1000 BOOT  →  burn 1000 H
 [[hydrogen]] has two uses:
 
 1. [[mint]] input — [[burn]] to [[mint]] [[volt]] or [[amper]]
-2. [[cyber/liquidity]] — deposited into farm contracts, traded on the built-in [[automated market maker]], or used in any [[cosmwasm]] contract
+2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] (x/liquidity module), deposited into liquidity pools to earn farming rewards, or used in any [[cosmwasm]] contract
 
 [[hydrogen]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[hydrogen]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
 
@@ -88,17 +103,19 @@ The amount created is shaped by a continuous exponential supply decay curve — 
 
 ### Base Rate
 
-The resources module computes a base return from the [[hydrogen]] amount and `maxPeriod` — a protocol-determined cycle multiplier that grows exponentially with block height, increasing the base return over time:
+The resources module computes a base return from the [[hydrogen]] amount and a cycle multiplier that grows exponentially with block height:
 
 ```
 base   = H / baseAmount
 cycles = maxPeriod / basePeriod
 ```
 
-```
-V (millivolt):    baseAmount = 1,000,000,000 H    basePeriod = 2,592,000 s
-A (milliampere):  baseAmount = 100,000,000 H      basePeriod = 2,592,000 s
-```
+| | baseAmount | basePeriod |
+|---|---|---|
+| V (millivolt) | 1,000,000,000 H | 2,592,000 s (30 days) |
+| A (milliampere) | 100,000,000 H | 2,592,000 s (30 days) |
+
+`maxPeriod` is computed on-chain and doubles at regular block intervals, increasing `cycles` over time. Early in the network `maxPeriod` is small and the cycle count is low; as the chain matures `maxPeriod` grows and the base return per [[hydrogen]] increases — counterbalanced by the supply decay curve.
 
 The [[amper]] base amount is 10x lower than [[volt]]. The same [[hydrogen]] at the same block height yields 10x more [[amper]] than [[volt]]. [[bandwidth]] ([[volt]]) is scarcer than computation weight ([[amper]]).
 
@@ -150,20 +167,19 @@ If `final_return < 1000` (minimum threshold in milli-units), the transaction is 
 
 The [[bandwidth]] module governs [[volt]] consumption and throughput pricing.
 
-Each [[neuron]] has a [[volt]] [[neuron bandwidth]] meter. The meter fills as the [[neuron]] holds [[volt]] and depletes as they create [[cyberlinks]]. The cost per [[cyberlink]] is not fixed — it adjusts dynamically based on current network utilisation via [[bandwidth price]]:
+Creating a [[cyberlink]] permanently burns [[volt]] from the [[neuron]] account. The amount burned per [[cyberlink]] is the current [[bandwidth price]], which adjusts dynamically based on network utilisation:
 
 - when load is below target (10% of max block [[bandwidth]]): price falls, encouraging usage
 - when load is above target: price rises, dampening demand without a mempool auction
 
-The price adjusts every 5 blocks. A [[neuron]] depleted meter recovers to its maximum over 100 blocks.
+The price adjusts every 5 blocks. Burned [[volt]] is gone permanently — it counts toward total cumulative supply in the [[mint]] decay curve, increasing [[scarcity]] for all future minters.
 
 | Parameter | Default |
 |---|---|
-| Recovery period | 100 blocks |
 | Price adjustment period | 5 blocks |
-| Base price | 0.25 V per unit |
+| Base price | 0.25 V per [[cyberlink]] |
 | Target network load | 10% of max block [[bandwidth]] |
-| Max block [[bandwidth]] | 10,000 units per block |
+| Max block [[bandwidth]] | 10,000 [[cyberlinks]] per block |
 
 ### Energy Grid
 
@@ -194,7 +210,7 @@ BOOT ─────────────────────────
 4. spend [[volt]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
 5. hold [[amper]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[amper]] = greater influence over graph [[relevance machine]]
 6. route [[volt]]/[[amper]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
-7. deposit into farm contracts → receive liquid position [[tokens]] → earn additional [[$BOOT]]/[[hydrogen]] rewards across configurable block schedules
+7. deposit [[hydrogen]] into x/liquidity pools → receive pool [[tokens]] → earn farming rewards across configurable block schedules
 
 ## Economic Properties
 
@@ -225,5 +241,6 @@ All mechanics derived from:
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — [[volt]]/[[amper]] energy routing to [[autonomous progs]]
 - [x/dmn](https://github.com/cyberia-to/go-cyber/tree/main/x/dmn) — 80% execution fee return mechanic
 - [x/graph](https://github.com/cyberia-to/go-cyber/tree/main/x/graph) — [[cyberlink]] creation, [[volt]] and [[amper]] tracking
+- [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) — [[automated market maker]], liquidity pools, farming rewards
 
 [[bostrom]] mainnet — [[go-cyber]] v7.0.1 — February 2026
