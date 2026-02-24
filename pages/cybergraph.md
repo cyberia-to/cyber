@@ -7,13 +7,15 @@ crystal-domain: cyber
 ---
 the data model of [[cyber]]
 
-three primitives define everything that exists in the system:
+five primitives define everything that exists in the system:
 
 - [[particle]] — content-addressed node. identity = [[hash]] of content. immutable
-- [[neuron]] — agent with stake, identity, and [[focus]]. creates links
+- [[neuron]] — agent with stake and identity. creates links
 - [[cyberlink]] — signed, weighted, timestamped directed edge between two [[particles]]
+- [[token]] — unit of [[value]]: [[coins]], [[uniqs]], [[scores]], [[badges]]
+- [[focus]] — attention distribution over the graph. conserved: Σ = 1. [[threshold]] filters spam
 
-cybergraph sits between [[CORE]] (the computation model) and [[cyber/bbg]] (the authenticated state). CORE defines how to compute. BBG defines how to prove. cybergraph defines what to compute and prove over: the graph of meaning created by [[neurons]]
+[[cyber/bbg]] defines how to store. [[cyber/core]] defines how to compute. cybergraph defines what to compute and store: the graph of meaning created by [[neurons]]
 
 ## knowledge
 

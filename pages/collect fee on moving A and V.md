@@ -1,8 +1,8 @@
 ---
-tags: cip
+tags: bip
 crystal-type: process
 crystal-domain: cyber
-status: draft
+status: implemented
 ---
 add to 2 consensus [[params]]
 

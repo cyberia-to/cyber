@@ -1,8 +1,8 @@
 ---
-tags: cip
+tags: bip
 crystal-type: process
 crystal-domain: cyber
-status: accepted
+status: draft
 ---
 [[daodao]] is amazing [[prog]] which is widely adopted in [[cosmos]]
 
