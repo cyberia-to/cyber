@@ -84,44 +84,54 @@ denoms: `millivolt`, `milliampere`
 
 [[mint]] is how [[hydrogen]] becomes [[volt]] or [[amper]]. A [[neuron]] sends a quantity of [[hydrogen]] to the resources module — the [[hydrogen]] undergoes [[burn]] immediately and permanently — and [[volt]] or [[amper]] are created in return. There is no lock, no vesting cliff, no retrieval. The [[hydrogen]] is gone; the resources are yours.
 
-The amount created depends on three factors: base rate, halving, and supply decay.
+The amount created is determined by two forces applied sequentially: a block-based halving schedule and a continuous supply decay curve.
 
 ### Base Rate
 
+The resources module computes a base return from the [[hydrogen]] amount and a protocol-determined `maxPeriod` that grows exponentially with block height:
+
 ```
-V (millivolt):    return = (H / 1_000_000_000) × (maxPeriod / 2_592_000) × halving × 1000
-A (milliampere):  return = (H / 100_000_000)  × (maxPeriod / 2_592_000) × halving × 1000
+base   = H / baseAmount
+cycles = maxPeriod / basePeriod
 ```
 
-where:
-- `H` = [[hydrogen]] amount (base unit)
-- `maxPeriod` = protocol-determined period at current block height (seconds)
-- `2_592_000` = 30 days in seconds (base [[mint]] period)
+```
+V (millivolt):    baseAmount = 1,000,000,000 H    basePeriod = 2,592,000 s
+A (milliampere):  baseAmount = 100,000,000 H      basePeriod = 2,592,000 s
+```
+
+`maxPeriod` doubles every halving period:
+
+```
+maxPeriod = 2^(blockHeight / halvingPeriod) × halvingPeriod × 6
+```
 
 The [[amper]] base amount is 10x lower than [[volt]]. The same [[hydrogen]] at the same block height yields 10x more [[amper]] than [[volt]]. [[bandwidth]] ([[volt]]) is scarcer than computation weight ([[amper]]).
 
-### Halving Schedule
+### Halving
 
-Both [[volt]] and [[amper]] issuance follow a halving schedule. Every 9,000,000 blocks the effective [[mint]] rate halves. Halvings are shifted 6,000,000 blocks from [[bostrom/genesis]] and do not begin until block 15,000,000.
+Both [[volt]] and [[amper]] issuance include a discrete halving factor. Every 9,000,000 blocks the effective [[mint]] rate halves. Halvings are shifted 6,000,000 blocks from [[bostrom/genesis]] and do not begin until block 15,000,000:
 
 ```
 halving = max(0.01,  0.5 ^ floor((blockHeight − 6_000_000) / 9_000_000))
 ```
 
-The floor is 1%: the halving factor never drops below 0.01 regardless of block height. [[mint]] never becomes completely worthless.
+The floor is 1%: the halving factor never drops below 0.01. At the current block height (~22.8M) the halving factor is 0.5.
 
-### Supply Decay
+The halving and the `maxPeriod` doubling work in opposition: halving reduces the per-unit [[mint]] rate while `maxPeriod` increases the cycle count. The net effect is that early minters receive more per [[hydrogen]] than later minters at the same supply level.
 
-Beyond block-based halving, every [[mint]] call applies a continuous penalty based on total cumulative outstanding supply:
+### Supply Decay Curve
+
+The primary scarcity mechanism is a continuous exponential decay curve applied after the halving step. Every [[mint]] call computes a decay factor from the total cumulative supply of the resource (including burned units):
 
 ```
-factor = 0.5 ^ (totalSupply / halfLife)
+supply_decay = 0.5 ^ (totalSupply / halfLife)
 
 halfLife(V) = 4,000,000,000
 halfLife(A) = 32,000,000,000
 ```
 
-The [[amper]] half-life (32B) is 8x larger than [[volt]] (4B). [[amper]] can accumulate 8x more before hitting the same penalty.
+This is a smooth curve — each additional unit of supply makes the next unit marginally harder to create. The [[amper]] half-life (32B) is 8x larger than [[volt]] (4B), so [[amper]] can accumulate 8x more before hitting the same penalty.
 
 | Supply / halfLife | Decay factor |
 |---|---|
@@ -131,15 +141,17 @@ The [[amper]] half-life (32B) is 8x larger than [[volt]] (4B). [[amper]] can acc
 | 2.0 | 0.250 |
 | 3.0 | 0.125 |
 
-No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically as usage grows.
+Burned [[volt]] and [[amper]] (consumed by [[cyberlinks]] and graph operations) are counted in `totalSupply` for the decay calculation. Once resources are spent, they permanently raise the cumulative supply floor — even destroyed resources contribute to increasing [[scarcity]].
+
+No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as usage grows.
 
 ### Combined Mint Formula
 
 ```
-final_return = base_return × halving × supply_decay_factor
+final_return = base × cycles × halving × 1000 × supply_decay
 ```
 
-If `final_return < 1000` (minimum threshold), the transaction is rejected. This prevents dust [[mint]] calls.
+If `final_return < 1000` (minimum threshold in milli-units), the transaction is rejected. This prevents dust [[mint]] calls.
 
 ### Mint Parameters
 
@@ -151,7 +163,6 @@ If `final_return < 1000` (minimum threshold), the transaction is rejected. This 
 | Halving period (V and A) | 9,000,000 blocks |
 | Halvings begin at block | 15,000,000 |
 | Halving floor | 1% (0.01x) |
-| Max [[mint]] slots per address | 8 ([[governance]] max: 16) |
 | V supply half-life | 4,000,000,000 |
 | A supply half-life | 32,000,000,000 |
 | Minimum [[mint]] threshold | 1,000 (milli-units) |
