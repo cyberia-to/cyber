@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 metaheuristic inspired by the foraging behavior of ants — introduced by Dorigo (1992)

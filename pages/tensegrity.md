@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: cyber
 ---
 systems that are structural frameworks where tension and compression elements work together

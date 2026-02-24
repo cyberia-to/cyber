@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 formal foundation: computation = convergence to equilibrium

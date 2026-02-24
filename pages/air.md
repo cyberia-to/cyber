@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 | gas        | estimated amount in air | extraction method           | purity achievable         | efficiency | typical applications                                              |
 |------------|-------------------------|-----------------------------|---------------------------|------------|-------------------------------------------------------------------|

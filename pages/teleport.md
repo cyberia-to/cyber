@@ -1,6 +1,6 @@
 ---
 tags: aip
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 [[pages]]

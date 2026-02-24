@@ -1,6 +1,6 @@
 ---
 tags: genus
-crystal-type: entity
+crystal-type: property
 crystal-domain: biology
 query-table: "true"
 query-properties: [:page]

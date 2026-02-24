@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 aligning agents toward shared goals using [[game theory]] and protocol mechanisms

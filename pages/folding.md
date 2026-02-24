@@ -1,6 +1,6 @@
 ---
 tags: cyber, cryptographic proofs
-crystal-type: entity
+crystal-type: process
 crystal-domain: computer science
 ---
 technique where instead of fully verifying a [[cryptographic proof]], you absorb it into an [[accumulator]]

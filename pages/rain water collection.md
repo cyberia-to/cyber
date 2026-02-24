@@ -1,5 +1,5 @@
 ---
 tags: tech
-crystal-type: entity
+crystal-type: process
 crystal-domain: materials
 ---

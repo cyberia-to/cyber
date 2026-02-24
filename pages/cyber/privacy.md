@@ -1,6 +1,6 @@
 ---
 tags: cyber, cip
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyber
 alias: privacy model, CORE privacy, ZK privacy
 ---

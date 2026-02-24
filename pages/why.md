@@ -1,7 +1,7 @@
 ---
 tags: system
 crystal-type: relation
-crystal-domain: meta
+crystal-domain: cybics
 ---
 [[mission]]
 

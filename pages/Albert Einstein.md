@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 1879-1955. German-born theoretical physicist.
 

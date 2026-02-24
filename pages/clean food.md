@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 basically all food we eat nowdays is toxic

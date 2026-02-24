@@ -2,7 +2,7 @@
 icon: 📊
 alias: bostrom monitoring, cybernode status
 tags: bostrom, infrastructure, monitoring, status
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 # Monitoring & Status

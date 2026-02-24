@@ -1,7 +1,7 @@
 ---
 alias: whole brain emulation, simulated brains, far from it
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 - whole brain emulation looks feasible at current state of technology

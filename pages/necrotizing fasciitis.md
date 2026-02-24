@@ -1,6 +1,6 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 necrotizing fasciitis: a rare but serious bacterial infection, also known as flesh-eating disease, that destroys skin, fat, and muscle.

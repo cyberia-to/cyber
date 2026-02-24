@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 1916-2001. American mathematician and electrical engineer.
 

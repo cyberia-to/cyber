@@ -1,7 +1,7 @@
 ---
 alias: view
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 change [[state]] by [[linking]] of [[information]] [[particles]] by [[neuron]]

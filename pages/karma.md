@@ -1,7 +1,7 @@
 ---
 alias: neurons weight, neurons weights, neuron rank
 tags: cyber
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 contribution measure of [[neuron]] into [[collective intelligence]]

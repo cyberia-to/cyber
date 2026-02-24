@@ -1,7 +1,7 @@
 ---
 tags: superhuman, cyber
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 # Graphomania
 

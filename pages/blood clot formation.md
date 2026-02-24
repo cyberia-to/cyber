@@ -1,5 +1,5 @@
 ---
 tags: superhuman
-crystal-type: entity
-crystal-domain: body
+crystal-type: process
+crystal-domain: superhuman
 ---

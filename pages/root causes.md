@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 # The 10 Root Causes Framework
 - ## A Simplified Model of Human Disease

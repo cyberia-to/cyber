@@ -1,7 +1,7 @@
 ---
 tags: system
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 [[operations]]
 

@@ -1,6 +1,6 @@
 ---
 tags: state
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 - value is used to store up-to-date price of bandwidth

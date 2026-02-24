@@ -1,7 +1,7 @@
 ---
 tags: cyber, uhash
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 - [technicals origin](https://claude.ai/public/artifacts/5b6fd084-a7fb-40b6-8423-06278247fe2d)
 - # Adaptive Hybrid Consensus Economics

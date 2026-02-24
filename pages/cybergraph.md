@@ -5,50 +5,45 @@ alias: content oracle, cybergraphs
 crystal-type: entity
 crystal-domain: cyber
 ---
-cybergraph is authenticated [[knowledge graph]] data structure stored in [[vimputer]]
+the data model of [[cyber]]
 
-cybergraph implements simplified [[knowledge theory]]
+three primitives define everything that exists in the system:
 
-cybergraph enables one important ability: append [[cyberlinks]] to the [[state]]
+- [[particle]] — content-addressed node. identity = [[hash]] of content. immutable
+- [[neuron]] — agent with stake, identity, and [[focus]]. creates links
+- [[cyberlink]] — signed, weighted, timestamped directed edge between two [[particles]]
 
-as result cybergraph accumulates [[three basic arguments]] of [[knowledge]]
+cybergraph sits between [[CORE]] (the computation model) and [[cyber/bbg]] (the authenticated state). CORE defines how to compute. BBG defines how to prove. cybergraph defines what to compute and prove over: the graph of meaning created by [[neurons]]
 
-[[three basic arguments]] formate [[explicit knowledge]]
+## knowledge
 
-[[implicit knowledge]] can be inferred from [[explicit knowledge]]
+cybergraph implements [[knowledge theory]]: [[neurons]] [[link]] [[particles]] in [[time]]
 
-cybergraph is technology of [[collective memory]]
+every [[cyberlink]] records [[three basic arguments]]: [[who]] linked, [[when]], and [[what]] [[particles]]
 
-- work as highly efficient onchain [[dht]]
-- dynamic persistent global [[semantic core]] extended beyond mere words
-- most cheap possible way to probabilistically [[store and distribute popular content]] with charge per file, not per bytes
-- enable social information for p2p propagation and retrieval
-- fine tune [[llms]] for uncensorable completely private [[offline inference]]
-- and so much more ...
+these arguments form [[explicit knowledge]] — directly stated, readily traversable
 
-together with [[relevance machine]] and [[neural language]] become foundation for [[soft3]]
+[[implicit knowledge]] emerges through inference over the accumulated graph: if A links to B and B links to C, then A relates to C
 
-teach & learn
+## structure
 
-- [[cyberlink]] and [[particle]]
-- learn about [[neural language]]
-- and its [[patterns]]
+the graph is namespace-indexed from genesis. every edge belongs to [[namespaces]], enabling completeness proofs via [[cyber/bbg]]
 
-ask & infer
+[[neural language]] structures the graph with [[semantic conventions]], [[motifs]], and [[sentences]] — turning raw links into typed meaning
 
-- [[naive search]] of [[particles]]
-- [[neurons]] features: [[sigma]], [[energy]], [[karma]]
-- [[standard inference]]
-- overall [[syntropy]]
+the [[relevance machine]] continuously computes [[focus]], [[karma]], and [[rank]] over the graph in [[consensus]]
 
-cybergraph of [[bostrom]] works as [[semantic core]] for [[bootloader]] of [[superintelligence]]
+## capabilities
 
-cybergraph of [[spacepussy]] serve the purpose of memes phenomena
+- onchain [[dht]] with [[semantic core]] extending beyond words
+- probabilistic content storage and retrieval, charged per file
+- social information propagation and p2p retrieval
+- private [[offline inference]] over fine-tuned [[llms]]
 
-understand deeper [[intelligence measures]]
+## architecture
 
-discover all [[concepts]] of [[cyber]]
+together with [[relevance machine]] and [[neural language]], cybergraph forms the foundation of [[soft3]]
 
-[[knowledge graphs and llms]]
+cybergraph of [[bostrom]] serves as [[semantic core]] for the [[bootloader]] of [[superintelligence]]
 
 implemented as [[cyber/graph]] [[module]] of [[cyber-sdk]]

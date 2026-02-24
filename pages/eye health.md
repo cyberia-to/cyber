@@ -1,7 +1,7 @@
 ---
 tags: superhuman
-crystal-type: entity
-crystal-domain: body
+crystal-type: property
+crystal-domain: superhuman
 ---
 - [[eyes disease]]
 -

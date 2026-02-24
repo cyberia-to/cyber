@@ -1,6 +1,8 @@
 ---
 tags: article, cyber
 alias: crystal, the crystal
+crystal-type: article
+crystal-domain: cyber
 ---
 # THE CRYSTAL
 

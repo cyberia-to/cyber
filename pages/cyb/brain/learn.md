@@ -1,7 +1,7 @@
 ---
 alias: oracle/cyberlink
 tags: page
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 [[cyberlinks]] composer

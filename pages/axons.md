@@ -1,7 +1,7 @@
 ---
 alias: skill, skills, axon
 tags: cyber
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyber
 ---
 aggregated connection between [[particles]] within the [[cybergraph]]

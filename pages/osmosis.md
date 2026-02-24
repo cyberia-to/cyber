@@ -1,6 +1,6 @@
 ---
 tags: biology, chemistry
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 # osmosis

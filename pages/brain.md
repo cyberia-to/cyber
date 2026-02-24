@@ -2,7 +2,7 @@
 icon: 🧠
 tags: page, prism, cyb
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 graph file manager
 

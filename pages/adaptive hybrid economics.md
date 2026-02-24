@@ -1,7 +1,7 @@
 ---
 tags: cyber, uhash
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 # Adaptive Hybrid Economics
 

@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 Douglas Engelbart, American engineer and inventor (1925–2013)
 

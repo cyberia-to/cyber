@@ -1,6 +1,6 @@
 ---
 tags: state
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 key: `0x02 | sdk.Uint64ToBigEndian(blockNumber) -> sdk.Uint64ToBigEndian(value)`

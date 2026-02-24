@@ -1,7 +1,7 @@
 ---
 tags: superhuman
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 ---
 
 | hormone neurotransmitter | primary emotion | plant species                             | optimal daily consumption                       | notes                                                                 |

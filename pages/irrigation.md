@@ -1,6 +1,6 @@
 ---
 tags: food, technology
-crystal-type: entity
+crystal-type: process
 crystal-domain: agriculture
 ---
 artificial supply of [[water]] to [[crops]] beyond natural rainfall

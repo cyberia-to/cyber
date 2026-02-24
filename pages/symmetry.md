@@ -1,7 +1,7 @@
 ---
 alias: balanced proportion
 tags: cyber
-crystal-type: entity
+crystal-type: property
 crystal-domain: mathematics
 ---
 manifestation of order and equilibrium

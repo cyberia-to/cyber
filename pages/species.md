@@ -2,7 +2,7 @@
 tags: term
 icon: 🌈
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 [[plants]]: hundreds of species in [[citadel genesis]] and [[batuka]]
 

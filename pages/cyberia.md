@@ -2,6 +2,8 @@
 icon: 🌏
 menu-order: "3"
 tags: cyberia, menu
+crystal-type: entity
+crystal-domain: cyberia
 ---
 > belong anywhere
 

@@ -1,6 +1,6 @@
 ---
 tags: mathematics
-crystal-type: entity
+crystal-type: measure
 crystal-domain: mathematics
 ---
 # Probability

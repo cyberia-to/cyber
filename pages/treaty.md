@@ -1,6 +1,6 @@
 ---
 tags: governance
-crystal-type: entity
+crystal-type: relation
 crystal-domain: governance
 ---
 formal binding agreement between two or more sovereign entities under [[international law]]

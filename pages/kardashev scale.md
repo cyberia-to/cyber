@@ -1,6 +1,6 @@
 ---
 alias: civilization types
 tags: cyber
-crystal-type: entity
+crystal-type: measure
 crystal-domain: biology
 ---

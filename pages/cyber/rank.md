@@ -1,6 +1,6 @@
 ---
 tags: module
-crystal-type: entity
+crystal-type: measure
 crystal-domain: cyber
 ---
 The ranking module computes per-[[particle]] scores from the [[cybergraph]].

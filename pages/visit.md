@@ -1,7 +1,7 @@
 ---
 tags: cv.land
 alias: residency
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 ## white ticket

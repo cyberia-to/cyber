@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: relation
 crystal-domain: cyberia
 ---
 - main rule: requires strong local connections

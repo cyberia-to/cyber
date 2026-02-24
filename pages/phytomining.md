@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 - class of plants which can extract [[metals]] from [[soil]] called [[phytominers]]

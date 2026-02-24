@@ -1,6 +1,6 @@
 ---
 tags: team
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: cyberia
 people: "2"
 ops: "false"

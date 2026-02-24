@@ -6,5 +6,6 @@ pub mod query;
 pub mod render;
 pub mod scanner;
 pub mod server;
+pub mod validator;
 
 pub use config::SiteConfig;

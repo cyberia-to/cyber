@@ -1,6 +1,6 @@
 ---
 tags: superhuman
-crystal-type: entity
-crystal-domain: body
+crystal-type: property
+crystal-domain: superhuman
 ---
 hyperpigmentation: dark patches or spots caused by sun exposure, inflammation, or injuries.

@@ -1,7 +1,7 @@
 ---
 tags: term
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 [[deadline]] goal supported by a [[hero]] with [[resource]]
 

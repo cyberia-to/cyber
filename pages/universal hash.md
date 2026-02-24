@@ -1,7 +1,7 @@
 ---
 tags: uhash
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 # UniversalHash v4: A Democratic Proof-of-Work Algorithm
 

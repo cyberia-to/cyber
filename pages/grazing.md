@@ -1,6 +1,6 @@
 ---
 tags: service
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 type: public
 ---

@@ -1,7 +1,7 @@
 ---
 tags: superhuman
-crystal-type: entity
-crystal-domain: body
+crystal-type: property
+crystal-domain: superhuman
 ---
 violet portion (around 400–500 nm) of the visible light spectrum, often emitted by sunlight, digital screens (phones, tablets, computers), and artificial lighting (LEDs).
 

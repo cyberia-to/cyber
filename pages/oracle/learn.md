@@ -1,6 +1,6 @@
 ---
 tags: cyb
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 public learning

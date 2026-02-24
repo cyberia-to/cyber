@@ -2,6 +2,6 @@
 tags: term
 alias: mid body
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 part of the [[wall]]

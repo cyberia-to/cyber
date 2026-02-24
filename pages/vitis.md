@@ -2,7 +2,7 @@
 alias: anggur, grape
 tags: genus
 crystal-type: entity
-crystal-domain: body
+crystal-domain: superhuman
 scalable: "true"
 ---
 selected for [[edem]]

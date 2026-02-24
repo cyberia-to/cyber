@@ -1,5 +1,5 @@
 ---
 tags: cybernomics
-crystal-type: entity
+crystal-type: process
 crystal-domain: economics
 ---

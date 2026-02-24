@@ -1,7 +1,7 @@
 ---
 tags: person
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 Vladimir Vernadsky, Ukrainian-Russian mineralogist and geochemist (1863–1945)
 

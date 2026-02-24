@@ -1,6 +1,6 @@
 ---
 tags: mathematics
-crystal-type: entity
+crystal-type: pattern
 crystal-domain: mathematics
 ---
 # Topology

@@ -1,6 +1,6 @@
 ---
 tags: cyber, cyb
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyber
 ---
 # Sadness

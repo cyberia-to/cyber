@@ -1,6 +1,6 @@
 ---
 tags: physics
-crystal-type: entity
+crystal-type: measure
 crystal-domain: physics
 ---
 # entropy

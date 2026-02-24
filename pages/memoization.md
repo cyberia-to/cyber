@@ -1,7 +1,7 @@
 ---
 alias: memomized
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: computer science
 ---
 technique where the results of computations are stored

@@ -2,7 +2,7 @@
 alias: terms
 tags: cyber
 crystal-type: entity
-crystal-domain: meta
+crystal-domain: cybics
 ---
 {{query }}
 

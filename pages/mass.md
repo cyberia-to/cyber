@@ -1,7 +1,7 @@
 ---
 tags: physics
 alias: masses
-crystal-type: entity
+crystal-type: measure
 crystal-domain: physics
 ---
 # mass

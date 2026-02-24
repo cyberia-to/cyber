@@ -1,6 +1,6 @@
 ---
 tags: cybernomics
-crystal-type: entity
+crystal-type: process
 crystal-domain: economics
 ---
 simultaneous purchase and sale of an asset across different markets to profit from price differences

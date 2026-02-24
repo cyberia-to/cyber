@@ -1,6 +1,6 @@
 ---
 tags: computer science
-crystal-type: entity
+crystal-type: process
 crystal-domain: computer science
 ---
 # formal verification

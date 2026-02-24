@@ -1,7 +1,7 @@
 ---
 tags: cyber
 alias: consensus mechanism, consensus algorithm
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 process in [[vimputer]]

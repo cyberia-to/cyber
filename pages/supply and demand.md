@@ -1,6 +1,6 @@
 ---
 tags: cybernomics
-crystal-type: entity
+crystal-type: relation
 crystal-domain: economics
 ---
 fundamental market mechanism where [[price]] acts as a signal coordinating [[scarcity]] and desire

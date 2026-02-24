@@ -1,6 +1,8 @@
 ---
 tags: trident
 alias: Neural_Techniques_for_Trident
+crystal-type: article
+crystal-domain: cyber
 ---
 # Neural Network Techniques for Trident
 
