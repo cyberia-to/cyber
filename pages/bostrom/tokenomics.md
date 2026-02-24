@@ -28,10 +28,10 @@ Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$
 ### The Formula
 
 ```
-finalMint = (H / baseAmount) × K × supplyDecay
+mintOutput = (H / baseAmount) × supplyDecay × K
 ```
 
-`K` is an on-chain constant (~33,000) derived from block height. It combines two internal parameters — a cycle multiplier and a halving divisor — that grow and shrink at the same exponential rate, canceling each other out. The product is approximately flat across all block heights, so `K` has no material effect on price dynamics. The only factor that changes the cost of [[mint]] over time is `supplyDecay`.
+`baseAmount` is the reference input (1B H for [[$V]], 100M H for [[$A]]). `K` (~33,000) is a protocol constant. The only variable that changes over time is `supplyDecay`.
 
 ### Supply Decay
 
