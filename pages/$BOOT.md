@@ -47,4 +47,9 @@ All transactions on [[bostrom]] pay fees in [[$BOOT]]. Standard transaction fees
 
 [[cosmwasm]] contract execution fees follow a different path: 80% returns directly to the program creator, 20% goes to [[heroes]] and the community pool. This split is hardcoded in the dmn module and creates a native revenue model for [[autonomous progs]].
 
+Two accepted [[cip]] proposals will transition fee economics to [[$H]]:
+
+- [[burn gas in H]] — transaction fees paid in [[$H]] instead of [[$BOOT]]
+- [[fixed fee on H burn]] — 2% fee on every [[$H]] [[burn]] operation
+
 [[bostrom/tokenomics]]
