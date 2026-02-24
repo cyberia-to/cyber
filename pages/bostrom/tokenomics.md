@@ -84,11 +84,11 @@ denoms: `millivolt`, `milliampere`
 
 [[mint]] is how [[hydrogen]] becomes [[volt]] or [[amper]]. A [[neuron]] sends a quantity of [[hydrogen]] to the resources module — the [[hydrogen]] undergoes [[burn]] immediately and permanently — and [[volt]] or [[amper]] are created in return. There is no lock, no vesting cliff, no retrieval. The [[hydrogen]] is gone; the resources are yours.
 
-The amount created is determined by two forces applied sequentially: a block-based halving schedule and a continuous supply decay curve.
+The amount created is shaped by a continuous exponential supply decay curve — the more resources that have ever been minted, the less each subsequent [[mint]] produces.
 
 ### Base Rate
 
-The resources module computes a base return from the [[hydrogen]] amount and a protocol-determined `maxPeriod` that grows exponentially with block height:
+The resources module computes a base return from the [[hydrogen]] amount and a protocol-determined `maxPeriod` that grows with block height:
 
 ```
 base   = H / baseAmount
@@ -100,32 +100,14 @@ V (millivolt):    baseAmount = 1,000,000,000 H    basePeriod = 2,592,000 s
 A (milliampere):  baseAmount = 100,000,000 H      basePeriod = 2,592,000 s
 ```
 
-`maxPeriod` doubles every halving period:
-
-```
-maxPeriod = 2^(blockHeight / halvingPeriod) × halvingPeriod × 6
-```
-
 The [[amper]] base amount is 10x lower than [[volt]]. The same [[hydrogen]] at the same block height yields 10x more [[amper]] than [[volt]]. [[bandwidth]] ([[volt]]) is scarcer than computation weight ([[amper]]).
-
-### Halving
-
-Both [[volt]] and [[amper]] issuance include a discrete halving factor. Every 9,000,000 blocks the effective [[mint]] rate halves. Halvings are shifted 6,000,000 blocks from [[bostrom/genesis]] and do not begin until block 15,000,000:
-
-```
-halving = max(0.01,  0.5 ^ floor((blockHeight − 6_000_000) / 9_000_000))
-```
-
-The floor is 1%: the halving factor never drops below 0.01. At the current block height (~22.8M) the halving factor is 0.5.
-
-The halving and the `maxPeriod` doubling work in opposition: halving reduces the per-unit [[mint]] rate while `maxPeriod` increases the cycle count. The net effect is that early minters receive more per [[hydrogen]] than later minters at the same supply level.
 
 ### Supply Decay Curve
 
-The primary scarcity mechanism is a continuous exponential decay curve applied after the halving step. Every [[mint]] call computes a decay factor from the total cumulative supply of the resource (including burned units):
+Every [[mint]] call computes a decay factor from the total cumulative supply of the resource (including burned units):
 
 ```
-supply_decay = 0.5 ^ (totalSupply / halfLife)
+decay = 0.5 ^ (totalSupply / halfLife)
 
 halfLife(V) = 4,000,000,000
 halfLife(A) = 32,000,000,000
@@ -148,7 +130,7 @@ No oracle, [[governance]] vote, or external trigger required. [[scarcity]] incre
 ### Combined Mint Formula
 
 ```
-final_return = base × cycles × halving × 1000 × supply_decay
+final_return = base × cycles × 1000 × decay
 ```
 
 If `final_return < 1000` (minimum threshold in milli-units), the transaction is rejected. This prevents dust [[mint]] calls.
@@ -160,9 +142,6 @@ If `final_return < 1000` (minimum threshold in milli-units), the transaction is 
 | Base [[mint]] amount (V) | 1,000,000,000 H |
 | Base [[mint]] amount (A) | 100,000,000 H |
 | Base [[mint]] period | 2,592,000 s (30 days) |
-| Halving period (V and A) | 9,000,000 blocks |
-| Halvings begin at block | 15,000,000 |
-| Halving floor | 1% (0.01x) |
 | V supply half-life | 4,000,000,000 |
 | A supply half-life | 32,000,000,000 |
 | Minimum [[mint]] threshold | 1,000 (milli-units) |
@@ -223,9 +202,9 @@ BOOT ─────────────────────────
 
 Because [[volt]] and [[amper]] can only be created by the [[burn]] of [[hydrogen]] — which itself requires [[staking]] [[$BOOT]] — every unit of network resource has an explicit, on-chain opportunity cost denominated in committed stake. You cannot spam the [[knowledge graph]] without locking value into the network [[bostrom/infrastructure/security]].
 
-### Two independent deflationary forces
+### Continuous deflationary pressure
 
-[[volt]] and [[amper]] face halvings (discrete, block-triggered) and supply decay (continuous, usage-triggered). Neither force alone would be sufficient: halvings without decay would allow early bulk creation; decay without halvings would have no schedule anchor. Together they create a monotonically rising marginal cost for network resources without relying on hard supply caps. This is [[scarcity]] driven by [[supply and demand]].
+[[volt]] and [[amper]] issuance follows an exponential supply decay curve — every unit ever minted (including burned units) raises the cumulative supply floor and reduces the output of every subsequent [[mint]]. This creates a monotonically rising marginal cost for network resources without relying on hard supply caps. [[scarcity]] emerges from usage itself.
 
 ### Scarcity is proportional to impact
 
