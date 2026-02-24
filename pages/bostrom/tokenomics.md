@@ -21,7 +21,7 @@ The core primitive is a provable [[knowledge graph]] — a permissionless, on-ch
 | [[$BOOT]] | network [[bostrom/security]] and [[governance]] |
 | [[$H]] | liquid representation of [[staking]] |
 | [[$V]] | write access to the [[knowledge graph]] |
-| [[$A]] | [[relevance machine]] ranking influence |
+| [[$A]] | [[relevance machine]] focus influence |
 
 Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
@@ -103,7 +103,7 @@ denoms: `millivolt`, `milliampere`
 
 [[$V]] (VOLT) is [[bandwidth]]. Creating a [[cyberlink]] costs [[$V]] proportional to the current dynamic [[bandwidth price]]. A [[cyberlink]] is a permanent, content-addressed, directed edge in the on-chain [[knowledge graph]] connecting two [[ipfs]] CIDs.
 
-[[$A]] (AMPERE) is rank weight. The GPU-executed token-weighted [[pagerank]] and graph-entropy algorithms weight each [[neuron]] [[cyberlinks]] proportionally to their [[$A]] balance. More [[$A]] means greater influence over what the graph surfaces as relevant.
+[[$A]] is focus. The GPU-computed diffusion weight each [[neuron]] [[cyberlinks]] proportionally to their [[$A]] balance. More [[$A]] means greater influence over what the graph surfaces as important.
 
 ## The Mint Mechanism
 
@@ -150,7 +150,7 @@ This is a smooth curve — each additional unit of supply makes the next unit ma
 | 2.0 | 0.250 |
 | 3.0 | 0.125 |
 
-Burned [[$V]] (consumed by [[cyberlinks]]) is counted in `totalSupply` for the decay calculation. Once [[$V]] is spent, it permanently raises the cumulative supply floor — even destroyed [[$V]] contributes to increasing [[scarcity]]. [[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]].
+Burned [[$V]] (consumed by [[cyberlinks]]) is counted in `totalSupply` for the decay calculation. Once [[$V]] is spent, it permanently raises the cumulative supply floor — even destroyed [[$V]] contributes to increasing [[scarcity]]. [[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]] via diffusion.
 
 No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as usage grows.
 
@@ -207,9 +207,9 @@ BOOT ─────────────────────────
   │                            ▼                 ▼
   │                            V                 A
   │                            │                 │
-  │                            │ cyberlinks       │ graph rank weight
+  │                            │ cyberlinks       │ focus weight
   │                            ▼                 ▼
-  │                     knowledge graph    PageRank / Graph-Entropy
+  │                     knowledge graph    Diffusion
   │
   └── 80% execution fees ◄── Autonomous Programs ◄── Energy Routes (V/A)
 ```
@@ -218,7 +218,7 @@ BOOT ─────────────────────────
 2. [[delegation]] of [[$BOOT]] → receive [[$H]] 1:1 — [[$BOOT]] earns [[staking]] rewards; [[$H]] is the liquid representation
 3. [[mint]] [[$H]] → [[$H]] undergoes [[burn]] → receive [[$V]] and/or [[$A]] — quantity determined by supply decay curve (cumulative supply)
 4. spend [[$V]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
-5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[$A]] = greater influence over graph [[relevance machine]]
+5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed diffusion — more [[$A]] = greater influence over what the graph surfaces as important
 6. route [[$V]]/[[$A]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
 7. deposit [[$H]] into [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) pools → receive pool [[tokens]] → earn farming rewards across configurable block schedules
 
@@ -234,7 +234,7 @@ Because [[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]] — whic
 
 ### Scarcity is proportional to impact
 
-[[$V]] is scarcer than [[$A]] (lower base amount, smaller half-life). Writing to the graph ([[$V]]) is a final irreversible action that permanently expands the [[knowledge graph]] and costs [[consensus]] resources to process. Influencing rank ([[$A]]) is a continuous, reweightable state that costs GPU cycles. The 10x price difference and 8x half-life difference encode this distinction directly in the protocol.
+[[$V]] is scarcer than [[$A]] (lower base amount, smaller half-life). Writing to the graph ([[$V]]) is a final irreversible action that permanently expands the [[knowledge graph]] and costs [[consensus]] resources to process. Influencing focus ([[$A]]) is a continuous, reweightable state that costs GPU cycles. The 10x price difference and 8x half-life difference encode this distinction directly in the protocol.
 
 ### 80% execution fee return
 
@@ -247,7 +247,7 @@ All mechanics derived from:
 - [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, supply decay curve, max period
 - [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and [[$V]] burn parameters
 - [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[delegation]], [[burn]] on undelegation
-- [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted [[pagerank]] and graph-entropy (GPU/CUDA)
+- [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted diffusion (GPU/CUDA)
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — [[$V]]/[[$A]] energy routing to [[autonomous progs]]
 - [x/dmn](https://github.com/cyberia-to/go-cyber/tree/main/x/dmn) — 80% execution fee return mechanic
 - [x/graph](https://github.com/cyberia-to/go-cyber/tree/main/x/graph) — [[cyberlink]] creation, [[$V]] and [[$A]] tracking
