@@ -81,7 +81,7 @@ undelegate 1000 BOOT  →  burn 1000 H
 [[$H]] has two uses:
 
 1. [[mint]] input — [[burn]] to [[mint]] [[$V]] or [[$A]]
-2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] (x/liquidity module), deposited into liquidity pools to earn farming rewards, or used in any [[cosmwasm]] contract
+2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools to earn farming rewards, or used in any [[cosmwasm]] contract
 
 [[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[$H]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
 
@@ -210,7 +210,7 @@ BOOT ─────────────────────────
 4. spend [[$V]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
 5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[$A]] = greater influence over graph [[relevance machine]]
 6. route [[$V]]/[[$A]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
-7. deposit [[$H]] into x/liquidity pools → receive pool [[tokens]] → earn farming rewards across configurable block schedules
+7. deposit [[$H]] into [x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) pools → receive pool [[tokens]] → earn farming rewards across configurable block schedules
 
 ## Economic Properties
 
