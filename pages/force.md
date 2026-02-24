@@ -1,7 +1,7 @@
 ---
 tags: physics
 alias: forces
-crystal-type: entity
+crystal-type: measure
 crystal-domain: physics
 ---
 # force
