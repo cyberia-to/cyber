@@ -24,8 +24,6 @@ undelegate 1000 BOOT  →  burn 1000 H
 | Total supply | ~297T |
 | % of [[$BOOT]] staked | 62% |
 
-![where H goes](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmZyAE3dvGcvzDPVxQxDc7QxPcPJRAtJ72fPFLynRq63Se)
-
 ## Uses
 
 1. [[mint]] input — [[burn]] [[$H]] to [[mint]] [[$V]] or [[$A]]
