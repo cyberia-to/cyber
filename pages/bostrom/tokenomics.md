@@ -235,7 +235,7 @@ Because [[volt]] and [[amper]] can only be created by the [[burn]] of [[hydrogen
 All mechanics derived from:
 
 - [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, supply decay curve, max period
-- [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and recovery parameters
+- [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and [[volt]] burn parameters
 - [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[hydrogen]] [[mint]] on [[delegation]], [[burn]] on undelegation
 - [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted [[pagerank]] and graph-entropy (GPU/CUDA)
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — [[volt]]/[[amper]] energy routing to [[autonomous progs]]
