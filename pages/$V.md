@@ -26,7 +26,7 @@ denom: `millivolt`
 
 The cost to [[mint]] 1 V grows exponentially with cumulative supply. Price doubles every 4B millivolt ever minted (including burned).
 
-![mint price curve](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmSgFNtjJRgC1VRee1gW13kvQkLEi4PHN8NwRaHpbYSJSi)
+![mint price curve](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmddzXtyds43F2wMNHBVmjeB3DZtbuJrtro8p9hjdT1fgM)
 
 ## Bandwidth Pricing
 

@@ -52,9 +52,10 @@ def chart_v():
 
     ax.plot(supply / 1e9, price / 1e6, color='#FF6B35', linewidth=2.5)
     ax.plot(V_SUPPLY / 1e9, cur_price / 1e6, 'o', color='#FF6B35', markersize=10, zorder=5)
+    max_price = price[-1] / 1e6
     ax.annotate(f'now: {cur_price/1e6:.1f}M H per V\nsupply: {V_SUPPLY/1e9:.1f}B mV',
                 xy=(V_SUPPLY / 1e9, cur_price / 1e6),
-                xytext=(V_SUPPLY / 1e9 + 2, cur_price / 1e6 + 40),
+                xytext=(HALF_LIFE_V * 1.5 / 1e9, max_price * 0.55),
                 fontsize=11, color='#FF6B35',
                 arrowprops=dict(arrowstyle='->', color='#FF6B35', alpha=0.6))
 
@@ -84,9 +85,10 @@ def chart_a():
 
     ax.plot(supply / 1e9, price / 1e6, color='#4ECDC4', linewidth=2.5)
     ax.plot(A_SUPPLY / 1e9, cur_price / 1e6, 'o', color='#4ECDC4', markersize=10, zorder=5)
-    ax.annotate(f'now: {cur_price/1e6:.2f}M H per A\nsupply: {A_SUPPLY/1e9:.1f}B mA',
+    max_price = price[-1] / 1e6
+    ax.annotate(f'now: {cur_price/1e6:.0f}M H per A\nsupply: {A_SUPPLY/1e9:.1f}B mA',
                 xy=(A_SUPPLY / 1e9, cur_price / 1e6),
-                xytext=(A_SUPPLY / 1e9 + 15, cur_price / 1e6 + 4),
+                xytext=(HALF_LIFE_A * 1.5 / 1e9, max_price * 0.55),
                 fontsize=11, color='#4ECDC4',
                 arrowprops=dict(arrowstyle='->', color='#4ECDC4', alpha=0.6))
 

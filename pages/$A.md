@@ -26,7 +26,7 @@ denom: `milliampere`
 
 The cost to [[mint]] 1 A grows exponentially with cumulative supply. Price doubles every 32B milliampere ever minted. The half-life is 8x larger than [[$V]] — focus gets expensive slower than writing.
 
-![mint price curve](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmUTjUUxKAv9XE5HQh3xMxXwawFPqPh3HHkYM5vfXxKuKD)
+![mint price curve](https://jade-gentle-pony-196.mypinata.cloud/ipfs/QmaKnW4zUwbgHfiKsMZYCLT7oyXt99kijrK6jgwvnschbS)
 
 ## Properties
 
