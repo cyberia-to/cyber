@@ -103,7 +103,7 @@ The amount created is shaped by a continuous exponential supply decay curve — 
 
 ### Base Rate
 
-The resources module computes a base return from the [[$H]] amount and a cycle multiplier that grows exponentially with block height:
+[[mint]] is instant — one transaction, one block. The resources module computes the return from the [[$H]] amount and a cycle multiplier derived from chain maturity:
 
 ```
 base   = H / baseAmount
@@ -158,7 +158,7 @@ If `final_return < 1000` (minimum threshold in milli-units), the transaction is 
 |---|---|
 | Base [[mint]] amount (V) | 1,000,000,000 H |
 | Base [[mint]] amount (A) | 100,000,000 H |
-| Base [[mint]] period | 2,592,000 s (30 days) |
+| Cycle unit (`basePeriod`) | 2,592,000 s (30 days) |
 | V supply half-life | 4,000,000,000 |
 | A supply half-life | 32,000,000,000 |
 | Minimum [[mint]] threshold | 1,000 (milli-units) |
