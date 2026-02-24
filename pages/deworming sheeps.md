@@ -1,6 +1,6 @@
 ---
 tags: species
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 1. stop feeding sheeps inside their home. most of parasites come from fecal mass

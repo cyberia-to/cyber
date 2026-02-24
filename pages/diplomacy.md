@@ -1,6 +1,6 @@
 ---
 tags: governance
-crystal-type: entity
+crystal-type: process
 crystal-domain: governance
 ---
 management of relations between sovereign entities through negotiation, dialogue, and protocol

@@ -1,6 +1,6 @@
 ---
 tags: cybernomics, game theory
-crystal-type: entity
+crystal-type: process
 crystal-domain: mathematics
 ---
 mechanism for [[price]] discovery through competitive bidding among participants

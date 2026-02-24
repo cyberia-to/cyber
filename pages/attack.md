@@ -1,7 +1,7 @@
 ---
 alias: cyber/attacks
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 malicious method of behavior

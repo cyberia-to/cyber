@@ -1,6 +1,6 @@
 ---
 tags: governance, cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: governance
 ---
 distribution of authority, control, and decision-making from a central entity to a distributed network of participants

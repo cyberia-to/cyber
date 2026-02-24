@@ -1,6 +1,6 @@
 ---
 tags: cv.land
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 - # organiq: free flow local products only restaurant

@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 complex patterns arising from simple local interactions without centralized control

@@ -1,6 +1,6 @@
 ---
 tags: governance, computer science
-crystal-type: entity
+crystal-type: process
 crystal-domain: computer science
 ---
 systematic observation, collection, and analysis of information about individuals or populations

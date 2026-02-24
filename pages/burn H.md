@@ -1,6 +1,6 @@
 ---
 tags: cyberia
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyberia
 ---
 fundamentally burning [[$H]] for some usable operations

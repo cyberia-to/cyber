@@ -1,6 +1,6 @@
 ---
 tags: biology
-crystal-type: entity
+crystal-type: process
 crystal-domain: biology
 ---
 # meiosis

@@ -1,6 +1,6 @@
 ---
 tags: bostrom
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 [[double sign protection]]

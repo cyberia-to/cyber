@@ -1,7 +1,7 @@
 ---
 icon: 🔍
 tags: cyber-
-crystal-type: entity
+crystal-type: process
 crystal-domain: cyber
 ---
 [[cyber]] protocol allow to search for [[particles]] in [[cybergraph]]
