@@ -1,7 +1,7 @@
 ---
 alias: enhanced effect
 tags: cyber
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyber
 ---
 illustrates the emergent properties that arise when parts work together

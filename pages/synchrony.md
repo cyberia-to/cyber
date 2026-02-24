@@ -1,7 +1,7 @@
 ---
 alias: coordinated timing
 tags: cyber
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyber
 ---
 underscores the importance of timing in the unfolding of events

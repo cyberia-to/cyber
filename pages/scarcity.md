@@ -1,6 +1,6 @@
 ---
 tags: cybernomics
-crystal-type: entity
+crystal-type: property
 crystal-domain: economics
 ---
 fundamental economic condition: limited resources confronting unlimited wants

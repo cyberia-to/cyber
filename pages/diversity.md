@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyber
 ---
 diversity in cognitive style is the strongest predictor of [[collective intelligence]]

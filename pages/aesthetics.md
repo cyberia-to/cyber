@@ -1,6 +1,6 @@
 ---
 tags: culture, philosophy
-crystal-type: entity
+crystal-type: property
 crystal-domain: culture
 ---
 branch of [[philosophy]] studying beauty, [[art]], taste, and sensory experience

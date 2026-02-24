@@ -1,6 +1,6 @@
 ---
 tags: cyber
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyber
 ---
 probabilistic models help manage uncertainty

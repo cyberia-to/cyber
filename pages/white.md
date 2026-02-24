@@ -1,5 +1,5 @@
 ---
 tags: cv.land
-crystal-type: entity
+crystal-type: property
 crystal-domain: cyberia
 ---
