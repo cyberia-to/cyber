@@ -1,5 +1,5 @@
 ---
-tags: article, bip
+tags: article, cip
 crystal-type: pattern
 crystal-domain: mathematics
 status: draft

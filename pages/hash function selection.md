@@ -1,5 +1,5 @@
 ---
-tags: cyber, bip, article
+tags: cyber, cip, article
 crystal-type: process
 crystal-domain: cyber
 status: draft

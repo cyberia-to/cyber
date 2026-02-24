@@ -1,5 +1,5 @@
 ---
-tags: article, bip
+tags: article, cip
 crystal-type: entity
 crystal-domain: economics
 status: draft
