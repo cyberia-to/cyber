@@ -3,7 +3,7 @@ icon: 🍄
 tags: cyber, bip
 crystal-type: entity
 crystal-domain: cyber
-status: tested
+status: draft
 ---
 experimental [[learning incentives]] layer for [[cyber]] using [[cosmwasm]] [[progs]]
 
