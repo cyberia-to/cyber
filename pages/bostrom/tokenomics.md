@@ -88,7 +88,7 @@ The amount created is shaped by a continuous exponential supply decay curve — 
 
 ### Base Rate
 
-The resources module computes a base return from the [[hydrogen]] amount and a protocol-determined `maxPeriod` that grows with block height:
+The resources module computes a base return from the [[hydrogen]] amount and `maxPeriod` — a protocol-determined cycle multiplier that grows exponentially with block height, increasing the base return over time:
 
 ```
 base   = H / baseAmount
@@ -190,7 +190,7 @@ BOOT ─────────────────────────
 
 1. acquire [[$BOOT]] — via secondary market, [[staking]] rewards, or airdrop
 2. [[delegation]] of [[$BOOT]] → receive [[hydrogen]] 1:1 — [[$BOOT]] earns [[staking]] rewards; [[hydrogen]] is the liquid representation
-3. [[mint]] [[hydrogen]] → [[hydrogen]] undergoes [[burn]] → receive [[volt]] and/or [[amper]] — quantity determined by halving factor (block height) x supply decay factor (cumulative supply)
+3. [[mint]] [[hydrogen]] → [[hydrogen]] undergoes [[burn]] → receive [[volt]] and/or [[amper]] — quantity determined by supply decay curve (cumulative supply)
 4. spend [[volt]] to write [[cyberlinks]] — permanent, content-addressed entries in the [[knowledge graph]]; price adjusts dynamically with block utilisation
 5. hold [[amper]] to weight [[cyberlinks]] in GPU-computed [[pagerank]] — more [[amper]] = greater influence over graph [[relevance machine]]
 6. route [[volt]]/[[amper]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest back into step 1
@@ -218,7 +218,7 @@ Because [[volt]] and [[amper]] can only be created by the [[burn]] of [[hydrogen
 
 All mechanics derived from:
 
-- [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, halving, exponential decay, max period
+- [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, supply decay curve, max period
 - [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and recovery parameters
 - [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[hydrogen]] [[mint]] on [[delegation]], [[burn]] on undelegation
 - [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted [[pagerank]] and graph-entropy (GPU/CUDA)
