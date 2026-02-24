@@ -67,10 +67,7 @@ No oracle, [[governance]] vote, or external trigger required. [[scarcity]] incre
 | Parameter | [[$V]] | [[$A]] |
 |---|---|---|
 | baseAmount | 1,000,000,000 H | 100,000,000 H |
-| basePeriod | 2,592,000 s (30 days) | 2,592,000 s (30 days) |
-| halvingPeriod | 9,000,000 blocks | 9,000,000 blocks |
 | supply half-life | 4,000,000,000 | 32,000,000,000 |
-| halving floor | 0.01 | 0.01 |
 | minimum [[mint]] threshold | 1,000 milli-units | 1,000 milli-units |
 
 ## Bandwidth Pricing
@@ -98,7 +95,14 @@ Two accepted [[cip]] proposals will transition gas fee economics to [[$H]]:
 - [[burn gas in H]] — transaction fees paid in [[$H]] instead of [[$BOOT]], creating direct demand for [[$H]] and linking network usage to staked value
 - [[fixed fee on H burn]] — 2% fee on every [[$H]] [[burn]] operation, extracting value from [[staking]] loan usage
 
-Draft [[cip]]: [[collect fee on moving A and V]] — 1% fee on [[$A]] and [[$V]] transfers directed into reward pools for [[staking on particles]] and [[staking on cyberlinks]], forcing speculation to drive profitability of [[knowledge graph]] participants.
+[[collect fee on moving A and V]] — 1% fee on [[$A]] and [[$V]] transfers directed into reward pools for [[staking on particles]] and [[staking on cyberlinks]]. Speculation drives profitability of [[knowledge graph]] participants.
+
+[[x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) charges 0.3% swap fee (retained in pool reserves) and a 40M [[$BOOT]] pool creation fee directed to the community pool.
+
+Draft [[bip]] proposals extend burn mechanics further:
+
+- [[eternal cyberlinks]] — [[burn]] [[$V]] to permanently boost the weight of a [[cyberlink]]
+- [[eternal particles]] — [[burn]] [[$A]] to permanently boost the weight of a [[particle]]
 
 ## The Learning Loop
 
