@@ -8,6 +8,8 @@ crystal-domain: cyber
 
 bootloader improvement proposal: practical consensus-wide changes for [[bostrom]]
 
+fees, staking mechanics, token operations, module upgrades, dex migrations. architecture and theory go to [[cip]]
+
 ## states
 
 - draft: open for discussion

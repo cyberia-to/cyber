@@ -8,7 +8,7 @@ crystal-domain: cyber
 
 cyber improvement proposal: design documents for the [[cyber]] protocol
 
-CIPs define architecture, theory, and formal specifications. practical bootloader changes go to [[bip]]
+[[CORE]] spec, [[focus flow whitepaper]], [[tri-kernel]], [[ranking system]], [[economic model]], [[theoretical foundations]]. practical bootloader changes go to [[bip]]
 
 ## design documents
 
