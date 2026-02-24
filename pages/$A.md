@@ -21,7 +21,6 @@ denom: `milliampere`
 | Circulating supply | ~13.9B milliampere |
 | baseAmount | 100,000,000 H |
 | Supply half-life | 32,000,000,000 |
-| Current mint price | ~135M H per A |
 
 ## Price curve
 

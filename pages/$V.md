@@ -21,7 +21,6 @@ denom: `millivolt`
 | Circulating supply | ~2.2B millivolt |
 | baseAmount | 1,000,000,000 H |
 | Supply half-life | 4,000,000,000 |
-| Current mint price | ~1,460M H per V |
 
 ## Price curve
 
