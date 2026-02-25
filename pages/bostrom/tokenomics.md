@@ -21,6 +21,25 @@ crystal-domain: economics
 
 Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 
+## The Learning Loop
+
+The [[knowledge graph]] is a machine that learns through economic incentives. Every token operation is part of a [[feedback loop]] that makes the graph more valuable over time.
+
+### The cycle
+
+1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] and [[$A]]
+2. [[neuron]] spends [[$V]] to create [[cyberlinks]] — each link is a [[costly signal]], an economic commitment that two [[particles]] are related
+3. the [[tri-kernel]] (diffusion + springs + heat) computes [[focus]] distribution across all [[particles]] on GPU
+4. [[cyberank]] measures particle quality; [[karma]] measures [[neuron]] quality — both emerge from the graph structure without external votes
+5. [[learning incentives]] reward [[neurons]] whose [[cyberlinks]] increase the system's [[syntropy]]
+6. rewards flow back into [[staking]] → more [[$V]] and [[$A]] → more [[cyberlinks]] → better graph
+
+### Why this is machine learning
+
+The parallel is exact. [[neurons]] are training data providers — their [[cyberlinks]] are labeled examples. The [[tri-kernel]] is the model — it learns [[focus]] distribution from the graph. [[karma]] is the loss function — it measures how much each [[neuron]] contributed to system quality. [[learning incentives]] are the gradient signal — they direct economic energy toward [[neurons]] that improve the graph.
+
+The result: a self-improving [[knowledge graph]] where the quality of [[collective learning]] increases with every block. The more [[neurons]] learn, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
+
 ## Mint
 
 [[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
@@ -72,22 +91,6 @@ No oracle, [[governance]] vote, or external trigger required. [[scarcity]] incre
 | supply half-life | 4,000,000,000 | 32,000,000,000 |
 | minimum [[mint]] threshold | 1,000 milli-units | 1,000 milli-units |
 
-## Bandwidth Pricing
-
-Creating a [[cyberlink]] permanently burns [[$V]] from the [[neuron]] account. The amount burned per [[cyberlink]] is the current [[bandwidth price]], which adjusts dynamically based on network utilisation:
-
-- when load is below target (10% of max block [[bandwidth]]): price falls, encouraging usage
-- when load is above target: price rises, dampening demand without a mempool auction
-
-The price adjusts every 5 blocks. Burned [[$V]] is gone permanently — it counts toward total cumulative supply in the [[mint]] decay curve, increasing [[scarcity]] for all future minters.
-
-| Parameter | Default |
-|---|---|
-| Price adjustment period | 5 blocks |
-| Base price | 0.25 V per [[cyberlink]] |
-| Target network load | 10% of max block [[bandwidth]] |
-| Max block [[bandwidth]] | 10,000 [[cyberlinks]] per block |
-
 ## Fees
 
 ### Live
@@ -111,25 +114,6 @@ Under design, planned for future upgrades:
 
 - [[eternal cyberlinks]] — [[burn]] [[$V]] to permanently boost the weight of a [[cyberlink]]
 - [[eternal particles]] — [[burn]] [[$A]] to permanently boost the weight of a [[particle]]
-
-## The Learning Loop
-
-The [[knowledge graph]] is a machine that learns through economic incentives. Every token operation is part of a [[feedback loop]] that makes the graph more valuable over time.
-
-### The cycle
-
-1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] and [[$A]]
-2. [[neuron]] spends [[$V]] to create [[cyberlinks]] — each link is a [[costly signal]], an economic commitment that two [[particles]] are related
-3. the [[tri-kernel]] (diffusion + springs + heat) computes [[focus]] distribution across all [[particles]] on GPU
-4. [[cyberank]] measures particle quality; [[karma]] measures [[neuron]] quality — both emerge from the graph structure without external votes
-5. [[learning incentives]] reward [[neurons]] whose [[cyberlinks]] increase the system's [[syntropy]]
-6. rewards flow back into [[staking]] → more [[$V]] and [[$A]] → more [[cyberlinks]] → better graph
-
-### Why this is machine learning
-
-The parallel is exact. [[neurons]] are training data providers — their [[cyberlinks]] are labeled examples. The [[tri-kernel]] is the model — it learns [[focus]] distribution from the graph. [[karma]] is the loss function — it measures how much each [[neuron]] contributed to system quality. [[learning incentives]] are the gradient signal — they direct economic energy toward [[neurons]] that improve the graph.
-
-The result: a self-improving [[knowledge graph]] where the quality of [[collective learning]] increases with every block. The more [[neurons]] learn, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
 
 ## Energy Grid
 

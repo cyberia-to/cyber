@@ -6,23 +6,29 @@ crystal-domain: economics
 ---
 [[token]] of [[fuel]] in [[bostrom]]
 
-denom: `hydrogen` (referred to as `scyb` throughout the codebase — the original name, short for staked CYB)
+denom: `hydrogen` (codebase: `scyb`)
 
-[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. While [[$BOOT]] is the base [[bostrom/security]] layer, [[$H]] is what [[neurons]] actually hold, display, and transact with. The network's total value is expressed as the sigma of all [[$H]] in circulation, making [[$H]] the canonical unit of account for the ecosystem.
+## Role
 
-[[$H]] is issued solely through [[$BOOT]] [[delegation]]; destroyed solely through [[$BOOT]] undelegation.
+[[$H]] is the liquid [[staking]] derivative of [[$BOOT]] and the primary [[token]] of the [[bostrom]] network. [[neurons]] hold, display, and transact with [[$H]]. The network's total value is expressed as the sigma of all [[$H]] in circulation.
+
+## Issuance
 
 ```
 delegate 1000 BOOT  →  mint 1000 H
 undelegate 1000 BOOT  →  burn 1000 H
 ```
 
-[[$H]] has two uses:
+| | |
+|---|---|
+| Total supply | ~297T |
+| % of [[$BOOT]] staked | 62% |
 
-1. [[mint]] input — [[burn]] to [[mint]] [[$V]] or [[$A]]
-2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools to earn farming rewards, or used in any [[cosmwasm]] contract
+## Uses
 
-[[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards for the delegator. [[$H]] is the spendable, transferable proof that the corresponding [[$BOOT]] is at stake.
+1. [[mint]] input — [[burn]] [[$H]] to [[mint]] [[$V]] or [[$A]]
+2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools, or used in any [[cosmwasm]] contract
 
+[[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards. [[$H]] is the spendable proof that [[$BOOT]] is at stake.
 
 [[bostrom/tokenomics]]
