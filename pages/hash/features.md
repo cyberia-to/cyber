@@ -2,9 +2,11 @@
 tags: cyber, article, compound
 ---
 
-# Complete Feature Taxonomy of Hash Functions
+# Complete Feature Taxonomy of [[hash]] Functions
 
-A compact reference to every capability a hash function can provide.
+A compact reference to every capability a [[hash]] function can provide.
+
+See also: [[hash function selection]], [[hashing]], [[hashing and confidentiality]]
 
 ## 1. Classical Security Properties
 
@@ -17,6 +19,8 @@ A compact reference to every capability a hash function can provide.
 | Length extension resistance | Given H(m), computing H(m‖suffix) requires knowing m |
 | Near-collision resistance | Finding inputs whose hashes differ in few bits requires brute force |
 | Multi-target resistance | Security holds constant regardless of number of targets |
+
+These properties form the foundation of [[cryptography]]. See [[cryptographic proofs]] for how they compose into larger arguments.
 
 ## 2. Performance Properties
 
@@ -33,7 +37,7 @@ A compact reference to every capability a hash function can provide.
 
 | Property | Definition | Who has it |
 |---|---|---|
-| Tree hashing | Built-in Merkle tree mode for parallel hashing of large inputs | BLAKE3, KangarooTwelve, ParallelHash |
+| Tree hashing | Built-in Merkle tree mode for parallel [[hashing]] of large inputs | BLAKE3, KangarooTwelve, ParallelHash |
 | Incremental hashing | Update hash when input changes without full rehash | Homomorphic hashes (LtHash, AdHash) |
 | Streaming | Process input in chunks without buffering entire input | All sponge/Merkle-Damgård constructions |
 | Verified streaming | Verify data integrity chunk-by-chunk as it arrives (Bao) | BLAKE3 (native via Bao), must be built for others |
@@ -42,11 +46,13 @@ A compact reference to every capability a hash function can provide.
 | Sponge construction | Absorb-then-squeeze paradigm, yields both hash and XOF | SHA-3/Keccak, Poseidon, Rescue, Tip5 |
 | Compression function | Fixed-input-length primitive, used inside Merkle-Damgård or standalone | Poseidon2, Anemoi/Jive |
 | Domain separation | Provably different outputs for different use cases from same primitive | BLAKE3 (key derivation, MAC, hash all from same core) |
-| Duplex construction | Interleave absorb/squeeze for online authenticated encryption | Keccak duplex, Xoodyak |
+| Duplex construction | Interleave absorb/squeeze for online authenticated [[encryption]] | Keccak duplex, Xoodyak |
+
+See [[hash path accumulator]] for how these compositional properties enable accumulator constructions.
 
 ## 4. Algebraic / Proof-System Properties
 
-The new frontier — properties that matter for ZK proofs, MPC, and FHE.
+The new frontier — properties that matter for [[zero knowledge proofs]], MPC, and FHE.
 
 | Property | Definition | Who has it |
 |---|---|---|
@@ -55,11 +61,13 @@ The new frontier — properties that matter for ZK proofs, MPC, and FHE.
 | Plonk-efficient | Few constraints in Plonkish arithmetization | Poseidon2, Anemoi (21-35% better than Poseidon) |
 | AIR/STARK-efficient | Low trace width and degree in Algebraic Intermediate Representation | Tip5, Monolith, RPO (Rescue Prime Optimized) |
 | Lookup-compatible | Uses lookup tables for nonlinearity (requires lookup arguments in prover) | Tip5, Monolith, Reinforced Concrete |
-| Field-native | Operates natively over a specific prime field | All AO hashes; field choice matters (Goldilocks, BN254, BLS12-381) |
+| Field-native | Operates natively over a specific prime field | All AO hashes; field choice matters ([[Goldilocks field]], BN254, BLS12-381) |
 | Low multiplicative depth | Few sequential multiplications (critical for MPC and FHE) | Poseidon2, MiMC |
 | MPC-friendly | Efficient in multi-party computation protocols | Poseidon2, LowMC, PASTA |
-| FHE-friendly | Efficient under fully homomorphic encryption | LowMC, PRINCE, SIMON (low AND-depth) |
-| Recursive-proof friendly | Cheap enough to verify inside itself for proof composition | Tip5 (designed specifically for this), Poseidon2 |
+| FHE-friendly | Efficient under [[Goldilocks homomorphic encryption]] and other FHE schemes | LowMC, PRINCE, SIMON (low AND-depth) |
+| Recursive-proof friendly | Cheap enough to verify inside itself for [[proof-carrying data]] composition | Tip5 (designed specifically for this), Poseidon2 |
+
+See [[cyber/stark]] for STARK verification in the cyber protocol. [[incrementally verifiable computation]] relies on recursive-proof friendly hashes.
 
 ### S-box Design Strategies (determines security/efficiency tradeoff)
 
@@ -86,11 +94,13 @@ The new frontier — properties that matter for ZK proofs, MPC, and FHE.
 |---|---|---|
 | Deterministic identity | Same bytes → same hash, always | All raw-byte hashes (distinct from CIDv0/UnixFS) |
 | Deduplication | Identify identical content by hash equality | Universal property |
-| Self-certifying names | Hash IS the unforgeable name of content | IPFS CIDs, BLAKE3 content addresses |
+| Self-certifying names | Hash IS the unforgeable name of content | [[ipfs]] CIDs, BLAKE3 content addresses |
 | Multihash/multicodec | Self-describing hash format (includes algorithm ID + length) | CIDv1 ecosystem, extensible |
 | Content integrity | Verify content matches its hash | Universal |
 | Content availability proofs | Prove you store content without revealing it | Algebraic hashes + STARK (Filecoin) |
 | Provable replication | Prove unique copy exists on specific storage | Filecoin PoRep (slow encoding via VDF-like construction) |
+
+In [[cyber]], every [[particle]] is content-addressed. See [[hash function selection]] for how the protocol chose its hash. [[data availability strategy]] covers availability in the cyber context.
 
 ## 6. Homomorphic Properties
 
@@ -102,7 +112,7 @@ The new frontier — properties that matter for ZK proofs, MPC, and FHE.
 | Elliptic-curve-based | Security from ECDLP, compact digests | ECMH, MuHash |
 | Multiset hashing | Order-independent hash of collections | All homomorphic hashes above |
 
-Use case: database integrity where elements are frequently added/removed without rehashing everything.
+Use case: [[databases]] integrity where elements are frequently added/removed without rehashing everything.
 
 ## 7. Similarity / Fuzzy Hashing Properties
 
@@ -114,7 +124,7 @@ Use case: database integrity where elements are frequently added/removed without
 | Fuzzy hashing | Similar files → similar hashes (edit-distance aware) | ssdeep, TLSH, sdhash |
 | Minhash | Estimate Jaccard similarity between sets | Used in deduplication, plagiarism detection |
 
-Critical difference: cryptographic hashes maximize avalanche (1-bit change → 50% bits flip). Similarity hashes minimize it for similar inputs.
+Critical difference: [[cryptography]] hashes maximize avalanche (1-[[bit]] change → 50% bits flip). Similarity hashes minimize it for similar inputs.
 
 ## 8. Time-Based Properties
 
@@ -126,19 +136,21 @@ Critical difference: cryptographic hashes maximize avalanche (1-bit change → 5
 | Iterated hashing | H(H(H(...H(x)...))) as proof of elapsed time | SHA-256 chains (Bitcoin-adjacent) |
 | Slow encoding | Transform data such that encoding takes time T, decoding is fast | Filecoin PoRep |
 
+VDFs and [[proof of work]] both rely on sequential computation. See [[consensus algorithms]] for how these properties compose into consensus mechanisms.
+
 ## 9. Quantum Resistance Properties
 
 | Property | Status |
 |---|---|
-| Grover's algorithm | Halves effective security bits: 256-bit hash → 128-bit quantum security |
-| Hash-based signatures | Post-quantum secure (SPHINCS+, XMSS, LMS) — rely only on hash preimage resistance |
+| Grover's algorithm | Halves effective security bits: 256-[[bit]] hash → 128-bit quantum security |
+| Hash-based [[signature]] | Post-quantum secure (SPHINCS+, XMSS, LMS) — rely only on hash preimage resistance |
 | Lattice-based hash | Post-quantum from SIS/LWE hardness assumptions |
 | VDF quantum vulnerability | RSA/DLP-based VDFs broken by Shor's algorithm; hash-based VDFs survive |
 | AO hash quantum status | Algebraic hashes over large fields: Grover applies to preimage, algebraic structure may introduce additional quantum attack surfaces (under-studied) |
 
 ## 10. Protocol-Level Properties
 
-Properties that emerge when hashes are composed into larger constructions:
+Properties that emerge when hashes are composed into larger [[data structures]]:
 
 | Property | Definition | Relevant hash feature |
 |---|---|---|
@@ -147,11 +159,13 @@ Properties that emerge when hashes are composed into larger constructions:
 | Sparse Merkle tree | Prove membership AND non-membership | Any hash; expensive in ZK without algebraic hash |
 | Vector commitment | Commit to vector, open at any position | Poseidon-based, or polynomial commitments |
 | Accumulator | Compact representation of set with membership proofs | RSA accumulator, hash-based (Merkle) |
-| Hash chain | Sequential composition for authentication/signatures | MPC-friendly chains need AO hashes |
+| Hash chain | Sequential composition for authentication/[[signature]] | MPC-friendly chains need AO hashes |
 | Key derivation (KDF) | Derive keys from shared secret | HKDF (HMAC-based), Argon2 |
 | Password hashing | Intentionally slow, memory-hard | Argon2, bcrypt, scrypt |
 | Commitment scheme | H(m‖r) commits to m without revealing it | Any collision-resistant hash |
 | Random oracle | Idealized hash modeling for proof techniques | Instantiated by SHA-256, BLAKE, etc. |
+
+See [[authenticated_graphs]] for how hash-based structures enable verifiable graph [[data structures]]. The [[cybergraph]] uses these properties to maintain provable state.
 
 ## 11. The Landscape: Every Named Hash Function Family
 
@@ -182,6 +196,8 @@ Argon2, bcrypt, scrypt, PBKDF2, HKDF, Balloon
 ### VDF-Adjacent
 Iterated SHA-256, Sloth, MinRoot, MiMC-based VDFs
 
+See [[universal hash]] for a democratic [[proof of work]] [[algorithms]] approach.
+
 ## 12. Decision Matrix: Which Features Matter For What
 
 | Building... | Must-have features | Nice-to-have | Irrelevant |
@@ -189,12 +205,12 @@ Iterated SHA-256, Sloth, MinRoot, MiMC-based VDFs
 | Content-addressed storage | Deterministic identity, fast throughput, verified streaming | Slice proofs, tree hashing | Algebraic, homomorphic |
 | ZK proof system | Arithmetization-friendly, field-native, low constraint count | Lookup compatibility, recursive-proof friendly | Throughput, verified streaming |
 | Provable storage network | Algebraic + content addressing, Merkle proofs in-circuit | Slow encoding (PoRep), availability proofs | Similarity, password hardness |
-| Blockchain consensus | Collision resistance, VDF/PoSW capability | Post-quantum | Algebraic, FHE |
+| Blockchain [[consensus]] | Collision resistance, VDF/PoSW capability | Post-quantum | Algebraic, FHE |
 | MPC protocol | Low multiplicative depth, MPC-friendly | Post-quantum | Throughput, content addressing |
 | Encrypted computation (FHE) | Low AND-depth, FHE-friendly | — | Most other properties |
-| Database integrity | Incremental/homomorphic, fast updates | Post-quantum (HexaMorphHash) | Algebraic, ZK |
+| [[databases]] integrity | Incremental/homomorphic, fast updates | Post-quantum (HexaMorphHash) | Algebraic, ZK |
 | Document deduplication | Fast throughput, similarity hashing | Fuzzy hashing | Everything else |
-| Knowledge graph with proofs | ALL OF: deterministic identity + algebraic + tree hashing + in-circuit Merkle + content addressing | Homomorphic, recursive proofs, VDF | Similarity, password |
+| [[knowledge graph]] with proofs | ALL OF: deterministic identity + algebraic + tree hashing + in-circuit Merkle + content addressing | Homomorphic, recursive proofs, VDF | Similarity, password |
 
 ## 13. The Impossibility Constraints
 
@@ -206,8 +222,8 @@ Every hash function optimizes for a subset of axes. The fundamental tensions:
 
 3. Cryptanalysis Maturity vs. Innovation — Newer designs (Tip5, Monolith) may have better theoretical properties but less real-world cryptanalysis. Older designs (SHA-256, even Poseidon) have more known attacks — which paradoxically means better-understood security margins.
 
-4. Field Choice Locks Ecosystem — An algebraic hash over Goldilocks field is cheap in Plonky2/Miden/Triton VM but expensive in BN254-based SNARKs (Groth16/Ethereum). And vice versa. The field IS the ecosystem choice.
+4. Field Choice Locks Ecosystem — An algebraic hash over [[Goldilocks field]] is cheap in Plonky2/Miden/Triton VM but expensive in BN254-based SNARKs (Groth16/Ethereum). And vice versa. The field IS the ecosystem choice. See [[Goldilocks field processor]] for dedicated hardware.
 
-5. Similarity vs. Security — Locality-sensitive hashing requires collisions by design. Cryptographic hashing requires collision resistance. These are mathematically opposed goals.
+5. Similarity vs. Security — Locality-sensitive [[hashing]] requires collisions by design. Cryptographic [[hashing]] requires collision resistance. These are mathematically opposed goals.
 
-Every hash function is a point in this multidimensional feature space. The art is knowing which dimensions matter for your system.
+Every hash function is a point in this multidimensional feature space. The art is knowing which dimensions matter for your system. For how [[cyber]] navigates this space, see [[data structure for superintelligence]].
