@@ -15,7 +15,7 @@ crystal-domain: economics
 | Token | Role | Issuance |
 |---|---|---|
 | [[$BOOT]] | [[bostrom/security]] and [[governance]] | [[inflation]] (~1.09% annually) |
-| [[$H]] | liquid representation of [[staking]] | 1:1 on [[$BOOT]] [[delegation]] |
+| [[$H]] | liquid representation of [[staking]] | 1:1 on [[$BOOT]] [[staking]] |
 | [[$V]] | write access to the [[knowledge graph]] | [[burn]] of [[$H]] via [[mint]] |
 | [[$A]] | [[relevance machine]] focus influence | [[burn]] of [[$H]] via [[mint]] |
 
@@ -138,7 +138,7 @@ BOOT ─────────────────────────
 ```
 
 1. acquire [[$BOOT]] — via secondary market, [[staking]] rewards, or airdrop
-2. [[delegation]] of [[$BOOT]] → receive [[$H]] 1:1
+2. [[staking]] of [[$BOOT]] → receive [[$H]] 1:1
 3. [[mint]]: [[burn]] [[$H]] → receive [[$V]] and/or [[$A]] — quantity determined by supply decay curve
 4. spend [[$V]] to write [[cyberlinks]] — price adjusts dynamically with block utilisation
 5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[diffusion]]
@@ -171,7 +171,7 @@ The 2% [[burn fee on moving A and V]] ensures that every speculative transfer of
 
 - [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, halving, supply decay curve, maxPeriod
 - [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and [[$V]] burn parameters
-- [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[delegation]], [[burn]] on undelegation
+- [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[staking]], [[burn]] on undelegation
 - [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted diffusion (GPU/CUDA)
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — [[$V]]/[[$A]] energy routing to [[autonomous progs]]
 - [x/dmn](https://github.com/cyberia-to/go-cyber/tree/main/x/dmn) — 80% execution fee return mechanic
