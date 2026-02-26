@@ -23,22 +23,16 @@ Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$
 
 ## The Learning Loop
 
-The [[knowledge graph]] is a machine that learns through economic incentives. Every token operation is part of a [[feedback loop]] that makes the graph more valuable over time.
+The [[knowledge graph]] learns through economic commitments. Every token operation is part of a cycle that makes the graph more valuable over time.
 
 ### The cycle
 
-1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] and [[$A]]
+1. [[neuron]] stakes [[$BOOT]] → receives [[$H]] → burns [[$H]] → receives [[$V]] or [[$A]]
 2. [[neuron]] spends [[$V]] to create [[cyberlinks]] — each link is a [[costly signal]], an economic commitment that two [[particles]] are related
-3. the [[tri-kernel]] (diffusion + springs + heat) computes [[focus]] distribution across all [[particles]] on GPU
-4. [[cyberank]] measures particle quality; [[karma]] measures [[neuron]] quality — both emerge from the graph structure without external votes
-5. [[learning incentives]] reward [[neurons]] whose [[cyberlinks]] increase the system's [[syntropy]]
-6. rewards flow back into [[staking]] → more [[$V]] and [[$A]] → more [[cyberlinks]] → better graph
+3. [[diffusion]] computes [[focus]] distribution across all [[particles]] on GPU, weighted by [[$A]] balances
+4. [[cyberank]] measures particle quality — emerges from the graph structure without external votes
 
-### Why this is machine learning
-
-The parallel is exact. [[neurons]] are training data providers — their [[cyberlinks]] are labeled examples. The [[tri-kernel]] is the model — it learns [[focus]] distribution from the graph. [[karma]] is the loss function — it measures how much each [[neuron]] contributed to system quality. [[learning incentives]] are the gradient signal — they direct economic energy toward [[neurons]] that improve the graph.
-
-The result: a self-improving [[knowledge graph]] where the quality of [[collective learning]] increases with every block. The more [[neurons]] learn, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
+The result: a [[knowledge graph]] where the quality of search improves with every [[cyberlink]]. The more [[neurons]] link, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
 
 ## Mint
 
@@ -134,12 +128,11 @@ BOOT ─────────────────────────
   │                            V                 A
   │                            │                 │
   │                  cyberlinks │                 │ focus weight
+  │                  (burn V)   │                 │
   │                            ▼                 ▼
-  │                     knowledge graph ◄── Diffusion
+  │                     knowledge graph ◄── Diffusion (GPU)
   │                            │
-  │                      karma + syntropy
-  │                            │
-  │                   learning incentives
+  │                        cyberank
   │                            │
   └── 80% exec fees ◄── Autonomous Programs ◄── Energy Routes (V/A)
 ```
@@ -148,8 +141,8 @@ BOOT ─────────────────────────
 2. [[delegation]] of [[$BOOT]] → receive [[$H]] 1:1
 3. [[mint]]: [[burn]] [[$H]] → receive [[$V]] and/or [[$A]] — quantity determined by supply decay curve
 4. spend [[$V]] to write [[cyberlinks]] — price adjusts dynamically with block utilisation
-5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed diffusion
-6. [[tri-kernel]] computes [[focus]] → [[cyberank]] and [[karma]] emerge → [[learning incentives]] reward quality
+5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[diffusion]]
+6. [[diffusion]] computes [[focus]] → [[cyberank]] emerges from graph structure
 7. route [[$V]]/[[$A]] via the grid to power [[autonomous progs]] → programs earn 80% of [[$BOOT]] execution fees → reinvest into step 1
 
 ## Why Tokens Grow
@@ -160,7 +153,7 @@ Every [[mint]] makes the next [[mint]] more expensive. Every [[cyberlink]] burns
 
 ### The graph gets more valuable
 
-As [[neurons]] create [[cyberlinks]], the [[knowledge graph]] accumulates [[syntropy]] — structured, provable knowledge. A more valuable graph attracts more [[neurons]], who create more [[cyberlinks]], which demands more [[$V]] and [[$A]]. Demand grows while supply gets scarcer.
+As [[neurons]] create [[cyberlinks]], the [[knowledge graph]] accumulates structured, provable knowledge. A more valuable graph attracts more [[neurons]], who create more [[cyberlinks]], which demands more [[$V]] and [[$A]]. Demand grows while supply gets scarcer.
 
 ### Writing is scarcer than reading
 
