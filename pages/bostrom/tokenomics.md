@@ -36,7 +36,7 @@ The result: a [[knowledge graph]] where the quality of search improves with ever
 
 ## Energy mint
 
-[[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
+A [[neuron]] burns [[$H]] through [[mint]] to create [[$V]] or [[$A]]. The [[$H]] is sent to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module, burned immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
 
 ### The Price
 
