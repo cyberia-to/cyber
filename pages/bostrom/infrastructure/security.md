@@ -1,6 +1,6 @@
 ---
 icon: 🔒
-alias: bostrom security
+alias: bostrom security, bostrom/security
 tags: bostrom, infrastructure, security
 crystal-type: entity
 crystal-domain: cyber
