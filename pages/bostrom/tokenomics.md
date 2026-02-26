@@ -34,7 +34,7 @@ The [[knowledge graph]] learns through economic commitments. Every token operati
 
 The result: a [[knowledge graph]] where the quality of search improves with every [[cyberlink]]. The more [[neurons]] link, the better [[cyberank]] gets, the more valuable [[$V]] and [[$A]] become.
 
-## Mint
+## Energy mint
 
 [[mint]] is how [[$H]] becomes [[$V]] or [[$A]]. A [[neuron]] sends [[$H]] to the [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) module in a single transaction. The [[$H]] undergoes [[burn]] immediately and permanently. [[$V]] or [[$A]] are created in return and delivered to the [[neuron]] in the same block.
 
