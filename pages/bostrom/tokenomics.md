@@ -15,7 +15,7 @@ crystal-domain: economics
 | Token | Role | Issuance |
 |---|---|---|
 | [[$BOOT]] | [[bostrom/security]] and [[governance]] | [[inflation]] (~1.09% annually) |
-| [[$H]] | liquid representation of [[staking]] | 1:1 on [[$BOOT]] [[staking]] |
+| [[$H]] | liquid representation of [[bostrom/staking]] | 1:1 on [[$BOOT]] [[bostrom/staking]] |
 | [[$V]] | write access to the [[knowledge graph]] | [[burn]] of [[$H]] via [[mint]] |
 | [[$A]] | [[relevance machine]] focus influence | [[burn]] of [[$H]] via [[mint]] |
 
@@ -113,7 +113,7 @@ Under design, planned for future upgrades:
 
 The grid module allows [[$V]] and [[$A]] to be routed to [[cosmwasm]] programs via energy routes. A [[neuron]] or contract can create a route that continuously directs their resource allocation to [[autonomous progs]]. Programs that receive routed [[$V]] can themselves create [[cyberlinks]] — enabling self-sustaining, autonomous [[knowledge graph]] expansion.
 
-[[cosmwasm]] contract execution fees return 80% directly to the program creator (hardcoded in the dmn module). Programs earning [[$BOOT]] execution fees create a direct incentive for operators to reinvest those rewards back into the [[staking]] → [[$H]] → [[$V]]/[[$A]] chain.
+[[cosmwasm]] contract execution fees return 80% directly to the program creator (hardcoded in the dmn module). Programs earning [[$BOOT]] execution fees create a direct incentive for operators to reinvest those rewards back into the [[bostrom/staking]] → [[$H]] → [[$V]]/[[$A]] chain.
 
 ## Token Flow
 
@@ -137,8 +137,8 @@ BOOT ─────────────────────────
   └── 80% exec fees ◄── Autonomous Programs ◄── Energy Routes (V/A)
 ```
 
-1. acquire [[$BOOT]] — via secondary market, [[staking]] rewards, or airdrop
-2. [[staking]] of [[$BOOT]] → receive [[$H]] 1:1
+1. acquire [[$BOOT]] — via secondary market, [[bostrom/staking]] rewards, or airdrop
+2. [[bostrom/staking]] of [[$BOOT]] → receive [[$H]] 1:1
 3. [[mint]]: [[burn]] [[$H]] → receive [[$V]] and/or [[$A]] — quantity determined by supply decay curve
 4. spend [[$V]] to write [[cyberlinks]] — price adjusts dynamically with block utilisation
 5. hold [[$A]] to weight [[cyberlinks]] in GPU-computed [[diffusion]]
@@ -165,13 +165,13 @@ The 2% [[burn fee on moving A and V]] ensures that every speculative transfer of
 
 ### Everything costs stake
 
-[[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]], which requires [[staking]] [[$BOOT]]. You cannot interact with the [[knowledge graph]] without locking value into network [[bostrom/security]]. Spam is economically impossible.
+[[$V]] and [[$A]] can only be created by the [[burn]] of [[$H]], which requires [[bostrom/staking]] [[$BOOT]]. You cannot interact with the [[knowledge graph]] without locking value into network [[bostrom/security]]. Spam is economically impossible.
 
 ## Source References
 
 - [x/resources](https://github.com/cyberia-to/go-cyber/blob/main/x/resources/keeper/keeper.go) — [[mint]] logic, halving, supply decay curve, maxPeriod
 - [x/bandwidth](https://github.com/cyberia-to/go-cyber/blob/main/x/bandwidth/types/params.go) — [[bandwidth]] pricing and [[$V]] burn parameters
-- [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[staking]], [[burn]] on undelegation
+- [x/cyberbank](https://github.com/cyberia-to/go-cyber/tree/main/x/cyberbank) — [[$H]] [[mint]] on [[bostrom/staking]], [[burn]] on undelegation
 - [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — token-weighted diffusion (GPU/CUDA)
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — [[$V]]/[[$A]] energy routing to [[autonomous progs]]
 - [x/dmn](https://github.com/cyberia-to/go-cyber/tree/main/x/dmn) — 80% execution fee return mechanic
