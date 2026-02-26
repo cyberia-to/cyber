@@ -9,6 +9,21 @@ crystal-domain: cyber
 
 - Back to [[bostrom infrastructure]]
 
+## Blockchain Security
+
+- ### Consensus
+	- Bostrom uses CometBFT (Tendermint) consensus
+	- Byzantine fault tolerant up to 1/3 malicious validators
+	- GPU-based proof-of-work component for ranking
+- ### Validators
+	- 100 active validators secure the network
+	- Delegated Proof-of-Stake (DPoS) model
+	- Slashing for double-signing and downtime
+- ### Smart Contracts
+	- CosmWasm-based smart contracts
+	- Permissioned deployment (governance approval required)
+	- Code review recommended before interaction
+
 ## Infrastructure Security
 
 - ### Network Protection
@@ -24,21 +39,6 @@ crystal-domain: cyber
 	- 24/7 automated monitoring with alerting
 	- Intrusion detection systems
 	- Regular log analysis
-
-## Blockchain Security
-
-- ### Consensus
-	- Bostrom uses CometBFT (Tendermint) consensus
-	- Byzantine fault tolerant up to 1/3 malicious validators
-	- GPU-based proof-of-work component for ranking
-- ### Validators
-	- 100 active validators secure the network
-	- Delegated Proof-of-Stake (DPoS) model
-	- Slashing for double-signing and downtime
-- ### Smart Contracts
-	- CosmWasm-based smart contracts
-	- Permissioned deployment (governance approval required)
-	- Code review recommended before interaction
 
 ## User Security Best Practices
 
