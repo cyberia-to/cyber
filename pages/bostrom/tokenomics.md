@@ -15,7 +15,7 @@ crystal-domain: economics
 | Token | Role | Issuance |
 |---|---|---|
 | [[$BOOT]] | [[bostrom/security]] and [[governance]] | [[inflation]] (~1.09% annually) |
-| [[$H]] | liquid representation of [[bostrom/staking]] | 1:1 on [[$BOOT]] [[bostrom/staking]] |
+| [[$H]] | liquid representation of [[bostrom/staking]] | [[mint]] 1:1 on [[$BOOT]] [[bostrom/staking]], [[burn]] 1:1 on unstaking |
 | [[$V]] | write access to the [[knowledge graph]] | [[burn]] of [[$H]] via [[mint]] |
 | [[$A]] | [[relevance machine]] focus influence | [[burn]] of [[$H]] via [[mint]] |
 
