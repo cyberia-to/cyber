@@ -1,5 +1,5 @@
 ---
-alias: relevance machine, truth medium, rm, tm
+alias: tru, relevance machine, truth medium, rm, tm
 icon: 🖖🏽
 tags: cyber, core
 crystal-type: entity
@@ -7,11 +7,11 @@ crystal-domain: biology
 ---
 the system that computes [[explicit knowledge]] from the [[cybergraph]]. collective [[vm]] that runs the [[tri-kernel]] in [[consensus]]
 
-the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] learn by creating [[cyberlinks]] — this writes [[knowledge]] into the [[cybergraph]]. the truth machine infers by running the [[tri-kernel]] on that [[knowledge]] — this produces [[explicit knowledge]]
+the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] learn by creating [[cyberlinks]] — this writes [[knowledge]] into the [[cybergraph]]. the tru infers by running the [[tri-kernel]] on that [[knowledge]] — this produces [[explicit knowledge]]
 
 ## the observation loop
 
-the truth machine is one half of the observation loop. [[neurons]] are the other
+the tru is one half of the observation loop. [[neurons]] are the other
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -19,9 +19,9 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-[[neurons]] observe the truth machine's outputs, derive meaning ([[implicit knowledge]]), and encode it as new [[cyberlinks]]. the truth machine recomputes. the loop sustains itself — this is [[intelligence]]
+[[neurons]] observe the tru's outputs, derive meaning ([[implicit knowledge]]), and encode it as new [[cyberlinks]]. the tru recomputes. the loop sustains itself — this is [[intelligence]]
 
-the [[tri-kernel]] (math) provides the operators. the truth machine (system) runs them on [[gpu]] in [[consensus]], producing [[explicit knowledge]] (output)
+the [[tri-kernel]] (math) provides the operators. the tru (system) runs them on [[gpu]] in [[consensus]], producing [[explicit knowledge]] (output)
 
 ## input
 
