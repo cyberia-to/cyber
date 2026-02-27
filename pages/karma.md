@@ -1,6 +1,6 @@
 ---
 alias: neurons weight, neurons weights, neuron rank
-tags: cyber
+tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 ---

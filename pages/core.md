@@ -13,14 +13,14 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 measurement: [[data]], [[hash]], [[proof]], [[particle]], [[information]], [[name]], [[file]]
 
-structure: [[cyberlink]], [[cybergraph]], [[signal]], [[time]], [[step]], [[consensus]], [[finality]]
+structure: [[cyberlink]], [[cybergraph]], [[axons]], [[signal]], [[time]], [[step]], [[consensus]], [[finality]]
 
-agents: [[neuron]], [[focus]], [[token]]
+agents: [[neuron]], [[focus]], [[token]], [[karma]]
 
 process: [[observation]], [[learning]], [[inference]], [[training]]
 
 meaning: [[knowledge]], [[neural]]
 
-convergence: [[tru]], [[cyberank]], [[intelligence]], [[cyber]]
+convergence: [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
 
 discover all [[concepts]]
