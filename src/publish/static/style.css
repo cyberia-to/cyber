@@ -1513,15 +1513,21 @@ body:has(.fullscreen-viz) .main-content {
 /* Graph tag filter */
 .graph-filter {
     position: fixed;
-    top: 1rem;
+    top: 3.5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 0.3rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 80vw;
-    z-index: 15;
+    flex-wrap: nowrap;
+    max-width: 90vw;
+    overflow-x: auto;
+    scrollbar-width: none;
+    z-index: 35;
+    padding: 0.3rem 0.5rem;
+}
+
+.graph-filter::-webkit-scrollbar {
+    display: none;
 }
 
 .graph-filter-pill {
@@ -1538,6 +1544,8 @@ body:has(.fullscreen-viz) .main-content {
     transition: all 0.15s;
     font-family: inherit;
     letter-spacing: 0.03em;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .graph-filter-pill:hover {
