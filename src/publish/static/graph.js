@@ -151,11 +151,11 @@
         bar.appendChild(pill);
       });
 
-      container.appendChild(bar);
+      document.body.appendChild(bar);
     }
 
     function updatePillStates() {
-      const pills = container.querySelectorAll('.graph-filter-pill');
+      const pills = document.querySelectorAll('.graph-filter-pill');
       pills.forEach(pill => {
         const tag = pill.dataset.tag;
         if (!tag) {
