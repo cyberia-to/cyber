@@ -4,37 +4,16 @@ alias: token theory, tokens
 tags: cybernomics, core
 crystal-type: entity
 crystal-domain: economics
-crystal-size: article
+crystal-size: bridge
 ---
-protocol-native unit of [[value]]
+the type system of [[value]]. two axes — fungible or unique, movable or immovable — produce four kinds
 
-stored in [[vimputer]] which can be computed according to some rules for [[neurons]]
+- [[coin]]: fungible, movable. denominates stake, fees, economic commitment
+- [[card]]: unique, movable. binds provenance to a [[particle]]
+- [[score]]: fungible, immovable. reputation and credentials
+- [[badge]]: unique, immovable. non-transferable proof
 
-could be
-
-- fungible or unique
-- movable or immovable
-
-types
-
-- [[coin]]: fungible and movable
-	- consensus [[token]] of the network
-	- names the most important nodes. denominates stake, fees, and economic commitment
-	- eth, erc20, cw20
-- [[card]]: unique and movable
-	- [[knowledge]] asset. binds provenance to a [[particle]]
-	- enables new-age epistemology: authorship proofs, citation rights, dataset ownership, model lineage certificates
-	- btc, erc721, cw721
-- [[score]]: fungible and immovable
-	- reputation and non-transferable credentials
-- [[badge]]: unique and immovable
-	- non-transferable unique credentials
-
-both [[coin]] and [[card]] are protocol-native — not smart contract artifacts
-
-the protocol enforces conservation, transfer rules, and authenticated ownership at the [[consensus]] layer
-
-token term often used in ai field defined in cyberverse as [[particle]]
+stored in [[vimputer]], enforced at the [[consensus]] layer. both [[coin]] and [[card]] are protocol-native. in AI the word token means a [[particle]]
 
 discover best [[tokens]]
 

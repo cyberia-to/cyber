@@ -5,23 +5,10 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 ---
-mental capacity by which [[neuron]] determines [[knowledge]]
+capacity to create [[cyberlinks]]. every link burns will — when it runs out, the [[neuron]] falls silent
 
-allow [[neuron]] to create [[knowledge]]
+regenerates with stake. limits [[bandwidth]]. used in [[standard inference]] as a weight on [[knowledge]]. part of [[$CYB]] pack
 
-affects probability of using [[particle]] by other [[neuron]]
-
-limits [[bandwidth]] of [[neuron]]
-
-used in [[standard inference]] as fundamental measure of [[knowledge]] in the context of [[particles]]
-
-part of [[$CYB]] pack
-
-will requires some [[attention]] for [[intelligence]] flow through [[cybergraph]]
-
-measured by [[cyber-sdk]] [[vimputers]] in
-
-- [[$V]]: [[volt]]
-- [[$VIP]]: [[vpussy]]
+measured by [[cyber-sdk]] [[vimputers]] in [[$V]] ([[volt]]) and [[$VIP]] ([[vpussy]])
 
 discover all [[concepts]]

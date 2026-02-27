@@ -4,43 +4,14 @@ alias: attention distribution, π
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
-crystal-size: article
+crystal-size: bridge
 ---
-emergent attention distribution over the [[cybergraph]]
+attention is finite. the sum of all focus equals 1 — emphasizing one thing defocuses everything else
 
-stationary vector of the [[token]]-weighted random walk
+the stationary vector of the [[token]]-weighted random walk, computed by the [[tri-kernel]]. regenerates proportionally to stake, consumed by [[cyberlinks]]. [[threshold]] sets the minimum focus a link needs to affect ranking
 
-assigned by computation. converged from collective dynamics
+focus produces [[cyberank]] per [[particle]] and [[karma]] per [[neuron]]. conservation makes every allocation a real choice
 
-computed by the [[tri-kernel]]: three local operators that are the only ones surviving the locality constraint
-
-- [[diffusion]]: where probability flows. exploration
-- [[springs]]: what satisfies structural constraints. hierarchy
-- [[heat]]: what the graph looks like at scale τ. adaptation
-
-composite update: `φ^(t+1) = norm[λ_d · D(φ^t) + λ_s · S(φ^t) + λ_h · H_τ(φ^t)]`
-
-fixed point minimizes the free-energy functional
-
-focus regenerates proportionally to stake
-
-focus is consumed by [[cyberlinks]] and computation
-
-conservation: the sum of all focus equals 1. emphasizing one thing defocuses others
-
-[[threshold]]: minimum focus required for a [[cyberlink]] to affect ranking
-
-bounded locality: updates cost O(degree) not O(graph size)
-
-derived metrics
-
-- [[cyberank]]: per-[[particle]] score from the full [[tri-kernel]]
-- [[karma]]: per-[[neuron]] aggregate focus across linked [[particles]]
-
-see [[tri-kernel]] for the completeness proof
-
-see [[focus flow whitepaper]] for full protocol specification
-
-see [[focusflow blueprint]] for implementation architecture
+see [[tri-kernel]] for the completeness proof. see [[focus flow whitepaper]] for full protocol specification. see [[focusflow blueprint]] for implementation architecture
 
 discover all [[concepts]]

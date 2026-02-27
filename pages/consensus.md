@@ -5,14 +5,10 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 ---
-process by which all [[vimputer]] nodes agree on a single [[state]]
+the moment a [[signal]] becomes [[knowledge]]. before consensus, a [[cyberlink]] is a proposal. after, it has [[finality]]
 
-consensus ensures that every node applies the same [[signals]] in the same order, producing identical [[state]] transitions. it maintains safety (no two nodes disagree) and liveness (the system keeps producing [[steps]])
+every [[vimputer]] node applies the same [[signals]] in the same order, converging on identical [[state]]. safety: no two nodes disagree. liveness: the system keeps producing [[steps]]. the mechanical substrate of [[egregore]]
 
-[[cyberlinks]] become [[knowledge]] only after consensus commits them. before consensus, a [[signal]] is a proposal. after consensus, it has [[finality]]
-
-consensus is the collective agreement that makes the [[cybergraph]] a shared reality. it is the mechanical substrate of [[egregore]]
-
-in [[bostrom]]: [[tendermint]] consensus with ⅔+ validator signatures per block
+in [[bostrom]]: [[tendermint]] with ⅔+ validator signatures per block
 
 discover all [[concepts]]

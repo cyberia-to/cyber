@@ -5,22 +5,10 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 ---
-contribution measure of [[neuron]] into [[egregore]]
+how much the [[egregore]] trusts a [[neuron]]
 
-aggregate [[focus]] earned by a [[neuron]] across all [[particles]] it has linked
+aggregate [[focus]] earned across all [[particles]] a neuron has linked. high karma means your links consistently attract collective [[attention]]. linking to noise kills it
 
-neurons with high karma have demonstrated sustained alignment with collective attention
-
-neurons that link to noise or spam earn low karma
-
-computed from the behavior of the entire [[cybergraph]]
-
-derived from [[cyberank]]: weighted average of [[tri-kernel]] scores across a neuron's outbound [[cyberlinks]]
-
-according to [[token theory]] karma is [[score]] (fungible and immovable)
-
-high karma unlocks [[learning incentives]] — rewarding [[neurons]] who sustain the quality of [[knowledge]]
-
-karma drives [[syntropy]]: the graph's tendency toward order rather than noise
+derived from [[cyberank]]. drives [[syntropy]]. unlocks [[learning incentives]]
 
 discover all [[concepts]]

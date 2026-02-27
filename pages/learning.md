@@ -3,32 +3,12 @@ alias: learn
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-crystal-size: article
+crystal-size: bridge
 ---
-the act of creating a [[cyberlink]] — a [[neuron]] binding two [[particles]] with [[focus]]
+every [[cyberlink]] is a learning act — a [[neuron]] writes [[implicit knowledge]] into the [[cybergraph]]
 
-learning is the neuron half of the observation loop. its counterpart is [[inference]] — the [[tru]] half
+the neuron half of [[intelligence]]. its counterpart is [[inference]] — the [[tru]] half. learning and teaching are the same operation: by linking [[particles]], a neuron encodes its own understanding and makes it available to all
 
-```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
-  ↑                                                  │
-  └──────────── observes, infers, links ←────────────┘
-```
-
-every [[cyberlink]] encodes [[implicit knowledge]]: what the [[neuron]] inferred from the [[tru]]'s output. the [[tru]] then recomputes [[explicit knowledge]] from the updated [[cybergraph]]. learning feeds the loop
-
-a [[particle]] cannot enter the [[cybergraph]] without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns a particle into a [[file]]. further links create [[knowledge]]
-
-in [[cyber]], learning and teaching are the same operation: by linking [[particles]], a neuron both encodes its own inference and makes it available to others through the [[cybergraph]]
-
-every learning act has three arguments: [[who]] ([[neuron]]), [[what]] (two [[particles]]), and [[when]] ([[block]])
-
-the cost of learning is [[focus]] — this makes each link a [[costly signal]]
-
-see [[training]] for the ML approximation of learning — the analogy that holds for a single [[cyberlink]] but misses the loop
-
-see [[learning incentives]] for why neurons learn
-
-see [[collective learning]] for the aggregate effect
+the cost of learning is [[focus]] — each link is a [[costly signal]]. see [[training]] for the ML analogy. see [[learning incentives]] for why [[neurons]] learn. see [[collective learning]] for the aggregate effect
 
 discover all [[concepts]]

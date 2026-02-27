@@ -3,31 +3,13 @@ alias: virtual computer, blockchain, chain, network, consensus computer
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: article
+crystal-size: bridge
 ---
-short for virtual computer
+many machines, one mind. a vimputer coordinates physical nodes into a single computing entity through [[consensus]]
 
-a software-defined computer that coordinates several physical machines into a single computing entity through [[consensus]]
+short for virtual computer. [[bostrom]] is the vimputer that hosts the [[cybergraph]] and runs the [[tru]]. computation in two modes: sequential ([[cosmwasm]], [[cyber-sdk]], [[governance]]) and parallel ([[tri-kernel]] on [[gpu]] every block)
 
-marketable term for the following tightly related phenomena
-
-- blockchain and blockchain network
-- distributed ledger
-- [[consensus]] computer
-
-[[bostrom]] is the vimputer that hosts the [[cybergraph]] and runs the [[tru]]
-
-[[neurons]] interact with the vimputer by signing [[cyberlinks]] with [[focus]]
-
-computation happens in two modes
-
-- sequential: [[cosmwasm]] contracts, [[cyber-sdk]] modules, [[governance]]
-- parallel: the [[tri-kernel]] runs on [[gpu]] to compute [[cyberank]] every block
-
-the vimputer provides the guarantees that make [[knowledge]] authentic
-
-- every [[cyberlink]] has a [[signature]], a block timestamp, and a [[focus]] cost
-- the state is deterministic — all nodes converge to the same [[cybergraph]]
+the vimputer guarantees authenticity — every [[cyberlink]] carries a [[signature]], a timestamp, and a [[focus]] cost. the state is deterministic: all nodes converge to the same [[cybergraph]]
 
 examples of [[vimputers]]
 
