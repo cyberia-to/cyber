@@ -1,5 +1,5 @@
 ---
-alias: learn, training, train
+alias: learn
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
@@ -24,20 +24,7 @@ every learning act has three arguments: [[who]] ([[neuron]]), [[what]] (two [[pa
 
 the cost of learning is [[focus]] — this makes each link a [[costly signal]]
 
-## the ML analogy
-
-in machine learning, training updates model weights from data. in [[cyber]], learning updates the [[cybergraph]] by adding [[cyberlinks]]. the graph IS the model. every [[cyberlink]] is a weight update
-
-| | machine learning | [[cyber]] |
-|---|---|---|
-| process | training | learning |
-| who | gradient descent | [[neurons]] |
-| model | neural network weights | [[cybergraph]] |
-| data | training set | [[particles]] |
-| cost | compute (FLOPs) | [[focus]] |
-| result | trained model | [[knowledge]] |
-
-the key difference: in ML, one entity trains one model. in [[cyber]], millions of [[neurons]] train one shared graph. this is [[collective learning]]
+see [[training]] for the ML approximation of learning — the analogy that holds for a single [[cyberlink]] but misses the loop
 
 see [[learning incentives]] for why neurons learn
 
