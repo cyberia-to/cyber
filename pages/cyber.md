@@ -8,8 +8,6 @@ crystal-domain: cyber
 ---
 the protocol for planetary [[superintelligence]]
 
-
-
 [[cyberia]] — the network state. [[manifesto]]
 
 five primitives: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
@@ -21,6 +19,7 @@ the [[tri-kernel]] computes [[cyberank]] — converting raw links into [[knowled
 the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural language]]
 
 ## the protocol
+
 - [[concepts]] — core concept index
 - [[particle]] — content-addressed object on [[IPFS]], the atom of knowledge
 - [[cyberlink]] — directed edge between particles, the unit of learning
@@ -29,6 +28,31 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 - [[focus]] — attention distribution across particles, the scarce resource
 - [[cyberank]] — relevance score computed by the [[tri-kernel]]: [[diffusion]] + [[springs]] + heat
 - [[cybergraph]] — the authenticated knowledge graph storing all particles and cyberlinks
+
+## computation
+
+- [[tri-kernel]] — the three universal operators: diffusion, springs, heat
+- [[truth machine]] — the computation that produces relevance from links
+- [[foculus]] — consensus over the cybergraph
+- [[vimputer]] — the virtual computer executing the protocol
+
+## knowledge architecture
+
+- [[cyber/crystal]] — the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar
+- [[cyber/metagraph]] — the multi-scale view: crystal, cybergraph, network of graphs
+- [[neural language]] — the formal language of the protocol: [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
+
+## [[cybernomics]]
+
+- [[$CYB]] — the root token
+- [[learning incentives]] — how the protocol rewards knowledge creation
+
+## [[governance]]
+
+- [[manifesto]]
+- [[cyberia]] — the [[cyber state]] of [[superintelligence]]
+- [[cip]] — cyber improvement proposals
+- [[senate]] — governance system of [[bootloader]]
 
 ## the stack
 
@@ -44,41 +68,24 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 - [[cyb]] — the immortal robot, browser interface to the cybergraph
 - [[aos]] — self-fulfilling prophecy game
 
-## knowledge architecture
+## specification
 
-- [[cyber/crystal]] — the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar
-- [[cyber/metagraph]] — the multi-scale view: crystal, cybergraph, network of graphs
-- [[neural language]] — the formal language of the protocol: [[semcons]], sentences, motifs, linkchains
-
-
-## [[cybernomics]]
-
-- [[$CYB]] — the token model
-- [[learning incentives]] — how the protocol rewards knowledge creation
-
-## [[governance]]
-
-- [[cyberia]] - the cyber state of superintelligence
-- [[manifesto]]
-- [[constitution]] — the social contract
-- [[citizenship]] — how to become a citizen
-- [[cip]] — cyber improvement proposals
-
-## computation
-
-- [[tri-kernel]] — the three universal operators: diffusion, springs, heat
-- [[truth machine]] — the computation that produces relevance from links
-- [[cyber/ffc]]
-- [[foculus]] — how neurons agree on the state of the cybergraph
-- [[vimputer]] — the virtual computer executing the protocol
+- [[cyber/core]] — full protocol specification
+- [[cyber/bbg]] — authenticated state model
+- [[cyber/focus]] — focus dynamics and conservation laws
+- [[cyber/stark]] — proof system
+- [[cyber/privacy]] — privacy architecture
+- [[cyber/patterns]] — design patterns
+- [[Goldilocks field]] — field arithmetic
+- [[hash function selection]] — hash primitives
+- [[convergent computation]] — from Turing machines to convergent computation
 
 ## research
 
-- [[cyber/core]] — full protocol specification
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
-- [[future of computation]] — from Turing machines to convergent computation
+- [[future of computation]] — computation beyond Turing
 
 ## learn
 
