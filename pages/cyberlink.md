@@ -19,7 +19,7 @@ three scalars per link: hierarchy (h), transport (d), context (c)
 |------------|--------|---------------|-------------|
 | 42 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
 
-the accumulated graph of all cyberlinks is the [[cybergraph]] — [[knowledge]]. every cyberlink encodes [[implicit knowledge]]: what the [[neuron]] inferred from observing the [[truth machine]]'s [[explicit knowledge]]. the [[truth machine]] recomputes [[explicit knowledge]] from the updated graph. this observation loop is [[intelligence]]
+the accumulated graph of all cyberlinks is the [[cybergraph]] — [[knowledge]]. every cyberlink encodes [[implicit knowledge]]: what the [[neuron]] inferred from observing the [[tru]]'s [[explicit knowledge]]. the [[tru]] recomputes [[explicit knowledge]] from the updated graph. this observation loop is [[intelligence]]
 
 ## difference with hyperlink
 

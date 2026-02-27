@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 a discrete unit of [[consensus]] time in which [[signals]] achieve [[finality]]
 
-the [[cybergraph]] evolves in steps. each step collects [[signals]] from [[neurons]], orders them, and commits them to the graph. after a step achieves [[finality]], the [[truth machine]] recomputes [[cyberank]] from the updated state
+the [[cybergraph]] evolves in steps. each step collects [[signals]] from [[neurons]], orders them, and commits them to the graph. after a step achieves [[finality]], the [[tru]] recomputes [[cyberank]] from the updated state
 
 every [[learning]] act has three arguments: [[who]] ([[neuron]]), [[what]] (two [[particles]]), and [[when]] (step)
 

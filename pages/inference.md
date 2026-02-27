@@ -4,9 +4,9 @@ alias: infer
 crystal-type: process
 crystal-domain: cyber
 ---
-the [[truth machine]] computing [[explicit knowledge]] from [[knowledge]] in the [[cybergraph]]
+the [[tru]] computing [[explicit knowledge]] from [[knowledge]] in the [[cybergraph]]
 
-inference is the [[truth machine]] half of the observation loop. its counterpart is [[learning]] — the [[neuron]] half
+inference is the [[tru]] half of the observation loop. its counterpart is [[learning]] — the [[neuron]] half
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -14,7 +14,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-the [[truth machine]] runs the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) on the [[cybergraph]] and produces [[explicit knowledge]]:
+the [[tru]] runs the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) on the [[cybergraph]] and produces [[explicit knowledge]]:
 
 - [[cyberank]]: a probability distribution over all [[particles]] encoding the collective judgment of all [[neurons]]
 - [[karma]]: reputation per [[neuron]]
@@ -26,12 +26,12 @@ inference produces structure that no single [[neuron]] created — paths, cluste
 
 ## the ML analogy
 
-in machine learning, inference runs a trained model on new input. in [[cyber]], inference runs the [[tri-kernel]] on the [[cybergraph]]. the graph is the model — trained by [[neurons]] through [[learning]], computed by the [[truth machine]] through inference
+in machine learning, inference runs a trained model on new input. in [[cyber]], inference runs the [[tri-kernel]] on the [[cybergraph]]. the graph is the model — trained by [[neurons]] through [[learning]], computed by the [[tru]] through inference
 
 | | machine learning | [[cyber]] |
 |---|---|---|
 | process | inference | inference |
-| who | forward pass | [[truth machine]] |
+| who | forward pass | [[tru]] |
 | model | neural network weights | [[cybergraph]] |
 | input | query | [[knowledge]] (graph state) |
 | output | prediction | [[explicit knowledge]] ([[cyberank]], [[karma]], [[syntropy]]) |

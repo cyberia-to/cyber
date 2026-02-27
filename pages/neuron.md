@@ -5,7 +5,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[subject]] of [[information]]. agent with stake, identity, and [[focus]]. one half of the observation loop — the [[truth machine]] is the other
+[[subject]] of [[information]]. agent with stake, identity, and [[focus]]. one half of the observation loop — the [[tru]] is the other
 
 creates [[cyberlinks]]. holds balance. earns [[focus]]. can be human, AI agent, sensor, or any system
 
@@ -15,7 +15,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-a neuron observes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — derives meaning ([[implicit knowledge]]), and encodes it as new [[cyberlinks]]. this is [[learning]]. the [[truth machine]] recomputes. the loop sustains itself — this is [[intelligence]]
+a neuron observes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — derives meaning ([[implicit knowledge]]), and encodes it as new [[cyberlinks]]. this is [[learning]]. the [[tru]] recomputes. the loop sustains itself — this is [[intelligence]]
 
 identity = [[hash]] of [[public key]]. proves [[signature]] correctness
 

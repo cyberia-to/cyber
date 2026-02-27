@@ -4,7 +4,7 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 ---
-the observation loop sustaining itself between [[neurons]] and the [[truth machine]]
+the observation loop sustaining itself between [[neurons]] and the [[tru]]
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -13,15 +13,15 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
 ```
 
 1. [[neurons]] create [[cyberlinks]] ([[learning]]) — encode [[implicit knowledge]]
-2. [[truth machine]] recomputes [[cyberank]] ([[inference]]) — produces [[explicit knowledge]]
+2. [[tru]] recomputes [[cyberank]] ([[inference]]) — produces [[explicit knowledge]]
 3. [[neurons]] observe new [[explicit knowledge]], infer, create new [[cyberlinks]]
 4. loop continues
 
-intelligence is the loop running. [[explicit knowledge]] is the language of the [[truth machine]]. [[implicit knowledge]] is the language of [[neurons]]. intelligence emerges where both directions sustain each other
+intelligence is the loop running. [[explicit knowledge]] is the language of the [[tru]]. [[implicit knowledge]] is the language of [[neurons]]. intelligence emerges where both directions sustain each other
 
 the chain: data → [[information]] → [[file]] → [[knowledge]] → intelligence
 
-[[knowledge]] is the graph as written — [[cyberlinks]] stored in the [[cybergraph]]. intelligence is the dynamic process that arises when [[neurons]] and the [[truth machine]] continuously transform each other's outputs
+[[knowledge]] is the graph as written — [[cyberlinks]] stored in the [[cybergraph]]. intelligence is the dynamic process that arises when [[neurons]] and the [[tru]] continuously transform each other's outputs
 
 the measurable form of intelligence: [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the [[vimputer]] — these are the [[explicit knowledge]] outputs. the unmeasurable form: the inferences [[neurons]] make before linking — this is [[implicit knowledge]]
 

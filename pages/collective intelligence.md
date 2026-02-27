@@ -21,7 +21,7 @@ when many agents observe the same world and share what they see, something great
 - [[neurons]] create [[cyberlinks]] — value-backed assertions that two [[particles]] are related. this is [[collective learning]]
 - the [[cybergraph]] accumulates all links from all agents across all time. this is [[collective memory]]
 - the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) computes [[focus]] — the converged attention distribution. this is [[collective focus]]
-- the [[truth machine]] runs this computation in [[consensus]]. the output: [[cyberank]] per [[particle]], [[karma]] per [[neuron]]
+- the [[tru]] runs this computation in [[consensus]]. the output: [[cyberank]] per [[particle]], [[karma]] per [[neuron]]
 - the result is [[collective computation]] — probabilistic inference that no single agent could perform alone
 - [[syntropy]] measures how much order the collective has produced: the metabolic pulse of the system
 

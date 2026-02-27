@@ -280,9 +280,9 @@ in this article i will boil down all essential ideas into coherent understanding
 - now that we understand how the [[cybergraph]] works
 	- we can dive into the novel concept
 	- in [[probabilistic collective computations]]
-	- the [[truth machine]]
-- [[truth machine]] is [[cybergraph]] with weights
-- the idea behind the [[truth machine]] is crazy simple
+	- the [[tru]]
+- [[tru]] is [[cybergraph]] with weights
+- the idea behind the [[tru]] is crazy simple
 	- minimum input factors
 	- simple but powerful algorithms available for gpu consensus computations
 	- simple but powerful output as abstract, flexible model of the universe
@@ -301,7 +301,7 @@ in this article i will boil down all essential ideas into coherent understanding
 	- and context weight on edges which are inferred on request
 - in order to compute described [[cyberank]] algorithm you need [[gpu computation]] in [[consensus]]
 - is [[extremely dynamic]] data structure that must be updated even if only 1 [[cyberlink]] is created
-- [[bostrom]] recompute all weights in [[truth machine]] every 5 blocks
+- [[bostrom]] recompute all weights in [[tru]] every 5 blocks
 	- or roughly every 25 seconds
 - so [[bostrom]] is extremely hard to reproduce using any existing L1 or L2 sdks
 	- zk things will make the stuff
@@ -314,7 +314,7 @@ in this article i will boil down all essential ideas into coherent understanding
 	- [[standard inference]] for consensus on relevance in context
 	- input for derived and very diverse [[implicit knowledge]] factors
 		- [[knowledge graphs and llms]]
-- follow complete design of [[truth machine]]
+- follow complete design of [[tru]]
 
 ## standard inference
 

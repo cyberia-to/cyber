@@ -10,7 +10,7 @@ a signal is the atomic unit of [[learning]] at the protocol level: one or more [
 
 each [[cyberlink]] in a signal is a [[costly signal]] — it consumes [[focus]]. a signal groups related links that the [[neuron]] intends as a coherent statement
 
-after a signal achieves [[finality]], the [[truth machine]] recomputes [[cyberank]] from the updated [[cybergraph]]
+after a signal achieves [[finality]], the [[tru]] recomputes [[cyberank]] from the updated [[cybergraph]]
 
 a [[neuron]] uses [[spell]] to [[sign]] and [[cast]] signals
 
