@@ -2,7 +2,7 @@
 id: 66a9e2d2-469b-4532-b26a-6dfdc54561a5
 icon: ⌚
 alias: unix time, machine time, mt
-tags: page
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---
