@@ -8,6 +8,8 @@ crystal-domain: cyber
 ---
 the protocol for planetary [[superintelligence]]
 
+
+
 [[cyberia]] — the network state. [[manifesto]]
 
 five primitives: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
@@ -19,7 +21,7 @@ the [[tri-kernel]] computes [[cyberank]] — converting raw links into [[knowled
 the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural language]]
 
 ## the protocol
-
+- [[concepts]] — core concept index
 - [[particle]] — content-addressed object on [[IPFS]], the atom of knowledge
 - [[cyberlink]] — directed edge between particles, the unit of learning
 - [[neuron]] — agent that creates cyberlinks, spends [[focus]]
@@ -47,17 +49,17 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 - [[cyber/crystal]] — the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar
 - [[cyber/metagraph]] — the multi-scale view: crystal, cybergraph, network of graphs
 - [[neural language]] — the formal language of the protocol: [[semcons]], sentences, motifs, linkchains
-- [[concepts]] — core concept index
 
-## economics
 
-- [[cybernomics]] — the native economic theory
-- [[$CYB]] — the resource model
-- [[delegation]] — staking and delegation mechanics
+## [[cybernomics]]
+
+- [[$CYB]] — the token model
 - [[learning incentives]] — how the protocol rewards knowledge creation
 
-## governance
+## [[governance]]
 
+- [[cyberia]] - the cyber state of superintelligence
+- [[manifesto]]
 - [[constitution]] — the social contract
 - [[citizenship]] — how to become a citizen
 - [[cip]] — cyber improvement proposals
@@ -65,22 +67,10 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 ## computation
 
 - [[tri-kernel]] — the three universal operators: diffusion, springs, heat
-- [[relevance machine]] — the computation that produces relevance from links
-- [[consensus]] — how neurons agree on the state of the cybergraph
+- [[truth machine]] — the computation that produces relevance from links
+- [[cyber/ffc]]
+- [[foculus]] — how neurons agree on the state of the cybergraph
 - [[vimputer]] — the virtual computer executing the protocol
-
-## modules
-
-- [[bostrom/graph]] — cybergraph storage
-- [[bostrom/rank]] — ranking computation
-- [[bostrom/bandwidth]] — resource metering
-- [[bostrom/grid]] — energy distribution
-- [[bostrom/resources]] — resource management
-- [[bostrom/dmn]] — deterministic module network
-- [[bostrom/wasm]] — smart contract execution
-- [[bostrom/cyberbank]] — token operations
-- [[bostrom/liquidity]] — liquidity pools
-- [[bostrom/clocks]] — time and scheduling
 
 ## research
 
