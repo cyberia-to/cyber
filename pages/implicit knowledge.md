@@ -3,35 +3,25 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[information]] that is not directly stated
+[[knowledge]] inferred from [[explicit knowledge]] in the [[cybergraph]]. this inference is [[intelligence]]
 
-but can be inferred from the [[explicit knowledge]] in the [[cybergraph]]
+if `apple` is linked with `fruit` and `fruit` is linked with `food`, then `apple` relates to `food` — even though no [[neuron]] explicitly stated it
 
-orthogonal to [[explicit knowledge]]
-
-explanation
-
-- if  `apple` is linked with `fruit`
-- and `fruit` is linked with `food`
-- then we can implicitly infer that `apple` somehow linked to `food`
-
-processed by [[relevance machine]]
-
-[[relevance machine]] compute fundamental parameters of [[cybergraph]] model in [[consensus]]
+the [[truth machine]] computes implicit knowledge in [[consensus]]
 
 - [[cyberank]] as weight of [[particles]]
 - [[karma]] as weight of [[neurons]]
-- TODO [[syntropy]] as integral measure of [[superintelligence]]
+- [[syntropy]] as integral measure of [[superintelligence]]
 
 in [[cyber-sdk]] implicit knowledge can be inferred using
 
-- TODO [[standard inference]]
-- TODO [[cosmwasm]] [[progs]]
-- TODO autonomous [[thoughts]]
-- TODO and queried over [[ibc]]
+- [[standard inference]]
+- [[cosmwasm]] [[progs]]
+- autonomous [[thoughts]]
+- queried over [[ibc]]
 
-in [[cybs-ts]] implicit knowledge can be infered using
+in [[cyb-ts]] implicit knowledge can be inferred using
 
 - [[datalog]]: ai oriented query language
-- [[rune]]: powerful dynamic scripting
-- TODO [[webgpu]]: local hardware independent parallel execution
+- [[rune]]: dynamic scripting
+- [[webgpu]]: local hardware independent parallel execution

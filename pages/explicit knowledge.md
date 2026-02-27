@@ -4,15 +4,13 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---
-information that is directly stated and clearly represented in [[cybergraph]]
+[[knowledge]] directly stated in the [[cybergraph]]. readily available by traversing the graph
 
-readily available just by traversing [[cybergraph]]
+every [[cyberlink]] is a unit of explicit knowledge: a [[neuron]] asserts that two [[particles]] are related, recording [[who]], [[when]], and [[what]]
 
 > something that is known and can be written down @nonaka and @takeuchi
 
-expressed by [[cyberlink]]: special [[signal]] with [[three basic arguments]]
-
-orthogonal to [[implicit knowledge]]
+explicit knowledge is the raw material. the [[truth machine]] processes it into [[implicit knowledge]] — which is [[intelligence]]
 
 in [[cyber-sdk]]
 

@@ -20,7 +20,7 @@ when many agents observe the same world and share what they see, something great
 
 - [[neurons]] create [[cyberlinks]] — value-backed assertions that two [[particles]] are related. this is [[collective learning]]
 - the [[cybergraph]] accumulates all links from all agents across all time. this is [[collective memory]]
-- the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat kernel]]) computes [[focus]] — the converged attention distribution. this is [[collective focus]]
+- the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) computes [[focus]] — the converged attention distribution. this is [[collective focus]]
 - the [[truth machine]] runs this computation in [[consensus]]. the output: [[cyberank]] per [[particle]], [[karma]] per [[neuron]]
 - the result is [[collective computation]] — probabilistic inference that no single agent could perform alone
 - [[syntropy]] measures how much order the collective has produced: the metabolic pulse of the system
@@ -53,7 +53,7 @@ when many agents observe the same world and share what they see, something great
 - [[natural computing]]: the paradigm — nature has been computing all along
 - [[convergent computation]]: the formal foundation — computation = convergence to equilibrium
 - [[focus flow computation]]: the executable model — patterns of attention flow through particle networks
-- [[tri-kernel]]: the only three local operators surviving the locality constraint — [[diffusion]], [[springs]], [[heat kernel]]
+- [[tri-kernel]]: the only three local operators surviving the locality constraint — [[diffusion]], [[springs]], [[heat]]
 - [[ranking system]]: why this specific free-energy formulation — minimal, local, verifiable, incentive-compatible
 - [[focus flow whitepaper]]: the full protocol specification with VDF, rewards, and security
 - [[convergence rewards]]: reward function design for incentivizing convergence

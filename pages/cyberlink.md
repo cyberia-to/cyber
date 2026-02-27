@@ -9,49 +9,28 @@ signed, weighted, timestamped directed edge between two [[particles]]
 
 `edge = ([[neuron]], from [[particle]], to [[particle]], weight, time)`
 
-the atomic unit of meaning in the [[cybergraph]]
-
-an authenticated economic commitment: the [[neuron]] stakes [[focus]] to assert that from and to are related
+the unit of [[knowledge]]. a [[neuron]] stakes [[focus]] to assert that two [[particles]] are related — an authenticated economic commitment. creating a cyberlink is the primitive [[learning]] act: the moment [[information]] becomes [[knowledge]]
 
 three scalars per link: hierarchy (h), transport (d), context (c)
 
-primitive [[learning]] act
-
-fully authenticated quadruple
+[[three basic arguments]] of every cyberlink: [[who]] linked, [[when]], and [[what]] [[particles]]
 
 | block hash | neuron | from particle | to particle |
 |------------|--------|---------------|-------------|
 | 42 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
-| 43 | bostrom1d8754xqa9245pctlfcyv8eah468neqzn3a0y0t | QmRjzv8iNpMX7NXmMswT9qq7nviQ4sC1gMMceryAVJdfPS|  QmRX8qYgeZoYM3M5zzQaWEpVFdpin6FvVXvp6RPQK3oufV |
 
-foundation of [[cybergraph]]
+the accumulated graph of all cyberlinks is the [[cybergraph]] — [[explicit knowledge]]. the [[truth machine]] infers [[implicit knowledge]] from this graph, producing [[intelligence]]
 
-basic [[relevance machine]] instruction
+## difference with hyperlink
 
-example
+a hyperlink points to a location on a server. you request `https://google.com` and a particular machine decides what to show you. you cannot know for sure what you get
 
-- [who](neuron) linked the data: e.g. [@mastercyb](https://cyb.ai/@mastercyb)
-- [when](consensus computer) data was linked: e.g. [txid](https://cyb.ai/network/bostrom/tx/1D0E26540FE9AFB5F9113826F7BCF650802A010392E22D51F158B1522A958BA1)
-- [[what]] data was linked: [space pussy](https://cyb.ai/oracle/ask/space%20pussy) > [fungi extase](https://cyb.ai/oracle/ask/QmaqXGP6FcjRZhVbFzsGFjJsqSgZva5zJALSL9u5YyS9wS)
-- ![fungi extase](https://ipfs.io/ipfs/QmaqXGP6FcjRZhVbFzsGFjJsqSgZva5zJALSL9u5YyS9wS)
+a cyberlink connects two content-addressed [[particles]] where each is identified by its [[hash]]. the link is between the content itself, authenticated by the [[neuron]] who created it. this makes [[knowledge]] searchable through spacetime
 
-now anyone who would search [space pussy](https://cyb.ai/oracle/ask/space%20pussy) must be able to find epic image
+## how to create
 
-how to create cyberlinks?
-
-- go to [cyb.ai/oracle/learn](https://cyb.ai/oracle/learn)
-- install [[cy]]
-- or install [[go-cyber]]
-
-difference with hyperlink
-
-- you have probably used links which look like this: https://google.com
-- eventually the request to this link resolves to a particular machine which will show your old god
-- you cant know for sure what you get
-- cyberlinks are different
-- link between two pieces of content particles where each content is addressed by its [[hash]]
-- this makes information searchable through the spacetime
-
-changing the way we [[learn]]
+- [[cyb/oracle]]
+- [[cy]]
+- [[go-cyber]]
 
 discover all [[concepts]]
