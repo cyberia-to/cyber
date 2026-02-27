@@ -8,6 +8,7 @@ three local operators whose fixed point is [[cyberank]]: [[diffusion]] (explore 
 
 $$\phi^{(t+1)} = \text{norm}\big[\lambda_d \cdot D(\phi^t) + \lambda_s \cdot S(\phi^t) + \lambda_h \cdot H_\tau(\phi^t)\big]$$
 
-see [[tri-kernel/article]] for the full architecture paper
+[[cyber/tri-kernel]] — formal specification\
+[[tri-kernel architecture]] — explanatory whitepaper
 
 discover all [[concepts]]
