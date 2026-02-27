@@ -29,16 +29,16 @@ five candidates for measuring convergence contribution, each with trade-offs:
 | function | formula | strength | weakness |
 |---|---|---|---|
 | Δπ norm | $\sum_j \|\pi_j^{(t+1)} - \pi_j^t\|$ | simple, easy to verify | gameable by oscillation |
-| entropy reduction | $H(\pi^t) - H(\pi^{t+1})$ | rewards semantic sharpening | computationally heavier |
+| [[syntropy]] growth | $H(\pi^t) - H(\pi^{t+1})$ | rewards semantic sharpening | computationally heavier |
 | spectral gap | $\lambda_2^t - \lambda_2^{t+1}$ | measures global convergence speedup | expensive, non-local |
 | predictive alignment | $\text{align}(\pi^{(t+1)}, \pi^T)$ | favors early correct contributions | requires delayed validation |
 | DAG weight | descendant blocks referencing this one | rewards foundational work | slow to accrue |
 
 the hybrid model combines them:
 
-$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta H + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
+$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
-fast local rewards use Δπ and ΔH. checkpoints add alignment and spectral verification bonuses. validators sample and verify blocks probabilistically
+where $\Delta J = H(\pi^t) - H(\pi^{t+1})$ is [[syntropy]] growth. fast local rewards use Δπ and ΔJ. checkpoints add alignment and spectral verification bonuses. validators sample and verify blocks probabilistically
 
 ## link valuation
 
@@ -57,12 +57,18 @@ where $\Delta\pi_j(t)$ = change in [[focus]] on target [[particle]] $j$ attribut
 
 ## attribution
 
-exact [[Shapley values]] are infeasible ($O(n!)$). [[probabilistic shapley attribution]] approximates them:
+multiple [[neurons]] contribute [[cyberlinks]] in the same epoch. the total Δπ shift is a joint outcome — how to divide credit fairly?
 
-1. local marginal — compute each transaction's individual $\Delta\mathcal{F}$
-2. Monte Carlo sampling — sample $k$ random orderings, measure marginal contributions
-3. hierarchical batching — cluster transactions by affected nodes, distribute within clusters
+the [[Shapley value]] answers: each agent's reward equals their average marginal contribution across all possible orderings. in this system, the coalition's total value is the [[free energy]] reduction $\Delta\mathcal{F}$, and each agent's marginal contribution is how much π shifts when their [[cyberlinks]] are added to the graph. Shapley distributes the total Δπ reward proportionally to each [[neuron]]'s causal impact
+
+exact computation is infeasible ($O(n!)$). [[probabilistic shapley attribution]] approximates:
+
+1. local marginal — compute each transaction's individual $\Delta\mathcal{F}$ (add link, measure π shift)
+2. Monte Carlo sampling — sample $k$ random orderings of the epoch's transactions, measure marginal contributions in each ordering
+3. hierarchical batching — cluster transactions by affected neighborhood, distribute within clusters
 4. final reward: $R_i = \alpha \cdot \Delta\mathcal{F}_i + (1-\alpha) \cdot \hat{S}_i$
+
+where $\Delta\mathcal{F}_i$ is the fast local estimate and $\hat{S}_i$ is the sampled Shapley approximation. $\alpha$ balances speed (local marginal) against fairness (Shapley)
 
 complexity: $O(k \cdot n)$ with $k \ll n$. feasible for 10⁶+ transactions per epoch
 
