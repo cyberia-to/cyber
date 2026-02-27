@@ -11,7 +11,7 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 ## concepts
 
-[[graph]]: [[link]], [[cyberlink]], [[cybergraph]], [[axon]]
+[[graph]]: [[link]], [[particle]], [[cyberlink]], [[cybergraph]], [[axon]]
 
 [[neuron]]: [[avatar]], [[spell]], [[focus]], [[karma]], [[skill]], [[soul]]
 
@@ -19,7 +19,7 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 [[value]]: [[price]], [[supply]], [[demand]], [[cap]]
 
-[[signal]]: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
+[[signal]]: [[data]], [[hash]], [[proof]], [[signature]], [[information]], [[name]], [[file]]
 
 [[cyberlink]]: [[pay]], [[lock]], [[update]], [[mint]], [[burn]]
 
