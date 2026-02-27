@@ -8,17 +8,19 @@ status: draft
 ---
 # learning incentives
 
-[[knowledge]] creation is costly, but its benefits are collective. without incentives, rational agents free-ride on others' [[cyberlinks]]. the reward system must make contributing to the [[cybergraph]] profitable — and free-riding unprofitable
+[[knowledge]] creation is costly, but its benefits are [[collective]]. without incentives, rational agents free-ride on others' [[cyberlinks]]. the reward system must make contributing to the [[cybergraph]] profitable — and free-riding unprofitable
 
-the [[economic model]] defines the seven mechanisms. this article explains the reward design: what to measure, how to attribute, and why [[cyberlinks]] are yield-bearing assets
+the [[economic model]] defines the seven mechanisms. this article explains the reward design: what to measure, how to attribute, how to fund, and why [[cyberlinks]] are yield-bearing assets
 
 ## the signal: Δπ
 
-every reward in the system traces back to one quantity: how much did your action shift the stationary distribution π?
+every reward in the system traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point π?
 
 $$\text{reward}(v) \propto \Delta\pi(v)$$
 
-this is the gradient of system [[free energy]]. creating valuable structure is literally creating [[value]]. no designed loss function — physics defines what should be optimized
+π is the stationary distribution of the composite operator $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ — [[diffusion]] explores, [[springs]] enforce structure, [[heat kernel]] adapts. the [[collective focus theorem]] proves π exists, is unique, and is computable locally
+
+Δπ is the gradient of system [[free energy]]. creating valuable structure is literally creating [[value]]. no designed loss function — physics defines what should be optimized
 
 ## reward functions
 
@@ -26,7 +28,7 @@ five candidates for measuring convergence contribution, each with trade-offs:
 
 | function | formula | strength | weakness |
 |---|---|---|---|
-| Δπ norm | $\sum_j |\pi_j^{(t+1)} - \pi_j^t|$ | simple, easy to verify | gameable by oscillation |
+| Δπ norm | $\sum_j \|\pi_j^{(t+1)} - \pi_j^t\|$ | simple, easy to verify | gameable by oscillation |
 | entropy reduction | $H(\pi^t) - H(\pi^{t+1})$ | rewards semantic sharpening | computationally heavier |
 | spectral gap | $\lambda_2^t - \lambda_2^{t+1}$ | measures global convergence speedup | expensive, non-local |
 | predictive alignment | $\text{align}(\pi^{(t+1)}, \pi^T)$ | favors early correct contributions | requires delayed validation |
@@ -53,8 +55,6 @@ where $\Delta\pi_j(t)$ = change in [[focus]] on target [[particle]] $j$ attribut
 | redundant | low/no Δπ | no reward |
 | semantic bridge | medium, cross-module | moderate, persistent |
 
-rewards paid from accumulated transaction fees — no inflation. this makes the [[cybergraph]] a semantic investment market where links earn yield proportional to epistemic impact
-
 ## attribution
 
 exact [[Shapley values]] are infeasible ($O(n!)$). [[probabilistic shapley attribution]] approximates them:
@@ -68,20 +68,42 @@ complexity: $O(k \cdot n)$ with $k \ll n$. feasible for 10⁶+ transactions per 
 
 ## funding
 
-rewards come from transaction fees, not inflation. this is non-dilutive economics:
+rewards come from two sources: emission and fees
 
-  - [[cyberlink]] submission incurs a small fee (spam deterrent)
-  - fees pool and distribute to: link submitters, [[focus]] computation provers, validators
-  - links that accumulate sufficient [[attention]] yield net positive reward over time
-  - burn [[$CYB]] for permanent weight in π — anchoring critical [[knowledge]]
+### emission (bootstrap phase)
+
+gross rewards combine stepped emission with redistributed fees:
+
+$$G = E(t) + F \cdot (1 - \beta)$$
+
+where $E(t)$ follows a decay curve and $\beta$ is the adaptive burn rate. rewards split between stakers and provers via the allocation curve:
+
+$$R_{\text{PoS}} = G \cdot S^\alpha \qquad R_{\text{PoW}} = G \cdot (1 - S^\alpha)$$
+
+$\alpha \in [0.3, 0.7]$ self-adjusts via PID control to balance staking yield against proving efficiency. see [[adaptive hybrid economics]] for the full spec
+
+net new supply: $\text{net} = E(t) - F \cdot \beta$. when fees exceed emission, the network is net deflationary — still rewarding contributors while shrinking supply
+
+### fees (steady state)
+
+- [[cyberlink]] submission incurs a small fee (spam deterrent)
+- fees pool and distribute to: link submitters, [[focus]] computation provers, validators
+- links that accumulate sufficient [[attention]] yield net positive reward over time
+- burn [[$CYB]] for permanent weight in π — anchoring critical [[knowledge]]
+
+### the GFP flywheel
+
+the [[Goldilocks field processor]] makes proving Δπ economically viable. mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users generate fees. fees replace emission
+
+the same hardware mines and proves — no stranded assets. see [[Goldilocks field processor]] for the PoUW scheme
 
 ## the game
 
 the game design ensures the [[cybergraph]] improves over time:
 
-  - early, accurate links to important [[particles]] earn the most (attention yield curve)
-  - redundant links earn nothing — the system penalizes noise
-  - [[neurons]] build long-term reputation via accumulated π-weight ([[karma]])
-  - [[focus]] as cost ensures every [[cyberlink]] is a [[costly signal]]
+- early, accurate links to important [[particles]] earn the most (attention yield curve)
+- redundant links earn nothing — the system penalizes noise
+- [[neurons]] build long-term reputation via accumulated π-weight ([[karma]])
+- [[focus]] as cost ensures every [[cyberlink]] is a [[costly signal]]
 
-see [[economic model]] for the formal 7-point spec. see [[collective learning]] for the group-level dynamics. see [[cybernomics]] for the full economics collection
+see [[economic model]] for the formal 7-point spec. see [[collective learning]] for the group-level dynamics. see [[cyber/tokenomics]] for the full protocol economics
