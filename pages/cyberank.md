@@ -1,6 +1,6 @@
 ---
 icon: 🦠
-tags: cyber
+tags: cyber, core
 alias: cyber rank, particles weight, particles weights, cyberanks
 crystal-type: measure
 crystal-domain: cyber

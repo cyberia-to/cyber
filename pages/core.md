@@ -21,6 +21,6 @@ process: [[observation]], [[learning]], [[inference]], [[training]], [[collectiv
 
 meaning: [[knowledge]], [[explicit knowledge]], [[implicit knowledge]], [[knowledge theory]]
 
-convergence: [[truth machine]], [[intelligence]], [[cyber]]
+convergence: [[truth machine]], [[cyberank]], [[intelligence]], [[cyber]]
 
 discover all [[concepts]]
