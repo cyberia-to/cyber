@@ -20,34 +20,7 @@ the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelli
 - [[knowledge]]: [[particles]] linked by [[neurons]] via [[cyberlinks]]
 - [[intelligence]]: the observation loop between [[neurons]] and the [[tru]]
 
-CID format: (version, algorithm, parameters, field, digest)
-
-instead of using the location on a server:
-```
-https://bitcoin.org/bitcoin.pdf
-```
-
-we use the object itself:
-```
-QmRA3NWM82ZGynMbYzAgYTSXCVM14Wx1RZ8fKP42G6gjgj
-```
-
-properties of content addressing
-
-- mesh-network future-proof
-- interplanetary accessibility
-- censorship resistance
-- technological independence
-- deduplication
-
-examples
-
-- keyword
-- article
-- image
-- video
-- pdf
-- html app
+examples: keyword, article, image, video, pdf, html app
 
 [[particles]] are the objects of the [[cybergraph]], [[neurons]] are the subjects
 
@@ -55,8 +28,6 @@ each particle has a [[cyberank]]: probability of observation by random-walking [
 
 [[cards]] can be bound to particles for provenance and ownership
 
-[[bostrom]] uses [[cidv0]] standard of content addressing — SHA-256 [[hash]] with rich software and hardware infrastructure
-
-to compute particle from data: [[cyb/oracle]], [[cy]], or any [[ipfs]] tool
+see [[particle/tools]] for content addressing tools and CID format
 
 discover all [[concepts]]

@@ -25,23 +25,8 @@ these outputs are deterministic, verified in [[consensus]], and visible to all [
 
 inference produces structure that no single [[neuron]] created — paths, clusters, hierarchies emerge from local links
 
-## the ML analogy
+in machine learning, inference runs a trained model on new input. in [[cyber]], inference runs the [[tri-kernel]] on the [[cybergraph]]. the graph is the model — trained by [[neurons]] through [[learning]], computed by the [[tru]] through inference. the key difference: in [[cyber]], inference runs on a shared graph trained by millions of [[neurons]] — and the result is verified in [[consensus]]
 
-in machine learning, inference runs a trained model on new input. in [[cyber]], inference runs the [[tri-kernel]] on the [[cybergraph]]. the graph is the model — trained by [[neurons]] through [[learning]], computed by the [[tru]] through inference
-
-| | machine learning | [[cyber]] |
-|---|---|---|
-| process | inference | inference |
-| who | forward pass | [[tru]] |
-| model | neural network weights | [[cybergraph]] |
-| input | query | [[knowledge]] (graph state) |
-| output | prediction | [[explicit knowledge]] ([[cyberank]], [[karma]], [[syntropy]]) |
-| frequency | on demand | every [[block]] |
-
-the key difference: in ML, inference runs on a single model trained by one entity. in [[cyber]], inference runs on a shared graph trained by millions of [[neurons]] — and the result is verified in [[consensus]]
-
-see [[intelligence]] for the loop itself
-
-see [[standard inference]] for the specific algorithm
+see [[intelligence]] for the loop itself. see [[standard inference]] for the specific algorithm
 
 discover all [[concepts]]

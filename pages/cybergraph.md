@@ -6,7 +6,7 @@ crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
 ---
-the data model of [[cyber]]
+the accumulated [[graph]] of all [[cyberlinks]] created by all [[neurons]]. the shared [[knowledge]] of [[cyber]]
 
 five primitives define everything that exists in the system:
 
@@ -15,12 +15,6 @@ five primitives define everything that exists in the system:
 - [[cyberlink]] — signed, weighted, timestamped directed edge between two [[particles]]
 - [[token]] — unit of [[value]]: [[coins]], [[cards]], [[scores]], [[badges]]
 - [[focus]] — attention distribution over the graph. conserved: Σ = 1. [[threshold]] filters spam
-
-[[cyber/bbg]] defines how to store. [[cyber/core]] defines how to compute. cybergraph defines what to compute and store: the graph of meaning created by [[neurons]]
-
-## knowledge
-
-cybergraph implements [[knowledge theory]]: [[neurons]] [[link]] [[particles]] in [[time]]
 
 a [[particle]] cannot enter the cybergraph without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns the particle into a [[file]]. further links between particles create [[knowledge]]
 
@@ -36,25 +30,8 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
 
 [[neurons]] write [[implicit knowledge]] into the cybergraph as [[cyberlinks]]. the [[tru]] reads the cybergraph and computes [[explicit knowledge]]. the cybergraph is where both directions meet
 
-## structure
-
-the graph is namespace-indexed from genesis. every edge belongs to [[namespaces]], enabling completeness proofs via [[cyber/bbg]]
-
-[[neural language]] structures the graph with [[semantic conventions]], [[motifs]], and [[sentences]] — turning raw links into typed meaning
-
 the [[tru]] continuously computes [[cyberank]], [[karma]], and [[syntropy]] over the graph in [[consensus]]
 
-## capabilities
+see [[cybergraph/architecture]] for capabilities, namespace structure, and implementation
 
-- onchain [[dht]] with [[semantic core]] extending beyond words
-- probabilistic content storage and retrieval, charged per file
-- social information propagation and p2p retrieval
-- private [[offline inference]] over fine-tuned [[llms]]
-
-## architecture
-
-together with [[tru]] and [[neural language]], cybergraph forms the foundation of [[soft3]]
-
-cybergraph of [[bostrom]] serves as [[semantic core]] for the [[bootloader]] of [[superintelligence]]
-
-implemented as [[bostrom/graph]] [[module]] of [[cyber-sdk]]
+discover all [[concepts]]

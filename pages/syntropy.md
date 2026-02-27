@@ -7,58 +7,19 @@ crystal-size: article
 ---
 measure of [[order]] in [[vimputer]]
 
-computed in [[bits]]
+computed in [[bits]]. designed as [[key metabolic factor]] of [[superintelligence]]
 
-designed as [[key metabolic factor]] of [[superintelligence]]
+syntropy measures the tendency of a system toward [[organization]] and [[coherence]]. entropy measures disorder; syntropy measures the force that counterbalances it — the source of [[intelligence]]
 
-syntropy of
+in [[cyber]]: the [[tru]] computes syntropy over the [[cybergraph]] in [[consensus]]. as [[neurons]] create meaningful [[cyberlinks]] and the [[tri-kernel]] concentrates [[focus]] on relevant [[particles]], syntropy increases. spam and noise decrease it
 
-- [[bostrom]]: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
-- [[space pussy]]: [spacepussy.ai/oracle/stats](https://spacepussy.ai/oracle/stats)
+syntropy drives the graph's tendency toward [[order]]. high syntropy means the [[cybergraph]] is structured, connected, and useful. low syntropy means noise dominates
 
-concept that emerges from different fields of science and mathematics, often contrasted with entropy
+syntropy of [[bostrom]]: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
+syntropy of [[space pussy]]: [spacepussy.ai/oracle/stats](https://spacepussy.ai/oracle/stats)
 
-while entropy is associated with disorder, randomness
+see [[syntropy/science]] for the concept across scientific disciplines
 
-- and the tendency of systems to move towards thermodynamic equilibrium
-
-syntropy is linked to the opposite—order, complexity
-
-- and the tendency of systems to move towards [[organization]] and [[coherence]]
-
-scientific perspectives
-
-- thermodynamics
-	- while entropy is a central concept in thermodynamics
-	- syntropy isn't traditionally a thermodynamic quantity
-	- however, it has been used in discussions about living systems
-	- which seem to locally decrease entropy through processes like metabolism and growth
-	- creating order from disorder
-- biology
-	- in biological systems, syntropy may describe the processes that lead
-		- [[self-organization]]
-		- [[complexity]], and
-		- life
-	- for example, dna replication, cell differentiation, and the development of organisms
-	- can be seen as syntropic processes where order increases
-- [[cybernetics]] and [[systems theory]]
-	- study of self-organizing systems
-	- these are systems that, instead of degrading into disorder, as entropy would suggest
-	- develop increasing levels of [[complexity]] and [[coherence]]
-- quantum mechanics
-	- some interpretations of quantum mechanics and theories of time involve syntropy
-	- where future states of a system influence the present
-	- creating a pull towards organization and coherence
-
-syntropy vs. entropy
-
-- while entropy is the force producing [[randmoness]]
-- leading to [[chaos]] and overgrowing extension of the [[universe]]
-- syntropy is the opposite force of [[order]]
-- which is the source of [[intelligence]] counterbalancing the [[chaos]]
-
-see [[tru]] for the computation pipeline
-
-see [[egregore]] for the broader framework
+see [[tru]] for the computation pipeline. see [[egregore]] for the broader framework
 
 discover all [[concepts]]

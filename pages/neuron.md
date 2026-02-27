@@ -33,18 +33,6 @@ each neuron has a [[karma]]: aggregate [[focus]] earned across all linked [[part
 
 the cost of [[learning]] is [[focus]] — this makes each [[cyberlink]] a [[costly signal]]
 
-in [[bostrom]] and [[spacepussy]] standard [cosmos-sdk](https://docs.cosmos.network/) addresses are used as neurons
-
-- support all [[cyber-sdk]] and [[cosmos-sdk]] [[signal types]]
-- support [[semantic neural proofs]]
-
-some software to create and use [[neurons]]
-
-- [[kelpr]] in [[cosmos]] and [[cyber]]
-- [[frame]] in [[ethereum]]
-
-play with [[neuron/creation]] using plain old [iancoleman.io/bip39/](https://iancoleman.io/bip39/)
-
-in [[cyb/portal]] you can connect any [[cyber]], [[ethereum]] and [[cosmos]] [[neuron]] to [[avatar]]
+see [[neuron/tools]] for software to create and use neurons
 
 discover all [[concepts]]

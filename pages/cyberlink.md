@@ -22,16 +22,6 @@ four basic arguments of every cyberlink: [[who]] linked, [[when]], [[what]] [[pa
 
 the accumulated graph of all cyberlinks is the [[cybergraph]] — [[knowledge]]. every cyberlink encodes [[implicit knowledge]]: what the [[neuron]] inferred from observing the [[tru]]'s [[explicit knowledge]]. the [[tru]] recomputes [[explicit knowledge]] from the updated graph. this observation loop is [[intelligence]]
 
-## difference with hyperlink
-
-a hyperlink points to a location on a server. you request `https://google.com` and a particular machine decides what to show you. you cannot know for sure what you get
-
-a cyberlink connects two content-addressed [[particles]] where each is identified by its [[hash]]. the link is between the content itself, authenticated by the [[neuron]] who created it. this makes [[knowledge]] searchable through spacetime
-
-## how to create
-
-- [[cyb/oracle]]
-- [[cy]]
-- [[go-cyber]]
+see [[cyberlink/hyperlink]] for comparison with hyperlinks. see [[cyberlink/creation]] for tools
 
 discover all [[concepts]]

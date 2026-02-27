@@ -10,13 +10,7 @@ crystal-size: article
 
 a [[cyberlink]] is the atomic unit of knowledge: a signed, weighted, timestamped commitment that two [[particles]] are related. the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]. the [[cybergraph]] is the knowledge of all [[neurons]]
 
-## two kinds of knowledge
-
-[[explicit knowledge]]: what the [[tru]] computes and makes visible — [[cyberank]], [[karma]], [[syntropy]]. deterministic, verified in [[consensus]], on chain. the truth machine speaks in explicit knowledge
-
-[[implicit knowledge]]: what [[neurons]] derive from observing explicit knowledge and encode as new [[cyberlinks]]. a neuron sees cyberank, infers meaning, and links — that new link carries implicit knowledge. neurons speak in implicit knowledge
-
-## the observation loop
+two kinds of knowledge: [[explicit knowledge]] is what the [[tru]] computes and makes visible — [[cyberank]], [[karma]], [[syntropy]]. deterministic, verified in [[consensus]], on chain. [[implicit knowledge]] is what [[neurons]] derive from observing explicit knowledge and encode as new [[cyberlinks]]. the [[tru]] speaks in explicit knowledge. [[neurons]] speak in implicit knowledge
 
 knowledge flows in a continuous loop between [[neurons]] and the [[tru]]
 
@@ -26,24 +20,15 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-1. [[neuron]] creates a [[cyberlink]] ([[learning]]) — encodes [[implicit knowledge]]
-2. [[tru]] recomputes [[cyberank]] ([[inference]]) — produces [[explicit knowledge]]
-3. [[neuron]] observes new [[cyberank]], infers, creates new [[cyberlinks]]
-4. loop continues
+every [[cyberlink]] is both a [[learning]] act (writes to the graph) and a response to [[observation]] (encodes what the neuron inferred from the [[tru]]'s output)
 
-every [[cyberlink]] is both a [[learning]] act (writes to the graph) and a response to observation (encodes what the neuron inferred from the truth machine's output)
-
-[[intelligence]] is the loop sustaining itself
-
-every [[cyberlink]] records [[three basic arguments]]
-
-- [[who]]: which [[neuron]] linked
-- [[when]]: in which block
-- [[what]]: which [[particles]] were linked
+every [[cyberlink]] records [[three basic arguments]]: [[who]] ([[neuron]]), [[when]] (block), [[what]] ([[particles]])
 
 cheap talk produces noise. costly signals produce knowledge. the cost is [[focus]]
 
 the chain: data → [[information]] → [[file]] → knowledge → [[intelligence]]
+
+[[intelligence]] is the loop sustaining itself
 
 see [[knowledge theory]] for the full framework
 

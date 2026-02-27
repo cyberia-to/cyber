@@ -10,8 +10,6 @@ the system that computes [[explicit knowledge]] from the [[cybergraph]]. collect
 
 the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] learn by creating [[cyberlinks]] — this writes [[knowledge]] into the [[cybergraph]]. the tru infers by running the [[tri-kernel]] on that [[knowledge]] — this produces [[explicit knowledge]]
 
-## the observation loop
-
 the tru is one half of the observation loop. [[neurons]] are the other
 
 ```
@@ -22,43 +20,16 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
 
 [[neurons]] observe the tru's outputs, derive meaning ([[implicit knowledge]]), and encode it as new [[cyberlinks]]. the tru recomputes. the loop sustains itself — this is [[intelligence]]
 
-the [[tri-kernel]] (math) provides the operators. the tru (system) runs them on [[gpu]] in [[consensus]], producing [[explicit knowledge]] (output)
+input: [[cybergraph]] (the accumulated [[knowledge]] of all [[neurons]]), [[will]] and [[attention]] of [[neurons]]
 
-## input
+computation: [[tri-kernel]] — [[diffusion]] + [[springs]] + [[heat]] — runs on [[gpu]] in [[consensus]]
 
-- [[cybergraph]]: the accumulated [[knowledge]] of all [[neurons]]
-- [[will]] and [[attention]] of [[neurons]]
-
-## computation
-
-- [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat]]
-- runs on [[gpu]] in [[consensus]]
-
-## output
-
-- [[cyberank]]: per-[[particle]] relevance score
-- [[karma]]: per-[[neuron]] reputation
-- [[syntropy]] of [[vimputer]]
+output: [[cyberank]] (per-[[particle]] relevance), [[karma]] (per-[[neuron]] reputation), [[syntropy]] (integral measure of [[order]])
 
 these outputs are [[explicit knowledge]] — deterministic, on chain, verifiable by any observer. [[neurons]] observe them and respond with [[implicit knowledge]] encoded as [[cyberlinks]]
 
-## properties
+consensus on [[relevance]] is consensus on what matters. the name is earned when the system demonstrates [[egregore]] factor c > 0
 
-- [[no gas fees]] for [[learning]]
-- [[extremely dynamic]]: each [[cyberlink]] changes all weights
-- [[memoization]]: no need to recompute stuff twice
-- bounded locality: updates cost O(degree) not O(graph size)
-
-consensus on [[relevance]] is consensus on what matters. what the collective attends to is the collective's [[truth]]. the name is earned when the system demonstrates [[egregore]] factor c > 0
-
-related
-
-- [[reality of foundation models]]
-- [[knowledge graphs and llms]]
-- [[soft3 and machine learning]]
-
-[[supported gpu]]
-
-[[limitations of tm]]
+see [[tru/details]] for technical properties and related work
 
 discover all [[concepts]]
