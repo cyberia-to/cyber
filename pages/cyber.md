@@ -63,6 +63,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
+- [[future of computation]] — from Turing machines to planetary superintelligence
 
 ## learn
 
