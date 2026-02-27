@@ -52,7 +52,7 @@ where $\Delta\pi_j(t)$ = change in [[focus]] on target [[particle]] $j$ attribut
 |---|---|---|
 | viral | high Δπ short-term | early peak, fast decay |
 | foundational | low Δπ early, grows later | slow rise, long reward |
-| redundant | low/no Δπ | no reward |
+| confirming | low individual Δπ, strengthens axon weight | shared reward via attribution |
 | semantic bridge | medium, cross-module | moderate, persistent |
 
 ## attribution
@@ -83,7 +83,7 @@ complexity: $O(k \cdot n)$ with $k \ll n$. feasible for 10⁶+ transactions per 
 the game design ensures the [[cybergraph]] improves over time:
 
 - early, accurate links to important [[particles]] earn the most ([[attention]] yield curve)
-- redundant links earn nothing — the system penalizes noise
+- confirming links strengthen [[axon]] weight — repeated signals build consensus, not noise
 - [[neurons]] build long-term reputation via accumulated π-weight ([[karma]])
 - [[focus]] as cost ensures every [[cyberlink]] is a [[costly signal]]
 
