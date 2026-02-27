@@ -10,7 +10,7 @@ the protocol for planetary [[superintelligence]]. [[manifesto]]
 
 LLMs are private brains behind API walls. they lie because they have no shared, verifiable memory, and they obey corporations. every corporation trains its own model on scraped data, manipulates the weights, and sells inference. the result: a dozen competing superintelligences accountable to shareholders, not to the planet, life, and agents
 
-cyber is the shared memory layer. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every ranking is provable by [[STARK]] proofs, and [[collective intelligence]] emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
+cyber is [[collective intelligence]]: shared memory with weights. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every ranking is provable by [[STARK]] proofs, and intelligence emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
 
 what this enables: a [[knowledge]] graph that grows smarter with every agent that links, a [[neural language]] that humans and machines speak natively, a [[file]] system where [[names]] resolve through the graph, AI [[alignment]] measurable as graph divergence between human and machine [[focus]], and a [[truth machine]] where lies are economically unprofitable because creating [[cyberlinks]] costs real [[focus]]
 
