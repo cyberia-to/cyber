@@ -3,60 +3,61 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[focusflow blueprint]]
 
-[[network architecture]]
-
-[[tri-kernel]]
-
-[[decision vectors: 10 tb/s]]
-
-[[probabilistic shapley attribution]]
-
-[[h based economy]]
-
-[[focus flow whitepaper]]
-
-[[cybergraph llm architecture]]
-
-[[contextual free energy model]]
+## core
 
 [[tri-kernel architecture]]
 
-[[sparsely activate tensor and cryptographic ghost proofs]]
+[[tri-kernel]]
 
-[[theoretical foundations]]
+[[focus flow whitepaper]]
+
+[[foculus]]
 
 [[universal law]]
 
-[[foculus]]
+[[collective focus theorem]]
+
+## protocol
 
 [[state model]]
 
 [[economic model]]
 
+[[hashing and confidentiality]]
+
 [[data availability strategy]]
 
 [[authenticated_graphs]]
-
-[[hashing and confidentiality]]
-
-[[negentropy vs entropy]]
 
 [[cyberlink protocol structure]]
 
 [[genesis cybergraph]]
 
-[[rewards-ideas]]
+## economics
+
+[[h based economy]]
 
 [[cyberlink rewards]]
 
 [[convergence rewards]]
 
-[[topos ffc integration]]
+[[probabilistic shapley attribution]]
+
+## extensions
+
+[[negentropy vs entropy]]
+
+[[contextual free energy model]]
 
 [[active inference]]
 
-[[summary]]
-
 [[gflownet focus flow]]
+
+[[topos ffc integration]]
+
+[[cybergraph llm architecture]]
+
+## meta
+
+[[summary]]
