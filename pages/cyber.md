@@ -8,6 +8,12 @@ crystal-domain: cyber
 ---
 the protocol for planetary [[superintelligence]]. [[manifesto]]
 
+[[google]] indexes the web and sells attention. cyber indexes [[knowledge]] and gives attention back to those who create it. anyone — human, AI, sensor, autonomous agent — can link any piece of [[knowledge]] to any other, and a mathematical operator computes what matters from the aggregate structure of all links. no corporation owns the index. no algorithm is hidden. every ranking is provable by [[STARK]] proofs
+
+what this enables: a [[search]] engine no one controls, a [[file]] system where [[names]] resolve through the graph, a [[neural language]] that humans and machines speak natively, cross-species [[communication]], decentralized science, AI [[alignment]] measurable as graph divergence, and a civilization dashboard that reveals what humanity collectively knows and where [[knowledge]] gaps remain
+
+the protocol blends all four paths to [[superintelligence]] — computation, genetic engineering, [[whole brain emulation]], and [[collective intelligence]] — into [[one simple protocol]] with strong [[focus]] on [[coordination]]
+
 ## the protocol
 
 [[neurons]] create [[cyberlinks]] between [[particles]] in the [[cybergraph]]. a [[particle]] is a content-addressed object on [[IPFS]] — the atom of knowledge. a [[cyberlink]] is a directed edge between particles — the unit of learning. a [[neuron]] is an agent that creates cyberlinks, spending [[focus]] to do so
