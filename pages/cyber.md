@@ -56,12 +56,13 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 ## specifications
 
-- [[cyber/particle]] - hash parametrs
-- [[cyber/vm]] — 16 reduction patterns, value tower, cost model
-- [[cyber/bbg]] — authenticated state, polynomial commitments, privacy (UTXO, nullifiers, ZK)
-- [[cyber/tri-kernel]] — three operators, composite contraction
-- [[cyber/focus]] — conservation laws, flow equation
-- [[cyber/rewards]] — reward functions, token operations, Shapley attribution
+- [[cyber/particle]] — hash parameters, content addressing, tree
+- [[cyber/vm]] — compute: 16 reduction patterns, value tower, cost model
+- [[cyber/bbg]] — state: authenticated graph, polynomial commitments, privacy
+- [[cyber/stark]] — verify: proof system, self-verification, recursive composition
+- [[cyber/tri-kernel]] — rank: three operators, composite contraction
+- [[cyber/focus]] — conserve: conservation laws, flow equation
+- [[cyber/rewards]] — reward: token operations, Shapley attribution
 
 ## explanations
 
@@ -74,7 +75,6 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 - [[universal law]] — exponential optimality under constraint
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[future of computation]] — from Turing machines to planetary superintelligence
-- [[cyber/stark]] — proof system
 - [[cyber/security]] — security properties and formal proofs
 - [[cyber/privacy]] — privacy architecture
 - [[cyberlink protocol structure]]
