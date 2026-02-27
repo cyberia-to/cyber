@@ -1,6 +1,6 @@
 ---
 alias: locked, frozen
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---
