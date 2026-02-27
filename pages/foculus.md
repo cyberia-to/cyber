@@ -82,11 +82,13 @@ the threshold $\tau(t) = \mu_\pi + \kappa\sigma_\pi$ adapts to the current distr
 |---|---|---|---|
 | leader | rotating proposer | miner (PoW lottery) | none |
 | finality | 5-60 s | ~60 min | 1-3 s |
-| throughput | 1k-10k tx/s | ~10 tx/s | bounded by GPU |
+| throughput | 1k-10k tx/s | ~10 tx/s | ~10⁹ signals/s per GPU |
 | validator scale | 10²-10³ | unbounded | unbounded |
 | fault tolerance | 1/3 stake | 51% hash | 1/2 $\pi$ |
 
-single iteration: $O(|E| + |V|)$ sparse op. latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN
+each iteration is a sparse matrix-vector multiply — embarrassingly parallel, no sequential bottleneck. single GPU (A100): ~50M edges at 40 Hz ≈ 2×10⁹ edge ops/s. with $K$ shards, throughput scales linearly
+
+latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN
 
 ## economics
 
