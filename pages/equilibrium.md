@@ -1,5 +1,5 @@
 ---
-tags: pattern, physics, chemistry
+tags: cyber, core, pattern, physics, chemistry
 crystal-type: pattern
 crystal-domain: physics
 ---

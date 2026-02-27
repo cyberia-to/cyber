@@ -25,6 +25,6 @@ process: [[observation]], [[learning]], [[inference]], [[training]]
 
 meaning: [[knowledge]], [[neural]], [[crystal]]
 
-convergence: [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
+convergence: [[equilibrium]], [[convergence]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
 
 discover all [[concepts]]
