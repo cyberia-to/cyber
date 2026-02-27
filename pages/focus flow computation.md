@@ -61,4 +61,8 @@ complexity per step: $O(|E| + |V|)$. context window is unbounded — it is the e
 
 each layer is specified independently. together they form a self-organizing system where [[computation]], [[inference]], and [[consensus]] are the same process
 
-see [[collective focus theorem]] for convergence proofs. see [[tri-kernel architecture]] for why these three operators. see [[cybergraph llm architecture]] for the generative model
+see [[collective focus theorem]] for convergence proofs. see [[tri-kernel architecture]] for why these three operators. see [[cybergraph llm architecture]] for the generative model.
+
+## extensions
+- [[gflownet focus flow]]
+- [[topos ffc integration]]

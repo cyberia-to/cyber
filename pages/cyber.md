@@ -56,6 +56,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 ## specifications
 
+- [[cyber/particle]] - hash parametrs
 - [[cyber/vm]] — 16 reduction patterns, value tower, cost model
 - [[cyber/bbg]] — authenticated state, polynomial commitments, privacy (UTXO, nullifiers, ZK)
 - [[cyber/tri-kernel]] — three operators, composite contraction
