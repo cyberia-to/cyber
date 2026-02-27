@@ -1,18 +1,45 @@
 ---
 tags: cyber, cip
-crystal-type: pattern
+crystal-type: entity
 crystal-domain: cyber
-alias: CORE patterns, reduction patterns, sixteen patterns
+status: draft
+alias: CORE vm, CORE patterns, reduction patterns, sixteen patterns, cyber/patterns
 ---
-# CORE Reduction Patterns
+# CORE virtual machine
 
-The [[CORE]] computation model defines sixteen orthogonal reduction patterns operating over Goldilocks field elements ($p = 2^{64} - 2^{32} + 1$). Each pattern has a unique tag, no two patterns overlap, and left-hand sides are linear. This guarantees confluence: any reduction order yields the same result.
+the execution model of [[CORE]]: sixteen orthogonal reduction patterns over Goldilocks field elements, a three-type value tower, deterministic cost model, confluent parallel reduction, and global memoization
 
-## Value Tower
+## field
 
 ```
-VALUE TOWER
-───────────
+FIELD: Goldilocks
+  p = 2^64 - 2^32 + 1 = 18446744069414584321
+  Primitive root: 7
+  2^32-th root of unity: 1753635133440165772
+
+  Efficient reduction:
+    a mod p = a_lo - a_hi × (2^32 - 1) + correction
+
+HASH: Poseidon-Goldilocks
+  State: 12 field elements, Rate: 8 elements
+  Rounds: 8 full + 22 partial + 8 full
+  Cost: ~300 STARK constraints per permutation
+  Status: CONFIGURABLE (Poseidon is reference, not mandated)
+
+DOMAIN SEPARATION
+  COMMITMENT_DOMAIN  = 0x434F524520524543  // "CORE REC"
+  NULLIFIER_DOMAIN   = 0x434F5245204E554C  // "CORE NUL"
+  MERKLE_DOMAIN      = 0x434F5245204D524B  // "CORE MRK"
+  OWNER_DOMAIN       = 0x434F5245204F574E  // "CORE OWN"
+
+STRUCTURAL HASH
+  H(Atom a)       = HASH(0x00 ‖ type_tag(a) ‖ encode(a))
+  H(Cell(l, r))   = HASH(0x01 ‖ H(l) ‖ H(r))
+```
+
+## value tower
+
+```
 ┌───────────────────────────────────────────────────────────────────────┐
 │  TYPE TAG    │  REPRESENTATION     │  VALID RANGE    │  USE          │
 ├──────────────┼─────────────────────┼─────────────────┼───────────────┤
@@ -22,19 +49,17 @@ VALUE TOWER
 └───────────────────────────────────────────────────────────────────────┘
 
 COERCION RULES
-──────────────
-field → word:  Valid iff value < 2^64 (always true for Goldilocks)
-word → field:  Always valid (injection)
-hash → field:  Extract first element (lossy, for compatibility only)
-field → hash:  Forbidden (use HASH pattern)
+  field → word:  Valid iff value < 2^64 (always true for Goldilocks)
+  word → field:  Always valid (injection)
+  hash → field:  Extract first element (lossy, for compatibility only)
+  field → hash:  Forbidden (use HASH pattern)
 
 TYPE ERRORS
-───────────
-Bitwise op on hash → ⊥_error
-Arithmetic on hash (except equality) → ⊥_error
+  Bitwise op on hash → ⊥_error
+  Arithmetic on hash (except equality) → ⊥_error
 ```
 
-## Reduction Signature
+## reduction signature
 
 ```
 reduce : (Subject, Formula, Focus) → Result
@@ -45,7 +70,7 @@ Result = (Noun, Focus')     — success with remaining focus
        | ⊥_unavailable      — referenced content not retrievable
 ```
 
-## Pattern Overview
+## sixteen patterns
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
@@ -65,7 +90,7 @@ Result = (Noun, Focus')     — success with remaining focus
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
-## Structural Patterns
+## structural patterns
 
 ```
 PATTERN 0: AXIS
@@ -112,7 +137,7 @@ reduce(s, [4 [test [yes no]]], f) =
 CRITICAL: Only ONE branch evaluated. Prevents infinite recursion DoS.
 ```
 
-## Arithmetic Patterns
+## arithmetic patterns
 
 ```
 PATTERN 5: ADD
@@ -149,7 +174,7 @@ PATTERN 10: LT
 reduce(s, [10 [a b]], f) → (0 if v_a < v_b else 1, f2)
 ```
 
-## Bitwise Patterns
+## bitwise patterns
 
 ```
 Valid on word type [0, 2^64). Bitwise on hash → ⊥_error.
@@ -167,7 +192,7 @@ PATTERN 14: SHL
 reduce(s, [14 [a n]], f) → ((v_a << v_n) mod 2^64, f2)
 ```
 
-## Hash Pattern
+## hash pattern
 
 ```
 PATTERN 15: HASH
@@ -181,7 +206,7 @@ NOTE: Hash CAN be expressed as pure patterns (~2800 field ops for Poseidon).
 Pattern 15 is OPTIMIZATION. Jets accelerate; semantics unchanged.
 ```
 
-## Cost Table
+## cost table
 
 ```
 Pattern │ Exec Cost │ STARK Constraints
@@ -201,22 +226,13 @@ Pattern │ Exec Cost │ STARK Constraints
 15 hash │ 300       │ ~300
 ```
 
-## Parallel Reduction
+cost is deterministic: depends only on syntactic structure, never on runtime values. cache hits reduce work but cost is charged in full — cost is the right to a result, not payment for computation
 
-### Confluence Theorem
+## parallel reduction
 
-Theorem: CORE is confluent.
+the 16 patterns form an orthogonal rewrite system: each has a unique tag, no two overlap, left-hand sides are linear. by Huet-Levy (1980), orthogonal systems are confluent without requiring termination
 
-Proof: The 16 patterns form an orthogonal rewrite system:
-- Each pattern has unique tag (0-15)
-- No two patterns overlap on any input
-- Left-linear (no variable repetition in pattern left-hand sides)
-
-By Huet-Lévy (1980), orthogonal systems are confluent without requiring termination. ∎
-
-Corollary: Parallel and sequential reduction yield identical results.
-
-### Dependency Analysis
+corollary: parallel and sequential reduction yield identical results
 
 ```
 PATTERN PARALLELISM
@@ -239,7 +255,7 @@ Pattern 4 (branch):   [4 [t [c d]]]
   Then: ONE of reduce(s,c) or reduce(s,d)  — NOT parallel (lazy)
 ```
 
-### Global Memoization
+## global memoization
 
 ```
 GLOBAL CACHE
@@ -251,13 +267,30 @@ Properties:
 - Universal: Any node can contribute/consume
 - Permanent: Results never change (determinism)
 - Verifiable: Result hash checkable against proof
+```
 
-COST vs WORK
-────────────
-Cache hit:  Work = O(1) lookup
-            Cost = FULL (charged as if computed)
+## test vectors
 
-Rationale: Cost is the RIGHT to a result, not payment for work.
-           All nodes must agree on cost (deterministic).
-           Work savings are implementation optimization.
+```
+add(1, 2) = 3
+mul(p-1, p-1) = 1
+inv(2) = 9223372034707292161
+
+reduce([1,2], [5 [[0 2] [0 3]]], 100) = (3, 96)
+  // add(axis 2, axis 3) = add(1, 2) = 3
+```
+
+## cost examples
+
+```
+Simple addition: 4 patterns
+  [5 [[0 2] [0 3]]]
+  Cost: 1 (add) + 2 (axis) + overhead = ~4
+
+Poseidon hash: ~300 patterns
+  [15 [0 1]]
+  Cost: 300
+
+Merkle verification (32 levels): ~10,000 patterns
+  32 × (hash + conditional) ≈ 32 × 310
 ```

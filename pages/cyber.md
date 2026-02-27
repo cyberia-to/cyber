@@ -56,13 +56,14 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 ## specifications
 
-- [[cyber/core]] — full protocol specification
+- [[cyber/core]] — the CORE synthesis: six paradigms, ten principles
+- [[cyber/vm]] — 16 reduction patterns, value tower, cost model
 - [[cyber/bbg]] — authenticated state model
 - [[cyber/focus]] — focus dynamics and conservation laws
 - [[cyber/tri-kernel]] — tri-kernel operator specification
 - [[cyber/stark]] — proof system
 - [[cyber/privacy]] — privacy architecture
-- [[cyber/patterns]] — design patterns
+- [[cyber/security]] — security properties and formal proofs
 
 ## explanations
 
