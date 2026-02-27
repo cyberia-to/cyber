@@ -1510,6 +1510,48 @@ body:has(.fullscreen-viz) .main-content {
     letter-spacing: 0.03em;
 }
 
+/* Graph tag filter */
+.graph-filter {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 80vw;
+    z-index: 15;
+}
+
+.graph-filter-pill {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+    background: color-mix(in srgb, var(--color-bg) 70%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--color-text);
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: inherit;
+    letter-spacing: 0.03em;
+}
+
+.graph-filter-pill:hover {
+    opacity: 1;
+    border-color: var(--color-primary);
+}
+
+.graph-filter-pill.active {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    opacity: 1;
+    border-color: var(--color-primary);
+}
+
 /* ============================================================
    PAGES DISCOVERY
    ============================================================ */

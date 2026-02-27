@@ -83,6 +83,104 @@
     let hoveredNode = null;
     let edgeRefs = [];
 
+    // Stats element (created early so filter can update it)
+    const stats = document.createElement('div');
+    stats.className = 'graph-stats';
+
+    // Tag filter state
+    let activeTags = new Set();
+    let visibleNodes = null; // null = show all, Set = filtered
+
+    // Extract tags sorted by frequency, min 3 occurrences, max 20 pills
+    const tagCounts = {};
+    data.nodes.forEach(n => {
+      (n.tags || []).forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+    });
+    const topTags = Object.entries(tagCounts)
+      .filter(([, count]) => count >= 3)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 20)
+      .map(([tag]) => tag);
+
+    function updateVisibleNodes() {
+      if (activeTags.size === 0) {
+        visibleNodes = null;
+      } else {
+        visibleNodes = new Set();
+        data.nodes.forEach(n => {
+          if ((n.tags || []).some(t => activeTags.has(t))) {
+            visibleNodes.add(n.id);
+          }
+        });
+      }
+    }
+
+    function buildFilterUI() {
+      if (topTags.length === 0) return;
+      const bar = document.createElement('div');
+      bar.className = 'graph-filter';
+
+      const allPill = document.createElement('button');
+      allPill.className = 'graph-filter-pill active';
+      allPill.textContent = 'all';
+      allPill.addEventListener('click', () => {
+        activeTags.clear();
+        updateVisibleNodes();
+        updatePillStates();
+        updateStats();
+        draw();
+      });
+      bar.appendChild(allPill);
+
+      topTags.forEach(tag => {
+        const pill = document.createElement('button');
+        pill.className = 'graph-filter-pill';
+        pill.textContent = tag;
+        pill.dataset.tag = tag;
+        pill.addEventListener('click', () => {
+          if (activeTags.has(tag)) {
+            activeTags.delete(tag);
+          } else {
+            activeTags.add(tag);
+          }
+          updateVisibleNodes();
+          updatePillStates();
+          updateStats();
+          draw();
+        });
+        bar.appendChild(pill);
+      });
+
+      container.appendChild(bar);
+    }
+
+    function updatePillStates() {
+      const pills = container.querySelectorAll('.graph-filter-pill');
+      pills.forEach(pill => {
+        const tag = pill.dataset.tag;
+        if (!tag) {
+          // "all" pill
+          pill.classList.toggle('active', activeTags.size === 0);
+        } else {
+          pill.classList.toggle('active', activeTags.has(tag));
+        }
+      });
+    }
+
+    function updateStats() {
+      if (!stats) return;
+      if (visibleNodes) {
+        const visEdges = edgeRefs.filter(e => {
+          const sid = e.source.id || e.source;
+          const tid = e.target.id || e.target;
+          return visibleNodes.has(sid) || visibleNodes.has(tid);
+        }).length;
+        stats.innerHTML = visibleNodes.size + ' / ' + data.nodes.length + ' pages &middot; ' + visEdges + ' connections';
+      } else {
+        stats.innerHTML = data.nodes.length + ' pages &middot; ' + data.edges.length + ' connections';
+      }
+    }
+
     // Check if positions are pre-computed (from build)
     const hasLayout = data.nodes.length > 0 && data.nodes.some(n => n.x !== 0 || n.y !== 0);
 
@@ -165,6 +263,7 @@
         target: typeof e.target === 'object' ? e.target : nodeById[e.target]
       }));
 
+      buildFilterUI();
       draw();
 
       // Enable zoom + interactions
@@ -188,20 +287,29 @@
       const k = transform.k;
       const connectedSet = hoveredNode ? (adj[hoveredNode.id] || new Set()) : null;
 
-      // Draw edges — only when hovering or zoomed in
-      if (hoveredNode) {
+      // Determine if a node is visible (passes tag filter)
+      const isVisible = visibleNodes ? (id) => visibleNodes.has(id) : () => true;
+
+      // Draw edges — when hovering, or when filter active (show connections between visible nodes)
+      if (hoveredNode || visibleNodes) {
         ctx.strokeStyle = colorPrimary;
-        ctx.globalAlpha = 0.3;
         ctx.lineWidth = 0.8 / k;
         ctx.beginPath();
         for (const e of edgeRefs) {
           const sid = e.source.id || e.source;
           const tid = e.target.id || e.target;
-          if (sid === hoveredNode.id || tid === hoveredNode.id) {
+          let show = false;
+          if (hoveredNode && (sid === hoveredNode.id || tid === hoveredNode.id)) {
+            show = true;
+          } else if (visibleNodes && isVisible(sid) && isVisible(tid)) {
+            show = true;
+          }
+          if (show) {
             ctx.moveTo(e.source.x, e.source.y);
             ctx.lineTo(e.target.x, e.target.y);
           }
         }
+        ctx.globalAlpha = visibleNodes ? 0.15 : 0.3;
         ctx.stroke();
         ctx.globalAlpha = 1;
       }
@@ -209,13 +317,19 @@
       // Draw nodes
       for (const n of data.nodes) {
         const r = radiusScale(n.linkCount);
+        const nodeVisible = isVisible(n.id);
         let alpha = opacityScale(n.linkCount);
+
+        // Tag filter fading
+        if (visibleNodes && !nodeVisible) {
+          alpha = 0.02;
+        }
 
         if (hoveredNode) {
           if (n.id === hoveredNode.id) {
             alpha = 1;
           } else if (connectedSet.has(n.id)) {
-            alpha = 0.7;
+            alpha = visibleNodes && !nodeVisible ? 0.15 : 0.7;
           } else {
             alpha = 0.03;
           }
@@ -251,6 +365,8 @@
           let show = false;
           let alpha = 0.7;
 
+          const nodeVisible = isVisible(n.id);
+
           if (hoveredNode) {
             if (n.id === hoveredNode.id || connectedSet.has(n.id)) {
               show = true;
@@ -258,6 +374,12 @@
             } else if (labelSet.has(n.id)) {
               show = true;
               alpha = 0.15;
+            }
+          } else if (visibleNodes) {
+            // Filter active: label all visible nodes
+            if (nodeVisible) {
+              show = true;
+              alpha = 0.8;
             }
           } else {
             // Default: show top labels, more at higher zoom
@@ -297,13 +419,14 @@
       ctx.restore();
     }
 
-    // Hit detection
+    // Hit detection — prefer visible nodes when filter active
     function findNode(mx, my) {
       const gx = (mx - transform.x) / transform.k;
       const gy = (my - transform.y) / transform.k;
       let closest = null;
       let closestDist = Infinity;
       for (const n of data.nodes) {
+        if (visibleNodes && !visibleNodes.has(n.id)) continue;
         const r = radiusScale(n.linkCount);
         const hitR = Math.max(r, 5 / transform.k);
         const dx = gx - n.x;
@@ -396,9 +519,7 @@
       });
     }
 
-    // Stats
-    const stats = document.createElement('div');
-    stats.className = 'graph-stats';
+    // Stats (appended early so filter UI can update it)
     stats.innerHTML = data.nodes.length + ' pages &middot; ' + data.edges.length + ' connections';
     container.appendChild(stats);
   }
