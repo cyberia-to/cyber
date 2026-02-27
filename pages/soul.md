@@ -3,7 +3,7 @@ alias: souls, smart contract, program
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 script attached to a [[neuron]] or [[particle]] with graph processing instructions
 

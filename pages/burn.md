@@ -3,7 +3,7 @@ alias: destroy token
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 remove [[supply]] of a [[token]] from a [[neuron]] balance permanently
 

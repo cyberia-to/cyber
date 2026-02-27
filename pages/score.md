@@ -3,7 +3,7 @@ alias: scores, reputation token
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 [[token]] type that is fungible and immovable
 

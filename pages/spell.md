@@ -3,7 +3,7 @@ alias: secret, secrets, private key, key, mnemonic, seed
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: article
+crystal-size: bridge
 ---
 what a [[neuron]] knows and never reveals
 

@@ -3,7 +3,7 @@ alias: skills, token capability, capabilities
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 capability granted to a [[neuron]] by holding a specific [[token]]
 

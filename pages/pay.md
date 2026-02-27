@@ -3,7 +3,7 @@ alias: transfer, send
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 transfer of [[token]] balance between two [[neurons]]
 

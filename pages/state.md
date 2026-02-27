@@ -3,7 +3,7 @@ alias: states, world state
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 snapshot of all data in a [[vimputer]] at a given [[step]] agreed upon by [[consensus]]
 

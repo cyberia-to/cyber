@@ -3,7 +3,7 @@ alias: locked, frozen, stake, staking, delegation
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 freeze [[token]] balance of a [[neuron]] for a defined [[time]]
 

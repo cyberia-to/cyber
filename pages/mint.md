@@ -3,7 +3,7 @@ alias: issuance, create token
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 create new [[supply]] of a [[token]] and add it to a [[neuron]] balance
 

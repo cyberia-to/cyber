@@ -3,7 +3,7 @@ alias: modify, change
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-crystal-size: enzyme
+crystal-size: bridge
 ---
 change [[state]] of a [[token]] or [[particle]]
 
