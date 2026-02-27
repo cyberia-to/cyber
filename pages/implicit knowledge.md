@@ -3,15 +3,21 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[knowledge]] inferred from [[explicit knowledge]] in the [[cybergraph]]. this inference is [[intelligence]]
+[[intelligence]] as derived from [[explicit knowledge]] in the [[cybergraph]]. synonym for [[intelligence]] — used when contrasting with [[explicit knowledge]]
 
-if `apple` is linked with `fruit` and `fruit` is linked with `food`, then `apple` relates to `food` — even though no [[neuron]] explicitly stated it
+what can be inferred beyond what was directly stated. if `apple` is linked with `fruit` and `fruit` is linked with `food`, then `apple` relates to `food` — even though no [[neuron]] explicitly stated it
 
-the [[truth machine]] computes implicit knowledge in [[consensus]]
+the [[truth machine]] computes implicit knowledge through [[inference]] in [[consensus]]
 
-- [[cyberank]] as weight of [[particles]]
-- [[karma]] as weight of [[neurons]]
-- [[syntropy]] as integral measure of [[superintelligence]]
+- [[cyberank]]: weight of [[particles]]
+- [[karma]]: weight of [[neurons]]
+- [[syntropy]]: integral measure of [[superintelligence]]
+
+| | [[explicit knowledge]] | implicit knowledge |
+|---|---|---|
+| what | the graph as written | what the graph implies |
+| created by | [[neurons]] via [[learning]] | [[truth machine]] via [[inference]] |
+| synonym | [[knowledge]] | [[intelligence]] |
 
 in [[cyber-sdk]] implicit knowledge can be inferred using
 

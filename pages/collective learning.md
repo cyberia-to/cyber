@@ -4,13 +4,13 @@ tags: cyber
 crystal-type: process
 crystal-domain: biology
 ---
-[[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — learning together
+[[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — [[learning]] together
 
-each link is a [[primitive learning act]]: a signed economic commitment that two [[particles]] are related
+in ML, one entity trains one model. in [[cyber]], millions of [[neurons]] train one shared graph. each [[cyberlink]] is a signed economic commitment — a weight update to the [[cybergraph]]
 
-the sum of all learning acts is the [[cybergraph]] — the [[collective memory]]
+the sum of all [[learning]] acts is the [[cybergraph]] — [[knowledge]] as [[collective memory]]
 
-the [[tri-kernel]] extracts [[intelligence]] from this memory
+the [[truth machine]] runs [[inference]] over this memory, producing [[intelligence]]
 
 [[learning incentives]] reward agents whose links increase the system's [[syntropy]]
 

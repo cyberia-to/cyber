@@ -4,29 +4,26 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 ---
-what can be inferred beyond what was directly stated
+what can be inferred beyond what was directly stated. synonym for [[implicit knowledge]]
 
-data is raw bytes. [[information]] is data identified by [[hash]] — a [[particle]]. a [[file]] is a particle given a [[name]]. [[knowledge]] is [[particles]] linked by [[neurons]]. intelligence is structural: the [[truth machine]] computes what the graph implies but no one explicitly said
+the protocol has two operations and two results:
 
-the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
+| process | who | input | output |
+|---|---|---|---|
+| [[learning]] | [[neurons]] | [[particles]] | [[knowledge]] ([[explicit knowledge]]) |
+| [[inference]] | [[truth machine]] | [[knowledge]] | intelligence ([[implicit knowledge]]) |
 
-- data: raw bytes
-- [[information]]: data measured by [[hash]] — a [[particle]] exists
-- [[file]]: a [[particle]] given a `~` [[name]] — addressable
-- [[knowledge]]: [[particles]] linked by [[neurons]] — the [[cybergraph]]
-- intelligence: the [[truth machine]] infers relevance, hierarchy, and structure from the graph
+[[knowledge]] is the graph as written by [[neurons]]. intelligence is what the [[truth machine]] computes from that graph. the boundary between them is where intelligence begins
 
 in [[cyber]]: the converged [[focus]] distribution computed by the [[truth machine]] via the [[tri-kernel]]. the outputs — [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the [[vimputer]] — are the measurable form of intelligence
-
-[[explicit knowledge]] is the raw graph. [[implicit knowledge]] is what inference reveals. the boundary between them is where intelligence begins
 
 intelligence is adaptive equilibrium-finding: the capacity to converge on useful distributions under novel conditions. the [[tri-kernel]] formalizes this — [[diffusion]] explores, [[springs]] enforce consistency, [[heat]] adapts to scale
 
 [[emergence]] is the mechanism — local [[cyberlinks]] produce global structure no single [[neuron]] designed
 
-Shannon's framework has no concept of intelligence. Shannon measures how efficiently symbols pass through a channel. intelligence is what happens far downstream — when accumulated [[knowledge]] is processed into structure that predicts, ranks, and reveals
+in machine [[learning]] terminology: [[neurons]] train the [[cybergraph]] by linking. the [[truth machine]] runs [[inference]] over it. learning produces [[knowledge]]. inference produces intelligence
 
-see [[knowledge theory]] for the full framework
+the chain: data → [[information]] → [[file]] → [[knowledge]] → intelligence
 
 see [[collective intelligence]] for the group-level phenomenon
 

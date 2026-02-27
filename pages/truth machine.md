@@ -7,7 +7,9 @@ crystal-domain: biology
 ---
 the system that converts [[knowledge]] into [[intelligence]]. collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
 
-data is raw bytes. [[neurons]] hash data into [[particles]] — this is [[information]]. [[neurons]] give [[particles]] [[names]] — they become [[files]]. [[neurons]] link [[particles]] — this is [[knowledge]]. the truth machine takes that [[knowledge]] and computes what it implies — this is [[intelligence]]
+the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] learn by creating [[cyberlinks]] — this produces [[knowledge]]. the truth machine infers by running the [[tri-kernel]] on that [[knowledge]] — this produces [[intelligence]]
+
+[[knowledge]] is [[explicit knowledge]]. [[intelligence]] is [[implicit knowledge]]. learning is training. inference is inference
 
 the [[tri-kernel]] (math) provides the operators. the truth machine (system) runs them on [[gpu]] in [[consensus]], producing [[cyberank]] (output)
 
