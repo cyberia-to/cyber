@@ -58,11 +58,22 @@ Applying the locality filter:
 | Screened Laplacian (local CG) | Yes | ✓ Survives |
 | Heat kernel (full matrix exp) | No (global) | ✂️ Cut |
 | Heat kernel (Chebyshev) | Yes | ✓ Survives |
-| Belief propagation | Yes | ✓ Survives |
+| Belief propagation | Yes | ⚠️ Survives locality, fails below |
 
-### 1.3 What Survived
+### 1.3 Why Belief Propagation Is Excluded
 
-After filtering, exactly three families of local operators remained:
+Belief propagation (BP) passes the locality filter — each node communicates only with neighbors. However, it fails the remaining required properties:
+
+- No convergence guarantee on general graphs. BP converges on trees, but on graphs with loops (which the [[cybergraph]] has densely) it can oscillate or diverge. Validators cannot disagree on whether the algorithm has converged
+- No uniqueness. Even when loopy BP converges, the result depends on message initialization and update schedule. Different validators could compute different answers — fatal for [[consensus]]
+- Wrong representation. The three [[tri-kernel]] primitives operate on a single vector φ ∈ ℝⁿ (the [[focus]] distribution). BP operates on messages on edges — O(|E|) messages vs O(|V|) scores. It does not compose with M and L
+- Not token-weightable. Stake-weighting in [[diffusion]]/[[springs]]/[[heat]] is straightforward (modify the transition matrix or Laplacian with [[token]] weights). BP message-passing has no natural place to inject token economics
+
+BP is local but not convergent, not unique, not composable, and not token-compatible. It survives the first filter and fails every subsequent one.
+
+### 1.4 What Survived
+
+After applying all required properties (locality, convergence, uniqueness, verifiability, token-weightability), exactly three families of local operators remained:
 
 - Local random walk ([[diffusion]] with truncation/restart)
 - Local screened Laplacian solve ([[springs]] with boundary pinning)
