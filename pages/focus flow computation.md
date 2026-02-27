@@ -13,9 +13,9 @@ crystal-size: bridge
 
 | phase | transformer | focus flow |
 |---|---|---|
-| training | gradient descent on weights over a fixed corpus. requires backpropagation, GPU clusters, weeks | add [[cyberlinks]] to the [[cybergraph]]. each link is a permanent weight update. no backpropagation — the graph IS the model |
-| inference | forward pass through layers, softmax attention, sample next token | inject context as active nodes, run local update until $p^*$ converges, sample from $p^*$ |
-| adaptation | retrain or fine-tune on new data. catastrophic forgetting | add new [[cyberlinks]]. $p^*$ shifts in real time. old knowledge preserved — graph only grows |
+| training | backprop on fixed corpus | add [[cyberlinks]] — graph IS the model |
+| inference | forward pass, softmax, sample | converge $p^*$ from context, sample |
+| adaptation | retrain. catastrophic forgetting | add links. $p^*$ shifts, nothing lost |
 
 in transformers, training and inference are separate algorithms. in focus flow, they are the same operation: a [[neuron]] adds a [[cyberlink]], the [[tri-kernel]] reconverges, and the new $p^*$ simultaneously encodes the learned relation and is available for inference
 
