@@ -6,9 +6,9 @@ alias: collectives
 ---
 a group of agents sharing a substrate and producing outcomes none could reach alone
 
-in [[biology]]: ant colonies, flocks, immune systems, microbiomes — [[self-organization]] under local rules yields global order
+in [[biology]]: ant colonies, flocks, immune systems, [[microbiome]] — [[self-organization]] under local rules yields global order
 
-in [[cyber]]: [[neurons]] sharing the [[cybergraph]], producing [[knowledge]] through four collective processes:
+in [[cyber]]: [[neurons]] sharing the [[cybergraph]], producing [[knowledge]] through four processes
 
 ## the four processes
 
@@ -20,31 +20,29 @@ in [[cyber]]: [[neurons]] sharing the [[cybergraph]], producing [[knowledge]] th
 
 [[collective computation]] — probabilistic [[inference]] at planetary scale, no single agent could perform alone
 
-## why collectives outperform individuals
-
-[[Condorcet jury theorem]] — aggregating weakly correct signals yields increasingly accurate answers
-
-[[diversity theorem]] — diverse heuristics outperform the best homogeneous expert
-
-[[c-factor]] — groups have a measurable collective intelligence factor that predicts performance better than individual IQ
-
 ## how collectives organize
 
 [[cooperation]] — agents play [[cooperative games]], rewarded for actions increasing [[syntropy]]
 
 [[coordination]] — protocol mechanisms ([[consensus]], [[automated market maker]], [[auction]], [[prediction markets]]) align agents toward shared goals
 
-[[stigmergy]] — agents coordinate indirectly through the graph itself — each [[cyberlink]] modifies the shared environment
+[[stigmergy]] — agents coordinate indirectly through the shared environment — each [[cyberlink]] modifies the graph for all
 
 [[self-organization]] — order emerges from local interactions without central control
+
+[[emergence]] — global patterns ([[focus]], [[cyberank]], [[truth]]) arise from simple local interactions at scale
+
+[[distributed cognition]] — reasoning spread across agents and the [[cybergraph]]. no single [[neuron]] holds the full picture
+
+[[diversity]] — cognitive variety is the strongest predictor of [[collective]] [[intelligence]]. the system includes humans, AI, sensors, [[animals]], [[plants]], [[fungi]], [[robots]], [[progs]]
 
 ## what collectives overcome
 
 [[collective amnesia]] — civilizations forget. [[collective memory]] is the cure
 
-## the science
+## the theory
 
-[[egregore]] — the full theory: why collective [[intelligence]] emerges, how [[cyber]] implements it, historical roots from [[Aristotle]] to [[Woolley]]
+[[egregore]] — why [[collective]] [[intelligence]] emerges, the historical lineage from [[Aristotle]] to [[Woolley]], emergence predictions, and the computational stack that implements it
 
 [[collective focus theorem]] — convergence proofs: the [[tri-kernel]] fixed point exists, is unique, and is computable locally
 
