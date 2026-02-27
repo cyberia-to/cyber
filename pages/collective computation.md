@@ -11,6 +11,6 @@ each agent sees only its local neighborhood. the global distribution emerges fro
 
 this is probabilistic inference at planetary scale — no single agent could perform it alone
 
-see [[convergence rewards]] for the reward mechanism design
+see [[learning incentives]] for the reward mechanism design
 
 see [[egregore]] for the broader framework

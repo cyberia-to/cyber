@@ -38,9 +38,7 @@ crystal-domain: cyber
 
 [[h based economy]]
 
-[[cyberlink rewards]]
-
-[[convergence rewards]]
+[[learning incentives]]
 
 [[probabilistic shapley attribution]]
 

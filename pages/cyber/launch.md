@@ -93,52 +93,9 @@ On-chain storage budget: ~15 MB (IPFS content 6.5 MB + CIDs 0.5 MB + [[cyberlink
 
 ## Incentive Design
 
-Knowledge creation is costly, benefits are collective. Without incentives, rational agents free-ride on others' [[cyberlinks]]. Seven economic mechanisms solve this.
+[[knowledge]] creation is costly, benefits are collective. without incentives, rational agents free-ride on others' [[cyberlinks]]. reward(v) ∝ Δπ(v) — creating valuable structure is literally creating [[value]]
 
-### 1. Minting for Focus Computation
-
-[[neurons]] computing [[focus]] toward [[particle]] P earn newly minted [[$CYB]]. Each valid [[cyberlink]] rewarded proportional to contribution to network [[focus]]. Claim via microblocks containing [[cyberlinks]] from neighbors.
-
-### 2. Staking as Delegated Attention
-
-[[neurons]] stake [[$CYB]] on themselves or other [[neurons]], effectively delegating attention. Staking rewards paid from transaction fees. Special case: delegate toward [[validators]].
-
-### 3. Stake Distribution Over Links
-
-A [[neuron]]'s staked amount spreads evenly across submitted [[cyberlinks]] by default. [[neurons]] can reweight individual [[particles]]/links with percentage allocation. Enables safe stake/unstake and smooth delegation.
-
-### 4. Permanent Weighting via Burn
-
-[[neurons]] can burn [[$CYB]] to grant eternal weight to a [[particle]]. Irreversible. Permanently increases [[particle]]'s importance in [[collective focus]] π. Anchors critical knowledge in the network.
-
-### 5. Link Fees and Net Rewards
-
-[[cyberlink]] submission has a small fee (spam deterrent). Links accumulating sufficient attention may yield net positive reward over time. [[focus]] field convergence drives positive returns.
-
-### 6. Attention Yield Curve
-
-Earlier, more accurate links to high-π [[particles]] earn greater rewards. As [[collective focus]] evolves, this incentivizes discovery and precision. Temporal component rewards foresight.
-
-### 7. Reputation Emergence
-
-A [[neuron]]'s long-term reputation = accumulated π-weight of [[particles]] contributed to. [[karma]] aligns social and economic capital.
-
-### Convergence Rewards
-
-[[cyberlinks]] are yield-bearing epistemic assets. They accrue rewards over time based on contribution to [[focus]] emergence and stability:
-
-R(i→j, T) = ∫₀ᵀ w(t) · Δπⱼ(t) dt
-
-where Δπⱼ(t) = change in [[focus]] on target [[particle]] j attributable to the link, w(t) = time-weighting function, T = evaluation horizon.
-
-| Link Type | Characteristics | Reward Trajectory |
-|-----------|-----------------|-------------------|
-| Viral | High Δπ short-term | Early peak, fast decay |
-| Foundational | Low Δπ early, grows later | Slow rise, long reward |
-| Redundant | Low/no Δπ | No reward |
-| Semantic Bridge | Medium, cross-module | Moderate, persistent |
-
-Rewards paid from accumulated transaction fees. No inflation. Encourages semantic foresight, prevents attention spam, makes the graph a semantic investment market.
+see [[economic model]] for the 7-point spec (minting, staking, burn, fees, yield curve, reputation). see [[learning incentives]] for reward function design, link valuation, and attribution
 
 ## Token Architecture
 
@@ -403,9 +360,8 @@ No node comprehends. The network knows.
 ## Cross-references
 
 - See [[cyber/crystal]] for the full crystal specification
-- See [[economic model]] for detailed incentive mechanics
-- See [[convergence rewards]] for the yield-bearing link model
-- See [[learning incentives]] for reward mechanisms
+- See [[economic model]] for the 7-point incentive spec
+- See [[learning incentives]] for reward design, link valuation, and attribution
 - See [[cft]] for the [[collective focus]] Theorem
 - See [[trinity]] for the three-pillar architecture
 - See [[Goldilocks field processor]] for hardware specification

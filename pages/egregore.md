@@ -84,7 +84,7 @@ the [[feedback loop]] (observe → link → infer → observe) refines collectiv
 - [[convergent computation]]: the formal foundation — computation = convergence to equilibrium
 - [[focus flow computation]]: the executable model — patterns of attention flow through particle networks
 - [[tri-kernel]]: the only three local operators surviving the locality constraint — [[diffusion]], [[springs]], [[heat]]
-- [[convergence rewards]]: reward function design for incentivizing convergence
+- [[learning incentives]]: reward function design for incentivizing convergence
 - [[data structure for superintelligence]]: BBG — the authenticated state architecture
 - [[incrementally verifiable computation]]: proving computation without re-executing it
 - [[proof-carrying data]]: proofs that travel with data through DAGs

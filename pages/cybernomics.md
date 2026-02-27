@@ -17,15 +17,9 @@ the economic theory of [[cyber]] — how [[tokens]], [[focus]], [[karma]], and [
 
 ## reward design
 
-[[learning incentives]] — why reward [[cyberlinks]]: the free-rider problem in [[knowledge]] creation
+[[learning incentives]] — reward functions, link valuation, Shapley attribution, funding model
 
-[[convergence rewards]] — 5 candidate reward functions for incentivizing Δπ
-
-[[cyberlink rewards]] — [[cyberlinks]] as yield-bearing assets: viral, foundational, redundant, bridge
-
-[[probabilistic shapley attribution]] — fair attribution of Δπ via Monte Carlo Shapley sampling
-
-[[rewards-ideas]] — integrated reward model (draft, needs cleanup)
+[[probabilistic shapley attribution]] — the fair attribution algorithm (standalone reference)
 
 ## staking mechanisms
 
