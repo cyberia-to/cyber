@@ -1,106 +1,69 @@
 ---
-tags: article, cip
+tags: cyber, cip
 crystal-type: pattern
-crystal-domain: cyber
+crystal-domain: cybics
+alias: active inference framework
 status: draft
 ---
-# active inference x cft: summary and integration plan
-## executive summary
+# active inference
 
-active inference gives a single principle for agents to perceive, learn, and act by minimising variational free energy.
+a framework where perception, action, and [[learning]] are aspects of one optimization: minimizing variational [[free energy]]
 
-cft models collective attention as token-weighted random walks converging to a stationary distribution (collective focus).
+originated by [[Karl Friston]] as an extension of the [[free energy principle]]. an agent does not have separate modules for sensing, deciding, and acting — it has one loop that reduces surprise by updating beliefs and selecting actions
 
-fusing them yields a self-configuring network where each neuron updates beliefs and adjusts links to lower expected free energy, improving stability, curiosity, and robustness.
+## the loop
 
-precision (confidence) becomes an on-chain economic signal that prices prediction errors and filters noise.
-## key mappings between active inference and cft
+each [[neuron]] in the [[cybergraph]] runs:
 
-hidden states ↔ latent attributes of particles and edges in the cybergraph
+1. observe — local traffic, link arrivals, [[token]] flows
+2. predict — generate expected observations from internal model
+3. compute prediction error — divergence between expected and actual
+4. update beliefs — gradient descent on [[free energy]]: $\theta \leftarrow \theta - \eta \nabla_\theta F$
+5. tune [[precision]] — learn confidence weights $\lambda$ for each error channel
+6. select action — choose policy $\pi$ that minimizes expected [[free energy]]: $G(\pi) = \text{risk} + \text{ambiguity}$
+7. execute — edit edges, stake, sample [[particles]]
 
-observations ↔ measured traffic of random walks, link arrivals, weight changes
+## key mappings to cyber
 
-generative model ↔ each neuron's local probabilistic model of link dynamics and token flows
+| active inference | [[cybergraph]] |
+|---|---|
+| hidden states | latent attributes of [[particles]] and edges |
+| observations | measured traffic, link arrivals, weight changes |
+| generative model | [[neuron]]'s local model of link dynamics and [[token]] flows |
+| prediction error | divergence between expected [[focus]] and realized traffic |
+| [[precision]] | adaptive [[token]] staking that amplifies trusted signals |
+| [[free energy]] | upper bound on global uncertainty; minimized at [[focus]] [[convergence]] |
+| [[Markov blanket]] | boundary between a [[neuron]]'s internal state and the rest of the [[cybergraph]] |
 
-prediction error ↔ divergence between expected focus distribution and realised traffic
+## expected free energy
 
-precision (confidence) ↔ adaptive token staking and edge weights that amplify trusted signals
+planning uses expected [[free energy]] $G(\pi)$, which decomposes into:
 
-free energy ↔ upper bound on global uncertainty over graph states; minimised at focus convergence
-## minimal algorithmic spec
+- risk: divergence from preferred observations (the agent wants high-quality links, low spam)
+- ambiguity: expected uncertainty about hidden states under the chosen policy
 
-belief representation: variational posterior q_θ(z) over latent graph states z per neuron; parameters θ stored locally.
+minimizing risk drives exploitation. minimizing ambiguity drives exploration (curiosity). the balance is automatic — no exploration-exploitation tradeoff to tune
 
-free energy: F = Eq_θ[−log p(s, z)] + H[q_θ], with s the local observations (traffic, link events). goal is to reduce F.
+## precision as economic signal
 
-expected free energy for planning: G(π) = risk + ambiguity ≈ Eq[−log p(preferred s | z)] + Eq[H[p(s | z)]], guiding policy π over link edits and sampling actions.
+[[precision]] (inverse variance of prediction errors) maps naturally to [[token]] staking:
 
-precision control: learn/logit-scale precisions λ for different error channels; use soft attention to weight updates.
+- high [[precision]] on a signal = high stake backing it = strong confidence
+- low [[precision]] = low stake = the [[neuron]] is uncertain about this region
+- [[precision]] gaming mitigated by slashing on bad forecasts — skin in the game
 
-hierarchical markov blankets: discover clusters (modules) with dense internal edges; perform message passing within and between blankets for scalability.
-### reference update loop (pseudocode)
+this makes [[attention]] allocation an economic act: staking [[tokens]] on beliefs about the [[cybergraph]]
 
-```
-for epoch in epochs:
-  for neuron i in graph:
-    s_i ← observe(local traffic, link arrivals, token flows)
-    \hat{s}_i ← predict via generative model
-    ε_i ← s_i − \hat{s}_i                      # prediction error
-    θ_i ← θ_i − η_θ * ∇_θ F(s_i; θ_i, λ_i)     # perception / learning
-    λ_i ← λ_i − η_λ * ∇_λ F                    # precision tuning
-    a_i ← argmin_π G_i(π; θ_i, λ_i)            # choose action policy
-    execute(a_i)                               # edit edges, stake, sample
-```
-## integration roadmap
+## hierarchical [[Markov blankets]]
 
-modelling
+the [[cybergraph]] naturally decomposes into modules (dense internal edges, sparse external). each module forms a [[Markov blanket]] — internal dynamics can be updated at high frequency, inter-module messages at lower frequency
 
-- define a neurally inspired generative model p(s, z) for link dynamics conditioned on local focus, trending content cues, and governance events.
-- specify preference distributions over observations (e.g., high-quality citations, low spam entropy) to ground goal-directed behaviour.
+this gives scalability: local inference within modules, coarse-grained message passing between them
 
-protocol layer
+## open questions
 
-- add a lightweight variational message-passing step to the existing compute kernel so neurons exchange sufficient statistics before committing writes.
-- implement precision-weighted staking where tokens back the reliability of subgraphs and price prediction-error channels.
+- what [[precision]]-staking regime best aligns epistemic efficiency with [[token]] economics under real traffic?
+- where are phase transitions in [[emergence]] when adding hierarchical [[Markov blankets]] to the [[collective focus theorem]]?
+- how to calibrate preference distributions without central authority while avoiding sybil manipulation?
 
-scalability
-
-- form markov-blanket modules via community detection; schedule intra-module updates at high frequency and inter-module updates at lower frequency.
-- use sparse, low-rank approximations for θ and amortised inference for q_θ(z) to keep costs bounded.
-
-evaluation
-
-- run ablations on the test-net comparing baseline cft vs cft + active inference on convergence speed, adversarial resilience, retrieval accuracy, and compute cost.
-- track free-energy and precision maps as primary diagnostics.
-## expected benefits and risks
-
-benefits
-
-- faster, more stable convergence under uncertainty and drift
-- intrinsic curiosity drives exploration without central control
-- robustness: anomalous regions get down-weighted via precision control
-- interpretability: free-energy heatmaps show why attention moves
-
-risks / mitigations
-
-- overfitting preferences: adopt plural preference priors and rotate committees
-- precision gaming: require skin-in-the-game with slashing on bad forecasts; diversify error channels
-- compute overhead: amortise inference, cache sufficient statistics, schedule updates asynchronously
-## open research questions
-
-what precision-staking regime best aligns epistemic efficiency with token economics under real traffic?
-
-where are phase transitions in emergent intelligence when adding hierarchical markov blankets to cft?
-
-how to calibrate preference distributions without central authority while avoiding sybil manipulation?
-
-which approximate-inference methods (e.g., natural gradients, lo-fi variational families) give the best performance-compute tradeoff on very large graphs?
-## immediate next actions
-
-formalise a concrete free-energy objective for the current cyberrank kernel and derive local gradients.
-
-prototype the message-passing layer on a small subgraph and measure free-energy descent and retrieval quality.
-
-design and test precision-weighted staking rules with simulated adversaries before on-chain trials.
-
-prepare ablation metrics, dashboards, and free-energy map visualisations for the next test-net cycle.
+see [[free energy principle]] for the foundational theory. see [[Karl Friston]] for the person. see [[cybics]] for the integration with the [[tri-kernel]]. see [[contextual free energy model]] for the context-dependent extension
