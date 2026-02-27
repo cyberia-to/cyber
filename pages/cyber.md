@@ -82,14 +82,6 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 - [[bostrom/liquidity]] — liquidity pools
 - [[bostrom/clocks]] — time and scheduling
 
-## applications
-
-- [[oracle]] — decentralized AI oracle
-- [[search]] — decentralized search
-- [[prism]] — content lens interface
-- [[space pussy]] — memecoin with balls
-- [[moon]] — network state
-
 ## research
 
 - [[cyber/core]] — full protocol specification

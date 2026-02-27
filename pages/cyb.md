@@ -45,6 +45,14 @@ what is cyb?
 - what we know for sure is that
 - cyb is a new thing we love to use and build
 
+## applications
+
+- [[oracle]] — decentralized AI oracle
+- [[search]] — decentralized search
+- [[prism]] — content lens interface
+- [[space pussy]] — memecoin with balls
+- [[moon]] — network state
+
 [[cyb/architecture]]
 
 TODO [[features]]: [[mind]] extension of [[robot]]
