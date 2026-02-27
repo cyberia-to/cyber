@@ -60,7 +60,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 
 ## explanations
 
-- [[collective focus theorem]] — convergence proofs for diffusion (special case) and full tri-kernel (general case)
+- [[collective focus theorem]] — convergence proofs for tri-kernel
 - [[tri-kernel architecture]] — why diffusion, springs, and heat are the basis for collective intelligence
 - [[focus flow computation]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
