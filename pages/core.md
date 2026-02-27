@@ -13,7 +13,7 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 [[graph]]: [[link]], [[particle]], [[cyberlink]], [[cybergraph]], [[axon]]
 
-[[neuron]]: [[avatar]], [[spell]], [[focus]], [[karma]], [[skill]], [[soul]]
+[[neuron]]: [[avatar]], [[spell]], [[focus]], [[karma]], [[skill]], [[soul]], [[attention]], [[will]]
 
 [[token]]: [[coin]], [[card]], [[score]], [[badge]]
 

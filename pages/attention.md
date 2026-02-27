@@ -1,6 +1,6 @@
 ---
 alias: cyber/attention, rank unit, rank units
-tags: cyber
+tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 ---
