@@ -7,9 +7,7 @@ crystal-domain: cyber
 
 [[network architecture]]
 
-[[ranking system]]
-
-[[ranking system 2]]
+[[tri-kernel]]
 
 [[decision vectors: 10 tb/s]]
 

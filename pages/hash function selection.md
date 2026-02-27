@@ -333,7 +333,7 @@ CID: [0x01, 0x01, 0x01, 0x01, 0x05, <40 bytes>] = 45 bytes total
 
 ## 8. Commitment Layer Architecture
 
-The [[hash]] function serves only as the identity layer. Higher-order properties (set membership, similarity, [[ranking system]]) are derived through the graph structure, not encoded in the CID.
+The [[hash]] function serves only as the identity layer. Higher-order properties (set membership, similarity, [[tri-kernel]]) are derived through the graph structure, not encoded in the CID.
 
 ```
 Layer 0 — Identity (immutable, stored)
