@@ -6,15 +6,7 @@ status: draft
 ---
 # foculus consensus
 
-block-free, graph-native agreement. actions finalize when their stationary-distribution mass exceeds a dynamic threshold — no voting rounds, no block ordering
-
----
-
-## the idea
-
-the [[collective focus theorem]] proves that token-weighted [[random walk]] on a strongly connected [[cybergraph]] converges to a unique $\pi$. foculus turns this into [[consensus]]: a [[particle]] is final when $\pi_i > \tau$
-
-no explicit voting. no leader election. [[neurons]] gossip [[cyberlinks]], GPUs iterate $\pi$, and finality emerges from the [[topology]] of [[attention]]
+the [[collective focus theorem]] proves that token-weighted [[random walk]] on a strongly connected [[cybergraph]] converges to a unique $\pi$. foculus turns this into [[consensus]]: a [[particle]] is final when $\pi_i > \tau$. [[neurons]] gossip [[cyberlinks]], GPUs iterate $\pi$, and finality emerges from the [[topology]] of [[attention]] — no voting rounds, no leader election, no block ordering
 
 ## network model
 
