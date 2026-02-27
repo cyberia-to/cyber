@@ -3,18 +3,8 @@ icon: 🏅
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: economics
-crystal-size: enzyme
+crystal-size: atom
 ---
-[[token]] which is unique and immovable
-
-non-transferable unique credential
-
-bound to a [[neuron]] permanently
-
-examples: achievement markers, certification proofs, participation attestations
-
-unlike [[card]], badges cannot be transferred or sold
-
-unlike [[score]], each badge is unique (non-fungible)
+unique and immovable [[token]] bound to a [[neuron]] forever — achievement markers, credentials, attestations
 
 discover all [[concepts]]

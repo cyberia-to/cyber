@@ -3,17 +3,8 @@ alias: signatures, digital signature, cryptographic signature
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: bridge
+crystal-size: enzyme
 ---
-cryptographic proof that a [[neuron]] authored a [[signal]]
-
-uses [[asymmetric encryption]] involving a pair of keys
-
-- [[private key]] for [[signing]]
-- [[public key]] for [[verification]]
-
-every [[cyberlink]] carries a signature — this is what makes [[knowledge]] in the [[cybergraph]] authenticated
-
-without signatures, the [[tru]] would rank anonymous noise; with them, [[karma]] traces back to real [[neurons]]
+cryptographic proof that a [[neuron]] authored a [[signal]]. every [[cyberlink]] carries one — this is what makes [[knowledge]] in the [[cybergraph]] authenticated
 
 discover all [[concepts]]

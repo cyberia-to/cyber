@@ -5,10 +5,6 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: enzyme
 ---
-verifiable evidence that something occurred
-
-a [[hash]] is proof of measurement. a [[cyberlink]] is proof of relevance. [[focus]] spent is proof of commitment. [[finality]] is proof of [[consensus]]
-
-every layer of the protocol produces proofs: [[data]] is hashed (measurement), [[neurons]] link (relevance), [[token]] is locked (commitment), the [[tru]] computes (inference)
+verifiable evidence. a [[hash]] proves measurement, a [[cyberlink]] proves relevance, spent [[focus]] proves commitment, [[finality]] proves [[consensus]]
 
 discover all [[concepts]]

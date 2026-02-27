@@ -3,12 +3,8 @@ alias: market cap, capitalization
 tags: cyber, core, cybernomics
 crystal-type: measure
 crystal-domain: economics
-crystal-size: enzyme
+crystal-size: atom
 ---
-total [[value]] of all [[tokens]] of a given type
-
-[[price]] multiplied by [[supply]]
-
-the aggregate measure of commitment to a [[vimputer]] or [[token]]
+[[price]] times [[supply]]. the aggregate measure of commitment to a [[token]]
 
 discover all [[concepts]]

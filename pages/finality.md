@@ -2,14 +2,8 @@
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
-crystal-size: bridge
+crystal-size: enzyme
 ---
-the guarantee that a committed [[signal]] cannot be reversed
-
-once a [[signal]] achieves finality in a [[step]], the [[cyberlinks]] it contains are permanently part of the [[cybergraph]]. the [[tru]] treats them as settled inputs for [[inference]]
-
-finality is what separates [[knowledge]] from tentative assertion. a [[cyberlink]] that has achieved finality is an irreversible economic commitment — the [[focus]] is spent, the link is permanent
-
-in [[bostrom]], finality is provided by [[tendermint]] [[consensus]] — a [[step]] is final as soon as ⅔+ of validators sign the block
+the point of no return. once a [[signal]] achieves finality, its [[cyberlinks]] are permanent in the [[cybergraph]] — the [[focus]] is spent, the link is irreversible
 
 discover all [[concepts]]

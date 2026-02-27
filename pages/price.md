@@ -2,12 +2,8 @@
 tags: cyber, core, cybernomics
 crystal-type: measure
 crystal-domain: economics
-crystal-size: enzyme
+crystal-size: atom
 ---
-ratio at which [[tokens]] exchange
-
-the signal that coordinates [[supply]] and [[demand]]
-
-in [[cyber]]: [[price]] emerges from [[cyberlink]] creation pressure against scarce [[bandwidth]]
+ratio at which [[tokens]] exchange — the signal that coordinates [[supply]] and [[demand]]
 
 discover all [[concepts]]
