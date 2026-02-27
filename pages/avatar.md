@@ -1,6 +1,6 @@
 ---
 alias: account, name, avatar system
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---

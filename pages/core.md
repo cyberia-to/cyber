@@ -13,9 +13,9 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 measurement: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
 
-structure: [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step]], [[consensus]], [[finality]], [[vimputer]]
+structure: [[link]], [[graph]], [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step]], [[state]], [[consensus]], [[finality]], [[vimputer]]
 
-agents: [[neuron]], [[spell]], [[focus]], [[token]], [[karma]], [[skill]], [[soul]]
+agents: [[neuron]], [[avatar]], [[spell]], [[focus]], [[token]], [[karma]], [[skill]], [[soul]]
 
 economics: [[value]], [[price]], [[supply]], [[demand]], [[cap]], [[coin]], [[card]], [[score]], [[badge]]
 
@@ -25,6 +25,6 @@ process: [[observation]], [[learning]], [[inference]], [[training]]
 
 meaning: [[knowledge]], [[neural]], [[crystal]]
 
-convergence: [[equilibrium]], [[convergence]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
+convergence: [[equilibrium]], [[convergence]], [[tri-kernel]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
 
 discover all [[concepts]]

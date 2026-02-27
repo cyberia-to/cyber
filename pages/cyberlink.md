@@ -7,13 +7,13 @@ crystal-domain: cyber
 ---
 signed, weighted, timestamped directed edge between two [[particles]]
 
-`edge = ([[neuron]], from [[particle]], to [[particle]], weight, time)`
+`edge = ([[neuron]], from [[particle]], to [[particle]], [[token]], weight, time)`
 
-the unit of [[knowledge]]. a [[neuron]] stakes [[focus]] to assert that two [[particles]] are related — an authenticated economic commitment. creating a cyberlink is the primitive [[learning]] act. a particle cannot enter the [[cybergraph]] without at least one cyberlink; the first link — typically a `~` [[name]] — turns the particle into a [[file]]. further links between particles create [[knowledge]]
+the unit of [[knowledge]]. a [[neuron]] stakes [[focus]] to assert that two [[particles]] are related — an authenticated economic commitment denominated in a specific [[token]]. creating a cyberlink is the primitive [[learning]] act. a particle cannot enter the [[cybergraph]] without at least one cyberlink; the first link — typically a `~` [[name]] — turns the particle into a [[file]]. further links between particles create [[knowledge]]
 
 three scalars per link: hierarchy (h), transport (d), context (c)
 
-[[three basic arguments]] of every cyberlink: [[who]] linked, [[when]], and [[what]] [[particles]]
+four basic arguments of every cyberlink: [[who]] linked, [[when]], [[what]] [[particles]], and with which [[token]]
 
 | block hash | neuron | from particle | to particle |
 |------------|--------|---------------|-------------|

@@ -1,5 +1,5 @@
 ---
-tags: article, cyber, cip
+tags: article, cyber, core, cip
 crystal-type: pattern
 crystal-domain: cyber
 status: draft

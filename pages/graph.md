@@ -1,6 +1,6 @@
 ---
 alias: graphs
-tags: cyber
+tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 ---
