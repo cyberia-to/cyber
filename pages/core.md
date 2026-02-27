@@ -25,6 +25,6 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 [[knowledge]]: [[neural]], [[crystal]], [[inference]], [[training]]
 
-[[cyber]]: [[equilibrium]], [[convergence]], [[tri-kernel]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]]
+[[cyber]]: [[feedback]], [[equilibrium]], [[convergence]], [[tri-kernel]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]]
 
 discover all [[concepts]]
