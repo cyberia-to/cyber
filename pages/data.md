@@ -1,6 +1,6 @@
 ---
 alias: raw data, bytes
-tags: cyber
+tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 ---

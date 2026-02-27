@@ -1,6 +1,6 @@
 ---
 alias: implicit
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---

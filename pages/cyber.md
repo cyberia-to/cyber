@@ -2,7 +2,7 @@
 icon: 🔵
 menu-order: "2"
 alias: the superintelligence protocol
-tags: cyber, menu
+tags: cyber, menu, core
 crystal-type: entity
 crystal-domain: cyber
 ---

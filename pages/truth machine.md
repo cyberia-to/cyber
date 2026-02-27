@@ -1,7 +1,7 @@
 ---
 alias: relevance machine, truth medium, rm, tm
 icon: 🖖🏽
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: biology
 ---

@@ -1,5 +1,5 @@
 ---
-tags: cyber
+tags: cyber, core
 alias: infer
 crystal-type: process
 crystal-domain: cyber

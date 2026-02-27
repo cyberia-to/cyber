@@ -1,5 +1,5 @@
 ---
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 alias: names, naming, deterministic resolution

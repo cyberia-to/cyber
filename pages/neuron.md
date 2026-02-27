@@ -1,42 +1,41 @@
 ---
 icon: 🤪
 alias: address, subject, agent, user, observer, actor, neurons
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[subject]] of [[information]]
+[[subject]] of [[information]]. agent with stake, identity, and [[focus]]. one half of the observation loop — the [[truth machine]] is the other
 
-agent with stake, identity, and [[focus]]
+creates [[cyberlinks]]. holds balance. earns [[focus]]. can be human, AI agent, sensor, or any system
 
-creates [[cyberlinks]]. holds balance. earns [[focus]]
+```
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
+```
 
-can be human, AI agent, sensor, or any system
+a neuron observes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — derives meaning ([[implicit knowledge]]), and encodes it as new [[cyberlinks]]. this is [[learning]]. the [[truth machine]] recomputes. the loop sustains itself — this is [[intelligence]]
 
 identity = [[hash]] of [[public key]]. proves [[signature]] correctness
 
 neurons are the subjects of the [[cybergraph]] — [[particles]] are the objects
 
-abstraction over different types of cryptographic virtual addresses which are used in any [[blockchain]]
-
-neuron is derived from [[public key]]
-
-more technically neurons are
+technically a neuron is
 
 - either can prove correctness of [[signature]]
 - or can act as a [[prog]] in accordance to [[consensus]] of [[vimputer]]
 
-in [[cyber]] neurons are fundamental
+a [[neuron]] uses [[spell]] to [[sign]] and [[cast]] [[signals]]
 
-- [[neuron]] uses [[spell]] to [[sign]] and [[cast]] [[signal]]
-- and as result are able to do literally anything
+each neuron has a [[karma]]: aggregate [[focus]] earned across all linked [[particles]]
+
+the cost of [[learning]] is [[focus]] — this makes each [[cyberlink]] a [[costly signal]]
 
 in [[bostrom]] and [[spacepussy]] standard [cosmos-sdk](https://docs.cosmos.network/) addresses are used as neurons
 
 - support all [[cyber-sdk]] and [[cosmos-sdk]] [[signal types]]
 - support [[semantic neural proofs]]
-
-each neuron has a [[karma]]: aggregate [[focus]] earned across all linked [[particles]]
 
 some software to create and use [[neurons]]
 

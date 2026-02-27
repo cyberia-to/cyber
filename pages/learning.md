@@ -1,6 +1,6 @@
 ---
 alias: learn
-tags: cyber
+tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
 ---

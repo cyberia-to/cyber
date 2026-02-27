@@ -1,7 +1,7 @@
 ---
 icon: 🎯
 alias: attention distribution, π
-tags: cyber
+tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 ---
@@ -15,7 +15,7 @@ computed by the [[tri-kernel]]: three local operators that are the only ones sur
 
 - [[diffusion]]: where probability flows. exploration
 - [[springs]]: what satisfies structural constraints. hierarchy
-- [[heat kernel]]: what the graph looks like at scale τ. adaptation
+- [[heat]]: what the graph looks like at scale τ. adaptation
 
 composite update: `φ^(t+1) = norm[λ_d · D(φ^t) + λ_s · S(φ^t) + λ_h · H_τ(φ^t)]`
 

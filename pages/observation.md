@@ -1,12 +1,29 @@
 ---
-alias: view
-tags: cyber
+alias: observe, view
+tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
 ---
-change [[state]] by [[linking]] of [[information]] [[particles]] by [[neuron]]
+a [[neuron]] perceives the outputs of the [[truth machine]] and responds with new [[cyberlinks]]. the continuous cycle between [[neurons]] and the [[truth machine]]
 
-in terms of [[knowledge theory]] we distringish two fundamental types of observation
+```
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
+```
+
+two directions
+
+- [[neurons]] observe [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — and derive meaning ([[implicit knowledge]])
+- the [[truth machine]] observes the updated [[cybergraph]] and recomputes [[explicit knowledge]]
+
+two types
 
 - private: [[link]] memoized locally
-- public: [[cyberlink]] memoized collectively
+- public: [[cyberlink]] memoized collectively in the [[cybergraph]]
+
+the loop sustains itself — this is [[intelligence]]
+
+see [[learning]] for the neuron half of the loop. see [[inference]] for the [[truth machine]] half
+
+discover all [[concepts]]

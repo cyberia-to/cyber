@@ -1,7 +1,7 @@
 ---
 icon: 🪙
 alias: token theory, tokens
-tags: cybernomics
+tags: cybernomics, core
 crystal-type: entity
 crystal-domain: economics
 ---

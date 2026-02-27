@@ -1,6 +1,6 @@
 ---
 icon: 🕸
-tags: cyber
+tags: cyber, core
 alias: content oracle, cybergraphs
 crystal-type: entity
 crystal-domain: cyber

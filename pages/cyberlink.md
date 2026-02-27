@@ -1,6 +1,6 @@
 ---
 icon: 🔗
-tags: cyber
+tags: cyber, core
 alias: cyberlinks, unit of knowledge, simple interactions, expert opinions, essential learning ability, cyberlinking, primitive learning acts
 crystal-type: relation
 crystal-domain: cyber
