@@ -22,8 +22,6 @@ crystal-size: bridge
 
 ## the stack
 
-focus flow computation is the unified name for the protocol stack:
-
   - [[cybergraph]] — the substrate: [[particles]] as nodes, [[cyberlinks]] as typed edges (h/d/c)
   - [[tri-kernel]] — the physics: [[diffusion]] + [[springs]] + [[heat kernel]] evolve $p$ toward $p^*$
   - [[CORE]] — the execution: 16 deterministic reduction patterns over Goldilocks field
@@ -32,18 +30,4 @@ focus flow computation is the unified name for the protocol stack:
 
 each layer is specified independently. together they form a self-organizing system where [[computation]], [[inference]], and [[consensus]] are the same process
 
-## the update
-
-each node runs a local step:
-
-$$\Delta p_i = \eta\Big(\sum_{j \in \mathcal{N}(i)} w_{ij}(p_j - p_i) - \partial_{p_i}(\lambda E_{\text{diff},i} + \gamma C_i) + T(1 + \log p_i)\Big)$$
-
-gossip normalisation enforces $\sum_i p_i = 1$ — no global softmax, fully local, edge-only [[computation]]. converges to:
-
-$$p_i^* \propto \exp\big(-\beta[E_{\text{spring},i} + \lambda E_{\text{diff},i} + \gamma C_i]\big)$$
-
-the [[collective focus theorem]] proves convergence. the [[tri-kernel architecture]] explains why these three operators
-
----
-
-see [[collective focus theorem]] for convergence proofs. see [[foculus]] for consensus. see [[CORE]] for the execution model. see [[cybergraph llm architecture]] for the generative model
+see [[collective focus theorem]] for convergence proofs. see [[tri-kernel architecture]] for why these three operators. see [[cybergraph llm architecture]] for the generative model
