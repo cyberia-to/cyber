@@ -2,7 +2,7 @@
 icon: 🕸
 tags: cyber, core
 alias: content oracle, cybergraphs
-crystal-type: entity
+crystal-type: observed
 crystal-domain: cyber
 ---
 the data model of [[cyber]]
