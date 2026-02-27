@@ -58,6 +58,6 @@ syntropy vs. entropy
 
 see [[tru]] for the computation pipeline
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework
 
 discover all [[concepts]]

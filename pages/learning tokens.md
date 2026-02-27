@@ -13,7 +13,7 @@ examples
 - [[attention]]
 	- impact [[cyberank]] of [[particles]]
 	- and as result probability of [[observation]]
-- [[karma]]: [[score]] of impact on [[collective intelligence]]
+- [[karma]]: [[score]] of impact on [[egregore]]
 
 we foresee the future in which
 

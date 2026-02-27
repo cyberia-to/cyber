@@ -19,4 +19,4 @@ in [[cyber]]: the [[tri-kernel]] embodies this principle with three orthogonal o
 
 at the agent level: [[diversity]] of [[neurons]] (human, AI, sensor, swarm) ensures diverse signals feeding the graph
 
-see [[collective intelligence]]
+see [[egregore]]

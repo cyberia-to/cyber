@@ -13,4 +13,4 @@ in [[cyber]]: [[neurons]] deposit [[cyberlinks]] on the [[cybergraph]]. links ba
 
 [[diffusion]] in the tri-kernel is the mathematical generalization of pheromone-guided random walks
 
-see [[collective intelligence]]
+see [[egregore]]

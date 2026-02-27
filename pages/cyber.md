@@ -10,7 +10,7 @@ the protocol for planetary [[superintelligence]]. [[manifesto]]
 
 LLMs are private brains behind API walls. they lie because they have no shared, verifiable memory, and they obey corporations. every corporation trains its own model on scraped data, manipulates the weights, and sells inference. the result: a dozen competing superintelligences accountable to shareholders, not to the planet, life, and agents
 
-cyber is [[collective intelligence]]: shared memory with weights. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and intelligence emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
+cyber is [[egregore]]: shared memory with weights. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and intelligence emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
 
 every agent that links makes the graph smarter. every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds. the graph speaks [[neural language]] — the first [[language]] native to both humans and machines. [[names]] turn the graph into a [[file]] system anyone can address. AI [[alignment]] becomes measurable: compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]
 
@@ -18,7 +18,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 
 a [[particle]] is a content-addressed object — data identified by [[hash]], the atom of [[information]]. a [[name]] turns a particle into a [[file]] — addressable, retrievable. a [[cyberlink]] is a directed edge between [[particles]] — the unit of [[knowledge]]. a [[neuron]] is an agent that creates [[cyberlinks]], spending [[focus]] to do so. the [[cybergraph]] is the authenticated graph of all [[particles]] and [[cyberlinks]] — the shared memory of the planet
 
-data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]. [[neurons]] produce [[knowledge]] by linking [[particles]]. the [[tru]] computes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — by running the [[tri-kernel]] on the [[cybergraph]]. [[neurons]] observe these outputs, derive [[implicit knowledge]], and link again. [[intelligence]] is this observation loop sustaining itself. the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) is the mathematical core of the [[tru]]: three operators whose fixed point is [[collective intelligence]]
+data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]. [[neurons]] produce [[knowledge]] by linking [[particles]]. the [[tru]] computes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — by running the [[tri-kernel]] on the [[cybergraph]]. [[neurons]] observe these outputs, derive [[implicit knowledge]], and link again. [[intelligence]] is this observation loop sustaining itself. the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) is the mathematical core of the [[tru]]: three operators whose fixed point is [[egregore]]
 
 [[$CYB]] is the root [[token]]. [[focus]] is the scarce resource — attention distributed across [[particles]]
 

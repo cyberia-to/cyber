@@ -18,7 +18,7 @@ seamless integration with [[studio]]
 how it works
 
 - a [[neuron]] types a query → oracle finds relevant [[particles]] ranked by [[cyberank]]
-- results reflect the [[collective intelligence]] of all [[neurons]] who created [[cyberlinks]]
+- results reflect the [[egregore]] of all [[neurons]] who created [[cyberlinks]]
 - the ranking is the output of the [[tru]] — no ads, no manipulation
 
 two key mechanics

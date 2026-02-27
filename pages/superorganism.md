@@ -18,4 +18,4 @@ in [[cyber]]: the [[cybergraph]] with its [[neurons]], [[cyberlinks]], and [[tri
 
 the superorganism computes [[truth]] through [[convergent computation]]
 
-see [[collective intelligence]]
+see [[egregore]]

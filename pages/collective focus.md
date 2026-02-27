@@ -16,4 +16,4 @@ no one assigns it. no one votes on it. it is computed
 
 see [[focus]] for the full definition
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

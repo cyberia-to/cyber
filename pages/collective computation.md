@@ -13,4 +13,4 @@ this is probabilistic inference at planetary scale — no single agent could per
 
 see [[convergence rewards]] for the reward mechanism design
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

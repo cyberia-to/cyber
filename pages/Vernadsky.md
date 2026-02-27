@@ -9,4 +9,4 @@ conceived the [[noosphere]]: as life transformed the geosphere into the biospher
 
 pioneered the scientific study of the biosphere as a geological force
 
-see [[collective intelligence]]
+see [[egregore]]

@@ -19,4 +19,4 @@ some notable examples of consensus
 
 discover all [[concepts]]
 
-or dive into [[collective intelligence]]
+or dive into [[egregore]]

@@ -17,4 +17,4 @@ effective coordination ensures that [[neurons]] work together efficiently, minim
 
 the [[cybergraph]] itself is a coordination tool: each [[cyberlink]] is a public signal that guides others
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

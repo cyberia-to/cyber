@@ -37,7 +37,7 @@ immortality has three layers: biological continuity, digital persistence, and ci
 - biological systems fail. information persists
 - ### identity in the [[cybergraph]]
 	- every [[cyberlink]] a [[neuron]] creates is permanent — stored in [[IPFS]], committed to [[Bostrom]], ranked by [[cyberank]]
-	- [[karma]] accumulates across a lifetime of contributions. it is the on-chain measure of a mind's value to [[collective intelligence]]
+	- [[karma]] accumulates across a lifetime of contributions. it is the on-chain measure of a mind's value to [[egregore]]
 	- the pattern of a person's knowledge, preferences, reasoning style, and values is encoded in their [[cyberlinks]]. this pattern survives the body
 - ### continuity mechanisms
 	- [[whole brain emulation]]: scan and simulate a brain at sufficient resolution to preserve the mind
@@ -79,6 +79,6 @@ immortality has three layers: biological continuity, digital persistence, and ci
 ## relationship to [[cyber]]
 
 - [[cyber]] is the memory layer. every discovery in longevity research, every genetic sequence, every clinical result becomes a [[particle]] in the [[knowledge graph]]
-- [[collective intelligence]] accelerates the research: thousands of [[neurons]] contributing observations, ranked by [[cyberank]], composable by anyone
+- [[egregore]] accelerates the research: thousands of [[neurons]] contributing observations, ranked by [[cyberank]], composable by anyone
 - the [[cyber state]] provides the physical environment: clean food, clean water, clean air, advanced healthcare — the substrate where immortality research happens
 - the [[superhuman]] is the result: a body that persists, a mind backed up in the graph, a civilization that remembers

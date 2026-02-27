@@ -15,7 +15,7 @@ sustainable cities for nomads
 - and a growing network of future cities
 - featuring energy, water, food, and data sovereignty
 - embedded into [[architecture]], culture and software
-- guided by [[collective intelligence]]
+- guided by [[egregore]]
 
 ## Pilot
 

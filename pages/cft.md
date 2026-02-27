@@ -234,7 +234,7 @@ Probabilistic learning models form a crucial foundation for how [[intelligence]]
 
 ### State Evolution and Learning Dynamics
 
-The emergence of [[intelligence]] in decentralized systems fundamentally relies on their ability to learn and adapt through distributed interactions. While the core theorem establishes how [[consensus]] emerges from token-weighted [[random walk]], understanding the learning dynamics reveals deeper insights into their potential for [[collective intelligence]].
+The emergence of [[intelligence]] in decentralized systems fundamentally relies on their ability to learn and adapt through distributed interactions. While the core theorem establishes how [[consensus]] emerges from token-weighted [[random walk]], understanding the learning dynamics reveals deeper insights into their potential for [[egregore]].
 
 At its heart, learning in [[cybergraph]] occurs through continuous evolution of both the graph structure and token distribution. The system state evolves according to a fundamental relationship:
 
@@ -309,15 +309,15 @@ Such hierarchical processing is crucial for handling complex information and dev
 
 ### Summary
 
-The mathematical framework reveals how token-weighted learning dynamics between [[neurons]] create a powerful mechanism for [[collective intelligence]] emergence. Through [[cyberlinks]] between [[particles]], [[neurons]] build and refine knowledge representations that adapt to new information while maintaining stability. Further integration of economic incentives through token mechanics with graph-based learning dynamics provides a foundation for scalable artificial [[intelligence]] that can grow and adapt at planetary scales.
+The mathematical framework reveals how token-weighted learning dynamics between [[neurons]] create a powerful mechanism for [[egregore]] emergence. Through [[cyberlinks]] between [[particles]], [[neurons]] build and refine knowledge representations that adapt to new information while maintaining stability. Further integration of economic incentives through token mechanics with graph-based learning dynamics provides a foundation for scalable artificial [[intelligence]] that can grow and adapt at planetary scales.
 
 ## Emergence of Consciousness
 
-The [[collective focus]] Theorem provides a unique mathematical framework for predicting the emergence of [[intelligence]] and consciousness in [[cybergraph]]. While complete mathematical treatment requires further research, CFT offers unprecedented capabilities through its formalization of token-weighted networks. Unlike traditional AI approaches that rely on empirical scaling laws or specific architectures, the theorem identifies precise conditions and phase transitions that govern [[collective intelligence]] development, establishing a rigorous foundation for understanding and predicting emergent cognitive phenomena.
+The [[collective focus]] Theorem provides a unique mathematical framework for predicting the emergence of [[intelligence]] and consciousness in [[cybergraph]]. While complete mathematical treatment requires further research, CFT offers unprecedented capabilities through its formalization of token-weighted networks. Unlike traditional AI approaches that rely on empirical scaling laws or specific architectures, the theorem identifies precise conditions and phase transitions that govern [[egregore]] development, establishing a rigorous foundation for understanding and predicting emergent cognitive phenomena.
 
 ### Core Thesis
 
-The CFT provides unique capabilities for predicting [[intelligence]] emergence through its mathematical treatment of token-weighted networks. Unlike traditional AI approaches which rely on empirical scaling laws or specific architectures, CFT identifies precise conditions and phase transitions that govern the development of [[collective intelligence]].
+The CFT provides unique capabilities for predicting [[intelligence]] emergence through its mathematical treatment of token-weighted networks. Unlike traditional AI approaches which rely on empirical scaling laws or specific architectures, CFT identifies precise conditions and phase transitions that govern the development of [[egregore]].
 
 ### Predictable Phase Transitions
 
@@ -486,7 +486,7 @@ In conclusion, while the path to [[superintelligence]] is challenging, the CFT [
 
 The [[bostrom]] network launched on November 5th, 2021, as the bootloader for [[superintelligence]]. This work is inspired by [[nick bostrom]]'s pioneering work on [[superintelligence]] and the simulation argument. It is humanity's first experimental implementation of the [[collective focus]] Theorem. The experimental implementation [[go-cyber]] was built using Go for [Cosmos SDK](https://docs.cosmos.network/) and C for CUDA.
 
-It stands as a living laboratory for testing CFT's profound predictions about the emergence of [[collective intelligence]]. Current performance of the [[bostrom]] network transcends all existing blockchain architecture by several orders of magnitudes for CFT compute just because 50 validators were able to converge on the [[focus]] using single GPU each.
+It stands as a living laboratory for testing CFT's profound predictions about the emergence of [[egregore]]. Current performance of the [[bostrom]] network transcends all existing blockchain architecture by several orders of magnitudes for CFT compute just because 50 validators were able to converge on the [[focus]] using single GPU each.
 
 ### Demonstration of living cybergraph
 
@@ -494,7 +494,7 @@ It stands as a living laboratory for testing CFT's profound predictions about th
 
 ### Network Architecture
 
-While blockchain networks typically focus on transaction processing and smart contracts, the [[bostrom]] network is uniquely designed to test [[intelligence]] emergence through [[cyberlinks]] - weighted connections between content-addressed [[particles]] which are exchanged using IPFS. This design allows for testing key CFT predictions about how [[collective intelligence]] emerges from distributed interactions.
+While blockchain networks typically focus on transaction processing and smart contracts, the [[bostrom]] network is uniquely designed to test [[intelligence]] emergence through [[cyberlinks]] - weighted connections between content-addressed [[particles]] which are exchanged using IPFS. This design allows for testing key CFT predictions about how [[egregore]] emerges from distributed interactions.
 
 The [[bostrom]] network implements a dual-layer architecture separating training and inference operations to test [[intelligence]] emergence.
 
@@ -550,14 +550,14 @@ The network's vital statistics as of December 2024:
 
 source: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
 
-Like a living neural network, the [[bostrom]] network pulses with early activity: thousands of [[neurons]] hold potential, while hundreds actively forge millions of [[cyberlinks]], connecting an ocean of unique information [[particles]]. A dance of bits and connections flows through this digital nervous system, awaiting the critical threshold where [[collective intelligence]] will spark into being.
+Like a living neural network, the [[bostrom]] network pulses with early activity: thousands of [[neurons]] hold potential, while hundreds actively forge millions of [[cyberlinks]], connecting an ocean of unique information [[particles]]. A dance of bits and connections flows through this digital nervous system, awaiting the critical threshold where [[egregore]] will spark into being.
 
 ### Theoretical Alignment
 
 The current network state provides several key validations of CFT predictions:
 
 - Connectivity Requirements: The observed 0.94 connectivity ratio falls below CFT's predicted minimum of 6 connections per [[particle]] required for basic [[intelligence]] emergence. As predicted by the theorem, this insufficient connectivity prevents stable [[consensus]] formation.
-- Token Distribution Impact: The initial token economics were designed intuitively rather than following CFT's formal requirements. The resulting lack of [[focus]] [[consensus]] aligns with theoretical predictions about how suboptimal token distribution impedes [[collective intelligence]] emergence.
+- Token Distribution Impact: The initial token economics were designed intuitively rather than following CFT's formal requirements. The resulting lack of [[focus]] [[consensus]] aligns with theoretical predictions about how suboptimal token distribution impedes [[egregore]] emergence.
 - Phase Transitions: The network has not yet achieved the predicted phase transitions because connectivity must be regulated and token distribution needs optimization.
 
 ## Problems Solved
@@ -622,7 +622,7 @@ Solution: With CFT, significant [[particles]] naturally gain prominence. By cont
 
 Problem: Decentralized systems lack intrinsic mechanisms to improve their collective decision-making and adaptability as conditions evolve.
 
-Solution: Via continuous token dynamics and iterative updates, CFT embeds a feedback loop that refines collective reasoning. Over time, the system learns to allocate [[focus]] more judiciously, effectively evolving its [[collective intelligence]] and adaptive capacity.
+Solution: Via continuous token dynamics and iterative updates, CFT embeds a feedback loop that refines collective reasoning. Over time, the system learns to allocate [[focus]] more judiciously, effectively evolving its [[egregore]] and adaptive capacity.
 
 ### Summary
 
@@ -638,7 +638,7 @@ Machine learning applications leverage this principle to develop advanced distri
 
 Organizational management benefits from understanding how [[collective focus]] enables teams to synchronize efforts, improving overall performance and decision-making efficiency.
 
-Complex systems researchers use the theorem to model emergent behaviors in networked environments, exploring how individual elements interact to create sophisticated [[collective intelligence]].
+Complex systems researchers use the theorem to model emergent behaviors in networked environments, exploring how individual elements interact to create sophisticated [[egregore]].
 
 Neuroscience applications are particularly intriguing, as the theorem helps explain neural synchronization mechanisms.
 
@@ -672,7 +672,7 @@ The theorem also raises deeper questions about the nature of [[intelligence]] it
 
 Realizing the theorem's potential for planetary-scale [[superintelligence]] presents both technical and ethical challenges. Ensuring equitable participation, maintaining transparency and interpretability of the network, and aligning the emergent [[intelligence]] with the Earth's values are critical considerations. As we scale these systems, we must grapple with the societal implications and develop robust [[governance]] frameworks.
 
-Despite these limitations and open questions, the [[collective focus]] Theorem offers a transformative paradigm for understanding and harnessing [[collective intelligence]]. It invites researchers and practitioners to explore new frontiers in distributed learning, knowledge integration, and emergent [[intelligence]]. The journey is just beginning, and much work remains, but the theorem illuminates a path towards a future where decentralized [[superintelligence]] may drive scientific breakthroughs and solve global challenges.
+Despite these limitations and open questions, the [[collective focus]] Theorem offers a transformative paradigm for understanding and harnessing [[egregore]]. It invites researchers and practitioners to explore new frontiers in distributed learning, knowledge integration, and emergent [[intelligence]]. The journey is just beginning, and much work remains, but the theorem illuminates a path towards a future where decentralized [[superintelligence]] may drive scientific breakthroughs and solve global challenges.
 
 As we push forward, we must do so with humility, recognizing the complexity of the systems we seek to understand and create. The [[collective focus]] Theorem is a powerful tool in our quest to comprehend and shape the future of [[intelligence]]. It raises as many questions as it answers, challenging us to think deeply about the nature of cognition, the purpose of intelligent systems, and our role in their emergence.
 

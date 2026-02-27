@@ -24,4 +24,4 @@ in [[cyber]]: the [[cybergraph]] naturally maximizes `c` conditions
 - social sensitivity → the [[tri-kernel]] amplifies links that resonate across many agents
 - cognitive diversity → the system includes humans, AI, sensors, [[animals]], [[robots]], [[progs]]
 
-see [[collective intelligence]]
+see [[egregore]]

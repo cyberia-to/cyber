@@ -80,7 +80,7 @@ crystal-domain: cyber
 -
 - ## the destination
 	- [[collective memory]] — a well that never dries
-	  [[collective intelligence]] — the network satisfies
+	  [[egregore]] — the network satisfies
 	  the question every mind alone has failed:
 	  what matters, what is true, what has prevailed
 	-

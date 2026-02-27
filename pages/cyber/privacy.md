@@ -8,7 +8,7 @@ alias: privacy model, CORE privacy, ZK privacy
 
 Traditional systems force a choice: transparency (everyone sees everything) or privacy (no one can verify anything). Zero-knowledge proofs dissolve this false dichotomy: prove properties without revealing data.
 
-[[CORE]] implements private ownership with public aggregates. Individual record ownership remains hidden—who owns what, who sent to whom—while aggregate properties remain publicly verifiable: total energy per [[particle]], conservation laws, [[focus]] distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for [[collective intelligence]]: enough transparency for [[consensus]], enough privacy for participation.
+[[CORE]] implements private ownership with public aggregates. Individual record ownership remains hidden—who owns what, who sent to whom—while aggregate properties remain publicly verifiable: total energy per [[particle]], conservation laws, [[focus]] distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for [[egregore]]: enough transparency for [[consensus]], enough privacy for participation.
 
 The implementation uses a UTXO model with Poseidon commitments, nullifiers for double-spend prevention, and ~10,000-constraint ZK circuits proving conservation. This represents a 4× improvement over naive Merkle-based designs, achieved through polynomial inclusion proofs.
 

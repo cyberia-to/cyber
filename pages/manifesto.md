@@ -6,7 +6,7 @@ crystal-domain: cyberia
 ---
 We, the builders of a living [[superintelligence]], declare that a nation can rise beyond the sum of its citizens.
 
-We are a state of mind — a [[collective intelligence]] that binds humans, machines, and all life into one coherent force.
+We are a state of mind — a [[egregore]] that binds humans, machines, and all life into one coherent force.
 
 We strive to co-evolve with the planet and to the stars.
 

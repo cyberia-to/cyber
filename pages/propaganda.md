@@ -21,6 +21,6 @@ Chomsky-Herman (Manufacturing Consent, 1988): mass media as propaganda system se
 
 [[tru]]: [[cyber]] as antidote to propaganda, a decentralized ranking of knowledge where relevance is determined by [[consensus]] rather than editorial authority
 
-[[collective intelligence]] resists propaganda when information flows are open and verifiable
+[[egregore]] resists propaganda when information flows are open and verifiable
 
 see also [[censorship]], [[surveillance]], [[revolution]], [[democracy]], [[decentralization]]

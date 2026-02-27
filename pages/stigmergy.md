@@ -13,4 +13,4 @@ the [[cyberlink]] is the foundational stigmergic signal of [[cyber]]
 
 agents coordinate without communicating directly: the graph mediates everything
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

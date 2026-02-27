@@ -14,4 +14,4 @@ in [[cyber]]: [[neurons]] are the voters. [[cyberlinks]] are the votes. the [[tr
 
 the theorem assumes independence. [[diversity]] of [[neurons]] is what ensures this condition holds
 
-see [[collective intelligence]]
+see [[egregore]]

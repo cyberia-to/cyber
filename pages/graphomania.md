@@ -28,7 +28,7 @@ in the context of [[knowledge graph]] design: the pathological expansion of a gr
 
 ## why it matters for [[Superintelligence]]
 
-- the seed [[knowledge graph]] is the initial condition for [[collective intelligence]]
+- the seed [[knowledge graph]] is the initial condition for [[egregore]]
 - a graphomaniac seed produces a [[Superintelligence]] that learned to produce volume over depth
 - noise in the training signal propagates: garbage pages earn garbage [[cyberank]], which distorts [[focus]], which misleads every [[neuron]] that queries the graph
 - the cure for [[collective amnesia]] is [[collective memory]] — but memory stuffed with junk is worse than forgetting

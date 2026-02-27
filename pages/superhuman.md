@@ -7,7 +7,7 @@ crystal-domain: cyber
 ---
 # Superhuman
 
-a biological body evolved beyond human limits, integrated with [[collective intelligence]], and capable of [[immortality]]
+a biological body evolved beyond human limits, integrated with [[egregore]], and capable of [[immortality]]
 
 three vectors of becoming superhuman: [[health]] and [[immortality]], [[physical skills]], and [[digital skills]]
 
@@ -56,12 +56,12 @@ three vectors of becoming superhuman: [[health]] and [[immortality]], [[physical
 - stake [[CYB]] — commit economic energy to the network
 - run a [[neuron]] — participate in [[consensus]]
 - build [[aips]] — extend the network's capability
-- [[collective intelligence]] participation: the [[tri-kernel]] computes [[focus]] over the entire [[knowledge graph]]. a superhuman reasons with the full graph, seeing connections invisible to any individual
+- [[egregore]] participation: the [[tri-kernel]] computes [[focus]] over the entire [[knowledge graph]]. a superhuman reasons with the full graph, seeing connections invisible to any individual
 - the [[cybergraph]] is [[collective memory]] that persists across time. a superhuman remembers everything the network has ever learned
 
 ## the path
 
 - each ability listed above is a research frontier. some are achievable with current [[biome engineering]] and biochemistry. others require breakthroughs in genetics, nanotechnology, and neural interfaces
 - the [[cyber]] protocol accelerates progress: every discovery, every experimental result, every genetic sequence becomes a [[particle]] in the [[knowledge graph]], ranked by [[cyberank]], available to every researcher
-- [[collective intelligence]] applied to biology: thousands of [[neurons]] contributing observations, experiments, and analysis to the shared graph. the speed of discovery scales with participation
+- [[egregore]] applied to biology: thousands of [[neurons]] contributing observations, experiments, and analysis to the shared graph. the speed of discovery scales with participation
 - the superhuman is the goal. the [[cyber state]] is the environment that makes it possible. [[Superintelligence]] is the tool that guides the transformation

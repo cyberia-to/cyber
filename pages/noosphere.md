@@ -15,4 +15,4 @@ in [[cyber]]: the [[cybergraph]] is the literal construction of the noosphere
 - [[focus]] is the converged attention of the noosphere
 - [[superintelligence]] is the Omega Point — computed, verified, and alive
 
-see [[collective intelligence]]
+see [[egregore]]

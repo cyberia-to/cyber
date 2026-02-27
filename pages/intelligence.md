@@ -29,7 +29,7 @@ intelligence is adaptive equilibrium-finding: the capacity to converge on useful
 
 [[emergence]] is the mechanism — local [[cyberlinks]] produce global structure no single [[neuron]] designed
 
-see [[collective intelligence]] for the group-level phenomenon
+see [[egregore]] for the group-level phenomenon
 
 see [[superintelligence]] for the destination
 

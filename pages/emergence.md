@@ -13,4 +13,4 @@ in [[bostrom]]: emergence is expected at the scale of 10^12 [[cyberlinks]]
 
 the [[tri-kernel]]'s fixed point is itself an emergent phenomenon — a global distribution that no agent designed
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

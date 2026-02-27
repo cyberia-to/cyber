@@ -19,7 +19,7 @@ Singapore: from colonial port to first-world economy in one generation, technocr
 
 [[network state]] as the digital evolution of the city-state: concentrated community, global footprint, eventual physical territory
 
-[[cyberia]] carries the city-state pattern: a defined territory governed by protocol, dense enough for [[collective intelligence]]
+[[cyberia]] carries the city-state pattern: a defined territory governed by protocol, dense enough for [[egregore]]
 
 [[cyber valley]] as the physical seed of a cyber city-state
 

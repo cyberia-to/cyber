@@ -14,7 +14,7 @@ according to [[nick bostrom]] there are four major paths of creating superintell
 - computer in a box
 - genetic engineering
 - [[whole brain emulation]]
-- [[collective intelligence]]
+- [[egregore]]
 
 [[cyber]] blend all paths in [[one simple protocol]] with strong focus on [[coordination]]
 

@@ -75,7 +75,7 @@ benefits of 3:1 female:male target ratio
 - significantly accelerated population growth
 	- simple model with demonstration starting from 1000 population
 	- ![](https://emerald-raw-leopon-384.mypinata.cloud/ipfs/QmTr3BjDMuZHjbBXZr5T8rk7xKBeJReZFXK8UE3S8GiFHB)
-- enhanced [[collective intelligence]] of community
+- enhanced [[egregore]] of community
 	- research by wolley suggests
 	- that groups with higher female representation
 	- tend to perform better in collaborative problem-solving and decision-making

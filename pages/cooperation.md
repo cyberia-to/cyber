@@ -13,4 +13,4 @@ the mechanism has [[feedback loops]]: behavior that aligns with [[collective foc
 
 see [[coordination]] for the broader set of alignment mechanisms
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

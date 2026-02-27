@@ -13,4 +13,4 @@ the [[tri-kernel]] integrates these partial views into a coherent global [[focus
 
 the graph is both the medium and the product of distributed thought
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

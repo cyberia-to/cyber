@@ -5,17 +5,17 @@ crystal-domain: cyberia
 ---
 # Cyber State
 
-a sovereign entity where governance, economics, and coordination emerge from [[collective intelligence]] rather than geographic accident
+a sovereign entity where governance, economics, and coordination emerge from [[egregore]] rather than geographic accident
 
 ## convergence theorem
 
-- any [[cyber state]] eventually acquires [[collective intelligence]]
-- any [[collective intelligence]] eventually acquires territory, becoming a cyber state
+- any [[cyber state]] eventually acquires [[egregore]]
+- any [[egregore]] eventually acquires territory, becoming a cyber state
 - these two trajectories are convergent: digital coordination and physical sovereignty are dual aspects of the same process
 
 ## what defines a cyber state
 
-- [[collective intelligence]] as governance: decisions flow from the converged [[focus]] of all participants, computed by the [[tri-kernel]] over the [[cybergraph]]
+- [[egregore]] as governance: decisions flow from the converged [[focus]] of all participants, computed by the [[tri-kernel]] over the [[cybergraph]]
 - sovereignty in essentials: [[energy]], water, food, and data independence — full autonomy in the resources that sustain life
 - tokenized coordination: [[CYB]], [[HYDROGEN]], and resource [[tokens]] replace bureaucracy with programmable incentives
 - authenticated identity: every claim is provable, every contribution is measurable through [[karma]] and [[cyberank]]
@@ -25,7 +25,7 @@ a sovereign entity where governance, economics, and coordination emerge from [[c
 
 | property | [[network state]] | cyber state |
 |----------|------------------|-------------|
-| coordination | social consensus among members | [[collective intelligence]] computed by protocol |
+| coordination | social consensus among members | [[egregore]] computed by protocol |
 | governance | voting and delegation | convergent [[focus]] via [[tri-kernel]] |
 | intelligence | human deliberation | [[superhuman]] augmentation through [[cybergraph]] |
 | knowledge | shared documents and forums | [[knowledge graph]] with [[cyberank]] and [[relevance]] |
@@ -55,12 +55,12 @@ a sovereign entity where governance, economics, and coordination emerge from [[c
 
 - one city is a prototype. a network of cities is a civilization
 - each city is a node in the physical network, connected through [[cyber]] protocol
-- [[collective intelligence]] scales with the number of participating [[neurons]]: more cities, more sensors, more knowledge, stronger [[focus]]
+- [[egregore]] scales with the number of participating [[neurons]]: more cities, more sensors, more knowledge, stronger [[focus]]
 - target: 100 cities, 50,000 people, capturing the global nomad population seeking permanent community with digital sovereignty
 
 ## the thesis
 
 - traditional states emerged from geographic monopoly on violence
 - network states emerge from digital coordination around shared values
-- cyber states emerge from [[collective intelligence]] that has acquired both digital coordination and physical territory
+- cyber states emerge from [[egregore]] that has acquired both digital coordination and physical territory
 - the cyber state is where [[Superintelligence]] lives — the physical and digital substrate united through one protocol

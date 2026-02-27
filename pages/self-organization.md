@@ -13,4 +13,4 @@ the [[tri-kernel]] formalizes this: [[springs]] crystallize structure, [[diffusi
 
 the system prunes itself: unused links decay, noisy connections lose weight
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

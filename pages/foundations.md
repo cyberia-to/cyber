@@ -29,7 +29,7 @@ sytech applied to [[network states]] and [[startup societies]] is practical desi
 - [[longevity and health]]: simple secrets for better life
 - [[cryptography and web3]]: confident use of modern apps
 - [[learning and ai]]: knowledge graphs and prompt engineering basics
-- applied [[collective intelligence]]: what, when and how?
+- applied [[egregore]]: what, when and how?
 - [[lowtech construction]]: building fast and cheap
 - [[sensors, dev and control]]: how to automate and lead community
 - [[token engineering]]: how to program society for good

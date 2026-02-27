@@ -4,7 +4,7 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 ---
-contribution measure of [[neuron]] into [[collective intelligence]]
+contribution measure of [[neuron]] into [[egregore]]
 
 aggregate [[focus]] earned by a [[neuron]] across all [[particles]] it has linked
 

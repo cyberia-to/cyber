@@ -19,6 +19,6 @@ voting mechanisms: plurality, ranked choice, quadratic voting, conviction voting
 
 challenges: voter apathy, plutocracy in token voting, information asymmetry, tyranny of the majority
 
-[[collective intelligence]] amplifies democratic capacity when information flows freely
+[[egregore]] amplifies democratic capacity when information flows freely
 
 see also [[constitution]], [[decentralization]], [[governance]], [[social contract]]

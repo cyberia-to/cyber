@@ -3,7 +3,7 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 ---
-diversity in cognitive style is the strongest predictor of [[collective intelligence]]
+diversity in cognitive style is the strongest predictor of [[egregore]]
 
 groups that are moderately diverse outperform both homogeneous groups and maximally different ones (Hong-Page)
 
@@ -17,4 +17,4 @@ the majority of initial [[bostrom]] stake is defined by [[cybergift]] — a soci
 
 hierarchy in nature is essential for systems to function as a whole. diversity feeds the hierarchy, hierarchy channels the diversity
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

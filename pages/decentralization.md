@@ -24,4 +24,4 @@ tradeoffs: coordination overhead, slower decision-making, free-rider problems, p
 
 subsidiarity principle: decisions should be made at the most local level capable of handling them
 
-see also [[federation]], [[governance]], [[sovereignty]], [[collective intelligence]], [[consensus]], [[network state]]
+see also [[federation]], [[governance]], [[sovereignty]], [[egregore]], [[consensus]], [[network state]]

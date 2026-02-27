@@ -39,4 +39,4 @@ how [[knowledge graph]] become [[cybergraph]]?
 
 [[knowledge graphs and llms]]
 
-[[knowledge energy]] as [[collective intelligence]] essense
+[[knowledge energy]] as [[egregore]] essense

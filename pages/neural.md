@@ -13,7 +13,7 @@ meaning is defined by [[cyberlinks]] — structure emerges from how agents link 
 
 together with [[cybergraph]] and [[tru]] forms the foundation of [[soft3]]
 
-the language of [[collective intelligence]]: meaning emerges from how many [[neurons]] independently structure [[knowledge]]
+the language of [[egregore]]: meaning emerges from how many [[neurons]] independently structure [[knowledge]]
 
 ## why a new language
 
@@ -94,7 +94,7 @@ the language of [[collective intelligence]]: meaning emerges from how many [[neu
 - [[CORE]] provides the physics — [[field]] arithmetic, [[consensus]], proof system, state model
 - [[trident]] provides the machine language — 54 IR operations, compiles to proof VM, computes [[focus]] distribution
 - [[rune]] provides the human interface — high-level [[programming language]] for [[cybergraph]] operations
-- neural language provides the semantic medium in which [[collective intelligence]] thinks
+- neural language provides the semantic medium in which [[egregore]] thinks
 - the [[CGC]]-[[GNN]] [[isomorphism]]: each [[focus]] update step is a [[graph neural network]] message-passing step where [[neurons]] send semantic signals along [[cyberlinks]]
 
 ## formal properties

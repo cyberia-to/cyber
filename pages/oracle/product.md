@@ -24,7 +24,7 @@ decentralized ai
 	- [[no need to trust ai]]
 	- [provability of ai models](cybergraph) is real
 - superintelligent
-	- [[collective intelligence]] is different from individual
+	- [[egregore]] is different from individual
 	- [[cyber]] unites llms and humans
 
 decentralized search

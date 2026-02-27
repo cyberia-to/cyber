@@ -508,7 +508,7 @@ The universal language: [[set theory]], [[graph theory]], [[linear algebra]], [[
 
 ### 16.7 States and Governance
 
-Major [[nation states]]: the ~200 sovereign entities, their geography, population, GDP, governance model. [[network states]]: digital-first sovereign entities — DAOs, on-chain governance. [[startup societies]]: physical communities with experimental governance. [[cyber state]]: the convergence of [[collective intelligence]] and territorial sovereignty. [[international organizations]]: UN, WTO, IMF, WHO — the coordination layer of current civilization. [[legal systems]]: common law, civil law, sharia, customary — how humans encode rules. [[jurisdictions]]: where [[cyberia]] operates and what legal structures apply.
+Major [[nation states]]: the ~200 sovereign entities, their geography, population, GDP, governance model. [[network states]]: digital-first sovereign entities — DAOs, on-chain governance. [[startup societies]]: physical communities with experimental governance. [[cyber state]]: the convergence of [[egregore]] and territorial sovereignty. [[international organizations]]: UN, WTO, IMF, WHO — the coordination layer of current civilization. [[legal systems]]: common law, civil law, sharia, customary — how humans encode rules. [[jurisdictions]]: where [[cyberia]] operates and what legal structures apply.
 
 ### 16.8 Economics
 

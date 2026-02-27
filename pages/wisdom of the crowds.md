@@ -13,4 +13,4 @@ modern revival: Surowiecki (2004) — conditions for wise crowds: diversity of o
 
 in [[cyber]]: the [[tri-kernel]] is the aggregation mechanism. [[neurons]] provide diverse independent signals via [[cyberlinks]]. [[focus]] is the crowd's verdict
 
-see [[collective intelligence]]
+see [[egregore]]

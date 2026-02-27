@@ -48,7 +48,7 @@ these outputs are [[explicit knowledge]] — deterministic, on chain, verifiable
 - [[memoization]]: no need to recompute stuff twice
 - bounded locality: updates cost O(degree) not O(graph size)
 
-consensus on [[relevance]] is consensus on what matters. what the collective attends to is the collective's [[truth]]. the name is earned when the system demonstrates [[collective intelligence]] factor c > 0
+consensus on [[relevance]] is consensus on what matters. what the collective attends to is the collective's [[truth]]. the name is earned when the system demonstrates [[egregore]] factor c > 0
 
 related
 

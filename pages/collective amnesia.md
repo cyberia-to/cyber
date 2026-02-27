@@ -33,4 +33,4 @@ collective amnesia is the evolutionary bug. [[collective memory]] is the fix
 
 see [[collective memory]] for the technology
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework

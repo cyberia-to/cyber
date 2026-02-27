@@ -23,6 +23,6 @@ what can be inferred is [[implicit knowledge]]: the hidden structure that the [[
 
 the boundary between them is where [[intelligence]] begins
 
-see [[collective intelligence]] for the broader framework
+see [[egregore]] for the broader framework
 
 discover all [[concepts]]

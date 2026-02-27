@@ -7,4 +7,4 @@ TODO
 
 ability to understand, learn, and apply [[knowledge]] across diverse domains
 
-see also [[superintelligence]] and [[collective intelligence]]
+see also [[superintelligence]] and [[egregore]]
