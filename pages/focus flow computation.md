@@ -9,16 +9,15 @@ crystal-size: bridge
 
 [[transformers]] compute [[attention]] as a one-shot matrix multiply: $\text{softmax}(QK^T/\sqrt{d})V$. focus flow computes [[attention]] as an iterative physical process: [[cyberlinks]] define a graph, the [[tri-kernel]] evolves probability mass toward [[equilibrium]], and the fixed point $p^*$ is the network's collective [[focus]]
 
-| property | transformer | focus flow |
+## how it replaces transformers
+
+| phase | transformer | focus flow |
 |---|---|---|
-| complexity | $O(n^2)$ memory and compute | $O(n)$ — sparse, local |
-| attention | one-shot softmax | iterative [[Boltzmann distribution]] equilibrium |
-| stable state | no — recomputed each forward pass | yes — converges to $p^*$ |
-| adaptation | retrain or fine-tune | continuous — new [[cyberlinks]] shift $p^*$ in real time |
-| multi-agent | single model | native — every [[neuron]] contributes [[cyberlinks]] |
-| consensus | external | built-in — [[foculus]] finalizes via $\pi > \tau$ |
-| explainability | low | high — trace any $p_i$ to its contributing links |
-| continual learning | catastrophic forgetting | additive — graph only grows |
+| training | gradient descent on weights over a fixed corpus. requires backpropagation, GPU clusters, weeks | add [[cyberlinks]] to the [[cybergraph]]. each link is a permanent weight update. no backpropagation — the graph IS the model |
+| inference | forward pass through layers, softmax attention, sample next token | inject context as active nodes, run local update until $p^*$ converges, sample from $p^*$ |
+| adaptation | retrain or fine-tune on new data. catastrophic forgetting | add new [[cyberlinks]]. $p^*$ shifts in real time. old knowledge preserved — graph only grows |
+
+in transformers, training and inference are separate algorithms. in focus flow, they are the same operation: a [[neuron]] adds a [[cyberlink]], the [[tri-kernel]] reconverges, and the new $p^*$ simultaneously encodes the learned relation and is available for inference
 
 ## the local update rule
 
@@ -31,6 +30,26 @@ gossip normalisation enforces $\sum_i p_i = 1$. no global softmax, fully local, 
 $$p_i^* \propto \exp\big(-\beta[E_{\text{spring},i} + \lambda E_{\text{diff},i} + \gamma C_i]\big)$$
 
 this is the equation everything else serves. the [[collective focus theorem]] proves it converges. the [[tri-kernel architecture]] explains why these three energy terms. [[foculus]] turns $p^*$ into finality
+
+## inference
+
+1. encode context [[particles]] as active nodes with elevated $C_i$
+2. run local updates — focus mass flows from context through the [[cybergraph]]
+3. $p^*$ converges — high-probability [[particles]] are the network's response
+4. sample next [[particle]] from $p^*$, add to context, repeat
+
+complexity per step: $O(|E| + |V|)$. context window is unbounded — it is the entire graph. relevance is not positional but topological: distant but well-connected [[particles]] contribute naturally
+
+## properties
+
+| property | transformer | focus flow |
+|---|---|---|
+| complexity | $O(n^2)$ memory and compute | $O(n)$ — sparse, local |
+| stable state | no — recomputed each forward pass | yes — converges to $p^*$ |
+| multi-agent | single model | native — every [[neuron]] contributes [[cyberlinks]] |
+| consensus | external | built-in via [[foculus]] |
+| explainability | low | high — trace any $p_i$ to its contributing links |
+| context window | fixed (4k-128k tokens) | unbounded — the entire [[cybergraph]] |
 
 ## the stack
 
