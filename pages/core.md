@@ -11,20 +11,20 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 ## concepts
 
-measurement: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
+[[graph]]: [[link]], [[cyberlink]], [[cybergraph]], [[axon]]
 
-structure: [[link]], [[graph]], [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step]], [[state]], [[consensus]], [[finality]], [[vimputer]]
+[[neuron]]: [[avatar]], [[spell]], [[focus]], [[karma]], [[skill]], [[soul]]
 
-agents: [[neuron]], [[avatar]], [[spell]], [[focus]], [[token]], [[karma]], [[skill]], [[soul]]
+[[token]]: [[coin]], [[card]], [[score]], [[badge]], [[value]], [[price]], [[supply]], [[demand]], [[cap]]
 
-economics: [[value]], [[price]], [[supply]], [[demand]], [[cap]], [[coin]], [[card]], [[score]], [[badge]]
+[[signal]]: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
 
-plumb: [[pay]], [[lock]], [[update]], [[mint]], [[burn]]
+[[cyberlink]]: [[pay]], [[lock]], [[update]], [[mint]], [[burn]], [[observation]], [[learning]]
 
-process: [[observation]], [[learning]], [[inference]], [[training]]
+[[vimputer]]: [[time]], [[step]], [[state]], [[consensus]], [[finality]]
 
-meaning: [[knowledge]], [[neural]], [[crystal]]
+[[knowledge]]: [[neural]], [[crystal]], [[inference]], [[training]]
 
-convergence: [[equilibrium]], [[convergence]], [[tri-kernel]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
+[[cyber]]: [[equilibrium]], [[convergence]], [[tri-kernel]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]]
 
 discover all [[concepts]]
