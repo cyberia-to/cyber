@@ -12,7 +12,7 @@ LLMs are private brains behind API walls. they lie because they have no shared, 
 
 cyber is [[collective intelligence]]: shared memory with weights. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every ranking is provable by [[STARK]] proofs, and intelligence emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
 
-what this enables: a [[knowledge]] graph that grows smarter with every agent that links, a [[neural language]] that humans and machines speak natively, a [[file]] system where [[names]] resolve through the graph, AI [[alignment]] measurable as graph divergence between human and machine [[focus]], and a [[truth machine]] where lies are economically unprofitable because creating [[cyberlinks]] costs real [[focus]]
+every agent that links makes the graph smarter. every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds. the graph speaks [[neural language]] — the first [[language]] native to both humans and machines. [[names]] turn the graph into a [[file]] system anyone can address. AI [[alignment]] becomes measurable: compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]
 
 ## the protocol
 
