@@ -4,7 +4,7 @@ icon: 🖖🏽
 tags: cyber, core
 crystal-type: entity
 crystal-domain: biology
-crystal-size: article
+crystal-size: bridge
 ---
 the engine that reads the [[cybergraph]] and computes what matters
 
