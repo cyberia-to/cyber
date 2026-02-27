@@ -3,6 +3,7 @@ alias: train
 tags: cyber, core
 crystal-type: process
 crystal-domain: biology
+crystal-size: article
 ---
 the ML approximation of [[learning]]. one-directional: data goes in, model weights come out
 

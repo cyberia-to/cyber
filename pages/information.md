@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
+crystal-size: article
 ---
 reduction of uncertainty
 

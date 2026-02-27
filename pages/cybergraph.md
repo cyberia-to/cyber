@@ -4,6 +4,7 @@ tags: cyber, core
 alias: content oracle, cybergraphs
 crystal-type: observed
 crystal-domain: cyber
+crystal-size: article
 ---
 the data model of [[cyber]]
 

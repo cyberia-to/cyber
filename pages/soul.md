@@ -3,6 +3,7 @@ alias: souls
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: enzyme
 ---
 script attached to a [[neuron]] or [[particle]] with graph processing instructions
 

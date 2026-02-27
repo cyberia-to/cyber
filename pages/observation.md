@@ -3,6 +3,7 @@ alias: observe, view
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
+crystal-size: article
 ---
 a [[neuron]] perceives the outputs of the [[tru]] and responds with new [[cyberlinks]]. the continuous cycle between [[neurons]] and the [[tru]]
 

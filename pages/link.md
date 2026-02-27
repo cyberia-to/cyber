@@ -3,6 +3,7 @@ alias: links, linking, edge, edges
 tags: cyber, core
 crystal-type: relation
 crystal-domain: cyber
+crystal-size: bridge
 ---
 directed edge between two nodes
 

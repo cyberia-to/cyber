@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: article
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]
 

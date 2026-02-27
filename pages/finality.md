@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
+crystal-size: bridge
 ---
 the guarantee that a committed [[signal]] cannot be reversed
 

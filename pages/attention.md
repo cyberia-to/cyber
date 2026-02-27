@@ -3,6 +3,7 @@ alias: cyber/attention, rank unit, rank units
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
+crystal-size: bridge
 ---
 mental focus directed towards a [[particle]]
 

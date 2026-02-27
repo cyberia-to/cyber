@@ -3,6 +3,7 @@ alias: learn
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
+crystal-size: article
 ---
 the act of creating a [[cyberlink]] — a [[neuron]] binding two [[particles]] with [[focus]]
 

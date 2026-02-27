@@ -3,6 +3,7 @@ alias: feedback loop, feedback loops
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
+crystal-size: bridge
 ---
 output of a system routed back as input
 

@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: atom
 ---
 TODO
 

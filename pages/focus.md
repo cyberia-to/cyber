@@ -4,6 +4,7 @@ alias: attention distribution, π
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
+crystal-size: article
 ---
 emergent attention distribution over the [[cybergraph]]
 

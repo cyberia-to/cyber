@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
+crystal-size: enzyme
 ---
 process of approaching [[equilibrium]]
 

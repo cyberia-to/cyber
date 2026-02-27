@@ -3,6 +3,7 @@ alias: neural language, .nl
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: deep
 whitepaper: neural language for superintelligence
 ---
 semantic [[language]] for [[neurons]] over the [[cybergraph]]. whitepaper: [[neural language for superintelligence]]

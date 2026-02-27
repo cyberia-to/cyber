@@ -3,6 +3,7 @@ alias: steps, block
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: bridge
 ---
 a discrete unit of [[consensus]] time in which [[signals]] achieve [[finality]]
 

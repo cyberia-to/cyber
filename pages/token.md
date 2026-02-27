@@ -4,6 +4,7 @@ alias: token theory, tokens
 tags: cybernomics, core
 crystal-type: entity
 crystal-domain: economics
+crystal-size: article
 ---
 protocol-native unit of [[value]]
 

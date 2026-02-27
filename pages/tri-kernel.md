@@ -2,6 +2,7 @@
 tags: article, cyber, core, cip
 crystal-type: pattern
 crystal-domain: cyber
+crystal-size: deep
 status: draft
 ---
 the mathematical core of the [[tru]]. three local operators whose fixed point is [[cyberank]]. the [[tru]] runs the tri-kernel on the [[cybergraph]] in [[consensus]]

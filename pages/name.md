@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: article
 alias: names, naming, deterministic resolution
 ---
 deterministic resolution of a [[cyberlink]]. primitive of [[neural]] language

@@ -3,6 +3,7 @@ tags: cyber, core
 alias: infer
 crystal-type: process
 crystal-domain: cyber
+crystal-size: article
 ---
 the [[tru]] computing [[explicit knowledge]] from [[knowledge]] in the [[cybergraph]]
 

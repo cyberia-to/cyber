@@ -3,6 +3,7 @@ tags: cyber, core
 alias: consensus mechanism, consensus algorithm
 crystal-type: process
 crystal-domain: cyber
+crystal-size: bridge
 ---
 process in [[vimputer]]
 

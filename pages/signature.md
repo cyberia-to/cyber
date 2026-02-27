@@ -3,6 +3,7 @@ alias: signatures, digital signature, cryptographic signature
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: bridge
 ---
 cryptographic proof that a [[neuron]] authored a [[signal]]
 

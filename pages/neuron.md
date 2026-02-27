@@ -4,6 +4,7 @@ alias: address, subject, agent, user, observer, actor, neurons
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: article
 ---
 [[subject]] of [[information]]. agent with stake, identity, and [[focus]]. one half of the observation loop — the [[tru]] is the other
 

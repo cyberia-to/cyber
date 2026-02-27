@@ -3,6 +3,7 @@ alias: values, value theory
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: economics
+crystal-size: enzyme
 ---
 [[amount]] of [[tokens]] expressed in [[unit of account]]
 

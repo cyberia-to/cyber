@@ -4,6 +4,7 @@ alias: collective intelligence, collective intelligence theory, collective artif
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: deep
 ---
 autonomous thoughtform that emerges from collective focused attention. when many [[neurons]] observe the same [[cybergraph]] and structure [[knowledge]] through [[cyberlinks]], something greater than any one of them emerges — an egregore. the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual
 

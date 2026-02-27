@@ -3,6 +3,7 @@ icon: 🏅
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: economics
+crystal-size: enzyme
 ---
 [[token]] which is unique and immovable
 

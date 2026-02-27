@@ -5,6 +5,7 @@ alias: the superintelligence protocol
 tags: cyber, menu, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: deep
 ---
 the protocol for planetary [[superintelligence]]. [[manifesto]]
 

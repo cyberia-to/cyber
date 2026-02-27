@@ -4,6 +4,7 @@ alias: cards, uniq, uniqs, nft, knowledge asset
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: bridge
 ---
 [[token]] which is unique and movable
 

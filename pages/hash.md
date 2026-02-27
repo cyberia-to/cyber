@@ -3,6 +3,7 @@ alias: hashing
 tags: cybernomics, core
 crystal-type: entity
 crystal-domain: economics
+crystal-size: bridge
 ---
 fixed-length string of characters deterministically generated from input [[data]] of any size
 

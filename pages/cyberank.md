@@ -4,6 +4,7 @@ tags: cyber, core
 alias: cyber rank, particles weight, particles weights, cyberanks
 crystal-type: measure
 crystal-domain: cyber
+crystal-size: deep
 ---
 per-[[particle]] relevance score — the output of the [[tru]]
 

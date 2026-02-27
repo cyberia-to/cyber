@@ -3,6 +3,7 @@ alias: files
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: article
 ---
 a [[particle]] given a `~` [[name]] — addressable, retrievable, meaningful
 

@@ -2,6 +2,7 @@
 tags: cyber, core, cybernomics
 crystal-type: measure
 crystal-domain: economics
+crystal-size: enzyme
 ---
 quantity of [[tokens]] or resources sought at a given [[price]]
 

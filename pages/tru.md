@@ -4,6 +4,7 @@ icon: 🖖🏽
 tags: cyber, core
 crystal-type: entity
 crystal-domain: biology
+crystal-size: article
 ---
 the system that computes [[explicit knowledge]] from the [[cybergraph]]. collective [[vm]] that runs the [[tri-kernel]] in [[consensus]]
 

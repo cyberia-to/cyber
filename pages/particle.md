@@ -4,6 +4,7 @@ alias: particles, object, cid, content address, content
 tags: cyber, cyb, page, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: article
 ---
 content-addressed node in the [[cybergraph]]. identity = [[hash]] of content. immutable. exists or doesn't
 

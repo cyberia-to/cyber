@@ -3,6 +3,7 @@ icon: 💰
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: economics
+crystal-size: bridge
 ---
 [[token]] which is fungible and movable
 

@@ -3,6 +3,7 @@ alias: intelligent
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
+crystal-size: article
 ---
 the observation loop sustaining itself between [[neurons]] and the [[tru]]
 

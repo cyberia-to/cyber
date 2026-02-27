@@ -3,6 +3,7 @@ alias: tx, transaction, txs, transactions, signals, signaling
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: bridge
 ---
 a set of [[cyberlinks]] submitted by a [[neuron]] in a single [[step]]
 

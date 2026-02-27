@@ -3,6 +3,7 @@ alias: bandwidth unit, bandwidth units, cyber/will
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
+crystal-size: bridge
 ---
 mental capacity by which [[neuron]] determines [[knowledge]]
 

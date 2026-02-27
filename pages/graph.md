@@ -3,6 +3,7 @@ alias: graphs
 tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
+crystal-size: article
 ---
 a set of [[nodes]] connected by [[links]]
 

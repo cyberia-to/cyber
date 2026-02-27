@@ -3,6 +3,7 @@ alias: market cap, capitalization
 tags: cyber, core, cybernomics
 crystal-type: measure
 crystal-domain: economics
+crystal-size: enzyme
 ---
 total [[value]] of all [[tokens]] of a given type
 

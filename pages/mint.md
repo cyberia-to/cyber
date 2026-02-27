@@ -3,6 +3,7 @@ alias: issuance
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
+crystal-size: enzyme
 ---
 add [[supply]] of [[token]] to [[neuron]] balance
 

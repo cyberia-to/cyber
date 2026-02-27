@@ -3,6 +3,7 @@ alias: neurons weight, neurons weights, neuron rank
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
+crystal-size: bridge
 ---
 contribution measure of [[neuron]] into [[egregore]]
 

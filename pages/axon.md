@@ -3,6 +3,7 @@ alias: axons
 tags: cyber, core
 crystal-type: relation
 crystal-domain: cyber
+crystal-size: article
 ---
 aggregated connection between [[particles]] within the [[cybergraph]]
 

@@ -3,6 +3,7 @@ alias: negentropy
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
+crystal-size: article
 ---
 measure of [[order]] in [[vimputer]]
 

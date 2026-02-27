@@ -5,6 +5,7 @@ alias: unix time, machine time, mt
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: bridge
 ---
 ![img](https://ipfs.io/ipfs/QmPnk43RyDQGfUQSGkE3PbS5Njt24GvMqDUrEad1ezZXZW)
 

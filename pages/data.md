@@ -3,6 +3,7 @@ alias: raw data, bytes
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
+crystal-size: article
 ---
 raw bytes. the pre-protocol substrate
 

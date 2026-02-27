@@ -3,6 +3,7 @@ alias: proofs
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: enzyme
 ---
 verifiable evidence that something occurred
 

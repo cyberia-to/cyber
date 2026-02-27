@@ -3,6 +3,7 @@ alias: account, name, avatar system
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: bridge
 ---
 collection of [[neurons]] under one name
 

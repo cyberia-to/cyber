@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
+crystal-size: atom
 ---
 [[token]] which is fungible and immovable
 
