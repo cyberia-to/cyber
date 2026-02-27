@@ -10,10 +10,22 @@ definition:: [[neurons]] [[link]] [[particles]] in [[time]] is the [[knowledge]]
 
 the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
 
-| concept | alias | created by |
+## two kinds of knowledge
+
+| | [[explicit knowledge]] | [[implicit knowledge]] |
 |---|---|---|
-| [[knowledge]] | [[explicit knowledge]] | [[neurons]] via [[learning]] |
-| [[intelligence]] | [[implicit knowledge]] | [[truth machine]] via [[inference]] |
+| what | what the [[truth machine]] computes | what [[neurons]] derive and encode as [[cyberlinks]] |
+| produced by | [[truth machine]] via [[inference]] | [[neurons]] via [[learning]] |
+| language of | the [[truth machine]] | [[neurons]] |
+| direction | [[truth machine]] → [[neurons]] | [[neurons]] → [[truth machine]] |
+
+[[intelligence]] is the observation loop sustaining itself between [[neurons]] and the [[truth machine]]
+
+```
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
+  ↑                                                       │
+  └──────── observes, infers, links (implicit) ←──────────┘
+```
 
 [[observation]] connection to [[knowledge unit]]
 

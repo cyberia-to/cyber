@@ -62,7 +62,7 @@ the chain data → [[information]] → [[file]] → [[knowledge]] → [[intellig
 - [[information]]: data identified by [[hash]] — a [[particle]]. Shannon applies here as measurement
 - [[file]]: a [[particle]] given a `~` [[name]]. Shannon has no concept of naming
 - [[knowledge]]: [[particles]] linked by [[neurons]] via [[cyberlinks]]. Shannon has no concept of this — linking is an assertion of meaning, which Shannon explicitly excluded
-- [[intelligence]]: the [[truth machine]] computes [[implicit knowledge]] from [[explicit knowledge]]. Shannon has no concept of inference, relevance, or structure emerging from accumulated messages
+- [[intelligence]]: the observation loop between [[neurons]] and the [[truth machine]] — [[neurons]] observe [[explicit knowledge]], derive [[implicit knowledge]], and link again. Shannon has no concept of inference, relevance, or structure emerging from accumulated messages
 
 ## Shannon entropy in the [[cybergraph]]
 

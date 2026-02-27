@@ -4,26 +4,43 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---
-[[knowledge]] as directly stated in the [[cybergraph]]. synonym for [[knowledge]] — used when contrasting with [[implicit knowledge]]
+what the [[truth machine]] computes and makes visible. the language of the [[truth machine]]
 
-> something that is known and can be written down @nonaka and @takeuchi
+the [[truth machine]] runs the [[tri-kernel]] on the [[cybergraph]] and produces deterministic outputs verified in [[consensus]]:
 
-every [[cyberlink]] is a unit of explicit knowledge: a [[neuron]] asserts that two [[particles]] are related, recording [[who]], [[when]], and [[what]]
+- [[cyberank]]: relevance score per [[particle]]
+- [[karma]]: reputation per [[neuron]]
+- [[syntropy]]: integral measure of structure in the [[vimputer]]
 
-the [[cybergraph]] is the sum of all explicit knowledge. readily available by traversing the graph
+these outputs are explicit knowledge — on chain, deterministic, verifiable by any observer
 
-the [[truth machine]] derives [[implicit knowledge]] from explicit knowledge through [[inference]]. implicit knowledge is [[intelligence]]
+## the observation loop
+
+explicit knowledge is one direction in the continuous loop between [[neurons]] and the [[truth machine]]
+
+```
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
+  ↑                                                       │
+  └──────── observes, infers, links (implicit) ←──────────┘
+```
+
+[[neurons]] observe explicit knowledge, derive meaning, and encode it as new [[cyberlinks]] — [[implicit knowledge]]. the [[truth machine]] recomputes. the loop continues
 
 | | explicit knowledge | [[implicit knowledge]] |
 |---|---|---|
-| what | the graph as written | what the graph implies |
-| created by | [[neurons]] via [[learning]] | [[truth machine]] via [[inference]] |
-| synonym | [[knowledge]] | [[intelligence]] |
+| what | what the [[truth machine]] computes | what [[neurons]] derive and encode as [[cyberlinks]] |
+| produced by | [[truth machine]] via [[inference]] | [[neurons]] via [[learning]] |
+| language of | the [[truth machine]] | [[neurons]] |
+| direction | [[truth machine]] → [[neurons]] | [[neurons]] → [[truth machine]] |
+
+> something that is known and can be written down @nonaka and @takeuchi
+
+[[intelligence]] is the loop sustaining itself
 
 in [[cyber-sdk]]
 
-- created using [[cyberlink]] message type
+- outputs are queryable via [[standard inference]], [[cosmwasm]] [[progs]], autonomous [[thoughts]], and over [[ibc]]
 
 in [[cyb-ts]]
 
-- created using [[cyberlink]] message type
+- outputs are queryable via [[datalog]], [[rune]], and [[webgpu]]

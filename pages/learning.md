@@ -6,16 +6,19 @@ crystal-domain: cyber
 ---
 the act of creating a [[cyberlink]] — a [[neuron]] binding two [[particles]] with [[focus]]
 
-learning is the write operation of the protocol. its counterpart is [[inference]] — the read/compute operation
+learning is the neuron half of the observation loop. its counterpart is [[inference]] — the [[truth machine]] half
 
-| process | who | input | output |
-|---|---|---|---|
-| learning | [[neurons]] | [[particles]] | [[knowledge]] ([[explicit knowledge]]) |
-| [[inference]] | [[truth machine]] | [[knowledge]] | [[intelligence]] ([[implicit knowledge]]) |
+```
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
+```
+
+every [[cyberlink]] encodes [[implicit knowledge]]: what the [[neuron]] inferred from the [[truth machine]]'s output. the [[truth machine]] then recomputes [[explicit knowledge]] from the updated [[cybergraph]]. learning feeds the loop
 
 a [[particle]] cannot enter the [[cybergraph]] without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns a particle into a [[file]]. further links create [[knowledge]]
 
-in [[cyber]], learning and teaching are the same operation: by linking [[particles]], a neuron both encodes its own [[knowledge]] and makes it available to others through the [[cybergraph]]
+in [[cyber]], learning and teaching are the same operation: by linking [[particles]], a neuron both encodes its own inference and makes it available to others through the [[cybergraph]]
 
 every learning act has three arguments: [[who]] ([[neuron]]), [[what]] (two [[particles]]), and [[when]] ([[block]])
 

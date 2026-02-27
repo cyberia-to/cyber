@@ -18,7 +18,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 
 a [[particle]] is a content-addressed object — data identified by [[hash]], the atom of [[information]]. a [[name]] turns a particle into a [[file]] — addressable, retrievable. a [[cyberlink]] is a directed edge between [[particles]] — the unit of [[knowledge]]. a [[neuron]] is an agent that creates [[cyberlinks]], spending [[focus]] to do so. the [[cybergraph]] is the authenticated graph of all [[particles]] and [[cyberlinks]] — the shared memory of the planet
 
-data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]. [[neurons]] produce [[knowledge]] by linking [[particles]]. the [[truth machine]] converts [[knowledge]] into [[intelligence]] by computing [[cyberank]] — a relevance score for every [[particle]]. the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) is the mathematical core of the [[truth machine]]: three operators whose fixed point is [[collective intelligence]]
+data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]. [[neurons]] produce [[knowledge]] by linking [[particles]]. the [[truth machine]] computes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — by running the [[tri-kernel]] on the [[cybergraph]]. [[neurons]] observe these outputs, derive [[implicit knowledge]], and link again. [[intelligence]] is this observation loop sustaining itself. the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) is the mathematical core of the [[truth machine]]: three operators whose fixed point is [[collective intelligence]]
 
 [[$CYB]] is the root [[token]]. [[focus]] is the scarce resource — attention distributed across [[particles]]
 

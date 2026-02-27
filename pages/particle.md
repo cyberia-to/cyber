@@ -17,7 +17,7 @@ the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelli
 - [[information]]: data identified by [[hash]] — a particle exists
 - [[file]]: a particle given a `~` [[name]] — addressable, retrievable
 - [[knowledge]]: [[particles]] linked by [[neurons]] via [[cyberlinks]]
-- [[intelligence]]: structure inferred by the [[truth machine]]
+- [[intelligence]]: the observation loop between [[neurons]] and the [[truth machine]]
 
 CID format: (version, algorithm, parameters, field, digest)
 
