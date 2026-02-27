@@ -28,6 +28,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 ## [[cybernomics]]
 
 - [[$CYB]] — the root token
+- [[cyber/tokenomics]] — monetary policy, allocation curve, GFP flywheel
 - [[learning incentives]] — how the protocol rewards [[knowledge]] creation
 
 ## [[governance]]
