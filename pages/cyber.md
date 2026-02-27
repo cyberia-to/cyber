@@ -6,21 +6,10 @@ tags: cyber, menu
 crystal-type: entity
 crystal-domain: cyber
 ---
-the protocol for planetary [[superintelligence]]
-
-[[cyberia]] — the network state. [[manifesto]]
-
-five primitives: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
-
-[[neurons]] create [[cyberlinks]] between [[particles]] in the [[cybergraph]]
-
-the [[tri-kernel]] computes [[cyberank]] — converting raw links into [[knowledge]]
-
-the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural language]]
+the protocol for planetary [[superintelligence]]. [[manifesto]]
 
 ## the protocol
 
-- [[concepts]] — core concept index
 - [[particle]] — content-addressed object on [[IPFS]], the atom of knowledge
 - [[cyberlink]] — directed edge between particles, the unit of learning
 - [[neuron]] — agent that creates cyberlinks, spends [[focus]]
@@ -28,6 +17,7 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 - [[focus]] — attention distribution across particles, the scarce resource
 - [[cyberank]] — relevance score computed by the [[tri-kernel]]: [[diffusion]] + [[springs]] + heat
 - [[cybergraph]] — the authenticated knowledge graph storing all particles and cyberlinks
+- [[concepts]] — core concept index
 
 ## computation
 
