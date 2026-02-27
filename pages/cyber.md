@@ -10,27 +10,23 @@ the protocol for planetary [[superintelligence]]. [[manifesto]]
 
 ## the protocol
 
-- [[particle]] — content-addressed object on [[IPFS]], the atom of knowledge
-- [[cyberlink]] — directed edge between particles, the unit of learning
-- [[neuron]] — agent that creates cyberlinks, spends [[focus]]
-- [[token]] — economic primitive: [[$CYB]]
-- [[focus]] — attention distribution across particles, the scarce resource
-- [[cyberank]] — relevance score computed by the [[tri-kernel]]: [[diffusion]] + [[springs]] + heat
-- [[cybergraph]] — the authenticated knowledge graph storing all particles and cyberlinks
-- [[concepts]] — core concept index
+[[neurons]] create [[cyberlinks]] between [[particles]] in the [[cybergraph]]. a [[particle]] is a content-addressed object on [[IPFS]] — the atom of knowledge. a [[cyberlink]] is a directed edge between particles — the unit of learning. a [[neuron]] is an agent that creates cyberlinks, spending [[focus]] to do so
+
+the [[tri-kernel]] computes [[cyberank]] from the graph — converting raw links into [[knowledge]] through three operators: [[diffusion]], [[springs]], and heat. the result is a [[truth machine]] that produces relevance from links
+
+[[$CYB]] is the root [[token]]. [[focus]] is the scarce resource — attention distributed across particles
+
+[[concepts]] — core concept index
 
 ## computation
 
-- [[tri-kernel]] — the three universal operators: diffusion, springs, heat
-- [[truth machine]] — the computation that produces relevance from links
-- [[foculus]] — consensus over the cybergraph
-- [[vimputer]] — the virtual computer executing the protocol
+the [[tri-kernel]] is the core — three universal operators ([[diffusion]], [[springs]], heat) whose fixed point is collective understanding. [[foculus]] reaches [[consensus]] over the [[cybergraph]]. the [[vimputer]] executes the protocol
 
 ## knowledge architecture
 
-- [[cyber/crystal]] — the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar
-- [[cyber/metagraph]] — the multi-scale view: crystal, cybergraph, network of graphs
-- [[neural language]] — the formal language of the protocol: [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
+[[cyber/crystal]] is the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar. [[cyber/metagraph]] is the multi-scale view: crystal, cybergraph, network of graphs
+
+[[neural language]] is the formal language of the protocol — [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
 
 ## [[cybernomics]]
 
@@ -46,14 +42,11 @@ the protocol for planetary [[superintelligence]]. [[manifesto]]
 
 ## the stack
 
-- [[soft3]] — the three-layer software architecture
-  - [[rust]]
-  - [[rune]]
-  - [[datalog]]
-  - [[triton]]
-  - [[tir]]
-  - [[cyber/core]]
-  - [[neural]]
+[[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural language]]
+
+- [[rust]], [[rune]], [[datalog]], [[triton]], [[tir]]
+- [[cyber/core]] — full protocol specification
+- [[neural]]
 - [[Bostrom]] — the [[bootloader]] chain, genesis environment for the protocol
 - [[cyb]] — the immortal robot, browser interface to the cybergraph
 - [[aos]] — self-fulfilling prophecy game
