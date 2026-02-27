@@ -4,13 +4,13 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 ---
-phenomena related to the reduction in uncertainty
+phenomena related to the reduction in uncertainty. measured in [[bits]]
 
-measured in [[bits]]
+a [[particle]] is a unit of information — a content-addressed object identified by its [[hash]]
 
-any file can be expressed by [[neurons]] as [[particle]] of [[information]]
+[[neurons]] create [[particles]]. this is [[information]]. when [[neurons]] [[link]] [[particles]], information becomes [[knowledge]]. when the [[truth machine]] computes over [[knowledge]], knowledge becomes [[intelligence]]
 
-in [[cyber]] [[neurons]] measure information by computing its [[hash]]
+the chain: [[information]] → [[knowledge]] → [[intelligence]]
 
 - [[subject]] of information is [[neuron]]
 - [[object]] of information is [[particle]]

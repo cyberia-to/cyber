@@ -8,11 +8,13 @@ product of [[implicit knowledge]] derived from [[explicit knowledge]] in the [[c
 
 what can be inferred beyond what was directly stated
 
-in [[cyber]]: the converged [[focus]] distribution computed by the [[tri-kernel]]
+the chain: [[information]] → [[knowledge]] → [[intelligence]]
 
-- [[neurons]] create [[cyberlinks]] — this is [[explicit knowledge]]
-- the [[truth machine]] infers structure, relevance, and hierarchy — this is [[implicit knowledge]]
-- the boundary between explicit and implicit is where intelligence begins
+in [[cyber]]: the converged [[focus]] distribution computed by the [[truth machine]] via the [[tri-kernel]]
+
+- [[neurons]] create [[particles]] — this is [[information]]
+- [[neurons]] link [[particles]] — this is [[knowledge]]
+- the [[truth machine]] infers structure, relevance, and hierarchy — this is intelligence
 
 intelligence is adaptive equilibrium-finding: the capacity to converge on useful distributions under novel conditions
 

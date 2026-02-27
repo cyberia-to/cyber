@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]
 
-the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]
+[[particles]] are [[information]]. linking them is the act that creates knowledge. the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]
 
 a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment that two [[particles]] are related
 
@@ -18,6 +18,8 @@ a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment t
 [[explicit knowledge]]: directly stated in the [[cybergraph]]
 
 [[implicit knowledge]]: inferred from explicit. this inference is [[intelligence]]
+
+the chain: [[information]] → [[knowledge]] → [[intelligence]]
 
 cheap talk produces noise. costly signals produce knowledge
 

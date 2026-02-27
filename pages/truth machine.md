@@ -5,7 +5,7 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---
-the system that converts [[information]] into [[knowledge]]. collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
+the system that converts [[knowledge]] into [[intelligence]]. collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
 
 the [[tri-kernel]] (math) provides the operators. the truth machine (system) runs them on [[gpu]] in [[consensus]], producing [[cyberank]] (output)
 
@@ -17,7 +17,7 @@ input
 
 computation
 
-- [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat kernel]]
+- [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat]]
 - runs on [[gpu]] in [[consensus]]
 
 output
