@@ -5,19 +5,14 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 ---
-process in [[vimputer]]
+process by which all [[vimputer]] nodes agree on a single [[state]]
 
-- that ensures all nodes agree on a single [[state]]
-- according to predefined [[state transition function]]
-- maintaining [[safety]] and [[liveness]]
-- despite potential [[failures]] or [[attacks]]
+consensus ensures that every node applies the same [[signals]] in the same order, producing identical [[state]] transitions. it maintains safety (no two nodes disagree) and liveness (the system keeps producing [[steps]])
 
-some notable examples of consensus
+[[cyberlinks]] become [[knowledge]] only after consensus commits them. before consensus, a [[signal]] is a proposal. after consensus, it has [[finality]]
 
-- [nakamoto](https://www.nervos.org/knowledge-base/what_is_nakamoto_consensus)
-- [tendermint](https://tendermint.com/) and [cometbft](https://cometbft.com/)
-- [gasper](https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/gasper/)
+consensus is the collective agreement that makes the [[cybergraph]] a shared reality. it is the mechanical substrate of [[egregore]]
+
+in [[bostrom]]: [[tendermint]] consensus with ⅔+ validator signatures per block
 
 discover all [[concepts]]
-
-or dive into [[egregore]]

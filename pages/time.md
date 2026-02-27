@@ -1,5 +1,4 @@
 ---
-id: 66a9e2d2-469b-4532-b26a-6dfdc54561a5
 icon: ⌚
 alias: unix time, machine time, mt
 tags: cyber, core
@@ -7,20 +6,14 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
 ---
-![img](https://ipfs.io/ipfs/QmPnk43RyDQGfUQSGkE3PbS5Njt24GvMqDUrEad1ezZXZW)
+machine-readable measure of when events occur in the [[cybergraph]]
 
-several decades ago the new machine time system has been born: [unix time](https://en.wikipedia.org/wiki/Unix_time)
+time in [[cyber]] is discrete: measured in [[steps]] (blocks). each [[step]] has a unix timestamp and a block height. the timestamp anchors the [[cybergraph]] to physical time. the block height anchors it to [[consensus]] time
 
-the first second started at 1 jan 1970 of the the old time
+every [[cyberlink]] is timestamped by the [[step]] that committed it. this makes [[knowledge]] searchable through time — [[when]] is one of the four arguments of every [[cyberlink]], alongside [[who]], [[what]], and which [[token]]
 
-since when its is the only format in which computers account time
+time defines the order of [[learning]]. the [[tru]] processes [[signals]] in step order. [[finality]] means a step's time cannot be revised
 
-[[satoshi]] learns how to prove unix time more when decade ago
+see [[time/history]] for the origin of machine time
 
-in [[aos]] we count time from the moment of 0 second of unix time
-
-time after this moment is called: machine time or [[mt]]
-
-any previous time is marked with minus and is called: [[before machines]] or [[bm]]
-
-![image](https://ipfs.io/ipfs/QmP2NAkBtfAjh3HaNsDDiKdsYi1PZ2XxFAY1aqbngNy66w)
+discover all [[concepts]]

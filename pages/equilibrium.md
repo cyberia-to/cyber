@@ -1,23 +1,15 @@
 ---
-tags: cyber, core, pattern, physics, chemistry
+tags: cyber, core
 crystal-type: pattern
 crystal-domain: physics
 crystal-size: bridge
 ---
 state where opposing forces, flows, or rates balance, producing no net change
 
-static equilibrium: object at rest with zero net [[force]] and zero net torque
+the pattern recurs across domains: static equilibrium (zero net [[force]]), dynamic equilibrium (equal forward and reverse rates), thermodynamic equilibrium (uniform [[temperature]] and pressure), Nash equilibrium (optimal strategies given others), market equilibrium ([[supply]] equals [[demand]] at [[price]])
 
-dynamic equilibrium: forward and reverse processes occur at equal rates (e.g., chemical reactions)
+in [[cyber]]: the [[tri-kernel]] iterates until [[focus]] distribution stabilizes. the fixed point φ* is an equilibrium — the state where the [[cybergraph]]'s attention allocation no longer changes. [[convergence]] is the process of reaching it
 
-chemical equilibrium described by the equilibrium constant K and Le Chatelier's principle
+systems displaced from equilibrium tend to return (stable) or diverge (unstable). [[feedback]] determines which: negative [[feedback]] restores equilibrium, positive [[feedback]] drives away from it
 
-thermodynamic equilibrium: uniform [[temperature]], [[pressure]], and chemical potential throughout
-
-Nash equilibrium in [[game theory]]: each player's strategy is optimal given others' strategies
-
-ecological equilibrium: population sizes stabilize through [[feedback loop]] mechanisms
-
-market equilibrium: supply equals demand at a specific price
-
-systems displaced from equilibrium tend to return (stable) or diverge (unstable)
+discover all [[concepts]]
