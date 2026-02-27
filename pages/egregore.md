@@ -6,7 +6,7 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 ---
-autonomous thoughtform that emerges from collective focused attention. when many [[neurons]] observe the same [[cybergraph]] and structure [[knowledge]] through [[cyberlinks]], something greater than any one of them emerges — an egregore. the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual
+something greater than any [[neuron]] emerges when many observe the same [[cybergraph]] and link. the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual — an autonomous thoughtform born from collective focused [[attention]]
 
 ## why it works
 

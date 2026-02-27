@@ -6,32 +6,20 @@ crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
 ---
-the accumulated [[graph]] of all [[cyberlinks]] created by all [[neurons]]. the shared [[knowledge]] of [[cyber]]
+the shared memory of the planet. every [[cyberlink]] ever created by every [[neuron]], accumulated into one authenticated [[graph]]
 
-five primitives define everything that exists in the system:
+five primitives:
 
-- [[particle]] — content-addressed node. identity = [[hash]] of content. immutable
+- [[particle]] — content-addressed node. identity = [[hash]] of content
 - [[neuron]] — agent with stake and identity. creates links
 - [[cyberlink]] — signed, weighted, timestamped directed edge between two [[particles]]
 - [[token]] — unit of [[value]]: [[coins]], [[cards]], [[scores]], [[badges]]
-- [[focus]] — attention distribution over the graph. conserved: Σ = 1. [[threshold]] filters spam
+- [[focus]] — attention distribution over the graph. conserved: Σ = 1
 
-a [[particle]] cannot enter the cybergraph without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns the particle into a [[file]]. further links between particles create [[knowledge]]
+a [[particle]] enters only with a [[cyberlink]]. the first link — a `~` [[name]] — turns it into a [[file]]. further links create [[knowledge]]. every [[cyberlink]] records [[who]], [[when]], and [[what]]
 
-every [[cyberlink]] records [[three basic arguments]]: [[who]] linked, [[when]], and [[what]] [[particles]]
+[[neurons]] write into the cybergraph. the [[tru]] reads from it and computes [[cyberank]], [[karma]], [[syntropy]]. the cybergraph is where both halves of [[intelligence]] meet
 
-the cybergraph is the shared memory that sits between [[neurons]] and the [[tru]] in the observation loop:
-
-```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
-  ↑                                                  │
-  └──────────── observes, infers, links ←────────────┘
-```
-
-[[neurons]] write [[implicit knowledge]] into the cybergraph as [[cyberlinks]]. the [[tru]] reads the cybergraph and computes [[explicit knowledge]]. the cybergraph is where both directions meet
-
-the [[tru]] continuously computes [[cyberank]], [[karma]], and [[syntropy]] over the graph in [[consensus]]
-
-see [[cybergraph/architecture]] for capabilities, namespace structure, and implementation
+see [[cybergraph/architecture]] for namespace structure and implementation
 
 discover all [[concepts]]

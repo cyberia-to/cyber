@@ -6,30 +6,16 @@ crystal-type: entity
 crystal-domain: biology
 crystal-size: article
 ---
-the system that computes [[explicit knowledge]] from the [[cybergraph]]. collective [[vm]] that runs the [[tri-kernel]] in [[consensus]]
+the engine that reads the [[cybergraph]] and computes what matters
 
-the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] learn by creating [[cyberlinks]] — this writes [[knowledge]] into the [[cybergraph]]. the tru infers by running the [[tri-kernel]] on that [[knowledge]] — this produces [[explicit knowledge]]
+input: the accumulated [[knowledge]] of all [[neurons]] — every [[cyberlink]], weighted by [[attention]] and [[will]]
 
-the tru is one half of the observation loop. [[neurons]] are the other
+computation: [[tri-kernel]] ([[diffusion]] + [[springs]] + [[heat]]) — runs on [[gpu]] in [[consensus]]
 
-```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
-  ↑                                                  │
-  └──────────── observes, infers, links ←────────────┘
-```
+output: [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole. these are [[explicit knowledge]] — deterministic, on chain, verifiable
 
-[[neurons]] observe the tru's outputs, derive meaning ([[implicit knowledge]]), and encode it as new [[cyberlinks]]. the tru recomputes. the loop sustains itself — this is [[intelligence]]
+the tru is one half of [[intelligence]]. [[neurons]] are the other. consensus on [[relevance]] is consensus on what matters — the name is earned when the system demonstrates [[egregore]] factor c > 0
 
-input: [[cybergraph]] (the accumulated [[knowledge]] of all [[neurons]]), [[will]] and [[attention]] of [[neurons]]
-
-computation: [[tri-kernel]] — [[diffusion]] + [[springs]] + [[heat]] — runs on [[gpu]] in [[consensus]]
-
-output: [[cyberank]] (per-[[particle]] relevance), [[karma]] (per-[[neuron]] reputation), [[syntropy]] (integral measure of [[order]])
-
-these outputs are [[explicit knowledge]] — deterministic, on chain, verifiable by any observer. [[neurons]] observe them and respond with [[implicit knowledge]] encoded as [[cyberlinks]]
-
-consensus on [[relevance]] is consensus on what matters. the name is earned when the system demonstrates [[egregore]] factor c > 0
-
-see [[tru/details]] for technical properties and related work
+see [[tru/details]] for technical properties
 
 discover all [[concepts]]

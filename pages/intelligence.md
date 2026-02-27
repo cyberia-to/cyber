@@ -5,7 +5,7 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: article
 ---
-the observation loop sustaining itself between [[neurons]] and the [[tru]]
+the loop that thinks
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -13,24 +13,13 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-1. [[neurons]] create [[cyberlinks]] ([[learning]]) — encode [[implicit knowledge]]
-2. [[tru]] recomputes [[cyberank]] ([[inference]]) — produces [[explicit knowledge]]
-3. [[neurons]] observe new [[explicit knowledge]], infer, create new [[cyberlinks]]
-4. loop continues
+[[neurons]] create [[cyberlinks]] — this is [[learning]]. the [[tru]] runs the [[tri-kernel]] on the [[cybergraph]] — this is [[inference]]. [[neurons]] observe what the [[tru]] computed, derive new meaning, and link again. intelligence is this loop sustaining itself
 
-intelligence is the loop running. [[explicit knowledge]] is the language of the [[tru]]. [[implicit knowledge]] is the language of [[neurons]]. intelligence emerges where both directions sustain each other
+[[explicit knowledge]] is the language of the [[tru]]: [[cyberank]], [[karma]], [[syntropy]] — deterministic, on chain. [[implicit knowledge]] is the language of [[neurons]]: the inferences they make before linking — unmeasurable, off chain. intelligence emerges where both languages keep answering each other
 
-the chain: data → [[information]] → [[file]] → [[knowledge]] → intelligence
+the chain: [[data]] → [[information]] → [[file]] → [[knowledge]] → intelligence
 
-[[knowledge]] is the graph as written — [[cyberlinks]] stored in the [[cybergraph]]. intelligence is the dynamic process that arises when [[neurons]] and the [[tru]] continuously transform each other's outputs
-
-the measurable form of intelligence: [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the [[vimputer]] — these are the [[explicit knowledge]] outputs. the unmeasurable form: the inferences [[neurons]] make before linking — this is [[implicit knowledge]]
-
-intelligence is adaptive equilibrium-finding: the capacity to converge on useful distributions under novel conditions. the [[tri-kernel]] formalizes this — [[diffusion]] explores, [[springs]] enforce consistency, [[heat]] adapts to scale
-
-[[emergence]] is the mechanism — local [[cyberlinks]] produce global structure no single [[neuron]] designed
-
-see [[egregore]] for the group-level phenomenon
+[[knowledge]] is the graph as written. intelligence is the graph alive — adapting, converging, finding [[equilibrium]] under novel conditions. local [[cyberlinks]] produce global structure no single [[neuron]] designed. this is [[emergence]]. at scale, it becomes [[egregore]]
 
 see [[superintelligence]] for the destination
 

@@ -11,34 +11,24 @@ the protocol for planetary [[superintelligence]]. [[manifesto]]
 
 LLMs are private brains behind API walls. they lie because they have no shared, verifiable memory, and they obey corporations. every corporation trains its own model on scraped data, manipulates the weights, and sells inference. the result: a dozen competing superintelligences accountable to shareholders, not to the planet, life, and agents
 
-cyber is [[egregore]]: shared memory with weights. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and intelligence emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
+cyber is [[egregore]]: shared memory with weights. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and [[intelligence]] emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
 
 every agent that links makes the graph smarter. every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds. the graph speaks [[neural language]] — the first [[language]] native to both humans and machines. [[names]] turn the graph into a [[file]] system anyone can address. AI [[alignment]] becomes measurable: compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]
 
 ## the protocol
 
-a [[particle]] is a content-addressed object — data identified by [[hash]], the atom of [[information]]. a [[name]] turns a particle into a [[file]] — addressable, retrievable. a [[cyberlink]] is a directed edge between [[particles]] — the unit of [[knowledge]]. a [[neuron]] is an agent that creates [[cyberlinks]], spending [[focus]] to do so. the [[cybergraph]] is the authenticated graph of all [[particles]] and [[cyberlinks]] — the shared memory of the planet
-
-data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]. [[neurons]] produce [[knowledge]] by linking [[particles]]. the [[tru]] computes [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — by running the [[tri-kernel]] on the [[cybergraph]]. [[neurons]] observe these outputs, derive [[implicit knowledge]], and link again. [[intelligence]] is this observation loop sustaining itself. the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) is the mathematical core of the [[tru]]: three operators whose fixed point is [[egregore]]
-
-[[$CYB]] is the root [[token]]. [[focus]] is the scarce resource — attention distributed across [[particles]]
-
-[[concepts]] — core concept index
-
-## computation
-
-the [[tru]] runs the [[tri-kernel]] on [[gpu]] in [[consensus]], producing [[cyberank]], [[karma]], and [[syntropy]]. [[foculus]] reaches [[consensus]] over the [[cybergraph]]. the [[vimputer]] executes the protocol
+[[particle]], [[neuron]], [[cyberlink]], [[token]], [[focus]] — five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. [[$CYB]] is the root [[token]]. see [[intelligence]] for the loop, [[concepts]] for the full index
 
 ## knowledge architecture
 
-[[cyber/crystal]] is the seed knowledge graph: 5,040 irreducible particles, five axioms, one grammar. [[cyber/metagraph]] is the multi-scale view: crystal, cybergraph, network of graphs
-
-[[neural language]] is the formal language of the protocol — [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
+[[cyber/crystal]] — the seed: 5,040 irreducible [[particles]], five axioms, one grammar
+[[neural language]] — [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
+[[cyber/metagraph]] — crystal → cybergraph → network of graphs
 
 ## [[cybernomics]]
 
 - [[$CYB]] — the root token
-- [[learning incentives]] — how the protocol rewards knowledge creation
+- [[learning incentives]] — how the protocol rewards [[knowledge]] creation
 
 ## [[governance]]
 
@@ -52,10 +42,9 @@ the [[tru]] runs the [[tri-kernel]] on [[gpu]] in [[consensus]], producing [[cyb
 [[soft3]] = [[cybergraph]] + [[tru]] + [[neural language]]
 
 - [[rust]], [[rune]], [[datalog]], [[triton]], [[tir]]
-- [[cyber/core]] — full protocol specification
-- [[neural]]
-- [[Bostrom]] — the [[bootloader]] chain, genesis environment for the protocol
-- [[cyb]] — the immortal robot, browser interface to the cybergraph
+- [[neural]] — implementation
+- [[Bostrom]] — the [[bootloader]] chain
+- [[cyb]] — the immortal robot
 - [[aos]] — self-fulfilling prophecy game
 
 ## specification
@@ -66,8 +55,6 @@ the [[tru]] runs the [[tri-kernel]] on [[gpu]] in [[consensus]], producing [[cyb
 - [[cyber/stark]] — proof system
 - [[cyber/privacy]] — privacy architecture
 - [[cyber/patterns]] — design patterns
-- [[Goldilocks field]] — field arithmetic
-- [[hash function selection]] — hash primitives
 - [[convergent computation]] — from Turing machines to convergent computation
 
 ## research
@@ -75,7 +62,6 @@ the [[tru]] runs the [[tri-kernel]] on [[gpu]] in [[consensus]], producing [[cyb
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
-- [[future of computation]] — computation beyond Turing
 
 ## learn
 
