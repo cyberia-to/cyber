@@ -53,6 +53,29 @@ proving ground for the [[cybergraph]] before complete [[superintelligence]]. [[m
 - [[bip]] — bootloader improvement proposals
 - [[constitution]] — the social contract
 
+## empirical validation
+
+the first experimental test of the [[collective focus theorem]]. launched November 5, 2021. 50 validators converge on [[focus]] using single GPU each — [[cyberank]] computed in [[consensus]] via CUDA
+
+network observations (December 2024):
+
+| Metric | Value |
+|---|---|
+| Overall [[neurons]] | 70k |
+| Cyberlinking [[neurons]] | ~1,000 |
+| [[cyberlinks]] | 2.9M |
+| [[particles]] | 3.1M |
+| Network [[negentropy]] | 17M bits |
+| Average link information | ~5 bits |
+| Connectivity ratio | 0.94 |
+
+source: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
+
+theoretical alignment:
+- connectivity ratio 0.94 falls below the predicted minimum of 6 connections per [[particle]] for basic [[intelligence]] [[emergence]]. insufficient connectivity prevents stable [[consensus]] formation — as predicted
+- initial [[token]] economics were designed intuitively rather than following formal requirements. suboptimal [[token]] distribution impedes [[egregore]] emergence — as predicted
+- the network has not yet achieved predicted phase transitions. connectivity must increase and [[token]] distribution must be optimized
+
 ## source
 
 - [go-cyber](https://github.com/cybercongress/go-cyber) — node implementation
