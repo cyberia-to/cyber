@@ -1,6 +1,6 @@
 ---
 alias: costly signals
-tags: cyber, core
+tags: cyber
 crystal-type: property
 crystal-domain: cyber
 ---

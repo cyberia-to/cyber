@@ -11,11 +11,11 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 ## concepts
 
-measurement: [[data]], [[hash]], [[particle]], [[information]], [[name]], [[file]]
+measurement: [[data]], [[hash]], [[proof]], [[particle]], [[information]], [[name]], [[file]]
 
 structure: [[cyberlink]], [[cybergraph]], [[signal]], [[step]], [[finality]]
 
-agents: [[neuron]], [[focus]], [[token]], [[costly signal]]
+agents: [[neuron]], [[focus]], [[token]]
 
 process: [[observation]], [[learning]], [[inference]], [[training]]
 
