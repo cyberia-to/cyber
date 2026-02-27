@@ -19,7 +19,7 @@ agents: [[neuron]], [[secret]], [[focus]], [[token]], [[karma]]
 
 process: [[observation]], [[learning]], [[inference]], [[training]]
 
-meaning: [[knowledge]], [[neural]]
+meaning: [[knowledge]], [[neural]], [[crystal]]
 
 convergence: [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]], [[cyber]]
 

@@ -1,5 +1,5 @@
 ---
-tags: article, cyber
+tags: article, cyber, core
 alias: crystal, the crystal
 crystal-type: article
 crystal-domain: cyber
