@@ -59,7 +59,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 - [[cyber/particle]] — hash parameters, content addressing, tree
 - [[cyber/vm]] — compute: 16 reduction patterns, value tower, cost model
 - [[cyber/bbg]] — state: authenticated graph, polynomial commitments, privacy
-- [[cyber/stark]] — verify: proof system, self-verification, recursive composition
+- [[cyber/proofs]] — verify: proof system, self-verification, recursive composition
 - [[cyber/tri-kernel]] — rank: three operators, composite contraction
 - [[cyber/focus]] — conserve: conservation laws, flow equation
 - [[cyber/rewards]] — reward: token operations, Shapley attribution

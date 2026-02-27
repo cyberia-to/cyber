@@ -2,7 +2,7 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: STARK verification, CORE STARKs
+alias: STARK verification, CORE STARKs, cyber/stark
 ---
 # STARK Verification
 
