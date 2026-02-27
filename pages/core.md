@@ -53,4 +53,24 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 {{query (and (page-tags [[core]]) (property :crystal-type "pattern"))}}
 
+## atoms
+
+{{query (and (page-tags [[core]]) (property :crystal-size "atom"))}}
+
+## enzymes
+
+{{query (and (page-tags [[core]]) (property :crystal-size "enzyme"))}}
+
+## bridges
+
+{{query (and (page-tags [[core]]) (property :crystal-size "bridge"))}}
+
+## articles
+
+{{query (and (page-tags [[core]]) (property :crystal-size "article"))}}
+
+## deeps
+
+{{query (and (page-tags [[core]]) (property :crystal-size "deep"))}}
+
 discover all [[concepts]]
