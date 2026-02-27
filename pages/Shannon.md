@@ -1,6 +1,6 @@
 ---
 alias: Shannon information theory, information theory, Claude Shannon
-tags: cyber, article, person, core
+tags: cyber, article, person
 crystal-type: entity
 crystal-domain: biology
 ---
