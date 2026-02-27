@@ -11,61 +11,9 @@ formal definition of the three local operators whose fixed point is [[cyberank]]
 
 ---
 
-## 1. Discovery: The Locality Filter
+## 1. The Three Primitives
 
-The tri-kernel was discovered through systematic elimination. Beginning with a comprehensive taxonomy of graph ranking algorithms, we applied a single hard constraint: locality.
-
-### 1.1 The Constraint
-
-For planetary-scale networks (10¹⁵ nodes), any algorithm requiring global recomputation for local changes is physically impossible. Light-speed delays across Earth (and eventually Mars at 3-22 minute delays) make global synchronization infeasible. Therefore:
-
-Definition (h-Local Operator): An operator T is h-local if the value at node i depends only on nodes within h hops: (Tf)ᵢ = g({fⱼ : d(i,j) ≤ h}).
-
-An operator family is *eventually local* if it admits h-local approximations with error ε using h = O(log(1/ε)).
-
-### 1.2 The Filter Process
-
-We scored algorithms on critical properties, filtering by locality first:
-
-| Property | Why Critical | Filter Type |
-|----------|--------------|-------------|
-| Locality | No global recompute for local change | HARD (must have) |
-| Convergence | Need stable equilibrium | Required |
-| Uniqueness | Consensus requires one answer | Required |
-| Verifiability | Light clients must check | Required |
-| Token-weightable | Sybil resistance via stake | Required |
-| Incremental update | Handle streaming edits | Preferred |
-| Privacy-compatible | FHE/ZK friendly operations | Preferred |
-
-Applying the locality filter:
-
-| Algorithm | Local? | Status |
-|-----------|--------|--------|
-| PageRank (power iteration) | No (global) | ✂️ Cut |
-| Personalized PageRank (truncated) | Yes | ✓ Survives |
-| HITS | No (global) | ✂️ Cut |
-| Eigenvector centrality | No (global) | ✂️ Cut |
-| SpringRank (global solve) | No (global) | ✂️ Cut |
-| Screened Laplacian (local CG) | Yes | ✓ Survives |
-| Heat kernel (full matrix exp) | No (global) | ✂️ Cut |
-| Heat kernel (Chebyshev) | Yes | ✓ Survives |
-| Belief propagation | Yes | ✓ Survives |
-
-### 1.3 What Survived
-
-After filtering, exactly three families of local operators remained:
-
-- Local random walk ([[diffusion]] with truncation/restart)
-- Local screened Laplacian solve ([[springs]] with boundary pinning)
-- Local [[heat]] kernel approximation (Chebyshev polynomial truncation)
-
-These are the complete set of local operators for graph ranking. The [[tri-kernel]] is what remains after impossibility eliminates everything else.
-
----
-
-## 2. The Three Primitives
-
-### 2.1 Primitive M: Markov/Diffusion
+### 1.1 Primitive M: Markov/Diffusion
 
 The transition matrix M = D⁻¹A (or column-stochastic P = AD⁻¹) governs probability flow:
 
@@ -77,7 +25,7 @@ Properties: Row-stochastic, preserves probability mass, powers remain local. Und
 
 Answers: *"Where does probability flow?"*
 
-### 2.2 Primitive L: Laplacian/Springs
+### 1.2 Primitive L: Laplacian/Springs
 
 The graph Laplacian L = D - A (or normalized ℒ = I - D⁻¹/²AD⁻¹/²) encodes structural constraints:
 
@@ -89,7 +37,7 @@ Properties: Positive semi-definite, null space = constant vectors. The screened 
 
 Answers: *"What satisfies structural constraints?"*
 
-### 2.3 Primitive H: Heat Kernel
+### 1.3 Primitive H: Heat Kernel
 
 The heat kernel H_τ = exp(-τL) provides multi-scale smoothing:
 
@@ -103,9 +51,7 @@ Answers: *"What does the graph look like at scale τ?"*
 
 ---
 
-## 3. Mathematical Foundations
-
-### 3.1 The Composite Operator
+## 2. The Composite Operator
 
 The tri-kernel blends the three primitives into a single update:
 
@@ -113,15 +59,15 @@ $$\phi^{(t+1)} = \text{norm}\big[\lambda_d \cdot D(\phi^t) + \lambda_s \cdot S(\
 
 where λ_d + λ_s + λ_h = 1, D is the [[diffusion]] step, S is the [[springs]] equilibrium map, H_τ is the [[heat]] map, and norm(·) projects to the simplex.
 
-### 3.2 The Free Energy Functional
+### 2.1 The Free Energy Functional
 
 The fixed point of the composite operator minimizes:
 
 $$\mathcal{F}(\phi) = \lambda_s\left[\frac{1}{2}\phi^\top L\phi + \frac{\mu}{2}\|\phi-x_0\|^2\right] + \lambda_h\left[\frac{1}{2}\|\phi-H_\tau\phi\|^2\right] + \lambda_d \cdot D_{KL}(\phi \| D\phi)$$
 
-This is a free-energy functional: the first term is elastic structure, the second penalizes deviation from heat-smoothed context, the third aligns φ with its [[diffusion]] image. Minimization formalizes "learn structure, respect context, explore data."
+This is a free-energy functional: the first term is elastic structure, the second penalizes deviation from heat-smoothed context, the third aligns φ with its [[diffusion]] image.
 
-### 3.3 Convergence and Locality
+### 2.2 Convergence and Locality
 
 Theorem (Composite Contraction): Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
 
@@ -129,7 +75,7 @@ Theorem (Locality Radius): For edit batch e_Δ, there exists h = O(log(1/ε)) su
 
 This follows from: geometric decay for [[diffusion]] (teleport), exponential decay for [[springs]] (screening), Gaussian tail for [[heat]] (kernel bandwidth).
 
-### 3.4 Compute-Verify Symmetry
+### 2.3 Compute-Verify Symmetry
 
 Because all operations are local and memoizable:
 
@@ -139,17 +85,15 @@ Light clients can verify [[focus]] updates by checking boundary flows and authen
 
 ---
 
-## 4. Completeness
+## 3. Completeness
 
-### 4.1 Completeness Conjecture
-
-We conjecture that the tri-kernel is complete:
+### 3.1 Completeness Conjecture
 
 Conjecture (Weak Completeness): Any h-local linear operator T can be written as T = p(M) + q(L) for polynomials p, q of degree ≤ h.
 
 Conjecture (Strong Completeness): Any eventually-local operator that is equivariant, continuous, and convergent can be expressed as T = α·f(M) + β·g(L) + γ·H_τ for spectral functions f, g and scale τ.
 
-### 4.2 Lemmas Toward Proof
+### 3.2 Lemmas Toward Proof
 
 Lemma 1: Any 1-local linear operator is a linear combination of {I, A, D}.
 
@@ -163,9 +107,9 @@ The heat kernel H_τ = exp(-τL) is required for multi-scale analysis—it is th
 
 ---
 
-## 5. Implementation
+## 4. Implementation
 
-### 5.1 Two-Timescale Architecture
+### 4.1 Two-Timescale Architecture
 
 The correct implementation separates timescales:
 
@@ -174,7 +118,7 @@ The correct implementation separates timescales:
 
 [[Springs]] compute *where nodes are*; ranking computes *how [[attention]] flows*. Different questions, different timescales.
 
-### 5.2 Algorithm Sketch
+### 4.2 Algorithm Sketch
 
 Per epoch on neighborhood N_h:
 
@@ -187,7 +131,7 @@ Per epoch on neighborhood N_h:
 
 Complexity: O(|N_h| · c) per kernel for average degree c.
 
-### 5.3 Telemetry
+### 4.3 Telemetry
 
 Monitor per epoch:
 - Entropy H(π), negentropy J(π)

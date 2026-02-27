@@ -16,11 +16,63 @@ alias: tri-kernel architecture
 
 ## Abstract
 
-The [[tri-kernel]] — [[diffusion]], [[springs]], [[heat]] — is the only set of operator families surviving the locality constraint for planetary-scale computation. This paper explains why: (1) the tri-kernel performs inference by minimizing a well-defined free-energy functional; (2) it exhibits positive [[collective intelligence]] factor (c > 0) under standard conditions; (3) it maps universally across physical, biological, and cognitive domains. see [[cyber/tri-kernel]] for the formal specification
+The [[tri-kernel]] — [[diffusion]], [[springs]], [[heat]] — is the only set of operator families surviving the locality constraint for planetary-scale computation. This paper explains why: (1) how systematic elimination of graph ranking algorithms under a locality constraint yields exactly three families; (2) the tri-kernel performs inference by minimizing a well-defined free-energy functional; (3) it exhibits positive [[collective intelligence]] factor (c > 0) under standard conditions; (4) it maps universally across physical, biological, and cognitive domains. see [[cyber/tri-kernel]] for the formal specification
 
 ---
 
-## 1. Why the Tri-Kernel Is Intelligence
+## 1. Discovery: The Locality Filter
+
+The [[tri-kernel]] was discovered through systematic elimination. Beginning with a comprehensive taxonomy of graph ranking algorithms, we applied a single hard constraint: locality.
+
+### 1.1 The Constraint
+
+For planetary-scale networks (10¹⁵ nodes), any algorithm requiring global recomputation for local changes is physically impossible. Light-speed delays across Earth (and eventually Mars at 3-22 minute delays) make global synchronization infeasible. Therefore:
+
+Definition (h-Local Operator): An operator T is h-local if the value at node i depends only on nodes within h hops: (Tf)ᵢ = g({fⱼ : d(i,j) ≤ h}).
+
+An operator family is *eventually local* if it admits h-local approximations with error ε using h = O(log(1/ε)).
+
+### 1.2 The Filter Process
+
+We scored algorithms on critical properties, filtering by locality first:
+
+| Property | Why Critical | Filter Type |
+|----------|--------------|-------------|
+| Locality | No global recompute for local change | HARD (must have) |
+| Convergence | Need stable equilibrium | Required |
+| Uniqueness | [[consensus]] requires one answer | Required |
+| Verifiability | Light clients must check | Required |
+| Token-weightable | Sybil resistance via stake | Required |
+| Incremental update | Handle streaming edits | Preferred |
+| Privacy-compatible | FHE/ZK friendly operations | Preferred |
+
+Applying the locality filter:
+
+| Algorithm | Local? | Status |
+|-----------|--------|--------|
+| PageRank (power iteration) | No (global) | ✂️ Cut |
+| Personalized PageRank (truncated) | Yes | ✓ Survives |
+| HITS | No (global) | ✂️ Cut |
+| Eigenvector centrality | No (global) | ✂️ Cut |
+| SpringRank (global solve) | No (global) | ✂️ Cut |
+| Screened Laplacian (local CG) | Yes | ✓ Survives |
+| Heat kernel (full matrix exp) | No (global) | ✂️ Cut |
+| Heat kernel (Chebyshev) | Yes | ✓ Survives |
+| Belief propagation | Yes | ✓ Survives |
+
+### 1.3 What Survived
+
+After filtering, exactly three families of local operators remained:
+
+- Local random walk ([[diffusion]] with truncation/restart)
+- Local screened Laplacian solve ([[springs]] with boundary pinning)
+- Local [[heat]] kernel approximation (Chebyshev polynomial truncation)
+
+These are the complete set of local operators for graph ranking. The [[tri-kernel]] is what remains after impossibility eliminates everything else.
+
+---
+
+## 2. Why the Tri-Kernel Is Intelligence
 
 We establish that the [[tri-kernel]] satisfies formal definitions of [[intelligence]].
 
@@ -48,7 +100,7 @@ If adding small λ_s, λ_h monotonically improves these metrics without destabil
 
 ---
 
-## 2. Why the Tri-Kernel Is Collective
+## 3. Why the Tri-Kernel Is Collective
 
 We establish positive [[collective intelligence]] factor (c > 0): the group outperforms individuals.
 
@@ -89,7 +141,7 @@ Expect c > 0 when diversity and independence are non-trivial.
 
 ---
 
-## 3. Universal Patterns
+## 4. Universal Patterns
 
 The [[tri-kernel]] maps coherently across domains, suggesting these are scale-invariant organizational primitives:
 
@@ -110,7 +162,7 @@ This universality reflects deep structural necessity. Every domain achieving com
 
 ---
 
-## 4. Applicability to Superintelligence
+## 5. Applicability to Superintelligence
 
 ### 4.1 Phase Transitions
 
@@ -147,7 +199,7 @@ An adversary optimizing against one kernel worsens their position against anothe
 
 ---
 
-## 5. Conclusion
+## 6. Conclusion
 
 The [[tri-kernel]] is intentionally small: a gas to explore, a lattice to hold, a thermostat to adapt. Each part is classical; the synthesis is the point.
 
