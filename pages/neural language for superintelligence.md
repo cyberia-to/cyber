@@ -13,7 +13,7 @@ Version 1.0
 
 ## Abstract
 
-Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces neural language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), and [[[[motifs]] (recurring subgraph patterns). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[collective intelligence]]. We present the formal properties, the relationship to the programming stack ([[CORE]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
+Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces neural language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), [[[[motifs]] (recurring subgraph patterns), and [[[[names]] (deterministic resolution of [[cyberlinks]]). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[collective intelligence]]. We present the formal properties, the relationship to the programming stack ([[CORE]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
 
 ---
 
@@ -66,7 +66,7 @@ This is not a metaphor. The [[cyberank]] of a [[particle]] — its score under t
 
 ## 2. Primitives
 
-Neural language has four primitives: [[semcons]], [[sentences]], [[motifs]], and the recursive closure that makes [[cyberlinks]] themselves [[particles]]. These primitives are not designed — they are discovered in the structure of the [[cybergraph]]. They correspond to the levels of linguistic organization found in natural languages (phonemes, morphemes, syntax, [[semantics]]) but operate over graph [[topology]] rather than linear strings.
+Neural language has five primitives: [[semcons]], [[sentences]], [[motifs]], [[names]], and the recursive closure that makes [[cyberlinks]] themselves [[particles]]. These primitives are not designed — they are discovered in the structure of the [[cybergraph]]. They correspond to the levels of linguistic organization found in natural languages (phonemes, morphemes, syntax, [[semantics]]) but operate over graph [[topology]] rather than linear strings.
 
 ### 2.1 Semcons
 
@@ -263,6 +263,32 @@ Properties of [[linkchains]]:
 - **Weight**: The product of edge weights along the chain — heavier chains carry more [[focus]]
 
 Linkchains are the inference mechanism of neural language. Sentences are explicit statements made by [[neurons]]. Linkchains are implicit conclusions drawn by the [[tri-kernel]] from the aggregate structure of all [[sentences]]. The gap between explicit and implicit [[knowledge]] is where intelligence lives.
+
+### 2.6 Names
+
+A [[cyberlink]] is a dynamic pointer: from [[particle]] resolves to a set of to [[particles]]. Standard resolution is probabilistic — the [[relevance machine]] returns candidates sorted by [[cyberank]]. A [[name]] is a [[cyberlink]] that resolves deterministically: given from, return exactly one to — the latest [[particle]] linked by the owning [[neuron]].
+
+```
+RESOLUTION MODES
+────────────────
+
+Probabilistic (default):
+  "blog" ──→ [particle₁ (rank 0.42),
+              particle₂ (rank 0.31),
+              particle₃ (rank 0.12), ...]
+  Returns ranked candidates. This is search.
+
+Deterministic (~):
+  ~mastercyb/blog ──→ particle₁
+  Returns exactly one particle. The last linked
+  by the owning neuron. This is addressing.
+```
+
+The `~` prefix signals deterministic resolution — borrowed from Unix home directories. The [[neuron]] is the home, the path after it is a [[linkchain]] of [[names]] owned by that [[neuron]]. This turns the [[cybergraph]] into a dynamic file system where every [[neuron]] maintains a namespace rooted at `~`.
+
+The same mechanism underlies every naming system: file systems map paths to inodes, DNS maps domains to IPs. All are dynamic pointers where a fixed label resolves to a mutable target. In the [[cybergraph]] this is native — a [[cyberlink]] already IS a dynamic pointer, the only question is the resolution mode.
+
+[[Names]] are a [[semcon]] — a structural convention where [[neurons]] agree that certain [[cyberlinks]] are deterministic pointers rather than probabilistic signals. Probabilistic resolution is search. Deterministic resolution is addressing. Both emerge from the same primitive — the [[cyberlink]] — distinguished only by a [[semcon]] prefix.
 
 ---
 
@@ -945,7 +971,7 @@ Several fundamental questions remain open as neural language evolves:
 
 Neural language is not a designed language. It is a discovered one — an inevitable consequence of content-addressed [[particles]], authenticated [[cyberlinks]], and a convergent attention mechanism. When many agents link [[particles]] with costly signals, and a mathematical operator computes the fixed point of their collective attention, language emerges. Not language as strings of symbols, but language as [[topology]] of meaning.
 
-The key insight remains: **the meaning of a [[particle]] is its position in the graph**. This single principle — meaning as graph position — unifies [[semcons]] (shared vocabulary as convergent structural roles), [[sentences]] (utterances as transaction-atomic [[cyberlink]] batches), [[motifs]] (grammar as recurring subgraph patterns), and [[linkchains]] (inference as path traversal). No grammar rules are specified. No dictionary is compiled. No syntax is designed. The [[tri-kernel]] — [[diffusion]], [[springs]], heat — computes meaning from structure, and structure emerges from the aggregate behavior of all [[neurons]].
+The key insight remains: the meaning of a [[particle]] is its position in the graph. This single principle — meaning as graph position — unifies [[semcons]] (shared vocabulary as convergent structural roles), [[sentences]] (utterances as transaction-atomic [[cyberlink]] batches), [[motifs]] (grammar as recurring subgraph patterns), [[names]] (deterministic addressing as a [[semcon]] over [[cyberlinks]]), and [[linkchains]] (inference as path traversal). No grammar rules are specified. No dictionary is compiled. No syntax is designed. The [[tri-kernel]] — [[diffusion]], [[springs]], heat — computes meaning from structure, and structure emerges from the aggregate behavior of all [[neurons]].
 
 The network doesn't simulate language. The network IS language.
 
