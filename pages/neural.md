@@ -59,6 +59,12 @@ the language of [[collective intelligence]]: meaning emerges from how many [[neu
 	- chain: sequential links encoding transitive, causal, or narrative relationships
 	- diamond: convergent-divergent pattern — multiple paths between endpoints signals robust relationship
 	- motif [[algebra]]: concatenation (transitive reasoning), nesting (hierarchical abstraction), intersection (cross-domain bridges), complement (knowledge gaps)
+- ### [[name]]
+	- deterministic resolution of a [[cyberlink]]: given from, return exactly one to — the latest [[particle]] linked by the owning [[neuron]]
+	- standard resolution is probabilistic (ranked candidates by [[cyberank]]); the `~` prefix signals deterministic resolution
+	- `~neuron/path` turns the [[cybergraph]] into a dynamic file system — every [[neuron]] maintains a namespace rooted at `~`
+	- the same mechanism underlies file systems, DNS, ENS — all are dynamic pointers where a fixed label resolves to a mutable target
+	- a [[semcon]]: structural convention distinguishing addressing from search
 - ### [[cyberlink]] as [[particle]]
 	- a link stored as a [[particle]] itself, enabling links about links — meta-[[knowledge]]
 	- the [[recursion]] that makes the language expressively complete
