@@ -6,6 +6,10 @@ alias: names, naming, deterministic resolution
 ---
 deterministic resolution of a [[cyberlink]]. primitive of [[neural]] language
 
+naming is the act that turns a [[particle]] into a [[file]]. a [[particle]] is [[information]] — data identified by [[hash]]. a [[file]] is a particle given a `~` name — addressable, retrievable, meaningful. the protocol requires at least one [[cyberlink]] for a particle to enter the [[cybergraph]]; naming is the first and most fundamental link
+
+in the chain data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]], naming is the bridge from information to file
+
 a [[cyberlink]] is a dynamic pointer: from [[particle]] resolves to a ranked set of to [[particles]]. standard resolution is probabilistic — the [[relevance machine]] returns candidates sorted by [[cyberank]]. a name is a [[cyberlink]] that resolves deterministically: given from, return exactly one to — the latest [[particle]] linked by the owning [[neuron]]
 
 the same mechanism underlies every naming system: [[file]] systems map paths to inodes, [[DNS]] maps domains to IP addresses, ENS maps .eth to wallets. all are dynamic pointers where a fixed label resolves to a mutable target. in the [[cybergraph]] this is native — a [[cyberlink]] already is a dynamic pointer, the only question is the resolution mode

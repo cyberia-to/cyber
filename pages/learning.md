@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 the act of creating a [[cyberlink]] — a [[neuron]] binding two [[particles]] with [[focus]]
 
-in [[cyber]], learning and teaching are the same operation: by linking [[particles]], a neuron both encodes its own [[knowledge]] and makes it available to others through the [[cybergraph]]
+a [[particle]] cannot enter the [[cybergraph]] without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns a particle into a [[file]]. further links create [[knowledge]]. in [[cyber]], learning and teaching are the same operation: by linking [[particles]], a neuron both encodes its own [[knowledge]] and makes it available to others through the [[cybergraph]]
 
 every learning act has three arguments: who ([[neuron]]), what (two [[particles]]), and when ([[block]])
 

@@ -4,21 +4,27 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 ---
-reduction of uncertainty. measured in [[bits]]
+reduction of uncertainty
 
-Shannon defined information as a statistical property of messages: the less probable a message, the more information it carries. this definition is precise, quantitative, and deliberately excludes meaning. Shannon's entropy H = −Σ p(x) log₂ p(x) measures the average surprise per symbol — the minimum number of [[bits]] needed to encode messages from a source
+data is raw bytes — unidentified, unaddressed. hashing data produces a [[particle]]: a deterministic identity. this act of measurement is where data becomes information — before hashing, the content is uncertain; after, it is known exactly. a [[particle]] is a unit of information
 
-in [[cyber]], a [[particle]] is a unit of information. hashing a file collapses all uncertainty about its content into a deterministic identity — the [[hash]]. this act of measurement is where Shannon meets the protocol: the hash is the maximally compressed representation, the point where further compression is impossible because every bit already matters. the information content of a particle equals the length of its hash in bits
+Shannon defined information as a statistical property of messages: the less probable a message, the more information it carries. his entropy H = −Σ p(x) log₂ p(x) measures the average surprise per symbol — the minimum number of [[bits]] needed to encode messages from a source. Shannon's measure applies to the data inside a [[particle]] — the bytes, their compressibility, their entropy. the [[hash]] is something else: it is the identity of the particle, a fixed-length fingerprint that enables verification, deduplication, and addressing. the hash is not the information content; it is the measurement that makes the content identifiable
 
-Shannon's theory stops at the channel. a particle transmitted, received, verified — that is the end of Shannon's story. what happens next — linking particles into structure, inferring meaning from that structure — is beyond his framework
+a [[particle]] enters the protocol through a [[cyberlink]]. when a [[neuron]] gives a particle a `~` [[name]], it becomes a [[file]] — addressable, retrievable, meaningful. a naked particle with no links cannot exist in the [[cybergraph]]; the protocol requires at least one [[cyberlink]] for submission
 
-[[neurons]] create [[particles]]. this is information. when [[neurons]] [[link]] [[particles]], information becomes [[knowledge]]. when the [[truth machine]] computes over [[knowledge]], knowledge becomes [[intelligence]]
+Shannon's theory stops at the channel: how to transmit a message reliably. what happens after — naming, linking, inferring structure — is beyond his framework. [[cyber]] picks up where Shannon stops
 
-the chain: [[information]] → [[knowledge]] → [[intelligence]]
+the chain: data → information → [[file]] → [[knowledge]] → [[intelligence]]
+
+- data: raw bytes. Shannon's entropy applies here
+- information: data identified by [[hash]] — a [[particle]]
+- [[file]]: a particle given a `~` [[name]]
+- [[knowledge]]: [[particles]] linked by [[neurons]]
+- [[intelligence]]: structure inferred by the [[truth machine]]
 
 - [[subject]] of information is [[neuron]]
 - [[object]] of information is [[particle]]
 
-see [[Shannon]] for the classical theory
+see [[Shannon]] for the classical theory and its formulas
 
 discover all [[concepts]]

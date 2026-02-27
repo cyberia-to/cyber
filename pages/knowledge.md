@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]
 
-[[particles]] are [[information]] — isolated, unrelated units. the act of linking them creates knowledge. a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment that two [[particles]] are related. the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]. the [[cybergraph]] is the knowledge of all [[neurons]]
+data is raw bytes. hashing data produces a [[particle]] — [[information]]. naming a particle with `~` makes it a [[file]]. linking [[particles]] to each other creates knowledge. a [[cyberlink]] is the atomic unit: a signed, weighted, timestamped commitment that two [[particles]] are related. the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]. the [[cybergraph]] is the knowledge of all [[neurons]]
 
 Shannon's [[information]] theory has no concept of knowledge — it deals only with transmission of symbols. knowledge begins where Shannon ends: when an agent asserts that two pieces of information are related, spending [[focus]] to do so. this is why cheap talk produces noise and costly signals produce knowledge
 
@@ -19,7 +19,7 @@ every [[cyberlink]] records [[three basic arguments]]
 
 [[implicit knowledge]]: inferred from explicit by the [[truth machine]]. this inference is [[intelligence]]
 
-the chain: [[information]] → [[knowledge]] → [[intelligence]]
+the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
 
 see [[knowledge theory]] for the full framework
 

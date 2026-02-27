@@ -21,11 +21,13 @@ five primitives define everything that exists in the system:
 
 cybergraph implements [[knowledge theory]]: [[neurons]] [[link]] [[particles]] in [[time]]
 
+a [[particle]] cannot enter the cybergraph without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns the particle into a [[file]]. further links between particles create [[knowledge]]
+
 every [[cyberlink]] records [[three basic arguments]]: [[who]] linked, [[when]], and [[what]] [[particles]]
 
 these arguments form [[explicit knowledge]] — directly stated, readily traversable
 
-[[implicit knowledge]] emerges through inference over the accumulated graph: if A links to B and B links to C, then A relates to C
+[[implicit knowledge]] emerges through inference over the accumulated graph: if A links to B and B links to C, then A relates to C. this inference is [[intelligence]]
 
 ## structure
 

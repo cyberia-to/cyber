@@ -6,13 +6,15 @@ crystal-domain: cyber
 ---
 what can be inferred beyond what was directly stated
 
-[[information]] is isolated: a [[particle]] exists. [[knowledge]] is relational: [[particles]] are linked. intelligence is structural: the [[truth machine]] computes what the graph implies but no one explicitly said
+data is raw bytes. [[information]] is data identified by [[hash]] — a [[particle]]. a [[file]] is a particle given a [[name]]. [[knowledge]] is [[particles]] linked by [[neurons]]. intelligence is structural: the [[truth machine]] computes what the graph implies but no one explicitly said
 
-- [[neurons]] create [[particles]] — this is [[information]]
-- [[neurons]] link [[particles]] — this is [[knowledge]]
-- the [[truth machine]] infers relevance, hierarchy, and structure from the graph — this is intelligence
+the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
 
-the chain: [[information]] → [[knowledge]] → [[intelligence]]
+- data: raw bytes
+- [[information]]: data measured by [[hash]] — a [[particle]] exists
+- [[file]]: a [[particle]] given a `~` [[name]] — addressable
+- [[knowledge]]: [[particles]] linked by [[neurons]] — the [[cybergraph]]
+- intelligence: the [[truth machine]] infers relevance, hierarchy, and structure from the graph
 
 in [[cyber]]: the converged [[focus]] distribution computed by the [[truth machine]] via the [[tri-kernel]]. the outputs — [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the [[vimputer]] — are the measurable form of intelligence
 
@@ -22,7 +24,7 @@ intelligence is adaptive equilibrium-finding: the capacity to converge on useful
 
 [[emergence]] is the mechanism — local [[cyberlinks]] produce global structure no single [[neuron]] designed
 
-Shannon's framework has no concept of intelligence. Shannon measures how efficiently symbols pass through a channel. intelligence is what happens after transmission — when accumulated [[knowledge]] is processed into structure that predicts, ranks, and reveals
+Shannon's framework has no concept of intelligence. Shannon measures how efficiently symbols pass through a channel. intelligence is what happens far downstream — when accumulated [[knowledge]] is processed into structure that predicts, ranks, and reveals
 
 see [[knowledge theory]] for the full framework
 
