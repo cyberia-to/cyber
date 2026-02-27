@@ -3,7 +3,7 @@ tags: article, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-alias: CORE, core spec, Conserved Observable Reduction Equilibrium
+alias: CORE, core spec, Conserved Observable Reduction Equilibrium, CORE vm
 ---
 # CORE v0.9: Conserved Observable Reduction Equilibrium
 
