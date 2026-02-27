@@ -56,7 +56,7 @@ community can adjust gas [[max gas]] consumable at block
 	- [[ante handler]]: processing of transaction with cyberlinks messages in transaction middleware
 		- calculate total bandwidth amount for all cyberlinks messages in transaction using current price and consume [[neuron bandwidth]]
 		- add consumed bandwidth to block bandwidth (in-memory)
-	- [[cyber/graph]] module: processing of cyberlink message created by vm contract
+	- [[bostrom/graph]] module: processing of cyberlink message created by vm contract
 		- calculate bandwidth for message using current price and consume neuron's bandwidth
 		- add consumed bandwidth to block bandwidth (in-memory)
 		- note: billing happens in the graph module for contracts because contracts creates messages not grouped into transactions (ante handler are not processing them)

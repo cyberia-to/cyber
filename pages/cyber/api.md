@@ -5,21 +5,21 @@ crystal-domain: cyber
 ---
 [[go-cyber]]
 
-- [[cyber/bandwidth]]
-- [[cyber/clocks]]
+- [[bostrom/bandwidth]]
+- [[bostrom/clocks]]
   :LOGBOOK:
   CLOCK: [2022-12-15 Thu 18:57:30]
   :END:
-- [[cyber/cyberbank]]
-- [[cyber/dmn]]
-- [[cyber/graph]]
-- [[cyber/grid]]
-- [[cyber/liquidity]]
-- [[cyber/rank]]
-- [[cyber/resources]]
+- [[bostrom/cyberbank]]
+- [[bostrom/dmn]]
+- [[bostrom/graph]]
+- [[bostrom/grid]]
+- [[bostrom/liquidity]]
+- [[bostrom/rank]]
+- [[bostrom/resources]]
 - [[cyber/staking]]
 - [[cyber/tokenfactory]]
-- [[cyber/wasm]]
+- [[bostrom/wasm]]
 
 [[cyber/cli]]
 

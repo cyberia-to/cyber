@@ -27,7 +27,7 @@ undelegate 1000 BOOT  →  burn 1000 H
 ## Uses
 
 1. [[mint]] input — [[burn]] [[$H]] to [[mint]] [[$V]] or [[$A]]
-2. [[cyber/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools, or used in any [[cosmwasm]] contract
+2. [[bostrom/liquidity]] — traded on the built-in [[automated market maker]] ([x/liquidity](https://github.com/cyberia-to/go-cyber/tree/main/x/liquidity) module), deposited into liquidity pools, or used in any [[cosmwasm]] contract
 
 [[$H]] does not earn [[staking]] rewards itself. The underlying staked [[$BOOT]] continues to earn rewards. [[$H]] is the spendable proof that [[$BOOT]] is at stake.
 

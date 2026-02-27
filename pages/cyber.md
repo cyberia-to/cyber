@@ -29,6 +29,13 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 ## the stack
 
 - [[soft3]] — the three-layer software architecture
+  - [[rust]]
+  - [[rune]]
+  - [[datalog]]
+  - [[triton]]
+  - [[tir]]
+  - [[cyber/core]]
+  - [[neural]]
 - [[Bostrom]] — the [[bootloader]] chain, genesis environment for the protocol
 - [[cyb]] — the immortal robot, browser interface to the cybergraph
 - [[cyberia]] — the network state, physical cities for cyber citizens
@@ -64,16 +71,16 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 
 ## modules
 
-- [[cyber/graph]] — cybergraph storage
-- [[cyber/rank]] — ranking computation
-- [[cyber/bandwidth]] — resource metering
-- [[cyber/grid]] — energy distribution
-- [[cyber/resources]] — resource management
-- [[cyber/dmn]] — deterministic module network
-- [[cyber/wasm]] — smart contract execution
-- [[cyber/cyberbank]] — token operations
-- [[cyber/liquidity]] — liquidity pools
-- [[cyber/clocks]] — time and scheduling
+- [[bostrom/graph]] — cybergraph storage
+- [[bostrom/rank]] — ranking computation
+- [[bostrom/bandwidth]] — resource metering
+- [[bostrom/grid]] — energy distribution
+- [[bostrom/resources]] — resource management
+- [[bostrom/dmn]] — deterministic module network
+- [[bostrom/wasm]] — smart contract execution
+- [[bostrom/cyberbank]] — token operations
+- [[bostrom/liquidity]] — liquidity pools
+- [[bostrom/clocks]] — time and scheduling
 
 ## applications
 

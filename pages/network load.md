@@ -3,7 +3,7 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 ---
-[[vimputer]] keeps track of total consumed [[cyber/bandwidth]]
+[[vimputer]] keeps track of total consumed [[bostrom/bandwidth]]
 
 during [[recovery period]] and weights this window aggregated value to desirable bandwidth
 

@@ -176,7 +176,7 @@ Related specifications:
 - [[cft]] — Collective Focus Theorem: mathematical foundation for [[consensus]] emergence
 - [[cyber/crystal]] — genesis knowledge graph: 5,040 irreducible [[particles]]
 - [[cyber/launch]] — development roadmap: 7 phases from genesis to mainnet
-- [[cyber/bandwidth]] — bandwidth metering for [[cyberlinks]]
+- [[bostrom/bandwidth]] — bandwidth metering for [[cyberlinks]]
 
 ---
 

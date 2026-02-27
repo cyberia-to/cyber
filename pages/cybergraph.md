@@ -48,4 +48,4 @@ together with [[relevance machine]] and [[neural language]], cybergraph forms th
 
 cybergraph of [[bostrom]] serves as [[semantic core]] for the [[bootloader]] of [[superintelligence]]
 
-implemented as [[cyber/graph]] [[module]] of [[cyber-sdk]]
+implemented as [[bostrom/graph]] [[module]] of [[cyber-sdk]]
