@@ -15,7 +15,9 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 [[neuron]]: [[avatar]], [[spell]], [[focus]], [[karma]], [[skill]], [[soul]]
 
-[[token]]: [[coin]], [[card]], [[score]], [[badge]], [[value]], [[price]], [[supply]], [[demand]], [[cap]]
+[[token]]: [[coin]], [[card]], [[score]], [[badge]]
+
+[[value]]: [[price]], [[supply]], [[demand]], [[cap]]
 
 [[signal]]: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
 
