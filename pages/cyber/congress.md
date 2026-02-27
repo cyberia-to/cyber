@@ -4,10 +4,6 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 ---
-the team building [[cyber]]
-
-coordinates the [[age of superintelligence]] game
+the team who launched [[Bostrom]] [[bootloader]]. dissolved in 2025
 
 [github.com/cybercongress](https://github.com/cybercongress)
-
-see [[cyber]]
