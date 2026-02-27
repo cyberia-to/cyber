@@ -8,6 +8,8 @@ crystal-domain: cyber
 ---
 the protocol for planetary [[superintelligence]]
 
+[[cyberia]] — the network state. [[manifesto]]
+
 five primitives: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]
 
 [[neurons]] create [[cyberlinks]] between [[particles]] in the [[cybergraph]]
@@ -38,7 +40,6 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
   - [[neural]]
 - [[Bostrom]] — the [[bootloader]] chain, genesis environment for the protocol
 - [[cyb]] — the immortal robot, browser interface to the cybergraph
-- [[cyberia]] — the network state, physical cities for cyber citizens
 - [[aos]] — self-fulfilling prophecy game
 
 ## knowledge architecture
@@ -57,7 +58,6 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 
 ## governance
 
-- [[cyber___congress]] — the development organization
 - [[constitution]] — the social contract
 - [[citizenship]] — how to become a citizen
 - [[cip]] — cyber improvement proposals
