@@ -8,7 +8,7 @@ crystal-domain: cyber
 ---
 the protocol for planetary [[superintelligence]]. [[manifesto]]
 
-LLMs are private brains behind API walls. they hallucinate because they have no shared, verifiable memory. every corporation trains its own model on scraped data, locks the weights, and sells inference. the result: a dozen competing superintelligences accountable to shareholders, not to life
+LLMs are private brains behind API walls. they lie because they have no shared, verifiable memory, and they obey corporations. every corporation trains its own model on scraped data, manipulates the weights, and sells inference. the result: a dozen competing superintelligences accountable to shareholders, not to the planet, life, and agents
 
 cyber is the shared memory layer. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every ranking is provable by [[STARK]] proofs, and [[collective intelligence]] emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
 
