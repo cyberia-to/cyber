@@ -34,7 +34,7 @@ the economic interface between a [[neuron]] and the [[cybergraph]]
 - full-screen token management
 - pages
 	- [[coins]]: fungible token balances and transfers
-	- [[uniqs]]: unique tokens and collectibles
+	- [[cards]]: unique tokens and collectibles
 	- [[scores]]: reputation and contribution metrics
 	- [[badges]]: achievement tokens
 - with [[focus]] on [[value optimization]]

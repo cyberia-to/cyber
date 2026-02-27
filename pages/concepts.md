@@ -23,7 +23,7 @@ crystal-domain: cyber
 	-
 	- [[tokens]] 🪙 — the blood that makes it dear
 	  [[coins]] to stake and pay without a fear
-	  [[uniqs]] to own and prove what you have found
+	  [[cards]] to own and prove what you have found
 	  [[scores]] to earn and keep on solid ground
 	  [[badges]] worn forever, never sold —
 	  four forms of [[value]], forged and cold
@@ -47,7 +47,7 @@ crystal-domain: cyber
 	  the skeleton on which all truths will stand
 	-
 	- an [[avatar]] — many [[neurons]], single name
-	  a [[uniq]] that bridges identity and flame
+	  a [[card]] that bridges identity and flame
 	  who you are meets everything you know
 	  across the chains where signals flow
 	-

@@ -1,6 +1,6 @@
 ---
 icon: 🎨
-alias: nft, uniqs, knowledge asset
+alias: cards, uniq, uniqs, nft, knowledge asset
 tags: cybernomics
 crystal-type: entity
 crystal-domain: cyber
@@ -16,16 +16,16 @@ enables new-age epistemology
 - dataset ownership
 - model lineage certificates
 
-every uniq is itself a [[particle]] (content-addressed)
+every card is itself a [[particle]] (content-addressed)
 
 protocol-native — not a smart contract artifact
 
-uniq_id = H([[particle]] ‖ creator)
+card_id = H([[particle]] ‖ creator)
 
 examples: btc, erc721, cw721
 
-unlike [[badge]], uniqs can be transferred and traded
+unlike [[badge]], [[cards]] can be transferred and traded
 
-unlike [[coin]], each uniq is unique (non-fungible)
+unlike [[coin]], each card is unique (non-fungible)
 
 discover all [[concepts]]

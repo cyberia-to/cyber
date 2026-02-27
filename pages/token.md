@@ -20,7 +20,7 @@ types
 	- consensus [[token]] of the network
 	- names the most important nodes. denominates stake, fees, and economic commitment
 	- eth, erc20, cw20
-- [[uniq]]: unique and movable
+- [[card]]: unique and movable
 	- [[knowledge]] asset. binds provenance to a [[particle]]
 	- enables new-age epistemology: authorship proofs, citation rights, dataset ownership, model lineage certificates
 	- btc, erc721, cw721
@@ -29,7 +29,7 @@ types
 - [[badge]]: unique and immovable
 	- non-transferable unique credentials
 
-both [[coin]] and [[uniq]] are protocol-native — not smart contract artifacts
+both [[coin]] and [[card]] are protocol-native — not smart contract artifacts
 
 the protocol enforces conservation, transfer rules, and authenticated ownership at the [[consensus]] layer
 

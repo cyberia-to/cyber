@@ -55,7 +55,7 @@ Five irreducible primitives. Everything in the system is composed from these. Se
 | [[particle]] ⭕️ | content-addressed node, atom of knowledge | hash of content |
 | [[cyberlink]] 🔗 | authenticated directed edge, unit of meaning | hash of (neuron, from, to, weight, time) |
 | [[neuron]] 🤪 | agent with stake, identity, and focus | hash of public key |
-| [[token]] 🪙 | protocol-native value: [[coin]], [[uniq]], [[score]], [[badge]] | denomination hash / content hash |
+| [[token]] 🪙 | protocol-native value: [[coin]], [[card]], [[score]], [[badge]] | denomination hash / content hash |
 | [[focus]] 🎯 | emergent attention distribution (π), computed by [[tri-kernel]] | [[diffusion]], [[springs]], [[heat kernel]] |
 
 Focus is computed by three local operators — the [[tri-kernel]]: [[diffusion]] (where probability flows), [[springs]] (what satisfies structural constraints), [[heat kernel]] (what the graph looks like at scale τ). These are the only operator families that survive the locality constraint. See [[tri-kernel]] for the completeness proof.
@@ -248,15 +248,15 @@ The cybergraph maintains six NMT indexes over the same edge and token data. Edge
 ║    Proves: "Denomination D has supply S, and this is complete"       ║
 ║    Per-neuron coin balances tracked in INDEX 4 (balance).            ║
 ║                                                                       ║
-║  INDEX 6: uniqs                                                      ║
+║  INDEX 6: cards                                                      ║
 ║  ──────────────                                                      ║
-║    Structure: NMT[ uniq_id → uniq_record ]                           ║
-║    Namespace: uniq_id (content-addressed: H(particle ‖ creator))     ║
+║    Structure: NMT[ card_id → card_record ]                           ║
+║    Namespace: card_id (content-addressed: H(particle ‖ creator))     ║
 ║    Leaf payload: bound particle, current owner, provenance chain     ║
-║    Proves: "Uniq U exists, is bound to particle P, owned by N"      ║
+║    Proves: "Card C exists, is bound to particle P, owned by N"      ║
 ║    Enables: knowledge assets, authorship proofs, citation rights,    ║
 ║             dataset ownership, model lineage certificates.           ║
-║    Every uniq is itself a particle — content-addressed, immutable.   ║
+║    Every card is itself a particle — content-addressed, immutable.   ║
 ║                                                                       ║
 ╚═══════════════════════════════════════════════════════════════════════╝
 ```
@@ -345,9 +345,9 @@ coins leaf:
   │   transfer_rules: u8 (bitfield)       │
   └────────────────────────────────────────┘
 
-uniqs leaf:
+cards leaf:
   ┌────────────────────────────────────────┐
-  │ namespace: uniq_id (32 bytes)          │
+  │ namespace: card_id (32 bytes)          │
   │ payload:                               │
   │   bound_particle: F_p⁴                │
   │   current_owner: F_p⁴ (neuron hash)  │
@@ -916,7 +916,7 @@ BBG_root = H_merkle(
   focus.root           ‖    NMT root (focus distribution)
   balance.root         ‖    NMT root (public balances)
   coins.root           ‖    NMT root (fungible token denominations)
-  uniqs.root           ‖    NMT root (non-fungible knowledge assets)
+  cards.root           ‖    NMT root (non-fungible knowledge assets)
   aocl.peaks_hash      ‖    H(peak₀ ‖ peak₁ ‖ ... ‖ peak_k)
   swbf.inactive_root   ‖    MMR root (inactive SWBF chunks)
   swbf.window_hash     ‖    H(active window bits)
@@ -934,7 +934,7 @@ BBG_root = H_merkle(
      ┌──────────┬────────────┬───────┼───────┬──────────┬───────────┐
      │          │            │       │       │          │           │
 ┌────┴─────┐ ┌─┴────────┐ ┌─┴────┐ ┌┴─────┐ ┌┴──────┐ ┌┴─────┐ ┌──┴──────────┐
-│by_neuron │ │by_particle│ │focus │ │balance│ │coins │ │uniqs │ │ mutator_set │
+│by_neuron │ │by_particle│ │focus │ │balance│ │coins │ │cards │ │ mutator_set │
 │  (NMT)   │ │  (NMT)    │ │(NMT)│ │(NMT) │ │(NMT) │ │(NMT) │ │(AOCL+SWBF)  │
 └────┬─────┘ └──┬───────┘ └──────┘ └──────┘ └──────┘ └──────┘ └──┬──────────┘
      │          │                                                   │
@@ -984,16 +984,16 @@ TRANSACTION TYPES:
    Cost:   focus proportional to computation steps
    Proof:  STARK proving reduction trace + focus deduction
 
-5. MINT UNIQ — Create a non-fungible knowledge asset
+5. MINT CARD — Create a non-fungible knowledge asset
    Input:  (neuron, bound_particle, signature)
-   Effect: Insert into uniqs NMT, creator = owner = neuron
+   Effect: Insert into cards NMT, creator = owner = neuron
    Cost:   focus fee (prevents spam minting)
-   Proof:  STARK proving particle exists in by_particle + uniq_id uniqueness
-   The uniq is itself content-addressed: uniq_id = H(particle ‖ creator)
+   Proof:  STARK proving particle exists in by_particle + card_id uniqueness
+   The card is itself content-addressed: card_id = H(particle ‖ creator)
 
-6. TRANSFER UNIQ — Transfer knowledge asset ownership
-   Input:  (from_neuron, to_neuron, uniq_id, signature)
-   Effect: Update owner field in uniqs NMT leaf
+6. TRANSFER CARD — Transfer knowledge asset ownership
+   Input:  (from_neuron, to_neuron, card_id, signature)
+   Effect: Update owner field in cards NMT leaf
    Cost:   fixed fee
    Proof:  STARK proving current ownership + signature validity
 
@@ -1634,8 +1634,8 @@ Light client per-block              O(log N)      O(1)          ~1,000
 UTXO proof maintenance              O(log N)/blk  O(log N)      ~12,500
 DAS sampling                        O(√n)         O(√n log n)   N/A (verifier)
 Edge pruning                        O(log n)      O(log n)      ~8,000
-Mint uniq                           O(log n)      O(log n)      ~4,000
-Transfer uniq                       O(log n)      O(log n)      ~3,000
+Mint card                           O(log n)      O(log n)      ~4,000
+Transfer card                       O(log n)      O(log n)      ~3,000
 Block verification (B tx, E edges)  O(E log E)    O(E)          ~5,000 × E
 ```
 

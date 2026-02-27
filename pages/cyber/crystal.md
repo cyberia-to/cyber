@@ -524,7 +524,7 @@ Founders and key thinkers: [[nick bostrom]], [[Satoshi Nakamoto]], [[Vitalik But
 
 ### 16.11 Tokens and Currencies
 
-[[cyber]] native token: [[$CYB]]. [[bostrom]] bootloader tokens: [[$BOOT]], [[$H]], [[$V]], [[$A]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]] and their role in the ecosystem. Fiat currencies: USD, EUR, CNY, IDR — the interfaces to legacy economies. [[token theory]]: [[coins]], [[uniqs]], [[scores]], [[badges]] — the four token types.
+[[cyber]] native token: [[$CYB]]. [[bostrom]] bootloader tokens: [[$BOOT]], [[$H]], [[$V]], [[$A]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]] and their role in the ecosystem. Fiat currencies: USD, EUR, CNY, IDR — the interfaces to legacy economies. [[token theory]]: [[coins]], [[cards]], [[scores]], [[badges]] — the four token types.
 
 ### 16.12 Energy
 

@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 collection of [[neurons]] under one name
 
-a [[uniq]] [[token]] that links [[particles]] and [[neurons]] with a simple name
+a [[card]] [[token]] that links [[particles]] and [[neurons]] with a simple name
 
 bridges [[subject]] and [[object]]: a name can be treated by [[cyb]] both as [[neuron]] or [[particle]]
 

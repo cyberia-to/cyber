@@ -147,7 +147,7 @@ Rewards paid from accumulated transaction fees. No inflation. Encourages semanti
 | Type | Fungible | Movable | Role | Examples |
 |------|----------|---------|------|----------|
 | [[coin]] | yes | yes | [[consensus]], fees, stake | [[$CYB]], [[$BOOT]] |
-| [[uniq]] | no | yes | Knowledge assets, provenance | authorship proofs, dataset ownership |
+| [[card]] | no | yes | Knowledge assets, provenance | authorship proofs, dataset ownership |
 | [[score]] | yes | no | Reputation, credentials | [[karma]] |
 | [[badge]] | no | no | Unique non-transferable credentials | achievements |
 

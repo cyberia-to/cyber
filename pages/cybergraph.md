@@ -12,7 +12,7 @@ five primitives define everything that exists in the system:
 - [[particle]] — content-addressed node. identity = [[hash]] of content. immutable
 - [[neuron]] — agent with stake and identity. creates links
 - [[cyberlink]] — signed, weighted, timestamped directed edge between two [[particles]]
-- [[token]] — unit of [[value]]: [[coins]], [[uniqs]], [[scores]], [[badges]]
+- [[token]] — unit of [[value]]: [[coins]], [[cards]], [[scores]], [[badges]]
 - [[focus]] — attention distribution over the graph. conserved: Σ = 1. [[threshold]] filters spam
 
 [[cyber/bbg]] defines how to store. [[cyber/core]] defines how to compute. cybergraph defines what to compute and store: the graph of meaning created by [[neurons]]

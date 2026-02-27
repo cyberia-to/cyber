@@ -52,7 +52,7 @@ examples
 
 each particle has a [[cyberank]]: probability of observation by random-walking [[neuron]]
 
-[[uniqs]] can be bound to particles for provenance and ownership
+[[cards]] can be bound to particles for provenance and ownership
 
 [[bostrom]] uses [[cidv0]] standard of content addressing — SHA-256 [[hash]] with rich software and hardware infrastructure
 
