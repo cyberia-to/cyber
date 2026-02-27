@@ -35,8 +35,6 @@ crystal-domain: cyber
 
 [[economic model]]
 
-[[foculus 2]]
-
 [[data availability strategy]]
 
 [[authenticated_graphs]]

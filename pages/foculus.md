@@ -1,186 +1,159 @@
 ---
-tags: cyber
-crystal-type: entity
+tags: article, cip
+crystal-type: process
 crystal-domain: cyber
+status: draft
 ---
-# Foculus Foundation: Decentralized Super-Intelligence Protocol
-## Abstract
+# foculus consensus
 
-This document outlines the Foculus protocol, a decentralized blockchain designed to secure state efficiently while simultaneously driving collective intelligence.
+block-free, graph-native agreement. actions finalize when their stationary-distribution mass exceeds a dynamic threshold — no voting rounds, no block ordering
 
-Core components:
-- Foculus Consensus: Consensus achieved via graph-based focus computations, eliminating traditional block-based limitations.
-- Public-Good Minting: Incentivizes valuable computation by embedding proofs of useful work directly into graph edges.
-- Quantum Resilience: Uses periodic lattice-based checkpoints to ensure long-term security against quantum computing threats.
-- Adaptive Parameterization: Critical system parameters dynamically adjusted via reinforcement learning, eliminating governance overhead.
-## 1. Introduction
+---
 
-Existing blockchain systems suffer from two main problems:
-- Excessive energy consumption without external value (traditional Proof-of-Work)
-- Difficulty verifying useful computations economically and at scale (Proof-of-Useful-Work)
+## the idea
 
-Foculus addresses these issues by merging consensus and useful computation. Every GPU cycle contributes directly to updating a network-wide knowledge state, known as the focus vector π, achieving consensus efficiently and meaningfully.
-## 2. Collective Focus Theorem
+the [[collective focus theorem]] proves that token-weighted [[random walk]] on a strongly connected [[cybergraph]] converges to a unique $\pi$. foculus turns this into [[consensus]]: a [[particle]] is final when $\pi_i > \tau$
 
-Foculus is built upon the collective focus theorem, which guarantees convergence of attention-based computations:
-- Define a random-walk transition matrix from weighted, signed edges in a strongly connected graph.
-- Repeated sparse-matrix multiplications converge towards a stable stationary distribution π.
-- Finality occurs when a node’s stationary distribution value (πᵢ) surpasses a dynamically set threshold (τ).
-- Ensures safe and irreversible consensus under honest-majority conditions.
-## 3. Foculus Consensus Protocol
-### 3.1 Network Structure
-- Particles represent transactions or data points, identified by unique content-addressed hashes.
-- Cyberlinks represent weighted endorsements between particles.
-- Validators maintain and iterate on the global graph, using dynamically adjusted, reinforcement-learning-driven parameters.
-### 3.2 Focus Calculation
-- Every \~100 ms, GPU-accelerated calculations iteratively update π.
-- Transactions finalize rapidly once π exceeds the threshold τ.
-- Conflicting transactions with insufficient π are discarded to maintain consistency.
-### 3.3 Advantages
-- Rapid finality within seconds.
-- Scalable throughput (millions of transactions per second).
-- Minimal communication overhead via incremental gossip updates.
-## 4. Economic Model
-### 4.1 Reward Architecture
+no explicit voting. no leader election. [[neurons]] gossip [[cyberlinks]], GPUs iterate $\pi$, and finality emerges from the [[topology]] of [[attention]]
 
-To ensure predictable minting behavior and minimize complexity in reward prediction, the system uses a hybrid incentive split:
-- Minted tokens are exclusively allocated to Flow Focus Update proofs (the backbone of consensus).
-- All other proof particles (e.g., checkpoint anchoring, compression, availability, routing) are rewarded via a shared allocation from transaction fees.
-- 50% of transaction fees are burned to preserve long-term scarcity; the other 50% funds all auxiliary proofs.
+---
 
-This ensures:
-- A unified economic weight focused on maintaining consensus and π evolution.
-- Pluggable proof classes that scale with usage, without diluting mint-driven monetary policy.
-- Clear upper bounds on reward surfaces, reducing attack vectors via arbitrary proof flooding.
+## protocol
 
-| Proof Type                    | Description                                                              | Rewarded For                                                     |
-| ----------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| Focus Update                  | Adds meaningful links that shift the stationary distribution             | Contributing to state finality and consensus                     |
-| Checkpoint Anchoring          | Cryptographically anchors prior π states using lattice or VDF            | Providing historical finality and rollback resistance            |
-| Data Availability Attestation | Proves reliable access or storage of graph data                          | Ensuring availability of referenced knowledge and transactions   |
-| Storage Commitment            | Commits to holding rare or foundational graph regions                    | Preserving long-term semantic memory                             |
-| Distillation Proof            | Abstracts or summarizes meaningful subgraphs                             | Improving attention economy and structural efficiency            |
-| Flow Focus Compute Proof      | Performs inference or logic flow to guide future graph evolution         | Advancing reasoning and emergent decision intelligence           |
-| Signature Verification Proof  | Verifies chains of trust and message authorship cryptographically        | Enabling secure graph integrity and identity-linked computation  |
-| Censorship Detection          | Proves omission of valid but unreferenced particles                      | Restoring fairness and healing attention blind spots             |
-| Fork Finality Monitor         | Detects double-finality or network split attempts                        | Enhancing security via contradiction awareness                   |
-| Message Delivery Proof        | Proves fast, efficient message routing across the network                | Enabling reliable communication and lowering propagation latency |
-| Location Presence Proof       | Cryptographically anchors a node to physical or logical topology         | Supporting trust geometry and routing optimization               |
-| Model Distillation Proof      | Derives symbolic or neural abstraction from π-subgraph                   | Creating higher-level cognitive models shared by agents          |
-| Temporal Anchoring Proof      | Establishes verifiable causal order using delay or trust-weighted chains | Strengthening historical consistency and global synchrony        |
-| Private Knowledge Injection   | Embeds encrypted or zk-proven latent information into the graph          | Enabling privacy-preserving cognition and value contribution     |
-| Interoperability Proof        | Verifies authenticated state transitions or messages across chains       | Enabling secure interchain communication and shared cognition    |
+1. gossip: [[neurons]] broadcast new [[particles]] + [[cyberlinks]]
+2. local update: every ~100 ms, GPU-accelerated sparse-matrix×vector refines $\pi$
+3. finalize: [[particle]] $i$ becomes final when $\pi_i > \tau(t)$, where $\tau(t) = \mu_\pi + \kappa \sigma_\pi$, $\kappa \in [1,2]$
+4. prune: conflicting [[particles]] with $\pi \leq \tau$ are discarded
+5. reward: validator $v$ earns proportional to $\Delta\pi$ contributed
 
-| Proof Type                    | Description                                                              | Rewarded For                                                     |
-| ----------------------------- | ------------------------------------------------------------------------ | ---------------------------------------------------------------- |
-| Focus Update                  | Adds meaningful links that shift the stationary distribution             | Contributing to state finality and consensus                     |
-| Checkpoint Anchoring          | Cryptographically anchors prior π states using lattice or VDF            | Providing historical finality and rollback resistance            |
-| Data Availability Attestation | Proves reliable access or storage of graph data                          | Ensuring availability of referenced knowledge and transactions   |
-| Storage Commitment            | Commits to holding rare or foundational graph regions                    | Preserving long-term semantic memory                             |
-| Distillation Proof            | Abstracts or summarizes meaningful subgraphs                             | Improving attention economy and structural efficiency            |
-| Flow Focus Compute Proof      | Performs inference or logic flow to guide future graph evolution         | Advancing reasoning and emergent decision intelligence           |
-| Signature Verification Proof  | Verifies chains of trust and message authorship cryptographically        | Enabling secure graph integrity and identity-linked computation  |
-| Censorship Detection          | Proves omission of valid but unreferenced particles                      | Restoring fairness and healing attention blind spots             |
-| Fork Finality Monitor         | Detects double-finality or network split attempts                        | Enhancing security via contradiction awareness                   |
-| Message Delivery Proof        | Proves fast, efficient message routing across the network                | Enabling reliable communication and lowering propagation latency |
-| Location Presence Proof       | Cryptographically anchors a node to physical or logical topology         | Supporting trust geometry and routing optimization               |
-| Model Distillation Proof      | Derives symbolic or neural abstraction from π-subgraph                   | Creating higher-level cognitive models shared by agents          |
-| Temporal Anchoring Proof      | Establishes verifiable causal order using delay or trust-weighted chains | Strengthening historical consistency and global synchrony        |
-| Private Knowledge Injection   | Embeds encrypted or zk-proven latent information into the graph          | Enabling privacy-preserving cognition and value contribution     |
-### 4.3 Emergence of Stake-Weighted Attention
+---
 
-Stake, reputation, and endorsement flow collectively determine the weight of each proof particle in the graph. Through power-iteration, the π vector converges on a shared focus, and minting naturally favors proofs that contribute most to it. This creates a cryptoeconomic equilibrium, where:
-- Network consensus evolves continuously
-- The token economy tracks and amplifies shared belief
-### 4.4 Damping and Focus Evolution
+## safety
 
-To prevent long-term concentration and encourage network adaptability, a decay function is applied over time:
+theorem (no double finality): two conflicting [[particles]] cannot both exceed $\tau$
 
-```
-πᵢ ← πᵢ × γ^t  ,  where γ ∈ (0, 1)
-```
+assumption: honest [[particles]] control $\geq \frac{1}{2} + \delta$ of global $\pi$
 
-This damping ensures that:
-- Older or less-endorsed particles fade from influence
-- The focus vector π evolves with current behavior, endorsements, and work
-- The system "forgets" obsolete or less-relevant history, enabling continual learning and adaptability
+proof relies on probability mass conservation ($\sum \pi_i = 1$) and the honest-majority invariant. if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the assumption
 
-This models attention as a dynamic, evolving field—just as natural intelligence retains relevant memories and forgets noise—forming the cognitive substrate of the chain.
-### 4.1 The π-Minting Theorem
+liveness: ergodicity of $P$ guarantees every valid action accumulates $\pi$ and passes $\tau$ in expected $O(\log(1/\varepsilon)/\lambda)$ iterations, where $\lambda$ is the spectral gap
 
-Minting is governed not by cost of work or subjective utility, but by the measurable shift in the collective attention vector π. Each valid proof—be it a focus update, checkpoint, or other verifiable structure—is treated as a "proof particle" in the network graph. Rewards are distributed proportionally to the influence a proof particle exerts over the current π distribution:
+---
 
-```
-reward(p) ∝ Δπ(p)
-```
+## performance
 
-Where:
-- `p` is a proof particle submitted during a given interval
-- `Δπ(p)` is the change in the stationary distribution π resulting from the addition of `p` and its links
+| metric | classic BFT | nakamoto | foculus |
+|---|---|---|---|
+| finality | 5-60 s | ~60 min | 1-3 s |
+| throughput | 1k-10k tx/s | ~10 tx/s | 10⁶+ tx/s |
+| validator scale | 10²-10³ | unbounded | unbounded (GPU) |
+| communication | high | medium | ultra-low |
+| fault tolerance | 1/3 stake | 51% hash | ≥1/2 $\pi$ |
 
-This ensures that:
-- Proof types are treated uniformly, regardless of underlying mechanics
-- Attention-weighted relevance drives economic value
-- No privileged mechanism is required for minting eligibility
-### 4.2 Emergence of Stake-Weighted Attention
+single iteration: $O(|E| + |V|)$ sparse op. an A100 sustains ~50M edges at 40 Hz
 
-Stake, reputation, and endorsement flow collectively determine the weight of each proof particle in the graph. Through power-iteration, the π vector converges on a shared focus, and minting naturally favors proofs that contribute most to it. This creates a cryptoeconomic equilibrium, where:
-- Network consensus evolves continuously
-- The token economy tracks and amplifies shared belief
-### 4.3 Damping and Focus Evolution
+latency breakdown: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN
 
-To prevent long-term concentration and encourage network adaptability, a decay function is applied over time:
+---
 
-```
-πᵢ ← πᵢ × γ^t  ,  where γ ∈ (0, 1)
-```
+## economics
 
-This damping ensures that:
-- Older or less-endorsed particles fade from influence
-- The focus vector π evolves with current behavior, endorsements, and work
-- The system "forgets" obsolete or less-relevant history, enabling continual learning and adaptability
+### π-minting
 
-This models attention as a dynamic, evolving field—just as natural intelligence retains relevant memories and forgets noise—forming the cognitive substrate of the chain.
-### 4.1 Reward Structure
-- Minted tokens correlate directly with the incremental increase in collective focus (Δπ).
-- Contributors rewarded proportionally based on their verified Δπ contributions.
-### 4.2 Fee and Stake Mechanisms
-- Transaction fees split evenly between token burns and contributor rewards.
-- Validators stake tokens to guarantee honesty and lose them if dishonest behaviors are proven.
-## 5. Quantum Resilience
-### 5.1 Built-In Quantum Resistance
-- Network safety parameters dynamically halt operations if quantum-induced variances exceed safe thresholds.
-### 5.2 Checkpoint Anchors
-- Regular lattice-based Proof-of-Work (PoW) checkpoints secure historical data, significantly increasing quantum resilience.
-- Each checkpoint involves solving a lattice-based puzzle, specifically a Shortest Vector Problem (SVP), known to resist quantum attacks effectively.
-- The checkpoints establish cryptographic anchors, effectively finalizing previous network states and preventing quantum-enabled historical rewrites.
-- Frequency of checkpoints dynamically determined based on network load and security conditions, allowing responsive protection without slowing bridging.
-- Computational resources allocated through a reinforcement learning system, limiting resource usage and preventing unnecessary escalation of hashing power.
-- Payments for checkpoint computation derived from dedicated fractions of transaction fees, ensuring predictable and sustainable funding.
-## 6. Adaptive Parameterization via Reinforcement Learning
-- System parameters (thresholds, safety margins, resource allocation, checkpoint frequency) continuously optimized through a built-in reinforcement learning algorithm.
-- Real-time adjustments maintain optimal security, performance, and resource efficiency without requiring manual governance.
-## 7. Data Availability
-- Network data is stored via erasure-coded methods, efficiently sampled by nodes, ensuring reliable access and reducing centralization risks.
-- Specialized link-bundlers manage data dissemination and earn rewards by reducing load on validators.
-## 8. Security Guarantees
-### 8.1 Network Safety
-- Safety guaranteed by the collective focus theorem under honest-majority conditions.
-- Impossible for two conflicting transactions to finalize simultaneously.
-### 8.2 Network Liveness
-- Guaranteed by ergodic convergence properties of graph computations.
-- Every valid transaction achieves finality within predictable bounds.
-### 8.3 Economic Security
-- Security backed by staked economic capital rather than raw computational power, making attacks economically unfeasible.
-## 9. Quantum-Safe Hybrid Integration
-- Periodic checkpoints embed quantum-resistant lattice puzzles, providing an additional layer of long-term security.
-- Finality anchored by regular quantum-resilient checkpoints, ensuring historical chain integrity.
-## 10. Implementation Roadmap
-- Phase 1: Launch test network; prototype consensus and economic layers.
-- Phase 2: Integrate lattice checkpoints; optimize resource allocation.
-- Phase 3: Launch public-good computation incentive mechanism.
-- Phase 4: Enhance data availability and bundling structures.
-- Phase 5: Mainnet beta release, continuous adaptive optimizations.
-## Conclusion
+rewards are proportional to the measurable shift in $\pi$:
 
-The Foculus Foundation establishes a secure, scalable, and meaningful blockchain by aligning economic incentives, computation, and consensus. Its unique blend of quantum resilience, adaptive parameterization, and useful computation sets a robust foundation for a decentralized, earth-scale super-intelligence network.
+$$\text{reward}(p) \propto \Delta\pi(p)$$
+
+where $\Delta\pi(p)$ is the change in stationary distribution from adding proof [[particle]] $p$ and its [[cyberlinks]]. all proof types are treated uniformly — [[attention]]-weighted relevance drives economic [[value]]
+
+minted [[tokens]] go to [[focus]] update proofs (backbone of [[consensus]]). auxiliary proofs (checkpoints, availability, compression) share 50% of transaction fees. the other 50% is burned
+
+### damping
+
+to prevent concentration and enable adaptation:
+
+$$\pi_i \leftarrow \pi_i \cdot \gamma^t, \quad \gamma \in (0,1)$$
+
+older or less-endorsed [[particles]] fade. the system forgets noise and retains what matters — [[attention]] as a dynamic, evolving field
+
+### staking layers
+
+| layer | stake | rewarded for | slashed for |
+|---|---|---|---|
+| shard committee | $S_1$ | micro-root signatures | equivocation, invalid root |
+| [[focus]] prover | $S_2$ | valid [[SNARK]] of $\pi$ | invalid or missing proof |
+| beacon committee | $S_3$ | vector-root quorum | double-sign, timeout |
+
+---
+
+## proof types
+
+| proof type | purpose |
+|---|---|
+| [[focus]] update | adds [[cyberlinks]] that shift $\pi$ — backbone of [[consensus]] |
+| checkpoint anchoring | lattice-based anchors for historical finality and quantum resistance |
+| data availability | proves reliable access to [[cybergraph]] data |
+| distillation | abstracts subgraphs for structural efficiency |
+| censorship detection | proves omission of valid [[particles]] |
+| private knowledge injection | zk-proven latent information for privacy-preserving cognition |
+
+---
+
+## sharding (v2)
+
+two-tier commit to push throughput past single-leader ceiling:
+
+1. $K$ shard committees hash-partition the [[cybergraph]]. each signs a micro-root per slot (~200 ms)
+2. a beacon committee aggregates micro-roots into a vector commitment $V_{\text{slot}}$ — single signature, <400 B regardless of $K$
+3. GPU kernels process [[focus]] per-shard; cross-shard [[cyberlinks]] include Merkle proofs
+
+with $K = 50$: ~10⁷ links/s aggregate while per-node load stays flat
+
+safety: adversary must corrupt >1/3 committees and the beacon in the same slot. liveness: holds if ≥2/3 committees per slot are honest
+
+---
+
+## link-bundlers
+
+any node (even without stake) can bundle pending [[cyberlinks]]:
+
+1. collect links from mempool
+2. run one power-iteration step locally, compute $\Delta\hat\pi$
+3. publish bundler block: {links[], $\Delta\hat\pi$, Merkle proofs}
+4. shard committee verifies and includes
+
+bundlers earn per-link fee + bonus proportional to positive $\Delta\hat\pi$. capped and paid after checkpoint to prevent spam. decentralizes data availability — any laptop can be a bundler
+
+---
+
+## quantum resilience
+
+periodic lattice-based checkpoints (shortest vector problem) anchor historical state. frequency is adaptive based on network load. computation funded from transaction fee fraction
+
+safety parameters halt operations if quantum-induced variance exceeds thresholds
+
+---
+
+## core principles
+
+- safety first: no release without proved bound $\text{min\_gap} > 2 \cdot \text{max}(\tau_{\text{variance}})$
+- deterministic threshold: $\tau$ variation capped by on-chain telemetry; nodes halt if exceeded
+- formal verifiability: per-epoch [[SNARK]] proofs of $\pi$ and $\tau$; mismatches are slashable
+- transparency: all parameters ($\kappa$, $q$, $\delta$) on-chain, require super-majority to change
+- observability: every node publishes $\tau_{\text{variance}}$ and focus gap telemetry
+
+---
+
+## roadmap
+
+1. prototype in Go + CUDA (fork of [[go-cyber]])
+2. testnet at 10M edges, 32 validators
+3. mainnet-beta with on-chain $\pi$ proofs ([[zk-SNARK]])
+4. layer-2 rollups using foculus as data-availability oracle
+5. sharded phase-A with vector-root aggregation
+
+---
+
+foculus reframes [[blockchain]] safety as a spectral property of [[attention]] graphs. [[consensus]] is not voted — it is computed
+
+see [[collective focus theorem]] for convergence proofs. see [[tri-kernel]] for the operators. see [[focus flow whitepaper]] for the full protocol specification
