@@ -14,6 +14,6 @@ the fixed point is [[focus]] — what the collective actually attends to
 
 no one assigns it. no one votes on it. it is computed
 
-see [[focus]] for the full definition
+see [[focus]] for the full definition. see [[collective focus theorem]] for convergence proofs
 
 see [[egregore]] for the broader framework
