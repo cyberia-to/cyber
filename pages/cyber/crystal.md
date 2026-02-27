@@ -1,8 +1,9 @@
 ---
 tags: article, cyber, core
 alias: crystal, the crystal
-crystal-type: article
+crystal-type: pattern
 crystal-domain: cyber
+crystal-size: deep
 ---
 # THE CRYSTAL
 
