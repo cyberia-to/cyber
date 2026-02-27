@@ -1,5 +1,6 @@
 ---
 icon: 🏅
+alias: badges
 tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: economics
