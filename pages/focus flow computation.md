@@ -20,6 +20,18 @@ crystal-size: bridge
 | explainability | low | high — trace any $p_i$ to its contributing links |
 | continual learning | catastrophic forgetting | additive — graph only grows |
 
+## the local update rule
+
+every node reads only its neighbours and runs:
+
+$$\Delta p_i = \eta\Big(\sum_{j \in \mathcal{N}(i)} w_{ij}(p_j - p_i) - \partial_{p_i}(\lambda E_{\text{diff},i} + \gamma C_i) + T(1 + \log p_i)\Big)$$
+
+gossip normalisation enforces $\sum_i p_i = 1$. no global softmax, fully local, edge-only. the system converges to [[Boltzmann distribution]] [[equilibrium]]:
+
+$$p_i^* \propto \exp\big(-\beta[E_{\text{spring},i} + \lambda E_{\text{diff},i} + \gamma C_i]\big)$$
+
+this is the equation everything else serves. the [[collective focus theorem]] proves it converges. the [[tri-kernel architecture]] explains why these three energy terms. [[foculus]] turns $p^*$ into finality
+
 ## the stack
 
   - [[cybergraph]] — the substrate: [[particles]] as nodes, [[cyberlinks]] as typed edges (h/d/c)
