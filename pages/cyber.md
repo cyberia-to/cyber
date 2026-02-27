@@ -47,7 +47,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 - [[cyb]] — the immortal robot
 - [[aos]] — self-fulfilling prophecy game
 
-## specification
+## reference
 
 - [[cyber/core]] — full protocol specification
 - [[cyber/bbg]] — authenticated state model
@@ -55,10 +55,10 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 - [[cyber/stark]] — proof system
 - [[cyber/privacy]] — privacy architecture
 - [[cyber/patterns]] — design patterns
+
+## explanations
+
 - [[convergent computation]] — from Turing machines to convergent computation
-
-## research
-
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
