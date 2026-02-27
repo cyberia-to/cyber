@@ -48,8 +48,8 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 [[soft3]] = [[cybergraph]] + [[tru]] + [[neural language]]
 
-- [[rust]], [[rune]], [[datalog]], [[triton]], [[tir]]
-- [[neural]] — implementation
+- [[rust]], [[rune]], [[datalog]], [[triton]], [[tir]] — languages
+- [[neural]] — [[neural language]] implementation
 - [[Bostrom]] — the [[bootloader]] chain
 - [[cyb]] — the immortal robot
 - [[aos]] — self-fulfilling prophecy game
