@@ -26,11 +26,13 @@ no explicit voting. no leader election. [[neurons]] gossip [[cyberlinks]], GPUs 
 
 ## safety
 
+double spend prevention: a [[token]] transfer is a [[particle]]. two conflicting spends of the same [[token]] are conflicting [[particles]]. only one can exceed $\tau$ — the other is pruned at step 4
+
 theorem (no double finality): two conflicting [[particles]] cannot both exceed $\tau$
 
 assumption: honest [[particles]] control $\geq \frac{1}{2} + \delta$ of global $\pi$
 
-proof: probability mass conservation ($\sum \pi_i = 1$) and the honest-majority invariant. if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the assumption
+proof: $\sum \pi_i = 1$. if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the assumption
 
 liveness: ergodicity of $P$ guarantees every valid action accumulates $\pi$ and passes $\tau$ in expected $O(\log(1/\varepsilon)/\lambda)$ iterations, where $\lambda$ is the spectral gap
 
@@ -105,13 +107,6 @@ any node (even without stake) can bundle pending [[cyberlinks]]:
 4. shard committee verifies and includes
 
 bundlers earn per-link fee + bonus proportional to positive $\Delta\hat\pi$. capped and paid after checkpoint to prevent spam. any laptop can be a bundler
-
-## roadmap
-
-1. prototype in Go + CUDA (fork of [[go-cyber]])
-2. testnet at 10M edges, 32 validators
-3. mainnet-beta with on-chain $\pi$ proofs ([[zk-SNARK]])
-4. sharded phase with vector-root aggregation
 
 ---
 
