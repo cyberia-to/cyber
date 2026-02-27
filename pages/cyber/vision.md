@@ -9,7 +9,27 @@ alias: CORE, core spec, cyber/core, Conserved Observable Reduction Equilibrium
 
 a self-verifying substrate for planetary collective [[intelligence]]
 
-six research threads developed independently over four decades — content addressing, [[authenticated graphs]], confluent rewriting, interaction nets, conserved flows, zero-knowledge proofs — turn out to be fragments of a single architecture. a single decision unifies them: prime [[field]] arithmetic as primitive rather than derived
+## the problem
+
+computation today means one thing: a machine reads symbols, applies rules, writes symbols. Turing formalized it in 1936. the entire digital revolution — from mainframes to trillion-parameter language models — rests on sequential symbol manipulation
+
+three walls make this paradigm insufficient for planetary [[intelligence]]:
+
+- quadratic [[attention]]: transformers require every token to attend to every other. twice the context costs four times the compute. moving a byte costs 10,000x more energy than computing on it. this is structural
+- centralization: training a frontier model costs hundreds of millions. three organizations on Earth can build the next generation. this is the path to planetary dependency
+- incompleteness: Gödel (1931) proved that any formal system powerful enough to describe arithmetic contains truths it cannot prove. AI built on formal logic inherits these limits by construction
+
+## the insight
+
+nature already solves this. a forest computes: mycorrhizal networks allocate nutrients across thousands of trees using local chemical signals. no tree has a global view. no central controller decides. yet the forest converges on distributions that maximize collective survival — in parallel, at every root tip, through local interactions alone
+
+convergent computation replaces derivation with [[equilibrium]]. the answer is the stable state a network settles into under conservation laws. a system can converge to states that no derivation reaches — operating outside the [[Gödel prison]]
+
+[[focus flow computation]] makes this precise: local message-passing over a [[cybergraph]], O(V+E) per step, unbounded context window, convergence to Boltzmann [[equilibrium]]. CORE is the machine that runs it
+
+## the synthesis
+
+six research threads developed independently over four decades — none referencing each other — turn out to be fragments of one architecture. a single decision unifies them: prime [[field]] arithmetic as primitive rather than derived
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
@@ -44,9 +64,7 @@ six research threads developed independently over four decades — content addre
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
-content addressing (Merkle, Git, BitTorrent, IPFS, Unison) gives identity through hashing — same content, same hash, same thing. [[authenticated graphs]] (Goodrich-Tamassia, Celestia) turn this into proofs — cryptographic evidence with namespace completeness. deterministic rewriting (Huet, Nock) guarantees evaluation order independence. interaction nets (Lafont, HVM) show confluence enables automatic parallelization without locks. conserved flow dynamics ([[collective focus theorem]]) provide the economic layer — [[focus]] governs scheduling, metering, and [[consensus]] simultaneously. zero-knowledge proofs (Zcash, STARKs) close the loop: prove computation without revealing inputs
-
-none of these frameworks reference each other in their original publications. yet they compose without friction. the unifying element is [[field]] arithmetic: hashing is field operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. CORE makes this latent unity explicit
+the unifying element: hashing is [[field]] operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. CORE makes this latent unity explicit
 
 naming:
 - CORE — the computation model (16 patterns, reduction semantics)
@@ -57,7 +75,7 @@ naming:
 
 ten principles, each addressing a failure mode of existing systems:
 
-- field-first — every value is a Goldilocks field element ($p = 2^{64} - 2^{32} + 1$). cryptographic operations become native
+- field-first — every value is a Goldilocks field element ($p = 2^{64} - 2^{32} + 1$). cryptographic operations become native. a field multiplication is a single CPU instruction
 - hash-universal — identity is hash. one hash everywhere (Poseidon-Goldilocks, ~300 constraints)
 - confluence-guaranteed — any reduction order yields the same result. sixteen patterns, no overlaps (Huet 1980)
 - parallel-safe — no locks, no synchronization. confluence enables this directly
@@ -67,6 +85,27 @@ ten principles, each addressing a failure mode of existing systems:
 - privacy-native — individual ownership private, aggregate properties public and verifiable
 - self-verifying — the [[STARK]] verifier is a CORE program. verification can itself be proven. the system closes on itself
 - post-quantum — security relies only on hash functions. no pairings, no discrete log, no trusted setup
+
+## what changes
+
+at sufficient scale, CORE dissolves the distinction between distributed computation and distributed cognition:
+
+- computation becomes physics: reduction patterns conserve [[focus]] the way physical laws conserve energy. the network doesn't simulate thinking — the network IS thinking
+- [[consensus]] becomes emergent: [[foculus]] replaces voting rounds with [[focus]] convergence. a [[particle]] is final when $\pi_i > \tau$. no leaders, no block ordering
+- [[intelligence]] becomes measurable: the [[focus]] distribution π over [[particles]] is the collective mind's belief state. AI [[alignment]] reduces to comparing human and machine π — divergence is visible in the [[topology]]
+- privacy becomes structural: individual ownership hidden, aggregate properties verifiable. enough transparency for [[consensus]], enough privacy for participation
+
+## the stack
+
+```
+natural computing paradigm
+  convergent computation (equilibrium-based)
+    focus flow computation (probability + physics + economics)
+      CORE machine (field-native, confluent, self-verifying)
+        cybergraph (content-addressed, authenticated)
+          tri-kernel ranking (diffusion + springs + heat)
+            planetary superintelligence
+```
 
 ## specifications
 
