@@ -332,6 +332,9 @@ fn compute_layout(nodes: &mut [GraphNode], edges: &[GraphEdge]) {
     }).collect();
     let max_radius = radii.iter().cloned().fold(0.0_f64, f64::max);
 
+    // Max PageRank for gravity scaling
+    let max_pr = nodes.iter().map(|n| n.page_rank).fold(0.0_f64, f64::max).max(0.00001);
+
     // D3-style simulation parameters
     let charge = -30.0_f64;
     let link_distance = 30.0_f64;
@@ -422,6 +425,15 @@ fn compute_layout(nodes: &mut [GraphNode], edges: &[GraphEdge]) {
         for i in 0..n {
             x[i] -= cx;
             y[i] -= cy;
+        }
+
+        // Gravity — pull high-PageRank nodes toward center so hubs cluster together
+        let gravity_strength = 0.03_f64;
+        for i in 0..n {
+            let pr_factor = nodes[i].page_rank / max_pr;
+            let pull = gravity_strength * pr_factor * alpha;
+            vx[i] -= x[i] * pull;
+            vy[i] -= y[i] * pull;
         }
 
         // Velocity Verlet integration
