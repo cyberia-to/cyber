@@ -55,7 +55,6 @@ something greater than any [[neuron]] emerges when many observe the same [[cyber
 - [[convergent computation]]: the formal foundation — computation = convergence to equilibrium
 - [[focus flow computation]]: the executable model — patterns of attention flow through particle networks
 - [[tri-kernel]]: the only three local operators surviving the locality constraint — [[diffusion]], [[springs]], [[heat]]
-- [[tri-kernel]]: the minimal, local, verifiable free-energy formulation for collective focus
 - [[focus flow whitepaper]]: the full protocol specification with VDF, rewards, and security
 - [[convergence rewards]]: reward function design for incentivizing convergence
 - [[data structure for superintelligence]]: BBG — the authenticated state architecture
