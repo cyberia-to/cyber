@@ -1,6 +1,6 @@
 ---
 icon: ⛑
-tags: cyber, core
+tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---

@@ -1,6 +1,6 @@
 ---
 alias: colearning
-tags: cyber, core
+tags: cyber
 crystal-type: process
 crystal-domain: biology
 ---

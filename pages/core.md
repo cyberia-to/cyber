@@ -17,9 +17,9 @@ structure: [[cyberlink]], [[cybergraph]], [[signal]], [[step]], [[finality]]
 
 agents: [[neuron]], [[focus]], [[token]], [[costly signal]]
 
-process: [[observation]], [[learning]], [[inference]], [[training]], [[collective learning]]
+process: [[observation]], [[learning]], [[inference]], [[training]]
 
-meaning: [[knowledge]], [[explicit knowledge]], [[implicit knowledge]], [[knowledge theory]]
+meaning: [[knowledge]]
 
 convergence: [[truth machine]], [[cyberank]], [[intelligence]], [[cyber]]
 
