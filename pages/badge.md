@@ -5,6 +5,6 @@ crystal-type: entity
 crystal-domain: economics
 crystal-size: atom
 ---
-unique and immovable [[token]] bound to a [[neuron]] forever — achievement markers, credentials, attestations
+unique and immovable [[token]] bound to a [[neuron]] forever. non-transferable [[proof]] — achievements, credentials, attestations. the immovable counterpart of [[score]]
 
 discover all [[concepts]]

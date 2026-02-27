@@ -5,6 +5,6 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: enzyme
 ---
-what a [[neuron]] knows and never reveals. the root of identity: lose the spell, the [[neuron]] ceases to exist. see [[spell/practice]]
+what a [[neuron]] knows and never reveals. [[hash]] of [[spell]] yields [[signature]] — the proof of identity. lose the spell, the [[neuron]] ceases to exist. see [[spell/practice]]
 
 discover all [[concepts]]
