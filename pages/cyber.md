@@ -65,6 +65,8 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 - [[focus flow computation]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
+- [[universal law]] — exponential optimality under constraint
+- [[foculus]] — focus-based consensus without voting
 - [[future of computation]] — from Turing machines to planetary superintelligence
 
 ## learn
