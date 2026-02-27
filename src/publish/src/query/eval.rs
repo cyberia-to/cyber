@@ -19,15 +19,9 @@ fn eval_set(expr: &QueryExpr, store: &PageStore) -> HashSet<PageId> {
             let tag_lower = tag.to_lowercase();
             let mut result = HashSet::new();
 
-            // Check tag_index
+            // Strictly match pages whose frontmatter tags contain this value
             if let Some(ids) = store.tag_index.get(&tag_lower) {
                 result.extend(ids.iter().cloned());
-            }
-
-            // Also check forward_links (pages that reference this tag as a [[link]])
-            let tag_slug = slugify_page_name(tag);
-            if let Some(backlinks) = store.backlinks.get(&tag_slug) {
-                result.extend(backlinks.iter().cloned());
             }
 
             result
