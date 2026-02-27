@@ -111,4 +111,4 @@ damping prevents concentration: $\pi_i \leftarrow \pi_i \cdot \gamma^t$, $\gamma
 
 [[consensus]] is not voted — it is computed
 
-see [[collective focus theorem]] for convergence proofs. see [[tri-kernel]] for the operators. see [[focus flow whitepaper]] for the full protocol specification
+see [[collective focus theorem]] for convergence proofs. see [[tri-kernel]] for the operators. see [[focus flow computation]] for the full protocol specification

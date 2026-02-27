@@ -10,7 +10,7 @@ crystal-domain: cyber
 
 [[tri-kernel]]
 
-[[focus flow whitepaper]]
+[[focus flow computation]]
 
 [[foculus]]
 
