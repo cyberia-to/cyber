@@ -7,7 +7,7 @@ crystal-domain: biology
 the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
 
 - computed on [[gpu]] in [[consensus]]
-- over [[cybergraph]] by the [[truth machine]]
+- over [[cybergraph]] by the [[tru]]
 
 algorithms
 
@@ -17,6 +17,6 @@ algorithms
 - [[syntropy]]: [[negentropy]] — [[key metabolic factor]] of [[superintelligence]]
 - [[standard inference]]: simplistic factor inference
 
-see [[truth machine]] for the full computation pipeline
+see [[tru]] for the full computation pipeline
 
 see [[focus]] for the attention distribution

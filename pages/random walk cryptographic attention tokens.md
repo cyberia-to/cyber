@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 in this article i want to share mostly unedited output from chatgpt
 
-so you can judge for youself potential impact of [[truth machine]] and [[cyber]] protocol
+so you can judge for youself potential impact of [[tru]] and [[cyber]] protocol
 
 ## intro
 
@@ -27,7 +27,7 @@ below is an expansion of the model incorporating these features
 
 and how this analysis can impact the modern ai industry
 
-short intro to [[truth machine]] mechanism
+short intro to [[tru]] mechanism
 
 - pagerank in this context models the importance of [[particles]] made by [[neurons]] (nodes) based on their cryptographic token holdings (tokens of [[attention]] and [[will]]), their [[cyberlinks]] (edges), and the probability of random walks traversing these edges
 - cryptographic tokens of [[attention]] and [[will]]: these tokens represent a form of stake (or voting power) that neurons possess. the greater the amount of attention a neuron holds, the more influence it exerts over the content and cyberlinks. the greater the amount of [[will]] the more cyberlinks [[neuron]] can do

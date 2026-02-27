@@ -16,7 +16,7 @@ implementations
 - [[karma]]-gated rewards: high-[[karma]] [[neurons]] earn more from link creation
 - [[focus]] as cost: every [[cyberlink]] costs [[focus]], ensuring only intentional links enter the [[cybergraph]]
 
-the game design ensures the [[truth machine]] improves over time — the more neurons learn, the better [[cyberank]] gets
+the game design ensures the [[tru]] improves over time — the more neurons learn, the better [[cyberank]] gets
 
 see [[collective learning]] for the group-level dynamics
 

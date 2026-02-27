@@ -19,7 +19,7 @@ how it works
 
 - a [[neuron]] types a query → oracle finds relevant [[particles]] ranked by [[cyberank]]
 - results reflect the [[collective intelligence]] of all [[neurons]] who created [[cyberlinks]]
-- the ranking is the output of the [[truth machine]] — no ads, no manipulation
+- the ranking is the output of the [[tru]] — no ads, no manipulation
 
 two key mechanics
 

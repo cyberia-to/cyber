@@ -7,4 +7,4 @@ crystal-domain: cyber
 ---
 [[consensus]] on probability of [[particles]] [[observation]] in [[context]]
 
-result of [[truth machine]] computations
+result of [[tru]] computations

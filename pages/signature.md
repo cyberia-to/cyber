@@ -13,6 +13,6 @@ uses [[asymmetric encryption]] involving a pair of keys
 
 every [[cyberlink]] carries a signature — this is what makes [[knowledge]] in the [[cybergraph]] authenticated
 
-without signatures, the [[truth machine]] would rank anonymous noise; with them, [[karma]] traces back to real [[neurons]]
+without signatures, the [[tru]] would rank anonymous noise; with them, [[karma]] traces back to real [[neurons]]
 
 discover all [[concepts]]

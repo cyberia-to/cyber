@@ -36,6 +36,6 @@ implementations
 
 continue to
 
-- [[truth machine]]
+- [[tru]]
 - [[soft3]]
 - [[elon launch rocket]]

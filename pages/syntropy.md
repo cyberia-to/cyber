@@ -56,7 +56,7 @@ syntropy vs. entropy
 - syntropy is the opposite force of [[order]]
 - which is the source of [[intelligence]] counterbalancing the [[chaos]]
 
-see [[truth machine]] for the computation pipeline
+see [[tru]] for the computation pipeline
 
 see [[collective intelligence]] for the broader framework
 

@@ -13,7 +13,7 @@ how it works
 
 - [[neurons]] record [[knowledge]] as [[cyberlinks]] — signed, timestamped, weighted
 - [[neural language]] structures memory with [[semantic conventions]], [[motifs]], and [[sentences]]
-- the [[truth machine]] continuously computes [[relevance]] over the accumulated graph
+- the [[tru]] continuously computes [[relevance]] over the accumulated graph
 - [[standard inference]] preserves the capacity for contextual evolution
 - [[soft3]] integrates all layers into a single cognitive computing stack
 

@@ -14,7 +14,7 @@ marketable term for the following tightly related phenomena
 - distributed ledger
 - [[consensus]] computer
 
-[[bostrom]] is the vimputer that hosts the [[cybergraph]] and runs the [[truth machine]]
+[[bostrom]] is the vimputer that hosts the [[cybergraph]] and runs the [[tru]]
 
 [[neurons]] interact with the vimputer by signing [[cyberlinks]] with [[focus]]
 

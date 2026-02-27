@@ -14,7 +14,7 @@ collective probabilistic computation stack for [[superintelligence]]
 components
 
 - [[cybergraph]]: the [[knowledge]] substrate
-- [[truth machine]]: the [[tri-kernel]] running in [[consensus]]
+- [[tru]]: the [[tri-kernel]] running in [[consensus]]
 - [[neural language]]: [[semantic conventions]], [[motifs]], and [[sentences]] over the graph
 - [[bootloader]]: the proving ground ([[bostrom]])
 - [[learning incentives]]: reward mechanisms for growing the graph ([[cybernet]])

@@ -25,6 +25,6 @@ crystal-domain: cyber
 	- must interact in any [[intelligent]] system
 	- key to [[superintelligence]]
 - go on to dive into
-	- [[cybergraph]] and [[truth machine]]
+	- [[cybergraph]] and [[tru]]
 	- as beautiful counterpart [[probabilistic model]] for [[llm]]
 	- in a modern [[soft3 stack]]

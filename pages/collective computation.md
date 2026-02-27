@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 many agents contributing partial computations toward a shared result
 
-in [[cyber]]: [[neurons]] submit [[cyberlinks]], the [[truth machine]] runs the [[tri-kernel]] in [[consensus]], and [[focus]] converges
+in [[cyber]]: [[neurons]] submit [[cyberlinks]], the [[tru]] runs the [[tri-kernel]] in [[consensus]], and [[focus]] converges
 
 each agent sees only its local neighborhood. the global distribution emerges from the aggregate
 
