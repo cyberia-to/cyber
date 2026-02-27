@@ -16,97 +16,99 @@ the [[collective focus theorem]] proves that token-weighted [[random walk]] on a
 
 no explicit voting. no leader election. [[neurons]] gossip [[cyberlinks]], GPUs iterate $\pi$, and finality emerges from the [[topology]] of [[attention]]
 
+## network model
+
+foculus operates in partial synchrony: messages arrive within an unknown but finite bound $\Delta$. during asynchronous periods (partitions), no new [[particles]] finalize — but no conflicting [[particles]] can finalize either, because local $\pi$ cannot reach $\tau$ without sufficient global connectivity. safety holds always. liveness resumes when connectivity restores
+
+## state
+
+each [[neuron]] maintains:
+
+  - the local [[cybergraph]] $G = (V, E)$ — [[particles]] as vertices, [[cyberlinks]] as weighted edges
+  - the current estimate $\hat\pi$ — converging toward the true stationary distribution
+  - the finality set $F$ — [[particles]] whose $\pi_i$ has crossed $\tau$
+
+a [[particle]] is in one of three states: pending → final → pruned. transitions are irreversible
+
+## conflict
+
+two [[particles]] conflict when they consume the same resource: the same [[token]] spent twice, or contradictory [[cyberlinks]] from the same [[neuron]] in the same slot
+
+conflict detection is local: each [[neuron]] tags conflicting [[particles]] upon receipt. conflicting [[particles]] compete for $\pi$ mass — the graph routes [[attention]] to one or the other, never both simultaneously
+
+## fork choice
+
+$\pi$ is the fork choice rule. when conflicts exist, the [[particle]] with higher $\pi_i$ is the canonical choice. this is not a vote — it is the outcome of the entire network's link structure converging through the [[tri-kernel]]
+
+why this works: $\pi$ integrates all [[cyberlinks]] from all [[neurons]], weighted by [[token]] stake. manipulating $\pi$ requires controlling the topology of the [[cybergraph]] itself — which costs real [[tokens]]
+
 ## protocol
 
 1. gossip — [[neurons]] broadcast new [[particles]] + [[cyberlinks]]
-2. local update — every ~100 ms, GPU-accelerated sparse-matrix×vector refines $\pi$
-3. finalize — [[particle]] $i$ becomes final when $\pi_i > \tau(t)$, where $\tau(t) = \mu_\pi + \kappa\sigma_\pi$, $\kappa \in [1,2]$
-4. prune — conflicting [[particles]] with $\pi \leq \tau$ are discarded
+2. local update — every ~100 ms, GPU-accelerated sparse-matrix×vector refines $\hat\pi$
+3. finalize — [[particle]] $i$ becomes final when $\hat\pi_i > \tau(t)$, where $\tau(t) = \mu_\pi + \kappa\sigma_\pi$, $\kappa \in [1,2]$
+4. prune — conflicting [[particles]] with $\hat\pi \leq \tau$ are discarded
 5. reward — validator $v$ earns proportional to $\Delta\pi$ contributed
 
 ## safety
 
-double spend prevention: a [[token]] transfer is a [[particle]]. two conflicting spends of the same [[token]] are conflicting [[particles]]. only one can exceed $\tau$ — the other is pruned at step 4
-
 theorem (no double finality): two conflicting [[particles]] cannot both exceed $\tau$
 
-assumption: honest [[particles]] control $\geq \frac{1}{2} + \delta$ of global $\pi$
+assumption: honest [[neurons]] control $\geq \frac{1}{2} + \delta$ of staked [[tokens]]
 
-proof: $\sum \pi_i = 1$. if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the assumption
+this bounds their share of $\pi$ from below: honest [[neurons]] create the majority of weighted [[cyberlinks]], so honest [[particles]] attract the majority of random-walk mass. the adversary's conflicting [[particle]] is starved of inbound links
 
-liveness: ergodicity of $P$ guarantees every valid action accumulates $\pi$ and passes $\tau$ in expected $O(\log(1/\varepsilon)/\lambda)$ iterations, where $\lambda$ is the spectral gap
+proof: $\sum \pi_i = 1$. if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the honest-majority bound
+
+double spend prevention follows directly: a [[token]] transfer is a [[particle]]. two conflicting spends are conflicting [[particles]]. only one crosses $\tau$
+
+## liveness
+
+ergodicity of the transition matrix $P$ guarantees every valid [[particle]] accumulates $\pi$ mass over time
+
+convergence rate depends on the spectral gap $\lambda$ of $P$: expected time to finality is $O(\log(1/\varepsilon)/\lambda)$ iterations. larger spectral gap means faster finality. dense, well-connected [[cybergraphs]] have larger gaps
+
+during partitions: $\lambda$ drops for the disconnected subgraph, finality slows or halts. this is the correct behavior — the system refuses to finalize when it lacks global information
+
+## sybil resistance
+
+$\pi$ is weighted by staked [[tokens]], not by node count. creating 1000 [[neurons]] with zero stake produces zero $\pi$ influence. creating fake [[cyberlinks]] without stake backing produces negligible mass shifts
+
+the cost of attacking $\pi$ is the cost of acquiring $> \frac{1}{2}$ of staked [[tokens]] — same economic security model as proof-of-stake, but the attack surface is the graph topology rather than a voting protocol
+
+## finality
+
+foculus provides deterministic finality: once $\pi_i > \tau$, the [[particle]] is final. no rollbacks, no probabilistic confirmation depth
+
+the threshold $\tau(t) = \mu_\pi + \kappa\sigma_\pi$ adapts to the current distribution. when the network is decisive (low variance), $\tau$ is low and finality is fast. when the network is uncertain (high variance), $\tau$ rises and finality slows — the system self-regulates
 
 ## performance
 
 | metric | classic BFT | nakamoto | foculus |
 |---|---|---|---|
 | finality | 5-60 s | ~60 min | 1-3 s |
-| throughput | 1k-10k tx/s | ~10 tx/s | 10⁶+ tx/s |
-| validator scale | 10²-10³ | unbounded | unbounded (GPU) |
-| communication | high | medium | ultra-low |
-| fault tolerance | 1/3 stake | 51% hash | ≥1/2 $\pi$ |
+| throughput | 1k-10k tx/s | ~10 tx/s | bounded by GPU |
+| validator scale | 10²-10³ | unbounded | unbounded |
+| fault tolerance | 1/3 stake | 51% hash | 1/2 $\pi$ |
 
-single iteration: $O(|E| + |V|)$ sparse op. an A100 sustains ~50M edges at 40 Hz
-
-latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN
+single iteration: $O(|E| + |V|)$ sparse op. latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN
 
 ## economics
 
 rewards proportional to the measurable shift in $\pi$:
 
-$$\text{reward}(p) \propto \Delta\pi(p)$$
+$$\text{reward}(v) \propto \Delta\pi(v)$$
 
-where $\Delta\pi(p)$ is the change in stationary distribution from adding proof [[particle]] $p$ and its [[cyberlinks]]. all proof types treated uniformly — [[attention]]-weighted relevance drives economic [[value]]
+validators who add [[cyberlinks]] that meaningfully shift the stationary distribution earn more. this aligns incentives: the network rewards contributions to convergence, not mere participation
 
-minted [[tokens]] go to [[focus]] update proofs (backbone of [[consensus]]). auxiliary proofs (checkpoints, availability, compression) share 50% of transaction fees. the other 50% is burned
+damping prevents concentration: $\pi_i \leftarrow \pi_i \cdot \gamma^t$, $\gamma \in (0,1)$. older or less-endorsed [[particles]] fade. the system forgets noise and retains what matters
 
-damping prevents concentration:
+## open questions
 
-$$\pi_i \leftarrow \pi_i \cdot \gamma^t, \quad \gamma \in (0,1)$$
-
-older or less-endorsed [[particles]] fade. the system forgets noise and retains what matters
-
-### staking layers
-
-| layer | stake | rewarded for | slashed for |
-|---|---|---|---|
-| shard committee | $S_1$ | micro-root signatures | equivocation, invalid root |
-| [[focus]] prover | $S_2$ | valid [[SNARK]] of $\pi$ | invalid or missing proof |
-| beacon committee | $S_3$ | vector-root quorum | double-sign, timeout |
-
-## proof types
-
-| type | purpose |
-|---|---|
-| [[focus]] update | adds [[cyberlinks]] that shift $\pi$ — backbone of [[consensus]] |
-| checkpoint | lattice-based anchors for historical finality |
-| data availability | proves reliable access to [[cybergraph]] data |
-| distillation | abstracts subgraphs for structural efficiency |
-| censorship detection | proves omission of valid [[particles]] |
-| private knowledge | zk-proven latent information for privacy-preserving cognition |
-
-## sharding
-
-two-tier commit to push throughput past single-node ceiling:
-
-1. $K$ shard committees hash-partition the [[cybergraph]], each signs a micro-root per slot (~200 ms)
-2. beacon committee aggregates micro-roots into a vector commitment — single signature, <400 B regardless of $K$
-3. GPU kernels process [[focus]] per-shard; cross-shard [[cyberlinks]] include Merkle proofs
-
-at $K = 50$: ~10⁷ links/s aggregate while per-node load stays flat
-
-safety: adversary must corrupt >1/3 committees and the beacon in the same slot
-
-## link-bundlers
-
-any node (even without stake) can bundle pending [[cyberlinks]]:
-
-1. collect links from mempool
-2. run one power-iteration step locally, compute $\Delta\hat\pi$
-3. publish bundle: links[], $\Delta\hat\pi$, Merkle proofs
-4. shard committee verifies and includes
-
-bundlers earn per-link fee + bonus proportional to positive $\Delta\hat\pi$. capped and paid after checkpoint to prevent spam. any laptop can be a bundler
+  - partition recovery: when two halves of the network reconnect, how quickly does $\pi$ reconverge? bounded by spectral gap, but practical latency under adversarial partitions is uncharacterized
+  - threshold gaming: can an attacker oscillate $\sigma_\pi$ to manipulate $\tau$? the adaptive threshold needs formal bounds on adversarial variance injection
+  - bootstrapping: a cold network has few [[cyberlinks]] and small spectral gap — finality may be slow until the [[cybergraph]] reaches sufficient density
+  - MEV: ordering within a finality window is determined by $\pi$ dynamics, not by a sequencer — but extractable value from link ordering needs analysis
 
 ---
 
