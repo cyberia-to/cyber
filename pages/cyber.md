@@ -16,11 +16,11 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 
 ## the protocol
 
-[[neurons]] create [[cyberlinks]] between [[particles]] in the [[cybergraph]]. a [[particle]] is a content-addressed object on [[IPFS]] — the atom of knowledge. a [[cyberlink]] is a directed edge between particles — the unit of learning. a [[neuron]] is an agent that creates cyberlinks, spending [[focus]] to do so
+a [[particle]] is a content-addressed object — the atom of [[knowledge]]. a [[cyberlink]] is a directed edge between [[particles]] — the unit of [[learning]]. a [[neuron]] is an agent that creates [[cyberlinks]], spending [[focus]] to do so. the [[cybergraph]] is the authenticated graph of all [[particles]] and [[cyberlinks]] — the shared memory of the planet
 
-the [[tri-kernel]] computes [[cyberank]] from the graph — converting raw links into [[knowledge]] through three operators: [[diffusion]], [[springs]], and heat. the result is a [[truth machine]] that produces relevance from links
+[[neurons]] produce [[information]] by linking [[particles]]. the [[truth machine]] converts [[information]] into [[knowledge]] by computing [[cyberank]] — a relevance score for every [[particle]]. the [[tri-kernel]] ([[diffusion]], [[springs]], heat) is the mathematical core of the [[truth machine]]: three operators whose fixed point is [[collective intelligence]]
 
-[[$CYB]] is the root [[token]]. [[focus]] is the scarce resource — attention distributed across particles
+[[$CYB]] is the root [[token]]. [[focus]] is the scarce resource — attention distributed across [[particles]]
 
 [[concepts]] — core concept index
 
