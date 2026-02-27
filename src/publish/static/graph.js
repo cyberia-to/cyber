@@ -102,6 +102,44 @@
       .slice(0, 20)
       .map(([tag]) => tag);
 
+    // Restore filter from URL params
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlTags = urlParams.get('tags');
+    if (urlTags) {
+      urlTags.split(',').forEach(t => {
+        const trimmed = t.trim();
+        if (trimmed && tagCounts[trimmed]) activeTags.add(trimmed);
+      });
+      updateVisibleNodes();
+    }
+
+    function syncFilterToURL() {
+      const url = new URL(window.location);
+      if (activeTags.size > 0) {
+        url.searchParams.set('tags', Array.from(activeTags).join(','));
+      } else {
+        url.searchParams.delete('tags');
+      }
+      history.replaceState(null, '', url);
+    }
+
+    // Persist viewport in sessionStorage
+    const VIEWPORT_KEY = 'graph-viewport';
+    function saveViewport() {
+      try {
+        sessionStorage.setItem(VIEWPORT_KEY, JSON.stringify({
+          x: transform.x, y: transform.y, k: transform.k
+        }));
+      } catch (e) {}
+    }
+    function loadViewport() {
+      try {
+        const raw = sessionStorage.getItem(VIEWPORT_KEY);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {}
+      return null;
+    }
+
     function updateVisibleNodes() {
       if (activeTags.size === 0) {
         visibleNodes = null;
@@ -128,6 +166,7 @@
         updateVisibleNodes();
         updatePillStates();
         updateStats();
+        syncFilterToURL();
         draw();
       });
       bar.appendChild(allPill);
@@ -146,6 +185,7 @@
           updateVisibleNodes();
           updatePillStates();
           updateStats();
+          syncFilterToURL();
           draw();
         });
         bar.appendChild(pill);
@@ -264,6 +304,8 @@
       }));
 
       buildFilterUI();
+      updatePillStates();
+      updateStats();
       draw();
 
       // Enable zoom + interactions
@@ -271,9 +313,17 @@
         .scaleExtent([0.1, 20])
         .on('zoom', (event) => {
           transform = event.transform;
+          saveViewport();
           draw();
         });
       d3.select(canvas).call(zoom);
+
+      // Restore saved viewport
+      const saved = loadViewport();
+      if (saved) {
+        transform = d3.zoomIdentity.translate(saved.x, saved.y).scale(saved.k);
+        d3.select(canvas).call(zoom.transform, transform);
+      }
 
       setupInteractions();
     }
