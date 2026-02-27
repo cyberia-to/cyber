@@ -822,6 +822,27 @@ hr {
     opacity: 0.6;
 }
 
+.crystal {
+    display: inline-block;
+    padding: 0.15em 0.6em;
+    border-radius: 1em;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    border: 1px solid;
+}
+
+.crystal-type {
+    color: #b48ead;
+    border-color: rgba(180, 142, 173, 0.35);
+    background: rgba(180, 142, 173, 0.08);
+}
+
+.crystal-domain {
+    color: #88c0d0;
+    border-color: rgba(136, 192, 208, 0.35);
+    background: rgba(136, 192, 208, 0.08);
+}
+
 .page-date {
     font-size: 0.85rem;
     opacity: 0.6;

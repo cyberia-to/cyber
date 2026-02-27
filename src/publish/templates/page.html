@@ -25,13 +25,23 @@ content %}
                 >{{ alias }}</span
             >{% endfor %}
         </div>
-        {% endif %} {% if page.tags %}
+        {% endif %} {% if page.tags or page.meta['crystal-type'] or page.meta['crystal-domain'] %}
         <div class="page-tags">
             {% for tag in page.tags %}
             <a href="/{{ tag | slugify }}" class="tag"
                 >{{ tag }}</a
             >
             {% endfor %}
+            {% if page.meta['crystal-type'] %}
+            <span class="crystal crystal-type"
+                >{{ page.meta['crystal-type'] }}</span
+            >
+            {% endif %}
+            {% if page.meta['crystal-domain'] %}
+            <span class="crystal crystal-domain"
+                >{{ page.meta['crystal-domain'] }}</span
+            >
+            {% endif %}
         </div>
         {% endif %} {% if page.date %}
         <time class="page-date" datetime="{{ page.date }}"
