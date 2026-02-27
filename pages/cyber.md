@@ -15,15 +15,21 @@ cyber is [[egregore]]: shared memory with weights. [[neurons]] — humans, AIs, 
 
 every agent that links makes the graph smarter. every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds. the graph speaks [[neural language]] — the first [[language]] native to both humans and machines. [[names]] turn the graph into a [[file]] system anyone can address. AI [[alignment]] becomes measurable: compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]
 
-## the protocol
+## primitives
 
-[[particle]], [[neuron]], [[cyberlink]], [[token]], [[focus]] — five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. [[$CYB]] is the root [[token]]. see [[intelligence]] for the loop, [[concepts]] for the full index
+- [[particle]] — content-addressed node (IPFS hash), a unit of [[knowledge]]
+- [[neuron]] — agent (public key) that signs edges
+- [[cyberlink]] — signed, weighted directed edge between [[particles]]
+- [[token]] — non-negative weight controlling influence
+- [[focus]] — emergent equilibrium over [[particles]], conserved to 1
 
-## knowledge architecture
+five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. see [[intelligence]] for the loop, [[concepts]] for the full index
 
-[[cyber/crystal]] — the seed: 5,040 irreducible [[particles]], five axioms, one grammar
-[[neural language]] — [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
-[[cyber/metagraph]] — crystal → cybergraph → network of graphs
+## knowledge
+
+- [[cyber/crystal]] — the seed: 5,040 irreducible [[particles]], five axioms, one grammar
+- [[neural language]] — [[semcons]], [[sentences]], [[motifs]], [[names]], [[linkchains]]
+- [[cyber/metagraph]] — crystal → cybergraph → network of graphs
 
 ## [[cybernomics]]
 
@@ -38,7 +44,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 - [[cip]] — cyber improvement proposals
 - [[senate]] — governance system of [[bootloader]]
 
-## the stack
+## stack
 
 [[soft3]] = [[cybergraph]] + [[tru]] + [[neural language]]
 
@@ -48,25 +54,25 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 - [[cyb]] — the immortal robot
 - [[aos]] — self-fulfilling prophecy game
 
-## reference
+## specifications
 
 - [[cyber/core]] — full protocol specification
 - [[cyber/bbg]] — authenticated state model
 - [[cyber/focus]] — focus dynamics and conservation laws
+- [[cyber/tri-kernel]] — tri-kernel operator specification
 - [[cyber/stark]] — proof system
 - [[cyber/privacy]] — privacy architecture
 - [[cyber/patterns]] — design patterns
-- [[cyber/tri-kernel]] — tri-kernel operator specification
 
 ## explanations
 
-- [[collective focus theorem]] — convergence proofs for tri-kernel
-- [[tri-kernel architecture]] — why diffusion, springs, and heat are the basis for collective intelligence
-- [[focus flow computation]] — the focus flow computation paper
-- [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[theoretical foundations]] — the mathematical framework
-- [[universal law]] — exponential optimality under constraint
+- [[collective focus theorem]] — convergence proofs for tri-kernel
+- [[tri-kernel architecture]] — why diffusion, springs, and heat
+- [[focus flow computation]] — local message-passing that replaces global matrix ops
 - [[foculus]] — focus-based consensus without voting
+- [[universal law]] — exponential optimality under constraint
+- [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[future of computation]] — from Turing machines to planetary superintelligence
 
 ## learn
