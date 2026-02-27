@@ -3,6 +3,6 @@ tags: module
 crystal-type: measure
 crystal-domain: cyber
 ---
-The ranking module computes per-[[particle]] scores from the [[cybergraph]].
+the ranking module computes per-[[particle]] scores from the [[cybergraph]]. the output is [[cyberank]]
 
-The current implementation ([[cyberank]]) uses a tri-kernel approach: diffusion + springs + heat kernel. The mathematical foundation is the [[cft]]. The engineering specification for [[focus]] dynamics, conservation laws, and convergence lives in [[cyber/focus]].
+the current implementation uses the [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat kernel]]. convergence guaranteed by the [[collective focus theorem]]. engineering specification for [[focus]] dynamics lives in [[cyber/focus]]
