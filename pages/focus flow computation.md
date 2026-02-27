@@ -57,7 +57,7 @@ complexity per step: $O(|E| + |V|)$. context window is unbounded — it is the e
   - [[tri-kernel]] — the physics: [[diffusion]] + [[springs]] + [[heat kernel]] evolve $p$ toward $p^*$
   - [[CORE]] — the execution: 16 deterministic reduction patterns over Goldilocks field
   - [[foculus]] — the consensus: $\pi > \tau$ finalizes [[particles]] without leaders or blocks
-  - [[economic model]] — the incentives: rewards $\propto \Delta\pi$, fees burned
+  - [[cyber/tokenomics]] — the incentives: rewards $\propto \Delta\pi$, fees burned
 
 each layer is specified independently. together they form a self-organizing system where [[computation]], [[inference]], and [[consensus]] are the same process
 

@@ -1,63 +1,105 @@
 ---
-tags: cyber, cybernomics
+tags: cyber, cybernomics, cip
 crystal-type: entity
 crystal-domain: economics
-alias: cyber tokenomics, cyber economics
+crystal-size: article
+alias: cyber tokenomics, cyber economics, economic model
+status: draft
 ---
 # cyber tokenomics
 
-the economic design of [[cyber]] — how [[tokens]], [[focus]], [[karma]], and [[learning incentives]] create a self-sustaining [[knowledge]] economy
+the economic design of [[cyber]] — multiple [[tokens]], multiple mechanisms, one self-sustaining [[knowledge]] economy
 
 grounded in [[cybernomics]] foundations: [[basic token operations]], [[supply and demand]] [[equilibrium]], [[bonding curves]]
 
-## core model
+## tokens
 
-[[economic model]] — the 7-point spec: minting, staking, burn, fees, yield curve, reputation
+[[h based economy]] — dual-token CYB/H: scarce [[value]] anchor + [[liquidity]] engine
 
-[[h based economy]] — dual-token CYB/H: scarce value anchor + liquidity engine
+[[learning tokens]] — will ([[bandwidth]]), [[attention]] (rank influence), [[karma]] (reputation) as feedback to [[superintelligence]]
 
-[[learning tokens]] — will, attention, karma as feedback to [[superintelligence]]
+[[$CYB]] — the native [[token]]. staked for [[security]], burned for permanent π-weight, spent as fees
 
-## reward design
+## mechanisms
 
-[[learning incentives]] — reward functions, link valuation, Shapley attribution, funding model
+seven mechanisms make the [[cybergraph]] a self-sustaining economy. each maps to a protocol primitive through [[basic token operations]] (pay, lock, uber, mint, burn)
 
-[[probabilistic shapley attribution]] — the fair attribution algorithm (standalone reference)
+### 1. minting for [[focus]] computation
 
-## staking mechanisms
+[[neurons]] that compute [[focus]] toward a [[particle]] earn newly minted [[$CYB]]. each valid [[cyberlink]] is rewarded proportional to Δπ — the shift it causes in the [[tri-kernel]] fixed point
 
-[[staking on particles]] — stake on [[particles]], earn from fee pool
+see [[learning incentives]] for reward functions, link valuation, and [[Shapley]] attribution
 
-[[staking on cyberlinks]] — stake on [[cyberlinks]], earn from fee pool
+### 2. staking as delegated [[attention]]
 
-[[eternal cyberlinks]] — burn for permanent link weight in π
+[[neurons]] stake [[$CYB]] on themselves or other [[neurons]], delegating [[attention]]. stake directed toward validators earns from the PoS share of gross rewards:
 
-[[eternal particles]] — burn for permanent particle weight in π
+$$R_{\text{PoS}} = G \cdot S^\alpha$$
 
-[[collect fee on moving A and V]] — fee collection into staking pools
+see [[adaptive hybrid economics]] for the allocation curve and PID tuning
 
-[[delegation rewards]] — PoS delegation mechanics
+### 3. stake distribution over [[cyberlinks]]
+
+a [[neuron]]'s staked amount spreads evenly across its [[cyberlinks]] by default. the [[neuron]] can re-weight individual [[particles]] or [[cyberlinks]], assigning a percentage of stake to specific targets
+
+see [[staking on particles]] and [[staking on cyberlinks]] for pool mechanics
+
+### 4. permanent weighting via [[burn]]
+
+a [[neuron]] burns [[$CYB]] to grant eternal weight to a [[particle]]. this irreversible act permanently increases that [[particle]]'s importance in π, anchoring critical [[knowledge]]
+
+see [[eternal particles]] and [[eternal cyberlinks]]
+
+### 5. link fees and net rewards
+
+submitting a [[cyberlink]] incurs a small fee (spam deterrent). fees pool and distribute to link submitters, [[focus]] provers, and validators. links that accumulate sufficient [[attention]] yield net positive reward over time
+
+see [[collect fee on moving A and V]] for the fee collection spec
+
+### 6. [[attention]] yield curve
+
+earlier and more accurate [[cyberlinks]] to high-π [[particles]] earn proportionally greater rewards as [[collective focus]] evolves. first-mover advantage for quality links
+
+### 7. reputation emergence
+
+a [[neuron]]'s long-term reputation is the accumulated π-weight of [[particles]] it contributed to. this is [[karma]] — aligning social and economic capital through measurable contribution to [[collective focus]]
 
 ## monetary policy
 
-[[adaptive hybrid economics]] — self-calibrating PoW/PoS reward mechanism with PID control
+gross rewards combine stepped emission with redistributed fees:
 
-[[adaptive hybrid consensus economics]] — full mathematical proofs of the above
+$$G = E(t) + F \cdot (1 - \beta)$$
+
+rewards split between stakers and provers via the allocation curve. $\alpha$ and $\beta$ self-adjust via PID control
+
+net new supply: $\text{net} = E(t) - F \cdot \beta$. when fees exceed emission, the network is net deflationary
+
+[[adaptive hybrid economics]] — the self-calibrating PoW/PoS mechanism with PID control
+
+[[adaptive hybrid consensus economics]] — full mathematical proofs
 
 [[adaptive inflation]] — tendermint inflation tuning for bonded stake target
 
+## hardware substrate
+
+the [[Goldilocks field processor]] makes proving Δπ economically viable. the PoUW puzzle requires producing [[STARK]] proofs using the same four primitives as real workloads. mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users generate fees. fees replace emission
+
+the same hardware mines and proves — no stranded assets
+
 ## in the protocol stack
 
-[[foculus]] — consensus rewards: reward(v) ∝ Δπ(v)
+[[foculus]] — [[consensus]]: [[particle]] $i$ is final when $\pi_i > \tau$
 
-[[focus flow computation]] — economic model as layer 5 of the stack
+[[focus flow computation]] — scheduling and convergence as layer 5 of the stack
 
-[[cybernet]] — experimental learning incentives layer (Bittensor-style subnets)
+[[cybernet]] — experimental [[learning incentives]] layer (Bittensor-style subnets)
 
-[[decentralized attention markets]] — focus-stake attention market
+[[decentralized attention markets]] — [[focus]]-stake [[attention]] market
 
 ## see also
 
 [[bostrom/tokenomics]] — the bootloader implementation (4-token model, energy mint, fees)
 
 [[cybernomics]] — the broader cybernetic economy theory grounding this design
+
+[[learning incentives]] — deep dive into the reward mechanism (Δπ signal, link valuation, attribution)

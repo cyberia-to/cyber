@@ -22,7 +22,7 @@ crystal-domain: cyber
 
 [[state model]]
 
-[[economic model]]
+[[cyber/tokenomics]]
 
 [[hashing and confidentiality]]
 

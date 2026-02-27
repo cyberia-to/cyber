@@ -95,7 +95,7 @@ On-chain storage budget: ~15 MB (IPFS content 6.5 MB + CIDs 0.5 MB + [[cyberlink
 
 [[knowledge]] creation is costly, benefits are collective. without incentives, rational agents free-ride on others' [[cyberlinks]]. reward(v) ∝ Δπ(v) — creating valuable structure is literally creating [[value]]
 
-see [[economic model]] for the 7-point spec (minting, staking, burn, fees, yield curve, reputation). see [[learning incentives]] for reward function design, link valuation, and attribution
+see [[cyber/tokenomics]] for the 7-mechanism spec (minting, staking, burn, fees, yield curve, reputation). see [[learning incentives]] for reward function design, link valuation, and attribution
 
 ## Token Architecture
 
@@ -360,7 +360,7 @@ No node comprehends. The network knows.
 ## Cross-references
 
 - See [[cyber/crystal]] for the full crystal specification
-- See [[economic model]] for the 7-point incentive spec
+- See [[cyber/tokenomics]] for the 7-mechanism incentive spec
 - See [[learning incentives]] for reward design, link valuation, and attribution
 - See [[cft]] for the [[collective focus]] Theorem
 - See [[trinity]] for the three-pillar architecture
