@@ -21,9 +21,7 @@ crystal-domain: cyber
 
 [[contextual free energy model]]
 
-[[free energy focus]]
-
-[[universality of diffusion springs heat]]
+[[tri-kernel architecture]]
 
 [[sparsely activate tensor and cryptographic ghost proofs]]
 

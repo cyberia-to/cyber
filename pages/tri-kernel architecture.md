@@ -171,6 +171,24 @@ The [[tri-kernel]] maps coherently across domains, suggesting these are scale-in
 
 This universality reflects deep structural necessity. Every domain achieving complex adaptive behavior implements these three forces because they are the only mechanisms that balance exploration, coherence, and adaptation under locality constraints.
 
+### 4.1 Why These Three Are Fundamental
+
+[[diffusion]] and [[heat]] describe irreversible spreading — entropy growth and the arrow of time. [[springs]] describe reversible oscillation — coherent energy and information storage. Together they form the simplest basis for the three families of linear PDEs: diffusion/heat (parabolic), oscillations/waves (hyperbolic), and steady states (elliptic).
+
+Each conserves a different quantity: mass/probability ([[diffusion]]), potential/kinetic energy ([[springs]]), and thermal energy ([[heat]]). Each minimizes a different functional: entropy production, potential energy, free energy. Together they are Pareto-optimal: they explain the majority of natural transport, oscillation, and dissipation with minimal assumptions.
+
+### 4.2 Free Energy Equilibrium
+
+The [[tri-kernel]]'s blend weights are not arbitrary. They emerge as Lagrange multipliers from the free energy minimization:
+
+$$\mathcal{F}(p) = E_{\text{spring}}(p) + \lambda E_{\text{diffusion}}(p) - T S(p)$$
+
+The equilibrium distribution follows a Boltzmann form:
+
+$$p_i^* \propto \exp\big(-\beta [E_{\text{spring},i} + \lambda E_{\text{diffusion},i}]\big)$$
+
+where $\beta = 1/T$. No tuning required — the optimal [[focus]] vector is the unique minimum of a convex functional, matching how statistical mechanics derives equilibrium from energy and entropy. See [[collective focus theorem]] Part II for the convergence proof.
+
 ---
 
 ## 5. Applicability to Superintelligence
