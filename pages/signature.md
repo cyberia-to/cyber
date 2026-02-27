@@ -1,8 +1,8 @@
 ---
 alias: signatures, digital signature, cryptographic signature
-tags: cyber
+tags: cyber, core
 crystal-type: entity
-crystal-domain: computer science
+crystal-domain: cyber
 ---
 cryptographic proof that a [[neuron]] authored a [[signal]]
 
