@@ -2,17 +2,11 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-crystal-size: bridge
+crystal-size: enzyme
 alias: names, naming, deterministic resolution
 ---
-deterministic resolution of a [[cyberlink]]. primitive of [[neural]] language
+the `~` [[cyberlink]] that turns a [[particle]] into a [[file]] — deterministic resolution giving raw [[information]] a human tongue. every [[neuron]] keeps a namespace rooted at `~`
 
-naming is the act that turns a [[particle]] into a [[file]]. a [[particle]] is [[information]] — data identified by [[hash]]. a [[file]] is a particle given a `~` name — addressable, retrievable, meaningful. the protocol requires at least one [[cyberlink]] for a particle to enter the [[cybergraph]]; naming is the first and most fundamental link
-
-in the chain data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]], naming is the bridge from information to file
-
-every [[neuron]] maintains a namespace rooted at `~`. the `~` prefix signals deterministic resolution — given a name, return exactly one [[particle]]: the latest linked by the owning [[neuron]]
-
-see [[name/resolution]] for resolution modes, mechanics, and the [[semcon]] convention
+see [[name/resolution]]
 
 discover all [[concepts]]

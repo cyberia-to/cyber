@@ -4,10 +4,6 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: enzyme
 ---
-process of approaching [[equilibrium]]
-
-in [[cyber]]: the [[tri-kernel]] iterates until [[focus]] distribution stabilizes — the Collective Focus Theorem guarantees a unique stationary distribution π*
-
-[[supply]] and [[demand]] converge to [[price]]. [[neurons]] converge to [[knowledge]]. the [[tru]] converges to [[cyberank]]. the protocol converges to [[intelligence]]
+the pull toward [[equilibrium]]. the [[tri-kernel]] iterates until [[focus]] stabilizes, [[neurons]] approach [[knowledge]], and the protocol approaches [[intelligence]]
 
 discover all [[concepts]]
