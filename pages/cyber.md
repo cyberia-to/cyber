@@ -35,7 +35,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 - [[$CYB]] — the root token
 - [[cyber/tokenomics]] — monetary policy, allocation curve, GFP flywheel
-- [[learning incentives]] — how the protocol rewards [[knowledge]] creation
+- [[cyber/rewards]] — how the protocol rewards [[knowledge]] creation
 
 ## [[governance]]
 
@@ -61,7 +61,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 - [[cyber/bbg]] — authenticated state, polynomial commitments, privacy (UTXO, nullifiers, ZK)
 - [[cyber/tri-kernel]] — three operators, composite contraction
 - [[cyber/focus]] — conservation laws, flow equation
-- [[learning incentives]] — reward functions, token operations, Shapley attribution
+- [[cyber/rewards]] — reward functions, token operations, Shapley attribution
 
 ## explanations
 

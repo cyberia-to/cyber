@@ -1,5 +1,5 @@
 ---
-alias: learning rewards
+alias: learning incentives, learning rewards
 tags: cyber, article, cip
 crystal-type: process
 crystal-domain: economics
