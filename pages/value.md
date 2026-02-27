@@ -5,10 +5,10 @@ crystal-type: entity
 crystal-domain: economics
 crystal-size: enzyme
 ---
-[[amount]] of [[tokens]] expressed in [[unit of account]]
+[[amount]] of [[tokens]] expressed in a [[unit of account]]
 
-or relative to [[cap]] of all known [[tokens]]
+value measures what a [[token]] is worth relative to other [[tokens]] or to the [[cap]] of all known [[tokens]]
 
-common [[value shapes]]
+determined by [[price]], [[supply]], [[demand]], and the [[cap]] of the system. these four measures define how value moves through the [[cybergraph]]
 
-[[sigma]] crated to [[grow your value]]
+discover all [[concepts]]
