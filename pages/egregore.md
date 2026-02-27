@@ -1,7 +1,7 @@
 ---
 icon: 🎭
 alias: collective intelligence, collective intelligence theory, collective artificial intelligence
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 ---

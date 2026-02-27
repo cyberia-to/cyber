@@ -1,6 +1,6 @@
 ---
 tags: cyber, core
-crystal-type: measure
+crystal-type: pattern
 crystal-domain: cyber
 ---
 the semantic core of [[cyber]] — the irreducible set of concepts that explain the protocol
@@ -28,5 +28,29 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 [[knowledge]]: [[observation]], [[learning]], [[inference]], [[training]], [[neural]], [[crystal]]
 
 [[cyber]]: [[feedback]], [[equilibrium]], [[convergence]], [[syntropy]], [[egregore]], [[intelligence]]
+
+## entities
+
+{{query (and (page-tags [[core]]) (property :crystal-type "entity"))}}
+
+## processes
+
+{{query (and (page-tags [[core]]) (property :crystal-type "process"))}}
+
+## measures
+
+{{query (and (page-tags [[core]]) (property :crystal-type "measure"))}}
+
+## properties
+
+{{query (and (page-tags [[core]]) (property :crystal-type "property"))}}
+
+## relations
+
+{{query (and (page-tags [[core]]) (property :crystal-type "relation"))}}
+
+## patterns
+
+{{query (and (page-tags [[core]]) (property :crystal-type "pattern"))}}
 
 discover all [[concepts]]
