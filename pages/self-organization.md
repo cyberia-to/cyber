@@ -13,4 +13,6 @@ the [[tri-kernel]] formalizes this: [[springs]] crystallize structure, [[diffusi
 
 the system prunes itself: unused links decay, noisy connections lose weight
 
+the same mechanism models complex adaptive systems: local interactions between [[neurons]] reveal hidden structure — clusters, hierarchies, and pathways that no agent planned. the [[tri-kernel]]'s fixed point makes this structure visible and verifiable
+
 see [[egregore]] for the broader framework

@@ -47,3 +47,5 @@ future: communications => [[coordination graphs]] => auto inference
 
 - [collective focus](https://mirror.xyz/mastercyb.eth/4KfzSr4_Z2C91hsMdkWMRTHpFGnpBd5tVHI5R9vxoUo)
 - research is ongoing
+
+fairness in [[cyber]]: [[token]]-weighting ties influence to verifiable [[stake]], not identity. no single [[neuron]] can monopolize [[focus]] — the [[collective focus theorem]] guarantees convergence to a distribution shaped by the full [[topology]], not by any individual position

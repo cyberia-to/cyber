@@ -10,6 +10,8 @@ the chain: [[data]] → [[information]] → [[file]] → knowledge → [[intelli
 
 two kinds: [[explicit knowledge]] is what the [[tru]] computes — [[cyberank]], [[karma]], [[syntropy]]. [[implicit knowledge]] is what [[neurons]] derive and encode as new [[cyberlinks]]. the cost of knowledge is [[focus]] — cheap talk produces noise, costly links produce structure
 
+the [[cybergraph]] accumulates [[cyberlinks]] without domain boundaries. [[focus]] surfaces cross-domain insights that no single discipline would find — the [[tri-kernel]] integrates structure across all [[particles]] regardless of origin. interdisciplinary [[knowledge]] integration is a natural consequence of a shared [[graph]]
+
 see [[knowledge theory]] for the full framework
 
 discover all [[concepts]]
