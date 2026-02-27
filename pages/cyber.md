@@ -56,17 +56,15 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 ## specifications
 
-- [[cyber/vision]] — the CORE synthesis: six paradigms, ten principles
-- [[cyber/bbg]] — authenticated state model
-- [[cyber/focus]] — focus dynamics and conservation laws
-- [[cyber/tri-kernel]] — tri-kernel operator specification
-- [[cyber/stark]] — proof system
 - [[cyber/vm]] — 16 reduction patterns, value tower, cost model
-- [[cyber/security]] — security properties and formal proofs
-- [[cyber/privacy]] — privacy architecture
+- [[cyber/bbg]] — authenticated state, polynomial commitments, privacy (UTXO, nullifiers, ZK)
+- [[cyber/tri-kernel]] — three operators, composite contraction
+- [[cyber/focus]] — conservation laws, flow equation
+- [[learning incentives]] — reward functions, token operations, Shapley attribution
 
 ## explanations
 
+- [[cyber/vision]] — the CORE synthesis: six paradigms, ten principles
 - [[theoretical foundations]] — the mathematical framework
 - [[collective focus theorem]] — convergence proofs for tri-kernel
 - [[tri-kernel architecture]] — why diffusion, springs, and heat
@@ -75,6 +73,9 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 - [[universal law]] — exponential optimality under constraint
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[future of computation]] — from Turing machines to planetary superintelligence
+- [[cyber/stark]] — proof system
+- [[cyber/security]] — security properties and formal proofs
+- [[cyber/privacy]] — privacy architecture
 - [[cyberlink protocol structure]]
 - [[data availability strategy]]
 - [[cybergraph llm architecture]]
