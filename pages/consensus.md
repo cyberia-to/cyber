@@ -1,5 +1,5 @@
 ---
-tags: cyber
+tags: cyber, core
 alias: consensus mechanism, consensus algorithm
 crystal-type: process
 crystal-domain: cyber
