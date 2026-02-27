@@ -26,7 +26,7 @@ a [[particle]] is a content-addressed object — the atom of [[knowledge]]. a [[
 
 ## computation
 
-the [[tri-kernel]] is the core — three universal operators ([[diffusion]], [[springs]], heat) whose fixed point is collective understanding. [[foculus]] reaches [[consensus]] over the [[cybergraph]]. the [[vimputer]] executes the protocol
+the [[truth machine]] runs the [[tri-kernel]] on [[gpu]] in [[consensus]], producing [[cyberank]], [[karma]], and [[syntropy]]. [[foculus]] reaches [[consensus]] over the [[cybergraph]]. the [[vimputer]] executes the protocol
 
 ## knowledge architecture
 

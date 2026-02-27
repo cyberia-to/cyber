@@ -5,7 +5,9 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---
-collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
+the system that converts [[information]] into [[knowledge]]. collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
+
+the [[tri-kernel]] (math) provides the operators. the truth machine (system) runs them on [[gpu]] in [[consensus]], producing [[cyberank]] (output)
 
 input
 
@@ -20,7 +22,7 @@ computation
 
 output
 
-- [[cyberank]]: per-[[particle]] score
+- [[cyberank]]: per-[[particle]] relevance score
 - [[karma]]: per-[[neuron]] reputation
 - [[syntropy]] of [[vimputer]]
 
@@ -31,17 +33,9 @@ properties
 - [[memoization]]: no need to recompute stuff twice
 - bounded locality: updates cost O(degree) not O(graph size)
 
-in essence the relevance machine
+provided with enormous but primitively structured input, the truth machine produces a comprehensive [[universe model]] with [[strong predictive power]]
 
-- provided with enormous but primitively structured input
-- can provide comprehensive [[universe model]]
-- with [[strong predictive power]]
-
-why "truth machine"
-
-- consensus on [[relevance]] is consensus on what matters
-- what the collective attends to is the collective's [[truth]]
-- the name is earned when the system demonstrates [[collective intelligence]] factor c > 0
+consensus on [[relevance]] is consensus on what matters. what the collective attends to is the collective's [[truth]]. the name is earned when the system demonstrates [[collective intelligence]] factor c > 0
 
 related
 

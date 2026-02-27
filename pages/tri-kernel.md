@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cyber
 status: draft
 ---
+the mathematical core of the [[truth machine]]. three local operators whose fixed point is [[cyberank]]. the [[truth machine]] runs the tri-kernel on the [[cybergraph]] in [[consensus]]
+
 # Tri-Kernel Architecture for Networked Collective Intelligence
 
 ## Diffusion · Springs · Heat
