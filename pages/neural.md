@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 whitepaper: neural language for superintelligence
 ---
-semantic [[language]] for [[neurons]] over the [[cybergraph]]
+semantic [[language]] for [[neurons]] over the [[cybergraph]]. whitepaper: [[neural language for superintelligence]]
 
 convergent successor for both formal and natural [[languages]]
 
