@@ -19,11 +19,11 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 [[signal]]: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
 
-[[cyberlink]]: [[pay]], [[lock]], [[update]], [[mint]], [[burn]], [[observation]], [[learning]]
+[[cyberlink]]: [[pay]], [[lock]], [[update]], [[mint]], [[burn]]
 
 [[vimputer]]: [[time]], [[step]], [[state]], [[consensus]], [[finality]]
 
-[[knowledge]]: [[neural]], [[crystal]], [[inference]], [[training]]
+[[knowledge]]: [[observation]], [[learning]], [[inference]], [[training]], [[neural]], [[crystal]]
 
 [[cyber]]: [[feedback]], [[equilibrium]], [[convergence]], [[tri-kernel]], [[tru]], [[cyberank]], [[syntropy]], [[egregore]], [[intelligence]]
 
