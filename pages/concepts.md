@@ -42,7 +42,7 @@ crystal-domain: cyber
 	  a history no hand can control
 	-
 	- where many agents link the same two stones
-	  [[axons]] form — the graph's collective bones
+	  [[axon]] form — the graph's collective bones
 	  fused connections, stronger than a strand
 	  the skeleton on which all truths will stand
 	-

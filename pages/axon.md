@@ -1,5 +1,5 @@
 ---
-alias: skill, skills, axon
+alias: axons, skill, skills
 tags: cyber, core
 crystal-type: relation
 crystal-domain: cyber

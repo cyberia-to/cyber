@@ -20,7 +20,7 @@ threshold in [[focus]]
 - prevents dust spam: links below threshold do not affect the [[tri-kernel]] computation
 - tunable by [[consensus]] parameter
 
-threshold in [[axons]]
+threshold in [[axon]]
 
 - minimum aggregate weight for an [[axon]] to be considered a meaningful connection
 - filters noise from the collective signal
