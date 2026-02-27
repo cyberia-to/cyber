@@ -7,7 +7,7 @@ crystal-domain: cyber
 ---
 content-addressed node in the [[cybergraph]]. identity = [[hash]] of content. immutable. exists or doesn't
 
-raw bytes are data. hashing data produces a particle — a deterministic identity that collapses "what content?" into a fixed answer. data has no identity in the graph; a particle does. this act of hashing is a measurement: after it, anyone can verify the content without trusting anyone
+raw bytes are [[data]]. hashing data produces a particle — a deterministic identity that collapses "what content?" into a fixed answer. [[data]] has no identity in the graph; a particle does. the [[hash]] is the proof of measurement: it certifies that data was observed and collapsed into an identity. anyone can verify the proof by re-hashing, but holding the hash alone does not grant access to the data
 
 a particle cannot be submitted to the protocol without at least one [[cyberlink]]. a naked hash with no links is data that never entered the graph. in practice, every particle arrives with a [[name]] — a `~` [[cyberlink]] that makes it a [[file]], addressable by a human-readable label. the protocol requires this because an unnamed, unlinked particle carries no meaning
 

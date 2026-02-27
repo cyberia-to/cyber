@@ -32,11 +32,11 @@ the maximum rate at which information can be transmitted reliably over a noisy c
 
 ## where Shannon meets [[cyber]]
 
-Shannon's entropy applies to the data inside a [[particle]] — the raw bytes, their compressibility, their statistical structure. the [[hash]] is something else: it is the identity of the particle, a fixed-length fingerprint that enables verification, deduplication, and addressing. the hash is not the information content of the particle; it is the measurement that makes the content identifiable. a completely predictable file and a maximally random file produce hashes of the same length — but their Shannon entropy differs vastly
+Shannon's entropy applies to the data inside a [[particle]] — the raw bytes, their compressibility, their statistical structure. the [[hash]] is something else: it is the identity of the particle, a fixed-length fingerprint that enables verification, deduplication, and addressing. the hash is not the information content of the particle; it is the proof of measurement — certifying that [[data]] was observed and collapsed into a deterministic identity. a completely predictable file and a maximally random file produce hashes of the same length — but their Shannon entropy differs vastly
 
 Shannon's channel coding theorem guarantees that [[particles]] can be transmitted reliably over noisy networks. content addressing provides automatic error detection: if the hash doesn't match, the particle is corrupted. Shannon gave the theoretical limits; content addressing gives a practical implementation
 
-the act of hashing is where data becomes [[information]]: before hashing, the content is uncertain; after, it is identified exactly. this is reduction of uncertainty — Shannon's core concept — applied as a one-shot measurement
+the act of hashing is where data becomes [[information]]: before hashing, the content is uncertain; after, it is identified exactly. the [[hash]] is the proof of measurement — reduction of uncertainty applied as a one-shot operation. anyone can verify the proof by re-hashing, but holding the hash alone does not grant access to the [[data]]
 
 ## where [[cyber]] goes beyond Shannon
 

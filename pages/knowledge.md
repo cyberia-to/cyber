@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]
 
-data is raw bytes. hashing data produces a [[particle]] — [[information]]. naming a particle with `~` makes it a [[file]]. linking [[particles]] to each other creates knowledge
+[[data]] is raw bytes. hashing data produces a [[particle]] — the [[hash]] is the proof of measurement, and the particle is [[information]]. naming a particle with `~` makes it a [[file]]. linking [[particles]] to each other creates knowledge
 
 a [[cyberlink]] is the atomic unit of knowledge: a signed, weighted, timestamped commitment that two [[particles]] are related. the sum of stored [[cyberlinks]] forms the knowledge of a [[neuron]]. the [[cybergraph]] is the knowledge of all [[neurons]]
 
