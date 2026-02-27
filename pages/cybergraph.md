@@ -28,9 +28,9 @@ every [[cyberlink]] records [[three basic arguments]]: [[who]] linked, [[when]],
 the cybergraph is the shared memory that sits between [[neurons]] and the [[truth machine]] in the observation loop:
 
 ```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
-  ↑                                                       │
-  └──────── observes, infers, links (implicit) ←──────────┘
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
 ```
 
 [[neurons]] write [[implicit knowledge]] into the cybergraph as [[cyberlinks]]. the [[truth machine]] reads the cybergraph and computes [[explicit knowledge]]. the cybergraph is where both directions meet

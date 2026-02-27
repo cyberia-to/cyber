@@ -5,7 +5,7 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---
-the system that computes [[explicit knowledge]] from [[knowledge]]. collective [[vm]] that runs the [[tri-kernel]] on the [[cybergraph]] in [[consensus]]
+the system that computes [[explicit knowledge]] from the [[cybergraph]]. collective [[vm]] that runs the [[tri-kernel]] in [[consensus]]
 
 the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] learn by creating [[cyberlinks]] — this writes [[knowledge]] into the [[cybergraph]]. the truth machine infers by running the [[tri-kernel]] on that [[knowledge]] — this produces [[explicit knowledge]]
 
@@ -14,9 +14,9 @@ the protocol has two operations: [[learning]] and [[inference]]. [[neurons]] lea
 the truth machine is one half of the observation loop. [[neurons]] are the other
 
 ```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
-  ↑                                                       │
-  └──────── observes, infers, links (implicit) ←──────────┘
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
 ```
 
 [[neurons]] observe the truth machine's outputs, derive meaning ([[implicit knowledge]]), and encode it as new [[cyberlinks]]. the truth machine recomputes. the loop sustains itself — this is [[intelligence]]

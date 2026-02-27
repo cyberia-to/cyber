@@ -19,9 +19,9 @@ these outputs are explicit knowledge — on chain, deterministic, verifiable by 
 explicit knowledge is one direction in the continuous loop between [[neurons]] and the [[truth machine]]
 
 ```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
-  ↑                                                       │
-  └──────── observes, infers, links (implicit) ←──────────┘
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
 ```
 
 [[neurons]] observe explicit knowledge, derive meaning, and encode it as new [[cyberlinks]] — [[implicit knowledge]]. the [[truth machine]] recomputes. the loop continues

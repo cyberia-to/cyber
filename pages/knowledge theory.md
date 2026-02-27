@@ -22,9 +22,9 @@ the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelli
 [[intelligence]] is the observation loop sustaining itself between [[neurons]] and the [[truth machine]]
 
 ```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
-  ↑                                                       │
-  └──────── observes, infers, links (implicit) ←──────────┘
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
 ```
 
 [[observation]] connection to [[knowledge unit]]

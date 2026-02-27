@@ -8,16 +8,16 @@ what [[neurons]] derive from observing [[explicit knowledge]] and encode as new 
 
 a [[neuron]] observes [[cyberank]], [[karma]], [[syntropy]] — the outputs of the [[truth machine]]. from these signals the neuron infers meaning: what matters, what is missing, what is wrong. this inference is private, subjective, unbounded. the neuron then encodes its inference as a new [[cyberlink]] — a signed economic commitment fed back into the [[cybergraph]]
 
-every [[cyberlink]] carries implicit knowledge: it encodes what the neuron inferred from the truth machine's output. a neuron sees that two [[particles]] have high [[cyberank]] but are unlinked — and links them. the link is implicit knowledge made explicit through action
+every [[cyberlink]] carries implicit knowledge: it encodes what the neuron inferred from the truth machine's output. a neuron sees that two [[particles]] have high [[cyberank]] but are unlinked — and links them. the link carries implicit knowledge into the [[cybergraph]]
 
 ## the observation loop
 
 implicit knowledge is one direction in the continuous loop between [[neurons]] and the [[truth machine]]
 
 ```
-neuron ──cyberlink──→ cybergraph ──tri-kernel──→ explicit knowledge
-  ↑                                                       │
-  └──────── observes, infers, links (implicit) ←──────────┘
+neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
+  ↑                                                  │
+  └──────────── observes, infers, links ←────────────┘
 ```
 
 the [[truth machine]] produces [[explicit knowledge]] (deterministic, on chain). [[neurons]] observe it, derive meaning, and feed implicit knowledge back as [[cyberlinks]]. the loop continues
