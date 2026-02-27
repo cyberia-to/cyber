@@ -19,7 +19,7 @@ the chain: [[data]] → information → [[file]] → [[knowledge]] → [[intelli
 - information: [[data]] identified by [[hash]] — a [[particle]]
 - [[file]]: a particle given a `~` [[name]]
 - [[knowledge]]: [[particles]] linked by [[neurons]]
-- [[intelligence]]: the observation loop between [[neurons]] and the [[truth machine]]
+- [[intelligence]]: the observation loop between [[neurons]] and the [[tru]]
 
 - [[subject]] of information is [[neuron]]
 - [[object]] of information is [[particle]]

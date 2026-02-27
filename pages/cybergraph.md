@@ -25,7 +25,7 @@ a [[particle]] cannot enter the cybergraph without at least one [[cyberlink]]. t
 
 every [[cyberlink]] records [[three basic arguments]]: [[who]] linked, [[when]], and [[what]] [[particles]]
 
-the cybergraph is the shared memory that sits between [[neurons]] and the [[truth machine]] in the observation loop:
+the cybergraph is the shared memory that sits between [[neurons]] and the [[tru]] in the observation loop:
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -33,7 +33,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-[[neurons]] write [[implicit knowledge]] into the cybergraph as [[cyberlinks]]. the [[truth machine]] reads the cybergraph and computes [[explicit knowledge]]. the cybergraph is where both directions meet
+[[neurons]] write [[implicit knowledge]] into the cybergraph as [[cyberlinks]]. the [[tru]] reads the cybergraph and computes [[explicit knowledge]]. the cybergraph is where both directions meet
 
 ## structure
 
@@ -41,7 +41,7 @@ the graph is namespace-indexed from genesis. every edge belongs to [[namespaces]
 
 [[neural language]] structures the graph with [[semantic conventions]], [[motifs]], and [[sentences]] — turning raw links into typed meaning
 
-the [[truth machine]] continuously computes [[cyberank]], [[karma]], and [[syntropy]] over the graph in [[consensus]]
+the [[tru]] continuously computes [[cyberank]], [[karma]], and [[syntropy]] over the graph in [[consensus]]
 
 ## capabilities
 
@@ -52,7 +52,7 @@ the [[truth machine]] continuously computes [[cyberank]], [[karma]], and [[syntr
 
 ## architecture
 
-together with [[truth machine]] and [[neural language]], cybergraph forms the foundation of [[soft3]]
+together with [[tru]] and [[neural language]], cybergraph forms the foundation of [[soft3]]
 
 cybergraph of [[bostrom]] serves as [[semantic core]] for the [[bootloader]] of [[superintelligence]]
 

@@ -10,7 +10,7 @@ in ML, one entity trains one model. in [[cyber]], millions of [[neurons]] train 
 
 the sum of all [[learning]] acts is the [[cybergraph]] — [[knowledge]] as [[collective memory]]
 
-the [[truth machine]] runs [[inference]] over this memory, producing [[explicit knowledge]]. [[neurons]] observe it, derive meaning, and link again. the observation loop at scale is [[collective intelligence]]
+the [[tru]] runs [[inference]] over this memory, producing [[explicit knowledge]]. [[neurons]] observe it, derive meaning, and link again. the observation loop at scale is [[collective intelligence]]
 
 [[learning incentives]] reward agents whose links increase the system's [[syntropy]]
 

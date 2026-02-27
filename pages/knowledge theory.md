@@ -14,12 +14,12 @@ the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelli
 
 | | [[explicit knowledge]] | [[implicit knowledge]] |
 |---|---|---|
-| what | what the [[truth machine]] computes | what [[neurons]] derive and encode as [[cyberlinks]] |
-| produced by | [[truth machine]] via [[inference]] | [[neurons]] via [[learning]] |
-| language of | the [[truth machine]] | [[neurons]] |
-| direction | [[truth machine]] → [[neurons]] | [[neurons]] → [[truth machine]] |
+| what | what the [[tru]] computes | what [[neurons]] derive and encode as [[cyberlinks]] |
+| produced by | [[tru]] via [[inference]] | [[neurons]] via [[learning]] |
+| language of | the [[tru]] | [[neurons]] |
+| direction | [[tru]] → [[neurons]] | [[neurons]] → [[tru]] |
 
-[[intelligence]] is the observation loop sustaining itself between [[neurons]] and the [[truth machine]]
+[[intelligence]] is the observation loop sustaining itself between [[neurons]] and the [[tru]]
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank

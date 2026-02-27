@@ -11,13 +11,13 @@ a [[cyberlink]] is the atomic unit of knowledge: a signed, weighted, timestamped
 
 ## two kinds of knowledge
 
-[[explicit knowledge]]: what the [[truth machine]] computes and makes visible — [[cyberank]], [[karma]], [[syntropy]]. deterministic, verified in [[consensus]], on chain. the truth machine speaks in explicit knowledge
+[[explicit knowledge]]: what the [[tru]] computes and makes visible — [[cyberank]], [[karma]], [[syntropy]]. deterministic, verified in [[consensus]], on chain. the truth machine speaks in explicit knowledge
 
 [[implicit knowledge]]: what [[neurons]] derive from observing explicit knowledge and encode as new [[cyberlinks]]. a neuron sees cyberank, infers meaning, and links — that new link carries implicit knowledge. neurons speak in implicit knowledge
 
 ## the observation loop
 
-knowledge flows in a continuous loop between [[neurons]] and the [[truth machine]]
+knowledge flows in a continuous loop between [[neurons]] and the [[tru]]
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -26,7 +26,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
 ```
 
 1. [[neuron]] creates a [[cyberlink]] ([[learning]]) — encodes [[implicit knowledge]]
-2. [[truth machine]] recomputes [[cyberank]] ([[inference]]) — produces [[explicit knowledge]]
+2. [[tru]] recomputes [[cyberank]] ([[inference]]) — produces [[explicit knowledge]]
 3. [[neuron]] observes new [[cyberank]], infers, creates new [[cyberlinks]]
 4. loop continues
 

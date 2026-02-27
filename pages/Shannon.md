@@ -54,7 +54,7 @@ Shannon's theory covers transmission. it answers: how do I send this message rel
 | identity | sequence position | content address |
 | naming | (none) | `~` [[name]] → [[file]] |
 | structure | sequence (channel) | graph ([[cybergraph]]) |
-| meaning | excluded by design | computed by the [[truth machine]] |
+| meaning | excluded by design | computed by the [[tru]] |
 | cost | bandwidth, power | [[focus]] |
 | output | received message | [[intelligence]] |
 
@@ -64,11 +64,11 @@ the chain data → [[information]] → [[file]] → [[knowledge]] → [[intellig
 - [[information]]: data identified by [[hash]] — a [[particle]]. Shannon applies here as measurement
 - [[file]]: a [[particle]] given a `~` [[name]]. Shannon has no concept of naming
 - [[knowledge]]: [[particles]] linked by [[neurons]] via [[cyberlinks]]. Shannon has no concept of this — linking is an assertion of meaning, which Shannon explicitly excluded
-- [[intelligence]]: the observation loop between [[neurons]] and the [[truth machine]] — [[neurons]] observe [[explicit knowledge]], derive [[implicit knowledge]], and link again. Shannon has no concept of inference, relevance, or structure emerging from accumulated messages
+- [[intelligence]]: the observation loop between [[neurons]] and the [[tru]] — [[neurons]] observe [[explicit knowledge]], derive [[implicit knowledge]], and link again. Shannon has no concept of inference, relevance, or structure emerging from accumulated messages
 
 ## Shannon entropy in the [[cybergraph]]
 
-Shannon's entropy remains relevant inside the protocol. the entropy of the [[focus]] distribution H(π) = −Σ π(v) log π(v) measures the diversity of collective attention. low entropy means the collective focuses narrowly. high entropy means attention is spread evenly. [[syntropy]] — the opposite of entropy — measures how much structure the [[truth machine]] has extracted from the graph
+Shannon's entropy remains relevant inside the protocol. the entropy of the [[focus]] distribution H(π) = −Σ π(v) log π(v) measures the diversity of collective attention. low entropy means the collective focuses narrowly. high entropy means attention is spread evenly. [[syntropy]] — the opposite of entropy — measures how much structure the [[tru]] has extracted from the graph
 
 the [[tri-kernel]] drives the focus distribution toward a fixed point. this fixed point is where Shannon's entropy meets [[intelligence]]: the converged distribution is the protocol's answer to "what matters?"
 

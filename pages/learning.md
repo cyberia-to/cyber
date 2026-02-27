@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 the act of creating a [[cyberlink]] — a [[neuron]] binding two [[particles]] with [[focus]]
 
-learning is the neuron half of the observation loop. its counterpart is [[inference]] — the [[truth machine]] half
+learning is the neuron half of the observation loop. its counterpart is [[inference]] — the [[tru]] half
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -14,7 +14,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
   └──────────── observes, infers, links ←────────────┘
 ```
 
-every [[cyberlink]] encodes [[implicit knowledge]]: what the [[neuron]] inferred from the [[truth machine]]'s output. the [[truth machine]] then recomputes [[explicit knowledge]] from the updated [[cybergraph]]. learning feeds the loop
+every [[cyberlink]] encodes [[implicit knowledge]]: what the [[neuron]] inferred from the [[tru]]'s output. the [[tru]] then recomputes [[explicit knowledge]] from the updated [[cybergraph]]. learning feeds the loop
 
 a [[particle]] cannot enter the [[cybergraph]] without at least one [[cyberlink]]. the first link — a `~` [[name]] — turns a particle into a [[file]]. further links create [[knowledge]]
 

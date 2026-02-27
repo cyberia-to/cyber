@@ -5,7 +5,7 @@ alias: cyber rank, particles weight, particles weights, cyberanks
 crystal-type: measure
 crystal-domain: cyber
 ---
-per-[[particle]] relevance score — the output of the [[truth machine]]
+per-[[particle]] relevance score — the output of the [[tru]]
 
 the fixed point φ* of the [[tri-kernel]]: [[diffusion]] + [[springs]] + [[heat kernel]]
 

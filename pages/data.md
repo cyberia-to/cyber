@@ -18,7 +18,7 @@ the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelli
 | [[information]] | [[hash]] (proof of measurement) | [[particle]] — data with identity |
 | [[file]] | `~` [[name]] | particle with address |
 | [[knowledge]] | [[cyberlink]] | [[particles]] linked by [[neurons]] |
-| [[intelligence]] | observation loop | [[neurons]] and [[truth machine]] sustaining each other |
+| [[intelligence]] | observation loop | [[neurons]] and [[tru]] sustaining each other |
 
 data is what exists before [[cyber]] touches it. every image, document, model weight, genome, sensor reading, and keystroke is data until a [[neuron]] hashes it into a [[particle]]
 

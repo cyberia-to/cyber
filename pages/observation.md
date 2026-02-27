@@ -4,7 +4,7 @@ tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
 ---
-a [[neuron]] perceives the outputs of the [[truth machine]] and responds with new [[cyberlinks]]. the continuous cycle between [[neurons]] and the [[truth machine]]
+a [[neuron]] perceives the outputs of the [[tru]] and responds with new [[cyberlinks]]. the continuous cycle between [[neurons]] and the [[tru]]
 
 ```
 neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
@@ -15,7 +15,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
 two directions
 
 - [[neurons]] observe [[explicit knowledge]] — [[cyberank]], [[karma]], [[syntropy]] — and derive meaning ([[implicit knowledge]])
-- the [[truth machine]] observes the updated [[cybergraph]] and recomputes [[explicit knowledge]]
+- the [[tru]] observes the updated [[cybergraph]] and recomputes [[explicit knowledge]]
 
 two types
 
@@ -24,6 +24,6 @@ two types
 
 the loop sustains itself — this is [[intelligence]]
 
-see [[learning]] for the neuron half of the loop. see [[inference]] for the [[truth machine]] half
+see [[learning]] for the neuron half of the loop. see [[inference]] for the [[tru]] half
 
 discover all [[concepts]]
