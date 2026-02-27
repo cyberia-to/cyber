@@ -1,70 +1,59 @@
 ---
 icon: 💰
-alias: economics
-tags: cyber, cybernomics
+alias: economics, cybernetic economy
+tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 ---
-the economic theory of [[cyber]] — how [[tokens]], [[focus]], [[karma]], and [[learning incentives]] create a self-sustaining [[knowledge]] economy
+the science of cybernetic economies — how [[tokens]] emerge, flow, and reach [[equilibrium]] in decentralized systems. not specific to any protocol — the universal theory from which [[cyber/tokenomics]], [[bostrom/tokenomics]], and any token economy derives
 
-## core model
+## postulates
 
-[[economic model]] — the 7-point spec: minting, staking, burn, fees, yield curve, reputation
+[[cybics]] — the mother-science: every truth accessible to intelligence is a fixed point of some convergent simulation under conservation laws
 
-[[h based economy]] — dual-token CYB/H: scarce value anchor + liquidity engine
+[[token theory]] — [[tokens]] as the fundamental unit of [[value]], four types
 
-[[learning tokens]] — will, attention, karma as feedback to [[superintelligence]]
+## plumb
 
-## reward design
+[[plumb]] — framework for modeling and simulating token economies
 
-[[learning incentives]] — reward functions, link valuation, Shapley attribution, funding model
+[[basic token operations]] — the five atomic operations: pay, lock, uber, mint, burn (MBLM)
 
-[[probabilistic shapley attribution]] — the fair attribution algorithm (standalone reference)
+## volume approximation
 
-## staking mechanisms
+volume of price estimation (VoPE) — approximating token [[value]] from observable on-chain flows
 
-[[staking on particles]] — stake on [[particles]], earn from fee pool
+## modeling framework
 
-[[staking on cyberlinks]] — stake on [[cyberlinks]], earn from fee pool
+[[supply and demand]] — the demand-supply [[equilibrium]]: where quantity sought meets quantity available
 
-[[eternal cyberlinks]] — burn for permanent link weight in π
+[[adaptive hybrid economics]] — the stability-fluidity [[equilibrium]]: self-calibrating PoW/PoS with PID control
 
-[[eternal particles]] — burn for permanent particle weight in π
+two equilibria govern every token economy: demand-supply (price discovery) and stability-fluidity (security vs liquidity)
 
-[[collect fee on moving A and V]] — fee collection into staking pools
+## parametrization wisdom
 
-[[delegation rewards]] — PoS delegation mechanics
+four types of parameters in any token economy:
 
-## monetary policy
+- fixed by physics — conservation laws, immutable (focus sums to 1)
+- fixed at genesis — social contract, changed only by governance fork
+- PID-controlled — self-adjusting via error signals (alpha, beta in [[adaptive hybrid economics]])
+- market-discovered — emerge from agent behavior (staking ratio, fee levels)
 
-[[adaptive hybrid economics]] — self-calibrating PoW/PoS reward mechanism with PID control
+the art: knowing which parameters belong in which category
 
-[[adaptive hybrid consensus economics]] — full mathematical proofs of the above
+## bonding curves
 
-[[adaptive inflation]] — tendermint inflation tuning for bonded stake target
+[[energy mint using curve]] — exponential bonding curve: supply grows only when demand forces price up
 
-## in the protocol stack
+[[bostrom/mint]] — implementation: supply decay formula, $V gets expensive 8x faster than $A
 
-[[foculus]] — consensus rewards: reward(v) ∝ Δπ(v)
+## applied
 
-[[focus flow computation]] — economic model as layer 5 of the stack
+[[cyber/tokenomics]] — the cyber protocol token economy
 
-[[cybernet]] — experimental learning incentives layer (Bittensor-style subnets)
+[[bostrom/tokenomics]] — the bootloader chain token model
 
-[[decentralized attention markets]] — focus-stake attention market
-
-## foundations
-
-[[token]] — fundamental unit of [[value]], four types defined by [[token theory]]
-
-[[focus]] — the cost of [[learning]], makes every [[cyberlink]] a [[costly signal]]
-
-[[karma]] — reputation earned through quality contributions to the [[cybergraph]]
-
-[[burn]] — destroy [[tokens]] permanently, anchoring [[knowledge]]
-
-[[cybics]] — the mother-science: focus conservation as economics
-
-[[gflownet focus flow]] — GFlowNet coupling: reward = exp(β·Δπ̂ + utility − cost + novelty)
+[[learning incentives]] — reward design for [[knowledge]] creation
 
 discover all [[concepts]]
