@@ -127,7 +127,7 @@ distributed systems
 
 all theory operates on authenticated data structures. [[cyber/bbg]] specifies the Merkle-ized state model. [[CORE]] synthesizes six research threads (Merkle trees → authenticated graphs → rewriting → interaction nets → conserved flow → ZK proofs) into one architecture
 
-see [[data structure for superintelligence]] for the full BBG exposition, [[cyber/core]] for the system specification
+see [[data structure for superintelligence]] for the full BBG exposition, [[cyber/vision]] for the system specification
 
 ## open questions
 
@@ -147,7 +147,7 @@ see [[data structure for superintelligence]] for the full BBG exposition, [[cybe
 | free energy formulations | [[free energy]] |
 | focus flow algorithm | [[focus flow computation]] |
 | authenticated state | [[data structure for superintelligence]] |
-| system specification | [[cyber/core]] |
+| system specification | [[cyber/vision]] |
 | reward mechanism | [[learning incentives]] |
 | token economics | [[cyber/tokenomics]] |
 | the full narrative | [[future of computation]] |
