@@ -1,7 +1,7 @@
 ---
 icon: 🎨
 alias: cards, uniq, uniqs, nft, knowledge asset
-tags: cybernomics
+tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: cyber
 ---

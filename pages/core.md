@@ -17,6 +17,8 @@ structure: [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step
 
 agents: [[neuron]], [[secret]], [[focus]], [[token]], [[karma]]
 
+economics: [[value]], [[price]], [[supply]], [[demand]], [[cap]], [[coin]], [[card]], [[score]], [[badge]]
+
 process: [[observation]], [[learning]], [[inference]], [[training]]
 
 meaning: [[knowledge]], [[neural]], [[crystal]]

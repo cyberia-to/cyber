@@ -1,22 +1,12 @@
 ---
-tags: cyberia
-crystal-type: entity
-crystal-domain: cyberia
+tags: cyber, core, cybernomics
+crystal-type: measure
+crystal-domain: economics
 ---
-- {{query (property :supply "yes")}}
--
-- ## ironwoods
-- {{query (and (property :supply "next-month") (property :market "ironwoods"))}}
-- ## hardwoods
-- {{query (and (property :supply "next-month") (property :project "hardwoods"))}}
-- ## resins
-- {{query (and (property :supply "next-month") (property :project "resins"))}}
-- ## rhizomes
-- {{query (and (property :supply "next-month") (property :project "rhizomes"))}}
-- {{query (property :supply "next-month")}}
--
-- {{query (and (page-property :supply "next-month") (page-property :project "edible-oil"))}}
--
--
--
-- {{query (property :state "supply")}}
+quantity of [[tokens]] or resources available at a given [[price]]
+
+directly related to [[price]]: as price rises, supply grows
+
+in [[cyber]]: [[supply]] of [[bandwidth]] is bounded by staked [[token]]. [[supply]] of [[knowledge]] grows with every [[cyberlink]]
+
+discover all [[concepts]]

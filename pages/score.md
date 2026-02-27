@@ -1,5 +1,5 @@
 ---
-tags: cyber
+tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 ---

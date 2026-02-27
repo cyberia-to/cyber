@@ -1,6 +1,6 @@
 ---
 icon: 🏅
-tags: cybernomics
+tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: economics
 ---
