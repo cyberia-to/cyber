@@ -15,7 +15,7 @@ measurement: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[infor
 
 structure: [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step]], [[consensus]], [[finality]], [[vimputer]]
 
-agents: [[neuron]], [[secret]], [[focus]], [[token]], [[karma]]
+agents: [[neuron]], [[spell]], [[focus]], [[token]], [[karma]]
 
 economics: [[value]], [[price]], [[supply]], [[demand]], [[cap]], [[coin]], [[card]], [[score]], [[badge]]
 
