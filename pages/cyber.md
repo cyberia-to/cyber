@@ -58,6 +58,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 
 ## explanations
 
+- [[collective focus theorem]] — convergence of token-weighted random walks to consensus
 - [[convergent computation]] — from Turing machines to convergent computation
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
