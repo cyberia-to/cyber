@@ -13,7 +13,7 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 measurement: [[data]], [[hash]], [[proof]], [[signature]], [[particle]], [[information]], [[name]], [[file]]
 
-structure: [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step]], [[consensus]], [[finality]]
+structure: [[cyberlink]], [[cybergraph]], [[axon]], [[signal]], [[time]], [[step]], [[consensus]], [[finality]], [[vimputer]]
 
 agents: [[neuron]], [[secret]], [[focus]], [[token]], [[karma]]
 

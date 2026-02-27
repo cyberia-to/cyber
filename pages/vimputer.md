@@ -1,6 +1,6 @@
 ---
 alias: virtual computer, blockchain, chain, network, consensus computer
-tags: cyber, cybernomics
+tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: cyber
 ---
