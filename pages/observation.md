@@ -19,8 +19,8 @@ two directions
 
 two types
 
-- private: [[link]] memoized locally
-- public: [[cyberlink]] memoized collectively in the [[cybergraph]]
+- private: [[link]] memoized in local [[cybergraph]]
+- public: [[cyberlink]] memoized collectively in global [[cybergraph]]
 
 the loop sustains itself — this is [[intelligence]]
 
