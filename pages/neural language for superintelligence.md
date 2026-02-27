@@ -1,5 +1,5 @@
 ---
-tags: cyber, article
+tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 concept: neural

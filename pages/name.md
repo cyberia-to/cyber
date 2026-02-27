@@ -4,7 +4,7 @@ crystal-type: entity
 crystal-domain: cyber
 alias: names, naming, deterministic resolution
 ---
-deterministic resolution of a [[cyberlink]]
+deterministic resolution of a [[cyberlink]]. primitive of [[neural]] language
 
 a [[cyberlink]] is a dynamic pointer: from [[particle]] resolves to a ranked set of to [[particles]]. standard resolution is probabilistic — the [[relevance machine]] returns candidates sorted by [[cyberank]]. a name is a [[cyberlink]] that resolves deterministically: given from, return exactly one to — the latest [[particle]] linked by the owning [[neuron]]
 
