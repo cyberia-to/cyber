@@ -69,7 +69,7 @@ This is a free-energy functional: the first term is elastic structure, the secon
 
 ### 2.2 Convergence and Locality
 
-Theorem (Composite Contraction): Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly.
+Theorem (Composite Contraction): Under ergodicity of P, screening μ > 0, and bounded τ, the composite operator ℛ is a contraction with coefficient κ < 1. Hence φ^t → φ* linearly. See [[collective focus theorem]] Part II for the proof.
 
 Theorem (Locality Radius): For edit batch e_Δ, there exists h = O(log(1/ε)) such that recomputing only on N_h (the h-hop neighborhood) achieves global error ≤ ε.
 

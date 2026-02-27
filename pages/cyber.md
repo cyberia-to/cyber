@@ -59,7 +59,7 @@ every agent that links makes the graph smarter. every [[cyberlink]] costs real [
 
 ## explanations
 
-- [[collective focus theorem]] — convergence of token-weighted random walks to consensus
+- [[collective focus theorem]] — convergence proofs for diffusion (special case) and full tri-kernel (general case)
 - [[tri-kernel architecture]] — why diffusion, springs, and heat are the basis for collective intelligence
 - [[focus flow whitepaper]] — the focus flow computation paper
 - [[data structure for superintelligence]] — the BBG authenticated state architecture

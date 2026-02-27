@@ -87,12 +87,12 @@ These are the complete set of local operators for graph ranking. The [[tri-kerne
 
 We establish that the [[tri-kernel]] satisfies formal definitions of [[intelligence]].
 
-### 1.1 Operational Definitions
+### 2.1 Operational Definitions
 
 - Legg-Hutter: [[intelligence]] = ability to achieve goals across a wide range of environments.
 - Friston/FEP: [[intelligence]] = minimizing expected variational free energy (prediction error + model complexity).
 
-### 1.2 Claims
+### 2.2 Claims
 
 Claim A (Inference): The fixed point of ℛ minimizes a free-energy functional. Therefore the update π^(t+1) ← ℛπ^t reduces a well-defined energy and converges—which is precisely "doing inference."
 
@@ -100,7 +100,7 @@ Claim B (Compression): [[diffusion]] maps/[[heat]] kernels compress high-dimensi
 
 Claim C (Adaptation): Temperature τ in the [[heat]] kernel provides simulated annealing: high τ explores, low τ commits. This is the textbook mechanism for adaptive [[intelligence]].
 
-### 1.3 Falsification Protocol
+### 2.3 Falsification Protocol
 
 Track per epoch:
 - Cross-entropy on held-out edges (prediction quality)
@@ -115,7 +115,7 @@ If adding small λ_s, λ_h monotonically improves these metrics without destabil
 
 We establish positive [[collective intelligence]] factor (c > 0): the group outperforms individuals.
 
-### 2.1 Theoretical Foundations
+### 3.1 Theoretical Foundations
 
 | Theory | Claim | Mechanism |
 |--------|-------|-----------|
@@ -123,7 +123,7 @@ We establish positive [[collective intelligence]] factor (c > 0): the group outp
 | Condorcet Jury Theorem | Aggregation of p > ½ [[signals]] improves with n | Weighted majority over independent [[signals]] |
 | Hong-Page Diversity | Diverse heuristics > best homogeneous expert | Multiple search modes on complex landscapes |
 
-### 2.2 Mapping to Tri-Kernel
+### 3.2 Mapping to Tri-Kernel
 
 Aggregation: [[focus]] π is computed from all agents' [[cyberlinks]] via Markov/harmonic/[[heat]] operators—formal aggregation of many partial [[signals]].
 
@@ -131,7 +131,7 @@ Diversity: [[diffusion]] explores remote regions; [[springs]] encode structural 
 
 Mixing: Adding non-redundant edges increases algebraic connectivity (Fiedler) and conductance, improving mixing and information aggregation.
 
-### 2.3 Claim D: Superadditivity
+### 3.3 Claim D: Superadditivity
 
 Under standard conditions (bounded correlation ρ < 1, individual competence p_a > ½, non-trivial diversity), the aggregation must yield c > 0: group performance beats the mean individual—and often the best individual.
 
@@ -140,7 +140,7 @@ This follows from three independent lines:
 - Hong-Page: diversity of search modes explores more landscape
 - Spectral: better mixing ⇒ lower variance ⇒ better global inference
 
-### 2.4 Measurement Protocol
+### 3.4 Measurement Protocol
 
 Define task battery T = {retrieval, link prediction, question routing}. For each epoch:
 - Compute S_group using [[tri-kernel]] π on full [[graph]]
@@ -175,7 +175,7 @@ This universality reflects deep structural necessity. Every domain achieving com
 
 ## 5. Applicability to Superintelligence
 
-### 4.1 Phase Transitions
+### 5.1 Phase Transitions
 
 The [[collective focus theorem]] predicts [[intelligence]] emergence through phase transitions:
 
@@ -186,7 +186,7 @@ The [[collective focus theorem]] predicts [[intelligence]] emergence through pha
 | Reasoning → Meta | λ_h regulates | Adaptive balance, context-sensitive processing |
 | Consciousness | Dynamic blend | System learns its own blend weights |
 
-### 4.2 Why This Architecture Is Necessary
+### 5.2 Why This Architecture Is Necessary
 
 At 10¹⁵ nodes with physical communication delays, any architecture requiring global coordination is impossible. The [[tri-kernel]] satisfies:
 
@@ -195,7 +195,7 @@ At 10¹⁵ nodes with physical communication delays, any architecture requiring 
 - Shard-friendly: regions update independently
 - Interplanetary-compatible: coherence without constant synchronization
 
-### 4.3 Adversarial Resistance
+### 5.3 Adversarial Resistance
 
 The three kernels provide orthogonal attack surfaces:
 
