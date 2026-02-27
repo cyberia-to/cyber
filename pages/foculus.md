@@ -18,7 +18,9 @@ no explicit voting. no leader election. [[neurons]] gossip [[cyberlinks]], GPUs 
 
 ## network model
 
-foculus operates in partial synchrony: messages arrive within an unknown but finite bound $\Delta$. during asynchronous periods (partitions), no new [[particles]] finalize — but no conflicting [[particles]] can finalize either, because local $\pi$ cannot reach $\tau$ without sufficient global connectivity. safety holds always. liveness resumes when connectivity restores
+leaderless. every [[neuron]] computes $\hat\pi$ independently from its local view of the [[cybergraph]]. there is no block proposer, no rotation schedule, no single point of serialization. convergence emerges from gossip, not from coordination
+
+foculus operates in partial synchrony: messages arrive within an unknown but finite bound $\Delta$. during asynchronous periods (partitions), no new [[particles]] finalize — but no conflicting [[particles]] can finalize either, because local $\hat\pi$ cannot reach $\tau$ without sufficient global connectivity. safety holds always. liveness resumes when connectivity restores
 
 ## state
 
@@ -86,6 +88,7 @@ the threshold $\tau(t) = \mu_\pi + \kappa\sigma_\pi$ adapts to the current distr
 
 | metric | classic BFT | nakamoto | foculus |
 |---|---|---|---|
+| leader | rotating proposer | miner (PoW lottery) | none |
 | finality | 5-60 s | ~60 min | 1-3 s |
 | throughput | 1k-10k tx/s | ~10 tx/s | bounded by GPU |
 | validator scale | 10²-10³ | unbounded | unbounded |
