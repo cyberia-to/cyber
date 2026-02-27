@@ -1,5 +1,5 @@
 ---
-alias: links, linking, edge
+alias: links, linking, edge, edges
 tags: cyber
 crystal-type: relation
 crystal-domain: cyber

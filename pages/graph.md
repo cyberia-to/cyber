@@ -4,9 +4,9 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cyber
 ---
-a set of nodes connected by [[links]]
+a set of [[nodes]] connected by [[links]]
 
-the generic mathematical structure: vertices and directed edges. a [[knowledge graph]] is a graph where nodes carry meaning and edges carry relationships
+two irreducible primitives: [[nodes]] (points) and [[links]] (directed edges between them). everything else — [[degree]], path, adjacency, centrality — is derived from these two. a [[knowledge graph]] is a graph where nodes carry meaning and edges carry relationships
 
 the [[cybergraph]] is the specific graph in [[consensus]]: [[particles]] as nodes, [[cyberlinks]] as edges, [[neurons]] as authors. a graph becomes a [[cybergraph]] when its edges achieve [[finality]]
 
