@@ -96,6 +96,7 @@ Scripts:
 - `nu/stats.nu` — graph statistics (orphans, broken links, content types)
 - `nu/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
 - `nu/ipfs.nu` — pre-commit hook: upload media/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
+- `nu/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
 
 When adding a new script: place it in `nu/`, accept `graph_path` as first
 arg, and update this list.
