@@ -1,5 +1,5 @@
 ---
-alias: tru, relevance machine, truth medium, rm, tm
+alias: truth machine, relevance machine, truth medium, rm, tm
 icon: 🖖🏽
 tags: cyber, core
 crystal-type: entity
