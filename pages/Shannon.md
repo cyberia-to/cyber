@@ -1,10 +1,12 @@
 ---
 alias: Shannon information theory, information theory, Claude Shannon
-tags: cyber, article
+tags: cyber, article, person
 crystal-type: entity
 crystal-domain: biology
 ---
-Claude Shannon, 1948. "A Mathematical Theory of Communication"
+1916-2001. American mathematician and electrical engineer
+
+founded [[information theory]] with "A Mathematical Theory of Communication" (1948). defined the [[bit]] as the fundamental unit of information. introduced [[entropy]] as a measure of information content and uncertainty. established channel capacity and the noisy-channel coding theorem — the theoretical ceiling of [[digital communication]]. connected [[thermodynamics]] and [[information theory]], bridging physics and [[computation]]. his framework underlies every protocol that transmits, compresses, or encrypts [[data]], including [[cyber]]
 
 Shannon defined [[information]] as a statistical property: the less probable a message, the more information it carries. the definition is precise, quantitative, and deliberately excludes meaning
 
