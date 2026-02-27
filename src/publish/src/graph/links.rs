@@ -24,12 +24,16 @@ pub fn build_link_indices(store: &mut PageStore) -> HashMap<String, String> {
         for link_name in &outgoing {
             let target_slug = slugify_page_name(link_name);
 
-            // Resolve through aliases
-            let resolved = store
-                .alias_map
-                .get(&target_slug)
-                .cloned()
-                .unwrap_or(target_slug);
+            // Resolve: direct page match first, then aliases
+            let resolved = if store.pages.contains_key(&target_slug) {
+                target_slug
+            } else {
+                store
+                    .alias_map
+                    .get(&target_slug)
+                    .cloned()
+                    .unwrap_or(target_slug)
+            };
 
             // Remember original name for stubs (only if no source page exists)
             if !store.pages.contains_key(&resolved) {
@@ -53,11 +57,17 @@ pub fn build_link_indices(store: &mut PageStore) -> HashMap<String, String> {
         // Add tags as forward links + backlinks (tags are pages)
         for tag in &store.pages[id].meta.tags.clone() {
             let tag_slug = slugify_page_name(tag);
-            let resolved = store
-                .alias_map
-                .get(&tag_slug)
-                .cloned()
-                .unwrap_or(tag_slug);
+
+            // Resolve: direct page match first, then aliases
+            let resolved = if store.pages.contains_key(&tag_slug) {
+                tag_slug
+            } else {
+                store
+                    .alias_map
+                    .get(&tag_slug)
+                    .cloned()
+                    .unwrap_or(tag_slug)
+            };
 
             if !store.pages.contains_key(&resolved) {
                 original_names

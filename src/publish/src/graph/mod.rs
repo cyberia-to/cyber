@@ -279,4 +279,41 @@ mod tests {
         assert_eq!(store.tag_index["rust"].len(), 2);
         assert_eq!(store.tag_index["programming"].len(), 1);
     }
+
+    /// Direct page match must win over alias when resolving tags and links.
+    /// Reproduces: pages/core.md exists, pages/cyber/core.md has alias "CORE"
+    /// → tag "core" must backlink to "core", not "cyber-core".
+    #[test]
+    fn test_direct_page_wins_over_alias() {
+        let mut core_page = make_page("core", vec![], vec![]);
+        // page with alias that slugifies to "core"
+        let mut namespaced = ParsedPage {
+            id: "cyber-core".to_string(),
+            meta: PageMeta {
+                title: "cyber/core".to_string(),
+                aliases: vec!["CORE".to_string()],
+                ..core_page.meta.clone()
+            },
+            ..core_page.clone()
+        };
+        namespaced.source_path = PathBuf::from("pages/cyber/core.md");
+        core_page.meta.aliases = vec![];
+
+        // a page tagged "core" — should backlink to "core", not "cyber-core"
+        let tagged = make_page("knowledge", vec![], vec!["core"]);
+
+        let store = build_graph(vec![core_page, namespaced, tagged]).unwrap();
+
+        let core_backlinks = &store.backlinks["core"];
+        let cyber_core_backlinks = &store.backlinks["cyber-core"];
+
+        assert!(
+            core_backlinks.contains(&"knowledge".to_string()),
+            "tag 'core' should backlink to direct page 'core'"
+        );
+        assert!(
+            !cyber_core_backlinks.contains(&"knowledge".to_string()),
+            "tag 'core' should not backlink to aliased page 'cyber-core'"
+        );
+    }
 }
