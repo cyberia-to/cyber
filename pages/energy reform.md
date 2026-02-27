@@ -4,7 +4,7 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 ---
-seven [[cips]] with [[cyber/energy]] optimizations
+seven [[cips]] with [[$CYB]] optimizations
 
 with a purpose to deliver [[the product]]
 

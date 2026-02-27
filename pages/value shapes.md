@@ -9,4 +9,4 @@ crystal-domain: cyber
 
 [[medium of exchange]]
 
-[[cyber/energy]]
+[[$CYB]]

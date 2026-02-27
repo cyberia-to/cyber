@@ -6,5 +6,5 @@ crystal-domain: cyber
 input
 
 - [[buy energy]]
-- [[cyber/energy]]
+- [[$CYB]]
 - [[the product]]

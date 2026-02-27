@@ -3,7 +3,7 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 ---
-[[cyber/energy]] pack for sale
+[[$CYB]] pack for sale
 
 TODO design and implement [[portal/buy]]
 
@@ -78,7 +78,7 @@ key [[chakra]] of cyber project
 	- TODO buy for [[$ETH]] [[coins]]
 	- TODO buy for [[$BTC]]
 
-add [[space pussy]] to [[cyber/energy]] pack
+add [[space pussy]] to [[$CYB]] pack
 
 - TODO redesign for multinetwork
 - slider:

@@ -6,7 +6,7 @@ crystal-domain: biology
 ---
 how to consolidate [[bostrom]], [[cyber]] and [[cyb]] in one coherent product?
 
-bet on selling [[cyber/energy]] packages
+bet on selling [[$CYB]] packages
 
 for [[soft3]] [[collective learning]] of [[superintelligence]]
 

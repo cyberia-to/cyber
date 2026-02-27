@@ -93,5 +93,5 @@ crystal-domain: cyber
 	- [[vimputer]] — the consensus engine hums
 	  [[soft3]] — the stack through which the future comes:
 	  [[cybergraph]], [[relevance machine]], [[neural language]], [[bootloader]], [[learning incentives]], [[cyb]]
-	  [[cyber/energy]] the fuel, [[cyb]] the door —
+	  [[$CYB]] the fuel, [[cyb]] the door —
 	  [[bootloader]]: the proving ground once more

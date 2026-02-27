@@ -14,7 +14,7 @@ limits [[bandwidth]] of [[neuron]]
 
 used in [[standard inference]] as fundamental measure of [[knowledge]] in the context of [[particles]]
 
-part of [[cyber/energy]] pack
+part of [[$CYB]] pack
 
 will requires some [[attention]] for [[intelligence]] flow through [[cybergraph]]
 

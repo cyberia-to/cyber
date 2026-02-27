@@ -16,9 +16,9 @@ features::
 
 TODO [[cyb]] packed with all energy needed for [[personal learning]] of [[brain]]
 
-you need [[cyber/energy]] for [[collective learning]] of [[bootloader]]
+you need [[$CYB]] for [[collective learning]] of [[bootloader]]
 
-or if you have [[cyber/energy]] go to [cyb.ai/oracle](https://cyb.ai/oracle)
+or if you have [[$CYB]] go to [cyb.ai/oracle](https://cyb.ai/oracle)
 
 TODO [[oracle/learn]]
 

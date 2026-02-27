@@ -9,7 +9,7 @@ status:: DONE
 ## [[bostrom]]
 
 - [[$BOOT]] is [[consensus]] [[token]] of [[bostrom]]
-- [[cyber/energy]]
+- [[$CYB]]
 	- [[$H]] is [[bostrom]] [[liquid fuel]]
 	- [[$V]] is [[bostrom]] [[will]]
 	- [[$A]] is [[bostrom]] [[attention]]
@@ -17,7 +17,7 @@ status:: DONE
 ## [[space pussy]]
 
 - [[$PUSSY]] is [[consensus]] [[token]] of [[space pussy]]
-- [[cyber/energy]]
+- [[$CYB]]
 	- [[$CUM]] [[space pussy]] [[liquid fuel]]
 	- [[$VIP]] is [[space pussy]] [[will]]
 	- [[$AM]] is [[spacepussy]] [[attention]]

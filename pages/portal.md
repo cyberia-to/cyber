@@ -11,7 +11,7 @@ current state on [[cyb/portal]]
 
 where new [[neurons]] enter the [[cyber]] network
 
-guides through [[avatar]] creation, [[cyber/energy]] acquisition, and first [[cyberlinks]]
+guides through [[avatar]] creation, [[$CYB]] acquisition, and first [[cyberlinks]]
 
 pages
 

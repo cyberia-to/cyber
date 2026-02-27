@@ -52,7 +52,7 @@ the full stack: [[soft3]] = [[cybergraph]] + [[truth machine]] + [[neural langua
 ## economics
 
 - [[cybernomics]] — the native economic theory
-- [[cyber/energy]] — the resource model
+- [[$CYB]] — the resource model
 - [[delegation]] — staking and delegation mechanics
 - [[learning incentives]] — how the protocol rewards knowledge creation
 

@@ -88,7 +88,7 @@ in this article i will boil down all essential ideas into coherent understanding
 	- submitting [[agents]] as [[neurons]], as they looks very similar
 - notes on implementation
 	- timestamping in [[bostrom]] is done using simple and reliable [[tendermint]] consensus algorithm
-	- sybil protection, rate limiting and motivation are implemented using [[cyber/energy]] set of algorithms
+	- sybil protection, rate limiting and motivation are implemented using [[$CYB]] set of algorithms
 - cybergraph is explicitly answer 3 fundamental questions:
 	- [[who]] linked the [[information]]
 	- [[when]] [[information]] was linked
