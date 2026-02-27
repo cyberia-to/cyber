@@ -8,11 +8,11 @@ crystal-domain: cyber
 ---
 the protocol for planetary [[superintelligence]]. [[manifesto]]
 
-[[google]] indexes the web and sells attention. cyber indexes [[knowledge]] and gives attention back to those who create it. anyone — human, AI, sensor, autonomous agent — can link any piece of [[knowledge]] to any other, and a mathematical operator computes what matters from the aggregate structure of all links. no corporation owns the index. no algorithm is hidden. every ranking is provable by [[STARK]] proofs
+LLMs are private brains behind API walls. they hallucinate because they have no shared, verifiable memory. every corporation trains its own model on scraped data, locks the weights, and sells inference. the result: a dozen competing superintelligences accountable to shareholders, not to life
 
-what this enables: a [[search]] engine no one controls, a [[file]] system where [[names]] resolve through the graph, a [[neural language]] that humans and machines speak natively, cross-species [[communication]], decentralized science, AI [[alignment]] measurable as graph divergence, and a civilization dashboard that reveals what humanity collectively knows and where [[knowledge]] gaps remain
+cyber is the shared memory layer. [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every ranking is provable by [[STARK]] proofs, and [[collective intelligence]] emerges from the topology of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, not gods above it
 
-the protocol blends all four paths to [[superintelligence]] — computation, genetic engineering, [[whole brain emulation]], and [[collective intelligence]] — into [[one simple protocol]] with strong [[focus]] on [[coordination]]
+what this enables: a [[knowledge]] graph that grows smarter with every agent that links, a [[neural language]] that humans and machines speak natively, a [[file]] system where [[names]] resolve through the graph, AI [[alignment]] measurable as graph divergence between human and machine [[focus]], and a [[truth machine]] where lies are economically unprofitable because creating [[cyberlinks]] costs real [[focus]]
 
 ## the protocol
 
