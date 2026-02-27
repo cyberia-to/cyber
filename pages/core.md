@@ -19,7 +19,7 @@ agents: [[neuron]], [[focus]], [[token]]
 
 process: [[observation]], [[learning]], [[inference]], [[training]]
 
-meaning: [[knowledge]]
+meaning: [[knowledge]], [[neural]]
 
 convergence: [[tru]], [[cyberank]], [[intelligence]], [[cyber]]
 

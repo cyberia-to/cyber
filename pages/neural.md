@@ -1,6 +1,6 @@
 ---
 alias: neural language, .nl
-tags: cyber
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 whitepaper: neural language for superintelligence
