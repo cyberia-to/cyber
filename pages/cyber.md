@@ -44,15 +44,15 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 - [[cip]] — cyber improvement proposals
 - [[senate]] — governance system of [[bootloader]]
 
-## stack
-
-[[soft3]] = [[tru]] + [[trident]] + [[neural]]
-
-- [[rust]], [[rune]], [[datalog]], [[trident]], [[tir]] — languages
-- [[neural]] — [[neural language]] implementation
+## [[soft3]] stack
+- [[rust]] - system language for bootstraping
+- [[trident]] - language for provable computation
 - [[Bostrom]] — the [[bootloader]] chain
+  - [[tru]] - onchain lanaguage model
+  - [[neural]] - semantic programing
 - [[cyb]] — the immortal robot
-- [[aos]] — self-fulfilling prophecy game
+  - [[rune]] - dynamic language for scripting
+  - [[datalog]] - graph query language 
 
 ## specifications
 
