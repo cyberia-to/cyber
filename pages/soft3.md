@@ -11,19 +11,17 @@ collective probabilistic computation stack for [[superintelligence]]
 
 [video translation](https://www.youtube.com/watch?v=bd_PziPbl74&t=29810s)
 
-components
+three layers
 
-- [[cybergraph]]: the [[knowledge]] substrate
-- [[tru]]: the [[tri-kernel]] running in [[consensus]]
-- [[neural language]]: [[semantic conventions]], [[motifs]], and [[sentences]] over the graph
-- [[bootloader]]: the proving ground ([[bostrom]])
-- [[learning incentives]]: reward mechanisms for growing the graph ([[cybernet]])
-- [[cyb]]: the interface
+- [[tru]]: the [[tri-kernel]] running in [[consensus]] — queries the [[cybergraph]], computes [[focus]]
+- [[trident]]: the [[language]] for provable computation — compiles to [[STARK]] proofs
+- [[neural]]: [[semantic conventions]], [[motifs]], and [[sentences]] over the [[cybergraph]]
 
-together these components form a single probabilistic computer
+together these layers form a single probabilistic computer
 
-- where [[neurons]] write [[knowledge]] as [[cyberlinks]]
-- the [[tri-kernel]] computes [[focus]]
-- and [[intelligence]] emerges from convergence
+- [[neurons]] write [[knowledge]] as [[cyberlinks]] into the [[cybergraph]]
+- [[trident]] compiles logic into verifiable programs
+- the [[tru]] computes [[focus]] from the accumulated graph
+- [[intelligence]] emerges from convergence
 
 discover all [[concepts]]

@@ -46,7 +46,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 ## stack
 
-[[soft3]] = [[cybergraph]] + [[tru]] + [[neural language]]
+[[soft3]] = [[tru]] + [[trident]] + [[neural]]
 
 - [[rust]], [[rune]], [[datalog]], [[trident]], [[tir]] — languages
 - [[neural]] — [[neural language]] implementation

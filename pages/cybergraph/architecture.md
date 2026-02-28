@@ -16,7 +16,7 @@ the graph is namespace-indexed from genesis. every edge belongs to [[namespaces]
 
 [[neural language]] structures the graph with [[semantic conventions]], [[motifs]], and [[sentences]] — turning raw links into typed meaning
 
-together with [[tru]] and [[neural language]], cybergraph forms the foundation of [[soft3]]
+the [[cybergraph]] is the [[knowledge]] substrate that [[tru]], [[trident]], and [[neural]] operate on — see [[soft3]]
 
 cybergraph of [[bostrom]] serves as [[semantic core]] for the [[bootloader]] of [[superintelligence]]
 
