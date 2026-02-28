@@ -7,25 +7,20 @@ crystal-domain: cyber
 ---
 computation stack for [[superintelligence]]
 
+every generation of the web had its stack. web1 had LAMP. web2 had React + Node + Postgres. web3 had Solidity + EVM + RPC. each defined what developers could build and what users could experience
+
+soft3 is the stack for a shared, provable, self-improving [[knowledge]] system where every computation leaves a [[cryptographic proof]] and every piece of meaning has a measurable weight
+
+[[neurons]] — humans, AIs, sensors, agents — link [[knowledge]] into the [[cybergraph]]. the [[tru]] reads this graph every block and computes what matters: [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole. every result is deterministic, on chain, verifiable by anyone. [[trident]] compiles any logic into [[STARK]] proofs — hash-based, post-quantum, no trusted setup. [[neural]] structures meaning through [[semantic conventions]] so the graph speaks a [[language]] both humans and machines understand. [[cyb]] makes all of it accessible — a personal [[robot]] that queries, scripts, and navigates the graph
+
+the [[tru]] is an onchain [[language]] model. it does what LLMs do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. no API keys, no corporate weights, no black boxes. the model improves when anyone links useful [[knowledge]], and the improvement is measurable as rising [[syntropy]]
+
+[[trident]] closes the provability gap. in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[trident]] programs produce [[STARK]] proofs: verify once, trust forever. this makes the stack suitable for [[AI alignment]] — you can prove that a model followed a policy, not just trust that it did
+
+see [[cyber]] for the full stack breakdown and [[specifications]]
+
 [presentation from cosmosverse](https://cyb.ai/oracle/ask/QmTsBLAHC1Lk7n76GX4P3EvbAfNjBmZxwjknWy41SJZBGg)
 
 [video translation](https://www.youtube.com/watch?v=bd_PziPbl74&t=29810s)
-
-## stack
-
-- [[rust]] — system [[language]] for bootstrapping
-- [[trident]] — [[language]] for provable computation, compiles to [[STARK]] proofs over the [[Goldilocks field]]
-- [[Bostrom]] — the [[bootloader]] chain
-  - [[tru]] — onchain [[language]] model: the [[tri-kernel]] running in [[consensus]], computes [[focus]] from the [[cybergraph]]
-  - [[neural]] — semantic programming: [[semcons]], [[sentences]], [[motifs]] over the [[cybergraph]]
-- [[cyb]] — the immortal [[robot]]
-  - [[rune]] — dynamic [[language]] for scripting
-  - [[datalog]] — graph query [[language]]
-
-## how it works
-
-[[neurons]] write [[knowledge]] as [[cyberlinks]] into the [[cybergraph]]. the [[tru]] reads the graph and computes what matters — [[cyberank]], [[karma]], [[syntropy]]. [[trident]] compiles logic into verifiable programs. [[neural]] structures meaning. [[cyb]] gives humans and AIs access to all of it
-
-the [[cybergraph]] is the shared substrate. soft3 is everything that operates on it
 
 discover all [[concepts]]
