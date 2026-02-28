@@ -3,7 +3,7 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 ---
-# Set Theory
+
 The foundation of [[mathematics]], formalizing collections of objects (sets), their elements, and [[membership]] relations.
 
 founder:: [[Georg Cantor]]

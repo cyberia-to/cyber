@@ -3,8 +3,6 @@ tags: cyber, article
 crystal-type: entity
 crystal-domain: superhuman
 ---
-# Immortality
-
 the engineering project of eliminating death as a biological inevitability
 
 immortality has three layers: biological continuity, digital persistence, and civilizational memory

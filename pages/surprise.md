@@ -3,7 +3,6 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 ---
-# Surprise
 
 the [[emotion]] of [[yellow]] — orienting response to sudden change
 

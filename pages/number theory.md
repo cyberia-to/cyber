@@ -3,7 +3,6 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 ---
-# Number Theory
 The study of properties and relationships of [[integers]], especially [[prime]] numbers.
 
 [[fundamental theorem of arithmetic]]:: every integer greater than 1 is a unique product of primes

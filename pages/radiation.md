@@ -3,7 +3,7 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 ---
-# radiation
+
 The emission and propagation of [[energy]] as electromagnetic [[waves]] or subatomic particles.
 
 electromagnetic spectrum: radio, microwave, infrared, visible light, ultraviolet, X-ray, gamma

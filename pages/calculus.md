@@ -3,7 +3,6 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 ---
-# Calculus
 The mathematical study of continuous change through [[differentiation]] and [[integration]].
 
 founders:: [[Isaac Newton]], [[Gottfried Leibniz]]

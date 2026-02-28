@@ -3,7 +3,6 @@ tags: color, cyber
 crystal-type: property
 crystal-domain: culture
 ---
-# Violet
 
 wavelength:: 380-420 nm
 

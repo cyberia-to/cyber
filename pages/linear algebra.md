@@ -3,7 +3,6 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 ---
-# Linear Algebra
 The study of [[vector]] spaces, [[matrix]] operations, and [[linear transformations]] between them.
 
 core objects:: vectors, matrices, tensors

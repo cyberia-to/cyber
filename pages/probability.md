@@ -3,7 +3,7 @@ tags: mathematics
 crystal-type: measure
 crystal-domain: mathematics
 ---
-# Probability
+
 A measure of uncertainty over events, formalized as a function mapping outcomes to values in [0, 1].
 
 axioms:: [[Kolmogorov]]'s axioms ground probability in [[set theory]] and measure theory

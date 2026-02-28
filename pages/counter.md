@@ -3,7 +3,6 @@ tags: prism, cyb
 crystal-type: entity
 crystal-domain: cyber
 ---
-# Counter
 
 numeric display atom in [[prism]]
 

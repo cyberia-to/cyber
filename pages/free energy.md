@@ -3,8 +3,6 @@ tags: cyber, physics
 crystal-type: measure
 crystal-domain: cybics
 ---
-# free energy
-
 the energy available to do work — the portion of total [[energy]] not locked up in [[entropy]]
 
 three formulations, one idea: systems spontaneously minimize free energy, and what remains at the minimum is [[equilibrium]]

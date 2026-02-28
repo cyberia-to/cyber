@@ -4,7 +4,6 @@ alias: forces
 crystal-type: measure
 crystal-domain: physics
 ---
-# force
 An interaction that changes the [[momentum]] of a body — the cause of [[acceleration]].
 
 four fundamental forces:

@@ -3,7 +3,6 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 ---
-# Disgust
 
 the [[emotion]] of [[orange]] — contamination avoidance
 

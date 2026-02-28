@@ -3,8 +3,6 @@ tags: biology
 crystal-type: process
 crystal-domain: biology
 ---
-# mitosis
-
 Cell division producing two genetically identical daughter cells. The engine of growth, repair, and asexual reproduction.
 
 ## phases

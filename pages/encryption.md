@@ -3,8 +3,6 @@ tags: computer science, cryptography
 crystal-type: process
 crystal-domain: computer science
 ---
-# encryption
-
 Transformation of plaintext into ciphertext using a key, rendering data unreadable to anyone without the corresponding decryption key. The guardian of secrets in digital systems.
 
 ## symmetric encryption

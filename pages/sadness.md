@@ -3,7 +3,6 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 ---
-# Sadness
 
 the [[emotion]] of [[indigo]] — withdrawal and introspection
 

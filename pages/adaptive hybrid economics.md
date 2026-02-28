@@ -3,7 +3,6 @@ tags: cyber, uhash
 crystal-type: entity
 crystal-domain: cybics
 ---
-# Adaptive Hybrid Economics
 
 ## Minimal Implementation Spec
 

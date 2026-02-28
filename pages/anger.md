@@ -3,7 +3,6 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 ---
-# Anger
 
 the [[emotion]] of [[red]] — high-arousal threat response
 

@@ -3,7 +3,6 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 ---
-# complexity theory
 
 Classification of computational problems by the resources (time, space, randomness) required to solve them. The science of what is feasible to compute.
 

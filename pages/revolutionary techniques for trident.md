@@ -4,7 +4,6 @@ alias: Revolutionary_Techniques_for_Trident
 crystal-type: article
 crystal-domain: cyber
 ---
-# Revolutionary Techniques for Trident
 
 ## Everything That Can Make a Proof-Native Language Unprecedented
 

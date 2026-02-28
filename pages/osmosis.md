@@ -3,8 +3,6 @@ tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
 ---
-# osmosis
-
 Movement of water across a semipermeable membrane from a region of low solute concentration to high solute concentration. Nature seeking equilibrium.
 
 ## mechanism

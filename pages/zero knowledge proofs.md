@@ -3,7 +3,6 @@ tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
 ---
-# zero knowledge proofs
 
 A cryptographic protocol where a prover convinces a verifier that a statement is true while revealing nothing beyond the truth of the statement itself.
 

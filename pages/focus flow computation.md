@@ -5,8 +5,6 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 ---
-# focus flow computation
-
 [[transformers]] compute [[attention]] as a one-shot matrix multiply: $\text{softmax}(QK^T/\sqrt{d})V$. focus flow computes [[attention]] as an iterative physical process: [[cyberlinks]] define a graph, the [[tri-kernel]] evolves probability mass toward [[equilibrium]], and the fixed point $p^*$ is the network's collective [[focus]]
 
 ## how it replaces transformers

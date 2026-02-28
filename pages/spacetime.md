@@ -3,7 +3,7 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 ---
-# spacetime
+
 The four-dimensional fabric unifying three spatial dimensions with time into a single continuum.
 
 special [[relativity]]: spacetime is flat (Minkowski), distances mix space and time depending on observer velocity

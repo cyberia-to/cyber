@@ -4,8 +4,6 @@ crystal-type: entity
 crystal-domain: cyber
 concept: neural
 ---
-# Neural Language for Superintelligence
-
 ## A Whitepaper on Convergent Semantic Communication for Collective Intelligence
 
 Version 1.0

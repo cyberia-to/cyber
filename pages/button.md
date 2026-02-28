@@ -3,7 +3,6 @@ tags: prism, cyb
 crystal-type: entity
 crystal-domain: cyber
 ---
-# Button
 
 call-to-action atom in [[prism]]
 

@@ -3,7 +3,6 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 ---
-# databases
 
 Systems for structured storage, retrieval, and manipulation of data. Persistent memory for [[computation]].
 

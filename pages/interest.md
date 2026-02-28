@@ -3,8 +3,6 @@ tags: cyber, cyb
 crystal-type: entity
 crystal-domain: cyber
 ---
-# Interest
-
 the [[emotion]] of [[blue]] — curiosity and exploration drive
 
 wavelength:: 450-495 nm

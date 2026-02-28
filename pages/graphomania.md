@@ -3,8 +3,6 @@ tags: superhuman, cyber
 crystal-type: entity
 crystal-domain: superhuman
 ---
-# Graphomania
-
 the compulsion to write excessively, producing volume without substance
 
 in the context of [[knowledge graph]] design: the pathological expansion of a graph beyond the point where human curation can maintain quality

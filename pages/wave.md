@@ -4,7 +4,7 @@ alias: waves
 crystal-type: entity
 crystal-domain: physics
 ---
-# wave
+
 A disturbance that propagates through space or a medium, transferring [[energy]] without net transport of matter.
 
 characterized by frequency, wavelength, amplitude, and speed

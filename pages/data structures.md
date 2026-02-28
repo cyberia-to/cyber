@@ -3,7 +3,6 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 ---
-# data structures
 
 Ways of organizing, storing, and accessing data so that [[algorithms]] can operate efficiently.
 

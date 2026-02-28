@@ -5,7 +5,6 @@ tags: cyber, article, menu
 crystal-type: entity
 crystal-domain: cyber
 ---
-# Superhuman
 
 a biological body evolved beyond human limits, integrated with [[egregore]], and capable of [[immortality]]
 

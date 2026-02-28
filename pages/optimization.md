@@ -3,7 +3,6 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 ---
-# Optimization
 Finding the best solution from a set of feasible alternatives by minimizing or maximizing an objective function.
 
 [[convex optimization]]:: global optimum is guaranteed; the tractable case

@@ -3,8 +3,6 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 ---
-# Energy
-
 fundamental concept in [[physics]] and [[information]]
 
 the capacity to do work or produce change

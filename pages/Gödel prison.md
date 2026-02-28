@@ -4,8 +4,6 @@ crystal-type: pattern
 crystal-domain: cyber
 alias: Gödelian prison, incompleteness prison, Gödel's prison
 ---
-# Gödel prison
-
 the confinement of all formal systems to permanent incompleteness — and the escape through [[convergent computation]]
 
 ---

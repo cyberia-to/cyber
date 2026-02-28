@@ -3,7 +3,6 @@ tags: computer science, information theory
 crystal-type: process
 crystal-domain: mathematics
 ---
-# compression
 
 Reducing data size by eliminating redundancy. Encoding information in fewer bits than the original representation.
 

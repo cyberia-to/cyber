@@ -3,7 +3,6 @@ tags: physics
 crystal-type: measure
 crystal-domain: physics
 ---
-# momentum
 The product of [[mass]] and velocity — a conserved vector quantity describing motion.
 
 conservation of momentum: total momentum in a closed system is constant

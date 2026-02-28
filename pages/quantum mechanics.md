@@ -3,7 +3,7 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 ---
-# quantum mechanics
+
 The fundamental theory of [[physics]] describing nature at the scale of atoms and subatomic particles.
 
 state of a system encoded in a [[wave]] function (Schrodinger equation)

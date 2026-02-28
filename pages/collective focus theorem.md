@@ -6,7 +6,6 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 ---
-# Collective Focus Theorem
 
 authors: [@mastercyb](https://cyb.ai/@mastercyb), [GPT-4](https://openai.com/index/gpt-4/), [claude-3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)
 

@@ -3,7 +3,6 @@ tags: computer science, cyber
 crystal-type: entity
 crystal-domain: computer science
 ---
-# consensus algorithms
 
 Protocols enabling distributed nodes to agree on a single state despite failures and adversaries. The foundation of decentralized [[computation]].
 

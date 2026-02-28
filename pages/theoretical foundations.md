@@ -4,7 +4,6 @@ crystal-type: pattern
 crystal-domain: cyber
 status: draft
 ---
-# theoretical foundations
 
 the mathematical framework of [[cyber]]: why a token-weighted graph converges to a unique [[focus]] distribution, how three operators form a complete basis for collective [[intelligence]], and what happens when agents optimize against the resulting [[free energy]] landscape
 

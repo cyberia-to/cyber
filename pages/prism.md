@@ -5,7 +5,6 @@ alias: design system
 crystal-type: entity
 crystal-domain: cyber
 ---
-# Prism
 
 the design system of [[cyb]] — a visual language for interfacing with [[Superintelligence]]
 

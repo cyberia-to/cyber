@@ -3,7 +3,6 @@ tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
 ---
-# photosynthesis
 
 Conversion of light energy into chemical energy, storing solar power in the bonds of glucose. The process that feeds nearly all life on Earth.
 

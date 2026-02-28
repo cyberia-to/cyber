@@ -5,7 +5,6 @@ crystal-domain: cybics
 alias: active inference framework
 status: draft
 ---
-# active inference
 
 a framework where perception, action, and [[learning]] are aspects of one optimization: minimizing variational [[free energy]]
 

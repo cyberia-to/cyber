@@ -3,7 +3,6 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 ---
-# gravity
 The fundamental [[force]] by which [[mass]] and [[energy]] curve [[spacetime]], drawing bodies together.
 
 Newton's description: attractive [[force]] proportional to product of [[masses]], inverse square of distance

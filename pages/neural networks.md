@@ -3,8 +3,6 @@ tags: computer science, machine learning
 crystal-type: entity
 crystal-domain: computer science
 ---
-# neural networks
-
 Layers of weighted connections that learn to approximate functions from data. The computational substrate of modern artificial intelligence.
 
 ## architecture

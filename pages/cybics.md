@@ -6,7 +6,6 @@ crystal-type: pattern
 crystal-domain: cyber
 alias: unified science, the mother science
 ---
-# Cybics
 
 the unified science of [[cyber]] — convergence of [[cybernetics]], [[physics]], [[mathematics]], and [[information theory]] into a single formal discipline
 

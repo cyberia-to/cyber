@@ -4,8 +4,6 @@ tags: physics, cyber
 crystal-type: entity
 crystal-domain: mathematics
 ---
-# Laplacian
-
 the operator that measures how a value at a point differs from its neighborhood average
 
 ## discrete form

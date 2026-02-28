@@ -3,8 +3,6 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 ---
-# operating systems
-
 Software layer managing hardware resources and providing an environment for programs to run. The bridge between silicon and [[algorithms]].
 
 ## core responsibilities

@@ -3,8 +3,6 @@ tags: computer science
 crystal-type: process
 crystal-domain: computer science
 ---
-# formal verification
-
 Mathematical proof that a system (software, hardware, protocol) meets its specification. Certainty beyond testing.
 
 ## approaches

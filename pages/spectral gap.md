@@ -4,7 +4,6 @@ crystal-type: measure
 crystal-domain: cybics
 alias: mixing time
 ---
-# spectral gap
 
 the difference between the two largest eigenvalues of a transition matrix or graph [[Laplacian]] — the single number that controls how fast a system reaches [[equilibrium]]
 

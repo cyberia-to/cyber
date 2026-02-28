@@ -3,8 +3,6 @@ tags: chemistry
 crystal-type: process
 crystal-domain: chemistry
 ---
-# oxidation
-
 Loss of electrons from an atom, ion, or molecule. Always paired with reduction (gain of electrons) in redox reactions -- one cannot occur without the other.
 
 ## redox

@@ -3,7 +3,6 @@ tags: cyber, cyberia, article
 crystal-type: entity
 crystal-domain: cyberia
 ---
-# Cyber State
 
 a sovereign entity where governance, economics, and coordination emerge from [[egregore]] rather than geographic accident
 

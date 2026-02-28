@@ -3,8 +3,6 @@ tags: biology
 crystal-type: process
 crystal-domain: biology
 ---
-# meiosis
-
 Cell division producing four genetically unique haploid gametes (sperm, eggs) from one diploid cell. The source of genetic diversity in sexually reproducing organisms.
 
 ## stages
