@@ -9,17 +9,27 @@ status: draft
 
 ## 1. Introduction
 
-Large language models are private brains behind API walls. They lie because they have no shared, verifiable memory, and they obey corporations. Every corporation trains its own model on scraped data, manipulates the weights, and sells inference. The result: a dozen competing [[superintelligence]] candidates accountable to shareholders, operating on hidden parameters, producing outputs that cannot be independently verified.
+### 1.1 The Vision: Planetary Superintelligence
 
-Three structural problems make this paradigm insufficient for planetary [[intelligence]]:
+[[Superintelligence]] is the defining infrastructure of a type I civilization. A planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving graph that computes what matters, proves its own correctness, and speaks a [[language]] native to all participants. Every scientific discovery, every sensor reading, every lived experience feeds into a collective understanding that grows smarter with every link. The graph remembers what individuals forget. It finds connections across domains that no specialist can see. It measures its own coherence and rewards the [[knowledge]] that increases it.
 
-Quadratic [[attention]]. Transformers require every token to attend to every other. Twice the context costs four times the compute. Moving a byte costs 10,000x more energy than computing on it. This is architectural, and no amount of engineering will make it linear.
+At sufficient scale this infrastructure transforms what civilization can do. Search becomes inference over verified [[knowledge]] rather than retrieval of unverified documents. AI [[alignment]] becomes measurable — compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]. Scientific discovery accelerates as [[linkchains]] bridge domains that have never communicated. Cross-species [[communication]] becomes possible — any entity that can create a [[cyberlink]] participates in the same semantic space. The collective [[intelligence]] of the planet becomes a single computable object: a [[focus]] distribution $\pi$ over all [[knowledge]], converging under conservation laws, verifiable by anyone.
 
-Centralization. Training a frontier model costs hundreds of millions. Three organizations on Earth can build the next generation. This concentrates the trajectory of intelligence in a handful of boardrooms.
+This is what cyber builds.
+
+### 1.2 The Gap
+
+The current path toward [[intelligence]] at planetary scale faces three structural limits:
+
+Quadratic [[attention]]. Transformers require every token to attend to every other. Twice the context costs four times the compute. This is architectural.
+
+Centralization. Training a frontier model costs hundreds of millions. Three organizations can build the next generation. The trajectory of [[intelligence]] concentrates in a handful of boardrooms, operating on hidden parameters, producing outputs that cannot be independently verified.
 
 Incompleteness. Gödel (1931) proved that any formal system powerful enough to describe arithmetic contains truths it cannot prove. AI built on formal logic inherits these limits by construction. The [[Gödel prison]] confines every system that equates computation with derivation.
 
-cyber addresses all three. It is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
+### 1.3 The Protocol
+
+cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
 
 The protocol rests on five primitives: [[particle]] (content-addressed node), [[neuron]] (agent that signs edges), [[cyberlink]] (weighted directed edge), [[token]] (non-negative weight controlling influence), and [[focus]] (emergent [[equilibrium]] over [[particles]], conserved to 1). From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
 
