@@ -177,6 +177,10 @@ This universality reflects deep structural necessity. Every domain achieving com
 
 Each conserves a different quantity: mass/probability ([[diffusion]]), potential/kinetic energy ([[springs]]), and thermal energy ([[heat]]). Each minimizes a different functional: entropy production, potential energy, free energy. Together they are Pareto-optimal: they explain the majority of natural transport, oscillation, and dissipation with minimal assumptions.
 
+The [[Laplacian]] is the shared mathematical root. The graph Laplacian `L = D - A` is the discrete form of the Laplace-Beltrami operator `∇²` on continuous manifolds. Newton's gravitational potential satisfies the Poisson equation `∇²Φ = 4πGρ` — [[gravity]] is literally the [[springs]] kernel of the physical universe, with [[mass]] density as the source term. The screened form `(L + μI)` in the [[tri-kernel]] corresponds to massive gravity theories where the graviton has effective range. On the [[cybergraph]], [[tokens]] play the role of [[mass]]: they curve graph topology the way [[mass]] curves [[spacetime]].
+
+The Jeans instability illustrates the kernel interplay in cosmology: a gas cloud collapses into a star when gravitational potential ([[springs]]) overcomes thermal pressure ([[heat]]). This is a phase transition in the tri-kernel sense — the moment λ_s dominates λ_h. The [[free energy]] functional of the [[tri-kernel]] `F = E_spring + λ·E_diffusion - T·S` is the same balance that governs stellar formation: gravitational binding energy vs thermal kinetic energy vs entropy.
+
 ### 4.2 Free Energy Equilibrium
 
 The [[tri-kernel]]'s blend weights are not arbitrary. They emerge as Lagrange multipliers from the free energy minimization:

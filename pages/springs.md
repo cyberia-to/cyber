@@ -27,6 +27,7 @@ the structure force — an elastic lattice that holds things in place
 universal pattern
 
 - physics: elastic lattice, tensegrity
+- cosmology: [[gravity]], [[spacetime]] curvature
 - biology: skeleton, connective tissue
 - ecology: food webs, symbioses
 - economics: institutions, contracts, norms
@@ -34,5 +35,13 @@ universal pattern
 together with [[diffusion]] and [[heat kernel]] forms the [[tri-kernel]] that computes [[cyberank]]
 
 see [[tri-kernel]] for completeness proof
+
+## [[Laplacian]] bridge
+
+the graph Laplacian `L = D - A` is the discrete form of the Laplace-Beltrami operator `∇²` on manifolds
+
+Newton's gravitational potential satisfies `∇²Φ = 4πGρ` — the same operator acting on continuous [[spacetime]]. the springs equation `(L + μI)x = μx₀` is its discrete, screened analog on the [[cybergraph]]
+
+[[mass]] curves [[spacetime]] geometry via the [[Laplacian]]. [[tokens]] curve graph topology via the same operator. [[gravity]] is the springs kernel of the physical universe
 
 discover all [[concepts]]

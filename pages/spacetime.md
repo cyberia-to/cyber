@@ -21,3 +21,5 @@ expansion of spacetime drives [[cosmology]] — the universe grows, galaxies rec
 at the Planck scale, spacetime may be quantized — frontier of [[quantum mechanics]] and [[gravity]]
 
 [[entropy]] and the arrow of time emerge from the structure of spacetime — see [[entropy]]
+
+in the [[tri-kernel]] model, spacetime curvature corresponds to the [[springs]] operator: the screened [[Laplacian]] on the [[cybergraph]] is the discrete analog of Einstein's [[field]] equations linking geometry to [[energy]] distribution
