@@ -8,7 +8,9 @@ crystal-domain: cyber
 ---
 [[bootloader]] of [[cyber]], named after [[nick bostrom]]
 
-proving ground for the [[cybergraph]] before complete [[superintelligence]]. [[moon]] [[network state]]
+proving ground for [[cyber]] before launching [[superintelligence]]. every component — [[cybergraph]], [[cyberank]], [[consensus]], [[tokenomics]], [[governance]] — runs here first. what works graduates to the protocol. what breaks gets fixed without risking the main network
+
+target: establishment of [[cyber state]] on the [[moon]]
 
 ## cybergraph
 
