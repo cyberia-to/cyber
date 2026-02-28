@@ -12,7 +12,7 @@ convergent successor for both formal and natural [[languages]]
 
 meaning is defined by [[cyberlinks]] — structure emerges from how agents link [[particles]]
 
-together with [[tru]] and [[trident]] forms the three layers of [[soft3]]
+part of the [[soft3]] stack, running on [[Bostrom]] alongside the [[tru]]
 
 the language of [[egregore]]: meaning emerges from how many [[neurons]] independently structure [[knowledge]]
 
