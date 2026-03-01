@@ -2,11 +2,11 @@
 tags: cybernomics, cyber
 crystal-type: pattern
 crystal-domain: cybics
-alias:: Shapley
+alias:: Shapley, Shapley values, shapley value
 ---
 a solution concept from cooperative game theory that assigns each player their exact fair share of the total value created by a coalition
 
-invented by Lloyd Shapley (1953). the only attribution method satisfying all four fairness axioms simultaneously: efficiency (total value is fully distributed), symmetry (equal contributors get equal reward), null player (zero-contribution agents get nothing), additivity (attributions compose linearly across games).
+invented by [[Lloyd Shapley]] (1953). the only attribution method satisfying all four fairness axioms simultaneously: efficiency (total value is fully distributed), symmetry (equal contributors get equal reward), null player (zero-contribution agents get nothing), additivity (attributions compose linearly across games).
 
 for a coalition $N$ with value function $v$, the Shapley value of player $i$ is:
 
@@ -18,4 +18,4 @@ exact computation is $O(n!)$ — intractable at scale. [[probabilistic shapley a
 
 in [[cyber]], the coalition is all [[neurons]] contributing [[cyberlinks]] in an epoch. the value function is the total [[focus]] shift $\Delta\pi$. the Shapley value distributes rewards so each [[neuron]] earns proportionally to their causal impact on the [[equilibrium]] — the only mathematically fair attribution under the four axioms.
 
-Shapley won the Nobel Memorial Prize in Economics (2012) for this and matching theory. the value has since become foundational in [[machine learning]] (SHAP explanations), mechanism design, and decentralized reward systems.
+[[Lloyd Shapley]] won the Nobel Memorial Prize in Economics (2012) for this and matching theory. the value has since become foundational in [[machine learning]] (SHAP explanations), mechanism design, and decentralized reward systems.

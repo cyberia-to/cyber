@@ -31,14 +31,14 @@ quadrant of governance
 | | no personal incentive| personal incentive |
 |---|---|---|
 | discrete | democracy  | prediction markets  |
-| continuous | gauge voting | shapely value |
+| continuous | gauge voting | [[Shapley value]] |
 
 
 decision types
 
 - discrite => d/futarchy => dutarchy
 - contioniuos
-	- yuma consensus => shapley value => https://github.com/cyberia-to/cybernet
+	- yuma consensus => [[Shapley value]] => https://github.com/cyberia-to/cybernet
 		- ![undefined](https://upload.wikimedia.org/wikipedia/commons/2/2c/Shapley_Value_Synergy_Division_Venn_Diagram.jpg)
 	- quadratic measurements
 		- add more fairness
