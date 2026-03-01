@@ -1,3 +1,8 @@
+---
+tags: cyber, rs, rust, language, research
+icon: "\u2699\uFE0F"
+---
+
 # Rs: A Strict Superset of Rust for Living Systems
 
 > *Every .rs file is valid Rs. Rs adds what Rust should have had if it were designed for machines that never reboot.*

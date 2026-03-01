@@ -1,3 +1,8 @@
+---
+tags: cyber, vcs, patch theory, crypto, research
+icon: "\U0001FA79"
+---
+
 # CyberPatch: Specification v0.1
 ## A Content-Addressed, Identity-Sovereign Patch System for Planetary-Scale Knowledge Networks
 

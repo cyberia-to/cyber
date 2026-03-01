@@ -1,3 +1,8 @@
+---
+tags: cyber, bostrom, migration, rust, research
+icon: "\U0001F980"
+---
+
 # Phase 3 Deep Dive: Go → Rust Host Migration
 
 ## The Four Go Dependencies

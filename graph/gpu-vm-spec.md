@@ -1,3 +1,8 @@
+---
+tags: cyber, bostrom, gpu, wgsl, vm, research
+icon: "\U0001F3AE"
+---
+
 # Cybergraph GPU VM Specification
 **Version:** 0.1-experimental  
 **Status:** Draft  

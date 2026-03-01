@@ -1,3 +1,8 @@
+---
+tags: cyber, bostrom, migration, rust, cosmwasm, research
+icon: "\U0001F980"
+---
+
 # go-cyber → Rust: Complete Migration Plan
 
 ## Executive Summary
