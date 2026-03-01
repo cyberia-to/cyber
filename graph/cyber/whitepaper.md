@@ -339,7 +339,9 @@ Structure:
 - Layer 3: Focus and balance (polynomial commitments over $(neuron\_id, \mathbb{F}_p)$ pairs)
 - Layer 4: UTXO state (commitment polynomial, nullifier set, particle energy)
 
-Graph root: $\text{BBG\_root} = H(\text{by\_neuron.commit} \| \text{by\_particle.commit} \| \text{focus.commit} \| \text{balance.commit} \| \text{commitment\_poly.commit} \| \text{nullifier\_set.commit})$
+Graph root:
+
+$$\text{BBG\_root} = H(\text{by\_neuron.commit} \| \text{by\_particle.commit} \| \text{focus.commit} \| \text{balance.commit} \| \text{commitment\_poly.commit} \| \text{nullifier\_set.commit})$$
 
 Index consistency invariant: every edge appears in exactly the right index positions (3 for distinct endpoints, 2 for self-links), enforced by STARK on every state transition.
 
@@ -398,11 +400,11 @@ cyber implements private ownership with public aggregates. Individual record own
 
 A record is a tuple (particle, value, owner, nonce). Its commitment:
 
-$\text{commitment}(r) = \text{Poseidon}(\text{COMMITMENT\_DOMAIN}, r.\text{particle}, r.\text{value}, r.\text{owner}, r.\text{nonce})$
+$$\text{commitment}(r) = \text{Poseidon}(\text{COMMITMENT\_DOMAIN}, r.\text{particle}, r.\text{value}, r.\text{owner}, r.\text{nonce})$$
 
 Its nullifier (for double-spend prevention):
 
-$\text{nullifier}(r, \text{secret}) = \text{Poseidon}(\text{NULLIFIER\_DOMAIN}, r.\text{nonce}, \text{secret})$
+$$\text{nullifier}(r, \text{secret}) = \text{Poseidon}(\text{NULLIFIER\_DOMAIN}, r.\text{nonce}, \text{secret})$$
 
 The nullifier cannot be derived from the commitment (needs secret), cannot reveal the commitment (one-way), is unique per record, and deterministic (same record produces the same nullifier).
 
