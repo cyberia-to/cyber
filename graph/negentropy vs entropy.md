@@ -2,6 +2,7 @@
 tags: article, cip
 crystal-type: property
 crystal-domain: physics
+alias:: entropy vs negentropy
 status: draft
 ---
 # from entropy reduction to negentropy maximization: the dual thermodynamics of decentralized intelligence
