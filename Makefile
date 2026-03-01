@@ -1,6 +1,6 @@
 .PHONY: build serve check clean
 
-PUBLISHER := src/publish
+PUBLISHER := render
 
 build:
 	cd $(PUBLISHER) && cargo run --release -- build ../..
@@ -15,4 +15,4 @@ test:
 	cd $(PUBLISHER) && cargo test
 
 clean:
-	rm -rf public
+	rm -rf build

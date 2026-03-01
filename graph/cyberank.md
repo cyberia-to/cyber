@@ -12,6 +12,6 @@ fixed point of the [[tri-kernel]]: `φ* = norm[λ_d · D(φ) + λ_s · S(φ) + �
 
 feeds [[karma]], [[syntropy]], [[standard inference]], and sorting in [[cyb]]. the fundamental factor of [[implicit knowledge]]
 
-see [[cyberank/implementation]] for comparison with [[pagerank]], pseudocode, and display format
+see [[cybergraph/focus/implementation]] for comparison with [[pagerank]], pseudocode, and display format
 
 discover all [[concepts]]

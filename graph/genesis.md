@@ -114,9 +114,9 @@ region in [[cyber valley]] on 30 ha of land
 
 ![image.png](../media/image_1725878222276_0.png)
 
-## dive into [[citadel/vision]]
+## dive into [[cyber valley/citadel/vision]]
 
-## [[citadel/strategy]]
+## [[cyber valley/citadel/strategy]]
 
 ## districts
 

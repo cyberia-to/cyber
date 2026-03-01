@@ -1,5 +1,5 @@
 # cyber-publish configuration
-# See src/publish/README.md for documentation.
+# See render/README.md for documentation.
 
 [site]
 title = "Cyber"
@@ -20,13 +20,13 @@ show_tags = true
 
 [build]
 input_dir = "."
-output_dir = "public"
+output_dir = "build"
 # template_dir = "templates"   # Custom templates (optional)
 # static_dir = "static"        # Additional static files (optional)
 
 [content]
 public_only = true
-exclude_patterns = ["logseq/*", "draws/*", ".git/*", "public/*", "target/*", "src/publish/target/*", ".DS_Store", ".claude/*"]
+exclude_patterns = ["logseq/*", "draws/*", ".git/*", "build/*", "target/*", "render/target/*", ".DS_Store", ".claude/*"]
 include_journals = true
 default_public = true
 

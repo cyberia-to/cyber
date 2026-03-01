@@ -573,7 +573,7 @@ Natural languages: the major language families and their structure. Writing syst
 | [[physics]] | [[force]], [[wave]], [[field]], [[entropy]] | 48 | 200 |
 | [[tools]] | [[technology]], [[tech]] | 38 | 150 |
 | [[people]] | [[person]] | 34 | 500 |
-| [[food]] | [[recipe]], [[kitchen/menu]], [[agriculture]] | 29 | 150 |
+| [[food]] | [[recipe]], [[cyber valley/kitchen/menu]], [[agriculture]] | 29 | 150 |
 | [[governance]] | [[states]], [[sovereignty]], [[law]] | 25 | 350 |
 | [[geography]] | [[earth]], [[biome]], [[continent]] | 23 | 300 |
 | [[computer science]] | [[cryptography]], [[algorithms]] | 18 | 150 |

@@ -10,7 +10,7 @@ bet on selling [[$CYB]] packages
 
 for [[soft3]] [[collective learning]] of [[superintelligence]]
 
-on [[portal/buy]]
+on [[aos/portal/buy]]
 
 in [[cyb]] to design two fundamental state of [[robot]]: [[alien]] and [[energetic]]
 

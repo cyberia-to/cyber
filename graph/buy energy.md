@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 [[$CYB]] pack for sale
 
-TODO design and implement [[portal/buy]]
+TODO design and implement [[aos/portal/buy]]
 
 [[anatomy of decision]]
 

@@ -12,6 +12,6 @@ four arguments: [[who]] linked, [[when]], [[what]] [[particles]], and with which
 
 the first cyberlink a [[particle]] receives is always a [[name]], turning it into a [[file]]. further links weave the [[cybergraph]]. the accumulated graph of all cyberlinks is [[knowledge]] itself
 
-see [[cyberlink/hyperlink]] for comparison with hyperlinks. see [[cyberlink/creation]] for tools
+see [[cybergraph/cyberlink/hyperlink]] for comparison with hyperlinks. see [[cybergraph/cyberlink/creation]] for tools
 
 discover all [[concepts]]

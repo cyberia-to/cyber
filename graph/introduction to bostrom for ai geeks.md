@@ -124,7 +124,7 @@ in this article i will boil down all essential ideas into coherent understanding
 - > as the most fundamental such an atomic unit of [[knowledge]] and [[learning]]
 - the key to quantum jump of civilization
 - you append [[cyberlinks]] to the state of collective thought evolution
-- introducing [[cyberlink/delete]] make indexing a complex task
+- introducing [[cybergraph/cyberlink/delete]] make indexing a complex task
 - also its obviously not how nature works: you just cant forget in your head by wish, they forgotten by itself
 - although looks primitive, [[cybergraph]] is so much needed formal definition of [[explicit knowledge]]
 - lets analize a statment that cybergraph is complete form [[explicit knowledge]]

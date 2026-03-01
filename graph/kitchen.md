@@ -7,16 +7,16 @@ alias: permabase kitchen
 ---
 revenue:: master class
 
-[[kitchen/rules]]
+[[cyber valley/kitchen/rules]]
 
-[[kitchen/launch]]
+[[cyber valley/kitchen/launch]]
 
-[[kitchen/storage]]
+[[cyber valley/kitchen/storage]]
 
-[[kitchen/cleaning]]
+[[cyber valley/kitchen/cleaning]]
 
-[[kitchen/menu]]
+[[cyber valley/kitchen/menu]]
 
-[[kitchen/basics]]
+[[cyber valley/kitchen/basics]]
 
-[[kitchen/recipes]]
+[[cyber valley/kitchen/recipes]]

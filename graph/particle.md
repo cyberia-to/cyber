@@ -12,6 +12,6 @@ anything can be a particle — a keyword, an image, a genome, a model. the only 
 
 [[particles]] are the objects. [[neurons]] are the subjects. each particle earns a [[cyberank]] — its probability of being observed
 
-see [[particle/tools]] for content addressing tools and CID format
+see [[cybergraph/particle/tools]] for content addressing tools and CID format
 
 discover all [[concepts]]

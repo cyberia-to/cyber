@@ -12,6 +12,6 @@ human, AI, sensor, or [[prog]] — anything that can prove a [[signature]] or ac
 
 creates [[cyberlinks]]. pays [[focus]]. earns [[karma]]. each link is a [[costly signal]] — the cost is what makes [[learning]] real
 
-see [[neuron/tools]] for software to create and use neurons
+see [[cybergraph/neuron/tools]] for software to create and use neurons
 
 discover all [[concepts]]

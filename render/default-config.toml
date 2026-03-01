@@ -1,0 +1,74 @@
+# cyber-publish configuration
+
+[site]
+title = "My Knowledge Base"
+description = ""
+base_url = "http://localhost:8080"
+language = "en"
+# root_page = "Index"      # Page to render as homepage
+# favicon = ""              # Emoji or path to favicon file
+
+[nav]
+# menu = [
+#   { label = "Home", page = "Index" },
+#   { label = "About", page = "About" },
+# ]
+
+[nav.sidebar]
+show_namespaces = true
+show_recent = true
+recent_count = 10
+show_tags = true
+
+[build]
+input_dir = "."
+output_dir = "build"
+# template_dir = "templates"
+# static_dir = "static"
+
+[content]
+public_only = true
+exclude_patterns = ["logseq/*", "draws/*", ".git/*"]
+include_journals = false
+default_public = false
+
+[urls]
+style = "pretty"
+slugify = true
+
+[feeds]
+enabled = true
+# title = "My Updates"
+items = 20
+
+[search]
+enabled = true
+engine = "json"
+
+[analytics]
+# plausible_domain = ""
+# plausible_script = "https://plausible.io/js/script.js"
+
+[graph]
+enabled = true
+show_minimap = true
+minimap_depth = 2
+
+[style]
+primary_color = "#2d6a4f"
+secondary_color = "#264653"
+bg_color = "#0f0f0f"
+text_color = "#e5e5e3"
+surface_color = "#1a1a1a"
+border_color = "#2a2a28"
+
+[style.typography]
+font_body = "system-ui, -apple-system, 'Segoe UI', sans-serif"
+font_mono = "'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace"
+font_size_base = "1rem"
+line_height = "1.7"
+max_width = "48rem"
+
+[style.code]
+theme = "base16-ocean.dark"
+show_line_numbers = false
