@@ -24,8 +24,8 @@ pages
 [[actions]]
 
 - [[buy energy]]
-- [[cyb/portal/spells/api]]
-- [[cyb/portal/avatars/api]]
+- [[cyb/portal/my spells/api]]
+- [[cyb/portal/my avatars/api]]
 - [[cybergraph/neuron/api]]
 
 [[features]]

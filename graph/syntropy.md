@@ -12,6 +12,6 @@ meaningful [[cyberlinks]] raise it. spam and noise lower it. the [[tru]] compute
 syntropy of [[bostrom]]: [cyb.ai/oracle/stats](https://cyb.ai/oracle/stats)
 syntropy of [[space pussy]]: [spacepussy.ai/oracle/stats](https://spacepussy.ai/oracle/stats)
 
-see [[syntropy/science]] for the concept across scientific disciplines
+see [[cyber/syntropy/science]] for the concept across scientific disciplines
 
 discover all [[concepts]]

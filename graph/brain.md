@@ -59,9 +59,9 @@ paths::
 
 actions::
 
-- [[brain/ask]] or [[oracle/ask]]
-- [[brain/learn]] or [[oracle/learn]]
-- [[brain/search]] or [[oracle/search]]
+- [[brain/ask]] or [[cyb/oracle/ask]]
+- [[brain/learn]] or [[cyb/oracle/learn]]
+- [[brain/search]] or [[cyb/oracle/search]]
 
 TODO [[upload brain]]
 

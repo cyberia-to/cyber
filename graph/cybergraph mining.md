@@ -35,6 +35,6 @@ leading to more intelligent [[avatars]]
 implementation
 
 - [[cyb/tasks]]
-- [[oracle/particles]]
-- [[oracle/avatars]]
-- [[oracle/cyberlinks]]
+- [[cyb/oracle/particles]]
+- [[cyb/oracle/avatars]]
+- [[cyb/oracle/cyberlinks]]

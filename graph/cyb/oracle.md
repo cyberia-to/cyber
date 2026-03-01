@@ -12,7 +12,7 @@ pages left
 pages to add
 
 - [[cyb/oracle]]
-- [[oracle/neurons]]
+- [[cyb/oracle/neurons]]
 - [[cyb/oracle/search]]
 - [[cyb/oracle/play]]
 - [[cyb/oracle/cyberlinks]]

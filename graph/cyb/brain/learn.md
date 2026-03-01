@@ -15,5 +15,5 @@ actions
 	- result:: cyberlink confirmed
 - button::
 	- text:: mine knowledge
-	- result:: [[oracle/cyberlinks]]
+	- result:: [[cyb/oracle/cyberlinks]]
 	-

@@ -17,4 +17,4 @@ philosophy
 implementations
 
 - [[go-cyber]]
-- [[oracle/search]]
+- [[cyb/oracle/search]]

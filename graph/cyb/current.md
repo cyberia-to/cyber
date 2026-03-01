@@ -39,7 +39,7 @@ state of [[cyb/core]] aips
 - [[cyb/teleport]]
 - [[cyb/temple]]
 - [[cyb/nebula]]
-- [[cyb/hacklab]]
+- [[cyb/hacklab/hacklab]]
 
 state of [[aos]] [[aips]]
 

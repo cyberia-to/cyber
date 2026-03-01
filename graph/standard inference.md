@@ -32,7 +32,7 @@ any intelligent system must solve [[true false problem]] for [[contextual awaren
 implementations
 
 - [[cy]]
-- TODO [[oracle/ask]]
+- TODO [[cyb/oracle/ask]]
 
 continue to
 

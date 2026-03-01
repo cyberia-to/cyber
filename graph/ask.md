@@ -21,7 +21,7 @@ philosophy
 
 implementations
 
-- TODO [[oracle/ask]]
+- TODO [[cyb/oracle/ask]]
 	- as default uses [[soul]] to define output
 	- call [[standard inference]]
 	- summarize it by [[local llm]]

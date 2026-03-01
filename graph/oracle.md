@@ -9,7 +9,7 @@ cell in [[prism]]
 
 current state in [[cyb-ts]] at [[cyb/oracle]]
 
-[[oracle/product]]
+[[cyb/oracle/product]]
 
 provides [[context]] to [[cyb]] by querying the [[cybergraph]]
 
@@ -28,10 +28,10 @@ two key mechanics
 
 [[pages]]
 
-- [[main]]: `~` [[oracle/ask]]
-- [[oracle/search]]
-- [[oracle/learn]]
+- [[main]]: `~` [[cyb/oracle/ask]]
+- [[cyb/oracle/search]]
+- [[cyb/oracle/learn]]
 - charts
-	- [[oracle/particles]]: top ranked [[particles]]
-	- [[oracle/avatars]]: the most reputable [[avatars]]
-	- [[oracle/cyberlinks]]: recent [[cyberlinks]]
+	- [[cyb/oracle/particles]]: top ranked [[particles]]
+	- [[cyb/oracle/avatars]]: the most reputable [[avatars]]
+	- [[cyb/oracle/cyberlinks]]: recent [[cyberlinks]]

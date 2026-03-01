@@ -6,13 +6,13 @@ crystal-domain: cyber
 ---
 any [[avatar]] can become [[aip]]
 
-[[cyb/portal/avatars/name]]
+[[cyb/portal/my avatars/name]]
 
-[[cyb/portal/avatars/image]]
+[[cyb/portal/my avatars/image]]
 
 [[features/api]]
 
-defined by [[cyb/portal/avatars/soul]]
+defined by [[cyb/portal/my avatars/soul]]
 
 - [[menu]]: using simple array of relative links
 - [[widget]]: using mdx

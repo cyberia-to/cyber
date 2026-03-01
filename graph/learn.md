@@ -20,7 +20,7 @@ you need [[$CYB]] for [[collective learning]] of [[bootloader]]
 
 or if you have [[$CYB]] go to [cyb.ai/oracle](https://cyb.ai/oracle)
 
-TODO [[oracle/learn]]
+TODO [[cyb/oracle/learn]]
 
 TODO deep integration into [[main loop]] of [[cyb]]
 
