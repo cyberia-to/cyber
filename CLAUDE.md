@@ -31,7 +31,7 @@ Wiki-links (`[[page]]`) and query expressions (`{{query (...)}}`,
 `{{embed [[page]]}}`) are the graph's own syntax, evaluated by the
 publisher.
 
-Namespaced pages live in directories: `pages/bostrom/infrastructure/servers.md`
+Namespaced pages live in directories: `graph/bostrom/infrastructure/servers.md`
 ## Tagging Conventions
 
 Every page should have a `tags:` field in frontmatter. Key project tags (lenses):
@@ -65,40 +65,40 @@ Then link the plural directly: `[[isomorphisms]]` instead of
 Use `nu -c '...'` or `nu script.nu` for all scripting. Nushell has
 structured data pipelines, built-in dataframes, and powerful search/filter
 commands — use them instead of bash+sed+awk+grep chains. Examples:
-- list pages: `ls pages/*.md | get name`
-- find untagged: `glob pages/**/*.md | where {|f| not ((open --raw $f) | str starts-with "---\n") }`
-- count by tag: `glob pages/**/*.md | each {|f| open --raw $f | lines | where $it =~ 'tags:' | first } | where $it =~ 'species' | length`
+- list pages: `ls graph/*.md | get name`
+- find untagged: `glob graph/**/*.md | where {|f| not ((open --raw $f) | str starts-with "---\n") }`
+- count by tag: `glob graph/**/*.md | each {|f| open --raw $f | lines | where $it =~ 'tags:' | first } | where $it =~ 'species' | length`
 - dataframe ops: `dfr open`, `dfr filter`, `dfr group-by` for bulk analysis
 
 Reserve bash only for git commands and system tools that have no nu equivalent.
 ### Nushell input/output formatting
 - **Input**: for non-trivial analysis (>3 lines), write a `.nu` script
-  into `nu/` in this repo (cyber) and run via `nu nu/script.nu <graph-path>`.
+  into `stats/` in this repo (cyber) and run via `nu stats/script.nu <graph-path>`.
   One-liners are fine as `nu -c '...'`.
 - **Chat display**: always use ` ```nu ` fenced code blocks when showing
   nushell code in conversation so syntax highlighting works in Zed.
 - **Output in scripts**: wrap table pipelines in `print (... | table)`
   so all sections render. Bare `| table` at end of pipeline only works
   for the last expression — intermediate tables need explicit `print`.
-### Nushell script library (`nu/`)
+### Nushell script library (`stats/`)
 
-All nushell scripts live in `~/git/cyber/nu/`. Scripts are graph-agnostic:
+All nushell scripts live in `~/git/cyber/stats/`. Scripts are graph-agnostic:
 they take the graph path as an argument via `def main [graph_path: string]`.
 
 Usage from any directory:
 ```
-nu ~/git/cyber/nu/stats.nu ~/git/cloud-forest
-nu ~/git/cyber/nu/analyze.nu ~/git/cyber
+nu ~/git/cyber/stats/stats.nu ~/git/cloud-forest
+nu ~/git/cyber/stats/analyze.nu ~/git/cyber
 ```
 
 Scripts:
-- `nu/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
-- `nu/stats.nu` — graph statistics (orphans, broken links, content types)
-- `nu/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
-- `nu/ipfs.nu` — pre-commit hook: upload media/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
-- `nu/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
+- `stats/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
+- `stats/stats.nu` — graph statistics (orphans, broken links, content types)
+- `stats/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
+- `stats/ipfs.nu` — pre-commit hook: upload media/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
+- `stats/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
 
-When adding a new script: place it in `nu/`, accept `graph_path` as first
+When adding a new script: place it in `stats/`, accept `graph_path` as first
 arg, and update this list.
 ## Parallel Agents for Graph-Wide Tasks
 

@@ -37,12 +37,26 @@ fn is_markdown(path: &Path) -> bool {
         || path.extension().is_none()
 }
 
+/// Resolve directory with fallback: try primary name first, then legacy name.
+fn resolve_dir(input_dir: &Path, primary: &str, fallback: &str) -> PathBuf {
+    let primary_dir = input_dir.join(primary);
+    if primary_dir.exists() {
+        return primary_dir;
+    }
+    let fallback_dir = input_dir.join(fallback);
+    if fallback_dir.exists() {
+        return fallback_dir;
+    }
+    // Neither exists — return primary (scan will skip gracefully)
+    primary_dir
+}
+
 pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<DiscoveredFiles> {
     let input_dir = input_dir
         .canonicalize()
         .unwrap_or_else(|_| input_dir.to_path_buf());
-    let pages_dir = input_dir.join("pages");
-    let journals_dir = input_dir.join("journals");
+    let graph_dir = resolve_dir(&input_dir, "graph", "pages");
+    let blog_dir = resolve_dir(&input_dir, "blog", "journals");
     let media_dir = input_dir.join("media");
 
     let mut result = DiscoveredFiles {
@@ -52,9 +66,9 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         files: Vec::new(),
     };
 
-    // Scan pages directory — markdown files become Pages, everything else becomes Files
-    if pages_dir.exists() {
-        for entry in WalkDir::new(&pages_dir)
+    // Scan graph directory — markdown files become Pages, everything else becomes Files
+    if graph_dir.exists() {
+        for entry in WalkDir::new(&graph_dir)
             .into_iter()
             .filter_map(|e| e.ok())
             .filter(|e| e.file_type().is_file())
@@ -64,14 +78,14 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                 continue;
             }
             if is_markdown(&path) {
-                let name = classify::page_name_from_path(&path, &pages_dir);
+                let name = classify::page_name_from_path(&path, &graph_dir);
                 result.pages.push(DiscoveredFile {
                     path,
                     kind: FileKind::Page,
                     name,
                 });
             } else {
-                let name = classify::file_name_from_path(&path, &pages_dir);
+                let name = classify::file_name_from_path(&path, &graph_dir);
                 result.files.push(DiscoveredFile {
                     path,
                     kind: FileKind::File,
@@ -81,9 +95,9 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         }
     }
 
-    // Scan journals
-    if content_config.include_journals && journals_dir.exists() {
-        for entry in WalkDir::new(&journals_dir)
+    // Scan blog entries
+    if content_config.include_journals && blog_dir.exists() {
+        for entry in WalkDir::new(&blog_dir)
             .into_iter()
             .filter_map(|e| e.ok())
             .filter(|e| e.file_type().is_file())
@@ -128,7 +142,7 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         }
     }
 
-    // Scan all other files in the repo (outside pages/, journals/, media/)
+    // Scan all other files in the repo (outside graph/, blog/, media/)
     for entry in WalkDir::new(&input_dir)
         .into_iter()
         .filter_map(|e| e.ok())
@@ -137,8 +151,8 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         let path = entry.path().to_path_buf();
 
         // Skip files already handled by the dedicated directory scans
-        if path.starts_with(&pages_dir)
-            || path.starts_with(&journals_dir)
+        if path.starts_with(&graph_dir)
+            || path.starts_with(&blog_dir)
             || path.starts_with(&media_dir)
         {
             continue;
@@ -166,12 +180,12 @@ mod tests {
     use tempfile::TempDir;
 
     #[test]
-    fn test_scan_discovers_pages() {
+    fn test_scan_discovers_pages_from_graph_dir() {
         let tmp = TempDir::new().unwrap();
-        let pages_dir = tmp.path().join("pages");
-        fs::create_dir_all(&pages_dir).unwrap();
-        fs::write(pages_dir.join("Test Page.md"), "- hello").unwrap();
-        fs::write(pages_dir.join("Another.md"), "- world").unwrap();
+        let graph_dir = tmp.path().join("graph");
+        fs::create_dir_all(&graph_dir).unwrap();
+        fs::write(graph_dir.join("Test Page.md"), "- hello").unwrap();
+        fs::write(graph_dir.join("Another.md"), "- world").unwrap();
 
         let content = ContentSection::default();
         let result = scan(tmp.path(), &content).unwrap();
@@ -179,57 +193,67 @@ mod tests {
     }
 
     #[test]
+    fn test_scan_fallback_to_pages_dir() {
+        let tmp = TempDir::new().unwrap();
+        // Use legacy "pages" directory name
+        let pages_dir = tmp.path().join("pages");
+        fs::create_dir_all(&pages_dir).unwrap();
+        fs::write(pages_dir.join("Test.md"), "hello").unwrap();
+
+        let content = ContentSection::default();
+        let result = scan(tmp.path(), &content).unwrap();
+        assert_eq!(result.pages.len(), 1);
+    }
+
+    #[test]
     fn test_scan_discovers_media() {
         let tmp = TempDir::new().unwrap();
-        let pages_dir = tmp.path().join("pages");
+        let graph_dir = tmp.path().join("graph");
         let media_dir = tmp.path().join("media");
-        fs::create_dir_all(&pages_dir).unwrap();
+        fs::create_dir_all(&graph_dir).unwrap();
         fs::create_dir_all(&media_dir).unwrap();
         fs::write(media_dir.join("image.png"), b"PNG").unwrap();
 
         let content = ContentSection::default();
         let result = scan(tmp.path(), &content).unwrap();
         assert_eq!(result.media.len(), 1);
-        // Media files also appear as graph nodes
         assert!(result.files.iter().any(|f| f.name == "media/image.png"));
     }
 
     #[test]
     fn test_scan_respects_exclude_patterns() {
         let tmp = TempDir::new().unwrap();
-        let pages_dir = tmp.path().join("pages");
+        let graph_dir = tmp.path().join("graph");
         let logseq_dir = tmp.path().join("logseq");
-        fs::create_dir_all(&pages_dir).unwrap();
+        fs::create_dir_all(&graph_dir).unwrap();
         fs::create_dir_all(&logseq_dir).unwrap();
-        fs::write(pages_dir.join("Good.md"), "- hello").unwrap();
+        fs::write(graph_dir.join("Good.md"), "- hello").unwrap();
         fs::write(logseq_dir.join("config.edn"), "{}").unwrap();
 
         let content = ContentSection::default();
         let result = scan(tmp.path(), &content).unwrap();
         assert_eq!(result.pages.len(), 1);
         assert_eq!(result.pages[0].name, "Good");
-        // logseq/ is excluded, so config.edn should not appear in files
         assert!(!result.files.iter().any(|f| f.name.contains("config.edn")));
     }
 
     #[test]
     fn test_scan_discovers_non_md_files() {
         let tmp = TempDir::new().unwrap();
-        let pages_dir = tmp.path().join("pages");
-        let nu_dir = tmp.path().join("nu");
-        fs::create_dir_all(&pages_dir).unwrap();
-        fs::create_dir_all(&nu_dir).unwrap();
-        fs::write(pages_dir.join("Page.md"), "# hello").unwrap();
-        fs::write(pages_dir.join("data.zip"), b"PK").unwrap();
-        fs::write(nu_dir.join("script.nu"), "echo hello").unwrap();
+        let graph_dir = tmp.path().join("graph");
+        let stats_dir = tmp.path().join("stats");
+        fs::create_dir_all(&graph_dir).unwrap();
+        fs::create_dir_all(&stats_dir).unwrap();
+        fs::write(graph_dir.join("Page.md"), "# hello").unwrap();
+        fs::write(graph_dir.join("data.zip"), b"PK").unwrap();
+        fs::write(stats_dir.join("script.nu"), "echo hello").unwrap();
         fs::write(tmp.path().join("Makefile"), "all:").unwrap();
 
         let content = ContentSection::default();
         let result = scan(tmp.path(), &content).unwrap();
-        assert_eq!(result.pages.len(), 1); // only Page.md
-        // data.zip in pages/, script.nu in nu/, Makefile at root
+        assert_eq!(result.pages.len(), 1);
         assert!(result.files.iter().any(|f| f.name == "data.zip"));
-        assert!(result.files.iter().any(|f| f.name == "nu/script.nu"));
+        assert!(result.files.iter().any(|f| f.name == "stats/script.nu"));
         assert!(result.files.iter().any(|f| f.name == "Makefile"));
     }
 }

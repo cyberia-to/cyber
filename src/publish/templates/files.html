@@ -1,57 +1,76 @@
-{% extends "base.html" %} {% block title %}Files — {{
-site.title }}{% endblock %} {% block og_title %}Files — {{
-site.title }}{% endblock %} {% block twitter_title %}Files —
-{{ site.title }}{% endblock %} {% block description %}{{
-total_files }} files referenced across the knowledge graph{%
-endblock %} {% block content %}
+{% extends "base.html" %}
+
+{% block title %}Files — {{ site.title }}{% endblock %}
+{% block description %}All files sorted by PageRank{% endblock %}
+
+{% block content %}
 <div class="pages-discovery">
-    <table class="pages-table files-table">
-        <thead>
-            <tr>
-                <th class="col-rank">#</th>
-                <th class="col-title">file</th>
-                <th class="col-type">type</th>
-                <th class="col-cid">cid</th>
-                <th class="col-links">pages</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for file in files %}
-            <tr id="r{{ file.rank }}" class="page-row">
-                <td class="col-rank">{{ file.rank }}</td>
-                <td class="col-title">
-                    {% if file.ipfs_url %}
-                    <a
-                        href="{{ file.ipfs_url | safe }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >{{ file.display_name }}</a
-                    >
-                    {% else %}
-                    <span class="file-missing"
-                        >{{ file.display_name }}</span
-                    >
-                    {% endif %}
-                    <span class="row-tags"
-                        ><span class="row-tag"
-                            >{{ file.file_type }}</span
-                        ></span
-                    >
-                </td>
-                <td class="col-cid">
-                    {% if file.ipfs_cid %}
-                    <code title="{{ file.ipfs_cid }}"
-                        >{{ file.ipfs_cid[:8] }}</code
-                    >
-                    {% else %} — {% endif %}
-                </td>
-                <td class="col-links">
-                    {{ file.page_count }}
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <div class="graph-stats">{{ total_files }} files</div>
+  <table class="pages-table">
+    <thead>
+      <tr>
+        <th class="col-rank">#</th>
+        <th class="col-title">file</th>
+        <th class="col-size">size</th>
+        <th class="col-pagerank">rank</th>
+        <th class="col-links">links</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for f in files %}
+      <tr id="r{{ f.rank }}" class="page-row">
+        <td class="col-rank">{{ f.rank }}</td>
+        <td class="col-title">
+          <a href="{{ f.url }}">{% if f.icon %}<span class="page-icon">{{ f.icon }}</span> {% endif %}{{ f.title }}</a>
+          {% if f.tags %}<span class="row-tags">{% for t in f.tags %}<a href="/{{ t | slugify }}" class="row-tag">{{ t }}</a>{% endfor %}</span>{% endif %}
+        </td>
+        <td class="col-size">{{ f.size }}</td>
+        <td class="col-pagerank">{{ f.pagerank }}</td>
+        <td class="col-links">{{ f.backlinks }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="graph-stats">{{ total_files }} files</div>
 </div>
+
+<script>
+(function() {
+  if (location.hash) {
+    var el = document.getElementById(location.hash.slice(1));
+    if (el) {
+      requestAnimationFrame(function() {
+        el.scrollIntoView({ block: 'start' });
+      });
+    }
+  }
+
+  var rows = document.querySelectorAll('.page-row');
+  if (!rows.length) return;
+
+  var ticking = false;
+
+  function updateHash() {
+    var best = null;
+    for (var i = 0; i < rows.length; i++) {
+      var rect = rows[i].getBoundingClientRect();
+      if (rect.top >= -10) {
+        best = rows[i];
+        break;
+      }
+      best = rows[i];
+    }
+    if (best && best.id) {
+      history.replaceState(null, '', '#' + best.id);
+    }
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateHash);
+    }
+  }, { passive: true });
+})();
+</script>
 {% endblock %}

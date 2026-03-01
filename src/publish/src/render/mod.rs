@@ -22,7 +22,7 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
 
     // Reserved URL slugs — synthetic pages take priority over regular pages
     let reserved_slugs: std::collections::HashSet<&str> =
-        ["pages", "tags", "blog", "graph", "files"]
+        ["tags", "blog", "graph", "files"]
             .into_iter()
             .collect();
 
@@ -110,16 +110,6 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
         });
     }
 
-    // Render pages discovery page
-    {
-        let pages_html = render_pages_index(store, config, &env)?;
-        rendered.push(RenderedPage {
-            page_id: "__pages_index__".to_string(),
-            html: pages_html,
-            url_path: "/pages/index.html".to_string(),
-        });
-    }
-
     // Render graph visualization page
     if config.graph.enabled {
         let graph_html = render_graph_page(store, config, &env)?;
@@ -130,7 +120,7 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
         });
     }
 
-    // Render files page
+    // Render unified files page (all pages with size column)
     {
         let files_html = render_files_page(store, config, &env)?;
         rendered.push(RenderedPage {
@@ -142,8 +132,8 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
 
     // Generate redirect pages for aliases
     for (alias_slug, canonical_id) in &store.alias_map {
-        // Don't generate redirect if alias slug matches an existing page
-        if store.pages.contains_key(alias_slug) {
+        // Don't generate redirect if alias slug matches an existing page or reserved slug
+        if store.pages.contains_key(alias_slug) || reserved_slugs.contains(alias_slug.as_str()) {
             continue;
         }
         let redirect_html = format!(
@@ -368,60 +358,6 @@ fn render_blog(
     Ok(tmpl.render(&ctx)?)
 }
 
-fn render_pages_index(
-    store: &PageStore,
-    config: &SiteConfig,
-    env: &minijinja::Environment,
-) -> Result<String> {
-    let mut pages: Vec<_> = store
-        .public_pages(&config.content)
-        .into_iter()
-        .map(|p| {
-            let backlink_count = store.backlinks.get(&p.id).map(|b| b.len()).unwrap_or(0);
-            let pr = store.pagerank.get(&p.id).copied().unwrap_or(0.0);
-            (p, backlink_count, pr)
-        })
-        .collect();
-
-    // Sort by PageRank descending
-    pages.sort_by(|a, b| b.2.partial_cmp(&a.2).unwrap_or(std::cmp::Ordering::Equal));
-
-    let page_data: Vec<_> = pages
-        .iter()
-        .enumerate()
-        .map(|(i, (p, backlinks, pr))| {
-            // Format PageRank as a readable score (multiply by 1000 for display)
-            let pr_display = format!("{:.2}", pr * 1000.0);
-            minijinja::context! {
-                rank => i + 1,
-                title => p.meta.title.clone(),
-                url => format!("/{}", p.id),
-                backlinks => *backlinks,
-                pagerank => pr_display,
-                tags => p.meta.tags.clone(),
-                icon => p.meta.icon.clone(),
-            }
-        })
-        .collect();
-
-    let ctx = minijinja::context! {
-        site => config.site,
-        style => config.style,
-        nav_menu => context::resolve_nav_menu(config, store),
-        search => config.search,
-        analytics => config.analytics,
-        graph => config.graph,
-        favicon => config.site.favicon,
-        description => format!("All pages — {}", config.site.title),
-        canonical_url => format!("{}/pages", config.site.base_url),
-        pages => page_data,
-        page_count => page_data.len(),
-    };
-
-    let tmpl = env.get_template("pages-index.html")?;
-    Ok(tmpl.render(&ctx)?)
-}
-
 fn render_tag_page(
     tag: &str,
     page_ids: &[PageId],
@@ -460,32 +396,63 @@ fn render_tag_page(
     Ok(tmpl.render(&ctx)?)
 }
 
+/// Format byte size into human-readable string.
+fn format_size(bytes: u64) -> String {
+    if bytes < 1024 {
+        format!("{} B", bytes)
+    } else if bytes < 1024 * 1024 {
+        format!("{:.1} KB", bytes as f64 / 1024.0)
+    } else {
+        format!("{:.1} MB", bytes as f64 / (1024.0 * 1024.0))
+    }
+}
+
+/// Render the unified /files page — all public pages sorted by PageRank with size column.
 fn render_files_page(
     store: &PageStore,
     config: &SiteConfig,
     env: &minijinja::Environment,
 ) -> Result<String> {
-    let file_entries = crate::output::files::build_file_index(store, config);
+    let mut pages: Vec<_> = store
+        .public_pages(&config.content)
+        .into_iter()
+        .map(|p| {
+            let backlink_count = store.backlinks.get(&p.id).map(|b| b.len()).unwrap_or(0);
+            let pr = store.pagerank.get(&p.id).copied().unwrap_or(0.0);
+            let size = if p.source_path.as_os_str().is_empty() {
+                0u64
+            } else {
+                std::fs::metadata(&p.source_path)
+                    .map(|m| m.len())
+                    .unwrap_or(0)
+            };
+            (p, backlink_count, pr, size)
+        })
+        .collect();
 
-    let files_data: Vec<_> = file_entries
+    // Sort by PageRank descending
+    pages.sort_by(|a, b| b.2.partial_cmp(&a.2).unwrap_or(std::cmp::Ordering::Equal));
+
+    let files_data: Vec<_> = pages
         .iter()
         .enumerate()
-        .map(|(i, f)| {
+        .map(|(i, (p, backlinks, pr, size))| {
+            let pr_display = format!("{:.2}", pr * 1000.0);
+            let size_display = format_size(*size);
             minijinja::context! {
                 rank => i + 1,
-                filename => f.filename,
-                display_name => f.display_name,
-                ipfs_cid => f.ipfs_cid,
-                ipfs_url => f.ipfs_url,
-                file_type => f.file_type,
-                pages => f.referencing_pages,
-                page_count => f.referencing_pages.len(),
+                title => p.meta.title.clone(),
+                url => format!("/{}", p.id),
+                backlinks => *backlinks,
+                pagerank => pr_display,
+                size => size_display,
+                tags => p.meta.tags.clone(),
+                icon => p.meta.icon.clone(),
             }
         })
         .collect();
 
-    let total = file_entries.len();
-    let public_count = store.public_pages(&config.content).len();
+    let total = files_data.len();
 
     let ctx = minijinja::context! {
         site => config.site,
@@ -495,9 +462,9 @@ fn render_files_page(
         analytics => config.analytics,
         graph => config.graph,
         favicon => config.site.favicon,
-        description => format!("{} files referenced across the knowledge graph", total),
+        description => format!("{} files in the knowledge graph", total),
         canonical_url => format!("{}/files", config.site.base_url),
-        page_count => public_count,
+        page_count => total,
         files => files_data,
         total_files => total,
     };
