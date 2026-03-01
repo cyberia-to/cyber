@@ -1,3 +1,8 @@
+---
+tags: cyber, bostrom, migration, rust, rs, cyberos, research
+icon: "\U0001F4D0"
+---
+
 # Cyber: From Go to a Sovereign Rust Operating System
 
 ## Complete Technical Blueprint

@@ -1,3 +1,8 @@
+---
+tags: cyber, cyberos, rust, os, research
+icon: "\U0001F5A5\uFE0F"
+---
+
 # CyberOS: Architecture of a Purpose-Built Operating System for Decentralized Superintelligence
 
 > *An OS where "program" is a transaction into the knowledge graph, "file" is a CID, "user" is a key, and "network" is consensus.*

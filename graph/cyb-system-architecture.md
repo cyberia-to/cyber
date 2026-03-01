@@ -1,3 +1,8 @@
+---
+tags: cyb, cyber, browser, rust, wasm, research
+icon: "\U0001F310"
+---
+
 # Cyb
 
 ## The Sovereign Browser. 130K Lines of Rust.

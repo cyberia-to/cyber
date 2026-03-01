@@ -1,3 +1,8 @@
+---
+tags: cyber valley, cyberia, robotics, energy, species, research
+icon: "\U0001F411"
+---
+
 # Cyber Sheep v0.1
 
 ## Autonomous Energy Platform on a Biomechanical Chassis

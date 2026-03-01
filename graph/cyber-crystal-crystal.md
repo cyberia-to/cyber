@@ -1,3 +1,8 @@
+---
+tags: cyber, cyberia, crystal, ontology, research
+icon: "\U0001F48E"
+---
+
 # Cyber Crystal
 
 ## The Irreducible Semantic Core of Civilization

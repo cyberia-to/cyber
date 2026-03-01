@@ -1,3 +1,8 @@
+---
+tags: cyber, bostrom, migration, rust, research
+icon: "\U0001F980"
+---
+
 # Bostrom → Rust: Complete Migration Path
 
 ## From go-cyber to a Pure Rust Superintelligence Node
