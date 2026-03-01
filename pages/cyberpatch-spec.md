@@ -843,7 +843,29 @@ T8. Adversarial soundness: no patch can forge authorship under ML-DSA
 
 ### 12.3 Open Questions
 
-1. **Efficient state materialization**: For large repositories, full re-derivation from patch set is expensive. What is the optimal checkpointing strategy that preserves the mathematical properties while enabling O(1) state access?
+1. **Efficient state materialization**: ✅ *Resolved via dynamic names.*
+
+    A checkpoint is a user-defined cyberlink in the neuron's own namespace:
+
+    ```
+    cyberlink(
+        from:  patch_set_root_CID,     // BLAKE3 of canonical patch set = channel state ID
+        to:    materialized_state_CID, // CID of fully derived state blob
+        label: "checkpoint",           // semantic label, in neuron's namespace
+    )
+    ```
+
+    This is not a special protocol primitive — it is an ordinary cyberlink assertion.
+    Any neuron may publish checkpoints for any patch set. Consumers choose which
+    checkpoint to trust based on the author's focus weight π.
+
+    Properties:
+    - **O(1) state access**: `blob_store.get(materialized_state_CID)` — no replay needed
+    - **Mathematical purity preserved**: the patch DAG remains ground truth; checkpoints are assertions over it, not replacements; any client may verify by replaying all patches and comparing result CIDs
+    - **No central authority**: any neuron can checkpoint; the market of checkpoints is ranked by π — high-π neurons trusted without re-verification, unknown neurons require local verification
+    - **Incremental chains**: `checkpoint_N → Δpatches → checkpoint_N+1` — consumers start from nearest trusted checkpoint, not genesis
+    - **Namespace sovereignty**: only the neuron holding the signing key can write into its namespace; checkpoint authorship is cryptographically verified by ML-DSA signature
+    - **Mutable by design**: neuron may update its checkpoint (new cyberlink for same `from`) — old link persists in history, new link wins in resolution; update cost is O(1)
 
 2. **Garbage collection**: Can patches ever be pruned from the DAG? Under what conditions is a patch no longer needed for state derivation?
 
