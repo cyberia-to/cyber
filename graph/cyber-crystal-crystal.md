@@ -50,7 +50,7 @@ Each domain contains **240 concepts** (5040 ÷ 21). These concepts are the nodes
 Every domain was tested against a single criterion: **can it be expressed as a subset or intersection of other domains?**
 
 Domains that passed (kept):
-- **math** ≠ comp (provability ≠ computability; Gödel showed this)
+- **math** ≠ comp (provability ≠ computability; Goedel showed this)
 - **info** ≠ math (Shannon entropy is physical, not formal)
 - **comp** ≠ math (Turing showed computability is independent of truth)
 - **quantum** ≠ chemo (quantum mechanics ≠ molecular behavior; emergence)

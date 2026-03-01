@@ -517,7 +517,7 @@ Major [[nation states]]: the ~200 sovereign entities, their geography, populatio
 
 ### 16.9 People
 
-Founders and key thinkers: [[nick bostrom]], [[Satoshi Nakamoto]], [[Vitalik Buterin]], [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]]. Scientists whose work the protocol builds on: [[Einstein]], [[Darwin]], [[Gödel]], [[Feynman]], [[Friston]]. Each person page: key contribution, era, domain, relationship to [[cyber]].
+Founders and key thinkers: [[nick bostrom]], [[Satoshi Nakamoto]], [[Vitalik Buterin]], [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]]. Scientists whose work the protocol builds on: [[Einstein]], [[Darwin]], [[Goedel]], [[Feynman]], [[Friston]]. Each person page: key contribution, era, domain, relationship to [[cyber]].
 
 ### 16.10 Materials and Elements
 

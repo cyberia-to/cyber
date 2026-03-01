@@ -25,7 +25,7 @@ Quadratic [[attention]]. Transformers require every token to attend to every oth
 
 Centralization. Training a frontier model costs hundreds of millions. Three organizations can build the next generation. The trajectory of [[intelligence]] concentrates in a handful of boardrooms, operating on hidden parameters, producing outputs that cannot be independently verified.
 
-Incompleteness. Gödel (1931) proved that any formal system powerful enough to describe arithmetic contains truths it cannot prove. AI built on formal logic inherits these limits by construction. The [[Gödel prison]] confines every system that equates computation with derivation.
+Incompleteness. Goedel (1931) proved that any formal system powerful enough to describe arithmetic contains truths it cannot prove. AI built on formal logic inherits these limits by construction. The [[Goedel prison]] confines every system that equates computation with derivation.
 
 ### 1.3 The Protocol
 
@@ -39,13 +39,13 @@ This document specifies the complete architecture: the computation model ([[CORE
 
 ### 2.1 Proof by Simulation
 
-Classical science operates by proof by derivation — start from axioms, apply inference rules, arrive at theorems. This is the Turing-Gödel paradigm: computation as derivation, [[knowledge]] as proof.
+Classical science operates by proof by derivation — start from axioms, apply inference rules, arrive at theorems. This is the Turing-Goedel paradigm: computation as derivation, [[knowledge]] as proof.
 
 cyber replaces this with proof by simulation. A claim is true when a system converges to a stable state that embodies that claim — because a network of agents, under conservation laws, settled into an [[equilibrium]] that makes the claim hold. Nature does not prove theorems. It runs simulations until they converge.
 
 A protein folds along a free energy gradient. It does not derive its shape from axioms of chemistry. A brain does not prove that a face is a face. A cascade of neurons converges to a stable attractor. A market does not derive the correct price from economic axioms. Millions of agents trade until the price stabilizes. The proof is the [[equilibrium]].
 
-Proof by simulation is strictly more powerful than proof by derivation. Gödel showed that any consistent formal system contains true statements it cannot prove. A convergent system can settle into states that no derivation reaches — it escapes the [[Gödel prison]] because the prison only confines derivation, and convergence operates outside the proof-theoretic domain.
+Proof by simulation is strictly more powerful than proof by derivation. Goedel showed that any consistent formal system contains true statements it cannot prove. A convergent system can settle into states that no derivation reaches — it escapes the [[Goedel prison]] because the prison only confines derivation, and convergence operates outside the proof-theoretic domain.
 
 The postulate: every truth accessible to [[intelligence]] is a fixed point of some convergent simulation under conservation laws.
 
@@ -460,7 +460,7 @@ The finality threshold adapts to the current distribution: $\tau(t) = \mu_\pi + 
 
 ### 10.1 Why a New Language
 
-Formal [[languages]] achieve precision through rigid syntax but cannot scale to $10^{15}$ [[particles]] — Gödel proved no sufficiently powerful formal system can be both complete and consistent. Natural [[languages]] achieve expressiveness through ambiguity but are computationally intractable for precise reasoning.
+Formal [[languages]] achieve precision through rigid syntax but cannot scale to $10^{15}$ [[particles]] — Goedel proved no sufficiently powerful formal system can be both complete and consistent. Natural [[languages]] achieve expressiveness through ambiguity but are computationally intractable for precise reasoning.
 
 [[Neural]] language dissolves this dilemma. Precision comes from graph [[topology]] — the structural position of a [[particle]] among all other [[particles]] disambiguates its meaning computationally. Expressiveness comes from unlimited [[topology]] — any relationship that can be linked can be expressed.
 
@@ -649,7 +649,7 @@ cyber synthesizes six independently developed research threads — content addre
 
 The protocol makes three specific claims:
 
-Convergent computation escapes the [[Gödel prison]]. A convergent system can settle into states that no derivation reaches. The [[cybergraph]] is such a system: $\Omega$ is the space of [[focus]] distributions, $T$ is the [[tri-kernel]], $C$ is focus conservation ($\sum \pi_i = 1$). A [[cyberank]] distribution $\pi^*$ is a simulation-proof of collective [[relevance]] — no axiomatic derivation required, no authority consulted, no vote taken.
+Convergent computation escapes the [[Goedel prison]]. A convergent system can settle into states that no derivation reaches. The [[cybergraph]] is such a system: $\Omega$ is the space of [[focus]] distributions, $T$ is the [[tri-kernel]], $C$ is focus conservation ($\sum \pi_i = 1$). A [[cyberank]] distribution $\pi^*$ is a simulation-proof of collective [[relevance]] — no axiomatic derivation required, no authority consulted, no vote taken.
 
 [[Focus]] conservation unifies [[attention]], fuel, and [[consensus]] into a single conserved quantity. This eliminates the separate gas models, fee markets, and priority auctions of existing systems while providing the economic foundation for a self-sustaining [[knowledge]] economy.
 
@@ -668,7 +668,7 @@ See [[cyber]] for the full specification index. See [[soft3]] for the stack. See
 5. [[Mustafa Al-Bassam]] et al. "Fraud and Data Availability Proofs." FC 2019.
 6. [[Lorenzo Grassi]] et al. "Poseidon: A New Hash Function." USENIX 2021.
 7. [[Victor Taelin]]. "HVM: A Parallel Evaluator for Interaction Combinators." 2022.
-8. [[Kurt Gödel]]. "Über formal unentscheidbare Sätze." Monatshefte für Mathematik und Physik 1931.
+8. [[Kurt Goedel]]. "Über formal unentscheidbare Sätze." Monatshefte für Mathematik und Physik 1931.
 9. [[Alan Turing]]. "On Computable Numbers." Proceedings of the London Mathematical Society 1936.
 10. [[Sergey Brin]], [[Larry Page]]. "The Anatomy of a Large-Scale Hypertextual Web Search Engine." WWW 1998.
 11. [[Miroslav Fiedler]]. "Algebraic Connectivity of Graphs." Czech Mathematical Journal 1973.

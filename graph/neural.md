@@ -18,7 +18,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 
 ## why a new language
 
-- formal [[languages]] ([[type theory]], [[programming languages]]) achieve precision through rigid syntax but cannot scale to 10¹⁵ [[particles]] — [[Gödel]] proved no sufficiently powerful formal system can be both complete and consistent (the [[Gödel prison]])
+- formal [[languages]] ([[type theory]], [[programming languages]]) achieve precision through rigid syntax but cannot scale to 10¹⁵ [[particles]] — [[Goedel]] proved no sufficiently powerful formal system can be both complete and consistent (the [[Goedel prison]])
 - natural [[languages]] solve expressiveness through ambiguity but are computationally intractable for precise reasoning
 - neural language collapses the distinction between [[language]] and [[knowledge]]: meaning is an eigenvector of the attention graph
 

@@ -13,7 +13,7 @@ every Turing computation can be expressed as convergence (machine converges to h
 
 but convergent systems can compute things formal derivation cannot reach
 
-- they operate outside the proof-theoretic domain where [[Gödel]]'s theorems apply — escaping the [[Gödel prison]]
+- they operate outside the proof-theoretic domain where [[Goedel]]'s theorems apply — escaping the [[Goedel prison]]
 
 a convergent computation system is a tuple (V, E, N, T, W, τ)
 

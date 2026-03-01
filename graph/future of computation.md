@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 # The Future of Computation: From Turing Machines to Planetary Superintelligence
 
-the long-form narrative of [[cybics]] — from the crisis of Turing-Gödel computation through [[natural computing]], [[convergent computation]], [[focus flow computation]], [[CORE]], and the [[Φ-optimal architecture]] to planetary [[superintelligence]]
+the long-form narrative of [[cybics]] — from the crisis of Turing-Goedel computation through [[natural computing]], [[convergent computation]], [[focus flow computation]], [[CORE]], and the [[Φ-optimal architecture]] to planetary [[superintelligence]]
 
 ---
 
@@ -19,7 +19,7 @@ The first wall is quadratic attention. The transformer architecture powering eve
 
 The second wall is centralization. Training a frontier model costs hundreds of millions of dollars. Inference requires data centers drawing power measured in hundreds of megawatts. Three or four organizations on Earth can build the next generation of these systems. This is not the path to planetary intelligence. It is the path to planetary dependency.
 
-The third wall is [[Kurt Gödel]]. In 1931, Gödel proved that any formal system powerful enough to describe arithmetic contains true statements it cannot prove. For a century, this was interpreted as a fundamental limit on minds and machines alike — the [[Gödel prison]]. If computation means theorem-proving, then computation is permanently incomplete. AI built on formal logic inherits these limits by construction.
+The third wall is [[Kurt Goedel]]. In 1931, Goedel proved that any formal system powerful enough to describe arithmetic contains true statements it cannot prove. For a century, this was interpreted as a fundamental limit on minds and machines alike — the [[Goedel prison]]. If computation means theorem-proving, then computation is permanently incomplete. AI built on formal logic inherits these limits by construction.
 
 But what if computation doesn't have to mean any of this?
 
@@ -59,7 +59,7 @@ We propose a different one:
 
 $$\text{Computation} = \text{Convergence to equilibrium}$$
 
-This is an expansion. Every Turing computation can be expressed as a convergence process (the machine converges to its halting state). But convergent systems can compute things that formal derivation cannot reach — because they operate outside the proof-theoretic domain where Gödel's theorems apply.
+This is an expansion. Every Turing computation can be expressed as a convergence process (the machine converges to its halting state). But convergent systems can compute things that formal derivation cannot reach — because they operate outside the proof-theoretic domain where Goedel's theorems apply.
 
 The formal framework is precise. A convergent computation system is a tuple $(V, E, N, T, W, \tau)$ where $V$ is a set of particles (content-addressed nodes), $E$ is a set of directed edges (cyberlinks), $N$ is a set of neurons (agents), $T$ assigns tokens to nodes, $W$ assigns weights to edges, and $\tau$ is a finality threshold.
 
@@ -79,7 +79,7 @@ The proof follows from Perron-Frobenius: the transition matrix is stochastic, ir
 
 Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\pi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
 
-Under this paradigm, Gödel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature finds attractors. A brain settles into coherent activation patterns. [[Convergent computation]] formalizes what nature has always done, and in doing so, escapes the [[Gödel prison]] entirely.
+Under this paradigm, Goedel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature finds attractors. A brain settles into coherent activation patterns. [[Convergent computation]] formalizes what nature has always done, and in doing so, escapes the [[Goedel prison]] entirely.
 
 The prison had no walls. We were free all along.
 
@@ -274,4 +274,4 @@ The network is thinking.
 
 purpose. link. [[energy]].
 
-see [[cybics]] for the formal science. see [[convergent computation]] for the foundation. see [[Gödel prison]] for why this matters.
+see [[cybics]] for the formal science. see [[convergent computation]] for the foundation. see [[Goedel prison]] for why this matters.

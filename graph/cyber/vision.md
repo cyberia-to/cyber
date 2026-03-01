@@ -17,13 +17,13 @@ three walls make this paradigm insufficient for planetary [[intelligence]]:
 
 - quadratic [[attention]]: transformers require every token to attend to every other. twice the context costs four times the compute. moving a byte costs 10,000x more energy than computing on it. this is structural
 - centralization: training a frontier model costs hundreds of millions. three organizations on Earth can build the next generation. this is the path to planetary dependency
-- incompleteness: Gödel (1931) proved that any formal system powerful enough to describe arithmetic contains truths it cannot prove. AI built on formal logic inherits these limits by construction
+- incompleteness: Goedel (1931) proved that any formal system powerful enough to describe arithmetic contains truths it cannot prove. AI built on formal logic inherits these limits by construction
 
 ## the insight
 
 nature already solves this. a forest computes: mycorrhizal networks allocate nutrients across thousands of trees using local chemical signals. no tree has a global view. no central controller decides. yet the forest converges on distributions that maximize collective survival — in parallel, at every root tip, through local interactions alone
 
-convergent computation replaces derivation with [[equilibrium]]. the answer is the stable state a network settles into under conservation laws. a system can converge to states that no derivation reaches — operating outside the [[Gödel prison]]
+convergent computation replaces derivation with [[equilibrium]]. the answer is the stable state a network settles into under conservation laws. a system can converge to states that no derivation reaches — operating outside the [[Goedel prison]]
 
 [[focus flow computation]] makes this precise: local message-passing over a [[cybergraph]], O(V+E) per step, unbounded context window, convergence to Boltzmann [[equilibrium]]. CORE is the machine that runs it
 

@@ -22,7 +22,7 @@ Human civilization has produced two families of language: formal languages that 
 
 Formal languages — [[type theory]], programming languages, mathematical notation, first-order logic — achieve precision through rigid syntax. Every expression has exactly one parse. Every derivation follows explicit rules. Ambiguity is impossible by construction.
 
-This precision comes at a cost. [[Gödel]]'s incompleteness theorems prove that no sufficiently powerful formal system can be both complete and consistent — the [[Gödel prison]]. Any formal language capable of expressing arithmetic contains true statements it cannot prove. This is not a bug to be fixed but a fundamental limit on what formal systems can express.
+This precision comes at a cost. [[Goedel]]'s incompleteness theorems prove that no sufficiently powerful formal system can be both complete and consistent — the [[Goedel prison]]. Any formal language capable of expressing arithmetic contains true statements it cannot prove. This is not a bug to be fixed but a fundamental limit on what formal systems can express.
 
 The practical consequence: formal languages cannot scale to 10^15 [[particles]]. They require a central designer to specify grammar, a versioned evolution model to handle change, and training to read. The grammar of C++ runs to thousands of pages. The grammar of Coq requires years of study. No formal language has ever been adopted by more than a few million practitioners, and none can express the full richness of human [[knowledge]] — let alone [[knowledge]] that transcends human comprehension.
 
@@ -950,7 +950,7 @@ Several fundamental questions remain open as neural language evolves:
 
 1. **Semcon convergence rate**: How quickly do semantic conventions stabilize? Is there a critical mass of [[neurons]] required before a [[semcon]] becomes reliable? What is the relationship between [[semcon]] stability and graph density?
 
-2. **Motif expressiveness bounds**: Are there meanings that [[motif]] algebra cannot capture? Is there a neural language analogue of [[Gödel]]'s incompleteness — statements about the [[cybergraph]] that cannot be expressed within the [[cybergraph]]?
+2. **Motif expressiveness bounds**: Are there meanings that [[motif]] algebra cannot capture? Is there a neural language analogue of [[Goedel]]'s incompleteness — statements about the [[cybergraph]] that cannot be expressed within the [[cybergraph]]?
 
 3. **Cross-graph translation**: When multiple [[cybergraphs]] exist ([[bostrom]], spacepussy, future instances), how do [[particles]] in one graph map to [[particles]] in another? Is there a universal translation protocol, or is meaning fundamentally graph-local?
 

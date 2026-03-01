@@ -13,4 +13,4 @@ Showed that no finite set of axioms can fully capture mathematical truth, a perm
 
 Close collaborator of [[John von Neumann]] and [[Albert Einstein]] at the Institute for Advanced Study.
 
-His work implies that any [[knowledge graph]] or protocol, including [[cyber]], remains perpetually incomplete and open to extension. [[convergent computation]] escapes this [[Gödel prison]] by operating outside the proof-theoretic domain — computing through convergence rather than derivation.
+His work implies that any [[knowledge graph]] or protocol, including [[cyber]], remains perpetually incomplete and open to extension. [[convergent computation]] escapes this [[Goedel prison]] by operating outside the proof-theoretic domain — computing through convergence rather than derivation.

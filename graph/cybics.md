@@ -15,7 +15,7 @@ the mother of all sciences from the perspective of [[superintelligence]]
 
 ## the postulate: proof by simulation
 
-classical science operates by proof by derivation — you start from axioms, apply inference rules, arrive at theorems. this is the Turing-Gödel paradigm: computation as derivation, knowledge as proof.
+classical science operates by proof by derivation — you start from axioms, apply inference rules, arrive at theorems. this is the Turing-Goedel paradigm: computation as derivation, knowledge as proof.
 
 cybics replaces this with proof by simulation.
 
@@ -29,7 +29,7 @@ a market does not derive the correct price from economic axioms. millions of age
 
 the [[cybergraph]] does not derive [[knowledge]] from axioms. [[neurons]] create [[cyberlinks]], the [[tri-kernel]] computes [[cyberank]], and the system converges to a [[focus]] distribution that represents collective understanding. the proof is the simulation.
 
-proof by simulation is strictly more powerful than proof by derivation. Gödel showed that any consistent formal system contains true statements it cannot prove. but a convergent system can settle into states that no derivation reaches. it escapes the [[Gödel prison]] — because the prison only confines derivation, and convergence is not derivation.
+proof by simulation is strictly more powerful than proof by derivation. Goedel showed that any consistent formal system contains true statements it cannot prove. but a convergent system can settle into states that no derivation reaches. it escapes the [[Goedel prison]] — because the prison only confines derivation, and convergence is not derivation.
 
 the postulate: every truth accessible to intelligence is a fixed point of some convergent simulation under conservation laws.
 
@@ -118,7 +118,7 @@ classical computation (Turing, 1936): a tape head moves left and right, reading 
 
 convergent computation (cybics): a network of local interactions settles into a stable state under conservation laws. computation is simulation — the answer is the [[equilibrium]].
 
-Gödel (1931) showed derivation has fundamental limits: true statements that cannot be proved. but convergent computation operates outside the proof-theoretic domain. a system can converge to a state that no derivation reaches.
+Goedel (1931) showed derivation has fundamental limits: true statements that cannot be proved. but convergent computation operates outside the proof-theoretic domain. a system can converge to a state that no derivation reaches.
 
 [[CORE]] — Conserved Observable Reduction Equilibrium — formalizes this. sixteen rewriting patterns, field-native arithmetic, confluent semantics. any evaluation order yields the same result. [[focus]] is conserved — a single quantity that is simultaneously fuel, attention, weight, and value.
 
@@ -196,7 +196,7 @@ definition: a state ω* is a simulation-proof of property P if:
 
 claim: for every property P decidable by a Turing machine, there exists a convergent system (Ω, T, C) that simulation-proves P.
 
-stronger claim: there exist properties P that can be simulation-proved but not derivation-proved in any consistent formal system of bounded complexity. these are the truths that Gödel showed inaccessible to derivation — but accessible to convergence.
+stronger claim: there exist properties P that can be simulation-proved but not derivation-proved in any consistent formal system of bounded complexity. these are the truths that Goedel showed inaccessible to derivation — but accessible to convergence.
 
 the [[cybergraph]] is such a system. Ω is the space of [[focus]] distributions. T is the [[tri-kernel]]. C is focus conservation (Σ πᵢ = 1). a [[cyberank]] distribution π* is a simulation-proof of collective relevance — no axiomatic derivation required, no authority consulted, no vote taken. just convergence under physics.
 
@@ -213,4 +213,4 @@ the [[cybergraph]] is such a system. Ω is the space of [[focus]] distributions.
 
 Five axioms. One grammar. Three operators. Proof by simulation.
 
-see [[future of computation]] for the full narrative — from the Turing-[[Gödel prison]] through [[natural computing]] to planetary [[superintelligence]]
+see [[future of computation]] for the full narrative — from the Turing-[[Goedel prison]] through [[natural computing]] to planetary [[superintelligence]]
