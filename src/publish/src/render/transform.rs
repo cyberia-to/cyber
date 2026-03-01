@@ -131,14 +131,16 @@ fn extract_math_blocks(markdown: &str) -> (String, Vec<String>) {
     (result, math_blocks)
 }
 
-/// Fix underscores inside \text{} blocks for KaTeX compatibility.
-/// Authors write `\text{type\_tag}` but KaTeX handles bare `_` in text mode,
-/// while `\_` can cause parsing issues. Strip the escape backslash.
+/// Ensure underscores inside \text{} blocks are escaped as \_ for KaTeX.
+/// KaTeX requires `\_` for literal underscores in \text{} (bare `_` triggers subscript).
+/// Handles both already-escaped `\_` and bare `_` by normalizing first.
 fn fix_text_underscores(math: &str) -> String {
     let re = Regex::new(r"\\text\{([^}]*)\}").unwrap();
     re.replace_all(math, |caps: &regex::Captures| {
         let inner = &caps[1];
-        let fixed = inner.replace("\\_", "_");
+        // Normalize: strip \_ to _, then re-escape all _ to \_
+        let normalized = inner.replace("\\_", "_");
+        let fixed = normalized.replace('_', "\\_");
         format!("\\text{{{}}}", fixed)
     })
     .to_string()
@@ -478,30 +480,36 @@ mod tests {
 
     #[test]
     fn test_text_underscore_fix() {
-        // Escaped underscores in \text{} should be stripped for KaTeX
+        // Already-escaped \_ should be preserved for KaTeX
         let store = empty_store();
         let result = render_markdown(
             "$\\text{type\\_tag}(a)$",
             &store,
         );
         assert!(
-            result.html.contains("\\text{type_tag}"),
-            "escaped underscore in \\text{{}} should be stripped: {}",
-            result.html
-        );
-        assert!(
-            !result.html.contains("\\text{type\\_tag}"),
-            "escaped underscore should NOT remain in \\text{{}}: {}",
+            result.html.contains("\\text{type\\_tag}"),
+            "escaped underscore should be preserved in \\text{{}}: {}",
             result.html
         );
 
-        // Multiple \text{} blocks in one formula
+        // Bare underscores in \text{} should be escaped to \_
+        let result = render_markdown(
+            "$\\text{staking_share}$",
+            &store,
+        );
+        assert!(
+            result.html.contains("\\text{staking\\_share}"),
+            "bare underscore should be escaped in \\text{{}}: {}",
+            result.html
+        );
+
+        // Multiple \text{} blocks
         let result = render_markdown(
             "$\\text{BBG\\_root} = H(\\text{by\\_neuron.commit})$",
             &store,
         );
-        assert!(result.html.contains("\\text{BBG_root}"));
-        assert!(result.html.contains("\\text{by_neuron.commit}"));
+        assert!(result.html.contains("\\text{BBG\\_root}"));
+        assert!(result.html.contains("\\text{by\\_neuron.commit}"));
     }
 
     #[test]
