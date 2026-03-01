@@ -26,7 +26,7 @@ output_dir = "public"
 
 [content]
 public_only = true
-exclude_patterns = ["logseq/*", "draws/*", ".git/*"]
+exclude_patterns = ["logseq/*", "draws/*", ".git/*", "public/*", "target/*", "src/publish/target/*", ".DS_Store", ".claude/*"]
 include_journals = true
 default_public = true
 

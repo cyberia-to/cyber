@@ -29,6 +29,7 @@ pub struct PageMeta {
 pub enum PageKind {
     Page,
     Journal,
+    File,
 }
 
 #[derive(Debug, Clone)]
@@ -75,6 +76,11 @@ pub fn parse_all(discovered: &DiscoveredFiles) -> Result<Vec<ParsedPage>> {
         pages.push(page);
     }
 
+    for file in &discovered.files {
+        let page = parse_non_md_file(file)?;
+        pages.push(page);
+    }
+
     Ok(pages)
 }
 
@@ -98,16 +104,7 @@ pub fn parse_file(file: &DiscoveredFile) -> Result<ParsedPage> {
     let outgoing_links = wikilinks::collect_wikilinks(&normalized);
 
     // Determine namespace
-    let namespace = if file.name.contains('/') {
-        let parts: Vec<&str> = file.name.rsplitn(2, '/').collect();
-        if parts.len() == 2 {
-            Some(parts[1].to_string())
-        } else {
-            None
-        }
-    } else {
-        None
-    };
+    let namespace = extract_namespace(&file.name);
 
     // Determine kind
     let kind = match file.kind {
@@ -126,6 +123,175 @@ pub fn parse_file(file: &DiscoveredFile) -> Result<ParsedPage> {
         content_md: normalized,
         outgoing_links,
     })
+}
+
+/// Parse a non-markdown file into a graph node.
+/// Text files get wrapped in code fences; binary files get a metadata description.
+fn parse_non_md_file(file: &DiscoveredFile) -> Result<ParsedPage> {
+    let id = slugify_page_name(&file.name);
+    let namespace = extract_namespace(&file.name);
+    let ext = file
+        .path
+        .extension()
+        .map(|e| e.to_string_lossy().to_lowercase())
+        .unwrap_or_default();
+
+    // Auto-tag based on extension and directory
+    let mut tags = Vec::new();
+    if let Some(lang_tag) = extension_to_tag(&ext) {
+        tags.push(lang_tag.to_string());
+    }
+    if let Some(ns) = &namespace {
+        // Top-level directory becomes a tag
+        let top_dir = ns.split('/').next().unwrap_or(ns);
+        if !top_dir.is_empty() && !tags.contains(&top_dir.to_string()) {
+            tags.push(top_dir.to_string());
+        }
+    }
+
+    // Try to read as text
+    let (content_md, outgoing_links) = match std::fs::read_to_string(&file.path) {
+        Ok(text) => {
+            let lang = extension_to_lang(&ext);
+            let outgoing_links = wikilinks::collect_wikilinks(&text);
+            let content_md = format!("```{}\n{}\n```", lang, text);
+            (content_md, outgoing_links)
+        }
+        Err(_) => {
+            // Binary file — show metadata
+            let size = std::fs::metadata(&file.path)
+                .map(|m| format_size(m.len()))
+                .unwrap_or_else(|_| "unknown size".to_string());
+            let content_md = format!(
+                "Binary file: `{}`\n\nSize: {}\nType: {}",
+                file.name,
+                size,
+                if ext.is_empty() {
+                    "unknown"
+                } else {
+                    &ext
+                }
+            );
+            (content_md, Vec::new())
+        }
+    };
+
+    Ok(ParsedPage {
+        id,
+        meta: PageMeta {
+            title: file.name.clone(),
+            properties: HashMap::new(),
+            tags,
+            public: Some(true),
+            aliases: Vec::new(),
+            date: None,
+            icon: None,
+            menu_order: None,
+        },
+        kind: PageKind::File,
+        source_path: file.path.clone(),
+        namespace,
+        content_md,
+        outgoing_links,
+    })
+}
+
+fn extract_namespace(name: &str) -> Option<String> {
+    if name.contains('/') {
+        let parts: Vec<&str> = name.rsplitn(2, '/').collect();
+        if parts.len() == 2 {
+            Some(parts[1].to_string())
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+/// Map file extension to a language identifier for code fence syntax highlighting.
+fn extension_to_lang(ext: &str) -> &'static str {
+    match ext {
+        "rs" => "rust",
+        "nu" => "nu",
+        "py" => "python",
+        "js" => "javascript",
+        "ts" => "typescript",
+        "jsx" => "jsx",
+        "tsx" => "tsx",
+        "css" => "css",
+        "html" | "htm" => "html",
+        "json" => "json",
+        "toml" => "toml",
+        "yaml" | "yml" => "yaml",
+        "sh" | "bash" | "zsh" => "bash",
+        "sql" => "sql",
+        "go" => "go",
+        "c" | "h" => "c",
+        "cpp" | "hpp" | "cc" => "cpp",
+        "java" => "java",
+        "rb" => "ruby",
+        "lua" => "lua",
+        "zig" => "zig",
+        "nix" => "nix",
+        "md" | "markdown" => "markdown",
+        "xml" => "xml",
+        "csv" => "csv",
+        "txt" => "text",
+        "edn" => "clojure",
+        "gitignore" => "gitignore",
+        _ => "",
+    }
+}
+
+/// Map file extension to a human-readable tag for the graph.
+fn extension_to_tag(ext: &str) -> Option<&'static str> {
+    match ext {
+        "rs" => Some("rust"),
+        "nu" => Some("nushell"),
+        "py" => Some("python"),
+        "js" => Some("javascript"),
+        "ts" => Some("typescript"),
+        "jsx" | "tsx" => Some("react"),
+        "css" => Some("css"),
+        "html" | "htm" => Some("html"),
+        "json" => Some("json"),
+        "toml" => Some("toml"),
+        "yaml" | "yml" => Some("yaml"),
+        "sh" | "bash" | "zsh" => Some("shell"),
+        "sql" => Some("sql"),
+        "go" => Some("go"),
+        "c" | "h" => Some("c"),
+        "cpp" | "hpp" | "cc" => Some("cpp"),
+        "java" => Some("java"),
+        "rb" => Some("ruby"),
+        "lua" => Some("lua"),
+        "zig" => Some("zig"),
+        "nix" => Some("nix"),
+        "xml" => Some("xml"),
+        "md" | "markdown" => Some("markdown"),
+        "zip" | "tar" | "gz" | "bz2" | "xz" => Some("archive"),
+        "png" | "jpg" | "jpeg" | "gif" | "webp" | "svg" | "ico" => Some("image"),
+        "mp4" | "mov" | "webm" | "avi" => Some("video"),
+        "mp3" | "wav" | "ogg" | "flac" => Some("audio"),
+        "pdf" => Some("pdf"),
+        "woff" | "woff2" | "ttf" | "otf" => Some("font"),
+        "ipynb" => Some("jupyter"),
+        _ => None,
+    }
+}
+
+/// Format byte size into human-readable string.
+fn format_size(bytes: u64) -> String {
+    if bytes < 1024 {
+        format!("{} B", bytes)
+    } else if bytes < 1024 * 1024 {
+        format!("{:.1} KB", bytes as f64 / 1024.0)
+    } else if bytes < 1024 * 1024 * 1024 {
+        format!("{:.1} MB", bytes as f64 / (1024.0 * 1024.0))
+    } else {
+        format!("{:.1} GB", bytes as f64 / (1024.0 * 1024.0 * 1024.0))
+    }
 }
 
 /// Detect if content is in Logseq outliner format (majority of lines are bullets).
@@ -169,5 +335,20 @@ mod tests {
         assert_eq!(slugify_page_name("$BOOT"), "$boot");
         assert_eq!(slugify_page_name("$PUSSY on $SOL"), "$pussy-on-$sol");
         assert_eq!(slugify_page_name(".moon names"), ".moon-names");
+    }
+
+    #[test]
+    fn test_extension_to_lang() {
+        assert_eq!(extension_to_lang("rs"), "rust");
+        assert_eq!(extension_to_lang("nu"), "nu");
+        assert_eq!(extension_to_lang("py"), "python");
+        assert_eq!(extension_to_lang("unknown_ext"), "");
+    }
+
+    #[test]
+    fn test_format_size() {
+        assert_eq!(format_size(512), "512 B");
+        assert_eq!(format_size(1536), "1.5 KB");
+        assert_eq!(format_size(2 * 1024 * 1024), "2.0 MB");
     }
 }

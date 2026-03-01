@@ -64,6 +64,24 @@ pub fn journal_name_from_path(path: &Path) -> String {
     stem.replace('_', "-")
 }
 
+/// Extract file name from path relative to base directory, preserving extension.
+/// Used for non-markdown files where the extension is meaningful.
+/// e.g., "nu/analyze.nu" relative to repo root → "nu/analyze.nu"
+/// e.g., "pages/sw-v2.2.2-macos.zip" relative to pages/ → "sw-v2.2.2-macos.zip"
+pub fn file_name_from_path(path: &Path, base_dir: &Path) -> String {
+    let relative = path
+        .strip_prefix(base_dir)
+        .unwrap_or(path);
+
+    let name = relative
+        .to_string_lossy()
+        .to_string();
+
+    // Apply same Logseq normalizations as page_name_from_path
+    let name = name.replace('∕', "/").replace("___", "/");
+    percent_decode(&name)
+}
+
 /// Check if a path matches any exclusion pattern.
 pub fn is_excluded(path: &Path, base_dir: &Path, patterns: &[String]) -> bool {
     let relative = path
@@ -79,14 +97,30 @@ pub fn is_excluded(path: &Path, base_dir: &Path, patterns: &[String]) -> bool {
     false
 }
 
-/// Simple glob matching: supports * and ** patterns.
+/// Simple glob matching: supports *, ** and dir/* patterns.
 fn matches_glob(pattern: &str, path: &str) -> bool {
     let pattern = pattern.replace('\\', "/");
     let path = path.replace('\\', "/");
 
+    // Exact filename match (no wildcards, e.g. ".DS_Store")
+    if !pattern.contains('*') {
+        // Match as exact filename or exact relative path
+        if path == pattern {
+            return true;
+        }
+        // Also match as a filename component (e.g. ".DS_Store" matches "foo/.DS_Store")
+        if let Some(fname) = path.rsplit('/').next() {
+            if fname == pattern {
+                return true;
+            }
+        }
+        return false;
+    }
+
     if pattern.ends_with("/*") {
         let prefix = &pattern[..pattern.len() - 2];
-        return path.starts_with(prefix);
+        // "dir/*" matches paths starting with "dir/" or equal to "dir"
+        return path.starts_with(&format!("{}/", prefix)) || path == prefix;
     }
 
     if pattern.contains("**") {
@@ -96,6 +130,13 @@ fn matches_glob(pattern: &str, path: &str) -> bool {
             let suffix = parts[1].trim_start_matches('/');
             if !prefix.is_empty() && !path.starts_with(prefix) {
                 return false;
+            }
+            // For patterns like **/target/*, check if any path segment matches
+            if suffix.ends_with("/*") {
+                let dir_name = &suffix[..suffix.len() - 2];
+                // Check if path contains /dir_name/ or starts with dir_name/
+                return path.contains(&format!("/{}/", dir_name))
+                    || path.starts_with(&format!("{}/", dir_name));
             }
             if !suffix.is_empty() && !path.ends_with(suffix) {
                 return false;

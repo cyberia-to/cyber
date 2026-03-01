@@ -18,6 +18,8 @@ pub enum FileKind {
     Page,
     Journal,
     Media,
+    /// Non-markdown file (code, config, binary, etc.) treated as a graph node
+    File,
 }
 
 #[derive(Debug)]
@@ -25,6 +27,14 @@ pub struct DiscoveredFiles {
     pub pages: Vec<DiscoveredFile>,
     pub journals: Vec<DiscoveredFile>,
     pub media: Vec<DiscoveredFile>,
+    pub files: Vec<DiscoveredFile>,
+}
+
+fn is_markdown(path: &Path) -> bool {
+    path.extension()
+        .map(|ext| ext == "md" || ext == "markdown")
+        .unwrap_or(false)
+        || path.extension().is_none()
 }
 
 pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<DiscoveredFiles> {
@@ -39,9 +49,10 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         pages: Vec::new(),
         journals: Vec::new(),
         media: Vec::new(),
+        files: Vec::new(),
     };
 
-    // Scan pages
+    // Scan pages directory — markdown files become Pages, everything else becomes Files
     if pages_dir.exists() {
         for entry in WalkDir::new(&pages_dir)
             .into_iter()
@@ -49,20 +60,21 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
             .filter(|e| e.file_type().is_file())
         {
             let path = entry.path().to_path_buf();
-            let is_md = path
-                .extension()
-                .map(|ext| ext == "md" || ext == "markdown")
-                .unwrap_or(false);
-            // Also accept files with no extension (Logseq sometimes creates these)
-            let no_ext = path.extension().is_none();
-            if is_md || no_ext {
-                if classify::is_excluded(&path, &input_dir, &content_config.exclude_patterns) {
-                    continue;
-                }
+            if classify::is_excluded(&path, &input_dir, &content_config.exclude_patterns) {
+                continue;
+            }
+            if is_markdown(&path) {
                 let name = classify::page_name_from_path(&path, &pages_dir);
                 result.pages.push(DiscoveredFile {
                     path,
                     kind: FileKind::Page,
+                    name,
+                });
+            } else {
+                let name = classify::file_name_from_path(&path, &pages_dir);
+                result.files.push(DiscoveredFile {
+                    path,
+                    kind: FileKind::File,
                     name,
                 });
             }
@@ -90,7 +102,7 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         }
     }
 
-    // Scan media
+    // Scan media — still copied to output, but also registered as graph nodes
     if media_dir.exists() {
         for entry in WalkDir::new(&media_dir)
             .into_iter()
@@ -103,11 +115,45 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                 .map(|n| n.to_string_lossy().to_string())
                 .unwrap_or_default();
             result.media.push(DiscoveredFile {
-                path,
+                path: path.clone(),
                 kind: FileKind::Media,
-                name,
+                name: name.clone(),
+            });
+            // Also add as a File node for the graph
+            result.files.push(DiscoveredFile {
+                path,
+                kind: FileKind::File,
+                name: format!("media/{}", name),
             });
         }
+    }
+
+    // Scan all other files in the repo (outside pages/, journals/, media/)
+    for entry in WalkDir::new(&input_dir)
+        .into_iter()
+        .filter_map(|e| e.ok())
+        .filter(|e| e.file_type().is_file())
+    {
+        let path = entry.path().to_path_buf();
+
+        // Skip files already handled by the dedicated directory scans
+        if path.starts_with(&pages_dir)
+            || path.starts_with(&journals_dir)
+            || path.starts_with(&media_dir)
+        {
+            continue;
+        }
+
+        if classify::is_excluded(&path, &input_dir, &content_config.exclude_patterns) {
+            continue;
+        }
+
+        let name = classify::file_name_from_path(&path, &input_dir);
+        result.files.push(DiscoveredFile {
+            path,
+            kind: FileKind::File,
+            name,
+        });
     }
 
     Ok(result)
@@ -144,6 +190,8 @@ mod tests {
         let content = ContentSection::default();
         let result = scan(tmp.path(), &content).unwrap();
         assert_eq!(result.media.len(), 1);
+        // Media files also appear as graph nodes
+        assert!(result.files.iter().any(|f| f.name == "media/image.png"));
     }
 
     #[test]
@@ -160,5 +208,28 @@ mod tests {
         let result = scan(tmp.path(), &content).unwrap();
         assert_eq!(result.pages.len(), 1);
         assert_eq!(result.pages[0].name, "Good");
+        // logseq/ is excluded, so config.edn should not appear in files
+        assert!(!result.files.iter().any(|f| f.name.contains("config.edn")));
+    }
+
+    #[test]
+    fn test_scan_discovers_non_md_files() {
+        let tmp = TempDir::new().unwrap();
+        let pages_dir = tmp.path().join("pages");
+        let nu_dir = tmp.path().join("nu");
+        fs::create_dir_all(&pages_dir).unwrap();
+        fs::create_dir_all(&nu_dir).unwrap();
+        fs::write(pages_dir.join("Page.md"), "# hello").unwrap();
+        fs::write(pages_dir.join("data.zip"), b"PK").unwrap();
+        fs::write(nu_dir.join("script.nu"), "echo hello").unwrap();
+        fs::write(tmp.path().join("Makefile"), "all:").unwrap();
+
+        let content = ContentSection::default();
+        let result = scan(tmp.path(), &content).unwrap();
+        assert_eq!(result.pages.len(), 1); // only Page.md
+        // data.zip in pages/, script.nu in nu/, Makefile at root
+        assert!(result.files.iter().any(|f| f.name == "data.zip"));
+        assert!(result.files.iter().any(|f| f.name == "nu/script.nu"));
+        assert!(result.files.iter().any(|f| f.name == "Makefile"));
     }
 }

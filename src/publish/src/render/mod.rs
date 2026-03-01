@@ -51,7 +51,7 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
         // Render through template
         let template_name = match page.kind {
             crate::parser::PageKind::Journal => "journal.html",
-            crate::parser::PageKind::Page => "page.html",
+            crate::parser::PageKind::Page | crate::parser::PageKind::File => "page.html",
         };
 
         let tmpl = env.get_template(template_name)?;
