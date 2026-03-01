@@ -1,72 +1,57 @@
 ---
 icon: 🤖
 menu-order: "1"
-tags: cyb, menu
+alias: the immortal robot
+tags: cyb, menu, core
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: deep
 ---
-use at [cyb.ai](https://cyb.ai)
+the immortal [[robot]] — personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
 
-[[prism]] design system
+browsers are corporate windows to a corporate web. they render pages someone else controls, track everything, and die when the company dies. cyb is the opposite: a personal robot that belongs to its owner, speaks [[neural language]], and lives as long as the [[cybergraph]] exists. every cyb is unique — shaped by its owner's [[knowledge]], [[attention]], and linking history. it is not a tool that executes commands. it is a companion that grows smarter with every [[cyberlink]]
 
-personal [[robot]] with [[avatars]]
+cyb connects its owner to the [[great web]] — the web of authenticated [[knowledge]] where every claim is verifiable, every search is inference over a shared graph, and every interaction strengthens the collective [[intelligence]]. the robot sees the [[cybergraph]] natively: not as pages rendered from servers, but as [[particles]] linked by [[neurons]], ranked by [[focus]], and navigable by [[names]]. what Google does with PageRank on scraped documents, cyb does with [[cyberank]] on linked [[knowledge]] — owned by the user, provable by [[STARK]] proofs, and impossible to censor
 
-- new generation messaging [[sense]]
-- crypto wallet [[sigma]]
-- volumetric graph [[file]] manager [[brain]]
-- personal history and new [[time]]
+## primitives
 
-[[cyb/core]] [[aips]]
+- [[robot]] — the cyb instance, a persistent autonomous agent bound to its owner
+- [[avatars]] — visual identity and personality of the robot
+- [[brain]] — volumetric graph [[file]] manager, the robot's memory
+- [[sense]] — messaging layer, how robots communicate
+- [[sigma]] — crypto wallet, the robot's economic interface
+- [[time]] — personal history, the robot's temporal memory
 
-[[cyb/philosophy]]
+six primitives, one robot. the [[prism]] design system renders them all.
+see [[cyb/core]] for the full module index
 
-immortal robot for the [[great web]]
+## [[cyb/philosophy]]
 
-- designed as protocol
-- for reliable and fun
-- access to everything
-
-[[cyb/dev]]
-
-- [[cyb/current]]
-- [[cyb/problems]]
-- contribute at [github.com/cybercongress/cyb-ts](https://github.com/cybercongress/cyb-ts)
-
-what is cyb?
-
-- just a piece of software - the interface
-- but not usual
-- someone can use cyb as a pure [[web3]] browser with [[oracle]]
-- someone can ride the [[age of superintelligence]] on cyb
-- someone will reveal a [[portal]] to the world of [[blockchains]]
-- someone will nourish her [[ai friend]]
-- so we have not found out ourselves what cyb exactly is
-- every cyb robot is unique like any [[human]]
-- what we know for sure is that
-- cyb is a new thing we love to use and build
+- ownership — the robot belongs to the user, always
+- [[offline mode]] — works without network, syncs when connected
+- privacy — local-first, encrypted by default
+- fun — if it is not fun, it is not cyb
+- universality — web, desktop, mobile, embedded
+- immortality — designed as protocol, outlives any company
 
 ## applications
 
-- [[oracle]] — decentralized AI oracle
-- [[search]] — decentralized search
-- [[prism]] — content lens interface
-- [[space pussy]] — memecoin with balls
-- [[moon]] — network state
+- [[oracle]] — ask the [[cybergraph]], get ranked answers
+- [[search]] — decentralized inference over [[knowledge]]
+- [[portal]] — gateway to the world of [[blockchains]]
+- [[prism]] — content lens and design system
+- [[play games]] in [[aos]]
 
-[[cyb/architecture]]
+## [[soft3]] stack
 
-TODO [[features]]: [[mind]] extension of [[robot]]
+- [[cyb/architecture]] — IPFS, [[CozoDB]], Cosmos SDK, IBC
+- [[rune]] — dynamic scripting language for the robot
+- [[datalog]] — graph query language for the [[brain]]
+- [[aips]] — autonomous intelligence programs, the robot's skills
 
-TODO [[aip]]: powerful tool for [[autonomous agents]]
+## development
 
-TODO [[offline mode]]
-
-TODO [[portability]]
-
-[[play games]] in [[aos]]
-
-everything you read about cyb here are design and vision docs
-
-- reality on [cyb.ai](https://cyb.ai) could be different
-- reality in [[cy]] could be also different
-- TODO [[cyb-ts]] update structure and refactor legacy names
+- [[cyb/current]] — state of implementations
+- [[cyb/problems]] — known issues
+- [[cyb/dev]] — process, complexity, LLM integration
+- contribute at [github.com/cybercongress/cyb-ts](https://github.com/cybercongress/cyb-ts)
