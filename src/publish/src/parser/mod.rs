@@ -46,7 +46,8 @@ pub struct ParsedPage {
 }
 
 pub fn slugify_page_name(name: &str) -> PageId {
-    let lower = name.to_lowercase();
+    use unicode_normalization::UnicodeNormalization;
+    let lower = name.nfc().collect::<String>().to_lowercase();
     let mut result = String::with_capacity(lower.len());
     let mut prev_hyphen = true; // prevents leading hyphen
 
@@ -335,6 +336,15 @@ mod tests {
         assert_eq!(slugify_page_name("$BOOT"), "$boot");
         assert_eq!(slugify_page_name("$PUSSY on $SOL"), "$pussy-on-$sol");
         assert_eq!(slugify_page_name(".moon names"), ".moon-names");
+
+        // NFC and NFD forms of ö must produce the same slug
+        let nfc = "G\u{00F6}del prison"; // ö as single codepoint
+        let nfd = "Go\u{0308}del prison"; // o + combining diaeresis
+        assert_eq!(
+            slugify_page_name(nfc),
+            slugify_page_name(nfd),
+            "NFC and NFD slugs must match"
+        );
     }
 
     #[test]

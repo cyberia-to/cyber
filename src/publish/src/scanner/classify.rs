@@ -24,33 +24,35 @@ pub fn page_name_from_path(path: &Path, pages_dir: &Path) -> String {
 
 /// Decode percent-encoded characters in a string (e.g., %2E → ., %3F → ?).
 fn percent_decode(s: &str) -> String {
+    // Fast path: no percent encoding present
+    if !s.contains('%') {
+        return s.to_string();
+    }
+
     let mut result = String::with_capacity(s.len());
-    let bytes = s.as_bytes();
-    let mut i = 0;
-    while i < bytes.len() {
-        if bytes[i] == b'%' && i + 2 < bytes.len() {
-            let hi = bytes[i + 1];
-            let lo = bytes[i + 2];
-            if let (Some(h), Some(l)) = (hex_val(hi), hex_val(lo)) {
-                result.push((h << 4 | l) as char);
-                i += 3;
-                continue;
+    let mut chars = s.chars();
+    while let Some(ch) = chars.next() {
+        if ch == '%' {
+            let mut hex = String::new();
+            let remaining: String = chars.as_str().chars().take(2).collect();
+            if remaining.len() == 2 {
+                hex.push_str(&remaining);
+                if let Ok(byte) = u8::from_str_radix(&hex, 16) {
+                    result.push(byte as char);
+                    // Advance past the two hex digits
+                    chars.next();
+                    chars.next();
+                    continue;
+                }
             }
+            result.push(ch);
+        } else {
+            result.push(ch);
         }
-        result.push(bytes[i] as char);
-        i += 1;
     }
     result
 }
 
-fn hex_val(b: u8) -> Option<u8> {
-    match b {
-        b'0'..=b'9' => Some(b - b'0'),
-        b'a'..=b'f' => Some(b - b'a' + 10),
-        b'A'..=b'F' => Some(b - b'A' + 10),
-        _ => None,
-    }
-}
 
 /// Extract journal name from file path.
 /// e.g., "journals/2025_02_08.md" → "2025-02-08"

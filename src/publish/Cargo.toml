@@ -43,6 +43,7 @@ anyhow = "1"
 thiserror = "2"
 walkdir = "2"
 ctrlc = { version = "3", features = ["termination"] }
+unicode-normalization = "0.1"
 
 [dev-dependencies]
 tempfile = "3"
