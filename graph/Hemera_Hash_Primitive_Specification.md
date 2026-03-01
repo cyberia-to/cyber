@@ -259,11 +259,121 @@ Hemera output = 8 × 8 bytes = 64 bytes (little-endian, canonical range [0, p))
 
 If Hemera is ever broken, the entire graph rehashes. Storage proofs make this possible. Versioning headers do not save you — they waste bytes multiplied by 10¹⁵ particles.
 
+### 4.5.1 Content Identifiers: Raw Bytes, No Headers
+
+CORE content identifiers (CIDs) are **raw 64-byte Hemera outputs. Period.** No multicodec prefix. No multihash header. No version byte. No length indicator. No framing of any kind.
+
+```
+IPFS CIDv1:    <version><multicodec><multihash-fn><digest-length><digest>
+               1 + 1-2  + 1-2      + 1           + 32-64 bytes
+               = 36-69 bytes of which 4-5 are pure overhead
+
+CORE CID:     <digest>
+               64 bytes. That's it.
+```
+
+**Why no headers:**
+
+**1. Overhead at scale.** At 10¹⁵ particles, every byte of header overhead costs a petabyte of storage. A 5-byte CID prefix × 10¹⁵ = 5 PB. This is not negligible. It is an architectural tax paid forever, on every lookup, every proof, every edge, every packet. Raw 64 bytes eliminates this tax completely.
+
+**2. There is exactly one hash function.** Headers exist to disambiguate between multiple possible interpretations of the same bytes. CORE has one hash function: Hemera. One field: Goldilocks. One output size: 64 bytes. One encoding: little-endian canonical. There is nothing to disambiguate. A header answering a question nobody asked is not safety — it is noise.
+
+**3. Headers create the illusion of upgradability.** A version prefix implies "we might change this later." In a content-addressed graph with immutable addresses, there is no "later" for existing addresses. Address A was produced by Hemera from specific bytes. No header can change that. If Hemera is broken, the entire graph rehashes via storage proofs — the header doesn't help. If Hemera is not broken, the header wastes space. In neither scenario does the header provide value.
+
+**4. Endofunction closure.** A Hemera output is valid Hemera input: `Hemera(Hemera(x) ∥ Hemera(y))` type-checks. Headers break this. A CID with a multicodec prefix is not raw bytes — it is a tagged value that must be stripped before hashing and reattached after. Every Merkle tree node, every proof chain, every composition would require encode/decode at boundaries. The algebra gets dirty. Raw bytes compose cleanly.
+
+**5. Flat namespace.** Every entity in CORE — particle, edge, neuron, commitment, proof — has a 64-byte address in one flat namespace. No type tags. No interpretation hints. The same function produces all identifiers. A `particle_address == edge_id` collision is prevented by domain separation in the hash input (different serialization), not by type prefixes on the output. The output is pure, untagged, universal.
+
+**Compatibility with IPFS/libp2p:** If interop is needed, a thin translation layer at the network boundary can wrap raw Hemera bytes in CIDv1 format for external systems. Inside CORE, the wrapper never exists. Translation is a gateway concern, not a protocol concern.
+
+```
+On the wire (CORE):     [64 bytes]
+On the wire (IPFS):     [0x01 0xNN 0xNN 0x40 ... 64 bytes ...]
+                         ↑     ↑     ↑     ↑
+                         │     │     │     └─ digest length
+                         │     │     └─ multihash function code
+                         │     └─ multicodec (content type)
+                         └─ CIDv1 version
+
+CORE never generates, stores, transmits, or processes the left part.
+Gateways add it. Gateways strip it. The graph never sees it.
+```
+
+**The principle:** A content identifier identifies content. It does not identify itself. The 64 bytes ARE the identity — complete, self-sufficient, and universal. Any byte spent saying "this is a Hemera hash" is a byte not spent on security, a byte replicated 10¹⁵ times, and a byte that implies the system might one day be something other than what it is.
+
 ### 4.6 Canonical Tree Hashing
 
-Merkle trees in cyber/core use Hemera sponge for both leaves and internal nodes. For subtree hashes to be globally stable and dedupable, the chunking rule and tree shape must be frozen alongside the hash parameters.
+Merkle trees in cyber/core use Hemera sponge for both leaves and internal nodes. For subtree hashes to be globally stable and dedupable, the chunking rule and tree shape must be frozen alongside the hash parameters. The chunk size is a permanent parameter — once content has been hashed and addressed, changing it would invalidate every existing address in the graph.
+
+#### 4.6.1 Chunk Size: 4 KB (4096 bytes)
 
 **Chunking rule:** Content is split into fixed **4 KB chunks** (4096 bytes = 512 field elements = 64 absorb blocks). The last chunk is padded normally by the sponge. No content-defined chunking — identical byte ranges always produce identical chunks.
+
+**Why 4 KB and not some other size.** The chunk size must be a multiple of 64 bytes (Hemera's absorb block). Among powers of two — 256 B, 1 KB, 4 KB, 8 KB, 16 KB, 64 KB — only 4 KB simultaneously satisfies every constraint:
+
+**1. Field alignment.** 4096 bytes = 64 absorb blocks = 2⁶ permutations per chunk. A clean power of two, consistent with every other CORE parameter (t=2⁴, r=2³, c=2³, R_F=2³, R_P=2⁶). The permutation count per chunk is the same as the partial round count — both are 2⁶. This is not coincidence; both reflect the same security depth.
+
+**2. OS page alignment.** 4 KB is the virtual memory page size on x86 (since 1985), ARM (since 1987), and RISC-V (since 2010). It is the default block size of ext4, XFS, NTFS, and APFS. It is the minimum addressable unit on NVMe drives. `mmap()` reads and writes align to page boundaries without buffering. This means zero-copy I/O between storage and hash function — the OS delivers content in units that map directly to Hemera chunks with no intermediate buffering.
+
+**3. L1 cache fit.** 4 KB fits in the L1 data cache of every modern CPU (typically 32–64 KB). The entire chunk can be hashed in cache-resident memory. At 8 KB, cache pressure increases; at 16 KB, the chunk exceeds L1 on many architectures and performance degrades from cache misses during hashing.
+
+**4. STARK proof granularity.** One 4 KB leaf requires 64 permutations × ~1,200 constraints = ~76,800 constraints. This is small enough for efficient recursive proof composition but large enough that proof overhead does not dominate content. At 1 KB (19,200 constraints per leaf), proof metadata costs approach content costs. At 64 KB (1.2M constraints per leaf), individual leaf proofs become expensive.
+
+**5. Tree depth and proof size.** Practical scaling at 4 KB chunks:
+
+```
+Content size    Leaves      Tree depth    Proof size
+────────────    ──────      ──────────    ──────────
+1 MB            256         8             512 B
+1 GB            262,144     18            1,152 B
+1 TB            268M        28            1,792 B
+1 PB            274B        38            2,432 B
+```
+
+All proofs fit in a single network packet. At 256 B chunks, 1 GB content would require depth 22 and 1,408 B proofs — feasible but wasteful. At 64 KB chunks, 1 MB content would have only 16 leaves — too shallow for meaningful structural sharing.
+
+**6. Overhead ratio.** Merkle tree metadata costs ~1.6% additional storage at 4 KB. At 256 B, overhead is 25% (one quarter of storage is tree, not content). At 64 KB, overhead is 0.1% but granularity is lost. 1.6% is the sweet spot — negligible cost for full verifiability and deduplication.
+
+**7. Deduplication quality.** 4 KB blocks have meaningful repetition in real-world data: database pages (Postgres, SQLite use 4–8 KB pages), virtual machine disk images, document formats (PDF objects, DOCX zip entries), and versioned content where most chunks stay unchanged between edits. At 64 B, almost no sequences repeat — dedup is noise. At 64 KB, dedup granularity is too coarse. 4 KB is the empirical sweet spot where structural sharing is both frequent and semantically meaningful.
+
+**8. Streaming verification.** A receiver buffers at most one chunk (4 KB) plus one Merkle proof (~1–2 KB) before verifying. Total memory per verification step: ~6 KB. This allows content to be verified and processed chunk-by-chunk during network reception with minimal memory, enabling verified streaming on constrained devices.
+
+**9. Network transport.** 4 KB = approximately 3 TCP segments (at 1460-byte MSS) or 1 jumbo Ethernet frame (9000 bytes). A chunk plus its Merkle proof fits comfortably in any transport unit. At 64 KB, a single chunk requires ~46 TCP segments — impractical for chunk-at-a-time delivery.
+
+**Note on MTU and the 3-packet question.** The ideal would be 1 chunk = 1 network packet — atomic delivery and verification in a single frame. At 4 KB chunks, today's internet MTU (1500 bytes, chosen in 1980 based on Ethernet controller RAM costs) requires 3 TCP segments. This is not a flaw in the chunk size — it is a legacy constraint in the network:
+
+```
+1980: RAM cost $6,000/MB → MTU 1500 was a cost compromise
+2025: RAM cost $3/GB     → MTU 1500 persists because "it works"
+```
+
+Jumbo frames (MTU 9000) have existed since 1998 and are standard in every major cloud datacenter (AWS, Google Cloud, Azure). A CORE verification unit — chunk + Merkle proof + frame header ≈ 5.3 KB — fits in a single jumbo frame with room to spare. Between nodes on modern infrastructure, 4 KB chunks already deliver single-frame atomic verification.
+
+For legacy internet paths where MTU 1500 is unavoidable, TCP reassembles the 3 segments transparently — the application sees a single 4 KB read. The fragmentation is invisible to the verification layer.
+
+The design principle is: **fit the network to the data, not the data to the network.** The chunk size is derived from field alignment, OS page alignment, cache geometry, and proof granularity — mathematical and hardware invariants. MTU is a legacy economic parameter that infrastructure is already evolving past. If CORE ever defines a native transport protocol, the minimum transfer unit will be chunk + proof (~5.3 KB), not 1500 bytes from 1980.
+
+**10. Bounded locality.** Changing one byte in content requires rehashing one 4 KB chunk (64 permutations) plus log₂(n/256) tree nodes up to the root (one permutation each). For 1 GB content: 64 + 18 = 82 permutations. For 1 TB: 64 + 28 = 92 permutations. The local cost (64 permutations) dominates; tree traversal is negligible. At 64 KB chunks, the local cost would be 1,024 permutations — 16× worse locality.
+
+**Comparison table:**
+
+```
+                    256B   1KB     4KB     8KB    16KB    64KB
+                    ────   ────   ─────   ────   ─────   ─────
+Absorbs/chunk         4     16      64    128     256    1024
+Absorbs = 2^k       2²     2⁴     2⁶     2⁷      2⁸    2¹⁰
+1GB tree depth       22     20      18     17      16      14
+1GB proof (bytes)  1408   1280    1152   1088    1024     896
+Overhead ratio       25%     6%    1.6%   0.8%    0.4%    0.1%
+OS page aligned       ✗      ✗      ✓      ✗       ✗       ✗
+L1 cache fit          ✓      ✓      ✓      ~       ✗       ✗
+STARK constraints   4.8K  19.2K   76.8K   154K   307K    1.2M
+Streaming buffer   256B     1K      4K     8K     16K     64K
+Dedup quality      poor   fair    good   good    fair    poor
+Network packets       1      1       3      6      12      46
+```
+
+4 KB is the only row with ✓ on both page alignment and L1 cache fit, 2⁶ absorbs per chunk (matching R_P), practical proof size, and meaningful deduplication. **The convergence is not forced — it is the unique point where field arithmetic, hardware reality, and graph properties intersect.**
 
 **Leaf hash:** `Hemera(chunk_bytes)` — the chunk goes through the sponge as raw bytes.
 
