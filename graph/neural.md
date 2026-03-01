@@ -103,8 +103,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 - ambiguity resolution: [[topology]] around a [[particle]] disambiguates meaning computationally — [[springs]] detect polysemy as high tension, [[heat]] concentrates on contextually appropriate meaning
 - compositionality: meaning of complex expression derivable from parts and their structural arrangement — computed by [[tri-kernel]] without explicit composition rules
 - convergence: inherits from the Collective [[Focus]] Theorem — unique stationary distribution π* guarantees the network's collective understanding converges
-- expressiveness: semantically complete — can express propositional [[logic]], predicate [[logic]], modal [[logic]], temporal [[logic]], fuzzy/probabilistic [[logic]], and natural language [[semantics]]
-- can express things no other [[language]] can: collective confidence distributions, continuous semantic distance, [[knowledge]] [[topology]] metadata
+- expressiveness: semantically complete — can encode [[propositional logic]], [[predicate logic]], [[modal logic]], [[temporal logic]], [[fuzzy logic]], and [[natural language semantics]]. can also express collective confidence distributions, continuous semantic distance, and [[knowledge topology]] metadata
 
 ## evolution phases
 

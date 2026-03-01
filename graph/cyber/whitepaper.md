@@ -500,7 +500,16 @@ Compositionality: meaning of complex expressions derivable from parts and their 
 
 Convergence: inherits from the [[collective focus theorem]] — unique stationary distribution $\pi^*$ guarantees the network's collective understanding converges.
 
-Expressiveness: semantically complete — can express propositional [[logic]], predicate [[logic]], modal [[logic]], temporal [[logic]], fuzzy/probabilistic [[logic]], and natural language [[semantics]]. Can also express things no other language can: collective confidence distributions, continuous semantic distance, [[knowledge]] [[topology]] metadata.
+Expressiveness: semantically complete. The [[cybergraph]] can encode:
+
+- [[propositional logic]] — truth values as link weights
+- [[predicate logic]] — quantification over [[particles]] and [[cyberlinks]]
+- [[modal logic]] — possibility and necessity via neighborhood structure
+- [[temporal logic]] — time-indexed [[cyberlinks]] with epoch ordering
+- [[fuzzy logic]] — continuous confidence as $\pi$-weight on edges
+- [[natural language semantics]] — meaning as position in [[focus]] space
+
+The graph also expresses what no formal [[language]] can: collective confidence distributions, continuous semantic distance, and [[knowledge topology]] metadata.
 
 ## 11. Tokenomics
 
