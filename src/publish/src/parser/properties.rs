@@ -56,7 +56,10 @@ fn extract_yaml_frontmatter(content: &str, page_name: &str) -> (PageMeta, String
             for (key, value) in map {
                 if let serde_yaml::Value::String(k) = key {
                     let v = yaml_value_to_string(&value);
-                    props.insert(k.to_lowercase(), v);
+                    // Strip trailing colons so Logseq "alias::" syntax
+                    // in YAML frontmatter normalizes to "alias"
+                    let normalized = k.trim_end_matches(':').to_lowercase();
+                    props.insert(normalized, v);
                 }
             }
             props
@@ -267,6 +270,15 @@ mod tests {
         let content = "---\nalias: CFT, theorem\n---\n";
         let (meta, _) = extract_properties(content, "Test");
         assert_eq!(meta.aliases, vec!["CFT", "theorem"]);
+    }
+
+    #[test]
+    fn test_aliases_double_colon_in_yaml() {
+        // Logseq "alias::" syntax inside YAML frontmatter
+        // YAML parses key as "alias:" — must strip trailing colon
+        let content = "---\nalias:: Shapley, Shapley values\n---\n";
+        let (meta, _) = extract_properties(content, "Test");
+        assert_eq!(meta.aliases, vec!["Shapley", "Shapley values"]);
     }
 
     #[test]
