@@ -331,7 +331,13 @@ pub fn build_page_context(
         canonical_url => canonical_url,
         page => minijinja::context! {
             title => page.meta.title.clone(),
-            display_name => page.meta.title.rsplit('/').next().unwrap_or(&page.meta.title).to_string(),
+            display_name => {
+                let base = page.meta.title.rsplit('/').next().unwrap_or(&page.meta.title);
+                match page.kind {
+                    crate::parser::PageKind::Page | crate::parser::PageKind::Journal => format!("{}.md", base),
+                    crate::parser::PageKind::File => base.to_string(),
+                }
+            },
             id => page.id.clone(),
             html_content => html_body,
             meta => page.meta.properties.clone(),

@@ -439,9 +439,13 @@ fn render_files_page(
         .map(|(i, (p, backlinks, pr, size))| {
             let pr_display = format!("{:.2}", pr * 1000.0);
             let size_display = format_size(*size);
+            let file_title = match p.kind {
+                crate::parser::PageKind::Page | crate::parser::PageKind::Journal => format!("{}.md", p.meta.title),
+                crate::parser::PageKind::File => p.meta.title.clone(),
+            };
             minijinja::context! {
                 rank => i + 1,
-                title => p.meta.title.clone(),
+                title => file_title,
                 url => format!("/{}", p.id),
                 backlinks => *backlinks,
                 pagerank => pr_display,
