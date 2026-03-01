@@ -192,10 +192,15 @@
                                         ) {
                                             return (
                                                 "\\text{" +
-                                                inner.replace(
-                                                    /_/g,
-                                                    "\\_",
-                                                ) +
+                                                inner
+                                                    .replace(
+                                                        /\\_/g,
+                                                        "_",
+                                                    )
+                                                    .replace(
+                                                        /_/g,
+                                                        "\\_",
+                                                    ) +
                                                 "}"
                                             );
                                         },
