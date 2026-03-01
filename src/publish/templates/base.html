@@ -168,44 +168,6 @@
                             }
                         }
                     }
-                    // Fix underscores inside \text{} — LaTeX requires \_ but authors often write _
-                    var fixTextUnderscores = function (el) {
-                        var walker2 =
-                            document.createTreeWalker(
-                                el,
-                                NodeFilter.SHOW_TEXT,
-                                null,
-                                false,
-                            );
-                        while (walker2.nextNode()) {
-                            var n = walker2.currentNode;
-                            if (
-                                n.nodeValue &&
-                                /\\text\{/.test(n.nodeValue)
-                            ) {
-                                var fixed =
-                                    n.nodeValue.replace(
-                                        /\\text\{([^}]*)\}/g,
-                                        function (
-                                            m,
-                                            inner,
-                                        ) {
-                                            return (
-                                                "\\text{" +
-                                                inner.replace(
-                                                    /(?<!\\)_/g,
-                                                    "\\_",
-                                                ) +
-                                                "}"
-                                            );
-                                        },
-                                    );
-                                if (fixed !== n.nodeValue)
-                                    n.nodeValue = fixed;
-                            }
-                        }
-                    };
-                    fixTextUnderscores(content);
                     // Now render math
                     if (
                         typeof renderMathInElement ===

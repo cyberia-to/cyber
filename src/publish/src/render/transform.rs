@@ -131,13 +131,26 @@ fn extract_math_blocks(markdown: &str) -> (String, Vec<String>) {
     (result, math_blocks)
 }
 
+/// Fix underscores inside \text{} blocks for KaTeX compatibility.
+/// Authors write `\text{type\_tag}` but KaTeX handles bare `_` in text mode,
+/// while `\_` can cause parsing issues. Strip the escape backslash.
+fn fix_text_underscores(math: &str) -> String {
+    let re = Regex::new(r"\\text\{([^}]*)\}").unwrap();
+    re.replace_all(math, |caps: &regex::Captures| {
+        let inner = &caps[1];
+        let fixed = inner.replace("\\_", "_");
+        format!("\\text{{{}}}", fixed)
+    })
+    .to_string()
+}
+
 /// Restore math blocks from placeholders in the rendered HTML.
 fn restore_math_blocks(html: &str, math_blocks: &[String]) -> String {
     let re = Regex::new(r"MATH_PLACEHOLDER_(\d+)").unwrap();
     re.replace_all(html, |caps: &regex::Captures| {
         let idx: usize = caps[1].parse().unwrap_or(0);
         if idx < math_blocks.len() {
-            math_blocks[idx].clone()
+            fix_text_underscores(&math_blocks[idx])
         } else {
             caps[0].to_string()
         }
@@ -461,6 +474,34 @@ mod tests {
             result.html.contains("x > 0"),
             "greater-than should be preserved in display math"
         );
+    }
+
+    #[test]
+    fn test_text_underscore_fix() {
+        // Escaped underscores in \text{} should be stripped for KaTeX
+        let store = empty_store();
+        let result = render_markdown(
+            "$\\text{type\\_tag}(a)$",
+            &store,
+        );
+        assert!(
+            result.html.contains("\\text{type_tag}"),
+            "escaped underscore in \\text{{}} should be stripped: {}",
+            result.html
+        );
+        assert!(
+            !result.html.contains("\\text{type\\_tag}"),
+            "escaped underscore should NOT remain in \\text{{}}: {}",
+            result.html
+        );
+
+        // Multiple \text{} blocks in one formula
+        let result = render_markdown(
+            "$\\text{BBG\\_root} = H(\\text{by\\_neuron.commit})$",
+            &store,
+        );
+        assert!(result.html.contains("\\text{BBG_root}"));
+        assert!(result.html.contains("\\text{by_neuron.commit}"));
     }
 
     #[test]
