@@ -2,7 +2,7 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: STARK verification, nox STARKs, cyber/stark, STARK, STARK proofs, proof system, cyber proofs
+alias: STARK verification, nox STARKs, STARK proofs, proof system, cyber proofs
 stake: 29173948768097356
 ---
 # proofs
@@ -85,7 +85,7 @@ nox execution → trace (2ⁿ steps × registers)
 
 the [[nox]] VM's sixteen reduction patterns map to AIR transition constraints — each pattern becomes a polynomial equation relating register state before and after a reduction step. [[SuperSpartan]] handles AIR natively via CCS (Customizable Constraint Systems), with linear-time prover and logarithmic-time verifier.
 
-see [[STARK]] for the full architecture (AIR, CCS, SuperSpartan, Whirlaway).
+see [[cyber/stark]] for the concrete implementation (AIR from nox, constraint budget, Hemera as STARK hash, recursive composition, BBG integration). see [[STARK]] for the general architecture (AIR, CCS, SuperSpartan, Whirlaway).
 
 ### self-verification
 
