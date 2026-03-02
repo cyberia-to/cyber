@@ -13,7 +13,7 @@ stake: 14015797676239542
 
 at the OS layer: a purpose-built runtime for nodes of a decentralized [[knowledge graph]], designed from first principles in [[rust]] with zero unsafe code, bounded liveness guarantees, and LLM-generated hardware support.
 
-core stack: [[ipfs]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for dynamic execution, [[cozodb]] graph storage, gamified with [[aos]], [[cosmos-sdk]] chains via [[ibc]]. builds for [[web]], [[desktop]], [[mobile]].
+core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for dynamic execution, [[cozodb]] graph storage, gamified with [[aos]], [[cosmos-sdk]] chains via [[ibc]]. builds for [[web]], [[desktop]], [[mobile]].
 
 ---
 
@@ -522,7 +522,7 @@ import adapter auto-detects what a module needs:
 | localStorage | SQLite |
 | fetch to REST | Direct contract call (<1ms) |
 | IndexedDB | SQLite + Merkle proofs |
-| Service Worker | [[IPFS]] content-addressed storage |
+| Service Worker | [[radio]] content-addressed storage |
 | OAuth / JWT | Cryptographic signatures |
 | WebSocket | P2P [[libp2p]] connection |
 
