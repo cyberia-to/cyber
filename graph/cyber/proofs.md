@@ -40,8 +40,13 @@ execution             │ correct execution          │ nox program ran correct
 data structures       │ Merkle inclusion           │ element exists in tree                   │ ~9,600
                       │ polynomial inclusion       │ element exists in committed polynomial   │ ~1,000
                       │ non-membership             │ element is absent from set               │ ~3,000
-                      │ storage                    │ content remains retrievable              │ ~5,000
                       │ FRI low-degree             │ committed polynomial has bounded degree  │ ~10,000
+──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
+storage &             │ storage                    │ content bytes exist on specific node     │ ~5,000
+availability          │ replication                │ k independent copies exist               │ ~5,000 × k
+                      │ retrievability             │ content fetchable within bounded time    │ ~5,000
+                      │ data availability (DAS)    │ block data was published, is accessible  │ ~8,000
+                      │ encoding fraud             │ erasure coding was done correctly        │ O(k log n)
 ──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
 recursive             │ proof aggregation          │ N proofs are all valid                   │ ~70,000
                       │ recursive composition      │ proof-of-proof, constant size            │ ~70,000
@@ -188,9 +193,62 @@ completeness (nothing hidden)│ impossible   │ ~10,000
 
 polynomial commitments use FRI (Fast Reed-Solomon Interactive Oracle Proofs) for low-degree testing. FRI proofs demonstrate that a committed polynomial has bounded degree — the foundation for all [[BBG]] operations.
 
-### storage proofs
+## storage and availability proofs
 
-[[radio]] provides storage proofs: cryptographic evidence that content remains retrievable. a storage proof verifies that a [[particle]]'s content hash matches its claimed data, using [[Hemera]] Merkle trees for verified streaming. storage proofs guarantee content availability for rehashing and replication across the network.
+at planetary scale, content loss is the existential risk. if the content behind a [[particle]] hash is lost, the particle is dead — its identity exists but its meaning is gone. five proof types prevent this:
+
+| proof | what it guarantees | mechanism |
+|---|---|---|
+| storage proof | content bytes exist on specific storage | periodic challenges against content hash |
+| replication proof | k independent copies exist | challenge distinct replicas, verify uniqueness |
+| retrievability proof | content fetchable within bounded time | timed challenge-response with latency bound |
+| data availability proof | block data was published and is accessible | erasure coding + random sampling (DAS) |
+| encoding fraud proof | erasure coding was done correctly | decode k+1 cells, compare against row commitment |
+
+storage proofs verify individual [[particle]] content. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants. the two are complementary — storage ensures content survives, DA ensures state transitions are visible.
+
+### layered data availability
+
+```
+Tier 0 — critical roots    checkpoint posted to settlement layer    immutable forever
+                            ~32-64 KB per epoch                     ultimate recovery
+
+Tier 1 — active graph      focus blobs (~10K cyberlinks + proofs)   ≥ 30 days retention
+                            posted to DA layer                      verified by light sampling
+
+Tier 2 — historical tails  erasure-coded archival                   deep replay, rehashing
+                            refreshed by archivers                  persistent storage
+```
+
+### namespace-aware DAS
+
+light clients verify data availability without downloading full data. the [[BBG]]'s [[NMT]] structure enables namespace-aware sampling: a client requesting "give me everything for [[neuron]] N" receives data plus a completeness proof — O(√n) random samples for 99.9% confidence.
+
+### encoding fraud proofs
+
+if a block producer encodes a row incorrectly in the 2D Reed-Solomon erasure grid:
+
+```
+1. obtain k+1 of 2k cells from the row
+2. attempt Reed-Solomon decoding
+3. decoded polynomial ≠ row NMT root → fraud proof
+4. any verifier checks: decode(cells) ≠ row commitment → block rejected
+
+proof size: O(k) cells with O(log n) proofs each
+verification: O(k log n)
+```
+
+### hash migration
+
+storage proofs are Phase 1 security infrastructure. if [[Hemera]] is ever broken, storage proofs enable full graph rehash under a new hash function. without them, the hash choice is irreversible. with them, [[Hemera]] becomes a replaceable component.
+
+```
+10¹⁵ particles ÷ 10⁶ nodes = 10⁹ particles per node
+at ~310K hashes/s per core → ~17 hours for full parallel rehash
+bottleneck: storage proof coverage and network bandwidth
+```
+
+see [[storage proofs]] for the full specification, [[radio]] for the transport layer, [[NMT]] for namespace-aware sampling, [[data structure for superintelligence]] for DAS architecture.
 
 ## consensus proofs
 
