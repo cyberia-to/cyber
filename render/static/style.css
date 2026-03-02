@@ -1111,7 +1111,7 @@ hr {
     .pages-table .col-created,
     .pages-table .col-modified,
     .pages-table .col-size,
-    .pages-table .col-luminosity,
+    .pages-table .col-density,
     .pages-table .col-gravity {
         display: none;
     }
@@ -1558,7 +1558,7 @@ body:has(.fullscreen-viz) .main-content {
 .col-size,
 .col-pagerank,
 .col-links,
-.col-luminosity,
+.col-density,
 .col-gravity,
 .col-created,
 .col-modified {
@@ -1571,7 +1571,7 @@ body:has(.fullscreen-viz) .main-content {
     padding-right: 0.3rem !important;
 }
 
-.col-luminosity,
+.col-density,
 .col-gravity {
     font-family: var(--font-mono);
     font-size: 0.72rem;

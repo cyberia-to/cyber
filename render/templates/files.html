@@ -16,7 +16,7 @@
         <th class="col-links" data-col="out">out</th>
         <th class="col-links" data-col="in">in</th>
         <th class="col-pagerank" data-col="focus">π%</th>
-        <th class="col-luminosity" data-col="luminosity">luminosity</th>
+        <th class="col-density" data-col="density">density</th>
         <th class="col-gravity" data-col="gravity">gravity</th>
       </tr>
     </thead>
@@ -34,7 +34,7 @@
         <td class="col-links" data-sort="{{ f.out_sort }}" style="color: hsl(30, 60%, {{ f.out_light }}%)">{{ f.links_out }}</td>
         <td class="col-links" data-sort="{{ f.in_sort }}" style="color: hsl(210, 60%, {{ f.in_light }}%)">{{ f.links_in }}</td>
         <td class="col-pagerank" data-sort="{{ f.focus_sort }}" style="color: hsl(120, 60%, {{ f.focus_light }}%)">{{ f.pagerank }}</td>
-        <td class="col-luminosity" data-sort="{{ f.luminosity_sort }}" style="color: hsl(0, 60%, {{ f.lum_light }}%)">{{ f.luminosity }}</td>
+        <td class="col-density" data-sort="{{ f.density_sort }}" style="color: hsl(0, 60%, {{ f.den_light }}%)">{{ f.density }}</td>
         <td class="col-gravity" data-sort="{{ f.gravity_sort }}" style="color: hsl(270, 60%, {{ f.grav_light }}%)">{{ f.gravity }}</td>
       </tr>
       {% endfor %}

@@ -585,8 +585,8 @@ fn render_files_page(
                     .map(|m| m.len())
                     .unwrap_or(0)
             };
-            let luminosity = size as f64 * focus;
-            (p, links_in, links_out, focus, size, luminosity, gravity)
+            let density = if size > 0 { focus / size as f64 } else { 0.0 };
+            (p, links_in, links_out, focus, size, density, gravity)
         })
         .collect();
 
@@ -598,24 +598,24 @@ fn render_files_page(
     let focus_vals: Vec<f64> = pages.iter().map(|r| r.3).collect();
     let in_vals: Vec<f64> = pages.iter().map(|r| r.1 as f64).collect();
     let out_vals: Vec<f64> = pages.iter().map(|r| r.2 as f64).collect();
-    let lum_vals: Vec<f64> = pages.iter().map(|r| r.5).collect();
+    let den_vals: Vec<f64> = pages.iter().map(|r| r.5).collect();
     let grav_vals: Vec<f64> = pages.iter().map(|r| r.6).collect();
 
     let size_pcts = compute_percentiles(&size_vals);
     let focus_pcts = compute_percentiles(&focus_vals);
     let in_pcts = compute_percentiles(&in_vals);
     let out_pcts = compute_percentiles(&out_vals);
-    let lum_pcts = compute_percentiles(&lum_vals);
+    let den_pcts = compute_percentiles(&den_vals);
     let grav_pcts = compute_percentiles(&grav_vals);
 
-    // Sum values for normalizing L and G to distributions (Σ = 1)
-    let sum_lum: f64 = lum_vals.iter().sum();
+    // Sum values for normalizing density and gravity to distributions (Σ = 1)
+    let sum_den: f64 = den_vals.iter().sum();
     let sum_grav: f64 = grav_vals.iter().sum();
 
     let files_data: Vec<_> = pages
         .iter()
         .enumerate()
-        .map(|(i, (p, links_in, links_out, focus, size, luminosity, gravity))| {
+        .map(|(i, (p, links_in, links_out, focus, size, density, gravity))| {
             let focus_display = format!("{:.2}", focus * 100.0);
             let size_display = format_size(*size);
             let file_title = match p.kind {
@@ -639,7 +639,7 @@ fn render_files_page(
             let focus_light = 95.0 - focus_pcts[i] * 60.0;
             let in_light = 95.0 - in_pcts[i] * 60.0;
             let out_light = 95.0 - out_pcts[i] * 60.0;
-            let lum_light = 95.0 - lum_pcts[i] * 60.0;
+            let den_light = 95.0 - den_pcts[i] * 60.0;
             let grav_light = 95.0 - grav_pcts[i] * 60.0;
 
             minijinja::context! {
@@ -650,7 +650,7 @@ fn render_files_page(
                 links_out => *links_out,
                 pagerank => focus_display,
                 size => size_display,
-                luminosity => format_pct_of_sum(*luminosity, sum_lum),
+                density => format_pct_of_sum(*density, sum_den),
                 gravity => format_pct_of_sum(*gravity, sum_grav),
                 tags => p.meta.tags.clone(),
                 icon => p.meta.icon.clone(),
@@ -660,7 +660,7 @@ fn render_files_page(
                 focus_sort => format!("{:.8}", focus),
                 in_sort => *links_in,
                 out_sort => *links_out,
-                luminosity_sort => format!("{:.8}", luminosity),
+                density_sort => format!("{:.8}", density),
                 gravity_sort => format!("{:.10}", gravity),
                 created_sort => lmt_sort_key(&created_lmt),
                 modified_sort => lmt_sort_key(&modified_lmt),
@@ -668,7 +668,7 @@ fn render_files_page(
                 focus_light => format!("{:.0}", focus_light),
                 in_light => format!("{:.0}", in_light),
                 out_light => format!("{:.0}", out_light),
-                lum_light => format!("{:.0}", lum_light),
+                den_light => format!("{:.0}", den_light),
                 grav_light => format!("{:.0}", grav_light),
             }
         })
