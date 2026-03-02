@@ -64,13 +64,12 @@
       adj[e.target].add(e.source);
     });
 
-    const maxLinks = d3.max(data.nodes, d => d.linkCount) || 1;
-    const maxPR = d3.max(data.nodes, d => d.pageRank) || 1;
-    const radiusScale = d3.scalePow().exponent(0.5).domain([0, maxLinks]).range([1, 18]);
-    const opacityScale = d3.scalePow().exponent(0.4).domain([0, maxLinks]).range([0.08, 0.85]);
+    const maxFocus = d3.max(data.nodes, d => d.focus) || 0.001;
+    const radiusScale = d3.scalePow().exponent(0.4).domain([0, maxFocus]).range([1.5, 20]);
+    const opacityScale = d3.scalePow().exponent(0.4).domain([0, maxFocus]).range([0.08, 0.85]);
 
-    // Top labeled nodes — by PageRank (identifies true hubs)
-    const sorted = [...data.nodes].sort((a, b) => (b.pageRank || 0) - (a.pageRank || 0));
+    // Top labeled nodes — by focus (identifies true hubs)
+    const sorted = [...data.nodes].sort((a, b) => (b.focus || 0) - (a.focus || 0));
     const labelCount = Math.min(12, Math.max(3, Math.floor(data.nodes.length * 0.002)));
     const labelSet = new Set(sorted.slice(0, labelCount).map(n => n.id));
 
@@ -268,7 +267,7 @@
         .force('link', d3.forceLink(data.edges).id(d => d.id).distance(20).strength(0.3))
         .force('charge', d3.forceManyBody().strength(-15).distanceMax(250).theta(0.9))
         .force('center', d3.forceCenter(w / 2, h / 2))
-        .force('collision', d3.forceCollide().radius(d => radiusScale(d.linkCount) + 2).strength(0.8).iterations(1))
+        .force('collision', d3.forceCollide().radius(d => radiusScale(d.focus) + 2).strength(0.8).iterations(1))
         .alphaDecay(0.04)
         .stop();
 
@@ -366,9 +365,9 @@
 
       // Draw nodes
       for (const n of data.nodes) {
-        const r = radiusScale(n.linkCount);
+        const r = radiusScale(n.focus);
         const nodeVisible = isVisible(n.id);
-        let alpha = opacityScale(n.linkCount);
+        let alpha = opacityScale(n.focus);
 
         // Tag filter fading
         if (visibleNodes && !nodeVisible) {
@@ -411,7 +410,7 @@
         ctx.textBaseline = 'bottom';
 
         for (const n of data.nodes) {
-          const r = radiusScale(n.linkCount);
+          const r = radiusScale(n.focus);
           let show = false;
           let alpha = 0.7;
 
@@ -436,10 +435,10 @@
             if (labelSet.has(n.id)) {
               show = true;
               alpha = 0.7;
-            } else if (k >= 2 && n.linkCount > maxLinks * 0.08) {
+            } else if (k >= 2 && n.focus > maxFocus * 0.08) {
               show = true;
               alpha = 0.5;
-            } else if (k >= 4 && n.linkCount > maxLinks * 0.02) {
+            } else if (k >= 4 && n.focus > maxFocus * 0.02) {
               show = true;
               alpha = 0.4;
             } else if (k >= 6) {
@@ -477,7 +476,7 @@
       let closestDist = Infinity;
       for (const n of data.nodes) {
         if (visibleNodes && !visibleNodes.has(n.id)) continue;
-        const r = radiusScale(n.linkCount);
+        const r = radiusScale(n.focus);
         const hitR = Math.max(r, 5 / transform.k);
         const dx = gx - n.x;
         const dy = gy - n.y;
@@ -521,7 +520,7 @@
         if (node) {
           canvas.style.cursor = 'pointer';
           tooltip.style.display = 'block';
-          tooltip.innerHTML = '<strong style="font-size:15px">' + node.title + '</strong><br><span style="font-size:12px;opacity:0.6">' + node.linkCount + ' connections</span>';
+          tooltip.innerHTML = '<strong style="font-size:15px">' + node.title + '</strong><br><span style="font-size:12px;opacity:0.6">π ' + (node.focus || 0).toFixed(6) + ' · ' + node.linkCount + ' links</span>';
           tooltip.style.left = (event.clientX - rect.left + 15) + 'px';
           tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
         } else {

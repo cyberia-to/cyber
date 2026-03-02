@@ -110,7 +110,8 @@
       query,
       entry.excerpt || "",
     );
-    return Math.max(titleScore, tagScore, excerptScore);
+    var focusBoost = Math.sqrt(entry.focus || 0) * 50;
+    return Math.max(titleScore, tagScore, excerptScore) + focusBoost;
   }
 
   var activeIndex = -1;
