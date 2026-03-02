@@ -72,8 +72,16 @@ EdgeSet membership via FRI:
 
 the batch proof property is the polynomial advantage: proving N edges belong to the same [[EdgeSet]] costs sublinearly in N, via batched FRI openings. this matters for transaction verification (a [[cyberlink]] touches 3 EdgeSets) and for cross-index [[LogUp]] consistency proofs.
 
-## STIR upgrade path
+## the evolution: FRI → STIR → WHIR
 
-STIR (Proximity Gaps, 2024) improves FRI by reducing the number of queries needed per round through tighter proximity gap analysis. [[cyber]] designs for FRI with an upgrade path to STIR — the interface remains the same, proof sizes shrink.
+```
+FRI (2018)    →   STIR (2024)     →   WHIR (2024/2025)
+baseline           fewer queries        richest queries
+306 KiB proofs     160 KiB proofs       157 KiB proofs
+3.9 ms verify      3.8 ms verify        1.0 ms verify
+CRYPTO 2018        CRYPTO 2024 (BP)     EUROCRYPT 2025
+```
 
-see [[polynomial commitment]] for the commitment scheme built on FRI, [[EdgeSet]] for edge membership proofs, [[STARK]] for the proof system, [[BBG]] for the graph architecture, [[Goldilocks field]] for the arithmetic foundation
+all three generations maintain the same interface: Reed-Solomon proximity testing. [[cyber]] designs for FRI with an upgrade path through [[STIR]] to [[WHIR]] — all layers above the proof system remain unchanged.
+
+see [[STIR]] for rate improvement (fewer queries), [[WHIR]] for weight polynomials (fastest verification), [[polynomial commitment]] for the commitment scheme built on FRI, [[EdgeSet]] for edge membership proofs, [[STARK]] for the proof system, [[BBG]] for the graph architecture, [[Goldilocks field]] for the arithmetic foundation
