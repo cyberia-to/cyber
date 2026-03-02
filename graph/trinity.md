@@ -106,7 +106,7 @@ For the full technical treatment — mechanism details, pairwise compositions, d
 
 Intelligence is what the network computes. It lives at the center of the architecture, woven into every state transition.
 
-nox's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] ranking (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
+nox's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] probability engine (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
 
 AI at the heart of a trustless system demands verifiable inference. Every claim that "the network ranks X above Y" carries a mathematical proof. Anyone can check that the ranking follows faithfully from the graph structure and the algorithm, on a phone, in milliseconds. [[neurons]] create [[cyberlinks]] between particles, and each link carries weight in the collective computation.
 
@@ -225,7 +225,7 @@ Quantum advantage gives the system access to exponential computational resources
 
 Privacy is what makes people willing to contribute real data. When medical researchers can link patient outcomes knowing that patient identities stay protected, they contribute. When companies can share supply chain intelligence knowing that competitive secrets stay sealed, they contribute. When individuals can link personal knowledge knowing that their sovereignty is preserved, they contribute. Privacy is the catalyst that fills the graph with the genuine, high-value knowledge that collective intelligence requires.
 
-AI is what turns a data store into a thinking network. The [[tri-kernel]] ranking discovers patterns. The focus vector surfaces what matters. Neural inference recognizes connections that span continents and disciplines — two [[particles]] linked by different [[neurons]] in different countries that describe the same phenomenon. Intelligence is the property that transforms a distributed graph into a collective mind.
+AI is what turns a data store into a thinking network. The [[tri-kernel]] probability engine discovers patterns. The focus vector surfaces what matters. Neural inference recognizes connections that span continents and disciplines — two [[particles]] linked by different [[neurons]] in different countries that describe the same phenomenon. Intelligence is the property that transforms a distributed graph into a collective mind.
 
 Together, the three pillars form a self-reinforcing cycle: privacy encourages contribution, AI transforms contributions into collective knowledge, quantum security ensures the knowledge endures, and quantum advantage expands the frontier of what the network can compute. Each pillar strengthens the others. The whole is greater than the sum.
 

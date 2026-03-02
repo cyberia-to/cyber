@@ -33,7 +33,7 @@ cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link 
 
 The protocol rests on five primitives: [[particle]] (content-addressed node), [[neuron]] (agent that signs edges), [[cyberlink]] (weighted directed edge), [[token]] (non-negative weight controlling influence), and [[focus]] (emergent [[equilibrium]] over [[particles]], conserved to 1). From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
 
-This document specifies the complete architecture: the computation model ([[nox]]), the provable programming language ([[trident]]), the ranking engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), the economic design, the scaling strategy, the storage proof and data availability infrastructure, and the bootstrapping path from [[cyber/crystal]] seed to planetary deployment. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
+This document specifies the complete architecture: the computation model ([[nox]]), the provable programming language ([[trident]]), the probability engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), the economic design, the scaling strategy, the storage proof and data availability infrastructure, and the bootstrapping path from [[cyber/crystal]] seed to planetary deployment. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
 
 ## 2. Design Philosophy
 
@@ -410,7 +410,7 @@ In development: `std.nn` (field-native neural networks) · `std.private` (ZK + F
 
 ### 7.7 Implementation Path
 
-[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[STARK]] prover, the privacy circuits, the [[tri-kernel]] ranking engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[STARK]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
+[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[STARK]] prover, the privacy circuits, the [[tri-kernel]] probability engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[STARK]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
 
 ## 8. State and Proofs
 

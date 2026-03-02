@@ -171,7 +171,7 @@ nox's execution substrate operates on three named layers:
 
 The [[cybergraph]] is the [[knowledge graph]]: [[particles]] are content-addressed nodes, [[cyberlinks]] are signed weighted edges created by [[neurons]] (staked agents). BBG provides cryptographic authentication — polynomial commitments that let any light client verify any query ("give me all edges in namespace X") with mathematical proof of completeness. Not trust. Proof.
 
-The [[tri-kernel]] ranking system computes [[focus]] over the [[cybergraph]] using three operator families — the only three that survive the constraint of bounded locality at planetary scale:
+The [[tri-kernel]] probability engine computes [[focus]] over the [[cybergraph]] using three operator families — the only three that survive the constraint of bounded locality at planetary scale:
 
 [[Diffusion]] kernel — exploration. Random walks with restart, spreading attention through the graph. Captures: "what is reachable from here?"
 

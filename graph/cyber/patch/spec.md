@@ -629,7 +629,7 @@ On-chain registration records only: `(patch_id, author_neuron_id, timestamp, dep
 
 ### 9.2 Focus-Weighted Patch Ranking
 
-The [[cyber]] [[tri-kernel]] ranking assigns a [[focus]] weight to each patch based on its impact on the knowledge graph:
+The [[cyber]] [[tri-kernel]] probability engine assigns a [[focus]] weight to each patch based on its impact on the knowledge graph:
 
 ```
 focus_weight(P) = w_d · diffusion_score(P)
