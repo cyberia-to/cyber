@@ -168,16 +168,51 @@ ZK proves without showing. FHE computes without seeing. MPC distributes without 
 
 data structures with built-in integrity guarantees via hashing or algebraic commitments.
 
+### hash-based trees
+
 | structure | property | used in |
 |---|---|---|
-| [[Merkle trees]] | membership proofs via hash paths | [[Bitcoin]], [[Ethereum]], certificate transparency |
+| [[Merkle trees]] | membership proofs via hash paths, O(log n) | [[Bitcoin]], [[Ethereum]], certificate transparency, git |
 | [[NMT]] (namespaced Merkle tree) | completeness proofs — prove ALL items in a namespace | [[Celestia]], [[cyber]] |
-| [[MMR]] (Merkle mountain range) | append-only history, compact proofs | Grin, [[neptune]], [[cyber]] |
+| [[MMR]] (Merkle mountain range) | append-only history, compact proofs, no rebalancing | Grin, [[neptune]], [[cyber]] |
 | Patricia/MPT (Merkle Patricia trie) | key-value state with inclusion/exclusion proofs | [[Ethereum]] state tree |
-| [[SWBF]] (sliding-window Bloom filter) | probabilistic membership with compact removal | [[neptune]], [[cyber]] (nullifier tracking) |
-| sparse Merkle tree | efficient non-membership proofs | Cosmos, various L2s |
+| sparse Merkle tree | efficient non-membership proofs via default hashes | Cosmos, various L2s, Libra |
+| Verkle tree | vector commitments replace hashes — O(log n) proof vs O(k log n) | [[Ethereum]] roadmap (replaces MPT) |
+
+Verkle trees (Kuszmaul, 2019) replace hash-based branching with vector commitments (KZG or IPA). each internal node commits to its children as a vector rather than hashing them pairwise. the result: proof size is O(log n) regardless of branching factor k, vs O(k log n) for Merkle. this enables wide branching (k = 256) with small proofs — critical for stateless clients.
+
+### accumulators
+
+cryptographic accumulators represent arbitrarily large sets with a single constant-size value and prove membership in O(1).
+
+| accumulator | assumption | membership | non-membership | dynamic | used in |
+|---|---|---|---|---|---|
+| RSA accumulator | strong RSA | O(1) proof | O(1) proof | yes (with trapdoor) | Zerocoin, stateless [[Bitcoin]] proposals |
+| bilinear accumulator | bilinear pairings | O(1) proof | O(1) proof | yes | anonymous credentials |
+| Merkle tree | collision resistance | O(log n) proof | O(log n) (sparse) | yes | everywhere (quasi-accumulator) |
+| [[polynomial commitment]] | varies (KZG/WHIR) | O(1) amortized | O(1) amortized | yes | [[EdgeSet]], modern proof systems |
+
+RSA and bilinear accumulators achieve constant-size proofs but require stronger assumptions (strong RSA, pairings). hash-based accumulators (Merkle trees) have logarithmic proofs but minimal assumptions. polynomial commitments achieve amortized O(1) via batching.
+
+### probabilistic and append-only structures
+
+| structure | property | used in |
+|---|---|---|
+| Bloom filter | probabilistic membership, false positives, compact | network protocols, caching, spam filters |
+| cuckoo filter | probabilistic membership with deletion support | database lookups, deduplication |
+| [[SWBF]] (sliding-window Bloom filter) | probabilistic membership with windowed removal | [[neptune]], [[cyber]] (nullifier tracking) |
 | [[mutator set]] | UTXO privacy (AOCL + SWBF) | [[neptune]], [[cyber]] |
-| vector commitments (KZG, IPA) | commit to a vector, open at any index | Verkle trees ([[Ethereum]] roadmap) |
+| append-only log (certificate transparency) | tamper-evident log via Merkle tree, public auditability | Google CT (2013), TLS certificate ecosystem |
+
+### algebraic structures
+
+| structure | property | used in |
+|---|---|---|
+| vector commitments (KZG, IPA) | commit to a vector, open at any index with O(1) proof | Verkle trees, [[Ethereum]] EIP-4844 |
+| [[polynomial commitment]] | commit to polynomial, prove evaluations | [[STARK]], PLONK, [[cyber]] ([[WHIR]]-based) |
+| [[EdgeSet]] | edge membership via polynomial commitment | [[cyber]] [[BBG]] |
+| [[LogUp]] | cross-index consistency via algebraic lookup | Polygon, Scroll, [[cyber]] |
+| authenticated skip list | O(log n) membership with authenticated pointers | early blockchain designs, distributed databases |
 
 ## quantum resistance
 
