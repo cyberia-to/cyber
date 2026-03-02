@@ -76,7 +76,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 - [[data structure for superintelligence]] — the BBG authenticated state architecture
 - [[future of computation]] — from Turing machines to planetary superintelligence
 - [[cyber/security]] — security properties and formal proofs
-- [[cyber/privacy]] — privacy architecture
+- [[cyber/bbg]] — state structure and privacy architecture
 - [[cyberlink protocol structure]]
 - [[data availability strategy]]
 - [[cybergraph llm architecture]]

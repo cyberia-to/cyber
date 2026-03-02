@@ -110,8 +110,7 @@ natural computing paradigm
 ## specifications
 
 - [[cyber/nox]] — three-layer instruction set (16 patterns + hint + 5 jets), value tower, cost table, parallel reduction, memoization
-- [[cyber/bbg]] — multi-indexed polynomial commitments, namespace sync, completeness proofs
-- [[cyber/privacy]] — ZK privacy model, record structure, transaction circuit (~10K constraints)
+- [[cyber/bbg]] — multi-indexed polynomial commitments, namespace sync, completeness proofs, ZK privacy model, transaction circuit (~10K constraints)
 - [[cyber/stark]] — STARK verification, self-verification, recursive composition
 - [[cyber/focus]] — focus dynamics, conservation laws, flow equation, convergence theorem
 - [[cyber/state]] — world state structure, state transitions, validity conditions
