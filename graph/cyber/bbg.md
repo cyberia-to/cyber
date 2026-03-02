@@ -48,11 +48,11 @@ This makes "sync only my namespace" a mathematical property, not a feature. A li
 ║    focus   : PolynomialCommitment over (neuron_id, F_p) pairs            ║
 ║    balance : PolynomialCommitment over (neuron_id, F_p) pairs            ║
 ║                                                                            ║
-║  LAYER 4: UTXO State (for privacy layer)                                  ║
+║  LAYER 4: UTXO State (mutator set)                                       ║
 ║  ──────────────────────────────────────────────                           ║
-║    commitment_poly  : PolynomialCommitment  (UTXO set as polynomial)      ║
-║    nullifier_set    : PolynomialCommitment  (spent records, sorted)       ║
-║    particle_energy  : PolynomialCommitment  (public aggregates)           ║
+║    aocl             : MMR                     (append-only commitment list)║
+║    swbf             : SlidingWindowBloomFilter (double-spend prevention)  ║
+║    particle_energy  : PolynomialCommitment     (public aggregates)        ║
 ║                                                                            ║
 ║  UNIFIED PRIMITIVE: All indexes use polynomial commitments                ║
 ║    - Membership proof: FRI evaluation, O(log² n), ~1,000 constraints      ║
@@ -66,8 +66,8 @@ This makes "sync only my namespace" a mathematical property, not a feature. A li
 ║      by_particle.commit ‖                                                 ║
 ║      focus.commit ‖                                                       ║
 ║      balance.commit ‖                                                     ║
-║      commitment_poly.commit ‖                                             ║
-║      nullifier_set.commit                                                 ║
+║      aocl.peaks ‖                                                         ║
+║      swbf.root                                                            ║
 ║    )                                                                       ║
 ║                                                                            ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
@@ -134,9 +134,9 @@ Cost: O(|my_edges|) data + O(log² |G|) proof overhead
 
 ## Privacy Layer (Layer 4 Detail)
 
-[[nox]] implements private ownership with public aggregates. Individual record ownership remains hidden — who owns what, who sent to whom — while aggregate properties remain publicly verifiable: total energy per [[particle]], conservation laws, [[focus]] distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for [[egregore]]: enough transparency for [[consensus]], enough privacy for participation.
+[[nox]] implements private ownership with public aggregates. Individual [[record]] ownership remains hidden — who owns what, who sent to whom — while aggregate properties remain publicly verifiable: total energy per [[particle]], conservation laws, [[focus]] distribution. The network knows that energy is conserved without knowing who holds it. This is the minimal privacy boundary for [[egregore]]: enough transparency for [[consensus]], enough privacy for participation.
 
-The implementation uses a UTXO model with [[Hemera]] commitments, nullifiers for double-spend prevention, and ~10,000-constraint ZK circuits proving conservation. This represents a 4x improvement over naive Merkle-based designs, achieved through polynomial inclusion proofs.
+The implementation uses a [[mutator set]] (AOCL + SWBF) for UTXO lifecycle tracking with [[Hemera]] commitments and ~50,000-constraint ZK circuits proving conservation. Addition and removal records share zero structural similarity visible to any observer — unlinkability is architectural.
 
 ### Privacy Boundary
 
@@ -153,8 +153,8 @@ The implementation uses a UTXO model with [[Hemera]] commitments, nullifiers for
 │                │                     │ ✓ Owner identity                    │
 │                │                     │ ✓ Nonce                             │
 ├────────────────┼─────────────────────┼─────────────────────────────────────┤
-│  TRANSACTION   │ ✓ Nullifiers        │ ✓ Which records spent               │
-│                │ ✓ Commitments       │ ✓ Who spent them                    │
+│  TRANSACTION   │ ✓ SWBF bit indices  │ ✓ Which records spent               │
+│                │ ✓ Addition records  │ ✓ Who spent them                    │
 │                │ ✓ Δ per particle    │ ✓ New owners                        │
 │                │ ✓ Proof validity    │                                     │
 ├────────────────┼─────────────────────┼─────────────────────────────────────┤
@@ -168,146 +168,99 @@ The implementation uses a UTXO model with [[Hemera]] commitments, nullifiers for
 
 Invariant: The ZK circuit MUST enforce this boundary. Any violation breaks the economic integrity of collective attention.
 
+### Mutator Set
+
+The mutator set replaces both UTXO commitment polynomials and nullifier sets with two linked structures:
+
+AOCL (Append-Only Commitment List) — an MMR storing addition records. Appended when a UTXO is created, never modified. Accumulator = O(log N) peak hashes. Membership proof = Merkle path from leaf to peak.
+
+SWBF (Sliding-Window Bloom Filter) — tracks which UTXOs have been spent by setting pseudorandom bit positions derived from the record. Double-spend = all bits already set = verifier rejects. Active window (128 KB) handles recent removals directly; older chunks compact into an MMR.
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        SWBF Timeline                            │
+│                                                                 │
+│  ◄──── Inactive (compacted in MMR) ────►◄── Active Window ──►  │
+│                                                                 │
+│  ┌──────┬──────┬──────┬──────┐  ┌──────────────────────────┐   │
+│  │chunk₀│chunk₁│chunk₂│chunk₃│  │   2²⁰ bits (128 KB)     │   │
+│  │(MMR) │(MMR) │(MMR) │(MMR) │  │   directly accessible    │   │
+│  └──────┴──────┴──────┴──────┘  └──────────────────────────┘   │
+│                                                                 │
+│  Window slides forward periodically.                            │
+│  Growth: O(log N) peaks regardless of chain age.                │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+Unlinkability: addition record = `H_commit(record ‖ ρ)`, removal record = SWBF bit positions derived from `H_nullifier(record ‖ aocl_index ‖ ρ)`. These share zero structural similarity. The ZK proof establishes validity without revealing which AOCL entry is being spent.
+
 ### Record Structure
 
 ```rust
 struct Record {
-    particle: Field,    // Content identifier (CID → field)
-    value: u64,         // Energy amount
-    owner: Field,       // Owner public key hash
-    nonce: Field,       // Random for uniqueness
+    particle: [F_p; 4],  // Content identifier (which particle this value is bound to)
+    value:    u64,        // Energy amount
+    owner:    [F_p; 4],   // Owner public key hash
+    nonce:    F_p,        // Random for uniqueness
 }
 ```
 
 ### Commitment
 
 ```
-commitment(r) = Hemera(
-    COMMITMENT_DOMAIN,
-    r.particle,
-    r.value,
-    r.owner,
-    r.nonce
-)
-```
+commitment(r, ρ) = H_commit(r.particle ‖ r.value ‖ r.owner ‖ r.nonce ‖ ρ)
 
-### Nullifier
-
-```
-nullifier(r, secret) = Hemera(
-    NULLIFIER_DOMAIN,
-    r.nonce,
-    secret
-)
-
-Properties:
-  - Cannot derive from commitment (needs secret)
-  - Cannot derive commitment from nullifier (one-way)
-  - Unique per record
-  - Deterministic (same record → same nullifier)
-```
-
-### Authenticated Graph Structures in ZK
-
-Inside a ZK circuit, we must prove "this record exists in the UTXO set" while keeping the record private. The naive approach uses Merkle trees:
-
-```
-MERKLE TREE APPROACH (what most systems use)
-────────────────────────────────────────────
-Structure: Binary tree of hashes, depth 32
-Proof: 32 sibling hashes forming path to root
-Verification: Hash leaf, then hash with siblings up to root
-
-Cost inside ZK circuit:
-  - Each hash: ~300 constraints (Hemera S-box + MDS)
-  - 32 levels: 32 × 300 = 9,600 constraints
-  - Per input: 9,600 constraints just for inclusion!
-
-For 4 inputs: 38,400 constraints for inclusion alone
-```
-
-Field operations are cheap in comparison:
-
-```
-OPERATION COSTS IN ZK CIRCUIT
-─────────────────────────────
-Field addition:       1 constraint
-Field multiplication: 1 constraint
-Field comparison:     ~64 constraints
-Hemera hash:          ~300 constraints
-
-Ratio: Hash is 300x more expensive than multiply!
-```
-
-### Polynomial Commitment Solution
-
-Following Goodrich & Tamassia's [[authenticated graphs]] principles, we represent the UTXO set as a polynomial:
-
-```
-POLYNOMIAL REPRESENTATION
-─────────────────────────
-Given n commitments {c₀, c₁, ..., c_{n-1}}
-
-Construct polynomial P(x) such that:
-  P(0) = c₀
-  P(1) = c₁
-  ...
-  P(n-1) = c_{n-1}
-
-State commitment: C = FRI_commit(P)
-
-Inclusion proof for cᵢ:
-  - Prove P(i) = cᵢ using FRI evaluation proof
-  - Verification: ~log²(n) field operations
-  - Cost: ~1,000 constraints (vs 9,600 for Merkle)
-```
-
-```
-                     │ Merkle Tree    │ Polynomial (FRI)
-─────────────────────┼────────────────┼──────────────────
-Primary operation    │ Hash           │ Field multiply
-Operation cost       │ ~300           │ 1
-Operations needed    │ 32             │ ~1,000
-Total per proof      │ 9,600          │ ~1,000
-4 inputs             │ 38,400         │ ~4,000
-─────────────────────┼────────────────┼──────────────────
-Improvement          │ baseline       │ ~10x fewer constraints
+where ρ is hiding randomness contributed by the recipient
 ```
 
 ### Transaction Circuit
 
 ```
-MAX_INPUTS  = 4      // Maximum input records per tx
-MAX_OUTPUTS = 4      // Maximum output records per tx
-MAX_UTXOS   = 2^32   // Maximum UTXO set size (polynomial degree bound)
+PRIVATE TRANSFER CIRCUIT
+════════════════════════
+
+PUBLIC INPUTS:
+  aocl_peaks:    [F_p⁴; log(N)]     AOCL MMR peak hashes
+  swbf_root:     F_p⁴               SWBF inactive chunks MMR root
+  swbf_window:   F_p⁴               Hash of active SWBF window
+  removal_data:  [BitIndices; 4]     SWBF bit positions for each input
+  additions:     [F_p⁴; 4]          New addition records
+  deltas:        [(F_p⁴, i64); 8]   Per-particle value changes
+  fee:           u64                 Transaction fee
+
+PRIVATE WITNESS:
+  input_records, input_secrets, input_randomness
+  aocl_indices, aocl_paths, swbf_paths
+  output_records, output_randomness
+  input_enabled, output_enabled
 ```
 
 ```
-SECTION 1: INPUT VALIDATION (~7,600 constraints)
-────────────────────────────────────────────────
-For each of 4 possible inputs:
+SECTION 1: INPUT VALIDATION (~48,000 constraints for 4 inputs)
+──────────────────────────────────────────────────────────────
+For each active input:
 
-  Commitment correctness (Hemera):           ~300 constraints
-  Polynomial inclusion proof (FRI):          ~1,000 constraints
-  Ownership verification (Hemera):           ~300 constraints
-  Nullifier derivation (Hemera):             ~300 constraints
+  Commitment correctness (Hemera):            ~250 constraints
+  AOCL membership (MMR Merkle path):        ~8,000 constraints
+  SWBF index derivation:                      ~500 constraints
+  SWBF bit verification:                    ~3,000 constraints
+  Ownership proof:                            ~250 constraints
 
-  Per input total:                           ~1,900 constraints
-  4 inputs maximum:                          ~7,600 constraints
-
-
-SECTION 2: OUTPUT VALIDATION (~1,500 constraints)
-SECTION 3: CONSERVATION (~100 constraints)
-SECTION 4: DELTA CONSISTENCY (~300 constraints)
-SECTION 5: UNIQUENESS (~50 constraints)
+  Per input total:                          ~12,000 constraints
+  4 inputs:                                 ~48,000 constraints
 
 
-TOTAL: ~10,000 constraints
-════════════════════════════════════════════════
-With Plonky2/STARK optimizations:   ~7,000 gates
-Proof generation time:              ~0.3-0.8 seconds
-Proof size:                         ~50-80 KB
-Verification time:                  ~1-3 ms
+SECTION 2: OUTPUT VALIDATION                  ~1,250 constraints
+SECTION 3: CONSERVATION                         ~100 constraints
+SECTION 4: DELTA CONSISTENCY                    ~300 constraints
+SECTION 5: UNIQUENESS                            ~50 constraints
+
+
+TOTAL:                                        ~50,000 constraints
+═══════════════════════════════════════════════════════════════════
+Proof generation (Plonky2-class):             ~1.5-3.0 seconds
+Proof size:                                   ~120-200 KB
+Verification:                                 ~5-10 ms
 ```
 
 ### Transaction Types
@@ -319,3 +272,5 @@ BURN       — Remove energy from circulation (1-4 in, 0-3 out)
 SPLIT      — Divide one record into multiple (1 in, 2-4 out, same particle)
 MERGE      — Combine multiple records (2-4 in, 1 out, same particle)
 ```
+
+see [[data structure for superintelligence]] for full mutator set architecture, proof maintenance, and sliding window mechanics
