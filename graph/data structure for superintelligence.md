@@ -5,7 +5,7 @@ crystal-domain: computer science
 status: draft
 ---
 
-## Authenticated State Architecture for nox
+## Authenticated State Architecture for [[nox]]
 
 Version 1.0 — February 2026
 
@@ -15,11 +15,11 @@ Version 1.0 — February 2026
 
 ## Abstract
 
-This document specifies the complete authenticated state architecture for nox — a planetary-scale collective intelligence system targeting 10¹⁵ nodes with cryptographic proofs, privacy by construction, and bounded-locality updates.
+This document specifies the complete authenticated state architecture for [[nox]] — a planetary-scale collective intelligence system targeting 10¹⁵ nodes with cryptographic proofs, privacy by construction, and bounded-locality updates.
 
 The architecture emerges from a single constraint: every operation must be provable, every proof must be verifiable, and verification cost must remain within a constant factor of computation — at any scale.
 
-Five ontological primitives (particle, cyberlink, neuron, token, focus) authenticated by five cryptographic data structures, each proven in production:
+Five ontological primitives ([[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]) authenticated by five cryptographic data structures, each proven in production:
 
 | Primitive | Role | Production Heritage |
 |-----------|------|-------------------|
@@ -29,7 +29,7 @@ Five ontological primitives (particle, cyberlink, neuron, token, focus) authenti
 | FRI Polynomial Commitments | Edge membership & batch proofs | Plonky2, Stwo (2022—) |
 | LogUp Lookup Arguments | Cross-index consistency | Polygon, Scroll (2023—) |
 
-Unified by a single hash function (Poseidon2-Goldilocks), a single field (p = 2⁶⁴ − 2³² + 1), and a single proof system (STARK with FRI, upgradeable to STIR).
+Unified by a single hash function ([[Hemera]]), a single field ([[Goldilocks field]], p = 2⁶⁴ − 2³² + 1), and a single proof system ([[STARK]] with FRI, upgradeable to STIR).
 
 ---
 
@@ -63,9 +63,9 @@ Focus is computed by three local operators — the [[tri-kernel]]: [[diffusion]]
 
 Three layers, three names:
 
-- nox — the computation model (16 reduction patterns, deterministic costs)
-- Cybergraph — the data model (particles, cyberlinks, neurons, tokens, focus)
-- BBG — the authenticated state structure (this document)
+- [[nox]] — the computation model (16 reduction patterns, deterministic costs)
+- [[cybergraph]] — the data model ([[particles]], [[cyberlinks]], [[neurons]], [[tokens]], [[focus]])
+- [[cyber/bbg]] — the authenticated state structure (this document)
 
 BBG = Big Badass Graph. The name is earned.
 
@@ -73,9 +73,9 @@ BBG = Big Badass Graph. The name is earned.
 
 ## 2. Field and Hash
 
-### 2.1 The Goldilocks Field
+### 2.1 The [[Goldilocks field]]
 
-All arithmetic operates in the Goldilocks prime field:
+All arithmetic operates in the [[Goldilocks field]]:
 
 $$p = 2^{64} - 2^{32} + 1 = 18446744069414584321$$
 
@@ -88,7 +88,7 @@ Properties that make this field optimal:
 
 Every value in the system — balances, weights, hashes, commitments, proofs — is one or more elements of F_p.
 
-### 2.2 Poseidon2-Goldilocks
+### 2.2 [[Hemera]] (Poseidon2-Goldilocks)
 
 One hash function everywhere:
 
@@ -202,7 +202,7 @@ Production evidence: Celestia has processed millions of blocks with NMT-based DA
 
 ## 4. The Six Indexes
 
-The cybergraph maintains six NMT indexes over the same edge and token data. Edges and tokens are stored once; indexes contain only hashes and commitments.
+The [[cybergraph]] maintains six NMT indexes over the same edge and [[token]] data. Edges and [[tokens]] are stored once; indexes contain only hashes and commitments.
 
 ### 4.1 Architecture
 
@@ -396,25 +396,15 @@ Cross-index consistency enforced via LogUp lookup arguments (§7).
 
 ## 5. Edge Store
 
-The edge store is a content-addressed key-value map, separate from the index layer:
+The edge store is a content-addressed key-value map, separate from the index layer: `edge_store : H_edge(e) → e`
 
-```
-edge_store : H_edge(e) → e
+- identity = hash. Two identical edges produce the same key
+- immutable. Once stored, never modified
+- off-graph. The live graph (NMTs + EdgeSets) contains only hashes and commitments. Full edge data lives in the edge store
+- retrievable. Any node with the hash can request the edge from any peer
+- forgettable. Old edges can be dropped from local storage. The hash in the index is permanent; the data is not
 
-Properties:
-  - Identity = hash. Two identical edges produce the same key.
-  - Immutable. Once stored, never modified.
-  - Off-graph. The live graph (NMTs + EdgeSets) contains only hashes and commitments.
-    Full edge data lives in the edge store.
-  - Retrievable. Any node with the hash can request the edge from any peer.
-  - Forgettable. Old edges can be dropped from local storage.
-    The hash in the index is permanent; the data is not.
-
-Failure mode:
-  If edge data is requested but unavailable: ⊥_unavailable
-  The system degrades gracefully — missing data is a content retrieval failure,
-  not a consensus failure. The graph root remains valid.
-```
+Failure mode: if edge data is requested but unavailable → ⊥_unavailable. The system degrades gracefully — missing data is a content retrieval failure, not a [[consensus]] failure. The graph root remains valid.
 
 ### 5.1 CID-Verified Blob Storage
 
@@ -447,11 +437,11 @@ Tiered availability:
 
 ### 6.1 Motivation
 
-The cybergraph is public — edges, particles, focus distribution are all visible. This is necessary for collective intelligence: the network must see the graph to compute focus.
+The [[cybergraph]] is public — edges, [[particles]], [[focus]] distribution are all visible. This is necessary for collective intelligence: the network must see the graph to compute [[focus]].
 
 But economic transactions (who owns how much, who sent to whom) must be private. Without privacy, participation reveals wealth, and surveillance kills the freedom to link.
 
-The mutator set provides: private ownership, unlinkable transactions, no trusted parties, and logarithmic verification — simultaneously.
+The [[mutator set]] provides: private ownership, unlinkable transactions, no trusted parties, and logarithmic verification — simultaneously.
 
 ### 6.2 Why Not Polynomial + Nullifier
 
@@ -577,7 +567,7 @@ where $\rho$ is hiding randomness. The commitment is a Pedersen-like hiding comm
 
 ### 6.5 Transaction Circuit
 
-A private transfer proves: "I own these inputs, they exist in the mutator set, I'm spending them correctly, and energy is conserved."
+A private transfer proves: "I own these inputs, they exist in the [[mutator set]], I'm spending them correctly, and energy is conserved."
 
 ```
 PRIVATE TRANSFER CIRCUIT
@@ -678,7 +668,7 @@ Verification:                                    ~5-10 ms
 
 ### 6.6 Proof Maintenance
 
-Every UTXO holder must keep their proofs synchronized as the mutator set evolves. This is the cost of privacy.
+Every UTXO holder must keep their proofs synchronized as the [[mutator set]] evolves. This is the cost of privacy.
 
 ```
 EVENT: New UTXO created (addition to AOCL)
@@ -751,7 +741,7 @@ Minimal privacy for collective intelligence:
 
 ### 7.1 The Problem
 
-Each cyberlink touches 3 EdgeSets (or 2 for self-links). The STARK must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to].
+Each [[cyberlink]] touches 3 EdgeSets (or 2 for self-links). The [[STARK]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to].
 
 Without a mechanism for this, each cross-index check requires independent FRI proofs against each EdgeSet — expensive and not naturally batched.
 
@@ -1082,83 +1072,61 @@ Verification: O(k log n) — linear in row size, logarithmic in block size
 
 # Part VIII: Temporal Dynamics
 
-## 11. Focus Computation via Tri-Kernel
+## 11. [[focus]] Computation via [[tri-kernel]]
 
 ### 11.1 The Locality Constraint
 
 At 10¹⁵ nodes, any algorithm requiring global recomputation for a local change is physically impossible (Law 1). Systematic elimination of all graph ranking algorithms under this constraint leaves exactly three operator families. No others survive. See [[tri-kernel]] for the completeness proof.
 
-These three operators — [[diffusion]], [[springs]], [[heat kernel]] — are not design choices. They are what remains after impossibility eliminates everything else.
+These three operators — [[diffusion]], [[springs]], [[heat kernel]] — are design necessities. They are what remains after impossibility eliminates everything else.
 
 ### 11.2 The Three Operators
 
-```
-OPERATOR 1 — DIFFUSION (Markov/Random Walk)
-───────────────────────────────────────────
+#### [[diffusion]] (Markov/Random Walk)
 
-  π^(t+1) = α P^T π^(t) + (1-α)u
+$$\pi^{(t+1)} = \alpha P^T \pi^{(t)} + (1-\alpha)u$$
 
-  Transition matrix P = AD⁻¹, teleport α, prior u (stake-weighted).
-  Powers remain local. Converges to unique stationary distribution
-  under ergodicity.
+Transition matrix P = AD⁻¹, teleport α, prior u (stake-weighted). Powers remain local. Converges to unique stationary distribution under ergodicity.
 
-  Answers: "Where does probability flow?"
-  The exploration component of the cyberank.
+Answers: "Where does probability flow?" The exploration component of the [[cyberank]].
 
-  Properties: row-stochastic, preserves probability mass.
-  Locality: geometric decay via teleport parameter α.
-  STARK cost: O(deg(v)) field operations per node update.
+- row-stochastic, preserves probability mass
+- locality: geometric decay via teleport parameter α
+- [[STARK]] cost: O(deg(v)) field operations per node update
 
+#### [[springs]] (Screened Laplacian)
 
-OPERATOR 2 — SPRINGS (Screened Laplacian)
-─────────────────────────────────────────
+$$(L + \mu I)x^* = \mu x_0$$
 
-  (L + μI)x* = μx₀
+Graph Laplacian L = D − A, screening μ > 0, reference x₀. The screened Green's function (L+μI)⁻¹ has exponential decay.
 
-  Graph Laplacian L = D - A, screening μ > 0, reference x₀.
-  The screened Green's function (L+μI)⁻¹ has exponential decay.
+Answers: "What satisfies structural constraints?" Encodes hierarchy — keeps connected nodes at consistent levels. Deviation from structural equilibrium is detectable via residual.
 
-  Answers: "What satisfies structural constraints?"
-  Encodes hierarchy — keeps connected nodes at consistent levels.
-  Deviation from structural equilibrium is detectable via residual.
+- positive semi-definite, null space = constant vectors
+- locality: exponential decay via screening parameter μ
+- [[STARK]] cost: O(deg(v)) field operations per node update
 
-  Properties: positive semi-definite, null space = constant vectors.
-  Locality: exponential decay via screening parameter μ.
-  STARK cost: O(deg(v)) field operations per node update.
+#### [[heat kernel]] (Multi-scale Smoothing)
 
+$$\partial H / \partial \tau = -LH, \quad H_0 = I, \quad H_\tau = \exp(-\tau L)$$
 
-OPERATOR 3 — HEAT KERNEL (Multi-scale Smoothing)
-─────────────────────────────────────────────────
+Temperature τ controls scale. Chebyshev polynomial approximation gives h-local computation with bounded error.
 
-  ∂H/∂τ = -LH,  H₀ = I
-  H_τ = exp(-τL)
+Answers: "What does the graph look like at scale τ?" High τ explores (annealing), low τ commits (crystallization). The thermostat of collective attention.
 
-  Temperature τ controls scale. Chebyshev polynomial approximation
-  gives h-local computation with bounded error.
+- positivity-preserving, semigroup ($H_{\tau_1} H_{\tau_2} = H_{\tau_1 + \tau_2}$)
+- locality: Gaussian tail decay, h = O(log(1/ε)) hops
+- [[STARK]] cost: O(K · deg(v)) for K-term Chebyshev approximation
 
-  Answers: "What does the graph look like at scale τ?"
-  High τ explores (annealing), low τ commits (crystallization).
-  Provides adaptive context — the thermostat of collective attention.
+#### Composite Update
 
-  Properties: positivity-preserving, semigroup (H_{τ₁}H_{τ₂} = H_{τ₁+τ₂}).
-  Locality: Gaussian tail decay, h = O(log(1/ε)) hops.
-  STARK cost: O(K · deg(v)) for K-term Chebyshev approximation.
+$$\varphi^{(t+1)} = \text{norm}[\lambda_d \cdot D(\varphi^t) + \lambda_s \cdot S(\varphi^t) + \lambda_h \cdot H_\tau(\varphi^t)]$$
 
+where λ_d + λ_s + λ_h = 1. Fixed point minimizes the free-energy functional:
 
-COMPOSITE UPDATE:
-  φ^(t+1) = norm[λ_d · D(φ^t) + λ_s · S(φ^t) + λ_h · H_τ(φ^t)]
+$$F(\varphi) = \lambda_s \left[\tfrac{1}{2}\varphi^T L\varphi + \tfrac{\mu}{2}\|\varphi - x_0\|^2\right] + \lambda_h \left[\tfrac{1}{2}\|\varphi - H_\tau\varphi\|^2\right] + \lambda_d \cdot D_{KL}(\varphi \| D\varphi)$$
 
-  where λ_d + λ_s + λ_h = 1.
-  Fixed point minimizes the free-energy functional:
-    F(φ) = λ_s[½φ^T Lφ + μ/2‖φ-x₀‖²]
-          + λ_h[½‖φ - H_τφ‖²]
-          + λ_d · D_KL(φ ‖ Dφ)
-
-  Structure (springs) + context (heat) + exploration (diffusion).
-  The fixed point φ* is the cyberank — the per-particle score
-  of the cybergraph. Not diffusion alone. The full blend.
-  The tri-kernel is complete: no other local operators exist.
-```
+Structure ([[springs]]) + context ([[heat kernel]]) + exploration ([[diffusion]]). The fixed point φ* is the [[cyberank]] — the per-[[particle]] score of the [[cybergraph]]. The [[tri-kernel]] is complete: no other local operators exist.
 
 ### 11.3 Convergence
 
@@ -1176,52 +1144,24 @@ Convergence rate: $\|\phi^{(t)} - \phi^*\| \leq C \cdot \kappa^t$ where κ < 1 d
 
 Focus updates must be local — recomputing the global π for every edge change is O(n), violating Law 1.
 
-```
-LOCAL TRI-KERNEL UPDATE
-───────────────────────
-
 When edge (i → j, weight w) is created:
 
-  1. DETECT affected neighborhood N_h around edit batch
-     h = O(log(1/ε)) hops. All three operators have decay guarantees:
-       Diffusion: geometric (teleport α)
-       Springs:   exponential (screening μ)
-       Heat:      Gaussian tail (temperature τ)
-     Beyond h hops, perturbation < ε. Everything outside N_h is unchanged.
+1. DETECT affected neighborhood N_h around edit batch. h = O(log(1/ε)) hops. All three operators have decay guarantees: [[diffusion]] geometric (teleport α), [[springs]] exponential (screening μ), [[heat kernel]] Gaussian tail (temperature τ). Beyond h hops, perturbation < ε. Everything outside N_h is unchanged.
+2. PULL boundary conditions from cached φ, boundary flows, Laplacian blocks
+3. APPLY local [[diffusion]] on N_h — recompute P columns for affected [[neurons]], fixed-point iteration with boundary injection. Cost: O(deg(i) + deg(j)) per iteration
+4. APPLY local [[springs]] on N_h — solve (L + μI)x* = μx₀ on affected subgraph via local CG. Cost: O(deg(v)) per affected node
+5. APPLY local [[heat kernel]] on N_h — K-term Chebyshev polynomial filter on affected neighborhood. Cost: O(K · deg(v)) per affected node
+6. BLEND: φ_new = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)] — normalize and splice back into global φ
 
-  2. PULL boundary conditions from cached φ, boundary flows, Laplacian blocks
+Total cost: O(|N_h| · c) per kernel for average degree c — bounded by what you touch, not by graph size.
 
-  3. APPLY local diffusion on N_h
-     Recompute P columns for affected neurons.
-     Fixed-point iteration with boundary injection.
-     Cost: O(deg(i) + deg(j)) per iteration
+[[focus]] NMT update: only leaves for affected [[neurons]] need NMT path recomputation. O(k · log n) hash operations where k = |affected neurons|.
 
-  4. APPLY local springs on N_h
-     Solve (L + μI)x* = μx₀ on affected subgraph via local CG.
-     Cost: O(deg(v)) per affected node
-
-  5. APPLY local heat on N_h
-     K-term Chebyshev polynomial filter on affected neighborhood.
-     Cost: O(K · deg(v)) per affected node
-
-  6. BLEND: φ_new = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)]
-     Normalize and splice back into global φ.
-
-  Total cost: O(|N_h| · c) per kernel for average degree c
-  NOT: O(|V|) — bounded by what you TOUCH, not by graph size
-
-FOCUS NMT UPDATE:
-  Only leaves for affected neurons need NMT path recomputation.
-  O(k · log n) hash operations where k = |affected neurons|.
-
-TELEMETRY per epoch:
-  Entropy H(π), negentropy J(π), spectral gap estimate,
-  ℓ₁ drift ‖π^t - π^(t-1)‖, locality radius h, nodes touched.
-```
+Telemetry per epoch: entropy H(π), negentropy J(π), spectral gap estimate, ℓ₁ drift ‖π^t − π^(t-1)‖, locality radius h, nodes touched.
 
 ## 12. Temporal Decay (Forgetting Law)
 
-Edges are not permanent. Without a forgetting mechanism, the graph grows without bound.
+Edges are not permanent. Without a forgetting mechanism, the [[cybergraph]] grows without bound.
 
 ### 12.1 Exponential Weight Decay
 
@@ -1229,51 +1169,33 @@ $$w_{\text{eff}}(e, t) = e.\text{weight} \cdot \alpha^{(t - e.\text{time})}$$
 
 where $\alpha \in (0, 1)$ is the global decay constant.
 
-```
-Properties:
-  - Each edge decays independently (bounded locality)
-  - Decayed weight returns to the global focus pool (conservation)
-  - Edge with w_eff < ε is eligible for pruning
-  - To keep an edge alive: renew it (pay focus cost again)
-  
-STARK-provable:
-  α^n approximated via Taylor series in F_p:
-    α^n ≈ 1 + n·ln(α) + n²·ln²(α)/2 + n³·ln³(α)/6
-    4 terms gives ~10⁻⁶ precision
-    ~20 field operations = ~20 STARK constraints
+- each edge decays independently (bounded locality)
+- decayed weight returns to the global [[focus]] pool (conservation)
+- edge with w_eff < ε is eligible for pruning
+- to keep an edge alive: renew it (pay [[focus]] cost again)
 
-Conservation invariant with decay:
-  Σ π_i + Σ decayed_weight_pool = 1
-  
-  The decayed weight pool is a single F_p value in the balance NMT,
-  updated each block as edges age.
-```
+[[STARK]]-provable: α^n approximated via Taylor series in F_p — 4 terms gives ~10⁻⁶ precision, ~20 field operations = ~20 [[STARK]] constraints.
+
+Conservation invariant with decay: Σ π_i + Σ decayed_weight_pool = 1. The decayed weight pool is a single F_p value in the balance NMT, updated each block as edges age.
 
 ### 12.2 Pruning Protocol
 
-```
-EDGE PRUNING
-────────────
-
 Condition: w_eff(e, current_block) < ε
 
-Process:
-  1. Prove w_eff < ε (STARK: ~20 constraints for decay calculation)
-  2. Remove H_edge(e) from by_neuron[e.neuron].EdgeSet
-  3. Remove H_edge(e) from by_particle[e.from].EdgeSet  
-  4. Remove H_edge(e) from by_particle[e.to].EdgeSet
-  5. Return e.weight × α^(age) to decay pool
-  6. LogUp proof of consistent removal from all 3 EdgeSets
+1. Prove w_eff < ε ([[STARK]]: ~20 constraints for decay calculation)
+2. Remove H_edge(e) from by_neuron[e.neuron].EdgeSet
+3. Remove H_edge(e) from by_particle[e.from].EdgeSet
+4. Remove H_edge(e) from by_particle[e.to].EdgeSet
+5. Return e.weight × α^(age) to decay pool
+6. LogUp proof of consistent removal from all 3 EdgeSets
 
-Cost: O(log n) NMT updates + 3 EdgeSet updates + LogUp proof
-Incentive: Pruners earn a fraction of recycled focus
-```
+Cost: O(log n) NMT updates + 3 EdgeSet updates + LogUp proof. Pruners earn a fraction of recycled [[focus]].
 
 ---
 
 # Part IX: Proof System
 
-## 13. STARK Architecture
+## 13. [[STARK]] Architecture
 
 ### 13.1 Proof Pipeline
 
@@ -1313,28 +1235,16 @@ Incentive: Pruners earn a fraction of recycled focus
 
 ### 13.2 Self-Verification
 
-nox can verify its own STARK proofs using its own reduction patterns. This is the self-referential closure:
-
-```
-SELF-VERIFICATION LOOP
-──────────────────────
+[[nox]] can verify its own [[STARK]] proofs using its own reduction patterns. This is the self-referential closure:
 
 1. Computation C produces result R
-2. STARK prover generates proof π of "C → R"
-3. nox verification program V checks π:
-   V = reduce(subject=(π, public_inputs), formula=STARK_verifier)
-4. V produces STARK trace
-5. Another STARK proof π' proves "V accepted π"
+2. [[STARK]] prover generates proof π of "C → R"
+3. [[nox]] verification program V checks π: V = reduce(subject=(π, public_inputs), formula=STARK_verifier)
+4. V produces [[STARK]] trace
+5. Another [[STARK]] proof π' proves "V accepted π"
 6. This can recurse, or be folded via Nova
 
-The verifier V is a nox program:
-  - Poseidon2 = nox pattern 15 (hash)
-  - Field arithmetic = patterns 5-8
-  - Comparisons = patterns 9-10
-  - Control flow = patterns 2, 4
-
-No external trusted verifier. The system closes on itself.
-```
+The verifier V is a [[nox]] program: [[Hemera]] = pattern 15 (hash), field arithmetic = patterns 5-8, comparisons = patterns 9-10, control flow = patterns 2, 4. The system closes on itself.
 
 ### 13.3 Constraint Costs Reference
 
@@ -1365,7 +1275,7 @@ COMPOSITE OPERATIONS:
 
 ### 13.4 FRI → STIR Migration
 
-STIR (Sum-of-Twists Interactive Reed-Solomon) is the next-generation low-degree test, achieving O(log n · log log n) proof size vs FRI's O(log² n).
+STIR (Sum-of-Twists Interactive Reed-Solomon) is the next-generation low-degree test, achieving O(log n · log log n) proof size vs FRI's O(log² n). See [[hemera/spec]] for hash parameter choices.
 
 ```
 Migration path:
@@ -1477,7 +1387,7 @@ Storage: O(|my_edges| + |my_UTXOs| × log N)
 
 ### 15.1 Shard Model
 
-At 10¹⁵ nodes, no single machine can hold the full state. The cybergraph must shard.
+At 10¹⁵ nodes, no single machine can hold the full state. The [[cybergraph]] must shard.
 
 ```
 SHARD STRUCTURE
