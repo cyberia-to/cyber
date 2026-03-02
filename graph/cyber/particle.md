@@ -43,7 +43,7 @@ squeeze:     output ← state[0..8]
 
 round constants are self-bootstrapping: Hemera generates its own constants from the seed `"cyber"` (5 bytes) through the zero-constant permutation. no foreign primitives in the dependency chain
 
-see [[Hemera_Hash_Primitive_Specification]] for the full decision record
+see [[hemera/spec]] for the full decision record
 
 ## tree
 

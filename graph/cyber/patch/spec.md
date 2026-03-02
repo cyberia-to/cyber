@@ -234,7 +234,7 @@ CyberPatch inherits the [[cyber]] cryptographic stack — it adds no primitives 
 
 all primitives come from the protocol layer:
 
-- [[hash]]: [[Poseidon2]]-Goldilocks (see [[Hemera_Hash_Primitive_Specification]]). 64-byte digests, [[STARK]]-native, single canonical function for all content addressing
+- [[hash]]: [[Poseidon2]]-Goldilocks (see [[hemera/spec]]). 64-byte digests, [[STARK]]-native, single canonical function for all content addressing
 - [[signature]]: post-quantum from [[genesis]]. the specific scheme is a protocol-level decision (see [[cyber/security]])
 - proofs: [[STARKs]] over [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$), verified by [[nox]] programs
 - identity: [[neuron]] = [[public key]], derived from [[spell]]. see [[cyber/particle]] for CID structure
@@ -544,7 +544,7 @@ Content identifiers follow a self-describing format:
 CID = H(content)  // raw 64-byte Hemera digest
 
 No multicodec prefix, no multihash header, no version byte.
-See [[Hemera_Hash_Primitive_Specification]] for rationale and format.
+See [[hemera/spec]] for rationale and format.
 Inside the protocol, the 64-byte digest is the complete identifier.
 ```
 

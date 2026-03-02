@@ -210,7 +210,7 @@ Stwo/Starknet  M31           16         14          124-bit   Production
 Hemera         Goldilocks    16         64          256-bit   Genesis
 ```
 
-The combination of Goldilocks + $t=16$ + $R_P=64$ is novel. The individual components are battle-tested across billions of proofs. The 3.2× proving cost increase over Plonky3 baseline is the price of permanent-grade security — acceptable because hash proving is a minority of total system proving cost. See [[Hemera_Hash_Primitive_Specification]] for the full decision record.
+The combination of Goldilocks + $t=16$ + $R_P=64$ is novel. The individual components are battle-tested across billions of proofs. The 3.2× proving cost increase over Plonky3 baseline is the price of permanent-grade security — acceptable because hash proving is a minority of total system proving cost. See [[hemera/spec]] for the full decision record.
 
 ## 5. The Tri-Kernel
 
