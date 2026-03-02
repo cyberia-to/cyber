@@ -13,6 +13,8 @@
         <th class="col-size">size</th>
         <th class="col-pagerank">π%</th>
         <th class="col-links">links</th>
+        <th class="col-created">created</th>
+        <th class="col-modified">modified</th>
       </tr>
     </thead>
     <tbody>
@@ -26,6 +28,8 @@
         <td class="col-size">{{ f.size }}</td>
         <td class="col-pagerank">{{ f.pagerank }}</td>
         <td class="col-links">{{ f.backlinks }}</td>
+        <td class="col-created">{{ f.created }}</td>
+        <td class="col-modified">{{ f.modified }}</td>
       </tr>
       {% endfor %}
     </tbody>

@@ -1108,7 +1108,9 @@ hr {
         font-size: 0.8rem;
     }
     .pages-table .col-rank,
-    .pages-table .col-pagerank {
+    .pages-table .col-pagerank,
+    .pages-table .col-created,
+    .pages-table .col-modified {
         display: none;
     }
     .pages-table th,
@@ -1553,7 +1555,9 @@ body:has(.fullscreen-viz) .main-content {
 
 .col-size,
 .col-pagerank,
-.col-links {
+.col-links,
+.col-created,
+.col-modified {
     width: 1%;
     white-space: nowrap;
     text-align: right;
@@ -1569,7 +1573,14 @@ body:has(.fullscreen-viz) .main-content {
     opacity: 0.4;
 }
 
-.col-links {
+.col-created,
+.col-modified {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+}
+
+.col-modified {
     padding-right: 0.5rem !important;
 }
 

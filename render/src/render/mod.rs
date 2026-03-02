@@ -5,9 +5,11 @@ mod transform;
 
 use crate::config::SiteConfig;
 use crate::graph::PageStore;
+use crate::lunar;
 use crate::parser::PageId;
 use anyhow::Result;
 use std::collections::{HashMap, HashSet};
+use std::path::{Path, PathBuf};
 
 #[derive(Debug, Clone)]
 pub struct RenderedPage {
@@ -468,12 +470,71 @@ fn format_size(bytes: u64) -> String {
     }
 }
 
+/// Extract git dates for all files under a directory.
+/// Returns a map: absolute_path -> (created_iso, modified_iso).
+/// Runs a single `git log` command for efficiency.
+fn git_dates(input_dir: &Path) -> HashMap<String, (String, String)> {
+    // Find the git repo root
+    let repo_root = std::process::Command::new("git")
+        .args(["rev-parse", "--show-toplevel"])
+        .current_dir(input_dir)
+        .output()
+        .ok()
+        .filter(|o| o.status.success())
+        .map(|o| PathBuf::from(String::from_utf8_lossy(&o.stdout).trim().to_string()));
+
+    let repo_root = match repo_root {
+        Some(r) => r,
+        None => return HashMap::new(),
+    };
+
+    let output = std::process::Command::new("git")
+        .args(["log", "--format=format:%aI", "--name-only", "--diff-filter=ACMR"])
+        .current_dir(&repo_root)
+        .output();
+
+    let output = match output {
+        Ok(o) if o.status.success() => String::from_utf8_lossy(&o.stdout).to_string(),
+        _ => return HashMap::new(),
+    };
+
+    // Parse: date line followed by filename lines, separated by blank lines.
+    // Git log is newest-first, so first encounter = modified, last = created.
+    let mut result: HashMap<String, (String, String)> = HashMap::new();
+
+    let mut current_date = String::new();
+    for line in output.lines() {
+        let line = line.trim();
+        if line.is_empty() {
+            continue;
+        }
+        // Date lines start with digit (ISO format: 2026-03-02T...)
+        if line.starts_with(|c: char| c.is_ascii_digit()) && line.contains('T') {
+            current_date = line.to_string();
+        } else if !current_date.is_empty() {
+            // Convert git-relative path to absolute
+            let abs_path = repo_root.join(line);
+            let key = abs_path.to_string_lossy().to_string();
+            let entry = result
+                .entry(key)
+                .or_insert_with(|| (current_date.clone(), current_date.clone()));
+            // Newest-first: first insert sets modified, keep overwriting created
+            entry.0 = current_date.clone();
+        }
+    }
+
+    result
+}
+
 /// Render the unified /files page — all public pages sorted by focus (π) with size column.
 fn render_files_page(
     store: &PageStore,
     config: &SiteConfig,
     env: &minijinja::Environment,
 ) -> Result<String> {
+    // Extract git dates for all files
+    let dates = git_dates(&config.build.input_dir);
+
     let mut pages: Vec<_> = store
         .public_pages(&config.content)
         .into_iter()
@@ -504,6 +565,18 @@ fn render_files_page(
                 crate::parser::PageKind::Page | crate::parser::PageKind::Journal => format!("{}.md", p.meta.title),
                 crate::parser::PageKind::File => p.meta.title.clone(),
             };
+
+            // Look up git dates by absolute source path
+            let abs_key = p.source_path.to_string_lossy().to_string();
+            let (created_lmt, modified_lmt) = dates
+                .get(&abs_key)
+                .map(|(created, modified)| {
+                    let c = lunar::iso_to_lmt(created).unwrap_or_default();
+                    let m = lunar::iso_to_lmt(modified).unwrap_or_default();
+                    (c, m)
+                })
+                .unwrap_or_default();
+
             minijinja::context! {
                 rank => i + 1,
                 title => file_title,
@@ -513,6 +586,8 @@ fn render_files_page(
                 size => size_display,
                 tags => p.meta.tags.clone(),
                 icon => p.meta.icon.clone(),
+                created => created_lmt,
+                modified => modified_lmt,
             }
         })
         .collect();
