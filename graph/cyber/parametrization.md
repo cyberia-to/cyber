@@ -2,10 +2,10 @@
 tags: cyber, article, cip
 crystal-type: pattern
 crystal-domain: cyber
-alias: parameter reality, consensus parameter optimization, metabolic optimization
+alias: parameter optimization, parameter reality, consensus parameter optimization, metabolic optimization
 stake: 28558835390456748
 ---
-# parameter optimization
+# parametrization
 
 ## 1. the credibility gap
 
