@@ -31,7 +31,15 @@ Incompleteness. Goedel (1931) proved that any formal system powerful enough to d
 
 cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
 
-The protocol rests on five primitives: [[particle]] (content-addressed node), [[neuron]] (agent that signs edges), [[cyberlink]] (weighted directed edge), [[token]] (non-negative weight controlling influence), and [[focus]] (emergent [[equilibrium]] over [[particles]], conserved to 1). From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
+The protocol rests on five primitives:
+
+- [[particle]] — content-addressed node
+- [[neuron]] — agent that signs edges
+- [[cyberlink]] — weighted directed edge
+- [[token]] — non-negative weight controlling influence
+- [[focus]] — emergent [[equilibrium]] over [[particles]], conserved to 1
+
+From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
 
 This document specifies the complete architecture: the computation model ([[nox]]), the provable programming language ([[trident]]), the probability engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), the economic design, the scaling strategy, the storage proof and data availability infrastructure, and the bootstrapping path from [[cyber/crystal]] seed to planetary deployment. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
 
