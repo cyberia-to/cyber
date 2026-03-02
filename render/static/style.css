@@ -1108,11 +1108,11 @@ hr {
         font-size: 0.8rem;
     }
     .pages-table .col-rank,
-    .pages-table .col-pagerank,
-    .pages-table .col-luminosity,
-    .pages-table .col-gravity,
     .pages-table .col-created,
-    .pages-table .col-modified {
+    .pages-table .col-modified,
+    .pages-table .col-size,
+    .pages-table .col-luminosity,
+    .pages-table .col-gravity {
         display: none;
     }
     .pages-table th,
@@ -1592,7 +1592,7 @@ body:has(.fullscreen-viz) .main-content {
     letter-spacing: 0.02em;
 }
 
-.col-modified {
+.col-gravity {
     padding-right: 0.5rem !important;
 }
 
