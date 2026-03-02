@@ -8,7 +8,7 @@ alias: BBG, Big Badass Graph, privacy model, nox privacy, ZK privacy, cyber/priv
 
 A naive graph database stores edges and answers queries. "I don't have any edges matching your query" is indistinguishable from "I'm hiding edges from you." Traditional systems require trust. Distributed systems require consensus on complete state. Neither scales.
 
-The BBG solves this through unified polynomial commitments. One primitive handles everything: membership proofs, completeness proofs, indexes, state. No Merkle trees. No separate accumulators. No mixed bag of data structures with different security properties.
+The BBG solves this through unified polynomial commitments. One primitive handles everything: membership proofs, completeness proofs, indexes, state. One security analysis, one implementation, one mental model.
 
 Edges are stored once but indexed by multiple dimensions—creator, source [[particle]], target [[particle]]. Each index is a sorted polynomial commitment enabling range proofs: "these are ALL edges in this namespace." When you sync your namespace, you receive cryptographic proof that nothing was withheld. The graph cannot exist without its indexes being consistent and complete—this is structural, not policy.
 
