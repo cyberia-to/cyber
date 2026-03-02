@@ -1,9 +1,13 @@
 use crate::config::SiteConfig;
+use crate::parser::{ParsedPage, PageId};
+use crate::render::RenderedPage;
 use anyhow::Result;
 use colored::Colorize;
+use std::collections::{HashMap, HashSet};
+use std::path::PathBuf;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{mpsc, Arc};
-use std::time::Duration;
+use std::time::{Duration, SystemTime};
 
 pub const RELOAD_SCRIPT: &str = r#"<script>
 (function() {
@@ -14,10 +18,11 @@ pub const RELOAD_SCRIPT: &str = r#"<script>
       if (e.data === 'reload') {
         window.location.reload();
       }
+      retries = 0;
     };
     es.onerror = function() {
       es.close();
-      if (retries < 30) {
+      if (retries < 120) {
         retries++;
         setTimeout(connect, 1000);
       }
@@ -26,6 +31,47 @@ pub const RELOAD_SCRIPT: &str = r#"<script>
   connect();
 })();
 </script>"#;
+
+/// Cached state for incremental rebuilds.
+struct BuildCache {
+    /// source_path → (mtime, ParsedPage) — skip re-parsing unchanged files
+    parse_cache: HashMap<PathBuf, (SystemTime, ParsedPage)>,
+    /// page_id → RenderedPage — skip re-rendering unchanged pages
+    render_cache: HashMap<PageId, RenderedPage>,
+    /// page_id → content_md hash — detect content changes
+    content_hashes: HashMap<PageId, u64>,
+    /// page_id → tags hash — detect tag changes
+    tag_hashes: HashMap<PageId, u64>,
+    /// page_id → sorted backlink ids — detect backlink changes
+    backlink_snapshots: HashMap<PageId, Vec<PageId>>,
+    /// Number of pages in the last build
+    last_page_count: usize,
+    /// Whether the initial full build has completed
+    initialized: bool,
+}
+
+impl BuildCache {
+    fn new() -> Self {
+        Self {
+            parse_cache: HashMap::new(),
+            render_cache: HashMap::new(),
+            content_hashes: HashMap::new(),
+            tag_hashes: HashMap::new(),
+            backlink_snapshots: HashMap::new(),
+            last_page_count: 0,
+            initialized: false,
+        }
+    }
+}
+
+/// Simple hash for content change detection (not cryptographic).
+fn hash_str(s: &str) -> u64 {
+    use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
+    let mut h = DefaultHasher::new();
+    s.hash(&mut h);
+    h.finish()
+}
 
 /// Start a background thread that watches for file changes and rebuilds.
 /// Increments `build_version` after each successful rebuild so SSE clients know to reload.
@@ -40,7 +86,8 @@ pub fn start_watch_rebuild(config: SiteConfig, build_version: Arc<AtomicU64>) {
 fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -> Result<()> {
     use notify::Watcher;
 
-    let (tx, rx) = mpsc::channel();
+    // Channel now carries file paths so we know what changed
+    let (tx, rx) = mpsc::channel::<Vec<PathBuf>>();
 
     let mut watcher =
         notify::recommended_watcher(move |res: Result<notify::Event, notify::Error>| {
@@ -51,7 +98,7 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
                         | notify::EventKind::Create(_)
                         | notify::EventKind::Remove(_)
                 ) {
-                    let _ = tx.send(());
+                    let _ = tx.send(event.paths);
                 }
             }
         })
@@ -75,23 +122,46 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
         watcher.watch(&blog_dir, notify::RecursiveMode::Recursive)?;
     }
 
-    loop {
-        if rx.recv().is_ok() {
-            // Debounce: wait 300ms and drain additional events
-            std::thread::sleep(Duration::from_millis(300));
-            while rx.try_recv().is_ok() {}
+    let mut cache = BuildCache::new();
 
-            eprintln!("  {} File change detected, rebuilding...", "Watch".yellow());
+    loop {
+        if let Ok(paths) = rx.recv() {
+            // Debounce: wait 300ms and collect all changed paths
+            std::thread::sleep(Duration::from_millis(300));
+            let mut changed: HashSet<PathBuf> = paths.into_iter().collect();
+            while let Ok(more) = rx.try_recv() {
+                changed.extend(more);
+            }
+
+            // Filter to only markdown files in watched directories
+            changed.retain(|p| {
+                p.extension()
+                    .map(|e| e == "md" || e == "markdown")
+                    .unwrap_or(false)
+            });
+
+            if changed.is_empty() {
+                continue;
+            }
+
+            let n = changed.len();
+            eprintln!(
+                "  {} {} file{} changed, rebuilding...",
+                "Watch".yellow(),
+                n,
+                if n == 1 { "" } else { "s" }
+            );
             let start = std::time::Instant::now();
 
-            match full_rebuild(config) {
-                Ok(page_count) => {
+            match incremental_rebuild(config, &mut cache, &changed) {
+                Ok((rendered_count, dirty_count)) => {
                     let elapsed = start.elapsed();
                     build_version.fetch_add(1, Ordering::SeqCst);
                     eprintln!(
-                        "  {} Rebuilt {} pages in {:.2}s",
+                        "  {} Rebuilt {}/{} pages in {:.2}s",
                         "Done".green(),
-                        page_count,
+                        dirty_count,
+                        rendered_count,
                         elapsed.as_secs_f64()
                     );
                 }
@@ -103,13 +173,160 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
     }
 }
 
-/// Run the full build pipeline: scan → parse → graph → render → output.
-fn full_rebuild(config: &SiteConfig) -> Result<usize> {
+/// Incremental rebuild: selective parse → full graph → selective render → incremental output.
+/// Returns (total_rendered, dirty_count).
+fn incremental_rebuild(
+    config: &SiteConfig,
+    cache: &mut BuildCache,
+    changed_paths: &HashSet<PathBuf>,
+) -> Result<(usize, usize)> {
+    // Step 1: Scan (always full — it's fast)
     let discovered = crate::scanner::scan(&config.build.input_dir, &config.content)?;
-    let parsed = crate::parser::parse_all(&discovered)?;
-    let store = crate::graph::build_graph(parsed)?;
-    let rendered = crate::render::render_all(&store, config)?;
-    let count = rendered.len();
-    crate::output::write_output(&rendered, &store, config, &discovered)?;
-    Ok(count)
+
+    // Step 2: Selective parse — only re-parse files whose mtime changed
+    let mut all_parsed: Vec<ParsedPage> = Vec::new();
+    let mut changed_page_ids: HashSet<PageId> = HashSet::new();
+
+    for file in discovered.pages.iter().chain(discovered.journals.iter()) {
+        let mtime = std::fs::metadata(&file.path)
+            .ok()
+            .and_then(|m| m.modified().ok())
+            .unwrap_or(SystemTime::UNIX_EPOCH);
+
+        if let Some((cached_mtime, cached_page)) = cache.parse_cache.get(&file.path) {
+            if *cached_mtime == mtime && !changed_paths.contains(&file.path) {
+                // File unchanged — use cached parse
+                all_parsed.push(cached_page.clone());
+                continue;
+            }
+        }
+
+        // Parse (new or changed file)
+        let page = crate::parser::parse_file(file)?;
+        changed_page_ids.insert(page.id.clone());
+        cache.parse_cache.insert(file.path.clone(), (mtime, page.clone()));
+        all_parsed.push(page);
+    }
+
+    // Non-markdown files: always re-parse (they're few and cheap)
+    let non_md = crate::parser::parse_all(&crate::scanner::DiscoveredFiles {
+        pages: vec![],
+        journals: vec![],
+        media: discovered.media.clone(),
+        files: discovered.files.clone(),
+    })?;
+    all_parsed.extend(non_md);
+
+    // Remove stale cache entries for deleted files
+    let current_paths: HashSet<&PathBuf> = discovered
+        .pages
+        .iter()
+        .chain(discovered.journals.iter())
+        .map(|f| &f.path)
+        .collect();
+    cache.parse_cache.retain(|path, _| current_paths.contains(path));
+
+    // Step 3: Build graph (always full — it's fast)
+    let store = crate::graph::build_graph(all_parsed)?;
+
+    // Step 4: Determine dirty pages (need re-rendering)
+    let mut dirty_ids: HashSet<PageId> = changed_page_ids.clone();
+
+    // Pages whose content_md hash changed
+    for (page_id, page) in &store.pages {
+        let new_hash = hash_str(&page.content_md);
+        if let Some(&old_hash) = cache.content_hashes.get(page_id) {
+            if old_hash != new_hash {
+                dirty_ids.insert(page_id.clone());
+            }
+        } else {
+            // New page
+            dirty_ids.insert(page_id.clone());
+        }
+        cache.content_hashes.insert(page_id.clone(), new_hash);
+    }
+
+    // Pages whose backlinks changed
+    for (page_id, backlinks) in &store.backlinks {
+        let mut sorted = backlinks.clone();
+        sorted.sort();
+        if let Some(old) = cache.backlink_snapshots.get(page_id) {
+            if *old != sorted {
+                dirty_ids.insert(page_id.clone());
+            }
+        }
+        cache.backlink_snapshots.insert(page_id.clone(), sorted);
+    }
+
+    // Also dirty: pages whose backlinks section shows the dirty page
+    let mut extra_dirty: HashSet<PageId> = HashSet::new();
+    for dirty_id in &dirty_ids {
+        if let Some(bl) = store.backlinks.get(dirty_id) {
+            extra_dirty.extend(bl.iter().cloned());
+        }
+    }
+    dirty_ids.extend(extra_dirty);
+
+    // Detect structural changes (pages added/removed, tags changed) — these
+    // require re-rendering synthetic pages (index, tags, blog, files, etc.).
+    let structural_change = if !cache.initialized {
+        true
+    } else {
+        // Page count changed?
+        if cache.last_page_count != store.pages.len() {
+            true
+        } else {
+            // Any dirty page had its tags changed?
+            let mut tags_changed = false;
+            for dirty_id in &dirty_ids {
+                if let Some(page) = store.pages.get(dirty_id) {
+                    let new_tag_hash = hash_str(&page.meta.tags.join(","));
+                    if let Some(&old) = cache.tag_hashes.get(dirty_id) {
+                        if old != new_tag_hash {
+                            tags_changed = true;
+                        }
+                    }
+                    cache.tag_hashes.insert(dirty_id.clone(), new_tag_hash);
+                }
+            }
+            tags_changed
+        }
+    };
+    cache.last_page_count = store.pages.len();
+
+    // Mark synthetic pages dirty only for structural changes
+    if structural_change {
+        dirty_ids.insert("__structural__".to_string());
+    }
+
+    let dirty_count = dirty_ids.len();
+
+    // Step 5: Selective render
+    let dirty_ref = if cache.initialized {
+        Some(&dirty_ids)
+    } else {
+        None // First rebuild after watcher starts: render everything
+    };
+    let rendered = crate::render::render_cached(
+        &store,
+        config,
+        &mut cache.render_cache,
+        dirty_ref,
+    )?;
+    let total = rendered.len();
+
+    // Step 6: Output — write only what changed
+    if !cache.initialized {
+        // First build: full output
+        crate::output::write_output(&rendered, &store, config, &discovered)?;
+        cache.initialized = true;
+    } else if structural_change {
+        // Structural change: write all pages + regenerate indexes
+        crate::output::write_incremental(&rendered, &store, config, &discovered)?;
+    } else {
+        // Content-only change: write just the dirty pages
+        crate::output::write_dirty_pages(&rendered, &dirty_ids, config)?;
+    }
+
+    Ok((total, dirty_count))
 }
