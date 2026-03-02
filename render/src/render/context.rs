@@ -353,6 +353,7 @@ pub fn build_page_context(
             icon => page.meta.icon.clone(),
             kind => format!("{:?}", page.kind),
             toc => toc_html,
+            focus => store.focus.get(&page.id).copied().unwrap_or(0.0),
         },
         backlinks => backlink_data,
     }

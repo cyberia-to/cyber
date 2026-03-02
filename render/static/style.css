@@ -745,6 +745,14 @@ hr {
     background: rgba(136, 192, 208, 0.08);
 }
 
+.page-focus {
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+    opacity: 0.6;
+    margin-top: 0.3rem;
+}
+
 .page-date {
     font-size: 0.85rem;
     opacity: 0.6;

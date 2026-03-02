@@ -43,6 +43,8 @@ content %}
             >
             {% endif %}
         </div>
+        {% endif %} {% if page.focus and page.focus > 0 %}
+        <div class="page-focus">π {{ page.focus | round(precision=6) }}</div>
         {% endif %} {% if page.date %}
         <time class="page-date" datetime="{{ page.date }}"
             >{{ page.date }}</time
