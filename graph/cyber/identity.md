@@ -93,8 +93,49 @@ recursive composition: O(1) verification for O(N) links
 
 a [[STARK]] proof of [[Hemera]] preimage knowledge is ~100-200 KB. larger than an ECDSA signature (64 bytes). the tradeoff: post-quantum security from genesis, programmable spending conditions, recursive aggregation. N proofs collapse into one.
 
+## anonymous cyberlinks
+
+the [[cybergraph]] is public: [[particles]], links, aggregate weights, [[focus]] vector. authorship of individual links is hidden. a [[neuron]] proves it is valid and has stake, without revealing which neuron it is.
+
+the [[neuron]] proves via [[STARK]]:
+
+```
+1. ∃ secret : Hemera(secret) ∈ neuron_set          // valid neuron
+2. stake(Hemera(secret)) = S                        // stake weight
+3. nullifier = Hemera(secret ∥ source ∥ target)     // unique link ID
+4. nullifier ∉ spent_set                            // no duplicate links
+```
+
+the graph sees: `link(source_particle, target_particle, weight=S)` and `nullifier`.
+the graph does not see: which neuron created the link.
+
+the nullifier is deterministic — same neuron linking the same pair of [[particles]] produces the same nullifier. duplicate links are detected. but the nullifier is a hash of the secret, so it does not reveal the author.
+
+### ranking on anonymous links
+
+[[tri-kernel]] computes [[focus]] from the aggregate graph topology and edge weights. authorship is irrelevant to ranking — only the sum of weights per edge matters.
+
+```
+focus = tri-kernel(graph_topology, edge_weights)
+```
+
+an observer sees: particle A is linked to particle B with total weight W.
+an observer does not see: W = w₁ + w₂ + w₃ (three [[neurons]], each contributing their stake).
+
+this is the Zcash pattern applied to knowledge: prove ownership of a resource (stake) and spend it (create a link) without revealing which resource was spent. the same [[Hemera]] + [[nox]] + [[STARK]] stack handles both identified and anonymous modes.
+
+### privacy layers
+
+| layer | function | primitive |
+|-------|----------|-----------|
+| authentication | prove neuron validity | [[STARK]] proof of [[Hemera]] preimage |
+| anonymity | hide link authorship | ZK set membership proof + nullifiers |
+| encryption | private neuron-to-neuron messaging | key agreement (lattice KEM or isogeny-based) |
+
+authentication and anonymity require only hashes and proofs — no algebraic structure beyond [[Goldilocks field]]. encryption requires key agreement, which needs additional primitives: lattice KEM (Module-RLWE) for interactive, CSIDH/isogeny-based for non-interactive.
+
 ## what this means
 
-the [[signer]] page describes the complexity of universal signing: pluggable curves, pluggable schemes, derivation paths, address formats per chain. identity in [[cyber]] reduces to: one hash function, one VM, one proof system. a [[neuron]] is a hash. authorization is a proof. everything else follows.
+the [[signer]] page describes the complexity of universal signing: pluggable curves, pluggable schemes, derivation paths, address formats per chain. identity in [[cyber]] reduces to: one hash function, one VM, one proof system. a [[neuron]] is a hash. authorization is a proof. anonymity is a proof of set membership. everything else follows.
 
 see [[Hemera]] for the hash primitive, [[cyber/nox]] for the VM, [[cyber/proofs]] for STARK verification, [[cyber/security]] for formal guarantees
