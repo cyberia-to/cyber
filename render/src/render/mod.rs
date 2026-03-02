@@ -552,12 +552,12 @@ fn lmt_sort_key(lmt: &str) -> String {
     }
 }
 
-/// Format a small float in compact scientific notation.
-fn format_scientific(val: f64) -> String {
-    if val < 1e-8 {
+/// Format a value as percentage of max: (val / max) * 100, with 2 decimal places.
+fn format_pct_of_max(val: f64, max: f64) -> String {
+    if max <= 0.0 || val <= 0.0 {
         "0".to_string()
     } else {
-        format!("{:.1e}", val)
+        format!("{:.2}", val / max * 100.0)
     }
 }
 
@@ -605,6 +605,10 @@ fn render_files_page(
     let lum_pcts = compute_percentiles(&lum_vals);
     let grav_pcts = compute_percentiles(&grav_vals);
 
+    // Max values for normalizing L and G to percentages
+    let max_lum = lum_vals.iter().cloned().fold(0.0_f64, f64::max);
+    let max_grav = grav_vals.iter().cloned().fold(0.0_f64, f64::max);
+
     let files_data: Vec<_> = pages
         .iter()
         .enumerate()
@@ -641,8 +645,8 @@ fn render_files_page(
                 backlinks => *backlinks,
                 pagerank => focus_display,
                 size => size_display,
-                luminosity => format_scientific(*luminosity),
-                gravity => format_scientific(*gravity),
+                luminosity => format_pct_of_max(*luminosity, max_lum),
+                gravity => format_pct_of_max(*gravity, max_grav),
                 tags => p.meta.tags.clone(),
                 icon => p.meta.icon.clone(),
                 created => created_lmt,
