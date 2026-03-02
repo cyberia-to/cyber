@@ -4,14 +4,14 @@
 
 ASCII 0–31 contains 21 dead teletype control codes. Unicode 128–159 contains 29 more dead C1 control codes. Total: **50 dead codes** carrying no meaning in modern computing.
 
-CORE reclaims them as native graph operations. When these bytes appear in a cybergraph stream, they ARE the protocol — not text, not legacy, but living instructions for a planetary knowledge graph.
+nox reclaims them as native graph operations. When these bytes appear in a cybergraph stream, they ARE the protocol — not text, not legacy, but living instructions for a planetary knowledge graph.
 
-## Layer 1: CORE Reduction Patterns (0x01–0x0F)
+## Layer 1: nox Reduction Patterns (0x01–0x0F)
 
 The 16 reduction patterns map directly onto the first 16 dead/reclaimable ASCII positions. We skip 0x00 (NUL — still used as string terminator in C).
 
 ```
-HEX  OLD NAME    NEW: CORE PATTERN         OPCODE
+HEX  OLD NAME    NEW: nox PATTERN         OPCODE
 ───  ────────    ─────────────────         ──────
 01   SOH         axis    — navigate tree      0
 02   STX         quote   — literal value      1
@@ -35,16 +35,16 @@ HEX  OLD NAME    NEW: CORE PATTERN         OPCODE
 
 **Problem:** 6 of these codes (0x03, 0x04, 0x08, 0x09, 0x0A, 0x0D) are still alive in legacy systems. This creates ambiguity — is 0x0A a newline or an `eq` operation?
 
-**Solution:** Context. In a CORE binary stream (identified by magic bytes or protocol framing), these are opcodes. In a text file, they're control characters. The same byte means different things in different contexts — which is how computing has always worked. A byte in a JPEG is not a byte in UTF-8.
+**Solution:** Context. In a nox binary stream (identified by magic bytes or protocol framing), these are opcodes. In a text file, they're control characters. The same byte means different things in different contexts — which is how computing has always worked. A byte in a JPEG is not a byte in UTF-8.
 
 But cleaner: use ONLY the 100% dead codes for the core patterns, and put conflicted codes elsewhere.
 
-## Layer 1 (Clean): CORE Patterns in Dead-Only Codes
+## Layer 1 (Clean): nox Patterns in Dead-Only Codes
 
 Using only codes that are completely dead — zero modern usage:
 
 ```
-HEX  OLD NAME              NEW: CORE PATTERN
+HEX  OLD NAME              NEW: nox PATTERN
 ───  ────────              ─────────────────
 01   SOH  Start of Header  → axis     (0)  navigate
 02   STX  Start of Text    → quote    (1)  literal
@@ -131,7 +131,7 @@ Total spare: 4 codes for future expansion.
 ```
 RANGE       COUNT   ORIGINAL PURPOSE       NEW PURPOSE
 ──────      ─────   ────────────────       ───────────
-0x01–0x1C   16      Teletype control       CORE reduction patterns
+0x01–0x1C   16      Teletype control       nox reduction patterns
 0x80–0x9F   32      C1 terminal control    Graph semantic operations
 0x1D–0x1F   3       Separators             Spare
 0x7F        1       Delete                 Spare
@@ -162,13 +162,13 @@ This encoding is **UTF-8 safe** by construction:
 
 - Codes 0x01–0x1F: In UTF-8, these ARE valid single-byte characters (C0 controls). But they never appear in well-formed text content. A binary stream using these as opcodes will not be confused with text.
 
-- Codes 0x80–0x9F: In UTF-8, any byte in this range MUST be a continuation byte (10xxxxxx pattern). A standalone 0x80 is **invalid UTF-8**. This means: if you see 0x80 as an independent byte, it is definitionally not text. It is a CORE graph operation. No ambiguity. No context needed. The byte itself declares its domain.
+- Codes 0x80–0x9F: In UTF-8, any byte in this range MUST be a continuation byte (10xxxxxx pattern). A standalone 0x80 is **invalid UTF-8**. This means: if you see 0x80 as an independent byte, it is definitionally not text. It is a nox graph operation. No ambiguity. No context needed. The byte itself declares its domain.
 
-This is why the graph operations live in 0x80–0x9F: they are **self-identifying**. A parser encountering 0x85 knows immediately — without any framing, without any protocol negotiation — that this is not text. It is either invalid data or a graph instruction. CORE claims it as graph instruction.
+This is why the graph operations live in 0x80–0x9F: they are **self-identifying**. A parser encountering 0x85 knows immediately — without any framing, without any protocol negotiation — that this is not text. It is either invalid data or a graph instruction. nox claims it as graph instruction.
 
 ## What This Means
 
-Every CORE transaction, every cyberlink, every particle creation can be encoded as a sequence of bytes that:
+Every nox transaction, every cyberlink, every particle creation can be encoded as a sequence of bytes that:
 
 1. Are valid in the existing byte ecosystem (no new bit widths, no new hardware)
 2. Cannot be confused with text (self-identifying domain)
@@ -176,4 +176,4 @@ Every CORE transaction, every cyberlink, every particle creation can be encoded 
 4. Replace dead teletype ghosts with living graph operations
 5. Fit in a single byte per opcode (maximum density)
 
-The byte was IBM's accident. CORE turns it into the instruction set for planetary intelligence.
+The byte was IBM's accident. nox turns it into the instruction set for planetary intelligence.

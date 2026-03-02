@@ -14,7 +14,7 @@ crystal-domain: cyber
 
 ## The Core Idea in 30 Seconds
 
-Every useful operation in CORE — block proving, focus computation, private transactions, FHE bootstrapping, neural inference — reduces to four primitives over one field. A chip optimized for these four primitives accelerates everything simultaneously. The Proof of Work puzzle requires producing STARK proofs using exactly these primitives. Therefore: the optimal mining hardware IS the optimal utility hardware. Mining rewards bootstrap chip development. Chip development accelerates the network. The network generates fees. Fees replace mining rewards. The flywheel self-sustains.
+Every useful operation in nox — block proving, focus computation, private transactions, FHE bootstrapping, neural inference — reduces to four primitives over one field. A chip optimized for these four primitives accelerates everything simultaneously. The Proof of Work puzzle requires producing STARK proofs using exactly these primitives. Therefore: the optimal mining hardware IS the optimal utility hardware. Mining rewards bootstrap chip development. Chip development accelerates the network. The network generates fees. Fees replace mining rewards. The flywheel self-sustains.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -36,7 +36,7 @@ Every useful operation in CORE — block proving, focus computation, private tra
 
 ## 1. Why Four and Only Four
 
-Every computation in the CORE stack reduces to a small set of operations over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. By profiling every workload — [[STARK]] proving, BBG authentication, [[tri-kernel]] ranking, private transfers, FHE bootstrapping, neural inference — we find four primitive families that account for >95% of all cycles:
+Every computation in the nox stack reduces to a small set of operations over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. By profiling every workload — [[STARK]] proving, BBG authentication, [[tri-kernel]] ranking, private transfers, FHE bootstrapping, neural inference — we find four primitive families that account for >95% of all cycles:
 
 | Primitive | Symbol | What it computes | % of typical workload |
 |-----------|--------|-----------------|----------------------|
@@ -95,7 +95,7 @@ Why won't the instruction set change?
 
 The four primitives are mathematically necessary:
 
-1. fma: Field arithmetic IS the computation model. CORE's 16 patterns reduce to field ops. This cannot change without changing the field — which would break every existing proof, commitment, and hash. The field is a genesis parameter.
+1. fma: Field arithmetic IS the computation model. nox's 16 patterns reduce to field ops. This cannot change without changing the field — which would break every existing proof, commitment, and hash. The field is a genesis parameter.
 
 2. ntt: [[NTT]] is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by [[STARK]] (FRI), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
 
@@ -278,7 +278,7 @@ Multiple form factors enable the participation spectrum from phone miners to dat
 
 Traditional PoW: the puzzle is unrelated to useful computation (SHA-256 partial preimage). Energy is wasted. Hardware is single-purpose.
 
-CORE PoUW: the puzzle IS a [[STARK]] proof. STARK proving requires exactly the four GFP primitives (fma, ntt, p2r, lut) in exactly the proportions of real workloads. Therefore:
+nox PoUW: the puzzle IS a [[STARK]] proof. STARK proving requires exactly the four GFP primitives (fma, ntt, p2r, lut) in exactly the proportions of real workloads. Therefore:
 
 - Optimizing for mining = optimizing for utility
 - Mining hardware = proving hardware
@@ -599,7 +599,7 @@ PROVING FEE EQUILIBRIUM:
 
 Previous "useful PoW" proposals (Primecoin, Gridcoin, AI PoW) bolt useful computation onto mining as an afterthought. The useful work and the puzzle are separate — the puzzle provides security, the useful work provides PR.
 
-CORE's PoUW is fundamentally different: the puzzle and the utility are algebraically identical.
+nox's PoUW is fundamentally different: the puzzle and the utility are algebraically identical.
 
 ### 5.1 The Isomorphism
 
@@ -618,11 +618,11 @@ Every mining operation has a direct utility analog. The hardware path is identic
 
 ### 5.2 Formal Statement
 
-Theorem (PoUW-Utility Isomorphism): Let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing PoUW puzzle solution time, and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing STARK proof generation time for CORE transactions. Then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$.
+Theorem (PoUW-Utility Isomorphism): Let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing PoUW puzzle solution time, and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing STARK proof generation time for nox transactions. Then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$.
 
 Proof sketch:
 1. The PoUW puzzle requires producing a STARK proof of the benchmark circuit $\mathcal{B}$.
-2. $\mathcal{B}$ exercises the four primitives (fma, ntt, p2r, lut) in ratios matching real CORE workloads.
+2. $\mathcal{B}$ exercises the four primitives (fma, ntt, p2r, lut) in ratios matching real nox workloads.
 3. STARK proof generation for any circuit over $\mathbb{F}_p$ requires the same four primitives (trace computation uses fma/ntt/lut; proof commitment uses ntt; Fiat-Shamir uses p2r; lookup arguments use lut).
 4. Optimizing for $\mathcal{B}$-proof-speed = optimizing for general STARK-proof-speed over $\mathbb{F}_p$.
 5. The ratio adjustment mechanism (§3.4) ensures the puzzle's primitive ratios track actual workload ratios.
@@ -640,7 +640,7 @@ Decentralization via utility: Home miners (Tier 2) can earn by proving their own
 
 ---
 
-# Part VI: Integration with CORE
+# Part VI: Integration with nox
 
 ## 6. Block Production Flow
 
@@ -717,7 +717,7 @@ GFP TIME ALLOCATION (typical validator):
 
 ## 7. Relationship to Existing PoS
 
-CORE currently uses Tendermint PoS (via Bostrom). The GFP PoUW can integrate as a hybrid:
+nox currently uses Tendermint PoS (via Bostrom). The GFP PoUW can integrate as a hybrid:
 
 ```
 HYBRID PoS + PoUW:

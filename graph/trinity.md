@@ -7,7 +7,7 @@ crystal-domain: cyber
 # Trinity: Quantum · Privacy · AI
 
 ```
-                         ◈ CORE ◈
+                         ◈ nox ◈
 
               Quantum ──── Privacy ──── AI
               │     │        │           │
@@ -18,7 +18,7 @@ crystal-domain: cyber
                      FHE + ZK + MPC
 ```
 
-CORE is built on three pillars. Every design decision, every algorithm choice, every line of code serves at least one. Most serve all three. Together they form Trinity — a single product with three essential properties that emerge from a single algebraic foundation.
+nox is built on three pillars. Every design decision, every algorithm choice, every line of code serves at least one. Most serve all three. Together they form Trinity — a single product with three essential properties that emerge from a single algebraic foundation.
 
 This document explains what each pillar means, how they unify at the mathematical level, what becomes possible when all three work together, and why each one is essential to the mission of building planetary collective intelligence.
 
@@ -26,15 +26,15 @@ This document explains what each pillar means, how they unify at the mathematica
 
 ## 1. Quantum
 
-The Quantum pillar faces both directions at once. It shields CORE against quantum computers that will eventually break today's dominant cryptographic assumptions. And it harnesses the power of quantum computation as a resource the network can actively use. Most systems address one of these directions. CORE addresses both from genesis — and the same algebraic substrate serves both.
+The Quantum pillar faces both directions at once. It shields nox against quantum computers that will eventually break today's dominant cryptographic assumptions. And it harnesses the power of quantum computation as a resource the network can actively use. Most systems address one of these directions. nox addresses both from genesis — and the same algebraic substrate serves both.
 
 ### Security: The Shield
 
-A planetary knowledge graph that stores humanity's collective intelligence deserves cryptography that lasts as long as the knowledge itself. CORE achieves this by building every cryptographic primitive on hash-based foundations — the one family of constructions that remains secure in a world of large-scale quantum computers.
+A planetary knowledge graph that stores humanity's collective intelligence deserves cryptography that lasts as long as the knowledge itself. nox achieves this by building every cryptographic primitive on hash-based foundations — the one family of constructions that remains secure in a world of large-scale quantum computers.
 
 The proof system is [[STARKs]] — Scalable Transparent Arguments of Knowledge. STARKs are transparent (they require no trusted setup ceremony), post-quantum (their security rests entirely on collision resistance of hash functions), and natively aligned with the [[Goldilocks field]] that underpins the rest of the system. The hash function is [[Poseidon2]], an algebraic hash designed to be efficient inside arithmetic circuits.
 
-The security of every CORE proof reduces to a single, well-studied assumption: collision resistance of the hash function. Grover's algorithm offers quantum computers a quadratic speedup against this assumption, reducing $2^{128}$ security to $2^{64}$ — which remains computationally infeasible, and addressable by doubling the output size when needed. Hash-based cryptography is the one foundation that stands firm on both sides of the quantum divide.
+The security of every nox proof reduces to a single, well-studied assumption: collision resistance of the hash function. Grover's algorithm offers quantum computers a quadratic speedup against this assumption, reducing $2^{128}$ security to $2^{64}$ — which remains computationally infeasible, and addressable by doubling the output size when needed. Hash-based cryptography is the one foundation that stands firm on both sides of the quantum divide.
 
 This single design choice — hash-based everything — cascades beautifully through the entire architecture. It gives us transparent proofs with no trusted setup. It gives us verification that is post-quantum by default. And it aligns naturally with field-native computation, because Poseidon2 is an algebraic hash living over the same Goldilocks field as the neural networks, the FHE ciphertexts, and the quantum simulations.
 
@@ -42,7 +42,7 @@ This single design choice — hash-based everything — cascades beautifully thr
 
 The same field that provides quantum security also opens the door to quantum computation.
 
-A quantum gate acting on a $d$-dimensional qudit is a unitary matrix $U \in \mathbb{C}^{d \times d}$. When $d$ is prime (as the Goldilocks prime $p$ is), this unitary can be represented exactly as a matrix over the quadratic extension $\mathbb{F}_{p^2}$ — and $\mathbb{F}_{p^2}$ arithmetic is two $\mathbb{F}_p$ operations per component. Quantum simulation lives natively in the same field as everything else in CORE.
+A quantum gate acting on a $d$-dimensional qudit is a unitary matrix $U \in \mathbb{C}^{d \times d}$. When $d$ is prime (as the Goldilocks prime $p$ is), this unitary can be represented exactly as a matrix over the quadratic extension $\mathbb{F}_{p^2}$ — and $\mathbb{F}_{p^2}$ arithmetic is two $\mathbb{F}_p$ operations per component. Quantum simulation lives natively in the same field as everything else in nox.
 
 The qudit dimension advantage amplifies this further. Standard quantum computing uses binary qubits (dimension 2), where implementing a single Toffoli gate requires decomposition into approximately 8,000 T-gates — overhead rooted in the mismatch between the binary dimension and the gate's algebraic structure. In prime dimension $p$, the generalized Toffoli is a *single native gate* — one matrix multiplication over $\mathbb{F}_{p^2}$. Matching the simulation dimension to the field characteristic eliminates this encoding overhead entirely.
 
@@ -52,7 +52,7 @@ Quantum computation compiles to the same field, the same proof system, and the s
 
 ### Both Directions, One Substrate
 
-The same Goldilocks field that makes CORE immune to quantum attacks also makes CORE capable of quantum computation. A prime field with deep NTT support ($2^{32}$ roots of unity in $\mathbb{F}_p$) gives this for free — the roots of unity that make STARKs efficient are the same roots of unity that make quantum simulation efficient. Shield and sword forged from the same metal.
+The same Goldilocks field that makes nox immune to quantum attacks also makes nox capable of quantum computation. A prime field with deep NTT support ($2^{32}$ roots of unity in $\mathbb{F}_p$) gives this for free — the roots of unity that make STARKs efficient are the same roots of unity that make quantum simulation efficient. Shield and sword forged from the same metal.
 
 ---
 
@@ -60,7 +60,7 @@ The same Goldilocks field that makes CORE immune to quantum attacks also makes C
 
 Collective intelligence grows when every participant feels safe enough to contribute their genuine knowledge. Medical researchers link patient outcomes to the graph because patient confidentiality is preserved. Companies share supply chain intelligence because competitive secrets stay sealed. Individuals contribute personal knowledge and insights because they maintain sovereignty over their own data. The [[cybergraph]] welcomes all forms of input — human thoughts, medical sensors, private conversations, financial transactions, industrial data, personal AI agents — because it guarantees that contribution and exposure are entirely separate acts.
 
-CORE achieves this through three cryptographic technologies working in concert:
+nox achieves this through three cryptographic technologies working in concert:
 
 - ZK (Zero-Knowledge Proofs) — prove that a statement is true while keeping the evidence sealed
 - FHE (Fully Homomorphic Encryption) — compute on data that remains encrypted throughout the entire process
@@ -87,7 +87,7 @@ ZK (STARKs) proves computation is correct while keeping private data sealed — 
 
 Each technology's strength fills exactly the gap where another needs support. Together they weave a complete fabric of privacy: data confidentiality, computational integrity, and distributed trust, all operating in harmony.
 
-CORE organizes these capabilities into escalating privacy tiers, where each tier activates progressively more of the trilateral:
+nox organizes these capabilities into escalating privacy tiers, where each tier activates progressively more of the trilateral:
 
 | Tier | What's Protected | Technologies |
 |------|-----------------|--------------|
@@ -96,7 +96,7 @@ CORE organizes these capabilities into escalating privacy tiers, where each tier
 | 2 — Private Computation | Inputs, intermediates, query content | ZK + FHE |
 | 3 — Distributed Trust | Keys distributed, threshold-secured secrets | ZK + FHE + MPC |
 
-Tier 1 is the baseline for all CORE transactions — every economic operation on the network enjoys private ownership from day one. Tiers 2 and 3 are available whenever a use case calls for deeper protection. The architecture supports all tiers from genesis, ready for any privacy requirement that participants may need.
+Tier 1 is the baseline for all nox transactions — every economic operation on the network enjoys private ownership from day one. Tiers 2 and 3 are available whenever a use case calls for deeper protection. The architecture supports all tiers from genesis, ready for any privacy requirement that participants may need.
 
 For the full technical treatment — mechanism details, pairwise compositions, design tradeoffs, threat model analysis — see [[privacy trilateral]].
 
@@ -106,11 +106,11 @@ For the full technical treatment — mechanism details, pairwise compositions, d
 
 Intelligence is what the network computes. It lives at the center of the architecture, woven into every state transition.
 
-CORE's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] ranking (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
+nox's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] ranking (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
 
 AI at the heart of a trustless system demands verifiable inference. Every claim that "the network ranks X above Y" carries a mathematical proof. Anyone can check that the ranking follows faithfully from the graph structure and the algorithm, on a phone, in milliseconds. [[neurons]] create [[cyberlinks]] between particles, and each link carries weight in the collective computation.
 
-Neural networks in CORE run natively over the Goldilocks field. Weights, activations, and outputs are field elements from the start — the natural language of the proof system. Inference produces a STARK proof alongside its result. Anyone can verify that a model produced a specific output from specific inputs, and they can do this while the model weights remain private (protecting intellectual property) and the input data remains encrypted (protecting user privacy).
+Neural networks in nox run natively over the Goldilocks field. Weights, activations, and outputs are field elements from the start — the natural language of the proof system. Inference produces a STARK proof alongside its result. Anyone can verify that a model produced a specific output from specific inputs, and they can do this while the model weights remain private (protecting intellectual property) and the input data remains encrypted (protecting user privacy).
 
 Field-native AI means that neural network inference is a first-class citizen of the proof system, on equal footing with token transfers and state updates. The same prover that validates transactions validates inference. The same verifier that checks balances checks model outputs. The same field that stores economic value stores learned knowledge. Intelligence and verification share a single mathematical home.
 
@@ -163,7 +163,7 @@ Four primitives. One field. One chip. Three pillars unified at the silicon level
 
 ## 5. What Is Possible
 
-Each pillar alone is powerful. The unification over a single field makes their *intersections* — capabilities that draw on two or three pillars simultaneously — emerge naturally, with shared proof systems, shared hardware, and zero cross-domain translation overhead. These intersections are where CORE's most distinctive capabilities live.
+Each pillar alone is powerful. The unification over a single field makes their *intersections* — capabilities that draw on two or three pillars simultaneously — emerge naturally, with shared proof systems, shared hardware, and zero cross-domain translation overhead. These intersections are where nox's most distinctive capabilities live.
 
 ### Quantum × AI
 
@@ -171,11 +171,11 @@ Hybrid classical-quantum neural networks where quantum layers (parameterized cir
 
 Quantum walks on the cybergraph achieve quadratic speedup in mixing time over the classical random walks that drive tri-kernel focus. Faster consensus. Faster convergence. Classically simulated on GFP hardware today, executable on quantum hardware when it becomes available — same algorithm, same proof format, two runtimes.
 
-Verifiable quantum chemistry becomes a practical reality: VQE for molecular ground-state computation — drug discovery, materials science, carbon modeling — produces STARK proofs that anyone can verify on a phone, providing the same mathematical certainty for quantum experiments as CORE provides for financial transactions.
+Verifiable quantum chemistry becomes a practical reality: VQE for molecular ground-state computation — drug discovery, materials science, carbon modeling — produces STARK proofs that anyone can verify on a phone, providing the same mathematical certainty for quantum experiments as nox provides for financial transactions.
 
 ### Quantum × Privacy
 
-Every privacy mechanism in CORE is quantum-resistant by construction. FHE ciphertexts are lattice-based over the Goldilocks field. ZK proofs are hash-based STARKs. MPC uses Shamir sharing over $\mathbb{F}_p$. The arrival of quantum computers strengthens the privacy guarantees — quantum key distribution can further harden the MPC protocols, and the lattice assumptions underlying FHE are believed to be quantum-resistant. The quantum future is an ally, bringing additional tools for both security and computation.
+Every privacy mechanism in nox is quantum-resistant by construction. FHE ciphertexts are lattice-based over the Goldilocks field. ZK proofs are hash-based STARKs. MPC uses Shamir sharing over $\mathbb{F}_p$. The arrival of quantum computers strengthens the privacy guarantees — quantum key distribution can further harden the MPC protocols, and the lattice assumptions underlying FHE are believed to be quantum-resistant. The quantum future is an ally, bringing additional tools for both security and computation.
 
 ### Privacy × AI
 
@@ -241,7 +241,7 @@ Together, the three pillars form a self-reinforcing cycle: privacy encourages co
 | Hardware | [[GFP]] `p2r` + `ntt` | GFP all four primitives | GFP `fma` + `lut` |
 | Enables | Permanent proofs + quantum chemistry | Genuine participation at scale | A graph that learns and discovers |
 
-Trinity is one product with three essential properties. Every CORE transaction is quantum-resilient, privacy-preserving, and AI-native — all flowing from the Goldilocks field, which makes them the same technology viewed from three angles.
+Trinity is one product with three essential properties. Every nox transaction is quantum-resilient, privacy-preserving, and AI-native — all flowing from the Goldilocks field, which makes them the same technology viewed from three angles.
 
 Quantum security and quantum advantage. Privacy through ZK, FHE, and MPC. Intelligence through field-native neural computation.
 

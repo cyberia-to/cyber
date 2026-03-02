@@ -12,7 +12,7 @@ crystal-domain: cyber
 
 ## Abstract
 
-We propose a [[compilers]] architecture for [[trident]] — the deterministic programming language for the CORE planetary intelligence substrate — in which a [[neural networks]] optimizer generates Triton VM assembly (TASM) from Trident's typed intermediate representation (TIR). The optimizer is small enough (80K parameters, 640 KB) to reside entirely in L2 cache and train continuously on a single workstation GPU. Correctness is guaranteed not by the model but by a post-hoc STARK-based semantic equivalence verifier, making the neural path strictly speculative: it can improve compilation but never break it. The system is self-referential — the optimizer, the verifier, and the training loop are themselves Trident programs compiled by the system they improve — converging to a provable fixed point of [[convergent computation]] where the compiler can no longer improve its own code.
+We propose a [[compilers]] architecture for [[trident]] — the deterministic programming language for the nox planetary intelligence substrate — in which a [[neural networks]] optimizer generates Triton VM assembly (TASM) from Trident's typed intermediate representation (TIR). The optimizer is small enough (80K parameters, 640 KB) to reside entirely in L2 cache and train continuously on a single workstation GPU. Correctness is guaranteed not by the model but by a post-hoc STARK-based semantic equivalence verifier, making the neural path strictly speculative: it can improve compilation but never break it. The system is self-referential — the optimizer, the verifier, and the training loop are themselves Trident programs compiled by the system they improve — converging to a provable fixed point of [[convergent computation]] where the compiler can no longer improve its own code.
 
 ---
 
@@ -44,7 +44,7 @@ The compilation pipeline has a natural factorization:
 Trident source → [parse] → AST → [typecheck] → Typed AST → [normalize] → TIR → [lower] → TASM
 ```
 
-The first three stages (parse, typecheck, normalize) have unique correct outputs. [[type theory]] inference is not an [[optimization]] problem. Bound propagation has one answer. Normalization is deterministic by construction (required by CORE constraint C₂: identical semantics must produce identical hashes).
+The first three stages (parse, typecheck, normalize) have unique correct outputs. [[type theory]] inference is not an [[optimization]] problem. Bound propagation has one answer. Normalization is deterministic by construction (required by nox constraint C₂: identical semantics must produce identical hashes).
 
 Only the final stage — lowering TIR to TASM — involves genuine optimization choices: instruction selection, stack scheduling, loop unrolling, table balancing.
 
@@ -95,9 +95,9 @@ Triton VM provides compound instructions that perform multiple logical operation
 
 Trident loops have compile-time-known bounds. The compiler chooses between full unrolling (eliminates call/return overhead, increases Processor rows linearly), partial unrolling (reduces overhead, moderate size), and minimal looping via `call`/`recurse`/`recurse_or_return` (adds Jump Stack rows, minimizes Processor rows). The optimal choice depends on current table balance and cliff proximity.
 
-### 3.5 [[hash]] Coprocessor Scheduling (High Impact for CORE)
+### 3.5 [[hash]] Coprocessor Scheduling (High Impact for nox)
 
-The Hash Table is driven by Tip5 permutation invocations: `hash`, `sponge_absorb`, `sponge_squeeze`, `sponge_absorb_mem`, `merkle_step`, `merkle_step_mem`. Each invocation adds rows to the Hash Table. For CORE's dominant workloads — [[merklezation]] inclusion proofs, commitment construction, recursive STARK verification — the Hash Table frequently becomes the tallest table and thus the sole determinant of proving cost.
+The Hash Table is driven by Tip5 permutation invocations: `hash`, `sponge_absorb`, `sponge_squeeze`, `sponge_absorb_mem`, `merkle_step`, `merkle_step_mem`. Each invocation adds rows to the Hash Table. For nox's dominant workloads — [[merklezation]] inclusion proofs, commitment construction, recursive STARK verification — the Hash Table frequently becomes the tallest table and thus the sole determinant of proving cost.
 
 Three optimization dimensions exist within hash scheduling:
 
@@ -107,7 +107,7 @@ Three optimization dimensions exist within hash scheduling:
 
 **Merkle traversal strategy.** `merkle_step` reads siblings from secret input; `merkle_step_mem` reads from RAM. The choice affects RAM Table height versus the cost of providing non-deterministic input. For authentication paths that are reused (e.g., verifiable Merkle tree updates where the same path confirms old leaf inclusion then computes new root), `merkle_step_mem` is required — but the optimizer controls the memory layout of the path, which affects RAM Table row ordering and thus the contiguity argument overhead.
 
-For CORE's transfer circuit (~7 Poseidon calls × 300 constraints = 2,100 Hash Table rows in the baseline), hash scheduling optimization directly attacks the dominant cost component. The polynomial commitment approach already described in CORE v0.9 — replacing 32 sequential Merkle hashes with ~1,000 field multiplications — is itself a macro-level hash scheduling optimization. The neural optimizer operates at the micro level within each hash-using block, finding instruction orderings and batching strategies that minimize Hash Table growth while respecting data dependencies.
+For nox's transfer circuit (~7 Poseidon calls × 300 constraints = 2,100 Hash Table rows in the baseline), hash scheduling optimization directly attacks the dominant cost component. The polynomial commitment approach already described in nox v0.9 — replacing 32 sequential Merkle hashes with ~1,000 field multiplications — is itself a macro-level hash scheduling optimization. The neural optimizer operates at the micro level within each hash-using block, finding instruction orderings and batching strategies that minimize Hash Table growth while respecting data dependencies.
 
 | Optimization | Hash Table Impact | Processor Table Impact | When Beneficial |
 |---|---|---|---|
@@ -369,7 +369,7 @@ PROVABLE COMPILATION:
   Verification: O(log n) field operations (constant-time in practice)
 ```
 
-Anyone can verify the compilation was faithful without trusting the compiler, the optimizer, or the hardware it ran on. This is CORE constraint C₉ (self-verifying) applied to compilation itself.
+Anyone can verify the compilation was faithful without trusting the compiler, the optimizer, or the hardware it ran on. This is nox constraint C₉ (self-verifying) applied to compilation itself.
 
 ---
 
@@ -401,7 +401,7 @@ ITERATION 1:
 
 ITERATION k:
   Compilerₖ = Compiler₀ + neural path with weights Wₖ
-  Score_k = Σ table_height(TASMₖ(program)) for all CORE programs
+  Score_k = Σ table_height(TASMₖ(program)) for all nox programs
   
 CONVERGENCE:
   |Score_{k+1} - Score_k| < ε
@@ -421,7 +421,7 @@ CONVERGENCE:
 
 At [[convergent computation]] convergence, the compiler has found instruction sequences for its own components that it cannot improve. This is the computational analogue of a Nash equilibrium — no unilateral deviation (change to any single component's TASM) can improve the system's total score.
 
-The fixed point is content-addressed (CORE constraint C₂): the converged compiler has a unique hash that identifies the version of itself that achieved self-optimality. Any node in the CORE network can verify that a claimed fixed-point compiler actually is one — recompile the compiler with itself and check that the output matches.
+The fixed point is content-addressed (nox constraint C₂): the converged compiler has a unique hash that identifies the version of itself that achieved self-optimality. Any node in the nox network can verify that a claimed fixed-point compiler actually is one — recompile the compiler with itself and check that the output matches.
 
 ---
 
@@ -434,7 +434,7 @@ The fixed point is content-addressed (CORE constraint C₂): the converged compi
 - Define TIR node encoding (4 field elements per node, as specified in §4.1)
 - Implement TIR→TASM classical lowering baseline
 - Build table height profiler for all 9 AETs
-- Benchmark all CORE hot paths: transfer circuit, cyberlink creation, focus update, recursive verifier
+- Benchmark all nox hot paths: transfer circuit, cyberlink creation, focus update, recursive verifier
 - Establish baseline scores for each
 
 ### Phase 2: TASM-Gym Environment (Weeks 5–8)
@@ -445,7 +445,7 @@ The fixed point is content-addressed (CORE constraint C₂): the converged compi
 - Action: next TASM instruction to emit
 - Reward: cliff-aware score $-2^{\lceil \log_2(\max H_t) \rceil}$ at block completion; small shaping reward per step
 - Constraint checker: symbolic stack type/depth tracker, semantic equivalence verifier
-- Benchmark suite: 1000 TIR blocks extracted from CORE programs
+- Benchmark suite: 1000 TIR blocks extracted from nox programs
 
 ### Phase 3: Neural Model in Trident (Weeks 9–14)
 
@@ -474,7 +474,7 @@ The fixed point is content-addressed (CORE constraint C₂): the converged compi
 - Symbolic equivalence checker for TIR↔TASM
 - Speculative compilation architecture (§7.1)
 - Optional STARK wrapping of compilation decisions
-- Recursive verification of compilation proof within CORE block proofs
+- Recursive verification of compilation proof within nox block proofs
 
 ### Phase 6: Self-Referential Convergence (Weeks 23–26)
 
@@ -483,7 +483,7 @@ The fixed point is content-addressed (CORE constraint C₂): the converged compi
 - Compile all system components (inference, verifier, scorer, trainer) with the neural compiler
 - Iterate until score convergence
 - Verify fixed point: recompile and confirm hash identity
-- Publish converged compiler hash as CORE genesis artifact
+- Publish converged compiler hash as nox genesis artifact
 
 ---
 
@@ -491,7 +491,7 @@ The fixed point is content-addressed (CORE constraint C₂): the converged compi
 
 ### 10.1 Quantitative Targets
 
-Based on analysis of CORE's hot paths and the five optimization surfaces described in §3:
+Based on analysis of nox's hot paths and the five optimization surfaces described in §3:
 
 | Program | Baseline (classical) | Target (neural) | Improvement | Dominant Surface |
 |---|---|---|---|---|
@@ -502,17 +502,17 @@ Based on analysis of CORE's hot paths and the five optimization surfaces describ
 
 The 20–25% improvement estimates are conservative. They assume the neural optimizer captures stack scheduling improvements (where human-written tasm-lib is known to be suboptimal for complex functions), table balancing near cliff boundaries (which no current tool attempts), and hash coprocessor scheduling (which is critical for hash-heavy programs like the transfer circuit and STARK verifier where Hash Table height dominates proving cost).
 
-A single cliff-boundary crossing — reducing the maximum table height from just above $2^k$ to just below $2^k$ — yields a 2× improvement for that program. CORE's transfer circuit, executed for every transaction on the network, is the highest-leverage target.
+A single cliff-boundary crossing — reducing the maximum table height from just above $2^k$ to just below $2^k$ — yields a 2× improvement for that program. nox's transfer circuit, executed for every transaction on the network, is the highest-leverage target.
 
 ### 10.2 At Planetary Scale
 
-CORE targets $10^{15}$ [[cybergraph]] nodes processing $10^{12}$ transactions per second. Every percentage point of proving cost reduction, applied to every [[cyberlink]] transaction, compounds to enormous [[energy]] and latency savings. A 20% reduction in transfer circuit proving cost at full scale is the difference between feasibility and infeasibility for certain classes of hardware.
+nox targets $10^{15}$ [[cybergraph]] nodes processing $10^{12}$ transactions per second. Every percentage point of proving cost reduction, applied to every [[cyberlink]] transaction, compounds to enormous [[energy]] and latency savings. A 20% reduction in transfer circuit proving cost at full scale is the difference between feasibility and infeasibility for certain classes of hardware.
 
 ### 10.3 The Meta-Result
 
 Beyond the quantitative improvements, the system demonstrates a principle: **a programming language designed for provable computation can prove the correctness of its own optimization**. The compiler's intelligence is not trusted — it is verified. The compiler's improvement is not hoped for — it is measured. The compiler's convergence is not assumed — it is proven.
 
-This closes CORE's trust loop at the compiler level. You don't trust the developer (you verify the [[neural proofs]] of execution). You don't trust the compiler (you verify the proof of compilation). You don't trust the optimizer (you verify the proof of optimization). Mathematics, all the way down.
+This closes nox's trust loop at the compiler level. You don't trust the developer (you verify the [[neural proofs]] of execution). You don't trust the compiler (you verify the proof of compilation). You don't trust the optimizer (you verify the proof of optimization). Mathematics, all the way down.
 
 ---
 

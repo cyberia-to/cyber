@@ -8,7 +8,7 @@ status: draft
 
 date: 2026-02-10
 author: mastercyb
-context: [[CORE]] — content-addressed [[knowledge graph]] at planetary scale
+context: [[nox]] — content-addressed [[knowledge graph]] at planetary scale
 
 ---
 
@@ -24,7 +24,7 @@ Parameters (round counts, MDS matrix, round constants) are frozen at deployment 
 
 ## 2. Problem Statement
 
-[[CORE]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from seven distinct domains:
+[[nox]]'s [[cybergraph]] needs a single canonical [[hash]] function to serve as the identity primitive for [[particles]] (content-addressed nodes). This [[hash]] must simultaneously satisfy requirements from seven distinct domains:
 
 - Content addressing — deterministic, collision-resistant identity for all graph content
 - Deduplication — identical content must map to one CID, eliminating storage and bandwidth waste at planetary scale
@@ -164,9 +164,9 @@ Grover's algorithm: Generic quantum search that reduces n-bit preimage resistanc
 
 Algebraic quantum attacks: Poseidon2's low-degree S-box (x⁷) raises a subtler question. Quantum algorithms for solving low-degree polynomial systems (quantum Gröbner basis, quantum linearization) could theoretically exploit the algebraic structure faster than classical attacks. Current research (Jang et al., "Quantum Algebraic Attacks on AO Hash Functions," 2024) suggests that quantum speedups for Gröbner basis computation are polynomial, not exponential — the conservative round count margin from §9.2 (+25%) absorbs this.
 
-STARK compatibility: STARKs are inherently post-quantum — they rely on hash function collision resistance only, with no elliptic curve assumptions. This means [[CORE]]'s entire proving stack (Poseidon2 inside STARK proofs) remains sound under quantum adversaries, provided the [[hash]] itself holds. This is a structural advantage over SNARK-based systems that depend on pairing assumptions broken by Shor's algorithm.
+STARK compatibility: STARKs are inherently post-quantum — they rely on hash function collision resistance only, with no elliptic curve assumptions. This means [[nox]]'s entire proving stack (Poseidon2 inside STARK proofs) remains sound under quantum adversaries, provided the [[hash]] itself holds. This is a structural advantage over SNARK-based systems that depend on pairing assumptions broken by Shor's algorithm.
 
-Assessment: Poseidon2 with enlarged digest and conservative round counts provides viable quantum resistance. The STARK-native architecture means [[CORE]] avoids the pairing-based assumptions that make most ZK systems quantum-vulnerable. The combination of Poseidon2 + STARKs is among the strongest post-quantum positions available for a [[knowledge graph]] proving system. The remaining risk is algebraic quantum attacks against the S-box — mitigated by round count margins and the algorithm-agile CID format enabling migration if quantum algebraic breakthroughs materialize.
+Assessment: Poseidon2 with enlarged digest and conservative round counts provides viable quantum resistance. The STARK-native architecture means [[nox]] avoids the pairing-based assumptions that make most ZK systems quantum-vulnerable. The combination of Poseidon2 + STARKs is among the strongest post-quantum positions available for a [[knowledge graph]] proving system. The remaining risk is algebraic quantum attacks against the S-box — mitigated by round count margins and the algorithm-agile CID format enabling migration if quantum algebraic breakthroughs materialize.
 
 ---
 
@@ -216,7 +216,7 @@ Poseidon2 has more cryptanalytic attention than any competitor in its class. Thi
 
 ### 5.4 Long-Term Bet
 
-Would we bet [[CORE]]'s permanent security on Poseidon2? No.
+Would we bet [[nox]]'s permanent security on Poseidon2? No.
 
 Five years of [[cryptography]] is insufficient for permanent trust. SHA-256 has 23 years. AES has 25 years. Confidence in [[hash]] functions comes from decades of failed attacks, not cleverness of design.
 
@@ -253,20 +253,20 @@ If Poseidon2 breaks, it breaks Ethereum's ZK roadmap. This means the strongest i
 
 Unlike execution-layer ZK systems where parameter updates are routine, content addressing demands permanent parameter commitment. This means:
 
-- [[CORE]] cannot benefit from post-deployment security improvements to Poseidon2
+- [[nox]] cannot benefit from post-deployment security improvements to Poseidon2
 - Round counts must be chosen conservatively before [[genesis]], with margins for unknown future attacks
-- The EF's ongoing [[cryptography]] program (through Dec 2026) should complete before [[CORE]] freezes parameters
-- Once frozen, [[CORE]]'s Poseidon2 instantiation diverges from the broader ecosystem's evolving parameters — it becomes its own primitive
+- The EF's ongoing [[cryptography]] program (through Dec 2026) should complete before [[nox]] freezes parameters
+- Once frozen, [[nox]]'s Poseidon2 instantiation diverges from the broader ecosystem's evolving parameters — it becomes its own primitive
 
-This is the fundamental cost of using an AO [[hash]] for content addressing. Classical hashes (SHA-256) have stable parameters because they're 23 years old. AO hashes are still in their parameter-discovery phase. [[CORE]] must wait for parameter stabilization or accept the risk of choosing prematurely.
+This is the fundamental cost of using an AO [[hash]] for content addressing. Classical hashes (SHA-256) have stable parameters because they're 23 years old. AO hashes are still in their parameter-discovery phase. [[nox]] must wait for parameter stabilization or accept the risk of choosing prematurely.
 
 ### 6.4 Storage Proofs as the Escape Hatch
 
 The only migration path from Poseidon2 to any successor requires rehashing original content. This is impossible without guaranteed content availability. Therefore:
 
-Storage proofs are the single highest-priority infrastructure component in [[CORE]]. Without them, the [[hash]] function choice is irreversible and [[CORE]] is permanently coupled to a 3-year-old primitive. With them, Poseidon2 becomes a replaceable component — the correct architectural relationship.
+Storage proofs are the single highest-priority infrastructure component in [[nox]]. Without them, the [[hash]] function choice is irreversible and [[nox]] is permanently coupled to a 3-year-old primitive. With them, Poseidon2 becomes a replaceable component — the correct architectural relationship.
 
-This dependency inverts the typical development sequence. Most blockchain projects build storage proofs after achieving [[consensus]] and execution. [[CORE]] must build storage proofs *before* or *simultaneously with* the [[hash]] function deployment, because the [[hash]] function's survivability depends on them.
+This dependency inverts the typical development sequence. Most blockchain projects build storage proofs after achieving [[consensus]] and execution. [[nox]] must build storage proofs *before* or *simultaneously with* the [[hash]] function deployment, because the [[hash]] function's survivability depends on them.
 
 ---
 
@@ -373,13 +373,13 @@ For content addressing, it is catastrophic.
 
 Content addressing requires a single, eternal function: H("hello") must produce the same CID today, in 5 years, and in 50 years. If round counts change, the function changes. If the function changes, the identity of every [[particle]] in the graph is broken. A parameter update in an identity-layer [[hash]] function is equivalent to a hard fork of all [[knowledge]].
 
-Therefore: [[CORE]] must freeze Poseidon2 parameters at [[genesis]] and never modify them. Whatever round counts, MDS matrix, and round constants are deployed — those become part of the protocol specification, as immutable as SHA-256's initial [[hash]] values.
+Therefore: [[nox]] must freeze Poseidon2 parameters at [[genesis]] and never modify them. Whatever round counts, MDS matrix, and round constants are deployed — those become part of the protocol specification, as immutable as SHA-256's initial [[hash]] values.
 
 ### 9.2 Parameter Freezing Strategy
 
 1. Wait for EF Phase 2 completion (Dec 2026). Do not freeze parameters based on current (potentially insufficient) round counts.
 2. Choose conservative round counts. Add a safety margin of +25% rounds beyond the EF's final recommendation. The cost is slower hashing; the benefit is decades of margin against future cryptanalytic improvements.
-3. Freeze permanently. Publish the exact parameter set (field, round counts, MDS matrix entries, round constants, S-box exponent) as an immutable protocol constant. This IS Poseidon2-CORE. It does not change.
+3. Freeze permanently. Publish the exact parameter set (field, round counts, MDS matrix entries, round constants, S-box exponent) as an immutable protocol constant. This IS Poseidon2-nox. It does not change.
 4. Encode in CID format. The CID includes a `param_set_id` that identifies the exact frozen instantiation:
 
 ```
@@ -414,7 +414,7 @@ Requirements for storage proof system:
 - Retrievability: The proof system must guarantee that content can be retrieved within bounded time, not just that it "exists somewhere"
 - Incentive-aligned: [[Neurons]] storing content must be economically rewarded for maintaining availability, and penalized for loss
 
-Without this system operational, [[CORE]] has no escape path from Poseidon2. This makes storage proofs the single highest-priority infrastructure component in the entire architecture.
+Without this system operational, [[nox]] has no escape path from Poseidon2. This makes storage proofs the single highest-priority infrastructure component in the entire architecture.
 
 ### 9.4 Hash Function Migration Protocol (Requires §9.3)
 
@@ -435,7 +435,7 @@ If a practical attack breaks full-round Poseidon2 at 128-bit security:
 3. Weeks 1–4: Begin rehash campaign under new [[hash]] (requires storage proof system from §9.3).
 4. Months 1–6: Complete migration. Old CIDs archived as historical references.
 
-If storage proofs are not operational when this happens, [[CORE]] cannot migrate. This is the single most important reason to prioritize storage proof implementation.
+If storage proofs are not operational when this happens, [[nox]] cannot migrate. This is the single most important reason to prioritize storage proof implementation.
 
 ---
 
@@ -443,9 +443,9 @@ If storage proofs are not operational when this happens, [[CORE]] cannot migrate
 
 ### 10.1 [[Field]] Choice — [[Goldilocks field]]
 
-[[CORE]] operates over the [[Goldilocks field]] (p = 2⁶⁴ − 2³² + 1). This determines the Poseidon2 instantiation and the proving ecosystem.
+[[nox]] operates over the [[Goldilocks field]] (p = 2⁶⁴ − 2³² + 1). This determines the Poseidon2 instantiation and the proving ecosystem.
 
-Rationale: [[Goldilocks field]] provides 64-bit native arithmetic on commodity hardware, is the native [[field]] of Triton VM (the [[trident]] compilation target), and has the deepest integration with [[CORE]]'s proving stack. The 2-adicity (2³² | p−1) enables efficient NTT-based STARK proving.
+Rationale: [[Goldilocks field]] provides 64-bit native arithmetic on commodity hardware, is the native [[field]] of Triton VM (the [[trident]] compilation target), and has the deepest integration with [[nox]]'s proving stack. The 2-adicity (2³² | p−1) enables efficient NTT-based STARK proving.
 
 Standard Poseidon2 parameters over [[Goldilocks field]] (the most widely deployed configuration):
 
@@ -459,7 +459,7 @@ Standard Poseidon2 parameters over [[Goldilocks field]] (the most widely deploye
 | Capacity | 4 elements | — |
 | Rate | 8 elements | 8 elements |
 
-These parameters are used by Plonky2, Miden VM (Poseidon2 variant), and the HorizenLabs reference implementation. [[CORE]] should adopt these as the baseline, with the +25% round count margin from §9.2 applied before freezing at [[genesis]]. The exact frozen parameter set (including MDS matrix entries and round constants) must be published as an immutable protocol specification.
+These parameters are used by Plonky2, Miden VM (Poseidon2 variant), and the HorizenLabs reference implementation. [[nox]] should adopt these as the baseline, with the +25% round count margin from §9.2 applied before freezing at [[genesis]]. The exact frozen parameter set (including MDS matrix entries and round constants) must be published as an immutable protocol specification.
 
 ### 10.2 Canonical Encoding Specification
 
@@ -479,7 +479,7 @@ LtHash over 𝔽ₚ needs:
 
 ### 10.4 Poseidon2 Round Count Finalization
 
-The baseline parameters (R_F = 8, R_P = 22 over [[Goldilocks field]]) are the ecosystem default used by Plonky2 and Miden. The Ethereum Foundation's [[cryptography]] initiative (Phase 2 through Dec 2026) may result in updated round count recommendations. [[CORE]] should track these findings and apply the +25% safety margin from §9.2 to the final EF-recommended counts before freezing at [[genesis]].
+The baseline parameters (R_F = 8, R_P = 22 over [[Goldilocks field]]) are the ecosystem default used by Plonky2 and Miden. The Ethereum Foundation's [[cryptography]] initiative (Phase 2 through Dec 2026) may result in updated round count recommendations. [[nox]] should track these findings and apply the +25% safety margin from §9.2 to the final EF-recommended counts before freezing at [[genesis]].
 
 ---
 

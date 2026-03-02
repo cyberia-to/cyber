@@ -24,7 +24,7 @@ No single cryptographic technology solves all three. Each technology in the tril
 
 ## Why One Is Not Enough
 
-Consider a concrete scenario: Alice wants to query the CORE knowledge graph for medical information without revealing her query, and she wants the result to be correct.
+Consider a concrete scenario: Alice wants to query the nox knowledge graph for medical information without revealing her query, and she wants the result to be correct.
 
 ZK alone can prove the result is correct, but cannot hide Alice's query from the node that processes it. The prover must see the inputs to generate the proof. Alice's medical query is exposed to whoever runs the computation.
 
@@ -65,13 +65,13 @@ Prove a statement is true without revealing why it is true.
 
 Mechanism: The prover generates a mathematical proof $\pi$ that a computation was executed correctly. The proof reveals only the public inputs and the result — nothing about the private witness (the secret data used during computation). Verification is fast: $O(\log n)$ work regardless of computation size.
 
-CORE uses [[STARKs]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every STARK in CORE operates over the [[Goldilocks field]] $\mathbb{F}_p$.
+nox uses [[STARKs]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every STARK in nox operates over the [[Goldilocks field]] $\mathbb{F}_p$.
 
-Where ZK appears in CORE:
+Where ZK appears in nox:
 
 Private transfers. A transaction proves that energy is conserved (total inputs = total outputs + fee) and that the sender owns the input records, without revealing amounts, sender identity, or receiver identity. The network sees only nullifiers (preventing double-spend) and commitments (encoding new records). The STARK proof guarantees conservation; the commitment scheme guarantees privacy. Circuit cost: ~44,000 constraints.
 
-Provable computation. Every state transition in CORE — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a STARK proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains consensus without requiring every node to redo every computation.
+Provable computation. Every state transition in nox — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a STARK proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains consensus without requiring every node to redo every computation.
 
 Selective disclosure. A [[neuron]] can prove properties about its state without revealing the state itself. "I have staked more than 10,000 FOCUS" is provable without revealing the exact stake. "My focus contribution to this subgraph exceeds the threshold for voting" is provable without revealing the contribution amount. These are range proofs and threshold proofs — standard ZK primitives composed from the same STARK infrastructure.
 
@@ -85,9 +85,9 @@ Compute on encrypted data without ever decrypting it.
 
 Mechanism: Data is encrypted under a public key. Arithmetic operations (addition, multiplication) can be performed directly on ciphertexts. The result, when decrypted, equals the result of performing the same operations on the plaintexts. The computer never sees the data — it operates entirely on encrypted values.
 
-CORE uses [[TFHE]] (Torus Fully Homomorphic Encryption) instantiated over the [[Goldilocks field]]. The ciphertext modulus $q$ equals the STARK field characteristic $p$. This is the critical design choice: the polynomial ring $R_p = \mathbb{F}_p[X]/(X^N + 1)$ used by FHE ciphertexts is a ring of polynomials with Goldilocks coefficients. FHE operations are natively field arithmetic — no cross-domain translation.
+nox uses [[TFHE]] (Torus Fully Homomorphic Encryption) instantiated over the [[Goldilocks field]]. The ciphertext modulus $q$ equals the STARK field characteristic $p$. This is the critical design choice: the polynomial ring $R_p = \mathbb{F}_p[X]/(X^N + 1)$ used by FHE ciphertexts is a ring of polynomials with Goldilocks coefficients. FHE operations are natively field arithmetic — no cross-domain translation.
 
-Where FHE appears in CORE:
+Where FHE appears in nox:
 
 Private queries. A user encrypts a search query and sends it to a [[cybergraph]] node. The node performs graph traversal and ranking computation entirely on ciphertexts. It returns an encrypted result. The node never sees what was queried or what was found. Only the user, holding the decryption key, can read the answer.
 
@@ -107,9 +107,9 @@ Multiple parties jointly compute a function without any party learning any other
 
 Mechanism: Each party holds a share of the secret data. The parties exchange messages according to a protocol. At the end, each party learns the output (or their share of it) and nothing else. The security guarantee is that no coalition smaller than a threshold can reconstruct any party's input.
 
-CORE uses Shamir secret sharing over $\mathbb{F}_p$ for threshold schemes and garbled circuits for general two-party computation. The hash function [[Poseidon2]] was chosen specifically for MPC compatibility — its $x^7$ power-map S-box has multiplicative depth 3, requiring only 3 communication rounds per hash evaluation in secret-shared protocols. Alternative hashes like [[Tip5]] use lookup-based S-boxes that are impossible to evaluate on secret-shared data without exponential overhead.
+nox uses Shamir secret sharing over $\mathbb{F}_p$ for threshold schemes and garbled circuits for general two-party computation. The hash function [[Poseidon2]] was chosen specifically for MPC compatibility — its $x^7$ power-map S-box has multiplicative depth 3, requiring only 3 communication rounds per hash evaluation in secret-shared protocols. Alternative hashes like [[Tip5]] use lookup-based S-boxes that are impossible to evaluate on secret-shared data without exponential overhead.
 
-Where MPC appears in CORE:
+Where MPC appears in nox:
 
 Threshold key management. The FHE decryption key is never held by a single party. Instead, it is split across multiple guardians via Shamir secret sharing. Decryption requires a threshold (e.g., 3-of-5) of guardians to cooperate. No individual guardian can decrypt anything alone. Key generation itself is performed via MPC — the key is born distributed and never exists in complete form on any single machine.
 
@@ -119,7 +119,7 @@ Private collective operations. Multiple neurons want to compute aggregate statis
 
 This is essential for collective intelligence: the network must be able to compute collective properties (aggregate focus, consensus rankings, total energy) from individual contributions (personal stakes, private links, encrypted values) without any party seeing the individual data.
 
-Distributed randomness. CORE needs unpredictable, unbiasable random values for PoUW challenge generation, STARK Fiat-Shamir challenges, and protocol parameter selection. An MPC-based distributed randomness beacon ensures no single party can predict or manipulate the output. The protocol uses Poseidon2 as the MPC-friendly commitment function — each participant commits to a random value, then all values are combined via MPC to produce the beacon output.
+Distributed randomness. nox needs unpredictable, unbiasable random values for PoUW challenge generation, STARK Fiat-Shamir challenges, and protocol parameter selection. An MPC-based distributed randomness beacon ensures no single party can predict or manipulate the output. The protocol uses Poseidon2 as the MPC-friendly commitment function — each participant commits to a random value, then all values are combined via MPC to produce the beacon output.
 
 The MPC blind spot: It requires liveness — all participating parties must be online and communicating. It does not produce a succinct proof for external verifiers. And the communication cost scales with the number of parties and the complexity of the function. For asynchronous computation (where parties contribute at different times), you need FHE. For proof of correctness that anyone can verify later, you need ZK.
 
@@ -147,7 +147,7 @@ Properties:
   - Proof is O(log n) to verify            (STARK)
 ```
 
-This works natively in CORE because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that STARK constraints express. The STARK proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
+This works natively in nox because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that STARK constraints express. The STARK proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
 
 ### ZK + MPC: Distributed Proving
 
@@ -185,7 +185,7 @@ Properties:
   - Any node can compute, none can decrypt (FHE + MPC)
 ```
 
-This is how CORE handles the FHE key management problem at scale. The network's FHE key is generated by an MPC ceremony at genesis (or periodically refreshed). The public key is known to everyone — anyone can encrypt. The secret key is distributed across guardians. Decryption requires threshold cooperation. No single point of failure. No trusted party.
+This is how nox handles the FHE key management problem at scale. The network's FHE key is generated by an MPC ceremony at genesis (or periodically refreshed). The public key is known to everyone — anyone can encrypt. The secret key is distributed across guardians. Decryption requires threshold cooperation. No single point of failure. No trusted party.
 
 ### ZK + FHE + MPC: The Full Trilateral
 
@@ -216,7 +216,7 @@ This is not a theoretical composition — it is a practical protocol where each 
 
 ## Privacy Tiers
 
-CORE doesn't require full trilateral privacy for every operation. Privacy is opt-in and escalating. Each tier activates more of the trilateral as the privacy requirements increase:
+nox doesn't require full trilateral privacy for every operation. Privacy is opt-in and escalating. Each tier activates more of the trilateral as the privacy requirements increase:
 
 ### Tier 0 — Transparent
 
@@ -236,7 +236,7 @@ Technologies: ZK with commitments and nullifiers.
 
 Mechanism: Records are Poseidon2 commitments: $\text{commit}(r) = \text{Poseidon2}(\text{particle}, \text{value}, \text{owner}, \text{nonce})$. Spending a record reveals only a nullifier (preventing double-spend) and creates new commitments. The STARK proof guarantees conservation ($\sum \text{inputs} = \sum \text{outputs} + \text{fee}$) without revealing individual values or owners.
 
-Use case: Every standard CORE transaction. This is the baseline — the minimum privacy level for all economic activity on the network.
+Use case: Every standard nox transaction. This is the baseline — the minimum privacy level for all economic activity on the network.
 
 What is hidden: Record values, record owners, transaction graph (who paid whom).
 
@@ -297,7 +297,7 @@ SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but requi
 
 ### Why TFHE, not BGV/CKKS
 
-BGV and CKKS support SIMD-style batching (packing many plaintexts into one ciphertext) which can be faster for matrix operations. But TFHE's Programmable Bootstrapping is uniquely powerful: it evaluates an arbitrary function during noise refresh, eliminating the need for separate bootstrapping and evaluation steps. For CORE, where the primary FHE workload is function evaluation (activations, S-boxes, comparisons), TFHE's PBS is the right primitive. And when instantiated over Goldilocks, PBS uses the same lookup table as the STARK and the neural network — the [[rosetta stone]] identity.
+BGV and CKKS support SIMD-style batching (packing many plaintexts into one ciphertext) which can be faster for matrix operations. But TFHE's Programmable Bootstrapping is uniquely powerful: it evaluates an arbitrary function during noise refresh, eliminating the need for separate bootstrapping and evaluation steps. For nox, where the primary FHE workload is function evaluation (activations, S-boxes, comparisons), TFHE's PBS is the right primitive. And when instantiated over Goldilocks, PBS uses the same lookup table as the STARK and the neural network — the [[rosetta stone]] identity.
 
 ### Why Poseidon2, not SHA-256 or Tip5
 
@@ -307,7 +307,7 @@ This is the defining pattern of the trilateral: every component is chosen for cr
 
 ### Why Goldilocks, not BN254 or BabyBear
 
-BN254 is the standard SNARK field — optimized for elliptic curve pairings that CORE doesn't use (and that quantum computers break). BabyBear (31-bit) is faster per-operation but too small for meaningful FHE (ciphertext noise requires >32-bit modulus). Goldilocks is the sweet spot: 64-bit (fits in one CPU register), prime (proper field structure), NTT-friendly ($2^{32}$ roots of unity for both STARK and FHE), and large enough for FHE noise management. No other field satisfies all four constraints simultaneously.
+BN254 is the standard SNARK field — optimized for elliptic curve pairings that nox doesn't use (and that quantum computers break). BabyBear (31-bit) is faster per-operation but too small for meaningful FHE (ciphertext noise requires >32-bit modulus). Goldilocks is the sweet spot: 64-bit (fits in one CPU register), prime (proper field structure), NTT-friendly ($2^{32}$ roots of unity for both STARK and FHE), and large enough for FHE noise management. No other field satisfies all four constraints simultaneously.
 
 ---
 
