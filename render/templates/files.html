@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}Files — {{ site.title }}{% endblock %}
-{% block description %}All files sorted by PageRank{% endblock %}
+{% block description %}All files sorted by focus{% endblock %}
 
 {% block content %}
 <div class="pages-discovery">
@@ -11,7 +11,7 @@
         <th class="col-rank">#</th>
         <th class="col-title">file</th>
         <th class="col-size">size</th>
-        <th class="col-pagerank">rank</th>
+        <th class="col-pagerank">π%</th>
         <th class="col-links">links</th>
       </tr>
     </thead>

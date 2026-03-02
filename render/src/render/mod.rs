@@ -468,7 +468,7 @@ fn format_size(bytes: u64) -> String {
     }
 }
 
-/// Render the unified /files page — all public pages sorted by PageRank with size column.
+/// Render the unified /files page — all public pages sorted by focus (π) with size column.
 fn render_files_page(
     store: &PageStore,
     config: &SiteConfig,
@@ -479,7 +479,7 @@ fn render_files_page(
         .into_iter()
         .map(|p| {
             let backlink_count = store.backlinks.get(&p.id).map(|b| b.len()).unwrap_or(0);
-            let pr = store.pagerank.get(&p.id).copied().unwrap_or(0.0);
+            let focus = store.focus.get(&p.id).copied().unwrap_or(0.0);
             let size = if p.source_path.as_os_str().is_empty() {
                 0u64
             } else {
@@ -487,18 +487,18 @@ fn render_files_page(
                     .map(|m| m.len())
                     .unwrap_or(0)
             };
-            (p, backlink_count, pr, size)
+            (p, backlink_count, focus, size)
         })
         .collect();
 
-    // Sort by PageRank descending
+    // Sort by focus descending
     pages.sort_by(|a, b| b.2.partial_cmp(&a.2).unwrap_or(std::cmp::Ordering::Equal));
 
     let files_data: Vec<_> = pages
         .iter()
         .enumerate()
-        .map(|(i, (p, backlinks, pr, size))| {
-            let pr_display = format!("{:.2}", pr * 1000.0);
+        .map(|(i, (p, backlinks, focus, size))| {
+            let focus_display = format!("{:.2}", focus * 100.0);
             let size_display = format_size(*size);
             let file_title = match p.kind {
                 crate::parser::PageKind::Page | crate::parser::PageKind::Journal => format!("{}.md", p.meta.title),
@@ -509,7 +509,7 @@ fn render_files_page(
                 title => file_title,
                 url => format!("/{}", p.id),
                 backlinks => *backlinks,
-                pagerank => pr_display,
+                pagerank => focus_display,
                 size => size_display,
                 tags => p.meta.tags.clone(),
                 icon => p.meta.icon.clone(),
