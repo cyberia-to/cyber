@@ -2,10 +2,10 @@
 tags: cyber, article, cip
 crystal-type: pattern
 crystal-domain: cyber
-alias: epistemic quality, truth tracking
+alias: epistemic correctness, epistemic quality, truth tracking
 stake: 28558835390456748
 ---
-# epistemic correctness
+# epistemology
 
 ## 1. two kinds of correctness
 
