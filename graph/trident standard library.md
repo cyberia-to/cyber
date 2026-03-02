@@ -73,7 +73,7 @@ std.field
 │   ├── interp      Lagrange interpolation
 │   ├── ntt         [[NTT]] — Number Theoretic Transform (FFT over F_p)
 │   ├── inv_ntt     Inverse NTT
-│   └── commit      Polynomial commitment (FRI)
+│   └── commit      Polynomial commitment (WHIR)
 ├── matrix          Matrix operations over F_p and extensions
 │   ├── mul         Matrix multiplication
 │   ├── transpose   Transpose
@@ -223,7 +223,7 @@ std.crypto
 ├── merkle          Merkle tree operations (shared with std.data.tree)
 ├── nullifier       Nullifier computation (for UTXO privacy)
 ├── proof           STARK proof primitives
-│   ├── fri         FRI protocol components
+│   ├── whir        WHIR protocol components
 │   ├── air         Algebraic Intermediate Representation
 │   ├── verify      STARK verifier (for recursive proofs)
 │   └── recursive   Recursive proof composition

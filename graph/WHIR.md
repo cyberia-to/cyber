@@ -90,16 +90,15 @@ all three are by the same team: Arnon, Chiesa, Fenzi, Yogev. each generation kee
 
 ## use in cyber
 
-WHIR represents the end of the FRI evolution path for [[cyber]]:
+[[cyber]] uses WHIR. sub-millisecond verification makes recursive proof composition cheaper: each recursive step (verify a proof inside a proof) runs the verifier as a [[nox]] program. faster verification = fewer constraints per recursive step = cheaper aggregation.
 
 ```
-current:   FRI   — ~100-200 KB proofs, ~3.9 ms verification
-upgrade 1: STIR  — ~60-120 KB proofs, ~3.8 ms verification
-upgrade 2: WHIR  — ~60-120 KB proofs, ~1.0 ms verification
-
-all upgrades are Layer 4 swaps — architecture unchanged
+WHIR in cyber:
+  polynomial commitments:  WHIR_commit / WHIR_open / WHIR_verify
+  STARK verification:      WHIR as the low-degree test
+  EdgeSet membership:      WHIR evaluation proofs
+  proof size:              ~60-120 KB
+  verification:            ~1.0 ms (sub-millisecond at 100-bit: 290 μs)
 ```
-
-WHIR's sub-millisecond verification makes recursive proof composition cheaper: each recursive step (verify a proof inside a proof) runs the verifier as a [[nox]] program. faster verification = fewer constraints per recursive step = cheaper aggregation.
 
 see [[FRI]] for the baseline protocol, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system, [[Goldilocks field]] for the arithmetic foundation

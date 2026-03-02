@@ -119,11 +119,11 @@ PRIVATE WITNESS (via hint):
 
 CONSTRAINTS:
 
-1. Identity:   Hemera(secret) ∈ neuron_set          ~1,000 (FRI membership)
+1. Identity:   Hemera(secret) ∈ neuron_set          ~1,000 (WHIR membership)
    prove the secret hashes to a registered neuron address
    without revealing which address
 
-2. Stake:      stake(Hemera(secret)) ≥ weight        ~1,000 (FRI lookup)
+2. Stake:      stake(Hemera(secret)) ≥ weight        ~1,000 (WHIR lookup)
    prove the neuron has sufficient stake
    without revealing total stake or neuron identity
 

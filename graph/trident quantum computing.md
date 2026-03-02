@@ -182,7 +182,7 @@ The magnitude of the speedup depends on the constraint system:
 | Witness search (brute force) | $O(N)$ | $O(\sqrt{N})$ | Quadratic |
 | [[NTT]]/[[polynomial]] evaluation | $O(n \log n)$ | $O(n)$ | Logarithmic factor |
 | Merkle tree construction | $O(n)$ hash calls | $O(n)$ hash calls | None (already optimal) |
-| FRI protocol (commitment) | $O(n \log n)$ | $O(n)$ with quantum [[NTT]] | Logarithmic factor |
+| WHIR protocol (commitment) | $O(n \log n)$ | $O(n)$ with quantum [[NTT]] | Logarithmic factor |
 
 For complex programs where witness search dominates prover time — common in applications like private transactions, identity verification, and complex financial logic — the quadratic Grover speedup is transformative.
 
@@ -251,8 +251,8 @@ Concretely, a hybrid prover could:
 1. Classically compile the [[trident]] program to an arithmetic [[circuit]]
 2. Classically compute the execution trace for deterministic portions
 3. Quantumly search for witnesses where `divine()` calls require expensive search
-4. Classically perform the FRI commitment scheme
-5. Quantumly accelerate the [[NTT]] computations within FRI
+4. Classically perform the WHIR commitment scheme
+5. Quantumly accelerate the [[NTT]] computations within WHIR
 
 Each step operates over the same [[field]] $\mathbb{F}_p$. Data passes between classical and quantum processors as [[field]] elements — no encoding/decoding overhead.
 

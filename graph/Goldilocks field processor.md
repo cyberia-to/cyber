@@ -53,7 +53,7 @@ These are not design choices — they are what survives when you ask "what opera
 ```
                           fma    ntt    p2r    lut
                          ─────  ─────  ─────  ─────
-STARK proving (FRI)        ██     ███    ██     █
+STARK proving (WHIR)       ██     ███    ██     █
 BBG authentication         █      █      ███    
 Tri-kernel focus           ███    ██     █      
 Private transfer (ZK)      ██     █      ███    █
@@ -98,7 +98,7 @@ The four primitives are mathematically necessary:
 
 1. fma: Field arithmetic IS the computation model. nox's 16 patterns reduce to field ops. This cannot change without changing the field — which would break every existing proof, commitment, and hash. The field is a genesis parameter.
 
-2. ntt: [[NTT]] is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by [[STARK]] (FRI), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
+2. ntt: [[NTT]] is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by [[STARK]] ([[WHIR]]), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
 
 3. p2r: Algebraic hashing over $\mathbb{F}_p$ requires a permutation with high algebraic degree. [[Poseidon2]] MDS matrix + $x^7$ S-box is the current optimal choice. Even if the hash function changes (Poseidon3, Griffin, Anemoi), the hardware primitive is the same: full-width permutation over $\mathbb{F}_p^t$ with a power-map nonlinearity. The round function hardware is parametrizable.
 
@@ -234,7 +234,7 @@ Design principles:
 |-----------|-------|-----------|
 | FMA units | 256 | 16 clusters × 16 units. Matches typical STARK trace width |
 | Clock target | 1-2 GHz | Conservative for 7nm/5nm process |
-| NTT max size | $2^{15}$ in-place | Covers TFHE (N=2048), FRI layer sizes |
+| NTT max size | $2^{15}$ in-place | Covers TFHE (N=2048), WHIR layer sizes |
 | Poseidon2 width | 12 F_p elements | Standard Poseidon2 state (t=12) |
 | Poseidon2 throughput | ~12M perms/sec | At 1.5 GHz: 1.5G/22 cycles × pipeline depth 4 |
 | Lookup tables | 4 active, 64K entries each | ReLU, sigmoid, S-box, custom — hot-swappable |
@@ -319,18 +319,18 @@ PHASE 1: FIELD ARITHMETIC (40% of constraints)
 
 PHASE 2: NTT POLYNOMIAL OPERATIONS (35% of constraints)
 ────────────────────────────────────────────────────────
-  // Polynomial multiplication simulating FRI folding
+  // Polynomial multiplication simulating WHIR folding
   
   poly_a ← encode_as_polynomial(state, degree=N)
   poly_b ← encode_as_polynomial(state ⊕ challenge, degree=N)
   poly_c ← NTT_multiply(poly_a, poly_b)    // Forward NTT, pointwise, inverse NTT
   
-  // FRI-style folding
+  // WHIR-style folding
   for layer in 0..log(N):
     poly_c ← fri_fold(poly_c, challenge_hash(layer))
   
   // This exercises NTT engine in the exact pattern of
-  // STARK FRI commitment + FHE polynomial multiply
+  // STARK WHIR commitment + FHE polynomial multiply
 
 PHASE 3: POSEIDON2 HASHING (15% of constraints)
 ────────────────────────────────────────────────
@@ -394,7 +394,7 @@ VERIFICATION (by any node):
 
 Why proof-of-proof, not just proof-of-evaluation:
 
-The STARK proof π itself requires producing an execution trace, committing it via FRI (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
+The STARK proof π itself requires producing an execution trace, committing it via WHIR (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
 
 Verification is O(log n) — any light client can verify in milliseconds. This satisfies compute-verify symmetry.
 
@@ -608,7 +608,7 @@ nox's PoUW is fundamentally different: the puzzle and the utility are algebraica
 MINING OPERATION              ↔    UTILITY OPERATION
 ═══════════════                    ═══════════════════
 Phase 1: Matrix-vector FMA    ↔    Tri-kernel focus step
-Phase 2: NTT polynomial mul   ↔    FRI commitment / FHE CMUX
+Phase 2: NTT polynomial mul   ↔    WHIR commitment / FHE CMUX
 Phase 3: Poseidon2 Merkle     ↔    BBG state authentication
 Phase 4: Lookup evaluation    ↔    NN activation / PBS test poly
 STARK proof generation        ↔    Transaction proving

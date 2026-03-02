@@ -161,7 +161,7 @@ All cryptographic primitives as nox programs.
 |-------------|------|
 | [[Poseidon2]] sponge + compression | Matches test vectors, constant-time |
 | Merkle tree operations | 32-level proof verified in nox |
-| Polynomial commitments (KZG/FRI) | Binding + hiding proofs checked |
+| Polynomial commitments (WHIR) | Binding + hiding proofs checked |
 | LtHash for collection state | Add/remove = O(1), matches reference |
 
 CID format locked: [version, algo, params, field, len, digest] — 45 bytes for Goldilocks. Commitment layers: L0 (identity) → L1 (collection) → L2 (global) → L3 (indices).

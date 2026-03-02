@@ -15,11 +15,11 @@ the science of proving things without revealing them. [[cyber]] reduces its enti
 ┌──────────────────────────────────────────────────────────────────┐
 │  APPLICATION        identity, communication, privacy, consensus   │
 ├──────────────────────────────────────────────────────────────────┤
-│  PROOF SYSTEM       STARK (FRI → STIR → WHIR)                    │
+│  PROOF SYSTEM       STARK (WHIR)                                  │
 ├──────────────────────────────────────────────────────────────────┤
 │  DATA STRUCTURES    NMT, MMR, SWBF, EdgeSet, LogUp               │
 ├──────────────────────────────────────────────────────────────────┤
-│  COMMITMENTS        polynomial commitments (FRI-based)            │
+│  COMMITMENTS        polynomial commitments (WHIR-based)           │
 ├──────────────────────────────────────────────────────────────────┤
 │  HASH               Hemera (Poseidon2-Goldilocks)                 │
 ├──────────────────────────────────────────────────────────────────┤
@@ -64,9 +64,9 @@ the only assumption: collision resistance of [[Hemera]]. no elliptic curves, no 
 bind to a value without revealing it, then reveal later with proof. [[cyber]] uses two forms:
 
 - hash commitment: `H_commit(value ‖ randomness)` — the basis of [[record]] privacy in the [[mutator set]]
-- [[polynomial commitment]]: FRI-based, enables membership proofs over committed sets ([[EdgeSet]])
+- [[polynomial commitment]]: [[WHIR]]-based, enables membership proofs over committed sets ([[EdgeSet]])
 
-see [[polynomial commitment]] for the FRI-based scheme, [[BBG]] for how commitments compose into the graph state
+see [[polynomial commitment]] for the WHIR-based scheme, [[BBG]] for how commitments compose into the graph state
 
 ## proof systems
 
@@ -76,12 +76,12 @@ prove a statement is true without revealing anything beyond the truth of the sta
 
 see [[cyber/proofs]] for the complete proof taxonomy (25+ proof types), [[STARK]] for the proof system
 
-### [[FRI]] → [[STIR]] → [[WHIR]]
+### [[WHIR]]
 
-the evolution of Reed-Solomon proximity testing — the core building block of STARKs:
+[[cyber]] uses [[WHIR]] (Weights Help Improving Rate) — the third generation of Reed-Solomon proximity testing, evolved from [[FRI]] (2018) through [[STIR]] (2024). sub-millisecond verification, 157 KiB proofs, post-quantum, no trusted setup.
 
 ```
-FRI (2018)    →   STIR (2024)     →   WHIR (2024/2025)
+FRI (2018)    →   STIR (2024)     →   WHIR (2025) ← cyber
 baseline           fewer queries        richest queries
 306 KiB proofs     160 KiB proofs       157 KiB proofs
 3.9 ms verify      3.8 ms verify        1.0 ms verify
@@ -102,7 +102,7 @@ cryptographic structures that authenticate the [[cybergraph]] state:
 | [[NMT]] | namespace completeness proofs | Celestia (2023) |
 | [[MMR]] | append-only UTXO history | Grin, [[neptune]] (2019) |
 | [[SWBF]] | private double-spend prevention | [[neptune]] (2024) |
-| [[EdgeSet]] | edge membership via polynomial commitment | [[FRI]]/Plonky2 (2022) |
+| [[EdgeSet]] | edge membership via polynomial commitment | [[WHIR]] (evolved from [[FRI]]/Plonky2) |
 | [[LogUp]] | cross-index consistency | Polygon, Scroll (2023) |
 | [[mutator set]] | combined AOCL + SWBF for UTXO privacy | [[neptune]] (2024) |
 
@@ -159,7 +159,7 @@ H_edge(x)        = Hemera(0x01 ‖ x)    edge hashing
 H_commit(x)      = Hemera(0x02 ‖ x)    record commitments
 H_nullifier(x)   = Hemera(0x03 ‖ x)    SWBF index derivation
 H_merkle(x)      = Hemera(0x04 ‖ x)    NMT and MMR nodes
-H_fiat_shamir(x) = Hemera(0x05 ‖ x)    FRI/STIR challenges
+H_fiat_shamir(x) = Hemera(0x05 ‖ x)    WHIR challenges
 H_transcript(x)  = Hemera(0x06 ‖ x)    proof transcript binding
 ```
 

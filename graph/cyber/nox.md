@@ -297,7 +297,7 @@ five jets. selected by analyzing the [[STARK]] verifier bottleneck: recursive pr
 ║  Horner evaluation of degree-N polynomial at a single point               ║
 ║  Pure equivalent: ~2N patterns (N muls + N adds)                          ║
 ║  Jet cost: N                                                              ║
-║  Accelerates: FRI query verification, constraint evaluation               ║
+║  Accelerates: WHIR query verification, constraint evaluation              ║
 ║                                                                           ║
 ║  JET 2: MERKLE_VERIFY                                                     ║
 ║  merkle_verify(root, leaf, path, index) → {0, 1}                         ║
@@ -311,14 +311,14 @@ five jets. selected by analyzing the [[STARK]] verifier bottleneck: recursive pr
 ║  One round of FRI folding: split by parity, combine with challenge        ║
 ║  Pure equivalent: ~N patterns (N/2 muls + N/2 adds + restructuring)       ║
 ║  Jet cost: N/2                                                            ║
-║  Accelerates: FRI verification (log(N) folding rounds)                    ║
+║  Accelerates: WHIR verification (log(N) folding rounds)                   ║
 ║                                                                           ║
 ║  JET 4: NTT                                                               ║
 ║  ntt(values, direction) → transformed values                              ║
 ║  Number Theoretic Transform (forward or inverse) over F_p                 ║
 ║  Pure equivalent: ~2N·log(N) patterns (butterfly operations)              ║
 ║  Jet cost: N·log(N)                                                       ║
-║  Accelerates: polynomial multiplication, FRI commitment, proof aggregation║
+║  Accelerates: polynomial multiplication, WHIR commitment, proof aggregation║
 ║                                                                           ║
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
@@ -343,7 +343,7 @@ Parse proof             │     ~1,000   │    ~1,000  │  1×
 Fiat-Shamir challenges  │    ~30,000   │    ~5,000  │  6×
 Merkle verification     │   ~500,000   │   ~50,000  │ 10×
 Constraint evaluation   │    ~10,000   │    ~3,000  │  3×
-FRI verification        │    ~50,000   │   ~10,000  │  5×
+WHIR verification       │    ~50,000   │   ~10,000  │  5×
 ────────────────────────┼──────────────┼────────────┼──────────
 TOTAL                   │   ~600,000   │   ~70,000  │ ~8.5×
 ```

@@ -71,7 +71,7 @@ different uses of Hemera are separated at the input, not the output:
 | `0x02` | record commitments |
 | `0x03` | nullifier derivation |
 | `0x04` | Merkle internal nodes (NMT, MMR) |
-| `0x05` | Fiat-Shamir challenges (FRI/STIR) |
+| `0x05` | Fiat-Shamir challenges (WHIR) |
 | `0x06` | proof transcript binding |
 
 `H_edge(x) = Hemera(0x01 ∥ x)`. particle content addressing uses no prefix — bare content in, address out. the particle address space is the default

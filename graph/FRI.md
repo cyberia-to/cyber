@@ -37,7 +37,7 @@ SECURITY: soundness error ≈ (max_degree/|F|)^{num_queries}
 
 ## use in cyber
 
-[[cyber]] uses FRI for three purposes:
+[[cyber]] uses [[WHIR]] — the third generation of the FRI family — for three purposes:
 
 | purpose | what is committed | where |
 |---|---|---|
@@ -82,6 +82,6 @@ baseline           fewer queries        richest queries
 CRYPTO 2018        CRYPTO 2024 (BP)     EUROCRYPT 2025
 ```
 
-all three generations maintain the same interface: Reed-Solomon proximity testing. [[cyber]] designs for FRI with an upgrade path through [[STIR]] to [[WHIR]] — all layers above the proof system remain unchanged.
+all three generations maintain the same interface: Reed-Solomon proximity testing. [[cyber]] uses [[WHIR]] — the final generation. all layers above the proof system remain unchanged from the FRI interface.
 
-see [[STIR]] for rate improvement (fewer queries), [[WHIR]] for weight polynomials (fastest verification), [[polynomial commitment]] for the commitment scheme built on FRI, [[EdgeSet]] for edge membership proofs, [[STARK]] for the proof system, [[BBG]] for the graph architecture, [[Goldilocks field]] for the arithmetic foundation
+see [[WHIR]] for what [[cyber]] uses, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[EdgeSet]] for edge membership proofs, [[STARK]] for the proof system, [[BBG]] for the graph architecture, [[Goldilocks field]] for the arithmetic foundation

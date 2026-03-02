@@ -40,7 +40,7 @@ execution             │ correct execution          │ nox program ran correct
 data structures       │ Merkle inclusion           │ element exists in tree                   │ ~9,600
                       │ polynomial inclusion       │ element exists in committed polynomial   │ ~1,000
                       │ non-membership             │ element is absent from set               │ ~3,000
-                      │ FRI low-degree             │ committed polynomial has bounded degree  │ ~10,000
+                      │ WHIR low-degree            │ committed polynomial has bounded degree  │ ~10,000
 ──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
 storage &             │ storage                    │ content bytes exist on specific node     │ ~5,000
 availability          │ size                       │ claimed content size matches actual bytes │ ~2,000
@@ -99,7 +99,7 @@ STARK VERIFIER COMPONENTS       │ Layer 1 only │ With Layer 3 jets
 2. Fiat-Shamir challenges       │    ~30,000   │    ~5,000  (hash jet)
 3. Merkle verification          │   ~500,000   │   ~50,000  (merkle_verify jet)
 4. Constraint evaluation        │    ~10,000   │    ~3,000  (poly_eval jet)
-5. FRI verification             │    ~50,000   │   ~10,000  (fri_fold + ntt jets)
+5. WHIR verification            │    ~50,000   │   ~10,000  (fri_fold + ntt jets)
 ────────────────────────────────┼──────────────┼──────────────────
 TOTAL                           │   ~600,000   │   ~70,000
 
@@ -139,8 +139,8 @@ see [[cyber/identity]] for the full specification.
 
 a [[neuron]] proves it is valid, has sufficient [[stake]], and has not double-linked — without revealing which neuron it is. the circuit (~13,000 constraints) covers:
 
-1. identity: `Hemera(secret) ∈ neuron_set` (~1,000 via FRI membership)
-2. stake: `stake(Hemera(secret)) ≥ weight` (~1,000 via FRI lookup)
+1. identity: `Hemera(secret) ∈ neuron_set` (~1,000 via WHIR membership)
+2. stake: `stake(Hemera(secret)) ≥ weight` (~1,000 via WHIR lookup)
 3. nullifier: `nullifier == Hemera(secret ∥ source ∥ target)` (~300)
 4. freshness: `nullifier ∉ spent_set` (~3,000 via SWBF check)
 
@@ -192,11 +192,11 @@ state root update            │ ~9,600       │ ~1,000
 completeness (nothing hidden)│ impossible   │ ~10,000
 ```
 
-polynomial commitments use FRI (Fast Reed-Solomon Interactive Oracle Proofs) for low-degree testing. FRI proofs demonstrate that a committed polynomial has bounded degree — the foundation for all [[BBG]] operations.
+polynomial commitments use [[WHIR]] (the third generation of [[FRI]]) for low-degree testing. WHIR proofs demonstrate that a committed polynomial has bounded degree — the foundation for all [[BBG]] operations.
 
 ## storage and availability proofs
 
-at planetary scale, content loss is the existential risk. if the content behind a [[particle]] hash is lost, the particle is dead — its identity exists but its meaning is gone. five proof types prevent this:
+at planetary scale, content loss is the existential risk. if the content behind a [[particle]] hash is lost, the particle is dead — its identity exists but its meaning is gone. six proof types prevent this:
 
 | proof | what it guarantees | mechanism |
 |---|---|---|

@@ -137,7 +137,7 @@ result[0] = inv_all
 
 **Identity**: For a known evaluation domain $D = \{d_1, \ldots, d_n\}$, the vanishing polynomial $Z_D(x) = \prod (x - d_i)$ has special structure. When $D$ is a coset of a multiplicative subgroup (common in STARKs), $Z_D$ can be computed in $O(\log n)$ instead of $O(n)$.
 
-**Compiler use**: When the program evaluates a polynomial over a structured domain, the compiler detects the structure and uses the fast vanishing polynomial. This is critical for FRI-related computations in the STARK prover itself.
+**Compiler use**: When the program evaluates a polynomial over a structured domain, the compiler detects the structure and uses the fast vanishing polynomial. This is critical for WHIR-related computations in the STARK prover itself.
 
 ### Pass 10: Lagrange Basis Caching
 
@@ -446,7 +446,7 @@ defer_proof {
   let z = x + y;
 }
 // One STARK proof for the entire block, not three separate proofs
-// Amortizes fixed proving overhead (FRI commitment, grinding)
+// Amortizes fixed proving overhead (WHIR commitment, grinding)
 ```
 
 The developer controls proof granularity. Fine-grained proofs for high-security operations, batched proofs for throughput-critical paths.
@@ -458,10 +458,10 @@ let proof_v1 = prove(program_v1, input);
 
 // Program changes slightly (one branch modified)
 let proof_v2 = prove_delta(proof_v1, diff(program_v1, program_v2), input);
-// Only re-proves affected AET rows, reuses unaffected FRI layers
+// Only re-proves affected AET rows, reuses unaffected WHIR layers
 ```
 
-When a program changes slightly, the STARK proof can be incrementally updated. Only the affected table rows are recomputed; unaffected FRI layers are reused. The developer controls this via `prove_delta`.
+When a program changes slightly, the STARK proof can be incrementally updated. Only the affected table rows are recomputed; unaffected WHIR layers are reused. The developer controls this via `prove_delta`.
 
 ## 6.3 Speculative Execution with Proof Rollback
 

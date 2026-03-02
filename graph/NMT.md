@@ -84,7 +84,7 @@ the [[BBG]] maintains six NMT indexes over the same edge and [[token]] data:
 | coins | denom_hash | fungible [[token]] supply records |
 | cards | card_id | non-fungible knowledge assets |
 
-within each NMT leaf, an [[EdgeSet]] ([[polynomial commitment]] via [[FRI]]) stores the actual edge hashes. the NMT provides completeness ("all edges for this namespace"). the EdgeSet provides efficient membership ("this edge belongs to this set").
+within each NMT leaf, an [[EdgeSet]] ([[polynomial commitment]] via [[WHIR]]) stores the actual edge hashes. the NMT provides completeness ("all edges for this namespace"). the EdgeSet provides efficient membership ("this edge belongs to this set").
 
 ## data availability sampling
 

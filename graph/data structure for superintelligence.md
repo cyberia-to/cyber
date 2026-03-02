@@ -27,10 +27,10 @@ Five ontological primitives ([[particle]], [[cyberlink]], [[neuron]], [[token]],
 | Namespaced Merkle Tree (NMT) | Graph completeness proofs | Celestia (2023—) |
 | Merkle Mountain Range (MMR) | Append-only UTXO history | Grin, Neptune (2019—) |
 | Sliding-Window Bloom Filter (SWBF) | Private double-spend prevention | Neptune (2024—) |
-| FRI Polynomial Commitments | Edge membership & batch proofs | Plonky2, Stwo (2022—) |
+| WHIR Polynomial Commitments | Edge membership & batch proofs | FRI/Plonky2 (2022—), WHIR (2025) |
 | LogUp Lookup Arguments | Cross-index consistency | Polygon, Scroll (2023—) |
 
-Unified by a single hash function ([[Hemera]]), a single field ([[Goldilocks field]], p = 2⁶⁴ − 2³² + 1), and a single proof system ([[STARK]] with FRI, upgradeable to STIR).
+Unified by a single hash function ([[Hemera]]), a single field ([[Goldilocks field]], p = 2⁶⁴ − 2³² + 1), and a single proof system ([[STARK]] with [[WHIR]]).
 
 ---
 
@@ -85,7 +85,7 @@ Properties that make this field optimal:
 - Fast reduction: a mod p = a_lo − a_hi × (2³² − 1) + correction. Two 64-bit operations.
 - Large 2-adic subgroup: 2³² divides p−1, enabling FFTs up to length 2³² without extension fields.
 - Native word size: Fits in a single 64-bit register on all modern hardware.
-- STARK-optimal: FRI folding operates directly on F_p without embedding overhead.
+- STARK-optimal: WHIR folding operates directly on F_p without embedding overhead.
 
 Every value in the system — balances, weights, hashes, commitments, proofs — is one or more elements of F_p.
 
@@ -125,7 +125,7 @@ H_edge(x)       = H(0x01 ‖ x)    Edge hashing
 H_commit(x)     = H(0x02 ‖ x)    Record commitments
 H_nullifier(x)  = H(0x03 ‖ x)    SWBF index derivation (mutator set)
 H_merkle(x)     = H(0x04 ‖ x)    NMT and MMR internal nodes
-H_fiat_shamir(x)= H(0x05 ‖ x)    FRI/STIR challenge derivation
+H_fiat_shamir(x)= H(0x05 ‖ x)    WHIR challenge derivation
 H_transcript(x) = H(0x06 ‖ x)    Proof transcript binding
 ```
 
@@ -263,7 +263,7 @@ The [[cybergraph]] maintains six NMT indexes over the same edge and [[token]] da
 
 ### 4.2 EdgeSet: Polynomial Commitment per Namespace
 
-Within each NMT leaf, the EdgeSet is a FRI polynomial commitment to the set of edge hashes belonging to that namespace:
+Within each NMT leaf, the EdgeSet is a WHIR polynomial commitment to the set of edge hashes belonging to that namespace:
 
 ```
 EdgeSet for neuron N:
@@ -276,7 +276,7 @@ EdgeSet for neuron N:
     ...
     P_N(k-1) = edge_hashes[k-1]
   
-  EdgeSet commitment: C_N = FRI_commit(P_N)
+  EdgeSet commitment: C_N = WHIR_commit(P_N)
 ```
 
 This is where polynomial commitments earn their place: membership proofs within an EdgeSet.
@@ -284,8 +284,8 @@ This is where polynomial commitments earn their place: membership proofs within 
 ```
 Membership proof: "Edge e belongs to neuron N's EdgeSet"
   1. Compute h = H_edge(e)
-  2. FRI evaluation proof: P_N(i) = h for some index i
-  3. Verification: ~2,500 STARK constraints (realistic FRI)
+  2. WHIR evaluation proof: P_N(i) = h for some index i
+  3. Verification: ~2,500 STARK constraints
   
 vs. Merkle membership within EdgeSet:
   Depth log(k) where k = edges per neuron
@@ -294,7 +294,7 @@ vs. Merkle membership within EdgeSet:
   For k = 1,000,000: 20 × 250 = 5,000 constraints (Merkle wins)
 ```
 
-The polynomial advantage manifests in batch proofs: proving multiple edges belong to the same EdgeSet costs sublinearly in the number of edges, via batched FRI openings. This matters for transaction verification (a cyberlink touches 3 EdgeSets) and for cross-index consistency proofs.
+The polynomial advantage manifests in batch proofs: proving multiple edges belong to the same EdgeSet costs sublinearly in the number of edges, via batched WHIR openings. This matters for transaction verification (a cyberlink touches 3 EdgeSets) and for cross-index consistency proofs.
 
 ### 4.3 NMT Leaf Structure
 
@@ -304,7 +304,7 @@ by_neuron leaf:
   │ namespace: neuron_id (32 bytes)        │
   │ payload:                               │
   │   edge_count: u64                      │
-  │   edgeset_commitment: F_p⁴ (FRI)      │
+  │   edgeset_commitment: F_p⁴ (WHIR)      │
   │   total_weight: F_p                    │
   │   latest_timestamp: u64               │
   └────────────────────────────────────────┘
@@ -314,7 +314,7 @@ by_particle leaf:
   │ namespace: particle_hash (32 bytes)    │
   │ payload:                               │
   │   edge_count: u64                      │
-  │   edgeset_commitment: F_p⁴ (FRI)      │
+  │   edgeset_commitment: F_p⁴ (WHIR)      │
   │   inbound_weight: F_p                  │
   │   outbound_weight: F_p                 │
   └────────────────────────────────────────┘
@@ -456,7 +456,7 @@ Year 10:  10¹¹ cumulative   → 10¹¹ nullifiers → prover stores 800 GB
 Year 50:  10¹³ cumulative   → 10¹³ nullifiers → prover stores 80 TB
 
 Non-membership proof cost grows logarithmically but never stops:
-  FRI eval against degree-10¹³ polynomial: ~47 FRI layers
+  WHIR eval against degree-10¹³ polynomial: ~47 folding layers
   Inside STARK: ~12,000 constraints per nullifier check
 
 And the total circuit cost (including nullifier non-membership proofs)
@@ -744,7 +744,7 @@ Minimal privacy for collective intelligence:
 
 Each [[cyberlink]] touches 3 EdgeSets (or 2 for self-links). The [[STARK]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to].
 
-Without a mechanism for this, each cross-index check requires independent FRI proofs against each EdgeSet — expensive and not naturally batched.
+Without a mechanism for this, each cross-index check requires independent WHIR proofs against each EdgeSet — expensive and not naturally batched.
 
 ### 7.2 LogUp Protocol
 
@@ -784,7 +784,7 @@ Prover work: O(k log k) where k = number of edges in transaction
 Verifier work: O(log k) — dominated by sumcheck verification
 
 STARK constraints: ~500 per edge (sumcheck + challenges)
-vs. 3 × 2,500 = 7,500 for independent FRI proofs per edge
+vs. 3 × 2,500 = 7,500 for independent WHIR proofs per edge
 Savings: 15× for cross-index consistency
 ```
 
@@ -930,7 +930,7 @@ BBG_root = H_merkle(
      │          │                                                   │
 ┌────┴─────┐ ┌──┴───────┐                                    ┌───┴────────┐
 │ EdgeSets │ │ EdgeSets │                                    │    AOCL    │
-│  (FRI)   │ │  (FRI)   │                                    │   (MMR)    │
+│  (WHIR)  │ │  (WHIR)  │                                    │   (MMR)    │
 └──────────┘ └──────────┘                                    ├────────────┤
      │              │                                         │    SWBF    │
      └──────┬───────┘                                         │(MMR+Window)│
@@ -1223,7 +1223,7 @@ Cost: O(log n) NMT updates + 3 EdgeSet updates + LogUp proof. Pruners earn a fra
                        │
                        ▼
               ┌─────────────────┐
-              │    FRI/STIR      │   Low-degree testing
+              │      WHIR        │   Low-degree testing
               │   Commitment     │   Hash-based. Post-quantum.
               └────────┬────────┘
                        │
@@ -1257,8 +1257,8 @@ Poseidon2 hash (one invocation)               ~250
 NMT Merkle path (depth d)                     ~250 × d
 NMT completeness proof (two paths)            ~500 × d
 MMR membership proof (depth d)                ~250 × d
-FRI evaluation proof (realistic)              ~2,500-3,500
-EdgeSet membership (FRI within NMT leaf)      ~2,500
+WHIR evaluation proof (realistic)             ~2,500-3,500
+EdgeSet membership (WHIR within NMT leaf)     ~2,500
 LogUp per lookup                              ~50
 LogUp sumcheck overhead                       ~500 per batch
 SWBF index derivation                         ~500
@@ -1274,20 +1274,24 @@ COMPOSITE OPERATIONS:
   Tri-kernel update (local, k neighbors):      ~1,000 × k (diffusion + springs + heat)
 ```
 
-### 13.4 FRI → STIR Migration
+### 13.4 WHIR as the Low-Degree Test
 
-STIR (Sum-of-Twists Interactive Reed-Solomon) is the next-generation low-degree test, achieving O(log n · log log n) proof size vs FRI's O(log² n). See [[hemera/spec]] for hash parameter choices.
+[[cyber]] uses [[WHIR]] (Weights Help Improving Rate, EUROCRYPT 2025) — the third generation of the FRI family. WHIR introduces weight polynomials from sumcheck to achieve sub-millisecond verification and the smallest proofs of any hash-based polynomial commitment scheme.
 
 ```
-Migration path:
-  1. STIR replaces FRI as the commitment scheme inside STARKs
-  2. All interfaces above FRI (EdgeSets, mutator set proofs, folding) unchanged
-  3. Constraint costs decrease:
-     FRI evaluation: ~2,500-3,500 → STIR evaluation: ~1,500-2,000
-  4. Proof sizes decrease: ~100-200 KB → ~60-120 KB
-  
-  Impact on architecture: NONE. STIR is a Layer 4 (proof system) swap.
-  Layers 1-3 (NMT, MMR, SWBF) and Layers 5-7 (consensus, sync, API) unchanged.
+evolution:
+  FRI  (2018)  — baseline Reed-Solomon proximity testing
+  STIR (2024)  — rate improvement via shifts (CRYPTO 2024 Best Paper)
+  WHIR (2025)  — rate + weight polynomials ← cyber uses this
+
+WHIR achieves:
+  proof size:     ~60-120 KB (vs FRI ~100-200 KB)
+  verification:   ~1.0 ms (vs FRI ~3.9 ms), 290 μs at 100-bit security
+  trusted setup:  none
+  post-quantum:   yes
+
+Impact on architecture: NONE. WHIR is a Layer 4 (proof system) swap.
+Layers 1-3 (NMT, MMR, SWBF) and Layers 5-7 (consensus, sync, API) unchanged.
 ```
 
 ---
@@ -1317,7 +1321,7 @@ Client wants: "All edges created by neuron N"
      Client checks:
        a) π valid against by_neuron.root (extracted from BBG_root)
        b) Received edges: { H_edge(e_i) } matches EdgeSet
-       c) FRI_verify(C_N, { (i, H_edge(e_i)) }) — all edges in committed set
+       c) WHIR_verify(C_N, { (i, H_edge(e_i)) }) — all edges in committed set
 
   4. GUARANTEE
      "I have ALL edges created by neuron N. Nothing hidden."
@@ -1448,7 +1452,7 @@ LAYER 5:  Data Availability
           ─────────────────────────────────────────────────
 
 LAYER 4:  Proof System
-          STARK (FRI → STIR), Nova/HyperNova folding
+          STARK (WHIR), Nova/HyperNova folding
           ─────────────────────────────────────────────────
 
 LAYER 3:  Cross-Index Integrity
@@ -1460,7 +1464,7 @@ LAYER 2:  Privacy
           ─────────────────────────────────────────────────
 
 LAYER 1:  Authenticated State
-          NMT (cybergraph), MMR (UTXO history), EdgeSet (FRI)
+          NMT (cybergraph), MMR (UTXO history), EdgeSet (WHIR)
           ─────────────────────────────────────────────────
 
 LAYER 0:  Field and Hash
@@ -1492,7 +1496,7 @@ FIVE PRIMITIVES
    Hash:     Poseidon2-Goldilocks (index derivation)
    Heritage: Neptune (production since 2024)
 
-4. FRI Polynomial Commitments
+4. WHIR Polynomial Commitments
    Uses:     EdgeSet membership, STARK proofs, batch openings
    Provides: O(log² n) membership proofs, algebraic batching
    Field:    Goldilocks

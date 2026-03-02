@@ -553,7 +553,7 @@ The system closes on itself. No trusted external verifier remains.
 
 ### 9.4 Namespace Sync
 
-To sync namespace $ns$: the responder provides range bounds in the sorted polynomial, FRI proofs for boundary elements, and edge data. The client verifies that the boundaries bracket exactly the requested namespace and that all FRI proofs are valid against the BBG root.
+To sync namespace $ns$: the responder provides range bounds in the sorted polynomial, WHIR proofs for boundary elements, and edge data. The client verifies that the boundaries bracket exactly the requested namespace and that all WHIR proofs are valid against the BBG root.
 
 If verification passes: "I have ALL edges in namespace $ns$. Nothing hidden." The guarantee is mathematical. Cost: $O(|\text{my\_edges}|)$ data + $O(\log^2 |G|)$ proof overhead.
 

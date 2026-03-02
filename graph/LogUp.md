@@ -12,7 +12,7 @@ introduced by Haböck (2022). used in Polygon, Scroll, and [[cyber]].
 
 ## the problem
 
-each [[cyberlink]] touches 3 [[EdgeSets]] (or 2 for self-links). the [[STARK]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to]. without LogUp, each cross-index check requires independent [[FRI]] proofs against each EdgeSet — ~7,500 constraints per edge.
+each [[cyberlink]] touches 3 [[EdgeSets]] (or 2 for self-links). the [[STARK]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to]. without LogUp, each cross-index check requires independent [[WHIR]] proofs against each EdgeSet — ~7,500 constraints per edge.
 
 ## the protocol
 
@@ -53,12 +53,12 @@ LogUp proof:
 ```
 per edge:
   LogUp:              ~500 STARK constraints (sumcheck + challenges)
-  independent FRI:    3 × 2,500 = 7,500 STARK constraints
+  independent WHIR:    3 × 2,500 = 7,500 STARK constraints
   savings:            15×
 
 block with 10,000 edges:
   LogUp:              ~5,000,000 constraints
-  independent FRI:    ~75,000,000 constraints
+  independent WHIR:    ~75,000,000 constraints
 
 prover work:  O(k log k) where k = edges in transaction
 verifier work: O(log k) — dominated by sumcheck verification
@@ -83,4 +83,4 @@ this is where LogUp becomes essential: at planetary scale (10¹⁵ nodes), verif
 
 LogUp lookup arguments have been deployed in production by Polygon and Scroll since 2023 for cross-table consistency in ZK rollups. [[cyber]] applies the same technique to graph index consistency rather than rollup state tables.
 
-see [[BBG]] for the full graph architecture, [[EdgeSet]] for the polynomial commitments being looked up, [[FRI]] for the underlying proof mechanism, [[NMT]] for the index structure containing EdgeSets
+see [[BBG]] for the full graph architecture, [[EdgeSet]] for the polynomial commitments being looked up, [[WHIR]] for the underlying proof mechanism, [[NMT]] for the index structure containing EdgeSets

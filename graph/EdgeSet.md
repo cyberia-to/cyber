@@ -6,7 +6,7 @@ alias: EdgeSets, edge set, edge sets
 ---
 # EdgeSet
 
-a [[FRI]] [[polynomial commitment]] to the set of edge hashes belonging to a single namespace within the [[BBG]]. each [[NMT]] leaf in the by_neuron and by_particle indexes contains one EdgeSet. the EdgeSet answers: "does this edge belong to this namespace?"
+a [[WHIR]] [[polynomial commitment]] to the set of edge hashes belonging to a single namespace within the [[BBG]]. each [[NMT]] leaf in the by_neuron and by_particle indexes contains one EdgeSet. the EdgeSet answers: "does this edge belong to this namespace?"
 
 ## construction
 
@@ -21,7 +21,7 @@ EdgeSet for neuron N:
     ...
     P_N(k-1) = edge_hashes[k-1]
 
-  EdgeSet commitment: C_N = FRI_commit(P_N)
+  EdgeSet commitment: C_N = WHIR_commit(P_N)
 ```
 
 the commitment C_N is stored as the payload of the [[NMT]] leaf for namespace N. the edge data itself lives in the edge store (content-addressed: H_edge(e) → e).
@@ -32,8 +32,8 @@ the commitment C_N is stored as the payload of the [[NMT]] leaf for namespace N.
 prove "edge e belongs to neuron N's EdgeSet":
 
   1. compute h = H_edge(e)
-  2. FRI evaluation proof: P_N(i) = h for some index i
-  3. verification: ~2,500 STARK constraints (realistic FRI)
+  2. WHIR evaluation proof: P_N(i) = h for some index i
+  3. verification: ~2,500 STARK constraints
 
 vs. Merkle membership within EdgeSet:
   depth log(k) where k = edges per neuron
@@ -41,7 +41,7 @@ vs. Merkle membership within EdgeSet:
   for k = 1,000,000: 20 × 250 = 5,000 constraints (Merkle wins for very large sets)
 ```
 
-the polynomial advantage manifests in batch proofs: proving multiple edges belong to the same EdgeSet costs sublinearly in the number of edges via batched [[FRI]] openings.
+the polynomial advantage manifests in batch proofs: proving multiple edges belong to the same EdgeSet costs sublinearly in the number of edges via batched [[WHIR]] openings.
 
 ## cross-index consistency
 
@@ -55,7 +55,7 @@ H_edge(e) ∈ by_particle[to].EdgeSet
 (2 EdgeSets if from = to, self-link)
 ```
 
-[[LogUp]] lookup arguments prove all three memberships simultaneously at ~500 constraints per edge — 15× cheaper than independent [[FRI]] proofs.
+[[LogUp]] lookup arguments prove all three memberships simultaneously at ~500 constraints per edge — 15× cheaper than independent [[WHIR]] proofs.
 
 ## leaf structure
 
@@ -65,7 +65,7 @@ by_neuron leaf:
   │ namespace: neuron_id (32 bytes)        │
   │ payload:                               │
   │   edge_count: u64                      │
-  │   edgeset_commitment: F_p⁴ (FRI)      │
+  │   edgeset_commitment: F_p⁴ (WHIR)      │
   │   total_weight: F_p                    │
   │   latest_timestamp: u64               │
   └────────────────────────────────────────┘
@@ -75,7 +75,7 @@ by_particle leaf:
   │ namespace: particle_hash (32 bytes)    │
   │ payload:                               │
   │   edge_count: u64                      │
-  │   edgeset_commitment: F_p⁴ (FRI)      │
+  │   edgeset_commitment: F_p⁴ (WHIR)      │
   │   inbound_weight: F_p                  │
   │   outbound_weight: F_p                 │
   └────────────────────────────────────────┘
@@ -92,9 +92,9 @@ NMT (Level 1):  completeness guarantee
 
 EdgeSet (Level 2):  membership query
   "this specific edge belongs to this namespace's set"
-  efficient via polynomial commitment + FRI evaluation
+  efficient via polynomial commitment + WHIR evaluation
 ```
 
 the [[NMT]] proves nothing is hidden. the EdgeSet proves what is inside. together they answer the [[cybergraph]]'s fundamental question: "give me everything for [[neuron]] N, with proof that nothing was withheld, and let me verify individual edges efficiently."
 
-see [[BBG]] for the full graph architecture, [[NMT]] for structural completeness, [[polynomial commitment]] for the commitment scheme, [[FRI]] for the underlying proof protocol, [[LogUp]] for cross-index consistency
+see [[BBG]] for the full graph architecture, [[NMT]] for structural completeness, [[polynomial commitment]] for the commitment scheme, [[WHIR]] for the underlying proof protocol, [[LogUp]] for cross-index consistency

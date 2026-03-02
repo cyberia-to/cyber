@@ -62,16 +62,13 @@ STIR decouples the security parameter λ from the degree d in the dominant term 
 
 ## use in cyber
 
-[[cyber]] designs for [[FRI]] with an upgrade path to STIR. the migration is a Layer 4 (proof system) swap — all interfaces above FRI remain unchanged:
+[[cyber]] uses [[WHIR]] — the next generation after STIR. STIR is the intermediate step in the FRI evolution. the concepts introduced by STIR (rate improvement via shifts) are subsumed by WHIR's richer weight polynomial approach.
 
 ```
-migration path:
-  1. STIR replaces FRI as the low-degree test inside STARKs
-  2. EdgeSets, mutator set proofs, folding — all unchanged
-  3. constraint costs decrease:
-     FRI evaluation: ~2,500-3,500 → STIR evaluation: ~1,500-2,000
-  4. proof sizes decrease: ~100-200 KB → ~60-120 KB
-  5. impact on architecture: NONE
+evolution:
+  FRI  (2018)  — baseline
+  STIR (2024)  — rate improvement via shifts
+  WHIR (2025)  — rate + weight polynomials ← cyber uses this
 ```
 
-see [[FRI]] for the current protocol, [[WHIR]] for the further evolution (super-fast verification), [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system
+see [[WHIR]] for what [[cyber]] uses, [[FRI]] for the foundational protocol, [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system

@@ -13,7 +13,7 @@ The BBG solves this through unified polynomial commitments. One primitive handle
 
 Edges are stored once but indexed by multiple dimensions—creator, source [[particle]], target [[particle]]. Each index is a sorted polynomial commitment enabling range proofs: "these are ALL edges in this namespace." When you sync your namespace, you receive cryptographic proof that nothing was withheld. The graph cannot exist without its indexes being consistent and complete—this is structural, not policy.
 
-BBG uses polynomial commitments everywhere rather than mixing hash-based structures with polynomial structures. One primitive means one security analysis, one implementation, one mental model. The same FRI-based machinery that makes UTXO proofs cheap (~1,000 constraints vs ~9,600 for Merkle) also handles graph completeness proofs.
+BBG uses polynomial commitments everywhere rather than mixing hash-based structures with polynomial structures. One primitive means one security analysis, one implementation, one mental model. The same [[WHIR]]-based machinery that makes UTXO proofs cheap (~1,000 constraints vs ~9,600 for Merkle) also handles graph completeness proofs.
 
 This makes "sync only my namespace" a mathematical property, not a feature. A light client tracking one [[particle]] downloads only edges touching that [[particle]], with proof that the response is complete. A [[neuron]] syncing its own edges receives proof of its complete history. No trust in the data provider required.
 
@@ -56,7 +56,7 @@ This makes "sync only my namespace" a mathematical property, not a feature. A li
 ║    particle_energy  : PolynomialCommitment     (public aggregates)        ║
 ║                                                                            ║
 ║  UNIFIED PRIMITIVE: All indexes use polynomial commitments                ║
-║    - Membership proof: FRI evaluation, O(log² n), ~1,000 constraints      ║
+║    - Membership proof: WHIR evaluation, O(log² n), ~1,000 constraints      ║
 ║    - Completeness proof: Sorted range bounds, O(log² n)                   ║
 ║    - One primitive, one security analysis, one implementation             ║
 ║                                                                            ║
@@ -92,7 +92,7 @@ For every edge e = (neuron, from, to, weight, time):
 
 Cross-index consistency provable via polynomial identity testing:
   - Same edge hash appears in multiple sorted polynomials
-  - FRI proofs demonstrate membership in each
+  - WHIR proofs demonstrate membership in each
   - STARK proves all memberships consistent
 
 Proof size: O(log² n). Verification: O(log² n) field operations.
@@ -112,7 +112,7 @@ To sync namespace ns (neuron_id or particle_hash):
   2. RESPONSE
      Responder → Client:
        - Range bounds (i, j) in sorted polynomial
-       - FRI proofs for P(i-1), P(i), P(j), P(j+1)
+       - WHIR proofs for P(i-1), P(i), P(j), P(j+1)
        - Edge data { e | index i ≤ position ≤ j }
 
   3. VERIFY
@@ -122,7 +122,7 @@ To sync namespace ns (neuron_id or particle_hash):
        c) P(j).namespace = ns
        d) P(j+1).namespace > ns (or j = end)
        e) Received edges hash to claimed values
-       f) All FRI proofs valid against BBG_root
+       f) All WHIR proofs valid against BBG_root
 
   4. GUARANTEE
      If verification passes:
