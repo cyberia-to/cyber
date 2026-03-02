@@ -1,1345 +1,816 @@
 ---
 tags: cyber, bostrom, migration, rust, research
 icon: "\U0001F980"
+alias: go-cyber-to-rust-migration, go-to-rust-host-migration, cyber-os-unified-blueprint
 ---
 
 # Bostrom → Rust: Complete Migration Path
 
-## From go-cyber to a Pure Rust Superintelligence Node
+## 1. current architecture
 
-**Version**: 1.0 · March 2026
-**Scope**: Full elimination of Go from the Bostrom blockchain stack
-**Target**: Single `cargo build` producing a complete validator binary
-
----
-
-## Executive Summary
-
-Bostrom (go-cyber v7) runs ~613,000 lines of Go code to support ~13,400 lines of custom logic. The chain depends on NVIDIA CUDA for GPU-accelerated PageRank, creating a vendor lock that limits the validator set. This document describes a phased migration to a pure Rust stack that eliminates Go entirely, removes CUDA dependency via wgpu cross-vendor GPU compute, and establishes the foundation for CyberOS — a sovereign operating system for decentralized superintelligence.
-
-The migration is structured in 5 phases over 12–18 months, with each phase producing a working, upgradeable chain. No phase requires a hard fork — all transitions happen via standard Cosmos governance proposals.
-
----
-
-## 1. Current Architecture Inventory
-
-### 1.1 Dependency Stack
-
-| Layer | Component | Language | Lines of Code | Role |
-|-------|-----------|----------|---------------|------|
-| Consensus | CometBFT v0.37.8 | Go | ~100,000 | Block production, BFT voting, P2P gossip |
-| Framework | Cosmos SDK v0.47.12 | Go | ~500,000 | Module system, tx routing, state, auth |
-| IBC | ibc-go v7.6.0 | Go | ~80,000 | Cross-chain communication |
-| Wasm VM | wasmd v0.45.0 | Go + Rust | ~15,000 Go / ~50,000 Rust | CosmWasm smart contract execution |
-| Custom | x/graph | Go | ~1,800 | Cyberlink storage (CID → CID) |
-| Custom | x/rank | Go + CUDA | ~3,500 | Token-weighted PageRank on GPU |
-| Custom | x/bandwidth | Go | ~1,200 | Rate limiting via VOLT tokens |
-| Custom | x/resources | Go | ~1,000 | Investmint (HYDROGEN → VOLT/AMPERE) |
-| Custom | x/dmn | Go | ~700 | Autonomous programs (thoughts) |
-| Custom | x/grid | Go | ~800 | Energy routing/delegation |
-| Custom | x/liquidity | Go | ~2,500 | Interchain AMM with MEV protection |
-| GPU | CUDA kernels | CUDA C | ~470 | PageRank matrix operations |
-
-**Totals**: ~93.3% Go, ~3.5% CUDA, ~3.2% other. Approximately 13,400 lines of custom code sitting on ~695,000 lines of Go infrastructure.
-
-### 1.2 Critical Dependencies and Constraints
-
-**CUDA vendor lock**: Only NVIDIA GPUs can run validators. Excludes AMD, Intel, Apple Silicon. Limits validator decentralization significantly.
-
-**CGO bridge**: The CUDA rank module uses CGO to call C/CUDA from Go. CGO breaks cross-compilation, complicates builds, introduces undefined behavior at the FFI boundary, and prevents static linking.
-
-**Go garbage collector**: Non-deterministic pauses affect block production timing. Not critical at current load, but becomes a bottleneck under scale.
-
-**wasmd FFI overhead**: Go wasmd calls into Rust cosmwasm-vm via FFI. Every contract call crosses the Go→Rust boundary twice (call + return). In pure Rust, this overhead vanishes.
-
-### 1.3 What We Keep vs. What We Replace
-
-| Component | Action | Rationale |
-|-----------|--------|-----------|
-| Tendermint BFT consensus algorithm | Keep (re-implement in Rust) | Battle-tested, IBC-compatible |
-| ABCI interface | Keep (Rust implementation exists) | Standard protocol, language-agnostic |
-| IBC protocol | Keep (Rust implementation exists) | Interchain communication essential |
-| CosmWasm VM | Keep (already Rust) | Contract ecosystem, already native |
-| Cosmos SDK module system | Replace | Go-specific, not needed in Rust |
-| x/bank, x/staking, x/gov etc. | Replace with minimal Rust modules | Only need features Bostrom uses |
-| CUDA PageRank | Replace with wgpu | Cross-vendor GPU, pure Rust |
-| Go binary and build system | Eliminate | Target: `cargo build` only |
-
----
-
-## 2. Existing Rust Infrastructure
-
-A critical insight: roughly 70% of the required Rust infrastructure already exists in production. This is not a build-from-scratch effort.
-
-### 2.1 Consensus & Networking
-
-| Crate | Maintainer | Status | Used By |
-|-------|-----------|--------|---------|
-| `tendermint-rs` | Informal Systems | Production | Penumbra, Namada, Hermes |
-| `tower-abci` | Penumbra Labs | Production | Penumbra, Namada, Astria |
-| `cometbft-rs` | CometBFT team | Production | Multiple Cosmos chains |
-| `ibc-rs` / `ibc-types` | Informal / Penumbra | Production | Hermes relayer |
-| `libp2p` | Protocol Labs | Production | Multiple networks |
-
-### 2.2 State & Storage
-
-| Crate | Maintainer | Status | Description |
-|-------|-----------|--------|-------------|
-| `jmt` (Jellyfish Merkle Tree) | Penumbra + Sovereign | Production | State commitment tree |
-| `penumbra-storage` | Penumbra Labs | Production | Async state management |
-| `rocksdb` / `sled` | Community | Production | Key-value storage backends |
-| `cosmwasm-vm` | Confio | Production | Wasm contract execution (already Rust) |
-| `cosmwasm-std` | Confio | Production | Contract standard library |
-
-### 2.3 Cryptography
-
-| Crate | Purpose | Status |
-|-------|---------|--------|
-| `ed25519-dalek` | Validator signing | Production |
-| `k256` / `secp256k1` | User accounts (Cosmos-compatible) | Production |
-| `sha2` / `blake3` | Hashing | Production |
-| `ring` | TLS, general crypto | Production |
-| `cosmwasm-crypto` | CosmWasm verification | Production |
-
-### 2.4 Serialization & RPC
-
-| Crate | Purpose | Status |
-|-------|---------|--------|
-| `prost` | Protobuf (Cosmos SDK compatibility) | Production |
-| `tonic` | gRPC server/client | Production |
-| `serde` / `serde_json` | JSON serialization | Production |
-| `cosmos-sdk-proto` | Cosmos protobuf types in Rust | Production |
-
-### 2.5 GPU Compute
-
-| Crate | Purpose | Status |
-|-------|---------|--------|
-| `wgpu` | Cross-vendor GPU abstraction | Production (v24+) |
-| `naga` | WGSL shader compiler | Production |
-
-### 2.6 Precedent: Pure Rust Tendermint Chains
-
-Two production chains prove this architecture works:
-
-**Penumbra** — Privacy-focused L1, pure Rust, Tendermint consensus via tower-abci, custom IBC implementation, Jellyfish Merkle Tree for state. Does not use Cosmos SDK. Live on mainnet.
-
-**Namada** — Privacy L1, Rust, CometBFT consensus, custom state machine, IBC-compatible. Also does not use Cosmos SDK. Live on mainnet.
-
-Both chains demonstrate that Cosmos SDK (Go) is not required to participate in the IBC ecosystem. Only the ABCI protocol and IBC protocol compliance are required — both available in Rust.
-
----
-
-## 3. Migration Phases
-
-### Overview
+go-cyber v7 runs ~13,400 lines of custom logic on top of ~695,000 lines of Go infrastructure. The ratio is 1:52.
 
 ```
-Phase 0   Phase 1          Phase 2         Phase 3         Phase 4         Phase 5
-NOW       CW Contracts     wgpu Rank       Rust Host       Unification     CyberOS
-(go-cyber (logic → Rust    (CUDA → wgpu    (Go host →      (optimize,      (cell arch,
- v7)       via CosmWasm)    cross-vendor)    Rust host)      audit, harden)  Rs edition)
-          
- Go+CUDA   Go+Rust+CUDA    Go+Rust+wgpu    Rust+wgpu       Rust+wgpu       Rs+wgpu
- ~613K Go  ~900 Go custom  ~600 Go custom  0 Go            0 Go            0 Go
-           ~6.7K Rust CW   ~6.7K Rust CW   ~15K Rust       ~12K Rust       ~10K Rs
-                           ~2K Rust GPU    ~2K Rust GPU    ~2K Rust GPU    ~2K Rs GPU
+go-cyber v7 binary (single Go process)
+├── Cosmos SDK v0.47.12      Go     ~500,000 lines   Module system, routing, state
+├── CometBFT v0.37.8         Go     ~100,000 lines   BFT consensus, P2P, mempool
+├── ibc-go v7.6.0            Go      ~80,000 lines   Inter-Blockchain Communication
+├── wasmd v0.45.0            Go+Rust  ~15,000 lines   CosmWasm host (x/wasm)
+├── x/graph                  Go        ~1,800 lines   Cyberlink storage (CID → CID)
+├── x/rank                   Go+CUDA   ~3,500 lines   Token-weighted PageRank on GPU
+├── x/bandwidth              Go        ~1,200 lines   Rate limiting via VOLT tokens
+├── x/resources              Go        ~1,000 lines   Investmint (HYDROGEN → VOLT/AMPERE)
+├── x/dmn                    Go          ~700 lines   Autonomous programs (thoughts)
+├── x/grid                   Go          ~800 lines   Energy routing/delegation
+├── x/liquidity              Go        ~2,500 lines   Interchain AMM with MEV protection
+└── CUDA kernels             CUDA C      ~470 lines   PageRank matrix operations
+```
 
- 4 weeks   15 weeks         8 weeks         12 weeks        8 weeks         ongoing
-           ──────────────────────────────────────────────────────────────────────────→
-                            ↑ parallel with Phase 1
+Four constraints make this architecture untenable long-term:
+
+CUDA vendor lock — Only NVIDIA GPUs can validate. AMD, Intel, Apple Silicon excluded.
+
+CGO FFI overhead — The CUDA rank module uses CGO. Every contract call crosses Go→Rust→Go boundaries via wasmd/wasmvm FFI. Breaks cross-compilation, prevents static linking.
+
+Go GC pauses — Non-deterministic garbage collection pauses affect block timing. Tolerable today, bottleneck at scale.
+
+Upgrade friction — Every [[Cosmos SDK]] upgrade requires rebasing 695K lines of Go. Custom modules tightly coupled to SDK internals.
+
+Goal: a single `cargo build` producing a complete validator binary. Zero custom Go. Any GPU. Foundation for [[CyberOS]].
+
+---
+
+## 2. strategy
+
+Six phases, each producing a working chain. No hard forks — all transitions via standard Cosmos governance proposals. Each phase is independently valuable even if later phases are delayed.
+
+| Phase | Name | Duration | Deliverable |
+|-------|------|----------|-------------|
+| 0 | Interface Definition | 4 weeks | `cyber-interfaces` crate — zero implementation, all types |
+| 1 | CosmWasm Migration | 15 weeks | All custom modules → CosmWasm contracts on wasmd |
+| 2 | wgpu Rank Engine | 8 weeks (parallel) | CUDA → [[wgpu]], any GPU vendor |
+| 3 | Rust Host | 16 weeks + 4 buffer | Replace Go SDK with minimal Rust framework |
+| 4 | Hardening | 8 weeks | Audit, optimize, document |
+| 5 | [[Rs]] + [[CyberOS]] | Ongoing | Domain-specific language, sovereign OS |
+
+---
+
+## 3. interface layer
+
+The key architectural insight: define ALL interactions as [[CosmWasm]] messages and queries. The backend (Go or Rust) becomes a swappable implementation detail. Contracts written in Phase 1 run unchanged through Phase 3 and into [[CyberOS]].
+
+```rust
+// cyber-interfaces/src/lib.rs — trait crate, imported by all contracts
+// Zero implementation. Only types.
+
+#[cw_serde]
+pub enum CyberMsg {
+    Cyberlink { particle_from: String, particle_to: String },
+    CyberlinkBatch { links: Vec<Link> },
+    Investmint { amount: Coin, resource: String, length: u64 },
+    CreateRoute { destination: String, alias: String },
+    EditRoute { destination: String, value: Coin },
+    DeleteRoute { destination: String },
+}
+
+#[cw_serde]
+#[derive(QueryResponses)]
+pub enum CyberQuery {
+    #[returns(RankResponse)]
+    ParticleRank { particle: String },
+    #[returns(BandwidthResponse)]
+    BandwidthLoad { address: String },
+    #[returns(SearchResponse)]
+    Search { particle: String, page: Option<u32> },
+    #[returns(LinksResponse)]
+    Backlinks { particle: String, page: Option<u32> },
+}
+```
+
+Interface stability: same message, same contract binary, three different backends.
+
+```
+Phase 1:  Contract → CyberMsg::Cyberlink → wasmd dispatch → Go x/graph keeper
+Phase 3:  Contract → CyberMsg::Cyberlink → Rust dispatch  → Rust graph store
+Phase 5:  Contract → CyberMsg::Cyberlink → Rs cell call   → KnowledgeGraph cell
 ```
 
 ---
 
-### Phase 0: Interface Definition (4 weeks)
+## 4. Phase 0+1: CosmWasm migration
 
-**Goal**: Define every interaction boundary as a Rust trait or CosmWasm message type. This is the single most important step — correct interfaces make every subsequent phase a backend swap.
+### 4.1 CosmWasm boundary analysis
 
-#### 0.1 CosmWasm Message Interfaces
+[[CosmWasm]] contracts access full [[Cosmos SDK]] functionality via messages and queries, including Stargate escape hatch for any protobuf message. 100% of SDK functionality is reachable.
 
-Create a `cyber-interfaces` crate defining typed messages for all custom modules:
+What CosmWasm cannot do:
+
+| Capability | Required By | Workaround |
+|---|---|---|
+| BeginBlocker / EndBlocker | x/rank, x/dmn | Neutron x/cron module → sudo calls |
+| AnteHandler modification | x/bandwidth | Thin Go wrapper (~100 lines) calls CW query |
+| GPU access | x/rank | Native plugin or wgpu rank-engine |
+| Native token minting | x/resources | TokenFactory module (Osmosis pattern) |
+| Self-execution | x/dmn auto-trigger | External cron → sudo entry point |
+
+### 4.2 module-by-module plan
+
+#### x/graph → cw-graph (~1,200 lines Rust)
+
+Pure CRUD operations. Storage: `Map<(String, String), LinkMeta>` for [[cyberlinks]], `Map<String, Vec<String>>` for adjacency lists. No Go wrapper needed.
 
 ```rust
-// cyber-interfaces/src/lib.rs
-// This crate has ZERO implementation. Only types and traits.
-
-pub mod graph {
-    use cosmwasm_schema::{cw_serde, QueryResponses};
-
-    #[cw_serde]
-    pub enum ExecuteMsg {
-        Cyberlink {
-            particle_from: String,  // CIDv0
-            particle_to: String,    // CIDv0
-        },
-        CyberlinkBatch {
-            links: Vec<Link>,
-        },
-        DeleteCyberlink {
-            particle_from: String,
-            particle_to: String,
-        },
-    }
-
-    #[cw_serde]
-    #[derive(QueryResponses)]
-    pub enum QueryMsg {
-        #[returns(IsLinkedResponse)]
-        IsLinked {
-            particle_from: String,
-            particle_to: String,
-        },
-        #[returns(LinksResponse)]
-        ParticleLinks {
-            particle: String,
-            direction: Direction,
-            start_after: Option<String>,
-            limit: Option<u32>,
-        },
-        #[returns(GraphStatsResponse)]
-        GraphStats {},
-    }
-
-    #[cw_serde]
-    pub struct Link {
-        pub particle_from: String,
-        pub particle_to: String,
-    }
-
-    #[cw_serde]
-    pub enum Direction { From, To, Both }
-
-    // ... response types
+#[cw_serde]
+pub enum ExecuteMsg {
+    Cyberlink { links: Vec<Cyberlink> },
 }
 
-pub mod rank {
-    #[cw_serde]
-    pub enum SudoMsg {
-        /// Called by the rank engine after each computation cycle
-        UpdateRanks {
-            merkle_root: String,
-            ranks_count: u64,
-            computation_block: u64,
-        },
-    }
-
-    #[cw_serde]
-    #[derive(QueryResponses)]
-    pub enum QueryMsg {
-        #[returns(RankResponse)]
-        ParticleRank { particle: String },
-        #[returns(SearchResponse)]
-        Search {
-            particle: String,
-            page: Option<u32>,
-            per_page: Option<u32>,
-        },
-        #[returns(RankParamsResponse)]
-        RankParams {},
-        #[returns(KarmaResponse)]
-        AccountKarma { address: String },
-    }
-}
-
-pub mod bandwidth {
-    #[cw_serde]
-    pub enum QueryMsg {
-        #[returns(BandwidthResponse)]
-        AccountBandwidth { address: String },
-        #[returns(BandwidthParamsResponse)]
-        Params {},
-        #[returns(TotalBandwidthResponse)]
-        TotalBandwidth {},
-    }
-    // AnteHandler check interface
-    #[cw_serde]
-    pub struct CheckBandwidthRequest {
-        pub sender: String,
-        pub msg_count: u32,
-        pub tx_size: u64,
-    }
-    #[cw_serde]
-    pub struct CheckBandwidthResponse {
-        pub allow: bool,
-        pub remaining: u64,
-        pub limit: u64,
-    }
-}
-
-pub mod resources {
-    #[cw_serde]
-    pub enum ExecuteMsg {
-        Investmint {
-            amount: cosmwasm_std::Coin,   // HYDROGEN
-            resource: ResourceType,       // VOLT or AMPERE
-            length: u64,                  // lock duration in blocks
-        },
-    }
-    #[cw_serde]
-    pub enum ResourceType { Volt, Ampere }
-}
-
-pub mod dmn {
-    #[cw_serde]
-    pub enum ExecuteMsg {
-        CreateThought {
-            program: String,     // contract address
-            trigger: Trigger,
-            load: Binary,        // message to execute
-            name: String,
-        },
-        RemoveThought { name: String },
-        ChangeThoughtInput { name: String, input: Binary },
-        ChangeThoughtPeriod { name: String, period: u64 },
-        ChangeThoughtBlock { name: String, block: u64 },
-    }
-    #[cw_serde]
-    pub enum Trigger {
-        Period { period: u64 },
-        Block { block: u64 },
-    }
-}
-
-pub mod grid {
-    #[cw_serde]
-    pub enum ExecuteMsg {
-        CreateRoute { destination: String, name: String },
-        EditRoute { destination: String, value: cosmwasm_std::Coin },
-        DeleteRoute { destination: String },
-        EditRouteName { destination: String, name: String },
-    }
+#[cw_serde]
+pub enum QueryMsg {
+    GraphStats {},
+    ParticleLinks { cid: String, pagination: Option<PageRequest> },
+    InLinks { cid: String, pagination: Option<PageRequest> },
+    OutLinks { cid: String, pagination: Option<PageRequest> },
 }
 ```
 
-#### 0.2 Host-Level Trait Abstractions
+#### x/rank → rank-engine (native Rust) + cw-rank-verifier (~800 lines CW)
 
-```rust
-// cyber-traits/src/lib.rs
-// Defines the ABCI application boundary — implementation-agnostic
+Rank cannot live in a contract — GPU compute is unavailable inside Wasm. Split into two components:
 
-pub trait CyberApp: Send + Sync {
-    fn info(&self) -> AppInfo;
-    fn init_chain(&mut self, genesis: Genesis) -> Result<()>;
-    fn begin_block(&mut self, header: BlockHeader) -> Result<Vec<Event>>;
-    fn deliver_tx(&mut self, tx: &[u8]) -> Result<TxResult>;
-    fn end_block(&mut self, height: u64) -> Result<EndBlockResult>;
-    fn commit(&mut self) -> Result<[u8; 32]>;  // app hash
-    fn query(&self, path: &str, data: &[u8]) -> Result<QueryResult>;
-}
+```
+rank-engine (native Rust, runs every block via sudo)
+    ├── Reads graph state from cw-graph storage
+    ├── Computes PageRank on GPU (wgpu)
+    ├── Generates rank Merkle tree
+    └── Pushes rank root + top-K ranks into cw-rank-verifier via sudo
 
-pub trait StateStore: Send + Sync {
-    fn get(&self, key: &[u8]) -> Result<Option<Vec<u8>>>;
-    fn set(&mut self, key: &[u8], value: &[u8]) -> Result<()>;
-    fn delete(&mut self, key: &[u8]) -> Result<()>;
-    fn root_hash(&self) -> [u8; 32];
-    fn prove(&self, key: &[u8]) -> Result<MerkleProof>;
-}
-
-pub trait RankEngine: Send + Sync {
-    fn load_graph(&mut self, adjacency: &AdjacencyData) -> Result<()>;
-    fn load_weights(&mut self, stakes: &StakeWeights) -> Result<()>;
-    fn compute(&mut self, params: RankParams) -> Result<RankResult>;
-    fn get_rank(&self, cid_index: u64) -> Result<u64>;  // fixed-point rank
-    fn merkle_root(&self) -> [u8; 32];
-}
-
-pub trait ConsensusEngine: Send + Sync {
-    async fn start(&mut self, app: Box<dyn CyberApp>) -> Result<()>;
-    async fn stop(&mut self) -> Result<()>;
-}
+cw-rank-verifier (CosmWasm contract)
+    ├── Stores current rank Merkle root + top-K values
+    ├── Verifies Merkle proofs for individual rank lookups
+    └── Exposes query interface: ParticleRank { particle } → rank
 ```
 
-#### 0.3 Deliverables
+#### x/bandwidth → cw-bandwidth (~800 lines CW) + Go AnteHandler wrapper
 
-- `cyber-interfaces` crate: ~1,200 lines, published to workspace
-- `cyber-traits` crate: ~400 lines, published to workspace
-- Integration tests with mock implementations
-- Documentation: every message, every query, every error code
+Rate limiting must happen BEFORE transaction execution (in the AnteHandler). Thin Go wrapper in Phase 1 (~100 lines) queries the contract for sender's remaining bandwidth, deducts via contract execute. Phase 3 replaces this with a Rust AnteHandler calling the same contract.
 
-**Exit criteria**: Any developer can implement a CyberApp against these traits without knowing whether Go or Rust is behind them.
+#### x/resources → cw-resources (~600 lines CW)
 
----
+Investmint: lock HYDROGEN for a period, receive VOLT or AMPERE. Pure contract using TokenFactory for native token minting: `factory/{contract_address}/volt` and `factory/{contract_address}/ampere`.
 
-### Phase 1: CosmWasm Contract Migration (15 weeks)
+#### x/dmn → cw-dmn (~500 lines CW)
 
-**Goal**: Move all custom business logic from Go modules to CosmWasm contracts (Rust). The Go host becomes a thin runtime.
+Autonomous programs ("thoughts") — scheduled contract executions. Requires x/cron (Neutron) calling `sudo { "execute_thoughts": { ... } }` every block.
 
-#### 1.1 Module Migration Map
+#### x/grid → cw-grid (~500 lines CW)
 
-| Go Module | → CW Contract | Est. Lines (Rust) | Weeks | Dependencies |
-|-----------|---------------|-------------------|-------|--------------|
-| x/graph | cw-graph | ~1,200 | 2–3 | None |
-| x/grid | cw-grid | ~500 | 1–2 | None |
-| x/resources | cw-resources | ~600 | 2–3 | TokenFactory module |
-| x/liquidity | cw-liquidity | ~2,000 | 2–3 | Fork Astroport/TerraSwap |
-| x/bandwidth | cw-bandwidth | ~800 | 2–3 | Go AnteHandler wrapper |
-| x/dmn | cw-dmn | ~500 | 2 | Go cron module (x/cron) |
-| x/rank | cw-rank-verifier | ~400 | 1–2 | Rank engine (native) |
-| **Total** | | **~6,000** | **13–18** | |
+Energy routing — delegation of bandwidth/resources. Pure contract, no hooks.
 
-#### 1.2 Contract Details
+#### x/liquidity → cw-liquidity (fork)
 
-**cw-graph** (simplest, migrate first)
+Use existing production CosmWasm AMM: Astroport, TerraSwap, or Osmosis contracts. Fork, configure denoms, deploy.
 
-The knowledge graph. Pure CRUD with indexed storage.
+### 4.3 Phase 1 target architecture
 
-```rust
-// Storage schema
-const LINKS: Map<(&str, &str), LinkMeta> = Map::new("links");
-const FROM_INDEX: Map<&str, Vec<String>> = Map::new("from_idx");
-const TO_INDEX: Map<&str, Vec<String>> = Map::new("to_idx");
-const STATS: Item<GraphStats> = Item::new("stats");
-
-fn execute_cyberlink(
-    deps: DepsMut,
-    info: MessageInfo,
-    particle_from: String,
-    particle_to: String,
-) -> Result<Response, ContractError> {
-    // Validate CID format
-    validate_cid(&particle_from)?;
-    validate_cid(&particle_to)?;
-
-    // Check duplicate
-    if LINKS.has(deps.storage, (&particle_from, &particle_to)) {
-        return Err(ContractError::LinkExists {});
-    }
-
-    // Store link with metadata
-    let meta = LinkMeta {
-        neuron: info.sender.clone(),
-        height: deps.api.block_height(),
-        timestamp: deps.api.block_time(),
-    };
-    LINKS.save(deps.storage, (&particle_from, &particle_to), &meta)?;
-
-    // Update indices (for rank engine graph reads)
-    // ...
-
-    // Update stats
-    STATS.update(deps.storage, |mut s| -> StdResult<_> {
-        s.cyberlinks += 1;
-        Ok(s)
-    })?;
-
-    Ok(Response::new()
-        .add_attribute("action", "cyberlink")
-        .add_attribute("from", particle_from)
-        .add_attribute("to", particle_to)
-        .add_attribute("neuron", info.sender))
-}
+```
+cw-cyber v1
+├── Go host (~900 lines custom)
+│   ├── wasmd (vanilla fork)
+│   ├── x/tokenfactory          ← Osmosis, plug-and-play
+│   ├── x/cron                  ← Neutron, plug-and-play
+│   ├── rank native module      ← Go+CUDA, pushes to CW via sudo (~300 lines)
+│   └── bandwidth AnteHandler   ← thin wrapper, queries CW (~100 lines)
+│
+├── CosmWasm contracts (all Rust)
+│   ├── cw-graph                ~1,200 lines
+│   ├── cw-rank-verifier          ~800 lines
+│   ├── cw-bandwidth              ~800 lines
+│   ├── cw-resources              ~600 lines
+│   ├── cw-dmn                    ~500 lines
+│   ├── cw-grid                   ~500 lines
+│   └── cw-liquidity           ~0 (fork)
+│
+└── Shared Rust libraries
+    ├── cyber-interfaces       trait crate, message definitions
+    └── cyber-merkle           Merkle tree for rank proofs
 ```
 
-**cw-rank-verifier** (rank results receiver)
+Custom Go reduced from ~13,400 to ~900 lines. All business logic in Rust.
 
-The actual rank computation stays native (GPU). This contract receives and stores results:
+### 4.4 state migration
 
-```rust
-fn sudo_update_ranks(
-    deps: DepsMut,
-    merkle_root: String,
-    ranks_count: u64,
-    computation_block: u64,
-) -> Result<Response, ContractError> {
-    // Only callable via sudo (host chain only)
-    let state = RANK_STATE.load(deps.storage)?;
-
-    // Store new rank merkle root
-    RANK_STATE.save(deps.storage, &RankState {
-        merkle_root: merkle_root.clone(),
-        ranks_count,
-        last_computation_block: computation_block,
-        previous_merkle_root: state.merkle_root,
-    })?;
-
-    Ok(Response::new()
-        .add_attribute("action", "update_ranks")
-        .add_attribute("merkle_root", merkle_root)
-        .add_attribute("ranks_count", ranks_count.to_string()))
-}
-```
-
-Individual rank lookups query the native rank engine via Stargate custom query.
-
-**cw-resources** (investmint)
-
-Uses TokenFactory for minting VOLT and AMPERE:
-
-```rust
-fn execute_investmint(
-    deps: DepsMut,
-    env: Env,
-    info: MessageInfo,
-    resource: ResourceType,
-    length: u64,
-) -> Result<Response, ContractError> {
-    // Validate HYDROGEN sent
-    let hydrogen = must_pay(&info, "hydrogen")?;
-
-    // Calculate mint amount based on halving schedule
-    let params = PARAMS.load(deps.storage)?;
-    let mint_amount = calculate_mint_amount(hydrogen, length, &params, env.block.height)?;
-
-    // Lock HYDROGEN (escrow in contract)
-    let unlock_height = env.block.height + length;
-    LOCKS.save(deps.storage, info.sender.as_str(), &Lock {
-        amount: hydrogen,
-        unlock_height,
-    })?;
-
-    // Mint resource token via TokenFactory
-    let denom = match resource {
-        ResourceType::Volt => "factory/contract_addr/millivolt",
-        ResourceType::Ampere => "factory/contract_addr/milliampere",
-    };
-
-    let mint_msg = TokenFactoryMsg::Mint {
-        denom: denom.into(),
-        amount: mint_amount,
-        mint_to: info.sender.to_string(),
-    };
-
-    Ok(Response::new()
-        .add_message(CosmosMsg::Custom(mint_msg))
-        .add_attribute("action", "investmint")
-        .add_attribute("resource", format!("{:?}", resource))
-        .add_attribute("amount", mint_amount.to_string()))
-}
-```
-
-**cw-bandwidth** (rate limiting logic + Go AnteHandler wrapper)
-
-The accounting logic lives in the contract. The enforcement happens at the Go AnteHandler level via a query to the contract:
-
-```rust
-// Contract side: accounting
-fn query_check_bandwidth(
-    deps: Deps,
-    sender: String,
-    msg_count: u32,
-    tx_size: u64,
-) -> StdResult<CheckBandwidthResponse> {
-    let params = PARAMS.load(deps.storage)?;
-    let account = ACCOUNTS.may_load(deps.storage, &sender)?
-        .unwrap_or_default();
-
-    // Load VOLT balance via bank query
-    let volt_balance = deps.querier.query_balance(&sender, "millivolt")?;
-
-    // Calculate bandwidth limit proportional to VOLT stake
-    let limit = calculate_bandwidth_limit(volt_balance.amount, &params);
-    let cost = calculate_tx_cost(msg_count, tx_size, &params);
-    let remaining = limit.saturating_sub(account.consumed);
-
-    Ok(CheckBandwidthResponse {
-        allow: remaining >= cost,
-        remaining,
-        limit,
-    })
-}
-```
-
-Go AnteHandler (thin wrapper, ~50 lines):
+Single governance upgrade transaction at a coordinated block height:
 
 ```go
-// This is the ONLY custom Go code for bandwidth enforcement.
-// It queries the CW contract to check bandwidth.
-func (bw BandwidthAnteHandler) AnteHandle(ctx sdk.Context, tx sdk.Tx, simulate bool, next sdk.AnteHandler) (sdk.Context, error) {
-    sender := tx.GetMsgs()[0].GetSigners()[0].String()
-    resp := bw.wasmKeeper.QuerySmart(ctx, bw.contractAddr, []byte(fmt.Sprintf(
-        `{"check_bandwidth":{"sender":"%s","msg_count":%d,"tx_size":%d}}`,
-        sender, len(tx.GetMsgs()), tx.Size(),
-    )))
-    var result CheckBandwidthResponse
-    json.Unmarshal(resp, &result)
-    if !result.Allow {
-        return ctx, sdkerrors.Wrap(sdkerrors.ErrInsufficientFee, "insufficient bandwidth")
+func CreateUpgradeHandler(...) upgradetypes.UpgradeHandler {
+    return func(ctx sdk.Context, plan upgradetypes.Plan, fromVM module.VersionMap) (...) {
+        // 1. Store all contract code
+        graphCodeID := storeCode(ctx, wasmKeeper, "cw_graph.wasm")
+        // ... all contracts
+
+        // 2. Export existing Go state
+        graphState := graphKeeper.ExportGenesis(ctx)
+        // ...
+
+        // 3. Instantiate contracts with migrated state
+        graphAddr := instantiate(ctx, wasmKeeper, graphCodeID, GraphInstantiateMsg{
+            Links: convertLinks(graphState.Links),
+        })
+
+        // 4. Register contract addresses in app params
+        app.SetContractAddress("graph", graphAddr)
+
+        // 5. Disable old Go modules
+        return fromVM, nil
     }
-    return next(ctx, tx, simulate)
 }
 ```
 
-**cw-dmn** (autonomous programs)
+Rollback: revert governance proposal, validators switch back to old binary.
 
-Thoughts registry. Auto-execution triggered by x/cron module (from Neutron):
+### 4.5 Phase 1 timeline (15 weeks)
 
-```rust
-// Stores thought definitions
-fn execute_create_thought(
-    deps: DepsMut,
-    info: MessageInfo,
-    program: String,
-    trigger: Trigger,
-    load: Binary,
-    name: String,
-) -> Result<Response, ContractError> {
-    // Validate program address exists
-    deps.api.addr_validate(&program)?;
+| Week | Task | Deliverable |
+|------|------|-------------|
+| 1–2 | Fork wasmd, integrate TokenFactory + cron | Build system, localbostrom |
+| 3–4 | cw-graph: cyberlinks storage + queries | Contract + tests |
+| 5 | cw-grid: energy routing | Contract + tests |
+| 6–7 | cw-resources: investmint + TokenFactory | Contract + tests |
+| 8–9 | cw-bandwidth: accounting + Go AnteHandler wrapper | Contract + thin Go |
+| 10 | cw-dmn: thoughts + cron integration | Contract + tests |
+| 11 | cw-rank-verifier + Go rank sudo bridge | Contract + Go bridge |
+| 12 | cw-liquidity: fork AMM | Deploy config |
+| 13 | Genesis migration script | Export → import test |
+| 14 | Integration testing on testnet | Full system test |
+| 15 | Validator coordination + mainnet governance | Mainnet upgrade |
 
-    THOUGHTS.save(deps.storage, (&info.sender, &name), &Thought {
-        program: deps.api.addr_validate(&program)?,
-        trigger,
-        load,
-        owner: info.sender.clone(),
-    })?;
-
-    Ok(Response::new().add_attribute("action", "create_thought"))
-}
-
-// Called by cron module each block via sudo
-fn sudo_tick(deps: DepsMut, env: Env) -> Result<Response, ContractError> {
-    let mut msgs = vec![];
-    let height = env.block.height;
-
-    // Iterate active thoughts, fire those whose trigger matches
-    for thought in THOUGHTS.range(deps.storage, None, None, Order::Ascending) {
-        let (_, t) = thought?;
-        if should_fire(&t.trigger, height) {
-            msgs.push(WasmMsg::Execute {
-                contract_addr: t.program.to_string(),
-                msg: t.load.clone(),
-                funds: vec![],
-            });
-        }
-    }
-
-    Ok(Response::new().add_messages(msgs))
-}
-```
-
-#### 1.3 Minimal Go Host After Phase 1
-
-```
-wasmd (vanilla fork)
-  + x/tokenfactory        (from Osmosis, ~2,000 lines — well-tested)
-  + x/cron                (from Neutron, ~500 lines — calls sudo on contracts)
-  + x/rank (native)       (existing Go+CUDA, ~3,500 lines — temporary)
-  + BandwidthAnteHandler  (~50 lines — queries CW contract)
-  + CustomQuerier          (~100 lines — routes rank queries to native module)
-  + CustomMsgHandler       (~100 lines — routes resource mints to tokenfactory)
-```
-
-**Custom Go code remaining: ~900 lines** (down from 13,400).
-
-Everything else is standard wasmd + community modules.
-
-#### 1.4 Genesis State Migration
-
-```
-Block N:     go-cyber v7 processes normally
-             ↓ governance proposal passes (SoftwareUpgrade)
-Block N+1:   chain halts
-             ↓ export genesis state
-             ↓ migration script transforms:
-               - x/graph state → cw-graph InitMsg + bulk cyberlink data
-               - x/rank params → cw-rank-verifier InitMsg
-               - x/bandwidth accounts → cw-bandwidth InitMsg
-               - x/resources locks → cw-resources InitMsg
-               - x/dmn thoughts → cw-dmn InitMsg
-               - x/grid routes → cw-grid InitMsg
-               - x/liquidity pools → cw-liquidity InitMsg
-             ↓ new binary starts with migrated genesis
-Block N+2:   cw-cyber v1 operates normally
-             All previous state preserved. All queries work.
-```
-
-The migration script is a standalone Go binary (~2,000 lines) that reads old genesis JSON, transforms it into new genesis JSON with contract instantiation messages. This is standard Cosmos SDK upgrade practice — Osmosis, Neutron, and Juno have all done similar module-to-contract migrations.
-
-#### 1.5 Testing Strategy
-
-- **Unit tests**: Each contract tested with `cw-multi-test` (in-memory CosmWasm VM)
-- **Integration tests**: Full chain binary with migrated testnet state
-- **Differential testing**: Run old and new binaries against same block sequence, compare state hashes
-- **Testnet**: Deploy to a public testnet with migrated Bostrom state for community testing
-- **Audit**: External security review of all contracts before mainnet upgrade
-
-#### 1.6 Deliverables
-
-- 7 CosmWasm contracts, tested and audited
-- Modified wasmd fork with tokenfactory, cron, rank module, ante handler
-- Genesis migration script with full state coverage tests
-- Testnet with migrated state running for minimum 2 weeks
-- Governance proposal ready for mainnet
+Team: 2–3 Rust developers, 1 Go developer (part-time for wrappers)
 
 ---
 
-### Phase 2: wgpu Rank Engine (8 weeks, parallel with Phase 1)
+## 5. Phase 2: wgpu rank engine
 
-**Goal**: Replace CUDA with cross-vendor GPU compute via wgpu. Any GPU works — NVIDIA, AMD, Intel, Apple Silicon.
+Replace NVIDIA-only CUDA kernels with cross-vendor [[wgpu]] compute. WebGPU standard guarantees identical integer arithmetic on all compliant GPUs.
 
-#### 2.1 Why wgpu
+```rust
+pub struct RankEngine {
+    device: wgpu::Device,
+    queue: wgpu::Queue,
+    pipeline: wgpu::ComputePipeline,
+    adjacency_buf: wgpu::Buffer,   // CSR format graph
+    rank_buf: wgpu::Buffer,        // Current rank vector
+    new_rank_buf: wgpu::Buffer,    // Next iteration output
+}
+```
 
-| Property | CUDA | wgpu |
-|----------|------|------|
-| Vendor | NVIDIA only | Any GPU (Vulkan/Metal/DX12/OpenGL ES) |
-| Language | CUDA C (proprietary) | WGSL (W3C standard) |
-| Rust integration | CGO → C → CUDA (3 boundaries) | Native Rust crate (0 boundaries) |
-| Determinism | Float-dependent (non-deterministic) | Fixed-point integers (deterministic by construction) |
-| Headless compute | Requires display driver hacks | Native headless support |
-| Build | NVIDIA toolkit + nvcc + CGO | `cargo build` |
-
-#### 2.2 Deterministic Fixed-Point Arithmetic
-
-The single biggest technical challenge: GPU floating-point is non-deterministic across vendors and even across driver versions. Consensus requires bit-exact results.
-
-**Solution**: All computation uses fixed-point integer arithmetic. No floats anywhere.
+### 5.1 WGSL compute shader (deterministic PageRank)
 
 ```wgsl
-// WGSL compute shader — PageRank iteration (deterministic)
-// All values are u64 fixed-point with 18 decimal places
-// SCALE = 1_000_000_000_000_000_000 (10^18)
+// ALL arithmetic is integer-only. No floats. No vendor-specific rounding.
 
-struct Node {
-    in_degree: u32,
-    out_degree: u32,
-    stake_weight: u32,       // fixed-point u32.16
-    rank: u32,               // current rank (high 32 bits)
-    rank_low: u32,           // current rank (low 32 bits) — together form u64
+struct GraphData {
+    num_nodes: u32,
+    damping_factor: u32,   // Fixed-point: 850000 = 0.85
+    scale: u32,            // 1000000 = 1.0
 }
 
-struct Edge {
-    from_node: u32,
-    to_node: u32,
-}
-
-@group(0) @binding(0) var<storage, read>       nodes: array<Node>;
-@group(0) @binding(1) var<storage, read>       edges: array<Edge>;
-@group(0) @binding(2) var<storage, read>       csr_offsets: array<u32>;
-@group(0) @binding(3) var<storage, read_write> new_ranks: array<Node>;
-@group(0) @binding(4) var<uniform>             params: RankParams;
-
-struct RankParams {
-    damping_num: u32,        // damping factor numerator (e.g. 85)
-    damping_den: u32,        // damping factor denominator (e.g. 100)
-    tolerance: u32,          // convergence tolerance (fixed-point)
-    node_count: u32,
-    edge_count: u32,
-}
+@group(0) @binding(0) var<storage, read> graph: GraphData;
+@group(0) @binding(1) var<storage, read> row_ptr: array<u32>;
+@group(0) @binding(2) var<storage, read> col_idx: array<u32>;
+@group(0) @binding(3) var<storage, read> weights: array<u32>;
+@group(0) @binding(4) var<storage, read> current_rank: array<u64>;
+@group(0) @binding(5) var<storage, read_write> next_rank: array<u64>;
 
 @compute @workgroup_size(256)
-fn pagerank_iteration(@builtin(global_invocation_id) gid: vec3<u32>) {
-    let idx = gid.x;
-    if (idx >= params.node_count) { return; }
+fn pagerank_step(@builtin(global_invocation_id) gid: vec3<u32>) {
+    let node = gid.x;
+    if (node >= graph.num_nodes) { return; }
 
-    // Accumulate incoming rank contributions
-    // Using u64 arithmetic (emulated with two u32s in WGSL)
-    var sum_high: u32 = 0u;
-    var sum_low: u32 = 0u;
-
-    let start = csr_offsets[idx];
-    let end = csr_offsets[idx + 1u];
+    var incoming_rank: u64 = 0u;
+    let start = row_ptr[node];
+    let end = row_ptr[node + 1u];
 
     for (var i = start; i < end; i = i + 1u) {
-        let src = edges[i].from_node;
-        let src_rank_high = nodes[src].rank;
-        let src_rank_low = nodes[src].rank_low;
-        let src_out = nodes[src].out_degree;
-
-        if (src_out > 0u) {
-            // Integer division: rank / out_degree
-            // Canonical rounding: (a + b/2) / b
-            let contrib = u64_div(src_rank_high, src_rank_low, src_out);
-            let added = u64_add(sum_high, sum_low, contrib.high, contrib.low);
-            sum_high = added.high;
-            sum_low = added.low;
+        let src = col_idx[i];
+        let weight = u64(weights[i]);
+        let out_degree = u64(row_ptr[src + 1u] - row_ptr[src]);
+        if (out_degree > 0u) {
+            incoming_rank += (current_rank[src] * weight) / (out_degree * u64(graph.scale));
         }
     }
 
-    // Apply stake weight
-    let weighted = u64_mul_u32(sum_high, sum_low, nodes[idx].stake_weight);
-
-    // Apply damping: new_rank = (1-d)/N + d * weighted_sum
-    let base_high: u32 = 0u;
-    let base_low: u32 = params.damping_den - params.damping_num; // (1-d) as integer
-    // ... full fixed-point damping calculation
-
-    new_ranks[idx].rank = result.high;
-    new_ranks[idx].rank_low = result.low;
+    let damping = u64(graph.damping_factor);
+    let scale = u64(graph.scale);
+    let teleport = (scale - damping) * scale / u64(graph.num_nodes);
+    next_rank[node] = teleport + (damping * incoming_rank) / scale;
 }
 ```
 
-#### 2.3 Rank Engine Crate Structure
+Determinism guarantee: integer-only arithmetic (u32/u64). WGSL spec defines integer operations identically across all compliant implementations. Adjacency list sorted for deterministic reduction order.
 
-```
-cyber-rank/
-├── Cargo.toml
-├── src/
-│   ├── lib.rs              # Public API implementing RankEngine trait
-│   ├── gpu/
-│   │   ├── mod.rs          # wgpu device setup, buffer management
-│   │   ├── pipeline.rs     # Compute pipeline creation
-│   │   ├── buffers.rs      # GPU buffer allocation and transfer
-│   │   └── shaders/
-│   │       ├── pagerank.wgsl
-│   │       ├── normalize.wgsl
-│   │       └── reduce.wgsl
-│   ├── graph/
-│   │   ├── mod.rs          # CSR (Compressed Sparse Row) representation
-│   │   ├── csr.rs          # Adjacency matrix construction
-│   │   └── weights.rs      # Stake-weighted node values
-│   ├── fixed_point.rs      # Deterministic u64.18 arithmetic
-│   ├── merkle.rs           # Rank Merkle tree for state commitment
-│   └── fallback.rs         # CPU fallback for testing / no-GPU environments
-├── tests/
-│   ├── determinism.rs      # Cross-platform determinism verification
-│   ├── correctness.rs      # Results match known-good reference
-│   ├── gpu_vendors.rs      # Multi-vendor comparison tests
-│   └── benchmark.rs        # Performance regression tests
-└── benches/
-    └── pagerank.rs         # Criterion benchmarks
-```
+Hardware support: [[wgpu]] abstracts across Vulkan (Linux/Windows/Android), Metal (macOS/iOS), DX12 (Windows), OpenGL ES (fallback). Works on NVIDIA, AMD, Intel, Apple Silicon, Qualcomm Adreno. Headless operation — no display server required.
 
-#### 2.4 Integration with Go Host (Phase 1–2 bridge)
+### 5.2 Phase 2 timeline (8 weeks, parallel with Phase 1)
 
-During the transitional period (Phase 1 Go host + Phase 2 Rust rank engine), the rank engine integrates via FFI:
+| Week | Task | Deliverable |
+|------|------|-------------|
+| 1–2 | wgpu setup, headless compute pipeline | GPU init + basic dispatch |
+| 3–4 | WGSL PageRank shader, fixed-point arithmetic | Compute shader + tests |
+| 5 | CSR graph management, GPU upload/readback | Graph data structures |
+| 6 | Merkle tree integration | Rank proofs |
+| 7 | Determinism testing across GPU vendors | Cross-vendor test suite |
+| 8 | Integration with Go host (Phase 1) or Rust host (Phase 3) | Bridge |
 
-```rust
-// cyber-rank-ffi/src/lib.rs
-// Thin FFI bridge: Go calls Rust rank engine
-// This replaces the current Go→CGO→CUDA path
-
-#[no_mangle]
-pub extern "C" fn rank_engine_new() -> *mut RankEngine { ... }
-
-#[no_mangle]
-pub extern "C" fn rank_engine_load_graph(
-    engine: *mut RankEngine,
-    edges_ptr: *const u8,
-    edges_len: usize,
-) -> i32 { ... }
-
-#[no_mangle]
-pub extern "C" fn rank_engine_compute(
-    engine: *mut RankEngine,
-    result_ptr: *mut u8,
-    result_len: *mut usize,
-) -> i32 { ... }
-
-#[no_mangle]
-pub extern "C" fn rank_engine_free(engine: *mut RankEngine) { ... }
-```
-
-Go side (~50 lines):
-
-```go
-// #cgo LDFLAGS: -L${SRCDIR}/target/release -lcyber_rank_ffi
-// #include "cyber_rank.h"
-import "C"
-
-func (r *RustRankEngine) ComputeRank(graph *Graph) (*RankResult, error) {
-    result := C.rank_engine_compute(r.ptr, ...)
-    // ...
-}
-```
-
-This eliminates CUDA entirely. The Go binary links against a Rust `.so`/`.dylib` instead of CUDA libraries.
-
-#### 2.5 Determinism Verification Protocol
-
-Before any mainnet deployment, determinism must be proven across hardware:
-
-1. **Reference dataset**: 100K nodes, 1M edges, known rank values from CPU computation
-2. **Test matrix**:
-   - NVIDIA (Ampere, Turing, Pascal)
-   - AMD (RDNA 3, RDNA 2)
-   - Intel Arc (Alchemist)
-   - Apple M1/M2/M3 (Metal backend)
-   - Mesa/llvmpipe software renderer (CI environments)
-3. **Pass criteria**: Bit-exact u64 results across all platforms
-4. **Continuous CI**: Every commit tested on at least NVIDIA + AMD + CPU fallback
-
-#### 2.6 Deliverables
-
-- `cyber-rank` crate with wgpu compute shaders
-- `cyber-rank-ffi` crate for Go integration (temporary, Phase 1–2 bridge)
-- Determinism test suite passing on 3+ GPU vendors
-- Performance benchmarks: must match or exceed CUDA throughput
-- Documentation: fixed-point arithmetic proofs, shader specifications
+Team: 1 GPU/Rust developer
 
 ---
 
-### Phase 3: Rust Host (12 weeks)
+## 6. Phase 3: Rust host
 
-**Goal**: Replace the Go host entirely. Single Rust binary. Zero Go code.
-
-#### 3.1 Architecture
+The hardest phase. Four Go dependencies must be replaced with Rust.
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                        cyber-node                             │
-│                    (single Rust binary)                        │
-│                                                               │
-│  ┌─────────────┐  ┌──────────────┐  ┌─────────────────────┐ │
-│  │ tower-abci   │  │ tendermint   │  │   gRPC / REST API   │ │
-│  │ (ABCI server)│  │  (external   │  │   (tonic server)    │ │
-│  │              │  │   process)   │  │                     │ │
-│  └──────┬───────┘  └──────────────┘  └─────────┬───────────┘ │
-│         │                                       │             │
-│  ┌──────▼───────────────────────────────────────▼───────────┐ │
-│  │                    CyberApp                               │ │
-│  │              (implements Application trait)                │ │
-│  │                                                           │ │
-│  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌─────────────┐ │ │
-│  │  │ tx_router │ │ ante_    │ │ begin/   │ │ query_      │ │ │
-│  │  │          │ │ handler  │ │ end_block│ │ handler     │ │ │
-│  │  └────┬─────┘ └────┬─────┘ └────┬─────┘ └──────┬──────┘ │ │
-│  │       │             │            │               │        │ │
-│  │  ┌────▼─────────────▼────────────▼───────────────▼──────┐ │ │
-│  │  │                 Module Router                         │ │ │
-│  │  │                                                       │ │ │
-│  │  │  ┌──────────────────────────────────────────────────┐ │ │ │
-│  │  │  │              CosmWasm Runtime                     │ │ │ │
-│  │  │  │  ┌─────────┐ ┌─────────┐ ┌──────────┐          │ │ │ │
-│  │  │  │  │cw-graph │ │cw-grid  │ │cw-bandw. │ ...      │ │ │ │
-│  │  │  │  └─────────┘ └─────────┘ └──────────┘          │ │ │ │
-│  │  │  └──────────────────────────────────────────────────┘ │ │ │
-│  │  │                                                       │ │ │
-│  │  │  ┌──────────────────────────────────────────────────┐ │ │ │
-│  │  │  │              Native Modules                       │ │ │ │
-│  │  │  │  ┌─────────┐ ┌─────────┐ ┌──────────┐          │ │ │ │
-│  │  │  │  │  bank   │ │staking  │ │rank-eng. │ ...      │ │ │ │
-│  │  │  │  └─────────┘ └─────────┘ └──────────┘          │ │ │ │
-│  │  │  └──────────────────────────────────────────────────┘ │ │ │
-│  │  └───────────────────────────────────────────────────────┘ │ │
-│  │                                                           │ │
-│  │  ┌───────────────────────────────────────────────────────┐ │ │
-│  │  │                 State Layer                            │ │ │
-│  │  │  ┌───────────────┐  ┌───────────────────────────────┐ │ │ │
-│  │  │  │ Jellyfish MT   │  │ RocksDB / sled               │ │ │ │
-│  │  │  │ (state commit) │  │ (key-value persistence)      │ │ │ │
-│  │  │  └───────────────┘  └───────────────────────────────┘ │ │ │
-│  │  └───────────────────────────────────────────────────────┘ │ │
-│  └───────────────────────────────────────────────────────────┘ │
-│                                                               │
-│  ┌───────────────────────────────────────────────────────────┐ │
-│  │                  cyber-rank (wgpu)                         │ │
-│  │  GPU PageRank engine, runs as background compute task      │ │
-│  └───────────────────────────────────────────────────────────┘ │
-└──────────────────────────────────────────────────────────────┘
+go-cyber binary (single Go process)
+├── cosmos-sdk v0.47.x    ~180K lines Go    App framework
+├── CometBFT v0.37.x      ~100K lines Go    BFT consensus engine
+├── ibc-go v7.x            ~60K lines Go     IBC protocol
+└── wasmd v0.45.x          ~15K lines Go     CosmWasm host module
+                           ─────────────
+                           ~355K lines Go
 ```
 
-#### 3.2 Component Implementation Plan
+### 6.1 CometBFT — stays as Go sidecar
 
-**3.2.1 ABCI Server** — Use `tower-abci` from Penumbra (production-proven)
+There is no production Rust implementation of Tendermint/CometBFT consensus. Every Rust chain in the Cosmos ecosystem — Penumbra, Namada, Nomic — runs [[CometBFT]] as a separate Go process communicating via ABCI over TCP.
 
-CometBFT continues as an external process connected via ABCI socket. This is the same architecture Penumbra and Namada use. CometBFT remains a Go binary, but it is a standard unmodified binary — no custom Go code.
+```
+┌─────────────────────┐     TCP/26658      ┌──────────────────────┐
+│  CometBFT (Go)      │ ◄────────────────► │  cyber-node (Rust)   │
+│  - P2P networking    │     ABCI protocol  │  - State machine     │
+│  - Mempool           │                    │  - CosmWasm VM       │
+│  - Consensus rounds  │                    │  - Rank engine       │
+│  - Block production  │                    │  - Bank, staking     │
+└─────────────────────┘                     └──────────────────────┘
+```
+
+CometBFT is infrastructure — like Linux under the binary. Unmodified, audited, stock releases. Zero maintenance burden. The Rust app owns all state, all logic, all upgrades.
+
+Implementation: tower-abci (Penumbra's async ABCI server on Tower + tokio):
 
 ```rust
-use tower_abci::{BoxError, Server};
+use tower_abci::{Server, split};
 
 #[tokio::main]
-async fn main() -> Result<(), BoxError> {
-    let app = CyberApp::new(config)?;
-    let server = Server::builder()
-        .consensus(app.clone())
-        .mempool(app.clone())
-        .info(app.clone())
-        .snapshot(app.clone())
-        .finish()?;
+async fn main() {
+    let app = CyberApp::new(config);
+    let (consensus, mempool, info, snapshot) = split::service(app, 1);
 
-    server.listen("127.0.0.1:26658").await?;
-    Ok(())
+    Server::builder()
+        .consensus(consensus)
+        .mempool(mempool)
+        .info(info)
+        .snapshot(snapshot)
+        .finish().unwrap()
+        .listen_tcp("127.0.0.1:26658").await.unwrap();
 }
 ```
 
-**3.2.2 Minimal Native Modules**
+Target: CometBFT v0.38+ (ABCI++) — enables `PrepareProposal` for Rust-controlled block construction.
 
-Bostrom does not need the full Cosmos SDK x/bank, x/staking, x/gov etc. It needs a subset. These modules are implemented as Rust structs implementing simple traits:
+### 6.2 cosmos-sdk → minimal Rust framework
 
-| Module | Lines (est.) | Notes |
-|--------|-------------|-------|
-| `cyber-bank` | ~800 | Balance tracking, send, tokenfactory integration |
-| `cyber-staking` | ~2,000 | Delegation, undelegation, validator set management |
-| `cyber-distribution` | ~600 | Reward distribution, commission |
-| `cyber-gov` | ~500 | Use DAO-DAO contracts for complex governance |
-| `cyber-auth` | ~400 | Account management, sequence tracking |
-| `cyber-ibc` | ~1,500 | Wrapping ibc-rs / ibc-types for ABCI integration |
-| `cyber-wasm` | ~800 | CosmWasm VM integration (cosmwasm-vm is already Rust) |
+No existing Rust framework fits directly:
 
-**Total new Rust code: ~6,600 lines** for the host.
+| Project | Status | Why Not |
+|---------|--------|---------|
+| Gears (Rumos) | Early, 31★ | No IBC, no CosmWasm, incomplete |
+| Orga (Turbofish/Nomic) | Production | No CosmWasm, custom IBC, different paradigm |
+| Penumbra | Production | UTXO model, no CosmWasm |
+| Namada | Production | Deep privacy coupling, not a framework |
 
-Combined with contracts (~6,000 lines) and rank engine (~2,000 lines), the entire stack is ~14,600 lines of Rust. Compare to the current ~613,000 lines of Go.
-
-**3.2.3 State Migration: Go IAVL → Jellyfish Merkle Tree**
-
-This is the highest-risk step. The state commitment tree changes format.
+Instead: build a minimal Rust application framework that only implements what [[Bostrom]] actually uses. After Phase 1 moves business logic to contracts, the native modules shrink dramatically.
 
 ```
-Approach: Snapshot-and-reimport
-
-1. Final Go binary exports full state at halt height
-   - Every key-value pair, every module store
-   - Output: flat key-value dump (protobuf or JSON)
-
-2. Rust binary reads dump and inserts into JMT
-   - Preserves all data, recomputes Merkle roots
-   - New app hash derived from JMT root
-
-3. Validators compare new app hash via consensus
-   - If 2/3+ agree, chain proceeds
-   - Standard CometBFT upgrade mechanism
+cyber-sdk (~11,000 lines Rust vs ~500,000 lines Go cosmos-sdk)
+├── BaseApp (~2,000 lines)
+│   ├── ABCI routing (tower-abci Service impl)
+│   ├── Transaction decoding (prost)
+│   ├── Gas metering
+│   └── AnteHandler chain (signatures, bandwidth, fees)
+│
+├── x/auth (~1,500 lines)
+│   ├── Account storage, signature verification (k256, ed25519-dalek)
+│   ├── Sequence numbers (replay protection)
+│   └── Module accounts
+│
+├── x/bank (~1,000 lines)
+│   ├── Balance storage (address × denom → amount)
+│   ├── Transfer logic, supply tracking
+│   └── TokenFactory integration
+│
+├── x/staking (~2,500 lines)
+│   ├── Validator set, delegations, slashing
+│   ├── Reward distribution
+│   └── Validator power updates → CometBFT via EndBlock
+│
+├── x/wasm-host (~2,000 lines)
+│   ├── Contract lifecycle (store, instantiate, execute, migrate, sudo)
+│   ├── Gas forwarding, message dispatch, query routing
+│   └── CyberMsg/CyberQuery custom handler
+│
+├── x/upgrade (~500 lines)
+│
+├── Store (~1,500 lines)
+│   ├── Jellyfish Merkle tree (JMT) + RocksDB
+│   ├── Multi-store (one subtree per module)
+│   ├── ICS-23 proof generation (for IBC compatibility)
+│   └── State snapshots
+│
+└── Why 45x smaller?
+    ├── No EVM, no Ethermint
+    ├── Governance → CosmWasm contract (DAO-DAO)
+    ├── Liquidity → CosmWasm contract
+    ├── No legacy amino encoding
+    ├── No REST API legacy (gRPC only via tonic)
+    └── Most business logic already in contracts from Phase 1
 ```
 
-The state format changes but the data is preserved. IBC light client proofs will need one epoch of "trust migration" where counterparty chains update their client state.
+Store decision: Jellyfish Merkle tree (JMT). Wider ecosystem support (Penumbra, Sovereign Labs, Astria). ICS-23 proof adapter exists. Store is behind a trait — can benchmark Merk later and swap.
 
-**3.2.4 API Compatibility**
+Per-module reference implementations:
 
-The Rust node must expose the same APIs:
+| Module | Reference | Why |
+|---|---|---|
+| BaseApp / ABCI routing | Namada `namada_node::shell` | Full ABCI++ impl, Rust, production |
+| Auth / signatures | Penumbra `penumbra-custody` | Rust crypto, account handling |
+| Bank / balances | Orga `orga::coins` | O(1) operations, production (Nomic) |
+| Staking | Orga `orga::plugins::staking` | O(1) delegation/rewards, production |
+| Store | JMT (Penumbra) | ICS-23 compatible, widely used |
+| Wasm host | cosmwasm-vm directly | Already Rust, just needs host glue |
 
-- **CometBFT RPC** (port 26657): Handled by CometBFT process (unchanged)
-- **gRPC** (port 9090): Implemented with `tonic`, using `cosmos-sdk-proto` message types
-- **REST/LCD** (port 1317): gRPC-gateway or lightweight REST handler
-- **WebSocket**: Event subscription via CometBFT (unchanged)
+### 6.3 ibc-go → ibc-rs
 
-Existing clients (cyb.ai, CLI tools, indexers) continue working without modification.
-
-#### 3.3 Workspace Structure
-
-```
-cyber-rs/
-├── Cargo.toml                  # Workspace root
-├── crates/
-│   ├── cyber-node/             # Binary entry point
-│   ├── cyber-app/              # CyberApp implementation
-│   ├── cyber-bank/             # Token management
-│   ├── cyber-staking/          # Validator set, delegation
-│   ├── cyber-distribution/     # Reward distribution
-│   ├── cyber-gov/              # Governance (minimal, delegates to CW)
-│   ├── cyber-auth/             # Account management
-│   ├── cyber-ibc/              # IBC integration
-│   ├── cyber-wasm/             # CosmWasm VM integration
-│   ├── cyber-rank/             # wgpu PageRank engine
-│   ├── cyber-state/            # JMT + RocksDB state management
-│   ├── cyber-interfaces/       # Message type definitions
-│   └── cyber-traits/           # Trait abstractions
-├── contracts/
-│   ├── cw-graph/
-│   ├── cw-rank-verifier/
-│   ├── cw-bandwidth/
-│   ├── cw-resources/
-│   ├── cw-dmn/
-│   ├── cw-grid/
-│   └── cw-liquidity/
-├── tools/
-│   ├── genesis-migrate/        # State migration tool
-│   └── cyber-cli/              # CLI client
-└── tests/
-    ├── integration/            # Full-chain integration tests
-    └── determinism/            # Cross-platform rank determinism
-```
-
-Build: `cargo build --release` → single binary `cyber-node` (~30MB).
-
-#### 3.4 CometBFT: The Last Go Process
-
-After Phase 3, the only Go code is CometBFT itself — an unmodified external binary. The Rust node talks to it over a socket (ABCI protocol). This is acceptable because:
-
-- CometBFT is maintained by Informal Systems / CometBFT team
-- No custom patches needed
-- It's replaceable: if a pure Rust consensus engine emerges (e.g., from Malachite/tendermint-rs), CometBFT can be swapped out
-- Penumbra and Namada use this exact architecture in production
-
-The path to 100% Rust including consensus exists (Malachite, a modular BFT engine in Rust, is under development by Informal Systems), but is not required for this migration.
-
-#### 3.5 Deliverables
-
-- `cyber-rs` workspace compiling to single binary
-- All native modules implemented and tested
-- State migration tool with round-trip verification
-- API compatibility test suite (all existing endpoints work)
-- Performance benchmarks vs. Go binary
-- Testnet running for minimum 4 weeks
-- Security audit of native modules
-- Governance proposal for mainnet upgrade
-
----
-
-### Phase 4: Hardening (8 weeks)
-
-**Goal**: Optimize, audit, document. Prepare for long-term maintainability.
-
-#### 4.1 Performance Optimization
-
-- Profile with `perf` and `flamegraph`
-- Optimize hot paths: tx deserialization, state reads, CosmWasm VM calls
-- Tune RocksDB configuration for blockchain workload
-- Benchmark: target >1000 TPS for cyberlink operations
-- Memory footprint: target <2GB RAM for full node
-
-#### 4.2 Security Audit
-
-- External audit of all native modules (bank, staking, auth, IBC)
-- Formal verification of fixed-point arithmetic in rank engine
-- Fuzz testing of all message handlers
-- State machine testing: property-based tests for invariants
-
-#### 4.3 Documentation
-
-- Architecture decision records (ADRs) for every design choice
-- Operator guide: node setup, backup, upgrade procedures
-- Developer guide: how to add new modules, extend the system
-- API reference: all gRPC/REST endpoints with examples
-
-#### 4.4 Ecosystem Tooling
-
-- Updated `cyber` CLI in Rust (replacing Go CLI)
-- Docker images for easy deployment
-- Ansible/Terraform deployment scripts
-- Monitoring: Prometheus metrics, Grafana dashboards
-- Block explorer compatibility (existing explorers should work via API compatibility)
-
----
-
-### Phase 5: CyberOS Foundation (ongoing)
-
-**Goal**: Transform the Rust codebase into CyberOS — a sovereign operating system with cell-based hot-swappable modules.
-
-This phase is not a single upgrade but a continuous evolution. Key milestones:
-
-#### 5.1 Cell Architecture
-
-Convert modules into cells — hot-swappable, budget-constrained units:
+The most mature Rust replacement. Maintained by Informal Systems (same team as Hermes relayer). The host implements two traits:
 
 ```rust
-// Future: Rs language cell declaration
-cell! {
-    name: Graph,
-    budget: 500ms,
+/// Read-only state access for IBC validation
+pub trait ValidationContext {
+    fn host_height(&self) -> Height;
+    fn host_timestamp(&self) -> Timestamp;
+    fn client_state(&self, client_id: &ClientId) -> Result<Box<dyn ClientState>>;
+    fn consensus_state(&self, path: &ClientConsensusStatePath) -> Result<Box<dyn ConsensusState>>;
+    fn connection_end(&self, conn_id: &ConnectionId) -> Result<ConnectionEnd>;
+    fn channel_end(&self, port_id: &PortId, channel_id: &ChannelId) -> Result<ChannelEnd>;
+    // ... ~20 methods
+}
 
-    state {
-        links: BTreeMap<(Cid, Cid), LinkMeta>,
-        stats: GraphStats,
-    }
-
-    pub fn cyberlink(&mut self, from: Cid, to: Cid, neuron: Address) -> Result<()> {
-        // ...
-    }
-
-    pub fn query_links(&self, particle: &Cid) -> Vec<Link> {
-        // ...
-    }
+/// Write access for IBC execution
+pub trait ExecutionContext: ValidationContext {
+    fn store_client_state(&mut self, path: ClientStatePath, state: Box<dyn ClientState>);
+    fn store_connection(&mut self, path: ConnectionPath, conn: ConnectionEnd);
+    fn store_channel(&mut self, path: ChannelPath, channel: ChannelEnd);
+    fn store_packet_commitment(&mut self, path: CommitmentPath, commitment: PacketCommitment);
+    // ... write methods
 }
 ```
 
-#### 5.2 Governance-Driven Module Upgrades
+IBC proof compatibility: switching from IAVL to JMT changes the proof format. Solution: JMT proofs wrapped in ICS-23 `CommitmentProof` format (Penumbra's approach). The root hash is correct, the proof verifies — the internal tree structure does not matter to IBC.
 
-CosmWasm contracts can already be migrated via governance. Native cells extend this:
+Penumbra's divergence (lesson): Penumbra forked ibc-rs into `ibc-types` due to async state model mismatch. Bostrom's synchronous state model fits ibc-rs's `ValidationContext`/`ExecutionContext` split (ADR-005) well. Use ibc-rs directly.
 
-```
-Governance proposal: "Upgrade Graph cell to v2"
-  → Validators download new binary with updated Graph cell
-  → Chain halts, state migrates, restarts
-  → Zero downtime for all other cells
-```
+ICS-27 Interchain Accounts is not in ibc-rs — skip for Phase 3, implement later.
 
-#### 5.3 Neural Drivers & Bounded Async
+### 6.4 wasmd → cosmwasm-vm native
 
-Autonomous agents that interact with the knowledge graph:
+The CosmWasm VM is already Rust. Currently Go calls it via FFI (wasmvm). In Phase 3, direct embedding:
 
 ```rust
-cell! {
-    name: NeuralDriver,
-    budget: 2000ms,
+use cosmwasm_vm::{Cache, Instance, Backend};
 
-    #[deterministic]
-    pub async(100ms) fn process_feed(&mut self) -> Result<Vec<Cyberlink>> {
-        let recent = self.graph.query_recent(100)?;
-        let ranked = self.rank.batch_query(&recent)?;
-        // ... generate new links based on graph patterns
+impl WasmHost {
+    fn execute_contract(&mut self, sender: &Addr, contract: &Addr,
+                        msg: &[u8], funds: &[Coin]) -> Result<Response> {
+        let code = self.code_store.get(contract)?;
+        let env = self.build_env(contract)?;
+        let info = MessageInfo { sender, funds };
+
+        // cosmwasm-vm natively, zero FFI
+        let instance = self.cache.get_instance(&code.checksum, self.backend(contract))?;
+        let response = instance.execute(&env, &info, msg)?;
+
+        self.process_response(response)
+    }
+
+    fn process_response(&mut self, response: Response) -> Result<Vec<Event>> {
+        for msg in response.messages {
+            match msg.msg {
+                CosmosMsg::Bank(BankMsg::Send { to, amount }) =>
+                    self.bank.send(&to, &amount)?,
+                CosmosMsg::Wasm(WasmMsg::Execute { contract, msg, funds }) =>
+                    self.execute_contract(&contract, &msg, &funds)?,
+                CosmosMsg::Custom(CyberMsg::Cyberlink { links }) => {
+                    self.graph.create_links(&links)?;
+                    self.rank_dirty = true;
+                }
+                // ... staking, IBC, etc.
+            }
+        }
+        Ok(response.events)
     }
 }
 ```
 
-#### 5.4 Rs Language Extensions
+cosmwasm-vm requires the host to implement a `Backend` providing storage, API, and querier:
 
-The 7 primitives (typed registers, bounded async, deterministic functions, content-addressed types, epoch-scoped state, cell declarations, owned regions) become available as the Rs compiler patch stabilizes. All existing Rust code continues to compile — Rs is a strict superset.
+```rust
+/// Host-provided storage for each contract instance
+struct CyberStorage {
+    prefix: Vec<u8>,  // contract address as prefix
+    store: Arc<RwLock<JmtStore>>,
+}
 
----
+impl Storage for CyberStorage {
+    fn get(&self, key: &[u8]) -> BackendResult<Option<Vec<u8>>> { /* prefixed read */ }
+    fn set(&mut self, key: &[u8], value: &[u8]) -> BackendResult<()> { /* prefixed write */ }
+    fn remove(&mut self, key: &[u8]) -> BackendResult<()> { /* prefixed delete */ }
+    fn range(...) -> BackendResult<Records> { /* prefixed iteration */ }
+}
 
-## 4. Risk Assessment
+/// Host-provided querier routes to bank, staking, wasm, and custom modules
+struct CyberQuerier { bank, staking, wasm_host, custom }
 
-### 4.1 Technical Risks
-
-| Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
-| wgpu determinism failure on some GPU | Medium | Critical | Extensive multi-vendor testing; CPU fallback always available |
-| State migration data loss | Low | Critical | Round-trip verification; parallel testnet with real state |
-| IBC compatibility break | Medium | High | Use battle-tested ibc-rs; extensive relay testing with Cosmos Hub |
-| Performance regression vs Go | Low | Medium | Benchmark-driven development; Rust typically faster |
-| CosmWasm VM behavior difference | Low | Medium | Same cosmwasm-vm crate used in both Go and Rust hosts |
-| CometBFT compatibility issue | Low | Low | Standard ABCI protocol; well-documented interface |
-
-### 4.2 Operational Risks
-
-| Risk | Likelihood | Impact | Mitigation |
-|------|-----------|--------|------------|
-| Validator confusion during upgrade | Medium | Medium | Clear documentation, testnet rehearsal, validator coordination |
-| Extended chain halt during migration | Low | High | Time-box migration to 2 hours; rollback procedure ready |
-| Community resistance to change | Medium | Medium | Progressive delivery — each phase is independently valuable |
-| Key developer unavailability | Medium | High | Document everything; multiple contributors per component |
-
-### 4.3 Go-Free Risk Reduction
-
-Eliminating Go actually reduces several current risks:
-
-- **CGO undefined behavior**: Eliminated. No more FFI boundary between Go and CUDA.
-- **Go GC pauses**: Eliminated. Rust has no GC.
-- **Go module version conflicts**: Eliminated. `Cargo.lock` manages Rust dependencies deterministically.
-- **NVIDIA driver dependency**: Eliminated. wgpu works with any GPU driver.
-- **Build reproducibility**: Improved. `cargo build` is more reproducible than Go+CGO+CUDA toolchain.
-
----
-
-## 5. Resource Estimates
-
-### 5.1 Development Time (sequential, 1–2 developers)
-
-| Phase | Duration | Parallel? | Cumulative |
-|-------|----------|-----------|------------|
-| Phase 0: Interfaces | 4 weeks | — | 4 weeks |
-| Phase 1: CW Contracts | 15 weeks | — | 19 weeks |
-| Phase 2: wgpu Rank | 8 weeks | Yes (with Phase 1) | 19 weeks |
-| Phase 3: Rust Host | 12 weeks | — | 31 weeks |
-| Phase 4: Hardening | 8 weeks | — | 39 weeks |
-
-**Total: ~9 months** with Phases 1 and 2 running in parallel.
-
-With 3–4 developers, this compresses to ~5–6 months.
-
-### 5.2 Lines of Code
-
-| Component | Go (current) | Rust (target) | Ratio |
-|-----------|-------------|---------------|-------|
-| Custom modules | 13,400 | 6,000 (CW contracts) | 0.45x |
-| Host framework | 595,000 (SDK+CometBFT+wasmd) | 6,600 (native modules) | 0.01x |
-| GPU rank | 3,500 + 470 CUDA | 2,000 | 0.50x |
-| **Total custom** | **13,400** | **14,600** | **1.09x** |
-| **Total including framework** | **613,000** | **14,600** | **0.024x** |
-
-The Rust codebase is 42x smaller than Go because it uses existing Rust crates (tendermint-rs, tower-abci, cosmwasm-vm, jmt, tonic, prost) as dependencies rather than vendoring an entire framework.
-
-### 5.3 Hardware Requirements After Migration
-
-| Requirement | Current (go-cyber) | After Migration (cyber-rs) |
-|-------------|--------------------|-----------------------------|
-| GPU | NVIDIA (CUDA required) | Any GPU (or CPU fallback) |
-| RAM | 16GB+ | 4–8GB (estimate) |
-| CPU | 4+ cores | 2+ cores |
-| Disk | SSD, 200GB+ | SSD, 100GB+ |
-| Build toolchain | Go + CGO + CUDA toolkit + nvcc | Rust toolchain only |
-
----
-
-## 6. Governance & Upgrade Path
-
-### 6.1 Upgrade Sequence
-
-Each phase is a separate governance proposal:
-
-```
-Proposal 1: "Upgrade to cw-cyber v1" (Phase 1 completion)
-  - Custom logic moves to CosmWasm contracts
-  - Go host simplified to ~900 lines custom code
-  - CUDA rank temporarily retained
-  - Validator binary: Go + Rust contracts
-
-Proposal 2: "Enable wgpu rank engine" (Phase 2 completion)
-  - CUDA removed
-  - wgpu rank engine activated
-  - Validator GPU requirement: any vendor
-  - Validator binary: Go + Rust contracts + Rust rank
-
-Proposal 3: "Upgrade to cyber-rs v1" (Phase 3 completion)
-  - Go host eliminated
-  - Full Rust binary
-  - State migrated to JMT
-  - Validator binary: Rust only (+ CometBFT external process)
+impl Querier for CyberQuerier {
+    fn query_raw(&self, request: &[u8], gas_limit: u64) -> BackendResult<...> {
+        let query: QueryRequest<CyberQuery> = from_json(request)?;
+        match query {
+            QueryRequest::Bank(q) => self.bank.handle(q),
+            QueryRequest::Staking(q) => self.staking.handle(q),
+            QueryRequest::Wasm(q) => self.wasm_host.handle(q),
+            QueryRequest::Custom(q) => self.custom.handle(q),
+            _ => Err(BackendError::unknown("unsupported query")),
+        }
+    }
+}
 ```
 
-### 6.2 Rollback Strategy
+### 6.5 IAVL → JMT state migration
 
-Each phase has a rollback plan:
+At the Phase 3 upgrade height:
 
-- **Phase 1 rollback**: Revert governance proposal, validators switch back to old binary. Contract state is not lost (it was migrated from Go state).
-- **Phase 2 rollback**: Switch back to CUDA rank engine via governance parameter change.
-- **Phase 3 rollback**: More complex — requires reverse state migration (JMT → IAVL). This is why extensive testnet validation is critical before Phase 3.
+```
+1. HALT chain at governance-approved height
+2. Export: iterate all IAVL leaves → KV dump (deterministic, ordered)
+3. Import: insert all KV pairs into JMT
+4. Compute new JMT root hash
+5. Resume with Rust binary + CometBFT sidecar
+6. IBC channels: governance proposal on counterparty chains to update light client
+```
+
+Risk: IBC proof format change. Counterparty chains must update their [[Bostrom]] light client. Mitigation: extensive testnet rehearsal, coordinate with relayer operators, potentially maintain dual proof support during transition.
+
+### 6.6 Phase 3 complete architecture
+
+```
+cyber-node (single Rust binary, ~18,000 lines)
+├── tower-abci          ABCI server (Penumbra)
+├── tendermint-rs        Types, proto (Informal Systems)
+├── cyber-sdk            Minimal app framework
+│   ├── auth             Accounts, signatures
+│   ├── bank             Balances, TokenFactory
+│   ├── staking          Validators, delegations
+│   ├── wasm-host        CosmWasm host (native)
+│   └── store            JMT + RocksDB
+├── ibc-rs               Full IBC protocol
+├── cosmwasm-vm          Wasm contract VM (native)
+├── rank-engine          wgpu GPU compute
+├── graph-store          Native cyberlink storage
+└── bandwidth            Native rate limiting
+
++ CometBFT v0.38 (stock Go binary, separate process)
++ CosmWasm contracts (unchanged from Phase 1)
+```
+
+### 6.7 Phase 3 timeline (16 weeks + 4 buffer)
+
+| Week | Task | Deliverable | Reference |
+|------|------|-------------|-----------|
+| 1–2 | ABCI server + CometBFT integration | tower-abci setup | Namada shell, Penumbra pd |
+| 3–4 | Store layer (JMT + RocksDB + multi-store) | State persistence, ICS-23 proofs | Penumbra jmt |
+| 5–6 | Auth module (accounts, signatures, sequences) | Transaction validation | Namada tx verification |
+| 7–8 | Bank module (balances, transfers, TokenFactory) | Token operations | Orga coins |
+| 9–10 | Staking module (validators, delegations, rewards) | Validator set management | Orga staking |
+| 11–12 | Wasm host (cosmwasm-vm, message dispatch) | Contract execution | cosmwasm-vm API |
+| 13–14 | IBC integration (ibc-rs contexts, proofs) | Cross-chain communication | Namada IBC |
+| 15 | Rank engine + graph store integration | GPU compute, [[cyberlinks]] | Phase 2 rank-engine |
+| 16 | State migration testing, IAVL → JMT | Testnet rehearsal | — |
+| +4 | Buffer: IBC coordination, cross-vendor testing | Mainnet readiness | — |
+
+Team: 3–4 Rust developers. Ideal: experience with Namada, Penumbra, or Nomic codebases.
 
 ---
 
-## 7. Success Criteria
+## 7. Phase 4: hardening
 
-### Per-Phase Gates
+Performance optimization: profile with `perf` and `flamegraph`. Optimize hot paths: tx deserialization, state reads, [[CosmWasm]] VM calls. Tune RocksDB for blockchain workload. Target: >1000 TPS for cyberlink operations, <2GB RAM for full node.
 
-| Phase | Gate | Verification |
-|-------|------|--------------|
-| 0 | All interfaces defined, mock tests pass | Code review, CI |
-| 1 | All contracts deployed on testnet, state migrated, 2 weeks stable | Testnet monitoring |
-| 1 | Existing cyb.ai and CLI work without modification | Integration tests |
-| 2 | Rank results bit-identical on NVIDIA, AMD, Intel | Multi-vendor CI |
-| 2 | Rank computation ≥ CUDA performance | Benchmarks |
-| 3 | Full Rust binary running on testnet, 4 weeks stable | Testnet monitoring |
-| 3 | All gRPC/REST APIs compatible | API test suite |
-| 3 | IBC transfers working with Cosmos Hub testnet | Relay tests |
-| 4 | External security audit passed | Audit report |
-| 4 | All documentation complete | Review |
+Security audit: external audit of all native modules (bank, staking, auth, IBC integration). Formal verification of fixed-point arithmetic in rank engine. Fuzz testing of all message handlers. Property-based state machine testing for invariants.
 
-### Final State
+Ecosystem tooling: Rust CLI, Docker images, deployment scripts, Prometheus metrics + Grafana dashboards, block explorer compatibility.
 
-After all phases complete, Bostrom achieves:
-
-- **Zero Go code** in the critical path (CometBFT is external, standard, replaceable)
-- **Any GPU** can validate (NVIDIA, AMD, Intel, Apple Silicon)
-- **Single `cargo build`** produces the complete node binary
-- **~14,600 lines** of custom Rust (vs. 613,000 lines Go)
-- **Foundation for CyberOS**: cell architecture, Rs language, sovereign OS
-- **Full IBC compatibility**: interchain communication preserved
-- **Full API compatibility**: existing tools continue working
-- **Improved performance**: no GC pauses, no FFI overhead, native Rust speed
-- **Improved security**: Rust memory safety, smaller attack surface
+Duration: 8 weeks. Can overlap with Phase 3 final testing.
 
 ---
 
-## Appendices
+## 8. Phase 5: Rs + CyberOS
 
-### A. Reference Implementations
+[[Rs]] is a strict superset of Rust — all valid Rust is valid Rs. Four new capabilities for deterministic, real-time, bare-metal blockchain systems: bounded async with compile-time deadlines, `#[deterministic]` functions that reject non-deterministic operations, typed MMIO registers without unsafe, and `cell!` declarations for hot-swappable OS modules with resource budgets.
 
-| What | Where | Notes |
-|------|-------|-------|
-| Penumbra (pure Rust Tendermint chain) | github.com/penumbra-zone/penumbra | Architecture reference |
-| Namada (pure Rust Tendermint chain) | github.com/anoma/namada | IBC reference |
-| tower-abci | github.com/penumbra-zone/tower-abci | ABCI server |
-| tendermint-rs | github.com/informalsystems/tendermint-rs | Tendermint client libraries |
-| ibc-rs | github.com/cosmos/ibc-rs | IBC protocol |
-| jmt | github.com/penumbra-zone/jmt | Jellyfish Merkle Tree |
-| cosmwasm-vm | github.com/CosmWasm/cosmwasm | Wasm runtime (already Rust) |
-| wgpu | github.com/gfx-rs/wgpu | GPU compute |
-| Neutron x/cron | github.com/neutron-org/neutron | Cron module for CW |
-| Osmosis TokenFactory | github.com/osmosis-labs/osmosis | Token minting |
-| DAO-DAO | github.com/DA0-DA0/dao-contracts | CosmWasm governance |
+[[CyberOS]] is a purpose-built operating system for running [[Bostrom]] validators. Cells instead of processes, content-addressed storage instead of filesystems, cryptographic agents instead of users, three purpose-built network protocols instead of TCP/IP. Neural drivers generated by LLMs against stable trait contracts.
 
-### B. Decision Log
+see [[rs-language-spec]] for the full language specification, [[cyber-os-architecture]] for the complete OS architecture
 
-| Decision | Choice | Rationale |
-|----------|--------|-----------|
-| State tree | Jellyfish Merkle Tree (not IAVL) | Used by Penumbra, Sovereign, co-developed; async-friendly; simpler than IAVL |
-| ABCI server | tower-abci (not raw socket) | Production-proven, async, composable with tower middleware |
-| IBC | ibc-rs + ibc-types (not custom) | Standard implementation, maintained by Cosmos ecosystem |
-| Consensus | CometBFT external process (not Rust reimplementation) | Lowest risk; proven; replaceable later |
-| GPU framework | wgpu (not OpenCL, not Vulkan direct) | Cross-vendor, W3C standard WGSL, native Rust, headless |
-| Fixed-point format | u64 with 18 decimal places | Sufficient precision for PageRank, deterministic, no overflow risk with u64 accumulation |
-| Contract framework | CosmWasm (not custom Wasm) | Existing ecosystem, tooling, auditing expertise |
-| Serialization | Protobuf via prost (not custom) | Cosmos SDK compatibility, existing type definitions |
+---
 
-### C. Glossary
+## 9. consolidated plan
 
-| Term | Definition |
-|------|-----------|
-| ABCI | Application BlockChain Interface — protocol between consensus engine and application |
-| CID | Content Identifier — IPFS content-addressed hash |
-| CSR | Compressed Sparse Row — efficient sparse matrix storage for graphs |
-| CW / CosmWasm | WebAssembly smart contract framework for Cosmos chains |
-| JMT | Jellyfish Merkle Tree — authenticated data structure for state commitment |
-| Rs | Strict superset of Rust adding 7 primitives for systems that never reboot |
-| wgpu | Rust implementation of WebGPU API for cross-platform GPU compute |
-| WGSL | WebGPU Shading Language — W3C standard shader language |
-| Fixed-point | Integer arithmetic simulating decimal numbers (e.g., u64 with 18 implicit decimal places) |
+### 9.1 full timeline
+
+```
+Month 1:      Phase 0 (interfaces) + Phase 2 starts (wgpu, parallel)
+Month 1–4:    Phase 1 (CosmWasm migration)
+Month 3:      Phase 2 completes (wgpu rank engine)
+Month 5–9:    Phase 3 (Rust host)
+Month 9–10:   Phase 4 (hardening)
+Month 10–12:  Phase 3 mainnet, Phase 4 completes
+Month 12+:    Phase 5 (Rs language + CyberOS, ongoing)
+```
+
+### 9.2 governance upgrade sequence
+
+| Upgrade | Binary Change | State Change | Rollback |
+|---------|---------------|--------------|----------|
+| Phase 1 | wasmd binary with CW contracts | Go state → contract state | Revert to old binary |
+| Phase 2 | wgpu rank engine replaces CUDA | None (ranks recomputed) | Revert binary (CUDA fallback) |
+| Phase 3 | Rust binary + CometBFT sidecar | IAVL → JMT migration | Reverse migration (complex) |
+| Phase 4 | Optimized Rust binary | None | Revert to Phase 3 binary |
+| Phase 5 | CyberOS binary | Module → cell migration | Revert to Phase 4 binary |
+
+### 9.3 resource estimates
+
+| Phase | Team | Duration | Custom Lines |
+|-------|------|----------|--------------|
+| 0 | 1 Rust dev | 4 weeks | ~500 (interfaces) |
+| 1 | 2–3 Rust + 1 Go | 15 weeks | ~6,700 (contracts + Go wrappers) |
+| 2 | 1 GPU/Rust dev | 8 weeks | ~2,000 (rank engine) |
+| 3 | 3–4 Rust devs | 16+4 weeks | ~18,000 (Rust host) |
+| 4 | 2–3 Rust devs | 8 weeks | ~2,000 (tooling, tests) |
+| 5 | 2–4 Rust devs | Ongoing | ~15,000+ (Rs compiler + CyberOS) |
+
+### 9.4 hardware requirements
+
+| Resource | Current (go-cyber) | After Phase 3 | After CyberOS |
+|----------|-------------------|---------------|----------------|
+| GPU | NVIDIA only (CUDA) | Any vendor (wgpu) | Any vendor |
+| RAM | ~8GB | ~4GB (no GC overhead) | ~2GB (no OS overhead) |
+| CPU | 4+ cores | 2+ cores | 2+ cores |
+| Disk | ~500GB | ~300GB (compact store) | ~200GB |
+| Binary | ~100MB (Go) | ~30MB (Rust) | ~15MB (no OS) |
+
+### 9.5 existing Rust ecosystem
+
+~70% of the required infrastructure already exists in production:
+
+| Component | Go (current) | Rust alternative | Status |
+|---|---|---|---|
+| Consensus | CometBFT | tendermint-rs (Informal Systems) | Production — Penumbra, Namada |
+| ABCI interface | Go ABCI server | tower-abci | Production — Penumbra |
+| IBC | ibc-go | ibc-rs (Hermes) | Production — Namada |
+| State store | IAVL tree | jellyfish-merkle (Aptos origin) | Production — Penumbra, Sovereign |
+| Governance | x/gov | DAO-DAO (CosmWasm) | Production |
+| Protobuf | protoc-gen-go | prost | Production |
+| gRPC | grpc-go | tonic | Production |
+| Cryptography | Go crypto | ring, ed25519-dalek, k256 | Production |
+| CosmWasm VM | wasmvm (Go↔Rust FFI) | cosmwasm-vm (native Rust) | Production — already Rust |
+| GPU compute | CUDA | wgpu + WGSL | Production — Firefox, Bevy |
+
+### 9.6 risk matrix
+
+| Risk | Phase | Severity | Likelihood | Mitigation |
+|------|-------|----------|------------|------------|
+| CosmWasm gas limits hit during migration | 1 | Medium | Medium | Pre-test all contract ops, optimize storage layout |
+| wgpu determinism failure on exotic GPUs | 2 | High | Low | Integer-only arithmetic, cross-vendor test suite |
+| JMT ICS-23 proof incompatibility | 3 | Critical | Medium | Test with Hermes relayer early; Penumbra solved this |
+| Staking module bugs (slashing, rewards) | 3 | Critical | Medium | Port Orga's O(1) staking; property testing |
+| IAVL→JMT state migration data loss | 3 | Critical | Low | Multiple testnet rehearsals, verify every KV pair |
+| Phase 3 rollback complexity | 3 | High | Low | Extensive testnet, parallel chain option |
+| Rs compiler acceptance by Rust community | 5 | Medium | Medium | Start as proc macros, prove value before compiler patch |
+| CyberOS driver coverage gaps | 5 | Medium | High | LLM generation covers common hardware; start with virtio |
+
+### 9.7 success gates
+
+| Phase | Gate (must pass before mainnet) |
+|-------|-------------------------------|
+| 0 | All interfaces compile, no implementation dependencies |
+| 1 | All 7 modules pass behavioral equivalence tests vs Go modules |
+| 2 | Rank output bit-identical across NVIDIA, AMD, Intel GPUs |
+| 3 | Full IBC roundtrip works (send + receive + ack on testnet) |
+| 4 | External audit clean, no critical findings |
+| 5 | CyberOS boots on 3+ hardware platforms, passes all Phase 3 tests |
+
+### 9.8 metrics
+
+| Metric | go-cyber v7 | cw-cyber v1 | cw-cyber v3 |
+|---|---|---|---|
+| Custom Go lines | 13,400 | 900 | 0 |
+| Custom Rust lines | 0 | 6,700 | 18,000 |
+| CUDA lines | 500 | 500 → 0 | 0 |
+| Go dependencies | ~680K lines | ~680K lines | 0 |
+| GPU requirement | NVIDIA only | NVIDIA → any | Any |
+| Build toolchain | Go + CUDA + CGO | Go + Rust | Rust only |
+| Upgrade mechanism | Binary replace | Governance migrate | Governance migrate |
+| Path to CyberOS | None | Direct | Native |
+
+### 9.9 honest acknowledgments
+
+"Zero Go" means: zero custom Go code maintained by [[Bostrom]] team. [[CometBFT]] remains a Go sidecar until Phase 5 ([[CyberOS]]) potentially replaces it with a Rust/Rs consensus engine. This is how Penumbra, Namada, and Nomic operate. It is the industry standard.
+
+No production precedent for: pure Rust CosmWasm host (Phase 3), deterministic wgpu rank engine at scale (Phase 2), LLM-generated OS drivers in production (Phase 5). These are engineering firsts, not assembly of existing parts.
+
+The 12-month estimate is optimistic. Phase 3 alone may take 6 months with a small team. [[CyberOS]] (Phase 5) is a multi-year effort. Each phase is independently valuable — the plan degrades gracefully if later phases are delayed.
+
+---
+
+## 10. reference architectures
+
+### Penumbra (production Rust Cosmos chain)
+```
+CometBFT v0.37 (external Go binary)
+    ↓ ABCI (tower-abci, async)
+Penumbra pd (Rust binary)
+    ├── tower-abci
+    ├── penumbra-storage (async state, JMT)
+    ├── ibc-types + penumbra-ibc (async IBC)
+    └── Custom modules (shielded pool, DEX, staking, governance)
+```
+
+### Namada (production Rust Cosmos chain)
+```
+CometBFT v0.37.16 (external Go binary)
+    ↓ ABCI (tower-abci)
+Namada (Rust binary)
+    ├── tower-abci
+    ├── Custom state machine
+    ├── ibc-rs (full IBC)
+    └── PoS, governance, slashing
+```
+
+### Nomic (production Rust Cosmos chain)
+```
+CometBFT (external Go binary)
+    ↓ ABCI (abci2, custom)
+Nomic (Rust binary)
+    ├── Orga framework (custom Rust SDK)
+    ├── Merk (high-performance Merkle AVL, 2-20x faster than JMT)
+    └── Custom IBC, Bitcoin bridge, PoS staking
+```
+
+---
+
+## appendix: workspace dependencies
+
+```toml
+[workspace.dependencies]
+tower-abci = "0.16"
+tendermint = "0.38"
+tendermint-proto = "0.38"
+ibc = "0.54"
+ibc-proto = "0.48"
+cosmwasm-vm = "2.2"
+cosmwasm-std = "2.2"
+jmt = "0.10"
+rocksdb = "0.22"
+wgpu = "24"
+tonic = "0.12"
+tokio = { version = "1", features = ["full"] }
+prost = "0.13"
+k256 = "0.13"
+ed25519-dalek = "2.1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+```
+
+## appendix: ecosystem maturity
+
+| Component | Crate | Maturity | Production Use | Risk |
+|-----------|-------|----------|----------------|------|
+| ABCI server | tower-abci | stable | Penumbra, Namada, Fendermint | Low |
+| Tendermint types | tendermint-rs | stable | Penumbra, Namada, Nomic | Low |
+| Merkle tree | jmt | stable | Penumbra, Sovereign Labs, Astria | Low |
+| IBC protocol | ibc-rs | maturing | Namada, ibc-go test parity | Medium |
+| CosmWasm VM | cosmwasm-vm | stable | All CW chains (via FFI today) | Low |
+| GPU compute | wgpu | stable | Firefox, Bevy | Low |
+| Rust Cosmos SDK | Gears | early | AZKR-chain (dev only) | High |
+| Native CW host | — | none | No production example | High |
+
+see [[cyber/whitepaper]] for protocol specification, [[cyb-system-architecture]] for browser architecture, [[rs-language-spec]] for Rs language, [[cyber-os-architecture]] for CyberOS
