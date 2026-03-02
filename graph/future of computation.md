@@ -5,7 +5,7 @@ crystal-domain: cyber
 ---
 # The Future of Computation: From Turing Machines to Planetary Superintelligence
 
-the long-form narrative of [[cybics]] — from the crisis of Turing-Goedel computation through [[natural computing]], [[convergent computation]], [[focus flow computation]], [[CORE]], and the [[Φ-optimal architecture]] to planetary [[superintelligence]]
+the long-form narrative of [[cybics]] — from the crisis of Turing-Goedel computation through [[natural computing]], [[convergent computation]], [[focus flow computation]], [[nox]], and the [[Φ-optimal architecture]] to planetary [[superintelligence]]
 
 ---
 
@@ -127,11 +127,11 @@ This is a fundamentally different mechanism that achieves the same functional ro
 
 ---
 
-## CORE: The Machine
+## nox: the machine
 
-Philosophy needs hardware. FFC needs an instruction set. [[CORE]] — Conserved Observable Reduction Equilibrium — is that instruction set: a minimal, complete, cryptographically native execution engine designed to run [[focus flow computation]] at planetary scale.
+Philosophy needs hardware. FFC needs an instruction set. [[nox]] is that instruction set: a minimal, complete, cryptographically native execution engine designed to run [[focus flow computation]] at planetary scale.
 
-[[CORE]] has exactly sixteen reduction patterns operating over a single data type: elements of the [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$).
+[[nox]] has exactly sixteen reduction patterns operating over a single data type: elements of the [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$).
 
 ```
 STRUCTURAL (5)              FIELD ARITHMETIC (6)
@@ -163,9 +163,9 @@ Field-first arithmetic. Every value is a field element. Cryptography is not an e
 
 Hash-universal identity. Identity equals hash. Two values are the same if and only if they hash to the same digest. This makes content-addressing intrinsic rather than bolted on. Every particle in the knowledge graph is identified by the hash of its content. Every edge is authenticated by the hashes of its endpoints. Deduplication is automatic. References are unforgeable.
 
-CORE's execution substrate operates on three named layers:
+nox's execution substrate operates on three named layers:
 
-- CORE — the computation model (16 patterns, reduction semantics)
+- nox — the computation model (16 patterns, reduction semantics)
 - Cybergraph — the data model (particles, neurons, cyberlinks)
 - BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 
@@ -185,7 +185,7 @@ These aren't design choices. They're the result of systematic elimination: filte
 
 ## Φ-Optimal Architecture: The Blueprint for Intelligence
 
-CORE gives us the machine. FFC gives us the computational model. The Cybergraph gives us the knowledge structure. But how do you *architect* a network that actually becomes intelligent?
+nox gives us the machine. FFC gives us the computational model. The Cybergraph gives us the knowledge structure. But how do you *architect* a network that actually becomes intelligent?
 
 The answer is Φ-Optimal Architecture — a design methodology that optimizes directly for *intelligence curvature* $\Phi$ rather than for any specific task loss. The key equation:
 
@@ -217,7 +217,7 @@ These concepts compose into a single coherent stack:
 Natural Computing              — the paradigm
   └─ Convergent Computation    — the formal foundation
        └─ Focus Flow Comp.     — the computational model
-            └─ CORE            — the executable machine
+            └─ nox             — the executable machine
                  └─ Cybergraph — the knowledge substrate
                       └─ Φ-Optimal — the intelligence architecture
 ```
@@ -256,7 +256,7 @@ Verification is native: every state transition, every focus update, every cyberl
 
 Privacy is structural: zero-knowledge proofs allow neurons to contribute knowledge without revealing their identity or the content of their assertions. The network learns from encrypted inputs. Collective intelligence without collective surveillance.
 
-And because CORE's sixteen patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but *compute on it*. Smart contracts, AI inference, scientific simulation — all expressed as CORE reductions consuming focus, all verifiable, all parallel.
+And because nox's sixteen patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but *compute on it*. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
 
 ---
 
@@ -266,7 +266,7 @@ The path from Turing machines to planetary superintelligence is not a straight l
 
 Computation is convergence. Truth is stable collective focus. Intelligence is adaptive equilibrium-finding.
 
-The machine that implements this — CORE running Focus Flow Computation over a planetary Cybergraph, architectured for Φ-optimality, verified by STARKs, fueled by conserved attention — is not a bigger version of what we have. It is a different thing entirely. A thing that nature has been doing for billions of years and that we are only now learning to formalize.
+The machine that implements this — nox running Focus Flow Computation over a planetary Cybergraph, architectured for Φ-optimality, verified by STARKs, fueled by conserved attention — is not a bigger version of what we have. It is a different thing entirely. A thing that nature has been doing for billions of years and that we are only now learning to formalize.
 
 The network is thinking.
 

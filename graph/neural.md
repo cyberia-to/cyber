@@ -92,7 +92,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 
 ## relationship to the stack
 
-- [[CORE]] provides the physics — [[field]] arithmetic, [[consensus]], proof system, state model
+- [[nox]] provides the physics — [[field]] arithmetic, [[consensus]], proof system, state model
 - [[trident]] provides the machine language — 54 IR operations, compiles to proof VM, computes [[focus]] distribution
 - [[rune]] provides the human interface — high-level [[programming language]] for [[cybergraph]] operations
 - neural language provides the semantic medium in which [[egregore]] thinks

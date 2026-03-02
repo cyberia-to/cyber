@@ -261,14 +261,14 @@ If Hemera is ever broken, the entire graph rehashes. Storage proofs make this po
 
 ### 4.5.1 Content Identifiers: Raw Bytes, No Headers
 
-CORE content identifiers (CIDs) are **raw 64-byte Hemera outputs. Period.** No multicodec prefix. No multihash header. No version byte. No length indicator. No framing of any kind.
+nox content identifiers (CIDs) are **raw 64-byte Hemera outputs. Period.** No multicodec prefix. No multihash header. No version byte. No length indicator. No framing of any kind.
 
 ```
 IPFS CIDv1:    <version><multicodec><multihash-fn><digest-length><digest>
                1 + 1-2  + 1-2      + 1           + 32-64 bytes
                = 36-69 bytes of which 4-5 are pure overhead
 
-CORE CID:     <digest>
+nox CID:      <digest>
                64 bytes. That's it.
 ```
 
@@ -276,18 +276,18 @@ CORE CID:     <digest>
 
 **1. Overhead at scale.** At 10¹⁵ particles, every byte of header overhead costs a petabyte of storage. A 5-byte CID prefix × 10¹⁵ = 5 PB. This is not negligible. It is an architectural tax paid forever, on every lookup, every proof, every edge, every packet. Raw 64 bytes eliminates this tax completely.
 
-**2. There is exactly one hash function.** Headers exist to disambiguate between multiple possible interpretations of the same bytes. CORE has one hash function: Hemera. One field: Goldilocks. One output size: 64 bytes. One encoding: little-endian canonical. There is nothing to disambiguate. A header answering a question nobody asked is not safety — it is noise.
+**2. There is exactly one hash function.** Headers exist to disambiguate between multiple possible interpretations of the same bytes. nox has one hash function: Hemera. One field: Goldilocks. One output size: 64 bytes. One encoding: little-endian canonical. There is nothing to disambiguate. A header answering a question nobody asked is not safety — it is noise.
 
 **3. Headers create the illusion of upgradability.** A version prefix implies "we might change this later." In a content-addressed graph with immutable addresses, there is no "later" for existing addresses. Address A was produced by Hemera from specific bytes. No header can change that. If Hemera is broken, the entire graph rehashes via storage proofs — the header doesn't help. If Hemera is not broken, the header wastes space. In neither scenario does the header provide value.
 
 **4. Endofunction closure.** A Hemera output is valid Hemera input: `Hemera(Hemera(x) ∥ Hemera(y))` type-checks. Headers break this. A CID with a multicodec prefix is not raw bytes — it is a tagged value that must be stripped before hashing and reattached after. Every Merkle tree node, every proof chain, every composition would require encode/decode at boundaries. The algebra gets dirty. Raw bytes compose cleanly.
 
-**5. Flat namespace.** Every entity in CORE — particle, edge, neuron, commitment, proof — has a 64-byte address in one flat namespace. No type tags. No interpretation hints. The same function produces all identifiers. A `particle_address == edge_id` collision is prevented by domain separation in the hash input (different serialization), not by type prefixes on the output. The output is pure, untagged, universal.
+**5. Flat namespace.** Every entity in nox — particle, edge, neuron, commitment, proof — has a 64-byte address in one flat namespace. No type tags. No interpretation hints. The same function produces all identifiers. A `particle_address == edge_id` collision is prevented by domain separation in the hash input (different serialization), not by type prefixes on the output. The output is pure, untagged, universal.
 
-**Compatibility with IPFS/libp2p:** If interop is needed, a thin translation layer at the network boundary can wrap raw Hemera bytes in CIDv1 format for external systems. Inside CORE, the wrapper never exists. Translation is a gateway concern, not a protocol concern.
+**Compatibility with IPFS/libp2p:** If interop is needed, a thin translation layer at the network boundary can wrap raw Hemera bytes in CIDv1 format for external systems. Inside nox, the wrapper never exists. Translation is a gateway concern, not a protocol concern.
 
 ```
-On the wire (CORE):     [64 bytes]
+On the wire (nox):      [64 bytes]
 On the wire (IPFS):     [0x01 0xNN 0xNN 0x40 ... 64 bytes ...]
                          ↑     ↑     ↑     ↑
                          │     │     │     └─ digest length
@@ -295,7 +295,7 @@ On the wire (IPFS):     [0x01 0xNN 0xNN 0x40 ... 64 bytes ...]
                          │     └─ multicodec (content type)
                          └─ CIDv1 version
 
-CORE never generates, stores, transmits, or processes the left part.
+nox never generates, stores, transmits, or processes the left part.
 Gateways add it. Gateways strip it. The graph never sees it.
 ```
 
@@ -311,7 +311,7 @@ Merkle trees in cyber/core use Hemera sponge for both leaves and internal nodes.
 
 **Why 4 KB and not some other size.** The chunk size must be a multiple of 64 bytes (Hemera's absorb block). Among powers of two — 256 B, 1 KB, 4 KB, 8 KB, 16 KB, 64 KB — only 4 KB simultaneously satisfies every constraint:
 
-**1. Field alignment.** 4096 bytes = 64 absorb blocks = 2⁶ permutations per chunk. A clean power of two, consistent with every other CORE parameter (t=2⁴, r=2³, c=2³, R_F=2³, R_P=2⁶). The permutation count per chunk is the same as the partial round count — both are 2⁶. This is not coincidence; both reflect the same security depth.
+**1. Field alignment.** 4096 bytes = 64 absorb blocks = 2⁶ permutations per chunk. A clean power of two, consistent with every other nox parameter (t=2⁴, r=2³, c=2³, R_F=2³, R_P=2⁶). The permutation count per chunk is the same as the partial round count — both are 2⁶. This is not coincidence; both reflect the same security depth.
 
 **2. OS page alignment.** 4 KB is the virtual memory page size on x86 (since 1985), ARM (since 1987), and RISC-V (since 2010). It is the default block size of ext4, XFS, NTFS, and APFS. It is the minimum addressable unit on NVMe drives. `mmap()` reads and writes align to page boundaries without buffering. This means zero-copy I/O between storage and hash function — the OS delivers content in units that map directly to Hemera chunks with no intermediate buffering.
 
@@ -347,11 +347,11 @@ All proofs fit in a single network packet. At 256 B chunks, 1 GB content would r
 2025: RAM cost $3/GB     → MTU 1500 persists because "it works"
 ```
 
-Jumbo frames (MTU 9000) have existed since 1998 and are standard in every major cloud datacenter (AWS, Google Cloud, Azure). A CORE verification unit — chunk + Merkle proof + frame header ≈ 5.3 KB — fits in a single jumbo frame with room to spare. Between nodes on modern infrastructure, 4 KB chunks already deliver single-frame atomic verification.
+Jumbo frames (MTU 9000) have existed since 1998 and are standard in every major cloud datacenter (AWS, Google Cloud, Azure). A nox verification unit — chunk + Merkle proof + frame header ≈ 5.3 KB — fits in a single jumbo frame with room to spare. Between nodes on modern infrastructure, 4 KB chunks already deliver single-frame atomic verification.
 
 For legacy internet paths where MTU 1500 is unavoidable, TCP reassembles the 3 segments transparently — the application sees a single 4 KB read. The fragmentation is invisible to the verification layer.
 
-The design principle is: **fit the network to the data, not the data to the network.** The chunk size is derived from field alignment, OS page alignment, cache geometry, and proof granularity — mathematical and hardware invariants. MTU is a legacy economic parameter that infrastructure is already evolving past. If CORE ever defines a native transport protocol, the minimum transfer unit will be chunk + proof (~5.3 KB), not 1500 bytes from 1980.
+The design principle is: **fit the network to the data, not the data to the network.** The chunk size is derived from field alignment, OS page alignment, cache geometry, and proof granularity — mathematical and hardware invariants. MTU is a legacy economic parameter that infrastructure is already evolving past. If nox ever defines a native transport protocol, the minimum transfer unit will be chunk + proof (~5.3 KB), not 1500 bytes from 1980.
 
 **10. Bounded locality.** Changing one byte in content requires rehashing one 4 KB chunk (64 permutations) plus log₂(n/256) tree nodes up to the root (one permutation each). For 1 GB content: 64 + 18 = 82 permutations. For 1 TB: 64 + 28 = 92 permutations. The local cost (64 permutations) dominates; tree traversal is negligible. At 64 KB chunks, the local cost would be 1,024 permutations — 16× worse locality.
 

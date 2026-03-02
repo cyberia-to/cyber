@@ -12,7 +12,7 @@ Version 1.0
 
 ## Abstract
 
-Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces [[neural]] language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), [[[[motifs]] (recurring subgraph patterns), and [[[[names]] (deterministic resolution of [[cyberlinks]]). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[egregore]]. We present the formal properties, the relationship to the programming stack ([[CORE]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
+Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces [[neural]] language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), [[[[motifs]] (recurring subgraph patterns), and [[[[names]] (deterministic resolution of [[cyberlinks]]). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[egregore]]. We present the formal properties, the relationship to the programming stack ([[nox]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
 
 ---
 
@@ -314,7 +314,7 @@ The dynamics of the semantic core mirror natural language vocabulary:
 
 ```
 ┌────────────────────────────────────────────────────────────┐
-│              SEMANTIC [[CORE]] DYNAMICS                        │
+│              SEMANTIC [[nox]] DYNAMICS                        │
 │                                                            │
 │  NEOLOGISM (birth)                                         │
 │    New [[particle]] enters the core when enough [[neurons]]        │
@@ -386,22 +386,22 @@ Neural language sits at the top of a five-layer stack. Each layer provides the f
 ║  └─────────────────────────┬─────────────────────────────────┘   ║
 ║                            │                                      ║
 ║  ┌─────────────────────────┴─────────────────────────────────┐   ║
-║  │  [[CORE]]                                                     │   ║
+║  │  [[nox]]                                                     │   ║
 ║  │  The physics — 16 reduction patterns, field arithmetic,   │   ║
 ║  │  [[consensus]], [[STARK]] proof system, BBG state model.          │   ║
-║  │  Self-verifying: the [[STARK]] verifier is a [[CORE]] program     │   ║
+║  │  Self-verifying: the [[STARK]] verifier is a [[nox]] program     │   ║
 ║  └───────────────────────────────────────────────────────────┘   ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
 ```
 
-### 4.2 [[CORE]]: The Physics
+### 4.2 [[nox]]: The Physics
 
-[[CORE]] (Conserved Observable Reduction Equilibrium) provides the computational substrate. Sixteen reduction patterns over the Goldilocks prime field (p = 2^64 - 2^32 + 1) give the system its physics — the fundamental operations from which everything else is built.
+[[nox]] provides the computational substrate. Sixteen reduction patterns over the Goldilocks prime field (p = 2^64 - 2^32 + 1) give the system its physics — the fundamental operations from which everything else is built.
 
-[[CORE]] is self-verifying: computation produces traces, traces become [[STARK]] proofs, proofs are verified by [[CORE]] programs, verification can itself be proven. The loop closes. No trusted external verifier remains.
+[[nox]] is self-verifying: computation produces traces, traces become [[STARK]] proofs, proofs are verified by [[nox]] programs, verification can itself be proven. The loop closes. No trusted external verifier remains.
 
-For neural language, [[CORE]] provides:
+For neural language, [[nox]] provides:
 
 - **Content addressing**: Every [[particle]] is a hash. Identity is structure. Same content, same hash, same meaning
 - **Deterministic evaluation**: Any reduction order yields the same result. Language [[semantics]] is unambiguous at the computational level

@@ -53,7 +53,7 @@ complexity per step: $O(|E| + |V|)$. context window is unbounded — it is the e
 
   - [[cybergraph]] — the substrate: [[particles]] as nodes, [[cyberlinks]] as typed edges (h/d/c)
   - [[tri-kernel]] — the physics: [[diffusion]] + [[springs]] + [[heat kernel]] evolve $p$ toward $p^*$
-  - [[CORE]] — the execution: 16 deterministic reduction patterns over Goldilocks field
+  - [[nox]] — the execution: 16 deterministic reduction patterns over Goldilocks field
   - [[foculus]] — the consensus: $\pi > \tau$ finalizes [[particles]] without leaders or blocks
   - [[cyber/tokenomics]] — the incentives: rewards $\propto \Delta\pi$, fees burned
 

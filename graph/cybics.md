@@ -120,14 +120,14 @@ convergent computation (cybics): a network of local interactions settles into a 
 
 Goedel (1931) showed derivation has fundamental limits: true statements that cannot be proved. but convergent computation operates outside the proof-theoretic domain. a system can converge to a state that no derivation reaches.
 
-[[CORE]] — Conserved Observable Reduction Equilibrium — formalizes this. sixteen rewriting patterns, field-native arithmetic, confluent semantics. any evaluation order yields the same result. [[focus]] is conserved — a single quantity that is simultaneously fuel, attention, weight, and value.
+[[nox]] formalizes this. sixteen rewriting patterns, field-native arithmetic, confluent semantics. any evaluation order yields the same result. [[focus]] is conserved — a single quantity that is simultaneously fuel, attention, weight, and value.
 
 the stack:
 
 - natural computing paradigm
 	- convergent computation (equilibrium-based)
 		- [[focus flow]] computation (probability + physics + economics)
-			- [[CORE]] machine (field-native, confluent, self-verifying)
+			- [[nox]] machine (field-native, confluent, self-verifying)
 				- [[cybergraph]] (content-addressed, authenticated)
 					- [[tri-kernel]] ranking ([[diffusion]] + [[springs]] + heat)
 						- planetary [[superintelligence]]

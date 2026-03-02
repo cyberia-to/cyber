@@ -47,7 +47,7 @@ the stack that escapes the prison:
 - [[natural computing]] — the paradigm (nature computes by convergence)
 - [[convergent computation]] — the formal foundation (computation = equilibrium)
 - [[focus flow computation]] — the executable model (conserved attention flow)
-- [[CORE]] — the machine (sixteen patterns, field-native, confluent)
+- [[nox]] — the machine (sixteen patterns, field-native, confluent)
 - [[cybergraph]] — the substrate (content-addressed, authenticated)
 - [[tri-kernel]] — the ranking (diffusion + springs + heat)
 

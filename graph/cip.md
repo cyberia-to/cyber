@@ -8,7 +8,7 @@ crystal-domain: cyber
 
 cyber improvement proposal: design documents for the [[cyber]] protocol
 
-[[CORE]] spec, [[focus flow computation]], [[tri-kernel]], [[cyber/tokenomics]], [[theoretical foundations]]. practical bootloader changes go to [[bip]]
+[[nox]] spec, [[focus flow computation]], [[tri-kernel]], [[cyber/tokenomics]], [[theoretical foundations]]. practical bootloader changes go to [[bip]]
 
 ## design documents
 

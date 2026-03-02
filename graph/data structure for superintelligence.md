@@ -5,7 +5,7 @@ crystal-domain: computer science
 status: draft
 ---
 
-## Authenticated State Architecture for the Collective Objective Reality Engine
+## Authenticated State Architecture for nox
 
 Version 1.0 — February 2026
 
@@ -15,7 +15,7 @@ Version 1.0 — February 2026
 
 ## Abstract
 
-This document specifies the complete authenticated state architecture for CORE — a planetary-scale collective intelligence system targeting 10¹⁵ nodes with cryptographic proofs, privacy by construction, and bounded-locality updates.
+This document specifies the complete authenticated state architecture for nox — a planetary-scale collective intelligence system targeting 10¹⁵ nodes with cryptographic proofs, privacy by construction, and bounded-locality updates.
 
 The architecture emerges from a single constraint: every operation must be provable, every proof must be verifiable, and verification cost must remain within a constant factor of computation — at any scale.
 
@@ -63,7 +63,7 @@ Focus is computed by three local operators — the [[tri-kernel]]: [[diffusion]]
 
 Three layers, three names:
 
-- CORE — the computation model (16 reduction patterns, deterministic costs)
+- nox — the computation model (16 reduction patterns, deterministic costs)
 - Cybergraph — the data model (particles, cyberlinks, neurons, tokens, focus)
 - BBG — the authenticated state structure (this document)
 
@@ -763,7 +763,7 @@ $$\sum_{i=1}^{m} \frac{1}{\beta - f_i} = \sum_{j=1}^{n} \frac{m_j}{\beta - t_j}$
 
 evaluated at a random challenge $\beta$ via sumcheck.
 
-For CORE:
+For nox:
 
 ```
 CROSS-INDEX CONSISTENCY via LogUp
@@ -890,10 +890,10 @@ Updated: O(1) per block via folding
 
 ### 8.4 HyperNova Extension
 
-HyperNova extends Nova to support multiple instances and more efficient folding for complex circuits. For CORE, this enables:
+HyperNova extends Nova to support multiple instances and more efficient folding for complex circuits. For nox, this enables:
 
 - Parallel folding: Multiple block proofs folded simultaneously across shard boundaries
-- CCS compatibility: Direct folding of CORE's constraint system without R1CS conversion
+- CCS compatibility: Direct folding of nox's constraint system without R1CS conversion
 - Sub-linear verification: Verification of folded proof is sub-linear in circuit size
 
 Migration from Nova to HyperNova is internal to the folding layer — no changes to the BBG structure or proof interfaces.
@@ -977,7 +977,7 @@ TRANSACTION TYPES:
    Cost:   fee (publicly committed)
    Proof:  ZK proof of spend validity + conservation (§6.5)
 
-4. COMPUTATION — Execute CORE reduction
+4. COMPUTATION — Execute nox reduction
    Input:  (neuron, subject, formula, budget, signature)
    Effect: Consumes focus, produces result
    Cost:   focus proportional to computation steps
@@ -1313,7 +1313,7 @@ Incentive: Pruners earn a fraction of recycled focus
 
 ### 13.2 Self-Verification
 
-CORE can verify its own STARK proofs using its own reduction patterns. This is the self-referential closure:
+nox can verify its own STARK proofs using its own reduction patterns. This is the self-referential closure:
 
 ```
 SELF-VERIFICATION LOOP
@@ -1321,14 +1321,14 @@ SELF-VERIFICATION LOOP
 
 1. Computation C produces result R
 2. STARK prover generates proof π of "C → R"
-3. CORE verification program V checks π:
+3. nox verification program V checks π:
    V = reduce(subject=(π, public_inputs), formula=STARK_verifier)
 4. V produces STARK trace
 5. Another STARK proof π' proves "V accepted π"
 6. This can recurse, or be folded via Nova
 
-The verifier V is a CORE program:
-  - Poseidon2 = CORE pattern 15 (hash)
+The verifier V is a nox program:
+  - Poseidon2 = nox pattern 15 (hash)
   - Field arithmetic = patterns 5-8
   - Comparisons = patterns 9-10
   - Control flow = patterns 2, 4
@@ -1612,7 +1612,7 @@ Conservation            STARK circuit constraint     Soundness of proof system
 Post-quantum            Hash-based (no pairings)     Grover bounded by output size
 Data availability       NMT + 2D erasure coding      Honest minority sampling
 Fork resistance         Focus-weighted BFT           2/3 focus-weighted honest
-Verification closure    Self-verifying STARK         CORE expressiveness
+Verification closure    Self-verifying STARK         nox expressiveness
 Bounded locality        LogUp + local tri-kernel     Spectral gap + screening μ + temperature τ
 ```
 

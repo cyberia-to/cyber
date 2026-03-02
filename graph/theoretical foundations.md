@@ -124,7 +124,7 @@ distributed systems
 
 ## authenticated state
 
-all theory operates on authenticated data structures. [[cyber/bbg]] specifies the Merkle-ized state model. [[CORE]] synthesizes six research threads (Merkle trees → authenticated graphs → rewriting → interaction nets → conserved flow → ZK proofs) into one architecture
+all theory operates on authenticated data structures. [[cyber/bbg]] specifies the Merkle-ized state model. [[nox]] synthesizes six research threads (Merkle trees → authenticated graphs → rewriting → interaction nets → conserved flow → ZK proofs) into one architecture
 
 see [[data structure for superintelligence]] for the full BBG exposition, [[cyber/vision]] for the system specification
 
