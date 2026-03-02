@@ -27,7 +27,7 @@ Hemera = Poseidon2(
     t  = 16,                -- state width
     Rꜰ = 8,                 -- full rounds (4 + 4)
     Rₚ = 64,                -- partial rounds
-    r  = 8,                 -- rate (64 bytes)
+    r  = 8,                 -- rate (56 input bytes, 7 B/element)
     c  = 8,                 -- capacity (64 bytes)
     out = 8 elements        -- 64 bytes
 )
@@ -111,7 +111,7 @@ Hemera uses t=16 with rate=8 and capacity=8:
 | Quantum collision (BHT) | 2⁸⁵ (insufficient) | 2¹⁷⁰ |
 | Quantum preimage (Grover) | 2¹²⁸ | 2²⁵⁶ |
 
-The wider state preserves the same throughput as t=12/cap=4 (both have rate=8 = 64 bytes per permutation) while doubling the security to permanent-grade levels.
+The wider state preserves the same throughput as t=12/cap=4 (both have rate=8 = 56 input bytes per permutation with 7-byte encoding) while doubling the security to permanent-grade levels.
 
 ### 3.4 Round Counts: R_F=8, R_P=64
 
@@ -147,9 +147,10 @@ R_P=64 was chosen over R_P=56 (which would give 64 total rounds) precisely becau
 │  State width:     t = 16                      = 2⁴       │
 │  Full rounds:     R_F = 8  (4 + 4)            = 2³       │
 │  Partial rounds:  R_P = 64                    = 2⁶       │
-│  Rate:            r = 8  elements (64 bytes)  = 2³       │
-│  Capacity:        c = 8  elements (64 bytes)  = 2³       │
-│  Output:          8  elements (64 bytes)      = 2³       │
+│  Rate:            r = 8  elements              = 2³       │
+│  Input rate:      56 bytes/block (7 B/element) = 7 × 2³   │
+│  Capacity:        c = 8  elements (64 bytes)   = 2³       │
+│  Output:          8  elements (64 bytes)       = 2³       │
 │                                                          │
 │  Full round constants:    8 × 16 = 128        = 2⁷       │
 │  Partial round constants: 64                  = 2⁶       │
@@ -182,13 +183,13 @@ output                 8     result [F; 8]                  2³
 RC_FULL              128     [F; 128] constant table        2⁷
 RC_PARTIAL            64     [F; 64] constant table         2⁶
 element size        8 B      native u64                     2³
+input rate bytes   56 B      per-permutation input      7 × 2³
 output bytes       64 B      hash output                    2⁶
-rate bytes         64 B      per-permutation input          2⁶
 capacity bytes     64 B      security capacity              2⁶
 state bytes       128 B      full permutation state         2⁷
 ```
 
-The only non-power-of-2 values are derived sums (72 total rounds = 8 + 64, 192 total constants = 128 + 64) that never appear as code-level quantities, and d = 7 which is not a design choice but a mathematical constraint — the minimum invertible exponent over Goldilocks.
+The only non-power-of-2 values are derived sums (72 total rounds = 8 + 64, 192 total constants = 128 + 64) that never appear as code-level quantities, input rate (56 = 7 × 8), and d = 7. Both 7s are the same mathematical constraint: d = 7 is the minimum invertible S-box exponent for Goldilocks, and 7 bytes is the maximum whole-byte count fitting [0, p) without reduction. The Goldilocks prime forces 7 twice — once in the S-box, once in the encoding.
 
 This is not cosmetic. At planetary scale, the permutation executes trillions of times. Power-of-2 array sizes enable SIMD-aligned memory access. Power-of-2 loop bounds enable clean unrolling by any factor. The full-round constant table indexes as `RC_FULL[round * 16 .. round * 16 + 16]` — since both 16 and 128 are powers of 2, every access is naturally aligned to cache-line boundaries on 64-byte architectures.
 
@@ -222,39 +223,133 @@ for i in 4..8 {                                  // 2² iterations
 
 Every loop bound, every array dimension, every slice offset is a power of 2. The implementation writes itself.
 
-### 4.3 One Mode
+### 4.3 One Sponge, Structured Capacity
 
-Hemera has exactly one mode of operation: sponge. There is no compression mode.
+Hemera has exactly one primitive: the sponge. There is no compression mode. Every hash — particle content, Merkle leaves, Merkle internal nodes, cyberlink edges, key derivation — passes through the same permutation, the same absorption, the same squeezing. The sponge is universal.
+
+But universality demands disambiguation. A Merkle leaf, a Merkle parent, and a plain content hash all produce 64-byte outputs in one flat namespace. Without structural binding, an attacker who controls content can craft a leaf chunk that parses as a valid internal node (two 64-byte hashes concatenated), substituting an entire subtree. Without position binding, identical chunks at different offsets produce identical hashes, enabling reordering attacks. Without root finalization, a single-chunk file hashes identically to a non-root leaf in a multi-chunk tree.
+
+Hemera solves this not by adding modes (which would break the endofunction property), but by encoding context into the capacity region of the same sponge. The capacity — 8 field elements that never receive input data — carries structural metadata that binds every hash to its role, position, and finalization status.
+
+#### 4.3.1 Capacity Layout
+
+```
+State:     state[0..8]  = rate region (input absorption / output squeezing)
+           state[8..16] = capacity region (structural context, never XORed with input)
+
+Capacity:  state[8]  = counter       chunk position in file (0-based, u64)
+           state[9]  = flags         structural role (bitfield, see below)
+           state[10] = msg_length    total input byte count (sponge only)
+           state[11] = domain_tag    API mode selector (see below)
+           state[12..16] = 0         reserved, must be zero
+```
+
+#### 4.3.2 Flags (state[9])
+
+Three single-bit flags, combined via bitwise OR:
+
+```
+FLAG_ROOT   = 0x01    This hash finalizes a tree root
+FLAG_PARENT = 0x02    This hash combines two child hashes (internal node)
+FLAG_CHUNK  = 0x04    This hash derives a leaf chaining value
+```
+
+Valid combinations:
+
+| Context | Flags | Value |
+|---|---|---|
+| Plain sponge hash | (none) | 0x00 |
+| Non-root leaf | CHUNK | 0x04 |
+| Root leaf (single-chunk file) | CHUNK \| ROOT | 0x05 |
+| Non-root internal node | PARENT | 0x02 |
+| Root internal node (tree root) | PARENT \| ROOT | 0x03 |
+
+Flags encode what the hash IS, not what it contains. A flag combination that does not appear in the table above is invalid.
+
+#### 4.3.3 Domain Tags (state[11])
+
+The sponge API exposes four entry points. All use the same permutation. Domain tags prevent cross-mode collisions:
+
+```
+DOMAIN_HASH             = 0x00    Plain hash (default)
+DOMAIN_KEYED            = 0x01    Keyed hash (MAC)
+DOMAIN_DERIVE_KEY_CTX   = 0x02    Key derivation — context phase
+DOMAIN_DERIVE_KEY_MAT   = 0x03    Key derivation — material phase
+```
+
+Domain tags are set before the first absorption and never modified. They are orthogonal to flags — a keyed hash of a Merkle leaf would have `state[9] = FLAG_CHUNK` and `state[11] = DOMAIN_KEYED`.
+
+#### 4.3.4 Sponge Operation
 
 ```
 Initialize:  state ← [0; 16]
-Absorb:      for each 8-element chunk of padded input:
-               state[0..8] ⊕= chunk
+             state[11] ← domain_tag
+
+Absorb:      for each 8-element block of padded input:
+               state[0..8] += block        (Goldilocks field addition, element-wise)
                state ← permute(state)
-Squeeze:     output ← state[0..8]
+
+Finalize:    state[10] ← total_input_bytes
+             state ← permute(state)
+
+Squeeze:     output ← state[0..8]           (8 elements = 64 bytes)
 ```
 
-Every hash in cyber/core — particle content, Merkle internal nodes, cyberlink edges, neuron identity, state commitments — goes through this single function. A Merkle parent is `Hemera(left ∥ right)`, absorbing 16 elements in two chunks, requiring two permutations instead of one.
+Absorption uses Goldilocks field addition (mod p), not XOR and not wrapping addition. This preserves the algebraic structure that Poseidon2's security proof relies on.
 
-Why not a separate compression mode? A compression function (permute the full 16-element input, take 8 elements of output) would halve the cost of Merkle tree construction. Every production Poseidon2 deployment offers this. We deliberately reject it for three reasons:
+#### 4.3.5 Why Not Compression Mode
 
-Practical — ambiguity. Hemera is the identity function for cyber/core. Hash is everything: particle addresses, edge identifiers, commitment roots, neuron keys. All of these share a single 64-byte address space with no type prefix, no mode byte, no version header. If two modes can produce the same 64-byte output from different inputs through different code paths, the address space is no longer a function — it is an ambiguity. Compression mode uses all 16 state elements as input (zero capacity). Sponge mode reserves 8 elements as capacity. They operate on different security assumptions, different domain separation strategies, different input constraints. Two functions sharing one output space means every downstream system must track which function produced each address. That tracking is either a hidden type tag (contradicting our no-header commitment) or an implicit convention (a bug waiting to happen at planetary scale).
+A compression function (permute the full 16-element input, take 8 elements of output) would halve the cost of Merkle tree construction. Every production Poseidon2 deployment offers this. We deliberately reject it for three reasons:
+
+Practical — ambiguity. Compression mode uses all 16 state elements as input (zero capacity). Sponge mode reserves 8 elements as capacity. They operate on different security assumptions. Two functions sharing one output space means every downstream system must track which function produced each address. That tracking is either a hidden type tag (contradicting our no-header commitment) or an implicit convention (a bug waiting to happen at planetary scale).
 
 Economic — irreversibility. The cost of sponge-only Merkle trees is 2× per internal node. Moore's law eliminates any 2× decision in two years. Design ambiguity is permanent. We accept the 2× and buy back performance through caching, incremental updates, and parallelism — not a second mode.
 
-Mathematical — endofunctions. A sponge hash is an endofunction on the address space. Bytes in, 64 bytes out — and those 64 bytes are valid input to the same function. `Hemera(Hemera(x) ∥ Hemera(y))` type-checks. Composition, chaining, nesting — the algebra closes. A compression function has a different type signature (128 bytes → 64 bytes). The moment two functions with different signatures produce outputs in the same space, you leave the category of endofunctions. Composition breaks. You need to track which function produced which value. The algebra gets dirty. We are not rejecting compression for speed. We are rejecting leaving the category.
-
-One mode. One function. One security argument. `Hemera(x) = Hemera(y)` if and only if `x = y`. No exceptions.
-
-The cost: Merkle trees require 2 permutations per internal node instead of 1. At 10¹⁵ particles with a binary Merkle tree of depth ~50, a full tree rebuild requires ~2 × 10¹⁵ permutations instead of ~10¹⁵. Moore's law eliminates any 2× decision in two years. Design ambiguity is permanent.
+Mathematical — endofunctions. A sponge hash is an endofunction on the address space. Bytes in, 64 bytes out — and those 64 bytes are valid input to the same function. `Hemera(Hemera(x) ∥ Hemera(y))` type-checks. Composition, chaining, nesting — the algebra closes. A compression function has a different type signature (128 bytes → 64 bytes). We are not rejecting compression for speed. We are rejecting leaving the category.
 
 ### 4.4 Canonical Byte Encoding
 
-1. Bytes → field elements: Pack input bytes into 8-byte little-endian chunks. Each chunk is interpreted as an element of F_p. If the chunk value ≥ p, split into two elements (high byte separate).
-2. Padding: Append 0x01 after content, then 0x00 bytes to fill the final 8-byte chunk.
-3. Field elements → bytes: 8 bytes, little-endian, canonical range [0, p).
+#### 4.4.1 Input Encoding (Bytes → Field Elements)
 
-Domain separation between particle hashes, cyberlink hashes, and Merkle nodes is achieved naturally by input structure: different data produces different hashes. No capacity-level domain tags are needed because there is only one mode.
+Pack input bytes into **7-byte** little-endian chunks. Each 7-byte chunk is zero-extended to 8 bytes and interpreted as a u64 in little-endian order, producing one Goldilocks field element.
+
+```
+bytes[0..7]   → element 0    (zero-extend to u64 LE)
+bytes[7..14]  → element 1
+bytes[14..21] → element 2
+...
+bytes[49..56] → element 7    (= one full rate block)
+```
+
+Why 7 bytes, not 8: The maximum 7-byte value is 2⁵⁶ − 1 = 0x00FF_FFFF_FFFF_FFFF. The Goldilocks prime is p = 0xFFFF_FFFF_0000_0001. Since 2⁵⁶ − 1 < p, every 7-byte value is a valid field element without reduction. No conditional splitting, no branching, no overflow handling. The encoding is a single `u64::from_le_bytes` with a zero high byte — branchless, constant-time, and injective.
+
+At 8 bytes per element, approximately 1 in 2³² inputs would require splitting (when the value ≥ p), making encoding data-dependent and variable-length. The 7-byte encoding trades 12.5% rate reduction (56 vs 64 bytes per block) for unconditional simplicity. At planetary scale, branch-free encoding is worth one extra permutation per 8 rate blocks.
+
+Rate block: 8 elements × 7 bytes = **56 input bytes** per absorption. One permutation processes 56 bytes of content.
+
+#### 4.4.2 Output Encoding (Field Elements → Bytes)
+
+Output uses the full canonical u64 representation: **8 bytes per element**, little-endian. Output elements are guaranteed to be in [0, p) by the permutation — no reduction needed.
+
+```
+element 0 → bytes[0..8]     (u64 to LE bytes)
+element 1 → bytes[8..16]
+...
+element 7 → bytes[56..64]   (= 64-byte hash output)
+```
+
+The asymmetry — 7 bytes in, 8 bytes out — is deliberate. Input encoding must be injective for collision resistance. Output encoding must preserve full field element fidelity for algebraic composability. These are different constraints with different optima.
+
+#### 4.4.3 Padding (Hemera: 0x01 ∥ 0x00*)
+
+After all input bytes are buffered:
+
+1. Append a single `0x01` byte (padding marker)
+2. Pad with `0x00` bytes to fill the rate block (56 bytes total)
+3. Encode the padded block as 8 field elements and absorb
+4. Store total input byte count in `state[10]` (capacity length field)
+
+The padding is rate-aligned: every message, regardless of length, ends with exactly one padded absorption. The 0x01 marker distinguishes `message ∥ 0x00` from `message` — standard multi-rate padding adapted to the 7-byte element encoding.
 
 ### 4.5 Output Format
 
@@ -313,17 +408,17 @@ Merkle trees in cyber/core use Hemera sponge for both leaves and internal nodes.
 
 #### 4.6.1 Chunk Size: 4 KB (4096 bytes)
 
-Chunking rule: Content is split into fixed 4 KB chunks (4096 bytes = 512 field elements = 64 absorb blocks). The last chunk is padded normally by the sponge. No content-defined chunking — identical byte ranges always produce identical chunks.
+Chunking rule: Content is split into fixed 4 KB chunks (4096 bytes). Each chunk is hashed via `chunk_cv(data, counter, is_root)` — the two-pass construction defined in §4.6.2. At 56 input bytes per rate block, one 4 KB chunk requires ⌈4096/56⌉ = 74 absorptions. The last chunk may be shorter than 4096 bytes; its sponge pads normally. No content-defined chunking — identical byte ranges always produce identical chunks.
 
 Why 4 KB and not some other size. The chunk size must be a multiple of 64 bytes (Hemera's absorb block). Among powers of two — 256 B, 1 KB, 4 KB, 8 KB, 16 KB, 64 KB — only 4 KB simultaneously satisfies every constraint:
 
-1. Field alignment. 4096 bytes = 64 absorb blocks = 2⁶ permutations per chunk. A clean power of two, consistent with every other nox parameter (t=2⁴, r=2³, c=2³, R_F=2³, R_P=2⁶). The permutation count per chunk is the same as the partial round count — both are 2⁶. This is not coincidence; both reflect the same security depth.
+1. Field alignment. 4096 bytes = 2¹² bytes, consistent with the power-of-2 design philosophy. At 56 bytes per rate block (7-byte encoding), one chunk requires 74 absorptions + 1 structural binding = 75 permutations per leaf. While 75 is not a power of 2, the chunk size itself is — and it is the chunk size (a data structure boundary) that must align cleanly with memory, I/O, and the OS, not the permutation count (a derived runtime cost).
 
 2. OS page alignment. 4 KB is the virtual memory page size on x86 (since 1985), ARM (since 1987), and RISC-V (since 2010). It is the default block size of ext4, XFS, NTFS, and APFS. It is the minimum addressable unit on NVMe drives. `mmap()` reads and writes align to page boundaries without buffering. This means zero-copy I/O between storage and hash function — the OS delivers content in units that map directly to Hemera chunks with no intermediate buffering.
 
 3. L1 cache fit. 4 KB fits in the L1 data cache of every modern CPU (typically 32–64 KB). The entire chunk can be hashed in cache-resident memory. At 8 KB, cache pressure increases; at 16 KB, the chunk exceeds L1 on many architectures and performance degrades from cache misses during hashing.
 
-4. STARK proof granularity. One 4 KB leaf requires 64 permutations × ~1,200 constraints = ~76,800 constraints. This is small enough for efficient recursive proof composition but large enough that proof overhead does not dominate content. At 1 KB (19,200 constraints per leaf), proof metadata costs approach content costs. At 64 KB (1.2M constraints per leaf), individual leaf proofs become expensive.
+4. STARK proof granularity. One 4 KB leaf requires 75 permutations × ~1,200 constraints = ~90,000 constraints. This is small enough for efficient recursive proof composition but large enough that proof overhead does not dominate content. At 1 KB (~24,000 constraints per leaf), proof metadata costs approach content costs. At 64 KB (~1.4M constraints per leaf), individual leaf proofs become expensive.
 
 5. Tree depth and proof size. Practical scaling at 4 KB chunks:
 
@@ -359,55 +454,169 @@ For legacy internet paths where MTU 1500 is unavoidable, TCP reassembles the 3 s
 
 The design principle is: fit the network to the data, not the data to the network. The chunk size is derived from field alignment, OS page alignment, cache geometry, and proof granularity — mathematical and hardware invariants. MTU is a legacy economic parameter that infrastructure is already evolving past. If nox ever defines a native transport protocol, the minimum transfer unit will be chunk + proof (~5.3 KB), not 1500 bytes from 1980.
 
-10. Bounded locality. Changing one byte in content requires rehashing one 4 KB chunk (64 permutations) plus log₂(n/256) tree nodes up to the root (one permutation each). For 1 GB content: 64 + 18 = 82 permutations. For 1 TB: 64 + 28 = 92 permutations. The local cost (64 permutations) dominates; tree traversal is negligible. At 64 KB chunks, the local cost would be 1,024 permutations — 16× worse locality.
+10. Bounded locality. Changing one byte in content requires rehashing one 4 KB chunk (75 permutations: 74 absorptions + 1 binding) plus log₂(N) parent nodes up to the root (2 permutations each). For 1 GB content: 75 + 2×18 = 111 permutations. For 1 TB: 75 + 2×28 = 131 permutations. The local cost (75 permutations) dominates; tree traversal is negligible. At 64 KB chunks, the local cost would be ~1,171 permutations — 16× worse locality.
 
 Comparison table:
 ```
                     256B   1KB     4KB     8KB    16KB    64KB
                     ────   ────   ─────   ────   ─────   ─────
-Absorbs/chunk         4     16      64    128     256    1024
-Absorbs = 2^k       2²     2⁴     2⁶     2⁷      2⁸    2¹⁰
+Absorbs/chunk         5     19      74    147     293    1171
+Perms/leaf (†)        6     20      75    148     294    1172
 1GB tree depth       22     20      18     17      16      14
 1GB proof (bytes)  1408   1280    1152   1088    1024     896
 Overhead ratio       25%     6%    1.6%   0.8%    0.4%    0.1%
 OS page aligned       ✗      ✗      ✓      ✗       ✗       ✗
 L1 cache fit          ✓      ✓      ✓      ~       ✗       ✗
-STARK constraints   4.8K  19.2K   76.8K   154K   307K    1.2M
+STARK constraints   7.2K  24.0K   90.0K   178K   353K    1.4M
 Streaming buffer   256B     1K      4K     8K     16K     64K
 Dedup quality      poor   fair    good   good    fair    poor
 Network packets       1      1       3      6      12      46
+
+(†) Includes absorptions + padding + structural binding permutation
 ```
 
-4 KB is the only row with ✓ on both page alignment and L1 cache fit, 2⁶ absorbs per chunk (matching R_P), practical proof size, and meaningful deduplication. The convergence is not forced — it is the unique point where field arithmetic, hardware reality, and graph properties intersect.
-Leaf hash: `Hemera(chunk_bytes)` — the chunk goes through the sponge as raw bytes.
+4 KB is the only row with ✓ on both page alignment and L1 cache fit, practical proof size, and meaningful deduplication. The convergence is not forced — it is the unique point where field arithmetic, hardware reality, and graph properties intersect.
+#### 4.6.2 Leaf Hashing: `chunk_cv(data, counter, is_root) → Hash`
 
-Internal node hash: `Hemera(left_id ∥ right_id)` — exactly 128 bytes (two 64-byte hashes concatenated), hashed through the same sponge. The internal node "content" is precisely the concatenation of its children's addresses, with no framing, no length prefix, no metadata.
-
-Tree shape: Binary, left-balanced. For N chunks:
+A leaf chaining value is computed in two passes. The first pass hashes the chunk data through the plain sponge. The second pass binds the hash to its structural position via a single flag-injection permutation.
 
 ```
-If N = 1:     leaf hash is the root
+Pass 1 — content hashing:
+    hasher ← Hasher::new()              (plain sponge, domain_tag = 0x00)
+    hasher.absorb(data)
+    base_hash ← hasher.finalize()       (64-byte sponge output)
+
+Pass 2 — structural binding:
+    state ← [0; 16]
+    state[0..8] ← bytes_to_elements(base_hash)    (8 Goldilocks elements)
+    state[8]    ← counter                          (chunk position, 0-based)
+    state[9]    ← FLAG_CHUNK | (FLAG_ROOT if is_root)
+    state ← permute(state)
+    output ← elements_to_bytes(state[0..8])        (64-byte chaining value)
+```
+
+Why two passes? The sponge is a general-purpose primitive that knows nothing about trees. The flag-injection is a tree-level concern. Separating them means: (1) the sponge implementation is pure and reusable, (2) tree logic is layered on top without modifying the sponge, (3) `base_hash` is cacheable — if the same chunk appears at different positions, only the cheap second pass (one permutation) differs.
+
+The counter in `state[8]` prevents chunk reordering: the same data at position 0 and position 5 produces different chaining values. The CHUNK flag prevents leaf/node confusion: a 128-byte chunk can never be mistaken for an internal node because CHUNK (0x04) and PARENT (0x02) are distinct flags in a region the sponge never touches with input data. The ROOT flag distinguishes root finalization: a single-chunk file (is_root=true) hashes differently from the same chunk when it is leaf 0 of a multi-chunk file (is_root=false).
+
+Cost: N absorptions (for data) + 1 permutation (for binding). At 4096-byte chunks with 7-byte encoding: ⌈4096/56⌉ = 74 absorptions + 1 binding = 75 permutations per leaf.
+
+#### 4.6.3 Internal Node Hashing: `parent_cv(left, right, is_root) → Hash`
+
+A parent chaining value combines two child hashes (each 64 bytes = 8 field elements) through two sponge absorptions with flags pre-loaded in capacity. No padding — the input is always exactly 128 bytes.
+
+```
+state ← [0; 16]
+state[9] ← FLAG_PARENT | (FLAG_ROOT if is_root)
+
+// Absorb left child (8 elements = one full rate block)
+state[0..8] += bytes_to_elements(left)     (field addition, element-wise)
+state ← permute(state)
+
+// Absorb right child (8 elements = one full rate block)
+state[0..8] += bytes_to_elements(right)    (field addition, element-wise)
+state ← permute(state)
+
+output ← elements_to_bytes(state[0..8])    (64-byte chaining value)
+```
+
+No padding step. The input to `parent_cv` is always exactly two 64-byte hashes — always exactly two rate blocks. Padding exists to disambiguate variable-length inputs; here the length is fixed by construction. Omitting padding saves one absorption and eliminates a codepath that can never vary.
+
+The PARENT flag (0x02) in `state[9]` is set before the first absorption. It domain-separates internal nodes from all other hash contexts. Since flags live in the capacity region (state[8..16]) and absorption only touches the rate region (state[0..8]), the flag is preserved through both permutations — it is mixed into the output but never overwritten by input.
+
+Order matters: `parent_cv(A, B)` ≠ `parent_cv(B, A)`. Left is absorbed first, right second. The sponge state after absorbing left carries forward into the right absorption. The tree structure is committed, not just the child hashes.
+
+Cost: 2 permutations per internal node.
+
+#### 4.6.4 Tree Shape
+
+Binary, left-balanced, in-order indexed. For N chunks:
+
+```
+If N = 1:     chunk_cv(data, 0, is_root=true)  is the root
 If N > 1:     split = 2^(⌈log₂(N)⌉ - 1)
-              left  = chunks[0..split]
-              right = chunks[split..N]
-              root  = Hemera(hash(left) ∥ hash(right))
+              left  = tree_hash(chunks[0..split],       is_root=false)
+              right = tree_hash(chunks[split..N],        is_root=false)
+              root  = parent_cv(left, right, is_root=true)
 ```
 
 Left-balanced means the left subtree is always a complete binary tree (power-of-2 leaves). This ensures that the same content prefix always produces the same left subtree hash regardless of what follows — enabling incremental hashing and prefix deduplication.
 
+In-order indexing: Leaves are at even positions (0, 2, 4, ...). Parents are at odd positions with level = trailing_ones(index). This compact representation enables O(1) parent/child navigation without storing an explicit tree.
+
+#### 4.6.5 Root Finalization
+
+Every tree has exactly one root, marked by `FLAG_ROOT = 0x01`:
+
+- Single-chunk file: `chunk_cv(data, 0, is_root=true)` — leaf IS the root, flags = `CHUNK | ROOT = 0x05`
+- Multi-chunk file: `parent_cv(left, right, is_root=true)` — top parent IS the root, flags = `PARENT | ROOT = 0x03`
+
+Non-root leaves have flags = `CHUNK = 0x04`. Non-root parents have flags = `PARENT = 0x02`. The root flag ensures that a subtree hash (used internally during tree construction) never collides with a file hash (the externally-visible content identifier). This prevents a valid subtree from being presented as a valid standalone file.
+
+#### 4.6.6 Security Properties
+
+The tree construction provides the following guarantees:
+
+| Attack | Defense | Mechanism |
+|---|---|---|
+| Leaf/node confusion | Prevented | CHUNK (0x04) vs PARENT (0x02) in capacity |
+| Chunk reordering | Prevented | Counter in state[8] binds position |
+| Chunk duplication | Prevented | Counter distinguishes identical chunks at different offsets |
+| Subtree substitution | Prevented | ROOT flag separates file identity from subtree identity |
+| Length extension | Prevented | Length in state[10] (sponge) + counter (binding) |
+| Second preimage via tree | Prevented | All of the above, combined |
+
+These properties hold unconditionally — they follow from the capacity layout, not from any assumption about hash output distribution.
+
+#### 4.6.7 Complete Example
+
+A 12 KB file (3 chunks at 4096 bytes each):
+
+```
+Content: [chunk_0: 4096B] [chunk_1: 4096B] [chunk_2: 4096B]
+
+Step 1 — Leaf chaining values:
+    cv_0 = chunk_cv(chunk_0, counter=0, is_root=false)   flags=0x04
+    cv_1 = chunk_cv(chunk_1, counter=1, is_root=false)   flags=0x04
+    cv_2 = chunk_cv(chunk_2, counter=2, is_root=false)   flags=0x04
+
+Step 2 — Left subtree (complete, power-of-2):
+    left = parent_cv(cv_0, cv_1, is_root=false)          flags=0x02
+
+Step 3 — Root (left-balanced: left subtree has 2 leaves, right has 1):
+    root = parent_cv(left, cv_2, is_root=true)            flags=0x03
+
+The file's Hemera address is `root` — 64 bytes.
+```
+
 Consequence: Any node, anywhere, hashing the same content bytes, produces the same root hash, the same intermediate node hashes, and the same leaf hashes. Subtree addresses are globally stable and can be used for deduplication, caching, and verified streaming without coordination.
 
-Performance recovery: The 2× Merkle cost (two permutations per internal node instead of one) is recovered through caching (subtree hashes are stable and reusable), incremental updates (changing one chunk only recomputes its path to root), and parallelism (all leaves hash independently, tree levels are embarrassingly parallel). The performance is bought back through architecture, not by introducing a second mode.
+#### 4.6.8 Performance
+
+Cost breakdown for a file of size S bytes:
+
+```
+Leaves:   ⌈S / 4096⌉ chunks × (⌈4096/56⌉ + 1) = N × 75 permutations
+Parents:  (N − 1) internal nodes × 2 = 2(N − 1) permutations
+Total:    75N + 2(N − 1) ≈ 77N permutations
+
+For 1 GB:  N = 262,144 → ~20.2M permutations
+For 1 TB:  N = 268M    → ~20.6B permutations
+```
+
+The 2× Merkle cost (two permutations per internal node instead of one with compression mode) is recovered through caching (subtree hashes are stable and reusable), incremental updates (changing one chunk only recomputes its path to root), and parallelism (all leaves hash independently, tree levels are embarrassingly parallel). The performance is bought back through architecture, not by introducing a second mode.
+
+Incremental update cost: Changing one byte requires rehashing one 4 KB chunk (75 permutations) plus log₂(N) parent nodes to the root (2 permutations each). For 1 GB: 75 + 2×18 = 111 permutations. The local cost dominates; tree traversal is negligible.
 
 ### 4.7 Operational Semantics
 
 Hemera serves every hashing role in [[cyber]] through one function:
 
-[[particle]] addressing. `address = Hemera(content_bytes)`. Small content (< 64 bytes) absorbs in one chunk, one permutation. Large content absorbs in 4 KB chunks with a Merkle tree; the [[particle]] address is the tree root.
+[[particle]] addressing. Small content (≤ 4096 bytes): `address = chunk_cv(content, 0, is_root=true)`. Large content: split into 4 KB chunks, build left-balanced Merkle tree via `chunk_cv` + `parent_cv`; the [[particle]] address is the tree root.
 
 [[cyberlink]] identity. `edge_id = Hemera(neuron_id ∥ source ∥ target ∥ weight ∥ time)`. Structured field data serialized to bytes, hashed through sponge.
 
-Merkle proofs. Leaf and internal node hashes use the same function. Proof verification is a uniform chain of Hemera calls — no mode switching, no type disambiguation.
+Merkle proofs. Leaf and internal node hashes use the same sponge and permutation. Proof verification is a uniform chain of `chunk_cv` and `parent_cv` calls — no mode switching, no type disambiguation. The flags in capacity bind each hash to its structural role automatically.
 
 Incremental hashing. The sponge state (16 field elements = 128 bytes) is a complete checkpoint. Save it, resume later, get the same result as a single-pass hash. Nodes can hash content arriving over the network in chunks without buffering.
 
@@ -462,7 +671,7 @@ Coupled security. With an external PRNG (ChaCha20), two independent security ass
 The zero-state fixed point. Hemera₀ has a known structural property: the all-zero state is a fixed point. With all round constants equal to zero, `x⁷` maps `0 → 0`, and both M_E and M_I map the zero vector to the zero vector. Therefore `Hemera₀([0; 16]) = [0; 16]`.
 
 This does not affect constant generation because:
-- The sponge begins by absorbing the seed into the zero state via XOR
+- The sponge begins by absorbing the seed into the zero state via field addition
 - After absorbing even one non-zero byte, the state is non-zero
 - The seed `[0x63, 0x79, 0x62, 0x65, 0x72]` is 5 bytes of non-zero data
 - After absorption, the first rate element is non-zero (0x7265627963 packed little-endian)
@@ -519,11 +728,11 @@ The actual risk is a subtle error in the specific M_E or M_I matrix for Goldiloc
 | State width | 16 elements | 12 elements | 1.33× |
 | Total rounds | 72 | 30 | 2.40× |
 | Permutation field muls | ~3,648 | ~2,050 | 1.78× |
-| Bytes per permutation | 64 | 64 | 1.00× |
-| Estimated hash rate | ~62 MB/s | ~100 MB/s | 0.62× |
-| Perms for 1 KB | 16 | 16 | 1.00× |
+| Input bytes per permutation | 56 | 56 | 1.00× |
+| Estimated hash rate | ~53 MB/s | ~86 MB/s | 0.62× |
+| Perms for 1 KB | 19 | 19 | 1.00× |
 
-The 38% native hash rate reduction comes from the wider permutation and additional partial rounds. Throughput per permutation is identical because rate=8 in both cases. Partial rounds are lightweight (~19 field multiplications each vs ~304 for full rounds), so even at R_P=64, they account for only ~1,216 of the total ~3,648 field multiplications per permutation (33%).
+The 38% native hash rate reduction comes from the wider permutation and additional partial rounds. Throughput per permutation is identical because both use rate=8 with 7-byte encoding (56 input bytes per block). Partial rounds are lightweight (~19 field multiplications each vs ~304 for full rounds), so even at R_P=64, they account for only ~1,216 of the total ~3,648 field multiplications per permutation (33%).
 
 ### 6.2 Proving Cost
 
@@ -538,7 +747,7 @@ This is the real cost of permanent-grade security. However, hash proving is not 
 
 At 10¹⁵ particles with 1% annual update rate:
 - Required: ~317K particles/sec
-- Hemera at ~62 MB/s, 200-byte average particle: ~310K particles/sec per core
+- Hemera at ~53 MB/s, 200-byte average particle: ~265K particles/sec per core
 - Single core handles steady-state content hashing.
 ---
 
@@ -567,30 +776,31 @@ At 10¹⁵ particles with 1% annual update rate:
 ```rust
 /// Hemera — the complete hash primitive for cyber/core.
 /// This crate IS the specification. Parameters are constants, not configuration.
-/// There is one function. There is no compression mode.
-pub struct Hemera;
+/// One sponge. No compression mode. Structured capacity for tree binding.
 
-impl Hemera {
-    pub const P: u64 = (1 << 64) - (1 << 32) + 1;  // Goldilocks
-    pub const D: u64 = 7;
-    pub const T: usize = 16;
-    pub const ROUNDS_F: usize = 8;
-    pub const ROUNDS_P: usize = 64;
-    pub const RATE: usize = 8;
-    pub const CAPACITY: usize = 8;
+// ── Sponge API ────────────────────────────────────────────────
+pub struct Hasher { /* sponge state + buffer */ }
 
-    /// Hash arbitrary bytes to 8 Goldilocks field elements.
-    /// This is the only entry point. Merkle nodes, particle content,
-    /// cyberlinks, neuron identity — everything goes through here.
-    pub fn hash(input: &[u8]) -> [GoldilocksField; 8];
-    
-    /// Raw permutation over 16 Goldilocks elements.
-    /// Exposed for testing and verification, not for direct use.
-    pub fn permute(state: &mut [GoldilocksField; 16]);
+impl Hasher {
+    pub fn new() -> Self;                           // domain_tag = 0x00
+    pub fn new_keyed(key: &[u8; 64]) -> Self;       // domain_tag = 0x01
+    pub fn update(&mut self, data: &[u8]) -> &mut Self;
+    pub fn finalize(&self) -> Hash;                 // squeeze 8 elements = 64 bytes
+    pub fn finalize_xof(&self) -> OutputReader;     // extendable output
 }
+
+// ── Tree API (hazmat) ─────────────────────────────────────────
+pub fn chunk_cv(data: &[u8], counter: u64, is_root: bool) -> Hash;
+pub fn parent_cv(left: &Hash, right: &Hash, is_root: bool) -> Hash;
+
+// ── Key derivation ────────────────────────────────────────────
+pub fn derive_key(context: &str, key_material: &[u8]) -> [u8; 64];
+
+// ── Output type ───────────────────────────────────────────────
+pub struct Hash([u8; 64]);  // 8 Goldilocks elements, LE canonical
 ```
 
-Deliverables: `hemera` Rust crate, test vectors JSON, cross-validation with SageMath reference.
+Deliverables: `cyber-poseidon2` Rust crate, test vectors JSON, cross-validation with SageMath reference.
 
 ### Phase 4: Distributed Verification (Weeks 5–8)
 
