@@ -12,7 +12,8 @@
         <th class="col-title" data-col="title">file</th>
         <th class="col-size" data-col="size">size</th>
         <th class="col-pagerank" data-col="focus">π%</th>
-        <th class="col-links" data-col="links">links</th>
+        <th class="col-links" data-col="in">in</th>
+        <th class="col-links" data-col="out">out</th>
         <th class="col-luminosity" data-col="luminosity">luminosity</th>
         <th class="col-gravity" data-col="gravity">gravity</th>
         <th class="col-created" data-col="created">created</th>
@@ -29,7 +30,8 @@
         </td>
         <td class="col-size" data-sort="{{ f.size_sort }}" style="color: hsl(120, 50%, {{ f.size_light }}%)">{{ f.size }}</td>
         <td class="col-pagerank" data-sort="{{ f.focus_sort }}" style="color: hsl(120, 50%, {{ f.focus_light }}%)">{{ f.pagerank }}</td>
-        <td class="col-links" data-sort="{{ f.links_sort }}" style="color: hsl(120, 50%, {{ f.links_light }}%)">{{ f.backlinks }}</td>
+        <td class="col-links" data-sort="{{ f.in_sort }}" style="color: hsl(120, 50%, {{ f.in_light }}%)">{{ f.links_in }}</td>
+        <td class="col-links" data-sort="{{ f.out_sort }}" style="color: hsl(120, 50%, {{ f.out_light }}%)">{{ f.links_out }}</td>
         <td class="col-luminosity" data-sort="{{ f.luminosity_sort }}" style="color: hsl(120, 50%, {{ f.lum_light }}%)">{{ f.luminosity }}</td>
         <td class="col-gravity" data-sort="{{ f.gravity_sort }}" style="color: hsl(120, 50%, {{ f.grav_light }}%)">{{ f.gravity }}</td>
         <td class="col-created" data-sort="{{ f.created_sort }}">{{ f.created }}</td>

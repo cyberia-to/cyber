@@ -574,7 +574,8 @@ fn render_files_page(
         .public_pages(&config.content)
         .into_iter()
         .map(|p| {
-            let backlink_count = store.backlinks.get(&p.id).map(|b| b.len()).unwrap_or(0);
+            let links_in = store.backlinks.get(&p.id).map(|b| b.len()).unwrap_or(0);
+            let links_out = store.forward_links.get(&p.id).map(|f| f.len()).unwrap_or(0);
             let focus = store.focus.get(&p.id).copied().unwrap_or(0.0);
             let gravity = store.gravity.get(&p.id).copied().unwrap_or(0.0);
             let size = if p.source_path.as_os_str().is_empty() {
@@ -585,23 +586,25 @@ fn render_files_page(
                     .unwrap_or(0)
             };
             let luminosity = size as f64 * focus;
-            (p, backlink_count, focus, size, luminosity, gravity)
+            (p, links_in, links_out, focus, size, luminosity, gravity)
         })
         .collect();
 
     // Sort by focus descending
-    pages.sort_by(|a, b| b.2.partial_cmp(&a.2).unwrap_or(std::cmp::Ordering::Equal));
+    pages.sort_by(|a, b| b.3.partial_cmp(&a.3).unwrap_or(std::cmp::Ordering::Equal));
 
     // Compute percentiles for coloring
-    let size_vals: Vec<f64> = pages.iter().map(|r| r.3 as f64).collect();
-    let focus_vals: Vec<f64> = pages.iter().map(|r| r.2).collect();
-    let links_vals: Vec<f64> = pages.iter().map(|r| r.1 as f64).collect();
-    let lum_vals: Vec<f64> = pages.iter().map(|r| r.4).collect();
-    let grav_vals: Vec<f64> = pages.iter().map(|r| r.5).collect();
+    let size_vals: Vec<f64> = pages.iter().map(|r| r.4 as f64).collect();
+    let focus_vals: Vec<f64> = pages.iter().map(|r| r.3).collect();
+    let in_vals: Vec<f64> = pages.iter().map(|r| r.1 as f64).collect();
+    let out_vals: Vec<f64> = pages.iter().map(|r| r.2 as f64).collect();
+    let lum_vals: Vec<f64> = pages.iter().map(|r| r.5).collect();
+    let grav_vals: Vec<f64> = pages.iter().map(|r| r.6).collect();
 
     let size_pcts = compute_percentiles(&size_vals);
     let focus_pcts = compute_percentiles(&focus_vals);
-    let links_pcts = compute_percentiles(&links_vals);
+    let in_pcts = compute_percentiles(&in_vals);
+    let out_pcts = compute_percentiles(&out_vals);
     let lum_pcts = compute_percentiles(&lum_vals);
     let grav_pcts = compute_percentiles(&grav_vals);
 
@@ -612,7 +615,7 @@ fn render_files_page(
     let files_data: Vec<_> = pages
         .iter()
         .enumerate()
-        .map(|(i, (p, backlinks, focus, size, luminosity, gravity))| {
+        .map(|(i, (p, links_in, links_out, focus, size, luminosity, gravity))| {
             let focus_display = format!("{:.2}", focus * 100.0);
             let size_display = format_size(*size);
             let file_title = match p.kind {
@@ -634,7 +637,8 @@ fn render_files_page(
             // HSL lightness: 95% (low) → 35% (high) — maps percentile to green intensity
             let size_light = 95.0 - size_pcts[i] * 60.0;
             let focus_light = 95.0 - focus_pcts[i] * 60.0;
-            let links_light = 95.0 - links_pcts[i] * 60.0;
+            let in_light = 95.0 - in_pcts[i] * 60.0;
+            let out_light = 95.0 - out_pcts[i] * 60.0;
             let lum_light = 95.0 - lum_pcts[i] * 60.0;
             let grav_light = 95.0 - grav_pcts[i] * 60.0;
 
@@ -642,7 +646,8 @@ fn render_files_page(
                 rank => i + 1,
                 title => file_title,
                 url => format!("/{}", p.id),
-                backlinks => *backlinks,
+                links_in => *links_in,
+                links_out => *links_out,
                 pagerank => focus_display,
                 size => size_display,
                 luminosity => format_pct_of_max(*luminosity, max_lum),
@@ -653,14 +658,16 @@ fn render_files_page(
                 modified => modified_lmt,
                 size_sort => *size,
                 focus_sort => format!("{:.8}", focus),
-                links_sort => *backlinks,
+                in_sort => *links_in,
+                out_sort => *links_out,
                 luminosity_sort => format!("{:.8}", luminosity),
                 gravity_sort => format!("{:.10}", gravity),
                 created_sort => lmt_sort_key(&created_lmt),
                 modified_sort => lmt_sort_key(&modified_lmt),
                 size_light => format!("{:.0}", size_light),
                 focus_light => format!("{:.0}", focus_light),
-                links_light => format!("{:.0}", links_light),
+                in_light => format!("{:.0}", in_light),
+                out_light => format!("{:.0}", out_light),
                 lum_light => format!("{:.0}", lum_light),
                 grav_light => format!("{:.0}", grav_light),
             }
