@@ -50,7 +50,7 @@ Verdict: Eliminated. A system that cannot efficiently prove its own state transi
 
 ### 3.2 Algebraic (Lookup-based): Tip5, Monolith, Reinforced Concrete
 
-Strengths: Tip5 achieves ~2.68× faster STARK proving than Rescue-Prime in Triton VM. The split-and-lookup S-box design provides structural resistance to Gröbner basis attacks (algebraic degree ≈ p ≈ 2⁶⁴).
+Strengths: Tip5 achieves ~2.68× faster STARK proving than Rescue-Prime in Triton VM. The split-and-lookup S-box design provides structural resistance to Groebner basis attacks (algebraic degree ≈ p ≈ 2⁶⁴).
 
 Fatal weakness: The lookup S-box that gives Tip5 its ZK advantage makes it impossible for MPC and FHE. In MPC, you cannot "look up a table" on secret-shared data — the lookup must be represented as a degree-2⁶⁴ polynomial or an oblivious RAM protocol, both prohibitively expensive. In FHE, the same problem applies to encrypted data. Additionally, Tip5 is locked to the [[Goldilocks field]] while the proving ecosystem has moved to M31 and BabyBear for 2–4× faster proving.
 
@@ -162,7 +162,7 @@ A [[knowledge graph]] meant to persist for decades must account for quantum adve
 
 Grover's algorithm: Generic quantum search that reduces n-bit preimage resistance to n/2 bits and collision resistance to n/3 bits. For Poseidon2 at 128-bit classical security, Grover yields ~64-bit preimage and ~43-bit collision security. Mitigation is straightforward: increase digest size. A 256-bit security target (5 [[Goldilocks field]] elements = 320 bits) provides 160-bit post-Grover preimage resistance and ~107-bit collision resistance — both adequate.
 
-Algebraic quantum attacks: Poseidon2's low-degree S-box (x⁷) raises a subtler question. Quantum algorithms for solving low-degree polynomial systems (quantum Gröbner basis, quantum linearization) could theoretically exploit the algebraic structure faster than classical attacks. Current research (Jang et al., "Quantum Algebraic Attacks on AO Hash Functions," 2024) suggests that quantum speedups for Gröbner basis computation are polynomial, not exponential — the conservative round count margin from §9.2 (+25%) absorbs this.
+Algebraic quantum attacks: Poseidon2's low-degree S-box (x⁷) raises a subtler question. Quantum algorithms for solving low-degree polynomial systems (quantum Groebner basis, quantum linearization) could theoretically exploit the algebraic structure faster than classical attacks. Current research (Jang et al., "Quantum Algebraic Attacks on AO Hash Functions," 2024) suggests that quantum speedups for Groebner basis computation are polynomial, not exponential — the conservative round count margin from §9.2 (+25%) absorbs this.
 
 STARK compatibility: STARKs are inherently post-quantum — they rely on hash function collision resistance only, with no elliptic curve assumptions. This means [[nox]]'s entire proving stack (Poseidon2 inside STARK proofs) remains sound under quantum adversaries, provided the [[hash]] itself holds. This is a structural advantage over SNARK-based systems that depend on pairing assumptions broken by Shor's algorithm.
 
@@ -181,7 +181,7 @@ Timeline of significant attacks:
 | Date | Attack | Impact |
 |------|--------|--------|
 | 2020 | Out of Oddity (Beyne et al., CRYPTO) | Zero-sum distinguishers on full-round HadesMiMC |
-| 2023 | ACISP (Ashur, Buschman, Mahzoun) | Gröbner basis attack cheaper than claimed; security argument fails at ≥384-bit level |
+| 2023 | ACISP (Ashur, Buschman, Mahzoun) | Groebner basis attack cheaper than claimed; security argument fails at ≥384-bit level |
 | 2025 May | Graeffe transform (Sanso & Vitto, ePrint 2025/937) | 2¹³× wall-time improvement for interpolation attacks on round-reduced instances |
 | 2025 May | Graeffe + FFT bounds (Zhao & Ding, ePrint 2025/950) | Broke EF bounty instances up to 40-bit security |
 | 2025 Jun | Subspace trail GB (Grassi et al., ToSC 2025) | Found inaccuracies in original security model; refined round requirements; confirmed overall security |
@@ -486,7 +486,7 @@ The baseline parameters (R_F = 8, R_P = 22 over [[Goldilocks field]]) are the ec
 ## 11. References
 
 1. Grassi, Khovratovich, Schofnegger. "Poseidon2: A Faster Version of the Poseidon Hash Function." AFRICACRYPT 2023. ePrint 2023/323.
-2. Grassi, Koschatko, Rechberger. "Poseidon and Neptune: Gröbner Basis Cryptanalysis Exploiting Subspace Trails." ToSC 2025(2):34-86.
+2. Grassi, Koschatko, Rechberger. "Poseidon and Neptune: Groebner Basis Cryptanalysis Exploiting Subspace Trails." ToSC 2025(2):34-86.
 3. Ashur, Buschman, Mahzoun. "Algebraic Cryptanalysis of the HADES Design Strategy." ACISP 2024.
 4. Sanso, Vitto. "Attacking Poseidon via Graeffe-Based Root-Finding over NTT-Friendly Fields." ePrint 2025/937.
 5. Zhao, Ding. "Breaking Poseidon Challenges with Graeffe Transforms." ePrint 2025/950.

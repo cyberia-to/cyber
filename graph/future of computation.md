@@ -155,7 +155,7 @@ Focus enters as fuel and exits diminished. Computation literally *consumes atten
 
 Why is this design correct? Several properties emerge from the sixteen-pattern structure:
 
-Confluence. The patterns form an orthogonal rewrite system — each has a unique tag, no two overlap, no variable appears twice in a pattern's left-hand side. By Huet-Lévy (1980), orthogonal systems are confluent: any two reduction sequences from the same term reach the same result. There is no "wrong" evaluation order. This means parallelism is free — two threads reducing different subexpressions cannot produce race conditions because there is nothing to race toward.
+Confluence. The patterns form an orthogonal rewrite system — each has a unique tag, no two overlap, no variable appears twice in a pattern's left-hand side. By Huet-Levy (1980), orthogonal systems are confluent: any two reduction sequences from the same term reach the same result. There is no "wrong" evaluation order. This means parallelism is free — two threads reducing different subexpressions cannot produce race conditions because there is nothing to race toward.
 
 Cost determinism. The cost of a computation depends only on its syntactic structure, never on runtime values, cache state, or execution environment. If two nodes compute the same function on the same input, they spend the same focus. This enables global memoization: results cached forever, verified by hash, reused by anyone.
 

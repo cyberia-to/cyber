@@ -544,7 +544,7 @@ DOT PRODUCT:         mul, add         (single bounded loop)
 SOFTMAX APPROX:      mul, add, invert (1/x approximation)
 LAYER NORMALIZATION: mul, add, invert (mean and variance via field ops)
 GELU APPROXIMATION:  mul              (polynomial: 0.5x(1 + tanh(√(2/π)(x + 0.044715x³))))
-                                       (tanh via Padé approximant: rational function)
+                                       (tanh via Pade approximant: rational function)
 ARGMAX:              eq, lt           (comparison chain)
 RANDOM (mutation):   divine           (non-deterministic input for evolution)
 ```

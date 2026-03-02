@@ -212,7 +212,7 @@ nn.trd
 ├── field_signed.trd      — signed integer convention (x > p/2 → negative)
 ├── field_fixed.trd       — fixed-point arithmetic via scaling factor
 ├── linalg.trd            — matmul, dot product, vector ops
-├── activations.trd       — GELU (polynomial), ReLU (conditional), tanh (Padé)
+├── activations.trd       — GELU (polynomial), ReLU (conditional), tanh (Pade)
 ├── layers.trd            — linear layer, layer norm, residual connection
 ├── loss.trd              — MSE, cross-entropy (field approximations)
 └── inference.trd         — forward pass orchestration

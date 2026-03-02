@@ -663,18 +663,18 @@ See [[cyber]] for the full specification index. See [[soft3]] for the stack. See
 
 1. [[Ralph Merkle]]. "A Digital Signature Based on a Conventional Encryption Function." CRYPTO 1987.
 2. [[Michael Goodrich]], [[Roberto Tamassia]]. "Efficient Authenticated Data Structures." Algorithmica 2002.
-3. [[Gérard Huet]]. "Confluent Reductions: Abstract Properties and Applications." JACM 1980.
+3. [[Gerard Huet]]. "Confluent Reductions: Abstract Properties and Applications." JACM 1980.
 4. [[Yves Lafont]]. "Interaction Nets." POPL 1990.
 5. [[Mustafa Al-Bassam]] et al. "Fraud and Data Availability Proofs." FC 2019.
 6. [[Lorenzo Grassi]] et al. "Poseidon: A New Hash Function." USENIX 2021.
 7. [[Victor Taelin]]. "HVM: A Parallel Evaluator for Interaction Combinators." 2022.
-8. [[Kurt Goedel]]. "Über formal unentscheidbare Sätze." Monatshefte für Mathematik und Physik 1931.
+8. [[Kurt Goedel]]. "Ueber formal unentscheidbare Saetze." Monatshefte fuer Mathematik und Physik 1931.
 9. [[Alan Turing]]. "On Computable Numbers." Proceedings of the London Mathematical Society 1936.
 10. [[Sergey Brin]], [[Larry Page]]. "The Anatomy of a Large-Scale Hypertextual Web Search Engine." WWW 1998.
 11. [[Miroslav Fiedler]]. "Algebraic Connectivity of Graphs." Czech Mathematical Journal 1973.
 12. [[Fan Chung]]. "The Heat Kernel as the Pagerank of a Graph." PNAS 2007.
 13. [[Oskar Perron]]. "Zur Theorie der Matrices." Mathematische Annalen 1907.
-14. [[Stefan Banach]]. "Sur les Opérations dans les Ensembles Abstraits." Fundamenta Mathematicae 1922.
+14. [[Stefan Banach]]. "Sur les Operations dans les Ensembles Abstraits." Fundamenta Mathematicae 1922.
 15. [[Eli Ben-Sasson]] et al. "Scalable, Transparent Arguments of Knowledge." CRYPTO 2018.
 16. [[Karl Friston]]. "The Free-Energy Principle: A Unified Brain Theory." Nature Reviews Neuroscience 2010.
 17. [[David Levin]], [[Yuval Peres]], [[Elizabeth Wilmer]]. "Markov Chains and Mixing Times." AMS 2009.

@@ -10,7 +10,7 @@ discovered by [[Prigogine]] (1977). the key insight: a system driven far from [[
 
 ## examples
 
-- Bénard convection cells: heated fluid self-organizes into hexagonal rolls
+- Benard convection cells: heated fluid self-organizes into hexagonal rolls
 - Belousov-Zhabotinsky reaction: chemical oscillations producing spatial patterns
 - living cells: maintain low internal [[entropy]] by importing nutrients and exporting waste heat
 - hurricanes: sustained by ocean heat, dissipate when energy source is removed

@@ -453,6 +453,6 @@ Computing is aggregation, proving, and verification. It always was. We are only 
 
 [6] Bonneau, J., Miller, A., Clark, J., Narayanan, A., Kroll, J.A., and Felten, E.W. "SoK: Research Perspectives and Challenges for Bitcoin and Cryptocurrencies." *IEEE Symposium on Security and Privacy*, 2015.
 
-[7] Bünz, B., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., and Maxwell, G. "Bulletproofs: Short Proofs for Confidential Transactions and More." *IEEE Symposium on Security and Privacy*, 2018.
+[7] Bunz, B., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., and Maxwell, G. "Bulletproofs: Short Proofs for Confidential Transactions and More." *IEEE Symposium on Security and Privacy*, 2018.
 
 [8] Kothapalli, A., Setty, S., and Tzialla, I. "Nova: Recursive Zero-Knowledge Arguments from Folding Schemes." *CRYPTO*, 2022.

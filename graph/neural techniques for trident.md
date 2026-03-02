@@ -20,7 +20,7 @@ Everything here lives strictly within the [[trident]] → TIR → TASM → Trito
 
 ### 1.1 Field-Native Neural Network Library (`nn.trd`)
 
-**What**: A Trident library implementing [[neural networks]] primitives — matrix multiply, dot product, layer normalization, activation functions (GELU via Padé approximant, ReLU via conditional), softmax approximation — all in [[Goldilocks field]] arithmetic ($p = 2^{64} - 2^{32} + 1$).
+**What**: A Trident library implementing [[neural networks]] primitives — matrix multiply, dot product, layer normalization, activation functions (GELU via Pade approximant, ReLU via conditional), softmax approximation — all in [[Goldilocks field]] arithmetic ($p = 2^{64} - 2^{32} + 1$).
 
 **Why first**: Every other technique on this list either IS a neural network running in Trident, or benefits from having one. This is the substrate for everything below.
 
@@ -30,7 +30,7 @@ nn.trd
 ├── field_signed.trd      — signed integer convention (x > p/2 → negative)
 ├── field_fixed.trd       — fixed-point arithmetic via scaling factor
 ├── linalg.trd            — matmul, dot product, vector ops
-├── activations.trd       — GELU (polynomial), ReLU (conditional), tanh (Padé)
+├── activations.trd       — GELU (polynomial), ReLU (conditional), tanh (Pade)
 ├── layers.trd            — linear layer, layer norm, residual connection
 ├── loss.trd              — MSE, cross-entropy (field approximations)
 └── inference.trd         — forward pass orchestration

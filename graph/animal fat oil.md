@@ -11,7 +11,7 @@ crystal-domain: cyberia
 
 - pan-cooking pancakes, flatbreads, vegetables
 - roasting root vegetables
-- sautéing greens and onions
+- sauteing greens and onions
 - enriching stews and soups
 - replacing plant oils in savory dishes
 
@@ -56,7 +56,7 @@ crystal-domain: cyberia
 
 - duck fat: soft, slightly sweet, best for roasted vegetables
 - beef tallow: firm, high-heat tolerant, best for frying
-- chicken fat: soft, flavorful, ideal for vegetable sautés
+- chicken fat: soft, flavorful, ideal for vegetable sautes
 
 ### ♻️ waste use
 

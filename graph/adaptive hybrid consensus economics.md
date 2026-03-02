@@ -1799,7 +1799,7 @@ crystal-domain: cybics
 - # References
 - Nakamoto, S. (2008). Bitcoin: A Peer-to-Peer Electronic Cash System.
 - Buterin, V. et al. (2020). Ethereum 2.0 Specifications.
-- Åström, K. J., & Murray, R. M. (2010). Feedback Systems: An Introduction for Scientists and Engineers.
+- Astrom, K. J., & Murray, R. M. (2010). Feedback Systems: An Introduction for Scientists and Engineers.
 - [Additional references on mechanism design, control theory, blockchain economics]
   
   ---

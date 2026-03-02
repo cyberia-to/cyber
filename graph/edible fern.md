@@ -42,7 +42,7 @@ crystal-domain: agriculture
 	- steam for 5–7 minutes until just tender but still vibrant green
 - ### 3b. stir-fry version
 	- heat a small amount of [[ghee]] or [[avocado oil]] in a pan
-	- add fern shoots and sauté gently for 2–3 minutes
+	- add fern shoots and saute gently for 2–3 minutes
 	- optionally season with [[cumin]], [[turmeric]], or [[black pepper]]
 - ### 4. serve
 	- serve warm as a side dish

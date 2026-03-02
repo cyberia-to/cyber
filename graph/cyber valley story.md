@@ -7,7 +7,7 @@ published on [x.com](https://x.com/mastercyb/status/1981362331386097745)
 
 my story
 - kenigsberg
-	- ![Seven Bridges of Königsberg - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/e/e5/Bridges_of_Konigsberg.png)
+	- ![Seven Bridges of Konigsberg - Wikipedia](https://upload.wikimedia.org/wikipedia/commons/e/e5/Bridges_of_Konigsberg.png)
 - 15 years: automation of companies: sap, oracle, local accounting
 - bitcoin: 2011
 	- ![mining rig](https://habrastorage.org/r/w1560/storage2/125/b38/03d/125b3803dc46c234889d3dcc36477f47.jpg)

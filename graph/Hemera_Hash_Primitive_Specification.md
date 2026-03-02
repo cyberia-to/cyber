@@ -599,7 +599,7 @@ Deploy across network idle compute:
 | Campaign | Target |
 |---|---|
 | Differential search | Random differential pairs through R_P = 1..63 |
-| Gröbner basis attacks | Reduced-round instances up to 40-bit estimated security |
+| Groebner basis attacks | Reduced-round instances up to 40-bit estimated security |
 | Collision fuzzing | 2⁴⁰ random inputs, verify zero collisions |
 | Avalanche testing | Bit-flip propagation ≥ 50% |
 | Distribution test | Chi-squared on output byte distribution |
