@@ -7,7 +7,7 @@ stake: 7021323931679387
 ---
 # cryptography
 
-the science of protecting information and proving statements about it. four classical goals: confidentiality (only intended recipients read the data), integrity (data has not been altered), authentication (the sender is who they claim), non-repudiation (the sender cannot deny having sent it). modern cryptography extends these to zero-knowledge (prove a statement without revealing why it is true), homomorphic computation (compute on encrypted data), and verifiable computation (prove a program ran correctly).
+the science of protecting information and proving statements about it. built on [[number theory]], [[algebra]], and computational complexity. four classical goals: confidentiality (only intended recipients read the data), integrity (data has not been altered), authentication (the sender is who they claim), non-repudiation (the sender cannot deny having sent it). modern cryptography extends these to zero-knowledge (prove a statement without revealing why it is true), homomorphic computation (compute on encrypted data), and verifiable computation (prove a program ran correctly).
 
 ## [[hashing]]
 
@@ -22,7 +22,7 @@ a hash function maps arbitrary input to a fixed-size digest. cryptographic hash 
 
 [[Poseidon]] and Poseidon2 are algebraic hashes designed for arithmetic circuits — they operate natively over prime fields, making them 100× cheaper inside [[STARK]] and [[SNARK]] proofs than binary hashes like SHA-256. the tradeoff: younger cryptanalysis, field-specific tuning required.
 
-[[cyber]] uses [[Hemera]] (Poseidon2 over [[Goldilocks field]]) — see [[Hemera]], [[hemera/spec]]
+[[cyber]] uses [[Hemera]] (Poseidon2 over [[Goldilocks field]]) — see [[Hemera]], [[hemera/spec]], [[hash function selection]] for the full decision record
 
 ## [[encryption]]
 
@@ -144,7 +144,40 @@ Level N: Prove verify(π_{N-1}) → proof π_N (same size)
 N proofs → one aggregated proof → O(1) verification
 ```
 
-this is the foundation of rollups ([[Ethereum]] L2s), incrementally verifiable computation (IVC), and proof aggregation. systems: Nova (folding schemes), Halo2 (accumulation), STARKs (self-referential verification).
+this is the foundation of rollups ([[Ethereum]] L2s), [[incrementally verifiable computation]] (IVC), and proof aggregation. systems: Nova ([[folding]] schemes), Halo2 (accumulation), [[STARKs]] (self-referential verification).
+
+### folding and IVC
+
+[[folding]] is the technique that makes recursive composition practical. instead of fully verifying a proof at each step (expensive), absorb it into an [[accumulator]] via a cheap algebraic operation, then verify once at the end.
+
+```
+traditional recursion:  verify(π_{i-1}) at each step → full SNARK per step
+folding:                fold(accumulator, π_i) → one field operation per step
+                        verify(accumulator) once at the end → one decider proof
+```
+
+| scheme | constraint system | year | key property |
+|---|---|---|---|
+| Nova | R1CS | 2022 | first practical folding, IVC without per-step SNARKs |
+| SuperNova | R1CS (non-uniform) | 2022 | multiple circuit types in one IVC chain |
+| HyperNova | CCS | 2023 | generalizes folding to CCS — handles R1CS, Plonkish, AIR |
+| Protostar | CCS + lookups | 2023 | high-degree gates, lookup arguments in folding |
+| ProtoGalaxy | CCS (multi-instance) | 2023 | logarithmic verifier cost for multi-instance folding |
+
+[[incrementally verifiable computation]] (IVC) is the paradigm: break a long computation into steps, each step produces a proof covering all previous steps. the verifier checks only the final proof. [[proof-carrying data]] (PCD) generalizes IVC from sequential chains to arbitrary DAGs — multiple independent computations merge proofs via folding. see [[folding]], [[incrementally verifiable computation]], [[proof-carrying data]]
+
+### lookup arguments
+
+prove that a set of values appears in a pre-defined table without revealing which entries. the key optimization in modern proof systems — replaces expensive range checks and cross-table consistency proofs.
+
+| protocol | technique | prover | verifier | used in |
+|---|---|---|---|---|
+| Plookup | sorted polynomial identity | O(n log n) | O(log n) | Plonkish circuits |
+| [[LogUp]] | sumcheck over rational identity | O(n log n) | O(log n) | Polygon, Scroll, [[cyber]] |
+| Lasso | sparse lookups via sumcheck | O(n) | O(log n) | Jolt VM (a]Priori) |
+| cq (cached quotients) | precomputed quotient | O(n) | O(1) | general lookup |
+
+[[LogUp]] proves that the same edge hash appears in all required [[EdgeSets]] in the [[BBG]] — 15× cheaper than independent polynomial proofs. see [[LogUp]]
 
 ## multi-party computation
 
@@ -215,7 +248,22 @@ RSA and bilinear accumulators achieve constant-size proofs but require stronger 
 | [[polynomial commitment]] | commit to polynomial, prove evaluations | [[STARK]], PLONK, [[cyber]] ([[WHIR]]-based) |
 | [[EdgeSet]] | edge membership via polynomial commitment | [[cyber]] [[BBG]] |
 | [[LogUp]] | cross-index consistency via algebraic lookup | Polygon, Scroll, [[cyber]] |
+| LtHash (lattice hash) | homomorphic set commitment — add/remove elements in O(1) | [[cyber]] collection state |
 | authenticated skip list | O(log n) membership with authenticated pointers | early blockchain designs, distributed databases |
+
+LtHash is an additive homomorphic commitment over a finite field: `add(state, H(x))` and `remove(state, H(x))` are single field operations. merging two sets is field addition. STARK-provable at zero cost (addition is linear in arithmetization). used in [[cyber]] for O(1) shard and neuron state updates.
+
+### erasure coding
+
+transform data so it can be recovered from any k-of-n fragments. the cryptographic application: data availability — prove that block data was published without downloading all of it.
+
+| code | rate | recovery | used in |
+|---|---|---|---|
+| Reed-Solomon | k/n | any k of n fragments | [[Celestia]], [[cyber]] DAS, RAID-6 |
+| LDPC (Low-Density Parity Check) | variable | iterative decoding | 5G, Wi-Fi, deep space |
+| fountain codes (LT, Raptor) | rateless | any k+ε fragments | content distribution, streaming |
+
+[[Celestia]] and [[cyber]] arrange block data in a √n × √n grid, erasure-code rows and columns with Reed-Solomon over [[Goldilocks field]], then commit each row via [[NMT]]. light clients sample random cells — O(√n) samples for 99.9% confidence that all data is available. incorrect encoding is caught by encoding fraud proofs. see [[storage proofs]], [[NMT]]
 
 ## quantum resistance
 
@@ -265,9 +313,12 @@ Filecoin uses proof-of-replication and proof-of-spacetime. [[Celestia]] pioneere
 ```
 field:   Goldilocks (p = 2⁶⁴ − 2³² + 1)
 hash:    Hemera (Poseidon2 over Goldilocks) — ~250 constraints
-proofs:  STARK with WHIR low-degree testing — 290 μs verification
+IOP:     SuperSpartan (CCS/AIR via sumcheck) — linear-time prover
+PCS:     WHIR (multilinear polynomial commitment) — 290 μs verification
 VM:      nox (register machine over Goldilocks)
 ```
+
+multilinear [[STARKs]] via the Whirlaway architecture: [[nox]] execution traces committed as multilinear polynomials via [[WHIR]], AIR constraints verified via [[sumcheck]] ([[SuperSpartan]] IOP). see [[STARK]] for the pipeline.
 
 authentication replaces [[signatures]] with STARK proofs of [[Hemera]] preimage knowledge. encryption uses lattice KEM (interactive) and CSIDH (non-interactive). the [[cybergraph]] state is authenticated via [[NMT]], [[MMR]], [[SWBF]], [[EdgeSet]], and [[LogUp]] — see [[BBG]] for the full architecture, [[cyber/proofs]] for the complete proof taxonomy, [[cyber/identity]] for the privacy layers.
 
