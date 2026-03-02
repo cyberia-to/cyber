@@ -43,7 +43,8 @@ data structures       │ Merkle inclusion           │ element exists in tree 
                       │ FRI low-degree             │ committed polynomial has bounded degree  │ ~10,000
 ──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
 storage &             │ storage                    │ content bytes exist on specific node     │ ~5,000
-availability          │ replication                │ k independent copies exist               │ ~5,000 × k
+availability          │ size                       │ claimed content size matches actual bytes │ ~2,000
+                      │ replication                │ k independent copies exist               │ ~5,000 × k
                       │ retrievability             │ content fetchable within bounded time    │ ~5,000
                       │ data availability (DAS)    │ block data was published, is accessible  │ ~8,000
                       │ encoding fraud             │ erasure coding was done correctly        │ O(k log n)
@@ -200,12 +201,13 @@ at planetary scale, content loss is the existential risk. if the content behind 
 | proof | what it guarantees | mechanism |
 |---|---|---|
 | storage proof | content bytes exist on specific storage | periodic challenges against content hash |
+| size proof | claimed content size matches actual bytes | Hemera tree structure commitment + padding check |
 | replication proof | k independent copies exist | challenge distinct replicas, verify uniqueness |
 | retrievability proof | content fetchable within bounded time | timed challenge-response with latency bound |
 | data availability proof | block data was published and is accessible | erasure coding + random sampling (DAS) |
 | encoding fraud proof | erasure coding was done correctly | decode k+1 cells, compare against row commitment |
 
-storage proofs verify individual [[particle]] content. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants. the two are complementary — storage ensures content survives, DA ensures state transitions are visible.
+storage proofs verify individual [[particle]] content. size proofs bind [[particles]] to their dimensions — a hash commits to identity, a size proof commits to byte count. the two together prevent storage fee inflation and ensure erasure coding grids have correct dimensions. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants. the three are complementary — storage ensures content survives, size ensures claims are honest, DA ensures state transitions are visible.
 
 ### layered data availability
 

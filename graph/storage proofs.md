@@ -2,15 +2,15 @@
 tags: cyber, cip, cryptography
 crystal-type: entity
 crystal-domain: cyber
-alias: storage proof, proof of storage, replication proof, retrievability proof, data availability proof
+alias: storage proof, proof of storage, size proof, replication proof, retrievability proof, data availability proof
 ---
 # storage proofs
 
-five proof types that guarantee the [[cybergraph]] survives. without them, content-addressed identity is fragile — a hash with lost content is a dead [[particle]]. at planetary scale (10¹⁵ [[particles]]), content loss is the existential risk.
+six proof types that guarantee the [[cybergraph]] survives. without them, content-addressed identity is fragile — a hash with lost content is a dead [[particle]]. at planetary scale (10¹⁵ [[particles]]), content loss is the existential risk.
 
 storage proofs are Phase 1 security infrastructure, not a Phase 3 optimization. they must be operational before genesis.
 
-## the five proofs
+## the six proofs
 
 ```
 PROOF TYPE          │ GUARANTEES                          │ MECHANISM
@@ -18,6 +18,10 @@ PROOF TYPE          │ GUARANTEES                          │ MECHANISM
 storage proof       │ content bytes exist on specific     │ periodic challenges against content
                     │ storage node                        │ hash — prover returns Hemera Merkle
                     │                                     │ path over challenged chunk
+────────────────────┼─────────────────────────────────────┼──────────────────────────────────────
+size proof          │ claimed content size matches        │ prover commits to Hemera tree depth
+                    │ actual byte count                   │ and leaf count — verifier checks
+                    │                                     │ tree structure against claimed size
 ────────────────────┼─────────────────────────────────────┼──────────────────────────────────────
 replication proof   │ k independent copies exist          │ challenge k distinct replicas,
                     │ (k ≥ 3 before genesis)              │ verify uniqueness of storage
@@ -36,7 +40,7 @@ proof               │ by the block producer               │ decode, compare 
                     │                                     │ mismatch = fraud proof
 ```
 
-storage proofs and replication proofs verify individual [[particle]] content. retrievability proofs add latency bounds. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible. encoding fraud proofs catch dishonest block producers who encode data incorrectly.
+storage proofs and replication proofs verify individual [[particle]] content. size proofs guarantee content dimensions — DAS proves data is accessible, but a [[particle]] claiming 1 MB that actually holds 10 bytes is undetectable without a size commitment. retrievability proofs add latency bounds. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible. encoding fraud proofs catch dishonest block producers who encode data incorrectly.
 
 ## storage proof
 
@@ -57,6 +61,37 @@ CHALLENGE-RESPONSE PROTOCOL:
 ```
 
 periodic challenges prevent lazy storage — a node that deletes content after initial proof will fail future challenges. challenge frequency is tunable per particle based on criticality.
+
+## size proof
+
+a [[particle]] hash commits to content identity — the same bytes always produce the same hash. it does not commit to content size. a storage node claiming "this particle is 500 MB" and charging storage fees accordingly is unverifiable from the hash alone. size proofs close this gap.
+
+```
+SIZE COMMITMENT:
+
+  the Hemera tree already encodes size implicitly:
+    - 4 KB chunks → leaf count = ⌈size / 4096⌉
+    - binary tree → depth = ⌈log₂(leaf_count)⌉
+    - tree structure is deterministic from content
+
+  SIZE PROOF:
+    1. prover commits: (particle_hash, claimed_size, tree_depth, leaf_count)
+    2. verifier checks:
+       a) leaf_count = ⌈claimed_size / 4096⌉
+       b) tree_depth = ⌈log₂(leaf_count)⌉
+       c) random chunk challenges confirm tree structure matches commitment
+       d) last chunk padding consistent with claimed_size mod 4096
+
+  cost: ~2,000 STARK constraints (tree structure check + padding verification)
+```
+
+size proofs matter for three reasons:
+
+- storage pricing: [[neurons]] pay for storage proportional to size. inflated size claims extract unearned rewards from storage providers. deflated claims underpay
+- bandwidth allocation: relay and retrieval protocols allocate bandwidth based on declared size. wrong size wastes network resources or enables denial of service
+- erasure coding: DAS grid dimensions depend on content size. incorrect size breaks the 2D Reed-Solomon encoding — rows and columns do not align
+
+size proofs compose with storage proofs: storage proves the bytes exist, size proves how many bytes exist. together they bind a [[particle]] to both its content and its dimensions.
 
 ## replication proof
 

@@ -137,11 +137,12 @@ the [[cybergraph]] itself is the key exchange medium — public curves published
 
 ## storage and availability
 
-five proof types guarantee content survival at planetary scale:
+six proof types guarantee content survival at planetary scale:
 
 | proof | guarantees |
 |---|---|
 | storage proof | content bytes exist on specific node |
+| size proof | claimed content size matches actual byte count |
 | replication proof | k independent copies exist |
 | retrievability proof | content fetchable within bounded time |
 | data availability (DAS) | block data was published, is accessible |
