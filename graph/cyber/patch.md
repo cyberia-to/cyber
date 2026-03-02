@@ -3,7 +3,7 @@ tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-alias:: cyberpatch, patch system, patches
+alias:: patch, cyberpatch, patch system, patches
 icon: "\U0001FA79"
 ---
 
