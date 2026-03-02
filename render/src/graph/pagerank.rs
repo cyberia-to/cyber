@@ -120,6 +120,7 @@ mod tests {
                 date: None,
                 icon: None,
                 menu_order: None,
+                stake: None,
             },
             kind: PageKind::Page,
             source_path: PathBuf::from(format!("pages/{}.md", name)),

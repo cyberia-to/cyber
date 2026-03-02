@@ -2,6 +2,7 @@ mod links;
 mod namespaces;
 pub mod pagerank;
 mod tags;
+pub mod trikernel;
 
 use crate::config::ContentSection;
 use crate::parser::{slugify_page_name, PageId, ParsedPage};
@@ -23,6 +24,8 @@ pub struct PageStore {
     pub stub_pages: HashSet<PageId>,
     /// PageRank scores for each page
     pub pagerank: HashMap<PageId, f64>,
+    /// Tri-kernel focus distribution π (diffusion + springs + heat)
+    pub focus: HashMap<PageId, f64>,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -146,6 +149,7 @@ pub fn build_graph(pages: Vec<ParsedPage>) -> Result<PageStore> {
         alias_map: HashMap::new(),
         stub_pages: HashSet::new(),
         pagerank: HashMap::new(),
+        focus: HashMap::new(),
     };
 
     // First pass: insert all pages and build alias map
@@ -176,6 +180,9 @@ pub fn build_graph(pages: Vec<ParsedPage>) -> Result<PageStore> {
 
     // Compute PageRank
     store.pagerank = pagerank::compute_pagerank(&store);
+
+    // Compute tri-kernel focus distribution
+    store.focus = trikernel::compute_trikernel(&store);
 
     Ok(store)
 }
@@ -213,6 +220,7 @@ fn create_stub_pages(store: &mut PageStore, original_names: &HashMap<String, Str
                 date: None,
                 icon: None,
                 menu_order: None,
+                stake: None,
             },
             kind: PageKind::Page,
             source_path: PathBuf::new(),
@@ -244,6 +252,7 @@ mod tests {
                 date: None,
                 icon: None,
                 menu_order: None,
+                stake: None,
             },
             kind: PageKind::Page,
             source_path: PathBuf::from(format!("pages/{}.md", name)),

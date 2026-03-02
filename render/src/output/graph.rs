@@ -21,6 +21,7 @@ struct GraphNode {
     link_count: usize,
     #[serde(rename = "pageRank")]
     page_rank: f64,
+    focus: f64,
     x: f64,
     y: f64,
 }
@@ -58,6 +59,7 @@ pub fn generate_graph_data(
                 .unwrap_or(0);
 
             let pr = store.pagerank.get(&page.id).copied().unwrap_or(0.0);
+            let fc = store.focus.get(&page.id).copied().unwrap_or(0.0);
             GraphNode {
                 id: page.id.clone(),
                 title: page.meta.title.clone(),
@@ -65,6 +67,7 @@ pub fn generate_graph_data(
                 tags: page.meta.tags.clone(),
                 link_count: backlink_count + forward_count,
                 page_rank: (pr * 100000.0).round() / 100000.0,
+                focus: (fc * 100000.0).round() / 100000.0,
                 x: 0.0,
                 y: 0.0,
             }

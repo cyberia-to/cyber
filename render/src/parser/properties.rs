@@ -178,6 +178,10 @@ fn build_meta(
         .get("menu-order")
         .and_then(|v| v.trim().parse::<i32>().ok());
 
+    let stake = properties
+        .get("stake")
+        .and_then(|v| v.trim().parse::<u64>().ok());
+
     let meta = PageMeta {
         title,
         properties,
@@ -187,6 +191,7 @@ fn build_meta(
         date,
         icon,
         menu_order,
+        stake,
     };
 
     (meta, remaining)

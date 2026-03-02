@@ -10,6 +10,7 @@ struct SearchEntry {
     url: String,
     tags: Vec<String>,
     excerpt: String,
+    focus: f64,
 }
 
 pub fn generate_search_index(
@@ -22,12 +23,14 @@ pub fn generate_search_index(
         .into_iter()
         .map(|page| {
             let excerpt = crate::render::context::generate_excerpt(&page.content_md, 200);
+            let focus = store.focus.get(&page.id).copied().unwrap_or(0.0);
 
             SearchEntry {
                 title: page.meta.title.clone(),
                 url: format!("/{}", page.id),
                 tags: page.meta.tags.clone(),
                 excerpt,
+                focus: (focus * 100000.0).round() / 100000.0,
             }
         })
         .collect();

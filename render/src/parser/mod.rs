@@ -23,6 +23,7 @@ pub struct PageMeta {
     pub date: Option<NaiveDate>,
     pub icon: Option<String>,
     pub menu_order: Option<i32>,
+    pub stake: Option<u64>,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize)]
@@ -188,6 +189,7 @@ fn parse_non_md_file(file: &DiscoveredFile) -> Result<ParsedPage> {
             date: None,
             icon: None,
             menu_order: None,
+            stake: None,
         },
         kind: PageKind::File,
         source_path: file.path.clone(),
