@@ -191,8 +191,11 @@ cryptographic accumulators represent arbitrarily large sets with a single consta
 | bilinear accumulator | bilinear pairings | O(1) proof | O(1) proof | yes | anonymous credentials |
 | Merkle tree | collision resistance | O(log n) proof | O(log n) (sparse) | yes | everywhere (quasi-accumulator) |
 | [[polynomial commitment]] | varies (KZG/WHIR) | O(1) amortized | O(1) amortized | yes | [[EdgeSet]], modern proof systems |
+| [[hash path accumulator]] | collision resistance | O(log k) path proof | O(log k) absence proof | yes (dynamic forests) | [[cyber]] [[cybergraph]], authenticated graphs |
 
 RSA and bilinear accumulators achieve constant-size proofs but require stronger assumptions (strong RSA, pairings). hash-based accumulators (Merkle trees) have logarithmic proofs but minimal assumptions. polynomial commitments achieve amortized O(1) via batching.
+
+[[hash path accumulators]] extend the accumulator concept from sets to graphs — they authenticate paths rather than elements. a path v₀ → v₁ → ... → v_k is represented as a binary tree of hash digests, enabling O(log k) proofs for connectivity, distance, and reachability. dynamic variants support link/cut with O(log n) updates as the graph evolves. ZK-friendly when built with algebraic hashes ([[Hemera]]). used in [[cyber]] for [[cybergraph]] path verification, light client proofs, and as the running digest in [[folding]] schemes for [[incrementally verifiable computation]].
 
 ### probabilistic and append-only structures
 
