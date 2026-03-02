@@ -277,6 +277,95 @@ Domains are curation partitions, not ontological claims. "Energy" overlaps with 
 
 Both the type decomposition and the domain decomposition divide N into exactly 21 quanta of Q = 240. This is a convention, not a deep symmetry — it was chosen for clean divisibility, not discovered in nature. The number 21 appears as both Σφ and the domain weight sum (4×2 + 13×1) because the specification was designed this way. Honesty about this prevents mystification.
 
+### 7.4 Projection Lenses
+
+The domains are the invariant. The way you group them is a projection — like light through a crystal. Turn it and you get a different spectrum. The crystal is the same.
+
+#### Evolutionary Lens: 7 Triads
+
+Group by the spiral of cosmic evolution: form structures mass, mass fills space, space births life, life speaks the word, the word guides work, work enters play, play discovers new form.
+
+Each triad is a dialectic of three inseparable aspects.
+
+```
+Triad     Domain 1     Domain 2       Domain 3      Question
+───────   ──────────   ────────────   ───────────   ─────────────────────
+FORM      mathematics  information    computation   What are the rules?
+MASS      physics      chemistry      energy        What is it made of?
+SPACE     geography    ecology        agriculture   Where does it happen?
+LIFE      biology      neuroscience   culture       Who is alive?
+WORD      language     philosophy     history       What does it mean?
+WORK      AI           engineering    cyber         How is it made?
+PLAY      governance   economics      game theory   How do we coordinate?
+```
+
+The spiral:
+
+```
+FORM ──→ MASS ──→ SPACE ──→ LIFE
+  ↑                            │
+  │                            ↓
+PLAY ←── WORK ←── WORD ←─────┘
+```
+
+> Form structures Mass into Space. Space births Life. Life speaks the Word. Word guides the Work. Work enters the Play. Play discovers new Form.
+
+Each revolution adds a layer of complexity. First turn: physics → chemistry → geology → bacteria. Current turn: AI → blockchain → DAOs → what comes next. [[Cyberia]] is the point where the spiral becomes aware of itself.
+
+Numbers within the lens:
+- 7 triads × 3 domains = 21 ✓
+- 5040 / 7 = 720 concepts per triad = 6! (a factorial within the factorial)
+- 5040 / 21 = 240 concepts per domain
+
+#### Syn Lens: 8 Principles of Togetherness
+
+Rooted in the philosophy of harmonious complexity: all 8 principles share the Greek root σύν (syn) meaning "together." Seven name the triads. The eighth names the spiral itself.
+
+```
+Syn Principle    Triad    Meaning
+──────────────   ──────   ──────────────────────────────────────────
+SYNTAX           FORM     Structured arrangement that conveys meaning
+SYNTHESIS        MASS     Elements combining into unified wholes
+SYSTEM           SPACE    Parts standing together as one (σύστημα)
+SYNAPSE          LIFE     Connection through contact (σύν + ἅπτειν)
+SYMPHONY         WORD     Diverse voices integrated into harmony
+SYNERGY          WORK     The whole exceeding the sum of parts
+SYNCHRONY        PLAY     Actions coordinated in time
+SYNTROPY         —        The tendency toward increasing order
+```
+
+[[Syntropy]] is the force that drives the spiral forward.
+
+#### F Lens: One-Word Images
+
+For rapid communication. Every word starts with F, every word paints a picture.
+
+```
+FORM  → Form    pattern
+MASS  → Force   power
+SPACE → Field   arena
+LIFE  → Flesh   body
+WORD  → Fable   story
+WORK  → Forge   workshop
+PLAY  → Forum   agora
+```
+
+> Form gives Force a Field. Force becomes Flesh. Flesh tells Fable. Fable lights the Forge. Forge builds the Forum. Forum discovers new Form.
+
+#### Question Lens: 7 Irreducible Questions
+
+```
+FORM  — WHAT are the rules?
+MASS  — FROM WHAT is it made?
+SPACE — WHERE does it happen?
+LIFE  — WHO is alive?
+WORD  — WHY does it matter?
+WORK  — HOW is it made?
+PLAY  — WITH WHOM do we build?
+```
+
+Seven questions. Seven answers. None derivable from the others. Together: a complete description.
+
 ---
 
 ## 8. Cross-Domain Bridges
@@ -643,6 +732,28 @@ Tags provide orthogonal views of the same graph. Primary lenses: [[cyber]], [[cy
 - `bostrom___` — bootloader specifics
 - `cyb___` — interface implementation
 - flat pages for concepts that cross namespaces
+
+## 19. Application to Cyberia
+
+[[Cyberia]] is a network of future cities powered by collective intelligence. [[Cyber Valley]] is the genesis pilot: 30 hectares on a volcano slope in Bali. The Crystal gives it structure.
+
+Each triad becomes a district — a place with a purpose.
+
+FORM → The Archive. Where invisible patterns become visible. Mathematicians, information theorists, and computer scientists share one obsession: what can be proven, measured, and computed? The Archive is silent, precise, and infinite — a place where the rules of everything else are written down before anything else exists.
+
+MASS → The Crucible. Where substances meet, bind, and transform. Physicists study what things are. Chemists study how things combine. Energy researchers study what makes things move. The Crucible is hot, reactive, and generative — raw reality being tested and reshaped.
+
+SPACE → The Observatory. Where you zoom out until the whole system is visible. From the structure of the universe through the rhythms of the planet to the web of ecosystems on its surface — one continuous act of seeing context. The Observatory sits at the highest point and watches everything at once.
+
+LIFE → The Garden. Where matter wakes up. Biologists study how it organizes. Neuroscientists study how it perceives. And sense — the hardest domain — asks what it feels like from the inside. The Garden grows, heals, and breathes. It is the only district that is alive.
+
+WORD → The Temple. Where experience becomes meaning. Language gives it form. Philosophy reflects on both. The Temple is where [[Cyberia]] asks "why?" — and where the answers are spoken, chanted, debated, and sat with in silence.
+
+WORK → The Forge. Where knowledge becomes power. AI thinks. Engineering builds. Cybernetics steers. Alone they are tools; together they are the capacity to reshape the world on purpose. The Forge is loud, iterative, and relentless — the place where prototypes fail and breakthroughs happen.
+
+PLAY → The Forum. Where many become one without a center. Society provides structure. Cryptography provides trust without authority. Game theory provides strategy under uncertainty. The Forum is where [[Cyberia]] plays its most serious game — governing itself through protocol, debate, and skin in the game.
+
+The outer district bridges these seven inward-facing spaces to the world — through immersive exhibits, installations, and marketplaces that project the crystal outward as culture.
 
 ---
 
