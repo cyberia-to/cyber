@@ -1484,7 +1484,6 @@ body:has(.fullscreen-viz) .main-content {
     border-collapse: collapse;
     font-size: 0.88rem;
     border-spacing: 0;
-    table-layout: fixed;
 }
 
 .pages-table thead {
@@ -1554,11 +1553,12 @@ body:has(.fullscreen-viz) .main-content {
 .col-size,
 .col-pagerank,
 .col-links {
-    width: 4.5rem;
+    white-space: nowrap;
     text-align: right;
     font-variant-numeric: tabular-nums;
     font-size: 0.8rem;
     opacity: 0.35;
+    padding-left: 0.5rem;
 }
 
 .col-pagerank {
@@ -1567,6 +1567,7 @@ body:has(.fullscreen-viz) .main-content {
 }
 
 .pages-table .col-title {
+    width: 100%;
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
