@@ -1543,7 +1543,8 @@ body:has(.fullscreen-viz) .main-content {
 }
 
 .col-rank {
-    width: 3rem;
+    width: 1%;
+    white-space: nowrap;
     opacity: 0.2;
     font-size: 0.75rem;
     font-variant-numeric: tabular-nums;
@@ -1553,12 +1554,12 @@ body:has(.fullscreen-viz) .main-content {
 .col-size,
 .col-pagerank,
 .col-links {
+    width: 1%;
     white-space: nowrap;
     text-align: right;
     font-variant-numeric: tabular-nums;
     font-size: 0.8rem;
     opacity: 0.35;
-    padding-left: 0.5rem;
 }
 
 .col-pagerank {
