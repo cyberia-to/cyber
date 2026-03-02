@@ -3,7 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-alias: nox, nox vm, nox spec, cyber/nox, nox patterns, reduction patterns, sixteen patterns, cyber/patterns, three-layer architecture
+alias: cyber/nox, nox vm, nox spec, nox patterns, reduction patterns, sixteen patterns, cyber/patterns, three-layer architecture
 ---
 # nox virtual machine
 
