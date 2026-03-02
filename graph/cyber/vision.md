@@ -3,7 +3,7 @@ tags: article, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-alias: nox, nox spec, cyber/nox, Conserved Observable Reduction Equilibrium
+alias: Conserved Observable Reduction Equilibrium, CORE
 ---
 # nox
 
