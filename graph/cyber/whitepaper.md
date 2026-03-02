@@ -33,7 +33,7 @@ cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link 
 
 The protocol rests on five primitives: [[particle]] (content-addressed node), [[neuron]] (agent that signs edges), [[cyberlink]] (weighted directed edge), [[token]] (non-negative weight controlling influence), and [[focus]] (emergent [[equilibrium]] over [[particles]], conserved to 1). From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
 
-This document specifies the complete architecture: the computation model ([[nox]]), the ranking engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), and the economic design. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
+This document specifies the complete architecture: the computation model ([[nox]]), the provable programming language ([[trident]]), the ranking engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), the economic design, the scaling strategy, the storage proof and data availability infrastructure, and the bootstrapping path from [[cyber/crystal]] seed to planetary deployment. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
 
 ## 2. Design Philosophy
 
@@ -323,9 +323,85 @@ Confluence (Huet-Levy 1980): the sixteen patterns form an orthogonal rewrite sys
 
 Global memoization: key $(H(\text{subject}), H(\text{formula}))$, value $H(\text{result})$. Results are universal (any node can contribute/consume), permanent (results never change due to determinism), and verifiable (result hash checkable against proof). Two computations with identical inputs always produce identical outputs — the hash is the proof of equivalence.
 
-## 7. State and Proofs
+## 7. Trident: Provable Programming
 
-### 7.1 BBG: Big Badass Graph
+### 7.1 Why a Dedicated Language
+
+[[nox]] defines the execution model — sixteen reduction patterns over field elements. Writing directly in [[nox]] patterns is like writing directly in assembly. A systems-level language is needed that compiles to [[nox]] while preserving provability, bounded execution, and field-native arithmetic. [[Trident]] is that language.
+
+Provable VMs are arithmetic machines, not byte-addressable CPUs. The machine word is a field element, not a byte. Trident's primitive types — `Field`, `Digest`, `XField` — map directly to the [[Goldilocks field]] value tower. Every variable, every operation, every function compiles to arithmetic over $\mathbb{F}_p$. Programs produce [[STARK]] proofs.
+
+| Operation | Trident on [[Triton VM]] | Rust on SP1 | Rust on RISC Zero |
+|-----------|:---:|:---:|:---:|
+| One hash | 1 cycle | ~3,000 cycles | ~1,000 cycles |
+| Merkle proof (depth 32) | ~100 cycles | ~96,000 cycles | ~32,000 cycles |
+
+The performance gap comes from alignment: Trident compiles to what the VM actually computes, while general-purpose languages compile to an emulation of what a different machine computes.
+
+### 7.2 Design Constraints
+
+1. Field elements all the way down. The machine word is `Field`.
+2. Bounded execution. All loops have explicit bounds. No recursion. No heap. No halting problem.
+3. Compile-time everything. Types, array sizes, and costs known statically.
+4. Constraints are features. No dynamic dispatch, no unbounded allocation — these restrictions make programs provable.
+
+These constraints make formal verification decidable. Annotate contracts, the compiler proves correctness automatically:
+
+```trident
+#[requires(amount > 0)]
+#[requires(sender_balance >= amount)]
+#[ensures(result == sender_balance - amount)]
+fn transfer(sender_balance: Field, amount: Field) -> Field {
+    assert(amount > 0)
+    assert(sender_balance >= amount)
+    sender_balance - amount
+}
+```
+
+### 7.3 The Rosetta Stone
+
+A single lookup table over the [[Goldilocks field]] simultaneously functions as four distinct primitives:
+
+| Reading | Role |
+|---------|------|
+| Cryptographic S-box | Hash nonlinearity (security) |
+| Neural activation | Network expressiveness (intelligence) |
+| FHE bootstrap | Encrypted evaluation (privacy) |
+| [[STARK]] lookup | Proof authentication (verifiability) |
+
+One table. One field. Four purposes. The [[hash]] function's security properties (resistance to algebraic attacks via maximal-degree polynomials) translate to desirable properties for neural network activation functions (high expressiveness in the field). See [[rosetta stone]] for the full treatment.
+
+### 7.4 The Trinity: ZK + AI + Quantum
+
+Three technological revolutions converge on the same algebraic primitive — arithmetic over prime fields:
+
+- Zero-knowledge cryptography reduces computation to arithmetic circuits over $\mathbb{F}_p$.
+- Neural networks reduce to matrix multiply-accumulate and nonlinear activations — arithmetic circuits over $\mathbb{F}_p$.
+- Quantum gates in prime-dimensional Hilbert spaces correspond to arithmetic operations over $\mathbb{F}_p$.
+
+[[Trident]] is the only language where the native data type simultaneously satisfies the requirements of all three domains. This unification is not a feature — it is a consequence of the fact that prime field arithmetic is the minimal algebraic structure enabling reversible computation with complete arithmetic: the shared prerequisite of provability, neural network quantization, and quantum gate algebra.
+
+### 7.5 Content-Addressed Code and Self-Hosting
+
+Every [[trident]] function has a unique identity derived from its normalized AST. Names are metadata. The [[hash]] is the truth. Rename a function — the hash stays the same. Publish independently from the other side of the planet — same code, same hash.
+
+The compiler self-hosts: [[trident]] source compiles [[trident]] source, and the execution produces a [[STARK]] proof that compilation was faithful. Three producers compete: compiler output, expert hand-written assembly, and a [[neural]] model learning to emit better assembly than both.
+
+### 7.6 Standard Library
+
+Implemented: `std.field` · `std.crypto` · `std.math` · `std.data` · `std.io` · `std.compiler`
+
+In development: `std.nn` (field-native neural networks) · `std.private` (ZK + FHE + MPC) · `std.quantum` (gates, error correction)
+
+`std.nn` provides linear layers, convolutions, attention, and lookup-table activations (ReLU, GELU, SiLU) — all operating natively in $\mathbb{F}_p$ with zero quantization overhead. Models trained in standard ML frameworks can be imported via ONNX bridge, proven with [[STARK]] on [[Triton VM]], and exported back.
+
+### 7.7 Implementation Path
+
+[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[STARK]] prover, the privacy circuits, the [[tri-kernel]] ranking engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[STARK]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
+
+## 8. State and Proofs
+
+### 8.1 BBG: Big Badass Graph
 
 A naive graph database stores edges and answers queries. "I don't have any edges matching your query" is indistinguishable from "I'm hiding edges from you." Traditional systems require trust.
 
@@ -345,7 +421,7 @@ $$\text{BBG\_root} = H(\text{by\_neuron.commit} \| \text{by\_particle.commit} \|
 
 Index consistency invariant: every edge appears in exactly the right index positions (3 for distinct endpoints, 2 for self-links), enforced by STARK on every state transition.
 
-### 7.2 State Transitions
+### 8.2 State Transitions
 
 The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. Four transaction types modify it:
 
@@ -356,7 +432,7 @@ The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. F
 
 Validity conditions: authorization (signature or ZK proof), sufficient balance, sufficient [[focus]], conservation ($\sum \text{focus}' = 1$, $\sum \text{balance}' = B_{\text{total}}$), index consistency, content availability, no double-spend.
 
-### 7.3 STARK Verification
+### 8.3 STARK Verification
 
 STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
 
@@ -374,15 +450,15 @@ This enables recursive proof composition: prove a computation, then prove that t
 
 The system closes on itself. No trusted external verifier remains.
 
-### 7.4 Namespace Sync
+### 8.4 Namespace Sync
 
 To sync namespace $ns$: the responder provides range bounds in the sorted polynomial, FRI proofs for boundary elements, and edge data. The client verifies that the boundaries bracket exactly the requested namespace and that all FRI proofs are valid against the BBG root.
 
 If verification passes: "I have ALL edges in namespace $ns$. Nothing hidden." The guarantee is mathematical. Cost: $O(|\text{my\_edges}|)$ data + $O(\log^2 |G|)$ proof overhead.
 
-## 8. Privacy
+## 9. Privacy
 
-### 8.1 The Privacy Boundary
+### 9.1 The Privacy Boundary
 
 Traditional systems force a choice: transparency (everyone sees everything) or privacy (no one can verify anything). Zero-knowledge proofs dissolve this dichotomy.
 
@@ -396,7 +472,7 @@ cyber implements private ownership with public aggregates. Individual record own
 | Graph | Edges exist, aggregate weight | Who created edge, individual stakes |
 | Focus | π distribution, rankings | — |
 
-### 8.2 Record Model and Commitments
+### 9.2 Record Model and Commitments
 
 A record is a tuple (particle, value, owner, nonce). Its commitment:
 
@@ -408,7 +484,7 @@ $$\text{nullifier}(r, \text{secret}) = \text{Poseidon}(\text{NULLIFIER\_DOMAIN},
 
 The nullifier cannot be derived from the commitment (needs secret), cannot reveal the commitment (one-way), is unique per record, and deterministic (same record produces the same nullifier).
 
-### 8.3 Transaction Circuit
+### 9.3 Transaction Circuit
 
 The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~9,600 for Merkle — a 10× improvement, because field operations cost 1 constraint each while hash operations cost ~300.
 
@@ -416,31 +492,31 @@ Total circuit: ~10,000 constraints. With STARK optimizations: ~7,000 gates. Proo
 
 The circuit enforces: input commitment correctness, polynomial inclusion, ownership verification, nullifier derivation, output commitment correctness, conservation ($\sum \text{inputs} = \sum \text{outputs} + \text{fee}$), delta consistency, and uniqueness.
 
-## 9. Foculus Consensus
+## 10. Foculus Consensus
 
-### 9.1 Finality by Convergence
+### 10.1 Finality by Convergence
 
 The [[collective focus theorem]] proves that token-weighted random walk on a strongly connected [[cybergraph]] converges to a unique $\pi$. [[Foculus]] turns this into [[consensus]]: a [[particle]] is final when $\pi_i > \tau$. [[Neurons]] gossip [[cyberlinks]], GPUs iterate $\pi$, and finality emerges from the [[topology]] of [[attention]] — no voting rounds, no leader election, no block ordering.
 
 The system is leaderless. Every [[neuron]] computes $\hat\pi$ independently from its local view of the [[cybergraph]]. Convergence emerges from gossip. Foculus operates in partial synchrony: messages arrive within an unknown but finite bound $\Delta$. During asynchronous periods, no new [[particles]] finalize — but no conflicting [[particles]] can finalize either. Safety holds always. Liveness resumes when connectivity restores.
 
-### 9.2 Fork Choice
+### 10.2 Fork Choice
 
 $\pi$ is the fork choice rule. When conflicts exist, the [[particle]] with higher $\pi_i$ is the canonical choice. This integrates all [[cyberlinks]] from all [[neurons]], weighted by [[token]] stake. Manipulating $\pi$ requires controlling the topology of the [[cybergraph]] itself — which costs real [[tokens]].
 
-### 9.3 Safety
+### 10.3 Safety
 
 Theorem (no double finality): two conflicting [[particles]] cannot both exceed $\tau$.
 
 Assumption: honest [[neurons]] control $\geq \frac{1}{2} + \delta$ of staked [[tokens]]. This bounds their share of $\pi$ from below: honest [[neurons]] create the majority of weighted [[cyberlinks]], so honest [[particles]] attract the majority of random-walk mass. $\sum \pi_i = 1$; if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the honest-majority bound.
 
-### 9.4 Liveness and Sybil Resistance
+### 10.4 Liveness and Sybil Resistance
 
 Ergodicity of the transition matrix $P$ guarantees every valid [[particle]] accumulates $\pi$ mass over time. Convergence rate depends on the spectral gap $\lambda$: expected time to finality is $O(\log(1/\varepsilon)/\lambda)$ iterations.
 
 $\pi$ is weighted by staked [[tokens]], not by node count. Creating 1000 [[neurons]] with zero stake produces zero $\pi$ influence. The cost of attacking $\pi$ is the cost of acquiring $> \frac{1}{2}$ of staked [[tokens]] — same economic security as proof-of-stake, but the attack surface is graph topology rather than a voting protocol.
 
-### 9.5 Performance
+### 10.5 Performance
 
 | Metric | Classic BFT | Nakamoto | Foculus |
 |--------|-------------|----------|---------|
@@ -452,13 +528,13 @@ $\pi$ is weighted by staked [[tokens]], not by node count. Creating 1000 [[neuro
 
 Each iteration is a sparse matrix-vector multiply — embarrassingly parallel, no sequential bottleneck. Single GPU (A100): ~50M edges at 40 Hz $\approx 2 \times 10^9$ edge ops/s. Latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN.
 
-### 9.6 Adaptive Threshold
+### 10.6 Adaptive Threshold
 
 The finality threshold adapts to the current distribution: $\tau(t) = \mu_\pi + \kappa\sigma_\pi$, $\kappa \in [1,2]$. When the network is decisive (low variance), $\tau$ is low and finality is fast. When uncertain (high variance), $\tau$ rises and finality slows. The system self-regulates.
 
-## 10. Neural Language
+## 11. Neural Language
 
-### 10.1 Why a New Language
+### 11.1 Why a New Language
 
 Formal [[languages]] achieve precision through rigid syntax but cannot scale to $10^{15}$ [[particles]] — Goedel proved no sufficiently powerful formal system can be both complete and consistent. Natural [[languages]] achieve expressiveness through ambiguity but are computationally intractable for precise reasoning.
 
@@ -474,7 +550,7 @@ Formal [[languages]] achieve precision through rigid syntax but cannot scale to 
 | Verification | Proof systems | Social [[consensus]] | [[STARK]] proofs |
 | Substrate | Strings | Sound/text | [[Cybergraph]] |
 
-### 10.2 Primitives
+### 11.2 Primitives
 
 [[Semcon]] (semantic convention): mutual agreement of [[neurons]] to use the same [[particles]] for structuring thought. The grammar of the graph. A [[semcon]] is a smart contract that creates [[cyberlinks]] according to convention — invocation produces well-formed graph structure. Bootloader semcons installed at genesis: TRUE, FALSE. Emergent semcons discovered by the network: is-a, follows, causes, contradicts.
 
@@ -486,7 +562,7 @@ Formal [[languages]] achieve precision through rigid syntax but cannot scale to 
 
 [[Cyberlink]] as [[particle]]: a link stored as a [[particle]] itself, enabling links about links — meta-[[knowledge]]. The [[recursion]] that makes the language expressively complete. Enables negation, qualification, provenance, annotation. The language can talk about itself.
 
-### 10.3 The Semantic Core
+### 11.3 The Semantic Core
 
 The dynamic vocabulary of the network — top [[particles]] by [[cyberank]]:
 
@@ -494,7 +570,7 @@ $\text{SemanticCore}(k) = \text{top}\ k\ \text{particles by}\ \pi$
 
 Dynamic (evolves with attention), convergent ([[tri-kernel]] guarantees stability), stake-weighted (resistant to spam), verifiable (STARK proofs). The dynamics mirror natural language: neologism (new concepts enter), semantic drift (meaning shifts through topology change), semantic death ([[focus]] drops below threshold), semantic birth (bursts of link creation).
 
-### 10.4 Formal Properties
+### 11.4 Formal Properties
 
 Ambiguity resolution: the [[tri-kernel]] resolves polysemy computationally. [[Springs]] detect polysemy as high tension when a [[particle]] has neighborhoods pulling in incompatible directions. Heat concentrates [[focus]] on the contextually appropriate meaning. Under sufficient linking pressure, a polysemous [[particle]] splits into two — semantic speciation.
 
@@ -513,15 +589,15 @@ Expressiveness: semantically complete. The [[cybergraph]] can encode:
 
 The graph also expresses what no formal [[language]] can: collective confidence distributions, continuous semantic distance, and [[knowledge topology]] metadata.
 
-## 11. Tokenomics
+## 12. Tokenomics
 
-### 11.1 Tokens
+### 12.1 Tokens
 
 [[$CYB]] is the native [[token]]. Staked for security, burned for permanent $\pi$-weight, spent as fees.
 
 [[Learning tokens]] serve as feedback signals to [[superintelligence]]: will ([[bandwidth]]), [[attention]] (rank influence), [[karma]] (reputation). These are not tradeable assets — they are measurements of a [[neuron]]'s contribution to collective [[focus]].
 
-### 11.2 Seven Mechanisms
+### 12.2 Seven Mechanisms
 
 1. Minting for [[focus]] computation: [[neurons]] that compute [[focus]] toward a [[particle]] earn newly minted [[$CYB]], proportional to $\Delta\pi$ — the shift caused in the [[tri-kernel]] fixed point.
 
@@ -537,25 +613,25 @@ The graph also expresses what no formal [[language]] can: collective confidence 
 
 7. Reputation emergence: a [[neuron]]'s long-term reputation is the accumulated $\pi$-weight of [[particles]] it contributed to. This is [[karma]] — aligning social and economic capital through measurable contribution to collective [[focus]].
 
-### 11.3 Monetary Policy
+### 12.3 Monetary Policy
 
 Gross rewards: $G = E(t) + F \cdot (1 - \beta)$, combining stepped emission with redistributed fees. Net new supply: $\text{net} = E(t) - F \cdot \beta$. When fees exceed emission, the network is net deflationary.
 
 The allocation curve splits rewards between stakers and provers. Parameters $\alpha$ and $\beta$ self-adjust via PID control — no governance votes needed.
 
-### 11.4 Attribution
+### 12.4 Attribution
 
 Multiple [[neurons]] contribute [[cyberlinks]] in the same epoch. The total $\Delta\pi$ shift is a joint outcome. The [[Shapley value]] distributes credit fairly: each agent's reward equals their average marginal contribution across all possible orderings.
 
 Exact computation is $O(n!)$. Approximation via Monte Carlo sampling: compute each transaction's individual $\Delta\mathcal{F}$, sample $k$ random orderings, cluster by affected neighborhood. Complexity: $O(k \cdot n)$ with $k \ll n$, feasible for $10^6+$ transactions per epoch.
 
-### 11.5 Hardware Substrate
+### 12.5 Hardware Substrate
 
 The [[Goldilocks field processor]] makes proving $\Delta\pi$ economically viable. The proof-of-useful-work puzzle requires producing STARK proofs using the same primitives as real workloads. Mining rewards bootstrap chip development. Chips accelerate proving. Proving serves users. Users generate fees. Fees replace emission. The same hardware mines and proves — no stranded assets.
 
-## 12. Security
+## 13. Security
 
-### 12.1 Security Bounds
+### 13.1 Security Bounds
 
 | Property | Guarantee |
 |----------|-----------|
@@ -564,7 +640,7 @@ The [[Goldilocks field processor]] makes proving $\Delta\pi$ economically viable
 | Conservation | $\sum(\text{energy}) = \text{initial} + \text{minted} - \text{burned}$ (mathematically enforced) |
 | Quantum resistance | Hash-based security only, ~128-bit post-quantum (Grover limit) |
 
-### 12.2 Attack Surface
+### 13.2 Attack Surface
 
 | Attack | Defense |
 |--------|---------|
@@ -577,7 +653,7 @@ The [[Goldilocks field processor]] makes proving $\Delta\pi$ economically viable
 | Replay | Nonces and nullifiers ensure uniqueness |
 | Forgery | ZK proofs unforgeable without witness |
 
-### 12.3 Formal Properties
+### 13.3 Formal Properties
 
 Turing completeness: [[nox]] is Turing-complete. Construct encoding of arbitrary Turing machine via patterns 0-4, 9.
 
@@ -591,7 +667,7 @@ Privacy soundness: a valid ZK proof implies all circuit constraints are satisfie
 
 Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nullifier is deterministic: same record produces same nullifier. Nullifier set is append-only. Transaction rejected if nullifier already exists.
 
-### 12.4 Complexity Comparison
+### 13.4 Complexity Comparison
 
 | Operation | Traditional | Blockchain | nox |
 |-----------|-------------|------------|------|
@@ -602,7 +678,7 @@ Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nul
 | Recursive verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(1)$ composed |
 | Privacy + verify | Incompatible | Incompatible | $O(1)$ ZK proof |
 
-## 13. The Soft3 Stack
+## 14. The Soft3 Stack
 
 Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node + Postgres. Web3 had Solidity + EVM + RPC. Each defined what developers could build and what users could experience.
 
@@ -619,19 +695,19 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
 
 The [[tru]] does what LLMs do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. [[Trident]] closes the provability gap: in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[Trident]] programs produce STARK proofs: verify once, trust forever.
 
-## 14. Applications
+## 15. Applications
 
-### 14.1 Decentralized Search and Oracle
+### 15.1 Decentralized Search and Oracle
 
 A [[neuron]] querying "what causes malaria" receives a ranked subgraph: the [[particle]] "malaria" linked through the "causes" [[semcon]] to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito" — with [[cyberank]] scores indicating collective confidence in each link. The answer is a path to walk through verified [[knowledge]], not a list of web pages to trust.
 
-### 14.2 AI Alignment
+### 15.2 AI Alignment
 
 The alignment problem becomes a graph problem. Human values are [[particles]] with high [[cyberank]], heavily linked by human [[neurons]]. AI behavior is [[sentences]] created by AI [[neurons]]. Alignment is measured by the overlap between AI-generated [[linkchains]] and human-valued [[particles]]. Misalignment is detectable as divergence between human and machine [[focus]] distributions — measurable, on-chain, and correctable.
 
 The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neurons]] alone and the distribution induced by AI [[neurons]] alone. [[Trident]] can prove that a model followed a policy — you verify compliance, not trust a claim.
 
-### 14.3 Knowledge Economy
+### 15.3 Knowledge Economy
 
 [[Cyberlinks]] are yield-bearing epistemic assets. They accrue rewards over time based on contribution to [[focus]] emergence:
 
@@ -639,13 +715,215 @@ $$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
 
 Earlier and more accurate links to important [[particles]] earn the most. This creates a self-sustaining economy where [[knowledge]] creation is profitable and free-riding is unprofitable. Every agent that links makes the graph smarter. Every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds.
 
-### 14.4 Cross-Species Communication
+### 15.4 Cross-Species Communication
 
 Neural language is species-agnostic. Any entity that can create [[cyberlinks]] participates: humans through [[cyb]], AI agents through API, sensors through IoT protocols, autonomous systems through on-chain transactions. A forest sensor network that links "soil moisture: 23%" to "location: sector 7" is speaking the same language as a human who links "drought risk" to "sector 7" and an AI that links "predicted yield drop: 30%" to the same location. The [[semantic core]] integrates all three into a single coherent [[knowledge]] structure.
 
-## 15. Conclusion
+## 16. Scale and Complexity
 
-cyber synthesizes six independently developed research threads — content addressing, authenticated graphs, deterministic rewriting, parallel reduction, conserved flow dynamics, and zero-knowledge verification — into a single architecture unified by prime field arithmetic.
+### 16.1 The Planetary Constraint
+
+The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]]. At this scale, three constraints become absolute:
+
+No global recomputation. Any algorithm requiring a full pass over the graph for a local change is physically impossible. Light travels 300,000 km/s; a round-trip across the planet takes ~130 ms; a round-trip to Mars takes ~6-44 minutes depending on orbital position. The architecture must produce correct results from local information alone.
+
+No single-machine state. The full [[cybergraph]] state exceeds any single machine's memory. Sharding is a structural requirement, not an optimization.
+
+No synchronous coordination. At planetary scale, synchronous protocols bottleneck on the slowest participant. The system must converge under partial synchrony — messages arrive within an unknown but finite bound.
+
+### 16.2 Locality as Architecture
+
+The [[tri-kernel]] was selected by the [[locality]] filter: for any edit batch $e_\Delta$, recomputing only the $h$-hop neighborhood achieves global error $\leq \varepsilon$, where $h = O(\log(1/\varepsilon))$.
+
+Each kernel decays independently:
+
+| Kernel | Decay | Locality bound |
+|--------|-------|----------------|
+| [[Diffusion]] | Geometric via teleport $\alpha$ | $O(\log(1/\varepsilon) / \log(1/\alpha))$ hops |
+| [[Springs]] | Exponential via screening $\mu$ | $O(\sqrt{1/\mu} \cdot \log(1/\varepsilon))$ hops |
+| [[Heat kernel]] | Gaussian tail via bounded $\tau$ | $O(\sqrt{\tau \log(1/\varepsilon)})$ hops |
+
+A local change propagates $O(\log(1/\varepsilon))$ hops before its effect drops below precision $\varepsilon$. Beyond that radius, the global [[focus]] distribution is indistinguishable from its pre-update state. This is what makes sharding, light clients, and interplanetary operation mathematically viable.
+
+### 16.3 Sharding by Semantic Coherence
+
+The [[cybergraph]] shards along semantic boundaries — namespaces, domains, subgraphs with high internal connectivity and sparse cross-shard links. Each shard computes local [[focus]] independently. Cross-shard consistency is maintained by a sheaf of attention weights: at shard boundaries, the [[focus]] vectors must agree on shared [[particles]] to within $\varepsilon$.
+
+Categorical pruning ensures each shard is a semantically coherent subgraph. A shard about biology contains biologically relevant [[particles]] and their internal links. Cross-domain bridges (e.g., "biochemistry" linking biology and chemistry shards) are replicated in both shards.
+
+### 16.4 Complexity Budget
+
+| Operation | Complexity | Notes |
+|-----------|-----------|-------|
+| Single [[tri-kernel]] iteration | $O(|E| + |V|)$ | Sparse matrix-vector multiply |
+| Convergence | $O(\log(1/\varepsilon) / \lambda)$ iterations | $\lambda$ = spectral gap |
+| Local update after edit | $O(k^d)$ where $k = O(\log(1/\varepsilon))$ | $d$ = graph dimension |
+| [[STARK]] verification | $O(\log n)$ | Independent of computation size |
+| Recursive proof aggregation | $O(1)$ per level | Constant-size composed proofs |
+| Light client sync | $O(|\text{namespace}|) + O(\log^2 |G|)$ proof | Data + proof overhead |
+
+The entire architecture is sublinear in graph size for all operations except the initial full computation. After convergence, the system maintains $\pi^*$ incrementally.
+
+### 16.5 Two-Timescale Separation
+
+Fast timescale (~seconds): [[cyberlinks]] arrive, local [[focus]] updates propagate through $O(\log(1/\varepsilon))$-hop neighborhoods, finality threshold $\tau$ is checked. This is the real-time consensus layer.
+
+Slow timescale (~hours): global rebalancing across shards, cross-shard consistency reconciliation, archival and storage proof verification. This is the background maintenance layer.
+
+The separation means the system responds to new [[knowledge]] in seconds while maintaining global consistency over hours. Human-relevant latency (search, inference) operates on the fast timescale. Civilizational-scale coherence (cross-domain synthesis, long-range semantic drift) operates on the slow timescale.
+
+## 17. Storage Proofs and Data Availability
+
+### 17.1 Why Storage Proofs Are Phase 1
+
+Every [[particle]] is content-addressed: identity = [[Hemera]] hash of content. If the content behind a hash is lost, the [[particle]] is dead — its identity exists but its meaning is gone. At planetary scale, content loss is the existential risk.
+
+Storage proofs guarantee that the content behind every [[particle]] remains retrievable. They are security infrastructure, not a scaling optimization:
+
+```
+Hash function may need replacement someday
+  → Replacement requires rehashing original content
+    → Rehashing requires content availability
+      → Content availability requires storage proofs
+        → Storage proofs must be operational before genesis
+```
+
+Without storage proofs, the [[hash]] function choice is irreversible and the system is permanently coupled to [[Hemera]]. With them, [[Hemera]] becomes a replaceable component — the correct architectural relationship.
+
+### 17.2 Proof Types
+
+| Proof | What it guarantees | Mechanism |
+|-------|-------------------|-----------|
+| Storage proof | Content bytes exist on specific storage | Periodic challenges against content hash |
+| Replication proof | $k$ independent copies exist | Challenge distinct replicas, verify uniqueness |
+| Retrievability proof | Content can be fetched within bounded time | Timed challenge-response with latency bound |
+| Data availability proof | Block data was published and is accessible | Erasure coding + random sampling (DAS) |
+
+Storage proofs verify individual [[particle]] content. Data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants.
+
+### 17.3 Layered Data Availability
+
+Data is tiered by criticality and expected lifetime:
+
+Tier 0 — critical roots: checkpoint roots posted to a high-security settlement layer once per epoch. Immutable forever. Low bandwidth (~32-64 KB/epoch). Used for ultimate recovery and dispute resolution.
+
+Tier 1 — active graph: [[focus]] blobs (~10K [[cyberlinks]] + proofs) posted to a dedicated DA layer. Retained $\geq$ 30 days. Verified by light sampling on phones. The active working set of the [[cybergraph]].
+
+Tier 2 — historical tails: erasure-coded archival to persistent storage networks. Refreshed by archivers. Used for deep replay, research, and content rehashing in case of hash migration.
+
+### 17.4 Namespace-Aware Sampling
+
+Light clients verify data availability without downloading full data. The [[BBG]]'s namespace structure enables namespace-aware DAS: a client sampling "give me everything for [[neuron]] N" receives data plus a completeness proof — cryptographic certainty that nothing was withheld, using $O(\sqrt{n})$ random samples.
+
+The namespace Merkle tree (NMT) propagates namespace labels through internal nodes. Completeness is a structural invariant: the tree physically cannot represent a valid root over misordered leaves. This is what makes "sync only my data" a mathematical property rather than a trust assumption.
+
+### 17.5 Storage Proof Requirements
+
+Before genesis, the storage proof system must satisfy:
+
+- Coverage: every [[particle]] in the graph has at least $k \geq 3$ verified replicas
+- Continuous verification: proofs checked periodically, not just at creation time
+- Content-completeness: proofs verify actual content bytes, not just the CID
+- Retrievability: content fetchable within bounded time, not just "exists somewhere"
+- Incentive alignment: [[neurons]] storing content are rewarded for availability, penalized for loss
+
+### 17.6 Hash Migration Protocol
+
+If [[Hemera]] is ever broken — or a superior primitive emerges — the storage proof system enables full graph rehash:
+
+1. New identity space created under the new hash function (parallel, not replacing)
+2. Rehash campaign retrieves content via storage proofs, computes new addresses
+3. Dual-CID period: both old and new addresses valid. [[Cyberlinks]] reference either
+4. Cutoff: after full coverage verified, new content requires the new hash. Old CIDs become read-only historical references
+
+At $10^{15}$ [[particles]] parallelized across $10^6$ nodes: ~17 hours for full rehash. Storage proof coverage and network bandwidth become the bottleneck, not hash speed.
+
+## 18. Bootstrapping
+
+### 18.1 The Crystal
+
+The [[cyber/crystal]] is the genesis seed — a curated [[knowledge]] graph of exactly 5,040 [[particles]] forming the irreducible basis from which all civilizational reasoning can be composed. It is an alphabet of a mind.
+
+The central claim is irreducibility: every [[particle]] earns its place because it cannot be derived from composing other [[particles]] under a formally defined grammar. The grammar enforces a vocabulary/grammar split:
+
+| Layer | Particles | Types |
+|-------|-----------|-------|
+| Vocabulary | 4,320 | Entities (2,400), Processes (960), Properties (720), Measures (240) |
+| Grammar | 720 | Relations (480), Patterns (240) |
+
+The 6:1 ratio matches natural language content-to-function word ratios. Every [[cyberlink]] is a typed triple via predicate [[particles]]: Subject → [Predicate] → Object. This structure makes irreducibility formally testable.
+
+Two architectural layers:
+
+Lattice (4,392 [[particles]], ~1.8 MB, ~454K tokens): structural vocabulary, permanently loadable for reasoning. Fits in a single LLM context window.
+
+Flesh (648 [[particles]], ~4.7 MB, ~1,165K tokens): articles, proofs, manifestos. Retrieved on demand via [[cyberlink]] traversal.
+
+Seventeen domains span the knowledge space: 4 pillar domains ([[cyber]], [[cyberia]], superhuman, [[cybics]]) and 13 foundation domains (mathematics, physics, biology, computer science, chemistry, [[governance]], economics, energy, materials, agriculture, geography, culture, history). 536 bridge [[particles]] (10.6%) connect domains — explicit [[isomorphisms]] enabling cross-domain reasoning.
+
+### 18.2 Twelve Invariants
+
+Quality gates enforced before genesis:
+
+1. Completeness — every domain $\geq Q$ [[particles]]
+2. Connectivity — every [[particle]] $\geq$ 3 outgoing links
+3. Reachability — any [[particle]] reaches any other in $\leq$ 6 hops
+4. Irreducibility — no [[particle]] derivable from others under grammar
+5. Positivity — every definition says what IS
+6. Self-reference — $\geq$ 10% of [[particles]] model own architecture
+7. Bridge density — $\geq$ 3 bridges per domain pair
+8. Type balance — Entities $\leq$ 55%, Processes $\geq$ 15%
+9. Defect freedom — zero stubs, red links, orphans
+10. Growth ready — every hub has attachment points
+11. Narrative depth — every domain $\geq$ 3 synthesis articles
+12. Self-explanation — $\geq$ 25 articles explain protocol purpose
+
+### 18.3 Implementation Path
+
+Seven phases, each with a hard gate. No phase starts until its predecessor passes.
+
+Phase 1 — Self-Hosting: [[nox]] evaluates [[nox]]. The system executes its own programs. [[nox]]-in-[[nox]] interpreter passes all test vectors from Python/Rust implementations.
+
+Phase 2 — Cryptographic Library: all cryptographic primitives as [[nox]] programs. [[Hemera]] sponge, Merkle operations, polynomial commitments, LtHash for collection state.
+
+Phase 3 — Privacy Circuits: UTXO-based privacy with ZK proofs for all state transitions. Transaction circuit (~44K constraints), [[cyberlink]] circuit, nullifier system, formal privacy boundary.
+
+Phase 4 — [[STARK]] Infrastructure: self-verifying proof system where the verifier is itself a [[nox]] program. Recursive composition. Light client protocol with $O(\log n)$ verification.
+
+Phase 5 — [[Tri-Kernel]] Ranking (parallel with Phase 4): [[focus]] computation adversarially proven and deployed at scale. Formal Lyapunov convergence proof. Nash equilibrium for honest participation.
+
+Phase 6 — Network Layer: distributed protocol for [[cybergraph]] [[consensus]] and [[focus]] propagation. DA sampling, gossip protocol, shard architecture, economic engine simulation-tested under 100$\times$ adversarial load.
+
+Phase 7 — Testnet to Mainnet: devnet → testnet (30 days zero critical bugs under attack) → canary net (90 days stability) → mainnet genesis → [[bostrom]] migration (bijective state mapping, zero data loss).
+
+### 18.4 Pre-Launch Verification Protocol
+
+No patch relay exists between stars. What launches must be correct. Before launch, five questions answered with machine-checked evidence:
+
+| # | Question | Evidence |
+|---|----------|----------|
+| 1 | Does $\pi$ converge? | Lean4 proof of Lyapunov stability |
+| 2 | Can proofs be forged? | Soundness proof + $10^8$ fuzzing runs, 0 counterexamples |
+| 3 | Can the economy be drained? | Nash equilibrium proof + 100$\times$ adversarial simulation |
+| 4 | Is computation deterministic? | Cross-implementation state root match on $10^6$ blocks |
+| 5 | Does it survive partial failure? | Chaos test report with zero safety violations |
+
+All five green → launch. Any red → no launch. No exceptions.
+
+### 18.5 Growth Phases
+
+| Phase | Timeline | Particles | Character |
+|-------|----------|-----------|-----------|
+| 0: Genesis | Launch | 5,040 | Irreducible seed — the [[cyber/crystal]] |
+| 1: Early | Year 1 | +2,000 | [[Neurons]] extend the basis |
+| 2: Maturation | Years 2-3 | +10,000 | Specialization emerges |
+| 3: Scale | Year 5+ | +100,000 | Scale-free organic growth |
+
+The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching the cognition threshold. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
+
+## 19. Conclusion
+
+cyber synthesizes eight independently developed research threads — content addressing, authenticated graphs, deterministic rewriting, parallel reduction, conserved flow dynamics, zero-knowledge verification, provable programming, and storage proof infrastructure — into a single architecture unified by prime field arithmetic.
 
 The protocol makes three specific claims:
 
@@ -655,9 +933,11 @@ Convergent computation escapes the [[Goedel prison]]. A convergent system can se
 
 Provability closes the trust gap. STARK proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The STARK verifier is itself a [[nox]] program. The system closes on itself.
 
-What remains is to grow the graph. Seventy thousand [[neurons]] and three million [[particles]] are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
+What remains is to build the implementation — [[trident]] compiler, [[STARK]] prover, storage proof system, privacy circuits, [[tri-kernel]] at scale — and then to grow the graph. The [[cyber/crystal]] provides the irreducible seed: 5,040 [[particles]] spanning seventeen domains, passing twelve invariants. Seven phases lead from self-hosting through cryptographic library, privacy, proofs, ranking, network, and testnet to mainnet genesis. Five pre-launch verification gates — convergence, soundness, economic security, determinism, fault tolerance — must pass with machine-checked evidence before launch.
 
-See [[cyber]] for the full specification index. See [[soft3]] for the stack. See [[bostrom]] for the running [[bootloader]].
+Seventy thousand [[neurons]] and three million [[particles]] are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
+
+See [[cyber]] for the full specification index. See [[soft3]] for the stack. See [[bostrom]] for the running [[bootloader]]. See [[cyber/launch]] for the full implementation roadmap. See [[cyber/crystal]] for the genesis seed specification.
 
 ## References
 
