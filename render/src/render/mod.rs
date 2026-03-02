@@ -552,12 +552,12 @@ fn lmt_sort_key(lmt: &str) -> String {
     }
 }
 
-/// Format a value as percentage of max: (val / max) * 100, with 2 decimal places.
-fn format_pct_of_max(val: f64, max: f64) -> String {
-    if max <= 0.0 || val <= 0.0 {
+/// Format a value as percentage of total: (val / sum) * 100, with 2 decimal places.
+fn format_pct_of_sum(val: f64, sum: f64) -> String {
+    if sum <= 0.0 || val <= 0.0 {
         "0".to_string()
     } else {
-        format!("{:.2}", val / max * 100.0)
+        format!("{:.2}", val / sum * 100.0)
     }
 }
 
@@ -608,9 +608,9 @@ fn render_files_page(
     let lum_pcts = compute_percentiles(&lum_vals);
     let grav_pcts = compute_percentiles(&grav_vals);
 
-    // Max values for normalizing L and G to percentages
-    let max_lum = lum_vals.iter().cloned().fold(0.0_f64, f64::max);
-    let max_grav = grav_vals.iter().cloned().fold(0.0_f64, f64::max);
+    // Sum values for normalizing L and G to distributions (Σ = 1)
+    let sum_lum: f64 = lum_vals.iter().sum();
+    let sum_grav: f64 = grav_vals.iter().sum();
 
     let files_data: Vec<_> = pages
         .iter()
@@ -650,8 +650,8 @@ fn render_files_page(
                 links_out => *links_out,
                 pagerank => focus_display,
                 size => size_display,
-                luminosity => format_pct_of_max(*luminosity, max_lum),
-                gravity => format_pct_of_max(*gravity, max_grav),
+                luminosity => format_pct_of_sum(*luminosity, sum_lum),
+                gravity => format_pct_of_sum(*gravity, sum_grav),
                 tags => p.meta.tags.clone(),
                 icon => p.meta.icon.clone(),
                 created => created_lmt,
