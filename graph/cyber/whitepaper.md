@@ -41,7 +41,22 @@ The protocol rests on five primitives:
 
 From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
 
-This document specifies the complete architecture: the computation model ([[nox]]), the provable programming language ([[trident]]), the probability engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), the economic design, the scaling strategy, the storage proof and data availability infrastructure, and the bootstrapping path from [[cyber/crystal]] seed to planetary deployment. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
+This document specifies the complete architecture:
+
+- [[nox]] — computation model
+- [[trident]] — provable programming language
+- [[tri-kernel]] — ranking engine
+- [[cyber/bbg]] — state structure
+- [[cyber/proofs]] — proof system
+- [[cyber/privacy]] — privacy layer
+- [[foculus]] — consensus mechanism
+- [[neural]] — semantic layer
+- [[cybernomics]] — economic design
+- [[cyber/scaling]] — scaling strategy
+- [[storage proofs]] — storage proof and data availability infrastructure
+- [[cyber/crystal]] — bootstrapping path from seed to planetary deployment
+
+Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
 
 ## 2. Design Philosophy
 
