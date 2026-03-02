@@ -6,7 +6,7 @@ alias: STARK verification, nox STARKs, cyber/stark, STARK, STARK proofs
 ---
 # STARK Verification
 
-[[nox]] uses STARKs (Scalable Transparent Arguments of Knowledge) as its proof system. The choice is driven by alignment with nox's design principles: no trusted setup, hash-only security (post-quantum), and native compatibility with Goldilocks field arithmetic.
+[[nox]] uses STARKs (Scalable Transparent Arguments of Knowledge) as its proof system. The choice is driven by alignment with nox's design principles: no trusted setup, [[Hemera]]-only security (post-quantum), and native compatibility with [[Goldilocks field]] arithmetic.
 
 ## Why STARKs
 
