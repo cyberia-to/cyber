@@ -520,7 +520,7 @@
         if (node) {
           canvas.style.cursor = 'pointer';
           tooltip.style.display = 'block';
-          tooltip.innerHTML = '<strong style="font-size:15px">' + node.title + '</strong><br><span style="font-size:12px;opacity:0.6">π ' + (node.focus || 0).toFixed(6) + ' · ' + node.linkCount + ' links</span>';
+          tooltip.innerHTML = '<strong style="font-size:15px">' + node.title + '</strong><br><span style="font-size:12px;opacity:0.6">π ' + ((node.focus || 0) * 100).toFixed(2) + '% · ' + node.linkCount + ' links</span>';
           tooltip.style.left = (event.clientX - rect.left + 15) + 'px';
           tooltip.style.top = (event.clientY - rect.top - 10) + 'px';
         } else {
