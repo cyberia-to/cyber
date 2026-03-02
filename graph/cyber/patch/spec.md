@@ -228,70 +228,59 @@ This embedding is not metaphorical — CyberPatch repositories ARE [[cybergraph]
 
 ## 4. Identity and Cryptography
 
-### 4.1 Post-Quantum Identity Stack
+CyberPatch inherits the [[cyber]] cryptographic stack — it adds no primitives of its own
 
-All cryptographic primitives are selected for post-quantum security. No classical asymmetric cryptography (RSA, ECDSA, Ed25519, ECDH) is used anywhere in the protocol.
+### 4.1 Cryptographic Primitives
 
-Signature scheme: ML-DSA (CRYSTALS-Dilithium), NIST FIPS 204
-Security level: Dilithium3 (Category 3, 128-bit quantum security)
-Key sizes: pk = 1952 bytes, sk = 4000 bytes, sig = 3293 bytes
+all primitives come from the protocol layer:
 
-Key encapsulation (for encrypted transport): ML-KEM (CRYSTALS-Kyber), NIST FIPS 203
-Security level: Kyber768 (Category 3)
+- [[hash]]: [[Poseidon2]]-Goldilocks (see [[Hemera_Hash_Primitive_Specification]]). 64-byte digests, [[STARK]]-native, single canonical function for all content addressing
+- [[signature]]: post-quantum from [[genesis]]. the specific scheme is a protocol-level decision (see [[cyber/security]])
+- proofs: [[STARKs]] over [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$), verified by [[nox]] programs
+- identity: [[neuron]] = [[public key]], derived from [[spell]]. see [[cyber/particle]] for CID structure
 
-Hash function: BLAKE3
-Properties: 256-bit output, collision-resistant, PRF-secure, fast (software-optimized)
-Post-quantum status: hash functions with 256-bit output are quantum-safe under Grover's algorithm (requires 2¹²⁸ quantum operations to find a collision)
+### 4.2 Neuron Identity in CyberPatch
 
-Proof system (for ZK verification): [[STARKs]] over Goldilocks prime (p = 2⁶⁴ - 2³² + 1)
-Compatible with Triton VM / Trident compilation targets.
-
-### 4.2 Neuron Identity
-
-A [[neuron]] identity is derived from a Dilithium keypair:
+a [[neuron]] authors patches using the same keypair that signs [[cyberlinks]]:
 
 ```
-NeuronID = BLAKE3(dilithium_public_key)  // 32-byte identifier
+NeuronID = H(public_key)  // Hemera hash, 64-byte identifier
 
-NeuronKeypair {
-    public_key:  DilithiumPublicKey,   // 1952 bytes
-    secret_key:  DilithiumSecretKey,   // 4000 bytes, encrypted at rest
-    neuron_id:   NeuronID,             // derived, 32 bytes
+PatchAuthor {
+    public_key:  NeuronPublicKey,
+    neuron_id:   NeuronID,          // derived via Hemera
 }
 ```
 
-The neuron_id is the stable external identifier. The keypair may be rotated (with an on-chain rotation proof) without changing the neuron_id.
-
-Key separation:
-- Signing key: Dilithium keypair (patch authorship, channel operations)
-- Transport key: Kyber keypair (encrypted peer-to-peer sync)
-- On-chain identity: derived from signing key, registered via [[cyber]] [[consensus]]
+the neuron_id is the stable external identifier. keypair rotation is handled at the protocol level (on-chain rotation proof) — CyberPatch trusts the current binding
 
 ### 4.3 Patch Signing
 
 ```
 patch_content = ops || deps || author_id || timestamp
-patch_id      = BLAKE3(patch_content || signature)
-signature     = Dilithium.sign(secret_key, BLAKE3(patch_content))
+patch_id      = H(patch_content || signature)
+signature     = sign(secret_key, H(patch_content))
 ```
 
-Verification:
+verification:
 ```
-valid = Dilithium.verify(author.public_key, BLAKE3(patch_content), signature)
-     && patch_id == BLAKE3(patch_content || signature)
+valid = verify(author.public_key, H(patch_content), signature)
+     && patch_id == H(patch_content || signature)
      && all dep_ids are known and valid
 ```
 
+where H is the protocol [[hash]] function and sign/verify use the protocol [[signature]] scheme
+
 ### 4.4 Identity Resolution
 
-Neuron IDs are resolved to [[public key]]s through the [[cyber]] [[name]] system, supporting:
+neuron IDs are resolved to [[public key]]s through the [[cyber]] [[name]] system:
 
-- Direct resolution: `neuron_id → public_key` via on-chain registry
-- Blockchain name resolution: `cyber-name.cyber → neuron_id → public_key`
+- direct resolution: `neuron_id → public_key` via on-chain registry
+- name resolution: `cyber-name.cyber → neuron_id → public_key`
 - CID resolution: `cid → blob content` via distributed blob store
-- No URL dependency: no HTTP endpoints required for core operations
+- no URL dependency: no HTTP endpoints required for core operations
 
-This enables cloning repositories by CID or neuron_id without DNS or centralized infrastructure.
+this enables cloning repositories by CID or neuron_id without DNS or centralized infrastructure
 
 ---
 
@@ -424,7 +413,7 @@ All graph mutations reduce to the primitive patch operations defined in §5.1:
 
 ```
 // Create a new node with content
-create_node(content: Bytes) → AddParticle(BLAKE3(content))
+create_node(content: Bytes) → AddParticle(H(content))
 
 // Delete a node and all its edges
 delete_node(cid: CID) →
@@ -438,7 +427,7 @@ add_relation(from: CID, to: CID, relation_type: CID) →
 
 // Rename / update content
 update_content(old: CID, new_content: Bytes) →
-    let new = BLAKE3(new_content) in
+    let new = H(new_content) in
     ReplaceParticle(old, new)
 ```
 
@@ -552,14 +541,11 @@ This result aligns with the [[collective focus theorem]] — convergence of dist
 Content identifiers follow a self-describing format:
 
 ```
-CID = version || codec || hash_function || hash_digest
+CID = H(content)  // raw 64-byte Hemera digest
 
-version:       varint (always 1 for CyberPatch)
-codec:         varint (content type: raw=0x55, cbor=0x71, graph=0xA0)
-hash_function: varint (BLAKE3=0x1e)
-hash_digest:   32 bytes (BLAKE3 output)
-
-Total: ~36 bytes, base58 or bech32 encoded for display
+No multicodec prefix, no multihash header, no version byte.
+See [[Hemera_Hash_Primitive_Specification]] for rationale and format.
+Inside the protocol, the 64-byte digest is the complete identifier.
 ```
 
 ### 8.2 Blob Store (Off-Graph Payloads)
@@ -605,7 +591,7 @@ Patches are serialized as CBOR (RFC 7049) for network transport:
 
 ### 8.4 Transport Protocols
 
-Primary: Direct peer-to-peer over QUIC with Kyber-encrypted sessions
+primary: direct peer-to-peer over QUIC with post-quantum encrypted sessions
 
 Repository cloning by CID:
 ```
@@ -697,7 +683,7 @@ Autonomous agents interact with CyberPatch through the same primitives as humans
 ```
 NeuronSession {
     neuron_id:     NeuronID,       // agent's identity
-    signing_key:   DilithiumKey,   // held in secure enclave
+    signing_key:   NeuronKey,      // held in secure enclave
     repo:          Repository,
     pending:       Vec<Operation>, // buffered ops before patch creation
 }
@@ -809,7 +795,7 @@ Key properties of Cyber License (as intended by the [[cyber]] project):
 | Term | Definition |
 |------|-----------|
 | Patch | A signed, dependency-linked set of primitive operations |
-| PatchID | BLAKE3 [[hash]] of patch content including [[signature]] |
+| PatchID | [[hash]] of patch content including [[signature]] (Hemera digest) |
 | Channel | Named mutable pointer to a set of patches |
 | [[Particle]] | Content-addressed unit of tracked data (vertex) |
 | CID | Content Identifier — self-describing hash of content |
@@ -841,7 +827,7 @@ T8. Adversarial soundness: no patch can forge authorship under ML-DSA
 
     ```
     cyberlink(
-        from:  patch_set_root_CID,     // BLAKE3 of canonical patch set = channel state ID
+        from:  patch_set_root_CID,     // H() of canonical patch set = channel state ID
         to:    materialized_state_CID, // CID of fully derived state blob
         label: "checkpoint",           // semantic label, in neuron's namespace
     )
