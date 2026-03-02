@@ -57,7 +57,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 ## specifications
 
 - [[cyber/particle]] — hash parameters, content addressing, tree
-- [[cyber/vm]] — compute: 16 reduction patterns, value tower, cost model
+- [[cyber/nox]] — compute: 16 reduction patterns, value tower, cost model
 - [[cyber/bbg]] — state: authenticated graph, polynomial commitments, privacy
 - [[cyber/proofs]] — verify: proof system, self-verification, recursive composition
 - [[cyber/tri-kernel]] — rank: three operators, composite contraction
@@ -66,7 +66,7 @@ five primitives, one [[cybergraph]]. the [[tru]] runs the [[tri-kernel]] on it. 
 
 ## explanations
 
-- [[cyber/vision]] — the CORE synthesis: six paradigms, ten principles
+- [[cyber/vision]] — the nox synthesis: six paradigms, ten principles
 - [[theoretical foundations]] — the mathematical framework
 - [[collective focus theorem]] — convergence proofs for tri-kernel
 - [[tri-kernel architecture]] — why diffusion, springs, and heat

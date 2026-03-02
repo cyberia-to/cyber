@@ -2,7 +2,7 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: content addressing, particle addressing, CORE CID
+alias: content addressing, particle addressing, nox CID
 ---
 # particle: content addressing
 
@@ -79,10 +79,10 @@ different uses of Hemera are separated at the input, not the output:
 
 ```
 IPFS CIDv1:  <version><multicodec><multihash><length><digest>   36-69 bytes
-CORE CID:    <digest>                                           64 bytes
+nox CID:     <digest>                                           64 bytes
 ```
 
-inside the protocol, the 64-byte digest is the complete identifier. IPFS compatibility is a thin translation layer at the gateway — inside [[CORE]], the wrapper never exists
+inside the protocol, the 64-byte digest is the complete identifier. IPFS compatibility is a thin translation layer at the gateway — inside [[nox]], the wrapper never exists
 
 all identities live in one flat 64-byte namespace: [[particles]], edges, [[neurons]], commitments, nullifiers. no type tags in the address. the type is determined by where the address appears in the [[BBG]] structure, not by what it contains
 

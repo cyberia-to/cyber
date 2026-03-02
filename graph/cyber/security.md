@@ -4,9 +4,9 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 ---
-# CORE security
+# nox security
 
-security properties and formal guarantees of [[CORE]]
+security properties and formal guarantees of [[nox]]
 
 ## security bounds
 
@@ -35,11 +35,11 @@ Forgery         │ ZK proofs unforgeable without witness
 ## formal properties
 
 ### Turing completeness
-Theorem: CORE is Turing-complete.
+Theorem: nox is Turing-complete.
 Proof: Construct encoding of arbitrary Turing machine M via patterns 0-4, 9. ∎
 
 ### confluence
-Theorem: CORE is confluent.
+Theorem: nox is confluent.
 Proof: Orthogonal rewrite system by Huet-Levy (1980). ∎
 
 ### cost determinism
@@ -67,7 +67,7 @@ Proof:
 
 ```
 ┌─────────────────────┬───────────────┬───────────────┬───────────────┬───────────────┐
-│     Operation       │  Traditional  │  Blockchain   │   Database    │     CORE      │
+│     Operation       │  Traditional  │  Blockchain   │   Database    │     nox       │
 │                     │  (RAM model)  │  (Ethereum)   │  (SQL/NoSQL)  │               │
 ├─────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┤
 │ Equality check      │ O(n) compare  │ O(n) compare  │ O(n) compare  │ O(1) hash     │
@@ -82,4 +82,4 @@ Proof:
 └─────────────────────┴───────────────┴───────────────┴───────────────┴───────────────┘
 ```
 
-see [[cyber/vm]] for the execution model, [[cyber/privacy]] for the ZK architecture, [[cyber/stark]] for proof verification
+see [[cyber/nox]] for the execution model, [[cyber/privacy]] for the ZK architecture, [[cyber/stark]] for proof verification

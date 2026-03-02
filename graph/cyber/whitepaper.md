@@ -33,7 +33,7 @@ cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link 
 
 The protocol rests on five primitives: [[particle]] (content-addressed node), [[neuron]] (agent that signs edges), [[cyberlink]] (weighted directed edge), [[token]] (non-negative weight controlling influence), and [[focus]] (emergent [[equilibrium]] over [[particles]], conserved to 1). From these five primitives, a single [[cybergraph]], and three local operators, the system converges to a shared understanding of what matters — deterministic, on chain, verifiable by anyone.
 
-This document specifies the complete architecture: the computation model ([[CORE]]), the ranking engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), and the economic design. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
+This document specifies the complete architecture: the computation model ([[nox]]), the ranking engine ([[tri-kernel]]), the state structure ([[cyber/bbg]]), the proof system, the privacy layer, the consensus mechanism ([[foculus]]), the semantic layer ([[neural]]), and the economic design. Each component is specified independently. Together they form a self-organizing system where computation, inference, and [[consensus]] are the same process.
 
 ## 2. Design Philosophy
 
@@ -53,14 +53,14 @@ The postulate: every truth accessible to [[intelligence]] is a fixed point of so
 
 Turing (1936) defined computation as a tape head moving left and right, reading and writing symbols. The entire digital revolution rests on sequential symbol manipulation. Convergent computation replaces derivation with [[equilibrium]]: the answer is the stable state a network settles into under conservation laws.
 
-[[CORE]] — Conserved Observable Reduction Equilibrium — formalizes this. Sixteen rewriting patterns, field-native arithmetic, confluent semantics. Any evaluation order yields the same result. [[Focus]] is conserved — a single quantity that simultaneously serves as fuel, [[attention]], weight, and value.
+[[nox]] formalizes this. Sixteen rewriting patterns, field-native arithmetic, confluent semantics. Any evaluation order yields the same result. [[Focus]] is conserved — a single quantity that simultaneously serves as fuel, [[attention]], weight, and value.
 
 The stack:
 
 - natural computing paradigm
   - convergent computation ([[equilibrium]]-based)
     - [[focus flow computation]] (probability + physics + economics)
-      - [[CORE]] machine (field-native, confluent, self-verifying)
+      - [[nox]] machine (field-native, confluent, self-verifying)
         - [[cybergraph]] (content-addressed, authenticated)
           - [[tri-kernel]] ranking ([[diffusion]] + [[springs]] + heat)
             - planetary [[superintelligence]]
@@ -259,7 +259,7 @@ Complexity per step: $O(|E| + |V|)$. Context window is unbounded — it is the e
 | Explainability | Low | High — trace any $p_i$ to contributing links |
 | Context window | Fixed (4k-128k tokens) | Unbounded — the entire [[cybergraph]] |
 
-## 6. CORE Execution
+## 6. nox Execution
 
 ### 6.1 The Goldilocks Field
 
@@ -352,13 +352,13 @@ The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. F
 1. Cyberlink — add edge to graph
 2. Transfer — move balance between [[neurons]] (public)
 3. PrivateTransfer — move energy between records (ZK)
-4. Computation — execute [[CORE]] reduction
+4. Computation — execute [[nox]] reduction
 
 Validity conditions: authorization (signature or ZK proof), sufficient balance, sufficient [[focus]], conservation ($\sum \text{focus}' = 1$, $\sum \text{balance}' = B_{\text{total}}$), index consistency, content availability, no double-spend.
 
 ### 7.3 STARK Verification
 
-STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. The choice aligns with [[CORE]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
+STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
 
 | Property | SNARK | STARK |
 |----------|-------|-------|
@@ -368,7 +368,7 @@ STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. T
 | Security basis | Discrete log | Hash only |
 | Field compatible | Specific | Any (Goldilocks) |
 
-Self-verification property: the STARK verifier is expressible as a [[CORE]] program. STARK verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[CORE]]-native. The verifier takes ~600,000 pattern applications, constant regardless of what was proven.
+Self-verification property: the STARK verifier is expressible as a [[nox]] program. STARK verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. The verifier takes ~600,000 pattern applications, constant regardless of what was proven.
 
 This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions.
 
@@ -579,7 +579,7 @@ The [[Goldilocks field processor]] makes proving $\Delta\pi$ economically viable
 
 ### 12.3 Formal Properties
 
-Turing completeness: [[CORE]] is Turing-complete. Construct encoding of arbitrary Turing machine via patterns 0-4, 9.
+Turing completeness: [[nox]] is Turing-complete. Construct encoding of arbitrary Turing machine via patterns 0-4, 9.
 
 Confluence: the sixteen patterns form an orthogonal rewrite system (Huet-Levy 1980). Any evaluation order yields the same result.
 
@@ -593,7 +593,7 @@ Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nul
 
 ### 12.4 Complexity Comparison
 
-| Operation | Traditional | Blockchain | CORE |
+| Operation | Traditional | Blockchain | nox |
 |-----------|-------------|------------|------|
 | Equality check | $O(n)$ compare | $O(n)$ compare | $O(1)$ hash |
 | Membership proof | $O(n)$ scan | $O(\log n)$ MPT | $O(\log^2 n)$ poly |
@@ -653,7 +653,7 @@ Convergent computation escapes the [[Goedel prison]]. A convergent system can se
 
 [[Focus]] conservation unifies [[attention]], fuel, and [[consensus]] into a single conserved quantity. This eliminates the separate gas models, fee markets, and priority auctions of existing systems while providing the economic foundation for a self-sustaining [[knowledge]] economy.
 
-Provability closes the trust gap. STARK proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The STARK verifier is itself a [[CORE]] program. The system closes on itself.
+Provability closes the trust gap. STARK proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The STARK verifier is itself a [[nox]] program. The system closes on itself.
 
 What remains is to grow the graph. Seventy thousand [[neurons]] and three million [[particles]] are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
 

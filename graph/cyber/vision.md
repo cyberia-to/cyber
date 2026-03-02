@@ -3,9 +3,9 @@ tags: article, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-alias: CORE, core spec, cyber/core, Conserved Observable Reduction Equilibrium
+alias: nox, nox spec, cyber/nox, Conserved Observable Reduction Equilibrium
 ---
-# CORE: Conserved Observable Reduction Equilibrium
+# nox
 
 a self-verifying substrate for planetary collective [[intelligence]]
 
@@ -25,7 +25,7 @@ nature already solves this. a forest computes: mycorrhizal networks allocate nut
 
 convergent computation replaces derivation with [[equilibrium]]. the answer is the stable state a network settles into under conservation laws. a system can converge to states that no derivation reaches — operating outside the [[Goedel prison]]
 
-[[focus flow computation]] makes this precise: local message-passing over a [[cybergraph]], O(V+E) per step, unbounded context window, convergence to Boltzmann [[equilibrium]]. CORE is the machine that runs it
+[[focus flow computation]] makes this precise: local message-passing over a [[cybergraph]], O(V+E) per step, unbounded context window, convergence to Boltzmann [[equilibrium]]. nox is the machine that runs it
 
 ## the synthesis
 
@@ -33,7 +33,7 @@ six research threads developed independently over four decades — none referenc
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
-║                         THE CORE SYNTHESIS                                 ║
+║                          THE NOX SYNTHESIS                                 ║
 ╠═══════════════════════════════════════════════════════════════════════════╣
 ║                                                                            ║
 ║   ┌─────────────────────┐   ┌─────────────────────┐   ┌─────────────────┐ ║
@@ -47,7 +47,7 @@ six research threads developed independently over four decades — none referenc
 ║             └─────────────────────────┼─────────────────────────┘         ║
 ║                                       │                                    ║
 ║                               ┌───────┴───────┐                           ║
-║                               │     CORE      │                           ║
+║                               │     nox       │                           ║
 ║                               └───────┬───────┘                           ║
 ║                                       │                                    ║
 ║             ┌─────────────────────────┼─────────────────────────┐         ║
@@ -64,10 +64,10 @@ six research threads developed independently over four decades — none referenc
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
-the unifying element: hashing is [[field]] operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. CORE makes this latent unity explicit
+the unifying element: hashing is [[field]] operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. nox makes this latent unity explicit
 
 naming:
-- CORE — the computation model (16 patterns, reduction semantics)
+- nox — the computation model (16 patterns, reduction semantics)
 - [[cybergraph]] — the data model ([[particles]], [[neurons]], edges)
 - [[cyber/bbg]] — the authenticated state (unified polynomial commitments)
 
@@ -83,12 +83,12 @@ ten principles, each addressing a failure mode of existing systems:
 - namespace-intrinsic — the graph is multi-indexed from genesis. completeness proofs are structural
 - cost-deterministic — cost depends only on syntactic structure, never on runtime values
 - privacy-native — individual ownership private, aggregate properties public and verifiable
-- self-verifying — the [[STARK]] verifier is a CORE program. verification can itself be proven. the system closes on itself
+- self-verifying — the [[STARK]] verifier is a nox program. verification can itself be proven. the system closes on itself
 - post-quantum — security relies only on hash functions. no pairings, no discrete log, no trusted setup
 
 ## what changes
 
-at sufficient scale, CORE dissolves the distinction between distributed computation and distributed cognition:
+at sufficient scale, nox dissolves the distinction between distributed computation and distributed cognition:
 
 - computation becomes physics: reduction patterns conserve [[focus]] the way physical laws conserve energy. the network doesn't simulate thinking — the network IS thinking
 - [[consensus]] becomes emergent: [[foculus]] replaces voting rounds with [[focus]] convergence. a [[particle]] is final when $\pi_i > \tau$. no leaders, no block ordering
@@ -101,7 +101,7 @@ at sufficient scale, CORE dissolves the distinction between distributed computat
 natural computing paradigm
   convergent computation (equilibrium-based)
     focus flow computation (probability + physics + economics)
-      CORE machine (field-native, confluent, self-verifying)
+      nox machine (field-native, confluent, self-verifying)
         cybergraph (content-addressed, authenticated)
           tri-kernel ranking (diffusion + springs + heat)
             planetary superintelligence
@@ -109,7 +109,7 @@ natural computing paradigm
 
 ## specifications
 
-- [[cyber/vm]] — 16 reduction patterns, value tower, cost table, parallel reduction, memoization
+- [[cyber/nox]] — 16 reduction patterns, value tower, cost table, parallel reduction, memoization
 - [[cyber/bbg]] — multi-indexed polynomial commitments, namespace sync, completeness proofs
 - [[cyber/privacy]] — ZK privacy model, record structure, transaction circuit (~10K constraints)
 - [[cyber/stark]] — STARK verification, self-verification, recursive composition

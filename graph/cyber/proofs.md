@@ -2,11 +2,11 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: STARK verification, CORE STARKs, cyber/stark, STARK, STARK proofs
+alias: STARK verification, nox STARKs, cyber/stark, STARK, STARK proofs
 ---
 # STARK Verification
 
-[[CORE]] uses STARKs (Scalable Transparent Arguments of Knowledge) as its proof system. The choice is driven by alignment with CORE's design principles: no trusted setup, hash-only security (post-quantum), and native compatibility with Goldilocks field arithmetic.
+[[nox]] uses STARKs (Scalable Transparent Arguments of Knowledge) as its proof system. The choice is driven by alignment with nox's design principles: no trusted setup, hash-only security (post-quantum), and native compatibility with Goldilocks field arithmetic.
 
 ## Why STARKs
 
@@ -23,7 +23,7 @@ Field compatible  │ Specific      │ Any (Goldilocks)
 ## Self-Verification Property
 
 ```
-THEOREM: The STARK verifier for CORE is expressible as a CORE program.
+THEOREM: The STARK verifier for nox is expressible as a nox program.
 
 STARK verification requires:
   1. Field arithmetic (patterns 5, 7, 8)
@@ -31,7 +31,7 @@ STARK verification requires:
   3. Polynomial evaluation (patterns + recursion)
   4. Merkle verification (pattern 15 + conditionals)
 
-All are CORE-native. QED.
+All are nox-native. QED.
 
 CONSEQUENCE:
   verify(proof) can itself be proven
@@ -65,7 +65,7 @@ Level 2: Prove verify(π₁) → proof π₂ (same size)
 
 AGGREGATION:
   N transactions → N proofs
-  Verify all N in one CORE program
+  Verify all N in one nox program
   Prove that verification → single proof
 
   Result: O(1) on-chain verification for O(N) transactions

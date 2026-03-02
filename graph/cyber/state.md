@@ -6,7 +6,7 @@ alias: state management, world state, state transitions
 ---
 # State Management
 
-The [[CORE]] world state and transition rules. All state lives in the [[cyber/bbg]] — a unified polynomial structure. Transitions are proven valid by [[cyber/stark]] proofs.
+The [[nox]] world state and transition rules. All state lives in the [[cyber/bbg]] — a unified polynomial structure. Transitions are proven valid by [[cyber/stark]] proofs.
 
 ## World State
 
@@ -52,7 +52,7 @@ TRANSACTION TYPES
 3. PrivateTransfer: Move energy between records (ZK)
    tx = (nullifiers, commitments, deltas, fee, proof)
 
-4. Computation: Execute CORE reduction
+4. Computation: Execute nox reduction
    tx = (neuron, subject, formula, budget, signature)
 
 

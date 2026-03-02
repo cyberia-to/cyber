@@ -577,7 +577,7 @@ BlobStore trait {
 LocalBlobStore    // filesystem, for local repos
 IPFSBlobStore     // IPFS / Kubo compatible
 ArweaveBlobStore  // permanent archival
-CyberBlobStore    // native CORE DA layer
+CyberBlobStore    // native nox DA layer
 MemoryBlobStore   // for testing
 ```
 
@@ -622,7 +622,7 @@ cyber clone neuron:abc123.../repo-name
 Cloning by blockchain [[name]]:
 ```
 cyber clone cyber-name.cyber/repo-name
-// resolves name on CORE chain → neuron_id → repo
+// resolves name on nox chain → neuron_id → repo
 ```
 
 No URL required: the entire resolution chain is on-graph/on-chain. HTTP transport is an optional compatibility layer, not a requirement.
@@ -870,5 +870,5 @@ T8. Adversarial soundness: no patch can forge authorship under ML-DSA
 ---
 
 CyberPatch Specification v0.1 — draft for internal review
-[[cyber]] Ecosystem — Collective Objective Reality Engine
+[[cyber]] Ecosystem — nox
 Status: Pre-implementation design

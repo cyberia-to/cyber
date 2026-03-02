@@ -2,11 +2,11 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: focus dynamics, CORE focus
+alias: focus dynamics, nox focus
 ---
 # Focus Dynamics
 
-[[focus]] is a single conserved quantity in [[CORE]] that serves three roles simultaneously. This unifies what other systems split into separate mechanisms—gas, stake, priority, reputation.
+[[focus]] is a single conserved quantity in [[nox]] that serves three roles simultaneously. This unifies what other systems split into separate mechanisms—gas, stake, priority, reputation.
 
 | Role | Mechanism |
 |------|-----------|
@@ -14,7 +14,7 @@ alias: focus dynamics, CORE focus
 | Fuel | Computation consumes focus |
 | Consensus weight | Focus distribution = agreement signal |
 
-The mathematical foundation is formalized in the [[cft]]. This page specifies the engineering: conservation laws, flow equation, and convergence properties as implemented in the [[CORE]] substrate.
+The mathematical foundation is formalized in the [[cft]]. This page specifies the engineering: conservation laws, flow equation, and convergence properties as implemented in the [[nox]] substrate.
 
 ## Conservation Laws
 

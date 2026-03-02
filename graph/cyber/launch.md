@@ -1,6 +1,6 @@
 ---
 tags: trident, cyber, article
-alias: master plan, CORE master plan, CORE_Master_Plan, cyber/launch
+alias: master plan, nox master plan, nox_master_plan, cyber/launch
 crystal-type: article
 crystal-domain: cyber
 ---
@@ -8,7 +8,7 @@ crystal-domain: cyber
 
 A self-verifying knowledge graph where attention, computation, and [[consensus]] converge into a single metric (π), enabling [[intelligence]] emergence without central control.
 
-Collective Objective Reality Engine
+nox
 Optimizing civilization's ability to know what matters
 
 Version: 2026.02 | Status: Genesis → Self-Hosting transition
@@ -142,24 +142,24 @@ Seven phases. Each has a hard gate. No phase starts until its predecessor passes
 
 ### Phase 1: Self-Hosting ← current
 
-CORE evaluates CORE. The system executes its own programs.
+nox evaluates nox. The system executes its own programs.
 
 | Deliverable | Gate |
 |-------------|------|
-| CORE-in-CORE interpreter (16 patterns self-hosted) | Passes all test vectors from Python/Rust impls |
-| [[Poseidon2]] as CORE program | Output matches reference on 10⁶ inputs |
+| nox-in-nox interpreter (16 patterns self-hosted) | Passes all test vectors from Python/Rust impls |
+| [[Poseidon2]] as nox program | Output matches reference on 10⁶ inputs |
 | [[focus]] metering self-test | Deterministic cost ± 0 across all paths |
 
 Duration: 3-6 months
 
 ### Phase 2: Cryptographic Library
 
-All cryptographic primitives as CORE programs.
+All cryptographic primitives as nox programs.
 
 | Deliverable | Gate |
 |-------------|------|
 | [[Poseidon2]] sponge + compression | Matches test vectors, constant-time |
-| Merkle tree operations | 32-level proof verified in CORE |
+| Merkle tree operations | 32-level proof verified in nox |
 | Polynomial commitments (KZG/FRI) | Binding + hiding proofs checked |
 | LtHash for collection state | Add/remove = O(1), matches reference |
 
@@ -186,16 +186,16 @@ Duration: 6-9 months
 
 ### Phase 4: STARK Infrastructure
 
-Self-verifying proof system where the verifier is itself a CORE program.
+Self-verifying proof system where the verifier is itself a nox program.
 
 | Deliverable | Gate |
 |-------------|------|
 | [[STARK]] prover | Completeness: honest prover always convinces |
-| STARK verifier as CORE program | Soundness: no poly-time adversary forges proof |
+| STARK verifier as nox program | Soundness: no poly-time adversary forges proof |
 | Recursive composition | Inner verification circuit correctly arithmetized |
 | Light client protocol | O(log n) verification of any state claim |
 
-Verification closure: STARK verifiers are CORE programs. Proofs can be verified, and verification can be proven.
+Verification closure: STARK verifiers are nox programs. Proofs can be verified, and verification can be proven.
 
 Duration: 9-12 months
 
@@ -318,7 +318,7 @@ vs. Decentralized AI (Bittensor): no external model, provable correctness, unive
 
 | Role | Count | Focus |
 |------|-------|-------|
-| Core protocol (Rust) | 2-3 | CORE evaluator, STARK prover, [[consensus]] |
+| Core protocol (Rust) | 2-3 | nox evaluator, STARK prover, [[consensus]] |
 | Cryptography | 1-2 | Privacy circuits, proof systems |
 | Language ([[trident]]) | 1-2 | Compiler, tooling |
 | Network / distributed systems | 1-2 | Gossip, sharding, DA layer |
