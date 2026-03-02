@@ -2,6 +2,7 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5374919276050065
 ---
 rigid bar pivoting on a fulcrum, producing mechanical advantage
 

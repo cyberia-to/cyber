@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5083635427908085
 ---
 suppression, prohibition, or restriction of information, speech, or media by an authority
 

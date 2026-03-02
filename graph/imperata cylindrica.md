@@ -7,6 +7,7 @@ abundance: "yes"
 supply: "no"
 margin: low
 autonomy: support
+stake: 6873647902523607
 ---
 [[grass]]
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4618232184508048
 ---
 alternative to bryan johnson [[blueprint]] menu
 

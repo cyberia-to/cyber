@@ -8,6 +8,7 @@ wood-durability: extreme
 wood-availability: high
 supply: next-month
 market: ironwoods
+stake: 7586398324234151
 ---
 [[high margin]]
 

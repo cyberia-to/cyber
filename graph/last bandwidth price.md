@@ -2,6 +2,7 @@
 tags: state
 crystal-type: measure
 crystal-domain: cyber
+stake: 8385313437336415
 ---
 - value is used to store up-to-date price of bandwidth
 - ```

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 15814760213228140
 ---
 TODO create illustrated book like robonomics did
 

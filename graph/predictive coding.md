@@ -3,6 +3,7 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cybics
 alias: predictive processing
+stake: 4986079748041538
 ---
 the brain as a prediction machine — perception is not passive observation but active inference about the causes of sensory signals
 

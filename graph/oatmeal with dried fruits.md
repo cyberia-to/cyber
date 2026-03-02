@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5522188484188887
 ---
 ingredient estimation
 

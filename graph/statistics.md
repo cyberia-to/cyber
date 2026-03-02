@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4918059274006148
 ---
 
 The science of collecting, analyzing, and interpreting data to draw inferences about populations from samples.

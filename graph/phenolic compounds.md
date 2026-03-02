@@ -2,6 +2,7 @@
 tags: compound-
 crystal-type: entity
 crystal-domain: chemistry
+stake: 5114960646213856
 ---
 [[phenolic compounds]] are bioactive plant metabolites characterized by aromatic rings containing hydroxyl (-OH) groups. widely distributed in fruits, vegetables, herbs, and grains, they play essential roles as antioxidants, protecting plants from pathogens, ultraviolet radiation, and oxidative stress.
 

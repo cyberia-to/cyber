@@ -2,6 +2,7 @@
 tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
+stake: 3245455344884726
 ---
 the [[emotion]] of [[violet]] — response to invisible threat
 

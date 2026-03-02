@@ -9,6 +9,7 @@ market: hardwoods
 supply: next-month
 wood: "yes"
 grow-speed: "3"
+stake: 6907210636422646
 ---
 ![image.png](https://ipfs.io/ipfs/QmYcVAErcg1D2iXsNSj62FZEQJn5bREDzGAcyvoBpuaBeS)
 

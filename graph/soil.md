@@ -3,6 +3,7 @@ tags: cyberia
 alias: soils
 crystal-type: entity
 crystal-domain: cyberia
+stake: 13425093559616420
 ---
 
 [[compost]] and [[biochar]]

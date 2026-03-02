@@ -4,5 +4,6 @@ crystal-type: entity
 crystal-domain: cyberia
 size: "74"
 shape: 12*6
+stake: 4984371099770314
 ---
 [github](https://github.com/orgs/cyber-valley/projects/39/views/1) link on the board with limited access

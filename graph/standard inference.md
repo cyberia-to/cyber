@@ -3,6 +3,7 @@ alias: cyberlinks weight, cyberlinks weights
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 7746278983898673
 ---
 algorithm addressed to solve [[true-false problem]] for inference of truthful [[answers]] from [[cybergraph]]
 

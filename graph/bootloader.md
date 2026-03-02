@@ -3,6 +3,7 @@ tags: bostrom, aos, cyber
 alias: bootloading
 crystal-type: entity
 crystal-domain: cyber
+stake: 27892462564679420
 ---
 [[cybergraph]] with particular [[cyberlinks]], [[neurons]] and [[tokens]]
 

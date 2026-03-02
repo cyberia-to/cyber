@@ -3,6 +3,7 @@ tags: article, cip
 crystal-type: pattern
 crystal-domain: cyber
 status: draft
+stake: 13576430977924820
 ---
 ## abstract
 

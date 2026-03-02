@@ -2,6 +2,7 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
+stake: 5034410084856157
 ---
 systematic inquiry into fundamental questions: existence, [[knowledge]], [[truth]], value, reason, mind, [[language]]
 

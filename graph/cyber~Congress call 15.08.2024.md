@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 24245718968667252
 ---
 @cyborgshead ideas on roadmap
 

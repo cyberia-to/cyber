@@ -5,4 +5,5 @@ crystal-domain: cyberia
 people: "8"
 ops: "false"
 dev: "false"
+stake: 4955079986549333
 ---

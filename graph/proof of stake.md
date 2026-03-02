@@ -3,6 +3,7 @@ alias: pos
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 20572613370756204
 ---
 class of [[consensus]] mechanism used in most [[blockchains]]
 

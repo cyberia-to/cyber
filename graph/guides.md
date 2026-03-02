@@ -2,6 +2,7 @@
 tags: bostrom
 crystal-type: entity
 crystal-domain: cyber
+stake: 14619926886422280
 ---
 TODO
 

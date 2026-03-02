@@ -3,6 +3,7 @@ tags: species
 alias: rosemary
 crystal-type: entity
 crystal-domain: biology
+stake: 13425093559616420
 ---
 [[staple]] for [[health]]
 

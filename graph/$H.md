@@ -3,6 +3,7 @@ tags: cybernomics
 alias: hydrogen
 crystal-type: entity
 crystal-domain: economics
+stake: 15505983061356966
 ---
 [[token]] of [[fuel]] in [[bostrom]]
 

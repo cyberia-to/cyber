@@ -4,6 +4,7 @@ alias: spacepussy
 icon: 🫦
 crystal-type: entity
 crystal-domain: cyber
+stake: 22554157180155588
 ---
 - memecoin with balls and vision
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 6171068006237014
 ---
 # Aman-Caliber Hillside Estate Land — Gesing, North Bali
 

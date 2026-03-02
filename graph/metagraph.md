@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 15586533622714664
 ---
 a graph of graphs
 

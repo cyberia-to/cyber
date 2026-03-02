@@ -2,6 +2,7 @@
 tags: page, prism, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 18341118728537776
 ---
 
 wallet and balance [[aip]] in [[cyb]]

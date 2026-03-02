@@ -3,6 +3,7 @@ tags: cyb
 crystal-type: entity
 crystal-domain: cyber
 status: DONE
+stake: 26850187119232840
 ---
 2 basic computations on [[particles]]
 

@@ -3,6 +3,7 @@ tags: cyberia, article
 alias: manifesto of the superintelligent nation, manifest, cyberia manifesto
 crystal-type: entity
 crystal-domain: cyberia
+stake: 9937010160217898
 ---
 We, the builders of a living [[superintelligence]], declare that a nation can rise beyond the sum of its citizens.
 

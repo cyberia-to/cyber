@@ -3,6 +3,7 @@ alias: motifs
 tags: cyber
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 4200711774803978
 ---
 geometric expression of meaning in the [[cybergraph]]
 

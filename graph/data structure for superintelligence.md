@@ -3,6 +3,7 @@ tags: article, cyber, cip
 crystal-type: entity
 crystal-domain: computer science
 status: draft
+stake: 10577346440909906
 ---
 
 ## Authenticated State Architecture for [[nox]]

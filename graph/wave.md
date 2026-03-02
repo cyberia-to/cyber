@@ -3,6 +3,7 @@ tags: physics
 alias: waves
 crystal-type: entity
 crystal-domain: physics
+stake: 7377088911009222
 ---
 
 A disturbance that propagates through space or a medium, transferring [[energy]] without net transport of matter.

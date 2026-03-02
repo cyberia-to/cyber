@@ -7,6 +7,7 @@ alias: hevea, karet
 wood-availability: high
 wood-durability: low
 wood-density: "600"
+stake: 8139268086280173
 ---
 [[resin]]
 

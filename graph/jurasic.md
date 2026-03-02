@@ -2,6 +2,7 @@
 tags: biome, block
 crystal-type: entity
 crystal-domain: geography
+stake: 5208936301131170
 ---
 [[block]] in [[perma]] with reproduction of life from jurassic period
 

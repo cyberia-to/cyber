@@ -7,6 +7,7 @@ abundance: "yes"
 supply: "no"
 margin: medium
 autonomy: staple
+stake: 6887072996083224
 ---
 [[staple]] [[health]]
 

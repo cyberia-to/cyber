@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: pattern
 crystal-domain: cyber
+stake: 9086103321148394
 ---
 systems that are structural frameworks where tension and compression elements work together
 

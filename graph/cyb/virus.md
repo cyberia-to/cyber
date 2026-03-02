@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 13894971834202992
 ---
 one function extension for [[legacy browsers]]
 

@@ -3,6 +3,7 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
+stake: 7592256546878347
 ---
 the measure of what matters — the output of the [[tri-kernel]] when [[focus]] converges
 

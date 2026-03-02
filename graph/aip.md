@@ -3,6 +3,7 @@ alias: app, application, aipp
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21204935277414136
 ---
 any [[avatar]] can become [[aip]]
 

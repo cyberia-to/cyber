@@ -2,6 +2,7 @@
 tags: governance, cyber
 crystal-type: relation
 crystal-domain: governance
+stake: 1089629411820504
 ---
 legal membership in a state, carrying rights and obligations
 

@@ -2,6 +2,7 @@
 tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4779333307223446
 ---
 ## revenue split
 

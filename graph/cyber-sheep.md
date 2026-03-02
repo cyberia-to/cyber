@@ -1,6 +1,7 @@
 ---
 tags: cyber valley, cyberia, robotics, energy, species, research
 icon: "\U0001F411"
+stake: 2603654508531670
 ---
 
 # Cyber Sheep v0.1

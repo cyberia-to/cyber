@@ -7,6 +7,7 @@ alias: "acmellaabundance:: yes"
 supply: "no"
 margin: high
 autonomy: extra
+stake: 8480387508999516
 ---
 [[biohacking]]
 

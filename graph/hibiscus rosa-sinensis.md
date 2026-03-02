@@ -4,6 +4,7 @@ alias: china rose, hawaiian hibiscus
 crystal-type: entity
 crystal-domain: biology
 supply: next-month
+stake: 6873647902523607
 ---
 ![](https://ipfs.io/ipfs/QmQtjNEhWwZ2QfqfjSpSA6xd3P9GnqyLxTXRZLQEy2c5we)
 

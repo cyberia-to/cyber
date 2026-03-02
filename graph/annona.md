@@ -3,6 +3,7 @@ tags: genus, cybernomics
 alias: srikaya, anona
 crystal-type: entity
 crystal-domain: biology
+stake: 7586398324234151
 ---
 selected for [[edem]]
 

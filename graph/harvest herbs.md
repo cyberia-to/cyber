@@ -3,6 +3,7 @@ tags: operation
 crystal-type: process
 crystal-domain: cyberia
 group: harvest
+stake: 4127768766463396
 ---
 100 m2 of herbs can produce $1k monthly
 

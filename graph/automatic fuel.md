@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13894971834202992
 ---
 automatic [[mint]] and [[burn]] of [[fuel]] on [[staking]] and [[unstaking]]
 

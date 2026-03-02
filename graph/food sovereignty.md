@@ -2,6 +2,7 @@
 tags: food, governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5355391867236077
 ---
 right of peoples to define their own food systems: production, distribution, consumption
 

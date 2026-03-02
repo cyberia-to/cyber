@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 15371732125760802
 ---
 overall the following state of the projects
 

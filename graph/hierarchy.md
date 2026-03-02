@@ -2,6 +2,7 @@
 tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 2940095489555996
 ---
 ordered ranking of levels where each level contains or governs the one below
 

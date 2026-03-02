@@ -2,6 +2,7 @@
 tags: genus
 crystal-type: entity
 crystal-domain: biology
+stake: 5329762143167719
 ---
 TODO identify which cinnamomum species are growing in [[sinwood]], [[edem]] and [[batuka]]
 

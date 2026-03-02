@@ -3,6 +3,7 @@ tags: genus
 alias: mint
 crystal-type: entity
 crystal-domain: biology
+stake: 6934060823541880
 ---
 selected for [[edem]]
 

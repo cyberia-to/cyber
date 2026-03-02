@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4761433182477290
 ---
 American computer scientist, professor at UC Irvine.
 

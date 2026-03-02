@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: trident AI, zkML, verifiable AI, trident ai deep dive, trident-ai-zkml-deep-dive
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # Trident and the Future of Verifiable AI
 

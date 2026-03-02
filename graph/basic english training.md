@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5549038671308120
 ---
 #### goal
 - develop fundamental english vocabulary (200 words) through structured learning and practical application.

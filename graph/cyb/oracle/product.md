@@ -2,6 +2,7 @@
 tags: article
 crystal-type: entity
 crystal-domain: cyber
+stake: 15828185306787760
 ---
 particles chart
 

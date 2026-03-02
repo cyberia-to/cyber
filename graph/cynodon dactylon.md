@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: cynodon, bermuda
+stake: 7447265536434489
 ---
 [[grass]]
 

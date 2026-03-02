@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: article
+stake: 15342685105149990
 ---
 the loop that thinks
 

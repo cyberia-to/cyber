@@ -4,6 +4,7 @@ menu-order: "6"
 tags: cyber, article, menu
 crystal-type: entity
 crystal-domain: cyber
+stake: 26940501384997528
 ---
 
 a biological body evolved beyond human limits, integrated with [[egregore]], and capable of [[immortality]]

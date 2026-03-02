@@ -2,6 +2,7 @@
 tags: article
 crystal-type: entity
 crystal-domain: cyber
+stake: 22715258302870980
 ---
 ## vision
 - soft that make dreams come true

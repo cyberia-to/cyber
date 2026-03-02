@@ -3,6 +3,7 @@ alias: cybercongress fellows
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21265348198432412
 ---
 active fellows
 

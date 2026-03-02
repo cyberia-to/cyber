@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8155744337466976
 ---
 alias: glucomoringin
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 12952530266317922
 ---
 complex patterns arising from simple local interactions without centralized control
 

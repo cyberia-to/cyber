@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4922534305192688
 ---
 # first festival: 17-20 march 2026
 

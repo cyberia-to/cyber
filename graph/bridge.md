@@ -6,6 +6,7 @@ people: "4"
 icon: 🌉
 ops: "false"
 dev: "false"
+stake: 4801708463156139
 ---
 planned district in [[cyber valley]]
 

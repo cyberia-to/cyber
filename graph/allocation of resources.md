@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 17318370691905182
 ---
 25 %: scalable alignment and interpretability:
 

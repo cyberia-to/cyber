@@ -2,6 +2,7 @@
 tags: cyber, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 18101907970566432
 ---
 - # Emotion
 - a computed color signal in [[prism]] grounded in the [[color-emotion spectrum]]

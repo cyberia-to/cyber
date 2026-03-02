@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: pattern
 crystal-domain: cyberia
+stake: 2848804853350604
 ---
 inspired by the behavior of social animals
 

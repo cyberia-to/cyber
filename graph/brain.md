@@ -3,6 +3,7 @@ icon: 🧠
 tags: page, prism, cyb
 crystal-type: entity
 crystal-domain: superhuman
+stake: 6356985210986853
 ---
 graph file manager
 

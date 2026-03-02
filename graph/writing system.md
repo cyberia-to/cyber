@@ -3,6 +3,7 @@ tags: culture
 alias: writing systems
 crystal-type: entity
 crystal-domain: culture
+stake: 7491202206265963
 ---
 visual representation of [[language]] using persistent marks on a surface
 

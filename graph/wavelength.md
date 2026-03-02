@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1080842077854209
 ---
 distance between consecutive peaks (or troughs) of a [[wave]]
 

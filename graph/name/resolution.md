@@ -3,6 +3,7 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 alias: deterministic resolution
+stake: 29541918377935932
 ---
 resolution modes of [[name]] in the [[cybergraph]]
 

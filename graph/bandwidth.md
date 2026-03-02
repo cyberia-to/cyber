@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 8353093212793336
 ---
 amount of input [[information]] processed by [[vimputer]]
 

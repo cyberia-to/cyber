@@ -7,6 +7,7 @@ scalable: "true"
 wood: "yes"
 grow-speed: "4"
 wood-density: "700"
+stake: 7608366659149886
 ---
 ![undefined](https://ipfs.io/ipfs/QmUh8aHEmRoBjmLgREgBo23Rc26zXmRPvGBxudR4Wi72J6){:height 358, :width 534}
 

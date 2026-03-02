@@ -3,6 +3,7 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 alias:: Taelin
+stake: 7424076738467881
 ---
 Brazilian computer scientist and programmer.
 

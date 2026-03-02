@@ -2,6 +2,7 @@
 tags: module
 crystal-type: entity
 crystal-domain: cyber
+stake: 14230599173193406
 ---
 [[create-route]]
 

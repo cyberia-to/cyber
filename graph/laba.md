@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: cyberia
 size: "80"
 shape: 20*4
+stake: 5683289606904284
 ---
 production facility for autonomous estate
 

@@ -3,6 +3,7 @@ tags: bostrom
 crystal-type: entity
 crystal-domain: cyber
 status: TODO
+stake: 13935247114881842
 ---
 [[$H]]
 

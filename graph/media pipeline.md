@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 17868799527849454
 ---
 
 how the [[crystal]] handles media files from authoring to publishing

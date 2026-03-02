@@ -2,6 +2,7 @@
 tags: time, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5438383354695525
 ---
 origin of the observable universe ~13.8 billion years ago
 

@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5029935053669619
 ---
 legal system where law emerges from judicial decisions and precedent rather than codified statutes
 

@@ -3,6 +3,7 @@ tags: geography
 alias: oceans
 crystal-type: entity
 crystal-domain: geography
+stake: 7336813630330374
 ---
 continuous body of salt [[water]] covering 71% of Earth's surface
 

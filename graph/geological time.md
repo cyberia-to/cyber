@@ -2,6 +2,7 @@
 tags: time, geography
 crystal-type: entity
 crystal-domain: geography
+stake: 5350510015032581
 ---
 framework for 4.54 billion years of Earth history, divided into hierarchical units
 

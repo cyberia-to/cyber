@@ -4,6 +4,7 @@ tags: cyber, core, cybernomics
 crystal-type: measure
 crystal-domain: economics
 crystal-size: atom
+stake: 9852798209707578
 ---
 [[price]] times [[supply]]. the aggregate measure of commitment to a [[token]]. reflects where [[demand]] meets [[value]]
 

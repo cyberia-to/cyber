@@ -5,6 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 whitepaper: neural language for superintelligence
+stake: 43936669831471920
 ---
 semantic [[language]] for [[neurons]] over the [[cybergraph]]. whitepaper: [[neural language for superintelligence]]
 

@@ -3,6 +3,7 @@ alias: smart contract
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21688238645560324
 ---
 program that can act based on predefined rules autonomously
 

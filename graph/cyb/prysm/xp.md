@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 17023018633593620
 ---
 status:: TODO
 

@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 4712207839425363
 ---
 TODO lecture at [[bootcamp/v0]]
 

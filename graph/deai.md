@@ -3,6 +3,7 @@ alias: decentralized ai
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21023696514359316
 ---
 [[ai]] systems that operate without centralized control
 

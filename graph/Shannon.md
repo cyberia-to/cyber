@@ -3,6 +3,7 @@ alias: Shannon information theory, information theory, Claude Shannon
 tags: cyber, article, person
 crystal-type: entity
 crystal-domain: biology
+stake: 13795504095556744
 ---
 1916-2001. American mathematician and electrical engineer
 

@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8256432539164097
 ---
 alias: tocopherol
 

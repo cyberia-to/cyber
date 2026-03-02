@@ -4,6 +4,7 @@ alias: jamblang
 crystal-type: entity
 crystal-domain: biology
 availability: cv
+stake: 13425093559616420
 ---
 products
 

@@ -6,6 +6,7 @@ type: attraction
 alias: senwood, miracle, glowing forest
 ops: "false"
 dev: "false"
+stake: 9115028295454112
 ---
 | category | indonesian | foreigner |
   | normal price | $15 | $30 |

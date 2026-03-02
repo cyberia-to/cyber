@@ -10,6 +10,7 @@ margin: medium
 autonomy: staple
 wood: "yes"
 grow-speed: "5"
+stake: 7586398324234151
 ---
 {{video https://www.youtube.com/watch?v=kkC5kO-f-go}}
 

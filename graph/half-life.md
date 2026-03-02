@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1075960225650712
 ---
 time required for half of a quantity of radioactive atoms to decay
 

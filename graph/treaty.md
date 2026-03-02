@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: relation
 crystal-domain: governance
+stake: 1014042066869694
 ---
 formal binding agreement between two or more sovereign entities under [[international law]]
 

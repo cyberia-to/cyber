@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: trident stdlib, std.*, standard library, trident-complete-stdlib
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # The Trident Standard Library: Complete Architecture
 

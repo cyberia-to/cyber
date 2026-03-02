@@ -3,6 +3,7 @@ alias: plants/metal, phytominer, hyperaccumulator, hyperaccumulators
 tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
+stake: 12330948434507682
 ---
 [[plants]] which are able to extract metals from [[soil]]
 

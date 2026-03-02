@@ -3,6 +3,7 @@ tags: bip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
+stake: 19305284538728412
 ---
 most of [[$BOOT]] stake is unstaked due to complexities related to multisig management
 

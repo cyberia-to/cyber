@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4935959398752303
 ---
 1646-1716. German polymath: mathematician, philosopher, logician, diplomat.
 

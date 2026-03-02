@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4962809585871536
 ---
 The study of counting, arrangement, and selection of discrete structures.
 

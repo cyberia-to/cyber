@@ -2,6 +2,7 @@
 tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
+stake: 3201518675053254
 ---
 SI unit of electric potential difference (voltage)
 

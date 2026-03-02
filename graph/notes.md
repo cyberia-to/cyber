@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14982404412531926
 ---
 emission must go to partial compute towards `pi`
 

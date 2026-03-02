@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14713902541339598
 ---
 integrated command line tooling for learning [[cybergraph]]
 

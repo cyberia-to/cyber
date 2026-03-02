@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
+stake: 6251618567594713
 ---
 [Lychee.pdf](https://ipfs.io/ipfs/QmfCM3LqMjARu2uPudnjHENngi3P8J7BWCDRyhqR7pEtG9)
 

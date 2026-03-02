@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5106010583840778
 ---
 body of rules governing relations between states, international organizations, and increasingly, individuals
 

@@ -2,6 +2,7 @@
 tags: computer science, measure
 crystal-type: measure
 crystal-domain: physics
+stake: 3254242678851020
 ---
 fundamental unit of [[information]], a binary digit: 0 or 1
 

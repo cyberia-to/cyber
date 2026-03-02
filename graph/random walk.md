@@ -3,6 +3,7 @@ alias: random walking, random surfer
 tags: cyber
 crystal-type: pattern
 crystal-domain: biology
+stake: 6150035359660282
 ---
 process of simulating a [[neuron]] randomly navigating the [[cybergraph]]
 

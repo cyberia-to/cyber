@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8216157258485248
 ---
 alias: moringin
 

@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 5374512455033107
 ---
 
 ### β-caryophyllene

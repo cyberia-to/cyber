@@ -5,6 +5,7 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
+stake: 10799633444575796
 ---
 the conserved quantity of [[cyber]] — the mechanism through which [[relevance]] emerges
 

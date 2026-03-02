@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: property
 crystal-domain: cyber
+stake: 2757514217145213
 ---
 probabilistic models help manage uncertainty
 

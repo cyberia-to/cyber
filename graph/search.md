@@ -3,6 +3,7 @@ icon: 🔍
 tags: cyber-
 crystal-type: process
 crystal-domain: cyber
+stake: 11427439637945498
 ---
 [[cyber]] protocol allow to search for [[particles]] in [[cybergraph]]
 

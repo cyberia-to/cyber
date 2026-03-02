@@ -2,6 +2,7 @@
 tags: district, team, cv.land
 crystal-type: entity
 crystal-domain: cyberia
+stake: 8266196243571091
 ---
 ops:: false
 dev:: false

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14096348237597240
 ---
 aggregate information from [[neurons]] by allowing them to trade shares in the outcome of future events
 

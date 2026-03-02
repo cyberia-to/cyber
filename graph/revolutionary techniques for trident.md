@@ -3,6 +3,7 @@ tags: trident
 alias: Revolutionary_Techniques_for_Trident
 crystal-type: article
 crystal-domain: cyber
+stake: 8055056135769852
 ---
 
 ## Everything That Can Make a Proof-Native Language Unprecedented

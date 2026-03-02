@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 4859883868581144
 ---
 
 The branch of [[physics]] governing [[energy]] transfer as heat and work, and the evolution of [[entropy]].

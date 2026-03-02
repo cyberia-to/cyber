@@ -4,6 +4,7 @@ alias: psycho
 crystal-type: entity
 crystal-domain: economics
 focus: "true"
+stake: 15881885681026224
 ---
 ## [[plants/mental]]
 

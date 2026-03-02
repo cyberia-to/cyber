@@ -3,6 +3,7 @@ alias: my
 tags: aip
 crystal-type: entity
 crystal-domain: cyber
+stake: 29058615009789740
 ---
 offline value:: opens [[great web]] access
 

@@ -3,6 +3,7 @@ tags: geography
 alias: climate zones
 crystal-type: entity
 crystal-domain: geography
+stake: 7618740595082318
 ---
 regions of Earth classified by temperature and precipitation patterns
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11169677841600862
 ---
 process of computing that statement is true
 

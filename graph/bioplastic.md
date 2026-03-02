@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: process
 crystal-domain: superhuman
+stake: 5269796725268099
 ---
 vision
 

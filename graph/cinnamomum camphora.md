@@ -8,6 +8,7 @@ wood-availability: high
 wood-durability: moderate
 market: hardwoods
 supply: next-month
+stake: 7520493319486942
 ---
 [tokopedia](https://www.tokopedia.com/mitraplant/bibit-pohon-kayu-kamper-tanaman-kayu-kamper-cinnamomum-camphora?extParam=ivf%3Dfalse%26src%3Dsearch)
 

@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5119435677400394
 ---
 sovereign state consisting of a single city and its immediate surroundings
 

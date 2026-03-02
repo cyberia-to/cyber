@@ -2,6 +2,7 @@
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
+stake: 5814285974364784
 ---
 
 A cryptographic protocol where a prover convinces a verifier that a statement is true while revealing nothing beyond the truth of the statement itself.

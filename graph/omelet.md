@@ -2,6 +2,7 @@
 tags: kitchen/menu, breakfast
 crystal-type: process
 crystal-domain: agriculture
+stake: 5155235926892705
 ---
 ![](https://ipfs.io/ipfs/bafkreidgjcy2hevbzsqpaxuqetfna5hutl2qi7uwtg2lhdtcl77fbekrqu)
 

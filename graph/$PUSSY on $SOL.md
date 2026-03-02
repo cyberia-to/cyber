@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 9200664119523786
 ---
 ai meme [[spacepussy]] [[$PUSSY]] token on [[solana]]
 

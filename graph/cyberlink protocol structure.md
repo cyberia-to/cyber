@@ -3,6 +3,7 @@ tags: article, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
+stake: 21528968217421240
 ---
 ## protocol structure insights
 ### 1. creation model options

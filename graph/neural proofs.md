@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13868121647083760
 ---
 proof that one [[neuron]] have control over other [[neuron]]
 

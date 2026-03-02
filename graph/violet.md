@@ -2,6 +2,7 @@
 tags: color, cyber
 crystal-type: property
 crystal-domain: culture
+stake: 1122826006804282
 ---
 
 wavelength:: 380-420 nm

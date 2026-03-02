@@ -3,6 +3,7 @@ tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
+stake: 9710004032755294
 ---
 three local operators whose fixed point is [[cyberank]]
 

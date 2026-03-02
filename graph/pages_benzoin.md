@@ -3,6 +3,7 @@ alias: kemenyan, styrax benzoin
 tags: annotation
 crystal-type: entity
 crystal-domain: chemistry
+stake: 6819947528285141
 ---
 ![image.png](../media/image_1713954173310_0.png)
 

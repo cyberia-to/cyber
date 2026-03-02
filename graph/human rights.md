@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5092585490281161
 ---
 universal moral and legal principles inherent to every person regardless of nationality, ethnicity, or status
 

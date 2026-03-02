@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4994134804177309
 ---
 1643-1727, English mathematician, physicist, and natural philosopher
 

@@ -3,6 +3,7 @@ alias: prob, probability of observation
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 6940773370321689
 ---
 formula: [[cyberank]] / `10^15`
 

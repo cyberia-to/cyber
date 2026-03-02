@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1070102003006516
 ---
 number of oscillations or cycles per unit time
 

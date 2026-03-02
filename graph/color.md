@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 16673966201043592
 ---
 - # Color
 - wavelength of light in the visible [[electromagnetic spectrum]] (380-750 nm)

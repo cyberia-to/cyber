@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 15277756470843484
 ---
 currently portal is useless for returning users and do not offer ability to create avatar second time
 

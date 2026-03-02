@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 7133199711342857
 ---
 ## Summary of Findings: Collective Focus Theorem & Foculus Architecture
 ### 1. Exponential Optimality Under Constraint

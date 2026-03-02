@@ -5,6 +5,7 @@ crystal-type: entity
 crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
+stake: 6900498089642839
 ---
 availability:: cv
 

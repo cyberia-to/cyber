@@ -3,6 +3,7 @@ alias: shared history, explicit
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 8243007445604482
 ---
 what the [[tru]] computes and makes visible. the language of the [[tru]]
 

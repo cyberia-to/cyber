@@ -3,6 +3,7 @@ icon: 💰
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 6708071748621671
 ---
 TODO lecture at [[edge city residency]]
 

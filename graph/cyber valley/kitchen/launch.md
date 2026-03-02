@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 5309176999709641
 ---
 opening kitchen
 

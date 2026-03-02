@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4895684118073455
 ---
 macro pattern governing biome dynamics
 

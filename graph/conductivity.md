@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1061314669040222
 ---
 ability of a material to transmit [[electricity]] or [[heat]]
 

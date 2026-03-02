@@ -2,6 +2,7 @@
 tags: computer science
 crystal-type: entity
 crystal-domain: computer science
+stake: 5334237174354257
 ---
 
 A formal system that classifies expressions by their types, preventing meaningless computations. The mathematical foundation of programming language safety and proof assistants.

@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: computer science
 source: https://github.com/monero-project/monero/blob/master/src/mnemonics/english.h
 words: "1626"
+stake: 9763704406993760
 ---
 the english mnemonic wordlist for [[monero]] [[seed]] generation
 

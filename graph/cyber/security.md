@@ -3,6 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
+stake: 21118892632327500
 ---
 # nox security
 

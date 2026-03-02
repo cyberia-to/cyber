@@ -7,6 +7,7 @@ scalable: "true"
 title: cananga odorata
 wood: "yes"
 grow-speed: "3"
+stake: 11745736401613492
 ---
 ![image.png](https://ipfs.io/ipfs/QmcFTqwzBsbRj8s8EGtzNDYAFGTANUitzePLGvUUidMWGo){:height 377, :width 262}
 

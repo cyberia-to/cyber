@@ -3,6 +3,7 @@ tags: trident, cyber
 alias: Goldilocks prime, Goldilocks, F_p, goldilocks
 crystal-type: entity
 crystal-domain: cyber
+stake: 27174830290765380
 ---
 The prime field $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. Native arithmetic substrate for [[trident]], [[STARK]] proofs, [[TFHE]] ciphertexts, neural network inference, and quantum simulation.
 

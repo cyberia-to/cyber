@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: cyberia
 type: private
 alias: permabase kitchen
+stake: 7557107211013170
 ---
 revenue:: master class
 

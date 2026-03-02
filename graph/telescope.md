@@ -2,6 +2,7 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5409092241474543
 ---
 instrument for observing distant objects by collecting electromagnetic radiation
 

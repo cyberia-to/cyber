@@ -3,6 +3,7 @@ alias: random walk, markov, exploration
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 18413858326369884
 ---
 first operator of the [[tri-kernel]]
 

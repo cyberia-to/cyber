@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13881546740643378
 ---
 TODO lecture at [[bootcamp/v0]]
 

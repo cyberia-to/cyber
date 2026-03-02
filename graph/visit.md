@@ -3,6 +3,7 @@ tags: cv.land
 alias: residency
 crystal-type: process
 crystal-domain: cyberia
+stake: 7426761757179804
 ---
 ## white ticket
 

@@ -4,6 +4,7 @@ tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
+stake: 52357864882504040
 ---
 many machines, one mind. a vimputer coordinates physical nodes into a single computing entity through [[consensus]]
 

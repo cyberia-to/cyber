@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 7795504326950600
 ---
 
 ### camphene: overview and medical uses

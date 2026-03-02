@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 4909109211633071
 ---
 
 The fundamental theory of [[physics]] describing nature at the scale of atoms and subatomic particles.

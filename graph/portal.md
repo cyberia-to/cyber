@@ -2,6 +2,7 @@
 tags: aip, cyb, prism
 crystal-type: entity
 crystal-domain: cyber
+stake: 17230497352242240
 ---
 the onboarding [[aip]] in [[cyb]]
 

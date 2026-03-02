@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4783808338409984
 ---
 American mathematician, professor at Oberlin College.
 

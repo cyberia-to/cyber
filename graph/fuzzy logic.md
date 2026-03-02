@@ -3,6 +3,7 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 alias:: probabilistic logic
+stake: 4474583683420153
 ---
 replaces binary truth values with continuous degrees of truth in $[0, 1]$
 

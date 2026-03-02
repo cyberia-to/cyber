@@ -2,6 +2,7 @@
 tags: geography, biology, pattern
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 3592066851333005
 ---
 biogeochemical cycle converting nitrogen between chemical forms across Earth's systems
 

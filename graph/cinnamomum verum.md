@@ -9,6 +9,7 @@ margin: high
 autonomy: extra
 wood: "yes"
 grow-speed: "3"
+stake: 6920635729982263
 ---
 [[staple]] for [[health]]
 

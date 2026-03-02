@@ -5,6 +5,7 @@ tags: cybernomics, core
 crystal-type: entity
 crystal-domain: economics
 crystal-size: bridge
+stake: 32044477863753520
 ---
 the type system of [[value]]. two axes — fungible or unique, movable or immovable — produce four kinds
 

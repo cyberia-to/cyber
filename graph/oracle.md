@@ -2,6 +2,7 @@
 tags: aip, cyb, prism
 crystal-type: entity
 crystal-domain: cyber
+stake: 17912736197680926
 ---
 the search and discovery [[aip]] in [[cyb]]
 

@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4980709710617692
 ---
 1926-2015. Czech mathematician.
 

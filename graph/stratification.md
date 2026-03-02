@@ -3,6 +3,7 @@ alias: unified structure
 tags: cyberia
 crystal-type: pattern
 crystal-domain: biology
+stake: 4430280874673419
 ---
 stratification = layered unfolding
 

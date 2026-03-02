@@ -2,6 +2,7 @@
 tags: cv.land
 crystal-type: process
 crystal-domain: cyberia
+stake: 4127768766463396
 ---
 - ## glamping
 

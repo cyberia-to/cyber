@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13854696553524144
 ---
 concept of organizing [[files]]
 

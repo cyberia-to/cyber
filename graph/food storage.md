@@ -3,6 +3,7 @@ alias: kitchen/storage
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 7759704077458290
 ---
 ### cold storage
 

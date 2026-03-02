@@ -2,6 +2,7 @@
 tags: computer science
 crystal-type: process
 crystal-domain: computer science
+stake: 4213689365244941
 ---
 Mathematical proof that a system (software, hardware, protocol) meets its specification. Certainty beyond testing.
 

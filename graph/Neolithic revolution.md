@@ -2,6 +2,7 @@
 tags: time, history
 crystal-type: entity
 crystal-domain: history
+stake: 5252872970962643
 ---
 transition from nomadic hunter-gatherer life to settled [[agriculture]] ~10000 BCE
 

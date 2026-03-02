@@ -2,6 +2,7 @@
 tags: cv.land
 crystal-type: process
 crystal-domain: cyberia
+stake: 4170729065854168
 ---
 - # organiq: free flow local products only restaurant
 	- ## day dose price

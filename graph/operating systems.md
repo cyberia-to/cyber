@@ -2,6 +2,7 @@
 tags: computer science
 crystal-type: entity
 crystal-domain: computer science
+stake: 5195511207571555
 ---
 Software layer managing hardware resources and providing an environment for programs to run. The bridge between silicon and [[algorithms]].
 

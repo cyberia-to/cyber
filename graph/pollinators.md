@@ -2,6 +2,7 @@
 tags: genus
 crystal-type: entity
 crystal-domain: biology
+stake: 8950062373077613
 ---
 [[buddleia]]
 

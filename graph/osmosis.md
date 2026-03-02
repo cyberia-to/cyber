@@ -2,6 +2,7 @@
 tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
+stake: 4717821969459385
 ---
 Movement of water across a semipermeable membrane from a region of low solute concentration to high solute concentration. Nature seeking equilibrium.
 

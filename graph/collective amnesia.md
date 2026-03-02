@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 16821642230199374
 ---
 humanity forgets. civilizations rise, burn their libraries, and start over
 

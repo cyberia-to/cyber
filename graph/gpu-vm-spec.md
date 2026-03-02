@@ -1,6 +1,7 @@
 ---
 tags: cyber, bostrom, gpu, wgsl, vm, research
 icon: "\U0001F3AE"
+stake: 2603654508531670
 ---
 
 # Cybergraph GPU VM Specification

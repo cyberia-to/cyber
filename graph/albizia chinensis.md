@@ -13,6 +13,7 @@ margin: low
 autonomy: support
 wood: "yes"
 grow-speed: "5"
+stake: 7586398324234151
 ---
 - nitrogener:: 120
 -

@@ -3,6 +3,7 @@ alias: keys, secrets
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 20701494268928520
 ---
 personal collection of
 

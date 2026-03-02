@@ -3,6 +3,7 @@ tags: cybernomics
 alias: oxygen, cybernomics of O
 crystal-type: entity
 crystal-domain: economics
+stake: 14163473705395322
 ---
 token for rewarding core cybernet verse
 

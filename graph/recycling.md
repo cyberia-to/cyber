@@ -3,6 +3,7 @@ tags: service
 crystal-type: process
 crystal-domain: cyber
 type: public
+stake: 12737728769364060
 ---
 product based circulation of materials
 

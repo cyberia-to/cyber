@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: relation
 crystal-domain: cyber
+stake: 2813899610095602
 ---
 property of a [[cryptographic proof]]
 

@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 supply: prohibited
 alias: mitragyna, kratom
+stake: 8171000125602903
 ---
 prohibited in [[indonesia]] and many other countries
 

@@ -3,6 +3,7 @@ tags: aip
 alias: warp dex
 crystal-type: entity
 crystal-domain: cyber
+stake: 20923008312662188
 ---
 trading in [[bostrom]]
 

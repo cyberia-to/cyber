@@ -3,6 +3,7 @@ alias: whole brain emulation, simulated brains, far from it
 tags: cyber
 crystal-type: process
 crystal-domain: biology
+stake: 9037772984333774
 ---
 - whole brain emulation looks feasible at current state of technology
 - [[cyberlinks]] offer amazing opportunity for modeling physical and artificial [[brains]]

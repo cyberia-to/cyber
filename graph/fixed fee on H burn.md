@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
+stake: 12587367721496354
 ---
 [[$H]] [[staking loan]] proved its utility and reliability during last several years
 

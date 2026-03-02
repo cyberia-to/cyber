@@ -6,6 +6,7 @@ crystal-domain: biology
 scalable: "true"
 market: fodder
 supply: next-month
+stake: 8333321711369173
 ---
 nitrogener:: 200
 

@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 4841983743834989
 ---
 micro
 

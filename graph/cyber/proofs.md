@@ -3,6 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: STARK verification, nox STARKs, cyber/stark, STARK, STARK proofs
+stake: 29173948768097356
 ---
 # STARK Verification
 

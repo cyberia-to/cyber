@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11191157991296248
 ---
 algorithms which are used to solve problems
 

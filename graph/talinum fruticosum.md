@@ -3,6 +3,7 @@ tags: species
 alias: ceylon spinach, waterleaf, cariru, gbure
 crystal-type: entity
 crystal-domain: biology
+stake: 10988439078546040
 ---
 [[staple]]
 

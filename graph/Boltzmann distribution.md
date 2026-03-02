@@ -3,6 +3,7 @@ tags: cyber, physics
 crystal-type: pattern
 crystal-domain: cybics
 alias: Gibbs distribution, canonical ensemble
+stake: 5852364421552060
 ---
 the probability distribution that maximizes [[entropy]] subject to a fixed average [[energy]] — the unique [[equilibrium]] of any system minimizing [[free energy]]
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 3751866146794136
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1114)
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 4893894105598839
 ---
 - ....if an environmental variable (such as temperature)
   or an input or output variable (such as the flow demand on a

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 25292876266317332
 ---
 # integrating sparsely activated tensors and cryptographic ghost proofs into the collective focus & focus-flow architecture
 

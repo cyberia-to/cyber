@@ -5,6 +5,7 @@ alias: content oracle, cybergraphs
 crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
+stake: 15224056096605018
 ---
 the shared memory of the planet. every [[cyberlink]] ever created by every [[neuron]], accumulated into one authenticated [[graph]]
 

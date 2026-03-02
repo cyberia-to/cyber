@@ -4,6 +4,7 @@ alias: bostrom monitoring, cybernode status
 tags: bostrom, infrastructure, monitoring, status
 crystal-type: process
 crystal-domain: cyber
+stake: 27762117110846052
 ---
 # Monitoring & Status
 

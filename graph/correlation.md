@@ -2,6 +2,7 @@
 tags: relation, statistics
 crystal-type: relation
 crystal-domain: mathematics
+stake: 1067172891684418
 ---
 statistical relationship where two variables change together
 

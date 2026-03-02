@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4671932558746514
 ---
 practically that means that [[citadel]] neither wish external energy nor requires to export it
 

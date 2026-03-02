@@ -2,6 +2,7 @@
 tags: technology
 crystal-type: entity
 crystal-domain: materials
+stake: 4931484367565765
 ---
 device that moves fluids (liquids or gases) by mechanical action
 

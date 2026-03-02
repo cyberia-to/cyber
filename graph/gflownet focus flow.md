@@ -3,6 +3,7 @@ tags: article, cip
 crystal-type: process
 crystal-domain: cyber
 status: draft
+stake: 23432890576785020
 ---
 - GFlowNet: a proposal engine that *samples edits* (small graph changes) in proportion to how good they look.
 - Focus‑Flow: a physics‑style process that keeps a live attention field \(π\) over the graph (what the network cares about now).

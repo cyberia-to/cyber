@@ -2,6 +2,7 @@
 tags: time, history
 crystal-type: entity
 crystal-domain: history
+stake: 5311455197404606
 ---
 cultural and intellectual movement in Europe, 14th-17th century
 

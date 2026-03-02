@@ -3,6 +3,7 @@ tags: geography, biome
 alias: deserts
 crystal-type: entity
 crystal-domain: geography
+stake: 8252771150011476
 ---
 [[biome]] receiving less than 250mm precipitation per year
 

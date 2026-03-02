@@ -2,6 +2,7 @@
 tags: article, cyber# On the Nature of Distributed Computation
 crystal-type: process
 crystal-domain: computer science
+stake: 7810963525595007
 ---
 ## Aggregation, Proving, and Verification as Irreducible Primitives
 

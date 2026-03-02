@@ -3,6 +3,7 @@ icon: 🍓
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 5114960646213856
 ---
 how to consolidate [[bostrom]], [[cyber]] and [[cyb]] in one coherent product?
 

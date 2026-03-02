@@ -3,6 +3,7 @@ tags: time, measure
 alias: calendars
 crystal-type: measure
 crystal-domain: physics
+stake: 4824246347495616
 ---
 system for organizing days into repeating cycles aligned to astronomical events
 

@@ -7,6 +7,7 @@ scalable: "true"
 supply: next-month
 market: edible oils
 wood-density: "750"
+stake: 7535138876097433
 ---
 [[staple]]
 

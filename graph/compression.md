@@ -2,6 +2,7 @@
 tags: computer science, information theory
 crystal-type: process
 crystal-domain: mathematics
+stake: 4741254860036169
 ---
 
 Reducing data size by eliminating redundancy. Encoding information in fewer bits than the original representation.

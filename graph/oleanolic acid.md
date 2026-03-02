@@ -3,6 +3,7 @@ tags: compound
 alias: oleanolic acid
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8216157258485248
 ---
 
 [[oleanolic acid]] is a natural [[triterpenoid]] compound found in various plants, fruits, and medicinal herbs, such as [[olive]] leaves, [[apples]], and [[hawthorn]]. it is widely recognized for its [[anti-inflammatory]], [[antioxidant]], and [[anti-cancer]] properties.

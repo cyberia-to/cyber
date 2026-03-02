@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 4980709710617692
 ---
 
 The emission and propagation of [[energy]] as electromagnetic [[waves]] or subatomic particles.

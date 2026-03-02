@@ -3,6 +3,7 @@ tags: geography
 alias: rivers
 crystal-type: entity
 crystal-domain: geography
+stake: 7497914753045770
 ---
 a flowing [[water]] channel moving from source (headwaters) to mouth (delta/estuary/[[ocean]])
 

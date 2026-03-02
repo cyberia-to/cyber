@@ -2,6 +2,7 @@
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 5575888858427353
 ---
 
 escherichia coli (e. coli) is a gram-negative bacterium that is commonly found in the intestines of humans and animals. while most strains are harmless and play a crucial role in maintaining gut health, some strains can cause serious illnesses.

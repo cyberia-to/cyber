@@ -3,6 +3,7 @@ alias: beds
 tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
+stake: 7571752767623661
 ---
 currently 2 types for [[terrace]]
 

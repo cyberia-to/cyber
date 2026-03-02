@@ -3,6 +3,7 @@ alias: bostrom genesis
 tags: article
 crystal-type: entity
 crystal-domain: cyber
+stake: 21003558874019888
 ---
 [article](https://cyb.ai/oracle/ask/QmVPgNeay23Ae5itAamMcr4iEAUKuhw5qD9U1zNqN4gpew) with transparency
 

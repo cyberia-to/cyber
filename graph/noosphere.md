@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14767602915578062
 ---
 the sphere of human thought enveloping the planet — conceived independently by [[Vernadsky]] and Teilhard de Chardin (1920s)
 

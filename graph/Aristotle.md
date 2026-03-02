@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4622707215694587
 ---
 Greek philosopher (384–322 BC)
 

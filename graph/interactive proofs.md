@@ -3,6 +3,7 @@ alias: interactivity
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 6974336104220730
 ---
 category of computations
 

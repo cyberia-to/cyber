@@ -3,6 +3,7 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 labor: 10 h/year/are
+stake: 4815133556715756
 ---
 - capital:: [[eth/are]]
 - care:: [[2]] ;; scale 1 (none) to 5 (very demanding)

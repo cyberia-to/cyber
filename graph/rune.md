@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: computer science
+stake: 5088110459094623
 ---
 dynamic async scripting [[language]] built on [[rust]] for [[cybergraph]] operations
 

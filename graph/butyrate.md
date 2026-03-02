@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8786723734768946
 ---
 alias: butyrate, butyric acid
 

@@ -2,6 +2,7 @@
 tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
+stake: 3166369339188076
 ---
 SI unit of [[power]], equal to one [[joule]] per second
 

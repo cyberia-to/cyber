@@ -3,6 +3,7 @@ icon: 🪷
 tags: cv.land, tech
 crystal-type: entity
 crystal-domain: biology
+stake: 6741837893029191
 ---
 scalable, sustainable, multipurpose ecosystem regeneration
 

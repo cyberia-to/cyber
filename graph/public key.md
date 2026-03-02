@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14217174079633786
 ---
 the open half of a cryptographic keypair. derived from the [[private key]]
 

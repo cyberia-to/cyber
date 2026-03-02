@@ -3,6 +3,7 @@ tags: genus, psycho
 alias: hemp
 crystal-type: entity
 crystal-domain: biology
+stake: 10420313528364090
 ---
 [[cannabis sativa]]
 

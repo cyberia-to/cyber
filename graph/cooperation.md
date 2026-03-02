@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: relation
 crystal-domain: biology
+stake: 1161718096025474
 ---
 agents acting together for mutual benefit — paying individual costs to produce shared gains
 

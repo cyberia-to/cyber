@@ -2,6 +2,7 @@
 tags: prism, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 17032782338000614
 ---
 the foundational surface atom in [[prism]]
 

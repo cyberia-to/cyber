@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4573481872642661
 ---
 [[cyber valley/kitchen/recipes/breakfast]]
 

@@ -3,6 +3,7 @@ tags: cybernomics
 alias: fruit
 crystal-type: entity
 crystal-domain: economics
+stake: 18137301399041780
 ---
 [[staple]]
 

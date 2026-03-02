@@ -2,6 +2,7 @@
 tags: geography, biology, pattern
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 3557161608078002
 ---
 biogeochemical cycle moving carbon through [[atmosphere]], biosphere, [[ocean]], and lithosphere
 

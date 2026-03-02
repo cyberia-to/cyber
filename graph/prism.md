@@ -4,6 +4,7 @@ tags: cyb, prism
 alias: design system
 crystal-type: entity
 crystal-domain: cyber
+stake: 43936669831471920
 ---
 
 the design system of [[cyb]] — a visual language for interfacing with [[Superintelligence]]

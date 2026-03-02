@@ -3,6 +3,7 @@ alias: sentences
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 20902870672322764
 ---
 ordered instruction set of [[cyberlinks]]
 

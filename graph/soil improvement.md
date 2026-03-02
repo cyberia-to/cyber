@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 6343804210037413
 ---
 стратегия «разблокировки» андозолей для реальной доступности элементов и устойчивого плодородия
 

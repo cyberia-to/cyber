@@ -3,6 +3,7 @@ alias: skin infections
 tags: superhuman
 crystal-type: entity
 crystal-domain: biology
+stake: 7075024305917854
 ---
 [[cellulitis]]
 

@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4927009336379226
 ---
 Italian cryptographer, researcher at Radboud University.
 

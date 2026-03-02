@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4904634180446532
 ---
 1882-1935. German mathematician.
 

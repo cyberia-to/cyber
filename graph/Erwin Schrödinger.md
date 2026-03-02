@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4913584242819610
 ---
 1887-1961. Austrian-Irish physicist.
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4528731560777272
 ---
 [github.com/cyber-valley](https://github.com/cyber-valley)
 

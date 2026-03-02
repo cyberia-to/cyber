@@ -2,6 +2,7 @@
 tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4604807090948431
 ---
 1 phase: tourism star
 

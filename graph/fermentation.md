@@ -2,6 +2,7 @@
 tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
+stake: 4581130107761472
 ---
 Anaerobic metabolism converting sugars into acids, gases, or alcohol. Life extracting energy without oxygen.
 

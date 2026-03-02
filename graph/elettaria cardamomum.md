@@ -4,6 +4,7 @@ tags: genus, species
 crystal-type: entity
 crystal-domain: biology
 scalable: "true"
+stake: 7476556649655471
 ---
 ![image.png](https://ipfs.io/ipfs/QmZBQWS2SMyehVvwKsKNDhD6yPxfv3RbpdugUdn4YhmpUN){:height 456, :width 596}
 

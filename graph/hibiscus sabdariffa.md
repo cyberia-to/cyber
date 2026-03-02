@@ -3,6 +3,7 @@ alias: roselle
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 8363833287641030
 ---
 ![image.png](https://ipfs.io/ipfs/QmeCFx9a4RHz81djR62ytQNAcWkrCSG3CB2DfB8oj2KTPj)
 

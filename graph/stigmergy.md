@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: relation
 crystal-domain: cyber
+stake: 2848804853350604
 ---
 indirect coordination through a shared environment
 

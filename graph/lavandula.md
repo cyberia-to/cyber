@@ -4,6 +4,7 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 scalable: "true"
+stake: 6927348276762072
 ---
 selected for [[edem]]
 

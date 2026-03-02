@@ -3,6 +3,7 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 alias: Rolf Landauer
+stake: 7497914753045770
 ---
 1927-1999. German-American physicist at IBM.
 

@@ -2,6 +2,7 @@
 tags: technology
 crystal-type: entity
 crystal-domain: materials
+stake: 4815133556715756
 ---
 circular component rotating on an axle
 

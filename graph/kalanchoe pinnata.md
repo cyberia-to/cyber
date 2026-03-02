@@ -6,6 +6,7 @@ crystal-domain: biology
 supply: "no"
 margin: low
 autonomy: staple
+stake: 7476556649655471
 ---
 [[staple]]
 

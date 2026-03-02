@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: process
 crystal-domain: biology
 crystal-size: bridge
+stake: 12876373371943368
 ---
 the ML word for [[learning]] — and where the analogy breaks
 

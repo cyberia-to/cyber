@@ -2,6 +2,7 @@
 tags: time, biology
 crystal-type: entity
 crystal-domain: biology
+stake: 5326100754015095
 ---
 rapid diversification of multicellular animal life ~541 million years ago
 

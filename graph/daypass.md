@@ -4,6 +4,7 @@ tags: cyberia
 alias: day pass, visit us
 crystal-type: entity
 crystal-domain: cyberia
+stake: 7068311759138044
 ---
 our friends, including us, complain that
 

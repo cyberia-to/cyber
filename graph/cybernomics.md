@@ -4,6 +4,7 @@ alias: economics, cybernetic economy
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 17345220879024414
 ---
 the science of cybernetic economies — how [[tokens]] emerge, flow, and reach [[equilibrium]] in decentralized systems. not specific to any protocol — the universal theory from which [[cyber/tokenomics]], [[bostrom/tokenomics]], and any token economy derives
 

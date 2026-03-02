@@ -3,6 +3,7 @@ alias: the story of bostrom
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 8907549576805494
 ---
 ## History
 

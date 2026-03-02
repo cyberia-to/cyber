@@ -2,6 +2,7 @@
 tags: cybernomics, governance
 crystal-type: entity
 crystal-domain: economics
+stake: 10827948187356080
 ---
 shared resources accessible to a community, governed by collective rules rather than private ownership or state control
 

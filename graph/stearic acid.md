@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8269857632723714
 ---
 alias: stearic acid
 

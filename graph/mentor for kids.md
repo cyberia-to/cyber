@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 6162117943863937
 ---
 We are looking for a mentor for our kids
 

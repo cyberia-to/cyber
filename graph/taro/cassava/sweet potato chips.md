@@ -2,6 +2,7 @@
 tags: kitchen/menu
 crystal-type: process
 crystal-domain: agriculture
+stake: 4850933806208067
 ---
 ![](https://ipfs.io/ipfs/bafybeidlcgmbi5z4vvrtr7zzygzumazbyjqtjqt5kw6cwpzhvc6hmhjfoe)
 

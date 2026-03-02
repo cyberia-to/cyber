@@ -3,6 +3,7 @@ alias: threshold cryptography, thresholds
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 14511183628589390
 ---
 boundary condition that separates one regime from another
 

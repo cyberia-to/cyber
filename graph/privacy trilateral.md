@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: privacy trilateral, ZK+FHE+MPC, privacy triangle, privacy-trilateral
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # The Privacy Trilateral: ZK + FHE + MPC
 

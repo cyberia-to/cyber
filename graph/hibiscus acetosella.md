@@ -3,6 +3,7 @@ tags: species
 alias: hibiscus merah, hibaceto
 crystal-type: entity
 crystal-domain: biology
+stake: 6967623557440921
 ---
 [[staple]]
 

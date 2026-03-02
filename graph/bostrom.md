@@ -5,6 +5,7 @@ tags: aos, cyber, menu
 alias: enhanced blockchain
 crystal-type: entity
 crystal-domain: cyber
+stake: 33985014114643528
 ---
 [[bootloader]] of [[cyber]], named after [[nick bostrom]]
 

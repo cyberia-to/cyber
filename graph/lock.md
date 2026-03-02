@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
 crystal-size: enzyme
+stake: 18277654649892316
 ---
 freeze [[tokens]] for a defined [[time]]. locked [[coins]] generate [[attention]] and [[will]] — the price of influence on the [[cybergraph]]
 

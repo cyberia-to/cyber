@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4640607340440742
 ---
 one of the most important animal for [[biome engineering]]
 

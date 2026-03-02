@@ -2,6 +2,7 @@
 tags: module
 crystal-type: measure
 crystal-domain: cyber
+stake: 8441698830286806
 ---
 the ranking module computes per-[[particle]] scores from the [[cybergraph]]. the output is [[cyberank]]
 

@@ -3,6 +3,7 @@ tags: cybernomics
 alias: spice
 crystal-type: entity
 crystal-domain: economics
+stake: 14230599173193406
 ---
 [[rosemary]]
 

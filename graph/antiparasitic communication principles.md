@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 5392412579779262
 ---
 ## The Builder's Creed
 - We value agency over dependency

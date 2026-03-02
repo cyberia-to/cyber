@@ -3,6 +3,7 @@ tags: cyber, cip, article
 crystal-type: process
 crystal-domain: cyber
 status: draft
+stake: 25385631458183776
 ---
 # hash function selection for [[cybergraph]] [[particles]]
 

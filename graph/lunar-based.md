@@ -3,6 +3,7 @@ alias: moon calendar
 tags: cyberia
 crystal-type: measure
 crystal-domain: cyberia
+stake: 4220849415143403
 ---
 ![image](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeigzdo4bixaoytsjxmho7sm55n2icjyoprjal3ho5dlmfdoyfcxsta)
 

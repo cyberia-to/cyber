@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: tithonia, nitobe
+stake: 7447265536434489
 ---
 ![](https://ipfs.io/ipfs/QmbuEk64NuzRv9pFnsVvgGFzCYmTr3mQehKNxZuZ1NHyAB)
 

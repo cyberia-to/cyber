@@ -7,6 +7,7 @@ abundance: "yes"
 supply: "no"
 margin: high
 autonomy: staple
+stake: 8911821197483555
 ---
 [[high margin]] [[fern]] for [[health]] if processed to powder
 

@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4927009336379226
 ---
 The study of properties and relationships of [[integers]], especially [[prime]] numbers.
 

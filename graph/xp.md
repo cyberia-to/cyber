@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 8417533661879494
 ---
 [[score]] produced by [[robot]] for particles [[observation]]
 

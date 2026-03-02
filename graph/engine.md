@@ -2,6 +2,7 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5389564832660556
 ---
 device converting [[energy]] into mechanical work
 

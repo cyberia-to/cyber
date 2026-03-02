@@ -3,6 +3,7 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 alias: negentropy
+stake: 13085438692558124
 ---
 [[syntropy]] across scientific disciplines
 

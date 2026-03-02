@@ -2,6 +2,7 @@
 tags: term
 crystal-type: entity
 crystal-domain: cybics
+stake: 4582431935015738
 ---
 [[deadline]] goal supported by a [[hero]] with [[resource]]
 

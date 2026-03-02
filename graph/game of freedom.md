@@ -3,6 +3,7 @@ icon: 🥕
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 18607179673628360
 ---
 due to regulatory issues we rejected idea of game of freedom
 

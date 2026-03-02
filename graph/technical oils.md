@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 9299114805627638
 ---
 [[azadirachta indica]]
 

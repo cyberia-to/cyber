@@ -8,6 +8,7 @@ wood: "yes"
 grow-speed: "5"
 availability: cv
 nitrogener: "250"
+stake: 14645556610490640
 ---
 [[plant/miracle]]
 

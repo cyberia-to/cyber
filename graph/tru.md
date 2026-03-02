@@ -5,6 +5,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: biology
 crystal-size: bridge
+stake: 16417668960360008
 ---
 the engine that reads the [[cybergraph]] and computes what matters
 

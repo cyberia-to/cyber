@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 14370220146213418
 ---
 [[$CYB]] pack for sale
 

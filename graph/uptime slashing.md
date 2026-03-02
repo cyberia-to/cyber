@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11588540760660894
 ---
 penalty mechanism that reduces the staked tokens of validators
 

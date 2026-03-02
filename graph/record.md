@@ -3,6 +3,7 @@ icon: 🔒
 tags: cybernomics
 crystal-type: entity
 crystal-domain: cyber
+stake: 14646777073541514
 ---
 private value instance within the [[cybergraph]]
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 12318865850304028
 ---
 the paradigm that nature has been computing all along
 

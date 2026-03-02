@@ -3,6 +3,7 @@ icon: ☀️
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 4797233431969601
 ---
 seven [[cips]] with [[$CYB]] optimizations
 

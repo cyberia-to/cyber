@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4922534305192688
 ---
 1856-1943, Serbian-American inventor and electrical engineer
 

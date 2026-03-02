@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 16311488674933952
 ---
 type of [[cyber/attacks]] in which a single adversary controls multiple fake identities in a [[network]]
 

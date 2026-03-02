@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 5003084866550385
 ---
 1920-1958, British biophysicist and X-ray crystallographer
 

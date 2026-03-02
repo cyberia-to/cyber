@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4712207839425363
 ---
 @Medniyy discussion of the latest Community at X Space
 

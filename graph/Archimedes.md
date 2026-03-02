@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 5007559897736924
 ---
 287-212 BCE, Greek mathematician, physicist, engineer, and astronomer from Syracuse
 

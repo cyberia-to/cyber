@@ -3,6 +3,7 @@ tags: culture
 alias: languages
 crystal-type: entity
 crystal-domain: culture
+stake: 7417364191688071
 ---
 system of structured symbols enabling communication, thought, and [[knowledge]] transmission
 

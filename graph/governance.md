@@ -3,6 +3,7 @@ alias: decision making
 tags: cyber
 crystal-type: process
 crystal-domain: governance
+stake: 6342014197562797
 ---
 discussing only for dunbar scale (150 ppl)
 

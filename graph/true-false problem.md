@@ -3,6 +3,7 @@ alias: true false problem
 tags: cyber
 crystal-type: pattern
 crystal-domain: cyber
+stake: 14027880260443198
 ---
 we discussed for a while one property of the [[cyberank]]
 

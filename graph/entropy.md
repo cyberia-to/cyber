@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: measure
 crystal-domain: physics
+stake: 3031386125761388
 ---
 A measure of the number of microscopic configurations consistent with a macroscopic state — quantifying disorder and missing [[information theory]].
 

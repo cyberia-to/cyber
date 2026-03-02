@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4631657278067665
 ---
 pruning [[ageratina riparia]]
 

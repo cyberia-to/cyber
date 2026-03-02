@@ -3,6 +3,7 @@ icon: 🌓
 tags: aos
 crystal-type: entity
 crystal-domain: geography
+stake: 5902566135044686
 ---
 [[earth]] only natural satellite
 

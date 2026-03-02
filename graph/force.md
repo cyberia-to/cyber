@@ -3,6 +3,7 @@ tags: physics
 alias: forces
 crystal-type: measure
 crystal-domain: physics
+stake: 4478611211488038
 ---
 An interaction that changes the [[momentum]] of a body — the cause of [[acceleration]].
 

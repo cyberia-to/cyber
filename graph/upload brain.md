@@ -2,6 +2,7 @@
 tags: page
 crystal-type: process
 crystal-domain: cyber
+stake: 11405959488250112
 ---
 purpose
 

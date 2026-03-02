@@ -6,6 +6,7 @@ crystal-domain: biology
 scalable: "true"
 wood: "yes"
 grow-speed: "4"
+stake: 7520493319486942
 ---
 [[staple]]
 

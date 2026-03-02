@@ -3,6 +3,7 @@ tags: bostrom, cybernomics, article
 alias: bostrom tokenomics, bostrom token model
 crystal-type: article
 crystal-domain: economics
+stake: 4994622989397658
 ---
 # Bostrom Tokenomics
 

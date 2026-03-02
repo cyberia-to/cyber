@@ -2,6 +2,7 @@
 tags: genus, cybernomics
 crystal-type: entity
 crystal-domain: biology
+stake: 5101535552654239
 ---
 selected for [[edem]]
 

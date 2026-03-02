@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1058385557718124
 ---
 [[force]] per unit area, measured in [[pascal]] (Pa)
 

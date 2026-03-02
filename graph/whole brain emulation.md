@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11373739263707030
 ---
 one of four paths to [[superintelligence]] identified by [[nick bostrom]]
 

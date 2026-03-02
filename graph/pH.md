@@ -2,6 +2,7 @@
 tags: chemistry, property
 crystal-type: property
 crystal-domain: physics
+stake: 1066196521243719
 ---
 measure of [[hydrogen]] ion concentration in a solution
 

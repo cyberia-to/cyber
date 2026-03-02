@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8873986842906454
 ---
 alias: oxalates, oxalic acid salts
 

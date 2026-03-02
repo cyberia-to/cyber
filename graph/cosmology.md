@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5168661020452321
 ---
 The study of the origin, structure, evolution, and fate of the universe as a whole.
 

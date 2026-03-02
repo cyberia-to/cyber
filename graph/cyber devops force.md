@@ -3,6 +3,7 @@ alias: devops, CDF
 tags: superhuman
 crystal-type: entity
 crystal-domain: cyberia
+stake: 6927348276762072
 ---
 leg of cyber valley estate focus on external policy
 

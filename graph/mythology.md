@@ -2,6 +2,7 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
+stake: 5003084866550385
 ---
 traditional narratives explaining origins, natural phenomena, social order, and human purpose
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 15895310774585838
 ---
 - this article explores the synergy between both phenomena
 - taking the best from both worlds

@@ -3,6 +3,7 @@ alias: structured arrangement
 tags: cyber
 crystal-type: entity
 crystal-domain: culture
+stake: 6900498089642839
 ---
 embodies the rules and patterns
 

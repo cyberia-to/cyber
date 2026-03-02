@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
+stake: 925436449376225
 ---
 the property is applied to genus and species which satisfy the following criteria
 

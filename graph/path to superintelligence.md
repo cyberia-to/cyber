@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14311149734551104
 ---
 solve [[techtree]] accounting for
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 8320872988250256
 ---
 [[size]]
 

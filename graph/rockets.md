@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14217174079633786
 ---
 family clan established by [[@master]] and [[@joy]]
 

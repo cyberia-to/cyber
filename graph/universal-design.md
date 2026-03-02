@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 26850187119232840
 ---
 # Trident: Universal Language for Provable Computation
 

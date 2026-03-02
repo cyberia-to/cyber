@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5119435677400394
 ---
 ## repair
 - lead:: [[@sutar]]

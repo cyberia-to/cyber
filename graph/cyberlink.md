@@ -5,6 +5,7 @@ alias: cyberlinks, unit of knowledge, simple interactions, expert opinions, esse
 crystal-type: relation
 crystal-domain: cyber
 crystal-size: bridge
+stake: 9929687381912652
 ---
 the atomic unit of [[knowledge]]. a [[neuron]] stakes [[focus]] to bind two [[particles]] — signed, weighted, timestamped, denominated in a [[token]]
 

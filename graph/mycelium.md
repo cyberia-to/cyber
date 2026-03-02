@@ -2,6 +2,7 @@
 tags: cyber, species
 crystal-type: entity
 crystal-domain: biology
+stake: 6629555292348762
 ---
 underground [[fungi]] networks connect 90% of terrestrial plants. they trade nutrients, relay chemical signals, and allocate resources without central coordination. this is the oldest distributed protocol on Earth
 

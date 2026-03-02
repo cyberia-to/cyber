@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13921822021322226
 ---
 what is [[network state]]?
 

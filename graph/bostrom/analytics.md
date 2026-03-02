@@ -2,6 +2,7 @@
 tags: bostrom
 crystal-type: entity
 crystal-domain: cyber
+stake: 14888428757614610
 ---
 data retention
 

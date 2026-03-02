@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13774145992166448
 ---
 instead rm offer to use [[$V]] token for [[bandwidth subscription]]
 

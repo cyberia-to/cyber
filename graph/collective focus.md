@@ -3,6 +3,7 @@ alias: collective attention
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 7283113256091907
 ---
 the emergent attention distribution over the [[cybergraph]]
 

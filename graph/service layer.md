@@ -3,6 +3,7 @@ alias: services
 tags: aos
 crystal-type: entity
 crystal-domain: biology
+stake: 7571752767623661
 ---
 energy layer
 

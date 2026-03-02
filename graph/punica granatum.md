@@ -6,6 +6,7 @@ scalable: "true"
 alias: punica, pomegranate, delima
 wood: "yes"
 grow-speed: "3"
+stake: 7527816097792189
 ---
 ![Screenshot 2024-05-17 at 05.16.04.png](https://ipfs.io/ipfs/Qmcf59amPxtmBcQVoW3tZpxJPK3CuKqz3fFcdhwDcjEyJU)
 

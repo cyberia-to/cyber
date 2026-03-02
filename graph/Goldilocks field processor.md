@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: GFP, Goldilocks Field Processor, AURUM, gfp spec, gfp-spec
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # The Goldilocks Field Processor
 

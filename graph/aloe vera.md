@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: aloe
+stake: 13840050996913656
 ---
 ![image](https://ipfs.io/ipfs/QmZ1abuZCRKnrxDVibUn8h13PouvRYvV1tAmNMmNssfHwm){:height 409, :width 408}
 

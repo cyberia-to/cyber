@@ -1,3 +1,6 @@
+---
+stake: 1241617743756040
+---
 # Plan: Structural Refactoring — Align Repo with Interface
 
 ## Context

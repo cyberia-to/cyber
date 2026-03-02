@@ -2,6 +2,7 @@
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 5772790230635061
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1126)
 

@@ -4,6 +4,7 @@ alias: bostrom security, bostrom/security
 tags: bostrom, infrastructure, security
 crystal-type: entity
 crystal-domain: cyber
+stake: 35270161707214084
 ---
 # Security
 

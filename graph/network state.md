@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14566226512183814
 ---
 concept where groups of people, often with shared values or goals
 

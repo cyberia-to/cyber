@@ -2,6 +2,7 @@
 tags: governance, cybernomics
 crystal-type: process
 crystal-domain: economics
+stake: 8842010710973549
 ---
 compulsory transfer of resources from individuals and organizations to the state
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 15250906283724256
 ---
 the [[cybergraph]] is the collective memory of [[cyber]]
 

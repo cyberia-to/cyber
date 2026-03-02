@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 4711312833188056
 ---
 ### 🧾 🥄 animal fat oil
 

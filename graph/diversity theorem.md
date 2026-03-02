@@ -3,6 +3,7 @@ alias: Hong-Page diversity theorem
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 7524764940165003
 ---
 diverse problem solvers outperform groups of high-ability homogeneous solvers — Hong & Page (2004)
 

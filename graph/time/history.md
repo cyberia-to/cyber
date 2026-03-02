@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14834728383376142
 ---
 history of [[time]] in machines
 

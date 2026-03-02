@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 13948672208441460
 ---
 what is working?
 

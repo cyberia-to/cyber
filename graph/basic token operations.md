@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 9379665366985338
 ---
 [[pay]]: change two [[neuron]] balances
 

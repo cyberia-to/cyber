@@ -7,6 +7,7 @@ abundance: "yes"
 supply: "no"
 margin: medium
 autonomy: staple
+stake: 7652303328981358
 ---
 selected for [[edem]]
 

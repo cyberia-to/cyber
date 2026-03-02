@@ -3,6 +3,7 @@ title: kitchen/ingredients/cheese
 tags: kitchen/menu
 crystal-type: entity
 crystal-domain: agriculture
+stake: 5401362642152340
 ---
 
 #### cheese storage guide

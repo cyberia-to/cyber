@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
+stake: 12275905550913256
 ---
 currently [[bostrom]] [[mint]] [[$H]] on every staking operation automatically
 

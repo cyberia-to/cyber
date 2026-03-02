@@ -2,6 +2,7 @@
 tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
+stake: 2999165901218308
 ---
 the study of meaning in human [[language]] — how words, phrases, and sentences map to referents, truth conditions, and intentions
 

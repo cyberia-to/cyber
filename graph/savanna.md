@@ -2,6 +2,7 @@
 tags: geography, biology, biome
 crystal-type: entity
 crystal-domain: biology
+stake: 5881004621145908
 ---
 tropical and subtropical grassland [[biome]] with scattered trees
 

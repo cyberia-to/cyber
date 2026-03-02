@@ -2,6 +2,7 @@
 tags: time, history
 crystal-type: entity
 crystal-domain: history
+stake: 5301691492997611
 ---
 transformation of production and society, 1760-1840, originating in Britain
 

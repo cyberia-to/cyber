@@ -5,6 +5,7 @@ alias: cyber rank, particles weight, particles weights, cyberanks
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
+stake: 29235460105861412
 ---
 the number the [[tru]] assigns to every [[particle]] — probability of being observed by a [[random walking]] [[neuron]]. cyberank is [[focus]] materialized as a per-[[particle]] score
 

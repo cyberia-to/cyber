@@ -2,6 +2,7 @@
 tags: prism, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 17237820130547482
 ---
 icon library atom in [[prism]]
 

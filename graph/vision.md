@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13707020524368364
 ---
 [[bitcoin]]: [[pelvis]]
 

@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: draft
+stake: 11878522781548610
 ---
 allow [[neuron]] to stake on [[cyberlinks]] and gain rewards
 

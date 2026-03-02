@@ -2,6 +2,7 @@
 tags: computer science, machine learning
 crystal-type: entity
 crystal-domain: computer science
+stake: 5804522269957790
 ---
 Layers of weighted connections that learn to approximate functions from data. The computational substrate of modern artificial intelligence.
 

@@ -2,6 +2,7 @@
 tags: module
 crystal-type: entity
 crystal-domain: cyber
+stake: 15076380067449238
 ---
 [[store-code]]
 

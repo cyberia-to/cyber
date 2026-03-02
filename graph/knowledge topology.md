@@ -2,6 +2,7 @@
 tags: cybics, cyber
 crystal-type: pattern
 crystal-domain: cyber
+stake: 10096646727272246
 ---
 the shape of [[knowledge]] as revealed by graph structure — connectivity, clustering, centrality, and the spectral properties of the [[cybergraph]]
 

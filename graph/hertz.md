@@ -2,6 +2,7 @@
 tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
+stake: 3210306009019548
 ---
 SI unit of [[frequency]], equal to one [[oscillation]] per second
 

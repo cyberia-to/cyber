@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4868833930954221
 ---
 The study of [[vector]] spaces, [[matrix]] operations, and [[linear transformations]] between them.
 

@@ -3,6 +3,7 @@ tags: species, birds
 alias: red junglefowl
 crystal-type: entity
 crystal-domain: biology
+stake: 11079363575836168
 ---
 voice:: https://ebird.org/species/redjun
 

@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 11411329525673956
 ---
 - ## durability and restoration species comparison
   

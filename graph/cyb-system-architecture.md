@@ -1,6 +1,7 @@
 ---
 tags: cyb, cyber, browser, rust, wasm, research
 icon: "\U0001F310"
+stake: 2603654508531670
 ---
 
 # Cyb

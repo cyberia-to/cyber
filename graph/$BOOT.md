@@ -3,6 +3,7 @@ tags: cybernomics
 alias: BOOT
 crystal-type: entity
 crystal-domain: economics
+stake: 15613383809833894
 ---
 [[consensus]] [[token]] of [[bostrom]]
 

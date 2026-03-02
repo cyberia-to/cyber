@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 14015797676239542
 ---
 [[ipfs]] for data publishing and distribution
 

@@ -4,6 +4,7 @@ alias: cybernode servers, bostrom servers
 tags: bostrom, infrastructure, servers, hardware
 crystal-type: entity
 crystal-domain: cyber
+stake: 48773364902086448
 ---
 
 - Back to [[bostrom infrastructure]]

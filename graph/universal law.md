@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 19238159070930328
 ---
 # exponential optimality under constraint
 ### overview

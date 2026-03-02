@@ -5,6 +5,7 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 alias: tri-kernel architecture
+stake: 28558835390456748
 ---
 # Tri-Kernel Architecture for Networked Collective Intelligence
 

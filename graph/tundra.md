@@ -2,6 +2,7 @@
 tags: geography, biome
 crystal-type: entity
 crystal-domain: geography
+stake: 5472556320120002
 ---
 [[biome]] characterized by permafrost, minimal tree growth, and extreme cold
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 4811553531766524
 ---
 ### how we store and manage food
 

@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4868833930954221
 ---
 1815-1852. British mathematician and writer.
 

@@ -3,6 +3,7 @@ tags: bip
 crystal-type: entity
 crystal-domain: cyber
 status: implemented
+stake: 17023018633593620
 ---
 implemented in [[v6]]
 

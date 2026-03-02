@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 5338712205540797
 ---
 phytosterols are naturally occurring, plant-derived sterols structurally similar to cholesterol. they are abundant in vegetable oils, nuts, seeds, legumes, grains, fruits, and vegetables. phytosterols are primarily known for their cholesterol-lowering effects and their role as precursors to plant hormones such as [[brassinosteroids]]
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: property
 crystal-domain: cyber
+stake: 2765569273280983
 ---
 ensures that the new [[knowledge]]
 

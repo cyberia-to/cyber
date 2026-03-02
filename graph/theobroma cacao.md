@@ -5,6 +5,7 @@ crystal-domain: biology
 scalable: "true"
 alias: theobroma, cacao, coklat, kakao
 wood-density: "450"
+stake: 8202732164925632
 ---
 ![](https://ipfs.io/ipfs/QmXij4UgeYZMTcrNiTWN42KJnTAvusrKuCSkmPaGZAZiMF){:height 411, :width 628}
 

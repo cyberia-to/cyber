@@ -8,6 +8,7 @@ market: edible oils
 wood-density:
 wood: "yes"
 grow-speed: "4"
+stake: 7571752767623661
 ---
 [[staple]] [[oil]]
 

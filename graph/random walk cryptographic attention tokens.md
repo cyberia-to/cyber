@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 25923855663619304
 ---
 in this article i want to share mostly unedited output from chatgpt
 

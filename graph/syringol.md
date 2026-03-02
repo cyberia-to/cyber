@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 5678814575717746
 ---
 syringol is a naturally occurring [[methoxyphenol]] compound derived from the breakdown of [[lignin]] during thermal degradation of plant biomass. it is a key component of wood smoke and contributes to the distinctive [[smoky aroma]] in smoked foods. syringol is found in the volatile fractions of many burned, roasted, or grilled plant materials and is studied for its potential [[antioxidant]] and [[antimicrobial]] properties.
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 23131436203219088
 ---
 in this article i describe a conceptual framework for creating artificial general intelligence
 

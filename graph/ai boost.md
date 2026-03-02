@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14955554225412692
 ---
 page to gather experience of [[cybercongress]] team related to cutting edge ai tools
   title:: ai boost

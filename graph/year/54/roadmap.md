@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 24460520465621116
 ---
 in this post, i will outline a short-term roadmap with a clear purpose
   title:: year/54/roadmap

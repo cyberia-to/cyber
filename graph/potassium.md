@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 8088618869668893
 ---
 alias: potassium
 

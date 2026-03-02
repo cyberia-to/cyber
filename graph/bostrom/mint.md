@@ -3,6 +3,7 @@ tags: bostrom, cybernomics
 alias: bostrom/mint, bostrom mint, energy mint
 crystal-type: entity
 crystal-domain: economics
+stake: 19639691414667944
 ---
 # Mint
 

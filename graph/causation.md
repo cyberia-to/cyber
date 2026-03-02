@@ -2,6 +2,7 @@
 tags: relation
 crystal-type: relation
 crystal-domain: mathematics
+stake: 975556798665460
 ---
 relationship where one event (cause) produces another (effect)
 

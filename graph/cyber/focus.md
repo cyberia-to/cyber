@@ -3,6 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: focus dynamics, nox focus
+stake: 30382207188462832
 ---
 # Focus Dynamics
 

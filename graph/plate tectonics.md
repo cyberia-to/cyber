@@ -2,6 +2,7 @@
 tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5394446684864052
 ---
 theory describing the movement of lithospheric plates on Earth's asthenosphere
 

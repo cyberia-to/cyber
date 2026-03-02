@@ -4,6 +4,7 @@ tags: cyber
 icon: 🧬
 crystal-type: entity
 crystal-domain: cyberia
+stake: 11505305180591270
 ---
 # Regenerative event infrastructure
 

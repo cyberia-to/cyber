@@ -4,6 +4,7 @@ alias: daun krokot
 crystal-type: entity
 crystal-domain: biology
 supply: urgent
+stake: 7513170541181698
 ---
 source of [[omega-3]]
 

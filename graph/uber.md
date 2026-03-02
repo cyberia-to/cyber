@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13962097302001076
 ---
 change [[state]] without any [[token]] [[value]] change of [[neuron]]
 

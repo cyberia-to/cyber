@@ -2,6 +2,7 @@
 tags: class
 crystal-type: entity
 crystal-domain: biology
+stake: 4743533057731135
 ---
 how to describe [[the plant]]?
 

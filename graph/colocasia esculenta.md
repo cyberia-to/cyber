@@ -8,6 +8,7 @@ abundance: "yes"
 supply: "no"
 margin: medium
 autonomy: staple
+stake: 10559446316163750
 ---
 ![Taro | Description, Plant, Root, Edible, Poisonous, & Facts | Britannica](https://ipfs.io/ipfs/QmX2EgRoVrKzidXrrJprTmk6i1qqvwVxXJhMBnC95JU9ut)
 

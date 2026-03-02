@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14458825763706882
 ---
 
 | concept     | cyber term            | meaning                        |

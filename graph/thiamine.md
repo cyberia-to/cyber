@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8028205948650618
 ---
 alias: thiamine, vitamin b1
 

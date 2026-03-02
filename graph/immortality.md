@@ -2,6 +2,7 @@
 tags: cyber, article
 crystal-type: entity
 crystal-domain: superhuman
+stake: 8909380271381805
 ---
 the engineering project of eliminating death as a biological inevitability
 

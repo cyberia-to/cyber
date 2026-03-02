@@ -9,6 +9,7 @@ wood-availability: high
 wood-durability: low
 wood: "yes"
 grow-speed: "4"
+stake: 7674271663897095
 ---
 [[conifer]]
 

@@ -4,6 +4,7 @@ alias: nutraceuticals, biohacking
 crystal-type: entity
 crystal-domain: economics
 focus: "true"
+stake: 17291520504785948
 ---
 [[plants/wishlist]]
 

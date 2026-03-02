@@ -11,6 +11,7 @@ margin: medium
 autonomy: staple
 wood: "yes"
 grow-speed: "4"
+stake: 6934060823541880
 ---
 [[staple]]
 

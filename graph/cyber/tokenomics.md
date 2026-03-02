@@ -5,6 +5,7 @@ crystal-domain: economics
 crystal-size: article
 alias: cyber tokenomics, cyber economics, economic model
 status: draft
+stake: 77013659436265024
 ---
 # cyber tokenomics
 

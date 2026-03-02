@@ -2,6 +2,7 @@
 tags: module
 crystal-type: entity
 crystal-domain: cyber
+stake: 14915278944733840
 ---
 create-pool
 

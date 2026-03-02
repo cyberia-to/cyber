@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4900159149259993
 ---
 American mathematician, professor at the University of Oregon.
 

@@ -3,6 +3,7 @@ icon: 🥕
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 6683906580214362
 ---
 TODO not actual anymore, rewrite the process
 

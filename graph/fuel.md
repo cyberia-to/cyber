@@ -3,6 +3,7 @@ alias: liquid energy, liquid fuel
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21124384716056436
 ---
 paying [[token]] for [[gas]]
 

@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1063267409921620
 ---
 resistance of a fluid to flow under applied [[force]]
 

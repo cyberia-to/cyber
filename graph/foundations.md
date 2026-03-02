@@ -4,6 +4,7 @@ tags: cyber
 alias: and more, sytech
 crystal-type: entity
 crystal-domain: cyberia
+stake: 8142319243907359
 ---
 welcome to the cyberia foundations
 

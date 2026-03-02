@@ -2,6 +2,7 @@
 tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
+stake: 8081906322889084
 ---
 ## Why?
 

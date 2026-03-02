@@ -2,6 +2,7 @@
 tags: page, prism, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 18214190571246856
 ---
 
 messaging and notification [[aip]] in [[cyb]]

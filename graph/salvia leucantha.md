@@ -3,6 +3,7 @@ tags: species
 alias: leucantha
 crystal-type: entity
 crystal-domain: biology
+stake: 7028036478459194
 ---
 ![](https://ipfs.io/ipfs/QmbC3z3oJ481Dri3mR5GYqscD9vYSGTeRZwimMauBNaAha)
 

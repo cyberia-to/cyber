@@ -2,6 +2,7 @@
 tags: cyber, uhash
 crystal-type: entity
 crystal-domain: cybics
+stake: 9378038082917506
 ---
 
 ## Minimal Implementation Spec

@@ -2,6 +2,7 @@
 tags: cyber, species
 crystal-type: entity
 crystal-domain: biology
+stake: 6790656415064160
 ---
 
 biology is the study of life and living systems. all biological knowledge forms natural graph structures: organisms relate through taxonomy, ecology, chemistry, and observation

@@ -8,6 +8,7 @@ supply: "no"
 margin: medium
 autonomy: staple
 availability: cv
+stake: 12294944774506892
 ---
 ![](https://ipfs.io/ipfs/QmR24VjmWmFzphF9bXMhKHSqTA9YMSxGkpZzdXCUSedFMb)
 

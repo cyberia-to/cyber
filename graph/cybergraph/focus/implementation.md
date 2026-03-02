@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 11317353870756642
 ---
 [[cyberank]] implementation details and comparison with [[pagerank]]
 

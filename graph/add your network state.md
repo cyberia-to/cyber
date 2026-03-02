@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 3723225947200288
 ---
 make a pull request to [this repo](https://github.com/cyber-valley/cvland/)
 

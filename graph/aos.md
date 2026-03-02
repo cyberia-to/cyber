@@ -4,6 +4,7 @@ tags: aos, cyber
 alias: age of superintelligence, the game, self fulfilling prophecy game, much more, many more
 crystal-type: entity
 crystal-domain: cyber
+stake: 26054445210062844
 ---
 ## welcome to the [[age of superintelligence]]
 

@@ -3,6 +3,7 @@ tags: article, cyber, cip
 crystal-type: pattern
 crystal-domain: cyber
 status: draft
+stake: 19039223593637832
 ---
 
 the mathematical framework of [[cyber]]: why a token-weighted graph converges to a unique [[focus]] distribution, how three operators form a complete basis for collective [[intelligence]], and what happens when agents optimize against the resulting [[free energy]] landscape

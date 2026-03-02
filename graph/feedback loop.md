@@ -2,6 +2,7 @@
 tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 2934725452132150
 ---
 system structure where output feeds back as input, modifying subsequent behavior
 

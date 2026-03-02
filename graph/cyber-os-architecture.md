@@ -1,6 +1,7 @@
 ---
 tags: cyber, cyberos, rust, os, research
 icon: "\U0001F5A5\uFE0F"
+stake: 2440926101748440
 ---
 
 # CyberOS: Architecture of a Purpose-Built Operating System for Decentralized Superintelligence

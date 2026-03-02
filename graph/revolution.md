@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5074685365535006
 ---
 fundamental and rapid transformation of political power, social structures, or technological paradigms
 

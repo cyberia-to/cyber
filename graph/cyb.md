@@ -6,6 +6,7 @@ tags: cyb, menu, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
+stake: 34080210232611716
 ---
 the immortal [[robot]] — personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
 

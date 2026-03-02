@@ -4,6 +4,7 @@ alias: internet
 crystal-type: entity
 crystal-domain: cyberia
 type: public
+stake: 7623012215760378
 ---
 cyberlink is the internet in cyber valley
 

@@ -3,6 +3,7 @@ tags: genus, species
 alias: oryza, rice
 crystal-type: entity
 crystal-domain: biology
+stake: 11855578076192172
 ---
 ![](https://ipfs.io/ipfs/QmY9k7CXY6hgYCqvgPDKZ26P9Jm4ipekkEktYFpTCNCdLY)
 

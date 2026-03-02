@@ -2,6 +2,7 @@
 tags: module
 crystal-type: entity
 crystal-domain: cyber
+stake: 21574125350303584
 ---
 current implementation on [[bostrom]] bootloader
 

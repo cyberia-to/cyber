@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14875003664054992
 ---
 practical guidance for managing [[spells]]
 

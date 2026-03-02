@@ -3,6 +3,7 @@ alias: limon
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 6793097341165908
 ---
 ![image.png](https://ipfs.io/ipfs/QmYmfRnd4iTea3fiTpCDLFgvQbJyBAwzFJauRakXhnFQQo)
 

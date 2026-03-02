@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14176898798954938
 ---
 [[cosmwasm]] fat protocol suite for network states and beyond
 

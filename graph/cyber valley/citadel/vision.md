@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5669864513344668
 ---
 the [[citadel]] is a thriving ecosystem where humans and nature coexist in harmony
 

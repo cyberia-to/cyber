@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14244024266753020
 ---
 concept of giving [[attention]] to [[particle]] by [[neuron]]
 

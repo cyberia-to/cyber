@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 18660880047866824
 ---
 first of all [[superintelligence]] does not exist yet
 

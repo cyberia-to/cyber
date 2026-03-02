@@ -4,6 +4,7 @@ tags: cyber
 alias: infer
 crystal-type: process
 crystal-domain: cyber
+stake: 17415031365534420
 ---
 ask [[cyber]] protocol
 

@@ -2,6 +2,7 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
+stake: 4953859523498459
 ---
 largest [[language]] family by number of speakers: ~3.2 billion
 

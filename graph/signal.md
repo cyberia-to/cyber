@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: enzyme
+stake: 23154625001185704
 ---
 a bundle of [[cyberlinks]] a [[neuron]] commits in a single [[step]] — the atomic unit of [[learning]]. each link in the signal consumes [[focus]], making every statement a [[costly signal]]
 

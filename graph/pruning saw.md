@@ -3,6 +3,7 @@ alias: pruner
 tags: cyberia
 crystal-type: entity
 crystal-domain: biology
+stake: 6799809887945715
 ---
 - ![](https://ipfs.io/ipfs/QmY8QxDGyCocsaMvmKowZokWrhwxunkt5dA5aKj7szDodP)
 -

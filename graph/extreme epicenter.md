@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4609282122134971
 ---
 [[bali]] do not have well recognized extreme spot
 

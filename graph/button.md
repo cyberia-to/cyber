@@ -2,6 +2,7 @@
 tags: prism, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 17018136781390120
 ---
 
 call-to-action atom in [[prism]]

@@ -2,6 +2,7 @@
 tags: technology
 crystal-type: process
 crystal-domain: materials
+stake: 3977407718595692
 ---
 additive manufacturing: building objects layer by layer from digital models
 

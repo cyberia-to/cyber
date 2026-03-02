@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5070210334348468
 ---
 union of partially self-governing states or regions under a shared central authority
 

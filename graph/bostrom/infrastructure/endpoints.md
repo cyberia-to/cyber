@@ -4,6 +4,7 @@ alias: API endpoints, bostrom endpoints
 tags: bostrom, infrastructure, api, endpoints
 crystal-type: entity
 crystal-domain: cyber
+stake: 35574057006881760
 ---
 - # Public Endpoints
 	- Back to [[bostrom infrastructure]]

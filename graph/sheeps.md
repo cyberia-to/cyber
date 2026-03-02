@@ -2,6 +2,7 @@
 tags: genus, species, class
 crystal-type: entity
 crystal-domain: biology
+stake: 6081974203523196
 ---
 
 | operation                     | frequency for sheep          | frequency for goats          | notes                          |

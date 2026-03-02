@@ -4,6 +4,7 @@ tags: species, research
 crystal-type: entity
 crystal-domain: biology
 supply: wishlist
+stake: 11167236915499112
 ---
 [[high margin]]
 

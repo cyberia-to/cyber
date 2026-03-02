@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13908396927762612
 ---
 blend between [[startup society]] and [[network state]]
 

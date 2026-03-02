@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14566226512183814
 ---
 the aggregated judgment of many independent agents outperforms most individuals — and often the best expert
 

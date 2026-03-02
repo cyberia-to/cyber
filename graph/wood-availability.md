@@ -3,6 +3,7 @@ tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
 local: "true"
+stake: 1023887135480079
 ---
 - ## available by [[wood-durability]] class
   

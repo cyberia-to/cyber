@@ -3,6 +3,7 @@ alias: ananas, pineapple
 tags: genus, species
 crystal-type: entity
 crystal-domain: biology
+stake: 10310471853785410
 ---
 ![image](https://ipfs.io/ipfs/QmQ4ebij2qVq5SN1tgGfwejsQrdVfgmYPMHgxFnthGwuaU)
 

@@ -3,6 +3,7 @@ icon: 🚧
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13881546740643378
 ---
 [[cyb]]: interface for [[great web]]
 

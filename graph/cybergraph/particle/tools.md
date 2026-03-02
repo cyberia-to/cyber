@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14619926886422280
 ---
 tools to compute and work with [[particles]]
 

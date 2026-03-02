@@ -4,6 +4,7 @@ alias: bird, birds research
 tags: cv.land
 crystal-type: entity
 crystal-domain: biology
+stake: 8269857632723714
 ---
 [birds observation by urban biologist 2024](https://ipfs.io/ipfs/QmUQWE2PB5bDkCCRJ6imBbsdMCRWD6p1nyya9yxvBhUAWA)
 

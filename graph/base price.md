@@ -2,6 +2,7 @@
 tags: param
 crystal-type: measure
 crystal-domain: cyber
+stake: 8377258381200647
 ---
 multiplier for bandwidth billing
 

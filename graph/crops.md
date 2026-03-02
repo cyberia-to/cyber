@@ -2,6 +2,7 @@
 tags: food, biology
 crystal-type: entity
 crystal-domain: biology
+stake: 5243109266555650
 ---
 plants cultivated by humans for food, fiber, and fuel
 

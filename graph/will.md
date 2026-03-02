@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
+stake: 9358510674103518
 ---
 capacity to create [[cyberlinks]]. every link burns will — when it runs out, the [[neuron]] falls silent
 

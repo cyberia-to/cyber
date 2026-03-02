@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4739058026544596
 ---
 we want [[cyber valley]] lead the tech of tomorrow
 

@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5079160396721545
 ---
 multi-ethnic, multi-territorial state controlled by a single sovereign authority
 

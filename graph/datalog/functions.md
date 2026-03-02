@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 25803029821582760
 ---
 built-in function reference for [[datalog]] (CozoScript). all functions are available in rule bodies, expressions, and aggregation contexts
 

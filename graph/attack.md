@@ -3,6 +3,7 @@ alias: cyber/attacks
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 16464534741513578
 ---
 malicious method of behavior
 

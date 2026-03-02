@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: draft
+stake: 11846302557005530
 ---
 allow [[neuron]] to stake on [[particles]] and gain rewards
 

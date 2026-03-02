@@ -3,6 +3,7 @@ tags: article, cip
 crystal-type: measure
 crystal-domain: economics
 status: draft
+stake: 8804908634226972
 ---
 ## abstract
 

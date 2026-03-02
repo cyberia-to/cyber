@@ -4,6 +4,7 @@ menu-order: "3"
 tags: cyberia, menu
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5653184851649386
 ---
 > belong anywhere
 

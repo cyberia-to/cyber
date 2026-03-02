@@ -4,6 +4,7 @@ tags: cyber
 alias: soft3 stack
 crystal-type: entity
 crystal-domain: cyber
+stake: 26299758283288568
 ---
 computation stack for [[superintelligence]]
 

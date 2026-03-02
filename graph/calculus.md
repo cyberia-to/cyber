@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4904634180446532
 ---
 The mathematical study of continuous change through [[differentiation]] and [[integration]].
 

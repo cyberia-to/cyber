@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 5419262766898495
 ---
 
 [[antiinflamation]] https://www.sciencedirect.com/science/article/abs/pii/S0944711323001423

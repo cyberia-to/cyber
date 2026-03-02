@@ -2,6 +2,7 @@
 tags: time, history
 crystal-type: entity
 crystal-domain: history
+stake: 5291927788590618
 ---
 period ~1200 BCE-600 CE defined by widespread use of [[iron]] tools and weapons
 

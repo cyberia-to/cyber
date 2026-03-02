@@ -3,6 +3,7 @@ tags: genus, animals
 alias: stingless bee
 crystal-type: entity
 crystal-domain: biology
+stake: 9622130693092350
 ---
 trigona laeviceps
 

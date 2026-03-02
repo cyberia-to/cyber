@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 4792758400783061
 ---
 The branch of [[physics]] describing motion of bodies under the action of [[force]].
 

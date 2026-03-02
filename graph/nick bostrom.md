@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4586906966202276
 ---
 modern philosopher who contributed to ideas behind
 

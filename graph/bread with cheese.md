@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4698782745865747
 ---
 ![](https://ipfs.io/ipfs/bafkreibzpewkd54qluxjes2rnygtvlbnzsdnkm7oogenokubkbtfyu2eze)
 

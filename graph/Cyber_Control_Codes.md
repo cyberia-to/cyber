@@ -1,3 +1,6 @@
+---
+stake: 1627284067832293
+---
 # Cyber Control Codes: Reclaiming Dead Unicode for Graph Operations
 
 ## The Idea

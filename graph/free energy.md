@@ -2,6 +2,7 @@
 tags: cyber, physics
 crystal-type: measure
 crystal-domain: cybics
+stake: 3963087618798767
 ---
 the energy available to do work — the portion of total [[energy]] not locked up in [[entropy]]
 

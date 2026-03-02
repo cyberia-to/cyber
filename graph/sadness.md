@@ -2,6 +2,7 @@
 tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
+stake: 3169298450510175
 ---
 
 the [[emotion]] of [[indigo]] — withdrawal and introspection

@@ -8,6 +8,7 @@ domain: neural program synthesis / compiler optimization
 stack: Rust, burn (wgpu backend), rayon, Triton VM
 priority: high — critical path for cyb agent runtime proof performance
 version: 2.0 (incorporates architecture review)
+stake: 47598058984094576
 ---
 
 # Neural Compiler: TIR → TASM (Triton VM Assembly)

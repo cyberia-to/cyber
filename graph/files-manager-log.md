@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: cyber
 source: files-manager
 icon: 
+stake: 14150048611835708
 ---
 #+BEGIN_QUERY
                                                       {:title "All files operate log"

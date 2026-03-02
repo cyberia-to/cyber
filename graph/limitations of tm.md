@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13720445617927980
 ---
 TODO out of rank window during graph processing
 

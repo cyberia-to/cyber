@@ -3,6 +3,7 @@ alias: cv/districts
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 7034749025239004
 ---
 [[citadel genesis]]:  building autonomous community on 22 ha: status: under construction
 

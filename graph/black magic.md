@@ -3,6 +3,7 @@ alias: objective function, advanced algorithms
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 7296538349651524
 ---
 the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
 

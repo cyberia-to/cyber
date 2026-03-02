@@ -3,6 +3,7 @@ tags: species
 crystal-type: process
 crystal-domain: biology
 status: draft
+stake: 6393924559326647
 ---
 general principles ㅤ
 

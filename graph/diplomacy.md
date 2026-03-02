@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: process
 crystal-domain: governance
+stake: 3998887868291078
 ---
 management of relations between sovereign entities through negotiation, dialogue, and protocol
 

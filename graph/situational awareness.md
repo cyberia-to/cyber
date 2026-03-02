@@ -3,6 +3,7 @@ alias: behind the corner
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 6954198463881306
 ---
 [the decade ahead](https://cyb.ai/oracle/ask/QmNbxnynavEjx2c1j3Soyt92MAzYGW862bv8LTTmzzeof7) by leopold aschenbrenner
 

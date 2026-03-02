@@ -2,6 +2,7 @@
 tags: technology, biology
 crystal-type: entity
 crystal-domain: biology
+stake: 5365155571643070
 ---
 instrument for observing objects too small for the unaided eye
 

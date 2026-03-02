@@ -2,6 +2,7 @@
 tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
+stake: 2993795863794462
 ---
 extends [[propositional logic]] with necessity ($\square$) and possibility ($\diamond$) operators
 

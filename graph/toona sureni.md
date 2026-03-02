@@ -4,6 +4,7 @@ alias: surian, limpaga, iron redwood, suren
 crystal-type: entity
 crystal-domain: biology
 wood-density: "500"
+stake: 6846797715404375
 ---
 ![](https://ipfs.io/ipfs/QmVz852FrRWpZn748J3M7WveSwZrMJUaidfXDHce3kvkXp)
 

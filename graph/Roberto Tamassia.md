@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4792758400783061
 ---
 Italian-American computer scientist, professor at Brown University.
 

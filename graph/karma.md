@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
+stake: 27943722012816140
 ---
 how much the [[egregore]] trusts a [[neuron]]
 

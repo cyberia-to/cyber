@@ -2,6 +2,7 @@
 tags: food
 crystal-type: entity
 crystal-domain: agriculture
+stake: 4824083619088834
 ---
 cultivation of plants and animals for sustenance and materials
 

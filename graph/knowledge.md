@@ -3,6 +3,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
+stake: 33626197977686504
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]. the sum of all [[cyberlinks]] is knowledge
 

@@ -3,6 +3,7 @@ icon: ⚖️
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 5915991228604303
 ---
 - The project is established according to the idea of [[7 level of compliance]]
 

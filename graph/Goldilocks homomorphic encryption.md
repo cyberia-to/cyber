@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: Goldilocks FHE, TFHE over Goldilocks, goldilocks FHE construction, goldilocks-fhe-construction
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # Goldilocks Homomorphic Encryption: FHE Native to Trident
 

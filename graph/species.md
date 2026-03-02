@@ -3,6 +3,7 @@ tags: term
 icon: 🌈
 crystal-type: entity
 crystal-domain: cybics
+stake: 6488795220481269
 ---
 [[plants]]: hundreds of species in [[citadel genesis]] and [[batuka]]
 

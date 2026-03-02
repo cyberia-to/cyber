@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 15787910026108910
 ---
 - good explanation on fundamental difference between [[knowledge graphs]] and [[llms]]
 	- [unifying large language models and knowledge graphs: a roadmap](https://cyb.ai/oracle/ask/QmdGEYVKo1sRURzbj83UMtr77EL6GHUB2taJbnpTynEQKT)

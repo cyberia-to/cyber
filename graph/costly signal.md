@@ -3,6 +3,7 @@ alias: costly signals
 tags: cyber
 crystal-type: property
 crystal-domain: cyber
+stake: 4579299413185161
 ---
 a [[cyberlink]] that costs [[focus]] to create — making it an honest indicator of what the [[neuron]] values
 

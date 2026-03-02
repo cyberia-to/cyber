@@ -3,6 +3,7 @@ tags: species
 alias: tea tree
 crystal-type: entity
 crystal-domain: biology
+stake: 6987761197780345
 ---
 [[high margin]]
 

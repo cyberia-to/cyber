@@ -8,6 +8,7 @@ supply: next-month
 market: resins
 wood: "yes"
 grow-speed: "1"
+stake: 6907210636422646
 ---
 [[high margin]] [[oil]] and [[resin]]
 

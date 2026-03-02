@@ -3,6 +3,7 @@ tags: district
 alias: rocket estate
 crystal-type: entity
 crystal-domain: cyberia
+stake: 9223039275456482
 ---
 We bring a unique offer to the market
 

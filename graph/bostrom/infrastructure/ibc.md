@@ -4,6 +4,7 @@ alias: bostrom IBC, IBC bridge
 tags: bostrom, infrastructure, ibc, interchain
 crystal-type: entity
 crystal-domain: cyber
+stake: 40392445131733184
 ---
 # IBC (Inter-Blockchain Communication)
 

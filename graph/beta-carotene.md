@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8363833287641030
 ---
 alias: b-carotene, β-carotene, b-carotene
 

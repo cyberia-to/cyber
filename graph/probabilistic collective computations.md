@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 20594093520451588
 ---
 emerging paradigm of computations
 

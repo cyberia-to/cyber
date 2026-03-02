@@ -3,6 +3,7 @@ alias: ground cover, carpet
 tags: segment
 crystal-type: entity
 crystal-domain: agriculture
+stake: 7262975615752483
 ---
 [[high margin]] species chosen for the layer
 

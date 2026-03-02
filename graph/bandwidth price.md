@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 8417533661879494
 ---
 it's a multiplier for default bandwidth price
 

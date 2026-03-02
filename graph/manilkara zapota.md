@@ -6,6 +6,7 @@ scalable: "true"
 alias: manilkara, sawo, sapodilla
 wood: "yes"
 grow-speed: "3"
+stake: 7579075545928905
 ---
 ![image.png](https://ipfs.io/ipfs/QmRMTs6LwDpmW71tayKZhVqczmL5XSpWQwM5YVh5tRXDtG)
 

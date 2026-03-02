@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4873308962140760
 ---
 1994-. Russian-Canadian programmer and writer.
 

@@ -2,6 +2,7 @@
 tags: kitchen/menu
 crystal-type: process
 crystal-domain: agriculture
+stake: 4682672633594207
 ---
 ## 🥥✨ ginger [[ginger kombucha]] with coconut sugar
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13841271459964526
 ---
 powerful instruction set for a more portable execution
 

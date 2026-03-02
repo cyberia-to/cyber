@@ -3,6 +3,7 @@ tags: building type
 crystal-type: entity
 crystal-domain: cyberia
 type: private
+stake: 4618232184508048
 ---
 revenue:: breakfast $10
 

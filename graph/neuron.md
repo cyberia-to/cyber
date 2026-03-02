@@ -5,6 +5,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
+stake: 48242463474956168
 ---
 the one who links. agent with stake, identity, and [[will]] to shape the [[cybergraph]]
 

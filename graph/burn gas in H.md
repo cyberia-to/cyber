@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
+stake: 11513360236727042
 ---
 proposal to improve [[cybernomics]] of [[fuel]]
 

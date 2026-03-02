@@ -2,6 +2,7 @@
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 5544563640121580
 ---
 
 staphylococcus aureus is a gram-positive bacterium commonly found on the skin and in the nasal passages of humans. it is known for its ability to cause a variety of infections, ranging from minor skin infections to more serious diseases.

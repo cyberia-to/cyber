@@ -2,6 +2,7 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
+stake: 1063267409921620
 ---
 measure of the average [[kinetic energy]] of particles in a system
 

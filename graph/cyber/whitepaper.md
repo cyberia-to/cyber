@@ -4,6 +4,7 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
+stake: 19039223593637832
 ---
 # cyber: a protocol for planetary superintelligence
 

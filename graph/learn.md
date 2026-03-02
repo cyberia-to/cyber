@@ -4,6 +4,7 @@ tags: cyber
 alias: learning, labeling, answer
 crystal-type: process
 crystal-domain: cyber
+stake: 17753343723236754
 ---
 [[create links]] between [[particles]] of [[information]]
 

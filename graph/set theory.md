@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4891209086886915
 ---
 
 The foundation of [[mathematics]], formalizing collections of objects (sets), their elements, and [[membership]] relations.

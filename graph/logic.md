@@ -2,6 +2,7 @@
 tags: cybics
 crystal-type: entity
 crystal-domain: cybics
+stake: 5249211581810020
 ---
 the study of valid reasoning — rules that preserve truth from premises to conclusions
 

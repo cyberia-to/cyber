@@ -2,6 +2,7 @@
 tags: computer science
 crystal-type: entity
 crystal-domain: computer science
+stake: 5177611082825399
 ---
 
 Ways of organizing, storing, and accessing data so that [[algorithms]] can operate efficiently.

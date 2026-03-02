@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 7128724680156319
 ---
 
 | No | Category | Parameters | Max. Acc. Value | S1 | S2 | S3 | S4 |

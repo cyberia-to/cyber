@@ -5,6 +5,7 @@ crystal-type: entity
 crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
+stake: 7535138876097433
 ---
 wood-density:: 700
 

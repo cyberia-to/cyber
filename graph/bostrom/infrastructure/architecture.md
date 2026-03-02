@@ -4,6 +4,7 @@ alias: bostrom architecture
 tags: bostrom, infrastructure, architecture
 crystal-type: entity
 crystal-domain: cyber
+stake: 32557072345120688
 ---
 # Architecture
 

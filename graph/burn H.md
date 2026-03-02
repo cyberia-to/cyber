@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 3755446171743366
 ---
 fundamentally burning [[$H]] for some usable operations
 

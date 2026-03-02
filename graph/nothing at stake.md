@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14687052354220364
 ---
 potential issue in proof of stake consensus mechanisms
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11706681583985520
 ---
 metaheuristic inspired by the foraging behavior of ants — introduced by Dorigo (1992)
 

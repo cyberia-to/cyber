@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: implemented
+stake: 11459659862488576
 ---
 add to 2 consensus [[params]]
 

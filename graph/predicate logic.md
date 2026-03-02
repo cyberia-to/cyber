@@ -3,6 +3,7 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 alias:: first-order logic
+stake: 4414170762401879
 ---
 extends [[propositional logic]] with variables, quantifiers ($\forall$, $\exists$), and predicates over objects
 

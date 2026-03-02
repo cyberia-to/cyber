@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4886734055700377
 ---
 The study of shape, [[space]], position, and measurement.
 

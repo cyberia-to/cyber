@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
+stake: 1171563164635860
 ---
 
 | material             | thermal (W/m·K) | acoustic performance      | moisture behavior               | durability        | density (kg/m³) | fire resistance        | sustainability                  |

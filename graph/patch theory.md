@@ -3,6 +3,7 @@ tags: research, math
 crystal-type: pattern
 crystal-domain: cyber
 alias:: categorical patches, commutative patches
+stake: 18334772320673232
 ---
 mathematical framework for version control where changes are morphisms in a [[category]], independent changes commute, and [[conflicts]] are first-class algebraic objects
 

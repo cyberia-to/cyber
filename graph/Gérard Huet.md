@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4904634180446532
 ---
 1947-. French computer scientist, senior researcher at INRIA.
 

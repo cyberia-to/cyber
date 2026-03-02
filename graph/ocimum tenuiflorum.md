@@ -3,6 +3,7 @@ alias: holy basil, tulsi
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 6860222808963990
 ---
 ![tulsi](https://ipfs.io/ipfs/QmNyNEy359JeR17cNY33bZ7bCjUaDSax6AuafNj8MX6srP)
 

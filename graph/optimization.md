@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4980709710617692
 ---
 Finding the best solution from a set of feasible alternatives by minimizing or maximizing an objective function.
 

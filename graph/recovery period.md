@@ -2,6 +2,7 @@
 tags: param
 crystal-type: measure
 crystal-domain: cyber
+stake: 8280597707571408
 ---
 recovery period is amount of [[blocks]]
 

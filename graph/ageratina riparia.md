@@ -7,6 +7,7 @@ abundance: "yes"
 supply: "no"
 margin: low
 autonomy: support
+stake: 7773129171017907
 ---
 ![image](https://ipfs.io/ipfs/QmeNoF8yhzUqxyPZsoRQQKNFfcDaydKUZfpgxFgV3Rg7G6)
 

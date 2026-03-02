@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8041631042210236
 ---
 omega-3 fatty acids are essential fats that plays a crucial role in maintaining
 

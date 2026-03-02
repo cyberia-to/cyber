@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: cyberia
 type: private
 alias: camp
+stake: 6987761197780345
 ---
 flat space for setting up the [[tents]]
 

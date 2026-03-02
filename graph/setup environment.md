@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 4063328317377237
 ---
 if you want to join our game you must play the rules for basic software environment
 

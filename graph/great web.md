@@ -3,6 +3,7 @@ alias: permanent web
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 9068650699520890
 ---
 the web that remembers everything and forgets nothing
 

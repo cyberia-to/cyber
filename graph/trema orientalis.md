@@ -11,6 +11,7 @@ wood-availability: site
 wood-density: "400"
 wood-durability: low
 nitrogener: "100"
+stake: 7336813630330374
 ---
 ![](https://ipfs.io/ipfs/Qmf8ZzSrWP4tHT7tECRNWeQZEdywEcEK27HpxishxRpb3V){:height 531, :width 408}
 

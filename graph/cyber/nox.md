@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 alias: nox, cyber/nox, nox vm, nox spec, nox patterns, reduction patterns, sixteen patterns, cyber/patterns, three-layer architecture
+stake: 43936669831471920
 ---
 # nox virtual machine
 

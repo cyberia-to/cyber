@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4944909461125381
 ---
 1867-1934, Polish-French physicist and chemist
 

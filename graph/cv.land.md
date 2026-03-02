@@ -3,6 +3,7 @@ icon: 🔮
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5240261519436942
 ---
 main
 

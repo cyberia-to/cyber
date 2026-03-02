@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 6623046156077434
 ---
 
 | hormone neurotransmitter | primary emotion | plant species                             | optimal daily consumption                       | notes                                                                 |

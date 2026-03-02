@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4689832683492669
 ---
 TODO lecture at [[bootcamp/v0]]
 

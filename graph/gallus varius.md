@@ -3,6 +3,7 @@ tags: species, birds
 alias: green junglefowl
 crystal-type: entity
 crystal-domain: biology
+stake: 10317794632090656
 ---
 voice:: https://ebird.org/species/grejun1
 

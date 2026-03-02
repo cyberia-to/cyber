@@ -2,6 +2,7 @@
 tags: culture, philosophy
 crystal-type: property
 crystal-domain: culture
+stake: 1094511264024000
 ---
 branch of [[philosophy]] studying beauty, [[art]], taste, and sensory experience
 

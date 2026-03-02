@@ -4,6 +4,7 @@ alias: infer
 crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
+stake: 38980613474481880
 ---
 the [[tru]] reads the [[cybergraph]] and speaks back in numbers. this is inference — computing [[explicit knowledge]] from collective [[learning]]
 

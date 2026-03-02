@@ -2,6 +2,7 @@
 tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
+stake: 3192731341086960
 ---
 SI unit of [[temperature]], the absolute thermodynamic scale
 

@@ -3,6 +3,7 @@ alias: implicit
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 25957418397518344
 ---
 what [[neurons]] derive from observing [[explicit knowledge]] and encode as new [[cyberlinks]]. the language of [[neurons]]
 

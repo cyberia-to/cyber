@@ -3,6 +3,7 @@ alias: heat kernel, multi-scale smoothing, adaptation, thermostat
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 7625453141862128
 ---
 third operator of the [[tri-kernel]]
 

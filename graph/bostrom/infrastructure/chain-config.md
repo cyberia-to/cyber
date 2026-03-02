@@ -4,6 +4,7 @@ alias: chain config, bostrom chain config
 tags: bostrom, infrastructure, wallet, keplr, config
 crystal-type: entity
 crystal-domain: cyber
+stake: 41108246711070904
 ---
 - # Chain Configuration
 	- Back to [[bostrom infrastructure]]

@@ -3,6 +3,7 @@ alias: mushroom, shrooms
 tags: genus
 crystal-type: entity
 crystal-domain: biology
+stake: 7189137601174592
 ---
 fruiting body of some [[fungi]]
 

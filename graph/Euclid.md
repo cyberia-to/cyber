@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 5003084866550385
 ---
 ~300 BCE, Greek mathematician active in Alexandria
 

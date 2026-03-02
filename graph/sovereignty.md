@@ -2,6 +2,7 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
+stake: 5146285864519627
 ---
 supreme authority over a territory, population, or domain
 

@@ -3,6 +3,7 @@ alias: autonomous, autonomously
 tags: cyber
 crystal-type: property
 crystal-domain: cyber
+stake: 4301399976501102
 ---
 skill to harness full power of life
 

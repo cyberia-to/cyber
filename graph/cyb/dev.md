@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 16029561710182006
 ---
 one [high level board](https://github.com/orgs/cybercongress/projects/41/views/1) for the project
 

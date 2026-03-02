@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: manihot, cassava, tapioca, singkong
+stake: 7608366659149886
 ---
 [[staple]]
 

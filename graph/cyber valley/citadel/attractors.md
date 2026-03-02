@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: pattern
 crystal-domain: cyberia
+stake: 2821954666231372
 ---
 [[truly calm]]
 

@@ -2,6 +2,7 @@
 tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 2969630695387153
 ---
 sequential chain reaction where each step triggers the next, amplifying the initial signal
 

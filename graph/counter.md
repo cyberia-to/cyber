@@ -2,6 +2,7 @@
 tags: prism, cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 16344441177307554
 ---
 
 numeric display atom in [[prism]]

@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: measure
 crystal-domain: economics
+stake: 5751310080939674
 ---
 printing of new [[tokens]] into existence
 

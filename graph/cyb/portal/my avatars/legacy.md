@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14230599173193406
 ---
 comparison of [[avatar]] systems with legacy web names
 

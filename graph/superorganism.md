@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14633351979981900
 ---
 a colony that behaves as a single organism — coined by Wheeler (1911) studying ant colonies
 

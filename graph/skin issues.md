@@ -3,6 +3,7 @@ alias: skin ailments, skin diseases, skin conditions
 tags: superhuman
 crystal-type: entity
 crystal-domain: biology
+stake: 7081736852697661
 ---
 [[acne]]
 

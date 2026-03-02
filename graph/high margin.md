@@ -2,6 +2,7 @@
 tags: segment
 crystal-type: property
 crystal-domain: cyberia
+stake: 940651555410457
 ---
 ongoing research on extreme profitability of different species
 

@@ -3,6 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: BBG, Big Badass Graph, privacy model, nox privacy, ZK privacy, cyber/privacy
+stake: 43936669831471920
 ---
 # BBG: Big Badass Graph
 

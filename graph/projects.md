@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14955554225412692
 ---
 [[cyber]] project is structured around ~20 public projects and ~10 more internal
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13948672208441460
 ---
 internal mode in [[cyb]]
 

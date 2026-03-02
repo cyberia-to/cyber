@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4913584242819610
 ---
 1930-2002. Dutch computer scientist.
 

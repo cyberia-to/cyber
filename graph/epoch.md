@@ -3,6 +3,7 @@ tags: time
 alias: epochs
 crystal-type: entity
 crystal-domain: history
+stake: 7336813630330374
 ---
 major division of [[geological time]] or civilizational time
 

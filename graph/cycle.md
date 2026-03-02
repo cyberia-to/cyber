@@ -3,6 +3,7 @@ tags: pattern
 alias: cycles
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 4462501099216498
 ---
 recurring sequence of events or states that returns to its starting point
 

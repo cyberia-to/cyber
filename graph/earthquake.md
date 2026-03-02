@@ -3,6 +3,7 @@ tags: geography, physics
 alias: earthquakes
 crystal-type: entity
 crystal-domain: physics
+stake: 8157575032043287
 ---
 sudden release of [[energy]] in Earth's lithosphere producing seismic waves
 

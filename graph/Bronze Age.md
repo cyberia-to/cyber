@@ -2,6 +2,7 @@
 tags: time, history
 crystal-type: entity
 crystal-domain: history
+stake: 5296809640794114
 ---
 period ~3300-1200 BCE defined by widespread use of bronze (copper + tin alloy)
 

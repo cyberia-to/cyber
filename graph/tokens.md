@@ -3,6 +3,7 @@ icon: 💵
 tags: cyber
 crystal-type: entity
 crystal-domain: economics
+stake: 10122520543950780
 ---
 status:: DONE
 

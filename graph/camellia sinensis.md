@@ -4,6 +4,7 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: camellia
+stake: 8178933135433584
 ---
 [[staple]] [[drink]] and [[health]] as [[green tea]]
 

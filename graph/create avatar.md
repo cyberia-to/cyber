@@ -3,6 +3,7 @@ tags: page
 alias: buy name
 crystal-type: process
 crystal-domain: cyber
+stake: 16818957211487452
 ---
 [[portal entrance]] always on start
 

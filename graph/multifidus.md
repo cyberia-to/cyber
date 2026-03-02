@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 4524256529590733
 ---
 ![](https://ipfs.io/ipfs/QmUArPZhM6KfefTQxRUz121YwR6s25ny7CRc8TcR5vz8oK)
 

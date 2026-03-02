@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4927009336379226
 ---
 1952-. American computer scientist and mathematician.
 

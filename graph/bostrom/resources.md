@@ -2,6 +2,7 @@
 tags: module
 crystal-type: entity
 crystal-domain: cyber
+stake: 13814421272845292
 ---
 [[investmint]]
 

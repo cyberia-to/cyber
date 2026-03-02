@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 10292571729039254
 ---
 goal:: produce seeds, seedlings and fruits of the most useful edible oil species adopted to [[indonesia]]
 

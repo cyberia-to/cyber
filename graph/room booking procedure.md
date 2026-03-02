@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 4707732808238825
 ---
 #### goal:
 - ensure booking accuracy by confirming all essential details.

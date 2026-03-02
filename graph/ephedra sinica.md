@@ -3,6 +3,7 @@ tags: species, psycho
 crystal-type: entity
 crystal-domain: biology
 availability: unknown
+stake: 4950198134345836
 ---
 [[ephedrine]]
 

@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: relation
 crystal-domain: cyber
 crystal-size: enzyme
+stake: 4586988330405668
 ---
 directed edge between two nodes in a [[graph]]. a [[cyberlink]] is a link that achieved [[finality]] in the [[cybergraph]] — local intent turned global [[knowledge]]
 

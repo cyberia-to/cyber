@@ -3,6 +3,7 @@ tags: term
 alias: markets
 crystal-type: entity
 crystal-domain: cybics
+stake: 6947485917101496
 ---
 - group of buyers and sellers for the [[product]]
 - current markets [[cyber valley]] wish bet

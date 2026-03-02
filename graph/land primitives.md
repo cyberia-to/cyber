@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5204461269944632
 ---
 - five primitives for all land operations
 - ## Primitives

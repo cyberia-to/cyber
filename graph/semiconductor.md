@@ -2,6 +2,7 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5379801128253562
 ---
 material with electrical conductivity between conductor and insulator
 

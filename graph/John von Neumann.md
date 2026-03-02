@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4855408837394604
 ---
 1903-1957. Hungarian-American mathematician and polymath.
 

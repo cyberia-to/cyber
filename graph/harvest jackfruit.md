@@ -2,6 +2,7 @@
 tags: species
 crystal-type: process
 crystal-domain: biology
+stake: 5058575253263468
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1118)
 

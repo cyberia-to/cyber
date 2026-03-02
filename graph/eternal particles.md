@@ -3,6 +3,7 @@ tags: bip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
+stake: 13921822021322226
 ---
 allow [[neuron]] to burn [[$A]] for increasing popularity of [[particles]]
 

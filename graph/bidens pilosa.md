@@ -3,6 +3,7 @@ alias: ketul
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 6833372621844758
 ---
 [[health]]
 

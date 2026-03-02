@@ -3,6 +3,7 @@ alias: cyber-sdk
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 20983421233680464
 ---
 [github.com/cybercongress/go-cyber](https://github.com/cybercongress/go-cyber)
 

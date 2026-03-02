@@ -5,6 +5,7 @@ crystal-type: entity
 crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
+stake: 14645556610490640
 ---
 ![Screenshot 2024-05-17 at 05.54.42.png](https://ipfs.io/ipfs/QmZsJZdhQpxh8yt24xL8W6xgp67BL1AYR3BcNQ2z8ErEmo)
 

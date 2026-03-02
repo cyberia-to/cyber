@@ -2,6 +2,7 @@
 tags: page
 crystal-type: entity
 crystal-domain: cyber
+stake: 17640572937335976
 ---
 table render of [[brain]]
 

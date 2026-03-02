@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5119435677400394
 ---
 The fundamental [[force]] by which [[mass]] and [[energy]] curve [[spacetime]], drawing bodies together.
 

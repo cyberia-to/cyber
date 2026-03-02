@@ -3,6 +3,7 @@ alias: colearning
 tags: cyber
 crystal-type: process
 crystal-domain: biology
+stake: 7061599212358237
 ---
 [[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — [[learning]] together
 

@@ -3,6 +3,7 @@ alias: walls
 tags: cyber
 crystal-type: entity
 crystal-domain: agriculture
+stake: 8491371676457386
 ---
 [[layer]] for productivity
 

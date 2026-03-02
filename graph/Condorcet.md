@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4654032434000359
 ---
 Nicolas de Condorcet, French mathematician and philosopher (1743–1794)
 

@@ -5,6 +5,7 @@ alias: cv, about
 tags: cv.land, menu
 crystal-type: entity
 crystal-domain: biology
+stake: 11101331910751904
 ---
 # From Urban Survival to Forest Arrival
 

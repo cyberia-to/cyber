@@ -5,6 +5,7 @@ crystal-type: entity
 crystal-domain: cyberia
 size: "96"
 shape: 12*8
+stake: 7168999960835168
 ---
 multipurpose facility
 

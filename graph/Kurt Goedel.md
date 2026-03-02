@@ -3,6 +3,7 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 alias:: Goedel
+stake: 7491202206265963
 ---
 1906-1978. Austrian-American logician and mathematician.
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 8522249391644504
 ---
 algorithm that ranks web pages by measuring their importance based on the quantity and quality of links pointing to them
 

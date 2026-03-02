@@ -2,6 +2,7 @@
 tags: fungi
 crystal-type: entity
 crystal-domain: biology
+stake: 5267111706556176
 ---
 aspergillus flavus is a pathogenic fungus belonging to the genus [[aspergillus]], known primarily for contaminating agricultural crops such as grains, nuts (especially peanuts), and spices. it produces toxic metabolites called [[aflatoxins]], potent carcinogens harmful to humans and animals
 

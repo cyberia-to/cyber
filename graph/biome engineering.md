@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 8493609192050655
 ---
 > the art of designing living systems in resonance with nature’s intelligence
 

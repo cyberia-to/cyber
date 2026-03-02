@@ -2,6 +2,7 @@
 tags: food, biology
 crystal-type: process
 crystal-domain: agriculture
+stake: 4276502530263266
 ---
 microbial transformation of organic substrates into preserved, nutrient-enhanced food
 

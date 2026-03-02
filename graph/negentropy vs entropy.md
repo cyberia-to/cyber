@@ -4,6 +4,7 @@ crystal-type: property
 crystal-domain: physics
 alias:: entropy vs negentropy
 status: draft
+stake: 2671349525753492
 ---
 # from entropy reduction to negentropy maximization: the dual thermodynamics of decentralized intelligence
 ## abstract

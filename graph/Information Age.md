@@ -2,6 +2,7 @@
 tags: time, history, computer science
 crystal-type: entity
 crystal-domain: computer science
+stake: 5738210444193624
 ---
 current [[epoch]] beginning in the 1970s, defined by digital computation and networked communication
 

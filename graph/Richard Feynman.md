@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4859883868581144
 ---
 1918-1988. American theoretical physicist.
 

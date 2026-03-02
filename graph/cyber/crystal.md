@@ -4,6 +4,7 @@ alias: crystal, the crystal
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
+stake: 28558835390456748
 ---
 # THE CRYSTAL
 

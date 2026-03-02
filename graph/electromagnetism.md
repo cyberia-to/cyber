@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 4944909461125381
 ---
 The unified [[field]] theory of electric and magnetic interactions, described by Maxwell's equations.
 

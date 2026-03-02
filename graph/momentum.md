@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: measure
 crystal-domain: physics
+stake: 2932040433420227
 ---
 The product of [[mass]] and velocity — a conserved vector quantity describing motion.
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 8220632289671788
 ---
 last time we met more than year ago
 

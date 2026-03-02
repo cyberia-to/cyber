@@ -4,6 +4,7 @@ tags: genus, species
 crystal-type: entity
 crystal-domain: biology
 scalable: "true"
+stake: 7469233871350226
 ---
 [[staple]]
 

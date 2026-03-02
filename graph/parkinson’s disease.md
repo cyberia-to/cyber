@@ -3,6 +3,7 @@ alias: parkinson
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 7893955013054455
 ---
 parkinson’s disease is a progressive [[neurodegenerative disorder]] characterized by the gradual loss of dopamine-producing neurons, primarily in the [[substantia nigra]] region of the brain. dopamine deficiency disrupts normal motor function, resulting in characteristic symptoms and affecting quality of life significantly.
 

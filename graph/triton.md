@@ -3,6 +3,7 @@ alias: Triton VM
 tags: cyber
 crystal-type: entity
 crystal-domain: computer science
+stake: 7309963443211140
 ---
 a virtual machine designed for generating [[STARK]] proofs of program execution
 

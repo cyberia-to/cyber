@@ -2,6 +2,7 @@
 tags: compound-
 crystal-type: entity
 crystal-domain: chemistry
+stake: 5857815823179297
 ---
 chlorophyll is a vital green [[pigment]] found in the [[chloroplasts]] of [[plants]], [[algae]], and [[cyanobacteria]]. it is essential for [[photosynthesis]], the process by which light energy is converted into chemical energy to fuel plant growth. chlorophyll absorbs light most efficiently in the blue and red wavelengths and reflects green, giving plants their characteristic color. it also serves as a source of the compound [[phytol]], used in the synthesis of [[vitamin e]] and [[vitamin k1]] in humans.
 

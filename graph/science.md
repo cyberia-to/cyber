@@ -2,6 +2,7 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
+stake: 5012034928923463
 ---
 systematic study of the natural world through observation, hypothesis, experiment, and theory
 

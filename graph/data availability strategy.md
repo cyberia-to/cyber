@@ -3,6 +3,7 @@ tags: article, cip
 crystal-type: process
 crystal-domain: computer science
 status: draft
+stake: 7810963525595007
 ---
 prefer transparent cryptography with no trusted setup or social committees.
 

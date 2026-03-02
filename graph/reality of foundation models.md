@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14364850108789570
 ---
 existing foundation models lack a foundation
 

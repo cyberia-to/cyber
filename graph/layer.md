@@ -3,6 +3,7 @@ alias: layers
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21647963364881476
 ---
 [[sky]]
 

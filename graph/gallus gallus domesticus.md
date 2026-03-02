@@ -2,6 +2,7 @@
 tags: species, birds
 crystal-type: entity
 crystal-domain: biology
+stake: 7210495704564890
 ---
 selected for [[citadel genesis]]
 

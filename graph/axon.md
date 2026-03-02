@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: relation
 crystal-domain: cyber
 crystal-size: bridge
+stake: 9630918027058644
 ---
 zoom out from a [[cyberlink]] and you see the axon — the bundle of all links between two [[particles]] across all [[neurons]] and time
 

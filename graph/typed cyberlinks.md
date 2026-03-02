@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: relation
 crystal-domain: cyber
+stake: 2889080134029454
 ---
 https://habr.com/ru/articles/656879/
 

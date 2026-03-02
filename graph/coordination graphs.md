@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: relation
 crystal-domain: cyber
+stake: 2795104479112139
 ---
 algorithms which model the dependencies among [[agents]] [[actions]] in a network
 

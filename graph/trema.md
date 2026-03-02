@@ -6,6 +6,7 @@ crystal-domain: biology
 scalable: "true"
 wood: "yes"
 grow-speed: "5"
+stake: 4609282122134971
 ---
 selected for [[edem]]
 

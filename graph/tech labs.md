@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4622707215694587
 ---
 the key is to gather critical mass of tinkers and thinkers
 

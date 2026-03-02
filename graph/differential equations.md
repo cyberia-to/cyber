@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
+stake: 4927009336379226
 ---
 Equations relating [[functions]] to their [[derivatives]], modeling how systems evolve over time and space.
 

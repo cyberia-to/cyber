@@ -3,6 +3,7 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 scalable: "true"
+stake: 5056785240788851
 ---
 native to [[batuka]]
 

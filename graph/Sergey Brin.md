@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 4918059274006148
 ---
 1973-. Russian-American computer scientist and entrepreneur.
 

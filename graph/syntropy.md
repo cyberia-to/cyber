@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
+stake: 28444600048894916
 ---
 the pulse of the [[cybergraph]]. syntropy measures [[order]] in [[bits]] — the [[key metabolic factor]] of [[superintelligence]]
 

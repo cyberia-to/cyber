@@ -2,6 +2,7 @@
 tags: aip
 crystal-type: entity
 crystal-domain: cyber
+stake: 13841271459964526
 ---
 [[knowledge oriented aip]]
 

@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: draft
+stake: 11244858365534712
 ---
 [[daodao]] is amazing [[prog]] which is widely adopted in [[cosmos]]
 

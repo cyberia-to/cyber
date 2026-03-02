@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
+stake: 5584838920800430
 ---
 | gas        | estimated amount in air | extraction method           | purity achievable         | efficiency | typical applications                                              |
 |------------|-------------------------|-----------------------------|---------------------------|------------|-------------------------------------------------------------------|

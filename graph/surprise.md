@@ -2,6 +2,7 @@
 tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
+stake: 3145865559933390
 ---
 
 the [[emotion]] of [[yellow]] — orienting response to sudden change

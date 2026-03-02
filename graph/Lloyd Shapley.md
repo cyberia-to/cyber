@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 5070210334348468
 ---
 1923-2016. American mathematician and Nobel laureate.
 

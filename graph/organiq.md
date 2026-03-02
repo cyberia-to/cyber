@@ -5,6 +5,7 @@ crystal-type: entity
 crystal-domain: cyberia
 size: "64"
 shape: 8*8
+stake: 7893955013054455
 ---
 market of nutrient dense food grown on healthy soil
 

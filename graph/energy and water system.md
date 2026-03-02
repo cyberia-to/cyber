@@ -3,6 +3,7 @@ icon: ⚡️
 tags: cyberia
 crystal-type: entity
 crystal-domain: energy
+stake: 8444383848998728
 ---
 part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 

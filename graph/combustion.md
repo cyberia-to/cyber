@@ -2,6 +2,7 @@
 tags: chemistry, physics
 crystal-type: process
 crystal-domain: chemistry
+stake: 4631901370677839
 ---
 
 Rapid [[oxidation]] of a fuel releasing heat and light. The chemical reaction that powered civilization from the first campfire to the rocket engine.

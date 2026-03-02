@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: relation
 crystal-domain: economics
+stake: 2013764033942463
 ---
 cost or benefit imposed on third parties who are not direct participants in a transaction
 

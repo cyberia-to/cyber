@@ -3,6 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: state management, world state, state transitions
+stake: 27965690347731876
 ---
 # State Management
 

@@ -3,6 +3,7 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 concept: neural
+stake: 29291113220981280
 ---
 ## A Whitepaper on Convergent Semantic Communication for Collective Intelligence
 

@@ -3,6 +3,7 @@ tags: geography, biology
 alias: biomes
 crystal-type: entity
 crystal-domain: biology
+stake: 8077024470685587
 ---
 a large ecological region defined by distinct [[climate zone]], flora, and fauna
 

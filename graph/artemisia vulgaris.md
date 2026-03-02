@@ -3,6 +3,7 @@ tags: species
 alias: anuma, полынь
 crystal-type: entity
 crystal-domain: biology
+stake: 6799809887945715
 ---
 [[health]]
 

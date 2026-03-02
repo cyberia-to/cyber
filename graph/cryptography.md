@@ -3,6 +3,7 @@ alias: modern cryptography
 tags: cyber
 crystal-type: entity
 crystal-domain: computer science
+stake: 7021323931679387
 ---
 basics
 

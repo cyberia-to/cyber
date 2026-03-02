@@ -2,6 +2,7 @@
 tags: food
 crystal-type: process
 crystal-domain: agriculture
+stake: 3923707344357226
 ---
 gathering of mature [[crops]] from the field
 

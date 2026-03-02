@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11545580461270122
 ---
 many agents contributing partial computations toward a shared result
 

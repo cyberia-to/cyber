@@ -10,6 +10,7 @@ wood-density: "900"
 wood-durability: high
 market: resins
 supply: next-month
+stake: 7601043880844642
 ---
 ![](https://ipfs.io/ipfs/QmTvWmfaiadRKJapuwBSnd1W1epZ2WuFzcFscJLCW1KYX5)
 

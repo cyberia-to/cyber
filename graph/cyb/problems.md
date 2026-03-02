@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 17103569194951318
 ---
 no easy way to [[buy energy]]
 

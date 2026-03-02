@@ -3,6 +3,7 @@ alias: screened laplacian, structural constraints, hierarchy
 tags: cyber
 crystal-type: entity
 crystal-domain: mathematics
+stake: 8182594524586208
 ---
 second operator of the [[tri-kernel]]
 

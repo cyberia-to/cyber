@@ -2,6 +2,7 @@
 tags: food, technology
 crystal-type: process
 crystal-domain: agriculture
+stake: 4249164157923685
 ---
 artificial supply of [[water]] to [[crops]] beyond natural rainfall
 

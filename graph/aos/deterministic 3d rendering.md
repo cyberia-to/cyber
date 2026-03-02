@@ -4,6 +4,7 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 alias:: deterministic 3d rendering, deterministic rendering, cyberworld rendering
+stake: 26362001898883148
 ---
 
 # deterministic 3d rendering

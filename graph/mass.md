@@ -3,6 +3,7 @@ tags: physics
 alias: masses
 crystal-type: measure
 crystal-domain: physics
+stake: 4369867953655145
 ---
 The intrinsic property of matter that resists [[acceleration]] and generates [[gravity]].
 

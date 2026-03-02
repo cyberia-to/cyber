@@ -2,6 +2,7 @@
 tags: class
 crystal-type: entity
 crystal-domain: biology
+stake: 5025460022483080
 ---
 animals are foundational for biome development
 

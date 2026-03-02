@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 9263314556135330
 ---
 ## [[species]] presented in [[edem]]
 

@@ -3,6 +3,7 @@ alias: terms
 tags: cyber
 crystal-type: entity
 crystal-domain: cybics
+stake: 6873647902523607
 ---
 {{query }}
 

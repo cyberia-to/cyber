@@ -3,6 +3,7 @@ alias: PCD
 tags: cyber, cryptographic proofs
 crystal-type: entity
 crystal-domain: computer science
+stake: 9600162358176614
 ---
 generalization of [[incrementally verifiable computation]] from sequential chains to arbitrary DAGs
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 7415126676094802
 ---
 
 | layer | species | count | spacing | notes | source |

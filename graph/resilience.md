@@ -2,6 +2,7 @@
 tags: superhuman
 crystal-type: property
 crystal-domain: superhuman
+stake: 974661792428152
 ---
 the ability of a system to absorb changes and still persist (Holling). a resilient system returns to its stable domain after perturbation, or transitions smoothly to a new stable state (Turoff)
 

@@ -2,6 +2,7 @@
 tags: material
 crystal-type: entity
 crystal-domain: materials
+stake: 6381394472004338
 ---
 ## epoxy adhesive
 

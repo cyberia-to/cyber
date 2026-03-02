@@ -3,6 +3,7 @@ tags: trident
 alias: Neural_Techniques_for_Trident_v2
 crystal-type: article
 crystal-domain: cyber
+stake: 8055056135769852
 ---
 # Neural Network Techniques for Trident
 

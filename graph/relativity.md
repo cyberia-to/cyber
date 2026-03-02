@@ -2,6 +2,7 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
+stake: 4891209086886915
 ---
 
 Einstein's framework unifying [[spacetime]], [[gravity]], [[energy]], and [[mass]].

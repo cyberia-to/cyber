@@ -2,6 +2,7 @@
 tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5531138546561965
 ---
 an opening in Earth's crust where magma, gases, and ash reach the surface
 

@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11459659862488576
 ---
 type of [[cyber/attacks]] involving malicious behavior
 

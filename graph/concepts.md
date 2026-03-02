@@ -3,6 +3,7 @@ icon: ☯️
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 12267850494777486
 ---
 
 ## genesis

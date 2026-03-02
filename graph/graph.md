@@ -4,6 +4,7 @@ tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
+stake: 28892754081175936
 ---
 two primitives — [[nodes]] and [[links]] — and everything else emerges
 

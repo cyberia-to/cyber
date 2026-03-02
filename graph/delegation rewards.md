@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11610020910356280
 ---
 in a [[proof of stake]] [[consensus]]
 

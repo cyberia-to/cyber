@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 14042647863358774
 ---
 feature of [[go-cyber]]
 

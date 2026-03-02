@@ -3,6 +3,7 @@ alias: consensus tokens
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 6974336104220730
 ---
 [[tokens]] necessary to maintain [[consensus]] of [[vimputer]]
 

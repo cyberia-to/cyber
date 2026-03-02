@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 9809268360893064
 ---
 nitrogen-fixing plants are species capable of converting atmospheric nitrogen (n₂)
 

@@ -3,6 +3,7 @@ alias: lawn grass
 tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
+stake: 7115299586596703
 ---
 high trafic more sun
 

@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 7656778360167897
 ---
 
 b-pinene is a naturally occurring organic compound found in the essential oils of many plants, particularly coniferous trees such as pine. it belongs to the class of compounds known as [[monoterpenes]]. here is some detailed information about b-pinene:

@@ -2,6 +2,7 @@
 tags: tech
 crystal-type: entity
 crystal-domain: materials
+stake: 5871240916738914
 ---
 - recipe for extreme longevity concrete with high thermal resistance
 

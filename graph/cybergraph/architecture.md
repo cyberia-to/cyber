@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: observed
 crystal-domain: cyber
+stake: 3047496238032928
 ---
 architecture and capabilities of the [[cybergraph]]
 

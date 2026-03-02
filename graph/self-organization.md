@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 11953703305482460
 ---
 the ability of a system to structure itself without external control
 

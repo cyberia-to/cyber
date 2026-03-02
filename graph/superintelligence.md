@@ -4,6 +4,7 @@ tags: aos, cyber
 alias: asi, singleton, collective ai
 crystal-type: entity
 crystal-domain: cyber
+stake: 28514898720625276
 ---
 computer that is smarter than all humans combined
 

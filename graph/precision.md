@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: measure
 crystal-domain: cybics
+stake: 3310628071801410
 ---
 inverse variance of a prediction error — how confident an agent is about a particular signal
 

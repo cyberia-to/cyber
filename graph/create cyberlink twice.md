@@ -3,6 +3,7 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
+stake: 11846302557005530
 ---
 in current [[go-cyber]] implementation there is one property
 

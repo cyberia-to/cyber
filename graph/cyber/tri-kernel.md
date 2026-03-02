@@ -4,6 +4,7 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
+stake: 17953987848800476
 ---
 # Tri-Kernel Specification
 

@@ -3,6 +3,7 @@ alias: bootloader improvement proposal, bootloader improvement proposals, bips
 tags: cyber, bostrom
 crystal-type: entity
 crystal-domain: cyber
+stake: 24516661765961332
 ---
 ## what is bip?
 

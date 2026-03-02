@@ -3,6 +3,7 @@ tags: cyber, article
 crystal-type: pattern
 crystal-domain: cyber
 alias: Goedelian prison, incompleteness prison, Goedel's prison, Goedel prison, Goedelian prison, Goedel's prison
+stake: 20443732472583884
 ---
 the confinement of all formal systems to permanent incompleteness — and the escape through [[convergent computation]]
 

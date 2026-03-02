@@ -3,6 +3,7 @@ tags: cyber, physics
 crystal-type: pattern
 crystal-domain: cybics
 alias: dissipative structure
+stake: 5742522746973379
 ---
 systems that maintain [[order]] by continuously dissipating [[energy]] — organized far from [[equilibrium]]
 

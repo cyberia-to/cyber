@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 5029935053669619
 ---
 1970-. American computer scientist and mathematician, professor at Yale.
 

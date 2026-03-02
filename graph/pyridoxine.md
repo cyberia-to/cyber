@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8088618869668893
 ---
 alias: pyridoxine, vitamin b6
 

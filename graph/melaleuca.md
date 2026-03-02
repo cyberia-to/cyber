@@ -5,6 +5,7 @@ crystal-domain: biology
 scalable: "true"
 wood: "yes"
 grow-speed: "3"
+stake: 5096653700450743
 ---
 selected
 

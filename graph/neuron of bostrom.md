@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 22352780776761340
 ---
 [[ask]] [[chatgpt]]
 

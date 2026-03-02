@@ -3,6 +3,7 @@ alias: collective intelligence factor
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
+stake: 13665402734333556
 ---
 measurable group-level intelligence — discovered by Woolley et al. (2010)
 

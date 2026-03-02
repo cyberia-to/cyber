@@ -2,6 +2,7 @@
 tags: genus
 crystal-type: entity
 crystal-domain: biology
+stake: 4636132309254204
 ---
 [[hibiscus rosa-sinensis]]
 

@@ -2,6 +2,7 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
+stake: 5360273719439575
 ---
 device converting electric signals to electromagnetic (radio) waves and back
 

@@ -2,6 +2,7 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
+stake: 8249719992384290
 ---
 alias: palmitic acid
 

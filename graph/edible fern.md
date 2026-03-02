@@ -2,6 +2,7 @@
 tags: kitchen/menu
 crystal-type: process
 crystal-domain: agriculture
+stake: 5040675128517311
 ---
 ### 🧾 🌿 steamed or stir-fried edible fern
 

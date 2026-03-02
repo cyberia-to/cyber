@@ -2,6 +2,7 @@
 tags: tech
 crystal-type: entity
 crystal-domain: materials
+stake: 5258161644183098
 ---
 the idea is to create modular, but simple architecture for cubic autonomous building
 

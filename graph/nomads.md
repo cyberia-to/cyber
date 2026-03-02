@@ -2,6 +2,7 @@
 tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4752483120104213
 ---
 # From Urban Survival to Forest Arrival
 

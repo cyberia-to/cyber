@@ -2,6 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
+stake: 5016509960110002
 ---
 1949-. Taiwanese-American mathematician, professor at UC San Diego.
 

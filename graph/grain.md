@@ -2,6 +2,7 @@
 tags: food
 crystal-type: entity
 crystal-domain: agriculture
+stake: 4837508712648450
 ---
 cereal [[crops]]: wheat, rice, corn, barley, oats, sorghum, millet
 

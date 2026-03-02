@@ -3,6 +3,7 @@ tags: geography
 alias: continents
 crystal-type: entity
 crystal-domain: geography
+stake: 7256263068972675
 ---
 a major continuous landmass on [[Earth]]
 

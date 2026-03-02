@@ -6,6 +6,7 @@ tags: cyber, menu, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
+stake: 38554427777116608
 ---
 the protocol for planetary [[superintelligence]]. [[manifesto]]
 

@@ -3,6 +3,7 @@ icon: ⛑
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
+stake: 5168661020452321
 ---
 framework for understanding [[information]], [[knowledge]], and [[intelligence]]
 

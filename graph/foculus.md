@@ -3,6 +3,7 @@ tags: article, cip
 crystal-type: process
 crystal-domain: cyber
 status: draft
+stake: 23432890576785020
 ---
 # foculus consensus
 

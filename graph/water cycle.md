@@ -2,6 +2,7 @@
 tags: geography, pattern
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 3233738899596334
 ---
 continuous movement of [[water]] through Earth's systems
 

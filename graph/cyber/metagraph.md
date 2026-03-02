@@ -3,6 +3,7 @@ tags: cyber
 alias: cyber metagraph
 crystal-type: entity
 crystal-domain: cyber
+stake: 25111637503262512
 ---
 the [[metagraph]] of [[cyber]] — the multi-scale view of the protocol's knowledge architecture
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
+stake: 3844946795474143
 ---
 mental mechanisms by which [[neurons]] acquire, interpret, and apply information in [[social]] contexts
 

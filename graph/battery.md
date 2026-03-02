@@ -2,6 +2,7 @@
 tags: technology, physics, energy
 crystal-type: entity
 crystal-domain: physics
+stake: 5801674522839083
 ---
 device storing chemical [[energy]] and converting it to electrical energy on demand
 

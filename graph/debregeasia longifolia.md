@@ -9,6 +9,7 @@ margin: low
 autonomy: support
 wood: "yes"
 grow-speed: "5"
+stake: 10134725174459522
 ---
 ![image](https://ipfs.io/ipfs/QmPTsuUveBovcEgX9Feee9sVqb6La2b5xCU4J4Jx1t5mvo)
 

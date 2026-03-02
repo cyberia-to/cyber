@@ -9,6 +9,7 @@ market: ironwoods
 supply: next-month
 wood: "yes"
 grow-speed: "1"
+stake: 7637657772370867
 ---
 [[high margin]]
 

@@ -8,6 +8,7 @@ market: resins
 supply: next-month
 wood: "yes"
 grow-speed: "4"
+stake: 7549784432707924
 ---
 [[high margin]]
 

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 5566938796054275
 ---
 the job: operational manager for [[rockets estate]]
 

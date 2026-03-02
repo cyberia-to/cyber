@@ -3,6 +3,7 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 query-table: "true"
+stake: 14203748986074172
 ---
 #+BEGIN_QUERY
 {:title "TODO tasks"

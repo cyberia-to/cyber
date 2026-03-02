@@ -2,6 +2,7 @@
 tags: cyber, cryptographic proofs
 crystal-type: process
 crystal-domain: computer science
+stake: 5096653700450742
 ---
 technique where instead of fully verifying a [[cryptographic proof]], you absorb it into an [[accumulator]]
 

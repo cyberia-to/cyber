@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 16432314516970496
 ---
 concept used in distributed systems to provide a way of ordering events without relying on synchronized physical clocks
 

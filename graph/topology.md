@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: pattern
 crystal-domain: mathematics
+stake: 2934725452132150
 ---
 
 The study of properties of [[space]] preserved under continuous deformation (stretching, bending, twisting).

@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4846458775021527
 ---
 - #+BEGIN_QUERY
   {

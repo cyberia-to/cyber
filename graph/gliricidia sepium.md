@@ -9,6 +9,7 @@ grow-speed: "4"
 wood-density: "500"
 nitrogener: "200"
 supply: next-month
+stake: 7520493319486942
 ---
 - ![image.png](https://ipfs.io/ipfs/QmX5QKd9BMRxgB6oik8ijcXfktTZrFdiUd4vT8USqU4Mk8)
 -

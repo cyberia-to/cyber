@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 4806183494342678
 ---
 how does the winner will be chosen?
 

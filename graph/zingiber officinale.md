@@ -5,6 +5,7 @@ crystal-domain: biology
 scalable: "true"
 alias: zingiber, ginger
 market: rhizomes
+stake: 7505847762876452
 ---
 [[high margin]] [[rhizome]] for [[health]]
 

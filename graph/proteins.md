@@ -3,6 +3,7 @@ tags: cybernomics
 alias: protein
 crystal-type: entity
 crystal-domain: economics
+stake: 21332473666230488
 ---
 system synergy potential (micro-ecosystem stacking)
 

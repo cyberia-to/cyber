@@ -3,6 +3,7 @@ alias: pirates of cyber states
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+stake: 9491541146648808
 ---
 the residency is dedicated to the creation of [[cyberia]]
 

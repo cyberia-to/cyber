@@ -3,6 +3,7 @@ alias: tomato
 tags: species
 crystal-type: entity
 crystal-domain: biology
+stake: 6806522434725525
 ---
 longevity:: year
 

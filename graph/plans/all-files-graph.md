@@ -1,3 +1,6 @@
+---
+stake: 1346577566131223
+---
 # Plan: All-Files Graph — Every File Is a Node
 
 ## Context

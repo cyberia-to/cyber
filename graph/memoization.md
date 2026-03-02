@@ -3,6 +3,7 @@ alias: memomized
 tags: cyber
 crystal-type: process
 crystal-domain: computer science
+stake: 5563358771105045
 ---
 technique where the results of computations are stored
 

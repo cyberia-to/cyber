@@ -5,6 +5,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
+stake: 36050037596722712
 ---
 something greater than any [[neuron]] emerges when many observe the same [[cybergraph]] and link. an autonomous thoughtform born from [[collective]] focused [[attention]] — the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual
 

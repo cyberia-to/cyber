@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 13800996179285678
 ---
 [rationale and details](https://github.com/Snedashkovsky/cybergift/tree/main)
 

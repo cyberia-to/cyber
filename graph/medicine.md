@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+stake: 9236464369016096
 ---
 [[adenium obesum]]
 

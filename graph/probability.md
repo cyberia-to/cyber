@@ -2,6 +2,7 @@
 tags: mathematics
 crystal-type: measure
 crystal-domain: mathematics
+stake: 2945465526979843
 ---
 
 A measure of uncertainty over events, formalized as a function mapping outcomes to values in [0, 1].

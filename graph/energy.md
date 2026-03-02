@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+stake: 21131097262836240
 ---
 fundamental concept in [[physics]] and [[information]]
 

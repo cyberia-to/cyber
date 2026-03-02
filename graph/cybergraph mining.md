@@ -3,6 +3,7 @@ alias: knowledge mining
 tags: cyber
 crystal-type: process
 crystal-domain: biology
+stake: 6052032176675083
 ---
 [[aos]] game mechanics
 

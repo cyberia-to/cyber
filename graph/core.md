@@ -2,6 +2,7 @@
 tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
+stake: 9710004032755294
 ---
 the semantic core of [[cyber]] — the irreducible set of concepts that explain the protocol
 

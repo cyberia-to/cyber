@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: trident quantum computing, quantum-native trident, trident-quantum-computing
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # [[trident]] and [[quantum computing]]: Deep Structural Necessity
 

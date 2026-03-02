@@ -4,6 +4,7 @@ tags: cyber, bip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
+stake: 17867579064798580
 ---
 experimental [[learning incentives]] layer for [[cyber]] using [[cosmwasm]] [[progs]]
 

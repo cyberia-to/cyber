@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
+stake: 12619587946039436
 ---
 formal foundation: computation = convergence to equilibrium
 

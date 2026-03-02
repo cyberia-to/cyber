@@ -2,6 +2,7 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: computer science
+stake: 4734582995358057
 ---
 systems programming [[language]] with ownership-based memory safety and zero-cost abstractions
 

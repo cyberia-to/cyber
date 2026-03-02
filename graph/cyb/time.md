@@ -2,6 +2,7 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+stake: 14928704038293460
 ---
 [[log]] becomes part of time
 

@@ -3,6 +3,7 @@ tags: time, biology
 alias: extinction events
 crystal-type: process
 crystal-domain: biology
+stake: 6490910689769451
 ---
 rapid, widespread loss of species across multiple taxa and habitats
 

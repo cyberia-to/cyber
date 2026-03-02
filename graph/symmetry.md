@@ -3,6 +3,7 @@ alias: balanced proportion
 tags: cyber
 crystal-type: property
 crystal-domain: mathematics
+stake: 1378757108572606
 ---
 manifestation of order and equilibrium
 

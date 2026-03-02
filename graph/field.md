@@ -3,6 +3,7 @@ tags: physics
 alias: fields
 crystal-type: entity
 crystal-domain: physics
+stake: 7356951270669799
 ---
 A physical quantity assigned to every point in [[spacetime]], mediating [[forces]] and interactions.
 

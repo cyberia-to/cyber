@@ -3,6 +3,7 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cybics
 alias: FEP
+stake: 5175373567232129
 ---
 any system that persists must minimize variational [[free energy]] — or equivalently, maximize the evidence for its own generative model of the world
 

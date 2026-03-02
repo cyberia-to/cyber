@@ -3,6 +3,7 @@ tags: trident, cyber, article
 alias: trident thesis, ZK+AI+Quantum, trident trinity, trident-trinity-zk-ai-quantum
 crystal-type: article
 crystal-domain: cyber
+stake: 9519611796818916
 ---
 # The [[trident]] Thesis: One Language for Quantum, AI, and Zero-Knowledge
 

@@ -4,6 +4,7 @@ alias: cybernode, bostrom infrastructure
 tags: bostrom, infrastructure, cybernode
 crystal-type: entity
 crystal-domain: cyber
+stake: 36126926768927784
 ---
 - # Bostrom Infrastructure
 - The Bostrom network is supported by a decentralized infrastructure operated by the [[cyberia]] team and community validators. This documentation covers the public infrastructure available to developers and users.
