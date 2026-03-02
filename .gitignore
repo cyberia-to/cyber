@@ -7,6 +7,7 @@ media/
 
 # Build outputs
 /build
+/public
 /node_modules
 
 # Claude Code
