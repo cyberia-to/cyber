@@ -1590,6 +1590,7 @@ body:has(.fullscreen-viz) .main-content {
     font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.02em;
+    color: #666;
 }
 
 .col-gravity {
