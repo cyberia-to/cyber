@@ -1551,6 +1551,14 @@ body:has(.fullscreen-viz) .main-content {
     transition: opacity 0.15s ease;
 }
 
+.col-size {
+    width: 5rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    opacity: 0.35;
+    font-size: 0.8rem;
+}
+
 .col-pagerank {
     width: 4rem;
     text-align: right;
