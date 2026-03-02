@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://127.0.0.1:8888/</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:8888/tags/</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:8888/blog/</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:8888/pages/</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:8888/graph/</loc>
+  </url>
+  <url>
+    <loc>http://127.0.0.1:8888/files/</loc>
+  </url>
+</urlset>
