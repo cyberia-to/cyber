@@ -1560,11 +1560,17 @@ body:has(.fullscreen-viz) .main-content {
     font-variant-numeric: tabular-nums;
     font-size: 0.8rem;
     opacity: 0.35;
+    padding-left: 0.3rem !important;
+    padding-right: 0.3rem !important;
 }
 
 .col-pagerank {
     color: var(--color-primary);
     opacity: 0.4;
+}
+
+.col-links {
+    padding-right: 0.5rem !important;
 }
 
 .pages-table .col-title {
