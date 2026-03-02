@@ -6,13 +6,13 @@ alias: polynomial commitments, polynomial commitment scheme, WHIR polynomial com
 ---
 # polynomial commitment
 
-a cryptographic primitive that allows a prover to commit to a polynomial and later prove evaluations of that polynomial at specific points. in [[cyber]], polynomial commitments use [[WHIR]] over the [[Goldilocks field]] — no trusted setup, no pairing-based curves, hash-only security, sub-millisecond verification.
+a cryptographic primitive that allows a prover to commit to a polynomial and later prove evaluations at specific points. in [[cyber]], polynomial commitments use [[WHIR]] over the [[Goldilocks field]] — no trusted setup, no pairing-based curves, hash-only security, sub-millisecond verification. WHIR serves as both a univariate and multilinear PCS.
 
 ## the primitive
 
 ```
 COMMIT:   C = WHIR_commit(P)
-          commit to polynomial P(x) of degree ≤ d
+          commit to polynomial P
           C = Merkle root of evaluation table
 
 OPEN:     proof = WHIR_open(P, z)
@@ -21,6 +21,12 @@ OPEN:     proof = WHIR_open(P, z)
 VERIFY:   WHIR_verify(C, z, v, proof) → accept/reject
           check the evaluation proof against the commitment
 ```
+
+WHIR operates in two modes:
+- univariate: P(x) of degree ≤ d, used for [[EdgeSet]] membership proofs
+- multilinear: P(x₁, ..., x_k) with degree ≤ 1 per variable, used for [[STARK]] trace commitments
+
+in the multilinear mode, WHIR commits the entire [[nox]] execution trace as a single polynomial. the [[SuperSpartan]] IOP reduces all AIR constraint checks to one evaluation at one random point, which WHIR opens. see [[STARK]] for the full pipeline.
 
 ## why polynomial commitments
 
@@ -71,4 +77,4 @@ EdgeSet for neuron N:
 
 [[cyber]] uses polynomial commitments everywhere rather than mixing hash-based structures with algebraic structures. one primitive means one security analysis, one implementation, one mental model. the same [[WHIR]]-based machinery that makes UTXO proofs cheap (~1,000 constraints) also handles graph completeness proofs.
 
-see [[WHIR]] for the low-degree testing protocol, [[EdgeSet]] for edge membership proofs, [[NMT]] for structural completeness, [[BBG]] for the full graph architecture, [[LogUp]] for cross-index consistency
+see [[WHIR]] for the low-degree testing protocol, [[STARK]] for the multilinear STARK pipeline, [[EdgeSet]] for edge membership proofs, [[NMT]] for structural completeness, [[BBG]] for the full graph architecture, [[LogUp]] for cross-index consistency

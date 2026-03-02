@@ -57,17 +57,35 @@ every proof in the table is a [[STARK]]. no SNARKs, no trusted setup, no curves.
 
 ## the proof system
 
-[[nox]] uses STARKs (Scalable Transparent Arguments of Knowledge). the choice follows from alignment with nox's design: no trusted setup, [[Hemera]]-only security (post-quantum), native compatibility with [[Goldilocks field]] arithmetic.
+[[cyber]] uses multilinear [[STARKs]] via the Whirlaway architecture: [[SuperSpartan]] IOP + [[WHIR]] as the multilinear polynomial commitment scheme. no trusted setup, [[Hemera]]-only security (post-quantum), native [[Goldilocks field]] arithmetic.
 
 ```
-Property          │ SNARK         │ STARK
-──────────────────┼───────────────┼─────────────────
+Property          │ SNARK         │ STARK (multilinear)
+──────────────────┼───────────────┼─────────────────────
 Trusted setup     │ Required      │ NOT REQUIRED
 Quantum resistant │ No            │ Yes
-Proof size        │ ~200 bytes    │ ~100-200 KB
+Proof size        │ ~200 bytes    │ ~60-157 KB
 Security basis    │ Discrete log  │ Hash only
 Field compatible  │ Specific      │ Any (Goldilocks)
+Prover (constr.)  │ O(N log N)    │ O(N) linear
+Verifier          │ O(1) pairing  │ O(log² N) hash
 ```
+
+### the pipeline
+
+```
+nox execution → trace (2ⁿ steps × registers)
+  → encode as ONE multilinear polynomial f(x₁, ..., x_{n+m})
+  → WHIR_commit(f) = C
+  → SuperSpartan sumcheck: verify AIR constraints hold for all rows
+  → reduces to: evaluate f at ONE random point r
+  → WHIR_open(f, r) = (v, π)
+  → verifier: check sumcheck transcript + WHIR_verify(C, r, v, π)
+```
+
+the [[nox]] VM's sixteen reduction patterns map to AIR transition constraints — each pattern becomes a polynomial equation relating register state before and after a reduction step. [[SuperSpartan]] handles AIR natively via CCS (Customizable Constraint Systems), with linear-time prover and logarithmic-time verifier.
+
+see [[STARK]] for the full architecture (AIR, CCS, SuperSpartan, Whirlaway).
 
 ### self-verification
 
@@ -77,8 +95,8 @@ THEOREM: The STARK verifier for nox is expressible as a nox program.
 STARK verification requires:
   1. Field arithmetic (patterns 5, 7, 8)
   2. Hash computation (pattern 15)
-  3. Polynomial evaluation (patterns + recursion)
-  4. Merkle verification (pattern 15 + conditionals)
+  3. Sumcheck verification (patterns 5, 7, 9 — field ops only)
+  4. WHIR opening verification (pattern 15 + conditionals + poly_eval)
 
 All are nox-native. QED.
 
@@ -192,7 +210,7 @@ state root update            │ ~9,600       │ ~1,000
 completeness (nothing hidden)│ impossible   │ ~10,000
 ```
 
-polynomial commitments use [[WHIR]] (the third generation of [[FRI]]) for low-degree testing. WHIR proofs demonstrate that a committed polynomial has bounded degree — the foundation for all [[BBG]] operations.
+polynomial commitments use [[WHIR]] as a multilinear PCS. WHIR proofs demonstrate that a committed polynomial has bounded degree and open evaluations at specific points — the foundation for all [[BBG]] operations and for the [[STARK|multilinear STARK]] pipeline itself.
 
 ## storage and availability proofs
 
@@ -301,14 +319,17 @@ a [[cyberank]] distribution π* is a simulation-proof of collective [[relevance]
 │  recursive          proof aggregation, composition       │
 │                     O(1) verification for O(N) proofs    │
 ├─────────────────────────────────────────────────────────┤
-│  proof system       STARK (transparent, post-quantum)    │
-│                     ~70,000 constraints with jets        │
+│  IOP               SuperSpartan (CCS/AIR via sumcheck)  │
+│                     linear-time prover, log-time verifier│
+├─────────────────────────────────────────────────────────┤
+│  PCS               WHIR (multilinear polynomial commit)  │
+│                     290 μs verify, ~157 KiB proofs       │
 ├─────────────────────────────────────────────────────────┤
 │  primitives         Hemera (hash), nox (VM),             │
 │                     Goldilocks field (arithmetic)        │
 └─────────────────────────────────────────────────────────┘
 ```
 
-one hash. one VM. one field. one proof system. every proof in [[cyber]] — from a single [[cyberlink]] to a chained delivery receipt to a trillion-parameter neural network inference — reduces to: run a [[nox]] program, produce a [[STARK]], verify with [[Hemera]].
+one hash. one VM. one field. one IOP. one PCS. every proof in [[cyber]] — from a single [[cyberlink]] to a chained delivery receipt to a trillion-parameter neural network inference — reduces to: run a [[nox]] program, commit trace via [[WHIR]], verify constraints via [[sumcheck]], produce a [[STARK]].
 
 see [[cyber/identity]] for authentication and anonymity, [[cyber/communication]] for delivery proofs, [[BBG]] for polynomial commitment architecture, [[trident]] for verifiable AI, [[cybics]] for proof by simulation, [[cyber/security]] for formal guarantees

@@ -259,7 +259,7 @@ reduce(s, [16 constraint], f) =
 PROVER_INJECT: → Noun
   Source:   external to the VM. prover-only.
   Verifier: NEVER executes hint directly.
-             checks constraint satisfaction via STARK algebraic trace.
+             checks constraint satisfaction via STARK (multilinear trace + sumcheck).
   Cost:     1 + cost(constraint). witness search is external.
   Memo:     NOT memoizable (different provers, different valid witnesses).
 ```
@@ -279,7 +279,7 @@ what `hint` enables:
 
 jets are optimized built-in implementations of operations that CAN be expressed as pure Layer 1 pattern compositions but would be prohibitively expensive. every jet has an equivalent Layer 1 program. the jet produces identical output on all inputs. if a jet is removed, the system remains correct — only slower. jets are runtime-recognized optimizations, not separate opcodes (the Nock model)
 
-five jets. selected by analyzing the [[STARK]] verifier bottleneck: recursive proof composition requires verifying a proof inside a proof. the unoptimized verifier costs ~600,000 Layer 1 patterns. with jets, ~70,000 — making recursion practical
+five jets. selected by analyzing the [[STARK|multilinear STARK]] verifier bottleneck: recursive proof composition requires verifying a proof inside a proof. the unoptimized verifier costs ~600,000 Layer 1 patterns. with jets, ~70,000 — making recursion practical. the nox execution trace maps to AIR transition constraints and is committed as a single multilinear polynomial via [[WHIR]] — see [[STARK]] for the full pipeline
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗

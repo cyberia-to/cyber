@@ -90,15 +90,21 @@ all three are by the same team: Arnon, Chiesa, Fenzi, Yogev. each generation kee
 
 ## use in cyber
 
-[[cyber]] uses WHIR. sub-millisecond verification makes recursive proof composition cheaper: each recursive step (verify a proof inside a proof) runs the verifier as a [[nox]] program. faster verification = fewer constraints per recursive step = cheaper aggregation.
+[[cyber]] uses WHIR as the polynomial commitment scheme inside a [[STARK|multilinear STARK]] (Whirlaway architecture: [[SuperSpartan]] IOP + WHIR PCS).
+
+WHIR's dual nature is the reason this works. as a multilinear PCS, WHIR commits to the entire [[nox]] execution trace encoded as a single multilinear polynomial. the [[SuperSpartan]] IOP verifies AIR constraints via [[sumcheck]], reducing all constraint checks to one evaluation at one random point. WHIR opens the commitment at that point. one commitment, one opening, one proof.
 
 ```
 WHIR in cyber:
-  polynomial commitments:  WHIR_commit / WHIR_open / WHIR_verify
-  STARK verification:      WHIR as the low-degree test
-  EdgeSet membership:      WHIR evaluation proofs
-  proof size:              ~60-120 KB
+  role:                    multilinear PCS for STARK proofs
+  API:                     WHIR_commit / WHIR_open / WHIR_verify
+  trace commitment:        entire nox execution trace → one multilinear polynomial
+  constraint verification: SuperSpartan sumcheck → reduces to one WHIR evaluation
+  EdgeSet membership:      WHIR evaluation proofs (polynomial commitments in BBG)
+  proof size:              ~60-157 KB
   verification:            ~1.0 ms (sub-millisecond at 100-bit: 290 μs)
 ```
 
-see [[FRI]] for the baseline protocol, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system, [[Goldilocks field]] for the arithmetic foundation
+sub-millisecond verification makes recursive proof composition practical: each recursive step (verify a proof inside a proof) runs the WHIR verifier as a [[nox]] program. at ~70,000 constraints per recursion level (with jets), deep recursion trees become feasible — O(1) on-chain verification for O(N) transactions.
+
+see [[FRI]] for the baseline protocol, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system and Whirlaway architecture, [[Goldilocks field]] for the arithmetic foundation
