@@ -44,16 +44,18 @@ This is the key property: the system closes on itself. No trusted external verif
 ## Verifier Complexity
 
 ```
-STARK VERIFIER COMPONENTS:
-  1. Parse proof: ~1,000 patterns
-  2. Fiat-Shamir challenges: ~30,000 patterns
-  3. Merkle verification: ~500,000 patterns
-  4. Constraint evaluation: ~10,000 patterns
-  5. FRI verification: ~50,000 patterns
+STARK VERIFIER COMPONENTS       │ Layer 1 only │ With Layer 3 jets
+────────────────────────────────┼──────────────┼──────────────────
+1. Parse proof                  │     ~1,000   │    ~1,000
+2. Fiat-Shamir challenges       │    ~30,000   │    ~5,000  (hash jet)
+3. Merkle verification          │   ~500,000   │   ~50,000  (merkle_verify jet)
+4. Constraint evaluation        │    ~10,000   │    ~3,000  (poly_eval jet)
+5. FRI verification             │    ~50,000   │   ~10,000  (fri_fold + ntt jets)
+────────────────────────────────┼──────────────┼──────────────────
+TOTAL                           │   ~600,000   │   ~70,000
 
-TOTAL: ~600,000 pattern applications
-
-This cost is CONSTANT regardless of what was proven.
+~8.5× reduction. This cost is CONSTANT regardless of what was proven.
+Layer 3 jets make recursive composition practical.
 ```
 
 ## Recursive Composition

@@ -165,7 +165,7 @@ Hash-universal identity. Identity equals hash. Two values are the same if and on
 
 nox's execution substrate operates on three named layers:
 
-- nox — the computation model (16 patterns, reduction semantics)
+- nox — the computation model (three-layer instruction set: 16 deterministic patterns + hint for ZK witness injection + 5 jets for recursive STARK verification)
 - Cybergraph — the data model (particles, neurons, cyberlinks)
 - BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 
@@ -256,7 +256,7 @@ Verification is native: every state transition, every focus update, every cyberl
 
 Privacy is structural: zero-knowledge proofs allow neurons to contribute knowledge without revealing their identity or the content of their assertions. The network learns from encrypted inputs. Collective intelligence without collective surveillance.
 
-And because nox's sixteen patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but *compute on it*. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
+And because nox's sixteen deterministic patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but compute on it. The hint instruction (Layer 2) adds non-deterministic witness injection for zero-knowledge proofs, and five jets (Layer 3) make recursive STARK verification practical. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
 
 ---
 

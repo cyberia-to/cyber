@@ -3,11 +3,38 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-alias: nox vm, nox patterns, reduction patterns, sixteen patterns, cyber/patterns
+alias: nox vm, nox patterns, reduction patterns, sixteen patterns, cyber/patterns, three-layer architecture
 ---
 # nox virtual machine
 
-the execution model of [[nox]]: sixteen orthogonal reduction patterns over Goldilocks field elements, a three-type value tower, deterministic cost model, confluent parallel reduction, and global memoization
+three-layer instruction set over [[Goldilocks field]] elements: sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), and five jets for efficient recursive [[STARK]] verification (Layer 3)
+
+```
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                    NOX THREE-LAYER ARCHITECTURE                           ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║                                                                           ║
+║  LAYER 1: DETERMINISTIC PATTERNS (16)                                     ║
+║  Structural (5): axis, quote, compose, cons, branch                       ║
+║  Field arith (6): add, sub, mul, inv, eq, lt                              ║
+║  Bitwise (4): xor, and, not, shl                                          ║
+║  Hash (1): hash                                                           ║
+║  → confluent, cost-deterministic, memoizable, parallel-safe               ║
+║  → executor: both prover and verifier                                     ║
+║                                                                           ║
+║  LAYER 2: NON-DETERMINISTIC INPUT (1)                                     ║
+║  hint — prover injects witness; Layer 1 constraints verify                ║
+║  → NOT confluent (multiple valid witnesses), sound                        ║
+║  → executor: prover only. verifier checks constraints via STARK.          ║
+║                                                                           ║
+║  LAYER 3: JETS (5)                                                        ║
+║  hash, poly_eval, merkle_verify, fri_fold, ntt                            ║
+║  → observationally equivalent to Layer 1 compositions                     ║
+║  → enables practical recursive STARK verification                         ║
+║  → executor: both prover and verifier (optimized path)                    ║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+```
 
 ## field
 
@@ -70,11 +97,15 @@ Result = (Noun, Focus')     — success with remaining focus
        | ⊥_unavailable      — referenced content not retrievable
 ```
 
-## sixteen patterns
+---
+
+## Layer 1: sixteen deterministic patterns
+
+the deterministic core. both prover and verifier execute these identically. confluent by Huet-Levy (1980): orthogonal rewrite system, any evaluation order yields the same result
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
-║                       NOX REDUCTION PATTERNS                              ║
+║                       LAYER 1: REDUCTION PATTERNS                         ║
 ╠═══════════════════════════════════════════════════════════════════════════╣
 ║  STRUCTURAL (5)              FIELD ARITHMETIC (6)                         ║
 ║  0: axis — navigate          5: add — (a + b) mod p                       ║
@@ -90,7 +121,7 @@ Result = (Noun, Focus')     — success with remaining focus
 ╚═══════════════════════════════════════════════════════════════════════════╝
 ```
 
-## structural patterns
+### structural patterns
 
 ```
 PATTERN 0: AXIS
@@ -137,7 +168,7 @@ reduce(s, [4 [test [yes no]]], f) =
 CRITICAL: Only ONE branch evaluated. Prevents infinite recursion DoS.
 ```
 
-## arithmetic patterns
+### arithmetic patterns
 
 ```
 PATTERN 5: ADD
@@ -174,7 +205,7 @@ PATTERN 10: LT
 reduce(s, [10 [a b]], f) → (0 if v_a < v_b else 1, f2)
 ```
 
-## bitwise patterns
+### bitwise patterns
 
 ```
 Valid on word type [0, 2^64). Bitwise on hash → ⊥_error.
@@ -192,7 +223,7 @@ PATTERN 14: SHL
 reduce(s, [14 [a n]], f) → ((v_a << v_n) mod 2^64, f2)
 ```
 
-## hash pattern
+### hash pattern
 
 ```
 PATTERN 15: HASH
@@ -202,37 +233,164 @@ reduce(s, [15 a], f) →
 
 Result is 4-element hash (256 bits).
 
-NOTE: Hash CAN be expressed as pure patterns (~2800 field ops for Poseidon).
-Pattern 15 is OPTIMIZATION. Jets accelerate; semantics unchanged.
+Hash CAN be expressed as pure Layer 1 patterns (~2800 field ops for Poseidon).
+Pattern 15 is also the first Layer 3 jet. Jets accelerate; semantics unchanged.
 ```
+
+---
+
+## Layer 2: non-deterministic input
+
+one instruction: `hint`. the prover injects a witness value from outside the VM; Layer 1 constraints verify it. this is the mechanism that makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it
+
+`hint` is separate from Layer 1 because it breaks [[confluence]]. two different provers may inject different witnesses that both satisfy the same constraints. Layer 1 alone is deterministic and confluent. Layer 2 adds the non-determinism required for ZK.
+
+[[trident]]'s `divine()` compiles to [[nox]]'s `hint`. in quantum compilation, `hint` maps to a quantum oracle query — Grover's algorithm turns $O(N)$ witness search into $O(\sqrt{N})$
+
+```
+PATTERN 16: HINT
+reduce(s, [16 constraint], f) =
+  let (check, f1) = reduce(s, constraint, f - 1)
+  let w = PROVER_INJECT()
+  assert check(w) = 0            — Layer 1 verifies the constraint
+  (w, f1)
+
+PROVER_INJECT: → Noun
+  Source:   external to the VM. prover-only.
+  Verifier: NEVER executes hint directly.
+             checks constraint satisfaction via STARK algebraic trace.
+  Cost:     1 + cost(constraint). witness search is external.
+  Memo:     NOT memoizable (different provers, different valid witnesses).
+```
+
+what `hint` enables:
+
+| use case | how |
+|----------|-----|
+| ZK proofs | private witness enters computation without verifier knowing it |
+| private model inference | neural network weights injected via `hint`, [[STARK]] proves inference was correct without revealing weights |
+| optimization search | prover finds optimal solution externally, `hint` injects it, constraints verify optimality |
+| quantum oracle | replace `hint` with Grover query — program gains quadratic speedup on witness search |
+
+---
+
+## Layer 3: jets
+
+jets are optimized built-in implementations of operations that CAN be expressed as pure Layer 1 pattern compositions but would be prohibitively expensive. every jet has an equivalent Layer 1 program. the jet produces identical output on all inputs. if a jet is removed, the system remains correct — only slower. jets are runtime-recognized optimizations, not separate opcodes (the Nock model)
+
+five jets. selected by analyzing the [[STARK]] verifier bottleneck: recursive proof composition requires verifying a proof inside a proof. the unoptimized verifier costs ~600,000 Layer 1 patterns. with jets, ~70,000 — making recursion practical
+
+```
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                          LAYER 3: JETS                                    ║
+╠═══════════════════════════════════════════════════════════════════════════╣
+║                                                                           ║
+║  JET 0: HASH                                                              ║
+║  hash(x) → 4 × F_p digest                                                ║
+║  Pure equivalent: ~2,800 field ops (Poseidon2 permutation)                ║
+║  Jet cost: 300                                                            ║
+║  Accelerates: Fiat-Shamir challenges, Merkle tree construction            ║
+║                                                                           ║
+║  JET 1: POLY_EVAL                                                         ║
+║  poly_eval(coeffs, point) → F_p                                           ║
+║  Horner evaluation of degree-N polynomial at a single point               ║
+║  Pure equivalent: ~2N patterns (N muls + N adds)                          ║
+║  Jet cost: N                                                              ║
+║  Accelerates: FRI query verification, constraint evaluation               ║
+║                                                                           ║
+║  JET 2: MERKLE_VERIFY                                                     ║
+║  merkle_verify(root, leaf, path, index) → {0, 1}                         ║
+║  Verify authentication path of depth d                                    ║
+║  Pure equivalent: d × ~310 patterns (hash + conditional per level)        ║
+║  Jet cost: d × 300                                                        ║
+║  Accelerates: STARK proof checking (500K → 50K of verifier cost)          ║
+║                                                                           ║
+║  JET 3: FRI_FOLD                                                          ║
+║  fri_fold(poly_layer, challenge) → poly_layer_next                        ║
+║  One round of FRI folding: split by parity, combine with challenge        ║
+║  Pure equivalent: ~N patterns (N/2 muls + N/2 adds + restructuring)       ║
+║  Jet cost: N/2                                                            ║
+║  Accelerates: FRI verification (log(N) folding rounds)                    ║
+║                                                                           ║
+║  JET 4: NTT                                                               ║
+║  ntt(values, direction) → transformed values                              ║
+║  Number Theoretic Transform (forward or inverse) over F_p                 ║
+║  Pure equivalent: ~2N·log(N) patterns (butterfly operations)              ║
+║  Jet cost: N·log(N)                                                       ║
+║  Accelerates: polynomial multiplication, FRI commitment, proof aggregation║
+║                                                                           ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+```
+
+jet semantic contract: every jet MUST have an equivalent pure Layer 1 expression producing identical output on all inputs. this is verifiable — a test harness compares jet output against pure-pattern output on random inputs. jets are OPTIMIZATION. semantics unchanged.
+
+the five jets map to the four [[Goldilocks field processor]] hardware primitives:
+
+| GFP primitive | jets it accelerates |
+|---------------|---------------------|
+| fma (field multiply-accumulate) | poly_eval (Horner's method = iterated FMA) |
+| ntt (NTT butterfly) | ntt (direct correspondence) |
+| p2r (Poseidon2 round) | hash, merkle_verify (hash-dominated) |
+| lut (lookup table) | activation functions via Layer 1 patterns |
+
+### STARK verifier cost with jets
+
+```
+Component               │ Layer 1 only │ With jets  │ Reduction
+────────────────────────┼──────────────┼────────────┼──────────
+Parse proof             │     ~1,000   │    ~1,000  │  1×
+Fiat-Shamir challenges  │    ~30,000   │    ~5,000  │  6×
+Merkle verification     │   ~500,000   │   ~50,000  │ 10×
+Constraint evaluation   │    ~10,000   │    ~3,000  │  3×
+FRI verification        │    ~50,000   │   ~10,000  │  5×
+────────────────────────┼──────────────┼────────────┼──────────
+TOTAL                   │   ~600,000   │   ~70,000  │ ~8.5×
+```
+
+this ~8.5× reduction makes recursive [[STARK]] composition practical. the recursive depth (how many proof-of-proof levels you can chain) is bounded by verifier cost. at 70,000 patterns per recursion level, deep recursion trees become feasible — $O(1)$ on-chain verification for $O(N)$ transactions
+
+---
 
 ## cost table
 
 ```
-Pattern │ Exec Cost │ STARK Constraints
-────────┼───────────┼───────────────────
-0 axis  │ 1+depth   │ ~depth
-1 quote │ 1         │ 1
-2 comp  │ 2         │ 2
-3 cons  │ 2         │ 2
-4 branch│ 2         │ 2
-5 add   │ 1         │ 1
-6 sub   │ 1         │ 1
-7 mul   │ 1         │ 1
-8 inv   │ 64        │ 1
-9 eq    │ 1         │ 1
-10 lt   │ 1         │ ~64
-11-14   │ 1         │ ~64 each
-15 hash │ 300       │ ~300
+Layer │ Pattern      │ Exec Cost      │ STARK Constraints
+──────┼──────────────┼────────────────┼───────────────────
+  1   │ 0 axis       │ 1 + depth      │ ~depth
+  1   │ 1 quote      │ 1              │ 1
+  1   │ 2 compose    │ 2              │ 2
+  1   │ 3 cons       │ 2              │ 2
+  1   │ 4 branch     │ 2              │ 2
+  1   │ 5 add        │ 1              │ 1
+  1   │ 6 sub        │ 1              │ 1
+  1   │ 7 mul        │ 1              │ 1
+  1   │ 8 inv        │ 64             │ 1
+  1   │ 9 eq         │ 1              │ 1
+  1   │ 10 lt        │ 1              │ ~64
+  1   │ 11-14 bit    │ 1              │ ~64 each
+  2   │ 16 hint      │ 1 + constraint │ constraint rows
+  3   │ hash         │ 300            │ ~300
+  3   │ poly_eval(N) │ N              │ ~N
+  3   │ merkle_v(d)  │ d × 300        │ ~d × 300
+  3   │ fri_fold(N)  │ N/2            │ ~N/2
+  3   │ ntt(N)       │ N·log(N)       │ ~N·log(N)
 ```
 
-cost is deterministic: depends only on syntactic structure, never on runtime values. cache hits reduce work but cost is charged in full — cost is the right to a result, not payment for computation
+Layer 1 cost is deterministic: depends only on syntactic structure, never on runtime values. cache hits reduce work but cost is charged in full — cost is the right to a result, not payment for computation
+
+Layer 2 cost: the constraint evaluation follows Layer 1 cost rules. witness search is external — the VM charges nothing for the prover's work of finding the witness
+
+Layer 3 cost: strictly less than or equal to the equivalent Layer 1 composition. the reduction reflects hardware reality — jets dispatch to optimized code paths or dedicated hardware
 
 ## parallel reduction
 
-the 16 patterns form an orthogonal rewrite system: each has a unique tag, no two overlap, left-hand sides are linear. by Huet-Levy (1980), orthogonal systems are confluent without requiring termination
+Layer 1 patterns form an orthogonal rewrite system: each has a unique tag, no two overlap, left-hand sides are linear. by Huet-Levy (1980), orthogonal systems are confluent without requiring termination
 
-corollary: parallel and sequential reduction yield identical results
+corollary: parallel and sequential reduction yield identical results for Layer 1
+
+Layer 2 (`hint`) breaks confluence intentionally — multiple valid witnesses may satisfy the same constraints. this is the non-determinism that makes ZK possible. soundness is preserved: no invalid witness passes the constraint check
+
+Layer 3 (jets) preserves confluence — jets are observationally equivalent to their Layer 1 expansions
 
 ```
 PATTERN PARALLELISM
@@ -267,6 +425,14 @@ Properties:
 - Universal: Any node can contribute/consume
 - Permanent: Results never change (determinism)
 - Verifiable: Result hash checkable against proof
+
+LAYER SCOPE:
+- Layer 1: fully memoizable (deterministic)
+- Layer 2: NOT memoizable (hint results are prover-specific)
+- Layer 3: fully memoizable (jets are deterministic)
+
+Computations containing hint are excluded from the global cache.
+Pure subexpressions within a hint-containing computation remain memoizable.
 ```
 
 ## test vectors
@@ -287,10 +453,14 @@ Simple addition: 4 patterns
   [5 [[0 2] [0 3]]]
   Cost: 1 (add) + 2 (axis) + overhead = ~4
 
-Poseidon hash: ~300 patterns
+Poseidon hash: 300 (jet) or ~2800 (pure Layer 1)
   [15 [0 1]]
-  Cost: 300
+  Jet cost: 300
 
-Merkle verification (32 levels): ~10,000 patterns
-  32 × (hash + conditional) ≈ 32 × 310
+Merkle verification (32 levels): ~9,600 (jet) or ~10,000 (pure Layer 1)
+  merkle_verify(root, leaf, path, 32)
+  Jet cost: 32 × 300 = 9,600
+
+STARK verifier (one recursion level): ~70,000 (with jets)
+  Without jets: ~600,000 Layer 1 patterns
 ```

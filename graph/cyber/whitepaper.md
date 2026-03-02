@@ -283,9 +283,11 @@ Three types span the computational universe:
 
 Coercion rules enforce type safety. Bitwise operations on hash produce errors. Arithmetic on hash (except equality) produces errors. This three-type tower is the minimal structure needed for a system that computes on field elements, manipulates bits, and addresses content by hash.
 
-### 6.3 Sixteen Reduction Patterns
+### 6.3 Three-Layer Instruction Set
 
-The execution model consists of sixteen orthogonal reduction patterns:
+[[nox]] has a three-layer architecture: sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), and five jets for efficient recursive [[STARK]] verification (Layer 3).
+
+Layer 1 — sixteen deterministic patterns. The core:
 
 Structural (5): axis (navigate), quote (literal), compose (recursion), cons (build cell), branch (conditional).
 
@@ -295,39 +297,50 @@ Bitwise (4): xor, and, not, shl.
 
 Hash (1): structural hash $H(x)$.
 
-Each pattern has a unique tag. No two overlap. Left-hand sides are linear. By Huet-Levy (1980), orthogonal rewrite systems are confluent without requiring termination.
+Each pattern has a unique tag. No two overlap. Left-hand sides are linear. By Huet-Levy (1980), orthogonal rewrite systems are confluent without requiring termination. Parallel and sequential reduction yield identical results.
 
-Corollary: parallel and sequential reduction yield identical results. Patterns 2 (compose) and 3 (cons) enable automatic parallelism — their subexpressions are independent and can be reduced concurrently.
+Layer 2 — one non-deterministic instruction: `hint`. The prover injects a witness value from outside the VM; Layer 1 constraints verify it. This is what makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it. `hint` breaks [[confluence]] intentionally: multiple valid witnesses may satisfy the same constraints. Soundness is preserved. [[Trident]]'s `divine()` compiles to [[nox]]'s `hint`. In quantum compilation, `hint` maps to a quantum oracle query.
 
-### 6.4 Deterministic Cost Model
+Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[STARK]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
 
-| Pattern | Execution cost | STARK constraints |
-|---------|---------------|-------------------|
-| axis | 1 + depth | ~depth |
-| quote | 1 | 1 |
-| compose | 2 | 2 |
-| cons | 2 | 2 |
-| branch | 2 | 2 |
-| add, sub, mul | 1 | 1 |
-| inv | 64 | 1 |
-| eq | 1 | 1 |
-| lt | 1 | ~64 |
-| xor, and, not, shl | 1 | ~64 each |
-| hash | 300 | ~300 |
+### 6.4 Cost Model
 
-Cost depends only on syntactic structure, never on runtime values. Cache hits reduce work but cost is charged in full — cost is the right to a result, not payment for computation.
+| Layer | Pattern | Execution cost | STARK constraints |
+|-------|---------|---------------|-------------------|
+| 1 | axis | 1 + depth | ~depth |
+| 1 | quote | 1 | 1 |
+| 1 | compose | 2 | 2 |
+| 1 | cons | 2 | 2 |
+| 1 | branch | 2 | 2 |
+| 1 | add, sub, mul | 1 | 1 |
+| 1 | inv | 64 | 1 |
+| 1 | eq | 1 | 1 |
+| 1 | lt | 1 | ~64 |
+| 1 | xor, and, not, shl | 1 | ~64 each |
+| 2 | hint | 1 + constraint | constraint rows |
+| 3 | hash | 300 | ~300 |
+| 3 | poly_eval(N) | N | ~N |
+| 3 | merkle_verify(d) | d × 300 | ~d × 300 |
+| 3 | fri_fold(N) | N/2 | ~N/2 |
+| 3 | ntt(N) | N·log(N) | ~N·log(N) |
+
+Layer 1 cost depends only on syntactic structure, never on runtime values. Layer 2 cost: the constraint evaluation follows Layer 1 rules; witness search is external to the VM. Layer 3 cost is strictly less than the equivalent Layer 1 composition. Cost is the right to a result, not payment for computation.
 
 ### 6.5 Confluence and Memoization
 
-Confluence (Huet-Levy 1980): the sixteen patterns form an orthogonal rewrite system. Any evaluation order yields the same result. This enables automatic parallelism without locks or synchronization.
+Layer 1 confluence (Huet-Levy 1980): the sixteen patterns form an orthogonal rewrite system. Any evaluation order yields the same result. This enables automatic parallelism without locks or synchronization.
 
-Global memoization: key $(H(\text{subject}), H(\text{formula}))$, value $H(\text{result})$. Results are universal (any node can contribute/consume), permanent (results never change due to determinism), and verifiable (result hash checkable against proof). Two computations with identical inputs always produce identical outputs — the hash is the proof of equivalence.
+Layer 2 breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `hint`; it checks constraints via the [[STARK]] algebraic trace.
+
+Layer 3 preserves confluence — jets are observationally equivalent to their Layer 1 expansions.
+
+Global memoization: key $(H(\text{subject}), H(\text{formula}))$, value $H(\text{result})$. Applies to Layers 1 and 3 (deterministic). Computations containing `hint` are excluded from the global cache — the witness is prover-specific. Pure subexpressions within a hint-containing computation remain memoizable.
 
 ## 7. Trident: Provable Programming
 
 ### 7.1 Why a Dedicated Language
 
-[[nox]] defines the execution model — sixteen reduction patterns over field elements. Writing directly in [[nox]] patterns is like writing directly in assembly. A systems-level language is needed that compiles to [[nox]] while preserving provability, bounded execution, and field-native arithmetic. [[Trident]] is that language.
+[[nox]] defines the execution model — a three-layer instruction set over field elements. Writing directly in [[nox]] patterns is like writing directly in assembly. A systems-level language is needed that compiles to [[nox]] while preserving provability, bounded execution, and field-native arithmetic. [[Trident]] is that language.
 
 Provable VMs are arithmetic machines, not byte-addressable CPUs. The machine word is a field element, not a byte. Trident's primitive types — `Field`, `Digest`, `XField` — map directly to the [[Goldilocks field]] value tower. Every variable, every operation, every function compiles to arithmetic over $\mathbb{F}_p$. Programs produce [[STARK]] proofs.
 
@@ -444,9 +457,9 @@ STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. T
 | Security basis | Discrete log | Hash only |
 | Field compatible | Specific | Any (Goldilocks) |
 
-Self-verification property: the STARK verifier is expressible as a [[nox]] program. STARK verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. The verifier takes ~600,000 pattern applications, constant regardless of what was proven.
+Self-verification property: the STARK verifier is expressible as a [[nox]] program. STARK verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
 
-This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions.
+This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `hint` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[STARK]] constrains without the verifier knowing them — this is how privacy and provability coexist.
 
 The system closes on itself. No trusted external verifier remains.
 

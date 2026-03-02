@@ -64,9 +64,9 @@ HEX  OLD NAME              NEW: nox PATTERN
 1C   FS   File Separator   → hash     (15) structural hash
 ```
 
-**16 patterns → 16 dead codes.** Perfect fit. Zero conflicts with living codes.
+16 patterns → 16 dead codes. Perfect fit. Zero conflicts with living codes.
 
-Remaining dead codes in 0–31 range: `0x1D (GS), 0x1E (RS), 0x1F (US)` — 3 spare.
+Remaining dead codes in 0–31 range: `0x1D (GS), 0x1E (RS), 0x1F (US)` — 0x1D is assigned to hint (nox Layer 2), 2 spare.
 
 ## Layer 2: Graph Semantics (0x80–0x9F)
 
@@ -112,18 +112,35 @@ HEX  OLD NAME                  NEW: GRAPH OPERATION
 
 **32 graph operations → 32 dead C1 codes.** One-to-one. Zero conflicts.
 
-## Layer 3: Spare Codes
+## nox Layer 2: Non-Deterministic Input (0x1D)
 
 ```
-FROM 0x00–0x1F (3 remaining dead):
-  1D   GS   Group Separator    → spare
+HEX  OLD NAME              NEW: nox INSTRUCTION
+───  ────────              ─────────────────────
+1D   GS   Group Separator  → hint    (16) prover injects witness
+```
+
+hint is the single Layer 2 instruction. The prover supplies a witness value; Layer 1 constraints verify it. This is the non-deterministic gate that makes zero-knowledge proofs possible — the prover demonstrates knowledge without revealing the witness.
+
+GS (Group Separator) → hint: the separator between deterministic reduction and prover knowledge.
+
+## nox Layer 3: Jets
+
+Jets (hash, poly_eval, merkle_verify, fri_fold, ntt) have no separate opcodes. They are runtime-recognized optimizations of Layer 1 pattern combinations — observationally equivalent, just faster. The verifier and prover agree on jet semantics; the encoding remains pure Layer 1.
+
+This follows the Nock/Urbit model: jets accelerate without changing the formal spec.
+
+## Spare Codes
+
+```
+FROM 0x00–0x1F (2 remaining dead):
   1E   RS   Record Separator   → spare
   1F   US   Unit Separator     → spare
 
 FROM 0x7F:
   7F   DEL  Delete             → spare
 
-Total spare: 4 codes for future expansion.
+Total spare: 3 codes for future expansion.
 ```
 
 ## Summary
@@ -131,14 +148,17 @@ Total spare: 4 codes for future expansion.
 ```
 RANGE       COUNT   ORIGINAL PURPOSE       NEW PURPOSE
 ──────      ─────   ────────────────       ───────────
-0x01–0x1C   16      Teletype control       nox reduction patterns
+0x01–0x1C   16      Teletype control       nox Layer 1 — reduction patterns
+0x1D        1       Group Separator        nox Layer 2 — hint (witness input)
 0x80–0x9F   32      C1 terminal control    Graph semantic operations
-0x1D–0x1F   3       Separators             Spare
+0x1E–0x1F   2       Separators             Spare
 0x7F        1       Delete                 Spare
 
+nox Layer 3 jets share Layer 1 encodings (runtime optimization, no extra opcodes).
+
 TOTAL RECLAIMED: 52 codes
-TOTAL USED:      48 (16 patterns + 32 graph ops)
-TOTAL SPARE:      4
+TOTAL USED:      49 (16 patterns + 1 hint + 32 graph ops)
+TOTAL SPARE:      3
 ```
 
 ## The Poetry
