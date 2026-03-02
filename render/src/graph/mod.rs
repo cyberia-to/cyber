@@ -26,6 +26,8 @@ pub struct PageStore {
     pub pagerank: HashMap<PageId, f64>,
     /// Tri-kernel focus distribution π (diffusion + springs + heat)
     pub focus: HashMap<PageId, f64>,
+    /// Gravity: G_i = π_i × Σ(π_j / d²), 2-hop approximation
+    pub gravity: HashMap<PageId, f64>,
 }
 
 #[derive(Debug, Clone, Serialize)]
@@ -150,6 +152,7 @@ pub fn build_graph(pages: Vec<ParsedPage>) -> Result<PageStore> {
         stub_pages: HashSet::new(),
         pagerank: HashMap::new(),
         focus: HashMap::new(),
+        gravity: HashMap::new(),
     };
 
     // First pass: insert all pages and build alias map
@@ -184,7 +187,69 @@ pub fn build_graph(pages: Vec<ParsedPage>) -> Result<PageStore> {
     // Compute tri-kernel focus distribution
     store.focus = trikernel::compute_trikernel(&store);
 
+    // Compute gravity: G_i = π_i × Σ(π_j / d²), 2-hop approximation
+    store.gravity = compute_gravity(&store);
+
     Ok(store)
+}
+
+/// Compute gravity for each node: G_i = π_i × Σ_{j: d(i,j) ≤ 2}(π_j / d(i,j)²).
+/// Uses 2-hop BFS approximation: O(n × avg_degree²) instead of O(n²).
+fn compute_gravity(store: &PageStore) -> HashMap<PageId, f64> {
+    let mut gravity = HashMap::new();
+    for (id, _) in &store.pages {
+        let pi = store.focus.get(id).copied().unwrap_or(0.0);
+        if pi == 0.0 {
+            gravity.insert(id.clone(), 0.0);
+            continue;
+        }
+
+        // d=1 neighbors (forward ∪ backward)
+        let mut d1: HashSet<&PageId> = HashSet::new();
+        if let Some(fwd) = store.forward_links.get(id) {
+            for t in fwd {
+                d1.insert(t);
+            }
+        }
+        if let Some(back) = store.backlinks.get(id) {
+            for t in back {
+                d1.insert(t);
+            }
+        }
+
+        // Σ π_j / 1² for d=1 neighbors
+        let mut sum = 0.0;
+        for j in &d1 {
+            sum += store.focus.get(*j).copied().unwrap_or(0.0);
+        }
+
+        // d=2 neighbors (neighbors of d1, excluding d1 and self)
+        let mut d2: HashSet<&PageId> = HashSet::new();
+        for j in &d1 {
+            if let Some(fwd) = store.forward_links.get(*j) {
+                for t in fwd {
+                    if t != id && !d1.contains(t) {
+                        d2.insert(t);
+                    }
+                }
+            }
+            if let Some(back) = store.backlinks.get(*j) {
+                for t in back {
+                    if t != id && !d1.contains(t) {
+                        d2.insert(t);
+                    }
+                }
+            }
+        }
+
+        // Σ π_j / 4 for d=2 neighbors
+        for j in &d2 {
+            sum += store.focus.get(*j).copied().unwrap_or(0.0) / 4.0;
+        }
+
+        gravity.insert(id.clone(), pi * sum);
+    }
+    gravity
 }
 
 /// Create stub pages for every page ID that is referenced (has backlinks)
