@@ -1109,6 +1109,8 @@ hr {
     }
     .pages-table .col-rank,
     .pages-table .col-pagerank,
+    .pages-table .col-luminosity,
+    .pages-table .col-gravity,
     .pages-table .col-created,
     .pages-table .col-modified {
         display: none;
@@ -1556,6 +1558,8 @@ body:has(.fullscreen-viz) .main-content {
 .col-size,
 .col-pagerank,
 .col-links,
+.col-luminosity,
+.col-gravity,
 .col-created,
 .col-modified {
     width: 1%;
@@ -1563,15 +1567,23 @@ body:has(.fullscreen-viz) .main-content {
     text-align: right;
     font-variant-numeric: tabular-nums;
     font-size: 0.8rem;
-    opacity: 0.35;
     padding-left: 0.3rem !important;
     padding-right: 0.3rem !important;
 }
 
-.col-pagerank {
-    color: var(--color-primary);
-    opacity: 0.4;
+.col-luminosity,
+.col-gravity {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
 }
+
+.pages-table th[data-col] {
+    cursor: pointer;
+    user-select: none;
+}
+.pages-table th.sort-asc::after { content: ' ↑'; }
+.pages-table th.sort-desc::after { content: ' ↓'; }
 
 .col-created,
 .col-modified {

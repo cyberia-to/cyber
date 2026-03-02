@@ -526,6 +526,41 @@ fn git_dates(input_dir: &Path) -> HashMap<String, (String, String)> {
     result
 }
 
+/// Compute percentile ranks (0.0–1.0) for a slice of values.
+fn compute_percentiles(values: &[f64]) -> Vec<f64> {
+    let n = values.len();
+    if n <= 1 {
+        return vec![0.0; n];
+    }
+    let mut indexed: Vec<(usize, f64)> = values.iter().copied().enumerate().collect();
+    indexed.sort_by(|a, b| a.1.partial_cmp(&b.1).unwrap_or(std::cmp::Ordering::Equal));
+    let mut result = vec![0.0; n];
+    let divisor = (n - 1).max(1) as f64;
+    for (rank, (orig_idx, _)) in indexed.iter().enumerate() {
+        result[*orig_idx] = rank as f64 / divisor;
+    }
+    result
+}
+
+/// Convert LMT "DD.MM.YY" to sortable "YY.MM.DD" with zero-padding.
+fn lmt_sort_key(lmt: &str) -> String {
+    let parts: Vec<&str> = lmt.split('.').collect();
+    if parts.len() == 3 {
+        format!("{:0>3}.{:0>2}.{:0>2}", parts[2], parts[1], parts[0])
+    } else {
+        String::new()
+    }
+}
+
+/// Format a small float in compact scientific notation.
+fn format_scientific(val: f64) -> String {
+    if val < 1e-8 {
+        "0".to_string()
+    } else {
+        format!("{:.1e}", val)
+    }
+}
+
 /// Render the unified /files page — all public pages sorted by focus (π) with size column.
 fn render_files_page(
     store: &PageStore,
@@ -541,6 +576,7 @@ fn render_files_page(
         .map(|p| {
             let backlink_count = store.backlinks.get(&p.id).map(|b| b.len()).unwrap_or(0);
             let focus = store.focus.get(&p.id).copied().unwrap_or(0.0);
+            let gravity = store.gravity.get(&p.id).copied().unwrap_or(0.0);
             let size = if p.source_path.as_os_str().is_empty() {
                 0u64
             } else {
@@ -548,17 +584,31 @@ fn render_files_page(
                     .map(|m| m.len())
                     .unwrap_or(0)
             };
-            (p, backlink_count, focus, size)
+            let luminosity = size as f64 * focus;
+            (p, backlink_count, focus, size, luminosity, gravity)
         })
         .collect();
 
     // Sort by focus descending
     pages.sort_by(|a, b| b.2.partial_cmp(&a.2).unwrap_or(std::cmp::Ordering::Equal));
 
+    // Compute percentiles for coloring
+    let size_vals: Vec<f64> = pages.iter().map(|r| r.3 as f64).collect();
+    let focus_vals: Vec<f64> = pages.iter().map(|r| r.2).collect();
+    let links_vals: Vec<f64> = pages.iter().map(|r| r.1 as f64).collect();
+    let lum_vals: Vec<f64> = pages.iter().map(|r| r.4).collect();
+    let grav_vals: Vec<f64> = pages.iter().map(|r| r.5).collect();
+
+    let size_pcts = compute_percentiles(&size_vals);
+    let focus_pcts = compute_percentiles(&focus_vals);
+    let links_pcts = compute_percentiles(&links_vals);
+    let lum_pcts = compute_percentiles(&lum_vals);
+    let grav_pcts = compute_percentiles(&grav_vals);
+
     let files_data: Vec<_> = pages
         .iter()
         .enumerate()
-        .map(|(i, (p, backlinks, focus, size))| {
+        .map(|(i, (p, backlinks, focus, size, luminosity, gravity))| {
             let focus_display = format!("{:.2}", focus * 100.0);
             let size_display = format_size(*size);
             let file_title = match p.kind {
@@ -577,6 +627,13 @@ fn render_files_page(
                 })
                 .unwrap_or_default();
 
+            // HSL lightness: 95% (low) → 35% (high) — maps percentile to green intensity
+            let size_light = 95.0 - size_pcts[i] * 60.0;
+            let focus_light = 95.0 - focus_pcts[i] * 60.0;
+            let links_light = 95.0 - links_pcts[i] * 60.0;
+            let lum_light = 95.0 - lum_pcts[i] * 60.0;
+            let grav_light = 95.0 - grav_pcts[i] * 60.0;
+
             minijinja::context! {
                 rank => i + 1,
                 title => file_title,
@@ -584,10 +641,24 @@ fn render_files_page(
                 backlinks => *backlinks,
                 pagerank => focus_display,
                 size => size_display,
+                luminosity => format_scientific(*luminosity),
+                gravity => format_scientific(*gravity),
                 tags => p.meta.tags.clone(),
                 icon => p.meta.icon.clone(),
                 created => created_lmt,
                 modified => modified_lmt,
+                size_sort => *size,
+                focus_sort => format!("{:.8}", focus),
+                links_sort => *backlinks,
+                luminosity_sort => format!("{:.8}", luminosity),
+                gravity_sort => format!("{:.10}", gravity),
+                created_sort => lmt_sort_key(&created_lmt),
+                modified_sort => lmt_sort_key(&modified_lmt),
+                size_light => format!("{:.0}", size_light),
+                focus_light => format!("{:.0}", focus_light),
+                links_light => format!("{:.0}", links_light),
+                lum_light => format!("{:.0}", lum_light),
+                grav_light => format!("{:.0}", grav_light),
             }
         })
         .collect();
