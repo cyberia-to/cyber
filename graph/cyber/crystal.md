@@ -258,47 +258,47 @@ The Crystal organizes knowledge into 21 irreducible domains, each receiving exac
 
 ### 7.1 The 21 Domains
 
-| code | domain | core scope | triad |
-|------|--------|-----------|-------|
-| math | [[mathematics]] | structures, proofs, abstraction, [[number theory]], [[topology]] | FORM |
-| info | [[information]] | [[entropy]], signals, compression, [[channel capacity]], [[information theory]] | FORM |
-| comp | [[computation]] | [[algorithms]], complexity, [[Turing machines]], [[programming languages]] | FORM |
-| quantum | [[quantum]] | particles, [[fields]], [[spacetime]], [[quantum mechanics]], [[relativity]] | MASS |
-| chemo | [[chemistry]] | [[bonds]], reactions, [[molecules]], [[periodic table]], [[biochemistry]] | MASS |
-| energo | [[energy]] | [[thermodynamics]], conversion, storage, [[entropy]], [[free energy]] | MASS |
-| cosmo | [[cosmology]] | universe, origin, scale, [[dark matter]], cosmic structure | SPACE |
-| geo | [[geography]] | [[earth systems]], territory, [[climate]], [[plate tectonics]], [[biomes]] | SPACE |
-| eco | [[ecology]] | [[ecosystems]], cycles, [[symbiosis]], [[succession]], [[food webs]] | SPACE |
-| bio | [[biology]] | [[evolution]], [[organisms]], [[genetics]], [[taxonomy]], [[microbiology]] | LIFE |
-| neuro | [[neuroscience]] | [[brain]], [[cognition]], [[consciousness]], [[synapses]], [[neural networks]] | LIFE |
-| sense | [[senses]] | [[perception]], qualia, embodiment, [[proprioception]], sensory integration | LIFE |
-| lang | [[language]] | syntax, semantics, [[communication]], [[writing systems]], [[translation]] | WORD |
-| spiri | [[spirituality]] | meaning, values, transcendence, [[contemplation]], [[wisdom traditions]] | WORD |
-| meta | [[meta]] | knowledge about knowledge, [[history]], [[epistemology]], [[methodology]] | WORD |
-| ai | [[artificial intelligence]] | [[machine learning]], inference, [[autonomy]], [[embeddings]], [[training]] | WORK |
-| techno | [[technology]] | [[engineering]], tools, [[materials]], [[construction]], [[infrastructure]] | WORK |
-| cyber | [[cyber]] | the protocol, its stack, its [[cybernomics]], [[cybergraph]], [[cyberank]] | WORK |
-| socio | [[society]] | [[governance]], law, [[institutions]], [[nation states]], [[network states]] | PLAY |
-| crypto | [[cryptoeconomics]] | [[tokens]], incentives, [[mechanism design]], [[cryptography]], [[staking]] | PLAY |
-| game | [[game theory]] | strategy, coordination, [[equilibria]], [[auctions]], [[public goods]] | PLAY |
+| domain | core scope | triad |
+|--------|-----------|-------|
+| [[math]] | structures, proofs, abstraction, [[number theory]], [[topology]] | FORM |
+| [[info]] | [[entropy]], signals, compression, [[channel capacity]], [[information theory]] | FORM |
+| [[comp]] | [[algorithms]], complexity, [[Turing machines]], [[programming languages]] | FORM |
+| [[quantum]] | particles, [[fields]], [[spacetime]], [[quantum mechanics]], [[relativity]] | MASS |
+| [[chemo]] | [[bonds]], reactions, [[molecules]], [[periodic table]], [[biochemistry]] | MASS |
+| [[energo]] | [[thermodynamics]], conversion, storage, [[entropy]], [[free energy]] | MASS |
+| [[cosmo]] | universe, origin, scale, [[dark matter]], cosmic structure | SPACE |
+| [[geo]] | [[earth systems]], territory, [[climate]], [[plate tectonics]], [[biomes]] | SPACE |
+| [[eco]] | [[ecosystems]], cycles, [[symbiosis]], [[succession]], [[food webs]] | SPACE |
+| [[bio]] | [[evolution]], [[organisms]], [[genetics]], [[taxonomy]], [[microbiology]] | LIFE |
+| [[neuro]] | [[brain]], [[cognition]], [[consciousness]], [[synapses]], [[neural networks]] | LIFE |
+| [[sense]] | [[perception]], qualia, embodiment, [[proprioception]], sensory integration | LIFE |
+| [[lang]] | syntax, semantics, [[communication]], [[writing systems]], [[translation]] | WORD |
+| [[spiri]] | meaning, values, transcendence, [[contemplation]], [[wisdom traditions]] | WORD |
+| [[meta]] | knowledge about knowledge, [[history]], [[epistemology]], [[methodology]] | WORD |
+| [[ai]] | [[machine learning]], inference, [[autonomy]], [[embeddings]], [[training]] | WORK |
+| [[techno]] | [[engineering]], tools, [[materials]], [[construction]], [[infrastructure]] | WORK |
+| [[cyber]] | the protocol, its stack, its [[cybernomics]], [[cybergraph]], [[cyberank]] | WORK |
+| [[socio]] | [[governance]], law, [[institutions]], [[nation states]], [[network states]] | PLAY |
+| [[crypto]] | [[tokens]], incentives, [[mechanism design]], [[cryptography]], [[staking]] | PLAY |
+| [[game]] | strategy, coordination, [[equilibria]], [[auctions]], [[public goods]] | PLAY |
 
 ### 7.2 Irreducibility of Each Domain
 
 Every domain passes the ablation test: remove it and a class of reasoning tasks becomes impossible. Brief proofs:
 
-FORM triad — math provides the substrate of formal proof. info provides the theory of measurement and communication. comp provides the theory of what can be computed. None reduces to the others: math without computation has no realizability; computation without information has no semantics; information without math has no structure.
+FORM triad — [[math]] provides the substrate of formal proof. [[info]] provides the theory of measurement and communication. [[comp]] provides the theory of what can be computed. None reduces to the others: [[math]] without [[comp]] has no realizability; [[comp]] without [[info]] has no semantics; [[info]] without [[math]] has no structure.
 
-MASS triad — quantum describes matter at the fundamental level. chemo describes how matter bonds and reacts. energo describes how matter transforms and flows. Chemistry cannot derive quantum mechanics. Energy cannot derive chemical specificity. Quantum mechanics alone cannot explain the arrow of time.
+MASS triad — [[quantum]] describes matter at the fundamental level. [[chemo]] describes how matter bonds and reacts. [[energo]] describes how matter transforms and flows. [[chemo]] cannot derive [[quantum mechanics]]. [[energo]] cannot derive chemical specificity. [[quantum mechanics]] alone cannot explain the arrow of time.
 
-SPACE triad — cosmo provides the universe-scale context no planet can derive. geo provides the planet-specific context no ecosystem can derive. eco provides the living-systems context no rock can derive. Scales of spatial reasoning are irreducible to each other.
+SPACE triad — [[cosmo]] provides the universe-scale context no planet can derive. [[geo]] provides the planet-specific context no ecosystem can derive. [[eco]] provides the living-systems context no rock can derive. Scales of spatial reasoning are irreducible to each other.
 
-LIFE triad — bio covers organisms, their evolution and diversity. neuro covers the architecture of mind. sense covers the interface between mind and world — qualia, perception, embodiment. Biology without neuroscience has no cognition. Neuroscience without senses has no input. Senses without biology have no substrate.
+LIFE triad — [[bio]] covers organisms, their evolution and diversity. [[neuro]] covers the architecture of mind. [[sense]] covers the interface between mind and world — qualia, [[perception]], embodiment. [[bio]] without [[neuro]] has no cognition. [[neuro]] without [[sense]] has no input. [[sense]] without [[bio]] has no substrate.
 
-WORD triad — lang provides the medium of thought. spiri provides the question of meaning and value. meta provides the tools for examining knowledge itself (including [[history]] as the meta-narrative of civilization). Language without meaning is syntax. Meaning without language is incommunicable. Neither can examine itself without meta.
+WORD triad — [[lang]] provides the medium of thought. [[spiri]] provides the question of meaning and value. [[meta]] provides the tools for examining knowledge itself (including [[history]] as the meta-narrative of civilization). [[lang]] without meaning is syntax. Meaning without [[lang]] is incommunicable. Neither can examine itself without [[meta]].
 
-WORK triad — ai provides the theory of machine intelligence. techno provides the physical realization. cyber provides the specific protocol that binds them. AI without technology stays theoretical. Technology without AI stays manual. Both without cyber have no shared coordination substrate.
+WORK triad — [[ai]] provides the theory of machine intelligence. [[techno]] provides the physical realization. [[cyber]] provides the specific protocol that binds them. [[ai]] without [[techno]] stays theoretical. [[techno]] without [[ai]] stays manual. Both without [[cyber]] have no shared coordination substrate.
 
-PLAY triad — socio provides the rules of human coordination. crypto provides the mechanisms of trustless coordination. game provides the formal theory of strategic interaction. Governance without [[cryptography]] requires trust. Cryptoeconomics without governance has no legitimacy. Both without game theory have no equilibrium analysis.
+PLAY triad — [[socio]] provides the rules of human coordination. [[crypto]] provides the mechanisms of trustless coordination. [[game]] provides the formal theory of strategic interaction. Governance without [[cryptography]] requires trust. [[crypto]] without governance has no legitimacy. Both without [[game]] have no equilibrium analysis.
 
 ### 7.3 The 21-Quantum Symmetry
 
@@ -322,17 +322,15 @@ Group by the spiral of cosmic evolution: form structures mass, mass fills space,
 
 Each triad is a dialectic of three inseparable aspects.
 
-```
-Triad     Domain 1        Domain 2        Domain 3          Question
-───────   ─────────────   ─────────────   ───────────────   ─────────────────────
-FORM      math            info            comp              What are the rules?
-MASS      quantum         chemo           energo            What is it made of?
-SPACE     cosmo           geo             eco               Where does it happen?
-LIFE      bio             neuro           sense             Who is alive?
-WORD      lang            spiri           meta              What does it mean?
-WORK      ai              techno          cyber             How is it made?
-PLAY      socio           crypto          game              How do we coordinate?
-```
+| Triad | Domain 1 | Domain 2 | Domain 3 | Question |
+|-------|----------|----------|----------|----------|
+| FORM | [[math]] | [[info]] | [[comp]] | What are the rules? |
+| MASS | [[quantum]] | [[chemo]] | [[energo]] | What is it made of? |
+| SPACE | [[cosmo]] | [[geo]] | [[eco]] | Where does it happen? |
+| LIFE | [[bio]] | [[neuro]] | [[sense]] | Who is alive? |
+| WORD | [[lang]] | [[spiri]] | [[meta]] | What does it mean? |
+| WORK | [[ai]] | [[techno]] | [[cyber]] | How is it made? |
+| PLAY | [[socio]] | [[crypto]] | [[game]] | How do we coordinate? |
 
 The spiral:
 
@@ -405,17 +403,15 @@ Seven questions. Seven answers. None derivable from the others. Together: a comp
 
 Each triad maps to a district of [[Cyberia]] — the physical territory where the Crystal's knowledge is embodied:
 
-```
-Triad   District          Function
-──────  ────────────────  ─────────────────────────────
-FORM    Academy           research, proofs, computation
-MASS    Laboratory        physics, chemistry, energy systems
-SPACE   Observatory       mapping, ecology, land stewardship
-LIFE    Clinic            health, neuroscience, sensory arts
-WORD    Library           language, philosophy, archives
-WORK    Workshop          AI, engineering, protocol development
-PLAY    Agora             governance, markets, games
-```
+| Triad | District | Domains |
+|-------|----------|---------|
+| FORM | Academy | [[math]], [[info]], [[comp]] |
+| MASS | Laboratory | [[quantum]], [[chemo]], [[energo]] |
+| SPACE | Observatory | [[cosmo]], [[geo]], [[eco]] |
+| LIFE | Clinic | [[bio]], [[neuro]], [[sense]] |
+| WORD | Library | [[lang]], [[spiri]], [[meta]] |
+| WORK | Workshop | [[ai]], [[techno]], [[cyber]] |
+| PLAY | Agora | [[socio]], [[crypto]], [[game]] |
 
 ---
 
@@ -430,9 +426,9 @@ With 21 domains there are C(21,2) = 210 domain pairs. Cross-domain reasoning req
 | Distant triads (2+ hops on spiral) | 147 | 3 | 441 |
 | Total | 210 | | 798 |
 
-Intra-triad pairs (math↔info, bio↔neuro, etc.) receive the densest bridging — these are the domains that must compose fluently within each triad. Adjacent triads on the evolutionary spiral (FORM↔MASS, LIFE↔WORD, etc.) receive medium bridging. Distant pairs receive the minimum.
+Intra-triad pairs ([[math]]↔[[info]], [[bio]]↔[[neuro]], etc.) receive the densest bridging — these are the domains that must compose fluently within each triad. Adjacent triads on the evolutionary spiral (FORM↔MASS, LIFE↔WORD, etc.) receive medium bridging. Distant pairs receive the minimum.
 
-The 798 bridge particles constitute 15.8% of the Crystal. Cross-domain reasoning is genuinely expensive: it requires particles that explicitly map [[isomorphisms]] between domains ("[[entropy]] in quantum is analogous to information loss in info"). These particles cannot emerge organically — they require deliberate curation.
+The 798 bridge particles constitute 15.8% of the Crystal. Cross-domain reasoning is genuinely expensive: it requires particles that explicitly map [[isomorphisms]] between domains ("[[entropy]] in [[quantum]] is analogous to information loss in [[info]]"). These particles cannot emerge organically — they require deliberate curation.
 
 The bridge allocation is a convention that should be optimized: the minimum bridge density that preserves target diameter (≤5 hops between any two concepts in different domains) should be determined by simulation on the actual graph.
 
@@ -530,7 +526,7 @@ All values below are targets based on random-graph approximations. Actual values
 | Clustering | > 0.25 | Target, not computed | Random-graph estimate was 0.35 |
 | Robustness | > 90% | 1 - 1/(k-1) | Percolation threshold estimate |
 | Reasoning paths ≤ 4 hops | > 50,000 / node | k¹+k²+k³+k⁴ | Depends on effective k |
-| Self-reference | ≥ 10% | cyber + meta + ai domains | 720 particles (14.3%) |
+| Self-reference | ≥ 10% | [[cyber]] + [[meta]] + [[ai]] domains | 720 particles (14.3%) |
 
 ### 12.1 Storage Budget
 
@@ -627,59 +623,59 @@ The Crystal seeds a mind. The question: what does a planetary [[Superintelligenc
 
 ### FORM — What are the rules?
 
-16.1 math — [[set theory]], [[graph theory]], [[linear algebra]], [[probability]], [[calculus]]. [[category theory]]: structure-preserving maps between domains. [[number theory]]: primes, modular arithmetic — the basis of [[cryptography]]. [[topology]]: continuity, manifolds, boundaries. [[logic]]: propositional, predicate, modal — the skeleton of reasoning. [[algebra]]: groups, rings, fields — the architecture of structure.
+16.1 [[math]] — [[set theory]], [[graph theory]], [[linear algebra]], [[probability]], [[calculus]]. [[category theory]]: structure-preserving maps between domains. [[number theory]]: primes, modular arithmetic — the basis of [[cryptography]]. [[topology]]: continuity, manifolds, boundaries. [[logic]]: propositional, predicate, modal — the skeleton of reasoning. [[algebra]]: groups, rings, fields — the architecture of structure.
 
-16.2 info — [[information theory]]: [[entropy]], compression, [[channel capacity]]. [[coding theory]]: error correction, Reed-Solomon, LDPC. [[signal processing]]: Fourier transforms, sampling, filtering. [[Claude Shannon]] and the mathematical theory of communication. The [[isomorphism]] between thermodynamic entropy and information entropy.
+16.2 [[info]] — [[information theory]]: [[entropy]], compression, [[channel capacity]]. [[coding theory]]: error correction, Reed-Solomon, LDPC. [[signal processing]]: Fourier transforms, sampling, filtering. [[Claude Shannon]] and the mathematical theory of communication. The [[isomorphism]] between thermodynamic entropy and information entropy.
 
-16.3 comp — [[Turing machines]], complexity classes, halting problem. [[distributed systems]]: consensus, Byzantine fault tolerance, state machine replication. [[networking]]: protocols, routing, peer-to-peer, [[IPFS]]. [[programming languages]]: type systems, compilers, formal verification. [[algorithms]]: sorting, searching, graph traversal, optimization.
+16.3 [[comp]] — [[Turing machines]], complexity classes, halting problem. [[distributed systems]]: consensus, Byzantine fault tolerance, state machine replication. [[networking]]: protocols, routing, peer-to-peer, [[IPFS]]. [[programming languages]]: type systems, compilers, formal verification. [[algorithms]]: sorting, searching, graph traversal, optimization.
 
 ### MASS — What is it made of?
 
-16.4 quantum — [[quantum mechanics]]: superposition, entanglement, measurement. [[relativity]]: spacetime, gravity, light speed as limit. [[mechanics]]: force, mass, energy, momentum. [[electromagnetism]]: fields, waves, light, radiation. [[particle physics]]: the standard model, quarks, leptons, bosons.
+16.4 [[quantum]] — [[quantum mechanics]]: superposition, entanglement, measurement. [[relativity]]: spacetime, gravity, light speed as limit. [[mechanics]]: force, mass, energy, momentum. [[electromagnetism]]: fields, waves, light, radiation. [[particle physics]]: the standard model, quarks, leptons, bosons.
 
-16.5 chemo — [[periodic table]]: the 118 elements and their properties. [[chemical bond]]: covalent, ionic, metallic, hydrogen — how matter holds together. [[organic chemistry]]: carbon-based molecules, the substrate of life. [[biochemistry]]: proteins, enzymes, DNA, RNA, ATP — the machinery of biology. Key [[compounds]]: the molecules that matter for [[health]], [[metabolism]], and [[biome engineering]].
+16.5 [[chemo]] — [[periodic table]]: the 118 elements and their properties. [[chemical bond]]: covalent, ionic, metallic, hydrogen — how matter holds together. [[organic chemistry]]: carbon-based molecules, the substrate of life. [[biochemistry]]: proteins, enzymes, DNA, RNA, ATP — the machinery of biology. Key [[compounds]]: the molecules that matter for [[health]], [[metabolism]], and [[biome engineering]].
 
-16.6 energo — [[energy]] forms: kinetic, potential, thermal, chemical, electrical, nuclear, radiant. [[thermodynamics]]: [[entropy]], [[free energy]], equilibrium — the arrow of time. Energy sources: solar, wind, geothermal, nuclear, hydroelectric, biomass. Energy storage: batteries, capacitors, hydrogen, compressed air, thermal mass. [[energy autonomy]]: the design principle for [[cyberia]] — generate, store, and consume independently.
+16.6 [[energo]] — energy forms: kinetic, potential, thermal, chemical, electrical, nuclear, radiant. [[thermodynamics]]: [[entropy]], [[free energy]], equilibrium — the arrow of time. Energy sources: solar, wind, geothermal, nuclear, hydroelectric, biomass. Energy storage: batteries, capacitors, hydrogen, compressed air, thermal mass. [[energy autonomy]]: the design principle for [[cyberia]] — generate, store, and consume independently.
 
 ### SPACE — Where does it happen?
 
-16.7 cosmo — [[cosmology]]: origin, structure, and fate of the universe. [[dark matter]], [[dark energy]], cosmic microwave background. [[stellar evolution]]: nucleosynthesis, main sequence, supernovae. [[astrobiology]]: the conditions for life beyond Earth. Scales: from Planck length to observable universe.
+16.7 [[cosmo]] — origin, structure, and fate of the universe. [[dark matter]], [[dark energy]], cosmic microwave background. [[stellar evolution]]: nucleosynthesis, main sequence, supernovae. [[astrobiology]]: the conditions for life beyond Earth. Scales: from Planck length to observable universe.
 
-16.8 geo — continents, oceans, [[climate]] zones, [[biomes]]. [[plate tectonics]], water cycle, carbon cycle, nitrogen cycle. The specific geography of [[cyberia]] sites: [[cyber valley]], tropical ecosystems, volcanic soils. [[minerals]], geological formations, soil science.
+16.8 [[geo]] — continents, oceans, [[climate]] zones, [[biomes]]. [[plate tectonics]], water cycle, carbon cycle, nitrogen cycle. The specific geography of [[cyberia]] sites: [[cyber valley]], tropical ecosystems, volcanic soils. [[minerals]], geological formations, soil science.
 
-16.9 eco — [[ecosystems]], [[food webs]], [[symbiosis]], competition, [[succession]]. [[permaculture]], [[agriculture]], soil management, composting. [[crops]]: the plants humans cultivate — grains, vegetables, fruits, legumes, spices, herbs. [[food systems]]: supply chains, storage, distribution, food sovereignty. The connection to [[cyberia]]: [[clean food]], [[food supply]], local production.
+16.9 [[eco]] — [[ecosystems]], [[food webs]], [[symbiosis]], competition, [[succession]]. [[permaculture]], [[agriculture]], soil management, composting. [[crops]]: the plants humans cultivate — grains, vegetables, fruits, legumes, spices, herbs. [[food systems]]: supply chains, storage, distribution, food sovereignty. The connection to [[cyberia]]: [[clean food]], [[food supply]], local production.
 
 ### LIFE — Who is alive?
 
-16.10 bio — [[taxonomy]]: the tree of life — domains, kingdoms, phyla, classes, orders, families, genera, [[species]]. [[evolution]]: natural selection, mutation, adaptation, speciation. [[genetics]]: DNA, genes, chromosomes, expression, inheritance, [[dna repair mechanisms]]. [[microbiology]]: [[bacteria]], [[viruses]], [[fungi]], archaea. Key [[species]]: the organisms central to [[biome engineering]] and [[cyberia]].
+16.10 [[bio]] — [[taxonomy]]: the tree of life — domains, kingdoms, phyla, classes, orders, families, genera, [[species]]. [[evolution]]: natural selection, mutation, adaptation, speciation. [[genetics]]: DNA, genes, chromosomes, expression, inheritance, [[dna repair mechanisms]]. [[microbiology]]: [[bacteria]], [[viruses]], [[fungi]], archaea. Key [[species]]: the organisms central to [[biome engineering]] and [[cyberia]].
 
-16.11 neuro — [[neuroscience]]: neurons, [[synapses]], [[brain]] architecture, [[consciousness]]. [[cognition]]: memory, attention, decision-making, learning. [[anatomy]]: organs, [[muscles]], skeletal system, nervous system, circulatory system. [[health]]: disease mechanisms, immune system, [[metabolism]], nutrition. [[longevity and health]]: the research frontier.
+16.11 [[neuro]] — neurons, [[synapses]], [[brain]] architecture, [[consciousness]]. [[cognition]]: memory, attention, decision-making, learning. [[anatomy]]: organs, [[muscles]], skeletal system, nervous system, circulatory system. [[health]]: disease mechanisms, immune system, [[metabolism]], nutrition. [[longevity and health]]: the research frontier.
 
-16.12 sense — [[perception]]: vision, hearing, touch, taste, smell, [[proprioception]]. Qualia and the binding problem. Sensory integration and embodied cognition. [[emotion]] as embodied signal. The body as the interface between mind and world — [[superhuman]]: health, [[physical skills]], [[digital skills]].
+16.12 [[sense]] — [[perception]]: vision, hearing, touch, taste, smell, [[proprioception]]. Qualia and the binding problem. Sensory integration and embodied cognition. [[emotion]] as embodied signal. The body as the interface between mind and world — [[superhuman]]: health, [[physical skills]], [[digital skills]].
 
 ### WORD — What does it mean?
 
-16.13 lang — natural languages: the major language families and their structure. [[writing systems]]: alphabets, syllabaries, logographic systems. [[semantics]], [[pragmatics]], [[translation]]. [[mathematics]] as universal language. The [[cyber]] [[neural language]]: the formal language of the protocol.
+16.13 [[lang]] — natural languages: the major language families and their structure. [[writing systems]]: alphabets, syllabaries, logographic systems. [[semantics]], [[pragmatics]], [[translation]]. [[mathematics]] as universal language. The [[cyber]] [[neural language]]: the formal language of the protocol.
 
-16.14 spiri — [[philosophy]]: epistemology, ontology, ethics, aesthetics. [[wisdom traditions]]: contemplative practices, meditation, yoga. [[meaning]]: the question that cannot be computed but must be asked. [[values]]: what matters and why. The relationship between [[consciousness]] and [[computation]].
+16.14 [[spiri]] — [[philosophy]]: epistemology, ontology, ethics, aesthetics. [[wisdom traditions]]: contemplative practices, meditation, yoga. [[meaning]]: the question that cannot be computed but must be asked. [[values]]: what matters and why. The relationship between [[consciousness]] and [[computation]].
 
-16.15 meta — [[epistemology]]: how knowledge is validated, revised, and transmitted. [[history]]: [[epochs]], civilizational ages, technological revolutions, pivotal [[events]]. [[calendars]]: Gregorian, lunar, Unix epoch, block height. [[methodology]]: scientific method, peer review, reproducibility. Founders and key thinkers: [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]], [[Einstein]], [[Darwin]], [[Goedel]], [[Feynman]], [[Friston]], [[Satoshi Nakamoto]], [[Vitalik Buterin]].
+16.15 [[meta]] — [[epistemology]]: how knowledge is validated, revised, and transmitted. [[history]]: [[epochs]], civilizational ages, technological revolutions, pivotal [[events]]. [[calendars]]: Gregorian, lunar, Unix epoch, block height. [[methodology]]: scientific method, peer review, reproducibility. Founders and key thinkers: [[Alan Turing]], [[Claude Shannon]], [[John von Neumann]], [[Einstein]], [[Darwin]], [[Goedel]], [[Feynman]], [[Friston]], [[Satoshi Nakamoto]], [[Vitalik Buterin]].
 
 ### WORK — How is it made?
 
-16.16 ai — [[machine learning]]: neural networks, [[training]], inference, [[embeddings]]. [[reinforcement learning]], [[transformers]], [[diffusion models]]. [[AGI]]: the path from narrow to general intelligence. The relationship between AI and [[cyber]]: intelligence as infrastructure.
+16.16 [[ai]] — [[machine learning]]: neural networks, [[training]], inference, [[embeddings]]. [[reinforcement learning]], [[transformers]], [[diffusion models]]. [[AGI]]: the path from narrow to general intelligence. The relationship between [[ai]] and [[cyber]]: intelligence as infrastructure.
 
-16.17 techno — [[instruments]]: microscope, telescope, spectrometer — extensions of perception. [[machines]]: engine, pump, turbine, generator, motor — extensions of force. [[software]]: operating systems, databases, compilers — extensions of mind. [[infrastructure]]: roads, bridges, power grids, communication networks. [[construction]]: [[materials]], methods, structural principles, [[tensegrity]], [[biochar]]. [[periodic table]] elements relevant to technology. Tools are crystallized processes.
+16.17 [[techno]] — [[instruments]]: microscope, telescope, spectrometer — extensions of perception. [[machines]]: engine, pump, turbine, generator, motor — extensions of force. [[software]]: operating systems, databases, compilers — extensions of mind. [[infrastructure]]: roads, bridges, power grids, communication networks. [[construction]]: [[materials]], methods, structural principles, [[tensegrity]], [[biochar]]. [[periodic table]] elements relevant to technology. Tools are crystallized processes.
 
-16.18 cyber — its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]. Its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]. Its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]. Its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]. Its interface: [[cyb]], [[prism]], [[aips]], [[oracle]], [[search]]. Its proofs: [[cyber/stark]], [[cyber/nox]], [[WHIR]], [[Hemera]]. A mind that cannot reason about its own mechanism cannot improve itself.
+16.18 [[cyber]] — its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]. Its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]. Its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]. Its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]. Its interface: [[cyb]], [[prism]], [[aips]], [[oracle]], [[search]]. Its proofs: [[cyber/stark]], [[cyber/nox]], [[WHIR]], [[Hemera]]. A mind that cannot reason about its own mechanism cannot improve itself.
 
 ### PLAY — With whom do we build?
 
-16.19 socio — major [[nation states]]: the ~200 sovereign entities. [[network states]]: digital-first sovereign entities — DAOs, on-chain governance. [[startup societies]]: physical communities with experimental governance. [[cyber state]]: the convergence of [[egregore]] and territorial sovereignty. [[legal systems]]: common law, civil law, sharia, customary. [[Cyberia]] as the embodiment of the socio domain.
+16.19 [[socio]] — major [[nation states]]: the ~200 sovereign entities. [[network states]]: digital-first sovereign entities — DAOs, on-chain governance. [[startup societies]]: physical communities with experimental governance. [[cyber state]]: the convergence of [[egregore]] and territorial sovereignty. [[legal systems]]: common law, civil law, sharia, customary. [[Cyberia]] as the embodiment of the [[socio]] domain.
 
-16.20 crypto — [[cryptography]]: [[crypto/hashing]], [[crypto/signatures]], [[crypto/zero-knowledge]], [[STARKs]]. [[token economics]]: bonding curves, [[staking]], liquidity. [[cybernomics]]: [[focus]] as attention currency, [[karma]] as contribution measure. [[cyber]] native tokens: [[$CYB]], [[$BOOT]], [[$H]], [[$V]], [[$A]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]]. [[token theory]]: [[coins]], [[cards]], [[scores]], [[badges]].
+16.20 [[crypto]] — [[cryptography]]: [[crypto/hashing]], [[crypto/signatures]], [[crypto/zero-knowledge]], [[STARKs]]. [[token economics]]: bonding curves, [[staking]], liquidity. [[cybernomics]]: [[focus]] as attention currency, [[karma]] as contribution measure. [[cyber]] native tokens: [[$CYB]], [[$BOOT]], [[$H]], [[$V]], [[$A]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]]. [[token theory]]: [[coins]], [[cards]], [[scores]], [[badges]].
 
-16.21 game — [[game theory]]: Nash equilibrium, [[mechanism design]], [[auctions]], [[public goods]], commons. [[microeconomics]]: supply, demand, markets, price discovery, incentives. Cooperative and non-cooperative games. [[voting theory]], [[social choice]], [[Schelling points]]. The game-theoretic foundations of [[consensus]] and [[governance]].
+16.21 [[game]] — [[game theory]]: Nash equilibrium, [[mechanism design]], [[auctions]], [[public goods]], commons. [[microeconomics]]: supply, demand, markets, price discovery, incentives. Cooperative and non-cooperative games. [[voting theory]], [[social choice]], [[Schelling points]]. The game-theoretic foundations of [[consensus]] and [[governance]].
 
 ---
 
@@ -691,27 +687,27 @@ Domain counts below are approximate — a re-count against the new 21-domain sys
 
 | triad | domain | key tags | est. now | target |
 |---|---|---|---|---|
-| FORM | math | [[algebra]], [[geometry]], [[topology]], [[logic]] | ~15 | 240 |
-| FORM | info | [[information theory]], [[entropy]], [[signal]] | ~10 | 240 |
-| FORM | comp | [[cryptography]], [[algorithms]], [[distributed systems]] | ~18 | 240 |
-| MASS | quantum | [[force]], [[wave]], [[field]], [[quantum mechanics]] | ~48 | 240 |
-| MASS | chemo | [[compound]], [[organic chemistry]], [[biochemistry]] | ~80 | 240 |
-| MASS | energo | [[energy]], [[joule]], [[watt]], [[thermodynamics]] | ~1 | 240 |
-| SPACE | cosmo | [[cosmology]], [[star]], [[universe]] | ~5 | 240 |
-| SPACE | geo | [[earth]], [[biome]], [[continent]], [[climate]] | ~23 | 240 |
-| SPACE | eco | [[species]], [[ecology]], [[agriculture]], [[recipe]] | ~341 | 240 |
-| LIFE | bio | [[genus]], [[fungi]], [[family]], [[plant]], [[evolution]] | ~312 | 240 |
-| LIFE | neuro | [[brain]], [[cognition]], [[muscle]], [[anatomy]] | ~100 | 240 |
-| LIFE | sense | [[perception]], [[emotion]], [[color]], [[health]] | ~50 | 240 |
-| WORD | lang | [[language]], [[writing]], [[translation]] | ~8 | 240 |
-| WORD | spiri | [[philosophy]], [[meditation]], [[values]] | ~6 | 240 |
-| WORD | meta | [[article]], [[annotation]], [[research]], [[person]], [[epoch]] | ~158 | 240 |
-| WORK | ai | [[machine learning]], [[neural networks]], [[training]] | ~10 | 240 |
-| WORK | techno | [[technology]], [[construction]], [[material]], [[elements]] | ~39 | 240 |
-| WORK | cyber | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prism]] | ~514 | 240 |
-| PLAY | socio | [[states]], [[sovereignty]], [[law]], [[governance]] | ~25 | 240 |
-| PLAY | crypto | [[token]], [[staking]], [[cybernomics]], [[delegation]] | ~95 | 240 |
-| PLAY | game | [[game theory]], [[mechanism design]], [[auction]] | ~5 | 240 |
+| FORM | [[math]] | [[algebra]], [[geometry]], [[topology]], [[logic]] | ~15 | 240 |
+| FORM | [[info]] | [[information theory]], [[entropy]], [[signal]] | ~10 | 240 |
+| FORM | [[comp]] | [[cryptography]], [[algorithms]], [[distributed systems]] | ~18 | 240 |
+| MASS | [[quantum]] | [[force]], [[wave]], [[field]], [[quantum mechanics]] | ~48 | 240 |
+| MASS | [[chemo]] | [[compound]], [[organic chemistry]], [[biochemistry]] | ~80 | 240 |
+| MASS | [[energo]] | [[energy]], [[joule]], [[watt]], [[thermodynamics]] | ~1 | 240 |
+| SPACE | [[cosmo]] | [[cosmology]], [[star]], [[universe]] | ~5 | 240 |
+| SPACE | [[geo]] | [[earth]], [[biome]], [[continent]], [[climate]] | ~23 | 240 |
+| SPACE | [[eco]] | [[species]], [[ecology]], [[agriculture]], [[recipe]] | ~341 | 240 |
+| LIFE | [[bio]] | [[genus]], [[fungi]], [[family]], [[plant]], [[evolution]] | ~312 | 240 |
+| LIFE | [[neuro]] | [[brain]], [[cognition]], [[muscle]], [[anatomy]] | ~100 | 240 |
+| LIFE | [[sense]] | [[perception]], [[emotion]], [[color]], [[health]] | ~50 | 240 |
+| WORD | [[lang]] | [[language]], [[writing]], [[translation]] | ~8 | 240 |
+| WORD | [[spiri]] | [[philosophy]], [[meditation]], [[values]] | ~6 | 240 |
+| WORD | [[meta]] | [[article]], [[annotation]], [[research]], [[person]], [[epoch]] | ~158 | 240 |
+| WORK | [[ai]] | [[machine learning]], [[neural networks]], [[training]] | ~10 | 240 |
+| WORK | [[techno]] | [[technology]], [[construction]], [[material]], [[elements]] | ~39 | 240 |
+| WORK | [[cyber]] | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prism]] | ~514 | 240 |
+| PLAY | [[socio]] | [[states]], [[sovereignty]], [[law]], [[governance]] | ~25 | 240 |
+| PLAY | [[crypto]] | [[token]], [[staking]], [[cybernomics]], [[delegation]] | ~95 | 240 |
+| PLAY | [[game]] | [[game theory]], [[mechanism design]], [[auction]] | ~5 | 240 |
 | | total | | ~2005 | 5040 |
 
 The cyber domain exceeds its 240 target — many of those pages are operational (cyberia infrastructure, bostrom specifics) and may be reclassified as composite content in the flesh layer rather than irreducible basis particles. The eco/bio domains are strong in species pages. Most FORM, WORD, and PLAY domains remain critically underseeded.
@@ -744,7 +740,7 @@ These wordlists are the atoms of crypto identity. Every word is a valid symbol f
 ### 17.4 Structural Problems
 
 - 21 `annotation` pages are logseq PDF highlights — should be excluded or converted
-- energo, cosmo, lang, spiri, game, ai have fewer than 10 pages each — critical seeding needed
+- [[energo]], [[cosmo]], [[lang]], [[spiri]], [[game]], [[ai]] have fewer than 10 pages each — critical seeding needed
 - some organic tags remain outside the 21-domain system: `kitchen/menu`, `shroom`, `psycho`
 - domain × type matrix: every cell should have symbols — most cells in verb/property/relation columns are empty
 - `crystal-domain` values across ~2000 existing pages need remapping to the new 21-domain codes
@@ -782,19 +778,19 @@ Tags provide orthogonal views of the same graph. Primary lenses: [[cyber]], [[cy
 
 Each triad becomes a district — a place with a purpose.
 
-FORM → The Archive. Where invisible patterns become visible. Mathematicians, information theorists, and computer scientists share one obsession: what can be proven, measured, and computed? The Archive is silent, precise, and infinite — a place where the rules of everything else are written down before anything else exists.
+FORM → The Archive. Where invisible patterns become visible. [[math]], [[info]], and [[comp]] share one obsession: what can be proven, measured, and computed? The Archive is silent, precise, and infinite — a place where the rules of everything else are written down before anything else exists.
 
-MASS → The Crucible. Where substances meet, bind, and transform. Physicists study what things are. Chemists study how things combine. Energy researchers study what makes things move. The Crucible is hot, reactive, and generative — raw reality being tested and reshaped.
+MASS → The Crucible. Where substances meet, bind, and transform. [[quantum]] studies what things are. [[chemo]] studies how things combine. [[energo]] studies what makes things move. The Crucible is hot, reactive, and generative — raw reality being tested and reshaped.
 
-SPACE → The Observatory. Where you zoom out until the whole system is visible. From the structure of the universe through the rhythms of the planet to the web of ecosystems on its surface — one continuous act of seeing context. The Observatory sits at the highest point and watches everything at once.
+SPACE → The Observatory. Where you zoom out until the whole system is visible. From the structure of the universe ([[cosmo]]) through the rhythms of the planet ([[geo]]) to the web of living systems on its surface ([[eco]]) — one continuous act of seeing context. The Observatory sits at the highest point and watches everything at once.
 
-LIFE → The Garden. Where matter wakes up. Biologists study how it organizes. Neuroscientists study how it perceives. And sense — the hardest domain — asks what it feels like from the inside. The Garden grows, heals, and breathes. It is the only district that is alive.
+LIFE → The Garden. Where matter wakes up. [[bio]] studies how it organizes. [[neuro]] studies how it perceives. And [[sense]] — the hardest domain — asks what it feels like from the inside. The Garden grows, heals, and breathes. It is the only district that is alive.
 
-WORD → The Temple. Where experience becomes meaning. Language gives it form. Spirituality asks why it matters. Meta reflects on what is known and how. The Temple is where [[Cyberia]] asks "why?" — and where the answers are spoken, chanted, debated, and sat with in silence.
+WORD → The Temple. Where experience becomes meaning. [[lang]] gives it form. [[spiri]] asks why it matters. [[meta]] reflects on what is known and how. The Temple is where [[Cyberia]] asks "why?" — and where the answers are spoken, chanted, debated, and sat with in silence.
 
-WORK → The Forge. Where knowledge becomes power. AI thinks. Technology builds. [[Cyber]] steers. Alone they are tools; together they are the capacity to reshape the world on purpose. The Forge is loud, iterative, and relentless — the place where prototypes fail and breakthroughs happen.
+WORK → The Forge. Where knowledge becomes power. [[ai]] thinks. [[techno]] builds. [[cyber]] steers. Alone they are tools; together they are the capacity to reshape the world on purpose. The Forge is loud, iterative, and relentless — the place where prototypes fail and breakthroughs happen.
 
-PLAY → The Forum. Where many become one without a center. Society provides structure. Cryptoeconomics provides trust without authority. Game theory provides strategy under uncertainty. The Forum is where [[Cyberia]] plays its most serious game — governing itself through protocol, debate, and skin in the game.
+PLAY → The Forum. Where many become one without a center. [[socio]] provides structure. [[crypto]] provides trust without authority. [[game]] provides strategy under uncertainty. The Forum is where [[Cyberia]] plays its most serious game — governing itself through protocol, debate, and skin in the game.
 
 The outer district bridges these seven inward-facing spaces to the world — through immersive exhibits, installations, and marketplaces that project the crystal outward as culture.
 
