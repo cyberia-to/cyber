@@ -1,3 +1,9 @@
+---
+tags: cyber, cyb, draft, research
+crystal-type: entity
+crystal-domain: cyber
+alias: CyberWasm, CyberRS, cyberwasm
+---
 # CyberWasm
 
 A byte machine for sovereign computing.
@@ -6,7 +12,7 @@ A byte machine for sovereign computing.
 
 ## The Problem
 
-CosmWasm is a transaction processor pretending to be a computing environment. Programs cannot live in memory. Programs cannot wake themselves up. Programs pay for abstractions they never asked for. Every call crosses a Go→CGo→Rust→Wasm bridge with JSON serialization at every boundary. The result is a system where conventional programs cannot run.
+[[cosmwasm]] is a transaction processor pretending to be a computing environment. Programs cannot live in memory. Programs cannot wake themselves up. Programs pay for abstractions they never asked for. Every call crosses a Go→CGo→Rust→Wasm bridge with JSON serialization at every boundary. The result is a system where conventional programs cannot run.
 
 CyberWasm is the replacement. Not a module bolted onto a Go chain — a full Rust ABCI application. No Go. No bridge. No JSON. A machine where a HashMap is storage, a function call is a message, and a timer is a cron job.
 
@@ -47,7 +53,7 @@ This section establishes the system-level architecture that satisfies all six re
 
 ABCI is a 1:1 protocol. One CometBFT instance connects to exactly one application. The reason is fundamental: CometBFT produces a single linear chain of blocks. Each block produces a single deterministic state transition. `Commit` returns one app hash — one root. There is no room in this protocol for multiple applications producing separate roots.
 
-The Cosmos SDK solved this with modules — `x/bank`, `x/staking`, `x/wasm` are all different compute engines inside one process (`BaseApp`). But the SDK treats them as tightly coupled namespaces within a monolithic Go framework.
+The [[cosmos-sdk]] solved this with modules — `x/bank`, `x/staking`, `x/wasm` are all different compute engines inside one process (`BaseApp`). But the SDK treats them as tightly coupled namespaces within a monolithic Go framework.
 
 CyberWasm takes the same approach but cleaner: genuinely independent execution engines sharing a consensus layer, coordinated by a multiplexer.
 
@@ -82,7 +88,7 @@ CometBFT → ABCI → Multiplexer (single Rust binary)
 
 ### Two execution tiers
 
-Native Rust code (graph engine, bank, staking) runs alongside Wasm programs. These are not the same thing. They have different trust models, capabilities, deployment mechanisms, and performance characteristics. They are two tiers of the same machine.
+Native Rust code (graph engine, bank, [[staking]]) runs alongside [[wasm]] programs. These are not the same thing. They have different trust models, capabilities, deployment mechanisms, and performance characteristics. They are two tiers of the same machine.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -232,7 +238,7 @@ Global Merkle tree
 └── bostrom/
 ```
 
-One commitment covers all machines. One app hash for CometBFT. One proof tree for IBC.
+One commitment covers all machines. One app hash for CometBFT. One proof tree for [[ibc]].
 
 ### The upgrade spectrum
 
@@ -248,7 +254,7 @@ Graph Engine   Bank   Staking   Governance   DEX   User App
  gov upgrade  gov upgrade gov upgrade  permissionless  permissionless
 ```
 
-Governance starts as Tier 1 (hardcoded logic for bootstrapping). Once CyberWasm is stable, governance migrates to Tier 2 — self-modifying without a binary upgrade. A Tier 2 program that proves itself critical can be promoted to Tier 1 for native speed.
+[[governance]] starts as Tier 1 (hardcoded logic for bootstrapping). Once CyberWasm is stable, governance migrates to Tier 2 — self-modifying without a binary upgrade. A Tier 2 program that proves itself critical can be promoted to Tier 1 for native speed.
 
 The Machine trait is the same for both tiers from the multiplexer's perspective. Migration between tiers is a pure implementation detail.
 
@@ -334,7 +340,7 @@ The `Machine` trait encodes this split. Deterministic methods in one set, non-de
 
 ### Graph engine: the Tier 1 showcase
 
-Rank computation over millions of cyberlinks is a dense matrix operation. Running it inside Wasm pays a 3-10x penalty for sandboxing you don't need — it's not user-deployed code, it's the chain's core logic. As a Tier 1 machine:
+[[bostrom/rank]] computation over millions of [[cyberlinks]] is a dense matrix operation. Running it inside Wasm pays a 3-10x penalty for sandboxing you don't need — it's not user-deployed code, it's the chain's core logic. As a Tier 1 machine:
 
 ```rust
 #![deny(cyberwasm::nondeterministic)]
@@ -868,7 +874,7 @@ ibc_send_packet, ibc_channel_open, ibc_channel_close
 stable_read, stable_write, stable_size, stable_grow
 ```
 
-**Bostrom-specific:**
+[[bostrom]]-specific:
 ```
 create_cyberlink, delete_cyberlink
 query_rank, query_backlinks, query_outlinks, query_bandwidth
@@ -1002,7 +1008,7 @@ Gas limit per transaction:    sender
 
 ## Relationship to go-cyber Upgrade Plan
 
-CyberWasm is a parallel effort to the go-cyber dependency upgrade plan. They are complementary, not competing.
+CyberWasm is a parallel effort to the [[go-cyber]] dependency upgrade plan. They are complementary, not competing.
 
 ### go-cyber upgrade plan: three phases of Go work
 
