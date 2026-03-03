@@ -1,23 +1,31 @@
 ---
-tags: culture
+tags: discipline, spiri, meta, math
 crystal-type: entity
-crystal-domain: culture
-stake: 5034410084856157
+crystal-domain: meta
 ---
-systematic inquiry into fundamental questions: existence, [[knowledge]], [[truth]], value, reason, mind, [[language]]
+# philosophy
 
-branches: metaphysics (what exists), epistemology (what can be known), [[ethics]] (what is right), logic (valid reasoning), [[aesthetics]] (beauty and [[art]])
+the discipline that asks what exists, what can be known, and what should be done. the oldest of [[disciplines]] — ancestor to [[physics]], [[mathematics]], [[psychology]], and most others. originated independently in Greece ([[Aristotle]]), India (Vedanta, Buddhism), and China (Confucianism, Daoism) during the [[Iron Age]] Axial Age
 
-originated independently in Greece, India, and China during the [[Iron Age]] Axial Age (~800-200 BCE)
+in the [[crystal]], philosophy spans three domains:
 
-Greek tradition: Socrates, Plato, Aristotle -> foundation of Western [[science]] and logic
+- [[spiri]] — meaning, values, [[ethics]], [[aesthetics]], transcendence, [[wisdom]]
+- [[meta]] — [[epistemology]], [[knowledge theory]], [[methodology]], [[causation]], [[truth]]
+- [[math]] — [[logic]], [[propositional logic]], [[predicate logic]], [[modal logic]], [[type theory]]
 
-Indian tradition: Vedanta, Buddhism, Jainism -> analysis of consciousness, suffering, liberation
+## branches
 
-Chinese tradition: Confucianism, Daoism, Legalism -> social harmony, governance, natural order
+metaphysics → [[meta]] + [[quantum]] (what exists, substance, identity, [[spacetime]])
+epistemology → [[meta]] ([[knowledge]], justification, [[truth]], belief)
+ethics → [[spiri]] ([[ethics]], moral reasoning, applied ethics)
+logic → [[math]] ([[logic]], formal systems, validity, [[Kurt Goedel]])
+aesthetics → [[spiri]] ([[aesthetics]], beauty, [[art]], [[music]])
+philosophy of mind → [[neuro]] + [[sense]] ([[consciousness]], qualia, intentionality)
+philosophy of science → [[meta]] ([[methodology]], falsification, paradigms)
+political philosophy → [[socio]] ([[governance]], justice, [[sovereignty]], rights)
 
-Islamic Golden Age preserved and extended Greek philosophy (Al-Kindi, Avicenna, Averroes)
+[[cyber]] embeds an epistemology: [[knowledge]] is what agents link, rank, and verify through [[consensus]]
 
-modern branches: philosophy of mind, philosophy of [[language]], philosophy of [[science]]
+## key figures
 
-[[cyber]] embeds an epistemology: [[knowledge]] is what agents link, rank, and verify through consensus
+[[Aristotle]], [[Gottfried Leibniz]]

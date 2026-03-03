@@ -1,33 +1,28 @@
 ---
-tags: cybernomics
+tags: discipline, bio, chemo, neuro
 crystal-type: entity
-crystal-domain: economics
+crystal-domain: bio
 stake: 9236464369016096
 ---
-[[adenium obesum]]
+# medicine
 
-[[artemisia absinthium]]
+the discipline that prevents, diagnoses, and treats disease. medicine bridges [[bio]] (the living systems that break), [[chemo]] (the molecular interventions), and [[neuro]] (neurological conditions and the mind-body interface)
 
-[[artemisia vulgaris]]
+in the [[crystal]], medicine spans three domains:
 
-[[comfrey]]
+- [[bio]] — anatomy, [[genetics]], [[immune response]], pathology, [[apoptosis]]
+- [[chemo]] — pharmacology, [[alkaloids]], [[flavonoids]], [[essential oil]], [[compounds effects]]
+- [[neuro]] — neurology, psychiatry, [[consciousness]], pain, [[Alzheimer's]]
 
-[[kalanchoe pinnata]]
+## branches
 
-[[aloe vera]]
+internal medicine → [[bio]] (diagnosis, chronic disease, systemic disorders)
+surgery → [[bio]] + [[tech]] (operative intervention, instruments)
+pharmacology → [[chemo]] + [[bio]] (drug action, dosing, side effects)
+neurology → [[neuro]] + [[bio]] ([[Alzheimer's]], [[Parkinson's disease]], [[dementia]])
+dermatology → [[bio]] ([[skin disease]], [[eczema (atopic dermatitis)]], [[psoriasis]], [[melanoma]])
+traditional medicine → [[bio]] + [[chemo]] + [[spiri]] (herbal, Ayurvedic, TCM)
 
-[[eleutherine bulbosa]]
+## medicinal plants in the graph
 
-[[melaleuca]]
-
-[[eucalyptus deglupta]]
-
-[[platycladus]]
-
-[[azadirachta indica]]
-
-[[sapindus]]
-
-[[thuja occidentale]]
-
-[[juniperus virginiana]]
+[[moringa oleifera]], [[artemisia vulgaris]], [[aloe vera]], [[kalanchoe pinnata]], [[azadirachta indica]], [[melaleuca]], [[centella asiatica]], [[curcuma longa]]

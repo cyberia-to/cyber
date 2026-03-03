@@ -1,7 +1,7 @@
 ---
-tags: cyber, species
+tags: discipline, bio, chemo, eco
 crystal-type: entity
-crystal-domain: biology
+crystal-domain: bio
 stake: 6790656415064160
 ---
 

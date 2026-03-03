@@ -1,7 +1,7 @@
 ---
-tags: physics
+tags: discipline, cosmo, quantum, energo
 crystal-type: entity
-crystal-domain: physics
+crystal-domain: cosmo
 stake: 5168661020452321
 ---
 The study of the origin, structure, evolution, and fate of the universe as a whole.

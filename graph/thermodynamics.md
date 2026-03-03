@@ -1,7 +1,7 @@
 ---
-tags: physics
+tags: discipline, energo, info, quantum
 crystal-type: entity
-crystal-domain: physics
+crystal-domain: energo
 stake: 4859883868581144
 ---
 

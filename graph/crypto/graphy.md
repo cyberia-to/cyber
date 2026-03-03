@@ -1,8 +1,8 @@
 ---
 alias: cryptography, modern cryptography, crypto primitives
-tags: computer science
+tags: discipline, crypto, math, comp
 crystal-type: entity
-crystal-domain: computer science
+crystal-domain: crypto
 stake: 7021323931679387
 ---
 # cryptography
