@@ -24,12 +24,12 @@ evolution — evolutionary game theory, evolutionary stable strategies, replicat
 
 ## bridges
 
-game → [[math]]: equilibria are fixed points. [[Shapley value]] is axiomatically unique. [[probability]] and [[combinatorics]] power solution concepts
-game → [[eco]]: ecological interactions are strategic. predator-prey, [[symbiosis]], competition are games with evolutionary payoffs
-game → [[socio]]: [[governance]] is a game. constitutions are rules. elections are mechanisms. [[public goods]] provision is a collective action problem
-game → [[crypto]]: [[mechanism design]], [[staking]], [[auction]], token incentives — crypto systems are designed games
-game → [[ai]]: multi-agent reinforcement learning is game theory meets [[machine learning]]. adversarial training is a zero-sum game
-game → [[cyber]]: the protocol is a game. [[neurons]] are players, [[focus]] is the payoff, and [[mechanism design]] ensures honest play produces [[intelligence]]
+- game → [[math]]: equilibria are fixed points. [[Shapley value]] is axiomatically unique. [[probability]] and [[combinatorics]] power solution concepts
+- game → [[eco]]: ecological interactions are strategic. predator-prey, [[symbiosis]], competition are games with evolutionary payoffs
+- game → [[socio]]: [[governance]] is a game. constitutions are rules. elections are mechanisms. [[public goods]] provision is a collective action problem
+- game → [[crypto]]: [[mechanism design]], [[staking]], [[auction]], token incentives — crypto systems are designed games
+- game → [[ai]]: multi-agent reinforcement learning is game theory meets [[machine learning]]. adversarial training is a zero-sum game
+- game → [[cyber]]: the protocol is a game. [[neurons]] are players, [[focus]] is the payoff, and [[mechanism design]] ensures honest play produces [[intelligence]]
 
 ## key figures
 

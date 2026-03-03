@@ -22,11 +22,11 @@ compounds — [[caffeic acid]], [[quercetin]], [[kaempferol]], [[eugenol]], [[li
 
 ## bridges
 
-chemo → [[quantum]]: bonds are quantum phenomena. molecular orbital theory is applied quantum mechanics
-chemo → [[energo]]: reaction energetics determine what happens spontaneously. [[free energy]] drives chemistry
-chemo → [[bio]]: biochemistry is the chemistry of [[organisms]]. [[DNA]], [[proteins]], [[metabolism]] are chemical processes
-chemo → [[tech]]: materials science is applied chemistry. [[metal]], [[glass]], [[bioplastic]], [[biochar]] are engineered compounds
-chemo → [[eco]]: biogeochemical cycles — [[carbon cycle]], [[nitrogen cycle]], [[water cycle]] — are planetary-scale chemistry
+- chemo → [[quantum]]: bonds are quantum phenomena. molecular orbital theory is applied quantum mechanics
+- chemo → [[energo]]: reaction energetics determine what happens spontaneously. [[free energy]] drives chemistry
+- chemo → [[bio]]: biochemistry is the chemistry of [[organisms]]. [[DNA]], [[proteins]], [[metabolism]] are chemical processes
+- chemo → [[tech]]: materials science is applied chemistry. [[metal]], [[glass]], [[bioplastic]], [[biochar]] are engineered compounds
+- chemo → [[eco]]: biogeochemical cycles — [[carbon cycle]], [[nitrogen cycle]], [[water cycle]] — are planetary-scale chemistry
 
 ## key figures
 

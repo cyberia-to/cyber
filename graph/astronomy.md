@@ -14,11 +14,11 @@ in the [[crystal]], astronomy spans two domains:
 
 ## branches
 
-observational astronomy → [[cosmo]] + [[sense]] (telescopes, spectroscopy, imaging)
-astrophysics → [[cosmo]] + [[quantum]] (stellar structure, nucleosynthesis, compact objects)
-[[cosmology]] → [[cosmo]] + [[quantum]] + [[energo]] (origin, expansion, fate of the universe)
-planetary science → [[cosmo]] + [[geo]] (formation, atmospheres, surfaces)
-radio astronomy → [[cosmo]] + [[info]] ([[radio]], signals, pulsars)
+- observational astronomy → [[cosmo]] + [[sense]] (telescopes, spectroscopy, imaging)
+- astrophysics → [[cosmo]] + [[quantum]] (stellar structure, nucleosynthesis, compact objects)
+- [[cosmology]] → [[cosmo]] + [[quantum]] + [[energo]] (origin, expansion, fate of the universe)
+- planetary science → [[cosmo]] + [[geo]] (formation, atmospheres, surfaces)
+- radio astronomy → [[cosmo]] + [[info]] ([[radio]], signals, pulsars)
 
 ## key figures
 

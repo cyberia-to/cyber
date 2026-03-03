@@ -24,11 +24,11 @@ soil — [[soil]], [[soil improvement]], [[soil/production]], [[biochar]], [[com
 
 ## bridges
 
-geo → [[cosmo]]: earth is a product of stellar nucleosynthesis and planetary accretion
-geo → [[eco]]: [[biomes]] are geo-biological units. [[climate]] determines which [[ecosystems]] form
-geo → [[chemo]]: geochemistry drives mineral formation, [[weathering]], and biogeochemical cycles
-geo → [[tech]]: [[construction]], [[lowtech construction]], [[roman concrete]], [[limestone]] — building on and with the earth
-geo → [[socio]]: territory is the basis of [[sovereignty]]. borders follow rivers, mountains, and coasts
+- geo → [[cosmo]]: earth is a product of stellar nucleosynthesis and planetary accretion
+- geo → [[eco]]: [[biomes]] are geo-biological units. [[climate]] determines which [[ecosystems]] form
+- geo → [[chemo]]: geochemistry drives mineral formation, [[weathering]], and biogeochemical cycles
+- geo → [[tech]]: [[construction]], [[lowtech construction]], [[roman concrete]], [[limestone]] — building on and with the earth
+- geo → [[socio]]: territory is the basis of [[sovereignty]]. borders follow rivers, mountains, and coasts
 
 ## key figures
 

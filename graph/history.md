@@ -14,14 +14,14 @@ in the [[crystal]], history spans two domains:
 
 ## periods in the graph
 
-[[Neolithic revolution]] → [[Bronze Age]] → [[Iron Age]] → [[Renaissance]] → [[Industrial Revolution]] → [[Information Age]]
+- [[Neolithic revolution]] → [[Bronze Age]] → [[Iron Age]] → [[Renaissance]] → [[Industrial Revolution]] → [[Information Age]]
 
 see also [[time/history]] for machine time, [[geological time]] for earth history
 
 ## branches
 
-political history → [[socio]] (states, wars, [[empire]], [[democracy]])
-economic history → [[crypto]] + [[game]] (trade, markets, monetary systems)
-history of science → [[meta]] (how [[disciplines]] formed and reformed)
-cultural history → [[lang]] + [[spiri]] (art, religion, customs)
-environmental history → [[geo]] + [[eco]] (human impact on [[biomes]], [[climate]])
+- political history → [[socio]] (states, wars, [[empire]], [[democracy]])
+- economic history → [[crypto]] + [[game]] (trade, markets, monetary systems)
+- history of science → [[meta]] (how [[disciplines]] formed and reformed)
+- cultural history → [[lang]] + [[spiri]] (art, religion, customs)
+- environmental history → [[geo]] + [[eco]] (human impact on [[biomes]], [[climate]])

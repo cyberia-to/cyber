@@ -15,11 +15,11 @@ in the [[crystal]], economics spans three domains:
 
 ## branches
 
-microeconomics → [[game]] + [[crypto]] (price theory, consumer choice, firm behavior)
-macroeconomics → [[socio]] + [[crypto]] ([[monetary policy]], [[fiscal policy]], [[inflation]])
-mechanism design → [[game]] + [[crypto]] ([[auction]], [[public goods]] provision, incentive compatibility)
-[[cybernomics]] → [[crypto]] + [[cyber]] (token economics for [[superintelligence]])
-behavioral economics → [[neuro]] + [[game]] (bounded rationality, biases, nudges)
+- microeconomics → [[game]] + [[crypto]] (price theory, consumer choice, firm behavior)
+- macroeconomics → [[socio]] + [[crypto]] ([[monetary policy]], [[fiscal policy]], [[inflation]])
+- mechanism design → [[game]] + [[crypto]] ([[auction]], [[public goods]] provision, incentive compatibility)
+- [[cybernomics]] → [[crypto]] + [[cyber]] (token economics for [[superintelligence]])
+- behavioral economics → [[neuro]] + [[game]] (bounded rationality, biases, nudges)
 
 ## key figures
 

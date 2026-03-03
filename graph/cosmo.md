@@ -22,11 +22,11 @@ time and fate — cosmic expansion, heat death, [[entropy]]. the second law of [
 
 ## bridges
 
-cosmo → [[quantum]]: the early universe was a quantum system. particle physics and cosmology unify at high energies
-cosmo → [[geo]]: [[earth systems]] are a local instance of planetary formation — itself a consequence of stellar evolution
-cosmo → [[energo]]: stars are fusion reactors. cosmic energy budgets constrain what civilizations can do
-cosmo → [[math]]: general [[relativity]] is differential [[geometry]] on curved [[spacetime]]. cosmological models are solutions to Einstein's equations
-cosmo → [[meta]]: cosmology is the ultimate historical science — reconstructing the past from present observations
+- cosmo → [[quantum]]: the early universe was a quantum system. particle physics and cosmology unify at high energies
+- cosmo → [[geo]]: [[earth systems]] are a local instance of planetary formation — itself a consequence of stellar evolution
+- cosmo → [[energo]]: stars are fusion reactors. cosmic energy budgets constrain what civilizations can do
+- cosmo → [[math]]: general [[relativity]] is differential [[geometry]] on curved [[spacetime]]. cosmological models are solutions to Einstein's equations
+- cosmo → [[meta]]: cosmology is the ultimate historical science — reconstructing the past from present observations
 
 ## key figures
 

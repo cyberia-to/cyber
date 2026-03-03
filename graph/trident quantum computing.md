@@ -298,7 +298,7 @@ That this same choice simultaneously optimizes for quantum advantage demonstrate
 
 ### 8.1 Formal Quantum Compilation Backend
 
-Develop a formal [[trident]] → [[quantum circuit]] compiler that:
+- Develop a formal [[trident]] → [[quantum circuit]] compiler that:
 
 - Maps `Field` variables to $p$-dimensional qudit registers
 - Translates [[field]] arithmetic to qudit gates

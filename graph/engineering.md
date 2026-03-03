@@ -15,12 +15,12 @@ in the [[crystal]], engineering spans three domains:
 
 ## branches
 
-civil engineering → [[tech]] + [[geo]] ([[building]], [[road]], [[foundation of buildings]], [[roman concrete]])
-mechanical engineering → [[tech]] + [[energo]] ([[engine]], [[lever]], [[wheel]], [[stirling engine]])
-electrical engineering → [[tech]] + [[quantum]] ([[semiconductor]], circuits, [[antenna]], [[inverter]])
-chemical engineering → [[tech]] + [[chemo]] (process design, [[polymerization]], [[fermentation]])
-software engineering → [[tech]] + [[comp]] ([[operating systems]], [[compilers]], [[distributed systems]])
-biomedical engineering → [[tech]] + [[bio]] (prosthetics, imaging, drug delivery)
+- civil engineering → [[tech]] + [[geo]] ([[building]], [[road]], [[foundation of buildings]], [[roman concrete]])
+- mechanical engineering → [[tech]] + [[energo]] ([[engine]], [[lever]], [[wheel]], [[stirling engine]])
+- electrical engineering → [[tech]] + [[quantum]] ([[semiconductor]], circuits, [[antenna]], [[inverter]])
+- chemical engineering → [[tech]] + [[chemo]] (process design, [[polymerization]], [[fermentation]])
+- software engineering → [[tech]] + [[comp]] ([[operating systems]], [[compilers]], [[distributed systems]])
+- biomedical engineering → [[tech]] + [[bio]] (prosthetics, imaging, drug delivery)
 
 ## key figures
 

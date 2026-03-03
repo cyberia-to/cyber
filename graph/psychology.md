@@ -15,10 +15,10 @@ in the [[crystal]], psychology spans three domains:
 
 ## branches
 
-cognitive psychology → [[neuro]] (attention, memory, reasoning, mental models)
-developmental psychology → [[neuro]] + [[bio]] (how minds grow across lifespan)
-social psychology → [[socio]] + [[neuro]] (group influence, conformity, identity)
-clinical psychology → [[neuro]] + [[bio]] (mental health, therapy, diagnosis)
-perceptual psychology → [[sense]] (vision, hearing, multisensory integration)
-evolutionary psychology → [[bio]] + [[game]] (adaptive behavior, mate selection, cooperation)
+- cognitive psychology → [[neuro]] (attention, memory, reasoning, mental models)
+- developmental psychology → [[neuro]] + [[bio]] (how minds grow across lifespan)
+- social psychology → [[socio]] + [[neuro]] (group influence, conformity, identity)
+- clinical psychology → [[neuro]] + [[bio]] (mental health, therapy, diagnosis)
+- perceptual psychology → [[sense]] (vision, hearing, multisensory integration)
+- evolutionary psychology → [[bio]] + [[game]] (adaptive behavior, mate selection, cooperation)
 

@@ -22,10 +22,10 @@ qualia — the subjective quality of experience. the taste of [[cinnamon]], the 
 
 ## bridges
 
-sense → [[neuro]]: sensory processing is neural computation. every modality maps to dedicated brain circuits
-sense → [[bio]]: sensory organs evolved through natural selection. the eye, the ear, the nose are biological engineering
-sense → [[lang]]: [[language]] encodes sensory experience into symbols. naming a color is translating sense into [[lang]]
-sense → [[ai]]: computer vision, speech recognition, sensor fusion — [[machine learning]] applied to sensory data
-sense → [[tech]]: sensors, cameras, microphones, spectrometers — [[engineering]] builds artificial sense organs
-sense → [[cyber]]: the protocol ingests sensory data as [[particles]]. every image, recording, and measurement is a sensory contribution to the [[cybergraph]]
+- sense → [[neuro]]: sensory processing is neural computation. every modality maps to dedicated brain circuits
+- sense → [[bio]]: sensory organs evolved through natural selection. the eye, the ear, the nose are biological engineering
+- sense → [[lang]]: [[language]] encodes sensory experience into symbols. naming a color is translating sense into [[lang]]
+- sense → [[ai]]: computer vision, speech recognition, sensor fusion — [[machine learning]] applied to sensory data
+- sense → [[tech]]: sensors, cameras, microphones, spectrometers — [[engineering]] builds artificial sense organs
+- sense → [[cyber]]: the protocol ingests sensory data as [[particles]]. every image, recording, and measurement is a sensory contribution to the [[cybergraph]]
 

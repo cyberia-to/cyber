@@ -22,11 +22,11 @@ shape — [[geometry]], [[topology]], [[calculus]], [[differential equations]], 
 
 ## bridges
 
-math → [[info]]: [[entropy]] is a logarithmic measure. [[Shannon]] built information theory on [[probability]]
-math → [[comp]]: [[algorithms]] are proofs that execute. [[complexity theory]] classifies what is tractable
-math → [[quantum]]: the wave function is a vector in Hilbert space. measurement is a [[linear algebra]] projection
-math → [[crypto]]: every [[cryptographic proof]] rests on hardness assumptions — mathematical conjectures about what cannot be computed efficiently
-math → [[game]]: [[equilibrium]] is a fixed point. [[Shapley value]] is an axiomatically unique allocation
+- math → [[info]]: [[entropy]] is a logarithmic measure. [[Shannon]] built information theory on [[probability]]
+- math → [[comp]]: [[algorithms]] are proofs that execute. [[complexity theory]] classifies what is tractable
+- math → [[quantum]]: the wave function is a vector in Hilbert space. measurement is a [[linear algebra]] projection
+- math → [[crypto]]: every [[cryptographic proof]] rests on hardness assumptions — mathematical conjectures about what cannot be computed efficiently
+- math → [[game]]: [[equilibrium]] is a fixed point. [[Shapley value]] is an axiomatically unique allocation
 
 ## key figures
 

@@ -16,12 +16,12 @@ in the [[crystal]], medicine spans three domains:
 
 ## branches
 
-internal medicine → [[bio]] (diagnosis, chronic disease, systemic disorders)
-surgery → [[bio]] + [[tech]] (operative intervention, instruments)
-pharmacology → [[chemo]] + [[bio]] (drug action, dosing, side effects)
-neurology → [[neuro]] + [[bio]] ([[Alzheimer's]], [[Parkinson's disease]], [[dementia]])
-dermatology → [[bio]] ([[skin disease]], [[eczema (atopic dermatitis)]], [[psoriasis]], [[melanoma]])
-traditional medicine → [[bio]] + [[chemo]] + [[spiri]] (herbal, Ayurvedic, TCM)
+- internal medicine → [[bio]] (diagnosis, chronic disease, systemic disorders)
+- surgery → [[bio]] + [[tech]] (operative intervention, instruments)
+- pharmacology → [[chemo]] + [[bio]] (drug action, dosing, side effects)
+- neurology → [[neuro]] + [[bio]] ([[Alzheimer's]], [[Parkinson's disease]], [[dementia]])
+- dermatology → [[bio]] ([[skin disease]], [[eczema (atopic dermatitis)]], [[psoriasis]], [[melanoma]])
+- traditional medicine → [[bio]] + [[chemo]] + [[spiri]] (herbal, Ayurvedic, TCM)
 
 ## medicinal plants in the graph
 

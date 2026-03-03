@@ -24,12 +24,12 @@ alignment — [[alignment]], [[focus]], [[cyberank]], measurability. the problem
 
 ## bridges
 
-ai → [[comp]]: AI is computation on data. [[algorithms]], [[complexity theory]], hardware efficiency are comp foundations
-ai → [[neuro]]: artificial [[neural networks]] are inspired by biological ones. [[Karl Friston]]'s [[free energy principle]] unifies both
-ai → [[math]]: optimization, [[linear algebra]], [[probability]], [[statistics]] — the mathematical toolkit of ML
-ai → [[lang]]: NLP, [[NMT]], [[LLMs]] — language is AI's primary interface with humans
-ai → [[crypto]]: [[verifiable AI]], model commitments, proof of inference. [[trident verifiable AI]] integrates proving and computing
-ai → [[cyber]]: the protocol is a distributed AI. [[neurons]] link [[knowledge]]; [[cyberank]] computes relevance; [[focus]] concentrates intelligence
+- ai → [[comp]]: AI is computation on data. [[algorithms]], [[complexity theory]], hardware efficiency are comp foundations
+- ai → [[neuro]]: artificial [[neural networks]] are inspired by biological ones. [[Karl Friston]]'s [[free energy principle]] unifies both
+- ai → [[math]]: optimization, [[linear algebra]], [[probability]], [[statistics]] — the mathematical toolkit of ML
+- ai → [[lang]]: NLP, [[NMT]], [[LLMs]] — language is AI's primary interface with humans
+- ai → [[crypto]]: [[verifiable AI]], model commitments, proof of inference. [[trident verifiable AI]] integrates proving and computing
+- ai → [[cyber]]: the protocol is a distributed AI. [[neurons]] link [[knowledge]]; [[cyberank]] computes relevance; [[focus]] concentrates intelligence
 
 ## key figures
 

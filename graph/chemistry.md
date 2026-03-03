@@ -16,9 +16,9 @@ in the [[crystal]], chemistry maps primarily to [[chemo]] with a bridge to [[qua
 
 organic chemistry → carbon compounds, [[biochemistry]], pharmaceuticals
 inorganic chemistry → metals, minerals, coordination compounds
-physical chemistry → [[thermodynamics]] of reactions, kinetics, [[spectroscopy]]
+- physical chemistry → [[thermodynamics]] of reactions, kinetics, [[spectroscopy]]
 analytical chemistry → measurement, instrumentation, identification
-biochemistry → [[chemo]] + [[bio]] (proteins, enzymes, metabolic pathways)
+- biochemistry → [[chemo]] + [[bio]] (proteins, enzymes, metabolic pathways)
 
 ## key figures
 

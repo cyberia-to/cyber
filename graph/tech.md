@@ -24,12 +24,12 @@ craft — [[carpentry]], [[loppers]], [[pruning shears]], [[pruning saw]], [[sho
 
 ## bridges
 
-tech → [[chemo]]: materials science is applied chemistry. [[metal]], [[glass]], [[bioplastic]] are engineered compounds
-tech → [[energo]]: every machine converts energy. [[battery]], [[engine]], [[photovoltaic panel]] are energy-tech interfaces
-tech → [[comp]]: [[semiconductor]], [[operating systems]], [[wasm]]. digital technology is computation in silicon
-tech → [[geo]]: construction works with terrain. [[limestone]], [[soil]], [[crushed gravel]] are geological materials
-tech → [[socio]]: technology shapes society. [[printing press]], [[radio]], internet — each restructured [[governance]] and [[communication]]
-tech → [[cyber]]: the protocol runs on physical tech. hardware, networking, energy — the material substrate of [[superintelligence]]
+- tech → [[chemo]]: materials science is applied chemistry. [[metal]], [[glass]], [[bioplastic]] are engineered compounds
+- tech → [[energo]]: every machine converts energy. [[battery]], [[engine]], [[photovoltaic panel]] are energy-tech interfaces
+- tech → [[comp]]: [[semiconductor]], [[operating systems]], [[wasm]]. digital technology is computation in silicon
+- tech → [[geo]]: construction works with terrain. [[limestone]], [[soil]], [[crushed gravel]] are geological materials
+- tech → [[socio]]: technology shapes society. [[printing press]], [[radio]], internet — each restructured [[governance]] and [[communication]]
+- tech → [[cyber]]: the protocol runs on physical tech. hardware, networking, energy — the material substrate of [[superintelligence]]
 
 ## key figures
 

@@ -15,14 +15,14 @@ in the [[crystal]], philosophy spans three domains:
 
 ## branches
 
-metaphysics → [[meta]] + [[quantum]] (what exists, substance, identity, [[spacetime]])
-epistemology → [[meta]] ([[knowledge]], justification, [[truth]], belief)
-ethics → [[spiri]] ([[ethics]], moral reasoning, applied ethics)
-logic → [[math]] ([[logic]], formal systems, validity, [[Kurt Goedel]])
-aesthetics → [[spiri]] ([[aesthetics]], beauty, [[art]], [[music]])
-philosophy of mind → [[neuro]] + [[sense]] ([[consciousness]], qualia, intentionality)
-philosophy of science → [[meta]] ([[methodology]], falsification, paradigms)
-political philosophy → [[socio]] ([[governance]], justice, [[sovereignty]], rights)
+- metaphysics → [[meta]] + [[quantum]] (what exists, substance, identity, [[spacetime]])
+- epistemology → [[meta]] ([[knowledge]], justification, [[truth]], belief)
+- ethics → [[spiri]] ([[ethics]], moral reasoning, applied ethics)
+- logic → [[math]] ([[logic]], formal systems, validity, [[Kurt Goedel]])
+- aesthetics → [[spiri]] ([[aesthetics]], beauty, [[art]], [[music]])
+- philosophy of mind → [[neuro]] + [[sense]] ([[consciousness]], qualia, intentionality)
+- philosophy of science → [[meta]] ([[methodology]], falsification, paradigms)
+- political philosophy → [[socio]] ([[governance]], justice, [[sovereignty]], rights)
 
 [[cyber]] embeds an epistemology: [[knowledge]] is what agents link, rank, and verify through [[consensus]]
 

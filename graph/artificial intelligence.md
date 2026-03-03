@@ -15,13 +15,13 @@ in the [[crystal]], artificial intelligence spans three domains:
 
 ## branches
 
-machine learning → [[ai]] (supervised, unsupervised, reinforcement learning)
-deep learning → [[ai]] + [[comp]] (transformers, CNNs, [[neural networks]], [[LLMs]])
-robotics → [[ai]] + [[tech]] + [[sense]] (perception, planning, manipulation)
-NLP → [[ai]] + [[lang]] ([[NMT]], language models, [[natural language semantics]])
-computer vision → [[ai]] + [[sense]] (image recognition, segmentation)
-multi-agent systems → [[ai]] + [[game]] (coordination, competition, [[swarm intelligence algorithms]])
-[[trident verifiable AI]] → [[ai]] + [[crypto]] (provable inference on [[cyber]])
+- machine learning → [[ai]] (supervised, unsupervised, reinforcement learning)
+- deep learning → [[ai]] + [[comp]] (transformers, CNNs, [[neural networks]], [[LLMs]])
+- robotics → [[ai]] + [[tech]] + [[sense]] (perception, planning, manipulation)
+- NLP → [[ai]] + [[lang]] ([[NMT]], language models, [[natural language semantics]])
+- computer vision → [[ai]] + [[sense]] (image recognition, segmentation)
+- multi-agent systems → [[ai]] + [[game]] (coordination, competition, [[swarm intelligence algorithms]])
+- [[trident verifiable AI]] → [[ai]] + [[crypto]] (provable inference on [[cyber]])
 
 ## key figures
 

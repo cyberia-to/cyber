@@ -24,10 +24,10 @@ applied ecology — [[permaculture]], [[biome engineering]], [[agriculture]], [[
 
 ## bridges
 
-eco → [[bio]]: ecology studies relationships between [[organisms]]. biology studies the organisms themselves
-eco → [[geo]]: [[biomes]] are defined by [[climate]] and terrain. ecosystems sit on geological substrates
-eco → [[energo]]: energy flows through ecosystems from sunlight to decomposers. [[photosynthesis]] is the entry point
-eco → [[game]]: ecological interactions are strategic. evolutionary stable strategies are [[Nash equilibria]] in nature
-eco → [[socio]]: human [[governance]] of [[commons]] is ecological management. [[Elinor Ostrom]]'s work bridges eco and socio
-eco → [[cyber]]: the protocol is a designed ecosystem. permissionless entry, competitive linking, emergent order
+- eco → [[bio]]: ecology studies relationships between [[organisms]]. biology studies the organisms themselves
+- eco → [[geo]]: [[biomes]] are defined by [[climate]] and terrain. ecosystems sit on geological substrates
+- eco → [[energo]]: energy flows through ecosystems from sunlight to decomposers. [[photosynthesis]] is the entry point
+- eco → [[game]]: ecological interactions are strategic. evolutionary stable strategies are [[Nash equilibria]] in nature
+- eco → [[socio]]: human [[governance]] of [[commons]] is ecological management. [[Elinor Ostrom]]'s work bridges eco and socio
+- eco → [[cyber]]: the protocol is a designed ecosystem. permissionless entry, competitive linking, emergent order
 

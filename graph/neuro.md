@@ -24,12 +24,12 @@ collective — [[distributed cognition]], [[collective computation]], [[stigmerg
 
 ## bridges
 
-neuro → [[bio]]: brains are biological organs. neurons are cells. neuroscience is biology at the circuit level
-neuro → [[info]]: the brain is an information processor. [[Shannon]] entropy quantifies neural signals
-neuro → [[comp]]: [[neural networks]] inspired artificial ones. [[brain emulation]] is computation's attempt to replay biology
-neuro → [[ai]]: deep learning is a crude approximation of neural computation. [[training]] mimics synaptic plasticity
-neuro → [[sense]]: the brain processes sensory input. [[perception]] is neural interpretation of [[signals]]
-neuro → [[cyber]]: the protocol replicates neural architecture at planetary scale. neurons, synapses, weights, attention
+- neuro → [[bio]]: brains are biological organs. neurons are cells. neuroscience is biology at the circuit level
+- neuro → [[info]]: the brain is an information processor. [[Shannon]] entropy quantifies neural signals
+- neuro → [[comp]]: [[neural networks]] inspired artificial ones. [[brain emulation]] is computation's attempt to replay biology
+- neuro → [[ai]]: deep learning is a crude approximation of neural computation. [[training]] mimics synaptic plasticity
+- neuro → [[sense]]: the brain processes sensory input. [[perception]] is neural interpretation of [[signals]]
+- neuro → [[cyber]]: the protocol replicates neural architecture at planetary scale. neurons, synapses, weights, attention
 
 ## key figures
 

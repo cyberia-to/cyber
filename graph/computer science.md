@@ -14,11 +14,11 @@ in the [[crystal]], computer science spans two domains:
 
 ## branches
 
-theory of computation → [[comp]] (Turing machines, computability, complexity classes)
-algorithms and data structures → [[comp]] ([[algorithms]], [[data structures]], [[optimization]])
-programming languages → [[comp]] ([[compilers]], [[type theory]], [[formal verification]])
-systems → [[comp]] ([[operating systems]], [[distributed systems]], [[databases]])
-networking → [[info]] + [[comp]] (protocols, routing, [[bandwidth]])
+- theory of computation → [[comp]] (Turing machines, computability, complexity classes)
+- algorithms and data structures → [[comp]] ([[algorithms]], [[data structures]], [[optimization]])
+- programming languages → [[comp]] ([[compilers]], [[type theory]], [[formal verification]])
+- systems → [[comp]] ([[operating systems]], [[distributed systems]], [[databases]])
+- networking → [[info]] + [[comp]] (protocols, routing, [[bandwidth]])
 AI and ML → splits into its own discipline: [[artificial intelligence]]
 cryptography → splits into [[crypto/graphy]]
 

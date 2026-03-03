@@ -14,9 +14,9 @@ in the [[crystal]], geology spans two domains:
 
 ## branches
 
-petrology → [[geo]] + [[chemo]] (rock formation, igneous/sedimentary/metamorphic)
-mineralogy → [[chemo]] + [[geo]] (mineral identification, crystal structure)
-geophysics → [[geo]] + [[quantum]] (seismic waves, magnetic field, gravity surveys)
-paleontology → [[geo]] + [[bio]] (fossils, [[Cambrian explosion]], mass [[extinction event]])
-hydrogeology → [[geo]] (groundwater, [[water cycle]], aquifers)
-volcanology → [[geo]] ([[volcano]], [[agung]], [[merapi]], [[vesuvius]], [[etna]], [[fuji]])
+- petrology → [[geo]] + [[chemo]] (rock formation, igneous/sedimentary/metamorphic)
+- mineralogy → [[chemo]] + [[geo]] (mineral identification, crystal structure)
+- geophysics → [[geo]] + [[quantum]] (seismic waves, magnetic field, gravity surveys)
+- paleontology → [[geo]] + [[bio]] (fossils, [[Cambrian explosion]], mass [[extinction event]])
+- hydrogeology → [[geo]] (groundwater, [[water cycle]], aquifers)
+- volcanology → [[geo]] ([[volcano]], [[agung]], [[merapi]], [[vesuvius]], [[etna]], [[fuji]])

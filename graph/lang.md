@@ -22,10 +22,10 @@ neural language — [[neural language]], [[semcons]], [[sentence]], [[motif]], [
 
 ## bridges
 
-lang → [[info]]: language is an encoding. [[Shannon]]'s theory measures channel capacity for symbol transmission
-lang → [[comp]]: programming languages are formal languages that execute. [[compilers]] translate between them
-lang → [[neuro]]: the brain has dedicated language circuits (Broca's area, Wernicke's area). [[language]] is a neural phenomenon
-lang → [[sense]]: language encodes sensory experience. naming a [[color]] bridges sense and symbol
-lang → [[meta]]: metalanguage — language about language — is how we reason about reasoning itself
-lang → [[cyber]]: the protocol speaks [[neural language]]. every [[cyberlink]] is a sentence in the graph's language
+- lang → [[info]]: language is an encoding. [[Shannon]]'s theory measures channel capacity for symbol transmission
+- lang → [[comp]]: programming languages are formal languages that execute. [[compilers]] translate between them
+- lang → [[neuro]]: the brain has dedicated language circuits (Broca's area, Wernicke's area). [[language]] is a neural phenomenon
+- lang → [[sense]]: language encodes sensory experience. naming a [[color]] bridges sense and symbol
+- lang → [[meta]]: metalanguage — language about language — is how we reason about reasoning itself
+- lang → [[cyber]]: the protocol speaks [[neural language]]. every [[cyberlink]] is a sentence in the graph's language
 

@@ -22,12 +22,12 @@ negentropy — [[negentropy vs entropy]], [[syntropy]], [[self-organization]], [
 
 ## bridges
 
-energo → [[quantum]]: energy quantization is the founding observation of quantum mechanics. E = hν
-energo → [[info]]: [[Landauer]] principle binds information to energy. computation has a thermodynamic cost
-energo → [[chemo]]: chemical reactions are energy transactions. Gibbs [[free energy]] determines spontaneity
-energo → [[bio]]: metabolism is energy management. [[photosynthesis]] captures solar energy; respiration releases it
-energo → [[tech]]: every machine is an energy converter. [[engine]], [[battery]], [[photovoltaic panel]]
-energo → [[cyber]]: [[focus]] is the protocol's energy. it is conserved, flows through links, and concentrates on what matters
+- energo → [[quantum]]: energy quantization is the founding observation of quantum mechanics. E = hν
+- energo → [[info]]: [[Landauer]] principle binds information to energy. computation has a thermodynamic cost
+- energo → [[chemo]]: chemical reactions are energy transactions. Gibbs [[free energy]] determines spontaneity
+- energo → [[bio]]: metabolism is energy management. [[photosynthesis]] captures solar energy; respiration releases it
+- energo → [[tech]]: every machine is an energy converter. [[engine]], [[battery]], [[photovoltaic panel]]
+- energo → [[cyber]]: [[focus]] is the protocol's energy. it is conserved, flows through links, and concentrates on what matters
 
 ## key figures
 

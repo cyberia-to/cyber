@@ -17,11 +17,11 @@ the bridges between these three domains are what physicists call "unified theori
 
 ## branches
 
-classical mechanics → [[quantum]] (force, momentum, oscillation)
-electrodynamics → [[quantum]] (fields, radiation, electromagnetism)
-statistical mechanics → [[energo]] + [[quantum]] (Boltzmann, partition functions)
-astrophysics → [[cosmo]] + [[quantum]] (stellar nucleosynthesis, compact objects)
-condensed matter → [[quantum]] + [[chemo]] (materials, phases, semiconductors)
+- classical mechanics → [[quantum]] (force, momentum, oscillation)
+- electrodynamics → [[quantum]] (fields, radiation, electromagnetism)
+- statistical mechanics → [[energo]] + [[quantum]] (Boltzmann, partition functions)
+- astrophysics → [[cosmo]] + [[quantum]] (stellar nucleosynthesis, compact objects)
+- condensed matter → [[quantum]] + [[chemo]] (materials, phases, semiconductors)
 
 ## key figures
 

@@ -22,12 +22,12 @@ reflexivity — [[metagraph]], [[about this metagraph]], [[knowledge graphs]], [
 
 ## bridges
 
-meta → [[math]]: metamathematics — [[Kurt Goedel]]'s theorems — shows what formal systems can and cannot prove about themselves
-meta → [[info]]: [[Shannon]] defined information precisely. information theory is meta applied to communication
-meta → [[lang]]: metalanguage is [[language]] about language. [[semantics]] is meta applied to symbols
-meta → [[spiri]]: values determine what counts as important knowledge. meta and spiri co-evolve
-meta → [[comp]]: computability theory asks what can be computed — meta about computation
-meta → [[cyber]]: the protocol is self-validating. [[cyberank]] and proof systems are meta-operations on the graph
+- meta → [[math]]: metamathematics — [[Kurt Goedel]]'s theorems — shows what formal systems can and cannot prove about themselves
+- meta → [[info]]: [[Shannon]] defined information precisely. information theory is meta applied to communication
+- meta → [[lang]]: metalanguage is [[language]] about language. [[semantics]] is meta applied to symbols
+- meta → [[spiri]]: values determine what counts as important knowledge. meta and spiri co-evolve
+- meta → [[comp]]: computability theory asks what can be computed — meta about computation
+- meta → [[cyber]]: the protocol is self-validating. [[cyberank]] and proof systems are meta-operations on the graph
 
 ## key figures
 

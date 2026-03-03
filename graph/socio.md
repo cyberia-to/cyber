@@ -24,10 +24,10 @@ coordination — [[cooperation]], [[coordination]], [[commons]], [[collective]],
 
 ## bridges
 
-socio → [[game]]: governance is applied [[game theory]]. voting, [[auction]], [[public goods]] provision are strategic interactions
-socio → [[crypto]]: [[tokens]] are economic governance tools. [[staking]], [[delegation]], [[mechanism design]] bridge socio and crypto
-socio → [[lang]]: law is written in [[language]]. constitutions are linguistic artifacts. propaganda is language weaponized
-socio → [[spiri]]: shared values sustain institutions. [[ethics]], [[religion]], cultural identity bind communities
-socio → [[tech]]: technology reshapes society. [[printing press]] enabled democracy; internet enabled network states
-socio → [[cyber]]: the protocol has governance. [[cyberia]], [[senate]], [[manifesto]], [[cip]] — cyber is a society, not just software
+- socio → [[game]]: governance is applied [[game theory]]. voting, [[auction]], [[public goods]] provision are strategic interactions
+- socio → [[crypto]]: [[tokens]] are economic governance tools. [[staking]], [[delegation]], [[mechanism design]] bridge socio and crypto
+- socio → [[lang]]: law is written in [[language]]. constitutions are linguistic artifacts. propaganda is language weaponized
+- socio → [[spiri]]: shared values sustain institutions. [[ethics]], [[religion]], cultural identity bind communities
+- socio → [[tech]]: technology reshapes society. [[printing press]] enabled democracy; internet enabled network states
+- socio → [[cyber]]: the protocol has governance. [[cyberia]], [[senate]], [[manifesto]], [[cip]] — cyber is a society, not just software
 

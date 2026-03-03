@@ -18,7 +18,7 @@ neuron ──cyberlink──→ cybergraph ──tri-kernel──→ cyberank
 
 [[explicit knowledge]] is the language of the [[tru]]: [[cyberank]], [[karma]], [[syntropy]] — deterministic, on chain. [[implicit knowledge]] is the language of [[neurons]]: the inferences they make before linking — unmeasurable, off chain. intelligence emerges where both languages keep answering each other
 
-the chain: [[data]] → [[information]] → [[file]] → [[knowledge]] → intelligence
+- the chain: [[data]] → [[information]] → [[file]] → [[knowledge]] → intelligence
 
 [[knowledge]] is the graph as written. intelligence is the graph alive — adapting, converging, finding [[equilibrium]] under novel conditions. local [[cyberlinks]] produce global structure no single [[neuron]] designed. this is [[emergence]]. at scale, it becomes [[egregore]]
 

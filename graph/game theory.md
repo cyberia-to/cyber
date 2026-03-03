@@ -16,11 +16,11 @@ in the [[crystal]], game theory spans three domains:
 
 ## branches
 
-non-cooperative game theory → [[game]] + [[math]] (Nash equilibrium, dominant strategies)
-cooperative game theory → [[game]] ([[cooperative games]], [[Shapley value]], coalitions)
-mechanism design → [[game]] + [[crypto]] ([[auction]], [[public goods]], incentive compatibility)
-evolutionary game theory → [[game]] + [[bio]] (evolutionary stable strategies, replicator dynamics)
-algorithmic game theory → [[game]] + [[comp]] (computational complexity of equilibria)
+- non-cooperative game theory → [[game]] + [[math]] (Nash equilibrium, dominant strategies)
+- cooperative game theory → [[game]] ([[cooperative games]], [[Shapley value]], coalitions)
+- mechanism design → [[game]] + [[crypto]] ([[auction]], [[public goods]], incentive compatibility)
+- evolutionary game theory → [[game]] + [[bio]] (evolutionary stable strategies, replicator dynamics)
+- algorithmic game theory → [[game]] + [[comp]] (computational complexity of equilibria)
 
 ## key figures
 

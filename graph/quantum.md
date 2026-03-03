@@ -22,11 +22,11 @@ thermodynamic bridge — [[half-life]], [[radiation]], nuclear binding. where qu
 
 ## bridges
 
-quantum → [[math]]: Hilbert spaces, operators, [[spectral gap]]. quantum mechanics is [[linear algebra]] on complex vector spaces
-quantum → [[energo]]: [[thermodynamics]] is quantum statistical mechanics at macroscopic scale
-quantum → [[cosmo]]: the [[Big Bang]] is a quantum event. [[dark matter]] and dark energy are quantum-field puzzles
-quantum → [[chemo]]: [[chemical bonds]] are solutions to the quantum Schrödinger equation for multi-electron systems
-quantum → [[crypto]]: quantum computers threaten classical [[cryptography]]; post-quantum schemes defend against them
+- quantum → [[math]]: Hilbert spaces, operators, [[spectral gap]]. quantum mechanics is [[linear algebra]] on complex vector spaces
+- quantum → [[energo]]: [[thermodynamics]] is quantum statistical mechanics at macroscopic scale
+- quantum → [[cosmo]]: the [[Big Bang]] is a quantum event. [[dark matter]] and dark energy are quantum-field puzzles
+- quantum → [[chemo]]: [[chemical bonds]] are solutions to the quantum Schrödinger equation for multi-electron systems
+- quantum → [[crypto]]: quantum computers threaten classical [[cryptography]]; post-quantum schemes defend against them
 
 ## key figures
 

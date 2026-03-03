@@ -14,8 +14,8 @@ in the [[crystal]], political science spans two domains:
 
 ## branches
 
-comparative politics → [[socio]] (regime types, [[democracy]] vs autocracy, institutional design)
-international relations → [[socio]] ([[international law]], [[treaty]], [[diplomacy]], [[empire]])
-political theory → [[socio]] + [[spiri]] (justice, legitimacy, [[human rights]], [[sovereignty]])
-public policy → [[socio]] + [[game]] ([[regulation]], [[taxation]], welfare)
-constitutional design → [[socio]] + [[game]] ([[constitution]], separation of powers, federalism)
+- comparative politics → [[socio]] (regime types, [[democracy]] vs autocracy, institutional design)
+- international relations → [[socio]] ([[international law]], [[treaty]], [[diplomacy]], [[empire]])
+- political theory → [[socio]] + [[spiri]] (justice, legitimacy, [[human rights]], [[sovereignty]])
+- public policy → [[socio]] + [[game]] ([[regulation]], [[taxation]], welfare)
+- constitutional design → [[socio]] + [[game]] ([[constitution]], separation of powers, federalism)

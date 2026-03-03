@@ -24,12 +24,12 @@ infrastructure — [[Bostrom]], [[ibc]], [[evm]], [[cosmwasm]], [[cosmos-sdk]], 
 
 ## bridges
 
-crypto → [[math]]: [[cryptographic proofs]] rest on mathematical hardness assumptions. [[number theory]], [[algebra]], [[probability]] underpin everything
-crypto → [[comp]]: cryptographic primitives are [[algorithms]]. [[complexity theory]] classifies what adversaries can and cannot compute
-crypto → [[socio]]: crypto replaces institutional trust with mathematical trust. [[governance]], [[voting]], [[constitution]] can be implemented on-chain
-crypto → [[game]]: [[mechanism design]] is applied [[game theory]]. [[staking]] is a coordination game. [[auction]] theory designs markets
-crypto → [[info]]: [[entropy]] and randomness are cryptographic resources. [[ciphertext]] hides information; proofs reveal it selectively
-crypto → [[cyber]]: the protocol is a crypto system. keys, hashes, proofs, tokens — every layer of cyber is crypto
+- crypto → [[math]]: [[cryptographic proofs]] rest on mathematical hardness assumptions. [[number theory]], [[algebra]], [[probability]] underpin everything
+- crypto → [[comp]]: cryptographic primitives are [[algorithms]]. [[complexity theory]] classifies what adversaries can and cannot compute
+- crypto → [[socio]]: crypto replaces institutional trust with mathematical trust. [[governance]], [[voting]], [[constitution]] can be implemented on-chain
+- crypto → [[game]]: [[mechanism design]] is applied [[game theory]]. [[staking]] is a coordination game. [[auction]] theory designs markets
+- crypto → [[info]]: [[entropy]] and randomness are cryptographic resources. [[ciphertext]] hides information; proofs reveal it selectively
+- crypto → [[cyber]]: the protocol is a crypto system. keys, hashes, proofs, tokens — every layer of cyber is crypto
 
 ## key figures
 

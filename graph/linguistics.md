@@ -16,10 +16,10 @@ in the [[crystal]], linguistics spans two domains:
 
 phonology → sound systems, phonemes, prosody
 morphology → word structure, inflection, derivation
-syntax → [[syntax]] (sentence structure, phrase grammar, constituency)
-semantics → [[semantics]] ([[natural language semantics]], meaning, reference)
+- syntax → [[syntax]] (sentence structure, phrase grammar, constituency)
+- semantics → [[semantics]] ([[natural language semantics]], meaning, reference)
 pragmatics → context, speech acts, implicature
-historical linguistics → [[lang]] + [[meta]] (language change, [[Indo-European]], [[Afroasiatic]], [[Sino-Tibetan]])
-computational linguistics → [[lang]] + [[comp]] + [[ai]] ([[NMT]], NLP, [[LLMs]])
-sociolinguistics → [[lang]] + [[socio]] (dialect, register, language policy)
+- historical linguistics → [[lang]] + [[meta]] (language change, [[Indo-European]], [[Afroasiatic]], [[Sino-Tibetan]])
+- computational linguistics → [[lang]] + [[comp]] + [[ai]] ([[NMT]], NLP, [[LLMs]])
+- sociolinguistics → [[lang]] + [[socio]] (dialect, register, language policy)
 

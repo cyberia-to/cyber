@@ -22,11 +22,11 @@ channels — capacity, error correction, [[bandwidth]]. the constraints on how f
 
 ## bridges
 
-info → [[math]]: [[entropy]] is a function. coding theory is applied [[combinatorics]] and [[linear algebra]]
-info → [[comp]]: data structures are information laid out for efficient access. [[databases]] are persistent channels
-info → [[energo]]: [[Landauer]] principle — erasing one bit costs kT ln 2 joules. information and [[thermodynamics]] are unified
-info → [[neuro]]: the [[brain]] is an information-processing organ. [[predictive coding]] says it minimizes surprise — [[free energy principle]]
-info → [[cyber]]: the protocol is an information architecture. [[focus]] is a conserved information-relevance measure
+- info → [[math]]: [[entropy]] is a function. coding theory is applied [[combinatorics]] and [[linear algebra]]
+- info → [[comp]]: data structures are information laid out for efficient access. [[databases]] are persistent channels
+- info → [[energo]]: [[Landauer]] principle — erasing one bit costs kT ln 2 joules. information and [[thermodynamics]] are unified
+- info → [[neuro]]: the [[brain]] is an information-processing organ. [[predictive coding]] says it minimizes surprise — [[free energy principle]]
+- info → [[cyber]]: the protocol is an information architecture. [[focus]] is a conserved information-relevance measure
 
 ## key figures
 

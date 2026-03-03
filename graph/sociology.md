@@ -15,9 +15,9 @@ in the [[crystal]], sociology spans three domains:
 
 ## branches
 
-social theory → [[socio]] + [[meta]] (Marx, Weber, Durkheim — explanatory frameworks)
-cultural sociology → [[lang]] + [[spiri]] (symbols, rituals, meaning-making)
-political sociology → [[socio]] + [[game]] (power, movements, revolutions)
-urban sociology → [[socio]] + [[geo]] (cities, spatial inequality, migration)
-digital sociology → [[socio]] + [[cyber]] (online communities, [[network states]], digital identity)
-sociology of science → [[meta]] + [[socio]] (how [[disciplines]] reproduce themselves)
+- social theory → [[socio]] + [[meta]] (Marx, Weber, Durkheim — explanatory frameworks)
+- cultural sociology → [[lang]] + [[spiri]] (symbols, rituals, meaning-making)
+- political sociology → [[socio]] + [[game]] (power, movements, revolutions)
+- urban sociology → [[socio]] + [[geo]] (cities, spatial inequality, migration)
+- digital sociology → [[socio]] + [[cyber]] (online communities, [[network states]], digital identity)
+- sociology of science → [[meta]] + [[socio]] (how [[disciplines]] reproduce themselves)

@@ -22,10 +22,10 @@ the sacred — [[temple]], ceremony, ritual, [[monastery]], [[banya]]. the pract
 
 ## bridges
 
-spiri → [[meta]]: values guide inquiry. what we choose to study depends on what we think matters
-spiri → [[lang]]: scripture, poetry, [[mantras]] — spiritual meaning encoded in [[language]]
-spiri → [[neuro]]: contemplative practices change the [[brain]]. [[meditation]] alters attention circuits
-spiri → [[socio]]: shared values form the basis of [[governance]], [[constitution]], [[law]]
-spiri → [[bio]]: reverence for life. [[ecology]], [[biodiversity]], the sacredness of living systems
-spiri → [[cyber]]: the [[manifesto]] is cyber's spiritual document. the protocol exists because knowledge is sacred
+- spiri → [[meta]]: values guide inquiry. what we choose to study depends on what we think matters
+- spiri → [[lang]]: scripture, poetry, [[mantras]] — spiritual meaning encoded in [[language]]
+- spiri → [[neuro]]: contemplative practices change the [[brain]]. [[meditation]] alters attention circuits
+- spiri → [[socio]]: shared values form the basis of [[governance]], [[constitution]], [[law]]
+- spiri → [[bio]]: reverence for life. [[ecology]], [[biodiversity]], the sacredness of living systems
+- spiri → [[cyber]]: the [[manifesto]] is cyber's spiritual document. the protocol exists because knowledge is sacred
 

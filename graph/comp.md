@@ -22,11 +22,11 @@ architectures — [[distributed systems]], [[convergent computation]], [[natural
 
 ## bridges
 
-comp → [[math]]: proofs are computations. the Curry-Howard correspondence maps every type to a proposition
-comp → [[info]]: [[compression]] is computation. [[entropy]] bounds the minimum output of any lossless compressor
-comp → [[ai]]: [[machine learning]] is computation on data. [[training]] is search in parameter space. [[inference]] is a forward pass
-comp → [[crypto]]: [[cryptographic proofs]] compress computation. [[zero knowledge]] lets you prove execution without revealing inputs
-comp → [[cyber]]: the protocol is a planetary computer. every block is a state transition verified by the entire network
+- comp → [[math]]: proofs are computations. the Curry-Howard correspondence maps every type to a proposition
+- comp → [[info]]: [[compression]] is computation. [[entropy]] bounds the minimum output of any lossless compressor
+- comp → [[ai]]: [[machine learning]] is computation on data. [[training]] is search in parameter space. [[inference]] is a forward pass
+- comp → [[crypto]]: [[cryptographic proofs]] compress computation. [[zero knowledge]] lets you prove execution without revealing inputs
+- comp → [[cyber]]: the protocol is a planetary computer. every block is a state transition verified by the entire network
 
 ## key figures
 

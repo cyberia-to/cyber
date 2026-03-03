@@ -24,12 +24,12 @@ applied bio — [[medicine]], [[agriculture]], [[permaculture]], [[seeds]], [[co
 
 ## bridges
 
-bio → [[chemo]]: life is chemistry. [[proteins]], [[alkaloids]], [[flavonoids]] are molecular explanations of biological function
-bio → [[eco]]: organisms form [[ecosystems]]. [[symbiosis]], [[food webs]], [[succession]] are bio at the population level
-bio → [[neuro]]: nervous systems are biological organs. [[brain]], [[axon]], [[thalamus]] emerge from cellular biology
-bio → [[energo]]: [[metabolism]] is energy management. [[photosynthesis]] and respiration are thermodynamic processes
-bio → [[ai]]: [[neural networks]] are inspired by biological neurons. [[evolution]] is the original optimization algorithm
-bio → [[cyber]]: the biosphere is the original knowledge graph — species linked by co-evolution, symbiosis, and nutrient flow
+- bio → [[chemo]]: life is chemistry. [[proteins]], [[alkaloids]], [[flavonoids]] are molecular explanations of biological function
+- bio → [[eco]]: organisms form [[ecosystems]]. [[symbiosis]], [[food webs]], [[succession]] are bio at the population level
+- bio → [[neuro]]: nervous systems are biological organs. [[brain]], [[axon]], [[thalamus]] emerge from cellular biology
+- bio → [[energo]]: [[metabolism]] is energy management. [[photosynthesis]] and respiration are thermodynamic processes
+- bio → [[ai]]: [[neural networks]] are inspired by biological neurons. [[evolution]] is the original optimization algorithm
+- bio → [[cyber]]: the biosphere is the original knowledge graph — species linked by co-evolution, symbiosis, and nutrient flow
 
 ## key figures
 
