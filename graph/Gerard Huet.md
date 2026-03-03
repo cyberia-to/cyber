@@ -1,4 +1,5 @@
 ---
+alias: Gérard Huet
 tags: person
 crystal-type: entity
 crystal-domain: cybics

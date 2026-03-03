@@ -1,5 +1,5 @@
 ---
-alias: alzheimer
+alias: alzheimer, alzheimer's disease
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman

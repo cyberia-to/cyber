@@ -1,4 +1,5 @@
 ---
+alias: Erwin Schrödinger
 tags: person
 crystal-type: entity
 crystal-domain: cybics

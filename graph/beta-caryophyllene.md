@@ -1,4 +1,5 @@
 ---
+alias: β-caryophyllene
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry

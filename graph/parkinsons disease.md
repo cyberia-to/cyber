@@ -1,5 +1,5 @@
 ---
-alias: parkinson
+alias: parkinson, parkinson's disease
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
