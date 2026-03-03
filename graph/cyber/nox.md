@@ -38,6 +38,45 @@ the subject-formula duality is deeper than code-data separation. in nox, program
 
 focus is the metering mechanism. every pattern costs focus. when focus reaches zero, computation halts. this is the resource theory of [[cyber]]: the same [[focus]] that weights [[cyberlinks]] in the [[cybergraph]] also meters computation. attention and computation are the same currency. a [[neuron]] spends focus to think (run nox programs) and to speak (create cyberlinks). the budget is unified.
 
+## nouns: atoms and cells
+
+everything in nox is a noun. a noun is either an atom (a single [[Goldilocks field]] element) or a cell (an ordered pair of two nouns). there is nothing else.
+
+```
+noun = atom                     a single field element: 0, 1, 42, p-1
+     | (noun . noun)            a cell: an ordered pair
+
+examples:
+  7                             atom
+  (7 . 13)                      cell of two atoms
+  ((1 . 2) . 3)                 cell of a cell and an atom
+  ((0 . 2) . ((1 . 0) . (5 . ((0 . 2) . (0 . 3)))))    a program
+```
+
+this is the entire data model. a noun is a binary tree where every leaf is a field element. a program is a noun. a subject is a noun. the output of a computation is a noun. a [[cyberlink]] is a noun. a [[STARK]] proof serialized for verification is a noun. the [[cybergraph]] state, encoded as nested pairs, is a noun. one structure for everything.
+
+the cell `(a . b)` is the cons operation — pattern 3 in the sixteen patterns. axis — pattern 0 — navigates the binary tree: axis 2 takes the left child (head), axis 3 takes the right child (tail), and deeper paths follow the binary representation (axis 2n = head of axis n, axis 2n+1 = tail of axis n). every data access is tree navigation. every data construction is pairing.
+
+### three types, one representation
+
+atoms carry a type tag distinguishing three uses of the same underlying field element:
+
+```
+field (0x00)    arithmetic: a + b, a × b, a⁻¹         range [0, p)
+word  (0x01)    bitwise: a XOR b, a AND b, a << n      range [0, 2⁶⁴)
+hash  (0x02)    identity: 4 field elements = 256 bits   Hemera output
+```
+
+field and word share the same representation (one Goldilocks element) but different operations. a field element wraps around modulo p; a word wraps around modulo 2^64. the distinction is semantic, enforced by the type system: bitwise operations on a hash are an error, arithmetic on a hash (except equality) is an error. the type tag costs nothing in the [[STARK]] — it is a constraint selector, not runtime data.
+
+the hash type (four field elements) is the identity primitive. `H(noun)` produces a hash. `axis(s, 0)` returns `H(s)` — a noun can introspect its own identity. this is how content-addressing works at the VM level: every noun carries its hash as an implicit property, accessible via pattern 0.
+
+### homoiconicity
+
+a nox formula is a cell `(tag . body)` where tag is the pattern number (0-16) and body contains the operands. a formula is a noun. a subject is a noun. the result is a noun. the distinction between code and data is purely contextual — the same noun can be a subject in one reduction and a formula in another.
+
+this is deeper than conventional homoiconicity (Lisp, Clojure). in those languages, code is data within the language runtime. in nox, code is data at the level of the proof system. the [[STARK]] proves that a specific noun (the formula) was applied to a specific noun (the subject). the proof refers to the same binary tree structure that the execution operated on. there is no separate representation for "the circuit" vs "the program" — they are the same noun.
+
 ## the three layers
 
 ```
