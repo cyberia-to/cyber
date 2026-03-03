@@ -9,7 +9,7 @@ framework for understanding [[information]], [[knowledge]], and [[intelligence]]
 
 definition:: [[neurons]] [[link]] [[particles]] in [[time]] is the [[knowledge]]
 
-- the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
+the chain: data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
 
 ## two kinds of knowledge
 

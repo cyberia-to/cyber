@@ -59,7 +59,7 @@ Shannon's theory covers transmission. it answers: how do I send this message rel
 | cost | bandwidth, power | [[focus]] |
 | output | received message | [[intelligence]] |
 
-- the chain data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]] maps to:
+the chain data → [[information]] → [[file]] → [[knowledge]] → [[intelligence]] maps to:
 
 - data: raw bytes. Shannon's entropy measures their statistical properties
 - [[information]]: data identified by [[hash]] — a [[particle]]. Shannon applies here as measurement

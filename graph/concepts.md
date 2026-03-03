@@ -96,6 +96,6 @@ a mind beyond what humans held for long\
 [[cyber]] is the mechanism, [[truth]] the fruit\
 grown from the [[cybergraph]]'s eternal root
 
-- [[data]] → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
+[[data]] → [[information]] → [[file]] → [[knowledge]] → [[intelligence]]
 
 discover all [[concepts]]
