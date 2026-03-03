@@ -263,7 +263,7 @@ Domains are [[phenomena]], not disciplines. Academic fields like "physics" or "n
 | domain | core scope | triad |
 |--------|-----------|-------|
 | [[math]] | structures, proofs, abstraction, [[number theory]], [[topology]] | FORM |
-| [[info]] | [[entropy]], signals, compression, [[channel capacity]], [[information theory]] | FORM |
+| [[info]] | [[entropy]], signals, compression, [[channel capacity]], [[info/theory]] | FORM |
 | [[comp]] | [[algorithms]], complexity, [[Turing machines]], [[programming languages]] | FORM |
 | [[quantum]] | particles, [[fields]], [[spacetime]], [[quantum mechanics]], [[relativity]] | MASS |
 | [[chemo]] | [[bonds]], reactions, [[molecules]], [[periodic table]], [[biochemistry]] | MASS |
