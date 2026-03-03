@@ -1,3 +1,10 @@
+---
+tags: cyber, cybernomics, draft, research
+crystal-type: entity
+crystal-domain: cyber
+alias: token traits
+---
+
 # Token Traits
 
 ## A Complete Vocabulary for Token Identity in Provable Systems
@@ -8,19 +15,19 @@ Version: 0.1-draft | Date: March 3, 2026
 
 ## Abstract
 
-Every token system flattens the rich structure of economic entities into a single mechanism — "smart contracts" (Ethereum), "programs" (Solana), "skills" (Gold Standard v0.1). This flattening hides distinctions that matter: the difference between what an entity CAN do and what it MUST do, between what it knows and what it perceives, between what it is and who it's connected to.
+Every [[token]] system flattens the rich structure of economic entities into a single mechanism — "smart contracts" (Ethereum), "programs" (Solana), "skills" (Gold Standard v0.1). This flattening hides distinctions that matter: the difference between what an entity CAN do and what it MUST do, between what it knows and what it perceives, between what it is and who it's connected to.
 
 This paper introduces six traits for tokens on provable blockchains. The traits emerge from the intersection of two lenses — double-entry accounting (balance sheet, P&L, cash flow) and personality theory (what makes an agent an agent). The resulting vocabulary is not decorative. It is structural: a token's traits determine its operational capabilities, its trust profile, its composability surface, and its economic behavior. The vocabulary is designed so that when tokens interact — trade, lend, govern, contract — the interactions produce the same statements (balance sheet, income, cash flow) that every company and every person already expects from their economic life.
 
-**Depends on:** [Gold Standard](https://github.com/cyberia-to/trident/blob/master/docs/explanation/gold-standard.md) (PLUMB, TSP-1, TSP-2), [Skill Library](https://github.com/cyberia-to/trident/blob/master/docs/explanation/skill-library.md)
+**Depends on:** [Gold Standard](https://github.com/cyberia-to/trident/blob/master/docs/explanation/gold-standard.md) ([[PLUMB]], TSP-1, TSP-2), [Skill Library](https://github.com/cyberia-to/trident/blob/master/docs/explanation/skill-library.md)
 
 ---
 
 ## 1. The Problem With "Skills"
 
-The Gold Standard defines a skill as "a composable package of hooks, optional state, and config that teaches a token a new behavior." Twenty-three skills are specified: Liquidity, Governance, Lending, Compliance, Soulbound, Oracle Pricing, Delegation, and so on.
+The Gold Standard defines a skill as "a composable package of hooks, optional state, and config that teaches a token a new behavior." Twenty-three skills are specified: Liquidity, [[Governance]], Lending, Compliance, Soulbound, [[Oracle]] Pricing, Delegation, and so on.
 
-But look at what Compliance actually does. It restricts who can send or receive via Merkle inclusion proofs. It does not teach the token a new behavior. It removes a behavior. A token with Compliance is LESS free than one without. Calling it a "skill" is like calling a prison sentence a "career opportunity."
+But look at what Compliance actually does. It restricts who can send or receive via [[merklezation|Merkle]] inclusion proofs. It does not teach the token a new behavior. It removes a behavior. A token with Compliance is LESS free than one without. Calling it a "skill" is like calling a prison sentence a "career opportunity."
 
 And look at Oracle Pricing (COMPASS). It doesn't enable the token to DO anything new in terms of on-chain actions. It enables the token to PERCEIVE something — market prices. A blind person who gains sight hasn't learned a skill. They've gained a sense.
 
@@ -113,7 +120,7 @@ Nature answers: "What kind of entity is this?" Divisible value (Coin) or unique 
 **Personality analog:** Abilities
 **Direction:** Outward (capability)
 
-A skill is a composable package of hooks and optional state that enables a new behavior. Skills are positive capabilities — adding a skill means the token can do something it couldn't before. Skills generate value: swap fees from Liquidity, interest from Lending, rewards from Staking, votes from Governance.
+A skill is a composable package of hooks and optional state that enables a new behavior. Skills are positive capabilities — adding a skill means the token can do something it couldn't before. Skills generate value: swap fees from Liquidity, interest from Lending, rewards from [[Staking]], votes from Governance.
 
 Skills are the asset side of the token's balance sheet. A token with more skills is like a company with more productive assets — more capable, more revenue-generating, more composable.
 
@@ -216,7 +223,7 @@ In accounting, revenue streams are the channels through which value enters the e
 | Event Monitor | On-chain events (liquidations, governance votes) | Reactive strategies, automated settlement |
 | Timestamp | Current block time from consensus | Timelock expiry, vesting schedules, contract maturity |
 
-A key property of senses on provable blockchains: every perceived value comes with a proof. Oracle Pricing data is a STARK proof of correct aggregation. Proven Price is a byproduct of proven swap execution. Cross-chain state comes with inclusion proofs. There is no "trust the oracle" — there is "verify the proof of what the oracle claims."
+A key property of senses on provable blockchains: every perceived value comes with a proof. Oracle Pricing data is a [[STARK]] proof of correct aggregation. Proven Price is a byproduct of proven swap execution. Cross-chain state comes with inclusion proofs. There is no "trust the oracle" — there is "verify the proof of what the oracle claims."
 
 **What Senses produce in statements:**
 
