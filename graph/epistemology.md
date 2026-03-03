@@ -25,52 +25,53 @@ all knowledge claims face three challenges:
 
 Rene Descartes radicalized doubt: what if everything I perceive is illusion? the only certainty is the doubting itself — cogito ergo sum. from this foundation he rebuilt knowledge through reason alone. John Locke countered: the mind at birth is a blank slate (tabula rasa); all knowledge comes from experience. George Berkeley pushed further: matter itself is nothing but [[perception]]. [[David Hume]] completed the empiricist arc by showing that even [[causation]] is habit, not logic — we see conjunction, not connection
 
-### [[Immanuel Kant]]
+### synthesis and limits
 
-the synthesis. Kant showed that both rationalists and empiricists were half right. the mind does not passively receive experience (contra Locke) nor can it reason without it (contra Descartes). instead, the mind imposes [[categories]] — [[space]], [[time]], [[causation]], quantity — on raw sensory input, and only then does experience become [[knowledge]]. knowledge is constructed, not received and not invented
+[[Immanuel Kant]] showed that both rationalists and empiricists were half right. the mind imposes [[categories]] — [[space]], [[time]], [[causation]] — on raw sensory input, and only then does experience become [[knowledge]]. knowledge is constructed, not received and not invented. Kant also identified synthetic a priori knowledge — truths that are necessarily true yet go beyond definitions. [[math]] lives here
 
-this is the deepest philosophical ancestor of [[cyber]]. the [[crystal]] does for the [[cybergraph]] what Kant said the mind does for experience: it provides the categorical structure (21 domains, 6 types, 720 grammar particles) without which raw [[cyberlinks]] would be noise. without imposed structure, there is no knowledge — only data. Kant proved this for minds. [[cyber]] implements it for graphs
+[[Kurt Goedel]] showed that any sufficiently powerful formal system contains truths it cannot prove (incompleteness, 1931). [[Alan Turing]] showed that some questions cannot be answered by any computation (halting problem, 1936). together they map the hard boundary of what formal reasoning can achieve
 
-Kant also identified synthetic a priori knowledge — truths that are necessarily true yet go beyond definitions. [[math]] lives here. "7 + 5 = 12" requires construction, not just unpacking definitions. this anticipates the modern view that [[proof]] is computational construction, and the crystal's ablation-based irreducibility testing: you prove a concept is necessary by showing that removing it collapses reasoning
+### information and collectives
 
-### modern
+[[Shannon]] quantified knowledge. his 1948 theory defined [[information]] as reduction of uncertainty, gave it a unit (the bit), and proved fundamental limits on how much can be transmitted through a noisy channel. before Shannon, epistemology debated what knowledge is. after Shannon, we can measure how much of it flows
 
-[[Kurt Goedel]] showed that any sufficiently powerful formal system contains truths it cannot prove (incompleteness, 1931). this is an absolute limit on [[knowledge]] obtained by deduction — even [[math]] cannot know itself fully. [[Alan Turing]] showed that some questions cannot be answered by any computation (halting problem, 1936). together they map the boundary of what structured reasoning can achieve
+[[Condorcet]] proved (1785) that a group of independent agents each slightly better than chance converges on truth exponentially with group size. this is the foundational theorem of collective epistemology — and its failure mode is equally important: when agents are correlated, errors compound rather than cancel
 
-Thomas Kuhn argued that science does not accumulate smoothly but shifts between paradigms — stable frameworks punctuated by revolutions. this makes epistemology historical: what counts as knowledge depends on which paradigm you inhabit. [[Karl Friston]]'s [[free energy principle]] offers a physical epistemology: every living system minimizes surprise by building internal models that predict sensory input. knowledge is not abstract — it is the organism's ongoing attempt to not be surprised by reality
+[[Karl Popper]] made falsification the engine of knowledge: a theory is scientific if it can be refuted. Thomas Kuhn countered that science does not accumulate smoothly but shifts between paradigms — stable frameworks punctuated by revolutions. this makes epistemology historical: what counts as knowledge depends on which paradigm you inhabit
 
-## five epistemological stances and cyber
+[[Karl Friston]]'s [[free energy principle]] offers a physical epistemology: every living system minimizes surprise by building internal models that predict sensory input. knowledge is the organism's ongoing attempt to not be surprised by reality. this connects epistemology to [[neuroscience]] — the [[brain]] is a prediction engine, and [[perception]] is controlled hallucination corrected by sensory error
 
-| stance | core claim | cyber implementation |
+## five stances
+
+| stance | core claim | key problem |
 |---|---|---|
-| foundationalism | knowledge rests on self-evident bases | the [[crystal]] — 21 irreducible domains as axiomatic foundation |
-| coherentism | knowledge is justified by mutual consistency | the [[tri-kernel]] — three operators cross-validate the same [[graph]] |
-| pragmatism | knowledge is what works | [[focus]] cost — [[knowledge]] that attracts costly [[cyberlinks]] persists |
-| fallibilism | all knowledge is revisable | temporal decay — every claim must be renewed; stale links lose weight |
-| social epistemology | knowledge is collective | the [[cybergraph]] — [[neurons]] link, stake, and converge collectively |
+| foundationalism | knowledge rests on self-evident bases | which bases? how to identify them? |
+| coherentism | knowledge is justified by mutual consistency | consistent fictions pass the test |
+| pragmatism | knowledge is what works | works for whom, over what timescale? |
+| fallibilism | all knowledge is revisable | how to distinguish revision from loss? |
+| social epistemology | knowledge is collective | correlated agents produce correlated errors |
 
-## what cyber changes
+## what cyber inherits
 
-classical epistemology assumed a solitary mind asking "how do I know?" cyber shifts the question to: how does a network of agents, each with partial knowledge and conflicting interests, converge on something worth calling [[knowledge]]?
+[[cyber]] is a literal implementation of collective epistemology. each classical problem maps onto a protocol mechanism:
 
-this is not a metaphor. the [[cybergraph]] is a literal implementation of collective epistemology:
-
-- knowledge is public. every [[cyberlink]] is signed, timestamped, and visible. there is no private belief — only published links. classical epistemology debated whether knowledge is "in the head." in the cybergraph, knowledge is in the [[graph]]
-- justification is costly. linking costs [[focus]], which regenerates proportionally to staked [[tokens]]. this is Spence's costly signaling applied to knowledge claims: you can only link as much as you are willing to pay for. cheap talk produces noise; costly links produce structure
-- truth is convergent. the [[collective focus theorem]] proves that the [[tri-kernel]] converges to a unique fixed point π*. this is the mathematical analog of a stable consensus. whether that consensus tracks reality is the open question — see [[cyber/epistemology]] for the full threat model
-- forgetting is built in. temporal decay erodes old links exponentially. knowledge must be actively sustained by ongoing [[focus]] expenditure. this solves the stale-knowledge problem that plagues static systems — in the cybergraph, false consensus decays unless someone keeps paying for it
-- the knower is a [[neuron]]. not a Cartesian mind, not a Bayesian agent, not a social institution — a cryptographically identified entity that stakes tokens, creates links, and is accountable for its claims. epistemology gains a concrete subject
-
-## the kantian parallel
-
-Kant proved that [[knowledge]] requires categories imposed before experience. without space, time, and causation, raw sensation is meaningless. the [[crystal]] is the Kantian move for collective knowledge: it provides the 21 domains, 6 types, and grammatical structure through which the cybergraph organizes all [[cyberlinks]]. without the crystal, the graph is raw data. with it, the graph can reason
-
-the deepest question Kant opened — are the categories right? are there exactly these categories and no others? — maps directly to the crystal's irreducibility testing. Kant had intuition. the crystal has ablation: remove a domain, measure what collapses, verify that no smaller set suffices. this is epistemology becoming empirical about its own foundations
+- definition: [[knowledge]] in the [[cybergraph]] is the sum of all [[cyberlinks]] — signed, timestamped, public. no private belief, no ungrounded claim. knowledge is what neurons publish
+- justification: linking costs [[focus]], proportional to staked [[tokens]]. this is Spence's costly signaling applied to knowledge claims. cheap talk produces noise; costly links produce structure
+- convergence: the [[collective focus theorem]] proves the [[tri-kernel]] converges to a unique fixed point π*. this is the [[Condorcet]] mechanism made mathematical — independent neurons, each contributing costly signal, converge on a stable distribution. whether it tracks reality is the open question
+- falsification: temporal decay erodes old links exponentially. knowledge must be actively sustained. stale claims decay; fresh corrections compound. this is [[Karl Popper]]'s insight built into the protocol — what is not re-confirmed is forgotten
+- structure: the [[crystal]] provides categorical structure (21 domains, 6 types, 720 grammar particles) before any content enters the graph. this is the [[Immanuel Kant]] move: without imposed categories, raw data cannot become knowledge. but the crystal tests its categories empirically via ablation, where Kant relied on intuition
+- measurement: [[cyberank]] quantifies the importance of every [[particle]] — [[Shannon]]'s information theory applied to a knowledge graph. entropy, distribution, signal-to-noise: all computable on the live graph
+- diversity: the [[tri-kernel]] uses three operators ([[diffusion]], [[springs]], [[heat kernel]]) rather than one, providing structural diversity. but operator diversity is distinct from agent diversity — measuring and incentivizing neuron independence remains open
 
 ## open problems
 
-- can a decentralized system track truth, or only track consensus? the gap between convergent attention and [[truth]] is where epistemic quality lives. see [[cyber/epistemology]] for the formal analysis
-- how to measure epistemic diversity? the [[Condorcet]] jury theorem requires independent agents. correlated [[neurons]] (same training data, same priors) produce correlated errors that compound rather than cancel
-- what are the foundations? Kant needed 12 categories. the crystal claims 21 irreducible domains. is this the right number? ablation testing answers formally, but the answer depends on the corpus — and the corpus is the cybergraph, which is still growing
+- consensus vs truth: a decentralized system provably converges on collective attention. the gap between convergent attention and [[truth]] is where epistemic quality lives. see [[cyber/epistemology]] for the formal threat model
+- epistemic diversity: the [[Condorcet]] theorem requires independent agents. correlated [[neurons]] (same training data, same priors) produce correlated errors. no protocol-level mechanism currently measures or incentivizes diversity
+- foundation testing: the [[crystal]] claims 21 irreducible domains. ablation testing can verify this formally, but the answer depends on the corpus — and the corpus is the [[cybergraph]], which is still growing
+- external anchoring: the cybergraph is self-referential (π computed from links created by neurons weighted by π). breaking this loop requires external signals — prediction markets, sensor networks, cross-graph proofs. see [[cyber/epistemology]] for analysis
 
-see [[cyber/epistemology]] for the protocol-level threat model. see [[knowledge theory]] for the two-kinds framework. see [[Immanuel Kant]] for the philosopher who started all of this from [[Koenigsberg]]
+## key figures
+
+[[Plato]], [[Aristotle]], [[David Hume]], [[Immanuel Kant]], [[Karl Popper]], [[Kurt Goedel]], [[Alan Turing]], [[Shannon]], [[Condorcet]], [[Karl Friston]]
+
+see [[cyber/epistemology]] for the protocol-level threat model. see [[knowledge theory]] for the two-kinds framework. see [[phenomena]] for why the crystal organizes by phenomena rather than disciplines
