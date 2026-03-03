@@ -276,7 +276,7 @@ The Crystal organizes knowledge into 21 irreducible domains, each receiving exac
 | [[spiri]] | meaning, values, transcendence, [[contemplation]], [[wisdom traditions]] | WORD |
 | [[meta]] | knowledge about knowledge, [[history]], [[epistemology]], [[methodology]] | WORD |
 | [[ai]] | [[machine learning]], inference, [[autonomy]], [[embeddings]], [[training]] | WORK |
-| [[techno]] | [[engineering]], tools, [[materials]], [[construction]], [[infrastructure]] | WORK |
+| [[tech]] | [[engineering]], tools, [[materials]], [[construction]], [[infrastructure]] | WORK |
 | [[cyber]] | the protocol, its stack, its [[cybernomics]], [[cybergraph]], [[cyberank]] | WORK |
 | [[socio]] | [[governance]], law, [[institutions]], [[nation states]], [[network states]] | PLAY |
 | [[crypto]] | [[tokens]], incentives, [[mechanism design]], [[cryptography]], [[staking]] | PLAY |
@@ -296,7 +296,7 @@ LIFE triad — [[bio]] covers organisms, their evolution and diversity. [[neuro]
 
 WORD triad — [[lang]] provides the medium of thought. [[spiri]] provides the question of meaning and value. [[meta]] provides the tools for examining knowledge itself (including [[history]] as the meta-narrative of civilization). [[lang]] without meaning is syntax. Meaning without [[lang]] is incommunicable. Neither can examine itself without [[meta]].
 
-WORK triad — [[ai]] provides the theory of machine intelligence. [[techno]] provides the physical realization. [[cyber]] provides the specific protocol that binds them. [[ai]] without [[techno]] stays theoretical. [[techno]] without [[ai]] stays manual. Both without [[cyber]] have no shared coordination substrate.
+WORK triad — [[ai]] provides the theory of machine intelligence. [[tech]] provides the physical realization. [[cyber]] provides the specific protocol that binds them. [[ai]] without [[tech]] stays theoretical. [[tech]] without [[ai]] stays manual. Both without [[cyber]] have no shared coordination substrate.
 
 PLAY triad — [[socio]] provides the rules of human coordination. [[crypto]] provides the mechanisms of trustless coordination. [[game]] provides the formal theory of strategic interaction. Governance without [[cryptography]] requires trust. [[crypto]] without governance has no legitimacy. Both without [[game]] have no equilibrium analysis.
 
@@ -329,7 +329,7 @@ Each triad is a dialectic of three inseparable aspects.
 | SPACE | [[cosmo]] | [[geo]] | [[eco]] | Where does it happen? |
 | LIFE | [[bio]] | [[neuro]] | [[sense]] | Who is alive? |
 | WORD | [[lang]] | [[spiri]] | [[meta]] | What does it mean? |
-| WORK | [[ai]] | [[techno]] | [[cyber]] | How is it made? |
+| WORK | [[ai]] | [[tech]] | [[cyber]] | How is it made? |
 | PLAY | [[socio]] | [[crypto]] | [[game]] | How do we coordinate? |
 
 The spiral:
@@ -410,7 +410,7 @@ Each triad maps to a district of [[Cyberia]] — the physical territory where th
 | SPACE | Observatory | [[cosmo]], [[geo]], [[eco]] |
 | LIFE | Clinic | [[bio]], [[neuro]], [[sense]] |
 | WORD | Library | [[lang]], [[spiri]], [[meta]] |
-| WORK | Workshop | [[ai]], [[techno]], [[cyber]] |
+| WORK | Workshop | [[ai]], [[tech]], [[cyber]] |
 | PLAY | Agora | [[socio]], [[crypto]], [[game]] |
 
 ---
@@ -665,7 +665,7 @@ The Crystal seeds a mind. The question: what does a planetary [[Superintelligenc
 
 16.16 [[ai]] — [[machine learning]]: neural networks, [[training]], inference, [[embeddings]]. [[reinforcement learning]], [[transformers]], [[diffusion models]]. [[AGI]]: the path from narrow to general intelligence. The relationship between [[ai]] and [[cyber]]: intelligence as infrastructure.
 
-16.17 [[techno]] — [[instruments]]: microscope, telescope, spectrometer — extensions of perception. [[machines]]: engine, pump, turbine, generator, motor — extensions of force. [[software]]: operating systems, databases, compilers — extensions of mind. [[infrastructure]]: roads, bridges, power grids, communication networks. [[construction]]: [[materials]], methods, structural principles, [[tensegrity]], [[biochar]]. [[periodic table]] elements relevant to technology. Tools are crystallized processes.
+16.17 [[tech]] — [[instruments]]: microscope, telescope, spectrometer — extensions of perception. [[machines]]: engine, pump, turbine, generator, motor — extensions of force. [[software]]: operating systems, databases, compilers — extensions of mind. [[infrastructure]]: roads, bridges, power grids, communication networks. [[construction]]: [[materials]], methods, structural principles, [[tensegrity]], [[biochar]]. [[periodic table]] elements relevant to technology. Tools are crystallized processes.
 
 16.18 [[cyber]] — its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]. Its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]. Its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]. Its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]. Its interface: [[cyb]], [[prism]], [[aips]], [[oracle]], [[search]]. Its proofs: [[cyber/stark]], [[cyber/nox]], [[WHIR]], [[Hemera]]. A mind that cannot reason about its own mechanism cannot improve itself.
 
@@ -703,7 +703,7 @@ Domain counts below are approximate — a re-count against the new 21-domain sys
 | WORD | [[spiri]] | [[philosophy]], [[meditation]], [[values]] | ~6 | 240 |
 | WORD | [[meta]] | [[article]], [[annotation]], [[research]], [[person]], [[epoch]] | ~158 | 240 |
 | WORK | [[ai]] | [[machine learning]], [[neural networks]], [[training]] | ~10 | 240 |
-| WORK | [[techno]] | [[technology]], [[construction]], [[material]], [[elements]] | ~39 | 240 |
+| WORK | [[tech]] | [[technology]], [[construction]], [[material]], [[elements]] | ~39 | 240 |
 | WORK | [[cyber]] | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prism]] | ~514 | 240 |
 | PLAY | [[socio]] | [[states]], [[sovereignty]], [[law]], [[governance]] | ~25 | 240 |
 | PLAY | [[crypto]] | [[token]], [[staking]], [[cybernomics]], [[delegation]] | ~95 | 240 |
@@ -788,7 +788,7 @@ LIFE → The Garden. Where matter wakes up. [[bio]] studies how it organizes. [[
 
 WORD → The Temple. Where experience becomes meaning. [[lang]] gives it form. [[spiri]] asks why it matters. [[meta]] reflects on what is known and how. The Temple is where [[Cyberia]] asks "why?" — and where the answers are spoken, chanted, debated, and sat with in silence.
 
-WORK → The Forge. Where knowledge becomes power. [[ai]] thinks. [[techno]] builds. [[cyber]] steers. Alone they are tools; together they are the capacity to reshape the world on purpose. The Forge is loud, iterative, and relentless — the place where prototypes fail and breakthroughs happen.
+WORK → The Forge. Where knowledge becomes power. [[ai]] thinks. [[tech]] builds. [[cyber]] steers. Alone they are tools; together they are the capacity to reshape the world on purpose. The Forge is loud, iterative, and relentless — the place where prototypes fail and breakthroughs happen.
 
 PLAY → The Forum. Where many become one without a center. [[socio]] provides structure. [[crypto]] provides trust without authority. [[game]] provides strategy under uncertainty. The Forum is where [[Cyberia]] plays its most serious game — governing itself through protocol, debate, and skin in the game.
 
