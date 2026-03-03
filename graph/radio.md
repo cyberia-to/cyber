@@ -21,25 +21,25 @@ BLAKE3 hashes at 2 GB/s. [[Hemera]] reaches ~50–100 MB/s on CPU. the tradeoff:
 
 ## architecture
 
-radio preserves [[iroh]] networking (QUIC, hole-punching, relay servers) and replaces the cryptographic foundation across four strata:
+radio preserves [[iroh]] networking (QUIC, [[radio/hole-punching]], [[radio/relay]]) and replaces the cryptographic foundation across four strata:
 
 | stratum | layer | crate |
 |---|---|---|
-| protocols | blob transfer, docs, gossip, willow | iroh-blobs, iroh-docs, iroh-gossip, iroh-willow |
-| verified streaming | [[Hemera]] Merkle tree operations | cyber-bao |
+| protocols | [[radio/blob]], [[radio/docs]], [[radio/gossip]], [[radio/willow]] | iroh-blobs, iroh-docs, iroh-gossip, iroh-willow |
+| verified streaming | [[radio/bao]] ([[Hemera]] Merkle trees) | cyber-bao |
 | content identity | sponge, compression, KDF in [[Goldilocks field]] | cyber-poseidon2 |
-| networking | QUIC transport, relay, hole-punching | iroh, iroh-relay |
+| networking | [[radio/endpoint]], [[radio/relay]], [[radio/hole-punching]] | iroh, iroh-relay |
 
 ## crates
 
 - cyber-poseidon2 — [[Hemera]] hash implementation (CPU + GPU scaffolding)
-- cyber-bao — verified streaming protocol (Hemera Merkle trees)
+- cyber-bao — [[radio/bao]] protocol (Hemera Merkle trees)
 - cyber-hash — CLI hashing tool
-- iroh-blobs — content-addressed blob transfer
-- iroh-relay — relay servers with Hemera handshakes
-- iroh-docs — document synchronization
-- iroh-gossip — gossip protocol
-- iroh-willow — [[willow]] protocol implementation
+- iroh-blobs — [[radio/blob]] transfer
+- iroh-relay — [[radio/relay]] servers with Hemera handshakes
+- iroh-docs — [[radio/docs]] synchronization
+- iroh-gossip — [[radio/gossip]] protocol
+- iroh-willow — [[radio/willow]] protocol implementation
 
 ## status
 
@@ -48,5 +48,7 @@ zero BLAKE3 dependencies remain. 395 tests pass across all crates
 ## in the stack
 
 radio is the data transport layer of [[cyb]]. where [[ipfs]] uses CIDv1 with multicodec headers, radio uses raw 64-byte [[Hemera]] outputs as [[particle]] addresses. one hash function, one address space, zero self-describing overhead
+
+connections route through the [[radio/router]] (ALPN multiplexer). content is shared via [[radio/ticket]]. [[radio/endpoint]] [[radio/discovery]] resolves public keys to addresses
 
 see [[Hemera]] for the hash primitive, [[hemera/spec]] for the full decision record
