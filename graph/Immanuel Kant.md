@@ -5,7 +5,7 @@ crystal-domain: meta
 ---
 # Immanuel Kant
 
-1724–1804. philosopher who reshaped every domain he touched. born in Königsberg, never left it, yet built the architecture of modern [[epistemology]], [[ethics]], and philosophy of [[math]]
+1724–1804. philosopher who reshaped every domain he touched. born in [[Koenigsberg]], never left it, yet built the architecture of modern [[epistemology]], [[ethics]], and philosophy of [[math]]
 
 ## contributions by domain
 

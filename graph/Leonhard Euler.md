@@ -6,7 +6,7 @@ stake: 4859883868581144
 ---
 1707-1783. Swiss mathematician and physicist.
 
-Founded [[graph theory]] by solving the Seven Bridges of Konigsberg problem (1736).
+founded [[graph theory]] by solving the [[Seven Bridges of Koenigsberg]] problem in [[Koenigsberg]] (1736)
 
 The most prolific mathematician in history, contributing to calculus, [[number theory]], topology, mechanics, optics, and astronomy.
 
