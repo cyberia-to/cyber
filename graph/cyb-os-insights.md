@@ -1,3 +1,10 @@
+---
+tags: cyber, cyb, draft, research
+crystal-type: entity
+crystal-domain: cyber
+alias: cyb/os
+---
+
 # cyb/os
 
 ## The Discovery
@@ -37,7 +44,7 @@ reject    → explicitly not-choose
 confirm   → irreversible commit
 ```
 
-Every computation type has a canonical rendering. A tree computed in Nox naturally displays as a collapsible `struct`. A graph traversed in Arc naturally draws as `vector` paths. A relation queried in Ask naturally fills a `table`. A signal processed in Wav naturally plays as `sound`. The mapping is many-to-many, but the canonical pairing is the path of least impedance — where the shape of the data matches the shape of the display.
+Every computation type has a canonical rendering. A tree computed in [[Nox]] naturally displays as a collapsible `struct`. A graph traversed in Arc naturally draws as `vector` paths. A relation queried in Ask naturally fills a `table`. A signal processed in Wav naturally plays as `sound`. The mapping is many-to-many, but the canonical pairing is the path of least impedance — where the shape of the data matches the shape of the display.
 
 Every rendering invites a decision. The human responds not with gestures but with typed decision primitives — select, rank, compose, confirm — each with its own algebra, its own temporal mode, and its own relationship to the computation and perception grids.
 
@@ -67,7 +74,7 @@ A data type deserves its own language when its algebraic laws are so different f
 
 ## The Value Tower — Three Modes of Reference
 
-Byte and Field share the same mathematical substrate — the Goldilocks prime field 𝔽ₚ where p = 2⁶⁴ − 2³² + 1. This substrate provides three atom types that are sufficient for seven of the nine universes.
+Byte and Field share the same mathematical substrate — the [[Goldilocks field|Goldilocks prime field]] 𝔽ₚ where p = 2⁶⁴ − 2³² + 1. This substrate provides three atom types that are sufficient for seven of the nine universes.
 
 | Tag  | Name    | Representation      | Valid Range   | Use        |
 |------|---------|---------------------|---------------|------------|
@@ -77,7 +84,7 @@ Byte and Field share the same mathematical substrate — the Goldilocks prime fi
 
 All three share the same physical representation. The type tag determines which operations are legal. A `word` is a `field` with a range check. A `hash` is four `field` elements treated as an opaque name.
 
-**Why exactly three?** These aren't three data types arbitrarily chosen. They're three fundamentally different ways to **refer** to a value — and there are only three:
+Why exactly three? These aren't three data types arbitrarily chosen. They're three fundamentally different ways to refer to a value — and there are only three:
 
 ```
 field = the value IS the reference     (by content — immediate)
@@ -87,7 +94,7 @@ hash  = name IS the reference          (by commitment — identity)
 
 By what it is. By where it is. By what it's called. That's exhaustive. Every reference in any system reduces to one of these three modes.
 
-**Why three atoms are sufficient for all nine universes:**
+Why three atoms are sufficient for all nine universes:
 
 Every higher type decomposes into structure (Nox trees) over these three atoms:
 
@@ -99,9 +106,9 @@ Sample  = field (amplitude value)
 Tensor  = [field; N] (array of values with shape metadata)
 ```
 
-Arc doesn't need a native `edge` atom. Arc needs **rules** that say: when you cons two hashes with a field, that's an edge, and here's what `neighbors()` means over that structure. The language provides the semantics. The value tower provides the atoms. Nox provides the glue.
+Arc doesn't need a native `edge` atom. Arc needs rules that say: when you cons two hashes with a field, that's an edge, and here's what `neighbors()` means over that structure. The language provides the semantics. The value tower provides the atoms. Nox provides the glue.
 
-Three atoms are **complete** — for one characteristic. The single exception is **Bt**: a bit is genuinely not an element of 𝔽ₚ. It lives in 𝔽₂ — different characteristic, different algebra. That's exactly why Bt has a separate proof system, not just a new type tag.
+Three atoms are complete — for one characteristic. The single exception is Bt: a bit is genuinely not an element of 𝔽ₚ. It lives in 𝔽₂ — different characteristic, different algebra. That's exactly why Bt has a separate proof system, not just a new type tag.
 
 ```
 Nox value tower (3 atoms: field, word, hash)
@@ -112,7 +119,7 @@ Bt value tower (separate, 𝔽₂)
   sufficient for: Bt only
 ```
 
-**The register insight:** A register is not a type and not a temporal mode. A register is the **atom of attention** — the point where computation is happening right now, inside whatever universe you're in. Every universe has registers:
+The register insight: A register is not a type and not a temporal mode. A register is the atom of attention — the point where computation is happening right now, inside whatever universe you're in. Every universe has registers:
 
 ```
 Nox:      st0–st15 (Triton VM's 16 stack registers)
@@ -126,7 +133,7 @@ Wav:      the current sample
 Ten:      the current tensor slice
 ```
 
-A register is **presence** — the singular now. `field` is the present value. `word` is the present position. `hash` is the present name. Three ways of being present at a leaf of the tree. Time (stack/heap/stream) is how those present moments connect across succession.
+A register is presence — the singular now. `field` is the present value. `word` is the present position. `hash` is the present name. Three ways of being present at a leaf of the tree. Time (stack/heap/stream) is how those present moments connect across succession.
 
 ---
 
@@ -134,9 +141,9 @@ A register is **presence** — the singular now. `field` is the present value. `
 
 ### Nox — The Language for Trees
 
-**Type:** Cell | Atom
-**Characteristic:** None (pre-algebraic)
-**Proof system:** Inherited from the language operating within it
+Type: Cell | Atom
+Characteristic: None (pre-algebraic)
+Proof system: Inherited from the language operating within it
 
 Nox is the continuation of the Nock idea — everything is a binary tree, code is data, computation is tree rewriting. Five structural operations define how values compose regardless of what those values are:
 
@@ -148,9 +155,9 @@ Nox is the continuation of the Nock idea — everything is a binary tree, code i
 | `cons`    | Build a pair                    | Struct constructor   |
 | `branch`  | Conditional selection           | If-then-else         |
 
-These five ops compute on **shape**, not values. For arithmetic, hashing, and I/O, Nox delegates to the other languages. Nox is the grammar. The other languages are the vocabulary.
+These five ops compute on shape, not values. For arithmetic, hashing, and I/O, Nox delegates to the other languages. Nox is the grammar. The other languages are the vocabulary.
 
-**The critical difference from Nock:** Nock's tree is plain — no authentication. Nox's tree is a **Merkle tree** by construction. Every `cons(a, b)` computes `hash(a, b)` and stores the digest at the parent node. The tree proves its own structure. `axis` produces a Merkle proof as a side effect.
+The critical difference from Nock: Nock's tree is plain — no authentication. Nox's tree is a Merkle tree by construction. Every `cons(a, b)` computes `hash(a, b)` and stores the digest at the parent node. The tree proves its own structure. `axis` produces a Merkle proof as a side effect.
 
 The authentication scheme is abstract — not hardwired to any specific hash function:
 
@@ -174,11 +181,11 @@ The `Tree` interface requires exactly three operations from any backend:
 
 Any cryptographic tree that implements these plugs into Nox. Programs don't change. Only proof shape and cost change. The `hash` type in the value tower (4 × Field = 256-bit digest) is the commitment format. When a better tree shows up, swap the backend — no program touches.
 
-**Relationship to other languages:** Nox is the intermediate representation. Rs and Trident programs compile down to Nox structural operations combined with their respective computational operations. The programmer never writes `cons` or `axis` directly — they write structs, arrays, and match statements, and the compiler emits Nox.
+Relationship to other languages: Nox is the intermediate representation. Rs and [[trident|Trident]] programs compile down to Nox structural operations combined with their respective computational operations. The programmer never writes `cons` or `axis` directly — they write structs, arrays, and match statements, and the compiler emits Nox.
 
-**Why it deserves its own identity:** Without Nox, each language would reinvent composition. With Nox, all languages share one canonical way to build and navigate nested data, ensuring that a value constructed in Rs can be traversed by Trident and vice versa.
+Why it deserves its own identity: Without Nox, each language would reinvent composition. With Nox, all languages share one canonical way to build and navigate nested data, ensuring that a value constructed in Rs can be traversed by Trident and vice versa.
 
-**Role in cyb/os:** Nox is simultaneously the structural IR (the grammar all languages compile through) and the node runtime (the production binary that runs the Cyber blockchain).
+Role in cyb/os: Nox is simultaneously the structural IR (the grammar all languages compile through) and the node runtime (the production binary that runs the [[cyber|Cyber]] blockchain).
 
 ---
 
@@ -186,7 +193,7 @@ Any cryptographic tree that implements these plugs into Nox. Programs don't chan
 
 ### Bt — The Language for Bits
 
-**Type tower:**
+Type tower:
 
 | Type    | Field        | Size   | Native ops           |
 |---------|--------------|--------|----------------------|
@@ -197,13 +204,13 @@ Any cryptographic tree that implements these plugs into Nox. Programs don't chan
 | `Bit64` | 𝔽₂⁶⁴         | 8 bytes| Double word          |
 | `Bit128`| 𝔽₂¹²⁸        | 16 bytes| Security parameter  |
 
-**Characteristic:** 2
-**Proof system:** FRI-Binius
-**Key property:** AND is multiplication. XOR is addition. Both are free.
+Characteristic: 2
+Proof system: FRI-Binius
+Key property: AND is multiplication. XOR is addition. Both are free.
 
 In the binary tower, boolean logic is the native algebra. There is no impedance between "logic" and "arithmetic" — they are the same thing. What costs is moving up the tower: lifting a `Bit32` to `Bit128` for cryptographic security requires extension field multiplication.
 
-**Primitive operations:**
+Primitive operations:
 
 ```
 xor(a, b)                    → field addition (free)
@@ -216,9 +223,9 @@ tower_up(x: Bit32) → Bit64   → embed in larger field
 tower_down(x: Bit64) → (Bit32, Bit32) → decompose
 ```
 
-**What Bt cannot do cheaply:** Integer arithmetic. 3 + 5 = 6 in 𝔽₂ (XOR), not 8. To perform actual addition with carry, you must build ripple-carry adders from AND/XOR gates — the exact inverse of Byte/Field where arithmetic is free but bitwise is expensive.
+What Bt cannot do cheaply: Integer arithmetic. 3 + 5 = 6 in 𝔽₂ (XOR), not 8. To perform actual addition with carry, you must build ripple-carry adders from AND/XOR gates — the exact inverse of Byte/Field where arithmetic is free but bitwise is expensive.
 
-**Use cases:**
+Use cases:
 
 - BLAKE3 / BLAKE2 / SHA-256 circuits — rotation + XOR + modular addition (built from gates). Proving legacy hashes in Bt is orders of magnitude cheaper than in Byte/Field.
 - Keccak verification — Ethereum state proof verification, bridge to EVM world.
@@ -226,7 +233,7 @@ tower_down(x: Bit64) → (Bit32, Bit32) → decompose
 - Binary Merkle tree verification — Bitcoin, Ethereum, Git all use SHA-based Merkle trees.
 - Binary protocol parsing — verifying that binary-encoded messages conform to a format specification.
 
-**Why a separate universe:** A bit is not an element of 𝔽ₚ. The fields have different characteristic. You cannot embed 𝔽₂ arithmetic faithfully into 𝔽ₚ without range checks on every operation — which is exactly the impedance mismatch that justifies a separate language.
+Why a separate universe: A bit is not an element of 𝔽ₚ. The fields have different characteristic. You cannot embed 𝔽₂ arithmetic faithfully into 𝔽ₚ without range checks on every operation — which is exactly the impedance mismatch that justifies a separate language.
 
 ---
 
@@ -236,14 +243,14 @@ Byte and Field share the Goldilocks substrate but present opposite mental models
 
 ### Rs — The Language for Words
 
-**Primary type:** `word` (tag 0x01)
-**Syntax:** Strict Rust subset
-**Face:** Systems programming
-**Proof system:** STARK (via shared substrate), but the programmer does not see it
+Primary type: `word` (tag 0x01)
+Syntax: Strict Rust subset
+Face: Systems programming
+Proof system: [[STARK]] (via shared substrate), but the programmer does not see it
 
 Rs is Rust with everything dynamically-sized removed. No heap. No `Vec`. No `String`. No unbounded recursion. Every value has a known size at compile time. Every loop has a known bound. The cost of any program can be determined before execution.
 
-**What Rs keeps from Rust:**
+What Rs keeps from Rust:
 
 - `u64` (mapped to `word`)
 - `bool`
@@ -255,7 +262,7 @@ Rs is Rust with everything dynamically-sized removed. No heap. No `Vec`. No `Str
 - Ownership, borrowing, move semantics
 - `const` generics for array sizes
 
-**What Rs removes from Rust:**
+What Rs removes from Rust:
 
 - `Vec<T>`, `String`, `Box<T>` — heap allocation
 - `Rc`, `Arc`, `RefCell` — dynamic ownership
@@ -265,9 +272,9 @@ Rs is Rust with everything dynamically-sized removed. No heap. No `Vec`. No `Str
 - `unsafe` — manual memory management
 - `panic!` — unrecoverable runtime failure
 
-**The hidden truth:** Every `u64` in Rs is secretly a `word` — type tag 0x01 — which is secretly a field element with a range constraint. The programmer writes conventional-looking systems code, but every operation is field-compatible. When proof generation is needed, the compiler already has the algebraic representation. Rs is not a language for bytes. Rs is the **disguise that fields wear to look like bytes**.
+The hidden truth: Every `u64` in Rs is secretly a `word` — type tag 0x01 — which is secretly a field element with a range constraint. The programmer writes conventional-looking systems code, but every operation is field-compatible. When proof generation is needed, the compiler already has the algebraic representation. Rs is not a language for bytes. Rs is the disguise that fields wear to look like bytes.
 
-**Rs as the bridge from Rust to fields:** A Rust developer writes Rs and sees familiar syntax. They do not need to understand field arithmetic or STARK proofs. When they are ready, they peel back the layer and discover that their `u64` was always a field element — and the step to Trident is just revealing what was already there.
+Rs as the bridge from Rust to fields: A Rust developer writes Rs and sees familiar syntax. They do not need to understand field arithmetic or STARK proofs. When they are ready, they peel back the layer and discover that their `u64` was always a field element — and the step to Trident is just revealing what was already there.
 
 ```
 Rust        → full language, heap, strings, anything
@@ -277,9 +284,9 @@ Rs          → strict subset, bounded, looks like systems code
 Trident     → same restrictions, but the field is visible
 ```
 
-**Primary target:** Nox (the Cyber blockchain node runtime). If Nox is written in Rs instead of full Rust, every line of consensus-critical code lives in the value tower natively — flip the type tag from word→field to generate a STARK proof of the node's execution.
+Primary target: Nox (the Cyber blockchain node runtime). If Nox is written in Rs instead of full Rust, every line of consensus-critical code lives in the value tower natively — flip the type tag from word→field to generate a STARK proof of the node's execution.
 
-**Use cases:**
+Use cases:
 
 - Blockchain node runtime (Nox)
 - Consensus-critical logic
@@ -289,14 +296,14 @@ Trident     → same restrictions, but the field is visible
 
 ### Trident — The Language for Fields
 
-**Primary type:** `field` (tag 0x00)
-**Syntax:** Custom (`.tri` files)
-**Face:** Provable computation
-**Proof system:** STARK (Goldilocks + FRI), explicitly visible
+Primary type: `field` (tag 0x00)
+Syntax: Custom (`.tri` files)
+Face: Provable computation
+Proof system: STARK (Goldilocks + FRI), explicitly visible
 
 Trident is where the field is visible and the programmer thinks in constraints. Division is exact (multiplicative inverse). Every operation becomes a polynomial constraint in the STARK execution trace. The cost model is constraints, not cycles.
 
-**Core types:**
+Core types:
 
 | Type     | Structure           | Operations                         |
 |----------|---------------------|------------------------------------|
@@ -306,7 +313,7 @@ Trident is where the field is visible and the programmer thinks in constraints. 
 | `U32`    | Field with range    | Arithmetic with overflow check     |
 | `Bool`   | Field ∈ {0, 1}      | Logic                              |
 
-**Trident-only primitives:**
+Trident-only primitives:
 
 - `divine()` — inject prover witness (secret input)
 - `hash()` — Tip5 hash (single instruction, single constraint)
@@ -314,15 +321,15 @@ Trident is where the field is visible and the programmer thinks in constraints. 
 - `sponge_*` — variable-length hashing
 - `seal` — hashed/private event emission
 
-**Layer architecture:**
+Layer architecture:
 
 | Layer | Scope           | Types available           | Compilation targets      |
 |-------|-----------------|---------------------------|--------------------------|
-| 0     | Execute Anywhere | U32, Bool, structs, arrays | TASM, EVM, CosmWasm, SVM |
+| 0     | Execute Anywhere | U32, Bool, structs, arrays | TASM, EVM, [[cosmwasm|CosmWasm]], SVM |
 | 1     | Prove Anywhere   | + Field, Digest, divine() | TASM (Triton VM)         |
 | 2     | Platform Powers  | + chain-specific stdlib   | Single target            |
 
-**Use cases:**
+Use cases:
 
 - On-chain logic (Neptune transactions, UTXO validation)
 - STARK proof generation for any computation
@@ -330,7 +337,7 @@ Trident is where the field is visible and the programmer thinks in constraints. 
 - Zero-knowledge programs
 - Consensus rule enforcement
 
-**Relationship to Rs:** Same compiler, same IR, same value tower, different syntax and different subset of permitted operations. An `.rs` file and a `.tri` file both produce the same TIR opcodes. The compiler validates different type constraints based on which face the programmer chose.
+Relationship to Rs: Same compiler, same IR, same value tower, different syntax and different subset of permitted operations. An `.rs` file and a `.tri` file both produce the same TIR opcodes. The compiler validates different type constraints based on which face the programmer chose.
 
 ```
 .rs file  → parser (Rust subset) → TIR → TASM / backend
@@ -345,15 +352,15 @@ Trident is where the field is visible and the programmer thinks in constraints. 
 
 ### Arc — The Language for Graphs
 
-**Type:** `Node`, `Edge`, `Path`, `Subgraph`, `Weight`
-**Characteristic:** None (combinatorial, not algebraic)
-**Proof system:** Delegates to Trident/Bt for cryptographic proofs
+Type: `Node`, `Edge`, `Path`, `Subgraph`, `Weight`
+Characteristic: None (combinatorial, not algebraic)
+Proof system: Delegates to Trident/Bt for cryptographic proofs
 
 In every other language in this system, graphs are encoded as something else. In Trident, a graph becomes an adjacency matrix — field elements in a 2D array. In Rs, it becomes a serialized edge list — words in a buffer. In Nox, it becomes nested binary trees — cells and atoms. Every encoding loses something: the matrix loses sparsity awareness, the edge list loses traversal semantics, the tree loses the notion of cycles.
 
 Arc makes graphs first-class. The primitive is not a number or a bit but a connection.
 
-**Primitive types:**
+Primitive types:
 
 | Type       | What it is                              |
 |------------|-----------------------------------------|
@@ -363,7 +370,7 @@ Arc makes graphs first-class. The primitive is not a number or a bit but a conne
 | `Subgraph` | A bounded subset of nodes and edges     |
 | `Weight`   | A field element attached to an edge     |
 
-**Primitive operations:**
+Primitive operations:
 
 | Op              | Action                                         |
 |-----------------|-------------------------------------------------|
@@ -379,9 +386,9 @@ Arc makes graphs first-class. The primitive is not a number or a bit but a conne
 | `merge(g1, g2)` | Union two graphs with identity resolution      |
 | `match(g, pat)` | Subgraph pattern matching                      |
 
-**Why Arc matters for Cyber:**
+Why Arc matters for Cyber:
 
-The cybergraph is not a data structure that *lives inside* a program. The cybergraph *is* the program. Every cyberlink is an `Edge`. Every CID is a `Node`. CYBERRANK is `rank()`. The entire value proposition of Bostrom — decentralized knowledge ranking — is a graph computation forced into non-graph languages.
+The [[cybergraph]] is not a data structure that *lives inside* a program. The cybergraph *is* the program. Every [[cyberlink]] is an `Edge`. Every CID is a `Node`. CYBERRANK is `rank()`. The entire value proposition of [[bostrom|Bostrom]] — decentralized knowledge ranking — is a graph computation forced into non-graph languages.
 
 When a developer writes CYBERRANK in Rust today, they build adjacency lists from serialized storage, iterate manually, track convergence by hand, and serialize back. In Arc:
 
@@ -392,7 +399,7 @@ let top = ranked |> sort_by(weight) |> take(10)
 
 The compiler decides the representation: sparse matrix for large graphs, adjacency list for small ones, GPU-accelerated for production.
 
-**Interaction with proofs:** Arc decomposes into Trident (field ops for matrix math), Bt (hash verification for node identities), and Nox (tree encoding of topology).
+Interaction with proofs: Arc decomposes into Trident (field ops for matrix math), Bt (hash verification for node identities), and Nox (tree encoding of topology).
 
 ```
 Arc program
@@ -409,13 +416,13 @@ Graph operations decomposed into:
 
 ### Seq — The Language for Time
 
-**Type:** `Event`, `Interval`, `Schedule`, `Order`, `Epoch`
-**Characteristic:** None (relational, not algebraic)
-**Proof system:** Delegates to Trident
+Type: `Event`, `Interval`, `Schedule`, `Order`, `Epoch`
+Characteristic: None (relational, not algebraic)
+Proof system: Delegates to Trident
 
-Time in distributed systems is not a clock. There is no global clock. There are only events and the relationships between them: this happened before that, these were concurrent, this must eventually follow that. Every other language treats time as a value — a `word` holding a timestamp. But a timestamp is not time. Time itself is the **ordering** — the causal structure that determines what could have influenced what.
+Time in distributed systems is not a clock. There is no global clock. There are only events and the relationships between them: this happened before that, these were concurrent, this must eventually follow that. Every other language treats time as a value — a `word` holding a timestamp. But a timestamp is not time. Time itself is the ordering — the causal structure that determines what could have influenced what.
 
-**The three temporal modes:**
+The three temporal modes:
 
 Time is not one thing. It has three fundamental disciplines — three different structural relationships to the present moment.
 
@@ -425,11 +432,11 @@ Heap    = concurrent time = chaos     = random = concurrent(a, b, c)
 Stream  = linear time     = flow      = FIFO  = before(a, b), before(b, c)
 ```
 
-**Stack (nested time).** Last in, first out. You go deeper, then unwind. Every entry has a matching exit. A function calls a function calls a function, then returns, returns, returns. Time has depth. In Seq: `after(a) { after(b) { after(c) { ... } } }` — nested causality. The innermost event resolves first.
+Stack (nested time). Last in, first out. You go deeper, then unwind. Every entry has a matching exit. A function calls a function calls a function, then returns, returns, returns. Time has depth. In Seq: `after(a) { after(b) { after(c) { ... } } }` — nested causality. The innermost event resolves first.
 
-**Heap (concurrent time).** No ordering. Events are created and destroyed independently. Allocation and deallocation happen at arbitrary moments with no structural relationship. Time has chaos. In Seq: `concurrent(a, b, c)` — explicitly no causal relation. Things exist simultaneously without depending on each other.
+Heap (concurrent time). No ordering. Events are created and destroyed independently. Allocation and deallocation happen at arbitrary moments with no structural relationship. Time has chaos. In Seq: `concurrent(a, b, c)` — explicitly no causal relation. Things exist simultaneously without depending on each other.
 
-**Stream (linear time).** First in, first out. Events arrive in order, are processed in order, and flow forward. Time has direction but no depth. In Seq: `before(a, b), before(b, c), before(c, d)` — total linear order. A pipeline.
+Stream (linear time). First in, first out. Events arrive in order, are processed in order, and flow forward. Time has direction but no depth. In Seq: `before(a, b), before(b, c), before(c, d)` — total linear order. A pipeline.
 
 These are not metaphors. They are the three modes that hardware, operating systems, networks, and user interfaces all independently converge on:
 
@@ -441,7 +448,7 @@ These are not metaphors. They are the three modes that hardware, operating syste
 | Consensus   | Nested validation    | Parallel validators   | Block sequence      |
 | UI          | Modal dialogs, undo  | Independent windows   | Scrolling, typing   |
 
-**Primitive types:**
+Primitive types:
 
 | Type        | What it is                                        |
 |-------------|---------------------------------------------------|
@@ -451,7 +458,7 @@ These are not metaphors. They are the three modes that hardware, operating syste
 | `Order`     | A partial order over events (causal history)       |
 | `Epoch`     | A bounded sequence of events (consensus round)     |
 
-**Primitive operations organized by temporal mode:**
+Primitive operations organized by temporal mode:
 
 | Mode   | Ops                                                    |
 |--------|--------------------------------------------------------|
@@ -462,13 +469,13 @@ These are not metaphors. They are the three modes that hardware, operating syste
 
 Additional operations: `since(p, q)` — p has held at every state since q was true. `fork(a, branches)` — a is followed by one of several possible continuations. `merge(events) → event` — multiple causal paths converge.
 
-**The algebra of time:** Events form a **partial order** — not a total order. In a distributed system, two events on different nodes may have no causal relationship. Forcing them into a total order (as blockchains do with block height) destroys information. Seq preserves the partial order and only totalizes when consensus demands it. The key algebraic structure is a **lattice** of causal histories. The meet of two histories is their last common ancestor. The join is their merge point. Consensus is the process of computing joins.
+The algebra of time: Events form a partial order — not a total order. In a distributed system, two events on different nodes may have no causal relationship. Forcing them into a total order (as blockchains do with block height) destroys information. Seq preserves the partial order and only totalizes when consensus demands it. The key algebraic structure is a lattice of causal histories. The meet of two histories is their last common ancestor. The join is their merge point. Consensus is the process of computing joins.
 
-**What Seq cannot do:** Compute values. Seq does not add numbers, hash data, or traverse graphs. It only reasons about *when* and *whether* things happen. Seq is the **conductor** — it tells each language when to play.
+What Seq cannot do: Compute values. Seq does not add numbers, hash data, or traverse graphs. It only reasons about *when* and *whether* things happen. Seq is the conductor — it tells each language when to play.
 
-**Why Seq is not just a state machine DSL:** State machines describe *what states exist* and *what transitions are legal*. Seq describes *when transitions may fire* and *what temporal relationships must hold*. The temporal dimension is orthogonal to the state dimension.
+Why Seq is not just a state machine DSL: State machines describe *what states exist* and *what transitions are legal*. Seq describes *when transitions may fire* and *what temporal relationships must hold*. The temporal dimension is orthogonal to the state dimension.
 
-**Use cases:**
+Use cases:
 
 - Consensus protocol specification — block validity as temporal constraints
 - cyb/os process scheduling — `periodic(10, recompute_rank)`
@@ -483,15 +490,15 @@ Additional operations: `since(p, q)` — p has held at every state since q was t
 
 ### Ask — The Language for Relations
 
-**Type:** `Fact`, `Rule`, `Query`, `Substitution`, `Constraint`
-**Characteristic:** None (logical, not algebraic)
-**Proof system:** Delegates to Trident; internally uses resolution
+Type: `Fact`, `Rule`, `Query`, `Substitution`, `Constraint`
+Characteristic: None (logical, not algebraic)
+Proof system: Delegates to Trident; internally uses resolution
 
-Every other language in this system transforms values. Ask is the only one that derives **truth**. The primitive is not a number, a bit, an edge, or an event — it is a **relation**: a statement that something holds between things.
+Every other language in this system transforms values. Ask is the only one that derives truth. The primitive is not a number, a bit, an edge, or an event — it is a relation: a statement that something holds between things.
 
 In Prolog and Datalog, the insight is: you don't tell the computer *how* to find an answer. You tell it *what is true* and *what follows from what*, and the computer searches for derivations.
 
-**Primitive types:**
+Primitive types:
 
 | Type           | What it is                                              |
 |----------------|---------------------------------------------------------|
@@ -501,7 +508,7 @@ In Prolog and Datalog, the insight is: you don't tell the computer *how* to find
 | `Substitution` | A binding of variables to values (the answer)           |
 | `Constraint`   | A condition on variables: `X > 0, X < 1000`            |
 
-**Primitive operations:**
+Primitive operations:
 
 | Op                       | Action                                         |
 |--------------------------|------------------------------------------------|
@@ -514,7 +521,7 @@ In Prolog and Datalog, the insight is: you don't tell the computer *how* to find
 | `aggregate(query, op)`   | Compute aggregate over query results           |
 | `explain(fact)`          | Return derivation tree (proof trace)           |
 
-**Why Ask is not Arc:** Arc stores and traverses explicit structure — nodes, edges, paths. Arc can tell you "there is an edge from A to B." But Arc cannot tell you "every node reachable from A in two hops that is also linked to by D" without you manually writing the traversal loop. Ask treats the graph as a database of facts and applies rules to derive implicit knowledge:
+Why Ask is not Arc: Arc stores and traverses explicit structure — nodes, edges, paths. Arc can tell you "there is an edge from A to B." But Arc cannot tell you "every node reachable from A in two hops that is also linked to by D" without you manually writing the traversal loop. Ask treats the graph as a database of facts and applies rules to derive implicit knowledge:
 
 ```
 reachable(X, Y) :- link(X, Y).
@@ -522,9 +529,9 @@ reachable(X, Z) :- link(X, Y), reachable(Y, Z).
 ?- reachable(a, X), linked_by(d, X).
 ```
 
-The engine finds all solutions. You never wrote a loop. Arc is **what is connected** (topology). Ask is **what follows** (entailment). Together they form a complete knowledge system: structure + inference.
+The engine finds all solutions. You never wrote a loop. Arc is what is connected (topology). Ask is what follows (entailment). Together they form a complete knowledge system: structure + inference.
 
-**The Datalog restriction:** Full Prolog is Turing-complete — queries can diverge. Ask is Datalog, not Prolog. Bounded inference, guaranteed termination, proof-compatible:
+The Datalog restriction: Full Prolog is Turing-complete — queries can diverge. Ask is Datalog, not Prolog. Bounded inference, guaranteed termination, proof-compatible:
 
 - No function symbols (only constants and variables)
 - No negation in recursion (stratified negation only)
@@ -532,7 +539,7 @@ The engine finds all solutions. You never wrote a loop. Arc is **what is connect
 
 This matches Rs's bounded loops and Trident's bounded execution. The strict subset pattern holds across every language.
 
-**Use cases for Cyber:**
+Use cases for Cyber:
 
 Knowledge inference over the cybergraph — today cyberlinks are explicit, someone creates each one. With Ask, you define rules once and the system derives implicit links:
 
@@ -542,7 +549,7 @@ category(X, Cat) :- link(X, Y), category(Y, Cat).
 expert(Agent, Topic) :- links_by(Agent, X), about(X, Topic), count > 10.
 ```
 
-The knowledge graph becomes self-amplifying — explicit links generate implicit knowledge through rules. That's the difference between a database and an intelligence.
+The [[knowledge graph]] becomes self-amplifying — explicit links generate implicit knowledge through rules. That's the difference between a database and an intelligence.
 
 Access control — who can do what is naturally a logic problem:
 
@@ -564,13 +571,13 @@ Ontology enforcement — rules define well-formedness constraints. Run `derive` 
 
 ### Wav — The Language for Signals
 
-**Type:** `Signal<N>` where N is sample count
-**Characteristic:** ℝ approximated over 𝔽ₚ (fixed-point)
-**Proof system:** Delegates to Trident
+Type: `Signal<N>` where N is sample count
+Characteristic: ℝ approximated over 𝔽ₚ (fixed-point)
+Proof system: Delegates to Trident
 
-A signal is not an array of numbers. A signal is a **waveform** — a continuous function sampled at discrete points. The natural operations are convolution, filtering, and spectral transformation.
+A signal is not an array of numbers. A signal is a waveform — a continuous function sampled at discrete points. The natural operations are convolution, filtering, and spectral transformation.
 
-**Primitive types:**
+Primitive types:
 
 | Type          | What it is                        |
 |---------------|-----------------------------------|
@@ -579,7 +586,7 @@ A signal is not an array of numbers. A signal is a **waveform** — a continuous
 | `Filter`      | Transfer function                 |
 | `Window`      | Windowing function (Hann, etc.)   |
 
-**Primitive operations:**
+Primitive operations:
 
 | Op                 | Action                          |
 |--------------------|---------------------------------|
@@ -592,11 +599,11 @@ A signal is not an array of numbers. A signal is a **waveform** — a continuous
 | `energy(s)`        | Signal power                    |
 | `peak_detect(s)`   | Find amplitude peaks            |
 
-**Use cases:** Sensor data processing (seismic, acoustic, environmental), mesh network signal analysis, audio processing, vibration analysis for construction monitoring, geothermal sensor streams.
+Use cases: Sensor data processing (seismic, acoustic, environmental), mesh network signal analysis, audio processing, vibration analysis for construction monitoring, geothermal sensor streams.
 
-**Why separate from Rs:** In Rs, you write nested loops over arrays of `u64`, manually managing FFT butterfly operations and twiddle factors. In Wav, you write `lowpass(440, input)` and the compiler selects the implementation.
+Why separate from Rs: In Rs, you write nested loops over arrays of `u64`, manually managing FFT butterfly operations and twiddle factors. In Wav, you write `lowpass(440, input)` and the compiler selects the implementation.
 
-**Status:** Library-viable within Rs for most applications. Promote to full language if cyb/os becomes a sensor-heavy platform.
+Status: Library-viable within Rs for most applications. Promote to full language if cyb/os becomes a sensor-heavy platform.
 
 ---
 
@@ -604,13 +611,13 @@ A signal is not an array of numbers. A signal is a **waveform** — a continuous
 
 ### Ten — The Language for Tensors
 
-**Type:** `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-time constants
-**Characteristic:** Inherited (𝔽ₚ or ℝ approximation)
-**Proof system:** Delegates to Trident
+Type: `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-time constants
+Characteristic: Inherited (𝔽ₚ or ℝ approximation)
+Proof system: Delegates to Trident
 
 A tensor is a multidimensional array where the shape is part of the type. `Tensor<[3, 224, 224]>` is not `Vec<Vec<Vec<f32>>>` — it is a type-level guarantee that every operation preserves dimensional consistency. Shape mismatches are compile errors.
 
-**Primitive types:**
+Primitive types:
 
 | Type                  | What it is                    |
 |-----------------------|-------------------------------|
@@ -619,7 +626,7 @@ A tensor is a multidimensional array where the shape is part of the type. `Tenso
 | `Vector<N>`           | 1-dimensional                 |
 | `Matrix<M, N>`        | 2-dimensional                 |
 
-**Primitive operations:**
+Primitive operations:
 
 | Op                    | Action                         |
 |-----------------------|--------------------------------|
@@ -632,11 +639,11 @@ A tensor is a multidimensional array where the shape is part of the type. `Tenso
 | `conv2d(input, kernel)`| 2D convolution                |
 | `softmax(t, axis)`    | Normalize to probability       |
 
-**Use cases:** ML model inference verification, CYBERRANK as matrix-vector multiplication (PageRank is literally repeated `matmul`), scientific simulation, embedding space operations.
+Use cases: ML model inference verification, CYBERRANK as matrix-vector multiplication (PageRank is literally repeated `matmul`), scientific simulation, embedding space operations.
 
-**Why separate from Rs:** The shape algebra is rich enough that generic code (matmul, einsum, broadcasting) requires either dependent types or a dedicated type system. In Rs, every matrix operation is a manual loop with manual bounds checking. In Ten, the compiler verifies dimensional consistency and selects optimal algorithms.
+Why separate from Rs: The shape algebra is rich enough that generic code (matmul, einsum, broadcasting) requires either dependent types or a dedicated type system. In Rs, every matrix operation is a manual loop with manual bounds checking. In Ten, the compiler verifies dimensional consistency and selects optimal algorithms.
 
-**Status:** Library-viable within Rs/Trident for basic linear algebra. Promote if ML inference verification becomes core.
+Status: Library-viable within Rs/Trident for basic linear algebra. Promote if ML inference verification becomes core.
 
 ---
 
@@ -656,9 +663,9 @@ These are the irreducible visual types — the atoms of everything a human can p
 | `formula`   | LaTeX / MathML                | Glyph layout + vector curves via Vello |
 | `component` | Composition of primitives     | Nested render pass                   |
 
-**The structural parallel:** `component` is to perception what `Nox` is to computation. Nox composes computations (cons, axis, branch). Component composes renderings (nest, layout, pass). Same structural pattern at different levels.
+The structural parallel: `component` is to perception what `Nox` is to computation. Nox composes computations (cons, axis, branch). Component composes renderings (nest, layout, pass). Same structural pattern at different levels.
 
-**Implementation:** The nine primitives are implemented in the cyb browser — pure Rust, GPU-native via wgpu, Vello for vector rasterization. Each primitive maps to a specific GPU pipeline. The `component` primitive enables recursive composition — any primitive can contain any other.
+Implementation: The nine primitives are implemented in the [[cyb]] browser — pure Rust, GPU-native via wgpu, Vello for vector rasterization. Each primitive maps to a specific GPU pipeline. The `component` primitive enables recursive composition — any primitive can contain any other.
 
 ---
 
@@ -666,7 +673,7 @@ These are the irreducible visual types — the atoms of everything a human can p
 
 ## The Insight
 
-Every human interaction with a computer is not a gesture. It is a **decision**. A tap is not a finger motion — it is a choice. A scroll is not a displacement — it is a rejection of everything above and below the viewport. Typing is not keystrokes — it is a sequence of compositional choices. Strip the physics away. What remains is pure decision structure.
+Every human interaction with a computer is not a gesture. It is a decision. A tap is not a finger motion — it is a choice. A scroll is not a displacement — it is a rejection of everything above and below the viewport. Typing is not keystrokes — it is a sequence of compositional choices. Strip the physics away. What remains is pure decision structure.
 
 ## The Algebra of Decision
 
@@ -682,7 +689,7 @@ Decision theory gives us the formal vocabulary:
 | Regret      | Difference between chosen utility and best available |
 | Information | Observation that updates beliefs before choosing     |
 
-The key structural property: **decisions are irreversible**. Computation can be replayed. Perception can be refreshed. But once you commit — sign, send, stake, delete — the state has changed. This irreversibility is what makes decisions fundamentally different from computation and display.
+The key structural property: decisions are irreversible. Computation can be replayed. Perception can be refreshed. But once you commit — sign, send, stake, delete — the state has changed. This irreversibility is what makes decisions fundamentally different from computation and display.
 
 ## The Ten Primitives
 
@@ -700,13 +707,13 @@ Observe is to decisions what a register is to computation — the present moment
 
 ### 2. Filter — Narrow by criteria
 
-Not choosing a specific item but choosing a **constraint** that eliminates items. The decision is about boundaries, not points.
+Not choosing a specific item but choosing a constraint that eliminates items. The decision is about boundaries, not points.
 
 ```
 filter(set: Set<T>, predicate: T → Bool) → Set<T>
 ```
 
-Search. Faceted browsing. Price sliders. "Show me only X." Filter is a decision about what to **not see** — it shapes the option space before select or rank applies.
+Search. Faceted browsing. Price sliders. "Show me only X." Filter is a decision about what to not see — it shapes the option space before select or rank applies.
 
 ### 3. Select — Choose one from many
 
@@ -740,7 +747,7 @@ Typing text. Drawing a path. Recording audio. Writing code. Compose is an open-e
 
 ### 6. Split — One becomes many
 
-Divide a single value, resource, or path into parts. The decision is not what to choose but **how to divide**.
+Divide a single value, resource, or path into parts. The decision is not what to choose but how to divide.
 
 ```
 split(value: T, partition: Partition) → Set<T>
@@ -750,7 +757,7 @@ Split a payment across recipients. Fork a conversation into threads. Branch a pr
 
 ### 7. Merge — Many become one
 
-The inverse of split. Take multiple inputs, values, or paths and combine them into a single result. The decision is **how to combine** — which parts to weight, which to discard, how to resolve conflicts.
+The inverse of split. Take multiple inputs, values, or paths and combine them into a single result. The decision is how to combine — which parts to weight, which to discard, how to resolve conflicts.
 
 ```
 merge(parts: Set<T>, resolution: Conflict → T) → T
@@ -760,7 +767,7 @@ Combine votes into a result. Merge pull requests. Reach consensus. Aggregate sen
 
 ### 8. Delegate — Route to another agent
 
-The decision to not decide. Assign the choice to someone (or something) else. This is not indecision — it's an active choice about **who** should choose.
+The decision to not decide. Assign the choice to someone (or something) else. This is not indecision — it's an active choice about who should choose.
 
 ```
 delegate(decision: Decision, agent: Agent) → Pending<T>
@@ -770,7 +777,7 @@ Share for input. Assign a task. Vote (delegate to the majority). Ask an AI. In c
 
 ### 9. Reject — Explicitly not-choose
 
-The opposite of select. Not "I haven't decided" (that's observe) but "I have decided: **no**."
+The opposite of select. Not "I haven't decided" (that's observe) but "I have decided: no."
 
 ```
 reject(option: T) → ()
@@ -788,7 +795,7 @@ confirm(choice: T, state: State) → (NewState, Proof)
 
 Sign a transaction. Send a message. Deploy a contract. Delete permanently. In cyb/os, confirm can produce a cryptographic proof — a STARK attestation that this decision was made by this agent at this time. Confirm is where decision meets Trident.
 
-**Confirm is the only primitive that is always irreversible.** This makes it structurally unique — it is the backbone of the decision grid, the moment where possibility collapses into fact. Every other primitive can be undone, revised, or abandoned. Confirm cannot.
+Confirm is the only primitive that is always irreversible. This makes it structurally unique — it is the backbone of the decision grid, the moment where possibility collapses into fact. Every other primitive can be undone, revised, or abandoned. Confirm cannot.
 
 ## The Structural Relations
 
@@ -816,11 +823,11 @@ Not every decision follows the full path. A quick tap is `observe → select →
 
 ## Decision vs. Computation — The Boundary
 
-The nine computation languages answer questions of **truth** — what follows from what, what the value is, what the structure contains. They are objective, reproducible, provable.
+The nine computation languages answer questions of truth — what follows from what, what the value is, what the structure contains. They are objective, reproducible, provable.
 
-The ten decision primitives are fundamentally **subjective**. Select depends on preference. Rank depends on values. Confirm depends on willingness. No computation can derive a decision — it can only inform one.
+The ten decision primitives are fundamentally subjective. Select depends on preference. Rank depends on values. Confirm depends on willingness. No computation can derive a decision — it can only inform one.
 
-This is the critical architectural boundary: **the machine computes, the human decides**. The computation grid can suggest, derive, prove, rank. The perception grid can display, highlight, compare, animate. But the decision grid is where agency lives. Making it a computation language would mean the machine decides. That's not cyb/os — that's the system cyb/os replaces.
+This is the critical architectural boundary: the machine computes, the human decides. The computation grid can suggest, derive, prove, rank. The perception grid can display, highlight, compare, animate. But the decision grid is where agency lives. Making it a computation language would mean the machine decides. That's not cyb/os — that's the system cyb/os replaces.
 
 The exception is `delegate` — the decision to let another agent (possibly a machine) decide. Even then, the delegation itself is a human decision. You choose to trust the AI. The AI doesn't choose to be trusted.
 
@@ -951,7 +958,7 @@ Stream (flow)    observe, select, rank, reject Linear: scroll through a feed (ob
 
 # The Universal Structural Pair: Fork / Join
 
-All three grids share the same fundamental structural operation: **divergence and convergence**. One becomes many, many become one. This is the deepest pattern in cyb/os — the same skeleton wearing three costumes.
+All three grids share the same fundamental structural operation: divergence and convergence. One becomes many, many become one. This is the deepest pattern in cyb/os — the same skeleton wearing three costumes.
 
 ```
             fork (one → many)          join (many → one)
@@ -963,9 +970,9 @@ Decision     split (divide choice)      merge (combine choices)
 
 The universal vocabulary is `fork` / `join`. Each grid specializes:
 
-- **Nox** says `axis` / `cons` — tree decomposition / tree construction
-- **component** says `expand` / `nest` — view decomposition / view composition
-- **confirm** says `split` / `merge` — choice divergence / choice convergence
+- Nox says `axis` / `cons` — tree decomposition / tree construction
+- component says `expand` / `nest` — view decomposition / view composition
+- confirm says `split` / `merge` — choice divergence / choice convergence
 
 This is not a metaphor. Fork/join is the pattern that process scheduling, git branching, thread parallelism, parliamentary procedure, and neural attention all converge on. It's how structure grows (fork) and how consensus forms (join).
 
@@ -1007,7 +1014,7 @@ The three grids interlock in a continuous cycle:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-This is the cyb/os event loop. Not `requestAnimationFrame()`. A **decision loop**:
+This is the cyb/os event loop. Not `requestAnimationFrame()`. A decision loop:
 
 ```
 loop {
@@ -1065,7 +1072,7 @@ loop {
 |---------|----------------------------------|---------------------------|
 | Bt      | → Binius FRI circuit             | N/A (always proving)      |
 | Rs      | → TASM → STARK (Byte→Field lift) | → native binary (Nox)    |
-| Trident | → TASM → STARK (Field native)    | → WASM/EVM (Layer 0)    |
+| Trident | → TASM → STARK (Field native)    | → [[wasm|WASM]]/EVM (Layer 0)    |
 | Arc     | → decomposes into Trident + Bt   | → optimized graph engine  |
 | Seq     | → temporal constraints → STARK   | → scheduler / runtime     |
 | Ask     | → derivation trace → STARK       | → Datalog engine          |
@@ -1158,19 +1165,19 @@ Universal pattern: fork / join
 
 | Property        | Nox      | Bt       | Rs       | Trident  | Arc      | Seq      | Ask       | Wav      | Ten      |
 |-----------------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
-| **Universe**    | Structure| Binary   | Byte     | Field    | Topology | Causality| Inference | Continuum| Linear   |
-| **Char**        | —        | 2        | p        | p        | —        | —        | —         | ≈ℝ       | ≈ℝ or p  |
-| **Primitive**   | Cell     | Bit      | Word     | Field    | Edge     | Event    | Relation  | Sample   | Shape    |
-| **Reference**   | structure| wire     | location | content  | adjacency| succession| entailment| amplitude| index    |
-| **Register**    | st0–st15 | wire bit | current word| top of stack| current node| current event| current binding| current sample| current slice|
-| **Time mode**   | —        | —        | stack    | stack    | heap     | all three| heap      | stream   | stack    |
-| **Free op**     | Navigate | AND, XOR | Index    | Mul, Add | Link     | Order    | Unify     | Convolve | Matmul   |
-| **Costly op**   | —        | Carry add| Mod div  | Bitwise  | Spectral | Verify   | Fixpoint  | FFT      | Inverse  |
-| **Proof**       | Inherited| Binius   | STARK    | STARK    | Delegated| Delegated| Delegated | Delegated| Delegated|
-| **Syntax feel** | IR       | Circuit  | Rust     | Custom   | Query    | Temporal | Datalog   | DSP      | NumPy    |
-| **Renders as**  | struct   | pixels   | text     | formula  | vector   | video    | table     | sound    | component|
-| **Leaf atoms**  | all three| 𝔽₂ (own) | word     | field    | hash+field| hash+word| hash×3   | field    | field[]  |
-| **Human-facing**| No       | Yes      | Yes      | Yes      | Yes      | Yes      | Yes       | Maybe    | Maybe    |
+| Universe    | Structure| Binary   | Byte     | Field    | Topology | Causality| Inference | Continuum| Linear   |
+| Char        | —        | 2        | p        | p        | —        | —        | —         | ≈ℝ       | ≈ℝ or p  |
+| Primitive   | Cell     | Bit      | Word     | Field    | Edge     | Event    | Relation  | Sample   | Shape    |
+| Reference   | structure| wire     | location | content  | adjacency| succession| entailment| amplitude| index    |
+| Register    | st0–st15 | wire bit | current word| top of stack| current node| current event| current binding| current sample| current slice|
+| Time mode   | —        | —        | stack    | stack    | heap     | all three| heap      | stream   | stack    |
+| Free op     | Navigate | AND, XOR | Index    | Mul, Add | Link     | Order    | Unify     | Convolve | Matmul   |
+| Costly op   | —        | Carry add| Mod div  | Bitwise  | Spectral | Verify   | Fixpoint  | FFT      | Inverse  |
+| Proof       | Inherited| Binius   | STARK    | STARK    | Delegated| Delegated| Delegated | Delegated| Delegated|
+| Syntax feel | IR       | Circuit  | Rust     | Custom   | Query    | Temporal | Datalog   | DSP      | NumPy    |
+| Renders as  | struct   | pixels   | text     | formula  | vector   | video    | table     | sound    | component|
+| Leaf atoms  | all three| 𝔽₂ (own) | word     | field    | hash+field| hash+word| hash×3   | field    | field[]  |
+| Human-facing| No       | Yes      | Yes      | Yes      | Yes      | Yes      | Yes       | Maybe    | Maybe    |
 
 ## Decision Primitives Summary
 
@@ -1185,7 +1192,7 @@ Universal pattern: fork / join
 | 7  | merge     | Many become one       | Depends     | Heap      | Arc + Ask     | vector     | hash      |
 | 8  | delegate  | Route to agent        | Sometimes   | Heap      | Arc           | vector     | hash      |
 | 9  | reject    | Explicitly not-choose | Mostly      | Stream    | Seq           | video      | word      |
-| 10 | confirm   | Irreversible commit   | **No**      | Stack     | Trident       | formula    | hash      |
+| 10 | confirm   | Irreversible commit   | No      | Stack     | Trident       | formula    | hash      |
 
 ---
 
@@ -1193,21 +1200,21 @@ Universal pattern: fork / join
 
 ## Phase 1 — Foundation (Now)
 
-1. **Nox** — Define the 16-pattern structural IR with abstract Merkle authentication
-2. **Trident** — Already exists, refine compiler and TIR
-3. **Rs** — Strict Rust subset, same compiler backend as Trident, target Nox runtime
+1. Nox — Define the 16-pattern structural IR with abstract Merkle authentication
+2. Trident — Already exists, refine compiler and TIR
+3. Rs — Strict Rust subset, same compiler backend as Trident, target Nox runtime
 
 ## Phase 2 — Expansion (Next)
 
-4. **Arc** — Graph DSL for cybergraph programming. Compiles to Trident for proofs, native engine for queries. Essential for making cybergraph programming natural.
-5. **Seq** — Temporal logic for consensus rules and scheduling. Causal dependencies rather than procedural checks. Three temporal modes (stack/heap/stream) built in.
-6. **Ask** — Datalog over the cybergraph. Rule-based inference turns explicit links into implicit knowledge. The knowledge graph becomes self-amplifying.
+4. Arc — Graph DSL for cybergraph programming. Compiles to Trident for proofs, native engine for queries. Essential for making cybergraph programming natural.
+5. Seq — Temporal logic for consensus rules and scheduling. Causal dependencies rather than procedural checks. Three temporal modes (stack/heap/stream) built in.
+6. Ask — Datalog over the cybergraph. Rule-based inference turns explicit links into implicit knowledge. The knowledge graph becomes self-amplifying.
 
 ## Phase 3 — Specialization (When needed)
 
-7. **Bt** — Binary circuits for legacy hash verification and cross-chain bridges. Build when Bitcoin/Ethereum interop becomes a priority.
-8. **Wav** — Signal processing. Start as Rs library, promote to language if cyb/os sensor workloads justify it.
-9. **Ten** — Tensor operations. Start as Rs/Trident library, promote to language if ML inference verification becomes core.
+7. Bt — Binary circuits for legacy hash verification and cross-chain bridges. Build when Bitcoin/Ethereum interop becomes a priority.
+8. Wav — Signal processing. Start as Rs library, promote to language if cyb/os sensor workloads justify it.
+9. Ten — Tensor operations. Start as Rs/Trident library, promote to language if ML inference verification becomes core.
 
 ## Perception Layer (Parallel track)
 
@@ -1223,13 +1230,13 @@ Ten decision primitives implemented as the interaction model for cyb browser. Ea
 
 cyb/os rests on three observations and one boundary.
 
-**One.** Every computational universe has a native type whose algebraic laws define how programs think. Forcing computations across universe boundaries creates encoding overhead that scales with complexity. Nine algebras → nine languages.
+One. Every computational universe has a native type whose algebraic laws define how programs think. Forcing computations across universe boundaries creates encoding overhead that scales with complexity. Nine algebras → nine languages.
 
-**Two.** Every perceptual channel has a native format whose rendering laws define how humans see. Forcing display across format boundaries creates visual noise. Nine senses → nine primitives.
+Two. Every perceptual channel has a native format whose rendering laws define how humans see. Forcing display across format boundaries creates visual noise. Nine senses → nine primitives.
 
-**Three.** Every human action is a decision, not a gesture. Decisions have their own algebra: options, preferences, beliefs, commitments. Ten decision types → ten interaction primitives.
+Three. Every human action is a decision, not a gesture. Decisions have their own algebra: options, preferences, beliefs, commitments. Ten decision types → ten interaction primitives.
 
-**The boundary.** The machine computes, the human decides. Computation produces options. Perception displays them. Decision collapses them to action. The action commits to new state, and the cycle continues.
+The boundary. The machine computes, the human decides. Computation produces options. Perception displays them. Decision collapses them to action. The action commits to new state, and the cycle continues.
 
 All values in all universes (except Binary) decompose into three atoms — three modes of reference that are exhaustive:
 
