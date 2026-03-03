@@ -1,6 +1,6 @@
 ---
 tags: cyber, info
-alias: information theory
+alias: information theory, infotheory
 crystal-type: entity
 crystal-domain: info
 ---
