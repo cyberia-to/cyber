@@ -2,7 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-alias: Ilya Prigogine
+alias: Prigogine
 stake: 7571752767623661
 ---
 1917-2003. Belgian physical chemist. Nobel Prize in Chemistry (1977).

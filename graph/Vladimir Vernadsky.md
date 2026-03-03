@@ -1,4 +1,5 @@
 ---
+alias: Vernadsky
 tags: person
 crystal-type: entity
 crystal-domain: cybics
