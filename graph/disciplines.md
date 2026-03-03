@@ -14,32 +14,32 @@ the [[crystal]] does not use disciplines as its organizing principle. it uses [[
 
 | discipline | phenomena it covers | crystal domains |
 |---|---|---|
-| physics | fundamental matter, energy transformation, spacetime | [[quantum]], [[energo]], [[cosmo]] |
-| chemistry | bonds, reactions, molecular structure | [[chemo]], [[quantum]] |
-| biology | organisms, evolution, genetics, cells | [[bio]], [[chemo]], [[eco]] |
-| mathematics | structure, proof, quantity, shape | [[math]] |
-| computer science | computation, algorithms, complexity, languages | [[comp]], [[info]] |
-| neuroscience | brain, cognition, neural circuits | [[neuro]], [[bio]], [[sense]] |
-| psychology | mind, behavior, perception, emotion | [[neuro]], [[sense]], [[socio]] |
-| linguistics | language structure, meaning, communication | [[lang]], [[comp]] |
-| philosophy | meaning, values, knowledge, logic | [[spiri]], [[meta]], [[math]] |
-| history | past events, civilizational record | [[meta]], [[socio]] |
-| economics | resource allocation, markets, incentives | [[crypto]], [[game]], [[socio]] |
-| political science | governance, institutions, power | [[socio]], [[game]] |
-| sociology | collective behavior, institutions, culture | [[socio]], [[lang]], [[spiri]] |
-| ecology | ecosystems, cycles, biodiversity | [[eco]], [[bio]], [[geo]] |
-| geology | earth systems, rocks, tectonics | [[geo]], [[chemo]] |
-| astronomy | stars, galaxies, cosmic structure | [[cosmo]], [[quantum]] |
-| thermodynamics | energy transformation, entropy, heat | [[energo]], [[info]], [[quantum]] |
-| information theory | signals, entropy, channels, coding | [[info]], [[math]] |
-| engineering | tools, machines, construction, materials | [[tech]], [[chemo]], [[energo]] |
-| medicine | health, disease, treatment | [[bio]], [[chemo]], [[neuro]] |
-| cryptography | secrets, proofs, hash functions | [[crypto]], [[math]], [[comp]] |
-| artificial intelligence | machine learning, inference, agents | [[ai]], [[comp]], [[neuro]] |
-| game theory | strategic interaction, equilibria, mechanism design | [[game]], [[math]], [[socio]] |
-| cosmology | origin, expansion, fate of the universe | [[cosmo]], [[quantum]], [[energo]] |
-| materials science | material properties, synthesis, engineering | [[chemo]], [[tech]] |
-| geography | territory, climate, spatial analysis | [[geo]], [[eco]], [[socio]] |
+| [[physics]] | fundamental matter, energy transformation, spacetime | [[quantum]], [[energo]], [[cosmo]] |
+| [[chemistry]] | bonds, reactions, molecular structure | [[chemo]], [[quantum]] |
+| [[biology]] | organisms, evolution, genetics, cells | [[bio]], [[chemo]], [[eco]] |
+| [[mathematics]] | structure, proof, quantity, shape | [[math]] |
+| [[computer science]] | computation, algorithms, complexity, languages | [[comp]], [[info]] |
+| [[neuroscience]] | brain, cognition, neural circuits | [[neuro]], [[bio]], [[sense]] |
+| [[psychology]] | mind, behavior, perception, emotion | [[neuro]], [[sense]], [[socio]] |
+| [[linguistics]] | language structure, meaning, communication | [[lang]], [[comp]] |
+| [[philosophy]] | meaning, values, knowledge, logic | [[spiri]], [[meta]], [[math]] |
+| [[history]] | past events, civilizational record | [[meta]], [[socio]] |
+| [[economics]] | resource allocation, markets, incentives | [[crypto]], [[game]], [[socio]] |
+| [[political science]] | governance, institutions, power | [[socio]], [[game]] |
+| [[sociology]] | collective behavior, institutions, culture | [[socio]], [[lang]], [[spiri]] |
+| [[ecology]] | ecosystems, cycles, biodiversity | [[eco]], [[bio]], [[geo]] |
+| [[geology]] | earth systems, rocks, tectonics | [[geo]], [[chemo]] |
+| [[astronomy]] | stars, galaxies, cosmic structure | [[cosmo]], [[quantum]] |
+| [[thermodynamics]] | energy transformation, entropy, heat | [[energo]], [[info]], [[quantum]] |
+| [[info/theory]] | signals, entropy, channels, coding | [[info]], [[math]] |
+| [[engineering]] | tools, machines, construction, materials | [[tech]], [[chemo]], [[energo]] |
+| [[medicine]] | health, disease, treatment | [[bio]], [[chemo]], [[neuro]] |
+| [[cryptography]] | secrets, proofs, hash functions | [[crypto]], [[math]], [[comp]] |
+| [[artificial intelligence]] | machine learning, inference, agents | [[ai]], [[comp]], [[neuro]] |
+| [[game theory]] | strategic interaction, equilibria, mechanism design | [[game]], [[math]], [[socio]] |
+| [[cosmology]] | origin, expansion, fate of the universe | [[cosmo]], [[quantum]], [[energo]] |
+| [[materials science]] | material properties, synthesis, engineering | [[chemo]], [[tech]] |
+| [[geography]] | territory, climate, spatial analysis | [[geo]], [[eco]], [[socio]] |
 
 ## observations
 
