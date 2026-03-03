@@ -256,6 +256,8 @@ The Pareto distribution: 72% of content lives in 13% of particles. Articles and 
 
 The Crystal organizes knowledge into 21 irreducible domains, each receiving exactly Q = 240 particles. Total: 21 × 240 = 5,040 = N. No domain is privileged. Every domain earns its place because removing it collapses at least one triad of reasoning.
 
+Domains are [[phenomena]], not disciplines. Academic fields like "physics" or "natural philosophy" are human lenses that group several distinct phenomena under one institutional roof. The Crystal is post-disciplinary: it carves at the joints of what actually happens, not at the boundaries of university departments. Physics, for example, is not missing — its phenomena are distributed across [[quantum]] (fundamental matter), [[energo]] (transformation and thermodynamics), [[cosmo]] (large-scale structure), and the bridges between them. Thermodynamics is not a single domain because it is a bridge pattern: it lives in [[energo]] as core content and touches [[info]] (Landauer), [[chemo]] (Gibbs free energy), [[bio]] (metabolism), [[eco]] (energy flow), [[comp]] (reversible computing), and [[cosmo]] (heat death). A phenomenon that connects everything is more powerful as a bridge than as a silo.
+
 ### 7.1 The 21 Domains
 
 | domain | core scope | triad |
