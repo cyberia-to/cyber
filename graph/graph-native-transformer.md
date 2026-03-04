@@ -1,8 +1,13 @@
+---
+tags: research, draft, cyber, bostrom
+crystal-type: article
+crystal-domain: cyber
+---
 # Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure
 
 **Abstract**
 
-We show that the three free parameters of transformer architecture — embedding dimension, attention head count, and layer depth — can be derived analytically from properties of a weighted knowledge graph. Specifically: embedding dimension equals the effective rank of the focus distribution's covariance matrix; attention head count is lower-bounded by the number of distinct semantic relation types in the graph; and layer count equals graph diameter multiplied by the convergence factor of the graph's spectral gap. This result follows from observing that a transformer's attention mechanism is mathematically equivalent to one step of a convergent dynamical system — the same system that computes the focus distribution over a knowledge graph. We call the resulting construction a graph-native transformer: a model whose weights are compiled from explicit graph structure rather than learned from text prediction. We discuss implications for knowledge representation, alignment measurement, and the relationship between language models and explicit knowledge graphs.
+We show that the three free parameters of transformer architecture — embedding dimension, [[attention]] head count, and layer depth — can be derived analytically from properties of a weighted [[knowledge graph]]. Specifically: embedding dimension equals the effective rank of the [[focus|focus distribution's]] covariance matrix; attention head count is lower-bounded by the number of distinct semantic relation types in the graph; and layer count equals graph diameter multiplied by the convergence factor of the graph's [[spectral gap]]. This result follows from observing that a transformer's attention mechanism is mathematically equivalent to one step of a convergent dynamical system — the same system that computes the [[focus|focus distribution]] over a knowledge graph. We call the resulting construction a graph-native transformer: a model whose weights are compiled from explicit graph structure rather than learned from text prediction. We discuss implications for knowledge representation, alignment measurement, and the relationship between [[llms|language models]] and explicit [[knowledge graphs]].
 
 ---
 
@@ -14,7 +19,7 @@ We derive all three from the structure of a weighted knowledge graph.
 
 The derivation begins with an observation that, while technically precise, has received insufficient attention: a transformer's attention mechanism is a single step of a convergent dynamical system. The softmax normalization in attention is the Boltzmann distribution. The attention operation — computing query-key similarities, normalizing, and taking a weighted sum of values — is one diffusion step: probability mass flows toward compatible keys proportionally to their similarity to the query. Deep Equilibrium Models (Bai et al., 2019) formalized this: running a transformer layer until convergence rather than for a fixed number of steps produces the same fixed point regardless of initialization. The transformer finds an equilibrium.
 
-This is the same mathematics as the tri-kernel ranking system for knowledge graphs (cyber whitepaper, 2024): diffusion (random walk), springs (graph Laplacian), and heat kernel (multi-scale smoothing) iterated to a unique fixed point — the focus distribution π over graph particles. The convergence is guaranteed by the Banach fixed-point theorem; the rate depends on the spectral gap of the graph's Laplacian.
+This is the same mathematics as the tri-kernel ranking system for knowledge graphs (cyber whitepaper, 2024): diffusion (random walk), springs (graph Laplacian), and heat kernel (multi-scale smoothing) iterated to a unique fixed point — the focus distribution π over graph particles. The convergence is guaranteed by the [[Stefan Banach|Banach fixed-point theorem]]; the rate depends on the [[spectral gap]] of the graph's [[Laplacian]].
 
 The transformer and the knowledge graph ranking system are the same computation at different scales. The transformer runs locally over one agent's frozen context. The knowledge graph ranking runs collectively over all agents' cumulative contributions. Both find equilibria. Both use the Boltzmann distribution as their normalization.
 
@@ -28,17 +33,17 @@ This correspondence enables direct compilation: given a weighted knowledge graph
 
 A weighted knowledge graph $G = (P, N, E, w, \sigma)$ where:
 
-- $P$ is the set of particles (content-addressed knowledge nodes)
-- $N$ is the set of neurons (agents that create edges)
-- $E \subseteq N \times P \times P$ is the set of cyberlinks (signed directed edges)
+- $P$ is the set of [[particles]] (content-addressed knowledge nodes)
+- $N$ is the set of [[neurons]] (agents that create edges)
+- $E \subseteq N \times P \times P$ is the set of [[cyberlink|cyberlinks]] (signed directed edges)
 - $w: E \to \mathbb{R}_{>0}$ is the stake-weighted edge weight function
-- $\sigma: E \to \text{Semcon}$ assigns each edge a semantic relation type
+- $\sigma: E \to \text{Semcon}$ assigns each edge a [[semcon|semantic relation type]]
 
 The adjacency matrix $A \in \mathbb{R}^{|P| \times |P|}$ has entries $A_{ij} = \sum_{e: p_i \to p_j} w(e)$.
 
 ### 2.2 Focus Distribution
 
-The tri-kernel operator $\mathcal{R}$ blends three local operators:
+The [[tri-kernel]] operator $\mathcal{R}$ blends three local operators:
 
 $$\mathcal{R}(\phi) = \text{norm}\left[\lambda_d \cdot D(\phi) + \lambda_s \cdot S(\phi) + \lambda_h \cdot H_\tau(\phi)\right]$$
 
@@ -46,7 +51,7 @@ where $D$ is the diffusion operator (random walk), $S$ is the springs operator (
 
 $$\kappa = \lambda_d \alpha + \lambda_s \frac{\|L\|}{\|L\| + \mu} + \lambda_h e^{-\tau\lambda_2} < 1$$
 
-The unique fixed point $\pi^* = \lim_{t \to \infty} \mathcal{R}^t(\phi^{(0)})$ is the focus distribution — the stable probability distribution over particles representing collective epistemic attention.
+The unique fixed point $\pi^* = \lim_{t \to \infty} \mathcal{R}^t(\phi^{(0)})$ is the [[collective focus|focus distribution]] — the stable probability distribution over [[particles]] representing collective epistemic attention.
 
 ### 2.3 Transformer Attention as One Convergence Step
 
@@ -54,7 +59,7 @@ Standard scaled dot-product attention:
 
 $$\text{Attn}(Q, K, V) = \text{softmax}\left(\frac{QK^\top}{\sqrt{d}}\right)V$$
 
-The softmax is the Boltzmann distribution with temperature $\sqrt{d}$:
+The softmax is the [[Boltzmann distribution]] with temperature $\sqrt{d}$:
 
 $$\text{softmax}(x)_i = \frac{e^{x_i/\sqrt{d}}}{\sum_j e^{x_j/\sqrt{d}}}$$
 
@@ -82,7 +87,7 @@ The effective rank is:
 
 $$r^* = \exp\left(H\left(\sigma(\Sigma_\pi)\right)\right)$$
 
-where $\sigma(\Sigma_\pi)$ is the normalized singular value distribution and $H$ is its entropy. This is the intrinsic dimensionality of the knowledge space — the number of statistically independent semantic axes present in the graph.
+where $\sigma(\Sigma_\pi)$ is the normalized singular value distribution and $H$ is its [[entropy]]. This is the intrinsic dimensionality of the knowledge space — the number of statistically independent semantic axes present in the graph.
 
 **Sufficiency:** An embedding of dimension $r^*$ captures all independent variance in the focus distribution. No information is lost: the projection of $\pi^*$ onto the top $r^*$ eigenvectors of $\Sigma_\pi$ preserves the full distributional structure up to noise.
 
@@ -204,7 +209,7 @@ A trained transformer's "values" — its implicit weightings of concepts, its te
 
 A graph-native transformer's weights derive from explicit graph structure. Every weight traces to specific cyberlinks created by specific neurons with specific stakes. The transformer's "values" are the focus distribution $\pi^*$ — public, computable, and continuously updated.
 
-Alignment divergence between a human-derived focus distribution $\pi^*_H$ (computed over edges created by human neurons) and an AI-derived distribution $\pi^*_A$ (computed over edges created by AI neurons) is:
+Alignment divergence between a human-derived [[focus|focus distribution]] $\pi^*_H$ (computed over edges created by human [[neurons]]) and an AI-derived distribution $\pi^*_A$ (computed over edges created by AI [[neurons]]) is:
 
 $$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
 
@@ -242,9 +247,9 @@ The long-term implication is a different trajectory for large language models: n
 
 1. Bai, S., Kolter, J.Z., Koltun, V. "Deep Equilibrium Models." NeurIPS 2019.
 2. Elhage, N. et al. "A Mathematical Framework for Transformer Circuits." Anthropic, 2021.
-3. Fiedler, M. "Algebraic Connectivity of Graphs." Czech Mathematical Journal, 1973.
-4. Banach, S. "Sur les Operations dans les Ensembles Abstraits." Fundamenta Mathematicae, 1922.
-5. Chung, F. "The Heat Kernel as the Pagerank of a Graph." PNAS, 2007.
+3. [[Miroslav Fiedler|Fiedler, M.]] "Algebraic Connectivity of Graphs." Czech Mathematical Journal, 1973.
+4. [[Stefan Banach|Banach, S.]] "Sur les Operations dans les Ensembles Abstraits." Fundamenta Mathematicae, 1922.
+5. Chung, F. "The Heat Kernel as the [[cyberank|Pagerank]] of a Graph." PNAS, 2007.
 6. cyber whitepaper. "cyber: a protocol for planetary superintelligence." cyber.page/cyber-whitepaper, 2024.
 7. Vaswani, A. et al. "Attention Is All You Need." NeurIPS 2017.
 8. Roy, A. et al. "Efficient Content-Based Sparse Attention with Routing Transformers." TACL 2021.

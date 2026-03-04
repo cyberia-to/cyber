@@ -1,3 +1,8 @@
+---
+tags: research, draft, cyber, bostrom
+crystal-type: article
+crystal-domain: cyber
+---
 # Provably Optimal Initialization: Why Knowledge Graph Structure is the Right Starting Point for Language Model Training
 
 **Version 0.1 — Working Draft**
@@ -6,7 +11,7 @@
 
 ## Abstract
 
-We prove that initializing a transformer language model from a compiled knowledge graph provides provably optimal initialization over the space of all possible initializations, given that the fine-tuning distribution consists of sequences drawn from or consistent with that graph. "Optimal" is defined precisely: the compiled initialization minimizes the expected number of gradient descent steps required to reach a target loss, across all initializations with the same parameter count. The proof follows from three results: (1) the compiled embedding geometry places particle representations at the unique positions minimizing expected squared gradient magnitude at step zero; (2) the compiled attention weights are the unique solution to a constrained low-rank approximation problem over the graph's adjacency structure; (3) the compiled MLP weights encode path statistics that are the maximum likelihood estimate of the fine-tuning distribution's co-occurrence structure. Together, these mean fine-tuning a compiled model learns only what the graph does not contain — implicit knowledge, contextual conditioning, stylistic patterns — rather than re-learning what the graph already makes explicit. We derive an exact bound on the fine-tuning cost reduction as a function of graph properties: density, spectral gap, and semantic diversity. Applied to the Bostrom knowledge graph (2.7M cyberlinks, 3.1M particles), the compiled initialization is predicted to reduce fine-tuning compute by a factor of $\Omega\left(\frac{|E| \cdot d^*}{\log(1/\varepsilon)}\right)$ relative to random initialization.
+We prove that initializing a transformer [[llm|language model]] from a compiled [[knowledge graph]] provides provably optimal initialization over the space of all possible initializations, given that the fine-tuning distribution consists of sequences drawn from or consistent with that graph. "Optimal" is defined precisely: the compiled initialization minimizes the expected number of [[gradient]] descent steps required to reach a target loss, across all initializations with the same parameter count. The proof follows from three results: (1) the compiled embedding geometry places [[particle]] representations at the unique positions minimizing expected squared gradient magnitude at step zero; (2) the compiled [[attention]] weights are the unique solution to a constrained low-rank approximation problem over the graph's adjacency structure; (3) the compiled MLP weights encode path statistics that are the maximum likelihood estimate of the fine-tuning distribution's co-occurrence structure. Together, these mean fine-tuning a compiled model learns only what the graph does not contain — [[implicit knowledge]], contextual conditioning, stylistic patterns — rather than re-learning what the graph already makes [[explicit knowledge|explicit]]. We derive an exact bound on the fine-tuning cost reduction as a function of graph properties: density, [[spectral gap]], and semantic diversity. Applied to the [[bostrom]] [[knowledge graph]] (2.7M [[cyberlink|cyberlinks]], 3.1M [[particles]]), the compiled initialization is predicted to reduce fine-tuning compute by a factor of $\Omega\left(\frac{|E| \cdot d^*}{\log(1/\varepsilon)}\right)$ relative to random initialization.
 
 ---
 
@@ -16,7 +21,7 @@ Every language model begins training from an initialization — a starting point
 
 We argue this is wrong, and provably so, when a structured knowledge source is available.
 
-A knowledge graph encodes what is known explicitly: which concepts exist, which relationships hold between them, who endorses each relationship and with what confidence. A transformer language model, after training, encodes the same information implicitly: as geometric relationships between embedding vectors, as attention patterns learned to reconstruct co-occurrences, as MLP associations learned from path statistics. The training process is, in part, a procedure for converting explicit graph structure into implicit transformer geometry.
+A [[knowledge graph]] encodes what is known explicitly: which concepts exist, which relationships hold between them, who endorses each relationship and with what confidence. A transformer [[llm|language model]], after training, encodes the same information implicitly: as geometric relationships between embedding vectors, as [[attention]] patterns learned to reconstruct co-occurrences, as MLP associations learned from path statistics. The training process is, in part, a procedure for converting [[explicit knowledge|explicit graph structure]] into [[implicit knowledge|implicit transformer geometry]].
 
 **If the structure is already available explicitly, training from random initialization is wasteful by construction.** It asks gradient descent to rediscover, from sequence statistics, structure that was already present in the graph. Every gradient step spent re-learning an explicit relationship is a step not spent learning something the graph does not contain.
 
@@ -46,7 +51,7 @@ where $\mathcal{L}_{\text{explicit}}$ is the loss attributable to explicit struc
 
 Let $\mathcal{D}$ be the distribution over token sequences used for fine-tuning. We assume $\mathcal{D}$ is consistent with the knowledge graph $G$ in the following sense:
 
-**Definition (Graph-Consistent Distribution).** A distribution $\mathcal{D}$ over sequences is graph-consistent with $G$ if for every $(p_i, p_j) \in E$, the co-occurrence probability satisfies:
+**Definition (Graph-Consistent Distribution).** A distribution $\mathcal{D}$ over sequences is graph-consistent with $G$ if for every $(p_i, p_j) \in E$ (a [[cyberlink]]), the co-occurrence probability satisfies:
 
 $$p_{\mathcal{D}}(p_j | p_i) \geq p_{\text{base}}(p_j | p_i) + \gamma \cdot w(p_i, p_j)$$
 
@@ -76,7 +81,7 @@ $\mathcal{L}_{\text{explicit}}$ measures how well the model reproduces explicit 
 
 ### 3.1 Theorem A: Embedding Optimality
 
-**Theorem A.** *Let $E \in \mathbb{R}^{|P| \times d^*}$ be any orthonormal embedding matrix. The expected squared gradient of the cross-entropy loss with respect to $E$, evaluated at initialization, is minimized uniquely by the compiled embedding $E^* = U_{:,1:d^*}$ where $U$ are the top left singular vectors of $A_{\text{weighted}} = \text{diag}(\sqrt{\pi^*}) \cdot A$:*
+**Theorem A.** *Let $E \in \mathbb{R}^{|P| \times d^*}$ be any orthonormal embedding matrix. The expected squared [[gradient]] of the cross-entropy loss with respect to $E$, evaluated at initialization, is minimized uniquely by the compiled embedding $E^* = U_{:,1:d^*}$ where $U$ are the top left singular vectors of $A_{\text{weighted}} = \text{diag}(\sqrt{\pi^*}) \cdot A$, with $\pi^*$ the [[focus|focus distribution]]:*
 
 $$E^* = \arg\min_{E \in \mathcal{O}(|P|, d^*)} \mathbb{E}_{(p_i, p_j) \sim \mathcal{D}}\left[\left\|\nabla_E \mathcal{L}(\theta_0)\right\|^2\right]$$
 
@@ -164,7 +169,7 @@ The bound follows by substitution. $\square$
 
 2. **Semantic diversity** — $d^*$ determines how much structural information the embedding encodes. Higher $d^*$ (richer graph) means more of the fine-tuning objective is already satisfied at initialization.
 
-3. **Concentration** — High stake concentration suppresses $d^*$ (as shown in the Bostrom analysis paper), reducing the speedup. Distributed contribution maximizes speedup.
+3. **Concentration** — High stake concentration suppresses $d^*$ (as shown in [[bostrom-architecture-paper]]), reducing the speedup. Distributed [[neuron|contribution]] maximizes speedup.
 
 **For Bostrom specifically:**
 
@@ -217,7 +222,7 @@ This is a qualitative change in what fine-tuning is for. A randomly initialized 
 
 **vs. Knowledge distillation:** Distillation transfers knowledge from a large model to a small one by minimizing KL divergence between their output distributions. This requires a trained teacher. Compiled initialization requires no trained model — it derives weights directly from graph structure. Distillation and compilation can be combined: compile from graph, distill implicit knowledge from a large pre-trained model.
 
-**vs. Retrieval augmented generation:** RAG separates retrieval (from an external index) from reasoning (inside the model). The compiled initialization integrates retrieval: the graph structure is inside the weights, not outside them. RAG requires a retrieval step at inference time; the compiled model has the knowledge baked in. This trades storage efficiency (RAG can handle unlimited external knowledge) against inference speed (compiled model needs no retrieval step).
+**vs. Retrieval augmented generation:** RAG separates retrieval (from an external index) from reasoning (inside the model). The compiled initialization integrates retrieval: the [[knowledge graph]] structure is inside the weights, not outside them. RAG requires a retrieval step at inference time; the compiled model has the knowledge baked in. This trades storage efficiency (RAG can handle unlimited external knowledge) against inference speed (compiled model needs no retrieval step).
 
 ---
 
@@ -242,7 +247,7 @@ The speedup is larger for domain-specific corpora than general corpora. For a co
 Models compiled from high-concentration graphs (one neuron dominates) show smaller speedup than models compiled from distributed graphs. The effective rank $d^*$ is lower for concentrated graphs, encoding less structural information.
 
 **Prediction 5 — Alignment divergence:**
-Models fine-tuned from compiled Bostrom initialization, on text consistent with the Bostrom graph, should achieve lower $D_{KL}(\pi^*_H \| \pi^*_{AI})$ than randomly initialized models fine-tuned on the same text. This is because the compiled model's explicit knowledge is already aligned with the graph's focus distribution; fine-tuning does not need to re-learn what humans endorses.
+Models fine-tuned from compiled [[bostrom]] initialization, on text consistent with the Bostrom graph, should achieve lower $D_{KL}(\pi^*_H \| \pi^*_{AI})$ than randomly initialized models fine-tuned on the same text. This is because the compiled model's [[explicit knowledge]] is already aligned with the graph's [[focus|focus distribution]]; fine-tuning does not need to re-learn what humans endorse.
 
 All five predictions are testable on current Bostrom data combined with a small domain-specific text corpus. We leave empirical validation for future work.
 
@@ -274,7 +279,7 @@ Computed in $O(|E_{\text{new}}|)$ — constant time per new particle, no recompi
 
 The speedup ratio $T_{\text{random}} / T_{\text{compiled}} \approx 1 + \frac{|E| \cdot d^*}{\log(1/\varepsilon) \cdot |\text{implicit pairs}|}$ grows with $|E|$.
 
-At Avogadro scale ($|E| \sim 10^{23}$), the ratio becomes enormous. A randomly initialized model training toward Avogadro-scale graph structure would spend essentially all of its compute budget re-learning explicit relationships. The compiled initialization would already encode all of them. Fine-tuning budget could be entirely directed at implicit knowledge — which at that scale is, by definition, the knowledge that no individual can hold explicitly.
+At Avogadro scale ($|E| \sim 10^{23}$), the ratio becomes enormous. A randomly initialized model training toward Avogadro-scale graph structure would spend essentially all of its compute budget re-learning explicit relationships. The compiled initialization would already encode all of them. Fine-tuning budget could be entirely directed at [[implicit knowledge]] — which at that scale is, by definition, the knowledge that no individual can hold explicitly. See [[intelligence-at-avogadro-scale]] for the broader argument.
 
 This is the sense in which compiled initialization is not merely an engineering convenience at current scale but a structural requirement at Avogadro scale. You cannot train a model toward planetary intelligence from random initialization. The explicit knowledge space is too large. Compilation is the only tractable path.
 
@@ -298,9 +303,9 @@ The implication for Bostrom specifically: as the graph grows, the value of compi
 
 ## References
 
-1. Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure. [companion paper 1]
-2. Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis. [companion paper 2]
-3. From Cyberlinks to ONNX: An Exact Compilation Pathway. [companion paper 3]
+1. [[graph-native-transformer|Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure]]. [companion paper 1]
+2. [[bostrom-architecture-paper|Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis]]. [companion paper 2]
+3. [[bostrom-to-onnx-pipeline|From Cyberlinks to ONNX: An Exact Compilation Pathway]]. [companion paper 3]
 4. Nesterov, Y. "Introductory Lectures on Stochastic Optimization." Springer, 2004.
 5. Eckart, C., Young, G. "The Approximation of One Matrix by Another of Lower Rank." Psychometrika, 1936.
 6. Halko, N., Martinsson, P.G., Tropp, J.A. "Finding Structure with Randomness." SIAM Review, 2011.

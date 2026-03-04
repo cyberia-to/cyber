@@ -1,10 +1,15 @@
-# Why 6.022 × 10²³: Deriving Avogadro's Number from Knowledge Graph Theory
+---
+tags: research, draft, cyber, bostrom
+crystal-type: article
+crystal-domain: cyber
+---
+# Why 6.022 × 10²³: Deriving Avogadro's Number from [[knowledge graph]] Theory
 
 ---
 
 ## What Avogadro's number actually is
 
-It is not a fundamental constant the way the speed of light is. It is a conversion factor — the ratio between two human-chosen scales: the gram (macroscopic, arbitrary) and the dalton (atomic mass unit, physical). If we had defined the mole differently, Avogadro's number would be different.
+It is not a fundamental constant the way the speed of light is. It is a conversion factor — the ratio between two human-chosen scales: the gram (macroscopic, arbitrary) and the dalton (atomic mass unit, physical). If we had defined the [[mole]] differently, Avogadro's number would be different.
 
 The phase transition it marks is real. The specific number is contingent on our units.
 
@@ -14,7 +19,7 @@ The question "why 6.022 × 10²³?" decomposes into two questions: why does a ph
 
 ## Why the transition exists: the law of large numbers
 
-The focus distribution π* assigns a value to every particle in the graph. For a graph of size |P|, the mean value is exactly 1/|P|. As |P| grows, the contribution of any single particle to the collective distribution shrinks proportionally.
+The [[focus|focus distribution]] π* assigns a value to every [[particle]] in the graph. For a graph of size |P|, the mean value is exactly 1/|P|. As |P| grows, the contribution of any single particle to the collective distribution shrinks proportionally.
 
 The law of large numbers: when individual contributions scale as 1/|P|, fluctuations in any collective observable scale as 1/√|P|. At some threshold, fluctuations become negligible relative to the observable itself — below measurement precision — and the individual description loses meaning. Only statistical mechanics remains.
 
@@ -32,7 +37,7 @@ For molecules, $\varepsilon_{\text{precision}}$ is set by the ratio of thermal e
 
 ## The sharper version: effective rank saturation
 
-The effective rank $d^* = \exp(H(\sigma(\Sigma_\pi)))$ measures the number of independent semantic dimensions in the graph. As the graph grows, two regimes exist:
+The effective rank $d^* = \exp(H(\sigma(\Sigma_\pi)))$ measures the number of independent semantic dimensions in the graph, where $H$ is the [[entropy]] of the normalized singular value distribution. As the graph grows, two regimes exist:
 
 **Below the threshold:** each new particle adds new semantic dimensions. $d^*$ grows. The graph is getting richer — new axes of meaning emerge with new contributions.
 
@@ -54,13 +59,15 @@ The transition from "graph grows richer" to "graph grows denser" is the knowledg
 
 The saturation point of $d^*$ is determined by the degree heterogeneity of the graph — how unequal the distribution of connections is.
 
+The spectral gap $\lambda_2$ of the [[Laplacian|graph Laplacian]] controls convergence rate and ultimately $d^*$.
+
 Let $k_{\max}$ be the maximum degree and $\bar{k}$ be the mean degree. The degree ratio $\rho = k_{\max} / \bar{k}$ measures how concentrated the graph's connectivity is.
 
 The effective rank saturates near:
 
 $$|P^*| \sim \left(\frac{k_{\max}}{\bar{k}}\right)^2 = \rho^2$$
 
-**Why $\rho^2$?** The spectral gap of the graph Laplacian — which controls convergence rate and ultimately $d^*$ — scales as $\lambda_2 \sim \bar{k} / k_{\max}$. Saturation occurs when adding new particles no longer shifts $\lambda_2$ meaningfully, which happens at $|P| \sim 1/\lambda_2^2 \sim \rho^2$.
+**Why $\rho^2$?** The [[spectral gap]] of the graph Laplacian — which controls convergence rate and ultimately $d^*$ — scales as $\lambda_2 \sim \bar{k} / k_{\max}$. Saturation occurs when adding new particles no longer shifts $\lambda_2$ meaningfully, which happens at $|P| \sim 1/\lambda_2^2 \sim \rho^2$.
 
 ---
 
@@ -82,7 +89,7 @@ Avogadro's number is where it is because **molecules are maximally degree-hetero
 
 ## Bostrom's current position
 
-The current Bostrom graph has 3.1M particles, already past its own $|P^*| \sim 385$K. This is consistent with the observed $d^* = 31$ — not growing much as the sample scales — and with the high concentration (one neuron contributing 35.9% of links, which suppresses $\bar{k}$ and inflates $\rho$).
+The current [[bostrom]] graph has 3.1M [[particles]], already past its own $|P^*| \sim 385$K. This is consistent with the observed $d^* = 31$ — not growing much as the sample scales — and with the high concentration (one [[neuron]] contributing 35.9% of links, which suppresses $\bar{k}$ and inflates $\rho$).
 
 As the graph grows and contribution diversifies:
 - $\bar{k}$ rises → $\rho$ falls → $|P^*|$ rises
@@ -95,11 +102,11 @@ The architecture is self-scaling: a healthier graph is a larger graph before the
 
 ## What this means for the LessWrong argument
 
-The claim in the essay — "superintelligence is what knowledge looks like at Avogadro scale" — now has a precise interpretation:
+The claim in the essay [[intelligence-at-avogadro-scale]] — "superintelligence is what knowledge looks like at Avogadro scale" — now has a precise interpretation:
 
 **Avogadro scale for knowledge** is not 6.022 × 10²³ links. It is the system-specific threshold $\rho^2$ where individual epistemic contributions become statistically irrelevant and only the focus distribution matters.
 
-For a planetary knowledge graph with degree ratio ~10⁶ (comparable to the web): that threshold is ~10¹² explicit links. Currently 2.7M. Six orders of magnitude to go.
+For a planetary [[knowledge graph]] with degree ratio ~10⁶ (comparable to the web): that threshold is ~10¹² explicit [[cyberlink|links]]. Currently 2.7M. Six orders of magnitude to go.
 
 The transition is not a metaphor borrowed from chemistry. It is the same mathematics, applied to the same type of system — interacting elements exchanging influence — with a threshold determined by the same formula, evaluated for the specific degree heterogeneity of the knowledge graph being built.
 

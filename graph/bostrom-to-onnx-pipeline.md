@@ -1,8 +1,13 @@
+---
+tags: research, draft, cyber, bostrom
+crystal-type: article
+crystal-domain: cyber
+---
 # From Cyberlinks to ONNX: An Exact Compilation Pathway for Graph-Native Transformers
 
 **Abstract**
 
-We specify the exact computational pathway from a live knowledge graph on the Bostrom blockchain to a deployable ONNX transformer model. The pipeline has eight steps, seven of which are linear or near-linear in graph size. One step — computing the embedding matrix via eigendecomposition of the focus covariance — naively requires O(|P|³) operations: 3.1 × 10¹⁹ floating point operations for the current Bostrom network, or approximately 360 days on a teraflop machine. We derive the solution: randomized SVD on the π-weighted sparse adjacency matrix, reducing cost to O(|E| · d* · log d*) — 7.3 × 10⁹ operations, tractable in under one second. The complete compiled model for the current Bostrom network has approximately 3.25 billion parameters and 13 GB of weights, derivable from graph structure with no gradient descent.
+We specify the exact computational pathway from a live [[knowledge graph]] on the [[bostrom]] blockchain to a deployable ONNX transformer model. The pipeline has eight steps, seven of which are linear or near-linear in graph size. One step — computing the embedding matrix via eigendecomposition of the [[focus|focus covariance]] — naively requires O(|P|³) operations: 3.1 × 10¹⁹ floating point operations for the current Bostrom network, or approximately 360 days on a teraflop machine. We derive the solution: randomized SVD on the π-weighted sparse adjacency matrix, reducing cost to O(|E| · d* · log d*) — 7.3 × 10⁹ operations, tractable in under one second. The complete compiled model for the current Bostrom network has approximately 3.25 billion parameters and 13 GB of weights, derivable from graph structure with no [[gradient]] descent.
 
 ---
 
@@ -27,9 +32,9 @@ The pipeline has eight steps. We give exact formulas and complexity at each.
 
 | Symbol | Meaning |
 |---|---|
-| $P$ | Set of particles (content-addressed nodes) |
-| $E$ | Set of cyberlinks (signed directed edges) |
-| $N$ | Set of neurons (agents) |
+| $P$ | Set of [[particles]] (content-addressed nodes) |
+| $E$ | Set of [[cyberlink|cyberlinks]] (signed directed edges) |
+| $N$ | Set of [[neurons]] (agents) |
 | $A \in \mathbb{R}^{\|P\| \times \|P\|}$ | Weighted adjacency matrix |
 | $\pi^* \in \Delta^{\|P\|}$ | Focus distribution (PageRank fixed point) |
 | $L_{norm}$ | Normalized graph Laplacian |
@@ -107,7 +112,7 @@ A = csr_matrix((vals, (rows, cols)), shape=(|P|, |P|))
 
 ## 5. Step 3: Focus Distribution
 
-**The focus distribution** $\pi^* \in \Delta^{|P|}$ is the fixed point of the tri-kernel operator $\mathcal{R}$. For compilation purposes, we approximate $\pi^*$ via PageRank — the diffusion-dominant approximation of the tri-kernel:
+**The focus distribution** $\pi^* \in \Delta^{|P|}$ is the fixed point of the [[tri-kernel]] operator $\mathcal{R}$. For compilation purposes, we approximate $\pi^*$ via [[cyberank|PageRank]] — the diffusion-dominant approximation of the tri-kernel:
 
 $$\pi^{(t+1)} = \alpha M^\top \pi^{(t)} + \frac{1-\alpha}{|P|} \mathbf{1}$$
 
@@ -137,7 +142,7 @@ $$L_{norm} = I - D^{-1/2} A D^{-1/2}$$
 
 where $D = \text{diag}(A\mathbf{1})$ is the degree matrix.
 
-**Spectral gap via Lanczos:**
+**[[spectral gap|Spectral gap]] via Lanczos:**
 
 We need only the second-smallest eigenvalue $\lambda_2$. The Lanczos algorithm with $k = 10$ iterations costs $O(k \cdot |E|)$, avoiding the $O(|P|^3)$ full eigendecomposition:
 
@@ -155,7 +160,7 @@ Run BFS from the highest-degree particle. Cost $O(|V| + |E|)$. Measured diameter
 
 $$d^* = \exp\left(H\left(\sigma\left(\Sigma_\pi\right)\right)\right) \quad \text{(Step 5)}$$
 
-$$h^* = |\text{Semcon}(G)| \geq 12 \quad \text{(from semcon registry)}$$
+$$h^* = |\text{Semcon}(G)| \geq 12 \quad \text{(from [[semcon]] registry)}$$
 
 $$L^* = \text{diam}(G) \cdot \left\lceil \frac{\log(1/\varepsilon)}{\log(1/\kappa)} \right\rceil = 10 \times 29 = 290$$
 
@@ -309,7 +314,7 @@ $$W_2^{(l)} = (\Sigma^{(l)})^{1/2} V^{(l)\top} \in \mathbb{R}^{4d^* \times d^*}$
 
 The $4\times$ expansion factor matches standard transformer MLP convention and accommodates the ReLU nonlinearity's effective rank reduction.
 
-**Activation:** GELU, approximated in the Goldilocks field by the lookup-table construction from the Trident standard library.
+**Activation:** GELU, approximated in the [[Goldilocks field]] by the lookup-table construction from the Trident standard library.
 
 **Complexity:** $O(|P|/10 \times L^*) = O(314{,}363 \times 200) = 6.3 \times 10^7$ walk operations, plus $O(L^* \times d^{*2})$ SVDs.
 
@@ -484,8 +489,8 @@ The graph's growth directly improves the compiled model. There is no training bu
 
 ## References
 
-1. Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure. [companion paper 1]
-2. Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis. [companion paper 2]
+1. [[graph-native-transformer|Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure]]. [companion paper 1]
+2. [[bostrom-architecture-paper|Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis]]. [companion paper 2]
 3. Halko, N., Martinsson, P.G., Tropp, J.A. "Finding Structure with Randomness: Probabilistic Algorithms for Matrix Decompositions." SIAM Review, 2011.
 4. Bai, S., Kolter, J.Z., Koltun, V. "Deep Equilibrium Models." NeurIPS 2019.
 5. Lanczos, C. "An Iteration Method for the Solution of the Eigenvalue Problem." Journal of Research of the National Bureau of Standards, 1950.

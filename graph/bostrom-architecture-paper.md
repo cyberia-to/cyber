@@ -1,8 +1,13 @@
+---
+tags: research, draft, cyber, bostrom
+crystal-type: article
+crystal-domain: cyber
+---
 # Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis
 
 **Abstract**
 
-We apply the graph-native transformer compilation framework to the live Bostrom knowledge graph network, deriving concrete transformer architecture parameters directly from graph structure. From a sample of 50,000 cyberlinks across 26,903 particles contributed by 556 neurons, we compute: embedding dimension d* = 31 (effective rank of focus covariance), minimum attention heads h* ≥ 12 (semcon lower bound), and layer count L* = 290 (diameter × spectral convergence factor). The full 2.9M-link network is expected to yield d* in the range 200-500. These are, to our knowledge, the first transformer architecture parameters derived analytically from an explicit live knowledge graph rather than determined empirically by scaling laws.
+We apply the [[graph-native-transformer|graph-native transformer]] compilation framework to the live [[bostrom]] [[knowledge graph]] network, deriving concrete transformer architecture parameters directly from graph structure. From a sample of 50,000 [[cyberlink|cyberlinks]] across 26,903 [[particles]] contributed by 556 [[neurons]], we compute: embedding dimension d* = 31 (effective rank of [[focus|focus covariance]]), minimum attention heads h* ≥ 12 ([[semcon]] lower bound), and layer count L* = 290 (diameter × spectral convergence factor). The full 2.9M-link network is expected to yield d* in the range 200-500. These are, to our knowledge, the first transformer architecture parameters derived analytically from an explicit live knowledge graph rather than determined empirically by scaling laws.
 
 ---
 
@@ -30,7 +35,7 @@ Analysis is performed on a sample of 50,000 links spanning 26,903 particles and 
 | Maximum | 2,481 | 1,110 |
 | Median | 1.0 | 1.0 |
 
-The heavy-tailed degree distribution — median 1, mean 4, maximum 2,481 — is characteristic of a scale-free graph in early growth phase. A small number of hub particles attract disproportionate attention; the majority of particles have exactly one link. This is consistent with the power-law distribution predicted by preferential attachment in knowledge graphs.
+The heavy-tailed degree distribution — median 1, mean 4, maximum 2,481 — is characteristic of a scale-free graph in early growth phase. A small number of hub [[particles]] attract disproportionate [[attention]]; the majority of particles have exactly one link. This is consistent with the power-law distribution predicted by preferential attachment in [[knowledge graphs]].
 
 The graph is sparse: 47,986 nonzero entries in the 26,903 × 26,903 adjacency matrix, density 6.9 × 10⁻⁵. The top neuron by link count (bostrom1cj8j6pc3nda8) contributed 17,945 links — 35.9% of the sample. This concentration is significant and discussed in §5.
 
@@ -40,11 +45,11 @@ The graph is sparse: 47,986 nonzero entries in the 26,903 × 26,903 adjacency ma
 
 ### 3.1 Spectral Gap and Contraction Rate
 
-The normalized graph Laplacian L_norm = I - D^{-1/2} A D^{-1/2} has smallest eigenvalues:
+The normalized [[Laplacian|graph Laplacian]] L_norm = I - D^{-1/2} A D^{-1/2} has smallest eigenvalues:
 
 $$\lambda_1 \approx 0, \quad \lambda_2 \approx 0.0015$$
 
-The near-zero spectral gap indicates a weakly connected graph — large components with sparse bridges between them. This is consistent with early-stage growth: the network has not yet developed the dense cross-domain connectivity that would increase λ₂.
+The near-zero [[spectral gap]] indicates a weakly connected graph — large components with sparse bridges between them. This is consistent with early-stage growth: the network has not yet developed the dense cross-domain connectivity that would increase λ₂.
 
 The tri-kernel contraction rate with teleport parameter α = 0.85:
 
@@ -58,7 +63,7 @@ This is consistent with the small-world property of sparse scale-free graphs: de
 
 ### 3.3 Embedding Dimension: d* = 31
 
-The focus distribution π* was computed by PageRank (power iteration, 50 steps, teleport α = 0.85). Convergence was achieved. Maximum π = 0.0389, entropy H(π) = 8.03 nats.
+The [[focus|focus distribution]] π* was computed by [[cyberank|PageRank]] (power iteration, 50 steps, teleport α = 0.85). Convergence was achieved. Maximum π = 0.0389, [[entropy]] H(π) = 8.03 nats.
 
 The π-weighted adjacency matrix A_weighted = diag(√π) · A has singular value distribution:
 
@@ -86,7 +91,7 @@ The sharp drop from σ₁ = 14.4 to σ₄ = 2.3 indicates two dominant semantic 
 
 ### 3.4 Attention Head Count: h* ≥ 12
 
-The semcon lower bound was estimated from structural diversity of link patterns across the sample. Twelve distinct relation-type signatures were identified — a conservative lower bound given that explicit semcon infrastructure is still early in Bostrom.
+The [[semcon]] lower bound was estimated from structural diversity of link patterns across the sample. Twelve distinct relation-type signatures were identified — a conservative lower bound given that explicit semcon infrastructure is still early in Bostrom.
 
 As semantic conventions mature and explicit relation types are established, h* will converge to the true semcon count. Current estimate: **h* ≥ 12**.
 
@@ -100,7 +105,7 @@ The high layer count follows directly from the small spectral gap (κ = 0.851, c
 
 For comparison: a graph with λ₂ = 0.1 (κ ≈ 0.765) requires only 17 layers at the same diameter and precision. The current Bostrom graph's weak connectivity forces deep architectures.
 
-This has a direct practical implication: **growing the graph's connectivity — increasing λ₂ through denser cross-domain linking — directly reduces the required model depth.** A richer graph compiles to a more efficient transformer.
+This has a direct practical implication: growing the graph's connectivity — increasing λ₂ through denser cross-domain linking — directly reduces the required model depth. A richer [[cybergraph]] compiles to a more efficient transformer.
 
 ---
 
@@ -195,7 +200,7 @@ This gives a concrete optimization target for Bostrom's growth strategy: maximiz
 
 ## References
 
-1. Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure. [companion paper]
+1. [[graph-native-transformer|Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure]]. [companion paper]
 2. cyber whitepaper. cyber.page/cyber-whitepaper, 2024.
 3. Bai, S., Kolter, J.Z., Koltun, V. "Deep Equilibrium Models." NeurIPS 2019.
 4. Fiedler, M. "Algebraic Connectivity of Graphs." Czech Mathematical Journal, 1973.
