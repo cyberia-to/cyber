@@ -9,6 +9,7 @@ media/
 /build
 /public
 /node_modules
+**/target/
 
 # Claude Code
 .claude/
