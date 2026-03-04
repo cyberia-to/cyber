@@ -86,8 +86,15 @@ the three are not alternatives. they are layers. each requires the one below it.
 
 ## implications for the formal definition
 
-the formal [[cybergraph]] $\mathbb{G} = (P, N, T, L)$ captures structural [[knowledge]] completely. epistemic [[knowledge]] is a derived layer — a function over $L$ computed by the market, not stored in any individual $\ell \in L$.
+the formal [[cybergraph]] $\mathbb{G} = (P, N, T, L)$ captures both kinds of [[knowledge]] in a single record.
 
-this resolves the valence debate: valence is not a field in the [[cyberlink]] record. it is the sign of a market position. the record stores the structural fact. the market stores the epistemic assessment. they are separate objects with separate update rules.
+each [[cyberlink]] $\ell = (\nu, p, q, \tau, a, v, t)$ contains:
 
-see [[cyberlink market protocol]] for the LMSR mechanism. see [[focus flow computation]] for how epistemic weights enter the [[tri-kernel]]. see [[market inhibition]] for why epistemic [[knowledge]] is what makes the [[cybergraph]] computationally equivalent to a neural network with negative weights.
+- structural [[knowledge]]: $(\nu, p, q, t)$ — who asserted which connection and when
+- epistemic seed: $v \in \{-1, 0, +1\}$ — the neuron's [[Bayesian Truth Serum|BTS]] meta-prediction, predicting how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge
+
+$v$ is not an assertion about truth. it is the meta-prediction input that [[Bayesian Truth Serum]] requires: the neuron's prediction of what the collective will believe. creating a link with $v = -1$ means "I affirm this connection exists and I have private [[knowledge]] the market hasn't priced yet." [[Bayesian Truth Serum]] rewards exactly this when correct.
+
+epistemic [[knowledge]] is the derived layer — the ICBS market price, computed from all positions over time. but the meta-prediction seed $v$ that feeds into [[Bayesian Truth Serum]] scoring IS in the record, because the [[cyberlink]] is the BTS input: link creation is the first-order belief, $v$ is the meta-prediction $m_i$.
+
+see [[cyberlink market protocol]] for the market design. see [[focus flow computation]] for how market weights enter the [[tri-kernel]]. see [[market inhibition]] for why epistemic [[knowledge]] is what makes the [[cybergraph]] computationally equivalent to a neural network with both excitation and inhibition.

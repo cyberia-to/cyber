@@ -71,8 +71,18 @@ BTS corrects for correlated bias by using second-order beliefs (predictions abou
 
 ## connection to [[cyber]]
 
-the BTS scoring formula appears in the [[cyberlink market protocol]] as the meta-prediction layer (layer 3). the [[approximation quality metric]] in [[focus flow computation]] uses $D_{KL}(\pi^*_c \| q^*_c)$ — the same divergence measure — to quantify how much the compiled transformer deviates from the exact [[focus]] distribution.
+in [[cyber]], the [[cyberlink]] IS the BTS input — no separate submission step required. the mapping is precise:
 
-more deeply: the [[syntropy]] metric in [[cyber]] measures information gain in the [[cybergraph]] as a whole. BTS operationalizes the same concept at the level of individual agents: syntropy = aggregate of BTS scores across all [[neurons]]. a [[neuron]] whose [[cyberlinks]] increase the collective's certainty has positive BTS score. a [[neuron]] whose [[cyberlinks]] add noise has negative score. [[karma]] is the accumulated BTS score history.
+| BTS concept | cyberlink field |
+|---|---|
+| first-order belief $p_i$ | link creation + stake $(\tau, a)$ — the neuron asserts the connection and stakes on it |
+| meta-prediction $m_i$ | valence $v \in \{-1, 0, +1\}$ — the neuron's prediction of how the [[inversely coupled bonding surface\|ICBS]] market on this edge will converge |
+| agent identity | $\nu$ — the signing neuron |
 
-see [[veritas]] for the full continuous temporal extension of BTS into a living protocol. see [[wisdom of the crowds]] for the aggregation foundation. see [[cyber/epistemology]] for how honest linking becomes incentive-compatible under the full protocol.
+this means every [[cyberlink]] is simultaneously a structural assertion and a BTS prediction, in one atomic act. the scoring engine can compute $s_i$ for every [[neuron]] from the public graph without any additional input.
+
+the [[syntropy]] metric in [[cyber]] measures information gain in the [[cybergraph]] as a whole. BTS operationalizes the same concept at the level of individual agents: syntropy = aggregate of BTS scores across all [[neurons]]. a [[neuron]] whose [[cyberlinks]] increase the collective's certainty has positive BTS score. a [[neuron]] whose [[cyberlinks]] add noise has negative score. [[karma]] is the accumulated BTS score history — the trust multiplier in the effective adjacency weight.
+
+the [[approximation quality metric]] in [[focus flow computation]] uses $D_{KL}(\pi^*_c \| q^*_c)$ — the same divergence measure — to quantify how much the compiled [[transformer]] deviates from the exact [[focus]] distribution. the same mathematical object measures epistemic quality at three scales: individual [[neuron]] (BTS score), compiled model (approximation gap), and collective knowledge state (π* convergence).
+
+see [[veritas]] for the full continuous temporal extension of BTS into a living protocol. see [[cybergraph]] for the formal definition including the valence field. see [[wisdom of the crowds]] for the aggregation foundation. see [[cyber/epistemology]] for how honest linking becomes incentive-compatible under the full protocol.
