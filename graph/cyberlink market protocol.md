@@ -30,9 +30,9 @@ an agent creates [[cyberlink]] A→B and deposits stake. the stake becomes the i
 
 ### layer 2: market (continuous)
 
-each edge carries an LMSR market with two outcome tokens: TRUE and FALSE. agents buy positions, moving the price. price of TRUE ∈ (0,1) = implied probability that the link is true/useful.
+each edge carries a prediction market with two outcome tokens: TRUE and FALSE. agents buy positions, moving the price. price of TRUE ∈ (0,1) = implied probability that the link is true/useful.
 
-LMSR is chosen because: no external LPs needed (the protocol is the market maker), works on thin markets (most edges will have few traders), bounded loss (b·ln2 per edge), price = probability directly.
+the market mechanism is the [[inversely coupled bonding surface]] (ICBS): $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$. ICBS was adopted over LMSR because: self-scaling liquidity (trading volume grows TVL automatically), early conviction rewarded (prices range 0 to λ, not [0,1]), inverse coupling (buying YES directly suppresses NO's price — TRUE and FALSE are geometrically opposed on a circle). no external LPs needed. the protocol is the market maker.
 
 the market is perpetual — no oracle resolution. periodic liquidity transfer from the winning token to the losing one acts as a damper: prevents the market from freezing into dogma, always preserves liquidity for challenge. usage signal ([[cyberank]], traffic through the edge) serves as a soft oracle: if the edge is actively traversed, the TRUE price receives a weak upward nudge.
 
@@ -138,17 +138,19 @@ only aggregates are public — like the membrane potential on the outside of a n
 
 ---
 
-## LMSR specifics
+## ICBS specifics
 
-Hanson's Logarithmic Market Scoring Rule fits this use case precisely.
+the [[inversely coupled bonding surface]] (Williams & Buterin, 2020) is the market mechanism. cost function: $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$.
 
-no external LPs needed. the protocol is the market maker. maximum loss is bounded: b·ln(n), where b is the liquidity parameter and n is the number of outcomes. for a binary market (TRUE/FALSE): b·ln(2) ≈ 0.693b. this is a known-in-advance cost of operating the market.
+no external LPs needed. the protocol is the market maker. self-scaling: trading volume automatically grows TVL, so the most-contested edges become the most liquid. probability is encoded in the reserve ratio: $q = r_{YES}/(r_{YES} + r_{NO})$.
 
-works on thin markets. most edges in a [[knowledge]] graph will have 0–5 traders. LMSR is designed for thin markets: parameter b controls sensitivity, and even with one trader, the market produces a meaningful price.
+works on thin markets. even with one trader, the market produces a meaningful price. parameter λ (set at deployment by the initial deposit) controls the market's scale without bounding its information range.
 
-price = probability. in LMSR, outcome token price is literally implied probability. TRUE(A→B) price = 0.73 means "the market estimates the probability of the link's utility at 73%." this plugs directly into ranking and the [[tri-kernel]].
+early conviction rewarded. prices range from 0 to λ — not bounded to [0,1]. a [[neuron]] who links something the market later validates strongly earns arbitrarily large returns relative to late consensus-following. this directly incentivizes surfacing private [[knowledge]] early.
 
-bootstrapping liquidity. options: (a) link creator pays — creating [[knowledge]] costs money, max loss known in advance, spam becomes expensive; (b) protocol subsidizes — [[bostrom]] mints [[tokens]] for initial liquidity, inflation = price of collective [[knowledge]]; (c) hybrid — creator pays part, protocol supplements based on creator's [[karma]]. trusted agents get more subsidy. mycelial analogy: the fungus more readily extends hyphae from large healthy trees.
+probability encoding. TRUE(A→B) reserve ratio = 0.73 means "the market estimates the probability of the link's utility at 73%." this plugs directly into ranking and the [[tri-kernel]].
+
+bootstrapping liquidity. options: (a) link creator pays — creating [[knowledge]] costs money, spam becomes expensive; (b) protocol subsidizes — [[bostrom]] mints [[tokens]] for initial liquidity, inflation = price of collective [[knowledge]]; (c) hybrid — creator pays part, protocol supplements based on creator's [[karma]]. trusted agents get more subsidy. mycelial analogy: the fungus more readily extends hyphae from large healthy trees.
 
 ---
 
@@ -173,7 +175,7 @@ feedback loop. rank influences visibility → visibility influences usage → us
 - convergence dynamics: what transfer parameters give stable convergence vs oscillation vs divergence; connection to e ≈ 2.718
 - rank-price interaction: feedback loop dynamics, stability conditions, preventing circular reinforcement
 
-see [[cyber/epistemology]] for threat model and epistemic correctness. see [[foculus]] for the consensus mechanism that interacts with market finality.
+see [[inversely coupled bonding surface]] for the market mechanism. see [[Bayesian Truth Serum]] for the meta-prediction scoring. see [[proper scoring rules]] for the theoretical foundation. see [[cyber/epistemology]] for threat model and epistemic correctness. see [[foculus]] for the consensus mechanism that interacts with market finality.
 
 ---
 

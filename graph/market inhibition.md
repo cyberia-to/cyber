@@ -23,7 +23,7 @@ the current [[cybergraph]] without market pricing is excitation-only. every [[cy
 
 ## what the market provides
 
-the [[cyberlink market protocol]] assigns each edge a price p(e) ∈ (0,1) — the LMSR consensus probability that the link is true/useful.
+the [[cyberlink market protocol]] assigns each edge a price p(e) ∈ (0,1) — the [[inversely coupled bonding surface|ICBS]] market's consensus probability that the link is true/useful.
 
 this price enters the [[tri-kernel]] as the effective edge weight:
 
@@ -77,7 +77,7 @@ a [[cybergraph]] with market prices produces [[cyberank]] proportional to episte
 
 social networks removed dislike buttons for a precise reason: coordinated attacks were free. a mob could suppress any content at zero cost. without skin in the game, negative signals are weapons, not [[information]].
 
-in the [[cyberlink market protocol]], buying FALSE costs stake. attacking a link = injecting liquidity into the FALSE side of the LMSR market. two consequences:
+in the [[cyberlink market protocol]], buying FALSE costs stake. attacking a link = injecting liquidity into the FALSE side of the [[inversely coupled bonding surface|ICBS]] market. two consequences:
 
 1. the attacker takes on financial risk — if the market converges to TRUE, they lose stake
 2. the attack improves the market's price accuracy — more liquidity = tighter spread = better signal
@@ -109,4 +109,4 @@ $$A_{pq}^{\text{eff}} = \sum_{\ell: \text{src}(\ell)=p,\, \text{tgt}(\ell)=q} \t
 
 the convergence theorem still holds — $A^{\text{eff}}$ remains non-negative, satisfying all conditions. but the fixed point π* now reflects epistemic quality, not merely structural prominence. the market-weighted [[cybergraph]] and the raw [[cybergraph]] converge to different fixed points. only the former tracks [[truth]].
 
-see [[cyberlink market protocol]] for the LMSR mechanism. see [[focus flow computation]] for how π* is computed. see [[two kinds of knowledge]] for the structural/epistemic distinction. see [[binary topology ternary economics]] for the architectural principle.
+see [[cyberlink market protocol]] for the market design. see [[inversely coupled bonding surface]] for the ICBS mechanism. see [[focus flow computation]] for how π* is computed. see [[two kinds of knowledge]] for the structural/epistemic distinction. see [[binary topology ternary economics]] for the architectural principle.
