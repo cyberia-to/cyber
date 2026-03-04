@@ -80,31 +80,51 @@ trust weight: veritas weights agents by both stake and trust (track record of in
 
 ---
 
-## comparison: veritas vs LMSR
+## the market mechanism: ICBS
 
-| | veritas | LMSR |
+veritas uses the [[inversely coupled bonding surface]] (ICBS) as its market substrate — not LMSR. the distinction matters.
+
+ICBS cost function: $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$. iso-cost curves are circles in the $(s_{YES}, s_{NO})$ plane. buying YES directly suppresses NO's price:
+
+$$\frac{\partial p_{YES}}{\partial s_{NO}} = -\lambda \cdot \frac{s_{YES} \cdot s_{NO}}{(s_{YES}^2 + s_{NO}^2)^{3/2}} < 0$$
+
+this inverse coupling is the geometric encoding of opposition between beliefs. TRUE and FALSE are not independent assets — they compete on a circle.
+
+key properties of ICBS over LMSR:
+
+- self-scaling liquidity: trading volume grows TVL automatically. no external LPs, no fixed subsidy parameter. the [[cybergraph]]'s most-contested edges become the most liquid
+- early conviction rewarded: prices range from 0 to λ (not bounded to [0,1]). early correct linking earns arbitrarily large returns relative to late consensus-following
+- probability encoding via reserve ratio: $q = r_{YES}/(r_{YES} + r_{NO})$ — not the direct price
+- on-manifold invariant: TVL always equals the cost function, ensuring solvency without external capital
+
+the settlement factors $f_{YES} = x/q$ and $f_{NO} = (1-x)/(1-q)$ are inverse probability weights — the same mathematical structure that appears in importance sampling and in the [[Bayesian Truth Serum]] scoring formula. both are instances of proper scoring rules applied to belief elicitation.
+
+---
+
+## the full stack
+
+veritas is a three-layer system:
+
+| layer | mechanism | what it does |
 |---|---|---|
-| output | full probability distribution | point price ∈ (0,1) |
-| scoring | KL divergence against mean | net position at resolution |
-| resolution | none (continuous update) | oracle-dependent |
-| measures | information contribution (bits) | prediction accuracy |
-| attack response | noise penalized, stake redistributed | liquidity injected, price sharpened |
-| second-order | yes (meta-predictions) | no (layer 3 in [[cyberlink market protocol]]) |
+| market | [[inversely coupled bonding surface]] | prices beliefs, couples TRUE/FALSE, self-scales liquidity |
+| scoring | [[Bayesian Truth Serum]] | measures information contribution, rewards private knowledge surfaced |
+| trust | accumulated BTS score history | weights agents by epistemic track record, not just stake |
 
-veritas is epistemically richer. LMSR is simpler to implement. for the [[cybergraph]], veritas is the correct target for the epistemic layer — LMSR is a tractable approximation.
+ICBS handles the economic layer. BTS handles the epistemic layer. trust accumulation handles the reputation layer. each layer is necessary; none subsumes the others.
 
 ---
 
 ## the key claim
 
-without an epistemic layer, the [[cybergraph]] is excitation-only: it accumulates structural connections but cannot deactivate misleading ones. with veritas-style scoring, the [[cybergraph]] gains the inhibitory signal described in [[market inhibition]] — but grounded in information theory rather than market price alone.
+without an epistemic layer, the [[cybergraph]] is excitation-only: it accumulates structural connections but cannot deactivate misleading ones. with veritas-style scoring, the [[cybergraph]] gains the inhibitory signal described in [[market inhibition]] — grounded in information theory and geometrically enforced by ICBS inverse coupling.
 
-a [[cyberlink]]'s effective weight in the [[tri-kernel]] would be:
+a [[cyberlink]]'s effective weight in the [[tri-kernel]]:
 
-$$w_\text{eff}(e) = \text{stake}(e) \times \text{trust}(\nu_e) \times f(\text{veritas score of } e)$$
+$$w_\text{eff}(e) = \text{stake}(e) \times \text{trust}(\nu_e) \times f(\text{ICBS price}(e))$$
 
-where $f$ maps accumulated BTS scores to a weight multiplier. links from high-trust [[neurons]] whose previous signals proved informative carry more weight. links from noise producers are down-weighted automatically.
+where ICBS price encodes collective belief about the link, and trust encodes the [[neuron]]'s accumulated BTS score history. links from high-trust [[neurons]] on high-confidence edges carry maximum weight. links from noise producers on contested edges are suppressed.
 
-truth is emerging — from the interaction of structural [[knowledge]] ([[cyberlinks]]) and epistemic [[knowledge]] (veritas scores). neither alone is sufficient.
+truth is emerging — from the interaction of structural [[knowledge]] ([[cyberlinks]]) and epistemic [[knowledge]] (ICBS prices + BTS scores). neither alone is sufficient.
 
-see [[Bayesian Truth Serum]] for the mathematical foundation. see [[two kinds of knowledge]] for the structural/epistemic split. see [[market inhibition]] for why the epistemic layer is necessary. see [[cyberlink market protocol]] for the LMSR approximation. see [[wisdom of the crowds]] for the aggregation background. see [[syntropy]] for the information-theoretic signal.
+see [[Bayesian Truth Serum]] for the scoring foundation. see [[inversely coupled bonding surface]] for the market mechanism. see [[two kinds of knowledge]] for the structural/epistemic split. see [[market inhibition]] for why the epistemic layer is necessary. see [[wisdom of the crowds]] for the aggregation background. see [[syntropy]] for the information-theoretic signal.
