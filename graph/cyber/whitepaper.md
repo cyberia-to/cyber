@@ -305,17 +305,23 @@ The same three forces. Different substrates. This universality reflects structur
 
 ## 6. Focus Flow Computation
 
-### 6.1 How It Replaces Transformers
+### 6.1 The Architecture: Ground Truth and Fast Inference
 
-[[Transformers]] compute [[attention]] as a one-shot matrix multiply: $\text{softmax}(QK^T/\sqrt{d})V$. Focus flow computes [[attention]] as an iterative physical process: [[cyberlinks]] define a graph, the [[tri-kernel]] evolves probability mass toward [[equilibrium]], and the fixed point $p^*$ is the network's collective [[focus]].
+The [[cybergraph]] supports two computations simultaneously.
 
-| Phase | Transformer | Focus Flow |
+[[Focus]] flow — the [[tri-kernel]] iterated to convergence over all [[cyberlinks]] — produces $\pi^*$: the persistent, global focus distribution. This is the ground truth: what the entire network collectively knows, encoded as a probability distribution over all [[particles]], continuously updated as [[neurons]] add links. In focus flow, learning and inference are the same operation — a [[neuron]] adds a [[cyberlink]], the [[tri-kernel]] reconverges, and the new $\pi^*$ simultaneously encodes the learned relation and is available for inference. Nothing is lost.
+
+The compiled transformer — derived analytically from the same graph (§6.6) — runs $L^*$ tri-kernel steps over a local context window at query time, converging to an $\varepsilon$-approximation of $\pi^*$ restricted to that context. This is the fast inference path: local, bounded, serving responses in milliseconds.
+
+| Dimension | Focus Flow | Compiled Transformer |
 |---|---|---|
-| Training | Backprop on fixed corpus | Add [[cyberlinks]] — graph IS the model |
-| Inference | Forward pass, softmax, sample | Converge $p^*$ from context, sample |
-| Adaptation | Retrain. Catastrophic forgetting | Add links. $p^*$ shifts, nothing lost |
+| Scope | Entire [[cybergraph]] | Local context window |
+| Depth | Converges to exact $\pi^*$ | $L^*$ steps, $\varepsilon$-approximate |
+| Latency | Continuous — always converging | Milliseconds — single forward pass |
+| Multi-agent | All [[neurons]] contribute | One agent's context |
+| Adaptation | Add [[cyberlinks]] → $\pi^*$ shifts, nothing lost | Recompile from updated graph |
 
-In transformers, training and inference are separate algorithms. In focus flow, they are the same operation: a [[neuron]] adds a [[cyberlink]], the [[tri-kernel]] reconverges, and the new $p^*$ simultaneously encodes the learned relation and is available for inference.
+A transformer trained without the [[cybergraph]] approximates the same equilibrium from text sequences alone, discarding the structural knowledge the graph makes explicit. The compiled transformer starts from $\pi^*$ — at the provably optimal initialization point — and fine-tunes only what the graph cannot encode: temporal patterns, implicit associations, contextual dynamics.
 
 ### 6.2 The Local Update Rule
 
@@ -349,7 +355,7 @@ Complexity per step: $O(|E| + |V|)$. Context window is unbounded — it is the e
 
 ### 6.5 The Mathematical Identity
 
-The comparison in §6.1 frames transformers and focus flow as competing architectures. The contrast obscures a deeper equivalence: they are the same computation at different scales.
+The architectural claim in §6.1 — that the compiled transformer approximates focus flow via bounded tri-kernel steps — rests on a precise mathematical identity.
 
 Transformer attention is:
 
@@ -402,6 +408,12 @@ The alignment measure sketched in §16.2 becomes exact through compilation. A gr
 $$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
 
 $\Delta(G)$ is a number, computable from public on-chain data, localized to specific graph regions by examining which [[particles]] contribute most to the divergence, and correctable without retraining — by adding [[cyberlinks]] in high-divergence regions that shift $\pi^*_A$ toward $\pi^*_H$. Alignment is not inferred from behavior. It is read from the graph.
+
+The same framework yields a second metric: approximation quality. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ over context [[particles]] via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
+
+$$\varepsilon(G, c) = D_{KL}(\pi^*_c \| q^*_c)$$
+
+This error decreases as the graph grows: more [[cyberlinks]] improve $\lambda_2$, reduce diam$(G)$, and raise $d^*$, each tightening the gap between compiled inference and exact focus flow. Every link added today reduces the approximation error of every compiled model that follows. The [[cybergraph]] is a compounding inference quality asset — not only for training, but for every query.
 
 The [[cybergraph]] is not an alternative to trained models. It is the substrate from which models are compiled, the environment in which they operate as [[neurons]], and the metric space in which their alignment is measured.
 
