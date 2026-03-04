@@ -347,6 +347,64 @@ Complexity per step: $O(|E| + |V|)$. Context window is unbounded — it is the e
 | Explainability | Low | High — trace any $p_i$ to contributing links |
 | Context window | Fixed (4k-128k tokens) | Unbounded — the entire [[cybergraph]] |
 
+### 6.5 The Mathematical Identity
+
+The comparison in §6.1 frames transformers and focus flow as competing architectures. The contrast obscures a deeper equivalence: they are the same computation at different scales.
+
+Transformer attention is:
+
+$$\text{Attn}(Q, K, V) = \text{softmax}\!\left(\frac{QK^\top}{\sqrt{d}}\right)V$$
+
+The softmax is the [[Boltzmann distribution]] with temperature $\sqrt{d}$ — probability mass flows from query positions toward key positions proportionally to compatibility, then redistributes as a weighted sum. This is one application of the diffusion operator $D$ from the [[tri-kernel]]: local probability mass redistribution over one agent's frozen context. Deep Equilibrium Models (Bai et al., 2019) showed that iterating a transformer layer to convergence — rather than running a fixed number of steps — reaches the same fixed point regardless of initialization. That fixed point is the stationary distribution of the Markov chain induced by the learned $W_Q, W_K$ projections over context tokens.
+
+That fixed point is the [[focus|focus distribution]] restricted to one agent's context.
+
+The [[tri-kernel]] computes the same fixed point over the entire [[cybergraph]], persistently, across all [[neurons]]. One agent, one context, ephemeral equilibrium — versus all agents, all [[cyberlinks]], persistent equilibrium. Same dynamical system. Different scope and duration.
+
+This identity enables a precise inversion: the [[cybergraph]] does not merely replace transformers. It compiles them.
+
+### 6.6 Compiling Transformer Architecture from Graph Structure
+
+Given $G = (P, N, E, w, \sigma)$, three graph properties determine the three free parameters of transformer architecture:
+
+| Parameter | Formula | Graph property |
+|---|---|---|
+| Embedding dim $d^*$ | $\exp\!\left(H\!\left(\sigma(\Sigma_\pi)\right)\right)$ | Effective rank of [[focus]] covariance |
+| Head count $h^*$ | $\geq \|\text{Semcon}(G)\|$ | Distinct [[semcon]] types |
+| Layer count $L^*$ | $\text{diam}(G) \cdot \lceil \log(1/\varepsilon)/\log(1/\kappa) \rceil$ | Diameter × spectral convergence factor |
+
+$d^*$ is the [[entropy]] of the normalized singular value distribution of the $\pi^*$-weighted adjacency matrix — the number of statistically independent semantic dimensions present in the graph. $h^*$ lower-bounds the number of [[semcon|semcons]]: each distinct semantic relation type requires its own attention head to represent faithfully. $L^*$ follows from the [[tri-kernel]] contraction theorem: reaching $\varepsilon$-precision requires $\lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ iterations per hop, multiplied by graph diameter.
+
+Weights are compiled, not trained. The embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\pi^*}) \cdot A$ — is provably optimal: by the Eckart-Young theorem, $E^*$ uniquely minimizes expected squared gradient magnitude at initialization over all orthonormal matrices of the same rank. Attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[semcon]]'s adjacency submatrix. MLP weights are derived from path co-occurrence statistics up to depth $L^*$.
+
+The reduction in required fine-tuning steps scales as $\Omega(|E| \cdot d^* / \log(1/\varepsilon))$ relative to random initialization. Every [[cyberlink]] added today reduces the training cost of every future model trained on graph-consistent text, by a provable bound proportional to link count. The graph is a compounding computational asset.
+
+### 6.7 Live Compilation: Bostrom at 2.7M Cyberlinks
+
+The compilation pipeline has eight steps, seven $O(|E|)$. The critical step — computing the embedding matrix — naively requires $O(|P|^3)$ operations: 39.5 TB to store, 360 days to compute at $10^{12}$ FLOPS. Randomized SVD on the sparse $\pi^*$-weighted adjacency matrix reduces this to $O(|E| \cdot d^* \cdot \log d^*)$ — under one second. The [[cybergraph]]'s sparsity ($\rho = |E|/|P|^2 \approx 10^{-7}$) is the invariant that makes compilation tractable at any scale.
+
+Applied to the live [[bostrom]] network (March 2026):
+
+| Parameter | Value | Derived from |
+|---|---|---|
+| Embedding dim $d^*$ | 31 | $\exp(H(\sigma(\Sigma_\pi)))$, measured |
+| Attention heads $h^*$ | ≥ 12 | [[semcon]] structural lower bound |
+| Layer count $L^*$ | 290 | diam(10) × 29 iterations/hop |
+| Model size | ~0.4M parameters | Current graph scale |
+| Compilation time | ~62 seconds | Single machine, 20 GB RAM |
+
+Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed them. The compiled model is fully auditable: given any output, contributing links and authors are recoverable from the graph. As [[bostrom]] grows — $|E| \uparrow$ raises $d^*$, $\lambda_2 \uparrow$ lowers $L^*$, [[semcon]] count raises $h^*$ — each recompilation produces a structurally better model from the same pipeline, with no training budget.
+
+### 6.8 Alignment as Computable Divergence
+
+The alignment measure sketched in §16.2 becomes exact through compilation. A graph-native transformer's weights derive from an explicit [[focus|focus distribution]] $\pi^*$. Partition [[neurons]] into human contributors $N_H$ and AI contributors $N_A$. Compute the focus distributions restricted to each partition's [[cyberlinks]]:
+
+$$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
+
+$\Delta(G)$ is a number, computable from public on-chain data, localized to specific graph regions by examining which [[particles]] contribute most to the divergence, and correctable without retraining — by adding [[cyberlinks]] in high-divergence regions that shift $\pi^*_A$ toward $\pi^*_H$. Alignment is not inferred from behavior. It is read from the graph.
+
+The [[cybergraph]] is not an alternative to trained models. It is the substrate from which models are compiled, the environment in which they operate as [[neurons]], and the metric space in which their alignment is measured.
+
 ## 7. nox Execution
 
 ### 7.1 The Goldilocks Field
