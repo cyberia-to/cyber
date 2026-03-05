@@ -108,19 +108,42 @@ progs are the autonomous intelligence layer of cyb. they are the bridge between 
 
 every [[particle]] in the [[cybergraph]] has a type. the type is the language. the robot speaks nine content languages natively — and renders each through a direct GPU pipeline
 
-| language | particle type | source format | renders as |
-|----------|--------------|---------------|------------|
-| [[text]] | prose, code, thought | markdown | glyphs via compute shader |
-| [[struct]] | trees, configs, records | json, toml | collapsible tree of glyphs |
-| [[table]] | grids, datasets, series | csv, tsv | virtualized cell grid |
-| [[vector]] | paths, diagrams, art | svg, bezier | Vello path rasterization |
-| [[pixels]] | images, photos, maps | png, webp, jpeg | GPU texture sampler |
-| [[video]] | moving images, recordings | webm, mp4 | hardware decode + frame texture |
-| [[sound]] | audio, voice, signal | wav, ogg, mp3 | waveform compute shader |
-| [[formula]] | mathematics, notation | latex, mathml | glyph layout + Vello paths |
-| [[component]] | composed interfaces | native | nested render pass |
+#### content — 9 languages
 
-this is not a coincidence. the particle type system and the render system are the same system. when a particle enters the [[cybergraph]], it arrives as one of these nine types. when the [[oracle]] returns it, the robot knows exactly how to render it. no parsing ambiguity. no plugin required. no format negotiation. every particle speaks its language and the robot is fluent
+| language | what it is | GPU mapping |
+|----------|-----------|-------------|
+| [[text]] | [[markdown]], prose, code | glyphs via compute shader rasterization |
+| [[struct]] | JSON, TOML — trees and configs | collapsible tree of text glyphs |
+| [[table]] | 2D data, CSV | grid of text cells, virtualized rows |
+| [[vector]] | SVG, paths, Bezier curves | path rasterization via Vello |
+| [[pixels]] | raster image | texture upload, GPU sampler |
+| [[video]] | moving pixels | hardware decode, texture per frame |
+| [[sound]] | waveform, audio stream | audio pipeline (visual: waveform shader) |
+| [[formula]] | LaTeX / MathML — math notation | glyph layout + vector curves via Vello |
+| [[component]] | composition of primitives | nested render pass |
+
+#### interactive — 5 primitives
+
+| primitive | what it is | how it maps |
+|-----------|-----------|-------------|
+| action | tap, click, press | any content primitive + onClick handler |
+| input text | string, textarea, code editor | text + editable flag + cursor + IME |
+| input choice | select, radio, checkbox, toggle | struct (options) + selectable flag |
+| input range | slider, scroll, zoom | number + bounds + draggable |
+| input media | camera, microphone, file upload | pixels/sound + capture pipeline |
+
+#### layout — 4 modes
+
+| mode | what it is | use case |
+|------|-----------|----------|
+| stream | vertical sequence, scrollable | blogs, feeds, articles, chat |
+| grid | 2D spatial container | dashboards, layouts, galleries |
+| flex | 1D flexible row or column | navbars, toolbars, card rows |
+| page | fixed canvas, pagination | PDF, print, scientific papers |
+
+a button is `text` + `action`. a dashboard is `grid` of `table` + `vector`. a scientific paper is `page` of `text` + `formula` + `table`. an IDE is `grid` of `text` + `struct`. every UI ever made is a combination of these fifteen primitives and four layout modes
+
+this is not a coincidence. the particle type system and the render system are the same system. when a particle enters the [[cybergraph]], it arrives as one of these nine content types. when the [[oracle]] returns it, the robot knows exactly how to render it. no parsing ambiguity. no plugin required. no format negotiation. every particle speaks its language and the robot is fluent
 
 ### text
 
