@@ -41,7 +41,7 @@ $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P 
 | $q$ | $P$ | structural | target [[particle]] |
 | $\tau$ | $\mathcal{T}$ | economic | token denomination |
 | $a$ | $\mathbb{R}_+$ | economic | stake amount |
-| $v$ | $\{-1,0,+1\}$ | epistemic | [[Bayesian Truth Serum|BTS]] meta-prediction |
+| $v$ | $\{-1,0,+1\}$ | epistemic | [[valence]] — [[Bayesian Truth Serum|BTS]] meta-prediction |
 | $t$ | $\mathbb{Z}_{\geq 0}$ | temporal | block height |
 
 three layers in one atomic record. structural $(\nu, p, q)$ is binary — the connection either exists or it doesn't. epistemic $v$ is ternary — the neuron's prediction of how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge. economic $(τ, a)$ is continuous over $\mathbb{R}_+$. see [[two three paradox]] for why this layering is not arbitrary.
