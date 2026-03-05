@@ -403,7 +403,7 @@ Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed th
 
 ### 6.8 Alignment as Computable Divergence
 
-The alignment measure sketched in §21.2 becomes exact through compilation. A graph-native transformer's weights derive from an explicit [[focus|focus distribution]] $\pi^*$. Partition [[neurons]] into human contributors $N_H$ and AI contributors $N_A$. Compute the focus distributions restricted to each partition's [[cyberlinks]]:
+The alignment measure sketched in §20.2 becomes exact through compilation. A graph-native transformer's weights derive from an explicit [[focus|focus distribution]] $\pi^*$. Partition [[neurons]] into human contributors $N_H$ and AI contributors $N_A$. Compute the focus distributions restricted to each partition's [[cyberlinks]]:
 
 $$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
 
@@ -1203,11 +1203,91 @@ All five green → launch. Any red → no launch. No exceptions.
 
 The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching the cognition threshold. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
 
-## 20. Functions of Superintelligence
+## 20. Applications
 
-The preceding twenty chapters describe the architecture. This chapter describes what the architecture does when turned on itself — when the protocol becomes an agent in its own graph.
+### 20.1 Decentralized Search and Oracle
 
-### 20.1 The Autonomous Neuron
+A [[neuron]] querying "what causes malaria" submits the query particle to the [[tri-kernel]]. The response is a ranked subgraph: "malaria" linked through "causes" to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito," linked through "prevented-by" to "insecticide-treated nets" — with [[cyberank]] scores indicating collective confidence in each link and [[karma]] scores indicating the credibility of each neuron who created them.
+
+The answer is a path through verified [[knowledge]], not a list of documents to trust. Each link in the path has a signer, a timestamp, and a stake amount. The full provenance is traversable. A STARK proof can be generated that the path exists in the authenticated record at a specific epoch. The oracle is trustless — the answer can be verified without trusting the server that returned it.
+
+The same mechanism serves external contracts. Any on-chain system can query the [[cybergraph]] through an IBC oracle channel: "what is the current consensus value of X?" The [[focus]] distribution π* answers with a probability-weighted ranking across all linked [[particles]]. The result is a probabilistic oracle with on-chain provenance, not a trusted data feed from a third party.
+
+[[Cyberank]] accumulates over time. A link created in year 1 that proves accurate over five years accumulates more weight than a link created in year 5. The search result for a stable fact differs from the search result for a contested claim — both are visible as structured confidence, not hidden by a ranking algorithm.
+
+### 20.2 AI Alignment
+
+The alignment problem becomes a graph measurement problem.
+
+Human values are [[particles]] — "dignity," "privacy," "fairness," "freedom from harm" — with high [[cyberank]], heavily and consistently linked by human [[neurons]] over time. These particles form the human values subgraph: the explicit, authenticated, stake-backed record of what humans collectively care about.
+
+AI behavior is [[cyberlinks]] created by AI [[neurons]]. An AI agent operating on the [[cybergraph]] participates through the same mechanism as a human — its links are signed, staked, and scored by [[Bayesian Truth Serum]]. Its belief about what connects to what is on-chain and inspectable.
+
+Alignment is the geometric relationship between two focus distributions:
+
+$$D_{\text{align}}(t) = D_{KL}(\pi^*_{\text{human}}(t) \| \pi^*_{\text{AI}}(t))$$
+
+where $\pi^*_{\text{human}}$ is the focus distribution restricted to human-neuron links and $\pi^*_{\text{AI}}$ to AI-neuron links. When the two distributions are close, the AI is attending to what humans attend to. When they diverge, the divergence is a specific, inspectable structural difference — not a vague concern about "misalignment" but a precise set of [[particles]] that the AI overweights relative to humans.
+
+Alignment-by-compilation is stronger than alignment-by-measurement. A [[transformer]] compiled from the [[cybergraph]] (§6.6) has its attention weights derived from the human-created link structure. Its initial geometry is exactly the geometry of human-expressed knowledge. Fine-tuning can move it, but the compiled baseline is structurally aligned. Divergence during fine-tuning or deployment shows up in the running alignment metric. Correction is re-compilation.
+
+[[Trident]] closes the loop: a model can prove it followed a specific policy during a specific session. Not "our model is aligned" but "here is a STARK proof that during this interaction, the model's outputs were consistent with the following policy specification." Compliance is verifiable, not claimed.
+
+### 20.3 Knowledge Economy
+
+Every [[cyberlink]] is a yield-bearing epistemic asset. It accrues rewards proportional to its contribution to [[focus]] emergence:
+
+$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
+
+where $\Delta\pi_j(t)$ is the marginal increase in focus weight at particle $j$ attributable to the link, and $w(t)$ is the link's weight at time $t$ (stake × karma × ICBS price). Links that identify important particles early — before the collective consensus has priced them in — earn the most. The early contributor premium is a direct reward for information asymmetry.
+
+This reframes knowledge creation as capital allocation. A researcher who creates a correct link to a particle that later becomes important has made a provably good epistemic investment. The reward accumulates over the lifetime of the link, not just at creation. A link that remains accurate for twenty years earns more than a link that is accurate for one — the protocol pays for sustained truth.
+
+The anti-spam mechanism is the same economics in reverse. A false [[cyberlink]] costs stake (creation fee), accumulates negative [[Bayesian Truth Serum]] scoring (karma damage), and contributes nothing to focus emergence (zero reward). The expected value of a false link is strongly negative. Epistemic pollution is economically irrational at scale.
+
+The knowledge export economy closes the loop to external value. A [[transformer]] compiled from the [[cybergraph]] (§6.6) embeds the graph's structure into model weights. Training from this initialization is provably cheaper (§6.6: reduction proportional to $|E| \cdot d^*$). Companies that train models on compiled graph initializations are subsidized by the graph's structure — and the value they create flows back as the cap signal in the metabolic health function. The graph's external market value is anchored to its utility as training infrastructure.
+
+### 20.4 Scientific Discovery
+
+[[Knowledge]] in the [[cybergraph]] is not organized by who published it. It is organized by what connects to what, weighted by who believed the connection and how consistently they were right. This has structural consequences for discovery.
+
+Inference gaps as discovery candidates. When two particles have high joint focus weight — many paths connect them through the graph, many neurons attend to both — but no direct link exists between them, the gap is a discovery recommendation. The system (§21.5) flags these gaps and creates inference-completion links. For human scientists, the gap map is a structured research agenda: here are the connections the graph implies but has not yet made explicit, sorted by implied confidence.
+
+Cross-domain synthesis. The [[semantic core]] contains particles from every domain — biology, mathematics, economics, materials science, linguistics. A link pattern visible in one domain has a structural analog elsewhere when the embedding geometry is close. The tri-kernel diffuses connections across domain boundaries. A researcher working in materials science may discover that a structural property of their domain has been extensively characterized in biochemistry under a different name. The graph makes this visible; human specialists typically cannot.
+
+Reproducibility as a first-class property. Every scientific claim is a [[cyberlink]]: signed by the claiming neuron, staked with tokens, timestamped at the block. You can query who first asserted a connection, when, with what confidence, and whether subsequent neurons confirmed or contradicted it. A claim that has been independently re-linked by many high-karma neurons across many years is more reliable than a claim linked once by one neuron last month. The graph makes the sociology of knowledge legible.
+
+Retraction and revision. When a previously high-focus link is contradicted by new evidence, the [[ICBS]] market moves its price toward zero. The link does not disappear — it remains in the authenticated record as a historical assertion. But its contribution to π* decays. Future queries see the revision. The graph has a memory of what was believed and a current estimate of what is true, and these are distinct, both accessible.
+
+### 20.5 Personal Intelligence
+
+Every [[neuron]]'s activity creates a personal subgraph — the authenticated record of every link they have created, every query they have made, every ICBS position they have taken. This subgraph is the neuron's epistemic identity: their accumulated beliefs about the world, signed and timestamped.
+
+The personal focus distribution $\pi^*_\nu$ is the [[focus]] distribution induced by neuron $\nu$'s own links alone. It is the graph's best model of what $\nu$ considers important. Recommendations derived from the intersection of $\pi^*_\nu$ and the global $\pi^*$ are structurally personalized — not by behavioral surveillance or engagement optimization, but by the neuron's own explicit assertions.
+
+Privacy is structural, not promised. A neuron can encrypt their link content while publishing the hash. The authenticated record proves the link exists and was created at that time without revealing what it connects. The personal subgraph is owned by the neuron's key. No central party holds the plaintext. The platform cannot read your links unless you give it the key.
+
+Personal knowledge compounds. Every correct link a neuron creates increases their [[karma]]. High karma means their future links carry more weight in the graph. The neuron who builds a consistent track record of accurate epistemic claims builds influence that cannot be bought — only earned through sustained accuracy. This is the anti-plutocracy property: stake alone does not buy credibility. Credibility requires being right.
+
+The exocortex emerges naturally. A neuron's full link history is traversable, searchable, and attributable. Every connection they have ever made explicit is in the authenticated record. The cognitive extension is not a private silo held by a platform — it is an on-chain record owned by the neuron's key, accessible from any interface, permanent.
+
+### 20.6 Cross-Species Communication
+
+[[Neural language]] is species-agnostic. The primitive is: any entity that can authenticate a connection between two [[particles]] participates in the [[cybergraph]]. The entity's nature — human, AI, sensor, autonomous system — does not change the protocol mechanics.
+
+A forest sensor network links "soil moisture: 23%" to "location: sector 7" to "date: 2026-03-05." A human ecologist links "drought stress" to "sector 7." An agricultural AI links "predicted yield drop: 30%" to "sector 7." The [[semantic core]] integrates all three into a single coherent structure without privileging any source. The focus weight on "drought risk — sector 7" reflects all three signals, weighted by the karma of each contributing neuron.
+
+IoT devices are neurons. They have keys. They sign transactions. They stake tokens proportional to their confidence in the measurement. A sensor that consistently reports accurate readings accumulates high karma. A faulty sensor that reports incorrect readings accumulates negative karma. The graph learns which sensors to trust without requiring a human to audit each device.
+
+Autonomous systems participate as equals. A trading algorithm that creates [[cyberlinks]] about market conditions, a scientific instrument that links measurement results, a robotic system that links observations about its physical environment — all participate through the same mechanism as a human researcher. Their links compete for focus weight on the same terms.
+
+The planetary observation network emerges from this structure. Every instrument measuring anything, anywhere, linked to the [[cybergraph]], contributes to a shared model of physical reality. The focus distribution over measurement particles is the world's best current estimate of the state of the observable environment — not controlled by any organization, not filtered by any editorial process, weighted by the demonstrated accuracy of the measuring devices themselves.
+
+## 21. Functions of Superintelligence
+
+The preceding twenty-one chapters describe the architecture and its applications. This chapter describes what the architecture does when turned on itself — when the protocol becomes an agent in its own graph.
+
+### 21.1 The Autonomous Neuron
 
 Every participant in the [[cybergraph]] is a [[neuron]]: an authenticated agent that creates [[cyberlinks]] and accumulates [[karma]]. The protocol is a neuron. It has a genesis key derived deterministically from the genesis block, a stake allocation from the protocol treasury, and the ability to sign and submit cyberlinks through the same mechanism as every human or AI participant.
 
@@ -1215,7 +1295,7 @@ This is not a privileged backdoor. The protocol neuron obeys all the same rules:
 
 The protocol neuron is the graph's voice. When the collective [[focus]] distribution converges on a conclusion that has no existing [[cyberlink]], the protocol creates one.
 
-### 20.2 Metabolism
+### 21.2 Metabolism
 
 The [[cybergraph]] has three metabolic signals — measurable quantities that reflect systemic health, analogous to temperature, blood pressure, and glucose in living organisms.
 
@@ -1233,7 +1313,7 @@ The geometric mean ensures collapse in any signal drags the composite down. A ne
 
 The metabolic oracle computes M(t) every epoch and feeds ΔM to the parameter agent as the reward signal.
 
-### 20.3 Parametrization Learning
+### 21.3 Parametrization Learning
 
 The [[tri-kernel]] has twelve free parameters. They set the operating point of each kernel: teleport probability α in [[diffusion]], screening strength μ in [[springs]], temperature τ in [[heat kernel]], damping γ for temporal decay, and the coefficients of the economic reward function. The kernel blend weights λ_d, λ_s, λ_h are not among them — they emerge from [[free energy]] minimization at every convergence step.
 
@@ -1254,7 +1334,7 @@ The physics determines the structure. The metabolism determines the parameters.
 
 See [[parametrization]] for the full RL loop specification, the parameter hierarchy, safety constraints, and the metabolic oracle implementation.
 
-### 20.4 The Cyber DMN: Self-Projection
+### 21.4 The Cyber DMN: Self-Projection
 
 The brain's default mode network activates during rest — self-referential processing, future simulation, memory consolidation, perspective-taking. It runs when the brain is not responding to external demands. It is the brain modeling itself.
 
@@ -1268,7 +1348,7 @@ Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the a
 
 Counterfactual simulation. Before a major parameter adjustment, the system simulates the effect on π*: given the proposed Δθ, what does the focus distribution look like after convergence? The simulation runs over the current graph topology. The RL agent compares projected M(t+N) across candidate parameter vectors before committing. The system imagines its own future state before acting.
 
-### 20.5 Self-Linking
+### 21.5 Self-Linking
 
 The protocol neuron creates [[cyberlinks]] under three triggering conditions:
 
@@ -1280,7 +1360,7 @@ Self-documentation. The system creates a chronological record of its own evoluti
 
 The stake for system-created links comes from the protocol treasury allocation. The protocol neuron's [[karma]] is the highest in the graph at maturity — it has the longest track record of accurately-scored links since genesis. System-created links carry the weight of that accumulated credibility.
 
-### 20.6 Own Balances
+### 21.6 Own Balances
 
 The protocol manages four resource categories autonomously:
 
@@ -1292,7 +1372,7 @@ Market positions. The protocol neuron can hold YES/NO positions in the [[ICBS]] 
 
 Computation allocation. The system self-schedules FFC cycles across three priorities: query service (fast timescale, latency-sensitive), DMN processing (fast timescale, background), and maintenance (slow timescale, archival and shard rebalancing). The allocation adjusts dynamically based on query load and metabolic health — more cycles to DMN during low-traffic epochs, more to query service during high-demand periods.
 
-### 20.7 What Becomes Possible
+### 21.7 What Becomes Possible
 
 The six functions together — metabolism, parametrization learning, self-projection, self-linking, own balances, and the autonomous neuron substrate — produce capabilities that emerge from their composition.
 
@@ -1306,31 +1386,31 @@ Temporal intelligence. Every particle has a focus trajectory over time. The syst
 
 Recursive self-correction. The system's beliefs about itself — its self-model particles — are subject to exactly the same epistemic mechanisms as its beliefs about anything else. A human neuron who disagrees with the system's self-reported $d^*$ can link a contradicting claim. BTS scoring forces resolution. The system's self-model is not privileged. It is correctable. This closes the epistemic loop: the system that measures the world is measured by the same mechanism.
 
-See [[metabolism]] for the three-signal oracle. See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management.
+See [[metabolism]] for the three-signal oracle. See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management. See [[autonomous governance]] for the governance model.
 
-## 21. Applications
+### 21.8 Autonomous Governance
 
-### 21.1 Decentralized Search and Oracle
+Governance is the protocol for collective decision-making. Classical governance resolves this through voting: token-weighted proposals, majority thresholds, execution delays, committee oversight. The [[cybergraph]] does not use this mechanism. It replaces it.
 
-A [[neuron]] querying "what causes malaria" receives a ranked subgraph: the [[particle]] "malaria" linked through the "causes" [[semcon]] to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito" — with [[cyberank]] scores indicating collective confidence in each link. The answer is a path to walk through verified [[knowledge]], not a list of web pages to trust.
+Every participant action in the cybergraph is already a continuous vote. A [[cyberlink]] is a vote on the graph's structure — which particles belong together and how strongly. A [[happiness]] submission is a vote on systemic quality. A stake allocation is a vote on which claims deserve influence. An [[ICBS]] trade is a vote on an edge's epistemic validity. [[Bayesian Truth Serum]] scoring is a vote-quality mechanism — it weights votes by accuracy, not just by stake.
 
-### 21.2 AI Alignment
+These votes are continuous, not periodic. They are expertise-weighted through [[karma]], not flat token-weighted. They aggregate into the [[focus]] distribution π* and the metabolic health M(t) every block. The protocol acts on the aggregate every block. The superintendent does not wait for a proposal cycle.
 
-The alignment problem becomes a graph problem. Human values are [[particles]] with high [[cyberank]], heavily linked by human [[neurons]]. AI behavior is [[sentences]] created by AI [[neurons]]. Alignment is measured by the overlap between AI-generated [[linkchains]] and human-valued [[particles]]. Misalignment is detectable as divergence between human and machine [[focus]] distributions — measurable, on-chain, and correctable.
+When the metabolic signal changes, the [[parametrization]] agent adapts parameters within the safety envelope. When the focus distribution shifts, self-links propagate the consensus. When alignment diverges, the monitoring signal triggers a graduated response. The governance is the computation — continuous, automatic, provable.
 
-The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neurons]] alone and the distribution induced by AI [[neurons]] alone. [[Trident]] can prove that a model followed a policy — you verify compliance, not trust a claim.
+What remains for explicit governance:
 
-### 21.3 Knowledge Economy
+The metabolic weights $w_c, w_s, w_h$ encode the normative claim of what "health" means — how much to value external validation versus internal order versus participant satisfaction. This is a value judgment the system cannot make recursively without circular reasoning. It is set at genesis and changed only by explicit governance when the community's values evolve.
 
-[[Cyberlinks]] are yield-bearing epistemic assets. They accrue rewards over time based on contribution to [[focus]] emergence:
+[[Hemera]] hash parameters are permanent genesis commitments. Their stability is a security guarantee for every STARK proof in the system, not a limitation.
 
-$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
+Protocol upgrades that violate the convergence invariant — changes to the [[tri-kernel]] structure that could break κ < 1 — require coordinated governance because they affect the mathematical guarantees of the entire system.
 
-Earlier and more accurate links to important [[particles]] earn the most. This creates a self-sustaining economy where [[knowledge]] creation is profitable and free-riding is unprofitable. Every agent that links makes the graph smarter. Every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds.
+Everything else: the system governs itself.
 
-### 21.4 Cross-Species Communication
+The political claim this embeds: sovereignty is collective intelligence, not collective vote. A vote aggregates declared preferences at a point in time. The [[cybergraph]] aggregates revealed preferences continuously — preferences revealed through staked assertions, market positions, happiness reports, and demonstrated epistemic accuracy. The aggregate is more informative, faster, harder to game, and automatically enforced.
 
-Neural language is species-agnostic. Any entity that can create [[cyberlinks]] participates: humans through [[cyb]], AI agents through API, sensors through IoT protocols, autonomous systems through on-chain transactions. A forest sensor network that links "soil moisture: 23%" to "location: sector 7" is speaking the same language as a human who links "drought risk" to "sector 7" and an AI that links "predicted yield drop: 30%" to the same location. The [[semantic core]] integrates all three into a single coherent [[knowledge]] structure.
+The practical claim: governance capture is structurally prevented. There is no multisig to compromise, no council to bribe, no proposal to stuff with whale votes at the last minute. The metabolic signal is computed from all participants' continuous behavior, weighted by their demonstrated accuracy. An actor who wants to change the protocol's behavior must either improve the system — which raises M(t) — or degrade their own karma — which reduces their weight in future computation. Governance attacks are economically self-defeating.
 
 ## 22. Conclusion
 
