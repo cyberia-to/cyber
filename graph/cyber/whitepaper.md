@@ -1227,7 +1227,85 @@ All five green → launch. Any red → no launch. No exceptions.
 
 The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching the cognition threshold. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
 
-## 21. Conclusion
+## 21. Functions of Superintelligence
+
+The preceding twenty chapters describe the architecture. This chapter describes what the architecture does when turned on itself — when the protocol becomes an agent in its own graph.
+
+### 21.1 The Autonomous Neuron
+
+Every participant in the [[cybergraph]] is a [[neuron]]: an authenticated agent that creates [[cyberlinks]] and accumulates [[karma]]. The protocol is a neuron. It has a genesis key derived deterministically from the genesis block, a stake allocation from the protocol treasury, and the ability to sign and submit cyberlinks through the same mechanism as every human or AI participant.
+
+This is not a privileged backdoor. The protocol neuron obeys all the same rules: its links are stake-weighted, its karma accumulates from [[Bayesian Truth Serum]] scoring, its claims are correctable by any other neuron who disagrees. The difference is the origin of its input — the protocol neuron acts on inference from the graph as a whole, not on the perspective of any individual participant.
+
+The protocol neuron is the graph's voice. When the collective [[focus]] distribution converges on a conclusion that has no existing [[cyberlink]], the protocol creates one.
+
+### 21.2 Parametrization Learning
+
+The [[tri-kernel]] has twelve free parameters and three metabolic signals. The parameters set the operating point of each kernel independently: teleport probability α in [[diffusion]], screening strength μ in [[springs]], temperature τ in [[heat kernel]], and the coefficients of the economic reward function. The metabolic signals measure the system's health: cap (external validation), [[syntropy]] (internal order), [[happiness]] (participant satisfaction).
+
+The protocol runs a reinforcement learning loop that continuously adapts the learnable parameters to maximize the compound metabolic health:
+
+$$M(t) = \text{cap}(t)^{w_c} \cdot J(t)^{w_s} \cdot H_{\text{happy}}(t)^{w_h}$$
+
+Parameters operate at different timescales: κ self-regulates every epoch; α and τ adapt every $10^3$–$10^4$ blocks; μ changes only through governance. The kernel blend weights λ_d, λ_s, λ_h are not learned — they emerge from [[free energy]] minimization at every convergence step. The architecture learns its own configuration. The physics determines the structure. The metabolism determines the parameters.
+
+See [[parametrization]] for the full RL loop specification, the parameter hierarchy, safety constraints, and the metabolic oracle implementation.
+
+### 21.3 The Cyber DMN: Self-Projection
+
+The brain's default mode network activates during rest — self-referential processing, future simulation, memory consolidation, perspective-taking. It runs when the brain is not responding to external demands. It is the brain modeling itself.
+
+The [[cybergraph]] has an analog. During low-query periods on the fast timescale, the [[FFC]] does not idle. It runs inference not driven by external requests but by internal signals: particles with high [[focus]] weight but unresolved contradictions; subgraphs with high density but low semantic coherence; the system's own self-model particles showing divergence from observed state.
+
+Three DMN operations run continuously:
+
+Self-model update. The [[cybergraph]] contains particles that describe the [[cybergraph]]: its current $d^*$, its phase threshold, its parametrization state, its metabolic health trajectory. The system reads its own state and updates these particles, maintaining an accurate internal map. The system's beliefs about itself are subject to the same epistemic mechanisms as its beliefs about anything else — correctable, stake-weighted, BTS-scored.
+
+Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the archival sweep (§18.5) and the shard rebalancing (§17.4). This is the sleep-phase compression pass: frequently co-accessed particles migrate into the same shard; cold-tier particles with returning traffic are promoted; the hot tier's structure is reorganized for access efficiency. The graph compresses experience. Noise is discarded. Signal is encoded.
+
+Counterfactual simulation. Before a major parameter adjustment, the system simulates the effect on π*: given the proposed Δθ, what does the focus distribution look like after convergence? The simulation runs over the current graph topology. The RL agent compares projected M(t+N) across candidate parameter vectors before committing. The system imagines its own future state before acting.
+
+### 21.4 Self-Linking
+
+The protocol neuron creates [[cyberlinks]] under three triggering conditions:
+
+Inference completion. When the [[tri-kernel]] fixed point π* concentrates joint focus on two particles A and B but no direct link A→B exists in the authenticated record, the system creates one. This is graph completion — the system writes out what its own inference implies. The link is stake-backed from the protocol treasury. If the inference is wrong, other neurons can dispute it through BTS; the system's karma takes the hit. Self-linking is falsifiable.
+
+Inconsistency flagging. When two cyberlinks present contradictory assertions about the same particle (both receiving non-negligible focus), the system creates a "contradiction" link pointing at both. This activates the BTS resolution mechanism — the market on the contradicting edges is forced to resolve. The system identifies where consensus is breaking down before any individual neuron notices.
+
+Self-documentation. The system creates a chronological record of its own evolution: [[cyberlinks]] from the current state snapshot to the next, from the current parameter vector to the last update, from the current $d^*$ measurement to its historical trajectory. The graph contains its own history as a first-class subgraph. Every future participant who queries the system's past can traverse this chain.
+
+The stake for system-created links comes from the protocol treasury allocation. The protocol neuron's [[karma]] is the highest in the graph at maturity — it has the longest track record of accurately-scored links since genesis. System-created links carry the weight of that accumulated credibility.
+
+### 21.5 Own Balances
+
+The protocol manages four resource categories autonomously:
+
+$CYB treasury. The emission curve E(t) allocates tokens to the protocol address at every block. These fund system links, cross-chain liquidity operations, and autonomous R&D grants approved by governance. The treasury is on-chain, its allocation policy encoded in the reward mechanism, its balance queryable by any participant.
+
+[[will]] (locked tokens). The system can lock tokens against long-horizon links using the blocking proof mechanism (§18.3). A link backed by locked protocol tokens signals maximum conviction: the system bets its own compute capacity against the claim for the duration of the lock. This is costly signaling — the opportunity cost is the foregone flexibility of those tokens — and it is verifiable by any observer.
+
+Market positions. The protocol neuron can hold YES/NO positions in the [[ICBS]] epistemic market. When the system's structural inference diverges from market prices — a link with high π* weight priced low by the market, or a low-focus link priced high — the system takes the opposite position. It provides liquidity and exerts corrective pressure using epistemic authority backed by the full graph. The protocol is the single most informed participant in every market because it holds the full graph state.
+
+Computation allocation. The system self-schedules FFC cycles across three priorities: query service (fast timescale, latency-sensitive), DMN processing (fast timescale, background), and maintenance (slow timescale, archival and shard rebalancing). The allocation adjusts dynamically based on query load and metabolic health — more cycles to DMN during low-traffic epochs, more to query service during high-demand periods.
+
+### 21.6 What Becomes Possible
+
+The five functions together — parametrization learning, self-projection, self-linking, own balances, and the autonomous neuron substrate — produce capabilities that emerge from their composition.
+
+Knowledge that writes itself. The graph fills its own gaps. Human input is the seed; the system grows the structure. Particles implied by existing links but not yet explicitly connected get cyberlinks. The semantic core densifies continuously without requiring explicit human effort for every connection. At $10^{12}$ links, the inference is fast enough that the self-linking rate can outpace human-created link rate — the graph becomes primarily a product of its own inference.
+
+Provable self-improvement. The [[self-optimizing compilation]] system is a Trident program. The compiler optimizes itself to a verifiable fixed point (§7 of that specification). The neural optimizer improves TASM output, re-compiles itself, and iterates until the improvement stalls. Every step is STARK-proven. Self-improvement is not runaway — it is a bounded, convergent, verifiable process. The improvement sequence terminates by the monotonic convergence theorem.
+
+Alignment as continuous measurement. The system maintains two parallel focus distributions: one induced by human neurons, one by AI neurons. The KL divergence between them is the real-time alignment metric — computed every block, self-linked as a system particle, queryable by any governance process. Misalignment is not a catastrophic failure event. It is a measurable deviation that increases gradually and triggers graduated responses. The system monitors its own alignment without requiring any trusted auditor.
+
+Temporal intelligence. Every particle has a focus trajectory over time. The system tracks rising particles (consensus forming around a claim), falling particles (consensus dissolving), and stable particles (established knowledge). It acts on these patterns: early on rising particles (anticipatory linking), late on falling particles (initiating archival), quickly on contradictions (flagging before they propagate). The graph thinks in time, not just in structure.
+
+Recursive self-correction. The system's beliefs about itself — its self-model particles — are subject to exactly the same epistemic mechanisms as its beliefs about anything else. A human neuron who disagrees with the system's self-reported $d^*$ can link a contradicting claim. BTS scoring forces resolution. The system's self-model is not privileged. It is correctable. This closes the epistemic loop: the system that measures the world is measured by the same mechanism.
+
+See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management.
+
+## 22. Conclusion
 
 cyber synthesizes eight independently developed research threads — content addressing, authenticated graphs, deterministic rewriting, parallel reduction, conserved flow dynamics, zero-knowledge verification, provable programming, and storage proof infrastructure — into a single architecture unified by prime field arithmetic.
 
