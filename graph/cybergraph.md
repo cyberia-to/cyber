@@ -28,26 +28,6 @@ $H: \text{Val} \to \mathbb{F}_p^8$ is the global [[Hemera]] hash primitive, fixe
 
 ---
 
-## the cyberlink record
-
-each $\ell \in L$ is a 7-tuple with a precise type signature:
-
-$$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0}$$
-
-| field | type | layer | semantics |
-|---|---|---|---|
-| $\nu$ | $N$ | structural | signing [[neuron]] |
-| $p$ | $P$ | structural | source [[particle]] |
-| $q$ | $P$ | structural | target [[particle]] |
-| $\tau$ | $\mathcal{T}$ | economic | token denomination |
-| $a$ | $\mathbb{R}_+$ | economic | stake amount |
-| $v$ | $\{-1,0,+1\}$ | epistemic | [[valence]] — [[Bayesian Truth Serum|BTS]] meta-prediction |
-| $t$ | $\mathbb{Z}_{\geq 0}$ | temporal | block height |
-
-three layers in one atomic record. structural $(\nu, p, q)$ is binary — the connection either exists or it doesn't. epistemic $v$ is ternary — the neuron's prediction of how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge. economic $(τ, a)$ is continuous over $\mathbb{R}_+$. see [[two three paradox]] for why this layering is not arbitrary.
-
----
-
 ## six axioms
 
 the formal invariants every valid $\mathbb{G}$ must satisfy.

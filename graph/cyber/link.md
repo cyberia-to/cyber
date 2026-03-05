@@ -17,21 +17,17 @@ cheap talk produces noise. costly links produce [[knowledge]]
 
 $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0}$$
 
-| field | name | type | layer | question |
-|-------|------|------|-------|----------|
-| $\nu$ | author | $N$ | structural | [[who]] asserts this? |
-| $p$ | from | $P$ | structural | [[what]] is the source? |
-| $q$ | to | $P$ | structural | [[what]] is the target? |
-| $\tau$ | token | $\mathcal{T}$ | economic | in what denomination? |
-| $a$ | amount | $\mathbb{R}_+$ | economic | how much conviction? |
-| $v$ | [[valence]] | $\{-1,0,+1\}$ | epistemic | what is the epistemic prediction? |
-| $t$ | at | $\mathbb{Z}_{\geq 0}$ | temporal | [[when]]? |
+| field | name | type | layer | semantics | question |
+|-------|------|------|-------|-----------|----------|
+| $\nu$ | author | $N$ | structural | signing [[neuron]] | [[who]] asserts this? |
+| $p$ | from | $P$ | structural | source [[particle]] | [[what]] is the source? |
+| $q$ | to | $P$ | structural | target [[particle]] | [[what]] is the target? |
+| $\tau$ | token | $\mathcal{T}$ | economic | token denomination | in what denomination? |
+| $a$ | amount | $\mathbb{R}_+$ | economic | stake amount | how much conviction? |
+| $v$ | [[valence]] | $\{-1,0,+1\}$ | epistemic | [[Bayesian Truth Serum\|BTS]] meta-prediction | what is the epistemic prediction? |
+| $t$ | at | $\mathbb{Z}_{\geq 0}$ | temporal | block height | [[when]]? |
 
-three layers in one atomic record:
-
-- structural ($\nu$, $p$, $q$) — the assertion: author connects from→to. binary. it either exists or not
-- epistemic ($v$) — the [[valence]]: author's prediction of where the [[inversely coupled bonding surface|ICBS]] market on this edge will settle. ternary: $\{-1, 0, +1\}$
-- economic ($\tau$, $a$) — conviction: the denomination and amount of what the author commits. together they determine the link's weight in [[effective adjacency]] and its yield under [[focus]] redistribution
+three layers in one atomic record. structural $(\nu, p, q)$ is binary — the connection either exists or it doesn't. epistemic $v$ is ternary — the neuron's prediction of how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge. economic $(\tau, a)$ is continuous over $\mathbb{R}_+$. see [[two three paradox]] for why this layering is not arbitrary
 
 conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
 
