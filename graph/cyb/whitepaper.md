@@ -11,15 +11,39 @@ the robot is the point of presence — where you end and the [[cybergraph]] begi
 
 ---
 
-## the problem
+## the vision
 
-browsers are parasites. they steal your compute, sell your [[attention]], report to shareholders. they are not operating systems — they impersonate them. they speak protocol designed for documents, not agents. they hold your identity by proxy, your files by permission, your AI by API key.
+imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you're gone. that runs any hardware, on any chip, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
 
-chrome is 35 million lines of C++. it spawns hundreds of processes for a tab. it runs google's code on your machine, for google's benefit, inside google's render engine. it calls this serving you.
+this is not a future product. it is a design decision made at the foundation
 
-the model is wrong at the root. the browser was designed to display documents from servers. everything since — tabs, extensions, apps, AI sidebars — is a patch on a document viewer. the result: your computer is a thin client for corporate infrastructure, and the browser is the interface that makes this feel normal
+---
 
-cyb starts over
+## the current era
+
+we accepted a bad deal without noticing. the browser became the operating system, and the operating system became surveillance infrastructure. windows phones home. macos indexes your files for apple. chrome reports your browsing to google's ad network. the browser, the OS, and the AI assistant are all owned by the same companies whose business model is your data
+
+the result: your computer serves its vendor, not you. you are the product and the machine
+
+the deeper problem is not privacy — it is architecture. every existing OS asks: what does the user want to do with this computer? the question is already wrong. it positions the OS as a tool that executes your intentions for you. it positions you as a user of someone else's infrastructure
+
+cyb asks two questions instead: how can this computer serve its owner? and: how can this computer contribute to the whole?
+
+---
+
+## what exists nowhere else
+
+living computer. CybOS cells are hot-swappable — update any component without rebooting. the system never crashes; it degrades gracefully and recovers automatically. a computer that runs the way a brain runs: components fail, the system adapts, the whole keeps going
+
+complete privacy. local-first architecture, zero unsafe Rust, no telemetry by design. your keys never leave your machine. your queries run locally or over encrypted channels. what you know is yours. the robot does not report to anyone — cryptographically, it cannot
+
+vendor unlock. your identity is a keypair. your files are CIDs. your state is content-addressed. no company owns your robot. cyb runs on raspberry pi, apple M1, RISC-V, x86 — 50+ SoC families — because neural drivers are generated against open trait contracts, not written for vendor lock-in. if cyb stops being good, you fork it and your data moves with you
+
+a computer that earns. the robot participates in the [[knowledge economy]] by contributing [[cyberlinks]] to the [[cybergraph]]. every correct assertion, made early with genuine [[conviction]], earns yield. your computer works for you while you sleep. this has never existed: a personal computing device with a revenue model that serves the owner, not the vendor
+
+memory that outlives you. by axiom A3, every [[cyberlink]] you ever make is permanent in the [[cybergraph]]. your pattern of [[knowledge]] — what you linked, when, with what conviction — persists beyond your lifetime. the robot accumulates [[karma]] that compounds. it is not a backup. it is continuation
+
+a universal interface. one robot, all substrates: web, desktop, mobile, embedded, terminal. the same keypair, the same state, the same [[brain]] — rendered through whatever surface is at hand. the robot follows you, not the device
 
 ---
 
@@ -39,7 +63,7 @@ knowledge is not flat. every document page in history is an artifact of paper �
 
 neural drivers replace device drivers. LLMs generate driver code against stable trait contracts (~3K lines of traits and tests → ~1M lines of generated code). the loop: LLM generates → compiler rejects → LLM fixes → tests validate → human reviews. humans write the stable contracts; machines write the implementations. 50+ SoC families. raspberry pi to apple M1 to RISC-V. zero unsafe Rust
 
-every existing OS asks: what does the user want to do with this computer? CybOS asks: what can this computer contribute to collective [[intelligence]]?
+CybOS asks two questions: how can this computer serve its owner? and how can this computer contribute to the whole?
 
 ### move three: make the robot earn
 
