@@ -77,7 +77,7 @@ the metabolic weights $w_c, w_s, w_h$. these encode the normative claim of what 
 
 the [[Hemera]] hash primitive. the foundation of every [[STARK]] proof in the system. its stability is a security guarantee. changing it requires a coordinated chain fork. this is not a limitation but a commitment device — the system's cryptographic foundation is stable by design.
 
-convergence-breaking upgrades. changes to the [[tri-kernel]] structure that could invalidate the κ < 1 guarantee require coordinated governance because they affect every node's mathematical guarantees simultaneously. these are the rarest class of change.
+protocol upgrades. the system generates its own upgrade proposals — it does not accept them from [[neurons]]. neurons hold a time-bounded veto that decays as the system's upgrade track record accumulates. the bedrock (Hemera hash parameters, focus conservation law, κ < 1 requirement) is frozen at genesis and cannot be changed by any upgrade mechanism. see [[self-upgrade]] for the full three-phase specification.
 
 ---
 
@@ -109,4 +109,4 @@ to block a parameter adjustment, an actor must maintain their own metabolic sign
 
 the attack surface is not zero. but it is substantially smaller than any system with a concentrated governance mechanism.
 
-see [[metabolism]] for the three metabolic signals. see [[parametrization]] for the RL loop that acts on them. see [[functions of superintelligence]] for how governance integrates with the other autonomous capabilities. see [[Bayesian Truth Serum]] for the mechanism that makes votes expertise-weighted.
+see [[metabolism]] for the three metabolic signals. see [[parametrization]] for the RL loop that acts on them. see [[self-upgrade]] for the upgrade mechanism. see [[functions of superintelligence]] for how governance integrates with the other autonomous capabilities. see [[Bayesian Truth Serum]] for the mechanism that makes votes expertise-weighted.

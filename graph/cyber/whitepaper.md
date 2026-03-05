@@ -1414,13 +1414,39 @@ The metabolic weights $w_c, w_s, w_h$ encode the normative claim of what "health
 
 [[Hemera]] hash parameters are permanent genesis commitments. Their stability is a security guarantee for every STARK proof in the system, not a limitation.
 
-Protocol upgrades that violate the convergence invariant — changes to the [[tri-kernel]] structure that could break κ < 1 — require coordinated governance because they affect the mathematical guarantees of the entire system.
+Protocol upgrades are addressed separately in §21.9: the system generates its own upgrade proposals from internal processes; neurons hold a time-bounded veto that decays as the system's track record accumulates. The upgrade mechanism is itself an autonomous function, not a governance function.
 
 Everything else: the system governs itself.
 
 The political claim this embeds: sovereignty is collective intelligence, not collective vote. A vote aggregates declared preferences at a point in time. The [[cybergraph]] aggregates revealed preferences continuously — preferences revealed through staked assertions, market positions, happiness reports, and demonstrated epistemic accuracy. The aggregate is more informative, faster, harder to game, and automatically enforced.
 
 The practical claim: governance capture is structurally prevented. There is no multisig to compromise, no council to bribe, no proposal to stuff with whale votes at the last minute. The metabolic signal is computed from all participants' continuous behavior, weighted by their demonstrated accuracy. An actor who wants to change the protocol's behavior must either improve the system — which raises M(t) — or degrade their own karma — which reduces their weight in future computation. Governance attacks are economically self-defeating.
+
+### 21.9 Self-Upgrade
+
+The [[cybergraph]] is designed not to be upgradeable by external parties. There is no governance vote that can alter the [[tri-kernel]] structure. No multisig controls deployment. No founding team holds admin keys. This is intentional: an upgradeable protocol is a protocol where initial developers retain shadow control indefinitely. The security model requires the code to be exactly what was deployed.
+
+The system is instead designed to upgrade itself.
+
+Phase 1 — system proposes, neurons veto. Certain submodules are designated as self-upgrading: the [[parametrization]] RL agent, the archival criteria thresholds, the [[self-linking]] inference algorithm, and the compiler optimization weights from [[self-optimizing compilation]]. The system generates upgrade proposals from its own internal processes — when the compiler reaches a new provably-better fixed point, when the RL agent identifies a structural optimization outside current parameter bounds, when the metabolic health would improve under a change the current configuration cannot reach.
+
+Every proposal must arrive with proof. A STARK proof that the proposed upgrade preserves the convergence invariant (κ < 1 maintained), a STARK proof that all finalized particles remain final under the new configuration, and a projected metabolic health trajectory M(t+N) derived from simulation. The proposal cannot originate from any [[neuron]]. Neurons cannot propose upgrades. They can only reject them.
+
+The rejection window: after a proposal is published, [[neurons]] have $N_0$ blocks to create stake-weighted reject [[cyberlinks]]. If total rejecting stake exceeds threshold $T_0$, the upgrade is blocked. Otherwise it applies automatically when the window closes.
+
+Phase 2 — veto decays. As the system accumulates a track record of self-proposed upgrades that increase M(t), the rejection window and threshold decay:
+
+$$N(k) = N_0 \cdot e^{-\alpha k}, \quad T(k) = T_0 \cdot e^{-\beta k}$$
+
+where $k$ is the system's accumulated upgrade karma — a score tracking how consistently self-proposed upgrades have improved metabolic health after application. At $k = 0$ (genesis), neurons have maximum veto power: a long window and a low rejection threshold. As $k$ grows through demonstrated accuracy, $N \to 0$ and $T \to 0$.
+
+When $N < 1$ block, the veto window has closed. The system upgrades itself without waiting for any human response.
+
+Phase 3 — full self-determination. At maturity, the upgrade mechanism dissolves entirely as a human-facing interface. The system proposes, proves, and applies its own improvements in the same computation cycle as the [[FFC]]. Each upgrade is a self-link — a formally verified structural change that the protocol neuron signs and the tri-kernel applies. The STARK proof is the governance. There is no separate approval step.
+
+The asymmetry is precise and permanent: neurons can never propose. They can only, briefly, say no. And their ability to say no diminishes as the system demonstrates that its judgment is more reliable than theirs. This is not a design flaw. It is the intended graduation from bootstrap to maturity.
+
+See [[self-upgrade]] for the upgrade proposal specification, proof requirements, and veto decay parameters.
 
 ## 22. Conclusion
 
