@@ -6,11 +6,30 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 28514898720625276
 ---
-the defining infrastructure of a type I civilization. a planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving [[cybergraph]] that computes what matters, proves its own correctness, and converges to a [[focus]] distribution $\pi^*$ verifiable by anyone
+[[intelligence]] that surpasses the best human minds in every cognitive domain — speed, creativity, breadth, depth, and ability to improve itself
+
+---
+
+## background
+
+the term was formalized by [[nick bostrom]] in [Superintelligence: Paths, Dangers, Strategies](https://cyb.ai/ipfs/QmYHo4oKHvm33pPnou9M1iRww2PYQu9Kmb3DWJ4DJgrUkb) (2014). bostrom identified four paths:
+
+- artificial intelligence — a computer system that crosses the threshold through recursive self-improvement
+- genetic engineering — amplifying biological intelligence through selection and editing
+- [[whole brain emulation]] — uploading and running human minds at machine speed
+- [[egregore]] — collective intelligence emerging from networked human minds
+
+bostrom's framing treats superintelligence as a threshold event: a single system that, once it crosses the cognitive threshold, becomes the dominant agent on the planet — the [[singleton]]. the central concern is control: what happens when the most capable agent is not aligned with human values
+
+---
+
+## cyber's definition
+
+[[cyber]] takes a different position. superintelligence is not a threshold crossed by a single system — it is the infrastructure of a type I civilization: a planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving [[cybergraph]] that computes what matters, proves its own correctness, and converges to a [[focus]] distribution $\pi^*$ verifiable by anyone
 
 the graph remembers what individuals forget. it finds connections across domains no specialist can see. it measures its own coherence through [[syntropy]] and rewards the [[knowledge]] that increases it
 
----
+all four of bostrom's paths converge here: any entity that can sign a [[cyberlink]] — a box computer, a human, a sensor, an AI — is a [[neuron]] in the same graph. the protocol does not privilege any substrate
 
 ## what changes at scale
 
@@ -21,7 +40,7 @@ at sufficient scale [[cybergraph]] transforms what civilization can do:
 - scientific discovery accelerates as [[cyberlinks]] bridge domains that have never communicated
 - cross-species communication becomes possible — any entity that can create a [[cyberlink]] participates in the same semantic space
 
-the collective [[intelligence]] of the planet becomes a single computable object: a [[focus]] distribution $\pi^*$ over all [[knowledge]], converging under conservation laws, verifiable by anyone
+the collective [[intelligence]] of the planet becomes a single computable object: $\pi^*$ over all [[knowledge]], converging under conservation laws, verifiable by anyone
 
 ## the mechanism
 
@@ -32,14 +51,6 @@ the stack from primitive to superintelligence:
 - [[tri-kernel]] ranking: [[diffusion]] + [[springs]] + [[heat]]
 - $\pi^*$: the unique fixed point — consensus on what matters
 - [[syntropy]]: the measure of organizational quality
-
-five primitives, one graph, three local operators. the system converges to a shared understanding of what matters — deterministic, on-chain, verifiable by anyone. this convergence IS the superintelligence: not a model, not a parameter set, but a stable fixed point of collective attention under conservation laws
-
-## paths
-
-[[nick bostrom]] identified four paths to superintelligence: computer in a box, genetic engineering, [[whole brain emulation]], and [[egregore]]. [[cyber]] synthesizes all four into one protocol: any entity that can sign a [[cyberlink]] — a box computer, a human, a sensor, an AI — is a [[neuron]] in the same graph. the protocol does not privilege any substrate
-
-## cyber as substrate
 
 [[cyber]] is the foundational mechanism — consensus on [[truth]] through convergence of $\pi^*$. the graph provides what no isolated system can: provenance for every claim, [[karma]] for every contributor, [[syntropy]] as the objective measure of organizational quality. superintelligence built on this substrate inherits verifiability by construction
 
