@@ -838,16 +838,13 @@ Privacy soundness: a valid ZK proof implies all circuit constraints are satisfie
 
 Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nullifier is deterministic: same record produces same nullifier. Nullifier set is append-only. Transaction rejected if nullifier already exists.
 
-### 14.4 Complexity Comparison
+### 14.4 Verifiability
 
-| Operation | Traditional | Blockchain | nox |
-|-----------|-------------|------------|------|
-| Equality check | $O(n)$ compare | $O(n)$ compare | $O(1)$ hash |
-| Membership proof | $O(n)$ scan | $O(\log n)$ MPT | $O(\log^2 n)$ poly |
-| Completeness proof | Impossible | Impossible | $O(\log^2 n)$ poly |
-| Computation verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(\log n)$ STARK |
-| Recursive verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(1)$ composed |
-| Privacy + verify | Incompatible | Incompatible | $O(1)$ ZK proof |
+Traditional systems verify computation by re-executing it — $O(n)$ cost, proportional to the computation itself, requiring trust in the re-executing party. Blockchain systems improve membership proofs to $O(\log n)$ via Merkle trees but still re-execute for computation verification and cannot prove completeness or combine privacy with verification.
+
+nox breaks this pattern. STARK proofs verify computation in $O(\log n)$ independently of computation size. Recursive composition reduces chain verification to $O(1)$ constant-size composed proofs. Zero-knowledge variants add privacy without sacrificing verifiability. Completeness — proving what is not in the graph — becomes possible for the first time.
+
+The consequence: trust in execution environments is replaced by mathematical proof. You do not trust the node that ran the computation. You verify the proof it produced. See §16.5 for the full operational complexity budget across all system operations.
 
 ## 15. The Soft3 Stack
 
@@ -920,6 +917,19 @@ The [[cybergraph]] shards along semantic boundaries — namespaces, domains, sub
 Categorical pruning ensures each shard is a semantically coherent subgraph. A shard about biology contains biologically relevant [[particles]] and their internal links. Cross-domain bridges (e.g., "biochemistry" linking biology and chemistry shards) are replicated in both shards.
 
 ### 16.5 Complexity Budget
+
+Cross-system comparison for core proof operations:
+
+| Operation | Traditional | Blockchain | nox |
+|-----------|-------------|------------|-----|
+| Equality check | $O(n)$ compare | $O(n)$ compare | $O(1)$ hash |
+| Membership proof | $O(n)$ scan | $O(\log n)$ Merkle | $O(\log^2 n)$ poly |
+| Completeness proof | impossible | impossible | $O(\log^2 n)$ poly |
+| Computation verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(\log n)$ STARK |
+| Recursive verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(1)$ composed |
+| Privacy + verify | incompatible | incompatible | $O(1)$ ZK proof |
+
+Operational budget for nox-native operations:
 
 | Operation | Complexity | Notes |
 |-----------|-----------|-------|
