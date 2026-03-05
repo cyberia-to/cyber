@@ -13,9 +13,29 @@ cheap talk produces noise. costly links produce [[knowledge]]
 
 ---
 
-## naming the fields
+## the seven fields
 
-each of the seven fields answers a fundamental question. [[who]] — $\nu$, the author. [[what]] — $p$ and $q$, the source and target particles. [[when]] — $t$, the block height. denomination ($\tau$) and amount ($a$) form [[conviction]] — the pair that prices the assertion. [[valence]] ($v$) is the epistemic prediction. see [[cybergraph]] for the full formal definition, type signatures, and six axioms
+$$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0}$$
+
+| field | name | type | layer | question |
+|-------|------|------|-------|----------|
+| $\nu$ | author | $N$ | structural | [[who]] asserts this? |
+| $p$ | from | $P$ | structural | [[what]] is the source? |
+| $q$ | to | $P$ | structural | [[what]] is the target? |
+| $\tau$ | token | $\mathcal{T}$ | economic | in what denomination? |
+| $a$ | amount | $\mathbb{R}_+$ | economic | how much conviction? |
+| $v$ | [[valence]] | $\{-1,0,+1\}$ | epistemic | what is the epistemic prediction? |
+| $t$ | at | $\mathbb{Z}_{\geq 0}$ | temporal | [[when]]? |
+
+three layers in one atomic record:
+
+- structural ($\nu$, $p$, $q$) — the assertion: author connects from→to. binary. it either exists or not
+- epistemic ($v$) — the [[valence]]: author's prediction of where the [[inversely coupled bonding surface|ICBS]] market on this edge will settle. ternary: $\{-1, 0, +1\}$
+- economic ($\tau$, $a$) — conviction: the denomination and amount of what the author commits. together they determine the link's weight in [[effective adjacency]] and its yield under [[focus]] redistribution
+
+conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
+
+the [[cybergraph]] is append-only. $t$ (block height) distinguishes every record: the same author linking from→to at block $t_1$ and again at block $t_2 > t_1$ produces two separate entries in $L$. this enables reinforcement (higher $a$ on a new record), valence updates (new $v$ at a new block), and multi-denomination staking (same structural link in different [[tokens]])
 
 ## conviction as UTXO
 
