@@ -37,19 +37,49 @@ this sequential structure makes Bayes theorem the natural language for learning:
 
 ---
 
-## likelihood and the direction of inference
+## likelihood
 
-$P(E \mid H)$ is a model of the world: "if H is true, what evidence would we expect?" this is the direction of generative models — from hypothesis to prediction.
+$P(E \mid H)$ evaluated as a function of $H$ with $E$ fixed is the likelihood function:
 
-$P(H \mid E)$ is the direction of inference: from observation to hypothesis. science runs in the inference direction; experiments run in the generative direction. Bayes theorem is the bridge between them.
+$$\mathcal{L}(H) = P(E \mid H)$$
+
+same formula, different reading. when you fix the data and vary the hypothesis, it is no longer a probability distribution over $E$ — it is a function over $H$ that measures how well each hypothesis explains the observed evidence. the likelihood does not integrate to 1 over $H$.
+
+the likelihood is the evidence's vote: hypotheses that make the observed data more probable receive higher likelihood. the ratio $\mathcal{L}(H_1) / \mathcal{L}(H_2)$ is the likelihood ratio — how much more the data supports $H_1$ over $H_2$, independent of the [[prior]].
+
+log-likelihood: $\ell(H) = \ln P(E \mid H)$. for independent observations $E = \{e_1, \ldots, e_n\}$, the log-likelihood sums rather than multiplies:
+
+$$\ell(H) = \sum_{i=1}^n \ln P(e_i \mid H)$$
+
+this makes computation tractable and converts the product of small probabilities into a sum that doesn't underflow.
+
+maximum likelihood estimation (MLE) selects the hypothesis that maximizes the likelihood:
+
+$$\hat{H}_{\text{MLE}} = \arg\max_H \mathcal{L}(H) = \arg\max_H P(E \mid H)$$
+
+MLE is Bayesian inference with a flat [[prior]]: when all hypotheses are equally probable a priori, the [[posterior]] is proportional to the likelihood, so the maximum posterior = maximum likelihood.
+
+the likelihood principle: all evidence about $H$ contained in the data is captured by $\mathcal{L}(H)$. two datasets with proportional likelihoods carry identical evidence about $H$, regardless of how they were generated.
 
 ---
 
-## the denominator
+## evidence
 
-$P(E) = \sum_h P(E \mid H=h) \cdot P(H=h)$ — the sum over all hypotheses of the probability of the evidence under each. for continuous hypotheses: $P(E) = \int P(E \mid H=h) \cdot P(H=h)\, dh$.
+$P(E)$ — the marginal probability of the observed evidence under all hypotheses:
 
-the denominator is the hardest part computationally — summing over all hypotheses is intractable for large spaces. most of Bayesian computation (MCMC, variational inference, expectation-propagation) is algorithms for approximating or avoiding the denominator.
+$$P(E) = \sum_h P(E \mid H=h) \cdot P(H=h) = \int P(E \mid H) \cdot P(H)\, dH$$
+
+three roles evidence plays:
+
+normalizing constant. $P(E)$ ensures the [[posterior]] sums to 1 over all hypotheses. it is the total probability mass of observing $E$ across the entire hypothesis space. without it, the Bayes formula gives an unnormalized score proportional to the posterior but not a probability.
+
+model evidence. for model comparison, $P(E \mid \mathcal{M})$ — the probability of the data under model $\mathcal{M}$ — is the measure of how well the model fits. two models $\mathcal{M}_1$ and $\mathcal{M}_2$ are compared by the Bayes factor:
+
+$$\text{BF} = \frac{P(E \mid \mathcal{M}_1)}{P(E \mid \mathcal{M}_2)}$$
+
+the Bayes factor is the ratio of evidences — how much more the data supports one model than another, after integrating out all hypotheses. it automatically penalizes model complexity (Occam's razor emerges from the math: overly complex models spread probability thinly over many hypotheses, reducing marginal likelihood).
+
+computational bottleneck. computing $P(E) = \int P(E \mid H) P(H)\, dH$ requires integrating over the entire hypothesis space. this integral is analytically tractable only for conjugate priors. for everything else it requires approximate methods: MCMC (samples from the posterior), variational inference (approximates the posterior with a tractable family), or importance sampling (estimates the integral by reweighting samples from the [[prior]]).
 
 ---
 
