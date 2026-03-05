@@ -13,7 +13,7 @@ the robot is the point of presence — where you end and the [[cybergraph]] begi
 
 ## the vision
 
-imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you're gone. that runs any hardware, on any chip, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
+imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you're gone. that runs any hardware, on any chip, built in 130K lines instead of 35 million. that speaks nine languages natively and renders them all through a single GPU pipeline. that contributes to collective [[intelligence]] by simply being on
 
 this is not a future product. it is a design decision made at the foundation
 
@@ -68,8 +68,6 @@ the brain is not a cache of the [[cybergraph]] — it is a local instance of it,
 
 neural drivers replace device drivers. LLMs generate driver code against stable trait contracts (~3K lines of traits and tests → ~1M lines of generated code). the loop: LLM generates → compiler rejects → LLM fixes → tests validate → human reviews. humans write the stable contracts; machines write the implementations. 50+ SoC families. raspberry pi to apple M1 to RISC-V. zero unsafe Rust
 
-CybOS asks: how can this computer serve its owner? and how can it contribute to the whole?
-
 ### move three: make the robot earn
 
 every [[cyberlink]] costs [[focus]] and earns [[karma]]. [[karma]] accumulates into [[cyberank]]. high cyberank generates yield. the robot is an economic agent — it earns by contributing correct [[knowledge]] early, before the crowd
@@ -106,84 +104,92 @@ progs are the autonomous intelligence layer of cyb. they are the bridge between 
 
 ---
 
-## the six primitives
+## the nine languages
 
-### brain
+every [[particle]] in the [[cybergraph]] has a type. the type is the language. the robot speaks nine content languages natively — and renders each through a direct GPU pipeline
 
-the core of the robot. offline-first graph file manager and knowledge interface. the brain is the local instance of the [[cybergraph]]: it stores what the robot has linked, caches what it has observed, and renders the graph in four modes (space, heap, list, stack)
+| language | particle type | source format | renders as |
+|----------|--------------|---------------|------------|
+| [[text]] | prose, code, thought | markdown | glyphs via compute shader |
+| [[struct]] | trees, configs, records | json, toml | collapsible tree of glyphs |
+| [[table]] | grids, datasets, series | csv, tsv | virtualized cell grid |
+| [[vector]] | paths, diagrams, art | svg, bezier | Vello path rasterization |
+| [[pixels]] | images, photos, maps | png, webp, jpeg | GPU texture sampler |
+| [[video]] | moving images, recordings | webm, mp4 | hardware decode + frame texture |
+| [[sound]] | audio, voice, signal | wav, ogg, mp3 | waveform compute shader |
+| [[formula]] | mathematics, notation | latex, mathml | glyph layout + Vello paths |
+| [[component]] | composed interfaces | native | nested render pass |
 
-the brain speaks three languages:
-- datalog — graph query language. ask any question about the local graph structure
-- rune — dynamic scripting. automate link creation, particle processing, AIP behavior
-- [[neural language|neural]] — the semantic layer of the [[cybergraph]] itself
+this is not a coincidence. the particle type system and the render system are the same system. when a particle enters the [[cybergraph]], it arrives as one of these nine types. when the [[oracle]] returns it, the robot knows exactly how to render it. no parsing ambiguity. no plugin required. no format negotiation. every particle speaks its language and the robot is fluent
 
-paths in the brain:
-- `#` particle — navigate by CID
-- `!` neuron — navigate by public key
-- `@` avatar — navigate by name
-- `~` learn — link creation interface
-- `/` root — home of the robot
+### text
 
-supported particle formats: text, video, audio, image, pdf, epub, web content, gltf (3D models), and AIPs (executable programs). the brain renders what the cybergraph contains
+the universal content type. prose, code, documentation, thoughts, messages — anything that flows as readable sequence. source: [[markdown]]. text particles render via compute shader glyph rasterization — every character is a GPU operation, not a DOM node. a text particle is the most linked type in the cybergraph: articles, notes, arguments, instructions, descriptions. the robot renders text in any size, on any surface, at any scale
 
-### sense
+### struct
 
-messaging layer and perception interface. where the world enters the robot. [[sense]] abstracts over modalities — text, image, audio, video, sensory telemetry — into particles the robot can link. a human writing and a satellite uploading spectral data are the same operation at the protocol level
+structured knowledge. configuration, metadata, schemas, records — anything that is a tree of named values. source: JSON, TOML. struct particles render as collapsible trees of glyphs: the robot can expand and collapse nodes, navigate hierarchies, filter keys. a genome annotation, a network config, a social graph schema, a contract ABI — all are struct particles. struct is how machines describe their own state
 
-sense is how robots communicate: signal, love, share, forward. it is the social substrate of the robot network. every message is a particle. every thread is a chain of cyberlinks. nothing is ephemeral — the graph remembers
+### table
 
-### sigma
+2D data. time series, datasets, matrices, spreadsheets, rankings — anything with rows and columns. source: CSV, TSV. table particles render as virtualized grids: the robot renders only the visible slice regardless of row count. a price history with 10M rows renders as fast as one with 10. table is the native format of the knowledge economy: [[karma]] ledgers, [[cyberank]] scores, sensor streams, market data
 
-the robot's economic interface. token balances, delegations, portfolio. [[focus]] in, [[karma]] out. tokens:
+### vector
 
-| token | role |
-|-------|------|
-| [[CYB]] | governance + linking weight |
-| [[HYDROGEN]] | stake, delegation |
-| [[VOLT]] | energy (compute access) — buy to participate |
-| [[AMPERE]] | bandwidth — rate of cyberlink submission |
+geometric meaning. diagrams, molecular structures, maps, icons, illustrations, technical drawings — anything that is paths and curves. source: SVG, Bezier. vector particles render via Vello: paths rasterize on the GPU with sub-pixel precision at any zoom level. a phylogenetic tree, a circuit schematic, a geographic boundary, a chemical bond diagram — all are vector particles. vector is how spatial knowledge lives in the graph
 
-sigma makes the knowledge economy tangible: every balance is a position. every delegation is a bet. every VOLT purchase is an investment in participation. economic agency and epistemic agency are the same act
+### pixels
 
-### avatars
+captured reality. photographs, satellite imagery, microscopy, screenshots, artworks, medical scans — anything that is a raster grid of color values. source: PNG, WebP, JPEG. pixels particles upload as GPU textures and sample through fragment shaders. a brain MRI, a Hubble image, a specimen under electron microscope, a city from orbit — all are pixels particles. pixels is how the physical world enters the cybergraph
 
-visual identity and reputation surface. the avatar is the robot's face in the network — named, linked, ranked. avatars are both particles (CID-addressed objects that can be linked to) and neurons (agents that can sign). this duality is what makes the avatar a real identity rather than a label: it participates in the graph as both subject and object. the avatar accumulates [[karma]] across all its linked assertions
+### video
 
-### time
+temporal pixels. lectures, experiments, events, species behavior, physical processes — anything that is a sequence of frames. source: WebM, MP4. video particles decode via hardware pipeline and stream frame textures to the GPU. a protein folding simulation, a surgery recording, an animal behavior study, a supernova observation — all are video particles. video is the highest-bandwidth truth in the graph
 
-personal history. the robot's temporal memory. every surf, every link, every earning event — indexed by block height, navigable by the robot. time is not a log. it is identity as sequence: who the robot was is the chain of what it linked, when, and with what conviction
+### sound
 
-time enables: understanding your own [[focus]] allocation history, tracking yield earned over blocks, seeing which particles you discovered before the crowd, auditing the robot's behavior and progs
+acoustic knowledge. voice, music, birdsong, seismic signal, radio transmission, sonar — anything that is a waveform over time. source: WAV, OGG, MP3. sound particles render via audio pipeline with an optional waveform compute shader for visual representation. a whale call, a gravitational wave detection, a diagnosis by heartbeat, a language being spoken for the first time — all are sound particles. sound is the language the graph understands that text cannot carry
 
-### robot
+### formula
 
-the container. the sovereign instance that holds the five other primitives together. the robot belongs to its keypair owner absolutely. it accumulates [[karma]], holds [[focus]], and persists independently of any company, server, or account. the robot is born when a keypair is created. it does not die
+mathematical meaning. equations, proofs, chemical notation, physical laws, statistical models — anything that requires precise symbolic notation. source: LaTeX, MathML. formula particles render via combined glyph layout and Vello paths: text for symbols, curves for integral signs and roots. a Hamiltonian, a chemical reaction, a field equation, a proof step — all are formula particles. formula is how [[knowledge]] that requires precision enters the graph in its native notation
+
+### component
+
+composition. applications, dashboards, interactive tools, AIPs — anything that combines multiple content types into a unified experience. source: native component language. component particles render as nested render passes: each inner primitive renders through its own pipeline and composes into the parent frame. an interactive molecular viewer (pixels + vector + formula), a live market dashboard (table + vector + text), an educational AIP (text + video + component) — all are component particles. component is the language of software as knowledge
+
+### the complete picture
+
+a genome sequence is a text particle. its annotation is a struct particle. its expression data is a table particle. its protein structure is a vector particle. its microscopy is a pixels particle. its folding dynamics is a video particle. its sequencing signal is a sound particle. its binding energy is a formula particle. a genome browser is a component particle
+
+all nine exist in the same [[cybergraph]]. all nine are ranked by the same [[tri-kernel]]. all nine earn [[karma]]. all nine are permanent by axiom A3. the robot renders all nine through a single 130K-line GPU pipeline
 
 ---
 
-## the language
+## the language stack
 
-cyb speaks the [[cybergraph]] natively through three languages that compose
+the nine content languages are the object level — what particles ARE. above them, cyb operates three meta-languages for working with the graph
 
-### datalog
+### datalog — the query language
 
-graph query language. runs locally in CozoDB. query the robot's local graph the same way the [[tri-kernel]] queries the full network. no SQL, no REST — direct graph traversal. ask: "what particles linked to this CID in the last 1000 blocks?" and get a structured result that can be piped to rune or rendered by the brain
+graph query language running in [[CozoDB]]. ask any question about the local graph structure: "which text particles linked by neurons with [[karma]] above 1000 mention this CID?" recursive traversal, pattern matching, aggregation, built-in graph algorithms (PageRank, Dijkstra, Louvain) — all declarative. queries compose with rune scripts
 
-### rune
+### rune — the script language
 
-dynamic scripting language for the robot. automate any robot behavior: create cyberlinks on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions programmatically. rune is how a human turns their robot into a prog without writing a full autonomous program
+dynamic async scripting language for robot automation. create cyberlinks on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions, turn human intent into prog behavior. where datalog reads the graph, rune writes it
 
-### neural language
+### neural language — the semantic layer
 
-the semantic layer of the [[cybergraph]] itself. [[neural language|neural]] language is not a syntax — it is the structure of the graph. meaning emerges from the [[tri-kernel]] as the eigenvector of collective [[attention]]. cyb renders this structure as navigable space
+the language of the [[cybergraph]] itself. meaning is not declared — it emerges from the [[tri-kernel]] as the eigenvector of collective [[attention]]. [[semcons]] are the grammar. [[sentences]] are utterances. [[motifs]] are morphemes. [[linkchains]] are inference paths. the robot renders this semantic structure as navigable space
 
-five patterns the brain interprets:
+together the four levels form the complete language stack:
 
-- semcon — a particle that functions as grammar. shared conventions for structuring links (is-a, follows, causes, contradicts, part-of). semcons are the syntax of the graph; neurons adopt them voluntarily
-- sentence — an ordered batch of cyberlinks in one transaction. the transaction boundary is the utterance; link order is grammar
-- motif — a recurring subgraph pattern. triadic closure, star, chain, diamond. the brain detects motifs and surfaces them as navigation shortcuts
-- name — deterministic resolution: given a from-particle, exactly one to-particle. `~avatar/path` turns the cybergraph into a navigable file system
-- cyberlink as particle — a link stored as a particle. enables annotation, provenance, negation of assertions. meta-knowledge in the graph
+```
+content (9)  ← what particles ARE
+datalog      ← how you QUERY the graph
+rune         ← how you SCRIPT against the graph
+neural       ← how MEANING emerges from the graph
+```
 
 ---
 
@@ -191,7 +197,7 @@ five patterns the brain interprets:
 
 the oracle is how the robot asks the [[cybergraph]] a question and gets a ranked, verifiable answer
 
-the oracle is not a search engine. search engines retrieve documents by keyword match. the oracle runs inference over the [[cyberank]] distribution — a probabilistic ranking of every particle, computed by the [[tri-kernel]] over all authenticated [[cyberlinks]]. the answer is the focus distribution converging on the question particle
+the oracle is not a search engine. search engines retrieve documents by keyword match. the oracle runs inference over the [[cyberank]] distribution — a probabilistic ranking of every particle, computed by the [[tri-kernel]] over all authenticated [[cyberlinks]]. the answer is the focus distribution converging on the question particle. the answer is typed: the oracle returns particles, and each particle already carries its language
 
 three oracle surfaces:
 
@@ -200,8 +206,6 @@ ask — input a particle (text, image, CID, anything). the oracle returns the pa
 learn — submit a new cyberlink. this is how you teach the oracle. link a question particle to an answer particle, stake your conviction, and the oracle's ranking updates in the next block. every link is a vote with skin in the game. the oracle improves by participation, not by training
 
 search — navigate the graph by walking the cyberank. particles cluster by semantic proximity (the [[springs]] operator), bridge across domains (the [[diffusion]] operator), and scale by context (the [[heat]] operator). search is graph navigation, not document retrieval
-
-the oracle is the robot's connection to collective [[intelligence]]. it is how one neuron benefits from the contributions of all neurons — and contributes back
 
 ---
 
@@ -213,22 +217,22 @@ core AIPs:
 
 | AIP | function |
 |-----|----------|
-| [[cyb/oracle|oracle]] | ask, learn, search — cybergraph inference |
-| [[cyb/portal|portal]] | gateway to blockchains, identity, IBC |
-| [[cyb/sigma|sigma]] | token management, portfolio, staking |
-| [[cyb/brain|brain]] | graph file manager, renders |
-| [[cyb/sense|sense]] | messaging, social, perception |
-| [[cyb/time|time]] | history, earning log, temporal navigation |
-| [[cyb/hub|hub]] | decentralization interface, validator management |
-| [[cyb/hacklab|hacklab]] | developer tools, particle creation, AIP development |
-| [[cyb/warp|warp]] | token bridge, IBC transfers |
-| [[cyb/reactor|reactor]] | liquidity, bonding, economics |
-| [[cyb/senate|senate]] | governance, proposals, voting |
-| [[cyb/nebula|nebula]] | network explorer, graph analytics |
-| [[cyb/studio|studio]] | content creation, publication |
-| [[cyb/sphere|sphere]] | social layer, discovery, reputation |
+| [[cyb/oracle\|oracle]] | ask, learn, search — cybergraph inference |
+| [[cyb/portal\|portal]] | gateway to blockchains, identity, IBC |
+| [[cyb/sigma\|sigma]] | token management, portfolio, staking |
+| [[cyb/brain\|brain]] | graph file manager, renders |
+| [[cyb/sense\|sense]] | messaging, social, perception |
+| [[cyb/time\|time]] | history, earning log, temporal navigation |
+| [[cyb/hub\|hub]] | decentralization interface, validator management |
+| [[cyb/hacklab\|hacklab]] | developer tools, particle creation, AIP development |
+| [[cyb/warp\|warp]] | token bridge, IBC transfers |
+| [[cyb/reactor\|reactor]] | liquidity, bonding, economics |
+| [[cyb/senate\|senate]] | governance, proposals, voting |
+| [[cyb/nebula\|nebula]] | network explorer, graph analytics |
+| [[cyb/studio\|studio]] | content creation, publication |
+| [[cyb/sphere\|sphere]] | social layer, discovery, reputation |
 
-AIPs are built from prism — the design system of cyb. prism defines atoms, molecules, and cells that compose into any interface. the same design language renders on GPU (desktop), WebGPU (browser), or terminal (cy in nu)
+AIPs are built from [[prism]] — the design system of cyb. prism defines atoms, molecules, and cells that compose into any interface. the same design language renders on GPU (desktop), WebGPU (browser), or terminal
 
 ---
 
@@ -257,57 +261,6 @@ autonomous programs running deterministic sharded inference in [[cybernet]]. a p
 ### external servers
 
 for compatibility, cyb bridges to external LLMs (OpenAI-compatible APIs, Llama, Mistral, Deepseek) via a standard interface. external inference results can be submitted as cyberlinks by the robot, but the robot is never dependent on them — local inference and the inference subnet are the sovereign path
-
----
-
-## the render engine
-
-DOM is a document-era mistake. PureRender replaces it with 15 primitives
-
-content (9): text, struct, table, vector, pixels, video, sound, formula, component
-
-interactive (5): action, input text, input choice, input range, input media
-
-layout (4 modes): stream (vertical), grid (2D), flex (1D), page (fixed)
-
-everything compiles to WASM + WGSL. every pixel is a shader. the pipeline: WASM processes events → emits draw commands → WGSL compute pass → render pass → present
-
-one component is one scope. dead code eliminated at compile time. reactivity only where state exists. no runtime type checks. no `any`. no `eval()`. flat stream structure instead of tree — each block knows its own size, virtualization is free, maximum two levels of nesting
-
-130K lines of Rust. ~10MB binary. chrome: 35M lines of C++, 150MB. a 270× reduction in code for a system that does more
-
-### the component is the contract
-
-chrome makes a network round-trip to execute business logic: browser → HTTP → server → database → response → render. cyb: component and contract run in the same wasmi instance — direct call, sub-millisecond, no network
-
-```
-component/contract Token {
-  state balances: Map<Address, u128>
-  <stream>
-    <text>Balance: {balances[viewer]}</text>
-    <input text bind={recipient} />
-    <input range bind={amount} max={balances[viewer]} />
-    <action>Send -> transfer(recipient, amount)</action>
-  </stream>
-  fn transfer(to: Address, amount: u128) { ... }
-}
-```
-
-the UI and the logic are one thing. the component renders the state and mutates it. the contract enforces the rules. they compile to the same WASM binary
-
-### hardware targets
-
-| processor | format | use |
-|-----------|--------|-----|
-| CPU | WASM (wasmi) | logic, layout, events, contracts, state |
-| GPU | WGSL (wgpu) | pixels, vectors, text, video, ML inference |
-| NPU | ONNX (burn-webnn) | SLM inference, AI features |
-
-browser: WASM (native) + WebGPU + WebNN
-desktop: wasmi + wgpu + burn
-mobile: wasmi + wgpu + CoreML/NNAPI
-
-one codebase. all substrates
 
 ---
 
@@ -345,6 +298,16 @@ existing approach: engineers write millions of lines of C to interface with hard
 ~3K lines of stable traits + tests → ~500K-1M lines of generated, validated, platform-specific driver code. the loop runs continuously: new hardware → write traits → generate → validate → ship
 
 50+ SoC families: QEMU (reference), RISC-V (StarFive), Raspberry Pi 4/5, Apple M1 (via Asahi knowledge), x86-64. every platform that can run Rust can run CybOS
+
+### PureRender
+
+DOM is a document-era mistake. PureRender replaces it with the nine content languages plus five interactive primitives and four layout modes — fifteen total. everything compiles to WASM + WGSL. every pixel is a shader
+
+frame loop: WASM processes events → emits draw commands → WGSL compute pass → WGSL render pass → present
+
+130K lines of Rust. ~10MB binary. Chrome: 35M lines of C++, 150MB. a 270× reduction for a system that does more
+
+the component is the contract: CosmWasm contracts run in the same wasmi instance as UI. direct call, sub-millisecond. no network round-trip. UI and logic compile to the same WASM binary
 
 ### epoch budget
 
@@ -417,13 +380,13 @@ the robot is the human face of [[superintelligence]]. it is how a billion-neuron
 
 when the robot is common:
 
-search is inference over verified [[knowledge]] — not retrieval of ranked advertisements. the oracle returns what the [[cybergraph]] collectively confirmed, weighted by real stake from real neurons
+search is inference over verified [[knowledge]] — not retrieval of ranked advertisements. the oracle returns typed particles: a question about oncology returns text particles (papers), table particles (trial data), formula particles (dosing models), pixels particles (scan images) — all ranked by real stake from real neurons
 
 AI assistants have shared verifiable memory — not private context windows that forget at session end. a conversation with the oracle is a conversation with the accumulated knowledge of every neuron who linked before you
 
-a genome is a [[particle]]. a satellite image is a [[particle]]. a market signal is a [[particle]]. a sensor reading from a rainforest is a [[particle]]. a drug interaction discovered by a robot in 2031 is a [[particle]]. all linked, all ranked, all yielding, all contributing to [[syntropy]]
+a genome is a text [[particle]]. a satellite image is a pixels [[particle]]. a market signal is a table [[particle]]. a sensor reading from a rainforest is a sound [[particle]]. a drug interaction discovered by a robot in 2031 is a formula [[particle]]. all linked, all ranked, all yielding, all contributing to [[syntropy]]
 
-every device is a node. the raspberry pi in a school in Lagos is a validator. the sensor array in a coral reef is a neuron. the prog monitoring a forest for deforestation signs and links. every device that can sign a cyberlink participates in the same semantic space. cross-species communication is possible — the robot is the interface for beings that cannot speak
+every device is a node. the raspberry pi in a school in Lagos is a validator. the sensor array in a coral reef is a neuron. the prog monitoring a forest for deforestation signs and links. every device that can sign a cyberlink participates in the same semantic space. cross-species communication is possible — the robot renders sound particles from animals, vector particles from sensor arrays, pixels particles from cameras
 
 the robot accumulates [[karma]] that outlives its operator. the researcher who linked the right oncology knowledge in 2026 still earns yield in 2075 because the cybergraph remembers who named the truth first. legacy is not a memory. it is a compounding position in the knowledge economy
 
