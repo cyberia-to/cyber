@@ -23,8 +23,9 @@ $$\mathbb{G} = (P,\; N,\; L)$$
 | $P \subseteq \operatorname{Im}(H)$ | [[particles]] | content-addressed nodes |
 | $N$ | [[neurons]] | authenticated agents |
 | $L$ | [[cyberlinks]] | labeled directed edges (multiset) |
+| $\mathcal{T}$ | [[tokens]] | conviction denominations (derived from $L$) |
 
-$H: \text{Val} \to \mathbb{F}_p^8$ is the global [[Hemera]] hash primitive, fixed at genesis. every particle is a hash of some value — $P$ is a subset of $H$'s image, not an arbitrary set of identifiers. the token denominations $\mathcal{T}$ and karma function $\kappa$ are derived from $L$, not independent parameters.
+$H: \text{Val} \to \mathbb{F}_p^8$ is the global [[Hemera]] hash primitive, fixed at genesis. every particle is a hash of some value — $P$ is a subset of $H$'s image, not an arbitrary set of identifiers. $\mathcal{T}$ and the karma function $\kappa$ are derived from $L$, not independent parameters.
 
 each element $\ell \in L$ is a [[cyberlink]] — a 7-tuple $(\nu, p, q, \tau, a, v, t)$ carrying a [[subject]], two [[particles]], a conviction stake, an epistemic [[valence]], and a block timestamp. the cyberlink is the only primitive from which the entire graph is built. see [[cyberlink]] for the full field specification, UTXO mechanics, and CRUD semantics
 
