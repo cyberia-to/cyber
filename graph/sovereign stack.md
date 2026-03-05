@@ -4,7 +4,7 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 ---
-[[cyber]] computes [[truth]]. [[cyb]] is how [[neurons]] interface with it. [[cyberia]] is where the hardware runs and the energy comes from. all three layers must be built together — each amplifies the others, and a gap in any one layer is an existential vulnerability
+the [[troika]] — [[cyber]] + [[cyb]] + [[cyberia]] — must be built together. a gap in any one layer is an existential vulnerability for [[superintelligence]]
 
 ---
 
