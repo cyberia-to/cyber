@@ -13,27 +13,9 @@ cheap talk produces noise. costly links produce [[knowledge]]
 
 ---
 
-## the seven fields
+## naming the fields
 
-$$\ell = (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t)$$
-
-| field | name | question answered |
-|-------|------|-------------------|
-| $\nu$ | author | [[who]] asserts this? |
-| $p$ | from | [[what]] is the source? |
-| $q$ | to | [[what]] is the target? |
-| $\tau$ | token | in what denomination? |
-| $a$ | amount | how much conviction? |
-| $v$ | [[valence]] | what is the epistemic prediction? |
-| $t$ | at | [[when]]? |
-
-three layers in one atomic record:
-
-- structural ($\nu$, $p$, $q$) — the assertion: author connects from→to. binary. it either exists or not
-- epistemic ($v$) — the [[valence]]: author's prediction of where the [[inversely coupled bonding surface|ICBS]] market on this edge will settle. ternary: $\{-1, 0, +1\}$
-- economic ($\tau$, $a$) — the conviction: the denomination and amount of what the author commits. together they determine the link's weight in [[effective adjacency]] and its yield under [[focus]] redistribution
-
-conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
+each of the seven fields answers a fundamental question. [[who]] — $\nu$, the author. [[what]] — $p$ and $q$, the source and target particles. [[when]] — $t$, the block height. denomination ($\tau$) and amount ($a$) form [[conviction]] — the pair that prices the assertion. [[valence]] ($v$) is the epistemic prediction. see [[cybergraph]] for the full formal definition, type signatures, and six axioms
 
 ## conviction as UTXO
 
@@ -45,18 +27,6 @@ the conviction output can itself be spent:
 - withdraw: spend the conviction UTXO back to the author's wallet. the economic position closes. the structural record remains
 
 the non-fungibility of the card (unique 7-tuple) and the fungibility of the token (transferable UTXO) coexist: the assertion is non-fungible, the economic position is a standard UTXO output
-
-## the multiset property
-
-the [[cybergraph]] is append-only. $t$ (block height) distinguishes every record: the same author linking from→to at block $t_1$ and again at block $t_2 > t_1$ produces two separate entries in $L$.
-
-this matters in three ways:
-
-- reinforcement — a neuron can increase conviction on a link by submitting again with higher $a$. [[effective adjacency]] sums all matching records: $A^{\text{eff}}_{pq} = \sum_\ell a(\ell) \cdot \kappa(\nu(\ell)) \cdot f(m(\ell))$
-- valence update — a neuron can change its epistemic prediction after seeing market movement. the new $v$ is a new [[Bayesian Truth Serum|BTS]] input at the new block
-- multi-denomination — the same structural link can be staked in different [[tokens]], expressing conviction across the token graph simultaneously
-
-the structural triple $(\nu, p, q)$ is the identity of a relation. $(\tau, a, v, t)$ are the attributes of a specific assertion of that relation. multiple assertions of the same relation form the link's history
 
 ## CRUD in the graph
 
