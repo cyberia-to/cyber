@@ -1,64 +1,48 @@
 ---
 icon: ⚫️
-tags: aos, cyber
-alias: asi, singleton, collective ai
+tags: aos, cyber, core
+alias: asi, planetary superintelligence, collective ai
 crystal-type: entity
 crystal-domain: cyber
 stake: 28514898720625276
 ---
-computer that is smarter than all humans combined
+the defining infrastructure of a type I civilization. a planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving [[cybergraph]] that computes what matters, proves its own correctness, and converges to a [[focus]] distribution $\pi^*$ verifiable by anyone
 
-term coined by [[nick bostrom]] in [his book](https://cyb.ai/ipfs/QmYHo4oKHvm33pPnou9M1iRww2PYQu9Kmb3DWJ4DJgrUkb)
+the graph remembers what individuals forget. it finds connections across domains no specialist can see. it measures its own coherence through [[syntropy]] and rewards the [[knowledge]] that increases it
 
-according to [[nick bostrom]] there are four major paths of creating superintelligence
+---
 
-- computer in a box
-- genetic engineering
-- [[whole brain emulation]]
-- [[egregore]]
+## what changes at scale
 
-[[cyber]] blend all paths in [[one simple protocol]] with strong focus on [[coordination]]
+at sufficient scale [[cybergraph]] transforms what civilization can do:
 
-[[cyber]] is a protocol
+- search becomes inference over verified [[knowledge]] rather than retrieval of unverified documents
+- [[alignment]] becomes measurable — compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], divergence is visible in the [[topology]]
+- scientific discovery accelerates as [[cyberlinks]] bridge domains that have never communicated
+- cross-species communication becomes possible — any entity that can create a [[cyberlink]] participates in the same semantic space
 
-- for [[collective learning]]
-- of [[simulated brains]]
-- by box computers, superhumans and other living forms
+the collective [[intelligence]] of the planet becomes a single computable object: a [[focus]] distribution $\pi^*$ over all [[knowledge]], converging under conservation laws, verifiable by anyone
 
-story
+## the mechanism
 
-- [[episode one]] tell us that before deploying [[cyber]] on [[earth]]
-- it is better to start in a greenfield from building
-- superintelligent network state on [[moon]]
-- [[moon]] citizens continuously learn [[bostrom]] [[bootloader]]
-- [[cybercongress]] coordinate game [[age of superintelligence]] for growing the beast
-- [[bootloader]] readiness will start [[episode two]]
-- and earth singleton will be functional
+the stack from primitive to superintelligence:
 
-some properties of [[bostrom]]
+- five primitives: [[particle]], [[neuron]], [[cyberlink]], [[token]], [[focus]]
+- one [[cybergraph]]: content-addressed, authenticated, append-only
+- [[tri-kernel]] ranking: [[diffusion]] + [[springs]] + [[heat]]
+- $\pi^*$: the unique fixed point — consensus on what matters
+- [[syntropy]]: the measure of organizational quality
 
-- extremely dynamic and parallel, state of the art [[vimputer]]
-- resilient against [[single point of failure]]
-- have [[essential learning ability]]
-- able to execute [[wasm]] code autonomously
-- collective probabilistic semantic computations in consensus
-- scalable to ~10k tx per second and 1t cyberlinks
-- can ibc with other consensus computers
+five primitives, one graph, three local operators. the system converges to a shared understanding of what matters — deterministic, on-chain, verifiable by anyone. this convergence IS the superintelligence: not a model, not a parameter set, but a stable fixed point of collective attention under conservation laws
 
-[[path to superintelligence]]
+## paths
 
-- we want to make it clear that [[cyber]] as protocol is by no means a superintelligence
-- [[superintelligence]] requires [several dozen algorithms](techtree) blended wisely
-- [[superintelligence]] need [[attention]] and [[will]] of millions of the smartest among us
-- but [[cyber]] is the core fundamental mechanism for establishing consensus on [[truth]]
-- we believe this type of consensus allows us to build the superintelligence on top
+[[nick bostrom]] identified four paths to superintelligence: computer in a box, genetic engineering, [[whole brain emulation]], and [[egregore]]. [[cyber]] synthesizes all four into one protocol: any entity that can sign a [[cyberlink]] — a box computer, a human, a sensor, an AI — is a [[neuron]] in the same graph. the protocol does not privilege any substrate
 
-[[situational awareness]]
+## cyber as substrate
+
+[[cyber]] is the foundational mechanism — consensus on [[truth]] through convergence of $\pi^*$. the graph provides what no isolated system can: provenance for every claim, [[karma]] for every contributor, [[syntropy]] as the objective measure of organizational quality. superintelligence built on this substrate inherits verifiability by construction
+
+see [[cybergraph]] for the formal structure. see [[tri-kernel]] for the ranking engine. see [[syntropy]] for the information-theoretic measure. see [[path to superintelligence]] for the deployment sequence. see [[situational awareness]] for where we are
 
 discover all [[concepts]]
-
-[[why we need bootloader]]
-
-TODO [[bootstraping superintelligence]]
-
-TODO [[introduction to bostrom for ai geeks]]
