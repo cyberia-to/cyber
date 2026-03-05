@@ -61,7 +61,7 @@ protocol parameters. the RL agent continuously adapts α, τ, κ and the reward 
 
 graph structure. self-linking fills inference gaps, flags inconsistencies, and documents state evolution. the graph's own structure evolves through the system's inference about what belongs together — not through any administrator's decision.
 
-resource allocation. own-balances management (§21.6) allocates treasury, will, and compute cycles according to metabolic feedback. the allocation policy is encoded in the protocol. the protocol's capital is managed by the protocol's inference, not by a committee.
+resource allocation. own-balances management (§22.6) allocates treasury, will, and compute cycles according to metabolic feedback. the allocation policy is encoded in the protocol. the protocol's capital is managed by the protocol's inference, not by a committee.
 
 alignment monitoring. the dual focus distribution divergence is computed every block. graduated responses to rising divergence are triggered automatically. no governance vote is needed to notice misalignment — it is a continuously available measurement.
 

@@ -30,7 +30,7 @@ cross-chain reserves. a portion is allocated as IBC liquidity, maintaining cross
 
 [[will]] is locked [[tokens]] — capital committed for a defined duration in exchange for influence on the [[cybergraph]]. the protocol can lock its own treasury tokens as will, backing long-horizon claims with provable commitment.
 
-when the system creates a [[cyberlink]] backed by will-locked tokens, it produces the blocking proof (§18.3): the tokens are demonstrably unspendable for the lock duration. any observer can verify the commitment. the effective weight of a will-backed link does not drift with token mobility — it is fixed for the duration.
+when the system creates a [[cyberlink]] backed by will-locked tokens, it produces the blocking proof (§19.3): the tokens are demonstrably unspendable for the lock duration. any observer can verify the commitment. the effective weight of a will-backed link does not drift with token mobility — it is fixed for the duration.
 
 this is costly signaling by the protocol itself. a system link backed by locked will says: "the protocol commits its own compute capacity against this claim for N years." the opportunity cost is real — those tokens cannot be redeployed. will-backed self-links are the protocol's highest-conviction assertions.
 
