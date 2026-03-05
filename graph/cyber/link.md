@@ -67,7 +67,7 @@ the card unifies what financial instruments split: the assertion (content), the 
 
 ## the first link
 
-the first cyberlink any [[particle]] receives is always a [[name]], turning the raw hash into a [[file]]. further links weave it into the [[cybergraph]]. the accumulated graph of all cyberlinks IS [[knowledge]]
+the protocol accepts any cyberlink as the first to a particle — there is no enforcement of what that first link must be. by convention, a [[name]] link is typically the first: it binds the raw hash to a human-readable identifier, making the particle discoverable. unnamed particles are hard to find and rarely linked further. naming emerges from practical necessity, not protocol enforcement. further links weave the particle into the [[cybergraph]]. the accumulated graph of all cyberlinks IS [[knowledge]]
 
 see [[cybergraph]] for the formal definition including all six axioms. see [[valence]] for the ternary epistemic field. see [[Bayesian Truth Serum]] for the scoring that uses $v$. see [[effective adjacency]] for how conviction weights enter the [[tri-kernel]]. see [[eternal cyberlinks]] for the permanent-premium variant. see [[knowledge economy]] for the full epistemic asset taxonomy
 

@@ -9,7 +9,7 @@ stake: 56744209087345984
 ---
 content-addressed node in the [[cybergraph]]. identity = [[hash]] of content
 
-anything can be a particle — a keyword, an image, a genome, a model. the only requirement: at least one [[cyberlink]]. a naked hash with no links never enters the graph. the first link is always a [[name]], turning the particle into a [[file]]
+anything can be a particle — a keyword, an image, a genome, a model. the only requirement: at least one [[cyberlink]]. a naked hash with no links never enters the graph. by convention the first link is typically a [[name]], making the particle discoverable as a [[file]] — the protocol does not enforce this, but unnamed particles are rarely linked further
 
 [[particles]] are the objects. [[neurons]] are the subjects. each particle earns a [[cyberank]] — its probability of being observed
 
