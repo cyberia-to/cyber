@@ -69,10 +69,9 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 1. Fix 18-decimal token handling ([#801](https://github.com/cybercongress/go-cyber/issues/801))
 2. Fix pool withdrawal bugs if module-level ([#802](https://github.com/cybercongress/go-cyber/issues/802))
 3. Update token denoms ([#762](https://github.com/cybercongress/go-cyber/issues/762))
-4. Burn 50% of H gas ([#660](https://github.com/cybercongress/go-cyber/issues/660))
-5. Fix x/liquidity `RegisterCustomTypeURL` codec — SDK fork exists for this, eliminate with type assertion on SDK v0.50+ (see [[go-cyber]] upgrade-plan.md)
-6. Native indexing plugin (ABCIListener) — replaces [[cyberindex]] for price/volume data, unblocks [#803](https://github.com/cybercongress/go-cyber/issues/803)
-7. Configurable denoms from genesis — prerequisite for [#762](https://github.com/cybercongress/go-cyber/issues/762) and [[space-pussy]] unification (upgrade-plan.md item 1.6)
+4. Fix x/liquidity `RegisterCustomTypeURL` codec — SDK fork exists for this, eliminate with type assertion on SDK v0.50+ (see [[go-cyber]] upgrade-plan.md)
+5. Native indexing plugin (ABCIListener) — replaces [[cyberindex]] for price/volume data, unblocks [#803](https://github.com/cybercongress/go-cyber/issues/803)
+6. Configurable denoms from genesis — prerequisite for [#762](https://github.com/cybercongress/go-cyber/issues/762) and [[space-pussy]] unification (upgrade-plan.md item 1.6)
 
 x/liquidity module specification — done ([[go-cyber]] PR #800)
 
