@@ -52,19 +52,23 @@ the append-only graph expresses all four operations through cyberlinks:
 |-----------|-----------------|--------------|
 | create | first record for structural triple $(\nu, p, q)$ | relation enters $L$ |
 | read | query $\pi^*$ at any block — no link required | nothing |
-| update | new record: spend old conviction UTXO, submit new $(\tau, a, v, t)$ | economic position + epistemic signal |
-| delete | spend conviction UTXO + submit $v = -1$ | position closed, signal negated |
+| update | new record with new $(\tau, a, v, t)$ for the same triple | any mutable dimension |
+| delete | withdraw conviction UTXO + new record with $v = -1$ | economic position closed, epistemic signal negated |
 
-three dimensions vary independently across successive records for the same structural triple:
+the three mutable dimensions — epistemic ($v$), economic ($a$), and temporal ($t$) — vary independently. every combination is meaningful:
 
-| structural | epistemic ($v$) | economic ($a$) | reading |
-|-----------|-----------------|----------------|---------|
-| exists | $+1$ | high | funded affirmation |
-| exists | $-1$ | high | funded short |
-| exists | $-1$ | zero | logical retraction |
-| exists | $0$ | zero | bare assertion |
+| $v$ | $a$ | reading |
+|-----|-----|---------|
+| $+1$ | high | funded affirmation — bet the market confirms |
+| $+1$ | zero | unfunded affirmation — structural + epistemic signal, no economic exposure |
+| $0$ | high | funded agnostic — stake without prediction |
+| $0$ | zero | bare assertion — structural fact only |
+| $-1$ | high | funded short — bet the market rejects |
+| $-1$ | zero | logical retraction — epistemic negation, no economic exposure |
 
-delete in the graph is not erasure. the record $(\nu, p, q, t_{\text{first}})$ remains in $L$ permanently. what closes is the economic position; what updates is the epistemic signal. the structural fact that an assertion was made at block $t$ is immutable. accumulated cyberlink history IS the semantic content of a relation
+$v = -1$ does not mean the structural link is absent. the connection $p \to q$ is permanent (A3). $v = -1$ is the [[subject]]'s prediction that the [[inversely coupled bonding surface|ICBS]] market on this edge will converge to FALSE — a funded short when $a > 0$, a pure retraction when $a = 0$
+
+delete in the graph is never erasure. the record $(\nu, p, q, t_{\text{first}})$ stays in $L$ permanently. economic close and epistemic retraction are separable operations — a subject can withdraw conviction while keeping $v = +1$, or submit $v = -1$ while maintaining stake. the full semantic delete is both together
 
 ## the card
 
