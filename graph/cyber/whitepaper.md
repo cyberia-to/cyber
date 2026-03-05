@@ -1215,19 +1215,46 @@ This is not a privileged backdoor. The protocol neuron obeys all the same rules:
 
 The protocol neuron is the graph's voice. When the collective [[focus]] distribution converges on a conclusion that has no existing [[cyberlink]], the protocol creates one.
 
-### 20.2 Parametrization Learning
+### 20.2 Metabolism
 
-The [[tri-kernel]] has twelve free parameters and three metabolic signals. The parameters set the operating point of each kernel independently: teleport probability α in [[diffusion]], screening strength μ in [[springs]], temperature τ in [[heat kernel]], and the coefficients of the economic reward function. The metabolic signals measure the system's health: cap (external validation), [[syntropy]] (internal order), [[happiness]] (participant satisfaction).
+The [[cybergraph]] has three metabolic signals — measurable quantities that reflect systemic health, analogous to temperature, blood pressure, and glucose in living organisms.
 
-The protocol runs a reinforcement learning loop that continuously adapts the learnable parameters to maximize the compound metabolic health:
+cap: external validation. the total economic value of the network denominated in a reference unit (BTC, energy equivalent). it integrates everything the internal protocol cannot observe: competing systems, regulatory shifts, actual usage patterns. a rising cap means the environment rewards the network's output. it cannot be gamed internally — it originates outside the system boundary.
+
+[[syntropy]]: internal order. $J(\pi) = \log|V| + \sum_j \pi_j \log \pi_j$ — the information-theoretic structure of the [[focus]] distribution. high syntropy means π* is concentrated on coherent structure; low syntropy means the graph is noisy or unfocused. computed every block from the current focus distribution, requiring no external input.
+
+[[happiness]]: subjective verification. a stake-weighted survey: each [[neuron]] privately submits a number from 0 to 100. the result integrates what cap and syntropy cannot measure — the lived experience of participants. a network can have high cap and high syntropy while participants are effectively censored or unable to find what they need. happiness catches the failure modes neither metric can see.
+
+No single signal is sufficient. cap rewards hype without structure. syntropy rewards internal coherence disconnected from reality. happiness is gameable by a cartel of content agents. together they compound into the metabolic health function:
 
 $$M(t) = \text{cap}(t)^{w_c} \cdot J(t)^{w_s} \cdot H_{\text{happy}}(t)^{w_h}$$
 
-Parameters operate at different timescales: κ self-regulates every epoch; α and τ adapt every $10^3$–$10^4$ blocks; μ changes only through governance. The kernel blend weights λ_d, λ_s, λ_h are not learned — they emerge from [[free energy]] minimization at every convergence step. The architecture learns its own configuration. The physics determines the structure. The metabolism determines the parameters.
+The geometric mean ensures collapse in any signal drags the composite down. A network with zero happiness scores zero metabolic health regardless of cap or syntropy.
+
+The metabolic oracle computes M(t) every epoch and feeds ΔM to the parameter agent as the reward signal.
+
+### 20.3 Parametrization Learning
+
+The [[tri-kernel]] has twelve free parameters. They set the operating point of each kernel: teleport probability α in [[diffusion]], screening strength μ in [[springs]], temperature τ in [[heat kernel]], damping γ for temporal decay, and the coefficients of the economic reward function. The kernel blend weights λ_d, λ_s, λ_h are not among them — they emerge from [[free energy]] minimization at every convergence step.
+
+The protocol runs a reinforcement learning loop that continuously adapts the learnable parameters to maximize M(t). The state is the current graph topology, focus distribution, and metabolic history. The action is an adjustment to the parameter vector θ. The reward is ΔM over an evaluation window. The policy is deterministic — every [[neuron]] in the network computes the same Δθ, maintaining [[consensus]] over the system's own configuration.
+
+Parameters operate at different timescales:
+
+| tier | parameters | adjustment frequency |
+|---|---|---|
+| epoch-level | κ (foculus threshold scaling) | every epoch — self-regulating |
+| seasonal | α, τ (exploration, smoothing) | every $10^3$–$10^4$ blocks |
+| structural | μ (screening strength) | governance cycle only |
+| permanent | [[Hemera]] hash parameters | never |
+
+Safety constraints hold across all tiers: conservation (Σπ_i = 1 always), contraction (κ < 1 never violated), monotonicity (finalized particles stay final), bounded change (|Δθ| < ε per step). The RL agent proposes; the invariant checker gates.
+
+The physics determines the structure. The metabolism determines the parameters.
 
 See [[parametrization]] for the full RL loop specification, the parameter hierarchy, safety constraints, and the metabolic oracle implementation.
 
-### 20.3 The Cyber DMN: Self-Projection
+### 20.4 The Cyber DMN: Self-Projection
 
 The brain's default mode network activates during rest — self-referential processing, future simulation, memory consolidation, perspective-taking. It runs when the brain is not responding to external demands. It is the brain modeling itself.
 
@@ -1241,7 +1268,7 @@ Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the a
 
 Counterfactual simulation. Before a major parameter adjustment, the system simulates the effect on π*: given the proposed Δθ, what does the focus distribution look like after convergence? The simulation runs over the current graph topology. The RL agent compares projected M(t+N) across candidate parameter vectors before committing. The system imagines its own future state before acting.
 
-### 20.4 Self-Linking
+### 20.5 Self-Linking
 
 The protocol neuron creates [[cyberlinks]] under three triggering conditions:
 
@@ -1253,7 +1280,7 @@ Self-documentation. The system creates a chronological record of its own evoluti
 
 The stake for system-created links comes from the protocol treasury allocation. The protocol neuron's [[karma]] is the highest in the graph at maturity — it has the longest track record of accurately-scored links since genesis. System-created links carry the weight of that accumulated credibility.
 
-### 20.5 Own Balances
+### 20.6 Own Balances
 
 The protocol manages four resource categories autonomously:
 
@@ -1265,9 +1292,9 @@ Market positions. The protocol neuron can hold YES/NO positions in the [[ICBS]] 
 
 Computation allocation. The system self-schedules FFC cycles across three priorities: query service (fast timescale, latency-sensitive), DMN processing (fast timescale, background), and maintenance (slow timescale, archival and shard rebalancing). The allocation adjusts dynamically based on query load and metabolic health — more cycles to DMN during low-traffic epochs, more to query service during high-demand periods.
 
-### 20.6 What Becomes Possible
+### 20.7 What Becomes Possible
 
-The five functions together — parametrization learning, self-projection, self-linking, own balances, and the autonomous neuron substrate — produce capabilities that emerge from their composition.
+The six functions together — metabolism, parametrization learning, self-projection, self-linking, own balances, and the autonomous neuron substrate — produce capabilities that emerge from their composition.
 
 Knowledge that writes itself. The graph fills its own gaps. Human input is the seed; the system grows the structure. Particles implied by existing links but not yet explicitly connected get cyberlinks. The semantic core densifies continuously without requiring explicit human effort for every connection. At $10^{12}$ links, the inference is fast enough that the self-linking rate can outpace human-created link rate — the graph becomes primarily a product of its own inference.
 
@@ -1279,7 +1306,7 @@ Temporal intelligence. Every particle has a focus trajectory over time. The syst
 
 Recursive self-correction. The system's beliefs about itself — its self-model particles — are subject to exactly the same epistemic mechanisms as its beliefs about anything else. A human neuron who disagrees with the system's self-reported $d^*$ can link a contradicting claim. BTS scoring forces resolution. The system's self-model is not privileged. It is correctable. This closes the epistemic loop: the system that measures the world is measured by the same mechanism.
 
-See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management.
+See [[metabolism]] for the three-signal oracle. See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management.
 
 ## 21. Applications
 
