@@ -943,9 +943,105 @@ Slow timescale (~hours): global rebalancing across shards, cross-shard consisten
 
 The separation means the system responds to new [[knowledge]] in seconds while maintaining global consistency over hours. Human-relevant latency (search, inference) operates on the fast timescale. Civilizational-scale coherence (cross-domain synthesis, long-range semantic drift) operates on the slow timescale.
 
-## 18. Storage Proofs and Data Availability
+## 18. Forgetting and Pruning
 
-### 18.1 Why Storage Proofs Are Phase 1
+### 18.1 The Problem
+
+The [[cybergraph]] accumulates [[cyberlinks]] forever. Every link ever created by every [[neuron]] is permanently authenticated and structurally present. At planetary scale this is a space complexity problem: $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] each creating links at human rates produce a graph that grows without bound.
+
+Three distinct problems compound:
+
+Space growth. The full graph cannot reside in any finite set of active working memory. §17 addresses this with sharding and locality bounds, but sharding only partitions the graph — it does not reduce its total size.
+
+Staleness. A [[cyberlink]] created in year 1 about "the best current AI models" is actively misleading by year 3. The graph has no native mechanism to distinguish live signal from fossilized noise unless the market suppresses it.
+
+Stake mobility. When a [[neuron]] creates a [[cyberlink]] with staked [[tokens]], those tokens affect the [[tri-kernel]] adjacency weight. If the [[neuron]] later moves those tokens to a different link or withdraws them, the original link's effective weight should change. The question is whether this requires the [[neuron]] to resubmit a proof, and whether tokens must be locked.
+
+### 18.2 The Biological Analog
+
+Biological memory does not store everything at equal weight indefinitely. During sleep, the brain executes synaptic homeostasis: weak synapses are pruned, strong synapses are reinforced, and consolidated patterns are compressed into long-term storage. The brain does not delete experience — it compresses it. Noise is discarded; signal is encoded.
+
+The cybergraph needs an equivalent: a process by which the active working set shrinks while the authenticated historical record grows. The distinction is between forgetting (removing from active computation) and deleting (removing from the permanent record). Cyber never deletes. It forgets selectively.
+
+### 18.3 Stake Dynamics: The Simple Solution
+
+The simplest approach to stake mobility: link weight is always computed from current staked balance, not from the balance at creation time.
+
+$$A_{pq}(\ell) = \text{rate}(\tau(\ell)) \cdot \text{balance}(\nu(\ell), \tau(\ell), t)$$
+
+where $\text{balance}(\nu, \tau, t)$ is the [[neuron]]'s current unlocked balance of token denomination $\tau$ at block $t$. No proof resubmission required. Moving tokens automatically adjusts link weight proportionally. No locking mechanism needed.
+
+This has two consequences:
+
+Weight decay is natural. A [[neuron]] who stops refreshing their stake — who lets their balance drain to other uses — sees their links gradually lose influence. Sustained influence requires sustained skin in the game.
+
+No resubmission overhead. The [[cyberlink]] record is permanent; only the weight changes. The authentication proof proves that $\nu$ created the link; the current weight proves that $\nu$ currently backs it. These are separate facts with separate update frequencies.
+
+The open question: should a [[neuron]] be able to lock tokens to a specific link, preventing weight decay and signaling permanent conviction? Locking adds complexity but enables a class of long-term epistemic commitments. For the initial protocol: dynamic stake only. Locking can be introduced as an extension once base mechanics are stable.
+
+### 18.4 Market Forgetting
+
+The [[inversely coupled bonding surface|ICBS]] market mechanism already implements forgetting at the epistemic layer. A link whose market price converges to near zero has near-zero effective weight in the [[tri-kernel]]:
+
+$$A^{\text{eff}}_{pq} = \sum_\ell \text{stake}(\ell) \times \text{trust}(\nu(\ell)) \times f(\text{ICBS price}(\ell))$$
+
+when $f(\text{price}) \to 0$, the link is effectively deactivated regardless of structural stake. the market is the forgetting mechanism for epistemic quality.
+
+This means spam, outdated links, and low-quality assertions are suppressed toward zero weight without any explicit deletion or central authority. The market collectively decides what the graph pays attention to. This is not a separate pruning mechanism — it is already present in the effective adjacency.
+
+What the market does not handle: space. A link with zero effective weight still occupies storage. Market forgetting removes influence; it does not remove bytes.
+
+### 18.5 The Archive Tier
+
+Space management requires distinguishing active computation state from the permanent authenticated record.
+
+Active graph (hot). [[Cyberlinks]] included in [[tri-kernel]] computation every block. These are links with non-negligible effective weight — positive stake, meaningful market price, recent karma contribution.
+
+Archive (cold). [[Cyberlinks]] excluded from active computation but retained in the permanent authenticated record. Accessible for historical queries, provenance research, and graph archaeology. Not included in $A^{\text{eff}}$.
+
+Archival criteria. A link moves from hot to cold when all of the following hold for $N$ consecutive epochs:
+
+- $\text{stake}(\ell) < \epsilon_s$ — stake drained below significance threshold
+- $\text{ICBS price}(\ell) < \epsilon_p$ — market price near zero
+- no [[cyberank]] traffic through the link — not actively traversed
+
+This is the graph's sleep cycle: during the slow timescale of §17.5, the [[tru]] sweeps for archival candidates and removes them from the active working set. No content is lost. The authenticated record is append-only.
+
+A link can be reactivated from archive: the [[neuron]] restakes tokens, or market activity resumes, or traffic traverses the link. Reactivation restores it to the hot tier and includes it in subsequent [[tri-kernel]] computation.
+
+### 18.6 Temporal Decay
+
+Staleness requires a different mechanism than market suppression. A factually outdated link may still have high market price (if the market hasn't updated) and active stake (if the [[neuron]] hasn't moved their tokens). The market lags reality when participants don't know to update.
+
+The heat kernel $H_\tau$ in the [[tri-kernel]] already provides time-based smoothing. A more aggressive temporal weight term:
+
+$$w(t, \ell) = \text{stake}(\ell) \cdot e^{-\lambda(t - t_\ell)}$$
+
+where $t_\ell$ is the link creation time and $\lambda$ is a decay constant, would cause old links to fade regardless of current stake or market status. The parameter $\lambda$ controls how fast the graph forgets.
+
+This is powerful but dangerous: a true fact from five years ago should not decay simply because it is old. Temporal decay is the right mechanism for high-turnover domains (technology, current events, market prices) and wrong for stable domains (mathematics, physics, history).
+
+The resolution: temporal decay parameters should be per-domain (per-namespace), not global. A namespace tagged `mathematics` uses $\lambda = 0$ (no decay). A namespace tagged `current events` uses $\lambda$ calibrated to the half-life of that domain's relevance. This is open design — the specific parameterization requires empirical calibration.
+
+### 18.7 Open Problems
+
+The following problems are identified but not fully resolved in this version of the protocol:
+
+Optimal archival threshold. The values $\epsilon_s$, $\epsilon_p$, and $N$ (epochs before archival) require calibration against the practical tradeoffs between graph size and knowledge completeness.
+
+Reactivation cost. If archival moves a link to cold storage and it is later reactivated, should reactivation require a fee? This prevents oscillation (links bouncing between hot and cold) but adds friction.
+
+Cross-shard staleness. In a sharded graph, a link may be stale in one shard's context but live in another's. Cross-shard archival requires coordination across the sheaf consistency mechanism (§17.3).
+
+Temporal decay calibration. Domain-specific $\lambda$ values require ongoing empirical study as the live graph grows.
+
+Locking semantics. Whether optional token locking to cyberlinks should be introduced, at what cost, and what the protocol semantics of "permanently locked conviction" are.
+
+The simplest path: deploy with dynamic stake, market forgetting, and a conservative archival threshold. The first year of live graph operation will generate the data needed to calibrate what the optimal forgetting parameters actually are.
+
+## 19. Storage Proofs and Data Availability
+
+### 19.1 Why Storage Proofs Are Phase 1
 
 Every [[particle]] is content-addressed: identity = [[Hemera]] hash of content. If the content behind a hash is lost, the [[particle]] is dead — its identity exists but its meaning is gone. At planetary scale, content loss is the existential risk.
 
@@ -961,7 +1057,7 @@ Hash function may need replacement someday
 
 Without storage proofs, the [[hash]] function choice is irreversible and the system is permanently coupled to [[Hemera]]. With them, [[Hemera]] becomes a replaceable component — the correct architectural relationship.
 
-### 18.2 Proof Types
+### 19.2 Proof Types
 
 | Proof | What it guarantees | Mechanism |
 |-------|-------------------|-----------|
@@ -972,7 +1068,7 @@ Without storage proofs, the [[hash]] function choice is irreversible and the sys
 
 Storage proofs verify individual [[particle]] content. Data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants.
 
-### 18.3 Layered Data Availability
+### 19.3 Layered Data Availability
 
 Data is tiered by criticality and expected lifetime:
 
@@ -982,13 +1078,13 @@ Tier 1 — active graph: [[focus]] blobs (~10K [[cyberlinks]] + proofs) posted t
 
 Tier 2 — historical tails: erasure-coded archival to persistent storage networks. Refreshed by archivers. Used for deep replay, research, and content rehashing in case of hash migration.
 
-### 18.4 Namespace-Aware Sampling
+### 19.4 Namespace-Aware Sampling
 
 Light clients verify data availability without downloading full data. The [[BBG]]'s namespace structure enables namespace-aware DAS: a client sampling "give me everything for [[neuron]] N" receives data plus a completeness proof — cryptographic certainty that nothing was withheld, using $O(\sqrt{n})$ random samples.
 
 The namespace Merkle tree (NMT) propagates namespace labels through internal nodes. Completeness is a structural invariant: the tree physically cannot represent a valid root over misordered leaves. This is what makes "sync only my data" a mathematical property rather than a trust assumption.
 
-### 18.5 Storage Proof Requirements
+### 19.5 Storage Proof Requirements
 
 Before genesis, the storage proof system must satisfy:
 
@@ -998,7 +1094,7 @@ Before genesis, the storage proof system must satisfy:
 - Retrievability: content fetchable within bounded time, not just "exists somewhere"
 - Incentive alignment: [[neurons]] storing content are rewarded for availability, penalized for loss
 
-### 18.6 Hash Migration Protocol
+### 19.6 Hash Migration Protocol
 
 If [[Hemera]] is ever broken — or a superior primitive emerges — the storage proof system enables full graph rehash:
 
@@ -1009,9 +1105,9 @@ If [[Hemera]] is ever broken — or a superior primitive emerges — the storage
 
 At $10^{15}$ [[particles]] parallelized across $10^6$ nodes: ~17 hours for full rehash. Storage proof coverage and network bandwidth become the bottleneck, not hash speed.
 
-## 19. Bootstrapping
+## 20. Bootstrapping
 
-### 19.1 The Crystal
+### 20.1 The Crystal
 
 The [[cyber/crystal]] is the genesis seed — a curated [[knowledge]] graph of exactly 5,040 [[particles]] forming the irreducible basis from which all civilizational reasoning can be composed. It is an alphabet of a mind.
 
@@ -1032,7 +1128,7 @@ Flesh (648 [[particles]], ~4.7 MB, ~1,165K tokens): articles, proofs, manifestos
 
 Seventeen domains span the knowledge space: 4 pillar domains ([[cyber]], [[cyberia]], superhuman, [[cybics]]) and 13 foundation domains (mathematics, physics, biology, computer science, chemistry, [[governance]], economics, energy, materials, agriculture, geography, culture, history). 536 bridge [[particles]] (10.6%) connect domains — explicit [[isomorphisms]] enabling cross-domain reasoning.
 
-### 19.2 Twelve Invariants
+### 20.2 Twelve Invariants
 
 Quality gates enforced before genesis:
 
@@ -1049,7 +1145,7 @@ Quality gates enforced before genesis:
 11. Narrative depth — every domain $\geq$ 3 synthesis articles
 12. Self-explanation — $\geq$ 25 articles explain protocol purpose
 
-### 19.3 Implementation Path
+### 20.3 Implementation Path
 
 Seven phases, each with a hard gate. No phase starts until its predecessor passes.
 
@@ -1067,7 +1163,7 @@ Phase 6 — Network Layer: distributed protocol for [[cybergraph]] [[consensus]]
 
 Phase 7 — Testnet to Mainnet: devnet → testnet (30 days zero critical bugs under attack) → canary net (90 days stability) → mainnet genesis → [[bostrom]] migration (bijective state mapping, zero data loss).
 
-### 19.4 Pre-Launch Verification Protocol
+### 20.4 Pre-Launch Verification Protocol
 
 No patch relay exists between stars. What launches must be correct. Before launch, five questions answered with machine-checked evidence:
 
@@ -1081,7 +1177,7 @@ No patch relay exists between stars. What launches must be correct. Before launc
 
 All five green → launch. Any red → no launch. No exceptions.
 
-### 19.5 Growth Phases
+### 20.5 Growth Phases
 
 | Phase | Timeline | Particles | Character |
 |-------|----------|-----------|-----------|
@@ -1092,7 +1188,7 @@ All five green → launch. Any red → no launch. No exceptions.
 
 The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching the cognition threshold. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
 
-## 20. Conclusion
+## 21. Conclusion
 
 cyber synthesizes eight independently developed research threads — content addressing, authenticated graphs, deterministic rewriting, parallel reduction, conserved flow dynamics, zero-knowledge verification, provable programming, and storage proof infrastructure — into a single architecture unified by prime field arithmetic.
 
