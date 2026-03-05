@@ -19,13 +19,13 @@ $$\ell = (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t)$$
 
 | field | name | question answered |
 |-------|------|-------------------|
-| $\nu$ | author | who asserts this? |
-| $p$ | from | which particle is the source? |
-| $q$ | to | which particle is the target? |
+| $\nu$ | author | [[who]] asserts this? |
+| $p$ | from | [[what]] is the source? |
+| $q$ | to | [[what]] is the target? |
 | $\tau$ | token | in what denomination? |
 | $a$ | amount | how much conviction? |
 | $v$ | [[valence]] | what is the epistemic prediction? |
-| $t$ | at | at which block? |
+| $t$ | at | [[when]]? |
 
 three layers in one atomic record:
 
@@ -34,6 +34,17 @@ three layers in one atomic record:
 - economic ($\tau$, $a$) — the conviction: the denomination and amount of what the author commits. together they determine the link's weight in [[effective adjacency]] and its yield under [[focus]] redistribution
 
 conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
+
+## conviction as UTXO
+
+conviction is not a label attached to a link — it is a [[UTXO]]. creating a cyberlink is a transaction: the author moves $a$ tokens of denomination $\tau$ from a wallet UTXO to a new output bound to the cyberlink record. funds always move from one object to another. you cannot stake what you do not own.
+
+the conviction output can itself be spent:
+
+- transfer: spend the conviction UTXO to a new owner. the structural record stays in $L$; beneficial ownership moves. this is how the card's transferability operates at the protocol level
+- withdraw: spend the conviction UTXO back to the author's wallet. the economic position closes. the structural record remains
+
+the non-fungibility of the card (unique 7-tuple) and the fungibility of the token (transferable UTXO) coexist: the assertion is non-fungible, the economic position is a standard UTXO output
 
 ## the multiset property
 
@@ -46,6 +57,28 @@ this matters in three ways:
 - multi-denomination — the same structural link can be staked in different [[tokens]], expressing conviction across the token graph simultaneously
 
 the structural triple $(\nu, p, q)$ is the identity of a relation. $(\tau, a, v, t)$ are the attributes of a specific assertion of that relation. multiple assertions of the same relation form the link's history
+
+## CRUD in the graph
+
+the append-only graph expresses all four operations through cyberlinks:
+
+| operation | cyberlink action | what changes |
+|-----------|-----------------|--------------|
+| create | first record for structural triple $(\nu, p, q)$ | relation enters $L$ |
+| read | query $\pi^*$ at any block — no link required | nothing |
+| update | new record: spend old conviction UTXO, submit new $(\tau, a, v, t)$ | economic position + epistemic signal |
+| delete | spend conviction UTXO + submit $v = -1$ | position closed, signal negated |
+
+three dimensions vary independently across successive records for the same structural triple:
+
+| structural | epistemic ($v$) | economic ($a$) | reading |
+|-----------|-----------------|----------------|---------|
+| exists | $+1$ | high | funded affirmation |
+| exists | $-1$ | high | funded short |
+| exists | $-1$ | zero | logical retraction |
+| exists | $0$ | zero | bare assertion |
+
+delete in the graph is not erasure. the record $(\nu, p, q, t_{\text{first}})$ remains in $L$ permanently. what closes is the economic position; what updates is the epistemic signal. the structural fact that an assertion was made at block $t$ is immutable. accumulated cyberlink history IS the semantic content of a relation
 
 ## the card
 
@@ -69,6 +102,6 @@ the card unifies what financial instruments split: the assertion (content), the 
 
 the protocol accepts any cyberlink as the first to a particle — there is no enforcement of what that first link must be. by convention, a [[name]] link is typically the first: it binds the raw hash to a human-readable identifier, making the particle discoverable. unnamed particles are hard to find and rarely linked further. naming emerges from practical necessity, not protocol enforcement. further links weave the particle into the [[cybergraph]]. the accumulated graph of all cyberlinks IS [[knowledge]]
 
-see [[cybergraph]] for the formal definition including all six axioms. see [[valence]] for the ternary epistemic field. see [[Bayesian Truth Serum]] for the scoring that uses $v$. see [[effective adjacency]] for how conviction weights enter the [[tri-kernel]]. see [[eternal cyberlinks]] for the permanent-premium variant. see [[knowledge economy]] for the full epistemic asset taxonomy
+see [[cybergraph]] for the formal definition including all six axioms. see [[valence]] for the ternary epistemic field. see [[Bayesian Truth Serum]] for the scoring that uses $v$. see [[effective adjacency]] for how conviction weights enter the [[tri-kernel]]. see [[UTXO]] for the transaction model underlying conviction. see [[eternal cyberlinks]] for the permanent-premium variant. see [[knowledge economy]] for the full epistemic asset taxonomy
 
 discover all [[concepts]]
