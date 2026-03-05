@@ -78,36 +78,6 @@ x/liquidity module specification — done ([[go-cyber]] PR #800)
 
 All items above ship as a single hardening upgrade bundled with SDK v0.50 migration. Testnet fork approach: snapshot mainnet state → apply upgraded code → validate → merge back. See [[go-cyber]] upgrade-plan.md for full SDK upgrade roadmap.
 
-## 4. Future Issues (post-hardening)
-
-| Repo | Issue | Title | Depends On |
-|------|-------|-------|------------|
-| go-cyber | [#761](https://github.com/cybercongress/go-cyber/issues/761) | Migration to Neuron DEX | hardening first, then full module replacement |
-| go-cyber | [#631](https://github.com/cybercongress/go-cyber/issues/631) | Investmint BYTE token | new resource token → future pools |
-| go-cyber | [#632](https://github.com/cybercongress/go-cyber/issues/632) | GPU token | new resource token → future pools |
-| go-cyber | [#671](https://github.com/cybercongress/go-cyber/issues/671) | Custom vesting for resources | locked V/A vs pooled, design after economy stabilizes |
-| cyb | [#698](https://github.com/cyberia-to/cyb/issues/698) | move tokens/channels/networks to progs /hub | hub contracts integration |
-| cyb | [#753](https://github.com/cyberia-to/cyb/issues/753) | /warp (fully featured dex) | full DEX experience |
-| cyb | [#646](https://github.com/cyberia-to/cyb/issues/646) | /teleport | send + swap + memo unified interface |
-| cyb | [#774](https://github.com/cyberia-to/cyb/issues/774) | /teleport buy BOOT | onramp via ATOM/OSMO swap |
-| cyb | [#1313](https://github.com/cyberia-to/cyb/issues/1313) | Add APRs for DEX and chain | APR display for pools, staking, investminting |
-| cyb | [#424](https://github.com/cyberia-to/cyb/issues/424) | liquidity rewards | interchain liquidity incentives |
-| cyb | [#1021](https://github.com/cyberia-to/cyb/issues/1021) | /teleport/send network chooser | network selector for IBC sends |
-| cyb | [#1020](https://github.com/cyberia-to/cyb/issues/1020) | search token in token chooser | token search in swap/send UI |
-| cw-cyber | [#25](https://github.com/cybercongress/cw-cyber/issues/25) | unified farming | CW-20 integration (#23) first |
-| cw-cyber | [#19](https://github.com/cybercongress/cw-cyber/issues/19) | prediction markets with AMM | separate AMM design, post-DEX stabilization |
-| cw-cyber | [#36](https://github.com/cybercongress/cw-cyber/issues/36) | Add team registry | hub extension, after core registries ship |
-| cw-cyber | [#40](https://github.com/cybercongress/cw-cyber/issues/40) | Contract for followers | social layer |
-| cw-cyber | [#29](https://github.com/cybercongress/cw-cyber/issues/29) | contracts for events | idea stage |
-| cw-cyber | [#20](https://github.com/cybercongress/cw-cyber/issues/20) | booster | neurons/cyberlinks/particles boosting |
-| cw-cyber | [#32](https://github.com/cybercongress/cw-cyber/issues/32) | deploy social system | social layer |
-| cw-cyber | [#16](https://github.com/cybercongress/cw-cyber/issues/16) | pow gpu token mining | GPU token mining contract |
-| cw-cyber | [#24](https://github.com/cybercongress/cw-cyber/issues/24) | zk-nft | research |
-| cw-cyber | [#15](https://github.com/cybercongress/cw-cyber/issues/15) | BLS-12-381 cosmwasm vm native | cryptographic primitive, research |
-| cw-cyber | [#17](https://github.com/cybercongress/cw-cyber/issues/17) | ethereum light client | bridge infra, long-term |
-| cw-cyber | [#18](https://github.com/cybercongress/cw-cyber/issues/18) | bitcoin light client | bridge infra, long-term |
-| cw-cyber | [#21](https://github.com/cybercongress/cw-cyber/issues/21) | dao contracts | governance layer |
-
 ## Source References
 
 - [[bostrom/liquidity]] — module documentation
