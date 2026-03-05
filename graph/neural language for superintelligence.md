@@ -927,9 +927,7 @@ The alignment problem — ensuring AI systems pursue goals compatible with human
 - **Human values** are [[particles]] with high [[cyberank]], heavily linked by human [[neurons]]
 - **AI behavior** is [[sentences]] created by AI [[neurons]]
 - **Alignment** is measured by the overlap between AI-generated [[linkchains]] and human-valued [[particles]]
-- **Misalignment** is detectable as divergence: AI [[neurons]] creating [[linkchains]] that avoid or contradict high-[[cyberank]] human value [[particles]]
-
-The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neurons]] alone and the [[focus]] distribution induced by AI [[neurons]] alone. Perfect alignment means both distributions rank the same [[particles]] highly. Misalignment appears as divergence in the distributions — detectable, measurable, and correctable.
+- **Misalignment** is visible as structure: AI [[neurons]] creating [[linkchains]] that avoid or contradict high-[[cyberank]] human value [[particles]] — inspectable in the authenticated record, not inferred from behavior
 
 ### 9.6 Civilization Dashboard
 

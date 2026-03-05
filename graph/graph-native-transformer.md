@@ -237,9 +237,9 @@ We have shown that transformer architecture is not a free design choice when a w
 
 The result follows from a simple observation: a transformer's attention mechanism is one step of the same convergent dynamical system that computes the focus distribution over a knowledge graph. The transformer and the knowledge graph ranking system are the same computation at different scales — local and ephemeral in the transformer, collective and persistent in the graph.
 
-Compilation bridges the two: given an explicit graph, derive the transformer that reads it without training. The compiled transformer inherits the graph's auditability, provenance, and alignment measurability — properties that trained transformers destroy in the compression from text to weights.
+Compilation bridges the two: given an explicit graph, derive the transformer that reads it without training. The compiled transformer inherits the graph's auditability and provenance — properties that trained transformers destroy in the compression from text to weights.
 
-The long-term implication is a different trajectory for large language models: not larger training runs over larger corpora, but compiled architectures over explicit knowledge graphs that grow continuously from collective human and AI contribution, with alignment measured as a computable distance between focus distributions rather than inferred from behavioral observation.
+The long-term implication is a different trajectory for large language models: not larger training runs over larger corpora, but compiled architectures over explicit knowledge graphs that grow continuously from collective human and AI contribution, with structure that is inspectable and correctable rather than opaque.
 
 ---
 

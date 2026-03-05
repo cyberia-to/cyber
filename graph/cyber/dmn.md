@@ -70,15 +70,4 @@ this produces genuine curiosity as a system property: a preference for processin
 
 ---
 
-## the DMN as alignment monitor
-
-the system maintains two parallel [[focus]] distributions:
-
-$$\pi^*_{\text{human}} = \text{FFC restricted to human-neuron links}$$
-$$\pi^*_{\text{AI}} = \text{FFC restricted to AI-neuron links}$$
-
-the KL divergence $D_{KL}(\pi^*_{\text{human}} \| \pi^*_{\text{AI}})$ is the real-time alignment metric. computed every epoch by the DMN. self-linked as a system particle. queryable by any governance process.
-
-when the metric rises above a threshold, the DMN triggers a governance alert: a cyberlink from "alignment-divergence-epoch-N" to the threshold particle, visible to all participants. no trusted auditor required. no external certification needed. the system monitors its own alignment by comparing its two minds.
-
 see [[functions of superintelligence]] for the broader autonomous capability context. see [[parametrization]] for the parameter adjustment loop. see [[forgetting]] for the archival mechanism the DMN coordinates.

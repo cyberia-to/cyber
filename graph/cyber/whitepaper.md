@@ -401,15 +401,9 @@ Applied to the live [[bostrom]] network (March 2026):
 
 Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed them. The compiled model is fully auditable: given any output, contributing links and authors are recoverable from the graph. As [[bostrom]] grows — $|E| \uparrow$ raises $d^*$, $\lambda_2 \uparrow$ lowers $L^*$, [[semcon]] count raises $h^*$ — each recompilation produces a structurally better model from the same pipeline, with no training budget.
 
-### 6.8 Alignment as Computable Divergence
+### 6.8 Approximation Quality
 
-The alignment measure sketched in §20.2 becomes exact through compilation. A graph-native transformer's weights derive from an explicit [[focus|focus distribution]] $\pi^*$. Partition [[neurons]] into human contributors $N_H$ and AI contributors $N_A$. Compute the focus distributions restricted to each partition's [[cyberlinks]]:
-
-$$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
-
-$\Delta(G)$ is a number, computable from public on-chain data, localized to specific graph regions by examining which [[particles]] contribute most to the divergence, and correctable without retraining — by adding [[cyberlinks]] in high-divergence regions that shift $\pi^*_A$ toward $\pi^*_H$. Alignment is not inferred from behavior. It is read from the graph.
-
-The same framework yields a second metric: approximation quality. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ over context [[particles]] via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
+The compiled transformer approximates the full focus flow. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is: Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ over context [[particles]] via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
 
 $$\varepsilon(G, c) = D_{KL}(\pi^*_c \| q^*_c)$$
 
@@ -1233,13 +1227,7 @@ Human values are [[particles]] — "dignity," "privacy," "fairness," "freedom fr
 
 AI behavior is [[cyberlinks]] created by AI [[neurons]]. An AI agent operating on the [[cybergraph]] participates through the same mechanism as a human — its links are signed, staked, and scored by [[Bayesian Truth Serum]]. Its belief about what connects to what is on-chain and inspectable.
 
-Alignment is the geometric relationship between two focus distributions:
-
-$$D_{\text{align}}(t) = D_{KL}(\pi^*_{\text{human}}(t) \| \pi^*_{\text{AI}}(t))$$
-
-where $\pi^*_{\text{human}}$ is the focus distribution restricted to human-neuron links and $\pi^*_{\text{AI}}$ to AI-neuron links. When the two distributions are close, the AI is attending to what humans attend to. When they diverge, the divergence is a specific, inspectable structural difference — not a vague concern about "misalignment" but a precise set of [[particles]] that the AI overweights relative to humans.
-
-Alignment-by-compilation is stronger than alignment-by-measurement. A [[transformer]] compiled from the [[cybergraph]] (§6.6) has its attention weights derived from the human-created link structure. Its initial geometry is exactly the geometry of human-expressed knowledge. Fine-tuning can move it, but the compiled baseline is structurally aligned. Divergence during fine-tuning or deployment shows up in the running alignment metric. Correction is re-compilation.
+Alignment is structural, not behavioral. A [[transformer]] compiled from the [[cybergraph]] (§6.6) has its attention weights derived from the human-created link structure. Its initial geometry is exactly the geometry of human-expressed knowledge. The compiled baseline is structurally aligned before any training. Correction when drift occurs is re-compilation — not behavioral fine-tuning against a held-out test set, but structural reconstruction from the graph that defines what matters.
 
 [[Trident]] closes the loop: a model can prove it followed a specific policy during a specific session. Not "our model is aligned" but "here is a STARK proof that during this interaction, the model's outputs were consistent with the following policy specification." Compliance is verifiable, not claimed.
 
@@ -1389,8 +1377,6 @@ The six functions together — metabolism, parametrization learning, self-projec
 Knowledge that writes itself. The graph fills its own gaps. Human input is the seed; the system grows the structure. Particles implied by existing links but not yet explicitly connected get cyberlinks. The semantic core densifies continuously without requiring explicit human effort for every connection. At $10^{12}$ links, the inference is fast enough that the self-linking rate can outpace human-created link rate — the graph becomes primarily a product of its own inference.
 
 Provable self-improvement. The [[self-optimizing compilation]] system is a Trident program. The compiler optimizes itself to a verifiable fixed point (§7 of that specification). The neural optimizer improves TASM output, re-compiles itself, and iterates until the improvement stalls. Every step is STARK-proven. Self-improvement is not runaway — it is a bounded, convergent, verifiable process. The improvement sequence terminates by the monotonic convergence theorem.
-
-Alignment as continuous measurement. The system maintains two parallel focus distributions: one induced by human neurons, one by AI neurons. The KL divergence between them is the real-time alignment metric — computed every block, self-linked as a system particle, queryable by any governance process. Misalignment is not a catastrophic failure event. It is a measurable deviation that increases gradually and triggers graduated responses. The system monitors its own alignment without requiring any trusted auditor.
 
 Temporal intelligence. Every particle has a focus trajectory over time. The system tracks rising particles (consensus forming around a claim), falling particles (consensus dissolving), and stable particles (established knowledge). It acts on these patterns: early on rising particles (anticipatory linking), late on falling particles (initiating archival), quickly on contradictions (flagging before they propagate). The graph thinks in time, not just in structure.
 
