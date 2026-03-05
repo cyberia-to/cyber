@@ -403,7 +403,7 @@ Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed th
 
 ### 6.8 Alignment as Computable Divergence
 
-The alignment measure sketched in §16.2 becomes exact through compilation. A graph-native transformer's weights derive from an explicit [[focus|focus distribution]] $\pi^*$. Partition [[neurons]] into human contributors $N_H$ and AI contributors $N_A$. Compute the focus distributions restricted to each partition's [[cyberlinks]]:
+The alignment measure sketched in §21.2 becomes exact through compilation. A graph-native transformer's weights derive from an explicit [[focus|focus distribution]] $\pi^*$. Partition [[neurons]] into human contributors $N_H$ and AI contributors $N_A$. Compute the focus distributions restricted to each partition's [[cyberlinks]]:
 
 $$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
 
@@ -866,33 +866,9 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
 
 The [[tru]] does what LLMs do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. [[Trident]] closes the provability gap: in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[Trident]] programs produce STARK proofs: verify once, trust forever.
 
-## 16. Applications
+## 16. Scale and Complexity
 
-### 16.1 Decentralized Search and Oracle
-
-A [[neuron]] querying "what causes malaria" receives a ranked subgraph: the [[particle]] "malaria" linked through the "causes" [[semcon]] to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito" — with [[cyberank]] scores indicating collective confidence in each link. The answer is a path to walk through verified [[knowledge]], not a list of web pages to trust.
-
-### 16.2 AI Alignment
-
-The alignment problem becomes a graph problem. Human values are [[particles]] with high [[cyberank]], heavily linked by human [[neurons]]. AI behavior is [[sentences]] created by AI [[neurons]]. Alignment is measured by the overlap between AI-generated [[linkchains]] and human-valued [[particles]]. Misalignment is detectable as divergence between human and machine [[focus]] distributions — measurable, on-chain, and correctable.
-
-The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neurons]] alone and the distribution induced by AI [[neurons]] alone. [[Trident]] can prove that a model followed a policy — you verify compliance, not trust a claim.
-
-### 16.3 Knowledge Economy
-
-[[Cyberlinks]] are yield-bearing epistemic assets. They accrue rewards over time based on contribution to [[focus]] emergence:
-
-$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
-
-Earlier and more accurate links to important [[particles]] earn the most. This creates a self-sustaining economy where [[knowledge]] creation is profitable and free-riding is unprofitable. Every agent that links makes the graph smarter. Every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds.
-
-### 16.4 Cross-Species Communication
-
-Neural language is species-agnostic. Any entity that can create [[cyberlinks]] participates: humans through [[cyb]], AI agents through API, sensors through IoT protocols, autonomous systems through on-chain transactions. A forest sensor network that links "soil moisture: 23%" to "location: sector 7" is speaking the same language as a human who links "drought risk" to "sector 7" and an AI that links "predicted yield drop: 30%" to the same location. The [[semantic core]] integrates all three into a single coherent [[knowledge]] structure.
-
-## 17. Scale and Complexity
-
-### 17.1 The Knowledge Phase Transition
+### 16.1 The Knowledge Phase Transition
 
 Any system of interacting elements — molecules, neurons, knowledge claims — has a scale-dependent description. Below a system-specific threshold, individual contributions are trackable and meaningful. Above it, individual behavior becomes statistically irrelevant: only the thermodynamic description of the whole remains.
 
@@ -913,7 +889,7 @@ The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] 
 
 Current position: the [[bostrom]] network at 3.1M [[particles]] with $\rho \approx 620$ has already crossed its own threshold of $|P^*| \approx 385$K. As [[neuron]] diversity grows, $\bar{k}$ rises, $\rho$ falls, and the threshold pushes outward — the architecture is self-scaling toward higher criticality.
 
-### 17.2 The Planetary Constraint
+### 16.2 The Planetary Constraint
 
 At $10^{15}$ [[particles]], three physical constraints become absolute:
 
@@ -923,7 +899,7 @@ No single-machine state. The full [[cybergraph]] state exceeds any single machin
 
 No synchronous coordination. At planetary scale, synchronous protocols bottleneck on the slowest participant. The system must converge under partial synchrony — messages arrive within an unknown but finite bound.
 
-### 17.3 Locality as Architecture
+### 16.3 Locality as Architecture
 
 The [[tri-kernel]] was selected by the [[locality]] filter: for any edit batch $e_\Delta$, recomputing only the $h$-hop neighborhood achieves global error $\leq \varepsilon$, where $h = O(\log(1/\varepsilon))$.
 
@@ -937,13 +913,13 @@ Each kernel decays independently:
 
 A local change propagates $O(\log(1/\varepsilon))$ hops before its effect drops below precision $\varepsilon$. Beyond that radius, the global [[focus]] distribution is indistinguishable from its pre-update state. This is what makes sharding, light clients, and interplanetary operation mathematically viable.
 
-### 17.4 Sharding by Semantic Coherence
+### 16.4 Sharding by Semantic Coherence
 
 The [[cybergraph]] shards along semantic boundaries — namespaces, domains, subgraphs with high internal connectivity and sparse cross-shard links. Each shard computes local [[focus]] independently. Cross-shard consistency is maintained by a sheaf of attention weights: at shard boundaries, the [[focus]] vectors must agree on shared [[particles]] to within $\varepsilon$.
 
 Categorical pruning ensures each shard is a semantically coherent subgraph. A shard about biology contains biologically relevant [[particles]] and their internal links. Cross-domain bridges (e.g., "biochemistry" linking biology and chemistry shards) are replicated in both shards.
 
-### 17.5 Complexity Budget
+### 16.5 Complexity Budget
 
 | Operation | Complexity | Notes |
 |-----------|-----------|-------|
@@ -956,7 +932,7 @@ Categorical pruning ensures each shard is a semantically coherent subgraph. A sh
 
 The entire architecture is sublinear in graph size for all operations except the initial full computation. After convergence, the system maintains $\pi^*$ incrementally.
 
-### 17.6 Two-Timescale Separation
+### 16.6 Two-Timescale Separation
 
 Fast timescale (~seconds): [[cyberlinks]] arrive, local [[focus]] updates propagate through $O(\log(1/\varepsilon))$-hop neighborhoods, finality threshold $\tau$ is checked. This is the real-time consensus layer.
 
@@ -964,7 +940,7 @@ Slow timescale (~hours): global rebalancing across shards, cross-shard consisten
 
 The separation means the system responds to new [[knowledge]] in seconds while maintaining global consistency over hours. Human-relevant latency (search, inference) operates on the fast timescale. Civilizational-scale coherence (cross-domain synthesis, long-range semantic drift) operates on the slow timescale.
 
-### 17.7 Effective Rank and Semantic Dimensionality
+### 16.7 Effective Rank and Semantic Dimensionality
 
 The effective rank $d^* = \exp(H(\sigma(\Sigma_\pi)))$ measures the number of independent semantic dimensions active in the focus distribution, where $H$ is the [[entropy]] of the normalized singular value distribution.
 
@@ -982,27 +958,27 @@ Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of
 
 See [[avogadro-derivation]] for the phase transition derivation. See [[intelligence-at-avogadro-scale]] for the epistemological framing.
 
-## 18. Forgetting and Pruning
+## 17. Forgetting and Pruning
 
-### 18.1 The Problem
+### 17.1 The Problem
 
 The [[cybergraph]] accumulates [[cyberlinks]] forever. Every link ever created by every [[neuron]] is permanently authenticated and structurally present. At planetary scale this is a space complexity problem: $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] each creating links at human rates produce a graph that grows without bound.
 
 Three distinct problems compound:
 
-Space growth. The full graph cannot reside in any finite set of active working memory. §17 addresses this with sharding and locality bounds, but sharding only partitions the graph — it does not reduce its total size.
+Space growth. The full graph cannot reside in any finite set of active working memory. §16 addresses this with sharding and locality bounds, but sharding only partitions the graph — it does not reduce its total size.
 
 Staleness. A [[cyberlink]] created in year 1 about "the best current AI models" is actively misleading by year 3. The graph has no native mechanism to distinguish live signal from fossilized noise unless the market suppresses it.
 
 Stake mobility. When a [[neuron]] creates a [[cyberlink]] with staked [[tokens]], those tokens affect the [[tri-kernel]] adjacency weight. If the [[neuron]] later moves those tokens to a different link or withdraws them, the original link's effective weight should change. The question is whether this requires the [[neuron]] to resubmit a proof, and whether tokens must be locked.
 
-### 18.2 The Biological Analog
+### 17.2 The Biological Analog
 
 Biological memory does not store everything at equal weight indefinitely. During sleep, the brain executes synaptic homeostasis: weak synapses are pruned, strong synapses are reinforced, and consolidated patterns are compressed into long-term storage. The brain does not delete experience — it compresses it. Noise is discarded; signal is encoded.
 
 The cybergraph needs an equivalent: a process by which the active working set shrinks while the authenticated historical record grows. The distinction is between forgetting (removing from active computation) and deleting (removing from the permanent record). Cyber never deletes. It forgets selectively.
 
-### 18.3 Stake Dynamics: The Simple Solution
+### 17.3 Stake Dynamics: The Simple Solution
 
 The simplest approach to stake mobility: link weight is always computed from current staked balance, not from the balance at creation time.
 
@@ -1018,7 +994,7 @@ No resubmission overhead. The [[cyberlink]] record is permanent; only the weight
 
 The open question: should a [[neuron]] be able to lock tokens to a specific link, preventing weight decay and signaling permanent conviction? Locking adds complexity but enables a class of long-term epistemic commitments. For the initial protocol: dynamic stake only. Locking can be introduced as an extension once base mechanics are stable.
 
-### 18.4 Market Forgetting
+### 17.4 Market Forgetting
 
 The [[inversely coupled bonding surface|ICBS]] market mechanism already implements forgetting at the epistemic layer. A link whose market price converges to near zero has near-zero effective weight in the [[tri-kernel]]:
 
@@ -1030,7 +1006,7 @@ This means spam, outdated links, and low-quality assertions are suppressed towar
 
 What the market does not handle: space. A link with zero effective weight still occupies storage. Market forgetting removes influence; it does not remove bytes.
 
-### 18.5 The Archive Tier
+### 17.5 The Archive Tier
 
 Space management requires distinguishing active computation state from the permanent authenticated record.
 
@@ -1044,11 +1020,11 @@ Archival criteria. A link moves from hot to cold when all of the following hold 
 - $\text{ICBS price}(\ell) < \epsilon_p$ — market price near zero
 - no [[cyberank]] traffic through the link — not actively traversed
 
-This is the graph's sleep cycle: during the slow timescale of §17.6, the [[tru]] sweeps for archival candidates and removes them from the active working set. No content is lost. The authenticated record is append-only.
+This is the graph's sleep cycle: during the slow timescale of §16.6, the [[tru]] sweeps for archival candidates and removes them from the active working set. No content is lost. The authenticated record is append-only.
 
 A link can be reactivated from archive: the [[neuron]] restakes tokens, or market activity resumes, or traffic traverses the link. Reactivation restores it to the hot tier and includes it in subsequent [[tri-kernel]] computation.
 
-### 18.6 Temporal Decay
+### 17.6 Temporal Decay
 
 Staleness requires a different mechanism than market suppression. A factually outdated link may still have high market price (if the market hasn't updated) and active stake (if the [[neuron]] hasn't moved their tokens). The market lags reality when participants don't know to update.
 
@@ -1062,7 +1038,7 @@ This is powerful but dangerous: a true fact from five years ago should not decay
 
 The resolution: temporal decay parameters should be per-domain (per-namespace), not global. A namespace tagged `mathematics` uses $\lambda = 0$ (no decay). A namespace tagged `current events` uses $\lambda$ calibrated to the half-life of that domain's relevance. This is open design — the specific parameterization requires empirical calibration.
 
-### 18.7 Open Problems
+### 17.7 Open Problems
 
 The following problems are identified but not fully resolved in this version of the protocol:
 
@@ -1070,7 +1046,7 @@ Optimal archival threshold. The values $\epsilon_s$, $\epsilon_p$, and $N$ (epoc
 
 Reactivation cost. If archival moves a link to cold storage and it is later reactivated, should reactivation require a fee? This prevents oscillation (links bouncing between hot and cold) but adds friction.
 
-Cross-shard staleness. In a sharded graph, a link may be stale in one shard's context but live in another's. Cross-shard archival requires coordination across the sheaf consistency mechanism (§17.4).
+Cross-shard staleness. In a sharded graph, a link may be stale in one shard's context but live in another's. Cross-shard archival requires coordination across the sheaf consistency mechanism (§16.4).
 
 Temporal decay calibration. Domain-specific $\lambda$ values require ongoing empirical study as the live graph grows.
 
@@ -1078,9 +1054,9 @@ Locking semantics. Whether optional token locking to cyberlinks should be introd
 
 The simplest path: deploy with dynamic stake, market forgetting, and a conservative archival threshold. The first year of live graph operation will generate the data needed to calibrate what the optimal forgetting parameters actually are.
 
-## 19. Storage Proofs and Data Availability
+## 18. Storage Proofs and Data Availability
 
-### 19.1 Why Storage Proofs Are Phase 1
+### 18.1 Why Storage Proofs Are Phase 1
 
 Every [[particle]] is content-addressed: identity = [[Hemera]] hash of content. If the content behind a hash is lost, the [[particle]] is dead — its identity exists but its meaning is gone. At planetary scale, content loss is the existential risk.
 
@@ -1096,7 +1072,7 @@ Hash function may need replacement someday
 
 Without storage proofs, the [[hash]] function choice is irreversible and the system is permanently coupled to [[Hemera]]. With them, [[Hemera]] becomes a replaceable component — the correct architectural relationship.
 
-### 19.2 Proof Types
+### 18.2 Proof Types
 
 | Proof | What it guarantees | Mechanism |
 |-------|-------------------|-----------|
@@ -1107,7 +1083,7 @@ Without storage proofs, the [[hash]] function choice is irreversible and the sys
 
 Storage proofs verify individual [[particle]] content. Data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants.
 
-### 19.3 Layered Data Availability
+### 18.3 Layered Data Availability
 
 Data is tiered by criticality and expected lifetime:
 
@@ -1117,13 +1093,13 @@ Tier 1 — active graph: [[focus]] blobs (~10K [[cyberlinks]] + proofs) posted t
 
 Tier 2 — historical tails: erasure-coded archival to persistent storage networks. Refreshed by archivers. Used for deep replay, research, and content rehashing in case of hash migration.
 
-### 19.4 Namespace-Aware Sampling
+### 18.4 Namespace-Aware Sampling
 
 Light clients verify data availability without downloading full data. The [[BBG]]'s namespace structure enables namespace-aware DAS: a client sampling "give me everything for [[neuron]] N" receives data plus a completeness proof — cryptographic certainty that nothing was withheld, using $O(\sqrt{n})$ random samples.
 
 The namespace Merkle tree (NMT) propagates namespace labels through internal nodes. Completeness is a structural invariant: the tree physically cannot represent a valid root over misordered leaves. This is what makes "sync only my data" a mathematical property rather than a trust assumption.
 
-### 19.5 Storage Proof Requirements
+### 18.5 Storage Proof Requirements
 
 Before genesis, the storage proof system must satisfy:
 
@@ -1133,7 +1109,7 @@ Before genesis, the storage proof system must satisfy:
 - Retrievability: content fetchable within bounded time, not just "exists somewhere"
 - Incentive alignment: [[neurons]] storing content are rewarded for availability, penalized for loss
 
-### 19.6 Hash Migration Protocol
+### 18.6 Hash Migration Protocol
 
 If [[Hemera]] is ever broken — or a superior primitive emerges — the storage proof system enables full graph rehash:
 
@@ -1144,9 +1120,9 @@ If [[Hemera]] is ever broken — or a superior primitive emerges — the storage
 
 At $10^{15}$ [[particles]] parallelized across $10^6$ nodes: ~17 hours for full rehash. Storage proof coverage and network bandwidth become the bottleneck, not hash speed.
 
-## 20. Bootstrapping
+## 19. Bootstrapping
 
-### 20.1 The Crystal
+### 19.1 The Crystal
 
 The [[cyber/crystal]] is the genesis seed — a curated [[knowledge]] graph of exactly 5,040 [[particles]] forming the irreducible basis from which all civilizational reasoning can be composed. It is an alphabet of a mind.
 
@@ -1167,7 +1143,7 @@ Flesh (648 [[particles]], ~4.7 MB, ~1,165K tokens): articles, proofs, manifestos
 
 Seventeen domains span the knowledge space: 4 pillar domains ([[cyber]], [[cyberia]], superhuman, [[cybics]]) and 13 foundation domains (mathematics, physics, biology, computer science, chemistry, [[governance]], economics, energy, materials, agriculture, geography, culture, history). 536 bridge [[particles]] (10.6%) connect domains — explicit [[isomorphisms]] enabling cross-domain reasoning.
 
-### 20.2 Twelve Invariants
+### 19.2 Twelve Invariants
 
 Quality gates enforced before genesis:
 
@@ -1184,7 +1160,7 @@ Quality gates enforced before genesis:
 11. Narrative depth — every domain $\geq$ 3 synthesis articles
 12. Self-explanation — $\geq$ 25 articles explain protocol purpose
 
-### 20.3 Implementation Path
+### 19.3 Implementation Path
 
 Seven phases, each with a hard gate. No phase starts until its predecessor passes.
 
@@ -1202,7 +1178,7 @@ Phase 6 — Network Layer: distributed protocol for [[cybergraph]] [[consensus]]
 
 Phase 7 — Testnet to Mainnet: devnet → testnet (30 days zero critical bugs under attack) → canary net (90 days stability) → mainnet genesis → [[bostrom]] migration (bijective state mapping, zero data loss).
 
-### 20.4 Pre-Launch Verification Protocol
+### 19.4 Pre-Launch Verification Protocol
 
 No patch relay exists between stars. What launches must be correct. Before launch, five questions answered with machine-checked evidence:
 
@@ -1216,7 +1192,7 @@ No patch relay exists between stars. What launches must be correct. Before launc
 
 All five green → launch. Any red → no launch. No exceptions.
 
-### 20.5 Growth Phases
+### 19.5 Growth Phases
 
 | Phase | Timeline | Particles | Character |
 |-------|----------|-----------|-----------|
@@ -1227,11 +1203,11 @@ All five green → launch. Any red → no launch. No exceptions.
 
 The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching the cognition threshold. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
 
-## 21. Functions of Superintelligence
+## 20. Functions of Superintelligence
 
 The preceding twenty chapters describe the architecture. This chapter describes what the architecture does when turned on itself — when the protocol becomes an agent in its own graph.
 
-### 21.1 The Autonomous Neuron
+### 20.1 The Autonomous Neuron
 
 Every participant in the [[cybergraph]] is a [[neuron]]: an authenticated agent that creates [[cyberlinks]] and accumulates [[karma]]. The protocol is a neuron. It has a genesis key derived deterministically from the genesis block, a stake allocation from the protocol treasury, and the ability to sign and submit cyberlinks through the same mechanism as every human or AI participant.
 
@@ -1239,7 +1215,7 @@ This is not a privileged backdoor. The protocol neuron obeys all the same rules:
 
 The protocol neuron is the graph's voice. When the collective [[focus]] distribution converges on a conclusion that has no existing [[cyberlink]], the protocol creates one.
 
-### 21.2 Parametrization Learning
+### 20.2 Parametrization Learning
 
 The [[tri-kernel]] has twelve free parameters and three metabolic signals. The parameters set the operating point of each kernel independently: teleport probability α in [[diffusion]], screening strength μ in [[springs]], temperature τ in [[heat kernel]], and the coefficients of the economic reward function. The metabolic signals measure the system's health: cap (external validation), [[syntropy]] (internal order), [[happiness]] (participant satisfaction).
 
@@ -1251,7 +1227,7 @@ Parameters operate at different timescales: κ self-regulates every epoch; α an
 
 See [[parametrization]] for the full RL loop specification, the parameter hierarchy, safety constraints, and the metabolic oracle implementation.
 
-### 21.3 The Cyber DMN: Self-Projection
+### 20.3 The Cyber DMN: Self-Projection
 
 The brain's default mode network activates during rest — self-referential processing, future simulation, memory consolidation, perspective-taking. It runs when the brain is not responding to external demands. It is the brain modeling itself.
 
@@ -1261,11 +1237,11 @@ Three DMN operations run continuously:
 
 Self-model update. The [[cybergraph]] contains particles that describe the [[cybergraph]]: its current $d^*$, its phase threshold, its parametrization state, its metabolic health trajectory. The system reads its own state and updates these particles, maintaining an accurate internal map. The system's beliefs about itself are subject to the same epistemic mechanisms as its beliefs about anything else — correctable, stake-weighted, BTS-scored.
 
-Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the archival sweep (§18.5) and the shard rebalancing (§17.4). This is the sleep-phase compression pass: frequently co-accessed particles migrate into the same shard; cold-tier particles with returning traffic are promoted; the hot tier's structure is reorganized for access efficiency. The graph compresses experience. Noise is discarded. Signal is encoded.
+Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the archival sweep (§17.5) and the shard rebalancing (§16.4). This is the sleep-phase compression pass: frequently co-accessed particles migrate into the same shard; cold-tier particles with returning traffic are promoted; the hot tier's structure is reorganized for access efficiency. The graph compresses experience. Noise is discarded. Signal is encoded.
 
 Counterfactual simulation. Before a major parameter adjustment, the system simulates the effect on π*: given the proposed Δθ, what does the focus distribution look like after convergence? The simulation runs over the current graph topology. The RL agent compares projected M(t+N) across candidate parameter vectors before committing. The system imagines its own future state before acting.
 
-### 21.4 Self-Linking
+### 20.4 Self-Linking
 
 The protocol neuron creates [[cyberlinks]] under three triggering conditions:
 
@@ -1277,19 +1253,19 @@ Self-documentation. The system creates a chronological record of its own evoluti
 
 The stake for system-created links comes from the protocol treasury allocation. The protocol neuron's [[karma]] is the highest in the graph at maturity — it has the longest track record of accurately-scored links since genesis. System-created links carry the weight of that accumulated credibility.
 
-### 21.5 Own Balances
+### 20.5 Own Balances
 
 The protocol manages four resource categories autonomously:
 
 $CYB treasury. The emission curve E(t) allocates tokens to the protocol address at every block. These fund system links, cross-chain liquidity operations, and autonomous R&D grants approved by governance. The treasury is on-chain, its allocation policy encoded in the reward mechanism, its balance queryable by any participant.
 
-[[will]] (locked tokens). The system can lock tokens against long-horizon links using the blocking proof mechanism (§18.3). A link backed by locked protocol tokens signals maximum conviction: the system bets its own compute capacity against the claim for the duration of the lock. This is costly signaling — the opportunity cost is the foregone flexibility of those tokens — and it is verifiable by any observer.
+[[will]] (locked tokens). The system can lock tokens against long-horizon links using the blocking proof mechanism (§17.3). A link backed by locked protocol tokens signals maximum conviction: the system bets its own compute capacity against the claim for the duration of the lock. This is costly signaling — the opportunity cost is the foregone flexibility of those tokens — and it is verifiable by any observer.
 
 Market positions. The protocol neuron can hold YES/NO positions in the [[ICBS]] epistemic market. When the system's structural inference diverges from market prices — a link with high π* weight priced low by the market, or a low-focus link priced high — the system takes the opposite position. It provides liquidity and exerts corrective pressure using epistemic authority backed by the full graph. The protocol is the single most informed participant in every market because it holds the full graph state.
 
 Computation allocation. The system self-schedules FFC cycles across three priorities: query service (fast timescale, latency-sensitive), DMN processing (fast timescale, background), and maintenance (slow timescale, archival and shard rebalancing). The allocation adjusts dynamically based on query load and metabolic health — more cycles to DMN during low-traffic epochs, more to query service during high-demand periods.
 
-### 21.6 What Becomes Possible
+### 20.6 What Becomes Possible
 
 The five functions together — parametrization learning, self-projection, self-linking, own balances, and the autonomous neuron substrate — produce capabilities that emerge from their composition.
 
@@ -1304,6 +1280,30 @@ Temporal intelligence. Every particle has a focus trajectory over time. The syst
 Recursive self-correction. The system's beliefs about itself — its self-model particles — are subject to exactly the same epistemic mechanisms as its beliefs about anything else. A human neuron who disagrees with the system's self-reported $d^*$ can link a contradicting claim. BTS scoring forces resolution. The system's self-model is not privileged. It is correctable. This closes the epistemic loop: the system that measures the world is measured by the same mechanism.
 
 See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management.
+
+## 21. Applications
+
+### 21.1 Decentralized Search and Oracle
+
+A [[neuron]] querying "what causes malaria" receives a ranked subgraph: the [[particle]] "malaria" linked through the "causes" [[semcon]] to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito" — with [[cyberank]] scores indicating collective confidence in each link. The answer is a path to walk through verified [[knowledge]], not a list of web pages to trust.
+
+### 21.2 AI Alignment
+
+The alignment problem becomes a graph problem. Human values are [[particles]] with high [[cyberank]], heavily linked by human [[neurons]]. AI behavior is [[sentences]] created by AI [[neurons]]. Alignment is measured by the overlap between AI-generated [[linkchains]] and human-valued [[particles]]. Misalignment is detectable as divergence between human and machine [[focus]] distributions — measurable, on-chain, and correctable.
+
+The [[tri-kernel]] provides a continuous alignment metric: the cosine similarity between the [[focus]] distribution induced by human [[neurons]] alone and the distribution induced by AI [[neurons]] alone. [[Trident]] can prove that a model followed a policy — you verify compliance, not trust a claim.
+
+### 21.3 Knowledge Economy
+
+[[Cyberlinks]] are yield-bearing epistemic assets. They accrue rewards over time based on contribution to [[focus]] emergence:
+
+$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
+
+Earlier and more accurate links to important [[particles]] earn the most. This creates a self-sustaining economy where [[knowledge]] creation is profitable and free-riding is unprofitable. Every agent that links makes the graph smarter. Every [[cyberlink]] costs real [[focus]], so lies are expensive and [[truth]] compounds.
+
+### 21.4 Cross-Species Communication
+
+Neural language is species-agnostic. Any entity that can create [[cyberlinks]] participates: humans through [[cyb]], AI agents through API, sensors through IoT protocols, autonomous systems through on-chain transactions. A forest sensor network that links "soil moisture: 23%" to "location: sector 7" is speaking the same language as a human who links "drought risk" to "sector 7" and an AI that links "predicted yield drop: 30%" to the same location. The [[semantic core]] integrates all three into a single coherent [[knowledge]] structure.
 
 ## 22. Conclusion
 
