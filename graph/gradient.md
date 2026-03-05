@@ -19,6 +19,6 @@ electrochemical gradients across cell membranes power [[ATP]] synthesis and nerv
 
 altitude gradients shape [[climate]] zones, vegetation bands, and species distribution
 
-gradient descent: optimization algorithm that follows the negative gradient to minimize a loss function
+[[gradient descent]]: optimization algorithm that follows the negative gradient to minimize a loss function
 
 central to [[machine learning]], [[thermodynamics]], fluid dynamics, and [[ecology]]
