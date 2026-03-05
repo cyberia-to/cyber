@@ -96,7 +96,7 @@ the mathematical lineage, grouped by role:
 convergence and structure
 - Markov chains, ergodic theory — existence/uniqueness of π, mixing time bounds
 - spectral graph theory — conductance/Cheeger constants relate to mixing speed
-- Perron-Frobenius theorem — guarantees the positive eigenvector
+- [[Perron-Frobenius theorem]] — guarantees the positive eigenvector
 
 the three operators
 - random walks, eigenvector centrality, PageRank — diffusion primitive

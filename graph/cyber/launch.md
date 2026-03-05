@@ -18,7 +18,7 @@ Version: 2026.02 | Status: Genesis → Self-Hosting transition
 
 | Component | Status | Evidence |
 |-----------|--------|----------|
-| [[cft]] | Mathematically proven | Perron-Frobenius convergence, 8 years R&D |
+| [[cft]] | Mathematically proven | [[Perron-Frobenius theorem\|Perron-Frobenius]] convergence, 8 years R&D |
 | [[tri-kernel]] discovery | Complete | Systematic elimination — only 3 operator families survive locality filter |
 | Three-layer instruction set (16 patterns + hint + 5 jets) | Specified + Layer 1 implemented | Python interpreter, Rust interpreter |
 | [[focus]]-based cost metering | Implemented | Deterministic costs over [[Goldilocks field]] |

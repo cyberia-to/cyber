@@ -95,7 +95,7 @@ Step 1 (Markov Chain): The matrix $P = [p_{ij}]$ is stochastic. Non-negativity: 
 
 Step 2 (Irreducibility): For any pair $(u, v)$, a path from $u$ to $v$ exists with positive probability. The chain is irreducible.
 
-Step 3 (Uniqueness): Since $P$ is irreducible and aperiodic, the chain is ergodic. By the Perron-Frobenius theorem, a unique stationary distribution $\pi$ exists satisfying $\pi P = \pi$, $\sum_i \pi_i = 1$.
+Step 3 (Uniqueness): Since $P$ is irreducible and aperiodic, the chain is ergodic. By the [[Perron-Frobenius theorem]], a unique stationary distribution $\pi$ exists satisfying $\pi P = \pi$, $\sum_i \pi_i = 1$.
 
 Step 4 (Convergence): By the ergodic theorem, for any initial distribution $\mu^{(0)}$:
 

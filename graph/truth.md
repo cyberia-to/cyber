@@ -30,7 +30,7 @@ both layers are necessary. a link that exists but the market disbelieves is supp
 
 ## why truth converges
 
-the [[tri-kernel]] has a unique fixed point $\pi^*$ under ergodicity (Perron-Frobenius). the truth signal is objective in the only sense that matters: independent agents starting from different initial distributions converge to the same $\pi^*$ if they share the same link set $L$.
+the [[tri-kernel]] has a unique fixed point $\pi^*$ under ergodicity ([[Perron-Frobenius theorem|Perron-Frobenius]]). the truth signal is objective in the only sense that matters: independent agents starting from different initial distributions converge to the same $\pi^*$ if they share the same link set $L$.
 
 this is the graph-theoretic analog of reproducibility. a cyberlink is epistemically true if independent market participants, evaluating the same structural link from their own private signals, converge on a high ICBS price for it. truth = convergence. noise = divergence. [[syntropy]] $J(\pi^*) = D_{KL}(\pi^* \| u)$ measures how far the collective has moved from noise.
 

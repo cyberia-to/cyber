@@ -1133,7 +1133,7 @@ Structure ([[springs]]) + context ([[heat kernel]]) + exploration ([[diffusion]]
 
 The composite operator ℛ = norm[λ_d·D + λ_s·S + λ_h·H_τ] is a contraction under standard conditions:
 
-- Diffusion: Perron-Frobenius guarantees unique stationary distribution under ergodicity (strong connectivity + aperiodicity). Geometric convergence via teleport.
+- Diffusion: [[Perron-Frobenius theorem]] guarantees unique stationary distribution under ergodicity (strong connectivity + aperiodicity). Geometric convergence via teleport.
 - Springs: Screening μ > 0 ensures (L+μI) is strictly positive definite. Exponential decay of Green's function.
 - Heat: Bounded τ ensures H_τ is contractive. Gaussian tail decay.
 

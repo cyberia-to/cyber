@@ -84,7 +84,7 @@ The transition matrix P is:
 - Irreducible (graph is strongly connected by assumption)
 - Aperiodic (self-loops or odd cycles exist)
 
-By Perron-Frobenius theorem, there exists a unique π where:
+By [[Perron-Frobenius theorem]], there exists a unique π where:
   πP = π
   Σᵢ πᵢ = 1
   πᵢ > 0 for all i

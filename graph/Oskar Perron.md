@@ -6,7 +6,7 @@ stake: 4886734055700377
 ---
 1880-1975. German mathematician.
 
-Proved the Perron-Frobenius theorem (1907): every positive square matrix has a unique largest eigenvalue with a corresponding positive eigenvector.
+Proved the [[Perron-Frobenius theorem]] (1907): every positive square matrix has a unique largest eigenvalue with a corresponding positive eigenvector.
 
 This theorem guarantees that Markov chains on connected graphs converge to a unique stationary distribution — the mathematical foundation of [[PageRank]] and [[cyberank]].
 

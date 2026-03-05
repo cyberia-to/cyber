@@ -98,7 +98,7 @@ $\mathcal{D}$ is the [[diffusion]] operator (random walk with teleport: answers 
 
 T1 (existence and uniqueness of focus): let $A^{\text{eff}}$ induce a strongly connected aperiodic graph on $P$. then $\mathcal{R}$ has a unique strictly positive fixed point $\pi^* \in \Delta^{|P|-1}$: $\mathcal{R}(\pi^*) = \pi^*$, $\pi^*_p > 0$ for all $p$.
 
-proof: $\mathcal{R}$ is a convex combination of stochastic positive operators. by Perron-Frobenius, each component has a unique positive eigenvector with eigenvalue 1. the convex combination inherits this property under ergodicity. see [[collective focus theorem]] Part I (diffusion alone) and Part II (full composite) for the complete proof.
+proof: $\mathcal{R}$ is a convex combination of stochastic positive operators. by the [[Perron-Frobenius theorem]], each component has a unique positive eigenvector with eigenvalue 1. the convex combination inherits this property under ergodicity. see [[collective focus theorem]] Part I (diffusion alone) and Part II (full composite) for the complete proof.
 
 T2 (conservation): for all $t \geq 0$ and all initial $\phi^{(0)} \in \Delta^{|P|-1}$: $\sum_{p} \phi^{(t)}_p = 1$.
 
@@ -188,7 +188,7 @@ cybergraphs and their homomorphisms form a category $\mathbf{CG}$. there is a fo
 
 | property | formal status |
 |---|---|
-| $\pi^*$ exists, unique, strictly positive | theorem — T1, Perron-Frobenius |
+| $\pi^*$ exists, unique, strictly positive | theorem — T1, [[Perron-Frobenius theorem\|Perron-Frobenius]] |
 | $\sum_p \pi^*_p = 1$ | structural invariant — A5 + stochasticity |
 | convergence at rate $(1-\lambda_2)^t$ | theorem — T3, Banach FPT |
 | locality radius $O(\log 1/\varepsilon)$ | theorem — T4, operator decay |

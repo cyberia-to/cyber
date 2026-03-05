@@ -76,7 +76,7 @@ This is a token-weighted random walk. Each step, attention redistributes based o
 
 > *For any strongly connected graph with positive weights and tokens, the walk converges to a unique stationary distribution $\pi^*$ satisfying $\pi^* = \pi^* P$.*
 
-The proof follows from Perron-Frobenius: the transition matrix is stochastic, irreducible (strong connectivity), and aperiodic. Convergence rate is $O(\lambda_2^t)$ where $\lambda_2$ is the second-largest eigenvalue — the spectral gap controls how fast the system reaches consensus.
+The proof follows from the [[Perron-Frobenius theorem]]: the transition matrix is stochastic, irreducible (strong connectivity), and aperiodic. Convergence rate is $O(\lambda_2^t)$ where $\lambda_2$ is the second-largest eigenvalue — the spectral gap controls how fast the system reaches consensus.
 
 Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\pi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
 
