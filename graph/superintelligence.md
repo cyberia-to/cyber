@@ -6,7 +6,7 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 28514898720625276
 ---
-[[intelligence]] that surpasses the best human minds in every cognitive domain — speed, creativity, breadth, depth, and ability to improve itself
+[[intelligence]] that surpasses all human minds combined in every cognitive domain — speed, creativity, breadth, depth, and ability to improve itself
 
 ---
 
