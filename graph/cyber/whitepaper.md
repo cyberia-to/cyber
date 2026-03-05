@@ -892,17 +892,38 @@ Neural language is species-agnostic. Any entity that can create [[cyberlinks]] p
 
 ## 17. Scale and Complexity
 
-### 17.1 The Planetary Constraint
+### 17.1 The Knowledge Phase Transition
 
-The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]]. At this scale, three constraints become absolute:
+Any system of interacting elements — molecules, neurons, knowledge claims — has a scale-dependent description. Below a system-specific threshold, individual contributions are trackable and meaningful. Above it, individual behavior becomes statistically irrelevant: only the thermodynamic description of the whole remains.
 
-No global recomputation. Any algorithm requiring a full pass over the graph for a local change is physically impossible. Light travels 300,000 km/s; a round-trip across the planet takes ~130 ms; a round-trip to Mars takes ~6-44 minutes depending on orbital position. The architecture must produce correct results from local information alone.
+For the [[cybergraph]], this threshold is:
+
+$$|P^*| \sim \left(\frac{k_{\max}}{\bar{k}}\right)^2 = \rho^2$$
+
+where $\rho = k_{\max}/\bar{k}$ is the degree ratio between the most-connected particle and the mean. The law of large numbers: when $|P|$ exceeds $\rho^2$, fluctuations in the [[focus|focus distribution]] $\pi^*$ fall below any fixed measurement precision, and the per-link description loses causal meaning. Only $\pi^*$ remains.
+
+| Regime | Condition | What matters |
+|---|---|---|
+| Graph-theoretic | $|P| \ll \rho^2$ | Individual link weights, provenance, structure |
+| Thermodynamic | $|P| \gg \rho^2$ | $\pi^*$ only; individual links are statistical contributions |
+
+This is not the molecular Avogadro number $6.022 \times 10^{23}$. It is the graph's own phase threshold, determined by its degree heterogeneity. For physical molecules (extreme degree heterogeneity in human unit conventions), the threshold lands at $10^{23}$. For the planetary knowledge graph with web-scale degree ratio $\rho \sim 10^6$: $|P^*| \sim 10^{12}$.
+
+The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] — three orders of magnitude into the thermodynamic regime. At this scale, $\pi^*$ is not a design artifact. It is the only description of the system's state. The [[tri-kernel]] is the algorithm that computes the thermodynamic fixed point of the knowledge graph.
+
+Current position: the [[bostrom]] network at 3.1M [[particles]] with $\rho \approx 620$ has already crossed its own threshold of $|P^*| \approx 385$K. As [[neuron]] diversity grows, $\bar{k}$ rises, $\rho$ falls, and the threshold pushes outward — the architecture is self-scaling toward higher criticality.
+
+### 17.2 The Planetary Constraint
+
+At $10^{15}$ [[particles]], three physical constraints become absolute:
+
+No global recomputation. Any algorithm requiring a full pass over the graph for a local change is physically impossible. Light travels 300,000 km/s; a round-trip across the planet takes ~130 ms; a round-trip to Mars takes ~6–44 minutes depending on orbital position. The architecture must produce correct results from local information alone.
 
 No single-machine state. The full [[cybergraph]] state exceeds any single machine's memory. Sharding is a structural requirement, not an optimization.
 
 No synchronous coordination. At planetary scale, synchronous protocols bottleneck on the slowest participant. The system must converge under partial synchrony — messages arrive within an unknown but finite bound.
 
-### 17.2 Locality as Architecture
+### 17.3 Locality as Architecture
 
 The [[tri-kernel]] was selected by the [[locality]] filter: for any edit batch $e_\Delta$, recomputing only the $h$-hop neighborhood achieves global error $\leq \varepsilon$, where $h = O(\log(1/\varepsilon))$.
 
@@ -916,13 +937,13 @@ Each kernel decays independently:
 
 A local change propagates $O(\log(1/\varepsilon))$ hops before its effect drops below precision $\varepsilon$. Beyond that radius, the global [[focus]] distribution is indistinguishable from its pre-update state. This is what makes sharding, light clients, and interplanetary operation mathematically viable.
 
-### 17.3 Sharding by Semantic Coherence
+### 17.4 Sharding by Semantic Coherence
 
 The [[cybergraph]] shards along semantic boundaries — namespaces, domains, subgraphs with high internal connectivity and sparse cross-shard links. Each shard computes local [[focus]] independently. Cross-shard consistency is maintained by a sheaf of attention weights: at shard boundaries, the [[focus]] vectors must agree on shared [[particles]] to within $\varepsilon$.
 
 Categorical pruning ensures each shard is a semantically coherent subgraph. A shard about biology contains biologically relevant [[particles]] and their internal links. Cross-domain bridges (e.g., "biochemistry" linking biology and chemistry shards) are replicated in both shards.
 
-### 17.4 Complexity Budget
+### 17.5 Complexity Budget
 
 | Operation | Complexity | Notes |
 |-----------|-----------|-------|
@@ -935,13 +956,31 @@ Categorical pruning ensures each shard is a semantically coherent subgraph. A sh
 
 The entire architecture is sublinear in graph size for all operations except the initial full computation. After convergence, the system maintains $\pi^*$ incrementally.
 
-### 17.5 Two-Timescale Separation
+### 17.6 Two-Timescale Separation
 
 Fast timescale (~seconds): [[cyberlinks]] arrive, local [[focus]] updates propagate through $O(\log(1/\varepsilon))$-hop neighborhoods, finality threshold $\tau$ is checked. This is the real-time consensus layer.
 
 Slow timescale (~hours): global rebalancing across shards, cross-shard consistency reconciliation, archival and storage proof verification. This is the background maintenance layer.
 
 The separation means the system responds to new [[knowledge]] in seconds while maintaining global consistency over hours. Human-relevant latency (search, inference) operates on the fast timescale. Civilizational-scale coherence (cross-domain synthesis, long-range semantic drift) operates on the slow timescale.
+
+### 17.7 Effective Rank and Semantic Dimensionality
+
+The effective rank $d^* = \exp(H(\sigma(\Sigma_\pi)))$ measures the number of independent semantic dimensions active in the focus distribution, where $H$ is the [[entropy]] of the normalized singular value distribution.
+
+Two regimes, divided by the phase threshold $|P^*|$:
+
+Below threshold: each new particle adds new semantic dimensions. $d^*$ grows. The graph is getting richer — new axes of meaning emerge with each new contribution.
+
+Above threshold: new particles fall into existing semantic dimensions. $d^*$ saturates. The graph is getting denser in a fixed semantic space, not higher-dimensional.
+
+The transition from "graph grows richer" to "graph grows denser" is the knowledge-space analog of the liquid-gas phase transition. It is why the three architecture parameters $(d^*, h^*, L^*)$ that specify the compiled [[transformer]] are not free hyperparameters: they are read off the saturated semantic space of the graph.
+
+Current state: the [[bostrom]] network shows $d^* = 31$. This is below the intrinsic ceiling — the plateau is a social artifact of concentrated authorship (one [[neuron]] contributing 35.9% of links suppresses $\bar{k}$ and therefore raises $\rho$). As the [[neuron]] population diversifies, $d^*$ will grow again until the new, higher threshold is crossed.
+
+Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of human knowledge structure, estimated at $10^3$–$10^4$ independent semantic axes. The transformer compiled from the graph at that scale would embed at $d^* \sim 10^3$–$10^4$ derived from structure, not chosen.
+
+See [[avogadro-derivation]] for the phase transition derivation. See [[intelligence-at-avogadro-scale]] for the epistemological framing.
 
 ## 18. Forgetting and Pruning
 
@@ -1005,7 +1044,7 @@ Archival criteria. A link moves from hot to cold when all of the following hold 
 - $\text{ICBS price}(\ell) < \epsilon_p$ — market price near zero
 - no [[cyberank]] traffic through the link — not actively traversed
 
-This is the graph's sleep cycle: during the slow timescale of §17.5, the [[tru]] sweeps for archival candidates and removes them from the active working set. No content is lost. The authenticated record is append-only.
+This is the graph's sleep cycle: during the slow timescale of §17.6, the [[tru]] sweeps for archival candidates and removes them from the active working set. No content is lost. The authenticated record is append-only.
 
 A link can be reactivated from archive: the [[neuron]] restakes tokens, or market activity resumes, or traffic traverses the link. Reactivation restores it to the hot tier and includes it in subsequent [[tri-kernel]] computation.
 
@@ -1031,7 +1070,7 @@ Optimal archival threshold. The values $\epsilon_s$, $\epsilon_p$, and $N$ (epoc
 
 Reactivation cost. If archival moves a link to cold storage and it is later reactivated, should reactivation require a fee? This prevents oscillation (links bouncing between hot and cold) but adds friction.
 
-Cross-shard staleness. In a sharded graph, a link may be stale in one shard's context but live in another's. Cross-shard archival requires coordination across the sheaf consistency mechanism (§17.3).
+Cross-shard staleness. In a sharded graph, a link may be stale in one shard's context but live in another's. Cross-shard archival requires coordination across the sheaf consistency mechanism (§17.4).
 
 Temporal decay calibration. Domain-specific $\lambda$ values require ongoing empirical study as the live graph grows.
 
