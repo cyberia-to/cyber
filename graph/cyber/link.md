@@ -19,7 +19,7 @@ $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P 
 
 | field | name | type | layer | semantics | question |
 |-------|------|------|-------|-----------|----------|
-| $\nu$ | author | $N$ | structural | signing [[neuron]] | [[who]] asserts this? |
+| $\nu$ | [[subject]] | $N$ | structural | signing [[neuron]] | [[who]] asserts this? |
 | $p$ | from | $P$ | structural | source [[particle]] | [[what]] is the source? |
 | $q$ | to | $P$ | structural | target [[particle]] | [[what]] is the target? |
 | $\tau$ | token | $\mathcal{T}$ | economic | token denomination | in what denomination? |
