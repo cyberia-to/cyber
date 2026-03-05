@@ -8,6 +8,8 @@ stake: 19039223593637832
 ---
 # cyber: a protocol for planetary superintelligence
 
+> DRAFT — work in progress. this document is research and educational material only. specifications, mechanisms, and numbers will change. do not use as the basis for financial or technical decisions. not ready for production.
+
 ## 1. Introduction
 
 ### 1.1 The Vision: Planetary Superintelligence
