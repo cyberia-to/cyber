@@ -179,17 +179,17 @@ every [[particle]] in the [[cybergraph]] has a type. the type is the language. t
 
 #### content — 9 languages
 
-| language | what it is | GPU mapping |
-|----------|-----------|-------------|
-| [[text]] | [[markdown]], prose, code | glyphs via compute shader rasterization |
-| [[struct]] | JSON, TOML — trees and configs | collapsible tree of text glyphs |
-| [[table]] | 2D data, CSV | grid of text cells, virtualized rows |
-| [[vector]] | SVG, paths, Bezier curves | path rasterization via Vello |
-| [[pixels]] | raster image | texture upload, GPU sampler |
-| [[video]] | moving pixels | hardware decode, texture per frame |
-| [[sound]] | waveform, audio stream | audio pipeline (visual: waveform shader) |
-| [[formula]] | LaTeX / MathML — math notation | glyph layout + vector curves via Vello |
-| [[component]] | composition of primitives | nested render pass |
+| language | source formats | what it carries |
+|----------|---------------|-----------------|
+| [[text]] | [[markdown]], plain text, source code | prose, documentation, messages, programs |
+| [[struct]] | JSON, TOML, YAML | trees, configs, schemas, metadata, ABIs |
+| [[table]] | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
+| [[vector]] | SVG, Bezier paths | diagrams, maps, molecular structures, schematics |
+| [[pixels]] | PNG, WebP, JPEG | photographs, satellite imagery, microscopy, scans |
+| [[video]] | WebM, MP4 | recordings, simulations, observations, lectures |
+| [[sound]] | WAV, OGG, MP3 | voice, music, birdsong, seismic signal, sonar |
+| [[formula]] | LaTeX, MathML | equations, proofs, chemical notation, physical laws |
+| [[component]] | composition of the above | applications, dashboards, interactive tools |
 
 #### interactive — 5 primitives
 
