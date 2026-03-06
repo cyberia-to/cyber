@@ -17,7 +17,7 @@ the robot is the point of presence — where you end and the [[cybergraph]] begi
 
 ### 1.1 the vision
 
-imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you are gone. that speaks nine content languages natively and renders them all through a single GPU pipeline. that runs on any hardware, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
+imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you are gone. that speaks nine computation languages natively, renders them through nine perception primitives, and drives interaction through ten decision primitives. that runs on any hardware, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
 
 this is not a future product. it is a design decision made at the foundation
 
@@ -43,8 +43,9 @@ this document specifies the architecture of cyb:
 
 - the robot — three forms: neuron, avatar, prog
 - the six primitives — brain, sense, sigma, avatars, time, robot
-- the nine languages — the particle type system and GPU render pipeline
-- the language stack — datalog, rune, [[neural language]]
+- the three grids — computation (9 languages), perception (9 primitives), decision (10 primitives)
+- the value tower — three atoms, three reference modes
+- the language stack — rune, [[neural language]]
 - the oracle — ask, learn, search
 - AIPs — autonomous intelligence programs
 - AI in the robot — four levels of inference
@@ -173,7 +174,9 @@ the container. the sovereign instance that holds the five other primitives toget
 
 ---
 
-## 5. the nine languages
+## 5. the three grids
+
+the operating system is the membrane between three grids. every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own algebra. cyb/os is a stack of typed universes — nine computation languages compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one proof system
 
 a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. nine fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure
 
@@ -191,6 +194,26 @@ a data type deserves its own language when its algebraic laws are so different f
 | Continuum | [[Wav]] | Signal | Convolution | Sensing |
 | Linear | [[Ten]] | Tensor | Contraction | Learning |
 
+#### the value tower — three atoms
+
+Byte and Field share the same mathematical substrate — the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. this substrate provides three atom types sufficient for seven of the nine universes
+
+| tag | name | representation | use |
+|-----|------|---------------|-----|
+| 0x00 | `field` | single $\mathbb{F}_p$ element | arithmetic |
+| 0x01 | `word` | single $\mathbb{F}_p$ element, range $[0, 2^{64})$ | bitwise |
+| 0x02 | `hash` | $4 \times \mathbb{F}_p$ elements (256-bit digest) | identity |
+
+three fundamentally different ways to refer to a value — and there are only three:
+
+```
+field = the value IS the reference     (by content — immediate)
+word  = position IS the reference      (by location — index)
+hash  = name IS the reference          (by commitment — identity)
+```
+
+by what it is. by where it is. by what it is called. every reference in any system reduces to one of these three modes. every higher type decomposes into [[Nox]] trees over these three atoms. the single exception is [[Bt]]: a bit lives in $\mathbb{F}_2$ — different characteristic, different algebra, separate proof system
+
 every computation language has a canonical rendering — the perception primitive where the shape of the data matches the shape of the display
 
 #### perception — 9 primitives
@@ -207,15 +230,39 @@ every computation language has a canonical rendering — the perception primitiv
 | [[Wav]] → [[sound]] | audio waveform | WAV, OGG, MP3 | voice, music, birdsong, seismic signal, sonar |
 | [[Ten]] → [[component]] | nested composition | composition of the above | applications, dashboards, interactive tools |
 
-#### interactive — 5 primitives
+#### decision — 10 primitives
 
-| primitive | what it is | how it maps |
-|-----------|-----------|-------------|
-| action | tap, click, press | any perception primitive + onClick handler |
-| input text | string, textarea, code editor | text + editable flag + cursor + IME |
-| input choice | select, radio, checkbox, toggle | struct (options) + selectable flag |
-| input range | slider, scroll, zoom | number + bounds + draggable |
-| input media | camera, microphone, file upload | pixels/sound + capture pipeline |
+every human interaction with a computer is a decision. a tap is a choice. a scroll is a rejection of everything above and below the viewport. strip the physics away — what remains is pure decision structure. decisions are irreversible: computation can be replayed, perception can be refreshed, but once you confirm — sign, send, stake, delete — the state has changed
+
+| primitive | action | reversible? |
+|-----------|--------|-------------|
+| observe | gather without choosing — intake information, update beliefs | always |
+| filter | narrow by criteria — shape the option space | yes |
+| select | choose one from many — the atomic decision | yes |
+| rank | order by preference — stronger than select | yes |
+| compose | build a new value — create what did not exist | yes |
+| split | one becomes many — create concurrency | depends |
+| merge | many become one — resolve concurrency | depends |
+| delegate | route to another agent — choose who decides | sometimes |
+| reject | explicitly choose no — informationally rich refusal | mostly |
+| confirm | irreversible commit — possibility collapses into fact | never |
+
+each decision primitive naturally invokes specific computation and has a canonical rendering:
+
+| decision | computation language | perception primitive |
+|----------|-------------------|---------------------|
+| observe | [[Wav]] — passive signal intake | any |
+| filter | [[Ask]] — query with constraints | struct |
+| select | [[Ask]] — which option satisfies rules? | table |
+| rank | [[Ten]] — preference as vector, sort by utility | table |
+| compose | [[Rs]] — build the new value | text / vector |
+| split | [[Arc]] — partition a graph | vector |
+| merge | [[Arc]] + [[Ask]] — resolve conflicts | vector |
+| delegate | [[Arc]] — find the right agent | vector |
+| reject | [[Seq]] — mark event as rejected | video |
+| confirm | [[Trident]] — generate STARK proof of commitment | formula |
+
+the machine computes, the human decides. the computation grid produces options. the perception grid displays them. the decision grid collapses them to action. the action commits to new state, and the cycle continues
 
 #### layout — 4 modes
 
@@ -227,6 +274,93 @@ every computation language has a canonical rendering — the perception primitiv
 | page | fixed canvas, pagination | PDF, print, scientific papers |
 
 a button is `text` + `action`. a dashboard is `grid` of `table` + `vector`. a scientific paper is `page` of `text` + `formula` + `table`. an IDE is `grid` of `text` + `struct`. every UI ever made is a combination of these primitives and four layout modes
+
+#### compilation architecture
+
+all nine languages share one toolchain. each programmer face has its own syntax and type rules. all compile through [[Nox]] — the structural IR — then to proof backends or native execution
+
+```
+Bt  Rs  Trident  Arc  Seq  Ask  Wav  Ten
+ │   │     │      │    │    │    │    │
+ └───┴─────┴──────┴────┴────┴────┴────┘
+              shared frontend
+        (parse, type check, bound check)
+                    │
+             Nox structural IR
+    (axis, quote, compose, cons, branch
+     + typed computational ops
+     + Merkle authentication)
+                    │
+       ┌────────────┼────────────┐
+       │            │            │
+  Binius/FRI   Goldilocks     Native
+  (Binary)     TASM/FRI      (no proof)
+               (Byte+Field)
+    Bt         Rs, Trident   Arc, Seq, Ask,
+                             Wav, Ten
+```
+
+| source | when proof needed | when proof absent |
+|--------|------------------|-------------------|
+| [[Bt]] | Binius FRI circuit | always proving |
+| [[Rs]] | TASM → STARK (word→field lift) | native binary (Nox) |
+| [[Trident]] | TASM → STARK (field native) | WASM/EVM (Layer 0) |
+| [[Arc]] | decomposes into Trident + Bt | optimized graph engine |
+| [[Seq]] | temporal constraints → STARK | scheduler / runtime |
+| [[Ask]] | derivation trace → STARK | Datalog engine |
+| [[Wav]] | decomposes into Trident | native DSP pipeline |
+| [[Ten]] | decomposes into Trident | native BLAS / GPU |
+
+#### three temporal modes
+
+time has three fundamental disciplines — three different structural relationships to the present moment
+
+```
+stack   = nested time     = depth   = LIFO  = after { after { after } }
+heap    = concurrent time = chaos   = random = concurrent(a, b, c)
+stream  = linear time     = flow    = FIFO  = before(a, b), before(b, c)
+```
+
+| domain | stack | heap | stream |
+|--------|-------|------|--------|
+| hardware | call stack | RAM allocation | I/O bus |
+| OS | process call depth | dynamic memory | pipes, sockets |
+| network | protocol nesting | concurrent connections | packet flow |
+| consensus | nested validation | parallel validators | block sequence |
+| UI | modal dialogs, undo | independent windows | scrolling, typing |
+
+the three temporal modes map to all three grids:
+
+```
+stack (depth)        Seq: after { ... }    struct: push/pop     confirm, compose, filter
+heap  (concurrent)   Seq: concurrent(a,b)  component: windows   split, merge, delegate
+stream (flow)        Seq: before(a, b)     video / sound: play  observe, select, rank, reject
+```
+
+#### cross-grid connections
+
+the three grids interlock in a continuous decision loop — this is the cyb/os event loop:
+
+```
+loop {
+  state   = nox_tree(current)           // authenticated tree
+  options = compute(state)              // some universe produces alternatives
+  display = render(options)             // canonical primitive shows them
+  choice  = decide(human_input)         // decision primitive applied
+  proof   = commit(choice, state)       // irreversible, potentially STARK-proven
+  state   = update(state, choice, proof)// new tree root
+}
+```
+
+all three grids share one universal structural pair — fork and join:
+
+```
+computation:  axis / cons      (decompose / build tree)
+perception:   expand / nest    (drill in / compose views)
+decision:     split / merge    (diverge / converge choices)
+```
+
+fork is how structure grows. join is how consensus forms. the same skeleton wearing three costumes
 
 ### 5.1 Nox — Structure
 
@@ -274,28 +408,25 @@ all nine compile through one structural IR. all nine share one proof system (exc
 
 ## 6. the language stack
 
-the nine content languages are the object level — what particles ARE. cyb operates three meta-languages above them for working with the graph
+the nine computation languages are the object level — what the machine computes. above them sit two meta-layers for working with the graph
 
-### 6.1 datalog — the query language
+### 6.1 rune — the script language
 
-declarative graph query language running in [[CozoDB]]. ask any question about the local graph structure: recursive traversal, pattern matching, aggregation, built-in graph algorithms (PageRank, Dijkstra, Louvain) — all declarative. queries compose with rune scripts. no SQL, no REST — direct graph traversal
+dynamic async scripting language for robot automation. create [[cyberlinks]] on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions, turn human intent into prog behavior. [[Ask]] queries the graph declaratively; rune orchestrates those queries and writes back to the graph
 
-### 6.2 rune — the script language
-
-dynamic async scripting language for robot automation. create [[cyberlinks]] on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions, turn human intent into prog behavior. where [[datalog]] reads the graph, rune writes it
-
-### 6.3 neural language — the semantic layer
+### 6.2 neural language — the semantic layer
 
 the language of the [[cybergraph]] itself. meaning is not declared — it emerges from the [[tri-kernel]] as the eigenvector of collective [[attention]]. [[semcons]] are the grammar. [[sentences]] are utterances. [[motifs]] are morphemes. [[linkchains]] are inference paths. the robot renders this semantic structure as navigable space
 
-### 6.4 the four levels
+### 6.3 the three levels
 
 ```
-content (9 languages)  ← what particles ARE
-datalog                ← how you QUERY the graph
-rune                   ← how you SCRIPT against the graph
-neural language        ← how MEANING emerges from the graph
+computation (9 languages)  ← what the machine COMPUTES
+rune                       ← how you SCRIPT against the graph
+neural language            ← how MEANING emerges from the graph
 ```
+
+query is not a separate layer — [[Ask]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the nine languages subsume what was previously split between "content" and "query"
 
 ---
 
@@ -461,7 +592,7 @@ target: 50+ SoC families. every platform that can run Rust can run CybOS
 
 ### 10.6 PureRender
 
-DOM is a document-era mistake. PureRender replaces it with the fifteen primitives of §5. compilation pipeline:
+DOM is a document-era mistake. PureRender replaces it with the nine perception primitives of §5 (text, struct, table, vector, pixels, video, sound, formula, component) — composed through four layout modes (stream, grid, flex, page) and driven by ten decision primitives. compilation pipeline:
 
 ```
 source (TS strict + HTML + CSS + SVG + LaTeX)
