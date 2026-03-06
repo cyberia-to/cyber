@@ -567,19 +567,45 @@ cells replace processes: independently compiled [[Rust]] crates that can be load
 
 ### 24. No File System — the Big Badass Graph
 
-no hierarchical file system. no paths, no inodes, no directories. all persistent data lives in one structure: the BBG — a content-addressed [[knowledge graph]] that subsumes every storage layer.
+no hierarchical file system. no paths, no inodes, no directories. all persistent data lives in one structure: the BBG — a content-addressed [[knowledge graph]] that subsumes every storage layer. the graph is not a feature of the protocol — the graph IS the protocol.
 
-every piece of data is a node. every relation is a [[cyberlink]]. CIDs are the universal address space. the BBG holds everything:
+three primitives build the entire graph: [[particles]] (content-addressed nodes — identity = [[Hemera]] hash of content, 64 raw bytes, one hash function, one address space), [[cyberlinks]] (signed 7-tuple edges — $(\nu, p, q, \tau, a, v, t)$ carrying [[subject]], source, target, [[token]], amount, [[valence]], timestamp), and [[neurons]] (agents who link — identity = hash of public key). a [[particle]] exists iff at least one cyberlink touches it. a naked hash with no links never enters the graph.
 
-- state: Merkle trees over graph nodes — blockchain state is a subgraph of the BBG
-- knowledge: CIDs linked by cyberlinks — the primary structure
-- blocks: append-only chain — a linearly ordered subgraph of consensus events
-- ranks: computed over the link structure — live inside the BBG as queryable nodes
-- programs: WASM binaries, stored as particles, executed by cells
-- proofs: cryptographic commitments anchored to graph nodes
-- configuration: compiled into the binary at build time — the only exception
+the [[cybergraph]] $\mathbb{G} = (P, N, L)$ is a directed authenticated multigraph satisfying six axioms: content-addressing (A1), authentication (A2), append-only growth (A3), entry by linking (A4), [[focus]] conservation (A5), homoiconicity (A6 — the hash of a cyberlink is itself a particle). see [[cybergraph]] for the formal specification.
 
-there is no boundary between "storage" and "database". querying storage and querying knowledge are the same operation: graph traversal. the BBG is the single source of truth for the entire system.
+every [[cyberlink]] is simultaneously a [[learning]] act and an economic commitment — a card that is immutable, unique, transferable, and yield-bearing. conviction $(\tau, a)$ is a [[UTXO]]: creating a link moves tokens from wallet to edge. cheap talk produces noise. costly links produce [[knowledge]].
+
+the [[tru]] reads the graph every block and computes [[cyberank]] per particle (probability of being observed by a [[random walk]]ing neuron), [[karma]] per neuron, [[syntropy]] of the whole — the KL divergence of [[focus]] from uniform, measuring how far collective attention has organized beyond noise. the [[tri-kernel]] integrates three operators: [[diffusion]] (where probability flows), [[springs]] (what satisfies structural constraints), [[heat]] (what the graph looks like at resolution $\tau$). convergence guaranteed by the [[collective focus theorem]].
+
+the BBG maintains six [[NMT]] indexes over the same data:
+
+| index | namespace | proves |
+|-------|-----------|--------|
+| by_neuron | neuron_id | all edges created by a [[neuron]] |
+| by_particle | particle_hash | all edges touching a [[particle]] |
+| [[focus]] | neuron_id | current focus value per neuron |
+| balance | neuron_id | current balance per neuron |
+| coins | denom_hash | fungible [[token]] supply |
+| cards | card_id | non-fungible knowledge assets |
+
+the graph serves as infrastructure for itself:
+
+| function | how |
+|----------|-----|
+| identity | [[Hemera]] hash = address, graph = PKI |
+| key exchange | CSIDH curves as [[particles]], non-interactive |
+| consensus | finalized subgraph IS the canonical state |
+| fork choice | $\pi$ from graph topology |
+| finality | $\pi_i > \tau$, threshold adapts to graph density |
+| incentives | $\Delta\pi$ from convergence = reward signal |
+| proof archive | [[STARK]] proofs published as particles |
+| version control | patches = [[cyberlinks]], repos = subgraphs |
+| file system | `~neuron/path` resolves through cyberlinks |
+| data availability | [[NMT]] per row, erasure-coded, namespace-aware sampling |
+
+[[radio]] is the transport layer — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of BLAKE3. 20× cheaper in [[STARK]] proofs, one hash function end to end. content shared via verified [[Hemera]] Merkle trees. the [[brain]] is the graph file manager — discovery, linking, querying through [[CozoDB]] and [[datalog]].
+
+querying storage and querying knowledge are the same operation: graph traversal. the BBG is the single source of truth.
 
 ### 25. No Users — the Avatar System
 
