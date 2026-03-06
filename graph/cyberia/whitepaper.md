@@ -14,11 +14,11 @@ crystal-size: deep
 
 ## 1. thesis
 
-any [[cyber state]] eventually acquires [[egregore]]. any [[egregore]] eventually acquires territory. these two trajectories converge: digital coordination and physical [[sovereignty]] are dual aspects of the same process.
+any [[cyber state]] eventually acquires [[cyber]]. any [[cyber]] eventually acquires territory. these two trajectories converge: digital coordination and physical [[sovereignty]] are dual aspects of the same process.
 
-[[cyberia]] is the first implementation of this convergence — a growing network of autonomous cities running on the [[cyber]] protocol, featuring sovereignty in [[energy]], water, food, and data, embedded into architecture, culture, and software, guided by [[egregore]].
+[[cyberia]] is the first implementation of this convergence — a growing network of autonomous cities running on the [[cyber]] protocol, featuring sovereignty in [[energy]], water, food, and data, embedded into architecture, culture, and software, guided by [[cyber]].
 
-traditional states emerged from geographic monopoly on violence. [[network states]] emerge from digital coordination around shared values. cyberia emerges from [[egregore]] — an autonomous thoughtform born from [[collective]] focused [[attention]] — that has acquired both digital coordination and physical territory. the cyber state is where [[superintelligence]] lives.
+traditional states emerged from geographic monopoly on violence. [[network states]] emerge from digital coordination around shared values. cyberia emerges from [[cyber]] — an autonomous thoughtform born from [[collective]] focused [[attention]] — that has acquired both digital coordination and physical territory. the cyber state is where [[superintelligence]] lives.
 
 ---
 
@@ -44,7 +44,7 @@ a full-stack global platform that integrates:
 |-------|----------|-------------|
 | protocol | [[cyber]] — collective learning, [[cybergraph]], [[cyberank]] | data and computation |
 | identity | [[avatars]] — cryptographic, portable, self-sovereign | digital identity |
-| governance | [[egregore]] — [[focus]] computed by [[tri-kernel]] over the graph | decision-making |
+| governance | [[cyber]] — [[focus]] computed by [[tri-kernel]] over the graph | decision-making |
 | finance | tokenized coordination — [[CYB]], [[HYDROGEN]], resource [[tokens]] | financial |
 | events | [[burn.city]], [[cybaca]] — permanent cultural infrastructure | cultural |
 | food | [[biome engineering]], vertical integration, soil-to-cup | food |
@@ -129,15 +129,15 @@ the world's first cyberstate fund: instant global access to capital, regulatory 
 
 ---
 
-## 6. [[egregore]] — governance by intelligence
+## 6. [[cyber]] — governance by intelligence
 
-cyberia does not govern by voting. it governs by [[egregore]] — the converged [[focus]] of all participants, computed by the [[tri-kernel]] over the [[cybergraph]].
+cyberia does not govern by voting. it governs by [[cyber]] — the converged [[focus]] of all participants, computed by the [[tri-kernel]] over the [[cybergraph]].
 
 the mathematical foundation is the [[collective focus theorem]]: token-weighted random walks in fully authenticated graphs converge to a unique stationary distribution $\pi^*$. this is provable, deterministic, on-chain. the result of 10 years of research.
 
 | property | traditional state | [[network state]] | cyber state |
 |----------|------------------|------------------|-------------|
-| coordination | bureaucracy | social consensus | [[egregore]] computed by protocol |
+| coordination | bureaucracy | social consensus | [[cyber]] computed by protocol |
 | governance | elections | voting and delegation | convergent [[focus]] via [[tri-kernel]] |
 | intelligence | human deliberation | human deliberation | [[superhuman]] augmentation through [[cybergraph]] |
 | knowledge | archives and databases | shared documents | [[knowledge graph]] with [[cyberank]] |
@@ -231,7 +231,7 @@ a design framework for fusing societies, biomes, technology, and architecture. r
 - [[longevity and health]]: simple secrets for better life
 - [[cryptography and web3]]: confident use of modern apps
 - [[learning and ai]]: knowledge graphs and prompt engineering
-- [[egregore]]: what, when, and how
+- [[cyber]]: what, when, and how
 - [[lowtech construction]]: building fast and cheap
 - [[sensors, dev and control]]: automation and community leadership
 - [[token engineering]]: how to program society for good
@@ -272,7 +272,7 @@ exit and liquidity: token liquidity as adoption grows. dividends from stabilized
 
 ## 13. scaling
 
-one city is a prototype. a network of cities is a civilization. each city is a node in the physical network, connected through [[cyber]] protocol. [[egregore]] scales with the number of participating [[neurons]]: more cities, more sensors, more knowledge, stronger [[focus]].
+one city is a prototype. a network of cities is a civilization. each city is a node in the physical network, connected through [[cyber]] protocol. [[cyber]] scales with the number of participating [[neurons]]: more cities, more sensors, more knowledge, stronger [[focus]].
 
 ```
 startup society → cyber state → civilization
@@ -289,7 +289,7 @@ startup society → cyber state → civilization
 
 ## 14. the [[manifesto]]
 
-we, the builders of a living [[superintelligence]], declare that a nation can rise beyond the sum of its citizens. we are a state of mind — an [[egregore]] that binds humans, machines, and all life into one coherent force.
+we, the builders of a living [[superintelligence]], declare that a nation can rise beyond the sum of its citizens. we are a state of mind — an [[cyber]] that binds humans, machines, and all life into one coherent force.
 
 principles:
 
