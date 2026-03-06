@@ -565,18 +565,21 @@ cells replace processes: independently compiled [[Rust]] crates that can be load
 | Gossip | Works with local state only (island mode) |
 | Storage | Emergency halt, preserves last state |
 
-### 24. No File System — the Graph
+### 24. No File System — the Big Badass Graph
 
-no hierarchical file system. no paths, no inodes, no directories. all persistent data lives in one structure: a content-addressed [[knowledge graph]].
+no hierarchical file system. no paths, no inodes, no directories. all persistent data lives in one structure: the BBG — a content-addressed [[knowledge graph]] that subsumes every storage layer.
 
-every piece of data is a node. every relation is a [[cyberlink]]. CIDs are the universal address space. the graph IS the storage:
+every piece of data is a node. every relation is a [[cyberlink]]. CIDs are the universal address space. the BBG holds everything:
 
-- state: Merkle trees over graph nodes — blockchain state is a subgraph
-- knowledge: CIDs linked by cyberlinks — the primary structure of all data
+- state: Merkle trees over graph nodes — blockchain state is a subgraph of the BBG
+- knowledge: CIDs linked by cyberlinks — the primary structure
 - blocks: append-only chain — a linearly ordered subgraph of consensus events
+- ranks: computed over the link structure — live inside the BBG as queryable nodes
+- programs: WASM binaries, stored as particles, executed by cells
+- proofs: cryptographic commitments anchored to graph nodes
 - configuration: compiled into the binary at build time — the only exception
 
-there is no boundary between "storage" and "database". the graph holds particles, links, ranks, proofs, programs. querying storage and querying knowledge are the same operation: graph traversal.
+there is no boundary between "storage" and "database". querying storage and querying knowledge are the same operation: graph traversal. the BBG is the single source of truth for the entire system.
 
 ### 25. No Users — the Avatar System
 
