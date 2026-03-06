@@ -175,27 +175,43 @@ the container. the sovereign instance that holds the five other primitives toget
 
 ## 5. the nine languages
 
-every [[particle]] in the [[cybergraph]] has a type. the type is the language. the robot speaks nine content languages natively — and renders each through a direct GPU pipeline
+a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. nine fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure
 
-#### content — 9 languages
+#### computation — 9 languages
 
-| language | source formats | what it carries |
-|----------|---------------|-----------------|
-| [[text]] | [[markdown]], plain text, source code | prose, documentation, messages, programs |
-| [[struct]] | JSON, TOML, YAML | trees, configs, schemas, metadata, ABIs |
-| [[table]] | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
-| [[vector]] | SVG, Bezier paths | diagrams, maps, molecular structures, schematics |
-| [[pixels]] | PNG, WebP, JPEG | photographs, satellite imagery, microscopy, scans |
-| [[video]] | WebM, MP4 | recordings, simulations, observations, lectures |
-| [[sound]] | WAV, OGG, MP3 | voice, music, birdsong, seismic signal, sonar |
-| [[formula]] | LaTeX, MathML | equations, proofs, chemical notation, physical laws |
-| [[component]] | composition of the above | applications, dashboards, interactive tools |
+| universe | language | type | algebra | purpose |
+|----------|----------|------|---------|---------|
+| Structure | [[Nox]] | Tree | Combinators | Composition |
+| Binary | [[Bt]] | Bit | $\mathbb{F}_2$ tower | Circuits |
+| Byte | [[Rs]] | Word | Bitwise on $\mathbb{F}_p$ | Systems |
+| Field | [[Trident]] | Field | Arithmetic on $\mathbb{F}_p$ | Proofs |
+| Topology | [[Arc]] | Graph | Adjacency | Knowledge |
+| Causality | [[Seq]] | Event | Partial order | Ordering |
+| Inference | [[Ask]] | Relation | Unification | Reasoning |
+| Continuum | [[Wav]] | Signal | Convolution | Sensing |
+| Linear | [[Ten]] | Tensor | Contraction | Learning |
+
+every computation language has a canonical rendering — the perception primitive where the shape of the data matches the shape of the display
+
+#### perception — 9 primitives
+
+| language | renders as | source formats | what it carries |
+|----------|-----------|---------------|-----------------|
+| [[Nox]] → [[struct]] | collapsible tree | JSON, TOML, YAML | configs, schemas, metadata, ABIs |
+| [[Bt]] → [[pixels]] | raster image | PNG, WebP, JPEG | photographs, satellite imagery, microscopy, scans |
+| [[Rs]] → [[text]] | prose, code | [[markdown]], plain text, source code | documentation, messages, programs |
+| [[Trident]] → [[formula]] | math notation | LaTeX, MathML | equations, proofs, chemical notation, physical laws |
+| [[Arc]] → [[vector]] | SVG, paths, curves | SVG, Bezier paths | diagrams, maps, molecular structures, schematics |
+| [[Seq]] → [[video]] | moving pixels | WebM, MP4 | recordings, simulations, observations, lectures |
+| [[Ask]] → [[table]] | 2D grid | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
+| [[Wav]] → [[sound]] | audio waveform | WAV, OGG, MP3 | voice, music, birdsong, seismic signal, sonar |
+| [[Ten]] → [[component]] | nested composition | composition of the above | applications, dashboards, interactive tools |
 
 #### interactive — 5 primitives
 
 | primitive | what it is | how it maps |
 |-----------|-----------|-------------|
-| action | tap, click, press | any content primitive + onClick handler |
+| action | tap, click, press | any perception primitive + onClick handler |
 | input text | string, textarea, code editor | text + editable flag + cursor + IME |
 | input choice | select, radio, checkbox, toggle | struct (options) + selectable flag |
 | input range | slider, scroll, zoom | number + bounds + draggable |
@@ -210,49 +226,49 @@ every [[particle]] in the [[cybergraph]] has a type. the type is the language. t
 | flex | 1D flexible row or column | navbars, toolbars, card rows |
 | page | fixed canvas, pagination | PDF, print, scientific papers |
 
-a button is `text` + `action`. a dashboard is `grid` of `table` + `vector`. a scientific paper is `page` of `text` + `formula` + `table`. an IDE is `grid` of `text` + `struct`. every UI ever made is a combination of these fifteen primitives and four layout modes
+a button is `text` + `action`. a dashboard is `grid` of `table` + `vector`. a scientific paper is `page` of `text` + `formula` + `table`. an IDE is `grid` of `text` + `struct`. every UI ever made is a combination of these primitives and four layout modes
 
-### 5.1 text
+### 5.1 Nox — Structure
 
-the universal content type. prose, code, documentation, thoughts, messages — anything that flows as readable sequence. source: [[markdown]]. every character is a GPU operation, not a DOM node. text particles render via compute shader glyph rasterization (rustybuzz shaping → swash raster → GPU glyph atlas). the most linked particle type in the graph
+the tree language. combinators over trees — the glue that composes all other languages. every higher type decomposes into Nox structure over three atoms: field (value by content), word (value by position), hash (value by commitment). JSON, TOML, YAML are surface syntaxes. Nox is the substrate
 
-### 5.2 struct
+### 5.2 Bt — Binary
 
-structured knowledge. configuration, metadata, schemas, records — anything that is a tree of named values. source: JSON, TOML. renders as collapsible tree of text glyphs: expand, collapse, navigate hierarchies, filter keys. how machines describe their own state. genome annotations, network configs, contract ABIs
+the bit language. operates in $\mathbb{F}_2$ — a genuinely different characteristic from the other eight. boolean circuits, binary logic, constraint systems. where zero-knowledge circuits live. Bt has its own proof system because a bit is not an element of $\mathbb{F}_p$
 
-### 5.3 table
+### 5.3 Rs — Byte
 
-2D data. time series, datasets, matrices, rankings — anything with rows and columns. source: CSV, TSV. renders as virtualized grid: only the visible slice regardless of row count. 10M rows renders as fast as 10. the native format of the knowledge economy: [[karma]] ledgers, [[cyberank]] scores, sensor streams, trial results
+the systems language. words and bytes — bitwise operations on $\mathbb{F}_p$. memory layout, system calls, hardware interfaces, byte-level protocols. the language that talks to machines at their native width. Rust-shaped semantics compiled through the shared IR
 
-### 5.4 vector
+### 5.4 Trident — Field
 
-geometric meaning. diagrams, molecular structures, maps, technical drawings — anything that is paths and curves. source: SVG, Bezier. renders via Vello (path → tiles → GPU compute fill): sub-pixel precision at any zoom level. phylogenetic trees, circuit schematics, geographic boundaries, chemical bond diagrams
+the proof language. arithmetic over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. every Trident program is a STARK-provable computation. verifiable AI inference, zero-knowledge proofs, cryptographic protocols. ~300 constraints per hash instead of 50,000–100,000
 
-### 5.5 pixels
+### 5.5 Arc — Topology
 
-captured reality. photographs, satellite imagery, microscopy, medical scans — anything that is a raster grid of color values. source: PNG, WebP, JPEG. renders via texture upload → GPU sampler → fragment shader. the observation itself. a brain MRI, a Hubble image, a specimen under electron microscope
+the graph language. adjacency, traversal, pattern matching over vertices and edges. the native language of the [[cybergraph]] itself. PageRank, Dijkstra, Louvain — graph algorithms as first-class operations. knowledge is topology
 
-### 5.6 video
+### 5.6 Seq — Causality
 
-temporal pixels. lectures, experiments, species behavior, physical processes — anything that is a sequence of frames. source: WebM, MP4. renders via hardware decode → texture per frame. the highest-bandwidth truth in the graph. a protein folding simulation, a surgery recording, a supernova observation
+the event language. partial orders, causal chains, temporal sequences. consensus protocols, event sourcing, distributed coordination. what happened before what — the language of time as structure
 
-### 5.7 sound
+### 5.7 Ask — Inference
 
-acoustic knowledge. voice, music, birdsong, seismic signal, sonar — anything that is a waveform over time. source: WAV, OGG, MP3. renders via audio pipeline (primary) + waveform compute shader (visual). a whale call, a gravitational wave detection, a heartbeat — the language the graph understands that [[text]] cannot carry. the bridge to non-human intelligence
+the query language. relations and unification — [[datalog]] at its core. pattern matching over facts, recursive traversal, logical deduction. the language that reasons over the graph. when you ask the [[oracle]], Ask is what runs
 
-### 5.8 formula
+### 5.8 Wav — Continuum
 
-mathematical meaning. equations, proofs, chemical notation, physical laws — anything requiring precise symbolic notation. source: LaTeX, MathML. renders via glyph layout + vector curves via Vello. text for symbols, curves for integrals and roots. a Hamiltonian, a chemical reaction, a field equation — precision in its native notation
+the signal language. convolution, Fourier transforms, filtering — continuous mathematics discretized. audio processing, sensor fusion, waveform analysis. a whale call, a seismic reading, a gravitational wave detection. the bridge to non-human intelligence
 
-### 5.9 component
+### 5.9 Ten — Linear
 
-composition. applications, dashboards, interactive tools — anything that combines multiple content types into a unified, stateful experience. renders as nested render pass: each inner primitive through its own pipeline, composited into the parent frame. the language of software as knowledge
+the tensor language. contraction, matrix multiplication, automatic differentiation. neural network inference, linear algebra, optimization. the language of [[learning]] — where the robot trains and infers
 
 ### 5.10 the complete picture
 
-a genome sequence is a [[text]] particle. its annotation is a [[struct]] particle. its expression data is a [[table]] particle. its protein structure is a [[vector]] particle. its microscopy is a [[pixels]] particle. its folding dynamics is a [[video]] particle. its sequencing signal is a [[sound]] particle. its binding energy is a [[formula]] particle. a genome browser is a [[component]] particle
+a genome sequence is [[Rs]] (byte-level encoding) rendered as [[text]]. its annotation is [[Nox]] (structured tree) rendered as [[struct]]. its expression data is [[Ask]] (relational query) rendered as [[table]]. its protein structure is [[Arc]] (topological graph) rendered as [[vector]]. its microscopy is [[Bt]] (binary pixel data) rendered as [[pixels]]. its folding dynamics is [[Seq]] (causal event chain) rendered as [[video]]. its sequencing signal is [[Wav]] (continuous waveform) rendered as [[sound]]. its binding energy is [[Trident]] (field arithmetic) rendered as [[formula]]. a genome browser is [[Ten]] (composed inference) rendered as [[component]]
 
-all nine exist in the same [[cybergraph]]. all nine are ranked by the same [[tri-kernel]]. all nine earn [[karma]]. all nine are permanent by axiom A3. the robot renders all nine through a single 130K-line GPU pipeline
+all nine compile through one structural IR. all nine share one proof system (except Bt, which has its own $\mathbb{F}_2$ proof system). all nine render through the perception grid. all nine exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3
 
 ---
 
