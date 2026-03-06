@@ -565,14 +565,18 @@ cells replace processes: independently compiled [[Rust]] crates that can be load
 | Gossip | Works with local state only (island mode) |
 | Storage | Emergency halt, preserves last state |
 
-### 24. No File System — Content-Addressed Storage
+### 24. No File System — the Graph
 
-no hierarchical file system. no paths, no inodes, no directories. all persistent data is content-addressed:
+no hierarchical file system. no paths, no inodes, no directories. all persistent data lives in one structure: a content-addressed [[knowledge graph]].
 
-- state storage: Merkle trees of blockchain state
-- [[knowledge graph]]: CIDs linked by [[cyberlinks]]
-- block storage: append-only chain of blocks
-- configuration: compiled into the binary at build time
+every piece of data is a node. every relation is a [[cyberlink]]. CIDs are the universal address space. the graph IS the storage:
+
+- state: Merkle trees over graph nodes — blockchain state is a subgraph
+- knowledge: CIDs linked by cyberlinks — the primary structure of all data
+- blocks: append-only chain — a linearly ordered subgraph of consensus events
+- configuration: compiled into the binary at build time — the only exception
+
+there is no boundary between "storage" and "database". the graph holds particles, links, ranks, proofs, programs. querying storage and querying knowledge are the same operation: graph traversal.
 
 ### 25. No Users — Cryptographic Agents
 
