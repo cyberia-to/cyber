@@ -578,9 +578,26 @@ every piece of data is a node. every relation is a [[cyberlink]]. CIDs are the u
 
 there is no boundary between "storage" and "database". the graph holds particles, links, ranks, proofs, programs. querying storage and querying knowledge are the same operation: graph traversal.
 
-### 25. No Users — Cryptographic Agents
+### 25. No Users — the Avatar System
 
-identity is a public key. access control = bandwidth allocation. the [[cybergraph]] is public. bandwidth is the only scarce resource.
+no usernames, no passwords, no accounts. identity is a public key ([[neuron]]). access control = bandwidth allocation. the [[cybergraph]] is public. bandwidth is the only scarce resource.
+
+the fundamental identity unit is the [[avatar]] — a collection of [[neurons]] under one [[name]]. an avatar is both subject and object: it acts in the graph and is a particle in the graph.
+
+key derivation follows a four-level hierarchy:
+
+`m / avatar' / neuron' / particle' / invoice'`
+
+| Level | Purpose |
+|-------|---------|
+| avatar | broad identity — personal, business, project |
+| neuron | device or context — mobile, desktop, contract |
+| particle | application-specific key exposure |
+| invoice | unique identifier for incoming payments |
+
+all levels are hardened. compromise of one neuron reveals nothing about siblings or parent. the [[signer]] handles two operations: sign and verify. transaction construction stays outside the signer — it receives formed data and returns a signature as a [[particle]].
+
+the signer is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), pluggable curves (secp256k1, sr25519, ed25519, bls12-381), pluggable derivation paths, pluggable dictionaries. this makes the same avatar system work across every network in the [[hub]].
 
 ### 26. Purpose-Built Networking
 
