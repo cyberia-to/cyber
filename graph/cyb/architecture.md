@@ -628,23 +628,153 @@ all levels are hardened. compromise of one neuron reveals nothing about siblings
 
 the signer is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), pluggable curves (secp256k1, sr25519, ed25519, bls12-381), pluggable derivation paths, pluggable dictionaries. this makes the same avatar system work across every network in the [[hub]].
 
-### 26. Purpose-Built Networking
+---
 
-three network protocols only:
+## Part V: Radio — Transport, Messaging, Sync, Storage
 
-| Protocol | Purpose | Transport |
-|----------|---------|-----------|
-| Gossip | Propagate transactions and blocks | UDP/QUIC |
-| Consensus | Validator voting, proposals, prevotes | UDP/QUIC |
-| Query | Client requests for rank, graph data, proofs | QUIC streams |
+[[radio]] is the connectivity layer of [[cyb]] — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of BLAKE3. one hash function, one address space, zero self-describing overhead. 20× cheaper in [[STARK]] proofs than BLAKE3, at the cost of ~3× lower raw throughput. the tradeoff is correct: [[particle]] addresses are verified far more often than they are created.
 
-~15K lines instead of ~100K+ for full TCP/IP + HTTP + TLS. each protocol is a separate cell with its own bounded budget.
+### 26. Endpoint and Physical Transport
+
+the [[radio/endpoint]] is the entry point for all networking. it wraps a QUIC socket, an Ed25519 keypair identity, a [[radio/relay]] connection, and [[radio/discovery]] services into a single handle. connections are made by cryptographic PublicKey — dial keys, not IP addresses.
+
+three transport modes over QUIC: bidirectional streams (request-response), unidirectional streams (one-way data), datagrams (low-latency fire-and-forget). all traffic encrypted end-to-end with keys derived through [[Hemera]].
+
+[[radio/hole-punching]] establishes direct P2P paths through NAT using STUN-over-QUIC for address discovery and ICE-over-QUIC for candidate exchange. when direct connection fails, [[radio/relay]] provides encrypted fallback — relays forward traffic without decoding it. relays earn [[focus]] for proven delivery via [[STARK]] proof chains.
+
+### 27. Blob Transfer and Verified Streaming
+
+every [[particle]] in the [[cybergraph]] is a [[radio/blob]] — content-addressed binary data of any size. the blob's address is its 64-byte [[Hemera]] hash.
+
+[[radio/bao]] enables verified streaming: a binary [[Hemera]] Merkle tree over 4 KiB chunks. download any byte range of a 10 GB blob and verify it against the root hash — the proof is logarithmic (a few KB covers any range of any blob). interrupted transfers resume from the last verified chunk. [[radio]] never trusts — it verifies every chunk cryptographically during streaming.
+
+### 28. Gossip — Real-Time Graph Propagation
+
+[[radio/gossip]] is topic-based publish/subscribe over epidemic broadcast trees. when a [[neuron]] creates a [[cyberlink]], it broadcasts to the relevant topic. subscribers update their local view of the [[cybergraph]] without polling.
+
+built on HyParView (hybrid partial view peer sampling) + PlumTree (broadcast tree on random peer graph). eager push along tree edges, lazy push on remaining links — reliability of flooding with efficiency of tree routing. self-healing when peers leave or join.
+
+### 29. Private Messaging
+
+private messaging between [[neurons]] with cryptographic [[proof of delivery]]. see [[cyber/communication]] for the full specification.
+
+shared secret via CSIDH: two neurons that have never communicated derive a shared key from public data. each publishes its CSIDH public curve as a [[particle]] in the [[cybergraph]]. both independently compute the same key — the graph itself is the key exchange medium. no handshake, no prekeys, no certificate authority.
+
+```
+A publishes E_a = [a] · E₀ as a particle
+B publishes E_b = [b] · E₀ as a particle
+
+A computes: K = Hemera([a] · E_b)
+B computes: K = Hemera([b] · E_a)
+
+K_A = K_B     by CSIDH commutativity
+```
+
+message format: header (ephemeral curve point for forward secrecy, sequence number, hop count) + payload (AES-256-GCM ciphertext, [[Hemera]] MAC) + onion-encrypted routing (next hop, return path).
+
+onion routing: sender wraps the message in layers of encryption, one per relay hop. each relay peels one layer, learns only the next hop, forwards the inner blob. no relay sees the full route or the plaintext.
+
+proof of delivery: each hop produces a [[STARK]] proof — "I received a valid blob, peeled my layer correctly, forwarded to the next address." proofs chain recursively into a single ~100-200 KB proof covering the entire route, regardless of hop count. the sender publishes π_chain as a [[particle]]. anyone can verify delivery happened. no one can read the message or learn the route.
+
+```
+PUBLIC                              │ HIDDEN
+────────────────────────────────────┼──────────────────────────
+message was delivered               │ sender identity
+route had N hops                    │ recipient identity
+all relays forwarded correctly      │ relay identities
+MAC verification succeeded          │ message content
+```
+
+relays earn [[focus]] for proven delivery. no proof, no payment. this creates a permissionless relay network where operators are compensated for bandwidth.
+
+| property | Signal | Tor | cyber |
+|----------|--------|-----|-------|
+| E2E encryption | yes | yes | yes (CSIDH + AES-256-GCM) |
+| metadata privacy | partial | yes | yes (onion routing) |
+| delivery proof | trust-based | no | yes ([[STARK]] chain) |
+| post-quantum | partial | no | yes (CSIDH + Hemera) |
+| non-interactive key exchange | no (prekeys) | no (circuit) | yes (CSIDH from graph) |
+| relay incentive | none | volunteer | [[focus]] for proven delivery |
+
+### 30. Sync — Collaborative Knowledge
+
+two sync protocols for different access models:
+
+[[radio/docs]] — eventually-consistent multi-dimensional key-value documents. a replica identified by a NamespaceId (public key). multiple [[neurons]] write under their own AuthorId. range-based set reconciliation — only changed entries sync. depends on [[radio/blob]] for content storage and [[radio/gossip]] for change notification. this is the substrate for shared [[cybergraph]] partitions.
+
+[[radio/willow]] — confidential sync via the Willow protocol with Meadowcap capability-based access control. encrypted reconciliation — peers sync without revealing what they have to unauthorized parties. capabilities are delegatable: a holder creates restricted sub-capabilities with narrower scope. willow enables private [[cybergraph]] partitions where access is controlled by capability certificates rather than public broadcast.
+
+| model | protocol | access control | use case |
+|-------|----------|----------------|----------|
+| open collaboration | [[radio/docs]] | namespace key = write authority | shared research, public knowledge |
+| confidential | [[radio/willow]] | Meadowcap capability certificates | private graphs, restricted data |
+
+### 31. Storage Proofs — Graph Survival
+
+without [[storage proofs]], content-addressed identity is fragile — a hash with lost content is a dead [[particle]]. at planetary scale ($10^{15}$ particles), content loss is the existential risk. storage proofs are Phase 1 security infrastructure — operational before genesis.
+
+six proof types:
+
+| proof | guarantees | mechanism |
+|-------|-----------|-----------|
+| storage | content bytes exist on specific node | periodic [[Hemera]] Merkle challenge-response |
+| size | claimed size matches actual bytes | tree depth + leaf count commitment |
+| replication | k ≥ 3 independent copies exist | challenge k distinct nodes, verify uniqueness |
+| retrievability | content fetchable within bounded time | timed challenge-response with latency bound |
+| data availability (DAS) | block data published and accessible | 2D Reed-Solomon over [[Goldilocks field]] + [[NMT]] sampling |
+| encoding fraud | erasure coding done correctly | k+1 cells → decode → compare against [[NMT]] root |
+
+data tiered by criticality:
+
+```
+Tier 0 — critical roots: checkpoint to settlement layer, ~32-64 KB/epoch, permanent
+Tier 1 — active graph:  focus blobs to DA layer, ≥30 day retention, light sampling
+Tier 2 — historical:    erasure-coded archival, refreshed by archivers
+```
+
+storage proofs also enable [[Hemera]] hash migration — if Hemera is ever broken, storage proofs guarantee content availability for full graph rehash under a new primitive. at $10^{15}$ particles across $10^6$ nodes: ~17 hours for parallel rehash.
+
+### 32. Bandwidth — the Scarce Resource
+
+[[will]] is the capacity to create [[cyberlinks]]. every link burns will — when it runs out, the [[neuron]] falls silent. will regenerates with stake and limits [[bandwidth]].
+
+the $V$ stake of a [[neuron]] is the size of its battery. creating cyberlinks consumes charge. the battery fully recharges during the [[recovery period]]. if a neuron acts when network bandwidth consumption is low, it consumes less bandwidth — adaptive cost based on network load.
+
+bandwidth is the only access control mechanism. no passwords, no permissions, no API keys. stake → will → links → [[knowledge]]. the economic structure of the [[cybergraph]] IS the permission system.
+
+```
+stake → will regeneration → bandwidth capacity → cyberlink creation → knowledge
+  ↑                                                                        |
+  └────────────── karma + focus rewards ───────────────────────────────────┘
+```
+
+### 33. The Full Stack
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│  cyber/communication  │ onion routing, CSIDH, STARK proof chains │
+├───────────────────────┼──────────────────────────────────────────┤
+│  radio/willow         │ confidential sync, Meadowcap access      │
+│  radio/docs           │ collaborative replicas, set reconciliation│
+├───────────────────────┼──────────────────────────────────────────┤
+│  radio/gossip         │ topic pub/sub, epidemic broadcast trees   │
+│  radio/blob + bao     │ verified streaming, Hemera Merkle trees   │
+├───────────────────────┼──────────────────────────────────────────┤
+│  radio/endpoint       │ QUIC, Ed25519 identity, encrypted streams │
+│  radio/relay          │ encrypted fallback, focus-incentivized    │
+│  radio/hole-punching  │ NAT traversal, STUN/ICE over QUIC        │
+│  radio/discovery      │ key → address resolution                  │
+├───────────────────────┼──────────────────────────────────────────┤
+│  storage proofs       │ 6 proof types, DAS, hash migration        │
+│  bandwidth / will     │ stake-based rate limiting                  │
+└───────────────────────┴──────────────────────────────────────────┘
+```
 
 ---
 
-## Part V: Bounded Liveness Runtime
+## Part VI: Bounded Liveness Runtime
 
-### 27. Epoch Budget Allocator
+### 34. Epoch Budget Allocator
 
 ```
 ┌──────────────────────────────────────┐
@@ -659,7 +789,7 @@ three network protocols only:
 
 hard deadline: cell is preempted. soft deadline: cell yields voluntarily. no priorities. every cell gets its budget.
 
-### 28. Compile-Time Deadline Enforcement
+### 35. Compile-Time Deadline Enforcement
 
 the async runtime does not allow unbounded futures. enforced at the type level:
 
@@ -676,7 +806,7 @@ let data = stream.read(&mut buf)
 
 the [[Rust]] compiler becomes the liveness checker.
 
-### 29. Wait-Free Shared State
+### 36. Wait-Free Shared State
 
 all inter-cell communication uses wait-free data structures. no mutexes, no locks, no semaphores.
 
@@ -687,9 +817,9 @@ all inter-cell communication uses wait-free data structures. no mutexes, no lock
 
 ---
 
-## Part VI: Hardware Abstraction
+## Part VII: Hardware Abstraction
 
-### 30. Three Portable Formats
+### 37. Three Portable Formats
 
 every computer has three types of processors. cyb has one portable format for each:
 
@@ -709,7 +839,7 @@ Mobile:    WASM (wasmi) + WGSL (wgpu -> Metal/GLES) + ONNX (CoreML/NNAPI)
 
 same codebase. same pixels. everywhere.
 
-### 31. Zero-Unsafe MMIO
+### 38. Zero-Unsafe MMIO
 
 MMIO regions as first-class language concepts:
 
@@ -728,7 +858,7 @@ mod aic {
 
 zero unsafe in user-facing code.
 
-### 32. Neural Drivers
+### 39. Neural Drivers
 
 drivers generated by LLMs against stable trait contracts. the HAL is ~3000 lines of [[Rust]] trait definitions covering all hardware categories.
 
@@ -755,9 +885,9 @@ target: 50+ SoC families. ~1M lines of generated code validated against ~8K line
 
 ---
 
-## Part VII: Legacy Web Compatibility
+## Part VIII: Legacy Web Compatibility
 
-### 33. SLM Legacy Bridge
+### 40. SLM Legacy Bridge
 
 a small language model (~100-300M parameters) that understands intent behind old CSS:
 
@@ -767,7 +897,7 @@ Layer 2: Legacy -> SLM       -> cached permanently
 Layer 3: Graceful degradation -> unknown ignored
 ```
 
-### 34. WASM Adoption
+### 41. WASM Adoption
 
 import adapter auto-detects what a module needs:
 
@@ -792,9 +922,9 @@ import adapter auto-detects what a module needs:
 
 ---
 
-## Part VIII: Numbers
+## Part IX: Numbers
 
-### 35. 130K Lines
+### 42. 130K Lines
 
 ```
 PureRender                              ~100K
@@ -812,7 +942,7 @@ TOTAL                                   ~130K
 
 CybOS core: ~85-125K lines (human-authored, auditable by one person in a month). neural driver layer: ~500K-1M lines (LLM-generated, compiler + test validated).
 
-### 36. Cyb vs Chrome
+### 43. Cyb vs Chrome
 
 | | Chrome | Cyb |
 |-|--------|-----|
