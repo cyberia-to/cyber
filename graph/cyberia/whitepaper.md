@@ -1,5 +1,5 @@
 ---
-tags: cyberia, article, menu
+tags: cyberia, article
 alias: cyberia whitepaper, cyberia paper
 icon: "\U0001F30F"
 crystal-type: entity
