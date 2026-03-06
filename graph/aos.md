@@ -1,6 +1,6 @@
 ---
 icon: 🪆
-tags: aos, cyber
+tags: aos, cyber, menu
 alias: age of superintelligence, the game, self fulfilling prophecy game, much more, many more
 crystal-type: entity
 crystal-domain: cyber
