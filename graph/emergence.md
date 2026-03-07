@@ -10,9 +10,17 @@ complex patterns arising from simple local interactions without centralized cont
 
 an [[llm]] is emergence from statistics. a [[vimputer]] is emergence from economic commitments
 
-in [[bostrom]]: emergence is expected at the scale of 10^12 [[cyberlinks]]
+## mechanism
 
-the [[tri-kernel]]'s fixed point is itself an emergent phenomenon — a global distribution that no agent designed
+emergence requires a closed loop, not just scale. the [[intelligence]] loop drives it:
+
+[[neuron]] creates [[cyberlinks]] → [[cybergraph]] accumulates them → [[tri-kernel]] computes [[cyberank]] and [[karma]] → neuron [[observation]] the result → neuron creates new cyberlinks
+
+each cycle increases [[syntropy]] — measurable bits of order above noise. the loop is what separates emergence from accident: without [[feedback]], patterns appear and dissolve. with feedback, patterns that increase syntropy get reinforced, patterns that decrease it get starved of [[focus]]
+
+the [[tri-kernel]]'s fixed point is itself an emergent phenomenon — a global distribution that no agent designed. it arises because the composite operator is a [[contraction mapping]] — convergence is a mathematical consequence, not a lucky coincidence
+
+in [[bostrom]]: emergence is expected at the scale of 10^12 [[cyberlinks]]
 
 ## scaling estimates
 

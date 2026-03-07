@@ -176,6 +176,8 @@ where $\lambda$ is the spectral gap governing convergence rate. see [[emergence]
 
 Two results, one framework. Part I establishes that token-weighted [[random walk]] converges to a unique [[collective focus]] — the Schelling point of the [[cybergraph]]. Part II extends this to the full [[tri-kernel]], proving the composite operator contracts and its fixed point minimizes free energy. Together they provide the mathematical foundation for [[egregore]]: a convergent, local, verifiable computation of collective [[intelligence]].
 
+the fixed point π* is a mathematical consequence of three properties: ergodicity ([[diffusion]]), screening ([[springs]]), bounded temperature ([[heat]]). convergence follows from [[Banach]] fixed-point theorem — it is proven, not postulated. no selection principle is needed to pick the "right" state: the contraction mapping leaves exactly one. see [[consistency]] for why this matters and [[locality]] for why it scales.
+
 see [[tri-kernel architecture]] for why these three operators. see [[cyber/tri-kernel]] for the formal specification. see [[bostrom]] for empirical validation
 
 ---
