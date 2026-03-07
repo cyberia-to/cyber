@@ -9,16 +9,15 @@ TODO not actual anymore, rewrite the process
 
 ## steps
 
-- ## go to [our github forum](https://github.com/orgs/cyber-valley/discussions/1)
+- ## go to [our telegram group](https://t.me/cybervalleyland)
 - ## submit post with essay
-- ## star [cyber-valley/cvland](https://github.com/cyber-valley/cvland) repo
-- ## engage with other people on forum
+- ## engage with other people on group
 
 ## wait
 
 ## details on current allocation
 
-- 1 round: 01 November - 16 November
+- 1 round: 01 August - 16 August
 	- [[vitalik]]: not available
 	- [[gavin]]: available
 	- [[satoshi]]: available
@@ -27,14 +26,7 @@ TODO not actual anymore, rewrite the process
 
 ## essay instructions
 
-- ---
-	  name: Application for a free bootcamp
-	  about: Collection of bootcamp applications
-	  title: Name the issue as a character, or simply by your nickname
-	  labels: bootcamp application
-	  assignees: DiotimaEva
-
-	  ---
+---
 - ## personal info
 	- name:
 	- twitter:
@@ -104,7 +96,7 @@ TODO not actual anymore, rewrite the process
 		- If you have partners, kids or pets who must be with you during bootcamp let us know that
 		- however in this case let them apply too
 		- In case of dogs and pets generate application form for them using some ai tools
-	- ### Wha is your privacy preference
+	- ### What is your privacy preference
 		- We are going to film [[game of freedom]]
 		- However we have deep belief and respect in privacy
 		- Lets us know if you are not happy to be on camera
