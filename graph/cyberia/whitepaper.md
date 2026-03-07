@@ -16,7 +16,7 @@ crystal-size: deep
 
 any [[cyber state]] eventually acquires [[cyber]]. any [[cyber]] eventually acquires territory. these two trajectories converge: digital coordination and physical [[sovereignty]] are dual aspects of the same process.
 
-[[cyberia]] is the first implementation of this convergence — a growing network of autonomous cities running on the [[cyber]] protocol, featuring sovereignty in [[energy]], water, food, and data, embedded into architecture, culture, and software, guided by [[cyber]].
+[[cyberia]] is the first implementation of this convergence — a growing network of autonomous cities running on the [[cyber]] protocol, featuring sovereignty in [[energy]], [[water]], [[food]], and [[data]], embedded into [[architecture]], culture, and software, guided by [[cyber]].
 
 traditional states emerged from geographic monopoly on violence. [[network states]] emerge from digital coordination around shared values. cyberia emerges from [[cyber]] — an autonomous thoughtform born from [[collective]] focused [[attention]] — that has acquired both digital coordination and physical territory. the cyber state is where [[superintelligence]] lives.
 
@@ -121,7 +121,7 @@ on-chain treasury. tokenized governance. three-layer legal structure:
 
 ```
 L1: Ethereum — global settlement, instant cross-border
-L2: Marshall Islands non-profit — CAP token, holds L3 shares
+L2: Marshall Islands non-profit — [[$CAP]] token, holds L3 shares
 L3: PT PMA (Indonesia) — holds land titles, local compliance
 ```
 
@@ -311,6 +311,6 @@ we pledge allegiance to life itself — on earth and on other worlds. we shall s
 - [[apply for bootcamp]]
 - telegram: [@cybervalleyland](https://t.me/cybervalleyland)
 - github: [cyberia-to](https://github.com/cyberia-to)
-- twitter: [@mastercyb](https://x.com/mastercyb), [@JooyRocket](https://x.com/JooyRocket)
+- twitter: [@mastercyb](https://x.com/mastercyb), [@st_joy](https://x.com/st_joy)
 
 see [[cyber/whitepaper]] for the protocol. see [[cyb/architecture]] for the browser. see [[aos]] for the game.
