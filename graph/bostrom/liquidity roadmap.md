@@ -45,11 +45,9 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 3. Fix [[warp]] deposit for edge-case pairs (cyb [#769](https://github.com/cyberia-to/cyb/issues/769))
 4. Fix sub-liquidity UX when pool absent (cyb [#849](https://github.com/cyberia-to/cyb/issues/849))
 5. Show routed [[$A]]/[[$V]] on /robot (cyb [#690](https://github.com/cyberia-to/cyb/issues/690))
-6. Investigate pool withdrawal bug — root cause found: overflow on high-decimal tokens + dust amount rounding ([#802](https://github.com/cybercongress/go-cyber/issues/802)), module fix → Phase 2
-7. Block dust withdrawal on frontend — validate minimum pool coin amount before tx (cyb [#1377](https://github.com/cyberia-to/cyb/issues/1377))
-8. Stabilize [[Osmosis]] [[IBC]] send/bridge/swap
-9. Restore [[IBC]] channel bostrom–[[space-pussy]] ([#804](https://github.com/cybercongress/go-cyber/issues/804))
-10. Document all [[liquidity]] bugs with reproduction steps
+6. Block dust withdrawal on frontend — validate minimum pool coin amount before tx (cyb [#1377](https://github.com/cyberia-to/cyb/issues/1377))
+7. Restore [[IBC]] channel bostrom–[[space-pussy]] ([#804](https://github.com/cybercongress/go-cyber/issues/804))
+8. Document all [[liquidity]] bugs with reproduction steps
 
 ### Phase 1: Contracts + features (weeks, dependencies between items)
 
@@ -59,19 +57,20 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 3. CW-20/CW-721 integration (cw-cyber [#23](https://github.com/cybercongress/cw-cyber/issues/23)) → unblocks LP with factory tokens ([#30](https://github.com/cybercongress/cw-cyber/issues/30))
 4. APR computation contract (cw-cyber [#39](https://github.com/cybercongress/cw-cyber/issues/39))
 5. Implement [[value]] tab — sigma/super-sigma portfolio valuation, switchable denominations (cyb [#660](https://github.com/cyberia-to/cyb/issues/660))
-6. Build [[cyber-maker]] for automated market making + data collection
-7. Restaking automation (cw-cyber [#13](https://github.com/cybercongress/cw-cyber/issues/13))
-8. Integrate [[Osmosis]] swap subset into [[teleport]] for seamless exchange
+6. Restaking automation (cw-cyber [#13](https://github.com/cybercongress/cw-cyber/issues/13))
+7. Integrate [[Osmosis]] swap subset into [[teleport]] for seamless exchange
+8. Stabilize [[Osmosis]] [[IBC]] send/bridge/swap
 
 ### Phase 2: Chain upgrade (hardening, months)
 
 0. Fork mainnet state → testnet for upgrade testing
 1. Fix 18-decimal token handling ([#801](https://github.com/cybercongress/go-cyber/issues/801))
-2. Fix pool withdrawal bugs if module-level ([#802](https://github.com/cybercongress/go-cyber/issues/802))
+2. Fix pool withdrawal overflow + dust rounding ([#802](https://github.com/cybercongress/go-cyber/issues/802))
 3. Update token denoms ([#762](https://github.com/cybercongress/go-cyber/issues/762))
 4. Fix x/liquidity `RegisterCustomTypeURL` codec — SDK fork exists for this, eliminate with type assertion on SDK v0.50+ (see [[go-cyber]] upgrade-plan.md)
 5. Native indexing plugin (ABCIListener) — replaces [[cyberindex]] for price/volume data, unblocks [#803](https://github.com/cybercongress/go-cyber/issues/803)
 6. Configurable denoms from genesis — prerequisite for [#762](https://github.com/cybercongress/go-cyber/issues/762) and [[space-pussy]] unification (upgrade-plan.md item 1.6)
+7. Build [[cyber-maker]] for automated market making + data collection
 
 x/liquidity module specification — done ([[go-cyber]] PR #800)
 
