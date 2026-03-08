@@ -46,10 +46,11 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 3. Fix [[warp]] deposit for edge-case pairs (cyb [#769](https://github.com/cyberia-to/cyb/issues/769))
 4. Fix sub-liquidity UX when pool absent (cyb [#849](https://github.com/cyberia-to/cyb/issues/849))
 5. Show routed [[$A]]/[[$V]] on /robot (cyb [#690](https://github.com/cyberia-to/cyb/issues/690))
-6. Investigate pool withdrawal bug — identify affected pools, root cause, classify fix phase ([#802](https://github.com/cybercongress/go-cyber/issues/802))
-7. Stabilize [[Osmosis]] [[IBC]] send/bridge/swap
-8. Restore [[IBC]] channel bostrom–[[space-pussy]] ([#804](https://github.com/cybercongress/go-cyber/issues/804))
-9. Document all [[liquidity]] bugs with reproduction steps
+6. Investigate pool withdrawal bug — root cause found: overflow on high-decimal tokens + dust amount rounding ([#802](https://github.com/cybercongress/go-cyber/issues/802)), module fix → Phase 2
+7. Block dust withdrawal on frontend — validate minimum pool coin amount before tx (cyb [#1377](https://github.com/cyberia-to/cyb/issues/1377))
+8. Stabilize [[Osmosis]] [[IBC]] send/bridge/swap
+9. Restore [[IBC]] channel bostrom–[[space-pussy]] ([#804](https://github.com/cybercongress/go-cyber/issues/804))
+10. Document all [[liquidity]] bugs with reproduction steps
 
 ### Phase 1: Contracts + features (weeks, dependencies between items)
 
