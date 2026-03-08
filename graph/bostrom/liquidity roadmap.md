@@ -16,7 +16,7 @@ design note from Mar 1 2026 recap. scope: fix [[bostrom]] liquidity via [[cosmwa
 |-------|---------|----------|----------|
 | [#663](https://github.com/cybercongress/go-cyber/issues/663) | [[warp]] swap interface shows unpredictable prices/amounts (large amount overflow) | high | frontend fix + module spec audit |
 | [#803](https://github.com/cybercongress/go-cyber/issues/803) | Missing price/volume indexing | medium | [[cyber-maker]] data collection or dedicated indexer |
-| [#802](https://github.com/cybercongress/go-cyber/issues/802) | Token withdrawal stuck on some pools | high | investigate root cause first, fix depends on findings |
+| [#802](https://github.com/cybercongress/go-cyber/issues/802) | Token withdrawal stuck on some pools | high | two causes: overflow on 18-decimal tokens (same as #801) + dust rounding on tiny shares. Frontend guard: cyb [#1377](https://github.com/cyberia-to/cyb/issues/1377). Module fix → Phase 2 |
 
 ### Requires chain upgrade (hardening, later)
 
