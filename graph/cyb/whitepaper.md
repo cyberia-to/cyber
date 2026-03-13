@@ -531,11 +531,11 @@ bounded liveness is structural — no deadlock possible because no cell holds a 
 
 ### 10.2 radio
 
-the data transport layer. a fork of iroh with one critical change: every hash runs through Hemera (Poseidon2 over [[Goldilocks field]]) instead of BLAKE3
+the data transport layer. a fork of iroh with one critical change: every hash runs through Hemera (Poseidon2 over [[Goldilocks field]]) instead of Blake3
 
 | hash | speed | STARK constraints per hash |
 |------|-------|---------------------------|
-| BLAKE3 | ~2 GB/s | 50,000–100,000 |
+| Blake3 | ~2 GB/s | 50,000–100,000 |
 | Hemera | ~50–100 MB/s | ~300 |
 
 Hemera makes every particle address STARK-provable. this unlocks: storage proofs without downloading content, verified streaming via Hemera Merkle trees, private computation over encrypted knowledge graph, post-quantum security via STARKs

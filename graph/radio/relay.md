@@ -19,7 +19,7 @@ relays forward encrypted traffic without decoding it. they see destination keys 
 
 ## protocol
 
-relays speak HTTP/HTTPS upgraded to a custom TCP protocol with [[Hemera]]-based handshakes replacing the original BLAKE3 KDF. the iroh-relay crate implements the server and client sides
+relays speak HTTP/HTTPS upgraded to a custom TCP protocol with [[Hemera]]-based handshakes replacing the original Blake3 KDF. the iroh-relay crate implements the server and client sides
 
 ## role in connectivity
 

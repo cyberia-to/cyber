@@ -37,7 +37,7 @@ The centralization of cryptocurrency mining represents one of the most significa
 UniversalHash v4 addresses these challenges by designing a proof-of-work algorithm from first principles with democratic participation as the primary objective. Rather than optimizing for raw throughput or energy efficiency in isolation, we optimize for **accessibility** — ensuring that the billions of smartphones and consumer devices worldwide can meaningfully contribute to network security.
 ### 1.1 Key Contributions
 - **Parallel Chain Architecture**: A 4-chain structure that naturally caps parallelism advantages while fitting perfectly on 4-core budget phones
-- **Triple Primitive Rotation**: Mandatory efficient implementation of AES, SHA-256, and BLAKE3 raises ASIC development costs
+- **Triple Primitive Rotation**: Mandatory efficient implementation of AES, SHA-256, and Blake3 raises ASIC development costs
 - **Memory-Optimized Parameters**: 2MB total scratchpad (512KB × 4 chains) fits in phone L3 cache while preventing GPU memory coalescing
 - **Sequential Dependency Chains**: Each round depends on the previous, defeating massive parallelism
 - **Hardware Acceleration Utilization**: Leverages AES-NI, SHA extensions, and ARM crypto instructions present in 95%+ of post-2015 devices
@@ -72,7 +72,7 @@ Several algorithms have attempted to address these issues:
 
 **VerusHash 2.1** (Verus): Haraka512-based, optimized for AES-NI. Excellent CPU/GPU parity but not designed for mobile devices.
 
-**XelisHash v3** (Xelis, 2024): ChaCha8 + BLAKE3 with "parallelism tax." Achieves ~1:1 CPU/GPU ratio but borderline for phone L3 cache (544KB scratchpad).
+**XelisHash v3** (Xelis, 2024): ChaCha8 + Blake3 with "parallelism tax." Achieves ~1:1 CPU/GPU ratio but borderline for phone L3 cache (544KB scratchpad).
 
 ---
 ## 3. Design Goals
@@ -172,7 +172,7 @@ Based on this analysis, UniversalHash v4 makes the following design choices:
 |----------|-----------|
 | 2MB total memory (4×512KB) | Fits all phone L3 caches; larger than XelisHash for margin |
 | 4 parallel chains | Matches budget phone core count; caps server advantage |
-| AES + SHA-256 + BLAKE3 | All have hardware acceleration; BLAKE3 especially ASIC-hostile |
+| AES + SHA-256 + Blake3 | All have hardware acceleration; Blake3 especially ASIC-hostile |
 | Sequential inner loop | Prevents GPU parallelism within single hash |
 | Simple XOR merge | Auditable finalization; no complex reduction function |
 
@@ -196,7 +196,7 @@ UniversalHash_v4(header, nonce) → hash256:
     2. Initialize 4 scratchpads (512 KB each) using AES expansion
     3. Execute 4 parallel mixing chains (12288 rounds each)
     4. Merge chain states via XOR
-    5. Finalize with SHA-256(BLAKE3(merged_state))
+    5. Finalize with SHA-256(Blake3(merged_state))
 ```
 ### 5.3 Detailed Specification
 #### 5.3.1 Seed Generation
@@ -204,7 +204,7 @@ UniversalHash_v4(header, nonce) → hash256:
 For each chain `c ∈ [0, 3]`:
 ```
 golden_ratio = 0x9E3779B97F4A7C15  // Fibonacci hashing constant
-seed[c] = BLAKE3_256(header || nonce ⊕ (c × golden_ratio))
+seed[c] = Blake3_256(header || nonce ⊕ (c × golden_ratio))
 ```
 
 The golden ratio constant ensures statistically independent seeds even for sequential nonces.
@@ -247,7 +247,7 @@ For chain c (parallelizable across chains):
         else if primitive == 1:
             state = SHA256_Compress(state, block)  // SHA-256 compression function
         else:
-            state = BLAKE3_Compress(state, block)  // BLAKE3 compression (7 rounds)
+            state = Blake3_Compress(state, block)  // Blake3 compression (7 rounds)
         
         // Write-back (read-after-write dependency)
         scratchpad[c][addr : addr + 32] = state[0:32]
@@ -259,7 +259,7 @@ combined = states[0]
 For c = 1 to 3:
     combined = combined ⊕ states[c]
 
-result = BLAKE3_256(SHA256_256(combined))
+result = Blake3_256(SHA256_256(combined))
 ```
 
 The double-hash finalization provides defense in depth against potential weaknesses in either primitive.
@@ -281,10 +281,10 @@ Input: 256-bit state, 512-bit block
 Process: Standard SHA-256 compression function
 Output: 256-bit compressed state
 ```
-#### BLAKE3_Compress
+#### Blake3_Compress
 ```
 Input: 256-bit state, 512-bit block
-Process: BLAKE3 compression function (7 rounds, flags=0)
+Process: Blake3 compression function (7 rounds, flags=0)
 Output: 256-bit compressed state
 ```
 
@@ -295,7 +295,7 @@ Output: 256-bit compressed state
 **Multi-Primitive Requirement:** An efficient ASIC must implement optimized circuits for:
 - AES encryption (well-understood, ~0.1mm² in modern process)
 - SHA-256 compression (well-understood, ~0.05mm²)
-- BLAKE3 compression (less common, ~0.15mm² estimated)
+- Blake3 compression (less common, ~0.15mm² estimated)
 
 The rotation between primitives prevents specialization. An ASIC optimized for only one primitive would spend 66% of cycles underutilized.
 
@@ -329,9 +329,9 @@ This creates a latency chain that limits effective GPU parallelism to 4 (one per
 **Parallel Chain Limit:** With only 4 chains, a GPU with 10,000+ cores can only execute 4 concurrent hash attempts per SM. The massive parallelism advantage is eliminated.
 ### 6.3 Cryptographic Security
 
-**Pre-image Resistance:** Finding an input that produces a specific output requires inverting BLAKE3(SHA256(state)), which inherits the security of both primitives (~256-bit security).
+**Pre-image Resistance:** Finding an input that produces a specific output requires inverting Blake3(SHA256(state)), which inherits the security of both primitives (~256-bit security).
 
-**Collision Resistance:** The double-hash finalization provides collision resistance from both SHA-256 (~128-bit birthday bound) and BLAKE3.
+**Collision Resistance:** The double-hash finalization provides collision resistance from both SHA-256 (~128-bit birthday bound) and Blake3.
 
 **Grinding Resistance:** The multi-chain XOR merge ensures all chains must be computed; an attacker cannot selectively compute favorable chains.
 ### 6.4 Known Attack Vectors
@@ -1245,7 +1245,7 @@ fn sha256_compress(state: &State256, block: &[u8; 64]) -> State256 {
     State256::from_bytes(result.as_slice().try_into().unwrap())
 }
 
-/// BLAKE3 compression function
+/// Blake3 compression function
 fn blake3_compress(state: &State256, block: &[u8; 64]) -> State256 {
     let mut input = Vec::with_capacity(96);
     input.extend_from_slice(&state.to_bytes());
@@ -1261,7 +1261,7 @@ fn finalize(state: &State256) -> [u8; 32] {
     sha_hasher.update(&state.to_bytes());
     let sha_result = sha_hasher.finalize();
     
-    // Then apply BLAKE3
+    // Then apply Blake3
     let final_hash = blake3::hash(&sha_result);
     *final_hash.as_bytes()
 }
@@ -1392,7 +1392,7 @@ static void generate_seed(
     uint64_t diversified = nonce ^ ((uint64_t)chain * GOLDEN_RATIO);
     memcpy(input + header->len, &diversified, 8);
     
-    uint8_t hash[BLAKE3_OUT_LEN];
+    uint8_t hash[Blake3_OUT_LEN];
     blake3_hasher hasher;
     blake3_hasher_init(&hasher);
     blake3_hasher_update(&hasher, input, header->len + 8);
@@ -1456,7 +1456,7 @@ static void sha256_compress(state256_t* state, const uint8_t* block) {
     SHA256_Final((uint8_t*)state->words, &ctx);
 }
 
-// BLAKE3 compress
+// Blake3 compress
 static void blake3_compress_fn(state256_t* state, const uint8_t* block) {
     uint8_t input[96];
     memcpy(input, state->words, 32);
@@ -1510,7 +1510,7 @@ static void finalize(const state256_t* state, uint8_t* output) {
     uint8_t sha_result[32];
     SHA256((uint8_t*)state->words, 32, sha_result);
     
-    // BLAKE3
+    // Blake3
     blake3_hasher hasher;
     blake3_hasher_init(&hasher);
     blake3_hasher_update(&hasher, sha_result, 32);
@@ -1860,7 +1860,7 @@ function generateSeed(
     const GOLDEN_RATIO: u64 = 0x9E3779B97F4A7C15;
     const diversified = nonce ^ (u64(chain) * GOLDEN_RATIO);
     
-    // BLAKE3 hash (using WebCrypto or pure WASM implementation)
+    // Blake3 hash (using WebCrypto or pure WASM implementation)
     // ... implementation details ...
     
     return result;
@@ -1964,7 +1964,7 @@ fn validate_block(block: &Block) -> bool {
 For resource-constrained verifiers, provide pre-computed scratchpad commitments:
 
 ```
-scratchpad_commitment = BLAKE3(scratchpad[0..2MB])
+scratchpad_commitment = Blake3(scratchpad[0..2MB])
 ```
 
 Light clients can verify:
@@ -2023,7 +2023,7 @@ The billions of smartphones worldwide represent an untapped resource for decentr
 3. XELIS Project, "XelisHash v3 Specification," 2024
 4. Dryja, T., "Efficient Authenticated Dictionaries with Skip Lists and Commutative Hashing," MIT DCI, 2017
 5. Biryukov, A., Khovratovich, D., "Argon2: the memory-hard function for password hashing," 2015
-6. O'Connor et al., "BLAKE3: One Function, Fast Everywhere," 2020
+6. O'Connor et al., "Blake3: One Function, Fast Everywhere," 2020
 
 ---
 ## Appendix A: Test Vectors

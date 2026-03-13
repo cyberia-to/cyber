@@ -11,7 +11,7 @@ the science of protecting information and proving statements about it. built on 
 
 ## [[crypto/hashing]]
 
-a hash function maps arbitrary input to a fixed-size digest satisfying preimage resistance, second-preimage resistance, and collision resistance. prominent families: [[SHA-2]], [[BLAKE3]], [[Poseidon]]/Poseidon2 (algebraic, ZK-native). [[cyber]] uses [[Hemera]] (Poseidon2 over [[Goldilocks field]]).
+a hash function maps arbitrary input to a fixed-size digest satisfying preimage resistance, second-preimage resistance, and collision resistance. prominent families: [[SHA-2]], [[Blake3]], [[Poseidon]]/Poseidon2 (algebraic, ZK-native). [[cyber]] uses [[Hemera]] (Poseidon2 over [[Goldilocks field]]).
 
 ## [[crypto/encryption]]
 

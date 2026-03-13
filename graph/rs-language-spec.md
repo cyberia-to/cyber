@@ -460,7 +460,7 @@ The derived serializer follows strict rules:
 5. Enums serialized as discriminant (u32) + variant data
 6. Nested `ContentAddressed` types are serialized as their CID (32 bytes), not expanded
 
-Hash function: BLAKE3 (256-bit output, producing a CID).
+Hash function: Blake3 (256-bit output, producing a CID).
 
 ### 5.5 Compile-Time Checks
 
@@ -835,7 +835,7 @@ let msg = rx.recv().await;  // Inherits caller's deadline
 use rs::cid::Cid;
 
 let data = b"hello world";
-let cid = Cid::from_bytes(data);  // BLAKE3 hash
+let cid = Cid::from_bytes(data);  // Blake3 hash
 
 // Cid is Copy, 32 bytes, comparable, hashable
 let map: BoundedMap<Cid, Data, 10_000> = BoundedMap::new();
