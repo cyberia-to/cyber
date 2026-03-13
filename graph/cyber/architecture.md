@@ -148,7 +148,7 @@ push messages carry sender-signed relay requests. pull messages carry receiver-s
 
 reciprocity at the protocol level: [[BitTorrent]]-style tit-for-tat embedded in the gossip layer creates immediate, local incentive alignment without waiting for on-chain settlement. nodes that do not relay do not receive relay. [[tokens]] handle the asynchronous and asymmetric cases where bilateral reciprocity breaks down.
 
-location-aware routing: relay efficiency depends on physical geography. a node in Singapore relaying traffic between Tokyo and Sydney is useful. the same node relaying traffic between London and New York is wasteful. [[proof of location]] enables the relay layer to route by physics, not by topology — replacing BGP's institutional path selection with RTT-optimal geographic routing. relay fees weighted by inverse latency (`fee proportional to 1/latency`) make geographic honesty a dominant strategy: nodes that honestly report location earn more because they get routed traffic that physically passes near them.
+location-aware routing: relay efficiency depends on physical geography. a node in Singapore relaying traffic between Tokyo and Sydney is useful. the same node relaying traffic between London and New York is wasteful. [[location proof]] enables the relay layer to route by physics, not by topology — replacing BGP's institutional path selection with RTT-optimal geographic routing. relay fees weighted by inverse latency (`fee proportional to 1/latency`) make geographic honesty a dominant strategy: nodes that honestly report location earn more because they get routed traffic that physically passes near them.
 
 ## primitive 5: consensus
 
@@ -165,7 +165,7 @@ you can have compute without [[consensus]] (a laptop). you can have storage with
 
 cheap [[consensus]] is fast but fragile. expensive [[consensus]] is slow but permanent. the same economic tradeoff as storage duration — and the same design principle: expose it as a continuous parameter, not discrete tiers.
 
-## [[proof of location]]: the missing layer
+## [[location proof]]: the missing layer
 
 the existing internet addressing stack conflates two orthogonal concepts: identity (who you are) and location (where you are physically). an IP address encodes both simultaneously. this architectural error, present since 1973, produces a fragile hierarchy: IANA to RIR to AS to ISP to user. every layer is a point of control, censorship, and failure.
 
@@ -176,7 +176,7 @@ pubkey    →  WHO   (permanent, cryptographic, self-sovereign)
 geohash   →  WHERE (dynamic, physical, verifiable)
 ```
 
-without verifiable location, decentralized routing remains dependent on the same institutional hierarchies it seeks to replace. [[proof of location]] is not a sixth primitive — it is cross-cutting infrastructure that makes relay efficient, sequence verifiable, and [[consensus]] geographically aware.
+without verifiable location, decentralized routing remains dependent on the same institutional hierarchies it seeks to replace. [[location proof]] is not a sixth primitive — it is cross-cutting infrastructure that makes relay efficient, sequence verifiable, and [[consensus]] geographically aware.
 
 ### four axioms, zero trusted institutions
 
@@ -268,7 +268,7 @@ compute: location-aware task routing enables placing computation near the data i
 
 ## emergent hierarchy: [[focus]] + relay economics
 
-a single-chain [[vimputer]] with full replication does not need sharding to develop structure. hierarchy emerges naturally from the economics of the five primitives combined with [[proof of location]].
+a single-chain [[vimputer]] with full replication does not need sharding to develop structure. hierarchy emerges naturally from the economics of the five primitives combined with [[location proof]].
 
 ### how hubs form without permission
 
@@ -297,7 +297,7 @@ positive feedback loop. hubs emerge not by permission, but by physics and econom
 
 unlike the fixed hierarchy of the internet (which changes only through multi-year business negotiations), [[vimputer]] hierarchy is reversible in real time. a node that stops relaying, loses stake, or degrades its bandwidth loses centrality immediately. [[focus]] recomputes continuously. there is no lock-in.
 
-you do not need sharding to have structure. on a single chain with full replication, relay economics + [[proof of location]] + [[focus]] dynamics already produce a differentiated network [[topology]] where some nodes naturally serve as hubs. sharding can be introduced later, informed by observed emergent structure — not designed in advance.
+you do not need sharding to have structure. on a single chain with full replication, relay economics + [[location proof]] + [[focus]] dynamics already produce a differentiated network [[topology]] where some nodes naturally serve as hubs. sharding can be introduced later, informed by observed emergent structure — not designed in advance.
 
 ## the fractal [[consensus]] architecture (scaling vision)
 
@@ -326,7 +326,7 @@ compute: 99.9% happens at L0. each upper layer only aggregates proofs from below
 
 storage: L0 stores full data (cheap, local, ephemeral). L1 stores aggregated state + proofs. L2 stores state roots. L3 stores only the global commitment — O(1) size regardless of network scale. the duration spectrum maps directly: L0 is ephemeral, L3 is permanent.
 
-relay: mostly horizontal within layers (peer gossip within neighborhoods), with narrow vertical channels between layers (proof submission upward, finality confirmation downward). bandwidth demand is massive within L0, minimal at L3. [[proof of location]] determines which neighborhoods form — geographic proximity creates natural L1 clusters.
+relay: mostly horizontal within layers (peer gossip within neighborhoods), with narrow vertical channels between layers (proof submission upward, finality confirmation downward). bandwidth demand is massive within L0, minimal at L3. [[location proof]] determines which neighborhoods form — geographic proximity creates natural L1 clusters.
 
 [[consensus]]: L0 needs none (self-trust). L1 uses lightweight local BFT. L2 uses shard-level [[consensus]]. L3 needs only to verify recursive proofs — near-zero computation, maximum trust. the global singleton state can be constant-size (Mina-like ~22kb) because recursive [[STARK]] composition produces fixed-size proofs regardless of the computation being proved.
 
@@ -356,7 +356,7 @@ the five primitives collapse into two verification types:
 
 - relay: signature chains (prove you forwarded this message)
 - sequence: VDFs / position in append-only log (prove this ordering is valid)
-- location: RTT mesh + MDS consistency (prove where you are physically). see [[proof of location]]
+- location: RTT mesh + MDS consistency (prove where you are physically). see [[location proof]]
 - bandwidth: derived from relay throughput over time. not a separate verification problem
 
 ## [[focus]] as universal resource pricing oracle
@@ -405,7 +405,7 @@ for each node, identify the resource where it contributes the highest fraction o
 
 ### 4. relay fees create structure
 
-relay fees are the only revenue component that is not shared equally among validators. they flow to specific nodes proportional to relay contribution weighted by inverse latency. this differentiation — combined with [[proof of location]] — is what creates emergent hierarchy on a flat single chain. nodes in better physical locations with better bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], and accumulate higher [[focus]].
+relay fees are the only revenue component that is not shared equally among validators. they flow to specific nodes proportional to relay contribution weighted by inverse latency. this differentiation — combined with [[location proof]] — is what creates emergent hierarchy on a flat single chain. nodes in better physical locations with better bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], and accumulate higher [[focus]].
 
 ### 5. reciprocity before [[tokens]]
 
@@ -488,7 +488,7 @@ priority 1 — five-dimensional fee market. each transaction pays for sequence, 
 
 priority 2 — relay signature chains. integrate NKN-style relay accounting into the networking layer. every message hop is signed. probabilistic on-chain settlement. relay fees flow to relayers, not to block producers — this is the seed of emergent hierarchy.
 
-priority 3 — [[proof of location]]. RTT mesh between all nodes. MDS coordinate embedding. geohash claims verified by mesh consistency. `fee proportional to 1/latency` for relay pricing. no GPS, no trusted anchors.
+priority 3 — [[location proof]]. RTT mesh between all nodes. MDS coordinate embedding. geohash claims verified by mesh consistency. `fee proportional to 1/latency` for relay pricing. no GPS, no trusted anchors.
 
 priority 4 — duration-parameterized storage. unify ephemeral, medium-term, and permanent storage under a single primitive with continuous duration economics. storage fee = f(size, duration, privacy, structure type). see [[storage proofs]].
 

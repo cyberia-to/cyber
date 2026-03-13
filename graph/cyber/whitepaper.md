@@ -1075,13 +1075,13 @@ a [[vimputer]] that operates at planetary scale must price every resource it con
 
 each primitive gets an independent base fee updated via the EIP-1559 exponential rule. per-dimension block limits enforce safety while a single user-facing fee preserves UX. every resource operation declares its polarity — push (sender pays) or pull (receiver pays) — determined by who extracts more value.
 
-[[proof of location]] is cross-cutting infrastructure that makes relay efficient, sequence verifiable, and [[consensus]] geographically honest. construction: RTT mesh between nodes, classical MDS recovers 3D coordinates from distance matrix alone, Earth's circumference self-calibrates the embedding. four axioms — existence, bounded signal speed, spherical Earth, one honest observer — and zero trusted institutions. relay fees proportional to inverse latency make geographic honesty a dominant strategy [[equilibrium]].
+[[location proof]] is cross-cutting infrastructure that makes relay efficient, sequence verifiable, and [[consensus]] geographically honest. construction: RTT mesh between nodes, classical MDS recovers 3D coordinates from distance matrix alone, Earth's circumference self-calibrates the embedding. four axioms — existence, bounded signal speed, spherical Earth, one honest observer — and zero trusted institutions. relay fees proportional to inverse latency make geographic honesty a dominant strategy [[equilibrium]].
 
-emergent hierarchy follows from [[focus]] + relay economics + [[proof of location]]. nodes in better physical locations with higher bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], accumulate higher [[focus]]. hubs form without permission, and the hierarchy is liquid — reversible in real time as conditions change. no sharding is needed for structure to emerge on a single chain.
+emergent hierarchy follows from [[focus]] + relay economics + [[location proof]]. nodes in better physical locations with higher bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], accumulate higher [[focus]]. hubs form without permission, and the hierarchy is liquid — reversible in real time as conditions change. no sharding is needed for structure to emerge on a single chain.
 
 the fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). recursive [[STARK]] composition produces O(1) global state (~22kb) regardless of network scale. layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
 
-See [[cyber/architecture]] for the full specification of the five primitives, [[proof of location]] construction, economic design principles, and fractal scaling vision.
+See [[cyber/architecture]] for the full specification of the five primitives, [[location proof]] construction, economic design principles, and fractal scaling vision.
 
 ## 19. Forgetting and Pruning
 
