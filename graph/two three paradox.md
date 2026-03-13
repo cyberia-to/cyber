@@ -57,7 +57,7 @@ physics. space is three-dimensional, but elementary distinctions are binary: spi
 
 [[logic]]. classical [[logic]] is binary. but [[Kurt Goedel|Gödel]]'s theorems show that from the binary (provable / unprovable) a third inevitably falls out — true but unprovable. three emerges from two on its own. Łukasiewicz and Kleene three-valued logics are not exotic — they are necessary. [[fuzzy logic]] extends this to the continuum.
 
-neurobiology. the neuron is quasi-binary (spike / no spike). but synaptic transmission is ternary: excitation, inhibition, neuromodulation. three types of learning: Hebbian, anti-Hebbian, homeostatic. the brain is binary hardware running ternary software.
+neurobiology. the neuron is quasi-binary (spike / no spike). but synaptic transmission is ternary: excitation, inhibition, neuromodulation. three types of learning: [[Hebbian learning]], [[anti-Hebbian learning]], [[homeostatic learning]]. the brain is binary hardware running ternary software. see [[synaptic plasticity]].
 
 [[mycelium]]. hyphal connection: exists / doesn't exist (binary). but exchange through the connection: give resource, receive resource, or maintain connection without net flow (ternary). a mycorrhizal network is [[binary topology ternary economics]].
 
