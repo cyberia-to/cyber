@@ -183,6 +183,32 @@ cybergraphs and their homomorphisms form a category $\mathbf{CG}$. there is a fo
 
 ---
 
+## the graph is the protocol
+
+the [[cybergraph]] is not a database sitting beside the protocol. it IS the protocol. every core function runs through the same five primitives: [[particles]], [[cyberlinks]], [[neurons]], [[tokens]], [[focus]].
+
+| function | how the graph serves it |
+|---|---|
+| identity | [[particles]] as public keys, graph as PKI — see [[cyber/identity]] |
+| key exchange | CSIDH curves as [[particles]], non-interactive — see [[dCTIDH]] |
+| authentication | [[STARK]] proofs of [[Hemera]] preimage knowledge — see [[cyber/proofs]] |
+| consensus | finalized subgraph IS the state — see [[foculus]] |
+| fork choice | $\pi$ from graph [[topology]], not voting — see [[foculus]] |
+| finality | $\pi_i > \tau$, threshold adapts to graph density — see [[foculus]] |
+| privacy | anonymous [[cyberlinks]], [[mutator set]] in graph — see [[cyber/bbg]] |
+| incentives | $\Delta\pi$ from graph convergence = reward signal — see [[cyber/rewards]] |
+| relay payment | delivery proofs as [[particles]], [[focus]] as payment — see [[cyber/communication]] |
+| version control | patches as [[cyberlinks]], repos as subgraphs — see [[cyber/patch]] |
+| file system | `~` prefix resolves through [[cyberlinks]] — see [[name/resolution]] |
+| type system | [[semantic conventions]] from link [[topology]] — see [[neural]] |
+| computation | [[tru]]/[[trident]]/[[nox]] read and consume graph state |
+| data availability | [[NMT]] indexes double as DA layer — see [[storage proofs]] |
+| sybil resistance | stake-weighted $\pi$, no external identity |
+
+fifteen protocol functions. one data structure. five primitives.
+
+---
+
 see [[cyber/tri-kernel]] for the full tri-kernel specification. see [[collective focus theorem]] for the convergence proofs. see [[cyber/epistemology]] for the epistemic gap between cryptographic and epistemic correctness. see [[two kinds of knowledge]] for the structural/epistemic split. see [[inversely coupled bonding surface]] for the market substrate. see [[Bayesian Truth Serum]] for the BTS scoring layer. see [[syntropy]] for the information-theoretic measures.
 
 discover all [[concepts]]
