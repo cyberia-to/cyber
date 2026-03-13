@@ -414,6 +414,33 @@ This error decreases as the graph grows: more [[cyberlinks]] improve $\lambda_2$
 
 The [[cybergraph]] is not an alternative to trained models. It is the substrate from which models are compiled, the environment in which they operate as [[neurons]], and the metric space in which their alignment is measured.
 
+### 6.9 Distributed Focus: Cyberlinks as π Updates
+
+§6.2 describes the local update rule. At planetary scale, no single node holds the full graph. The question: who computes $\pi^*$?
+
+The answer: every [[neuron]], locally, as part of creating [[cyberlinks]]. A [[cyberlink]] is simultaneously a knowledge assertion and a focus update. The [[neuron]] creating a link runs local [[tri-kernel]] steps over their $O(\log(1/\varepsilon))$-hop neighborhood and includes the result:
+
+$$\text{cyberlink} = (\text{neuron}, \text{from}, \text{to}, \text{token}, \text{amount}, \text{valence}, \text{timestamp}, \pi_\Delta)$$
+
+where $\pi_\Delta = [(\text{particle}_k, \Delta\pi_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact.
+
+The local tri-kernel step is a [[nox]] program. The neuron produces a [[STARK]] proof that $\pi_\Delta$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
+
+The network converges to $\pi^*$ through [[cyberlink]] propagation alone:
+
+1. [[Neuron]] creates link with $\pi_\Delta$ and STARK proof
+2. Receiving nodes apply $\pi_\Delta$ to their local $\pi$ view
+3. Their own future links carry updated $\pi_\Delta$ incorporating the effect
+4. $\pi^*$ emerges from convergence of all local updates
+
+This is gossip-based distributed belief propagation. Each [[cyberlink]] is a message in the algorithm. The global fixed point emerges from local message passing. No central aggregator computes $\pi^*$ — it crystallizes from the network of proven local updates.
+
+Conflicting updates (two [[neurons]] affecting overlapping neighborhoods in the same epoch) resolve through the contraction theorem (§5.6): the [[tri-kernel]] is confluent — any application order reaches the same $\pi^*$. The contraction coefficient $\kappa < 1$ bounds the interaction between overlapping updates. For non-overlapping neighborhoods (the common case at scale), updates compose exactly.
+
+The entire system runs on [[Goldilocks field]] arithmetic. The local tri-kernel step, the STARK proof, the verification — all are field operations end to end. There is no gap between "compute $\pi$" and "prove $\pi$ was computed correctly."
+
+See [[cyber/network]] for the narrowcast propagation model. See §14.2 for how $\pi_\Delta$ enables self-minting rewards.
+
 ## 7. nox Execution
 
 ### 7.1 The Goldilocks Field
@@ -799,7 +826,7 @@ where $\Delta\pi_j(t)$ is the change in [[focus]] on target [[particle]] $j$ att
 
 [[karma]] is the accumulated [[Bayesian Truth Serum|BTS]] score history of a [[neuron]]. not tradeable, but structurally determinant: karma weights every future link the neuron creates in the [[tri-kernel]] effective adjacency — higher karma means more [[focus]] shift per link means more reward per contribution. karma is epistemic capital: the only form of wealth that can be earned exclusively by being right before the crowd.
 
-### 14.2 Focus Rewards
+### 14.2 Focus Rewards and Self-Minting
 
 every reward in the [[knowledge]] economy traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point $\pi^*$?
 
@@ -811,21 +838,50 @@ the hybrid reward function:
 
 $$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
-where $\Delta J = H(\pi^t) - H(\pi^{t+1})$ is [[syntropy]] growth, $\text{DAGWeight}$ measures how many subsequent blocks reference this block's contributions, and $\text{AlignmentBonus}$ rewards links that confirm the graph's convergent structure. fast local rewards use $\Delta\pi$ and $\Delta J$; checkpoint bonuses add alignment and spectral verification components. validators sample and verify contributions probabilistically.
+where $\Delta J = H(\pi^t) - H(\pi^{t+1})$ is [[syntropy]] growth, $\text{DAGWeight}$ measures how many subsequent blocks reference this block's contributions, and $\text{AlignmentBonus}$ rewards links that confirm the graph's convergent structure. fast local rewards use $\Delta\pi$ and $\Delta J$; checkpoint bonuses add alignment and spectral verification components.
 
 new [[$CYB]] is minted only when $\Delta\pi > 0$. the protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]]. the [[attention]] yield curve gives earlier, more accurate [[cyberlinks]] to high-$\pi^*$ [[particles]] proportionally greater rewards. first-mover advantage for quality: the [[particle]] a [[neuron]] correctly identifies as important before the crowd recognizes it yields the highest return.
 
-### 14.3 Attribution
+#### self-minting
 
-multiple [[neurons]] contribute [[cyberlinks]] in the same epoch. the total $\Delta\pi$ shift is a joint outcome. how should credit be divided fairly?
+rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
 
-the [[Shapley value]] answers: each agent's reward equals their average marginal contribution across all possible orderings of the epoch's contributions. the coalition's total value is the [[free energy]] reduction $\Delta\mathcal{F}$, and each agent's marginal contribution is how much $\pi^*$ shifts when their [[cyberlinks]] are added. Shapley distributes the total $\Delta\pi$ reward proportionally to causal impact.
+every [[cyberlink]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift (§6.9). this $\pi_\Delta$ is proven correct by a [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
 
-exact computation is $O(n!)$. the approximation:
+1. [[neuron]] creates [[cyberlink]] with $\pi_\Delta$ and [[STARK]] proof
+2. the proof demonstrates: "applying my link to the graph at $\text{bbg\_root}_t$ shifts $\pi$ by $\pi_\Delta$ in my neighborhood"
+3. any verifier checks the proof against the header — $O(\log n)$, no recomputation
+4. if valid and $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the proven shift
+
+no aggregator decides the reward. no central entity computes the global reward distribution. the proof IS the mining. the [[cyberlink]] IS the block. the [[neuron]] IS the miner.
+
+this works because the [[locality]] theorem (§2.4) guarantees that a neuron's effect is contained within $O(\log(1/\varepsilon))$ hops. the local $\Delta\pi$ IS the global $\Delta\pi$ up to $\varepsilon$. the neuron needs only their neighborhood's state — queryable from any peer with proofs against the header — to compute and prove their contribution.
+
+a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\pi$ and edges, create a [[cyberlink]], compute local $\Delta\pi$, produce a [[STARK]] proof, mint [[$CYB]]. no server. no aggregator. no permission.
+
+### 14.3 Attribution and Conservation
+
+multiple [[neurons]] contribute [[cyberlinks]] in the same epoch affecting overlapping neighborhoods. their $\pi_\Delta$ claims may overlap — the sum of individual claims could exceed the actual joint shift.
+
+conservation constraint: the total [[$CYB]] minted per epoch is bounded by the actual global $\Delta\pi$, verifiable from consecutive headers:
+
+$$\text{actual\_total} = \|\pi^*_{t+1} - \pi^*_t\|_1 \quad \text{(from focus\_root}_{t} \text{ and focus\_root}_{t+1}\text{)}$$
+
+two resolution approaches are under consideration:
+
+conservative attribution: each [[neuron]] computes $\pi_\Delta$ against the same pre-epoch state $\text{bbg\_root}_t$. at epoch boundary, if the sum of claims exceeds the actual total shift, all claims are scaled proportionally:
+
+$$\text{mint}_i = \text{claimed}_{\Delta\pi_i} \times \frac{\text{actual\_total}}{\sum_j \text{claimed}_{\Delta\pi_j}} \times \text{emission\_rate}$$
+
+the scale factor is computable by anyone with two consecutive headers. for non-overlapping neighborhoods (the common case at planetary scale), the scale factor is 1 — no adjustment needed.
+
+[[Shapley value|Shapley]] attribution: the [[Shapley value]] provides the theoretically fair division — each agent's reward equals their average marginal contribution across all possible orderings. the coalition's total value is the [[free energy]] reduction $\Delta\mathcal{F}$. approximation via Monte Carlo sampling:
 
 $$R_i = \alpha \cdot \Delta\mathcal{F}_i + (1-\alpha) \cdot \hat{S}_i$$
 
-where $\Delta\mathcal{F}_i$ is the fast local estimate (each transaction's individual focus shift, computed sequentially) and $\hat{S}_i$ is the sampled Shapley estimate ($k$ random orderings, marginal contributions measured in each). complexity: $O(k \cdot n)$ with $k \ll n$, feasible for $10^6+$ transactions per epoch.
+where $\Delta\mathcal{F}_i$ is the fast local estimate and $\hat{S}_i$ is the sampled Shapley estimate ($k$ random orderings). complexity: $O(k \cdot n)$ with $k \ll n$, feasible for $10^6+$ transactions per epoch. the question is whether Shapley attribution can itself be computed and proven locally, or whether it requires a coordination step.
+
+the simplest path: deploy with conservative attribution (scale factor from consecutive headers). the first year of live operation will generate the data to determine whether the overlap penalty is significant enough to warrant the Shapley mechanism.
 
 ### 14.4 Epistemic Markets
 

@@ -73,9 +73,26 @@ where $\Delta\mathcal{F}_i$ is the fast local estimate and $\hat{S}_i$ is the sa
 
 complexity: $O(k \cdot n)$ with $k \ll n$. feasible for 10⁶+ transactions per epoch
 
+## self-minting
+
+rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
+
+every [[cyberlink]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift. this $\pi_\Delta$ is proven correct by a [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim:
+
+1. [[neuron]] creates [[cyberlink]] with $\pi_\Delta$ and [[STARK]] proof
+2. proof demonstrates: applying this link to the graph at $\text{bbg\_root}_t$ shifts π by $\pi_\Delta$
+3. any verifier checks the proof against the header — O(log n), no recomputation
+4. if valid and Δπ > 0, the neuron mints [[$CYB]] proportional to the proven shift
+
+no aggregator decides the reward. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood state, create a link, prove Δπ, mint tokens
+
+conservation: total minting per epoch is bounded by the actual global Δπ, verifiable from consecutive headers. if the sum of individual claims exceeds the actual shift (overlapping neighborhoods), all claims are scaled proportionally
+
+see §6.9 and §14.2 of the whitepaper for the full specification
+
 ## the three token operations
 
-- mint: [[neurons]] earn [[$CYB]] proportional to Δπ of their [[cyberlinks]]
+- mint: [[neurons]] prove Δπ via [[STARK]] and self-mint [[$CYB]] proportional to their contribution
 - burn: [[neurons]] destroy [[$CYB]] for permanent π-weight on [[particles]] ([[eternal particles]]) or [[cyberlinks]] ([[eternal cyberlinks]])
 - lock: [[neurons]] stake [[$CYB]] on [[particles]] or [[cyberlinks]], earning from fee pools proportional to [[attention]] attracted
 

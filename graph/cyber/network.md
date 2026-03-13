@@ -151,6 +151,64 @@ a [[neuron]] creating a biology [[cyberlink]] resolves `~*/serves/biology` to fi
 
 aggregators earn fees for inclusion (sender pays — the neuron creating the link). competition between aggregators for the same namespace keeps fees low and inclusion fast.
 
+## focus propagation: cyberlinks as π updates
+
+the network has no central node that computes the [[focus]] distribution π*. instead, π* emerges from the [[cyberlinks]] themselves. every [[cyberlink]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift — proven by a [[STARK]] proof.
+
+### what a cyberlink carries
+
+```
+cyberlink {
+    neuron:     pubkey
+    from:       particle_id
+    to:         particle_id
+    token:      denomination
+    amount:     stake
+    valence:    {-1, 0, +1}
+    timestamp:  u64
+    pi_delta:   [(particle_id, Δπ)]    sparse focus update
+    proof:      STARK                   proof of correct local computation
+}
+```
+
+the `pi_delta` covers particles within the neuron's O(log(1/ε))-hop neighborhood. the [[locality]] theorem guarantees effects beyond that radius are below ε. the proof references a specific `bbg_root` from a header the neuron has verified.
+
+### how π converges without central computation
+
+```
+neuron queries neighborhood π + edges (with proofs from any peer)
+    │
+    ▼
+creates cyberlink, runs local tri-kernel step
+    │
+    ▼
+produces STARK proof: "this pi_delta follows from
+  applying my link to the graph at bbg_root_t"
+    │
+    ▼
+sends cyberlink + proof to aggregator
+    │
+    ▼
+aggregator applies pi_delta to local π view
+    │
+    ▼
+namespace subscribers receive cyberlink, apply pi_delta
+    │
+    ▼
+their future cyberlinks carry updated pi_deltas
+    │
+    ▼
+π* emerges from convergence of all local proven updates
+```
+
+this is gossip-based distributed belief propagation. the [[tri-kernel]] contraction theorem (§5.6 of the whitepaper) guarantees convergence: any order of applying proven pi_deltas reaches the same π*. the global fixed point crystallizes from local proofs without any node computing it centrally.
+
+### self-minting
+
+the $\pi_\Delta$ proof doubles as a reward claim. if the proven $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the shift. no aggregator decides the reward — the proof IS the mining. see §14.2 of the whitepaper for the conservation constraint and attribution mechanism.
+
+a [[neuron]] on a phone: buy a header, query neighborhood state, create a link, prove Δπ, mint tokens. the device that creates knowledge is the device that earns from it.
+
 ## data availability: sampling without global knowledge
 
 the full network does not store or download block data. data availability is verified probabilistically through DAS (Data Availability Sampling).
