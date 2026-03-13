@@ -41,7 +41,7 @@ the original CSIDH implementation leaks timing information through variable-time
 | dCTIDH-1024 | ~128 bit | 128 bytes | research |
 | dCTIDH-2048 | ~256 bit | 256 bytes | research |
 
-public keys are remarkably compact compared to lattice-based schemes (ML-KEM public keys are 800-1568 bytes).
+public keys are remarkably compact compared to lattice-based schemes ([[ML-KEM]] public keys are 800-1568 bytes).
 
 ## applications in [[cyber]]
 
@@ -51,7 +51,7 @@ public keys are remarkably compact compared to lattice-based schemes (ML-KEM pub
 
 ## tradeoffs
 
-- slower than lattice KEM (~5x for dCTIDH-2048 vs ML-KEM)
+- slower than [[lattice KEM]] (~5x for dCTIDH-2048 vs [[ML-KEM]])
 - the isogeny assumption is less studied than lattice assumptions — SIDH was broken in 2022, though CSIDH survived those attacks
 - active research area, not yet standardized
 

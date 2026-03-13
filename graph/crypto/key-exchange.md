@@ -14,7 +14,7 @@ two parties derive a shared secret over an insecure channel.
 |---|---|---|---|
 | Diffie-Hellman (DH) | discrete log | interactive | foundational (1976), broken by quantum |
 | ECDH (X25519, X448) | ECDLP | interactive | current standard (TLS 1.3, Signal, WireGuard) |
-| ML-KEM (CRYSTALS-Kyber) | Module-LWE | interactive (KEM) | NIST PQC standard, post-quantum |
+| [[ML-KEM]] (CRYSTALS-Kyber) | Module-LWE | interactive (KEM) | NIST PQC standard, post-quantum |
 | CSIDH / [[dCTIDH]] | supersingular isogeny | non-interactive | conjectured post-quantum, enables stealth addresses |
 
 ## non-interactive key exchange
