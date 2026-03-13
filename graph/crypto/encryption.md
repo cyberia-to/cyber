@@ -29,7 +29,7 @@ a public key encrypts, the corresponding private key decrypts.
 | RSA-OAEP | integer factorization | 2048-4096 bit | legacy, being phased out |
 | ECIES (over Curve25519, secp256k1) | elliptic curve discrete log | 256 bit | current standard for hybrid encryption |
 | ML-KEM (CRYSTALS-Kyber) | Module-LWE | 800-1568 bytes | NIST PQC standard (FIPS 203), post-quantum |
-| CSIDH / dCTIDH | supersingular isogeny class group | ~64 bytes | non-interactive key exchange, conjectured post-quantum |
+| CSIDH / [[dCTIDH]] | supersingular isogeny class group | ~64 bytes | non-interactive key exchange, conjectured post-quantum |
 
 hybrid encryption: encrypt a symmetric key with an asymmetric scheme, then encrypt the payload with the symmetric key. virtually all real-world systems use this pattern (TLS, Signal, age, GPG).
 
