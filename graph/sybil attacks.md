@@ -30,6 +30,7 @@ key points
 		- identity verification
 		- reputation systems
 		- [[proof of work]]
+		- [[proof_of_location]] — physical RTT consistency makes geographic Sybil impersonation impossible
 		- and network topology analysis
 	- to identify and limit the influence of sybil nodes
 
