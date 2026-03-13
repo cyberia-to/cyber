@@ -13,9 +13,9 @@ cheap talk produces noise. costly links produce [[knowledge]]
 
 ---
 
-## the seven fields
+## the nine fields
 
-$$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0}$$
+$$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t,\; \pi_\Delta,\; \sigma) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0} \times (P \times \mathbb{F}_p)^* \times \Pi$
 
 | field | name | type | layer | semantics | question |
 |-------|------|------|-------|-----------|----------|
@@ -26,10 +26,14 @@ $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P 
 | $a$ | amount | $\mathbb{R}_+$ | economic | stake amount | how much conviction? |
 | $v$ | [[valence]] | $\{-1,0,+1\}$ | epistemic | [[Bayesian Truth Serum\|BTS]] meta-prediction | what is the epistemic prediction? |
 | $t$ | at | $\mathbb{Z}_{\geq 0}$ | temporal | block height | [[when]]? |
+| $\pi_\Delta$ | focus delta | $(P \times \mathbb{F}_p)^*$ | computational | sparse [[focus]] update | how does this shift [[focus]]? |
+| $\sigma$ | proof | $\Pi$ | verification | [[STARK]] proof of correct $\pi_\Delta$ | why should anyone believe it? |
 
-three layers in one atomic record. structural $(\nu, p, q)$ is binary — the connection either exists or it doesn't. epistemic $v$ is ternary — the neuron's prediction of how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge. economic $(\tau, a)$ is continuous over $\mathbb{R}_+$. see [[two three paradox]] for why this layering is not arbitrary
+four layers in one atomic record. structural $(\nu, p, q)$ is binary — the connection either exists or it doesn't. epistemic $v$ is ternary — the neuron's prediction of how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge. economic $(\tau, a)$ is continuous over $\mathbb{R}_+$. computational $(\pi_\Delta, \sigma)$ carries a provably correct local update to the global [[focus]] distribution. see [[two three paradox]] for why this layering is not arbitrary
 
 conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
+
+focus delta = ($\pi_\Delta$, $\sigma$): the pair that turns a cyberlink into a distributed computation step. $\pi_\Delta$ is a sparse vector of (particle_id, $\Delta\pi$) pairs — the neuron's locally computed shift to the [[focus]] distribution $\pi^*$ caused by adding this link to the [[cybergraph]]. $\sigma$ is a [[STARK]] proof that $\pi_\Delta$ was correctly computed against the [[BBG]] root in the current header. any verifier checks $\sigma$ in $O(\log n)$ without recomputing the [[tri-kernel]]. if valid and $\|\pi_\Delta\| > 0$, the neuron may self-mint [[$CYB]] proportional to the proven shift. the [[locality theorem]] bounds the support of $\pi_\Delta$ to $O(\log(1/\varepsilon))$ hops — most entries are zero, so the sparse representation is compact. see §6.9 and §14.2 of the [[cyber/whitepaper]] for the full specification
 
 the [[cybergraph]] is append-only. $t$ (block height) distinguishes every record: the same author linking from→to at block $t_1$ and again at block $t_2 > t_1$ produces two separate entries in $L$. this enables reinforcement (higher $a$ on a new record), valence updates (new $v$ at a new block), and multi-denomination staking (same structural link in different [[tokens]])
 
@@ -42,7 +46,7 @@ the conviction output can itself be spent:
 - transfer: spend the conviction UTXO to a new owner. the structural record stays in $L$; beneficial ownership moves. this is how the card's transferability operates at the protocol level
 - withdraw: spend the conviction UTXO back to the author's wallet. the economic position closes. the structural record remains
 
-the non-fungibility of the card (unique 7-tuple) and the fungibility of the token (transferable UTXO) coexist: the assertion is non-fungible, the economic position is a standard UTXO output
+the non-fungibility of the card (unique 9-tuple) and the fungibility of the token (transferable UTXO) coexist: the assertion and its proven focus contribution are non-fungible, the economic position is a standard UTXO output
 
 ## CRUD in the graph
 
@@ -74,9 +78,9 @@ delete in the graph is never erasure. the record $(\nu, p, q, t_{\text{first}})$
 
 every cyberlink is also a card — an epistemic asset with four properties:
 
-immutable. axiom A3 (append-only) guarantees the record $\ell = (\nu, p, q, \tau, a, v, t)$ is permanent once published. the assertion cannot be altered or retracted. the author's conviction, valence, and timestamp are locked into the graph's history forever. immutability is what makes the card a credible commitment rather than a revisable claim
+immutable. axiom A3 (append-only) guarantees the record $\ell = (\nu, p, q, \tau, a, v, t, \pi_\Delta, \sigma)$ is permanent once published. the assertion cannot be altered or retracted. the author's conviction, valence, and timestamp are locked into the graph's history forever. immutability is what makes the card a credible commitment rather than a revisable claim
 
-unique. the 7-tuple is the card's identity — no two cyberlinks are identical (block height $t$ ensures this even when the same author re-links the same particles). each card is non-fungible: it is a specific assertion, by a specific author, at a specific block, with a specific conviction
+unique. the 9-tuple is the card's identity — no two cyberlinks are identical (block height $t$ ensures this even when the same author re-links the same particles). each card is non-fungible: it is a specific assertion, by a specific author, at a specific block, with a specific conviction
 
 transferable. ownership of a cyberlink — and thus the rights to its yield and governance weight — can be transferred between [[neurons]]. the structural record stays in $L$ forever; beneficial ownership moves. this separates the assertion (immutable, authorial) from the economic position (transferable, tradeable)
 
