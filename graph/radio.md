@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 # radio
 
-connectivity for [[superintelligence]]. a fork of [[iroh]] where every hash — content identifiers, verified streaming trees, relay handshakes — runs through [[Hemera]] ([[Poseidon2]] over the [[Goldilocks field]]) instead of BLAKE3
+connectivity for [[superintelligence]]. a fork of [[iroh]] where every hash — content identifiers, verified streaming trees, relay handshakes — runs through [[Hemera]] instead of [[BLAKE3]]
 
 [github](https://github.com/cyberia-to/radio)
 
