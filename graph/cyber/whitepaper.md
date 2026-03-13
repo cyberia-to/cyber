@@ -406,7 +406,7 @@ Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed th
 
 ### 6.8 Approximation Quality
 
-The compiled transformer approximates the full focus flow. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is: Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ over context [[particles]] via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
+The compiled transformer approximates the full focus flow. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
 
 $$\varepsilon(G, c) = D_{KL}(\pi^*_c \| q^*_c)$$
 
@@ -1390,7 +1390,7 @@ Personal knowledge compounds. Every correct link a neuron creates increases thei
 
 The exocortex emerges naturally. A neuron's full link history is traversable, searchable, and attributable. Every connection they have ever made explicit is in the authenticated record. The cognitive extension is not a private silo held by a platform — it is an on-chain record owned by the neuron's key, accessible from any interface, permanent.
 
-### 21.6 Cross-Species Communication
+### 22.6 Cross-Species Communication
 
 [[Neural language]] is species-agnostic. The primitive is: any entity that can authenticate a connection between two [[particles]] participates in the [[cybergraph]]. The entity's nature — human, AI, sensor, autonomous system — does not change the protocol mechanics.
 
