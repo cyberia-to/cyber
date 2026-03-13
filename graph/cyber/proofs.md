@@ -51,6 +51,10 @@ availability          │ size                       │ claimed content size ma
 ──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
 recursive             │ proof aggregation          │ N proofs are all valid                   │ ~70,000
                       │ recursive composition      │ proof-of-proof, constant size            │ ~70,000
+──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
+location              │ RTT consistency            │ node is at claimed geohash               │ O(N²) RTT
+                      │ medium declaration         │ link uses declared transmission medium   │ O(N) verify
+                      │ observer bootstrap         │ absolute coordinates from single origin  │ MDS + A1
 ```
 
 every proof in the table is a [[STARK]]. no SNARKs, no trusted setup, no curves. one hash ([[Hemera]]), one VM ([[nox]]), one field ([[Goldilocks field]]).
@@ -306,6 +310,20 @@ the [[cybergraph]] generates three epistemological proofs:
 
 a [[cyberank]] distribution π* is a simulation-proof of collective [[relevance]]: no axioms, no authority, no vote. convergence under conservation laws.
 
+## location proofs
+
+[[proof_of_location]] provides cryptographically verifiable geolocation without trusted anchors, GPS, or certificate authorities. the construction uses RTT measurements across declared transmission media, [[verifiable delay functions]], and [[Merkle]] causal clocks. nodes self-organize into a 3D coordinate embedding via multidimensional scaling, calibrated to Earth's circumference.
+
+| proof | what it guarantees | mechanism |
+|---|---|---|
+| RTT consistency | node is physically at claimed geohash | pairwise RTT mesh normalized by declared c_medium, verified by MDS embedding |
+| medium declaration | link uses claimed transmission medium | RTT consistency cross-check against canonical propagation speeds |
+| observer bootstrap | absolute coordinates from single origin | one observer asserts position (A1), spherical constraint forces unique embedding |
+
+[[sybil attacks|Sybil]] resistance is physical: faking RTT consistency with a dense global mesh across multiple media is impossible. economic enforcement via latency-weighted relay fees makes honest reporting a [[dominant strategy]] [[equilibrium]] — stronger than [[nash equilibrium]].
+
+see [[proof_of_location]] for the full specification.
+
 ## the proof stack
 
 ```
@@ -313,8 +331,9 @@ a [[cyberank]] distribution π* is a simulation-proof of collective [[relevance]
 │  epistemological    proof by simulation (cybics)         │
 │                     convergence → fixed point → truth    │
 ├─────────────────────────────────────────────────────────┤
-│  application        identity, delivery, inference,       │
-│                     anonymity, storage, range, ownership │
+│  application        identity, delivery, location,        │
+│                     inference, anonymity, storage,       │
+│                     range, ownership                     │
 ├─────────────────────────────────────────────────────────┤
 │  recursive          proof aggregation, composition       │
 │                     O(1) verification for O(N) proofs    │
@@ -332,4 +351,4 @@ a [[cyberank]] distribution π* is a simulation-proof of collective [[relevance]
 
 one hash. one VM. one field. one IOP. one PCS. every proof in [[cyber]] — from a single [[cyberlink]] to a chained delivery receipt to a trillion-parameter neural network inference — reduces to: run a [[nox]] program, commit trace via [[WHIR]], verify constraints via [[sumcheck]], produce a [[STARK]].
 
-see [[cyber/identity]] for authentication and anonymity, [[cyber/communication]] for delivery proofs, [[BBG]] for polynomial commitment architecture, [[trident]] for verifiable AI, [[cybics]] for proof by simulation, [[cyber/security]] for formal guarantees
+see [[cyber/identity]] for authentication and anonymity, [[cyber/communication]] for delivery proofs, [[proof_of_location]] for anchor-free geolocation, [[BBG]] for polynomial commitment architecture, [[trident]] for verifiable AI, [[cybics]] for proof by simulation, [[cyber/security]] for formal guarantees
