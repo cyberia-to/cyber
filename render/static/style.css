@@ -277,22 +277,52 @@ code {
     border-radius: 3px;
 }
 
-/* Code blocks — syntect injects background-color via inline style */
-pre {
-    margin: 1em 0;
-    padding: 1em;
-    border-radius: 6px;
+/* Code blocks — frameless, same background as page */
+pre,
+pre.syntax-highlighting {
+    margin: 1.5em 0;
+    padding: 0;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0;
     overflow-x: auto;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 pre code {
     padding: 0;
-    background: none;
-    border: none;
+    background: none !important;
+    border: none !important;
+    border-radius: 0;
     font-size: 0.85em;
-    color: inherit;
+    color: var(--color-text);
 }
+
+/* Syntax highlighting — cyber palette */
+pre span.source { color: #e0e0e0; }
+pre span.comment,
+pre span.comment span { color: #555; font-style: italic; }
+pre span.keyword,
+pre span.storage,
+pre span.keyword span { color: #22c55e; }
+pre span.entity,
+pre span.entity span.name,
+pre span.entity span { color: #06b6d4; }
+pre span.string,
+pre span.string span { color: #3b9eff; }
+pre span.constant,
+pre span.constant span { color: #c084fc; }
+pre span.variable,
+pre span.variable span { color: #f0f0f0; }
+pre span.support,
+pre span.support span { color: #06b6d4; }
+pre span.meta,
+pre span.meta span { color: #888; }
+pre span.punctuation,
+pre span.punctuation span { color: #777; }
+pre span.invalid { color: #ef4444; }
+pre span.storage.type { color: #06b6d4; }
+pre span.storage.modifier { color: #22c55e; }
 
 /* Tables */
 .page-content table {

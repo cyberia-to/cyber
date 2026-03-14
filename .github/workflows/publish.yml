@@ -15,6 +15,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Checkout subgraph repos
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           # Scan graph pages for subgraph declarations and clone from the same org
           ORG="cyberia-to"
@@ -27,7 +29,7 @@ jobs:
                 TARGET_DIR=$(realpath -m "$TARGET_DIR")
                 if [ ! -d "$TARGET_DIR" ]; then
                   echo "Cloning $ORG/$REPO_NAME → $TARGET_DIR"
-                  git clone --depth 1 "https://github.com/$ORG/$REPO_NAME.git" "$TARGET_DIR"
+                  git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/$ORG/$REPO_NAME.git" "$TARGET_DIR"
                 fi
               fi
             fi

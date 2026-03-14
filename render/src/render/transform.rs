@@ -162,7 +162,7 @@ fn restore_math_blocks(html: &str, math_blocks: &[String]) -> String {
 }
 
 /// Render markdown to HTML with wikilink resolution, embed expansion, block refs, and queries.
-pub fn render_markdown(markdown: &str, store: &PageStore, code_theme: &str) -> RenderResult {
+pub fn render_markdown(markdown: &str, store: &PageStore, _code_theme: &str) -> RenderResult {
     // Pre-process: resolve embeds and block references in the markdown source
     let processed = resolve_embeds_and_refs(markdown, store, 0);
 
@@ -189,9 +189,9 @@ pub fn render_markdown(markdown: &str, store: &PageStore, code_theme: &str) -> R
     // Add heading IDs for TOC anchors
     inject_heading_ids(root, &arena);
 
-    // Render to HTML with syntax highlighting
+    // Render to HTML with syntax highlighting (CSS class mode — no inline styles)
     let adapter = SyntectAdapterBuilder::new()
-        .theme(code_theme)
+        .css()
         .build();
     let mut plugins = Plugins::default();
     plugins.render.codefence_syntax_highlighter = Some(&adapter);
