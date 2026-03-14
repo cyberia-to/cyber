@@ -120,8 +120,11 @@ pub fn parse_file(file: &DiscoveredFile) -> Result<ParsedPage> {
 
     // Rewrite relative markdown links for subgraph pages so they resolve
     // to the correct slugified URLs within the subgraph namespace.
+    let is_readme = file.path.file_stem()
+        .map(|s| s.to_string_lossy().eq_ignore_ascii_case("readme"))
+        .unwrap_or(false);
     let normalized = if file.subgraph.is_some() {
-        rewrite_relative_links(&normalized, &file.name)
+        rewrite_relative_links(&normalized, &file.name, is_readme)
     } else {
         normalized
     };
@@ -375,7 +378,9 @@ fn resolve_relative_url<'a>(url: &'a str, base: &str) -> String {
 
 /// Rewrite relative links and media references in subgraph pages.
 /// Handles markdown links, markdown images, and HTML src/href attributes.
-fn rewrite_relative_links(content: &str, page_name: &str) -> String {
+/// `is_readme` indicates this page came from a README.md (directory page),
+/// so relative links resolve against the page name itself, not its parent.
+fn rewrite_relative_links(content: &str, page_name: &str, is_readme: bool) -> String {
     use regex::Regex;
 
     lazy_static::lazy_static! {
@@ -393,8 +398,13 @@ fn rewrite_relative_links(content: &str, page_name: &str) -> String {
         ).unwrap();
     }
 
-    // Base directory of this page within the subgraph namespace
-    let base = if let Some(pos) = page_name.rfind('/') {
+    // Base directory of this page within the subgraph namespace.
+    // README-backed pages (directory pages) use the page name as the base,
+    // since relative links in a README resolve from its directory.
+    // Regular pages use the parent directory.
+    let base = if is_readme {
+        page_name
+    } else if let Some(pos) = page_name.rfind('/') {
         &page_name[..pos]
     } else {
         page_name
