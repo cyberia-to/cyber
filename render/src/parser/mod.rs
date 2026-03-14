@@ -431,10 +431,23 @@ fn rewrite_relative_links(content: &str, page_name: &str) -> String {
     let content = MD_LINK.replace_all(&content, |caps: &regex::Captures| {
         let prefix = &caps[1];
         let text = &caps[2];
-        let url = &caps[3];
-        if is_external(url) {
+        let raw_url = &caps[3];
+        if is_external(raw_url) {
             return caps[0].to_string();
         }
+
+        // Split off #fragment before resolving
+        let (url, fragment): (&str, &str) = match raw_url.find('#') {
+            Some(pos) => (&raw_url[..pos], &raw_url[pos..]),
+            None => (raw_url, ""),
+        };
+
+        // Empty path with fragment only (e.g., "#section") — already handled by is_external
+        // but handle the case where url is empty after split
+        if url.is_empty() {
+            return caps[0].to_string();
+        }
+
         let resolved = resolve_relative_url(url, base);
 
         // Media files link to the static copy
@@ -442,7 +455,7 @@ fn rewrite_relative_links(content: &str, page_name: &str) -> String {
             let repo_relative = resolved
                 .strip_prefix(&format!("{}/", subgraph_name))
                 .unwrap_or(&resolved);
-            return format!("{}[{}](/media/{}/{})", prefix, text, subgraph_name, repo_relative);
+            return format!("{}[{}](/media/{}/{}{})", prefix, text, subgraph_name, repo_relative, fragment);
         }
 
         // Page links get slugified
@@ -457,33 +470,42 @@ fn rewrite_relative_links(content: &str, page_name: &str) -> String {
             .trim_end_matches('/')
             .to_string();
         let slug = slugify_page_name(&resolved);
-        format!("{}[{}](/{slug})", prefix, text)
+        format!("{}[{}](/{slug}{})", prefix, text, fragment)
     });
 
     // 3. Rewrite HTML src="..." and href="..." attributes
     let content = HTML_ATTR.replace_all(&content, |caps: &regex::Captures| {
         let attr_prefix = &caps[1]; // e.g., `src="`
-        let url = &caps[2];
+        let raw_url = &caps[2];
         let quote_end = &caps[3]; // closing `"`
-        if is_external(url) {
+        if is_external(raw_url) {
             return caps[0].to_string();
         }
+
+        // Split off #fragment
+        let (url, fragment): (&str, &str) = match raw_url.find('#') {
+            Some(pos) => (&raw_url[..pos], &raw_url[pos..]),
+            None => (raw_url, ""),
+        };
+        if url.is_empty() {
+            return caps[0].to_string();
+        }
+
         let resolved = resolve_relative_url(url, base);
         let repo_relative = resolved
             .strip_prefix(&format!("{}/", subgraph_name))
             .unwrap_or(&resolved);
 
         if is_media_extension(url) {
-            format!("{}/media/{}/{}{}", attr_prefix, subgraph_name, repo_relative, quote_end)
+            format!("{}/media/{}/{}{}{}", attr_prefix, subgraph_name, repo_relative, fragment, quote_end)
         } else {
-            // Non-media HTML links → slugified page path
             let resolved = resolved
                 .strip_suffix(".md")
                 .or_else(|| resolved.strip_suffix(".markdown"))
                 .unwrap_or(&resolved)
                 .to_string();
             let slug = slugify_page_name(&resolved);
-            format!("{}/{}{}", attr_prefix, slug, quote_end)
+            format!("{}/{}{}{}", attr_prefix, slug, fragment, quote_end)
         }
     });
 
