@@ -240,7 +240,9 @@ pub fn build_page_context(
     } else {
         // Check if this page is a namespace parent
         let page_name_lower = page.meta.title.to_lowercase();
-        store
+
+        // Direct children (pages whose namespace == this page's name)
+        let mut items: Vec<Value> = store
             .get_namespace_children(&page_name_lower)
             .iter()
             .map(|child| {
@@ -249,7 +251,47 @@ pub fn build_page_context(
                     url => format!("/{}", child.id),
                 }
             })
-            .collect()
+            .collect();
+
+        // Immediate sub-namespaces (folders one level deeper).
+        // e.g., for "trident" find "trident/docs", "trident/src", "trident/editor" etc.
+        let prefix = format!("{}/", page_name_lower);
+        let mut seen_subns: std::collections::HashSet<String> = std::collections::HashSet::new();
+        for ns_key in store.namespace_tree.keys() {
+            if let Some(rest) = ns_key.strip_prefix(&prefix) {
+                // Take only the first path segment after the prefix
+                let sub = rest.split('/').next().unwrap_or(rest);
+                if seen_subns.insert(sub.to_string()) {
+                    // Link to the sub-namespace page if it exists, otherwise to the first child
+                    let sub_page_slug = crate::parser::slugify_page_name(&format!("{}/{}", page_name_lower, sub));
+                    let url = if store.pages.contains_key(&sub_page_slug) {
+                        format!("/{}", sub_page_slug)
+                    } else {
+                        // No dedicated page for this sub-namespace — link to slug anyway (stub)
+                        format!("/{}", sub_page_slug)
+                    };
+                    items.push(minijinja::context! {
+                        title => format!("{}/", sub),
+                        url => url,
+                    });
+                }
+            }
+        }
+
+        // Sort: folders (ending with /) first, then files
+        items.sort_by(|a, b| {
+            let a_title: String = a.get_attr("title").ok().and_then(|v| v.as_str().map(|s| s.to_string())).unwrap_or_default();
+            let b_title: String = b.get_attr("title").ok().and_then(|v| v.as_str().map(|s| s.to_string())).unwrap_or_default();
+            let a_is_dir = a_title.ends_with('/');
+            let b_is_dir = b_title.ends_with('/');
+            match (a_is_dir, b_is_dir) {
+                (true, false) => std::cmp::Ordering::Less,
+                (false, true) => std::cmp::Ordering::Greater,
+                _ => a_title.cmp(&b_title),
+            }
+        });
+
+        items
     };
 
     let nav_menu = resolve_nav_menu(config, store);
