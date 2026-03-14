@@ -418,6 +418,7 @@ mod tests {
             kind: PageKind::Page,
             source_path: PathBuf::new(),
             namespace: None,
+            subgraph: None,
             content_md: String::new(),
             outgoing_links: vec![],
         };

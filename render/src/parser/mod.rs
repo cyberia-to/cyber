@@ -40,6 +40,8 @@ pub struct ParsedPage {
     pub kind: PageKind,
     pub source_path: PathBuf,
     pub namespace: Option<String>,
+    /// Which subgraph this page belongs to (None = root graph)
+    pub subgraph: Option<String>,
     /// Normalized markdown content (after outliner transform, properties stripped)
     pub content_md: String,
     /// Wikilinks found during parsing (raw page names, not yet slugified)
@@ -122,6 +124,7 @@ pub fn parse_file(file: &DiscoveredFile) -> Result<ParsedPage> {
         kind,
         source_path: file.path.clone(),
         namespace,
+        subgraph: file.subgraph.clone(),
         content_md: normalized,
         outgoing_links,
     })
@@ -194,6 +197,7 @@ fn parse_non_md_file(file: &DiscoveredFile) -> Result<ParsedPage> {
         kind: PageKind::File,
         source_path: file.path.clone(),
         namespace,
+        subgraph: file.subgraph.clone(),
         content_md,
         outgoing_links,
     })

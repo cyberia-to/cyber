@@ -148,6 +148,7 @@ mod tests {
             kind: PageKind::Page,
             source_path: PathBuf::from(format!("pages/{}.md", name)),
             namespace: None,
+            subgraph: None,
             content_md: format!("Content of {}", name),
             outgoing_links: vec![],
         }

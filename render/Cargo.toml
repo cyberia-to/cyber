@@ -42,6 +42,7 @@ colored = "2"
 anyhow = "1"
 thiserror = "2"
 walkdir = "2"
+globset = "0.4"
 ctrlc = { version = "3", features = ["termination"] }
 unicode-normalization = "0.1"
 

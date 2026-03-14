@@ -22,6 +22,8 @@ pub struct PageStore {
     pub alias_map: HashMap<String, PageId>,
     /// Pages created as stubs (referenced but have no source file)
     pub stub_pages: HashSet<PageId>,
+    /// Subgraph name → set of PageIds belonging to that subgraph
+    pub subgraph_pages: HashMap<String, HashSet<PageId>>,
     /// PageRank scores for each page
     pub pagerank: HashMap<PageId, f64>,
     /// Tri-kernel focus distribution π (diffusion + springs + heat)
@@ -150,12 +152,13 @@ pub fn build_graph(pages: Vec<ParsedPage>) -> Result<PageStore> {
         namespace_tree: HashMap::new(),
         alias_map: HashMap::new(),
         stub_pages: HashSet::new(),
+        subgraph_pages: HashMap::new(),
         pagerank: HashMap::new(),
         focus: HashMap::new(),
         gravity: HashMap::new(),
     };
 
-    // First pass: insert all pages and build alias map
+    // First pass: insert all pages, build alias map, and populate subgraph index
     for page in pages {
         let id = page.id.clone();
 
@@ -163,6 +166,15 @@ pub fn build_graph(pages: Vec<ParsedPage>) -> Result<PageStore> {
         for alias in &page.meta.aliases {
             let alias_slug = slugify_page_name(alias);
             store.alias_map.insert(alias_slug, id.clone());
+        }
+
+        // Track subgraph membership
+        if let Some(ref sg) = page.subgraph {
+            store
+                .subgraph_pages
+                .entry(sg.clone())
+                .or_default()
+                .insert(id.clone());
         }
 
         store.pages.insert(id, page);
@@ -290,6 +302,7 @@ fn create_stub_pages(store: &mut PageStore, original_names: &HashMap<String, Str
             kind: PageKind::Page,
             source_path: PathBuf::new(),
             namespace: None,
+            subgraph: None,
             content_md: String::new(),
             outgoing_links: vec![],
         };
@@ -322,6 +335,7 @@ mod tests {
             kind: PageKind::Page,
             source_path: PathBuf::from(format!("pages/{}.md", name)),
             namespace: None,
+            subgraph: None,
             content_md: String::new(),
             outgoing_links: links.into_iter().map(|s| s.to_string()).collect(),
         }

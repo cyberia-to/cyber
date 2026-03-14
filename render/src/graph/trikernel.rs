@@ -273,6 +273,7 @@ mod tests {
             kind: PageKind::Page,
             source_path: PathBuf::from(format!("pages/{}.md", name)),
             namespace: None,
+            subgraph: None,
             content_md: String::new(),
             outgoing_links: links.into_iter().map(|s| s.to_string()).collect(),
         }

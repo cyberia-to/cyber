@@ -1,4 +1,5 @@
 mod classify;
+pub mod subgraph;
 
 use crate::config::ContentSection;
 use anyhow::Result;
@@ -11,6 +12,8 @@ pub struct DiscoveredFile {
     pub kind: FileKind,
     /// Page name derived from filename (e.g., "Collective Focus Theorem")
     pub name: String,
+    /// Which subgraph this file belongs to (None = root graph)
+    pub subgraph: Option<String>,
 }
 
 #[derive(Debug, Clone, PartialEq)]
@@ -83,6 +86,7 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                     path,
                     kind: FileKind::Page,
                     name,
+                    subgraph: None,
                 });
             } else {
                 let name = classify::file_name_from_path(&path, &graph_dir);
@@ -90,6 +94,7 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                     path,
                     kind: FileKind::File,
                     name,
+                    subgraph: None,
                 });
             }
         }
@@ -110,6 +115,7 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                         path,
                         kind: FileKind::Journal,
                         name,
+                        subgraph: None,
                     });
                 }
             }
@@ -132,12 +138,14 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
                 path: path.clone(),
                 kind: FileKind::Media,
                 name: name.clone(),
+                subgraph: None,
             });
             // Also add as a File node for the graph
             result.files.push(DiscoveredFile {
                 path,
                 kind: FileKind::File,
                 name: format!("media/{}", name),
+                subgraph: None,
             });
         }
     }
@@ -167,6 +175,7 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
             path,
             kind: FileKind::File,
             name,
+            subgraph: None,
         });
     }
 

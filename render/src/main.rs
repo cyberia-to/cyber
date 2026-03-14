@@ -203,7 +203,7 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
         println!("{} {}", "Building".cyan().bold(), config.site.title);
     }
 
-    // Step 1: Scan
+    // Step 1: Scan root graph
     let discovered = cyber_publish::scanner::scan(&config.build.input_dir, &config.content)?;
     if !quiet {
         println!(
@@ -216,13 +216,77 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
         );
     }
 
-    // Step 2: Parse
-    let parsed_pages = cyber_publish::parser::parse_all(&discovered)?;
+    // Step 2: Parse root graph
+    let mut parsed_pages = cyber_publish::parser::parse_all(&discovered)?;
     if !quiet {
         println!("  {} Parsed {} pages", "Parse".dimmed(), parsed_pages.len());
     }
 
-    // Step 3: Build graph
+    // Step 3: Discover and scan subgraphs
+    let subgraph_decls = cyber_publish::scanner::subgraph::discover_subgraphs(
+        &parsed_pages,
+        &config.build.input_dir,
+    );
+
+    if !subgraph_decls.is_empty() {
+        let subgraph_namespaces: Vec<String> =
+            subgraph_decls.iter().map(|d| d.name.clone()).collect();
+
+        // Enforce namespace monopoly on root pages
+        let evicted = cyber_publish::scanner::subgraph::enforce_namespace_monopoly(
+            &mut parsed_pages,
+            &subgraph_namespaces,
+        );
+        if !quiet && !evicted.is_empty() {
+            for (id, reason) in &evicted {
+                println!("  {} Evicted '{}': {}", "Monopoly".yellow(), id, reason);
+            }
+        }
+
+        // Scan and parse each subgraph
+        for decl in &subgraph_decls {
+            let subgraph_files = cyber_publish::scanner::subgraph::scan_subgraph(decl)?;
+            let sg_page_count = subgraph_files.iter().filter(|f| f.kind == cyber_publish::scanner::FileKind::Page).count();
+            let sg_file_count = subgraph_files.iter().filter(|f| f.kind == cyber_publish::scanner::FileKind::File).count();
+
+            for file in &subgraph_files {
+                let page = if file.kind == cyber_publish::scanner::FileKind::Page {
+                    cyber_publish::parser::parse_file(file)?
+                } else {
+                    // parse_non_md_file is private, but parse_file handles non-md via parse_all
+                    // We need to use parse_all with a mini DiscoveredFiles
+                    continue; // handled below
+                };
+                parsed_pages.push(page);
+            }
+
+            // Parse non-markdown files via a temporary DiscoveredFiles
+            let sg_files: Vec<_> = subgraph_files
+                .into_iter()
+                .filter(|f| f.kind == cyber_publish::scanner::FileKind::File)
+                .collect();
+            let sg_discovered = cyber_publish::scanner::DiscoveredFiles {
+                pages: Vec::new(),
+                journals: Vec::new(),
+                media: Vec::new(),
+                files: sg_files,
+            };
+            let sg_file_pages = cyber_publish::parser::parse_all(&sg_discovered)?;
+            parsed_pages.extend(sg_file_pages);
+
+            if !quiet {
+                println!(
+                    "  {} Subgraph '{}': {} pages, {} files",
+                    "Scan".dimmed(),
+                    decl.name,
+                    sg_page_count,
+                    sg_file_count
+                );
+            }
+        }
+    }
+
+    // Step 4: Build graph
     let page_store = cyber_publish::graph::build_graph(parsed_pages)?;
     if !quiet {
         let total_links: usize = page_store.forward_links.values().map(|v| v.len()).sum();
@@ -270,7 +334,49 @@ fn check_site(config: &SiteConfig) -> Result<()> {
     println!("{} {}", "Checking".cyan().bold(), config.site.title);
 
     let discovered = cyber_publish::scanner::scan(&config.build.input_dir, &config.content)?;
-    let parsed_pages = cyber_publish::parser::parse_all(&discovered)?;
+    let mut parsed_pages = cyber_publish::parser::parse_all(&discovered)?;
+
+    // Discover and scan subgraphs (same as build_site)
+    let subgraph_decls = cyber_publish::scanner::subgraph::discover_subgraphs(
+        &parsed_pages,
+        &config.build.input_dir,
+    );
+    if !subgraph_decls.is_empty() {
+        let subgraph_namespaces: Vec<String> =
+            subgraph_decls.iter().map(|d| d.name.clone()).collect();
+        let evicted = cyber_publish::scanner::subgraph::enforce_namespace_monopoly(
+            &mut parsed_pages,
+            &subgraph_namespaces,
+        );
+        for (id, reason) in &evicted {
+            println!("  {} Evicted '{}': {}", "Monopoly".yellow(), id, reason);
+        }
+        for decl in &subgraph_decls {
+            let subgraph_files = cyber_publish::scanner::subgraph::scan_subgraph(decl)?;
+            for file in &subgraph_files {
+                if file.kind == cyber_publish::scanner::FileKind::Page {
+                    parsed_pages.push(cyber_publish::parser::parse_file(file)?);
+                }
+            }
+            let sg_files: Vec<_> = subgraph_files
+                .into_iter()
+                .filter(|f| f.kind == cyber_publish::scanner::FileKind::File)
+                .collect();
+            let sg_discovered = cyber_publish::scanner::DiscoveredFiles {
+                pages: Vec::new(),
+                journals: Vec::new(),
+                media: Vec::new(),
+                files: sg_files,
+            };
+            parsed_pages.extend(cyber_publish::parser::parse_all(&sg_discovered)?);
+            println!(
+                "  {} Subgraph '{}' scanned",
+                "Scan".dimmed(),
+                decl.name
+            );
+        }
+    }
+
     let page_store = cyber_publish::graph::build_graph(parsed_pages)?;
 
     let public_count = page_store.public_pages(&config.content).len();
@@ -282,26 +388,50 @@ fn check_site(config: &SiteConfig) -> Result<()> {
         total_count
     );
 
-    let mut broken_count = 0;
+    // Broken links grouped by subgraph
+    let mut broken_by_subgraph: std::collections::HashMap<String, Vec<(String, String)>> =
+        std::collections::HashMap::new();
+
     for (page_id, links) in &page_store.forward_links {
         if !PageStore::is_page_public(&page_store.pages[page_id], &config.content) {
             continue;
         }
+        let subgraph_name = page_store
+            .subgraph_pages
+            .iter()
+            .find(|(_, ids)| ids.contains(page_id))
+            .map(|(name, _)| name.clone())
+            .unwrap_or_else(|| "root".to_string());
+
         for link in links {
             if !page_store.pages.contains_key(link) {
-                println!("  {} {} → {}", "Broken link:".red(), page_id, link);
-                broken_count += 1;
+                broken_by_subgraph
+                    .entry(subgraph_name.clone())
+                    .or_default()
+                    .push((page_id.clone(), link.clone()));
             }
         }
     }
 
-    if broken_count == 0 {
+    let total_broken: usize = broken_by_subgraph.values().map(|v| v.len()).sum();
+    if total_broken == 0 {
         println!("{} No broken links found!", "OK".green().bold());
     } else {
+        for (sg, broken) in &broken_by_subgraph {
+            println!(
+                "\n  {} [{}] {} broken link(s):",
+                "Broken:".red(),
+                sg,
+                broken.len()
+            );
+            for (from, to) in broken {
+                println!("    {} → {}", from, to);
+            }
+        }
         println!(
             "\n{} {} broken link(s) found",
             "Warning:".yellow().bold(),
-            broken_count
+            total_broken
         );
     }
 
@@ -309,6 +439,10 @@ fn check_site(config: &SiteConfig) -> Result<()> {
     let mut crystal_warnings = 0;
     for (page_id, page) in &page_store.pages {
         if page_store.stub_pages.contains(page_id) {
+            continue;
+        }
+        // Skip crystal validation for subgraph pages
+        if page.subgraph.is_some() {
             continue;
         }
         for warn in cyber_publish::validator::validate_page(page) {
