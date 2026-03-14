@@ -249,15 +249,40 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
             let sg_page_count = subgraph_files.iter().filter(|f| f.kind == cyber_publish::scanner::FileKind::Page).count();
             let sg_file_count = subgraph_files.iter().filter(|f| f.kind == cyber_publish::scanner::FileKind::File).count();
 
+            // Find the declaring page so we can merge its metadata into the README
+            let declaring_page = parsed_pages
+                .iter()
+                .find(|p| p.id == decl.declaring_page_id)
+                .cloned();
+
             for file in &subgraph_files {
-                let page = if file.kind == cyber_publish::scanner::FileKind::Page {
+                let mut page = if file.kind == cyber_publish::scanner::FileKind::Page {
                     cyber_publish::parser::parse_file(file)?
                 } else {
-                    // parse_non_md_file is private, but parse_file handles non-md via parse_all
-                    // We need to use parse_all with a mini DiscoveredFiles
-                    continue; // handled below
+                    continue; // non-md handled below
                 };
+
+                // If this is the repo-root README (id == subgraph name == declaring page id),
+                // merge the declaring page's metadata so tags/aliases/stake etc. are preserved.
+                if page.id == decl.declaring_page_id {
+                    if let Some(ref decl_page) = declaring_page {
+                        page.meta.tags = decl_page.meta.tags.clone();
+                        page.meta.aliases = decl_page.meta.aliases.clone();
+                        page.meta.properties = decl_page.meta.properties.clone();
+                        page.meta.public = decl_page.meta.public;
+                        page.meta.icon = decl_page.meta.icon.clone();
+                        page.meta.stake = decl_page.meta.stake;
+                    }
+                }
+
                 parsed_pages.push(page);
+            }
+
+            // Remove the declaring page from root — its slot is now taken by the README
+            if declaring_page.is_some() {
+                parsed_pages.retain(|p| {
+                    !(p.id == decl.declaring_page_id && p.subgraph.is_none())
+                });
             }
 
             // Parse non-markdown files via a temporary DiscoveredFiles
@@ -353,10 +378,30 @@ fn check_site(config: &SiteConfig) -> Result<()> {
         }
         for decl in &subgraph_decls {
             let subgraph_files = cyber_publish::scanner::subgraph::scan_subgraph(decl)?;
+            let declaring_page = parsed_pages
+                .iter()
+                .find(|p| p.id == decl.declaring_page_id)
+                .cloned();
             for file in &subgraph_files {
                 if file.kind == cyber_publish::scanner::FileKind::Page {
-                    parsed_pages.push(cyber_publish::parser::parse_file(file)?);
+                    let mut page = cyber_publish::parser::parse_file(file)?;
+                    if page.id == decl.declaring_page_id {
+                        if let Some(ref dp) = declaring_page {
+                            page.meta.tags = dp.meta.tags.clone();
+                            page.meta.aliases = dp.meta.aliases.clone();
+                            page.meta.properties = dp.meta.properties.clone();
+                            page.meta.public = dp.meta.public;
+                            page.meta.icon = dp.meta.icon.clone();
+                            page.meta.stake = dp.meta.stake;
+                        }
+                    }
+                    parsed_pages.push(page);
                 }
+            }
+            if declaring_page.is_some() {
+                parsed_pages.retain(|p| {
+                    !(p.id == decl.declaring_page_id && p.subgraph.is_none())
+                });
             }
             let sg_files: Vec<_> = subgraph_files
                 .into_iter()

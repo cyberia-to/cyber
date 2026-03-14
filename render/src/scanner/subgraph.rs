@@ -166,12 +166,20 @@ pub fn scan_subgraph(decl: &SubgraphDecl) -> Result<Vec<DiscoveredFile>> {
 }
 
 /// Derive page name for a markdown file in a subgraph.
-/// README.md at any level keeps "README" in the name.
+/// Repo-root README.md maps to just the subgraph name (becomes the root page).
+/// e.g., ~/git/trident/README.md → "trident"
 /// e.g., ~/git/trident/docs/explanation/vision.md → "trident/docs/explanation/vision"
-/// e.g., ~/git/trident/README.md → "trident/README"
+/// e.g., ~/git/trident/src/README.md → "trident/src/README"
 fn subgraph_page_name(path: &Path, repo_root: &Path, subgraph_name: &str) -> String {
     let relative = path.strip_prefix(repo_root).unwrap_or(path);
-    let name = relative.with_extension("").to_string_lossy().to_string();
+    let stem = relative.with_extension("");
+    let name = stem.to_string_lossy();
+
+    // Repo-root README becomes the subgraph root page
+    if name.eq_ignore_ascii_case("README") {
+        return subgraph_name.to_string();
+    }
+
     format!("{}/{}", subgraph_name, name)
 }
 
@@ -221,10 +229,12 @@ mod tests {
     #[test]
     fn test_subgraph_page_name() {
         let repo = PathBuf::from("/git/trident");
+        // Repo-root README maps to just the subgraph name
         assert_eq!(
             subgraph_page_name(&PathBuf::from("/git/trident/README.md"), &repo, "trident"),
-            "trident/README"
+            "trident"
         );
+        // Nested files keep full path
         assert_eq!(
             subgraph_page_name(
                 &PathBuf::from("/git/trident/docs/explanation/vision.md"),
@@ -232,6 +242,15 @@ mod tests {
                 "trident"
             ),
             "trident/docs/explanation/vision"
+        );
+        // Nested README keeps "README" in name
+        assert_eq!(
+            subgraph_page_name(
+                &PathBuf::from("/git/trident/src/README.md"),
+                &repo,
+                "trident"
+            ),
+            "trident/src/README"
         );
     }
 
