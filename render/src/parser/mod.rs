@@ -118,6 +118,14 @@ pub fn parse_file(file: &DiscoveredFile) -> Result<ParsedPage> {
 
     let id = slugify_page_name(&file.name);
 
+    // Rewrite relative markdown links for subgraph pages so they resolve
+    // to the correct slugified URLs within the subgraph namespace.
+    let normalized = if file.subgraph.is_some() {
+        rewrite_relative_links(&normalized, &file.name)
+    } else {
+        normalized
+    };
+
     Ok(ParsedPage {
         id,
         meta,
@@ -332,6 +340,79 @@ fn looks_like_outliner(content: &str) -> bool {
         .count();
 
     (bullet_count as f64 / non_empty.len() as f64) > 0.5
+}
+
+/// Rewrite relative markdown links in subgraph pages.
+/// Resolves `[text](relative/path.md)` → `[text](/slugified-path)` using
+/// the page's directory within the subgraph as the base.
+fn rewrite_relative_links(content: &str, page_name: &str) -> String {
+    use regex::Regex;
+
+    lazy_static::lazy_static! {
+        // Match [text](url) — captures optional preceding char to skip ![img](url)
+        static ref MD_LINK: Regex = Regex::new(
+            r"(^|[^!])\[([^\]]*)\]\(([^)]+)\)"
+        ).unwrap();
+    }
+
+    // Base directory of this page within the subgraph namespace
+    // e.g., page_name="trident/docs/explanation/vision" → base="trident/docs/explanation"
+    // e.g., page_name="trident" (root README) → base="trident"
+    let base = if let Some(pos) = page_name.rfind('/') {
+        &page_name[..pos]
+    } else {
+        page_name
+    };
+
+    MD_LINK.replace_all(content, |caps: &regex::Captures| {
+        let prefix = &caps[1]; // char before `[`, or empty at line start
+        let text = &caps[2];
+        let url = &caps[3];
+
+        // Skip external links, anchors, and absolute paths
+        if url.starts_with("http://")
+            || url.starts_with("https://")
+            || url.starts_with('#')
+            || url.starts_with('/')
+        {
+            return caps[0].to_string();
+        }
+
+        // Resolve relative path against base directory
+        let resolved = if url.starts_with("../") {
+            // Walk up from base
+            let mut parts: Vec<&str> = base.split('/').collect();
+            let mut rel = url;
+            while let Some(rest) = rel.strip_prefix("../") {
+                parts.pop();
+                rel = rest;
+            }
+            if parts.is_empty() {
+                rel.to_string()
+            } else {
+                format!("{}/{}", parts.join("/"), rel)
+            }
+        } else {
+            format!("{}/{}", base, url)
+        };
+
+        // Strip .md extension for page links
+        let resolved = resolved
+            .strip_suffix(".md")
+            .or_else(|| resolved.strip_suffix(".markdown"))
+            .unwrap_or(&resolved)
+            .to_string();
+
+        // Strip trailing /index or trailing / (directory links)
+        let resolved = resolved
+            .strip_suffix("/index")
+            .unwrap_or(&resolved)
+            .trim_end_matches('/')
+            .to_string();
+
+        let slug = slugify_page_name(&resolved);
+        format!("{}[{}](/{slug})", prefix, text)
+    }).to_string()
 }
 
 #[cfg(test)]

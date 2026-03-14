@@ -272,6 +272,17 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
                         page.meta.public = decl_page.meta.public;
                         page.meta.icon = decl_page.meta.icon.clone();
                         page.meta.stake = decl_page.meta.stake;
+                        // Append declaring page's content after the README
+                        if !decl_page.content_md.trim().is_empty() {
+                            page.content_md.push_str("\n\n---\n\n");
+                            page.content_md.push_str(&decl_page.content_md);
+                        }
+                        // Merge outgoing links from the declaring page
+                        for link in &decl_page.outgoing_links {
+                            if !page.outgoing_links.contains(link) {
+                                page.outgoing_links.push(link.clone());
+                            }
+                        }
                     }
                 }
 
@@ -393,6 +404,15 @@ fn check_site(config: &SiteConfig) -> Result<()> {
                             page.meta.public = dp.meta.public;
                             page.meta.icon = dp.meta.icon.clone();
                             page.meta.stake = dp.meta.stake;
+                            if !dp.content_md.trim().is_empty() {
+                                page.content_md.push_str("\n\n---\n\n");
+                                page.content_md.push_str(&dp.content_md);
+                            }
+                            for link in &dp.outgoing_links {
+                                if !page.outgoing_links.contains(link) {
+                                    page.outgoing_links.push(link.clone());
+                                }
+                            }
                         }
                     }
                     parsed_pages.push(page);
