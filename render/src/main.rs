@@ -272,10 +272,15 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
                         page.meta.public = decl_page.meta.public;
                         page.meta.icon = decl_page.meta.icon.clone();
                         page.meta.stake = decl_page.meta.stake;
-                        // Append declaring page's content after the README
+                        // Root graph content first, then README with explicit header
                         if !decl_page.content_md.trim().is_empty() {
-                            page.content_md.push_str("\n\n---\n\n");
-                            page.content_md.push_str(&decl_page.content_md);
+                            let readme_content = std::mem::take(&mut page.content_md);
+                            page.content_md = decl_page.content_md.clone();
+                            page.content_md.push_str(&format!(
+                                "\n\n---\n\n## from subgraph {}\n\n",
+                                decl.name
+                            ));
+                            page.content_md.push_str(&readme_content);
                         }
                         // Merge outgoing links from the declaring page
                         for link in &decl_page.outgoing_links {
@@ -405,8 +410,13 @@ fn check_site(config: &SiteConfig) -> Result<()> {
                             page.meta.icon = dp.meta.icon.clone();
                             page.meta.stake = dp.meta.stake;
                             if !dp.content_md.trim().is_empty() {
-                                page.content_md.push_str("\n\n---\n\n");
-                                page.content_md.push_str(&dp.content_md);
+                                let readme_content = std::mem::take(&mut page.content_md);
+                                page.content_md = dp.content_md.clone();
+                                page.content_md.push_str(&format!(
+                                    "\n\n---\n\n## from subgraph {}\n\n",
+                                    decl.name
+                                ));
+                                page.content_md.push_str(&readme_content);
                             }
                             for link in &dp.outgoing_links {
                                 if !page.outgoing_links.contains(link) {
