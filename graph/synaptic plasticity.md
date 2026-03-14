@@ -8,7 +8,7 @@ crystal-domain: biology
 
 the mechanism by which connection strengths between [[neurons]] change. three irreducible types:
 
-| type | sign | function | timescale | cyber analog |
+| type | [[valence]] | function | timescale | cyber analog |
 |---|---|---|---|---|
 | [[Hebbian learning]] | +1 (excitatory) | strengthen co-active connections | ms-min | $\Delta\pi$ reward for correlated [[focus]] |
 | [[anti-Hebbian learning]] | -1 (inhibitory) | weaken co-active connections, decorrelate | ms-min | [[market inhibition]] via [[inversely coupled bonding surface]] |
