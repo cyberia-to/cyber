@@ -16,21 +16,21 @@ $$s \;=\; (\nu,\; \vec\ell,\; \pi_\Delta,\; \sigma,\; t)$$
 |-------|------|------|-----------|
 | $\nu$ | [[subject]] | $N$ | signing [[neuron]] |
 | $\vec\ell$ | links | $L^+$ | one or more [[cyberlinks]] — each a 7-tuple $(\nu, p, q, \tau, a, v, t)$ |
-| $\pi_\Delta$ | focus delta | $(P \times \mathbb{F}_p)^*$ | sparse [[focus]] update: how the batch of links shifts $\pi^*$ |
-| $\sigma$ | proof | $\Pi$ | [[STARK]] proof that $\pi_\Delta$ is correct against the current [[BBG]] root |
+| $\pi_\Delta$ | [[cyber/impulse]] | $(P \times \mathbb{F}_p)^*$ | sparse [[focus]] update: how the batch of links shifts $\pi^*$ |
+| $\sigma$ | proof | $\Pi$ | recursive [[STARK]] proof covering the [[cyber/impulse]], all conviction UTXO movements, and [[cyberlink]] validity against the current [[BBG]] root |
 | $t$ | at | $\mathbb{Z}_{\geq 0}$ | block height |
 
-the signal separates what a [[neuron]] asserts (the [[cyberlinks]]) from what the assertion computes (the focus shift). a single [[STARK]] proof covers the entire batch — proving $n$ links together costs less than $n$ separate proofs because shared neighborhood state is proved once
+the signal separates what a [[neuron]] asserts (the [[cyberlinks]]) from what the assertion computes (the [[cyber/impulse]]). see [[cyber/impulse]] for how $\pi_\Delta$ is computed and why the name
 
-## focus delta
+## proof
 
-$\pi_\Delta$ is a sparse vector of (particle_id, $\Delta\pi$) pairs — the neuron's locally computed shift to the [[focus]] distribution $\pi^*$ caused by adding all links in $\vec\ell$ to the [[cybergraph]]. the [[locality theorem]] bounds the support to $O(\log(1/\varepsilon))$ hops from affected [[particles]] — most entries are zero, so the sparse representation is compact
+$\sigma$ is a single recursive [[STARK]] proof that covers the entire signal atomically:
 
-the neuron computes $\pi_\Delta$ by running the [[tri-kernel]] locally on their neighborhood, adding their links, and measuring how $\pi$ shifts. the result is whatever the math says — there is no target or threshold
+- correctness of each [[cyberlink]] in $\vec\ell$ (valid signatures, valid particle references)
+- validity of all conviction UTXO movements (each link's $(\tau, a)$ spend is backed by an unspent output)
+- correctness of the [[cyber/impulse]] $\pi_\Delta$ (the [[tri-kernel]] computation against $\text{bbg\_root}$ from the current header)
 
-## verification
-
-$\sigma$ proves $\pi_\Delta$ was correctly computed against a specific $\text{bbg\_root}$ from the current header. any verifier checks $\sigma$ in $O(\log n)$ without recomputing the [[tri-kernel]]
+one proof for everything. proving $n$ links together costs less than $n$ separate proofs because shared neighborhood state and UTXO set are proved once. any verifier checks $\sigma$ in $O(\log n)$ without recomputing anything
 
 ## two effects
 
@@ -45,6 +45,6 @@ the conviction UTXOs (tokens spent into links) and the reward UTXO (tokens minte
 
 total minting per epoch is bounded by the actual global $\Delta\pi$, verifiable from consecutive headers. if the sum of individual claims exceeds the actual shift (overlapping neighborhoods), all claims are scaled proportionally. see §6.9 and §14.2 of the [[cyber/whitepaper]]
 
-see [[signal types]], [[cyber/link]], [[cyber/network]]
+see [[signal types]], [[cyber/link]], [[cyber/impulse]], [[cyber/network]]
 
 discover all [[concepts]]
