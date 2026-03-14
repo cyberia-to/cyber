@@ -151,27 +151,23 @@ a [[neuron]] creating a biology [[cyberlink]] resolves `~*/serves/biology` to fi
 
 aggregators earn fees for inclusion (sender pays — the neuron creating the link). competition between aggregators for the same namespace keeps fees low and inclusion fast.
 
-## focus propagation: cyberlinks as π updates
+## focus propagation: signals as π updates
 
-the network has no central node that computes the [[focus]] distribution π*. instead, π* emerges from the [[cyberlinks]] themselves. every [[cyberlink]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift — proven by a [[STARK]] proof.
+the network has no central node that computes the [[focus]] distribution π*. instead, π* emerges from [[signals]]. every [[signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]] — proven by a single [[STARK]] proof.
 
-### what a cyberlink carries
+### signal structure
 
 ```
-cyberlink {
+signal {
     neuron:     pubkey
-    from:       particle_id
-    to:         particle_id
-    token:      denomination
-    amount:     stake
-    valence:    {-1, 0, +1}
+    links:      [cyberlink]                one or more 7-tuple assertions
+    pi_delta:   [(particle_id, Δπ)]        sparse focus update for the batch
+    proof:      STARK                       proof of correct local computation
     timestamp:  u64
-    pi_delta:   [(particle_id, Δπ)]    sparse focus update
-    proof:      STARK                   proof of correct local computation
 }
 ```
 
-the `pi_delta` covers particles within the neuron's O(log(1/ε))-hop neighborhood. the [[locality]] theorem guarantees effects beyond that radius are below ε. the proof references a specific `bbg_root` from a header the neuron has verified.
+the `pi_delta` covers particles within the neuron's O(log(1/ε))-hop neighborhood. the [[locality]] theorem guarantees effects beyond that radius are below ε. the proof references a specific `bbg_root` from a header the neuron has verified. a single proof covers the entire batch of links — proving $n$ links together costs less than $n$ separate proofs because shared neighborhood state is proved once.
 
 ### how π converges without central computation
 
@@ -179,23 +175,23 @@ the `pi_delta` covers particles within the neuron's O(log(1/ε))-hop neighborhoo
 neuron queries neighborhood π + edges (with proofs from any peer)
     │
     ▼
-creates cyberlink, runs local tri-kernel step
+creates cyberlinks, runs local tri-kernel step for the batch
     │
     ▼
 produces STARK proof: "this pi_delta follows from
-  applying my link to the graph at bbg_root_t"
+  applying my links to the graph at bbg_root_t"
     │
     ▼
-sends cyberlink + proof to aggregator
+bundles into signal, sends to aggregator
     │
     ▼
 aggregator applies pi_delta to local π view
     │
     ▼
-namespace subscribers receive cyberlink, apply pi_delta
+namespace subscribers receive signal, apply pi_delta
     │
     ▼
-their future cyberlinks carry updated pi_deltas
+their future signals carry updated pi_deltas
     │
     ▼
 π* emerges from convergence of all local proven updates
@@ -207,7 +203,7 @@ this is gossip-based distributed belief propagation. the [[tri-kernel]] contract
 
 the $\pi_\Delta$ proof doubles as a reward claim. if the proven $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the shift. no aggregator decides the reward — the proof IS the mining. see §14.2 of the whitepaper for the conservation constraint and attribution mechanism.
 
-a [[neuron]] on a phone: buy a header, query neighborhood state, create a link, prove Δπ, mint tokens. the device that creates knowledge is the device that earns from it.
+a [[neuron]] on a phone: buy a header, query neighborhood state, create [[cyberlinks]], prove Δπ, bundle into a [[signal]], mint tokens. the device that creates knowledge is the device that earns from it.
 
 ## data availability: sampling without global knowledge
 
