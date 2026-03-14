@@ -263,6 +263,10 @@ blockquote {
     border-radius: 0 4px 4px 0;
 }
 
+blockquote > *:last-child {
+    margin-bottom: 0;
+}
+
 /* Code */
 code {
     font-family: var(--font-mono, monospace);
