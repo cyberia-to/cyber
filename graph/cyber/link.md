@@ -11,8 +11,6 @@ the atomic unit of [[knowledge]]. a [[neuron]] binds two [[particles]] with a si
 
 cheap talk produces noise. costly links produce [[knowledge]]
 
----
-
 ## the seven fields
 
 $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0}$$
