@@ -537,7 +537,7 @@ Order matters: `parent_cv(A, B)` ≠ `parent_cv(B, A)`. Left is absorbed first, 
 
 Cost: 2 permutations per internal node.
 
-#### 4.6.3.1 Namespace-Aware Parent: `nmt_parent_cv(left, right, ns_min, ns_max, is_root) → Hash`
+#### 4.6.4 Namespace-Aware Parent: `nmt_parent_cv(left, right, ns_min, ns_max, is_root) → Hash`
 
 [[NMT]] (Namespace Merkle Tree) nodes carry namespace bounds — the minimum and maximum namespace values in their subtree. these bounds enable completeness proofs: "these are ALL entries in namespace N, nothing was withheld." the namespace bounds must be committed into the hash, not carried as external metadata.
 
@@ -562,7 +562,7 @@ when `ns_min = ns_max = 0`, `nmt_parent_cv` reduces to `parent_cv`. content tree
 
 the verifier checking a namespace completeness proof reconstructs `nmt_parent_cv` at each tree level, verifying that namespace bounds narrow correctly from root to leaf: `parent.ns_min ≤ left.ns_max < right.ns_min ≤ parent.ns_max` (for sorted NMT). a single `nmt_parent_cv` call costs 2 permutations — same as `parent_cv`.
 
-#### 4.6.4 Tree Shape
+#### 4.6.5 Tree Shape
 
 Binary, left-balanced, in-order indexed. For N chunks:
 
@@ -578,7 +578,7 @@ Left-balanced means the left subtree is always a complete binary tree (power-of-
 
 In-order indexing: Leaves are at even positions (0, 2, 4, ...). Parents are at odd positions with level = trailing_ones(index). This compact representation enables O(1) parent/child navigation without storing an explicit tree.
 
-#### 4.6.5 Root Finalization
+#### 4.6.6 Root Finalization
 
 Every tree has exactly one root, marked by `FLAG_ROOT = 0x01`:
 
@@ -587,7 +587,7 @@ Every tree has exactly one root, marked by `FLAG_ROOT = 0x01`:
 
 Non-root leaves have flags = `CHUNK = 0x04`. Non-root parents have flags = `PARENT = 0x02`. The root flag ensures that a subtree hash (used internally during tree construction) never collides with a file hash (the externally-visible content identifier). This prevents a valid subtree from being presented as a valid standalone file.
 
-#### 4.6.6 Security Properties
+#### 4.6.7 Security Properties
 
 The tree construction provides the following guarantees:
 
@@ -602,7 +602,7 @@ The tree construction provides the following guarantees:
 
 These properties hold unconditionally — they follow from the capacity layout, not from any assumption about hash output distribution.
 
-#### 4.6.7 Complete Example
+#### 4.6.8 Complete Example
 
 A 12 KB file (3 chunks at 4096 bytes each):
 
@@ -625,7 +625,7 @@ The file's Hemera address is `root` — 64 bytes.
 
 Consequence: Any node, anywhere, hashing the same content bytes, produces the same root hash, the same intermediate node hashes, and the same leaf hashes. Subtree addresses are globally stable and can be used for deduplication, caching, and verified streaming without coordination.
 
-#### 4.6.8 Performance
+#### 4.6.9 Performance
 
 Cost breakdown for a file of size S bytes:
 
@@ -642,7 +642,7 @@ The 2× Merkle cost (two permutations per internal node instead of one with comp
 
 Incremental update cost: Changing one byte requires rehashing one 4 KB chunk (75 permutations) plus log₂(N) parent nodes to the root (2 permutations each). For 1 GB: 75 + 2×18 = 111 permutations. The local cost dominates; tree traversal is negligible.
 
-#### 4.6.9 The Universal Tree Primitive
+#### 4.6.10 The Universal Tree Primitive
 
 `parent_cv` is the universal internal node combiner for every tree structure in [[cyber]]. the tree specification is not just "how to hash big files" — it is the foundation the entire proof system and graph database stand on.
 
@@ -659,7 +659,7 @@ the first three serve the [[BBG]] — the graph database. the fourth serves [[WH
 
 how `parent_cv` enters each structure:
 
-content tree. the tree defined in §4.6.1–§4.6.8. `chunk_cv` for leaves, `parent_cv` for internal nodes. the root is the [[particle]] address. streaming verification via pre-order traversal.
+content tree. the tree defined in §4.6.1–§4.6.9. `chunk_cv` for leaves, `parent_cv` for internal nodes. the root is the [[particle]] address. streaming verification via pre-order traversal.
 
 MMR (Merkle Mountain Range). the append-only commitment list ([[BBG]] Layer 4) stores UTXO addition records. appending a new record creates a new leaf and merges peaks via `parent_cv`. the MMR accumulator is O(log N) peak hashes. membership proofs are standard Merkle paths using `parent_cv` at each level. cost: ~8,000 constraints for AOCL membership (from [[cyber/proofs]]) = ~13 `parent_cv` calls in-circuit for a tree of depth 26 (~67M entries).
 
@@ -687,7 +687,7 @@ nmt_parent_cv (namespace-aware, extends parent_cv)
   └── NMT              →  namespace DAS, completeness proofs (BBG DA layer)
 ```
 
-all four tree types share one security analysis: the capacity-based domain separation (§4.6.6) prevents cross-tree confusion. a content tree internal node (flags = PARENT, ns_min = ns_max = 0) cannot collide with an NMT internal node (flags = PARENT, ns_min/ns_max non-zero) because different capacity values produce different permutation outputs even for identical rate inputs. FRI and MMR trees use the same `parent_cv` as content trees — they are distinguished by what their leaves contain (polynomial evaluations vs addition records vs content chunks), not by the combining operation.
+all four tree types share one security analysis: the capacity-based domain separation (§4.6.7) prevents cross-tree confusion. a content tree internal node (flags = PARENT, ns_min = ns_max = 0) cannot collide with an NMT internal node (flags = PARENT, ns_min/ns_max non-zero) because different capacity values produce different permutation outputs even for identical rate inputs. FRI and MMR trees use the same `parent_cv` as content trees — they are distinguished by what their leaves contain (polynomial evaluations vs addition records vs content chunks), not by the combining operation.
 
 the constraint cost table for in-circuit tree verification:
 
