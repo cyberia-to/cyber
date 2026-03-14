@@ -410,7 +410,7 @@ Merkle trees in cyber/core use Hemera sponge for both leaves and internal nodes.
 
 #### 4.6.1 Chunk Size: 4 KB (4096 bytes)
 
-Chunking rule: Content is split into fixed 4 KB chunks (4096 bytes). Each chunk is hashed via `chunk_cv(data, counter, is_root)` — the two-pass construction defined in §4.6.2. At 56 input bytes per rate block, one 4 KB chunk requires ⌈4096/56⌉ = 74 absorptions. The last chunk may be shorter than 4096 bytes; its sponge pads normally. No content-defined chunking — identical byte ranges always produce identical chunks.
+Chunking rule: Content is split into fixed 4 KB chunks (4096 bytes). Each chunk is hashed via `hash_leaf(data, counter, is_root)` — the two-pass construction defined in §4.6.2. At 56 input bytes per rate block, one 4 KB chunk requires ⌈4096/56⌉ = 74 absorptions. The last chunk may be shorter than 4096 bytes; its sponge pads normally. No content-defined chunking — identical byte ranges always produce identical chunks.
 
 Why 4 KB and not some other size. The chunk size must be a multiple of 64 bytes (Hemera's absorb block). Among powers of two — 256 B, 1 KB, 4 KB, 8 KB, 16 KB, 64 KB — only 4 KB simultaneously satisfies every constraint:
 
@@ -485,7 +485,7 @@ Network packets       1      1       3      6      12      46
 ```
 
 4 KB is the only row with ✓ on both page alignment and L1 cache fit, practical proof size, and meaningful deduplication. The convergence is not forced — it is the unique point where field arithmetic, hardware reality, and graph properties intersect.
-#### 4.6.2 Leaf Hashing: `chunk_cv(data, counter, is_root) → Hash`
+#### 4.6.2 Leaf Hashing: `hash_leaf(data, counter, is_root) → Hash`
 
 A leaf chaining value is computed in two passes. The first pass hashes the chunk data through the plain sponge. The second pass binds the hash to its structural position via a single flag-injection permutation.
 
@@ -510,7 +510,7 @@ The counter in `state[8]` prevents chunk reordering: the same data at position 0
 
 Cost: N absorptions (for data) + 1 permutation (for binding). At 4096-byte chunks with 7-byte encoding: ⌈4096/56⌉ = 74 absorptions + 1 binding = 75 permutations per leaf.
 
-#### 4.6.3 Internal Node Hashing: `parent_cv(left, right, is_root) → Hash`
+#### 4.6.3 Internal Node Hashing: `hash_node(left, right, is_root) → Hash`
 
 A parent chaining value combines two child hashes (each 64 bytes = 8 field elements) through two sponge absorptions with flags pre-loaded in capacity. No padding — the input is always exactly 128 bytes.
 
@@ -529,15 +529,15 @@ state ← permute(state)
 output ← elements_to_bytes(state[0..8])    (64-byte chaining value)
 ```
 
-No padding step. The input to `parent_cv` is always exactly two 64-byte hashes — always exactly two rate blocks. Padding exists to disambiguate variable-length inputs; here the length is fixed by construction. Omitting padding saves one absorption and eliminates a codepath that can never vary.
+No padding step. The input to `hash_node` is always exactly two 64-byte hashes — always exactly two rate blocks. Padding exists to disambiguate variable-length inputs; here the length is fixed by construction. Omitting padding saves one absorption and eliminates a codepath that can never vary.
 
 The PARENT flag (0x02) in `state[9]` is set before the first absorption. It domain-separates internal nodes from all other hash contexts. Since flags live in the capacity region (state[8..16]) and absorption only touches the rate region (state[0..8]), the flag is preserved through both permutations — it is mixed into the output but never overwritten by input.
 
-Order matters: `parent_cv(A, B)` ≠ `parent_cv(B, A)`. Left is absorbed first, right second. The sponge state after absorbing left carries forward into the right absorption. The tree structure is committed, not just the child hashes.
+Order matters: `hash_node(A, B)` ≠ `hash_node(B, A)`. Left is absorbed first, right second. The sponge state after absorbing left carries forward into the right absorption. The tree structure is committed, not just the child hashes.
 
 Cost: 2 permutations per internal node.
 
-#### 4.6.4 Namespace-Aware Parent: `nmt_parent_cv(left, right, ns_min, ns_max, is_root) → Hash`
+#### 4.6.4 Namespace-Aware Parent: `hash_node_nmt(left, right, ns_min, ns_max, is_root) → Hash`
 
 [[NMT]] (Namespace Merkle Tree) nodes carry namespace bounds — the minimum and maximum namespace values in their subtree. these bounds enable completeness proofs: "these are ALL entries in namespace N, nothing was withheld." the namespace bounds must be committed into the hash, not carried as external metadata.
 
@@ -558,20 +558,20 @@ state ← permute(state)
 output ← elements_to_bytes(state[0..8])    (64-byte chaining value)
 ```
 
-when `ns_min = ns_max = 0`, `nmt_parent_cv` reduces to `parent_cv`. content trees, MMR, and FRI commitment trees all use `parent_cv` (zero namespace bounds). only NMT uses non-zero namespace bounds. the capacity layout carries the distinction — no separate function, no mode switch, just different values in the same fields.
+when `ns_min = ns_max = 0`, `hash_node_nmt` reduces to `hash_node`. content trees, MMR, and FRI commitment trees all use `hash_node` (zero namespace bounds). only NMT uses non-zero namespace bounds. the capacity layout carries the distinction — no separate function, no mode switch, just different values in the same fields.
 
-the verifier checking a namespace completeness proof reconstructs `nmt_parent_cv` at each tree level, verifying that namespace bounds narrow correctly from root to leaf: `parent.ns_min ≤ left.ns_max < right.ns_min ≤ parent.ns_max` (for sorted NMT). a single `nmt_parent_cv` call costs 2 permutations — same as `parent_cv`.
+the verifier checking a namespace completeness proof reconstructs `hash_node_nmt` at each tree level, verifying that namespace bounds narrow correctly from root to leaf: `parent.ns_min ≤ left.ns_max < right.ns_min ≤ parent.ns_max` (for sorted NMT). a single `hash_node_nmt` call costs 2 permutations — same as `hash_node`.
 
 #### 4.6.5 Tree Shape
 
 Binary, left-balanced, in-order indexed. For N chunks:
 
 ```
-If N = 1:     chunk_cv(data, 0, is_root=true)  is the root
+If N = 1:     hash_leaf(data, 0, is_root=true)  is the root
 If N > 1:     split = 2^(⌈log₂(N)⌉ - 1)
               left  = tree_hash(chunks[0..split],       is_root=false)
               right = tree_hash(chunks[split..N],        is_root=false)
-              root  = parent_cv(left, right, is_root=true)
+              root  = hash_node(left, right, is_root=true)
 ```
 
 Left-balanced means the left subtree is always a complete binary tree (power-of-2 leaves). This ensures that the same content prefix always produces the same left subtree hash regardless of what follows — enabling incremental hashing and prefix deduplication.
@@ -582,8 +582,8 @@ In-order indexing: Leaves are at even positions (0, 2, 4, ...). Parents are at o
 
 Every tree has exactly one root, marked by `FLAG_ROOT = 0x01`:
 
-- Single-chunk file: `chunk_cv(data, 0, is_root=true)` — leaf IS the root, flags = `CHUNK | ROOT = 0x05`
-- Multi-chunk file: `parent_cv(left, right, is_root=true)` — top parent IS the root, flags = `PARENT | ROOT = 0x03`
+- Single-chunk file: `hash_leaf(data, 0, is_root=true)` — leaf IS the root, flags = `CHUNK | ROOT = 0x05`
+- Multi-chunk file: `hash_node(left, right, is_root=true)` — top parent IS the root, flags = `PARENT | ROOT = 0x03`
 
 Non-root leaves have flags = `CHUNK = 0x04`. Non-root parents have flags = `PARENT = 0x02`. The root flag ensures that a subtree hash (used internally during tree construction) never collides with a file hash (the externally-visible content identifier). This prevents a valid subtree from being presented as a valid standalone file.
 
@@ -610,15 +610,15 @@ A 12 KB file (3 chunks at 4096 bytes each):
 Content: [chunk_0: 4096B] [chunk_1: 4096B] [chunk_2: 4096B]
 
 Step 1 — Leaf chaining values:
-    cv_0 = chunk_cv(chunk_0, counter=0, is_root=false)   flags=0x04
-    cv_1 = chunk_cv(chunk_1, counter=1, is_root=false)   flags=0x04
-    cv_2 = chunk_cv(chunk_2, counter=2, is_root=false)   flags=0x04
+    cv_0 = hash_leaf(chunk_0, counter=0, is_root=false)   flags=0x04
+    cv_1 = hash_leaf(chunk_1, counter=1, is_root=false)   flags=0x04
+    cv_2 = hash_leaf(chunk_2, counter=2, is_root=false)   flags=0x04
 
 Step 2 — Left subtree (complete, power-of-2):
-    left = parent_cv(cv_0, cv_1, is_root=false)          flags=0x02
+    left = hash_node(cv_0, cv_1, is_root=false)           flags=0x02
 
 Step 3 — Root (left-balanced: left subtree has 2 leaves, right has 1):
-    root = parent_cv(left, cv_2, is_root=true)            flags=0x03
+    root = hash_node(left, cv_2, is_root=true)             flags=0x03
 
 The file's Hemera address is `root` — 64 bytes.
 ```
@@ -644,55 +644,55 @@ Incremental update cost: Changing one byte requires rehashing one 4 KB chunk (75
 
 #### 4.6.10 The Universal Tree Primitive
 
-`parent_cv` is the universal internal node combiner for every tree structure in [[cyber]]. the tree specification is not just "how to hash big files" — it is the foundation the entire proof system and graph database stand on.
+`hash_node` is the universal internal node combiner for every tree structure in [[cyber]]. the tree specification is not just "how to hash big files" — it is the foundation the entire proof system and graph database stand on.
 
-four tree types, one `parent_cv`:
+four tree types, one `hash_node`:
 
-| tree type | shape | used by | leaves contain | `parent_cv` variant |
+| tree type | shape | used by | leaves contain | `hash_node` variant |
 |---|---|---|---|---|
-| content tree | left-balanced binary, 4 KB chunks | [[particle]] addressing, verified streaming | content chunks via `chunk_cv` | `parent_cv` (standard) |
-| MMR | append-only mountain range | AOCL in [[BBG]] Layer 4, SWBF inactive chunks | addition records, bloom filter chunks | `parent_cv` (standard) |
-| NMT | balanced binary, sorted by namespace | data availability sampling, namespace sync | namespace-tagged [[cyberlinks]] | `nmt_parent_cv` (namespace bounds) |
-| FRI commitment | balanced binary | [[WHIR]] polynomial commitments inside every [[STARK]] proof | polynomial evaluations at each folding round | `parent_cv` (standard) |
+| content tree | left-balanced binary, 4 KB chunks | [[particle]] addressing, verified streaming | content chunks via `hash_leaf` | `hash_node` (standard) |
+| MMR | append-only mountain range | AOCL in [[BBG]] Layer 4, SWBF inactive chunks | addition records, bloom filter chunks | `hash_node` (standard) |
+| NMT | balanced binary, sorted by namespace | data availability sampling, namespace sync | namespace-tagged [[cyberlinks]] | `hash_node_nmt` (namespace bounds) |
+| FRI commitment | balanced binary | [[WHIR]] polynomial commitments inside every [[STARK]] proof | polynomial evaluations at each folding round | `hash_node` (standard) |
 
 the first three serve the [[BBG]] — the graph database. the fourth serves [[WHIR]] — the polynomial commitment scheme inside every [[STARK]] proof. together they cover every tree-structured commitment in the system.
 
-how `parent_cv` enters each structure:
+how `hash_node` enters each structure:
 
-content tree. the tree defined in §4.6.1–§4.6.9. `chunk_cv` for leaves, `parent_cv` for internal nodes. the root is the [[particle]] address. streaming verification via pre-order traversal.
+content tree. the tree defined in §4.6.1–§4.6.9. `hash_leaf` for leaves, `hash_node` for internal nodes. the root is the [[particle]] address. streaming verification via pre-order traversal.
 
-MMR (Merkle Mountain Range). the append-only commitment list ([[BBG]] Layer 4) stores UTXO addition records. appending a new record creates a new leaf and merges peaks via `parent_cv`. the MMR accumulator is O(log N) peak hashes. membership proofs are standard Merkle paths using `parent_cv` at each level. cost: ~8,000 constraints for AOCL membership (from [[cyber/proofs]]) = ~13 `parent_cv` calls in-circuit for a tree of depth 26 (~67M entries).
+MMR (Merkle Mountain Range). the append-only commitment list ([[BBG]] Layer 4) stores UTXO addition records. appending a new record creates a new leaf and merges peaks via `hash_node`. the MMR accumulator is O(log N) peak hashes. membership proofs are standard Merkle paths using `hash_node` at each level. cost: ~8,000 constraints for AOCL membership (from [[cyber/proofs]]) = ~13 `hash_node` calls in-circuit for a tree of depth 26 (~67M entries).
 
-NMT (Namespace Merkle Tree). the [[BBG]]'s data availability layer organizes [[cyberlinks]] by namespace. each internal node commits to the namespace range of its subtree via `nmt_parent_cv` (§4.6.3.1). this enables namespace-aware DAS: a light client requesting "give me everything for namespace N" receives data plus a completeness proof — the namespace bounds at each tree level cryptographically prove nothing was withheld. the same 2-permutation cost as standard `parent_cv`, with namespace bounds riding in capacity fields that are otherwise zero.
+NMT (Namespace Merkle Tree). the [[BBG]]'s data availability layer organizes [[cyberlinks]] by namespace. each internal node commits to the namespace range of its subtree via `hash_node_nmt` (§4.6.3.1). this enables namespace-aware DAS: a light client requesting "give me everything for namespace N" receives data plus a completeness proof — the namespace bounds at each tree level cryptographically prove nothing was withheld. the same 2-permutation cost as standard `hash_node`, with namespace bounds riding in capacity fields that are otherwise zero.
 
 FRI commitment trees. [[WHIR]] is the multilinear polynomial commitment scheme inside every [[STARK]] proof. FRI (Fast Reed-Solomon IOP) works by:
-1. committing polynomial evaluations into a Merkle tree using `parent_cv`
+1. committing polynomial evaluations into a Merkle tree using `hash_node`
 2. folding the polynomial (halving degree via random challenge)
-3. committing folded evaluations into another Merkle tree using `parent_cv`
+3. committing folded evaluations into another Merkle tree using `hash_node`
 4. repeating until the polynomial is small enough to send directly
 
-the verifier checks random positions via Merkle inclusion proofs at each FRI round — each inclusion proof is a chain of `parent_cv` calls. this is why the [[cyber/proofs]] table shows polynomial inclusion at ~1,000 constraints vs Merkle inclusion at ~9,600: FRI's algebraic folding replaces most hash-path verification with field arithmetic (cheap), but the binding commitment at each round is still a `parent_cv` Merkle tree.
+the verifier checks random positions via Merkle inclusion proofs at each FRI round — each inclusion proof is a chain of `hash_node` calls. this is why the [[cyber/proofs]] table shows polynomial inclusion at ~1,000 constraints vs Merkle inclusion at ~9,600: FRI's algebraic folding replaces most hash-path verification with field arithmetic (cheap), but the binding commitment at each round is still a `hash_node` Merkle tree.
 
-WHIR low-degree testing (~10,000 constraints) involves multiple FRI rounds, each with its own `parent_cv` commitment tree. proof aggregation (~70,000 constraints) includes WHIR verification, which includes FRI Merkle trees. at every level of the [[cyber/proofs]] stack — from a single [[cyberlink]] to recursive proof composition — `parent_cv` is the tree primitive.
+WHIR low-degree testing (~10,000 constraints) involves multiple FRI rounds, each with its own `hash_node` commitment tree. proof aggregation (~70,000 constraints) includes WHIR verification, which includes FRI Merkle trees. at every level of the [[cyber/proofs]] stack — from a single [[cyberlink]] to recursive proof composition — `hash_node` is the tree primitive.
 
 the relationship between tree types:
 
 ```
-parent_cv (standard)
+hash_node (standard)
   ├── content tree     →  particle identity (§4.6)
   ├── MMR              →  AOCL peaks, SWBF chunks (BBG Layer 4)
   └── FRI commitment   →  WHIR polynomial commitments (every STARK)
 
-nmt_parent_cv (namespace-aware, extends parent_cv)
+hash_node_nmt (namespace-aware, extends hash_node)
   └── NMT              →  namespace DAS, completeness proofs (BBG DA layer)
 ```
 
-all four tree types share one security analysis: the capacity-based domain separation (§4.6.7) prevents cross-tree confusion. a content tree internal node (flags = PARENT, ns_min = ns_max = 0) cannot collide with an NMT internal node (flags = PARENT, ns_min/ns_max non-zero) because different capacity values produce different permutation outputs even for identical rate inputs. FRI and MMR trees use the same `parent_cv` as content trees — they are distinguished by what their leaves contain (polynomial evaluations vs addition records vs content chunks), not by the combining operation.
+all four tree types share one security analysis: the capacity-based domain separation (§4.6.7) prevents cross-tree confusion. a content tree internal node (flags = PARENT, ns_min = ns_max = 0) cannot collide with an NMT internal node (flags = PARENT, ns_min/ns_max non-zero) because different capacity values produce different permutation outputs even for identical rate inputs. FRI and MMR trees use the same `hash_node` as content trees — they are distinguished by what their leaves contain (polynomial evaluations vs addition records vs content chunks), not by the combining operation.
 
 the constraint cost table for in-circuit tree verification:
 
 ```
-operation                          parent_cv calls    constraints
+operation                          hash_node calls    constraints
 ─────────────────────────────────  ────────────────   ───────────
 content Merkle inclusion (d=32)    32                 ~9,600
 MMR membership (AOCL, d=26)        26                 ~8,000
@@ -707,21 +707,21 @@ one primitive. one security proof. every tree in [[cyber]].
 
 Hemera serves every hashing role in [[cyber]] through one function:
 
-[[particle]] addressing. Small content (≤ 4096 bytes): `address = chunk_cv(content, 0, is_root=true)`. Large content: split into 4 KB chunks, build left-balanced Merkle tree via `chunk_cv` + `parent_cv`; the [[particle]] address is the tree root.
+[[particle]] addressing. Small content (≤ 4096 bytes): `address = hash_leaf(content, 0, is_root=true)`. Large content: split into 4 KB chunks, build left-balanced Merkle tree via `hash_leaf` + `hash_node`; the [[particle]] address is the tree root.
 
 [[cyberlink]] identity. `edge_id = Hemera(neuron_id ∥ source ∥ target ∥ weight ∥ time)`. Structured field data serialized to bytes, hashed through sponge.
 
-Merkle proofs. Leaf and internal node hashes use the same sponge and permutation. Proof verification is a uniform chain of `chunk_cv` and `parent_cv` calls — no mode switching, no type disambiguation. The flags in capacity bind each hash to its structural role automatically.
+Merkle proofs. Leaf and internal node hashes use the same sponge and permutation. Proof verification is a uniform chain of `hash_leaf` and `hash_node` calls — no mode switching, no type disambiguation. The flags in capacity bind each hash to its structural role automatically.
 
 Incremental hashing. The sponge state (16 field elements = 128 bytes) is a complete checkpoint. Save it, resume later, get the same result as a single-pass hash. Nodes can hash content arriving over the network in chunks without buffering.
 
 Streaming verification. Receive content chunk by chunk, verify each chunk against a Merkle proof, process immediately. Never buffer more than one chunk + proof. Reject invalid chunks before storing anything.
 
-MMR peaks. the AOCL (append-only commitment list) in [[BBG]] Layer 4 is a Merkle mountain range. each append creates a leaf and merges peaks via `parent_cv`. the MMR accumulator — O(log N) peak hashes — is part of the BBG root. UTXO membership proofs are `parent_cv` paths from leaf to peak.
+MMR peaks. the AOCL (append-only commitment list) in [[BBG]] Layer 4 is a Merkle mountain range. each append creates a leaf and merges peaks via `hash_node`. the MMR accumulator — O(log N) peak hashes — is part of the BBG root. UTXO membership proofs are `hash_node` paths from leaf to peak.
 
-NMT commitments. the data availability layer organizes block data by namespace. `nmt_parent_cv` commits namespace bounds at each tree level, enabling completeness proofs for namespace-aware DAS. a light client syncing one namespace receives cryptographic proof that nothing was withheld.
+NMT commitments. the data availability layer organizes block data by namespace. `hash_node_nmt` commits namespace bounds at each tree level, enabling completeness proofs for namespace-aware DAS. a light client syncing one namespace receives cryptographic proof that nothing was withheld.
 
-FRI/WHIR polynomial commitments. every [[STARK]] proof in [[cyber]] uses [[WHIR]], which internally commits polynomial evaluations via `parent_cv` Merkle trees at each FRI folding round. `parent_cv` is the binding primitive inside every proof — from a single [[cyberlink]] to recursive proof composition.
+FRI/WHIR polynomial commitments. every [[STARK]] proof in [[cyber]] uses [[WHIR]], which internally commits polynomial evaluations via `hash_node` Merkle trees at each FRI folding round. `hash_node` is the binding primitive inside every proof — from a single [[cyberlink]] to recursive proof composition.
 
 Field-native computation. Hemera input and output are [[Goldilocks field]] elements. The hash output is directly usable in [[tri-kernel]] ranking, polynomial commitments, and ZK circuits without conversion. Inside a STARK proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Hemera costs ~1,200 constraints in a Goldilocks STARK versus ~25,000 for SHA-256.
 
@@ -890,10 +890,16 @@ impl Hasher {
     pub fn finalize_xof(&self) -> OutputReader;     // extendable output
 }
 
-// ── Tree API (hazmat) ─────────────────────────────────────────
-pub fn chunk_cv(data: &[u8], counter: u64, is_root: bool) -> Hash;
-pub fn parent_cv(left: &Hash, right: &Hash, is_root: bool) -> Hash;
-pub fn nmt_parent_cv(left: &Hash, right: &Hash, ns_min: u64, ns_max: u64, is_root: bool) -> Hash;
+// ── Tree API ─────────────────────────────────────────────────
+pub fn hash_leaf(data: &[u8], counter: u64, is_root: bool) -> Hash;
+pub fn hash_node(left: &Hash, right: &Hash, is_root: bool) -> Hash;
+pub fn hash_node_nmt(left: &Hash, right: &Hash, ns_min: u64, ns_max: u64, is_root: bool) -> Hash;
+pub fn root_hash(data: &[u8]) -> Hash;
+pub fn build_tree(data: &[u8]) -> TreeNode;
+pub fn prove(data: &[u8], chunk_index: u64) -> (Hash, InclusionProof);
+pub fn prove_range(data: &[u8], start: u64, end: u64) -> (Hash, InclusionProof);
+pub fn verify_proof(chunk_data: &[u8], proof: &InclusionProof, root: &Hash) -> bool;
+pub fn verify_node_proof(node_hash: &Hash, proof: &InclusionProof, root: &Hash) -> bool;
 
 // ── Key derivation ────────────────────────────────────────────
 pub fn derive_key(context: &str, key_material: &[u8]) -> [u8; 64];
@@ -902,7 +908,7 @@ pub fn derive_key(context: &str, key_material: &[u8]) -> [u8; 64];
 pub struct Hash([u8; 64]);  // 8 Goldilocks elements, LE canonical
 ```
 
-Deliverables: `cyber-poseidon2` Rust crate, test vectors JSON, cross-validation with SageMath reference.
+Deliverables: `cyber-hemera` Rust crate, test vectors JSON, cross-validation with SageMath reference.
 
 ### Phase 4: Distributed Verification (Weeks 5–8)
 
@@ -990,8 +996,8 @@ Hemera stands before Poseidon in the mythological hierarchy, as cyber/core's ide
 - [[tri-kernel]] — probability engine consuming Hemera outputs
 - [[Goldilocks field]] — the arithmetic substrate
 - [[cyber/proofs]] — STARK proof system built on Hemera
-- [[cyber/bbg]] — graph database whose every tree structure uses `parent_cv`
-- [[WHIR]] — polynomial commitment scheme whose FRI trees use `parent_cv`
+- [[cyber/bbg]] — graph database whose every tree structure uses `hash_node`
+- [[WHIR]] — polynomial commitment scheme whose FRI trees use `hash_node`
 - [[cyber/whitepaper]] — §4 Hemera chapter
 
 ## References
