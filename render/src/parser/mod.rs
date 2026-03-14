@@ -342,77 +342,152 @@ fn looks_like_outliner(content: &str) -> bool {
     (bullet_count as f64 / non_empty.len() as f64) > 0.5
 }
 
-/// Rewrite relative markdown links in subgraph pages.
-/// Resolves `[text](relative/path.md)` → `[text](/slugified-path)` using
-/// the page's directory within the subgraph as the base.
+/// Known media/binary extensions that should be served as static files.
+fn is_media_extension(path: &str) -> bool {
+    let ext = path.rsplit('.').next().unwrap_or("").to_lowercase();
+    matches!(
+        ext.as_str(),
+        "png" | "jpg" | "jpeg" | "gif" | "svg" | "webp" | "ico" | "bmp" | "avif"
+            | "mp4" | "webm" | "ogg" | "mp3" | "wav" | "flac"
+            | "pdf" | "zip" | "tar" | "gz" | "woff" | "woff2" | "ttf" | "eot"
+    )
+}
+
+/// Resolve a relative URL against a base directory path.
+/// Returns the resolved path with `../` traversals applied.
+fn resolve_relative_url<'a>(url: &'a str, base: &str) -> String {
+    if url.starts_with("../") {
+        let mut parts: Vec<&str> = base.split('/').collect();
+        let mut rel = url;
+        while let Some(rest) = rel.strip_prefix("../") {
+            parts.pop();
+            rel = rest;
+        }
+        if parts.is_empty() {
+            rel.to_string()
+        } else {
+            format!("{}/{}", parts.join("/"), rel)
+        }
+    } else {
+        format!("{}/{}", base, url)
+    }
+}
+
+/// Rewrite relative links and media references in subgraph pages.
+/// Handles markdown links, markdown images, and HTML src/href attributes.
 fn rewrite_relative_links(content: &str, page_name: &str) -> String {
     use regex::Regex;
 
     lazy_static::lazy_static! {
-        // Match [text](url) — captures optional preceding char to skip ![img](url)
+        // Markdown link: [text](url) — preceded by non-! character
         static ref MD_LINK: Regex = Regex::new(
             r"(^|[^!])\[([^\]]*)\]\(([^)]+)\)"
+        ).unwrap();
+        // Markdown image: ![alt](url)
+        static ref MD_IMG: Regex = Regex::new(
+            r"!\[([^\]]*)\]\(([^)]+)\)"
+        ).unwrap();
+        // HTML src="..." or href="..." (in img, a, video, source tags)
+        static ref HTML_ATTR: Regex = Regex::new(
+            r#"((?:src|href)\s*=\s*")([^"]+)(")"#
         ).unwrap();
     }
 
     // Base directory of this page within the subgraph namespace
-    // e.g., page_name="trident/docs/explanation/vision" → base="trident/docs/explanation"
-    // e.g., page_name="trident" (root README) → base="trident"
     let base = if let Some(pos) = page_name.rfind('/') {
         &page_name[..pos]
     } else {
         page_name
     };
 
-    MD_LINK.replace_all(content, |caps: &regex::Captures| {
-        let prefix = &caps[1]; // char before `[`, or empty at line start
-        let text = &caps[2];
-        let url = &caps[3];
+    // Subgraph name is the first path component
+    let subgraph_name = page_name.split('/').next().unwrap_or(page_name);
 
-        // Skip external links, anchors, and absolute paths
-        if url.starts_with("http://")
+    let is_external = |url: &str| -> bool {
+        url.starts_with("http://")
             || url.starts_with("https://")
             || url.starts_with('#')
             || url.starts_with('/')
-        {
+            || url.starts_with("data:")
+            || url.starts_with("mailto:")
+    };
+
+    // 1. Rewrite markdown images → /media/{subgraph}/path
+    let content = MD_IMG.replace_all(&content, |caps: &regex::Captures| {
+        let alt = &caps[1];
+        let url = &caps[2];
+        if is_external(url) {
             return caps[0].to_string();
         }
+        let resolved = resolve_relative_url(url, base);
+        // Strip subgraph prefix to get repo-relative path for media URL
+        let repo_relative = resolved
+            .strip_prefix(&format!("{}/", subgraph_name))
+            .unwrap_or(&resolved);
+        format!("![{}](/media/{}/{})", alt, subgraph_name, repo_relative)
+    });
 
-        // Resolve relative path against base directory
-        let resolved = if url.starts_with("../") {
-            // Walk up from base
-            let mut parts: Vec<&str> = base.split('/').collect();
-            let mut rel = url;
-            while let Some(rest) = rel.strip_prefix("../") {
-                parts.pop();
-                rel = rest;
-            }
-            if parts.is_empty() {
-                rel.to_string()
-            } else {
-                format!("{}/{}", parts.join("/"), rel)
-            }
-        } else {
-            format!("{}/{}", base, url)
-        };
+    // 2. Rewrite markdown links → /slugified-path
+    let content = MD_LINK.replace_all(&content, |caps: &regex::Captures| {
+        let prefix = &caps[1];
+        let text = &caps[2];
+        let url = &caps[3];
+        if is_external(url) {
+            return caps[0].to_string();
+        }
+        let resolved = resolve_relative_url(url, base);
 
-        // Strip .md extension for page links
+        // Media files link to the static copy
+        if is_media_extension(&resolved) {
+            let repo_relative = resolved
+                .strip_prefix(&format!("{}/", subgraph_name))
+                .unwrap_or(&resolved);
+            return format!("{}[{}](/media/{}/{})", prefix, text, subgraph_name, repo_relative);
+        }
+
+        // Page links get slugified
         let resolved = resolved
             .strip_suffix(".md")
             .or_else(|| resolved.strip_suffix(".markdown"))
             .unwrap_or(&resolved)
             .to_string();
-
-        // Strip trailing /index or trailing / (directory links)
         let resolved = resolved
             .strip_suffix("/index")
             .unwrap_or(&resolved)
             .trim_end_matches('/')
             .to_string();
-
         let slug = slugify_page_name(&resolved);
         format!("{}[{}](/{slug})", prefix, text)
-    }).to_string()
+    });
+
+    // 3. Rewrite HTML src="..." and href="..." attributes
+    let content = HTML_ATTR.replace_all(&content, |caps: &regex::Captures| {
+        let attr_prefix = &caps[1]; // e.g., `src="`
+        let url = &caps[2];
+        let quote_end = &caps[3]; // closing `"`
+        if is_external(url) {
+            return caps[0].to_string();
+        }
+        let resolved = resolve_relative_url(url, base);
+        let repo_relative = resolved
+            .strip_prefix(&format!("{}/", subgraph_name))
+            .unwrap_or(&resolved);
+
+        if is_media_extension(url) {
+            format!("{}/media/{}/{}{}", attr_prefix, subgraph_name, repo_relative, quote_end)
+        } else {
+            // Non-media HTML links → slugified page path
+            let resolved = resolved
+                .strip_suffix(".md")
+                .or_else(|| resolved.strip_suffix(".markdown"))
+                .unwrap_or(&resolved)
+                .to_string();
+            let slug = slugify_page_name(&resolved);
+            format!("{}/{}{}", attr_prefix, slug, quote_end)
+        }
+    });
+
+    content.to_string()
 }
 
 #[cfg(test)]

@@ -358,6 +358,13 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
     // Step 5: Output
     cyber_publish::output::write_output(&rendered, &page_store, config, &discovered)?;
 
+    // Step 6: Copy subgraph media files
+    if !subgraph_decls.is_empty() {
+        for decl in &subgraph_decls {
+            copy_subgraph_media(decl, &config.build.output_dir)?;
+        }
+    }
+
     let elapsed = start.elapsed();
     if !quiet {
         println!(
@@ -366,6 +373,65 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
             elapsed.as_secs_f64(),
             config.build.output_dir.display()
         );
+    }
+
+    Ok(())
+}
+
+/// Copy media/binary files from a subgraph repo to output/media/{subgraph}/.
+/// Only copies files with known media extensions.
+fn copy_subgraph_media(
+    decl: &cyber_publish::scanner::subgraph::SubgraphDecl,
+    output_dir: &Path,
+) -> Result<()> {
+    use globset::{Glob, GlobSetBuilder};
+    use walkdir::WalkDir;
+
+    let media_output = output_dir.join("media").join(&decl.name);
+
+    // Build exclude set
+    let mut builder = GlobSetBuilder::new();
+    for pattern in &decl.exclude_patterns {
+        if let Ok(glob) = Glob::new(pattern) {
+            builder.add(glob);
+        }
+    }
+    let exclude_set = builder.build()?;
+
+    let media_exts = [
+        "png", "jpg", "jpeg", "gif", "svg", "webp", "ico", "bmp", "avif",
+        "mp4", "webm", "ogg", "mp3", "wav", "flac",
+        "pdf", "zip", "tar", "gz", "woff", "woff2", "ttf", "eot",
+    ];
+
+    for entry in WalkDir::new(&decl.repo_path)
+        .into_iter()
+        .filter_map(|e| e.ok())
+        .filter(|e| e.file_type().is_file())
+    {
+        let path = entry.path();
+        let relative = path
+            .strip_prefix(&decl.repo_path)
+            .unwrap_or(path);
+
+        if exclude_set.is_match(relative) {
+            continue;
+        }
+
+        let ext = path
+            .extension()
+            .map(|e| e.to_string_lossy().to_lowercase())
+            .unwrap_or_default();
+
+        if !media_exts.contains(&ext.as_str()) {
+            continue;
+        }
+
+        let dest = media_output.join(relative);
+        if let Some(parent) = dest.parent() {
+            std::fs::create_dir_all(parent)?;
+        }
+        std::fs::copy(path, &dest)?;
     }
 
     Ok(())
