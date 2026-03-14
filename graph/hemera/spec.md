@@ -431,7 +431,12 @@ Content size    Leaves      Tree depth    Proof size
 1 GB            262,144     18            1,152 B
 1 TB            268M        28            1,792 B
 1 PB            274B        38            2,432 B
+1 EB  (10¹⁸)   2.4×10¹⁴    48            3,072 B
+1 ZB  (10²¹)   2.4×10¹⁷    58            3,712 B
+100 ZB (10²³)  2.4×10¹⁹    65            4,160 B
 ```
+
+the target scale is 10²³ bytes — the total addressable content of a planetary superintelligence. at that scale the Merkle proof is 4.1 KB: one chunk plus one proof still fits in a single jumbo frame. depth 65 means 65 `parent_cv` calls to verify any single chunk in the entire graph — 130 permutations, under 1 μs on modern hardware. the tree scales to the end of the design space without changing any parameter.
 
 All proofs fit in a single network packet. At 256 B chunks, 1 GB content would require depth 22 and 1,408 B proofs — feasible but wasteful. At 64 KB chunks, 1 MB content would have only 16 leaves — too shallow for meaningful structural sharing.
 
