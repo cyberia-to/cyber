@@ -18,11 +18,15 @@ pub struct SubgraphDecl {
 const DEFAULT_EXCLUDES: &[&str] = &[
     ".git/**",
     "target/**",
+    "**/target/**",
     "node_modules/**",
+    "**/node_modules/**",
     "build/**",
+    "**/build/**",
     ".claude/**",
     "**/.DS_Store",
     "Cargo.lock",
+    "**/Cargo.lock",
 ];
 
 /// Discover subgraph declarations from parsed root graph pages.
