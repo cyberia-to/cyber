@@ -52,7 +52,7 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 8. Document all [[liquidity]] bugs with reproduction steps
 9. ~~Block swap below chain minimum (100 base units)~~ done — cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382) ([#1380](https://github.com/cyberia-to/cyb/issues/1380))
 10. ~~Fix tx confirmation status bar timeout~~ done — cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382) ([#1381](https://github.com/cyberia-to/cyb/issues/1381))
-12. Fix swap status bar not updating after tx confirmation (cyb [#1383](https://github.com/cyberia-to/cyb/issues/1383))
+12. ~~Fix swap status bar not updating after tx confirmation~~ done — cyb [#1384](https://github.com/cyberia-to/cyb/pull/1384) ([#1383](https://github.com/cyberia-to/cyb/issues/1383))
 11. ~~Display swap fee (0.3%) next to slippage~~ done — cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382)
 13. Amount > 10% pool reserves shows warning (cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382))
 
