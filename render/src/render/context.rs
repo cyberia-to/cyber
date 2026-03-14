@@ -235,10 +235,8 @@ pub fn build_page_context(
     let word_count = page.content_md.split_whitespace().count();
     let reading_time = (word_count as f64 / 200.0).ceil() as usize;
 
-    let children: Vec<Value> = if page.namespace.is_some() {
-        vec![] // This page is a child, not a parent
-    } else {
-        // Check if this page is a namespace parent
+    let children: Vec<Value> = {
+        // Any page can be a namespace parent — check by its title
         let page_name_lower = page.meta.title.to_lowercase();
 
         // Direct children (pages whose namespace == this page's name)
@@ -257,19 +255,14 @@ pub fn build_page_context(
         // e.g., for "trident" find "trident/docs", "trident/src", "trident/editor" etc.
         let prefix = format!("{}/", page_name_lower);
         let mut seen_subns: std::collections::HashSet<String> = std::collections::HashSet::new();
+        let mut folder_slugs: std::collections::HashSet<String> = std::collections::HashSet::new();
         for ns_key in store.namespace_tree.keys() {
             if let Some(rest) = ns_key.strip_prefix(&prefix) {
-                // Take only the first path segment after the prefix
                 let sub = rest.split('/').next().unwrap_or(rest);
                 if seen_subns.insert(sub.to_string()) {
-                    // Link to the sub-namespace page if it exists, otherwise to the first child
                     let sub_page_slug = crate::parser::slugify_page_name(&format!("{}/{}", page_name_lower, sub));
-                    let url = if store.pages.contains_key(&sub_page_slug) {
-                        format!("/{}", sub_page_slug)
-                    } else {
-                        // No dedicated page for this sub-namespace — link to slug anyway (stub)
-                        format!("/{}", sub_page_slug)
-                    };
+                    folder_slugs.insert(sub_page_slug.clone());
+                    let url = format!("/{}", sub_page_slug);
                     items.push(minijinja::context! {
                         title => format!("{}/", sub),
                         url => url,
@@ -277,6 +270,18 @@ pub fn build_page_context(
                 }
             }
         }
+
+        // Remove direct children that have a matching folder entry (avoid duplicates)
+        items.retain(|item| {
+            let url: String = item.get_attr("url").ok().and_then(|v| v.as_str().map(|s| s.to_string())).unwrap_or_default();
+            let title: String = item.get_attr("title").ok().and_then(|v| v.as_str().map(|s| s.to_string())).unwrap_or_default();
+            if title.ends_with('/') {
+                return true; // Keep all folder entries
+            }
+            // Strip leading / from url to get slug
+            let slug = url.trim_start_matches('/');
+            !folder_slugs.contains(slug)
+        });
 
         // Sort: folders (ending with /) first, then files
         items.sort_by(|a, b| {

@@ -315,6 +315,56 @@ fn build_site(config: &SiteConfig, quiet: bool) -> Result<()> {
             let sg_file_pages = cyber_publish::parser::parse_all(&sg_discovered)?;
             parsed_pages.extend(sg_file_pages);
 
+            // Generate directory index pages for subdirectories without README
+            let existing_ids: std::collections::HashSet<String> = parsed_pages
+                .iter()
+                .map(|p| p.id.clone())
+                .collect();
+            let mut seen_dirs: std::collections::HashSet<String> = std::collections::HashSet::new();
+            for page in parsed_pages.iter() {
+                if let Some(ref ns) = page.namespace {
+                    if ns.starts_with(&decl.name) {
+                        // Collect each directory level between subgraph root and this page
+                        let after_root = ns.strip_prefix(&format!("{}/", decl.name)).unwrap_or("");
+                        let mut accumulated = decl.name.clone();
+                        for segment in after_root.split('/').filter(|s| !s.is_empty()) {
+                            accumulated = format!("{}/{}", accumulated, segment);
+                            seen_dirs.insert(accumulated.clone());
+                        }
+                    }
+                }
+            }
+            for dir_name in &seen_dirs {
+                let dir_slug = cyber_publish::parser::slugify_page_name(dir_name);
+                if !existing_ids.contains(&dir_slug) {
+                    let short_name = dir_name.rsplit('/').next().unwrap_or(dir_name);
+                    parsed_pages.push(cyber_publish::parser::ParsedPage {
+                        id: dir_slug,
+                        meta: cyber_publish::parser::PageMeta {
+                            title: dir_name.clone(),
+                            properties: std::collections::HashMap::new(),
+                            tags: vec![],
+                            public: Some(true),
+                            aliases: vec![],
+                            date: None,
+                            icon: None,
+                            menu_order: None,
+                            stake: None,
+                        },
+                        kind: cyber_publish::parser::PageKind::Page,
+                        source_path: std::path::PathBuf::new(),
+                        namespace: {
+                            // Parent namespace: "trident/docs" → "trident"
+                            let parent = dir_name.rsplitn(2, '/').nth(1).unwrap_or(&decl.name);
+                            Some(parent.to_string())
+                        },
+                        subgraph: Some(decl.name.clone()),
+                        content_md: format!("# {}\n", short_name),
+                        outgoing_links: vec![],
+                    });
+                }
+            }
+
             if !quiet {
                 println!(
                     "  {} Subgraph '{}': {} pages, {} files",

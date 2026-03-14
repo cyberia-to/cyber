@@ -170,18 +170,28 @@ pub fn scan_subgraph(decl: &SubgraphDecl) -> Result<Vec<DiscoveredFile>> {
 }
 
 /// Derive page name for a markdown file in a subgraph.
-/// Repo-root README.md maps to just the subgraph name (becomes the root page).
-/// e.g., ~/git/trident/README.md → "trident"
+/// README.md at any level becomes the directory's page.
+/// e.g., ~/git/trident/README.md         → "trident"
+/// e.g., ~/git/trident/docs/README.md    → "trident/docs"
+/// e.g., ~/git/trident/src/README.md     → "trident/src"
 /// e.g., ~/git/trident/docs/explanation/vision.md → "trident/docs/explanation/vision"
-/// e.g., ~/git/trident/src/README.md → "trident/src/README"
 fn subgraph_page_name(path: &Path, repo_root: &Path, subgraph_name: &str) -> String {
     let relative = path.strip_prefix(repo_root).unwrap_or(path);
     let stem = relative.with_extension("");
     let name = stem.to_string_lossy();
 
-    // Repo-root README becomes the subgraph root page
+    // README at any level becomes the parent directory's page
     if name.eq_ignore_ascii_case("README") {
         return subgraph_name.to_string();
+    }
+    if let Some(parent) = name.strip_suffix("/README").or_else(|| name.strip_suffix("/readme")) {
+        return format!("{}/{}", subgraph_name, parent);
+    }
+    // Case-insensitive check for README as last component
+    let last = name.rsplit('/').next().unwrap_or(&name);
+    if last.eq_ignore_ascii_case("README") {
+        let parent = &name[..name.len() - last.len() - 1];
+        return format!("{}/{}", subgraph_name, parent);
     }
 
     format!("{}/{}", subgraph_name, name)
@@ -247,14 +257,22 @@ mod tests {
             ),
             "trident/docs/explanation/vision"
         );
-        // Nested README keeps "README" in name
+        // Directory README becomes the directory page
         assert_eq!(
             subgraph_page_name(
                 &PathBuf::from("/git/trident/src/README.md"),
                 &repo,
                 "trident"
             ),
-            "trident/src/README"
+            "trident/src"
+        );
+        assert_eq!(
+            subgraph_page_name(
+                &PathBuf::from("/git/trident/docs/README.md"),
+                &repo,
+                "trident"
+            ),
+            "trident/docs"
         );
     }
 
