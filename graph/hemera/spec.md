@@ -436,7 +436,9 @@ Content size    Leaves      Tree depth    Proof size
 1 YB   (10²⁴)  2.4×10²⁰    68            4,352 B
 ```
 
-the target scale is 10²⁴ bytes (1 yottabyte) — the total addressable content of a planetary superintelligence. at that scale the Merkle proof is 4.25 KB: one chunk plus one proof still fits in a single jumbo frame. depth 68 means 68 `parent_cv` calls to verify any single chunk in the entire graph — 136 permutations, under 1 μs on modern hardware. the tree scales to the end of the design space without changing any parameter.
+the content tree scales to 1 YB (10²⁴ bytes) at depth 68, proof 4.25 KB — one chunk plus one proof still fits in a single jumbo frame.
+
+the system-level target is 10²⁴ [[cyberlinks]]. cyberlinks do not live in a single content tree — they are indexed by the [[BBG]]'s polynomial commitments (WHIR), batched into NMT blocks for DAS, and tracked in the AOCL MMR for UTXO lifecycle. the deepest tree at 10²⁴ cyberlinks is the MMR: at ~10²³ signals (each bundling ~10 cyberlinks), the tallest MMR peak has depth ⌈log₂(10²³)⌉ ≈ 77, proof size 77 × 64 = 4,928 B. still fits a jumbo frame. NMT blocks are per-epoch (depth ~14 for ~10K cyberlinks per block). FRI trees are per-proof (depth ~10-20). no tree in the system exceeds depth ~80 at planetary scale.
 
 All proofs fit in a single network packet. At 256 B chunks, 1 GB content would require depth 22 and 1,408 B proofs — feasible but wasteful. At 64 KB chunks, 1 MB content would have only 16 leaves — too shallow for meaningful structural sharing.
 
