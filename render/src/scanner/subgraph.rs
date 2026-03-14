@@ -21,6 +21,8 @@ const DEFAULT_EXCLUDES: &[&str] = &[
     "node_modules/**",
     "build/**",
     ".claude/**",
+    "**/.DS_Store",
+    "Cargo.lock",
 ];
 
 /// Discover subgraph declarations from parsed root graph pages.

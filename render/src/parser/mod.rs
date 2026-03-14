@@ -146,11 +146,15 @@ fn parse_non_md_file(file: &DiscoveredFile) -> Result<ParsedPage> {
     if let Some(lang_tag) = extension_to_tag(&ext) {
         tags.push(lang_tag.to_string());
     }
-    if let Some(ns) = &namespace {
-        // Top-level directory becomes a tag
-        let top_dir = ns.split('/').next().unwrap_or(ns);
-        if !top_dir.is_empty() && !tags.contains(&top_dir.to_string()) {
-            tags.push(top_dir.to_string());
+    // For root graph files, auto-tag with the top-level directory.
+    // Skip for subgraph files — their namespace IS the subgraph name,
+    // and tagging every file with it floods the subgraph root page with backlinks.
+    if file.subgraph.is_none() {
+        if let Some(ns) = &namespace {
+            let top_dir = ns.split('/').next().unwrap_or(ns);
+            if !top_dir.is_empty() && !tags.contains(&top_dir.to_string()) {
+                tags.push(top_dir.to_string());
+            }
         }
     }
 
@@ -158,7 +162,13 @@ fn parse_non_md_file(file: &DiscoveredFile) -> Result<ParsedPage> {
     let (content_md, outgoing_links) = match std::fs::read_to_string(&file.path) {
         Ok(text) => {
             let lang = extension_to_lang(&ext);
-            let outgoing_links = wikilinks::collect_wikilinks(&text);
+            // Only extract wikilinks from root graph files — source code in
+            // subgraphs contains [[attr]] / arr[[i]] patterns that are not links.
+            let outgoing_links = if file.subgraph.is_none() {
+                wikilinks::collect_wikilinks(&text)
+            } else {
+                Vec::new()
+            };
             let content_md = format!("```{}\n{}\n```", lang, text);
             (content_md, outgoing_links)
         }
