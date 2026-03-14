@@ -3,7 +3,8 @@ use crate::parser::slugify_page_name;
 use comrak::{
     arena_tree::Node,
     nodes::{Ast, AstNode, NodeValue},
-    Arena, Options,
+    plugins::syntect::SyntectAdapterBuilder,
+    Arena, Options, Plugins,
 };
 use regex::Regex;
 
@@ -161,7 +162,7 @@ fn restore_math_blocks(html: &str, math_blocks: &[String]) -> String {
 }
 
 /// Render markdown to HTML with wikilink resolution, embed expansion, block refs, and queries.
-pub fn render_markdown(markdown: &str, store: &PageStore) -> RenderResult {
+pub fn render_markdown(markdown: &str, store: &PageStore, code_theme: &str) -> RenderResult {
     // Pre-process: resolve embeds and block references in the markdown source
     let processed = resolve_embeds_and_refs(markdown, store, 0);
 
@@ -188,9 +189,15 @@ pub fn render_markdown(markdown: &str, store: &PageStore) -> RenderResult {
     // Add heading IDs for TOC anchors
     inject_heading_ids(root, &arena);
 
-    // Render to HTML
+    // Render to HTML with syntax highlighting
+    let adapter = SyntectAdapterBuilder::new()
+        .theme(code_theme)
+        .build();
+    let mut plugins = Plugins::default();
+    plugins.render.codefence_syntax_highlighter = Some(&adapter);
+
     let mut html = Vec::new();
-    comrak::format_html(root, &options, &mut html).unwrap();
+    comrak::format_html_with_plugins(root, &options, &mut html, &plugins).unwrap();
 
     let mut html = String::from_utf8(html).unwrap_or_default();
 
@@ -397,6 +404,8 @@ mod tests {
     use std::collections::HashMap;
     use std::path::PathBuf;
 
+    const TEST_THEME: &str = "base16-ocean.dark";
+
     fn empty_store() -> PageStore {
         build_graph(vec![]).unwrap()
     }
@@ -428,7 +437,7 @@ mod tests {
     #[test]
     fn test_basic_markdown() {
         let store = empty_store();
-        let result = render_markdown("# Hello\n\nWorld", &store);
+        let result = render_markdown("# Hello\n\nWorld", &store, TEST_THEME);
         assert!(result.html.contains("<h1>"));
         assert!(result.html.contains("Hello"));
         assert!(result.html.contains("<p>World</p>"));
@@ -437,7 +446,7 @@ mod tests {
     #[test]
     fn test_wikilink_resolved() {
         let store = store_with_page("My Page");
-        let result = render_markdown("Link to [[My Page]]", &store);
+        let result = render_markdown("Link to [[My Page]]", &store, TEST_THEME);
         assert!(result.html.contains("class=\"internal-link\""));
         assert!(result.html.contains("href=\"/my-page\""));
     }
@@ -445,14 +454,14 @@ mod tests {
     #[test]
     fn test_wikilink_stub() {
         let store = empty_store();
-        let result = render_markdown("Link to [[Missing Page]]", &store);
+        let result = render_markdown("Link to [[Missing Page]]", &store, TEST_THEME);
         assert!(result.html.contains("stub-link"));
     }
 
     #[test]
     fn test_gfm_features() {
         let store = empty_store();
-        let result = render_markdown("| A | B |\n|---|---|\n| 1 | 2 |", &store);
+        let result = render_markdown("| A | B |\n|---|---|\n| 1 | 2 |", &store, TEST_THEME);
         assert!(result.html.contains("<table>"));
     }
 
@@ -463,13 +472,14 @@ mod tests {
         let result = render_markdown(
             "The set $\\left\\{x \\in \\mathbb{R}\\right\\}$ is open.",
             &store,
+            TEST_THEME,
         );
         assert!(
             result.html.contains("\\left\\{"),
             "backslash-brace should be preserved in inline math"
         );
         // Display math
-        let result = render_markdown("$$\\left\\{x > 0\\right\\}$$", &store);
+        let result = render_markdown("$$\\left\\{x > 0\\right\\}$$", &store, TEST_THEME);
         assert!(
             result.html.contains("\\left\\{"),
             "backslash-brace should be preserved in display math"
@@ -487,6 +497,7 @@ mod tests {
         let result = render_markdown(
             "$\\text{type\\_tag}(a)$",
             &store,
+            TEST_THEME,
         );
         assert!(
             result.html.contains("\\text{type\\_tag}"),
@@ -498,6 +509,7 @@ mod tests {
         let result = render_markdown(
             "$\\text{staking_share}$",
             &store,
+            TEST_THEME,
         );
         assert!(
             result.html.contains("\\text{staking\\_share}"),
@@ -509,6 +521,7 @@ mod tests {
         let result = render_markdown(
             "$\\text{BBG\\_root} = H(\\text{by\\_neuron.commit})$",
             &store,
+            TEST_THEME,
         );
         assert!(result.html.contains("\\text{BBG\\_root}"));
         assert!(result.html.contains("\\text{by\\_neuron.commit}"));
@@ -517,7 +530,7 @@ mod tests {
     #[test]
     fn test_toc_generation() {
         let store = empty_store();
-        let result = render_markdown("# First\n\n## Second\n\n### Third\n\nContent", &store);
+        let result = render_markdown("# First\n\n## Second\n\n### Third\n\nContent", &store, TEST_THEME);
         assert_eq!(result.toc.len(), 3);
         assert_eq!(result.toc[0].text, "First");
         assert_eq!(result.toc[0].level, 1);

@@ -63,7 +63,7 @@ pub fn render_cached(
         }
 
         // Transform markdown to HTML with wikilink resolution
-        let render_result = transform::render_markdown(&page.content_md, store);
+        let render_result = transform::render_markdown(&page.content_md, store, &config.style.code.theme);
 
         // Build template context
         let ctx = context::build_page_context(
@@ -222,7 +222,7 @@ fn render_index(
         let root_id = crate::parser::slugify_page_name(root_page_name);
         if let Some(page) = store.pages.get(&root_id) {
             if PageStore::is_page_public(page, &config.content) {
-                let render_result = transform::render_markdown(&page.content_md, store);
+                let render_result = transform::render_markdown(&page.content_md, store, &config.style.code.theme);
                 let ctx = context::build_page_context(
                     page,
                     &render_result.html,
@@ -387,7 +387,7 @@ fn render_blog(
         .map(|p| {
             // Truncate to 3 lines max, then render as full HTML with wikilinks
             let (truncated_md, was_truncated) = truncate_markdown(&p.content_md, 3);
-            let render_result = transform::render_markdown(&truncated_md, store);
+            let render_result = transform::render_markdown(&truncated_md, store, &config.style.code.theme);
 
             minijinja::context! {
                 title => p.meta.date.map(|d| d.format("%B %d, %Y").to_string()).unwrap_or_else(|| p.meta.title.clone()),
