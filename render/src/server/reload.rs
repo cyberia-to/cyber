@@ -122,6 +122,22 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
         watcher.watch(&blog_dir, notify::RecursiveMode::Recursive)?;
     }
 
+    // Watch subgraph repo directories for changes
+    {
+        let discovered = crate::scanner::scan(&config.build.input_dir, &config.content)?;
+        let root_parsed = crate::parser::parse_all(&discovered)?;
+        let subgraph_decls = crate::scanner::subgraph::discover_subgraphs(
+            &root_parsed,
+            &config.build.input_dir,
+        );
+        for decl in &subgraph_decls {
+            if decl.repo_path.exists() {
+                eprintln!("  {} Watching subgraph '{}': {}", "Watch".dimmed(), decl.name, decl.repo_path.display());
+                watcher.watch(&decl.repo_path, notify::RecursiveMode::Recursive)?;
+            }
+        }
+    }
+
     let mut cache = BuildCache::new();
 
     loop {
@@ -225,6 +241,62 @@ fn incremental_rebuild(
         .map(|f| &f.path)
         .collect();
     cache.parse_cache.retain(|path, _| current_paths.contains(path));
+
+    // Step 2b: Discover and merge subgraphs (same logic as build_site)
+    let subgraph_decls = crate::scanner::subgraph::discover_subgraphs(
+        &all_parsed,
+        &config.build.input_dir,
+    );
+    if !subgraph_decls.is_empty() {
+        let subgraph_namespaces: Vec<String> =
+            subgraph_decls.iter().map(|d| d.name.clone()).collect();
+        let _evicted = crate::scanner::subgraph::enforce_namespace_monopoly(
+            &mut all_parsed,
+            &subgraph_namespaces,
+        );
+        for decl in &subgraph_decls {
+            let subgraph_files = crate::scanner::subgraph::scan_subgraph(decl)?;
+            let declaring_page = all_parsed
+                .iter()
+                .find(|p| p.id == decl.declaring_page_id)
+                .cloned();
+            for file in &subgraph_files {
+                if file.kind == crate::scanner::FileKind::Page {
+                    let mut page = crate::parser::parse_file(file)?;
+                    if page.id == decl.declaring_page_id {
+                        if let Some(ref dp) = declaring_page {
+                            page.meta.tags = dp.meta.tags.clone();
+                            page.meta.aliases = dp.meta.aliases.clone();
+                            page.meta.properties = dp.meta.properties.clone();
+                            page.meta.public = dp.meta.public;
+                            page.meta.icon = dp.meta.icon.clone();
+                            page.meta.stake = dp.meta.stake;
+                            if !dp.content_md.trim().is_empty() {
+                                let readme_content = std::mem::take(&mut page.content_md);
+                                page.content_md = dp.content_md.clone();
+                                page.content_md.push_str(&format!(
+                                    "\n\n---\n\n## from subgraph {}\n\n",
+                                    decl.name
+                                ));
+                                page.content_md.push_str(&readme_content);
+                            }
+                            for link in &dp.outgoing_links {
+                                if !page.outgoing_links.contains(link) {
+                                    page.outgoing_links.push(link.clone());
+                                }
+                            }
+                        }
+                    }
+                    all_parsed.push(page);
+                }
+            }
+            if declaring_page.is_some() {
+                all_parsed.retain(|p| {
+                    !(p.id == decl.declaring_page_id && p.subgraph.is_none())
+                });
+            }
+        }
+    }
 
     // Step 3: Build graph (always full — it's fast)
     let store = crate::graph::build_graph(all_parsed)?;
