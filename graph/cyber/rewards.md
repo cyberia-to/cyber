@@ -77,14 +77,14 @@ complexity: $O(k \cdot n)$ with $k \ll n$. feasible for 10⁶+ transactions per 
 
 rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
 
-every [[signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]]. this $\pi_\Delta$ is proven correct by a single [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim:
+every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]]. this $\pi_\Delta$ is proven correct by a single [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim:
 
-1. [[neuron]] creates [[signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[STARK]] proof
+1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[STARK]] proof
 2. proof demonstrates: applying these links to the graph at $\text{bbg\_root}_t$ shifts π by $\pi_\Delta$
 3. any verifier checks the proof against the header — O(log n), no recomputation
 4. if valid and Δπ > 0, the neuron mints [[$CYB]] proportional to the proven shift
 
-no aggregator decides the reward. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood state, create [[cyberlinks]], prove Δπ, bundle into a [[signal]], mint tokens
+no aggregator decides the reward. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood state, create [[cyberlinks]], prove Δπ, bundle into a [[cyber/signal]], mint tokens
 
 conservation: total minting per epoch is bounded by the actual global Δπ, verifiable from consecutive headers. if the sum of individual claims exceeds the actual shift (overlapping neighborhoods), all claims are scaled proportionally
 

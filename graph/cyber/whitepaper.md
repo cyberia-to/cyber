@@ -418,7 +418,7 @@ The [[cybergraph]] is not an alternative to trained models. It is the substrate 
 
 §6.2 describes the local update rule. At planetary scale, no single node holds the full graph. The question: who computes $\pi^*$?
 
-The answer: every [[neuron]], locally, as part of creating [[signals]]. A [[signal]] bundles one or more [[cyberlinks]] with a focus update and its proof. The [[neuron]] runs local [[tri-kernel]] steps over their $O(\log(1/\varepsilon))$-hop neighborhood and includes the result:
+The answer: every [[neuron]], locally, as part of creating [[cyber/signals]]. A [[cyber/signal]] bundles one or more [[cyberlinks]] with a focus update and its proof. The [[neuron]] runs local [[tri-kernel]] steps over their $O(\log(1/\varepsilon))$-hop neighborhood and includes the result:
 
 $$\text{signal} = (\text{neuron}, \; \vec\ell, \; \pi_\Delta, \; \sigma, \; t)$$
 
@@ -426,14 +426,14 @@ where $\vec\ell$ is one or more [[cyberlinks]] (each a 7-tuple $(\nu, p, q, \tau
 
 The local tri-kernel step is a [[nox]] program. The neuron produces the [[STARK]] proof that $\pi_\Delta$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
 
-The network converges to $\pi^*$ through [[signal]] propagation:
+The network converges to $\pi^*$ through [[cyber/signal]] propagation:
 
-1. [[Neuron]] creates [[signal]] with [[cyberlinks]], $\pi_\Delta$, and STARK proof
+1. [[Neuron]] creates [[cyber/signal]] with [[cyberlinks]], $\pi_\Delta$, and STARK proof
 2. Receiving nodes apply $\pi_\Delta$ to their local $\pi$ view
-3. Their own future [[signals]] carry updated $\pi_\Delta$ incorporating the effect
+3. Their own future [[cyber/signals]] carry updated $\pi_\Delta$ incorporating the effect
 4. $\pi^*$ emerges from convergence of all local updates
 
-This is gossip-based distributed belief propagation. Each [[signal]] is a message in the algorithm. The global fixed point emerges from local message passing. No central aggregator computes $\pi^*$ — it crystallizes from the network of proven local updates.
+This is gossip-based distributed belief propagation. Each [[cyber/signal]] is a message in the algorithm. The global fixed point emerges from local message passing. No central aggregator computes $\pi^*$ — it crystallizes from the network of proven local updates.
 
 Conflicting updates (two [[neurons]] affecting overlapping neighborhoods in the same epoch) resolve through the contraction theorem (§5.6): the [[tri-kernel]] is confluent — any application order reaches the same $\pi^*$. The contraction coefficient $\kappa < 1$ bounds the interaction between overlapping updates. For non-overlapping neighborhoods (the common case at scale), updates compose exactly.
 
@@ -846,18 +846,18 @@ new [[$CYB]] is minted only when $\Delta\pi > 0$. the protocol's inflation is li
 
 rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
 
-every [[signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for the batch of [[cyberlinks]] it contains (§6.9). this $\pi_\Delta$ is proven correct by a [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
+every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for the batch of [[cyberlinks]] it contains (§6.9). this $\pi_\Delta$ is proven correct by a [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
 
-1. [[neuron]] creates [[signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[STARK]] proof
+1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[STARK]] proof
 2. the proof demonstrates: "applying my links to the graph at $\text{bbg\_root}_t$ shifts $\pi$ by $\pi_\Delta$ in my neighborhood"
 3. any verifier checks the proof against the header — $O(\log n)$, no recomputation
 4. if valid and $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the proven shift
 
-no aggregator decides the reward. no central entity computes the global reward distribution. the proof IS the mining. the [[signal]] IS the block. the [[neuron]] IS the miner.
+no aggregator decides the reward. no central entity computes the global reward distribution. the proof IS the mining. the [[cyber/signal]] IS the block. the [[neuron]] IS the miner.
 
 this works because the [[locality]] theorem (§2.4) guarantees that a neuron's effect is contained within $O(\log(1/\varepsilon))$ hops. the local $\Delta\pi$ IS the global $\Delta\pi$ up to $\varepsilon$. the neuron needs only their neighborhood's state — queryable from any peer with proofs against the header — to compute and prove their contribution.
 
-a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\pi$ and edges, create [[cyberlinks]], compute local $\Delta\pi$, produce a [[STARK]] proof, bundle into a [[signal]], mint [[$CYB]]. no server. no aggregator. no permission.
+a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\pi$ and edges, create [[cyberlinks]], compute local $\Delta\pi$, produce a [[STARK]] proof, bundle into a [[cyber/signal]], mint [[$CYB]]. no server. no aggregator. no permission.
 
 ### 14.3 Attribution and Conservation
 

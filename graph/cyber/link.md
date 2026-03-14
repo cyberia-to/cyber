@@ -29,7 +29,7 @@ three layers in one atomic record. structural $(\nu, p, q)$ is binary — the co
 
 conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
 
-cyberlinks are bundled into [[signals]] for broadcast. the [[signal]] adds the computational layer: an [[cyber/impulse]] ($\pi_\Delta$ — the proven [[focus]] shift) and a recursive [[STARK]] proof covering the entire batch. see [[signal]] for the full specification
+cyberlinks are bundled into [[cyber/signals]] for broadcast. the [[cyber/signal]] adds the computational layer: an [[cyber/impulse]] ($\pi_\Delta$ — the proven [[focus]] shift) and a recursive [[STARK]] proof covering the entire batch. see [[cyber/signal]] for the full specification
 
 the [[cybergraph]] is append-only. $t$ (block height) distinguishes every record: the same author linking from→to at block $t_1$ and again at block $t_2 > t_1$ produces two separate entries in $L$. this enables reinforcement (higher $a$ on a new record), valence updates (new $v$ at a new block), and multi-denomination staking (same structural link in different [[tokens]])
 
