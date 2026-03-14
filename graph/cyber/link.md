@@ -11,8 +11,6 @@ the atomic unit of [[knowledge]]. a [[neuron]] binds two [[particles]] with a si
 
 cheap talk produces noise. costly links produce [[knowledge]]
 
----
-
 ## the seven fields
 
 $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_{+} \times \{-1,\,0,\,+1\} \times \mathbb{Z}_{\geq 0}$$
@@ -30,6 +28,8 @@ $$\ell \;=\; (\nu,\; p,\; q,\; \tau,\; a,\; v,\; t) \;\in\; N \times P \times P 
 three layers in one atomic record. structural $(\nu, p, q)$ is binary — the connection either exists or it doesn't. epistemic $v$ is ternary — the neuron's prediction of how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge. economic $(\tau, a)$ is continuous over $\mathbb{R}_+$. see [[two three paradox]] for why this layering is not arbitrary
 
 conviction = ($\tau$, $a$): the pair that turns an assertion into a bet. denomination selects the [[token]], amount declares the stake. a link with zero conviction is structurally identical to a link with maximum conviction — the structural layer is binary. the conviction layer prices it
+
+cyberlinks are bundled into [[cyber/signals]] for broadcast. the [[cyber/signal]] adds the computational layer: an [[cyber/impulse]] ($\pi_\Delta$ — the proven [[focus]] shift) and a recursive [[STARK]] proof covering the entire batch. see [[cyber/signal]] for the full specification
 
 the [[cybergraph]] is append-only. $t$ (block height) distinguishes every record: the same author linking from→to at block $t_1$ and again at block $t_2 > t_1$ produces two separate entries in $L$. this enables reinforcement (higher $a$ on a new record), valence updates (new $v$ at a new block), and multi-denomination staking (same structural link in different [[tokens]])
 

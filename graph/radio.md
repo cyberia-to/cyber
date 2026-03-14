@@ -6,13 +6,13 @@ crystal-domain: cyber
 ---
 # radio
 
-connectivity for [[superintelligence]]. a fork of [[iroh]] where every hash — content identifiers, verified streaming trees, relay handshakes — runs through [[Hemera]] ([[Poseidon2]] over the [[Goldilocks field]]) instead of BLAKE3
+connectivity for [[superintelligence]]. a fork of [[iroh]] where every hash — content identifiers, verified streaming trees, relay handshakes — runs through [[Hemera]] instead of [[Blake3]]
 
 [github](https://github.com/cyberia-to/radio)
 
 ## why
 
-BLAKE3 hashes at 2 GB/s. [[Hemera]] reaches ~50–100 MB/s on CPU. the tradeoff: proving a single BLAKE3 hash inside a STARK costs 50,000–100,000 constraints. [[Hemera]] costs ~300. this enables:
+Blake3 hashes at 2 GB/s. [[Hemera]] reaches ~50–100 MB/s on CPU. the tradeoff: proving a single Blake3 hash inside a STARK costs 50,000–100,000 constraints. [[Hemera]] costs ~300. this enables:
 
 - [[storage proofs]] without downloading content
 - verified streaming with [[Hemera]] Merkle trees
@@ -43,7 +43,7 @@ radio preserves [[iroh]] networking (QUIC, [[radio/hole-punching]], [[radio/rela
 
 ## status
 
-zero BLAKE3 dependencies remain. 395 tests pass across all crates
+zero Blake3 dependencies remain. 395 tests pass across all crates
 
 ## in the stack
 

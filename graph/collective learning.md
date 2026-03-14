@@ -21,7 +21,7 @@ the system state evolves as each [[cyberlink]] updates the [[cybergraph]]:
 
 $$S(t+1) = F(S(t), W(t), T(t))$$
 
-weight updates follow a Hebbian rule modulated by [[consensus]]:
+weight updates follow a [[Hebbian learning]] rule modulated by [[consensus]]:
 
 $$w_{ij}(t+1) = w_{ij}(t) + \alpha \cdot f(x_i, x_j) + \beta \cdot g(\pi_i, \pi_j)$$
 

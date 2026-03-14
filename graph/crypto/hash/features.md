@@ -27,9 +27,9 @@ These properties form the foundation of [[cryptography]]. See [[cryptographic pr
 
 | Property | What it means | Examples |
 |---|---|---|
-| Hardware throughput | Raw GB/s on commodity CPUs | BLAKE3 ~2 GB/s, SHA-256 ~500 MB/s |
-| SIMD acceleration | Exploits vector instructions (AVX2/512, NEON) | BLAKE3, SHA-NI |
-| Parallelizability | Splits work across cores for single input | BLAKE3 (tree mode), ParallelHash |
+| Hardware throughput | Raw GB/s on commodity CPUs | Blake3 ~2 GB/s, SHA-256 ~500 MB/s |
+| SIMD acceleration | Exploits vector instructions (AVX2/512, NEON) | Blake3, SHA-NI |
+| Parallelizability | Splits work across cores for single input | Blake3 (tree mode), ParallelHash |
 | Latency | Time-to-first-hash for small inputs | Matters for interactive apps |
 | Constant-time | Free of timing side channels (no secret-dependent branches) | Critical for key derivation |
 | Small message efficiency | Fast for inputs < 1KB | Some sponge constructions have high initialization cost |
@@ -38,15 +38,15 @@ These properties form the foundation of [[cryptography]]. See [[cryptographic pr
 
 | Property | Definition | Who has it |
 |---|---|---|
-| Tree hashing | Built-in Merkle tree mode for parallel [[hashing]] of large inputs | BLAKE3, KangarooTwelve, ParallelHash |
+| Tree hashing | Built-in Merkle tree mode for parallel [[hashing]] of large inputs | Blake3, KangarooTwelve, ParallelHash |
 | Incremental hashing | Update hash when input changes without full rehash | Homomorphic hashes (LtHash, AdHash) |
 | Streaming | Process input in chunks without buffering entire input | All sponge/Merkle-Damgård constructions |
-| Verified streaming | Verify data integrity chunk-by-chunk as it arrives (Bao) | BLAKE3 (native via Bao), must be built for others |
-| Slice proofs | Prove integrity of arbitrary byte range without full content | BLAKE3/Bao, any tree-hash with proof extraction |
-| Extendable output (XOF) | Produce arbitrary-length output | SHAKE128/256, BLAKE3, KangarooTwelve |
+| Verified streaming | Verify data integrity chunk-by-chunk as it arrives (Bao) | Blake3 (native via Bao), must be built for others |
+| Slice proofs | Prove integrity of arbitrary byte range without full content | Blake3/Bao, any tree-hash with proof extraction |
+| Extendable output (XOF) | Produce arbitrary-length output | SHAKE128/256, Blake3, KangarooTwelve |
 | Sponge construction | Absorb-then-squeeze paradigm, yields both hash and XOF | SHA-3/Keccak, Poseidon, Rescue, Tip5 |
 | Compression function | Fixed-input-length primitive, used inside Merkle-Damgård or standalone | Poseidon2, Anemoi/Jive |
-| Domain separation | Provably different outputs for different use cases from same primitive | BLAKE3 (key derivation, MAC, hash all from same core) |
+| Domain separation | Provably different outputs for different use cases from same primitive | Blake3 (key derivation, MAC, hash all from same core) |
 | Duplex construction | Interleave absorb/squeeze for online authenticated [[encryption]] | Keccak duplex, Xoodyak |
 
 See [[hash path accumulator]] for how these compositional properties enable accumulator constructions.
@@ -95,7 +95,7 @@ See [[cyber/stark]] for STARK verification in the cyber protocol. [[incrementall
 |---|---|---|
 | Deterministic identity | Same bytes → same hash, always | All raw-byte hashes (distinct from CIDv0/UnixFS) |
 | Deduplication | Identify identical content by hash equality | Universal property |
-| Self-certifying names | Hash IS the unforgeable name of content | [[ipfs]] CIDs, BLAKE3 content addresses |
+| Self-certifying names | Hash IS the unforgeable name of content | [[ipfs]] CIDs, Blake3 content addresses |
 | Multihash/multicodec | Self-describing hash format (includes algorithm ID + length) | CIDv1 ecosystem, extensible |
 | Content integrity | Verify content matches its hash | Universal |
 | Content availability proofs | Prove you store content without revealing it | Algebraic hashes + STARK (Filecoin) |

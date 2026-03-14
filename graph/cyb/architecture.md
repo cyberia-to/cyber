@@ -140,7 +140,7 @@ Nox is simultaneously the structural IR (the grammar all languages compile throu
 
 characteristic: 2. proof system: FRI-Binius. AND is multiplication. XOR is addition. both are free. what Bt cannot do cheaply: integer arithmetic. 3 + 5 = 6 in 𝔽₂ (XOR), not 8. to perform actual addition with carry, you must build ripple-carry adders from AND/XOR gates.
 
-use cases: BLAKE3/SHA-256 circuits (proving legacy hashes), Keccak verification (Ethereum bridge), AES circuits, binary Merkle tree verification, binary protocol parsing.
+use cases: Blake3/SHA-256 circuits (proving legacy hashes), Keccak verification (Ethereum bridge), AES circuits, binary Merkle tree verification, binary protocol parsing.
 
 ### 5. Universe 2 — Rs (Byte) & Universe 3 — Trident (Field)
 
@@ -603,7 +603,7 @@ the graph serves as infrastructure for itself:
 | file system | `~neuron/path` resolves through cyberlinks |
 | data availability | [[NMT]] per row, erasure-coded, namespace-aware sampling |
 
-[[radio]] is the transport layer — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of BLAKE3. 20× cheaper in [[STARK]] proofs, one hash function end to end. content shared via verified [[Hemera]] Merkle trees. the [[brain]] is the graph file manager — discovery, linking, querying through [[CozoDB]] and [[datalog]].
+[[radio]] is the transport layer — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. 20× cheaper in [[STARK]] proofs, one hash function end to end. content shared via verified [[Hemera]] Merkle trees. the [[brain]] is the graph file manager — discovery, linking, querying through [[CozoDB]] and [[datalog]].
 
 querying storage and querying knowledge are the same operation: graph traversal. the BBG is the single source of truth.
 
@@ -632,7 +632,7 @@ the signer is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), plug
 
 ## Part V: Radio — Transport, Messaging, Sync, Storage
 
-[[radio]] is the connectivity layer of [[cyb]] — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of BLAKE3. one hash function, one address space, zero self-describing overhead. 20× cheaper in [[STARK]] proofs than BLAKE3, at the cost of ~3× lower raw throughput. the tradeoff is correct: [[particle]] addresses are verified far more often than they are created.
+[[radio]] is the connectivity layer of [[cyb]] — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. one hash function, one address space, zero self-describing overhead. 20× cheaper in [[STARK]] proofs than Blake3, at the cost of ~3× lower raw throughput. the tradeoff is correct: [[particle]] addresses are verified far more often than they are created.
 
 ### 26. Endpoint and Physical Transport
 

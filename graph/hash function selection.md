@@ -41,9 +41,9 @@ No [[hash]] function perfectly satisfies all seven. The question is which one co
 
 ## 3. Candidates Evaluated
 
-### 3.1 Classical: BLAKE3, SHA-256
+### 3.1 Classical: Blake3, SHA-256
 
-Strengths: Battle-tested (SHA-256: 23 years), extremely fast native execution (BLAKE3: ~2 GB/s), hardware acceleration, universal tooling, NIST standardization.
+Strengths: Battle-tested (SHA-256: 23 years), extremely fast native execution (Blake3: ~2 GB/s), hardware acceleration, universal tooling, NIST standardization.
 
 Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than arithmetization-oriented (AO) hashes when proved in STARKs. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into [[field]] arithmetic, turning a simple [[hash]] into thousands of constraints.
 
@@ -155,7 +155,7 @@ Poseidon2's compression mode enables efficient incremental [[merklezation]] upda
 - O(1) [[verification]] per proof step (single Poseidon2 compression)
 - Bounded locality: all operations are local to the mutation point
 
-Native [[hash]] rate on commodity hardware: ~50–100 MB/s over [[Goldilocks field]] (estimated). Slower than BLAKE3 by 20–40× for raw ingestion. Acceptable for steady-state operation but requires planning for initial bulk migration of existing content.
+Native [[hash]] rate on commodity hardware: ~50–100 MB/s over [[Goldilocks field]] (estimated). Slower than Blake3 by 20–40× for raw ingestion. Acceptable for steady-state operation but requires planning for initial bulk migration of existing content.
 
 ### 4.7 Quantum Resistance
 
@@ -208,7 +208,7 @@ The Poseidon(2)b paper (Jan 2026) characterizes Graeffe-transform attacks as pro
 | Hash | Age | Papers attacking it | Full-round broken? | Security confidence |
 |------|-----|--------------------|--------------------|---------------------|
 | SHA-256 | 23 years | Hundreds | No | Very high |
-| BLAKE3 | 6 years | Dozens | No | High |
+| Blake3 | 6 years | Dozens | No | High |
 | Poseidon2 | 3 years | ~15–20 | No (at 128-bit) | Moderate |
 | Tip5 | 3 years | ~5–8 | No | Moderate-low (less scrutiny) |
 | Hydra | 3 years | ~3–5 | No | Low (minimal scrutiny) |
@@ -230,7 +230,7 @@ What we bet on instead: Algorithm agility. The CID format must support migration
 ### 6.1 The Generalist vs. Specialist Tradeoff
 
 The alternative to Poseidon2 is a multi-hash architecture:
-- BLAKE3 for fast content ingestion
+- Blake3 for fast content ingestion
 - Tip5 for STARK proving
 - Hydra for MPC
 - PASTA for FHE
@@ -297,7 +297,7 @@ Critical invariant: A (hash_algo, param_set_id, field_id) triple uniquely and pe
 | 0x01 | Poseidon2 (sponge) | Active |
 | 0x02 | Poseidon2 (compression) | Active |
 | 0x03 | Reserved (future AO hash) | — |
-| 0xFE | BLAKE3 | Legacy/bridge only |
+| 0xFE | Blake3 | Legacy/bridge only |
 | 0xFF | SHA-256 | Legacy/bridge only |
 
 ### 7.3 Field Registry

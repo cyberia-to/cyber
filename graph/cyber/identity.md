@@ -179,7 +179,7 @@ authentication and anonymity operate on hashes and proofs alone — no algebraic
 
 key agreement requires mathematical structure that a hash function cannot provide. [[Hemera]] maps inputs to outputs — it has no trapdoor, no commutativity, no homomorphism. these are features for identity (one-way is the point), but limitations for encryption (two-way communication requires shared structure).
 
-### lattice KEM (interactive)
+### [[lattice KEM]] (interactive)
 
 Module-RLWE (Ring Learning With Errors) over [[Goldilocks field]]. the same field as [[Hemera]], [[nox]], and [[STARK]] verification — native arithmetic, no field conversion.
 
@@ -215,7 +215,7 @@ use cases: encrypting [[cyberlink]] metadata so only the intended [[neuron]] can
 
 ### isogeny-based key exchange (non-interactive)
 
-CSIDH (Commutative Supersingular Isogeny Diffie-Hellman) and its optimized variant dCTIDH enable non-interactive key agreement. the unique property: commutativity.
+CSIDH (Commutative Supersingular Isogeny Diffie-Hellman) and its optimized variant [[dCTIDH]] enable non-interactive key agreement. the unique property: commutativity.
 
 ```
 CSIDH KEY AGREEMENT
@@ -241,7 +241,7 @@ commutativity means two [[neurons]] derive a shared secret from each other's pub
 - non-interactive key exchange: two [[neurons]] that have never communicated share a secret derived from public graph data
 - anonymous channels: the shared secret reveals nothing about which [[neurons]] are communicating
 
-tradeoffs: CSIDH is slower than lattice KEM (~5x for dCTIDH-2048 vs ML-KEM). the isogeny assumption is less studied than lattice assumptions — SIDH was broken in 2022, though CSIDH survived those specific attacks. active research area.
+tradeoffs: CSIDH is slower than [[lattice KEM]] (~5x for [[dCTIDH]]-2048 vs [[ML-KEM]]). the isogeny assumption is less studied than lattice assumptions — SIDH was broken in 2022, though CSIDH survived those specific attacks. active research area.
 
 ### privacy layers
 
@@ -249,8 +249,8 @@ tradeoffs: CSIDH is slower than lattice KEM (~5x for dCTIDH-2048 vs ML-KEM). the
 |-------|----------|-----------|------------|
 | authentication | prove [[neuron]] validity | [[STARK]] proof of [[Hemera]] preimage | hash collision resistance |
 | anonymity | hide [[cyberlink]] authorship | ZK set membership + [[mutator set]] nullifiers | hash collision resistance |
-| encryption (interactive) | private [[neuron]]-to-[[neuron]] data | lattice KEM (Module-RLWE over Goldilocks) | Module-RLWE hardness |
-| encryption (non-interactive) | stealth addresses, anonymous channels | CSIDH / dCTIDH | isogeny class group action |
+| encryption (interactive) | private [[neuron]]-to-[[neuron]] data | [[lattice KEM]] (Module-RLWE over Goldilocks) | Module-RLWE hardness |
+| encryption (non-interactive) | stealth addresses, anonymous channels | CSIDH / [[dCTIDH]] | isogeny class group action |
 | computation privacy | compute on encrypted [[cybergraph]] data | [[TFHE]] over [[Goldilocks field]] | LWE hardness |
 | distributed trust | prevent single-party compromise | threshold MPC with Shamir sharing | honest majority |
 

@@ -14,7 +14,7 @@ a [[hash]] function maps arbitrary input to a fixed-size digest. cryptographic h
 |---|---|---|---|---|---|
 | [[SHA-2]] (SHA-256, SHA-512) | Merkle-Damgard | 256/512 bit | ~500 MB/s | ~25,000 constraints | standard since 2001, ubiquitous |
 | [[SHA-3]] (Keccak) | sponge | 256/512 bit | ~400 MB/s | ~150,000 constraints | standard since 2015, backup family |
-| [[BLAKE2]] / [[BLAKE3]] | Merkle tree + ChaCha | 256 bit | ~1 GB/s (BLAKE3) | ~10,000 constraints | fast software hash |
+| [[Blake2]] / [[Blake3]] | Merkle tree + ChaCha | 256 bit | ~1 GB/s (Blake3) | ~10,000 constraints | fast software hash |
 | [[Poseidon]] / Poseidon2 | algebraic sponge over prime field | field elements | ~300K hashes/s | ~250 constraints | ZK-native, 100x cheaper in circuits |
 
 ## algebraic hashes

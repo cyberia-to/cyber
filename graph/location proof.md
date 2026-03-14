@@ -4,7 +4,7 @@ crystal-type: entity
 crystal-domain: cyber
 alias: proof of location, geolocation proof, location proof, anchor-free geolocation, RTT geolocation
 ---
-# proof of location
+# location proof
 
 a protocol for cryptographically verifiable [[proof]] of physical location that requires no trusted anchors, no GPS, no certificate authorities, and no institutional hierarchy. the construction rests on four irreducible axioms and combines three primitives: the canonical signal propagation speed of the transmission medium, [[verifiable delay functions]], and [[Merkle]] causal clocks. a [[network]] of nodes measuring pairwise Round Trip Times self-organizes into a globally consistent 3D coordinate space through multidimensional scaling, calibrated to Earth's known circumference without external reference. honest geolocation reporting is a [[dominant strategy]] [[equilibrium]] when relay fees are latency-weighted, making geographic honesty economically self-enforcing without explicit [[cryptographic proof]] [[verification]]
 
