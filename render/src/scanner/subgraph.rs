@@ -1,6 +1,6 @@
 use crate::parser::{PageId, ParsedPage};
 use crate::scanner::{DiscoveredFile, FileKind};
-use anyhow::{bail, Result};
+use anyhow::Result;
 use globset::{Glob, GlobSetBuilder};
 use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
@@ -107,11 +107,12 @@ pub fn discover_subgraphs(pages: &[ParsedPage], input_dir: &Path) -> Vec<Subgrap
 /// All files are collected; markdown files become Pages, everything else becomes Files.
 pub fn scan_subgraph(decl: &SubgraphDecl) -> Result<Vec<DiscoveredFile>> {
     if !decl.repo_path.exists() {
-        bail!(
-            "Subgraph '{}' repo path does not exist: {}",
+        eprintln!(
+            "Warning: subgraph '{}' repo path does not exist: {} — skipping",
             decl.name,
             decl.repo_path.display()
         );
+        return Ok(vec![]);
     }
 
     // Build exclude glob set
