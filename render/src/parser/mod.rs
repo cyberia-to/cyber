@@ -64,7 +64,14 @@ pub fn slugify_page_name(name: &str) -> PageId {
         }
     }
 
-    result.trim_end_matches('-').to_string()
+    let mut slug = result.trim_end_matches('-').to_string();
+    // macOS HFS+/APFS limit: 255 bytes per path component;
+    // leave room for /index.html in pretty URL mode
+    if slug.len() > 200 {
+        slug.truncate(200);
+        slug = slug.trim_end_matches('-').to_string();
+    }
+    slug
 }
 
 pub fn parse_all(discovered: &DiscoveredFiles) -> Result<Vec<ParsedPage>> {
