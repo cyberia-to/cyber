@@ -30,7 +30,7 @@ Five ontological primitives ([[particle]], [[cyberlink]], [[neuron]], [[token]],
 | WHIR Polynomial Commitments | Edge membership & batch proofs | FRI/Plonky2 (2022—), WHIR (2025) |
 | LogUp Lookup Arguments | Cross-index consistency | Polygon, Scroll (2023—) |
 
-Unified by a single hash function ([[Hemera]]), a single field ([[Goldilocks field]], p = 2⁶⁴ − 2³² + 1), and a single proof system ([[STARK]] with [[WHIR]]).
+Unified by a single hash function ([[Hemera]]), a single field ([[Goldilocks field]], p = 2⁶⁴ − 2³² + 1), and a single proof system ([[stark]] with [[WHIR]]).
 
 ---
 
@@ -85,7 +85,7 @@ Properties that make this field optimal:
 - Fast reduction: a mod p = a_lo − a_hi × (2³² − 1) + correction. Two 64-bit operations.
 - Large 2-adic subgroup: 2³² divides p−1, enabling FFTs up to length 2³² without extension fields.
 - Native word size: Fits in a single 64-bit register on all modern hardware.
-- STARK-optimal: WHIR folding operates directly on F_p without embedding overhead.
+- stark-optimal: WHIR folding operates directly on F_p without embedding overhead.
 
 Every value in the system — balances, weights, hashes, commitments, proofs — is one or more elements of F_p.
 
@@ -101,14 +101,14 @@ Poseidon2 (second-generation algebraic hash, 2023) with parameters tuned for the
 |----------|-------|
 | Input | Variable-length F_p elements |
 | Output | 4 F_p elements (256 bits) |
-| STARK constraints | ~250 per invocation |
+| stark constraints | ~250 per invocation |
 | Native throughput | ~70 MB/s on modern CPU |
 | Security | 128-bit (collision, preimage, second preimage) |
 | Quantum resistance | 85-bit post-Grover (sufficient with doubled output) |
 
 Why Poseidon2 over alternatives:
 
-- vs SHA-256: ~100× cheaper in STARK circuits (250 vs 25,000 constraints)
+- vs SHA-256: ~100× cheaper in stark circuits (250 vs 25,000 constraints)
 - vs Poseidon (original): ~20% fewer constraints, improved diffusion layer
 - vs Tip5: Broader ecosystem support, more extensive cryptanalysis
 - vs Rescue Prime: Lower constraint count for same security level
@@ -184,7 +184,7 @@ ABSENCE PROOF for namespace N:
 
 Cost:
   Proof size: O(log n) hash digests
-  Verification: O(log n) hash computations = O(log n × 250) STARK constraints
+  Verification: O(log n) hash computations = O(log n × 250) stark constraints
   For n = 2³²: ~32 × 250 = 8,000 constraints
 ```
 
@@ -285,7 +285,7 @@ This is where polynomial commitments earn their place: membership proofs within 
 Membership proof: "Edge e belongs to neuron N's EdgeSet"
   1. Compute h = H_edge(e)
   2. WHIR evaluation proof: P_N(i) = h for some index i
-  3. Verification: ~2,500 STARK constraints
+  3. Verification: ~2,500 stark constraints
   
 vs. Merkle membership within EdgeSet:
   Depth log(k) where k = edges per neuron
@@ -377,7 +377,7 @@ Storage: edge_store : H_edge(e) → e
 ### 4.5 Consistency Invariant
 
 ```
-INVARIANT (enforced by STARK on every state transition)
+INVARIANT (enforced by stark on every state transition)
 ───────────────────────────────────────────────────────
 
 For every edge e = (neuron, from, to, weight, time):
@@ -457,7 +457,7 @@ Year 50:  10¹³ cumulative   → 10¹³ nullifiers → prover stores 80 TB
 
 Non-membership proof cost grows logarithmically but never stops:
   WHIR eval against degree-10¹³ polynomial: ~47 folding layers
-  Inside STARK: ~12,000 constraints per nullifier check
+  Inside stark: ~12,000 constraints per nullifier check
 
 And the total circuit cost (including nullifier non-membership proofs)
 is ~49,500 constraints — NEARLY IDENTICAL to the mutator set approach
@@ -699,7 +699,7 @@ TOTAL USER COST:
     Average: ~50 hash operations per block
     Worst:   ~10,000 hash operations per block (rare)
     
-  This is ~50 × 250 = 12,500 STARK constraints per block for maintenance.
+  This is ~50 × 250 = 12,500 stark constraints per block for maintenance.
   Trivial on modern hardware.
 ```
 
@@ -742,7 +742,7 @@ Minimal privacy for collective intelligence:
 
 ### 7.1 The Problem
 
-Each [[cyberlink]] touches 3 EdgeSets (or 2 for self-links). The [[STARK]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to].
+Each [[cyberlink]] touches 3 EdgeSets (or 2 for self-links). The [[stark]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to].
 
 Without a mechanism for this, each cross-index check requires independent WHIR proofs against each EdgeSet — expensive and not naturally batched.
 
@@ -783,7 +783,7 @@ Prover work: O(k log k) where k = number of edges in transaction
 
 Verifier work: O(log k) — dominated by sumcheck verification
 
-STARK constraints: ~500 per edge (sumcheck + challenges)
+stark constraints: ~500 per edge (sumcheck + challenges)
 vs. 3 × 2,500 = 7,500 for independent WHIR proofs per edge
 Savings: 15× for cross-index consistency
 ```
@@ -799,7 +799,7 @@ Block verification:
   Prover: O(E log E) — linear in block size
   Verifier: O(log E) — logarithmic in block size
   
-  STARK constraints for cross-index consistency of entire block:
+  stark constraints for cross-index consistency of entire block:
     ~500 × E + O(log E) amortization
     
   For a block with 10,000 edges:
@@ -818,9 +818,9 @@ A light client joining the network must verify the entire chain history. Without
 
 ```
 Naive verification:
-  N blocks × STARK_verify(block) per block
-  Each STARK verification: ~10⁵ operations
-  If recursing (proving verification of a proof): ~10⁵ STARK constraints per level
+  N blocks × stark_verify(block) per block
+  Each stark verification: ~10⁵ operations
+  If recursing (proving verification of a proof): ~10⁵ stark constraints per level
   
   For N = 10⁶ blocks: impractical for mobile clients
 ```
@@ -837,7 +837,7 @@ Initialize:
   acc₀ = ∅ (empty accumulator)
 
 Per block b:
-  proof_b = STARK_prove(state_transition_b)
+  proof_b = stark_prove(state_transition_b)
   acc_b = fold(acc_{b-1}, proof_b)
   
   fold() cost: O(1) group operations — CONSTANT regardless of history
@@ -850,7 +850,7 @@ Finalize (when needed):
   final_proof verifies: "the entire chain from genesis to block n
                          is valid"
   
-  Verification of final_proof: O(1) — single STARK verification
+  Verification of final_proof: O(1) — single stark verification
 
 LIGHT CLIENT PROTOCOL:
   1. Receive current acc_n from any peer
@@ -858,7 +858,7 @@ LIGHT CLIENT PROTOCOL:
   3. Verify compress(acc_n) against state root
   4. Sync forward: fold each new block into local accumulator
   
-  Join cost: ONE STARK verification (regardless of chain length)
+  Join cost: ONE stark verification (regardless of chain length)
   Ongoing cost: ONE fold per block (constant)
 ```
 
@@ -954,13 +954,13 @@ TRANSACTION TYPES:
    Input:  (neuron, from_particle, to_particle, weight, signature)
    Effect: Insert into by_neuron[neuron], by_particle[from], by_particle[to]
    Cost:   focus proportional to weight
-   Proof:  STARK proving 3 EdgeSet updates + LogUp consistency + focus deduction
+   Proof:  stark proving 3 EdgeSet updates + LogUp consistency + focus deduction
 
 2. PUBLIC TRANSFER — Move balance between neurons
    Input:  (from_neuron, to_neuron, amount, signature)
    Effect: Update balance NMT leaves
    Cost:   fixed fee
-   Proof:  STARK proving balance conservation + signature validity
+   Proof:  stark proving balance conservation + signature validity
 
 3. PRIVATE TRANSFER — Move energy between records
    Input:  (removal_records, addition_records, deltas, fee, zk_proof)
@@ -972,20 +972,20 @@ TRANSACTION TYPES:
    Input:  (neuron, subject, formula, budget, signature)
    Effect: Consumes focus, produces result
    Cost:   focus proportional to computation steps
-   Proof:  STARK proving reduction trace + focus deduction
+   Proof:  stark proving reduction trace + focus deduction
 
 5. MINT CARD — Create a non-fungible knowledge asset
    Input:  (neuron, bound_particle, signature)
    Effect: Insert into cards NMT, creator = owner = neuron
    Cost:   focus fee (prevents spam minting)
-   Proof:  STARK proving particle exists in by_particle + card_id uniqueness
+   Proof:  stark proving particle exists in by_particle + card_id uniqueness
    The card is itself content-addressed: card_id = H(particle ‖ creator)
 
 6. TRANSFER CARD — Transfer knowledge asset ownership
    Input:  (from_neuron, to_neuron, card_id, signature)
    Effect: Update owner field in cards NMT leaf
    Cost:   fixed fee
-   Proof:  STARK proving current ownership + signature validity
+   Proof:  stark proving current ownership + signature validity
 
 VALIDITY CONDITIONS:
 ────────────────────
@@ -1093,7 +1093,7 @@ Answers: "Where does probability flow?" The exploration component of the [[cyber
 
 - row-stochastic, preserves probability mass
 - locality: geometric decay via teleport parameter α
-- [[STARK]] cost: O(deg(v)) field operations per node update
+- [[stark]] cost: O(deg(v)) field operations per node update
 
 #### [[springs]] (Screened Laplacian)
 
@@ -1105,7 +1105,7 @@ Answers: "What satisfies structural constraints?" Encodes hierarchy — keeps co
 
 - positive semi-definite, null space = constant vectors
 - locality: exponential decay via screening parameter μ
-- [[STARK]] cost: O(deg(v)) field operations per node update
+- [[stark]] cost: O(deg(v)) field operations per node update
 
 #### [[heat kernel]] (Multi-scale Smoothing)
 
@@ -1117,7 +1117,7 @@ Answers: "What does the graph look like at scale τ?" High τ explores (annealin
 
 - positivity-preserving, semigroup ($H_{\tau_1} H_{\tau_2} = H_{\tau_1 + \tau_2}$)
 - locality: Gaussian tail decay, h = O(log(1/ε)) hops
-- [[STARK]] cost: O(K · deg(v)) for K-term Chebyshev approximation
+- [[stark]] cost: O(K · deg(v)) for K-term Chebyshev approximation
 
 #### Composite Update
 
@@ -1175,7 +1175,7 @@ where $\alpha \in (0, 1)$ is the global decay constant.
 - edge with w_eff < ε is eligible for pruning
 - to keep an edge alive: renew it (pay [[focus]] cost again)
 
-[[STARK]]-provable: α^n approximated via Taylor series in F_p — 4 terms gives ~10⁻⁶ precision, ~20 field operations = ~20 [[STARK]] constraints.
+[[stark]]-provable: α^n approximated via Taylor series in F_p — 4 terms gives ~10⁻⁶ precision, ~20 field operations = ~20 [[stark]] constraints.
 
 Conservation invariant with decay: Σ π_i + Σ decayed_weight_pool = 1. The decayed weight pool is a single F_p value in the balance NMT, updated each block as edges age.
 
@@ -1183,7 +1183,7 @@ Conservation invariant with decay: Σ π_i + Σ decayed_weight_pool = 1. The dec
 
 Condition: w_eff(e, current_block) < ε
 
-1. Prove w_eff < ε ([[STARK]]: ~20 constraints for decay calculation)
+1. Prove w_eff < ε ([[stark]]: ~20 constraints for decay calculation)
 2. Remove H_edge(e) from by_neuron[e.neuron].EdgeSet
 3. Remove H_edge(e) from by_particle[e.from].EdgeSet
 4. Remove H_edge(e) from by_particle[e.to].EdgeSet
@@ -1196,7 +1196,7 @@ Cost: O(log n) NMT updates + 3 EdgeSet updates + LogUp proof. Pruners earn a fra
 
 # Part IX: Proof System
 
-## 13. [[STARK]] Architecture
+## 13. [[stark]] Architecture
 
 ### 13.1 Proof Pipeline
 
@@ -1229,20 +1229,20 @@ Cost: O(log n) NMT updates + 3 EdgeSet updates + LogUp proof. Pruners earn a fra
                        │
                        ▼
               ┌─────────────────┐
-              │   STARK Proof    │   Succinct. Non-interactive.
+              │   stark Proof    │   Succinct. Non-interactive.
               │   (~100-200 KB)  │   Verifiable by anyone with the root.
               └─────────────────┘
 ```
 
 ### 13.2 Self-Verification
 
-[[nox]] can verify its own [[STARK]] proofs using its own reduction patterns. This is the self-referential closure:
+[[nox]] can verify its own [[stark]] proofs using its own reduction patterns. This is the self-referential closure:
 
 1. Computation C produces result R
-2. [[STARK]] prover generates proof π of "C → R"
-3. [[nox]] verification program V checks π: V = reduce(subject=(π, public_inputs), formula=STARK_verifier)
-4. V produces [[STARK]] trace
-5. Another [[STARK]] proof π' proves "V accepted π"
+2. [[stark]] prover generates proof π of "C → R"
+3. [[nox]] verification program V checks π: V = reduce(subject=(π, public_inputs), formula=stark_verifier)
+4. V produces [[stark]] trace
+5. Another [[stark]] proof π' proves "V accepted π"
 6. This can recurse, or be folded via Nova
 
 The verifier V is a [[nox]] program: [[Hemera]] = pattern 15 (hash), field arithmetic = patterns 5-8, comparisons = patterns 9-10, control flow = patterns 2, 4. The system closes on itself.
@@ -1250,7 +1250,7 @@ The verifier V is a [[nox]] program: [[Hemera]] = pattern 15 (hash), field arith
 ### 13.3 Constraint Costs Reference
 
 ```
-OPERATION                              STARK CONSTRAINTS
+OPERATION                              stark CONSTRAINTS
 ─────────────────────────────────────────────────────────
 
 Poseidon2 hash (one invocation)               ~250
@@ -1369,7 +1369,7 @@ New client joins with no history:
      
   2. Verify folding_acc:
      final_proof = compress(folding_acc)
-     STARK_verify(final_proof, BBG_root)
+     stark_verify(final_proof, BBG_root)
      → This single verification proves ALL history from genesis is valid
      
   3. Sync namespaces of interest (§14.1)
@@ -1379,7 +1379,7 @@ New client joins with no history:
      - Update mutator set proofs for owned UTXOs (O(log N) per block)
      - Update NMT proofs for monitored namespaces (O(log n) per block)
 
-Join cost: ONE STARK verification + namespace sync
+Join cost: ONE stark verification + namespace sync
 Ongoing cost: O(log N) per block
 Storage: O(|my_edges| + |my_UTXOs| × log N)
 ```
@@ -1452,7 +1452,7 @@ LAYER 5:  Data Availability
           ─────────────────────────────────────────────────
 
 LAYER 4:  Proof System
-          STARK (WHIR), Nova/HyperNova folding
+          stark (WHIR), Nova/HyperNova folding
           ─────────────────────────────────────────────────
 
 LAYER 3:  Cross-Index Integrity
@@ -1497,7 +1497,7 @@ FIVE PRIMITIVES
    Heritage: Neptune (production since 2024)
 
 4. WHIR Polynomial Commitments
-   Uses:     EdgeSet membership, STARK proofs, batch openings
+   Uses:     EdgeSet membership, stark proofs, batch openings
    Provides: O(log² n) membership proofs, algebraic batching
    Field:    Goldilocks
    Heritage: Plonky2, Stwo (production since 2022)
@@ -1511,7 +1511,7 @@ FIVE PRIMITIVES
 UNIFIED BY:
   Hash:    Poseidon2-Goldilocks (one function, one analysis, one target)
   Field:   F_p where p = 2⁶⁴ - 2³² + 1 (one arithmetic, one FFT)
-  Proofs:  STARK (one proof system, post-quantum, hash-based)
+  Proofs:  stark (one proof system, post-quantum, hash-based)
 ```
 
 ## 18. Security Properties
@@ -1523,11 +1523,11 @@ Collision resistance    Poseidon2 (128-bit)          Algebraic hash security
 Completeness            NMT structural invariant     Hash binding
 Double-spend prevention SWBF bit collision           Bloom filter parameters
 Unlinkability           Mutator set construction     Poseidon2 preimage resistance
-Conservation            STARK circuit constraint     Soundness of proof system
+Conservation            stark circuit constraint     Soundness of proof system
 Post-quantum            Hash-based (no pairings)     Grover bounded by output size
 Data availability       NMT + 2D erasure coding      Honest minority sampling
 Fork resistance         Focus-weighted BFT           2/3 focus-weighted honest
-Verification closure    Self-verifying STARK         nox expressiveness
+Verification closure    Self-verifying stark         nox expressiveness
 Bounded locality        LogUp + local tri-kernel     Spectral gap + screening μ + temperature τ
 ```
 

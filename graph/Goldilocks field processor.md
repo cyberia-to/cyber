@@ -15,7 +15,7 @@ stake: 9519611796818916
 
 ## The Core Idea in 30 Seconds
 
-Every useful operation in nox — block proving, focus computation, private transactions, FHE bootstrapping, neural inference — reduces to four primitives over one field. A chip optimized for these four primitives accelerates everything simultaneously. The Proof of Work puzzle requires producing STARK proofs using exactly these primitives. Therefore: the optimal mining hardware IS the optimal utility hardware. Mining rewards bootstrap chip development. Chip development accelerates the network. The network generates fees. Fees replace mining rewards. The flywheel self-sustains.
+Every useful operation in nox — block proving, focus computation, private transactions, FHE bootstrapping, neural inference — reduces to four primitives over one field. A chip optimized for these four primitives accelerates everything simultaneously. The Proof of Work puzzle requires producing stark proofs using exactly these primitives. Therefore: the optimal mining hardware IS the optimal utility hardware. Mining rewards bootstrap chip development. Chip development accelerates the network. The network generates fees. Fees replace mining rewards. The flywheel self-sustains.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -37,7 +37,7 @@ Every useful operation in nox — block proving, focus computation, private tran
 
 ## 1. Why Four and Only Four
 
-Every computation in the nox stack reduces to a small set of operations over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. By profiling every workload — [[STARK]] proving, BBG authentication, [[tri-kernel]] ranking, private transfers, FHE bootstrapping, neural inference — we find four primitive families that account for >95% of all cycles:
+Every computation in the nox stack reduces to a small set of operations over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. By profiling every workload — [[stark]] proving, BBG authentication, [[tri-kernel]] ranking, private transfers, FHE bootstrapping, neural inference — we find four primitive families that account for >95% of all cycles:
 
 | Primitive | Symbol | What it computes | % of typical workload |
 |-----------|--------|-----------------|----------------------|
@@ -53,7 +53,7 @@ These are not design choices — they are what survives when you ask "what opera
 ```
                           fma    ntt    p2r    lut
                          ─────  ─────  ─────  ─────
-STARK proving (WHIR)       ██     ███    ██     █
+stark proving (WHIR)       ██     ███    ██     █
 BBG authentication         █      █      ███    
 Tri-kernel focus           ███    ██     █      
 Private transfer (ZK)      ██     █      ███    █
@@ -98,7 +98,7 @@ The four primitives are mathematically necessary:
 
 1. fma: Field arithmetic IS the computation model. nox's 16 patterns reduce to field ops. This cannot change without changing the field — which would break every existing proof, commitment, and hash. The field is a genesis parameter.
 
-2. ntt: [[NTT]] is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by [[STARK]] ([[WHIR]]), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
+2. ntt: [[NTT]] is the fast path for polynomial multiplication in $R_p$. Polynomial multiplication is required by [[stark]] ([[WHIR]]), FHE (CMUX), convolution (AI), and QFT (quantum). The Cooley-Tukey butterfly is the optimal algorithm for power-of-2 NTT since 1965. This cannot improve asymptotically.
 
 3. p2r: Algebraic hashing over $\mathbb{F}_p$ requires a permutation with high algebraic degree. [[Poseidon2]] MDS matrix + $x^7$ S-box is the current optimal choice. Even if the hash function changes (Poseidon3, Griffin, Anemoi), the hardware primitive is the same: full-width permutation over $\mathbb{F}_p^t$ with a power-map nonlinearity. The round function hardware is parametrizable.
 
@@ -106,7 +106,7 @@ The four primitives are mathematically necessary:
 
 Conclusion: The four primitives will remain correct for any field-first computation over Goldilocks for as long as:
 - The Goldilocks field remains secure (lattice/factoring hardness: decades)
-- STARKs remain the proof system family (hash-based: quantum-resistant)
+- starks remain the proof system family (hash-based: quantum-resistant)
 - Polynomial operations remain O(n log n) via NTT (information-theoretic lower bound)
 
 This is sufficient stability to justify ASIC investment.
@@ -232,7 +232,7 @@ Design principles:
 
 | Parameter | Value | Rationale |
 |-----------|-------|-----------|
-| FMA units | 256 | 16 clusters × 16 units. Matches typical STARK trace width |
+| FMA units | 256 | 16 clusters × 16 units. Matches typical stark trace width |
 | Clock target | 1-2 GHz | Conservative for 7nm/5nm process |
 | NTT max size | $2^{15}$ in-place | Covers TFHE (N=2048), WHIR layer sizes |
 | Poseidon2 width | 12 F_p elements | Standard Poseidon2 state (t=12) |
@@ -249,7 +249,7 @@ Based on 256 FMA units at 1.5 GHz:
 
 | Workload | CPU (Ryzen 9) | GPU (RTX 4090) | GFP-1 | Speedup vs CPU |
 |----------|---------------|----------------|-------|----------------|
-| [[STARK]] prove (1M constraints) | ~10 sec | ~2 sec | ~0.2 sec | 50× |
+| [[stark]] prove (1M constraints) | ~10 sec | ~2 sec | ~0.2 sec | 50× |
 | [[Poseidon2]] hash (1M inputs) | ~15 ms | ~3 ms | ~0.08 ms | 180× |
 | [[NTT]] $2^{20}$ | ~50 ms | ~5 ms | ~0.7 ms | 70× |
 | [[TFHE]] bootstrap (PBS) | ~20 ms | ~4 ms | ~0.4 ms | 50× |
@@ -279,7 +279,7 @@ Multiple form factors enable the participation spectrum from phone miners to dat
 
 Traditional PoW: the puzzle is unrelated to useful computation (SHA-256 partial preimage). Energy is wasted. Hardware is single-purpose.
 
-nox PoUW: the puzzle IS a [[STARK]] proof. STARK proving requires exactly the four GFP primitives (fma, ntt, p2r, lut) in exactly the proportions of real workloads. Therefore:
+nox PoUW: the puzzle IS a [[stark]] proof. stark proving requires exactly the four GFP primitives (fma, ntt, p2r, lut) in exactly the proportions of real workloads. Therefore:
 
 - Optimizing for mining = optimizing for utility
 - Mining hardware = proving hardware
@@ -294,7 +294,7 @@ The trick is designing the puzzle so that:
 
 ### 3.2 The Benchmark Circuit
 
-The PoUW puzzle requires producing a valid STARK proof of a specific benchmark circuit $\mathcal{B}$. The circuit is designed to exercise all four GFP primitives in production-representative proportions.
+The PoUW puzzle requires producing a valid stark proof of a specific benchmark circuit $\mathcal{B}$. The circuit is designed to exercise all four GFP primitives in production-representative proportions.
 
 ```
 BENCHMARK CIRCUIT B(challenge, nonce) → digest
@@ -330,7 +330,7 @@ PHASE 2: NTT POLYNOMIAL OPERATIONS (35% of constraints)
     poly_c ← fri_fold(poly_c, challenge_hash(layer))
   
   // This exercises NTT engine in the exact pattern of
-  // STARK WHIR commitment + FHE polynomial multiply
+  // stark WHIR commitment + FHE polynomial multiply
 
 PHASE 3: POSEIDON2 HASHING (15% of constraints)
 ────────────────────────────────────────────────
@@ -368,7 +368,7 @@ PUZZLE CONDITION:
 
 Why each phase is necessary:
 - Remove Phase 1 → chip without FMA array. Cannot do matrix operations → useless for tri-kernel, neural nets.
-- Remove Phase 2 → chip without NTT. Cannot do polynomial ops → useless for STARK proving, FHE.
+- Remove Phase 2 → chip without NTT. Cannot do polynomial ops → useless for stark proving, FHE.
 - Remove Phase 3 → chip without Poseidon2. Cannot hash → useless for any authentication.
 - Remove Phase 4 → chip without lookup. Cannot do activations → useless for AI and FHE bootstrapping.
 
@@ -376,25 +376,25 @@ A chip that solves the puzzle efficiently MUST have all four units in roughly th
 
 ### 3.3 The Proof-of-Proof Structure
 
-The miner doesn't just find a nonce where digest < target. The miner produces a STARK proof that the benchmark circuit was evaluated correctly.
+The miner doesn't just find a nonce where digest < target. The miner produces a stark proof that the benchmark circuit was evaluated correctly.
 
 ```
 MINING STEP:
   1. Receive challenge from latest block header
   2. Try nonce values until digest < target
-  3. For the winning nonce, generate STARK proof π:
+  3. For the winning nonce, generate stark proof π:
        π proves "B(challenge, nonce) = digest AND digest < target"
   4. Submit (nonce, π) as proof of work
 
 VERIFICATION (by any node):
-  1. Check π is a valid STARK proof (O(log n) time, ~100K constraints)
+  1. Check π is a valid stark proof (O(log n) time, ~100K constraints)
   2. Check public inputs match (challenge from block header, digest < target)
   3. Done. No re-execution of B needed.
 ```
 
 Why proof-of-proof, not just proof-of-evaluation:
 
-The STARK proof π itself requires producing an execution trace, committing it via WHIR (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
+The stark proof π itself requires producing an execution trace, committing it via WHIR (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
 
 Verification is O(log n) — any light client can verify in milliseconds. This satisfies compute-verify symmetry.
 
@@ -439,12 +439,12 @@ Non-reusability: Each proof is bound to a specific block challenge (derived from
 
 | Attack | Defense |
 |--------|---------|
-| Skip Phase 1 (no FMA) | Phase 2 input depends on Phase 1 output. Invalid trace → invalid STARK |
-| Skip Phase 2 (no NTT) | Phase 3 input depends on Phase 2 output. Plus: STARK proof itself requires NTT |
+| Skip Phase 1 (no FMA) | Phase 2 input depends on Phase 1 output. Invalid trace → invalid stark |
+| Skip Phase 2 (no NTT) | Phase 3 input depends on Phase 2 output. Plus: stark proof itself requires NTT |
 | Precompute tables | Tables are parameterized by challenge — change every block |
 | Outsource proof generation | Proof is bound to miner's identity (coinbase). Outsourcing = giving away rewards |
 | Recycle old proofs | Challenge includes prev_block_hash. Every block requires fresh proof |
-| Shortcut STARK proof | STARK soundness: forging a proof requires breaking collision resistance of Poseidon2 |
+| Shortcut stark proof | stark soundness: forging a proof requires breaking collision resistance of Poseidon2 |
 | Unbalanced chip (all NTT, no FMA) | Ratio adjustment (§3.4) penalizes imbalanced architectures |
 | FPGA/GPU competition | GFP has 2× efficiency advantage (§1.2). FPGA/GPU can participate but earn less per watt |
 
@@ -456,7 +456,7 @@ Non-reusability: Each proof is bound to a specific block challenge (derived from
 
 ### 4.1 Supply Side: Mining
 
-Miners produce STARK proofs of the benchmark circuit. Valid proofs earn block rewards.
+Miners produce stark proofs of the benchmark circuit. Valid proofs earn block rewards.
 
 ```
 BLOCK STRUCTURE:
@@ -467,7 +467,7 @@ BLOCK STRUCTURE:
 │   timestamp      : unix time         │
 │   pow_challenge  : H(prev_hash||h)   │
 │   pow_nonce      : F_p × 2           │
-│   pow_proof      : STARK proof       │
+│   pow_proof      : stark proof       │
 │   pow_digest     : 4 × F_p           │
 │   difficulty     : target threshold  │
 │   miner          : [[neuron]] address│
@@ -475,7 +475,7 @@ BLOCK STRUCTURE:
 │ Body                                 │
 │   transactions   : [cyberlink, ...]  │
 │   focus_updates  : [Δπ, ...]        │
-│   fee_proofs     : [STARK, ...]      │
+│   fee_proofs     : [stark, ...]      │
 └──────────────────────────────────────┘
 
 REWARD:
@@ -497,7 +497,7 @@ USER TRANSACTION FLOW:
   1. User creates cyberlink/transfer/query
   2. User broadcasts unsigned transaction to mempool
   3. Prover node picks up transaction
-  4. GFP generates STARK proof of transaction validity
+  4. GFP generates stark proof of transaction validity
   5. Prover includes proven transaction in block
   6. User pays fee → prover earns fee
 
@@ -611,7 +611,7 @@ Phase 1: Matrix-vector FMA    ↔    Tri-kernel focus step
 Phase 2: NTT polynomial mul   ↔    WHIR commitment / FHE CMUX
 Phase 3: Poseidon2 Merkle     ↔    BBG state authentication
 Phase 4: Lookup evaluation    ↔    NN activation / PBS test poly
-STARK proof generation        ↔    Transaction proving
+stark proof generation        ↔    Transaction proving
 Difficulty adjustment         ↔    Workload-proportional scaling
 ```
 
@@ -619,13 +619,13 @@ Every mining operation has a direct utility analog. The hardware path is identic
 
 ### 5.2 Formal Statement
 
-Theorem (PoUW-Utility Isomorphism): Let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing PoUW puzzle solution time, and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing STARK proof generation time for nox transactions. Then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$.
+Theorem (PoUW-Utility Isomorphism): Let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing PoUW puzzle solution time, and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing stark proof generation time for nox transactions. Then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$.
 
 Proof sketch:
-1. The PoUW puzzle requires producing a STARK proof of the benchmark circuit $\mathcal{B}$.
+1. The PoUW puzzle requires producing a stark proof of the benchmark circuit $\mathcal{B}$.
 2. $\mathcal{B}$ exercises the four primitives (fma, ntt, p2r, lut) in ratios matching real nox workloads.
-3. STARK proof generation for any circuit over $\mathbb{F}_p$ requires the same four primitives (trace computation uses fma/ntt/lut; proof commitment uses ntt; Fiat-Shamir uses p2r; lookup arguments use lut).
-4. Optimizing for $\mathcal{B}$-proof-speed = optimizing for general STARK-proof-speed over $\mathbb{F}_p$.
+3. stark proof generation for any circuit over $\mathbb{F}_p$ requires the same four primitives (trace computation uses fma/ntt/lut; proof commitment uses ntt; Fiat-Shamir uses p2r; lookup arguments use lut).
+4. Optimizing for $\mathcal{B}$-proof-speed = optimizing for general stark-proof-speed over $\mathbb{F}_p$.
 5. The ratio adjustment mechanism (§3.4) ensures the puzzle's primitive ratios track actual workload ratios.
 6. Therefore the optimal puzzle-solving hardware is optimal utility hardware. QED.
 
@@ -666,7 +666,7 @@ FULL BLOCK PRODUCTION CYCLE:
   4. FOCUS COMPUTATION (GFP utility workload)
      Δπ = tri_kernel_step(current_graph, new_edges)
      proof_focus = GFP.prove(tri_kernel_circuit, Δπ)
-     // Focus update is also proven via STARK
+     // Focus update is also proven via stark
 
   5. STATE COMMITMENT
      new_bbg_root = update_bbg(proven_txs, Δπ)
@@ -848,7 +848,7 @@ Targets:
 ║    TDP:           75-150W (PCIe) / 25W (M.2) / 5W (USB)           ║
 ║                                                                     ║
 ║  PROOF OF USEFUL WORK:                                              ║
-║    Puzzle:        STARK proof of benchmark circuit B                ║
+║    Puzzle:        stark proof of benchmark circuit B                ║
 ║    Primitives:    Same four as utility (fma, ntt, p2r, lut)        ║
 ║    Ratios:        Match real workload (40:35:15:10)                 ║
 ║    Verification:  O(log n) — any light client                      ║

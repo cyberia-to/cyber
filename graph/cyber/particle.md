@@ -104,10 +104,10 @@ if Hemera is ever broken: full graph rehash under a new primitive. no version by
 
 ## performance
 
-| metric | Hemera | SHA-256 in STARK |
+| metric | Hemera | SHA-256 in stark |
 |--------|--------|-----------------|
 | hash rate (single core) | ~62 MB/s | ~200 MB/s |
-| STARK constraints per hash | ~1,200 | ~25,000 |
+| stark constraints per hash | ~1,200 | ~25,000 |
 | particles per second (200 B avg) | ~310K | — |
 
 20× cheaper in proofs than SHA-256. 0.6× the raw throughput. the tradeoff is clear: particle addresses are verified far more often than they are created. optimizing for proof cost is optimizing for the common case

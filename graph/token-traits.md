@@ -217,13 +217,13 @@ In accounting, revenue streams are the channels through which value enters the e
 
 | Sense | What it perceives | What it enables |
 |---|---|---|
-| Oracle Pricing (COMPASS) | Market prices via STARK-proven aggregation | Lending health factors, Sword evaluation, stablecoin pegs |
+| Oracle Pricing (COMPASS) | Market prices via stark-proven aggregation | Lending health factors, Sword evaluation, stablecoin pegs |
 | Proven Price (native) | Fee-weighted TWAP from on-chain swaps | Self-pricing without external oracles |
 | Cross-chain Relay | State proofs from other blockchains | Bridging, cross-chain collateral |
 | Event Monitor | On-chain events (liquidations, governance votes) | Reactive strategies, automated settlement |
 | Timestamp | Current block time from consensus | Timelock expiry, vesting schedules, contract maturity |
 
-A key property of senses on provable blockchains: every perceived value comes with a proof. Oracle Pricing data is a [[STARK]] proof of correct aggregation. Proven Price is a byproduct of proven swap execution. Cross-chain state comes with inclusion proofs. There is no "trust the oracle" — there is "verify the proof of what the oracle claims."
+A key property of senses on provable blockchains: every perceived value comes with a proof. Oracle Pricing data is a [[stark]] proof of correct aggregation. Proven Price is a byproduct of proven swap execution. Cross-chain state comes with inclusion proofs. There is no "trust the oracle" — there is "verify the proof of what the oracle claims."
 
 **What Senses produce in statements:**
 
@@ -364,7 +364,7 @@ FINANCING:
 NET CASH FLOW:                +2,495 NPT
 ```
 
-This is not hypothetical. Every line item corresponds to a provable on-chain event — a STARK proof of a specific operation. The financial statements are free byproducts of the proof system. No separate accounting layer needed. The token's traits determine which line items exist. The token's operations fill them in.
+This is not hypothetical. Every line item corresponds to a provable on-chain event — a stark proof of a specific operation. The financial statements are free byproducts of the proof system. No separate accounting layer needed. The token's traits determine which line items exist. The token's operations fill them in.
 
 ### 4.2 Why This Matters
 
@@ -468,7 +468,7 @@ Not all trait combinations are valid. The vocabulary makes conflicts visible:
 
 **Bonds compose structurally.** Royalties + Delegation = each operates on its own axis. Royalties affect `pay` hooks. Delegation affects `auth`. No conflict unless two bonds claim authority over the same operation.
 
-**Cross-category conflicts are visible.** Soulbound (Duty: never transfer) + Liquidity (Skill: enable swaps) = contradictory. STARK proof composition fails — both proofs cannot be simultaneously valid. The trait vocabulary makes this conflict visible at configuration time, not at runtime. You can see "wait, I'm installing a Skill that requires transfers, but I already have a Duty that forbids transfers" before deployment.
+**Cross-category conflicts are visible.** Soulbound (Duty: never transfer) + Liquidity (Skill: enable swaps) = contradictory. stark proof composition fails — both proofs cannot be simultaneously valid. The trait vocabulary makes this conflict visible at configuration time, not at runtime. You can see "wait, I'm installing a Skill that requires transfers, but I already have a Duty that forbids transfers" before deployment.
 
 ---
 
@@ -558,7 +558,7 @@ Reclassification of all existing Gold Standard hooks plus new additions:
 
 | # | Trait | What it perceives |
 |---|---|---|
-| P1 | Oracle Pricing (COMPASS) | Market prices via STARK-proven aggregation |
+| P1 | Oracle Pricing (COMPASS) | Market prices via stark-proven aggregation |
 | P2 | Proven Price | Fee-weighted TWAP from on-chain swaps |
 | P3 | Cross-chain Relay | State proofs from other blockchains |
 

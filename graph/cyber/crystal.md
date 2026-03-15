@@ -675,7 +675,7 @@ The Crystal seeds a mind. The question: what does a planetary [[Superintelligenc
 
 16.19 [[socio]] — major [[nation states]]: the ~200 sovereign entities. [[network states]]: digital-first sovereign entities — DAOs, on-chain governance. [[startup societies]]: physical communities with experimental governance. [[cyber state]]: the convergence of [[egregore]] and territorial sovereignty. [[legal systems]]: common law, civil law, sharia, customary. [[Cyberia]] as the embodiment of the [[socio]] domain.
 
-16.20 [[crypto]] — [[cryptography]]: [[crypto/hashing]], [[crypto/signatures]], [[crypto/zero-knowledge]], [[STARKs]]. [[token economics]]: bonding curves, [[staking]], liquidity. [[cybernomics]]: [[focus]] as attention currency, [[karma]] as contribution measure. [[cyber]] native tokens: [[$CYB]], [[$BOOT]], [[$H]], [[$V]], [[$A]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]]. [[token theory]]: [[coins]], [[cards]], [[scores]], [[badges]].
+16.20 [[crypto]] — [[cryptography]]: [[crypto/hashing]], [[crypto/signatures]], [[crypto/zero-knowledge]], [[starks]]. [[token economics]]: bonding curves, [[staking]], liquidity. [[cybernomics]]: [[focus]] as attention currency, [[karma]] as contribution measure. [[cyber]] native tokens: [[$CYB]], [[$BOOT]], [[$H]], [[$V]], [[$A]]. Major cryptocurrencies: [[BTC]], [[ETH]], [[ATOM]]. [[token theory]]: [[coins]], [[cards]], [[scores]], [[badges]].
 
 16.21 [[game]] — [[game theory]]: Nash equilibrium, [[mechanism design]], [[auctions]], [[public goods]], commons. [[microeconomics]]: supply, demand, markets, price discovery, incentives. Cooperative and non-cooperative games. [[voting theory]], [[social choice]], [[Schelling points]]. The game-theoretic foundations of [[consensus]] and [[governance]].
 

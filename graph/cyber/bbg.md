@@ -77,7 +77,7 @@ This makes "sync only my namespace" a mathematical property, not a feature. A li
 ## Index Consistency Invariant
 
 ```
-INVARIANT (enforced by STARK on every state transition)
+INVARIANT (enforced by stark on every state transition)
 ───────────────────────────────────────────────────────
 
 For every edge e = (neuron, from, to, weight, time):
@@ -93,7 +93,7 @@ For every edge e = (neuron, from, to, weight, time):
 Cross-index consistency provable via polynomial identity testing:
   - Same edge hash appears in multiple sorted polynomials
   - WHIR proofs demonstrate membership in each
-  - STARK proves all memberships consistent
+  - stark proves all memberships consistent
 
 Proof size: O(log² n). Verification: O(log² n) field operations.
 ```

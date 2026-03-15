@@ -235,9 +235,9 @@ CyberPatch inherits the [[cyber]] cryptographic stack — it adds no primitives 
 
 all primitives come from the protocol layer:
 
-- [[hash]]: [[Poseidon2]]-Goldilocks (see [[hemera/spec]]). 64-byte digests, [[STARK]]-native, single canonical function for all content addressing
+- [[hash]]: [[Poseidon2]]-Goldilocks (see [[hemera/spec]]). 64-byte digests, [[stark]]-native, single canonical function for all content addressing
 - [[signature]]: post-quantum from [[genesis]]. the specific scheme is a protocol-level decision (see [[cyber/security]])
-- proofs: [[STARKs]] over [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$), verified by [[nox]] programs
+- proofs: [[starks]] over [[Goldilocks field]] ($p = 2^{64} - 2^{32} + 1$), verified by [[nox]] programs
 - identity: [[neuron]] = [[public key]], derived from [[spell]]. see [[cyber/particle]] for CID structure
 
 ### 4.2 Neuron Identity in CyberPatch

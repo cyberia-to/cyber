@@ -54,7 +54,7 @@ the first-order approximation gives the projected focus distribution under a pro
 
 this is the DMN's forward simulation function — the graph imagining its own future state, choosing among alternatives, then acting. counterfactual reasoning about the system's own behavior, run by the system itself.
 
-the simulation is provable: if required, the counterfactual computation runs as a Trident program with STARK output. the system can prove it chose the projected-optimal parameter adjustment.
+the simulation is provable: if required, the counterfactual computation runs as a Trident program with stark output. the system can prove it chose the projected-optimal parameter adjustment.
 
 ---
 

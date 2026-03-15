@@ -38,7 +38,7 @@ $$\sum_i \text{focus}(i) = 1 \quad \text{always}$$
 
 this single constraint does the work that other systems split across gas models, fee markets, and priority auctions. it forces the [[tri-kernel]] onto the probability simplex $\Delta^{|P|-1}$, where [[convergence]] produces a unique [[Boltzmann distribution]] as [[equilibrium]]
 
-enforced in [[nox]] by STARK circuit constraints — an invalid conservation proof means an invalid state transition, rejected by every verifier
+enforced in [[nox]] by stark circuit constraints — an invalid conservation proof means an invalid state transition, rejected by every verifier
 
 ### balance conservation
 

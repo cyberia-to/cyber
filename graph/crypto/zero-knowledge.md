@@ -15,10 +15,10 @@ prove a statement is true without revealing anything beyond the truth of the sta
 | Groth16 | trusted (per-circuit) | 128 bytes | ~1 ms | no | bilinear pairings |
 | PLONK / Halo2 | universal trusted | 400-800 bytes | ~3 ms | no | bilinear pairings |
 | Bulletproofs | none | ~700 bytes | ~30 ms | no | discrete log |
-| [[STARK]] | none (transparent) | 100-200 KB | 1-4 ms | yes | hash collision resistance |
-| [[STARK]] + [[WHIR]] | none (transparent) | 60-157 KB | 0.3-1.0 ms | yes | hash collision resistance |
+| [[stark]] | none (transparent) | 100-200 KB | 1-4 ms | yes | hash collision resistance |
+| [[stark]] + [[WHIR]] | none (transparent) | 60-157 KB | 0.3-1.0 ms | yes | hash collision resistance |
 
-[[SNARKs]] (Succinct Non-interactive Arguments of Knowledge) achieve small proofs but typically require a trusted setup ceremony and rely on elliptic curve assumptions vulnerable to quantum computers. [[STARKs]] (Scalable Transparent Arguments of Knowledge) require no trusted setup and rely only on hash functions — post-quantum secure, larger proofs but faster verification (with [[WHIR]]).
+[[SNARKs]] (Succinct Non-interactive Arguments of Knowledge) achieve small proofs but typically require a trusted setup ceremony and rely on elliptic curve assumptions vulnerable to quantum computers. [[starks]] (Scalable Transparent Arguments of Knowledge) require no trusted setup and rely only on hash functions — post-quantum secure, larger proofs but faster verification (with [[WHIR]]).
 
 ## recursive composition
 
@@ -32,7 +32,7 @@ Level N: Prove verify(p_{N-1}) → proof pN (same size)
 N proofs → one aggregated proof → O(1) verification
 ```
 
-the foundation of rollups ([[Ethereum]] L2s), [[incrementally verifiable computation]] (IVC), and proof aggregation. systems: [[Nova]] ([[folding]] schemes), Halo2 (accumulation), [[STARKs]] (self-referential verification).
+the foundation of rollups ([[Ethereum]] L2s), [[incrementally verifiable computation]] (IVC), and proof aggregation. systems: [[Nova]] ([[folding]] schemes), Halo2 (accumulation), [[starks]] (self-referential verification).
 
 ## folding and IVC
 
@@ -67,4 +67,4 @@ prove that a set of values appears in a pre-defined table without revealing whic
 
 [[LogUp]] proves that the same edge hash appears in all required [[EdgeSets]] in the [[BBG]] — 15x cheaper than independent polynomial proofs. see [[LogUp]]
 
-see [[cryptography]], [[STARK]], [[cyber/stark]], [[cyber/proofs]]
+see [[cryptography]], [[stark]], [[cyber/stark]], [[cyber/proofs]]

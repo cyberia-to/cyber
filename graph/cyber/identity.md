@@ -10,10 +10,10 @@ a [[neuron]] proves itself by demonstrating knowledge of a secret that hashes to
 
 ```
 neuron_secret → Hemera(neuron_secret) = neuron_address
-auth = STARK_proof(∃ x : Hemera(x) = neuron_address)
+auth = stark_proof(∃ x : Hemera(x) = neuron_address)
 ```
 
-every [[cyberlink]] carries a [[STARK]] proof that the author knows the preimage of their [[neuron]] address. the chain verifies the proof. it never sees the secret. it never sees a signature.
+every [[cyberlink]] carries a [[stark]] proof that the author knows the preimage of their [[neuron]] address. the chain verifies the proof. it never sees the secret. it never sees a signature.
 
 ## why
 
@@ -52,11 +52,11 @@ lock_script(witness):
   return 0  // success
 ```
 
-the [[neuron]] provides its secret as a witness via `hint` (Layer 2). [[nox]] evaluates the lock script and produces a [[STARK]] proof that the script executed correctly. the proof goes on-chain. the secret stays private.
+the [[neuron]] provides its secret as a witness via `hint` (Layer 2). [[nox]] evaluates the lock script and produces a [[stark]] proof that the script executed correctly. the proof goes on-chain. the secret stays private.
 
 ### verification
 
-any verifier checks the [[STARK]] proof. cost: ~70,000 [[nox]] patterns with jets. constant regardless of what was proven. the verifier learns one fact: someone who knows the preimage authorized this [[cyberlink]].
+any verifier checks the [[stark]] proof. cost: ~70,000 [[nox]] patterns with jets. constant regardless of what was proven. the verifier learns one fact: someone who knows the preimage authorized this [[cyberlink]].
 
 ## programmable identity
 
@@ -70,20 +70,20 @@ lock scripts are [[nox]] programs. the hash preimage check is the default, the s
 | delegation | preimage of delegate OR preimage of owner |
 | recovery | any 3-of-5 trusted [[neuron]] preimages |
 
-one mechanism. no new cryptography per pattern. the lock script is a [[nox]] program; the proof is a [[STARK]].
+one mechanism. no new cryptography per pattern. the lock script is a [[nox]] program; the proof is a [[stark]].
 
 ## the [[neptune]] precedent
 
-[[neptune]] (Alan Szepieniec, COSIC/KU Leuven) is the first blockchain to replace signatures entirely with [[STARK]] proofs of lock script execution. launched mainnet February 2025. their stack:
+[[neptune]] (Alan Szepieniec, COSIC/KU Leuven) is the first blockchain to replace signatures entirely with [[stark]] proofs of lock script execution. launched mainnet February 2025. their stack:
 
 - Tip5 hash (arithmetization-oriented, over [[Goldilocks field]])
-- [[Triton VM]] (STARK-native execution)
+- [[Triton VM]] (stark-native execution)
 - lock scripts instead of signatures
 - lattice KEM for encryption only (Module-RLWE over Goldilocks)
 
 [[cyber]] inherits the paradigm with its own primitives: [[Hemera]] instead of Tip5, [[nox]] instead of Triton VM. same field. same idea. different hash, different VM, same elimination of signatures.
 
-## STARK constraints
+## stark constraints
 
 ```
 Hemera hash:          ~300 constraints (vs ~25,000 for SHA-256)
@@ -91,7 +91,7 @@ lock script verify:   ~70,000 constraints (with jets)
 recursive composition: O(1) verification for O(N) links
 ```
 
-a [[STARK]] proof of [[Hemera]] preimage knowledge is ~100-200 KB. larger than an ECDSA signature (64 bytes). the tradeoff: post-quantum security from genesis, programmable spending conditions, recursive aggregation. N proofs collapse into one.
+a [[stark]] proof of [[Hemera]] preimage knowledge is ~100-200 KB. larger than an ECDSA signature (64 bytes). the tradeoff: post-quantum security from genesis, programmable spending conditions, recursive aggregation. N proofs collapse into one.
 
 ## anonymous cyberlinks
 
@@ -99,7 +99,7 @@ the [[cybergraph]] is public: [[particles]], links, aggregate weights, [[focus]]
 
 ### the circuit
 
-the [[neuron]] constructs a [[STARK]] proof covering four constraints:
+the [[neuron]] constructs a [[stark]] proof covering four constraints:
 
 ```
 ANONYMOUS CYBERLINK CIRCUIT (~13,000 constraints)
@@ -181,7 +181,7 @@ key agreement requires mathematical structure that a hash function cannot provid
 
 ### [[lattice KEM]] (interactive)
 
-Module-RLWE (Ring Learning With Errors) over [[Goldilocks field]]. the same field as [[Hemera]], [[nox]], and [[STARK]] verification — native arithmetic, no field conversion.
+Module-RLWE (Ring Learning With Errors) over [[Goldilocks field]]. the same field as [[Hemera]], [[nox]], and [[stark]] verification — native arithmetic, no field conversion.
 
 ```
 LATTICE KEM PROTOCOL
@@ -247,7 +247,7 @@ tradeoffs: CSIDH is slower than [[lattice KEM]] (~5x for [[dCTIDH]]-2048 vs [[ML
 
 | layer | function | primitive | assumption |
 |-------|----------|-----------|------------|
-| authentication | prove [[neuron]] validity | [[STARK]] proof of [[Hemera]] preimage | hash collision resistance |
+| authentication | prove [[neuron]] validity | [[stark]] proof of [[Hemera]] preimage | hash collision resistance |
 | anonymity | hide [[cyberlink]] authorship | ZK set membership + [[mutator set]] nullifiers | hash collision resistance |
 | encryption (interactive) | private [[neuron]]-to-[[neuron]] data | [[lattice KEM]] (Module-RLWE over Goldilocks) | Module-RLWE hardness |
 | encryption (non-interactive) | stealth addresses, anonymous channels | CSIDH / [[dCTIDH]] | isogeny class group action |
@@ -260,4 +260,4 @@ the first two layers require only hashes and proofs. the last four introduce add
 
 the [[signer]] page describes the complexity of universal signing: pluggable curves, pluggable schemes, derivation paths, address formats per chain. identity in [[cyber]] reduces to: one hash function, one VM, one proof system. a [[neuron]] is a hash. authorization is a proof. anonymity is a proof of set membership. everything else follows.
 
-see [[Hemera]] for the hash primitive, [[cyber/nox]] for the VM, [[cyber/proofs]] for STARK verification, [[cyber/security]] for formal guarantees
+see [[Hemera]] for the hash primitive, [[cyber/nox]] for the VM, [[cyber/proofs]] for stark verification, [[cyber/security]] for formal guarantees

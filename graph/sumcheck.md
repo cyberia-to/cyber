@@ -6,7 +6,7 @@ alias: sumcheck protocol
 ---
 # sumcheck
 
-an interactive proof protocol that reduces verifying a sum over exponentially many terms to checking a single evaluation. Lund, Fortnow, Karloff, Nisan (1992). the engine inside [[STARK|multilinear STARKs]] and [[SuperSpartan]].
+an interactive proof protocol that reduces verifying a sum over exponentially many terms to checking a single evaluation. Lund, Fortnow, Karloff, Nisan (1992). the engine inside [[stark|multilinear starks]] and [[SuperSpartan]].
 
 ## the protocol
 
@@ -40,8 +40,8 @@ for a [[nox]] execution trace with 2ⁿ steps and 2ᵐ registers, k = n + m. the
 
 ## role in cyber
 
-in the [[STARK|multilinear STARK]] pipeline, sumcheck replaces the zerofier division step of classical univariate STARKs. [[SuperSpartan]] uses sumcheck to verify AIR constraints: the sum of constraint polynomials over all trace rows must be zero. sumcheck reduces this to evaluating the trace polynomial at one random point, which [[WHIR]] opens.
+in the [[stark|multilinear stark]] pipeline, sumcheck replaces the zerofier division step of classical univariate starks. [[SuperSpartan]] uses sumcheck to verify AIR constraints: the sum of constraint polynomials over all trace rows must be zero. sumcheck reduces this to evaluating the trace polynomial at one random point, which [[WHIR]] opens.
 
 sumcheck also appears in [[LogUp]] lookup arguments for cross-index consistency in the [[BBG]].
 
-see [[STARK]] for the full proof pipeline, [[SuperSpartan]] for the IOP, [[WHIR]] for the polynomial commitment scheme
+see [[stark]] for the full proof pipeline, [[SuperSpartan]] for the IOP, [[WHIR]] for the polynomial commitment scheme

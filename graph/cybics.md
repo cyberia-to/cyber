@@ -182,7 +182,7 @@ each kernel decays:
 
 this is the key to planetary scale. light clients verify without recomputing the entire graph. proof size scales with [[locality]], not network size. adversaries cannot perturb the system globally from a local change.
 
-distributed consensus decomposes into three irreducible operations: aggregation (combining signals into shared state), proving (generating cryptographic evidence), verification (checking evidence efficiently). the [[tri-kernel]] aggregates. STARKs prove. light clients verify in O(log² n) field operations.
+distributed consensus decomposes into three irreducible operations: aggregation (combining signals into shared state), proving (generating cryptographic evidence), verification (checking evidence efficiently). the [[tri-kernel]] aggregates. starks prove. light clients verify in O(log² n) field operations.
 
 ---
 

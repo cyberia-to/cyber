@@ -64,6 +64,6 @@ reward(P) = base_fee + Δπ(P) × reward_coefficient
 
 designed for parallel [[neuron]] and agent workflows at planetary scale. multiple agents operate simultaneously — no coordination required to produce patches, only at resolution time. [[GFlowNet]] agents propose patches weighted by expected Δπ. [[active inference]] agents minimize [[free energy]] by adaptively staking on patches
 
-post-quantum [[cryptography]] from [[genesis]]. [[hash]] via [[Poseidon2]]-Goldilocks, [[signatures]] via the protocol's post-quantum scheme, proofs via [[STARKs]] over [[Goldilocks field]]
+post-quantum [[cryptography]] from [[genesis]]. [[hash]] via [[Poseidon2]]-Goldilocks, [[signatures]] via the protocol's post-quantum scheme, proofs via [[starks]] over [[Goldilocks field]]
 
 see [[cyber/patch/spec]] for the full specification

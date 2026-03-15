@@ -77,9 +77,9 @@ complexity: $O(k \cdot n)$ with $k \ll n$. feasible for 10⁶+ transactions per 
 
 rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
 
-every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]]. this $\pi_\Delta$ is proven correct by a single [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim:
+every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]]. this $\pi_\Delta$ is proven correct by a single [[stark]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim:
 
-1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[STARK]] proof
+1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[stark]] proof
 2. proof demonstrates: applying these links to the graph at $\text{bbg\_root}_t$ shifts π by $\pi_\Delta$
 3. any verifier checks the proof against the header — O(log n), no recomputation
 4. if valid and Δπ > 0, the neuron mints [[$CYB]] proportional to the proven shift
@@ -92,7 +92,7 @@ see §6.9 and §14.2 of the whitepaper for the full specification
 
 ## the three token operations
 
-- mint: [[neurons]] prove Δπ via [[STARK]] and self-mint [[$CYB]] proportional to their contribution
+- mint: [[neurons]] prove Δπ via [[stark]] and self-mint [[$CYB]] proportional to their contribution
 - burn: [[neurons]] destroy [[$CYB]] for permanent π-weight on [[particles]] ([[eternal particles]]) or [[cyberlinks]] ([[eternal cyberlinks]])
 - lock: [[neurons]] stake [[$CYB]] on [[particles]] or [[cyberlinks]], earning from fee pools proportional to [[attention]] attracted
 

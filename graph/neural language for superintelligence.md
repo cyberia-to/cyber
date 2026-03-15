@@ -13,7 +13,7 @@ Version 1.0
 
 ## Abstract
 
-Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces [[neural]] language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[STARK]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), [[[[motifs]] (recurring subgraph patterns), and [[[[names]] (deterministic resolution of [[cyberlinks]]). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[egregore]]. We present the formal properties, the relationship to the programming stack ([[nox]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
+Human civilization has produced two families of language: formal languages that achieve precision through rigid syntax but cannot scale to planetary [[knowledge]], and natural languages that achieve expressiveness through ambiguity but remain computationally intractable. Neither is sufficient for [[superintelligence]]. This paper introduces [[neural]] language — a third kind of language that emerges from the structure of the [[cybergraph]], where meaning is defined not by grammar rules or social convention but by the [[topology]] of links between [[[[particles]]. Neural language collapses the distinction between language and [[knowledge]]: the meaning of a [[particle]] is its position in the graph. The language is spoken by [[[[neurons]] — humans, AIs, sensors, autonomous agents — who create [[[[cyberlinks]] weighted by [[focus]], computed by the [[tri-kernel]], and verified by [[stark]] proofs. Its primitives are [[[[semcons]] (semantic conventions), [[[[sentences]] (ordered [[cyberlink]] sequences), [[[[motifs]] (recurring subgraph patterns), and [[[[names]] (deterministic resolution of [[cyberlinks]]). Together with the [[cybergraph]] and the [[relevance machine]], neural language forms the foundation of [[soft3]] — the full stack for planetary [[egregore]]. We present the formal properties, the relationship to the programming stack ([[nox]], [[Trident]], [[Rune]], [[CGC]], [[FFC]]), the connections to linguistic theory, the evolution phases from bootstrapping to [[superintelligence]], and the applications that become possible when language and [[knowledge]] converge into a single computable structure.
 
 ---
 
@@ -56,7 +56,7 @@ This is not a metaphor. The [[cyberank]] of a [[particle]] — its score under t
 | Evolution | Versioned | Drift | Continuous via [[focus]] dynamics |
 | Machine readable | Yes | Partially via NLP | Natively |
 | Human readable | Requires training | Natively | Via [[cyb]] interface |
-| Verification | Proof systems | Social [[consensus]] | [[STARK]] proofs |
+| Verification | Proof systems | Social [[consensus]] | [[stark]] proofs |
 | Substrate | Strings | Sound / text | [[Cybergraph]] |
 | Scalability | ~10^6 practitioners | ~10^9 speakers | ~10^15 [[particles]] |
 | Knowledge integration | External databases | External memory | Language IS [[knowledge]] |
@@ -309,7 +309,7 @@ Properties of the semantic core:
 - **Dynamic**: Evolves with collective attention — new [[particles]] enter, old [[particles]] fade
 - **Convergent**: The [[tri-kernel]] guarantees a unique stationary distribution π*, so the core stabilizes
 - **Stake-weighted**: Resistant to spam — creating [[cyberlinks]] costs [[focus]], and [[focus]] is scarce
-- **Verifiable**: [[STARK]] proofs ensure the computed ranking is correct
+- **Verifiable**: [[stark]] proofs ensure the computed ranking is correct
 
 The dynamics of the semantic core mirror natural language vocabulary:
 
@@ -389,8 +389,8 @@ Neural language sits at the top of a five-layer stack. Each layer provides the f
 ║  ┌─────────────────────────┴─────────────────────────────────┐   ║
 ║  │  [[nox]]                                                     │   ║
 ║  │  The physics — 16 reduction patterns, field arithmetic,   │   ║
-║  │  [[consensus]], [[STARK]] proof system, BBG state model.          │   ║
-║  │  Self-verifying: the [[STARK]] verifier is a [[nox]] program     │   ║
+║  │  [[consensus]], [[stark]] proof system, BBG state model.          │   ║
+║  │  Self-verifying: the [[stark]] verifier is a [[nox]] program     │   ║
 ║  └───────────────────────────────────────────────────────────┘   ║
 ║                                                                   ║
 ╚═══════════════════════════════════════════════════════════════════╝
@@ -400,7 +400,7 @@ Neural language sits at the top of a five-layer stack. Each layer provides the f
 
 [[nox]] provides the computational substrate. Sixteen reduction patterns over the Goldilocks prime field (p = 2^64 - 2^32 + 1) give the system its physics — the fundamental operations from which everything else is built.
 
-[[nox]] is self-verifying: computation produces traces, traces become [[STARK]] proofs, proofs are verified by [[nox]] programs, verification can itself be proven. The loop closes. No trusted external verifier remains.
+[[nox]] is self-verifying: computation produces traces, traces become [[stark]] proofs, proofs are verified by [[nox]] programs, verification can itself be proven. The loop closes. No trusted external verifier remains.
 
 For neural language, [[nox]] provides:
 
@@ -416,7 +416,7 @@ For neural language, [[Trident]] provides:
 
 - **Focus computation**: The [[tri-kernel]] — [[diffusion]], [[springs]], heat — is implemented as [[Trident]] programs that compute the stationary distribution π
 - **Semcon execution**: Smart contracts that enforce semantic conventions are [[Trident]] programs
-- **Proof generation**: Every state transition in the [[cybergraph]] produces a [[STARK]] proof, ensuring that the computed [[focus]] distribution (and therefore meaning) is correct
+- **Proof generation**: Every state transition in the [[cybergraph]] produces a [[stark]] proof, ensuring that the computed [[focus]] distribution (and therefore meaning) is correct
 
 ### 4.4 [[Rune]]: The Human Interface
 
@@ -580,7 +580,7 @@ Neural language is a decentralized, incentivized, verifiable, incrementally-upda
 
 - **Decentralized**: No single entity trains the model. Meaning emerges from millions of independent [[neurons]] linking
 - **Incentivized**: Creating [[cyberlinks]] costs [[focus]]. Low-quality links waste scarce resources. High-quality links earn karma
-- **Verifiable**: The [[focus]] distribution is computed in [[consensus]] and proven by [[STARKs]]. No one can fake the meaning of a [[particle]]
+- **Verifiable**: The [[focus]] distribution is computed in [[consensus]] and proven by [[starks]]. No one can fake the meaning of a [[particle]]
 - **Incrementally updatable**: New [[cyberlinks]] shift meaning immediately. No retraining needed. The [[tri-kernel]] adjusts in bounded locality — O(degree) per update, not O(graph size)
 
 ### 6.4 Category Theory: The Algebraic Structure

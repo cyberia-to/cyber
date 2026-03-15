@@ -12,7 +12,7 @@ introduced by Haböck (2022). used in Polygon, Scroll, and [[cyber]].
 
 ## the problem
 
-each [[cyberlink]] touches 3 [[EdgeSets]] (or 2 for self-links). the [[STARK]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to]. without LogUp, each cross-index check requires independent [[WHIR]] proofs against each EdgeSet — ~7,500 constraints per edge.
+each [[cyberlink]] touches 3 [[EdgeSets]] (or 2 for self-links). the [[stark]] must prove that the edge hash inserted into by_neuron is the SAME hash inserted into by_particle[from] and by_particle[to]. without LogUp, each cross-index check requires independent [[WHIR]] proofs against each EdgeSet — ~7,500 constraints per edge.
 
 ## the protocol
 
@@ -52,8 +52,8 @@ LogUp proof:
 
 ```
 per edge:
-  LogUp:              ~500 STARK constraints (sumcheck + challenges)
-  independent WHIR:    3 × 2,500 = 7,500 STARK constraints
+  LogUp:              ~500 stark constraints (sumcheck + challenges)
+  independent WHIR:    3 × 2,500 = 7,500 stark constraints
   savings:            15×
 
 block with 10,000 edges:

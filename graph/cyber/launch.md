@@ -185,18 +185,18 @@ Privacy boundary (non-negotiable): PUBLIC = edge existence, aggregate energy per
 
 Duration: 6-9 months
 
-### Phase 4: STARK Infrastructure
+### Phase 4: stark Infrastructure
 
 Self-verifying proof system where the verifier is itself a nox program.
 
 | Deliverable | Gate |
 |-------------|------|
-| [[STARK]] prover | Completeness: honest prover always convinces |
-| STARK verifier as nox program | Soundness: no poly-time adversary forges proof |
+| [[stark]] prover | Completeness: honest prover always convinces |
+| stark verifier as nox program | Soundness: no poly-time adversary forges proof |
 | Recursive composition | Inner verification circuit correctly arithmetized |
 | Light client protocol | O(log n) verification of any state claim |
 
-Verification closure: STARK verifiers are nox programs. Proofs can be verified, and verification can be proven.
+Verification closure: stark verifiers are nox programs. Proofs can be verified, and verification can be proven.
 
 Duration: 9-12 months
 
@@ -255,7 +255,7 @@ Duration: 12-18 months
 | 1. Self-hosting | Now | +6mo | — |
 | 2. Crypto library | +3mo | +9mo | Overlaps with 1 |
 | 3. Privacy circuits | +6mo | +15mo | After 2 core |
-| 4. STARK infrastructure | +9mo | +21mo | After 2, parallel with 5 |
+| 4. stark infrastructure | +9mo | +21mo | After 2, parallel with 5 |
 | 5. Tri-kernel production | +9mo | +21mo | Parallel with 4 |
 | 6. Network layer | +18mo | +36mo | After 4+5 |
 | 7. Testnet → Mainnet | +30mo | +42mo | After 6 |
@@ -271,7 +271,7 @@ Running parallel to all phases. Each item maps to the Pre-Launch Verification Pr
 | Layer 1 confluence (16 patterns) | Lean4 / Coq | Phase 1-2 |
 | Cost determinism | Structural induction, machine-checked | Phase 2 |
 | [[focus]] conservation (Σπᵢ = 1) | Proof by transition analysis | Phase 3 |
-| Privacy soundness (< 2⁻¹²⁸) | STARK/Plonky2 soundness theorem | Phase 4 |
+| Privacy soundness (< 2⁻¹²⁸) | stark/Plonky2 soundness theorem | Phase 4 |
 | [[tri-kernel]] convergence | Lyapunov function, explicit constants | Phase 5 |
 | Adversarial equilibrium | Game-theoretic analysis, simulation | Phase 5-6 |
 | Double-spend prevention | Nullifier uniqueness proof | Phase 3 |
@@ -319,7 +319,7 @@ vs. Decentralized AI (Bittensor): no external model, provable correctness, unive
 
 | Role | Count | Focus |
 |------|-------|-------|
-| Core protocol (Rust) | 2-3 | nox evaluator, STARK prover, [[consensus]] |
+| Core protocol (Rust) | 2-3 | nox evaluator, stark prover, [[consensus]] |
 | Cryptography | 1-2 | Privacy circuits, proof systems |
 | Language ([[trident]]) | 1-2 | Compiler, tooling |
 | Network / distributed systems | 1-2 | Gossip, sharding, DA layer |

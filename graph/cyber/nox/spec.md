@@ -7,7 +7,7 @@ stake: 43936669831471920
 ---
 # nox/spec
 
-formal specification of the [[nox]] virtual machine. sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), five jets for efficient recursive [[STARK]] verification (Layer 3).
+formal specification of the [[nox]] virtual machine. sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), five jets for efficient recursive [[stark]] verification (Layer 3).
 
 ## field
 
@@ -23,7 +23,7 @@ FIELD: Goldilocks
 HASH: Poseidon-Goldilocks
   State: 12 field elements, Rate: 8 elements
   Rounds: 8 full + 22 partial + 8 full
-  Cost: ~300 STARK constraints per permutation
+  Cost: ~300 stark constraints per permutation
   Status: CONFIGURABLE (Poseidon is reference, not mandated)
 
 DOMAIN SEPARATION
@@ -167,7 +167,7 @@ reduce(s, [8 a], f) →
 
 RATIONALE: Execution cost reflects real work (~64 multiplications
 in square-and-multiply for Fermat's little theorem).
-STARK verification cost = 1 constraint (verifier just checks a × a⁻¹ = 1).
+stark verification cost = 1 constraint (verifier just checks a × a⁻¹ = 1).
 
 
 PATTERN 9: EQ
@@ -227,7 +227,7 @@ reduce(s, [16 constraint], f) =
 PROVER_INJECT: → Noun
   Source:   external to the VM. prover-only.
   Verifier: NEVER executes hint directly.
-             checks constraint satisfaction via STARK (multilinear trace + sumcheck).
+             checks constraint satisfaction via stark (multilinear trace + sumcheck).
   Cost:     1 + cost(constraint). witness search is external.
   Memo:     NOT memoizable (different provers, different valid witnesses).
 ```
@@ -236,7 +236,7 @@ PROVER_INJECT: → Noun
 
 ## Layer 3: jets
 
-five jets selected by analyzing the STARK verifier bottleneck. every jet has an equivalent Layer 1 program producing identical output on all inputs.
+five jets selected by analyzing the stark verifier bottleneck. every jet has an equivalent Layer 1 program producing identical output on all inputs.
 
 ```
 ╔═══════════════════════════════════════════════════════════════════════════╗
@@ -261,7 +261,7 @@ five jets selected by analyzing the STARK verifier bottleneck. every jet has an 
 ║  Verify authentication path of depth d                                    ║
 ║  Pure equivalent: d × ~310 patterns (hash + conditional per level)        ║
 ║  Jet cost: d × 300                                                        ║
-║  Accelerates: STARK proof checking (500K → 50K of verifier cost)          ║
+║  Accelerates: stark proof checking (500K → 50K of verifier cost)          ║
 ║                                                                           ║
 ║  JET 3: FRI_FOLD                                                          ║
 ║  fri_fold(poly_layer, challenge) → poly_layer_next                        ║
@@ -296,7 +296,7 @@ the five jets map to the four [[Goldilocks field processor]] hardware primitives
 ## cost table
 
 ```
-Layer │ Pattern      │ Exec Cost      │ STARK Constraints
+Layer │ Pattern      │ Exec Cost      │ stark Constraints
 ──────┼──────────────┼────────────────┼───────────────────
   1   │ 0 axis       │ 1 + depth      │ ~depth
   1   │ 1 quote      │ 1              │ 1
@@ -318,7 +318,7 @@ Layer │ Pattern      │ Exec Cost      │ STARK Constraints
   3   │ ntt(N)       │ N·log(N)       │ ~N·log(N)
 ```
 
-## STARK verifier cost with jets
+## stark verifier cost with jets
 
 ```
 Component               │ Layer 1 only │ With jets  │ Reduction
@@ -411,7 +411,7 @@ Merkle verification (32 levels): ~9,600 (jet) or ~10,000 (pure Layer 1)
   merkle_verify(root, leaf, path, 32)
   Jet cost: 32 × 300 = 9,600
 
-STARK verifier (one recursion level): ~70,000 (with jets)
+stark verifier (one recursion level): ~70,000 (with jets)
   Without jets: ~600,000 Layer 1 patterns
 ```
 

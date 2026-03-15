@@ -18,7 +18,7 @@ the result is whatever the math says. there is no target, no threshold, no minim
 
 ## proof
 
-the impulse is accompanied by a [[STARK]] proof $\sigma$ that certifies correctness against the current [[BBG]] root. the proof covers the entire [[cyber/signal]] — all [[cyberlinks]] in the batch, all conviction UTXO movements, and the resulting $\pi_\Delta$ — in a single recursive verification. any node checks $\sigma$ in $O(\log n)$ without recomputing the [[tri-kernel]]
+the impulse is accompanied by a [[stark]] proof $\sigma$ that certifies correctness against the current [[BBG]] root. the proof covers the entire [[cyber/signal]] — all [[cyberlinks]] in the batch, all conviction UTXO movements, and the resulting $\pi_\Delta$ — in a single recursive verification. any node checks $\sigma$ in $O(\log n)$ without recomputing the [[tri-kernel]]
 
 ## reward
 

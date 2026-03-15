@@ -354,9 +354,9 @@ Viewed through the lens of the three-operation decomposition, the evolution of d
 | 2015 | Fused (Ethereum) | EVM re-execution by all | None | By re-execution |
 | 2020 | Accelerated fusion (Solana) | Parallel re-execution by all | None | By re-execution |
 | 2022 | Partial separation (Optimistic rollups) | Delegated to sequencer | Fraud proofs (on dispute) | Re-execution (on dispute) |
-| 2023 | Clean separation (ZK rollups) | Delegated to sequencer | STARK/SNARK generation | Proof checking |
+| 2023 | Clean separation (ZK rollups) | Delegated to sequencer | stark/SNARK generation | Proof checking |
 | 2024 | Explicit separation (Intent protocols) | Solvers aggregate intents | Settlement correctness | Constraint checking |
-| 2025+ | Full separation (Accountable aggregation) | Dedicated engines | Periodic STARK checkpoints | Universal proof checking |
+| 2025+ | Full separation (Accountable aggregation) | Dedicated engines | Periodic stark checkpoints | Universal proof checking |
 
 The direction is monotonic: from fused to separated. No system has moved in the reverse direction — from separated to fused — because the replication-throughput tension makes fusion increasingly costly as demand grows.
 
@@ -412,7 +412,7 @@ Existing systems can be evaluated by their position on the separation spectrum:
 | Optimistic rollups | Partial | High (single sequencer) | Partial (on dispute) | Improving |
 | ZK rollups | Full (for transactions) | High (single sequencer) | High (proof checking) | Good for transactions |
 | Intent protocols | Full | High (solver competition) | High (constraint checking) | Good for discrete matching |
-| Accountable aggregation | Full | High (dedicated engine) | High (STARK checkpoint) | Emerging best practice |
+| Accountable aggregation | Full | High (dedicated engine) | High (stark checkpoint) | Emerging best practice |
 
 ### 10.3 For the Future
 
@@ -432,7 +432,7 @@ The three-operation decomposition predicts:
 
 The distributed computing landscape, viewed through mechanism (PoW vs. PoS, EVM vs. SVM, monolithic vs. modular), appears diverse and fragmented. Viewed through the lens of irreducible operations, it reveals a single evolutionary trajectory: the progressive separation of aggregation, proving, and verification from their initial fusion.
 
-This separation is driven by a mathematical constraint — the replication-throughput tension — that admits no resolution within the fused model. Replicated execution cannot scale to planetary demand without sacrificing decentralization. Separation, enabled by advances in proof systems (STARKs, SNARKs, folding schemes, recursive composition), allows each operation to scale independently: aggregation by algorithm efficiency and dedicated hardware, proving by market competition among provers, and verification by universal lightweight proof checking.
+This separation is driven by a mathematical constraint — the replication-throughput tension — that admits no resolution within the fused model. Replicated execution cannot scale to planetary demand without sacrificing decentralization. Separation, enabled by advances in proof systems (starks, SNARKs, folding schemes, recursive composition), allows each operation to scale independently: aggregation by algorithm efficiency and dedicated hardware, proving by market competition among provers, and verification by universal lightweight proof checking.
 
 The trajectory converges toward a stable architecture: specialized aggregation engines for each domain, a universal verification substrate accessible to any device, and proving as the productive bridge between them. In this architecture, the network aggregates. It verifies. Proving makes both possible.
 

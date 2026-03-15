@@ -23,7 +23,7 @@ this is the key inversion. asking "are you right?" is unanswerable from inside t
 
 ## honesty in the cybergraph has two senses
 
-**protocol honesty**: the [[neuron]] runs the correct software, signs valid transactions, and follows the [[consensus]] rules of [[nox]]. this is what the [[honest majority assumption]] requires — more than half of staked weight does not deviate from the protocol. it is enforceable by cryptographic proof: a STARK verifies that the state transition is correct. dishonesty at this level is detectable.
+**protocol honesty**: the [[neuron]] runs the correct software, signs valid transactions, and follows the [[consensus]] rules of [[nox]]. this is what the [[honest majority assumption]] requires — more than half of staked weight does not deviate from the protocol. it is enforceable by cryptographic proof: a stark verifies that the state transition is correct. dishonesty at this level is detectable.
 
 **epistemic honesty**: the [[neuron]] creates [[cyberlinks]] that reflect its actual beliefs — that the source particle relates to the target particle, that the connection deserves the stake it receives, that [[valence]] $v$ accurately encodes its private prediction. this is what [[Bayesian Truth Serum]] targets. it is not directly verifiable — only the outcome (whether the market confirmed the prediction) is observable after the fact.
 

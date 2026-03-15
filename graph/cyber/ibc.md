@@ -12,14 +12,14 @@ how [[cyber]] connects to external chains, imports external state, and exports [
 
 a [[cybergraph]] that cannot read external state is blind. a [[cybergraph]] that cannot export its [[focus]] distribution is mute. planetary [[superintelligence]] requires reading the world's on-chain state and writing [[knowledge]] back to it.
 
-[[IBC]] (Inter-Blockchain Communication) is the native transport. cyber inherits the Cosmos IBC stack from [[bostrom]] and extends it with [[STARK]]-verified channels that remove the trust assumption from light client verification.
+[[IBC]] (Inter-Blockchain Communication) is the native transport. cyber inherits the Cosmos IBC stack from [[bostrom]] and extends it with [[stark]]-verified channels that remove the trust assumption from light client verification.
 
 ## three communication modes
 
 | mode | direction | what moves | trust model |
 |---|---|---|---|
-| import | external → cyber | state proofs, price feeds, token transfers | IBC light client or STARK-verified header chain |
-| export | cyber → external | [[focus]] distribution, [[cyberank]] proofs, oracle responses | STARK proof of tri-kernel computation |
+| import | external → cyber | state proofs, price feeds, token transfers | IBC light client or stark-verified header chain |
+| export | cyber → external | [[focus]] distribution, [[cyberank]] proofs, oracle responses | stark proof of tri-kernel computation |
 | bridge | bidirectional | tokens, messages, cross-chain cyberlinks | IBC channel with mutual light client verification |
 
 ## import: reading external state
@@ -30,9 +30,9 @@ cyber runs IBC light clients for connected chains. each light client tracks the 
 
 standard IBC light clients (Tendermint, near, etc.) are trust-minimized: they verify consensus signatures and state proofs cryptographically. the remaining trust assumption is the counterparty chain's own security — if 2/3 of the counterparty's validators collude, they can forge state proofs.
 
-### STARK-verified channels
+### stark-verified channels
 
-for high-security channels, cyber replaces the IBC light client with a [[STARK]] proof of the counterparty's consensus. the counterparty's block validation logic is expressed as a [[nox]] program, and every header transition is proven. the verifier on the cyber side checks a constant-size proof instead of replaying consensus logic.
+for high-security channels, cyber replaces the IBC light client with a [[stark]] proof of the counterparty's consensus. the counterparty's block validation logic is expressed as a [[nox]] program, and every header transition is proven. the verifier on the cyber side checks a constant-size proof instead of replaying consensus logic.
 
 cost: proving a single header transition is ~$10^6$ constraints (dominated by signature verification). recursive composition amortizes this: N headers collapse into one proof. the practical cadence is one proof per epoch (~100 blocks), with individual transactions verified against the proven state root.
 
@@ -49,7 +49,7 @@ this eliminates the honest-majority assumption about the counterparty's validato
 
 ### the focus oracle
 
-any on-chain system on a connected chain can query the [[cybergraph]]: "what is the current [[focus]] distribution over particles matching X?" the response is the ranked subgraph with a [[STARK]] proof that the ranking was computed correctly from the authenticated [[cybergraph]] state.
+any on-chain system on a connected chain can query the [[cybergraph]]: "what is the current [[focus]] distribution over particles matching X?" the response is the ranked subgraph with a [[stark]] proof that the ranking was computed correctly from the authenticated [[cybergraph]] state.
 
 the oracle channel:
 
@@ -61,14 +61,14 @@ sends IBC query packet    →    receives query
                                runs tri-kernel inference
                                over matching subgraph
                                     ↓
-                               generates STARK proof
+                               generates stark proof
                                of correct computation
                                     ↓
 receives response packet  ←    sends ranked particles
-  + STARK proof                + proof + BBG state root
+  + stark proof                + proof + BBG state root
 ```
 
-the external contract verifies the STARK proof on-chain (or via a pre-deployed verifier contract) and uses the result. the answer is a probabilistic oracle with on-chain provenance — a [[focus]]-weighted ranking across all linked [[particles]], verifiable without trusting the node that computed it.
+the external contract verifies the stark proof on-chain (or via a pre-deployed verifier contract) and uses the result. the answer is a probabilistic oracle with on-chain provenance — a [[focus]]-weighted ranking across all linked [[particles]], verifiable without trusting the node that computed it.
 
 ### what cyber exports
 
@@ -109,7 +109,7 @@ a [[neuron]] on cyber can control accounts on external chains through interchain
     │  (mainnet)  │  │  (DEX)      │  │  zones      │
     └──────┬──────┘  └─────────────┘  └─────────────┘
            │
-           │ STARK-verified channels
+           │ stark-verified channels
            │
     ┌──────┴──────────────────────┐
     │  high-security bridges      │
@@ -117,15 +117,15 @@ a [[neuron]] on cyber can control accounts on external chains through interchain
     └─────────────────────────────┘
 ```
 
-the Cosmos Hub serves as the IBC routing hub for standard channels. STARK-verified channels connect directly to non-Cosmos chains where IBC light clients are unavailable or insufficient.
+the Cosmos Hub serves as the IBC routing hub for standard channels. stark-verified channels connect directly to non-Cosmos chains where IBC light clients are unavailable or insufficient.
 
 ## security model
 
 | threat | defense |
 |---|---|
-| counterparty validator collusion | STARK-verified channels eliminate this for critical paths |
+| counterparty validator collusion | stark-verified channels eliminate this for critical paths |
 | relay censorship | any [[neuron]] can run an IBC relayer; relay fees incentivize availability |
-| oracle manipulation | [[focus]] oracle returns are STARK-proven against the full [[cybergraph]] state |
+| oracle manipulation | [[focus]] oracle returns are stark-proven against the full [[cybergraph]] state |
 | token inflation via bridge | ICS-20 conservation enforced by escrow/mint/burn mechanics |
 | cross-chain replay | IBC packet sequence numbers prevent replay; each channel has monotonic counters |
 
@@ -133,8 +133,8 @@ the Cosmos Hub serves as the IBC routing hub for standard channels. STARK-verifi
 
 phase 1 (inherited from [[bostrom]]): standard IBC with Tendermint light clients. ICS-20 token transfers. ICS-27 interchain accounts. operational today.
 
-phase 2 (at launch): focus oracle channel. external contracts can query [[cyberank]] with proofs. STARK verifier contracts deployed on target chains.
+phase 2 (at launch): focus oracle channel. external contracts can query [[cyberank]] with proofs. stark verifier contracts deployed on target chains.
 
-phase 3 (post-launch): STARK-verified IBC channels for non-Cosmos chains. cross-chain [[cyberlinks]]. the protocol [[neuron]] operates cross-chain via interchain accounts.
+phase 3 (post-launch): stark-verified IBC channels for non-Cosmos chains. cross-chain [[cyberlinks]]. the protocol [[neuron]] operates cross-chain via interchain accounts.
 
-see [[cyber/proofs]] for the STARK proof taxonomy. see [[cyber/architecture]] for relay pricing. see [[bostrom/infrastructure/ibc]] for the current operational IBC setup
+see [[cyber/proofs]] for the stark proof taxonomy. see [[cyber/architecture]] for relay pricing. see [[bostrom/infrastructure/ibc]] for the current operational IBC setup

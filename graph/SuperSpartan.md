@@ -14,7 +14,7 @@ CCS unifies the three major arithmetization approaches into one framework. a pro
 |---|---|---|---|
 | R1CS | Groth16, Spartan, Nova | 2 | 3 matrices, 2 terms |
 | Plonkish | PLONK, Halo2 | custom gates | selector matrices |
-| AIR | [[STARK]], StarkWare/CAIRO | any | shifted row matrices |
+| AIR | [[stark]], StarkWare/CAIRO | any | shifted row matrices |
 
 SuperSpartan uses the [[sumcheck]] protocol as its core mechanism. for AIR instances (the case relevant to [[cyber]]):
 
@@ -33,6 +33,6 @@ key properties:
 - high-degree constraints: prover cost scales with degree only in field operations (no cryptographic cost increase)
 - PCS-agnostic: works with any polynomial commitment scheme
 
-when the PCS is [[WHIR]], the result is Whirlaway (LambdaClass, 2025) — a multilinear [[STARK]] with transparent setup, post-quantum security, and sub-millisecond verification. this is the architecture [[cyber]] uses.
+when the PCS is [[WHIR]], the result is Whirlaway (LambdaClass, 2025) — a multilinear [[stark]] with transparent setup, post-quantum security, and sub-millisecond verification. this is the architecture [[cyber]] uses.
 
-see [[STARK]] for the full proof system, [[WHIR]] for the polynomial commitment scheme, [[sumcheck]] for the core protocol
+see [[stark]] for the full proof system, [[WHIR]] for the polynomial commitment scheme, [[sumcheck]] for the core protocol

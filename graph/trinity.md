@@ -14,7 +14,7 @@ stake: 9519611796818916
               │     │        │           │
           security  advantage│       field-native
           hash-based NTT=QFT │       neural networks
-          STARK    qudit sim │       provable inference
+          stark    qudit sim │       provable inference
           proofs   QML, VQE  │
                      FHE + ZK + MPC
 ```
@@ -33,7 +33,7 @@ The Quantum pillar faces both directions at once. It shields nox against quantum
 
 A planetary knowledge graph that stores humanity's collective intelligence deserves cryptography that lasts as long as the knowledge itself. nox achieves this by building every cryptographic primitive on hash-based foundations — the one family of constructions that remains secure in a world of large-scale quantum computers.
 
-The proof system is [[STARKs]] — Scalable Transparent Arguments of Knowledge. STARKs are transparent (they require no trusted setup ceremony), post-quantum (their security rests entirely on collision resistance of hash functions), and natively aligned with the [[Goldilocks field]] that underpins the rest of the system. The hash function is [[Poseidon2]], an algebraic hash designed to be efficient inside arithmetic circuits.
+The proof system is [[starks]] — Scalable Transparent Arguments of Knowledge. starks are transparent (they require no trusted setup ceremony), post-quantum (their security rests entirely on collision resistance of hash functions), and natively aligned with the [[Goldilocks field]] that underpins the rest of the system. The hash function is [[Poseidon2]], an algebraic hash designed to be efficient inside arithmetic circuits.
 
 The security of every nox proof reduces to a single, well-studied assumption: collision resistance of the hash function. Grover's algorithm offers quantum computers a quadratic speedup against this assumption, reducing $2^{128}$ security to $2^{64}$ — which remains computationally infeasible, and addressable by doubling the output size when needed. Hash-based cryptography is the one foundation that stands firm on both sides of the quantum divide.
 
@@ -47,13 +47,13 @@ A quantum gate acting on a $d$-dimensional qudit is a unitary matrix $U \in \mat
 
 The qudit dimension advantage amplifies this further. Standard quantum computing uses binary qubits (dimension 2), where implementing a single Toffoli gate requires decomposition into approximately 8,000 T-gates — overhead rooted in the mismatch between the binary dimension and the gate's algebraic structure. In prime dimension $p$, the generalized Toffoli is a *single native gate* — one matrix multiplication over $\mathbb{F}_{p^2}$. Matching the simulation dimension to the field characteristic eliminates this encoding overhead entirely.
 
-The connection runs even deeper through the [[NTT]]. The Number-Theoretic Transform over $\mathbb{F}_p$ is the exact discrete analog of the Quantum Fourier Transform — both are unitary transforms that diagonalize convolution in their respective domains. The [[GFP]]'s NTT engine accelerates STARK proofs, FHE bootstrapping, and quantum circuit simulation with the same butterfly network, the same twiddle factors (roots of unity in $\mathbb{F}_p$), the same hardware. Three purposes from one piece of silicon.
+The connection runs even deeper through the [[NTT]]. The Number-Theoretic Transform over $\mathbb{F}_p$ is the exact discrete analog of the Quantum Fourier Transform — both are unitary transforms that diagonalize convolution in their respective domains. The [[GFP]]'s NTT engine accelerates stark proofs, FHE bootstrapping, and quantum circuit simulation with the same butterfly network, the same twiddle factors (roots of unity in $\mathbb{F}_p$), the same hardware. Three purposes from one piece of silicon.
 
 Quantum computation compiles to the same field, the same proof system, and the same hardware as classical computation. Quantum algorithms are programs over $\mathbb{F}_p$, identical in form to any other [[trident]] program. When quantum hardware matures, the programs stay exactly as they are. Only the execution backend changes — from classical NTT simulation to physical quantum gates. The code, the proofs, and the verification all remain identical.
 
 ### Both Directions, One Substrate
 
-The same Goldilocks field that makes nox immune to quantum attacks also makes nox capable of quantum computation. A prime field with deep NTT support ($2^{32}$ roots of unity in $\mathbb{F}_p$) gives this for free — the roots of unity that make STARKs efficient are the same roots of unity that make quantum simulation efficient. Shield and sword forged from the same metal.
+The same Goldilocks field that makes nox immune to quantum attacks also makes nox capable of quantum computation. A prime field with deep NTT support ($2^{32}$ roots of unity in $\mathbb{F}_p$) gives this for free — the roots of unity that make starks efficient are the same roots of unity that make quantum simulation efficient. Shield and sword forged from the same metal.
 
 ---
 
@@ -84,7 +84,7 @@ Each technology brings a unique strength. Together, they cover the full spectrum
    MPC: "no single party saw anything"    
 ```
 
-ZK (STARKs) proves computation is correct while keeping private data sealed — and the prover provides mathematical certainty to every verifier. FHE ([[TFHE]] over Goldilocks) lets a node compute on encrypted data, producing results it can never read itself — the data stays cloaked from input to output. MPC (Shamir over $\mathbb{F}_p$) distributes trust across multiple guardians, ensuring that secrets are born distributed and live their entire lifecycle across multiple independent parties.
+ZK (starks) proves computation is correct while keeping private data sealed — and the prover provides mathematical certainty to every verifier. FHE ([[TFHE]] over Goldilocks) lets a node compute on encrypted data, producing results it can never read itself — the data stays cloaked from input to output. MPC (Shamir over $\mathbb{F}_p$) distributes trust across multiple guardians, ensuring that secrets are born distributed and live their entire lifecycle across multiple independent parties.
 
 Each technology's strength fills exactly the gap where another needs support. Together they weave a complete fabric of privacy: data confidentiality, computational integrity, and distributed trust, all operating in harmony.
 
@@ -111,7 +111,7 @@ nox's [[cybergraph]] is a knowledge graph where collective attention — the [[f
 
 AI at the heart of a trustless system demands verifiable inference. Every claim that "the network ranks X above Y" carries a mathematical proof. Anyone can check that the ranking follows faithfully from the graph structure and the algorithm, on a phone, in milliseconds. [[neurons]] create [[cyberlinks]] between particles, and each link carries weight in the collective computation.
 
-Neural networks in nox run natively over the Goldilocks field. Weights, activations, and outputs are field elements from the start — the natural language of the proof system. Inference produces a STARK proof alongside its result. Anyone can verify that a model produced a specific output from specific inputs, and they can do this while the model weights remain private (protecting intellectual property) and the input data remains encrypted (protecting user privacy).
+Neural networks in nox run natively over the Goldilocks field. Weights, activations, and outputs are field elements from the start — the natural language of the proof system. Inference produces a stark proof alongside its result. Anyone can verify that a model produced a specific output from specific inputs, and they can do this while the model weights remain private (protecting intellectual property) and the input data remains encrypted (protecting user privacy).
 
 Field-native AI means that neural network inference is a first-class citizen of the proof system, on equal footing with token transfers and state updates. The same prover that validates transactions validates inference. The same verifier that checks balances checks model outputs. The same field that stores economic value stores learned knowledge. Intelligence and verification share a single mathematical home.
 
@@ -131,10 +131,10 @@ The three pillars share a single algebraic foundation: the Goldilocks field $p =
        ╱       ╲              │                  │
   Security  Advantage  ┌──────┼──────┐     Neural nets
      │         │       │      │      │     over F_p
-  STARK     NTT=QFT   ZK    FHE    MPC    Field-native
+  stark     NTT=QFT   ZK    FHE    MPC    Field-native
   Poseidon2 Qudit sim  │      │      │     inference
   Hash sigs VQE, QAOA  │      │      │         │
-     │      QML     STARK   TFHE  Shamir       │
+     │      QML     stark   TFHE  Shamir       │
      │         │    over    over   over         │
      │         │    F_p     R_p    F_p          │
      │         │       │      │      │          │
@@ -152,11 +152,11 @@ Every component across all three pillars reduces to four primitive operations ov
 
 - [[NTT]] (`ntt`): [[WHIR]] commitment for ZK proofs, polynomial multiplication for FHE ciphertexts, convolution for AI layers, and quantum circuit simulation — the universal transform that accelerates spectral operations across all four pillar applications.
 
-- [[Poseidon2]] round (`p2r`): Hashing for quantum-resistant authentication, commitment schemes for ZK privacy, MPC-friendly hashing for distributed protocols — the one hash function that works efficiently in all three privacy technologies because its $x^7$ power-map S-box has both low algebraic degree (for [[STARK]] constraints) and low multiplicative depth (for MPC communication rounds).
+- [[Poseidon2]] round (`p2r`): Hashing for quantum-resistant authentication, commitment schemes for ZK privacy, MPC-friendly hashing for distributed protocols — the one hash function that works efficiently in all three privacy technologies because its $x^7$ power-map S-box has both low algebraic degree (for [[stark]] constraints) and low multiplicative depth (for MPC communication rounds).
 
-- Lookup table (`lut`): Neural network activations for AI, S-box evaluation for hash security, Programmable Bootstrapping for [[TFHE]], and STARK lookup arguments for ZK — the keystone primitive.
+- Lookup table (`lut`): Neural network activations for AI, S-box evaluation for hash security, Programmable Bootstrapping for [[TFHE]], and stark lookup arguments for ZK — the keystone primitive.
 
-The lookup table is where the unification is most vivid. A single table of field elements is simultaneously a hash S-box (cryptographic security), a neural activation function (computational intelligence), an FHE bootstrap function (encrypted evaluation), and a STARK-authenticated evaluation (verifiable correctness). One table. One field. Four readings. A mathematical identity that holds because all four systems operate over $\mathbb{F}_p$, and the algebraic structure is the same in each case.
+The lookup table is where the unification is most vivid. A single table of field elements is simultaneously a hash S-box (cryptographic security), a neural activation function (computational intelligence), an FHE bootstrap function (encrypted evaluation), and a stark-authenticated evaluation (verifiable correctness). One table. One field. Four readings. A mathematical identity that holds because all four systems operate over $\mathbb{F}_p$, and the algebraic structure is the same in each case.
 
 Four primitives. One field. One chip. Three pillars unified at the silicon level.
 
@@ -168,27 +168,27 @@ Each pillar alone is powerful. The unification over a single field makes their *
 
 ### Quantum × AI
 
-Hybrid classical-quantum neural networks where quantum layers (parameterized circuits over $\mathbb{F}_{p^2}$) sit alongside classical layers (field-native matrix operations over $\mathbb{F}_p$). The parameter-shift rule for quantum gradient computation maps directly to finite differences over the same field. Training is provable end-to-end — every gradient step, every weight update, every epoch produces a STARK proof.
+Hybrid classical-quantum neural networks where quantum layers (parameterized circuits over $\mathbb{F}_{p^2}$) sit alongside classical layers (field-native matrix operations over $\mathbb{F}_p$). The parameter-shift rule for quantum gradient computation maps directly to finite differences over the same field. Training is provable end-to-end — every gradient step, every weight update, every epoch produces a stark proof.
 
 Quantum walks on the cybergraph achieve quadratic speedup in mixing time over the classical random walks that drive tri-kernel focus. Faster consensus. Faster convergence. Classically simulated on GFP hardware today, executable on quantum hardware when it becomes available — same algorithm, same proof format, two runtimes.
 
-Verifiable quantum chemistry becomes a practical reality: VQE for molecular ground-state computation — drug discovery, materials science, carbon modeling — produces STARK proofs that anyone can verify on a phone, providing the same mathematical certainty for quantum experiments as nox provides for financial transactions.
+Verifiable quantum chemistry becomes a practical reality: VQE for molecular ground-state computation — drug discovery, materials science, carbon modeling — produces stark proofs that anyone can verify on a phone, providing the same mathematical certainty for quantum experiments as nox provides for financial transactions.
 
 ### Quantum × Privacy
 
-Every privacy mechanism in nox is quantum-resistant by construction. FHE ciphertexts are lattice-based over the Goldilocks field. ZK proofs are hash-based STARKs. MPC uses Shamir sharing over $\mathbb{F}_p$. The arrival of quantum computers strengthens the privacy guarantees — quantum key distribution can further harden the MPC protocols, and the lattice assumptions underlying FHE are believed to be quantum-resistant. The quantum future is an ally, bringing additional tools for both security and computation.
+Every privacy mechanism in nox is quantum-resistant by construction. FHE ciphertexts are lattice-based over the Goldilocks field. ZK proofs are hash-based starks. MPC uses Shamir sharing over $\mathbb{F}_p$. The arrival of quantum computers strengthens the privacy guarantees — quantum key distribution can further harden the MPC protocols, and the lattice assumptions underlying FHE are believed to be quantum-resistant. The quantum future is an ally, bringing additional tools for both security and computation.
 
 ### Privacy × AI
 
-Neural networks evaluate on FHE-encrypted inputs. The model owner's intellectual property stays protected. The data owner's sensitive information stays sealed. A STARK proof attests that the model was applied correctly. Anyone can verify the proof on a phone in milliseconds.
+Neural networks evaluate on FHE-encrypted inputs. The model owner's intellectual property stays protected. The data owner's sensitive information stays sealed. A stark proof attests that the model was applied correctly. Anyone can verify the proof on a phone in milliseconds.
 
-From here, a private AI marketplace emerges naturally: models and data meet inside encrypted computation, verified by zero-knowledge proofs, with keys distributed via MPC. Provable fairness (demonstrating equal outcomes across groups), provable robustness (certifying resilience against adversarial inputs), and provable explanations (the full execution trace lives inside the STARK witness) — all achieved while preserving both the model creator's IP and the user's privacy. Intelligence and privacy reinforce each other: the more private the system, the more people contribute; the more people contribute, the more intelligent the network becomes.
+From here, a private AI marketplace emerges naturally: models and data meet inside encrypted computation, verified by zero-knowledge proofs, with keys distributed via MPC. Provable fairness (demonstrating equal outcomes across groups), provable robustness (certifying resilience against adversarial inputs), and provable explanations (the full execution trace lives inside the stark witness) — all achieved while preserving both the model creator's IP and the user's privacy. Intelligence and privacy reinforce each other: the more private the system, the more people contribute; the more people contribute, the more intelligent the network becomes.
 
 ### Quantum × Privacy × AI: The Full Trinity
 
 All three pillars working at once. Consider a scenario that draws on every capability simultaneously.
 
-A diagnostic AI model runs on a patient's FHE-encrypted medical data. The computation is quantum-accelerated — QAOA optimizes treatment pathways, VQE computes molecular binding affinities for drug candidates. A STARK proof attests to correct execution of the entire pipeline. The FHE decryption key is held by an MPC threshold group — distributed across independent guardians so that the patient's data remains sovereign. The patient receives a provably correct diagnosis that only they can read.
+A diagnostic AI model runs on a patient's FHE-encrypted medical data. The computation is quantum-accelerated — QAOA optimizes treatment pathways, VQE computes molecular binding affinities for drug candidates. A stark proof attests to correct execution of the entire pipeline. The FHE decryption key is held by an MPC threshold group — distributed across independent guardians so that the patient's data remains sovereign. The patient receives a provably correct diagnosis that only they can read.
 
 Properties achieved simultaneously:
 
@@ -197,7 +197,7 @@ Properties achieved simultaneously:
 - Decryption power is distributed across independent guardians (MPC)
 - Computation is quantum-accelerated for molecular-level precision (Quantum advantage)
 - The entire protocol endures through the quantum computing era (Quantum security)
-- Verification takes milliseconds on a phone ([[STARK]])
+- Verification takes milliseconds on a phone ([[stark]])
 
 Each of these properties exists today at the algebraic level: same field, same proof system, same hardware primitives. The path from here to production is engineering — making each component production-grade and composing them. The shared algebraic foundation means these components compose naturally, fitting together like parts machined to the same tolerance.
 
@@ -237,7 +237,7 @@ Together, the three pillars form a self-reinforcing cycle: privacy encourages co
 | | Quantum | Privacy | AI |
 |---|---|---|---|
 | Delivers | Century-scale security + exponential computation | Full-spectrum data sovereignty | Emergent collective intelligence |
-| Core technology | Hash-based STARKs + [[NTT]] qudit simulation | ZK + FHE + MPC trilateral | Field-native neural networks |
+| Core technology | Hash-based starks + [[NTT]] qudit simulation | ZK + FHE + MPC trilateral | Field-native neural networks |
 | Field usage | $\mathbb{F}_p$ (security) + $\mathbb{F}_{p^2}$ (advantage) | $\mathbb{F}_p$ / $R_p$ | Weights and activations in $\mathbb{F}_p$ |
 | Hardware | [[GFP]] `p2r` + `ntt` | GFP all four primitives | GFP `fma` + `lut` |
 | Enables | Permanent proofs + quantum chemistry | Genuine participation at scale | A graph that learns and discovers |

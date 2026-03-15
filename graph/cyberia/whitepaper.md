@@ -97,7 +97,7 @@ six layers of independence, each reinforcing the others:
 
 ### 5.1 data sovereignty
 
-[[IPFS]] + [[bostrom]] + [[radio]] — every [[particle]] is content-addressed, permanent, censorship-resistant. [[Hemera]] hashing, [[STARK]] proofs, private messaging via CSIDH onion routing. the [[cybergraph]] is the shared memory. see [[cyb/architecture]] for the full technical specification.
+[[IPFS]] + [[bostrom]] + [[radio]] — every [[particle]] is content-addressed, permanent, censorship-resistant. [[Hemera]] hashing, [[stark]] proofs, private messaging via CSIDH onion routing. the [[cybergraph]] is the shared memory. see [[cyb/architecture]] for the full technical specification.
 
 ### 5.2 computational sovereignty
 

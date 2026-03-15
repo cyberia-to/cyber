@@ -67,7 +67,7 @@ to prove leaf l is at position i in the MMR:
   3. check peak matches the committed accumulator
 
 cost: O(log N) hash computations
-STARK constraints: ~8,000 for N = 2³² (32 levels × 250 per Hemera hash)
+stark constraints: ~8,000 for N = 2³² (32 levels × 250 per Hemera hash)
 ```
 
 see [[AOCL]] for UTXO commitment tracking, [[SWBF]] for bloom filter compaction, [[mutator set]] for the combined privacy primitive, [[BBG]] for the full graph state architecture

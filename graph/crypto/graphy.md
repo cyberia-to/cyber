@@ -19,7 +19,7 @@ symmetric encryption (AES, ChaCha20) uses one shared key. asymmetric encryption 
 
 ## [[crypto/signatures]]
 
-a digital signature binds a message to a signer. prominent schemes: EdDSA, Schnorr (aggregatable), BLS (cross-message aggregation), SPHINCS+ and ML-DSA (post-quantum). [[cyber]] replaces signatures with [[STARK]] proofs of [[Hemera]] preimage knowledge.
+a digital signature binds a message to a signer. prominent schemes: EdDSA, Schnorr (aggregatable), BLS (cross-message aggregation), SPHINCS+ and ML-DSA (post-quantum). [[cyber]] replaces signatures with [[stark]] proofs of [[Hemera]] preimage knowledge.
 
 ## [[crypto/commitments]]
 
@@ -31,7 +31,7 @@ two parties derive a shared secret over an insecure channel. ECDH (X25519) is th
 
 ## [[crypto/zero-knowledge]]
 
-prove a statement without revealing anything beyond its truth. [[SNARKs]] (Groth16, PLONK) achieve small proofs with trusted setup. [[STARKs]] require no trusted setup and are post-quantum. recursive composition, [[folding]] (Nova, HyperNova), [[incrementally verifiable computation]], [[proof-carrying data]], and lookup arguments ([[LogUp]], Lasso) extend the paradigm to scalable verifiable computation.
+prove a statement without revealing anything beyond its truth. [[SNARKs]] (Groth16, PLONK) achieve small proofs with trusted setup. [[starks]] require no trusted setup and are post-quantum. recursive composition, [[folding]] (Nova, HyperNova), [[incrementally verifiable computation]], [[proof-carrying data]], and lookup arguments ([[LogUp]], Lasso) extend the paradigm to scalable verifiable computation.
 
 ## multi-party computation
 
@@ -43,7 +43,7 @@ data structures with built-in integrity: [[Merkle trees]], [[NMT]], [[MMR]], Ver
 
 ## [[crypto/quantum]]
 
-Shor's algorithm breaks RSA, ECDSA, ECDH. Grover halves symmetric/hash security. NIST PQC standards (2024): ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205). [[STARKs]], symmetric ciphers, and hash functions survive quantum.
+Shor's algorithm breaks RSA, ECDSA, ECDH. Grover halves symmetric/hash security. NIST PQC standards (2024): ML-KEM (FIPS 203), ML-DSA (FIPS 204), SLH-DSA (FIPS 205). [[starks]], symmetric ciphers, and hash functions survive quantum.
 
 ## cyber's stack
 
@@ -57,7 +57,7 @@ PCS:     WHIR (multilinear polynomial commitment) — 290 us verification
 VM:      nox (register machine over Goldilocks)
 ```
 
-authentication via STARK preimage proofs. encryption via lattice KEM (interactive) and CSIDH (non-interactive). graph state via [[NMT]], [[MMR]], [[SWBF]], [[EdgeSet]], [[LogUp]]. domain separation with one function, six roles:
+authentication via stark preimage proofs. encryption via lattice KEM (interactive) and CSIDH (non-interactive). graph state via [[NMT]], [[MMR]], [[SWBF]], [[EdgeSet]], [[LogUp]]. domain separation with one function, six roles:
 
 ```
 H_edge(x)        = Hemera(0x01 | x)    edge hashing

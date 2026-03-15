@@ -83,7 +83,7 @@ net new supply: $\text{net} = E(t) - F \cdot \beta$. when fees exceed emission, 
 
 ## hardware substrate
 
-the [[Goldilocks field processor]] makes proving Δπ economically viable. the PoUW puzzle requires producing [[STARK]] proofs using the same four primitives as real workloads. mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users generate fees. fees replace emission
+the [[Goldilocks field processor]] makes proving Δπ economically viable. the PoUW puzzle requires producing [[stark]] proofs using the same four primitives as real workloads. mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users generate fees. fees replace emission
 
 the same hardware mines and proves — no stranded assets
 

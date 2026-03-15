@@ -24,7 +24,7 @@ lattice-based schemes (ML-KEM, ML-DSA) offer compact keys and fast operations. h
 |---|---|---|
 | AES-256 | safe (128-bit effective) | Grover halves security, 256 -> 128 is sufficient |
 | SHA-256, SHA-3-256 | safe (128-bit effective) | Grover halves, 256 -> 128 is sufficient |
-| [[STARK]] proofs | post-quantum | rely only on hash collision resistance |
+| [[stark]] proofs | post-quantum | rely only on hash collision resistance |
 | lattice KEM/signatures | post-quantum | no known quantum algorithm for Module-LWE |
 | hash-based signatures | post-quantum | rely only on hash preimage/collision resistance |
 | RSA, ECDSA, ECDH | broken | Shor's algorithm solves factoring and discrete log |

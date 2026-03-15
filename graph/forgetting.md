@@ -46,7 +46,7 @@ forgetting is not:
 - deleting content from the permanent record
 - invalidating a [[neuron]]'s historical assertion
 - removing a [[particle]] from the content-addressed store
-- reversing the [[STARK]] proof that authenticated the link
+- reversing the [[stark]] proof that authenticated the link
 
 the permanent record and the active working set are separate concerns. the cybergraph never deletes. it selectively pays attention.
 

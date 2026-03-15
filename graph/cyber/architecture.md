@@ -12,7 +12,7 @@ status: draft
 
 ## the problem
 
-every [[vimputer]] is an incomplete computer. they meter compute (gas, cycles, [[STARK]] proofs) but treat the network itself — messaging, bandwidth, storage, and sequencing — as invisible infrastructure. nodes gossip for free. storage is outsourced to separate networks. ordering is bundled invisibly into block production. the result: [[vimputers]] cannot reason about their own metabolism, cannot price the resources they actually consume, and cannot incentivize efficient operation of the infrastructure they depend on.
+every [[vimputer]] is an incomplete computer. they meter compute (gas, cycles, [[stark]] proofs) but treat the network itself — messaging, bandwidth, storage, and sequencing — as invisible infrastructure. nodes gossip for free. storage is outsourced to separate networks. ordering is bundled invisibly into block production. the result: [[vimputers]] cannot reason about their own metabolism, cannot price the resources they actually consume, and cannot incentivize efficient operation of the infrastructure they depend on.
 
 a [[vimputer]] that operates at planetary scale must price every resource it consumes. this document defines the minimal complete architecture.
 
@@ -328,7 +328,7 @@ storage: L0 stores full data (cheap, local, ephemeral). L1 stores aggregated sta
 
 relay: mostly horizontal within layers (peer gossip within neighborhoods), with narrow vertical channels between layers (proof submission upward, finality confirmation downward). bandwidth demand is massive within L0, minimal at L3. [[location proof]] determines which neighborhoods form — geographic proximity creates natural L1 clusters.
 
-[[consensus]]: L0 needs none (self-trust). L1 uses lightweight local BFT. L2 uses shard-level [[consensus]]. L3 needs only to verify recursive proofs — near-zero computation, maximum trust. the global singleton state can be constant-size (Mina-like ~22kb) because recursive [[STARK]] composition produces fixed-size proofs regardless of the computation being proved.
+[[consensus]]: L0 needs none (self-trust). L1 uses lightweight local BFT. L2 uses shard-level [[consensus]]. L3 needs only to verify recursive proofs — near-zero computation, maximum trust. the global singleton state can be constant-size (Mina-like ~22kb) because recursive [[stark]] composition produces fixed-size proofs regardless of the computation being proved.
 
 ### the 22kb global state
 
@@ -349,7 +349,7 @@ the five primitives collapse into two verification types:
 ### state proofs (what you HOLD)
 
 - storage: PoRep / PoST (prove you hold this data right now). see [[storage proofs]]
-- compute: [[STARK]] (prove you computed this correctly). see [[cyber/proofs]]
+- compute: [[stark]] (prove you computed this correctly). see [[cyber/proofs]]
 - [[consensus]]: recursive proof composition (prove the network agreed)
 
 ### flow proofs (what you DID)
@@ -492,7 +492,7 @@ priority 3 — [[location proof]]. RTT mesh between all nodes. MDS coordinate em
 
 priority 4 — duration-parameterized storage. unify ephemeral, medium-term, and permanent storage under a single primitive with continuous duration economics. storage fee = f(size, duration, privacy, structure type). see [[storage proofs]].
 
-priority 5 — [[STARK]] proof of block execution. every block produces a proof that all state transitions were valid. this is the foundation that enables future scaling — but on single chain it already provides trustless light clients and instant sync. see [[cyber/proofs]].
+priority 5 — [[stark]] proof of block execution. every block produces a proof that all state transitions were valid. this is the foundation that enables future scaling — but on single chain it already provides trustless light clients and instant sync. see [[cyber/proofs]].
 
 what comes later (the fractal [[consensus]] architecture):
 

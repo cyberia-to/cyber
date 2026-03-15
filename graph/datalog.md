@@ -59,7 +59,7 @@ cyb runtime
          └── HNSW indices      — vector similarity search
 ```
 
-[[rune]] calls datalog for queries. datalog reads the graph that [[rune]] writes. both run in the [[cyb]] runtime. [[trident]] operates at a different level — it compiles to the proof VM for [[STARK]] verification. datalog operates at the application level for interactive queries
+[[rune]] calls datalog for queries. datalog reads the graph that [[rune]] writes. both run in the [[cyb]] runtime. [[trident]] operates at a different level — it compiles to the proof VM for [[stark]] verification. datalog operates at the application level for interactive queries
 
 ## design principles
 

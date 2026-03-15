@@ -29,7 +29,7 @@ WHIR is both an IOPP (proximity test) and a multilinear polynomial commitment sc
 - as IOPP: proves a committed function is close to a low-degree polynomial (like [[FRI]] and [[STIR]])
 - as PCS: commits to a multilinear polynomial and proves evaluations at specific points
 
-this dual nature makes WHIR a direct building block for multilinear STARKs — no separate polynomial commitment layer needed.
+this dual nature makes WHIR a direct building block for multilinear starks — no separate polynomial commitment layer needed.
 
 ## performance
 
@@ -90,13 +90,13 @@ all three are by the same team: Arnon, Chiesa, Fenzi, Yogev. each generation kee
 
 ## use in cyber
 
-[[cyber]] uses WHIR as the polynomial commitment scheme inside a [[STARK|multilinear STARK]] (Whirlaway architecture: [[SuperSpartan]] IOP + WHIR PCS).
+[[cyber]] uses WHIR as the polynomial commitment scheme inside a [[stark|multilinear stark]] (Whirlaway architecture: [[SuperSpartan]] IOP + WHIR PCS).
 
 WHIR's dual nature is the reason this works. as a multilinear PCS, WHIR commits to the entire [[nox]] execution trace encoded as a single multilinear polynomial. the [[SuperSpartan]] IOP verifies AIR constraints via [[sumcheck]], reducing all constraint checks to one evaluation at one random point. WHIR opens the commitment at that point. one commitment, one opening, one proof.
 
 ```
 WHIR in cyber:
-  role:                    multilinear PCS for STARK proofs
+  role:                    multilinear PCS for stark proofs
   API:                     WHIR_commit / WHIR_open / WHIR_verify
   trace commitment:        entire nox execution trace → one multilinear polynomial
   constraint verification: SuperSpartan sumcheck → reduces to one WHIR evaluation
@@ -107,4 +107,4 @@ WHIR in cyber:
 
 sub-millisecond verification makes recursive proof composition practical: each recursive step (verify a proof inside a proof) runs the WHIR verifier as a [[nox]] program. at ~70,000 constraints per recursion level (with jets), deep recursion trees become feasible — O(1) on-chain verification for O(N) transactions.
 
-see [[FRI]] for the baseline protocol, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system and Whirlaway architecture, [[Goldilocks field]] for the arithmetic foundation
+see [[FRI]] for the baseline protocol, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[stark]] for the proof system and Whirlaway architecture, [[Goldilocks field]] for the arithmetic foundation

@@ -70,7 +70,7 @@ VALIDITY CONDITIONS
 
 PROOF OF VALID TRANSITION
 ─────────────────────────
-STARK proves:
+stark proves:
   1. All validity conditions hold
   2. New state correctly derived from old state + tx
   3. All indexes (by_neuron, by_particle) updated consistently

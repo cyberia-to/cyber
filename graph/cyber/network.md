@@ -40,7 +40,7 @@ what propagates how:
 └─────────────────────────────────────┘
 ```
 
-[[radio]] handles transport: QUIC connections, NAT hole-punching via [[radio/relay]], verified streaming via [[radio/bao]] (Hemera Merkle trees). [[cyber/communication]] handles privacy: onion routing, CSIDH key agreement, [[STARK]] proof of delivery. this page handles coordination: who connects to whom, how data flows, and who pays for what.
+[[radio]] handles transport: QUIC connections, NAT hole-punching via [[radio/relay]], verified streaming via [[radio/bao]] (Hemera Merkle trees). [[cyber/communication]] handles privacy: onion routing, CSIDH key agreement, [[stark]] proof of delivery. this page handles coordination: who connects to whom, how data flows, and who pays for what.
 
 ## peer discovery via cybergraph
 
@@ -92,9 +92,9 @@ header price = base_fee(relay) × header_size × 1/peer_latency
 
 a neighbor on the local network (mDNS-discovered) offers headers at near-zero cost. a peer across the planet charges more. the header market creates the same geographic hierarchy that [[location proof]] formalizes — without requiring location proof infrastructure to be operational first.
 
-### recursive STARK headers
+### recursive stark headers
 
-with recursive [[STARK]] composition, a new node does not need the full header chain. it needs one recursive proof (~100-200 KB) covering the entire chain from genesis, plus the latest header. the cost of syncing from genesis is the cost of purchasing and verifying one proof — seconds of compute, kilobytes of data.
+with recursive [[stark]] composition, a new node does not need the full header chain. it needs one recursive proof (~100-200 KB) covering the entire chain from genesis, plus the latest header. the cost of syncing from genesis is the cost of purchasing and verifying one proof — seconds of compute, kilobytes of data.
 
 this proof is itself a saleable artifact. a node that maintains the recursive chain proof can sell "instant sync" to new participants at a premium over raw header-by-header sync.
 
@@ -125,7 +125,7 @@ aggregator:
   1. verifies signature
   2. verifies neuron has sufficient focus
   3. includes in block
-  4. produces STARK proof of correct inclusion
+  4. produces stark proof of correct inclusion
   5. publishes block header (epidemic — 232 bytes)
   6. publishes erasure-coded block data to DA layer
         │
@@ -153,7 +153,7 @@ aggregators earn fees for inclusion (sender pays — the neuron creating the lin
 
 ## focus propagation: signals as π updates
 
-the network has no central node that computes the [[focus]] distribution π*. instead, π* emerges from [[cyber/signals]]. every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]] — proven by a single [[STARK]] proof.
+the network has no central node that computes the [[focus]] distribution π*. instead, π* emerges from [[cyber/signals]]. every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]] — proven by a single [[stark]] proof.
 
 ### signal structure
 
@@ -162,7 +162,7 @@ signal {
     neuron:     pubkey
     links:      [cyberlink]                one or more 7-tuple assertions
     pi_delta:   [(particle_id, Δπ)]        sparse focus update for the batch
-    proof:      STARK                       proof of correct local computation
+    proof:      stark                       proof of correct local computation
     timestamp:  u64
 }
 ```
@@ -178,7 +178,7 @@ neuron queries neighborhood π + edges (with proofs from any peer)
 creates cyberlinks, runs local tri-kernel step for the batch
     │
     ▼
-produces STARK proof: "this pi_delta follows from
+produces stark proof: "this pi_delta follows from
   applying my links to the graph at bbg_root_t"
     │
     ▼
@@ -343,7 +343,7 @@ the narrowcast model maps naturally onto the fractal [[consensus]] layers (see [
 - L0 (local): direct QUIC connections. aggregators receive cyberlinks from local neurons. massive bandwidth, no consensus overhead
 - L1 (neighborhood): aggregators within geographic/semantic clusters coordinate. local BFT among ~10-100 nodes
 - L2 (shard): cross-cluster aggregator reconciliation. shard-level state roots
-- L3 (global): header chain only. recursive STARK proofs. ~232 bytes per block. the 64 KB blockchain
+- L3 (global): header chain only. recursive stark proofs. ~232 bytes per block. the 64 KB blockchain
 
 the header market's geographic price differentiation — neighbors are cheaper — creates the same clustering that [[location proof]] formalizes. the network self-organizes into layers before anyone designs the layers.
 

@@ -22,6 +22,6 @@ a digital signature binds a message to a signer. anyone with the [[public key]] 
 
 Schnorr signatures enable native multi-signature aggregation: n signers produce one signature of the same size as a single signature. BLS signatures aggregate across different messages. both are foundations for scalable consensus.
 
-an alternative: replace signatures with [[STARK]] proofs of hash preimage knowledge — no curves, no pairings, post-quantum from the hash alone. see [[cyber/identity]] for this approach.
+an alternative: replace signatures with [[stark]] proofs of hash preimage knowledge — no curves, no pairings, post-quantum from the hash alone. see [[cyber/identity]] for this approach.
 
 see [[cryptography]], [[crypto/quantum]]

@@ -85,7 +85,7 @@ proof: $\mathcal{R}$ is a convex combination of stochastic positive operators. b
 
 T2 (conservation): for all $t \geq 0$ and all initial $\phi^{(0)} \in \Delta^{|P|-1}$: $\sum_{p} \phi^{(t)}_p = 1$.
 
-proof: $\mathcal{R}$ is a convex combination of stochastic operators; stochastic operators map the simplex to itself. QED. enforced in [[nox]] by STARK circuit constraints on every state transition — violation implies an invalid proof.
+proof: $\mathcal{R}$ is a convex combination of stochastic operators; stochastic operators map the simplex to itself. QED. enforced in [[nox]] by stark circuit constraints on every state transition — violation implies an invalid proof.
 
 T3 (geometric convergence): let $\lambda_2$ be the spectral gap of $\mathcal{R}$. then for any initial $\phi^{(0)}$:
 
@@ -191,7 +191,7 @@ the [[cybergraph]] is not a database sitting beside the protocol. it IS the prot
 |---|---|
 | identity | [[particles]] as public keys, graph as PKI — see [[cyber/identity]] |
 | key exchange | CSIDH curves as [[particles]], non-interactive — see [[dCTIDH]] |
-| authentication | [[STARK]] proofs of [[Hemera]] preimage knowledge — see [[cyber/proofs]] |
+| authentication | [[stark]] proofs of [[Hemera]] preimage knowledge — see [[cyber/proofs]] |
 | consensus | finalized subgraph IS the state — see [[foculus]] |
 | fork choice | $\pi$ from graph [[topology]], not voting — see [[foculus]] |
 | finality | $\pi_i > \tau$, threshold adapts to graph density — see [[foculus]] |

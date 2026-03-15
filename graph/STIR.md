@@ -71,4 +71,4 @@ evolution:
   WHIR (2025)  — rate + weight polynomials ← cyber uses this
 ```
 
-see [[WHIR]] for what [[cyber]] uses, [[FRI]] for the foundational protocol, [[polynomial commitment]] for the commitment scheme, [[STARK]] for the proof system
+see [[WHIR]] for what [[cyber]] uses, [[FRI]] for the foundational protocol, [[polynomial commitment]] for the commitment scheme, [[stark]] for the proof system

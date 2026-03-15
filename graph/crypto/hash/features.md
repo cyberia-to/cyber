@@ -60,7 +60,7 @@ The new frontier — properties that matter for [[zero knowledge proofs]], MPC, 
 | Arithmetization-friendly | Low multiplicative complexity when expressed as arithmetic circuit over 𝔽ₚ | Poseidon/2, Rescue, Griffin, Anemoi, Tip5, Monolith, MiMC |
 | R1CS-efficient | Few constraints in Rank-1 Constraint Systems (Groth16) | Poseidon, Anemoi (~2× better than Poseidon) |
 | Plonk-efficient | Few constraints in Plonkish arithmetization | Poseidon2, Anemoi (21-35% better than Poseidon) |
-| AIR/STARK-efficient | Low trace width and degree in Algebraic Intermediate Representation | Tip5, Monolith, RPO (Rescue Prime Optimized) |
+| AIR/stark-efficient | Low trace width and degree in Algebraic Intermediate Representation | Tip5, Monolith, RPO (Rescue Prime Optimized) |
 | Lookup-compatible | Uses lookup tables for nonlinearity (requires lookup arguments in prover) | Tip5, Monolith, Reinforced Concrete |
 | Field-native | Operates natively over a specific prime field | All AO hashes; field choice matters ([[Goldilocks field]], BN254, BLS12-381) |
 | Low multiplicative depth | Few sequential multiplications (critical for MPC and FHE) | Poseidon2, MiMC |
@@ -68,7 +68,7 @@ The new frontier — properties that matter for [[zero knowledge proofs]], MPC, 
 | FHE-friendly | Efficient under [[Goldilocks homomorphic encryption]] and other FHE schemes | LowMC, PRINCE, SIMON (low AND-depth) |
 | Recursive-proof friendly | Cheap enough to verify inside itself for [[proof-carrying data]] composition | Tip5 (designed specifically for this), Poseidon2 |
 
-See [[cyber/stark]] for STARK verification in the cyber protocol. [[incrementally verifiable computation]] relies on recursive-proof friendly hashes.
+See [[cyber/stark]] for stark verification in the cyber protocol. [[incrementally verifiable computation]] relies on recursive-proof friendly hashes.
 
 ### S-box Design Strategies (determines security/efficiency tradeoff)
 
@@ -98,7 +98,7 @@ See [[cyber/stark]] for STARK verification in the cyber protocol. [[incrementall
 | Self-certifying names | Hash IS the unforgeable name of content | [[ipfs]] CIDs, Blake3 content addresses |
 | Multihash/multicodec | Self-describing hash format (includes algorithm ID + length) | CIDv1 ecosystem, extensible |
 | Content integrity | Verify content matches its hash | Universal |
-| Content availability proofs | Prove you store content without revealing it | Algebraic hashes + STARK (Filecoin) |
+| Content availability proofs | Prove you store content without revealing it | Algebraic hashes + stark (Filecoin) |
 | Provable replication | Prove unique copy exists on specific storage | Filecoin PoRep (slow encoding via VDF-like construction) |
 
 In [[cyber]], every [[particle]] is content-addressed. See [[hash function selection]] for how the protocol chose its hash. [[data availability strategy]] covers availability in the cyber context.

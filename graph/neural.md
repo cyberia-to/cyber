@@ -32,7 +32,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 | evolution | versioned | drift | continuous via [[focus]] dynamics |
 | machine readable | yes | partially via NLP | natively |
 | human readable | requires training | natively | via [[cyb]] interface |
-| verification | proof systems | social [[consensus]] | [[STARK]] proofs |
+| verification | proof systems | social [[consensus]] | [[stark]] proofs |
 | substrate | strings | sound/text | [[cybergraph]] |
 
 ## patterns
@@ -79,7 +79,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 - defined by [[focus]] distribution: SemanticCore(k) = top k particles by π
 - current core shaped by [[bostrom]] [[bootloader]]
 - explore at [cyb.ai/particles](https://cyb.ai/particles)
-- properties: dynamic (evolves with attention), convergent (tri-kernel guarantees stability), stake-weighted (resistant to spam), verifiable (STARK proofs)
+- properties: dynamic (evolves with attention), convergent (tri-kernel guarantees stability), stake-weighted (resistant to spam), verifiable (stark proofs)
 - dynamics mirror natural language: neologism (new concepts enter), semantic drift (meaning shifts through topology change), semantic death (focus drops below threshold), semantic birth (bursts of link creation)
 
 ## linkchains

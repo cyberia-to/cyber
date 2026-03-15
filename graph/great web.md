@@ -17,9 +17,9 @@ persistence changes everything:
 - [[knowledge]] structures grow monotonically — new links add meaning, old links retain it
 - [[neurons]] build on each other's work across generations — a scientist in 2125 can extend a [[linkchain]] started in 2025
 - the [[semantic core]] becomes civilizational memory — the accumulated understanding of every agent that ever participated
-- [[STARK]] proofs make this verifiable forever — prove once, trust for eternity, no server required
+- [[stark]] proofs make this verifiable forever — prove once, trust for eternity, no server required
 
-the current web is read-write. the great web is read-write-own-verify-remember. every [[particle]] is owned by its hash. every [[cyberlink]] is signed by its [[neuron]]. every [[focus]] distribution is proven by the [[tri-kernel]]. every state transition is verified by [[STARK]] proofs. the web becomes a [[knowledge]] organism that grows, learns, and persists — an infrastructure worthy of a civilization reaching for the stars
+the current web is read-write. the great web is read-write-own-verify-remember. every [[particle]] is owned by its hash. every [[cyberlink]] is signed by its [[neuron]]. every [[focus]] distribution is proven by the [[tri-kernel]]. every state transition is verified by [[stark]] proofs. the web becomes a [[knowledge]] organism that grows, learns, and persists — an infrastructure worthy of a civilization reaching for the stars
 
 [[Tim Berners-Lee]] gave us the linked document web. the great web is the linked [[knowledge]] web — where documents become [[particles]], hyperlinks become authenticated [[cyberlinks]], and the static page gives way to a living graph that computes its own [[relevance]]
 

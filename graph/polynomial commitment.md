@@ -24,9 +24,9 @@ VERIFY:   WHIR_verify(C, z, v, proof) → accept/reject
 
 WHIR operates in two modes:
 - univariate: P(x) of degree ≤ d, used for [[EdgeSet]] membership proofs
-- multilinear: P(x₁, ..., x_k) with degree ≤ 1 per variable, used for [[STARK]] trace commitments
+- multilinear: P(x₁, ..., x_k) with degree ≤ 1 per variable, used for [[stark]] trace commitments
 
-in the multilinear mode, WHIR commits the entire [[nox]] execution trace as a single polynomial. the [[SuperSpartan]] IOP reduces all AIR constraint checks to one evaluation at one random point, which WHIR opens. see [[STARK]] for the full pipeline.
+in the multilinear mode, WHIR commits the entire [[nox]] execution trace as a single polynomial. the [[SuperSpartan]] IOP reduces all AIR constraint checks to one evaluation at one random point, which WHIR opens. see [[stark]] for the full pipeline.
 
 ## why polynomial commitments
 
@@ -77,4 +77,4 @@ EdgeSet for neuron N:
 
 [[cyber]] uses polynomial commitments everywhere rather than mixing hash-based structures with algebraic structures. one primitive means one security analysis, one implementation, one mental model. the same [[WHIR]]-based machinery that makes UTXO proofs cheap (~1,000 constraints) also handles graph completeness proofs.
 
-see [[WHIR]] for the low-degree testing protocol, [[STARK]] for the multilinear STARK pipeline, [[EdgeSet]] for edge membership proofs, [[NMT]] for structural completeness, [[BBG]] for the full graph architecture, [[LogUp]] for cross-index consistency
+see [[WHIR]] for the low-degree testing protocol, [[stark]] for the multilinear stark pipeline, [[EdgeSet]] for edge membership proofs, [[NMT]] for structural completeness, [[BBG]] for the full graph architecture, [[LogUp]] for cross-index consistency

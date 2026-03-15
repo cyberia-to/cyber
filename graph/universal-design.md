@@ -71,11 +71,11 @@ Each backend implements the abstraction layer for its target VM and may publish 
 
 | Target | Architecture | Field | Hash | Proof System | Priority |
 |--------|-------------|-------|------|-------------|:--------:|
-| Triton VM | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | Tip5 | STARK | Native |
-| Miden VM | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | RPO | STARK | 1 |
-| Cairo VM | Register (AP, FP, PC) | 252-bit prime | Poseidon/Pedersen | STARK | 2 |
-| SP1 / RISC Zero | Register (RISC-V rv32im) | Various | Various | STARK | 3 |
-| NockVM (Zorp) | Combinator reduction | Arbitrary-precision | TBD | STARK | 4 (exploratory) |
+| Triton VM | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | Tip5 | stark | Native |
+| Miden VM | Stack (16-element) | Goldilocks (2⁶⁴−2³²+1) | RPO | stark | 1 |
+| Cairo VM | Register (AP, FP, PC) | 252-bit prime | Poseidon/Pedersen | stark | 2 |
+| SP1 / RISC Zero | Register (RISC-V rv32im) | Various | Various | stark | 3 |
+| NockVM (Zorp) | Combinator reduction | Arbitrary-precision | TBD | stark | 4 (exploratory) |
 
 ### 2.2 Architectural Families
 
@@ -354,9 +354,9 @@ Every zkVM has a proving cost; the specific dimensions change but the computatio
 | AST traversal for cost computation | ✅ Same algorithm | — |
 | Per-instruction cost lookup | — | Different cost tables |
 | Table structure | — | Triton: 6 tables. Miden: chiplets. Cairo: steps |
-| Padded height (power-of-2) | STARK-based VMs | — |
+| Padded height (power-of-2) | stark-based VMs | — |
 | `--costs` / `--hotspots` CLI | ✅ Same framework | Numbers differ |
-| Boundary proximity warnings | STARK-based VMs only | — |
+| Boundary proximity warnings | stark-based VMs only | — |
 
 Backend interface:
 
@@ -436,8 +436,8 @@ Extension Intrinsics:
 
 | Function | TASM Instruction | Purpose |
 |----------|-----------------|---------|
-| `xx_dot_step(acc, ptr_a, ptr_b)` | `xx_dot_step` | Extension field dot product (STARK verifier inner loop) |
-| `xb_dot_step(acc, ptr_a, ptr_b)` | `xb_dot_step` | Mixed-field dot product (STARK verifier inner loop) |
+| `xx_dot_step(acc, ptr_a, ptr_b)` | `xx_dot_step` | Extension field dot product (stark verifier inner loop) |
+| `xb_dot_step(acc, ptr_a, ptr_b)` | `xb_dot_step` | Mixed-field dot product (stark verifier inner loop) |
 | `sponge_absorb_mem(ptr)` | `sponge_absorb_mem` | Absorb from RAM (combines sponge + memory read) |
 | `merkle_step_mem(ptr, idx, d)` | `merkle_step_mem` | Merkle step from RAM (reusable auth paths) |
 
@@ -447,7 +447,7 @@ Extension Standard Library:
 ext.triton.xfield       → XField type, arithmetic, dot products
 ext.triton.kernel        → Neptune kernel interface (authenticate_field, tree_height)
 ext.triton.utxo          → UTXO verification
-ext.triton.stark         → Recursive STARK verifier components
+ext.triton.stark         → Recursive stark verifier components
 ```
 
 Inline Assembly:
@@ -1072,7 +1072,7 @@ Deliverable: Same compiler, same output, cleaner architecture. `TritonBackend` i
 
 Duration: 6-8 weeks | Prerequisite: Phase 0
 
-Why Miden first: same field (Goldilocks), same architecture (stack, 16-element), same proof system family (STARK). Maximum code reuse, minimum risk.
+Why Miden first: same field (Goldilocks), same architecture (stack, 16-element), same proof system family (stark). Maximum code reuse, minimum risk.
 
 | Task | Effort |
 |------|--------|

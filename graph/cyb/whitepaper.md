@@ -260,7 +260,7 @@ each decision primitive naturally invokes specific computation and has a canonic
 | merge | [[Arc]] + [[Ask]] — resolve conflicts | vector |
 | delegate | [[Arc]] — find the right agent | vector |
 | reject | [[Seq]] — mark event as rejected | video |
-| confirm | [[Trident]] — generate STARK proof of commitment | formula |
+| confirm | [[Trident]] — generate stark proof of commitment | formula |
 
 the machine computes, the human decides. the computation grid produces options. the perception grid displays them. the decision grid collapses them to action. the action commits to new state, and the cycle continues
 
@@ -303,11 +303,11 @@ Bt  Rs  Trident  Arc  Seq  Ask  Wav  Ten
 | source | when proof needed | when proof absent |
 |--------|------------------|-------------------|
 | [[Bt]] | Binius FRI circuit | always proving |
-| [[Rs]] | TASM → STARK (word→field lift) | native binary (Nox) |
-| [[Trident]] | TASM → STARK (field native) | WASM/EVM (Layer 0) |
+| [[Rs]] | TASM → stark (word→field lift) | native binary (Nox) |
+| [[Trident]] | TASM → stark (field native) | WASM/EVM (Layer 0) |
 | [[Arc]] | decomposes into Trident + Bt | optimized graph engine |
-| [[Seq]] | temporal constraints → STARK | scheduler / runtime |
-| [[Ask]] | derivation trace → STARK | Datalog engine |
+| [[Seq]] | temporal constraints → stark | scheduler / runtime |
+| [[Ask]] | derivation trace → stark | Datalog engine |
 | [[Wav]] | decomposes into Trident | native DSP pipeline |
 | [[Ten]] | decomposes into Trident | native BLAS / GPU |
 
@@ -347,7 +347,7 @@ loop {
   options = compute(state)              // some universe produces alternatives
   display = render(options)             // canonical primitive shows them
   choice  = decide(human_input)         // decision primitive applied
-  proof   = commit(choice, state)       // irreversible, potentially STARK-proven
+  proof   = commit(choice, state)       // irreversible, potentially stark-proven
   state   = update(state, choice, proof)// new tree root
 }
 ```
@@ -376,7 +376,7 @@ the systems language. words and bytes — bitwise operations on $\mathbb{F}_p$. 
 
 ### 5.4 Trident — Field
 
-the proof language. arithmetic over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. every Trident program is a STARK-provable computation. verifiable AI inference, zero-knowledge proofs, cryptographic protocols. ~300 constraints per hash instead of 50,000–100,000
+the proof language. arithmetic over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. every Trident program is a stark-provable computation. verifiable AI inference, zero-knowledge proofs, cryptographic protocols. ~300 constraints per hash instead of 50,000–100,000
 
 ### 5.5 Arc — Topology
 
@@ -533,12 +533,12 @@ bounded liveness is structural — no deadlock possible because no cell holds a 
 
 the data transport layer. a fork of iroh with one critical change: every hash runs through Hemera (Poseidon2 over [[Goldilocks field]]) instead of Blake3
 
-| hash | speed | STARK constraints per hash |
+| hash | speed | stark constraints per hash |
 |------|-------|---------------------------|
 | Blake3 | ~2 GB/s | 50,000–100,000 |
 | Hemera | ~50–100 MB/s | ~300 |
 
-Hemera makes every particle address STARK-provable. this unlocks: storage proofs without downloading content, verified streaming via Hemera Merkle trees, private computation over encrypted knowledge graph, post-quantum security via STARKs
+Hemera makes every particle address stark-provable. this unlocks: storage proofs without downloading content, verified streaming via Hemera Merkle trees, private computation over encrypted knowledge graph, post-quantum security via starks
 
 radio strata:
 

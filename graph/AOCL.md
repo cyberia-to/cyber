@@ -47,7 +47,7 @@ the commitment hides all fields. an observer sees a hash being appended. nothing
 | membership proof | Merkle path from leaf to peak, O(log N) hashes |
 | append cost | O(1) amortized (merge adjacent equal-height peaks) |
 | modification | never — append-only by construction |
-| STARK constraints for membership | ~8,000 (32 levels × 250 constraints per [[Hemera]] hash) |
+| stark constraints for membership | ~8,000 (32 levels × 250 constraints per [[Hemera]] hash) |
 
 ## relationship to SWBF
 

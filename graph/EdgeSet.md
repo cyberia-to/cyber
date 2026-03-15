@@ -33,7 +33,7 @@ prove "edge e belongs to neuron N's EdgeSet":
 
   1. compute h = H_edge(e)
   2. WHIR evaluation proof: P_N(i) = h for some index i
-  3. verification: ~2,500 STARK constraints
+  3. verification: ~2,500 stark constraints
 
 vs. Merkle membership within EdgeSet:
   depth log(k) where k = edges per neuron

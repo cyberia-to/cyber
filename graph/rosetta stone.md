@@ -24,7 +24,7 @@ This object — this simple table — is simultaneously:
 1. A cryptographic S-box that provides security
 2. A neural network activation that provides intelligence
 3. An FHE bootstrap function that provides privacy
-4. A [[STARK]] lookup entry that provides verifiability
+4. A [[stark]] lookup entry that provides verifiability
 
 Four roles. One table. One field. This is not a metaphor. It is a mathematical identity — four systems reading the same data structure, each interpreting it through its own algebra, all producing compatible results because they share the same ground field.
 
@@ -55,7 +55,7 @@ A hash function over $\mathbb{F}_p$ needs a nonlinear component to resist algebr
 
 [[Poseidon2]] uses the power map $S(x) = x^7$ as its S-box. This is a low-degree polynomial, not a table lookup — but its security comes from the same principle: the S-box introduces sufficient algebraic degree to prevent equation-solving attacks. Each round applies $S$ to the state, then mixes with a linear layer (MDS matrix). After 22 rounds, the algebraic degree exceeds any feasible attack.
 
-[[Tip5]] (the alternative hash in [[Triton VM]]) takes the table approach directly: its S-box is $S(x) = x^{p-2}$ (the modular inverse), implemented as a lookup table. The lookup argument in the STARK proves that the prover actually evaluated the correct function — it checks that each $(x, y)$ pair in the execution trace appears in the precomputed table $T_{\text{inv}}$.
+[[Tip5]] (the alternative hash in [[Triton VM]]) takes the table approach directly: its S-box is $S(x) = x^{p-2}$ (the modular inverse), implemented as a lookup table. The lookup argument in the stark proves that the prover actually evaluated the correct function — it checks that each $(x, y)$ pair in the execution trace appears in the precomputed table $T_{\text{inv}}$.
 
 In both cases, the mechanism is: a nonlinear function $\mathbb{F}_p \to \mathbb{F}_p$ provides the security margin. Whether implemented as a power map or a table, the role is identical — inject nonlinearity that resists algebraic inversion.
 
@@ -65,13 +65,13 @@ What the table provides: Collision resistance. Preimage resistance. Pseudorandom
 
 A neural network layer computes $y = \sigma(Wx + b)$ where $W$ is a weight matrix, $b$ is a bias, and $\sigma$ is the activation function. The linear part ($Wx + b$) is matrix multiplication over $\mathbb{F}_p$ — native field arithmetic. But without the nonlinear activation $\sigma$, stacking layers is pointless: $W_2(W_1 x + b_1) + b_2 = W_2 W_1 x + W_2 b_1 + b_2$ is still linear. Depth without nonlinearity provides no expressiveness.
 
-In conventional ML, activations are float functions: $\text{ReLU}(x) = \max(0, x)$, $\text{GELU}(x) = x \cdot \Phi(x)$, $\text{sigmoid}(x) = 1/(1+e^{-x})$. None of these are polynomials over $\mathbb{F}_p$. To run neural networks in field arithmetic (for STARK-provable inference), we represent activations as lookup tables:
+In conventional ML, activations are float functions: $\text{ReLU}(x) = \max(0, x)$, $\text{GELU}(x) = x \cdot \Phi(x)$, $\text{sigmoid}(x) = 1/(1+e^{-x})$. None of these are polynomials over $\mathbb{F}_p$. To run neural networks in field arithmetic (for stark-provable inference), we represent activations as lookup tables:
 
 $$T_{\text{relu}}[i] = \begin{cases} i & \text{if } i \leq (p-1)/2 \\ 0 & \text{if } i > (p-1)/2 \end{cases}$$
 
 (using the convention that the upper half of $\mathbb{F}_p$ represents negative numbers in balanced representation)
 
-The STARK proves that the network's inference is correct by checking — via the same lookup argument used for the hash S-box — that every activation evaluation $(x, \sigma(x))$ appears in the precomputed table $T_\sigma$.
+The stark proves that the network's inference is correct by checking — via the same lookup argument used for the hash S-box — that every activation evaluation $(x, \sigma(x))$ appears in the precomputed table $T_\sigma$.
 
 What the table provides: Universal approximation. Classification. Pattern recognition. Intelligence.
 
@@ -91,9 +91,9 @@ When TFHE operates over the Goldilocks field ($q = p$), the polynomial ring is $
 
 What the table provides: Function evaluation on encrypted data. Noise refresh. Privacy-preserving computation.
 
-### Reading 4: STARK Lookup Argument
+### Reading 4: stark Lookup Argument
 
-A STARK proves that an execution trace satisfies algebraic constraints. Most constraints are polynomial — transition from row $i$ to row $i+1$ follows a degree-$d$ equation. But some operations (hash S-boxes, activations, comparisons) are not efficiently expressed as polynomials. For these, the STARK uses a lookup argument.
+A stark proves that an execution trace satisfies algebraic constraints. Most constraints are polynomial — transition from row $i$ to row $i+1$ follows a degree-$d$ equation. But some operations (hash S-boxes, activations, comparisons) are not efficiently expressed as polynomials. For these, the stark uses a lookup argument.
 
 The lookup argument works as follows: the prover commits to a table $T$ of valid $(x, y)$ pairs. For each operation in the trace that evaluates $y = f(x)$, the prover demonstrates that $(x, y) \in T$. The algebraic mechanism (logarithmic derivative / LogUp) reduces this to a grand-sum equation over $\mathbb{F}_p$:
 
@@ -113,10 +113,10 @@ Now place all four readings side by side:
 
 | Domain | Function $f$ | Encoding | Authentication | Purpose |
 |--------|-------------|----------|----------------|---------|
-| Crypto | $x^{p-2}$ (inverse) | S-box permutation | STARK lookup argument | Hash security |
-| Neural net | $\text{ReLU}(x)$ | Precomputed table | STARK lookup argument | NN expressiveness |
+| Crypto | $x^{p-2}$ (inverse) | S-box permutation | stark lookup argument | Hash security |
+| Neural net | $\text{ReLU}(x)$ | Precomputed table | stark lookup argument | NN expressiveness |
 | FHE | $\text{ReLU}(x)$ | Test polynomial coefficients in $R_p$ | Blind rotation | Encrypted evaluation |
-| STARK | any $f: \mathbb{F}_p \to \mathbb{F}_p$ | $(x, f(x))$ pairs | LogUp grand sum | Proof correctness |
+| stark | any $f: \mathbb{F}_p \to \mathbb{F}_p$ | $(x, f(x))$ pairs | LogUp grand sum | Proof correctness |
 
 When all four systems operate over $\mathbb{F}_p$, these are not four similar mechanisms — they are four views of the same data. The function table $T_f$ exists once. Each system reads it differently:
 
@@ -133,7 +133,7 @@ When all four systems operate over $\mathbb{F}_p$, these are not four similar me
               ┌────────────────┼────────────────┐
               │                │                │
      ┌────────┴────────┐ ┌────┴────┐ ┌─────────┴─────────┐
-     │  STARK reads:    │ │ NN reads│ │  FHE reads:        │
+     │  stark reads:    │ │ NN reads│ │  FHE reads:        │
      │  lookup table    │ │ activ-  │ │  test polynomial   │
      │  for LogUp proof │ │ ation   │ │  v(X) = Σ f(i)·X^i│
      │                  │ │ layer   │ │  for PBS            │
@@ -152,10 +152,10 @@ When all four systems operate over $\mathbb{F}_p$, these are not four similar me
 
 One table. Four purposes. Zero redundancy.
 
-A program that performs neural network inference on FHE-encrypted data with a STARK correctness proof uses the same ReLU table for:
+A program that performs neural network inference on FHE-encrypted data with a stark correctness proof uses the same ReLU table for:
 1. The activation function (NN layer)
 2. The test polynomial (FHE bootstrapping)
-3. The lookup entry (STARK authentication)
+3. The lookup entry (stark authentication)
 
 Three roles served by a single array of field elements.
 
@@ -169,19 +169,19 @@ The trilateral identity requires five conditions, all simultaneously:
 
 2. FHE ciphertext ring = $R_p = \mathbb{F}_p[X]/(X^N+1)$: The FHE modulus $q$ equals the field characteristic $p$. This requires $p-1$ to have large powers of 2 for [[NTT]] support. Goldilocks: $p - 1 = 2^{32}(2^{32}-1)$ — supports NTT up to size $2^{32}$.
 
-3. STARK proofs over $\mathbb{F}_p$: The proof system's native field is the same Goldilocks field. WHIR folding, polynomial commitment, constraint evaluation — all natively $\mathbb{F}_p$ arithmetic.
+3. stark proofs over $\mathbb{F}_p$: The proof system's native field is the same Goldilocks field. WHIR folding, polynomial commitment, constraint evaluation — all natively $\mathbb{F}_p$ arithmetic.
 
 4. Lookup argument over $\mathbb{F}_p$: The LogUp mechanism operates in the same field as the table entries, the FHE ciphertexts, and the neural network weights.
 
 5. Shared execution environment: A single language ([[trident]]) compiles programs that use all four systems, generating a unified execution trace over $\mathbb{F}_p$.
 
-If any of these conditions fails — if the FHE uses a different modulus, if the STARK uses a different field, if the neural network requires float conversion — the table identity breaks. You get four separate tables with four separate encodings, requiring cross-domain translation at every boundary.
+If any of these conditions fails — if the FHE uses a different modulus, if the stark uses a different field, if the neural network requires float conversion — the table identity breaks. You get four separate tables with four separate encodings, requiring cross-domain translation at every boundary.
 
 Conventional systems fail at condition 2. Standard TFHE uses power-of-two moduli ($q = 2^{32}$ or $q = 2^{64}$) which are not prime fields. Standard SNARKs use BN254 or BLS12-381, not Goldilocks. Standard neural networks use IEEE 754 float. Three different algebraic worlds. Three different tables. No unification possible.
 
 The Goldilocks field makes all five conditions true simultaneously. This is not coincidence — it is a consequence of choosing a field that is simultaneously:
 - Large enough for ML precision (64-bit)
-- FFT-friendly for FHE and STARK ($2^{32}$ roots of unity)
+- FFT-friendly for FHE and stark ($2^{32}$ roots of unity)
 - CPU-native for efficiency (fits in one register)
 - Prime for proper field structure (unlike $2^{64}$)
 
@@ -193,12 +193,12 @@ Why does this unification matter? Because in every domain, the lookup table is t
 
 | Domain | Linear part | Cost | Nonlinear part (table) | Cost | Ratio |
 |--------|------------|------|----------------------|------|-------|
-| STARK | Constraint evaluation | $O(n)$ | Lookup argument | $O(n \log n)$ | Lookup dominates |
+| stark | Constraint evaluation | $O(n)$ | Lookup argument | $O(n \log n)$ | Lookup dominates |
 | Neural net | Matrix multiply $Wx+b$ | $O(d^2)$ | Activation $\sigma(x)$ | $O(d)$ per layer | Matrix dominates in compute, but activation determines expressiveness |
 | FHE | Homomorphic add/sub | $O(n)$ | PBS (bootstrapping) | $O(n \cdot N \log N)$ | PBS dominates by 100-1000x |
 | Hash | MDS matrix multiply | $O(t^2)$ | S-box $x \mapsto x^7$ | $O(1)$ per element | S-box determines security |
 
-In every case, the table is either the computational bottleneck (FHE PBS, STARK lookup) or the functional bottleneck (NN activation determines expressiveness, S-box determines security). Optimizing the table optimizes everything.
+In every case, the table is either the computational bottleneck (FHE PBS, stark lookup) or the functional bottleneck (NN activation determines expressiveness, S-box determines security). Optimizing the table optimizes everything.
 
 This is why the [[GFP]] has a dedicated Lookup Engine as one of its four primitive units. The LUT hardware doesn't just serve one domain — it accelerates the critical path of all four domains simultaneously, because that critical path goes through the same mathematical object.
 
@@ -221,10 +221,10 @@ let activated = T_relu[pre_activation];                   // single table lookup
 // Cost: 1 lookup per neuron per layer
 ```
 
-As STARK lookup (`std.crypto.lookup.standard`):
+As stark lookup (`std.crypto.lookup.standard`):
 
 ```
-// During STARK proof generation
+// During stark proof generation
 // Prover claims: activated = relu(pre_activation)
 // Verifier checks: (pre_activation, activated) ∈ T_relu
 // Via LogUp: Σ 1/(α - (x_i + β·y_i)) = Σ m_j/(α - (a_j + β·b_j))
@@ -249,7 +249,7 @@ As hash component (if relu were used as S-box — illustrative):
 // Poseidon-like hash using relu as nonlinearity
 // (In practice, x^7 is used — but the mechanism is identical)
 state[i] = T_sbox[state[i]]  for each element in the state
-// The STARK proves this via the same lookup argument
+// The stark proves this via the same lookup argument
 ```
 
 Four uses. Same array of $(i, \text{relu}(i))$ pairs. Same field elements. Same hardware lookup unit.
@@ -265,11 +265,11 @@ The holy grail: prove that a neural network was correctly evaluated on encrypted
 Without the Rosetta Stone, this requires three separate mechanisms:
 - FHE evaluation (PBS with test polynomials in one ring)
 - NN activation tables (in float or a different field)
-- STARK proof (lookup argument in yet another field)
+- stark proof (lookup argument in yet another field)
 - Cross-domain bridges at each boundary (expensive, error-prone)
 
 With the Rosetta Stone:
-- FHE PBS, NN activation, and STARK lookup use the same table
+- FHE PBS, NN activation, and stark lookup use the same table
 - No cross-domain bridges
 - One proof covers everything
 - The lookup argument authenticates both the FHE bootstrapping function AND the neural network activation in a single pass
@@ -278,9 +278,9 @@ With the Rosetta Stone:
 
 A function designed for one domain automatically works in all others:
 
-- Design a new activation function for better ML accuracy → it automatically becomes an FHE-bootstrappable function and a STARK-provable operation.
-- Design a new cryptographic S-box for better hash security → it automatically becomes a STARK-efficient nonlinearity and a potential NN activation.
-- Optimize a test polynomial for faster FHE bootstrapping → the same optimization speeds up the STARK lookup and the NN evaluation.
+- Design a new activation function for better ML accuracy → it automatically becomes an FHE-bootstrappable function and a stark-provable operation.
+- Design a new cryptographic S-box for better hash security → it automatically becomes a stark-efficient nonlinearity and a potential NN activation.
+- Optimize a test polynomial for faster FHE bootstrapping → the same optimization speeds up the stark lookup and the NN evaluation.
 
 Research in any one domain propagates to all three. An advance in ML activation function design is simultaneously an advance in cryptographic circuit design and FHE efficiency. The Rosetta Stone turns four separate research fields into one.
 
@@ -295,7 +295,7 @@ Lookup Engine Hardware:
   LogUp accumulator (running sum) in hardware
   
   Mode 1: NN activation — direct table read
-  Mode 2: STARK authentication — table read + LogUp accumulate
+  Mode 2: stark authentication — table read + LogUp accumulate
   Mode 3: FHE PBS — table values feed NTT as polynomial coefficients
   Mode 4: Hash S-box — table read within Poseidon2 pipeline
   
@@ -313,7 +313,7 @@ The lookup table over $\mathbb{F}_p$ bears the same function in four encodings:
 
 | Encoding | Script | Who reads it |
 |----------|--------|-------------|
-| $(i, f(i))$ pairs | Hieroglyphic | STARK verifier (lookup argument) |
+| $(i, f(i))$ pairs | Hieroglyphic | stark verifier (lookup argument) |
 | $v(X) = \sum f(i) \cdot X^i$ | Demotic | FHE engine (blind rotation) |
 | Layer activation $\sigma$ | Greek | Neural network (forward pass) |
 | S-box permutation | Cuneiform | Hash function (round function) |

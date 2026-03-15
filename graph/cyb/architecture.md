@@ -156,7 +156,7 @@ Rs          → strict subset, bounded, looks like systems code
 Trident     → same restrictions, but the field is visible
 ```
 
-[[Trident]] is where the field is visible and the programmer thinks in constraints. division is exact (multiplicative inverse). every operation becomes a polynomial constraint in the STARK execution trace. Trident-only primitives: `divine()` (inject prover witness), `hash()` (Tip5, single constraint), `merkle_step()`, `seal` (hashed/private event emission).
+[[Trident]] is where the field is visible and the programmer thinks in constraints. division is exact (multiplicative inverse). every operation becomes a polynomial constraint in the stark execution trace. Trident-only primitives: `divine()` (inject prover witness), `hash()` (Tip5, single constraint), `merkle_step()`, `seal` (hashed/private event emission).
 
 Trident layer architecture:
 
@@ -219,7 +219,7 @@ reachable(X, Z) :- link(X, Y), reachable(Y, Z).
 ?- reachable(a, X), linked_by(d, X).
 ```
 
-Arc is what is connected (topology). Ask is what follows (entailment). together they form a complete knowledge system: structure + inference. the Datalog restriction ensures bounded inference, guaranteed termination, proof-compatible. because Ask is bounded, any derivation can be encoded as a [[Trident]] computation and proven with a STARK. zero-knowledge inference over a private knowledge graph.
+Arc is what is connected (topology). Ask is what follows (entailment). together they form a complete knowledge system: structure + inference. the Datalog restriction ensures bounded inference, guaranteed termination, proof-compatible. because Ask is bounded, any derivation can be encoded as a [[Trident]] computation and proven with a stark. zero-knowledge inference over a private knowledge graph.
 
 ### 9. Universe 7 — Wav (Continuum)
 
@@ -267,11 +267,11 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
 | Source  | When proof needed                | When proof absent           |
 |---------|----------------------------------|-----------------------------|
 | Bt      | Binius FRI circuit               | always proving              |
-| Rs      | TASM → STARK (word→field lift)   | native binary (Nox)         |
-| Trident | TASM → STARK (field native)      | WASM/EVM (Layer 0)          |
+| Rs      | TASM → stark (word→field lift)   | native binary (Nox)         |
+| Trident | TASM → stark (field native)      | WASM/EVM (Layer 0)          |
 | Arc     | decomposes into Trident + Bt     | optimized graph engine      |
-| Seq     | temporal constraints → STARK     | scheduler / runtime         |
-| Ask     | derivation trace → STARK         | Datalog engine              |
+| Seq     | temporal constraints → stark     | scheduler / runtime         |
+| Ask     | derivation trace → stark         | Datalog engine              |
 | Wav     | decomposes into Trident          | native DSP pipeline         |
 | Ten     | decomposes into Trident          | native BLAS / GPU           |
 
@@ -324,7 +324,7 @@ loop {
   options = compute(state)              // some universe produces alternatives
   display = render(options)             // canonical primitive shows them
   choice  = decide(human_input)         // decision primitive applied
-  proof   = commit(choice, state)       // irreversible, potentially STARK-proven
+  proof   = commit(choice, state)       // irreversible, potentially stark-proven
   state   = update(state, choice, proof)// new tree root
 }
 ```
@@ -351,7 +351,7 @@ fork is how structure grows. join is how consensus forms. the same skeleton wear
 | Reference   | structure| wire     | location | content  | adjacency| succession| entailment| amplitude| index    |
 | Free op     | Navigate | AND, XOR | Index    | Mul, Add | Link     | Order    | Unify     | Convolve | Matmul   |
 | Costly op   | —        | Carry add| Mod div  | Bitwise  | Spectral | Verify   | Fixpoint  | FFT      | Inverse  |
-| Proof       | Inherited| Binius   | STARK    | STARK    | Delegated| Delegated| Delegated | Delegated| Delegated|
+| Proof       | Inherited| Binius   | stark    | stark    | Delegated| Delegated| Delegated | Delegated| Delegated|
 | Syntax feel | IR       | Circuit  | Rust     | Custom   | Query    | Temporal | Datalog   | DSP      | NumPy    |
 | Renders as  | struct   | pixels   | text     | formula  | vector   | video    | table     | sound    | component|
 
@@ -598,12 +598,12 @@ the graph serves as infrastructure for itself:
 | fork choice | $\pi$ from graph topology |
 | finality | $\pi_i > \tau$, threshold adapts to graph density |
 | incentives | $\Delta\pi$ from convergence = reward signal |
-| proof archive | [[STARK]] proofs published as particles |
+| proof archive | [[stark]] proofs published as particles |
 | version control | patches = [[cyberlinks]], repos = subgraphs |
 | file system | `~neuron/path` resolves through cyberlinks |
 | data availability | [[NMT]] per row, erasure-coded, namespace-aware sampling |
 
-[[radio]] is the transport layer — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. 20× cheaper in [[STARK]] proofs, one hash function end to end. content shared via verified [[Hemera]] Merkle trees. the [[brain]] is the graph file manager — discovery, linking, querying through [[CozoDB]] and [[datalog]].
+[[radio]] is the transport layer — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. 20× cheaper in [[stark]] proofs, one hash function end to end. content shared via verified [[Hemera]] Merkle trees. the [[brain]] is the graph file manager — discovery, linking, querying through [[CozoDB]] and [[datalog]].
 
 querying storage and querying knowledge are the same operation: graph traversal. the BBG is the single source of truth.
 
@@ -632,7 +632,7 @@ the signer is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), plug
 
 ## Part V: Radio — Transport, Messaging, Sync, Storage
 
-[[radio]] is the connectivity layer of [[cyb]] — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. one hash function, one address space, zero self-describing overhead. 20× cheaper in [[STARK]] proofs than Blake3, at the cost of ~3× lower raw throughput. the tradeoff is correct: [[particle]] addresses are verified far more often than they are created.
+[[radio]] is the connectivity layer of [[cyb]] — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. one hash function, one address space, zero self-describing overhead. 20× cheaper in [[stark]] proofs than Blake3, at the cost of ~3× lower raw throughput. the tradeoff is correct: [[particle]] addresses are verified far more often than they are created.
 
 ### 26. Endpoint and Physical Transport
 
@@ -640,7 +640,7 @@ the [[radio/endpoint]] is the entry point for all networking. it wraps a QUIC so
 
 three transport modes over QUIC: bidirectional streams (request-response), unidirectional streams (one-way data), datagrams (low-latency fire-and-forget). all traffic encrypted end-to-end with keys derived through [[Hemera]].
 
-[[radio/hole-punching]] establishes direct P2P paths through NAT using STUN-over-QUIC for address discovery and ICE-over-QUIC for candidate exchange. when direct connection fails, [[radio/relay]] provides encrypted fallback — relays forward traffic without decoding it. relays earn [[focus]] for proven delivery via [[STARK]] proof chains.
+[[radio/hole-punching]] establishes direct P2P paths through NAT using STUN-over-QUIC for address discovery and ICE-over-QUIC for candidate exchange. when direct connection fails, [[radio/relay]] provides encrypted fallback — relays forward traffic without decoding it. relays earn [[focus]] for proven delivery via [[stark]] proof chains.
 
 ### 27. Blob Transfer and Verified Streaming
 
@@ -674,7 +674,7 @@ message format: header (ephemeral curve point for forward secrecy, sequence numb
 
 onion routing: sender wraps the message in layers of encryption, one per relay hop. each relay peels one layer, learns only the next hop, forwards the inner blob. no relay sees the full route or the plaintext.
 
-proof of delivery: each hop produces a [[STARK]] proof — "I received a valid blob, peeled my layer correctly, forwarded to the next address." proofs chain recursively into a single ~100-200 KB proof covering the entire route, regardless of hop count. the sender publishes π_chain as a [[particle]]. anyone can verify delivery happened. no one can read the message or learn the route.
+proof of delivery: each hop produces a [[stark]] proof — "I received a valid blob, peeled my layer correctly, forwarded to the next address." proofs chain recursively into a single ~100-200 KB proof covering the entire route, regardless of hop count. the sender publishes π_chain as a [[particle]]. anyone can verify delivery happened. no one can read the message or learn the route.
 
 ```
 PUBLIC                              │ HIDDEN
@@ -691,7 +691,7 @@ relays earn [[focus]] for proven delivery. no proof, no payment. this creates a 
 |----------|--------|-----|-------|
 | E2E encryption | yes | yes | yes (CSIDH + AES-256-GCM) |
 | metadata privacy | partial | yes | yes (onion routing) |
-| delivery proof | trust-based | no | yes ([[STARK]] chain) |
+| delivery proof | trust-based | no | yes ([[stark]] chain) |
 | post-quantum | partial | no | yes (CSIDH + Hemera) |
 | non-interactive key exchange | no (prekeys) | no (circuit) | yes (CSIDH from graph) |
 | relay incentive | none | volunteer | [[focus]] for proven delivery |
@@ -752,7 +752,7 @@ stake → will regeneration → bandwidth capacity → cyberlink creation → kn
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
-│  cyber/communication  │ onion routing, CSIDH, STARK proof chains │
+│  cyber/communication  │ onion routing, CSIDH, stark proof chains │
 ├───────────────────────┼──────────────────────────────────────────┤
 │  radio/willow         │ confidential sync, Meadowcap access      │
 │  radio/docs           │ collaborative replicas, set reconciliation│

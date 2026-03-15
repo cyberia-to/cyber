@@ -57,7 +57,7 @@ CHALLENGE-RESPONSE PROTOCOL:
      c) response arrived within time bound
 
   cost: O(log n) hashes per challenge (n = chunks in particle)
-  STARK constraints: ~5,000 per challenge
+  stark constraints: ~5,000 per challenge
 ```
 
 periodic challenges prevent lazy storage — a node that deletes content after initial proof will fail future challenges. challenge frequency is tunable per particle based on criticality.
@@ -82,7 +82,7 @@ SIZE COMMITMENT:
        c) random chunk challenges confirm tree structure matches commitment
        d) last chunk padding consistent with claimed_size mod 4096
 
-  cost: ~2,000 STARK constraints (tree structure check + padding verification)
+  cost: ~2,000 stark constraints (tree structure check + padding verification)
 ```
 
 size proofs matter for three reasons:

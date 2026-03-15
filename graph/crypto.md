@@ -8,11 +8,11 @@ crystal-domain: crypto
 
 the domain of trust through mathematics. crypto is the phenomenon of replacing human trust with computational guarantees: [[cryptographic proofs]] verify claims, [[tokens]] encode incentives, [[consensus]] algorithms agree on state without central authority. not just [[cryptography]] (the math of secrets) — crypto is the full stack from hash functions to token economies
 
-for [[cyber]], crypto is the foundation. every [[cyberlink]] is signed by a [[private key]]. every [[particle]] is content-addressed by a [[hash]]. [[STARK]] proofs compress computation into verifiable certificates. [[$CYB]] and [[$BOOT]] are the economic primitives that align [[neurons]] with the graph's health. without crypto, the protocol is just a database; with crypto, it is a self-sovereign, censorship-resistant knowledge system
+for [[cyber]], crypto is the foundation. every [[cyberlink]] is signed by a [[private key]]. every [[particle]] is content-addressed by a [[hash]]. [[stark]] proofs compress computation into verifiable certificates. [[$CYB]] and [[$BOOT]] are the economic primitives that align [[neurons]] with the graph's health. without crypto, the protocol is just a database; with crypto, it is a self-sovereign, censorship-resistant knowledge system
 
 ## scope
 
-cryptography — [[crypto/graphy]], [[crypto/hashing]], [[crypto/encryption]], [[crypto/signatures]], [[crypto/zero-knowledge]], [[crypto/commitments]], [[crypto/key-exchange]], [[crypto/data-structures]], [[crypto/quantum]]. the mathematical primitives. [[hash function selection]], [[polynomial commitment]], [[FRI]], [[WHIR]], [[LogUp]], [[STARK]], [[sumcheck]] — the building blocks of provable computation
+cryptography — [[crypto/graphy]], [[crypto/hashing]], [[crypto/encryption]], [[crypto/signatures]], [[crypto/zero-knowledge]], [[crypto/commitments]], [[crypto/key-exchange]], [[crypto/data-structures]], [[crypto/quantum]]. the mathematical primitives. [[hash function selection]], [[polynomial commitment]], [[FRI]], [[WHIR]], [[LogUp]], [[stark]], [[sumcheck]] — the building blocks of provable computation
 
 tokens — [[$CYB]], [[$BOOT]], [[$H]], [[$A]], [[$V]], [[token]], [[tokens]], [[token engineering]], [[coin]], [[$PUSSY]]. digital assets that carry rights and incentives. token design is mechanism design applied to digital systems
 

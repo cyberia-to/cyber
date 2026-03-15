@@ -66,8 +66,8 @@ the ZK proof establishes the connection privately
 | active window size | 2²⁰ bits (128 KB) |
 | false positive rate | tunable via number of hash functions and window size |
 | accumulator growth | O(log N) — inactive chunks compact into [[MMR]] |
-| STARK constraints for bit verification | ~3,000 per input |
-| STARK constraints for index derivation | ~500 per input |
+| stark constraints for bit verification | ~3,000 per input |
+| stark constraints for index derivation | ~500 per input |
 
 ## window sliding
 

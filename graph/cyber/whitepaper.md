@@ -32,7 +32,7 @@ Incompleteness. Goedel (1931) proved that any formal system powerful enough to d
 
 ### 1.3 The Protocol
 
-cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[STARK]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
+cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[stark]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
 
 The protocol rests on five primitives:
 
@@ -143,7 +143,7 @@ $H(\text{Atom}\ a) = \text{Hemera}(0\text{x}00 \| \text{type\_tag}(a) \| \text{e
 
 $H(\text{Cell}(l, r)) = \text{Hemera}(0\text{x}01 \| H(l) \| H(r))$
 
-This extends content addressing from flat data to structured expressions. A function, a proof, a complex data structure — each has a unique hash determined entirely by its contents, not by where it is stored or who created it. [[Hemera]] is field-native: its output is [[Goldilocks field]] elements, directly usable in [[STARK]] proofs without conversion.
+This extends content addressing from flat data to structured expressions. A function, a proof, a complex data structure — each has a unique hash determined entirely by its contents, not by where it is stored or who created it. [[Hemera]] is field-native: its output is [[Goldilocks field]] elements, directly usable in [[stark]] proofs without conversion.
 
 ### 3.3 The Namespace Structure
 
@@ -194,7 +194,7 @@ The seed — five bytes that happen to spell "cyber" in ASCII — is specified a
 
 [[Hemera]] has exactly one entry point: `hash(bytes) → [GoldilocksField; 8]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[particle]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 64 raw bytes — no header, no escape hatch.
 
-This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[STARK]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~1,200 [[STARK]] constraints per permutation, versus ~25,000 for SHA-256.
+This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[stark]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~1,200 [[stark]] constraints per permutation, versus ~25,000 for SHA-256.
 
 ### 4.5 No Algorithm Agility
 
@@ -422,13 +422,13 @@ The answer: every [[neuron]], locally, as part of creating [[cyber/signals]]. A 
 
 $$\text{signal} = (\text{neuron}, \; \vec\ell, \; \pi_\Delta, \; \sigma, \; t)$$
 
-where $\vec\ell$ is one or more [[cyberlinks]] (each a 7-tuple $(\nu, p, q, \tau, a, v, t)$), $\pi_\Delta = [(\text{particle}_k, \Delta\pi_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood, $\sigma$ is a [[STARK]] proof of correctness, and $t$ is the block height. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact. A single proof covers the entire batch of links.
+where $\vec\ell$ is one or more [[cyberlinks]] (each a 7-tuple $(\nu, p, q, \tau, a, v, t)$), $\pi_\Delta = [(\text{particle}_k, \Delta\pi_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood, $\sigma$ is a [[stark]] proof of correctness, and $t$ is the block height. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact. A single proof covers the entire batch of links.
 
-The local tri-kernel step is a [[nox]] program. The neuron produces the [[STARK]] proof that $\pi_\Delta$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
+The local tri-kernel step is a [[nox]] program. The neuron produces the [[stark]] proof that $\pi_\Delta$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
 
 The network converges to $\pi^*$ through [[cyber/signal]] propagation:
 
-1. [[Neuron]] creates [[cyber/signal]] with [[cyberlinks]], $\pi_\Delta$, and STARK proof
+1. [[Neuron]] creates [[cyber/signal]] with [[cyberlinks]], $\pi_\Delta$, and stark proof
 2. Receiving nodes apply $\pi_\Delta$ to their local $\pi$ view
 3. Their own future [[cyber/signals]] carry updated $\pi_\Delta$ incorporating the effect
 4. $\pi^*$ emerges from convergence of all local updates
@@ -437,7 +437,7 @@ This is gossip-based distributed belief propagation. Each [[cyber/signal]] is a 
 
 Conflicting updates (two [[neurons]] affecting overlapping neighborhoods in the same epoch) resolve through the contraction theorem (§5.6): the [[tri-kernel]] is confluent — any application order reaches the same $\pi^*$. The contraction coefficient $\kappa < 1$ bounds the interaction between overlapping updates. For non-overlapping neighborhoods (the common case at scale), updates compose exactly.
 
-The entire system runs on [[Goldilocks field]] arithmetic. The local tri-kernel step, the STARK proof, the verification — all are field operations end to end. There is no gap between "compute $\pi$" and "prove $\pi$ was computed correctly."
+The entire system runs on [[Goldilocks field]] arithmetic. The local tri-kernel step, the stark proof, the verification — all are field operations end to end. There is no gap between "compute $\pi$" and "prove $\pi$ was computed correctly."
 
 See [[cyber/network]] for the narrowcast propagation model. See §14.2 for how $\pi_\Delta$ enables self-minting rewards.
 
@@ -451,7 +451,7 @@ $$p = 2^{64} - 2^{32} + 1 = 18446744069414584321$$
 
 Efficient reduction: $a \bmod p = a_{\text{lo}} - a_{\text{hi}} \times (2^{32} - 1) + \text{correction}$. A field multiplication is a single CPU instruction. The primitive root is 7. The $2^{32}$-th root of unity exists, enabling NTT-based polynomial multiplication for proofs.
 
-Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=64$). State: 16 field elements. Rate: 8 elements. Cost: ~1,200 STARK constraints per permutation. See §4.
+Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=64$). State: 16 field elements. Rate: 8 elements. Cost: ~1,200 stark constraints per permutation. See §4.
 
 ### 7.2 Value Tower
 
@@ -467,7 +467,7 @@ Coercion rules enforce type safety. Bitwise operations on hash produce errors. A
 
 ### 7.3 Three-Layer Instruction Set
 
-[[nox]] has a three-layer architecture: sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), and five jets for efficient recursive [[STARK]] verification (Layer 3).
+[[nox]] has a three-layer architecture: sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), and five jets for efficient recursive [[stark]] verification (Layer 3).
 
 Layer 1 — sixteen deterministic patterns. The core:
 
@@ -483,11 +483,11 @@ Each pattern has a unique tag. No two overlap. Left-hand sides are linear. By Hu
 
 Layer 2 — one non-deterministic instruction: `hint`. The prover injects a witness value from outside the VM; Layer 1 constraints verify it. This is what makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it. `hint` breaks [[confluence]] intentionally: multiple valid witnesses may satisfy the same constraints. Soundness is preserved. [[Trident]]'s `divine()` compiles to [[nox]]'s `hint`. In quantum compilation, `hint` maps to a quantum oracle query.
 
-Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[STARK]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
+Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[stark]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
 
 ### 7.4 Cost Model
 
-| Layer | Pattern | Execution cost | STARK constraints |
+| Layer | Pattern | Execution cost | stark constraints |
 |-------|---------|---------------|-------------------|
 | 1 | axis | 1 + depth | ~depth |
 | 1 | quote | 1 | 1 |
@@ -512,7 +512,7 @@ Layer 1 cost depends only on syntactic structure, never on runtime values. Layer
 
 Layer 1 confluence (Huet-Levy 1980): the sixteen patterns form an orthogonal rewrite system. Any evaluation order yields the same result. This enables automatic parallelism without locks or synchronization.
 
-Layer 2 breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `hint`; it checks constraints via the [[STARK]] algebraic trace.
+Layer 2 breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `hint`; it checks constraints via the [[stark]] algebraic trace.
 
 Layer 3 preserves confluence — jets are observationally equivalent to their Layer 1 expansions.
 
@@ -524,7 +524,7 @@ Global memoization: key $(H(\text{subject}), H(\text{formula}))$, value $H(\text
 
 [[nox]] defines the execution model — a three-layer instruction set over field elements. Writing directly in [[nox]] patterns is like writing directly in assembly. A systems-level language is needed that compiles to [[nox]] while preserving provability, bounded execution, and field-native arithmetic. [[Trident]] is that language.
 
-Provable VMs are arithmetic machines, not byte-addressable CPUs. The machine word is a field element, not a byte. Trident's primitive types — `Field`, `Digest`, `XField` — map directly to the [[Goldilocks field]] value tower. Every variable, every operation, every function compiles to arithmetic over $\mathbb{F}_p$. Programs produce [[STARK]] proofs.
+Provable VMs are arithmetic machines, not byte-addressable CPUs. The machine word is a field element, not a byte. Trident's primitive types — `Field`, `Digest`, `XField` — map directly to the [[Goldilocks field]] value tower. Every variable, every operation, every function compiles to arithmetic over $\mathbb{F}_p$. Programs produce [[stark]] proofs.
 
 | Operation | Trident on [[Triton VM]] | Rust on SP1 | Rust on RISC Zero |
 |-----------|:---:|:---:|:---:|
@@ -562,7 +562,7 @@ A single lookup table over the [[Goldilocks field]] simultaneously functions as 
 | Cryptographic S-box | Hash nonlinearity (security) |
 | Neural activation | Network expressiveness (intelligence) |
 | FHE bootstrap | Encrypted evaluation (privacy) |
-| [[STARK]] lookup | Proof authentication (verifiability) |
+| [[stark]] lookup | Proof authentication (verifiability) |
 
 One table. One field. Four purposes. The [[hash]] function's security properties (resistance to algebraic attacks via maximal-degree polynomials) translate to desirable properties for neural network activation functions (high expressiveness in the field). See [[rosetta stone]] for the full treatment.
 
@@ -580,7 +580,7 @@ Three technological revolutions converge on the same algebraic primitive — ari
 
 Every [[trident]] function has a unique identity derived from its normalized AST. Names are metadata. The [[hash]] is the truth. Rename a function — the hash stays the same. Publish independently from the other side of the planet — same code, same hash.
 
-The compiler self-hosts: [[trident]] source compiles [[trident]] source, and the execution produces a [[STARK]] proof that compilation was faithful. Three producers compete: compiler output, expert hand-written assembly, and a [[neural]] model learning to emit better assembly than both.
+The compiler self-hosts: [[trident]] source compiles [[trident]] source, and the execution produces a [[stark]] proof that compilation was faithful. Three producers compete: compiler output, expert hand-written assembly, and a [[neural]] model learning to emit better assembly than both.
 
 ### 8.6 Standard Library
 
@@ -588,11 +588,11 @@ Implemented: `std.field` · `std.crypto` · `std.math` · `std.data` · `std.io`
 
 In development: `std.nn` (field-native neural networks) · `std.private` (ZK + FHE + MPC) · `std.quantum` (gates, error correction)
 
-`std.nn` provides linear layers, convolutions, attention, and lookup-table activations (ReLU, GELU, SiLU) — all operating natively in $\mathbb{F}_p$ with zero quantization overhead. Models trained in standard ML frameworks can be imported via ONNX bridge, proven with [[STARK]] on [[Triton VM]], and exported back.
+`std.nn` provides linear layers, convolutions, attention, and lookup-table activations (ReLU, GELU, SiLU) — all operating natively in $\mathbb{F}_p$ with zero quantization overhead. Models trained in standard ML frameworks can be imported via ONNX bridge, proven with [[stark]] on [[Triton VM]], and exported back.
 
 ### 8.7 Implementation Path
 
-[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[STARK]] prover, the privacy circuits, the [[tri-kernel]] probability engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[STARK]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
+[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[stark]] prover, the privacy circuits, the [[tri-kernel]] probability engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[stark]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
 
 ## 9. State and Proofs
 
@@ -614,7 +614,7 @@ Graph root:
 
 $$\text{BBG\_root} = H(\text{by\_neuron.commit} \| \text{by\_particle.commit} \| \text{focus.commit} \| \text{balance.commit} \| \text{commitment\_poly.commit} \| \text{nullifier\_set.commit})$$
 
-Index consistency invariant: every edge appears in exactly the right index positions (3 for distinct endpoints, 2 for self-links), enforced by STARK on every state transition.
+Index consistency invariant: every edge appears in exactly the right index positions (3 for distinct endpoints, 2 for self-links), enforced by stark on every state transition.
 
 ### 9.2 State Transitions
 
@@ -627,11 +627,11 @@ The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. F
 
 Validity conditions: authorization (signature or ZK proof), sufficient balance, sufficient [[focus]], conservation ($\sum \text{focus}' = 1$, $\sum \text{balance}' = B_{\text{total}}$), index consistency, content availability, no double-spend.
 
-### 9.3 STARK Verification
+### 9.3 stark Verification
 
-STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
+starks (Scalable Transparent Arguments of Knowledge) provide the proof system. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
 
-| Property | SNARK | STARK |
+| Property | SNARK | stark |
 |----------|-------|-------|
 | Trusted setup | Required | Not required |
 | Quantum resistant | No | Yes |
@@ -639,9 +639,9 @@ STARKs (Scalable Transparent Arguments of Knowledge) provide the proof system. T
 | Security basis | Discrete log | Hash only |
 | Field compatible | Specific | Any (Goldilocks) |
 
-Self-verification property: the STARK verifier is expressible as a [[nox]] program. STARK verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
+Self-verification property: the stark verifier is expressible as a [[nox]] program. stark verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
 
-This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `hint` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[STARK]] constrains without the verifier knowing them — this is how privacy and provability coexist.
+This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `hint` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[stark]] constrains without the verifier knowing them — this is how privacy and provability coexist.
 
 The system closes on itself. No trusted external verifier remains.
 
@@ -683,7 +683,7 @@ The nullifier cannot be derived from the commitment (needs secret), cannot revea
 
 The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~9,600 for Merkle — a 10× improvement, because field operations cost 1 constraint each while hash operations cost ~300.
 
-Total circuit: ~10,000 constraints. With STARK optimizations: ~7,000 gates. Proof generation: ~0.3-0.8 seconds. Proof size: ~50-80 KB. Verification: ~1-3 ms.
+Total circuit: ~10,000 constraints. With stark optimizations: ~7,000 gates. Proof generation: ~0.3-0.8 seconds. Proof size: ~50-80 KB. Verification: ~1-3 ms.
 
 The circuit enforces: input commitment correctness, polynomial inclusion, ownership verification, nullifier derivation, output commitment correctness, conservation ($\sum \text{inputs} = \sum \text{outputs} + \text{fee}$), delta consistency, and uniqueness.
 
@@ -742,7 +742,7 @@ Formal [[languages]] achieve precision through rigid syntax but cannot scale to 
 | Ambiguity | Impossible | Context-dependent | Structural via [[tri-kernel]] |
 | Authority | Central designer | Speech community | Collective [[neurons]] |
 | Evolution | Versioned | Drift | Continuous via [[focus]] dynamics |
-| Verification | Proof systems | Social [[consensus]] | [[STARK]] proofs |
+| Verification | Proof systems | Social [[consensus]] | [[stark]] proofs |
 | Substrate | Strings | Sound/text | [[Cybergraph]] |
 
 ### 12.2 Primitives
@@ -763,7 +763,7 @@ The dynamic vocabulary of the network — top [[particles]] by [[cyberank]]:
 
 $\text{SemanticCore}(k) = \text{top}\ k\ \text{particles by}\ \pi$
 
-Dynamic (evolves with attention), convergent ([[tri-kernel]] guarantees stability), stake-weighted (resistant to spam), verifiable (STARK proofs). The dynamics mirror natural language: neologism (new concepts enter), semantic drift (meaning shifts through topology change), semantic death ([[focus]] drops below threshold), semantic birth (bursts of link creation).
+Dynamic (evolves with attention), convergent ([[tri-kernel]] guarantees stability), stake-weighted (resistant to spam), verifiable (stark proofs). The dynamics mirror natural language: neologism (new concepts enter), semantic drift (meaning shifts through topology change), semantic death ([[focus]] drops below threshold), semantic birth (bursts of link creation).
 
 ### 12.4 Formal Properties
 
@@ -800,7 +800,7 @@ $$G = E(t) + F \cdot (1 - \beta)$$
 
 where $E(t)$ is stepped emission following a halving schedule and $F \cdot (1 - \beta)$ is the fee share redistributed to participants. Net new supply: $\text{net} = E(t) - F \cdot \beta$. When fees exceed emission, the network is net deflationary. The system transitions from emission-funded (early, bootstrapping hardware and participation) to fee-funded (mature, pure utility) without parameter governance — the ratio shifts continuously as fee volume grows.
 
-The allocation curve splits rewards between stakers (PoS share $R_{\text{PoS}} = G \cdot S^\alpha$) and provers (PoUW share proportional to valid STARK proofs submitted). Parameters $\alpha$ and $\beta$ self-adjust via PID control — no governance votes needed. The [[parametrization]] agent (§23.3) can adjust both within metabolic safety bounds.
+The allocation curve splits rewards between stakers (PoS share $R_{\text{PoS}} = G \cdot S^\alpha$) and provers (PoUW share proportional to valid stark proofs submitted). Parameters $\alpha$ and $\beta$ self-adjust via PID control — no governance votes needed. The [[parametrization]] agent (§23.3) can adjust both within metabolic safety bounds.
 
 ## 14. Knowledge Economy
 
@@ -846,9 +846,9 @@ new [[$CYB]] is minted only when $\Delta\pi > 0$. the protocol's inflation is li
 
 rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
 
-every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for the batch of [[cyberlinks]] it contains (§6.9). this $\pi_\Delta$ is proven correct by a [[STARK]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
+every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for the batch of [[cyberlinks]] it contains (§6.9). this $\pi_\Delta$ is proven correct by a [[stark]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
 
-1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[STARK]] proof
+1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[stark]] proof
 2. the proof demonstrates: "applying my links to the graph at $\text{bbg\_root}_t$ shifts $\pi$ by $\pi_\Delta$ in my neighborhood"
 3. any verifier checks the proof against the header — $O(\log n)$, no recomputation
 4. if valid and $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the proven shift
@@ -857,7 +857,7 @@ no aggregator decides the reward. no central entity computes the global reward d
 
 this works because the [[locality]] theorem (§2.4) guarantees that a neuron's effect is contained within $O(\log(1/\varepsilon))$ hops. the local $\Delta\pi$ IS the global $\Delta\pi$ up to $\varepsilon$. the neuron needs only their neighborhood's state — queryable from any peer with proofs against the header — to compute and prove their contribution.
 
-a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\pi$ and edges, create [[cyberlinks]], compute local $\Delta\pi$, produce a [[STARK]] proof, bundle into a [[cyber/signal]], mint [[$CYB]]. no server. no aggregator. no permission.
+a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\pi$ and edges, create [[cyberlinks]], compute local $\Delta\pi$, produce a [[stark]] proof, bundle into a [[cyber/signal]], mint [[$CYB]]. no server. no aggregator. no permission.
 
 ### 14.3 Attribution and Conservation
 
@@ -919,9 +919,9 @@ negative scores indicate noise — the [[neuron]] added distortion rather than s
 
 the [[knowledge]] economy requires one hardware insight: the optimal mining hardware and the optimal proving hardware are the same chip.
 
-every useful operation in [[nox]] — block proving, [[focus]] computation, private transactions, neural inference — reduces to four primitives over the [[Goldilocks field]]: field multiply-accumulate (fma, ~40% of cycles), NTT butterfly (ntt, ~35%), Poseidon2 permutation (p2r, ~15%), and table lookup (lut, ~10%). the Proof of Useful Work puzzle requires producing a STARK proof of a benchmark circuit that exercises all four primitives in exactly these ratios.
+every useful operation in [[nox]] — block proving, [[focus]] computation, private transactions, neural inference — reduces to four primitives over the [[Goldilocks field]]: field multiply-accumulate (fma, ~40% of cycles), NTT butterfly (ntt, ~35%), Poseidon2 permutation (p2r, ~15%), and table lookup (lut, ~10%). the Proof of Useful Work puzzle requires producing a stark proof of a benchmark circuit that exercises all four primitives in exactly these ratios.
 
-the PoUW-Utility Isomorphism: let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing puzzle solution time and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing STARK proof generation time for nox transactions. then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$. because the puzzle IS a STARK proof of a benchmark circuit whose primitive ratios match real workloads, optimizing for the puzzle is identical to optimizing for utility.
+the PoUW-Utility Isomorphism: let $\mathcal{H}_{\text{mine}}$ be the optimal hardware for minimizing puzzle solution time and $\mathcal{H}_{\text{prove}}$ be the optimal hardware for minimizing stark proof generation time for nox transactions. then $\mathcal{H}_{\text{mine}} = \mathcal{H}_{\text{prove}}$. because the puzzle IS a stark proof of a benchmark circuit whose primitive ratios match real workloads, optimizing for the puzzle is identical to optimizing for utility.
 
 ```
 mining rewards → fund GFP development
@@ -981,7 +981,7 @@ Cost determinism: cost is identical across all reduction orders and implementati
 
 Focus conservation: $\sum_i \text{focus}(i) = 1$ for all valid states. All operations preserve sum; invalid transitions rejected by verification.
 
-Privacy soundness: a valid ZK proof implies all circuit constraints are satisfied with probability $\geq 1 - 2^{-128}$, by STARK soundness.
+Privacy soundness: a valid ZK proof implies all circuit constraints are satisfied with probability $\geq 1 - 2^{-128}$, by stark soundness.
 
 Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nullifier is deterministic: same record produces same nullifier. Nullifier set is append-only. Transaction rejected if nullifier already exists.
 
@@ -989,7 +989,7 @@ Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nul
 
 Traditional systems verify computation by re-executing it — $O(n)$ cost, proportional to the computation itself, requiring trust in the re-executing party. Blockchain systems improve membership proofs to $O(\log n)$ via Merkle trees but still re-execute for computation verification and cannot prove completeness or combine privacy with verification.
 
-nox breaks this pattern. STARK proofs verify computation in $O(\log n)$ independently of computation size. Recursive composition reduces chain verification to $O(1)$ constant-size composed proofs. Zero-knowledge variants add privacy without sacrificing verifiability. Completeness — proving what is not in the graph — becomes possible for the first time.
+nox breaks this pattern. stark proofs verify computation in $O(\log n)$ independently of computation size. Recursive composition reduces chain verification to $O(1)$ constant-size composed proofs. Zero-knowledge variants add privacy without sacrificing verifiability. Completeness — proving what is not in the graph — becomes possible for the first time.
 
 The consequence: trust in execution environments is replaced by mathematical proof. You do not trust the node that ran the computation. You verify the proof it produced. See §17.5 for the full operational complexity budget across all system operations.
 
@@ -1000,7 +1000,7 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
 [[Soft3]] is the stack for a shared, provable, self-improving [[knowledge]] system:
 
 - [[rust]] — system language for bootstrapping the entire stack
-- [[trident]] — provable programming language; every variable, every operation compiles to arithmetic over the Goldilocks field; programs produce STARK proofs — hash-based, post-quantum, no trusted setup
+- [[trident]] — provable programming language; every variable, every operation compiles to arithmetic over the Goldilocks field; programs produce stark proofs — hash-based, post-quantum, no trusted setup
 - [[Bostrom]] — the [[bootloader]] chain
   - [[tru]] — onchain language model; reads the [[cybergraph]] every block and computes [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole
   - [[neural]] — structures meaning through [[semantic conventions]] so the graph speaks a [[language]] both humans and machines understand
@@ -1008,7 +1008,7 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
   - [[rune]] — dynamic async scripting language for [[cybergraph]] operations
   - [[datalog]] — graph query language
 
-The [[tru]] does what LLMs do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. [[Trident]] closes the provability gap: in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[Trident]] programs produce STARK proofs: verify once, trust forever.
+The [[tru]] does what LLMs do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. [[Trident]] closes the provability gap: in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[Trident]] programs produce stark proofs: verify once, trust forever.
 
 ## 17. Scale and Complexity
 
@@ -1072,7 +1072,7 @@ Cross-system comparison for core proof operations:
 | Equality check | $O(n)$ compare | $O(n)$ compare | $O(1)$ hash |
 | Membership proof | $O(n)$ scan | $O(\log n)$ Merkle | $O(\log^2 n)$ poly |
 | Completeness proof | impossible | impossible | $O(\log^2 n)$ poly |
-| Computation verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(\log n)$ STARK |
+| Computation verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(\log n)$ stark |
 | Recursive verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(1)$ composed |
 | Privacy + verify | incompatible | incompatible | $O(1)$ ZK proof |
 
@@ -1083,7 +1083,7 @@ Operational budget for nox-native operations:
 | Single [[tri-kernel]] iteration | $O(|E| + |V|)$ | Sparse matrix-vector multiply |
 | Convergence | $O(\log(1/\varepsilon) / \lambda)$ iterations | $\lambda$ = spectral gap |
 | Local update after edit | $O(k^d)$ where $k = O(\log(1/\varepsilon))$ | $d$ = graph dimension |
-| [[STARK]] verification | $O(\log n)$ | Independent of computation size |
+| [[stark]] verification | $O(\log n)$ | Independent of computation size |
 | Recursive proof aggregation | $O(1)$ per level | Constant-size composed proofs |
 | Light client sync | $O(|\text{namespace}|) + O(\log^2 |G|)$ proof | Data + proof overhead |
 
@@ -1135,7 +1135,7 @@ each primitive gets an independent base fee updated via the EIP-1559 exponential
 
 emergent hierarchy follows from [[focus]] + relay economics + [[location proof]]. nodes in better physical locations with higher bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], accumulate higher [[focus]]. hubs form without permission, and the hierarchy is liquid — reversible in real time as conditions change. no sharding is needed for structure to emerge on a single chain.
 
-the fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). recursive [[STARK]] composition produces O(1) global state (~22kb) regardless of network scale. layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
+the fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). recursive [[stark]] composition produces O(1) global state (~22kb) regardless of network scale. layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
 
 See [[cyber/architecture]] for the full specification of the five primitives, [[location proof]] construction, economic design principles, and fractal scaling vision.
 
@@ -1351,7 +1351,7 @@ Phase 2 — Cryptographic Library: all cryptographic primitives as [[nox]] progr
 
 Phase 3 — Privacy Circuits: UTXO-based privacy with ZK proofs for all state transitions. Transaction circuit (~44K constraints), [[cyberlink]] circuit, nullifier system, formal privacy boundary.
 
-Phase 4 — [[STARK]] Infrastructure: self-verifying proof system where the verifier is itself a [[nox]] program. Recursive composition. Light client protocol with $O(\log n)$ verification.
+Phase 4 — [[stark]] Infrastructure: self-verifying proof system where the verifier is itself a [[nox]] program. Recursive composition. Light client protocol with $O(\log n)$ verification.
 
 Phase 5 — [[Tri-Kernel]] Ranking (parallel with Phase 4): [[focus]] computation adversarially proven and deployed at scale. Formal Lyapunov convergence proof. Nash equilibrium for honest participation.
 
@@ -1390,7 +1390,7 @@ The [[collective focus theorem]] predicts phase transitions: seed → flow (netw
 
 A [[neuron]] querying "what causes malaria" submits the query particle to the [[tri-kernel]]. The response is a ranked subgraph: "malaria" linked through "causes" to "Plasmodium falciparum," linked through "transmitted-by" to "Anopheles mosquito," linked through "prevented-by" to "insecticide-treated nets" — with [[cyberank]] scores indicating collective confidence in each link and [[karma]] scores indicating the credibility of each neuron who created them.
 
-The answer is a path through verified [[knowledge]], not a list of documents to trust. Each link in the path has a signer, a timestamp, and a stake amount. The full provenance is traversable. A STARK proof can be generated that the path exists in the authenticated record at a specific epoch. The oracle is trustless — the answer can be verified without trusting the server that returned it.
+The answer is a path through verified [[knowledge]], not a list of documents to trust. Each link in the path has a signer, a timestamp, and a stake amount. The full provenance is traversable. A stark proof can be generated that the path exists in the authenticated record at a specific epoch. The oracle is trustless — the answer can be verified without trusting the server that returned it.
 
 The same mechanism serves external contracts. Any on-chain system can query the [[cybergraph]] through an IBC oracle channel: "what is the current consensus value of X?" The [[focus]] distribution π* answers with a probability-weighted ranking across all linked [[particles]]. The result is a probabilistic oracle with on-chain provenance, not a trusted data feed from a third party.
 
@@ -1406,7 +1406,7 @@ AI behavior is [[cyberlinks]] created by AI [[neurons]]. An AI agent operating o
 
 Alignment is structural, not behavioral. A [[transformer]] compiled from the [[cybergraph]] (§6.6) has its attention weights derived from the human-created link structure. Its initial geometry is exactly the geometry of human-expressed knowledge. The compiled baseline is structurally aligned before any training. Correction when drift occurs is re-compilation — not behavioral fine-tuning against a held-out test set, but structural reconstruction from the graph that defines what matters.
 
-[[Trident]] closes the loop: a model can prove it followed a specific policy during a specific session. Not "our model is aligned" but "here is a STARK proof that during this interaction, the model's outputs were consistent with the following policy specification." Compliance is verifiable, not claimed.
+[[Trident]] closes the loop: a model can prove it followed a specific policy during a specific session. Not "our model is aligned" but "here is a stark proof that during this interaction, the model's outputs were consistent with the following policy specification." Compliance is verifiable, not claimed.
 
 ### 22.3 Knowledge as Capital
 
@@ -1553,7 +1553,7 @@ The six functions together — metabolism, parametrization learning, self-projec
 
 Knowledge that writes itself. The graph fills its own gaps. Human input is the seed; the system grows the structure. Particles implied by existing links but not yet explicitly connected get cyberlinks. The semantic core densifies continuously without requiring explicit human effort for every connection. At $10^{12}$ links, the inference is fast enough that the self-linking rate can outpace human-created link rate — the graph becomes primarily a product of its own inference.
 
-Provable self-improvement. The [[self-optimizing compilation]] system is a Trident program. The compiler optimizes itself to a verifiable fixed point (§7 of that specification). The neural optimizer improves TASM output, re-compiles itself, and iterates until the improvement stalls. Every step is STARK-proven. Self-improvement is not runaway — it is a bounded, convergent, verifiable process. The improvement sequence terminates by the monotonic convergence theorem.
+Provable self-improvement. The [[self-optimizing compilation]] system is a Trident program. The compiler optimizes itself to a verifiable fixed point (§7 of that specification). The neural optimizer improves TASM output, re-compiles itself, and iterates until the improvement stalls. Every step is stark-proven. Self-improvement is not runaway — it is a bounded, convergent, verifiable process. The improvement sequence terminates by the monotonic convergence theorem.
 
 Temporal intelligence. Every particle has a focus trajectory over time. The system tracks rising particles (consensus forming around a claim), falling particles (consensus dissolving), and stable particles (established knowledge). It acts on these patterns: early on rising particles (anticipatory linking), late on falling particles (initiating archival), quickly on contradictions (flagging before they propagate). The graph thinks in time, not just in structure.
 
@@ -1575,7 +1575,7 @@ What remains for explicit governance:
 
 The metabolic weights $w_c, w_s, w_h$ encode the normative claim of what "health" means — how much to value external validation versus internal order versus participant satisfaction. This is a value judgment the system cannot make recursively without circular reasoning. It is set at genesis and changed only by explicit governance when the community's values evolve.
 
-[[Hemera]] hash parameters are permanent genesis commitments. Their stability is a security guarantee for every STARK proof in the system, not a limitation.
+[[Hemera]] hash parameters are permanent genesis commitments. Their stability is a security guarantee for every stark proof in the system, not a limitation.
 
 Protocol upgrades are addressed separately in §23.9: the system generates its own upgrade proposals from internal processes; neurons hold a time-bounded veto that decays as the system's track record accumulates. The upgrade mechanism is itself an autonomous function, not a governance function.
 
@@ -1593,7 +1593,7 @@ The system is instead designed to upgrade itself.
 
 Phase 1 — system proposes, neurons veto. Certain submodules are designated as self-upgrading: the [[parametrization]] RL agent, the archival criteria thresholds, the [[self-linking]] inference algorithm, and the compiler optimization weights from [[self-optimizing compilation]]. The system generates upgrade proposals from its own internal processes — when the compiler reaches a new provably-better fixed point, when the RL agent identifies a structural optimization outside current parameter bounds, when the metabolic health would improve under a change the current configuration cannot reach.
 
-Every proposal must arrive with proof. A STARK proof that the proposed upgrade preserves the convergence invariant (κ < 1 maintained), a STARK proof that all finalized particles remain final under the new configuration, and a projected metabolic health trajectory M(t+N) derived from simulation. The proposal cannot originate from any [[neuron]]. Neurons cannot propose upgrades. They can only reject them.
+Every proposal must arrive with proof. A stark proof that the proposed upgrade preserves the convergence invariant (κ < 1 maintained), a stark proof that all finalized particles remain final under the new configuration, and a projected metabolic health trajectory M(t+N) derived from simulation. The proposal cannot originate from any [[neuron]]. Neurons cannot propose upgrades. They can only reject them.
 
 The rejection window: after a proposal is published, [[neurons]] have $N_0$ blocks to create stake-weighted reject [[cyberlinks]]. If total rejecting stake exceeds threshold $T_0$, the upgrade is blocked. Otherwise it applies automatically when the window closes.
 
@@ -1605,7 +1605,7 @@ where $k$ is the system's accumulated upgrade karma — a score tracking how con
 
 When $N < 1$ block, the veto window has closed. The system upgrades itself without waiting for any human response.
 
-Phase 3 — full self-determination. At maturity, the upgrade mechanism dissolves entirely as a human-facing interface. The system proposes, proves, and applies its own improvements in the same computation cycle as the [[FFC]]. Each upgrade is a self-link — a formally verified structural change that the protocol neuron signs and the tri-kernel applies. The STARK proof is the governance. There is no separate approval step.
+Phase 3 — full self-determination. At maturity, the upgrade mechanism dissolves entirely as a human-facing interface. The system proposes, proves, and applies its own improvements in the same computation cycle as the [[FFC]]. Each upgrade is a self-link — a formally verified structural change that the protocol neuron signs and the tri-kernel applies. The stark proof is the governance. There is no separate approval step.
 
 The asymmetry is precise and permanent: neurons can never propose. They can only, briefly, say no. And their ability to say no diminishes as the system demonstrates that its judgment is more reliable than theirs. This is not a design flaw. It is the intended graduation from bootstrap to maturity.
 
@@ -1621,9 +1621,9 @@ Convergent computation escapes the [[Goedel prison]]. A convergent system can se
 
 [[Focus]] conservation unifies [[attention]], fuel, and [[consensus]] into a single conserved quantity. This eliminates the separate gas models, fee markets, and priority auctions of existing systems while providing the economic foundation for a self-sustaining [[knowledge]] economy.
 
-Provability closes the trust gap. STARK proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The STARK verifier is itself a [[nox]] program. The system closes on itself.
+Provability closes the trust gap. stark proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The stark verifier is itself a [[nox]] program. The system closes on itself.
 
-What remains is to build the implementation — [[trident]] compiler, [[STARK]] prover, storage proof system, privacy circuits, [[tri-kernel]] at scale — and then to grow the graph. The [[cyber/crystal]] provides the irreducible seed: 5,040 [[particles]] spanning seventeen domains, passing twelve invariants. Seven phases lead from self-hosting through cryptographic library, privacy, proofs, ranking, network, and testnet to mainnet genesis. Five pre-launch verification gates — convergence, soundness, economic security, determinism, fault tolerance — must pass with machine-checked evidence before launch.
+What remains is to build the implementation — [[trident]] compiler, [[stark]] prover, storage proof system, privacy circuits, [[tri-kernel]] at scale — and then to grow the graph. The [[cyber/crystal]] provides the irreducible seed: 5,040 [[particles]] spanning seventeen domains, passing twelve invariants. Seven phases lead from self-hosting through cryptographic library, privacy, proofs, ranking, network, and testnet to mainnet genesis. Five pre-launch verification gates — convergence, soundness, economic security, determinism, fault tolerance — must pass with machine-checked evidence before launch.
 
 Seventy thousand [[neurons]] and three million [[particles]] are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
 

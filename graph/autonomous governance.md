@@ -75,7 +75,7 @@ three things cannot be governed autonomously without circularity:
 
 the metabolic weights $w_c, w_s, w_h$. these encode the normative claim of what health means — how much to weight external validation versus internal order versus participant satisfaction. the system cannot choose its own values without assuming values in the choice function. these are set at genesis and changed by explicit governance when community values evolve. changing them is a high-stakes, rare, deliberate act.
 
-the [[Hemera]] hash primitive. the foundation of every [[STARK]] proof in the system. its stability is a security guarantee. changing it requires a coordinated chain fork. this is not a limitation but a commitment device — the system's cryptographic foundation is stable by design.
+the [[Hemera]] hash primitive. the foundation of every [[stark]] proof in the system. its stability is a security guarantee. changing it requires a coordinated chain fork. this is not a limitation but a commitment device — the system's cryptographic foundation is stable by design.
 
 protocol upgrades. the system generates its own upgrade proposals — it does not accept them from [[neurons]]. neurons hold a time-bounded veto that decays as the system's upgrade track record accumulates. the bedrock (Hemera hash parameters, focus conservation law, κ < 1 requirement) is frozen at genesis and cannot be changed by any upgrade mechanism. see [[self-upgrade]] for the full three-phase specification.
 

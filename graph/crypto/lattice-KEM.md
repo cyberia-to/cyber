@@ -22,7 +22,7 @@ post-quantum secure: no known quantum algorithm solves Module-LWE efficiently.
 
 ## Module-RLWE variant over Goldilocks
 
-in [[cyber]], the lattice KEM operates over Module-RLWE (Ring Learning With Errors) with [[Goldilocks field]] arithmetic (p = 2^64 - 2^32 + 1). the same field used by [[Hemera]], [[nox]], and [[STARK]] verification — native arithmetic, no field conversion.
+in [[cyber]], the lattice KEM operates over Module-RLWE (Ring Learning With Errors) with [[Goldilocks field]] arithmetic (p = 2^64 - 2^32 + 1). the same field used by [[Hemera]], [[nox]], and [[stark]] verification — native arithmetic, no field conversion.
 
 ```
 LATTICE KEM PROTOCOL

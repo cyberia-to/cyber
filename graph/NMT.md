@@ -59,7 +59,7 @@ ABSENCE PROOF for namespace N:
 COST:
   proof size: O(log n) hash digests
   verification: O(log n) hash computations
-  for n = 2³²: ~32 × 250 = 8,000 STARK constraints
+  for n = 2³²: ~32 × 250 = 8,000 stark constraints
 ```
 
 ## why NMTs cannot be replaced

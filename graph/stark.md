@@ -2,9 +2,9 @@
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
-alias: STARKs, Scalable Transparent Arguments of Knowledge, multilinear STARK, multilinear STARKs
+alias: starks, STARK, STARKs, Scalable Transparent Arguments of Knowledge, multilinear stark, multilinear starks
 ---
-# STARK
+# stark
 
 Scalable Transparent Argument of Knowledge. a proof system where a prover convinces a verifier that a computation was performed correctly — transparent setup, post-quantum security, hash-only assumption.
 
@@ -23,11 +23,11 @@ Ben-Sasson, Bentov, Horesh, Riabzev (2018). the foundation of verifiable computa
 
 ## arithmetization
 
-a STARK proves that a computation satisfies algebraic constraints. the mapping from computation to constraints is called arithmetization. three major constraint systems:
+a stark proves that a computation satisfies algebraic constraints. the mapping from computation to constraints is called arithmetization. three major constraint systems:
 
 ### AIR — Algebraic Intermediate Representation
 
-the native arithmetization for STARKs. represents computation as a matrix (the execution trace) plus polynomial constraints.
+the native arithmetization for starks. represents computation as a matrix (the execution trace) plus polynomial constraints.
 
 ```
 EXECUTION TRACE
@@ -45,7 +45,7 @@ BOUNDARY CONSTRAINTS
   "column[0] at last row = program_output"
 ```
 
-AIR constraints can have any degree (commonly 2–8). used by StarkWare/CAIRO, ethSTARK, Winterfell, Miden, [[cyber]]. the [[nox]] VM's sixteen reduction patterns map directly to AIR transition constraints — each pattern becomes a polynomial equation relating the register state before and after the reduction step.
+AIR constraints can have any degree (commonly 2–8). used by StarkWare/CAIRO, ethstark, Winterfell, Miden, [[cyber]]. the [[nox]] VM's sixteen reduction patterns map directly to AIR transition constraints — each pattern becomes a polynomial equation relating the register state before and after the reduction step.
 
 ### R1CS — Rank-1 Constraint System
 
@@ -70,7 +70,7 @@ the unification matters because a proof system handling CCS handles all three �
 
 ## univariate vs multilinear
 
-### univariate STARKs (classical, 2018)
+### univariate starks (classical, 2018)
 
 the original construction. each trace column is interpolated into a univariate polynomial, constraints are checked via polynomial composition and division by a zerofier (vanishing polynomial), and [[FRI]] proves the quotient has bounded degree.
 
@@ -84,9 +84,9 @@ pipeline:
   6. M commitments, M openings
 ```
 
-the prover requires FFT/NTT for interpolation — O(N log N) per column. the verifier checks M separate polynomial openings. used by StarkWare/CAIRO, ethSTARK, early Polygon zkEVM.
+the prover requires FFT/NTT for interpolation — O(N log N) per column. the verifier checks M separate polynomial openings. used by StarkWare/CAIRO, ethstark, early Polygon zkEVM.
 
-### multilinear STARKs (modern, 2023–2025)
+### multilinear starks (modern, 2023–2025)
 
 the entire execution trace becomes ONE multilinear polynomial. constraints are verified via the [[sumcheck]] protocol. [[WHIR]] (as a multilinear PCS) opens the commitment at the single point that sumcheck reduces to.
 
@@ -122,7 +122,7 @@ advantages over univariate:
 
 ## SuperSpartan
 
-SuperSpartan (Setty, Thaler, Wahby, 2023) is the IOP (Interactive Oracle Proof) that makes multilinear STARKs over CCS practical.
+SuperSpartan (Setty, Thaler, Wahby, 2023) is the IOP (Interactive Oracle Proof) that makes multilinear starks over CCS practical.
 
 ```
 SuperSpartan for AIR:
@@ -171,7 +171,7 @@ this is what [[cyber]] uses. see [[WHIR]] for the PCS, [[nox]] for the VM.
 
 ## the sumcheck protocol
 
-the engine inside multilinear STARKs. proves that the sum of a polynomial over a boolean hypercube equals a claimed value:
+the engine inside multilinear starks. proves that the sum of a polynomial over a boolean hypercube equals a claimed value:
 
 ```
 claim: Σ_{x ∈ {0,1}ᵏ} f(x) = T
@@ -194,18 +194,18 @@ the sumcheck converts a sum over 2^k terms into k rounds of interaction, each in
 ## heritage
 
 ```
-2018  STARKs (Ben-Sasson et al.)       univariate, FRI, first transparent ZK at scale
+2018  starks (Ben-Sasson et al.)       univariate, FRI, first transparent ZK at scale
 2019  Spartan (Setty)                   R1CS via sumcheck, no FFT in prover
 2023  SuperSpartan (Setty et al.)       CCS generalization, handles AIR natively
 2024  STIR (Arnon et al.)               improved FRI: rate increases per round
-2024  Circle STARKs (StarkWare)         STARKs over Mersenne31 field
+2024  Circle starks (StarkWare)         starks over Mersenne31 field
 2025  WHIR (Arnon et al.)               sub-millisecond verification, multilinear PCS
-2025  Whirlaway (LambdaClass)           SuperSpartan + WHIR = multilinear STARK
+2025  Whirlaway (LambdaClass)           SuperSpartan + WHIR = multilinear stark
 ```
 
 ## use in cyber
 
-[[cyber]] uses multilinear STARKs via the Whirlaway architecture:
+[[cyber]] uses multilinear starks via the Whirlaway architecture:
 
 ```
 ┌─────────────────────────────────────────────────┐

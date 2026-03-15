@@ -7,13 +7,13 @@ stake: 43936669831471920
 ---
 # nox
 
-the virtual machine of [[cyber]]. sixteen reduction patterns over a [[Goldilocks field]]. every computation in the protocol — identity, linking, ranking, payment, inference, compilation — reduces to these sixteen patterns. the VM produces a [[STARK]] proof of correct execution as a byproduct. running a program and proving it ran correctly are the same act.
+the virtual machine of [[cyber]]. sixteen reduction patterns over a [[Goldilocks field]]. every computation in the protocol — identity, linking, ranking, payment, inference, compilation — reduces to these sixteen patterns. the VM produces a [[stark]] proof of correct execution as a byproduct. running a program and proving it ran correctly are the same act.
 
 ## lineage
 
 nox descends from [[Nock]] ([[Urbit]]), which descends from combinatory logic (Schonfinkel 1924, Curry 1930s). the lineage is a search for the smallest universal instruction set — the fewest rules that still express all computation.
 
-Nock operates on natural numbers with decrement as its arithmetic primitive. nox replaces natural numbers with [[Goldilocks field]] elements and decrement with field inverse. this is the fundamental mutation: from counting to algebra, from number theory to finite field arithmetic. the consequence: every nox computation is native to [[STARK]] arithmetization. there is no translation layer between "the program" and "the proof" — the execution trace IS the algebraic constraint system.
+Nock operates on natural numbers with decrement as its arithmetic primitive. nox replaces natural numbers with [[Goldilocks field]] elements and decrement with field inverse. this is the fundamental mutation: from counting to algebra, from number theory to finite field arithmetic. the consequence: every nox computation is native to [[stark]] arithmetization. there is no translation layer between "the program" and "the proof" — the execution trace IS the algebraic constraint system.
 
 ```
 combinatory logic (1924)   S, K combinators            pure abstraction
@@ -53,7 +53,7 @@ examples:
   ((0 . 2) . ((1 . 0) . (5 . ((0 . 2) . (0 . 3)))))    a program
 ```
 
-this is the entire data model. a noun is a binary tree where every leaf is a field element. a program is a noun. a subject is a noun. the output of a computation is a noun. a [[cyberlink]] is a noun. a [[STARK]] proof serialized for verification is a noun. the [[cybergraph]] state, encoded as nested pairs, is a noun. one structure for everything.
+this is the entire data model. a noun is a binary tree where every leaf is a field element. a program is a noun. a subject is a noun. the output of a computation is a noun. a [[cyberlink]] is a noun. a [[stark]] proof serialized for verification is a noun. the [[cybergraph]] state, encoded as nested pairs, is a noun. one structure for everything.
 
 the cell `(a . b)` is the cons operation — pattern 3 in the sixteen patterns. axis — pattern 0 — navigates the binary tree: axis 2 takes the left child (head), axis 3 takes the right child (tail), and deeper paths follow the binary representation (axis 2n = head of axis n, axis 2n+1 = tail of axis n). every data access is tree navigation. every data construction is pairing.
 
@@ -67,7 +67,7 @@ word  (0x01)    bitwise: a XOR b, a AND b, a << n      range [0, 2⁶⁴)
 hash  (0x02)    identity: 4 field elements = 256 bits   Hemera output
 ```
 
-field and word share the same representation (one Goldilocks element) but different operations. a field element wraps around modulo p; a word wraps around modulo 2^64. the distinction is semantic, enforced by the type system: bitwise operations on a hash are an error, arithmetic on a hash (except equality) is an error. the type tag costs nothing in the [[STARK]] — it is a constraint selector, not runtime data.
+field and word share the same representation (one Goldilocks element) but different operations. a field element wraps around modulo p; a word wraps around modulo 2^64. the distinction is semantic, enforced by the type system: bitwise operations on a hash are an error, arithmetic on a hash (except equality) is an error. the type tag costs nothing in the [[stark]] — it is a constraint selector, not runtime data.
 
 the hash type (four field elements) is the identity primitive. `H(noun)` produces a hash. `axis(s, 0)` returns `H(s)` — a noun can introspect its own identity. this is how content-addressing works at the VM level: every noun carries its hash as an implicit property, accessible via pattern 0.
 
@@ -75,7 +75,7 @@ the hash type (four field elements) is the identity primitive. `H(noun)` produce
 
 a nox formula is a cell `(tag . body)` where tag is the pattern number (0-16) and body contains the operands. a formula is a noun. a subject is a noun. the result is a noun. the distinction between code and data is purely contextual — the same noun can be a subject in one reduction and a formula in another.
 
-this is deeper than conventional homoiconicity (Lisp, Clojure). in those languages, code is data within the language runtime. in nox, code is data at the level of the proof system. the [[STARK]] proves that a specific noun (the formula) was applied to a specific noun (the subject). the proof refers to the same binary tree structure that the execution operated on. there is no separate representation for "the circuit" vs "the program" — they are the same noun.
+this is deeper than conventional homoiconicity (Lisp, Clojure). in those languages, code is data within the language runtime. in nox, code is data at the level of the proof system. the [[stark]] proves that a specific noun (the formula) was applied to a specific noun (the subject). the proof refers to the same binary tree structure that the execution operated on. there is no separate representation for "the circuit" vs "the program" — they are the same noun.
 
 ## the three layers
 
@@ -91,7 +91,7 @@ this is deeper than conventional homoiconicity (Lisp, Clojure). in those languag
 │  LAYER 2: WHAT MIGHT BE                                            │
 │  one non-deterministic pattern: hint                               │
 │  prover injects, Layer 1 constraints verify                        │
-│  verifier never executes hint — checks via STARK                   │
+│  verifier never executes hint — checks via stark                   │
 │                                                                    │
 │  the origin of privacy and search                                  │
 ├────────────────────────────────────────────────────────────────────┤
@@ -137,7 +137,7 @@ HASH (1)
 15 hash                              identity, commitment, Merkle trees
 ```
 
-every pattern has a purpose. none is redundant. the first five are structurally necessary (axis navigates, quote creates constants, compose enables recursion, cons builds structure, branch decides). the next six are algebraically necessary (a [[STARK]] operates over a field, so the VM must speak the field's language natively). the four bitwise patterns handle the binary world (network protocols, bit manipulation, flag testing). the hash closes the loop — a nox program can compute identities, build Merkle trees, derive commitments, all within the same sixteen-pattern framework.
+every pattern has a purpose. none is redundant. the first five are structurally necessary (axis navigates, quote creates constants, compose enables recursion, cons builds structure, branch decides). the next six are algebraically necessary (a [[stark]] operates over a field, so the VM must speak the field's language natively). the four bitwise patterns handle the binary world (network protocols, bit manipulation, flag testing). the hash closes the loop — a nox program can compute identities, build Merkle trees, derive commitments, all within the same sixteen-pattern framework.
 
 the choice of exactly sixteen is deliberate: four bits index the pattern. the encoding is dense. a nox program is a binary tree where each internal node's tag fits in a nibble. this compactness matters for content-addressing — shorter programs hash faster, cache more efficiently, transmit more cheaply.
 
@@ -155,7 +155,7 @@ Layer 2 (`hint`) breaks confluence intentionally — multiple valid witnesses ma
 
 `hint` is one instruction, but it is the entire mechanism of privacy, search, and oracle access.
 
-the prover knows something the verifier does not. the prover injects that knowledge via `hint`. Layer 1 constraints verify it. the verifier checks the [[STARK]] proof — which confirms the constraints were satisfied — without ever learning what was injected.
+the prover knows something the verifier does not. the prover injects that knowledge via `hint`. Layer 1 constraints verify it. the verifier checks the [[stark]] proof — which confirms the constraints were satisfied — without ever learning what was injected.
 
 ```
 identity:       hint injects the secret behind a neuron address
@@ -194,10 +194,10 @@ Layer 2 computations (`hint`-containing) are excluded from the global cache — 
 
 ## every execution is a proof
 
-the nox execution trace — the sequence of register states across all reduction steps — is directly the AIR (Algebraic Intermediate Representation) for [[STARK]] proving. there is no separate "compile to circuit" step.
+the nox execution trace — the sequence of register states across all reduction steps — is directly the AIR (Algebraic Intermediate Representation) for [[stark]] proving. there is no separate "compile to circuit" step.
 
 ```
-nox execution trace          →    STARK witness
+nox execution trace          →    stark witness
 register state at each step  →    trace row
 pattern tag                  →    constraint selector
 pattern semantics            →    transition constraint polynomial
@@ -205,15 +205,15 @@ pattern semantics            →    transition constraint polynomial
 
 each of the sixteen patterns becomes an AIR transition constraint. pattern 5 (add): `reg[out]_{t+1} = reg[a]_t + reg[b]_t`. pattern 7 (mul): `reg[out]_{t+1} = reg[a]_t × reg[b]_t`. pattern 15 (hash): Poseidon2 round constraints spanning consecutive rows at degree 7. the [[SuperSpartan]] IOP handles all degrees natively via [[CCS]].
 
-the entire trace encodes as one multilinear polynomial over the [[Goldilocks field]]. [[WHIR]] commits it. [[sumcheck]] verifies the constraints. the output: a [[STARK]] proof that the program ran correctly. the proof is ~60-157 KiB regardless of how large the computation was.
+the entire trace encodes as one multilinear polynomial over the [[Goldilocks field]]. [[WHIR]] commits it. [[sumcheck]] verifies the constraints. the output: a [[stark]] proof that the program ran correctly. the proof is ~60-157 KiB regardless of how large the computation was.
 
-this is why the field choice matters so deeply. nox arithmetic IS [[Goldilocks field]] arithmetic. the execution trace IS a table of Goldilocks elements. the STARK proof IS over Goldilocks. there is no impedance mismatch at any layer. see [[cyber/stark]] for the complete pipeline.
+this is why the field choice matters so deeply. nox arithmetic IS [[Goldilocks field]] arithmetic. the execution trace IS a table of Goldilocks elements. the stark proof IS over Goldilocks. there is no impedance mismatch at any layer. see [[cyber/stark]] for the complete pipeline.
 
 ## jets: optimization without compromise
 
-Layer 3 provides five operations that are semantically equivalent to Layer 1 compositions but execute faster. the selection criterion: the [[STARK]] verifier bottleneck.
+Layer 3 provides five operations that are semantically equivalent to Layer 1 compositions but execute faster. the selection criterion: the [[stark]] verifier bottleneck.
 
-recursive proof composition requires running the STARK verifier inside nox and proving that run. the unoptimized verifier costs ~600,000 patterns. with jets: ~70,000. this 8.5x reduction is what makes recursive composition practical — a proof-of-proof at every block, O(1) on-chain verification for O(N) transactions.
+recursive proof composition requires running the stark verifier inside nox and proving that run. the unoptimized verifier costs ~600,000 patterns. with jets: ~70,000. this 8.5x reduction is what makes recursive composition practical — a proof-of-proof at every block, O(1) on-chain verification for O(N) transactions.
 
 ```
 jet              │ what it accelerates         │ why it matters
@@ -232,12 +232,12 @@ the five jets map to four [[Goldilocks field processor]] hardware primitives (fm
 
 ## self-verification
 
-the STARK verifier for nox is itself a nox program. every operation the verifier needs — field arithmetic, hashing, polynomial evaluation, Merkle path checking — is native to the sixteen patterns (or their jet equivalents).
+the stark verifier for nox is itself a nox program. every operation the verifier needs — field arithmetic, hashing, polynomial evaluation, Merkle path checking — is native to the sixteen patterns (or their jet equivalents).
 
 this closure is the deepest property of the design. the VM can verify proofs about its own executions. a proof-of-proof is a nox program that runs the verifier on a proof. the proof-of-proof is itself provable. recursion to arbitrary depth, constant proof size at every level.
 
 ```
-program → trace → STARK proof → verifier (nox program) → trace → STARK proof → ...
+program → trace → stark proof → verifier (nox program) → trace → stark proof → ...
 ```
 
 the system closes on itself. see [[cyber/stark]] for recursive composition details, [[cyber/proofs]] for the full proof taxonomy.

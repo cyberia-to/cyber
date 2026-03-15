@@ -13,13 +13,13 @@ stake: 8055056135769852
 
 ## Abstract
 
-We propose a [[compilers]] architecture for [[trident]] — the deterministic programming language for the nox planetary intelligence substrate — in which a [[neural networks]] optimizer generates Triton VM assembly (TASM) from Trident's typed intermediate representation (TIR). The optimizer is small enough (80K parameters, 640 KB) to reside entirely in L2 cache and train continuously on a single workstation GPU. Correctness is guaranteed not by the model but by a post-hoc STARK-based semantic equivalence verifier, making the neural path strictly speculative: it can improve compilation but never break it. The system is self-referential — the optimizer, the verifier, and the training loop are themselves Trident programs compiled by the system they improve — converging to a provable fixed point of [[convergent computation]] where the compiler can no longer improve its own code.
+We propose a [[compilers]] architecture for [[trident]] — the deterministic programming language for the nox planetary intelligence substrate — in which a [[neural networks]] optimizer generates Triton VM assembly (TASM) from Trident's typed intermediate representation (TIR). The optimizer is small enough (80K parameters, 640 KB) to reside entirely in L2 cache and train continuously on a single workstation GPU. Correctness is guaranteed not by the model but by a post-hoc stark-based semantic equivalence verifier, making the neural path strictly speculative: it can improve compilation but never break it. The system is self-referential — the optimizer, the verifier, and the training loop are themselves Trident programs compiled by the system they improve — converging to a provable fixed point of [[convergent computation]] where the compiler can no longer improve its own code.
 
 ---
 
 ## 1. The Problem: Compilation for Proof Machines is Not Compilation for CPUs
 
-Triton [[vm]] is a stack machine with Algebraic Execution Tables (AET). When a program executes, it produces a trace spread across 9 tables: Processor, Op Stack, RAM, Jump Stack, Hash, Cascade, Lookup, U32, and Degree Lowering. The [[zero knowledge proofs]] STARK prover must commit to all tables, and all tables are padded to the same power-of-2 height — the height of the tallest table.
+Triton [[vm]] is a stack machine with Algebraic Execution Tables (AET). When a program executes, it produces a trace spread across 9 tables: Processor, Op Stack, RAM, Jump Stack, Hash, Cascade, Lookup, U32, and Degree Lowering. The [[zero knowledge proofs]] stark prover must commit to all tables, and all tables are padded to the same power-of-2 height — the height of the tallest table.
 
 This means the cost function for TASM is not cycle count. It is:
 
@@ -98,7 +98,7 @@ Trident loops have compile-time-known bounds. The compiler chooses between full 
 
 ### 3.5 [[hash]] Coprocessor Scheduling (High Impact for nox)
 
-The Hash Table is driven by Tip5 permutation invocations: `hash`, `sponge_absorb`, `sponge_squeeze`, `sponge_absorb_mem`, `merkle_step`, `merkle_step_mem`. Each invocation adds rows to the Hash Table. For nox's dominant workloads — [[merklezation]] inclusion proofs, commitment construction, recursive STARK verification — the Hash Table frequently becomes the tallest table and thus the sole determinant of proving cost.
+The Hash Table is driven by Tip5 permutation invocations: `hash`, `sponge_absorb`, `sponge_squeeze`, `sponge_absorb_mem`, `merkle_step`, `merkle_step_mem`. Each invocation adds rows to the Hash Table. For nox's dominant workloads — [[merklezation]] inclusion proofs, commitment construction, recursive stark verification — the Hash Table frequently becomes the tallest table and thus the sole determinant of proving cost.
 
 Three optimization dimensions exist within hash scheduling:
 
@@ -291,7 +291,7 @@ Generations per compilation: 10–50 (background, non-blocking)
 Total evolution cost per compilation: 0.5–2.5 ms
 ```
 
-For comparison, STARK proving for the same code takes **seconds**. The optimization cost is <0.1% of the proving cost.
+For comparison, stark proving for the same code takes **seconds**. The optimization cost is <0.1% of the proving cost.
 
 ### 6.4 Hybrid Strategy
 
@@ -349,9 +349,9 @@ Two TASM sequences are semantically equivalent if, for all valid inputs, they pr
 
 **Cost:** Symbolic execution of a 64-instruction TASM block: ~10K field operations ≈ 0.2 μs.
 
-### 7.3 STARK Proof of Compilation
+### 7.3 stark Proof of Compilation
 
-For the highest assurance level, the entire compilation — including neural inference, [[verification]], and selection — can be wrapped in a STARK proof ([[cryptographic proofs]]):
+For the highest assurance level, the entire compilation — including neural inference, [[verification]], and selection — can be wrapped in a stark proof ([[cryptographic proofs]]):
 
 ```
 PROVABLE COMPILATION:
@@ -470,11 +470,11 @@ The fixed point is content-addressed (nox constraint C₂): the converged compil
 
 ### Phase 5: Verification & Proof (Weeks 19–22)
 
-**Deliverable:** STARK-proven compilation.
+**Deliverable:** stark-proven compilation.
 
 - Symbolic equivalence checker for TIR↔TASM
 - Speculative compilation architecture (§7.1)
-- Optional STARK wrapping of compilation decisions
+- Optional stark wrapping of compilation decisions
 - Recursive verification of compilation proof within nox block proofs
 
 ### Phase 6: Self-Referential Convergence (Weeks 23–26)
@@ -499,9 +499,9 @@ Based on analysis of nox's hot paths and the five optimization surfaces describe
 | Transfer circuit | ~44,000 focus | ~33,000 focus | ~25% | Hash scheduling + table balance |
 | Cyberlink creation | ~10,600 focus | ~8,500 focus | ~20% | Stack scheduling |
 | Focus update (single node) | ~2,000 focus | ~1,500 focus | ~25% | Stack scheduling + loop restructuring |
-| Recursive STARK verifier | ~10⁶ focus | ~7.5×10⁵ focus | ~25% | Hash scheduling + table balance |
+| Recursive stark verifier | ~10⁶ focus | ~7.5×10⁵ focus | ~25% | Hash scheduling + table balance |
 
-The 20–25% improvement estimates are conservative. They assume the neural optimizer captures stack scheduling improvements (where human-written tasm-lib is known to be suboptimal for complex functions), table balancing near cliff boundaries (which no current tool attempts), and hash coprocessor scheduling (which is critical for hash-heavy programs like the transfer circuit and STARK verifier where Hash Table height dominates proving cost).
+The 20–25% improvement estimates are conservative. They assume the neural optimizer captures stack scheduling improvements (where human-written tasm-lib is known to be suboptimal for complex functions), table balancing near cliff boundaries (which no current tool attempts), and hash coprocessor scheduling (which is critical for hash-heavy programs like the transfer circuit and stark verifier where Hash Table height dominates proving cost).
 
 A single cliff-boundary crossing — reducing the maximum table height from just above $2^k$ to just below $2^k$ — yields a 2× improvement for that program. nox's transfer circuit, executed for every transaction on the network, is the highest-leverage target.
 

@@ -10,7 +10,7 @@ a [[hash]] function maps arbitrary input to a fixed-size digest. cryptographic h
 
 ## families
 
-| family | construction | digest | speed | STARK cost | status |
+| family | construction | digest | speed | stark cost | status |
 |---|---|---|---|---|---|
 | [[SHA-2]] (SHA-256, SHA-512) | Merkle-Damgard | 256/512 bit | ~500 MB/s | ~25,000 constraints | standard since 2001, ubiquitous |
 | [[SHA-3]] (Keccak) | sponge | 256/512 bit | ~400 MB/s | ~150,000 constraints | standard since 2015, backup family |
@@ -19,7 +19,7 @@ a [[hash]] function maps arbitrary input to a fixed-size digest. cryptographic h
 
 ## algebraic hashes
 
-[[Poseidon]] and Poseidon2 are algebraic hashes designed for arithmetic circuits — they operate natively over prime fields, making them 100x cheaper inside [[STARK]] and [[SNARK]] proofs than binary hashes like SHA-256. the tradeoff: younger cryptanalysis, field-specific tuning required.
+[[Poseidon]] and Poseidon2 are algebraic hashes designed for arithmetic circuits — they operate natively over prime fields, making them 100x cheaper inside [[stark]] and [[SNARK]] proofs than binary hashes like SHA-256. the tradeoff: younger cryptanalysis, field-specific tuning required.
 
 [[cyber]] uses [[Hemera]] (Poseidon2 over [[Goldilocks field]]) — see [[Hemera]], [[hemera/spec]], [[hash function selection]] for the full decision record. see [[crypto/hash/features]] for the complete feature taxonomy.
 

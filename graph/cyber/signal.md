@@ -17,14 +17,14 @@ $$s \;=\; (\nu,\; \vec\ell,\; \pi_\Delta,\; \sigma,\; t)$$
 | $\nu$ | [[subject]] | $N$ | signing [[neuron]] |
 | $\vec\ell$ | links | $L^+$ | one or more [[cyberlinks]] — each a 7-tuple $(\nu, p, q, \tau, a, v, t)$ |
 | $\pi_\Delta$ | [[cyber/impulse]] | $(P \times \mathbb{F}_p)^*$ | sparse [[focus]] update: how the batch of links shifts $\pi^*$ |
-| $\sigma$ | proof | $\Pi$ | recursive [[STARK]] proof covering the [[cyber/impulse]], all conviction UTXO movements, and [[cyberlink]] validity against the current [[BBG]] root |
+| $\sigma$ | proof | $\Pi$ | recursive [[stark]] proof covering the [[cyber/impulse]], all conviction UTXO movements, and [[cyberlink]] validity against the current [[BBG]] root |
 | $t$ | at | $\mathbb{Z}_{\geq 0}$ | block height |
 
 the signal separates what a [[neuron]] asserts (the [[cyberlinks]]) from what the assertion computes (the [[cyber/impulse]]). see [[cyber/impulse]] for how $\pi_\Delta$ is computed and why the name
 
 ## proof
 
-$\sigma$ is a single recursive [[STARK]] proof that covers the entire signal atomically:
+$\sigma$ is a single recursive [[stark]] proof that covers the entire signal atomically:
 
 - correctness of each [[cyberlink]] in $\vec\ell$ (valid signatures, valid particle references)
 - validity of all conviction UTXO movements (each link's $(\tau, a)$ spend is backed by an unspent output)

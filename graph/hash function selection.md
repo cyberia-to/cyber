@@ -29,7 +29,7 @@ Parameters (round counts, MDS matrix, round constants) are frozen at deployment 
 
 - Content addressing — deterministic, collision-resistant identity for all graph content
 - Deduplication — identical content must map to one CID, eliminating storage and bandwidth waste at planetary scale
-- [[Zero knowledge proofs]] — efficient arithmetization for STARK-based [[verification]]
+- [[Zero knowledge proofs]] — efficient arithmetization for stark-based [[verification]]
 - Multi-party computation — viable for threshold operations and private collective computation
 - Fully homomorphic encryption — compatible with encrypted [[knowledge graph]] queries
 - Quantum resistance — survivable under quantum adversaries with Grover and algebraic quantum attacks
@@ -45,17 +45,17 @@ No [[hash]] function perfectly satisfies all seven. The question is which one co
 
 Strengths: Battle-tested (SHA-256: 23 years), extremely fast native execution (Blake3: ~2 GB/s), hardware acceleration, universal tooling, NIST standardization.
 
-Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than arithmetization-oriented (AO) hashes when proved in STARKs. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into [[field]] arithmetic, turning a simple [[hash]] into thousands of constraints.
+Fatal weakness: Catastrophic in ZK circuits. SHA-256 is 50–100× more expensive than arithmetization-oriented (AO) hashes when proved in starks. Bit-oriented operations (XOR, rotation, shift) that make these fast on CPUs become enormous constraint systems in arithmetic circuits. Every bit operation must be decomposed into [[field]] arithmetic, turning a simple [[hash]] into thousands of constraints.
 
 Verdict: Eliminated. A system that cannot efficiently prove its own state transitions cannot achieve [[verification]] closure.
 
 ### 3.2 Algebraic (Lookup-based): Tip5, Monolith, Reinforced Concrete
 
-Strengths: Tip5 achieves ~2.68× faster STARK proving than Rescue-Prime in Triton VM. The split-and-lookup S-box design provides structural resistance to Groebner basis attacks (algebraic degree ≈ p ≈ 2⁶⁴).
+Strengths: Tip5 achieves ~2.68× faster stark proving than Rescue-Prime in Triton VM. The split-and-lookup S-box design provides structural resistance to Groebner basis attacks (algebraic degree ≈ p ≈ 2⁶⁴).
 
 Fatal weakness: The lookup S-box that gives Tip5 its ZK advantage makes it impossible for MPC and FHE. In MPC, you cannot "look up a table" on secret-shared data — the lookup must be represented as a degree-2⁶⁴ polynomial or an oblivious RAM protocol, both prohibitively expensive. In FHE, the same problem applies to encrypted data. Additionally, Tip5 is locked to the [[Goldilocks field]] while the proving ecosystem has moved to M31 and BabyBear for 2–4× faster proving.
 
-Verdict: Eliminated. Specialist [[hash]] that excels in one domain (STARK proving in Triton VM) while being architecturally incompatible with two critical domains (MPC, FHE).
+Verdict: Eliminated. Specialist [[hash]] that excels in one domain (stark proving in Triton VM) while being architecturally incompatible with two critical domains (MPC, FHE).
 
 ### 3.3 MPC-Optimized: Hydra/Ciminion, RAIN
 
@@ -165,9 +165,9 @@ Grover's algorithm: Generic quantum search that reduces n-bit preimage resistanc
 
 Algebraic quantum attacks: Poseidon2's low-degree S-box (x⁷) raises a subtler question. Quantum algorithms for solving low-degree polynomial systems (quantum Groebner basis, quantum linearization) could theoretically exploit the algebraic structure faster than classical attacks. Current research (Jang et al., "Quantum Algebraic Attacks on AO Hash Functions," 2024) suggests that quantum speedups for Groebner basis computation are polynomial, not exponential — the conservative round count margin from §9.2 (+25%) absorbs this.
 
-STARK compatibility: STARKs are inherently post-quantum — they rely on hash function collision resistance only, with no elliptic curve assumptions. This means [[nox]]'s entire proving stack (Poseidon2 inside STARK proofs) remains sound under quantum adversaries, provided the [[hash]] itself holds. This is a structural advantage over SNARK-based systems that depend on pairing assumptions broken by Shor's algorithm.
+stark compatibility: starks are inherently post-quantum — they rely on hash function collision resistance only, with no elliptic curve assumptions. This means [[nox]]'s entire proving stack (Poseidon2 inside stark proofs) remains sound under quantum adversaries, provided the [[hash]] itself holds. This is a structural advantage over SNARK-based systems that depend on pairing assumptions broken by Shor's algorithm.
 
-Assessment: Poseidon2 with enlarged digest and conservative round counts provides viable quantum resistance. The STARK-native architecture means [[nox]] avoids the pairing-based assumptions that make most ZK systems quantum-vulnerable. The combination of Poseidon2 + STARKs is among the strongest post-quantum positions available for a [[knowledge graph]] proving system. The remaining risk is algebraic quantum attacks against the S-box — mitigated by round count margins and the algorithm-agile CID format enabling migration if quantum algebraic breakthroughs materialize.
+Assessment: Poseidon2 with enlarged digest and conservative round counts provides viable quantum resistance. The stark-native architecture means [[nox]] avoids the pairing-based assumptions that make most ZK systems quantum-vulnerable. The combination of Poseidon2 + starks is among the strongest post-quantum positions available for a [[knowledge graph]] proving system. The remaining risk is algebraic quantum attacks against the S-box — mitigated by round count margins and the algorithm-agile CID format enabling migration if quantum algebraic breakthroughs materialize.
 
 ---
 
@@ -231,7 +231,7 @@ What we bet on instead: Algorithm agility. The CID format must support migration
 
 The alternative to Poseidon2 is a multi-hash architecture:
 - Blake3 for fast content ingestion
-- Tip5 for STARK proving
+- Tip5 for stark proving
 - Hydra for MPC
 - PASTA for FHE
 - A lattice-based or SHA-3 construction for quantum resistance
@@ -305,7 +305,7 @@ Critical invariant: A (hash_algo, param_set_id, field_id) triple uniquely and pe
 | ID | Field | Size | Notes |
 |----|-------|------|-------|
 | 0x01 | Goldilocks (2⁶⁴ − 2³² + 1) | 8 bytes/element | Miden, Triton VM |
-| 0x02 | M31 (2³¹ − 1) | 4 bytes/element | Stwo, Circle STARKs |
+| 0x02 | M31 (2³¹ − 1) | 4 bytes/element | Stwo, Circle starks |
 | 0x03 | BabyBear (2³¹ − 2²⁷ + 1) | 4 bytes/element | Plonky3, SP1, RISC Zero |
 | 0x04 | BN254 scalar | 32 bytes/element | Ethereum L1 settlement |
 | 0x05 | BLS12-381 scalar | 32 bytes/element | Zcash, Filecoin |
@@ -360,7 +360,7 @@ Homomorphic property of Layer 1: LtHash over 𝔽ₚ provides:
 - Add [[cyberlink]]: new_state = old_state + H(new_link). O(1).
 - Remove [[cyberlink]]: new_state = old_state − H(old_link). O(1).
 - Merge shards: merged = state_A + state_B. O(1).
-- STARK-provable: Addition is linear → free in arithmetization.
+- stark-provable: Addition is linear → free in arithmetization.
 
 ---
 
@@ -446,7 +446,7 @@ If storage proofs are not operational when this happens, [[nox]] cannot migrate.
 
 [[nox]] operates over the [[Goldilocks field]] (p = 2⁶⁴ − 2³² + 1). This determines the Poseidon2 instantiation and the proving ecosystem.
 
-Rationale: [[Goldilocks field]] provides 64-bit native arithmetic on commodity hardware, is the native [[field]] of Triton VM (the [[trident]] compilation target), and has the deepest integration with [[nox]]'s proving stack. The 2-adicity (2³² | p−1) enables efficient NTT-based STARK proving.
+Rationale: [[Goldilocks field]] provides 64-bit native arithmetic on commodity hardware, is the native [[field]] of Triton VM (the [[trident]] compilation target), and has the deepest integration with [[nox]]'s proving stack. The 2-adicity (2³² | p−1) enables efficient NTT-based stark proving.
 
 Standard Poseidon2 parameters over [[Goldilocks field]] (the most widely deployed configuration):
 
@@ -494,7 +494,7 @@ The baseline parameters (R_F = 8, R_P = 22 over [[Goldilocks field]]) are the ec
 6. Zhao, Sanso, Vitto, Ding. "Graeffe-Based Attacks on Poseidon and NTT Lower Bounds." ePrint 2025/1916.
 7. Grassi et al. "Poseidon(2)b: Binary Field Versions of Poseidon/Poseidon2." IACR CiC 2(4), Jan 2026.
 8. Adomnicăi et al. "Towards Practical Multi-Party Hash Chains using AO Primitives." IACR CiC 2(4), Jan 2026.
-9. Szepieniec et al. "The Tip5 Hash Function for Recursive STARKs." ePrint 2023/107.
+9. Szepieniec et al. "The Tip5 Hash Function for Recursive starks." ePrint 2023/107.
 10. Grassi et al. "From Farfalle to Megafono via Ciminion: The PRF Hydra for MPC Applications." EUROCRYPT 2023.
 11. Ethereum Foundation Poseidon Cryptanalysis Initiative. poseidon-initiative.info. 2024–2026.
 12. ePrint 2026/150. "Claiming bounties on small scale Poseidon and Poseidon2 instances using resultant-based algebraic attacks." Jan 2026.

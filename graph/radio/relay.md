@@ -27,4 +27,4 @@ when [[radio/hole-punching]] fails, the relay provides guaranteed connectivity a
 
 ## incentive in cyber
 
-relays earn [[focus]] for proven delivery via [[STARK]] proof chains. this creates a permissionless relay network where operators are compensated for bandwidth. see [[cyber/communication]] for the broader messaging architecture
+relays earn [[focus]] for proven delivery via [[stark]] proof chains. this creates a permissionless relay network where operators are compensated for bandwidth. see [[cyber/communication]] for the broader messaging architecture

@@ -2,12 +2,12 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: cyber stark, cyber STARKs, Whirlaway implementation
+alias: cyber stark, cyber starks, Whirlaway implementation
 stake: 38544821775428340
 ---
 # cyber/stark
 
-the concrete instantiation of [[STARK|multilinear STARKs]] inside [[cyber]]. five primitives, one architecture, zero trusted setup.
+the concrete instantiation of [[stark|multilinear starks]] inside [[cyber]]. five primitives, one architecture, zero trusted setup.
 
 ```
 COMPONENT         │ ROLE                          │ INSTANCE
@@ -72,9 +72,9 @@ architecture: Whirlaway = [[SuperSpartan]] IOP + [[WHIR]] PCS. LambdaClass (2025
 
 ## why multilinear
 
-classical univariate STARKs interpolate each trace column as a separate polynomial, check constraints via zerofier division, prove via [[FRI]]. M columns → M commitments → M openings.
+classical univariate starks interpolate each trace column as a separate polynomial, check constraints via zerofier division, prove via [[FRI]]. M columns → M commitments → M openings.
 
-multilinear STARKs encode the entire trace as one polynomial. constraints checked via [[sumcheck]]. one commitment. one opening. the advantage:
+multilinear starks encode the entire trace as one polynomial. constraints checked via [[sumcheck]]. one commitment. one opening. the advantage:
 
 ```
                            │ univariate         │ multilinear (cyber)
@@ -126,18 +126,18 @@ identity (preimage)              │ ~300              │ one Hemera hash
 anonymous cyberlink              │ ~13,000           │ WHIR membership + SWBF
 delivery (per hop)               │ ~60,000           │ decryption + forwarding
 private transfer (BBG)           │ ~50,000           │ AOCL/SWBF verification
-STARK recursive verification     │ ~70,000 (jets)    │ Merkle + WHIR verify
-STARK recursive (no jets)        │ ~600,000          │ Merkle verification
+stark recursive verification     │ ~70,000 (jets)    │ Merkle + WHIR verify
+stark recursive (no jets)        │ ~600,000          │ Merkle verification
 ```
 
 constraint count determines prover time. at ~10⁶ constraints/second on commodity hardware: a 13K-constraint anonymous [[cyberlink]] proves in ~13 ms. a 70K-constraint recursive step proves in ~70 ms. the [[Goldilocks field processor]] targets 10× acceleration.
 
-## Hemera as the STARK hash
+## Hemera as the stark hash
 
-every hash operation inside a STARK — Fiat-Shamir challenges, Merkle trees in WHIR, commitment randomness — uses [[Hemera]]. the choice of hash is the single largest factor in STARK performance.
+every hash operation inside a stark — Fiat-Shamir challenges, Merkle trees in WHIR, commitment randomness — uses [[Hemera]]. the choice of hash is the single largest factor in stark performance.
 
 ```
-HASH                │ CONSTRAINTS PER CALL │ STARK OVERHEAD
+HASH                │ CONSTRAINTS PER CALL │ stark OVERHEAD
 ────────────────────┼──────────────────────┼────────────────
 SHA-256             │ ~25,000              │ baseline
 Keccak-256          │ ~150,000             │ 6× worse
@@ -145,17 +145,17 @@ Poseidon (original) │ ~4,000               │ 6× cheaper
 Hemera (Poseidon2)  │ ~1,200               │ 20× cheaper
 ```
 
-Hemera's ~1,200 constraints per hash means Merkle verification at depth 32 costs ~38,400 constraints instead of ~800,000 with SHA-256. this 20× reduction is what makes recursive STARK composition practical at 70,000 total constraints.
+Hemera's ~1,200 constraints per hash means Merkle verification at depth 32 costs ~38,400 constraints instead of ~800,000 with SHA-256. this 20× reduction is what makes recursive stark composition practical at 70,000 total constraints.
 
 the hash is also the field: Hemera operates natively on [[Goldilocks field]] elements. no bit-packing, no field conversion, no endianness gymnastics. eight elements in, eight elements out. the output is directly usable in polynomial commitments, constraint evaluations, and [[nox]] arithmetic.
 
 ## recursive composition
 
-the STARK verifier is a [[nox]] program. it can be proven by the same STARK system. this self-referential property is the foundation of scalability in [[cyber]] — without it, verification cost grows linearly with transaction count.
+the stark verifier is a [[nox]] program. it can be proven by the same stark system. this self-referential property is the foundation of scalability in [[cyber]] — without it, verification cost grows linearly with transaction count.
 
 ### self-verification theorem
 
-the STARK verifier requires four operations. all are [[nox]]-native:
+the stark verifier requires four operations. all are [[nox]]-native:
 
 ```
 VERIFIER OPERATION           │ NOX PATTERNS USED          │ WHY IT WORKS
@@ -233,10 +233,10 @@ blocks B₁, B₂, ..., B_E across an epoch
   acc₂ = fold(acc₁, π_B₂)    one field operation + one hash
   ...
   acc_E = fold(acc_{E-1}, π_B_E)
-  π_epoch = decider(acc_E)    one STARK proof at the end
+  π_epoch = decider(acc_E)    one stark proof at the end
 
 cost per fold: ~O(1) field ops (no full verification at each step)
-final decider: ~70K constraints (one STARK)
+final decider: ~70K constraints (one stark)
 result: one proof covers an entire epoch of blocks
 
 
@@ -271,13 +271,13 @@ the chain sees one proof per block. the proof covers every cyberlink, every tran
 
 ```
 FULL RECURSION (expensive):
-  step i: run STARK_verify(π_{i-1}) inside nox → prove it → π_i
+  step i: run stark_verify(π_{i-1}) inside nox → prove it → π_i
   cost per step: ~70,000 constraints
 
 FOLDING (cheap):
   step i: fold(accumulator, instance_i) → accumulator'
   cost per step: ~O(1) field operations + one hash
-  final step: STARK_prove(decider(accumulator)) → π_final
+  final step: stark_prove(decider(accumulator)) → π_final
   cost once: ~70,000 constraints
 
 savings: (N-1) × 70,000 constraints eliminated
@@ -285,7 +285,7 @@ savings: (N-1) × 70,000 constraints eliminated
 
 [[proof-carrying data]] generalizes IVC from linear chains to DAGs. in [[cyber]], the [[cybergraph]] is a DAG — PCD matches this topology. different [[validators]] prove different subgraphs, then merge proofs at shard boundaries. the merge operation itself is a fold: absorb two accumulators into one.
 
-[[HyperNova]] folding over [[CCS]] is the natural fit: CCS already powers [[SuperSpartan]], so the folding scheme and the STARK system share the same constraint language. fold a [[cyberlink]] insertion proof? same CCS instance type. fold a rank update? same CCS. fold a cross-shard merge? same CCS. one framework for every proof in the taxonomy.
+[[HyperNova]] folding over [[CCS]] is the natural fit: CCS already powers [[SuperSpartan]], so the folding scheme and the stark system share the same constraint language. fold a [[cyberlink]] insertion proof? same CCS instance type. fold a rank update? same CCS. fold a cross-shard merge? same CCS. one framework for every proof in the taxonomy.
 
 ### folding in practice
 
@@ -306,7 +306,7 @@ epoch starts with state commitment S₀
 
   block E: last block of epoch
     acc_E = fold(acc_{E-1}, block_E_insertions)
-    π_epoch = STARK(decider(acc_E))    ← one proof, ~70K constraints
+    π_epoch = stark(decider(acc_E))    ← one proof, ~70K constraints
 
 S₁ = apply(S₀, π_epoch)  — state transition is one proof verification
 ```
@@ -315,7 +315,7 @@ the epoch proof guarantees: every cyberlink insertion was valid (correct neuron,
 
 ## integration with BBG
 
-the [[BBG]] uses [[WHIR]]-based polynomial commitments for all indexes. the same WHIR instance that serves as the STARK PCS also handles:
+the [[BBG]] uses [[WHIR]]-based polynomial commitments for all indexes. the same WHIR instance that serves as the stark PCS also handles:
 
 ```
 OPERATION              │ MECHANISM                        │ CONSTRAINTS
@@ -343,4 +343,4 @@ Fiat-Shamir (random oracle) │ predictable challenges → forge proofs
 
 all assumptions reduce to: collision resistance of [[Hemera]]. no discrete log, no pairings, no trusted setup. post-quantum: a quantum adversary with Grover's algorithm squares the brute-force effort on Hemera from 2^128 to 2^64 — but Hemera's 256-bit output provides 128-bit post-quantum security margin.
 
-see [[STARK]] for the general theory, [[cyber/proofs]] for the full proof taxonomy, [[nox]] for the VM specification, [[WHIR]] for the PCS, [[SuperSpartan]] for the IOP, [[sumcheck]] for the core protocol, [[Hemera]] for the hash, [[Goldilocks field]] for the arithmetic, [[BBG]] for the graph structure
+see [[stark]] for the general theory, [[cyber/proofs]] for the full proof taxonomy, [[nox]] for the VM specification, [[WHIR]] for the PCS, [[SuperSpartan]] for the IOP, [[sumcheck]] for the core protocol, [[Hemera]] for the hash, [[Goldilocks field]] for the arithmetic, [[BBG]] for the graph structure

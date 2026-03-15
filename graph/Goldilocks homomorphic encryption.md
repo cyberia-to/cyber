@@ -108,13 +108,13 @@ Every existing approach to verifiable FHE must bridge this gap:
 - HELIOPOLIS: builds custom PIOPs for ring operations (complex, scheme-specific)
 - Thibault & Walter's breakthrough: set $q$ = Goldilocks prime, use plonky2 (Goldilocks SNARK)
 
-When $q = p$, the ring $R_q = R_p = \mathbb{F}_p[x]/(x^N + 1)$ is a polynomial ring *over the STARK's native field*. Every FHE operation is already an arithmetic circuit over $\mathbb{F}_p$. No emulation. No translation. No overhead from crossing algebraic boundaries.
+When $q = p$, the ring $R_q = R_p = \mathbb{F}_p[x]/(x^N + 1)$ is a polynomial ring *over the stark's native field*. Every FHE operation is already an arithmetic circuit over $\mathbb{F}_p$. No emulation. No translation. No overhead from crossing algebraic boundaries.
 
-For [[trident]] specifically: [[Triton VM]] executes arithmetic circuits over Goldilocks. TFHE over Goldilocks IS an arithmetic circuit over Goldilocks. The FHE computation and its [[STARK]] proof are *the same mathematical object* viewed from different angles:
+For [[trident]] specifically: [[Triton VM]] executes arithmetic circuits over Goldilocks. TFHE over Goldilocks IS an arithmetic circuit over Goldilocks. The FHE computation and its [[stark]] proof are *the same mathematical object* viewed from different angles:
 
 ```
 FHE view:  polynomial multiplication in R_p for blind rotation
-STARK view: arithmetic circuit over F_p to be proven
+stark view: arithmetic circuit over F_p to be proven
 Trident:   one program, one compilation, one proof
 ```
 
@@ -126,61 +126,61 @@ This is the most profound structural connection in the entire Trident architectu
 
 In [[TFHE]]: Programmable Bootstrapping evaluates a lookup table (LUT) on encrypted data. The LUT is encoded as a polynomial — the "test polynomial" — whose coefficients represent the function values. PBS blind-rotates this polynomial by the encrypted input, effectively computing $f(\text{Enc}(x)) = \text{Enc}(f(x))$.
 
-In [[Triton VM]] / [[STARK]]: The lookup argument proves that a claimed function evaluation $y = f(x)$ is correct by checking that the pair $(x, y)$ appears in a precomputed table. The Tip5 hash function's S-box ($x \mapsto x^{p-2}$, the modular inverse) is proven via exactly this mechanism.
+In [[Triton VM]] / [[stark]]: The lookup argument proves that a claimed function evaluation $y = f(x)$ is correct by checking that the pair $(x, y)$ appears in a precomputed table. The Tip5 hash function's S-box ($x \mapsto x^{p-2}$, the modular inverse) is proven via exactly this mechanism.
 
-In neural networks (std.nn): Activation functions (ReLU, GELU, SiLU) are proven via the same lookup argument — precomputed table of $(x, f(x))$ pairs, authenticated by the STARK.
+In neural networks (std.nn): Activation functions (ReLU, GELU, SiLU) are proven via the same lookup argument — precomputed table of $(x, f(x))$ pairs, authenticated by the stark.
 
 Three different systems. Three different purposes. One mechanism: lookup table over $\mathbb{F}_p$. See [[rosetta stone]] for the full treatment of the lookup table unification.
 
 | System | Lookup Table Purpose | Mechanism |
 |--------|---------------------|-----------|
 | TFHE PBS | Evaluate function on encrypted data | Test polynomial blind-rotated by encrypted input |
-| STARK | Prove function evaluation correct | Lookup argument in algebraic proof |
-| std.nn | Neural network activation | Precomputed table authenticated by STARK |
+| stark | Prove function evaluation correct | Lookup argument in algebraic proof |
+| std.nn | Neural network activation | Precomputed table authenticated by stark |
 
 And here is the key: when all three operate over $\mathbb{F}_p$, the lookup table IS THE SAME OBJECT.
 
 A ReLU activation function can be:
 1. The test polynomial in TFHE PBS (evaluate ReLU on encrypted data)
-2. The lookup table in STARK proof (prove ReLU was computed correctly)
+2. The lookup table in stark proof (prove ReLU was computed correctly)
 3. The activation in std.nn (neural network inference)
 
 One function definition. Three uses. Zero redundancy.
 
-This means: a neural network inference that runs on encrypted data (FHE) and is proven correct (STARK) uses the same lookup table for all three purposes. The activation function is simultaneously the FHE bootstrapping function, the STARK verification function, and the neural network nonlinearity.
+This means: a neural network inference that runs on encrypted data (FHE) and is proven correct (stark) uses the same lookup table for all three purposes. The activation function is simultaneously the FHE bootstrapping function, the stark verification function, and the neural network nonlinearity.
 
 No other system can achieve this unification because no other system has all three components operating over the same field.
 
-### Synergy 3: FHE + STARK Composability
+### Synergy 3: FHE + stark Composability
 
-With Goldilocks TFHE, we can compose FHE and STARK proofs natively:
+With Goldilocks TFHE, we can compose FHE and stark proofs natively:
 
 Verifiable FHE (proven externally): 
 ```
 Client encrypts data → Server evaluates FHE circuit → 
-Server generates STARK proof of correct evaluation → 
+Server generates stark proof of correct evaluation → 
 Client verifies proof + decrypts result
 ```
 
-The STARK proof covers the entire FHE evaluation: every NTT, every polynomial multiplication, every CMUX gate, every modulus operation. Proof size: ~200 KB (Thibault & Walter). Verification: <10 ms.
+The stark proof covers the entire FHE evaluation: every NTT, every polynomial multiplication, every CMUX gate, every modulus operation. Proof size: ~200 KB (Thibault & Walter). Verification: <10 ms.
 
-FHE inside STARK (proven internally):
+FHE inside stark (proven internally):
 ```
 Trident program uses encrypted data as witness → 
 FHE operations are part of the arithmetic circuit → 
-STARK proof covers both FHE operations and business logic
+stark proof covers both FHE operations and business logic
 ```
 
-Because FHE operations ARE field arithmetic, they need no special treatment in the STARK. They're just more constraints in the same proof.
+Because FHE operations ARE field arithmetic, they need no special treatment in the stark. They're just more constraints in the same proof.
 
-STARK inside FHE (recursive):
+stark inside FHE (recursive):
 ```
-STARK verifier is itself an arithmetic circuit over F_p → 
-Evaluate STARK verifier homomorphically on encrypted proof → 
-Prove STARK verification without seeing the proof
+stark verifier is itself an arithmetic circuit over F_p → 
+Evaluate stark verifier homomorphically on encrypted proof → 
+Prove stark verification without seeing the proof
 ```
 
-This enables *private proof verification* — verifying a STARK proof without learning what was proven. The STARK verifier is a sequence of hash evaluations (Tip5) and field operations. All native to both FHE and Triton VM.
+This enables *private proof verification* — verifying a stark proof without learning what was proven. The stark verifier is a sequence of hash evaluations (Tip5) and field operations. All native to both FHE and Triton VM.
 
 ### Synergy 4: NTT Unification
 
@@ -189,22 +189,22 @@ NTT (Number Theoretic Transform) is the workhorse of three separate systems:
 | System | NTT Purpose | Ring |
 |--------|-------------|------|
 | FHE | Polynomial multiplication for CMUX gates | $R_p = \mathbb{F}_p[x]/(x^N+1)$ |
-| STARK | Polynomial evaluation for WHIR protocol | $\mathbb{F}_p[x]$ |
+| stark | Polynomial evaluation for WHIR protocol | $\mathbb{F}_p[x]$ |
 | Quantum | Quantum Fourier Transform simulation | $\mathbb{F}_{p^2}[x]$ |
 
-All three use NTT over $\mathbb{F}_p$ or its extensions. In Trident, `std.field.poly.ntt` serves all three. One implementation. One hardware acceleration path. One optimization effort benefits FHE, STARK proving, and quantum simulation simultaneously.
+All three use NTT over $\mathbb{F}_p$ or its extensions. In Trident, `std.field.poly.ntt` serves all three. One implementation. One hardware acceleration path. One optimization effort benefits FHE, stark proving, and quantum simulation simultaneously.
 
-The [[Goldilocks field]] prime was *designed* for fast NTT: $p - 1 = 2^{32}(2^{32} - 1)$ gives $2^{32}$-th roots of unity. The same property that makes STARK proofs fast makes FHE bootstrapping fast makes quantum simulation fast. See [[Goldilocks field processor]] for hardware acceleration of these primitives.
+The [[Goldilocks field]] prime was *designed* for fast NTT: $p - 1 = 2^{32}(2^{32} - 1)$ gives $2^{32}$-th roots of unity. The same property that makes stark proofs fast makes FHE bootstrapping fast makes quantum simulation fast. See [[Goldilocks field processor]] for hardware acceleration of these primitives.
 
 ### Synergy 5: The divine() Bridge
 
 Trident's `divine()` primitive — non-deterministic witness injection — connects to FHE in a novel way:
 
-FHE key as divine() witness: The FHE secret key is private to the prover. In a STARK proof of FHE computation, the secret key enters via `divine()`. The proof verifies that the FHE operations were performed correctly *without revealing the key*. This is exactly how `divine()` works for ZK proofs generally, but applied to FHE key material.
+FHE key as divine() witness: The FHE secret key is private to the prover. In a stark proof of FHE computation, the secret key enters via `divine()`. The proof verifies that the FHE operations were performed correctly *without revealing the key*. This is exactly how `divine()` works for ZK proofs generally, but applied to FHE key material.
 
 Decryption result as divine() witness: After homomorphic evaluation, the result is still encrypted. The prover can decrypt (they know the key) and inject the plaintext result via `divine()`. The constraints verify: (1) the FHE evaluation was correct, (2) the decryption matches the ciphertext, (3) the plaintext result satisfies additional business logic. All in one proof.
 
-Optimization via divine(): FHE computation is expensive. Sometimes it's cheaper to: (1) compute the function on plaintext, (2) inject the result via `divine()`, (3) prove in ZK that the result is correct. The `divine()` result serves as the optimization hint, and the STARK proof verifies correctness without requiring the verifier to redo the FHE computation. This is the FHE analog of how `divine()` accelerates general Trident programs.
+Optimization via divine(): FHE computation is expensive. Sometimes it's cheaper to: (1) compute the function on plaintext, (2) inject the result via `divine()`, (3) prove in ZK that the result is correct. The `divine()` result serves as the optimization hint, and the stark proof verifies correctness without requiring the verifier to redo the FHE computation. This is the FHE analog of how `divine()` accelerates general Trident programs.
 
 ---
 
@@ -221,7 +221,7 @@ FHE over Goldilocks is not merely an "integration" with Trident. It exhibits the
 
 The pattern is identical: each domain has a "natural home" in some algebraic structure, and that structure has an impedance mismatch with proof systems. Trident eliminates each mismatch by making the Goldilocks field the universal medium.
 
-For FHE, the mismatch is between $R_q$ (where ciphertexts live) and $\mathbb{F}_p$ (where proofs live). When $q = p$, $R_q = R_p$ and the mismatch vanishes. This is NOT the same as "just choosing Goldilocks as modulus" — it's recognizing that this choice aligns the *entire algebraic stack* across FHE, STARK, neural networks, and quantum computation.
+For FHE, the mismatch is between $R_q$ (where ciphertexts live) and $\mathbb{F}_p$ (where proofs live). When $q = p$, $R_q = R_p$ and the mismatch vanishes. This is NOT the same as "just choosing Goldilocks as modulus" — it's recognizing that this choice aligns the *entire algebraic stack* across FHE, stark, neural networks, and quantum computation.
 
 ### Updated stdlib Architecture
 
@@ -309,10 +309,10 @@ std.fhe
 │   └── bitwise             Encrypted bitwise operations (AND, OR, XOR)
 │
 ├── verify                  Verifiable FHE operations
-│   ├── prove_bootstrap     STARK proof of correct PBS execution
-│   ├── prove_evaluation    STARK proof of arbitrary FHE circuit
-│   ├── prove_decryption    STARK proof of correct decryption
-│   ├── prove_key_gen       STARK proof of correct key generation
+│   ├── prove_bootstrap     stark proof of correct PBS execution
+│   ├── prove_evaluation    stark proof of arbitrary FHE circuit
+│   ├── prove_decryption    stark proof of correct decryption
+│   ├── prove_key_gen       stark proof of correct key generation
 │   └── recursive_verify    IVC for iterated FHE operations
 │
 ├── noise                   Noise management and analysis
@@ -322,7 +322,7 @@ std.fhe
 │   └── param_select        Automatic parameter selection for target depth
 │
 └── compile                 Compilation targets
-    ├── triton              Compile FHE ops to Triton VM (STARK-proven)
+    ├── triton              Compile FHE ops to Triton VM (stark-proven)
     ├── concrete            Export to Zama's Concrete framework
     ├── tfhe_rs             Export to Zama's TFHE-rs library
     └── hardware            FPGA/ASIC acceleration interface
@@ -332,7 +332,7 @@ Key design decisions:
 
 Pre-built test polynomials for neural network activations. `std.fhe.bootstrap.test_polynomial.relu` provides a test polynomial that computes ReLU on encrypted data. This is the same function as `std.nn.activation.relu` (computed on plaintext). The lookup table entries are identical. This is the concrete manifestation of the lookup table duality.
 
-Verification is built-in, not bolted on. `std.fhe.verify` provides [[STARK]] proofs of every FHE operation. Because $q = p$, these proofs have zero impedance mismatch. The proof is over the same field as the computation.
+Verification is built-in, not bolted on. `std.fhe.verify` provides [[stark]] proofs of every FHE operation. Because $q = p$, these proofs have zero impedance mismatch. The proof is over the same field as the computation.
 
 Key commitment for on-chain binding. `std.fhe.key.key_commit` creates a Merkle tree ([[Poseidon2]] / Tip5 hash) over the bootstrapping key. This commitment can be stored on-chain, binding a particular FHE key to a smart contract. Users can verify that a specific key was used for computation without seeing the key.
 
@@ -371,14 +371,14 @@ std.nn_fhe
 │   └── model_weights_enc   Both model and data encrypted
 │
 └── prove                   Verification of encrypted inference
-    ├── prove_inference      STARK proof of correct encrypted inference
+    ├── prove_inference      stark proof of correct encrypted inference
     ├── prove_model_match    Prove inference used committed model
     └── prove_accuracy       Prove model achieves claimed accuracy on encrypted test set
 ```
 
-The power play: A neural network model committed on-chain (`std.nn_private.marketplace.model_commit`). User encrypts their data with FHE (`std.fhe.lwe.encrypt`). Server runs inference on encrypted data (`std.nn_fhe.model_enc.mlp_enc`). Server generates STARK proof of correct execution (`std.nn_fhe.prove.prove_inference`). User verifies proof and decrypts result. See [[privacy trilateral]] for the complete ZK+FHE+MPC privacy architecture.
+The power play: A neural network model committed on-chain (`std.nn_private.marketplace.model_commit`). User encrypts their data with FHE (`std.fhe.lwe.encrypt`). Server runs inference on encrypted data (`std.nn_fhe.model_enc.mlp_enc`). Server generates stark proof of correct execution (`std.nn_fhe.prove.prove_inference`). User verifies proof and decrypts result. See [[privacy trilateral]] for the complete ZK+FHE+MPC privacy architecture.
 
-The model owner never sees the data. The data owner never sees the model weights. The STARK proof verifies correct execution. All over one field. No impedance mismatch anywhere in the pipeline.
+The model owner never sees the data. The data owner never sees the model weights. The stark proof verifies correct execution. All over one field. No impedance mismatch anywhere in the pipeline.
 
 ### std.fhe_quantum — Quantum-FHE Intersection
 
@@ -426,9 +426,9 @@ The blind rotation computes $X^{-\tilde{b}} \cdot v(X) \bmod (X^N + 1)$, where $
 
 Cost: $n$ CMUX gates, each involving polynomial multiplication in $R_p$ via NTT. Total: $O(n \cdot N \log N)$ field operations.
 
-### Use 2: STARK Lookup Argument
+### Use 2: stark Lookup Argument
 
-The STARK proves that a function evaluation $y = f(x)$ is correct by verifying that $(x, y)$ appears in the table $T_f$.
+The stark proves that a function evaluation $y = f(x)$ is correct by verifying that $(x, y)$ appears in the table $T_f$.
 
 The lookup argument (as in Plookup or the Tip5 mechanism): the prover commits to a sorted version of the table augmented with the queried values. The verifier checks a polynomial identity relating the original table, the sorted table, and the query. The permutation argument ensures consistency.
 
@@ -440,7 +440,7 @@ The activation function $\sigma: \mathbb{F}_p \to \mathbb{F}_p$ (ReLU, GELU, etc
 
 For Trident's field-native neural networks, the activation is applied elementwise to the output of a linear layer. Each application is one lookup in $T_\sigma$.
 
-Cost: $O(1)$ per activation (table is precomputed), $O(|T_\sigma|)$ to authenticate via STARK.
+Cost: $O(1)$ per activation (table is precomputed), $O(|T_\sigma|)$ to authenticate via stark.
 
 ### The Unification
 
@@ -454,7 +454,7 @@ fn relu(x: Field) -> Field {
 
 // Use 1: Neural network activation (std.nn)
 let activated = std_nn::activation::apply(input, relu);
-// Proven via STARK lookup argument
+// Proven via stark lookup argument
 
 // Use 2: FHE bootstrapping (std.fhe)  
 let test_poly = std_fhe::bootstrap::test_polynomial::from_function(relu);
@@ -463,17 +463,17 @@ let encrypted_activated = std_fhe::bootstrap::pbs(encrypted_input, bsk, test_pol
 
 // Use 3: Both simultaneously (std.nn_fhe)
 let enc_result = std_nn_fhe::activation_enc::custom_enc(enc_input, relu);
-// FHE evaluation + STARK proof + same lookup table
+// FHE evaluation + stark proof + same lookup table
 ```
 
-One function definition → three execution modes → one proof mechanism. The lookup table duality is now a *trilateral* duality: FHE ↔ STARK ↔ Neural Network.
+One function definition → three execution modes → one proof mechanism. The lookup table duality is now a *trilateral* duality: FHE ↔ stark ↔ Neural Network.
 
 ### Why This Cannot Exist Outside Trident
 
 For this unification to work, you need:
 1. Field-native neural networks (no float→field conversion) — Trident's std.nn
 2. FHE over the same field ($q = p$ = Goldilocks) — Goldilocks TFHE
-3. [[STARK]] proofs over the same field — [[Triton VM]]
+3. [[stark]] proofs over the same field — [[Triton VM]]
 4. Lookup argument that authenticates both FHE PBS and NN activations — Tip5 mechanism
 5. Smart contract execution environment — [[neptune]] / Level 1
 
@@ -508,24 +508,24 @@ Server (prover):
      - Linear layers: matrix-vector multiply in R_p (homomorphic)
      - Activations: PBS with test polynomial (= same lookup table as std.nn)
      - Normalization: field arithmetic operations (homomorphic)
-  3. Generate STARK proof of entire computation:
+  3. Generate stark proof of entire computation:
      - Proof that model weights match commitment
      - Proof that FHE operations are correct
      - Proof that the output ciphertext is the correct result
-  4. Return encrypted result + STARK proof
+  4. Return encrypted result + stark proof
 
 User (verifier):
-  1. Verify STARK proof (< 10ms)
+  1. Verify stark proof (< 10ms)
   2. Decrypt result with their FHE secret key
   3. Obtain inference result
 ```
 
 What is guaranteed:
 - Data privacy: Server never sees plaintext input (FHE encryption)
-- Model privacy: User never sees model weights (committed via Merkle tree, accessed via STARK witness)
-- Computation integrity: STARK proof guarantees correct execution
-- Post-quantum security: Both LWE (FHE) and STARK (hash-based) are post-quantum
-- On-chain verifiability: Anyone can verify the STARK proof
+- Model privacy: User never sees model weights (committed via Merkle tree, accessed via stark witness)
+- Computation integrity: stark proof guarantees correct execution
+- Post-quantum security: Both LWE (FHE) and stark (hash-based) are post-quantum
+- On-chain verifiability: Anyone can verify the stark proof
 - Economic settlement: Smart contract handles payment based on verified inference
 
 ### Benchmark Estimates
@@ -616,13 +616,13 @@ The six intersections form a complete graph over four vertices — every pair of
 
 ### What is genuinely new in this document:
 
-1. Recognition that TFHE over Goldilocks + Triton VM STARK + field-native neural networks + quantum computation creates a four-pillar structural unification. No prior work connects all four.
+1. Recognition that TFHE over Goldilocks + Triton VM stark + field-native neural networks + quantum computation creates a four-pillar structural unification. No prior work connects all four.
 
-2. The trilateral lookup table duality: PBS test polynomial = STARK lookup argument = neural network activation. This specific connection has not been articulated before.
+2. The trilateral lookup table duality: PBS test polynomial = stark lookup argument = neural network activation. This specific connection has not been articulated before.
 
 3. The argument that FHE over Goldilocks constitutes a structural groundbreak (impedance mismatch elimination) comparable to the other three pillars, not merely "integration."
 
-4. The std.fhe standard library design with built-in STARK verification and neural network activation test polynomials.
+4. The std.fhe standard library design with built-in stark verification and neural network activation test polynomials.
 
 5. The four-pillar completeness argument: $\mathbb{F}_p$ is the minimal structure for four distinct computational domains, and Goldilocks specifically unifies all four.
 
@@ -633,7 +633,7 @@ The six intersections form a complete graph over four vertices — every pair of
 3. Goldilocks NTT accelerates TFHE hardware (FPGA paper, 2025)
 4. The impedance mismatch between $R_q$ and $\mathbb{F}_p$ is a fundamental problem for verifiable FHE (CRYPTO 2025)
 5. TFHE programmable bootstrapping evaluates lookup tables (Chillotti et al., 2016-2021)
-6. STARK lookup arguments authenticate function evaluations (multiple authors)
+6. stark lookup arguments authenticate function evaluations (multiple authors)
 7. FHE can be used for private neural network inference (Concrete ML, Zama)
 
 ### What remains to be proven:
@@ -644,11 +644,11 @@ The six intersections form a complete graph over four vertices — every pair of
 
 3. Neural network accuracy: Empirical validation that field-native neural networks with PBS activation functions achieve competitive accuracy on standard benchmarks.
 
-4. End-to-end implementation: Nobody has built the complete pipeline (field-native NN → FHE encryption → encrypted inference → STARK proof → on-chain verification) in a single system.
+4. End-to-end implementation: Nobody has built the complete pipeline (field-native NN → FHE encryption → encrypted inference → stark proof → on-chain verification) in a single system.
 
 ### Open problems:
 
-1. Optimal FHE parameters for Goldilocks: What is the best tradeoff between FHE performance and STARK proof efficiency when both share the same field?
+1. Optimal FHE parameters for Goldilocks: What is the best tradeoff between FHE performance and stark proof efficiency when both share the same field?
 
 2. Activation function design: Which activation functions have the best properties as both PBS test polynomials and neural network nonlinearities? This is a new optimization problem at the intersection of FHE and ML.
 
@@ -673,7 +673,7 @@ Four computational revolutions. Four algebraic requirements. One prime field. On
   Quantum:  unitary matrices over F_{p^2}   ── quantum power
 
   All four: native to Goldilocks field p = 2^64 - 2^32 + 1
-  All four: proven by STARK over the same field
+  All four: proven by stark over the same field
   All four: executed in one language (Trident)
   All four: settled on one blockchain (Neptune)
 ```
@@ -682,7 +682,7 @@ The lookup table over $\mathbb{F}_p$ is the Rosetta Stone — the one mechanism 
 - Cryptographic S-box (hash function security)
 - Neural network activation (machine learning expressiveness)
 - FHE bootstrapping function (encrypted computation)
-- STARK authentication (proof correctness)
+- stark authentication (proof correctness)
 
 Four purposes. One table. One field. One proof.
 

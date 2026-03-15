@@ -56,7 +56,7 @@ six research threads developed independently over four decades — none referenc
 ║   ┌─────────┴───────────┐   ┌─────────┴───────────┐   ┌─────────┴───────┐ ║
 ║   │  PARALLEL REDUCTION │   │   CONSERVED FLOW    │   │   ZERO-KNOWLEDGE│ ║
 ║   │     Lafont 1990     │   │   DYNAMICS          │   │   VERIFICATION  │ ║
-║   │     HVM 2022        │   │   CFT 2024          │   │   STARKs 2018   │ ║
+║   │     HVM 2022        │   │   CFT 2024          │   │   starks 2018   │ ║
 ║   │                     │   │   FFC 2024          │   │   Zcash 2014    │ ║
 ║   │ Automatic parallel  │   │ Focus = attention   │   │ Prove once,     │ ║
 ║   │ via confluence      │   │ + fuel + consensus  │   │ verify cheap    │ ║
@@ -84,7 +84,7 @@ ten principles, each addressing a failure mode of existing systems:
 - namespace-intrinsic — the graph is multi-indexed from genesis. completeness proofs are structural
 - cost-deterministic — cost depends only on syntactic structure, never on runtime values
 - privacy-native — individual ownership private, aggregate properties public and verifiable
-- self-verifying — the [[STARK]] verifier is a nox program. verification can itself be proven. the system closes on itself
+- self-verifying — the [[stark]] verifier is a nox program. verification can itself be proven. the system closes on itself
 - post-quantum — security relies only on hash functions. no pairings, no discrete log, no trusted setup
 
 ## what changes
@@ -112,7 +112,7 @@ natural computing paradigm
 
 - [[cyber/nox]] — three-layer instruction set (16 patterns + hint + 5 jets), value tower, cost table, parallel reduction, memoization
 - [[cyber/bbg]] — multi-indexed polynomial commitments, namespace sync, completeness proofs, ZK privacy model, transaction circuit (~10K constraints)
-- [[cyber/stark]] — STARK verification, self-verification, recursive composition
+- [[cyber/stark]] — stark verification, self-verification, recursive composition
 - [[cyber/focus]] — focus dynamics, conservation laws, flow equation, convergence theorem
 - [[cyber/state]] — world state structure, state transitions, validity conditions
 - [[cyber/security]] — security properties, attack surface, formal proofs

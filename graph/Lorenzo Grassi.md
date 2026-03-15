@@ -8,7 +8,7 @@ Italian cryptographer, researcher at Radboud University.
 
 Lead author of [[Poseidon]] (2021), a hash function designed for zero-knowledge proof systems, optimized for arithmetic circuits over prime fields.
 
-Poseidon achieves 8x fewer constraints than Pedersen hashes in SNARK/STARK circuits, making ZK proofs practical for real workloads.
+Poseidon achieves 8x fewer constraints than Pedersen hashes in SNARK/stark circuits, making ZK proofs practical for real workloads.
 
 Research focuses on symmetric [[cryptography]], algebraic attacks, and hash function design for constrained environments.
 

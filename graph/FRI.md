@@ -6,13 +6,13 @@ alias: Fast Reed-Solomon IOP, FRI protocol, FRI proofs
 ---
 # FRI
 
-Fast Reed-Solomon Interactive Oracle Proof. a protocol for proving that a committed function is close to a low-degree polynomial. the core building block of [[STARK]] proof systems and [[polynomial commitments]] in [[cyber]].
+Fast Reed-Solomon Interactive Oracle Proof. a protocol for proving that a committed function is close to a low-degree polynomial. the core building block of [[stark]] proof systems and [[polynomial commitments]] in [[cyber]].
 
 introduced by Ben-Sasson, Bentov, Horesh, Riabzev (2018). used in StarkWare, Plonky2, Stwo, and [[cyber]].
 
 ## what it proves
 
-given a committed evaluation table (values of a function at many points), FRI proves: "this function is a polynomial of degree at most d." this is the low-degree test — the foundation of all STARK-based proof systems.
+given a committed evaluation table (values of a function at many points), FRI proves: "this function is a polynomial of degree at most d." this is the low-degree test — the foundation of all stark-based proof systems.
 
 ```
 CLAIM: committed function f has degree ≤ d
@@ -41,7 +41,7 @@ SECURITY: soundness error ≈ (max_degree/|F|)^{num_queries}
 
 | purpose | what is committed | where |
 |---|---|---|
-| [[STARK]] verification | execution trace polynomials | every [[nox]] computation |
+| [[stark]] verification | execution trace polynomials | every [[nox]] computation |
 | [[EdgeSet]] membership | edge hash polynomial per namespace | [[BBG]] indexes |
 | [[polynomial commitment]] proofs | arbitrary polynomial evaluation | graph state queries |
 
@@ -61,7 +61,7 @@ FRI parameters for cyber:
 ## constraint costs
 
 ```
-FRI verification inside STARK:
+FRI verification inside stark:
   without jets:  ~50,000 constraints (fri_fold + NTT + Merkle)
   with jets:     ~10,000 constraints (Layer 3 jets accelerate fri_fold + NTT)
 
@@ -84,4 +84,4 @@ CRYPTO 2018        CRYPTO 2024 (BP)     EUROCRYPT 2025
 
 all three generations maintain the same interface: Reed-Solomon proximity testing. [[cyber]] uses [[WHIR]] — the final generation. all layers above the proof system remain unchanged from the FRI interface.
 
-see [[WHIR]] for what [[cyber]] uses, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[EdgeSet]] for edge membership proofs, [[STARK]] for the proof system, [[BBG]] for the graph architecture, [[Goldilocks field]] for the arithmetic foundation
+see [[WHIR]] for what [[cyber]] uses, [[STIR]] for the intermediate evolution, [[polynomial commitment]] for the commitment scheme, [[EdgeSet]] for edge membership proofs, [[stark]] for the proof system, [[BBG]] for the graph architecture, [[Goldilocks field]] for the arithmetic foundation

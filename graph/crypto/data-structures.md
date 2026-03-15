@@ -52,13 +52,13 @@ RSA and bilinear accumulators achieve constant-size proofs but require stronger 
 | structure | property | used in |
 |---|---|---|
 | vector commitments (KZG, IPA) | commit to a vector, open at any index with O(1) proof | Verkle trees, [[Ethereum]] EIP-4844 |
-| [[polynomial commitment]] | commit to polynomial, prove evaluations | [[STARK]], PLONK, [[cyber]] ([[WHIR]]-based) |
+| [[polynomial commitment]] | commit to polynomial, prove evaluations | [[stark]], PLONK, [[cyber]] ([[WHIR]]-based) |
 | [[EdgeSet]] | edge membership via polynomial commitment | [[cyber]] [[BBG]] |
 | [[LogUp]] | cross-index consistency via algebraic lookup | Polygon, Scroll, [[cyber]] |
 | LtHash (lattice hash) | homomorphic set commitment — add/remove elements in O(1) | [[cyber]] collection state |
 | authenticated skip list | O(log n) membership with authenticated pointers | early blockchain designs, distributed databases |
 
-LtHash is an additive homomorphic commitment over a finite field: `add(state, H(x))` and `remove(state, H(x))` are single field operations. merging two sets is field addition. STARK-provable at zero cost (addition is linear in arithmetization). used in [[cyber]] for O(1) shard and neuron state updates.
+LtHash is an additive homomorphic commitment over a finite field: `add(state, H(x))` and `remove(state, H(x))` are single field operations. merging two sets is field addition. stark-provable at zero cost (addition is linear in arithmetization). used in [[cyber]] for O(1) shard and neuron state updates.
 
 ## erasure coding
 

@@ -86,7 +86,7 @@ every UTXO holder keeps proofs synchronized as the mutator set evolves. this is 
 | old UTXO spent | SWBF bits set, inactive chunks affected | O(log L × log N) average |
 | window slides | active chunk compacted into inactive MMR | O(log N) per affected proof |
 
-for practical parameters (10⁹ users, 10-year UTXO): ~50 hash operations per block average. ~12,500 [[STARK]] constraints per block for maintenance.
+for practical parameters (10⁹ users, 10-year UTXO): ~50 hash operations per block average. ~12,500 [[stark]] constraints per block for maintenance.
 
 ## the [[neptune]] precedent
 

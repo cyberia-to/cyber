@@ -110,7 +110,7 @@ fn accept(tasm: &[Instruction], baseline: &[Instruction]) -> bool {
 }
 ```
 
-Important distinction: `triton_vm::execute` is a simulation/dry-run (milliseconds). `triton_vm::prove` is a full STARK proof (seconds). Acceptance checking uses simulation only. Full proof is never called during model training or beam search ranking. It is called by the downstream consumer of the compiled output, not by this system.
+Important distinction: `triton_vm::execute` is a simulation/dry-run (milliseconds). `triton_vm::prove` is a full stark proof (seconds). Acceptance checking uses simulation only. Full proof is never called during model training or beam search ranking. It is called by the downstream consumer of the compiled output, not by this system.
 
 ---
 
@@ -591,7 +591,7 @@ TIR operates over BFE (Goldilocks base field, 64-bit) and XFE (extension field, 
 - It is a candidate generator; `triton_vm::execute` is the verifier. The model proposes candidates; the [[vm]] accepts or rejects. [[formal verification]] lives in the VM.
 - It is a transparent post-hoc optimizer for [[trident]]. Trident always runs first; the model tries to improve its output.
 - It targets function patterns in the cyb agent runtime. OOD generalization is not a v1 goal.
-- It uses simulation only. Full STARK [[cryptographic proofs]] are the downstream consumer's responsibility — `triton_vm::prove()` is never called by this system.
+- It uses simulation only. Full stark [[cryptographic proofs]] are the downstream consumer's responsibility — `triton_vm::prove()` is never called by this system.
 
 ---
 

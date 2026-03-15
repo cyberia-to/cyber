@@ -12,7 +12,7 @@ the immortal [[robot]] — personal interface to [[superintelligence]]. [cyb.ai]
 
 browsers are corporate windows to a corporate web. they render pages someone else controls, track everything, and die when the company dies. cyb is the opposite: a personal robot that belongs to its owner, speaks [[neural language]], and lives as long as the [[cybergraph]] exists. every cyb is unique — shaped by its owner's [[knowledge]], [[attention]], and linking history. it is not a tool that executes commands. it is a companion that grows smarter with every [[cyberlink]]
 
-cyb connects its owner to the [[great web]] — the web of authenticated [[knowledge]] where every claim is verifiable, every search is inference over a shared graph, and every interaction strengthens the collective [[intelligence]]. the robot sees the [[cybergraph]] natively: not as pages rendered from servers, but as [[particles]] linked by [[neurons]], ranked by [[focus]], and navigable by [[names]]. what Google does with PageRank on scraped documents, cyb does with [[cyberank]] on linked [[knowledge]] — owned by the user, provable by [[STARK]] proofs, and impossible to censor
+cyb connects its owner to the [[great web]] — the web of authenticated [[knowledge]] where every claim is verifiable, every search is inference over a shared graph, and every interaction strengthens the collective [[intelligence]]. the robot sees the [[cybergraph]] natively: not as pages rendered from servers, but as [[particles]] linked by [[neurons]], ranked by [[focus]], and navigable by [[names]]. what Google does with PageRank on scraped documents, cyb does with [[cyberank]] on linked [[knowledge]] — owned by the user, provable by [[stark]] proofs, and impossible to censor
 
 ## primitives
 

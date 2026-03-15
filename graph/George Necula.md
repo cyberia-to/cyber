@@ -10,7 +10,7 @@ Invented proof-carrying code (1997): a paradigm where programs carry machine-che
 
 The consumer verifies the proof before execution — no trust in the producer required, only trust in the proof checker.
 
-This is the ancestor of verifiable [[computation]] in [[cyber]]: every state transition carries a STARK proof that the verifier checks without re-executing the computation.
+This is the ancestor of verifiable [[computation]] in [[cyber]]: every state transition carries a stark proof that the verifier checks without re-executing the computation.
 
 Proof-carrying code shifted the burden from runtime monitoring to compile-time verification, influencing type systems, certified compilers, and formal methods.
 

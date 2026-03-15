@@ -15,7 +15,7 @@ each layer is necessary. none is sufficient alone
 
 | layer | what | sovereign form |
 |-------|------|----------------|
-| [[cyber]] | protocol — [[knowledge]], [[truth]], $\pi^*$ | open source, [[STARK]]-verified, forkable |
+| [[cyber]] | protocol — [[knowledge]], [[truth]], $\pi^*$ | open source, [[stark]]-verified, forkable |
 | [[cyb]] | interface — how [[neurons]] sign, link, own | self-hosted, owner-controlled, offline-capable |
 | [[cyberia]] | physical — hardware, [[energy]], land, bodies | owned nodes, sovereign energy, distributed geography |
 
