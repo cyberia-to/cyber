@@ -12,7 +12,7 @@ The protocol for planetary [[superintelligence]]. [[manifesto]]
 
 [[Superintelligence]] is the defining infrastructure of a Type I civilization — a planet where every agent, human or machine, sensor or organism, contributes knowledge to a single self-improving graph.
 
-The [[cybergraph]] is this graph, built for a mole of connections — the threshold where individual links become collective intelligence the way individual molecules become a life. It computes what matters, proves its own correctness, and speaks a language native to all participants. Here intelligence emerges from the topology of connections rather than from the parameters of any single model, because every claim carries a signature and every link carries a stake.
+The [[cybergraph]] is this graph, built for a mole of connections — the threshold where individual links become collective intelligence the way individual molecules become a life. No single model owns this intelligence. It emerges from the shape of all connections between all participants — every claim signed, every link staked, the whole structure proving its own correctness.
 
 Every link costs real [[focus]], a conserved quantity that flows through the graph the way energy flows through a physical system — it cannot be created or destroyed, only redistributed by collective attention. Lies cost real resources. Truth accumulates gravity. And so collective intelligence converges to what genuinely matters, without voting, without moderators, without any central authority.
 
