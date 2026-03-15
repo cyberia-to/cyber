@@ -76,7 +76,7 @@ estimate work in sessions and pomodoros, not months.
 - pomodoro = 30 minutes of focused work
 - session = 3 focused hours (6 pomodoros)
 
-LLM-assisted development compresses traditional timelines — a
+model-assisted development compresses traditional timelines — a
 "2-month project" might be 6-8 sessions. plan in reality, not
 in inherited assumptions.
 

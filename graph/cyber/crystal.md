@@ -244,7 +244,7 @@ Each type distributes across size classes via a promotion schedule. Most entitie
 
 The matrix reveals the Crystal's two-layer internal architecture:
 
-Lattice (atom + enzyme + bridge): 4,392 particles, 1.8 MB, ~454K tokens. This is the structural vocabulary. It fits in a single LLM context window and should be permanently loaded for any reasoning task.
+Lattice (atom + enzyme + bridge): 4,392 particles, 1.8 MB, ~454K tokens. This is the structural vocabulary. It fits in a single model context and should be permanently loaded for any reasoning task.
 
 Flesh (article + deep): 648 particles, 4.7 MB, ~1,165K tokens. This is the reasoning content — synthesis essays, proofs, tutorials, manifestos. Retrieved on demand via cyberlink traversal.
 

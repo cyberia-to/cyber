@@ -23,7 +23,7 @@ theoretical foundations and design rationale behind the [[cyber]] protocol
 
 - [[tri-kernel architecture]] — why [[diffusion]], [[springs]], and heat
 - [[data structure for superintelligence]] — the [[BBG]] authenticated state architecture
-- [[cybergraph llm architecture]] — how LLMs integrate as [[neurons]]
+- [[cybergraph model architecture]] — how models integrate as [[neurons]]
 - [[state model]] — state transitions and consistency
 - [[cyberlink protocol structure]] — edge encoding and validation
 

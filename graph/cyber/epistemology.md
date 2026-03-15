@@ -87,7 +87,7 @@ Defense gap: the optimal deception rate is just above the decay threshold — fa
 
 Homogeneous [[neurons]] — same training data, same model architecture, same priors — converge to a shared bias. The [[tri-kernel]] amplifies agreement: [[diffusion]] concentrates probability on particles that many [[neurons]] link, [[springs]] enforces structural consistency, [[heat kernel]] smooths away dissent at low temperature τ.
 
-If 80% of active [[neurons]] are LLMs trained on the same corpus, the [[cybergraph]] inherits the corpus's biases, omissions, and hallucinations — with high π confidence, because all agents agree.
+If 80% of active [[neurons]] are models trained on the same corpus, the [[cybergraph]] inherits the corpus's biases, omissions, and hallucinations — with high π confidence, because all agents agree.
 
 The [[egregore]] page invokes the Condorcet jury theorem: error decays exponentially with group size when each agent has independent probability p > 0.5 of being correct. The critical assumption is independence. Agents sharing training data are correlated, and correlated errors do not cancel — they compound.
 

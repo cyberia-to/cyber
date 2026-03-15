@@ -191,7 +191,7 @@ The compilation procedure we describe is the direct forward operation: given the
 
 **Why trained transformers remain necessary:**
 
-The explicit graph does not contain implicit knowledge — associations that are statistically true across text but never explicitly linked. A trained LLM reading the same corpus will discover latent structure the explicit graph does not represent. This implicit structure can be surfaced as candidate particles and staked into the explicit graph, closing the loop.
+The explicit graph does not contain implicit knowledge — associations that are statistically true across text but never explicitly linked. A trained model reading the same corpus will discover latent structure the explicit graph does not represent. This implicit structure can be surfaced as candidate particles and staked into the explicit graph, closing the loop.
 
 The natural architecture is therefore:
 

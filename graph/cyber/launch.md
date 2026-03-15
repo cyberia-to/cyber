@@ -54,7 +54,7 @@ Subject → [Predicate] → Object
 
 ### Two-Layer Architecture
 
-Lattice (4,392 [[particles]], 1.8 MB, ~454K tokens): structural vocabulary, permanently loadable for reasoning. Fits in single LLM context.
+Lattice (4,392 [[particles]], 1.8 MB, ~454K tokens): structural vocabulary, permanently loadable for reasoning. Fits in single model context.
 
 Flesh (648 [[particles]], 4.7 MB, ~1,165K tokens): articles, proofs, manifestos. Retrieved on demand via [[cyberlink]] traversal. 72% of content in 13% of [[particles]].
 

@@ -1014,7 +1014,7 @@ CyberWasm is a parallel effort to the [[go-cyber]] dependency upgrade plan. They
 
 The go-cyber codebase (currently SDK v0.47 / CometBFT v0.37 / CosmWasm 1.x) has its own upgrade roadmap:
 
-**Phase 0 (no consensus change, current SDK v0.47):** 12 items including graph streaming gRPC, cyb desktop app (Rust/tauri), IPFS sidecar, embedded dashboard, CPU rank optimization, graph inference (embeddings via Burn + LLM via llama.cpp). ~13,000-16,000 new LOC. Predominantly Go with Rust for training (Burn) and desktop (tauri). Zero fork required.
+**Phase 0 (no consensus change, current SDK v0.47):** 12 items including graph streaming gRPC, cyb desktop app (Rust/tauri), IPFS sidecar, embedded dashboard, CPU rank optimization, graph inference (embeddings via Burn + llm via llama.cpp). ~13,000-16,000 new LOC. Predominantly Go with Rust for training (Burn) and desktop (tauri). Zero fork required.
 
 **Phase 1 (SDK v0.50 chain upgrade):** Remove x/liquidity module (eliminates SDK fork), migrate all modules to ABCI 2.0 / FinalizeBlock, eliminate Cosmos SDK fork, snapshot extensions, height index, multi-chain binary, personal networks, Inter-Knowledge Protocol. The single largest piece of work is rebasing the forked SDK.
 

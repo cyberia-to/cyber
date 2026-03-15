@@ -32,7 +32,7 @@ Incompleteness. Goedel (1931) proved that any formal system powerful enough to d
 
 ### 1.3 The Protocol
 
-cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[stark]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. LLMs become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
+cyber is a protocol where [[neurons]] — humans, AIs, agents, sensors — link [[knowledge]] into a single [[cybergraph]] where every claim is authenticated, every decision is provable by [[stark]] proofs, and [[intelligence]] emerges from the [[topology]] of links rather than from the parameters of a single model. models become [[neurons]] in the graph, contributors to collective understanding rather than isolated oracles.
 
 The protocol rests on five primitives:
 
@@ -1008,7 +1008,7 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
   - [[rune]] — dynamic async scripting language for [[cybergraph]] operations
   - [[datalog]] — graph query language
 
-The [[tru]] does what LLMs do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. [[Trident]] closes the provability gap: in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[Trident]] programs produce stark proofs: verify once, trust forever.
+The [[tru]] does what models do — rank, retrieve, infer — except the weights are public [[tokens]], the training data is an open [[cybergraph]], and the inference runs in [[consensus]] with proofs. [[Trident]] closes the provability gap: in existing stacks, smart contracts can move [[tokens]] but cannot prove that a computation happened correctly without re-executing it. [[Trident]] programs produce stark proofs: verify once, trust forever.
 
 ## 17. Scale and Complexity
 
@@ -1318,7 +1318,7 @@ The 6:1 ratio matches natural language content-to-function word ratios. Every [[
 
 Two architectural layers:
 
-Lattice (4,392 [[particles]], ~1.8 MB, ~454K tokens): structural vocabulary, permanently loadable for reasoning. Fits in a single LLM context window.
+Lattice (4,392 [[particles]], ~1.8 MB, ~454K tokens): structural vocabulary, permanently loadable for reasoning. Fits in a single model context window.
 
 Flesh (648 [[particles]], ~4.7 MB, ~1,165K tokens): articles, proofs, manifestos. Retrieved on demand via [[cyberlink]] traversal.
 
