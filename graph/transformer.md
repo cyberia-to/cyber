@@ -1,6 +1,6 @@
 ---
 tags: cybics, article, draft, research
-alias: transformer, transformers, transformer architecture, transformer model, LLM architecture
+alias: transformer, transformers, transformer architecture, transformer model, llm architecture
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge

@@ -20,6 +20,6 @@ morphology → word structure, inflection, derivation
 - semantics → [[semantics]] ([[natural language semantics]], meaning, reference)
 pragmatics → context, speech acts, implicature
 - historical linguistics → [[lang]] + [[meta]] (language change, [[Indo-European]], [[Afroasiatic]], [[Sino-Tibetan]])
-- computational linguistics → [[lang]] + [[comp]] + [[ai]] ([[NMT]], NLP, [[LLMs]])
+- computational linguistics → [[lang]] + [[comp]] + [[ai]] ([[NMT]], NLP, [[llms]])
 - sociolinguistics → [[lang]] + [[socio]] (dialect, register, language policy)
 

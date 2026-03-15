@@ -16,7 +16,7 @@ in the [[crystal]], artificial intelligence spans three domains:
 ## branches
 
 - machine learning → [[ai]] (supervised, unsupervised, reinforcement learning)
-- deep learning → [[ai]] + [[comp]] (transformers, CNNs, [[neural networks]], [[LLMs]])
+- deep learning → [[ai]] + [[comp]] (transformers, CNNs, [[neural networks]], [[llms]])
 - robotics → [[ai]] + [[tech]] + [[sense]] (perception, planning, manipulation)
 - NLP → [[ai]] + [[lang]] ([[NMT]], language models, [[natural language semantics]])
 - computer vision → [[ai]] + [[sense]] (image recognition, segmentation)

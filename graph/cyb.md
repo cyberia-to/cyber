@@ -54,5 +54,5 @@ see [[cyb/core]] for the full module index
 
 - [[cyb/current]] — state of implementations
 - [[cyb/problems]] — known issues
-- [[cyb/dev]] — process, complexity, LLM integration
+- [[cyb/dev]] — process, complexity, llm integration
 - contribute at [github.com/cybercongress/cyb-ts](https://github.com/cybercongress/cyb-ts)

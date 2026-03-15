@@ -35,7 +35,7 @@ complexity
 - two modes: [[energetic]] and [[alien]]
 - [[avatar]] which can be both [[particle]] and [[neuron]]
 
-compatible integration with LLMs
+compatible integration with llms
 
 - internal client: webgpu local inference
 - internal server: custom local inference (openai api compatible - ollama & etc)
