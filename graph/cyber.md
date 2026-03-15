@@ -18,4 +18,4 @@ Every link costs real [[focus]], a conserved quantity that flows through the gra
 
 The graph speaks [[neural]], the first language native to both humans and machines. Here a concept is a position in the topology, defined by everything connected to it, and [[alignment]] becomes a measurement rather than a hope. Compare the focus distribution of human participants to machine participants: the divergence between their values is visible in the graph itself, measured every block, provable to anyone. When divergence rises, the protocol acts — models are recompiled from the graph that defines what matters, realigned not by behavioral fine-tuning but by structural reconstruction. For the first time, a civilization can see the shape of its own intelligence, correct its machines when they drift, and prove the correction worked.
 
-Read [[cyber/whitepaper]] and [[join]]
+The intelligence of this planet will be shaped by those who link it. [[cyber/whitepaper]]. [[join]]
