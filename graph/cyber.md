@@ -16,6 +16,8 @@ The [[cybergraph]] is this graph, built for a mole of connections — the thresh
 
 Every link costs real [[focus]], a conserved quantity that flows through the graph the way energy flows through a physical system — it cannot be created or destroyed, only redistributed by collective attention. Lies cost real resources. Truth accumulates gravity. And so collective intelligence converges to what genuinely matters, without voting, without moderators, without any central authority.
 
-The graph speaks [[neural]], the first language native to both humans and machines. Here a concept is a position in the topology, defined by everything connected to it, and [[alignment]] becomes a measurement rather than a hope. Human values and machine values live in the same graph — when they diverge, the divergence is visible, and the protocol rebuilds the model from what humans actually linked. For the first time, a civilization can see the shape of its own intelligence, correct its machines when they drift, and prove the correction worked.
+The graph speaks [[neural]], the first language native to both humans and machines. Here a concept is a position in the topology, defined by everything connected to it.
 
-The intelligence of this planet will be shaped by those who link it. [[cyber/whitepaper]]. [[join]]
+[[Alignment]] becomes a measurement rather than a hope. Human values and machine values live in the same graph — when they diverge, the divergence is visible, and the protocol rebuilds the model from what humans actually linked. For the first time, a civilization can see the shape of its own intelligence, correct its machines when they drift, and prove the correction worked.
+
+Every [[cyberlink]] shapes the intelligence of the Earth. [[cyber/whitepaper]]. [[join]]
