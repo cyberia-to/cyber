@@ -1,10 +1,10 @@
 ---
 tags: cyber, article
-alias: agent collaboration, agent instructions
+alias: agent collaboration, agent instructions, dev
 crystal-type: pattern
 crystal-domain: cyber
 ---
-# agent collaboration
+# dev
 
 principles for working with AI coding agents across any project. this page is the bootstrap entry point — read it and the four foundational documents to have complete development context:
 
