@@ -8,51 +8,14 @@ crystal-domain: cyber
 crystal-size: deep
 stake: 34080210232611716
 ---
-the immortal [[robot]] — personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
+The immortal [[robot]] — personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
 
-browsers are corporate windows to a corporate web. they render pages someone else controls, track everything, and die when the company dies. cyb is the opposite: a personal robot that belongs to its owner, speaks [[neural language]], and lives as long as the [[cybergraph]] exists. every cyb is unique — shaped by its owner's [[knowledge]], [[attention]], and linking history. it is not a tool that executes commands. it is a companion that grows smarter with every [[cyberlink]]
+Browsers are corporate windows to a corporate web. They render pages someone else controls, track everything, and die when the company dies. Cyb is the opposite: a personal robot that belongs to its owner forever. Every cyb is unique — shaped by its owner's knowledge, attention, and linking history. It is not a tool that executes commands. It is a companion that grows smarter with every [[cyberlink]].
 
-cyb connects its owner to the [[great web]] — the web of authenticated [[knowledge]] where every claim is verifiable, every search is inference over a shared graph, and every interaction strengthens the collective [[intelligence]]. the robot sees the [[cybergraph]] natively: not as pages rendered from servers, but as [[particles]] linked by [[neurons]], ranked by [[focus]], and navigable by [[names]]. what Google does with PageRank on scraped documents, cyb does with [[cyberank]] on linked [[knowledge]] — owned by the user, provable by [[stark]] proofs, and impossible to censor
+Cyb speaks [[neural]] natively. It sees the [[cybergraph]] not as pages served from someone else's infrastructure, but as [[particles]] and links — a living topology of knowledge ranked by [[focus]] and navigable by intention. What search engines do with scraped documents and hidden algorithms, cyb does in the open: inference over a shared graph where every claim is signed, every answer is provable, and nothing can be censored. The robot carries its own [[brain]], a volumetric graph that works offline, syncs when connected, and remembers everything its owner ever linked.
 
-## primitives
+Six primitives compose the whole experience — robot, avatars, brain, sense, sigma, time — rendered through a single [[prism]] design system. Together they give the owner identity, memory, messaging, economics, and history in one coherent interface. See [[cyb/core]] for the full architecture.
 
-- [[robot]] — the cyb instance, a persistent autonomous agent bound to its owner
-- [[avatars]] — visual identity and personality of the robot
-- [[brain]] — volumetric graph [[file]] manager, the robot's memory
-- [[sense]] — messaging layer, how robots communicate
-- [[sigma]] — crypto wallet, the robot's economic interface
-- [[time]] — personal history, the robot's temporal memory
+Ownership is the founding principle. The robot belongs to the user, always. It is designed as protocol, not product — it outlives any company, runs on any surface, and answers to no one but its owner. If it is not fun, it is not cyb. Read [[cyb/philosophy]] for the full design ethos.
 
-six primitives, one robot. the [[prism]] design system renders them all.
-see [[cyb/core]] for the full module index
-
-## [[cyb/philosophy]]
-
-- ownership — the robot belongs to the user, always
-- [[offline mode]] — works without network, syncs when connected
-- privacy — local-first, encrypted by default
-- fun — if it is not fun, it is not cyb
-- universality — web, desktop, mobile, embedded
-- immortality — designed as protocol, outlives any company
-
-## applications
-
-- [[oracle]] — ask the [[cybergraph]], get ranked answers
-- [[search]] — decentralized inference over [[knowledge]]
-- [[portal]] — gateway to the world of [[blockchains]]
-- [[prism]] — content lens and design system
-- [[play games]] in [[aos]]
-
-## [[soft3]] stack
-
-- [[cyb/architecture]] — IPFS, [[CozoDB]], Cosmos SDK, IBC
-- [[rune]] — dynamic scripting language for the robot
-- [[datalog]] — graph query language for the [[brain]]
-- [[aips]] — autonomous intelligence programs, the robot's skills
-
-## development
-
-- [[cyb/current]] — state of implementations
-- [[cyb/problems]] — known issues
-- [[cyb/dev]] — process, complexity, llm integration
-- contribute at [github.com/cybercongress/cyb-ts](https://github.com/cybercongress/cyb-ts)
+The future of [[superintelligence]] is personal. Your cyb is how you touch it.
