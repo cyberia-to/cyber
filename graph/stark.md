@@ -231,4 +231,4 @@ the sumcheck converts a sum over 2^k terms into k rounds of interaction, each in
 
 one hash ([[Hemera]]). one field ([[Goldilocks field]]). one VM ([[nox]]). one PCS ([[WHIR]]). one IOP ([[SuperSpartan]]). one proof.
 
-see [[cyber/stark]] for the concrete implementation in cyber (AIR from nox, constraint budget, recursive composition, BBG integration), [[WHIR]] for the polynomial commitment scheme, [[cyber/proofs]] for the full proof taxonomy, [[nox]] for the VM, [[Goldilocks field]] for the arithmetic, [[FRI]] for WHIR's heritage, [[cryptography]] for the broader field
+see [[zheng]] for the concrete implementation in cyber (AIR from nox, constraint budget, recursive composition, BBG integration), [[WHIR]] for the polynomial commitment scheme, [[cyber/proofs]] for the full proof taxonomy, [[nox]] for the VM, [[Goldilocks field]] for the arithmetic, [[FRI]] for WHIR's heritage, [[cryptography]] for the broader field

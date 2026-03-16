@@ -89,7 +89,7 @@ nox execution → trace (2ⁿ steps × registers)
 
 the [[nox]] VM's sixteen reduction patterns map to AIR transition constraints — each pattern becomes a polynomial equation relating register state before and after a reduction step. [[SuperSpartan]] handles AIR natively via CCS (Customizable Constraint Systems), with linear-time prover and logarithmic-time verifier.
 
-see [[cyber/stark]] for the concrete implementation (AIR from nox, constraint budget, Hemera as stark hash, recursive composition, BBG integration). see [[stark]] for the general architecture (AIR, CCS, SuperSpartan, Whirlaway).
+see [[zheng]] for the concrete implementation (AIR from nox, constraint budget, Hemera as stark hash, recursive composition, BBG integration). see [[stark]] for the general architecture (AIR, CCS, SuperSpartan, Whirlaway).
 
 ### self-verification
 

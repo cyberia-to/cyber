@@ -83,4 +83,4 @@ Proof:
 └─────────────────────┴───────────────┴───────────────┴───────────────┴───────────────┘
 ```
 
-see [[cyber/nox]] for the execution model, [[cyber/bbg]] for the ZK privacy architecture, [[cyber/stark]] for proof verification
+see [[cyber/nox]] for the execution model, [[cyber/bbg]] for the ZK privacy architecture, [[zheng]] for proof verification

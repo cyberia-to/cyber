@@ -7,7 +7,7 @@ stake: 27965690347731876
 ---
 # State Management
 
-The [[nox]] world state and transition rules. All state lives in the [[cyber/bbg]] — a unified polynomial structure. Transitions are proven valid by [[cyber/stark]] proofs.
+The [[nox]] world state and transition rules. All state lives in the [[cyber/bbg]] — a unified polynomial structure. Transitions are proven valid by [[zheng]] proofs.
 
 ## World State
 

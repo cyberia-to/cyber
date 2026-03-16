@@ -35,4 +35,4 @@ zheng (proofs)
 bbg (state)
 ```
 
-see [[cyber/nox]] for the full specification, [[cyber/stark]] for the proof pipeline, [[trident]] for the high-level language, [[zheng]] for the proof system
+see [[cyber/nox]] for the full specification, [[zheng]] for the proof system, [[trident]] for the high-level language

@@ -67,4 +67,4 @@ prove that a set of values appears in a pre-defined table without revealing whic
 
 [[LogUp]] proves that the same edge hash appears in all required [[EdgeSets]] in the [[BBG]] — 15x cheaper than independent polynomial proofs. see [[LogUp]]
 
-see [[cryptography]], [[stark]], [[cyber/stark]], [[cyber/proofs]]
+see [[cryptography]], [[stark]], [[zheng]], [[cyber/proofs]]

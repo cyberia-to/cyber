@@ -68,7 +68,7 @@ The new frontier — properties that matter for [[zero knowledge proofs]], MPC, 
 | FHE-friendly | Efficient under [[Goldilocks homomorphic encryption]] and other FHE schemes | LowMC, PRINCE, SIMON (low AND-depth) |
 | Recursive-proof friendly | Cheap enough to verify inside itself for [[proof-carrying data]] composition | Tip5 (designed specifically for this), Poseidon2 |
 
-See [[cyber/stark]] for stark verification in the cyber protocol. [[incrementally verifiable computation]] relies on recursive-proof friendly hashes.
+See [[zheng]] for stark verification in the cyber protocol. [[incrementally verifiable computation]] relies on recursive-proof friendly hashes.
 
 ### S-box Design Strategies (determines security/efficiency tradeoff)
 

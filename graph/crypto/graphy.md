@@ -68,4 +68,4 @@ H_fiat_shamir(x) = Hemera(0x05 | x)    WHIR challenges
 H_transcript(x)  = Hemera(0x06 | x)    proof transcript binding
 ```
 
-see [[cyber/stark]], [[cyber/proofs]], [[BBG]], [[cyber/identity]]
+see [[zheng]], [[cyber/proofs]], [[BBG]], [[cyber/identity]]
