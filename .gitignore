@@ -6,7 +6,7 @@ __pycache__/
 media/
 
 # Build outputs
-/build
+build/
 /public
 /node_modules
 **/target/
