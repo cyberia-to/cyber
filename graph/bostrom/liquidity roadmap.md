@@ -42,7 +42,7 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 ### Phase 0: Quick wins (days, frontend bugfixes)
 
 0. ~~Fix swap slippage display in [[teleport]]~~ done — cyb [#1379](https://github.com/cyberia-to/cyb/pull/1379) (cyb [#1196](https://github.com/cyberia-to/cyb/issues/1196), [#1195](https://github.com/cyberia-to/cyb/issues/1195))
-1. Fix [[IBC]] transfer status glitch (cyb [#1332](https://github.com/cyberia-to/cyb/issues/1332))
+1. ~~Fix [[IBC]] transfer status glitch~~ done — cyb `5a55413a` ([#1332](https://github.com/cyberia-to/cyb/issues/1332))
 2. Fix [[teleport]] UI rendering (cyb [#1113](https://github.com/cyberia-to/cyb/issues/1113))
 3. Fix [[warp]] deposit for edge-case pairs (cyb [#769](https://github.com/cyberia-to/cyb/issues/769))
 4. Fix sub-liquidity UX when pool absent (cyb [#849](https://github.com/cyberia-to/cyb/issues/849))
@@ -55,6 +55,8 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 12. ~~Fix swap status bar not updating after tx confirmation~~ done — cyb [#1384](https://github.com/cyberia-to/cyb/pull/1384) ([#1383](https://github.com/cyberia-to/cyb/issues/1383))
 11. ~~Display swap fee (0.3%) next to slippage~~ done — cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382)
 13. Amount > 10% pool reserves shows warning (cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382))
+14. ~~Auto-refresh destination balance after [[IBC]] transfer completes on [[teleport]]~~ done — cyb `343352fb` ([#1385](https://github.com/cyberia-to/cyb/issues/1385))
+15. ~~Fix [[IBC]] denom hash — sha256 received string instead of Uint8Array → wrong denom → balance always 0~~ done — cyb `343352fb` ([#1386](https://github.com/cyberia-to/cyb/issues/1386))
 
 ### Phase 1: Contracts + features (weeks, dependencies between items)
 
