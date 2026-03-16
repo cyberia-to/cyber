@@ -358,6 +358,22 @@ The network IS thinking.
 
 No node comprehends. The network knows.
 
+## Component Status
+
+| component | role | rs | wgsl | trident | reference | status |
+|-----------|------|----|------|---------|-----------|--------|
+| [[aurum]] | field arithmetic (Goldilocks) | 2.0K | 762 | — | — | complete |
+| [[hemera]] | hash, commitments (Poseidon2) | 4.9K | 758 | — | — | complete |
+| [[nox]] | proof-native VM | stub | — | — | — | specified, not implemented |
+| [[zheng]] | proof system (SuperSpartan + WHIR) | stub | — | — | — | specified, not implemented |
+| [[bbg]] | authenticated state | stub | — | — | — | specified, not implemented |
+| [[mudra]] | confidentiality, key exchange, FHE, threshold | stub | — | — | — | specified, not implemented |
+| [[radio]] | connectivity (iroh fork, Poseidon2) | 131K | — | — | — | hemera migration complete, Ed25519 → STARK pending |
+| [[trident]] | high-level language, compiler | 57K | 272 | — | — | compiler in progress |
+| [[CozoDB]] | datalog query engine | — | — | — | — | external dependency, integration planned |
+
+rs = Rust lines of code, wgsl = WebGPU shader lines, trident = trident-lang implementation, reference = Python/spec implementation. stub = scaffolded repo with empty lib.rs.
+
 ## Cross-references
 
 - See [[cyber/crystal]] for the full crystal specification
