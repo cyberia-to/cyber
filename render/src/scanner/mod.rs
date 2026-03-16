@@ -150,9 +150,22 @@ pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<Discove
         }
     }
 
+    // Directories to skip entirely — prevents WalkDir from descending into
+    // build/ (thousands of generated HTML files), .git/, target/, etc.
+    let skip_dirs: std::collections::HashSet<&str> =
+        [".git", "target", "node_modules", "build", ".claude"].into();
+
     // Scan all other files in the repo (outside graph/, blog/, media/)
     for entry in WalkDir::new(&input_dir)
         .into_iter()
+        .filter_entry(|e| {
+            if e.file_type().is_dir() {
+                let name = e.file_name().to_string_lossy();
+                !skip_dirs.contains(name.as_ref())
+            } else {
+                true
+            }
+        })
         .filter_map(|e| e.ok())
         .filter(|e| e.file_type().is_file())
     {

@@ -44,10 +44,16 @@ struct BuildCache {
     tag_hashes: HashMap<PageId, u64>,
     /// page_id → sorted backlink ids — detect backlink changes
     backlink_snapshots: HashMap<PageId, Vec<PageId>>,
-    /// Number of pages in the last build
-    last_page_count: usize,
+    /// Content page IDs from the last build (excludes stubs) — detect structural changes
+    last_content_page_ids: HashSet<PageId>,
     /// Whether the initial full build has completed
     initialized: bool,
+    /// Cached subgraph parsed pages (rebuilt only when a subgraph file changes)
+    subgraph_pages: Vec<crate::parser::ParsedPage>,
+    /// Subgraph repo paths for change detection
+    subgraph_repo_paths: Vec<PathBuf>,
+    /// Cached graph store — reused when no structural change (avoids expensive PageRank/gravity)
+    cached_store: Option<crate::graph::PageStore>,
 }
 
 impl BuildCache {
@@ -58,8 +64,11 @@ impl BuildCache {
             content_hashes: HashMap::new(),
             tag_hashes: HashMap::new(),
             backlink_snapshots: HashMap::new(),
-            last_page_count: 0,
+            last_content_page_ids: HashSet::new(),
             initialized: false,
+            subgraph_pages: Vec::new(),
+            subgraph_repo_paths: Vec::new(),
+            cached_store: None,
         }
     }
 }
@@ -139,6 +148,111 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
     }
 
     let mut cache = BuildCache::new();
+
+    // Warm up: pre-populate subgraph cache so first incremental rebuild is fast.
+    // Without this, the first file change triggers a full re-render of all 12K pages.
+    {
+        let discovered = crate::scanner::scan(&config.build.input_dir, &config.content)?;
+        let root_parsed = crate::parser::parse_all(&discovered)?;
+        let subgraph_decls = crate::scanner::subgraph::discover_subgraphs(
+            &root_parsed,
+            &config.build.input_dir,
+        );
+        for decl in &subgraph_decls {
+            cache.subgraph_repo_paths.push(decl.repo_path.clone());
+            let subgraph_files = crate::scanner::subgraph::scan_subgraph(decl)?;
+            let declaring_page = root_parsed
+                .iter()
+                .find(|p| p.id == decl.declaring_page_id)
+                .cloned();
+            for file in &subgraph_files {
+                if file.kind == crate::scanner::FileKind::Page {
+                    let mut page = crate::parser::parse_file(file)?;
+                    if page.id == decl.declaring_page_id {
+                        if let Some(ref dp) = declaring_page {
+                            page.meta.tags = dp.meta.tags.clone();
+                            page.meta.aliases = dp.meta.aliases.clone();
+                            page.meta.properties = dp.meta.properties.clone();
+                            page.meta.public = dp.meta.public;
+                            page.meta.icon = dp.meta.icon.clone();
+                            page.meta.stake = dp.meta.stake;
+                            if !dp.content_md.trim().is_empty() {
+                                let readme_content = std::mem::take(&mut page.content_md);
+                                page.content_md = dp.content_md.clone();
+                                page.content_md.push_str(&format!(
+                                    "\n\n---\n\n## from subgraph {}\n\n",
+                                    decl.name
+                                ));
+                                page.content_md.push_str(&readme_content);
+                            }
+                            for link in &dp.outgoing_links {
+                                if !page.outgoing_links.contains(link) {
+                                    page.outgoing_links.push(link.clone());
+                                }
+                            }
+                        }
+                    }
+                    cache.subgraph_pages.push(page);
+                }
+            }
+        }
+        // Pre-populate parse cache for root graph files
+        for file in discovered.pages.iter().chain(discovered.journals.iter()) {
+            let mtime = std::fs::metadata(&file.path)
+                .ok()
+                .and_then(|m| m.modified().ok())
+                .unwrap_or(SystemTime::UNIX_EPOCH);
+            if let Ok(page) = crate::parser::parse_file(file) {
+                cache.parse_cache.insert(file.path.clone(), (mtime, page));
+            }
+        }
+        // Build the full graph to snapshot page IDs (including stubs) and hashes.
+        // This matches what incremental_rebuild produces, preventing false structural changes.
+        {
+            let mut warmup_pages: Vec<ParsedPage> = cache.parse_cache.values()
+                .map(|(_, p)| p.clone())
+                .collect();
+            // Add non-md files
+            let non_md = crate::parser::parse_all(&crate::scanner::DiscoveredFiles {
+                pages: vec![],
+                journals: vec![],
+                media: discovered.media.clone(),
+                files: discovered.files.clone(),
+            })?;
+            warmup_pages.extend(non_md);
+            // Add subgraph pages and enforce namespace monopoly
+            let subgraph_namespaces: Vec<String> =
+                subgraph_decls.iter().map(|d| d.name.clone()).collect();
+            crate::scanner::subgraph::enforce_namespace_monopoly(
+                &mut warmup_pages,
+                &subgraph_namespaces,
+            );
+            for decl in &subgraph_decls {
+                warmup_pages.retain(|p| {
+                    !(p.id == decl.declaring_page_id && p.subgraph.is_none())
+                });
+            }
+            warmup_pages.extend(cache.subgraph_pages.clone());
+            // Snapshot content page IDs BEFORE graph build (excludes stubs)
+            for page in &warmup_pages {
+                cache.last_content_page_ids.insert(page.id.clone());
+            }
+            // Build graph to get full store (with stubs, links, PageRank, etc.)
+            let store = crate::graph::build_graph(warmup_pages)?;
+            for (page_id, page) in &store.pages {
+                cache.content_hashes.insert(page_id.clone(), hash_str(&page.content_md));
+                cache.tag_hashes.insert(page_id.clone(), hash_str(&page.meta.tags.join(",")));
+            }
+            // Snapshot backlinks
+            for (page_id, backlinks) in &store.backlinks {
+                let mut sorted = backlinks.clone();
+                sorted.sort();
+                cache.backlink_snapshots.insert(page_id.clone(), sorted);
+            }
+        }
+
+        cache.initialized = true;
+    }
 
     loop {
         if let Ok(paths) = rx.recv() {
@@ -252,7 +366,7 @@ fn incremental_rebuild(
         .collect();
     cache.parse_cache.retain(|path, _| current_paths.contains(path));
 
-    // Step 2b: Discover and merge subgraphs (same logic as build_site)
+    // Step 2b: Discover and merge subgraphs — use cached pages unless a subgraph file changed
     let subgraph_decls = crate::scanner::subgraph::discover_subgraphs(
         &all_parsed,
         &config.build.input_dir,
@@ -264,133 +378,152 @@ fn incremental_rebuild(
             &mut all_parsed,
             &subgraph_namespaces,
         );
-        for decl in &subgraph_decls {
-            let subgraph_files = crate::scanner::subgraph::scan_subgraph(decl)?;
-            let declaring_page = all_parsed
-                .iter()
-                .find(|p| p.id == decl.declaring_page_id)
-                .cloned();
-            for file in &subgraph_files {
-                if file.kind == crate::scanner::FileKind::Page {
-                    let mut page = crate::parser::parse_file(file)?;
-                    if page.id == decl.declaring_page_id {
-                        if let Some(ref dp) = declaring_page {
-                            page.meta.tags = dp.meta.tags.clone();
-                            page.meta.aliases = dp.meta.aliases.clone();
-                            page.meta.properties = dp.meta.properties.clone();
-                            page.meta.public = dp.meta.public;
-                            page.meta.icon = dp.meta.icon.clone();
-                            page.meta.stake = dp.meta.stake;
-                            if !dp.content_md.trim().is_empty() {
-                                let readme_content = std::mem::take(&mut page.content_md);
-                                page.content_md = dp.content_md.clone();
-                                page.content_md.push_str(&format!(
-                                    "\n\n---\n\n## from subgraph {}\n\n",
-                                    decl.name
-                                ));
-                                page.content_md.push_str(&readme_content);
-                            }
-                            for link in &dp.outgoing_links {
-                                if !page.outgoing_links.contains(link) {
-                                    page.outgoing_links.push(link.clone());
+
+        // Check if any changed file is inside a subgraph repo
+        let subgraph_changed = changed_paths.iter().any(|p| {
+            cache.subgraph_repo_paths.iter().any(|repo| p.starts_with(repo))
+        });
+
+        if subgraph_changed || cache.subgraph_pages.is_empty() {
+            // Re-scan and re-parse subgraphs (a subgraph file was modified)
+            let mut new_subgraph_pages = Vec::new();
+            let mut new_repo_paths = Vec::new();
+            for decl in &subgraph_decls {
+                new_repo_paths.push(decl.repo_path.clone());
+                let subgraph_files = crate::scanner::subgraph::scan_subgraph(decl)?;
+                let declaring_page = all_parsed
+                    .iter()
+                    .find(|p| p.id == decl.declaring_page_id)
+                    .cloned();
+                for file in &subgraph_files {
+                    if file.kind == crate::scanner::FileKind::Page {
+                        let mut page = crate::parser::parse_file(file)?;
+                        if page.id == decl.declaring_page_id {
+                            if let Some(ref dp) = declaring_page {
+                                page.meta.tags = dp.meta.tags.clone();
+                                page.meta.aliases = dp.meta.aliases.clone();
+                                page.meta.properties = dp.meta.properties.clone();
+                                page.meta.public = dp.meta.public;
+                                page.meta.icon = dp.meta.icon.clone();
+                                page.meta.stake = dp.meta.stake;
+                                if !dp.content_md.trim().is_empty() {
+                                    let readme_content = std::mem::take(&mut page.content_md);
+                                    page.content_md = dp.content_md.clone();
+                                    page.content_md.push_str(&format!(
+                                        "\n\n---\n\n## from subgraph {}\n\n",
+                                        decl.name
+                                    ));
+                                    page.content_md.push_str(&readme_content);
+                                }
+                                for link in &dp.outgoing_links {
+                                    if !page.outgoing_links.contains(link) {
+                                        page.outgoing_links.push(link.clone());
+                                    }
                                 }
                             }
                         }
+                        new_subgraph_pages.push(page);
                     }
-                    all_parsed.push(page);
+                }
+                if declaring_page.is_some() {
+                    all_parsed.retain(|p| {
+                        !(p.id == decl.declaring_page_id && p.subgraph.is_none())
+                    });
                 }
             }
-            if declaring_page.is_some() {
-                all_parsed.retain(|p| {
-                    !(p.id == decl.declaring_page_id && p.subgraph.is_none())
-                });
+            cache.subgraph_pages = new_subgraph_pages;
+            cache.subgraph_repo_paths = new_repo_paths;
+        } else {
+            // No subgraph file changed — evict declaring pages and reuse cache
+            for decl in &subgraph_decls {
+                let has_declaring = all_parsed.iter().any(|p| p.id == decl.declaring_page_id);
+                if has_declaring {
+                    all_parsed.retain(|p| {
+                        !(p.id == decl.declaring_page_id && p.subgraph.is_none())
+                    });
+                }
             }
         }
+        all_parsed.extend(cache.subgraph_pages.clone());
     }
 
-    // Step 3: Build graph (always full — it's fast)
-    let store = crate::graph::build_graph(all_parsed)?;
+    // Step 3: Detect content changes BEFORE building graph (cheap hash comparison).
+    let mut dirty_ids: HashSet<PageId> = HashSet::new();
+    let mut content_page_ids: HashSet<PageId> = HashSet::new();
 
-    // Step 4: Determine dirty pages (need re-rendering)
-    let mut dirty_ids: HashSet<PageId> = changed_page_ids.clone();
-
-    // Pages whose content_md hash changed
-    for (page_id, page) in &store.pages {
+    for page in &all_parsed {
+        content_page_ids.insert(page.id.clone());
         let new_hash = hash_str(&page.content_md);
-        if let Some(&old_hash) = cache.content_hashes.get(page_id) {
+        if let Some(&old_hash) = cache.content_hashes.get(&page.id) {
             if old_hash != new_hash {
-                dirty_ids.insert(page_id.clone());
+                dirty_ids.insert(page.id.clone());
             }
         } else {
-            // New page
-            dirty_ids.insert(page_id.clone());
+            dirty_ids.insert(page.id.clone());
         }
-        cache.content_hashes.insert(page_id.clone(), new_hash);
+        cache.content_hashes.insert(page.id.clone(), new_hash);
     }
 
-    // Pages whose backlinks changed
-    for (page_id, backlinks) in &store.backlinks {
-        let mut sorted = backlinks.clone();
-        sorted.sort();
-        if let Some(old) = cache.backlink_snapshots.get(page_id) {
-            if *old != sorted {
-                dirty_ids.insert(page_id.clone());
+    // Check for structural change: pages added or removed, or tags changed.
+    let pages_added_or_removed = content_page_ids != cache.last_content_page_ids;
+    let tags_changed = dirty_ids.iter().any(|dirty_id| {
+        all_parsed.iter().find(|p| &p.id == dirty_id).map(|page| {
+            let new_tag_hash = hash_str(&page.meta.tags.join(","));
+            let changed = cache.tag_hashes.get(dirty_id)
+                .map(|&old| old != new_tag_hash)
+                .unwrap_or(true);
+            cache.tag_hashes.insert(dirty_id.clone(), new_tag_hash);
+            changed
+        }).unwrap_or(false)
+    });
+
+    let structural_change = !cache.initialized || pages_added_or_removed || tags_changed;
+    // Step 4: Build or reuse graph store.
+    // Full graph build (PageRank, gravity, etc.) is expensive — only do it for structural changes.
+    if structural_change || cache.cached_store.is_none() {
+        let store = crate::graph::build_graph(all_parsed)?;
+        cache.last_content_page_ids = content_page_ids;
+        for (page_id, backlinks) in &store.backlinks {
+            let mut sorted = backlinks.clone();
+            sorted.sort();
+            cache.backlink_snapshots.insert(page_id.clone(), sorted);
+        }
+        for (page_id, page) in &store.pages {
+            if !cache.content_hashes.contains_key(page_id) {
+                cache.content_hashes.insert(page_id.clone(), hash_str(&page.content_md));
             }
         }
-        cache.backlink_snapshots.insert(page_id.clone(), sorted);
-    }
-
-    // Also dirty: pages whose backlinks section shows the dirty page
-    let mut extra_dirty: HashSet<PageId> = HashSet::new();
-    for dirty_id in &dirty_ids {
-        if let Some(bl) = store.backlinks.get(dirty_id) {
-            extra_dirty.extend(bl.iter().cloned());
-        }
-    }
-    dirty_ids.extend(extra_dirty);
-
-    // Detect structural changes (pages added/removed, tags changed) — these
-    // require re-rendering synthetic pages (index, tags, blog, files, etc.).
-    let structural_change = if !cache.initialized {
-        true
+        cache.cached_store = Some(store);
     } else {
-        // Page count changed?
-        if cache.last_page_count != store.pages.len() {
-            true
-        } else {
-            // Any dirty page had its tags changed?
-            let mut tags_changed = false;
-            for dirty_id in &dirty_ids {
-                if let Some(page) = store.pages.get(dirty_id) {
-                    let new_tag_hash = hash_str(&page.meta.tags.join(","));
-                    if let Some(&old) = cache.tag_hashes.get(dirty_id) {
-                        if old != new_tag_hash {
-                            tags_changed = true;
-                        }
-                    }
-                    cache.tag_hashes.insert(dirty_id.clone(), new_tag_hash);
+        // Content-only change: update page content in the cached store in-place.
+        // Skip expensive PageRank/gravity/trikernel recomputation.
+        let store = cache.cached_store.as_mut().unwrap();
+        for dirty_id in &dirty_ids {
+            if let Some(new_page) = all_parsed.iter().find(|p| &p.id == dirty_id) {
+                if let Some(cached_page) = store.pages.get_mut(dirty_id) {
+                    cached_page.content_md = new_page.content_md.clone();
+                    cached_page.meta = new_page.meta.clone();
+                    cached_page.outgoing_links = new_page.outgoing_links.clone();
                 }
             }
-            tags_changed
         }
-    };
-    cache.last_page_count = store.pages.len();
+    }
 
-    // Mark synthetic pages dirty only for structural changes
     if structural_change {
         dirty_ids.insert("__structural__".to_string());
     }
 
     let dirty_count = dirty_ids.len();
+    let store = cache.cached_store.as_ref().unwrap();
 
     // Step 5: Selective render
     let dirty_ref = if cache.initialized {
         Some(&dirty_ids)
     } else {
-        None // First rebuild after watcher starts: render everything
+        None
     };
     let rendered = crate::render::render_cached(
-        &store,
+        store,
         config,
         &mut cache.render_cache,
         dirty_ref,

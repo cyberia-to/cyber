@@ -11,7 +11,7 @@ use serde::Serialize;
 use std::collections::{HashMap, HashSet};
 
 /// The complete knowledge graph.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct PageStore {
     pub pages: HashMap<PageId, ParsedPage>,
     pub forward_links: HashMap<PageId, Vec<PageId>>,
