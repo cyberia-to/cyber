@@ -6,7 +6,7 @@ alias: cyber channel, state channel, proof channel, bilateral channel
 ---
 # channel
 
-a bilateral computation session between two [[neurons]] where state transitions are [[stark]]-proven [[nox]] computations exchanged directly via [[radio]], with no chain involvement. the proof replaces the chain — either party can verify any state independently, and any third party can too.
+a bilateral value exchange between two [[neurons]] where every interaction — message delivery, computation, knowledge — adjusts a mutual token ledger through [[stark]]-proven [[nox]] state transitions, exchanged directly via [[radio]]. the proof replaces the chain. the ledger prices the interaction. the channel is the atomic unit of the network economy.
 
 ## the state channel problem
 
@@ -33,38 +33,89 @@ CHANNEL LIFECYCLE
 ═════════════════
 
 open:
-  neurons A and B agree on initial state S₀ (a noun)
+  neurons A and B agree on initial state S₀ = [ledger₀ data₀]
+  ledger₀ = [deposit_A deposit_B]    mutual token commitment
   both sign H(S₀)
-  exchange via radio — no chain transaction
+  exchange via radio — one optional on-chain tx to lock tokens (or use existing balances)
 
 update:
   A proposes: reduce(S_n, formula_A, focus) → S_{n+1} with proof π_{n+1}
+  proof enforces: balance_A + balance_B = deposit_A + deposit_B (conservation)
   B verifies π_{n+1}
   B signs H(S_{n+1})
   both hold (S_{n+1}, π_{n+1}, sig_A, sig_B)
 
   or B counter-proposes: reduce(S_n, formula_B, focus) → S_{n+1}'
-  negotiation is just formula exchange
+  negotiation is formula exchange — each proposal is a proven transition
 
 close:
-  either neuron publishes the latest signed state
+  either neuron publishes the latest signed state (claim their balance)
   or neither does — the bilateral state is self-sufficient
+  or they roll the balances into a new channel (rebalance without closing)
 ```
 
 no dispute window. no timelock. no watchtower. if your counterparty submits state S₃ while you hold state S₇, anyone can verify that π₇ proves a valid chain from S₃ to S₇. the higher nonce with a valid proof chain wins — instantly, mathematically, without waiting.
 
-## what a channel carries
+## the mutual ledger
 
-a channel is a shared [[noun]] — a binary tree of [[Goldilocks field]] elements. this means the channel state can be anything expressible as a noun:
+every interaction costs something. a message needs relay — relay costs [[focus]]. a computation needs cycles — cycles cost focus. knowledge has value — value is denominated in tokens. a channel without a mutual ledger is a chat app. the token balance is the foundation.
 
-- a balance allocation (field elements representing token amounts)
-- a shared knowledge structure (a local [[cybergraph]] fragment)
+the channel state is a [[noun]] with a bilateral ledger at its core:
+
+```
+CHANNEL STATE
+═════════════
+
+S = [ledger shared_data]
+
+ledger:
+  balance_A:  F_p     tokens held by neuron A
+  balance_B:  F_p     tokens held by neuron B
+
+conservation invariant (enforced by STARK proof):
+  balance_A + balance_B = deposit     (constant for the channel lifetime)
+```
+
+every state transition adjusts the ledger. the [[stark]] proof guarantees conservation — no tokens created or destroyed within the channel. the formula that updates the state must preserve the sum. if it does not, the proof fails and the counterparty rejects it.
+
+```
+EXAMPLE TRANSITIONS
+═══════════════════
+
+message delivery:
+  A sends message via relay to B
+  relay proves delivery (proof of delivery)
+  ledger: balance_A -= relay_fee, balance_B unchanged, relay claims fee
+
+computation request:
+  A asks B to compute reduce(data, formula, focus)
+  B computes, produces result + proof
+  ledger: balance_A -= compute_fee, balance_B += compute_fee
+
+knowledge exchange:
+  A shares a particle (new knowledge)
+  B values it, adjusts balance
+  ledger: balance_A += value, balance_B -= value
+
+streaming service:
+  B serves data to A continuously
+  each chunk adjusts the ledger by a micro-amount
+  thousands of adjustments per second, all proven
+```
+
+the ledger enables everything. relay payment, compute markets, knowledge pricing, streaming micropayments — all as bilateral ledger adjustments within a single channel. no on-chain transaction per payment. no routing through intermediaries. two neurons, one ledger, proven conservation.
+
+## beyond the ledger
+
+the channel state is a full [[noun]] — the ledger is the foundation, but the `shared_data` subtree carries anything expressible as a binary tree of [[Goldilocks field]] elements:
+
+- a local [[cybergraph]] fragment (bilateral knowledge graph)
 - a game state (board position, move history, scores)
-- an AI conversation (context tree, model weights, inference history)
+- an AI conversation (context tree, inference history)
 - a negotiation protocol (offers, counteroffers, constraints)
 - a collaborative computation (partial results, work allocation)
 
-the state is not limited to "who owes whom how much." it is arbitrary computation. every update is a [[nox]] formula applied to the previous state, with a [[stark]] proof of correctness. the channel is a bilateral computer.
+every update is a [[nox]] formula applied to the previous state, with a [[stark]] proof of correctness. the channel is a bilateral computer with a built-in economy. the ledger prices the computation. the computation enriches the shared state. the proof guarantees both.
 
 ## content-addressed history
 
@@ -119,8 +170,10 @@ the chain is an option, not a requirement. two neurons can maintain a channel in
 
 ## the atomic unit
 
-a channel is the atomic unit of interaction in [[cyber]]. the [[cybergraph]] is what neurons choose to make public. beneath it, the channel layer is where neurons compute, negotiate, exchange, and prove — bilaterally, privately, at [[radio]] speed.
+a channel is the atomic unit of the network economy. every service in [[cyber]] reduces to a bilateral exchange: relay a message (pay), compute a result (pay), share knowledge (get paid), store data (pay), verify a proof (pay). the channel is where all of these happen — at [[radio]] speed, with [[stark]] guarantees, priced by the mutual ledger.
 
-the network is channels. the graph is publication. the proofs are trust.
+the [[cybergraph]] is what neurons choose to make public. the channel layer is where neurons compute, negotiate, exchange, and prove — bilaterally, privately, continuously.
 
-see [[cyber/communication]], [[radio]], [[nox]], [[stark]], [[cybergraph]]
+the network is channels. the graph is publication. the ledger is the economy. the proofs are trust.
+
+see [[cyber/communication]], [[radio]], [[nox]], [[stark]], [[cybergraph]], [[cyber/focus]]
