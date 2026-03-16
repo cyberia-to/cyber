@@ -51,4 +51,18 @@ radio is the data transport layer of [[cyb]]. where [[ipfs]] uses CIDv1 with mul
 
 connections route through the [[radio/router]] (ALPN multiplexer). content is shared via [[radio/ticket]]. [[radio/endpoint]] [[radio/discovery]] resolves public keys to addresses
 
+## migration status
+
+hemera (Poseidon2) migration is complete: zero blake3 dependencies remain, 395 tests pass. content addressing, BAO trees, gossip message IDs all use hemera.
+
+remaining work: replace Ed25519 with [[stark]] proofs for peer authentication. ~800 lines of direct crypto across three areas:
+
+- identity types (iroh-base/src/key.rs) — `NodeId = PublicKey` wraps curve25519-dalek. replace with `NodeId = Poseidon2(secret)`, sign → STARK proof, verify → STARK verify
+- TLS handshake (iroh/src/tls/) — rustls expects classical signatures. options: (a) fork rustls for STARK verification, (b) replace TLS with custom Noise-like protocol over raw QUIC, (c) keep TLS as dumb encryption pipe, authenticate with STARK proofs at application layer after channel is established. option (c) is least invasive
+- relay handshake (iroh-relay/src/protos/handshake.rs) — replace Ed25519 challenge-response with STARK proof of identity
+
+gossip, blobs, bao, docs — already clean, no signatures involved.
+
+the key exchange (QUIC/TLS) can use [[mudra]] primitives (kem/ctidh) once the handshake is redesigned. encrypted channels after handshake use aead.
+
 see [[Hemera]] for the hash primitive, [[hemera/spec]] for the full decision record
