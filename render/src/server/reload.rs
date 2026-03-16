@@ -149,11 +149,21 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
                 changed.extend(more);
             }
 
-            // Filter to only markdown files in watched directories
+            // Filter to only markdown files, excluding .git/target/node_modules/build
             changed.retain(|p| {
-                p.extension()
+                let is_md = p.extension()
                     .map(|e| e == "md" || e == "markdown")
-                    .unwrap_or(false)
+                    .unwrap_or(false);
+                if !is_md {
+                    return false;
+                }
+                // Skip changes inside directories that are never content
+                let path_str = p.to_string_lossy();
+                !path_str.contains("/.git/")
+                    && !path_str.contains("/target/")
+                    && !path_str.contains("/node_modules/")
+                    && !path_str.contains("/build/")
+                    && !path_str.contains("/.claude/")
             });
 
             if changed.is_empty() {

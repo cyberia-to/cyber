@@ -123,10 +123,23 @@ pub fn scan_subgraph(decl: &SubgraphDecl) -> Result<Vec<DiscoveredFile>> {
     }
     let exclude_set = builder.build()?;
 
+    // Directories to skip entirely — prevents WalkDir from descending into
+    // .git/objects, target/, node_modules/ etc. which can contain thousands of files.
+    let skip_dirs: std::collections::HashSet<&str> =
+        [".git", "target", "node_modules", "build", ".claude"].into();
+
     let mut files = Vec::new();
 
     for entry in WalkDir::new(&decl.repo_path)
         .into_iter()
+        .filter_entry(|e| {
+            if e.file_type().is_dir() {
+                let name = e.file_name().to_string_lossy();
+                !skip_dirs.contains(name.as_ref())
+            } else {
+                true
+            }
+        })
         .filter_map(|e| e.ok())
         .filter(|e| e.file_type().is_file())
     {
