@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 subgraph: true
 repo: ../aurum
-exclude: ".claude/**, target/**"
+exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 The [[Goldilocks field]] as a standalone Rust crate. Provides field arithmetic (add, sub, mul, inv, eq, lt) and [[NTT]] over roots of unity in $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$.
 

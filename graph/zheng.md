@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 subgraph: true
 repo: ../zheng
-exclude: ".claude/**, target/**"
+exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 the proof system for [[cyber]]. implements the Whirlaway architecture: [[SuperSpartan]] IOP + [[WHIR]] PCS + [[sumcheck]] protocol. zero trusted setup. post-quantum. sub-millisecond verification.
 

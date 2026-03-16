@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 subgraph: true
 repo: ../mudra
-exclude: ".claude/**, target/**"
+exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 post-quantum cryptographic primitives for [[cyber]]. four modules, four security assumptions, one repo. mudra (मुद्रा — seal/gesture in Sanskrit) provides the cryptographic gestures that [[cyber]] needs beyond the hash-based stack.
 

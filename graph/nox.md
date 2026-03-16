@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 subgraph: true
 repo: ../nox
-exclude: ".claude/**, target/**"
+exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 the virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
 

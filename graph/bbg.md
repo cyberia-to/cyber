@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 subgraph: true
 repo: ../bbg
-exclude: ".claude/**, target/**"
+exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 the authenticated state layer for [[cyber]]. stores the [[cybergraph]] — edges ([[cyberlinks]]), [[neuron]] state, [[particle]] energy, [[focus]], balances — with polynomial commitment indexes that provide cryptographic completeness proofs.
 
