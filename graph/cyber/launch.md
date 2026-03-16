@@ -362,7 +362,7 @@ No node comprehends. The network knows.
 
 | component | role | rs | wgsl | trident | reference | status |
 |-----------|------|----|------|---------|-----------|--------|
-| [[aurum]] | field arithmetic (Goldilocks) | 2.0K | 762 | — | — | complete |
+| [[nebu]] | field arithmetic (Goldilocks) | 2.0K | 762 | — | — | complete |
 | [[hemera]] | hash, commitments (Poseidon2) | 4.9K | 758 | — | — | complete |
 | [[nox]] | proof-native VM | stub | — | — | — | specified, not implemented |
 | [[zheng]] | proof system (SuperSpartan + WHIR) | stub | — | — | — | specified, not implemented |

@@ -22,7 +22,7 @@ sumcheck        core interactive proof — reduces N-term sums to log(N) rounds
 ## dependency graph
 
 ```
-aurum (field)
+nebu (field)
   ↓
 hemera (hash)
   ↓

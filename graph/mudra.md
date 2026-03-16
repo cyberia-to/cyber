@@ -36,7 +36,7 @@ these are orthogonal concerns. proofs verify and charge; mudra hides and shares.
 | tfhe | fully homomorphic encryption | LWE | compute on encrypted data without decrypting |
 | threshold | Shamir SSS, VSS, DKG | information-theoretic + hash | distributed key management, threshold decryption |
 
-each module has its own security boundary. they share no cryptographic code with each other. [[hemera]] provides the PRF for authenticated encryption and commitments for verifiable secret sharing in the threshold module. [[aurum]] provides field arithmetic for lattice KEM and TFHE polynomial rings.
+each module has its own security boundary. they share no cryptographic code with each other. [[hemera]] provides the PRF for authenticated encryption and commitments for verifiable secret sharing in the threshold module. [[nebu]] provides field arithmetic for lattice KEM and TFHE polynomial rings.
 
 ## the neuron lifecycle through mudra
 
@@ -53,13 +53,13 @@ neuron produces randomness → zheng (VRF via proof of H(secret, input))
 ## dependency graph
 
 ```
-aurum (field)
+nebu (field)
   ↓
 hemera (hash)
   ↓
 mudra (crypto) ← this repo
 ```
 
-mudra is consumed at the protocol/node level — not part of the core proof pipeline (aurum → hemera → nox → zheng → bbg). it is the agent-facing complement to the content-facing hemera.
+mudra is consumed at the protocol/node level — not part of the core proof pipeline (nebu → hemera → nox → zheng → bbg). it is the agent-facing complement to the content-facing hemera.
 
 see [[lattice KEM]] for interactive key exchange, [[dCTIDH]] for non-interactive key exchange, [[TFHE]] for homomorphic encryption

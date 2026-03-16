@@ -24,7 +24,7 @@ Layer 4: UTXO State        mutator set (AOCL + SWBF), privacy layer
 ## dependency graph
 
 ```
-aurum (field)
+nebu (field)
   ↓
 hemera (hash + trees)
   ↓

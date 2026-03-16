@@ -24,7 +24,7 @@ Layer 1 defines truth. Layer 2 defines the prover-verifier boundary. Layer 3 def
 ## dependency graph
 
 ```
-aurum (field)
+nebu (field)
   ↓
 hemera (hash)
   ↓

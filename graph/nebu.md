@@ -1,15 +1,15 @@
 ---
 tags: cyber
-alias: aurum, Aurum, goldilocks field library
+alias: nebu, Nebu, goldilocks field library
 crystal-type: entity
 crystal-domain: cyber
 subgraph: true
-repo: ../aurum
+repo: ../nebu
 exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 The [[Goldilocks field]] as a standalone Rust crate. Provides field arithmetic (add, sub, mul, inv, eq, lt) and [[NTT]] over roots of unity in $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$.
 
-aurum is the foundational primitive for the entire [[cyber]] computational stack. [[hemera]] consumes it for hashing, [[nox]] consumes it for VM execution, [[trident]] consumes it for compilation, and [[GFP]] accelerates it in hardware.
+nebu is the foundational primitive for the entire [[cyber]] computational stack. [[hemera]] consumes it for hashing, [[nox]] consumes it for VM execution, [[trident]] consumes it for compilation, and [[GFP]] accelerates it in hardware.
 
 ## scope
 
@@ -29,7 +29,7 @@ Plus [[NTT]] — the Number Theoretic Transform over $2^{32}$ roots of unity tha
 ## dependency graph
 
 ```
-aurum (field)
+nebu (field)
   ↓
 hemera (hash)
   ↓
