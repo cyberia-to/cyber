@@ -42,10 +42,16 @@ struct BuildCache {
     content_hashes: HashMap<PageId, u64>,
     /// page_id → tags hash — detect tag changes
     tag_hashes: HashMap<PageId, u64>,
+    /// page_id → meta hash (title + aliases + icon + stake + tags) — detect frontmatter changes
+    meta_hashes: HashMap<PageId, u64>,
+    /// page_id → outgoing links hash — detect link changes
+    link_hashes: HashMap<PageId, u64>,
     /// page_id → sorted backlink ids — detect backlink changes
     backlink_snapshots: HashMap<PageId, Vec<PageId>>,
     /// Content page IDs from the last build (excludes stubs) — detect structural changes
     last_content_page_ids: HashSet<PageId>,
+    /// Namespace tree keys from last build — detect namespace parent changes
+    last_namespace_keys: HashSet<String>,
     /// Whether the initial full build has completed
     initialized: bool,
     /// Cached subgraph parsed pages (rebuilt only when a subgraph file changes)
@@ -63,8 +69,11 @@ impl BuildCache {
             render_cache: HashMap::new(),
             content_hashes: HashMap::new(),
             tag_hashes: HashMap::new(),
+            meta_hashes: HashMap::new(),
+            link_hashes: HashMap::new(),
             backlink_snapshots: HashMap::new(),
             last_content_page_ids: HashSet::new(),
+            last_namespace_keys: HashSet::new(),
             initialized: false,
             subgraph_pages: Vec::new(),
             subgraph_repo_paths: Vec::new(),
@@ -79,6 +88,30 @@ fn hash_str(s: &str) -> u64 {
     use std::hash::{Hash, Hasher};
     let mut h = DefaultHasher::new();
     s.hash(&mut h);
+    h.finish()
+}
+
+/// Hash frontmatter metadata fields that affect other pages (title, aliases, icon, stake, tags).
+fn hash_meta(page: &ParsedPage) -> u64 {
+    use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
+    let mut h = DefaultHasher::new();
+    page.meta.title.hash(&mut h);
+    page.meta.aliases.join(",").hash(&mut h);
+    page.meta.icon.hash(&mut h);
+    page.meta.stake.hash(&mut h);
+    page.meta.tags.join(",").hash(&mut h);
+    h.finish()
+}
+
+/// Hash outgoing links to detect when a page's link set changes (affects backlinks on targets).
+fn hash_links(page: &ParsedPage) -> u64 {
+    use std::collections::hash_map::DefaultHasher;
+    use std::hash::{Hash, Hasher};
+    let mut h = DefaultHasher::new();
+    let mut sorted_links = page.outgoing_links.clone();
+    sorted_links.sort();
+    sorted_links.hash(&mut h);
     h.finish()
 }
 
@@ -242,6 +275,8 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
             for (page_id, page) in &store.pages {
                 cache.content_hashes.insert(page_id.clone(), hash_str(&page.content_md));
                 cache.tag_hashes.insert(page_id.clone(), hash_str(&page.meta.tags.join(",")));
+                cache.meta_hashes.insert(page_id.clone(), hash_meta(page));
+                cache.link_hashes.insert(page_id.clone(), hash_links(page));
             }
             // Snapshot backlinks
             for (page_id, backlinks) in &store.backlinks {
@@ -249,6 +284,8 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
                 sorted.sort();
                 cache.backlink_snapshots.insert(page_id.clone(), sorted);
             }
+            // Snapshot namespace tree keys
+            cache.last_namespace_keys = store.namespace_tree.keys().cloned().collect();
         }
 
         cache.initialized = true;
@@ -263,15 +300,9 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
                 changed.extend(more);
             }
 
-            // Filter to only markdown files, excluding .git/target/node_modules/build
+            // Filter to content files, excluding .git/target/node_modules/build.
+            // Accept any file (not just .md) — the scanner handles file type classification.
             changed.retain(|p| {
-                let is_md = p.extension()
-                    .map(|e| e == "md" || e == "markdown")
-                    .unwrap_or(false);
-                if !is_md {
-                    return false;
-                }
-                // Skip changes inside directories that are never content
                 let path_str = p.to_string_lossy();
                 !path_str.contains("/.git/")
                     && !path_str.contains("/target/")
@@ -447,12 +478,16 @@ fn incremental_rebuild(
         all_parsed.extend(cache.subgraph_pages.clone());
     }
 
-    // Step 3: Detect content changes BEFORE building graph (cheap hash comparison).
+    // Step 3: Detect content, meta, and link changes BEFORE building graph (cheap hash comparison).
     let mut dirty_ids: HashSet<PageId> = HashSet::new();
     let mut content_page_ids: HashSet<PageId> = HashSet::new();
+    let mut meta_changed = false;
+    let mut links_changed = false;
 
     for page in &all_parsed {
         content_page_ids.insert(page.id.clone());
+
+        // Content hash — detect body text changes
         let new_hash = hash_str(&page.content_md);
         if let Some(&old_hash) = cache.content_hashes.get(&page.id) {
             if old_hash != new_hash {
@@ -462,9 +497,34 @@ fn incremental_rebuild(
             dirty_ids.insert(page.id.clone());
         }
         cache.content_hashes.insert(page.id.clone(), new_hash);
+
+        // Fix 1: Meta hash — detect frontmatter changes (title, aliases, icon, stake, tags)
+        let new_meta_hash = hash_meta(page);
+        if let Some(&old_meta_hash) = cache.meta_hashes.get(&page.id) {
+            if old_meta_hash != new_meta_hash {
+                dirty_ids.insert(page.id.clone());
+                meta_changed = true;
+            }
+        } else if cache.initialized {
+            // New page — meta is implicitly new
+            meta_changed = true;
+        }
+        cache.meta_hashes.insert(page.id.clone(), new_meta_hash);
+
+        // Fix 2: Outgoing links hash — detect link set changes
+        let new_link_hash = hash_links(page);
+        if let Some(&old_link_hash) = cache.link_hashes.get(&page.id) {
+            if old_link_hash != new_link_hash {
+                dirty_ids.insert(page.id.clone());
+                links_changed = true;
+            }
+        } else if cache.initialized {
+            links_changed = true;
+        }
+        cache.link_hashes.insert(page.id.clone(), new_link_hash);
     }
 
-    // Check for structural change: pages added or removed, or tags changed.
+    // Check for structural change: pages added or removed, or tags changed, or meta/links changed.
     let pages_added_or_removed = content_page_ids != cache.last_content_page_ids;
     let tags_changed = dirty_ids.iter().any(|dirty_id| {
         all_parsed.iter().find(|p| &p.id == dirty_id).map(|page| {
@@ -477,20 +537,65 @@ fn incremental_rebuild(
         }).unwrap_or(false)
     });
 
-    let structural_change = !cache.initialized || pages_added_or_removed || tags_changed;
+    // Meta or link changes escalate to structural rebuild since they affect other pages
+    let structural_change = !cache.initialized
+        || pages_added_or_removed
+        || tags_changed
+        || meta_changed
+        || links_changed;
+
     // Step 4: Build or reuse graph store.
     // Full graph build (PageRank, gravity, etc.) is expensive — only do it for structural changes.
     if structural_change || cache.cached_store.is_none() {
+        let old_namespace_keys = cache.last_namespace_keys.clone();
         let store = crate::graph::build_graph(all_parsed)?;
-        cache.last_content_page_ids = content_page_ids;
+        cache.last_content_page_ids = content_page_ids.clone();
+
+        // Fix 4: Compare backlink snapshots — mark pages with changed backlinks dirty
         for (page_id, backlinks) in &store.backlinks {
             let mut sorted = backlinks.clone();
             sorted.sort();
+            let old_snapshot = cache.backlink_snapshots.get(page_id);
+            if old_snapshot != Some(&sorted) {
+                dirty_ids.insert(page_id.clone());
+            }
             cache.backlink_snapshots.insert(page_id.clone(), sorted);
         }
+        // Also check pages that used to have backlinks but no longer do
+        let new_backlink_keys: HashSet<&PageId> = store.backlinks.keys().collect();
+        let stale_backlink_pages: Vec<PageId> = cache.backlink_snapshots.keys()
+            .filter(|k| !new_backlink_keys.contains(k))
+            .cloned()
+            .collect();
+        for page_id in &stale_backlink_pages {
+            if cache.backlink_snapshots.get(page_id).map(|v| !v.is_empty()).unwrap_or(false) {
+                dirty_ids.insert(page_id.clone());
+            }
+            cache.backlink_snapshots.remove(page_id);
+        }
+
+        // Fix 3: Mark namespace parents dirty on structural changes
+        for ns_key in store.namespace_tree.keys() {
+            // Namespace parent pages need re-rendering (they show child lists)
+            dirty_ids.insert(ns_key.clone());
+        }
+        // Also mark parents of removed namespaces dirty
+        for old_key in &old_namespace_keys {
+            if !store.namespace_tree.contains_key(old_key) {
+                dirty_ids.insert(old_key.clone());
+            }
+        }
+        cache.last_namespace_keys = store.namespace_tree.keys().cloned().collect();
+
         for (page_id, page) in &store.pages {
             if !cache.content_hashes.contains_key(page_id) {
                 cache.content_hashes.insert(page_id.clone(), hash_str(&page.content_md));
+            }
+            if !cache.meta_hashes.contains_key(page_id) {
+                cache.meta_hashes.insert(page_id.clone(), hash_meta(page));
+            }
+            if !cache.link_hashes.contains_key(page_id) {
+                cache.link_hashes.insert(page_id.clone(), hash_links(page));
             }
         }
         cache.cached_store = Some(store);
@@ -507,6 +612,19 @@ fn incremental_rebuild(
                 }
             }
         }
+    }
+
+    // Fix 5: Prune stale cache entries — only keep current page IDs
+    {
+        let store = cache.cached_store.as_ref().unwrap();
+        let current_ids: HashSet<&PageId> = store.pages.keys().collect();
+        cache.content_hashes.retain(|k, _| current_ids.contains(k));
+        cache.tag_hashes.retain(|k, _| current_ids.contains(k));
+        cache.meta_hashes.retain(|k, _| current_ids.contains(k));
+        cache.link_hashes.retain(|k, _| current_ids.contains(k));
+        cache.backlink_snapshots.retain(|k, _| current_ids.contains(k));
+        cache.render_cache.retain(|k, _| current_ids.contains(k)
+            || k.starts_with("__"));  // Keep synthetic page caches
     }
 
     if structural_change {

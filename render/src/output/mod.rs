@@ -165,19 +165,29 @@ pub fn write_incremental(
         fs::write(&file_path, &page.html)?;
     }
 
-    // Remove stale page output directories (pages that were moved or deleted)
-    if let Ok(entries) = fs::read_dir(output_dir) {
-        for entry in entries.flatten() {
+    // Remove stale page output directories (pages that were moved or deleted).
+    // Recursive walk to catch nested namespace pages (e.g. /ns/child/index.html).
+    {
+        let skip_dirs: std::collections::HashSet<&str> =
+            ["static", "media", "api"].into_iter().collect();
+        for entry in walkdir::WalkDir::new(output_dir)
+            .min_depth(1)
+            .into_iter()
+            .filter_map(|e| e.ok())
+        {
             let path = entry.path();
-            // Only check directories that contain index.html (page output dirs)
             if path.is_dir() {
+                // Skip top-level special directories entirely
+                if entry.depth() == 1 {
+                    if let Some(name) = path.file_name().and_then(|n| n.to_str()) {
+                        if skip_dirs.contains(name) {
+                            continue;
+                        }
+                    }
+                }
                 let index = path.join("index.html");
                 if index.exists() && !valid_paths.contains(&index) {
-                    // Skip static/media/special dirs
-                    let name = entry.file_name().to_string_lossy().to_string();
-                    if !matches!(name.as_str(), "static" | "media" | "api") {
-                        let _ = fs::remove_dir_all(&path);
-                    }
+                    let _ = fs::remove_dir_all(path);
                 }
             }
         }
