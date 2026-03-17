@@ -51,7 +51,7 @@ storage
 
 Each boundary is a place where meaning is lost, where errors accumulate, where provability ends. The [[proof]] system cannot see the tensor computation. The [[graph]] database cannot verify the reasoning engine's conclusions. The cryptographic layer has no idea what the computation above it means.
 
-This architecture eliminates all those boundaries with one mechanism: [[Hemera]]. Every computation in every [[algebra]], at every layer, produces a commitment that is natively a [[Goldilocks field processor]] element — the exact type the [[proof]] system already operates on. There is no translation. The [[proof]] can see everything because everything speaks the same language at the boundary.
+This architecture eliminates all those boundaries with one mechanism: every language compiles through [[Nox]] to produce an execution trace, and [[Hemera]] commits that trace to 8 [[Goldilocks field processor]] elements — the exact type the [[proof]] system already operates on. There is no translation. The [[proof]] can see everything because [[Nox]] gives every language one structural grammar and [[Hemera]] gives every computation one commitment type.
 
 The consequence: for the first time, it becomes possible to make statements like:
 
