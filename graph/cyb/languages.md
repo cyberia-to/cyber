@@ -208,16 +208,53 @@ Ren: geometric_product       mul/add over components      geo_mul jet      fma
 
 the chain: source language → compiler → nox pattern tree → jet recognition → GFP hardware. every domain-specific language gets hardware acceleration through the jet mechanism. the [[algebra]] determines which GFP primitive handles each jet.
 
-### Rune — the Orchestration Layer Above
+### Rune — Rs on Nox with Host Jets
 
-the fourteen languages are proven and bounded. [[rune]] is the dynamic scripting layer above the [[proof]] boundary — it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in an async syntax with first-class [[neural language]] primitives. rune scripts invoke any proven algebra and pipe results across language boundaries. a rune program may call [[Tri]] arithmetic, [[Ten]] inference, [[Wav]] signal processing, and [[Arc]] graph traversal in a single pipeline — each segment independently provable through nox pattern trees, the pipeline itself unprovable by design.
+[[rune]] is [[Rs]] syntax executed via [[Nox]] tree rewriting — the nervous system of the robot. ms-start, async, dynamic, with native access to WASM, GPU, and neural inference.
+
+rune is not a separate language. it is Rs compiled to [[Nox]] nouns and reduced via tree rewriting, extended with three capabilities pure Rs does not have:
+
+| Capability | [[Nox]] mechanism | What it does |
+|---|---|---|
+| `hint` | pattern 16 (non-deterministic) | Async input — yields, resumes when data arrives |
+| `host(target, args)` | host jet dispatch | Calls WASM/GPU/ONNX — exits [[proof]] boundary, returns noun |
+| `eval(noun)` | quote + reduce | Runtime metaprogramming — execute a dynamically constructed formula |
+
+three jet categories connect [[Nox]] reduction to the host system:
 
 ```
-neural language             ← meaning emerges from the cybergraph
-────────────────────────────────────────────────────────────────
-rune                        ← orchestration: dynamic, async, glue
-────────────────────────────────────────────────────────────────
-14 languages                ← proven computation over nox patterns
+Nox reduction (tree rewriting)
+  │
+  ├── pure jets → proven computation (14 languages)
+  │     fma, ntt, p2r, lut, conservation...
+  │
+  ├── host jets → practical computing
+  │     ├── wasm(module, fn, args)  → wasmi execution
+  │     ├── gpu(shader, data)       → wgpu compute dispatch
+  │     └── infer(model, input)     → burn-webnn ONNX
+  │
+  └── hint → async input from the world
+        ├── network event (radio)
+        ├── user input (cyb UI)
+        ├── timer (epoch tick)
+        └── cybergraph change (particle/link event)
+```
+
+ms start: parsing Rs to a [[Nox]] noun is milliseconds — just tree construction. [[Nox]] reduction starts immediately. no compilation step for interactive use.
+
+data structures: [[Nox]] nouns ARE the dynamic data structures. `Vec` → cons-list. `HashMap` → Merkle tree. `String` → [[Hemera]] hash (a [[particle]]). no heap, no GC — allocation is `cons`, freeing is not referencing.
+
+the [[proof]] story: every pure reduction in the script IS provable — the [[Nox]] trace captures it. host jets and hints are NOT provable — they cross the [[proof]] boundary. but the boundary is explicit and typed. the trace says: "given these hint values and these host jet results, the pure computation was correct."
+
+```
+neural language           ← meaning emerges from the cybergraph
+──────────────────────────────────────────────────────────────
+rune (Rs + hint + host)   ← nervous system: ms start, async, host access
+  pure reductions         ← proven (14 languages over Nox)
+  host jets               ← practical (WASM, GPU, ONNX)
+  hints                   ← async input from the world
+──────────────────────────────────────────────────────────────
+14 languages              ← proven computation over Nox patterns
 ```
 
 ---

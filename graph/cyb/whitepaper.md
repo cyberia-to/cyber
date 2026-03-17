@@ -229,9 +229,13 @@ all fourteen compile through one structural IR ([[Nox]]). all fourteen share one
 
 the fourteen computation [[cyb/languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
 
-### 6.1 rune — the orchestration layer
+### 6.1 rune — the nervous system
 
-dynamic async scripting language — the glue between human intent and fourteen proven computation languages. rune sits above the [[proof]] boundary: it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in a dynamic syntax with first-class [[neural language]] primitives. rune scripts are not proven — they orchestrate proven computation, invoking any algebra and piping results across languages. use cases: robot automation, [[cyberlink]] construction on schedule, particle monitoring, inference piping, sigma position management, prog scripting, natural language → graph operations
+[[rune]] is [[Rs]] syntax executed via [[Nox]] tree rewriting — the nervous system of the robot. ms-start, async, dynamic, with native access to WASM (wasmi), GPU (wgpu), and neural inference (burn-webnn/ONNX)
+
+rune is not a separate language. it is Rs compiled to [[Nox]] nouns and reduced via tree rewriting, extended with three capabilities: `hint` (async input from the world), `host` jets (dispatch to WASM/GPU/ONNX), and `eval` (runtime metaprogramming). every pure reduction in a rune script IS provable — the [[Nox]] trace captures it. host jets and hints cross the [[proof]] boundary explicitly
+
+data structures are [[Nox]] nouns: cons-lists instead of Vec, Merkle trees instead of HashMap, [[Hemera]] hashes instead of String. no heap, no GC — the [[cybergraph]] IS the data store
 
 ### 6.2 neural language — the semantic layer
 
@@ -240,12 +244,17 @@ the language of the [[cybergraph]] itself. meaning is not declared — it emerge
 ### 6.3 the three levels
 
 ```
-computation (14 languages)  ← proven algebras — each a type system over nox patterns
-rune                        ← orchestration glue — dynamic, async, neural-native
-neural language             ← meaning — emerges from the cybergraph at scale
+neural language           ← meaning emerges from the cybergraph
+──────────────────────────────────────────────────────────────
+rune (Rs + hint + host)   ← nervous system: ms start, async, host access
+  pure reductions         ← proven (14 languages over Nox)
+  host jets               ← practical (WASM, GPU, ONNX)
+  hints                   ← async input from the world
+──────────────────────────────────────────────────────────────
+14 languages              ← proven computation over Nox patterns
 ```
 
-query is not a separate layer — [[Inf]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the fourteen languages subsume what was previously split between "content" and "query." rune orchestrates them — calling into any proven algebra and composing results across language boundaries
+rune does not sit ABOVE the fourteen languages — it USES them via pure [[Nox]] reduction, and EXTENDS them with host jets and hints for real-world interaction. see [[rune]] for the full specification
 
 ---
 

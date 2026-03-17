@@ -13,7 +13,7 @@ stake: 14015797676239542
 
 cyb/os is a stack of typed universes — fourteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system. see [[cyb/languages]] for the algebraic completeness argument and [[cyb/multiproof]] for the proving design.
 
-core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for orchestration (the dynamic scripting layer above the [[proof]] boundary that glues the fourteen computation languages to human intent), [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
+core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for orchestration ([[Rs]] on [[Nox]] with host jets — ms-start, async, dynamic, with native access to WASM, GPU, and ONNX), [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
 
 ---
 
