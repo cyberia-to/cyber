@@ -10,7 +10,7 @@ stake: 13774145992166448
 
 - main: [[staking]]
 
-[[features]]
+[[cyb/features]]
 
 - [[security]]
 - access to endpoints

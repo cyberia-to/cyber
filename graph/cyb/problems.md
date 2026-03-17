@@ -30,7 +30,7 @@ TODO complete redesign of [[cyb/time]]
 - makeup as in [[cyb/sense]]
 - no information on the new [[time]]
 
-inconsistent [[offline mode]] work
+inconsistent [[cyb/offline]] work
 
 TODO no actions in [[cyb/sense]] for
 

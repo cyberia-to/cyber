@@ -14,4 +14,4 @@ stake: 13733870711487598
 - [[souls]]
 - [[aips]]
 
-[[features]]
+[[cyb/features]]

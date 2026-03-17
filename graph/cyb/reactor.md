@@ -6,6 +6,6 @@ stake: 13760720898606828
 ---
 one place for producing energy
 
-merge [[bsr]] and [[hfr]] in one convenient interface
+merge [[bsr]] and [[aos/hfr]] in one convenient interface
 
 dependency on [[energy reform]]

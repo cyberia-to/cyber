@@ -24,10 +24,10 @@ complexity
 
 - 14 [[aips]]
 - 35 [[pages]]
-- TODO 23 [[features]]
+- TODO 23 [[cyb/features]]
 - 100 [[actions]]
 - [[prism]] with [[atoms]], [[molecules]] and [[cells]]
-- [[offline mode]] and [[online mode]]
+- [[cyb/offline]] and [[online mode]]
 - 10 [[sparks]]
 - 3 types of [[robot]]: [[neuron]], [[avatar]] and [[prog]]
 - complete features for [[desktop]] and [[mobile]]

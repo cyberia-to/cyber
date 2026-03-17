@@ -50,7 +50,7 @@ supports basic operations on [[signals]]
 
 replicate [[state]] across [[devices]]
 
-allow to add [[features]] to [[cyb/mind]]
+allow to add [[cyb/features]] to [[cyb/mind]]
 
 superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]]
 
@@ -63,7 +63,7 @@ superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]
 - [[sense]]
 - [[map]]
 
-[[features]]
+[[cyb/features]]
 
 - core
 	- [[sigma]]: valuation engine of [[tokens]]

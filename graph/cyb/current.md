@@ -19,7 +19,7 @@ overall the following state of the projects
 - based on legacy web stack
 - many errors
 - lack of [[pages]]
-- [[features]] are not consistent
+- [[cyb/features]] are not consistent
 - still very powerful
 
 state of [[robot]]

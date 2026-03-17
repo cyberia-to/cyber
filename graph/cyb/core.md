@@ -8,7 +8,7 @@ stake: 13747295805047214
 
 [[hub]]
 
-[[signer]]
+[[cyb/signer]]
 
 [[sync]]
 

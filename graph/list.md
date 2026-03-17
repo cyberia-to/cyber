@@ -30,13 +30,13 @@ fields
 	- not the first who [[cyberlink]]
 - [[size]]: amount of bytes - must provide pin / unpin action
 - [[probability of observation]]
-- [[views]]: sum of incoming and outgoing cyberlinks to [[particle]]
+- [[cyb/views]]: sum of incoming and outgoing cyberlinks to [[particle]]
 	- on hover: who saw this particle? 5 random avatars in
 		- choose the algorithm which is least intensive: random, last, top, etc.
 
 table must be
 
-- sortable by [[creator]], [[time]], [[size]], [[probability of observation]], [[views]] in both directions
+- sortable by [[creator]], [[time]], [[size]], [[probability of observation]], [[cyb/views]] in both directions
 - at least 21 rows on the screen
 	- managing 1000 positions is impossible if i see 7-10 on screen
 - view index

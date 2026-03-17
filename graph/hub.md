@@ -16,7 +16,7 @@ stake: 13962097302001076
 - [[neuron]]
 - [[neurons]]
 
-[[features]]
+[[cyb/features]]
 
 - [[robot/networks]]
 - [[robot/channels]]

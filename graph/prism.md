@@ -90,7 +90,7 @@ every screen in [[cyb]] is a composition of prism components. the system defines
 	- [[teleport]] — cross-chain transfers
 	- [[sphere]] — 3d graph visualization
 	- [[warp]] — IBC bridge
-	- [[hfr]] — hydrogen fuel rod management
+	- [[aos/hfr]] — hydrogen fuel rod management
 
 ## interfaces
 

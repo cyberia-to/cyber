@@ -29,7 +29,7 @@ pages
 - [[cyb/portal/my avatars/api]]
 - [[cybergraph/neuron/api]]
 
-[[features]]
+[[cyb/features]]
 
 - [[robot/trainer]]
 - [[robot/spells]]

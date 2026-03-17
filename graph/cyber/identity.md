@@ -258,6 +258,6 @@ the first two layers require only hashes and proofs. the last four introduce add
 
 ## what this means
 
-the [[signer]] page describes the complexity of universal signing: pluggable curves, pluggable schemes, derivation paths, address formats per chain. identity in [[cyber]] reduces to: one hash function, one VM, one proof system. a [[neuron]] is a hash. authorization is a proof. anonymity is a proof of set membership. everything else follows.
+the [[cyb/signer]] page describes the complexity of universal signing: pluggable curves, pluggable schemes, derivation paths, address formats per chain. identity in [[cyber]] reduces to: one hash function, one VM, one proof system. a [[neuron]] is a hash. authorization is a proof. anonymity is a proof of set membership. everything else follows.
 
 see [[Hemera]] for the hash primitive, [[cyber/nox]] for the VM, [[cyber/proofs]] for stark verification, [[cyber/security]] for formal guarantees

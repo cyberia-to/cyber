@@ -15,7 +15,7 @@ core [[aip]] of [[cyb]]
 
 features::
 
-- [[offline mode]] first
+- [[cyb/offline]] first
 - localhost interface
 - support of several renders
 	- [[space]]
