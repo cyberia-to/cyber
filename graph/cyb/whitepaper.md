@@ -233,7 +233,7 @@ the fourteen computation [[cyb/languages]] are the object level — what the mac
 
 [[rune]] is [[Rs]] syntax executed via [[Nox]] tree rewriting — the nervous system of the robot. ms-start, async, dynamic, with native access to WASM (wasmi), GPU (wgpu), and neural inference (burn-webnn/ONNX)
 
-rune is not a separate language. it is Rs compiled to [[Nox]] nouns and reduced via tree rewriting, extended with three capabilities: `hint` (async input from the world), `host` jets (dispatch to WASM/GPU/ONNX), and `eval` (runtime metaprogramming). every pure reduction in a rune script IS provable — the [[Nox]] trace captures it. host jets and hints cross the [[proof]] boundary explicitly
+rune is not a separate language. it is Rs syntax parsed to [[Nox]] nouns and interpreted via tree rewriting, extended with three capabilities: `hint` (async input from the world), `host` jets (dispatch to WASM/GPU/ONNX), and `eval` (runtime metaprogramming). every pure reduction in a rune script IS provable — the [[Nox]] trace captures it. host jets and hints cross the [[proof]] boundary explicitly
 
 data structures are [[Nox]] nouns: cons-lists instead of Vec, Merkle trees instead of HashMap, [[Hemera]] hashes instead of String. no heap, no GC — the [[cybergraph]] IS the data store
 

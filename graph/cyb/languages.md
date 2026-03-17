@@ -212,7 +212,7 @@ the chain: source language → compiler → nox pattern tree → jet recognition
 
 [[rune]] is [[Rs]] syntax executed via [[Nox]] tree rewriting — the nervous system of the robot. ms-start, async, dynamic, with native access to WASM, GPU, and neural inference.
 
-rune is not a separate language. it is Rs compiled to [[Nox]] nouns and reduced via tree rewriting, extended with three capabilities pure Rs does not have:
+rune is not a separate language. it is Rs syntax parsed to [[Nox]] nouns and interpreted via tree rewriting, extended with three capabilities pure Rs does not have:
 
 | Capability | [[Nox]] mechanism | What it does |
 |---|---|---|
