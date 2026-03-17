@@ -19,7 +19,7 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 	- each layer adds meaning without hiding the underlying structure
 - ### emotion as signal
 	- components carry [[emotion]] — a color-coded signal layer
-	- emotion reflects the state of the [[robot]]: confidence, uncertainty, danger, opportunity
+	- emotion reflects the state of the [[cyb/robot]]: confidence, uncertainty, danger, opportunity
 	- emotion is computed from [[cyberank]], [[karma]], and context — it is data, rendered as feeling
 - ### everything is a [[particle]]
 	- every piece of content in [[cyb]] is a [[particle]] — text, image, video, audio, pdf, 3d model

@@ -13,7 +13,7 @@ store for [[aips]]
 
 features
 
-- [[robot/tokens]]
+- [[cyb/robot/tokens]]
 
 [[actions]]
 

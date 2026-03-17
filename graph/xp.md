@@ -4,7 +4,7 @@ crystal-type: measure
 crystal-domain: cyber
 stake: 8417533661879494
 ---
-[[score]] produced by [[robot]] for particles [[observation]]
+[[score]] produced by [[cyb/robot]] for particles [[observation]]
 
 1 second spend on particle gives 1 xp score
 

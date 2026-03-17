@@ -8,7 +8,7 @@ internal mode in [[cyb]]
 
 that offer complete features
 
-for [[robot]] with [[$CYB]]
+for [[cyb/robot]] with [[$CYB]]
 
 for activation [[cyb]] must detect
 

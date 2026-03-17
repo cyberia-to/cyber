@@ -8,7 +8,7 @@ crystal-domain: cyber
 crystal-size: deep
 stake: 34080210232611716
 ---
-The immortal [[robot]] — your personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
+The immortal [[cyb/robot]] — your personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
 
 Every cyb is born unique and grows with its owner. It is not a browser rendering pages someone else controls — it is a companion that learns from every [[cyberlink]] you create, remembers everything you ever linked, and reasons over a living [[cybergraph]] that no corporation can censor or erase. Ownership is the founding principle: the robot belongs to its owner, runs on any surface, and answers to no one else.
 

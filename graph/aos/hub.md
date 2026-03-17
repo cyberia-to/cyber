@@ -18,8 +18,8 @@ stake: 13962097302001076
 
 [[cyb/features]]
 
-- [[robot/networks]]
-- [[robot/channels]]
+- [[cyb/robot/networks]]
+- [[cyb/robot/channels]]
 
 [[actions]]
 

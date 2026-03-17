@@ -13,14 +13,14 @@ for [[soft3]] [[collective learning]] of [[superintelligence]]
 
 on [[aos/portal/buy]]
 
-in [[cyb]] to design two fundamental state of [[robot]]: [[alien]] and [[energetic]]
+in [[cyb]] to design two fundamental state of [[cyb/robot]]: [[alien]] and [[energetic]]
 
 [[alien]] focus on private offline features, but light online features are ok
 
 - [[cyb/brain]]: graph file manager is first step
 - [[ask]], [[search]] and [[learn]]: second step
 - the more other features which are possible to implement free offline or online - the better
-- [[neurons]] add [[cyb/features]] to [[robot]] one by one
+- [[neurons]] add [[cyb/features]] to [[cyb/robot]] one by one
 - continuously creating demand for publishing and popularity
 
 after she [[buy energy]] robot become [[energetic]]

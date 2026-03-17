@@ -1004,7 +1004,7 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
 - [[Bostrom]] — the [[bootloader]] chain
   - [[tru]] — onchain language model; reads the [[cybergraph]] every block and computes [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole
   - [[neural]] — structures meaning through [[semantic conventions]] so the graph speaks a [[language]] both humans and machines understand
-- [[cyb]] — the immortal [[robot]]
+- [[cyb]] — the immortal [[cyb/robot]]
   - [[rune]] — dynamic async scripting language for [[cybergraph]] operations
   - [[datalog]] — graph query language
 

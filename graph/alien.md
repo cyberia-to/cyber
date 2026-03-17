@@ -8,7 +8,7 @@ internal mode in [[cyb]]
 
 that offer limit features
 
-for [[robot]] without [[$CYB]]
+for [[cyb/robot]] without [[$CYB]]
 
 for activation of [[energetic]] mode [[cyb]] must detect
 
