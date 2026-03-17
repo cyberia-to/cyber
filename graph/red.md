@@ -26,7 +26,7 @@ evolutionary signal: fire, blood, thermal injury, dominance display
 - blood: the universal marker of injury and vitality
 - fire: the oldest human tool and oldest human threat
 
-## in [[prism]]
+## in [[prysm]]
 
 - danger, critical failure, system overload, resource depletion
 - the stop signal — immediate attention required

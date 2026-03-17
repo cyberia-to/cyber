@@ -1,6 +1,6 @@
 ---
 icon: 🧠
-tags: page, prism, cyb
+tags: page, prysm, cyb
 crystal-type: entity
 crystal-domain: superhuman
 stake: 6356985210986853

@@ -12,7 +12,7 @@ evolutionary origin:: vast skies, water bodies, open horizons — the call to ex
 
 blue promotes calm focus, linked to safe resource-rich environments worth investigating
 
-## in [[prism]]
+## in [[prysm]]
 
 - signals exploration, discovery, unvisited territory, new knowledge
 - an unexplored [[particle]] glows blue. a new [[cyberlink]] destination: blue. the frontier of the [[cybergraph]]

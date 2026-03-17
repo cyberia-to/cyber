@@ -25,7 +25,7 @@ evolutionary signal: decay, rot, toxic substances, contamination
 - autumn foliage: chlorophyll retreating, carotenoids revealed — the signal of seasonal death
 - venomous creatures: monarch butterflies, coral snakes
 
-## in [[prism]]
+## in [[prysm]]
 
 - invalid data, rejected transactions, spam content, corrupted [[particles]]
 - caution — something is wrong, verify before proceeding

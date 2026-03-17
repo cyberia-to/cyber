@@ -1,12 +1,12 @@
 ---
-tags: aip, cyb, prism
+tags: aip, cyb, prysm
 crystal-type: entity
 crystal-domain: cyber
 stake: 17230497352242240
 ---
 the onboarding [[aip]] in [[cyb]]
 
-cell in [[prism]]
+cell in [[prysm]]
 
 current state on [[cyb/portal]]
 

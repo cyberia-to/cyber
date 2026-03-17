@@ -1,12 +1,12 @@
 ---
-tags: aip, cyb, prism
+tags: aip, cyb, prysm
 crystal-type: entity
 crystal-domain: cyber
 stake: 17912736197680926
 ---
 the search and discovery [[aip]] in [[cyb]]
 
-cell in [[prism]]
+cell in [[prysm]]
 
 current state in [[cyb-ts]] at [[cyb/oracle]]
 

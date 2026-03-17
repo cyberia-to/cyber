@@ -24,7 +24,7 @@ evolutionary signal: fading light, reduced activity, seasonal change, introspect
 - deep ocean: below the photic zone, where light cannot reach
 - winter sky: seasonal affective response — less light, less serotonin, inward turn
 
-## in [[prism]]
+## in [[prysm]]
 
 - inactivity, declining metrics, dormancy, deprecated content
 - the quiet signal — something fading, needs gentle attention

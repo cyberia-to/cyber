@@ -13,7 +13,7 @@ evolutionary origin:: bright sunlight, alerting flowers, warning insects — sud
 
 yellow's high luminance grabs attention. the first emotion before assessment: is this threat or opportunity?
 
-## in [[prism]]
+## in [[prysm]]
 
 - signals attention needed, new event, unexpected state change
 - a notification in surprise state: something just happened, look here, orient yourself

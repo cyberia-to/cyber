@@ -299,7 +299,7 @@ AIPs are the applications of the robot. not apps downloaded from a store — pro
 | [[cyb/studio\|studio]] | content creation, publication |
 | [[cyb/sphere\|sphere]] | social layer, discovery, reputation |
 
-AIPs are built from [[prism]] — the design system of cyb. prism defines atoms (glass, text, button, toggle, slider, address, ion, saber), molecules (hud, tabs, object, adviser, input, table), and cells that compose into any interface. the same design language renders on GPU (desktop), WebGPU (browser), or terminal
+AIPs are built from [[prysm]] — the design system of cyb. prism defines atoms (glass, text, button, toggle, slider, address, ion, saber), molecules (hud, tabs, object, adviser, input, table), and cells that compose into any interface. the same design language renders on GPU (desktop), WebGPU (browser), or terminal
 
 ---
 
@@ -473,6 +473,6 @@ the robot is not an app. it is your presence in the most important network in th
 
 ---
 
-see [[cyb/architecture]] for the complete technical specification. see [[cyb/languages]] for the fourteen computation languages. see [[cyb/multiproof]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
+see [[cyb/architecture]] for the complete technical specification. see [[cyb/languages]] for the fourteen computation languages. see [[cyb/multiproof]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prysm]] for the design system
 
 discover all [[concepts]]

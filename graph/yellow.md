@@ -26,7 +26,7 @@ evolutionary signal: sudden light, dawn, alerting patterns, attention grab
 - dawn and dusk: the transitional light, the moment of change
 - lightning: sudden discharge, raw energy
 
-## in [[prism]]
+## in [[prysm]]
 
 - attention needed, new event, unexpected state change, notification
 - the alert signal — something just happened, orient yourself

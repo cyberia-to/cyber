@@ -27,7 +27,7 @@ evolutionary signal: high-energy radiation, cellular death, the boundary of the 
 - twilight violet: the last light before total darkness
 - rare in nature — few organisms display violet, reinforcing its strangeness
 
-## in [[prism]]
+## in [[prysm]]
 
 - unknown threat, unverified source, irreversible action, boundary warning
 - the color of the edge — where the [[cybergraph]] ends and the unknown begins

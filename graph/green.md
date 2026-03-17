@@ -25,7 +25,7 @@ evolutionary signal: vegetation, [[photosynthesis]], fertility, safety, abundanc
 - camouflage: the baseline of the natural world, the color everything hides in
 - growth: shoots, sprouts, new leaves — green is the color of becoming
 
-## in [[prism]]
+## in [[prysm]]
 
 - confidence, success, health, growth, confirmation
 - the default positive state — what [[cyb]] feels like when everything works

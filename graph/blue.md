@@ -26,7 +26,7 @@ evolutionary signal: sky, ocean, open water — safe horizons worth investigatin
 - clear water: safe to drink, rich in fish
 - rare in land organisms — blue pigment is uncommon, often structural color (morpho butterflies)
 
-## in [[prism]]
+## in [[prysm]]
 
 - exploration, curiosity, unvisited territory, new [[particles]] to discover
 - the color of [[search]] — the drive that powers the [[main loop]]

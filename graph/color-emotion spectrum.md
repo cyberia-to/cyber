@@ -57,8 +57,8 @@ stake: 1585625595695787
 	- UV exposure triggers [[apoptosis]] in skin cells — violet's fear link as perceptual proxy for invisible threats
 	- [[photosynthesis]]'s green dominance explains joy: verdant scenes boost serotonin
 	- cross-cultural consistency: warmer colors (red-orange) for high-energy emotions, cooler (blue-violet) for withdrawal
-- ## implications for [[prism]]
+- ## implications for [[prysm]]
 	- the [[emotion]] layer in [[cyb]] uses this spectrum directly
-	- [[prism]] components carry emotion as a color-coded signal: confidence ([[green]]), danger ([[red]]), attention ([[yellow]]), exploration ([[blue]])
+	- [[prysm]] components carry emotion as a color-coded signal: confidence ([[green]]), danger ([[red]]), attention ([[yellow]]), exploration ([[blue]])
 	- the color-emotion binding is the perceptual interface between a [[neuron]] and the [[cybergraph]]
 	- as simple as that

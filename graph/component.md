@@ -54,4 +54,4 @@ types of component particles: [[cyb]] AIPs (oracle, brain, sense, sigma, portal)
 
 component is the meta-language — it contains all others. [[text]] flows inside it. [[formula]] renders within it. [[table]] binds to it as data. [[pixels]] and [[video]] display inside it. [[vector]] composes into its layout. [[sound]] plays through it. [[struct]] configures it
 
-see [[cyb/architecture]] for the component compilation pipeline. see [[prism]] for the design system. see [[aip]] for the application layer. see [[smart contracts]] for the contract half of component/contract
+see [[cyb/architecture]] for the component compilation pipeline. see [[prysm]] for the design system. see [[aip]] for the application layer. see [[smart contracts]] for the contract half of component/contract

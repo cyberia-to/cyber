@@ -26,7 +26,7 @@ complexity
 - 35 [[pages]]
 - TODO 23 [[cyb/features]]
 - 100 [[actions]]
-- [[prism]] with [[atoms]], [[molecules]] and [[cells]]
+- [[prysm]] with [[atoms]], [[molecules]] and [[cells]]
 - [[cyb/offline]] and [[online mode]]
 - 10 [[sparks]]
 - 3 types of [[robot]]: [[neuron]], [[avatar]] and [[prog]]

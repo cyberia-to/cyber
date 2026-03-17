@@ -1,5 +1,5 @@
 ---
-tags: page, prism, cyb
+tags: page, prysm, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 18341118728537776
@@ -7,7 +7,7 @@ stake: 18341118728537776
 
 wallet and balance [[aip]] in [[cyb]]
 
-widget molecule and full application in [[prism]]
+widget molecule and full application in [[prysm]]
 
 the economic interface between a [[neuron]] and the [[cybergraph]]
 
@@ -24,7 +24,7 @@ the economic interface between a [[neuron]] and the [[cybergraph]]
 
 ## as widget (molecule)
 
-- compact balance display in the [[prism/hud]]
+- compact balance display in the [[prysm/hud]]
 - shows total portfolio value as [[counter]]
 - token breakdown on expand
 - [[emotion]] color reflects portfolio trend (green rising, red falling)

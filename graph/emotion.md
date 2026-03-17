@@ -5,7 +5,7 @@ crystal-domain: cyber
 stake: 18101907970566432
 ---
 - # Emotion
-- a computed color signal in [[prism]] grounded in the [[color-emotion spectrum]]
+- a computed color signal in [[prysm]] grounded in the [[color-emotion spectrum]]
 - emotion encodes protocol state as feeling: [[cyberank]], [[karma]], [[bandwidth]], and context are translated into a wavelength that a human perceives as affect
 - seven fundamental emotions mapped to the visible spectrum
 
@@ -20,7 +20,7 @@ stake: 18101907970566432
 | [[fear]] | [[violet]] | 380-420 nm | unknown threat, radiation, death |
 
 - ## in the protocol
-	- every [[prism]] component accepts emotion as input
+	- every [[prysm]] component accepts emotion as input
 	- emotion is computed, not assigned: the [[relevance machine]] determines the affective state
 	- a [[counter]] showing declining [[karma]] glows [[red]]. a successful [[cyberlink]] glows [[green]]. an unexplored [[particle]] glows [[blue]]
 	- emotion makes the [[cybergraph]] legible to human perception

@@ -13,7 +13,7 @@ evolutionary origin:: twilight, deep water, low-light conditions — reduced act
 
 links to seasonal affective responses: less light, less energy, contemplation
 
-## in [[prism]]
+## in [[prysm]]
 
 - signals inactivity, loss, declining metrics, dormancy
 - a [[neuron]] with no recent activity: indigo. a deprecated [[particle]]: indigo. fading [[karma]]: indigo

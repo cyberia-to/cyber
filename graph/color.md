@@ -6,7 +6,7 @@ stake: 16673966201043592
 ---
 - # Color
 - wavelength of light in the visible [[electromagnetic spectrum]] (380-750 nm)
-- the perceptual dimension that encodes [[emotion]] in [[prism]] and carries evolutionary survival signals
+- the perceptual dimension that encodes [[emotion]] in [[prysm]] and carries evolutionary survival signals
 - ## the visible spectrum
 
 | color | wavelength | emotion | arousal |
@@ -30,4 +30,4 @@ stake: 16673966201043592
 - ## in the [[cybergraph]]
 	- color is the semantic channel between protocol state and human perception
 	- see [[color-emotion spectrum]] for the full evolutionary theory
-	- see [[emotion]] for implementation in [[prism]]
+	- see [[emotion]] for implementation in [[prysm]]

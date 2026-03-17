@@ -1,10 +1,10 @@
 ---
-tags: prism, cyb
+tags: prysm, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 17032782338000614
 ---
-the foundational surface atom in [[prism]]
+the foundational surface atom in [[prysm]]
 
 translucent pane that contains other components. all composition in [[cyb]] happens on glass
 
@@ -30,6 +30,6 @@ translucent pane that contains other components. all composition in [[cyb]] happ
 
 ## composition
 
-- glass is the only surface atom. every [[prism/hud]], [[prism/display]], and [[prism/object]] sits on glass
+- glass is the only surface atom. every [[prysm/hud]], [[prysm/display]], and [[prysm/object]] sits on glass
 - glass panes nest: a card (glass) inside a section (glass) inside a screen (glass)
 - nesting depth should stay ≤ 3 to maintain visual clarity

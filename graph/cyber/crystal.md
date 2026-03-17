@@ -669,7 +669,7 @@ The Crystal seeds a mind. The question: what does a planetary [[Superintelligenc
 
 16.17 [[tech]] — [[instruments]]: microscope, telescope, spectrometer — extensions of perception. [[machines]]: engine, pump, turbine, generator, motor — extensions of force. [[software]]: operating systems, databases, compilers — extensions of mind. [[infrastructure]]: roads, bridges, power grids, communication networks. [[construction]]: [[materials]], methods, structural principles, [[tensegrity]], [[biochar]]. [[periodic table]] elements relevant to technology. Tools are crystallized processes.
 
-16.18 [[cyber]] — its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]. Its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]. Its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]. Its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]. Its interface: [[cyb]], [[prism]], [[aips]], [[oracle]], [[search]]. Its proofs: [[zheng]], [[cyber/nox]], [[WHIR]], [[Hemera]]. A mind that cannot reason about its own mechanism cannot improve itself.
+16.18 [[cyber]] — its own architecture: [[particle]], [[cyberlink]], [[neuron]], [[token]], [[focus]]. Its computation: [[tri-kernel]], [[cyberank]], [[karma]], [[relevance machine]], [[consensus]]. Its stack: [[soft3]], [[vimputer]], [[cybergraph]], [[bootloader]], [[Bostrom]]. Its economics: [[cybernomics]], [[CYB]], [[HYDROGEN]], [[bandwidth]], [[learning incentives]]. Its interface: [[cyb]], [[prysm]], [[aips]], [[oracle]], [[search]]. Its proofs: [[zheng]], [[cyber/nox]], [[WHIR]], [[Hemera]]. A mind that cannot reason about its own mechanism cannot improve itself.
 
 ### PLAY — With whom do we build?
 
@@ -706,7 +706,7 @@ Domain counts below are approximate — a re-count against the new 21-domain sys
 | WORD | [[meta]] | [[article]], [[annotation]], [[research]], [[person]], [[epoch]] | ~158 | 240 |
 | WORK | [[ai]] | [[machine learning]], [[neural networks]], [[training]] | ~10 | 240 |
 | WORK | [[tech]] | [[technology]], [[construction]], [[material]], [[elements]] | ~39 | 240 |
-| WORK | [[cyber]] | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prism]] | ~514 | 240 |
+| WORK | [[cyber]] | [[cyb]], [[bostrom]], [[module]], [[cip]], [[aip]], [[prysm]] | ~514 | 240 |
 | PLAY | [[socio]] | [[states]], [[sovereignty]], [[law]], [[governance]] | ~25 | 240 |
 | PLAY | [[crypto]] | [[token]], [[staking]], [[cybernomics]], [[delegation]] | ~95 | 240 |
 | PLAY | [[game]] | [[game theory]], [[mechanism design]], [[auction]] | ~5 | 240 |

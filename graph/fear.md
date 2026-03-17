@@ -14,7 +14,7 @@ violet sits at the edge of visibility, nearing the ultraviolet. the shortest wav
 
 UV induces programmed cell death — the most fundamental biological threat
 
-## in [[prism]]
+## in [[prysm]]
 
 - signals unknown threat, unverified source, potential irreversible action
 - a transaction requiring extreme caution: violet. an unverified [[particle]] from unknown [[neuron]]: violet

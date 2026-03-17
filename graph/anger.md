@@ -13,7 +13,7 @@ evolutionary origin:: fire, blood, thermal injury — death from burn
 
 flushed faces during aggression signal dominance. perceiving red heightens anger responses from ancestral threats like fire or wounds
 
-## in [[prism]]
+## in [[prysm]]
 
 - signals danger, overload, critical failure
 - a [[counter]] in anger state: resource depleted, threshold crossed, system under attack

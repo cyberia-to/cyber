@@ -14,7 +14,7 @@ green occupies the peak of human visual sensitivity, aligned with [[chlorophyll]
 
 verdant landscapes signaled growth, safety, and food. [[serotonin]] response to green is measurable
 
-## in [[prism]]
+## in [[prysm]]
 
 - signals confidence, success, growth, health
 - a [[cyberlink]] confirmed: green glow. [[karma]] rising: green. system healthy: green
