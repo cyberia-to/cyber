@@ -1,5 +1,5 @@
 ---
-tags: cyber, stark, architecture, article
+tags: cyb, cyber, stark, architecture, article
 crystal-type: article
 crystal-domain: cyber
 alias:: computation languages, language set, thirteen languages

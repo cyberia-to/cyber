@@ -1,5 +1,5 @@
 ---
-tags: cyber, stark, architecture
+tags: cyb, cyber, stark, architecture
 crystal-type: article
 crystal-domain: cyber
 alias:: multi-proof architecture, multiproof, multiproof-architecture
