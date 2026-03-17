@@ -178,13 +178,13 @@ the container. the sovereign instance that holds the five other primitives toget
 
 the operating system is the membrane between three grids:
 
-- computation — what the machine thinks (thirteen [[languages]])
+- computation — what the machine thinks (thirteen [[cyb/languages]])
 - perception — what the human sees (nine primitives)
 - decision — what the human does (ten primitives)
 
-every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own [[algebra]]. cyb/os is a stack of typed universes — thirteen computation [[languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system
+every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own [[algebra]]. cyb/os is a stack of typed universes — thirteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system
 
-a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. see [[languages]] for the full completeness argument
+a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. see [[cyb/languages]] for the full completeness argument
 
 #### computation — 13 languages
 
@@ -206,11 +206,11 @@ a data type deserves its own language when its algebraic laws are so different f
 
 #### the value tower — three atoms
 
-all languages (except Bt) share the [[Goldilocks field]] $\mathbb{F}_p$ substrate with three atom types: `field` (value by content), `word` (value by position), `hash` (value by commitment). three modes of reference that are exhaustive. see [[languages]] for the full value tower specification
+all languages (except Bt) share the [[Goldilocks field]] $\mathbb{F}_p$ substrate with three atom types: `field` (value by content), `word` (value by position), `hash` (value by commitment). three modes of reference that are exhaustive. see [[cyb/languages]] for the full value tower specification
 
 #### perception — 9 primitives
 
-every computation language has a canonical rendering — the perception primitive where the shape of the data matches the shape of the display. nine irreducible visual types: text, struct, table, vector, pixels, video, sound, formula, component. see [[languages]] for the full perception mapping including the four new geometry languages
+every computation language has a canonical rendering — the perception primitive where the shape of the data matches the shape of the display. nine irreducible visual types: text, struct, table, vector, pixels, video, sound, formula, component. see [[cyb/languages]] for the full perception mapping including the four new geometry languages
 
 #### decision — 10 primitives
 
@@ -220,13 +220,13 @@ every human interaction with a computer is a decision. ten irreducible decision 
 
 four layout modes (stream, grid, flex, page) compose the nine perception primitives into any UI. three temporal modes (stack, heap, stream) structure time across all three grids. the grids interlock in a continuous decision loop: compute → render → decide → commit → update. all three share one universal structural pair — fork and join. see [[cyb/architecture]] for layout modes, compilation architecture, temporal modes, and cross-grid connections
 
-all thirteen compile through one structural IR ([[Nox]]). all thirteen share one [[proof]] system (except Bt, which has its own $\mathbb{F}_2$ proof system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3. see [[languages]] for each language's ops tables, algebraic identity, and the completeness proof. see [[multiproof-architecture]] for how all thirteen settle under one proving umbrella
+all thirteen compile through one structural IR ([[Nox]]). all thirteen share one [[proof]] system (except Bt, which has its own $\mathbb{F}_2$ proof system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3. see [[cyb/languages]] for each language's ops tables, algebraic identity, and the completeness proof. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella
 
 ---
 
 ## 6. the language stack
 
-the thirteen computation [[languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
+the thirteen computation [[cyb/languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
 
 ### 6.1 rune — the script language
 
@@ -463,6 +463,6 @@ the robot is not an app. it is your presence in the most important network in th
 
 ---
 
-see [[cyb/architecture]] for the complete technical specification. see [[languages]] for the thirteen computation languages. see [[multiproof-architecture]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
+see [[cyb/architecture]] for the complete technical specification. see [[cyb/languages]] for the thirteen computation languages. see [[cyb/multiproof]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
 
 discover all [[concepts]]

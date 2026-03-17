@@ -2,7 +2,7 @@
 tags: cyber, stark, architecture
 crystal-type: article
 crystal-domain: cyber
-alias:: multi-proof architecture, multiproof
+alias:: multi-proof architecture, multiproof, multiproof-architecture
 ---
 
 # Multi-Proof Architecture for [[superintelligence]]
@@ -13,13 +13,13 @@ Most systems for intelligence are not designed — they accumulate. A tensor lib
 
 This document describes a different approach: design the primitives from first principles, unify them under one proving umbrella, and let intelligence emerge from the composition.
 
-The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need? See [[languages]] for the answer — thirteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
+The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need? See [[cyb/languages]] for the answer — thirteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
 
 ---
 
 ## Core Insight: Two Kinds of Languages
 
-The fundamental split is not between [[languages]] — it is between purpose:
+The fundamental split is not between [[cyb/languages]] — it is between purpose:
 
 - Execution languages — describe computation in its native [[algebra]]
 - Proving languages — verify that computation was correct
@@ -135,11 +135,11 @@ The conceptualization is the hard part. Most systems never get the conceptualiza
 
 ## The Three-Tier Proving Architecture
 
-The [[languages]] organize into three tiers by their relationship to [[proof]]. See [[languages]] for the complete specification of each language.
+The [[cyb/languages]] organize into three tiers by their relationship to [[proof]]. See [[cyb/languages]] for the complete specification of each language.
 
 ### Execution Tier — eleven languages
 
-All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[languages]]: Bt (Bitwise), Rs (Rustic), Arc, Geo (Geometric), Dif (Differential), Sym (Symplectic), Inf (Informatic), Seq (Sequence), Ask, Wav (Wave), Ten (Tensor).
+All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Geo (Geometric), Dif (Differential), Sym (Symplectic), Inf (Informatic), Seq (Sequence), Ask, Wav (Wave), Ten (Tensor).
 
 Every execution step emits a [[Hemera]] commitment — 8 [[Goldilocks field processor]] elements — that becomes both the [[proof]] input and the [[particle]] identity in the [[cybergraph]].
 
@@ -298,7 +298,7 @@ The proving tier (Tri + [[Hemera]]) aligns with the existing [[zheng]] STARK imp
 
 The [[Hemera]] invariant formalizes how the [[cybergraph]] accumulates verified knowledge: every computation in every [[algebra]] produces a [[particle]] via [[Hemera]], and every composition produces a [[cyberlink]]. The [[cybergraph]] is the accumulation state of all proven computation.
 
-Engineering-ready [[languages]] (Bt, Rs, Geo, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon [[languages]] (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
+Engineering-ready [[cyb/languages]] (Bt, Rs, Geo, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
 
 The [[Goldilocks field processor]] provides hardware acceleration for the four primitives the architecture depends on: FMA, NTT butterfly, Poseidon2 round, and table lookup. [[Goldilocks homomorphic encryption]] parameterizes FHE over the same [[field]], unifying encrypted computation with proving and [[quantum]] simulation under one [[field]] tower.
 
@@ -314,4 +314,4 @@ The architecture implies specific capabilities for [[cyb]] as the interface to t
 
 ---
 
-see [[languages]] for the thirteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.
+see [[cyb/languages]] for the thirteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.

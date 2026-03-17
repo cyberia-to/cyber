@@ -11,7 +11,7 @@ stake: 14015797676239542
 
 [[cyb]] is a sovereign browser that becomes an operating system. identity is a keypair, state lives on-chain, [[smart contracts]] run locally, and the entire render stack compiles to GPU. one binary, all platforms, 130K lines of [[Rust]], no WebView, no V8, no Google.
 
-cyb/os is a stack of typed universes — thirteen computation [[languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system. see [[languages]] for the algebraic completeness argument and [[multiproof-architecture]] for the proving design.
+cyb/os is a stack of typed universes — thirteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system. see [[cyb/languages]] for the algebraic completeness argument and [[cyb/multiproof]] for the proving design.
 
 core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for dynamic execution, [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
 
@@ -74,7 +74,7 @@ Continuum         Wav    Wave           Signal      Convolution       Sensing
 Linear            Ten    Tensor         Tensor      Contraction       Learning
 ```
 
-a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. some universes share a proof system. some share a compiler. none share semantics. see [[languages]] for the full completeness argument and irreducibility proof.
+a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. some universes share a proof system. some share a compiler. none share semantics. see [[cyb/languages]] for the full completeness argument and irreducibility proof.
 
 ### 2. The Value Tower — Three Modes of Reference
 
@@ -353,7 +353,7 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
 | Wav     | decomposes into Tri              | native DSP pipeline           |
 | Ten     | decomposes into Tri              | native BLAS / GPU             |
 
-see [[multiproof-architecture]] for how all thirteen languages settle under one proving umbrella via [[Hemera]] and Tri.
+see [[cyb/multiproof]] for how all thirteen languages settle under one proving umbrella via [[Hemera]] and Tri.
 
 ### 16. Nine Perception Primitives
 
@@ -1065,7 +1065,7 @@ CybOS core: ~85-125K lines (human-authored, auditable by one person in a month).
 12. Sym — Symplectic geometry. Hamiltonian mechanics, [[conservation]] laws. Physics simulation.
 13. Inf — Information geometry. Fisher metric on [[probability]] simplices. Self-model for [[superintelligence]].
 
-see [[languages]] for the algebraic completeness argument. see [[multiproof-architecture]] for how all thirteen settle under one proving umbrella.
+see [[cyb/languages]] for the algebraic completeness argument. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella.
 
 ---
 
@@ -1073,7 +1073,7 @@ see [[languages]] for the algebraic completeness argument. see [[multiproof-arch
 
 cyb/os rests on three observations and one boundary.
 
-one. every computational universe has a native type whose algebraic laws define how programs think. forcing computations across universe boundaries creates encoding overhead that scales with complexity. thirteen algebras → thirteen [[languages]].
+one. every computational universe has a native type whose algebraic laws define how programs think. forcing computations across universe boundaries creates encoding overhead that scales with complexity. thirteen algebras → thirteen [[cyb/languages]].
 
 two. every perceptual channel has a native format whose rendering laws define how humans see. forcing display across format boundaries creates visual noise. nine senses → nine primitives.
 
@@ -1101,4 +1101,4 @@ Decision:     split / merge    (diverge / converge)
 
 thirteen languages. nine primitives. ten decisions. three atoms. three times. one fork. one join. one tree. one [[proof]]. one operating system.
 
-see [[cyb]], [[cyb/whitepaper]], [[languages]], [[multiproof-architecture]], [[Rust]], [[cyber]]
+see [[cyb]], [[cyb/whitepaper]], [[cyb/languages]], [[cyb/multiproof]], [[Rust]], [[cyber]]
