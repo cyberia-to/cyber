@@ -27,7 +27,7 @@ mining more and more data
 we fap the progress of [[cybergraph]] discovery completeness
 
 - in %
-- in [[brain]]
+- in [[cyb/brain]]
 
 this simple mechanics is a source of healthy [[dophamine]]
 

@@ -20,7 +20,7 @@ cyb: main board which is decomposed primary to cyb components
 
 - [[sigma]]
 - [[cyb/time]]
-- [[brain]]
+- [[cyb/brain]]
 - [[cyb/sense]]
 - [[cyb desktop]]
 

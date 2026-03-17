@@ -10,4 +10,4 @@ through graph of [[links]]
 
 combined with classical hierarchy
 
-[[brain]] of [[cyb]] is the first graph file manager we aware of
+[[cyb/brain]] of [[cyb]] is the first graph file manager we aware of

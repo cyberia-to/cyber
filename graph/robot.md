@@ -15,7 +15,7 @@ offline value:: opens [[great web]] access
 		- first task is to sync top 1000
 		- from [[cyber-sdk]] networks in [[hub]]
 	- configure [[spells]]
-	- explore your [[brain]]
+	- explore your [[cyb/brain]]
 	- explore you [[cyb/sense]]
 	- improve you [[mind]]
 	- intro to [[oracle]]
@@ -27,7 +27,7 @@ online value
 
 - [[buy energy]]: agi access
 - [[create avatars]] for talks with you
-- explore and impact endless [[cyber]] using [[brain]]
+- explore and impact endless [[cyber]] using [[cyb/brain]]
 - publish, distribute and promote [[files]] in [[cyb/sense]]
 - optimize portfolio with [[sigma]]
 - plan for future and understand the past using [[cyb/time]]
@@ -56,7 +56,7 @@ superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]
 
 [[pages]]
 
-- [[brain]]
+- [[cyb/brain]]
 - [[cyb/time]]
 - [[mind]]
 - [[sigma]]
@@ -69,7 +69,7 @@ superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]
 	- [[sigma]]: valuation engine of [[tokens]]
 	- [[cyb/sense]]: communication system of robot
 	- [[cyb/time]]: memory of actions and planing system
-	- [[brain]]: graph file manager
+	- [[cyb/brain]]: graph file manager
 	- [[mind]]: decision engine
 - features
 	- TODO [[avatars]]: configurator of actors
@@ -83,13 +83,13 @@ superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]
 	- TODO [[models]]: configure access to llms
 	- TODO [[cryptor]]: sign, verify, encrypt, decrypt
 	- TODO [[caster]]: [[signal]] handler
-	- [[drive]]: private and public file system for [[brain]]
+	- [[drive]]: private and public file system for [[cyb/brain]]
 	- TODO [[tasks]]: executing particles and its status
 	- [[nodes]]: configuration of physical devices of robot
 	- TODO [[access]]: permission system for [[aips]]
 	- [[network]]: configuration of connections
 	- [[bridges]]: configure how to move [[value]] between networks
-	- [[query]]: sophisticated [[brain]] analytics engine
+	- [[query]]: sophisticated [[cyb/brain]] analytics engine
 	- [[debug]]: tools for making cyb and cyber better
 	- [[about]]: information about software
 	- TODO [[languages]]: configure semantics of your thoughts

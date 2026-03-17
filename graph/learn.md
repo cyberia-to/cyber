@@ -15,7 +15,7 @@ features::
 - empower everyone, learn yourself
 - [[decentralized ai]] as simple as [[creating link]]
 
-TODO [[cyb]] packed with all energy needed for [[personal learning]] of [[brain]]
+TODO [[cyb]] packed with all energy needed for [[personal learning]] of [[cyb/brain]]
 
 you need [[$CYB]] for [[collective learning]] of [[bootloader]]
 

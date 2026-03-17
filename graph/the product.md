@@ -17,7 +17,7 @@ in [[cyb]] to design two fundamental state of [[robot]]: [[alien]] and [[energet
 
 [[alien]] focus on private offline features, but light online features are ok
 
-- [[brain]]: graph file manager is first step
+- [[cyb/brain]]: graph file manager is first step
 - [[ask]], [[search]] and [[learn]]: second step
 - the more other features which are possible to implement free offline or online - the better
 - [[neurons]] add [[cyb/features]] to [[robot]] one by one

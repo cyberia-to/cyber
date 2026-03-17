@@ -4,7 +4,7 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 17640572937335976
 ---
-table render of [[brain]]
+table render of [[cyb/brain]]
 
 3 indicators in the head
 
