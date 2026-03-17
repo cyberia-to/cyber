@@ -25,7 +25,7 @@ the economic interface between a [[neuron]] and the [[cybergraph]]
 ## as widget (molecule)
 
 - compact balance display in the [[prysm/hud]]
-- shows total portfolio value as [[counter]]
+- shows total portfolio value as [[prysm/counter]]
 - token breakdown on expand
 - [[emotion]] color reflects portfolio trend (green rising, red falling)
 

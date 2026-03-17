@@ -16,5 +16,5 @@ flushed faces during aggression signal dominance. perceiving red heightens anger
 ## in [[prysm]]
 
 - signals danger, overload, critical failure
-- a [[counter]] in anger state: resource depleted, threshold crossed, system under attack
+- a [[prysm/counter]] in anger state: resource depleted, threshold crossed, system under attack
 - the strongest warning the interface can give

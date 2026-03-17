@@ -1,7 +1,7 @@
 ---
 icon: 💎
-tags: cyb, prism
-alias: design system
+tags: cyb, prysm
+alias: design system, prism, prysm design system
 crystal-type: entity
 crystal-domain: cyber
 stake: 43936669831471920
@@ -9,13 +9,13 @@ stake: 43936669831471920
 
 the design system of [[cyb]] — a visual language for interfacing with [[Superintelligence]]
 
-every screen in [[cyb]] is a composition of prism components. the system defines how humans perceive, navigate, and interact with the [[cybergraph]]
+every screen in [[cyb]] is a composition of prysm components. the system defines how humans perceive, navigate, and interact with the [[cybergraph]]
 
 ## first principles
 
 - ### the interface is a lens
 	- [[cyb]] refracts the [[cybergraph]] into something a human can perceive and act on
-	- prism decomposes this refraction into composable layers: surface → element → region → application
+	- prysm decomposes this refraction into composable layers: surface → element → region → application
 	- each layer adds meaning without hiding the underlying structure
 - ### emotion as signal
 	- components carry [[emotion]] — a color-coded signal layer
@@ -23,14 +23,14 @@ every screen in [[cyb]] is a composition of prism components. the system defines
 	- emotion is computed from [[cyberank]], [[karma]], and context — it is data, rendered as feeling
 - ### everything is a [[particle]]
 	- every piece of content in [[cyb]] is a [[particle]] — text, image, video, audio, pdf, 3d model
-	- prism defines how each particle type is rendered, selected, linked, and composed
+	- prysm defines how each particle type is rendered, selected, linked, and composed
 	- the renderer adapts to the particle format. the interface stays consistent
 - ### the [[neuron]] is the user
-	- identity in prism is a [[neuron]] with an [[avatar]]
+	- identity in prysm is a [[neuron]] with an [[avatar]]
 	- every action traces to a neuron. every view is from a neuron's perspective
-	- prism renders identity as cards, addresses, reputation indicators, and activity streams
+	- prysm renders identity as cards, addresses, reputation indicators, and activity streams
 - ### glass as medium
-	- [[glass]] is the foundational surface — translucent panes that layer and compose
+	- [[prysm/glass]] is the foundational surface — translucent panes that layer and compose
 	- glass carries depth: foreground, midground, background
 	- all components sit on glass. glass defines the spatial hierarchy
 
@@ -39,46 +39,46 @@ every screen in [[cyb]] is a composition of prism components. the system defines
 - four levels, each built from the previous
 - ### atoms
 	- indivisible visual primitives. cannot be decomposed further
-	- [[glass]] — surface panes (plane, side-button)
-	- [[prism/text]] — typography (left, center, right, paragraph)
-	- [[button]] — call-to-action (default, double, triple, side)
-	- [[prism/toggle]] — binary state (on, off, star)
-	- [[prism/slider]] — continuous value (range selector, progress bar)
-	- [[prism/indicator]] — progress display (partial, full)
-	- [[counter]] — numeric display with [[emotion]] color
-	- [[prism/address]] — [[neuron]] address (big, small)
-	- [[prism/ion]] — icon-label pair in six layouts (centric, horizontal, input, star, trapezoid)
-	- [[prism/saber]] — accent line and divider (1px, 2px, horizontal)
-	- [[images]] — icon library (16, 20, 32, 48, 96 px)
+	- [[prysm/glass]] — surface panes (plane, side-button)
+	- [[prysm/text]] — typography (left, center, right, paragraph)
+	- [[prysm/button]] — call-to-action (default, double, triple, side)
+	- [[prysm/toggle]] — binary state (on, off, star)
+	- [[prysm/slider]] — continuous value (range selector, progress bar)
+	- [[prysm/indicator]] — progress display (partial, full)
+	- [[prysm/counter]] — numeric display with [[emotion]] color
+	- [[prysm/address]] — [[neuron]] address (big, small)
+	- [[prysm/ion]] — icon-label pair in six layouts (centric, horizontal, input, star, trapezoid)
+	- [[prysm/saber]] — accent line and divider (1px, 2px, horizontal)
+	- [[prysm/images]] — icon library (16, 20, 32, 48, 96 px)
 - ### molecules
 	- functional components assembled from atoms. each molecule has a clear interface: inputs, outputs, states
 	- #### navigation
-		- [[prism/hud]] — heads-up display shell, the persistent navigation frame
+		- [[prysm/hud]] — heads-up display shell, the persistent navigation frame
 		- [[mind]] — navigation awareness indicator
-		- [[prism/tabs]] — section navigation (3, 4, 5 items × desktop, mobile)
+		- [[prysm/tabs]] — section navigation (3, 4, 5 items × desktop, mobile)
 	- #### content
-		- [[prism/content]] — [[particle]] renderers by format: heading, text, number, link, picture, video, pdf, audio, avatar
-		- [[prism/display]] — content container (empty, highlight, sized text)
-		- [[prism/neuron-card]] — [[neuron]] identity card (big, small × default, hover, clicked)
-		- [[prism/object]] — entity card for [[particle]], [[neuron]], [[avatar]], [[aip]] (2-line, 3-line, +menu)
-		- [[prism/subject]] — identity strip for [[neuron]]/[[avatar]] (2-line, chooser)
-		- [[prism/adviser]] — contextual hint (closed, positive, negative, neutral, particle-attached)
+		- [[prysm/content]] — [[particle]] renderers by format: heading, text, number, link, picture, video, pdf, audio, avatar
+		- [[prysm/display]] — content container (empty, highlight, sized text)
+		- [[prysm/neuron-card]] — [[neuron]] identity card (big, small × default, hover, clicked)
+		- [[prysm/object]] — entity card for [[particle]], [[neuron]], [[avatar]], [[aip]] (2-line, 3-line, +menu)
+		- [[prysm/subject]] — identity strip for [[neuron]]/[[avatar]] (2-line, chooser)
+		- [[prysm/adviser]] — contextual hint (closed, positive, negative, neutral, particle-attached)
 	- #### input
-		- [[prism/input]] — data entry (text L/R/LR, neuron, token, select)
-		- [[prism/filter]] — result filtering (3-items, wide)
+		- [[prysm/input]] — data entry (text L/R/LR, neuron, token, select)
+		- [[prysm/filter]] — result filtering (3-items, wide)
 	- #### data
-		- [[prism/table]] — data grid (line, row-L, row-R, sort, sort/dropdown)
-		- [[prism/bar]] — [[prism/saber]]+[[prism/ion]] composite (1-sided, bi-sided, horizontal × button, input, display)
+		- [[prysm/table]] — data grid (line, row-L, row-R, sort, sort/dropdown)
+		- [[prysm/bar]] — [[prysm/saber]]+[[prysm/ion]] composite (1-sided, bi-sided, horizontal × button, input, display)
 	- #### widgets
 		- [[brain]] — graph file manager widget (+memory variant)
 		- [[sense]] — messaging and notification widget
 		- [[sigma]] — wallet and balance widget
-		- [[prism/time-widget]] — personal history widget
+		- [[prysm/time-widget]] — personal history widget
 - ### cells
 	- full page regions composed from molecules. a cell owns a section of the screen
-	- [[prism/portal-cell]] — onboarding region: citizenship, gift, hud, cyb-map
-	- [[prism/cyberver-cell]] — learning region: hud, mentors, learner, stats, faculties
-	- [[prism/oracle-cell]] — search region: aip selector, mind, particle display, content feed
+	- [[prysm/portal-cell]] — onboarding region: citizenship, gift, hud, cyb-map
+	- [[prysm/cyberver-cell]] — learning region: hud, mentors, learner, stats, faculties
+	- [[prysm/oracle-cell]] — search region: aip selector, mind, particle display, content feed
 - ### aips
 	- complete autonomous applications. each [[aip]] is a full-screen experience built from cells
 	- [[oracle]] — search and discovery
@@ -94,7 +94,7 @@ every screen in [[cyb]] is a composition of prism components. the system defines
 
 ## interfaces
 
-- every prism component exposes a consistent interface
+- every prysm component exposes a consistent interface
 - ### inputs
 	- data: what the component renders (particle, neuron, number, text)
 	- [[emotion]]: color signal computed from protocol state
@@ -131,9 +131,9 @@ every screen in [[cyb]] is a composition of prism components. the system defines
 	- molecules adapt: tabs reduce items, widgets stack vertically, cards simplify
 	- atoms stay identical across breakpoints
 
-## the prism and the [[cybergraph]]
+## the prysm and the [[cybergraph]]
 
-- prism renders the cybergraph for human perception
+- prysm renders the cybergraph for human perception
 - every component maps to a protocol concept: [[particle]] → content renderer, [[neuron]] → identity card, [[cyberlink]] → navigation action, [[cyberank]] → ordering
-- the design system and the protocol co-evolve: new protocol features require new prism components, new prism patterns reveal protocol gaps
-- prism is the visual layer of the [[relevance machine]]
+- the design system and the protocol co-evolve: new protocol features require new prysm components, new prysm patterns reveal protocol gaps
+- prysm is the visual layer of the [[relevance machine]]

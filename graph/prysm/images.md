@@ -26,7 +26,7 @@ the complete set of glyphs used across [[cyb]]. every icon has a semantic meanin
 
 ## sizing
 
-- 16px: inline with text, inside [[button]] labels and [[prysm/ion]] atoms
+- 16px: inline with text, inside [[prysm/button]] labels and [[prysm/ion]] atoms
 - 20px: standalone small icon, inside [[prysm/tabs]]
 - 32px: medium emphasis, inside [[prysm/neuron-card]] and [[prysm/object]]
 - 48px: large emphasis, in [[prysm/hud]] and onboarding
@@ -35,4 +35,4 @@ the complete set of glyphs used across [[cyb]]. every icon has a semantic meanin
 ## composition
 
 - [[prysm/ion]] = images + text label — the standard icon-text pair
-- [[button]] = images + text + action — the standard interactive element
+- [[prysm/button]] = images + text + action — the standard interactive element

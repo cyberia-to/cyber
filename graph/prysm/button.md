@@ -13,7 +13,7 @@ the primary interaction primitive. every action a [[neuron]] takes in [[cyb]] fl
 
 - inputs
 	- text: label describing the action
-	- icon: optional 16px or 20px [[images]] glyph
+	- icon: optional 16px or 20px [[prysm/images]] glyph
 	- [[emotion]]: color signal — green (confirm), red (danger), yellow (caution), default (neutral)
 	- action: callback triggered on press
 	- adviser: tooltip text shown on hover via [[prysm/adviser]]
@@ -27,7 +27,7 @@ the primary interaction primitive. every action a [[neuron]] takes in [[cyb]] fl
 - default — single action, most common
 - double — two related actions side-by-side (confirm/cancel)
 - triple — three options in a row (rare, for multi-path decisions)
-- side — attached to the edge of a [[glass]] pane, used in [[prysm/hud]]
+- side — attached to the edge of a [[prysm/glass]] pane, used in [[prysm/hud]]
 
 ## composition
 
