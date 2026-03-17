@@ -7,7 +7,7 @@ stake: 4797233431969601
 ---
 seven [[cips]] with [[$CYB]] optimizations
 
-with a purpose to deliver [[the product]]
+with a purpose to deliver [[cyb/product]]
 
 and emphasize sustainability of [[bostrom]] business model
 

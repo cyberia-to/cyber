@@ -17,7 +17,7 @@ the main goal is to deliver short, impactful changes to shift swap price dynamic
 
 - this is the core of the cyber and cyb idea, which must always be the top priority for the team
 - we currently have something very close to grok like link-based content response system
-- optimizing this system is a growth point, including the funnel for selling [[the product]]
+- optimizing this system is a growth point, including the funnel for selling [[cyb/product]]
 
 ## optimize the team
 

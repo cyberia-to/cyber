@@ -8,4 +8,4 @@ input
 
 - [[buy energy]]
 - [[$CYB]]
-- [[the product]]
+- [[cyb/product]]

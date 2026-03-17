@@ -1,6 +1,6 @@
 ---
 icon: 🍓
-tags: cyber
+tags: cyber, cyb
 crystal-type: entity
 crystal-domain: biology
 stake: 5114960646213856
