@@ -641,6 +641,46 @@ Decentralization via utility: Home miners (Tier 2) can earn by proving their own
 
 ---
 
+# The Memory Architecture Insight
+
+nox's 16 algebra-polymorphic patterns decompose into compute and memory. the four GFP primitives (fma, ntt, p2r, lut) cover compute. the missing piece is the memory system.
+
+the 16 patterns split into two hardware concerns:
+
+**compute (small, universal — the four GFP primitives):**
+- field ALU (patterns 5-10): fma unit handles all field arithmetic
+- binary ALU (patterns 11-14): simple gate array (AND/XOR gates — trivial silicon)
+- hash unit (pattern 15): p2r pipeline
+- transform: ntt engine
+- lookup: lut engine
+
+**memory (large, algebra-dependent — the noun store):**
+- tree traversal (patterns 0-4): content-addressed noun lookup, O(depth) random accesses
+- leaf-width-adaptive: F₂ atoms = 1 bit, F_p atoms = 64 bits, hash atoms = 512 bits
+- access patterns differ per algebra: dense sequential (Ten), random (Arc), compact (Bt)
+
+the GFP spec optimizes compute. the [[bbg]] storage architecture optimizes memory. together they form the complete hardware substrate for nox.
+
+in content-addressed storage, the noun tree topology IS the connectivity between operations and data. `axis(s, 2)` means "follow this wire to the left child." optimizing tree traversal (fast content-addressed lookup, efficient Merkle path caching, noun prefetch) accelerates every algebra simultaneously.
+
+## domain-specific jets as hardware bridge
+
+domain-specific language operations are nox pattern compositions — recognized by formula hash, accelerated as jets, mapped to GFP hardware:
+
+```
+language operation       nox patterns          jet           GFP primitive
+─────────────────────    ────────────────────  ──────────    ────────────
+Arc: rank(g, steps)      iterated add/mul      matmul        fma
+Wav: fft(x)              butterfly network     ntt           ntt engine
+Any: hash(x)             Poseidon2 rounds      hash          p2r
+Ten: activation(x)       table lookup          lookup        lut
+Geo: geometric_product   mul/add composition   geo_mul       fma
+```
+
+the same jet mechanism that accelerates the STARK verifier (8.5× speedup) accelerates every domain-specific language. no language-specific hardware needed — the four GFP primitives serve all thirteen execution [[languages]] through jets.
+
+---
+
 # Part VI: Integration with nox
 
 ## 6. Block Production Flow
