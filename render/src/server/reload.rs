@@ -293,6 +293,8 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
             }
             // Snapshot namespace tree keys
             cache.last_namespace_keys = store.namespace_tree.keys().cloned().collect();
+            // Cache the store so fast path can reuse it
+            cache.cached_store = Some(store);
         }
 
         cache.initialized = true;
@@ -465,7 +467,6 @@ fn try_fast_path(
     }
 
     if dirty_ids.is_empty() {
-        // Nothing actually changed (save after no-op edit)
         return Some(Ok((0, 0)));
     }
 
@@ -488,24 +489,35 @@ fn try_fast_path(
 
     let store = cache.cached_store.as_ref().unwrap();
 
-    // Selective render (only dirty pages)
-    let rendered = match crate::render::render_cached(
-        store,
-        config,
-        &mut cache.render_cache,
-        Some(&dirty_ids),
-    ) {
-        Ok(r) => r,
-        Err(e) => return Some(Err(e)),
-    };
-    let total = rendered.len();
+    // Render only the dirty pages (not all pages — avoids iterating 11K cached entries)
+    let dirty_count = dirty_ids.len();
+    let mut rendered_dirty = Vec::with_capacity(dirty_count);
+    {
+        let env = match crate::render::make_template_env(config) {
+            Ok(e) => e,
+            Err(e) => return Some(Err(e)),
+        };
+        for dirty_id in &dirty_ids {
+            if let Some(page) = store.pages.get(dirty_id) {
+                if !crate::graph::PageStore::is_page_public(page, &config.content) {
+                    continue;
+                }
+                let rp = match crate::render::render_single_page(page, dirty_id, store, config, &env) {
+                    Ok(r) => r,
+                    Err(e) => return Some(Err(e)),
+                };
+                cache.render_cache.insert(dirty_id.clone(), rp.clone());
+                rendered_dirty.push(rp);
+            }
+        }
+    }
 
     // Write only dirty pages
-    if let Err(e) = crate::output::write_dirty_pages(&rendered, &dirty_ids, config) {
+    if let Err(e) = crate::output::write_dirty_pages(&rendered_dirty, &dirty_ids, config) {
         return Some(Err(e));
     }
 
-    Some(Ok((total, dirty_ids.len())))
+    Some(Ok((dirty_count, dirty_count)))
 }
 
 /// Incremental rebuild: selective parse → full graph → selective render → incremental output.

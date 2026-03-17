@@ -22,6 +22,35 @@ pub fn render_all(store: &PageStore, config: &SiteConfig) -> Result<Vec<Rendered
     render_cached(store, config, &mut HashMap::new(), None)
 }
 
+/// Create a template environment for use with `render_single_page`.
+pub fn make_template_env(config: &SiteConfig) -> Result<minijinja::Environment<'static>> {
+    templates::setup_environment(config.build.template_dir.as_deref(), config)
+}
+
+/// Render a single page (fast path — no iteration over the full store).
+pub fn render_single_page(
+    page: &crate::parser::ParsedPage,
+    page_id: &str,
+    store: &PageStore,
+    config: &SiteConfig,
+    env: &minijinja::Environment<'_>,
+) -> Result<RenderedPage> {
+    let render_result = transform::render_markdown(&page.content_md, store, &config.style.code.theme);
+    let ctx = context::build_page_context(page, &render_result.html, &render_result.toc, store, config);
+    let template_name = match page.kind {
+        crate::parser::PageKind::Journal => "journal.html",
+        crate::parser::PageKind::Page | crate::parser::PageKind::File => "page.html",
+    };
+    let tmpl = env.get_template(template_name)?;
+    let html = tmpl.render(&ctx)?;
+    let url_path = if config.urls.style == "pretty" {
+        format!("/{}/index.html", page_id)
+    } else {
+        format!("/{}.html", page_id)
+    };
+    Ok(RenderedPage { page_id: page_id.to_string(), html, url_path })
+}
+
 /// Render pages with optional caching. When `dirty_ids` is Some, only pages in
 /// the dirty set are re-rendered; clean pages are served from `cache`.
 /// When `dirty_ids` is None, all pages are rendered (full rebuild).
