@@ -176,239 +176,57 @@ the container. the sovereign instance that holds the five other primitives toget
 
 ## 5. the three grids
 
-the operating system is the membrane between three grids. every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own algebra. cyb/os is a stack of typed universes — nine computation languages compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one proof system
+the operating system is the membrane between three grids:
 
-a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. nine fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure
+- computation — what the machine thinks (thirteen [[languages]])
+- perception — what the human sees (nine primitives)
+- decision — what the human does (ten primitives)
 
-#### computation — 9 languages
+every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own [[algebra]]. cyb/os is a stack of typed universes — thirteen computation [[languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system
 
-| universe | language | type | algebra | purpose |
-|----------|----------|------|---------|---------|
-| Structure | [[Nox]] | Tree | Combinators | Composition |
-| Binary | [[Bt]] | Bit | $\mathbb{F}_2$ tower | Circuits |
-| Byte | [[Rs]] | Word | Bitwise on $\mathbb{F}_p$ | Systems |
-| Field | [[Trident]] | Field | Arithmetic on $\mathbb{F}_p$ | Proofs |
-| Topology | [[Arc]] | Graph | Adjacency | Knowledge |
-| Causality | [[Seq]] | Event | Partial order | Ordering |
-| Inference | [[Ask]] | Relation | Unification | Reasoning |
-| Continuum | [[Wav]] | Signal | Convolution | Sensing |
-| Linear | [[Ten]] | Tensor | Contraction | Learning |
+a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. see [[languages]] for the full completeness argument
+
+#### computation — 13 languages
+
+| universe | short | long | type | algebra | purpose |
+|----------|-------|------|------|---------|---------|
+| Structure | [[Nox]] | Nox | Tree | Combinators | Composition |
+| Binary | Bt | Bitwise | Bit | $\mathbb{F}_2$ tower | Circuits |
+| Byte | Rs | Rustic | Word | Bitwise on $\mathbb{F}_p$ | Systems |
+| Field | Tri | [[Trident]] | Field | Arithmetic on $\mathbb{F}_p$ | Proofs |
+| Topology | [[Arc]] | Arc | Graph | Adjacency | Knowledge |
+| Geometry | Geo | Geometric | Shape | G(p,q,r) | Space |
+| Curvature | Dif | Differential | Manifold | (M, g) | Meaning |
+| Dynamics | Sym | Symplectic | Phase | (M, ω), dω = 0 | Physics |
+| Belief | Inf | Informatic | Distribution | g on Δⁿ | Self-model |
+| Causality | [[Seq]] | Sequence | Event | Partial order | Ordering |
+| Inference | [[Ask]] | Ask | Relation | Unification | Reasoning |
+| Continuum | [[Wav]] | Wave | Signal | Convolution | Sensing |
+| Linear | [[Ten]] | Tensor | Tensor | Contraction | Learning |
 
 #### the value tower — three atoms
 
-Byte and Field share the same mathematical substrate — the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. this substrate provides three atom types sufficient for seven of the nine universes
-
-| tag | name | representation | use |
-|-----|------|---------------|-----|
-| 0x00 | `field` | single $\mathbb{F}_p$ element | arithmetic |
-| 0x01 | `word` | single $\mathbb{F}_p$ element, range $[0, 2^{64})$ | bitwise |
-| 0x02 | `hash` | $4 \times \mathbb{F}_p$ elements (256-bit digest) | identity |
-
-three fundamentally different ways to refer to a value — and there are only three:
-
-```
-field = the value IS the reference     (by content — immediate)
-word  = position IS the reference      (by location — index)
-hash  = name IS the reference          (by commitment — identity)
-```
-
-by what it is. by where it is. by what it is called. every reference in any system reduces to one of these three modes. every higher type decomposes into [[Nox]] trees over these three atoms. the single exception is [[Bt]]: a bit lives in $\mathbb{F}_2$ — different characteristic, different algebra, separate proof system
-
-every computation language has a canonical rendering — the perception primitive where the shape of the data matches the shape of the display
+all languages (except Bt) share the [[Goldilocks field]] $\mathbb{F}_p$ substrate with three atom types: `field` (value by content), `word` (value by position), `hash` (value by commitment). three modes of reference that are exhaustive. see [[languages]] for the full value tower specification
 
 #### perception — 9 primitives
 
-| language | renders as | source formats | what it carries |
-|----------|-----------|---------------|-----------------|
-| [[Nox]] → [[struct]] | collapsible tree | JSON, TOML, YAML | configs, schemas, metadata, ABIs |
-| [[Bt]] → [[pixels]] | raster image | PNG, WebP, JPEG | photographs, satellite imagery, microscopy, scans |
-| [[Rs]] → [[text]] | prose, code | [[markdown]], plain text, source code | documentation, messages, programs |
-| [[Trident]] → [[formula]] | math notation | LaTeX, MathML | equations, proofs, chemical notation, physical laws |
-| [[Arc]] → [[vector]] | SVG, paths, curves | SVG, Bezier paths | diagrams, maps, molecular structures, schematics |
-| [[Seq]] → [[video]] | moving pixels | WebM, MP4 | recordings, simulations, observations, lectures |
-| [[Ask]] → [[table]] | 2D grid | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
-| [[Wav]] → [[sound]] | audio waveform | WAV, OGG, MP3 | voice, music, birdsong, seismic signal, sonar |
-| [[Ten]] → [[component]] | nested composition | composition of the above | applications, dashboards, interactive tools |
+every computation language has a canonical rendering — the perception primitive where the shape of the data matches the shape of the display. nine irreducible visual types: text, struct, table, vector, pixels, video, sound, formula, component. see [[languages]] for the full perception mapping including the four new geometry languages
 
 #### decision — 10 primitives
 
-every human interaction with a computer is a decision. a tap is a choice. a scroll is a rejection of everything above and below the viewport. strip the physics away — what remains is pure decision structure. decisions are irreversible: computation can be replayed, perception can be refreshed, but once you confirm — sign, send, stake, delete — the state has changed
+every human interaction with a computer is a decision. ten irreducible decision types: observe, filter, select, rank, compose, split, merge, delegate, reject, confirm. only confirm is always irreversible — the moment where possibility collapses into fact. each decision primitive naturally invokes specific computation languages and has a canonical rendering. see [[cyb/architecture]] for the full decision grid specification
 
-| primitive | action | reversible? |
-|-----------|--------|-------------|
-| observe | gather without choosing — intake information, update beliefs | always |
-| filter | narrow by criteria — shape the option space | yes |
-| select | choose one from many — the atomic decision | yes |
-| rank | order by preference — stronger than select | yes |
-| compose | build a new value — create what did not exist | yes |
-| split | one becomes many — create concurrency | depends |
-| merge | many become one — resolve concurrency | depends |
-| delegate | route to another agent — choose who decides | sometimes |
-| reject | explicitly choose no — informationally rich refusal | mostly |
-| confirm | irreversible commit — possibility collapses into fact | never |
+#### the rest of the grids
 
-each decision primitive naturally invokes specific computation and has a canonical rendering:
+four layout modes (stream, grid, flex, page) compose the nine perception primitives into any UI. three temporal modes (stack, heap, stream) structure time across all three grids. the grids interlock in a continuous decision loop: compute → render → decide → commit → update. all three share one universal structural pair — fork and join. see [[cyb/architecture]] for layout modes, compilation architecture, temporal modes, and cross-grid connections
 
-| decision | computation language | perception primitive |
-|----------|-------------------|---------------------|
-| observe | [[Wav]] — passive signal intake | any |
-| filter | [[Ask]] — query with constraints | struct |
-| select | [[Ask]] — which option satisfies rules? | table |
-| rank | [[Ten]] — preference as vector, sort by utility | table |
-| compose | [[Rs]] — build the new value | text / vector |
-| split | [[Arc]] — partition a graph | vector |
-| merge | [[Arc]] + [[Ask]] — resolve conflicts | vector |
-| delegate | [[Arc]] — find the right agent | vector |
-| reject | [[Seq]] — mark event as rejected | video |
-| confirm | [[Trident]] — generate stark proof of commitment | formula |
-
-the machine computes, the human decides. the computation grid produces options. the perception grid displays them. the decision grid collapses them to action. the action commits to new state, and the cycle continues
-
-#### layout — 4 modes
-
-| mode | what it is | use case |
-|------|-----------|----------|
-| stream | vertical sequence, scrollable | blogs, feeds, articles, chat |
-| grid | 2D spatial container | dashboards, layouts, galleries |
-| flex | 1D flexible row or column | navbars, toolbars, card rows |
-| page | fixed canvas, pagination | PDF, print, scientific papers |
-
-a button is `text` + `action`. a dashboard is `grid` of `table` + `vector`. a scientific paper is `page` of `text` + `formula` + `table`. an IDE is `grid` of `text` + `struct`. every UI ever made is a combination of these primitives and four layout modes
-
-#### compilation architecture
-
-all nine languages share one toolchain. each programmer face has its own syntax and type rules. all compile through [[Nox]] — the structural IR — then to proof backends or native execution
-
-```
-Bt  Rs  Trident  Arc  Seq  Ask  Wav  Ten
- │   │     │      │    │    │    │    │
- └───┴─────┴──────┴────┴────┴────┴────┘
-              shared frontend
-        (parse, type check, bound check)
-                    │
-             Nox structural IR
-    (axis, quote, compose, cons, branch
-     + typed computational ops
-     + Merkle authentication)
-                    │
-       ┌────────────┼────────────┐
-       │            │            │
-  Binius/FRI   Goldilocks     Native
-  (Binary)     TASM/FRI      (no proof)
-               (Byte+Field)
-    Bt         Rs, Trident   Arc, Seq, Ask,
-                             Wav, Ten
-```
-
-| source | when proof needed | when proof absent |
-|--------|------------------|-------------------|
-| [[Bt]] | Binius FRI circuit | always proving |
-| [[Rs]] | TASM → stark (word→field lift) | native binary (Nox) |
-| [[Trident]] | TASM → stark (field native) | WASM/EVM (Layer 0) |
-| [[Arc]] | decomposes into Trident + Bt | optimized graph engine |
-| [[Seq]] | temporal constraints → stark | scheduler / runtime |
-| [[Ask]] | derivation trace → stark | Datalog engine |
-| [[Wav]] | decomposes into Trident | native DSP pipeline |
-| [[Ten]] | decomposes into Trident | native BLAS / GPU |
-
-#### three temporal modes
-
-time has three fundamental disciplines — three different structural relationships to the present moment
-
-```
-stack   = nested time     = depth   = LIFO  = after { after { after } }
-heap    = concurrent time = chaos   = random = concurrent(a, b, c)
-stream  = linear time     = flow    = FIFO  = before(a, b), before(b, c)
-```
-
-| domain | stack | heap | stream |
-|--------|-------|------|--------|
-| hardware | call stack | RAM allocation | I/O bus |
-| OS | process call depth | dynamic memory | pipes, sockets |
-| network | protocol nesting | concurrent connections | packet flow |
-| consensus | nested validation | parallel validators | block sequence |
-| UI | modal dialogs, undo | independent windows | scrolling, typing |
-
-the three temporal modes map to all three grids:
-
-```
-stack (depth)        Seq: after { ... }    struct: push/pop     confirm, compose, filter
-heap  (concurrent)   Seq: concurrent(a,b)  component: windows   split, merge, delegate
-stream (flow)        Seq: before(a, b)     video / sound: play  observe, select, rank, reject
-```
-
-#### cross-grid connections
-
-the three grids interlock in a continuous decision loop — this is the cyb/os event loop:
-
-```
-loop {
-  state   = nox_tree(current)           // authenticated tree
-  options = compute(state)              // some universe produces alternatives
-  display = render(options)             // canonical primitive shows them
-  choice  = decide(human_input)         // decision primitive applied
-  proof   = commit(choice, state)       // irreversible, potentially stark-proven
-  state   = update(state, choice, proof)// new tree root
-}
-```
-
-all three grids share one universal structural pair — fork and join:
-
-```
-computation:  axis / cons      (decompose / build tree)
-perception:   expand / nest    (drill in / compose views)
-decision:     split / merge    (diverge / converge choices)
-```
-
-fork is how structure grows. join is how consensus forms. the same skeleton wearing three costumes
-
-### 5.1 Nox — Structure
-
-the tree language. combinators over trees — the glue that composes all other languages. every higher type decomposes into Nox structure over three atoms: field (value by content), word (value by position), hash (value by commitment). JSON, TOML, YAML are surface syntaxes. Nox is the substrate
-
-### 5.2 Bt — Binary
-
-the bit language. operates in $\mathbb{F}_2$ — a genuinely different characteristic from the other eight. boolean circuits, binary logic, constraint systems. where zero-knowledge circuits live. Bt has its own proof system because a bit is not an element of $\mathbb{F}_p$
-
-### 5.3 Rs — Byte
-
-the systems language. words and bytes — bitwise operations on $\mathbb{F}_p$. memory layout, system calls, hardware interfaces, byte-level protocols. the language that talks to machines at their native width. Rust-shaped semantics compiled through the shared IR
-
-### 5.4 Trident — Field
-
-the proof language. arithmetic over the [[Goldilocks field]] $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$. every Trident program is a stark-provable computation. verifiable AI inference, zero-knowledge proofs, cryptographic protocols. ~300 constraints per hash instead of 50,000–100,000
-
-### 5.5 Arc — Topology
-
-the graph language. adjacency, traversal, pattern matching over vertices and edges. the native language of the [[cybergraph]] itself. PageRank, Dijkstra, Louvain — graph algorithms as first-class operations. knowledge is topology
-
-### 5.6 Seq — Causality
-
-the event language. partial orders, causal chains, temporal sequences. consensus protocols, event sourcing, distributed coordination. what happened before what — the language of time as structure
-
-### 5.7 Ask — Inference
-
-the query language. relations and unification — [[datalog]] at its core. pattern matching over facts, recursive traversal, logical deduction. the language that reasons over the graph. when you ask the [[oracle]], Ask is what runs
-
-### 5.8 Wav — Continuum
-
-the signal language. convolution, Fourier transforms, filtering — continuous mathematics discretized. audio processing, sensor fusion, waveform analysis. a whale call, a seismic reading, a gravitational wave detection. the bridge to non-human intelligence
-
-### 5.9 Ten — Linear
-
-the tensor language. contraction, matrix multiplication, automatic differentiation. neural network inference, linear algebra, optimization. the language of [[learning]] — where the robot trains and infers
-
-### 5.10 the complete picture
-
-a genome sequence is [[Rs]] (byte-level encoding) rendered as [[text]]. its annotation is [[Nox]] (structured tree) rendered as [[struct]]. its expression data is [[Ask]] (relational query) rendered as [[table]]. its protein structure is [[Arc]] (topological graph) rendered as [[vector]]. its microscopy is [[Bt]] (binary pixel data) rendered as [[pixels]]. its folding dynamics is [[Seq]] (causal event chain) rendered as [[video]]. its sequencing signal is [[Wav]] (continuous waveform) rendered as [[sound]]. its binding energy is [[Trident]] (field arithmetic) rendered as [[formula]]. a genome browser is [[Ten]] (composed inference) rendered as [[component]]
-
-all nine compile through one structural IR. all nine share one proof system (except Bt, which has its own $\mathbb{F}_2$ proof system). all nine render through the perception grid. all nine exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3
+all thirteen compile through one structural IR ([[Nox]]). all thirteen share one [[proof]] system (except Bt, which has its own $\mathbb{F}_2$ proof system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3. see [[languages]] for each language's ops tables, algebraic identity, and the completeness proof. see [[multiproof-architecture]] for how all thirteen settle under one proving umbrella
 
 ---
 
 ## 6. the language stack
 
-the nine computation languages are the object level — what the machine computes. above them sit two meta-layers for working with the graph
+the thirteen computation [[languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
 
 ### 6.1 rune — the script language
 
@@ -506,136 +324,19 @@ for compatibility, cyb bridges to external models (OpenAI-compatible APIs, Llama
 
 ## 10. CybOS
 
-CybOS is designed from five axioms (§2.3). the following sections specify the implementation
+CybOS is designed from five axioms (§2.3): no unix legacy, zero unsafe [[Rust]], bounded liveness everywhere, neural drivers, single address space. the following are the key design decisions:
 
-### 10.1 cells
+- cells replace processes — independently compiled [[Rust]] crates, hot-swappable via governance, bounded liveness via wait-free data structures. the system never crashes, it degrades and recovers
+- [[radio]] replaces TCP/IP — a fork of [[iroh]] where every hash runs through [[Hemera]] (Poseidon2 over [[Goldilocks field]]) instead of Blake3. ~300 stark constraints per hash instead of 50,000–100,000. three network protocols only (gossip, consensus, query), ~15K lines instead of ~100K+
+- content-addressed storage replaces the file system — no paths, no inodes. all data addressed by [[Hemera]] hash
+- cryptographic agents replace users — identity = public key, access control = bandwidth allocation
+- neural drivers — ~3K lines of trait contracts, models generate ~500K-1M lines of platform-specific driver code, compiler rejects unsafe, tests validate
 
-cells replace processes. each cell is an independently compiled Rust crate with:
-- explicit dependency declarations
-- typed bounded wait-free channels
-- exclusive state ownership
-- mandatory heartbeat reporting
-- hot-swap via on-chain governance
-
-lifecycle: missing cell → warning → unwinding → restart → disable. the system never crashes. it degrades and recovers
-
-| missing cell | system behavior |
-|-------------|-----------------|
-| rank | validates blocks, does not answer rank queries |
-| consensus | becomes full node, follows chain, does not vote |
-| query | participates in consensus, does not serve clients |
-| gossip | works with local state only (island mode) |
-| storage | emergency halt, preserves last state |
-
-bounded liveness is structural — no deadlock possible because no cell holds a lock. wait-free data structures throughout: concurrent hash map on atomics, wait-free MPMC queues, epoch-versioned snapshots, double-buffered cyberank results
-
-### 10.2 radio
-
-the data transport layer. a fork of iroh with one critical change: every hash runs through Hemera (Poseidon2 over [[Goldilocks field]]) instead of Blake3
-
-| hash | speed | stark constraints per hash |
-|------|-------|---------------------------|
-| Blake3 | ~2 GB/s | 50,000–100,000 |
-| Hemera | ~50–100 MB/s | ~300 |
-
-Hemera makes every particle address stark-provable. this unlocks: storage proofs without downloading content, verified streaming via Hemera Merkle trees, private computation over encrypted knowledge graph, post-quantum security via starks
-
-radio strata:
-
-| stratum | layer | crate |
-|---------|-------|-------|
-| protocols | blob, docs, gossip, willow | iroh-* |
-| verified streaming | bao (Hemera Merkle trees) | cyber-bao |
-| content identity | Poseidon2 over Goldilocks field | cyber-poseidon2 |
-| networking | endpoint, relay, hole-punching | iroh, iroh-relay |
-
-three network protocols only:
-
-| protocol | purpose | transport |
-|----------|---------|-----------|
-| gossip | propagate transactions and blocks | UDP/QUIC |
-| consensus | validator voting, proposals, prevotes | UDP/QUIC |
-| query | client requests for rank, graph data, proofs | QUIC streams |
-
-~15K lines instead of ~100K+ for full TCP/IP + HTTP + TLS. each protocol is a separate cell with its own bounded budget
-
-### 10.3 content-addressed storage
-
-there is no file system. there is no path. there is only a hash
-
-- state: merkle trees
-- knowledge: CIDs linked by [[cyberlinks]]
-- blocks: append-only chain
-- configuration: compiled into binary
-
-every piece of data is addressed by its content. the same CID on two machines is the same data. there is no naming authority, no permission system — only content and its hash
-
-### 10.4 cryptographic agents
-
-there are no users. there are agents. identity = public key. access control = bandwidth allocation. the [[cybergraph]] is public. bandwidth is the only scarce resource
-
-### 10.5 neural drivers
-
-engineers write ~3K lines of trait contracts specifying what a driver must do. models write the implementation. the compiler rejects unsafe code. tests validate. humans review
-
-~3K lines of traits + tests → ~500K-1M lines of generated, validated, platform-specific driver code
-
-| platform | harness size | status |
-|----------|-------------|--------|
-| QEMU/virtio | ~5K lines | reference |
-| RISC-V (StarFive) | ~10-15K lines | open specs |
-| Raspberry Pi 4/5 | ~15-20K lines | well-documented |
-| Apple M1 | ~35-40K lines | Asahi knowledge |
-| x86-64 | ~20-25K lines | standards-based |
-
-target: 50+ SoC families. every platform that can run Rust can run CybOS
+see [[cyb/architecture]] for the complete CybOS specification including cell lifecycle, [[radio]] strata, storage proofs, neural driver harnesses, and bounded liveness runtime
 
 ### 10.6 PureRender
 
-DOM is a document-era mistake. PureRender replaces it with the nine perception primitives of §5 (text, struct, table, vector, pixels, video, sound, formula, component) — composed through four layout modes (stream, grid, flex, page) and driven by ten decision primitives. compilation pipeline:
-
-```
-source (TS strict + HTML + CSS + SVG + LaTeX)
-  → parse + validate + type check
-  → unified IR
-  → optimize (DCE, constant fold, static layout, shader compile)
-  → WASM (logic, layout, events, contracts, state)
-  → WGSL (pixels, vectors, text, video, ML inference)
-  → wgpu runtime
-  → Vulkan / Metal / DX12 / OpenGL ES
-```
-
-one file, one scope. dead code eliminated at compile time. reactivity only where state exists. flat stream structure instead of tree — each block knows its own size, virtualization free, maximum two levels of nesting
-
-the component is the contract: CosmWasm contracts run in the same wasmi instance as UI. direct call, sub-millisecond. no network round-trip. UI and logic compile to the same WASM binary
-
-three processor targets:
-
-| processor | format | what CybOS uses it for |
-|-----------|--------|------------------------|
-| CPU | WASM (wasmi) | logic, layout, events, contracts, state |
-| GPU | WGSL (wgpu) | pixels, vectors, text, video, ML fallback |
-| NPU | ONNX (burn-webnn) | SLM inference, AI features |
-
-### 10.7 legacy compatibility
-
-a small language model (~100-300M parameters) bridges old web content:
-
-- native subset → direct compilation
-- legacy CSS/HTML → SLM interprets → cached permanently
-- unknown → graceful degradation
-
-WASM adoption auto-detects what a module needs: WASI shim, wasm-bindgen shim, Emscripten compat, native CosmWasm, or SLM-generated adapter for unknown imports
-
-### 10.8 epoch budget
-
-the epoch allocator enforces hard and soft deadlines across all cells:
-
-- consensus: 500ms hard deadline
-- transactions: 1500ms hard deadline
-- rank computation: remaining budget (soft deadline)
-
-the Rust compiler is the liveness checker. `async fn` without a deadline fails to compile. every computation is bounded. the robot is always responsive
+DOM is a document-era mistake. PureRender replaces it with nine perception primitives compiled to GPU shaders. flat stream structure instead of tree. the component is the contract: [[CosmWasm]] contracts run in the same wasmi instance as UI — sub-millisecond, no network round-trip. three processor targets: CPU (WASM/wasmi), GPU (WGSL/wgpu), NPU (ONNX/burn-webnn). see [[cyb/architecture]] for the complete render stack, legacy compatibility, and epoch budget specification
 
 ---
 
@@ -758,35 +459,10 @@ the robot is not an app. it is your presence in the most important network in th
 
 ## 15. numbers
 
-### 15.1 lines of code
-
-| component | lines |
-|-----------|-------|
-| PureRender (15 primitives, TS compiler, runtime, infrastructure) | ~100K |
-| CosmWasm integration | ~26K |
-| WASM adoption layer | ~14K |
-| burn-webnn | ~12K |
-| total | ~130K |
-
-CybOS core: ~85-125K lines (human-authored, auditable by one person in a month). neural driver layer: ~500K-1M lines (model-generated, compiler + test validated)
-
-### 15.2 cyb vs chrome
-
-| | Chrome | cyb |
-|-|--------|-----|
-| codebase | 35M lines C++ | 130K lines Rust |
-| render | Blink (DOM/CSS) | PureRender (15 primitives) |
-| WASM | V8 JIT | wasmi (deterministic, metered) |
-| identity | cookie | keypair |
-| state | server-side | local SQLite + on-chain |
-| contracts | via HTTP to node | native, same runtime as UI |
-| memory | no persistent model | permanent cybergraph |
-| binary | ~150MB | ~10MB |
-
-270× reduction in code for a system that does more
+~130K lines of [[Rust]] total. 270× less code than Chrome (35M lines C++) for a system that does more: keypair identity instead of cookies, permanent [[cybergraph]] memory instead of server-side state, native [[smart contracts]] instead of HTTP round-trips, ~10MB binary instead of ~150MB. see [[cyb/architecture]] for the full breakdown
 
 ---
 
-see [[cyb]] for the primitives overview. see [[cyb/architecture]] for the complete technical specification. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
+see [[cyb/architecture]] for the complete technical specification. see [[languages]] for the thirteen computation languages. see [[multiproof-architecture]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
 
 discover all [[concepts]]
