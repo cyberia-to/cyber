@@ -1,8 +1,8 @@
 ---
-tags: cyber
+tags: cyber, language
 crystal-type: entity
 crystal-domain: cyber
-alias: CozoScript, cozodb
+alias: Inf, infer, inference language, datalog, CozoScript, cozodb
 stake: 32461876227152508
 ---
 declarative graph query [[language]] for the [[cybergraph]], implemented via [CozoDB](https://github.com/cozodb/cozo)
