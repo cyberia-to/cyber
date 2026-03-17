@@ -299,7 +299,7 @@ AIPs are the applications of the robot. not apps downloaded from a store — pro
 | [[cyb/studio\|studio]] | content creation, publication |
 | [[cyb/sphere\|sphere]] | social layer, discovery, reputation |
 
-AIPs are built from [[prysm]] — the design system of cyb. prism defines atoms (glass, text, button, toggle, slider, address, ion, saber), molecules (hud, tabs, object, adviser, input, table), and cells that compose into any interface. the same design language renders on GPU (desktop), WebGPU (browser), or terminal
+AIPs are built from [[prysm]] — the design system of cyb. prysm defines atoms (glass, text, button, toggle, slider, address, ion, saber), molecules (hud, tabs, object, adviser, input, table), and cells that compose into any interface. the same design language renders on GPU (desktop), WebGPU (browser), or terminal
 
 ---
 
