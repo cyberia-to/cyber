@@ -127,7 +127,7 @@ It is not a framework that wraps existing tools behind a unified API while the u
 
 It is not complete — Dif (Differential), Sym (Symplectic), Inf (Informatic) are named but their [[proof]] paths are open mathematical problems. The architecture reserves their universe slots and is honest about the horizon.
 
-It is not implemented — the conceptualization is complete; the engineering is in progress. The Bt prover, the Rs integer prover, the Geo/Clifford compiler, the Ask/[[Hemera]] integration — these are all engineering problems with known solution shapes, not research unknowns.
+It is not implemented — the conceptualization is complete; the engineering is in progress. The Bt prover, the Rs integer prover, the Ren/Clifford compiler, the Ask/[[Hemera]] integration — these are all engineering problems with known solution shapes, not research unknowns.
 
 The conceptualization is the hard part. Most systems never get the conceptualization right and spend decades bolting things together. This one starts from the right primitives, derives the minimal complete set, unifies them under one commitment scheme, and lets the mathematics do the rest.
 
@@ -139,7 +139,7 @@ The [[cyb/languages]] organize into three tiers by their relationship to [[proof
 
 ### Execution Tier — eleven languages
 
-All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Geo (Geometric), Dif (Differential), Sym (Symplectic), Inf (Informatic), Seq (Sequence), Ask, Wav (Wave), Ten (Tensor).
+All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Ren (Render), Dif (Differential), Sym (Symplectic), Inf (Informatic), Seq (Sequence), Ask, Wav (Wave), Ten (Tensor).
 
 Every execution step emits a [[Hemera]] commitment — 8 [[Goldilocks field processor]] elements — that becomes both the [[proof]] input and the [[particle]] identity in the [[cybergraph]].
 
@@ -209,7 +209,7 @@ Using [[Hemera]] everywhere eliminates the two-level commitment problem that wou
 │  EXECUTION                                               │
 │                                                          │
 │  Bt (F₂)        Rs (Z/2ⁿ)      Arc (schema)             │
-│  Geo (Clifford)  Ten (contrac.) Wav (conv/R_q)           │
+│  Ren (Clifford)  Ten (contrac.) Wav (conv/R_q)           │
 │  Seq (order)     Ask (unify)                             │
 │  Dif* Sym* Inf*  (* = research horizon)                  │
 │                                                          │
@@ -256,7 +256,7 @@ Bt inference step     →  Hemera  →  particle in cybergraph
 Rs execution trace    →  Hemera  →  particle in cybergraph
 Ten tensor op         →  Hemera  →  particle in cybergraph
 Wav FHE ciphertext    →  Hemera  →  particle in cybergraph
-Geo shape             →  Hemera  →  particle in cybergraph
+Ren shape             →  Hemera  →  particle in cybergraph
 Dif manifold point    →  Hemera  →  particle in cybergraph
 Sym phase state       →  Hemera  →  particle in cybergraph
 Inf distribution      →  Hemera  →  particle in cybergraph
@@ -275,8 +275,8 @@ The [[cybergraph]] is not a consequence of the architecture — it *is* the accu
 |---|---|---|
 | Bt prover (Binius-compatible) | Engineering | Well-understood, implementation needed |
 | Rs integer prover | Engineering | Jolt-adjacent, determinism via edition restrictions |
-| Geo/Clifford compiler → Tri | Engineering | Geometric product = F_p [[algebra]] with extra structure |
-| Arc → [[vector]] via Geo embedding | Engineering | Arc [[topology]] + Geo G(2,0,0) position → SVG |
+| Ren/Clifford compiler → Tri | Engineering | Geometric product = F_p [[algebra]] with extra structure |
+| Arc → [[vector]] via Ren embedding | Engineering | Arc [[topology]] + Ren G(2,0,0) position → SVG |
 | Wav/FHE noise [[proof]] efficiency | Research | R_q → F_p translation cost is active research area |
 | Wav/FHE PBS scheduling | Engineering | Compiler optimization over noise budget types |
 | Dif — Riemannian [[proof]]s | Research | Continuous manifolds over finite [[field]]s — fundamental open problem |
@@ -298,7 +298,7 @@ The proving tier (Tri + [[Hemera]]) aligns with the existing [[zheng]] STARK imp
 
 The [[Hemera]] invariant formalizes how the [[cybergraph]] accumulates verified knowledge: every computation in every [[algebra]] produces a [[particle]] via [[Hemera]], and every composition produces a [[cyberlink]]. The [[cybergraph]] is the accumulation state of all proven computation.
 
-Engineering-ready [[cyb/languages]] (Bt, Rs, Geo, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
+Engineering-ready [[cyb/languages]] (Bt, Rs, Ren, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
 
 The [[Goldilocks field processor]] provides hardware acceleration for the four primitives the architecture depends on: FMA, NTT butterfly, Poseidon2 round, and table lookup. [[Goldilocks homomorphic encryption]] parameterizes FHE over the same [[field]], unifying encrypted computation with proving and [[quantum]] simulation under one [[field]] tower.
 
@@ -307,7 +307,7 @@ The [[Goldilocks field processor]] provides hardware acceleration for the four p
 The architecture implies specific capabilities for [[cyb]] as the interface to the [[cybergraph]]:
 
 - [[proof]] status visualization — every [[particle]] carries a [[proof]] chain; [[cyb]] should display verification status showing which [[algebra]] produced a given [[particle]] and whether the STARK [[proof]] verifies
-- Multi-[[algebra]] rendering — Geo compiles Arc [[topology]] + spatial embedding to SVG [[vector]] output; [[cyb]] is the natural renderer for this compilation pipeline
+- Multi-[[algebra]] rendering — Ren compiles Arc [[topology]] + spatial embedding to SVG [[vector]] output; [[cyb]] is the natural renderer for this compilation pipeline
 - Commitment browsing — navigating [[Hemera]] CID space, showing the [[proof]] composition chain from execution layer through Tri settlement to [[cybergraph]] storage
 - [[focus]] [[vector]] display — the Neural/semantic layer emergent from the [[cybergraph]] at scale needs visualization; [[cyb]] renders the [[focus]] distribution π and its evolution under [[tri-kernel]] dynamics
 - FHE interaction — [[cyb]] can submit encrypted queries via Wav (Wave), receive encrypted results, and verify [[proof]]s of correct computation without exposing the query content

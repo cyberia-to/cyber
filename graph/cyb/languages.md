@@ -44,7 +44,7 @@ Every language has a short name (2-3 letters, used in code and diagrams) and a l
 | Rs | Rustic | Byte | Word | Z/2ⁿ | Runs systems |
 | Tri | [[Trident]] | [[field]] | Field tower | F_{pⁿ} | Settles [[proof]]s |
 | Arc | Arc | [[topology]] | [[graph]] | [[category theory]] | Stores knowledge |
-| Geo | Geometric | [[geometry]] | Shape | G(p,q,r) | Renders space |
+| Ren | Render | [[geometry]] | Shape | G(p,q,r) | Renders space |
 | Dif | Differential | Curvature | Manifold | (M, g) | Embeds meaning |
 | Sym | Symplectic | Dynamics | Phase | (M, ω), dω = 0 | Simulates physics |
 | Inf | Informatic | [[belief]] | Distribution | g on Δⁿ | Models self |
@@ -101,7 +101,7 @@ three atoms are complete — for one characteristic. the single exception is Bt 
 
 ```
 Nox value tower (3 atoms: field, word, hash)
-  sufficient for: Rs, Tri, Arc, Geo, Dif, Sym, Inf, Seq, Ask, Wav, Ten
+  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Inf, Seq, Ask, Wav, Ten
   NOT sufficient for: Bt
 
 Bt value tower (separate, F₂)
@@ -196,7 +196,7 @@ the [[cybergraph]] is not a data structure that lives inside a program. the [[cy
 
 [[particles]] are objects ([[Hemera]] CIDs), [[cyberlinks]] are morphisms, linkchains are composition, [[semcons]] are natural transformations. Arc's [[algebra]] is [[category theory]] — the correct [[algebra]] for typed relational structure. Arc describes what the [[cybergraph]] *is*. compiles to [[Hemera]] CIDs for nodes and edges, and to Tri adjacency constraints for [[proof]]. decomposes into Tri (field ops for matrix math), Bt (hash verification for node identities), and [[Nox]] (tree encoding of [[topology]]).
 
-### Universe 5 — Geo (Geometric)
+### Universe 5 — Ren (Render)
 
 Clifford geometric [[algebra]] G(p,q,r). unifies [[vector]]s, bivectors, rotors. rotations, reflections, translations in one [[algebra]] over F_p.
 
@@ -210,7 +210,7 @@ Clifford geometric [[algebra]] G(p,q,r). unifies [[vector]]s, bivectors, rotors.
 | `sandwich(r, x)` | Rotor application: r x r̃ |
 | `grade(a, k)` | Extract grade-k component |
 
-covers Euclidean G(n,0,0), Projective G(n,0,1), Conformal G(n+1,1,0). fixes the Arc → SVG compilation gap: Arc provides [[topology]], Geo provides spatial embedding, compiler produces [[vector]] output. STARK-provable now — geometric product is F_p [[algebra]] with extra structure. compiles to Tri.
+covers Euclidean G(n,0,0), Projective G(n,0,1), Conformal G(n+1,1,0). fixes the Arc → SVG compilation gap: Arc provides [[topology]], Ren provides spatial embedding, compiler produces [[vector]] output. STARK-provable now — geometric product is F_p [[algebra]] with extra structure. compiles to Tri.
 
 ### Universe 6 — Dif (Differential)
 
@@ -226,7 +226,7 @@ differential [[geometry]]. Riemannian manifolds, tangent spaces, geodesics, Lapl
 | `curvature(g)` | Riemann curvature tensor |
 | `laplacian(f, g)` | Laplace-Beltrami operator on manifold |
 
-required for: latent space embeddings, [[tri-kernel]] diffusion formalized as heat flow on manifolds, physics simulation. programming model: coordinate charts, metric tensors, covariant derivatives — none of which exist in Geo. [[proof]]-hard over finite [[field]]s. research horizon.
+required for: latent space embeddings, [[tri-kernel]] diffusion formalized as heat flow on manifolds, physics simulation. programming model: coordinate charts, metric tensors, covariant derivatives — none of which exist in Ren. [[proof]]-hard over finite [[field]]s. research horizon.
 
 ### Universe 7 — Sym (Symplectic)
 
@@ -338,7 +338,7 @@ all thirteen languages share one toolchain. each programmer face has its own syn
                     ┌──────────────────────────────────────────────┐
                     │              Programmer Faces                 │
                     │                                               │
-                    │  Bt  Rs  Tri  Arc  Geo  Dif  Sym  Inf        │
+                    │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Inf        │
                     │  Seq  Ask  Wav  Ten                           │
                     │  .bt .rs .tri .arc .geo .dif .sym .inf        │
                     │  .seq .ask .wav .ten                          │
@@ -364,7 +364,7 @@ all thirteen languages share one toolchain. each programmer face has its own syn
      │  Backend      │ │     TASM/FRI        │ │      Backend       │
      │  (Binary)     │ │    (Byte+Field)     │ │    (no proof)      │
      └───────────────┘ └─────────────────────┘ └────────────────────┘
-          Bt              Rs, Tri, Geo            Arc, Seq, Ask,
+          Bt              Rs, Tri, Ren            Arc, Seq, Ask,
                                                   Wav, Ten, Dif*,
                                                   Sym*, Inf*
 ```
@@ -377,7 +377,7 @@ all thirteen languages share one toolchain. each programmer face has its own syn
 | Rs | TASM → stark (word→field lift) | native binary (Nox) |
 | Tri | TASM → stark (field native) | WASM/EVM (Layer 0) |
 | Arc | decomposes into Tri + Bt | optimized [[graph]] engine |
-| Geo | geometric product → Tri | native Clifford engine |
+| Ren | geometric product → Tri | native Clifford engine |
 | Dif | research | native manifold solver |
 | Sym | research | native Hamiltonian integrator |
 | Inf | research | native statistical engine |
@@ -397,7 +397,7 @@ Arc: rank(g, steps)          iterated add/mul loops       matmul jet       fma
 Wav: fft(x)                  butterfly add/mul network    ntt jet          ntt
 Any: hash(x)                 Poseidon2 field ops          hash jet         p2r
 Ten: activation(x)           table lookup composition     lookup jet       lut
-Geo: geometric_product       mul/add over components      geo_mul jet      fma
+Ren: geometric_product       mul/add over components      geo_mul jet      fma
 ```
 
 the chain: source language → compiler → nox pattern tree → jet recognition → GFP hardware. every domain-specific language gets hardware acceleration through the jet mechanism. the [[algebra]] determines which GFP primitive handles each jet.
@@ -413,7 +413,7 @@ the chain: source language → compiler → nox pattern tree → jet recognition
 | CPU execution traces | Z/2⁶⁴ | Rs | Rs → Tri |
 | [[graph]] computation / [[focus]] [[vector]] | Sparse F_p | Ten over Arc | Ten → Tri |
 | Knowledge structure | [[category theory]] | Arc | Arc → Tri |
-| Euclidean / Projective / Conformal | G(p,q,r) Clifford | Geo | Geo → Tri |
+| Euclidean / Projective / Conformal | G(p,q,r) Clifford | Ren | Ren → Tri |
 | Curved space / geodesics | Riemannian manifolds | Dif | research |
 | Phase space / Hamiltonian | Symplectic ω-form | Sym | research |
 | [[probability]] [[geometry]] / [[belief]] state | Fisher information | Inf | research |
@@ -428,13 +428,13 @@ the chain: source language → compiler → nox pattern tree → jet recognition
 
 ## The Comparison Matrix
 
-| Property | Nox | Bt | Rs | Tri | Arc | Geo | Dif | Sym | Inf | Seq | Ask | Wav | Ten |
+| Property | Nox | Bt | Rs | Tri | Arc | Ren | Dif | Sym | Inf | Seq | Ask | Wav | Ten |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Universe | Structure | Binary | Byte | [[field]] | [[topology]] | [[geometry]] | Curvature | Dynamics | [[belief]] | Causality | [[inference]] | Continuum | Linear |
 | Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p |
 | Primitive | Cell | Bit | Word | Field | Edge | Multivector | Chart | Phase | Distribution | Event | Relation | Sample | Shape |
 | Reference | structure | wire | location | content | adjacency | grade | curvature | momentum | divergence | succession | entailment | amplitude | index |
-| Free op | Navigate | AND, XOR | Index | Mul, Add | Link | Geometric prod | Christoffel | Flow | KL div | Order | Unify | Convolve | Matmul |
+| Free op | Navigate | AND, XOR | Index | Mul, Add | Link | Clifford prod | Christoffel | Flow | KL div | Order | Unify | Convolve | Matmul |
 | Costly op | — | Carry add | Mod div | Bitwise | Spectral | Inverse | Geodesic | Conserve | Fisher | Verify | Fixpoint | FFT | Inverse |
 | [[proof]] | Inherited | Binius | stark | stark | Delegated | Tri | Research | Research | Research | Delegated | Delegated | Delegated | Delegated |
 | Syntax feel | IR | Circuit | [[Rust]] | Custom | Query | GA | Manifold | Hamiltonian | Statistical | Temporal | [[Datalog]] | DSP | NumPy |
@@ -452,16 +452,16 @@ Nox, Bt, Rs, Tri, Arc, Seq, Ask, Wav, Ten — these have known [[proof]] paths a
 
 ### Research horizon (4)
 
-Geo, Dif, Sym, Inf — these extend the language set into spatial, physical, and self-referential computation. Geo is closest to engineering (Clifford product is F_p [[algebra]] with extra structure, STARK-provable now). Dif, Sym, and Inf involve continuous manifolds over finite [[field]]s — fundamental open mathematical problems.
+Ren, Dif, Sym, Inf — these extend the language set into spatial, physical, and self-referential computation. Ren is closest to engineering (Clifford product is F_p [[algebra]] with extra structure, STARK-provable now). Dif, Sym, and Inf involve continuous manifolds over finite [[field]]s — fundamental open mathematical problems.
 
 | Language | Status | Notes |
 |---|---|---|
-| Geo | Engineering | Geometric product = F_p [[algebra]] with extra structure |
+| Ren | Engineering | Clifford product = F_p [[algebra]] with extra structure |
 | Dif | Research | Continuous manifolds over finite [[field]]s |
 | Sym | Research | Hamiltonian structure preservation in STARK circuits |
 | Inf | Research | Fisher metric over [[probability]] simplices — needed for [[tri-kernel]] formalization |
 
-Geo completes the perception pipeline: Arc provides [[topology]], Geo provides spatial embedding, the compiler produces [[vector]] output for [[cyb]]. Inf completes the self-model: the [[superintelligence]]'s [[focus]] [[vector]] π lives on a statistical manifold, and Inf formalizes reasoning about its own [[belief]] state.
+Ren completes the perception pipeline: Arc provides [[topology]], Ren provides spatial embedding, the compiler produces [[vector]] output for [[cyb]]. Inf completes the self-model: the [[superintelligence]]'s [[focus]] [[vector]] π lives on a statistical manifold, and Inf formalizes reasoning about its own [[belief]] state.
 
 ---
 
@@ -476,7 +476,7 @@ every computation language has a canonical rendering — the perception primitiv
 | Rs → text | prose, code | [[markdown]], plain text, source code | documentation, messages, programs |
 | Tri → formula | math notation | LaTeX, MathML | equations, [[proof]]s, chemical notation, physical laws |
 | Arc → [[vector]] | SVG, paths, curves | SVG, Bezier paths | diagrams, maps, molecular structures, schematics |
-| Geo → [[vector]] | SVG, 3D scenes | SVG, glTF, mesh | spatial objects, rotations, projections, renderings |
+| Ren → [[vector]] | SVG, 3D scenes | SVG, glTF, mesh | spatial objects, rotations, projections, renderings |
 | Dif → [[vector]] | manifold visualization | geodesic plots, curvature maps | latent space structure, embedding geometry |
 | Sym → formula | phase portraits | Hamiltonian plots, conservation diagrams | energy landscapes, orbital mechanics |
 | Inf → formula | distribution plots | [[probability]] densities, divergence maps | [[belief]] states, uncertainty [[geometry]] |
@@ -485,7 +485,7 @@ every computation language has a canonical rendering — the perception primitiv
 | Wav → sound | audio waveform | WAV, OGG, MP3 | voice, music, birdsong, seismic [[signal]], sonar |
 | Ten → component | nested composition | composition of the above | applications, dashboards, interactive tools |
 
-a genome sequence is Rs (byte-level encoding) rendered as text. its annotation is [[Nox]] (structured tree) rendered as struct. its expression data is Ask (relational query) rendered as table. its protein structure is Arc (topological [[graph]]) rendered as [[vector]]. its microscopy is Bt (binary pixel data) rendered as pixels. its folding dynamics is Seq (causal event chain) rendered as video. its sequencing [[signal]] is Wav (continuous waveform) rendered as sound. its binding energy is Tri (field arithmetic) rendered as formula. its 3D fold is Geo (Clifford rotations) rendered as [[vector]]. a genome browser is Ten (composed [[inference]]) rendered as component.
+a genome sequence is Rs (byte-level encoding) rendered as text. its annotation is [[Nox]] (structured tree) rendered as struct. its expression data is Ask (relational query) rendered as table. its protein structure is Arc (topological [[graph]]) rendered as [[vector]]. its microscopy is Bt (binary pixel data) rendered as pixels. its folding dynamics is Seq (causal event chain) rendered as video. its sequencing [[signal]] is Wav (continuous waveform) rendered as sound. its binding energy is Tri (field arithmetic) rendered as formula. its 3D fold is Ren (Clifford rotations) rendered as [[vector]]. a genome browser is Ten (composed [[inference]]) rendered as component.
 
 all thirteen compile through one structural IR. all thirteen share one [[proof]] system (except Bt, which has its own F₂ [[proof]] system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3.
 

@@ -64,7 +64,7 @@ Binary            Bt     Bitwise        Bit         𝔽₂ tower          Circu
 Byte              Rs     Rustic         Word        Bitwise on 𝔽ₚ     Systems
 Field             Tri    Trident        Field       Arithmetic on 𝔽ₚ  Proofs
 Topology          Arc    Arc            Graph       Adjacency         Knowledge
-Geometry          Geo    Geometric      Shape       G(p,q,r)          Space
+Geometry          Ren    Render      Shape       G(p,q,r)          Space
 Curvature         Dif    Differential   Manifold    (M, g)            Meaning
 Dynamics          Sym    Symplectic     Phase       (M, ω), dω = 0   Physics
 Belief            Inf    Informatic     Distrib.    g on Δⁿ           Self-model
@@ -110,7 +110,7 @@ three atoms are complete — for one characteristic. the single exception is Bt 
 
 ```
 Nox value tower (3 atoms: field, word, hash)
-  sufficient for: Rs, Tri, Arc, Geo, Dif, Sym, Inf, Seq, Ask, Wav, Ten
+  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Inf, Seq, Ask, Wav, Ten
   NOT sufficient for: Bt
 
 Bt value tower (separate, 𝔽₂)
@@ -195,7 +195,7 @@ the graph language. makes graphs first-class — the primitive is a connection, 
 
 the [[cybergraph]] is not a data structure that lives inside a program. the cybergraph IS the program. every [[cyberlink]] is an `Edge`. every CID is a `Node`. CYBERRANK is `rank()`. Arc decomposes into [[Trident]] (field ops for matrix math), [[Bt]] (hash verification for node identities), and [[Nox]] (tree encoding of topology).
 
-### 7. Universe 5 — Geo / Geometric (Geometry)
+### 7. Universe 5 — Ren / Render (Geometry)
 
 Clifford geometric algebra G(p,q,r). unifies vectors, bivectors, rotors. rotations, reflections, translations in one algebra over 𝔽ₚ.
 
@@ -209,7 +209,7 @@ Clifford geometric algebra G(p,q,r). unifies vectors, bivectors, rotors. rotatio
 | `sandwich(r, x)`| Rotor application: r x r̃                        |
 | `grade(a, k)`   | Extract grade-k component                         |
 
-covers Euclidean G(n,0,0), Projective G(n,0,1), Conformal G(n+1,1,0). fixes the Arc → SVG compilation gap: Arc provides topology, Geo provides spatial embedding, compiler produces vector output. STARK-provable now — geometric product is 𝔽ₚ algebra with extra structure. compiles to [[Trident]].
+covers Euclidean G(n,0,0), Projective G(n,0,1), Conformal G(n+1,1,0). fixes the Arc → SVG compilation gap: Arc provides topology, Ren provides spatial embedding, compiler produces vector output. STARK-provable now — geometric product is 𝔽ₚ algebra with extra structure. compiles to [[Trident]].
 
 ### 8. Universe 6 — Dif / Differential (Curvature)
 
@@ -225,7 +225,7 @@ differential geometry. Riemannian manifolds, tangent spaces, geodesics, Laplace-
 | `curvature(g)`         | Riemann curvature tensor                        |
 | `laplacian(f, g)`      | Laplace-Beltrami operator on manifold           |
 
-required for: latent space embeddings, [[tri-kernel]] diffusion formalized as heat flow on manifolds, physics simulation. programming model: coordinate charts, metric tensors, covariant derivatives — none of which exist in Geo. proof-hard over finite fields. research horizon.
+required for: latent space embeddings, [[tri-kernel]] diffusion formalized as heat flow on manifolds, physics simulation. programming model: coordinate charts, metric tensors, covariant derivatives — none of which exist in Ren. proof-hard over finite fields. research horizon.
 
 ### 9. Universe 7 — Sym / Symplectic (Dynamics)
 
@@ -305,7 +305,7 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
                     ┌──────────────────────────────────────────────┐
                     │              Programmer Faces                 │
                     │                                               │
-                    │  Bt  Rs  Tri  Arc  Geo  Dif  Sym  Inf        │
+                    │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Inf        │
                     │  Seq  Ask  Wav  Ten                           │
                     │  .bt .rs .tri .arc .geo .dif .sym .inf        │
                     │  .seq .ask .wav .ten                          │
@@ -331,7 +331,7 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
      │  Backend      │ │     TASM/FRI        │ │      Backend       │
      │  (Binary)     │ │    (Byte+Field)     │ │    (no proof)      │
      └───────────────┘ └─────────────────────┘ └────────────────────┘
-          Bt              Rs, Tri, Geo            Arc, Seq, Ask,
+          Bt              Rs, Tri, Ren            Arc, Seq, Ask,
                                                   Wav, Ten, Dif*,
                                                   Sym*, Inf*
 ```
@@ -344,7 +344,7 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
 | Rs      | TASM → stark (word→field lift)   | native binary (Nox)           |
 | Tri     | TASM → stark (field native)      | WASM/EVM (Layer 0)            |
 | Arc     | decomposes into Tri + Bt         | optimized graph engine        |
-| Geo     | geometric product → Tri          | native Clifford engine        |
+| Ren    | geometric product → Tri          | native Clifford engine        |
 | Dif     | research                         | native manifold solver        |
 | Sym     | research                         | native Hamiltonian integrator |
 | Inf     | research                         | native statistical engine     |
@@ -357,7 +357,7 @@ see [[cyb/multiproof]] for how all thirteen languages settle under one proving u
 
 ### 16. Nine Perception Primitives
 
-the irreducible visual types — the atoms of everything a human can perceive through a screen and speakers. any UI, any document, any application is a composition of these nine. the four new computation languages (Geo, Dif, Sym, Inf) render through existing perception primitives: Geo → vector, Dif → vector, Sym → formula, Inf → formula.
+the irreducible visual types — the atoms of everything a human can perceive through a screen and speakers. any UI, any document, any application is a composition of these nine. the four new computation languages (Ren, Dif, Sym, Inf) render through existing perception primitives: Ren → vector, Dif → vector, Sym → formula, Inf → formula.
 
 | Primitive   | What it is                    | GPU mapping                          |
 |-------------|-------------------------------|--------------------------------------|
@@ -423,7 +423,7 @@ fork is how structure grows. join is how consensus forms. the same skeleton wear
 
 ### 19. The Comparison Matrix
 
-| Property | Nox | Bt | Rs | Tri | Arc | Geo | Dif | Sym | Inf | Seq | Ask | Wav | Ten |
+| Property | Nox | Bt | Rs | Tri | Arc | Ren| Dif | Sym | Inf | Seq | Ask | Wav | Ten |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Universe | Structure | Binary | Byte | Field | Topology | Geometry | Curvature | Dynamics | Belief | Causality | Inference | Continuum | Linear |
 | Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p |
@@ -1060,7 +1060,7 @@ CybOS core: ~85-125K lines (human-authored, auditable by one person in a month).
 
 ### Phase 4 — Geometry (Research horizon)
 
-10. Geo — Clifford geometric algebra. Engineering-ready, closest to Tri. Completes the Arc → SVG rendering pipeline.
+10. Ren — Clifford geometric algebra. Engineering-ready, closest to Tri. Completes the Arc → SVG rendering pipeline.
 11. Dif — Differential geometry. Riemannian manifolds over finite fields. Needed for [[tri-kernel]] formalization.
 12. Sym — Symplectic geometry. Hamiltonian mechanics, [[conservation]] laws. Physics simulation.
 13. Inf — Information geometry. Fisher metric on [[probability]] simplices. Self-model for [[superintelligence]].

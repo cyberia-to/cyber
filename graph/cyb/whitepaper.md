@@ -195,7 +195,7 @@ a data type deserves its own language when its algebraic laws are so different f
 | Byte | Rs | Rustic | Word | Bitwise on $\mathbb{F}_p$ | Systems |
 | Field | Tri | [[Trident]] | Field | Arithmetic on $\mathbb{F}_p$ | Proofs |
 | Topology | [[Arc]] | Arc | Graph | Adjacency | Knowledge |
-| Geometry | Geo | Geometric | Shape | G(p,q,r) | Space |
+| Geometry | Ren | Render | Shape | G(p,q,r) | Space |
 | Curvature | Dif | Differential | Manifold | (M, g) | Meaning |
 | Dynamics | Sym | Symplectic | Phase | (M, ω), dω = 0 | Physics |
 | Belief | Inf | Informatic | Distribution | g on Δⁿ | Self-model |
