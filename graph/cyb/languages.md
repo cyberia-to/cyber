@@ -1,6 +1,6 @@
 ---
-tags: cyb, cyber, stark, architecture, article
-crystal-type: article
+tags: cyb, cyber, stark, architecture, article, core
+crystal-type: entity
 crystal-domain: cyber
 alias:: computation languages, language set, thirteen languages
 ---
@@ -385,6 +385,22 @@ all thirteen languages share one toolchain. each programmer face has its own syn
 | Ask | derivation trace → stark | [[Datalog]] engine |
 | Wav | decomposes into Tri | native DSP pipeline |
 | Ten | decomposes into Tri | native BLAS / GPU |
+
+### Languages as Type Systems over Nox Patterns
+
+the execution languages are type systems and compilers over [[Nox]]'s 16 algebra-polymorphic patterns. each language adds domain-specific syntax, type checking, and compilation strategy — but the target is always nox pattern trees. domain-specific operations become jets: compositions of the 16 patterns recognized by formula hash and accelerated to [[Goldilocks field processor]] hardware primitives.
+
+```
+language operation           nox composition              jet              GFP primitive
+─────────────────────        ──────────────────────────   ──────────       ────────────
+Arc: rank(g, steps)          iterated add/mul loops       matmul jet       fma
+Wav: fft(x)                  butterfly add/mul network    ntt jet          ntt
+Any: hash(x)                 Poseidon2 field ops          hash jet         p2r
+Ten: activation(x)           table lookup composition     lookup jet       lut
+Geo: geometric_product       mul/add over components      geo_mul jet      fma
+```
+
+the chain: source language → compiler → nox pattern tree → jet recognition → GFP hardware. every domain-specific language gets hardware acceleration through the jet mechanism. the [[algebra]] determines which GFP primitive handles each jet.
 
 ---
 
