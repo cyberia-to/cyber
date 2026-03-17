@@ -7,17 +7,17 @@ applications that run on [[cyb/os]]. each is a cell — independently compiled, 
 
 | app | what it does |
 |-----|-------------|
-| [[portal]] | avatar creation, onboarding, citizenship |
+| [[cyb/portal]] | avatar creation, onboarding, citizenship |
 | [[hub]] | multi-chain connections via [[IBC]] |
 | [[cyb/signer]] | transaction signing, key management |
 | [[sync]] | state synchronization across devices |
-| [[oracle]] | ask, search, learn — the query interface |
+| [[cyb/oracle]] | ask, search, learn — the query interface |
 | [[teleport]] | cross-chain asset transfers |
 | [[sphere]] | spatial navigation of the [[cybergraph]] |
-| [[sigma]] | token positions, vimputers |
+| [[cyb/sigma]] | token positions, vimputers |
 | [[temple]] | governance participation |
 | [[nebula]] | content publishing and discovery |
-| [[studio]] | content creation tools |
+| [[cyb/studio]] | content creation tools |
 | [[warp]] | time-travel through graph history |
 | [[reactor]] | energy production, merge BSR and AOS/HFR |
 | [[hacklab]] | development and testing environment |

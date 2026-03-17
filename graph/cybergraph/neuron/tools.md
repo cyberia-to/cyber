@@ -11,7 +11,7 @@ software to create and use [[neurons]]
 
 play with [[cybergraph/neuron/creation]] using plain old [iancoleman.io/bip39/](https://iancoleman.io/bip39/)
 
-in [[cyb/portal]] you can connect any [[cyber]], [[ethereum]] and [[cosmos]] [[neuron]] to [[avatar]]
+in [[cyb/portal]] you can connect any [[cyber]], [[ethereum]] and [[cosmos]] [[neuron]] to [[cyb/avatar]]
 
 in [[bostrom]] and [[spacepussy]] standard [cosmos-sdk](https://docs.cosmos.network/) addresses are used as neurons
 

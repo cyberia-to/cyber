@@ -5,4 +5,4 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 20459842584855424
 ---
-what is [[avatar]]?
+what is [[cyb/avatar]]?

@@ -29,11 +29,11 @@ complexity
 - [[prysm]] with [[atoms]], [[molecules]] and [[cells]]
 - [[cyb/offline]] and [[online mode]]
 - 10 [[sparks]]
-- 3 types of [[robot]]: [[neuron]], [[avatar]] and [[prog]]
+- 3 types of [[robot]]: [[neuron]], [[cyb/avatar]] and [[prog]]
 - complete features for [[desktop]] and [[mobile]]
 - and unique flow for [[web]]
 - two modes: [[energetic]] and [[alien]]
-- [[avatar]] which can be both [[particle]] and [[neuron]]
+- [[cyb/avatar]] which can be both [[particle]] and [[neuron]]
 
 compatible integration with llms
 

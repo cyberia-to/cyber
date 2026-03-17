@@ -16,7 +16,7 @@ dual/multiple citizenship: simultaneous membership in several states
 
 digital citizenship: membership in [[network state]] communities, verified through cryptographic identity
 
-[[portal]] serves as the gateway to [[cyber state]] citizenship: identity registration, reputation accumulation, access to governance
+[[cyb/portal]] serves as the gateway to [[cyber state]] citizenship: identity registration, reputation accumulation, access to governance
 
 [[cyberia]] citizenship: on-chain identity linked to participation in [[governance]], staking, and knowledge contribution
 

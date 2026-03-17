@@ -7,7 +7,7 @@ stake: 6052032176675083
 ---
 [[aos]] game mechanics
 
-simple idea to gamify the process of [[cybergraph]] discovery by [[avatar]]
+simple idea to gamify the process of [[cybergraph]] discovery by [[cyb/avatar]]
 
 on a [[first visit]] [[cyb]] downloads in background
 

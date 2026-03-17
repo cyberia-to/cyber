@@ -43,7 +43,7 @@ where many agents [[link]] the same two stones\
 fused connections, stronger than a strand\
 the skeleton on which all [[truth]] will stand
 
-an [[avatar]] — many [[neurons]], single [[name]]\
+an [[cyb/avatar]] — many [[neurons]], single [[name]]\
 a [[card]] that bridges identity and flame\
 who you are meets everything you know\
 across the chains where [[signals]] flow

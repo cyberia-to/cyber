@@ -26,7 +26,7 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 	- prysm defines how each particle type is rendered, selected, linked, and composed
 	- the renderer adapts to the particle format. the interface stays consistent
 - ### the [[neuron]] is the user
-	- identity in prysm is a [[neuron]] with an [[avatar]]
+	- identity in prysm is a [[neuron]] with an [[cyb/avatar]]
 	- every action traces to a neuron. every view is from a neuron's perspective
 	- prysm renders identity as cards, addresses, reputation indicators, and activity streams
 - ### glass as medium
@@ -60,8 +60,8 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 		- [[prysm/content]] — [[particle]] renderers by format: heading, text, number, link, picture, video, pdf, audio, avatar
 		- [[prysm/display]] — content container (empty, highlight, sized text)
 		- [[prysm/neuron-card]] — [[neuron]] identity card (big, small × default, hover, clicked)
-		- [[prysm/object]] — entity card for [[particle]], [[neuron]], [[avatar]], [[aip]] (2-line, 3-line, +menu)
-		- [[prysm/subject]] — identity strip for [[neuron]]/[[avatar]] (2-line, chooser)
+		- [[prysm/object]] — entity card for [[particle]], [[neuron]], [[cyb/avatar]], [[aip]] (2-line, 3-line, +menu)
+		- [[prysm/subject]] — identity strip for [[neuron]]/[[cyb/avatar]] (2-line, chooser)
 		- [[prysm/adviser]] — contextual hint (closed, positive, negative, neutral, particle-attached)
 	- #### input
 		- [[prysm/input]] — data entry (text L/R/LR, neuron, token, select)
@@ -72,7 +72,7 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 	- #### widgets
 		- [[cyb/brain]] — graph file manager widget (+memory variant)
 		- [[cyb/sense]] — messaging and notification widget
-		- [[sigma]] — wallet and balance widget
+		- [[cyb/sigma]] — wallet and balance widget
 		- [[prysm/time-widget]] — personal history widget
 - ### cells
 	- full page regions composed from molecules. a cell owns a section of the screen
@@ -81,12 +81,12 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 	- [[prysm/oracle-cell]] — search region: aip selector, mind, particle display, content feed
 - ### aips
 	- complete autonomous applications. each [[aip]] is a full-screen experience built from cells
-	- [[oracle]] — search and discovery
+	- [[cyb/oracle]] — search and discovery
 	- [[cyb/brain]] — graph file manager
-	- [[portal]] — onboarding and citizenship
+	- [[cyb/portal]] — onboarding and citizenship
 	- [[cyberver]] — learning incentives and staking
 	- [[cyb/sense]] — messaging and notifications
-	- [[sigma]] — wallet and token management
+	- [[cyb/sigma]] — wallet and token management
 	- [[teleport]] — cross-chain transfers
 	- [[sphere]] — 3d graph visualization
 	- [[warp]] — IBC bridge

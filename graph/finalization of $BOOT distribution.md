@@ -17,7 +17,7 @@ current state of public affairs:
 - [[cybergift]] [[prog]]: claimed 148T [[$BOOT]]
 - [[senate]]: ~56T [[$BOOT]] and 50T [[$C]]
 - [[great web foundation]] multisig under [[cybercongress]] control: 50T [[$BOOT]] and [[$C]]
-- [[avatar]] [[prog]] under [[cybercongress]] multisig: ~9T [[$BOOT]]
+- [[cyb/avatar]] [[prog]] under [[cybercongress]] multisig: ~9T [[$BOOT]]
 
 my proposal is two understand how could be transition from here
 

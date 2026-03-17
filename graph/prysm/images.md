@@ -30,7 +30,7 @@ the complete set of glyphs used across [[cyb]]. every icon has a semantic meanin
 - 20px: standalone small icon, inside [[prysm/tabs]]
 - 32px: medium emphasis, inside [[prysm/neuron-card]] and [[prysm/object]]
 - 48px: large emphasis, in [[prysm/hud]] and onboarding
-- 96px: hero display, in [[portal]] welcome screens
+- 96px: hero display, in [[cyb/portal]] welcome screens
 
 ## composition
 

@@ -18,7 +18,7 @@ dependencies
 
 [[progs]]
 
-- [[avatar]]
+- [[cyb/avatar]]
 - [[gift]]
 - [[hub/networks]]
 - [[hub/protocols]]

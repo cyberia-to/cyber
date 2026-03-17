@@ -18,8 +18,8 @@ offline value:: opens [[great web]] access
 	- explore your [[cyb/brain]]
 	- explore you [[cyb/sense]]
 	- improve you [[mind]]
-	- intro to [[oracle]]
-	- [[portal]]?
+	- intro to [[cyb/oracle]]
+	- [[cyb/portal]]?
 - configure [[neurons]]
 - sync your [[nodes]] using local network
 
@@ -29,7 +29,7 @@ online value
 - [[create avatars]] for talks with you
 - explore and impact endless [[cyber]] using [[cyb/brain]]
 - publish, distribute and promote [[files]] in [[cyb/sense]]
-- optimize portfolio with [[sigma]]
+- optimize portfolio with [[cyb/sigma]]
 - plan for future and understand the past using [[cyb/time]]
 - sync your [[nodes]] using global network
 - [[cyb/time]] line of external interactions
@@ -59,14 +59,14 @@ superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]
 - [[cyb/brain]]
 - [[cyb/time]]
 - [[mind]]
-- [[sigma]]
+- [[cyb/sigma]]
 - [[cyb/sense]]
 - [[map]]
 
 [[cyb/features]]
 
 - core
-	- [[sigma]]: valuation engine of [[tokens]]
+	- [[cyb/sigma]]: valuation engine of [[tokens]]
 	- [[cyb/sense]]: communication system of robot
 	- [[cyb/time]]: memory of actions and planing system
 	- [[cyb/brain]]: graph file manager

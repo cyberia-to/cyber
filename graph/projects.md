@@ -18,7 +18,7 @@ cyber:
 
 cyb: main board which is decomposed primary to cyb components
 
-- [[sigma]]
+- [[cyb/sigma]]
 - [[cyb/time]]
 - [[cyb/brain]]
 - [[cyb/sense]]
@@ -26,10 +26,10 @@ cyb: main board which is decomposed primary to cyb components
 
 [[aos]] apps for [[cyb]]
 
-- [[portal]]
+- [[cyb/portal]]
 - [[teleport]]
 - [[reactor]]
-- [[oracle]]
+- [[cyb/oracle]]
 - [[senate]]
 - [[cyberver]]
 - [[nebula]]

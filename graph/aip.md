@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 21204935277414136
 ---
-any [[avatar]] can become [[aip]]
+any [[cyb/avatar]] can become [[aip]]
 
 [[cyb/portal/my avatars/name]]
 

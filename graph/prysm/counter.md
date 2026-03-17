@@ -22,6 +22,6 @@ renders a single number with optional [[emotion]] color. used wherever [[cyb]] s
 ## composition
 
 - counter inside [[prysm/object]] = entity metric
-- counter inside [[sigma]] = token balance
+- counter inside [[cyb/sigma]] = token balance
 - counter inside [[prysm/neuron-card]] = [[karma]] or rank display
 - counter + [[prysm/indicator]] = progress toward a goal

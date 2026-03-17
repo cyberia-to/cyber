@@ -4,6 +4,6 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 13639895056570282
 ---
-you win by increasing your [[sigma]]
+you win by increasing your [[cyb/sigma]]
 
 [[play games]]

@@ -10,7 +10,7 @@ columns
 
 - [[level]]
 - [[energy]]
-- [[sigma]]
+- [[cyb/sigma]]
 - [[karma]]
 - [[influence]]
 - [[wisdom]]

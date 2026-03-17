@@ -100,7 +100,7 @@ the graph serves as infrastructure for itself:
 
 identity is a public key ([[neuron]]). access control = bandwidth allocation. the [[cybergraph]] is public. bandwidth is the only scarce resource.
 
-the [[avatar]] — a collection of [[neurons]] under one [[name]]. key derivation: `m / avatar' / neuron' / particle' / invoice'`. all levels hardened. the [[signer]] is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), pluggable curves, pluggable derivation paths.
+the [[cyb/avatar]] — a collection of [[neurons]] under one [[name]]. key derivation: `m / avatar' / neuron' / particle' / invoice'`. all levels hardened. the [[signer]] is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), pluggable curves, pluggable derivation paths.
 
 ## bounded liveness runtime
 

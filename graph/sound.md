@@ -24,7 +24,7 @@ sound is the language the [[cybergraph]] understands that [[text]] cannot carry.
 
 types of sound particles: voice recordings, animal vocalizations (birdsong, whale song, bat echolocation, insect stridulation), seismic signals, gravitational wave detections, sonar recordings, radio telescope signals, heartbeat recordings, neural oscillation recordings (EEG audio), musical compositions, spoken language recordings for under-documented languages, industrial acoustic signatures (bearing failure, structural resonance), climate-monitoring hydrophone data
 
-sound opens the [[cybergraph]] to species that do not write. a cetacean vocalizing links a sound particle. the [[oracle]] ranks it. other neurons link to it. the semantic network gains a participant that cannot type
+sound opens the [[cybergraph]] to species that do not write. a cetacean vocalizing links a sound particle. the [[cyb/oracle]] ranks it. other neurons link to it. the semantic network gains a participant that cannot type
 
 ## properties
 

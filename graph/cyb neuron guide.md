@@ -17,7 +17,7 @@ the product
 - decentralized search engine
 - decentralized ai alignment
 - your power to teach ai with your data
-- your power to create your own ai [[avatar]]
+- your power to create your own ai [[cyb/avatar]]
 - your power to distribute your ai
 - decentralised datasets curation
 - decentralised ai training

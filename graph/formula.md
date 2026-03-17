@@ -24,7 +24,7 @@ formula is how precision enters the [[cybergraph]]. a claim in [[text]] says "en
 
 types of formula particles: physical laws, mathematical theorems, chemical reactions, statistical models, differential equations, proofs (each step a formula particle in a chain), dosing equations, orbital mechanics, economic models, protein binding affinities, quantum operators, cryptographic primitives, field equations, financial derivatives pricing models, biological growth equations
 
-formula particles are the most precise objects in the [[cybergraph]]. a text particle about a drug says "effective in reducing tumor size." the formula particle states the exact dose-response curve. when the [[oracle]] returns an answer about a medical question, formula particles carry the quantitative truth
+formula particles are the most precise objects in the [[cybergraph]]. a text particle about a drug says "effective in reducing tumor size." the formula particle states the exact dose-response curve. when the [[cyb/oracle]] returns an answer about a medical question, formula particles carry the quantitative truth
 
 ## properties
 
