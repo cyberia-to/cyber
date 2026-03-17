@@ -47,9 +47,9 @@ Every language has a short name (2-3 letters, used in code and diagrams) and a l
 | Ren | Render | [[geometry]] | Shape | G(p,q,r) | Renders space |
 | Dif | Differential | Curvature | Manifold | (M, g) | Embeds meaning |
 | Sym | Symplectic | Dynamics | Phase | (M, ω), dω = 0 | Simulates physics |
-| Inf | Informatic | [[belief]] | Distribution | g on Δⁿ | Models self |
+| Bel | Belief | [[belief]] | Distribution | g on Δⁿ | Models self |
 | Seq | Sequence | Causality | Event | Partial order | Orders events |
-| Ask | Ask | [[inference]] | Relation | Horn clauses | Derives facts |
+| Inf | Infer | [[inference]] | Relation | Horn clauses | Derives facts |
 | Wav | Wave | Continuum | Poly | Convolution / R_q | Reads [[signal]]s |
 | Ten | Tensor | Linear | Tensor | Contraction | Trains models |
 
@@ -101,7 +101,7 @@ three atoms are complete — for one characteristic. the single exception is Bt 
 
 ```
 Nox value tower (3 atoms: field, word, hash)
-  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Inf, Seq, Ask, Wav, Ten
+  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Bel, Seq, Inf, Wav, Ten
   NOT sufficient for: Bt
 
 Bt value tower (separate, F₂)
@@ -244,7 +244,7 @@ symplectic [[geometry]]. phase space with 2-form ω, Hamiltonian flows, canonica
 
 natural language of classical and semi-classical mechanics. required for: physical simulation with energy [[conservation]], [[quantum]]-classical interface, molecular dynamics. the [[conservation]] law structure (ω is closed: dω = 0) has no analog in Clifford or Riemannian [[geometry]]. research horizon.
 
-### Universe 8 — Inf (Informatic)
+### Universe 8 — Bel (Belief)
 
 information [[geometry]]. Fisher information metric on the simplex of [[probability]] distributions.
 
@@ -258,7 +258,7 @@ information [[geometry]]. Fisher information metric on the simplex of [[probabil
 | `alpha_connection(α)` | α-connection interpolation |
 | `entropy(p)` | Shannon / Rényi entropy |
 
-the [[geometry]] of the [[cybergraph]]'s own [[belief]] state — the [[focus]] [[vector]] π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Inf to be formalized. research horizon.
+the [[geometry]] of the [[cybergraph]]'s own [[belief]] state — the [[focus]] [[vector]] π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Bel to be formalized. research horizon.
 
 ### Universe 9 — Seq (Sequence)
 
@@ -280,7 +280,7 @@ Stream  = linear time     = flow      = FIFO  = before(a, b), before(b, c)
 
 events form a partial order — not a total order. Seq preserves the partial order and only totalizes when consensus demands it. compiles to Tri ordering constraints.
 
-### Universe 10 — Ask (Inference)
+### Universe 10 — Inf (Infer)
 
 the query language. relations and unification — [[Datalog]] at its core. the only language that derives truth rather than transforming values.
 
@@ -290,7 +290,7 @@ reachable(X, Z) :- link(X, Y), reachable(Y, Z).
 ?- reachable(a, X), linked_by(d, X).
 ```
 
-Arc is what is connected ([[topology]]). Ask is what follows (entailment). together they form a complete [[knowledge graph]] system: structure + [[inference]]. the [[Datalog]] restriction ensures bounded [[inference]], guaranteed termination, [[proof]]-compatible. because Ask is bounded, any derivation can be encoded as a Tri computation and proven with a [[zheng]]. [[zero-knowledge]] [[inference]] over a private [[knowledge graph]].
+Arc is what is connected ([[topology]]). Inf is what follows (entailment). together they form a complete [[knowledge graph]] system: structure + [[inference]]. the [[Datalog]] restriction ensures bounded [[inference]], guaranteed termination, [[proof]]-compatible. because Inf is bounded, any derivation can be encoded as a Tri computation and proven with a [[zheng]]. [[zero-knowledge]] [[inference]] over a private [[knowledge graph]].
 
 Prolog-family semantics over the [[cybergraph]]. resolves the symbolic/Z [[algebra]] problem: exact integer reasoning is unification over numeric terms. compiles to Tri constraint satisfaction.
 
@@ -338,10 +338,10 @@ all thirteen languages share one toolchain. each programmer face has its own syn
                     ┌──────────────────────────────────────────────┐
                     │              Programmer Faces                 │
                     │                                               │
-                    │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Inf        │
-                    │  Seq  Ask  Wav  Ten                           │
-                    │  .bt .rs .tri .arc .geo .dif .sym .inf        │
-                    │  .seq .ask .wav .ten                          │
+                    │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Bel        │
+                    │  Seq  Inf  Wav  Ten                           │
+                    │  .bt .rs .tri .arc .geo .dif .sym .bel        │
+                    │  .seq .inf .wav .ten                          │
                     └──────────────────┬───────────────────────────┘
                                        │
                     ┌──────────────────▼───────────────────────────┐
@@ -364,12 +364,12 @@ all thirteen languages share one toolchain. each programmer face has its own syn
      │  Backend      │ │     TASM/FRI        │ │      Backend       │
      │  (Binary)     │ │    (Byte+Field)     │ │    (no proof)      │
      └───────────────┘ └─────────────────────┘ └────────────────────┘
-          Bt              Rs, Tri, Ren            Arc, Seq, Ask,
+          Bt              Rs, Tri, Ren            Arc, Seq, Inf,
                                                   Wav, Ten, Dif*,
-                                                  Sym*, Inf*
+                                                  Sym*, Bel*
 ```
 
-\* Dif, Sym, Inf are research horizon — [[proof]] paths are open mathematical problems.
+\* Dif, Sym, Bel are research horizon — [[proof]] paths are open mathematical problems.
 
 | Source | When [[proof]] needed | When [[proof]] absent |
 |---|---|---|
@@ -380,9 +380,9 @@ all thirteen languages share one toolchain. each programmer face has its own syn
 | Ren | geometric product → Tri | native Clifford engine |
 | Dif | research | native manifold solver |
 | Sym | research | native Hamiltonian integrator |
-| Inf | research | native statistical engine |
+| Bel | research | native statistical engine |
 | Seq | temporal constraints → stark | scheduler / runtime |
-| Ask | derivation trace → stark | [[Datalog]] engine |
+| Inf | derivation trace → stark | [[Datalog]] engine |
 | Wav | decomposes into Tri | native DSP pipeline |
 | Ten | decomposes into Tri | native BLAS / GPU |
 
@@ -416,19 +416,19 @@ the chain: source language → compiler → nox pattern tree → jet recognition
 | Euclidean / Projective / Conformal | G(p,q,r) Clifford | Ren | Ren → Tri |
 | Curved space / geodesics | Riemannian manifolds | Dif | research |
 | Phase space / Hamiltonian | Symplectic ω-form | Sym | research |
-| [[probability]] [[geometry]] / [[belief]] state | Fisher information | Inf | research |
+| [[probability]] [[geometry]] / [[belief]] state | Fisher information | Bel | research |
 | Polynomial [[proof]]s | F_p (n=1) | Tri | native |
 | Recursive [[proof]] composition | F_{p³} (n=3) | Tri | native |
 | [[quantum]] simulation | F_{p²} (n=2) | Tri | native extension |
 | [[Goldilocks homomorphic encryption]] ciphertexts | R_q = Z_q[X]/(Xⁿ+1) | Wav | Wav → Tri |
-| Symbolic / exact reasoning | Z | Ask | Ask → Tri |
+| Symbolic / exact reasoning | Z | Inf | Inf → Tri |
 | Sensing / [[signal]] processing | Convolution / ℝ | Wav | Wav → Tri |
 
 ---
 
 ## The Comparison Matrix
 
-| Property | Nox | Bt | Rs | Tri | Arc | Ren | Dif | Sym | Inf | Seq | Ask | Wav | Ten |
+| Property | Nox | Bt | Rs | Tri | Arc | Ren | Dif | Sym | Bel | Seq | Inf | Wav | Ten |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Universe | Structure | Binary | Byte | [[field]] | [[topology]] | [[geometry]] | Curvature | Dynamics | [[belief]] | Causality | [[inference]] | Continuum | Linear |
 | Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p |
@@ -448,20 +448,20 @@ The thirteen languages split into two groups by implementation readiness:
 
 ### Engineering-ready (9)
 
-Nox, Bt, Rs, Tri, Arc, Seq, Ask, Wav, Ten — these have known [[proof]] paths and well-understood compilation to Tri / Binius. the [[cyb/architecture]] specifies these as the build order: Phase 1 (Nox, Tri, Rs), Phase 2 (Arc, Seq, Ask), Phase 3 (Bt, Wav, Ten).
+Nox, Bt, Rs, Tri, Arc, Seq, Inf, Wav, Ten — these have known [[proof]] paths and well-understood compilation to Tri / Binius. the [[cyb/architecture]] specifies these as the build order: Phase 1 (Nox, Tri, Rs), Phase 2 (Arc, Seq, Inf), Phase 3 (Bt, Wav, Ten).
 
 ### Research horizon (4)
 
-Ren, Dif, Sym, Inf — these extend the language set into spatial, physical, and self-referential computation. Ren is closest to engineering (Clifford product is F_p [[algebra]] with extra structure, STARK-provable now). Dif, Sym, and Inf involve continuous manifolds over finite [[field]]s — fundamental open mathematical problems.
+Ren, Dif, Sym, Bel — these extend the language set into spatial, physical, and self-referential computation. Ren is closest to engineering (Clifford product is F_p [[algebra]] with extra structure, STARK-provable now). Dif, Sym, and Bel involve continuous manifolds over finite [[field]]s — fundamental open mathematical problems.
 
 | Language | Status | Notes |
 |---|---|---|
 | Ren | Engineering | Clifford product = F_p [[algebra]] with extra structure |
 | Dif | Research | Continuous manifolds over finite [[field]]s |
 | Sym | Research | Hamiltonian structure preservation in STARK circuits |
-| Inf | Research | Fisher metric over [[probability]] simplices — needed for [[tri-kernel]] formalization |
+| Bel | Research | Fisher metric over [[probability]] simplices — needed for [[tri-kernel]] formalization |
 
-Ren completes the perception pipeline: Arc provides [[topology]], Ren provides spatial embedding, the compiler produces [[vector]] output for [[cyb]]. Inf completes the self-model: the [[superintelligence]]'s [[focus]] [[vector]] π lives on a statistical manifold, and Inf formalizes reasoning about its own [[belief]] state.
+Ren completes the perception pipeline: Arc provides [[topology]], Ren provides spatial embedding, the compiler produces [[vector]] output for [[cyb]]. Bel completes the self-model: the [[superintelligence]]'s [[focus]] [[vector]] π lives on a statistical manifold, and Bel formalizes reasoning about its own [[belief]] state.
 
 ---
 
@@ -479,13 +479,13 @@ every computation language has a canonical rendering — the perception primitiv
 | Ren → [[vector]] | SVG, 3D scenes | SVG, glTF, mesh | spatial objects, rotations, projections, renderings |
 | Dif → [[vector]] | manifold visualization | geodesic plots, curvature maps | latent space structure, embedding geometry |
 | Sym → formula | phase portraits | Hamiltonian plots, conservation diagrams | energy landscapes, orbital mechanics |
-| Inf → formula | distribution plots | [[probability]] densities, divergence maps | [[belief]] states, uncertainty [[geometry]] |
+| Bel → formula | distribution plots | [[probability]] densities, divergence maps | [[belief]] states, uncertainty [[geometry]] |
 | Seq → video | moving pixels | WebM, MP4 | recordings, simulations, observations, lectures |
-| Ask → table | 2D grid | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
+| Inf → table | 2D grid | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
 | Wav → sound | audio waveform | WAV, OGG, MP3 | voice, music, birdsong, seismic [[signal]], sonar |
 | Ten → component | nested composition | composition of the above | applications, dashboards, interactive tools |
 
-a genome sequence is Rs (byte-level encoding) rendered as text. its annotation is [[Nox]] (structured tree) rendered as struct. its expression data is Ask (relational query) rendered as table. its protein structure is Arc (topological [[graph]]) rendered as [[vector]]. its microscopy is Bt (binary pixel data) rendered as pixels. its folding dynamics is Seq (causal event chain) rendered as video. its sequencing [[signal]] is Wav (continuous waveform) rendered as sound. its binding energy is Tri (field arithmetic) rendered as formula. its 3D fold is Ren (Clifford rotations) rendered as [[vector]]. a genome browser is Ten (composed [[inference]]) rendered as component.
+a genome sequence is Rs (byte-level encoding) rendered as text. its annotation is [[Nox]] (structured tree) rendered as struct. its expression data is Inf (relational query) rendered as table. its protein structure is Arc (topological [[graph]]) rendered as [[vector]]. its microscopy is Bt (binary pixel data) rendered as pixels. its folding dynamics is Seq (causal event chain) rendered as video. its sequencing [[signal]] is Wav (continuous waveform) rendered as sound. its binding energy is Tri (field arithmetic) rendered as formula. its 3D fold is Ren (Clifford rotations) rendered as [[vector]]. a genome browser is Ten (composed [[inference]]) rendered as component.
 
 all thirteen compile through one structural IR. all thirteen share one [[proof]] system (except Bt, which has its own F₂ [[proof]] system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3.
 

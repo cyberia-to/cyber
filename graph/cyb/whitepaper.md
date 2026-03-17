@@ -198,9 +198,9 @@ a data type deserves its own language when its algebraic laws are so different f
 | Geometry | Ren | Render | Shape | G(p,q,r) | Space |
 | Curvature | Dif | Differential | Manifold | (M, g) | Meaning |
 | Dynamics | Sym | Symplectic | Phase | (M, ω), dω = 0 | Physics |
-| Belief | Inf | Informatic | Distribution | g on Δⁿ | Self-model |
+| Belief | Bel | Belief | Distribution | g on Δⁿ | Self-model |
 | Causality | [[Seq]] | Sequence | Event | Partial order | Ordering |
-| Inference | [[Ask]] | Ask | Relation | Unification | Reasoning |
+| Inference | [[Inf]] | Infer | Relation | Unification | Reasoning |
 | Continuum | [[Wav]] | Wave | Signal | Convolution | Sensing |
 | Linear | [[Ten]] | Tensor | Tensor | Contraction | Learning |
 
@@ -230,7 +230,7 @@ the thirteen computation [[cyb/languages]] are the object level — what the mac
 
 ### 6.1 rune — the script language
 
-dynamic async scripting language for robot automation. create [[cyberlinks]] on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions, turn human intent into prog behavior. [[Ask]] queries the graph declaratively; rune orchestrates those queries and writes back to the graph
+dynamic async scripting language for robot automation. create [[cyberlinks]] on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions, turn human intent into prog behavior. [[Inf]] queries the graph declaratively; rune orchestrates those queries and writes back to the graph
 
 ### 6.2 neural language — the semantic layer
 
@@ -244,7 +244,7 @@ rune                       ← how you SCRIPT against the graph
 neural language            ← how MEANING emerges from the graph
 ```
 
-query is not a separate layer — [[Ask]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the nine languages subsume what was previously split between "content" and "query"
+query is not a separate layer — [[Inf]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the nine languages subsume what was previously split between "content" and "query"
 
 ---
 

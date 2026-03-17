@@ -30,7 +30,7 @@ Rs     → words                            text      → prose, code
 Trident→ fields                           formula   → math notation
 Arc    → graphs                           vector    → SVG, paths, curves
 Seq    → events                           video     → moving pixels
-Ask    → relations                        table     → 2D grid
+Inf    → relations                        table     → 2D grid
 Wav    → signals                          sound     → audio waveform
 Ten    → tensors                          component → nested composition
 
@@ -48,7 +48,7 @@ reject    → explicitly not-choose
 confirm   → irreversible commit
 ```
 
-every computation type has a canonical rendering. a tree computed in [[Nox]] naturally displays as a collapsible `struct`. a graph traversed in [[Arc]] naturally draws as `vector` paths. a relation queried in [[Ask]] naturally fills a `table`. a signal processed in [[Wav]] naturally plays as `sound`. the mapping is many-to-many, but the canonical pairing is the path of least impedance — where the shape of the data matches the shape of the display.
+every computation type has a canonical rendering. a tree computed in [[Nox]] naturally displays as a collapsible `struct`. a graph traversed in [[Arc]] naturally draws as `vector` paths. a relation queried in [[Inf]] naturally fills a `table`. a signal processed in [[Wav]] naturally plays as `sound`. the mapping is many-to-many, but the canonical pairing is the path of least impedance — where the shape of the data matches the shape of the display.
 
 every rendering invites a decision. the human responds with typed decision primitives — select, rank, compose, confirm — each with its own algebra, its own temporal mode, and its own relationship to the computation and perception grids.
 
@@ -67,9 +67,9 @@ Topology          Arc    Arc            Graph       Adjacency         Knowledge
 Geometry          Ren    Render      Shape       G(p,q,r)          Space
 Curvature         Dif    Differential   Manifold    (M, g)            Meaning
 Dynamics          Sym    Symplectic     Phase       (M, ω), dω = 0   Physics
-Belief            Inf    Informatic     Distrib.    g on Δⁿ           Self-model
+Belief            Bel    Belief         Distrib.    g on Δⁿ           Self-model
 Causality         Seq    Sequence       Event       Partial order     Ordering
-Inference         Ask    Ask            Relation    Unification       Reasoning
+Inference         Inf    Infer          Relation    Unification       Reasoning
 Continuum         Wav    Wave           Signal      Convolution       Sensing
 Linear            Ten    Tensor         Tensor      Contraction       Learning
 ```
@@ -110,7 +110,7 @@ three atoms are complete — for one characteristic. the single exception is Bt 
 
 ```
 Nox value tower (3 atoms: field, word, hash)
-  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Inf, Seq, Ask, Wav, Ten
+  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Bel, Seq, Inf, Wav, Ten
   NOT sufficient for: Bt
 
 Bt value tower (separate, 𝔽₂)
@@ -243,7 +243,7 @@ symplectic geometry. phase space with 2-form ω, Hamiltonian flows, canonical tr
 
 natural language of classical and semi-classical mechanics. required for: physical simulation with energy [[conservation]], [[quantum]]-classical interface, molecular dynamics. the [[conservation]] law structure (ω is closed: dω = 0) has no analog in Clifford or Riemannian geometry. research horizon.
 
-### 10. Universe 8 — Inf / Informatic (Belief)
+### 10. Universe 8 — Bel / Belief (Belief)
 
 information geometry. Fisher information metric on the simplex of probability distributions.
 
@@ -257,7 +257,7 @@ information geometry. Fisher information metric on the simplex of probability di
 | `alpha_connection(α)`    | α-connection interpolation                    |
 | `entropy(p)`             | Shannon / Rényi entropy                       |
 
-the geometry of the [[cybergraph]]'s own belief state — the [[focus]] vector π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Inf to be formalized. research horizon.
+the geometry of the [[cybergraph]]'s own belief state — the [[focus]] vector π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Bel to be formalized. research horizon.
 
 ### 11. Universe 9 — Seq / Sequence (Causality)
 
@@ -279,7 +279,7 @@ Stream  = linear time     = flow      = FIFO  = before(a, b), before(b, c)
 
 events form a partial order — not a total order. Seq preserves the partial order and only totalizes when consensus demands it.
 
-### 12. Universe 10 — Ask (Inference)
+### 12. Universe 10 — Inf (Infer)
 
 the query language. relations and unification — [[Datalog]] at its core. the only language that derives truth rather than transforming values.
 
@@ -289,7 +289,7 @@ reachable(X, Z) :- link(X, Y), reachable(Y, Z).
 ?- reachable(a, X), linked_by(d, X).
 ```
 
-Arc is what is connected (topology). Ask is what follows (entailment). together they form a complete knowledge system: structure + inference. the Datalog restriction ensures bounded inference, guaranteed termination, proof-compatible. because Ask is bounded, any derivation can be encoded as a [[Trident]] computation and proven with a stark. zero-knowledge inference over a private knowledge graph.
+Arc is what is connected (topology). Inf is what follows (entailment). together they form a complete knowledge system: structure + inference. the Datalog restriction ensures bounded inference, guaranteed termination, proof-compatible. because Inf is bounded, any derivation can be encoded as a [[Trident]] computation and proven with a stark. zero-knowledge inference over a private knowledge graph.
 
 ### 13. Universe 11 — Wav / Wave (Continuum)
 
@@ -305,10 +305,10 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
                     ┌──────────────────────────────────────────────┐
                     │              Programmer Faces                 │
                     │                                               │
-                    │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Inf        │
-                    │  Seq  Ask  Wav  Ten                           │
-                    │  .bt .rs .tri .arc .geo .dif .sym .inf        │
-                    │  .seq .ask .wav .ten                          │
+                    │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Bel        │
+                    │  Seq  Inf  Wav  Ten                           │
+                    │  .bt .rs .tri .arc .geo .dif .sym .bel        │
+                    │  .seq .inf .wav .ten                          │
                     └──────────────────┬───────────────────────────┘
                                        │
                     ┌──────────────────▼───────────────────────────┐
@@ -331,12 +331,12 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
      │  Backend      │ │     TASM/FRI        │ │      Backend       │
      │  (Binary)     │ │    (Byte+Field)     │ │    (no proof)      │
      └───────────────┘ └─────────────────────┘ └────────────────────┘
-          Bt              Rs, Tri, Ren            Arc, Seq, Ask,
+          Bt              Rs, Tri, Ren            Arc, Seq, Inf,
                                                   Wav, Ten, Dif*,
-                                                  Sym*, Inf*
+                                                  Sym*, Bel*
 ```
 
-\* Dif, Sym, Inf are research horizon — proof paths are open mathematical problems.
+\* Dif, Sym, Bel are research horizon — proof paths are open mathematical problems.
 
 | Source  | When proof needed                | When proof absent             |
 |---------|----------------------------------|-------------------------------|
@@ -347,9 +347,9 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
 | Ren    | geometric product → Tri          | native Clifford engine        |
 | Dif     | research                         | native manifold solver        |
 | Sym     | research                         | native Hamiltonian integrator |
-| Inf     | research                         | native statistical engine     |
+| Bel     | research                         | native statistical engine     |
 | Seq     | temporal constraints → stark     | scheduler / runtime           |
-| Ask     | derivation trace → stark         | Datalog engine                |
+| Inf     | derivation trace → stark         | Datalog engine                |
 | Wav     | decomposes into Tri              | native DSP pipeline           |
 | Ten     | decomposes into Tri              | native BLAS / GPU             |
 
@@ -357,7 +357,7 @@ see [[cyb/multiproof]] for how all thirteen languages settle under one proving u
 
 ### 16. Nine Perception Primitives
 
-the irreducible visual types — the atoms of everything a human can perceive through a screen and speakers. any UI, any document, any application is a composition of these nine. the four new computation languages (Ren, Dif, Sym, Inf) render through existing perception primitives: Ren → vector, Dif → vector, Sym → formula, Inf → formula.
+the irreducible visual types — the atoms of everything a human can perceive through a screen and speakers. any UI, any document, any application is a composition of these nine. the four new computation languages (Ren, Dif, Sym, Bel) render through existing perception primitives: Ren → vector, Dif → vector, Sym → formula, Bel → formula.
 
 | Primitive   | What it is                    | GPU mapping                          |
 |-------------|-------------------------------|--------------------------------------|
@@ -380,12 +380,12 @@ every human interaction with a computer is a decision. strip the physics away �
 | #  | Primitive | Action                | Reversible? | Time Mode | Comp Language | Perception |
 |----|-----------|-----------------------|-------------|-----------|---------------|------------|
 | 1  | observe   | Gather without choosing | Always    | Stream    | Wav           | any        |
-| 2  | filter    | Narrow by criteria    | Yes         | Stack     | Ask           | struct     |
-| 3  | select    | Choose one            | Yes         | Stream    | Ask           | table      |
+| 2  | filter    | Narrow by criteria    | Yes         | Stack     | Inf           | struct     |
+| 3  | select    | Choose one            | Yes         | Stream    | Inf           | table      |
 | 4  | rank      | Order by preference   | Yes         | Stream    | Ten           | table      |
 | 5  | compose   | Build new value       | Yes         | Stack     | Rs            | text/vector|
 | 6  | split     | One becomes many      | Depends     | Heap      | Arc           | vector     |
-| 7  | merge     | Many become one       | Depends     | Heap      | Arc + Ask     | vector     |
+| 7  | merge     | Many become one       | Depends     | Heap      | Arc + Inf     | vector     |
 | 8  | delegate  | Route to agent        | Sometimes   | Heap      | Arc           | vector     |
 | 9  | reject    | Explicitly not-choose | Mostly      | Stream    | Seq           | video      |
 | 10 | confirm   | Irreversible commit   | Never       | Stack     | Trident       | formula    |
@@ -423,7 +423,7 @@ fork is how structure grows. join is how consensus forms. the same skeleton wear
 
 ### 19. The Comparison Matrix
 
-| Property | Nox | Bt | Rs | Tri | Arc | Ren| Dif | Sym | Inf | Seq | Ask | Wav | Ten |
+| Property | Nox | Bt | Rs | Tri | Arc | Ren| Dif | Sym | Bel | Seq | Inf | Wav | Ten |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Universe | Structure | Binary | Byte | Field | Topology | Geometry | Curvature | Dynamics | Belief | Causality | Inference | Continuum | Linear |
 | Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p |
@@ -1050,7 +1050,7 @@ CybOS core: ~85-125K lines (human-authored, auditable by one person in a month).
 
 4. [[Arc]] — Graph DSL for [[cybergraph]] programming. Compiles to Trident for proofs, native engine for queries.
 5. [[Seq]] — Temporal logic for consensus rules and scheduling. Three temporal modes built in.
-6. [[Ask]] — Datalog over the cybergraph. Rule-based inference turns explicit links into implicit knowledge.
+6. [[Inf]] — Datalog over the cybergraph. Rule-based inference turns explicit links into implicit knowledge.
 
 ### Phase 3 — Specialization (When needed)
 
@@ -1063,7 +1063,7 @@ CybOS core: ~85-125K lines (human-authored, auditable by one person in a month).
 10. Ren — Clifford geometric algebra. Engineering-ready, closest to Tri. Completes the Arc → SVG rendering pipeline.
 11. Dif — Differential geometry. Riemannian manifolds over finite fields. Needed for [[tri-kernel]] formalization.
 12. Sym — Symplectic geometry. Hamiltonian mechanics, [[conservation]] laws. Physics simulation.
-13. Inf — Information geometry. Fisher metric on [[probability]] simplices. Self-model for [[superintelligence]].
+13. Bel — Information geometry. Fisher metric on [[probability]] simplices. Self-model for [[superintelligence]].
 
 see [[cyb/languages]] for the algebraic completeness argument. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella.
 

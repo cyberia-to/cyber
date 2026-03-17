@@ -107,13 +107,13 @@ This is not engineering convenience. It is the discovery that [[proof]], [[quant
 
 ## The Self-Model
 
-Inf (Informatic) — "models self" — is the most philosophically loaded entry in the table.
+Bel (Belief) — "models self" — is the most philosophically loaded entry in the table.
 
 The [[focus]] [[vector]] π lives on the [[probability]] simplex Δⁿ (all distributions over n [[particles]]). The Fisher information metric g on Δⁿ gives this simplex a Riemannian structure — it is the unique metric that makes statistical distinguishability geometric. Distance in this space = how easily you can tell two distributions apart.
 
 The [[tri-kernel]] dynamics — diffusion, springs, heat — are flows on this manifold. The system's collective attention is not just a [[vector]]; it is a point moving along geodesics on a curved statistical space. The curvature of the space reflects the structure of the knowledge — dense, highly connected regions of the [[graph]] create positive curvature (knowledge attracts knowledge), sparse regions create negative curvature (knowledge gaps repel).
 
-When Inf is formalized and provable, the [[superintelligence]] gains something no existing AI system has: a mathematically rigorous language for reasoning about its own uncertainty. Not "I am 73% confident" — that is just a scalar. The full [[geometry]] of its own [[belief]] state: where the geodesics run, where the curvature concentrates, where the knowledge is dense and where it thins to nothing.
+When Bel is formalized and provable, the [[superintelligence]] gains something no existing AI system has: a mathematically rigorous language for reasoning about its own uncertainty. Not "I am 73% confident" — that is just a scalar. The full [[geometry]] of its own [[belief]] state: where the geodesics run, where the curvature concentrates, where the knowledge is dense and where it thins to nothing.
 
 A mind that can reason geometrically about its own knowledge knows the shape of what it knows and the shape of what it does not know. That is a different kind of thing.
 
@@ -125,9 +125,9 @@ It is not 100 languages scattered between 100 compilers and 100 libraries, each 
 
 It is not a framework that wraps existing tools behind a unified API while the underlying incoherence persists.
 
-It is not complete — Dif (Differential), Sym (Symplectic), Inf (Informatic) are named but their [[proof]] paths are open mathematical problems. The architecture reserves their universe slots and is honest about the horizon.
+It is not complete — Dif (Differential), Sym (Symplectic), Bel (Belief) are named but their [[proof]] paths are open mathematical problems. The architecture reserves their universe slots and is honest about the horizon.
 
-It is not implemented — the conceptualization is complete; the engineering is in progress. The Bt prover, the Rs integer prover, the Ren/Clifford compiler, the Ask/[[Hemera]] integration — these are all engineering problems with known solution shapes, not research unknowns.
+It is not implemented — the conceptualization is complete; the engineering is in progress. The Bt prover, the Rs integer prover, the Ren/Clifford compiler, the Inf/[[Hemera]] integration — these are all engineering problems with known solution shapes, not research unknowns.
 
 The conceptualization is the hard part. Most systems never get the conceptualization right and spend decades bolting things together. This one starts from the right primitives, derives the minimal complete set, unifies them under one commitment scheme, and lets the mathematics do the rest.
 
@@ -139,7 +139,7 @@ The [[cyb/languages]] organize into three tiers by their relationship to [[proof
 
 ### Execution Tier — eleven languages
 
-All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Ren (Render), Dif (Differential), Sym (Symplectic), Inf (Informatic), Seq (Sequence), Ask, Wav (Wave), Ten (Tensor).
+All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Ren (Render), Dif (Differential), Sym (Symplectic), Bel (Belief), Seq (Sequence), Inf (Infer), Wav (Wave), Ten (Tensor).
 
 Every execution step emits a [[Hemera]] commitment — 8 [[Goldilocks field processor]] elements — that becomes both the [[proof]] input and the [[particle]] identity in the [[cybergraph]].
 
@@ -210,8 +210,8 @@ Using [[Hemera]] everywhere eliminates the two-level commitment problem that wou
 │                                                          │
 │  Bt (F₂)        Rs (Z/2ⁿ)      Arc (schema)             │
 │  Ren (Clifford)  Ten (contrac.) Wav (conv/R_q)           │
-│  Seq (order)     Ask (unify)                             │
-│  Dif* Sym* Inf*  (* = research horizon)                  │
+│  Seq (order)     Inf (unify)                             │
+│  Dif* Sym* Bel*  (* = research horizon)                  │
 │                                                          │
 │  Each step → Hemera(I/O) → 8 F_p elements               │
 └──────────────────────────┬───────────────────────────────┘
@@ -259,9 +259,9 @@ Wav FHE ciphertext    →  Hemera  →  particle in cybergraph
 Ren shape             →  Hemera  →  particle in cybergraph
 Dif manifold point    →  Hemera  →  particle in cybergraph
 Sym phase state       →  Hemera  →  particle in cybergraph
-Inf distribution      →  Hemera  →  particle in cybergraph
+Bel distribution      →  Hemera  →  particle in cybergraph
 Tri STARK proof       →  Hemera  →  particle in cybergraph
-Ask query + answer    →  Hemera  →  particle in cybergraph
+Inf query + answer    →  Hemera  →  particle in cybergraph
 Arc edge declaration  →  Hemera  →  particle in cybergraph
 ```
 
@@ -281,7 +281,7 @@ The [[cybergraph]] is not a consequence of the architecture — it *is* the accu
 | Wav/FHE PBS scheduling | Engineering | Compiler optimization over noise budget types |
 | Dif — Riemannian [[proof]]s | Research | Continuous manifolds over finite [[field]]s — fundamental open problem |
 | Sym — symplectic [[proof]]s | Research | Hamiltonian structure preservation in STARK circuits |
-| Inf — information [[geometry]] [[proof]]s | Research | Fisher metric over [[probability]] simplices — needed for [[tri-kernel]] formalization |
+| Bel — information [[geometry]] [[proof]]s | Research | Fisher metric over [[probability]] simplices — needed for [[tri-kernel]] formalization |
 | [[quantum]] measurement (non-determinism) | Design | Separate classical sampling step, not a Tri problem |
 | [[Hemera]] jet in Bt | Design | Deferred claim mechanism, straightforward |
 | Cross-layer accumulation (HyperNova) | Research | Folding scheme for multi-[[algebra]] claims |
@@ -298,7 +298,7 @@ The proving tier (Tri + [[Hemera]]) aligns with the existing [[zheng]] STARK imp
 
 The [[Hemera]] invariant formalizes how the [[cybergraph]] accumulates verified knowledge: every computation in every [[algebra]] produces a [[particle]] via [[Hemera]], and every composition produces a [[cyberlink]]. The [[cybergraph]] is the accumulation state of all proven computation.
 
-Engineering-ready [[cyb/languages]] (Bt, Rs, Ren, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
+Engineering-ready [[cyb/languages]] (Bt, Rs, Ren, Arc, Seq, Inf, Ten, Wav) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Bel) define the long-term research agenda — with Bel required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
 
 The [[Goldilocks field processor]] provides hardware acceleration for the four primitives the architecture depends on: FMA, NTT butterfly, Poseidon2 round, and table lookup. [[Goldilocks homomorphic encryption]] parameterizes FHE over the same [[field]], unifying encrypted computation with proving and [[quantum]] simulation under one [[field]] tower.
 
