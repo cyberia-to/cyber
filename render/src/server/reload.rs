@@ -97,10 +97,14 @@ fn hash_meta(page: &ParsedPage) -> u64 {
     use std::hash::{Hash, Hasher};
     let mut h = DefaultHasher::new();
     page.meta.title.hash(&mut h);
-    page.meta.aliases.join(",").hash(&mut h);
+    let mut aliases = page.meta.aliases.clone();
+    aliases.sort();
+    aliases.join(",").hash(&mut h);
     page.meta.icon.hash(&mut h);
     page.meta.stake.hash(&mut h);
-    page.meta.tags.join(",").hash(&mut h);
+    let mut tags = page.meta.tags.clone();
+    tags.sort();
+    tags.join(",").hash(&mut h);
     h.finish()
 }
 
@@ -266,18 +270,17 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
                 });
             }
             warmup_pages.extend(cache.subgraph_pages.clone());
-            // Snapshot content page IDs BEFORE graph build (excludes stubs)
+            // Snapshot content page IDs and hashes BEFORE graph build.
+            // This must match what incremental_rebuild hashes from all_parsed (pre-graph).
             for page in &warmup_pages {
                 cache.last_content_page_ids.insert(page.id.clone());
+                cache.content_hashes.insert(page.id.clone(), hash_str(&page.content_md));
+                cache.tag_hashes.insert(page.id.clone(), hash_str(&page.meta.tags.join(",")));
+                cache.meta_hashes.insert(page.id.clone(), hash_meta(page));
+                cache.link_hashes.insert(page.id.clone(), hash_links(page));
             }
             // Build graph to get full store (with stubs, links, PageRank, etc.)
             let store = crate::graph::build_graph(warmup_pages)?;
-            for (page_id, page) in &store.pages {
-                cache.content_hashes.insert(page_id.clone(), hash_str(&page.content_md));
-                cache.tag_hashes.insert(page_id.clone(), hash_str(&page.meta.tags.join(",")));
-                cache.meta_hashes.insert(page_id.clone(), hash_meta(page));
-                cache.link_hashes.insert(page_id.clone(), hash_links(page));
-            }
             // Snapshot backlinks
             for (page_id, backlinks) in &store.backlinks {
                 let mut sorted = backlinks.clone();
@@ -487,38 +490,42 @@ fn incremental_rebuild(
     for page in &all_parsed {
         content_page_ids.insert(page.id.clone());
 
+        // Only mark pages dirty if they were actually re-parsed from a changed file.
+        // Subgraph pages and unchanged pages may have non-deterministic hash diffs
+        // due to merge order differences — these must not pollute dirty_ids.
+        let was_reparsed = changed_page_ids.contains(&page.id);
+
         // Content hash — detect body text changes
         let new_hash = hash_str(&page.content_md);
         if let Some(&old_hash) = cache.content_hashes.get(&page.id) {
-            if old_hash != new_hash {
+            if old_hash != new_hash && was_reparsed {
                 dirty_ids.insert(page.id.clone());
             }
-        } else {
+        } else if was_reparsed {
             dirty_ids.insert(page.id.clone());
         }
         cache.content_hashes.insert(page.id.clone(), new_hash);
 
-        // Fix 1: Meta hash — detect frontmatter changes (title, aliases, icon, stake, tags)
+        // Meta hash — detect frontmatter changes (title, aliases, icon, stake, tags)
         let new_meta_hash = hash_meta(page);
         if let Some(&old_meta_hash) = cache.meta_hashes.get(&page.id) {
-            if old_meta_hash != new_meta_hash {
+            if old_meta_hash != new_meta_hash && was_reparsed {
                 dirty_ids.insert(page.id.clone());
                 meta_changed = true;
             }
-        } else if cache.initialized {
-            // New page — meta is implicitly new
+        } else if cache.initialized && was_reparsed {
             meta_changed = true;
         }
         cache.meta_hashes.insert(page.id.clone(), new_meta_hash);
 
-        // Fix 2: Outgoing links hash — detect link set changes
+        // Outgoing links hash — detect link set changes
         let new_link_hash = hash_links(page);
         if let Some(&old_link_hash) = cache.link_hashes.get(&page.id) {
-            if old_link_hash != new_link_hash {
+            if old_link_hash != new_link_hash && was_reparsed {
                 dirty_ids.insert(page.id.clone());
                 links_changed = true;
             }
-        } else if cache.initialized {
+        } else if cache.initialized && was_reparsed {
             links_changed = true;
         }
         cache.link_hashes.insert(page.id.clone(), new_link_hash);
@@ -543,6 +550,7 @@ fn incremental_rebuild(
         || tags_changed
         || meta_changed
         || links_changed;
+
 
     // Step 4: Build or reuse graph store.
     // Full graph build (PageRank, gravity, etc.) is expensive — only do it for structural changes.
