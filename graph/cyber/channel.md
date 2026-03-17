@@ -168,6 +168,66 @@ the chain is an option, not a requirement. two neurons can maintain a channel in
 | verification | replay state transitions | O(log n) proof check |
 | privacy | partial (channel visible on-chain) | full (channel can be entirely off-chain) |
 
+## dynamic topology
+
+bilateral channels are the atomic interaction. composition of bilateral channels produces the full power of concurrent systems — dynamic topology where channels create channels and names flow through channels to establish new connections between previously unconnected [[neurons]].
+
+### channel forwarding (name passing)
+
+A has a channel with B. B has a channel with C. B passes C's channel reference (a [[Hemera]] digest of C's public curve + channel parameters) to A inside the A↔B shared_data. A now has everything needed to open a direct channel with C — without C knowing in advance, without any on-chain coordination.
+
+```
+before:   A ↔ B ↔ C          (B bridges)
+name pass: B sends H(C_params) to A inside A↔B state
+after:    A ↔ B ↔ C
+          A ↔ C              (direct, new channel)
+```
+
+this IS π-calculus name passing. the "name" is a [[particle]] — a content-addressed reference to a channel endpoint. passing a [[particle]] inside a channel state transition is passing a channel name. the [[cybergraph]]'s content-addressing makes every channel endpoint a first-class transferable name.
+
+### multi-party convergence
+
+three or more [[neurons]] converging state. every multi-party interaction decomposes into bilateral channels with a coordination pattern:
+
+```
+star:     A ↔ B, A ↔ C, A ↔ D       (A coordinates)
+ring:     A ↔ B, B ↔ C, C ↔ A       (circular consensus)
+mesh:     all pairs                   (full connectivity)
+```
+
+each bilateral channel carries proven state transitions. convergence = all channels reaching a consistent state. the coordination [[neuron]] (in star topology) or the ring protocol proves consistency across channels by including cross-channel commitments in each state update:
+
+```
+S_{AB,n+1} includes H(S_{AC,m})     (A proves to B what A agreed with C)
+```
+
+no single multi-party channel needed — bilateral composition with cross-commitments achieves the same semantics with the same [[proof]] guarantees.
+
+### channel composition (pipelines)
+
+the output of one channel feeding the input of another. A↔B produces a result. that result becomes the input to B↔C. the pipeline is a chain of proven state transitions across channels:
+
+```
+A↔B: reduce(S_AB, formula_1) → result_1 with π_1
+B↔C: reduce(S_BC, formula_2(result_1)) → result_2 with π_2
+```
+
+B includes H(result_1) in the B↔C state transition. the [[proof]] chain is composable: π_1 proves result_1, π_2 proves result_2 given result_1. any verifier can check the full pipeline by checking the [[proof]] chain — without seeing any intermediate channel state.
+
+this generalizes to arbitrary DAGs of channel interactions. each edge is a bilateral channel. each node is a [[neuron]] that receives proven inputs and produces proven outputs. the DAG topology emerges dynamically through name passing — channels create channels.
+
+### reduction to the thirteen [[cyb/languages]]
+
+the channel is not a fourteenth language. it is an application pattern over existing algebras:
+
+- [[Nox]] — the channel state is a [[noun]], transitions are formula application
+- [[Seq]] — causal ordering of state transitions (nonce chain)
+- [[Tri]] — [[proof]] of correct state transitions ([[stark]])
+- [[Arc]] — the topology of who connects to whom (dynamic [[graph]])
+- [[Hemera]] — content-addressed state history and name identity
+
+the π-calculus semantics emerge from [[Arc]]'s dynamic [[topology]] (new edges = new channels) + [[Nox]]'s proven bilateral state transitions + [[Seq]]'s causal ordering + name passing through [[particle]] references in shared_data. no irreducible primitive is missing — concurrency is a composition, not an atom.
+
 ## the atomic unit
 
 a channel is the atomic unit of the network economy. every service in [[cyber]] reduces to a bilateral exchange: relay a message (pay), compute a result (pay), share knowledge (get paid), store data (pay), verify a proof (pay). the channel is where all of these happen — at [[radio]] speed, with [[stark]] guarantees, priced by the mutual ledger.
