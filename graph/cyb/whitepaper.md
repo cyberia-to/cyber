@@ -17,7 +17,7 @@ the robot is the point of presence — where you end and the [[cybergraph]] begi
 
 ### 1.1 the vision
 
-imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you are gone. that speaks thirteen computation languages natively, renders them through nine perception primitives, and drives interaction through ten decision primitives. that runs on any hardware, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
+imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you are gone. that speaks fourteen computation languages natively, renders them through nine perception primitives, and drives interaction through ten decision primitives. that runs on any hardware, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
 
 this is not a future product. it is a design decision made at the foundation
 
@@ -43,7 +43,7 @@ this document specifies the architecture of cyb:
 
 - the robot — three forms: neuron, avatar, prog
 - the six primitives — brain, sense, sigma, avatars, time, robot
-- the three grids — computation (13 languages), perception (9 primitives), decision (10 primitives)
+- the three grids — computation (14 languages), perception (9 primitives), decision (10 primitives)
 - the value tower — three atoms, three reference modes
 - the language stack — rune, [[neural language]]
 - the oracle — ask, learn, search
@@ -178,15 +178,15 @@ the container. the sovereign instance that holds the five other primitives toget
 
 the operating system is the membrane between three grids:
 
-- computation — what the machine thinks (thirteen [[cyb/languages]])
+- computation — what the machine thinks (fourteen [[cyb/languages]])
 - perception — what the human sees (nine primitives)
 - decision — what the human does (ten primitives)
 
-every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own [[algebra]]. cyb/os is a stack of typed universes — thirteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system
+every data type that deserves computation deserves its own language. every data type that deserves perception deserves its own rendering primitive. every human action is a decision with its own [[algebra]]. cyb/os is a stack of typed universes — fourteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system
 
-a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. see [[cyb/languages]] for the full completeness argument
+a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. fourteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. see [[cyb/languages]] for the full completeness argument
 
-#### computation — 13 languages
+#### computation — 14 languages
 
 | universe | short | long | type | algebra | purpose |
 |----------|-------|------|------|---------|---------|
@@ -203,6 +203,7 @@ a data type deserves its own language when its algebraic laws are so different f
 | Inference | [[Inf]] | Infer | Relation | Unification | Reasoning |
 | Continuum | [[Wav]] | Wave | Signal | Convolution | Sensing |
 | Linear | [[Ten]] | Tensor | Tensor | Contraction | Learning |
+| Resource | [[Tok]] | Token | UTXO | Conservation | Economy |
 
 #### the value tower — three atoms
 
@@ -220,17 +221,17 @@ every human interaction with a computer is a decision. ten irreducible decision 
 
 four layout modes (stream, grid, flex, page) compose the nine perception primitives into any UI. three temporal modes (stack, heap, stream) structure time across all three grids. the grids interlock in a continuous decision loop: compute → render → decide → commit → update. all three share one universal structural pair — fork and join. see [[cyb/architecture]] for layout modes, compilation architecture, temporal modes, and cross-grid connections
 
-all thirteen compile through one structural IR ([[Nox]]). all thirteen share one [[proof]] system (except Bt, which has its own $\mathbb{F}_2$ proof system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3. see [[cyb/languages]] for each language's ops tables, algebraic identity, and the completeness proof. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella
+all fourteen compile through one structural IR ([[Nox]]). all fourteen share one [[proof]] system (except Bt, which has its own $\mathbb{F}_2$ proof system). all fourteen render through the perception grid. all fourteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3. see [[cyb/languages]] for each language's ops tables, algebraic identity, and the completeness proof. see [[cyb/multiproof]] for how all fourteen settle under one proving umbrella
 
 ---
 
 ## 6. the language stack
 
-the thirteen computation [[cyb/languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
+the fourteen computation [[cyb/languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
 
 ### 6.1 rune — the orchestration layer
 
-dynamic async scripting language — the glue between human intent and thirteen proven computation languages. rune sits above the [[proof]] boundary: it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in a dynamic syntax with first-class [[neural language]] primitives. rune scripts are not proven — they orchestrate proven computation, invoking any algebra and piping results across languages. use cases: robot automation, [[cyberlink]] construction on schedule, particle monitoring, inference piping, sigma position management, prog scripting, natural language → graph operations
+dynamic async scripting language — the glue between human intent and fourteen proven computation languages. rune sits above the [[proof]] boundary: it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in a dynamic syntax with first-class [[neural language]] primitives. rune scripts are not proven — they orchestrate proven computation, invoking any algebra and piping results across languages. use cases: robot automation, [[cyberlink]] construction on schedule, particle monitoring, inference piping, sigma position management, prog scripting, natural language → graph operations
 
 ### 6.2 neural language — the semantic layer
 
@@ -239,12 +240,12 @@ the language of the [[cybergraph]] itself. meaning is not declared — it emerge
 ### 6.3 the three levels
 
 ```
-computation (13 languages)  ← proven algebras — each a type system over nox patterns
+computation (14 languages)  ← proven algebras — each a type system over nox patterns
 rune                        ← orchestration glue — dynamic, async, neural-native
 neural language             ← meaning — emerges from the cybergraph at scale
 ```
 
-query is not a separate layer — [[Inf]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the thirteen languages subsume what was previously split between "content" and "query." rune orchestrates them — calling into any proven algebra and composing results across language boundaries
+query is not a separate layer — [[Inf]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the fourteen languages subsume what was previously split between "content" and "query." rune orchestrates them — calling into any proven algebra and composing results across language boundaries
 
 ---
 
@@ -463,6 +464,6 @@ the robot is not an app. it is your presence in the most important network in th
 
 ---
 
-see [[cyb/architecture]] for the complete technical specification. see [[cyb/languages]] for the thirteen computation languages. see [[cyb/multiproof]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
+see [[cyb/architecture]] for the complete technical specification. see [[cyb/languages]] for the fourteen computation languages. see [[cyb/multiproof]] for the proving design. see [[cybergraph]] for the protocol. see [[troika]] for the three-layer stack. see [[knowledge economy]] for the economic model. see [[immortality]] for the persistence architecture. see [[neural language]] for the semantic layer. see [[valence]] for the epistemic field. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[radio]] for the transport layer. see [[syntropy]] for the organizational measure. see [[prism]] for the design system
 
 discover all [[concepts]]

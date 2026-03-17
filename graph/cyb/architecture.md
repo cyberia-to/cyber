@@ -11,9 +11,9 @@ stake: 14015797676239542
 
 [[cyb]] is a sovereign browser that becomes an operating system. identity is a keypair, state lives on-chain, [[smart contracts]] run locally, and the entire render stack compiles to GPU. one binary, all platforms, 130K lines of [[Rust]], no WebView, no V8, no Google.
 
-cyb/os is a stack of typed universes — thirteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system. see [[cyb/languages]] for the algebraic completeness argument and [[cyb/multiproof]] for the proving design.
+cyb/os is a stack of typed universes — fourteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system. see [[cyb/languages]] for the algebraic completeness argument and [[cyb/multiproof]] for the proving design.
 
-core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for orchestration (the dynamic scripting layer above the [[proof]] boundary that glues the thirteen computation languages to human intent), [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
+core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for orchestration (the dynamic scripting layer above the [[proof]] boundary that glues the fourteen computation languages to human intent), [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
 
 ---
 
@@ -52,7 +52,7 @@ every computation type has a canonical rendering. a tree computed in [[Nox]] nat
 
 every rendering invites a decision. the human responds with typed decision primitives — select, rank, compose, confirm — each with its own algebra, its own temporal mode, and its own relationship to the computation and perception grids.
 
-### 1. Thirteen Computation Languages
+### 1. Fourteen Computation Languages
 
 every language has a short name (2-3 letters, used in code) and a long name (used in prose):
 
@@ -72,13 +72,14 @@ Causality         Seq    Sequence       Event       Partial order     Ordering
 Inference         Inf    Infer          Relation    Unification       Reasoning
 Continuum         Wav    Wave           Signal      Convolution       Sensing
 Linear            Ten    Tensor         Tensor      Contraction       Learning
+Resource          Tok    Token          UTXO        Conservation      Economy
 ```
 
-a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. thirteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. some universes share a proof system. some share a compiler. none share semantics. see [[cyb/languages]] for the full completeness argument and irreducibility proof.
+a data type deserves its own language when its algebraic laws are so different from other types that forcing it into a foreign language creates constant impedance mismatch. fourteen fundamental types pass this test. each inhabits a universe defined by its characteristic algebraic structure. some universes share a proof system. some share a compiler. none share semantics. see [[cyb/languages]] for the full completeness argument and irreducibility proof.
 
 ### 2. The Value Tower — Three Modes of Reference
 
-Byte and Field share the same mathematical substrate — the [[Goldilocks field]] 𝔽ₚ where p = 2⁶⁴ − 2³² + 1. this substrate provides three atom types sufficient for eleven of the thirteen universes.
+Byte and Field share the same mathematical substrate — the [[Goldilocks field]] 𝔽ₚ where p = 2⁶⁴ − 2³² + 1. this substrate provides three atom types sufficient for twelve of the fourteen universes.
 
 | Tag  | Name    | Representation      | Valid Range   | Use        |
 |------|---------|---------------------|---------------|------------|
@@ -110,14 +111,14 @@ three atoms are complete — for one characteristic. the single exception is Bt 
 
 ```
 Nox value tower (3 atoms: field, word, hash)
-  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Bel, Seq, Inf, Wav, Ten
+  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Bel, Seq, Inf, Wav, Ten, Tok
   NOT sufficient for: Bt
 
 Bt value tower (separate, 𝔽₂)
   sufficient for: Bt only
 ```
 
-### 3. The Thirteen Languages
+### 3. The Fourteen Languages
 
 each language has its own page with ops tables, use cases, and proof paths:
 
@@ -136,8 +137,9 @@ each language has its own page with ops tables, use cases, and proof paths:
 | 10 | Inference | Inf | Infer | [[Inf]] |
 | 11 | Continuum | Wav | Wave | [[Wav]] |
 | 12 | Linear | Ten | Tensor | [[Ten]] |
+| 13 | Resource | Tok | Token | [[Tok]] |
 
-see [[cyb/languages]] for the completeness argument, value tower, algebra coverage, and perception mapping. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella
+see [[cyb/languages]] for the completeness argument, value tower, algebra coverage, and perception mapping. see [[cyb/multiproof]] for how all fourteen settle under one proving umbrella
 
 ### 4. Compilation Architecture
 
@@ -146,9 +148,9 @@ see [[cyb/languages]] for the completeness argument, value tower, algebra covera
                     │              Programmer Faces                 │
                     │                                               │
                     │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Bel        │
-                    │  Seq  Inf  Wav  Ten                           │
+                    │  Seq  Inf  Wav  Ten  Tok                      │
                     │  .bt .rs .tri .arc .geo .dif .sym .bel        │
-                    │  .seq .inf .wav .ten                          │
+                    │  .seq .inf .wav .ten .tok                     │
                     └──────────────────┬───────────────────────────┘
                                        │
                     ┌──────────────────▼───────────────────────────┐
@@ -172,8 +174,8 @@ see [[cyb/languages]] for the completeness argument, value tower, algebra covera
      │  (Binary)     │ │    (Byte+Field)     │ │    (no proof)      │
      └───────────────┘ └─────────────────────┘ └────────────────────┘
           Bt              Rs, Tri, Ren            Arc, Seq, Inf,
-                                                  Wav, Ten, Dif*,
-                                                  Sym*, Bel*
+                                                  Wav, Ten, Tok,
+                                                  Dif*, Sym*, Bel*
 ```
 
 \* Dif, Sym, Bel are research horizon — proof paths are open mathematical problems.
@@ -192,8 +194,9 @@ see [[cyb/languages]] for the completeness argument, value tower, algebra covera
 | Inf     | derivation trace → stark         | Datalog engine                |
 | Wav     | decomposes into Tri              | native DSP pipeline           |
 | Ten     | decomposes into Tri              | native BLAS / GPU             |
+| Tok     | conservation constraints → stark | native ledger engine          |
 
-see [[cyb/multiproof]] for how all thirteen languages settle under one proving umbrella via [[Hemera]] and Tri.
+see [[cyb/multiproof]] for how all fourteen languages settle under one proving umbrella via [[Hemera]] and Tri.
 
 ### 5. Nine Perception Primitives
 
@@ -263,17 +266,17 @@ fork is how structure grows. join is how consensus forms. the same skeleton wear
 
 ### 8. The Comparison Matrix
 
-| Property | Nox | Bt | Rs | Tri | Arc | Ren| Dif | Sym | Bel | Seq | Inf | Wav | Ten |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Universe | Structure | Binary | Byte | Field | Topology | Geometry | Curvature | Dynamics | Belief | Causality | Inference | Continuum | Linear |
-| Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p |
-| Primitive | Cell | Bit | Word | Field | Edge | Multivector | Chart | Phase | Distribution | Event | Relation | Sample | Shape |
-| Reference | structure | wire | location | content | adjacency | grade | curvature | momentum | divergence | succession | entailment | amplitude | index |
-| Free op | Navigate | AND, XOR | Index | Mul, Add | Link | Geometric prod | Christoffel | Flow | KL div | Order | Unify | Convolve | Matmul |
-| Costly op | — | Carry add | Mod div | Bitwise | Spectral | Inverse | Geodesic | Conserve | Fisher | Verify | Fixpoint | FFT | Inverse |
-| Proof | Inherited | Binius | stark | stark | Delegated | Tri | Research | Research | Research | Delegated | Delegated | Delegated | Delegated |
-| Syntax feel | IR | Circuit | Rust | Custom | Query | GA | Manifold | Hamiltonian | Statistical | Temporal | Datalog | DSP | NumPy |
-| Renders as | struct | pixels | text | formula | vector | vector | vector | formula | formula | video | table | sound | component |
+| Property | Nox | Bt | Rs | Tri | Arc | Ren| Dif | Sym | Bel | Seq | Inf | Wav | Ten | Tok |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Universe | Structure | Binary | Byte | Field | Topology | Geometry | Curvature | Dynamics | Belief | Causality | Inference | Continuum | Linear | Resource |
+| Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p | p |
+| Primitive | Cell | Bit | Word | Field | Edge | Multivector | Chart | Phase | Distribution | Event | Relation | Sample | Shape | Token |
+| Reference | structure | wire | location | content | adjacency | grade | curvature | momentum | divergence | succession | entailment | amplitude | index | conservation |
+| Free op | Navigate | AND, XOR | Index | Mul, Add | Link | Geometric prod | Christoffel | Flow | KL div | Order | Unify | Convolve | Matmul | Transfer |
+| Costly op | — | Carry add | Mod div | Bitwise | Spectral | Inverse | Geodesic | Conserve | Fisher | Verify | Fixpoint | FFT | Inverse | Mint |
+| Proof | Inherited | Binius | stark | stark | Delegated | Tri | Research | Research | Research | Delegated | Delegated | Delegated | Delegated | stark |
+| Syntax feel | IR | Circuit | Rust | Custom | Query | GA | Manifold | Hamiltonian | Statistical | Temporal | Datalog | DSP | NumPy | Ledger |
+| Renders as | struct | pixels | text | formula | vector | vector | vector | formula | formula | video | table | sound | component | table |
 
 ---
 
@@ -891,21 +894,22 @@ CybOS core: ~85-125K lines (human-authored, auditable by one person in a month).
 4. [[Arc]] — Graph DSL for [[cybergraph]] programming. Compiles to Trident for proofs, native engine for queries.
 5. [[Seq]] — Temporal logic for consensus rules and scheduling. Three temporal modes built in.
 6. [[Inf]] — Datalog over the cybergraph. Rule-based inference turns explicit links into implicit knowledge.
+7. [[Tok]] — Token conservation language. UTXO constraints compile to stark, native ledger engine for execution.
 
 ### Phase 3 — Specialization (When needed)
 
-7. [[Bt]] — Binary circuits for legacy hash verification and cross-chain bridges.
-8. [[Wav]] — Signal processing. Start as Rs library, promote to language if sensor workloads justify it.
-9. [[Ten]] — Tensor operations. Start as Rs/Tri library, promote if ML inference verification becomes core.
+8. [[Bt]] — Binary circuits for legacy hash verification and cross-chain bridges.
+9. [[Wav]] — Signal processing. Start as Rs library, promote to language if sensor workloads justify it.
+10. [[Ten]] — Tensor operations. Start as Rs/Tri library, promote if ML inference verification becomes core.
 
 ### Phase 4 — Geometry (Research horizon)
 
-10. Ren — Clifford geometric algebra. Engineering-ready, closest to Tri. Completes the Arc → SVG rendering pipeline.
-11. Dif — Differential geometry. Riemannian manifolds over finite fields. Needed for [[tri-kernel]] formalization.
-12. Sym — Symplectic geometry. Hamiltonian mechanics, [[conservation]] laws. Physics simulation.
-13. Bel — Information geometry. Fisher metric on [[probability]] simplices. Self-model for [[superintelligence]].
+11. Ren — Clifford geometric algebra. Engineering-ready, closest to Tri. Completes the Arc → SVG rendering pipeline.
+12. Dif — Differential geometry. Riemannian manifolds over finite fields. Needed for [[tri-kernel]] formalization.
+13. Sym — Symplectic geometry. Hamiltonian mechanics, [[conservation]] laws. Physics simulation.
+14. Bel — Information geometry. Fisher metric on [[probability]] simplices. Self-model for [[superintelligence]].
 
-see [[cyb/languages]] for the algebraic completeness argument. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella.
+see [[cyb/languages]] for the algebraic completeness argument. see [[cyb/multiproof]] for how all fourteen settle under one proving umbrella.
 
 ---
 
@@ -913,7 +917,7 @@ see [[cyb/languages]] for the algebraic completeness argument. see [[cyb/multipr
 
 cyb/os rests on three observations and one boundary.
 
-one. every computational universe has a native type whose algebraic laws define how programs think. forcing computations across universe boundaries creates encoding overhead that scales with complexity. thirteen algebras → thirteen [[cyb/languages]].
+one. every computational universe has a native type whose algebraic laws define how programs think. forcing computations across universe boundaries creates encoding overhead that scales with complexity. fourteen algebras → fourteen [[cyb/languages]].
 
 two. every perceptual channel has a native format whose rendering laws define how humans see. forcing display across format boundaries creates visual noise. nine senses → nine primitives.
 
@@ -939,6 +943,6 @@ Perception:   expand / nest    (drill in / compose)
 Decision:     split / merge    (diverge / converge)
 ```
 
-thirteen languages. nine primitives. ten decisions. three atoms. three times. one fork. one join. one tree. one [[proof]]. one operating system.
+fourteen languages. nine primitives. ten decisions. three atoms. three times. one fork. one join. one tree. one [[proof]]. one operating system.
 
 see [[cyb]], [[cyb/whitepaper]], [[cyb/languages]], [[cyb/multiproof]], [[Rust]], [[cyber]]

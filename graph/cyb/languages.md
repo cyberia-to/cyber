@@ -2,14 +2,14 @@
 tags: cyb, cyber, stark, architecture, article, core
 crystal-type: entity
 crystal-domain: cyber
-alias:: computation languages, language set, thirteen languages
+alias:: computation languages, language set, fourteen languages
 ---
 
 # Languages of [[superintelligence]]
 
 ## The Completeness Argument
 
-The 13 languages are not an arbitrary collection. They are the minimal complete set derivable from asking what modes of computation a mind requires — and applying one test to each candidate: *does this have irreducible primitives that no other language in the set can express?*
+The 14 languages are not an arbitrary collection. They are the minimal complete set derivable from asking what modes of computation a mind requires — and applying one test to each candidate: *does this have irreducible primitives that no other language in the set can express?*
 
 ```
 Boolean reasoning:   AND, OR, NOT over {0,1}      → no other algebra has this
@@ -24,12 +24,13 @@ Causal ordering:     partial order, happened-before → not logic
 Horn clause logic:   unification, backtracking     → not relational algebra
 Convolution/R_q:     negacyclic polynomial mult    → not tensor contraction
 Tensor contraction:  einsum, SpMV, matmul          → not field arithmetic
+Resource conserv.:   mint, burn, Σin=Σout, UTXO    → not any computation algebra
 Combinators:         composition of the above      → not any computation
 ```
 
-Each row passes the test. Remove any one language and there is a class of computation that becomes either impossible or exponentially more expensive to express. Add any plausible new language — say, a probabilistic language, or a concurrent process calculus — and it turns out to reduce to a composition of existing ones via [[Nox]].
+Each row passes the test. Remove any one language and there is a class of computation that becomes either impossible or exponentially more expensive to express. Remove Tok and the remaining thirteen can compute anything — but nothing costs anything, spam is free, [[focus]] has no scarcity, [[karma]] has no meaning. Add any plausible new language — say, a concurrent process calculus or an optimization language — and it turns out to reduce to a composition of existing ones via [[Nox]] (see [[cyber/channel]] for how concurrency reduces to [[Arc]] + [[Seq]] + [[Nox]]).
 
-The 13 are the minimal set that covers all computation a mind requires, where each element is algebraically irreducible with respect to the others.
+The 14 are the minimal set that covers all computation a mind requires, where each element is algebraically irreducible with respect to the others.
 
 ---
 
@@ -52,6 +53,7 @@ Every language has a short name (2-3 letters, used in code and diagrams) and a l
 | [[Inf]] | Infer | [[inference]] | Relation | Horn clauses | Derives facts |
 | [[Wav]] | Wave | Continuum | Poly | Convolution / R_q | Reads [[signal]]s |
 | [[Ten]] | Tensor | Linear | Tensor | Contraction | Trains models |
+| [[Tok]] | Token | Resource | [[UTXO]] | Conservation | Prices computation |
 
 Plus one emergent layer above all:
 
@@ -59,13 +61,13 @@ Plus one emergent layer above all:
 |---|---|---|
 | Semantic | Neural | Meaning as eigenvector of the [[cybergraph]] |
 
-Neural is not designed — it grows from the interaction of the thirteen languages at scale.
+Neural is not designed — it grows from the interaction of the fourteen languages at scale.
 
 ---
 
 ## The Value Tower — Three Modes of Reference
 
-Byte (Rs) and Field (Tri) share the same mathematical substrate — the [[Goldilocks field processor]] F_p where p = 2⁶⁴ − 2³² + 1. this substrate provides three atom types sufficient for eleven of the thirteen universes.
+Byte (Rs) and Field (Tri) share the same mathematical substrate — the [[Goldilocks field processor]] F_p where p = 2⁶⁴ − 2³² + 1. this substrate provides three atom types sufficient for twelve of the fourteen universes.
 
 | Tag | Name | Representation | Valid Range | Use |
 |---|---|---|---|---|
@@ -101,7 +103,7 @@ three atoms are complete — for one characteristic. the single exception is Bt 
 
 ```
 Nox value tower (3 atoms: field, word, hash)
-  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Bel, Seq, Inf, Wav, Ten
+  sufficient for: Rs, Tri, Arc, Ren, Dif, Sym, Bel, Seq, Inf, Wav, Ten, Tok
   NOT sufficient for: Bt
 
 Bt value tower (separate, F₂)
@@ -110,7 +112,7 @@ Bt value tower (separate, F₂)
 
 ---
 
-## The Thirteen Languages
+## The Fourteen Languages
 
 each language has its own page with ops tables, use cases, and [[proof]] paths:
 
@@ -129,21 +131,22 @@ each language has its own page with ops tables, use cases, and [[proof]] paths:
 | 10 | Inference | Inf | Infer | Horn clauses | [[Inf]] |
 | 11 | Continuum | Wav | Wave | Convolution / R_q | [[Wav]] |
 | 12 | Linear | Ten | Tensor | Contraction | [[Ten]] |
+| 13 | Resource | Tok | Token | Conservation | [[Tok]] |
 
 ---
 
 ## Compilation Architecture
 
-all thirteen languages share one toolchain. each programmer face has its own syntax and type rules. all compile through [[Nox]] — the structural IR — then to [[proof]] backends or native execution.
+all fourteen languages share one toolchain. each programmer face has its own syntax and type rules. all compile through [[Nox]] — the structural IR — then to [[proof]] backends or native execution.
 
 ```
                     ┌──────────────────────────────────────────────┐
                     │              Programmer Faces                 │
                     │                                               │
                     │  Bt  Rs  Tri  Arc  Ren  Dif  Sym  Bel        │
-                    │  Seq  Inf  Wav  Ten                           │
+                    │  Seq  Inf  Wav  Ten  Tok                      │
                     │  .bt .rs .tri .arc .geo .dif .sym .bel        │
-                    │  .seq .inf .wav .ten                          │
+                    │  .seq .inf .wav .ten .tok                     │
                     └──────────────────┬───────────────────────────┘
                                        │
                     ┌──────────────────▼───────────────────────────┐
@@ -167,8 +170,8 @@ all thirteen languages share one toolchain. each programmer face has its own syn
      │  (Binary)     │ │    (Byte+Field)     │ │    (no proof)      │
      └───────────────┘ └─────────────────────┘ └────────────────────┘
           Bt              Rs, Tri, Ren            Arc, Seq, Inf,
-                                                  Wav, Ten, Dif*,
-                                                  Sym*, Bel*
+                                                  Wav, Ten, Tok,
+                                                  Dif*, Sym*, Bel*
 ```
 
 \* Dif, Sym, Bel are research horizon — [[proof]] paths are open mathematical problems.
@@ -187,6 +190,7 @@ all thirteen languages share one toolchain. each programmer face has its own syn
 | Inf | derivation trace → stark | [[Datalog]] engine |
 | Wav | decomposes into Tri | native DSP pipeline |
 | Ten | decomposes into Tri | native BLAS / GPU |
+| Tok | conservation constraints → stark | native ledger engine |
 
 ### Languages as Type Systems over Nox Patterns
 
@@ -206,14 +210,14 @@ the chain: source language → compiler → nox pattern tree → jet recognition
 
 ### Rune — the Orchestration Layer Above
 
-the thirteen languages are proven and bounded. [[rune]] is the dynamic scripting layer above the [[proof]] boundary — it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in an async syntax with first-class [[neural language]] primitives. rune scripts invoke any proven algebra and pipe results across language boundaries. a rune program may call [[Tri]] arithmetic, [[Ten]] inference, [[Wav]] signal processing, and [[Arc]] graph traversal in a single pipeline — each segment independently provable through nox pattern trees, the pipeline itself unprovable by design.
+the fourteen languages are proven and bounded. [[rune]] is the dynamic scripting layer above the [[proof]] boundary — it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in an async syntax with first-class [[neural language]] primitives. rune scripts invoke any proven algebra and pipe results across language boundaries. a rune program may call [[Tri]] arithmetic, [[Ten]] inference, [[Wav]] signal processing, and [[Arc]] graph traversal in a single pipeline — each segment independently provable through nox pattern trees, the pipeline itself unprovable by design.
 
 ```
 neural language             ← meaning emerges from the cybergraph
 ────────────────────────────────────────────────────────────────
 rune                        ← orchestration: dynamic, async, glue
 ────────────────────────────────────────────────────────────────
-13 languages                ← proven computation over nox patterns
+14 languages                ← proven computation over nox patterns
 ```
 
 ---
@@ -237,32 +241,33 @@ rune                        ← orchestration: dynamic, async, glue
 | [[Goldilocks homomorphic encryption]] ciphertexts | R_q = Z_q[X]/(Xⁿ+1) | Wav | Wav → Tri |
 | Symbolic / exact reasoning | Z | Inf | Inf → Tri |
 | Sensing / [[signal]] processing | Convolution / ℝ | Wav | Wav → Tri |
+| Resource conservation / UTXO | Sum invariants | Tok | Tok → Tri |
 
 ---
 
 ## The Comparison Matrix
 
-| Property | Nox | Bt | Rs | Tri | Arc | Ren | Dif | Sym | Bel | Seq | Inf | Wav | Ten |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Universe | Structure | Binary | Byte | [[field]] | [[topology]] | [[geometry]] | Curvature | Dynamics | [[belief]] | Causality | [[inference]] | Continuum | Linear |
-| Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p |
-| Primitive | Cell | Bit | Word | Field | Edge | Multivector | Chart | Phase | Distribution | Event | Relation | Sample | Shape |
-| Reference | structure | wire | location | content | adjacency | grade | curvature | momentum | divergence | succession | entailment | amplitude | index |
-| Free op | Navigate | AND, XOR | Index | Mul, Add | Link | Clifford prod | Christoffel | Flow | KL div | Order | Unify | Convolve | Matmul |
-| Costly op | — | Carry add | Mod div | Bitwise | Spectral | Inverse | Geodesic | Conserve | Fisher | Verify | Fixpoint | FFT | Inverse |
-| [[proof]] | Inherited | Binius | stark | stark | Delegated | Tri | Research | Research | Research | Delegated | Delegated | Delegated | Delegated |
-| Syntax feel | IR | Circuit | [[Rust]] | Custom | Query | GA | Manifold | Hamiltonian | Statistical | Temporal | [[Datalog]] | DSP | NumPy |
-| Renders as | struct | pixels | text | formula | [[vector]] | [[vector]] | [[vector]] | formula | formula | video | table | sound | component |
+| Property | Nox | Bt | Rs | Tri | Arc | Ren | Dif | Sym | Bel | Seq | Inf | Wav | Ten | Tok |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Universe | Structure | Binary | Byte | [[field]] | [[topology]] | [[geometry]] | Curvature | Dynamics | [[belief]] | Causality | [[inference]] | Continuum | Linear | Resource |
+| Char | — | 2 | p | p | — | p | — | — | — | — | — | ≈ℝ | ≈ℝ or p | p |
+| Primitive | Cell | Bit | Word | Field | Edge | Multivector | Chart | Phase | Distribution | Event | Relation | Sample | Shape | Token |
+| Reference | structure | wire | location | content | adjacency | grade | curvature | momentum | divergence | succession | entailment | amplitude | index | conservation |
+| Free op | Navigate | AND, XOR | Index | Mul, Add | Link | Clifford prod | Christoffel | Flow | KL div | Order | Unify | Convolve | Matmul | Transfer |
+| Costly op | — | Carry add | Mod div | Bitwise | Spectral | Inverse | Geodesic | Conserve | Fisher | Verify | Fixpoint | FFT | Inverse | Mint |
+| [[proof]] | Inherited | Binius | stark | stark | Delegated | Tri | Research | Research | Research | Delegated | Delegated | Delegated | Delegated | stark |
+| Syntax feel | IR | Circuit | [[Rust]] | Custom | Query | GA | Manifold | Hamiltonian | Statistical | Temporal | [[Datalog]] | DSP | NumPy | Ledger |
+| Renders as | struct | pixels | text | formula | [[vector]] | [[vector]] | [[vector]] | formula | formula | video | table | sound | component | table |
 
 ---
 
-## The Nine and the Four
+## The Ten and the Four
 
-The thirteen languages split into two groups by implementation readiness:
+The fourteen languages split into two groups by implementation readiness:
 
-### Engineering-ready (9)
+### Engineering-ready (10)
 
-Nox, Bt, Rs, Tri, Arc, Seq, Inf, Wav, Ten — these have known [[proof]] paths and well-understood compilation to Tri / Binius. the [[cyb/architecture]] specifies these as the build order: Phase 1 (Nox, Tri, Rs), Phase 2 (Arc, Seq, Inf), Phase 3 (Bt, Wav, Ten).
+Nox, Bt, Rs, Tri, Arc, Seq, Inf, Wav, Ten, Tok — these have known [[proof]] paths and well-understood compilation to Tri / Binius. the [[cyb/architecture]] specifies these as the build order: Phase 1 (Nox, Tri, Rs), Phase 2 (Arc, Seq, Inf, Tok), Phase 3 (Bt, Wav, Ten).
 
 ### Research horizon (4)
 
@@ -298,10 +303,11 @@ every computation language has a canonical rendering — the perception primitiv
 | Inf → table | 2D grid | CSV, TSV, dataframes | datasets, time series, matrices, ledgers |
 | Wav → sound | audio waveform | WAV, OGG, MP3 | voice, music, birdsong, seismic [[signal]], sonar |
 | Ten → component | nested composition | composition of the above | applications, dashboards, interactive tools |
+| [[Tok]] → table | ledger view | balances, UTXOs, transactions | token flows, staking positions, conviction history |
 
 a genome sequence is Rs (byte-level encoding) rendered as text. its annotation is [[Nox]] (structured tree) rendered as struct. its expression data is Inf (relational query) rendered as table. its protein structure is Arc (topological [[graph]]) rendered as [[vector]]. its microscopy is Bt (binary pixel data) rendered as pixels. its folding dynamics is Seq (causal event chain) rendered as video. its sequencing [[signal]] is Wav (continuous waveform) rendered as sound. its binding energy is Tri (field arithmetic) rendered as formula. its 3D fold is Ren (Clifford rotations) rendered as [[vector]]. a genome browser is Ten (composed [[inference]]) rendered as component.
 
-all thirteen compile through one structural IR. all thirteen share one [[proof]] system (except Bt, which has its own F₂ [[proof]] system). all thirteen render through the perception grid. all thirteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3.
+all fourteen compile through one structural IR. all fourteen share one [[proof]] system (except Bt, which has its own F₂ [[proof]] system). all fourteen render through the perception grid. all fourteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3.
 
 ---
 

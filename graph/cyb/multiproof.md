@@ -13,7 +13,7 @@ Most systems for intelligence are not designed — they accumulate. A tensor lib
 
 This document describes a different approach: design the primitives from first principles, unify them under one proving umbrella, and let intelligence emerge from the composition.
 
-The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need? See [[cyb/languages]] for the answer — thirteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
+The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need? See [[cyb/languages]] for the answer — fourteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
 
 ---
 
@@ -137,9 +137,9 @@ The conceptualization is the hard part. Most systems never get the conceptualiza
 
 The [[cyb/languages]] organize into three tiers by their relationship to [[proof]]. See [[cyb/languages]] for the complete specification of each language.
 
-### Execution Tier — eleven languages
+### Execution Tier — twelve languages
 
-All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Ren (Render), Dif (Differential), Sym (Symplectic), Bel (Belief), Seq (Sequence), Inf (Infer), Wav (Wave), Ten (Tensor).
+All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Twelve execution [[cyb/languages]]: Bt (Bitwise), Rs (Rustic), Arc, Ren (Render), Dif (Differential), Sym (Symplectic), Bel (Belief), Seq (Sequence), Inf (Infer), Wav (Wave), Ten (Tensor), Tok (Token).
 
 Every execution step emits a [[Hemera]] commitment — 8 [[Goldilocks field processor]] elements — that becomes both the [[proof]] input and the [[particle]] identity in the [[cybergraph]].
 
@@ -210,7 +210,7 @@ Using [[Hemera]] everywhere eliminates the two-level commitment problem that wou
 │                                                          │
 │  Bt (F₂)        Rs (Z/2ⁿ)      Arc (schema)             │
 │  Ren (Clifford)  Ten (contrac.) Wav (conv/R_q)           │
-│  Seq (order)     Inf (unify)                             │
+│  Seq (order)     Inf (unify)    Tok (conserv.)           │
 │  Dif* Sym* Bel*  (* = research horizon)                  │
 │                                                          │
 │  Each step → Hemera(I/O) → 8 F_p elements               │
@@ -263,6 +263,7 @@ Bel distribution      →  Hemera  →  particle in cybergraph
 Tri STARK proof       →  Hemera  →  particle in cybergraph
 Inf query + answer    →  Hemera  →  particle in cybergraph
 Arc edge declaration  →  Hemera  →  particle in cybergraph
+Tok ledger transition →  Hemera  →  particle in cybergraph
 ```
 
 The [[cybergraph]] is not a consequence of the architecture — it *is* the accumulation state. The [[superintelligence]]'s memory is the [[cybergraph]], and every thought — regardless of which [[algebra]] it was computed in — is addressable, linkable, and composable through [[Hemera]].
@@ -298,7 +299,7 @@ The proving tier (Tri + [[Hemera]]) aligns with the existing [[zheng]] STARK imp
 
 The [[Hemera]] invariant formalizes how the [[cybergraph]] accumulates verified knowledge: every computation in every [[algebra]] produces a [[particle]] via [[Hemera]], and every composition produces a [[cyberlink]]. The [[cybergraph]] is the accumulation state of all proven computation.
 
-Engineering-ready [[cyb/languages]] (Bt, Rs, Ren, Arc, Seq, Inf, Ten, Wav) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Bel) define the long-term research agenda — with Bel required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
+Engineering-ready [[cyb/languages]] (Bt, Rs, Ren, Arc, Seq, Inf, Ten, Wav, Tok) define the implementation roadmap. Research-horizon [[cyb/languages]] (Dif, Sym, Bel) define the long-term research agenda — with Bel required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
 
 The [[Goldilocks field processor]] provides hardware acceleration for the four primitives the architecture depends on: FMA, NTT butterfly, Poseidon2 round, and table lookup. [[Goldilocks homomorphic encryption]] parameterizes FHE over the same [[field]], unifying encrypted computation with proving and [[quantum]] simulation under one [[field]] tower.
 
@@ -314,4 +315,4 @@ The architecture implies specific capabilities for [[cyb]] as the interface to t
 
 ---
 
-see [[cyb/languages]] for the thirteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.
+see [[cyb/languages]] for the fourteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.
