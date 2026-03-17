@@ -191,14 +191,14 @@ a data type deserves its own language when its algebraic laws are so different f
 | universe | short | long | type | algebra | purpose |
 |----------|-------|------|------|---------|---------|
 | Structure | [[Nox]] | Nox | Tree | Combinators | Composition |
-| Binary | Bt | Bitwise | Bit | $\mathbb{F}_2$ tower | Circuits |
-| Byte | Rs | Rustic | Word | Bitwise on $\mathbb{F}_p$ | Systems |
-| Field | Tri | [[Trident]] | Field | Arithmetic on $\mathbb{F}_p$ | Proofs |
+| Binary | [[Bt]] | Bitwise | Bit | $\mathbb{F}_2$ tower | Circuits |
+| Byte | [[Rs]] | Rustic | Word | Bitwise on $\mathbb{F}_p$ | Systems |
+| Field | [[Tri]] | [[Trident]] | Field | Arithmetic on $\mathbb{F}_p$ | Proofs |
 | Topology | [[Arc]] | Arc | Graph | Adjacency | Knowledge |
-| Geometry | Ren | Render | Shape | G(p,q,r) | Space |
-| Curvature | Dif | Differential | Manifold | (M, g) | Meaning |
-| Dynamics | Sym | Symplectic | Phase | (M, ω), dω = 0 | Physics |
-| Belief | Bel | Belief | Distribution | g on Δⁿ | Self-model |
+| Geometry | [[Ren]] | Render | Shape | G(p,q,r) | Space |
+| Curvature | [[Dif]] | Differential | Manifold | (M, g) | Meaning |
+| Dynamics | [[Sym]] | Symplectic | Phase | (M, ω), dω = 0 | Physics |
+| Belief | [[Bel]] | Belief | Distribution | g on Δⁿ | Self-model |
 | Causality | [[Seq]] | Sequence | Event | Partial order | Ordering |
 | Inference | [[Inf]] | Infer | Relation | Unification | Reasoning |
 | Continuum | [[Wav]] | Wave | Signal | Convolution | Sensing |

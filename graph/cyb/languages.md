@@ -39,19 +39,19 @@ Every language has a short name (2-3 letters, used in code and diagrams) and a l
 
 | Short | Long | Universe | Type | [[algebra]] | Purpose |
 |---|---|---|---|---|---|
-| [[Nox]] | Nox | Structure | Tree | Combinators | Composes languages |
-| Bt | Bitwise | Binary | Bit | F₂ tower | Proves circuits |
-| Rs | Rustic | Byte | Word | Z/2ⁿ | Runs systems |
-| Tri | [[Trident]] | [[field]] | Field tower | F_{pⁿ} | Settles [[proof]]s |
-| Arc | Arc | [[topology]] | [[graph]] | [[category theory]] | Stores knowledge |
-| Ren | Render | [[geometry]] | Shape | G(p,q,r) | Renders space |
-| Dif | Differential | Curvature | Manifold | (M, g) | Embeds meaning |
-| Sym | Symplectic | Dynamics | Phase | (M, ω), dω = 0 | Simulates physics |
-| Bel | Belief | [[belief]] | Distribution | g on Δⁿ | Models self |
-| Seq | Sequence | Causality | Event | Partial order | Orders events |
-| Inf | Infer | [[inference]] | Relation | Horn clauses | Derives facts |
-| Wav | Wave | Continuum | Poly | Convolution / R_q | Reads [[signal]]s |
-| Ten | Tensor | Linear | Tensor | Contraction | Trains models |
+| [[Nox]] | Nox | Structure | Tree | Combinators | Composes [[cyb/languages]] |
+| [[Bt]] | Bitwise | Binary | Bit | F₂ tower | Proves circuits |
+| [[Rs]] | Rustic | Byte | Word | Z/2ⁿ | Runs systems |
+| [[Tri]] | [[Trident]] | [[field]] | Field tower | F_{pⁿ} | Settles [[proof]]s |
+| [[Arc]] | Arc | [[topology]] | [[graph]] | [[category theory]] | Stores [[knowledge graph]] |
+| [[Ren]] | Render | [[geometry]] | Shape | G(p,q,r) | Renders space |
+| [[Dif]] | Differential | Curvature | Manifold | (M, g) | Embeds meaning |
+| [[Sym]] | Symplectic | Dynamics | Phase | (M, ω), dω = 0 | Simulates physics |
+| [[Bel]] | Belief | [[belief]] | Distribution | g on Δⁿ | Models self |
+| [[Seq]] | Sequence | Causality | Event | Partial order | Orders events |
+| [[Inf]] | Infer | [[inference]] | Relation | Horn clauses | Derives facts |
+| [[Wav]] | Wave | Continuum | Poly | Convolution / R_q | Reads [[signal]]s |
+| [[Ten]] | Tensor | Linear | Tensor | Contraction | Trains models |
 
 Plus one emergent layer above all:
 
