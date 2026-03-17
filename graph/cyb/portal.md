@@ -1,22 +1,43 @@
 ---
-tags: cyb
+tags: aip, cyb, prysm
 crystal-type: entity
 crystal-domain: cyber
-stake: 15277756470843484
+stake: 17230497352242240
 ---
-currently portal is useless for returning users and do not offer ability to create avatar second time
+the onboarding [[aip]] in [[cyb]]
 
-[[cyb/avatar/create]] is very powerful feature which affects semantic organization and app development capabilities
+cell in [[prysm]]
 
-rearrangement of logic based on mostly existing current state
+current state on [[cyb/portal]]
 
-- main for new user: display entrance and flow from citizenship page (steps from registration)
-- main for returning user: display passport and gift status. must be the same as for returning user
-- main must
-- citizenship for new user: flow for avatar creation
-- citizenship for returning user: display of passport
-- gift for new user: display step 1
-- gift for returning users: display step 1, but must display step 0
-- map leaves unchanged
+where new [[neurons]] enter the [[cyber]] network
 
-after this changes we could have very different dynamic in demand for naming
+guides through [[avatar]] creation, [[$CYB]] acquisition, and first [[cyberlinks]]
+
+pages
+
+- [[main]]: [[buy energy]]
+- [[create avatar]]
+- [[map]]
+- TODO [[invite]]
+- [[gift]]
+
+[[actions]]
+
+- [[buy energy]]
+- [[cyb/portal/my spells/api]]
+- [[cyb/portal/my avatars/api]]
+- [[cybergraph/neuron/api]]
+
+[[cyb/features]]
+
+- [[robot/trainer]]
+- [[robot/spells]]
+- [[robot/energy]]
+- [[robot/avatars]]
+- [[robot/neurons]]
+- [[robot/psycho]]
+- [[robot/soul]]
+- [[robot/passport]]
+- [[robot/karma]]
+- [[robot/levels]]

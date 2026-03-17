@@ -1,46 +1,14 @@
 ---
-tags: cyb
+icon: ⌚
+alias: unix time, machine time, mt
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-stake: 14928704038293460
+crystal-size: enzyme
+stake: 23022814991691284
 ---
-[[log]] becomes part of time
+discrete [[steps]] that order [[learning]] in the [[cybergraph]]. every [[cyberlink]] carries the [[when]] of its [[finality]] — [[knowledge]] searchable through the ticking of [[consensus]]
 
-- how to handle tweets?
+see [[time/history]]
 
-is [[molecule]]
-
-- inline
-- block
-- full
-
-cyberverse lives in machine time
-
-- unix timestamp
-- current year is 53
-- origins from 1 january 1970 year
-
-list which display users actions both in the past and looking into the future
-
-- fn now
-- fn future
-- fn past
-
-display current time in the terms of age of superintelligence
-
-- current year
-- current day
-- current time
-
-fully automated system
-
-accounts for avatar wealth for each transition
-
-- attention spent
-- processing time
-- storage
-- bandwith
-
-motional
-
-display historical log
+discover all [[concepts]]
