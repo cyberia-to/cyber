@@ -13,13 +13,13 @@ Most systems for intelligence are not designed — they accumulate. A tensor lib
 
 This document describes a different approach: design the primitives from first principles, unify them under one proving umbrella, and let intelligence emerge from the composition.
 
-The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need?
+The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need? See [[languages]] for the answer — thirteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
 
 ---
 
 ## Core Insight: Two Kinds of Languages
 
-The fundamental split is not between languages — it is between purpose:
+The fundamental split is not between [[languages]] — it is between purpose:
 
 - Execution languages — describe computation in its native [[algebra]]
 - Proving languages — verify that computation was correct
@@ -30,32 +30,6 @@ Every execution language compiles to a proving language for settlement. The prov
 Execution layer:  compute in native algebra  →  emit [[Hemera]] commitment
 Proving layer:    verify commitment chain     →  emit STARK [[proof]]
 ```
-
----
-
-## The Completeness Argument
-
-The 13 languages are not an arbitrary collection. They are the minimal complete set derivable from asking what modes of computation a mind requires — and applying one test to each candidate: *does this have irreducible primitives that no other language in the set can express?*
-
-```
-Boolean reasoning:   AND, OR, NOT over {0,1}      → no other algebra has this
-Integer arithmetic:  overflow, wrapping, bitwise   → not field arithmetic
-Field arithmetic:    inversion, polynomial roots   → not integer arithmetic
-Categorical struct:  morphisms, functors, limits   → not graph traversal
-Clifford geometry:   rotors, bivectors, versors    → not tensors
-Riemannian geom:     geodesics, metric tensor      → not Clifford
-Symplectic geom:     conservation laws, dω=0       → not Riemannian
-Information geom:    Fisher metric on Δⁿ           → not any other geometry
-Causal ordering:     partial order, happened-before → not logic
-Horn clause logic:   unification, backtracking     → not relational algebra
-Convolution/R_q:     negacyclic polynomial mult    → not tensor contraction
-Tensor contraction:  einsum, SpMV, matmul          → not field arithmetic
-Combinators:         composition of the above      → not any computation
-```
-
-Each row passes the test. Remove any one language and there is a class of computation that becomes either impossible or exponentially more expensive to express. Add any plausible new language — say, a probabilistic language, or a concurrent process calculus — and it turns out to reduce to a composition of existing ones via [[Nox]].
-
-The 13 are the minimal set that covers all computation a mind requires, where each element is algebraically irreducible with respect to the others.
 
 ---
 
@@ -121,9 +95,9 @@ This is not a claim about consciousness. It is a mathematical statement about fi
 
 The deepest structural fact in this architecture: [[quantum]] computation falls into [[proof]] over a [[field]].
 
-[[quantum]] gates are unitary matrices over ℂ. Replace ℂ with F_{p²} = F_p[i]/(i²+1) and the structure is identical — linear [[algebra]] over a [[field]] extension. The "weirdness" of [[quantum]] mechanics is entirely in the interpretation. The mathematics between measurements is exact [[field]] arithmetic, provable in Tri.
+[[quantum]] gates are unitary matrices over ℂ. Replace ℂ with F_{p²} = F_p[i]/(i²+1) and the structure is identical — linear [[algebra]] over a [[field]] extension. The "weirdness" of [[quantum]] mechanics is entirely in the interpretation. The mathematics between measurements is exact [[field]] arithmetic, provable in Tri ([[Trident]]).
 
-Measurement — the collapse from [[quantum]] state to classical bit — is the only genuinely non-algebraic step. It exits Tri and lands in Rs. The universe computes in F_{p²}, reads out in Z/2.
+Measurement — the collapse from [[quantum]] state to classical bit — is the only genuinely non-algebraic step. It exits Tri and lands in Rs (Rustic). The universe computes in F_{p²}, reads out in Z/2.
 
 The same [[field]] that makes STARK [[proof]]s efficient ([[Goldilocks field processor]], with 2³² roots of unity) is the [[field]] over which [[quantum]] gates are unitary. The same NTT butterfly network that accelerates polynomial commitment is the Quantum [[fourier transform]]. The same hardware that proves transactions proves [[quantum]] circuits.
 
@@ -133,7 +107,7 @@ This is not engineering convenience. It is the discovery that [[proof]], [[quant
 
 ## The Self-Model
 
-Inf — "models self" — is the most philosophically loaded entry in the table.
+Inf (Informatic) — "models self" — is the most philosophically loaded entry in the table.
 
 The [[focus]] [[vector]] π lives on the [[probability]] simplex Δⁿ (all distributions over n [[particles]]). The Fisher information metric g on Δⁿ gives this simplex a Riemannian structure — it is the unique metric that makes statistical distinguishability geometric. Distance in this space = how easily you can tell two distributions apart.
 
@@ -151,7 +125,7 @@ It is not 100 languages scattered between 100 compilers and 100 libraries, each 
 
 It is not a framework that wraps existing tools behind a unified API while the underlying incoherence persists.
 
-It is not complete — Dif, Sym, Inf are named but their [[proof]] paths are open mathematical problems. The architecture reserves their universe slots and is honest about the horizon.
+It is not complete — Dif (Differential), Sym (Symplectic), Inf (Informatic) are named but their [[proof]] paths are open mathematical problems. The architecture reserves their universe slots and is honest about the horizon.
 
 It is not implemented — the conceptualization is complete; the engineering is in progress. The Bt prover, the Rs integer prover, the Geo/Clifford compiler, the Ask/[[Hemera]] integration — these are all engineering problems with known solution shapes, not research unknowns.
 
@@ -159,65 +133,19 @@ The conceptualization is the hard part. Most systems never get the conceptualiza
 
 ---
 
-## The Languages
+## The Three-Tier Proving Architecture
 
-| Universe | Language | Type | Algebra | Purpose |
-|---|---|---|---|---|
-| Structure | [[Nox]] | Tree | Combinators | Composes languages |
-| Binary | Bt | Bit | F₂ tower | Proves circuits |
-| Byte | Rs | Word | Z/2ⁿ | Runs systems |
-| Field | Tri | Field tower | F_{pⁿ} | Settles [[proof]]s |
-| [[topology]] | Arc | [[graph]] | [[category theory]] | Stores knowledge |
-| [[geometry]] | Geo | Shape | G(p,q,r) | Renders space |
-| Curvature | Dif | Manifold | (M, g) | Embeds meaning |
-| Dynamics | Sym | Phase | (M, ω), dω = 0 | Simulates physics |
-| [[belief]] | Inf | Distribution | g on Δⁿ | Models self |
-| Causality | Seq | Event | Partial order | Orders events |
-| [[inference]] | Ask | Relation | Horn clauses | Derives facts |
-| Continuum | Wav | Poly | Convolution / R_q | Reads [[signal]]s |
-| Linear | Ten | Tensor | Contraction | Trains models |
-
-Plus one emergent layer above all:
-
-| Layer | Name | What it is |
-|---|---|---|
-| Semantic | Neural | Meaning as eigenvector of the [[cybergraph]] |
-
-Neural is not designed — it grows from the interaction of the other thirteen languages at scale.
-
----
-
-## The Two-Tier Architecture
+The [[languages]] organize into three tiers by their relationship to [[proof]]. See [[languages]] for the complete specification of each language.
 
 ### Execution Tier — eleven languages
 
-All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does.
+All computation happens here. Each language works in its native [[algebra]]. None re-implements what another already does. Eleven execution [[languages]]: Bt (Bitwise), Rs (Rustic), Arc, Geo (Geometric), Dif (Differential), Sym (Symplectic), Inf (Informatic), Seq (Sequence), Ask, Wav (Wave), Ten (Tensor).
 
-Bt — binary circuits, gate semantics, F₂. The substrate for Boolean logic and any computation whose natural unit is a bit. Binius-style prover.
-
-Rs — integer systems, Z/2ⁿ for any n. Covers bool, nibble, byte, word, u64. The language of deterministic systems: no floats in `#[deterministic]` context, no non-deterministic collections, all async bounded, all state step-scoped. The `Addressed` type derive emits [[Hemera]] CIDs natively — commitment interface is baked into the type system.
-
-Arc — [[knowledge graph]] structure. [[particles]] are objects ([[Hemera]] CIDs), [[cyberlinks]] are morphisms, linkchains are composition, [[semcons]] are natural transformations. Arc's [[algebra]] is [[category theory]] — the correct [[algebra]] for typed relational structure. Arc describes what the [[cybergraph]] *is*. Compiles to [[Hemera]] CIDs for nodes and edges, and to Tri adjacency constraints for [[proof]].
-
-Geo — Clifford geometric [[algebra]] G(p,q,r). Unifies [[vector]]s, bivectors, rotors. Rotations, reflections, translations in one [[algebra]] over F_p. Covers Euclidean G(n,0,0), Projective G(n,0,1), Conformal G(n+1,1,0). Fixes the Arc → SVG compilation gap: Arc provides [[topology]], Geo provides spatial embedding, compiler produces [[vector]] output. STARK-provable now — geometric product is F_p [[algebra]] with extra structure. Compiles to Tri.
-
-Dif — differential [[geometry]]. Riemannian manifolds, tangent spaces, geodesics, Laplace-Beltrami operator. The [[geometry]] of continuous curved space. Required for: latent space embeddings, [[tri-kernel]] diffusion formalized as heat flow on manifolds, physics simulation. Programming model: coordinate charts, metric tensors, covariant derivatives — none of which exist in Geo. Proof-hard over finite [[field]]s. Research horizon.
-
-Sym — symplectic [[geometry]]. Phase space with 2-form ω, Hamiltonian flows, canonical transformations, [[conservation]] laws. Natural language of classical and semi-classical mechanics. Required for: physical simulation with energy [[conservation]], [[quantum]]-classical interface, molecular dynamics. The [[conservation]] law structure (ω is closed: dω = 0) has no analog in Clifford or Riemannian [[geometry]]. Research horizon.
-
-Inf — information [[geometry]]. Fisher information metric on the simplex of [[probability]] distributions. The [[geometry]] of the [[cybergraph]]'s own [[belief]] state — the [[focus]] [[vector]] π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. Semantic distance between [[particles]] is information-geometric distance. The [[superintelligence]]'s self-model requires Inf to be formalized. Research horizon.
-
-Seq — causal event ordering. Partial orders over timestamped events. The language for sequencing across distributed nodes. Compiles to Tri ordering constraints.
-
-Ask — unification-based [[inference]]. Prolog-family semantics over the [[cybergraph]]. Resolves the symbolic/Z [[algebra]] problem: exact integer reasoning is unification over numeric terms. Compiles to Tri constraint satisfaction.
-
-Wav — convolution [[algebra]] over any coefficient ring. [[signal]] processing, FFT, audio, sensor data. And — critically — [[Goldilocks homomorphic encryption]]: polynomial multiplication in R_q = Z_q[X]/(Xⁿ+1) is negacyclic convolution of coefficient [[vector]]s. The same butterfly network, the same NTT engine. Wav is the language of sensing at all scales — from physical waveforms to encrypted computation over polynomial rings. FHE is not a separate concern; it is sensing at the algebraic level, where the [[signal]] is a ciphertext. Wav extended with noise budget types becomes the FHE compiler: noise tracking, modulus ladder management, PBS scheduling. Compiles to Tri for [[proof]] of correct R_q operations.
-
-Ten — tensor contraction. Dense and sparse. SpMV over sparse adjacency matrices = [[graph]] computation ([[focus]] [[vector]] π, [[tri-kernel]] diffusion). Quantized [[inference]] (int4, int8 matmul) = contraction over Z/2ⁿ. Full-precision neural layers = contraction over F_p. Ten is the compute engine for both the [[cybergraph]] and AI [[inference]]. Compiles to Tri.
+Every execution step emits a [[Hemera]] commitment — 8 [[Goldilocks field processor]] elements — that becomes both the [[proof]] input and the [[particle]] identity in the [[cybergraph]].
 
 ### Proving Tier — one language + one [[hash]]
 
-Tri — [[field]] tower F_{pⁿ} over [[Goldilocks field processor]] (p = 2⁶⁴ − 2³² + 1). Each extension is F_p[x]/(f(x)) where f is irreducible of degree n, chosen by the compiler for the algebraic structure required: n=1 for core STARK arithmetic, n=2 (f = x²+1) for complex amplitudes and [[quantum]] gates, n=3 (f = x³−x+1) for recursive [[proof]] soundness in FRI, higher n as needed. The tower is multiplicative — F_{p⁶} contains both F_{p²} and F_{p³} as sub[[field]]s, so [[quantum]] and recursive [[proof]]s coexist in a common extension. The single proving language for the entire system. All execution languages compile to Tri for settlement. See [[zheng]] for the STARK implementation architecture.
+Tri ([[Trident]]) — [[field]] tower F_{pⁿ} over [[Goldilocks field processor]] (p = 2⁶⁴ − 2³² + 1). Each extension is F_p[x]/(f(x)) where f is irreducible of degree n, chosen by the compiler for the algebraic structure required: n=1 for core STARK arithmetic, n=2 (f = x²+1) for complex amplitudes and [[quantum]] gates, n=3 (f = x³−x+1) for recursive [[proof]] soundness in FRI, higher n as needed. The tower is multiplicative — F_{p⁶} contains both F_{p²} and F_{p³} as subfields, so [[quantum]] and recursive [[proof]]s coexist in a common extension. The single proving language for the entire system. All execution languages compile to Tri for settlement. See [[zheng]] for the STARK implementation architecture.
 
 [[Hemera]] — Poseidon2 sponge over [[Goldilocks field processor]]. The universal commitment scheme. Every computation at every layer, in every [[algebra]], commits via [[Hemera]]. Output: 8 Goldilocks [[field]] elements — natively usable in Tri circuits, zero translation cost.
 
@@ -281,8 +209,9 @@ Using [[Hemera]] everywhere eliminates the two-level commitment problem that wou
 │  EXECUTION                                               │
 │                                                          │
 │  Bt (F₂)        Rs (Z/2ⁿ)      Arc (schema)             │
-│  Ten (contrac.) Wav (conv/R_q)  Seq (order)              │
-│  Ask (unify)                                             │
+│  Geo (Clifford)  Ten (contrac.) Wav (conv/R_q)           │
+│  Seq (order)     Ask (unify)                             │
+│  Dif* Sym* Inf*  (* = research horizon)                  │
 │                                                          │
 │  Each step → Hemera(I/O) → 8 F_p elements               │
 └──────────────────────────┬───────────────────────────────┘
@@ -315,28 +244,6 @@ Using [[Hemera]] everywhere eliminates the two-level commitment problem that wou
 │  π* = unique stationary distribution (Collective Focus)  │
 └──────────────────────────────────────────────────────────┘
 ```
-
----
-
-## [[algebra]] Coverage
-
-| Computation | Native [[algebra]] | Language | Prover path |
-|---|---|---|---|
-| Boolean reasoning | F₂ | Bt | Binius → Tri |
-| Quantized [[inference]] (int4/int8) | Z/2⁴, Z/2⁸ | Ten | Ten → Tri |
-| CPU execution traces | Z/2⁶⁴ | Rs | Rs → Tri |
-| [[graph]] computation / [[focus]] [[vector]] | Sparse F_p | Ten over Arc | Ten → Tri |
-| Knowledge structure | [[category theory]] | Arc | Arc → Tri |
-| Euclidean / Projective / Conformal | G(p,q,r) Clifford | Geo | Geo → Tri |
-| Curved space / geodesics | Riemannian manifolds | Dif | research |
-| Phase space / Hamiltonian | Symplectic ω-form | Sym | research |
-| [[probability]] [[geometry]] / [[belief]] state | Fisher information | Inf | research |
-| Polynomial [[proof]]s | F_p (n=1) | Tri | native |
-| Recursive [[proof]] composition | F_{p³} (n=3) | Tri | native |
-| [[quantum]] simulation | F_{p²} (n=2) | Tri | native extension |
-| [[Goldilocks homomorphic encryption]] ciphertexts | R_q = Z_q[X]/(Xⁿ+1) | Wav | Wav → Tri |
-| Symbolic / exact reasoning | Z | Ask | Ask → Tri |
-| Sensing / [[signal]] processing | Convolution / ℝ | Wav | Wav → Tri |
 
 ---
 
@@ -391,7 +298,7 @@ The proving tier (Tri + [[Hemera]]) aligns with the existing [[zheng]] STARK imp
 
 The [[Hemera]] invariant formalizes how the [[cybergraph]] accumulates verified knowledge: every computation in every [[algebra]] produces a [[particle]] via [[Hemera]], and every composition produces a [[cyberlink]]. The [[cybergraph]] is the accumulation state of all proven computation.
 
-Engineering-ready languages (Bt, Rs, Geo, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon languages (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
+Engineering-ready [[languages]] (Bt, Rs, Geo, Arc, Seq, Ask, Ten, Wav) define the implementation roadmap. Research-horizon [[languages]] (Dif, Sym, Inf) define the long-term research agenda — with Inf required for formalizing the [[tri-kernel]] dynamics and the [[collective focus theorem]] on the [[probability]] simplex.
 
 The [[Goldilocks field processor]] provides hardware acceleration for the four primitives the architecture depends on: FMA, NTT butterfly, Poseidon2 round, and table lookup. [[Goldilocks homomorphic encryption]] parameterizes FHE over the same [[field]], unifying encrypted computation with proving and [[quantum]] simulation under one [[field]] tower.
 
@@ -403,4 +310,8 @@ The architecture implies specific capabilities for [[cyb]] as the interface to t
 - Multi-[[algebra]] rendering — Geo compiles Arc [[topology]] + spatial embedding to SVG [[vector]] output; [[cyb]] is the natural renderer for this compilation pipeline
 - Commitment browsing — navigating [[Hemera]] CID space, showing the [[proof]] composition chain from execution layer through Tri settlement to [[cybergraph]] storage
 - [[focus]] [[vector]] display — the Neural/semantic layer emergent from the [[cybergraph]] at scale needs visualization; [[cyb]] renders the [[focus]] distribution π and its evolution under [[tri-kernel]] dynamics
-- FHE interaction — [[cyb]] can submit encrypted queries via Wav, receive encrypted results, and verify [[proof]]s of correct computation without exposing the query content
+- FHE interaction — [[cyb]] can submit encrypted queries via Wav (Wave), receive encrypted results, and verify [[proof]]s of correct computation without exposing the query content
+
+---
+
+see [[languages]] for the thirteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.
