@@ -13,7 +13,7 @@ stake: 14015797676239542
 
 cyb/os is a stack of typed universes — thirteen computation [[cyb/languages]] compiled through one structural IR, rendered through nine perception primitives, driven by ten decision primitives — all sharing one toolchain, one tree substrate, and one [[proof]] system. see [[cyb/languages]] for the algebraic completeness argument and [[cyb/multiproof]] for the proving design.
 
-core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for dynamic execution, [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
+core stack: [[radio]] for data publishing, [[cyber]] for search and [[learning]], [[rune]] for orchestration (the dynamic scripting layer above the [[proof]] boundary that glues the thirteen computation languages to human intent), [[CozoDB]] graph storage, [[cosmos-sdk]] chains via [[IBC]]. builds for [[web]], [[desktop]], [[mobile]].
 
 ---
 
@@ -183,7 +183,7 @@ see [[cyb/languages]] for the completeness argument, value tower, algebra covera
 | Bt      | Binius FRI circuit               | always proving                |
 | Rs      | TASM → stark (word→field lift)   | native binary (Nox)           |
 | Tri     | TASM → stark (field native)      | WASM/EVM (Layer 0)            |
-| Arc     | decomposes into Tri + Bt         | optimized graph engine        |
+| Arc     | decomposes into Tri              | optimized graph engine        |
 | Ren    | geometric product → Tri          | native Clifford engine        |
 | Dif     | research                         | native manifold solver        |
 | Sym     | research                         | native Hamiltonian integrator |

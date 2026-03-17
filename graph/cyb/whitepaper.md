@@ -17,7 +17,7 @@ the robot is the point of presence — where you end and the [[cybergraph]] begi
 
 ### 1.1 the vision
 
-imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you are gone. that speaks nine computation languages natively, renders them through nine perception primitives, and drives interaction through ten decision primitives. that runs on any hardware, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
+imagine a computer that never needs to reboot. that knows you cryptographically and answers to no one else. that earns while you sleep. that remembers everything you ever found important — and keeps that memory after you are gone. that speaks thirteen computation languages natively, renders them through nine perception primitives, and drives interaction through ten decision primitives. that runs on any hardware, built in 130K lines instead of 35 million. that contributes to collective [[intelligence]] by simply being on
 
 this is not a future product. it is a design decision made at the foundation
 
@@ -43,7 +43,7 @@ this document specifies the architecture of cyb:
 
 - the robot — three forms: neuron, avatar, prog
 - the six primitives — brain, sense, sigma, avatars, time, robot
-- the three grids — computation (9 languages), perception (9 primitives), decision (10 primitives)
+- the three grids — computation (13 languages), perception (9 primitives), decision (10 primitives)
 - the value tower — three atoms, three reference modes
 - the language stack — rune, [[neural language]]
 - the oracle — ask, learn, search
@@ -228,9 +228,9 @@ all thirteen compile through one structural IR ([[Nox]]). all thirteen share one
 
 the thirteen computation [[cyb/languages]] are the object level — what the machine computes. above them sit two meta-layers for working with the graph
 
-### 6.1 rune — the script language
+### 6.1 rune — the orchestration layer
 
-dynamic async scripting language for robot automation. create [[cyberlinks]] on a schedule, monitor particles for changes, pipe inference results into the graph, manage sigma positions, turn human intent into prog behavior. [[Inf]] queries the graph declaratively; rune orchestrates those queries and writes back to the graph
+dynamic async scripting language — the glue between human intent and thirteen proven computation languages. rune sits above the [[proof]] boundary: it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in a dynamic syntax with first-class [[neural language]] primitives. rune scripts are not proven — they orchestrate proven computation, invoking any algebra and piping results across languages. use cases: robot automation, [[cyberlink]] construction on schedule, particle monitoring, inference piping, sigma position management, prog scripting, natural language → graph operations
 
 ### 6.2 neural language — the semantic layer
 
@@ -239,12 +239,12 @@ the language of the [[cybergraph]] itself. meaning is not declared — it emerge
 ### 6.3 the three levels
 
 ```
-computation (9 languages)  ← what the machine COMPUTES
-rune                       ← how you SCRIPT against the graph
-neural language            ← how MEANING emerges from the graph
+computation (13 languages)  ← proven algebras — each a type system over nox patterns
+rune                        ← orchestration glue — dynamic, async, neural-native
+neural language             ← meaning — emerges from the cybergraph at scale
 ```
 
-query is not a separate layer — [[Inf]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the nine languages subsume what was previously split between "content" and "query"
+query is not a separate layer — [[Inf]] is the inference language (§5.7). graph algorithms are native to [[Arc]] (§5.5). the thirteen languages subsume what was previously split between "content" and "query." rune orchestrates them — calling into any proven algebra and composing results across language boundaries
 
 ---
 

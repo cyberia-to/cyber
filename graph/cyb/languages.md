@@ -194,7 +194,7 @@ the [[graph]] language. makes graphs first-class — the primitive is a connecti
 
 the [[cybergraph]] is not a data structure that lives inside a program. the [[cybergraph]] IS the program. every [[cyberlink]] is an `Edge`. every CID is a `Node`. CYBERRANK is `rank()`.
 
-[[particles]] are objects ([[Hemera]] CIDs), [[cyberlinks]] are morphisms, linkchains are composition, [[semcons]] are natural transformations. Arc's [[algebra]] is [[category theory]] — the correct [[algebra]] for typed relational structure. Arc describes what the [[cybergraph]] *is*. compiles to [[Hemera]] CIDs for nodes and edges, and to Tri adjacency constraints for [[proof]]. decomposes into Tri (field ops for matrix math), Bt (hash verification for node identities), and [[Nox]] (tree encoding of [[topology]]).
+[[particles]] are objects ([[Hemera]] CIDs), [[cyberlinks]] are morphisms, linkchains are composition, [[semcons]] are natural transformations. Arc's [[algebra]] is [[category theory]] — the correct [[algebra]] for typed relational structure. Arc describes what the [[cybergraph]] *is*. compiles to [[Hemera]] CIDs for nodes and edges, and to Tri adjacency constraints for [[proof]]. decomposes into Tri (field ops for matrix math, [[Hemera]] hash verification for node identities) and [[Nox]] (tree encoding of [[topology]]).
 
 ### Universe 5 — Ren (Render)
 
@@ -401,6 +401,18 @@ Ren: geometric_product       mul/add over components      geo_mul jet      fma
 ```
 
 the chain: source language → compiler → nox pattern tree → jet recognition → GFP hardware. every domain-specific language gets hardware acceleration through the jet mechanism. the [[algebra]] determines which GFP primitive handles each jet.
+
+### Rune — the Orchestration Layer Above
+
+the thirteen languages are proven and bounded. [[rune]] is the dynamic scripting layer above the [[proof]] boundary — it combines [[Arc]] graph traversal, [[Inf]] queries, and [[Nox]] structural composition in an async syntax with first-class [[neural language]] primitives. rune scripts invoke any proven algebra and pipe results across language boundaries. a rune program may call [[Tri]] arithmetic, [[Ten]] inference, [[Wav]] signal processing, and [[Arc]] graph traversal in a single pipeline — each segment independently provable through nox pattern trees, the pipeline itself unprovable by design.
+
+```
+neural language             ← meaning emerges from the cybergraph
+────────────────────────────────────────────────────────────────
+rune                        ← orchestration: dynamic, async, glue
+────────────────────────────────────────────────────────────────
+13 languages                ← proven computation over nox patterns
+```
 
 ---
 
