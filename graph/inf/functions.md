@@ -174,4 +174,4 @@ used in rule heads for grouping and reduction
 
 semi-lattice aggregation allows self-recursion — required for recursive shortest-path and reachability queries over the [[cybergraph]]
 
-see [[datalog/queries]] for how aggregation works in rule heads. see [[datalog/algorithms]] for fixed-rule graph algorithms
+see [[inf/queries]] for how aggregation works in rule heads. see [[inf/algorithms]] for fixed-rule graph algorithms

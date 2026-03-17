@@ -142,7 +142,7 @@ neuron_focus[neuron, sum(focus_score)] := *cyberlinks{neuron, to_cid},
 
 ## graph algorithms on the cybergraph
 
-fixed rules operate directly on cyberlink relations. see [[datalog/algorithms]] for the full reference
+fixed rules operate directly on cyberlink relations. see [[inf/algorithms]] for the full reference
 
 ```datalog
 // PageRank over cyberlinks (compare with tri-kernel diffusion)
@@ -207,4 +207,4 @@ CozoDB supports querying past states of any relation. for the [[cybergraph]], th
 ?[score] := *focus{cid: "Qm_target", score} @ "2025-01-01T00:00:00Z"
 ```
 
-see [[datalog/stored relations]] for transaction and time-travel mechanics
+see [[inf/stored relations]] for transaction and time-travel mechanics

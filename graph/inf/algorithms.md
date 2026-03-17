@@ -196,6 +196,6 @@ visited[node] <~ RandomWalk(edges[], "QmStartHash", steps: 50, times: 20)
 :limit 20
 ```
 
-see [[datalog]] for language overview. see [[datalog/queries]] for CozoScript syntax. see [[cyberank]] for how PageRank generalizes into the [[tri-kernel]]
+see [[datalog]] for language overview. see [[inf/queries]] for CozoScript syntax. see [[cyberank]] for how PageRank generalizes into the [[tri-kernel]]
 
 discover all [[concepts]]

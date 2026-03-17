@@ -72,8 +72,8 @@ cyb runtime
 
 ## deep dives
 
-- [[datalog/queries]] — CozoScript syntax: rules, atoms, recursion, aggregation
-- [[datalog/stored relations]] — data model: schema, mutations, transactions
-- [[datalog/algorithms]] — graph algorithms: PageRank, pathfinding, community detection
-- [[datalog/functions]] — built-in function reference: math, string, vector, JSON
-- [[datalog/cybergraph]] — integration: cybergraph schema, query patterns, rune interop
+- [[inf/queries]] — CozoScript syntax: rules, atoms, recursion, aggregation
+- [[inf/stored relations]] — data model: schema, mutations, transactions
+- [[inf/algorithms]] — graph algorithms: PageRank, pathfinding, community detection
+- [[inf/functions]] — built-in function reference: math, string, vector, JSON
+- [[inf/cybergraph]] — integration: cybergraph schema, query patterns, rune interop

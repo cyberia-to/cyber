@@ -22,7 +22,7 @@ relevant[particle] := *karma{neuron, k}, k > 1000,
 
 ### fixed rules `<~`
 
-built-in [[algorithms]] callable as first-class query operations: [[PageRank]], [[Dijkstra]], community detection, random walk. see [[datalog/algorithms]] for the full catalog
+built-in [[algorithms]] callable as first-class query operations: [[PageRank]], [[Dijkstra]], community detection, random walk. see [[inf/algorithms]] for the full catalog
 
 ```datalog
 ranked[particle, score] <~ PageRank(*cyberlinks[from, to])
@@ -203,7 +203,7 @@ chain[particle, min(depth)] := chain[mid, d],
 ## see also
 
 - [[datalog]] — language overview and design principles
-- [[datalog/stored relations]] — schema, mutations, transactions
-- [[datalog/algorithms]] — fixed rule catalog: PageRank, Dijkstra, Louvain, BFS
-- [[datalog/functions]] — built-in function reference
-- [[datalog/cybergraph]] — cybergraph integration and [[rune]] interop
+- [[inf/stored relations]] — schema, mutations, transactions
+- [[inf/algorithms]] — fixed rule catalog: PageRank, Dijkstra, Louvain, BFS
+- [[inf/functions]] — built-in function reference
+- [[inf/cybergraph]] — cybergraph integration and [[rune]] interop

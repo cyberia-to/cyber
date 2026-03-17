@@ -180,4 +180,4 @@ this retrieves the top 50 [[particles]] by [[focus]] score, joined with the [[ka
 
 ## relation to the stack
 
-stored relations are the persistence layer. [[rune]] writes into them via mutations. [[datalog/queries]] read from them via pattern matching. [[datalog/algorithms]] operate over them as graph structures. time-travel queries (using [[Validity]] columns) reconstruct any past state of the [[cybergraph]]
+stored relations are the persistence layer. [[rune]] writes into them via mutations. [[inf/queries]] read from them via pattern matching. [[inf/algorithms]] operate over them as graph structures. time-travel queries (using [[Validity]] columns) reconstruct any past state of the [[cybergraph]]
