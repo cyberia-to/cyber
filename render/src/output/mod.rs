@@ -151,12 +151,36 @@ pub fn write_incremental(
     let output_dir = &config.build.output_dir;
     fs::create_dir_all(output_dir)?;
 
+    // Collect all valid output paths from this build
+    let valid_paths: std::collections::HashSet<std::path::PathBuf> = rendered
+        .iter()
+        .map(|page| output_dir.join(page.url_path.trim_start_matches('/')))
+        .collect();
+
     for page in rendered {
         let file_path = output_dir.join(page.url_path.trim_start_matches('/'));
         if let Some(parent) = file_path.parent() {
             fs::create_dir_all(parent)?;
         }
         fs::write(&file_path, &page.html)?;
+    }
+
+    // Remove stale page output directories (pages that were moved or deleted)
+    if let Ok(entries) = fs::read_dir(output_dir) {
+        for entry in entries.flatten() {
+            let path = entry.path();
+            // Only check directories that contain index.html (page output dirs)
+            if path.is_dir() {
+                let index = path.join("index.html");
+                if index.exists() && !valid_paths.contains(&index) {
+                    // Skip static/media/special dirs
+                    let name = entry.file_name().to_string_lossy().to_string();
+                    if !matches!(name.as_str(), "static" | "media" | "api") {
+                        let _ = fs::remove_dir_all(&path);
+                    }
+                }
+            }
+        }
     }
 
     write_default_static(output_dir, config)?;
