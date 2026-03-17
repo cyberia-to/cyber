@@ -117,189 +117,29 @@ Bt value tower (separate, 𝔽₂)
   sufficient for: Bt only
 ```
 
-### 3. Universe 0 — Nox (Structure)
+### 3. The Thirteen Languages
 
-the continuation of the Nock idea — everything is a binary tree, code is data, computation is tree rewriting. five structural operations define how values compose regardless of what those values are:
+each language has its own page with ops tables, use cases, and proof paths:
 
-| Op        | Action                          | Analogy              |
-|-----------|---------------------------------|----------------------|
-| `axis`    | Navigate into a subtree by path | Array index          |
-| `quote`   | Treat code as data              | String literal       |
-| `compose` | Chain two computations          | Function composition |
-| `cons`    | Build a pair                    | Struct constructor   |
-| `branch`  | Conditional selection           | If-then-else         |
+| # | Universe | Short | Long | Page |
+|---|---|---|---|---|
+| 0 | Structure | Nox | Nox | [[Nox]] |
+| 1 | Binary | Bt | Bitwise | [[Bt]] |
+| 2 | Byte | Rs | Rustic | [[Rs]] |
+| 3 | Field | Tri | Trident | [[Trident]] |
+| 4 | Topology | Arc | Arc | [[Arc]] |
+| 5 | Geometry | Ren | Render | [[Ren]] |
+| 6 | Curvature | Dif | Differential | [[Dif]] |
+| 7 | Dynamics | Sym | Symplectic | [[Sym]] |
+| 8 | Belief | Bel | Belief | [[Bel]] |
+| 9 | Causality | Seq | Sequence | [[Seq]] |
+| 10 | Inference | Inf | Infer | [[Inf]] |
+| 11 | Continuum | Wav | Wave | [[Wav]] |
+| 12 | Linear | Ten | Tensor | [[Ten]] |
 
-the critical difference from Nock: Nox's tree is a Merkle tree by construction. every `cons(a, b)` computes `hash(a, b)` and stores the digest at the parent node. `axis` produces a Merkle proof as a side effect. the authentication scheme is abstract — pluggable backends (Tip5, Poseidon2, SHA-256, Verkle, SMT).
+see [[cyb/languages]] for the completeness argument, value tower, algebra coverage, and perception mapping. see [[cyb/multiproof]] for how all thirteen settle under one proving umbrella
 
-Nox is simultaneously the structural IR (the grammar all languages compile through) and the node runtime (the production binary that runs the [[cyber]] blockchain).
-
-### 4. Universe 1 — Bt / Bitwise (Binary)
-
-| Type    | Field        | Size   | Native ops           |
-|---------|--------------|--------|----------------------|
-| `Bit`   | 𝔽₂           | 1 bit  | AND (mul), XOR (add) |
-| `Bit2`  | 𝔽₂²          | 2 bits | Extension field ops  |
-| `Bit8`  | 𝔽₂⁸          | 1 byte | AES-native           |
-| `Bit32` | 𝔽₂³²         | 4 bytes| Hash-native          |
-| `Bit64` | 𝔽₂⁶⁴         | 8 bytes| Double word          |
-| `Bit128`| 𝔽₂¹²⁸        | 16 bytes| Security parameter  |
-
-characteristic: 2. proof system: FRI-Binius. AND is multiplication. XOR is addition. both are free. what Bt cannot do cheaply: integer arithmetic. 3 + 5 = 6 in 𝔽₂ (XOR), not 8. to perform actual addition with carry, you must build ripple-carry adders from AND/XOR gates.
-
-use cases: Blake3/SHA-256 circuits (proving legacy hashes), Keccak verification (Ethereum bridge), AES circuits, binary Merkle tree verification, binary protocol parsing.
-
-### 5. Universe 2 — Rs / Rustic (Byte) & Universe 3 — Tri / Trident (Field)
-
-Byte and Field share the Goldilocks substrate but present opposite mental models. a byte programmer thinks in registers and bit patterns. a field programmer thinks in algebraic constraints. same representation, opposite intent.
-
-Rs is [[Rust]] with everything dynamically-sized removed. no heap. no `Vec`. no `String`. no unbounded recursion. every value has a known size at compile time. every loop has a known bound. the hidden truth: every `u64` in Rs is secretly a `word` — type tag 0x01 — which is secretly a field element with a range constraint. the programmer writes conventional-looking systems code, but every operation is field-compatible.
-
-```
-Rust        → full language, heap, strings, anything
-  ↓ restrict
-Rs          → strict subset, bounded, looks like systems code
-  ↓ reveal
-Trident     → same restrictions, but the field is visible
-```
-
-[[Trident]] is where the field is visible and the programmer thinks in constraints. division is exact (multiplicative inverse). every operation becomes a polynomial constraint in the stark execution trace. Trident-only primitives: `divine()` (inject prover witness), `hash()` (Tip5, single constraint), `merkle_step()`, `seal` (hashed/private event emission).
-
-Trident layer architecture:
-
-| Layer | Scope           | Types available           | Compilation targets      |
-|-------|-----------------|---------------------------|--------------------------|
-| 0     | Execute Anywhere | U32, Bool, structs, arrays | TASM, EVM, [[CosmWasm]], SVM |
-| 1     | Prove Anywhere   | + Field, Digest, divine() | TASM (Triton VM)         |
-| 2     | Platform Powers  | + chain-specific stdlib   | Single target            |
-
-```
-.rs file  → parser (Rust subset) → TIR → TASM / backend
-.tri file → parser (Trident)     → TIR → TASM / backend
-                                    ↑
-                              same IR, same value tower
-```
-
-### 6. Universe 4 — Arc (Topology)
-
-the graph language. makes graphs first-class — the primitive is a connection, not a number.
-
-| Op              | Action                                         |
-|-----------------|-------------------------------------------------|
-| `link(a, b, w)` | Create weighted directed edge                  |
-| `walk(start, n)`| Random walk of n steps                         |
-| `reach(a, b)`   | Test if path exists                            |
-| `neighbors(n)`  | Return adjacent nodes                          |
-| `rank(g, steps)`| Compute stationary distribution (PageRank)     |
-| `spectral(g, k)`| Extract top-k eigenvectors                     |
-| `match(g, pat)` | Subgraph pattern matching                      |
-
-the [[cybergraph]] is not a data structure that lives inside a program. the cybergraph IS the program. every [[cyberlink]] is an `Edge`. every CID is a `Node`. CYBERRANK is `rank()`. Arc decomposes into [[Trident]] (field ops for matrix math), [[Bt]] (hash verification for node identities), and [[Nox]] (tree encoding of topology).
-
-### 7. Universe 5 — Ren / Render (Geometry)
-
-Clifford geometric algebra G(p,q,r). unifies vectors, bivectors, rotors. rotations, reflections, translations in one algebra over 𝔽ₚ.
-
-| Op              | Action                                            |
-|-----------------|---------------------------------------------------|
-| `geometric_product(a, b)` | Full Clifford product of multivectors  |
-| `inner(a, b)`   | Inner (dot) product — grade lowering              |
-| `outer(a, b)`   | Outer (wedge) product — grade raising             |
-| `reverse(a)`    | Reverse multivector (conjugation for rotors)      |
-| `dual(a)`       | Poincaré dual — complement in the algebra         |
-| `sandwich(r, x)`| Rotor application: r x r̃                        |
-| `grade(a, k)`   | Extract grade-k component                         |
-
-covers Euclidean G(n,0,0), Projective G(n,0,1), Conformal G(n+1,1,0). fixes the Arc → SVG compilation gap: Arc provides topology, Ren provides spatial embedding, compiler produces vector output. STARK-provable now — geometric product is 𝔽ₚ algebra with extra structure. compiles to [[Trident]].
-
-### 8. Universe 6 — Dif / Differential (Curvature)
-
-differential geometry. Riemannian manifolds, tangent spaces, geodesics, Laplace-Beltrami operator. the geometry of continuous curved space.
-
-| Op                      | Action                                         |
-|-------------------------|-------------------------------------------------|
-| `chart(M, coords)`     | Define coordinate patch on manifold             |
-| `metric(g_ij)`         | Specify Riemannian metric tensor                |
-| `christoffel(g)`       | Compute connection coefficients                 |
-| `geodesic(p, v, t)`    | Trace geodesic from point p with velocity v     |
-| `covariant_deriv(T, v)`| Parallel transport / covariant derivative       |
-| `curvature(g)`         | Riemann curvature tensor                        |
-| `laplacian(f, g)`      | Laplace-Beltrami operator on manifold           |
-
-required for: latent space embeddings, [[tri-kernel]] diffusion formalized as heat flow on manifolds, physics simulation. programming model: coordinate charts, metric tensors, covariant derivatives — none of which exist in Ren. proof-hard over finite fields. research horizon.
-
-### 9. Universe 7 — Sym / Symplectic (Dynamics)
-
-symplectic geometry. phase space with 2-form ω, Hamiltonian flows, canonical transformations, [[conservation]] laws.
-
-| Op                     | Action                                           |
-|------------------------|--------------------------------------------------|
-| `symplectic_form(M)`  | Define closed non-degenerate 2-form ω            |
-| `hamiltonian(H, q, p)`| Specify Hamiltonian function                     |
-| `flow(H, state, dt)`  | Symplectic integration step                      |
-| `poisson(f, g)`       | Poisson bracket {f, g}                           |
-| `canonical(T)`        | Verify canonical transformation                  |
-| `conserved(H, f)`     | Test if f is conserved under H                   |
-| `action(L, path)`     | Compute action integral                          |
-
-natural language of classical and semi-classical mechanics. required for: physical simulation with energy [[conservation]], [[quantum]]-classical interface, molecular dynamics. the [[conservation]] law structure (ω is closed: dω = 0) has no analog in Clifford or Riemannian geometry. research horizon.
-
-### 10. Universe 8 — Bel / Belief (Belief)
-
-information geometry. Fisher information metric on the simplex of probability distributions.
-
-| Op                         | Action                                        |
-|----------------------------|-----------------------------------------------|
-| `fisher(model)`           | Compute Fisher information matrix             |
-| `kl_divergence(p, q)`    | Kullback-Leibler divergence                   |
-| `geodesic_info(p, q)`    | Information-geometric geodesic                |
-| `natural_gradient(f, g)` | Gradient in Fisher metric                     |
-| `projection(p, manifold)`| m-projection / e-projection                  |
-| `alpha_connection(α)`    | α-connection interpolation                    |
-| `entropy(p)`             | Shannon / Rényi entropy                       |
-
-the geometry of the [[cybergraph]]'s own belief state — the [[focus]] vector π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Bel to be formalized. research horizon.
-
-### 11. Universe 9 — Seq / Sequence (Causality)
-
-the event language. time in distributed systems is not a clock — it is the ordering. the causal structure that determines what could have influenced what. three temporal modes:
-
-```
-Stack   = nested time     = depth     = LIFO  = after { after { after } }
-Heap    = concurrent time = chaos     = random = concurrent(a, b, c)
-Stream  = linear time     = flow      = FIFO  = before(a, b), before(b, c)
-```
-
-| Domain      | Stack                | Heap                  | Stream              |
-|-------------|----------------------|-----------------------|---------------------|
-| Hardware    | Call stack           | RAM allocation        | I/O bus             |
-| OS          | Process call depth   | Dynamic memory        | Pipes, sockets      |
-| Network     | Protocol nesting     | Concurrent connections| Packet flow         |
-| Consensus   | Nested validation    | Parallel validators   | Block sequence      |
-| UI          | Modal dialogs, undo  | Independent windows   | Scrolling, typing   |
-
-events form a partial order — not a total order. Seq preserves the partial order and only totalizes when consensus demands it.
-
-### 12. Universe 10 — Inf (Infer)
-
-the query language. relations and unification — [[Datalog]] at its core. the only language that derives truth rather than transforming values.
-
-```
-reachable(X, Y) :- link(X, Y).
-reachable(X, Z) :- link(X, Y), reachable(Y, Z).
-?- reachable(a, X), linked_by(d, X).
-```
-
-Arc is what is connected (topology). Inf is what follows (entailment). together they form a complete knowledge system: structure + inference. the Datalog restriction ensures bounded inference, guaranteed termination, proof-compatible. because Inf is bounded, any derivation can be encoded as a [[Trident]] computation and proven with a stark. zero-knowledge inference over a private knowledge graph.
-
-### 13. Universe 11 — Wav / Wave (Continuum)
-
-the signal language. a signal is a waveform — a continuous function sampled at discrete points. primitive operations: `fft`, `ifft`, `convolve`, `lowpass`, `resample`, `correlate`, `energy`, `peak_detect`. use cases: sensor data processing, audio, seismic, environmental monitoring.
-
-### 14. Universe 12 — Ten / Tensor (Linear)
-
-the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-time constants. shape mismatches are compile errors. primitive operations: `matmul`, `einsum`, `reshape`, `broadcast`, `transpose`, `reduce`, `conv2d`, `softmax`. CYBERRANK is literally repeated `matmul`.
-
-### 15. Compilation Architecture
+### 4. Compilation Architecture
 
 ```
                     ┌──────────────────────────────────────────────┐
@@ -355,7 +195,7 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
 
 see [[cyb/multiproof]] for how all thirteen languages settle under one proving umbrella via [[Hemera]] and Tri.
 
-### 16. Nine Perception Primitives
+### 5. Nine Perception Primitives
 
 the irreducible visual types — the atoms of everything a human can perceive through a screen and speakers. any UI, any document, any application is a composition of these nine. the four new computation languages (Ren, Dif, Sym, Bel) render through existing perception primitives: Ren → vector, Dif → vector, Sym → formula, Bel → formula.
 
@@ -373,7 +213,7 @@ the irreducible visual types — the atoms of everything a human can perceive th
 
 `component` is to perception what `Nox` is to computation. Nox composes computations (cons, axis, branch). component composes renderings (nest, layout, pass).
 
-### 17. Ten Decision Primitives
+### 6. Ten Decision Primitives
 
 every human interaction with a computer is a decision. strip the physics away — what remains is pure decision structure.
 
@@ -394,7 +234,7 @@ the machine computes, the human decides. computation produces options. perceptio
 
 confirm is the only primitive that is always irreversible. it is structurally unique — the moment where possibility collapses into fact. every other primitive can be undone, revised, or abandoned.
 
-### 18. Cross-Grid Connections
+### 7. Cross-Grid Connections
 
 the three grids interlock in a continuous decision loop — the cyb/os event loop:
 
@@ -421,7 +261,7 @@ Decision     split (divide choice)      merge (combine choices)
 
 fork is how structure grows. join is how consensus forms. the same skeleton wearing three costumes.
 
-### 19. The Comparison Matrix
+### 8. The Comparison Matrix
 
 | Property | Nox | Bt | Rs | Tri | Arc | Ren| Dif | Sym | Bel | Seq | Inf | Wav | Ten |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -439,7 +279,7 @@ fork is how structure grows. join is how consensus forms. the same skeleton wear
 
 ## Part II: Render Stack — PureRender
 
-### 20. Flat Streams Instead of Trees
+### 9. Flat Streams Instead of Trees
 
 DOM is a tree. trees breed cascading complexity: reflow, repaint, layout thrashing, z-index stacking contexts. cyb replaces the tree with a stream.
 
@@ -466,7 +306,7 @@ grid [sidebar: 300px, main: 1fr] {
 
 same primitives, different layout mode. screen, PDF, print — same component, same pipeline, different output target.
 
-### 21. Component as a Single Unit
+### 10. Component as a Single Unit
 
 one file. one scope. everything inside.
 
@@ -496,7 +336,7 @@ component Dashboard {
 
 the compiler sees the entire component. dead CSS eliminated. static primitives computed at compile time. reactivity only where `state` exists.
 
-### 22. Compilation: Everything to WASM + WGSL
+### 11. Compilation: Everything to WASM + WGSL
 
 no interpreter. no JIT. no runtime parsing. everything compiles.
 
@@ -522,7 +362,7 @@ Source (TS strict + HTML + CSS + SVG + LaTeX)
   Vulkan / Metal / DX12 / OpenGL ES
 ```
 
-### 23. GPU Render: Everything is Shaders
+### 12. GPU Render: Everything is Shaders
 
 every primitive is a draw call or compute dispatch:
 
@@ -555,7 +395,7 @@ every frame (16ms @ 60fps):
 
 ## Part III: Execution Engine — CosmWasm Native
 
-### 24. Smart Contracts in the Browser
+### 13. Smart Contracts in the Browser
 
 in Chrome, a dApp is a JS app that talks to a blockchain node over HTTP. in cyb, [[smart contracts]] run locally in the same runtime as UI.
 
@@ -593,7 +433,7 @@ no separation between frontend and on-chain logic. one file, one scope, one runt
 
 ## Part IV: Kernel Architecture — CybOS
 
-### 25. Design Axioms
+### 14. Design Axioms
 
 1. no Unix legacy. no files, no processes, no users, no fork/exec, no POSIX. cyb abstractions are native to its domain: agents, [[cyberlinks]], ranks, epochs, bandwidth.
 2. zero unsafe [[Rust]]. the entire OS — kernel, drivers, [[consensus]], storage — compiles without a single `unsafe` block. memory safety is a compiler-verified property.
@@ -601,7 +441,7 @@ no separation between frontend and on-chain logic. one file, one scope, one runt
 4. neural drivers. hardware support generated by models against stable trait contracts, verified by the compiler, validated by conformance test suites.
 5. single address space. no user/kernel split. no syscalls. no TLB flushes. isolation enforced by [[Rust]] ownership, not hardware privilege levels.
 
-### 26. Layered Design
+### 15. Layered Design
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -633,7 +473,7 @@ no separation between frontend and on-chain logic. one file, one scope, one runt
 └──────────────────────────────────────────────────────┘
 ```
 
-### 27. No Processes — Cells
+### 16. No Processes — Cells
 
 cells replace processes: independently compiled [[Rust]] crates that can be loaded, unloaded, and hot-swapped at runtime without stopping the system. each cell has explicit dependency declarations, typed bounded wait-free channels, exclusive state ownership, mandatory heartbeat reporting. cell lifecycle is governed by on-chain governance.
 
@@ -645,7 +485,7 @@ cells replace processes: independently compiled [[Rust]] crates that can be load
 | Gossip | Works with local state only (island mode) |
 | Storage | Emergency halt, preserves last state |
 
-### 28. No File System — the Big Badass Graph
+### 17. No File System — the Big Badass Graph
 
 no hierarchical file system. no paths, no inodes, no directories. all persistent data lives in one structure: the BBG — a content-addressed [[knowledge graph]] that subsumes every storage layer. the graph is not a feature of the protocol — the graph IS the protocol.
 
@@ -687,7 +527,7 @@ the graph serves as infrastructure for itself:
 
 querying storage and querying knowledge are the same operation: graph traversal. the BBG is the single source of truth.
 
-### 29. No Users — the Avatar System
+### 18. No Users — the Avatar System
 
 no usernames, no passwords, no accounts. identity is a public key ([[neuron]]). access control = bandwidth allocation. the [[cybergraph]] is public. bandwidth is the only scarce resource.
 
@@ -714,7 +554,7 @@ the signer is universal: pluggable signature schemes (ECDSA, Schnorr, BLS), plug
 
 [[radio]] is the connectivity layer of [[cyb]] — a fork of [[iroh]] where every hash runs through [[Hemera]] instead of Blake3. one hash function, one address space, zero self-describing overhead. 20× cheaper in [[stark]] proofs than Blake3, at the cost of ~3× lower raw throughput. the tradeoff is correct: [[particle]] addresses are verified far more often than they are created.
 
-### 30. Endpoint and Physical Transport
+### 19. Endpoint and Physical Transport
 
 the [[radio/endpoint]] is the entry point for all networking. it wraps a QUIC socket, an Ed25519 keypair identity, a [[radio/relay]] connection, and [[radio/discovery]] services into a single handle. connections are made by cryptographic PublicKey — dial keys, not IP addresses.
 
@@ -722,19 +562,19 @@ three transport modes over QUIC: bidirectional streams (request-response), unidi
 
 [[radio/hole-punching]] establishes direct P2P paths through NAT using STUN-over-QUIC for address discovery and ICE-over-QUIC for candidate exchange. when direct connection fails, [[radio/relay]] provides encrypted fallback — relays forward traffic without decoding it. relays earn [[focus]] for proven delivery via [[stark]] proof chains.
 
-### 31. Blob Transfer and Verified Streaming
+### 20. Blob Transfer and Verified Streaming
 
 every [[particle]] in the [[cybergraph]] is a [[radio/blob]] — content-addressed binary data of any size. the blob's address is its 64-byte [[Hemera]] hash.
 
 [[radio/bao]] enables verified streaming: a binary [[Hemera]] Merkle tree over 4 KiB chunks. download any byte range of a 10 GB blob and verify it against the root hash — the proof is logarithmic (a few KB covers any range of any blob). interrupted transfers resume from the last verified chunk. [[radio]] never trusts — it verifies every chunk cryptographically during streaming.
 
-### 32. Gossip — Real-Time Graph Propagation
+### 21. Gossip — Real-Time Graph Propagation
 
 [[radio/gossip]] is topic-based publish/subscribe over epidemic broadcast trees. when a [[neuron]] creates a [[cyberlink]], it broadcasts to the relevant topic. subscribers update their local view of the [[cybergraph]] without polling.
 
 built on HyParView (hybrid partial view peer sampling) + PlumTree (broadcast tree on random peer graph). eager push along tree edges, lazy push on remaining links — reliability of flooding with efficiency of tree routing. self-healing when peers leave or join.
 
-### 33. Private Messaging
+### 22. Private Messaging
 
 private messaging between [[neurons]] with cryptographic [[proof of delivery]]. see [[cyber/communication]] for the full specification.
 
@@ -776,7 +616,7 @@ relays earn [[focus]] for proven delivery. no proof, no payment. this creates a 
 | non-interactive key exchange | no (prekeys) | no (circuit) | yes (CSIDH from graph) |
 | relay incentive | none | volunteer | [[focus]] for proven delivery |
 
-### 34. Sync — Collaborative Knowledge
+### 23. Sync — Collaborative Knowledge
 
 two sync protocols for different access models:
 
@@ -789,7 +629,7 @@ two sync protocols for different access models:
 | open collaboration | [[radio/docs]] | namespace key = write authority | shared research, public knowledge |
 | confidential | [[radio/willow]] | Meadowcap capability certificates | private graphs, restricted data |
 
-### 35. Storage Proofs — Graph Survival
+### 24. Storage Proofs — Graph Survival
 
 without [[storage proofs]], content-addressed identity is fragile — a hash with lost content is a dead [[particle]]. at planetary scale ($10^{15}$ particles), content loss is the existential risk. storage proofs are Phase 1 security infrastructure — operational before genesis.
 
@@ -814,7 +654,7 @@ Tier 2 — historical:    erasure-coded archival, refreshed by archivers
 
 storage proofs also enable [[Hemera]] hash migration — if Hemera is ever broken, storage proofs guarantee content availability for full graph rehash under a new primitive. at $10^{15}$ particles across $10^6$ nodes: ~17 hours for parallel rehash.
 
-### 36. Bandwidth — the Scarce Resource
+### 25. Bandwidth — the Scarce Resource
 
 [[will]] is the capacity to create [[cyberlinks]]. every link burns will — when it runs out, the [[neuron]] falls silent. will regenerates with stake and limits [[bandwidth]].
 
@@ -828,7 +668,7 @@ stake → will regeneration → bandwidth capacity → cyberlink creation → kn
   └────────────── karma + focus rewards ───────────────────────────────────┘
 ```
 
-### 37. The Full Stack
+### 26. The Full Stack
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -854,7 +694,7 @@ stake → will regeneration → bandwidth capacity → cyberlink creation → kn
 
 ## Part VI: Bounded Liveness Runtime
 
-### 38. Epoch Budget Allocator
+### 27. Epoch Budget Allocator
 
 ```
 ┌──────────────────────────────────────┐
@@ -869,7 +709,7 @@ stake → will regeneration → bandwidth capacity → cyberlink creation → kn
 
 hard deadline: cell is preempted. soft deadline: cell yields voluntarily. no priorities. every cell gets its budget.
 
-### 39. Compile-Time Deadline Enforcement
+### 28. Compile-Time Deadline Enforcement
 
 the async runtime does not allow unbounded futures. enforced at the type level:
 
@@ -886,7 +726,7 @@ let data = stream.read(&mut buf)
 
 the [[Rust]] compiler becomes the liveness checker.
 
-### 40. Wait-Free Shared State
+### 29. Wait-Free Shared State
 
 all inter-cell communication uses wait-free data structures. no mutexes, no locks, no semaphores.
 
@@ -899,7 +739,7 @@ all inter-cell communication uses wait-free data structures. no mutexes, no lock
 
 ## Part VII: Hardware Abstraction
 
-### 41. Three Portable Formats
+### 30. Three Portable Formats
 
 every computer has three types of processors. cyb has one portable format for each:
 
@@ -919,7 +759,7 @@ Mobile:    WASM (wasmi) + WGSL (wgpu -> Metal/GLES) + ONNX (CoreML/NNAPI)
 
 same codebase. same pixels. everywhere.
 
-### 42. Zero-Unsafe MMIO
+### 31. Zero-Unsafe MMIO
 
 MMIO regions as first-class language concepts:
 
@@ -938,7 +778,7 @@ mod aic {
 
 zero unsafe in user-facing code.
 
-### 43. Neural Drivers
+### 32. Neural Drivers
 
 drivers generated by models against stable trait contracts. the HAL is ~3000 lines of [[Rust]] trait definitions covering all hardware categories.
 
@@ -967,7 +807,7 @@ target: 50+ SoC families. ~1M lines of generated code validated against ~8K line
 
 ## Part VIII: Legacy Web Compatibility
 
-### 44. SLM Legacy Bridge
+### 33. SLM Legacy Bridge
 
 a small language model (~100-300M parameters) that understands intent behind old CSS:
 
@@ -977,7 +817,7 @@ Layer 2: Legacy -> SLM       -> cached permanently
 Layer 3: Graceful degradation -> unknown ignored
 ```
 
-### 45. WASM Adoption
+### 34. WASM Adoption
 
 import adapter auto-detects what a module needs:
 
@@ -1004,7 +844,7 @@ import adapter auto-detects what a module needs:
 
 ## Part IX: Numbers
 
-### 46. 130K Lines
+### 35. 130K Lines
 
 ```
 PureRender                              ~100K
@@ -1022,7 +862,7 @@ TOTAL                                   ~130K
 
 CybOS core: ~85-125K lines (human-authored, auditable by one person in a month). neural driver layer: ~500K-1M lines (model-generated, compiler + test validated).
 
-### 47. Cyb vs Chrome
+### 36. Cyb vs Chrome
 
 | | Chrome | Cyb |
 |-|--------|-----|
