@@ -1,8 +1,27 @@
 ---
-tags: cyber
+tags: aip
+alias: warp dex
 crystal-type: entity
 crystal-domain: cyber
-stake: 13559344495212582
+stake: 20923008312662188
 ---
--
--
+trading in [[bostrom]]
+
+[cyb.ai/warp](https://cyb.ai/warp)
+
+[[pages]]
+
+- [[send]]
+- [[bridge]]
+- [[swap]]
+- [[pool]]
+
+actions
+
+- [[create pool]]
+- [[add liqudity]]
+- [[sub liquidity]]
+
+api
+
+- https://api.warp-dex.cyb.ai/docs
