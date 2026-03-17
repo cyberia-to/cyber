@@ -572,4 +572,27 @@ mod tests {
         assert_eq!(format_size(1536), "1.5 KB");
         assert_eq!(format_size(2 * 1024 * 1024), "2.0 MB");
     }
+
+    #[test]
+    fn test_extract_namespace_simple() {
+        // "cyber/core" → Some("cyber")
+        assert_eq!(extract_namespace("cyber/core"), Some("cyber".to_string()));
+    }
+
+    #[test]
+    fn test_extract_namespace_deep() {
+        // "a/b/c/page" → Some("a/b/c")
+        assert_eq!(
+            extract_namespace("a/b/c/page"),
+            Some("a/b/c".to_string())
+        );
+    }
+
+    #[test]
+    fn test_extract_namespace_root() {
+        // "page" → None (no namespace)
+        assert_eq!(extract_namespace("page"), None);
+        // Also test empty string
+        assert_eq!(extract_namespace("simple-page"), None);
+    }
 }

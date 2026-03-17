@@ -663,3 +663,135 @@ fn incremental_rebuild(
 
     Ok((total, dirty_count))
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::parser::{PageMeta, PageKind, ParsedPage};
+    use std::collections::HashMap;
+    use std::path::PathBuf;
+
+    /// Helper to build a minimal ParsedPage for testing hash functions.
+    fn make_page(id: &str, title: &str, content: &str) -> ParsedPage {
+        ParsedPage {
+            id: id.to_string(),
+            meta: PageMeta {
+                title: title.to_string(),
+                properties: HashMap::new(),
+                tags: vec![],
+                public: Some(true),
+                aliases: vec![],
+                date: None,
+                icon: None,
+                menu_order: None,
+                stake: None,
+            },
+            kind: PageKind::Page,
+            source_path: PathBuf::new(),
+            namespace: None,
+            subgraph: None,
+            content_md: content.to_string(),
+            outgoing_links: vec![],
+        }
+    }
+
+    #[test]
+    fn test_hash_str_deterministic() {
+        let input = "hello world";
+        assert_eq!(hash_str(input), hash_str(input));
+        // Call multiple times to ensure stability
+        let h1 = hash_str(input);
+        let h2 = hash_str(input);
+        let h3 = hash_str(input);
+        assert_eq!(h1, h2);
+        assert_eq!(h2, h3);
+    }
+
+    #[test]
+    fn test_hash_str_different() {
+        let h1 = hash_str("hello");
+        let h2 = hash_str("world");
+        assert_ne!(h1, h2, "different inputs must produce different hashes");
+        // Also test subtle differences
+        let h3 = hash_str("Hello");
+        assert_ne!(h1, h3, "case difference must produce different hash");
+    }
+
+    #[test]
+    fn test_hash_meta_detects_title_change() {
+        let page_a = make_page("test", "Title A", "content");
+        let page_b = make_page("test", "Title B", "content");
+        assert_ne!(
+            hash_meta(&page_a),
+            hash_meta(&page_b),
+            "different titles must produce different meta hashes"
+        );
+    }
+
+    #[test]
+    fn test_hash_meta_detects_icon_change() {
+        let mut page_a = make_page("test", "Title", "content");
+        let mut page_b = make_page("test", "Title", "content");
+        page_a.meta.icon = Some("🔵".to_string());
+        page_b.meta.icon = Some("🟢".to_string());
+        assert_ne!(
+            hash_meta(&page_a),
+            hash_meta(&page_b),
+            "different icons must produce different meta hashes"
+        );
+        // Also check None vs Some
+        let page_c = make_page("test", "Title", "content");
+        assert_ne!(
+            hash_meta(&page_a),
+            hash_meta(&page_c),
+            "icon Some vs None must produce different meta hashes"
+        );
+    }
+
+    #[test]
+    fn test_hash_meta_detects_alias_change() {
+        let mut page_a = make_page("test", "Title", "content");
+        let mut page_b = make_page("test", "Title", "content");
+        page_a.meta.aliases = vec!["alias1".to_string()];
+        page_b.meta.aliases = vec!["alias2".to_string()];
+        assert_ne!(
+            hash_meta(&page_a),
+            hash_meta(&page_b),
+            "different aliases must produce different meta hashes"
+        );
+        // Same aliases → same hash
+        let mut page_c = make_page("test", "Title", "content");
+        page_c.meta.aliases = vec!["alias1".to_string()];
+        assert_eq!(
+            hash_meta(&page_a),
+            hash_meta(&page_c),
+            "identical aliases must produce same meta hash"
+        );
+    }
+
+    #[test]
+    fn test_hash_links_detects_link_change() {
+        let mut page_a = make_page("test", "Title", "content");
+        let mut page_b = make_page("test", "Title", "content");
+        page_a.outgoing_links = vec!["link-a".to_string()];
+        page_b.outgoing_links = vec!["link-b".to_string()];
+        assert_ne!(
+            hash_links(&page_a),
+            hash_links(&page_b),
+            "different link sets must produce different link hashes"
+        );
+    }
+
+    #[test]
+    fn test_hash_links_order_independent() {
+        let mut page_a = make_page("test", "Title", "content");
+        let mut page_b = make_page("test", "Title", "content");
+        page_a.outgoing_links = vec!["alpha".to_string(), "beta".to_string(), "gamma".to_string()];
+        page_b.outgoing_links = vec!["gamma".to_string(), "alpha".to_string(), "beta".to_string()];
+        assert_eq!(
+            hash_links(&page_a),
+            hash_links(&page_b),
+            "hash_links must be order-independent (it sorts internally)"
+        );
+    }
+}
