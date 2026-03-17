@@ -26,7 +26,7 @@ fields
 
 - [[spark]]: render of [[particle]]
 - [[creator]]: [[neuron]] with first [[cyberlink]]
-- [[time]]: how long time ago created by active [[neuron]]
+- [[cyb/time]]: how long time ago created by active [[neuron]]
 	- not the first who [[cyberlink]]
 - [[size]]: amount of bytes - must provide pin / unpin action
 - [[probability of observation]]
@@ -36,7 +36,7 @@ fields
 
 table must be
 
-- sortable by [[creator]], [[time]], [[size]], [[probability of observation]], [[cyb/views]] in both directions
+- sortable by [[creator]], [[cyb/time]], [[size]], [[probability of observation]], [[cyb/views]] in both directions
 - at least 21 rows on the screen
 	- managing 1000 positions is impossible if i see 7-10 on screen
 - view index

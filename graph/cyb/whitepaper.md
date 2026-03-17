@@ -112,7 +112,7 @@ the autonomous robot. a program with its own keypair, its own [[focus]] allocati
 - watch a particle and link to it when it meets a condition
 - run inference locally and submit the result as a cyberlink
 - manage a portfolio of conviction positions
-- communicate with other progs via [[sense]]
+- communicate with other progs via [[cyb/sense]]
 - earn karma independently and return yield to its owner
 
 progs are the autonomous intelligence layer of cyb. they bridge the robot and the [[cybergraph]], running continuously, contributing [[syntropy]] while the human sleeps
@@ -141,7 +141,7 @@ name paths the brain understands:
 
 ### 4.2 sense
 
-messaging and perception interface. where the world enters the robot. [[sense]] abstracts over modalities — text, image, audio, video, sensory telemetry — into particles the robot can link. a human writing and a satellite uploading spectral data are the same operation at the protocol level
+messaging and perception interface. where the world enters the robot. [[cyb/sense]] abstracts over modalities — text, image, audio, video, sensory telemetry — into particles the robot can link. a human writing and a satellite uploading spectral data are the same operation at the protocol level
 
 sense is how robots communicate: signal, love, share, forward. every message is a particle. every thread is a chain of [[cyberlinks]]. nothing is ephemeral — the graph remembers
 

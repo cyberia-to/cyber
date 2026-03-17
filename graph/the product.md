@@ -26,7 +26,7 @@ in [[cyb]] to design two fundamental state of [[robot]]: [[alien]] and [[energet
 after she [[buy energy]] robot become [[energetic]]
 
 - can [[create avatar]]
-- able to use [[sense]] and [[log]] in full
+- able to use [[cyb/sense]] and [[log]] in full
 - [[learn]] in [[cyberver]] and earn rewards
 - and [[much more]]
 

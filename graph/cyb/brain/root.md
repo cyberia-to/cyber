@@ -10,7 +10,7 @@ table
 
 - [[particle]]
 - [[particle]]
-- [[time]]
+- [[cyb/time]]
 - [[neuron]]
 
 key function: skip queries

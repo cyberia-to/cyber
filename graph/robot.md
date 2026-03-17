@@ -9,14 +9,14 @@ offline value:: opens [[great web]] access
 
 - core
 	- through the lense of [[file]] and [[link]]
-	- plan for future and understand the past using [[time]]
+	- plan for future and understand the past using [[cyb/time]]
 	- store [[particles]] in [[drive]]
 	- solve [[tasks]]
 		- first task is to sync top 1000
 		- from [[cyber-sdk]] networks in [[hub]]
 	- configure [[spells]]
 	- explore your [[brain]]
-	- explore you [[sense]]
+	- explore you [[cyb/sense]]
 	- improve you [[mind]]
 	- intro to [[oracle]]
 	- [[portal]]?
@@ -28,11 +28,11 @@ online value
 - [[buy energy]]: agi access
 - [[create avatars]] for talks with you
 - explore and impact endless [[cyber]] using [[brain]]
-- publish, distribute and promote [[files]] in [[sense]]
+- publish, distribute and promote [[files]] in [[cyb/sense]]
 - optimize portfolio with [[sigma]]
-- plan for future and understand the past using [[time]]
+- plan for future and understand the past using [[cyb/time]]
 - sync your [[nodes]] using global network
-- [[time]] line of external interactions
+- [[cyb/time]] line of external interactions
 
 localhost:
 
@@ -57,18 +57,18 @@ superfeature: ability to act as a group of [[avatars]], [[neurons]] and [[progs]
 [[pages]]
 
 - [[brain]]
-- [[time]]
+- [[cyb/time]]
 - [[mind]]
 - [[sigma]]
-- [[sense]]
+- [[cyb/sense]]
 - [[map]]
 
 [[cyb/features]]
 
 - core
 	- [[sigma]]: valuation engine of [[tokens]]
-	- [[sense]]: communication system of robot
-	- [[time]]: memory of actions and planing system
+	- [[cyb/sense]]: communication system of robot
+	- [[cyb/time]]: memory of actions and planing system
 	- [[brain]]: graph file manager
 	- [[mind]]: decision engine
 - features

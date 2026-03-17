@@ -18,7 +18,7 @@ status:: TODO
 		- on play we display next particle
 		- and made link in background
 		- next particle is defined for [[first meeting]]
-	- TODO [[right down ]] explain [[time]]
+	- TODO [[right down ]] explain [[cyb/time]]
 	- TODO [[left down]] explain [[root]]
 - [[top]] is for [[tips]]
 	- [[right top]] explain avatar
@@ -87,6 +87,6 @@ color matters
 - [[app]]
 - [[assistant]]
 - [[drive]]
-- [[time]]
+- [[cyb/time]]
 - [[actions]]
 - [signer](cyb/signer)

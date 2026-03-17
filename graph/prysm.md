@@ -70,8 +70,8 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 		- [[prysm/table]] — data grid (line, row-L, row-R, sort, sort/dropdown)
 		- [[prysm/bar]] — [[prysm/saber]]+[[prysm/ion]] composite (1-sided, bi-sided, horizontal × button, input, display)
 	- #### widgets
-		- [[brain]] — graph file manager widget (+memory variant)
-		- [[sense]] — messaging and notification widget
+		- [[cyb/brain]] — graph file manager widget (+memory variant)
+		- [[cyb/sense]] — messaging and notification widget
 		- [[sigma]] — wallet and balance widget
 		- [[prysm/time-widget]] — personal history widget
 - ### cells
@@ -82,10 +82,10 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 - ### aips
 	- complete autonomous applications. each [[aip]] is a full-screen experience built from cells
 	- [[oracle]] — search and discovery
-	- [[brain]] — graph file manager
+	- [[cyb/brain]] — graph file manager
 	- [[portal]] — onboarding and citizenship
 	- [[cyberver]] — learning incentives and staking
-	- [[sense]] — messaging and notifications
+	- [[cyb/sense]] — messaging and notifications
 	- [[sigma]] — wallet and token management
 	- [[teleport]] — cross-chain transfers
 	- [[sphere]] — 3d graph visualization

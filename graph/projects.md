@@ -19,9 +19,9 @@ cyber:
 cyb: main board which is decomposed primary to cyb components
 
 - [[sigma]]
-- [[time]]
+- [[cyb/time]]
 - [[brain]]
-- [[sense]]
+- [[cyb/sense]]
 - [[cyb desktop]]
 
 [[aos]] apps for [[cyb]]
