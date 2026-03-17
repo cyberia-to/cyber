@@ -7,9 +7,23 @@ subgraph: true
 repo: ../nox
 exclude: ".claude/**, target/**, CLAUDE.md"
 ---
-the virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
+the composition language and virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
 
 nox descends from [[Nock]] ([[Urbit]]), replacing natural numbers with [[Goldilocks field]] elements and decrement with field inverse. the execution trace IS the algebraic constraint system — there is no translation layer between the program and the proof.
+
+five structural operations define how values compose regardless of what those values are:
+
+| Op | Action | Analogy |
+|---|---|---|
+| `axis` | Navigate into a subtree by path | Array index |
+| `quote` | Treat code as data | String literal |
+| `compose` | Chain two computations | Function composition |
+| `cons` | Build a pair | Struct constructor |
+| `branch` | Conditional selection | If-then-else |
+
+the critical difference from [[Nock]]: Nox's tree is a Merkle tree by construction. every `cons(a, b)` computes `hash(a, b)` and stores the digest at the parent node. `axis` produces a Merkle proof as a side effect. the authentication scheme is abstract — pluggable backends ([[Hemera]], SHA-256, Verkle, SMT).
+
+nox is simultaneously the structural IR (the grammar all [[cyb/languages]] compile through), the node runtime (the production binary that runs the [[cyber]] blockchain), and the composition tier that orchestrates programs across all execution languages, manages [[proof]] aggregation, and defines the program structure of the whole system.
 
 ## three layers
 
