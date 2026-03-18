@@ -62,12 +62,11 @@ content %}
     <section class="dimensional-peers">
         <h2>Dimensions</h2>
         {% for peer in dimensional_peers %}
-        <details class="dimension"{% if loop.first %} open{% endif %}>
+        <details class="dimension">
             <summary class="dimension-path">
-                {% if peer.icon %}<span class="page-icon">{{ peer.icon }}</span>{% endif %}
                 <a href="{{ peer.path }}">{{ peer.title }}</a>
             </summary>
-            <div class="dimension-content">
+            <div class="dimension-content page-content">
                 {{ peer.html_content|safe }}
             </div>
         </details>
