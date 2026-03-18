@@ -1,5 +1,6 @@
 ---
 tags: bip
+alias: eternal cyberlinks
 crystal-type: relation
 crystal-domain: cyber
 status: draft

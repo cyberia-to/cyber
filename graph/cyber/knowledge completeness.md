@@ -1,5 +1,6 @@
 ---
 tags: cyber
+alias: knowledge completeness
 crystal-type: entity
 crystal-domain: cyber
 stake: 13747295805047214

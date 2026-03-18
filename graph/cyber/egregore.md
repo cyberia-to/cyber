@@ -1,6 +1,6 @@
 ---
 icon: 🎭
-alias: collective intelligence, collective intelligence theory, collective artificial intelligence
+alias: collective intelligence, collective intelligence theory, collective artificial intelligence, egregore
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber

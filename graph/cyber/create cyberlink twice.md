@@ -1,5 +1,6 @@
 ---
 tags: bip
+alias: create cyberlink twice
 crystal-type: process
 crystal-domain: cyber
 status: accepted

@@ -1,5 +1,6 @@
 ---
 tags: bip
+alias: eternal particles
 crystal-type: entity
 crystal-domain: cyber
 status: draft

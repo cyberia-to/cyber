@@ -1,6 +1,6 @@
 ---
 tags: cyber, core
-alias: two factor truth, two layer truth, structural epistemic truth
+alias: two factor truth, two layer truth, structural epistemic truth, truth model
 crystal-type: pattern
 crystal-domain: cyber
 stake: 13572769588772200

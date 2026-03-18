@@ -1,5 +1,5 @@
 ---
-alias: negentropy
+alias: negentropy, syntropy
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber

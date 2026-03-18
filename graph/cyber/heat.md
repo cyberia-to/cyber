@@ -1,5 +1,5 @@
 ---
-alias: heat kernel, multi-scale smoothing, adaptation, thermostat
+alias: heat kernel, multi-scale smoothing, adaptation, thermostat, heat
 tags: cyber
 crystal-type: entity
 crystal-domain: biology

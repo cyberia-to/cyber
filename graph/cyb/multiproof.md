@@ -13,7 +13,11 @@ Most systems for intelligence are not designed — they accumulate. A tensor lib
 
 This document describes a different approach: design the primitives from first principles, unify them under one proving umbrella, and let intelligence emerge from the composition.
 
-The question that generates the whole architecture is simple: what [[algebra]]s does a mind actually need? See [[cyb/languages]] for the answer — fourteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
+The question that generates the whole architecture is simple:
+...
+> what [[algebra]]s does a mind actually need?
+
+See [[cyb/languages]] for the answer — fourteen algebraically irreducible languages that form the minimal complete set for [[superintelligence]].
 
 ---
 
@@ -316,3 +320,4 @@ The architecture implies specific capabilities for [[cyb]] as the interface to t
 ---
 
 see [[cyb/languages]] for the fourteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.
+y

@@ -1,5 +1,6 @@
 ---
 tags: article, cip
+alias: gflownet focus flow
 crystal-type: process
 crystal-domain: cyber
 status: draft

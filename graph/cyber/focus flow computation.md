@@ -1,5 +1,5 @@
 ---
-alias: focus flow, FFC, focus flow whitepaper, focusflow blueprint
+alias: focus flow, FFC, focus flow whitepaper, focusflow blueprint, focus flow computation
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber

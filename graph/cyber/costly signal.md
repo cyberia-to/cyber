@@ -1,5 +1,5 @@
 ---
-alias: costly signals
+alias: costly signals, costly signal
 tags: cyber
 crystal-type: property
 crystal-domain: cyber

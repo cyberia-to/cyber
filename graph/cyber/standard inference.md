@@ -1,5 +1,5 @@
 ---
-alias: cyberlinks weight, cyberlinks weights
+alias: cyberlinks weight, cyberlinks weights, standard inference
 tags: cyber
 crystal-type: entity
 crystal-domain: biology

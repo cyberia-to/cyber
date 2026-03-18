@@ -1,5 +1,5 @@
 ---
-alias: screened laplacian, structural constraints, hierarchy
+alias: screened laplacian, structural constraints, hierarchy, springs
 tags: cyber
 crystal-type: entity
 crystal-domain: mathematics

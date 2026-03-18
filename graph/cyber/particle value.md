@@ -1,5 +1,5 @@
 ---
-alias: pv
+alias: pv, particle value
 tags: cyber
 crystal-type: measure
 crystal-domain: biology

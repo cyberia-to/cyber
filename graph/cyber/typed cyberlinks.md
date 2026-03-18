@@ -1,5 +1,6 @@
 ---
 tags: cyber
+alias: typed cyberlinks
 crystal-type: relation
 crystal-domain: cyber
 stake: 2889080134029454

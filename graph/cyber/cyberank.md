@@ -1,7 +1,7 @@
 ---
 icon: 🦠
 tags: cyber, core
-alias: cyber rank, particles weight, particles weights, cyberanks
+alias: cyber rank, particles weight, particles weights, cyberanks, cyberank
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge

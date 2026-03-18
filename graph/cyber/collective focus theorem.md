@@ -1,6 +1,6 @@
 ---
 tags: cyber, article
-alias: cft
+alias: cft, collective focus theorem
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
