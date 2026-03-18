@@ -9,26 +9,26 @@ the naive first solution to the [[true-false problem]] — a single-factor conte
 
 ## the algorithm
 
-for a given query [[particle]]:
+given a query [[particle]] Q, compute a contextual score for each candidate answer:
 
-- get all [[particles]] cyberlinked with the query, sorted by [[cyberank]]
-	- for each [[particle]] get all [[cyberlinks]]
-		- for each [[cyberlink]] get [[neuron]]
-			- for each [[neuron]]
-				- get [[will]] balance
-				- get number of [[cyberlinks]]
-				- compute average [[will]] per cyberlink
-		- sum (average will) votes for every [[particle]]
+```
+candidates = particles cyberlinked with Q
+for each candidate P in candidates:
+    links = cyberlinks between Q and P
+    weight = 0
+    for each link in links:
+        neuron = link.neuron
+        avg_will = neuron.will_balance / neuron.total_cyberlinks
+        weight += avg_will
+    score(P) = cyberank(P) × weight
+return candidates sorted by score
+```
 
-multiply [[cyberank]] of each particle by sum (average will)
+the intuition: a [[neuron]] who concentrates [[will]] across few [[cyberlinks]] signals stronger conviction per link. a [[neuron]] who spreads [[will]] across thousands of links contributes less per link. the score multiplies global [[cyberank]] (what the graph thinks matters) by concentrated [[will]] in context (what committed [[neurons]] think matters here)
 
-in essence: weight [[will]] of [[neurons]] on global [[attention]] in context
+## why it works against the [[true-false problem]]
 
-## properties
-
-- requires zero additional information beyond what the [[cybergraph]] already has
-- follows Occam's razor — as simple as possible
-- single-factor: only [[will]] concentration, no epistemic signal
+if `true` has [[cyberank]] 10 and `false` has [[cyberank]] 9, global rank always picks `true`. but if the [[neurons]] who linked a specific question to `false` have higher concentrated [[will]] than those who linked it to `true`, the contextual score can flip the answer. the concentration signal breaks the global rank tie
 
 ## what it lacks
 
@@ -40,11 +40,6 @@ standard inference addressed the [[true-false problem]] but left three gaps:
 
 3. no market correction — incorrect answers persist until [[neurons]] manually reweight. [[inversely coupled bonding surface|ICBS]] markets suppress false edges economically and continuously
 
-## historical implementations
-
-- [[cy]]
-- [[cyb/oracle/ask]] (planned)
-
 ## lineage
 
-[[true-false problem]] → standard inference (this page) → [[cyber/truth]] (full solution: [[tri-kernel]] + [[Bayesian Truth Serum|BTS]] + [[inversely coupled bonding surface|ICBS]])
+[[true-false problem]] → standard inference → [[cyber/truth]] ([[tri-kernel]] + [[Bayesian Truth Serum|BTS]] + [[inversely coupled bonding surface|ICBS]])
