@@ -51,7 +51,9 @@ hemera gives [[particles]] their identity. every CID in the [[cybergraph]] is a 
 
 sixteen deterministic reduction patterns over hemera-authenticated trees. five structural (axis, quote, compose, cons, branch), six field (add, sub, mul, inv, eq, lt), four bitwise (xor, and, not, shl), one hash. plus non-deterministic hint injection and five jets for verifier acceleration.
 
-the execution trace IS the algebraic constraint system — no translation layer between program and proof. nox is simultaneously the structural IR that all [[cyb/languages]] compile through, the node runtime, and the composition tier for proof aggregation. see [[nox]]
+the execution trace IS the algebraic constraint system — no translation layer between program and proof. nox is simultaneously the structural IR that all [[cyb/languages]] compile through, the node runtime, and the composition tier for proof aggregation.
+
+computation IS linking. `ask(ν, subject, formula, τ, a, v, t)` has seven arguments — the seven fields of a [[cyberlink]]. ordering a computation and asserting [[knowledge]] are the same act. the [[cybergraph]] is a universal memo cache: before executing, nox checks if `axon(formula, subject)` already has a verified result. if cached → zero computation. the more the graph grows, the fewer computations actually execute. see [[nox]]
 
 ### zheng — proof system
 
@@ -73,11 +75,11 @@ each crate consumes only the one before it:
 |-------|----------|----------|---------|
 | nebu | — | field arithmetic | every number |
 | hemera | nebu | hashing, trees | every identity |
-| nox | hemera | computation, proofs | every program |
+| nox | hemera + [[cybergraph]] | computation, memoization, proofs | every program (and its cached result) |
 | zheng | nox | verification | every trust claim |
 | bbg | zheng | authenticated state | every graph query |
 
-the pipeline boundary is between zheng and bbg: everything before bbg is computation, everything after is state. nox programs produce proofs via zheng; bbg stores the results with commitments that zheng can verify.
+the pipeline is not linear — it loops. nox reads from bbg (memo lookup) and writes to bbg (store results). the [[cybergraph]] is simultaneously the knowledge base, the memo cache, and the state store. every computation enriches the graph. every enrichment accelerates future computation. this compounding is the source of the system's growth.
 
 ## agent crypto (crate 6)
 
