@@ -54,11 +54,22 @@ fn resolve_dir(input_dir: &Path, primary: &str, fallback: &str) -> PathBuf {
     primary_dir
 }
 
+/// Resolve directory with a chain of fallbacks: try each name in order.
+fn resolve_dir_chain(input_dir: &Path, names: &[&str]) -> PathBuf {
+    for name in names {
+        let dir = input_dir.join(name);
+        if dir.exists() {
+            return dir;
+        }
+    }
+    input_dir.join(names[0])
+}
+
 pub fn scan(input_dir: &Path, content_config: &ContentSection) -> Result<DiscoveredFiles> {
     let input_dir = input_dir
         .canonicalize()
         .unwrap_or_else(|_| input_dir.to_path_buf());
-    let graph_dir = resolve_dir(&input_dir, "graph", "pages");
+    let graph_dir = resolve_dir_chain(&input_dir, &["root", "graph", "pages"]);
     let blog_dir = resolve_dir(&input_dir, "blog", "journals");
     let media_dir = input_dir.join("media");
 

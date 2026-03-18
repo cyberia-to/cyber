@@ -153,10 +153,11 @@ fn watch_and_rebuild_loop(config: &SiteConfig, build_version: &Arc<AtomicU64>) -
         })
         .map_err(|e| anyhow::anyhow!("Failed to create file watcher: {}", e))?;
 
-    // Watch graph directory (primary: "graph", fallback: "pages")
+    // Watch graph directory (primary: "root", fallback: "graph", then "pages")
     let graph_dir = {
-        let primary = config.build.input_dir.join("graph");
-        if primary.exists() { primary } else { config.build.input_dir.join("pages") }
+        let root = config.build.input_dir.join("root");
+        let graph = config.build.input_dir.join("graph");
+        if root.exists() { root } else if graph.exists() { graph } else { config.build.input_dir.join("pages") }
     };
     // Watch blog directory (primary: "blog", fallback: "journals")
     let blog_dir = {
