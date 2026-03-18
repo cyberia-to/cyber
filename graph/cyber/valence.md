@@ -1,6 +1,6 @@
 ---
 tags: cyber, core
-alias: valences, epistemic valence, link valence, v field, ternary signal
+alias: valences, epistemic valence, link valence, v field, ternary signal, valence
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
