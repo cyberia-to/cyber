@@ -1,6 +1,6 @@
 ---
 tags: cyber, quantum
-alias: quantum physics
+alias: quantum physics, quantum, quant
 crystal-type: entity
 crystal-domain: quantum
 ---
