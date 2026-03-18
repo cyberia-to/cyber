@@ -89,9 +89,9 @@ a UTXO lives in exactly one shard — determined by its [[particle]]'s 4D coordi
 | differ in 2 dimensions at cell level | 2 | different topic, different city |
 | differ in 1 dimension at zone level | 2 | same field, different community |
 | differ in 1 dimension at domain level | 3 | same continent of meaning, different network |
-| differ in all 4 at domain level | 12 | opposite side of the [[cybergraph]] |
+| differ in all 4 at domain level | rare — dimensions correlate | opposite side of the [[cybergraph]] |
 
-maximum distance = 4 dimensions × 3 level crossings = 12 hops. every transfer in the [[cybergraph]] is at most 12 hops from any other point. cross-shard [[proof]] relay via [[zheng|STARK]] at each hop
+[[small world]] theory: average path length ~ O(log N). [[bostrom]] at 3.1M [[particles]] already has diameter ≤ 10. at [[Avogadro]] scale, small-world shortcuts compress the 4D address space — the dimensions correlate heavily (semantically close [[particles]] are usually socially close and geographically close). realistic maximum is ~6-7 hops, not the naive 4×3=12. cross-shard [[proof]] relay via [[zheng|STARK]] at each hop
 
 ### shard count
 
