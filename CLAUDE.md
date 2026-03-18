@@ -13,8 +13,8 @@
 ## Knowledge Graph Purpose
 
 This is the seed knowledge base for planetary superintelligence. Pages
-are pure markdown with YAML frontmatter. The publisher lives at
-`render/` (Rust crate `cyber-publish`).
+are pure markdown with YAML frontmatter. The publisher is
+[optica](~/git/optica) — a standalone knowledge graph publisher.
 
 ## Page Format
 
@@ -33,8 +33,19 @@ publisher.
 
 Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
 
-The publisher (`optica`, formerly `cyber-publish`) lives at `render/`
-and looks for `root/` as the primary page directory (fallback: `graph/`, `pages/`).
+The publisher is `optica` at `~/git/optica`. It looks for `root/` as
+the primary page directory (fallback: `graph/`, `pages/`).
+
+## Running the Publisher
+
+```
+~/git/optica/target/release/optica serve ~/git/cyber --open
+~/git/optica/target/release/optica build ~/git/cyber
+```
+
+Build optica: `cd ~/git/optica && cargo build --release`
+
+Port 8888 (from `publish.toml` base_url). Port 8080 is reserved.
 ## Tagging Conventions
 
 Every page should have a `tags:` field in frontmatter. Key project tags (lenses):
