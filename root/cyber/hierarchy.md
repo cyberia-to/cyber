@@ -31,31 +31,31 @@ this is the same operator that provides the third force in the [[tri-kernel]] �
 
 ## four dimensions of locality
 
-sharding along a single dimension (hash range, chain ID) creates arbitrary boundaries that cut through natural clusters. the [[cybergraph]] has four dimensions of locality — [[particles]] that are close in any dimension should share a shard
+sharding along a single dimension (hash range, chain ID) creates arbitrary boundaries that cut through natural clusters. the [[cybergraph]] has four dimensions — the four primitives themselves
 
-### semantic locality
+### [[particles]] — semantic dimension
 
 [[particles]] with high mutual [[focus]] flow — many [[cyberlinks]] between them, strong [[axon]] weights — form semantic clusters. the [[tri-kernel]] reveals these through the [[heat]] kernel's community detection
 
 mechanism: periodically compute H_τ₂ and extract connected components above a threshold. these are the semantic zones. [[particles]] within a zone have high internal connectivity and low external connectivity — the natural shard boundary
 
-### social locality
+### [[neurons]] — social dimension
 
 [[neurons]] who transact frequently form social clusters. UTXO movement patterns reveal who sends to whom. co-locate frequent transactors in the same shard to minimize cross-shard transfers
 
 mechanism: track UTXO flow graph (sender → receiver) over an epoch. apply spectral clustering to the flow graph. [[neurons]] in the same social cluster share a shard. social locality often correlates with semantic locality (you transact with people interested in similar things) but not always
 
-### geographic locality
+### [[tokens]] — economic dimension
+
+each [[token]] naturally forms its own shard space. [[particles]] priced in [[$CYB]] cluster in $CYB shards. [[particles]] priced in [[$H]] cluster in $H shards. trading $CYB for $H is a cross-shard hop in the token dimension
+
+mechanism: UTXO denomination determines the token shard. within a token's shard space, [[particles]] sub-cluster by semantic and social dimensions. a new [[token]] creates a new cluster in the token dimension. the number of token shards scales with the number of live [[tokens]]
+
+### locations — geographic dimension
 
 latency matters for interactive use. [[neurons]] in the same physical region want low-latency access to their neighborhood. [[location proof]] provides this dimension
 
 mechanism: [[neurons]] with [[location proof]] are grouped by geographic proximity. validators in a region preferentially serve that region's shard. cross-region communication uses the relay layer with higher latency budget
-
-### temporal locality
-
-hot state (recent, active) vs cold state (archival). the [[forgetting]] mechanism already separates hot/cold tiers. shards can specialize by time horizon
-
-mechanism: [[particles]] with recent [[cyberlinks]] and active UTXO traffic live in the hot tier. [[particles]] that pass the archival sweep (low stake, low price, no traffic for N epochs) move to cold tier. cold tier is read-only for the [[tri-kernel]] — excluded from active computation but queryable
 
 ---
 
@@ -65,10 +65,10 @@ each dimension has four levels. a [[particle]] has a coordinate in each dimensio
 
 |  | cell | zone | domain | global |
 |---|---|---|---|---|
-| semantic | topic | field | continent | [[cybergraph]] |
-| social | circle | community | network | humanity |
-| geographic | local | regional | continental | planetary |
-| temporal | hot | warm | cool | archival |
+| [[particles]] (semantic) | topic | field | continent | [[cybergraph]] |
+| [[neurons]] (social) | circle | community | network | humanity |
+| [[tokens]] (economic) | denomination | basket | economy | all [[tokens]] |
+| locations (geographic) | local | regional | continental | planetary |
 
 a [[particle]]'s shard = the intersection of its coordinates across all four dimensions:
 
