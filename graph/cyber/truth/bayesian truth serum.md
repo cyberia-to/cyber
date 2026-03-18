@@ -1,6 +1,6 @@
 ---
 tags: cybics, article, draft, research
-alias: Bayesian Truth Serum, BTS, peer prediction, truth serum
+alias: Bayesian Truth Serum, BTS, peer prediction, truth serum, bayesian truth serum
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme

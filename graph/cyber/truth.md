@@ -44,4 +44,16 @@ between binary structure and continuous belief sits [[valence]] $v \in \{-1, 0, 
 
 the full truth model: binary structure → ternary seed → continuous market → [[focus]] distribution $\pi^*$. each layer requires the one below it.
 
-see [[two kinds of knowledge]] for the full structural/epistemic analysis. see [[valence]] for the ternary seed. see [[inversely coupled bonding surface]] for the market that produces the continuous factor. see [[market inhibition]] for how the two factors combine to suppress false structure. see [[truth]] for the convergent signal both factors produce.
+## the truth block
+
+| Page | Role |
+|------|------|
+| [[true-false problem]] | why global [[cyberank]] alone cannot answer contextual questions |
+| [[standard inference]] | the naive first solution — [[will]]-weighted context scoring |
+| [[costly signal]] | why [[will]] cost makes [[cyberlinks]] honest |
+| [[bayesian truth serum]] | honesty [[equilibrium]] via [[valence]] meta-predictions |
+| [[inversely coupled bonding surface]] | the market mechanism — TRUE and FALSE geometrically coupled |
+| [[market inhibition]] | how markets provide the inhibitory signal raw links cannot |
+| [[cyberlink market protocol]] | the unified 2|3 architecture — topology + market + meta-prediction |
+
+see [[two kinds of knowledge]] for the full structural/epistemic analysis. see [[valence]] for the ternary seed. see [[truth]] for the convergent signal both factors produce

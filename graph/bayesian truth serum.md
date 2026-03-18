@@ -4,4 +4,4 @@ alias: BTS
 ---
 a scoring mechanism that rewards honest reporting by comparing stated beliefs against meta-predictions about others' beliefs. honesty is a Bayes-Nash [[equilibrium]]
 
-see [[cyber/Bayesian Truth Serum]] for the scoring rules and [[karma]] integration
+see [[cyber/truth/bayesian truth serum]] for the scoring rules and [[karma]] integration
