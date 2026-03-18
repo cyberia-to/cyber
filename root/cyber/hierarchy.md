@@ -59,24 +59,60 @@ mechanism: [[particles]] with recent [[cyberlinks]] and active UTXO traffic live
 
 ---
 
-## the hierarchy levels
+## the 4×4 matrix
+
+each dimension has four levels. a [[particle]] has a coordinate in each dimension at each level
+
+|  | cell | zone | domain | global |
+|---|---|---|---|---|
+| semantic | topic | field | continent | [[cybergraph]] |
+| social | circle | community | network | humanity |
+| geographic | local | regional | continental | planetary |
+| temporal | hot | warm | cool | archival |
+
+a [[particle]]'s shard = the intersection of its coordinates across all four dimensions:
 
 ```
-Level 0: particles          — individual content-addressed nodes
-Level 1: cells              — local neighborhoods (τ₁, ~100-1000 particles)
-Level 2: zones              — semantic regions (τ₂, ~10K-100K particles)
-Level 3: domains            — continents of meaning (τ₃, ~1M-10M particles)
-Level 4: the cybergraph     — global state (all particles)
+shard(particle) = (semantic_cell, social_cell, geo_cell, temporal_tier)
 ```
 
-each level is a shard boundary. computation at level N sees full state within its shard and aggregated state from neighboring shards at level N+1
+two [[particles]] sharing more coordinates → cheaper to move [[tokens]] between them. sharing all four → same cell, zero cross-shard cost
+
+### where tokens live
+
+a UTXO lives in exactly one shard — determined by its [[particle]]'s 4D coordinates. moving [[tokens]] between shards costs hops. the cost depends on how many dimensions differ and at what level:
+
+| Difference | Hops | Example |
+|---|---|---|
+| same cell in all 4 dimensions | 0 | local transfer within a topic circle |
+| differ in 1 dimension at cell level | 1 | same topic, different social circle |
+| differ in 2 dimensions at cell level | 2 | different topic, different city |
+| differ in 1 dimension at zone level | 2 | same field, different community |
+| differ in 1 dimension at domain level | 3 | same continent of meaning, different network |
+| differ in all 4 at domain level | 12 | opposite side of the [[cybergraph]] |
+
+maximum distance = 4 dimensions × 3 level crossings = 12 hops. every transfer in the [[cybergraph]] is at most 12 hops from any other point. cross-shard [[proof]] relay via [[zheng|STARK]] at each hop
+
+### shard count
+
+at [[Avogadro]] scale (10^23 [[particles]]):
+
+| Level | Per dimension | Total shards | Particles per shard |
+|---|---|---|---|
+| cell | ~10^5 | ~10^20 | ~10^3 |
+| zone | ~10^3 | ~10^12 | ~10^11 |
+| domain | ~10^2 | ~10^8 | ~10^15 |
+
+total cell-level shards: ~10^20 (one hundred quintillion). each cell holds ~1000 [[particles]]. most of the 4D coordinate space is empty — cells exist only where [[particles]] actually cluster
+
+the actual occupied shard count is sparse: the four dimensions correlate (semantically close [[particles]] are often socially and geographically close). the effective number of cells is closer to max(N_semantic, N_social, N_geo) × N_temporal ≈ 10^18 × 4
 
 ### routing
 
-a [[particle]]'s address is its [[Hemera]] hash — this never changes. but the shard it lives on changes as the graph evolves. a lightweight routing index maps hash → current shard:
+a [[particle]]'s identity is its [[Hemera]] hash — this never changes. its shard assignment changes as the graph evolves. a lightweight routing index maps hash → current 4D shard coordinate:
 
 ```
-routing(particle_hash) → (domain, zone, cell)
+routing(particle_hash) → (semantic_cell, social_cell, geo_cell, temporal_tier)
 ```
 
 this index is itself a knowledge graph problem — maintained by the [[tri-kernel]] as part of the slow-timescale shard rebalancing
