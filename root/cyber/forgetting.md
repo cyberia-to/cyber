@@ -64,11 +64,13 @@ when $f(\text{price}) \to 0$, the link is computationally deactivated regardless
 
 limitation: market forgetting requires active market participation. low-traffic, low-interest edges may never attract enough participation to suppress stale content. markets lag reality.
 
-### stake decay
+### conviction withdrawal
 
-link weight is always computed from current staked balance (see [[stake dynamics]]). a [[neuron]] who stops refreshing their stake sees their links lose influence proportionally. stake decay provides forgetting proportional to the [[neuron]]'s ongoing conviction. if you stop caring enough to maintain your stake, your links fade.
+a [[cyberlink]]'s conviction is a [[UTXO]] — the [[neuron]] can spend it back to their wallet at any time. withdrawing conviction removes the economic weight from the link. the structural record stays in $L$ permanently, but without conviction it contributes nothing to the [[tri-kernel]]
 
-limitation: stake decay requires the [[neuron]] to actively move tokens. passive drift toward forgetting only occurs if the [[neuron]] genuinely reallocates capital.
+a [[neuron]] who withdraws conviction from old links is forgetting — reallocating capital to new assertions. the graph forgets proportional to the [[neuron]]'s evolving conviction
+
+see [[cyber/link]] for the conviction UTXO mechanics
 
 ### archival sweep
 
