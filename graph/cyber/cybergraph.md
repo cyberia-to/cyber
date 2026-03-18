@@ -45,7 +45,7 @@ A4 (entry): $p \in P \iff \exists\, \ell \in L : \operatorname{src}(\ell) = p \;
 
 A5 (conservation): $\pi^* \in \Delta^{|P|-1}$, i.e., $\sum_{p \in P} \pi^*_p = 1$ and $\pi^*_p > 0$ for all $p$. total [[focus]] is conserved at every block. it flows between particles but is never created or destroyed.
 
-A6 (homoiconicity): $H(L) \subseteq P$. every cyberlink induces a particle via content-addressing. $\ell \in L \Rightarrow H(\ell) \in P$. links and particles share the same type. this follows from A1 applied to link records: the hash of a cyberlink is a valid particle address.
+A6 (homoiconicity): $H(\operatorname{src}(\ell),\, \operatorname{tgt}(\ell)) \in P$. every directed edge — every [[axon]] — induces a [[particle]] via content-addressing. the hash of the (from, to) pair, without metadata, produces one axon-particle per unique relationship. all [[cyberlinks]] along the same edge contribute weight to the same axon-particle. axon-particles receive [[focus]], carry [[cyberank]], and can themselves be targets of [[cyberlinks]] — the graph ranks its own structure.
 
 ---
 

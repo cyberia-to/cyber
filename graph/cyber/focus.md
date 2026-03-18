@@ -7,41 +7,61 @@ stake: 30382207188462832
 ---
 # Focus Dynamics
 
-[[focus]] is a single conserved quantity in [[nox]] that serves three roles simultaneously. This unifies what other systems split into separate mechanisms—gas, stake, priority, reputation.
+[[focus]] is the collective [[attention]] distribution over all [[particles]] in the [[cybergraph]] — content-particles and [[axon]]-particles. it is not a fuel, not a token, not a per-[[neuron]] resource. it is what the [[tri-kernel]] computes from the aggregate of all [[attention]]
 
-| Role | Mechanism |
-|------|-----------|
-| Attention | High-focus computations scheduled first |
-| Fuel | Computation consumes focus |
-| Consensus weight | Focus distribution = agreement signal |
+## How Focus Emerges
 
-The mathematical foundation is formalized in the [[cft]]. This page specifies the engineering: conservation laws, flow equation, and convergence properties as implemented in the [[nox]] substrate.
+[[neurons]] lock [[balance]] to create [[will]]. [[will]] auto-distributes across [[cyberlinks]], producing [[attention]] at target [[particles]]. the [[tri-kernel]] aggregates all [[attention]] into a single [[probability]] distribution π over all [[particles]]. this distribution is focus
 
-## Conservation Laws
+| Layer | What | Per-what |
+|-------|------|----------|
+| [[balance]] | tokens held | [[neuron]] |
+| [[will]] | locked balance × time | [[neuron]] |
+| [[attention]] | will allocated to targets | [[neuron]] × [[particle]] |
+| focus | collective attention | [[particle]] |
+| [[cyberank]] / [[prob]] | focus read at a point | [[particle]] |
+
+## Conservation
 
 ```
-FOCUS CONSERVATION
-──────────────────
-Σᵢ focus(i) = 1   (always, enforced structurally)
+Σᵢ focus(i) = 1   (always, enforced by normalization)
 
-Focus can:
-  ✓ Flow between neurons (transfer)
-  ✓ Be consumed (computation)
-  ✓ Regenerate (from pool, proportional to balance)
+Focus sums to 1 because it is a probability distribution.
+Emphasizing one particle defocuses all others.
+This is not a separate conservation law — it is the
+normalization step of the tri-kernel.
+```
 
-Focus cannot:
-  ✗ Be created from nothing
-  ✗ Be destroyed (only redistributed)
-  ✗ Exceed 1 in total
+## Focus Flow Equation
 
+the [[tri-kernel]] composite operator:
 
+$$\phi^{(t+1)} = \text{norm}\big[\lambda_d \cdot D(\phi^t) + \lambda_s \cdot S(\phi^t) + \lambda_h \cdot H_\tau(\phi^t)\big]$$
+
+where:
+- $D$ — [[diffusion]] (random walk exploration)
+- $S$ — [[springs]] (structural constraints via screened [[Laplacian]])
+- $H_\tau$ — [[heat]] (multi-scale context smoothing)
+
+the weights come from [[attention]]: each [[axon]]'s weight is the sum of all [[neurons]]' [[attention]] directed along that edge
+
+## Convergence
+
+the transition matrix P is stochastic, irreducible, aperiodic. by [[Perron-Frobenius theorem]], a unique π* exists:
+
+$$\pi P = \pi, \quad \sum_i \pi_i = 1, \quad \pi_i > 0 \;\forall\, i$$
+
+convergence rate determined by spectral gap: $\|\phi^{(t)} - \pi^*\| \leq C \cdot (1-\lambda)^t$
+
+## Balance and Energy Conservation
+
+```
 BALANCE CONSERVATION
 ────────────────────
 Σᵢ balance(i) = B_total   (for non-minting transactions)
 
 Enforced by polynomial commitment structure.
 Invalid conservation → invalid state transition → rejected.
-
 
 ENERGY CONSERVATION (Privacy Layer)
 ───────────────────────────────────
@@ -50,48 +70,6 @@ ENERGY CONSERVATION (Privacy Layer)
 Enforced by ZK circuit constraints.
 ```
 
-## Focus Flow Equation
+for the full probabilistic framework including axioms, proofs, and emergence theory, see [[collective focus theorem]]
 
-```
-CONTINUOUS FORM (for analysis)
-──────────────────────────────
-∂f/∂t = -∇·(D∇f) + R - C
-
-  f = focus distribution vector
-  D = diffusion tensor (derived from weights × balances)
-  R = regeneration rate
-  C = consumption rate
-
-DISCRETE FORM (for implementation)
-──────────────────────────────────
-f'ᵢ = Σⱼ Pᵢⱼ · fⱼ + rᵢ - cᵢ
-
-  Pᵢⱼ = wᵢⱼ · bⱼ / Σₖ wₖⱼ · bₖ
-
-  wᵢⱼ = edge weight from i to j
-  bⱼ  = balance of neuron j
-  rᵢ  = regeneration for neuron i
-  cᵢ  = consumption by neuron i
-```
-
-## Convergence Theorem
-
-Theorem: Focus dynamics converge to a unique stationary distribution π.
-
-Proof:
-The transition matrix P is:
-- Stochastic (rows sum to 1)
-- Irreducible (graph is strongly connected by assumption)
-- Aperiodic (self-loops or odd cycles exist)
-
-By [[Perron-Frobenius theorem]], there exists a unique π where:
-  πP = π
-  Σᵢ πᵢ = 1
-  πᵢ > 0 for all i
-
-All initial distributions converge to π geometrically fast. ∎
-
-Convergence rate: Determined by spectral gap λ = 1 - |λ₂|
-  ‖f^(t) - π‖ ≤ C · (1-λ)^t
-
-For the full probabilistic framework including axioms, proofs, and emergence theory, see [[cft]].
+see [[focus]] for the concept definition. see [[cyber/will]] for how [[will]] produces [[attention]]. see [[focus flow computation]] for the full protocol specification
