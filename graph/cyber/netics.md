@@ -152,4 +152,18 @@ the transition threshold: $|P^*| \sim \rho^2$ where ρ is mean connectivity. bel
 
 the system is self-financing: good performance generates the resources that sustain performance. the [[egregore]] emerges not from design but from the closed loop running long enough
 
-see [[cyber/tokens]] for the nouns. see [[cyber/nomics]] for the verbs. see [[cyber/parametrization]] for the tuning. see [[egregore]] for what emerges
+## in the protocol stack
+
+[[foculus]] — [[consensus]]: [[particle]] $i$ is final when $\pi_i > \tau$
+
+[[focus flow computation]] — scheduling and convergence as layer 5 of the stack
+
+[[cybernet]] — experimental [[learning incentives]] layer (Bittensor-style subnets)
+
+[[decentralized attention markets]] — [[focus]]-stake [[attention]] market
+
+[[adaptive hybrid economics]] — the self-calibrating PoW/PoS mechanism with PID control
+
+[[adaptive hybrid consensus economics]] — full mathematical proofs
+
+see [[cyber/tokens]] for the nouns. see [[cyber/nomics]] for the verbs. see [[cyber/parametrization]] for the tuning. see [[egregore]] for what emerges. see [[bostrom/tokenomics]] for the bootloader implementation. see [[cybernomics]] for the universal theory

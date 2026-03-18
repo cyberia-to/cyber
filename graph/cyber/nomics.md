@@ -3,7 +3,7 @@ tags: cyber, cybernomics, cip
 crystal-type: entity
 crystal-domain: economics
 crystal-size: article
-alias: cyber nomics, cybernomics protocol
+alias: cyber nomics, cybernomics protocol, cyber tokenomics, cyber economics, economic model
 stake: 50000000000000000
 ---
 # cyber nomics
