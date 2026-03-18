@@ -10,12 +10,13 @@ seven [[Rust]] crates that implement [[cyb]]. five form the [[cyb/core]] proof p
 
 ```
                     ┌→ mudra (crypto for agents)
-nebu → hemera ──────┤
-                    ├→ nox → zheng → bbg → tru (proof pipeline → intelligence)
+nebu → hemera ──────┤               ┌→ tru (intelligence)
+                    ├→ nox → zheng → bbg ─┤
+                    │                └→ plumb (tokens)
                     └→ radio (transport for data)
 ```
 
-## the eight crates
+## the nine crates
 
 | # | crate | repo | role | depends on |
 |---|-------|------|------|-----------|
@@ -25,15 +26,17 @@ nebu → hemera ──────┤
 | 4 | [[zheng]] | ~/git/zheng | [[stark]] proofs: WHIR + SuperSpartan | nox |
 | 5 | [[bbg]] | ~/git/bbg | authenticated state: indexes + commitments | zheng |
 | 6 | [[tru]] | ~/git/tru | [[tri-kernel]] + [[consensus]]: computes [[focus]], [[cyberank]], [[karma]] | bbg |
-| 7 | [[mudra]] | ~/git/mudra | post-quantum crypto: KEM, CSIDH, TFHE, threshold | hemera |
-| 8 | [[radio]] | ~/git/radio | P2P transport: QUIC, BAO streaming, gossip | hemera |
+| 7 | [[plumb]] | ~/git/plumb | [[token]] accounting: [[basic token operations]], conservation, [[UTXO]] | bbg |
+| 8 | [[mudra]] | ~/git/mudra | post-quantum crypto: KEM, CSIDH, TFHE, threshold | hemera |
+| 9 | [[radio]] | ~/git/radio | P2P transport: QUIC, BAO streaming, gossip | hemera |
 
-## proof pipeline (crates 1-6)
+## proof pipeline (crates 1-7)
 
-six crates in a chain that transform field arithmetic into collective [[intelligence]]. remove any one and the system has no foundation
+seven crates in a chain that transform field arithmetic into collective [[intelligence]] with a [[token]] economy. remove any one and the system has no foundation
 
 ```
-nebu (field)  →  hemera (hash)  →  nox (VM)  →  zheng (proofs)  →  bbg (state)  →  tru (intelligence)
+nebu (field) → hemera (hash) → nox (VM) → zheng (proofs) → bbg (state) → tru (intelligence)
+                                                                        → plumb (tokens)
 ```
 
 ### nebu — field arithmetic
@@ -73,6 +76,12 @@ five layers: edge store (content-addressed, immutable) → neuron index → part
 the [[relevance machine]]. reads the [[cybergraph]] from [[bbg]] and computes what matters: [[focus]] per [[particle]], [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole. the [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) runs in [[consensus]] — deterministic, verifiable, on-chain
 
 tru closes the loop: [[neurons]] create [[cyberlinks]] → bbg stores them → tru computes [[focus]] → [[focus]] informs nox memoization, [[cyber/hierarchy]] folding, [[cyber/truth]] markets, and [[cyber/self/linking|self-linking]]. the intelligence feeds back into every layer of the stack. see [[tru]]
+
+### plumb — token accounting
+
+the [[token]] layer. five [[basic token operations]] (pay, lock, uber, mint, burn) over [[bbg]] state. enforces conservation laws: every transfer preserves total supply, every mint is backed by proven Δπ, every burn is irreversible. [[UTXO]] management, [[will]] lock mechanics, conviction accounting on [[cyberlinks]]
+
+plumb and tru branch off bbg in parallel: tru computes what matters ([[focus]]). plumb moves what matters ([[tokens]]). together they close the economic loop — [[focus]] determines [[value]], [[tokens]] fund [[attention]], [[attention]] shapes [[focus]]. see [[plumb]]
 
 ### the chain
 
@@ -124,6 +133,7 @@ proofs ([[zheng]]) verify and charge. mudra hides and shares. orthogonal concern
 | zheng | trustless verification. the [[cybergraph]] does not require trusting nodes |
 | bbg | completeness proofs. syncing a namespace proves nothing was withheld |
 | tru | [[intelligence]]. the [[tri-kernel]] computes what matters. [[focus]], [[cyberank]], [[karma]], [[syntropy]] |
+| plumb | [[token]] economy. conservation-proven transfers, minting, burning, [[will]] locks, conviction |
 | mudra | agent privacy. [[neurons]] communicate confidentially and compute on encrypted data |
 | radio | P2P connectivity. data moves between devices without centralized infrastructure |
 
@@ -133,9 +143,10 @@ the dependency chain determines the build order. nebu first, always. hemera next
 
 ```
 Phase 1:  nebu → hemera                    (foundation)
-Phase 2:  nox ──────→ zheng → bbg → tru     (proof pipeline → intelligence)
-          mudra                             (agent crypto)
-          radio                             (transport)
+Phase 2:  nox ──────→ zheng → bbg → tru      (proof pipeline → intelligence)
+                                   → plumb   (token accounting)
+          mudra                              (agent crypto)
+          radio                              (transport)
 Phase 3:  cyb/os                            (kernel + runtime)
 Phase 4:  cyb/features                      (render, contracts)
 Phase 5:  cyb/apps                          (portal, oracle, sigma...)
