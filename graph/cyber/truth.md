@@ -69,10 +69,10 @@ this is the attention yield curve — but it emerges naturally from the mechanic
 | [[false]] | market → 0 — edge suppressed, [[focus]] blocked |
 | [[true-false problem]] | why global [[cyberank]] alone cannot answer contextual questions |
 | [[standard inference]] | the naive first solution — [[will]]-weighted context scoring |
-| [[costly signal]] | why [[will]] cost makes [[cyberlinks]] honest |
+| [[cyber/truth/costly signal]] | why [[will]] cost makes [[cyberlinks]] honest |
 | [[serum]] | honesty [[equilibrium]] via [[valence]] meta-predictions |
 | [[coupling]] | the market mechanism — TRUE and FALSE geometrically coupled |
 | [[inhibition]] | how markets provide the inhibitory signal raw links cannot |
-| [[market]] | the unified 2|3 architecture — topology + market + meta-prediction |
+| [[cyber/truth/market]] | the unified 2|3 architecture — topology + market + meta-prediction |
 
 see [[two kinds of knowledge]] for the full structural/epistemic analysis. see [[valence]] for the ternary seed. see [[truth]] for the convergent signal both factors produce
