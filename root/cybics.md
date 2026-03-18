@@ -15,6 +15,22 @@ Three universal operators compose the [[tri-kernel]]: diffusion for exploration,
 
 The fixed point of the tri-kernel minimizes a unified free energy — the weights emerge as Lagrange multipliers, the same way thermodynamics derives the Boltzmann distribution. The solution is a Boltzmann-Gibbs equilibrium: the canonical ensemble from statistical mechanics, applied to knowledge. Intelligence is a dissipative structure — stop the energy inflow and coherence collapses. A [[cyberank]] distribution is a simulation-proof of collective relevance: no derivation required, no authority consulted. Just convergence under physics. [[Bostrom]] is the first live experiment. The [[superhuman]] is the first biological proof.
 
-See [[cybics foundations]] for the full formal framework.
+## the 21 domains
 
-Five axioms. One grammar. Three operators. Proof by simulation.
+seven triads cover all [[knowledge]]. each triad is a dialectic of three inseparable aspects
+
+| triad | domain 1 | domain 2 | domain 3 | question |
+|-------|----------|----------|----------|----------|
+| FORM | [[math]] | [[info]] | [[comp]] | what are the rules? |
+| MASS | [[quantum]] | [[chemo]] | [[energo]] | what is it made of? |
+| SPACE | [[cosmo]] | [[geo]] | [[eco]] | where does it happen? |
+| LIFE | [[bio]] | [[neuro]] | [[sense]] | who is alive? |
+| WORD | [[lang]] | [[spiri]] | [[meta]] | what does it mean? |
+| WORK | [[ai]] | [[tech]] | [[cyber]] | how is it made? |
+| PLAY | [[socio]] | [[crypto]] | [[game]] | how do we coordinate? |
+
+7 questions × 3 aspects = 21 irreducible domains of [[knowledge]]. the [[crystal]] seeds the [[cybergraph]] with these domains as the foundational ontology
+
+see [[cybics foundations]] for the full formal framework.
+
+five axioms. one grammar. three operators. proof by simulation.
