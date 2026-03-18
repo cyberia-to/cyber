@@ -62,7 +62,7 @@ each dimension has four scales. a [[particle]] has a coordinate in each dimensio
 | [[tokens]] | economic | denomination | basket | economy | all [[tokens]] |
 | locations | geographic | village | city | state | planetary |
 
-only [[cells]] are operational — they hold state, process transactions, run the [[tri-kernel]]. zones, domains, and global are observations of the [[cell]] topology at different [[heat]] kernel temperatures. they emerge from how [[cells]] connect to each other, not from assignment
+[[cells]] are the base operational level — they hold state, process transactions, run the [[tri-kernel]]. zones, domains, and global emerge from the [[cell]] topology at different [[heat]] kernel temperatures. they are not passive observations — each level holds stakes and coordinates [[consensus]]. validators stake at the level they serve
 
 a [[particle]]'s [[cell]] = the intersection of its coordinates across all four dimensions. two [[particles]] sharing more coordinates → cheaper to move [[tokens]] between them. sharing all four → same [[cell]], zero cross-cell cost
 
