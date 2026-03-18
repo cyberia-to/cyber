@@ -1,6 +1,6 @@
 ---
 tags: cyber, article, draft, research
-alias: self-linking, autonomous linking, graph completion, inference completion, self-link
+alias: self-linking, autonomous linking, graph completion, inference completion, self-link, linking
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
