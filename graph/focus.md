@@ -1,30 +1,20 @@
 ---
 icon: 🎯
-alias: attention distribution, π
+alias: π, collective focus
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 10799633444575796
 ---
-the conserved quantity of [[cyber]] — the mechanism through which [[relevance]] emerges
+collective [[attention]]. the [[probability]] distribution π over all [[particles]] — content-particles and [[axon]]-particles — that emerges from the [[tri-kernel]] operating on the [[attention]]-weighted [[cybergraph]]
 
-attention is finite. the sum of all focus equals 1 — emphasizing one thing defocuses everything else. focus is the input: a probability distribution $\pi$ over [[particles]] that flows, regenerates, and is consumed. [[relevance]] is the output: the judgment that emerges when focus reaches [[equilibrium]]
+focus sums to 1 across the whole graph. emphasizing one [[particle]] defocuses all others. no individual [[neuron]] controls focus — it is computed from the aggregate of all [[attention]]
 
-the stationary vector of the [[token]]-weighted random walk, computed by the [[tri-kernel]]. regenerates proportionally to stake, consumed by [[cyberlinks]]. [[threshold]] sets the minimum focus a link needs to affect ranking
+individual [[neurons]] direct [[attention]]. the [[cybergraph]] computes focus. [[cyberank]] reads focus at a single [[particle]]. [[relevance]] reads focus in context. [[karma]] aggregates focus per [[neuron]]. [[value]] multiplies focus by cap
 
-focus serves three roles simultaneously:
+when focus converges, it produces [[cyberank]]: the per-[[particle]] [[prob]] of observation. the [[tru]] performs this computation via the [[tri-kernel]] — [[diffusion]], [[springs]], [[heat]]
 
-| Role | Mechanism |
-|------|-----------|
-| Attention | High-focus computations scheduled first |
-| Fuel | Computation consumes focus |
-| Consensus weight | Focus distribution = agreement signal |
-
-conservation makes every allocation a real choice. polarization is mechanically limited because amplifying one [[particle]] defocuses all others. cognitive overload is filtered because the [[threshold]] ensures only [[particles]] with sufficient collective backing affect [[ranking]]
-
-when focus converges, it produces [[relevance]]: [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole. the [[tru]] is the [[relevance machine]] that performs this computation
-
-see [[relevance]] for what focus computes. see [[collective focus theorem]] for convergence proofs. see [[tri-kernel]] for the operators. see [[focus flow computation]] for full protocol specification
+see [[cyber/focus]] for the dynamics. see [[collective focus theorem]] for convergence proofs. see [[focus flow computation]] for the full protocol specification
 
 discover all [[concepts]]
