@@ -3,7 +3,7 @@ tags: cyber, core, cip
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
-alias: cyber hierarchy, sharding, scaling, n-dimensional sharding
+alias: cyber hierarchy, folding, scaling, graph folding
 status: draft
 stake: 80000000000000000
 ---
@@ -15,45 +15,39 @@ how the [[cybergraph]] scales to [[Avogadro]] numbers — 10^23 [[particles]], 1
 
 ## the insight
 
-the [[tri-kernel]] that computes [[focus]] also reveals the natural hierarchy. [[springs]] (graph [[Laplacian]] eigenvectors) define cluster boundaries via spectral decomposition. [[heat]] (exp(-τL) at different temperatures) controls the resolution — which level of the hierarchy you read:
+the [[tri-kernel]] that computes [[focus]] also reveals the natural hierarchy. all three operators contribute:
 
-| Scale | Temperature | What it reveals | Shard level |
-|-------|-------------|----------------|-------------|
-| fine | τ₁ (small) | local neighborhoods — tightly linked [[particles]] | cell |
-| medium | τ₂ | semantic regions — topic areas with high mutual [[focus]] flow | zone |
-| coarse | τ₃ (large) | continents of meaning — the broadest clusters | domain |
+| Operator | What it reveals | Folding role |
+|---|---|---|
+| [[springs]] | [[Laplacian]] eigenvectors — structural communities | defines cluster boundaries via spectral decomposition |
+| [[heat]] | multi-scale smoothing — communities at different resolutions | controls the scale: low τ = fine cells, high τ = coarse domains |
+| [[diffusion]] | random walk communities — where [[probability]] flows | validates clusters via flow concentration |
 
-no administrator assigns shards. the [[tri-kernel]] computes them as a side effect of computing [[focus]]. the same operators that rank [[particles]] also partition the graph for scaling
+[[springs]] provides the eigenvectors that define fold lines. [[heat]] controls the resolution — which level of the hierarchy you read. [[diffusion]] reveals the flow patterns that validate the folds. the three together give robust community detection that no single operator provides alone
+
+no administrator assigns structure. the [[tri-kernel]] computes it as a side effect of computing [[focus]]. the same operators that rank [[particles]] also partition the graph for scaling
 
 ---
 
-## four dimensions of locality
+## four dimensions
 
-sharding along a single dimension (hash range, chain ID) creates arbitrary boundaries that cut through natural clusters. the [[cybergraph]] has four dimensions — the four primitives themselves
+the [[cybergraph]] has four dimensions — the four primitives themselves. [[particles]] that are close in any dimension should share a cell
 
-### [[particles]] — semantic dimension
+### [[particles]] — semantic
 
-[[particles]] with high mutual [[focus]] flow — many [[cyberlinks]] between them, strong [[axon]] weights — form semantic clusters. the [[tri-kernel]] reveals these through the [[heat]] kernel's community detection
+[[particles]] with high mutual [[focus]] flow — many [[cyberlinks]] between them, strong [[axon]] weights — form semantic clusters. the [[tri-kernel]] reveals these through spectral decomposition ([[springs]]) and multi-scale smoothing ([[heat]])
 
-mechanism: periodically compute H_τ₂ and extract connected components above a threshold. these are the semantic zones. [[particles]] within a zone have high internal connectivity and low external connectivity — the natural shard boundary
+### [[neurons]] — social
 
-### [[neurons]] — social dimension
+[[neurons]] who transact frequently form social clusters. UTXO movement patterns reveal who sends to whom. co-locate frequent transactors in the same cell to minimize cross-cell transfers. social locality often correlates with semantic locality but not always
 
-[[neurons]] who transact frequently form social clusters. UTXO movement patterns reveal who sends to whom. co-locate frequent transactors in the same shard to minimize cross-shard transfers
+### [[tokens]] — economic
 
-mechanism: track UTXO flow graph (sender → receiver) over an epoch. apply spectral clustering to the flow graph. [[neurons]] in the same social cluster share a shard. social locality often correlates with semantic locality (you transact with people interested in similar things) but not always
+each [[token]] naturally forms its own cluster. [[particles]] priced in [[$CYB]] cluster in $CYB cells. trading $CYB for $H is a cross-cell hop in the token dimension. a new [[token]] creates a new cluster. the number of token cells scales with the number of live [[tokens]]
 
-### [[tokens]] — economic dimension
+### locations — geographic
 
-each [[token]] naturally forms its own shard space. [[particles]] priced in [[$CYB]] cluster in $CYB shards. [[particles]] priced in [[$H]] cluster in $H shards. trading $CYB for $H is a cross-shard hop in the token dimension
-
-mechanism: UTXO denomination determines the token shard. within a token's shard space, [[particles]] sub-cluster by semantic and social dimensions. a new [[token]] creates a new cluster in the token dimension. the number of token shards scales with the number of live [[tokens]]
-
-### locations — geographic dimension
-
-latency matters for interactive use. [[neurons]] in the same physical region want low-latency access to their neighborhood. [[location proof]] provides this dimension
-
-mechanism: [[neurons]] with [[location proof]] are grouped by geographic proximity. validators in a region preferentially serve that region's shard. cross-region communication uses the relay layer with higher latency budget
+latency matters for interactive use. [[neurons]] in the same physical region want low-latency access to their neighborhood. [[location proof]] provides this dimension. validators in a region preferentially serve that region's cells
 
 ---
 
@@ -68,17 +62,68 @@ each dimension has four levels. a [[particle]] has a coordinate in each dimensio
 | [[tokens]] | economic | denomination | basket | economy | all [[tokens]] |
 | locations | geographic | village | city | state | planetary |
 
-a [[particle]]'s shard = the intersection of its coordinates across all four dimensions:
+a [[particle]]'s cell = the intersection of its coordinates across all four dimensions. two [[particles]] sharing more coordinates → cheaper to move [[tokens]] between them. sharing all four → same cell, zero cross-cell cost
 
 ```
-shard(particle) = (semantic_cell, social_cell, geo_cell, temporal_tier)
+cell(particle) = (semantic_cell, social_cell, token_cell, geo_cell)
 ```
 
-two [[particles]] sharing more coordinates → cheaper to move [[tokens]] between them. sharing all four → same cell, zero cross-shard cost
+---
 
-### where tokens live
+## the root cell
 
-a UTXO lives in exactly one shard — determined by its [[particle]]'s 4D coordinates. moving [[tokens]] between shards costs hops. the cost depends on how many dimensions differ and at what level:
+the root cell is where all four dimensions meet at their global level — the origin (0,0,0,0)
+
+it holds two things:
+
+1. the [[crystal]] — the 5,040 [[particle]] seed that defines the foundational ontology. these [[particles]] are maximally general, referenced by everything, naturally highest [[focus]]
+
+2. the routing table — maps [[particle]] hash → domain. not cell-level routing — that is each domain's job
+
+```
+root    → knows domains      (~10^2 entries)
+domain  → knows zones        (~10^3 entries per domain)
+zone    → knows cells        (~10^3 entries per zone)
+cell    → knows particles    (~10^3 entries per cell)
+```
+
+four hops to find any [[particle]] among 10^23. the root cell is the first hop
+
+before the graph has enough structure to fold, everything IS the root cell. [[bostrom]] right now is one root cell. as the graph crosses the phase transition threshold $|P^*| \sim \rho^2$, it starts folding — but the root cell persists as the coordination point
+
+---
+
+## two information flows
+
+### subjective (neuron-driven)
+
+[[tokens]], [[cyberlinks]], [[attention]] allocations. [[neurons]] choose where to move these. a [[neuron]] decides to send [[$CYB]] from cell A to cell B — that is a subjective decision, costs a [[proof]] relay
+
+direction: horizontal and downward. [[neurons]] push information into cells
+
+### objective (cell-computed)
+
+[[focus]] aggregations, [[rank]] summaries, community structure, routing updates. no [[neuron]] moves these — each cell computes them deterministically from its local state and propagates upward
+
+direction: upward only. cells push truth to zones, zones to domains, domains to root
+
+```
+root     ← receives domain summaries (objective)
+domain   ← receives zone summaries (objective)
+zone     ← receives cell summaries (objective)
+cell     ← receives cyberlinks, tokens (subjective from neurons)
+         → computes local focus, propagates upward (objective)
+```
+
+a [[neuron]] cannot push a fake [[rank]] summary upward — the cell computes it deterministically from the [[tri-kernel]] and proves it via [[zheng|STARK]]. the [[proof]] propagates with the summary. each level verifies the level below
+
+the subjective layer (what [[neurons]] want) and the objective layer (what the graph computes) flow in different directions through the same structure. [[tokens]] flow wherever [[neurons]] send them. truth flows wherever the math says it goes
+
+---
+
+## hop cost
+
+moving [[tokens]] between cells costs hops. the cost depends on how many dimensions differ and at what level:
 
 | Difference | Hops | Example |
 |---|---|---|
@@ -87,11 +132,62 @@ a UTXO lives in exactly one shard — determined by its [[particle]]'s 4D coordi
 | differ in 2 dimensions at cell level | 2 | different topic, different city |
 | differ in 1 dimension at zone level | 2 | same field, different community |
 | differ in 1 dimension at domain level | 3 | same continent of meaning, different network |
-| differ in all 4 at domain level | rare — dimensions correlate | opposite side of the [[cybergraph]] |
 
-[[small world]] theory: average path length ~ O(log N). [[bostrom]] at 3.1M [[particles]] already has diameter ≤ 10. at [[Avogadro]] scale, small-world shortcuts compress the 4D address space — the dimensions correlate heavily (semantically close [[particles]] are usually socially close and geographically close). realistic maximum is ~6-7 hops, not the naive 4×3=12. cross-shard [[proof]] relay via [[zheng|STARK]] at each hop
+[[small world]] theory: average path length ~ O(log N). [[bostrom]] at 3.1M [[particles]] already has diameter ≤ 10. at [[Avogadro]] scale, small-world shortcuts compress the 4D address space — the dimensions correlate heavily. realistic maximum is ~6-7 hops. cross-cell [[proof]] relay via [[zheng|STARK]] at each hop
 
-### shard count
+---
+
+## UTXOs
+
+all UTXOs are private by default. every UTXO is a commitment. every transfer is a ZK [[proof]]. the only public information is: a valid state transition happened
+
+each cell maintains its own [[mutator set]]: [[AOCL]] for creation, [[SWBF]] for spending. no nullifiers — bit positions in a bloom filter replace them. creation and spending events are unlinkable by construction. storage grows O(log N) via [[MMR]] compaction
+
+within-cell transfers are cheap — local state update, no cross-cell coordination. cross-cell transfers require [[zheng|STARK]] [[proof]] relay. the social dimension co-locates frequent transactors in the same cell
+
+see [[cyber/state]] for transfer mechanics. see [[AOCL]] and [[SWBF]] for the [[mutator set]]
+
+---
+
+## folding the tri-kernel
+
+the [[tri-kernel]] has a locality radius: h = O(log(1/ε)) hops. each [[particle]]'s [[focus]] depends only on its h-hop neighborhood
+
+within a cell: the [[tri-kernel]] runs at full resolution. every [[cyberlink]], every [[axon]] weight, every market price is visible
+
+within a zone: cells communicate aggregated [[focus]] vectors. each cell exports its boundary [[particles]]' [[focus]] values to neighboring cells
+
+across zones: zones exchange coarse-grained [[focus]] summaries. the error is bounded:
+
+$$\|\pi^*_{\text{folded}} - \pi^*_{\text{global}}\| \leq C \cdot e^{-\alpha h}$$
+
+more communication → smaller error → closer to global [[focus]]
+
+---
+
+## timescales
+
+| Timescale | What happens | Frequency |
+|-----------|-------------|-----------|
+| fast (per block) | [[focus]] flow within cells, UTXO processing | every block |
+| medium (per epoch) | cross-cell [[focus]] synchronization, boundary updates | every ~100 blocks |
+| slow (per era) | cell rebalancing — cells merge/split based on load and connectivity | every ~10K blocks |
+
+the fast timescale sees fixed cell boundaries. the slow timescale adjusts boundaries based on accumulated statistics. because the fast dynamics converge much faster than boundaries change, the system is stable
+
+### rebalancing
+
+when a cell grows too large: split it along the [[Laplacian]] eigenvector boundary (spectral bisection via [[springs]])
+
+when two cells have become tightly coupled (high cross-cell [[focus]] flow): merge them
+
+when a zone's internal connectivity drops below threshold ([[springs]] eigengap shows it is really two zones): split the zone
+
+state migration ([[particles]] and UTXOs move between cells) is amortized over the slow timescale
+
+---
+
+## shard count
 
 at [[Avogadro]] scale — estimated count at each level per dimension:
 
@@ -102,81 +198,7 @@ at [[Avogadro]] scale — estimated count at each level per dimension:
 | [[tokens]] | economic | ~10^6 denominations | ~10^4 baskets | ~10^2 economies | 1 token space |
 | locations | geographic | ~10^6 villages | ~10^4 cities | ~10^2 states | 1 planet |
 
-a [[particle]]'s shard = the intersection of its coordinates. most of the 4D space is empty — dimensions correlate (semantically close [[particles]] are usually socially close and geographically close). cells exist only where [[particles]] actually cluster
-
-### routing
-
-a [[particle]]'s identity is its [[Hemera]] hash — this never changes. its shard assignment changes as the graph evolves. a lightweight routing index maps hash → current 4D shard coordinate:
-
-```
-routing(particle_hash) → (semantic_cell, social_cell, geo_cell, temporal_tier)
-```
-
-this index is itself a knowledge graph problem — maintained by the [[tri-kernel]] as part of the slow-timescale shard rebalancing
-
----
-
-## sharding the tri-kernel
-
-the [[tri-kernel]] has a locality radius: h = O(log(1/ε)) hops. this means each [[particle]]'s [[focus]] depends only on its h-hop neighborhood. sharding exploits this:
-
-within a cell (level 1): the [[tri-kernel]] runs at full resolution. every [[cyberlink]], every [[axon]] weight, every market price is visible. convergence is fast because the graph is small
-
-within a zone (level 2): cells communicate aggregated focus vectors. each cell exports its boundary [[particles]]' focus values to neighboring cells. the [[tri-kernel]] treats cross-cell focus as boundary conditions
-
-across zones (level 3): zones exchange coarse-grained focus summaries. the global [[focus]] distribution is approximated by composing zone-level summaries. the error is bounded by the locality theorem:
-
-$$\|\pi^*_{\text{sharded}} - \pi^*_{\text{global}}\| \leq C \cdot e^{-\alpha h}$$
-
-where h is the communication horizon and α depends on the spectral gap. more communication → smaller error → closer to global [[focus]]
-
----
-
-## sharding UTXOs
-
-all UTXOs are private by default. every UTXO is a commitment. every transfer is a ZK [[proof]]. the only public information is: a valid state transition happened
-
-each cell maintains its own [[mutator set]]: [[AOCL]] for creation, [[SWBF]] for spending. no nullifiers — bit positions in a bloom filter replace them. creation and spending events are unlinkable by construction. storage grows O(log N) via [[MMR]] compaction
-
-within-cell transfers are cheap — local state update, no cross-shard coordination. cross-cell transfers require [[zheng|STARK]] [[proof]] relay between cells. cross-zone transfers relay across zone boundaries — higher latency, higher cost. the social dimension co-locates frequent transactors in the same cell
-
-see [[cyber/state]] for the transfer mechanics. see [[AOCL]] and [[SWBF]] for the [[mutator set]]. see [[cyber/proofs]] for the ZK [[proof]] taxonomy
-
----
-
-## the self-referential property
-
-the [[tri-kernel]]'s output informs the sharding. the sharding constrains the [[tri-kernel]]'s input (each shard sees its local graph). this is another fixed-point problem
-
-all three operators contribute to community detection:
-
-| Operator | What it reveals | Sharding role |
-|---|---|---|
-| [[diffusion]] | random walk communities — where probability flows | identifies semantic clusters via flow concentration |
-| [[springs]] | Laplacian eigenvectors — structural communities | spectral clustering on the graph [[Laplacian]] — the standard method |
-| [[heat]] | multi-scale smoothing — communities at different resolutions | controls the scale: low τ = fine cells, high τ = coarse domains |
-
-[[springs]] provides the eigenvectors that define cluster boundaries. [[heat]] controls the resolution — which level of the hierarchy you're reading. [[diffusion]] reveals the flow patterns that validate the clusters. the three together give robust community detection that no single operator provides alone
-
-convergence is guaranteed by two-timescale separation:
-
-| Timescale | What happens | Frequency |
-|-----------|-------------|-----------|
-| fast (per block) | [[focus]] flow within shards, UTXO processing | every block |
-| medium (per epoch) | cross-shard focus synchronization, boundary updates | every ~100 blocks |
-| slow (per era) | shard rebalancing — cells merge/split based on load and connectivity | every ~10K blocks |
-
-the fast timescale sees fixed shard boundaries. the slow timescale adjusts boundaries based on accumulated statistics. because the fast dynamics converge much faster than boundaries change, the system is stable
-
-### shard rebalancing
-
-when a cell grows too large (too many [[particles]], too much UTXO traffic): split it along the [[Laplacian]] eigenvector boundary (spectral bisection via [[springs]])
-
-when two cells have become tightly coupled (high cross-cell [[focus]] flow, many cross-cell transfers): merge them
-
-when a zone's internal connectivity drops below threshold ([[springs]] eigengap shows it is really two zones): split the zone
-
-these operations require state migration — [[particles]] and UTXOs move between cells. the cost is amortized over the slow timescale
+most of the 4D space is empty — dimensions correlate. cells exist only where [[particles]] actually cluster
 
 ---
 
@@ -188,7 +210,7 @@ these operations require state migration — [[particles]] and UTXOs move betwee
 | Urbit | 4-tier (galaxy/star/planet/moon) | static (burned at genesis) | 1 (identity) |
 | Ethereum 2.0 | 2-tier (beacon/shards) | static (64 shards) | 1 (hash range) |
 | Cosmos | flat (sovereign chains + IBC) | static (per chain) | 0 (no hierarchy) |
-| [[cyber]] | 4-tier (cell/zone/domain/global) | dynamic (computed by [[tri-kernel]]) | 4 (semantic, social, economic, geographic) |
+| [[cyber]] | 4-tier (cell/zone/domain/root) | dynamic (computed by [[tri-kernel]]) | 4 (semantic, social, economic, geographic) |
 
 address space:
 
@@ -200,20 +222,18 @@ address space:
 | IPv6 | 2^128 = 3 × 10^38 |
 | [[cyber]] | [[Hemera]] = 2^256 ≈ 10^77 (content-addressed, [[Avogadro]] is a rounding error) |
 
-the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the ranking engine, the sharding oracle, and the routing advisor. one computation serves all three purposes
+the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the ranking engine, the folding oracle, and the routing advisor. one computation serves all three purposes
 
 ---
 
 ## open questions
 
-shard boundary latency: how many blocks of cross-shard latency is acceptable before UX degrades? this determines the minimum cell size (smaller cells → more cross-shard traffic)
+shard boundary latency: how many blocks of cross-cell latency is acceptable before UX degrades? this determines the minimum cell size
 
-privacy and routing: if a [[neuron]]'s shard assignment is public, it leaks information about their [[cyberlink]] patterns. can shard assignment itself be private?
+privacy and routing: if a [[neuron]]'s cell assignment is public, it leaks information about their [[cyberlink]] patterns. can cell assignment itself be private?
 
-incentive alignment: validators specialize in cells. what prevents a validator from refusing to serve a low-value cell? the social dimension must ensure that serving any cell is profitable
+incentive alignment: validators specialize in cells. what prevents a validator from refusing to serve a low-value cell?
 
-cold-to-hot reactivation: when an archived [[particle]] gets new [[cyberlinks]], it must rejoin a hot cell. which cell? the semantic dimension may have shifted since it was archived
+cold-to-hot reactivation: when an archived [[particle]] gets new [[cyberlinks]], it must rejoin a cell. which cell? the semantic dimension may have shifted since it was archived
 
-initial bootstrapping: before the graph has enough structure for the [[heat]] kernel to reveal clusters, what sharding strategy applies? likely: single shard (like bostrom now) until the graph crosses the phase transition threshold $|P^*| \sim \rho^2$
-
-see [[cyber/architecture]] for the five-primitive resource model. see [[tri-kernel architecture]] for why the [[heat]] kernel survives the locality filter. see [[cyber/state]] for the BBG world state structure. see [[cyber/network]] for the narrowcast relay protocol. see [[forgetting]] for the hot/cold tier separation
+see [[cyber/architecture]] for the five-primitive resource model. see [[tri-kernel architecture]] for the locality filter. see [[cyber/state]] for the [[bbg]] world state. see [[cyber/network]] for the narrowcast relay protocol. see [[forgetting]] for the hot/cold tier separation
