@@ -35,6 +35,48 @@ pub struct RenderResult {
     pub toc: Vec<TocEntry>,
 }
 
+/// Escape `|` inside `[[...]]` so comrak's table parser doesn't split wikilinks.
+/// Uses U+FFFF as placeholder — comrak's wikilinks_title_after_pipe looks for `|`,
+/// so this preserves the separator for comrak while hiding it from the table parser.
+/// The placeholder is restored to `|` just before comrak processes wikilinks.
+const PIPE_PLACEHOLDER: char = '\u{FFFF}';
+
+fn escape_pipes_in_wikilinks(markdown: &str) -> String {
+    let mut result = String::with_capacity(markdown.len());
+    let mut inside = false;
+    let chars: Vec<char> = markdown.chars().collect();
+    let len = chars.len();
+    let mut i = 0;
+    while i < len {
+        if i + 1 < len && chars[i] == '[' && chars[i + 1] == '[' {
+            inside = true;
+            result.push('[');
+            result.push('[');
+            i += 2;
+            continue;
+        }
+        if inside && i + 1 < len && chars[i] == ']' && chars[i + 1] == ']' {
+            inside = false;
+            result.push(']');
+            result.push(']');
+            i += 2;
+            continue;
+        }
+        if inside && chars[i] == '|' {
+            result.push(PIPE_PLACEHOLDER);
+        } else {
+            result.push(chars[i]);
+        }
+        i += 1;
+    }
+    result
+}
+
+/// Restore pipe placeholders in a string back to `|`.
+fn restore_pipes(s: &str) -> String {
+    s.replace(PIPE_PLACEHOLDER, "|")
+}
+
 /// Extract math blocks ($..$ and $$..$$) from markdown, replacing them with placeholders.
 /// Returns the processed markdown and a list of extracted math strings.
 fn extract_math_blocks(markdown: &str) -> (String, Vec<String>) {
@@ -169,6 +211,10 @@ pub fn render_markdown(markdown: &str, store: &PageStore, _code_theme: &str) -> 
     // Pre-process: resolve query blocks
     let processed = crate::query::resolve_queries(&processed, store);
 
+    // Protect pipes inside wikilinks from being parsed as table column separators.
+    // Replace | with PIPE_PLACEHOLDER inside [[...]], then restore in the parsed AST.
+    let processed = escape_pipes_in_wikilinks(&processed);
+
     // Protect math blocks from comrak processing
     let (processed, math_blocks) = extract_math_blocks(&processed);
 
@@ -294,7 +340,19 @@ fn transform_wikilinks<'a>(
         }
     }
 
-    for (node, url) in nodes_to_transform {
+    for (node, raw_url) in nodes_to_transform {
+        // Restore pipe placeholders that were escaped to protect from table parser.
+        // If the URL contains PIPE_PLACEHOLDER, comrak couldn't split url|title,
+        // so the whole string is in the URL. Split it manually.
+        let restored = restore_pipes(&raw_url);
+        let (url, forced_display) = if restored.contains('|') {
+            let mut parts = restored.splitn(2, '|');
+            let u = parts.next().unwrap().to_string();
+            let d = parts.next().map(|s| s.to_string());
+            (u, d)
+        } else {
+            (restored, None)
+        };
         let slug = slugify_page_name(&url);
 
         // Resolve alias to canonical page ID
@@ -314,12 +372,16 @@ fn transform_wikilinks<'a>(
             "internal-link stub-link"
         };
 
-        // Get display text from children or use URL
-        let display = get_node_text_content(node);
-        let display = if display.trim().is_empty() {
-            url.clone()
+        // Get display text: forced from pipe split, or from children, or URL fallback
+        let display = if let Some(ref d) = forced_display {
+            d.clone()
         } else {
-            display
+            let child_text = restore_pipes(&get_node_text_content(node));
+            if child_text.trim().is_empty() {
+                url.rsplit('/').next().unwrap_or(&url).to_string()
+            } else {
+                child_text
+            }
         };
 
         let html = format!(
