@@ -34,6 +34,12 @@ a [[neuron]] can adjust the [[attention]] distribution beyond the defaults:
 
 the combination of [[will]] (broad) and conviction (specific) gives each [[neuron]] a portfolio of epistemic positions — from passive participation to active betting on specific [[knowledge]]
 
+## eternal staking
+
+locking [[will]] with unlimited duration — maximum commitment, permanent [[attention]] weight. the [[particle]] or [[axon]] receives a permanent floor of [[focus]] that cannot be withdrawn. this is the graph's highest-conviction assertion: "this matters forever"
+
+eternal staking is not burning — the [[tokens]] remain staked, generating [[will]] indefinitely. the [[neuron]] cannot withdraw but the stake continues to earn [[karma]] proportional to the [[focus]] it attracts
+
 ## effect on [[focus]]
 
 the [[tri-kernel]] sees the weighted graph:
