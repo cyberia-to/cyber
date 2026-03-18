@@ -1,5 +1,5 @@
 ---
-alias: cyber/attention, attention mechanism, self-attention
+alias: cyber/attention, attention mechanism, self-attention, attention
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber

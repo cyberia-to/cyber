@@ -1,5 +1,5 @@
 ---
-alias: probability of observation
+alias: probability of observation, prob
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber

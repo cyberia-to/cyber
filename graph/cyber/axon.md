@@ -1,5 +1,5 @@
 ---
-alias: axons
+alias: axons, axon
 tags: cyber, core
 crystal-type: relation
 crystal-domain: cyber
