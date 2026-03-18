@@ -145,33 +145,52 @@ where h is the communication horizon and α depends on the spectral gap. more co
 
 ## sharding UTXOs
 
-the hardest scaling challenge. per-[[particle]] UTXOs will have massive transaction volume. private UTXOs make it harder — you cannot see which shard a UTXO belongs to
+the hardest scaling challenge. all UTXOs are private by default — the architecture is private-first with selective reveal. you cannot see which shard a UTXO belongs to, what it contains, or who owns it
 
-### public UTXOs
+### private by default
 
-a UTXO is committed to a [[neuron]]. the [[neuron]]'s shard (determined by their primary cell) owns the UTXO. transfers within a cell are cheap — local state update, local proof
+every UTXO is a commitment. every transfer is a ZK [[proof]]. the only public information is: a valid state transition happened. selective reveal allows a [[neuron]] to prove specific properties (balance sufficient, token type, shard membership) without exposing the UTXO itself
 
-cross-cell transfers: the source cell produces a proof that the UTXO was validly spent (nullifier published, balance sufficient). the destination cell verifies the proof and creates the new UTXO. the proof is O(log |state|) via [[zheng|STARK]]
+each cell maintains its own nullifier set (part of the [[mutator set]]: AOCL + SWBF). spending a UTXO publishes a nullifier to the cell's set — the nullifier reveals nothing about the UTXO except that it was spent
 
-cross-zone transfers: same mechanism but the proof relay crosses zone boundaries. higher latency, higher proof cost. the social dimension helps — if Alice and Bob transact frequently, they end up in the same social cluster → same cell → cheap transfers
+### within-cell transfers
 
-### private UTXOs
+the [[neuron]] proves in zero knowledge:
+1. a valid UTXO exists in this cell's accumulator
+2. the nullifier is fresh (not in the cell's nullifier set)
+3. the new commitment is well-formed (conservation: input = output + fee)
 
-each cell maintains its own nullifier set (part of the [[mutator set]]: AOCL + SWBF). spending a private UTXO publishes a nullifier to the cell's set
+publishes the nullifier, creates the new commitment. standard ZK transfer — no cross-shard coordination. the cell sees only: one nullifier appeared, one commitment appeared, conservation holds
 
-within-cell private transfer: the [[neuron]] proves in zero knowledge that a valid UTXO exists in this cell's accumulator, publishes a nullifier, and creates a new commitment in the same cell. standard ZK transfer — no cross-shard coordination
+### cross-cell transfers
 
-cross-cell private transfer: two proofs required:
-1. source cell: ZK proof that a valid UTXO was spent (nullifier published to source cell's set)
+two proofs required:
+
+1. source cell: ZK [[proof]] that a valid UTXO was spent (nullifier published to source cell's set, conservation proven)
 2. destination cell: the commitment is inserted into the destination cell's accumulator
 
-the privacy is maintained — neither cell learns which UTXO was spent or what the new commitment contains. the cross-cell relay carries only the proofs, not the values
+the cross-cell relay carries only the proofs, not the values. neither cell learns which UTXO was spent or what the new commitment contains. the relay itself is a [[zheng|STARK]] proof that the source cell accepted the spend
+
+cross-zone transfers: same mechanism but the [[proof]] relay crosses zone boundaries. higher latency, higher [[proof]] cost. the social dimension helps — if Alice and Bob transact frequently, they end up in the same social cluster → same cell → cheap transfers
+
+### selective reveal
+
+a [[neuron]] can choose to reveal specific properties of a UTXO without breaking privacy:
+
+| Reveal | What it proves | Use case |
+|---|---|---|
+| balance range | UTXO value ∈ [min, max] | credit check without exposing exact balance |
+| token type | UTXO denomination = $CYB | cross-token market order |
+| shard membership | UTXO lives in cell X | routing optimization |
+| ownership | UTXO belongs to neuron N | identity verification |
+
+each reveal is a separate ZK [[proof]] — the [[neuron]] controls exactly what becomes visible
 
 ### the nullifier scaling problem
 
-nullifier sets grow monotonically — every spent UTXO adds a nullifier forever. at 10^10 [[neurons]] with multiple UTXOs each, the global nullifier set would be enormous
+nullifier sets grow monotonically — every spent UTXO adds a nullifier forever. at 10^15 [[neurons]] with multiple UTXOs each, the global nullifier set would be enormous
 
-sharded nullifier sets solve this: each cell's nullifier set contains only nullifiers for UTXOs that were in that cell. the total size is the same, but no single node holds it all. double-spend prevention is local within a cell, and cross-cell transfers use proof relay
+sharded nullifier sets solve this: each cell's nullifier set contains only nullifiers for UTXOs that were in that cell. the total size is the same, but no single node holds it all. double-spend prevention is local within a cell, and cross-cell transfers use [[proof]] relay
 
 ---
 
