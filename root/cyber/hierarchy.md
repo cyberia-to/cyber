@@ -15,7 +15,7 @@ how the [[cybergraph]] scales to [[Avogadro]] numbers — 10^23 [[particles]], 1
 
 ## the insight
 
-the [[heat]] kernel H_τ = exp(-τL) is a multi-scale clustering operator. at different temperatures τ it reveals community structure at different resolutions:
+the [[tri-kernel]] that computes [[focus]] also reveals the natural hierarchy. [[springs]] (graph [[Laplacian]] eigenvectors) define cluster boundaries via spectral decomposition. [[heat]] (exp(-τL) at different temperatures) controls the resolution — which level of the hierarchy you read:
 
 | Scale | Temperature | What it reveals | Shard level |
 |-------|-------------|----------------|-------------|
@@ -23,9 +23,7 @@ the [[heat]] kernel H_τ = exp(-τL) is a multi-scale clustering operator. at di
 | medium | τ₂ | semantic regions — topic areas with high mutual [[focus]] flow | zone |
 | coarse | τ₃ (large) | continents of meaning — the broadest clusters | domain |
 
-the hierarchy IS the [[heat]] kernel spectrum. no administrator assigns shards. the [[tri-kernel]] computes them as a side effect of computing [[focus]]
-
-this is the same operator that provides the third force in the [[tri-kernel]] — adaptation via multi-scale smoothing. the force that adapts [[focus]] to context also reveals where the natural boundaries are
+no administrator assigns shards. the [[tri-kernel]] computes them as a side effect of computing [[focus]]. the same operators that rank [[particles]] also partition the graph for scaling
 
 ---
 
@@ -136,56 +134,29 @@ where h is the communication horizon and α depends on the spectral gap. more co
 
 ## sharding UTXOs
 
-the hardest scaling challenge. all UTXOs are private by default — the architecture is private-first with selective reveal. you cannot see which shard a UTXO belongs to, what it contains, or who owns it
+all UTXOs are private by default. every UTXO is a commitment. every transfer is a ZK [[proof]]. the only public information is: a valid state transition happened
 
-### private by default
+each cell maintains its own [[mutator set]]: [[AOCL]] for creation, [[SWBF]] for spending. no nullifiers — bit positions in a bloom filter replace them. creation and spending events are unlinkable by construction. storage grows O(log N) via [[MMR]] compaction
 
-every UTXO is a commitment. every transfer is a ZK [[proof]]. the only public information is: a valid state transition happened. selective reveal allows a [[neuron]] to prove specific properties (balance sufficient, token type, shard membership) without exposing the UTXO itself
+within-cell transfers are cheap — local state update, no cross-shard coordination. cross-cell transfers require [[zheng|STARK]] [[proof]] relay between cells. cross-zone transfers relay across zone boundaries — higher latency, higher cost. the social dimension co-locates frequent transactors in the same cell
 
-each cell maintains its own [[mutator set]]: [[AOCL]] (append-only commitment list) for creation, [[SWBF]] (sliding-window bloom filter) for spending. no nullifiers — pseudorandom bit positions in the bloom filter replace them. creation and spending events share zero structural similarity — unlinkable by construction. storage grows O(log N) via [[MMR]] compaction, not monotonically
-
-### within-cell transfers
-
-the [[neuron]] proves in zero knowledge:
-1. a valid commitment exists in this cell's [[AOCL]] (Merkle membership [[proof]])
-2. the derived bit positions have not been set in the [[SWBF]] (non-double-spend)
-3. the new commitment is well-formed (conservation: input = output + fee)
-
-sets the bits in the [[SWBF]], appends the new commitment to the [[AOCL]]. standard ZK transfer — no cross-shard coordination. the cell sees only: bits were set, a commitment appeared, conservation holds
-
-### cross-cell transfers
-
-two proofs required:
-
-1. source cell: ZK [[proof]] that a valid UTXO was spent (bits set in source cell's [[SWBF]], conservation proven)
-2. destination cell: the new commitment is appended to the destination cell's [[AOCL]]
-
-the cross-cell relay carries only the proofs, not the values. neither cell learns which UTXO was spent or what the new commitment contains. the relay itself is a [[zheng|STARK]] [[proof]] that the source cell accepted the spend
-
-cross-zone transfers: same mechanism but the [[proof]] relay crosses zone boundaries. higher latency, higher [[proof]] cost. the social dimension helps — if Alice and Bob transact frequently, they end up in the same social cluster → same cell → cheap transfers
-
-### selective reveal
-
-a [[neuron]] can choose to reveal specific properties of a UTXO without breaking privacy:
-
-| Reveal | What it proves | Use case |
-|---|---|---|
-| balance range | UTXO value ∈ [min, max] | credit check without exposing exact balance |
-| token type | UTXO denomination = $CYB | cross-token market order |
-| shard membership | UTXO lives in cell X | routing optimization |
-| ownership | UTXO belongs to neuron N | identity verification |
-
-each reveal is a separate ZK [[proof]] — the [[neuron]] controls exactly what becomes visible
-
-### scaling the mutator set
-
-the [[SWBF]] solves the scaling problem that nullifier-based systems cannot: the active window is fixed-size (128 KB), old chunks compact into [[MMR]] peaks. at 10^15 [[neurons]] with multiple UTXOs each, each cell's [[mutator set]] stays bounded. the [[SWBF]] active window handles recent spends via direct bit lookup. historical spends verify via compact [[MMR]] Merkle paths. total circuit cost ~50K constraints — comparable to nullifier systems but with O(log N) storage instead of unbounded growth
+see [[cyber/state]] for the transfer mechanics. see [[AOCL]] and [[SWBF]] for the [[mutator set]]. see [[cyber/proofs]] for the ZK [[proof]] taxonomy
 
 ---
 
 ## the self-referential property
 
-the [[tri-kernel]]'s output informs the sharding (clusters come from the [[heat]] kernel). the sharding constrains the [[tri-kernel]]'s input (each shard sees its local graph). this is another fixed-point problem
+the [[tri-kernel]]'s output informs the sharding. the sharding constrains the [[tri-kernel]]'s input (each shard sees its local graph). this is another fixed-point problem
+
+all three operators contribute to community detection:
+
+| Operator | What it reveals | Sharding role |
+|---|---|---|
+| [[diffusion]] | random walk communities — where probability flows | identifies semantic clusters via flow concentration |
+| [[springs]] | Laplacian eigenvectors — structural communities | spectral clustering on the graph [[Laplacian]] — the standard method |
+| [[heat]] | multi-scale smoothing — communities at different resolutions | controls the scale: low τ = fine cells, high τ = coarse domains |
+
+[[springs]] provides the eigenvectors that define cluster boundaries. [[heat]] controls the resolution — which level of the hierarchy you're reading. [[diffusion]] reveals the flow patterns that validate the clusters. the three together give robust community detection that no single operator provides alone
 
 convergence is guaranteed by two-timescale separation:
 
@@ -199,11 +170,11 @@ the fast timescale sees fixed shard boundaries. the slow timescale adjusts bound
 
 ### shard rebalancing
 
-when a cell grows too large (too many [[particles]], too much UTXO traffic): split it along the [[heat]] kernel's finest-scale cluster boundary
+when a cell grows too large (too many [[particles]], too much UTXO traffic): split it along the [[Laplacian]] eigenvector boundary (spectral bisection via [[springs]])
 
 when two cells have become tightly coupled (high cross-cell [[focus]] flow, many cross-cell transfers): merge them
 
-when a zone's internal connectivity drops below threshold (the [[heat]] kernel shows it's really two zones): split the zone
+when a zone's internal connectivity drops below threshold ([[springs]] eigengap shows it is really two zones): split the zone
 
 these operations require state migration — [[particles]] and UTXOs move between cells. the cost is amortized over the slow timescale
 
@@ -217,7 +188,17 @@ these operations require state migration — [[particles]] and UTXOs move betwee
 | Urbit | 4-tier (galaxy/star/planet/moon) | static (burned at genesis) | 1 (identity) |
 | Ethereum 2.0 | 2-tier (beacon/shards) | static (64 shards) | 1 (hash range) |
 | Cosmos | flat (sovereign chains + IBC) | static (per chain) | 0 (no hierarchy) |
-| [[cyber]] | N-tier (cell/zone/domain) | dynamic (computed by [[tri-kernel]]) | 4 (semantic, economic, geographic, temporal) |
+| [[cyber]] | 4-tier (cell/zone/domain/global) | dynamic (computed by [[tri-kernel]]) | 4 (semantic, social, economic, geographic) |
+
+address space:
+
+| System | Total addresses |
+|---|---|
+| IPv4 | 2^32 = 4 × 10^9 |
+| Urbit (planets) | 2^32 = 4 × 10^9 |
+| Urbit (moons) | 2^64 = 1.8 × 10^19 |
+| IPv6 | 2^128 = 3 × 10^38 |
+| [[cyber]] | [[Hemera]] = 2^256 ≈ 10^77 (content-addressed, [[Avogadro]] is a rounding error) |
 
 the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the ranking engine, the sharding oracle, and the routing advisor. one computation serves all three purposes
 
