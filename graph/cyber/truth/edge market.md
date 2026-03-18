@@ -1,6 +1,6 @@
 ---
 tags: cyber, cip, draft, research
-alias: cyberlink market protocol, self evaluating knowledge graph, two dimensional epistemic signal, market
+alias: cyberlink market protocol, self evaluating knowledge graph, two dimensional epistemic signal, edge market
 crystal-type: process
 crystal-domain: cyber
 crystal-size: deep
