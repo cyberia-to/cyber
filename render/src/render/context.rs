@@ -343,6 +343,52 @@ pub fn build_page_context(
 
     let canonical_url = format!("{}/{}", config.site.base_url, page.id);
 
+    // Dimensional peers: pages with the same base name in different namespaces.
+    // e.g., "truth" (root) and "cyber/truth" are dimensional peers.
+    let base_name = page.meta.title.rsplit('/').next()
+        .unwrap_or(&page.meta.title).to_lowercase();
+    let mut dimensional_peers: Vec<Value> = store.pages.values()
+        .filter(|p| {
+            p.id != page.id
+                && p.meta.title.rsplit('/').next()
+                    .unwrap_or(&p.meta.title)
+                    .to_lowercase() == base_name
+                && PageStore::is_page_public(p, &config.content)
+        })
+        .map(|peer| {
+            let peer_render = super::transform::render_markdown(
+                &peer.content_md, store, &config.style.code.theme,
+            );
+            let depth = peer.meta.title.matches('/').count();
+            minijinja::context! {
+                title => peer.meta.title.clone(),
+                path => format!("/{}", peer.id),
+                icon => peer.meta.icon.clone(),
+                namespace => peer.namespace.clone(),
+                html_content => peer_render.html,
+                depth => depth,
+            }
+        })
+        .collect();
+    // Sort: when viewing a namespaced page, root peer comes first (depth 0).
+    // When viewing root, most specific peer comes first (highest depth).
+    let current_depth = page.meta.title.matches('/').count();
+    if current_depth == 0 {
+        // Root page: show most specific peers first
+        dimensional_peers.sort_by(|a, b| {
+            let ad: i64 = a.get_attr("depth").ok().and_then(|v| i64::try_from(v).ok()).unwrap_or(0);
+            let bd: i64 = b.get_attr("depth").ok().and_then(|v| i64::try_from(v).ok()).unwrap_or(0);
+            bd.cmp(&ad)
+        });
+    } else {
+        // Namespaced page: show root (depth 0) first
+        dimensional_peers.sort_by(|a, b| {
+            let ad: i64 = a.get_attr("depth").ok().and_then(|v| i64::try_from(v).ok()).unwrap_or(0);
+            let bd: i64 = b.get_attr("depth").ok().and_then(|v| i64::try_from(v).ok()).unwrap_or(0);
+            ad.cmp(&bd)
+        });
+    }
+
     // Resolve favicon: page icon > namespace parent icon > site favicon
     let favicon = page
         .meta
@@ -403,5 +449,6 @@ pub fn build_page_context(
             focus => store.focus.get(&page.id).copied().unwrap_or(0.0),
         },
         backlinks => backlink_data,
+        dimensional_peers => dimensional_peers,
     }
 }

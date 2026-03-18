@@ -58,6 +58,23 @@ content %}
         {{ page.html_content|safe }}
     </div>
 
+    {% if dimensional_peers %}
+    <section class="dimensional-peers">
+        <h2>Dimensions</h2>
+        {% for peer in dimensional_peers %}
+        <details class="dimension"{% if loop.first %} open{% endif %}>
+            <summary class="dimension-path">
+                {% if peer.icon %}<span class="page-icon">{{ peer.icon }}</span>{% endif %}
+                <a href="{{ peer.path }}">{{ peer.title }}</a>
+            </summary>
+            <div class="dimension-content">
+                {{ peer.html_content|safe }}
+            </div>
+        </details>
+        {% endfor %}
+    </section>
+    {% endif %}
+
     {% if page.children %}
     <section class="namespace-children">
         <h2>Pages in this namespace</h2>
