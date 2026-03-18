@@ -19,8 +19,8 @@ The fixed point of the tri-kernel minimizes a unified free energy — the weight
 
 seven triads cover all [[knowledge]]. each triad is a dialectic of three inseparable aspects
 
-| triad | domain 1 | domain 2 | domain 3 | question |
-|-------|----------|----------|----------|----------|
+| triad | | | | question |
+|-------|---|---|---|----------|
 | [[form]] | [[math]] | [[info]] | [[comp]] | what are the rules? |
 | [[mass]] | [[quantum]] | [[chemo]] | [[energo]] | what is it made of? |
 | [[space]] | [[cosmo]] | [[geo]] | [[eco]] | where does it happen? |
