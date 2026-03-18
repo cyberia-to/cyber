@@ -97,15 +97,23 @@ a UTXO lives in exactly one shard — determined by its [[particle]]'s 4D coordi
 
 at [[Avogadro]] scale (10^23 [[particles]]):
 
-| Level | Per dimension | Total shards | Particles per shard |
+```
+total particles:       10^23
+particles per cell:    ~10^3
+─────────────────────────────
+total cells:           10^23 / 10^3 = 10^20
+```
+
+each cell holds ~1000 [[particles]]. branching factor ~1000 at each level:
+
+| Level | Shards | Particles per shard | Branching |
 |---|---|---|---|
-| cell | ~10^5 | ~10^20 | ~10^3 |
-| zone | ~10^3 | ~10^12 | ~10^11 |
-| domain | ~10^2 | ~10^8 | ~10^15 |
+| cell | 10^20 | 10^3 | — |
+| zone | 10^17 | 10^6 | 10^3 cells per zone |
+| domain | 10^14 | 10^9 | 10^3 zones per domain |
+| global | 1 | 10^23 | 10^14 domains |
 
-total cell-level shards: ~10^20 (one hundred quintillion). each cell holds ~1000 [[particles]]. most of the 4D coordinate space is empty — cells exist only where [[particles]] actually cluster
-
-the actual occupied shard count is sparse: the four dimensions correlate (semantically close [[particles]] are often socially and geographically close). the effective number of cells is closer to max(N_semantic, N_social, N_geo) × N_temporal ≈ 10^18 × 4
+every cell has a 4D coordinate (semantic, social, token, geographic). the coordinates are labels — they describe WHERE in each dimension the cell sits. the total cell count is 10^20 regardless of dimensionality. the 4D address is for routing, not for multiplying
 
 ### routing
 
