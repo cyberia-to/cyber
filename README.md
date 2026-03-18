@@ -102,10 +102,6 @@ cyber imports 10 external repos as subgraphs — their pages appear in the publi
 | [cybernode](https://github.com/cybercongress/cybernode) | infrastructure |
 | [mudra](https://github.com/cybercongress/mudra) | key management |
 
-## legacy
-
-the [computing the knowledge](https://github.com/cybercongress/cyber/tree/master/computing-the-knowledge) folder stores the prelaunch whitepaper. although it grasps the idea, the project has evolved significantly — refer to [cyber/whitepaper](https://cyber.page/cyber-whitepaper) for the current vision
-
 ## license
 
 cyber license: don't trust. don't fear. don't beg.
