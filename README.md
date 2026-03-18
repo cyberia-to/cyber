@@ -1,30 +1,111 @@
-The repo is a collection of mission critical information on the cyber project
-  
-  The purpose of the repo is to form both social and technical consensus on the project
-    
-  The technical aspect is more about having a protocol spec which is possible to implement in any formal language
-    
-  The social aspect is more about the common vision aka shelling point for every involved party, expanding protocol definition to answer the `why` questions
-    
-  Information is structured in a markdown knowledge graph with YAML frontmatter and wiki-links
+# 🔵 cyber
 
-  [Root page](pages/cyber.md) of metagraph
-  
-  <img width="874" alt="image" src="https://emerald-raw-leopon-384.mypinata.cloud/ipfs/QmPaun8GCGjzZhYhAqBXH8BGPBub45gyc8axKkM7CoH9Gj">
+the seed knowledge base for planetary superintelligence
 
-## How to use?
-  
-  go to [docs.cyb.ai](https://docs.cyb.ai)
+a markdown knowledge graph with YAML frontmatter and wiki-links — 2000+ pages organized into namespaces, published with [optica](https://github.com/cybercongress/optica)
 
-## How to contribute?
-- git clone https://github.com/cybercongress/cyber.git
-- edit pages in `pages/` using any markdown editor
-- make contribution into the feature branch
-- pull request
-## Legacy
-  
-  The [computing the knowledge](https://github.com/cybercongress/cyber/tree/master/computing-the-knowledge) folder stores the [prelaunch whitepaper](https://github.com/cybercongress/cyber/blob/master/computing-the-knowledge/computing-the-knowledge.md) which is [conserved](https://cyb.ai/oracle/ask/QmXzGkfxZV2fzpFmq7CjAYsYL1M581ZD4yuF9jztPVTpCn) due to a lot of incoming links. 
-  
-  Although this whitepaper grasps the idea, since then, the project has evolved significantly deeper into the vision
-  
-  Please refer to this metagraph for comprehensive information on the project
+**[cyber.page](https://cyber.page/)** — live site
+
+## structure
+
+```
+root/                          # all pages
+├── cyber/                     # the protocol
+│   ├── graph.md               # cybergraph — formal definition, six axioms
+│   ├── hierarchy.md           # 4D scaling — cells, zones, domains
+│   ├── truth/                 # truth architecture
+│   │   ├── serum.md           # honesty equilibrium (BTS)
+│   │   ├── coupling.md        # TRUE/FALSE market (ICBS)
+│   │   └── valence.md         # ternary epistemic seed
+│   ├── tokens.md              # the nouns
+│   ├── nomics.md              # the verbs and rules
+│   ├── netics.md              # the whole machine as feedback diagram
+│   ├── self/                  # what the protocol does autonomously
+│   └── research/              # open research areas
+├── cyb/                       # the browser/interface
+│   ├── fs/                    # filesystem over the cybergraph
+│   └── languages.md           # 15 computation languages
+├── cyberia/                   # the network state
+├── bostrom/                   # the bootloader chain
+├── species/                   # Latin binomial species pages
+├── focus.md                   # collective attention distribution
+├── particle.md                # content-addressed node
+├── neuron.md                  # the one who links
+├── tru.md                     # the truth machine
+├── nox.md                     # composition VM
+└── cyberspace.md              # the navigable semantic space
+```
+
+## key concepts
+
+| Concept | What it is |
+|---------|-----------|
+| [particle](https://cyber.page/particle) | content-addressed node — identity = hash of content |
+| [cyberlink](https://cyber.page/cyber-link) | signed, staked, timestamped assertion binding two particles |
+| [neuron](https://cyber.page/neuron) | agent who links — human, AI, sensor, or program |
+| [focus](https://cyber.page/focus) | collective attention distribution over all particles |
+| [cyberank](https://cyber.page/cyber-rank) | per-particle probability of observation (tri-kernel fixed point) |
+| [will](https://cyber.page/cyber-will) | locked balance × time — budget for attention allocation |
+| [karma](https://cyber.page/karma) | earned trust from contribution |
+| [cyberspace](https://cyber.page/cyberspace) | the navigable semantic space that emerges from markup + graph |
+
+## how to use
+
+browse at [cyber.page](https://cyber.page/)
+
+or serve locally:
+
+```bash
+git clone https://github.com/cybercongress/cyber.git ~/git/cyber
+git clone https://github.com/cybercongress/optica.git ~/git/optica
+cd ~/git/optica && cargo build --release
+~/git/optica/target/release/optica serve ~/git/cyber --open
+```
+
+serves on http://localhost:8888
+
+## how to contribute
+
+```bash
+git clone https://github.com/cybercongress/cyber.git
+cd cyber
+# edit pages in root/ using any markdown editor
+# make contribution into a feature branch
+# pull request
+```
+
+pages are pure markdown with YAML frontmatter:
+
+```markdown
+---
+tags: cyber, core
+alias: alternative name
+icon: "🔵"
+---
+content with [[wiki-links]] and $\LaTeX$ math
+```
+
+## subgraphs
+
+cyber imports 10 external repos as subgraphs — their pages appear in the published graph:
+
+| Subgraph | What it is |
+|----------|-----------|
+| [optica](https://github.com/cybercongress/optica) | the publisher |
+| [rs](https://github.com/cybercongress/rs) | Rust subset for proven computation |
+| [trident](https://github.com/cybercongress/trident) | field-native language |
+| [hemera](https://github.com/cybercongress/hemera) | hash function |
+| [nox](https://github.com/cybercongress/nox) | composition VM |
+| [nebu](https://github.com/cybercongress/nebu) | Goldilocks field |
+| [zheng](https://github.com/cybercongress/zheng) | STARK proofs |
+| [bbg](https://github.com/cybercongress/bbg) | authenticated state |
+| [cybernode](https://github.com/cybercongress/cybernode) | infrastructure |
+| [mudra](https://github.com/cybercongress/mudra) | key management |
+
+## legacy
+
+the [computing the knowledge](https://github.com/cybercongress/cyber/tree/master/computing-the-knowledge) folder stores the prelaunch whitepaper. although it grasps the idea, the project has evolved significantly — refer to [cyber/whitepaper](https://cyber.page/cyber-whitepaper) for the current vision
+
+## license
+
+cyber license: don't trust. don't fear. don't beg.
