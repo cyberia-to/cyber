@@ -31,7 +31,10 @@ Wiki-links (`[[page]]`) and query expressions (`{{query (...)}}`,
 `{{embed [[page]]}}`) are the graph's own syntax, evaluated by the
 publisher.
 
-Namespaced pages live in directories: `graph/bostrom/infrastructure/servers.md`
+Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
+
+The publisher (`optica`, formerly `cyber-publish`) lives at `render/`
+and looks for `root/` as the primary page directory (fallback: `graph/`, `pages/`).
 ## Tagging Conventions
 
 Every page should have a `tags:` field in frontmatter. Key project tags (lenses):
@@ -65,9 +68,9 @@ Then link the plural directly: `[[isomorphisms]]` instead of
 Use `nu -c '...'` or `nu script.nu` for all scripting. Nushell has
 structured data pipelines, built-in dataframes, and powerful search/filter
 commands — use them instead of bash+sed+awk+grep chains. Examples:
-- list pages: `ls graph/*.md | get name`
-- find untagged: `glob graph/**/*.md | where {|f| not ((open --raw $f) | str starts-with "---\n") }`
-- count by tag: `glob graph/**/*.md | each {|f| open --raw $f | lines | where $it =~ 'tags:' | first } | where $it =~ 'species' | length`
+- list pages: `ls root/*.md | get name`
+- find untagged: `glob root/**/*.md | where {|f| not ((open --raw $f) | str starts-with "---\n") }`
+- count by tag: `glob root/**/*.md | each {|f| open --raw $f | lines | where $it =~ 'tags:' | first } | where $it =~ 'species' | length`
 - dataframe ops: `dfr open`, `dfr filter`, `dfr group-by` for bulk analysis
 
 Reserve bash only for git commands and system tools that have no nu equivalent.
