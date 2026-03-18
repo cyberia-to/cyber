@@ -78,8 +78,8 @@ this is the attention yield curve — but it emerges naturally from the mechanic
 | [[serum]] | honesty [[equilibrium]] via [[valence]] meta-predictions |
 | [[coupling]] | the market mechanism — TRUE and FALSE geometrically coupled |
 | [[inhibition]] | how markets provide the inhibitory signal raw links cannot |
-| [[cyber/truth/costly signal]] | why [[will]] cost makes [[cyberlinks]] honest |
-| [[cyber/truth/market]] | the unified 2|3 architecture — topology + market + meta-prediction |
+| [[cyber/truth/costly signal|costly signal]] | why [[will]] cost makes [[cyberlinks]] honest |
+| [[cyber/truth/market|market]] | the unified 2|3 architecture — topology + market + meta-prediction |
 
 ### lineage
 
