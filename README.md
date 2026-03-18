@@ -2,7 +2,7 @@
 
 the seed knowledge base for planetary superintelligence
 
-a markdown knowledge graph with YAML frontmatter and wiki-links — 2000+ pages organized into namespaces, published with [optica](https://github.com/cybercongress/optica)
+a markdown knowledge graph with YAML frontmatter and wiki-links — 2000+ pages organized into namespaces, published with [optica](https://github.com/cyberia-to/optica)
 
 **[cyber.page](https://cyber.page/)** — live site
 
@@ -56,8 +56,8 @@ browse at [cyber.page](https://cyber.page/)
 or serve locally:
 
 ```bash
-git clone https://github.com/cybercongress/cyber.git ~/git/cyber
-git clone https://github.com/cybercongress/optica.git ~/git/optica
+git clone https://github.com/cyberia-to/cyber.git ~/git/cyber
+git clone https://github.com/cyberia-to/optica.git ~/git/optica
 cd ~/git/optica && cargo build --release
 ~/git/optica/target/release/optica serve ~/git/cyber --open
 ```
@@ -67,7 +67,7 @@ serves on http://localhost:8888
 ## how to contribute
 
 ```bash
-git clone https://github.com/cybercongress/cyber.git
+git clone https://github.com/cyberia-to/cyber.git
 cd cyber
 # edit pages in root/ using any markdown editor
 # make contribution into a feature branch
@@ -91,16 +91,16 @@ cyber imports 10 external repos as subgraphs — their pages appear in the publi
 
 | Subgraph | What it is |
 |----------|-----------|
-| [optica](https://github.com/cybercongress/optica) | the publisher |
-| [rs](https://github.com/cybercongress/rs) | Rust subset for proven computation |
-| [trident](https://github.com/cybercongress/trident) | field-native language |
-| [hemera](https://github.com/cybercongress/hemera) | hash function |
-| [nox](https://github.com/cybercongress/nox) | composition VM |
-| [nebu](https://github.com/cybercongress/nebu) | Goldilocks field |
-| [zheng](https://github.com/cybercongress/zheng) | STARK proofs |
-| [bbg](https://github.com/cybercongress/bbg) | authenticated state |
-| [cybernode](https://github.com/cybercongress/cybernode) | infrastructure |
-| [mudra](https://github.com/cybercongress/mudra) | key management |
+| [optica](https://github.com/cyberia-to/optica) | the publisher |
+| [rs](https://github.com/cyberia-to/rs) | Rust subset for proven computation |
+| [trident](https://github.com/cyberia-to/trident) | field-native language |
+| [hemera](https://github.com/cyberia-to/hemera) | hash function |
+| [nox](https://github.com/cyberia-to/nox) | composition VM |
+| [nebu](https://github.com/cyberia-to/nebu) | Goldilocks field |
+| [zheng](https://github.com/cyberia-to/zheng) | STARK proofs |
+| [bbg](https://github.com/cyberia-to/bbg) | authenticated state |
+| [cybernode](https://github.com/cyberia-to/cybernode) | infrastructure |
+| [mudra](https://github.com/cyberia-to/mudra) | key management |
 
 ## license
 
