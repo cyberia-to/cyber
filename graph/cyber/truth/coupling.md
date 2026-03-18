@@ -1,6 +1,6 @@
 ---
 tags: cybics, article, draft, research
-alias: inversely coupled bonding surface, ICBS, Euclidean norm ICBS, bonding surface
+alias: inversely coupled bonding surface, ICBS, Euclidean norm ICBS, bonding surface, coupling
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme

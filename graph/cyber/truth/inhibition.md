@@ -1,6 +1,6 @@
 ---
 tags: cyber, article, draft, research
-alias: market inhibition, knowledge activation, epistemic deactivation, market weights
+alias: market inhibition, knowledge activation, epistemic deactivation, market weights, inhibition
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge

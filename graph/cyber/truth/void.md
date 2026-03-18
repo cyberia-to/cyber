@@ -1,6 +1,6 @@
 ---
 tags: cyber, core
-alias: void signal, epistemic void
+alias: void signal, epistemic void, void
 crystal-type: entity
 crystal-domain: cyber
 ---

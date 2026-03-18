@@ -1,6 +1,6 @@
 ---
 tags: cyber, core
-alias: validated, TRUE
+alias: validated, TRUE, true
 crystal-type: entity
 crystal-domain: cyber
 ---

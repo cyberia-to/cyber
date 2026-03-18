@@ -1,6 +1,6 @@
 ---
 tags: cyber, core
-alias: suppressed, FALSE
+alias: suppressed, FALSE, false
 crystal-type: entity
 crystal-domain: cyber
 ---
