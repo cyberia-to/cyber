@@ -9,7 +9,7 @@ stake: 80000000000000000
 ---
 # cyber hierarchy
 
-how the [[cybergraph]] scales to 10^15 [[particles]] and 10^10 [[neurons]] — not by designing shards in advance, but by reading the natural hierarchy from the [[tri-kernel]]'s own output
+how the [[cybergraph]] scales to [[Avogadro]] numbers — 10^23 [[particles]], 10^15 [[neurons]] — not by designing shards in advance, but by reading the natural hierarchy from the [[tri-kernel]]'s own output
 
 ---
 
