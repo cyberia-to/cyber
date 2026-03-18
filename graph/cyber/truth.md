@@ -64,9 +64,9 @@ this is the attention yield curve — but it emerges naturally from the mechanic
 
 | Page | Role |
 |------|------|
-| [[true]] | validated — market converges to TRUE, full [[focus]] flow |
-| [[void]] | no signal — channel exists but empty |
-| [[false]] | suppressed — market converges to FALSE, [[inhibition]] |
+| [[true]] | market → 1 — edge validated, [[focus]] flows |
+| [[void]] | market → 0.5 — no signal, channel open but empty |
+| [[false]] | market → 0 — edge suppressed, [[focus]] blocked |
 | [[true-false problem]] | why global [[cyberank]] alone cannot answer contextual questions |
 | [[standard inference]] | the naive first solution — [[will]]-weighted context scoring |
 | [[costly signal]] | why [[will]] cost makes [[cyberlinks]] honest |
