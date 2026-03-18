@@ -89,7 +89,9 @@ cell    → knows particles    (~10^3 entries per cell)
 
 four hops to find any [[particle]] among 10^23. the root cell is the first hop
 
-before the graph has enough structure to fold, everything IS the root cell. [[bostrom]] right now is one root cell. as the graph crosses the phase transition threshold $|P^*| \sim \rho^2$, it starts folding — but the root cell persists as the coordination point
+before the graph has enough structure to fold, everything IS the root cell. [[bostrom]] right now is one root cell. as the graph crosses the phase transition threshold $|P^*| \sim \rho^2$, [[cells]] start splitting — but the root cell persists as the coordination point
+
+no [[cell]] appears from nowhere. every [[cell]] descends from the root cell through a chain of splits. the [[hierarchy]] is a living tree that grows by division — the same mechanism that builds biological organisms from a single fertilized cell. see [[cyber/cell]] for the split/merge mechanics
 
 ---
 
