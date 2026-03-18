@@ -8,7 +8,7 @@ crystal-size: enzyme
 
 a market mechanism for prediction markets where the two sides of a bet are geometrically coupled — buying one directly suppresses the other
 
-proposed by Nick Williams and Vitalik Buterin, Ethereum Research, 2020
+proposed by Nick Williams and Vitalik Buterin, [Ethereum Research, 2020](https://ethresear.ch/t/better-curation-via-inversely-coupled-bonding-surfaces/7613)
 
 ---
 
