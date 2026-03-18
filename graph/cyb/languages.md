@@ -55,13 +55,16 @@ Every language has a short name (2-3 letters, used in code and diagrams) and a l
 | [[Ten]] | Tensor | Linear | Tensor | Contraction | Trains models |
 | [[Tok]] | Token | Resource | [[UTXO]] | Conservation | Prices computation |
 
-Plus one emergent layer above all:
+Plus two layers above the fourteen:
 
 | Layer | Name | What it is |
 |---|---|---|
+| Address | [[markup|Cybermark]] | Naming, scoping, and navigating [[particles]] — the address language |
 | Semantic | Neural | Meaning as eigenvector of the [[cybergraph]] |
 
-Neural is not designed — it grows from the interaction of the fourteen languages at scale.
+[[markup|Cybermark]] is the fifteenth language — it does not compute, it names, links, and navigates. eight sigils (`# @ ~ / $ ^ ! .`) form the complete address space. every address resolves to a [[particle]]. every connection is a [[cyberlink]]. the markup is the graph
+
+Neural is not designed — it grows from the interaction of the fifteen languages at scale.
 
 ---
 
@@ -345,6 +348,22 @@ every computation language has a canonical rendering — the perception primitiv
 a genome sequence is Rs (byte-level encoding) rendered as text. its annotation is [[Nox]] (structured tree) rendered as struct. its expression data is Inf (relational query) rendered as table. its protein structure is Arc (topological [[graph]]) rendered as [[vector]]. its microscopy is Bt (binary pixel data) rendered as pixels. its folding dynamics is Seq (causal event chain) rendered as video. its sequencing [[signal]] is Wav (continuous waveform) rendered as sound. its binding energy is Tri (field arithmetic) rendered as formula. its 3D fold is Ren (Clifford rotations) rendered as [[vector]]. a genome browser is Ten (composed [[inference]]) rendered as component.
 
 all fourteen compile through one structural IR. all fourteen share one [[proof]] system (except Bt, which has its own F₂ [[proof]] system). all fourteen render through the perception grid. all fourteen exist in the same [[cybergraph]], ranked by the same [[tri-kernel]], earning [[karma]], permanent by axiom A3.
+
+---
+
+---
+
+## The Address Language
+
+[[markup|Cybermark]] wraps all fourteen computation languages with a human-readable address grammar. it does not appear in the computation tables — it operates at a different level
+
+| Layer | What it does | Examples |
+|-------|-------------|---------|
+| 14 computation languages | compute | field arithmetic, graph traversal, tensor contraction |
+| [[markup|Cybermark]] | address and navigate | `#cyber/truth`, `@alice`, `$BOOT`, `!rank(^truth)` |
+| [[rune]] | execute | [[Rs]] + [[Nox]] hints + host jets — runtime that runs cybermark actions |
+
+see [[markup]] for the full sigil grammar, dimensional navigation, and rendering rules
 
 ---
 
