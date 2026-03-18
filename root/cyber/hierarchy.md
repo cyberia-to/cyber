@@ -81,10 +81,10 @@ it holds two things:
 2. the routing table — maps [[particle]] hash → domain. not cell-level routing — that is each domain's job
 
 ```
-root    → knows domains      (~10^2 entries)
-domain  → knows zones        (~10^3 entries per domain)
-zone    → knows cells        (~10^3 entries per zone)
-cell    → knows particles    (~10^3 entries per cell)
+root    → knows domains
+domain  → knows zones
+zone    → knows cells
+cell    → knows particles
 ```
 
 four hops to find any [[particle]] among 10^23. the root cell is the first hop

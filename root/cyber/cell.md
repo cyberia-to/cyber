@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 stake: 30000000000000000
 ---
-the atomic unit of the [[cyber/hierarchy]] — a group of ~10^3 [[particles]] that share a 4D coordinate and maintain their own local state
+the atomic unit of the [[cyber/hierarchy]] — a group of [[particles]] that share a 4D coordinate and maintain their own local state
 
 a cell is not designed. it is not assigned. cells emerge from the [[cybergraph]] through splitting and merging — the same way biological cells divide and fuse. there is no mechanism for a cell to appear from nowhere
 
@@ -21,7 +21,7 @@ this is how the [[hierarchy]] is born — not by decree but by division. the fir
 
 | Component | What it is |
 |---|---|
-| [[particles]] | ~10^3 content-addressed nodes in this cell's scope |
+| [[particles]] | content-addressed nodes in this cell's scope |
 | [[cyberlinks]] | all edges between particles in this cell |
 | [[mutator set]] | [[AOCL]] + [[SWBF]] — private UTXO creation and spending |
 | local [[focus]] | the [[tri-kernel]] running at full resolution within this cell |
@@ -66,7 +66,7 @@ two cells
 four cells
     ↓ grow, split, merge, split
 ...
-10^20 cells (Avogadro scale)
+Avogadro scale
 ```
 
 no cell appears from nowhere. every cell descends from the root cell through a chain of splits. every merge combines cells that share ancestry. the [[hierarchy]] is a living tree that grows by division — the same mechanism that builds biological organisms from a single fertilized cell
