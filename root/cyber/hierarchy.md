@@ -53,16 +53,18 @@ latency matters for interactive use. [[neurons]] in the same physical region wan
 
 ## the 4×4 matrix
 
-each dimension has four levels. a [[particle]] has a coordinate in each dimension at each level
+each dimension has four scales. a [[particle]] has a coordinate in each dimension at each scale
 
-| primitive | dimension | cell | zone | domain | global |
+| primitive | dimension | [[cell]] | zone | domain | global |
 |---|---|---|---|---|---|
 | [[particles]] | semantic | topic | field | continent | [[cybergraph]] |
 | [[neurons]] | social | circle | community | network | humanity |
 | [[tokens]] | economic | denomination | basket | economy | all [[tokens]] |
 | locations | geographic | village | city | state | planetary |
 
-a [[particle]]'s cell = the intersection of its coordinates across all four dimensions. two [[particles]] sharing more coordinates → cheaper to move [[tokens]] between them. sharing all four → same cell, zero cross-cell cost
+only [[cells]] are operational — they hold state, process transactions, run the [[tri-kernel]]. zones, domains, and global are observations of the [[cell]] topology at different [[heat]] kernel temperatures. they emerge from how [[cells]] connect to each other, not from assignment
+
+a [[particle]]'s [[cell]] = the intersection of its coordinates across all four dimensions. two [[particles]] sharing more coordinates → cheaper to move [[tokens]] between them. sharing all four → same [[cell]], zero cross-cell cost
 
 ```
 cell(particle) = (semantic_cell, social_cell, token_cell, geo_cell)

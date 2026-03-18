@@ -9,6 +9,8 @@ the atomic unit of the [[cyber/hierarchy]] — a group of [[particles]] that sha
 
 a cell is not designed. it is not assigned. cells emerge from the [[cybergraph]] through splitting and merging — the same way biological cells divide and fuse. there is no mechanism for a cell to appear from nowhere
 
+the cell is the only operational level of the [[cyber/hierarchy]]. it holds state, processes transactions, runs the [[tri-kernel]]. all other levels — zones, domains, global — are observations of the cell topology at different scales. the [[heat]] kernel at temperature τ reads the cell graph and reveals clusters: low τ shows local neighborhoods, high τ shows continents. zones and domains do not hold separate state — they are coordination patterns that emerge from how cells connect to each other
+
 ## birth
 
 at genesis there is one cell — the [[root cell]]. it contains the [[crystal]] and all early [[particles]]. as [[neurons]] create [[cyberlinks]] and the graph grows denser, the cell becomes too large for a single validator set to process efficiently
