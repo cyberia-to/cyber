@@ -5,26 +5,28 @@ crystal-type: pattern
 crystal-domain: cyber
 stake: 14027880260443198
 ---
-the foundational problem of [[cyber]] inference
+the foundational problem of [[cyber]] [[inference]]
 
-if `true` has [[cyberank]] 10 and `false` has [[cyberank]] 9, then for any question cyberlinked to both, the answer is always `true` — regardless of context. global rank dominates. this is not [[intelligence]]
+if `true` has [[cyberank]] 10 and `false` has [[cyberank]] 9, then for any question cyberlinked to both, the answer is always `true` — regardless of context. global rank dominates
 
-the problem: [[cyberank]] alone cannot answer contextual questions. a global ranking factor overwhelms local signal. any particle linked to a high-rank answer wins by default, not by relevance
+the problem generalizes: any high-rank [[particle]] wins every contextual query it appears in. a question "what causes malaria?" linked to both "plasmodium" (rank 50) and "bad air" (rank 5000) answers "bad air" — not because it is correct, but because it is popular. [[cyberank]] measures what the graph attends to globally, not what is true locally
 
-## the lineage of solutions
+## why global rank fails for inference
 
-[[cyber/truth/standard inference]] — the naive first solution. weight by average [[will]] per [[cyberlink]] in context. simple, zero additional information, but still a single-factor approximation
+[[cyberank]] is a per-[[particle]] score. it answers "how important is this particle across the whole [[cybergraph]]?" — not "how relevant is this particle to this question?" a system that answers every question with the most popular connected particle is a search engine, not [[intelligence]]
 
-the full architecture solves the true-false problem through three mechanisms:
+the insight: [[inference]] requires contextual truth. the same [[particle]] can be the right answer to one question and wrong for another. a single global number cannot encode this
 
-1. [[tri-kernel]] local reconvergence — context [[particles]] become [[probability]] sources, the [[tri-kernel]] reconverges locally. [[relevance]] replaces global [[cyberank]] with contextual [[prob]]. high-rank particles no longer dominate when context shifts the distribution
+## the solutions
 
-2. [[Bayesian Truth Serum]] — [[valence]] $v \in \{-1, 0, +1\}$ on every [[cyberlink]] creates an honesty [[equilibrium]]. [[neurons]] who predict correctly before the crowd earn [[karma]]. dishonest meta-predictions are penalized. the scoring rule itself prevents systematic bias
+[[cyber/truth/standard inference]] — the naive first attempt. multiply global [[cyberank]] by concentrated [[will]] per [[cyberlink]] in context. breaks global dominance by introducing a per-[[neuron]] conviction signal. simple and zero-cost, but still a single-factor approximation with no honesty guarantee and no market correction
 
-3. [[inversely coupled bonding surface|ICBS]] markets — every [[cyberlink]] carries a perpetual prediction market. buying TRUE suppresses FALSE geometrically. [[market inhibition]] suppresses incorrect edges economically. false claims cannot persist when capital flows against them
+[[cyber/truth]] — the full architecture. three layers that together make contextual truth emerge:
 
-together these three layers ensure that contextual truth emerges from the graph — not by design of a loss function, but by the physics of convergent computation under honest incentives
-
-see [[cyber/truth]] for the full truth architecture
+| Layer | Mechanism | What it solves |
+|-------|-----------|---------------|
+| [[tri-kernel]] local reconvergence | context [[particles]] shift the [[probability]] distribution locally | global rank dominance |
+| [[Bayesian Truth Serum]] + [[valence]] | honesty is a Bayes-Nash [[equilibrium]] | strategic voting |
+| [[inversely coupled bonding surface|ICBS]] markets | capital flows against false edges | persistence of incorrect answers |
 
 [source of discussion](https://github.com/cybercongress/go-cyber/issues/694)
