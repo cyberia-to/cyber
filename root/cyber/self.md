@@ -16,7 +16,7 @@ the difference: the protocol neuron's input is the graph's own convergent [[infe
 | Action | Page | What it is |
 |---|---|---|
 | [[cyber/self/linking]] | graph completion | creates [[cyberlinks]] from its own [[inference]] — fills gaps the graph implies but has not stated |
-| [[cyber/own balances]] | treasury management | holds [[$CYB]], locks [[will]], takes [[coupling|ICBS]] market positions, allocates compute |
+| [[cyber/self/sigma]] | treasury management | accumulates all balances — holds [[$CYB]], locks [[will]], takes [[coupling|ICBS]] market positions, allocates compute |
 | [[cyber/dmn]] | self-model | default mode network — maintains a model of its own state during idle periods |
 | [[cyber/parametrization]] | self-tuning | adjusts α, β, τ, thresholds via PID control based on metabolic signals |
 

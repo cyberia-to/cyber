@@ -1,6 +1,6 @@
 ---
 tags: cyber, article, draft, research
-alias: own balances, protocol treasury, protocol balances, system balances, protocol capital
+alias: own balances, protocol treasury, protocol balances, system balances, protocol capital, sigma
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
