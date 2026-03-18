@@ -68,7 +68,7 @@ each dimension has four levels. a [[particle]] has a coordinate in each dimensio
 | [[particles]] (semantic) | topic | field | continent | [[cybergraph]] |
 | [[neurons]] (social) | circle | community | network | humanity |
 | [[tokens]] (economic) | denomination | basket | economy | all [[tokens]] |
-| locations (geographic) | local | regional | continental | planetary |
+| locations (geographic) | village | city | state | planetary |
 
 a [[particle]]'s shard = the intersection of its coordinates across all four dimensions:
 
