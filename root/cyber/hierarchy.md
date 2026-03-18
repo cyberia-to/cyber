@@ -39,11 +39,11 @@ sharding along a single dimension (hash range, chain ID) creates arbitrary bound
 
 mechanism: periodically compute H_τ₂ and extract connected components above a threshold. these are the semantic zones. [[particles]] within a zone have high internal connectivity and low external connectivity — the natural shard boundary
 
-### economic locality
+### social locality
 
-[[neurons]] who transact frequently form economic clusters. UTXO movement patterns reveal who sends to whom. co-locate frequent transactors in the same shard to minimize cross-shard transfers
+[[neurons]] who transact frequently form social clusters. UTXO movement patterns reveal who sends to whom. co-locate frequent transactors in the same shard to minimize cross-shard transfers
 
-mechanism: track UTXO flow graph (sender → receiver) over an epoch. apply spectral clustering to the flow graph. [[neurons]] in the same economic cluster share a shard. economic locality often correlates with semantic locality (you transact with people interested in similar things) but not always
+mechanism: track UTXO flow graph (sender → receiver) over an epoch. apply spectral clustering to the flow graph. [[neurons]] in the same social cluster share a shard. social locality often correlates with semantic locality (you transact with people interested in similar things) but not always
 
 ### geographic locality
 
@@ -109,7 +109,7 @@ a UTXO is committed to a [[neuron]]. the [[neuron]]'s shard (determined by their
 
 cross-cell transfers: the source cell produces a proof that the UTXO was validly spent (nullifier published, balance sufficient). the destination cell verifies the proof and creates the new UTXO. the proof is O(log |state|) via [[zheng|STARK]]
 
-cross-zone transfers: same mechanism but the proof relay crosses zone boundaries. higher latency, higher proof cost. the economic dimension helps — if Alice and Bob transact frequently, they end up in the same economic cluster → same cell → cheap transfers
+cross-zone transfers: same mechanism but the proof relay crosses zone boundaries. higher latency, higher proof cost. the social dimension helps — if Alice and Bob transact frequently, they end up in the same social cluster → same cell → cheap transfers
 
 ### private UTXOs
 
@@ -177,7 +177,7 @@ shard boundary latency: how many blocks of cross-shard latency is acceptable bef
 
 privacy and routing: if a [[neuron]]'s shard assignment is public, it leaks information about their [[cyberlink]] patterns. can shard assignment itself be private?
 
-incentive alignment: validators specialize in cells. what prevents a validator from refusing to serve a low-value cell? the economic dimension must ensure that serving any cell is profitable
+incentive alignment: validators specialize in cells. what prevents a validator from refusing to serve a low-value cell? the social dimension must ensure that serving any cell is profitable
 
 cold-to-hot reactivation: when an archived [[particle]] gets new [[cyberlinks]], it must rejoin a hot cell. which cell? the semantic dimension may have shifted since it was archived
 
