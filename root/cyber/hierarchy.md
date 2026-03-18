@@ -63,12 +63,12 @@ mechanism: [[neurons]] with [[location proof]] are grouped by geographic proximi
 
 each dimension has four levels. a [[particle]] has a coordinate in each dimension at each level
 
-| dimension | cell | zone | domain | global |
-|---|---|---|---|---|
-| [[particles]] — semantic | topic | field | continent | [[cybergraph]] |
-| [[neurons]] — social | circle | community | network | humanity |
-| [[tokens]] — economic | denomination | basket | economy | all [[tokens]] |
-| locations — geographic | village | city | state | planetary |
+| primitive | dimension | cell | zone | domain | global |
+|---|---|---|---|---|---|
+| [[particles]] | semantic | topic | field | continent | [[cybergraph]] |
+| [[neurons]] | social | circle | community | network | humanity |
+| [[tokens]] | economic | denomination | basket | economy | all [[tokens]] |
+| locations | geographic | village | city | state | planetary |
 
 a [[particle]]'s shard = the intersection of its coordinates across all four dimensions:
 
