@@ -13,8 +13,8 @@ because linking costs [[will]], the [[cybergraph]] accumulates weighted commitme
 
 the economics: [[will]] is the cost, [[cyberlink]] is the signal, [[focus]] is the collective outcome, [[cyberank]] is the per-[[particle]] score
 
-costly signals are the foundation of the [[cyber/truth]] architecture — without cost, [[cyberlinks]] would be cheap talk and the [[tri-kernel]] would converge on noise. the [[inversely coupled bonding surface|ICBS]] market adds a second cost layer: betting against a link also costs stake, ensuring that both assertion and refutation carry economic commitment
+costly signals are the foundation of the [[cyber/truth]] architecture — without cost, [[cyberlinks]] would be cheap talk and the [[tri-kernel]] would converge on noise. the [[coupling|ICBS]] market adds a second cost layer: betting against a link also costs stake, ensuring that both assertion and refutation carry economic commitment
 
-see [[will]] for the budget mechanics. see [[learning]] for the act of creating a costly signal. see [[market inhibition]] for the second cost layer
+see [[will]] for the budget mechanics. see [[learning]] for the act of creating a costly signal. see [[inhibition]] for the second cost layer
 
 discover all [[concepts]]

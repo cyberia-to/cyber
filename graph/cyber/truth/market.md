@@ -32,7 +32,7 @@ an agent creates [[cyberlink]] A→B and deposits stake. the stake becomes the i
 
 each edge carries a prediction market with two outcome tokens: TRUE and FALSE. agents buy positions, moving the price. price of TRUE ∈ (0,1) = implied probability that the link is true/useful.
 
-the market mechanism is the [[inversely coupled bonding surface]] (ICBS): $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$. ICBS was adopted over LMSR because: self-scaling liquidity (trading volume grows TVL automatically), early conviction rewarded (prices range 0 to λ, not [0,1]), inverse coupling (buying YES directly suppresses NO's price — TRUE and FALSE are geometrically opposed on a circle). no external LPs needed. the protocol is the market maker.
+the market mechanism is the [[coupling]] (ICBS): $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$. ICBS was adopted over LMSR because: self-scaling liquidity (trading volume grows TVL automatically), early conviction rewarded (prices range 0 to λ, not [0,1]), inverse coupling (buying YES directly suppresses NO's price — TRUE and FALSE are geometrically opposed on a circle). no external LPs needed. the protocol is the market maker.
 
 the market is perpetual — no oracle resolution. periodic liquidity transfer from the winning token to the losing one acts as a damper: prevents the market from freezing into dogma, always preserves liquidity for challenge. usage signal ([[cyberank]], traffic through the edge) serves as a soft oracle: if the edge is actively traversed, the TRUE price receives a weak upward nudge.
 
@@ -140,7 +140,7 @@ only aggregates are public — like the membrane potential on the outside of a n
 
 ## ICBS specifics
 
-the [[inversely coupled bonding surface]] (Williams & Buterin, 2020) is the market mechanism. cost function: $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$.
+the [[coupling]] (Williams & Buterin, 2020) is the market mechanism. cost function: $C(s_{YES}, s_{NO}) = \lambda\sqrt{s_{YES}^2 + s_{NO}^2}$.
 
 no external LPs needed. the protocol is the market maker. self-scaling: trading volume automatically grows TVL, so the most-contested edges become the most liquid. probability is encoded in the reserve ratio: $q = r_{YES}/(r_{YES} + r_{NO})$.
 
@@ -175,7 +175,7 @@ feedback loop. rank influences visibility → visibility influences usage → us
 - convergence dynamics: what transfer parameters give stable convergence vs oscillation vs divergence; connection to e ≈ 2.718
 - rank-price interaction: feedback loop dynamics, stability conditions, preventing circular reinforcement
 
-see [[inversely coupled bonding surface]] for the market mechanism. see [[Bayesian Truth Serum]] for the meta-prediction scoring. see [[proper scoring rules]] for the theoretical foundation. see [[cyber/epistemology]] for threat model and epistemic correctness. see [[foculus]] for the consensus mechanism that interacts with market finality.
+see [[coupling]] for the market mechanism. see [[serum]] for the meta-prediction scoring. see [[proper scoring rules]] for the theoretical foundation. see [[cyber/epistemology]] for threat model and epistemic correctness. see [[foculus]] for the consensus mechanism that interacts with market finality.
 
 ---
 

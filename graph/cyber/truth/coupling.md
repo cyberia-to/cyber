@@ -116,12 +116,12 @@ geometric simplicity. only square roots — no fractional powers, no exponential
 
 ## connection to [[cyber]]
 
-the inverse coupling property is the market analog of [[market inhibition]]: buying FALSE directly suppresses the effective weight of YES in the market, exactly as negative weights suppress activations in neural networks. the geometry makes this explicit — the two sides move on a circle, so amplifying one necessarily suppresses the other.
+the inverse coupling property is the market analog of [[inhibition]]: buying FALSE directly suppresses the effective weight of YES in the market, exactly as negative weights suppress activations in neural networks. the geometry makes this explicit — the two sides move on a circle, so amplifying one necessarily suppresses the other.
 
 the self-scaling liquidity property solves the bootstrapping problem for the [[cybergraph]]: every [[cyberlink]] that attracts market activity automatically deepens its own liquidity. the most-contested edges (the epistemically important ones) become the most liquid, yielding the most accurate prices. this is the Lindy effect on the market structure.
 
-the settlement factors $f_{YES} = x/q$ and $f_{NO} = (1-x)/(1-q)$ are inverse probability weights — the same mathematical structure that appears in importance sampling, in the [[Bayesian Truth Serum]] scoring formula, and in the KL divergence terms that measure information gain. this is not coincidental: all three are instances of proper scoring rules applied to belief elicitation.
+the settlement factors $f_{YES} = x/q$ and $f_{NO} = (1-x)/(1-q)$ are inverse probability weights — the same mathematical structure that appears in importance sampling, in the [[serum]] scoring formula, and in the KL divergence terms that measure information gain. this is not coincidental: all three are instances of proper scoring rules applied to belief elicitation.
 
 the on-manifold property (TVL = cost function) ensures the market remains solvent as [[cyberlinks]] accumulate, without requiring external capital injection. the [[cybergraph]] itself is the liquidity — structural [[knowledge]] ([[cyberlinks]]) bootstraps epistemic [[knowledge]] (market prices).
 
-see [[veritas]] for how ICBS fits into the full truth-discovery protocol. see [[market inhibition]] for the connection to inhibitory weights in the [[tri-kernel]]. see [[Bayesian Truth Serum]] for the scoring layer that sits above the market mechanism. see [[cyberlink market protocol]] for the broader design.
+see [[veritas]] for how ICBS fits into the full truth-discovery protocol. see [[inhibition]] for the connection to inhibitory weights in the [[tri-kernel]]. see [[serum]] for the scoring layer that sits above the market mechanism. see [[market]] for the broader design.

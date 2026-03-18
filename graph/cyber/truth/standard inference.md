@@ -36,10 +36,10 @@ standard inference addressed the [[true-false problem]] but left three gaps:
 
 1. no local reconvergence — still uses global [[cyberank]] as base, just reweighted. the full [[tri-kernel]] reconverges locally given context [[particles]], producing [[relevance]] instead of adjusted global rank
 
-2. no honesty mechanism — [[neurons]] can vote strategically. [[Bayesian Truth Serum]] with [[valence]] creates an [[equilibrium]] where honest reporting dominates
+2. no honesty mechanism — [[neurons]] can vote strategically. [[serum]] with [[valence]] creates an [[equilibrium]] where honest reporting dominates
 
-3. no market correction — incorrect answers persist until [[neurons]] manually reweight. [[inversely coupled bonding surface|ICBS]] markets suppress false edges economically and continuously
+3. no market correction — incorrect answers persist until [[neurons]] manually reweight. [[coupling|ICBS]] markets suppress false edges economically and continuously
 
 ## lineage
 
-[[true-false problem]] → standard inference → [[cyber/truth]] ([[tri-kernel]] + [[Bayesian Truth Serum|BTS]] + [[inversely coupled bonding surface|ICBS]])
+[[true-false problem]] → standard inference → [[cyber/truth]] ([[tri-kernel]] + [[serum|BTS]] + [[coupling|ICBS]])

@@ -76,7 +76,7 @@ in [[cyber]], the [[cyberlink]] IS the BTS input — no separate submission step
 | BTS concept | cyberlink field |
 |---|---|
 | first-order belief $p_i$ | link creation + stake $(\tau, a)$ — the neuron asserts the connection and stakes on it |
-| meta-prediction $m_i$ | valence $v \in \{-1, 0, +1\}$ — the neuron's prediction of how the [[inversely coupled bonding surface\|ICBS]] market on this edge will converge |
+| meta-prediction $m_i$ | valence $v \in \{-1, 0, +1\}$ — the neuron's prediction of how the [[coupling\|ICBS]] market on this edge will converge |
 | agent identity | $\nu$ — the signing neuron |
 
 this means every [[cyberlink]] is simultaneously a structural assertion and a BTS prediction, in one atomic act. the scoring engine can compute $s_i$ for every [[neuron]] from the public graph without any additional input.

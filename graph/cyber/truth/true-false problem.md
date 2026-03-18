@@ -26,7 +26,7 @@ the insight: [[inference]] requires contextual truth. the same [[particle]] can 
 | Layer | Mechanism | What it solves |
 |-------|-----------|---------------|
 | [[tri-kernel]] local reconvergence | context [[particles]] shift the [[probability]] distribution locally | global rank dominance |
-| [[Bayesian Truth Serum]] + [[valence]] | honesty is a Bayes-Nash [[equilibrium]] | strategic voting |
-| [[inversely coupled bonding surface|ICBS]] markets | capital flows against false edges | persistence of incorrect answers |
+| [[serum]] + [[valence]] | honesty is a Bayes-Nash [[equilibrium]] | strategic voting |
+| [[coupling|ICBS]] markets | capital flows against false edges | persistence of incorrect answers |
 
 [source of discussion](https://github.com/cybercongress/go-cyber/issues/694)
