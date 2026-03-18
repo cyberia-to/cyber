@@ -92,6 +92,19 @@ the card unifies what financial instruments split: the assertion (content), the 
 
 the protocol accepts any cyberlink as the first to a particle — there is no enforcement of what that first link must be. by convention, a [[name]] link is typically the first: it binds the raw hash to a human-readable identifier, making the particle discoverable. unnamed particles are hard to find and rarely linked further. naming emerges from practical necessity, not protocol enforcement. further links weave the particle into the [[cybergraph]]. the accumulated graph of all cyberlinks IS [[knowledge]]
 
+## edge labeling
+
+a cyberlink has no built-in type field. labeling works through the graph itself: every directed edge induces an [[axon]]-[[particle]] via axiom A6 ($H(p, q) \in P$). to label an edge, create a cyberlink from a type-[[particle]] to the [[axon]]-[[particle]]:
+
+```
+A ──cyberlink──→ B                  the assertion
+"is-a" ──cyberlink──→ axon(A, B)    the label
+```
+
+any [[particle]] can serve as a label: `is-a`, `contradicts`, `extends`, `cites`, `created-by`. the label itself has [[cyberank]], [[karma]], market price — the graph weights the importance of relation types the same way it weights everything else
+
+this means no new primitive is needed. the seven fields of the cyberlink tuple remain unchanged. metadata, annotations, and type labels are all cyberlinks to [[axon]]-[[particles]] — the graph describes its own structure
+
 see [[cybergraph]] for the formal definition including all six axioms. see [[valence]] for the ternary epistemic field. see [[Bayesian Truth Serum]] for the scoring that uses $v$. see [[effective adjacency]] for how conviction weights enter the [[tri-kernel]]. see [[UTXO]] for the transaction model underlying conviction. see [[eternal cyberlinks]] for the permanent-premium variant. see [[knowledge economy]] for the full epistemic asset taxonomy
 
 discover all [[concepts]]
