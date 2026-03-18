@@ -151,25 +151,25 @@ the hardest scaling challenge. all UTXOs are private by default — the architec
 
 every UTXO is a commitment. every transfer is a ZK [[proof]]. the only public information is: a valid state transition happened. selective reveal allows a [[neuron]] to prove specific properties (balance sufficient, token type, shard membership) without exposing the UTXO itself
 
-each cell maintains its own nullifier set (part of the [[mutator set]]: AOCL + SWBF). spending a UTXO publishes a nullifier to the cell's set — the nullifier reveals nothing about the UTXO except that it was spent
+each cell maintains its own [[mutator set]]: [[AOCL]] (append-only commitment list) for creation, [[SWBF]] (sliding-window bloom filter) for spending. no nullifiers — pseudorandom bit positions in the bloom filter replace them. creation and spending events share zero structural similarity — unlinkable by construction. storage grows O(log N) via [[MMR]] compaction, not monotonically
 
 ### within-cell transfers
 
 the [[neuron]] proves in zero knowledge:
-1. a valid UTXO exists in this cell's accumulator
-2. the nullifier is fresh (not in the cell's nullifier set)
+1. a valid commitment exists in this cell's [[AOCL]] (Merkle membership [[proof]])
+2. the derived bit positions have not been set in the [[SWBF]] (non-double-spend)
 3. the new commitment is well-formed (conservation: input = output + fee)
 
-publishes the nullifier, creates the new commitment. standard ZK transfer — no cross-shard coordination. the cell sees only: one nullifier appeared, one commitment appeared, conservation holds
+sets the bits in the [[SWBF]], appends the new commitment to the [[AOCL]]. standard ZK transfer — no cross-shard coordination. the cell sees only: bits were set, a commitment appeared, conservation holds
 
 ### cross-cell transfers
 
 two proofs required:
 
-1. source cell: ZK [[proof]] that a valid UTXO was spent (nullifier published to source cell's set, conservation proven)
-2. destination cell: the commitment is inserted into the destination cell's accumulator
+1. source cell: ZK [[proof]] that a valid UTXO was spent (bits set in source cell's [[SWBF]], conservation proven)
+2. destination cell: the new commitment is appended to the destination cell's [[AOCL]]
 
-the cross-cell relay carries only the proofs, not the values. neither cell learns which UTXO was spent or what the new commitment contains. the relay itself is a [[zheng|STARK]] proof that the source cell accepted the spend
+the cross-cell relay carries only the proofs, not the values. neither cell learns which UTXO was spent or what the new commitment contains. the relay itself is a [[zheng|STARK]] [[proof]] that the source cell accepted the spend
 
 cross-zone transfers: same mechanism but the [[proof]] relay crosses zone boundaries. higher latency, higher [[proof]] cost. the social dimension helps — if Alice and Bob transact frequently, they end up in the same social cluster → same cell → cheap transfers
 
@@ -186,11 +186,9 @@ a [[neuron]] can choose to reveal specific properties of a UTXO without breaking
 
 each reveal is a separate ZK [[proof]] — the [[neuron]] controls exactly what becomes visible
 
-### the nullifier scaling problem
+### scaling the mutator set
 
-nullifier sets grow monotonically — every spent UTXO adds a nullifier forever. at 10^15 [[neurons]] with multiple UTXOs each, the global nullifier set would be enormous
-
-sharded nullifier sets solve this: each cell's nullifier set contains only nullifiers for UTXOs that were in that cell. the total size is the same, but no single node holds it all. double-spend prevention is local within a cell, and cross-cell transfers use [[proof]] relay
+the [[SWBF]] solves the scaling problem that nullifier-based systems cannot: the active window is fixed-size (128 KB), old chunks compact into [[MMR]] peaks. at 10^15 [[neurons]] with multiple UTXOs each, each cell's [[mutator set]] stays bounded. the [[SWBF]] active window handles recent spends via direct bit lookup. historical spends verify via compact [[MMR]] Merkle paths. total circuit cost ~50K constraints — comparable to nullifier systems but with O(log N) storage instead of unbounded growth
 
 ---
 
