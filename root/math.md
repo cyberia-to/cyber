@@ -26,7 +26,7 @@ seven irreducible questions arise about any structure. each question defines a b
 | what shape does it have? | [[geometry]] | form, curvature, distance, [[Laplacian]], manifolds |
 | how does it change? | [[analysis]] | limits, continuity, flow, [[differential equations]], [[fourier transform]] |
 | how many are there? | [[combinatorics]] | counting, arrangement, enumeration, [[graph theory]] |
-| what are the atoms? | [[number theory]] | primes, divisibility, Diophantine equations |
+| what are the atoms? | [[numbers]] | primes, divisibility, Diophantine equations |
 | how uncertain is it? | [[probability]] | distributions, random processes, [[statistics]], expectation |
 
 ---
@@ -45,7 +45,7 @@ each branch owns a question no other branch can answer:
 
 [[combinatorics]] asks about counting — how many ways, how many paths, how many arrangements. [[graph theory]] lives here as the combinatorics of connections. discrete mathematics is combinatorics plus logic
 
-[[number theory]] asks about atoms — the primes are the irreducible elements of multiplication. the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$ is a prime chosen for its arithmetic properties. every [[Hemera]] hash is arithmetic in a prime field
+[[numbers]] asks about atoms — the primes are the irreducible elements of multiplication. the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$ is a prime chosen for its arithmetic properties. every [[Hemera]] hash is arithmetic in a prime field
 
 [[probability]] asks about uncertainty — what happens when you do not know. [[Bayesian Truth Serum|Bayes theorem]] connects prior belief to posterior knowledge. the [[tri-kernel]]'s [[diffusion]] operator is a random walk — a probabilistic object. [[statistics]] is probability applied to data
 
@@ -85,7 +85,7 @@ the [[collective focus theorem]] proves convergence via [[Perron-Frobenius theor
 
 the [[crystal]] is specified through [[combinatorics]] (N = 5,040 = 7!) and [[category theory]] (irreducibility as a formal property)
 
-[[Hemera]] hashing is arithmetic in a prime [[field]] — [[number theory]] applied to [[algebra]]
+[[Hemera]] hashing is arithmetic in a prime [[field]] — [[numbers]] applied to [[algebra]]
 
 ---
 

@@ -1,7 +1,8 @@
 ---
-tags: mathematics
+tags: math
+alias: number theory, numbers
 crystal-type: entity
-crystal-domain: mathematics
+crystal-domain: math
 stake: 4927009336379226
 ---
 The study of properties and relationships of [[integers]], especially [[prime]] numbers.
