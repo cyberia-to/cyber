@@ -31,3 +31,7 @@ shape — [[geometry]], [[topology]], [[calculus]], [[differential equations]], 
 ## key figures
 
 [[Euclid]], [[Archimedes]], [[Leonhard Euler]], [[Carl Friedrich Gauss]], [[Emmy Noether]], [[Kurt Goedel]], [[Stefan Banach]]
+
+## pages
+
+{{query (and (page-tags [[math]]))}}
