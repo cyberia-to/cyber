@@ -7,85 +7,77 @@ crystal-domain: math
 ---
 # math
 
-the study of what is necessarily true about abstract structures. math is what remains true when you remove the observer, the apparatus, and the substrate
+the science of [[proof]]. what is necessarily true about abstract structures — without observation, without time, without a channel
 
-mathematics is uniquely self-referential among the [[disciplines]]: it defines its own foundations, proves its own limits ([[Kurt Goedel|Gödel]]), and validates its own tools. every other science borrows mathematical structure. mathematics borrows from nothing
+the primitive object is the proof: a chain of deductions from axioms to conclusion. remove proof and claims become opinions. every other science borrows mathematical structure. mathematics borrows from nothing
 
----
-
-## from first principles
-
-a structure has three ingredients: elements, relations between elements, and operations on elements
-
-seven irreducible questions arise about any structure. each question defines a branch. no branch reduces to the others — together they span all of mathematics
-
-| question | branch | what it studies |
-|----------|--------|----------------|
-| what follows from what? | [[logic]] | [[proof]], inference rules, consistency, completeness |
-| what operations preserve structure? | [[algebra]] | [[symmetry]], groups, rings, fields, modules |
-| what shape does it have? | [[geometry]] | form, curvature, distance, [[Laplacian]], manifolds |
-| how does it change? | [[analysis]] | limits, continuity, flow, [[differential equations]], [[fourier transform]] |
-| how many are there? | [[combinatorics]] | counting, arrangement, enumeration, [[graph theory]] |
-| what are the atoms? | [[numbers]] | primes, divisibility, Diophantine equations |
-| how uncertain is it? | [[probability]] | distributions, random processes, [[statistics]], expectation |
+math is the first element of the [[form]] triad: [[proof]], [[bit]], [[step]]. together they produce the [[graph]] — the fundamental substrate. math verifies the graph. [[info]] populates it with distinctions. [[comp]] traverses it with transformations
 
 ---
 
-## why seven and not more
+## the primitive
 
-each branch owns a question no other branch can answer:
+a proof has three parts: axioms (what you assume), rules (how you deduce), conclusion (what follows). every mathematical object — [[numbers]], [[algebra|groups]], [[topology|spaces]], [[probability|distributions]] — is a conclusion of some proof system
 
-[[logic]] asks about truth itself — you need logic before you can state any theorem in any other branch. it is the grammar of [[proof]]
-
-[[algebra]] asks about operations — what happens when you combine, invert, compose. group theory is the study of [[symmetry]]. ring theory is the study of arithmetic-like structures. field theory is where equations live. none of this is about shape, counting, or uncertainty
-
-[[geometry]] asks about shape — distance, angle, curvature. the [[Laplacian]] operator lives here. [[topology]] lives here (shape without distance). [[Euclid]] started here. [[Riemann]] generalized it. the [[tri-kernel]]'s [[springs]] operator is geometry on graphs
-
-[[analysis]] asks about change — what happens in the limit, in the infinitely small, in the continuous. [[calculus]], measure theory, functional analysis. the [[tri-kernel]]'s [[diffusion]] and [[heat]] operators are analytic objects
-
-[[combinatorics]] asks about counting — how many ways, how many paths, how many arrangements. [[graph theory]] lives here as the combinatorics of connections. discrete mathematics is combinatorics plus logic
-
-[[numbers]] asks about atoms — the primes are the irreducible elements of multiplication. the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$ is a prime chosen for its arithmetic properties. every [[Hemera]] hash is arithmetic in a prime field
-
-[[probability]] asks about uncertainty — what happens when you do not know. [[Bayesian Truth Serum|Bayes theorem]] connects prior belief to posterior knowledge. the [[tri-kernel]]'s [[diffusion]] operator is a random walk — a probabilistic object. [[statistics]] is probability applied to data
+proof makes math unique among sciences: a proven claim cannot be falsified by experiment. it holds in every universe that satisfies the axioms. this is why the [[tri-kernel]]'s convergence theorem ([[collective focus theorem]]) is not a conjecture — it is a necessary truth given the axioms of [[probability]] and [[linear algebra]]
 
 ---
 
-## the connectors
+## structures from proof
 
-three structures span multiple branches — they are not branches themselves but languages shared across branches
+proof operates on structures. a structure = elements + relations. the fundamental structures of mathematics ordered by richness:
 
-[[linear algebra]] — vectors, matrices, eigenvalues. appears in every branch. the [[spectral gap]] is a linear algebra concept. the [[Laplacian]] is a matrix. the [[tri-kernel]] is a matrix operator. [[linear algebra]] is the computation engine of mathematics
+| structure | what it adds | key object |
+|-----------|-------------|-----------|
+| [[set theory|set]] | collection | element |
+| [[graph theory|graph]] | relation | edge |
+| order | direction | ≤ |
+| [[algebra|group]] | one operation | symmetry |
+| [[algebra|ring]] | two operations | arithmetic |
+| [[algebra|field]] | division | equations |
+| [[topology]] | nearness | open set |
+| measure | quantity | μ |
+| [[geometry|manifold]] | all of the above | curvature |
 
-[[category theory]] — morphisms, functors, natural transformations. the study of structure-preserving maps between branches. [[category theory]] is mathematics looking at itself. every branch has objects and morphisms. category theory studies what they have in common
-
-[[graph theory]] — nodes and edges. not a branch — a language. [[combinatorics]] counts graphs. [[algebra]] studies their spectra. [[geometry]] studies their embeddings. [[probability]] studies random walks on them. [[graph theory]] is the meeting point where all branches speak about the same object — the graph. the [[cybergraph]] is the ultimate application
+each row adds structure to the row above. the poorest (set) has only elements. the richest (manifold) has everything. but the graph — just elements + relations — is the most fundamental non-trivial object. all others are graphs with constraints
 
 ---
 
-## what mathematics is not
+## three connectors
 
-mathematics is not physics (which requires observation), not computation (which requires time), not information theory (which requires a sender). these are the other two aspects of the [[form]] triad:
+three structures span all of mathematics — they are languages, not branches
 
-| | question | requires |
-|---|---|---|
-| [[math]] | what is necessarily true? | nothing — axioms suffice |
-| [[info]] | how much can be communicated? | a channel, entropy |
-| [[comp]] | what can be calculated? | a machine, steps, time |
+[[linear algebra]] — vectors, matrices, eigenvalues. the computation engine. the [[spectral gap]] is linear algebra. the [[Laplacian]] is a matrix. the [[tri-kernel]] is a matrix operator
+
+[[category theory]] — morphisms between structures. mathematics looking at itself. every structure has objects and arrows. category theory studies what they have in common
+
+[[graph theory]] — nodes and edges. the meeting point where all structures speak about the same object. [[combinatorics]] counts graphs. [[algebra]] studies their spectra. [[geometry]] embeds them. [[probability]] walks on them. the [[cybergraph]] is the ultimate graph
+
+---
+
+## the seven branches
+
+seven irreducible questions about structure. each question defines a branch
+
+| branch | question | studies |
+|--------|----------|---------|
+| [[logic]] | what follows from what? | proof, inference, consistency |
+| [[algebra]] | what operations preserve? | [[symmetry]], groups, rings, fields |
+| [[geometry]] | what shape? | form, curvature, [[Laplacian]], manifolds |
+| [[math/analysis|analysis]] | how does it change? | limits, flow, [[differential equations]] |
+| [[combinatorics]] | how many? | counting, arrangement, [[graph theory]] |
+| [[numbers]] | what are the atoms? | primes, divisibility, [[Goldilocks field]] |
+| [[probability]] | how uncertain? | distributions, [[statistics]], random walks |
 
 ---
 
 ## for [[cyber]]
 
-[[cyberank]] is a [[spectral gap]] argument on [[Laplacian]] matrices — [[linear algebra]] applied to [[graph theory]] on a [[probability]] distribution
+the [[tri-kernel]] is three operators from three branches: [[diffusion]] ([[probability]]), [[springs]] ([[geometry]]), [[heat]] ([[math/analysis|analysis]]). their fixed point is a [[Boltzmann distribution]]
 
-the [[tri-kernel]] is three operators from three branches: [[diffusion]] ([[probability]]), [[springs]] ([[geometry]]), [[heat]] ([[analysis]]). their fixed point is a [[Boltzmann distribution]] — [[probability]] again
+the [[collective focus theorem]] proves convergence via [[Perron-Frobenius theorem|Perron-Frobenius]] ([[linear algebra]]) and Banach fixed-point ([[math/analysis|analysis]])
 
-the [[collective focus theorem]] proves convergence via [[Perron-Frobenius theorem|Perron-Frobenius]] ([[linear algebra]]) and Banach fixed-point theorem ([[analysis]])
-
-the [[crystal]] is specified through [[combinatorics]] (N = 5,040 = 7!) and [[category theory]] (irreducibility as a formal property)
-
-[[Hemera]] hashing is arithmetic in a prime [[field]] — [[numbers]] applied to [[algebra]]
+the [[crystal]] is [[combinatorics]] (N = 5,040 = 7!). [[Hemera]] is [[numbers]] (arithmetic in prime [[field]]). the [[cybergraph]] is [[graph theory]]
 
 ---
 

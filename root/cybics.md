@@ -21,7 +21,7 @@ seven triads cover all [[knowledge]]. each triad is a dialectic of three insepar
 
 | triad | | | | question |
 |-------|---|---|---|----------|
-| [[form]] | [[math]] | [[info]] | [[comp]] | what are the rules? |
+| [[form]] | [[math]] ([[proof]]) | [[info]] ([[bit]]) | [[comp]] ([[step]]) | what are the rules? |
 | [[mass]] | [[quant]] | [[chemo]] | [[energo]] | what is it made of? |
 | [[space]] | [[cosmo]] | [[geo]] | [[eco]] | where does it happen? |
 | [[life]] | [[bio]] | [[neuro]] | [[sense]] | who is alive? |
