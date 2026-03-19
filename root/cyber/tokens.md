@@ -55,4 +55,8 @@ net new supply: $\text{net} = E(t) - F \cdot \beta$. when fees exceed emission, 
 
 new [[$CYB]] is minted only when Δπ > 0 — inflation is literally evidence of [[knowledge]] creation
 
-see [[cyber/nomics]] for the verbs and rules that operate across these tokens. see [[cyber/tokenomics]] for the full monetary policy. see [[cybernomics]] for the universal theory
+## all tokens
+
+{{query (and (page-tags [[ticker]]))}}
+
+see [[cyber/nomics]] for the verbs and rules that operate across these tokens. see [[cybernomics]] for the universal theory
