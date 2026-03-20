@@ -1,7 +1,7 @@
 ---
 icon: 🕸
 tags: cyber, core
-alias: content oracle, cybergraphs, cybergraph
+alias: content oracle
 crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
