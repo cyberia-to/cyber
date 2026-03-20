@@ -43,9 +43,23 @@ each row adds structure to the row above. the poorest (set) has only elements. t
 
 ---
 
-## three connectors
+## the decomposition
 
-three structures span all of mathematics — they are languages, not branches
+every mathematical object is a composition of three primitives from the [[form]] triad:
+
+| object | [[bit]] (what is distinguished) | [[step]] (what transforms) | [[proof]] (what is verified) |
+|--------|------|------|-------|
+| [[set theory|set]] | elements | — | — |
+| [[graph theory|graph]] | elements + connections | — | — |
+| [[algebra|group]] | elements | one operation | closure, associativity, identity, inverse |
+| [[algebra|field]] | elements | two operations | all ring axioms + multiplicative inverse |
+| [[topology]] | nearness structure | — | axioms of open sets |
+| measure | — | — | σ-additivity, non-negativity |
+| [[geometry|manifold]] | all | all | all |
+
+the poorest (set) is pure bit — only distinctions. the richest (manifold) uses all three. the [[graph theory|graph]] is the most fundamental non-trivial object: bit + bit (elements + relations), no operations, no axioms
+
+three structures span all of mathematics — they are languages, not branches:
 
 [[linear algebra]] — vectors, matrices, eigenvalues. the computation engine. the [[spectral gap]] is linear algebra. the [[Laplacian]] is a matrix. the [[tri-kernel]] is a matrix operator
 
