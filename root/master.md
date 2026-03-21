@@ -23,9 +23,13 @@ discovered proof-of-work. built a mining rig. understood that consensus is a com
 
 worked with Moscow city government on technopark initiatives. saw how states manage information — badly. bureaucratic knowledge graphs with no convergence, no ranking, no accountability. the opposite of what a knowledge graph should be
 
-### Ethereum (2014)
+### Ethereum and CyberFund (2014)
 
-Ethereum proved that arbitrary computation could run in consensus. co-founded [[CyberFund]] — an early crypto research and investment fund. published the cybernetics economy report. began the search for decentralized search — a Google alternative where nobody controls the index
+Ethereum proved that arbitrary computation could run in consensus. co-founded [[CyberFund]] — an early crypto research and investment fund ([first commit October 2014](https://github.com/cyberFund/cyber.fund/commit/ee5f37d4116265d9cd9d60e5b073b2bab1a20a63)). published the cybernetics economy report. began the search for decentralized search — a Google alternative where nobody controls the index
+
+### cybernode (2016)
+
+[first architecture commit, December 2016](https://github.com/cyberFund/cybernode-archive/commit/d3205ce41fe0ab12d63f98d192f36613c25bb90d) — the infrastructure node that would evolve into [[cybernode]], then into [[bostrom]], then into [[cyber]]. the idea: a node that indexes all blockchains and provides a unified search interface. the seed of the [[cybergraph]]
 
 ### the search for sovereignty (2018)
 
