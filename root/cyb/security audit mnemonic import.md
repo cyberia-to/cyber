@@ -1737,3 +1737,45 @@ The error messages agent found 12 files bypassing `friendlyErrorMessage()`. Root
 ### Verdict
 
 25 audits completed. All CRITICAL and HIGH fixed. All MEDIUM actionable items fixed. Roadmap empty. Ready for localhost testing.
+
+---
+
+## Audit #26 — APDU Collision During Ledger Signing (2026-03-21)
+
+Scope: runtime bug — Ledger device not showing signing prompt during staking operations.
+
+### Root Cause
+
+Race condition between the Ledger health check (30s interval ping) and active signing operations. Both share the same WebUSB transport. When the health check sends a getVersion APDU while the Cosmos Ledger app is displaying "Review Transaction" and waiting for user button press, the APDU stream is corrupted and the signing prompt is silently aborted.
+
+Three collision vectors identified:
+
+| Vector | Function | Risk |
+|--------|----------|------|
+| Health check ping | `checkTransportHealth()` | Sends APDU every 30s — collides with signing APDU |
+| Transport validation ping | `getTransport()` | Pings on transport reuse — could collide if called concurrently |
+| Idle timer close | `closeTransport()` | Closes USB while device is mid-signing (5-min timeout) |
+
+### Fix Applied
+
+Added `_signingInProgress` mutex flag in `ledgerSigner.ts`:
+
+| Protection | Location | Behavior |
+|-----------|----------|----------|
+| `signAmino()` sets flag | `ReconnectingLedgerSigner.signAmino` | `_signingInProgress = true` before signing, `false` in `finally` |
+| Health check respects flag | `checkTransportHealth()` | Returns `true` (healthy) without sending APDU |
+| Transport ping respects flag | `getTransport()` | Returns existing transport without ping |
+| Close respects flag | `closeTransport()` | Refuses to close while signing |
+
+### Commit
+
+`caff6cbc` — `fix: prevent APDU collision during Ledger signing`
+
+### Updated overall status
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 4 | 4 | 0 | 0 |
+| HIGH | 14 | 14 | 0 | 0 |
+| MEDIUM | 31 | 19 | 12 (noted) | 0 |
+| LOW | 47 | 18 | 26 (noted, incl. 3 dev UI) | 0 |
