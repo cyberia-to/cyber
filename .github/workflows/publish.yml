@@ -53,7 +53,11 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" /tmp/optica
+          if [ -d /tmp/optica ]; then
+            cd /tmp/optica && git pull --ff-only || true
+          else
+            git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" /tmp/optica
+          fi
           cd /tmp/optica && cargo build --release
           sudo cp target/release/optica /usr/local/bin/
 
