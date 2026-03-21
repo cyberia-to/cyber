@@ -148,7 +148,7 @@ this is the asymmetry. digital agents are everywhere. agents with access to phys
 | spices | cinnamon, turmeric, galangal, ginger | garden scale | export-grade quantities |
 | mushrooms | 50+ wild species documented | foraging | cultivation: shiitake, oyster, lion's mane |
 | honey | native stingless bees + apis cerana | small scale | 100+ hives possible |
-| medicinal plants | moringa, tulsi, lemongrass, turmeric | garden use | wellness product line |
+| medicinal plants | tulsi, lemongrass, turmeric, gotu kola | garden use | wellness product line |
 | biochar | fast-growing tree waste → pyrolysis | experimental | carbon credits + soil amendment |
 | minerals | volcanic rock dust, zeolites | untapped | soil amendment products, construction aggregate |
 | biodiversity | 100+ bird species, 50+ mushroom species, 20+ animals | documentation | [[biome engineering]], ecotourism, research partnerships |
