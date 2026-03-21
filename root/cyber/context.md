@@ -1,7 +1,11 @@
 ---
-tags: cyber, optica
-crystal-type: process
+tags: cyber, core
+icon: "\U0001F9E0"
+crystal-type: entity
 crystal-domain: cyber
+subgraph: true
+repo: ../context
+exclude: ".claude/**, .git/**"
 ---
 the winning default [[context]] for language models — the [[cybergraph]] ranked by [[tri-kernel]] and packed to fit any token budget
 
