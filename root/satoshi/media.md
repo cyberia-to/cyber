@@ -7,7 +7,7 @@ icon: "\U0001F3AC"
 ---
 # media
 
-the full content database across all formats. books are in [[satoshi/library]]. this page covers everything else: video, photo, sound, illustration, interactive, how-to, and the people of science who embody each domain
+the full content database across all formats: books, video, photo, GIF, sound, how-to, and the people of science who embody each domain. one page for all media — books are not separate from the rest
 
 ## content by domain
 
@@ -287,12 +287,122 @@ content Satoshi should actively request from caretakers:
 
 all media created at [[cyber valley]] becomes potential [[particles]] for the [[cybergraph]] — the child's content enters the shared knowledge graph when she is ready
 
+## books
+
+### for children (by age)
+
+#### from birth (0+)
+
+| title | author | age | domain | link |
+|-------|--------|-----|--------|------|
+| Press Here | Herve Tullet | 1+ | [[satoshi/link]] | [google books](https://books.google.com/books?id=jS9IDQAAQBAJ) |
+| Yummy | Leslie Patricelli | 1+ | [[satoshi/nutrition]] | [amazon](https://www.amazon.com/Yummy-YUCKY-Leslie-Patricelli-board/dp/0763619507) |
+| Hands Are Not for Hitting | Martine Agassi | 1+ | [[satoshi/emotions]] | [amazon](https://www.amazon.com/Hands-Are-Not-Hitting-Behavior/dp/1575421127) |
+| My Body | DK First Reference | 1+ | [[satoshi/body]] | [amazon](https://www.amazon.com/My-Body-Board-Book/dp/1465445080) |
+| From Head to Toe | Eric Carle | 1+ | [[satoshi/body]] | [google books](https://books.google.com/books?id=oe_XAAAAQBAJ) |
+| The Very Hungry Caterpillar | Eric Carle | 1+ | [[satoshi/numbers]], [[satoshi/language]] | [google books](https://books.google.com/books?id=JpNyDgAAQBAJ) |
+| Eating the Alphabet | Lois Ehlert | 1+ | [[satoshi/nutrition]] | [amazon](https://www.amazon.com/Eating-Alphabet-Lois-Ehlert/dp/0152009027) |
+| Baby Signs | Linda Acredolo, Susan Goodwyn | 0+ | [[satoshi/signing]] | [amazon](https://www.amazon.com/Baby-Signs-Talk-Before-Revised/dp/0071615032) |
+| My First Signs | Annie Kubler | 0+ | [[satoshi/signing]] | [amazon](https://www.amazon.com/First-Signs-Baby-Signing/dp/1904550053) |
+
+#### from 2 years
+
+| title | author | age | domain | link |
+|-------|--------|-----|--------|------|
+| The Tiny Seed | Eric Carle | 2+ | [[satoshi/earth]] | [google books](https://books.google.com/books?id=asS2DwAAQBAJ) |
+| Oscar and the Bird | Geoff Waring | 2+ | [[satoshi/physics]], [[satoshi/atoms]] | [amazon](https://www.amazon.com/Oscar-Bird-Start-Science-Reader/dp/0763653195) |
+| Beautiful Oops | Barney Saltzberg | 2+ | [[satoshi/mind]] | [amazon](https://www.amazon.com/Beautiful-Oops-Barney-Saltzberg/dp/076115728X) |
+| Swimmy | Leo Lionni | 2+ | [[satoshi/cooperation]] | [google books](https://books.google.com/books?id=5oGPEAAAQBAJ) |
+| Botanicum | Katie Willis, Kathy Scott | 2+ | [[satoshi/nature]] | [amazon](https://www.amazon.com/Botanicum-Welcome-Museum-Katie-Scott/dp/0763689238) |
+| The Big Book of Bugs | Yuval Zommer | 2+ | [[satoshi/nature]] | [amazon](https://www.amazon.com/Big-Book-Bugs-Yuval-Zommer/dp/0500651140) |
+| In My Heart | Jo Witek | 2+ | [[satoshi/emotions]] | [amazon](https://www.amazon.com/My-Heart-Book-Feelings/dp/1419713108) |
+| When Sophie Gets Angry | Molly Bang | 2+ | [[satoshi/emotions]] | [amazon](https://www.amazon.com/When-Sophie-Gets-Angry-Really/dp/0590189794) |
+| Pattern Fish | Trudy Harris | 2+ | [[satoshi/numbers]] | [amazon](https://www.amazon.com/Pattern-Fish-Trudy-Harris/dp/0761345191) |
+| Anno's Counting Book | Mitsumasa Anno | 2+ | [[satoshi/numbers]] | [amazon](https://www.amazon.com/Annos-Counting-Book-Mitsumasa-Anno/dp/0064431231) |
+| The Sun Is My Favorite Star | Frank Asch | 2+ | [[satoshi/energy]] | [amazon](https://www.amazon.com/Sun-My-Favorite-Star/dp/0152065431) |
+| If You Give a Mouse a Cookie | Laura Numeroff | 2+ | [[satoshi/making]], [[satoshi/link]] | [google books](https://books.google.com/books?id=wMC2AAAAQBAJ) |
+| There's No Place Like Space | Tish Rabe | 2+ | [[satoshi/space]] | [amazon](https://www.amazon.com/Theres-Place-Space-About-Solar/dp/0679891153) |
+
+#### from 3 years
+
+| title | author | age | domain | link |
+|-------|--------|-----|--------|------|
+| The Color Monster | Anna Llenas | 2+ | [[satoshi/emotions]] | [amazon](https://www.amazon.com/Color-Monster-Pop-Up-Book-Feelings/dp/1454917296) |
+| Ada Twist Scientist | Andrea Beaty | 3+ | [[satoshi/mind]], [[satoshi/chemistry]] | [amazon](https://www.amazon.com/Ada-Twist-Scientist-Andrea-Beaty/dp/1419721372) |
+| Rosie Revere Engineer | Andrea Beaty | 3+ | [[satoshi/making]], [[satoshi/physics]] | [amazon](https://www.amazon.com/Rosie-Revere-Engineer-Andrea-Beaty/dp/1419708457) |
+| Have You Filled a Bucket Today? | Carol McCloud | 3+ | [[satoshi/cooperation]] | [amazon](https://www.amazon.com/Have-Filled-Bucket-Today-Bucketfilling/dp/099609993X) |
+| Stone Soup | various (folk tale) | 3+ | [[satoshi/cooperation]] | [amazon](https://www.amazon.com/Stone-Soup-Marcia-Brown/dp/0689711034) |
+| The Lorax | Dr. Seuss | 3+ | [[satoshi/nature]] | [google books](https://books.google.com/books?id=2R0PEAAAQBAJ) |
+| The Hidden Life of Trees | Peter Wohlleben | 3+ read-aloud | [[satoshi/nature]] | [google books](https://books.google.com/books?id=22qdCgAAQBAJ) |
+| Volcanoes! | National Geographic Kids | 3+ | [[satoshi/earth]] | [amazon](https://www.amazon.com/National-Geographic-Readers-Volcanoes/dp/1426302851) |
+| Forces Make Things Move | Kimberly Bradley | 3+ | [[satoshi/physics]] | [amazon](https://www.amazon.com/Forces-Make-Things-Move-Lets-Read/dp/0064452131) |
+| What Makes a Magnet? | Franklyn Branley | 3+ | [[satoshi/physics]] | [amazon](https://www.amazon.com/What-Makes-Magnet-Lets-Read/dp/0064451488) |
+| Rainbows | Franklyn Branley | 3+ | [[satoshi/light]] | [amazon](https://www.amazon.com/Rainbows-Lets-Read-Find-Out-Science/dp/0064452093) |
+| Basher Science: Chemistry | Simon Basher | 3+ | [[satoshi/atoms]] | [amazon](https://www.amazon.com/Basher-Science-Chemistry-Getting-Reaction/dp/0753463989) |
+| Kitchen Science Lab for Kids | Liz Heinecke | 3+ | [[satoshi/chemistry]] | [amazon](https://www.amazon.com/Kitchen-Science-Lab-Kids-Family-Friendly/dp/1592539254) |
+| The Darkest Dark | Chris Hadfield | 3+ | [[satoshi/space]] | [amazon](https://www.amazon.com/Darkest-Dark-Chris-Hadfield/dp/0316394726) |
+
+#### from 4 years
+
+| title | author | age | domain | link |
+|-------|--------|-----|--------|------|
+| One Well: The Story of Water on Earth | Rochelle Strauss | 4+ | [[satoshi/earth]] | [amazon](https://www.amazon.com/One-Well-Story-Water-Earth/dp/1553379543) |
+| Energy Island | Allan Drummond | 4+ | [[satoshi/energy]] | [amazon](https://www.amazon.com/Energy-Island-community-harnessed-changed/dp/0374321841) |
+| On a Beam of Light | Jennifer Berne | 4+ | [[satoshi/energy]], [[satoshi/light]] | [amazon](https://www.amazon.com/Beam-Light-Albert-Einstein/dp/0811872351) |
+| Gravity | Jason Chin | 4+ | [[satoshi/physics]] | [amazon](https://www.amazon.com/Gravity-Jason-Chin/dp/1596437170) |
+| Hello Ruby | Linda Liukas | 4+ | [[satoshi/computing]] | [amazon](https://www.amazon.com/Hello-Ruby-Adventures-Coding/dp/1250065003) |
+| See Inside Atoms and Molecules | Rosie Dickins (Usborne) | 4+ | [[satoshi/atoms]] | [amazon](https://www.amazon.com/See-Inside-Atoms-Molecules/dp/1474943616) |
+
+#### from 5 years
+
+| title | author | age | domain | link |
+|-------|--------|-----|--------|------|
+| The Way Things Work | David Macaulay | 5+ | [[satoshi/physics]], [[satoshi/link]] | [amazon](https://www.amazon.com/Way-Things-Work-Now/dp/0544824385) |
+| The Boy Who Harnessed the Wind | William Kamkwamba | 5+ | [[satoshi/energy]] | [amazon](https://www.amazon.com/Boy-Who-Harnessed-Wind-Readers/dp/0147510422) |
+| The Periodic Table: Elements with Style | Adrian Dingle | 5+ | [[satoshi/atoms]] | [amazon](https://www.amazon.com/Basher-Science-Periodic-Table-Elements/dp/0753467879) |
+| Blockhead: Life of Fibonacci | Joseph D'Agnese | 5+ | [[satoshi/math]] | [amazon](https://www.amazon.com/Blockhead-Life-Fibonacci-Joseph-DAgnese/dp/0805063056) |
+| Sir Cumference series | Cindy Neuschwander | 5+ | [[satoshi/math]] | [amazon](https://www.amazon.com/Sir-Cumference-First-Round-Table/dp/1570911525) |
+| Robotics! | Kathy Ceceri | 5+ | [[satoshi/computing]] | [amazon](https://www.amazon.com/Robotics-Discover-Science-Technology-Activities/dp/1619302527) |
+| The Wild Robot | Peter Brown | 5+ | [[satoshi/computing]] | [amazon](https://www.amazon.com/Wild-Robot-Peter-Brown/dp/0316381993) |
+| Hidden Figures (young readers) | Margot Lee Shetterly | 5+ | [[satoshi/space]] | [amazon](https://www.amazon.com/Hidden-Figures-Young-Readers-Edition/dp/0062662376) |
+
+#### from 6-7 years
+
+| title | author | age | domain | link |
+|-------|--------|-----|--------|------|
+| The Number Devil | Hans Magnus Enzensberger | 6+ | [[satoshi/math]] | [amazon](https://www.amazon.com/Number-Devil-Mathematical-Adventure/dp/0805062998) |
+| Stuff Matters | Mark Miodownik | 6+ read-aloud | [[satoshi/atoms]] | [amazon](https://www.amazon.com/Stuff-Matters-Exploring-Marvelous-Materials/dp/0544483944) |
+| Secret Coders | Gene Luen Yang | 6+ | [[satoshi/computing]] | [amazon](https://www.amazon.com/Secret-Coders-Gene-Luen-Yang/dp/162672275X) |
+| Lauren Ipsum | Carlos Bueno | 6+ | [[satoshi/computing]] | [amazon](https://www.amazon.com/Lauren-Ipsum-Carlos-Bueno/dp/1461178185) |
+| Flatland | Edwin Abbott | 7+ read-aloud | [[satoshi/math]] | [project gutenberg](https://www.gutenberg.org/ebooks/201) |
+| Cosmos | Carl Sagan | 7+ read-aloud | [[satoshi/space]] | [amazon](https://www.amazon.com/Cosmos-Carl-Sagan/dp/0345539435) |
+
+### for parents
+
+| title | author | topic | link |
+|-------|--------|-------|------|
+| Hunt Gather Parent | Michaeleen Doucleff | indigenous competence-based parenting | [amazon](https://www.amazon.com/Hunt-Gather-Parent-Ancient-Cultures/dp/1982149671) |
+| Free to Learn | Peter Gray | play as the engine of learning | [amazon](https://www.amazon.com/Free-Learn-Unleashing-Instinct-Self-Reliant/dp/0465084990) |
+| The Gardener and the Carpenter | Alison Gopnik | parents create conditions, not products | [amazon](https://www.amazon.com/Gardener-Carpenter-Development-Relationship-Children/dp/1250132258) |
+| Montessori from the Start | Paula Polk Lillard | prepared environment philosophy | [amazon](https://www.amazon.com/Montessori-Start-Child-Home-Three/dp/0805211128) |
+| Einstein Never Used Flashcards | Kathy Hirsh-Pasek | play-based learning science | [amazon](https://www.amazon.com/Einstein-Never-Used-Flashcards-Really/dp/1594860688) |
+| The Danish Way of Parenting | Jessica Joelle Alexander | trust and freedom | [amazon](https://www.amazon.com/Danish-Way-Parenting-Happiest-People/dp/0143111175) |
+| Free-Range Kids | Lenore Skenazy | letting kids be independent | [amazon](https://www.amazon.com/Free-Range-Kids-Giving-Grown-Up/dp/0470574755) |
+| Simplicity Parenting | Kim John Payne | reducing noise and clutter | [amazon](https://www.amazon.com/Simplicity-Parenting-Extraordinary-Calmer-Happier/dp/0345507983) |
+| The Self-Driven Child | William Stixrud | autonomy and motivation | [amazon](https://www.amazon.com/Self-Driven-Child-Science-Giving/dp/0735222517) |
+| Mindset | Carol Dweck | growth vs fixed mindset | [amazon](https://www.amazon.com/Mindset-Psychology-Carol-S-Dweck/dp/0345472322) |
+| Range | David Epstein | breadth vs specialization | [amazon](https://www.amazon.com/Range-Generalists-Triumph-Specialized-World/dp/0735214484) |
+| Nurture Shock | Po Bronson | counterintuitive parenting research | [amazon](https://www.amazon.com/NurtureShock-New-Thinking-About-Children/dp/0446504130) |
+| The Whole-Brain Child | Daniel Siegel | brain development and integration | [amazon](https://www.amazon.com/Whole-Brain-Child-Revolutionary-Strategies-Developing/dp/0553386697) |
+| Cribsheet | Emily Oster | data-driven parenting decisions | [amazon](https://www.amazon.com/Cribsheet-Data-Driven-Relaxed-Parenting-Preschool/dp/0525559272) |
+| Brain Rules for Baby | John Medina | neuroscience of early development | [amazon](https://www.amazon.com/Brain-Rules-Baby-Updated-Expanded/dp/0983263388) |
+
 ## linked domains
 
-every domain above. this page is the cross-domain media index
+every domain above. this page is the unified media index
 
 ## subgraphs
 
-[[species]] — species photo database. [[cyber valley]] — the location where most media is created. [[cybergraph]] — where media becomes [[particles]]. [[prysm]] — the visual design system that renders media in [[cyb]]
+[[species]] — species photo database. [[cyber valley]] — the location where most media is created. [[cybergraph]] — where media becomes [[particles]]. [[prysm]] — the visual design system. [[cyber/crystal]] — the crystal vocabulary defines what content teaches toward
 
-see [[satoshi/library]] for books. see [[satoshi/domains]] for the full domain set
+see [[satoshi/domains]] for the full domain set
