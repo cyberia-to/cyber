@@ -38,6 +38,7 @@ the domains are not subjects taught in sequence. they are lenses through which S
 | [[satoshi/lazy]] | the lazy mom method — engineered autonomy, environment over instruction |
 | [[satoshi/genius]] | accelerated learners, cognitive biases, how to produce genius without pressure |
 | [[satoshi/vocabulary]] | the [[cyber/crystal]]'s 5,040 particles as the core vocabulary for civilizational thinking |
+| [[satoshi/metabolism]] | three vital signs (growth, syntropy, happiness) → compound developmental health M(t) |
 | [[satoshi/content]] | curated resources: books, songs, games, activities, reference material |
 
 ## how domains map to superhuman vectors
