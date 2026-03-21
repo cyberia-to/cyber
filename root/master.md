@@ -59,7 +59,7 @@ moved to the land. built infrastructure from raw jungle:
 | staff | 32 local employees |
 | buildings | 800 m² operational |
 
-buildings named after the vision: Soft (event space), Organiq (food from gardens), Elona (energy showcase), Laba (construction hub), Satoshi (children), Banya (sauna), Vitalik (gym), Sinwood (bioluminescent forest)
+buildings named after the vision: [[soft3]] (event space), [[organiq]] (food from gardens), [[elona]] (energy showcase), [[laba]] (construction hub), Satoshi (children), [[banya]] (sauna), [[vitalik]] (gym), [[sinwood]] (bioluminescent forest)
 
 ### the research (2024-2026)
 
