@@ -4,6 +4,8 @@ alias: self-upgrade, self-upgrading, autonomous upgrade, protocol upgrade, veto 
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
+focus: 0.00013476487366908258
+gravity: 2
 ---
 
 the mechanism by which the [[cybergraph]] improves its own structure — proposals generated internally, vetoed only by [[neurons]], veto decaying with demonstrated accuracy until the system upgrades without human involvement

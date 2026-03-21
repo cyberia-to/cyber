@@ -3,6 +3,8 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5379801128253562
+focus: 0.0006133679537170914
+gravity: 10
 ---
 material with electrical conductivity between conductor and insulator
 

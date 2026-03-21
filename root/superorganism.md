@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14633351979981900
+focus: 0.00021490072906013463
+gravity: 3
 ---
 a colony that behaves as a single organism — coined by Wheeler (1911) studying ant colonies
 

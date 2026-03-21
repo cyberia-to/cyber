@@ -3,6 +3,8 @@ tags: bostrom
 crystal-type: entity
 crystal-domain: cyber
 stake: 14727327634899212
+focus: 0.00025242625964643503
+gravity: 1
 ---
 concepts
 

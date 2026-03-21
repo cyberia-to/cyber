@@ -3,6 +3,8 @@ tags: food
 crystal-type: process
 crystal-domain: agriculture
 stake: 3923707344357226
+focus: 0.00038073686388096975
+gravity: 15
 ---
 gathering of mature [[crops]] from the field
 

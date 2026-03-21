@@ -2,6 +2,8 @@
 tags: discipline, socio, game
 crystal-type: entity
 crystal-domain: socio
+focus: 0.00011908453610137259
+gravity: 1
 ---
 # political science
 

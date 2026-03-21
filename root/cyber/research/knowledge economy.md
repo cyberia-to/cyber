@@ -4,6 +4,8 @@ alias: knowledge economy, epistemic economy, cyber knowledge economy, knowledge 
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
+focus: 0.000969428739525555
+gravity: 2
 ---
 
 the mechanisms that make contributing to the [[cybergraph]] more profitable than free-riding — and that make epistemic accuracy the unit of wealth

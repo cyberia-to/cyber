@@ -3,6 +3,8 @@ tags: biology
 crystal-type: process
 crystal-domain: biology
 stake: 4278129814331100
+focus: 0.0005792240778039751
+gravity: 4
 ---
 
 Copying a DNA sequence into messenger RNA (mRNA). The first step of gene expression -- reading the genome.

@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5745940043515828
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 general description:

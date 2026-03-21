@@ -3,6 +3,8 @@ tags: cyber, hardware, architecture
 crystal-type: article
 crystal-domain: cyber
 alias:: hardware architecture, compute-memory split
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # hardware architecture
 

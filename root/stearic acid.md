@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8269857632723714
+focus: 0.0001572779037906034
+gravity: 3
 ---
 alias: stearic acid
 

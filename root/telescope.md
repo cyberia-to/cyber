@@ -3,6 +3,8 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5409092241474543
+focus: 0.0002730271147490728
+gravity: 4
 ---
 instrument for observing distant objects by collecting electromagnetic radiation
 

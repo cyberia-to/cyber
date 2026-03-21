@@ -6,6 +6,8 @@ crystal-domain: cyberia
 size: "96"
 shape: 12*8
 stake: 7168999960835168
+focus: 0.00022950845772856622
+gravity: 9
 ---
 multipurpose facility
 

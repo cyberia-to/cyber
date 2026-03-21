@@ -4,6 +4,8 @@ alias: information
 icon: "\U00002B50"
 crystal-type: entity
 crystal-domain: info
+focus: 0.005643160543296156
+gravity: 44
 ---
 # info
 

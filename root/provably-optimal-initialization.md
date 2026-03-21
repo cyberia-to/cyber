@@ -2,6 +2,8 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
+focus: 0.00018666253706705997
+gravity: 2
 ---
 # Provably Optimal Initialization: Why Knowledge Graph Structure is the Right Starting Point for Language Model Training
 

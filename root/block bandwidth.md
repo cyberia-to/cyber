@@ -3,6 +3,8 @@ tags: state
 crystal-type: measure
 crystal-domain: cyber
 stake: 8586689840730663
+focus: 0.0001242121030987156
+gravity: 1
 ---
 key: `0x02 | sdk.Uint64ToBigEndian(blockNumber) -> sdk.Uint64ToBigEndian(value)`
 

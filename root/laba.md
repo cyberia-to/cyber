@@ -5,6 +5,8 @@ crystal-domain: cyberia
 size: "80"
 shape: 20*4
 stake: 5683289606904284
+focus: 0.00017724081373589898
+gravity: 5
 ---
 production facility for autonomous estate
 

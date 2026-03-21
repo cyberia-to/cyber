@@ -3,6 +3,8 @@ tags: cyber, socio
 alias: sociology, society
 crystal-type: entity
 crystal-domain: socio
+focus: 0.00025419573444060694
+gravity: 20
 ---
 # socio
 
@@ -30,4 +32,3 @@ coordination — [[cooperation]], [[coordination]], [[commons]], [[collective]],
 - socio → [[spiri]]: shared values sustain institutions. [[ethics]], [[religion]], cultural identity bind communities
 - socio → [[tech]]: technology reshapes society. [[printing press]] enabled democracy; internet enabled network states
 - socio → [[cyber]]: the protocol has governance. [[cyberia]], [[senate]], [[manifesto]], [[cip]] — cyber is a society, not just software
-

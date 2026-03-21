@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5938366384536996
+focus: 0.00011965411112272912
+gravity: 1
 ---
 the ability of a model, theory, or hypothesis
 

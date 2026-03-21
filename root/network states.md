@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13921822021322226
+focus: 0.0016255215823323713
+gravity: 13
 ---
 what is [[network state]]?
 

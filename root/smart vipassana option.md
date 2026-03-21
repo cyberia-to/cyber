@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5128385739773471
+focus: 0.00011661740354397796
+gravity: 0
 ---
 we cant control your internet connection
 

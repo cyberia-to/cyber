@@ -2,6 +2,8 @@
 tags: cyber, optica
 crystal-type: process
 crystal-domain: cyber
+focus: 0.00011661740354397796
+gravity: 0
 ---
 loading the [[cybergraph]] into an LLM [[context]] window — selecting the most valuable pages to fit a token budget
 

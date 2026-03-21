@@ -4,6 +4,8 @@ alias: rocket estate
 crystal-type: entity
 crystal-domain: cyberia
 stake: 9223039275456482
+focus: 0.0006003213649062747
+gravity: 10
 ---
 We bring a unique offer to the market
 

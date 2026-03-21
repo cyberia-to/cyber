@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 7795504326950600
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 ### camphene: overview and medical uses

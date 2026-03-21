@@ -8,6 +8,8 @@ supply: "no"
 margin: high
 autonomy: staple
 stake: 8911821197483555
+focus: 0.0001689671495155366
+gravity: 3
 ---
 [[high margin]] [[fern]] for [[health]] if processed to powder
 

@@ -4,6 +4,8 @@ tags: species
 crystal-type: entity
 crystal-domain: biology
 stake: 6806522434725525
+focus: 0.00019437181871837065
+gravity: 2
 ---
 longevity:: year
 

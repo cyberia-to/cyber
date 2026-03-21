@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4621812209457280
+focus: 0.0001311423574160028
+gravity: 1
 ---
 - class of plants which can extract [[metals]] from [[soil]] called [[phytominers]]
   

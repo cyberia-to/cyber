@@ -7,6 +7,8 @@ alias: senwood, miracle, glowing forest
 ops: "false"
 dev: "false"
 stake: 9115028295454112
+focus: 0.0003730411584399938
+gravity: 9
 ---
 | category | indonesian | foreigner |
   | normal price | $15 | $30 |

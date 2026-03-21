@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14270874453872254
+focus: 0.00013726100555769264
+gravity: 2
 ---
 structured communication technique
 

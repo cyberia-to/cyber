@@ -6,6 +6,8 @@ crystal-size: article
 alias: cyber hierarchy, folding, scaling, graph folding
 status: draft
 stake: 80000000000000000
+focus: 0.0004904290314811495
+gravity: 13
 ---
 # cyber hierarchy
 

@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6077092351319699
+focus: 0.00011661740354397796
+gravity: 0
 ---
 The Default Mode Network (DMN) is a large-scale brain network primarily active during wakeful rest and mind-wandering, when our thoughts are not focused on the external environment. Neuroscientific studies have associated the DMN with self-referential thinking, envisioning the future, retrieving memories, and understanding the perspectives of others – broadly speaking, it plays a critical role in human consciousness and our sense of self.
 

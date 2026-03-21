@@ -6,6 +6,8 @@ crystal-domain: biology
 scalable: "true"
 wood-density: "600"
 stake: 7513170541181698
+focus: 0.0002967148318888041
+gravity: 2
 ---
 ![image.png](https://ipfs.io/ipfs/QmUmbbVvK8tmdAUerzeGjYokUDht4EEDh8DY6zkdAcZKmt){:height 638, :width 628}
 

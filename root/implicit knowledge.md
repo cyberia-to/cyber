@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 25957418397518344
+focus: 0.0014108084369463415
+gravity: 16
 ---
 what [[neurons]] derive from observing [[explicit knowledge]] and encode as new [[cyberlinks]]. the language of [[neurons]]
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14619926886422280
+focus: 0.002974861765934863
+gravity: 1
 ---
 tools to compute and work with [[particles]]
 

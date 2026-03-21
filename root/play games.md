@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11287818664925486
+focus: 0.00016638472141503014
+gravity: 1
 ---
 get high [[karma]] by [[learning]] [[cybergraph]]
 

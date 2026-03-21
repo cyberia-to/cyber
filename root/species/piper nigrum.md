@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 7498524984571208
+focus: 0.00014658193060411705
+gravity: 5
 ---
 ![](https://ipfs.io/ipfs/QmbDu6WE4VYoSZGfTN7vkvDVpwy7t6uoQLD2uNamj7wv7k)
 

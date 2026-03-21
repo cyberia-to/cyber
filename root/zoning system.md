@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6690171623875516
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[land primitives]]
 

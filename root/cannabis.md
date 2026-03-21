@@ -4,6 +4,8 @@ alias: hemp
 crystal-type: entity
 crystal-domain: biology
 stake: 10420313528364090
+focus: 0.00014966077483808158
+gravity: 1
 ---
 [[cannabis sativa]]
 

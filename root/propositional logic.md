@@ -3,6 +3,8 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 stake: 2945465526979843
+focus: 0.000290361585151646
+gravity: 8
 ---
 the simplest formal [[logic]]: propositions connected by AND, OR, NOT, implication
 

@@ -3,6 +3,8 @@ tags: cyber, language
 alias: Sym, symplectic language, symplectic geometry language
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.0001350842356534836
+gravity: 3
 ---
 symplectic [[geometry]]. phase space with 2-form ω, Hamiltonian flows, canonical transformations, [[conservation]] laws
 

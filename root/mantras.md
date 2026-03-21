@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4873308962140760
+focus: 0.00012116592516696659
+gravity: 1
 ---
 mantras are short, repeatable statements that express the core principles. they are designed to be spoken or recalled daily by workers, creating alignment, discipline, and shared focus. unlike formal rules, mantras are simple and memorable — a practical way to embed values into everyday actions.
 

@@ -3,6 +3,8 @@ tags: relation, statistics
 crystal-type: relation
 crystal-domain: mathematics
 stake: 1067172891684418
+focus: 0.00011661740354397796
+gravity: 0
 ---
 statistical relationship where two variables change together
 

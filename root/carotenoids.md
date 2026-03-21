@@ -4,6 +4,8 @@ alias: tetraterpenoids
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8209444711705441
+focus: 0.00024299232856512032
+gravity: 7
 ---
 [[carotenoids]], also known as tetraterpenoids, are a diverse group of [[fat-soluble pigments]] naturally occurring in plants, algae, and photosynthetic bacteria. they serve essential roles as precursors of [[vitamin a]], antioxidants, and protective agents against photooxidative damage. carotenoids such as [[β-carotene]], [[lutein]], and [[zeaxanthin]] are vital for [[eye vision]], [[skin health]], and [[immune function]].
 

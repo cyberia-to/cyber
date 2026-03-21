@@ -11,6 +11,8 @@ autonomy: staple
 wood: "yes"
 grow-speed: "3"
 stake: 8670779744935895
+focus: 0.00012830449796360396
+gravity: 2
 ---
 ![What Does a Coffee Plant Look Like? - Square Coffee Co.](https://ipfs.io/ipfs/QmQYWS8DM2s9meBH8YAGSSXMYayKcLxdh1N6FfyNLc4YZE)
 

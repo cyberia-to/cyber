@@ -3,6 +3,8 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5177611082825399
+focus: 0.0002920204876203771
+gravity: 5
 ---
 
 Ways of organizing, storing, and accessing data so that [[algorithms]] can operate efficiently.

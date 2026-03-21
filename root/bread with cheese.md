@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4698782745865747
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![](https://ipfs.io/ipfs/bafkreibzpewkd54qluxjes2rnygtvlbnzsdnkm7oogenokubkbtfyu2eze)
 

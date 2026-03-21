@@ -3,6 +3,8 @@ tags: cyber, ai, article
 alias: AI alignment, ai alignment
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.0013563845512247362
+gravity: 6
 ---
 # alignment
 

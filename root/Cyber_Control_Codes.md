@@ -1,5 +1,7 @@
 ---
 stake: 1627284067832293
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Cyber Control Codes: Reclaiming Dead Unicode for Graph Operations
 

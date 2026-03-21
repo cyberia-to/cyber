@@ -3,6 +3,8 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5083635427908085
+focus: 0.0002898689209879198
+gravity: 6
 ---
 suppression, prohibition, or restriction of information, speech, or media by an authority
 

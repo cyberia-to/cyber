@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 7303250896431333
+focus: 0.0004358030293342879
+gravity: 6
 ---
 if each voter is right more often than wrong (p > 0.5), majority vote approaches certainty as the group grows
 

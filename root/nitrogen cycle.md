@@ -3,6 +3,8 @@ tags: geography, biology, pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 3592066851333005
+focus: 0.00022676567965465924
+gravity: 6
 ---
 biogeochemical cycle converting nitrogen between chemical forms across Earth's systems
 

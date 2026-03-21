@@ -3,6 +3,8 @@ tags: material
 crystal-type: entity
 crystal-domain: materials
 stake: 6381394472004338
+focus: 0.00011795231184969603
+gravity: 1
 ---
 ## epoxy adhesive
 

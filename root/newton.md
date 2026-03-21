@@ -3,6 +3,8 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3233738899596334
+focus: 0.0003464875916325392
+gravity: 3
 ---
 SI unit of [[force]], equal to the force needed to accelerate 1 kg at 1 m/s2
 

@@ -4,6 +4,8 @@ alias: particle space, cyber space, address space
 crystal-type: entity
 crystal-domain: cyber
 stake: 13626469963010664
+focus: 0.0001357012238538764
+gravity: 1
 ---
 the set of all possible [[particles]] — bounded by two limits
 

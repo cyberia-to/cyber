@@ -3,6 +3,8 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1070102003006516
+focus: 0.0004418498780743556
+gravity: 6
 ---
 number of oscillations or cycles per unit time
 

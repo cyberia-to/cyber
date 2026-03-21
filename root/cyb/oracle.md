@@ -3,6 +3,8 @@ tags: aip, cyb, prysm
 crystal-type: entity
 crystal-domain: cyber
 stake: 17912736197680926
+focus: 0.0008684322107985951
+gravity: 16
 ---
 the search and discovery [[aip]] in [[cyb]]
 

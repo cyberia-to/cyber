@@ -2,6 +2,8 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Certificate of Formation of
 # \<SAMPLE COMPANY\> DAO LLC

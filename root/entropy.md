@@ -3,6 +3,8 @@ tags: physics
 crystal-type: measure
 crystal-domain: physics
 stake: 3031386125761388
+focus: 0.0027373584701061216
+gravity: 40
 ---
 A measure of the number of microscopic configurations consistent with a macroscopic state — quantifying disorder and missing [[information theory]].
 

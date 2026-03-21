@@ -5,6 +5,8 @@ crystal-domain: biology
 scalable: "true"
 alias: aloe
 stake: 13840050996913656
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![image](https://ipfs.io/ipfs/QmZ1abuZCRKnrxDVibUn8h13PouvRYvV1tAmNMmNssfHwm){:height 409, :width 408}
 

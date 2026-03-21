@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 availability: cv
 stake: 13425093559616420
+focus: 0.00019389594862790634
+gravity: 1
 ---
 products
 

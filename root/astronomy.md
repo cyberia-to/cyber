@@ -2,6 +2,8 @@
 tags: discipline, cosmo, quantum
 crystal-type: entity
 crystal-domain: cosmo
+focus: 0.00011908453610137259
+gravity: 1
 ---
 # astronomy
 

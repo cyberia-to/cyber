@@ -4,6 +4,8 @@ alias: Perron-Frobenius, Perron root, Perron vector, Perron eigenvector, Frobeni
 crystal-type: pattern
 crystal-domain: mathematics
 crystal-size: bridge
+focus: 0.00011661740354397796
+gravity: 0
 ---
 every non-negative primitive matrix has a unique positive eigenvector. this is the theorem that guarantees [[focus]] converges
 

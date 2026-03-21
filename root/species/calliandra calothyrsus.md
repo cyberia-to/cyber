@@ -12,6 +12,8 @@ wood: "yes"
 grow-speed: "5"
 nitrogener: "300"
 stake: 7586398324234151
+focus: 0.0007597090463419871
+gravity: 10
 ---
 ![Kaliandra Merah, Sumber Energi Alternatif dari Guatemala](https://ipfs.io/ipfs/QmXd3SYcjauPJvWTQ8b5VzZZiMLwtfVDTYiPoCS1mzf55j)
 

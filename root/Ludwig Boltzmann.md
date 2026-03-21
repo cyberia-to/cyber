@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4900159149259993
+focus: 0.0005142195992518445
+gravity: 5
 ---
 1844-1906. Austrian physicist and philosopher.
 

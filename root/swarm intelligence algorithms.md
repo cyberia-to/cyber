@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: pattern
 crystal-domain: cyberia
 stake: 2848804853350604
+focus: 0.00013026284923763946
+gravity: 2
 ---
 inspired by the behavior of social animals
 

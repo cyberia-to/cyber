@@ -1,6 +1,8 @@
 ---
 tags: cyber, article, compound
 stake: 2115469288181981
+focus: 0.00014259711751266215
+gravity: 1
 ---
 
 # Complete Feature Taxonomy of [[hash]] Functions

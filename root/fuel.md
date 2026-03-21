@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21124384716056436
+focus: 0.0005873469811776124
+gravity: 16
 ---
 paying [[token]] for [[gas]]
 

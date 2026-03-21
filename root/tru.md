@@ -6,6 +6,8 @@ crystal-type: entity
 crystal-domain: biology
 crystal-size: bridge
 stake: 16417668960360008
+focus: 0.005342522032662082
+gravity: 64
 ---
 the engine that reads the [[cybergraph]] and computes what matters
 

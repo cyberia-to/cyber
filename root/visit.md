@@ -4,6 +4,8 @@ alias: residency
 crystal-type: process
 crystal-domain: cyberia
 stake: 7426761757179804
+focus: 0.00012471866701000466
+gravity: 2
 ---
 ## white ticket
 

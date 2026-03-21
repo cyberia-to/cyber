@@ -7,6 +7,8 @@ alias: chrysopogon, vetiver
 supply: next-month
 market: herbs
 stake: 8266196243571091
+focus: 0.000174037656363415
+gravity: 4
 ---
 [[high margin]] [[oil]]
 

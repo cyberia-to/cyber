@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5074685365535006
+focus: 0.00017534898800577076
+gravity: 2
 ---
 ## 🕐  meal schedule (UTC)
 

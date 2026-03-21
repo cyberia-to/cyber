@@ -2,6 +2,8 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[Operating Agreement]]
   [Operating Agreement Template Non-Profit and For-Profit.docx](https://docs.google.com/document/d/1kqt8A0nzdRGs9Gb5tIJrUNeEc3S4F1aR/edit?usp=sharing&ouid=100192265667058521228&rtpof=true&sd=true)

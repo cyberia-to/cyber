@@ -4,6 +4,8 @@ alias: buy name
 crystal-type: process
 crystal-domain: cyber
 stake: 16818957211487452
+focus: 0.00026588409070489317
+gravity: 3
 ---
 [[portal entrance]] always on start
 

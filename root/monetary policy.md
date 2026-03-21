@@ -3,6 +3,8 @@ tags: cybernomics, governance
 crystal-type: entity
 crystal-domain: economics
 stake: 10876766709391050
+focus: 0.00017655142189277237
+gravity: 3
 ---
 control of money supply and interest rates by a central authority to influence economic activity
 

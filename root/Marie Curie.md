@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4944909461125381
+focus: 0.00013407204454686145
+gravity: 2
 ---
 1867-1934, Polish-French physicist and chemist
 

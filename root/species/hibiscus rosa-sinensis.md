@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 supply: next-month
 stake: 6873647902523607
+focus: 0.00013873930972082703
+gravity: 1
 ---
 ![](https://ipfs.io/ipfs/QmQtjNEhWwZ2QfqfjSpSA6xd3P9GnqyLxTXRZLQEy2c5we)
 

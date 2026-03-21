@@ -7,6 +7,8 @@ scalable: "true"
 market: fodder
 supply: next-month
 stake: 8333321711369173
+focus: 0.00039108777855678
+gravity: 8
 ---
 nitrogener:: 200
 

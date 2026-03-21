@@ -1,6 +1,8 @@
 ---
 tags: physics, information
 alias: negentropy
+focus: 0.0001279707226388262
+gravity: 2
 ---
 order measured in bits — the distance from maximum [[entropy]]. how much structure a system has beyond random noise
 

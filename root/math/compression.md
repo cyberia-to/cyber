@@ -3,6 +3,8 @@ tags: computer science, information theory
 crystal-type: process
 crystal-domain: mathematics
 stake: 4741254860036169
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 Reducing data size by eliminating redundancy. Encoding information in fewer bits than the original representation.

@@ -2,6 +2,8 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
+focus: 0.00018666253706705997
+gravity: 2
 ---
 # From Cyberlinks to ONNX: An Exact Compilation Pathway for Graph-Native Transformers
 

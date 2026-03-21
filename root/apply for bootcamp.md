@@ -4,6 +4,8 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 6683906580214362
+focus: 0.00019628737132697734
+gravity: 3
 ---
 TODO not actual anymore, rewrite the process
 

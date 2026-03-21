@@ -6,6 +6,8 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "4"
 stake: 6846797715404375
+focus: 0.00030136075094985837
+gravity: 3
 ---
 [[dioecious]]
 

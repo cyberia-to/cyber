@@ -4,6 +4,8 @@ tags: segment
 crystal-type: entity
 crystal-domain: agriculture
 stake: 7262975615752483
+focus: 0.0009789988500606874
+gravity: 10
 ---
 [[high margin]] species chosen for the layer
 

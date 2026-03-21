@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14378275202349184
+focus: 0.0012824023279580435
+gravity: 1
 ---
 software to create and use [[neurons]]
 

@@ -3,6 +3,8 @@ tags: computer science, machine learning
 crystal-type: entity
 crystal-domain: computer science
 stake: 5804522269957790
+focus: 0.0005333248699836224
+gravity: 11
 ---
 Layers of weighted connections that learn to approximate functions from data. The computational substrate of modern artificial intelligence.
 

@@ -3,6 +3,8 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5360273719439575
+focus: 0.00031513545775223555
+gravity: 5
 ---
 device converting electric signals to electromagnetic (radio) waves and back
 

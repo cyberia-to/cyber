@@ -1,5 +1,7 @@
 ---
 stake: 1241617743756040
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Plan: Structural Refactoring — Align Repo with Interface
 

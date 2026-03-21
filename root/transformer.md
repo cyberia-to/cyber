@@ -4,6 +4,8 @@ alias: transformer, transformers, transformer architecture, transformer model, l
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
+focus: 0.0008215825460436145
+gravity: 12
 ---
 
 a neural network architecture that processes sequences by computing weighted [[attention]] over all elements simultaneously — the foundation of modern [[llms|language models]]

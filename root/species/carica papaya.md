@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 7476556649655471
+focus: 0.00024202965374515786
+gravity: 4
 ---
 [[dioecious]]
 

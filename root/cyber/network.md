@@ -3,6 +3,8 @@ tags: cyber, cip
 crystal-type: pattern
 crystal-domain: cyber
 alias: network layer, p2p, peer-to-peer, cyber network
+focus: 0.00032003790744318533
+gravity: 4
 ---
 # network
 

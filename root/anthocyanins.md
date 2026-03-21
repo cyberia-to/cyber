@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8243007445604482
+focus: 0.00014380293990632386
+gravity: 4
 ---
 alias: anthocyanins
 

@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8249719992384290
+focus: 0.00015418547953931596
+gravity: 4
 ---
 alias: kaempferol
 

@@ -8,6 +8,8 @@ wood-durability: moderate
 wood-density: "700"
 nitrogener: "300"
 stake: 7513170541181698
+focus: 0.00014751685957011007
+gravity: 1
 ---
 ![image](https://ipfs.io/ipfs/QmbJF3NNyhFbVsKv8PnA8iqvbaVhiuSNK7KG97MHTY4vCX)
 

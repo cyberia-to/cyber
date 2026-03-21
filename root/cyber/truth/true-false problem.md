@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cyber
 stake: 14027880260443198
+focus: 0.00030099988005622205
+gravity: 5
 ---
 the foundational problem of [[cyber]] [[inference]]
 

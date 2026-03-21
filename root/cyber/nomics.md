@@ -5,6 +5,8 @@ crystal-domain: economics
 crystal-size: article
 alias: cyber nomics, cybernomics protocol, cyber tokenomics, cyber economics, economic model
 stake: 50000000000000000
+focus: 0.000136832000490662
+gravity: 2
 ---
 # cyber nomics
 

@@ -3,6 +3,8 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1058385557718124
+focus: 0.0003970353672450533
+gravity: 5
 ---
 [[force]] per unit area, measured in [[pascal]] (Pa)
 

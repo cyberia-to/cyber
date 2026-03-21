@@ -3,6 +3,8 @@ tags: time, computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5345628162829084
+focus: 0.00019057858463259874
+gravity: 1
 ---
 hypothetical point where [[AI]] surpasses human cognitive capacity across all domains
 

@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8950062373077613
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Cyberia vision: re-design of civilization
 title:: cyberia vision

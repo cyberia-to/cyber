@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 5018544065194793
+focus: 0.0001504413097353319
+gravity: 1
 ---
 convinient [[giant]]
 

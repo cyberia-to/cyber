@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8283282726283331
+focus: 0.00015036279216199726
+gravity: 3
 ---
 alias: chlorogenic acid
 

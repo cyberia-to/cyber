@@ -4,6 +4,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
 stake: 12330948434507682
+focus: 0.0001537833430403899
+gravity: 3
 ---
 [[plants]] which are able to extract metals from [[soil]]
 

@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: FEP
 stake: 5175373567232129
+focus: 0.0005495470304410956
+gravity: 14
 ---
 any system that persists must minimize variational [[free energy]] — or equivalently, maximize the evidence for its own generative model of the world
 

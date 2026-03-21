@@ -2,6 +2,8 @@
 tags: cyb, ui
 crystal-type: entity
 crystal-domain: cyb
+focus: 0.00011661740354397796
+gravity: 0
 ---
 how the personal robot shows what is [[true]], [[false]], or [[void]]
 

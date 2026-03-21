@@ -4,6 +4,8 @@ alias: biomes
 crystal-type: entity
 crystal-domain: biology
 stake: 8077024470685587
+focus: 0.00047697458836634275
+gravity: 21
 ---
 a large ecological region defined by distinct [[climate zone]], flora, and fauna
 

@@ -3,6 +3,8 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 stake: 3142936448611291
+focus: 0.00019043027260819327
+gravity: 4
 ---
 
 the [[emotion]] of [[orange]] — contamination avoidance

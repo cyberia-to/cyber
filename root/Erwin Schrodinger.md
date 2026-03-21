@@ -4,6 +4,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4913584242819610
+focus: 0.00021539617168785786
+gravity: 3
 ---
 1887-1961. Austrian-Irish physicist.
 

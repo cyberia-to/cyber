@@ -5,6 +5,8 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 stake: 38629120115830104
+focus: 0.0005722478535871138
+gravity: 6
 ---
 every [[cyberlink]] is a learning act — a [[neuron]] writes [[implicit knowledge]] into the [[cybergraph]]
 

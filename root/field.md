@@ -4,6 +4,8 @@ alias: fields
 crystal-type: entity
 crystal-domain: physics
 stake: 7356951270669799
+focus: 0.001949983843198858
+gravity: 32
 ---
 A physical quantity assigned to every point in [[spacetime]], mediating [[forces]] and interactions.
 

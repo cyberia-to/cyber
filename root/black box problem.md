@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14056072956918388
+focus: 0.00017433005584901608
+gravity: 1
 ---
 inability to transparently explain decisions of [[llm]]
 

@@ -3,6 +3,8 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5389564832660556
+focus: 0.0005401124642314413
+gravity: 8
 ---
 device converting [[energy]] into mechanical work
 

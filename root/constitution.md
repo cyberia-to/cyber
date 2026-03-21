@@ -3,6 +3,8 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 4998609835363846
+focus: 0.00043426638828207955
+gravity: 11
 ---
 foundational document defining the structure of a state, the rights of its members, and the limits of power
 

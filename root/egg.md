@@ -3,4 +3,6 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 9021662872062234
+focus: 0.0002104981441974227
+gravity: 3
 ---

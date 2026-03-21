@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14458825763706882
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 | concept     | cyber term            | meaning                        |

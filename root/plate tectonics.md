@@ -3,6 +3,8 @@ tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5394446684864052
+focus: 0.0003857677646558228
+gravity: 10
 ---
 theory describing the movement of lithospheric plates on Earth's asthenosphere
 

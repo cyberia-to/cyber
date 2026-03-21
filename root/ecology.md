@@ -2,6 +2,8 @@
 tags: discipline, eco, bio, geo
 crystal-type: entity
 crystal-domain: eco
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # ecology
 

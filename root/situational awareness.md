@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 6954198463881306
+focus: 0.0004306621095174105
+gravity: 2
 ---
 [the decade ahead](https://cyb.ai/oracle/ask/QmNbxnynavEjx2c1j3Soyt92MAzYGW862bv8LTTmzzeof7) by leopold aschenbrenner
 

@@ -5,6 +5,8 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: biology
 stake: 8269857632723714
+focus: 0.00061610950903303
+gravity: 8
 ---
 [birds observation by urban biologist 2024](https://ipfs.io/ipfs/QmUQWE2PB5bDkCCRJ6imBbsdMCRWD6p1nyya9yxvBhUAWA)
 

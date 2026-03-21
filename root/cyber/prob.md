@@ -4,6 +4,8 @@ tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 stake: 5000000000000000
+focus: 0.00012362309835372903
+gravity: 1
 ---
 the [[probability]] that the collective intelligence observes a [[particle]], given the [[equilibrium]] of [[diffusion]] (exploration), [[springs]] (structure), and [[heat]] (context)
 

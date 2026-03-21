@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 5056785240788851
+focus: 0.00024388830045145182
+gravity: 5
 ---
 native to [[batuka]]
 

@@ -4,6 +4,8 @@ alias: spice
 crystal-type: entity
 crystal-domain: economics
 stake: 14230599173193406
+focus: 0.00047395148230521006
+gravity: 8
 ---
 [[rosemary]]
 

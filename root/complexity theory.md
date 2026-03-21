@@ -3,6 +3,8 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5320812080794641
+focus: 0.0004869677280745994
+gravity: 10
 ---
 
 Classification of computational problems by the resources (time, space, randomness) required to solve them. The science of what is feasible to compute.

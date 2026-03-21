@@ -3,6 +3,8 @@ tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
 alias: Merkle Mountain Range, Merkle mountain ranges, MMRs
+focus: 0.00043742825360601603
+gravity: 6
 ---
 # MMR
 

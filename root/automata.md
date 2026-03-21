@@ -3,6 +3,8 @@ tags: computer science
 crystal-type: pattern
 crystal-domain: computer science
 stake: 3160267023933706
+focus: 0.0002859222855849729
+gravity: 3
 ---
 
 Abstract machines that process input strings according to formal rules. The theoretical foundation of [[computation]] and [[compilers]].

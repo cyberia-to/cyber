@@ -5,6 +5,8 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
+focus: 0.00019706102691866573
+gravity: 6
 ---
 # the five primitives of a [[vimputer]]
 

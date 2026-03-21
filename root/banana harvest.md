@@ -3,6 +3,8 @@ tags: species
 crystal-type: process
 crystal-domain: biology
 stake: 5334237174354257
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1116)
 

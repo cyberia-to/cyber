@@ -3,6 +3,8 @@ tags: cybics
 crystal-type: entity
 crystal-domain: cybics
 stake: 5249211581810020
+focus: 0.00046772137992320974
+gravity: 17
 ---
 the study of valid reasoning — rules that preserve truth from premises to conclusions
 

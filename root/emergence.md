@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 12952530266317922
+focus: 0.0005755914084582025
+gravity: 9
 ---
 complex patterns arising from simple local interactions without centralized control
 

@@ -6,6 +6,8 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
 stake: 6900498089642839
+focus: 0.00019389594862790634
+gravity: 1
 ---
 availability:: cv
 

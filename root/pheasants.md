@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4649557402813819
+focus: 0.00011795231184969603
+gravity: 1
 ---
 research
 

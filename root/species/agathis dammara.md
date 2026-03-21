@@ -9,6 +9,8 @@ supply: next-month
 wood: "yes"
 grow-speed: "4"
 stake: 7549784432707924
+focus: 0.00028415136806494805
+gravity: 4
 ---
 [[high margin]]
 

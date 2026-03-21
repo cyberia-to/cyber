@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4904634180446532
+focus: 0.00012323371753685967
+gravity: 1
 ---
 British-Iraqi computer scientist and entrepreneur.
 

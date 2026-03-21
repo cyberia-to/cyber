@@ -2,6 +2,8 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00017714326971944824
+gravity: 4
 ---
 applications that run on [[cyb/os]]. each is a cell — independently compiled, hot-swappable, governed on-chain
 

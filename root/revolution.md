@@ -3,6 +3,8 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5074685365535006
+focus: 0.0003264975421351957
+gravity: 6
 ---
 fundamental and rapid transformation of political power, social structures, or technological paradigms
 

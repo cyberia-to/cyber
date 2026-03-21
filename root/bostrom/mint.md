@@ -4,6 +4,8 @@ alias: bostrom/mint, bostrom mint, energy mint
 crystal-type: entity
 crystal-domain: economics
 stake: 19639691414667944
+focus: 0.00016854470194595144
+gravity: 2
 ---
 # Mint
 

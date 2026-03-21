@@ -3,6 +3,8 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 9871918797504606
+focus: 0.00011709327363444229
+gravity: 1
 ---
 top species by indoor popularity
 

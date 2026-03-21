@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8122181603567934
+focus: 0.00013452729129527236
+gravity: 2
 ---
 alias: methionine
 

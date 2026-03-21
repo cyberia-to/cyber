@@ -4,6 +4,8 @@ alias: hydrogen
 crystal-type: entity
 crystal-domain: economics
 stake: 15505983061356966
+focus: 0.0002961898274752668
+gravity: 13
 ---
 [[token]] of [[fuel]] in [[bostrom]]
 

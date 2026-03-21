@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 13665402734333556
+focus: 0.00019702073889087232
+gravity: 1
 ---
 measurable group-level intelligence — discovered by Woolley et al. (2010)
 

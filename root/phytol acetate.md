@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5781740293008138
+focus: 0.0002673523033323072
+gravity: 2
 ---
 phytol acetate is a naturally occurring or semi-synthetic [[acetate ester]] formed from the esterification of [[phytol]], a branched-chain diterpene alcohol, with [[acetic acid]]. it may be found in trace amounts in [[chlorophyll-containing plants]], fermented products, or generated during processing of phytol-rich plant materials. this compound is being studied for its bioactivity, including [[anti-inflammatory]], [[antimicrobial]], and [[insect-repellent]] properties.
 

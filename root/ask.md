@@ -5,6 +5,8 @@ alias: infer
 crystal-type: process
 crystal-domain: cyber
 stake: 17415031365534420
+focus: 0.0004948037423051175
+gravity: 6
 ---
 ask [[cyber]] protocol
 

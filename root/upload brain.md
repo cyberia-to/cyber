@@ -3,6 +3,8 @@ tags: page
 crystal-type: process
 crystal-domain: cyber
 stake: 11405959488250112
+focus: 0.00018740760119049678
+gravity: 1
 ---
 purpose
 

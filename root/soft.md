@@ -5,5 +5,7 @@ crystal-domain: cyberia
 size: "74"
 shape: 12*6
 stake: 4984371099770314
+focus: 0.0004084849174281314
+gravity: 12
 ---
 [github](https://github.com/orgs/cyber-valley/projects/39/views/1) link on the board with limited access

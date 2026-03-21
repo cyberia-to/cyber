@@ -6,6 +6,8 @@ crystal-domain: economics
 crystal-size: article
 status: draft
 stake: 66218419658672376
+focus: 0.0013983029349424368
+gravity: 24
 ---
 # learning incentives
 

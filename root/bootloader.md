@@ -4,6 +4,8 @@ alias: bootloading
 crystal-type: entity
 crystal-domain: cyber
 stake: 27892462564679420
+focus: 0.0013659238318425462
+gravity: 14
 ---
 [[cybergraph]] with particular [[cyberlinks]], [[neurons]] and [[tokens]]
 

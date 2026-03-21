@@ -6,6 +6,8 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 stake: 29235460105861412
+focus: 0.013996319073397477
+gravity: 115
 ---
 the number the [[tru]] assigns to every [[particle]] — probability of being observed by a [[random walking]] [[neuron]]. cyberank is [[focus]] materialized as a per-[[particle]] score
 

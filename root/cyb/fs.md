@@ -3,6 +3,8 @@ tags: cyb, cyber, core
 alias: cyb filesystem, cyber filesystem, cyb/fs
 crystal-type: entity
 crystal-domain: cyb
+focus: 0.00016385492623842912
+gravity: 2
 ---
 the [[cybergraph]] as a filesystem — content-addressed, append-only, patch-based
 

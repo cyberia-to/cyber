@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5696714700463901
+focus: 0.00016074792350172096
+gravity: 1
 ---
 since [[game of freedom]] announcement a lot have been happened
 

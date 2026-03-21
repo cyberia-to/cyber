@@ -2,8 +2,9 @@
 tags: cybernomics, cv.land
 crystal-type: entity
 crystal-domain: economics
-focus: "true"
 stake: 10808420778542090
+focus: 0.0001285456092246854
+gravity: 2
 ---
 - we are working on a permanent event platform for iconic events
 - are you organizing events?

@@ -5,6 +5,8 @@ crystal-domain: computer science
 source: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
 words: "2048"
 stake: 9763704406993760
+focus: 0.00012092021584912305
+gravity: 1
 ---
 the standard english mnemonic wordlist for deterministic [[wallet]] [[seed]] generation
 

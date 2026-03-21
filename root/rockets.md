@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14217174079633786
+focus: 0.00011661740354397796
+gravity: 0
 ---
 family clan established by [[@master]] and [[@joy]]
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 2757514217145213
+focus: 0.00012052938487257687
+gravity: 1
 ---
 probabilistic models help manage uncertainty
 

@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
 stake: 33626197977686504
+focus: 0.005169522021431315
+gravity: 117
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]. the sum of all [[cyberlinks]] is knowledge
 

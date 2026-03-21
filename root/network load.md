@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13988947489120310
+focus: 0.0001242121030987156
+gravity: 1
 ---
 [[vimputer]] keeps track of total consumed [[bostrom/bandwidth]]
 

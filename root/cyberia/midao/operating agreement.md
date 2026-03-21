@@ -2,6 +2,8 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Operating Agreement Template
 ## For an Algorithmically or Member-Managed Non-Profit DAO LLC or For-Profit DAO LLC

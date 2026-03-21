@@ -4,6 +4,8 @@ alias: personal bandwidth, account bandwidth
 crystal-type: measure
 crystal-domain: cyber
 stake: 13834558913184722
+focus: 0.00039525153056174845
+gravity: 7
 ---
 used for tracking bandwidth of [[neurons]] in the network
 

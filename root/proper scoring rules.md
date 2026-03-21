@@ -4,6 +4,8 @@ alias: proper scoring rules, proper scoring rule, scoring rule, incentive compat
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
+focus: 0.00022106981465831849
+gravity: 6
 ---
 
 a class of scoring functions that incentivize honest probability reporting — the mathematical foundation for all mechanisms that reward calibrated belief

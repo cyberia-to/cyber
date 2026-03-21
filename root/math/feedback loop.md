@@ -3,6 +3,8 @@ tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 2934725452132150
+focus: 0.00011661740354397796
+gravity: 0
 ---
 system structure where output feeds back as input, modifying subsequent behavior
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14230599173193406
+focus: 0.000853984128296281
+gravity: 1
 ---
 comparison of [[cyb/avatar]] systems with legacy web names
 

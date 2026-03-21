@@ -4,6 +4,8 @@ tags: kitchen/menu
 crystal-type: entity
 crystal-domain: agriculture
 stake: 5401362642152340
+focus: 0.00024401469110411485
+gravity: 1
 ---
 
 #### cheese storage guide

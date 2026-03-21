@@ -4,6 +4,8 @@ tags: cyber, cyb
 crystal-type: entity
 crystal-domain: biology
 stake: 5114960646213856
+focus: 0.00021803435298040592
+gravity: 3
 ---
 how to consolidate [[bostrom]], [[cyber]] and [[cyb]] in one coherent product?
 

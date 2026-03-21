@@ -4,6 +4,8 @@ tags: species
 crystal-type: entity
 crystal-domain: biology
 stake: 6860222808963990
+focus: 0.00016783877010082202
+gravity: 3
 ---
 ![tulsi](https://ipfs.io/ipfs/QmNyNEy359JeR17cNY33bZ7bCjUaDSax6AuafNj8MX6srP)
 

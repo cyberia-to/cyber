@@ -2,6 +2,8 @@
 tags: discipline, meta, socio
 crystal-type: entity
 crystal-domain: meta
+focus: 0.0001300222630358629
+gravity: 5
 ---
 # history
 

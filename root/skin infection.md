@@ -4,6 +4,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: biology
 stake: 7075024305917854
+focus: 0.00036537271934300014
+gravity: 4
 ---
 [[cellulitis]]
 

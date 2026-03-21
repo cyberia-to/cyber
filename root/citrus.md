@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 5111299257061233
+focus: 0.0005393261768180516
+gravity: 8
 ---
 native
 

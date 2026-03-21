@@ -3,6 +3,8 @@ tags: technology, physics, energy
 crystal-type: entity
 crystal-domain: physics
 stake: 5801674522839083
+focus: 0.00044211478300948393
+gravity: 6
 ---
 device storing chemical [[energy]] and converting it to electrical energy on demand
 

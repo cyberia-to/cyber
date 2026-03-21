@@ -1,5 +1,7 @@
 ---
 stake: 1346577566131223
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Plan: All-Files Graph — Every File Is a Node
 

@@ -3,6 +3,8 @@ tags: cyb, cyber, core
 alias: table particle, tabular data, csv, dataset
 crystal-type: entity
 crystal-domain: cyb
+focus: 0.00038840495334893703
+gravity: 9
 ---
 2D data — rows and columns — as [[particle]]. the native format for datasets, time series, grids, rankings, and measurements in the [[cybergraph]]
 

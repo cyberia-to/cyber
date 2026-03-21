@@ -5,6 +5,8 @@ crystal-type: process
 crystal-domain: biology
 crystal-size: bridge
 stake: 12876373371943368
+focus: 0.0002655310406388029
+gravity: 9
 ---
 the ML word for [[learning]] — and where the analogy breaks
 

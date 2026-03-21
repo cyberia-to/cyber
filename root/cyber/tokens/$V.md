@@ -4,6 +4,8 @@ alias: volt, millivolt, volts, millivolts
 crystal-type: entity
 crystal-domain: economics
 stake: 17680848218014824
+focus: 0.00037638830390509864
+gravity: 10
 ---
 [[token]] of [[will]] in [[bostrom]]
 

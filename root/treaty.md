@@ -3,6 +3,8 @@ tags: governance
 crystal-type: relation
 crystal-domain: governance
 stake: 1014042066869694
+focus: 0.0002448731004247236
+gravity: 5
 ---
 formal binding agreement between two or more sovereign entities under [[international law]]
 

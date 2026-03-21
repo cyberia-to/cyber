@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21204935277414136
+focus: 0.0002360152422060381
+gravity: 7
 ---
 ## what is cip?
 

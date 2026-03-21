@@ -4,6 +4,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: biology
 stake: 7081736852697661
+focus: 0.00044420552282198436
+gravity: 7
 ---
 [[acne]]
 

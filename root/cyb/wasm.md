@@ -3,6 +3,8 @@ tags: cyber, cyb, draft, research
 crystal-type: entity
 crystal-domain: cyber
 alias: CyberWasm, CyberRS, cyberwasm
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # CyberWasm
 

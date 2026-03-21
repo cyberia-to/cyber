@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4958334554684998
+focus: 0.00012687960857568262
+gravity: 2
 ---
 Israeli computer scientist and mathematician, professor at Technion.
 

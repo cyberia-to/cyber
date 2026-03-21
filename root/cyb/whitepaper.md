@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cyb
 crystal-size: deep
 status: draft
+focus: 0.00013366396820064199
+gravity: 2
 ---
 # cyb: the immortal robot
 

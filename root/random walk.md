@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: biology
 stake: 6150035359660282
+focus: 0.0008163799467816739
+gravity: 1
 ---
 process of simulating a [[neuron]] randomly navigating the [[cybergraph]]
 

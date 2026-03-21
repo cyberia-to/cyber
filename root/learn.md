@@ -5,6 +5,8 @@ alias: learning, labeling, answer
 crystal-type: process
 crystal-domain: cyber
 stake: 17753343723236754
+focus: 0.003687142449705282
+gravity: 37
 ---
 [[create links]] between [[particles]] of [[information]]
 

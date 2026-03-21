@@ -2,6 +2,8 @@
 tags: discipline, geo, chemo
 crystal-type: entity
 crystal-domain: geo
+focus: 0.00011908453610137259
+gravity: 1
 ---
 # geology
 

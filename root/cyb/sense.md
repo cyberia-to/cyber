@@ -3,6 +3,8 @@ tags: cyber, sense
 alias: senses, perception
 crystal-type: entity
 crystal-domain: sense
+focus: 0.0002481654901194348
+gravity: 8
 ---
 # sense
 
@@ -28,4 +30,3 @@ qualia — the subjective quality of experience. the taste of [[cinnamon]], the 
 - sense → [[ai]]: computer vision, speech recognition, sensor fusion — [[machine learning]] applied to sensory data
 - sense → [[tech]]: sensors, cameras, microphones, spectrometers — [[engineering]] builds artificial sense organs
 - sense → [[cyber]]: the protocol ingests sensory data as [[particles]]. every image, recording, and measurement is a sensory contribution to the [[cybergraph]]
-

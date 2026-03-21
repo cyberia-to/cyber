@@ -4,6 +4,8 @@ alias: alkaloid
 crystal-type: entity
 crystal-domain: chemistry
 stake: 7954367934072729
+focus: 0.00032191624049801636
+gravity: 13
 ---
 alkaloids are naturally occurring organic compounds containing nitrogen, primarily found in plants, fungi, bacteria, and certain animals. characterized by their significant physiological and pharmacological activities, alkaloids often act as defense mechanisms against herbivores and pathogens.
 

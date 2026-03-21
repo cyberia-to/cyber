@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 4579299413185161
+focus: 0.0033756929111234623
+gravity: 22
 ---
 a [[cyberlink]] that costs [[will]] to create — making it an honest indicator of what the [[neuron]] values
 

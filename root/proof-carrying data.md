@@ -4,6 +4,8 @@ tags: cyber, cryptographic proofs
 crystal-type: entity
 crystal-domain: computer science
 stake: 9600162358176614
+focus: 0.00041827550265737505
+gravity: 7
 ---
 generalization of [[incrementally verifiable computation]] from sequential chains to arbitrary DAGs
 

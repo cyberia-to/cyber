@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8256432539164097
+focus: 0.00011661740354397796
+gravity: 0
 ---
 alias: retinol
 

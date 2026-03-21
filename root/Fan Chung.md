@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5016509960110002
+focus: 0.00012323371753685967
+gravity: 1
 ---
 1949-. Taiwanese-American mathematician, professor at UC San Diego.
 

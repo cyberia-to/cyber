@@ -3,6 +3,8 @@ tags: time, history
 crystal-type: entity
 crystal-domain: history
 stake: 5252872970962643
+focus: 0.0002333696025159541
+gravity: 5
 ---
 transition from nomadic hunter-gatherer life to settled [[agriculture]] ~10000 BCE
 

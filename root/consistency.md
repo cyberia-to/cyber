@@ -3,6 +3,8 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: enzyme
+focus: 0.0005919218412286204
+gravity: 2
 ---
 agreement between independent descriptions of the same thing
 

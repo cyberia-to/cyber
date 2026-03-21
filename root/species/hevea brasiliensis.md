@@ -8,6 +8,8 @@ wood-availability: high
 wood-durability: low
 wood-density: "600"
 stake: 8139268086280173
+focus: 0.00014751685957011007
+gravity: 1
 ---
 [[resin]]
 

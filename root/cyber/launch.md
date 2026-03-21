@@ -4,6 +4,8 @@ alias: master plan, nox master plan, nox_master_plan, cyber/launch
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
+focus: 0.000169555804568641
+gravity: 2
 ---
 # cyber/launch
 

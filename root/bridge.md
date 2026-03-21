@@ -7,6 +7,8 @@ icon: 🌉
 ops: "false"
 dev: "false"
 stake: 4801708463156139
+focus: 0.0005019086566083058
+gravity: 9
 ---
 planned district in [[cyber valley]]
 

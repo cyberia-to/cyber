@@ -10,6 +10,8 @@ supply: next-month
 wood: "yes"
 grow-speed: "3"
 stake: 6907210636422646
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![image.png](https://ipfs.io/ipfs/QmYcVAErcg1D2iXsNSj62FZEQJn5bREDzGAcyvoBpuaBeS)
 

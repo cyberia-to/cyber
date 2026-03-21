@@ -3,6 +3,8 @@ alias: impulse, focus impulse, π_Δ, pi_delta, impulses
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
+focus: 0.0010675600170982943
+gravity: 4
 ---
 # impulse
 

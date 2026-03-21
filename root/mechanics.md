@@ -3,6 +3,8 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4792758400783061
+focus: 0.0009784388365883388
+gravity: 6
 ---
 The branch of [[physics]] describing motion of bodies under the action of [[force]].
 

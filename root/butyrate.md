@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8786723734768946
+focus: 0.0007807048338762968
+gravity: 4
 ---
 alias: butyrate, butyric acid
 

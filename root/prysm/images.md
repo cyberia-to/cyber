@@ -3,6 +3,8 @@ tags: prysm, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 17237820130547482
+focus: 0.0001921986379728409
+gravity: 2
 ---
 icon library atom in [[prysm]]
 

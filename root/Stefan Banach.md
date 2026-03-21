@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4985184741804231
+focus: 0.00015790550273515671
+gravity: 4
 ---
 1892-1945. Polish mathematician, co-founder of functional analysis.
 

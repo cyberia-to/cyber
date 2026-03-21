@@ -6,6 +6,8 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 stake: 14015797676239542
+focus: 0.0002393328170564822
+gravity: 7
 ---
 # Architecture
 

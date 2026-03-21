@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5204461269944632
+focus: 0.00015885681506700675
+gravity: 3
 ---
 - five primitives for all land operations
 - ## Primitives

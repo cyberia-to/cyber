@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14687052354220364
+focus: 0.00015999697843931238
+gravity: 2
 ---
 potential issue in proof of stake consensus mechanisms
 

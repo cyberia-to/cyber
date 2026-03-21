@@ -3,6 +3,8 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5052310209602313
+focus: 0.0002551822714519632
+gravity: 4
 ---
 legal system based on comprehensive codified statutes and written legal codes
 

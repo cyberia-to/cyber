@@ -3,6 +3,8 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3166369339188076
+focus: 0.0003840923068783459
+gravity: 5
 ---
 SI unit of [[power]], equal to one [[joule]] per second
 

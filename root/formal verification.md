@@ -3,6 +3,8 @@ tags: computer science
 crystal-type: process
 crystal-domain: computer science
 stake: 4213689365244941
+focus: 0.0005387142506243968
+gravity: 10
 ---
 Mathematical proof that a system (software, hardware, protocol) meets its specification. Certainty beyond testing.
 

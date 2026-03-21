@@ -3,6 +3,8 @@ tags: cybernomics
 crystal-type: measure
 crystal-domain: economics
 stake: 5751310080939674
+focus: 0.00021787332065477256
+gravity: 5
 ---
 printing of new [[tokens]] into existence
 

@@ -5,6 +5,8 @@ alias: design system, prism, prysm design system
 crystal-type: entity
 crystal-domain: cyber
 stake: 43936669831471920
+focus: 0.0013495909454558645
+gravity: 29
 ---
 
 the design system of [[cyb]] — a visual language for interfacing with [[Superintelligence]]

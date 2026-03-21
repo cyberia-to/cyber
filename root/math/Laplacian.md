@@ -4,6 +4,8 @@ tags: physics, cyber
 crystal-type: entity
 crystal-domain: mathematics
 stake: 9050953985283216
+focus: 0.00011661740354397796
+gravity: 0
 ---
 the operator that measures how a value at a point differs from its neighborhood average
 

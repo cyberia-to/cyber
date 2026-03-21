@@ -3,6 +3,8 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5097060521467700
+focus: 0.0002361401380269778
+gravity: 5
 ---
 
 Systems for structured storage, retrieval, and manipulation of data. Persistent memory for [[computation]].

@@ -6,6 +6,8 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
 stake: 6846797715404375
+focus: 0.0003402407577745383
+gravity: 7
 ---
 {{embed [[morus nigra]]}}
 

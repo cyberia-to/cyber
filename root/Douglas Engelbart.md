@@ -4,6 +4,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4703257777052286
+focus: 0.00019702073889087232
+gravity: 1
 ---
 Douglas Engelbart, American engineer and inventor (1925–2013)
 

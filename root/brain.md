@@ -2,6 +2,8 @@
 tags: superhuman, neuro
 crystal-type: entity
 crystal-domain: superhuman
+focus: 0.0005496607765064523
+gravity: 17
 ---
 # brain
 

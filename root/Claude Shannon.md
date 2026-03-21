@@ -4,6 +4,8 @@ tags: cyber, article, person
 crystal-type: entity
 crystal-domain: biology
 stake: 13795504095556744
+focus: 0.0004233601226785759
+gravity: 8
 ---
 1916-2001. American mathematician and electrical engineer
 

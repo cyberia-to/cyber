@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4868833930954221
+focus: 0.00030292838282897696
+gravity: 3
 ---
 1815-1852. British mathematician and writer.
 

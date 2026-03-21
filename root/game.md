@@ -3,6 +3,8 @@ tags: cyber, game
 alias: game theory
 crystal-type: entity
 crystal-domain: game
+focus: 0.0009246431662969929
+gravity: 32
 ---
 # game
 

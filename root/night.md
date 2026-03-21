@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4600332059761893
+focus: 0.00011709327363444229
+gravity: 1
 ---
 [[cereus]]
 

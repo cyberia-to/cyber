@@ -4,6 +4,8 @@ alias: extinction events
 crystal-type: process
 crystal-domain: biology
 stake: 6490910689769451
+focus: 0.00023139489384565036
+gravity: 5
 ---
 rapid, widespread loss of species across multiple taxa and habitats
 

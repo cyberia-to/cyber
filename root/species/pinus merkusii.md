@@ -10,6 +10,8 @@ wood-durability: low
 wood: "yes"
 grow-speed: "4"
 stake: 7674271663897095
+focus: 0.00012331339228193301
+gravity: 1
 ---
 [[conifer]]
 

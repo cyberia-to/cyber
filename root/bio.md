@@ -3,6 +3,8 @@ tags: cyber, bio
 alias: biology
 crystal-type: entity
 crystal-domain: bio
+focus: 0.0007841669689377719
+gravity: 35
 ---
 # bio
 

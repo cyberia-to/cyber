@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4882259024513838
+focus: 0.00017525087819824267
+gravity: 6
 ---
 [[pandorea jasminoides]]
 

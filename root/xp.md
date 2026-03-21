@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 8417533661879494
+focus: 0.00026688751810255537
+gravity: 3
 ---
 [[score]] produced by [[cyb/robot]] for particles [[observation]]
 

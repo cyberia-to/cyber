@@ -4,6 +4,8 @@ alias: epochs
 crystal-type: entity
 crystal-domain: history
 stake: 7336813630330374
+focus: 0.00037279484551938413
+gravity: 6
 ---
 major division of [[geological time]] or civilizational time
 

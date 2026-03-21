@@ -6,6 +6,8 @@ crystal-domain: cyber
 subgraph: true
 repo: ../mudra
 exclude: ".claude/**, target/**, CLAUDE.md"
+focus: 0.00014756020320833018
+gravity: 3
 ---
 post-quantum cryptographic primitives for [[neurons]]. mudra (मुद्रा — seal/gesture in Sanskrit) is to [[neurons]] what [[hemera]] is to [[particles]]: hemera gives content its identity and integrity (hashing, commitment, tree proofs); mudra gives agents their confidentiality and privacy (encrypting, exchanging keys, computing privately, distributing keys).
 

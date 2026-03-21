@@ -3,6 +3,8 @@ tags: color, cyber
 crystal-type: property
 crystal-domain: culture
 stake: 1110133191075191
+focus: 0.0001894938127463669
+gravity: 6
 ---
 
 wavelength:: 450-495 nm

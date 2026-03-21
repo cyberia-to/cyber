@@ -4,6 +4,8 @@ alias: autonomous governance, cyber governance, collective intelligence governan
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
+focus: 0.0002034785298126048
+gravity: 3
 ---
 
 the [[cybergraph]] does not vote on what to do — it infers what to do from the continuous revealed preferences of every participant, weighted by demonstrated accuracy, acted upon automatically

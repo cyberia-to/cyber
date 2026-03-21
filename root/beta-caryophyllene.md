@@ -4,6 +4,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5374512455033107
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 ### β-caryophyllene

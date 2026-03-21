@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5070210334348468
+focus: 0.00018312643098433856
+gravity: 4
 ---
 1923-2016. American mathematician and Nobel laureate.
 

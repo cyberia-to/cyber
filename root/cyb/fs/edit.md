@@ -4,6 +4,8 @@ alias: edit particle, edit
 crystal-type: process
 crystal-domain: cyb
 stake: 10825995446474682
+focus: 0.0002464341112236965
+gravity: 3
 ---
 create a new [[particle]] with modified content and link it to the previous version
 

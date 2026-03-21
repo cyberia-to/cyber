@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14042647863358774
+focus: 0.00014909131826935397
+gravity: 3
 ---
 implementations
 

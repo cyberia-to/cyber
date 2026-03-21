@@ -3,6 +3,8 @@ tags: cybernomics
 crystal-type: process
 crystal-domain: economics
 stake: 7890374988105225
+focus: 0.0001202632945828009
+gravity: 1
 ---
 simultaneous purchase and sale of an asset across different markets to profit from price differences
 

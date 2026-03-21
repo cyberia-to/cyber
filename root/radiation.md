@@ -3,6 +3,8 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4980709710617692
+focus: 0.00040351931422888556
+gravity: 6
 ---
 
 The emission and propagation of [[energy]] as electromagnetic [[waves]] or subatomic particles.

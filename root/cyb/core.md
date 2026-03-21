@@ -3,6 +3,8 @@ tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
 alias: cyb core, core apps
+focus: 0.00013651451480653018
+gravity: 4
 ---
 # Core
 

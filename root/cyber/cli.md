@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14042647863358774
+focus: 0.00012456859905279113
+gravity: 1
 ---
 feature of [[go-cyber]]
 

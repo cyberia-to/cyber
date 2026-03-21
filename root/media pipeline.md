@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 17868799527849454
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 how the [[crystal]] handles media files from authoring to publishing

@@ -3,6 +3,8 @@ tags: cyber, cosmo
 alias: cosmology
 crystal-type: entity
 crystal-domain: cosmo
+focus: 0.0011953421711719129
+gravity: 23
 ---
 # cosmo
 

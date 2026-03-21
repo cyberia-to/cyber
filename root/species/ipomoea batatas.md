@@ -8,6 +8,8 @@ supply: "no"
 margin: medium
 autonomy: staple
 stake: 6887072996083224
+focus: 0.00039791788907035387
+gravity: 10
 ---
 [[staple]] [[health]]
 

@@ -10,6 +10,8 @@ autonomy: extra
 wood: "yes"
 grow-speed: "3"
 stake: 6920635729982263
+focus: 0.00027569568535811093
+gravity: 8
 ---
 [[staple]] for [[health]]
 

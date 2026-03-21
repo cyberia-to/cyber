@@ -3,6 +3,8 @@ tags: cyber, lang
 alias: language
 crystal-type: entity
 crystal-domain: lang
+focus: 0.0009321219244869543
+gravity: 41
 ---
 # lang
 
@@ -28,4 +30,3 @@ neural language — [[neural language]], [[semcons]], [[sentence]], [[motif]], [
 - lang → [[sense]]: language encodes sensory experience. naming a [[color]] bridges sense and symbol
 - lang → [[meta]]: metalanguage — language about language — is how we reason about reasoning itself
 - lang → [[cyber]]: the protocol speaks [[neural language]]. every [[cyberlink]] is a sentence in the graph's language
-

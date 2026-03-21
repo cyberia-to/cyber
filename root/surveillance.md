@@ -3,6 +3,8 @@ tags: governance, computer science
 crystal-type: process
 crystal-domain: computer science
 stake: 4405383428435585
+focus: 0.00022351536131231275
+gravity: 4
 ---
 systematic observation, collection, and analysis of information about individuals or populations
 

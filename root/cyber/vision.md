@@ -5,6 +5,8 @@ crystal-domain: cyber
 status: draft
 alias: Conserved Observable Reduction Equilibrium, CORE
 stake: 43936669831471920
+focus: 0.00012527616771056764
+gravity: 3
 ---
 # nox
 

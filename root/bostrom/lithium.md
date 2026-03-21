@@ -3,6 +3,8 @@ tags: uhash
 crystal-type: entity
 crystal-domain: cybics
 stake: 8950062373077613
+focus: 0.00025427084953441657
+gravity: 1
 ---
 # Litium (LI)
 

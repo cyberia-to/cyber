@@ -3,6 +3,8 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3195660452409057
+focus: 0.0003092198860640125
+gravity: 4
 ---
 SI unit of [[energy]], work, and [[heat]]
 

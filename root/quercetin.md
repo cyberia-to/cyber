@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8283282726283331
+focus: 0.00021919674203102834
+gravity: 8
 ---
 alias: quercetin
 

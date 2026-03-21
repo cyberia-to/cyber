@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: biology
 stake: 4704152783289594
+focus: 0.00016917970907486042
+gravity: 6
 ---
 aligning agents toward shared goals when actions are interdependent
 

@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4846458775021527
+focus: 0.00012994887209025164
+gravity: 1
 ---
 1809-1882. British naturalist and geologist.
 

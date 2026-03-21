@@ -113,6 +113,7 @@ Scripts:
 - `analizer/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
 - `analizer/concat.nu` — concatenate entire graph into single file for LLM context loading
 - `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget
+- `analizer/trikernel.nu` — compute diffusion (PageRank) over wiki-link graph, write focus + gravity to frontmatter
 
 When adding a new script: place it in `analizer/`, accept `graph_path` as first
 arg, and update this list.

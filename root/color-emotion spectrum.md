@@ -3,6 +3,8 @@ tags: article, cyber
 crystal-type: relation
 crystal-domain: culture
 stake: 1585625595695787
+focus: 0.00018046720585623044
+gravity: 3
 ---
 - # An Evolutionary Theory of Color Perception
 - source:: https://x.com/compose/articles/edit/1983243442286112770

@@ -3,6 +3,8 @@ tags: mathematics
 crystal-type: measure
 crystal-domain: mathematics
 stake: 2945465526979843
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 A measure of uncertainty over events, formalized as a function mapping outcomes to values in [0, 1].

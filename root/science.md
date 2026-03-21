@@ -3,6 +3,8 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 5012034928923463
+focus: 0.00037505998269200217
+gravity: 9
 ---
 systematic study of the natural world through observation, hypothesis, experiment, and theory
 

@@ -2,8 +2,9 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
-focus: "true"
 stake: 9531816427327658
+focus: 0.00035313566723369123
+gravity: 8
 ---
 definition
 

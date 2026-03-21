@@ -2,6 +2,8 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Republic of the Marshall Islands
 # Foreign Investment Business License Application

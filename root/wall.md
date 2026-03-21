@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: agriculture
 stake: 8491371676457386
+focus: 0.0005203429459273931
+gravity: 9
 ---
 [[layer]] for productivity
 

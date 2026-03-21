@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 7110824555410163
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [gihub](https://github.com/cyberia-to/rockets/issues/1151)
 

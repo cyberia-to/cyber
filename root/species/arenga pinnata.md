@@ -10,6 +10,8 @@ autonomy: staple
 wood: "yes"
 grow-speed: "5"
 stake: 6893785542863031
+focus: 0.00023362577844533586
+gravity: 3
 ---
 ![image](https://ipfs.io/ipfs/QmSySykhGQmJD6wTiYt36AzhDWd1uVbjfQuZb6aL3QVbc4)
 

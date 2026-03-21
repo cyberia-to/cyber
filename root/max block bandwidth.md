@@ -3,6 +3,8 @@ tags: param
 crystal-type: measure
 crystal-domain: cyber
 stake: 8248377483028329
+focus: 0.00026249838757053107
+gravity: 3
 ---
 amount of [[bandwidth]] from [[neurons]] that network can process for one block
 

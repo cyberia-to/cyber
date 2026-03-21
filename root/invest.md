@@ -3,6 +3,8 @@ tags: cv.land
 crystal-type: process
 crystal-domain: cyberia
 stake: 5001294854075771
+focus: 0.00012471866701000466
+gravity: 2
 ---
 land
 

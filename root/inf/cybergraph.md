@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 23574464290686432
+focus: 0.0001649505695718497
+gravity: 2
 ---
 how [[datalog]] maps to the [[cybergraph]] — schema, query patterns, and integration with the [[soft3]] stack
 

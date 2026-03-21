@@ -4,6 +4,8 @@ crystal-type: process
 crystal-domain: cyberia
 group: harvest
 stake: 4127768766463396
+focus: 0.00011661740354397796
+gravity: 0
 ---
 100 m2 of herbs can produce $1k monthly
 

@@ -3,6 +3,8 @@ tags: page
 crystal-type: process
 crystal-domain: cyber
 stake: 11019316793733158
+focus: 0.0002842995312278408
+gravity: 3
 ---
 instantly and censorfree
 

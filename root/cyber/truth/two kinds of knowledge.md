@@ -5,6 +5,8 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
+focus: 0.000380141188699993
+gravity: 6
 ---
 
 the [[cybergraph]] contains two kinds of [[knowledge]]. they are irreducible to each other. the system is incomplete without both.

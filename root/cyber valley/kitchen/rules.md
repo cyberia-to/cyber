@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5830965636060064
+focus: 0.00014986953049374337
+gravity: 1
 ---
 ### how meals work
 

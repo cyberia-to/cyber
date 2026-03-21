@@ -2,6 +2,8 @@
 tags: discipline, chemo, tech
 crystal-type: entity
 crystal-domain: chemo
+focus: 0.00012472865671944874
+gravity: 2
 ---
 # materials science
 

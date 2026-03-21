@@ -4,6 +4,8 @@ alias: kayu manis
 crystal-type: entity
 crystal-domain: biology
 stake: 6819947528285141
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![image](https://ipfs.io/ipfs/QmRRGk7wLdgVBr4PaEPg76TV79YTxnYMQBgqE4RHY2YPkz)
 

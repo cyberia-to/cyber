@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 12318865850304028
+focus: 0.0002470565963766038
+gravity: 4
 ---
 the paradigm that nature has been computing all along
 

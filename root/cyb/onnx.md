@@ -2,6 +2,8 @@
 tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00015917270750429483
+gravity: 3
 ---
 # onnx
 

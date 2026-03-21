@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 20572613370756204
+focus: 0.00021389761359822494
+gravity: 5
 ---
 class of [[consensus]] mechanism used in most [[blockchains]]
 

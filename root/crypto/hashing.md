@@ -3,6 +3,8 @@ alias: hashing, crypto hashing, hash families
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
+focus: 0.00021393638445038816
+gravity: 3
 ---
 # crypto/hashing
 

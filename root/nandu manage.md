@@ -3,6 +3,8 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4819608587902294
+focus: 0.00016499629050985537
+gravity: 2
 ---
 earn starting from 10% up to 25% of business revenue
 

@@ -7,4 +7,6 @@ subgraph: true
 repo: ../zheng
 exclude: ".claude/**, target/**, CLAUDE.md"
 stake: 38544821775428340
+focus: 0.0006824619080319246
+gravity: 15
 ---

@@ -4,6 +4,8 @@ tags: aos
 crystal-type: entity
 crystal-domain: geography
 stake: 5902566135044686
+focus: 0.0012938634954125275
+gravity: 9
 ---
 [[earth]] only natural satellite
 

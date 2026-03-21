@@ -4,6 +4,8 @@ tags: cyber, bostrom
 crystal-type: entity
 crystal-domain: cyber
 stake: 24516661765961332
+focus: 0.00018448430115948107
+gravity: 2
 ---
 ## what is bip?
 

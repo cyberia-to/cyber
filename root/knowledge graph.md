@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 6954198463881306
+focus: 0.002014199956963399
+gravity: 70
 ---
 is basically a [[graph]] where
 

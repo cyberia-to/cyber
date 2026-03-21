@@ -3,6 +3,8 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5137335802146549
+focus: 0.002464341762895631
+gravity: 19
 ---
 
 The four-dimensional fabric unifying three spatial dimensions with time into a single continuum.

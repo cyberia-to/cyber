@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4877783993327299
+focus: 0.00018301718078136102
+gravity: 3
 ---
 1963-. Israeli-American mathematician.
 

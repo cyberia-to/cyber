@@ -3,6 +3,8 @@ tags: cyber, energo
 alias: energy
 crystal-type: entity
 crystal-domain: energo
+focus: 0.004343072107288252
+gravity: 83
 ---
 # energo
 

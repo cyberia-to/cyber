@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11019316793733158
+focus: 0.00014086212589554064
+gravity: 1
 ---
 according to [[knowledge theory]]
 

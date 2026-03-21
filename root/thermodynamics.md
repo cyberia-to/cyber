@@ -3,6 +3,8 @@ tags: discipline, energo, info, quantum
 crystal-type: entity
 crystal-domain: energo
 stake: 4859883868581144
+focus: 0.001802135971714975
+gravity: 29
 ---
 
 The branch of [[physics]] governing [[energy]] transfer as heat and work, and the evolution of [[entropy]].

@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 5915991228604303
+focus: 0.00011979508079232657
+gravity: 1
 ---
 - The project is established according to the idea of [[7 level of compliance]]
 

@@ -3,6 +3,8 @@ tags: cyber, meta
 alias: phenomenon
 crystal-type: entity
 crystal-domain: meta
+focus: 0.00017316493202732238
+gravity: 6
 ---
 # phenomena
 

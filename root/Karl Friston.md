@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4944909461125381
+focus: 0.0002798599780567352
+gravity: 12
 ---
 1959-. British neuroscientist and physicist.
 

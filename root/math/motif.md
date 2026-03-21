@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 4200711774803978
+focus: 0.0003553015026461098
+gravity: 9
 ---
 geometric expression of meaning in the [[cybergraph]]
 

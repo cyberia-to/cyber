@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21688238645560324
+focus: 0.0014380241676992585
+gravity: 9
 ---
 program that can act based on predefined rules autonomously
 

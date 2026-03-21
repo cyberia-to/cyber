@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4783808338409984
+focus: 0.00018966560675312755
+gravity: 3
 ---
 American mathematician, professor at Oberlin College.
 

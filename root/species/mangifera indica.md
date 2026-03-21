@@ -8,6 +8,8 @@ wood: "yes"
 grow-speed: "3"
 wood-density: "600"
 stake: 14645556610490640
+focus: 0.00037461859297424844
+gravity: 9
 ---
 ![Screenshot 2024-06-03 at 08.07.24.png](https://ipfs.io/ipfs/QmbTU1UdHYvbLxEbyYjEmRN6QXNSmvd6ZGj6g8JpXWuXyH){:height 527, :width 676}
 

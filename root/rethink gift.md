@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 status: implemented
 stake: 17023018633593620
+focus: 0.0001272492616705732
+gravity: 1
 ---
 implemented in [[v6]]
 

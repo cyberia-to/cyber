@@ -4,6 +4,8 @@ tags: page, prysm, cyb
 crystal-type: entity
 crystal-domain: superhuman
 stake: 6356985210986853
+focus: 0.0019987572716896307
+gravity: 18
 ---
 graph file manager
 

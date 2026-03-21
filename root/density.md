@@ -3,6 +3,8 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1063267409921620
+focus: 0.00015774257958588219
+gravity: 1
 ---
 [[mass]] per unit volume, measured in kg/m3
 

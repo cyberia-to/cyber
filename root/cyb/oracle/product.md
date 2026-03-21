@@ -3,6 +3,8 @@ tags: article
 crystal-type: entity
 crystal-domain: cyber
 stake: 15828185306787760
+focus: 0.00014871092736937498
+gravity: 1
 ---
 particles chart
 

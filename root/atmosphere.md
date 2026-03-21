@@ -3,6 +3,8 @@ tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5477438172323499
+focus: 0.00036961676306115584
+gravity: 9
 ---
 the gas envelope surrounding Earth, held by [[gravity]]
 

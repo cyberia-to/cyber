@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: relation
 crystal-domain: cyber
 stake: 2813899610095602
+focus: 0.00011661740354397796
+gravity: 0
 ---
 property of a [[cryptographic proof]]
 

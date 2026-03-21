@@ -14,6 +14,8 @@ autonomy: support
 wood: "yes"
 grow-speed: "5"
 stake: 7586398324234151
+focus: 0.00035400097995092096
+gravity: 7
 ---
 - nitrogener:: 120
 -

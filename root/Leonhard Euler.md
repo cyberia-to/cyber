@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4859883868581144
+focus: 0.00015673167829083869
+gravity: 4
 ---
 1707-1783. Swiss mathematician and physicist.
 

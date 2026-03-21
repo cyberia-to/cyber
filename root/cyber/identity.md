@@ -3,6 +3,8 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: signatureless identity, hash-based identity, identity primitive
+focus: 0.0007987466660931258
+gravity: 6
 ---
 # identity
 

@@ -5,6 +5,8 @@ alias: and more, sytech
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8142319243907359
+focus: 0.000588537106083895
+gravity: 6
 ---
 welcome to the cyberia foundations
 

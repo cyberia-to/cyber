@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
 stake: 971081767478921
+focus: 0.00012652092600812668
+gravity: 2
 ---
 {{query (property :wood-density)}}
 

@@ -6,6 +6,8 @@ crystal-size: deep
 status: draft
 alias: tri-kernel architecture
 stake: 28558835390456748
+focus: 0.0013836779251652977
+gravity: 8
 ---
 # Tri-Kernel Architecture for Networked Collective Intelligence
 

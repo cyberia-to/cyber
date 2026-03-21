@@ -3,6 +3,8 @@ tags: cyber, article
 alias: cybics foundations, cybics formal
 crystal-type: pattern
 crystal-domain: cyber
+focus: 0.00014053543573558475
+gravity: 1
 ---
 # cybics foundations
 

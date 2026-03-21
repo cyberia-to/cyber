@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: relation
 crystal-domain: superhuman
 stake: 1384127145996453
+focus: 0.00021225827248358856
+gravity: 9
 ---
 reflects the interdependence of life
 

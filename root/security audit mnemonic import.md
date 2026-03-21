@@ -5,6 +5,8 @@ crystal-domain: cyber
 date: 2026-03-20
 scope: restore mnemonic (seed phrase) import in /settings/keys
 auditor: Claude Opus 4.6
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # Security Audit: Mnemonic Import Feature
 

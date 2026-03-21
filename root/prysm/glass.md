@@ -3,6 +3,8 @@ tags: prysm, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 17032782338000614
+focus: 0.0001921986379728409
+gravity: 2
 ---
 the foundational surface atom in [[prysm]]
 

@@ -11,6 +11,8 @@ wood-durability: high
 market: resins
 supply: next-month
 stake: 7601043880844642
+focus: 0.00024825418171967983
+gravity: 3
 ---
 ![](https://ipfs.io/ipfs/QmTvWmfaiadRKJapuwBSnd1W1epZ2WuFzcFscJLCW1KYX5)
 

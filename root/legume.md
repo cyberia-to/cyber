@@ -3,6 +3,8 @@ tags: food, biology
 crystal-type: entity
 crystal-domain: biology
 stake: 5296809640794114
+focus: 0.0003024910121938604
+gravity: 6
 ---
 nitrogen-fixing plants of family Fabaceae: beans, lentils, peas, chickpeas, soybeans
 

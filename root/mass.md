@@ -4,6 +4,8 @@ alias: masses
 crystal-type: measure
 crystal-domain: physics
 stake: 4369867953655145
+focus: 0.0021591216120580856
+gravity: 17
 ---
 The intrinsic property of matter that resists [[acceleration]] and generates [[gravity]].
 

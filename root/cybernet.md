@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 17867579064798580
+focus: 0.0003546992285413048
+gravity: 16
 ---
 experimental [[learning incentives]] layer for [[cyber]] using [[cosmwasm]] [[progs]]
 

@@ -3,6 +3,8 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 5025460022483080
+focus: 0.000249637705097783
+gravity: 6
 ---
 organized system of beliefs, practices, rituals, and community centered on the sacred or transcendent
 

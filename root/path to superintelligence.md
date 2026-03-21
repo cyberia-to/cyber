@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14311149734551104
+focus: 0.0003950222376142961
+gravity: 2
 ---
 solve [[techtree]] accounting for
 

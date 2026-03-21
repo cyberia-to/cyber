@@ -3,6 +3,8 @@ tags: computer science, cyber
 crystal-type: entity
 crystal-domain: computer science
 stake: 5750821895719324
+focus: 0.0004956842564286343
+gravity: 8
 ---
 
 Protocols enabling distributed nodes to agree on a single state despite failures and adversaries. The foundation of decentralized [[computation]].

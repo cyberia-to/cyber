@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4622707215694587
+focus: 0.00025821272576483133
+gravity: 6
 ---
 Greek philosopher (384–322 BC)
 

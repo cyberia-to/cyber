@@ -3,6 +3,8 @@ tags: aip, cyb, cybernet
 crystal-type: entity
 crystal-domain: cyber
 stake: 20308505166547020
+focus: 0.00011661740354397796
+gravity: 0
 ---
 the [[cybernet]] app in [[cyb]]
 

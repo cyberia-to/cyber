@@ -3,6 +3,8 @@ tags: governance
 crystal-type: relation
 crystal-domain: governance
 stake: 1044472278938158
+focus: 0.00035833622603822867
+gravity: 7
 ---
 implicit agreement between individuals and the state: individuals yield some liberty in exchange for security, order, and public goods
 

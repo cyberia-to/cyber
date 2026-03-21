@@ -3,6 +3,8 @@ tags: class
 crystal-type: entity
 crystal-domain: biology
 stake: 4743533057731135
+focus: 0.0006009838805372563
+gravity: 10
 ---
 how to describe [[the plant]]?
 

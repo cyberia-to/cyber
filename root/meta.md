@@ -3,6 +3,8 @@ tags: cyber, meta
 alias: metaknowledge
 crystal-type: entity
 crystal-domain: meta
+focus: 0.0002553863993966346
+gravity: 12
 ---
 # meta
 

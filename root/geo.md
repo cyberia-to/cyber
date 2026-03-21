@@ -3,6 +3,8 @@ tags: cyber, geo
 alias: geography
 crystal-type: entity
 crystal-domain: geo
+focus: 0.0002567930655922409
+gravity: 15
 ---
 # geo
 

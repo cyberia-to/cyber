@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14163473705395322
+focus: 0.0002510643693633068
+gravity: 2
 ---
 experimental founders high performance bed
 

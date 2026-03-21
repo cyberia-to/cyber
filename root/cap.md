@@ -5,6 +5,8 @@ crystal-type: measure
 crystal-domain: economics
 crystal-size: atom
 stake: 9852798209707578
+focus: 0.0008375065817812088
+gravity: 8
 ---
 [[price]] times [[supply]]. the aggregate measure of commitment to a [[token]]. reflects where [[demand]] meets [[value]]
 

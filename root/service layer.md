@@ -4,6 +4,8 @@ tags: aos
 crystal-type: entity
 crystal-domain: biology
 stake: 7571752767623661
+focus: 0.00022401114055439463
+gravity: 2
 ---
 energy layer
 

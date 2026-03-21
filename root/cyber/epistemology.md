@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cyber
 alias: epistemic correctness, epistemic quality, truth tracking
 stake: 28558835390456748
+focus: 0.00039285351897076575
+gravity: 6
 ---
 # epistemology
 

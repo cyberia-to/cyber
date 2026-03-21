@@ -3,6 +3,8 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 11411329525673956
+focus: 0.00011661740354397796
+gravity: 0
 ---
 - ## durability and restoration species comparison
   

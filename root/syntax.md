@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: culture
 stake: 6900498089642839
+focus: 0.00015773844516680404
+gravity: 3
 ---
 embodies the rules and patterns
 

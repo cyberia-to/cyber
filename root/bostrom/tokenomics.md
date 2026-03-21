@@ -4,6 +4,8 @@ alias: bostrom tokenomics, bostrom token model
 crystal-type: article
 crystal-domain: economics
 stake: 4994622989397658
+focus: 0.0002487806240017912
+gravity: 7
 ---
 # Bostrom Tokenomics
 
@@ -73,4 +75,3 @@ The grid module routes [[$V]] and [[$A]] to [[cosmwasm]] programs via energy rou
 - [x/rank](https://github.com/cyberia-to/go-cyber/tree/main/x/rank) — [[diffusion]] (GPU/CUDA)
 - [x/grid](https://github.com/cyberia-to/go-cyber/tree/main/x/grid) — energy routing
 - [x/graph](https://github.com/cyberia-to/go-cyber/tree/main/x/graph) — [[cyberlinks]], [[$V]] and [[$A]] tracking
-

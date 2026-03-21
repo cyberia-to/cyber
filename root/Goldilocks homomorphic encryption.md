@@ -4,6 +4,8 @@ alias: Goldilocks FHE, TFHE over Goldilocks, goldilocks FHE construction, goldil
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
+focus: 0.00029019882224196167
+gravity: 9
 ---
 # Goldilocks Homomorphic Encryption: FHE Native to Trident
 

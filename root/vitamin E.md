@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8256432539164097
+focus: 0.0002894647119624972
+gravity: 9
 ---
 alias: tocopherol
 

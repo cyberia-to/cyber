@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5370037423846567
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 general description about myrcene:

@@ -3,6 +3,8 @@ tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
 alias: cybos, CybOS, cyb operating system
+focus: 0.00019328886167513943
+gravity: 5
 ---
 # CybOS
 

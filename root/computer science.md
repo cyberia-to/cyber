@@ -2,6 +2,8 @@
 tags: discipline, comp, info
 crystal-type: entity
 crystal-domain: comp
+focus: 0.00020464625536058994
+gravity: 4
 ---
 # computer science
 

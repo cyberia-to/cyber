@@ -3,6 +3,8 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5267111706556176
+focus: 0.00023406788341872798
+gravity: 3
 ---
 the tone
 

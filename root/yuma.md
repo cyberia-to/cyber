@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13613044869451050
+focus: 0.00021044007426039172
+gravity: 5
 ---
 basic [[cooperation]] algorithm for [[egregore]]
 

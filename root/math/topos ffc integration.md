@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: mathematics
 status: draft
 stake: 4882828573937579
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ## marrying topos theory and focus flow computation
 ### 1. philosophical and mathematical motivation

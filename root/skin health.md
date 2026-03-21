@@ -4,6 +4,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: biology
 stake: 4600332059761893
+focus: 0.0010568639569988661
+gravity: 22
 ---
 [[skin]]
 

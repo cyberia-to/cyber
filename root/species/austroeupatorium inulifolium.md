@@ -8,6 +8,8 @@ supply: "no"
 margin: low
 autonomy: support
 stake: 9219377886303858
+focus: 0.00029911968491794645
+gravity: 10
 ---
 ![image.png](https://ipfs.io/ipfs/QmcvAzhLTwkwVf4kZx6ZpUJinScXvtiwmBaLRSeuQXES99)
 

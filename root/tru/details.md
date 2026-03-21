@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 4783808338409984
+focus: 0.00033285212955788207
+gravity: 1
 ---
 technical details of the [[tru]]
 

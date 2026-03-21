@@ -3,6 +3,8 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5106010583840778
+focus: 0.00035168469275467687
+gravity: 7
 ---
 body of rules governing relations between states, international organizations, and increasingly, individuals
 

@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4689832683492669
+focus: 0.0014316043721167029
+gravity: 10
 ---
 what is [[startup society]]?
 

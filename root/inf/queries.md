@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 25427127201913500
+focus: 0.00020970172209662437
+gravity: 4
 ---
 [[CozoScript]] query syntax reference for [[datalog]] on the [[cybergraph]]
 

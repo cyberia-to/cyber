@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 7088449399477469
+focus: 0.00013424717295094723
+gravity: 1
 ---
 # H-Based Economy Whitepaper
 - ## Overview

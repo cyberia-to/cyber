@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 4841983743834989
+focus: 0.00017905063165102504
+gravity: 3
 ---
 micro
 

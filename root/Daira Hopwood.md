@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4931484367565765
+focus: 0.00012687960857568262
+gravity: 2
 ---
 British cryptographer and protocol engineer.
 

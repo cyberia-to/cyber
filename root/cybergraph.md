@@ -5,6 +5,8 @@ alias: cybergraphs
 crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
+focus: 0.0231534646334594
+gravity: 321
 ---
 a directed authenticated multigraph over content-addressed nodes, carrying an emergent [[probability]] measure — the shared memory of the planet
 

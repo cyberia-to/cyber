@@ -4,6 +4,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4586906966202276
+focus: 0.00038600898589831483
+gravity: 2
 ---
 modern philosopher who contributed to ideas behind
 

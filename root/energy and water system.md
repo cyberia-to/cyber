@@ -4,6 +4,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: energy
 stake: 8444383848998728
+focus: 0.0002549034329082044
+gravity: 4
 ---
 part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 

@@ -3,6 +3,8 @@ tags: technology
 crystal-type: entity
 crystal-domain: materials
 stake: 4815133556715756
+focus: 0.0002111819965487419
+gravity: 5
 ---
 circular component rotating on an axle
 

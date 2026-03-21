@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 2864914965622144
+focus: 0.00030824631074541955
+gravity: 6
 ---
 happiness index according to ralph merkle
 

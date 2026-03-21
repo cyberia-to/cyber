@@ -3,6 +3,8 @@ tags: pattern, physics
 crystal-type: pattern
 crystal-domain: physics
 stake: 3283533792072001
+focus: 0.0003457164281638494
+gravity: 3
 ---
 phenomenon where a system [[oscillation]] reaches maximum [[amplitude]] at specific driving [[frequency]]
 

@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 supply: urgent
 stake: 7513170541181698
+focus: 0.00011661740354397796
+gravity: 0
 ---
 source of [[omega-3]]
 

@@ -7,6 +7,8 @@ scalable: "true"
 wood: "yes"
 grow-speed: "4"
 stake: 7520493319486942
+focus: 0.00032526238942514165
+gravity: 3
 ---
 [[staple]]
 

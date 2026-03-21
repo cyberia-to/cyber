@@ -3,6 +3,8 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4953859523498459
+focus: 0.00011661740354397796
+gravity: 0
 ---
 A decomposition of a [[signal]] into constituent frequencies, mapping functions from time domain to frequency domain.
 

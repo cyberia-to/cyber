@@ -5,6 +5,8 @@ crystal-domain: biology
 supply: prohibited
 alias: mitragyna, kratom
 stake: 8171000125602903
+focus: 0.00011661740354397796
+gravity: 0
 ---
 prohibited in [[indonesia]] and many other countries
 

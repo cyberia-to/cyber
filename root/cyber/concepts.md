@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 12267850494777486
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 ## genesis

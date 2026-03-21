@@ -4,6 +4,8 @@ alias: cycles
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 4462501099216498
+focus: 0.00012685378193003498
+gravity: 2
 ---
 recurring sequence of events or states that returns to its starting point
 

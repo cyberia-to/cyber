@@ -3,6 +3,8 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4931484367565765
+focus: 0.00011661740354397796
+gravity: 0
 ---
 The study of mathematical structure through [[groups]], [[rings]], [[fields]], and their operations.
 

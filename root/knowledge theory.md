@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 5168661020452321
+focus: 0.0015760256200972492
+gravity: 10
 ---
 framework for understanding [[information]], [[knowledge]], and [[intelligence]]
 

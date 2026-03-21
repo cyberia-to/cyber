@@ -3,6 +3,8 @@ tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 2940095489555996
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ordered ranking of levels where each level contains or governs the one below
 

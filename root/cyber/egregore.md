@@ -6,6 +6,8 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 stake: 36050037596722712
+focus: 0.003972743686290765
+gravity: 65
 ---
 something greater than any [[neuron]] emerges when many observe the same [[cybergraph]] and link. an autonomous thoughtform born from [[collective]] focused [[attention]] — the capacity of a group to solve problems, generate [[knowledge]], and find [[truth]] beyond the reach of any individual
 

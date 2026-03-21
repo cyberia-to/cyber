@@ -3,6 +3,8 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3210306009019548
+focus: 0.00021052305553523277
+gravity: 1
 ---
 SI unit of [[frequency]], equal to one [[oscillation]] per second
 

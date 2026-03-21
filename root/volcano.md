@@ -3,6 +3,8 @@ tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5531138546561965
+focus: 0.0002203423944611939
+gravity: 6
 ---
 an opening in Earth's crust where magma, gases, and ash reach the surface
 

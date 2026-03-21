@@ -3,6 +3,8 @@ tags: cyb, cyber, core
 alias: pixels particle, image, raster, photograph
 crystal-type: entity
 crystal-domain: cyb
+focus: 0.0003494953292394826
+gravity: 9
 ---
 captured reality as [[particle]]. the native format for photographs, satellite imagery, microscopy, medical scans, and any content that is a grid of color values
 

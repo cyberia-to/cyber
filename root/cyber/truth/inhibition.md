@@ -5,6 +5,8 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
+focus: 0.0006862462266864126
+gravity: 15
 ---
 
 why the [[cybergraph]] without [[market|markets]] is not a functional model — and what markets provide that raw [[cyberlinks]] cannot

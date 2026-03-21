@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 5287696850014254
+focus: 0.00011661740354397796
+gravity: 0
 ---
 guideline on how to maintain organiq 🍀properly.
 

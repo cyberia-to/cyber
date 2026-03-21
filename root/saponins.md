@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8283282726283331
+focus: 0.00020233931890663835
+gravity: 5
 ---
 alias: saponins
 

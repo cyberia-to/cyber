@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 14703162466491904
+focus: 0.00012196552823485546
+gravity: 2
 ---
 overfitting & underfitting
 

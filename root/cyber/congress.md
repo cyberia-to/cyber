@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 20540393146213124
+focus: 0.00035270444349499113
+gravity: 12
 ---
 the team who launched [[Bostrom]] [[bootloader]]. dissolved in 2025
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14834728383376142
+focus: 0.00033671206099946126
+gravity: 6
 ---
 history of [[time]] in machines
 

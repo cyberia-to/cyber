@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4904634180446532
+focus: 0.0008652161348584829
+gravity: 6
 ---
 small-scale, experimental community
 

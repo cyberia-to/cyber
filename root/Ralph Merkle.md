@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4927009336379226
+focus: 0.00012687960857568262
+gravity: 2
 ---
 1952-. American computer scientist and mathematician.
 

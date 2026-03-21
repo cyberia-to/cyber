@@ -5,6 +5,8 @@ icon: "\U0000270D"
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
+focus: 0.0001447856788259026
+gravity: 3
 ---
 # cybermark
 

@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 22272230215403644
+focus: 0.000342538819166977
+gravity: 9
 ---
 a point in a [[graph]] that can be connected to other points by [[links]]
 

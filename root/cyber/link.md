@@ -6,6 +6,8 @@ crystal-type: relation
 crystal-domain: cyber
 crystal-size: bridge
 stake: 9929687381912652
+focus: 0.025040970779994984
+gravity: 377
 ---
 the atomic unit of [[knowledge]]. a [[neuron]] binds two [[particles]] with a signed, staked, timestamped assertion — every cyberlink is simultaneously a [[learning]] act and an economic commitment
 

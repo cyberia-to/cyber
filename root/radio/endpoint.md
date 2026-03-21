@@ -3,6 +3,8 @@ alias: iroh endpoint, radio endpoint
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.0003370674654337861
+gravity: 7
 ---
 
 # endpoint

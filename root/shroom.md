@@ -4,6 +4,8 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 stake: 7189137601174592
+focus: 0.00013504231975927788
+gravity: 4
 ---
 fruiting body of some [[fungi]]
 

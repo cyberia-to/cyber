@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 alias: graph algorithms, fixed rules
 stake: 36872019461486496
+focus: 0.0002091409985678374
+gravity: 5
 ---
 built-in graph algorithms available as fixed rules (`<~`) in [[datalog]]. these run native implementations inside the CozoDB query engine — no external libraries, no data export
 

@@ -3,6 +3,8 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 stake: 2934725452132150
+focus: 0.0002279181236556747
+gravity: 5
 ---
 extends [[modal logic]] with time: operators for "always" ($\square$), "eventually" ($\diamond$), "until", "next"
 

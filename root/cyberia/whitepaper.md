@@ -5,6 +5,8 @@ icon: "\U0001F30F"
 crystal-type: entity
 crystal-domain: cyberia
 crystal-size: deep
+focus: 0.00012484622512985217
+gravity: 1
 ---
 # Cyberia: the Superintelligent Nation
 

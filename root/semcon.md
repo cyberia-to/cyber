@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: relation
 crystal-domain: cyber
 stake: 4317510088772641
+focus: 0.0009757273770655404
+gravity: 27
 ---
 mutual agreement of [[neurons]] to use the same [[particles]] for structuring thought
 

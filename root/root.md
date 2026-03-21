@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13841271459964526
+focus: 0.0004288955296452551
+gravity: 6
 ---
 [[cyber]] is root of this graph
 

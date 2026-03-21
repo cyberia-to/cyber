@@ -5,6 +5,8 @@ icon: 🦄
 crystal-type: entity
 crystal-domain: cybics
 stake: 7752991530678483
+focus: 0.00026261620526737777
+gravity: 3
 ---
 [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 

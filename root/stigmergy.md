@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: relation
 crystal-domain: cyber
 stake: 2848804853350604
+focus: 0.00026968041123478885
+gravity: 8
 ---
 indirect coordination through a shared environment
 

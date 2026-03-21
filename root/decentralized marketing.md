@@ -4,6 +4,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: biology
 stake: 8592059878154509
+focus: 0.00011661740354397796
+gravity: 0
 ---
 #dema is a concept of the search market without a single ranking center
 

@@ -2,6 +2,8 @@
 tags: person, meta, spiri, math, sense, cosmo
 crystal-type: entity
 crystal-domain: meta
+focus: 0.00013525460866526813
+gravity: 3
 ---
 # Immanuel Kant
 

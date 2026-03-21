@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: biology
 stake: 6052032176675083
+focus: 0.0004308079674265999
+gravity: 3
 ---
 [[aos]] game mechanics
 

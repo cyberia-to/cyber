@@ -3,6 +3,8 @@ tags: cyber, article
 alias: project structure, repo layout, project conventions
 crystal-type: pattern
 crystal-domain: cyber
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # project structure
 

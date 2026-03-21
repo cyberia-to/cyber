@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4106288616768009
+focus: 0.0001592644312412386
+gravity: 5
 ---
 TODO lecture at [[bootcamp/v0]]
 

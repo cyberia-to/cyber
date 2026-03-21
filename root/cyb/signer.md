@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 status: DONE
 stake: 26850187119232840
+focus: 0.0001721792477000327
+gravity: 3
 ---
 2 basic computations on [[particles]]
 

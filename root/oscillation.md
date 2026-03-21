@@ -3,6 +3,8 @@ tags: pattern, physics
 crystal-type: pattern
 crystal-domain: physics
 stake: 3181014895798567
+focus: 0.00028975537199337636
+gravity: 5
 ---
 periodic motion between two states or extremes
 

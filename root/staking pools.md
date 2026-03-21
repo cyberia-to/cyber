@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 19305284538728412
+focus: 0.00012434368750751724
+gravity: 1
 ---
 most of [[$BOOT]] stake is unstaked due to complexities related to multisig management
 

@@ -4,6 +4,8 @@ alias: green junglefowl
 crystal-type: entity
 crystal-domain: biology
 stake: 10317794632090656
+focus: 0.00011661740354397796
+gravity: 0
 ---
 voice:: https://ebird.org/species/grejun1
 

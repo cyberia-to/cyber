@@ -3,6 +3,8 @@ tags: cyber, crypto
 alias: cryptoeconomics
 crystal-type: entity
 crystal-domain: crypto
+focus: 0.0002787808958029788
+gravity: 12
 ---
 # crypto
 

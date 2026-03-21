@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: computer science
 stake: 7215987788293826
+focus: 0.00021901115233048524
+gravity: 1
 ---
 the intermediate representation of [[trident]] — a typed graph IR between source [[language]] and [[triton]] assembly (TASM)
 

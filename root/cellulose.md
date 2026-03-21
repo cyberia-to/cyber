@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8464521489338154
+focus: 0.0009942402690729987
+gravity: 12
 ---
 alias: cellulose
 

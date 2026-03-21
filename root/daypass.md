@@ -5,6 +5,8 @@ alias: day pass, visit us
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7068311759138044
+focus: 0.0006900694890063914
+gravity: 3
 ---
 our friends, including us, complain that
 

@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 8128894150347742
+focus: 0.00018542710014580105
+gravity: 5
 ---
 alias: magnesium
 

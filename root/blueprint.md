@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6855747777777452
+focus: 0.000234582517654283
+gravity: 1
 ---
 source: Bryan Johnson protocol
 

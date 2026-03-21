@@ -3,6 +3,8 @@ tags: cyber, tech
 alias: technology
 crystal-type: entity
 crystal-domain: tech
+focus: 0.0003588073123365223
+gravity: 17
 ---
 # tech
 

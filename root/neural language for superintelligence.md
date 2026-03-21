@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 concept: neural
 stake: 29291113220981280
+focus: 0.00017738114161786647
+gravity: 2
 ---
 ## A Whitepaper on Convergent Semantic Communication for Collective Intelligence
 

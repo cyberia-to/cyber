@@ -4,6 +4,8 @@ alias: Bayesian network, Bayesian networks, belief network, belief networks, dir
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
+focus: 0.00020870706356845614
+gravity: 2
 ---
 
 a directed acyclic graph where nodes are random variables and edges encode conditional dependence — the structure of beliefs about a domain, made explicit as topology

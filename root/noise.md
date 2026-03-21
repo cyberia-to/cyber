@@ -4,6 +4,8 @@ alias: graph noise, signal noise, noise floor, noise producer
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
+focus: 0.0003993210609436573
+gravity: 2
 ---
 anything that moves [[focus]] distribution $\pi^*$ toward uniform. noise is the complement of [[syntropy]]
 

@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4980709710617692
+focus: 0.00015839569187370842
+gravity: 3
 ---
 1926-2015. Czech mathematician.
 

@@ -2,6 +2,8 @@
 tags: module, bostrom
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00015820198155222135
+gravity: 3
 ---
 # Liquidity Module
 

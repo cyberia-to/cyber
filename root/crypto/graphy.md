@@ -4,6 +4,8 @@ tags: discipline, crypto, math, comp
 crystal-type: entity
 crystal-domain: crypto
 stake: 7021323931679387
+focus: 0.0026283734150717238
+gravity: 32
 ---
 # cryptography
 

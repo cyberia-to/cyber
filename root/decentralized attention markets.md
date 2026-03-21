@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14928704038293460
+focus: 0.00011920223108369274
+gravity: 1
 ---
 - The Problem
 	- Current AI models (GPT, Claude, etc.) have fixed attention mechanisms

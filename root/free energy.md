@@ -3,6 +3,8 @@ tags: cyber, physics
 crystal-type: measure
 crystal-domain: cybics
 stake: 3963087618798767
+focus: 0.0008092788675124891
+gravity: 26
 ---
 the energy available to do work — the portion of total [[energy]] not locked up in [[entropy]]
 

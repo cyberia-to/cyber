@@ -3,6 +3,8 @@ tags: discipline, bio, chemo, neuro
 crystal-type: entity
 crystal-domain: bio
 stake: 9236464369016096
+focus: 0.00032755014196776254
+gravity: 8
 ---
 # medicine
 

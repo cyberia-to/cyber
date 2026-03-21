@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6913923183202455
+focus: 0.00019613990610308217
+gravity: 3
 ---
 published on [x.com](https://x.com/mastercyb/status/1981362331386097745)
 

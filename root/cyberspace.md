@@ -6,6 +6,8 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
 stake: 50000000000000000
+focus: 0.00013977704213551307
+gravity: 3
 ---
 # cyberspace
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 14370220146213418
+focus: 0.0002913192838417333
+gravity: 5
 ---
 [[$CYB]] pack for sale
 

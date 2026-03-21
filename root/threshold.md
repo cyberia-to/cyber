@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 14511183628589390
+focus: 0.0001622076081551005
+gravity: 2
 ---
 boundary condition that separates one regime from another
 

@@ -3,6 +3,8 @@ tags: cyber, language
 alias: Arc, topology language
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00017182217834897905
+gravity: 6
 ---
 the [[graph]] language. makes graphs first-class — the primitive is a connection, not a number
 

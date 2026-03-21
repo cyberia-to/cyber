@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6582770875398585
+focus: 0.0017953252368119567
+gravity: 18
 ---
 the idea of [[magic forest]] adopted to a highlands of [[cyber valley]]
 

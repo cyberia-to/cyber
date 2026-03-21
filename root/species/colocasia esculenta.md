@@ -9,6 +9,8 @@ supply: "no"
 margin: medium
 autonomy: staple
 stake: 10559446316163750
+focus: 0.0005491603912207151
+gravity: 15
 ---
 ![Taro | Description, Plant, Root, Edible, Poisonous, & Facts | Britannica](https://ipfs.io/ipfs/QmX2EgRoVrKzidXrrJprTmk6i1qqvwVxXJhMBnC95JU9ut)
 

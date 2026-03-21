@@ -3,6 +3,8 @@ tags: cyber, meta
 alias: discipline, academic disciplines
 crystal-type: entity
 crystal-domain: meta
+focus: 0.00014221361967912388
+gravity: 4
 ---
 # disciplines
 

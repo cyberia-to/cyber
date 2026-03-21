@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 12232945251522482
+focus: 0.00023370964105507428
+gravity: 3
 ---
 mitigation of [[nothing at stake]] problem
   an integral security mechanism in consensus algorithms, such as [[tendermint]]

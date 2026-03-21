@@ -4,6 +4,8 @@ alias: forces
 crystal-type: measure
 crystal-domain: physics
 stake: 4478611211488038
+focus: 0.001309425367749201
+gravity: 15
 ---
 An interaction that changes the [[momentum]] of a body — the cause of [[acceleration]].
 

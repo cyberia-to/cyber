@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4521571510878810
+focus: 0.00024401469110411485
+gravity: 1
 ---
 ### 🧾 🧼 preparing soap concentrate
 

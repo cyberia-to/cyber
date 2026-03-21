@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 4301399976501102
+focus: 0.0003733722057071452
+gravity: 5
 ---
 skill to harness full power of life
 

@@ -4,6 +4,8 @@ tags: cv.land, tech
 crystal-type: entity
 crystal-domain: biology
 stake: 6741837893029191
+focus: 0.0007953954913904633
+gravity: 11
 ---
 scalable, sustainable, multipurpose ecosystem regeneration
 

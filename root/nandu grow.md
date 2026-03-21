@@ -3,6 +3,8 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8081906322889084
+focus: 0.0003527620683814681
+gravity: 4
 ---
 ## Why?
 

@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5938366384536996
+focus: 0.00017343456393632237
+gravity: 1
 ---
 an acetate ester is a type of organic compound formed by the reaction of [[acetic acid]] (ethanoic acid) with an alcohol, resulting in the elimination of water and formation of an ester bond. acetate esters are widely distributed in nature and industry, known for their pleasant fruity aromas, lipid solubility, and roles as solvents, flavorings, bioactive molecules, and metabolic intermediates.
 

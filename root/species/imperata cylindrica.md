@@ -8,6 +8,8 @@ supply: "no"
 margin: low
 autonomy: support
 stake: 6873647902523607
+focus: 0.0001403262534996262
+gravity: 2
 ---
 [[grass]]
 

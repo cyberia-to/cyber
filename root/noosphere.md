@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14767602915578062
+focus: 0.00030868956835826037
+gravity: 3
 ---
 the sphere of human thought enveloping the planet — conceived independently by [[Vernadsky]] and Teilhard de Chardin (1920s)
 

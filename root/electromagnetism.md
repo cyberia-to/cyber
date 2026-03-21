@@ -3,6 +3,8 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4944909461125381
+focus: 0.0009148113117346603
+gravity: 11
 ---
 The unified [[field]] theory of electric and magnetic interactions, described by Maxwell's equations.
 

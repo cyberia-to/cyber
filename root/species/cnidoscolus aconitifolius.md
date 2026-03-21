@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 7469233871350226
+focus: 0.00015713729847328692
+gravity: 2
 ---
 [[staple]]
 

@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 query-table: "true"
 stake: 14203748986074172
+focus: 0.00011661740354397796
+gravity: 0
 ---
 #+BEGIN_QUERY
 {:title "TODO tasks"

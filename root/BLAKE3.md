@@ -3,6 +3,8 @@ tags: cryptography
 alias: blake3
 crystal-type: entity
 crystal-domain: computer science
+focus: 0.0003092261821591975
+gravity: 4
 ---
 # Blake3
 

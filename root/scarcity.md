@@ -3,6 +3,8 @@ tags: cybernomics
 crystal-type: property
 crystal-domain: economics
 stake: 1954693622280151
+focus: 0.00024079318893595068
+gravity: 5
 ---
 fundamental economic condition: limited resources confronting unlimited wants
 

@@ -9,6 +9,8 @@ margin: medium
 autonomy: staple
 availability: cv
 stake: 12294944774506892
+focus: 0.00039490517587993944
+gravity: 10
 ---
 ![](https://ipfs.io/ipfs/QmR24VjmWmFzphF9bXMhKHSqTA9YMSxGkpZzdXCUSedFMb)
 

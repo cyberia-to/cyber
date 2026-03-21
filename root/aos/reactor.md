@@ -3,6 +3,8 @@ tags: aip, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 13760720898606828
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[network oriented aip]]
 

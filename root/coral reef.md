@@ -4,6 +4,8 @@ alias: coral reefs
 crystal-type: entity
 crystal-domain: biology
 stake: 9003966157824558
+focus: 0.00025468639977262164
+gravity: 5
 ---
 marine [[biome]] built from calcium carbonate skeletons secreted by coral polyps
 

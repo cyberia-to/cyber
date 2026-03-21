@@ -9,6 +9,8 @@ wood-durability: moderate
 market: hardwoods
 supply: next-month
 stake: 7520493319486942
+focus: 0.00014751685957011007
+gravity: 1
 ---
 [tokopedia](https://www.tokopedia.com/mitraplant/bibit-pohon-kayu-kamper-tanaman-kayu-kamper-cinnamomum-camphora?extParam=ivf%3Dfalse%26src%3Dsearch)
 

@@ -3,6 +3,8 @@ tags: cyber, neuro
 alias: neuroscience
 crystal-type: entity
 crystal-domain: neuro
+focus: 0.00047552099895730246
+gravity: 23
 ---
 # neuro
 

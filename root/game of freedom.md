@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 18607179673628360
+focus: 0.00020765856983266228
+gravity: 3
 ---
 due to regulatory issues we rejected idea of game of freedom
 

@@ -3,6 +3,8 @@ tags: cyber, uhash
 crystal-type: entity
 crystal-domain: cybics
 stake: 9763704406993760
+focus: 0.00011920223108369274
+gravity: 1
 ---
 - [technicals origin](https://claude.ai/public/artifacts/5b6fd084-a7fb-40b6-8423-06278247fe2d)
 - # Adaptive Hybrid Consensus Economics

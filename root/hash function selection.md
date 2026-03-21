@@ -4,6 +4,8 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 stake: 25385631458183776
+focus: 0.00015028350349731605
+gravity: 3
 ---
 # hash function selection for [[cybergraph]] [[particles]]
 

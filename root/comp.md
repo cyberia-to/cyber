@@ -4,6 +4,8 @@ alias: computation
 icon: "\U000026A1"
 crystal-type: entity
 crystal-domain: comp
+focus: 0.00185584687427604
+gravity: 43
 ---
 # comp
 

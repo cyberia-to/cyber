@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 18413858326369884
+focus: 0.006909596159060992
+gravity: 70
 ---
 first operator of the [[tri-kernel]]
 

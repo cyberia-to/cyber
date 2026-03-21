@@ -3,6 +3,8 @@ tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 2969630695387153
+focus: 0.00011661740354397796
+gravity: 0
 ---
 sequential chain reaction where each step triggers the next, amplifying the initial signal
 

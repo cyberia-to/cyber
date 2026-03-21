@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5790690355381216
+focus: 0.00011661740354397796
+gravity: 0
 ---
 abolitionist project and biotechnology: the text outlines how biotechnology could abolish suffering throughout the living world, leading to a future where our descendants experience genetically preprogrammed well-being far richer than today's peak experiences
 

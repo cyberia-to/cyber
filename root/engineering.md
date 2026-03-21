@@ -2,6 +2,8 @@
 tags: discipline, tech, chemo, energo
 crystal-type: entity
 crystal-domain: tech
+focus: 0.00024566271100553045
+gravity: 8
 ---
 # engineering
 

@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: pattern
 crystal-domain: cyberia
 stake: 2821954666231372
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[truly calm]]
 

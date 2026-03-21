@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7415126676094802
+focus: 0.0003718778415323775
+gravity: 7
 ---
 
 | layer | species | count | spacing | notes | source |

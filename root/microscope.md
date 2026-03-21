@@ -3,6 +3,8 @@ tags: technology, biology
 crystal-type: entity
 crystal-domain: biology
 stake: 5365155571643070
+focus: 0.00017464286385822443
+gravity: 1
 ---
 instrument for observing objects too small for the unaided eye
 

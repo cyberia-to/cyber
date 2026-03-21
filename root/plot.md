@@ -5,6 +5,8 @@ crystal-domain: cyberia
 type: private
 alias: camp
 stake: 6987761197780345
+focus: 0.0005192232547700097
+gravity: 8
 ---
 flat space for setting up the [[tents]]
 

@@ -3,6 +3,8 @@ tags: cyber, core
 alias: void signal, epistemic void, void
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00016362648313041715
+gravity: 5
 ---
 the empty state of a [[cyberlink]] — the channel exists but carries no epistemic signal
 

@@ -3,6 +3,8 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4891209086886915
+focus: 0.0018024983025247978
+gravity: 20
 ---
 
 Einstein's framework unifying [[spacetime]], [[gravity]], [[energy]], and [[mass]].

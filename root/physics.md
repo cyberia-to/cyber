@@ -2,6 +2,8 @@
 tags: discipline, quantum, energo, cosmo
 crystal-type: entity
 crystal-domain: quantum
+focus: 0.0009726941896180052
+gravity: 15
 ---
 # physics
 

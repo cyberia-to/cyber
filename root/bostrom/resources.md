@@ -3,6 +3,8 @@ tags: module
 crystal-type: entity
 crystal-domain: cyber
 stake: 13814421272845292
+focus: 0.00012456859905279113
+gravity: 1
 ---
 [[investmint]]
 

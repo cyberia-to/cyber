@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5826490604873526
+focus: 0.00011661740354397796
+gravity: 0
 ---
 fresh set of the product for living from cyber valley
 

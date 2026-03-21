@@ -3,6 +3,8 @@ tags: cyber, cyb
 alias: iroh
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.0006098425649263912
+gravity: 28
 ---
 # radio
 

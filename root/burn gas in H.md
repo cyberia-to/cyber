@@ -4,6 +4,8 @@ crystal-type: process
 crystal-domain: cyber
 status: accepted
 stake: 11513360236727042
+focus: 0.00015862656569068747
+gravity: 3
 ---
 proposal to improve [[cybernomics]] of [[fuel]]
 

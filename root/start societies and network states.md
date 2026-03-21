@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 15895310774585838
+focus: 0.0006367771206848043
+gravity: 2
 ---
 - this article explores the synergy between both phenomena
 - taking the best from both worlds

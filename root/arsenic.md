@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8196019618145825
+focus: 0.0002654620329239907
+gravity: 5
 ---
 alias: arsenic
 

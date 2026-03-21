@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 8950062373077613
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # The 10 Root Causes Framework
 - ## A Simplified Model of Human Disease

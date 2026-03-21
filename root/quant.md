@@ -3,6 +3,8 @@ tags: cyber, quantum
 alias: quantum physics, quantum, quant
 crystal-type: entity
 crystal-domain: quantum
+focus: 0.0005096818330360006
+gravity: 19
 ---
 # quantum
 

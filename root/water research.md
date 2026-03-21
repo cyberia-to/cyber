@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7128724680156319
+focus: 0.0005766368664815539
+gravity: 2
 ---
 
 | No | Category | Parameters | Max. Acc. Value | S1 | S2 | S3 | S4 |

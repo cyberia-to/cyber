@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cyber
 status: draft
 stake: 14235481025396900
+focus: 0.00013959932311119493
+gravity: 2
 ---
 ## abstract
 

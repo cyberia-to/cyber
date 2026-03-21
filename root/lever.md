@@ -3,6 +3,8 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5374919276050065
+focus: 0.00017115498652739119
+gravity: 3
 ---
 rigid bar pivoting on a fulcrum, producing mechanical advantage
 

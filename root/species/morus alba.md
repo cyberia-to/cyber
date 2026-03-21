@@ -4,6 +4,8 @@ alias: white mulberry, murbai
 crystal-type: entity
 crystal-domain: biology
 stake: 6920635729982263
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![Screenshot 2024-05-26 at 07.55.50.png](https://ipfs.io/ipfs/QmUY6FWcBPz7bWN5ZU6F9Fk3TGjNW5j8ZjWJnQpgnbv7tR)
 

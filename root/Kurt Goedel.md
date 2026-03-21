@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cybics
 alias:: Goedel
 stake: 7491202206265963
+focus: 0.0002817172385199973
+gravity: 11
 ---
 1906-1978. Austrian-American logician and mathematician.
 

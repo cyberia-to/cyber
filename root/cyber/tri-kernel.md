@@ -5,6 +5,8 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 stake: 17953987848800476
+focus: 0.0013473360477468323
+gravity: 5
 ---
 # Tri-Kernel Specification
 

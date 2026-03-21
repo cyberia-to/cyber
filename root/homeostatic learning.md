@@ -3,6 +3,8 @@ alias: homeostatic plasticity, synaptic scaling, homeostatic regulation
 tags: neuro, learning
 crystal-type: process
 crystal-domain: biology
+focus: 0.00022560585976813644
+gravity: 5
 ---
 # homeostatic learning
 

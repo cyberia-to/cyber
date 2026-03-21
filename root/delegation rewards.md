@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11610020910356280
+focus: 0.0001665059397154435
+gravity: 4
 ---
 in a [[proof of stake]] [[consensus]]
 

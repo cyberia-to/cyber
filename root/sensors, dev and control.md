@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4689832683492669
+focus: 0.00014583866966968128
+gravity: 3
 ---
 TODO lecture at [[bootcamp/v0]]
 

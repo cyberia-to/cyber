@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 23066751661522756
+focus: 0.0028670110973708844
+gravity: 26
 ---
 what a [[neuron]] knows and never reveals. [[hash]] of [[spell]] yields [[signature]] — the proof of identity. lose the spell, the [[neuron]] ceases to exist. see [[cyb/portal/my spells/practice]]
 

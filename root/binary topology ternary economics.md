@@ -5,6 +5,8 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
+focus: 0.0003147653868141984
+gravity: 5
 ---
 
 an architectural principle for decentralized [[superintelligence]]

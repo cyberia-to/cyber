@@ -6,6 +6,8 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
 stake: 6994473744560155
+focus: 0.00034448432960864316
+gravity: 6
 ---
 wood-density:: 750
 

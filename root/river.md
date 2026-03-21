@@ -4,6 +4,8 @@ alias: rivers
 crystal-type: entity
 crystal-domain: geography
 stake: 7497914753045770
+focus: 0.00021358033824607568
+gravity: 7
 ---
 a flowing [[water]] channel moving from source (headwaters) to mouth (delta/estuary/[[ocean]])
 

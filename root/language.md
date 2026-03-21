@@ -4,6 +4,8 @@ alias: languages
 crystal-type: entity
 crystal-domain: culture
 stake: 7417364191688071
+focus: 0.0002416107583211102
+gravity: 5
 ---
 system of structured symbols enabling communication, thought, and [[knowledge]] transmission
 

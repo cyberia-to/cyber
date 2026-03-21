@@ -3,6 +3,8 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 5003084866550385
+focus: 0.00023571587410880135
+gravity: 3
 ---
 traditional narratives explaining origins, natural phenomena, social order, and human purpose
 

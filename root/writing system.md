@@ -4,6 +4,8 @@ alias: writing systems
 crystal-type: entity
 crystal-domain: culture
 stake: 7491202206265963
+focus: 0.0005995280709018588
+gravity: 12
 ---
 visual representation of [[language]] using persistent marks on a surface
 

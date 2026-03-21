@@ -2,6 +2,8 @@
 tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00014818435334641445
+gravity: 2
 ---
 # wgpu
 

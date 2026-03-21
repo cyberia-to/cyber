@@ -8,6 +8,8 @@ supply: "no"
 margin: high
 autonomy: extra
 stake: 8480387508999516
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[biohacking]]
 

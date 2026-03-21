@@ -3,6 +3,8 @@ tags: segment
 crystal-type: property
 crystal-domain: cyberia
 stake: 940651555410457
+focus: 0.0027120218233302766
+gravity: 32
 ---
 ongoing research on extreme profitability of different species
 

@@ -4,6 +4,8 @@ alias: self-linking, autonomous linking, graph completion, inference completion,
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
+focus: 0.0001690769827482549
+gravity: 6
 ---
 
 the protocol creating [[cyberlinks]] from its own inference — the graph writing into itself

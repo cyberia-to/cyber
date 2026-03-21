@@ -3,6 +3,8 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4909109211633071
+focus: 0.002428609691389865
+gravity: 28
 ---
 
 The fundamental theory of [[physics]] describing nature at the scale of atoms and subatomic particles.

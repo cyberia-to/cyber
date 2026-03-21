@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 8162456884246783
+focus: 0.0018977438293916675
+gravity: 10
 ---
 alias: iron
 

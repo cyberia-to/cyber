@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyberia
 type: private
 stake: 4618232184508048
+focus: 0.00014298502936250853
+gravity: 1
 ---
 revenue:: breakfast $10
 

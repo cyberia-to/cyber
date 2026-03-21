@@ -4,6 +4,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
 stake: 7571752767623661
+focus: 0.0001975386753527909
+gravity: 4
 ---
 currently 2 types for [[terrace]]
 

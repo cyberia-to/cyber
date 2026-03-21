@@ -4,6 +4,8 @@ alias: dmn, default mode network, cyber dmn, self-projection, resting inference
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
+focus: 0.0003298127190990816
+gravity: 7
 ---
 
 the [[cybergraph]]'s resting-state computation — inference that runs on the graph itself, not on external queries

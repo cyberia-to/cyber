@@ -3,6 +3,8 @@ tags: cyb, cyber, stark, architecture, article, core
 crystal-type: entity
 crystal-domain: cyber
 alias:: multi-proof architecture, multiproof, multiproof-architecture
+focus: 0.0005142041604343595
+gravity: 16
 ---
 
 # Multi-Proof Architecture for [[superintelligence]]

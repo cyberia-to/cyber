@@ -104,6 +104,10 @@ def main [
 
   print $"Page index: ($page_index | columns | length) pages, ($alias_map | columns | length) aliases"
 
+  # freeze mutable maps for closure capture
+  let alias_map = $alias_map
+  let page_index = $page_index
+
   # --- extract links and compute scores ---
   print $"Computing gravity and density..."
 
@@ -144,27 +148,50 @@ def main [
       $inbound_counts = ($inbound_counts | merge {$target: ($current + 1)})
     }
 
+    # resolve targets for reflected gravity
+    let resolved = ($links_lower | each {|l|
+      if ($alias_map | get -o $l) != null { $alias_map | get $l } else { $l }
+    })
+
     $page_data = ($page_data | append {
       file: $f
       name: ($page_name | str downcase)
       rel: $rel
       size: $size
       outbound: ($links_lower | length)
+      targets: $resolved
     })
   }
 
+  # --- reflected gravity ---
+  # pages that link TO high-gravity pages inherit a fraction of that gravity.
+  # this is one step of diffusion: if you reference neuron (gravity 435),
+  # you get 435 * alpha added to your effective gravity.
+  # critical for subgraph pages that reference core concepts but have zero inbound.
+  let alpha = 0.05  # reflection coefficient
+
+  mut reflected = {}
+  for page in $page_data {
+    mut ref_sum = 0.0
+    for target in $page.targets {
+      let target_gravity = ($inbound_counts | get -o $target | default 0)
+      $ref_sum = $ref_sum + ($target_gravity | into float)
+    }
+    $reflected = ($reflected | merge {$page.name: ($ref_sum * $alpha)})
+  }
+
   # --- score each page ---
-  # gravity: inbound link count (how many pages reference this one)
+  # gravity: inbound links + reflected gravity from outbound targets
   # density: outbound links per KB (how connected is this page relative to its size)
   # substance: raw content size (longer = more knowledge, but with diminishing returns)
   #
-  # score = gravity² × (1 + density) × log2(substance)
-  # gravity squared because hub pages are disproportionately valuable
-  # log substance to favor content but not linearly (a 10KB page isn't 10× better than 1KB)
+  # score = effective_gravity² × (1 + density) × log2(substance)
 
   mut scored = []
   for page in $page_data {
-    let gravity = ($inbound_counts | get -o $page.name | default 0)
+    let raw_gravity = ($inbound_counts | get -o $page.name | default 0)
+    let ref_gravity = ($reflected | get -o $page.name | default 0.0)
+    let gravity = (($raw_gravity | into float) + $ref_gravity)
     let density = if $page.size > 0 { ($page.outbound / ($page.size / 1024.0)) } else { 0.0 }
     let substance = if $page.size > 100 { ($page.size | math log 2) } else { 1.0 }
 
@@ -172,7 +199,7 @@ def main [
     let raw = (open --raw $page.file)
     let has_stake = ($raw | str contains "stake:")
 
-    let gravity_sq = ($gravity * $gravity | into float)
+    let gravity_sq = ($gravity * $gravity)
     let score = $gravity_sq * (1.0 + $density) * $substance * (if $has_stake { 1.5 } else { 1.0 })
 
     $scored = ($scored | append {
@@ -180,7 +207,8 @@ def main [
       rel: $page.rel
       name: $page.name
       size: $page.size
-      gravity: $gravity
+      gravity: ($gravity | math round -p 1)
+      raw_gravity: $raw_gravity
       outbound: $page.outbound
       density: ($density | math round -p 2)
       score: ($score | math round -p 1)

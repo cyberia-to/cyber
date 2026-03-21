@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11545580461270122
+focus: 0.0001367026476497157
+gravity: 3
 ---
 many agents contributing partial computations toward a shared result
 

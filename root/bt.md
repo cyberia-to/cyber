@@ -3,6 +3,8 @@ tags: cyber, language
 alias: Bt, bitwise, binary language
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00013820749343468905
+gravity: 4
 ---
 the binary language. gate semantics over F₂ — the substrate for Boolean logic and any computation whose natural unit is a bit
 

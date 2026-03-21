@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8081906322889084
+focus: 0.00016492177172700682
+gravity: 2
 ---
 alias: valine
 

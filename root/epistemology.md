@@ -2,6 +2,8 @@
 tags: meta, spiri
 crystal-type: entity
 crystal-domain: meta
+focus: 0.00015404682392441808
+gravity: 6
 ---
 # epistemology
 

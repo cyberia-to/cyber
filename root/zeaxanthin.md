@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5553513702494659
+focus: 0.00022177475407245408
+gravity: 4
 ---
 zeaxanthin, chemically known as β,β-carotene-3,3’-diol, is a naturally occurring [[carotenoid pigment]] closely related to [[lutein]]. it accumulates primarily in the [[macula]] of the human retina, serving as a powerful antioxidant and protective agent against oxidative stress and harmful [[blue light exposure]]. zeaxanthin plays a critical role in maintaining [[vision clarity]], reducing the risk of [[age-related macular degeneration (AMD)]], and preventing the development of [[cataracts]].
 

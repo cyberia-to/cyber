@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: biology
 stake: 7061599212358237
+focus: 0.0017512525777051242
+gravity: 17
 ---
 [[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — [[learning]] together
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14982404412531926
+focus: 0.00011661740354397796
+gravity: 0
 ---
 emission must go to partial compute towards `pi`
 

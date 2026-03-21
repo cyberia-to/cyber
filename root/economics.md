@@ -2,6 +2,8 @@
 tags: discipline, crypto, game, socio
 crystal-type: entity
 crystal-domain: crypto
+focus: 0.00011661740354397796
+gravity: 0
 ---
 # economics
 

@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4815133556715756
+focus: 0.00028718245072790853
+gravity: 1
 ---
 tourism
 

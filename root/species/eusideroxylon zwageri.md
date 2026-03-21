@@ -9,6 +9,8 @@ wood-availability: high
 supply: next-month
 market: ironwoods
 stake: 7586398324234151
+focus: 0.00014751685957011007
+gravity: 1
 ---
 [[high margin]]
 

@@ -3,6 +3,8 @@ tags: geography, pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 3233738899596334
+focus: 0.0004511389776421894
+gravity: 14
 ---
 continuous movement of [[water]] through Earth's systems
 

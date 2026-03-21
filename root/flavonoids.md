@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8370545834420837
+focus: 0.0005028932283313975
+gravity: 20
 ---
 alias: flavonoids
 

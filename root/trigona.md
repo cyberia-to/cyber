@@ -4,6 +4,8 @@ alias: stingless bee
 crystal-type: entity
 crystal-domain: biology
 stake: 9622130693092350
+focus: 0.00016289934800578826
+gravity: 2
 ---
 trigona laeviceps
 

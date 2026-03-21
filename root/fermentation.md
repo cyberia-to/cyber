@@ -3,6 +3,8 @@ tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
 stake: 4581130107761472
+focus: 0.0011041042246788366
+gravity: 11
 ---
 Anaerobic metabolism converting sugars into acids, gases, or alcohol. Life extracting energy without oxygen.
 

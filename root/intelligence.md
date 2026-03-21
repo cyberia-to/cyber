@@ -5,6 +5,8 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: article
 stake: 15342685105149990
+focus: 0.0030443861017168026
+gravity: 48
 ---
 the loop that thinks
 

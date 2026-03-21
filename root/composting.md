@@ -3,6 +3,8 @@ tags: food, biology
 crystal-type: process
 crystal-domain: agriculture
 stake: 4268691566737672
+focus: 0.00020789091266028872
+gravity: 5
 ---
 aerobic decomposition of organic matter into humus by bacteria, fungi, and invertebrates
 

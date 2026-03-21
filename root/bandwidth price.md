@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 8417533661879494
+focus: 0.0003053984798697949
+gravity: 4
 ---
 it's a multiplier for default bandwidth price
 

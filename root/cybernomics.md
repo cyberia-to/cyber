@@ -5,6 +5,8 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 17345220879024414
+focus: 0.0006032406861513489
+gravity: 26
 ---
 the science of cybernetic economies — how [[tokens]] emerge, flow, and reach [[equilibrium]] in decentralized systems. not specific to any protocol — the universal theory from which [[cyber/tokenomics]], [[bostrom/tokenomics]], and any token economy derives
 

@@ -4,6 +4,8 @@ alias: core
 crystal-type: pattern
 crystal-domain: cyber
 stake: 9710004032755294
+focus: 0.0002207168272862834
+gravity: 1
 ---
 # core
 

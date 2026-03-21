@@ -2,6 +2,8 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
+focus: 0.00012323371753685967
+gravity: 1
 ---
 # Why 6.022 × 10²³: Deriving Avogadro's Number from [[knowledge graph]] Theory
 

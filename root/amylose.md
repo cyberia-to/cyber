@@ -3,6 +3,8 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8202732164925632
+focus: 0.0001923395513472882
+gravity: 2
 ---
 alias: amylose
 

@@ -3,6 +3,8 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1075960225650712
+focus: 0.0001286520074079222
+gravity: 1
 ---
 time required for half of a quantity of radioactive atoms to decay
 

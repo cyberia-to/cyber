@@ -3,6 +3,8 @@ tags: cyber, language
 alias: Tok, token language, resource language, resource logic
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.0001350842356534836
+gravity: 3
 ---
 the resource language. conservation laws over tokens — mint, burn, transfer, stake, and the sum invariants that make computation costly
 

@@ -4,6 +4,8 @@ tags: species
 crystal-type: entity
 crystal-domain: biology
 stake: 6833372621844758
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[health]]
 

@@ -4,6 +4,8 @@ alias: carbohidrate, carbohydrates, carb
 crystal-type: entity
 crystal-domain: economics
 stake: 17143844475630170
+focus: 0.00026926715404371714
+gravity: 7
 ---
 the most important species for [[eat]] carbs
 

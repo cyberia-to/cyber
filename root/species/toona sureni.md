@@ -5,6 +5,8 @@ crystal-type: entity
 crystal-domain: biology
 wood-density: "500"
 stake: 6846797715404375
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![](https://ipfs.io/ipfs/QmVz852FrRWpZn748J3M7WveSwZrMJUaidfXDHce3kvkXp)
 

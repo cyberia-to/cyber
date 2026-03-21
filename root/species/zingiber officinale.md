@@ -6,6 +6,8 @@ scalable: "true"
 alias: zingiber, ginger
 market: rhizomes
 stake: 7505847762876452
+focus: 0.0006586223607687788
+gravity: 14
 ---
 [[high margin]] [[rhizome]] for [[health]]
 

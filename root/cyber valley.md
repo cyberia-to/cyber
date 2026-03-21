@@ -6,6 +6,8 @@ tags: cv.land, menu
 crystal-type: entity
 crystal-domain: biology
 stake: 11101331910751904
+focus: 0.002183241178909398
+gravity: 33
 ---
 Thirty-seven hectares of land at the foot of [Sanghyang volcano](https://maps.app.goo.gl/CdD8vRYHrWkpTGYj6) in Bali — the first city of [[cyberia]], a [[sustainable community]] built from first principles, the place where technology and nature converge instead of collide. The project began in 2021 with a simple acquisition of land in one of the most pristine locations on Earth. By July 2023 the first completely offgrid home stood finished, and the real experiment started: learning how a civilization lives when it gives back more than it takes.
 

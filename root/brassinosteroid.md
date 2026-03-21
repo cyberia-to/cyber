@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5325287111981180
+focus: 0.00012003568333302317
+gravity: 1
 ---
 brassinosteroids are a class of steroidal plant hormones derived from [[phytosterols]] such as [[campesterol]], [[sitosterol]], and [[stigmasterol]]. they regulate numerous essential processes in plant development, growth, stress responses, and immunity, acting similarly to animal steroid hormones but uniquely in plants
 

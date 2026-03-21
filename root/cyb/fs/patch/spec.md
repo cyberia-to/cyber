@@ -5,6 +5,8 @@ crystal-domain: cyber
 crystal-size: deep
 alias:: cyberpatch spec, cyberpatch specification, patch spec
 stake: 28558835390456748
+focus: 0.00011661740354397796
+gravity: 0
 ---
 
 # CyberPatch: Specification v0.1

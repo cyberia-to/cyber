@@ -3,6 +3,8 @@ tags: geography, biology, biome
 crystal-type: entity
 crystal-domain: biology
 stake: 5912736660468637
+focus: 0.0002086536946569738
+gravity: 5
 ---
 equatorial [[biome]] with the highest terrestrial biodiversity on Earth
 

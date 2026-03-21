@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14875003664054992
+focus: 0.0006039875971786585
+gravity: 1
 ---
 practical guidance for managing [[spells]]
 

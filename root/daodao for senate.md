@@ -4,6 +4,8 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 stake: 11244858365534712
+focus: 0.000164025685800766
+gravity: 3
 ---
 [[daodao]] is amazing [[prog]] which is widely adopted in [[cosmos]]
 

@@ -3,6 +3,8 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3198589563731156
+focus: 0.0002798524324086223
+gravity: 8
 ---
 SI unit of electric current, one of the seven SI base units
 

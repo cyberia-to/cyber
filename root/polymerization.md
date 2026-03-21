@@ -3,6 +3,8 @@ tags: chemistry
 crystal-type: process
 crystal-domain: chemistry
 stake: 4235169514940327
+focus: 0.001104801238257076
+gravity: 10
 ---
 
 Joining small monomer molecules into long polymer chains through repeated chemical bonding. The process that builds plastics, proteins, DNA, and [[cellulose]].

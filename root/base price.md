@@ -3,6 +3,8 @@ tags: param
 crystal-type: measure
 crystal-domain: cyber
 stake: 8377258381200647
+focus: 0.0001833079545728773
+gravity: 3
 ---
 multiplier for bandwidth billing
 

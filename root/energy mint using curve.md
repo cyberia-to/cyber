@@ -4,6 +4,8 @@ crystal-type: process
 crystal-domain: cyber
 status: implemented
 stake: 12404786449085574
+focus: 0.00016837823869037257
+gravity: 3
 ---
 implemented in [[v6]]
 

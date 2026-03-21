@@ -4,6 +4,8 @@ alias: mathematics
 icon: "\U00002295"
 crystal-type: entity
 crystal-domain: math
+focus: 0.0006614389981607974
+gravity: 28
 ---
 # math
 

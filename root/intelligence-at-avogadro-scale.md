@@ -2,6 +2,8 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
+focus: 0.00014809520472438807
+gravity: 3
 ---
 # What Intelligence Looks Like at Avogadro Scale
 

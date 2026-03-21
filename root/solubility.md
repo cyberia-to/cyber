@@ -3,6 +3,8 @@ tags: chemistry, property
 crystal-type: property
 crystal-domain: physics
 stake: 1074983855210013
+focus: 0.00017773312424420307
+gravity: 4
 ---
 maximum amount of a substance (solute) that dissolves in a given [[solvent]] at a specific [[temperature]]
 

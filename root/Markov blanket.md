@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: Markov blankets
 stake: 5207593791775209
+focus: 0.00017949282212154826
+gravity: 4
 ---
 the statistical boundary between an agent and its environment — the set of states that separates internal dynamics from external dynamics
 

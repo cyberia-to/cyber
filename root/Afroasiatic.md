@@ -3,6 +3,8 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 5012034928923463
+focus: 0.00016625398727616492
+gravity: 3
 ---
 [[language]] family of ~500+ million speakers across North Africa, Horn of Africa, and the Middle East
 

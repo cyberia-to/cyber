@@ -3,6 +3,8 @@ tags: aos
 crystal-type: entity
 crystal-domain: cyber
 stake: 21372748946909340
+focus: 0.00055657016352926
+gravity: 2
 ---
 [original text](https://cyb.ai/oracle/ask/QmcHB9GKHAKCLQhmSj71qNJhENJJg8Gymd1PvvsCQBhG7M) and [original video](https://cyb.ai/oracle/ask/QmanZyMFnEti618crNPkn93g7MFaoDGrZ4Pta5drfdt9jb)
 

@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13841271459964526
+focus: 0.00015019647374490773
+gravity: 1
 ---
 TODO [[cyber/genesis]] protocol
 

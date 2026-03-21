@@ -3,6 +3,8 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1063267409921620
+focus: 0.00019352533318546227
+gravity: 1
 ---
 resistance of a fluid to flow under applied [[force]]
 

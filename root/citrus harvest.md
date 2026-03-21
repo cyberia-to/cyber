@@ -3,6 +3,8 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 stake: 5768315199448521
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1124)
 

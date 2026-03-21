@@ -3,6 +3,8 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 9379665366985338
+focus: 0.00011661740354397796
+gravity: 0
 ---
 [[pay]]: change two [[neuron]] balances
 

@@ -9,6 +9,8 @@ wood-density: "1050"
 supply: next-month
 market: ironwoods
 stake: 7021323931679387
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![Casuarina - Wikipedia bahasa Indonesia, ensiklopedia bebas](https://ipfs.io/ipfs/QmPK9i5RrFRZ2vP7yxFbivJGpeWcFRQfuRL53Dq8o6R2Sb){:height 762, :width 1008}
 

@@ -5,6 +5,8 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 9358510674103518
+focus: 0.0032807778951913984
+gravity: 46
 ---
 committed capacity to act. [[balance]] locked for duration — the longer and more you lock, the more will you have
 

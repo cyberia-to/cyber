@@ -7,6 +7,8 @@ supply: next-month
 market: edible oils
 wood-density:
 stake: 14645556610490640
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![Screenshot 2024-05-26 at 08.19.22.png](https://ipfs.io/ipfs/QmQfBx32Rc1A1HfLdaYkvV2PmE1ufavJSU8RHvB4745PFU)
 

@@ -4,6 +4,8 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 27226089738902100
+focus: 0.00012043010023175916
+gravity: 1
 ---
 # Design Rationale of the State Model for Superintelligence
 ## Objective

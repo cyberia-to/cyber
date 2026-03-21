@@ -3,6 +3,8 @@ tags: module
 crystal-type: entity
 crystal-domain: cyber
 stake: 14337999921670336
+focus: 0.00013216329860752876
+gravity: 2
 ---
 The [[cybergraph]] module manages [[cyberlinks]] — signed, weighted, timestamped directed edges between [[particles]].
 

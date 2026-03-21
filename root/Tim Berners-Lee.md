@@ -3,6 +3,8 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4998609835363846
+focus: 0.0001416650646093506
+gravity: 3
 ---
 1955-, British computer scientist, inventor of the World Wide Web
 

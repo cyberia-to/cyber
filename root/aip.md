@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21204935277414136
+focus: 0.0001256292320787335
+gravity: 1
 ---
 any [[cyb/avatar]] can become [[aip]]
 

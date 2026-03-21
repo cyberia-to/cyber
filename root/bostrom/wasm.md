@@ -3,6 +3,8 @@ tags: module
 crystal-type: entity
 crystal-domain: cyber
 stake: 15076380067449238
+focus: 0.00012456859905279113
+gravity: 1
 ---
 [[store-code]]
 

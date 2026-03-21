@@ -4,6 +4,8 @@ alias: castor, jarak
 crystal-type: entity
 crystal-domain: biology
 stake: 6866935355743799
+focus: 0.00011661740354397796
+gravity: 0
 ---
 ![Screenshot 2024-05-17 at 03.21.53.png](https://ipfs.io/ipfs/QmQtpWT9cTzVC1WzgNUmdEuP73M8sNs7qzc3pFKdFvkYTj)
 

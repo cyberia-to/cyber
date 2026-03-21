@@ -2,6 +2,8 @@
 tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
+focus: 0.00012344354693328029
+gravity: 1
 ---
 # com
 

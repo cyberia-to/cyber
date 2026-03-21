@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 20842457751304488
+focus: 0.0001337749218967593
+gravity: 1
 ---
 represents the aesthetic dimension of harmony
 

@@ -4,6 +4,8 @@ alias: two factor truth, two layer truth, structural epistemic truth, truth mode
 crystal-type: pattern
 crystal-domain: cyber
 stake: 13572769588772200
+focus: 0.0004891898925960641
+gravity: 12
 ---
 truth in the [[cybergraph]] has two irreducible components. neither alone is sufficient. together they define what the network calls true
 

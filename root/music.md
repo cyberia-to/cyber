@@ -3,6 +3,8 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 5047835178415774
+focus: 0.00025049297386226074
+gravity: 8
 ---
 organized sound in time, structured by rhythm, melody, harmony, and timbre
 

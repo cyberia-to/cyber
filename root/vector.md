@@ -3,6 +3,8 @@ tags: cyb, cyber, core
 alias: vector particle, svg, paths, diagrams
 crystal-type: entity
 crystal-domain: cyb
+focus: 0.000514119472283129
+gravity: 16
 ---
 paths, curves, and geometric meaning as [[particle]]. the native format for diagrams, structures, maps, and visual knowledge that must scale without degradation
 

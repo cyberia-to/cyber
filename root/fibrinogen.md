@@ -3,6 +3,8 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5741465012329288
+focus: 0.00035165035185670925
+gravity: 4
 ---
 [[fibrinogen]] is a vital [[glycoprotein]] produced by the [[liver]] that plays a central role in [[blood clot formation]]. it circulates in the plasma as a soluble protein and is converted by [[thrombin]] into insoluble [[fibrin]] strands, which weave into a [[mesh]] to stabilize blood clots. fibrinogen is also involved in [[inflammation]], [[wound healing]], and acts as a binding agent for [[platelets]].
 

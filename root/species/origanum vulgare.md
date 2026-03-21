@@ -5,6 +5,8 @@ crystal-domain: biology
 scalable: "true"
 alias: origanum, oregano
 stake: 7454588314739736
+focus: 0.0004738472292596245
+gravity: 12
 ---
 [[cover]]
 

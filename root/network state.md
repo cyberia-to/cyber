@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14566226512183814
+focus: 0.0009383918058884637
+gravity: 18
 ---
 concept where groups of people, often with shared values or goals
 

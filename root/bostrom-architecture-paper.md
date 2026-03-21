@@ -2,6 +2,8 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
+focus: 0.00012983952603693843
+gravity: 1
 ---
 # Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis
 

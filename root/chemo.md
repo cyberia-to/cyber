@@ -3,6 +3,8 @@ tags: cyber, chemo
 alias: chemistry
 crystal-type: entity
 crystal-domain: chemo
+focus: 0.0003903668961237713
+gravity: 17
 ---
 # chemo
 

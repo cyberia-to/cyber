@@ -4,6 +4,8 @@ crystal-type: property
 crystal-domain: cyberia
 local: "true"
 stake: 1023887135480079
+focus: 0.0002544468184380816
+gravity: 2
 ---
 - ## available by [[wood-durability]] class
   

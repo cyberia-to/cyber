@@ -4,6 +4,8 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 6338596901020349
+focus: 0.00011661740354397796
+gravity: 0
 ---
 reduction of uncertainty. hashing [[data]] collapses "what content?" into a fixed answer — the [[hash]] is the proof of measurement, and the [[particle]] is a unit of information
 

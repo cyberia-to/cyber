@@ -3,6 +3,8 @@ tags: module
 crystal-type: entity
 crystal-domain: cyber
 stake: 21574125350303584
+focus: 0.0002948013952434899
+gravity: 4
 ---
 current implementation on [[bostrom]] bootloader
 

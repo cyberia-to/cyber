@@ -3,6 +3,8 @@ tags: food, biology
 crystal-type: process
 crystal-domain: agriculture
 stake: 4276502530263266
+focus: 0.00025186377677696194
+gravity: 3
 ---
 microbial transformation of organic substrates into preserved, nutrient-enhanced food
 

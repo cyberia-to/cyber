@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 8522249391644504
+focus: 0.0010271026594369282
+gravity: 10
 ---
 algorithm that ranks web pages by measuring their importance based on the quantity and quality of links pointing to them
 

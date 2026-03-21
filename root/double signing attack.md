@@ -3,6 +3,8 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11459659862488576
+focus: 0.00020533257936631612
+gravity: 3
 ---
 type of [[cyber/attacks]] involving malicious behavior
 

@@ -3,6 +3,8 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: enzyme
+focus: 0.00040417461971420105
+gravity: 9
 ---
 the constraint that every operator must compute from neighbors only
 

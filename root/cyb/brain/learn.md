@@ -4,6 +4,8 @@ tags: page
 crystal-type: process
 crystal-domain: cyber
 stake: 16673966201043592
+focus: 0.00018740760119049678
+gravity: 1
 ---
 [[cyberlinks]] composer
 

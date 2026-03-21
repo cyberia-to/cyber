@@ -3,6 +3,8 @@ tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
 alias: cyb stack, software stack, proof pipeline
+focus: 0.0001947297097753164
+gravity: 5
 ---
 # Stack
 

@@ -2,6 +2,8 @@
 tags: discipline, neuro, sense, socio
 crystal-type: entity
 crystal-domain: neuro
+focus: 0.00012823292918701746
+gravity: 2
 ---
 # psychology
 
@@ -21,4 +23,3 @@ in the [[crystal]], psychology spans three domains:
 - clinical psychology → [[neuro]] + [[bio]] (mental health, therapy, diagnosis)
 - perceptual psychology → [[sense]] (vision, hearing, multisensory integration)
 - evolutionary psychology → [[bio]] + [[game]] (adaptive behavior, mate selection, cooperation)
-

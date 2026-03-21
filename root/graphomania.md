@@ -3,6 +3,8 @@ tags: superhuman, cyber
 crystal-type: entity
 crystal-domain: superhuman
 stake: 7020103468628513
+focus: 0.00012092021584912305
+gravity: 1
 ---
 the compulsion to write excessively, producing volume without substance
 

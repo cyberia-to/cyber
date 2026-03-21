@@ -3,6 +3,8 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: cyber channel, state channel, proof channel, bilateral channel
+focus: 0.00013323201095949338
+gravity: 2
 ---
 # channel
 

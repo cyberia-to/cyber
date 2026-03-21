@@ -4,6 +4,8 @@ crystal-type: process
 crystal-domain: biology
 status: draft
 stake: 6393924559326647
+focus: 0.00011661740354397796
+gravity: 0
 ---
 general principles ㅤ
 

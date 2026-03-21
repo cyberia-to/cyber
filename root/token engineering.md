@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 6708071748621671
+focus: 0.0001641689909820117
+gravity: 5
 ---
 TODO lecture at [[edge city residency]]
 

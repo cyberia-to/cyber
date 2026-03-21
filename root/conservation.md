@@ -5,6 +5,8 @@ crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
 stake: 9000000000000000
+focus: 0.0001660131144049731
+gravity: 4
 ---
 a quantity that remains constant through every transformation. the constraint that shapes where [[convergence]] can go
 

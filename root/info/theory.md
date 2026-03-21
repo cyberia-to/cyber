@@ -3,6 +3,8 @@ tags: cyber, info
 alias: information theory, infotheory
 crystal-type: entity
 crystal-domain: info
+focus: 0.0015143792674461726
+gravity: 24
 ---
 # info/theory
 

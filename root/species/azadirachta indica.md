@@ -9,6 +9,8 @@ supply: next-month
 market: technical oil
 propagate-plants: seeds
 stake: 7593721102539395
+focus: 0.0001267476440075053
+gravity: 2
 ---
 ![image.png](https://ipfs.io/ipfs/Qma8Et35R8iZQyy6cnqc9czJRhTgbzFEaYw6GgUzCNdQ5U){:height 407, :width 628}
 

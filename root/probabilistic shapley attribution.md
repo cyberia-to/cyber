@@ -4,6 +4,8 @@ crystal-type: measure
 crystal-domain: economics
 status: draft
 stake: 8804908634226972
+focus: 0.0002397779926795394
+gravity: 6
 ---
 ## abstract
 

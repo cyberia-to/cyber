@@ -3,6 +3,8 @@ tags: cyber, cip, cryptography, article
 crystal-type: entity
 crystal-domain: cyber
 alias: proof of location, geolocation proof, location proof, anchor-free geolocation, RTT geolocation
+focus: 0.00015403679426382404
+gravity: 4
 ---
 # location proof
 

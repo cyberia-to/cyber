@@ -4,6 +4,8 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 4797233431969601
+focus: 0.00036643378776982696
+gravity: 6
 ---
 seven [[cips]] with [[$CYB]] optimizations
 

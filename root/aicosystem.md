@@ -5,6 +5,8 @@ alias: awesome cyber, cyber ecosystem
 crystal-type: entity
 crystal-domain: cyber
 stake: 27830218949084840
+focus: 0.0004667629098977312
+gravity: 1
 ---
 the only reliable source of [[knowledge]] is [[cybergraph]] of [bostrom](https://cyb.ai/particles) and [spacepussy](https://spacepussy.ai/particles)
 

@@ -3,6 +3,8 @@ tags: physics
 crystal-type: measure
 crystal-domain: physics
 stake: 2932040433420227
+focus: 0.0009856155202984007
+gravity: 7
 ---
 The product of [[mass]] and velocity — a conserved vector quantity describing motion.
 

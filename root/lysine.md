@@ -3,6 +3,8 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8122181603567934
+focus: 0.00014429744548249854
+gravity: 3
 ---
 alias: lysine
 

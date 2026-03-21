@@ -3,6 +3,8 @@ tags: time, geography
 crystal-type: entity
 crystal-domain: geography
 stake: 5350510015032581
+focus: 0.0002883772602012277
+gravity: 8
 ---
 framework for 4.54 billion years of Earth history, divided into hierarchical units
 

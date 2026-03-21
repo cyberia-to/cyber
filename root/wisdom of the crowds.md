@@ -5,6 +5,8 @@ crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
 stake: 14566226512183814
+focus: 0.0005721497396101027
+gravity: 7
 ---
 
 the aggregated judgment of many independent agents outperforms most individuals — and often the best expert
