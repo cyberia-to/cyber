@@ -40,7 +40,8 @@ the domains are not subjects taught in sequence. they are lenses through which S
 | page | what it covers |
 |------|---------------|
 | [[satoshi/signing]] | baby sign language + understanding toddler speech — communication before words |
-| [[satoshi/will]] | the inner drive: autonomy, freedom, trust, self-driven — environment over instruction |
+| [[satoshi/will]] | the inner drive: autonomy, freedom, trust, self-driven — the four faces of will |
+| [[satoshi/conditions]] | seven conditions + the interactive loop that installs the Type I civilization OS |
 | [[satoshi/genius]] | accelerated learners, cognitive biases, how to produce genius without pressure |
 | [[satoshi/vocabulary]] | the [[cyber/crystal]]'s 5,040 particles as the core vocabulary for civilizational thinking |
 | [[satoshi/metabolism]] | three vital signs (growth, syntropy, happiness) → compound developmental health M(t) |
