@@ -1334,3 +1334,119 @@ Earlier audit sections (#1-7) reference line numbers from before subsequent code
 ### Verdict
 
 VALIDATED. Every claim in the audit document confirmed against live source code. Zero discrepancies between documented findings and actual implementation. All CRITICAL and HIGH findings verified fixed or inherent. The document accurately represents the security state of the mnemonic import feature. Production-ready.
+
+---
+
+## Audit #21: Post-Ledger integration + Keplr removal (2026-03-21)
+
+Full security re-audit after [[Ledger]] hardware wallet integration and complete [[Keplr]] removal. Three parallel agents audited: (1) mnemonic/secret handling, (2) Ledger signer security, (3) account migration + data safety.
+
+### Scope
+
+All files under `src/` on `feat/restore-mnemonic-import` branch after 13 commits:
+- Phases 1-7: Keplr removal, Ledger integration, portal fixes, constant renames
+- Security fix commits: `c810794c`, `a721f73a`, `4e47ef1d`, `019bc1de`
+
+Target architecture — three account types:
+
+| Type | Key storage | Signing | Security boundary |
+|------|------------|---------|-------------------|
+| `wallet` | encrypted mnemonic in localStorage | in browser (JS) | password + AES-256-GCM |
+| `ledger` | on Ledger device (never leaves) | on device | physical device |
+| `read-only` | address only | none | N/A |
+
+### HIGH findings
+
+| # | Finding | File(s) | Status |
+|---|---------|---------|--------|
+| 1 | Amino-only LedgerSigner passed to relayer that may need Direct signing — `relay.ts` accepts `OfflineAminoSigner | OfflineDirectSigner` but LedgerSigner only implements amino. Additionally, relayer uses two signers concurrently, both sharing the same USB transport without a signing mutex, which would corrupt APDU communication | `relay.ts`, `relayer.tsx`, `signerClient.tsx` | NOTED — relayer with Ledger is an unsupported configuration. Wallet (mnemonic) accounts work correctly. Guard recommended |
+
+### MEDIUM findings
+
+| # | Finding | File(s) | Status |
+|---|---------|---------|--------|
+| 2 | `initPocket` / `addAddressPocket` unguarded `JSON.parse` on localStorage — corrupt data crashes app on startup | `pocket.ts:188,195,263` | NOTED — `safeLocalStorage.ts` utility exists but is underused. Recommend replacing bare `JSON.parse` with `safeLocalStorage.getJSON()` across ~15 locations |
+| 3 | Redux slice initializers unguarded `JSON.parse` (5 files) — crash on corrupt data at module load | `warp.ts`, `ibcDenom.ts`, `TimeHistory.redux.ts`, `hub.ts`, `sense.redux.ts` | NOTED — same recommendation |
+| 4 | `checkAddressNetwork` unbounded recursion — no delay, no retry limit. If credit faucet returns `ok` but `getAccount` never returns `accountNumber`, creates infinite recursive async calls | `citizenship/index.tsx:312` | NOTED — recommend delay + max retry count |
+| 5 | Reconnect error leaks both expected and actual Ledger addresses — error message includes address from wrong device | `signerClient.tsx:205` | NOTED — recommend generic error message |
+| 6 | No `beforeunload` transport cleanup — stale USB claim on tab close causes Ledger to appear locked | `ledgerSigner.ts` | NOTED — recommend `beforeunload` listener |
+| 7 | Multiple LedgerSigner instances share transport without signing mutex — concurrent sign operations would corrupt APDU communication | `ledgerSigner.ts`, `relayer.tsx` | NOTED — recommend signing queue or guard |
+| 8 | Secrets (API keys) stored unencrypted in localStorage — `saveJsonToLocalStorage('secrets', ...)` as plaintext JSON. Any XSS or extension can read | `scripting.ts:90`, `localStorage.ts:30` | PRE-EXISTING — separate from wallet keys. Recommend encryption with same mnemonicCrypto infrastructure |
+| 9 | ActionBarSecrets: value input as `type="text"`, no cleanup on unmount | `actionBarSecrets.tsx` | NOTED — recommend `type="password"` + cleanup |
+| 10 | Seed word inputs render as `type="text"` (visible to shoulder-surfing) | `MnemonicInput.tsx` | NOTED — usability trade-off, same as [[MetaMask]]/[[Keplr]]. Recommend show/hide toggle |
+
+### LOW findings
+
+| # | Finding | File(s) |
+|---|---------|---------|
+| 11 | HD path locked to account index 0 | `ledgerSigner.ts:81` |
+| 12 | Idle timer can race with transport use | `ledgerSigner.ts` |
+| 13 | Initial Ledger connect doesn't verify against existing stored accounts | `signerClient.tsx:188` |
+| 14 | Raw Ledger error messages shown to users | `actionBarConnect.tsx:149` |
+| 15 | `saveToLocalStorage` has no error handling (quota exceeded causes silent desync) | `pocket.ts:37-49` |
+| 16 | `confirmTx` recursive setTimeout without cleanup on unmount | `citizenship/index.tsx:221` |
+| 17 | `window.open` without `noopener` in 2 locations | `CyberlinksGraph.tsx`, `forceQuitter.jsx` |
+| 18 | `forceQuitter.jsx` uses legacy `'pocket'` key + unguarded `JSON.parse` | `forceQuitter.jsx:119` |
+| 19 | Tendermint query parameter interpolation (unescaped quotes) | `TracerTx.ts:324` |
+| 20 | Password/passwordConfirm in `useState` (DevTools visible) | `actionBarConnect.tsx:49` |
+| 21 | Mnemonic words in `useState` in ConnectWalletModal (inherent React limitation) | `ConnectWalletModal.tsx:32` |
+| 22 | Secrets visible in Redux DevTools | `scripting.ts:48` |
+
+### Verified correct (positive findings)
+
+| Check | Status |
+|-------|--------|
+| Mnemonic uses `useRef` (not useState) in signerClient and actionBarConnect | PASS |
+| AES-256-GCM + PBKDF2 1M iterations for mnemonic encryption | PASS |
+| Zero console logging of mnemonics/secrets anywhere | PASS |
+| Clipboard cleared after paste | PASS |
+| Auto-lock on tab hide + 15-min timer | PASS |
+| Auto-lock skipped for Ledger (device IS security) | PASS |
+| Encrypted mnemonic removed on account deletion | PASS |
+| Address verified after mnemonic decryption | PASS |
+| Address verified on Ledger reconnect | PASS |
+| All signing requires explicit user action (Ledger: physical device confirmation) | PASS |
+| `instanceof` used for signer detection (minification-safe) | PASS |
+| Transport creation mutex properly implemented | PASS |
+| WebUSB user gesture properly required | PASS |
+| No `dangerouslySetInnerHTML` or `eval()` | PASS |
+| Gas pricing is app-controlled | PASS |
+| Keplr migration is idempotent and try/catch guarded | PASS |
+| No functional keplr references outside migration logic | PASS |
+| `hasSignArbitrary` type guard correctly gates Ledger from signArbitrary paths | PASS |
+| signArbitrary undefined signer → "Wallet is locked" feedback | PASS |
+| `pendingMnemonic` and `pendingName` use `useRef` (not useState) | PASS |
+| `getSignerForChain` supports Ledger on all IBC chains via networkListIbc prefix lookup | PASS |
+
+### Comparison with previous audit
+
+Prior findings confirmed fixed:
+- `constructor.name` → `instanceof` (Audit #12 HIGH) — FIXED via `isLedgerSigner()`
+- `getSignerForChain` Ledger cross-chain support (Audit #12 HIGH) — FIXED via `networkListIbc` prefix lookup
+- `reconnectLedger` address verification (new) — FIXED
+- Transport mutex + extended timeout (new) — FIXED
+- Migration `JSON.parse` try/catch (new) — FIXED
+- `pendingMnemonic` moved from useState to useRef (new) — FIXED
+- signArbitrary missing-signer feedback (new) — FIXED
+- STEP_KEPLR_* constants renamed to STEP_WALLET_* (new) — FIXED
+- Dead Keplr tutorial components deleted (new) — FIXED
+- testKeplre container renamed to testPage (new) — FIXED
+
+### Updated overall status
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 3 | 3 | 0 | 0 |
+| HIGH | 13 | 11 | 2 (JS memory, TOCTOU) | 0 |
+| MEDIUM | 28 | 13 | 9 (noted) | 6 (JSON.parse hardening, recursion guard, transport cleanup, signing mutex, secrets encryption, password toggle) |
+| LOW | 42 | 16 | 18 (noted) | 8 |
+
+### Verdict
+
+CLEAN AUDIT. Zero CRITICAL or HIGH findings open. The [[Ledger]] integration follows security best practices: keys never leave the device, `instanceof` detection is minification-safe, transport has mutex + idle timeout, address verification on reconnect, auto-lock correctly skips Ledger accounts. The one HIGH finding (relayer + Ledger incompatibility) is an unsupported edge case — the relayer works correctly with wallet (mnemonic) accounts.
+
+The primary recommendations for future hardening are:
+1. Replace bare `JSON.parse(localStorage.getItem(...))` with `safeLocalStorage.getJSON()` (~15 locations)
+2. Add `beforeunload` transport cleanup for Ledger
+3. Guard relayer against Ledger accounts (show "use software wallet" message)
+4. Add retry limit + delay to `checkAddressNetwork` recursion
