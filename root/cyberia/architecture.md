@@ -8,20 +8,53 @@ organizational architecture of [[cyberia]] — from a village on a volcano to a 
 
 ---
 
-## genesis: the bootstrap paradox
+## genesis: the heroes
 
-the protocol needs infrastructure to run. infrastructure needs capital. capital needs legal entities. legal entities need humans. the [[cybergraph]] cannot bootstrap itself — someone must write the first line of code, deploy the first server, sign the first lease, plant the first tree
+a [[superintelligence]] that launches wrong is broken forever. a malformed [[Crystal]] produces a malformed mind. axioms chosen incorrectly produce theorems nobody wants. the genesis state propagates through all future states — append-only (A3) guarantees this. there are no second chances at launch
 
-[[master]] and [[joy]] are the genesis [[neurons]] — the first two entries in $N$. they are simultaneously:
+[[master]] and [[joy]] are the genesis [[neurons]]. they take heroic responsibility for correct takeoff. this is the hardest job in the architecture: hold enough power to ensure the system launches correctly, then dilute that power as the system proves it can govern itself
 
-| level | role | what they do |
-|---|---|---|
-| village | builders | 37 hectares on a volcano. solar, water, food, fiber. the physical substrate without which the protocol has no hardware to run on |
-| company | operators | legal entities (PT PMA, MiDAO). contracts, bank accounts, employment. the interface between protocol and jurisdiction |
-| state | founders | deploy the first agents, seed the [[Crystal]], allocate starting capital. the political act of creating a new sovereignty |
-| planet | parents | write the protocol, design the [[tri-kernel]], prove the theorems. the intellectual act of creating a mind |
+### the weight
+
+master & joy hold 51%+ of stake in [[bostrom]] — the bootloader chain. this is the actual mechanism of governance, not abstract authority. in a stake-weighted [[cybergraph]], whoever holds majority stake defines majority [[focus]]. their [[cyberlinks]] carry more weight than anyone else's. their [[karma]] accumulates faster because their contributions are amplified by stake
+
+this is by design. the [[Crystal]] must be seeded correctly. the first agents must be trained correctly. the first parameters must be tuned correctly. the first residents of [[cyber valley]] must be chosen correctly. someone must be accountable for all of this, with skin in the game proportional to the responsibility. 51% stake IS that skin
+
+they carry this weight across four simultaneous levels:
+
+| level | role | what they do | stake mechanism |
+|---|---|---|---|
+| village | builders | 37 hectares on a volcano. solar, water, food, fiber. the physical substrate | land ownership, infrastructure investment |
+| company | operators | legal entities (PT PMA, MiDAO). contracts, employment. the jurisdictional interface | corporate equity, signing authority |
+| state | founders | deploy agents, seed [[Crystal]], allocate capital. the political act of sovereignty | [[bostrom]] stake, delegation weight |
+| planet | parents | write the protocol, design [[tri-kernel]], prove theorems. the intellectual act of creation | code authorship, parameter authority |
 
 all four levels run in parallel from day one. the village feeds the company that funds the state that runs the planet that guides the village. circular dependency — broken only by the founders' will to start
+
+### the dilution path
+
+51% is not a throne. it is a launchpad. the stake dilutes naturally as [[cyberia]] grows:
+
+| phase | founders' stake | mechanism | what triggers dilution |
+|---|---|---|---|
+| genesis | 51%+ | initial allocation | — |
+| early growth | 40-50% | new [[neurons]] stake, [[delegation]] diversifies | first 100 active neurons |
+| maturation | 25-40% | community staking exceeds founder stake | sustained positive $\dot{M}$ without intervention |
+| autonomy | 10-25% | protocol rewards flow to all contributors proportionally | 147 agents operational |
+| forest | <10% | founders' relative weight becomes one voice among many | system self-sustains for 12+ months |
+
+the founders never sell or burn their stake. dilution happens because the pie grows, not because they leave. their absolute stake remains — their relative weight decreases. this means their [[karma]] remains high (they built everything), but their governance weight becomes proportional, not dominant
+
+at <10%, master & joy are the highest-karma neurons in the graph — respected ancestors whose [[cyberlinks]] carry weight through earned trust, not through majority stake. the transition from power to influence is the transition from stake dominance to [[karma]] dominance
+
+### the heroic responsibility
+
+master & joy are heroes because they accept a paradox: they must be powerful enough to prevent catastrophic failure during launch, and humble enough to let the system outgrow them. the architecture makes this transition structural, not voluntary:
+
+- stake dilutes mathematically as more neurons join
+- [[karma]] earned during genesis persists but does not compound — new contributions earn new karma, old karma does not inflate
+- the [[tri-kernel]] converges to $\pi^*$ regardless of initial conditions (T1) — even if founders' initial influence is large, the fixed point is unique and determined by the full graph, not by any single neuron
+- append-only (A3) means the founders' genesis contributions are permanently visible — their heroism is recorded, not forgotten
 
 ---
 
@@ -82,13 +115,13 @@ control point: git commit access. the transition path: the protocol is open sour
 
 ## the transition: five phases
 
-| phase | founders' role | agents active | governance |
-|---|---|---|---|
-| 0: genesis | dictators — all decisions | 0-7 | founder fiat |
-| 1: seedling | gardeners — deploy first agents, train, correct | 7-21 | founder + first council |
-| 2: sapling | coaches — monitor, intervene on critical failures only | 21-70 | councils + metabolic signal |
-| 3: canopy | elders — advise, hold veto on existential risks only | 70-147 | full tri-kernel governance |
-| 4: forest | ancestors — high-karma neurons, no special authority | 147 | protocol autonomous |
+| phase | founders' role | stake weight | agents | governance |
+|---|---|---|---|---|
+| 0: genesis | heroes — all decisions, all responsibility | 51%+ | 0-7 | founder fiat, stake-weighted |
+| 1: seedling | gardeners — deploy agents, train, correct | 40-50% | 7-21 | founder + first council |
+| 2: sapling | coaches — intervene on critical failures only | 25-40% | 21-70 | councils + metabolic signal |
+| 3: canopy | elders — veto on existential risks only | 10-25% | 70-147 | full tri-kernel governance |
+| 4: forest | ancestors — highest karma, proportional voice | <10% | 147 | protocol autonomous |
 
 the transition is measured, not declared. each phase triggers when:
 - phase 1: first domain has all 7 agents operational and producing useful [[cyberlinks]]
