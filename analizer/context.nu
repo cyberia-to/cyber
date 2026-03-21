@@ -14,6 +14,7 @@ def main [
   --subgraphs (-s),
   --budget (-b): int = 900,       # token budget in thousands
   --stats,                        # print ranking table only
+  --soul: string = "",            # path to preamble file (prepended before pages)
 ] {
   let token_budget = $budget * 1000
   # ~3.5 chars per token for mixed markdown+math content
@@ -246,6 +247,14 @@ def main [
   mut packed = []
   mut total_chars = 0
   mut packed_count = 0
+
+  # prepend soul (personality preamble) if provided
+  if $soul != "" and ($soul | path exists) {
+    let soul_content = (open --raw $soul | str trim)
+    $packed = ($packed | append $soul_content)
+    $total_chars = $total_chars + ($soul_content | str length)
+    print $"Soul: ($soul_content | str length) chars prepended"
+  }
 
   # always include top-level config first
   let config_files = ($ranked | where {|r| ($r.rel | str starts-with "CLAUDE") or ($r.rel | str starts-with "README") or ($r.rel | str ends-with ".toml")})
