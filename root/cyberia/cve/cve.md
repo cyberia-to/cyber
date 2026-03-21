@@ -24,7 +24,7 @@ estimated formation value: >$1M. licensed, operational, with 32 employees, 37 he
 
 | license | status | scope |
 |---|---|---|
-| KITAS (work permit) | active | founder residency and work authorization |
+| KITAS Investor | active | founder residency, investment oversight, and company supervision |
 | business license (NIB) | active | general business operations |
 | land use permit | active | 37 ha lease, [[cyber valley]] |
 | food handling | active | [[organiq]] operations |
