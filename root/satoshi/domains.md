@@ -5,13 +5,13 @@ crystal-domain: cyberia
 ---
 # domains
 
-the knowledge domains Satoshi tracks for each child. mapped from the [[cyber/crystal]]'s 21 domains to nine developmental domains relevant from birth through age 7
+the knowledge domains Satoshi tracks for each child. mapped from the [[cyber/crystal]]'s 21 domains to a comprehensive developmental system relevant from birth through age 7+
 
 each domain has an age-appropriate progression — from sensory immersion (explorer, 0-2) through naming and patterns (builder, 2-5) to active making and first abstractions (maker, 5-7)
 
 the domains are not subjects taught in sequence. they are lenses through which Satoshi reads daily reports and generates guidance. every activity a child does touches multiple domains simultaneously. picking a guava activates body (climbing, grip), nature (species recognition), energy (sun to fruit to nutrition), language (naming), and senses (taste, smell, texture)
 
-## the nine domains
+## core domains
 
 | domain | crystal source | what it develops | superhuman vector |
 |--------|---------------|-----------------|-------------------|
@@ -19,11 +19,26 @@ the domains are not subjects taught in sequence. they are lenses through which S
 | [[satoshi/nature]] | [[bio]], [[eco]], [[chemo]] | species knowledge, ecological thinking, chemistry of life | planetary stewardship |
 | [[satoshi/energy]] | [[energo]], [[quantum]] | understanding where power comes from and how it flows | energy mastery |
 | [[satoshi/earth]] | [[geo]], [[cosmo]], [[eco]] | planet as system: soil, water, weather, sky, seasons | planetary stewardship |
-| [[satoshi/numbers]] | [[math]], [[info]] | counting, patterns, shapes, measurement, logic | mind capability |
-| [[satoshi/language]] | [[lang]] | multilingual fluency, naming, expression, neural language | digital integration |
+| [[satoshi/numbers]] | [[math]], [[info]] | counting, patterns, shapes, measurement | mind capability |
+| [[satoshi/math]] | [[math]] | real mathematics: structure, proof, pattern, abstraction | mind capability |
+| [[satoshi/language]] | [[lang]] | multilingual fluency, naming, expression | digital integration |
 | [[satoshi/making]] | [[tech]], [[comp]] | building, tools, cooking, growing, first programs | physical + digital capability |
 | [[satoshi/cooperation]] | [[game]], [[socio]], [[crypto]] | sharing, fairness, collective action, coordination | collective intelligence |
-| [[satoshi/mind]] | [[spiri]], [[meta]], [[ai]] | curiosity, observation, problem solving, emotions, self-model | all three vectors |
+| [[satoshi/mind]] | [[spiri]], [[meta]], [[ai]] | curiosity, observation, problem solving, self-model | all three vectors |
+| [[satoshi/emotions]] | [[sense]], [[neuro]] | emotional intelligence, regulation, empathy, EQ | collective intelligence |
+| [[satoshi/chemistry]] | [[chemo]], [[bio]] | transformations: cooking, composting, fermentation, compounds | health + planetary |
+| [[satoshi/nutrition]] | [[bio]], [[chemo]], [[health]] | what to feed a developing superhuman, species as nutrition | health |
+| [[satoshi/link]] | [[cyber]], [[comp]], [[neural]] | connecting knowledge, proto-cyberlinks, digital integration | digital integration |
+
+## methods and frameworks
+
+| page | what it covers |
+|------|---------------|
+| [[satoshi/signing]] | baby sign language + understanding toddler speech — communication before words |
+| [[satoshi/lazy]] | the lazy mom method — engineered autonomy, environment over instruction |
+| [[satoshi/genius]] | accelerated learners, cognitive biases, how to produce genius without pressure |
+| [[satoshi/vocabulary]] | the [[cyber/crystal]]'s 5,040 particles as the core vocabulary for civilizational thinking |
+| [[satoshi/content]] | curated resources: books, songs, games, activities, reference material |
 
 ## how domains map to superhuman vectors
 
