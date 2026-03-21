@@ -112,6 +112,7 @@ Scripts:
 - `analizer/ipfs.nu` — pre-commit hook: upload media/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
 - `analizer/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
 - `analizer/concat.nu` — concatenate entire graph into single file for LLM context loading
+- `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget
 
 When adding a new script: place it in `analizer/`, accept `graph_path` as first
 arg, and update this list.
