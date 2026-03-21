@@ -60,6 +60,6 @@ the stack from primitive to superintelligence:
 
 [[cyber]] is the foundational mechanism — consensus on [[truth]] through convergence of $\pi^*$. the graph provides what no isolated system can: provenance for every claim, [[karma]] for every contributor, [[syntropy]] as the objective measure of organizational quality. superintelligence built on this substrate inherits verifiability by construction
 
-see [[cybergraph]] for the formal structure. see [[tri-kernel]] for the ranking engine. see [[syntropy]] for the information-theoretic measure. see [[path to superintelligence]] for the deployment sequence. see [[situational awareness]] for where we are
+see [[cybergraph]] for the formal structure. see [[tri-kernel]] for the probabilistic engine. see [[syntropy]] for the information-theoretic measure. see [[path to superintelligence]] for the deployment sequence. see [[situational awareness]] for where we are
 
 discover all [[concepts]]

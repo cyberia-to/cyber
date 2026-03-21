@@ -54,7 +54,7 @@ This document specifies the complete architecture:
 
 - [[nox]] — computation model
 - [[trident]] — provable programming language
-- [[tri-kernel]] — ranking engine
+- [[tri-kernel]] — probabilistic engine
 - [[cyber/bbg]] — state structure and privacy layer
 - [[cyber/proofs]] — proof system
 - [[foculus]] — consensus mechanism

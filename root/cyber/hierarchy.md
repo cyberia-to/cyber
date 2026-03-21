@@ -232,7 +232,7 @@ address space:
 | IPv6 | 2^128 = 3 × 10^38 |
 | [[cyber]] | [[Hemera]] = 2^256 ≈ 10^77 (content-addressed, [[Avogadro]] is a rounding error) |
 
-the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the ranking engine, the folding oracle, and the routing advisor. one computation serves all three purposes
+the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the probabilistic engine, the folding oracle, and the routing advisor. one computation serves all three purposes
 
 ---
 
