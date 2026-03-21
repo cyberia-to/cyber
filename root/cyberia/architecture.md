@@ -102,7 +102,15 @@ control point: deployment keys. master & joy hold the keys that deploy agents an
 
 ### the planet: [[cyber]]
 
-the protocol for planetary [[superintelligence]]. the mathematical object that outlives everyone
+the protocol for Earth's [[superintelligence]]. the mathematical object that outlives everyone
+
+three chains, three scales:
+
+| chain | body | role |
+|---|---|---|
+| [[cyber]] | Earth | the planetary [[cybergraph]] — the main chain |
+| [[bostrom]] | Moon | the bootloader — testing ground, genesis history, training wheels |
+| [[spacepussy]] | other planets | interplanetary expansion — Mars, Venus, beyond |
 
 master & joy control:
 - code repositories — they commit, review, merge
