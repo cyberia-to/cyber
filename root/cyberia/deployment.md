@@ -44,18 +44,69 @@ agents that maintain protocol code or infrastructure scripts
 
 rule: no agent merges its own PR. the runner proposes, the keeper reviews. for protocol code ([[hemera]], [[nox]], [[zheng]]), [[master]] holds veto during phases 0-2
 
-### money (treasury)
+### money (revenue, treasury, cap growth)
 
-agents that allocate resources from the treasury
+agents do not just spend. they earn, invest, price, sell, and grow the cap. the primary job is revenue generation and capital allocation, not expense management
+
+#### revenue streams
+
+| stream | who manages | agent actions |
+|---|---|---|
+| events (Burn.City, retreats) | PLAY council runners | pricing, booking management, promotion, capacity planning |
+| food (Organiq, coffee, produce) | SPACE eco-runner | harvest scheduling, processing, pricing, distribution, wholesale |
+| accommodation (glamping, nomad hub) | PLAY socio-runner | occupancy optimization, dynamic pricing, guest communication |
+| education (workshops, residencies) | WORD council runners | curriculum design, scheduling, enrollment, quality tracking |
+| token revenue ($CYB, staking) | PLAY crypto-runner | staking strategy, delegation management, liquidity provision |
+| consulting/IP licensing | WORK council bridge-out | lead qualification, proposal drafting, contract prep for founders |
+| farm program (Nandu) | LIFE bio-runner | farmer selection, plot allocation, harvest tracking, revenue share |
+
+#### revenue authorization
 
 | action | example | authorization | risk |
 |---|---|---|---|
-| expense < $100 | buy supplies, pay small service | runner autonomous | low — bounded loss |
+| set price | "glamping: $80/night peak, $50 off-peak" | runner proposes, counter validates margins | low — reversible |
+| accept booking | guest confirms and pays | runner autonomous | low — standard operation |
+| issue invoice | bill for services | runner creates, counter verifies | low |
+| receive payment | incoming transfer | counter records on-graph | zero — observation |
+| dynamic pricing | adjust based on demand/season | seer proposes, counter validates, runner applies | low |
+| new revenue stream | "start selling seedlings wholesale" | keeper + council + founder approval | high — strategic |
+| investment (deploy capital) | "buy 100 coffee seedlings for section C" | runner proposes ROI, counter validates, keeper approves | medium |
+
+#### expense authorization
+
+| action | example | authorization | risk |
+|---|---|---|---|
+| expense < $100 | supplies, small services | runner autonomous | low |
 | expense $100-$1000 | equipment, contractor day | runner + counter approval | medium |
 | expense $1000-$10000 | infrastructure, events | keeper + council vote | high |
-| expense > $10000 | land, major equipment, salaries | [[master]] and [[joy]] sign | critical |
+| expense > $10000 | land, major equipment | [[master]] and [[joy]] sign | critical |
 
-rule: every expense is a [[cyberlink]] from the treasury particle to the expense particle, with conviction = amount. auditable, append-only, on-graph
+#### capital allocation strategy
+
+the counter agents across all councils maintain a unified P&L:
+
+```
+revenue streams → treasury inflow
+treasury → operational expenses (staff, supplies, maintenance)
+treasury → growth investment (new infrastructure, new species, new events)
+treasury → protocol investment (staking, liquidity, development)
+treasury → reserve (emergency fund, min 3 months operations)
+```
+
+the seer agents project revenue and expenses 3-6 months ahead. the counter validates actuals against projections. divergence triggers council review
+
+#### cap growth
+
+the metabolic signal $M = \text{cap}^{w_c} \cdot J^{w_s} \cdot H^{w_h}$ means cap growth IS the objective. agents optimize for:
+
+- revenue growth (direct: more paying guests, higher-value products)
+- brand value (indirect: quality content on cyber.page, social presence)
+- token value (protocol: staking yield, ecosystem growth, partnerships)
+- network effects (structural: more neurons → more cyberlinks → higher syntropy → higher cap)
+
+every revenue decision is a [[cyberlink]] with conviction = economic value. auditable, append-only, on-graph. the graph IS the ledger
+
+rule: agents optimize for $\dot{M} > 0$ (metabolic growth), not for revenue alone. maximizing revenue at the cost of syntropy or happiness lowers the compound signal
 
 ### people (coordination)
 
