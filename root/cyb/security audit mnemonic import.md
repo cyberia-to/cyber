@@ -1775,7 +1775,37 @@ Added `_signingInProgress` mutex flag in `ledgerSigner.ts`:
 
 | Severity | Total | Fixed | Accepted/Inherent | Roadmap |
 |----------|-------|-------|-------------------|---------|
-| CRITICAL | 4 | 4 | 0 | 0 |
+| CRITICAL | 5 | 5 | 0 | 0 |
 | HIGH | 14 | 14 | 0 | 0 |
 | MEDIUM | 31 | 19 | 12 (noted) | 0 |
 | LOW | 47 | 18 | 26 (noted, incl. 3 dev UI) | 0 |
+
+---
+
+## Audit #27 — Ledger signing protocol mismatch (2026-03-21)
+
+Scope: Ledger device rejects ALL signing operations with "Data is invalid" (0x6984).
+
+### Root Cause
+
+`ledger-cosmos-js@2.1.8` (unmaintained, last publish 2020) does not send the HRP (bech32 prefix) in the APDU INIT chunk during signing. The Cosmos Ledger app v2.35+ (2023 firmware update) requires HRP in the INIT chunk to validate the signing context. Without it, the app's JSON parser rejects the transaction data immediately.
+
+Known issue: [cosmos/cosmos-sdk#18319](https://github.com/cosmos/cosmos-sdk/issues/18319)
+
+### Fix Applied
+
+Replaced `ledger-cosmos-js@2.1.8` with `@zondax/ledger-cosmos-js@4.x` (maintained by Zondax). Rewrote `ledgerSigner.ts` to use the new library directly, bypassing `@cosmjs/ledger-amino` entirely.
+
+| Before | After |
+|--------|-------|
+| `ledger-cosmos-js@2.1.8` via `@cosmjs/ledger-amino` | `@zondax/ledger-cosmos-js@4.x` direct |
+| `app.sign(path, message)` — no HRP | `app.sign(path, message, hrp)` — HRP included |
+| INIT chunk: 20-byte path only | INIT chunk: path + HRP (per v2.35+ protocol) |
+
+### Also fixed in this session
+
+| Fix | Commit | Issue |
+|-----|--------|-------|
+| APDU collision during signing | `caff6cbc` | Health check ping interferes with signing |
+| clearFunc flashing in Sphere | `81f2559a` | useEffect resets state on every render |
+| Ledger signing protocol | `48ab79db` | "Data is invalid" from old library |
