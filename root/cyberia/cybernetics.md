@@ -138,17 +138,18 @@ this is the asymmetry. digital agents are everywhere. agents with access to phys
 
 | resource | scale | current yield | potential |
 |---|---|---|---|
-| volcanic soil | 37 ha, 2m+ depth | supports 200+ species | 500+ species, full permaculture succession |
-| water | 1M m³/year rainfall | 200 m³ storage, gravity-fed | aquaculture, hydropower micro-turbines |
-| timber | native hardwoods, bamboo stands | construction material | modular building supply chain |
-| coffee | arabica at 800m elevation | 1 tonne/year harvest | 5+ tonnes at full maturity, $500/kg roasted |
-| cacao | shade-grown under canopy | early stage | $20-50/kg dried beans |
-| tropical fruit | avocado, jackfruit, durian, sapote, mango | 500+ kg/year | tonnes at orchard maturity |
-| spices | vanilla, cinnamon, turmeric, galangal | garden scale | export-grade quantities |
+| volcanic soil | 37 ha, 2m+ depth, cloud forest climate | supports 200+ species | 500+ species, full [[permaculture]] succession |
+| water | 1M m³/year rainfall, persistent cloud cover | 200 m³ storage, gravity-fed | aquaculture, hydropower micro-turbines |
+| fast-growing trees | bamboo (several types), [[trema]], [[albizia chinensis]], [[caliandra]], [[leucaena]], [[debregasia]], [[melastoma]], [[ficus]], tree ferns | rapid biomass | construction, biochar feedstock, living fences, biomass energy |
+| coffee | arabica at 800m cloud forest elevation | 1 tonne/year harvest | 5+ tonnes at full maturity, $500/kg roasted |
+| citrus | oranges, limes, lemons, pomelo | growing | cloud forest acidity ideal for citrus |
+| berries | strawberries, mulberries, cape gooseberry | growing | high-value fresh + processed |
+| tropical fruit | avocado, jackfruit, sapote | 500+ kg/year | tonnes at orchard maturity |
+| spices | cinnamon, turmeric, galangal, ginger | garden scale | export-grade quantities |
 | mushrooms | 50+ wild species documented | foraging | cultivation: shiitake, oyster, lion's mane |
 | honey | native stingless bees + apis cerana | small scale | 100+ hives possible |
 | medicinal plants | moringa, tulsi, lemongrass, turmeric | garden use | wellness product line |
-| biochar | wood waste → pyrolysis | experimental | carbon credits + soil amendment |
+| biochar | fast-growing tree waste → pyrolysis | experimental | carbon credits + soil amendment |
 | minerals | volcanic rock dust, zeolites | untapped | soil amendment products, construction aggregate |
 | biodiversity | 100+ bird species, 50+ mushroom species, 20+ animals | documentation | [[biome engineering]], ecotourism, research partnerships |
 | carbon | growing forest on former grassland | accumulating | verified carbon credits |
