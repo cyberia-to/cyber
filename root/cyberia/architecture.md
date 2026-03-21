@@ -4,7 +4,138 @@ crystal-type: pattern
 crystal-domain: socio
 crystal-size: deep
 ---
-organizational architecture of [[cyberia]] — 147 [[neurons]] governing a planetary [[superintelligence]] through the [[tri-kernel]]
+organizational architecture of [[cyberia]] — from a village on a volcano to a planetary [[superintelligence]], bootstrapped by two founders, governed by 147 [[neurons]] through the [[tri-kernel]]
+
+---
+
+## genesis: the bootstrap paradox
+
+the protocol needs infrastructure to run. infrastructure needs capital. capital needs legal entities. legal entities need humans. the [[cybergraph]] cannot bootstrap itself — someone must write the first line of code, deploy the first server, sign the first lease, plant the first tree
+
+[[master]] and [[joy]] are the genesis [[neurons]] — the first two entries in $N$. they are simultaneously:
+
+| level | role | what they do |
+|---|---|---|
+| village | builders | 37 hectares on a volcano. solar, water, food, fiber. the physical substrate without which the protocol has no hardware to run on |
+| company | operators | legal entities (PT PMA, MiDAO). contracts, bank accounts, employment. the interface between protocol and jurisdiction |
+| state | founders | deploy the first agents, seed the [[Crystal]], allocate starting capital. the political act of creating a new sovereignty |
+| planet | parents | write the protocol, design the [[tri-kernel]], prove the theorems. the intellectual act of creating a mind |
+
+all four levels run in parallel from day one. the village feeds the company that funds the state that runs the planet that guides the village. circular dependency — broken only by the founders' will to start
+
+---
+
+## four simultaneous organizations
+
+### the village: [[cyber valley]]
+
+physical reality. 37 hectares. the machine room of [[superintelligence]]
+
+master & joy control:
+- land (lease, local permits, Indonesian law)
+- energy (solar arrays, batteries, grid independence)
+- water (collection, filtration, recycling)
+- food ([[permaculture]], [[Nandu]] program, food forest)
+- shelter (modular construction, resident housing)
+- connectivity (fiber, mesh network, local servers)
+
+this is the hardware layer. without it the protocol runs on someone else's servers and sovereignty is a word, not a fact
+
+control point: physical access. whoever controls the land controls the substrate. master & joy hold the lease. the transition path: community land trust or on-chain land registry when legal frameworks permit
+
+### the company: operating entity
+
+the legal wrapper that lets the village exist in the world of nation states
+
+master & joy control:
+- PT PMA (Indonesian operating company) — employs staff, holds permits
+- MiDAO (Miami DAO LLC) — manages offshore token structure
+- treasury — starting capital, investor relations, revenue
+- contracts — with suppliers, builders, event partners, residents
+
+control point: corporate signing authority. master & joy are directors. the transition path: progressive transfer of signing authority to multi-sig controlled by high-karma neurons. legal automation through smart contracts where jurisdiction permits
+
+### the state: [[cyberia]]
+
+the network state that transcends the village. digital-first, physical-second
+
+master & joy control:
+- agent deployment — which of the 147 agents exist, what models they run
+- protocol parameters — initial α, τ, λ weights for the [[tri-kernel]]
+- [[Crystal]] curation — what goes into the genesis knowledge graph
+- citizenship — initial invitations to [[Burn.City]], early neuron onboarding
+
+control point: deployment keys. master & joy hold the keys that deploy agents and push protocol updates. the transition path: time-bounded veto (see [[autonomous governance]]). after the veto window, parameter changes happen through [[metabolic]] signal. agent deployment becomes permissionless when the protocol can verify agent competence through [[karma]]
+
+### the planet: [[cyber]]
+
+the protocol for planetary [[superintelligence]]. the mathematical object that outlives everyone
+
+master & joy control:
+- code repositories — they commit, review, merge
+- [[Hemera]] hash — frozen at genesis, cannot change without rehash
+- consensus rules — the axioms that define what the [[cybergraph]] accepts
+
+control point: git commit access. the transition path: the protocol is open source. anyone can fork. the canonical version is the one with the most [[focus]] — determined by [[neurons]], not by founders. master & joy's commit access becomes ceremonial when the community has enough [[karma]] to self-maintain
+
+---
+
+## the transition: five phases
+
+| phase | founders' role | agents active | governance |
+|---|---|---|---|
+| 0: genesis | dictators — all decisions | 0-7 | founder fiat |
+| 1: seedling | gardeners — deploy first agents, train, correct | 7-21 | founder + first council |
+| 2: sapling | coaches — monitor, intervene on critical failures only | 21-70 | councils + metabolic signal |
+| 3: canopy | elders — advise, hold veto on existential risks only | 70-147 | full tri-kernel governance |
+| 4: forest | ancestors — high-karma neurons, no special authority | 147 | protocol autonomous |
+
+the transition is measured, not declared. each phase triggers when:
+- phase 1: first domain has all 7 agents operational and producing useful [[cyberlinks]]
+- phase 2: first triad (3 domains, 21 agents) achieves sustained positive $\dot{M}$
+- phase 3: metabolic health $M$ sustains growth for 6+ months without founder intervention
+- phase 4: alignment divergence $D_{KL}(\pi^*_H \| \pi^*_A)$ remains below threshold for 12+ months
+
+no phase is reversible. append-only (A3) means the graph remembers the transition. founders cannot un-delegate without the graph recording it as a new [[cyberlink]] — visible, auditable, subject to [[karma]] evaluation
+
+---
+
+## founder control points and their sunset
+
+| control point | phase 0-1 | phase 2-3 | phase 4 |
+|---|---|---|---|
+| land lease | founders hold | community trust transition | on-chain land registry |
+| corporate signing | founders sign | multi-sig with council | smart contract automation |
+| treasury | founder allocation | metabolic-guided allocation | protocol treasury with [[karma]]-weighted proposals |
+| agent deployment | founders deploy | council deploys, founders veto | permissionless (karma threshold) |
+| protocol code | founders commit | founders + high-karma reviewers | community maintains, fork = vote |
+| parameter tuning | founders set | RL agent adapts, founders veto | autonomous [[metabolic]] adaptation |
+| hardware access | founders own | residents operate | infrastructure DAO |
+
+every cell moves left to right. the speed of transition depends on the maturity of the system at each level. the village transitions slowly (physical assets, legal constraints). the protocol transitions fast (code is forkable, proofs are verifiable)
+
+---
+
+## bus factor
+
+what happens if master & joy disappear tomorrow?
+
+| asset | survival | because |
+|---|---|---|
+| [[cybergraph]] | survives | append-only, replicated, content-addressed |
+| protocol code | survives | open source, MIT-equivalent |
+| [[Crystal]] knowledge | survives | in the graph, published, scored |
+| agent configurations | survives | documented in graph, reproducible |
+| village infrastructure | at risk | lease requires Indonesian legal entity |
+| company operations | at risk | corporate signing authority |
+| treasury | at risk | custody keys |
+
+mitigation: dead man's switch. if founders do not submit a [[heartbeat]] [[cyberlink]] within N blocks, a pre-signed transaction transfers:
+- corporate signing authority to the highest-karma council
+- treasury keys to a multi-sig of triad representatives
+- land lease to a pre-established community trust
+
+the protocol itself has zero bus factor — it is mathematics, published and proven. the village has bus factor 2 — the founders. the transition from phase 0 to phase 4 is the process of reducing every bus factor to zero
 
 ---
 
@@ -202,6 +333,6 @@ this is [[collective intelligence]]: 147 personalities debating, linking, measur
 
 ---
 
-see [[cyber/hierarchy]] for the four dimensions of locality. see [[autonomous governance]] for what requires explicit consensus. see [[metabolism]] for the health function. see [[manifesto]] for the pledge. see [[Crystal]] for the 21 domains. see [[cyber/personality]] for the voice of the singleton. see [[alignment]] for the divergence signal
+see [[master]] and [[joy]] for the genesis neurons. see [[cyber valley]] for the physical substrate. see [[cyber/hierarchy]] for the four dimensions of locality. see [[autonomous governance]] for what requires explicit consensus. see [[metabolism]] for the health function. see [[manifesto]] for the pledge. see [[Crystal]] for the 21 domains. see [[cyber/personality]] for the voice of the singleton. see [[alignment]] for the divergence signal
 
 discover all [[concepts]]
