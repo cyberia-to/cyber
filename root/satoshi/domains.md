@@ -47,6 +47,7 @@ the domains are not subjects taught in sequence. they are lenses through which S
 | [[satoshi/vocabulary]] | the [[cyber/crystal]]'s 5,040 particles as the core vocabulary for civilizational thinking |
 | [[satoshi/metabolism]] | three vital signs (growth, syntropy, happiness) → compound developmental health M(t) |
 | [[satoshi/media]] | all content: books, video, photo, GIF, sound, how-to, people of science |
+| [[satoshi/mama]] | psychological support, reflection journal, daily rhythm, mama-mentor attunement |
 
 ## how domains map to superhuman vectors
 
