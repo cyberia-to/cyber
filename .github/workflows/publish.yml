@@ -35,14 +35,27 @@ jobs:
             fi
           done
 
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache optica build
+        uses: actions/cache@v4
+        with:
+          path: |
+            /tmp/optica/target
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-optica-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-optica-
+
       - name: Install optica
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          cargo install --git https://github.com/cyberia-to/optica.git --locked || {
-            # Fallback: clone and build
-            git clone --depth 1 https://github.com/cyberia-to/optica.git /tmp/optica
-            cd /tmp/optica && cargo build --release
-            cp target/release/optica ~/.cargo/bin/
-          }
+          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" /tmp/optica
+          cd /tmp/optica && cargo build --release
+          sudo cp target/release/optica /usr/local/bin/
 
       - name: Cache IPFS CIDs
         uses: actions/cache@v4
