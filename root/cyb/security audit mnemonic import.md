@@ -1102,21 +1102,29 @@ Complete independent re-read of all 18 modified files against live codebase (`/U
 | `signMsgKeplr` uses `hasSignArbitrary` for wallet path | `ActionBarPortalGift.tsx:192` | PASS |
 | `onClickSignMoonCode` uses `hasSignArbitrary` for wallet path | `citizenship/index.tsx:371` | PASS |
 
-### Pre-existing CRITICAL (still open)
+### Pre-existing CRITICAL — FIXED
 
-`engine.ts:130-131` — `run()` passes `{ app: context, refId }` to `compile()`. The `context` object includes `secrets` (API keys). `getDebug()` correctly strips secrets at line 300, but the compile path does not. Any Rune script authored by the user can read `cyb::context.secrets` and exfiltrate all stored API keys.
+`engine.ts:130-131` — `run()` passed `{ app: context, refId }` to `compile()`. The `context` object included `secrets` (API keys). Any Rune script authored by the user could read `cyb::context.secrets` and exfiltrate all stored API keys.
 
-Fix required: strip `secrets` from `context` before passing to `compile()`, or sandbox secrets access in Rune runtime.
+Fix: destructure out `secrets` before passing to `compile()`, same pattern as `getDebug()`:
+
+```typescript
+const { secrets: _secrets, ...safeContext } = context;
+const scriptParams = {
+  app: safeContext,
+  refId,
+};
+```
 
 ### Final overall status
 
 | Severity | Total | Fixed | Accepted/Inherent | Roadmap |
 |----------|-------|-------|-------------------|---------|
-| CRITICAL | 2 (+1 pre-existing) | 2 | 0 (+1 scripting) | 0 |
+| CRITICAL | 3 | 3 | 0 | 0 |
 | HIGH | 12 | 10 | 2 (JS memory, TOCTOU) | 0 |
 | MEDIUM | 19 | 13 | 6 (noted) | 0 |
-| LOW | 30 | 16 | 9 (noted) | 5 (IndexedDB, backoff, secrets strip, focus trap, autoComplete unlock) |
+| LOW | 30 | 16 | 10 (noted) | 4 (IndexedDB, backoff, focus trap, autoComplete unlock) |
 
 ### Verdict
 
-CLEAN AUDIT. Zero new findings. All 42 verification checks passed. `activateWalletSigner` fix confirmed — import flow now sets `mnemonicRef` atomically with signer, enabling IBC/cross-chain signing immediately after import. Pre-existing CRITICAL (Rune VM secrets in `compile()`) remains the only open security issue — outside mnemonic import scope. Production-ready.
+CLEAN AUDIT. All 42 verification checks passed. `activateWalletSigner` fix confirmed. Rune VM secrets CRITICAL fixed — `compile()` now receives `safeContext` without secrets. Zero open CRITICAL or HIGH findings. Production-ready.
