@@ -1809,3 +1809,38 @@ Replaced `ledger-cosmos-js@2.1.8` with `@zondax/ledger-cosmos-js@4.x` (maintaine
 | APDU collision during signing | `caff6cbc` | Health check ping interferes with signing |
 | clearFunc flashing in Sphere | `81f2559a` | useEffect resets state on every render |
 | Ledger signing protocol | `48ab79db` | "Data is invalid" from old library |
+
+## Audit #28 — Ledger sign doc overflow + adaptive signing (2026-03-21)
+
+Scope: Ledger device returns "Data is invalid" (0x6984) on claim rewards with 41 validators.
+
+### Root Cause
+
+The Cosmos Ledger app has a limited JSON parser buffer. A claim rewards transaction for 41 validators produces a ~10 KB sign doc (~240 bytes per `MsgWithdrawDelegatorReward`). The on-device parser rejects the payload before the user can review it.
+
+Additionally, `@zondax/ledger-cosmos-js@4.x` always sends HRP in the INIT chunk, which is correct for firmware v2.34+ but rejected by older firmware. No version detection was performed before signing.
+
+### Fixes Applied
+
+| Fix | Commit | Detail |
+|-----|--------|--------|
+| Adaptive signing strategy | `3a8a43e2` | Detect Cosmos app version via `getVersion()` BEFORE signing. v2.34+ uses HRP; older firmware uses path-only INIT chunk. On `DataIsInvalid`, automatically retries with opposite HRP mode. |
+| Message size guard | `3a8a43e2` | Rejects sign docs over 10 KB with clear error message instead of cryptic device error |
+| Claim rewards batching | `212a22fd` | For Ledger signers, splits `withdrawAllRewards` into batches of 5 validators per transaction. Each batch waits for on-chain confirmation before sending the next (sequence must increment). Non-Ledger signers use the existing single-tx path. |
+
+### Size calculations
+
+| Validators | Sign doc size | Chunks | Fits Ledger buffer |
+|------------|-------------|--------|-------------------|
+| 1 | ~400 B | 3 | yes |
+| 5 | ~1.3 KB | 7 | yes |
+| 10 | ~2.4 KB | 11 | yes |
+| 20 | ~4.7 KB | 20 | borderline |
+| 41 | ~9.8 KB | 41 | no — caused the failure |
+
+### Verification
+
+- User confirmed claim rewards works with 41 validators after batching
+- 41 validators = 9 batches of 5, each batch ~1.2 KB, well within parser limits
+- Each batch requires Ledger confirmation (9 approvals total)
+- Sequence handling: poll `getTx` between batches to confirm on-chain before next sign
