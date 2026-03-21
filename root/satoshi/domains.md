@@ -75,6 +75,7 @@ mapped from the [[cyber/crystal]]'s 7 triads × 3 domains = 21 irreducible knowl
 | domain | crystal source | what it develops |
 |--------|---------------|-----------------|
 | [[satoshi/cooperation]] | [[game]], [[socio]], [[crypto]] | sharing, fairness, collective action |
+| [[satoshi/time]] | [[time]], [[heat]], [[cosmo]] | cycles, rhythm, moon phases, seasons, patience, deep time |
 
 ### the capstone
 
