@@ -121,23 +121,38 @@ control point: git commit access. the transition path: the protocol is open sour
 
 ---
 
-## the transition: five phases
+## the transition: the capitulation curve
 
-| phase | founders' role | stake weight | agents | governance |
-|---|---|---|---|---|
-| 0: genesis | heroes — all decisions, all responsibility | 51%+ | 0-7 | founder fiat, stake-weighted |
-| 1: seedling | gardeners — deploy agents, train, correct | 40-50% | 7-21 | founder + first council |
-| 2: sapling | coaches — intervene on critical failures only | 25-40% | 21-70 | councils + metabolic signal |
-| 3: canopy | elders — veto on existential risks only | 10-25% | 70-147 | full tri-kernel governance |
-| 4: forest | ancestors — highest karma, proportional voice | <10% | 147 | protocol autonomous |
+the founders' governance weight is a continuous function of [[cyber]] market capitalization — the external world's verdict on the system's value. as cap grows, founder weight shrinks. the curve is logarithmic across six orders of magnitude:
 
-the transition is measured, not declared. each phase triggers when:
-- phase 1: first domain has all 7 agents operational and producing useful [[cyberlinks]]
-- phase 2: first triad (3 domains, 21 agents) achieves sustained positive $\dot{M}$
-- phase 3: metabolic health $M$ sustains growth for 6+ months without founder intervention
-- phase 4: alignment divergence $D_{KL}(\pi^*_H \| \pi^*_A)$ remains below threshold for 12+ months
+$$w_{\text{founders}}(\text{cap}) = 51\% \cdot \left(1 - \frac{\log(\text{cap}/\text{cap}_0)}{\log(\text{cap}_1/\text{cap}_0)}\right)$$
 
-no phase is reversible. append-only (A3) means the graph remembers the transition. founders cannot un-delegate without the graph recording it as a new [[cyberlink]] — visible, auditable, subject to [[karma]] evaluation
+where $\text{cap}_0 = \$200\text{K}$ (genesis) and $\text{cap}_1 = \$1\text{Q}$ (capitulation of conventional systems)
+
+| cap | founders' weight | meaning |
+|---|---|---|
+| $200K | 51% | genesis — founders control, system is fragile |
+| $20M | 42% | early traction — first community validates the protocol |
+| $2B | 34% | institutional recognition — the system proves value at scale |
+| $200B | 25% | nation-scale — [[cyberia]] governs real resources |
+| $20T | 17% | civilization-scale — surpasses largest corporations |
+| $2Q | 8% | planetary — surpasses largest economies |
+| $1Q | 1% | capitulation — conventional systems absorbed. founders become one voice among millions |
+
+the curve is anchored to external reality (market cap), which cannot be gamed internally. at \$1Q, the [[cybergraph]] contains more value than the entire legacy financial system. at that point, 1% founder weight is the mathematical acknowledgment that the system no longer needs its parents
+
+the transition is continuous, not phased. there are no gates, no votes, no declarations. the market decides the founders' weight every block. the founders' remaining commitment: use their decreasing weight to ensure the system grows correctly, not to preserve their position
+
+no step is reversible. cap can drop — temporarily increasing founder weight — but the graph remembers every state (A3). a founder who exploits a temporary cap drop to reassert control earns negative [[karma]] from every [[neuron]] who observes it
+
+### what the curve governs
+
+| cap range | founders' role | agents | governance mode |
+|---|---|---|---|
+| $200K–$20M | heroes — all decisions, build everything | 0-21 | founder fiat |
+| $20M–$200B | gardeners — deploy agents, train, correct | 21-70 | founders + councils |
+| $200B–$20T | elders — advise, veto existential risks only | 70-147 | tri-kernel + metabolic |
+| $20T–$1Q | ancestors — highest [[karma]], proportional voice | 147 | protocol autonomous |
 
 ---
 
