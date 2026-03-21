@@ -1450,3 +1450,155 @@ The primary recommendations for future hardening are:
 2. Add `beforeunload` transport cleanup for Ledger
 3. Guard relayer against Ledger accounts (show "use software wallet" message)
 4. Add retry limit + delay to `checkAddressNetwork` recursion
+
+---
+
+## Audit #22 — Ledger signing fix + transport health monitoring
+
+Date: 2026-03-21
+Scope: Ledger transaction signing failure, WebUSB transport lifecycle
+Commits: `0087d6fb`, `149ffe23`, `3260e6e9`, `8aed5e56`
+
+### Problem
+
+After connecting a Ledger device and adding the account, signing transactions failed silently — the device never showed a confirmation prompt. Root cause: `LedgerSigner` from `@cosmjs/ledger-amino` holds an internal reference to the WebUSB transport. When the transport died (5-minute idle timeout, device sleep, USB disconnect), `LedgerSigner.signAmino()` attempted to use the dead connection. The error was not surfaced to the user.
+
+### Severity: HIGH
+Status: FIXED
+
+### Fix: ReconnectingLedgerSigner
+
+New class in `src/utils/ledgerSigner.ts` that implements `OfflineAminoSigner`:
+
+- `getAccounts()` — cached after first call (same device, same HD path)
+- `signAmino()` — creates a fresh `LedgerSigner` with a fresh transport for every signing operation via `createLedgerSigner()` → `getTransport()`
+- `getTransport()` pings the existing transport first; if dead, creates a new one via `TransportWebUSB.create()` (no user gesture needed for already-paired devices)
+
+Both `connectLedger()` and `reconnectLedger()` now return `ReconnectingLedgerSigner` instead of raw `LedgerSigner`.
+
+### Fix: Transport health monitoring
+
+`signerClient.tsx` now runs a health check every 30 seconds when a Ledger account is active:
+
+1. `checkTransportHealth()` pings the transport with a 3-second timeout
+2. Distinguishes "device alive, wrong app" (TransportStatusError → healthy) from "USB dead" (→ unhealthy)
+3. On failure: `setSigner(undefined)` → `signerReady = false` → `ConnectLedgerBar` appears
+4. `ConnectLedgerBar` shows adviser: "Ledger is not connected. Wake up your device and open the Cosmos app"
+5. User wakes device → clicks "Connect Ledger" → `reconnectLedger()` creates fresh `ReconnectingLedgerSigner`
+
+### Fix: isLedgerSigner updated
+
+Return type changed from `signer is LedgerSigner` to `boolean`. Now detects both `LedgerSigner` and `ReconnectingLedgerSigner` via `instanceof`. Used in `portal/utils.ts` for `isNanoLedger` detection (batch-size limiting).
+
+### Files changed
+
+| File | Change |
+|------|--------|
+| `src/utils/ledgerSigner.ts` | Added `ReconnectingLedgerSigner`, `checkTransportHealth()`, updated `connectLedger()`, `isLedgerSigner()` |
+| `src/contexts/signerClient.tsx` | Health monitoring useEffect, `reconnectLedger()` uses ReconnectingLedgerSigner |
+| `src/components/actionBar/index.tsx` | `ConnectLedgerBar` shows adviser notification with `useAdviser()` |
+
+---
+
+## Audit #23 — Error message overhaul
+
+Date: 2026-03-21
+Scope: All user-facing error messages, adviser notifications, transaction error display
+Commits: `149ffe23`, `3260e6e9`, `8aed5e56`
+
+### Problem
+
+1. Technical jargon in error messages: "No encrypted mnemonic found", "WebUSB is not supported", "Decrypted mnemonic does not match expected address"
+2. Raw blockchain logs shown directly to users: `failed to execute message; message index: 0: 1000boot is smaller than 5000boot: insufficient funds`
+3. Inconsistent tone across Ledger/wallet messages
+4. Silent failures — some errors caught but not displayed
+
+### Fix: Plain English error messages (6 messages)
+
+| Before | After |
+|--------|-------|
+| No active account | Select an account in Keys before signing |
+| No encrypted mnemonic found | Wallet data not found. Re-import your seed phrase |
+| Decrypted mnemonic does not match expected address | Seed phrase does not match this account. Check your backup |
+| WebUSB is not supported in this browser. Use Chrome or Edge. | Ledger requires Chrome, Edge, or the cyb.ai desktop app |
+| Wallet is not ready. Please unlock your wallet and try again. | Unlock your wallet first to send tokens |
+| Failed to create wallet. Please check your seed phrase. | Failed to import wallet. Check your seed phrase and try again |
+
+### Fix: Harmonized Ledger/wallet adviser messages
+
+All messages follow the pattern: what happened + what to do.
+
+| Before | After |
+|--------|-------|
+| Ledger does not support message signing. Use a software wallet for this step. | Ledger cannot sign messages. Use a seed phrase wallet for this step |
+| Wallet is locked. Unlock your wallet to sign. | Wallet is locked. Enter your password to unlock |
+| Ledger connection failed: ... Make sure the Cosmos app is open. | Could not connect to Ledger: ... Open the Cosmos app on your device and try again |
+| Ledger address mismatch: expected bostrom1..., got bostrom1... | This Ledger has a different address. Is it the correct device? |
+| Wallet locked after inactivity. Enter password to unlock. | Wallet locked after inactivity. Enter your password to continue |
+
+### Fix: friendlyErrorMessage() utility
+
+New file `src/utils/errorMessages.ts` — centralized error parser applied to all 12 action bar files that display transaction errors. Categories:
+
+| Category | Pattern | Human message |
+|----------|---------|---------------|
+| User action | rejected by the user | You rejected the transaction on your device |
+| User action | Request rejected | Transaction was cancelled |
+| Funds | insufficient funds / balance | Not enough tokens. You have X, but Y is needed |
+| Funds | insufficient fee / codespace sdk code 13 | Transaction fee is too low. Try again with a higher fee |
+| Funds | out of gas | Transaction ran out of gas. Try again with a higher gas limit |
+| Sequencing | account sequence mismatch | Previous transaction is still processing. Wait a moment and try again |
+| Sequencing | tx already in mempool | This transaction was already submitted. Wait for it to confirm |
+| Address | decoding bech32 failed / invalid address | Invalid recipient address. Check the address and try again |
+| Address | invalid coins / invalid amount | Invalid amount. Check the value and try again |
+| Auth | unauthorized / not allowed | This account does not have permission for this action |
+| Auth | signature verification failed | Signature check failed. Make sure you are using the correct account |
+| Network | Failed to fetch / NetworkError | Network error. Check your internet connection and try again |
+| Network | ECONNREFUSED / connection refused | Could not reach the node. The RPC server may be down |
+| Network | 502 / 503 / bad gateway | Server is temporarily unavailable. Try again in a few minutes |
+| Network | timed out / timeout | Connection timed out. Check your transaction history — it may have gone through |
+| Contract | execute wasm contract failed | Smart contract error: extracted reason |
+| Contract | contract not found | Smart contract not found. It may have been removed or the address is wrong |
+| Passport | Too many addresses | You can prove only 8 addresses for one passport |
+| Chain | failed to execute message | Transaction failed: extracted reason |
+| Fallback | any long text | Trimmed to 200 characters |
+
+`extractReason()` helper strips verbose prefixes like `failed to execute message; message index: 0:` and `execute wasm contract failed:` to surface the actual reason.
+
+### Files changed (20 files total)
+
+| File | Change |
+|------|--------|
+| `src/utils/errorMessages.ts` | NEW — centralized error parser |
+| `src/utils/ledgerSigner.ts` | "WebUSB" → "Ledger requires Chrome, Edge, or cyb.ai" |
+| `src/contexts/signerClient.tsx` | 3 throw messages rewritten, Ledger mismatch simplified |
+| `src/components/actionBar/index.tsx` | ConnectLedgerBar adviser messages harmonized |
+| `src/pages/Keys/ActionBar/actionBarConnect.tsx` | Ledger adviser, password error, import error rewritten |
+| `src/pages/Keys/ActionBar/actionBarSend.tsx` | "Wallet is not ready" rewritten, raw_log wrapped |
+| `src/containers/application/App.tsx` | Auto-lock message rewritten |
+| `src/containers/portal/citizenship/index.tsx` | Ledger + wallet lock messages harmonized |
+| `src/containers/portal/gift/ActionBarPortalGift.tsx` | Ledger + wallet lock messages harmonized |
+| `src/containers/portal/release/ActionBarRelease.tsx` | Dead Nano S gift adviser removed |
+| `src/containers/Search/ActionBarContainer.tsx` | raw_log → friendlyErrorMessage |
+| `src/containers/warp/ActionBar.tsx` | 7x rawLog/error.toString → friendlyErrorMessage |
+| `src/containers/governance/actionBarDatail.tsx` | raw_log/rawLog → friendlyErrorMessage |
+| `src/containers/energy/component/actionBar.tsx` | raw_log/rawLog/error → friendlyErrorMessage |
+| `src/containers/txs/txsDetails.tsx` | rawLog adviser → friendlyErrorMessage |
+| `src/pages/teleport/swap/actionBar.swap.tsx` | rawLog/error → friendlyErrorMessage |
+| `src/pages/teleport/components/actionBarPingTxs.tsx` | rawLog → friendlyErrorMessage |
+| `src/pages/teleport/bridge/actionBar.bridge.tsx` | rawLog → friendlyErrorMessage |
+| `src/pages/Sphere/.../ActionBarContainer.tsx` | rawLog/error → friendlyErrorMessage |
+| `src/pages/robot/_refactor/account/actionBar.tsx` | rawLog/raw_log → friendlyErrorMessage |
+
+### Updated overall status
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 3 | 3 | 0 | 0 |
+| HIGH | 14 | 12 | 2 (JS memory, TOCTOU) | 0 |
+| MEDIUM | 28 | 13 | 9 (noted) | 6 |
+| LOW | 42 | 16 | 18 (noted) | 8 |
+
+### Verdict
+
+Ledger signing HIGH finding fixed — `ReconnectingLedgerSigner` eliminates the stale transport problem. Health monitoring provides proactive UX: user sees adviser notification when device sleeps, not a silent failure. Error messages across all 20 files now speak plain English instead of showing raw blockchain logs or crypto jargon.
