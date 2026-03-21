@@ -5,87 +5,131 @@ crystal-domain: cyberia
 ---
 # domains
 
-the knowledge domains Satoshi tracks for each child. mapped from the [[cyber/crystal]]'s 21 domains to a comprehensive developmental system relevant from birth through age 7+
+the complete architecture of the Satoshi mentor system. three layers: the agent (who Satoshi is and who she serves), the science (what to teach — [[cybics]] and its 20 child domains), and the method (how to teach — [[will]] and its tools)
 
-each domain has an age-appropriate progression — from sensory immersion (explorer, 0-2) through naming and patterns (builder, 2-5) to active making and first abstractions (maker, 5-7)
+## the agent
 
-the domains are not subjects taught in sequence. they are lenses through which Satoshi reads daily reports and generates guidance. every activity a child does touches multiple domains simultaneously. picking a guava activates body (climbing, grip), nature (species recognition), energy (sun to fruit to nutrition), language (naming), and senses (taste, smell, texture)
+| page | role |
+|------|------|
+| [[satoshi/mentor]] | who Satoshi is — AI agent, interfaces, principles |
+| [[satoshi/mama]] | who she supports — psychological safety, reflection journal, daily rhythm, attunement |
+| [[satoshi/metabolism]] | how she measures — three vital signs (growth, syntropy, happiness) → compound M(t) |
+| [[satoshi/media]] | what content she uses — books, video, photo, GIF, sound, how-to, people of science |
 
-## core domains
+## the science: [[cybics]]
 
-| domain | crystal source | what it develops | superhuman vector |
-|--------|---------------|-----------------|-------------------|
-| [[satoshi/body]] | [[neuro]], [[sense]], [[bio]] | movement, strength, senses, health | physical capability |
-| [[satoshi/nature]] | [[bio]], [[eco]], [[chemo]] | species knowledge, ecological thinking, chemistry of life | planetary stewardship |
-| [[satoshi/energy]] | [[energo]], [[quantum]] | understanding where power comes from and how it flows | energy mastery |
-| [[satoshi/earth]] | [[geo]], [[cosmo]], [[eco]] | planet as system: soil, water, weather, sky, seasons | planetary stewardship |
-| [[satoshi/numbers]] | [[math]], [[info]] | counting, patterns, shapes, measurement | mind capability |
-| [[satoshi/math]] | [[math]] | real mathematics: structure, proof, pattern, abstraction | mind capability |
-| [[satoshi/language]] | [[lang]] | multilingual fluency, naming, expression | digital integration |
-| [[satoshi/making]] | [[tech]], [[comp]] | building, tools, cooking, growing, first programs | physical + digital capability |
-| [[satoshi/cooperation]] | [[game]], [[socio]], [[crypto]] | sharing, fairness, collective action, coordination | collective intelligence |
-| [[satoshi/mind]] | [[spiri]], [[meta]], [[ai]] | curiosity, observation, problem solving, self-model | all three vectors |
-| [[satoshi/emotions]] | [[sense]], [[neuro]] | emotional intelligence, regulation, empathy, EQ | collective intelligence |
-| [[satoshi/chemistry]] | [[chemo]], [[bio]] | transformations: cooking, composting, fermentation, compounds | health + planetary |
-| [[satoshi/nutrition]] | [[bio]], [[chemo]], [[health]] | what to feed a developing superhuman, species as nutrition | health |
-| [[satoshi/physics]] | [[quantum]], [[energo]] | forces, motion, gravity, waves, sound, magnetism, electricity | physical capability |
-| [[satoshi/atoms]] | [[quantum]], [[chemo]] | atomic structure, elements, nuclear, electricity, semiconductors | energy mastery |
-| [[satoshi/light]] | [[quantum]], [[info]] | electromagnetic spectrum, optics, color, solar energy, spectroscopy | energy mastery |
-| [[satoshi/space]] | [[cosmo]], [[geo]] | stars, planets, rockets, orbits, astronautics, Kardashev scale | planetary + beyond |
-| [[satoshi/computing]] | [[comp]], [[ai]], [[cyber]] | algorithms, logic, programming, robotics, sensors, automation | digital integration |
-| [[satoshi/link]] | [[cyber]], [[comp]], [[neural]] | connecting knowledge, proto-cyberlinks, digital integration | digital integration |
-| [[satoshi/cybics]] | [[cybics]] | the mother science: three operators everywhere, proof by simulation, 21 domains, universal isomorphisms | all vectors unified |
+[[cybics]] is the mother science — three operators ([[diffusion]], [[springs]], [[heat]]) run everything on every substrate. the 20 child domains below are cybics viewed through 20 lenses. the child absorbs cybics through the domains. [[satoshi/cybics]] is the capstone that names the pattern connecting all of them
 
-## methods and frameworks
+mapped from the [[cyber/crystal]]'s 7 triads × 3 domains = 21 irreducible knowledge domains
 
-| page | what it covers |
-|------|---------------|
-| [[satoshi/signing]] | baby sign language + understanding toddler speech — communication before words |
-| [[satoshi/will]] | the inner drive: autonomy, freedom, trust, self-driven — the four faces of will |
+### FORM — what are the rules?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/numbers]] | [[math]], [[info]] | counting, patterns, shapes, measurement |
+| [[satoshi/math]] | [[math]] | structure, proof, pattern, abstraction |
+| [[satoshi/computing]] | [[comp]], [[ai]], [[cyber]] | algorithms, logic, programming, robotics, sensors |
+
+### MASS — what is it made of?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/physics]] | [[quantum]], [[energo]] | forces, motion, gravity, waves, magnetism, electricity |
+| [[satoshi/atoms]] | [[quantum]], [[chemo]] | elements, nuclear, semiconductors, periodic table |
+| [[satoshi/chemistry]] | [[chemo]], [[bio]] | cooking, composting, fermentation, compounds |
+
+### SPACE — where does it happen?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/space]] | [[cosmo]], [[geo]] | stars, planets, rockets, orbits, Kardashev scale |
+| [[satoshi/earth]] | [[geo]], [[cosmo]], [[eco]] | soil, water, weather, sky, volcano, seasons |
+| [[satoshi/nature]] | [[bio]], [[eco]], [[chemo]] | species knowledge, ecological thinking |
+
+### LIFE — who is alive?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/body]] | [[neuro]], [[sense]], [[bio]] | movement, strength, senses, health |
+| [[satoshi/mind]] | [[spiri]], [[meta]], [[ai]] | curiosity, observation, problem solving, self-model |
+| [[satoshi/emotions]] | [[sense]], [[neuro]] | emotional intelligence, regulation, empathy |
+
+### WORD — what does it mean?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/language]] | [[lang]] | trilingual fluency, naming, expression |
+| [[satoshi/nutrition]] | [[bio]], [[chemo]], [[health]] | food as medicine, species as nutrition |
+| [[satoshi/energy]] | [[energo]], [[quantum]] | where power comes from, how it flows |
+
+### WORK — how is it made?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/making]] | [[tech]], [[comp]] | building, tools, cooking, growing |
+| [[satoshi/link]] | [[cyber]], [[comp]], [[neural]] | connecting knowledge, proto-cyberlinks, digital integration |
+| [[satoshi/cybics]] | [[cybics]] | the mother science: three operators, 21 domains, universal isomorphisms |
+
+### PLAY — how do we coordinate?
+
+| domain | crystal source | what it develops |
+|--------|---------------|-----------------|
+| [[satoshi/cooperation]] | [[game]], [[socio]], [[crypto]] | sharing, fairness, collective action |
+
+### the capstone
+
+[[satoshi/cybics]] — the 20th domain that teaches the child all other 19 are the same three operators on different substrates. five axioms. one grammar. three operators. proof by simulation
+
+## the method: [[will]]
+
+[[will]] is the inner drive — the child's capacity to direct her own learning. the method does not teach. it creates conditions for will to emerge, then steps back
+
+| page | role |
+|------|------|
+| [[satoshi/will]] | the four subdomains: [[autonomy]] ↔ [[sovereignty]], [[freedom]] ↔ [[diffusion]], [[trust]] ↔ [[honest majority assumption]], [[self-driven]] ↔ [[costly signal]] |
 | [[satoshi/conditions]] | seven conditions + the interactive loop that installs the Type I civilization OS |
+| [[satoshi/signing]] | baby sign language + understanding toddler speech — communication before words |
 | [[satoshi/genius]] | accelerated learners, cognitive biases, how to produce genius without pressure |
 | [[satoshi/vocabulary]] | the [[cyber/crystal]]'s 5,040 particles as the core vocabulary for civilizational thinking |
-| [[satoshi/metabolism]] | three vital signs (growth, syntropy, happiness) → compound developmental health M(t) |
-| [[satoshi/media]] | all content: books, video, photo, GIF, sound, how-to, people of science |
-| [[satoshi/mama]] | psychological support, reflection journal, daily rhythm, mama-mentor attunement |
 
-## how domains map to superhuman vectors
+## how domains map to [[superhuman]] vectors
 
 ### health to its absolute conclusion
 
-primary: [[satoshi/body]] (nutrition, sleep, immunity, movement), [[satoshi/nature]] (medicinal plants, clean food, environmental health)
+primary: [[satoshi/body]], [[satoshi/nutrition]], [[satoshi/nature]]
 
-the foundation. a child who eats food she grew from soil she composted, who sleeps in rhythm with the sun, who runs barefoot on volcanic earth — her body is already on the superhuman trajectory. [[cyber valley]]'s 500+ [[species]] provide the raw material: [[moringa]] for nutrition, [[curcuma]] for immunity, [[rosemary]] for cognition
+the child eats food she grew from soil she composted, sleeps in rhythm with the sun, runs barefoot on volcanic earth. [[cyber valley]]'s 500+ [[species]] provide the raw material
 
 ### physical capability in any environment
 
-primary: [[satoshi/body]] (motor development, endurance, adaptation), [[satoshi/earth]] (understanding terrain, weather, water), [[satoshi/making]] (building shelter, tools, solving physical problems)
+primary: [[satoshi/body]], [[satoshi/earth]], [[satoshi/making]], [[satoshi/physics]]
 
-a child who climbs trees at 2, swims at 3, builds structures at 5, navigates the forest alone at 7 — her body adapts to the environment rather than requiring the environment to adapt to her. this is the biological foundation of [[superhuman]] capability
+climbs trees at 2, swims at 3, builds structures at 5, navigates the forest alone at 7. the body adapts to the environment
 
-### digital integration with the cybergraph
+### digital integration with the [[cybergraph]]
 
-primary: [[satoshi/language]] (naming as the bridge between world and graph), [[satoshi/numbers]] (patterns as the language of computation), [[satoshi/mind]] (observation as the source of [[cyberlinks]])
+primary: [[satoshi/language]], [[satoshi/link]], [[satoshi/computing]], [[satoshi/mind]]
 
-digital integration starts without screens. a child who names every species she encounters is building a personal [[knowledge graph]] in her own neural network. when she later encounters the [[cybergraph]], the mapping is natural: the species she already knows become [[particles]], the relationships she already understands become [[cyberlinks]]. digital integration is not learning to use a computer — it is learning to think in connections
+naming everything is building a personal [[knowledge graph]]. when she later encounters the [[cybergraph]], the mapping is natural
 
 ### Type I civilization: energy mastery + collective intelligence
 
-primary: [[satoshi/energy]] (understanding planetary energy flows), [[satoshi/cooperation]] (coordination without central control), [[satoshi/earth]] (planetary thinking)
+primary: [[satoshi/energy]], [[satoshi/cooperation]], [[satoshi/earth]], [[satoshi/cybics]]
 
-a [[Kardashev scale]] Type I civilization harnesses its planet's total energy output. this begins with understanding that the sun powers everything: [[photosynthesis]] converts light to sugar, sugar powers muscles, muscles build solar panels, panels power computation, computation produces [[knowledge]], knowledge improves photosynthesis. the loop is the lesson. [[cooperation]] is how the loop scales beyond the individual
+the sun powers everything: [[photosynthesis]] → sugar → muscles → solar panels → computation → [[knowledge]] → better photosynthesis. the loop is the lesson. [[cooperation]] is how the loop scales
 
 ## domain interactions
 
-no domain stands alone. Satoshi tracks cross-domain moments — when a child's activity bridges multiple domains simultaneously:
+no domain stands alone. Satoshi tracks cross-domain density — how many domains a single activity touches:
 
-- growing food: nature + earth + energy + body + cooperation
-- building with bamboo: making + numbers + body + nature
-- naming a new bird: language + nature + mind + senses
-- sharing harvest: cooperation + nature + body + language
-- asking "why does rain fall?": earth + energy + mind + language
-- counting seeds before planting: numbers + nature + making
+- growing food: nature + earth + energy + body + cooperation + chemistry
+- building with bamboo: making + numbers + body + nature + physics
+- naming a new bird: language + nature + mind + cybics (pattern recognition)
+- sharing harvest: cooperation + nature + body + language + nutrition
+- asking "why does rain fall?": earth + energy + physics + mind + language
+- counting spirals on a pineapple: numbers + math + nature + cybics (fibonacci)
+- building a solar circuit: computing + physics + energy + making + atoms + light
 
-cross-domain density is Satoshi's primary signal for developmental richness. a day with high cross-domain density — many activities touching many domains — is a day of deep learning. a day confined to one domain may indicate the child needs redirection or the environment needs enrichment
+high cross-domain density = deep learning. low density = needs environmental enrichment
 
-see [[satoshi/mentor]] for the full system. see [[superhuman]] for the target. see [[cyber/crystal]] for the 21-domain source
+see [[satoshi/mentor]] for the full system. see [[superhuman]] for the target. see [[cyber/crystal]] for the 21-domain source. see [[cybics]] for the mother science
