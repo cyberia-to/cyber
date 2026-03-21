@@ -28,6 +28,11 @@ the domains are not subjects taught in sequence. they are lenses through which S
 | [[satoshi/emotions]] | [[sense]], [[neuro]] | emotional intelligence, regulation, empathy, EQ | collective intelligence |
 | [[satoshi/chemistry]] | [[chemo]], [[bio]] | transformations: cooking, composting, fermentation, compounds | health + planetary |
 | [[satoshi/nutrition]] | [[bio]], [[chemo]], [[health]] | what to feed a developing superhuman, species as nutrition | health |
+| [[satoshi/physics]] | [[quantum]], [[energo]] | forces, motion, gravity, waves, sound, magnetism, electricity | physical capability |
+| [[satoshi/atoms]] | [[quantum]], [[chemo]] | atomic structure, elements, nuclear, electricity, semiconductors | energy mastery |
+| [[satoshi/light]] | [[quantum]], [[info]] | electromagnetic spectrum, optics, color, solar energy, spectroscopy | energy mastery |
+| [[satoshi/space]] | [[cosmo]], [[geo]] | stars, planets, rockets, orbits, astronautics, Kardashev scale | planetary + beyond |
+| [[satoshi/computing]] | [[comp]], [[ai]], [[cyber]] | algorithms, logic, programming, robotics, sensors, automation | digital integration |
 | [[satoshi/link]] | [[cyber]], [[comp]], [[neural]] | connecting knowledge, proto-cyberlinks, digital integration | digital integration |
 
 ## methods and frameworks
