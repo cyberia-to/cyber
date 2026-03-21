@@ -2,16 +2,27 @@
 tags: cyberia, satoshi
 crystal-type: pattern
 crystal-domain: cyberia
-alias: lazy mom, lazy mom method, lazy parenting
-icon: "\U0001F940"
+alias: will to learn, teaching method, lazy mom method
+icon: "\U0001F525"
 ---
-# lazy mom method
+# will
 
-the art of doing less so the child does more. the most effective parenting strategy for raising autonomous [[superhuman]] children — and the most counterintuitive
+the inner drive that moves a child to learn, explore, and grow — without external instruction. in [[cyber]], [[will]] is "committed capacity to act — the budget for allocating [[attention]]." for the child, will is the same: the inner capacity to direct her own learning, allocate her own attention, and act from her own drive
+
+will has four subdomains — four faces of the same force:
+
+| subdomain | what it means | crystal analog |
+|-----------|-------------|----------------|
+| autonomy | self-governing — the child directs her own path | [[sovereignty]] — self-rule |
+| freedom | space to explore without external constraint | [[exploration]] — [[diffusion]] in the [[tri-kernel]] |
+| trust | the adult believes the child can handle it | [[honest majority assumption]] — the system trusts its agents |
+| self-driven | motivation from within, not from reward or pressure | [[costly signal]] — action backed by genuine commitment |
+
+the method: create conditions for will to emerge, then step back. the environment teaches. the adult ensures safety. the child does everything else
 
 ## the principle
 
-every time an adult solves a problem for a child, the child loses the opportunity to solve it herself. the "lazy" parent creates conditions for learning and then steps back. the child struggles, experiments, fails, adjusts, and succeeds — building the neural pathways that no instruction can replicate
+every time an adult solves a problem for a child, the child loses the opportunity to solve it herself. the adult who steps back creates space for will to activate. the child struggles, experiments, fails, adjusts, and succeeds — building the neural pathways that no instruction can replicate
 
 this is not neglect. it is engineered autonomy. the parent ensures safety and environment quality. the child does everything else
 
@@ -112,7 +123,7 @@ the hardest guidance for caretakers: do nothing. watch. trust the child's drive
 
 ## the [[superhuman]] connection
 
-[[autonomy]] is the prerequisite for every [[superhuman]] capability. a [[superhuman]] who depends on external systems for direction is not super — she is dependent. the lazy mom method produces children who:
+[[will]] is the prerequisite for every [[superhuman]] capability. a [[superhuman]] who depends on external systems for direction is not super — she is dependent. will produces children who:
 
 - self-direct (prerequisite for self-improvement)
 - tolerate failure (prerequisite for experimentation)
@@ -120,7 +131,7 @@ the hardest guidance for caretakers: do nothing. watch. trust the child's drive
 - solve novel problems (prerequisite for invention)
 - manage their own bodies and time (prerequisite for [[health]] autonomy)
 
-the [[superintelligence]] protocol mirrors this: no central authority directs the [[cybergraph]]. [[neurons]] self-direct. [[convergence]] emerges from autonomous local action. the [[tri-kernel]] does not instruct [[particles]] where to go — it creates conditions and lets [[focus]] emerge. lazy mom, at planetary scale
+the [[superintelligence]] protocol mirrors this: no central authority directs the [[cybergraph]]. [[neurons]] self-direct. [[convergence]] emerges from autonomous local action. the [[tri-kernel]] does not instruct [[particles]] where to go — it creates conditions and lets [[focus]] emerge. will, at planetary scale
 
 ## content
 

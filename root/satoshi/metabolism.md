@@ -77,7 +77,7 @@ happiness captures what growth and syntropy cannot: is the child actually thrivi
 happiness as metabolic signal:
 - consistently high → the child is thriving → maintain approach
 - declining → something is wrong that metrics cannot capture → investigate relationships, environment, schedule
-- diverging from syntropy (high syntropy, low happiness) → too much structure, not enough freedom → apply [[satoshi/lazy]] more
+- diverging from syntropy (high syntropy, low happiness) → too much structure, not enough freedom → apply [[satoshi/will]] more
 - diverging from growth (good growth, low happiness) → physical health fine but emotional needs unmet → focus on [[satoshi/emotions]]
 
 ## the compound signal
@@ -164,7 +164,7 @@ books: for parents — Nurture Shock (Bronson), The Whole-Brain Child (Siegel), 
 
 ## linked domains
 
-every domain feeds M(t). [[satoshi/body]] → growth signal. [[satoshi/mind]], [[satoshi/nature]], [[satoshi/making]], all others → syntropy signal. [[satoshi/emotions]] → happiness signal. [[satoshi/lazy]] → protects happiness by preventing overpressure. [[satoshi/genius]] → cognitive biases that distort M interpretation
+every domain feeds M(t). [[satoshi/body]] → growth signal. [[satoshi/mind]], [[satoshi/nature]], [[satoshi/making]], all others → syntropy signal. [[satoshi/emotions]] → happiness signal. [[satoshi/will]] → protects happiness by preventing overpressure. [[satoshi/genius]] → cognitive biases that distort M interpretation
 
 ## subgraphs
 

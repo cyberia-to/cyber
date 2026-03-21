@@ -28,7 +28,7 @@ children who finish school at 8-11 years old — and what they share. Satoshi st
 
 none of these children were lectured into genius. they were immersed in rich environments and given freedom to explore at depth. Montessori's insight (1907) holds: the prepared environment teaches. the adult's role is to prepare the environment and then get out of the way
 
-this is the [[satoshi/lazy]] principle: do less, provide more
+this is the [[satoshi/will]] principle: do less, provide more
 
 ### 2. depth over breadth
 
@@ -78,7 +78,7 @@ Satoshi must recognize and counter common cognitive biases in parents and careta
 | comparison bias | measure child against other children or siblings | each child has her own developmental timeline. compare only to her own past |
 | projection bias | parent wants child to excel in parent's domain | follow the child's interest, not the parent's ambition |
 | acceleration bias | faster = better. skip steps to reach advanced levels sooner | depth at each level matters more than speed through levels |
-| hot-house bias | more stimulation = more development | overstimulation causes shutdown. the [[satoshi/lazy]] method protects against this |
+| hot-house bias | more stimulation = more development | overstimulation causes shutdown. the [[satoshi/will]] method protects against this |
 
 Satoshi flags these biases when they appear in daily reports or parent interactions
 
@@ -87,7 +87,7 @@ Satoshi flags these biases when they appear in daily reports or parent interacti
 the question is not "how to produce a genius" but "how to stop preventing one." the pattern from every documented case:
 
 1. rich environment (nature, tools, real problems, diverse adults) — [[cyber valley]] provides this
-2. freedom to go deep (no enforced curriculum pace) — [[satoshi/lazy]] method ensures this
+2. freedom to go deep (no enforced curriculum pace) — [[satoshi/will]] method ensures this
 3. body and mind together (physical activity interleaved with cognitive) — [[satoshi/body]] domain ensures this
 4. emotional security (safe attachment, no performance pressure) — [[satoshi/emotions]] domain ensures this
 5. multiple languages (multilingual brains develop faster executive function) — [[satoshi/language]] domain ensures this
@@ -115,7 +115,7 @@ books: Mindset (Dweck — for parents), Outliers (Gladwell — for parents), Ran
 
 ## linked domains
 
-[[satoshi/lazy]] — the method that produces genius without pressure. [[satoshi/mind]] — cognitive development tracking. [[satoshi/emotions]] — the emotional safeguard against burnout. [[satoshi/body]] — physical development must keep pace. [[satoshi/vocabulary]] — crystal vocabulary as the knowledge target. [[satoshi/cooperation]] — genius without social skill is incomplete
+[[satoshi/will]] — the method that produces genius without pressure. [[satoshi/mind]] — cognitive development tracking. [[satoshi/emotions]] — the emotional safeguard against burnout. [[satoshi/body]] — physical development must keep pace. [[satoshi/vocabulary]] — crystal vocabulary as the knowledge target. [[satoshi/cooperation]] — genius without social skill is incomplete
 
 ## subgraphs
 
