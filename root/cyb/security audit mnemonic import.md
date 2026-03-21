@@ -1236,3 +1236,101 @@ The MEDIUM item (#3) — plaintext API keys in localStorage — is a separate fe
 ### Verdict
 
 CLEAN. Deep scan confirmed zero mnemonic leaks across the entire `src/` tree. All console logging, localStorage operations, and global assignments verified safe. Mnemonic data flows exclusively through the encrypted pipeline (`mnemonicCrypto.ts` → `utils.ts` → localStorage) and the memory-only pipeline (`mnemonicRef` → `activateWalletSigner`/`unlockWallet` → `CybOfflineSigner`). No cross-contamination with the scripting engine or other subsystems. Production-ready.
+
+---
+
+## Audit #20: Cross-validation — document vs code (2026-03-21)
+
+Full cross-validation of every claim in the audit document against live code at `/Users/joyrocket/git/cyb/src/`. All 12 source files re-read and every verification check confirmed.
+
+### Files validated
+
+| File | Path |
+|------|------|
+| Signer context | `src/contexts/signerClient.tsx` |
+| Import flow | `src/pages/Keys/ActionBar/actionBarConnect.tsx` |
+| Scripting engine | `src/services/scripting/engine.ts` |
+| Crypto utils | `src/utils/mnemonicCrypto.ts` |
+| Offline signer | `src/utils/offlineSigner.ts` |
+| Storage utils | `src/utils/utils.ts` |
+| Redux pocket | `src/redux/features/pocket.ts` |
+| Wallet modal | `src/pages/Keys/ActionBar/ConnectWalletModal/ConnectWalletModal.tsx` |
+| Mnemonic input | `src/pages/Keys/ActionBar/ConnectWalletModal/MnemonicInput.tsx` |
+| Modal | `src/components/modal/Modal.tsx` |
+| ActionBar/Unlock | `src/components/actionBar/index.tsx` |
+| Portal utils | `src/containers/portal/utils.ts` |
+
+### Verification matrix (all 36 checks)
+
+| Claim | Actual code | Match |
+|-------|-------------|-------|
+| AES-256-GCM, PBKDF2 1M, v2 format, random salt+IV | `mnemonicCrypto.ts:3,23,25,33-34,46` | PASS |
+| Key extractable: false, usage: encrypt/decrypt | `mnemonicCrypto.ts:26-27` | PASS |
+| Version detect with try-fallback for legacy | `mnemonicCrypto.ts:91-106` | PASS |
+| DOMException-only catch, re-throw others | `mnemonicCrypto.ts:99` | PASS |
+| `Array.from` instead of spread (stack safety) | `mnemonicCrypto.ts:51` | PASS |
+| `useRef` for mnemonic (not `useState`) | `signerClient.tsx:64` | PASS |
+| `activateWalletSigner` sets mnemonicRef + signer atomically | `signerClient.tsx:229-234` | PASS |
+| Import flow calls `activateWalletSigner` (not bare `setSigner`) | `actionBarConnect.tsx:180` | PASS |
+| Persist-before-activate ordering (encrypt → localStorage → signer) | `actionBarConnect.tsx:178-180` | PASS |
+| 15-min auto-clear timer with `__cyb_wallet_locked` event | `signerClient.tsx:192-203` | PASS |
+| visibilitychange auto-lock | `signerClient.tsx:214-227` | PASS |
+| Unmount cleanup (mnemonicRef + timer) | `signerClient.tsx:206-212` | PASS |
+| Post-decrypt address verification in `unlockWallet` | `signerClient.tsx:249-252` | PASS |
+| Keplr isolation — `getSignerForChain` guards `!isWalletAccount` | `signerClient.tsx:260-276` | PASS |
+| Keplr isolation — `getSignClientByChainId` uses mnemonicRef for wallet | `signerClient.tsx:170-190` | PASS |
+| Keplr isolation — `keystorechange` listener skipped for wallet | `signerClient.tsx:154-168` | PASS |
+| Password complexity: 3/4 char classes for <12, any for 12+ | `actionBarConnect.tsx:151-161` | PASS |
+| Double-submit guard (`saving` state + button disabled) | `actionBarConnect.tsx:143,168,234` | PASS |
+| Error catch clears `pendingMnemonic`, `password`, `passwordConfirm` | `actionBarConnect.tsx:203-207` | PASS |
+| Unmount cleanup calls `clearState()` | `actionBarConnect.tsx:68-71` | PASS |
+| Modal cleanup on unmount (values + name) | `ConnectWalletModal.tsx:41-45` | PASS |
+| Clipboard clear after paste (both modal + single input) | `ConnectWalletModal.tsx:80`, `MnemonicInput.tsx:32` | PASS |
+| `spellCheck={false}`, `autoComplete="off"`, `autoCorrect="off"`, `autoCapitalize="off"` | `MnemonicInput.tsx:59-62` | PASS |
+| `autoComplete="new-password"` on import password inputs | `actionBarConnect.tsx:247,256` | PASS |
+| Modal: Escape key, backdrop click, ARIA, tabIndex, createPortal | `Modal.tsx:30-36,56,59,62-63,54` | PASS |
+| `hasSignArbitrary` type guard (no `as any`) | `offlineSigner.ts:85-89` | PASS |
+| `signArbitrary` ADR-036 with cached amino wallet | `offlineSigner.ts:39-81` | PASS |
+| `getDebug()` strips secrets from debug output | `engine.ts:300-306` | PASS |
+| `run()` strips secrets from compile context | `engine.ts:130-134` | PASS |
+| `removeEncryptedMnemonic` called on wallet account deletion | `pocket.ts:85-87` | PASS |
+| Per-address localStorage key only (no global `cyb:mnemonic`) | `utils.ts:401-411` | PASS |
+| Targeted `eslint-disable` (not blanket) | `actionBarConnect.tsx:1` | PASS |
+| All password inputs use `type="password"` | `actionBarConnect.tsx:246,255`, `actionBar/index.tsx:197` | PASS |
+| UnlockWalletBar clears password on success and failure | `actionBar/index.tsx:180,183` | PASS |
+| `getSignerKeyInfo` typed with `Record<string, unknown>` narrowing | `portal/utils.ts:286-309` | PASS |
+| `__cyb_wallet_locked` internal event name | `signerClient.tsx:201,221` | PASS |
+
+### Document accuracy
+
+| Section | Accurate |
+|---------|----------|
+| Findings #1-7 and status | ✓ |
+| Passed checks table | ✓ |
+| Encryption details table | ✓ — matches `mnemonicCrypto.ts` params |
+| Full lifecycle diagram | ✓ — matches actual data flow |
+| Audit #3-#19 cumulative status tables | ✓ — counts match |
+| Fixes applied section (Audit #17-18) | ✓ — code matches descriptions |
+| Keplr isolation matrix | ✓ — all 4 functions verified |
+| Mnemonic clear triggers list | ✓ — all 6 triggers present in code |
+
+### New findings
+
+Zero new findings. All code matches all document claims.
+
+### Note on line number references
+
+Earlier audit sections (#1-7) reference line numbers from before subsequent code changes (versioned format, `activateWalletSigner`, etc.). Audit #18 and this audit (#20) reference current line numbers. The semantic claims are all correct regardless of line shifts.
+
+### Cumulative status (unchanged — validated)
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 3 | 3 | 0 | 0 |
+| HIGH | 12 | 10 | 2 (JS memory, TOCTOU) | 0 |
+| MEDIUM | 19 | 13 | 6 (noted) | 0 |
+| LOW | 30 | 16 | 10 (noted) | 4 (IndexedDB, backoff, focus trap, autoComplete unlock) |
+
+### Verdict
+
+VALIDATED. Every claim in the audit document confirmed against live source code. Zero discrepancies between documented findings and actual implementation. All CRITICAL and HIGH findings verified fixed or inherent. The document accurately represents the security state of the mnemonic import feature. Production-ready.
