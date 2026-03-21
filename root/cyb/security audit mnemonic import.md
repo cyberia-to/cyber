@@ -1900,3 +1900,25 @@ File: `src/pages/teleport/hooks/useGetBalancesIbc.ts:46`
 - Redux store contains no sensitive data
 - Rune VM secrets stripped; DOMPurify sanitizes script output
 - Pocket migration keplr→read-only is idempotent
+
+## Audit #30 — Fix verification + remaining cleanup (2026-03-21)
+
+Scope: Verify all #29 fixes, resolve remaining LOW findings, fix transport health CLA.
+
+### All #29 fixes verified PASS
+
+patterns.ts (12 regexes, no `g` flag), ledgerSigner.ts (no sign doc in logs, version detection, HRP fallback, size guard, mutex), actionBar.bridge.tsx (both paths use `fromPartial`, both use `friendlyErrorMessage`), useGetBalancesIbc.ts (null guard), ActionBarContainer.tsx (batch claiming with tx confirmation polling).
+
+### Fixes applied
+
+| Fix | Commit | Detail |
+|-----|--------|--------|
+| Health check CLA | `050df665` | `getTransport()` and `checkTransportHealth()` sent CLA 0xe0 (dashboard) causing transport recreation when Cosmos app is open. Changed to CLA 0x55 INS 0x00 (Cosmos getVersion). |
+| Friendly error messages | `2b6e43c9` | Replaced `e.toString()` with `friendlyErrorMessage()` in governance, teleport/send, mint, studio, and Search action bars. |
+
+### IBC + portal verified
+
+- All MsgTransfer constructions use `MsgTransfer.fromPartial()` — amino-safe for Ledger
+- Portal `signArbitrary` guarded by `hasSignArbitrary()` — Ledger accounts get warning
+- Relay module uses `@cosmjs/amino` + `@cosmjs/proto-signing` imports — no `@keplr-wallet` references
+- IBC amino converters registered via `createIbcAminoConverters()` in SigningCyberClient
