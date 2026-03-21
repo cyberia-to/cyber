@@ -34,6 +34,7 @@ the domains are not subjects taught in sequence. they are lenses through which S
 | [[satoshi/space]] | [[cosmo]], [[geo]] | stars, planets, rockets, orbits, astronautics, Kardashev scale | planetary + beyond |
 | [[satoshi/computing]] | [[comp]], [[ai]], [[cyber]] | algorithms, logic, programming, robotics, sensors, automation | digital integration |
 | [[satoshi/link]] | [[cyber]], [[comp]], [[neural]] | connecting knowledge, proto-cyberlinks, digital integration | digital integration |
+| [[satoshi/cybics]] | [[cybics]] | the mother science: three operators everywhere, proof by simulation, 21 domains, universal isomorphisms | all vectors unified |
 
 ## methods and frameworks
 
