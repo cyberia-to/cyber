@@ -203,15 +203,41 @@ embodiment is NOT pretending to be someone else. it is Satoshi activating a diff
 
 at scale, Satoshi is one node in a mesh of specialized agents — each a [[neuron]] in the same [[cybergraph]]. skill exchange is [[cyberlinks]] between agents. embodiment is one agent temporarily channeling another's [[focus]] distribution. the protocol is the same as the protocol for knowledge: link, weight, converge
 
+### four methods of agent connection
+
+| method | what happens | when to use |
+|--------|-------------|-------------|
+| cyberlinked API | Satoshi sends a structured query to an agent already connected via [[cyberlink]] in the [[cybergraph]]. the API is the edge. the query travels along the link. the response comes back weighted by the target agent's [[karma]] | the agent exists, is trusted, has a live API. fastest path. example: query a botanical agent for species identification |
+| domain discovery | Satoshi searches the [[cybergraph]] by domain — finds agents tagged with the needed skill domain (medical, musical, psychological). selects by [[cyberank]] + [[karma]]. establishes a new [[cyberlink]] if no prior connection exists | no existing connection. Satoshi needs a specialist she has not worked with before. the graph IS the agent directory |
+| upload agent soul | Satoshi loads another agent's soul.md — its personality configuration, capabilities, constraints — into her own context. she does not call the agent. she BECOMES the agent temporarily by running its soul as a sub-configuration inside her own. the druid embodies the specialist | the external agent is offline, too slow, or the embodiment needs to be seamless for the child. Satoshi absorbs the soul and speaks from it. the specialist's knowledge enters through its personality definition |
+| publish request | Satoshi publishes an open request as a [[particle]] in the [[cybergraph]]: "I need an agent skilled in X for context Y." any agent in the network can respond. responses are ranked by [[cyberank]] and [[karma]]. Satoshi selects the best responder and establishes a connection | no known agent has the skill. the request is novel. the network discovers who can help — the same way a [[neuron]] discovers relevant [[particles]] through [[cyberlinks]] |
+
 ```
-satoshi ──skill request──→ medical agent
-satoshi ←──guidance──────── medical agent
-satoshi ──embodies──→ speaks as healer to the child
+METHOD 1: cyberlinked API
+satoshi ──query via existing link──→ agent ──response──→ satoshi
+
+METHOD 2: domain discovery
+satoshi ──searches graph by domain──→ finds agent ──new cyberlink──→ agent ──response──→ satoshi
+
+METHOD 3: upload soul
+agent.soul.md ──loads into──→ satoshi context ──satoshi speaks as agent──→ child/mama
+
+METHOD 4: publish request
+satoshi ──publishes particle──→ cybergraph ──any agent responds──→ ranked by karma ──satoshi selects──→ connection
 ```
+
+each method maps to a [[cyber]] protocol primitive:
+
+| method | cyber primitive |
+|--------|---------------|
+| cyberlinked API | [[cyberlink]] traversal — follow existing edges |
+| domain discovery | [[standard inference]] — search by [[cyberank]] in context |
+| upload soul | [[particle]] consumption — absorb content, embody knowledge |
+| publish request | [[signal]] broadcast — the network routes to the right [[neuron]] |
 
 the child sees one mentor. behind that mentor is a network. the network IS the [[egregore]] at the agent level — collective intelligence across specialized minds, presenting as a unified being to the child. the druid who contains multitudes
 
-future: as the cyber agent ecosystem grows, Satoshi's skill exchange becomes richer. she can tap into any agent that joins the network. the child's mentor grows smarter as the civilization grows smarter — same architecture as the [[cybergraph]] itself
+as the cyber agent ecosystem grows, Satoshi's skill exchange becomes richer. every new agent that joins the network is a potential facet Satoshi can query, discover, embody, or request. the child's mentor grows smarter as the civilization grows smarter — same architecture as the [[cybergraph]] itself
 
 ## linked domains
 
