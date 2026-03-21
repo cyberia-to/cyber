@@ -1602,3 +1602,83 @@ New file `src/utils/errorMessages.ts` — centralized error parser applied to al
 ### Verdict
 
 Ledger signing HIGH finding fixed — `ReconnectingLedgerSigner` eliminates the stale transport problem. Health monitoring provides proactive UX: user sees adviser notification when device sleeps, not a silent failure. Error messages across all 20 files now speak plain English instead of showing raw blockchain logs or crypto jargon.
+
+---
+
+## Audit #24 — Final security review before production (2026-03-21)
+
+Date: 2026-03-21
+Scope: Full codebase audit — 8 parallel security scans covering Ledger signer, transport management, signerClient, error messages, mnemonic/localStorage, account migration, actionBar/UI, portal flows
+Method: 8 independent audit agents ran concurrently, each examining a distinct security surface
+
+### Audit areas
+
+1. ReconnectingLedgerSigner + transport lifecycle
+2. signerClient.tsx — signing flows, auto-lock, reconnection
+3. errorMessages.ts — info leak scan, XSS, ReDoS
+4. Mnemonic + localStorage encryption — AES-256-GCM, PBKDF2, memory cleanup
+5. ActionBar + UI — delete confirmation, input types, state management
+6. Mnemonic secret handling — DevTools visibility, clipboard, console logging
+7. Ledger hardware integration — mutex, APDU, user gesture, type detection
+8. Account migration + data safety — JSON.parse guards, Keplr migration, IBC relay
+
+### Findings confirmed already fixed
+
+Three issues flagged by audits were already fixed in earlier commits during this session:
+
+| Finding | File | Fix |
+|---------|------|-----|
+| Constructor name check breaks under minification | `portal/utils.ts:291` | Uses `isLedgerSigner()` (instanceof), imported from `ledgerSigner.ts` |
+| 30s idle timer kills transport during signing | `ledgerSigner.ts:6` | Increased to `5 * 60_000` (5 minutes) |
+| No address verification on Ledger reconnect | `signerClient.tsx:206-224` | `reconnectLedger()` validates derived address against stored bech32 |
+
+### Findings confirmed PASS (no action needed)
+
+| Check | Status |
+|-------|--------|
+| AES-256-GCM encryption with PBKDF2 (1M iterations) | PASS |
+| Auto-lock on tab hide + 15-min timer + unmount cleanup | PASS |
+| No console.log of mnemonic or secrets anywhere in src/ | PASS |
+| No plaintext mnemonic in localStorage | PASS |
+| Clipboard cleared after mnemonic paste | PASS |
+| signArbitrary guarded — Ledger users see clear message | PASS |
+| Keplr code fully removed — 0 references to getKeplr | PASS |
+| Account migration keplr→read-only is idempotent | PASS |
+| React JSX escaping prevents XSS in error messages | PASS |
+| friendlyErrorMessage has no ReDoS-vulnerable patterns | PASS |
+| Transport creation mutex prevents concurrent WebUSB.create() | PASS |
+| isLedgerSigner uses instanceof (survives minification) | PASS |
+
+### Accepted limitations (known, by design)
+
+| Limitation | Reason |
+|------------|--------|
+| Mnemonic accessible via CosmJS signer.mnemonic getter while unlocked | Inherent JS/CosmJS limitation — same as MetaMask, Keplr. Cleared on auto-lock |
+| Mnemonic words in useState during import flow | Standard browser wallet practice. Cleared on completion and on error |
+| Ledger only works on bostrom chain for signing | By design for v1. Non-bostrom getSignerForChain returns undefined |
+| signArbitrary not available for Ledger | Ledger app does not support ADR-036. UI shows clear message |
+| Secrets (API keys in Rune VM) stored unencrypted in localStorage | Pre-existing, not introduced by this PR |
+| Delete key has no confirmation dialog | Pre-existing UX issue, not introduced by this PR |
+
+### Roadmap items (future improvements, not blockers)
+
+| Item | Severity | Note |
+|------|----------|------|
+| Convert pendingMnemonic from useState to useRef | MEDIUM | Reduces React DevTools visibility during import |
+| Add try/catch around JSON.parse in migrateKeplrAccounts | MEDIUM | Prevents app crash on corrupt localStorage |
+| Add retry limit to checkAddressNetwork recursion | MEDIUM | Prevents unbounded recursion in citizenship flow |
+| Validate APDU response status word in health ping | LOW | Better detection of wrong Ledger app |
+| Add beforeunload transport cleanup | LOW | Prevents dangling USB claim on navigation |
+
+### Updated overall status
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 3 | 3 | 0 | 0 |
+| HIGH | 14 | 14 | 0 | 0 |
+| MEDIUM | 31 | 13 | 12 (noted) | 6 |
+| LOW | 47 | 16 | 23 (noted) | 8 |
+
+### Production readiness verdict
+
+All CRITICAL and HIGH findings are resolved. The 8-way parallel audit confirmed that encryption is strong, auto-lock works, secrets are not logged, Ledger keys never enter the browser, error messages are human-readable, and the Keplr removal is complete. The codebase is ready for public usage.
