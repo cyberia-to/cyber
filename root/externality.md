@@ -3,8 +3,12 @@ tags: cybernomics
 crystal-type: relation
 crystal-domain: economics
 stake: 2013764033942463
-focus: 0.00014031383265279137
+diffusion: 0.00014031383265279137
+springs: 0.0008570064358523041
+heat: 0.0006323787963714859
+focus: 0.00045373460635638645
 gravity: 3
+density: 3.87
 ---
 cost or benefit imposed on third parties who are not direct participants in a transaction
 

@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6162117943863937
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00008528566406075648
+heat: 0.00013813960723232927
+focus: 0.00011152232243668233
 gravity: 0
+density: 1.92
 ---
 We are looking for a mentor for our kids
 

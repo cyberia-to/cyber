@@ -2,8 +2,12 @@
 tags: meta, spiri
 crystal-type: entity
 crystal-domain: meta
-focus: 0.00015404682392441808
+diffusion: 0.00015404682392441808
+springs: 0.001050948963113539
+heat: 0.0007700927908382985
+focus: 0.0005463266590639331
 gravity: 6
+density: 4.08
 ---
 # epistemology
 

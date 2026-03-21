@@ -4,8 +4,12 @@ alias: continents
 crystal-type: entity
 crystal-domain: geography
 stake: 7256263068972675
-focus: 0.00024131387415443148
+diffusion: 0.00024131387415443148
+springs: 0.00009031285681437132
+heat: 0.00014924049740801774
+focus: 0.0001775988936031316
 gravity: 6
+density: 7.96
 ---
 a major continuous landmass on [[Earth]]
 

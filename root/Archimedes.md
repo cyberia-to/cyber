@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5007559897736924
-focus: 0.00015149319847591002
+diffusion: 0.00015149319847591002
+springs: 0.00006972109334198363
+heat: 0.00011902557644743851
+focus: 0.0001204680425300384
 gravity: 4
+density: 0
 ---
 287-212 BCE, Greek mathematician, physicist, engineer, and astronomer from Syracuse
 

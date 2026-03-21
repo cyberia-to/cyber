@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4861673881055760
-focus: 0.0006795584401854464
+diffusion: 0.0006795584401854464
+springs: 0.00016563992972540016
+heat: 0.00033692890863356244
+focus: 0.00045685698073705803
 gravity: 2
+density: 0
 ---
 
 | step                                                       | strengths                                                                                                                                               | considerations                                                                                                                        |

@@ -4,8 +4,12 @@ crystal-type: entity
 crystal-domain: cyberia
 type: private
 stake: 4618232184508048
-focus: 0.00014298502936250853
+diffusion: 0.00014298502936250853
+springs: 0.0000269223524256869
+heat: 0.0000719634840938216
+focus: 0.00009396191722772513
 gravity: 1
+density: 0
 ---
 revenue:: breakfast $10
 

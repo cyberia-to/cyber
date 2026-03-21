@@ -3,8 +3,12 @@ tags: cv.land
 crystal-type: process
 crystal-domain: cyberia
 stake: 4170729065854168
-focus: 0.0006615001012956862
+diffusion: 0.0006615001012956862
+springs: 0.00007263436778234544
+heat: 0.00028763517986040614
+focus: 0.00041006739695463004
 gravity: 14
+density: 1.07
 ---
 - # organiq: free flow local products only restaurant
 	- ## day dose price

@@ -3,8 +3,12 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5222361394690787
-focus: 0.0005420649488803892
+diffusion: 0.0005420649488803892
+springs: 0.00010805233875940088
+heat: 0.0002629597032741109
+focus: 0.00035604011672283887
 gravity: 10
+density: 3.81
 ---
 
 Translators that convert programs written in a high-level language into machine code executable by hardware. The bridge from human intent to [[computation]].

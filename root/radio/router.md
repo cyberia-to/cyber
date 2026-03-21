@@ -3,8 +3,12 @@ alias: ALPN router, protocol router, radio router
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00017257810264417346
+diffusion: 0.00017257810264417346
+springs: 0.000060478236847777196
+heat: 0.00010588483004846284
+focus: 0.0001256094883861131
 gravity: 2
+density: 3.54
 ---
 
 # router

@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4971759648244614
-focus: 0.000124566106887946
+diffusion: 0.000124566106887946
+springs: 0.00007556993154072804
+heat: 0.00010499856379660874
+focus: 0.00010595374566551369
 gravity: 2
+density: 2.21
 ---
 pseudonymous creator of [[Bitcoin]], published the whitepaper in 2008 and launched the network in 2009
 

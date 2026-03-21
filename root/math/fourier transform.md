@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4953859523498459
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.000450666276948078
+heat: 0.00037969226081986635
+focus: 0.000269447037020387
 gravity: 0
+density: 4.15
 ---
 A decomposition of a [[signal]] into constituent frequencies, mapping functions from time domain to frequency domain.
 

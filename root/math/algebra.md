@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4931484367565765
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00026920715884750816
+heat: 0.00023688600565670024
+focus: 0.0001864480505575824
 gravity: 0
+density: 6.7
 ---
 The study of mathematical structure through [[groups]], [[rings]], [[fields]], and their operations.
 

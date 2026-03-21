@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 7498524984571208
-focus: 0.00014658193060411705
+diffusion: 0.00014658193060411705
+springs: 0.00033546762095399167
+heat: 0.0002837717744268921
+focus: 0.0002306856064736356
 gravity: 5
+density: 3.1
 ---
 ![](https://ipfs.io/ipfs/QmbDu6WE4VYoSZGfTN7vkvDVpwy7t6uoQLD2uNamj7wv7k)
 

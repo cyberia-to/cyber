@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 wood-density: "350"
 stake: 6833372621844758
-focus: 0.00021819986100644187
+diffusion: 0.00021819986100644187
+springs: 0.0002494894439285335
+heat: 0.000253684017640712
+focus: 0.00023468356720992455
 gravity: 3
+density: 7.01
 ---
 [[staple]]
 

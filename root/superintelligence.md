@@ -5,8 +5,12 @@ alias: asi, planetary superintelligence, collective ai
 crystal-type: entity
 crystal-domain: cyber
 stake: 28514898720625276
-focus: 0.007139448639191094
+diffusion: 0.007139448639191094
+springs: 0.000766200557077701
+heat: 0.0028245016721469237
+focus: 0.004364484821148263
 gravity: 84
+density: 6.28
 ---
 [[intelligence]] that surpasses all human minds combined in every cognitive domain — speed, creativity, breadth, depth, and ability to improve itself
 

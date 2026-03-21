@@ -4,8 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 type: public
 stake: 12737728769364060
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00024625496196510615
+heat: 0.0002307114685412306
+focus: 0.00017832748406976782
 gravity: 0
+density: 5.9
 ---
 product based circulation of materials
 

@@ -2,8 +2,12 @@
 tags: discipline, tech, chemo, energo
 crystal-type: entity
 crystal-domain: tech
-focus: 0.00024566271100553045
+diffusion: 0.00024566271100553045
+springs: 0.00010184516195485781
+heat: 0.0001668177962484948
+focus: 0.00018674846333892244
 gravity: 8
+density: 26.22
 ---
 # engineering
 

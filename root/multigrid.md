@@ -4,8 +4,12 @@ alias: grid
 crystal-type: entity
 crystal-domain: materials
 stake: 7034749025239004
-focus: 0.0001857390358082434
+diffusion: 0.0001857390358082434
+springs: 0.00029048437410681175
+heat: 0.00028269012129497595
+focus: 0.0002365528543951616
 gravity: 2
+density: 19.6
 ---
 [[water]]
 

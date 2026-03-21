@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14311149734551104
-focus: 0.0001327906663211168
+diffusion: 0.0001327906663211168
+springs: 0.0027488600139265167
+heat: 0.0018498282382425576
+focus: 0.0012610189849870312
 gravity: 2
+density: 11.21
 ---
 cognition spread across agents and their shared environment
 

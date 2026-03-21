@@ -4,8 +4,12 @@ alias: rosemary
 crystal-type: entity
 crystal-domain: biology
 stake: 13425093559616420
-focus: 0.0002755769823592672
+diffusion: 0.0002755769823592672
+springs: 0.00024969957855348727
+heat: 0.0002814172567340671
+focus: 0.0002689818160924946
 gravity: 10
+density: 2.7
 ---
 [[staple]] for [[health]]
 

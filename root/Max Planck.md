@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4962809585871536
-focus: 0.00029905259288841237
+diffusion: 0.00029905259288841237
+springs: 0.0005726801018580282
+heat: 0.0004896120088359106
+focus: 0.0004192527287687989
 gravity: 5
+density: 3.48
 ---
 1858-1947. German theoretical physicist.
 

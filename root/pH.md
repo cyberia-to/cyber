@@ -3,8 +3,12 @@ tags: chemistry, property
 crystal-type: property
 crystal-domain: physics
 stake: 1066196521243719
-focus: 0.00012415903315863037
+diffusion: 0.00012415903315863037
+springs: 0.00012265065490912205
+heat: 0.00013950693671603307
+focus: 0.00012677610039525905
 gravity: 1
+density: 5.33
 ---
 measure of [[hydrogen]] ion concentration in a solution
 

@@ -4,8 +4,12 @@ tags: cyber, bostrom
 crystal-type: entity
 crystal-domain: cyber
 stake: 24516661765961332
-focus: 0.00018448430115948107
+diffusion: 0.00018448430115948107
+springs: 0.00028236143724420516
+heat: 0.00027170286713473947
+focus: 0.00023129115517995114
 gravity: 2
+density: 4
 ---
 ## what is bip?
 

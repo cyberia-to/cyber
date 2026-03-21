@@ -3,8 +3,12 @@ tags: cyber, article
 alias: cybics foundations, cybics formal
 crystal-type: pattern
 crystal-domain: cyber
-focus: 0.00014053543573558475
+diffusion: 0.00014053543573558475
+springs: 0.0011442926619988432
+heat: 0.0008251423857355972
+focus: 0.0005785839936145677
 gravity: 1
+density: 3.02
 ---
 # cybics foundations
 

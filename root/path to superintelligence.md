@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14311149734551104
-focus: 0.0003950222376142961
+diffusion: 0.0003950222376142961
+springs: 0.001723163025763918
+heat: 0.0012761622180656766
+focus: 0.0009696924701494636
 gravity: 2
+density: 17.81
 ---
 solve [[techtree]] accounting for
 

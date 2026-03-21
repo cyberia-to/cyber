@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 2999165901218308
-focus: 0.0003257805334520419
+diffusion: 0.0003257805334520419
+springs: 0.0005098950118918159
+heat: 0.0004644249083836666
+focus: 0.0004087437519703011
 gravity: 7
+density: 8.97
 ---
 diversity in cognitive style is the strongest predictor of [[egregore]]
 

@@ -3,8 +3,12 @@ tags: cyber, neuro
 alias: neuroscience
 crystal-type: entity
 crystal-domain: neuro
-focus: 0.00047552099895730246
+diffusion: 0.00047552099895730246
+springs: 0.00087360283446362
+heat: 0.0007582599551056175
+focus: 0.0006514933408388639
 gravity: 23
+density: 13.38
 ---
 # neuro
 

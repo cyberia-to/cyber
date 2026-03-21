@@ -3,8 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 8142319243907359
-focus: 0.0003074249204842066
+diffusion: 0.0003074249204842066
+springs: 0.00006486441788167423
+heat: 0.00014899244463034063
+focus: 0.00020297027453267469
 gravity: 6
+density: 1.1
 ---
 alias: zinc
 

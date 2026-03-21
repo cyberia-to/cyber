@@ -4,8 +4,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: biology
 stake: 7081736852697661
-focus: 0.00044420552282198436
+diffusion: 0.00044420552282198436
+springs: 0.000053038998086646855
+heat: 0.000200875166643322
+focus: 0.00027818949416565206
 gravity: 7
+density: 30.93
 ---
 [[acne]]
 

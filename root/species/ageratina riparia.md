@@ -8,8 +8,12 @@ supply: "no"
 margin: low
 autonomy: support
 stake: 7773129171017907
-focus: 0.0002521569652952795
+diffusion: 0.0002521569652952795
+springs: 0.0004057640071155134
+heat: 0.0003619277427981491
+focus: 0.0003201932333419252
 gravity: 4
+density: 0
 ---
 ![image](https://ipfs.io/ipfs/QmeNoF8yhzUqxyPZsoRQQKNFfcDaydKUZfpgxFgV3Rg7G6)
 

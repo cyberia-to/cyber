@@ -2,8 +2,12 @@
 tags: aos
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00017939448942074635
+heat: 0.00018543723672933708
+focus: 0.00014921449594408108
 gravity: 0
+density: 0.81
 ---
 # map
 

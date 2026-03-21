@@ -4,8 +4,12 @@ alias: rocket estate
 crystal-type: entity
 crystal-domain: cyberia
 stake: 9223039275456482
-focus: 0.0006003213649062747
+diffusion: 0.0006003213649062747
+springs: 0.00015683885707200827
+heat: 0.0003159237337593769
+focus: 0.00041039708632661725
 gravity: 10
+density: 6.99
 ---
 We bring a unique offer to the market
 

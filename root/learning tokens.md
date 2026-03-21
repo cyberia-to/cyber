@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14351425015229952
-focus: 0.00012323371753685967
+diffusion: 0.00012323371753685967
+springs: 0.0015768964595284805
+heat: 0.0011009170060448988
+focus: 0.0007548691978359575
 gravity: 1
+density: 28.2
 ---
 [[tokens]] for [[collective learning]]
 

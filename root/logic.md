@@ -3,8 +3,12 @@ tags: cybics
 crystal-type: entity
 crystal-domain: cybics
 stake: 5249211581810020
-focus: 0.00046772137992320974
+diffusion: 0.00046772137992320974
+springs: 0.0007935107012983047
+heat: 0.0007029182802731751
+focus: 0.0006124975564057344
 gravity: 17
+density: 11.56
 ---
 the study of valid reasoning — rules that preserve truth from premises to conclusions
 

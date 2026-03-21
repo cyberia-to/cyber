@@ -3,8 +3,12 @@ alias: iroh-willow, Willow protocol, willow
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.0001737672950547578
+diffusion: 0.0001737672950547578
+springs: 0.0020928463598874855
+heat: 0.0014414444040997266
+focus: 0.0010030264363135749
 gravity: 3
+density: 1.39
 ---
 
 # willow

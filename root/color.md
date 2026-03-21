@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 16673966201043592
-focus: 0.00021172540997979833
+diffusion: 0.00021172540997979833
+springs: 0.00024396992477833593
+heat: 0.0002585625334578413
+focus: 0.00023076618911496938
 gravity: 7
+density: 12.13
 ---
 - # Color
 - wavelength of light in the visible [[electromagnetic spectrum]] (380-750 nm)

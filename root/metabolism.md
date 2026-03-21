@@ -4,8 +4,12 @@ alias: metabolism, metabolic signals, metabolic health, metabolic oracle, cap sy
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-focus: 0.0007703074236625859
+diffusion: 0.0007703074236625859
+springs: 0.001437809835273833
+heat: 0.0012160150625893367
+focus: 0.0010596996749313154
 gravity: 14
+density: 2.02
 ---
 
 the three signals that measure whether the [[cybergraph]] is alive — cap, [[syntropy]], [[happiness]] — and how they compound into a single health function the protocol optimizes

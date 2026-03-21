@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 9710004032755294
-focus: 0.013791268319032352
+diffusion: 0.013791268319032352
+springs: 0.0006515714581960685
+heat: 0.004890080355522657
+focus: 0.008069121668079568
 gravity: 175
+density: 13.43
 ---
 three local operators whose fixed point is [[cyberank]]
 

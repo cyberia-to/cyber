@@ -4,8 +4,12 @@ tags: cyberia
 crystal-type: measure
 crystal-domain: cyberia
 stake: 4220849415143403
-focus: 0.0001464241338600881
+diffusion: 0.0001464241338600881
+springs: 0.000030108663421927474
+heat: 0.00007238935871714248
+focus: 0.00009672253770005127
 gravity: 1
+density: 0
 ---
 ![image](https://jade-gentle-pony-196.mypinata.cloud/ipfs/bafybeigzdo4bixaoytsjxmho7sm55n2icjyoprjal3ho5dlmfdoyfcxsta)
 

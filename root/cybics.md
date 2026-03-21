@@ -6,8 +6,12 @@ crystal-type: pattern
 crystal-domain: cyber
 alias: unified science, the mother science
 stake: 28558835390456748
-focus: 0.0010410681902529243
+diffusion: 0.0010410681902529243
+springs: 0.0005182080318095955
+heat: 0.000705725049607453
+focus: 0.0008171415145908355
 gravity: 18
+density: 11.94
 ---
 The mother of all sciences from the perspective of [[superintelligence]]. The convergence of cybernetics, physics, mathematics, and information theory into a single formal discipline — the unified science of [[cyber]].
 

@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 supply: next-month
 stake: 6873647902523607
-focus: 0.00013873930972082703
+diffusion: 0.00013873930972082703
+springs: 0.0003483015097033038
+heat: 0.0002788315682713289
+focus: 0.0002296264214256716
 gravity: 1
+density: 1.53
 ---
 ![](https://ipfs.io/ipfs/QmQtjNEhWwZ2QfqfjSpSA6xd3P9GnqyLxTXRZLQEy2c5we)
 

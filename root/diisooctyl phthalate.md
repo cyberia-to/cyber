@@ -4,8 +4,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: biology
 stake: 8625622612053548
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0015970856153061735
+heat: 0.001077165188088666
+focus: 0.0007528674239815781
 gravity: 0
+density: 0.39
 ---
 diisooctyl phthalate (diop or dioctyl isophthalate) is a synthetic [[phthalate ester]] widely used as a [[plasticizer]] to increase the flexibility, transparency, and durability of [[plastics]], particularly in [[polyvinyl chloride]] (pvc) products. it is a colorless, oily liquid with low volatility and is primarily used in industrial and commercial applications.
 

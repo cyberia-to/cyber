@@ -4,8 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: implemented
 stake: 12974010416013308
-focus: 0.0001625950301210097
+diffusion: 0.0001625950301210097
+springs: 0.0007076130825907158
+heat: 0.0005576463745399307
+focus: 0.00040511071474570774
 gravity: 4
+density: 8.95
 ---
 implemented in [[v6]]
 

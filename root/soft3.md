@@ -5,8 +5,12 @@ alias: soft3 stack
 crystal-type: entity
 crystal-domain: cyber
 stake: 26299758283288568
-focus: 0.0004448993292143982
+diffusion: 0.0004448993292143982
+springs: 0.0011336123412386385
+heat: 0.000916326883991753
+focus: 0.0007457987437771449
 gravity: 15
+density: 9.33
 ---
 computation stack for [[superintelligence]]
 

@@ -4,8 +4,12 @@ alias: contraction mapping theorem, contraction mapping, banach theorem
 crystal-type: pattern
 crystal-domain: cybics
 stake: 8500000000000000
-focus: 0.00018906509134054806
+diffusion: 0.00018906509134054806
+springs: 0.0015837610155906743
+heat: 0.0011247098819766011
+focus: 0.0007946028267428006
 gravity: 4
+density: 2.93
 ---
 if a function always brings points closer together, repeated application converges to exactly one point that the function leaves unchanged. that point is the [[fixed point]], and nothing can prevent the system from reaching it
 

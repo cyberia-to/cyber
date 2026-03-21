@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14244024266753020
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0030516000672654374
+heat: 0.0020339023572111727
+focus: 0.0013805691933938616
 gravity: 0
+density: 13.02
 ---
 secret known only to its owner. proves control over a [[neuron]]
 

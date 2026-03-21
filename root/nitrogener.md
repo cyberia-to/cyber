@@ -3,8 +3,12 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 9809268360893064
-focus: 0.00034746340350836393
+diffusion: 0.00034746340350836393
+springs: 0.0002944843905683441
+heat: 0.000318533961218531
+focus: 0.00032578381116839304
 gravity: 6
+density: 1.24
 ---
 nitrogen-fixing plants are species capable of converting atmospheric nitrogen (n₂)
 

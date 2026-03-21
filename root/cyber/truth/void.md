@@ -3,8 +3,12 @@ tags: cyber, core
 alias: void signal, epistemic void, void
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00016362648313041715
+diffusion: 0.00016362648313041715
+springs: 0.001231192051467953
+heat: 0.0008901073903589835
+focus: 0.0006291923350773943
 gravity: 5
+density: 7.34
 ---
 the empty state of a [[cyberlink]] — the channel exists but carries no epistemic signal
 

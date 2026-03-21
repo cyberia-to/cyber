@@ -3,8 +3,12 @@ tags: geography, biology, pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 3557161608078002
-focus: 0.0006339445802194767
+diffusion: 0.0006339445802194767
+springs: 0.00012323338134665937
+heat: 0.0003014369136158318
+focus: 0.0004142296872369046
 gravity: 20
+density: 10.1
 ---
 biogeochemical cycle moving carbon through [[atmosphere]], biosphere, [[ocean]], and lithosphere
 

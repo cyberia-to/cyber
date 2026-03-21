@@ -4,8 +4,12 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: cyber
 stake: 14646777073541514
-focus: 0.00016516382694961118
+diffusion: 0.00016516382694961118
+springs: 0.003342062944789648
+heat: 0.0022393670280952036
+focus: 0.0015330742025307482
 gravity: 2
+density: 7.36
 ---
 private value instance within the [[cybergraph]]
 

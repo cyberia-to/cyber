@@ -2,8 +2,12 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
-focus: 0.00014809520472438807
+diffusion: 0.00014809520472438807
+springs: 0.001452079447787915
+heat: 0.001024697654276405
+focus: 0.0007146109675538531
 gravity: 3
+density: 1.46
 ---
 # What Intelligence Looks Like at Avogadro Scale
 

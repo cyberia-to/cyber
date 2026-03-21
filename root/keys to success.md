@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4739058026544596
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00042244552470711703
+heat: 0.000331074070485626
+focus: 0.0002512571732812506
 gravity: 0
+density: 2.2
 ---
 we want [[cyber valley]] lead the tech of tomorrow
 

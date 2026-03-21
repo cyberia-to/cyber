@@ -3,8 +3,12 @@ tags: time, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5438383354695525
-focus: 0.00022214466324692813
+diffusion: 0.00022214466324692813
+springs: 0.00030442287231194706
+heat: 0.0002991042667423021
+focus: 0.0002622200466655099
 gravity: 4
+density: 6.71
 ---
 origin of the observable universe ~13.8 billion years ago
 

@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 7303250896431333
-focus: 0.0004358030293342879
+diffusion: 0.0004358030293342879
+springs: 0.0014606568195327787
+heat: 0.0011188593617606853
+focus: 0.000879870432879119
 gravity: 6
+density: 13.53
 ---
 if each voter is right more often than wrong (p > 0.5), majority vote approaches certainty as the group grows
 

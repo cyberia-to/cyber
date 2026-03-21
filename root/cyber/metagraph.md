@@ -4,8 +4,12 @@ alias: cyber metagraph
 crystal-type: entity
 crystal-domain: cyber
 stake: 25111637503262512
-focus: 0.00014107381400964267
+diffusion: 0.00014107381400964267
+springs: 0.00223226589150999
+heat: 0.0015187209023534375
+focus: 0.0010439608549285113
 gravity: 2
+density: 8.19
 ---
 the [[metagraph]] of [[cyber]] — the multi-scale view of the protocol's knowledge architecture
 

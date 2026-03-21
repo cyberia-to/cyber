@@ -3,8 +3,12 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5334237174354257
-focus: 0.0005212539981649944
+diffusion: 0.0005212539981649944
+springs: 0.00011474033504361593
+heat: 0.0002645744620858084
+focus: 0.0003479639920127454
 gravity: 11
+density: 2.06
 ---
 
 A formal system that classifies expressions by their types, preventing meaningless computations. The mathematical foundation of programming language safety and proof assistants.

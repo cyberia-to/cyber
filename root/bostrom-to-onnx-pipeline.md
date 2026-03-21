@@ -2,8 +2,12 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
-focus: 0.00018666253706705997
+diffusion: 0.00018666253706705997
+springs: 0.0018429265522202387
+heat: 0.0012867505146038096
+focus: 0.000903559337120368
 gravity: 2
+density: 0.38
 ---
 # From Cyberlinks to ONNX: An Exact Compilation Pathway for Graph-Native Transformers
 

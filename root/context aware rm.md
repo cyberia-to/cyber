@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 18123876305482168
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.000060390659345593046
+heat: 0.00009634386823060077
+focus: 0.00009569467322178752
 gravity: 0
+density: 0.44
 ---
 # context aware relevance machine
 

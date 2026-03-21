@@ -4,8 +4,12 @@ alias: cells, shard, shards, cyber cell
 crystal-type: entity
 crystal-domain: cyber
 stake: 30000000000000000
-focus: 0.00016331935996313844
+diffusion: 0.00016331935996313844
+springs: 0.0017050451589816023
+heat: 0.0011943790514528235
+focus: 0.0008320490379666187
 gravity: 5
+density: 3.63
 ---
 the atomic unit of the [[cyber/hierarchy]] — a group of [[particles]] that share a 4D coordinate and maintain their own local state
 

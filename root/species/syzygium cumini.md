@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 availability: cv
 stake: 13425093559616420
-focus: 0.00019389594862790634
+diffusion: 0.00019389594862790634
+springs: 0.00016191545418532447
+heat: 0.00018242659093523205
+focus: 0.00018200792875659787
 gravity: 1
+density: 2.6
 ---
 products
 

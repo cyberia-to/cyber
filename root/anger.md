@@ -3,8 +3,12 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 stake: 3157582005221782
-focus: 0.0002798429244349766
+diffusion: 0.0002798429244349766
+springs: 0.00009185732060354603
+heat: 0.00016418472243640467
+focus: 0.000200315602885834
 gravity: 5
+density: 6.49
 ---
 
 the [[emotion]] of [[red]] — high-arousal threat response

@@ -4,8 +4,12 @@ alias: oleanolic acid
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8216157258485248
-focus: 0.00016751874764095052
+diffusion: 0.00016751874764095052
+springs: 0.00009510313896296168
+heat: 0.00013690895534123408
+focus: 0.0001396721065776113
 gravity: 2
+density: 1.35
 ---
 
 [[oleanolic acid]] is a natural [[triterpenoid]] compound found in various plants, fruits, and medicinal herbs, such as [[olive]] leaves, [[apples]], and [[hawthorn]]. it is widely recognized for its [[anti-inflammatory]], [[antioxidant]], and [[anti-cancer]] properties.

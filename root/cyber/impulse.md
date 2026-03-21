@@ -3,8 +3,12 @@ alias: impulse, focus impulse, π_Δ, pi_delta, impulses
 tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
-focus: 0.0010675600170982943
+diffusion: 0.0010675600170982943
+springs: 0.0023735242385492803
+heat: 0.001910605447279583
+focus: 0.0016279583695698562
 gravity: 4
+density: 4.11
 ---
 # impulse
 

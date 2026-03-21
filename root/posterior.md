@@ -4,8 +4,12 @@ alias: posterior, posterior probability, posterior distribution, posterior belie
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-focus: 0.00037582317727028944
+diffusion: 0.00037582317727028944
+springs: 0.0014911370777290194
+heat: 0.001123710989672858
+focus: 0.0008599949098884264
 gravity: 8
+density: 4.83
 ---
 
 the [[belief]] an agent holds after observing evidence — the output of [[Bayes theorem]]

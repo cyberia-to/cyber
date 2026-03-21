@@ -3,8 +3,12 @@ tags: cyber, cybernomics, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: luminosities, knowledge luminosity
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0018992220928221806
+heat: 0.001300690662546712
+focus: 0.0008882134621279901
 gravity: 0
+density: 1.78
 ---
 # Luminosity
 

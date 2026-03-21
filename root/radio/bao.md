@@ -3,8 +3,12 @@ alias: cyber-bao, BAO, verified streaming
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00023873019119860758
+diffusion: 0.00023873019119860758
+springs: 0.0007353163816111182
+heat: 0.0005913596788679132
+focus: 0.0004582319458562242
 gravity: 6
+density: 2.04
 ---
 
 cyber-bao: [[Hemera]] Merkle trees for verified streaming. a binary tree of hashes over fixed-size chunks that enables partial downloads with proof

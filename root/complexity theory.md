@@ -3,8 +3,12 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5320812080794641
-focus: 0.0004869677280745994
+diffusion: 0.0004869677280745994
+springs: 0.00012504376085477475
+heat: 0.0002567471394077338
+focus: 0.0003323464201752806
 gravity: 10
+density: 2.83
 ---
 
 Classification of computational problems by the resources (time, space, randomness) required to solve them. The science of what is feasible to compute.

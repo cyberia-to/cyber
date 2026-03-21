@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 11317353870756642
-focus: 0.0008163799467816739
+diffusion: 0.0008163799467816739
+springs: 0.0016603305276449863
+heat: 0.001383075313195909
+focus: 0.0011829041943235204
 gravity: 1
+density: 2.56
 ---
 [[cyberank]] implementation details and comparison with [[pagerank]]
 

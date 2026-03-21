@@ -4,8 +4,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
 stake: 7571752767623661
-focus: 0.0001975386753527909
+diffusion: 0.0001975386753527909
+springs: 0.00008565140678879725
+heat: 0.00014536787863054016
+focus: 0.00015353833543914341
 gravity: 4
+density: 4.36
 ---
 currently 2 types for [[terrace]]
 

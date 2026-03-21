@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7007898838119771
-focus: 0.0001604250034046899
+diffusion: 0.0001604250034046899
+springs: 0.0000429821022865686
+heat: 0.00011204887522174855
+focus: 0.00011551690743266582
 gravity: 2
+density: 0
 ---
 ## digital nomad needs
 - stable internet access

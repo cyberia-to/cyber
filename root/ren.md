@@ -3,8 +3,12 @@ tags: cyber, language
 alias: Ren, render language, clifford
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00015422235727599725
+diffusion: 0.00015422235727599725
+springs: 0.00008762719899887579
+heat: 0.00012174499014678111
+focus: 0.00012774833636701823
 gravity: 4
+density: 4.41
 ---
 Clifford geometric [[algebra]] G(p,q,r). unifies [[vector]]s, bivectors, rotors. rotations, reflections, translations in one [[algebra]] over F_p
 

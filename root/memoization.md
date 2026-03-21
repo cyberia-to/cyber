@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: computer science
 stake: 5563358771105045
-focus: 0.0001480521735713773
+diffusion: 0.0001480521735713773
+springs: 0.0000671893784307827
+heat: 0.00033195388657033685
+focus: 0.00016057367762899164
 gravity: 1
+density: 0
 ---
 technique where the results of computations are stored
 

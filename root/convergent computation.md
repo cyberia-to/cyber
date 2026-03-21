@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 12619587946039436
-focus: 0.0004002762302940994
+diffusion: 0.0004002762302940994
+springs: 0.0009991956255045503
+heat: 0.0008177422247886295
+focus: 0.0006634452477561441
 gravity: 13
+density: 9.06
 ---
 formal foundation: computation = convergence to equilibrium
 

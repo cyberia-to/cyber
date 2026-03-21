@@ -3,8 +3,12 @@ alias: Hebbian rule, Hebb's rule, Hebbian plasticity
 tags: neuro, learning
 crystal-type: process
 crystal-domain: biology
-focus: 0.00029032342680206157
+diffusion: 0.00029032342680206157
+springs: 0.0012199748076249948
+heat: 0.0009233415399996728
+focus: 0.0006958224636884673
 gravity: 6
+density: 8.51
 ---
 # Hebbian learning
 

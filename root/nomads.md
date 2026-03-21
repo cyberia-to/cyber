@@ -3,8 +3,12 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4752483120104213
-focus: 0.00012424279691954033
+diffusion: 0.00012424279691954033
+springs: 0.000025087100765342707
+heat: 0.00005584521201827437
+focus: 0.00008081657109302826
 gravity: 1
+density: 0
 ---
 # From Urban Survival to Forest Arrival
 

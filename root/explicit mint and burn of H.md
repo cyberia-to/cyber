@@ -4,8 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: accepted
 stake: 12275905550913256
-focus: 0.00019206507886812698
+diffusion: 0.00019206507886812698
+springs: 0.0007670488522374898
+heat: 0.0005976369668445799
+focus: 0.0004456745884742286
 gravity: 3
+density: 7.79
 ---
 currently [[bostrom]] [[mint]] [[$H]] on every staking operation automatically
 

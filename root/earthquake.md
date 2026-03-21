@@ -4,8 +4,12 @@ alias: earthquakes
 crystal-type: entity
 crystal-domain: physics
 stake: 8157575032043287
-focus: 0.0002671785758734817
+diffusion: 0.0002671785758734817
+springs: 0.00013380152370955352
+heat: 0.0001938222839421037
+focus: 0.00021249420183802871
 gravity: 5
+density: 5.97
 ---
 sudden release of [[energy]] in Earth's lithosphere producing seismic waves
 

@@ -3,8 +3,12 @@ tags: mathematics, cyber
 alias: sheaves, sheafs, presheaf, presheaves
 crystal-type: pattern
 crystal-domain: mathematics
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0026889327598917418
+heat: 0.0018074748179534833
+focus: 0.0012264834933302144
 gravity: 0
+density: 3.67
 ---
 a mathematical structure that assigns data consistently to every open region of a [[topology|topological space]], satisfying two axioms: restriction and gluing
 

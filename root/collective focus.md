@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 7283113256091907
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0025112003219887502
+heat: 0.0016999085184729319
+focus: 0.0011516505020632063
 gravity: 0
+density: 19.32
 ---
 the emergent attention distribution over the [[cybergraph]]
 

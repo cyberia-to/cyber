@@ -5,8 +5,12 @@ crystal-domain: biology
 scalable: "true"
 alias: cynodon, bermuda
 stake: 7447265536434489
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0000971736258539693
+heat: 0.00010550815320187707
+focus: 0.00010856242016855572
 gravity: 0
+density: 2.95
 ---
 [[grass]]
 

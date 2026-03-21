@@ -5,8 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 authors: mastercyb
-focus: 0.0011586178561735687
+diffusion: 0.0011586178561735687
+springs: 0.0007047527420582505
+heat: 0.0008684272923834465
+focus: 0.0009644202091809535
 gravity: 9
+density: 2.11
 ---
 
 on the irreducibility of binary and ternary as the engine of [[intelligence]]

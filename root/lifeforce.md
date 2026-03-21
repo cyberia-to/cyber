@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4618232184508048
-focus: 0.00013877398561894333
+diffusion: 0.00013877398561894333
+springs: 0.00004808861965576714
+heat: 0.00008147484863309691
+focus: 0.0001001085484328217
 gravity: 1
+density: 3.44
 ---
 alternative to bryan johnson [[blueprint]] menu
 

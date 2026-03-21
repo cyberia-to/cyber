@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13707020524368364
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00045695399926734255
+heat: 0.0003574554317628511
+focus: 0.00026688598790476333
 gravity: 0
+density: 24
 ---
 [[bitcoin]]: [[pelvis]]
 

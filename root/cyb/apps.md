@@ -2,8 +2,12 @@
 tags: cyb
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00017714326971944824
+diffusion: 0.00017714326971944824
+springs: 0.0003750358624399996
+heat: 0.00033717212153264625
+focus: 0.0002685168178982546
 gravity: 4
+density: 8.28
 ---
 applications that run on [[cyb/os]]. each is a cell — independently compiled, hot-swappable, governed on-chain
 

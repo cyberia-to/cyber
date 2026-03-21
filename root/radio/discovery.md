@@ -3,8 +3,12 @@ alias: endpoint discovery, Pkarr, radio discovery
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.00025503637954554846
+diffusion: 0.00025503637954554846
+springs: 0.001513349016182602
+heat: 0.0010984673707999453
+focus: 0.0008012163687875479
 gravity: 6
+density: 3.9
 ---
 
 # discovery

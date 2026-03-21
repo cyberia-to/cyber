@@ -4,8 +4,12 @@ alias: mathematics
 icon: "\U00002295"
 crystal-type: entity
 crystal-domain: math
-focus: 0.0006614389981607974
+diffusion: 0.0006614389981607974
+springs: 0.00038630606523646586
+heat: 0.0005005646524816364
+focus: 0.0005467242491476685
 gravity: 28
+density: 5.47
 ---
 # math
 

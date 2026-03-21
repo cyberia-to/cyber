@@ -4,8 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: accepted
 stake: 12587367721496354
-focus: 0.00017163511813857247
+diffusion: 0.00017163511813857247
+springs: 0.0010084079660405917
+heat: 0.0007468189518292011
+focus: 0.0005377037392473067
 gravity: 2
+density: 5.18
 ---
 [[$H]] [[staking loan]] proved its utility and reliability during last several years
 

@@ -2,8 +2,12 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00008685778795571257
+heat: 0.00003896356362984299
+focus: 0.00009215875088467182
 gravity: 0
+density: 0
 ---
 [[Operating Agreement]]
   [Operating Agreement Template Non-Profit and For-Profit.docx](https://docs.google.com/document/d/1kqt8A0nzdRGs9Gb5tIJrUNeEc3S4F1aR/edit?usp=sharing&ouid=100192265667058521228&rtpof=true&sd=true)

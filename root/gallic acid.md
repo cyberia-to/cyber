@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5455063016390805
-focus: 0.00015942822510391937
+diffusion: 0.00015942822510391937
+springs: 0.00009182991631730292
+heat: 0.00012502083990820727
+focus: 0.00013226725542879266
 gravity: 4
+density: 2.36
 ---
 
 [[gallic acid]] is a naturally occurring [[polyphenol]] found in various plants, fruits, and seeds, including [[green tea]], [[grapes]], and [[berries]]. it is well known for its potent [[antioxidant]], [[anti-inflammatory]] and [[antimicrobial]] properties.

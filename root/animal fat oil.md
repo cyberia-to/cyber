@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4711312833188056
-focus: 0.00015639440770571478
+diffusion: 0.00015639440770571478
+springs: 0.00006310478920954892
+heat: 0.00009869885757622208
+focus: 0.00011686841213096706
 gravity: 1
+density: 1.05
 ---
 ### 🧾 🥄 animal fat oil
 

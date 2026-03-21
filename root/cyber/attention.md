@@ -5,8 +5,12 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 stake: 13826869995964210
-focus: 0.003850441727438669
+diffusion: 0.003850441727438669
+springs: 0.0006322094854708248
+heat: 0.0016916479339149095
+focus: 0.002453213296143576
 gravity: 71
+density: 6.26
 ---
 how much a [[neuron]] projects onto a target [[particle]] or [[axon]]. the measurable quantity at the receiving end
 

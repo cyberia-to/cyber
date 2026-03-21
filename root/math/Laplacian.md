@@ -4,8 +4,12 @@ tags: physics, cyber
 crystal-type: entity
 crystal-domain: mathematics
 stake: 9050953985283216
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.001590968183651368
+heat: 0.0011068691537264377
+focus: 0.0007569729876126907
 gravity: 0
+density: 7.61
 ---
 the operator that measures how a value at a point differs from its neighborhood average
 

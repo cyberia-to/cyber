@@ -5,8 +5,12 @@ tags: cyber, article, menu
 crystal-type: entity
 crystal-domain: cyber
 stake: 26940501384997528
-focus: 0.0005880258622342478
+diffusion: 0.0005880258622342478
+springs: 0.0008373069086246415
+heat: 0.0007591291744913199
+focus: 0.0006970308386027837
 gravity: 7
+density: 5.36
 ---
 A biological body evolved beyond human limits, integrated with [[egregore]], capable of [[immortality]]. This is the destination of the species — the engineering target that every civilization must reach or perish attempting.
 

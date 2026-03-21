@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4873308962140760
-focus: 0.000124566106887946
+diffusion: 0.000124566106887946
+springs: 0.0008394552737785345
+heat: 0.0006031466026660088
+focus: 0.0004347489561107373
 gravity: 2
+density: 3.81
 ---
 1994-. Russian-Canadian programmer and writer.
 

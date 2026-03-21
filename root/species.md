@@ -4,8 +4,12 @@ icon: 🌈
 crystal-type: entity
 crystal-domain: cybics
 stake: 6488795220481269
-focus: 0.005014191672831734
+diffusion: 0.005014191672831734
+springs: 0.000895464750949835
+heat: 0.0022210248913288305
+focus: 0.0032199402399666
 gravity: 27
+density: 5.73
 ---
 [[plants]]: hundreds of species in [[citadel genesis]] and [[batuka]]
 

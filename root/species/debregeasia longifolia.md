@@ -10,8 +10,12 @@ autonomy: support
 wood: "yes"
 grow-speed: "5"
 stake: 10134725174459522
-focus: 0.00013363026476167117
+diffusion: 0.00013363026476167117
+springs: 0.0002584792773968069
+heat: 0.00022261997049616273
+focus: 0.00018888290969911115
 gravity: 1
+density: 0.32
 ---
 ![image](https://ipfs.io/ipfs/QmPTsuUveBovcEgX9Feee9sVqb6La2b5xCU4J4Jx1t5mvo)
 

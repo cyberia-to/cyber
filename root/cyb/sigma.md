@@ -3,8 +3,12 @@ tags: page, prysm, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 18341118728537776
-focus: 0.00035006506691392914
+diffusion: 0.00035006506691392914
+springs: 0.0007050314108556924
+heat: 0.0006101664589224513
+focus: 0.000508575248498165
 gravity: 10
+density: 16.73
 ---
 
 wallet and balance [[aip]] in [[cyb]]

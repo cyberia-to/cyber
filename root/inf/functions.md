@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 25803029821582760
-focus: 0.0001649505695718497
+diffusion: 0.0001649505695718497
+springs: 0.0015222120463052587
+heat: 0.0010753050454264982
+focus: 0.0007541999077628059
 gravity: 2
+density: 0.94
 ---
 built-in function reference for [[datalog]] (CozoScript). all functions are available in rule bodies, expressions, and aggregation contexts
 

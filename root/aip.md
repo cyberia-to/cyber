@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21204935277414136
-focus: 0.0001256292320787335
+diffusion: 0.0001256292320787335
+springs: 0.0002422881484945481
+heat: 0.000245550319824076
+focus: 0.0001846111245525473
 gravity: 1
+density: 14.31
 ---
 any [[cyb/avatar]] can become [[aip]]
 

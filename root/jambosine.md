@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5428212829271572
-focus: 0.00016751874764095052
+diffusion: 0.00016751874764095052
+springs: 0.00009372729308500915
+heat: 0.00012628694420041943
+focus: 0.00013713495058606257
 gravity: 2
+density: 1.53
 ---
 
 [[jambosine]] is an [[alkaloid]] compound found in certain plants, most notably in the seeds of the rose apple (syzygium jambos). it has gained attention for its potential medicinal properties, particularly in [[regulating blood sugar]] levels and supporting metabolic health.

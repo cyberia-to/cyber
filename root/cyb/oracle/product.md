@@ -3,8 +3,12 @@ tags: article
 crystal-type: entity
 crystal-domain: cyber
 stake: 15828185306787760
-focus: 0.00014871092736937498
+diffusion: 0.00014871092736937498
+springs: 0.002036107462121106
+heat: 0.001394249841258833
+focus: 0.0009640376705727905
 gravity: 1
+density: 8.16
 ---
 particles chart
 

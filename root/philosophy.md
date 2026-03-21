@@ -2,8 +2,12 @@
 tags: discipline, spiri, meta, math
 crystal-type: entity
 crystal-domain: meta
-focus: 0.00037664812576986315
+diffusion: 0.00037664812576986315
+springs: 0.00019328933180245015
+heat: 0.0002723459422687995
+focus: 0.000300780050879428
 gravity: 12
+density: 21.8
 ---
 # philosophy
 

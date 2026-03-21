@@ -3,8 +3,12 @@ tags: cybernomics, cv.land
 crystal-type: entity
 crystal-domain: economics
 stake: 10808420778542090
-focus: 0.0001285456092246854
+diffusion: 0.0001285456092246854
+springs: 0.00009609220368184288
+heat: 0.00011732605948359498
+focus: 0.00011656567761361514
 gravity: 2
+density: 1.66
 ---
 - we are working on a permanent event platform for iconic events
 - are you organizing events?

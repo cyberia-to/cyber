@@ -4,8 +4,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4586906966202276
-focus: 0.00038600898589831483
+diffusion: 0.00038600898589831483
+springs: 0.0009312570799358254
+heat: 0.0007610464258055687
+focus: 0.000624590902091022
 gravity: 2
+density: 1.98
 ---
 modern philosopher who contributed to ideas behind
 

@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13988947489120310
-focus: 0.00013087554686725924
+diffusion: 0.00013087554686725924
+springs: 0.000532516247322763
+heat: 0.0004274057376809255
+focus: 0.0003106737951666452
 gravity: 3
+density: 16.52
 ---
 internal mode in [[cyb]]
 

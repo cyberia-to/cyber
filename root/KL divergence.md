@@ -4,8 +4,12 @@ alias: KL divergence, Kullback-Leibler divergence, relative entropy, information
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-focus: 0.0004099233448796529
+diffusion: 0.0004099233448796529
+springs: 0.0007425159844068308
+heat: 0.0006594528579961942
+focus: 0.0005596070393611174
 gravity: 8
+density: 2.48
 ---
 
 a measure of how much one probability distribution differs from another — the information lost when distribution Q is used to approximate the true distribution P

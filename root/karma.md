@@ -5,8 +5,12 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 stake: 27943722012816140
-focus: 0.006888731715485147
+diffusion: 0.006888731715485147
+springs: 0.0006577357278241088
+heat: 0.0026798757667705645
+focus: 0.00417766172944394
 gravity: 92
+density: 7.25
 ---
 
 how much the [[egregore]] trusts a [[neuron]]

@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14928704038293460
-focus: 0.000246075656919345
+diffusion: 0.000246075656919345
+springs: 0.00004871121917922689
+heat: 0.0001229457043116124
+focus: 0.00016224033507576384
 gravity: 5
+density: 1.33
 ---
 > its when humans get together, build cities, create art, make laws
   and occasionally invent bureaucracy just to keep things interesting

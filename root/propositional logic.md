@@ -3,8 +3,12 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 stake: 2945465526979843
-focus: 0.000290361585151646
+diffusion: 0.000290361585151646
+springs: 0.0012540724405108255
+heat: 0.0009447899878398733
+focus: 0.0007103605222970489
 gravity: 8
+density: 12.85
 ---
 the simplest formal [[logic]]: propositions connected by AND, OR, NOT, implication
 

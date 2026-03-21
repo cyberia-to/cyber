@@ -3,8 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5472963141136961
-focus: 0.00213751195956263
+diffusion: 0.00213751195956263
+springs: 0.00016048958370941234
+heat: 0.0008100088775665587
+focus: 0.0012789046304074567
 gravity: 9
+density: 0.53
 ---
 
 [[calcium]] is a vital [[mineral]] that plays an essential role in building and [[maintaining strong bones]] and [[teeth]], [[muscle contraction]], [[nerve function]], and [[blood clotting]]. it is the most abundant mineral in the human body and is critical for [[cellular signaling]] and overall health.

@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: economics
 stake: 10122520543950780
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0007779329447881714
+heat: 0.0005759194556421895
+focus: 0.0004068724763368803
 gravity: 0
+density: 16.25
 ---
 status:: DONE
 

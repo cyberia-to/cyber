@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8873986842906454
-focus: 0.0009154357132698792
+diffusion: 0.0009154357132698792
+springs: 0.00017216733722352426
+heat: 0.00042452104190869204
+focus: 0.0005942722661837382
 gravity: 2
+density: 0.4
 ---
 alias: oxalates, oxalic acid salts
 

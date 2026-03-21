@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 3755446171743366
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.002751963878773416
+heat: 0.001847953904363005
+focus: 0.001253488646276621
 gravity: 0
+density: 7.26
 ---
 fundamentally burning [[$H]] for some usable operations
 

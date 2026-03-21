@@ -3,8 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5472963141136961
-focus: 0.00012784593472981131
+diffusion: 0.00012784593472981131
+springs: 0.00004088502941695292
+heat: 0.00007762550114535016
+focus: 0.00009171357641906203
 gravity: 3
+density: 5.41
 ---
 mucilage is a thick, viscous, gel-like substance composed primarily of complex [[polysaccharides]], produced by many plants, algae, and microorganisms. mucilage serves critical roles in plant physiology, including water storage, seed germination support, protection against dehydration, and facilitating nutrient uptake.
 

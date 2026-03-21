@@ -9,8 +9,12 @@ wood-density:
 wood: "yes"
 grow-speed: "4"
 stake: 7571752767623661
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0005772708456518587
+heat: 0.0004232792789202778
+focus: 0.0003161458112516037
 gravity: 0
+density: 4.08
 ---
 [[staple]] [[oil]]
 

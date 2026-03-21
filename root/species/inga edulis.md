@@ -9,8 +9,12 @@ grow-speed: "5"
 availability: cv
 nitrogener: "250"
 stake: 14645556610490640
-focus: 0.00025977317450166955
+diffusion: 0.00025977317450166955
+springs: 0.00011993910045011926
+heat: 0.00018419923763345088
+focus: 0.00020270816491256173
 gravity: 6
+density: 3.43
 ---
 [[plant/miracle]]
 

@@ -3,8 +3,12 @@ tags: aip
 crystal-type: entity
 crystal-domain: cyber
 stake: 13962097302001076
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0012577258551327562
+heat: 0.0008933372007041979
+focus: 0.0006142938984526584
 gravity: 0
+density: 29.18
 ---
 [[network oriented aip]]
 

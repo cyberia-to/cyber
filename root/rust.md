@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: computer science
 stake: 4734582995358057
-focus: 0.000409630266747059
+diffusion: 0.000409630266747059
+springs: 0.00029389531122885396
+heat: 0.0003477013390889282
+focus: 0.00036252399455997307
 gravity: 13
+density: 13.71
 ---
 systems programming [[language]] with ownership-based memory safety and zero-cost abstractions
 

@@ -4,8 +4,12 @@ alias: carbon, $TOCYB
 crystal-type: entity
 crystal-domain: economics
 stake: 14096348237597240
-focus: 0.0003669227130224104
+diffusion: 0.0003669227130224104
+springs: 0.00044582168753077786
+heat: 0.00043181931979033116
+focus: 0.0004035717267285068
 gravity: 6
+density: 7.74
 ---
 [[store of value]] for [[superintelligence]]
 

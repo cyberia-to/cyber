@@ -3,8 +3,12 @@ tags: pattern, physics
 crystal-type: pattern
 crystal-domain: physics
 stake: 3283533792072001
-focus: 0.0003457164281638494
+diffusion: 0.0003457164281638494
+springs: 0.0001006968145397007
+heat: 0.0001966731481837842
+focus: 0.00024240188808059298
 gravity: 3
+density: 5.72
 ---
 phenomenon where a system [[oscillation]] reaches maximum [[amplitude]] at specific driving [[frequency]]
 

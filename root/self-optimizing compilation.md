@@ -4,8 +4,12 @@ alias: Self_Optimizing_Compilation_for_Algebraic_Virtual_Machines
 crystal-type: article
 crystal-domain: cyber
 stake: 8055056135769852
-focus: 0.00013141632950661427
+diffusion: 0.00013141632950661427
+springs: 0.0006819370134329942
+heat: 0.0005231348394600209
+focus: 0.0003749162366752115
 gravity: 2
+density: 0.54
 ---
 # Self-Optimizing Compilation for Algebraic Virtual Machines
 

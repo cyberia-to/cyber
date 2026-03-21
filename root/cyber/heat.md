@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 7625453141862128
-focus: 0.005031473900768542
+diffusion: 0.005031473900768542
+springs: 0.0006126598949629711
+heat: 0.0020621413837798976
+focus: 0.0031119631956291575
 gravity: 42
+density: 3.57
 ---
 third operator of the [[tri-kernel]]
 

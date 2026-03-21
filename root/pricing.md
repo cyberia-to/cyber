@@ -3,8 +3,12 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7433026800840958
-focus: 0.0001240759912705821
+diffusion: 0.0001240759912705821
+springs: 0.00004947769184207416
+heat: 0.00008762976000160697
+focus: 0.00009440725518823517
 gravity: 2
+density: 1.02
 ---
 moto
 - hike high, touch sky

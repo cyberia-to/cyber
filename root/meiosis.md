@@ -3,8 +3,12 @@ tags: biology
 crystal-type: process
 crystal-domain: biology
 stake: 4253069639686482
-focus: 0.0005792240778039751
+diffusion: 0.0005792240778039751
+springs: 0.00016544262916359995
+heat: 0.00031515839437503296
+focus: 0.00040227650652607615
 gravity: 4
+density: 2.01
 ---
 Cell division producing four genetically unique haploid gametes (sperm, eggs) from one diploid cell. The source of genetic diversity in sexually reproducing organisms.
 

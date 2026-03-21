@@ -10,8 +10,12 @@ autonomy: extra
 wood: "yes"
 grow-speed: "3"
 stake: 6920635729982263
-focus: 0.00027569568535811093
+diffusion: 0.00027569568535811093
+springs: 0.0002727551336300399
+heat: 0.00028484801981766886
+focus: 0.00027664398673160254
 gravity: 8
+density: 1.79
 ---
 [[staple]] for [[health]]
 

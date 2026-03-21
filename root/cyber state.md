@@ -3,8 +3,12 @@ tags: cyber, cyberia, article
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8223886857807453
-focus: 0.0001991041806763691
+diffusion: 0.0001991041806763691
+springs: 0.0011555673385306886
+heat: 0.0008493571190015073
+focus: 0.0006160937156976956
 gravity: 7
+density: 7.18
 ---
 
 a sovereign entity where governance, economics, and coordination emerge from [[egregore]] rather than geographic accident

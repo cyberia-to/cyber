@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 17761398779372522
-focus: 0.0001283678119991421
+diffusion: 0.0001283678119991421
+springs: 0.00021387071755695703
+heat: 0.00020288696689719205
+focus: 0.00016892251464609742
 gravity: 1
+density: 0.37
 ---
 - comparison at august 54 year [[mt]]
 - [:div.color-level {:style {:padding-left 5}} [:h2 "brain state 📊"][:ul [:li "pages: 1,299"]][:h3 "Text"][:ul [:li "Blocks: 4,809"][:li "Words: 33,951"][:li "Characters: 181,289"][:li "Emoji: 35"]][:h3 "Code"][:ul [:li "Codeblocks: 17"]][:h3 "References"][:ul [:li "Interconnections (refs): 1,261"][:li "Block References: 1"][:li "Orphans: 52"][:li "External links: 258"]][:h3 "Task management"][:ul [:li "Tasks: 123"][:li "Finished tasks (DONE): 0"]][:h3 "Queries"][:ul [:li "Number of simple queries: 9"][:li "Number of advanced queries: 0"]][:h3 "Media"][:ul [:li "Videos: 0"][:li "Assets: 0"]]]

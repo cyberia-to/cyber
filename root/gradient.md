@@ -4,8 +4,12 @@ alias: gradients
 crystal-type: pattern
 crystal-domain: physics
 stake: 5226266876453586
-focus: 0.00018282266430561965
+diffusion: 0.00018282266430561965
+springs: 0.0003165539603612036
+heat: 0.0003150912877045903
+focus: 0.00024939577780209017
 gravity: 4
+density: 8.29
 ---
 rate of change of a quantity across space or along a dimension
 

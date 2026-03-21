@@ -4,8 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 21528968217421240
-focus: 0.00012043010023175916
+diffusion: 0.00012043010023175916
+springs: 0.000025005613669978733
+heat: 0.00005457133483115597
+focus: 0.00007863100118310479
 gravity: 1
+density: 0
 ---
 ## protocol structure insights
 ### 1. creation model options

@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 8907549576805494
-focus: 0.00017093185636253832
+diffusion: 0.00017093185636253832
+springs: 0.00009987728575199664
+heat: 0.000138657121952257
+focus: 0.00014316053829732024
 gravity: 1
+density: 0.43
 ---
 ## History
 

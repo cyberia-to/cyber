@@ -3,8 +3,12 @@ tags: food, biology
 crystal-type: entity
 crystal-domain: agriculture
 stake: 5355391867236077
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0002870787413575786
+heat: 0.00024471132626313695
+focus: 0.00019337458943189095
 gravity: 0
+density: 6.04
 ---
 embryonic plant enclosed in a protective coat, carrier of genetic information
 

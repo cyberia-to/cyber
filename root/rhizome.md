@@ -3,8 +3,12 @@ tags: segment
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4810658525529217
-focus: 0.0011131335622847427
+diffusion: 0.0011131335622847427
+springs: 0.000192239575821234
+heat: 0.0004997162090613314
+focus: 0.0007141818957010114
 gravity: 7
+density: 5.1
 ---
 rhizome guilds are mixable and [[high margin]] multi layer system
 

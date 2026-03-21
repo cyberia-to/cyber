@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 18607179673628360
-focus: 0.00020765856983266228
+diffusion: 0.00020765856983266228
+springs: 0.00008130985522750637
+heat: 0.000143147641699341
+focus: 0.00015685176982445205
 gravity: 3
+density: 1.75
 ---
 due to regulatory issues we rejected idea of game of freedom
 

@@ -11,8 +11,12 @@ autonomy: staple
 wood: "yes"
 grow-speed: "5"
 stake: 9860731219538260
-focus: 0.0005163530626624221
+diffusion: 0.0005163530626624221
+springs: 0.00047141267250706023
+heat: 0.0004867144096238853
+focus: 0.0004969432150081087
 gravity: 10
+density: 0.82
 ---
 [[staple]]
 

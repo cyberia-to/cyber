@@ -2,8 +2,12 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
-focus: 0.00012983952603693843
+diffusion: 0.00012983952603693843
+springs: 0.0017919833846301277
+heat: 0.001232617954893345
+focus: 0.0008490383693861808
 gravity: 1
+density: 0.82
 ---
 # Computing Transformer Architecture from a Live Knowledge Graph: Bostrom Network Analysis
 

@@ -3,8 +3,12 @@ tags: compound-
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5338712205540797
-focus: 0.00016927027202790436
+diffusion: 0.00016927027202790436
+springs: 0.00009611734466607246
+heat: 0.0001343738420634628
+focus: 0.00014034510782646718
 gravity: 5
+density: 2.44
 ---
 polysaccharides are large, complex carbohydrate molecules composed of long chains of monosaccharide units linked by glycosidic bonds. they serve critical biological roles as energy storage compounds ([[starch]], [[glycogen]]) and structural components ([[cellulose]], [[chitin]]) in plants, fungi, animals, and microorganisms.
 

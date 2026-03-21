@@ -9,8 +9,12 @@ supply: "no"
 margin: low
 autonomy: support
 stake: 9966301273438880
-focus: 0.00017375287882385665
+diffusion: 0.00017375287882385665
+springs: 0.00008952117359924186
+heat: 0.00015657703133693836
+focus: 0.0001450481977590893
 gravity: 3
+density: 0.37
 ---
 [[grass]]
 

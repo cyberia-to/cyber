@@ -3,8 +3,12 @@ tags: geography, biome
 crystal-type: entity
 crystal-domain: geography
 stake: 5472556320120002
-focus: 0.00017108309843394019
+diffusion: 0.00017108309843394019
+springs: 0.00010153619248367425
+heat: 0.0001333505092451417
+focus: 0.00014267250881110143
 gravity: 3
+density: 6.41
 ---
 [[biome]] characterized by permafrost, minimal tree growth, and extreme cold
 

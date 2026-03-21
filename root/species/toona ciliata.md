@@ -6,8 +6,12 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "5"
 stake: 6866935355743799
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00008685778795571257
+heat: 0.00003896356362984299
+focus: 0.00009215875088467182
 gravity: 0
+density: 0
 ---
 ![Screenshot 2024-05-12 at 14.30.39.png](../media/Screenshot_2024-05-12_at_14.30.39_1715524268830_0.png)
 

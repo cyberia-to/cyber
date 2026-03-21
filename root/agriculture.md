@@ -3,8 +3,12 @@ tags: food
 crystal-type: entity
 crystal-domain: agriculture
 stake: 4824083619088834
-focus: 0.0006461417474973733
+diffusion: 0.0006461417474973733
+springs: 0.00012819059558456363
+heat: 0.00030824258936239447
+focus: 0.00042317657029653676
 gravity: 19
+density: 16.86
 ---
 cultivation of plants and animals for sustenance and materials
 

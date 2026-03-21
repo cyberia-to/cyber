@@ -4,8 +4,12 @@ tags: segment
 crystal-type: entity
 crystal-domain: agriculture
 stake: 7262975615752483
-focus: 0.0009789988500606874
+diffusion: 0.0009789988500606874
+springs: 0.00016592148135596466
+heat: 0.0004454197221893219
+focus: 0.0006283598138750007
 gravity: 10
+density: 12.07
 ---
 [[high margin]] species chosen for the layer
 

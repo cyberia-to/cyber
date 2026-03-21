@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5669864513344668
-focus: 0.00028718245072790853
+diffusion: 0.00028718245072790853
+springs: 0.00030203199063549564
+heat: 0.0003170571085900681
+focus: 0.000297612244272618
 gravity: 1
+density: 2.08
 ---
 the [[citadel]] is a thriving ecosystem where humans and nature coexist in harmony
 

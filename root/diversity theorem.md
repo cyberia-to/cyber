@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 7524764940165003
-focus: 0.00019702073889087232
+diffusion: 0.00019702073889087232
+springs: 0.0017576053694284787
+heat: 0.0012350797523945469
+focus: 0.0008728079307528935
 gravity: 1
+density: 8.4
 ---
 diverse problem solvers outperform groups of high-ability homogeneous solvers — Hong & Page (2004)
 

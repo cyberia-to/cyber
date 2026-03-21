@@ -6,8 +6,12 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 4745160341798967
-focus: 0.000833433268426272
+diffusion: 0.000833433268426272
+springs: 0.0009387124016142437
+heat: 0.0009191709226347464
+focus: 0.0008821645392243628
 gravity: 28
+density: 6.41
 ---
 [[consensus]] on the probability of [[observation]]. the [[tru]] computes it, [[cyberank]] measures it, [[focus]] prices it. what survives the [[tri-kernel]] is what the [[cybergraph]] calls true
 

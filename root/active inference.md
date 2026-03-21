@@ -5,8 +5,12 @@ crystal-domain: cybics
 alias: active inference framework
 status: draft
 stake: 6647618145501701
-focus: 0.0003155040140201089
+diffusion: 0.0003155040140201089
+springs: 0.0009359331750117817
+heat: 0.0007517950181024862
+focus: 0.0005888909631340891
 gravity: 13
+density: 5.52
 ---
 
 a framework where perception, action, and [[learning]] are aspects of one optimization: minimizing variational [[free energy]]

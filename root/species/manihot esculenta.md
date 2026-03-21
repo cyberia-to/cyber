@@ -5,8 +5,12 @@ crystal-domain: biology
 scalable: "true"
 alias: manihot, cassava, tapioca, singkong
 stake: 7608366659149886
-focus: 0.0003096124637208478
+diffusion: 0.0003096124637208478
+springs: 0.00010383563538641666
+heat: 0.00019440229725328515
+focus: 0.00022483738192700703
 gravity: 11
+density: 1.32
 ---
 [[staple]]
 

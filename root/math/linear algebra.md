@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4868833930954221
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00028551388599305555
+heat: 0.00024925656377571334
+focus: 0.0001938141803250493
 gravity: 0
+density: 2.2
 ---
 The study of [[vector]] spaces, [[matrix]] operations, and [[linear transformations]] between them.
 

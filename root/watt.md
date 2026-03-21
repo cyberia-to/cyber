@@ -3,8 +3,12 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3166369339188076
-focus: 0.0003840923068783459
+diffusion: 0.0003840923068783459
+springs: 0.0001616791125112389
+heat: 0.0002487321434024411
+focus: 0.0002902963158730343
 gravity: 5
+density: 6.6
 ---
 SI unit of [[power]], equal to one [[joule]] per second
 

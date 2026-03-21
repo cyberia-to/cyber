@@ -9,8 +9,12 @@ grow-speed: "5"
 nitrogener: "500"
 wood-density: "500"
 stake: 13539817086398594
-focus: 0.00075227959750939
+diffusion: 0.00075227959750939
+springs: 0.0001629978781893022
+heat: 0.00036389281999232837
+focus: 0.0004978177262099538
 gravity: 9
+density: 2.22
 ---
 ![Leucaena](https://ipfs.io/ipfs/QmRFr6siC54zvG6YQmDxCxx2yjLTkKwmtzSfRWoasFARKx)
 

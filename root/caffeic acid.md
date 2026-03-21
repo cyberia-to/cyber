@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5437162891644650
-focus: 0.00013984894974927871
+diffusion: 0.00013984894974927871
+springs: 0.00009145776836905941
+heat: 0.00012161943445026834
+focus: 0.00012168569227541146
 gravity: 4
+density: 1.08
 ---
 caffeic acid is a naturally occurring [[phenolic acid]] belonging to the group of hydroxycinnamic acids, widely present in plants such as coffee, fruits, vegetables, grains, and herbs. it exhibits strong [[antioxidant]], [[anti-inflammatory]], and [[antimicrobial]] activities, playing a significant role in plant defense and human health.
 

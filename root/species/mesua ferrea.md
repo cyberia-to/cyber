@@ -10,8 +10,12 @@ supply: next-month
 wood: "yes"
 grow-speed: "1"
 stake: 7637657772370867
-focus: 0.00013873930972082703
+diffusion: 0.00013873930972082703
+springs: 0.0004364662044774217
+heat: 0.0003361865105905736
+focus: 0.00026754681832175613
 gravity: 1
+density: 1.14
 ---
 [[high margin]]
 

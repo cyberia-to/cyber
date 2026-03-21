@@ -3,8 +3,12 @@ tags: cyb, cyber, core
 alias: video particle, moving image, recording, temporal pixels
 crystal-type: entity
 crystal-domain: cyb
-focus: 0.0002603818764736206
+diffusion: 0.0002603818764736206
+springs: 0.001246605972407104
+heat: 0.0009296980994494819
+focus: 0.0006901123498488414
 gravity: 6
+density: 2.84
 ---
 temporal [[pixels]] — the physical world unfolding over time as [[particle]]. the native format for recordings, experiments, lectures, and any knowledge that requires a sequence of frames
 

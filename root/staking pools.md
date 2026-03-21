@@ -4,8 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 19305284538728412
-focus: 0.00012434368750751724
+diffusion: 0.00012434368750751724
+springs: 0.0011084938660727774
+heat: 0.0007998231539201168
+focus: 0.0005546846343596181
 gravity: 1
+density: 1.72
 ---
 most of [[$BOOT]] stake is unstaked due to complexities related to multisig management
 

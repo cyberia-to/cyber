@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 3773346296489523
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00007512665866356377
+heat: 0.00010126089792734948
+focus: 0.00010109887895652852
 gravity: 0
+density: 10.22
 ---
 collect firewood near storage places
   logseq.order-list-type:: number

@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4707732808238825
-focus: 0.0002286219884053515
+diffusion: 0.0002286219884053515
+springs: 0.000030231185661009345
+heat: 0.00009822083574902732
+focus: 0.00014302451705078473
 gravity: 1
+density: 0
 ---
 #### goal:
 - ensure booking accuracy by confirming all essential details.

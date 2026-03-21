@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 18660880047866824
-focus: 0.00024695350840393273
+diffusion: 0.00024695350840393273
+springs: 0.0013468769679708538
+heat: 0.0009855134302218784
+focus: 0.0007246425306376017
 gravity: 2
+density: 4.4
 ---
 first of all [[superintelligence]] does not exist yet
 

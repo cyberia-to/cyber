@@ -9,8 +9,12 @@ market: resins
 wood: "yes"
 grow-speed: "1"
 stake: 6907210636422646
-focus: 0.00014543529845878204
+diffusion: 0.00014543529845878204
+springs: 0.000279209717065478
+heat: 0.00024425707511068314
+focus: 0.00020533197937117208
 gravity: 2
+density: 4.61
 ---
 [[high margin]] [[oil]] and [[resin]]
 

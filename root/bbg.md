@@ -6,8 +6,12 @@ crystal-domain: cyber
 subgraph: true
 repo: ../bbg
 exclude: ".claude/**, target/**, CLAUDE.md"
-focus: 0.0010230569493550432
+diffusion: 0.0010230569493550432
+springs: 0.0009599717313789811
+heat: 0.0009893933999858319
+focus: 0.0009973986740883874
 gravity: 25
+density: 4.51
 ---
 the authenticated state layer for [[cyber]]. stores the [[cybergraph]] — edges ([[cyberlinks]]), [[neuron]] state, [[particle]] energy, [[focus]], balances — with polynomial commitment indexes that provide cryptographic completeness proofs.
 

@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias:: probabilistic logic
 stake: 4474583683420153
-focus: 0.0002617413451508586
+diffusion: 0.0002617413451508586
+springs: 0.0021100316198470986
+heat: 0.0014855991843989757
+focus: 0.0010609999954093593
 gravity: 5
+density: 7.48
 ---
 replaces binary truth values with continuous degrees of truth in $[0, 1]$
 

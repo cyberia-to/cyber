@@ -3,8 +3,12 @@ tags: geography, biology, biome
 crystal-type: entity
 crystal-domain: biology
 stake: 5881004621145908
-focus: 0.00017108309843394019
+diffusion: 0.00017108309843394019
+springs: 0.00010854865878924388
+heat: 0.00013922294974756232
+focus: 0.00014595073680325645
 gravity: 3
+density: 6.39
 ---
 tropical and subtropical grassland [[biome]] with scattered trees
 

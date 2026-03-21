@@ -3,8 +3,12 @@ tags: cyber, cybernomics, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: gravities, knowledge gravity
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.003209671626691779
+heat: 0.002132986390266646
+focus: 0.001447807467832859
 gravity: 0
+density: 1.52
 ---
 # Gravity
 

@@ -3,8 +3,12 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1063267409921620
-focus: 0.00015774257958588219
+diffusion: 0.00015774257958588219
+springs: 0.0002001369276506406
+heat: 0.00021549793145828912
+focus: 0.000182011954379792
 gravity: 1
+density: 7
 ---
 [[mass]] per unit volume, measured in kg/m3
 

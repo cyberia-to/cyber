@@ -3,8 +3,12 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: enzyme
-focus: 0.00040417461971420105
+diffusion: 0.00040417461971420105
+springs: 0.0014089969182008704
+heat: 0.001085319642863142
+focus: 0.0008418503138899942
 gravity: 9
+density: 6.53
 ---
 the constraint that every operator must compute from neighbors only
 

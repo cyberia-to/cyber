@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6461945033362037
-focus: 0.0005010489942313891
+diffusion: 0.0005010489942313891
+springs: 0.0001881646799150866
+heat: 0.00030260713375110084
+focus: 0.0003674953278404426
 gravity: 4
+density: 0.57
 ---
 part of [[pirates of cyber states]] course on off grid living in [[cyberia]]
 

@@ -3,8 +3,12 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3198589563731156
-focus: 0.0002798524324086223
+diffusion: 0.0002798524324086223
+springs: 0.000050354268543956765
+heat: 0.0001373714044507511
+focus: 0.0001825067776576493
 gravity: 8
+density: 3.11
 ---
 SI unit of electric current, one of the seven SI base units
 

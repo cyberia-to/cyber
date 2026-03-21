@@ -3,8 +3,12 @@ tags: governance, cyber
 crystal-type: relation
 crystal-domain: governance
 stake: 1089629411820504
-focus: 0.00022052013800896662
+diffusion: 0.00022052013800896662
+springs: 0.00011953910250293983
+heat: 0.00016458862263563458
+focus: 0.00017903952428249308
 gravity: 3
+density: 9.52
 ---
 legal membership in a state, carrying rights and obligations
 

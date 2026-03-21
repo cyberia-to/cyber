@@ -3,8 +3,12 @@ tags: cyber, meta
 alias: discipline, academic disciplines
 crystal-type: entity
 crystal-domain: meta
-focus: 0.00014221361967912388
+diffusion: 0.00014221361967912388
+springs: 0.0001686123777340873
+heat: 0.00017916481823080437
+focus: 0.0001575234868059498
 gravity: 4
+density: 11.93
 ---
 # disciplines
 

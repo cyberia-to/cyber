@@ -5,8 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
-focus: 0.00019706102691866573
+diffusion: 0.00019706102691866573
+springs: 0.0015942889170385455
+heat: 0.0011318315261974036
+focus: 0.0008031834938103812
 gravity: 6
+density: 0.59
 ---
 # the five primitives of a [[vimputer]]
 

@@ -3,8 +3,12 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4891209086886915
-focus: 0.0018024983025247978
+diffusion: 0.0018024983025247978
+springs: 0.0002939680389718213
+heat: 0.0008058372415006038
+focus: 0.001150607011254072
 gravity: 20
+density: 10.29
 ---
 
 Einstein's framework unifying [[spacetime]], [[gravity]], [[energy]], and [[mass]].

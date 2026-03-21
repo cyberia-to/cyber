@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
 stake: 52357864882504040
-focus: 0.0036563759662550724
+diffusion: 0.0036563759662550724
+springs: 0.0005572145704657652
+heat: 0.0015766380113456393
+focus: 0.0023106799565364056
 gravity: 47
+density: 14.44
 ---
 many machines, one mind. a vimputer coordinates physical nodes into a single computing entity through [[consensus]]
 

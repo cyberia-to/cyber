@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias:: first-order logic
 stake: 4414170762401879
-focus: 0.00026551222870946426
+diffusion: 0.00026551222870946426
+springs: 0.001428741754988665
+heat: 0.0010446694914420602
+focus: 0.0007703125391397475
 gravity: 8
+density: 8.92
 ---
 extends [[propositional logic]] with variables, quantifiers ($\forall$, $\exists$), and predicates over objects
 

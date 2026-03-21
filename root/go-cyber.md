@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 20983421233680464
-focus: 0.00317978035265426
+diffusion: 0.00317978035265426
+springs: 0.0003485410963570594
+heat: 0.0012809406708975282
+focus: 0.0019506406394137633
 gravity: 32
+density: 11.08
 ---
 [github.com/cybercongress/go-cyber](https://github.com/cybercongress/go-cyber)
 

@@ -5,8 +5,12 @@ alias: day pass, visit us
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7068311759138044
-focus: 0.0006900694890063914
+diffusion: 0.0006900694890063914
+springs: 0.00015399569287653081
+heat: 0.0003382950039938285
+focus: 0.00045889245316492293
 gravity: 3
+density: 4.79
 ---
 our friends, including us, complain that
 

@@ -5,8 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 status: accepted
 stake: 11846302557005530
-focus: 0.00012900866777926681
+diffusion: 0.00012900866777926681
+springs: 0.0022236281992745765
+heat: 0.0015116482419337586
+focus: 0.0010339224420587633
 gravity: 1
+density: 7.05
 ---
 in current [[go-cyber]] implementation there is one property
 

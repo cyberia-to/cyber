@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: cyberia
 type: public
 stake: 7623012215760378
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00003931937485558857
+heat: 0.00007214355939085477
+focus: 0.00008453322610683693
 gravity: 0
+density: 5.92
 ---
 cyberlink is the internet in cyber valley
 

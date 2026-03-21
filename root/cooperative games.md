@@ -3,8 +3,12 @@ tags: cyber, cybernomics
 crystal-type: entity
 crystal-domain: cybics
 stake: 5950977836062696
-focus: 0.00019657725383942406
+diffusion: 0.00019657725383942406
+springs: 0.001273663385855967
+heat: 0.0009226564295887285
+focus: 0.0006649189285942512
 gravity: 6
+density: 9.41
 ---
 games where players form coalitions and share joint gains — the mathematical foundation for fair [[cooperation]]
 

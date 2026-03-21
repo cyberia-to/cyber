@@ -3,8 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5070210334348468
-focus: 0.0003020219899487604
+diffusion: 0.0003020219899487604
+springs: 0.000599486261277865
+heat: 0.000515738479765434
+focus: 0.00043400456931082866
 gravity: 8
+density: 7.78
 ---
 union of partially self-governing states or regions under a shared central authority
 

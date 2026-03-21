@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4689832683492669
-focus: 0.00014583866966968128
+diffusion: 0.00014583866966968128
+springs: 0.00007186332815805683
+heat: 0.00011901745404076403
+focus: 0.00011828182409041108
 gravity: 3
+density: 0
 ---
 TODO lecture at [[bootcamp/v0]]
 

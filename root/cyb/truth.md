@@ -2,8 +2,12 @@
 tags: cyb, ui
 crystal-type: entity
 crystal-domain: cyb
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0017528616426730423
+heat: 0.0012109279014133015
+focus: 0.0008263527748565661
 gravity: 0
+density: 9.83
 ---
 how the personal robot shows what is [[true]], [[false]], or [[void]]
 

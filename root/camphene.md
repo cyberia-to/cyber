@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 7795504326950600
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00017293524280029157
+heat: 0.00015580381331203934
+focus: 0.00014135003727448503
 gravity: 0
+density: 0.35
 ---
 
 ### camphene: overview and medical uses

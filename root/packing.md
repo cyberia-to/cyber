@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6256093598781252
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00011796606158717927
+heat: 0.00012732651782411075
+focus: 0.00011916382381296551
 gravity: 0
+density: 0.45
 ---
 ## current state
 - investments

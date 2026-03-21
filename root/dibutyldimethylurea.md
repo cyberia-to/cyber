@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5678814575717746
-focus: 0.00011992174067338834
+diffusion: 0.00011992174067338834
+springs: 0.000024994748723930204
+heat: 0.00005440148453954018
+focus: 0.00007833959186178167
 gravity: 1
+density: 0
 ---
 dibutyldimethylurea is a synthetic [[urea derivative]] characterized by two [[butyl]] and two [[methyl]] groups attached to a central urea structure. it is a chemically modified compound with reported [[antimicrobial]] and [[antifungal]] properties, and has been identified in the root extracts of certain [[medicinal plants]]. although not naturally abundant, it may serve as a lead compound for developing new [[antibacterial agents]].
 

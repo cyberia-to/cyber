@@ -6,8 +6,12 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "4"
 stake: 13078482053168142
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00014549569595147404
+heat: 0.00014808966911778642
+focus: 0.00013157534438098913
 gravity: 0
+density: 3.9
 ---
 ![](https://ipfs.io/ipfs/bafybeiapmu3yu6gy6kdonf4xp4q3lg33wrqtsr44mfkbkepqlqzp4bqkhm)
 

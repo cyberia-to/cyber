@@ -10,8 +10,12 @@ wood-durability: low
 wood: "yes"
 grow-speed: "4"
 stake: 7674271663897095
-focus: 0.00012331339228193301
+diffusion: 0.00012331339228193301
+springs: 0.0004841975776089274
+heat: 0.00037143770589471075
+focus: 0.00028120351060258826
 gravity: 1
+density: 4.49
 ---
 [[conifer]]
 

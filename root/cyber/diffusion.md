@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 18413858326369884
-focus: 0.006909596159060992
+diffusion: 0.006909596159060992
+springs: 0.0006102750555808781
+heat: 0.002662715768218958
+focus: 0.004170423749848572
 gravity: 70
+density: 4.49
 ---
 first operator of the [[tri-kernel]]
 

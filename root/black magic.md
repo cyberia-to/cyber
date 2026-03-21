@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 7296538349651524
-focus: 0.00017610562375780593
+diffusion: 0.00017610562375780593
+springs: 0.0016762569307284154
+heat: 0.001185642437951004
+focus: 0.0008280583786876326
 gravity: 3
+density: 24.09
 ---
 the [[tri-kernel]] gives [[superintelligence]] the ability to understand itself
 

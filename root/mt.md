@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 20479980225194848
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.000719552876027883
+heat: 0.0005413131377980451
+focus: 0.00038243719213996476
 gravity: 0
+density: 13.3
 ---
 year after the first [[unix time]] second. the universal temporal coordinate of all machines.
 

@@ -4,8 +4,12 @@ alias: alphabets
 crystal-type: entity
 crystal-domain: culture
 stake: 7464352019146730
-focus: 0.0003976579946422022
+diffusion: 0.0003976579946422022
+springs: 0.00009022942127895952
+heat: 0.00020345607760356122
+focus: 0.00026658903922550253
 gravity: 7
+density: 5.51
 ---
 [[writing system]] where each symbol represents a single phoneme (consonant or vowel)
 

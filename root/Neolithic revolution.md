@@ -3,8 +3,12 @@ tags: time, history
 crystal-type: entity
 crystal-domain: history
 stake: 5252872970962643
-focus: 0.0002333696025159541
+diffusion: 0.0002333696025159541
+springs: 0.00006897007372778652
+heat: 0.00013550722129991897
+focus: 0.00016447726763629762
 gravity: 5
+density: 6.12
 ---
 transition from nomadic hunter-gatherer life to settled [[agriculture]] ~10000 BCE
 

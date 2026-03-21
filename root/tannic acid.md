@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8243007445604482
-focus: 0.00015707962074970914
+diffusion: 0.00015707962074970914
+springs: 0.0001958246098749258
+heat: 0.00018823739800804238
+focus: 0.00017493467293894165
 gravity: 3
+density: 1.87
 ---
 alias: tannic acid
 

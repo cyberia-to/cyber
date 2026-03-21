@@ -4,8 +4,12 @@ crystal-type: process
 crystal-domain: computer science
 status: draft
 stake: 7810963525595007
-focus: 0.00012447059517759013
+diffusion: 0.00012447059517759013
+springs: 0.000027590608081462206
+heat: 0.0000671916198767824
+focus: 0.00008395080398859064
 gravity: 2
+density: 0
 ---
 prefer transparent cryptography with no trusted setup or social committees.
 

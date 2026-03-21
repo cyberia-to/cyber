@@ -3,8 +3,12 @@ tags: tech
 crystal-type: entity
 crystal-domain: materials
 stake: 5871240916738914
-focus: 0.00041663877168123176
+diffusion: 0.00041663877168123176
+springs: 0.00006170912454571112
+heat: 0.0001920264607211597
+focus: 0.0002652374153485625
 gravity: 5
+density: 1.1
 ---
 - recipe for extreme longevity concrete with high thermal resistance
 

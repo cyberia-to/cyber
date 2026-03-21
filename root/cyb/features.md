@@ -3,8 +3,12 @@ tags: cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 13626469963010664
-focus: 0.00032476837934131955
+diffusion: 0.00032476837934131955
+springs: 0.00008990324942208392
+heat: 0.00018684992896367283
+focus: 0.00022672515029002066
 gravity: 15
+density: 0.78
 ---
 # Features
 

@@ -4,8 +4,12 @@ alias: Rosetta Stone, lookup table duality, rosetta stone, rosetta-stone
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
-focus: 0.0002747603231211995
+diffusion: 0.0002747603231211995
+springs: 0.0000982840996370066
+heat: 0.00017249329317008818
+focus: 0.00020136405008572037
 gravity: 8
+density: 0.35
 ---
 # The Rosetta Stone
 

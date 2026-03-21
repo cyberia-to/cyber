@@ -3,8 +3,12 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5379801128253562
-focus: 0.0006133679537170914
+diffusion: 0.0006133679537170914
+springs: 0.00010380830578350524
+heat: 0.00028959911505616813
+focus: 0.0003957462916048328
 gravity: 10
+density: 4.42
 ---
 material with electrical conductivity between conductor and insulator
 

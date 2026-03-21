@@ -3,8 +3,12 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8081906322889084
-focus: 0.0003527620683814681
+diffusion: 0.0003527620683814681
+springs: 0.00013566059217232155
+heat: 0.0002286967663247481
+focus: 0.0002628185651073814
 gravity: 4
+density: 3
 ---
 ## Why?
 

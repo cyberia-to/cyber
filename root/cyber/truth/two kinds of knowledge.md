@@ -5,8 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
-focus: 0.000380141188699993
+diffusion: 0.000380141188699993
+springs: 0.0018627439948550148
+heat: 0.001365242466330022
+focus: 0.0010219422860725106
 gravity: 6
+density: 3.43
 ---
 
 the [[cybergraph]] contains two kinds of [[knowledge]]. they are irreducible to each other. the system is incomplete without both.

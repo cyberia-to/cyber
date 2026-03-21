@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4998609835363846
-focus: 0.0001416650646093506
+diffusion: 0.0001416650646093506
+springs: 0.0005137377521462359
+heat: 0.0003985917360901284
+focus: 0.00030467220516657326
 gravity: 3
+density: 2.33
 ---
 1955-, British computer scientist, inventor of the World Wide Web
 

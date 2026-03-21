@@ -6,8 +6,12 @@ crystal-type: entity
 crystal-domain: economics
 crystal-size: atom
 stake: 16484794428158086
-focus: 0.00015524772853371202
+diffusion: 0.00015524772853371202
+springs: 0.0011385276338028135
+heat: 0.0008250398640842654
+focus: 0.000584190127224556
 gravity: 4
+density: 10.37
 ---
 unique and immovable [[token]] bound to a [[neuron]] forever. non-transferable [[proof]] — achievements, credentials, attestations. the immovable counterpart of [[score]]
 

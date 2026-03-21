@@ -4,8 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 stake: 12372566224542492
-focus: 0.0001497748256766913
+diffusion: 0.0001497748256766913
+springs: 0.0001362621616152363
+heat: 0.00018075193467331668
+focus: 0.00015191644825758064
 gravity: 2
+density: 2.46
 ---
 replace native [[cosmos-sdk]] [liquidity module](https://github.com/tendermint/liquidity) with [aqua](https://github.com/1inch/aqua)-style decentralized exchange
 

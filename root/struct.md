@@ -3,8 +3,12 @@ tags: cyb, cyber, core
 alias: struct particle, structured data, json, toml
 crystal-type: entity
 crystal-domain: cyb
-focus: 0.00021968420983200672
+diffusion: 0.00021968420983200672
+springs: 0.0010299448058001671
+heat: 0.0007768397735698206
+focus: 0.0005741935013700204
 gravity: 3
+density: 3.8
 ---
 trees, configurations, records, and schemas as [[particle]]. the native format for machine-readable knowledge in the [[cybergraph]]
 

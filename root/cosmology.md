@@ -3,8 +3,12 @@ tags: discipline, cosmo, quantum, energo
 crystal-type: entity
 crystal-domain: cosmo
 stake: 5168661020452321
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0007143021076105579
+heat: 0.0005481397657498126
+focus: 0.0003822272872051208
 gravity: 0
+density: 13.13
 ---
 The study of the origin, structure, evolution, and fate of the universe as a whole.
 

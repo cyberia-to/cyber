@@ -7,8 +7,12 @@ icon: 🌉
 ops: "false"
 dev: "false"
 stake: 4801708463156139
-focus: 0.0005019086566083058
+diffusion: 0.0005019086566083058
+springs: 0.00011329644333877743
+heat: 0.0002676572462578261
+focus: 0.0003384747105573531
 gravity: 9
+density: 7.45
 ---
 planned district in [[cyber valley]]
 

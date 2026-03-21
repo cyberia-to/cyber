@@ -4,8 +4,12 @@ tags: cyberia
 crystal-type: pattern
 crystal-domain: biology
 stake: 4430280874673419
-focus: 0.00013170333634097506
+diffusion: 0.00013170333634097506
+springs: 0.00008690583090244325
+heat: 0.00011440636523399264
+focus: 0.0001148046904880196
 gravity: 1
+density: 1.32
 ---
 stratification = layered unfolding
 

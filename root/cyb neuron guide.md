@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 15814760213228140
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0010650252927175378
+heat: 0.0007707904480493739
+focus: 0.0005319743791971277
 gravity: 0
+density: 5.48
 ---
 TODO create illustrated book like robonomics did
 

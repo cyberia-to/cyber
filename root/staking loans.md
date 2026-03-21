@@ -4,8 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: TODO
 stake: 13935247114881842
-focus: 0.00015354731551944762
+diffusion: 0.00015354731551944762
+springs: 0.00003296970884472214
+heat: 0.00008014081292148417
+focus: 0.0001026927329974378
 gravity: 2
+density: 0
 ---
 [[$H]]
 

@@ -3,8 +3,12 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 stake: 3245455344884726
-focus: 0.0003639397824270817
+diffusion: 0.0003639397824270817
+springs: 0.001152233559716875
+heat: 0.0009005838204536392
+focus: 0.0007077567232193348
 gravity: 5
+density: 7.4
 ---
 the [[emotion]] of [[violet]] — response to invisible threat
 

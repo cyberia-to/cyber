@@ -4,8 +4,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 9491541146648808
-focus: 0.0005110697995623182
+diffusion: 0.0005110697995623182
+springs: 0.00015397483398159987
+heat: 0.00029479920942453993
+focus: 0.0003606871918605489
 gravity: 6
+density: 2.79
 ---
 the residency is dedicated to the creation of [[cyberia]]
 

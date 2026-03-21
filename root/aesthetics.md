@@ -3,8 +3,12 @@ tags: culture, philosophy
 crystal-type: property
 crystal-domain: culture
 stake: 1094511264024000
-focus: 0.0001607345681317392
+diffusion: 0.0001607345681317392
+springs: 0.00015904196617775264
+heat: 0.00018445886162301233
+focus: 0.00016497164624379866
 gravity: 3
+density: 8.03
 ---
 branch of [[philosophy]] studying beauty, [[art]], taste, and sensory experience
 

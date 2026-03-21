@@ -4,8 +4,12 @@ alias: honest, epistemic honesty, honest reporting
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0019742811554129057
+heat: 0.0013500717775505355
+focus: 0.0009206074039059723
 gravity: 0
+density: 2.78
 ---
 reporting actual private beliefs, unadjusted for social pressure, predicted popularity, or anticipated reward
 

@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 24460520465621116
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00045326894572575595
+heat: 0.00036216659397070647
+focus: 0.00026672270428385844
 gravity: 0
+density: 4.28
 ---
 in this post, i will outline a short-term roadmap with a clear purpose
   title:: year/54/roadmap

@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: predictive processing
 stake: 4986079748041538
-focus: 0.00023696096553477234
+diffusion: 0.00023696096553477234
+springs: 0.0010577835249058324
+heat: 0.0007997469980908071
+focus: 0.0005957649398573002
 gravity: 8
+density: 6.37
 ---
 the brain as a prediction machine — perception is not passive observation but active inference about the causes of sensory signals
 

@@ -3,8 +3,12 @@ tags: cyber, language
 alias: Wav, wave language, signal language
 crystal-type: entity
 crystal-domain: cyber
-focus: 0.0001350842356534836
+diffusion: 0.0001350842356534836
+springs: 0.0001775941229005139
+heat: 0.00018829886559527408
+focus: 0.00015848012781595155
 gravity: 3
+density: 5.05
 ---
 the [[signal]] language. a [[signal]] is a waveform — a continuous function sampled at discrete points
 

@@ -3,8 +3,12 @@ tags: time, history, technology
 crystal-type: entity
 crystal-domain: history
 stake: 5849272581823179
-focus: 0.0002879197347892505
+diffusion: 0.0002879197347892505
+springs: 0.0003345429061269987
+heat: 0.00033294881614369853
+focus: 0.00031091250246146615
 gravity: 8
+density: 5.81
 ---
 movable type printing system invented by Johannes Gutenberg ~1440 in Mainz
 

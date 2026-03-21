@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 2934725452132150
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00101935336205491
+heat: 0.0007372275647373086
+focus: 0.0005115602233359262
 gravity: 0
+density: 1.68
 ---
 the study of properties of [[space]] preserved under continuous deformation — stretching, bending, twisting — but not tearing or gluing. two shapes are topologically identical if one can be continuously deformed into the other; a coffee cup and a torus are the same, a sphere and a torus are not
 

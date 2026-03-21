@@ -3,8 +3,12 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 5003084866550385
-focus: 0.00023571587410880135
+diffusion: 0.00023571587410880135
+springs: 0.00020771996850420894
+heat: 0.00024544565743427624
+focus: 0.00022926305909251973
 gravity: 3
+density: 2.99
 ---
 traditional narratives explaining origins, natural phenomena, social order, and human purpose
 

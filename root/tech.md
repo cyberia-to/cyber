@@ -3,8 +3,12 @@ tags: cyber, tech
 alias: technology
 crystal-type: entity
 crystal-domain: tech
-focus: 0.0003588073123365223
+diffusion: 0.0003588073123365223
+springs: 0.0001340577733616349
+heat: 0.00022504207554947637
+focus: 0.0002646294032866482
 gravity: 17
+density: 23.44
 ---
 # tech
 

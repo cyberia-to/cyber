@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4931484367565765
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00015468184464782338
+heat: 0.00016043095066634982
+focus: 0.00013679944529960663
 gravity: 0
+density: 4.22
 ---
 The study of structure-preserving maps between mathematical objects, expressed through objects, arrows ([[morphisms]]), and [[functors]].
 

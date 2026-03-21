@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4918059274006148
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00017889105100126965
+heat: 0.00017792465896967962
+focus: 0.00014756094886630652
 gravity: 0
+density: 4.33
 ---
 
 The science of collecting, analyzing, and interpreting data to draw inferences about populations from samples.

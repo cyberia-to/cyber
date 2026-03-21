@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11545580461270122
-focus: 0.0001367026476497157
+diffusion: 0.0001367026476497157
+springs: 0.0019061184434354531
+heat: 0.001310138665164458
+focus: 0.0009022145898883899
 gravity: 3
+density: 14.82
 ---
 many agents contributing partial computations toward a shared result
 

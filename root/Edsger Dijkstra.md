@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4913584242819610
-focus: 0.00018697139051113742
+diffusion: 0.00018697139051113742
+springs: 0.0007831418742225176
+heat: 0.0005837419192876056
+focus: 0.0004451766413798473
 gravity: 2
+density: 2.4
 ---
 1930-2002. Dutch computer scientist.
 

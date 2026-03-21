@@ -3,8 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5584838920800430
-focus: 0.0001439108152268673
+diffusion: 0.0001439108152268673
+springs: 0.000029876562886938706
+heat: 0.00008812287802758642
+focus: 0.00009854295208503304
 gravity: 2
+density: 0
 ---
 | gas        | estimated amount in air | extraction method           | purity achievable         | efficiency | typical applications                                              |
 |------------|-------------------------|-----------------------------|---------------------------|------------|-------------------------------------------------------------------|

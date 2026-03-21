@@ -5,8 +5,12 @@ crystal-domain: cybernetics
 crystal-size: article
 alias: cyber netics, cybernetics protocol
 stake: 50000000000000000
-focus: 0.00012771377383120758
+diffusion: 0.00012771377383120758
+springs: 0.0012248663785903232
+heat: 0.0008771805415040198
+focus: 0.0006067529087935077
 gravity: 2
+density: 5.59
 ---
 # cyber netics
 

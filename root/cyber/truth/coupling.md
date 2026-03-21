@@ -4,8 +4,12 @@ alias: inversely coupled bonding surface, ICBS, Euclidean norm ICBS, bonding sur
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
-focus: 0.0005856784020149457
+diffusion: 0.0005856784020149457
+springs: 0.0007510748530074617
+heat: 0.0007138938277787619
+focus: 0.000660940422465467
 gravity: 21
+density: 1.54
 ---
 
 a market mechanism for prediction markets where the two sides of a bet are geometrically coupled — buying one directly suppresses the other

@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cyber
 alias:: categorical patches, commutative patches
 stake: 18334772320673232
-focus: 0.00012700172286313164
+diffusion: 0.00012700172286313164
+springs: 0.003031665270729747
+heat: 0.0020279782639130014
+focus: 0.0013785960954330971
 gravity: 2
+density: 1.18
 ---
 mathematical framework for version control where changes are morphisms in a [[category]], independent changes commute, and [[conflicts]] are first-class algebraic objects
 

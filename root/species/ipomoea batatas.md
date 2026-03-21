@@ -8,8 +8,12 @@ supply: "no"
 margin: medium
 autonomy: staple
 stake: 6887072996083224
-focus: 0.00039791788907035387
+diffusion: 0.00039791788907035387
+springs: 0.00025469216462458756
+heat: 0.0003149807094404939
+focus: 0.00033836273581065366
 gravity: 10
+density: 2.55
 ---
 [[staple]] [[health]]
 

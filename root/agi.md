@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 23131436203219088
-focus: 0.00014362979993864133
+diffusion: 0.00014362979993864133
+springs: 0.0001224047115900791
+heat: 0.00014268945436640546
+focus: 0.00013707420431962616
 gravity: 3
+density: 0
 ---
 in this article i describe a conceptual framework for creating artificial general intelligence
 

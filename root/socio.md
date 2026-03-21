@@ -3,8 +3,12 @@ tags: cyber, socio
 alias: sociology, society
 crystal-type: entity
 crystal-domain: socio
-focus: 0.00025419573444060694
+diffusion: 0.00025419573444060694
+springs: 0.00016482779105668997
+heat: 0.00021359304537273203
+focus: 0.00021926481361185795
 gravity: 20
+density: 23.26
 ---
 # socio
 

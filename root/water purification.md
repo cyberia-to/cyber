@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 6995368750797462
-focus: 0.0006423916580207711
+diffusion: 0.0006423916580207711
+springs: 0.00009503037840486043
+heat: 0.00028331484283831477
+focus: 0.00040636791109950864
 gravity: 5
+density: 0
 ---
 - title: regenerative volcanic-to-glacial water purification and revitalization system
   

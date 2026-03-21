@@ -4,8 +4,12 @@ crystal-type: entity
 crystal-domain: cybics
 alias: Landauer
 stake: 7497914753045770
-focus: 0.0006365769755792133
+diffusion: 0.0006365769755792133
+springs: 0.0008292738529916887
+heat: 0.0007793913224826204
+focus: 0.0007229489081836409
 gravity: 5
+density: 11.05
 ---
 1927-1999. German-American physicist at IBM.
 

@@ -4,8 +4,12 @@ alias: psycho
 crystal-type: entity
 crystal-domain: economics
 stake: 15881885681026224
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00006573821430054974
+heat: 0.00008783013923770338
+focus: 0.00009559619390969506
 gravity: 0
+density: 0.64
 ---
 ## [[plants/mental]]
 

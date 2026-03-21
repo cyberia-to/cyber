@@ -6,8 +6,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
 stake: 56744209087345984
-focus: 0.030264947644791644
+diffusion: 0.030264947644791644
+springs: 0.0009512090430292542
+heat: 0.010356648937424162
+focus: 0.017489166322789518
 gravity: 342
+density: 10.07
 ---
 content-addressed node in the [[cybergraph]]. identity = [[hash]] of content
 

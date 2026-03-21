@@ -3,8 +3,12 @@ tags: page
 crystal-type: entity
 crystal-domain: cyber
 stake: 17640572937335976
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.003202769731986742
+heat: 0.002136960321262858
+focus: 0.0014465316856205905
 gravity: 0
+density: 4.05
 ---
 table render of [[cyb/brain]]
 

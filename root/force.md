@@ -4,8 +4,12 @@ alias: forces
 crystal-type: measure
 crystal-domain: physics
 stake: 4478611211488038
-focus: 0.001309425367749201
+diffusion: 0.001309425367749201
+springs: 0.00027860156112158996
+heat: 0.0006389215287761779
+focus: 0.0008660774579663175
 gravity: 15
+density: 12.16
 ---
 An interaction that changes the [[momentum]] of a body — the cause of [[acceleration]].
 

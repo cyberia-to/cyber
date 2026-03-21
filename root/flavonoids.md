@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8370545834420837
-focus: 0.0005028932283313975
+diffusion: 0.0005028932283313975
+springs: 0.00007448315851307961
+heat: 0.0002358094378822074
+focus: 0.00032095344929606575
 gravity: 20
+density: 1.19
 ---
 alias: flavonoids
 

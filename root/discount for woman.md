@@ -4,8 +4,12 @@ crystal-type: entity
 crystal-domain: cyberia
 tag: article
 stake: 8950062373077613
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00008685778795571257
+heat: 0.00003896356362984299
+focus: 0.00009215875088467182
 gravity: 0
+density: 0
 ---
 - In the modern world, women's labor continues to be systematically undervalued. Despite equal (and often higher) levels of education, qualifications, and contributions to society, women on average earn significantly less than men for comparable work. This disparity is not accidental—it is deeply embedded in the economy, culture, and traditions of most countries.
   

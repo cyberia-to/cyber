@@ -5,8 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 supply: urgent
 stake: 7513170541181698
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0013333822957418689
+heat: 0.0009141611203741132
+focus: 0.0006411556145693756
 gravity: 0
+density: 7.57
 ---
 source of [[omega-3]]
 

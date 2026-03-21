@@ -5,8 +5,12 @@ tags: cv.land
 crystal-type: entity
 crystal-domain: biology
 stake: 8269857632723714
-focus: 0.00061610950903303
+diffusion: 0.00061610950903303
+springs: 0.00010860723220611049
+heat: 0.0002918211925238051
+focus: 0.0003990011626831112
 gravity: 8
+density: 0
 ---
 [birds observation by urban biologist 2024](https://ipfs.io/ipfs/QmUQWE2PB5bDkCCRJ6imBbsdMCRWD6p1nyya9yxvBhUAWA)
 

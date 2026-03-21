@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4967284617058075
-focus: 0.00015815181162056347
+diffusion: 0.00015815181162056347
+springs: 0.0007386446658874667
+heat: 0.0005499517081965589
+focus: 0.00041065964721583557
 gravity: 2
+density: 2.25
 ---
 French mathematician and computer scientist, professor at Aix-Marseille University.
 

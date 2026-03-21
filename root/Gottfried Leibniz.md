@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4935959398752303
-focus: 0.00021452875843179186
+diffusion: 0.00021452875843179186
+springs: 0.0005119435429737175
+heat: 0.00041918432071792804
+focus: 0.0003446843062515985
 gravity: 4
+density: 3.51
 ---
 1646-1716. German polymath: mathematician, philosopher, logician, diplomat.
 

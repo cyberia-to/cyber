@@ -4,8 +4,12 @@ alias: cyber energy
 crystal-type: entity
 crystal-domain: economics
 stake: 15553581120341058
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0021645966489994076
+heat: 0.0014676184791122015
+focus: 0.0010012113922942564
 gravity: 0
+density: 22.46
 ---
 root [[token]] of planned [[cyber]] [[superintelligence]]
 

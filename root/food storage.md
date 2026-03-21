@@ -4,8 +4,12 @@ tags: species
 crystal-type: entity
 crystal-domain: biology
 stake: 7759704077458290
-focus: 0.00014209686105600534
+diffusion: 0.00014209686105600534
+springs: 0.000031864836080096
+heat: 0.0000765103943858766
+focus: 0.00009590996022920726
 gravity: 1
+density: 0
 ---
 ### cold storage
 

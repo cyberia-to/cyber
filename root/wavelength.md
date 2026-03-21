@@ -3,8 +3,12 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1080842077854209
-focus: 0.000270178206246254
+diffusion: 0.000270178206246254
+springs: 0.00012112928481607684
+heat: 0.000194118238361093
+focus: 0.0002102515362401697
 gravity: 2
+density: 6.33
 ---
 distance between consecutive peaks (or troughs) of a [[wave]]
 

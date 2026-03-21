@@ -3,8 +3,12 @@ tags: cyb, cyber, stark, architecture, article, core
 crystal-type: entity
 crystal-domain: cyber
 alias:: computation languages, language set, nineteen languages
-focus: 0.0006434383956852818
+diffusion: 0.0006434383956852818
+springs: 0.0005354726875302366
+heat: 0.0005934348912667387
+focus: 0.0006010479823550627
 gravity: 22
+density: 1.83
 ---
 
 # Languages of [[superintelligence]]

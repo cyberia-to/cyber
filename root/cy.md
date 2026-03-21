@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14713902541339598
-focus: 0.0008465800897170671
+diffusion: 0.0008465800897170671
+springs: 0.0007915692631942755
+heat: 0.000831748466289548
+focus: 0.00082711051707473
 gravity: 6
+density: 2.48
 ---
 integrated command line tooling for learning [[cybergraph]]
 

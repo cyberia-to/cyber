@@ -3,8 +3,12 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5159710958079244
-focus: 0.0005753841696884701
+diffusion: 0.0005753841696884701
+springs: 0.00012053201567009537
+heat: 0.00028373686877506077
+focus: 0.00038059906330027775
 gravity: 14
+density: 6.01
 ---
 
 A step-by-step procedure that transforms input into output in a finite number of operations. The foundation of all [[computation]].

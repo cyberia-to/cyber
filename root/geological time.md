@@ -3,8 +3,12 @@ tags: time, geography
 crystal-type: entity
 crystal-domain: geography
 stake: 5350510015032581
-focus: 0.0002883772602012277
+diffusion: 0.0002883772602012277
+springs: 0.00009891650889286384
+heat: 0.00018158124924548514
+focus: 0.00021017983261757106
 gravity: 8
+density: 3.48
 ---
 framework for 4.54 billion years of Earth history, divided into hierarchical units
 

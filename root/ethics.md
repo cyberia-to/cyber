@@ -3,8 +3,12 @@ tags: culture, philosophy
 crystal-type: entity
 crystal-domain: culture
 stake: 5438383354695525
-focus: 0.00018196151417911429
+diffusion: 0.00018196151417911429
+springs: 0.00027088450017685354
+heat: 0.0002594208232271787
+focus: 0.00022413027178805006
 gravity: 9
+density: 6.05
 ---
 branch of [[philosophy]] studying moral principles, right action, and the good life
 

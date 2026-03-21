@@ -3,8 +3,12 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4909109211633071
-focus: 0.002428609691389865
+diffusion: 0.002428609691389865
+springs: 0.00025813686014592514
+heat: 0.000983232521048062
+focus: 0.00148839240794833
 gravity: 28
+density: 11.57
 ---
 
 The fundamental theory of [[physics]] describing nature at the scale of atoms and subatomic particles.

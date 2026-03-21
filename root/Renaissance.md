@@ -3,8 +3,12 @@ tags: time, history
 crystal-type: entity
 crystal-domain: history
 stake: 5311455197404606
-focus: 0.00032301120751019983
+diffusion: 0.00032301120751019983
+springs: 0.00012124631538479121
+heat: 0.00021037120261797383
+focus: 0.00023995373889413324
 gravity: 7
+density: 11.42
 ---
 cultural and intellectual movement in Europe, 14th-17th century
 

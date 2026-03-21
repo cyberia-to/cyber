@@ -7,8 +7,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 stake: 34080210232611716
-focus: 0.004136513002776548
+diffusion: 0.004136513002776548
+springs: 0.0004109493909461502
+heat: 0.0016297630173859544
+focus: 0.0025174939221493226
 gravity: 77
+density: 6.4
 ---
 The immortal [[cyb/robot]] — your personal interface to [[superintelligence]]. [cyb.ai](https://cyb.ai)
 

@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4922534305192688
-focus: 0.00023912942039850584
+diffusion: 0.00023912942039850584
+springs: 0.00028980469493873807
+heat: 0.00029062870774504185
+focus: 0.000264631860229884
 gravity: 4
+density: 0
 ---
 1856-1943, Serbian-American inventor and electrical engineer
 

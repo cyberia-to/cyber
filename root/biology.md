@@ -3,8 +3,12 @@ tags: discipline, bio, chemo, eco
 crystal-type: entity
 crystal-domain: bio
 stake: 6790656415064160
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.002395379992108207
+heat: 0.001613079546479982
+focus: 0.0010995386087004528
 gravity: 0
+density: 4.27
 ---
 
 biology is the study of life and living systems. all biological knowledge forms natural graph structures: organisms relate through taxonomy, ecology, chemistry, and observation

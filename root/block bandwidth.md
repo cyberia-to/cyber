@@ -3,8 +3,12 @@ tags: state
 crystal-type: measure
 crystal-domain: cyber
 stake: 8586689840730663
-focus: 0.0001242121030987156
+diffusion: 0.0001242121030987156
+springs: 0.00005625388891965087
+heat: 0.00008851582403500309
+focus: 0.00009668538303225418
 gravity: 1
+density: 1.87
 ---
 key: `0x02 | sdk.Uint64ToBigEndian(blockNumber) -> sdk.Uint64ToBigEndian(value)`
 

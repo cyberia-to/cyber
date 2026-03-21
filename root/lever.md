@@ -3,8 +3,12 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5374919276050065
-focus: 0.00017115498652739119
+diffusion: 0.00017115498652739119
+springs: 0.0001866519613474249
+heat: 0.00020092279934285273
+focus: 0.00018175764153649453
 gravity: 3
+density: 3.95
 ---
 rigid bar pivoting on a fulcrum, producing mechanical advantage
 

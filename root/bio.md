@@ -3,8 +3,12 @@ tags: cyber, bio
 alias: biology
 crystal-type: entity
 crystal-domain: bio
-focus: 0.0007841669689377719
+diffusion: 0.0007841669689377719
+springs: 0.00021658187755100146
+heat: 0.0004224466584433044
+focus: 0.00054154737942285
 gravity: 35
+density: 17.03
 ---
 # bio
 

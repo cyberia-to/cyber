@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 14370220146213418
-focus: 0.0002913192838417333
+diffusion: 0.0002913192838417333
+springs: 0.0006711653750941996
+heat: 0.0005678353087942299
+focus: 0.00046057631620797476
 gravity: 5
+density: 5.84
 ---
 [[$CYB]] pack for sale
 

@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias:: Shapley, Shapley values, shapley value
 stake: 5452540726085665
-focus: 0.00040292116479696583
+diffusion: 0.00040292116479696583
+springs: 0.0011944680541171324
+heat: 0.0009386691352261864
+focus: 0.0007475348256788636
 gravity: 12
+density: 4.45
 ---
 a solution concept from cooperative game theory that assigns each player their exact fair share of the total value created by a coalition
 

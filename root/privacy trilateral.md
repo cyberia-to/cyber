@@ -4,8 +4,12 @@ alias: privacy trilateral, ZK+FHE+MPC, privacy triangle, privacy-trilateral
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
-focus: 0.0003842707667656138
+diffusion: 0.0003842707667656138
+springs: 0.0015839281184564596
+heat: 0.0011844599452187513
+focus: 0.0009042058079634995
 gravity: 9
+density: 0.47
 ---
 # The Privacy Trilateral: ZK + FHE + MPC
 

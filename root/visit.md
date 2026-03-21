@@ -4,8 +4,12 @@ alias: residency
 crystal-type: process
 crystal-domain: cyberia
 stake: 7426761757179804
-focus: 0.00012471866701000466
+diffusion: 0.00012471866701000466
+springs: 0.00006103333424366597
+heat: 0.00010406256009312716
+focus: 0.00010148184579672805
 gravity: 2
+density: 3.44
 ---
 ## white ticket
 

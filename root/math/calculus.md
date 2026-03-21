@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4904634180446532
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0001316370499290969
+heat: 0.00015479042031691997
+focus: 0.0001287579008141027
 gravity: 0
+density: 5.3
 ---
 The mathematical study of continuous change through [[differentiation]] and [[integration]].
 

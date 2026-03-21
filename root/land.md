@@ -3,8 +3,12 @@ alias: lands
 tags: cyberia, core
 crystal-type: entity
 crystal-domain: cyberia
-focus: 0.00014112606413285294
+diffusion: 0.00014112606413285294
+springs: 0.00017515504471386542
+heat: 0.00017849406644931967
+focus: 0.00015880835877045082
 gravity: 2
+density: 8.41
 ---
 the physical resource beneath everything. soil, water, forest, mineral, slope, view — the raw material from which [[territory]] is built
 

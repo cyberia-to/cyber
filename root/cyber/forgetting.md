@@ -4,8 +4,12 @@ alias: forgetting, graph forgetting, synaptic pruning, selective forgetting, mem
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-focus: 0.00035209650409390706
+diffusion: 0.00035209650409390706
+springs: 0.002077542591333908
+heat: 0.0014928380516518924
+focus: 0.0010978786397775099
 gravity: 9
+density: 2.1
 ---
 
 the selective removal of weak connections from active computation while preserving the authenticated record — the cybergraph's equivalent of sleep-phase synaptic homeostasis

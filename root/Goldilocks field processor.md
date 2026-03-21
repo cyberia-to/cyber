@@ -4,8 +4,12 @@ alias: GFP, Goldilocks Field Processor, AURUM, gfp spec, gfp-spec
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
-focus: 0.0005449217051615849
+diffusion: 0.0005449217051615849
+springs: 0.00047832169590242464
+heat: 0.0005287935594870693
+focus: 0.0005217160732489363
 gravity: 19
+density: 0.22
 ---
 # The Goldilocks Field Processor
 

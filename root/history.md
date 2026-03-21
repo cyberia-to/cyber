@@ -2,8 +2,12 @@
 tags: discipline, meta, socio
 crystal-type: entity
 crystal-domain: meta
-focus: 0.0001300222630358629
+diffusion: 0.0001300222630358629
+springs: 0.00010872158342239504
+heat: 0.0001332085115892621
+focus: 0.00012426930886250302
 gravity: 5
+density: 20.85
 ---
 # history
 

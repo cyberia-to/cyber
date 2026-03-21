@@ -3,8 +3,12 @@ tags: color, cyber
 crystal-type: property
 crystal-domain: culture
 stake: 1093534893583301
-focus: 0.00020274700204654384
+diffusion: 0.00020274700204654384
+springs: 0.000548696813395473
+heat: 0.0004625936584003716
+focus: 0.00035850127672198994
 gravity: 7
+density: 5.5
 ---
 wavelength:: 590-620 nm
 

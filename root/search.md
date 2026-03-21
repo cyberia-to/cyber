@@ -4,8 +4,12 @@ tags: cyber-
 crystal-type: process
 crystal-domain: cyber
 stake: 11427439637945498
-focus: 0.0005334566023658616
+diffusion: 0.0005334566023658616
+springs: 0.0008459786046405684
+heat: 0.0007539038063318248
+focus: 0.0006713026438414695
 gravity: 11
+density: 14.19
 ---
 [[cyber]] protocol allow to search for [[particles]] in [[cybergraph]]
 

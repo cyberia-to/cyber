@@ -3,8 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5374512455033107
-focus: 0.00023994803666886592
+diffusion: 0.00023994803666886592
+springs: 0.00003531281216181664
+heat: 0.00010500746012183262
+focus: 0.00015156935400734522
 gravity: 3
+density: 0
 ---
 campesterol is a plant-derived [[phytosterol]], structurally similar to cholesterol, found abundantly in vegetable oils, nuts, seeds, legumes, fruits, and grains. it contributes significantly to dietary sterol intake and is recognized for its [[cholesterol-lowering]] effects and [[anti-inflammatory]] properties
 

@@ -5,8 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 stake: 23432890576785020
-focus: 0.00017617191727705887
+diffusion: 0.00017617191727705887
+springs: 0.0003541811761582204
+heat: 0.0003405335290338414
+focus: 0.00026244701729276516
 gravity: 1
+density: 0
 ---
 - GFlowNet: a proposal engine that *samples edits* (small graph changes) in proportion to how good they look.
 - Focus‑Flow: a physics‑style process that keeps a live attention field \(π\) over the graph (what the network cares about now).

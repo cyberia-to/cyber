@@ -3,8 +3,12 @@ tags: uhash
 crystal-type: entity
 crystal-domain: cybics
 stake: 8950062373077613
-focus: 0.0001501718680565298
+diffusion: 0.0001501718680565298
+springs: 0.00002946562296127733
+heat: 0.00007655250049665715
+focus: 0.00009923612101598003
 gravity: 3
+density: 0
 ---
 # UniversalHash v4: A Democratic Proof-of-Work Algorithm
 

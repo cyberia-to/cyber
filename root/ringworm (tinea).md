@@ -3,7 +3,11 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 4577956903829198
-focus: 0.00013387326134841373
+diffusion: 0.00013387326134841373
+springs: 0.0000731417735715435
+heat: 0.00010788278603817667
+focus: 0.0001104557199533058
 gravity: 1
+density: 0
 ---
 ringworm (tinea): a fungal infection causing circular, itchy, scaly patches on the skin or scalp.

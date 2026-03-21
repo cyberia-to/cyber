@@ -5,8 +5,12 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
 stake: 6251618567594713
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.000058483198361375755
+heat: 0.0000974131076870951
+focus: 0.00009533628281782121
 gravity: 0
+density: 5.02
 ---
 [Lychee.pdf](https://ipfs.io/ipfs/QmfCM3LqMjARu2uPudnjHENngi3P8J7BWCDRyhqR7pEtG9)
 

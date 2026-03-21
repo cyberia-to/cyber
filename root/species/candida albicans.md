@@ -3,8 +3,12 @@ tags: species
 crystal-type: entity
 crystal-domain: biology
 stake: 5889141041485070
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00004637560442918114
+heat: 0.00007227812447454649
+focus: 0.00008667700799565306
 gravity: 0
+density: 0.44
 ---
 
 candida albicans is a type of yeast (fungus) that is normally found in small amounts in the human body, particularly in the mouth, throat, gut, and vagina. while it is usually harmless, it can cause infections if it grows out of control or if the immune system is compromised.

@@ -4,8 +4,12 @@ crystal-type: pattern
 crystal-domain: cyber
 alias: Goedelian prison, incompleteness prison, Goedel's prison, Goedel prison, Goedelian prison, Goedel's prison
 stake: 20443732472583884
-focus: 0.000306605393676905
+diffusion: 0.000306605393676905
+springs: 0.000851171102728933
+heat: 0.0006890881429212291
+focus: 0.000546471656241381
 gravity: 11
+density: 5.31
 ---
 the confinement of all formal systems to permanent incompleteness — and the escape through [[convergent computation]]
 

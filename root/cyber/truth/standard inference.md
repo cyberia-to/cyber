@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 7746278983898673
-focus: 0.0010407976253406933
+diffusion: 0.0010407976253406933
+springs: 0.001477677510282578
+heat: 0.0013314442659603375
+focus: 0.0012299909189471935
 gravity: 13
+density: 6.21
 ---
 the naive first solution to the [[true-false problem]] — a single-factor contextual weighting that preceded the full [[cyber/truth]] architecture
 

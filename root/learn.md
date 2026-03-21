@@ -5,8 +5,12 @@ alias: learning, labeling, answer
 crystal-type: process
 crystal-domain: cyber
 stake: 17753343723236754
-focus: 0.003687142449705282
+diffusion: 0.003687142449705282
+springs: 0.0006213141051600588
+heat: 0.0016265901273075309
+focus: 0.002355283481862177
 gravity: 37
+density: 17.29
 ---
 [[create links]] between [[particles]] of [[information]]
 

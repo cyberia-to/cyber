@@ -9,8 +9,12 @@ margin: medium
 autonomy: staple
 availability: cv
 stake: 12294944774506892
-focus: 0.00039490517587993944
+diffusion: 0.00039490517587993944
+springs: 0.000158535300001644
+heat: 0.00024307527874484512
+focus: 0.0002936282336894334
 gravity: 10
+density: 3.67
 ---
 ![](https://ipfs.io/ipfs/QmR24VjmWmFzphF9bXMhKHSqTA9YMSxGkpZzdXCUSedFMb)
 

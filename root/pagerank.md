@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 8522249391644504
-focus: 0.0010271026594369282
+diffusion: 0.0010271026594369282
+springs: 0.0008100413623655756
+heat: 0.0009163921669288769
+focus: 0.0009398421718139169
 gravity: 10
+density: 8.48
 ---
 algorithm that ranks web pages by measuring their importance based on the quantity and quality of links pointing to them
 

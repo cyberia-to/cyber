@@ -3,8 +3,12 @@ tags: discipline, game, math, socio
 crystal-type: entity
 crystal-domain: game
 stake: 13613044869451050
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.001003857264826206
+heat: 0.0007262008026655189
+focus: 0.000504706041752957
 gravity: 0
+density: 5.2
 ---
 the study of strategic interaction — what happens when the outcome of your choice depends on the choices of others
 

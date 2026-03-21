@@ -3,8 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 3844946795474143
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.0024235848374369435
+heat: 0.00163404059127475
+focus: 0.0011121922712580277
 gravity: 0
+density: 8.1
 ---
 mental mechanisms by which [[neurons]] acquire, interpret, and apply information in [[social]] contexts
 

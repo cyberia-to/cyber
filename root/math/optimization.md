@@ -3,8 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4980709710617692
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.00023706912165876085
+heat: 0.00021389416784186666
+focus: 0.00017220827183799144
 gravity: 0
+density: 1.92
 ---
 Finding the best solution from a set of feasible alternatives by minimizing or maximizing an objective function.
 

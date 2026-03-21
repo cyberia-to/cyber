@@ -6,8 +6,12 @@ crystal-domain: cyber
 subgraph: true
 repo: ../optica
 exclude: ".claude/**, target/**"
-focus: 0.00012178338289065661
+diffusion: 0.00012178338289065661
+springs: 0.000702754564956992
+heat: 0.0005415620172474153
+focus: 0.00038003046438191086
 gravity: 1
+density: 4.05
 ---
 knowledge graph publisher — transforms markdown with [[wiki-links]] into a fast static site
 

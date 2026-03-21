@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21647963364881476
-focus: 0.00037750449527377465
+diffusion: 0.00037750449527377465
+springs: 0.00008184604673700958
+heat: 0.0001976755867322125
+focus: 0.00025284117900443396
 gravity: 17
+density: 18.38
 ---
 [[sky]]
 

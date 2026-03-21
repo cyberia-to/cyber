@@ -4,8 +4,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: computer science
 stake: 6685696592688977
-focus: 0.00028525373951402333
+diffusion: 0.00028525373951402333
+springs: 0.00025422005482601427
+heat: 0.00029477530943491324
+focus: 0.0002778479480918
 gravity: 7
+density: 3.02
 ---
 class of [[consensus]] mechanism used in [[blockchains]]
 

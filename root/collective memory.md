@@ -3,8 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 15250906283724256
-focus: 0.00011661740354397796
+diffusion: 0.00011661740354397796
+springs: 0.001711285378974333
+heat: 0.001178915415953373
+focus: 0.0008074773986549676
 gravity: 0
+density: 19.13
 ---
 the [[cybergraph]] is the collective memory of [[cyber]]
 

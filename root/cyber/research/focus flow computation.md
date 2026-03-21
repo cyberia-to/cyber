@@ -5,8 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 stake: 53778483873721616
-focus: 0.0018217331133117132
+diffusion: 0.0018217331133117132
+springs: 0.0010133633789276859
+heat: 0.0012858411735070605
+focus: 0.0014720438050355817
 gravity: 32
+density: 2.99
 ---
 focus flow computation is the process by which the [[cybergraph]] reaches collective [[equilibrium]]. the [[tri-kernel]] runs over all [[cyberlinks]], [[neurons]] add links, and the network continuously converges toward a unique fixed point — the [[focus|focus distribution]] $\pi^*$. this is not a model architecture. it is the persistent knowledge state of the collective
 

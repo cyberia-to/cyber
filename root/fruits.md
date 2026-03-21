@@ -4,8 +4,12 @@ alias: fruit
 crystal-type: entity
 crystal-domain: economics
 stake: 18137301399041780
-focus: 0.00418096072300732
+diffusion: 0.00418096072300732
+springs: 0.00015598897494301233
+heat: 0.0015121884045011702
+focus: 0.00243971473488681
 gravity: 38
+density: 17.04
 ---
 [[staple]]
 

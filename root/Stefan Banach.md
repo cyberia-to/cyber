@@ -3,8 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4985184741804231
-focus: 0.00015790550273515671
+diffusion: 0.00015790550273515671
+springs: 0.0011040280331669331
+heat: 0.0008016830996379568
+focus: 0.0005704977812452525
 gravity: 4
+density: 4.24
 ---
 1892-1945. Polish mathematician, co-founder of functional analysis.
 

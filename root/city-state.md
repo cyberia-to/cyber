@@ -3,8 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5119435677400394
-focus: 0.0001640714608003018
+diffusion: 0.0001640714608003018
+springs: 0.00021009972798895964
+heat: 0.00021076411732101112
+focus: 0.00018721847226104197
 gravity: 3
+density: 8.27
 ---
 sovereign state consisting of a single city and its immediate surroundings
 

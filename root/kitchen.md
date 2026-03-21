@@ -5,8 +5,12 @@ crystal-domain: cyberia
 type: private
 alias: permabase kitchen
 stake: 7557107211013170
-focus: 0.0002347042425023481
+diffusion: 0.0002347042425023481
+springs: 0.00003463967210839465
+heat: 0.00010839675714173468
+focus: 0.00014942337431204014
 gravity: 3
+density: 13.96
 ---
 revenue:: master class
 

@@ -8,8 +8,12 @@ supply: next-month
 market: edible oils
 wood-density: "750"
 stake: 7535138876097433
-focus: 0.00024493518348960036
+diffusion: 0.00024493518348960036
+springs: 0.0002348204193119596
+heat: 0.0002577282125372277
+focus: 0.0002444593600458348
 gravity: 5
+density: 0
 ---
 [[staple]]
 

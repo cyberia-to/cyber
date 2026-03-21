@@ -4,8 +4,12 @@ alias: BOOT
 crystal-type: entity
 crystal-domain: economics
 stake: 15613383809833894
-focus: 0.0002216942678032394
+diffusion: 0.0002216942678032394
+springs: 0.0004270271242197343
+heat: 0.0003877029831054828
+focus: 0.0003164958677886381
 gravity: 4
+density: 10.11
 ---
 [[consensus]] [[token]] of [[bostrom]]
 

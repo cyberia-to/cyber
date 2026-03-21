@@ -5,8 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 stake: 13653320150129898
-focus: 0.0003854695942784988
+diffusion: 0.0003854695942784988
+springs: 0.0021591757519285023
+heat: 0.0015548057035064359
+focus: 0.0011514486634190931
 gravity: 6
+density: 3.01
 ---
 
 the set of information currently active in an inference process — the seed that determines what is relevant, what gets [[attention]], and what the next step produces

@@ -1,8 +1,12 @@
 ---
 tags: physics, information
 alias: negentropy
-focus: 0.0001279707226388262
+diffusion: 0.0001279707226388262
+springs: 0.0008563155790349447
+heat: 0.0006389319558611574
+focus: 0.0004486664262021302
 gravity: 2
+density: 7.1
 ---
 order measured in bits — the distance from maximum [[entropy]]. how much structure a system has beyond random noise
 
