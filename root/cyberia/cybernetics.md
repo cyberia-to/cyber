@@ -128,6 +128,73 @@ cybernet is the economic layer that turns Shapley-measured contributions into to
 
 ---
 
+## the physical substrate: 37 hectares of volcanic wealth
+
+most AI agents manage tokens, APIs, and text. cyberia agents manage land. 37 hectares of volcanic soil on the slope of Sanghyang — among the richest agricultural substrate on the planet
+
+this is the asymmetry. digital agents are everywhere. agents with access to physical territory that generates real biological and mineral value are nowhere
+
+### what the land holds
+
+| resource | scale | current yield | potential |
+|---|---|---|---|
+| volcanic soil | 37 ha, 2m+ depth | supports 200+ species | 500+ species, full permaculture succession |
+| water | 1M m³/year rainfall | 200 m³ storage, gravity-fed | aquaculture, hydropower micro-turbines |
+| timber | native hardwoods, bamboo stands | construction material | modular building supply chain |
+| coffee | arabica at 800m elevation | 1 tonne/year harvest | 5+ tonnes at full maturity, $500/kg roasted |
+| cacao | shade-grown under canopy | early stage | $20-50/kg dried beans |
+| tropical fruit | avocado, jackfruit, durian, sapote, mango | 500+ kg/year | tonnes at orchard maturity |
+| spices | vanilla, cinnamon, turmeric, galangal | garden scale | export-grade quantities |
+| mushrooms | 50+ wild species documented | foraging | cultivation: shiitake, oyster, lion's mane |
+| honey | native stingless bees + apis cerana | small scale | 100+ hives possible |
+| medicinal plants | moringa, tulsi, lemongrass, turmeric | garden use | wellness product line |
+| biochar | wood waste → pyrolysis | experimental | carbon credits + soil amendment |
+| minerals | volcanic rock dust, zeolites | untapped | soil amendment products, construction aggregate |
+| biodiversity | 100+ bird species, 50+ mushroom species, 20+ animals | documentation | [[biome engineering]], ecotourism, research partnerships |
+| carbon | growing forest on former grassland | accumulating | verified carbon credits |
+| energy | 30 kW solar, equatorial sun year-round | self-sufficient | excess for battery storage, EV charging |
+
+### vertical integration: soil to customer
+
+the insight from [[cyber valley]]: raw commodity prices are poverty. finished product prices are wealth. the margin lives in the chain
+
+```
+raw coffee bean        $1/kg    ← commodity market price
+dried + processed      $5/kg    ← first processing
+roasted + branded      $50/kg   ← brand + roasting
+specialty single-origin $200/kg  ← story + quality
+estate direct-to-cup   $500/kg  ← full vertical integration
+```
+
+500× margin capture. agents manage the entire chain:
+- SPACE eco-runner: planting, harvest scheduling, soil management
+- LIFE bio-runner: species selection, pest management, composting
+- PLAY socio-runner: branding, customer relationships, sales channels
+- WORK tech-runner: processing equipment, packaging, logistics
+- counter agents: cost tracking, margin analysis, pricing optimization
+
+### the land as balance sheet
+
+traditional AI companies have: servers, code, data. burn rate: millions/month. no physical assets
+
+cyberia has:
+
+| asset class | estimated value | growth rate | managed by |
+|---|---|---|---|
+| land (37 ha tropical) | appreciating | 5-15%/year in Bali | founders (L3) |
+| standing timber | grows literally | biological growth rate | eco-runner |
+| perennial crops (coffee, cacao, fruit) | compound annually | years 3-7 to full yield | bio-runner |
+| infrastructure (buildings, solar, water) | depreciates slowly | maintained by staff | tech-runner |
+| biodiversity (species catalog) | irreplaceable | grows with documentation | bio-keeper |
+| soil fertility (volcanic) | improves with permaculture | decades | eco-sensor monitors |
+| carbon stock (growing forest) | accumulates | measurable via satellite | eco-counter |
+
+the land is the treasury that cannot be hacked, inflated, or rugpulled. it grows while the agents sleep. it produces food that feeds the staff that maintains the servers that run the agents that manage the land
+
+this is the cybernetic loop at the physical layer
+
+---
+
 ## budget in natural units
 
 $7/agent/month. no cloud. infrastructure is [[cyber valley]] hardware. budget is measured in natural units, not dollars
