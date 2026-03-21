@@ -4,12 +4,12 @@ alias: computation
 icon: "\U000026A1"
 crystal-type: entity
 crystal-domain: comp
-diffusion: 0.00185584687427604
-springs: 0.00035099966100410714
-heat: 0.0008569211350990295
-focus: 0.001204607562459064
+diffusion: 0.0017321055897232404
+springs: 0.00032457586945656953
+heat: 0.0007779817910392163
+focus: 0.00111902191390642
 gravity: 43
-density: 7.05
+density: 6.85
 ---
 # comp
 

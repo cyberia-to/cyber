@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: LATER
 stake: 13666745243689516
-diffusion: 0.00011661740354397796
-springs: 0.00012601070536297421
-heat: 0.00013572117154676401
-focus: 0.0001232561476902347
+diffusion: 0.00010722364868599256
+springs: 0.0001079038151719551
+heat: 0.00012034862546395676
+focus: 0.00011005269398737273
 gravity: 0
-density: 4.74
+density: 3.16
 ---
 interactions with [[progs]]
 

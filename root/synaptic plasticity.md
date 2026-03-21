@@ -3,12 +3,12 @@ alias: synaptic learning, plasticity, neural plasticity
 tags: neuro, learning
 crystal-type: entity
 crystal-domain: biology
-diffusion: 0.00021175973044013113
-springs: 0.0006853652432836566
-heat: 0.0005624699981013265
-focus: 0.00042398343782543
+diffusion: 0.00019642661610672904
+springs: 0.000602174928827651
+heat: 0.0005097406010945934
+focus: 0.0003808139069205736
 gravity: 4
-density: 9.3
+density: 8.68
 ---
 # synaptic plasticity
 

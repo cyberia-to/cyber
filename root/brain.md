@@ -2,12 +2,12 @@
 tags: superhuman, neuro
 crystal-type: entity
 crystal-domain: superhuman
-diffusion: 0.0005496607765064523
-springs: 0.0004351103326032816
-heat: 0.0004947021934176199
-focus: 0.0005043039267177372
+diffusion: 0.0005122820987178488
+springs: 0.0003806060873605912
+heat: 0.0004453186717747273
+focus: 0.0004593866099220413
 gravity: 17
-density: 9.49
+density: 8.33
 ---
 # brain
 

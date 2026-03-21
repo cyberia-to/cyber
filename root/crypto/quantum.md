@@ -3,12 +3,12 @@ alias: quantum resistance, post-quantum cryptography, crypto quantum
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
-diffusion: 0.0007955222202192296
-springs: 0.0003878000774834139
-heat: 0.0005511330362923241
-focus: 0.0006243277406131069
-gravity: 4
-density: 1.16
+diffusion: 0.0006234715374516951
+springs: 0.00028704410074084397
+heat: 0.0004166397921985072
+focus: 0.00048117695738779604
+gravity: 6
+density: 1.64
 ---
 # crypto/quantum
 

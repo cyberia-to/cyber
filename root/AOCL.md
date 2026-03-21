@@ -3,12 +3,12 @@ tags: cyber, computer science, cryptography
 crystal-type: entity
 crystal-domain: cyber
 alias: append-only commitment list, AOCL
-diffusion: 0.0003392852769912294
-springs: 0.00011061433627666998
-heat: 0.00020642669291923342
-focus: 0.00024411227796246362
-gravity: 4
-density: 1.94
+diffusion: 0.00031026673313724434
+springs: 0.00013534788375486848
+heat: 0.0002033955378731123
+focus: 0.00023641683926970216
+gravity: 5
+density: 1.87
 ---
 # AOCL
 

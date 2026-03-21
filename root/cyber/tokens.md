@@ -5,12 +5,12 @@ crystal-domain: economics
 crystal-size: article
 alias: cyber tokens, token registry
 stake: 40000000000000000
-diffusion: 0.0004562843645184497
-springs: 0.001676550258924777
-heat: 0.0012689461530531838
-focus: 0.0009848964905472997
+diffusion: 0.000424243095564553
+springs: 0.0014880581991725073
+heat: 0.0011614917224825787
+focus: 0.0008908373520305329
 gravity: 3
-density: 7.77
+density: 7.5
 ---
 # cyber tokens
 

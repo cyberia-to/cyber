@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: biology
 stake: 7061599212358237
-diffusion: 0.0017512525777051242
-springs: 0.0013699246366132062
-heat: 0.0014860559729969526
-focus: 0.0015838148744359223
+diffusion: 0.0016546520910619294
+springs: 0.0012142919085654667
+heat: 0.0013546502930482551
+focus: 0.0014625436767102369
 gravity: 17
-density: 9.49
+density: 9.1
 ---
 [[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — [[learning]] together
 

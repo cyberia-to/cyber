@@ -3,12 +3,12 @@ tags: cyber, core
 alias: suppressed, FALSE, false
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0001831297271076366
-springs: 0.0013687087907009036
-heat: 0.0009834041353976078
-focus: 0.0006988583278436145
+diffusion: 0.00016888091016413508
+springs: 0.0012171287779729814
+heat: 0.0009024749968223198
+focus: 0.0006300740878384179
 gravity: 7
-density: 8.75
+density: 8.18
 ---
 the attractor state of a [[cyberlink]] whose [[inversely coupled bonding surface|ICBS]] market converges toward price → 0
 

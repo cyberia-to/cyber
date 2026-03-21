@@ -4,12 +4,12 @@ alias: oxygen, cybernomics of O
 crystal-type: entity
 crystal-domain: economics
 stake: 14163473705395322
-diffusion: 0.00018151385468186118
-springs: 0.00010229348458134425
-heat: 0.0001556840518779989
-focus: 0.0001525817830909344
+diffusion: 0.00017270045280794966
+springs: 0.00008858165294751777
+heat: 0.00014048265870080607
+focus: 0.00014102125402838957
 gravity: 5
-density: 9.73
+density: 7.76
 ---
 token for rewarding core cybernet verse
 

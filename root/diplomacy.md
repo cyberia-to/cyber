@@ -3,12 +3,12 @@ tags: governance
 crystal-type: process
 crystal-domain: governance
 stake: 3998887868291078
-diffusion: 0.00023174492112850413
-springs: 0.00012721392565920702
-heat: 0.00017272768707374622
-focus: 0.00018858217567676436
+diffusion: 0.0002132137906159651
+springs: 0.00010972018439106096
+heat: 0.000153375761034223
+focus: 0.00017019810283214323
 gravity: 4
-density: 6.35
+density: 5.79
 ---
 management of relations between sovereign entities through negotiation, dialogue, and protocol
 

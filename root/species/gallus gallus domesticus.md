@@ -3,12 +3,12 @@ tags: species, birds
 crystal-type: entity
 crystal-domain: biology
 stake: 7210495704564890
-diffusion: 0.00011661740354397796
-springs: 0.00020990219810283168
-heat: 0.0002003294089450359
-focus: 0.00016134524299184647
+diffusion: 0.00010722364868599256
+springs: 0.00017804052289252783
+heat: 0.00017629423223293372
+focus: 0.00014228282765733953
 gravity: 0
-density: 0.52
+density: 0.5
 ---
 selected for [[citadel genesis]]
 

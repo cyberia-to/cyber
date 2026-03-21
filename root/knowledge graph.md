@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 6954198463881306
-diffusion: 0.002014199956963399
-springs: 0.000282039594705103
-heat: 0.0008690212156566454
-focus: 0.0012655161000245658
-gravity: 70
-density: 12.53
+diffusion: 0.001961877739970922
+springs: 0.00024164147714799276
+heat: 0.000798396508433169
+focus: 0.0012131106148164771
+gravity: 73
+density: 9.46
 ---
 is basically a [[graph]] where
 

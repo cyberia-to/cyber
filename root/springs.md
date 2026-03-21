@@ -1,12 +1,12 @@
 ---
 tags: mathematics, physics
 alias: screened laplacian, structural constraints, hierarchy
-diffusion: 0.00017149835147685927
-springs: 0.0005686684468675203
-heat: 0.0004783286392542723
-focus: 0.00035201543764954194
+diffusion: 0.00015739362400253611
+springs: 0.0005013223659985099
+heat: 0.00043395644067411655
+focus: 0.00031588480993564026
 gravity: 6
-density: 6.13
+density: 4.64
 ---
 structural constraints enforced by the graph [[Laplacian]]. elastic forces that keep connected nodes at consistent levels
 

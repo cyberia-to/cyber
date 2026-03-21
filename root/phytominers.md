@@ -4,12 +4,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
 stake: 12330948434507682
-diffusion: 0.0001537833430403899
-springs: 0.00007313968564031885
-heat: 0.00011287495110896301
-focus: 0.00012140856743408381
+diffusion: 0.00014141510340306835
+springs: 0.00006189281937928194
+heat: 0.00009916451007757903
+focus: 0.00010910829953083316
 gravity: 3
-density: 1.55
+density: 1.52
 ---
 [[plants]] which are able to extract metals from [[soil]]
 

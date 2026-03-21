@@ -3,12 +3,12 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5177611082825399
-diffusion: 0.0002920204876203771
-springs: 0.00013142290774440277
-heat: 0.0001988736981591042
-focus: 0.00022521185576533136
+diffusion: 0.00026868947278207197
+springs: 0.00011392275792056936
+heat: 0.0001767654165342816
+focus: 0.00020387464707406048
 gravity: 5
-density: 4.11
+density: 3.78
 ---
 
 Ways of organizing, storing, and accessing data so that [[algorithms]] can operate efficiently.

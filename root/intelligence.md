@@ -5,12 +5,12 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: article
 stake: 15342685105149990
-diffusion: 0.0030443861017168026
-springs: 0.0008109727120494822
-heat: 0.0015463537939509626
-focus: 0.002074755623263449
+diffusion: 0.0028970527069167888
+springs: 0.0007140288603547596
+heat: 0.001406169997188204
+focus: 0.0019439690110024381
 gravity: 48
-density: 14.49
+density: 13.52
 ---
 the loop that thinks
 

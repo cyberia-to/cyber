@@ -1,12 +1,12 @@
 ---
 tags: mathematics
 alias: cyber rank
-diffusion: 0.00011661740354397796
-springs: 0.0026552850155262837
-heat: 0.0017915850802666371
-focus: 0.0012132112224832077
+diffusion: 0.00010722364868599256
+springs: 0.002329483729416062
+heat: 0.0016292306574670046
+focus: 0.001078303074661202
 gravity: 0
-density: 3.51
+density: 2.57
 ---
 a ranking score assigned to nodes in a knowledge graph by the [[tri-kernel]] — the fixed-point probability that a random process observes a given node
 

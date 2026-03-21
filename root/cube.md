@@ -3,12 +3,12 @@ tags: tech
 crystal-type: entity
 crystal-domain: materials
 stake: 5258161644183098
-diffusion: 0.00019608577264871698
-springs: 0.00005054420005927835
-heat: 0.00011471222056866489
-focus: 0.00013614859045587565
+diffusion: 0.00023446158373524625
+springs: 0.000049194141255597134
+heat: 0.0001179352586700365
+focus: 0.00015557608597830758
 gravity: 4
-density: 3.71
+density: 3.37
 ---
 the idea is to create modular, but simple architecture for cubic autonomous building
 

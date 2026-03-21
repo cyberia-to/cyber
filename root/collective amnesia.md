@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 16821642230199374
-diffusion: 0.00018979436619498562
-springs: 0.0013997879837801856
-heat: 0.0010024543587240462
-focus: 0.0007153244499763613
+diffusion: 0.0001754060469214381
+springs: 0.0012386033572169572
+heat: 0.0009163409695141251
+focus: 0.000642552224528623
 gravity: 5
-density: 4.97
+density: 4.7
 ---
 humanity forgets. civilizations rise, burn their libraries, and start over
 

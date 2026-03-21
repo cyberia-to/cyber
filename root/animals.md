@@ -3,12 +3,12 @@ tags: class
 crystal-type: entity
 crystal-domain: biology
 stake: 5025460022483080
-diffusion: 0.00011661740354397796
-springs: 0.00007229639084619814
-heat: 0.0001080651806412077
-focus: 0.00010161065515409047
+diffusion: 0.00010722364868599256
+springs: 0.00006126294878868451
+heat: 0.0000950179211418968
+focus: 0.00009099429320797983
 gravity: 0
-density: 11.6
+density: 10.33
 ---
 animals are foundational for biome development
 

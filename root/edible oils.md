@@ -3,12 +3,12 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 10292571729039254
-diffusion: 0.00011661740354397796
-springs: 0.00008209604760326217
-heat: 0.00010176252002577042
-focus: 0.00010329002005812223
+diffusion: 0.00010722364868599256
+springs: 0.00006944229589309074
+heat: 0.0000893433605261866
+focus: 0.00009231318521615962
 gravity: 0
-density: 1.69
+density: 1.55
 ---
 goal:: produce seeds, seedlings and fruits of the most useful edible oil species adopted to [[indonesia]]
 

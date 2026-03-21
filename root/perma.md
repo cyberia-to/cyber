@@ -3,12 +3,12 @@ tags: district
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5410312704525417
-diffusion: 0.00021762020119696837
-springs: 0.00012999459065902007
-heat: 0.00018294407273587897
-focus: 0.00018439729234336692
+diffusion: 0.00020013519097738096
+springs: 0.00011004427558551847
+heat: 0.0001607322642717446
+focus: 0.0001652273310186928
 gravity: 4
-density: 8.89
+density: 8.33
 ---
 [[rockets estate]] [[district]]
 

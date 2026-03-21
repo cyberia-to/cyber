@@ -5,12 +5,12 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 4543051660574196
-diffusion: 0.0031793899115843665
-springs: 0.0008543553506966019
-heat: 0.0016127068846933227
-focus: 0.0021685429379398394
+diffusion: 0.003018703845785479
+springs: 0.0007643035726035179
+heat: 0.0014716490149071536
+focus: 0.0020329727976551998
 gravity: 13
-density: 9.63
+density: 7.23
 ---
 raw bytes before [[cyber]] touches them. hashing [[data]] produces a [[particle]] — the moment identity begins
 

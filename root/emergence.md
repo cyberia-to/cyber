@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 12952530266317922
-diffusion: 0.0005755914084582025
-springs: 0.0014272789033706985
-heat: 0.001149838567032368
-focus: 0.0009459470886467892
+diffusion: 0.0005494251472501331
+springs: 0.001264557485124484
+heat: 0.0010537695122394305
+focus: 0.0008648337216102866
 gravity: 9
-density: 8.98
+density: 8.57
 ---
 complex patterns arising from simple local interactions without centralized control
 

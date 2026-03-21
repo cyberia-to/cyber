@@ -4,12 +4,12 @@ alias: coleus, mexican mint
 crystal-type: entity
 crystal-domain: biology
 stake: 7454588314739736
-diffusion: 0.00012983238212099438
-springs: 0.0012229682653063807
-heat: 0.0008534712380920974
-focus: 0.0006025009182708339
+diffusion: 0.00011938665937078644
+springs: 0.0010346412692826745
+heat: 0.0007495597406809321
+focus: 0.0005199976586063753
 gravity: 1
-density: 3.76
+density: 2.71
 ---
 ![image](https://ipfs.io/ipfs/QmbWUwFVrpZERNwgXdQ9bayT66HjvRVRpF7bsgE89urJD2)
 

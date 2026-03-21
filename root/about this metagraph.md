@@ -5,12 +5,12 @@ icon: 🦄
 crystal-type: entity
 crystal-domain: cybics
 stake: 7752991530678483
-diffusion: 0.00026261620526737777
-springs: 0.000430141263005823
-heat: 0.00039278813390575425
-focus: 0.0003389081083165883
+diffusion: 0.00024163697600203282
+springs: 0.00038814951196343547
+heat: 0.00036131943333705003
+focus: 0.000309527228257453
 gravity: 3
-density: 14.76
+density: 13.65
 ---
 [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 

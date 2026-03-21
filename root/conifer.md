@@ -4,12 +4,12 @@ alias: conifers
 crystal-type: entity
 crystal-domain: economics
 stake: 13908396927762612
-diffusion: 0.0004899918352897821
-springs: 0.00024417168097623135
-heat: 0.00033768525795591694
-focus: 0.0003857844735289458
+diffusion: 0.0004505965534408406
+springs: 0.00020673472439243116
+heat: 0.000296649828170131
+focus: 0.0003466486596721714
 gravity: 8
-density: 12.01
+density: 9.1
 ---
 - ## [[genus]] presented in [[edem]]
 - {{query (and [[conifer]] (and) (page-tags [[genus]]))}}

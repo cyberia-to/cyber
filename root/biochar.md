@@ -3,12 +3,12 @@ tags: tech
 crystal-type: entity
 crystal-domain: materials
 stake: 4564531810269583
-diffusion: 0.001434490589305695
-springs: 0.00012053215369720681
-heat: 0.0005612562184241554
-focus: 0.000865656184446845
+diffusion: 0.0013301678417777943
+springs: 0.00010286013273970507
+heat: 0.0004970451787082037
+focus: 0.0007953509964524392
 gravity: 15
-density: 19.05
+density: 12.72
 ---
 [[soil, heat and carbon]]
 

@@ -4,12 +4,12 @@ alias: nutraceuticals, biohacking
 crystal-type: entity
 crystal-domain: economics
 stake: 17291520504785948
-diffusion: 0.008289929146232985
-springs: 0.0003089863671531361
-heat: 0.0028861777069870975
-focus: 0.004814896024659877
+diffusion: 0.007631918936870841
+springs: 0.0002616167360784223
+heat: 0.002536027376073045
+focus: 0.0044016499644735
 gravity: 46
-density: 0.86
+density: 0.83
 ---
 [[plants/wishlist]]
 

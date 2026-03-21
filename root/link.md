@@ -5,12 +5,12 @@ crystal-type: relation
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 4586988330405668
-diffusion: 0.001048740476994186
-springs: 0.0005705584658950026
-heat: 0.0007467302396049698
-focus: 0.000844883826186592
+diffusion: 0.000987173055621528
+springs: 0.0005060021070615668
+heat: 0.0006777589570265637
+focus: 0.0007809389513345367
 gravity: 21
-density: 13.3
+density: 10.45
 ---
 directed edge between two nodes in a [[graph]]. a [[cyberlink]] is a link that achieved [[finality]] in the [[cybergraph]] — local intent turned global [[knowledge]]
 

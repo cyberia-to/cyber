@@ -3,12 +3,12 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3195660452409057
-diffusion: 0.0003092198860640125
-springs: 0.0003053014934965588
-heat: 0.0003311568921945972
-focus: 0.0003124317695198949
+diffusion: 0.0002877750982867771
+springs: 0.0002753911198923811
+heat: 0.00030558928175056737
+focus: 0.0002876227414612127
 gravity: 4
-density: 10.36
+density: 8.97
 ---
 SI unit of [[energy]], work, and [[heat]]
 

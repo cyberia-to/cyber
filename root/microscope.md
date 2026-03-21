@@ -3,12 +3,12 @@ tags: technology, biology
 crystal-type: entity
 crystal-domain: biology
 stake: 5365155571643070
-diffusion: 0.00017464286385822443
-springs: 0.0003006109378404236
-heat: 0.00028155826227365565
-focus: 0.0002338163657359716
+diffusion: 0.00016073728435678363
+springs: 0.00025475989198237443
+heat: 0.0002477107571958553
+focus: 0.00020633876121227255
 gravity: 1
-density: 3.47
+density: 3.09
 ---
 instrument for observing objects too small for the unaided eye
 

@@ -6,12 +6,12 @@ crystal-size: bridge
 alias:: patch, cyberpatch, patch system, patches
 icon: "\U0001FA79"
 stake: 39885708873010200
-diffusion: 0.00015815085851119036
-springs: 0.002173621923253101
-heat: 0.0014890924897937184
-focus: 0.0010289805041902743
+diffusion: 0.00014543277439776033
+springs: 0.0017718364487045266
+heat: 0.0012617299459090283
+focus: 0.0008566133109920327
 gravity: 2
-density: 4.73
+density: 5.12
 ---
 
 content-addressed, identity-sovereign [[patch theory]] system for the [[cybergraph]]. treats changes as commutative morphisms instead of snapshots — independent patches apply in any order, [[conflicts]] are first-class data, merge is set union

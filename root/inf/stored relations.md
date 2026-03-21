@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: stored relation
 stake: 40275280678849256
-diffusion: 0.0001719614401657049
-springs: 0.002441568889616646
-heat: 0.0016677845431839998
-focus: 0.001152008295604652
+diffusion: 0.000157936729455788
+springs: 0.0021601555295860915
+heat: 0.0015268980202087041
+focus: 0.0010323946276454491
 gravity: 3
-density: 2.44
+density: 2.4
 ---
 stored relations are how data persists in [[datalog]]. where inline rules exist only during query execution, stored relations survive across sessions — they are the permanent memory of the [[cybergraph]]
 

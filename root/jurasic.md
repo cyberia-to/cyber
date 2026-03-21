@@ -3,12 +3,12 @@ tags: biome, block
 crystal-type: entity
 crystal-domain: geography
 stake: 5208936301131170
-diffusion: 0.00022927505042332085
-springs: 0.0002119316177823827
-heat: 0.00025149816246098033
-focus: 0.00022851664303857243
+diffusion: 0.00021080640735114507
+springs: 0.00017984494037483876
+heat: 0.00022186567579644682
+focus: 0.0002037298209473109
 gravity: 2
-density: 13.72
+density: 11.6
 ---
 [[block]] in [[perma]] with reproduction of life from jurassic period
 

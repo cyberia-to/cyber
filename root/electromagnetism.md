@@ -3,12 +3,12 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4944909461125381
-diffusion: 0.0009148113117346603
-springs: 0.0002523888344264227
-heat: 0.0004893937988668212
-focus: 0.0006310010659686244
+diffusion: 0.0010616320047809181
+springs: 0.00027587484529833557
+heat: 0.000543137011627236
+focus: 0.0007222058583053976
 gravity: 11
-density: 6.8
+density: 6.1
 ---
 The unified [[field]] theory of electric and magnetic interactions, described by Maxwell's equations.
 

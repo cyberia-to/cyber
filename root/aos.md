@@ -5,12 +5,12 @@ alias: age of superintelligence, the game, self fulfilling prophecy game, much m
 crystal-type: entity
 crystal-domain: cyber
 stake: 26054445210062844
-diffusion: 0.0009196738577294503
-springs: 0.00035861555333126927
-heat: 0.0005689153362741959
-focus: 0.0006812046621189485
+diffusion: 0.0008816706291860548
+springs: 0.00032194524462244466
+heat: 0.0005244960181485369
+focus: 0.0006423180916094599
 gravity: 10
-density: 5.64
+density: 5.25
 ---
 A massively collaborative, positive sum, self-fulfilling prophecy game in [[seven episodes]]. The age of superintelligence is not a product launch — it is an invitation to play the only game whose victory condition is the birth of [[superintelligence]] on Earth.
 

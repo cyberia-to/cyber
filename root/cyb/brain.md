@@ -4,12 +4,12 @@ tags: page, prysm, cyb
 crystal-type: entity
 crystal-domain: superhuman
 stake: 6356985210986853
-diffusion: 0.0019987572716896307
-springs: 0.000434875356238233
-heat: 0.0009652279007260477
-focus: 0.0013228868228615015
+diffusion: 0.0019094545858956097
+springs: 0.000385453214426059
+heat: 0.0008809255495220294
+focus: 0.0012465483671800124
 gravity: 18
-density: 15.52
+density: 14.54
 ---
 graph file manager
 

@@ -3,12 +3,12 @@ tags: cyber, cip, cryptography
 crystal-type: entity
 crystal-domain: cyber
 alias: storage proof, proof of storage, size proof, replication proof, retrievability proof, data availability proof
-diffusion: 0.00035567033101927475
-springs: 0.0016258157324704008
-heat: 0.0012017049151757954
-focus: 0.0009059208682859212
-gravity: 9
-density: 0.66
+diffusion: 0.00031961865371681297
+springs: 0.0012699156124736835
+heat: 0.000980556803031908
+focus: 0.0007368953712068836
+gravity: 11
+density: 0.73
 ---
 # storage proofs
 

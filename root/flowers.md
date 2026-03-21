@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4882259024513838
-diffusion: 0.00017525087819824267
-springs: 0.00006653148743640509
-heat: 0.00014358332201584246
-focus: 0.00013630154973321202
+diffusion: 0.00016119239181604047
+springs: 0.00005637697918459792
+heat: 0.00012620496497263163
+focus: 0.00012275028265792436
 gravity: 6
-density: 4.41
+density: 4.03
 ---
 [[pandorea jasminoides]]
 

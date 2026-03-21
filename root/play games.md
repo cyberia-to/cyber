@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11287818664925486
-diffusion: 0.00016638472141503014
-springs: 0.0011162776220125588
-heat: 0.0008235976774601566
-focus: 0.000582795182803317
+diffusion: 0.0001529821344213305
+springs: 0.000989728977183618
+heat: 0.0007531923441703384
+focus: 0.0005240482291998115
 gravity: 1
-density: 11.61
+density: 9.36
 ---
 get high [[karma]] by [[learning]] [[cybergraph]]
 

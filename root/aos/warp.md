@@ -4,12 +4,12 @@ alias: warp dex
 crystal-type: entity
 crystal-domain: cyber
 stake: 20923008312662188
-diffusion: 0.00013336815154775937
-springs: 0.00038042564837400324
-heat: 0.0003161207118376177
-focus: 0.00024403591265360542
+diffusion: 0.00012374302855895137
+springs: 0.00034375136416286907
+heat: 0.000292970205184828
+focus: 0.00022359096456529915
 gravity: 1
-density: 8.37
+density: 6.47
 ---
 trading in [[bostrom]]
 

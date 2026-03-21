@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8243007445604482
-diffusion: 0.00014064035843643495
-springs: 0.00007713886520790667
-heat: 0.00012706708323243255
-focus: 0.00011887525542707659
+diffusion: 0.00012931835980315348
+springs: 0.00006557427692934051
+heat: 0.00011209445722859945
+focus: 0.00010675035442609742
 gravity: 3
-density: 0.5
+density: 0.48
 ---
 alias: riboflavin, vitamin b2
 

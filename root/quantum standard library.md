@@ -4,12 +4,12 @@ alias: std.quantum, quantum standard library, quantum deep dive, std-quantum-dee
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
-diffusion: 0.00011661740354397796
-springs: 0.0025994738214922108
-heat: 0.0017487764025298038
-focus: 0.0011879061287256188
+diffusion: 0.00010722364868599256
+springs: 0.00192707470515177
+heat: 0.00135354344638007
+focus: 0.0009024429251645297
 gravity: 0
-density: 0.31
+density: 0.4
 ---
 # std.quantum: A Quantum Standard Library for [[trident]]
 

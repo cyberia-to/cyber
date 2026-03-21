@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13720445617927980
-diffusion: 0.0003678742801449972
-springs: 0.00029851141812060775
-heat: 0.000375258368138656
-focus: 0.0003485422391364139
+diffusion: 0.0003384286917019677
+springs: 0.0002589646121625945
+heat: 0.00033598306884519765
+focus: 0.0003141003432687977
 gravity: 2
-density: 8.71
+density: 6.01
 ---
 what is [[probabilistic model]]?
 

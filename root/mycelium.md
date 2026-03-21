@@ -3,12 +3,12 @@ tags: cyber, species
 crystal-type: entity
 crystal-domain: biology
 stake: 6629555292348762
-diffusion: 0.00041072213091711653
-springs: 0.0013595928874650146
-heat: 0.0010460972492556432
-focus: 0.0008224583815491954
+diffusion: 0.00039221963927613335
+springs: 0.0012138818727144755
+heat: 0.0009647047190893749
+focus: 0.0007532153252702746
 gravity: 9
-density: 6
+density: 5.77
 ---
 underground [[fungi]] networks connect 90% of terrestrial plants. they trade nutrients, relay chemical signals, and allocate resources without central coordination. this is the oldest distributed protocol on Earth
 

@@ -9,12 +9,12 @@ wood-density: "1050"
 supply: next-month
 market: ironwoods
 stake: 7021323931679387
-diffusion: 0.00011661740354397796
-springs: 0.0001714155158697592
-heat: 0.0001707032891900206
-focus: 0.00014387401437092158
+diffusion: 0.00010722364868599256
+springs: 0.0001450336210536533
+heat: 0.00014993637704426293
+focus: 0.00012710918606794323
 gravity: 0
-density: 1.54
+density: 1.32
 ---
 ![Casuarina - Wikipedia bahasa Indonesia, ensiklopedia bebas](https://ipfs.io/ipfs/QmPK9i5RrFRZ2vP7yxFbivJGpeWcFRQfuRL53Dq8o6R2Sb){:height 762, :width 1008}
 

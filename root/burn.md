@@ -5,12 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 18172206642296784
-diffusion: 0.00044473139252118913
-springs: 0.0006131828302303801
-heat: 0.0005846530546957427
-focus: 0.0005232511562688597
+diffusion: 0.00041491955103370876
+springs: 0.0005442253205345538
+heat: 0.0005314148924672512
+focus: 0.00047701035017066464
 gravity: 11
-density: 12.37
+density: 9.35
 ---
 destroy [[tokens]] permanently. creating [[cyberlinks]] burns [[will]] — the cost that makes every link a [[costly signal]]
 

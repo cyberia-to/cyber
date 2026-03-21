@@ -3,12 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5092585490281161
-diffusion: 0.00043224068392206207
-springs: 0.00019473615686998964
-heat: 0.0002845533903806613
-focus: 0.0003314518670981619
+diffusion: 0.0003975816943870648
+springs: 0.0001821732048029305
+heat: 0.00026120540151680085
+focus: 0.00030568388893776775
 gravity: 11
-density: 6.1
+density: 5.6
 ---
 universal moral and legal principles inherent to every person regardless of nationality, ethnicity, or status
 

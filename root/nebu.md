@@ -6,12 +6,12 @@ crystal-domain: cyber
 subgraph: true
 repo: ../nebu
 exclude: ".claude/**, target/**, CLAUDE.md"
-diffusion: 0.00014377973405501232
-springs: 0.0003994044497811972
-heat: 0.000325673515037075
-focus: 0.0002568459049692816
-gravity: 3
-density: 4.2
+diffusion: 0.00027130524741969655
+springs: 0.0002583722703955679
+heat: 0.0002756727262648094
+focus: 0.0002682988500814771
+gravity: 14
+density: 6.19
 ---
 The [[Goldilocks field]] as a standalone Rust crate. Provides field arithmetic (add, sub, mul, inv, eq, lt) and [[NTT]] over roots of unity in $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$.
 

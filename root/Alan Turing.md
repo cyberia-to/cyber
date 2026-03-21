@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4855408837394604
-diffusion: 0.00040624772799003635
-springs: 0.0002482286939030986
-heat: 0.00031673552880028775
-focus: 0.000340939577926007
+diffusion: 0.0003810019754565473
+springs: 0.00021077242628296758
+heat: 0.00028139814228094693
+focus: 0.00031001234406934926
 gravity: 9
-density: 7.03
+density: 6.14
 ---
 1912-1954. British mathematician and logician.
 

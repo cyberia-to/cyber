@@ -3,12 +3,12 @@ tags: food, biology
 crystal-type: process
 crystal-domain: agriculture
 stake: 4276502530263266
-diffusion: 0.00025186377677696194
-springs: 0.00009626623710030676
-heat: 0.00016100098224555324
-focus: 0.00018701195596768457
+diffusion: 0.00023180592554263133
+springs: 0.00008255083005114017
+heat: 0.00014235470088545585
+focus: 0.00016913915196374672
 gravity: 3
-density: 5.97
+density: 5.3
 ---
 microbial transformation of organic substrates into preserved, nutrient-enhanced food
 

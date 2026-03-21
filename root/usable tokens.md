@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 13948672208441460
-diffusion: 0.00012900866777926681
-springs: 0.001920174088884374
-heat: 0.0013226773540989216
-focus: 0.0009050920313747345
+diffusion: 0.00011861676264877863
+springs: 0.0016845970384764817
+heat: 0.0012016819319055172
+focus: 0.0008050238792484269
 gravity: 1
-density: 15.52
+density: 11.74
 ---
 no need to known all [[contracts]] in order to query balance of all [[tokens]] owned by [[neuron]]
 

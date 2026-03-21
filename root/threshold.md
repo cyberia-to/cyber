@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 14511183628589390
-diffusion: 0.0001622076081551005
-springs: 0.0023393560021875708
-heat: 0.0015994074145857368
-focus: 0.0011027920876509744
+diffusion: 0.00015040540203430943
+springs: 0.0020755910107875565
+heat: 0.0014684806296751428
+focus: 0.0009915761301884374
 gravity: 2
-density: 5.56
+density: 5.18
 ---
 boundary condition that separates one regime from another
 

@@ -4,12 +4,12 @@ alias: Bayes theorem, Bayes' theorem, Bayes rule, Bayesian inference, Bayes form
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
-diffusion: 0.00028953499536386456
-springs: 0.0013883272959961874
-heat: 0.0010317838824144814
-focus: 0.0007676224629636886
+diffusion: 0.0002688455579224799
+springs: 0.0012339496266856504
+heat: 0.0009458477418540513
+focus: 0.0006937772153377364
 gravity: 10
-density: 3.86
+density: 3.78
 ---
 
 the rule for updating beliefs in light of evidence — how probability flows from what you assumed (prior) to what you now conclude (posterior) after observing data

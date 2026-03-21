@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4604807090948431
-diffusion: 0.00022512082679228187
-springs: 0.00004469374209776251
-heat: 0.00011390920380296816
-focus: 0.00014875037678606406
+diffusion: 0.00020700400304868053
+springs: 0.00003784090254924633
+heat: 0.00010016070592480962
+focus: 0.00013488641347407434
 gravity: 3
-density: 3.85
+density: 2.73
 ---
 TODO quantify ability to count
 

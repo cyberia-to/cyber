@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5938366384536996
-diffusion: 0.00011965411112272912
-springs: 0.0003951447786765721
-heat: 0.00034714472950456854
-focus: 0.0002477994350652511
+diffusion: 0.00011002089637827295
+springs: 0.0003444166448070431
+heat: 0.00031333486912382447
+focus: 0.00022100241545601145
 gravity: 1
-density: 0.9
+density: 0.86
 ---
 the ability of a model, theory, or hypothesis
 

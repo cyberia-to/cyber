@@ -3,12 +3,12 @@ tags: culture
 crystal-type: entity
 crystal-domain: culture
 stake: 4953859523498459
-diffusion: 0.00016625398727616492
-springs: 0.00023133230681905652
-heat: 0.00023256065929960266
-focus: 0.00019903881754372094
+diffusion: 0.0001491390206151418
+springs: 0.00019680327522343308
+heat: 0.0002045529450745633
+focus: 0.00017452108188951122
 gravity: 3
-density: 4.28
+density: 3.84
 ---
 largest [[language]] family by number of speakers: ~3.2 billion
 

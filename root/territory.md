@@ -3,12 +3,12 @@ alias: territories
 tags: cyberia, core
 crystal-type: entity
 crystal-domain: cyberia
-diffusion: 0.00012584546501055485
-springs: 0.00015608764700557177
-heat: 0.00016471800085511833
-focus: 0.00014269262677797334
+diffusion: 0.0001157086736619776
+springs: 0.00013551319786148894
+heat: 0.00014740668225217442
+focus: 0.0001279896326398687
 gravity: 1
-density: 10.57
+density: 9.72
 ---
 physical space claimed, managed, and defended by a [[cyber state]]. the substrate on which [[sovereignty]] is exercised in the material world
 

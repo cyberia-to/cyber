@@ -3,12 +3,12 @@ tags: food, governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5355391867236077
-diffusion: 0.00026135565310806904
-springs: 0.00018283683504514257
-heat: 0.0002247423818231914
-focus: 0.00023047735343221672
+diffusion: 0.00024049840563112075
+springs: 0.00015935654891458402
+heat: 0.00020130792074824307
+focus: 0.0002083177516395815
 gravity: 6
-density: 13.79
+density: 12.29
 ---
 right of peoples to define their own food systems: production, distribution, consumption
 

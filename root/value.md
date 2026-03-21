@@ -5,12 +5,12 @@ crystal-type: entity
 crystal-domain: economics
 crystal-size: enzyme
 stake: 16611722585449006
-diffusion: 0.003253343913150667
-springs: 0.0005191279837566083
-heat: 0.001426487635909655
-focus: 0.0020677078788842573
+diffusion: 0.0031049719841063227
+springs: 0.00045879001473096866
+heat: 0.0012999762738873193
+focus: 0.0019501182512498907
 gravity: 30
-density: 16.83
+density: 13.47
 ---
 where [[price]], [[supply]], [[demand]], and [[cap]] meet — the measure of what [[tokens]] carry through the [[cybergraph]]. every [[coin]] locked, every [[card]] minted encodes a claim about value
 

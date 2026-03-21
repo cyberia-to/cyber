@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4904634180446532
-diffusion: 0.00012323371753685967
-springs: 0.001282821833658594
-heat: 0.0008869078921800237
-focus: 0.0006238449873020159
+diffusion: 0.00011400812724907998
+springs: 0.0012545770553322403
+heat: 0.0008906241632384825
+focus: 0.0006115020128719007
 gravity: 1
-density: 1.22
+density: 1.09
 ---
 British-Iraqi computer scientist and entrepreneur.
 

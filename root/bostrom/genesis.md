@@ -4,12 +4,12 @@ tags: article
 crystal-type: entity
 crystal-domain: cyber
 stake: 21003558874019888
-diffusion: 0.00023894677783480156
-springs: 0.00005773550977554302
-heat: 0.00012195745628507788
-focus: 0.00016118553310708007
+diffusion: 0.0002197871606385884
+springs: 0.000049003683537623473
+heat: 0.00010726398561833039
+focus: 0.00014604748250424544
 gravity: 3
-density: 5.63
+density: 4.69
 ---
 [article](https://cyb.ai/oracle/ask/QmVPgNeay23Ae5itAamMcr4iEAUKuhw5qD9U1zNqN4gpew) with transparency
 

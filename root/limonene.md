@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 7361426301856336
-diffusion: 0.0001924336825063703
-springs: 0.00008092139491168359
-heat: 0.00012801997635181816
-focus: 0.00014609725499705457
+diffusion: 0.00017730465357944993
+springs: 0.00006890672919249642
+heat: 0.00011326030050751493
+focus: 0.00013197640564897517
 gravity: 4
-density: 0.78
+density: 0.76
 ---
 
 limonene is a naturally occurring chemical compound found in the peels of citrus fruits. it is a monoterpene and a major component in the oil of citrus fruit peels. the chemical formula for limonene is C10H16.

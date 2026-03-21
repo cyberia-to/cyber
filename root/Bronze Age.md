@@ -3,12 +3,12 @@ tags: time, history
 crystal-type: entity
 crystal-domain: history
 stake: 5296809640794114
-diffusion: 0.0002857391138460819
-springs: 0.00006972028292996108
-heat: 0.00015226775110120124
-focus: 0.0001942391920222705
+diffusion: 0.0002617057072633476
+springs: 0.00006145529232523196
+heat: 0.00013401284677660926
+focus: 0.00017609201068456294
 gravity: 6
-density: 8.04
+density: 7.05
 ---
 period ~3300-1200 BCE defined by widespread use of bronze (copper + tin alloy)
 

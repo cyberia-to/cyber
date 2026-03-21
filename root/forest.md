@@ -3,12 +3,12 @@ tags: cyber, species
 crystal-type: entity
 crystal-domain: biology
 stake: 7054276434052991
-diffusion: 0.000146274936717767
-springs: 0.0011904559593371512
-heat: 0.0008496080740224881
-focus: 0.0006001958709645294
+diffusion: 0.0001349305359204138
+springs: 0.001061433257662359
+heat: 0.0007824268966219685
+focus: 0.0005423806245833014
 gravity: 5
-density: 4.36
+density: 4.22
 ---
 forests are distributed systems where thousands of organisms coordinate resource allocation through chemical signaling and physical competition. consensus emerges from local interactions between [[tree]] roots, fungal networks, and microbial communities
 

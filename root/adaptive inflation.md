@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14458825763706882
-diffusion: 0.00014473757526970026
-springs: 0.0005992604081772268
-heat: 0.000472968810198076
-focus: 0.0003467406721276351
+diffusion: 0.0001330854186113492
+springs: 0.0005299690957917086
+heat: 0.00043141027549200775
+focus: 0.0003118154931415847
 gravity: 1
-density: 12.23
+density: 10.36
 ---
 mechanism that adjusts the rate of [[token]] [[mint]] based on [[network]] conditions
 

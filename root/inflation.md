@@ -3,12 +3,12 @@ tags: cybernomics
 crystal-type: measure
 crystal-domain: economics
 stake: 5751310080939674
-diffusion: 0.00021787332065477256
-springs: 0.00028572452303910894
-heat: 0.0002953815732201984
-focus: 0.00025373033188315987
+diffusion: 0.00020004170993817618
+springs: 0.00025011899085138447
+heat: 0.00026577327487377334
+focus: 0.00022821120719925515
 gravity: 5
-density: 8.43
+density: 7.16
 ---
 printing of new [[tokens]] into existence
 

@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14364850108789570
-diffusion: 0.00017113337777941194
-springs: 0.00022210227245014636
-heat: 0.00025486203202049255
-focus: 0.0002031697770288494
+diffusion: 0.00015819269337793884
+springs: 0.00019111062114829388
+heat: 0.0002277679606621756
+focus: 0.00018198312516589036
 gravity: 3
-density: 10.63
+density: 8.94
 ---
 existing foundation models lack a foundation
 

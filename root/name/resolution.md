@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: deterministic resolution
 stake: 29541918377935932
-diffusion: 0.00020405990531509042
-springs: 0.002683387720759476
-heat: 0.0018325273593525202
-focus: 0.0012735517407558984
+diffusion: 0.0001881649027973303
+springs: 0.0023753003274605586
+heat: 0.001678792846702837
+focus: 0.0011424311189773854
 gravity: 2
-density: 4.64
+density: 4.5
 ---
 resolution modes of [[name]] in the [[cybergraph]]
 

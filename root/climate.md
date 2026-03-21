@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4895684118073455
-diffusion: 0.0005143682263854858
-springs: 0.00008552675888550811
-heat: 0.00023605367769210562
-focus: 0.00033005287639681813
+diffusion: 0.0004735705027449976
+springs: 0.00007298938244203024
+heat: 0.00020813111036843964
+focus: 0.00030030828817879197
 gravity: 21
-density: 1.53
+density: 1.32
 ---
 macro pattern governing biome dynamics
 

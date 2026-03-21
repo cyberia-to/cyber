@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 20902870672322764
-diffusion: 0.0002965653961667242
-springs: 0.0004533468011221266
-heat: 0.00042715284753020333
-focus: 0.0003697173079260426
+diffusion: 0.0002752289018853083
+springs: 0.00040754628670681747
+heat: 0.0003918389371772337
+focus: 0.0003382461243901418
 gravity: 12
-density: 11.87
+density: 9.04
 ---
 ordered instruction set of [[cyberlinks]]
 

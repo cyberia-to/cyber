@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 6974336104220730
-diffusion: 0.00011661740354397796
-springs: 0.0010778445171108265
-heat: 0.000774287753198828
-focus: 0.0005365196075450051
+diffusion: 0.00010722364868599256
+springs: 0.0009497821842931215
+heat: 0.0007061126023557978
+focus: 0.0004797690001020861
 gravity: 0
-density: 18.96
+density: 14.81
 ---
 [[tokens]] necessary to maintain [[consensus]] of [[vimputer]]
 

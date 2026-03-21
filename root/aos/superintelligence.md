@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 space: gamify the process of launching superintelligence
 stake: 14337999921670336
-diffusion: 0.00015019647374490773
-springs: 0.00016902311732188793
-heat: 0.00019634028645103038
-focus: 0.00016507322935922712
+diffusion: 0.00013988079403958584
+springs: 0.00015644158814064619
+heat: 0.00018204002193710606
+focus: 0.000153280877849406
 gravity: 1
-density: 9.03
+density: 7.57
 ---
 - center:: [[techtree]] to reach the goal
 - upleft:: spread of [[cyber-sdk]] [[vimputers]]

@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5007559897736924
-diffusion: 0.0001278788510401377
-springs: 0.0008164616372573007
-heat: 0.000588194960482261
-focus: 0.00042651690879371335
+diffusion: 0.00011772974429899301
+springs: 0.0007959184131965273
+heat: 0.0005857333433792039
+focus: 0.0004147870647842901
 gravity: 2
-density: 0.98
+density: 0.89
 ---
 1969-, Finnish-American software engineer
 

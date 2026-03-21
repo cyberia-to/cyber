@@ -2,12 +2,12 @@
 tags: discipline, eco, bio, geo
 crystal-type: entity
 crystal-domain: eco
-diffusion: 0.00011661740354397796
-springs: 0.00018109111068720146
-heat: 0.0001735130825211773
-focus: 0.0001473386514823856
+diffusion: 0.00010722364868599256
+springs: 0.00015753849503875904
+heat: 0.0001559889712579731
+focus: 0.0001320711671062169
 gravity: 0
-density: 16.07
+density: 14.75
 ---
 # ecology
 

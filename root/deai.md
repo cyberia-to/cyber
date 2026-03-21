@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21023696514359316
-diffusion: 0.00038591473669129846
-springs: 0.0012772257993166067
-heat: 0.0009860523363468177
-focus: 0.0007733355754099987
+diffusion: 0.00036131120025608907
+springs: 0.0011515642323462229
+heat: 0.0009141360223688772
+focus: 0.0007089520743056777
 gravity: 3
-density: 21.42
+density: 17.5
 ---
 [[ai]] systems that operate without centralized control
 

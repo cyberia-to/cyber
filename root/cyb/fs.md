@@ -3,12 +3,12 @@ tags: cyb, cyber, core
 alias: cyb filesystem, cyber filesystem, cyb/fs
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.00016385492623842912
-springs: 0.002635896992910511
-heat: 0.0017858481394741979
-focus: 0.0012298661888872136
+diffusion: 0.00015095267999804354
+springs: 0.0023786312455608464
+heat: 0.0016657539233860725
+focus: 0.0011222164983444758
 gravity: 2
-density: 8.25
+density: 7.7
 ---
 the [[cybergraph]] as a filesystem — content-addressed, append-only, patch-based
 

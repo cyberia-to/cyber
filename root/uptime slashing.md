@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11588540760660894
-diffusion: 0.00014715538292536638
-springs: 0.0004506788731836431
-heat: 0.0003865295329387173
-focus: 0.000286087260005521
+diffusion: 0.00013530846523823428
+springs: 0.00039422473868005016
+heat: 0.0003493205258638779
+focus: 0.00025578575939590447
 gravity: 2
-density: 3.44
+density: 2.93
 ---
 penalty mechanism that reduces the staked tokens of validators
 

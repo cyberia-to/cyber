@@ -3,12 +3,12 @@ tags: cyber, language
 alias: Arc, topology language
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00017182217834897905
-springs: 0.0012147642763434756
-heat: 0.0008764287581845023
-focus: 0.0006256261237144358
+diffusion: 0.00016237038654436797
+springs: 0.0011384522497637367
+heat: 0.000842948227332854
+focus: 0.0005913105136678683
 gravity: 6
-density: 8.47
+density: 7.89
 ---
 the [[graph]] language. makes graphs first-class — the primitive is a connection, not a number
 

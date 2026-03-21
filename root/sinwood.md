@@ -7,12 +7,12 @@ alias: senwood, miracle, glowing forest
 ops: "false"
 dev: "false"
 stake: 9115028295454112
-diffusion: 0.0003730411584399938
-springs: 0.00008561891358832427
-heat: 0.000211913893673373
-focus: 0.00025458903203117003
+diffusion: 0.0003433462353263121
+springs: 0.00007253222553968028
+heat: 0.00018624143930357095
+focus: 0.00023068107318577135
 gravity: 9
-density: 23.23
+density: 21.08
 ---
 | category | indonesian | foreigner |
   | normal price | $15 | $30 |

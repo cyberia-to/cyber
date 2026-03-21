@@ -4,12 +4,12 @@ alias: mint
 crystal-type: entity
 crystal-domain: biology
 stake: 6934060823541880
-diffusion: 0.0007726458268442958
-springs: 0.00015761714088894697
-heat: 0.00036778869578473855
-focus: 0.0005071657948457823
+diffusion: 0.0007166842996935365
+springs: 0.0001337806251456223
+heat: 0.00032514268404213516
+focus: 0.000463504874198876
 gravity: 29
-density: 3.11
+density: 2.34
 ---
 selected for [[edem]]
 

@@ -4,12 +4,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4904634180446532
-diffusion: 0.00012323371753685967
-springs: 0.00017279790662264014
-heat: 0.00017736960422194795
-focus: 0.0001489301515996122
+diffusion: 0.00011400812724907998
+springs: 0.00015337965955917308
+heat: 0.00016202778682964443
+focus: 0.00013542351885821905
 gravity: 1
-density: 2.38
+density: 2.12
 ---
 1947-. French computer scientist, senior researcher at INRIA.
 

@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5428212829271572
-diffusion: 0.00028230298809749587
-springs: 0.00006297604302957775
-heat: 0.00018134749686598238
-focus: 0.00019631380633081873
+diffusion: 0.00025986456515341073
+springs: 0.000053303724511926454
+heat: 0.0001593520725753345
+focus: 0.0001777938144453479
 gravity: 12
-density: 0.42
+density: 0.4
 ---
 
 tannins are naturally occurring polyphenolic compounds found in various plants. they are known for their ability to bind and precipitate proteins, which makes them important in various industrial and medicinal applications. tannins are responsible for the astringency in certain fruits, wines, and teas.

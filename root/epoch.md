@@ -4,12 +4,12 @@ alias: epochs
 crystal-type: entity
 crystal-domain: history
 stake: 7336813630330374
-diffusion: 0.00037279484551938413
-springs: 0.0003312613538235082
-heat: 0.0003574995964907065
-focus: 0.0003572757482048876
+diffusion: 0.00034291257628572163
+springs: 0.0003058886852993464
+heat: 0.0003311985840157968
+focus: 0.00032946261053581986
 gravity: 6
-density: 12.66
+density: 11.18
 ---
 major division of [[geological time]] or civilizational time
 

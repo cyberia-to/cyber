@@ -4,12 +4,12 @@ alias: buy name
 crystal-type: process
 crystal-domain: cyber
 stake: 16818957211487452
-diffusion: 0.00026588409070489317
-springs: 0.000056202254601930496
-heat: 0.0001360041482799534
-focus: 0.0001770035513890173
+diffusion: 0.00024515980286118
+springs: 0.000047828466513015864
+heat: 0.0001200858579052814
+focus: 0.000160945612965549
 gravity: 3
-density: 9.04
+density: 6.86
 ---
 [[portal entrance]] always on start
 

@@ -6,12 +6,12 @@ crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
 stake: 15224056096605018
-diffusion: 0.0033965921025001637
-springs: 0.001553240598292036
-heat: 0.002134875720778208
-focus: 0.0025912433748933473
+diffusion: 0.0033009916575820943
+springs: 0.0013538504608887
+heat: 0.0019538054681631036
+focus: 0.002447412060690246
 gravity: 1
-density: 2.91
+density: 3.03
 ---
 
 a directed authenticated multigraph over content-addressed nodes, carrying an emergent [[probability]] measure — the shared memory of the planet

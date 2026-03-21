@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14244024266753020
-diffusion: 0.00011661740354397796
-springs: 0.0028836568664678077
-heat: 0.001928376737024409
-focus: 0.0013090811091172197
+diffusion: 0.00010722364868599256
+springs: 0.002561276133489343
+heat: 0.001773618281197558
+focus: 0.0011767183206292957
 gravity: 0
-density: 17.96
+density: 14.58
 ---
 concept of giving [[attention]] to [[particle]] by [[neuron]]
 

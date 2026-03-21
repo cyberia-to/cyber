@@ -4,12 +4,12 @@ alias: trinity thesis, trinity
 crystal-type: article
 crystal-domain: cyber
 stake: 9519611796818916
-diffusion: 0.0002546483442630969
-springs: 0.0015496274124930402
-heat: 0.001121599467500172
-focus: 0.000816532289379499
-gravity: 6
-density: 0.52
+diffusion: 0.00021921841510218212
+springs: 0.0011625879221131884
+heat: 0.0008803035789562735
+focus: 0.0006344462999762941
+gravity: 7
+density: 0.69
 ---
 # Trinity: Quantum · Privacy · AI
 

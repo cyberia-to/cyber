@@ -4,12 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: FEP
 stake: 5175373567232129
-diffusion: 0.0005495470304410956
-springs: 0.0010508274722059222
-heat: 0.000893414023178088
-focus: 0.0007687045615179458
+diffusion: 0.0005203594486905353
+springs: 0.0009361736474425885
+heat: 0.0008201978541351337
+focus: 0.0007050713894050618
 gravity: 14
-density: 8.22
+density: 7.86
 ---
 any system that persists must minimize variational [[free energy]] — or equivalently, maximize the evidence for its own generative model of the world
 

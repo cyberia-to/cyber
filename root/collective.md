@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: biology
 alias: collectives
 stake: 8759873547649713
-diffusion: 0.0002926905506099371
-springs: 0.0010542254065129372
-heat: 0.0008164879883029083
-focus: 0.0006259104949194346
+diffusion: 0.00027080503859818334
+springs: 0.0009355099171929328
+heat: 0.0007462247719829594
+focus: 0.0005653004488535561
 gravity: 8
-density: 16.5
+density: 15.84
 ---
 a group of agents sharing a substrate and producing outcomes none could reach alone
 

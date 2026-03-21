@@ -3,12 +3,12 @@ alias: key exchange, key exchange protocols, crypto key exchange
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
-diffusion: 0.000369552958059166
-springs: 0.000234987633887059
-heat: 0.0002906965926489179
-focus: 0.00031341208772548584
-gravity: 3
-density: 2.52
+diffusion: 0.0002954529848783976
+springs: 0.00013051630602484388
+heat: 0.00019615999541105898
+focus: 0.00022611338332886088
+gravity: 5
+density: 3.86
 ---
 # crypto/key-exchange
 

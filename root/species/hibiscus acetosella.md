@@ -4,12 +4,12 @@ alias: hibiscus merah, hibaceto
 crystal-type: entity
 crystal-domain: biology
 stake: 6967623557440921
-diffusion: 0.00015195428829784343
-springs: 0.0007575363168844258
-heat: 0.0005558888929449313
-focus: 0.00041441581780323774
+diffusion: 0.00013973774119200617
+springs: 0.0006407951394905644
+heat: 0.0004881405586778465
+focus: 0.0003597355241787371
 gravity: 2
-density: 4.84
+density: 3.86
 ---
 [[staple]]
 

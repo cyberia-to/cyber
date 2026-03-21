@@ -4,12 +4,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: biology
 stake: 8175881977806400
-diffusion: 0.0002597495077420264
-springs: 0.0000647894479411767
-heat: 0.00016225302751301816
-focus: 0.00018176219375597077
+diffusion: 0.0002389124981344916
+springs: 0.000054793542630399864
+heat: 0.0001424631912499824
+focus: 0.0001643869501063601
 gravity: 16
-density: 0.51
+density: 0.48
 ---
 
 [[vitamin]] c, also known as ascorbic acid, is a water-soluble vitamin that is essential for normal growth and development. it is known for its [[antioxidant]] properties, which help protect cells from damage by free radicals. vitamin c is crucial for the [[biosynthesis of collagen]], [[L-carnitine]], and certain neurotransmitters. it also aids in the [[absorption of non-heme iron]], the form of iron present in plant-based foods.

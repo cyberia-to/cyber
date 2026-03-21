@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 10965616419494692
-diffusion: 0.00011661740354397796
-springs: 0.0014420513052782744
-heat: 0.0010037272032942936
-focus: 0.0006916695340143334
+diffusion: 0.00010722364868599256
+springs: 0.001305256077616494
+heat: 0.0009367798310306418
+focus: 0.0006325446138340647
 gravity: 0
-density: 18.04
+density: 12.26
 ---
 how to create [[cyberlinks]]
 

@@ -3,12 +3,12 @@ alias: iroh-gossip, gossip protocol, radio gossip
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.000220744485866855
-springs: 0.001414305483356092
-heat: 0.0010216769898502053
-focus: 0.0007389992859102998
+diffusion: 0.00019728028531879358
+springs: 0.0012540532256629846
+heat: 0.0009329472268798511
+focus: 0.0006614455557342537
 gravity: 5
-density: 3.76
+density: 3.53
 ---
 
 # gossip

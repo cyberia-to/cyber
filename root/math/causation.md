@@ -3,12 +3,12 @@ tags: relation
 crystal-type: relation
 crystal-domain: mathematics
 stake: 975556798665460
-diffusion: 0.00011661740354397796
-springs: 0.00006329347184365144
-heat: 0.00010274554716142476
-focus: 0.00009784585275736985
+diffusion: 0.00010722364868599256
+springs: 0.00005346427497441958
+heat: 0.00009022286286860505
+focus: 0.00008769567940904204
 gravity: 0
-density: 3.77
+density: 3.32
 ---
 relationship where one event (cause) produces another (effect)
 

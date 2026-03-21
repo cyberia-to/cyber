@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 4200711774803978
-diffusion: 0.0003553015026461098
-springs: 0.0007667170104779076
-heat: 0.0006491328421482866
-focus: 0.0005374924228960873
+diffusion: 0.00033048442970091496
+springs: 0.0006875923195751719
+heat: 0.0005967408256145392
+focus: 0.0004908680758459106
 gravity: 9
-density: 14.29
+density: 11.44
 ---
 geometric expression of meaning in the [[cybergraph]]
 

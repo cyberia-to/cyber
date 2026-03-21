@@ -4,12 +4,12 @@ alias: Bayesian Truth Serum, BTS, peer prediction, truth serum, bayesian truth s
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.0030488269835709306
-springs: 0.0009154880312553662
-heat: 0.00161228607574187
-focus: 0.0021215171163104594
+diffusion: 0.0028856004739013234
+springs: 0.0008149997118166976
+heat: 0.0014667773592697898
+focus: 0.0019806556223496033
 gravity: 40
-density: 2.46
+density: 2.42
 ---
 
 a mechanism designed by Dražen Prelec (MIT, 2004) that makes honesty the strategically optimal response in a belief elicitation game

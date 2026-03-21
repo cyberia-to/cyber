@@ -4,12 +4,12 @@ tags: species
 crystal-type: entity
 crystal-domain: biology
 stake: 6826660075064949
-diffusion: 0.000267021726682073
-springs: 0.00029348313645140625
-heat: 0.00029279238997967084
-focus: 0.00028011428227239397
+diffusion: 0.000245533025275943
+springs: 0.0002483037336582645
+heat: 0.0002571229039104235
+focus: 0.00024868221351753234
 gravity: 6
-density: 10.67
+density: 7.72
 ---
 ![image.png](https://ipfs.io/ipfs/QmVSoEscWyjQRDd6oE37BLTQG4MXj3q2wFn4ku5XjFaT2L)
 

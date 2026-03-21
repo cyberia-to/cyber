@@ -2,12 +2,12 @@
 tags: discipline, math
 crystal-type: entity
 crystal-domain: math
-diffusion: 0.00011661740354397796
-springs: 0.000051680384165197334
-heat: 0.00009301835619735027
-focus: 0.0000924164882610187
+diffusion: 0.00010722364868599256
+springs: 0.00004359317239416318
+heat: 0.00008215037996054941
+focus: 0.00008311985205335405
 gravity: 0
-density: 11.19
+density: 10.46
 ---
 # mathematics
 

@@ -6,12 +6,12 @@ crystal-domain: cyber
 subgraph: true
 repo: ../nox
 exclude: ".claude/**, target/**, CLAUDE.md"
-diffusion: 0.0008950821395097905
-springs: 0.00036420620048955096
-heat: 0.0005578014144296559
-focus: 0.0006683632127876951
-gravity: 39
-density: 2.56
+diffusion: 0.0021529145114107143
+springs: 0.00025919016917663035
+heat: 0.0008606571487396801
+focus: 0.0013263457362062653
+gravity: 74
+density: 3.09
 ---
 the composition language and virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
 

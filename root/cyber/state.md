@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: state management, world state, state transitions
 stake: 27965690347731876
-diffusion: 0.00015154256496394166
-springs: 0.00010076970730307541
-heat: 0.00013828919334823767
-focus: 0.00013366003334254166
+diffusion: 0.00013955843726071808
+springs: 0.000156409329919939
+heat: 0.00016380437613999798
+focus: 0.00014946289283433842
 gravity: 3
-density: 0.88
+density: 0.84
 ---
 # State Management
 

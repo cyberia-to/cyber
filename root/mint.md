@@ -5,12 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 18172206642296784
-diffusion: 0.00011661740354397796
-springs: 0.001017312794108302
-heat: 0.000745039662640905
-focus: 0.0005125104725326632
+diffusion: 0.00010722364868599256
+springs: 0.00089320584988745
+heat: 0.0006766541092566013
+focus: 0.00045690440116054565
 gravity: 0
-density: 14.18
+density: 10.99
 ---
 how [[tokens]] enter existence. [[coins]] through [[consensus]] rewards, [[cards]] through provenance binding, [[scores]] through earned reputation
 

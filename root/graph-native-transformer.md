@@ -2,10 +2,10 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
-diffusion: 0.0004760576278694999
-springs: 0.001302939036613881
-heat: 0.001033329093752904
-focus: 0.0008355763436694992
+diffusion: 0.00044595124702892475
+springs: 0.001143512300187417
+heat: 0.0009375503566718445
+focus: 0.0007535393849050465
 gravity: 5
 density: 0.48
 ---

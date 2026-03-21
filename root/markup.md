@@ -5,12 +5,12 @@ icon: "\U0000270D"
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
-diffusion: 0.0001447856788259026
-springs: 0.0016796709629586753
-heat: 0.0011697574027300175
-focus: 0.0008102456088465614
+diffusion: 0.00013679740732591356
+springs: 0.0015069804465375493
+heat: 0.0010847791589314545
+focus: 0.0007374486694105029
 gravity: 3
-density: 1.64
+density: 1.63
 ---
 # cybermark
 

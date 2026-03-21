@@ -3,12 +3,12 @@ tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 2940095489555996
-diffusion: 0.00011661740354397796
-springs: 0.0009669875026919193
-heat: 0.00070221727400597
-focus: 0.0004888484073807612
+diffusion: 0.00010722364868599256
+springs: 0.0008185858927333848
+heat: 0.0006171559932038887
+focus: 0.00042261879080378404
 gravity: 0
-density: 1.16
+density: 1.04
 ---
 ordered ranking of levels where each level contains or governs the one below
 

@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 8088618869668893
-diffusion: 0.001037050201880734
-springs: 0.0001427614516618643
-heat: 0.00044866135028220764
-focus: 0.0006510858064953711
+diffusion: 0.0009531493883450428
+springs: 0.00012065819186377652
+heat: 0.0003936052532727123
+focus: 0.0005914932023861892
 gravity: 4
-density: 0.54
+density: 0.51
 ---
 alias: potassium
 

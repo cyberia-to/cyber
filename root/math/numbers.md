@@ -4,12 +4,12 @@ alias: number theory, numbers
 crystal-type: entity
 crystal-domain: math
 stake: 4927009336379226
-diffusion: 0.000398831941577604
-springs: 0.00014233927858848256
-heat: 0.00023929463450939915
-focus: 0.00028997668126722807
+diffusion: 0.00034455397441410316
+springs: 0.00010555778650322905
+heat: 0.00019305431804431
+focus: 0.00024255518676687918
 gravity: 10
-density: 4.39
+density: 4.92
 ---
 The study of properties and relationships of [[integers]], especially [[prime]] numbers.
 

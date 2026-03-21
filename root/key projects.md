@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5186561145198477
-diffusion: 0.00011661740354397796
-springs: 0.00008526564794328559
-heat: 0.00009911125926394958
-focus: 0.00010371064800776509
+diffusion: 0.00010722364868599256
+springs: 0.0000720766101830587
+heat: 0.00008698001489135269
+focus: 0.00009263081037618323
 gravity: 0
-density: 0.44
+density: 0.42
 ---
 [cyberia](https://github.com/orgs/cyberia-to/projects/50): core cyberstate development
 

@@ -3,12 +3,12 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1061314669040222
-diffusion: 0.00019352533318546227
-springs: 0.0006109422516387444
-heat: 0.0004940548858251202
-focus: 0.0003788563192493804
+diffusion: 0.00018531041273646154
+springs: 0.0005474709168933414
+heat: 0.0004587583917067442
+focus: 0.0003486481597775775
 gravity: 1
-density: 3.78
+density: 3.35
 ---
 ability of a material to transmit [[electricity]] or [[heat]]
 

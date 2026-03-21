@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8786723734768946
-diffusion: 0.0007807048338762968
-springs: 0.00014107476166932972
-heat: 0.0003622621242620783
-focus: 0.0005051272702913655
+diffusion: 0.0007315635483395141
+springs: 0.00012166625098916094
+heat: 0.00032429516789854364
+focus: 0.00046714068304620803
 gravity: 4
-density: 0.83
+density: 0.79
 ---
 alias: butyrate, butyric acid
 

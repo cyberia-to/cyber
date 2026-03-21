@@ -3,12 +3,12 @@ tags: module
 crystal-type: measure
 crystal-domain: cyber
 stake: 8441698830286806
-diffusion: 0.0001344816104410222
-springs: 0.0019423790044463954
-heat: 0.0013443022912328932
-focus: 0.000918814964801013
+diffusion: 0.00012364884272239444
+springs: 0.0017219867722324462
+heat: 0.001232697339904155
+focus: 0.0008249599210117513
 gravity: 2
-density: 21.97
+density: 17.9
 ---
 the ranking module computes per-[[particle]] scores from the [[cybergraph]]. the output is [[cyberank]]
 

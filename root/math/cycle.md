@@ -4,12 +4,12 @@ alias: cycles
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 4462501099216498
-diffusion: 0.00012685378193003498
-springs: 0.00011916343685289904
-heat: 0.00014233580330691228
-focus: 0.0001276430826822703
+diffusion: 0.00011726605471884217
+springs: 0.0001064545421425982
+heat: 0.00013043655689158143
+focus: 0.00011665670138051533
 gravity: 2
-density: 3.32
+density: 2.97
 ---
 recurring sequence of events or states that returns to its starting point
 

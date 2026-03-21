@@ -4,12 +4,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8068481229329467
-diffusion: 0.00013497739589365257
-springs: 0.00005284135833075077
-heat: 0.00010179717635879283
-focus: 0.00010370054071781059
+diffusion: 0.00012410835725769307
+springs: 0.00004467796044469904
+heat: 0.00008936715106248475
+focus: 0.00009333099697475198
 gravity: 2
-density: 1.1
+density: 1.04
 ---
 
 [[vitamin]] b3, also known as niacin, is a [[water-soluble vitamin]] essential for [[energy metabolism]] and maintaining [[healthy skin]], [[nerves]], and [[digestion]]. it plays a key role in the synthesis of [[NAD]] and [[NADP]], [[coenzymes]] involved in [[cellular energy production]] and [[cellular repair]].

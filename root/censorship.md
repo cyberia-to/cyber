@@ -3,12 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5083635427908085
-diffusion: 0.0002898689209879198
-springs: 0.00027137210276639904
-heat: 0.00028759771029206914
-focus: 0.00028386563338229486
+diffusion: 0.0002666900559913455
+springs: 0.00025411030330256735
+heat: 0.000268721827118162
+focus: 0.000263322484410072
 gravity: 6
-density: 6.42
+density: 5.91
 ---
 suppression, prohibition, or restriction of information, speech, or media by an authority
 

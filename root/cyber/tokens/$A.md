@@ -4,12 +4,12 @@ alias: amper, milliamper, ampers, milliampers
 crystal-type: entity
 crystal-domain: economics
 stake: 15975861335943538
-diffusion: 0.00011661740354397796
-springs: 0.002255141562079693
-heat: 0.0015298732867437092
-focus: 0.001040825827744644
+diffusion: 0.00010722364868599256
+springs: 0.001996225614103417
+heat: 0.0014019866734187594
+focus: 0.0009328768432577612
 gravity: 0
-density: 7.71
+density: 7.2
 ---
 [[token]] of [[focus]] in [[bostrom]]
 

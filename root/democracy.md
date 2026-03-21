@@ -3,12 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5025460022483080
-diffusion: 0.000375310049479178
-springs: 0.00048706511597768656
-heat: 0.00046544489108650837
-focus: 0.00042686353775019874
+diffusion: 0.000345253967545558
+springs: 0.00044364899066931323
+heat: 0.0004290384457472829
+focus: 0.00039152937012302457
 gravity: 12
-density: 6.56
+density: 5.97
 ---
 governance system where authority derives from the collective will of the people
 

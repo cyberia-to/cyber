@@ -6,12 +6,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
 stake: 48242463474956168
-diffusion: 0.030174020292740637
-springs: 0.0009190393450349566
-heat: 0.010309050239443148
-focus: 0.017424531997769523
-gravity: 418
-density: 17.2
+diffusion: 0.028716986487463264
+springs: 0.0007965356769498598
+heat: 0.009357403900929682
+focus: 0.016468934727002314
+gravity: 437
+density: 15.93
 ---
 the one who links. agent with stake, identity, and [[will]] to shape the [[cybergraph]]
 

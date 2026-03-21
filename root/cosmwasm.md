@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13774145992166448
-diffusion: 0.0012446800884013717
-springs: 0.0002062458507354134
-heat: 0.0005663867152841534
-focus: 0.0007974911424781446
-gravity: 22
-density: 5.61
+diffusion: 0.0012726811933050559
+springs: 0.00018853478158976363
+heat: 0.0005459122370438981
+focus: 0.0008020834785382263
+gravity: 23
+density: 4.35
 ---
 very powerful smart contracts beyond [[cosmos]]
 

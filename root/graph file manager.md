@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13854696553524144
-diffusion: 0.00011661740354397796
-springs: 0.0005258203234206185
-heat: 0.0004203457250805656
-focus: 0.00030012394381428916
+diffusion: 0.00010722364868599256
+springs: 0.00046807530308468125
+heat: 0.00038582502901799066
+focus: 0.00027119942107199527
 gravity: 0
-density: 13.98
+density: 10.21
 ---
 concept of organizing [[files]]
 

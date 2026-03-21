@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11706681583985520
-diffusion: 0.0002523853372639681
-springs: 0.0023984298384355034
-heat: 0.0016619400496388004
-focus: 0.001178109630090401
+diffusion: 0.00023460455006342254
+springs: 0.002146278993634389
+heat: 0.001537455694162659
+focus: 0.0010686771119545462
 gravity: 2
-density: 12.08
+density: 10.61
 ---
 metaheuristic inspired by the foraging behavior of ants — introduced by Dorigo (1992)
 

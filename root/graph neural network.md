@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: computer science
 stake: 6954198463881306
-diffusion: 0.00017798765831477672
-springs: 0.0009085908889394317
-heat: 0.0006857418468352627
-focus: 0.0004987194652062729
+diffusion: 0.00016615338711136032
+springs: 0.0008122999151856068
+heat: 0.0006317367441336519
+focus: 0.0004531140169380867
 gravity: 4
-density: 6.46
+density: 4.84
 ---
 type of neural network specifically designed to operate on data structured as [[graphs]]
 

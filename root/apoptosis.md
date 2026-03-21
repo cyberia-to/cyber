@@ -3,12 +3,12 @@ tags: biology
 crystal-type: process
 crystal-domain: biology
 stake: 4131348791412627
-diffusion: 0.0005470189028224756
-springs: 0.00008595800224003833
-heat: 0.0002513649163233962
-focus: 0.00034956983534793025
+diffusion: 0.00050603653612853
+springs: 0.00007334575450955208
+heat: 0.00022237843981381256
+focus: 0.00031949768237988905
 gravity: 10
-density: 3.2
+density: 2.95
 ---
 
 Programmed cell death -- a controlled self-destruction sequence encoded in every cell. The organism sacrificing parts to preserve the whole.

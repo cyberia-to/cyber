@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 15787910026108910
-diffusion: 0.0002746907927704372
-springs: 0.0004932704037701446
-heat: 0.00045105529714257564
-focus: 0.000375537576944779
+diffusion: 0.00025472559997115037
+springs: 0.00043832052742398124
+heat: 0.0004110544011962733
+focus: 0.00034106983845201983
 gravity: 6
-density: 7.18
+density: 6.8
 ---
 - good explanation on fundamental difference between [[knowledge graphs]] and [[llms]]
 	- [unifying large language models and knowledge graphs: a roadmap](https://cyb.ai/oracle/ask/QmdGEYVKo1sRURzbj83UMtr77EL6GHUB2taJbnpTynEQKT)

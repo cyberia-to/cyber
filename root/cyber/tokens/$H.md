@@ -4,12 +4,12 @@ alias: hydrogen
 crystal-type: entity
 crystal-domain: economics
 stake: 15505983061356966
-diffusion: 0.0002961898274752668
-springs: 0.00047331746370166356
-heat: 0.0004402920202188651
-focus: 0.0003781485568919074
+diffusion: 0.00027882303380157085
+springs: 0.0004162932893562205
+heat: 0.0003996456096079146
+focus: 0.00034422862562923003
 gravity: 13
-density: 9.72
+density: 8.9
 ---
 [[token]] of [[fuel]] in [[bostrom]]
 

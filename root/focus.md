@@ -6,12 +6,12 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 10799633444575796
-diffusion: 0.01730689295569924
-springs: 0.0007996001690990891
-heat: 0.006108263636771252
-focus: 0.010114979255933647
-gravity: 203
-density: 16.44
+diffusion: 0.016756893646231733
+springs: 0.0006971563421319701
+heat: 0.005632628458743933
+focus: 0.00971411941750412
+gravity: 211
+density: 15.16
 ---
 collective [[attention]]. the [[probability]] distribution π over all [[particles]] — content-particles and [[axon]]-particles — that emerges from the [[tri-kernel]] operating on the [[attention]]-weighted [[cybergraph]]
 

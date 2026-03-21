@@ -2,12 +2,12 @@
 tags: discipline, chemo, quantum
 crystal-type: entity
 crystal-domain: chemo
-diffusion: 0.00011661740354397796
-springs: 0.0001296463219505838
-heat: 0.00014293953861400295
-focus: 0.00012579050607996534
+diffusion: 0.00010722364868599256
+springs: 0.00011450449674011076
+heat: 0.00012996779958683675
+focus: 0.0001139567332823954
 gravity: 0
-density: 9.47
+density: 8.61
 ---
 # chemistry
 

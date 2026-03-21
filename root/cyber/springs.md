@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: mathematics
 stake: 8182594524586208
-diffusion: 0.007353197689292698
-springs: 0.0006639986196092122
-heat: 0.0028417505412422304
-focus: 0.004444148538777581
-gravity: 65
-density: 5.4
+diffusion: 0.007109471702523231
+springs: 0.0005750055662250558
+heat: 0.0026103655256940923
+focus: 0.004249310626267896
+gravity: 68
+density: 5.09
 ---
 second operator of the [[tri-kernel]]
 

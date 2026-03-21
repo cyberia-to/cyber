@@ -3,12 +3,12 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 9379665366985338
-diffusion: 0.00011661740354397796
-springs: 0.0009381455313563397
-heat: 0.0006861968398550198
-focus: 0.0004769917291498972
+diffusion: 0.00010722364868599256
+springs: 0.0008205477720898657
+heat: 0.000620619733781827
+focus: 0.00042390010272631596
 gravity: 0
-density: 24.76
+density: 20.04
 ---
 [[pay]]: change two [[neuron]] balances
 

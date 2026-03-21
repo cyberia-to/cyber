@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 14525951231504966
-diffusion: 0.00017820324518609196
-springs: 0.0003723821004192789
-heat: 0.0003475470194912021
-focus: 0.0002703256566170714
+diffusion: 0.00016393808521485416
+springs: 0.00032662155833877027
+heat: 0.0003139897046213514
+focus: 0.00024275345103332534
 gravity: 4
-density: 8.66
+density: 7.35
 ---
 propose simple mechanism for optimization of [[$CYB]] [[tokens]] [[value]]
 

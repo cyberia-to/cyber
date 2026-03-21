@@ -2,12 +2,12 @@
 tags: discipline, neuro, bio, sense
 crystal-type: entity
 crystal-domain: neuro
-diffusion: 0.00011661740354397796
-springs: 0.00047462063893336567
-heat: 0.000381882309710629
-focus: 0.0002770713553941259
+diffusion: 0.00010722364868599256
+springs: 0.00041455438353197
+heat: 0.0003442015804536943
+focus: 0.0002468184554933229
 gravity: 0
-density: 14.03
+density: 12.97
 ---
 # neuroscience
 

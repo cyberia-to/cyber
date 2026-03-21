@@ -3,12 +3,12 @@ tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5409092241474543
-diffusion: 0.0002730271147490728
-springs: 0.00016531911147491186
-heat: 0.0002197225418807317
-focus: 0.00023005379919315743
+diffusion: 0.00025179884845010446
+springs: 0.00014944430472405094
+heat: 0.0002015505361050856
+focus: 0.0002110428228632819
 gravity: 4
-density: 4.24
+density: 3.81
 ---
 instrument for observing distant objects by collecting electromagnetic radiation
 

@@ -5,12 +5,12 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 stake: 17953987848800476
-diffusion: 0.0013473360477468323
-springs: 0.0013116078533248897
-heat: 0.0013373645166325037
-focus: 0.0013346232831973905
+diffusion: 0.001286022552073309
+springs: 0.0011641805787124357
+heat: 0.0012255302138582112
+focus: 0.0012373714924220117
 gravity: 5
-density: 1.79
+density: 1.76
 ---
 # Tri-Kernel Specification
 

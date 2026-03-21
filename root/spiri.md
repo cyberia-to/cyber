@@ -3,12 +3,12 @@ tags: cyber, spiri
 alias: spirituality
 crystal-type: entity
 crystal-domain: spiri
-diffusion: 0.00020332948702158685
-springs: 0.0005298151396411069
-heat: 0.00044578874543580214
-focus: 0.0003497670344902877
+diffusion: 0.00018827238940908526
+springs: 0.00047167298745767695
+heat: 0.00040767415261894766
+focus: 0.0003171729214656312
 gravity: 12
-density: 13.8
+density: 13.3
 ---
 # spiri
 

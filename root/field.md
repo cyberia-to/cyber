@@ -4,12 +4,12 @@ alias: fields
 crystal-type: entity
 crystal-domain: physics
 stake: 7356951270669799
-diffusion: 0.001949983843198858
-springs: 0.0002605432665280179
-heat: 0.0008270533454523926
-focus: 0.001218565570648319
-gravity: 32
-density: 11.62
+diffusion: 0.0033424725606112007
+springs: 0.0002684706789850941
+heat: 0.0012361793001312972
+focus: 0.0019990133440273626
+gravity: 41
+density: 10.37
 ---
 A physical quantity assigned to every point in [[spacetime]], mediating [[forces]] and interactions.
 

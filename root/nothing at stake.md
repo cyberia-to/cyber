@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14687052354220364
-diffusion: 0.00015999697843931238
-springs: 0.00005099947767666369
-heat: 0.00010069245457820063
-focus: 0.00011543682343829601
+diffusion: 0.00014712344643646368
+springs: 0.000043204352145325434
+heat: 0.00008872212459711435
+focus: 0.000104267453781251
 gravity: 2
-density: 4.17
+density: 3.64
 ---
 potential issue in proof of stake consensus mechanisms
 

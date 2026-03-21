@@ -3,12 +3,12 @@ tags: recipe
 crystal-type: process
 crystal-domain: agriculture
 stake: 3644465398317205
-diffusion: 0.0001378502848040008
-springs: 0.00003946734514038556
-heat: 0.00007723685192790725
-focus: 0.00009621271632969798
+diffusion: 0.0001267462106250419
+springs: 0.00003336116837708946
+heat: 0.00006777714529924754
+focus: 0.00008693688488549619
 gravity: 1
-density: 13.84
+density: 9.25
 ---
 [[simple lentil base]]
 

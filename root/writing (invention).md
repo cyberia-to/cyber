@@ -3,12 +3,12 @@ tags: time, history, culture
 crystal-type: entity
 crystal-domain: history
 stake: 5838695235382268
-diffusion: 0.00047879630745751195
-springs: 0.0001494570828502779
-heat: 0.00027693788034174573
-focus: 0.0003396228546521902
+diffusion: 0.00043358503601146047
+springs: 0.0001264234684097001
+heat: 0.00024163252972918817
+focus: 0.000303046064474474
 gravity: 8
-density: 9.17
+density: 8.19
 ---
 invention of visible [[language]] ~3400 BCE in Mesopotamia
 

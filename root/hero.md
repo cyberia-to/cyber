@@ -4,12 +4,12 @@ alias: heroes
 crystal-type: entity
 crystal-domain: cybics
 stake: 6826660075064949
-diffusion: 0.0010143843867191386
-springs: 0.00011741320587009565
-heat: 0.000415680590180081
-focus: 0.0006255522731566174
+diffusion: 0.000932452113359927
+springs: 0.00009924480772504844
+heat: 0.00036476250396696975
+focus: 0.0005689519997908646
 gravity: 4
-density: 5.09
+density: 3.34
 ---
 validators of cyber networks
 

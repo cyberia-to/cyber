@@ -2,12 +2,12 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00011661740354397796
-springs: 0.0033923361228687305
-heat: 0.0022561576775291803
-focus: 0.0015272410741384518
+diffusion: 0.00010722364868599256
+springs: 0.0029978553831764656
+heat: 0.0020656515317663557
+focus: 0.0013660987456491894
 gravity: 0
-density: 13.44
+density: 10.49
 ---
 fundamental question in [[knowledge theory]]
 

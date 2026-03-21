@@ -3,12 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5146285864519627
-diffusion: 0.0005326166046800561
-springs: 0.00009894566231231972
-heat: 0.0002495562189639395
-focus: 0.0003459032448265136
+diffusion: 0.0004913712588280859
+springs: 0.00008520801065667573
+heat: 0.000220826312037006
+focus: 0.0003154132950184428
 gravity: 22
-density: 9.51
+density: 8.78
 ---
 supreme authority over a territory, population, or domain
 

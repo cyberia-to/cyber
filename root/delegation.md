@@ -3,12 +3,12 @@ tags: cyber, cybernomics
 crystal-type: relation
 crystal-domain: economics
 stake: 2331572612390110
-diffusion: 0.00011661740354397796
-springs: 0.0009092063341816215
-heat: 0.0006468974336059281
-focus: 0.00046045008874766324
+diffusion: 0.00010722364868599256
+springs: 0.0008534258085490684
+heat: 0.0006235697474094725
+focus: 0.00043435351638960567
 gravity: 0
-density: 3.31
+density: 3.1
 ---
 
 Transferring [[staking]] power from one neuron to another, enabling token holders to participate in consensus and governance without running validator infrastructure.

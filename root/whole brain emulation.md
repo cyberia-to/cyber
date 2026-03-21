@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11373739263707030
-diffusion: 0.00011661740354397796
-springs: 0.001558328448300031
-heat: 0.0010748253296231083
-focus: 0.0007407723021866237
+diffusion: 0.00010722364868599256
+springs: 0.0014295671405566955
+heat: 0.001017048728909718
+focus: 0.0006858917122919397
 gravity: 0
-density: 11.95
+density: 9.91
 ---
 one of four paths to [[superintelligence]] identified by [[nick bostrom]]
 

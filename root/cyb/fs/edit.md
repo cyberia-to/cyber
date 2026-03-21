@@ -4,12 +4,12 @@ alias: edit particle, edit
 crystal-type: process
 crystal-domain: cyb
 stake: 10825995446474682
-diffusion: 0.0002464341112236965
-springs: 0.0019627620925224297
-heat: 0.0013857735755647559
-focus: 0.0009892003984815333
+diffusion: 0.00022658581976754582
+springs: 0.0017867559719885278
+heat: 0.0012989955044297678
+focus: 0.000909118802366273
 gravity: 3
-density: 9.46
+density: 8.3
 ---
 create a new [[particle]] with modified content and link it to the previous version
 

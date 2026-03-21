@@ -3,12 +3,12 @@ tags: cybernomics, game theory
 crystal-type: process
 crystal-domain: mathematics
 stake: 4331179274942432
-diffusion: 0.00011661740354397796
-springs: 0.0007939313001363737
-heat: 0.0005735017014499161
-focus: 0.00041118843210288634
+diffusion: 0.00010722364868599256
+springs: 0.0007526745861564016
+heat: 0.0005566586566889078
+focus: 0.00039074593152769327
 gravity: 0
-density: 4.2
+density: 3.79
 ---
 mechanism for [[price]] discovery through competitive bidding among participants
 

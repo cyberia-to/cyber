@@ -3,12 +3,12 @@ tags: cyber, language
 alias: Sym, symplectic language, symplectic geometry language
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0001350842356534836
-springs: 0.00008119602243227494
-heat: 0.00011176416996326062
-focus: 0.00011425375854907696
+diffusion: 0.00012795464176633905
+springs: 0.00008498634774634772
+heat: 0.00011435098806451558
+focus: 0.00011234342281997552
 gravity: 3
-density: 3.67
+density: 3.34
 ---
 symplectic [[geometry]]. phase space with 2-form ω, Hamiltonian flows, canonical transformations, [[conservation]] laws
 

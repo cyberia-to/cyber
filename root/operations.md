@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4595857028575354
-diffusion: 0.0007067255672933427
-springs: 0.00016988964853858587
-heat: 0.00035817718094832403
-focus: 0.0004759651143979143
+diffusion: 0.0006495619899955325
+springs: 0.00014356634852486454
+heat: 0.00031422325666112446
+focus: 0.000430695550887445
 gravity: 3
-density: 7.88
+density: 5.57
 ---
 - current focus on [[critical operations]] for exponential grow
 - ## list of all operations

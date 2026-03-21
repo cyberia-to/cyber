@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13868121647083760
-diffusion: 0.000539420342788003
-springs: 0.0009177375999685351
-heat: 0.0007993490016222439
-focus: 0.0007049012517090143
+diffusion: 0.0005007199250026336
+springs: 0.0008283475758166307
+heat: 0.0007372556521888916
+focus: 0.0006463153656840761
 gravity: 6
-density: 15.52
+density: 11.72
 ---
 proof that one [[neuron]] have control over other [[neuron]]
 

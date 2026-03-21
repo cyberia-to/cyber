@@ -5,11 +5,11 @@ crystal-type: entity
 crystal-domain: biology
 nitrogener: "100"
 stake: 7454588314739736
-diffusion: 0.00030934482862568307
-springs: 0.0000940742883871261
-heat: 0.00019528501514405914
-focus: 0.0002219517038577923
+diffusion: 0.00028489305130483395
+springs: 0.00007978632477488499
+heat: 0.00017185376241443077
+focus: 0.00020075317556776605
 gravity: 3
-density: 13.59
+density: 9.2
 ---
 [[nitrogener]], [[fodder]], [[proteins]] and [[greens]]

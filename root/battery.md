@@ -3,12 +3,12 @@ tags: technology, physics, energy
 crystal-type: entity
 crystal-domain: physics
 stake: 5801674522839083
-diffusion: 0.00044211478300948393
-springs: 0.00027457719936783374
-heat: 0.0003459945694323553
-focus: 0.000372629465201565
+diffusion: 0.00041823231555189206
+springs: 0.0002503243128728372
+heat: 0.00032163969608652477
+focus: 0.00034854139085509765
 gravity: 6
-density: 3.39
+density: 3.03
 ---
 device storing chemical [[energy]] and converting it to electrical energy on demand
 

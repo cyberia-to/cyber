@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4927009336379226
-diffusion: 0.00012323371753685967
-springs: 0.0010246177151370414
-heat: 0.0007206819131851249
-focus: 0.0005131385559465698
+diffusion: 0.00011400812724907998
+springs: 0.0007891385327628512
+heat: 0.0005789290625374584
+focus: 0.0004095314359608818
 gravity: 1
-density: 2.37
+density: 3.17
 ---
 Italian cryptographer, researcher at Radboud University.
 

@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13599619775891430
-diffusion: 0.00021824399230254497
-springs: 0.000093294453492645
-heat: 0.00014657082410209578
-focus: 0.00016642449701948598
+diffusion: 0.00020608651237331052
+springs: 0.00008427336996720082
+heat: 0.00013494868290173586
+focus: 0.00015531500375716065
 gravity: 4
-density: 10.24
+density: 6.65
 ---
 [[cosmwasm]] [[progs]] for [[orgs]]
 

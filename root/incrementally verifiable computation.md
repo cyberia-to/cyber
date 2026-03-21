@@ -4,12 +4,12 @@ tags: cyber, cryptographic proofs
 crystal-type: process
 crystal-domain: computer science
 stake: 7644980550676113
-diffusion: 0.00043991576137733903
-springs: 0.000988435882464908
-heat: 0.0008169594724710439
-focus: 0.000679880539922354
-gravity: 8
-density: 6
+diffusion: 0.00036974872392268713
+springs: 0.0008389226464127291
+heat: 0.0007075834149837932
+focus: 0.0005780678388819135
+gravity: 9
+density: 5.74
 ---
 paradigm where a long computation is broken into steps, and each step produces a [[cryptographic proof]] that
 

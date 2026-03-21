@@ -4,12 +4,12 @@ crystal-type: measure
 crystal-domain: cybics
 alias: mixing time
 stake: 6564870750652429
-diffusion: 0.0002784158288273445
-springs: 0.0009683258455419727
-heat: 0.0007603023941511038
-focus: 0.0005817661469064878
+diffusion: 0.00025956566757979045
+springs: 0.000860256245785624
+heat: 0.0006956940507971086
+focus: 0.0005269985176849973
 gravity: 12
-density: 4.8
+density: 4.69
 ---
 
 the difference between the two largest eigenvalues of a transition matrix or graph [[Laplacian]] — the single number that controls how fast a system reaches [[equilibrium]]

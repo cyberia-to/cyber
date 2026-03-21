@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4604807090948431
-diffusion: 0.00023261879879014354
-springs: 0.00006996680432141386
-heat: 0.00017604305110083813
-focus: 0.0001725080509116644
+diffusion: 0.0002140043149558567
+springs: 0.00005919074763512472
+heat: 0.00015465784281538331
+focus: 0.00015569095033154043
 gravity: 1
-density: 2.53
+density: 2
 ---
 [[malvaviscus arboreus]]
 

@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: pattern
 crystal-domain: cyberia
 stake: 2848804853350604
-diffusion: 0.00013026284923763946
-springs: 0.0000571764666417678
-heat: 0.00010659641473049138
-focus: 0.00010360364755744886
+diffusion: 0.00011992149201780137
+springs: 0.000048785548295079133
+heat: 0.00009445949827222529
+focus: 0.00009348831015186828
 gravity: 2
-density: 4.12
+density: 3.39
 ---
 inspired by the behavior of social animals
 

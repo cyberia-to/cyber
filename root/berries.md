@@ -3,11 +3,11 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4537681623150350
-diffusion: 0.00015175323362041703
-springs: 0.00010945130869854933
-heat: 0.00016495302158639304
-focus: 0.00014170261373705264
+diffusion: 0.0001395699799235137
+springs: 0.00009268206710018602
+heat: 0.00014497941178405203
+focus: 0.00012658549244862145
 gravity: 3
-density: 20.18
+density: 13.09
 ---
 [[highland magic]]: [[rubus]], [[morus]], [[blueberry]], [[strawberry]]

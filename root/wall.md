@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: agriculture
 stake: 8491371676457386
-diffusion: 0.0005203429459273931
-springs: 0.00010341117175150167
-heat: 0.00026483764869287044
-focus: 0.00034416235422772285
+diffusion: 0.0004790119699796885
+springs: 0.00008777054178353581
+heat: 0.0002330557118108481
+focus: 0.0003124482898870706
 gravity: 9
-density: 13.7
+density: 12.97
 ---
 [[layer]] for productivity
 

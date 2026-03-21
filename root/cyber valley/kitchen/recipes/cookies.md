@@ -3,12 +3,12 @@ tags: recipe
 crystal-type: process
 crystal-domain: agriculture
 stake: 3622985248621819
-diffusion: 0.0001378502848040008
-springs: 0.00006416615444916107
-heat: 0.0000964192736027603
-focus: 0.00010745884345730133
+diffusion: 0.0001267462106250419
+springs: 0.000054238692964226465
+heat: 0.00008461016686700377
+focus: 0.00009656674657518841
 gravity: 1
-density: 5.75
+density: 3.58
 ---
 [[almond cookies]]
 

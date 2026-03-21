@@ -8,12 +8,12 @@ wood: "yes"
 grow-speed: "4"
 wood-density: "700"
 stake: 7608366659149886
-diffusion: 0.00030840192630843006
-springs: 0.0005830465120856788
-heat: 0.0004914637837288884
-focus: 0.00042740767352569847
+diffusion: 0.00028381523673495383
+springs: 0.00049349160869162
+heat: 0.0004318198537279762
+focus: 0.00037631907172055334
 gravity: 4
-density: 3.48
+density: 2.94
 ---
 ![undefined](https://ipfs.io/ipfs/QmUh8aHEmRoBjmLgREgBo23Rc26zXmRPvGBxudR4Wi72J6){:height 358, :width 534}
 

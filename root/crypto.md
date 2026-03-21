@@ -3,12 +3,12 @@ tags: cyber, crypto
 alias: cryptoeconomics
 crystal-type: entity
 crystal-domain: crypto
-diffusion: 0.0002787808958029788
-springs: 0.0004949099329035309
-heat: 0.00044824904090078207
-focus: 0.000377513235952707
+diffusion: 0.0002612065853733965
+springs: 0.00043730724013510885
+heat: 0.00040709747705468865
+focus: 0.0003432149601381642
 gravity: 12
-density: 19.49
+density: 19.19
 ---
 # crypto
 

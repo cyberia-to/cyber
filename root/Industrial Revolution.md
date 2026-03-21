@@ -3,12 +3,12 @@ tags: time, history
 crystal-type: entity
 crystal-domain: history
 stake: 5301691492997611
-diffusion: 0.0002865522949213401
-springs: 0.00025806535068357693
-heat: 0.00028835447491879553
-focus: 0.00027836664764950363
+diffusion: 0.0002630779148753889
+springs: 0.00022688503421574755
+heat: 0.0002600819458641192
+focus: 0.0002516208568752393
 gravity: 6
-density: 6.66
+density: 5.83
 ---
 transformation of production and society, 1760-1840, originating in Britain
 

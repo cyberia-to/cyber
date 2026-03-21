@@ -3,12 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4962809585871536
-diffusion: 0.00011661740354397796
-springs: 0.00016145181198319765
-heat: 0.00016318694758716385
-focus: 0.00013938163488438177
+diffusion: 0.00010722364868599256
+springs: 0.00013732292370309873
+heat: 0.000144159958458393
+focus: 0.0001236406931456029
 gravity: 0
-density: 4.22
+density: 3.79
 ---
 The study of counting, arrangement, and selection of discrete structures.
 

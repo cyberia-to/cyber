@@ -4,12 +4,12 @@ alias: anuma, полынь
 crystal-type: entity
 crystal-domain: biology
 stake: 6799809887945715
-diffusion: 0.00011661740354397796
-springs: 0.0015970856153061735
-heat: 0.001077165188088666
-focus: 0.0007528674239815781
+diffusion: 0.00010722364868599256
+springs: 0.0013517187315759463
+heat: 0.0009464286215396827
+focus: 0.0006484131681237083
 gravity: 0
-density: 4.06
+density: 2.87
 ---
 [[health]]
 

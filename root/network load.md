@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13988947489120310
-diffusion: 0.0001242121030987156
-springs: 0.00018225869091010777
-heat: 0.0001869840197206107
-focus: 0.00015418046276651303
+diffusion: 0.00011421459940808424
+springs: 0.0001572562790396647
+heat: 0.000167014521089619
+focus: 0.00013768708763386357
 gravity: 1
-density: 11.13
+density: 8.59
 ---
 [[vimputer]] keeps track of total consumed [[bostrom/bandwidth]]
 

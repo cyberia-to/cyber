@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14378275202349184
-diffusion: 0.0012824023279580435
-springs: 0.0021629181167758444
-heat: 0.0018392828050258934
-focus: 0.001657933160016962
+diffusion: 0.0012167209218977243
+springs: 0.0019228995447669807
+heat: 0.001687989484528099
+focus: 0.0015228282212845566
 gravity: 1
-density: 14.65
+density: 12.72
 ---
 software to create and use [[neurons]]
 

@@ -5,12 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 stake: 38980613474481880
-diffusion: 0.0009396689522249056
-springs: 0.0007655220568720319
-heat: 0.000848132962233758
-focus: 0.0008691176856208183
+diffusion: 0.0008885916361930825
+springs: 0.0006731455079433708
+heat: 0.0007698486394254131
+focus: 0.0008002091983646248
 gravity: 24
-density: 19.36
+density: 17.42
 ---
 the [[tru]] reads the [[cybergraph]] and speaks back in numbers. this is inference — computing [[explicit knowledge]] from collective [[learning]]
 

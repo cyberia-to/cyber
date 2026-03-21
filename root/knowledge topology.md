@@ -3,12 +3,12 @@ tags: cybics, cyber
 crystal-type: pattern
 crystal-domain: cyber
 stake: 10096646727272246
-diffusion: 0.00018557347632642746
-springs: 0.0014072881526777368
-heat: 0.0010150814973757575
-focus: 0.0007179894834416898
+diffusion: 0.0001737631942118305
+springs: 0.0012450637071299564
+heat: 0.000928685791209348
+focus: 0.0006461378674867634
 gravity: 5
-density: 8.61
+density: 7.91
 ---
 the shape of [[knowledge]] as revealed by graph structure — connectivity, clustering, centrality, and the spectral properties of the [[cybergraph]]
 

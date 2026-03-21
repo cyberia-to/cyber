@@ -3,12 +3,12 @@ tags: geography, biology, biome
 crystal-type: entity
 crystal-domain: biology
 stake: 5912736660468637
-diffusion: 0.0002086536946569738
-springs: 0.000144071540391316
-heat: 0.00017565821634649904
-focus: 0.00018267995271518245
+diffusion: 0.00019234664897991847
+springs: 0.00012406405713973715
+heat: 0.0001561577014671424
+focus: 0.00016462408192530675
 gravity: 5
-density: 8.13
+density: 7.35
 ---
 equatorial [[biome]] with the highest terrestrial biodiversity on Earth
 

@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 16311488674933952
-diffusion: 0.00026229474735707325
-springs: 0.0003103817999690681
-heat: 0.00032483084682313914
-focus: 0.00028922808303388634
+diffusion: 0.00024224430399675013
+springs: 0.0002693891248067412
+heat: 0.0002912180820443588
+focus: 0.0002601825058492658
 gravity: 6
-density: 2.49
+density: 2.34
 ---
 type of [[cyber/attacks]] in which a single adversary controls multiple fake identities in a [[network]]
 

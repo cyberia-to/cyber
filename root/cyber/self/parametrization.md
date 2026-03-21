@@ -4,12 +4,12 @@ crystal-type: pattern
 crystal-domain: cyber
 alias: parameter optimization, parameter reality, consensus parameter optimization, metabolic optimization
 stake: 28558835390456748
-diffusion: 0.00012340587506336187
-springs: 0.0016429739425194924
-heat: 0.0011419109060804057
-focus: 0.0007829773015036137
+diffusion: 0.000113468320022755
+springs: 0.0014689982305551112
+heat: 0.00105480327047833
+focus: 0.0007083942832735678
 gravity: 1
-density: 2.1
+density: 2.09
 ---
 # parametrization
 

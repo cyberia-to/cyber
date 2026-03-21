@@ -1,12 +1,12 @@
 ---
 tags: cyber, article, compound
 stake: 2115469288181981
-diffusion: 0.00014259711751266215
-springs: 0.0006383912226242315
-heat: 0.0004991879969812812
-focus: 0.00036265352493985856
+diffusion: 0.00012373006804569577
+springs: 0.0005681370746611326
+heat: 0.0004522684715459785
+focus: 0.0003227598507303792
 gravity: 1
-density: 1.99
+density: 2.04
 ---
 
 # Complete Feature Taxonomy of [[hash]] Functions

@@ -3,12 +3,12 @@ tags: cyber, core
 alias: honest signaling, epistemic honesty
 crystal-type: pattern
 crystal-domain: cyber
-diffusion: 0.00011661740354397796
-springs: 0.002064669284167447
-heat: 0.0014096704992234213
-focus: 0.0009596435868669121
+diffusion: 0.00010722364868599256
+springs: 0.0018223184502503694
+heat: 0.0012881306827900974
+focus: 0.0008579334959761155
 gravity: 0
-density: 6.04
+density: 5.82
 ---
 why [[neurons]] in the [[cybergraph]] act honestly — not by design or enforcement, but because dishonesty is unprofitable
 

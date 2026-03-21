@@ -3,12 +3,12 @@ tags: cyber, lang
 alias: language
 crystal-type: entity
 crystal-domain: lang
-diffusion: 0.0009321219244869543
-springs: 0.0003866242758703698
-heat: 0.0005842062938872951
-focus: 0.0006988895037820505
+diffusion: 0.0008394118693949081
+springs: 0.0003449175532193842
+heat: 0.0005193740859482921
+focus: 0.0006270560178529197
 gravity: 41
-density: 15.23
+density: 14.7
 ---
 # lang
 

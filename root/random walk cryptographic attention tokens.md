@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 25923855663619304
-diffusion: 0.00011965411112272912
-springs: 0.0022360215582727955
-heat: 0.0015153728425575772
-focus: 0.0010337080915547238
+diffusion: 0.00011002089637827295
+springs: 0.001986839926265442
+heat: 0.0013934291585635716
+focus: 0.0009297482577814715
 gravity: 1
-density: 1.84
+density: 1.82
 ---
 in this article i want to share mostly unedited output from chatgpt
 

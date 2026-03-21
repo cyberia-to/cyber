@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 26850187119232840
-diffusion: 0.0003036539354263956
-springs: 0.0008960814599769069
-heat: 0.0007204999455254749
-focus: 0.0005647513948113677
+diffusion: 0.0002797095937180064
+springs: 0.0007926788421985974
+heat: 0.0006556219403669434
+focus: 0.0005087828375919646
 gravity: 3
-density: 3.83
+density: 3.81
 ---
 [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 

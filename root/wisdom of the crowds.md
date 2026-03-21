@@ -5,12 +5,12 @@ crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
 stake: 14566226512183814
-diffusion: 0.0005721497396101027
-springs: 0.0014795302604533865
-heat: 0.0011783066960276568
-focus: 0.0009655952871466035
+diffusion: 0.0005360500067034035
+springs: 0.0013146543859209393
+heat: 0.001079232353311382
+focus: 0.0008782677897902487
 gravity: 7
-density: 3.25
+density: 3.17
 ---
 
 the aggregated judgment of many independent agents outperforms most individuals — and often the best expert

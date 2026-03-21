@@ -3,12 +3,12 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3210306009019548
-diffusion: 0.00021052305553523277
-springs: 0.00007392123779036903
-heat: 0.00012663819760502226
-focus: 0.0001527655386257323
+diffusion: 0.00019408973667304398
+springs: 0.0000629010916548631
+heat: 0.00011187796621970227
+focus: 0.0001382907890769196
 gravity: 1
-density: 4.82
+density: 4.12
 ---
 SI unit of [[frequency]], equal to one [[oscillation]] per second
 

@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 4301399976501102
-diffusion: 0.0003733722057071452
-springs: 0.00018020054164250717
-heat: 0.0002550184429452001
-focus: 0.0002917499539353662
+diffusion: 0.00034716143433401826
+springs: 0.00015428441641397364
+heat: 0.0002266210198839068
+focus: 0.0002651902460679792
 gravity: 5
-density: 5.95
+density: 4.93
 ---
 skill to harness full power of life
 

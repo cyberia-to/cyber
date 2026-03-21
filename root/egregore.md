@@ -1,11 +1,11 @@
 ---
 tags: philosophy
-diffusion: 0.00011661740354397796
-springs: 0.000766661800148967
-heat: 0.0005683341408182182
-focus: 0.0004019740699803247
+diffusion: 0.00010722364868599256
+springs: 0.0006697590453091607
+heat: 0.0005137224592649052
+focus: 0.00035728402978872095
 gravity: 0
-density: 4.18
+density: 2.93
 ---
 a collective intelligence that emerges from the coordinated activity of many agents — a mind that no single participant controls
 

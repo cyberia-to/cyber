@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13841271459964526
-diffusion: 0.00015019647374490773
-springs: 0.0007061422538346168
-heat: 0.0005260203705724577
-focus: 0.0003921449871373324
+diffusion: 0.00013988079403958584
+springs: 0.0006778440004033622
+heat: 0.0005151417413657753
+focus: 0.0003763219454139518
 gravity: 1
-density: 9.6
+density: 7.23
 ---
 TODO [[cyber/genesis]] protocol
 

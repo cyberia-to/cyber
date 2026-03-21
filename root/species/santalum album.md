@@ -11,12 +11,12 @@ wood-durability: high
 market: resins
 supply: next-month
 stake: 7601043880844642
-diffusion: 0.00024825418171967983
-springs: 0.0005918007722477906
-heat: 0.00047648101198187676
-focus: 0.0003969635249305545
+diffusion: 0.0002284658905271693
+springs: 0.0005010066869081023
+heat: 0.0004187349082753007
+focus: 0.00034828193299107094
 gravity: 3
-density: 1.48
+density: 1.28
 ---
 ![](https://ipfs.io/ipfs/QmTvWmfaiadRKJapuwBSnd1W1epZ2WuFzcFscJLCW1KYX5)
 

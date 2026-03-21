@@ -5,11 +5,11 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 8697019700529691
-diffusion: 0.00011661740354397796
-springs: 0.00032694603796012186
-heat: 0.00025938536203166566
-focus: 0.0002082695855663597
+diffusion: 0.00010722364868599256
+springs: 0.0002764981693157855
+heat: 0.00022771800589193835
+focus: 0.00018210487631611724
 gravity: 0
-density: 9.66
+density: 6.4
 ---
 [[high margin]] [[eat]]

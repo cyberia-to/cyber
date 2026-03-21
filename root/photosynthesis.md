@@ -3,12 +3,12 @@ tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
 stake: 4604562998338257
-diffusion: 0.001068544040675667
-springs: 0.0001516622580543015
-heat: 0.00046468251625759137
-focus: 0.0006727072010056456
+diffusion: 0.001007597256442495
+springs: 0.00013338382101721355
+heat: 0.00042006146086983486
+focus: 0.0006278260667003703
 gravity: 18
-density: 5.26
+density: 4.88
 ---
 
 Conversion of light energy into chemical energy, storing solar power in the bonds of glucose. The process that feeds nearly all life on Earth.

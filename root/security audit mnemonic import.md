@@ -5,10 +5,10 @@ crystal-domain: cyber
 date: 2026-03-20
 scope: restore mnemonic (seed phrase) import in /settings/keys
 auditor: Claude Opus 4.6
-diffusion: 0.00011661740354397796
-springs: 0.0006316757051759442
-heat: 0.0004829387426129804
-focus: 0.00034439916184737004
+diffusion: 0.00010722364868599256
+springs: 0.0005582311275045726
+heat: 0.00044023867098679523
+focus: 0.00030912889679172317
 gravity: 0
 density: 0.09
 ---

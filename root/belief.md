@@ -4,12 +4,12 @@ alias: belief, degree of belief, credence, subjective probability
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00024084477265167074
-springs: 0.0013102096191140533
-heat: 0.0009630094823989133
-focus: 0.0007060871685398376
+diffusion: 0.00022957220265472112
+springs: 0.0011653962511323718
+heat: 0.000885667323160509
+focus: 0.0006415384412991656
 gravity: 9
-density: 3.58
+density: 3.52
 ---
 
 a probability distribution over hypotheses held by an agent — quantified uncertainty about what is true

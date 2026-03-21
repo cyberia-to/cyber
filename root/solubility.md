@@ -3,12 +3,12 @@ tags: chemistry, property
 crystal-type: property
 crystal-domain: physics
 stake: 1074983855210013
-diffusion: 0.00017773312424420307
-springs: 0.00011508108847502714
-heat: 0.0001537737099393441
-focus: 0.00015414563065247925
+diffusion: 0.00016378570649753263
+springs: 0.00009931975230846314
+heat: 0.00013750979251730792
+focus: 0.00013919073744476506
 gravity: 4
-density: 4.68
+density: 4.16
 ---
 maximum amount of a substance (solute) that dissolves in a given [[solvent]] at a specific [[temperature]]
 

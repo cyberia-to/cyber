@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4555581747896505
-diffusion: 0.00039353810863207775
-springs: 0.00016248639754071255
-heat: 0.0002558144717384631
-focus: 0.00029667786792594674
+diffusion: 0.00036329504137141234
+springs: 0.00013890526177412507
+heat: 0.00022629388662050843
+focus: 0.0002685778765420419
 gravity: 5
-density: 5.09
+density: 3.31
 ---
 planned district in [[cyber valley]]
 

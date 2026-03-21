@@ -3,12 +3,12 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: signatureless identity, hash-based identity, identity primitive
-diffusion: 0.0007987466660931258
-springs: 0.001755582702130367
-heat: 0.0014272599840904905
-focus: 0.0012115001405037771
+diffusion: 0.0006149027957774929
+springs: 0.001360436064380121
+heat: 0.0011315689517448577
+focus: 0.0009418960075517422
 gravity: 6
-density: 1.57
+density: 1.95
 ---
 # identity
 

@@ -2,12 +2,12 @@
 tags: discipline, neuro, sense, socio
 crystal-type: entity
 crystal-domain: neuro
-diffusion: 0.00012823292918701746
-springs: 0.00017885691982905298
-heat: 0.00018505515259620815
-focus: 0.00015478457106146706
+diffusion: 0.00011786705732954233
+springs: 0.000154274909923836
+heat: 0.00016513075268310203
+focus: 0.00013824215217854058
 gravity: 2
-density: 11.67
+density: 10.65
 ---
 # psychology
 

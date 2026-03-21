@@ -3,12 +3,12 @@ alias: NAT traversal, hole punching
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0002259975831495068
-springs: 0.0011958146014509861
-heat: 0.0008870461014369142
-focus: 0.0006491523922974353
+diffusion: 0.00019566564903649507
+springs: 0.001048738692133348
+heat: 0.0008000646229356881
+focus: 0.0005724673567453822
 gravity: 4
-density: 2.76
+density: 2.58
 ---
 
 # hole punching

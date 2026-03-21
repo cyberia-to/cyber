@@ -3,12 +3,12 @@ tags: segment
 crystal-type: property
 crystal-domain: cyberia
 stake: 940651555410457
-diffusion: 0.0027120218233302766
-springs: 0.00016764865370000535
-heat: 0.0010131074566566349
-focus: 0.001608926999106475
+diffusion: 0.0024945561378554443
+springs: 0.0001418281553311197
+heat: 0.0008894898263376056
+focus: 0.0014677244807945603
 gravity: 32
-density: 10.67
+density: 8.72
 ---
 ongoing research on extreme profitability of different species
 

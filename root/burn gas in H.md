@@ -4,12 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: accepted
 stake: 11513360236727042
-diffusion: 0.00015862656569068747
-springs: 0.00007613470641567186
-heat: 0.00010946740640862273
-focus: 0.00012404717605177048
+diffusion: 0.00014644224139516443
+springs: 0.00006478519302445612
+heat: 0.00009673159543563837
+focus: 0.00011200299769204529
 gravity: 3
-density: 5.59
+density: 4.66
 ---
 proposal to improve [[cybernomics]] of [[fuel]]
 

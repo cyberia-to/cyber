@@ -4,12 +4,12 @@ alias: likelihood, likelihood function, likelihood ratio, log-likelihood, MLE, m
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.0003017149098740311
-springs: 0.0011092035432853635
-heat: 0.0008506245500781696
-focus: 0.0006537434279382618
+diffusion: 0.00028240442393733943
+springs: 0.0009942452693088258
+heat: 0.000784988921600534
+focus: 0.0005964735770814165
 gravity: 3
-density: 2.69
+density: 2.63
 ---
 
 $P(E \mid H)$ read as a function of $H$ with evidence $E$ fixed — how well each hypothesis explains the observed data

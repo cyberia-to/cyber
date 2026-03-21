@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: focus dynamics, nox focus
 stake: 30382207188462832
-diffusion: 0.0009062801290644792
-springs: 0.0019504619440193598
-heat: 0.0015926205833389148
-focus: 0.0013568027644058373
+diffusion: 0.0008686401731660969
+springs: 0.001724605977916581
+heat: 0.0014585025400803882
+focus: 0.0012434023879740843
 gravity: 8
-density: 6.41
+density: 6.2
 ---
 # Focus Dynamics
 

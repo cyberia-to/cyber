@@ -6,12 +6,12 @@ crystal-type: entity
 crystal-domain: biology
 crystal-size: bridge
 stake: 16417668960360008
-diffusion: 0.005342522032662082
-springs: 0.0008569608526724709
-heat: 0.002314937989593127
-focus: 0.0033913368700514246
+diffusion: 0.005061774974013811
+springs: 0.0007534197615451138
+heat: 0.002096786333526576
+focus: 0.0031762706821757145
 gravity: 64
-density: 22.17
+density: 19.99
 ---
 the engine that reads the [[cybergraph]] and computes what matters
 

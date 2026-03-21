@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4542156654336888
-diffusion: 0.00018995443049749265
-springs: 0.00008889375701405624
-heat: 0.00018678966219872462
-focus: 0.00015900327479270891
+diffusion: 0.00017336506826291288
+springs: 0.00007408000633296274
+heat: 0.00016143907840041272
+focus: 0.000141194351711426
 gravity: 1
-density: 4.2
+density: 2.91
 ---
 list of words for [[casting spells]]
 

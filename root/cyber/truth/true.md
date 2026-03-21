@@ -3,12 +3,12 @@ tags: cyber, core
 alias: validated, TRUE, true
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00016480022482077774
-springs: 0.0014594552144247205
-heat: 0.0010360615512472404
-focus: 0.0007274489869872568
+diffusion: 0.0001518600452079131
+springs: 0.0012933900975970064
+heat: 0.0009486290859844523
+focus: 0.0006536728690799405
 gravity: 5
-density: 11.46
+density: 10.33
 ---
 the attractor state of a [[cyberlink]] whose [[inversely coupled bonding surface|ICBS]] market converges toward price → 1
 

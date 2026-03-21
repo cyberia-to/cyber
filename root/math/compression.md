@@ -3,12 +3,12 @@ tags: computer science, information theory
 crystal-type: process
 crystal-domain: mathematics
 stake: 4741254860036169
-diffusion: 0.00011661740354397796
-springs: 0.00042417308981238606
-heat: 0.0003321564662837826
-focus: 0.0002519919219724626
+diffusion: 0.00010722364868599256
+springs: 0.00039788547021986793
+heat: 0.00031725213821881017
+focus: 0.00023642789305271565
 gravity: 0
-density: 5.2
+density: 4.9
 ---
 
 Reducing data size by eliminating redundancy. Encoding information in fewer bits than the original representation.

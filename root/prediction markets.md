@@ -5,12 +5,12 @@ crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
 stake: 14096348237597240
-diffusion: 0.00023186096583286713
-springs: 0.0009740410767510773
-heat: 0.0007428287240592548
-focus: 0.0005567085507536105
+diffusion: 0.00021466936620305477
+springs: 0.0008752750908247653
+heat: 0.0006862620417683363
+focus: 0.0005071696187026177
 gravity: 8
-density: 2.03
+density: 2
 ---
 
 markets where participants trade shares in future outcomes — and where prices become the aggregate probability estimate of those outcomes

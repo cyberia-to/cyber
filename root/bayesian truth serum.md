@@ -1,12 +1,12 @@
 ---
 tags: game theory, epistemology
 alias: BTS
-diffusion: 0.00011661740354397796
-springs: 0.0007962888802718321
-heat: 0.0006108247988742569
-focus: 0.00041936032562839206
+diffusion: 0.00010722364868599256
+springs: 0.0006939043708600397
+heat: 0.0005517936299721519
+focus: 0.0003721418615954338
 gravity: 0
-density: 5.9
+density: 4.52
 ---
 a scoring mechanism that rewards honest reporting by comparing stated beliefs against meta-predictions about others' beliefs. honesty is a Bayes-Nash [[equilibrium]]
 

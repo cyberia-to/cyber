@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4533206591963810
-diffusion: 0.00013176264868049946
-springs: 0.00003679918272680395
-heat: 0.00007130531513160325
-focus: 0.00009118214218461202
+diffusion: 0.00012114891936278624
+springs: 0.00003110580997979117
+heat: 0.00006257259801420957
+focus: 0.00008242072227817134
 gravity: 1
-density: 6.32
+density: 3.78
 ---
 - [[room booking procedure]]
 -

@@ -3,12 +3,12 @@ tags: cyber, article
 crystal-type: entity
 crystal-domain: superhuman
 stake: 8909380271381805
-diffusion: 0.00016941353219979518
-springs: 0.001708732199097753
-heat: 0.0011930013350173868
-focus: 0.000835926692832705
-gravity: 3
-density: 3.82
+diffusion: 0.00015990179016356723
+springs: 0.001466005698685616
+heat: 0.001062034458348953
+focus: 0.0007321594963572495
+gravity: 4
+density: 3.75
 ---
 the engineering project of eliminating death as a biological inevitability
 

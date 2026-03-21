@@ -4,11 +4,11 @@ crystal-type: entity
 crystal-domain: cyberia
 type: private
 stake: 4551106716709966
-diffusion: 0.00011709327363444229
-springs: 0.0006771227919329567
-heat: 0.0004876259760109655
-focus: 0.00035920866959930305
+diffusion: 0.00010766133189731737
+springs: 0.0005733054688650852
+heat: 0.00042856406281307943
+focus: 0.0003115351191707961
 gravity: 1
-density: 5.51
+density: 3.49
 ---
 revenue:: [[edem]] tour in for $10

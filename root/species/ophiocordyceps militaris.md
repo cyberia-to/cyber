@@ -4,11 +4,11 @@ alias: cordyceps
 crystal-type: entity
 crystal-domain: biology
 stake: 8052004978142665
-diffusion: 0.00011661740354397796
-springs: 0.0010606218563760466
-heat: 0.0007319608267208047
-focus: 0.0005228874240289664
+diffusion: 0.00010722364868599256
+springs: 0.0008974787042866923
+heat: 0.0006429748893975554
+focus: 0.0004514504135085092
 gravity: 0
-density: 10.78
+density: 6.9
 ---
 [[high margin]] [[health]]

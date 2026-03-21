@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: stark verification, nox starks, stark proofs, proof system, cyber proofs
 stake: 29173948768097356
-diffusion: 0.00047467171434793836
-springs: 0.0011797494672340706
-heat: 0.0009544058245055304
-focus: 0.0007821418622453003
-gravity: 13
-density: 1.2
+diffusion: 0.0004203015745643227
+springs: 0.0009775952550440442
+heat: 0.0008170680211502475
+focus: 0.0006668429680254155
+gravity: 15
+density: 1.33
 ---
 # proofs
 

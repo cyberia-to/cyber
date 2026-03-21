@@ -3,12 +3,12 @@ tags: physics
 crystal-type: measure
 crystal-domain: physics
 stake: 2932040433420227
-diffusion: 0.0009856155202984007
-springs: 0.0003152256665628271
-heat: 0.0005622082912419839
-focus: 0.0006998171183664487
+diffusion: 0.0011480866655129052
+springs: 0.00033282745750754
+heat: 0.0006181212729915456
+focus: 0.0007975158246070135
 gravity: 7
-density: 8.2
+density: 7.19
 ---
 The product of [[mass]] and velocity — a conserved vector quantity describing motion.
 

@@ -2,12 +2,12 @@
 tags: cyber, optica
 crystal-type: process
 crystal-domain: cyber
-diffusion: 0.00011661740354397796
-springs: 0.002452317083705625
-heat: 0.0016622122933172424
-focus: 0.0011264462855471308
-gravity: 0
-density: 3.63
+diffusion: 0.00011735086109735795
+springs: 0.0019549595256000917
+heat: 0.0013834630695872476
+focus: 0.0009218559021461441
+gravity: 1
+density: 3.49
 ---
 loading the [[cybergraph]] into an LLM [[context]] window — selecting the most valuable pages to fit a token budget
 

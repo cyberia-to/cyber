@@ -3,11 +3,11 @@ tags: building, camp
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4935552577735345
-diffusion: 0.00013646391606190553
-springs: 0.000050775801672852486
-heat: 0.00009171309109477332
-focus: 0.00010180731675176369
+diffusion: 0.00012561681176132797
+springs: 0.00004328552902276591
+heat: 0.00008110213941463288
+focus: 0.00009201449247041916
 gravity: 3
-density: 5.95
+density: 3.63
 ---
 [[cyber valley/terrabyte/garden]]
