@@ -1,11 +1,11 @@
 ---
 tags: cyber, cyberia, core, person
-alias: mastercyb, Dmitry Starosvetskiy, @mastercyb
+alias: mastercyb, Dmitry Starodubtsev, @mastercyb
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
 ---
-genesis [[neuron]] of [[cyber]]. legal name Dmitry Starosvetskiy. architect of the [[cybergraph]], the [[tri-kernel]], and the [[Crystal]]. co-founder of [[cyberia]] with [[joy]]. builder of [[cyber valley]]
+genesis [[neuron]] of [[cyber]]. legal name Dmitry Starodubtsev. architect of the [[cybergraph]], the [[tri-kernel]], and the [[Crystal]]. co-founder of [[cyberia]] with [[joy]]. builder of [[cyber valley]]
 
 ---
 
