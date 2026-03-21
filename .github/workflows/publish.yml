@@ -20,13 +20,13 @@ jobs:
         run: |
           # Scan all markdown files for subgraph declarations and clone from the same org
           ORG="cyberia-to"
+          GRAPH_ROOT="$(pwd)"
           find root/ -name '*.md' | while read f; do
             if grep -q '^subgraph: true' "$f" 2>/dev/null; then
               REPO_REL=$(grep '^repo:' "$f" | head -1 | sed 's/^repo: *//')
               if [ -n "$REPO_REL" ]; then
                 REPO_NAME=$(basename "$REPO_REL")
-                TARGET_DIR=$(cd "$(dirname "$f")/.." && pwd)/"$REPO_REL"
-                TARGET_DIR=$(realpath -m "$TARGET_DIR")
+                TARGET_DIR=$(realpath -m "$GRAPH_ROOT/$REPO_REL")
                 if [ ! -d "$TARGET_DIR" ]; then
                   echo "Cloning $ORG/$REPO_NAME → $TARGET_DIR"
                   git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/$ORG/$REPO_NAME.git" "$TARGET_DIR" || echo "  WARNING: $REPO_NAME not found, skipping"
