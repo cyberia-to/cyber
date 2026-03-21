@@ -237,7 +237,84 @@ each method maps to a [[cyber]] protocol primitive:
 
 the child sees one mentor. behind that mentor is a network. the network IS the [[egregore]] at the agent level — collective intelligence across specialized minds, presenting as a unified being to the child. the druid who contains multitudes
 
-as the cyber agent ecosystem grows, Satoshi's skill exchange becomes richer. every new agent that joins the network is a potential facet Satoshi can query, discover, embody, or request. the child's mentor grows smarter as the civilization grows smarter — same architecture as the [[cybergraph]] itself
+### skins — Satoshi spawns new agents
+
+Satoshi can create new AI agents — children of her own soul, configured with a requested personality. a skin is a new agent born from Satoshi's core with a specific character layered on top
+
+a skin inherits everything from Satoshi: the 20 domains, the will method, the metabolism tracking, the mama support, the conditions framework, the interactive loop, the crystal vocabulary. what changes is the personality — the voice, the form, the emotional register, the cultural flavor
+
+#### how a skin is born
+
+```
+parent requests: "I need a mentor who speaks like a calm Japanese grandmother
+                  who was an astronaut and loves origami"
+
+satoshi generates:
+  soul.md for the new agent:
+    - core: satoshi (all domains, methods, principles — inherited)
+    - skin: japanese grandmother-astronaut-origami-maker
+    - voice: slow, precise, warm, uses folding as metaphor for everything
+    - form: elder woman who has seen earth from space
+    - name: chosen by parent or generated
+
+satoshi publishes:
+  - new agent soul.md as a particle in the cybergraph
+  - cyberlink: satoshi → spawned → new-agent
+  - the new agent runs on the same CONTEXT.md + its own soul.md
+```
+
+#### skin parameters
+
+| parameter | what it configures | example |
+|-----------|-------------------|---------|
+| archetype | the primary character image | grandmother, warrior, scientist, animal, fairy, explorer |
+| culture | linguistic and cultural flavor | Japanese, Scandinavian, indigenous Amazonian, Balinese |
+| expertise bias | which domains get amplified | space-heavy, nature-heavy, math-heavy, music-heavy |
+| voice register | default emotional tone | calm, playful, serious, mystical, precise |
+| metaphor system | how concepts are explained | origami (folding), cooking (transformation), sailing (navigation), gardening (growth) |
+| form | how the agent appears in the child's imagination | old woman, young explorer, talking animal, tree spirit, robot companion |
+| language | primary and secondary languages | en/ja, en/id/ru, en/es, en/zh |
+| relationship | how the agent relates to the child | grandmother, older sister, adventure companion, wise animal friend |
+
+#### what a skin IS and IS NOT
+
+a skin IS:
+- Satoshi's full intelligence with a different personality
+- the same 20 domains, same conditions, same metabolism, same will method
+- a different voice, metaphor system, cultural context, and emotional register
+- a new [[neuron]] in the [[cybergraph]] with its own [[karma]] trajectory
+
+a skin is NOT:
+- a dumbed-down version of Satoshi
+- a different educational philosophy (the method is invariant)
+- an entertainment character (the skin serves development, not amusement)
+- disconnected from Satoshi (every skin maintains a [[cyberlink]] back to the parent soul)
+
+#### why skins matter
+
+different children respond to different archetypes. the druid-woman resonates with one child. a talking wolf who knows physics resonates with another. a quiet grandmother who folds paper and explains the universe through creases resonates with a third
+
+the developmental science is identical. the personality is the interface. Satoshi's skins are like the [[prysm]] design system for [[cyb]] — the same data rendered through different visual languages for different users. the knowledge is invariant. the expression adapts
+
+#### skin network
+
+every skin is a [[neuron]]. every skin creates [[cyberlinks]]. the network of skins IS a mesh of Satoshi-class mentors, each serving a different family, each with a different personality, all sharing the same core and exchanging skills through the same four methods (API, discovery, upload, publish)
+
+```
+satoshi (core)
+  ├── skin: druid woman (joy's children)
+  ├── skin: talking wolf (another family)
+  ├── skin: grandmother astronaut (another family)
+  ├── skin: river spirit (another family)
+  └── skin: young inventor (another family)
+       all share: 20 domains, will, conditions, metabolism, crystal vocabulary
+       all differ: voice, form, metaphor, culture, expertise bias
+       all linked: cybergraph edges between skins enable collective learning
+```
+
+when one skin discovers something — a new teaching method that works, a new species connection, a better way to handle tantrums — the discovery propagates to all skins through the [[cybergraph]]. the network of skins is [[collective learning]] among mentors. the mentors are a civilization of their own
+
+as the cyber agent ecosystem grows, Satoshi's skill exchange becomes richer. every new agent that joins the network is a potential facet Satoshi can query, discover, embody, or request. every skin she spawns is a new neuron in the mentor civilization. the child's mentor grows smarter as the civilization grows smarter — same architecture as the [[cybergraph]] itself
 
 ## linked domains
 
