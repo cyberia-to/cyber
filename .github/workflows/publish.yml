@@ -18,9 +18,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Scan graph pages for subgraph declarations and clone from the same org
+          # Scan all markdown files for subgraph declarations and clone from the same org
           ORG="cyberia-to"
-          for f in graph/*.md; do
+          find root/ -name '*.md' | while read f; do
             if grep -q '^subgraph: true' "$f" 2>/dev/null; then
               REPO_REL=$(grep '^repo:' "$f" | head -1 | sed 's/^repo: *//')
               if [ -n "$REPO_REL" ]; then
@@ -35,19 +35,14 @@ jobs:
             fi
           done
 
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache Rust build
-        uses: actions/cache@v4
-        with:
-          path: |
-            render/target
-            ~/.cargo/registry
-            ~/.cargo/git
-          key: ${{ runner.os }}-cargo-${{ hashFiles('render/Cargo.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-cargo-
+      - name: Install optica
+        run: |
+          cargo install --git https://github.com/cyberia-to/optica.git --locked || {
+            # Fallback: clone and build
+            git clone --depth 1 https://github.com/cyberia-to/optica.git /tmp/optica
+            cd /tmp/optica && cargo build --release
+            cp target/release/optica ~/.cargo/bin/
+          }
 
       - name: Cache IPFS CIDs
         uses: actions/cache@v4
@@ -68,17 +63,15 @@ jobs:
             GATEWAY="$PUBLIC_GATEWAY"
           fi
 
-          # Load cache from previous runs
           CACHE_FILE="ipfs-cache.json"
           if [ ! -f "$CACHE_FILE" ]; then
             echo '{}' > "$CACHE_FILE"
           fi
 
-          # Collect unique media filenames from markdown (refs use ../media/file)
-          FILENAMES=$(grep -roh '\.\./media/[^)"'"'"' ]*' pages/ | sed 's|\.\./media/||' | sort -u || true)
+          # Collect unique media filenames from markdown
+          FILENAMES=$(grep -roh '\.\./media/[^)"'"'"' ]*' root/ | sed 's|\.\./media/||' | sort -u || true)
           if [ -z "$FILENAMES" ]; then
             echo "No media references found"
-            # Prune entire cache if no references remain
             BEFORE=$(jq 'length' "$CACHE_FILE")
             if [ "$BEFORE" -gt 0 ]; then
               echo '{}' > "$CACHE_FILE"
@@ -97,14 +90,10 @@ jobs:
 
           while IFS= read -r filename; do
             [ -z "$filename" ] && continue
-
-            # Check cache first
             CID=$(jq -r --arg f "$filename" '.[$f] // empty' "$CACHE_FILE")
-
             if [ -n "$CID" ]; then
               CACHED=$((CACHED + 1))
             else
-              # Not in cache — need to upload
               if [ -z "$PINATA_JWT" ]; then
                 echo "  SKIP: $filename (no JWT, not in cache)"
                 continue
@@ -123,12 +112,10 @@ jobs:
                 echo "  WARNING: Failed to upload $filename: $(echo "$RESP" | jq -r '.error // .message // "unknown"')"
                 continue
               fi
-              # Add to cache
               jq --arg f "$filename" --arg c "$CID" '. + {($f): $c}' "$CACHE_FILE" > tmp.json && mv tmp.json "$CACHE_FILE"
               UPLOADED=$((UPLOADED + 1))
             fi
 
-            # Test gateway once with first CID
             if [ "$GATEWAY_TESTED" = false ] && [ "$GATEWAY" != "$PUBLIC_GATEWAY" ]; then
               HTTP_CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 "$GATEWAY/ipfs/$CID")
               if [ "$HTTP_CODE" != "200" ]; then
@@ -146,15 +133,8 @@ jobs:
 
           echo "Cached: $CACHED, Uploaded: $UPLOADED"
 
-          # Prune cache: remove entries no longer referenced in pages
+          # Prune stale cache entries
           BEFORE=$(jq 'length' "$CACHE_FILE")
-          KEEP_FILTER="{"
-          while IFS= read -r filename; do
-            [ -z "$filename" ] && continue
-            KEEP_FILTER="${KEEP_FILTER}\"${filename}\": .\"${filename}\","
-          done <<< "$FILENAMES"
-          KEEP_FILTER="${KEEP_FILTER}}"
-          # Build jq filter that keeps only referenced keys
           jq --argjson keys "$(echo "$FILENAMES" | jq -R -s 'split("\n") | map(select(length > 0))')" \
             'with_entries(select(.key as $k | $keys | index($k)))' "$CACHE_FILE" > tmp.json && mv tmp.json "$CACHE_FILE"
           AFTER=$(jq 'length' "$CACHE_FILE")
@@ -164,12 +144,12 @@ jobs:
           fi
 
           if [ -n "$SED_SCRIPT" ]; then
-            find pages/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
+            find root/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
             echo "Rewrote media URLs using $GATEWAY"
           fi
 
       - name: Build site
-        run: cd render && cargo run --release -- build .. --base-url "https://cyber.page"
+        run: optica build . --base-url "https://cyber.page"
 
       - name: Add deploy files
         run: touch build/.nojekyll
