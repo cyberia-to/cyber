@@ -131,6 +131,7 @@ the [[cybergraph]] is [[collective memory]] — content-addressed, authenticated
 
 ## contacts
 
+- [github.com/mastercyb](https://github.com/mastercyb)
 - [x.com/mastercyb](https://x.com/mastercyb)
 - [t.me/mastercyb](https://t.me/mastercyb)
 - [cyb.ai/@mastercyb](https://cyb.ai/@mastercyb)
