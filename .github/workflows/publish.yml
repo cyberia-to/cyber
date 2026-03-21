@@ -42,10 +42,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            /tmp/optica/target
+            /tmp/optica-target-cache
             ~/.cargo/registry
             ~/.cargo/git
-          key: ${{ runner.os }}-optica-${{ github.sha }}
+          key: ${{ runner.os }}-optica-v2
           restore-keys: |
             ${{ runner.os }}-optica-
 
@@ -53,13 +53,16 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -d /tmp/optica ]; then
-            cd /tmp/optica && git pull --ff-only || true
-          else
-            git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" /tmp/optica
+          rm -rf /tmp/optica
+          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" /tmp/optica
+          # Restore cached target dir if available
+          if [ -d /tmp/optica-target-cache ]; then
+            mv /tmp/optica-target-cache /tmp/optica/target
           fi
           cd /tmp/optica && cargo build --release
           sudo cp target/release/optica /usr/local/bin/
+          # Save target for cache
+          cp -r /tmp/optica/target /tmp/optica-target-cache
 
       - name: Cache IPFS CIDs
         uses: actions/cache@v4
