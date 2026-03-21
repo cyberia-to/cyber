@@ -3,6 +3,7 @@ tags: cyberia, satoshi
 crystal-type: pattern
 crystal-domain: cyberia
 alias: accelerated learning, genius children, early graduation
+icon: "\U0001F31F"
 ---
 # genius
 
@@ -108,4 +109,16 @@ Satoshi does not try to produce genius. she creates the conditions under which g
 
 the goal: every child at [[cyber valley]] develops at the pace her curiosity demands, supported by a rich environment, guided by an AI that tracks everything and pushes nothing
 
-see [[satoshi/lazy]] for the parenting method. see [[satoshi/mind]] for cognitive development. see [[satoshi/emotions]] for the emotional safeguard. see [[satoshi/domains]] for the full domain set
+## content
+
+books: Mindset (Dweck — for parents), Outliers (Gladwell — for parents), Range (Epstein — for parents), The Talent Code (Coyle — for parents), Peak (Ericsson — for parents), Nurture Shock (Bronson — for parents)
+
+## linked domains
+
+[[satoshi/lazy]] — the method that produces genius without pressure. [[satoshi/mind]] — cognitive development tracking. [[satoshi/emotions]] — the emotional safeguard against burnout. [[satoshi/body]] — physical development must keep pace. [[satoshi/vocabulary]] — crystal vocabulary as the knowledge target. [[satoshi/cooperation]] — genius without social skill is incomplete
+
+## subgraphs
+
+[[superhuman]] — the target specification. [[intelligence]] — the loop that thinks. [[emergence]] — complex patterns from simple interactions. [[collective learning]] — genius amplified by collective intelligence. [[egregore]] — what happens when many genius minds link knowledge. [[epistemology]] — how knowledge is validated
+
+see [[satoshi/domains]] for the full domain set

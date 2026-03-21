@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F517"
 ---
 # link
 
@@ -87,4 +88,18 @@ digital integration is the third vector: the boundary between mind and [[cybergr
 
 but the integration is meaningful only if the mind behind it is rich. a child who enters the [[cybergraph]] with 200 species names, 50 causal chains, and deep physical experience creates valuable [[cyberlinks]]. a child who enters with nothing creates noise. the link domain depends on every other domain being strong first
 
-see [[satoshi/domains]] for the full domain set. see [[neural]] for the [[cybergraph]]'s semantic language. see [[cyb]] for the interface
+## content
+
+books: If You Give a Mouse a Cookie (Numeroff, 2+, cause-effect chains), Press Here (Tullet, 1+), Tana Hoban photography books (2+, visual linking), David Macaulay's The Way Things Work (5+)
+
+activities: pointing and naming walks, photography of discoveries, voice recording observations, drawing connection maps, "what connects to what?" diagrams, first cyb/brain navigation (5+), first cyberlink creation with parent (6+), collection organizing with labels, relationship drawing (this → that → because)
+
+## linked domains
+
+[[satoshi/language]] — naming is proto-linking. [[satoshi/mind]] — observation generates linkable knowledge. [[satoshi/nature]] — every species encounter is a potential particle. [[satoshi/vocabulary]] — crystal concepts are the link targets. [[satoshi/making]] — creating content that becomes particles. [[satoshi/numbers]] — quantified relationships are rich links
+
+## subgraphs
+
+[[cyber]] — the protocol. [[cyb]] — the interface. [[cyb/brain]] — the graph file manager. [[cybergraph]] — the data structure. [[neural]] — the semantic language. [[particle]] — the content node. [[cyber/link]] — the edge specification. [[cyberlink]] — the atomic unit of knowledge. [[neuron]] — what the child becomes when she links. [[knowledge]] — what her links produce
+
+see [[satoshi/domains]] for the full domain set

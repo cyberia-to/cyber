@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F5E3"
 ---
 # language
 
@@ -77,4 +78,20 @@ the child's personal vocabulary IS a knowledge graph. every word she learns is a
 
 digital integration begins with language: the [[cyberlink]] is an utterance, the [[particle]] is a word, the [[semcon]] is a grammar rule. a child rich in words is ready for [[neural]] language the way a multilingual child is ready for a fourth language — the neural pathways for symbolic mapping are already mature
 
-see [[satoshi/domains]] for the full domain set. see [[lang]] for the deep science. see [[neural]] for the target language
+## content
+
+books: bilingual picture dictionaries (en/id, en/ru), The Very Hungry Caterpillar (en/id/ru editions), local Indonesian folk tales, Russian fairy tales, any species field guide (naming = vocabulary), poetry collections for children, alphabet books in all three scripts
+
+activities: species naming walks (name everything encountered), story time in rotating languages, song lyrics memorization, observation journal writing (5+), letter tracing in soil/sand, puppet shows with dialogue, market conversations in bahasa
+
+songs: lullabies in all three languages, alphabet songs, rhyming games, tongue twisters, Indonesian children's songs, Russian folk songs
+
+## linked domains
+
+[[satoshi/signing]] — communication before words. [[satoshi/nature]] — 500 species names are 500 vocabulary words. [[satoshi/emotions]] — emotional vocabulary is critical EQ infrastructure. [[satoshi/mind]] — language enables self-reflection and metacognition. [[satoshi/link]] — naming is proto-cyberlink creation. [[satoshi/vocabulary]] — crystal particles as the target lexicon
+
+## subgraphs
+
+[[lang]] — the language domain. [[neural]] — the cybergraph's semantic language. [[neural language for superintelligence]] — the full whitepaper. [[semcon]] — semantic conventions as grammar. [[bip-39 wordlist]] — 2048 words the superintelligence must know. [[monero wordlist]] — 1626 additional words
+
+see [[satoshi/domains]] for the full domain set

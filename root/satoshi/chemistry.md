@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F9EA"
 ---
 # chemistry
 
@@ -80,4 +81,20 @@ from species pages already in the graph:
 
 the [[chemo]] domain in the [[crystal]] contains the full depth: [[bonds]], reactions, [[molecules]], [[periodic table]]. the child enters through taste, smell, and color — and arrives at the same knowledge through a different door
 
-see [[satoshi/domains]] for the full domain set. see [[chemo]] for the deep science. see [[compounds effects]] for the health-compound database
+## content
+
+books: Kitchen Science Lab for Kids (Heinecke, 3+), The Magic School Bus Gets Baked in a Cake (3+), Ada Twist Scientist (Beaty, 3+), DK Eyewitness Chemistry (5+), What Is the World Made Of? (Zoehfeld, 3+)
+
+activities: butterfly pea + lime juice (pH color change), sapindus soap making, biochar observation, fermentation jars, sun-drying herbs, plant dye extraction, compost temperature tracking, salt crystal growing, oil + water + soap experiment, cooking as chemistry (every recipe), rust observation, candle burning and wax melting
+
+songs: element songs (simplified), transformation chants ("solid-liquid-gas")
+
+## linked domains
+
+[[satoshi/nature]] — every species has a chemical profile. [[satoshi/nutrition]] — compounds that feed the body. [[satoshi/body]] — metabolism is body chemistry. [[satoshi/energy]] — combustion, photosynthesis, chemical energy. [[satoshi/earth]] — soil chemistry, mineral composition. [[satoshi/making]] — cooking is applied chemistry. [[satoshi/numbers]] — measurement, proportions, pH scale
+
+## subgraphs
+
+[[chemo]] — the chemistry domain. [[species]] pages — all carry chemical compound tables. [[compounds effects]] — compound-to-health mapping. [[oxidation]], [[solubility]], [[pH]], [[fermentation]], [[photosynthesis]] — process pages. [[Marie Curie]], [[Rosalind Franklin]] — key figures. [[periodic table]] — the elements
+
+see [[satoshi/domains]] for the full domain set

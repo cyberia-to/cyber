@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F96C"
 ---
 # nutrition
 
@@ -118,4 +119,18 @@ advanced [[metabolism]] — one of the three [[superhuman]] vectors — begins w
 
 the child who eats 30+ species per week from her own garden is doing what no supplement can replicate: providing her body with the full spectrum of compounds that [[evolution]] designed her metabolism to process. the [[superhuman]] does not transcend biology — she perfects it. perfection starts with what enters the mouth
 
-see [[satoshi/body]] for the health tracking system. see [[satoshi/chemistry]] for understanding compounds. see [[health]] for the compound-effect database. see [[species]] for the full species inventory
+## content
+
+books: Eating the Alphabet (Ehlert, 1+), Gregory the Terrible Eater (Sharmat, 2+), The Vegetables We Eat (Gibbons, 3+), What's on My Plate? (3+), Yummy (Patricelli, 1+)
+
+activities: garden-to-plate cooking, species diversity counting at meals, taste testing new species, fermented food making, food color sorting, "where did this come from?" tracing, market shopping in bahasa, herb identification by taste and smell, smoothie making with moringa and fruit
+
+## linked domains
+
+[[satoshi/body]] — nutrition IS body building. [[satoshi/nature]] — species provide the food. [[satoshi/chemistry]] — compounds in food interact with biology. [[satoshi/making]] — cooking is preparation of nutrition. [[satoshi/earth]] — soil quality determines nutrition quality. [[satoshi/cooperation]] — shared meals are the daily cooperation ritual
+
+## subgraphs
+
+[[species]] — 500+ species pages with nutritional compound tables. [[health]] — compound-to-health effect database. [[fruits]] — fruit species inventory. [[edem]] — magic forest species by use category (oil, carbs, proteins, greens). [[organiq]] — the kitchen and food production center. [[highland magic]] — species selected for food system. [[moringa oleifera]], [[curcuma]], [[psidium guajava]], [[cocos nucifera]] — superfood species pages with full compound data
+
+see [[satoshi/domains]] for the full domain set

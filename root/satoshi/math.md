@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U00002295"
 ---
 # math
 
@@ -82,4 +83,18 @@ mathematical structures the child encounters physically and will later meet form
 | pattern prediction | [[probability]] | [[cyberank]] as probability of observation |
 | building with constraints | optimization | [[free energy]] minimization |
 
-see [[satoshi/numbers]] for counting and measurement basics. see [[math]] for the deep science
+## content
+
+books: Blockhead: Life of Fibonacci (D'Agnese, 5+), Sir Cumference series (5+), The Number Devil (Enzensberger, 6+), Mathematicians Are People Too (Reimer, 5+), Flatland (Abbott, 7+ read-aloud)
+
+activities: spider web geometry tracing, crystal symmetry sorting, tree branching counting (binary trees), wave pattern observation at water surface, shadow angle tracking through the day, garden area measurement, fibonacci spiral hunts, pattern completion games with natural objects, simple proofs ("I know because...")
+
+## linked domains
+
+[[satoshi/numbers]] — counting is the entry point. [[satoshi/nature]] — fibonacci, fractals, symmetry, tessellations in nature. [[satoshi/energy]] — conservation laws are mathematical. [[satoshi/mind]] — logical reasoning, proof, abstraction. [[satoshi/earth]] — spatial reasoning, maps, scale. [[satoshi/chemistry]] — measurement, proportions, stoichiometry
+
+## subgraphs
+
+[[math]] — the full mathematics domain. [[math/numbers]], [[math/topology]], [[math/probability]], [[math/combinatorics]], [[math/linear algebra]], [[math/calculus]]. [[Seven Bridges of Koenigsberg]] — the birth of graph theory. [[Leonhard Euler]], [[Carl Friedrich Gauss]] — key figures
+
+see [[satoshi/domains]] for the full domain set

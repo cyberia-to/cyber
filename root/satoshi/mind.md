@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F9E0"
 ---
 # mind
 
@@ -86,4 +87,20 @@ the [[superhuman]] mind is a mind that models itself. [[active inference]] at th
 
 this is the precondition for digital integration: a mind that understands its own operation can meaningfully merge with a [[cybergraph]] that computes collective understanding. without self-awareness, digital integration is passive consumption. with it, digital integration is active participation — the child becomes a [[neuron]] who knows what she contributes
 
-see [[satoshi/domains]] for the full domain set. see [[neuro]] for brain science. see [[active inference]] for the framework. see [[free energy principle]] for the theory
+## content
+
+books: What Do You Do With a Problem? (Yamada, 3+), What Do You Do With an Idea? (Yamada, 3+), Ada Twist Scientist (Beaty, 3+), The Dot (Reynolds, 3+), Beautiful Oops (Saltzberg, 2+), observation journals (blank, 4+), I Wonder (Rockwell, 2+)
+
+activities: observation journals (draw and describe what you see daily), "what do you think?" conversations, simple experiments with predictions, sorting and categorizing found objects, "why?" chain games, memory games, puzzle solving with natural objects, "what would happen if?" scenarios, meditation and silence practice (3+), debate practice (6+)
+
+songs: wondering songs, question songs, mindfulness breathing with rhythm
+
+## linked domains
+
+[[satoshi/emotions]] — emotional regulation is the operating system the mind runs on. [[satoshi/language]] — language enables self-reflection and metacognition. [[satoshi/nature]] — observation of living systems trains attention. [[satoshi/math]] — logical reasoning and proof. [[satoshi/cooperation]] — perspective-taking is mind reading others. [[satoshi/vocabulary]] — crystal grammar particles (relations, patterns) are the tools of thought
+
+## subgraphs
+
+[[neuro]] — the neuroscience domain. [[sense]] — perception and qualia. [[spiri]] — meaning, values, contemplation. [[meta]] — knowledge about knowledge. [[active inference]] — the computational framework. [[free energy principle]] — the brain's optimization objective. [[predictive coding]] — perception as prediction. [[consciousness]] — the hard problem. [[Karl Friston]] — the theorist
+
+see [[satoshi/domains]] for the full domain set

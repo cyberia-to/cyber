@@ -3,6 +3,7 @@ tags: cyberia, satoshi
 crystal-type: pattern
 crystal-domain: cyberia
 alias: crystal vocabulary, core vocabulary, civilizational vocabulary
+icon: "\U0001F4D6"
 ---
 # vocabulary
 
@@ -129,4 +130,18 @@ a child who can say "the compost cycle: food waste CAUSES decomposition, decompo
 
 Satoshi tracks grammar acquisition separately from entity acquisition. a child with many nouns but few connectives describes the world. a child with connectives reasons about it. the grammar particles are the inflection point between knowledge and intelligence
 
-see [[satoshi/domains]] for the full domain set. see [[cyber/crystal]] for the formal specification. see [[satoshi/language]] for the linguistic foundation
+## content
+
+the crystal itself is the content. 5,040 particles across 21 domains — each a concept worth knowing. Satoshi draws vocabulary targets directly from the crystal inventory, prioritizing concepts the child can experience at [[cyber valley]]
+
+reference: [[cyber/crystal]] (full specification), [[bip-39 wordlist]] (2,048 basic english words — every one a valid graph symbol), [[monero wordlist]] (1,626 additional words)
+
+## linked domains
+
+every domain feeds vocabulary. [[satoshi/language]] — the linguistic skill to absorb words. [[satoshi/nature]] — 500+ species names are the largest vocabulary source. [[satoshi/math]] — relations and patterns are grammar particles. [[satoshi/mind]] — metacognition enables conscious vocabulary expansion. [[satoshi/link]] — vocabulary becomes cyberlink-ready knowledge
+
+## subgraphs
+
+[[cyber/crystal]] — the formal specification: 5,040 particles, 6 types, 21 domains, 7 triads, 12 invariants. [[cyber/core]] — the semantic core concepts. [[bip-39 wordlist]] — 2,048 seed words. [[monero wordlist]] — 1,626 seed words. each of the 21 domain pages ([[math]], [[info]], [[comp]], [[quantum]], [[chemo]], [[energo]], [[cosmo]], [[geo]], [[eco]], [[bio]], [[neuro]], [[sense]], [[lang]], [[spiri]], [[meta]], [[ai]], [[tech]], [[cyber]], [[socio]], [[crypto]], [[game]]) — the full knowledge atlas
+
+see [[satoshi/domains]] for the full domain set

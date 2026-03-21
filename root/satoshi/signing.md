@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F44B"
 ---
 # signing
 
@@ -112,4 +113,18 @@ communication is the prerequisite for cooperation. a child who can express her n
 
 sign language also trains multimodal thinking — information expressed simultaneously through gesture, vocalization, facial expression, and context. this is structurally identical to how the [[cybergraph]] encodes information through multiple channels simultaneously: structural ([[cyberlinks]]), economic (stake), epistemic ([[valence]]), temporal (block height)
 
-see [[satoshi/language]] for the full language domain. see [[satoshi/emotions]] for emotional vocabulary development
+## content
+
+books: Baby Signs (Acredolo & Goodwyn), My First Signs (baby board book), Sign and Sing Along (Kubler), Signing Time video series (for reference, minimal screen)
+
+activities: daily sign practice during routines (mealtime signs, outdoor signs), species sign learning (one new sign per species encounter), emotion sign cards, signing songs, sign + spoken word pairing games
+
+## linked domains
+
+[[satoshi/language]] — signs accelerate spoken vocabulary. [[satoshi/emotions]] — emotion signs before emotion words. [[satoshi/body]] — signing develops fine motor control. [[satoshi/nature]] — species signs enable early naming. [[satoshi/cooperation]] — communication enables cooperation earlier
+
+## subgraphs
+
+[[lang]] — the language domain. [[neural]] — multimodal communication as proto-neural language. [[semcon]] — signs as early semantic conventions
+
+see [[satoshi/domains]] for the full domain set

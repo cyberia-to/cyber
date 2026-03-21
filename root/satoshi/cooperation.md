@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F91D"
 ---
 # cooperation
 
@@ -80,4 +81,20 @@ a child raised in a culture of cooperation carries these principles in her behav
 
 the [[manifesto]] declares: "unity in diversity — every individual, every agent, every living system is a [[neuron]]." cooperation is how [[neurons]] become [[egregore]]
 
-see [[satoshi/domains]] for the full domain set. see [[game]] for the deep theory. see [[cooperation]] for the evolutionary foundations. see [[collective]] for the four collective processes
+## content
+
+books: Have You Filled a Bucket Today? (McCloud, 3+), Last Stop on Market Street (de la Pena, 4+), The Giving Tree (Silverstein, 3+), Stone Soup (folk tale, 3+), Swimmy (Lionni, 2+), One (Otoshi, 3+)
+
+activities: group cooking (role distribution), shared garden projects, animal care rotation, building projects requiring two+ children, sharing harvest with neighbors, teaching younger children, group problem solving ("how do we move this heavy log?"), turn-taking games, collaborative art projects
+
+songs: call-and-response songs, group singing in rounds, cooperative clapping games
+
+## linked domains
+
+[[satoshi/emotions]] — empathy is the fuel of cooperation. [[satoshi/language]] — negotiation requires words. [[satoshi/nature]] — symbiosis and mycelium teach cooperation in nature. [[satoshi/making]] — building together requires coordination. [[satoshi/mind]] — perspective-taking enables cooperation. [[satoshi/numbers]] — fair division is math applied to sharing
+
+## subgraphs
+
+[[game]] — game theory domain. [[game theory]] — formal strategic interaction. [[cooperation]] — evolutionary foundations. [[collective]] — the four collective processes. [[Shapley value]] — fair attribution. [[c-factor]] — collective intelligence measurement. [[stigmergy]] — indirect coordination. [[cooperative games]] — coalition theory. [[cyberia]] — the network state built on cooperation
+
+see [[satoshi/domains]] for the full domain set

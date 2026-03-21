@@ -3,6 +3,7 @@ tags: cyberia, satoshi
 crystal-type: pattern
 crystal-domain: cyberia
 alias: lazy mom, lazy mom method, lazy parenting
+icon: "\U0001F940"
 ---
 # lazy mom method
 
@@ -121,4 +122,16 @@ the hardest guidance for caretakers: do nothing. watch. trust the child's drive
 
 the [[superintelligence]] protocol mirrors this: no central authority directs the [[cybergraph]]. [[neurons]] self-direct. [[convergence]] emerges from autonomous local action. the [[tri-kernel]] does not instruct [[particles]] where to go — it creates conditions and lets [[focus]] emerge. lazy mom, at planetary scale
 
-see [[satoshi/mind]] for the cognitive development context. see [[satoshi/cooperation]] for social autonomy
+## content
+
+books: Free-Range Kids (Skenazy), Simplicity Parenting (Payne), The Idle Parent (Hodgkinson), Hunt Gather Parent (Doucleff), Let the Children Play (Sahlberg), The Self-Driven Child (Stixrud)
+
+## linked domains
+
+[[satoshi/mind]] — autonomy builds cognitive capacity. [[satoshi/cooperation]] — self-directed children cooperate more authentically. [[satoshi/body]] — physical risk-taking builds competence. [[satoshi/genius]] — every genius case validates the lazy method. [[satoshi/emotions]] — frustration tolerance is emotional regulation
+
+## subgraphs
+
+[[self-organization]] — order emerges from local interactions without central control. [[convergence]] — the child converges on competence the way the tri-kernel converges on focus. [[stigmergy]] — the environment teaches indirectly. [[cybics]] — proof by simulation, not by instruction
+
+see [[satoshi/domains]] for the full domain set

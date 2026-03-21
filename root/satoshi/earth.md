@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F30D"
 ---
 # earth
 
@@ -70,4 +71,20 @@ a [[superhuman]] operates in any environment. that requires understanding every 
 
 [[earth]] knowledge is also the antidote to fragility. a child who understands soil, water, and weather can sustain herself anywhere on the planet. independence from industrial food systems is the physical equivalent of [[sovereignty]] — the superhuman does not depend on infrastructure she cannot rebuild
 
-see [[satoshi/domains]] for the full domain set. see [[geo]] for the deep science. see [[cyber valley]] for the physical context
+## content
+
+books: Volcanoes! (National Geographic Kids, 3+), One Well: The Story of Water on Earth (Strauss, 4+), The Magic School Bus Inside the Earth (3+), If You Find a Rock (Christian, 2+), The Tiny Seed (Carle, 2+), Over and Under the Snow (Messner, 3+), What Makes Day and Night (Branley, 4+)
+
+activities: soil digging and comparison (topsoil vs deep clay vs compost), water cycle tracing (rain → stream → evaporation), rock collection and sorting, moon phase journal, weather prediction from cloud observation, canyon hiking, hot spring visits, mapmaking of the valley, star gazing from the ridge, volcano panorama identification
+
+songs: rain songs (Indonesian folk), earth and soil chants, moon phase counting songs
+
+## linked domains
+
+[[satoshi/nature]] — biomes as earth + life interaction. [[satoshi/energy]] — geothermal, solar, water as energy carriers. [[satoshi/chemistry]] — soil chemistry, mineral composition, water pH. [[satoshi/numbers]] — measuring rainfall, elevation, temperature, moon phases. [[satoshi/making]] — building with earth materials: clay, stone, soil. [[satoshi/mind]] — planetary perspective, scale thinking, spatial reasoning
+
+## subgraphs
+
+[[geo]] — the geography domain. [[cosmo]] — cosmic context. [[soil]] — soil science pages. [[soil/production]] — soil building. [[water purification]] — water systems. [[biochar]] — carbon in soil. [[cyber valley]] — the physical site. [[tropical rainforest]] — the biome type. [[carbon cycle]] — planetary chemistry
+
+see [[satoshi/domains]] for the full domain set

@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F528"
 ---
 # making
 
@@ -76,4 +77,20 @@ health: growing and cooking food from known, clean sources is the foundation of 
 
 digital integration: the child who builds physical things understands what software models. a [[bamboo]] structure is a physical [[graph]] — nodes (joints) and edges (poles). cooking is a [[state]] transition — inputs transform through heat into outputs. when she later encounters [[nox]] or [[trident]], the concepts map onto physical experience
 
-see [[satoshi/domains]] for the full domain set. see [[tech]] for the deep science. see [[laba]] for the construction hub
+## content
+
+books: How a House Is Built (Gibbons, 3+), Rosie Revere Engineer (Beaty, 3+), Iggy Peck Architect (Beaty, 3+), The Most Magnificent Thing (Spires, 3+), If You Give a Mouse a Cookie (Numeroff, 2+, cause-effect chains), cooking books for kids (3+)
+
+activities: garden bed construction, bamboo cutting and joining, cooking from garden to plate, biochar kiln operation (supervised), simple solar circuit (LED + panel), water irrigation system building, clay pottery, rope making from natural fiber, tool maintenance, seed starting and propagation, fermentation jars, soap making from sapindus
+
+songs: work songs, hammering rhythms, cooking chants
+
+## linked domains
+
+[[satoshi/body]] — tool use develops motor skills. [[satoshi/nature]] — growing food, building with natural materials. [[satoshi/energy]] — solar circuits, fire management, understanding energy in construction. [[satoshi/numbers]] — measurement in cooking and building. [[satoshi/chemistry]] — cooking as chemistry, fermentation, biochar. [[satoshi/cooperation]] — building together requires coordination
+
+## subgraphs
+
+[[tech]] — the technology domain. [[laba]] — construction hub at cyber valley. [[organiq]] — kitchen and food production. [[magic forest]] — the ecosystem being built. [[lowtech construction]] — building philosophy. [[bamboo]], [[biochar]], [[composting]] — core materials and processes
+
+see [[satoshi/domains]] for the full domain set

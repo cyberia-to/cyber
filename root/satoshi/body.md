@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F9BE"
 ---
 # body
 
@@ -75,4 +76,20 @@ every physical capability the child develops maps to the [[superhuman]] vision:
 
 the body is where [[superhuman]] begins. everything else builds on it
 
-see [[satoshi/domains]] for the full domain set. see [[health]] for the compound/nutrition knowledge base
+## content
+
+books: My Body (DK, 1+), The Busy Body Book (Rockwell, 2+), From Head to Toe (Carle, 1+), Yoga for kids guides (2+), anatomy coloring books (5+)
+
+activities: morning stretch routines, barefoot terrain walks, tree climbing progression, swimming in natural pools, carrying harvest baskets, obstacle courses from logs and stones, yoga poses named after animals
+
+songs: Head Shoulders Knees and Toes (en/id/ru), action songs with body parts, breathing rhythm songs
+
+## linked domains
+
+[[satoshi/nutrition]] — what fuels the body. [[satoshi/nature]] — species that provide medicine and food. [[satoshi/emotions]] — emotional states manifest in the body. [[satoshi/making]] — tool use develops fine motor. [[satoshi/earth]] — terrain shapes physical capability. [[satoshi/chemistry]] — body chemistry, metabolism, compounds
+
+## subgraphs
+
+[[health]] — compound effects database. [[species]] — medicinal plants and nutritional profiles. [[muscle]] pages — anatomy reference (root/). [[longevity and health]] — the long-term target
+
+see [[satoshi/domains]] for the full domain set

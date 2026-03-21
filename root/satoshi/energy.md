@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U00002600"
 ---
 # energy
 
@@ -76,4 +77,20 @@ at the civilization scale: a species that depends on fossil fuels is burning its
 
 [[energy autonomy]] is sovereignty. a city that generates its own power answers to no one. a body that generates its own energy outlasts the infrastructure that surrounds it
 
-see [[satoshi/domains]] for the full domain set. see [[energo]] for the deep science. see [[energy and water system]] for the cyber valley implementation
+## content
+
+books: The Sun Is My Favorite Star (Asch, 2+), Energy Island (Drummond, 4+), The Boy Who Harnessed the Wind (Kamkwamba, 5+), The Magic School Bus Gets Energized (5+), On a Beam of Light (Berne, 4+ — Einstein for kids)
+
+activities: solar panel observation (follow the wire from panel to light), compost temperature measurement, cooking fire observation, shadow clock tracking, "where does the energy come from?" chain tracing, candle making, biochar kiln observation, water flow experiments (pour from high to low)
+
+songs: sun songs, fire songs, energy clapping rhythms
+
+## linked domains
+
+[[satoshi/earth]] — planetary energy: solar, geothermal, water flow. [[satoshi/nature]] — photosynthesis as the master energy conversion. [[satoshi/body]] — food as fuel, metabolism as energy management. [[satoshi/chemistry]] — combustion, fermentation, chemical energy storage. [[satoshi/making]] — solar circuits, fire management, construction as energy work. [[satoshi/numbers]] — measuring energy, counting solar hours, temperature tracking
+
+## subgraphs
+
+[[energo]] — the energy domain in the crystal. [[energy]] — energy forms and transformations. [[energy and water system]] — cyber valley infrastructure. [[energy autonomy]] — sovereignty through self-generation. [[elona]] — the sustainability center. [[photosynthesis]] — the master reaction. [[thermodynamics]] — the universal laws
+
+see [[satoshi/domains]] for the full domain set

@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F49A"
 ---
 # emotions
 
@@ -96,4 +97,20 @@ emotional intelligence is the social operating system of [[egregore]]. the [[c-f
 
 at the deepest level: [[precision]] in [[active inference]] is the formal analog of emotional regulation. the brain weights prediction errors by confidence — exactly what emotional regulation does at the experiential level. a child who can modulate her emotional responses is a mind that can modulate its attention — the prerequisite for meaningful participation in the [[cybergraph]]
 
-see [[satoshi/domains]] for the full domain set. see [[emotion]] for the [[prysm]] system. see [[c-factor]] for collective intelligence research
+## content
+
+books: The Color Monster (Llenas, 2+), Hands Are Not for Hitting (Agassi, 1+), In My Heart (Witek, 2+), When Sophie Gets Angry (Bang, 2+), The Invisible Boy (Ludwig, 4+), My Many Colored Days (Seuss, 2+), Listening to My Body (Garcia, 3+)
+
+activities: emotion color cards (point to how you feel), mirror emotion games, breathing exercises (smell the flower, blow the candle), "feelings check-in" at meals, empathy role play, gratitude naming at bedtime, drawing emotions, body sensation mapping ("where do you feel the anger?")
+
+songs: feelings songs, breathing rhythm songs, calm-down songs, happy dancing songs
+
+## linked domains
+
+[[satoshi/body]] — emotions manifest physically (tension, warmth, stomach). [[satoshi/mind]] — metacognition about emotional states. [[satoshi/cooperation]] — empathy enables collective action. [[satoshi/language]] — emotional vocabulary is the bridge from feeling to communication. [[satoshi/signing]] — emotion signs for pre-verbal expression
+
+## subgraphs
+
+[[emotion]] — the prysm color-emotion system. [[color-emotion spectrum]] — evolutionary basis of emotion-color mapping. [[c-factor]] — collective intelligence requires social sensitivity. [[active inference]] — emotions as precision weights. [[free energy principle]] — surprise minimization drives emotional learning. [[sense]] — the perception domain
+
+see [[satoshi/domains]] for the full domain set

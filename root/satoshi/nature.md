@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F33F"
 ---
 # nature
 
@@ -106,4 +107,20 @@ decline signals:
 - inability to name species she previously knew
 - preference for indoor over outdoor time
 
-see [[satoshi/domains]] for the full domain set. see [[species]] for the complete species knowledge base. see [[edem]] for the [[magic forest]] species list
+## content
+
+books: local Bali/Indonesia field guides (all ages), The Hidden Life of Trees (Wohlleben, read-aloud 3+), Botanicum (Willis, 2+), The Big Book of Bugs (Zommer, 2+), Over and Under the Pond (Messner, 3+), Mushroom Rain (Flett, 2+), The Lorax (Seuss, 3+), We Are the Gardeners (Gaines, 3+)
+
+activities: species scavenger hunts, bird watching walks, seed collection and sorting, personal garden plot, composting duty, nighttime [[sinwood]] bioluminescence walk, mushroom hunting after rain, leaf pressing and identification, insect observation with magnifying glass, egg collection and chicken care
+
+songs: bird call imitation songs, rain chanting, seed planting songs, Indonesian nature folk songs
+
+## linked domains
+
+[[satoshi/chemistry]] — plant compounds, why turmeric is yellow, why neem is bitter. [[satoshi/body]] — species as medicine and nutrition. [[satoshi/earth]] — where species grow and why. [[satoshi/energy]] — photosynthesis, food chains. [[satoshi/cooperation]] — symbiosis, pollination, mycelium sharing. [[satoshi/language]] — naming 500+ species is vocabulary acceleration. [[satoshi/nutrition]] — species as food source
+
+## subgraphs
+
+[[species]] — 500+ species pages with compound tables, growing conditions, traditional medicine recipes. [[edem]] — the magic forest species list (240+ genus, 300+ species). [[fruits]] — fruit species inventory. [[magic forest]] — the ecosystem design framework. [[highland magic]] — species selection for cyber valley altitude. [[bio]] — the biology domain. [[eco]] — the ecology domain
+
+see [[satoshi/domains]] for the full domain set

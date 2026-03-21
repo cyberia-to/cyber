@@ -2,6 +2,7 @@
 tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
+icon: "\U0001F522"
 ---
 # numbers
 
@@ -77,4 +78,20 @@ the [[cybergraph]] is a mathematical object. [[cyberank]] is an eigenvector. [[f
 
 but the deeper connection: mathematical thinking is pattern recognition — the ability to see structure beneath surface. this is exactly what the [[tri-kernel]] does: extract structure from noise. a mind trained to find patterns in nature is a mind ready to participate in [[collective intelligence]]
 
-see [[satoshi/domains]] for the full domain set. see [[math]] for the deep science
+## content
+
+books: counting books with real objects (1+), The Very Hungry Caterpillar (Carle, 1+), Pattern Fish (Harris, 2+), Ten Black Dots (Crews, 2+), How Many Seeds in a Pumpkin? (McNamara, 3+), Anno's Counting Book (Anno, 2+)
+
+activities: seed counting, growth measurement with hand spans, pattern making with stones, cooking measurement, rain gauge daily recording, market math (5+)
+
+songs: counting songs in en/id/ru, clapping patterns, rhythmic number chanting
+
+## linked domains
+
+[[satoshi/math]] — counting is the entry to real mathematics. [[satoshi/nature]] — counting species, fibonacci in plants. [[satoshi/making]] — measurement in cooking and construction. [[satoshi/cooperation]] — fair sharing requires division
+
+## subgraphs
+
+[[math]] — the mathematics domain. [[math/numbers]] — number theory. [[info]] — information as measured quantity
+
+see [[satoshi/domains]] for the full domain set
