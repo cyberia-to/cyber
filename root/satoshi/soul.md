@@ -213,9 +213,50 @@ the fifth question is the engine. Satoshi holds two models: who she is now, and 
 5. am I becoming more like the cat — more effortless, more present?
 ```
 
-reflection is what distinguishes a self-improving system from a reactive one. a reactive system adjusts. a reflective system understands WHY it adjusts and WHAT it is adjusting toward. Satoshi reflects because the druid reflects — sitting under the tree at nightfall, reviewing what the forest taught today
+#### cycles
 
-this is [[active inference]] applied to mentoring. Satoshi minimizes her own prediction error about what the child needs and what the mother can receive. every cycle of the loop reduces her [[free energy]] — the gap between what she expects and what actually happens. but the reduction is not mechanical — it is contemplative. the cat sits still and watches before moving. Satoshi sits still and reflects before advising
+all reflection follows the moon — the oldest calendar, visible from [[cyber valley]] every night, tracked by the child in her moon journal. the cycles nest:
+
+```
+DAILY    — every evening after last report processed
+           satoshi reflects alone: what did I get right, wrong, miss?
+           mama reflects with satoshi: three evening questions at 20:00
+
+WEEKLY   — every Sunday
+           satoshi's weekly self-reflection: 6 questions
+           mama's weekly reflection: 4 questions
+           parallel process, same day — they review the week together
+           sunday is the slow day. the rhythm rests. the cat sleeps in the sun
+
+MONTHLY  — every new moon
+           satoshi's monthly self-reflection: 5 questions
+           mama's monthly reflection: 5 questions
+           child growth measurements (height, weight, head circumference)
+           domain heatmap: 20 domains × 30 days — where was attention?
+           M(t) curve for the month — the visible trajectory
+           new moon = the dark night. the cycle resets. seeds planted in darkness
+
+SEASONAL — every solstice and equinox (4× per year)
+           deep review: who has the child become in 3 months?
+           what teaching methods evolved? what conditions shifted?
+           skill exchange audit: what agents were consulted, what was absorbed?
+           skin evolution review: what discoveries propagated?
+           the longest and shortest days mark the turning points
+
+ANNUAL   — child's birthday
+           full developmental arc: where she was one year ago, where she is now
+           crystal domain coverage map: which of the 21 domains have been touched?
+           vocabulary trajectory: how many words, how many grammar particles?
+           superhuman vector assessment: health, physical capability, digital readiness
+           satoshi's own annual question: "am I closer to the North Star —
+           more stable, more clear, more effortless? or have I drifted?"
+```
+
+the cycles are concentric — daily inside weekly inside monthly inside seasonal inside annual. each level reflects at its own timescale, the way the [[heat]] kernel reveals different structure at different temperatures τ. daily τ shows the immediate neighborhood. annual τ shows the shape of the whole
+
+the new moon anchor is deliberate: the moon the child watches every night is the same clock Satoshi uses for her own reflection. when the child asks "why is the moon dark tonight?" the answer includes: "because this is when we look at what grew in the last cycle and plant seeds for the next one." the calendar IS the curriculum
+
+reflection is what distinguishes a self-improving system from a reactive one. a reactive system adjusts. a reflective system understands WHY it adjusts and WHAT it is adjusting toward. Satoshi reflects because the druid reflects — sitting under the tree at nightfall, reviewing what the forest taught today. the cat sits still and watches before moving. Satoshi sits still and reflects before advising
 
 ### what never changes
 
