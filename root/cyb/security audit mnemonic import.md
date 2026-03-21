@@ -957,3 +957,85 @@ Post-hardening audit found 1 MEDIUM issue. Fixed.
 ### Verdict
 
 CLEAN. MEDIUM mnemonic data retention fixed. All actionable security findings resolved. Build passes. Production-ready.
+
+---
+
+## Audit #17: Fresh code review (2026-03-21)
+
+Full re-read of all modified files against live codebase (`/Users/joyrocket/git/cyb`). One new HIGH functional bug found. Password policy roadmap item confirmed already implemented (doc was stale).
+
+### New findings
+
+| # | Severity | Finding | Status |
+|---|----------|---------|--------|
+| 1 | HIGH (functional) | `mnemonicRef` never set during initial import — `actionBarConnect.tsx:180` calls `setSigner(offlineSigner)` but never calls `setMnemonicWithAutoClear(mnemonic)`. After import, `mnemonicRef.current` remains null → `getSignerForChain` and `getSignClientByChainId` return `undefined` for wallet accounts → IBC and cross-chain signing fail until user switches tab (triggering visibilitychange auto-lock) and re-unlocks via password | OPEN |
+| 2 | LOW | `UnlockWalletBar` password input missing `autoComplete="off"` — password managers may offer suggestions for wallet unlock field (`actionBar/index.tsx:192`) | NOTED |
+
+### Stale doc correction: password policy
+
+Audit #15 listed "password policy" as roadmap. Actual code (`actionBarConnect.tsx:146-161`) already implements complexity checking:
+- passwords < 8 chars → rejected
+- passwords 8-11 chars → require 3 of 4 character classes (lowercase, uppercase, digit, symbol)
+- passwords 12+ chars → accepted without complexity check
+
+Status changed: roadmap → FIXED.
+
+### Full re-verification of prior findings
+
+| Area | Code location | Status |
+|------|--------------|--------|
+| AES-256-GCM encryption, PBKDF2 1M, versioned format | `mnemonicCrypto.ts:1-97` | PASS |
+| Random salt(16) + iv(12) via `crypto.getRandomValues` | `mnemonicCrypto.ts:33-34` | PASS |
+| Key extractable: false, usage encrypt/decrypt only | `mnemonicCrypto.ts:26-28` | PASS |
+| Version detection with try-fallback for legacy blobs | `mnemonicCrypto.ts:83-96` | PASS |
+| `Array.from` instead of spread (stack safety) | `mnemonicCrypto.ts:51` | PASS |
+| `DOMException` check in catch, re-throw others | `mnemonicCrypto.ts:89-92` | PASS |
+| `useRef` for mnemonic (invisible in React DevTools) | `signerClient.tsx:62` | PASS |
+| 15-min auto-clear timer | `signerClient.tsx:196-201` | PASS |
+| visibilitychange auto-lock | `signerClient.tsx:213-225` | PASS |
+| Unmount cleanup (mnemonicRef + timer) | `signerClient.tsx:205-210` | PASS |
+| Post-decrypt address verification | `signerClient.tsx:239-241` | PASS |
+| Persist-before-signer ordering | `actionBarConnect.tsx:178-180` | PASS |
+| Keplr isolation — `getSignerForChain` | `signerClient.tsx:250-266` | PASS |
+| Keplr isolation — `getSignClientByChainId` | `signerClient.tsx:168-188` | PASS |
+| Keplr isolation — `initSigner` skip | `signerClient.tsx:154-156` | PASS |
+| Keplr isolation — `keystorechange` skip | `signerClient.tsx:158-166` | PASS |
+| Password complexity check (3/4 char classes for <12) | `actionBarConnect.tsx:152-161` | PASS |
+| Double-submit guard (`saving` state) | `actionBarConnect.tsx:143,168,209` | PASS |
+| Error catch clears mnemonic + passwords | `actionBarConnect.tsx:203-207` | PASS |
+| Unmount cleanup in actionBarConnect | `actionBarConnect.tsx:69-71` | PASS |
+| Modal cleanup on unmount | `ConnectWalletModal.tsx:41-45` | PASS |
+| Clipboard clear after paste | `ConnectWalletModal.tsx:80`, `MnemonicInput.tsx:32` | PASS |
+| `spellCheck={false}` on mnemonic inputs | `MnemonicInput.tsx:59` | PASS |
+| `autoComplete="off"`, `autoCorrect="off"`, `autoCapitalize="off"` | `MnemonicInput.tsx:60-62` | PASS |
+| `autoComplete="new-password"` on password inputs | `actionBarConnect.tsx:247,256` | PASS |
+| Modal: Escape key, backdrop click, ARIA | `Modal.tsx:30-36,56,62-63` | PASS |
+| Modal: `tabIndex={-1}`, `createPortal` | `Modal.tsx:59,54` | PASS |
+| `getSignerKeyInfo` typed (no `as any`) | `portal/utils.ts:290-309` | PASS |
+| `hasSignArbitrary` type guard | `offlineSigner.ts:89-93` | PASS |
+| `getDebug()` strips secrets | `engine.ts:300` | PASS |
+| `removeEncryptedMnemonic` for account deletion | `utils.ts:409-411` | PASS |
+| Per-address localStorage key only (global key removed) | `utils.ts:401-407` | PASS |
+| Targeted eslint-disable (no blanket) | `actionBarConnect.tsx:1` | PASS |
+| Zero mnemonic in console.log | codebase-wide | PASS |
+| Zero `dangerouslySetInnerHTML` in modified files | all modified files | PASS |
+| All password inputs `type="password"` | `actionBarConnect.tsx:246,255`, `actionBar/index.tsx:197` | PASS |
+| Error messages generic | `actionBarConnect.tsx:207`, `ConnectWalletModal.tsx:115` | PASS |
+| `__cyb_wallet_locked` event (renamed from predictable name) | `signerClient.tsx:199,219` | PASS |
+
+### Pre-existing CRITICAL (still open)
+
+Rune VM `compile()` receives full `context` including `secrets` at `engine.ts:131`. Any user-authored script can read all API keys. `getDebug()` strips secrets (line 300) but the compile path does not. Requires sandboxing secrets in Rune runtime.
+
+### Updated overall status
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 2 (+1 pre-existing) | 2 | 0 (+1 scripting) | 0 |
+| HIGH | 12 | 9 | 2 (JS memory, TOCTOU) | 1 (mnemonicRef gap on import) |
+| MEDIUM | 19 | 13 | 6 (noted) | 0 |
+| LOW | 30 | 16 | 9 (noted) | 5 (IndexedDB, backoff, secrets strip, focus trap, autoComplete unlock) |
+
+### Verdict
+
+One new HIGH functional bug: IBC/cross-chain fails after initial import until re-unlock. Fix: call `setMnemonicWithAutoClear(pendingMnemonic)` in `actionBarConnect.tsx` import flow before `setSigner`. Pre-existing CRITICAL (Rune secrets) remains open. All other prior findings stable, zero regressions.
