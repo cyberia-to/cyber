@@ -968,7 +968,7 @@ Full re-read of all modified files against live codebase (`/Users/joyrocket/git/
 
 | # | Severity | Finding | Status |
 |---|----------|---------|--------|
-| 1 | HIGH (functional) | `mnemonicRef` never set during initial import — `actionBarConnect.tsx:180` calls `setSigner(offlineSigner)` but never calls `setMnemonicWithAutoClear(mnemonic)`. After import, `mnemonicRef.current` remains null → `getSignerForChain` and `getSignClientByChainId` return `undefined` for wallet accounts → IBC and cross-chain signing fail until user switches tab (triggering visibilitychange auto-lock) and re-unlocks via password | OPEN |
+| 1 | HIGH (functional) | `mnemonicRef` never set during initial import — `actionBarConnect.tsx:180` calls `setSigner(offlineSigner)` but never calls `setMnemonicWithAutoClear(mnemonic)`. After import, `mnemonicRef.current` remains null → `getSignerForChain` and `getSignClientByChainId` return `undefined` for wallet accounts → IBC and cross-chain signing fail until user switches tab (triggering visibilitychange auto-lock) and re-unlocks via password | FIXED — added `activateWalletSigner(signer, mnemonic)` to context, sets both `mnemonicRef` and `signer` atomically. `actionBarConnect.tsx` now calls `activateWalletSigner` instead of `setSigner` |
 | 2 | LOW | `UnlockWalletBar` password input missing `autoComplete="off"` — password managers may offer suggestions for wallet unlock field (`actionBar/index.tsx:192`) | NOTED |
 
 ### Stale doc correction: password policy
@@ -1032,10 +1032,10 @@ Rune VM `compile()` receives full `context` including `secrets` at `engine.ts:13
 | Severity | Total | Fixed | Accepted/Inherent | Roadmap |
 |----------|-------|-------|-------------------|---------|
 | CRITICAL | 2 (+1 pre-existing) | 2 | 0 (+1 scripting) | 0 |
-| HIGH | 12 | 9 | 2 (JS memory, TOCTOU) | 1 (mnemonicRef gap on import) |
+| HIGH | 12 | 10 | 2 (JS memory, TOCTOU) | 0 |
 | MEDIUM | 19 | 13 | 6 (noted) | 0 |
 | LOW | 30 | 16 | 9 (noted) | 5 (IndexedDB, backoff, secrets strip, focus trap, autoComplete unlock) |
 
 ### Verdict
 
-One new HIGH functional bug: IBC/cross-chain fails after initial import until re-unlock. Fix: call `setMnemonicWithAutoClear(pendingMnemonic)` in `actionBarConnect.tsx` import flow before `setSigner`. Pre-existing CRITICAL (Rune secrets) remains open. All other prior findings stable, zero regressions.
+HIGH mnemonicRef gap fixed via `activateWalletSigner`. All CRITICAL and HIGH findings within mnemonic scope resolved. Pre-existing CRITICAL (Rune secrets in `compile()`) remains open — requires Rune runtime sandboxing. Zero regressions.
