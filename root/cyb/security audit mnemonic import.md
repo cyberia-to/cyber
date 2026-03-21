@@ -1128,3 +1128,59 @@ const scriptParams = {
 ### Verdict
 
 CLEAN AUDIT. All 42 verification checks passed. `activateWalletSigner` fix confirmed. Rune VM secrets CRITICAL fixed — `compile()` now receives `safeContext` without secrets. Zero open CRITICAL or HIGH findings. Production-ready.
+
+---
+
+## Fixes applied during Audit #17–18 session (2026-03-21)
+
+Two code fixes were implemented and committed to `feat/restore-mnemonic-import` during the Audit #17–18 review session.
+
+### Fix 1: `mnemonicRef` never set during initial import (HIGH functional)
+
+After importing a mnemonic, `actionBarConnect.tsx` called `setSigner(offlineSigner)` directly — setting the signer in React state but leaving `mnemonicRef.current` as `null`. This meant `getSignerForChain` and `getSignClientByChainId` could not derive cross-chain signers from the mnemonic, causing IBC and multi-chain signing to silently fail until the user switched tabs (triggering `visibilitychange` auto-lock) and re-unlocked with their password.
+
+Resolution: introduced `activateWalletSigner(signer, mnemonic)` in `SignerClientContext`. This function atomically sets both `mnemonicRef` (via `setMnemonicWithAutoClear`, which also starts the 15-minute auto-clear timer) and `signer` state. The import flow in `actionBarConnect.tsx` now calls `activateWalletSigner` instead of bare `setSigner`.
+
+Files changed:
+- `src/contexts/signerClient.tsx` — added `activateWalletSigner` to context type, default value, implementation, and `useMemo` value
+- `src/pages/Keys/ActionBar/actionBarConnect.tsx` — replaced `setSigner` with `activateWalletSigner`
+
+Commit: `fix: set mnemonicRef during import via activateWalletSigner`
+
+### Fix 2: Rune VM `compile()` received secrets (CRITICAL pre-existing)
+
+The scripting engine's `run()` function passed the full `context` object (including `secrets` — all user-stored API keys) to the Rune WASM `compile()` function. Any user-authored Rune script could access `cyb::context.secrets` and exfiltrate stored credentials. The `getDebug()` function already stripped secrets from its output, but the compile path did not.
+
+Resolution: destructure out `secrets` from `context` before constructing `scriptParams`, using the same pattern as `getDebug()`:
+
+```typescript
+const { secrets: _secrets, ...safeContext } = context;
+const scriptParams = {
+  app: safeContext,
+  refId,
+};
+```
+
+Rune scripts now receive `safeContext` which contains `params` and `user` data but zero secrets.
+
+Files changed:
+- `src/services/scripting/engine.ts` — strip secrets from compile context in `run()`
+
+Commit: `fix: strip secrets from Rune VM compile context`
+
+### Post-fix status
+
+| Severity | Total | Fixed | Accepted/Inherent | Roadmap |
+|----------|-------|-------|-------------------|---------|
+| CRITICAL | 3 | 3 | 0 | 0 |
+| HIGH | 12 | 10 | 2 (JS memory, TOCTOU) | 0 |
+| MEDIUM | 19 | 13 | 6 (noted) | 0 |
+| LOW | 30 | 16 | 10 (noted) | 4 (IndexedDB, backoff, focus trap, autoComplete unlock) |
+
+All CRITICAL findings resolved. All HIGH findings either fixed or inherent to the JS runtime (immutable strings in memory, TOCTOU after signer creation — same limitations as [[MetaMask]] and [[Keplr]]). The two accepted HIGH items cannot be fixed without changing the underlying platform (WebAssembly-based key storage or native app).
+
+Remaining LOW roadmap items are quality-of-life improvements with zero security impact on the current threat model:
+- IndexedDB migration (localStorage is adequate for encrypted blobs)
+- Exponential backoff on unlock attempts (PBKDF2 1M provides ~1s natural delay)
+- Focus trap in Modal (Tab key can leave modal, cosmetic only)
+- `autoComplete="off"` on unlock password input (password managers may suggest)
