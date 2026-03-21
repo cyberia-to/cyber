@@ -1844,3 +1844,59 @@ Additionally, `@zondax/ledger-cosmos-js@4.x` always sends HRP in the INIT chunk,
 - 41 validators = 9 batches of 5, each batch ~1.2 KB, well within parser limits
 - Each batch requires Ledger confirmation (9 approvals total)
 - Sequence handling: poll `getTx` between batches to confirm on-chain before next sign
+
+## Audit #29 — Full security scan (2026-03-21)
+
+Scope: Complete re-audit of Ledger signing path, mnemonic handling, transport security, error exposure, input validation, and state management.
+
+### Result: no CRITICAL or HIGH issues
+
+### MEDIUM findings (FIXED)
+
+F29-01 — Sign doc JSON logged to console
+Severity: MEDIUM
+Status: FIXED (`12c2aa08`)
+File: `src/utils/ledgerSigner.ts:155`
+
+Full sign doc (sender, recipient, amounts) was logged via `console.log` on every signing attempt. Removed — only message length is logged now.
+
+F29-03 — Global regex flag causes intermittent validation
+Severity: MEDIUM
+Status: FIXED (`12c2aa08`)
+File: `src/constants/patterns.ts`
+
+All address validation patterns used the `g` flag on module-level RegExp constants. Global regexes advance `lastIndex` after each match, causing every other validation call to fail. Removed `g` flag from all patterns.
+
+### Additional fix discovered during testing
+
+IBC bridge withdraw MsgTransfer crash
+Severity: HIGH (crash)
+Status: FIXED (`99063c21`)
+File: `src/pages/teleport/bridge/actionBar.bridge.tsx:181`
+
+The withdraw path (bostrom → osmosis) built MsgTransfer as a plain object without `timeoutHeight`. With Ledger amino-only signing, the amino converter hit `undefined` in `omitDefault()` and threw `Got unsupported type 'undefined'`. Fixed by using `MsgTransfer.fromPartial()` which fills in proper defaults. Also replaced raw `e.toString()` with `friendlyErrorMessage` in both deposit and withdraw catch blocks.
+
+Null guard for bridge destChannelId
+Severity: MEDIUM (crash)
+Status: FIXED (`951d10c6`)
+File: `src/pages/teleport/hooks/useGetBalancesIbc.ts:46`
+
+`networkList[responseChainId]` is undefined for chains not in the hardcoded list. Added null check.
+
+### LOW findings (noted, not fixed)
+
+- F29-02: Transaction response objects logged in ActionBarContainer
+- F29-04: Raw `e.toString()` in 6 action bars (bridge fixed, others pending)
+- F29-09: Transport mutex theoretical race (not exploitable — JS single-threaded)
+- F29-10: No negative/zero amount guard in delegation (chain rejects, poor UX)
+- F29-15: Address validation regex only, no bech32 checksum
+
+### Verified secure (INFO)
+
+- AES-256-GCM + PBKDF2 1M iterations — no plaintext mnemonic leaks
+- Auto-lock (15-min timer + visibility-change) works, Ledger correctly excluded
+- Signing mutex prevents APDU collisions
+- Batch claiming waits for on-chain confirmation between batches
+- Redux store contains no sensitive data
+- Rune VM secrets stripped; DOMPurify sanitizes script output
+- Pocket migration keplr→read-only is idempotent
