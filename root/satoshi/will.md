@@ -11,12 +11,12 @@ the inner drive that moves a child to learn, explore, and grow — without exter
 
 will has four subdomains — four faces of the same force:
 
-| subdomain | what it means | crystal analog |
-|-----------|-------------|----------------|
-| autonomy | self-governing — the child directs her own path | [[sovereignty]] — self-rule |
-| freedom | space to explore without external constraint | [[exploration]] — [[diffusion]] in the [[tri-kernel]] |
-| trust | the adult believes the child can handle it | [[honest majority assumption]] — the system trusts its agents |
-| self-driven | motivation from within, not from reward or pressure | [[costly signal]] — action backed by genuine commitment |
+| subdomain | what it means | crystal page | the bridge |
+|-----------|-------------|-------------|------------|
+| [[autonomy]] | self-governing — the child directs her own path | [[sovereignty]] | sovereignty is self-rule over territory. autonomy is self-rule over learning. same principle, different scale |
+| [[freedom]] | space to explore without external constraint | [[diffusion]] | diffusion is the random walk that explores the graph. freedom is the random walk that explores the world. both require space to wander |
+| [[trust]] | the adult believes the child can handle it | [[honest majority assumption]] | the protocol trusts that >50% of agents act honestly. the parent trusts that the child acts competently. both enable decentralized operation |
+| [[self-driven]] | motivation from within, not from reward or pressure | [[costly signal]] | a costly signal proves genuine commitment because it costs real resources. a self-driven child proves genuine interest because she spends real effort without external reward |
 
 the method: create conditions for will to emerge, then step back. the environment teaches. the adult ensures safety. the child does everything else
 

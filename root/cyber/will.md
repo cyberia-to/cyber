@@ -1,5 +1,5 @@
 ---
-alias: bandwidth unit, bandwidth units, cyber/will, will
+alias: bandwidth unit, bandwidth units, cyber/will, will, inner drive
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber

@@ -1,5 +1,5 @@
 ---
-alias: costly signals, costly signal, cost
+alias: costly signals, costly signal, cost, self-driven
 tags: cyber
 crystal-type: property
 crystal-domain: cyber

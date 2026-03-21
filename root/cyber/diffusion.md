@@ -1,5 +1,5 @@
 ---
-alias: random walk, markov, exploration, diffusion
+alias: random walk, markov, exploration, diffusion, freedom
 tags: cyber
 crystal-type: process
 crystal-domain: cyber

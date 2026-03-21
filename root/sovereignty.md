@@ -1,5 +1,6 @@
 ---
 tags: governance
+alias: autonomy, self-rule, self-governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5146285864519627
