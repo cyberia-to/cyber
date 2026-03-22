@@ -5,12 +5,12 @@ crystal-domain: cyber
 date: 2026-03-20
 scope: mnemonic import, wallet encryption, Keplr removal, Ledger integration, error messages
 auditor: Claude Opus 4.6
-audits: 30
+audits: 31
 cross-verifications: 5
 ---
 # security audit: mnemonic import
 
-30 audits + 5 cross-verifications of [[cyb]] wallet security. scope: [[mnemonic]] import/unlock, [[Keplr]] removal, [[Ledger]] hardware integration, error message sanitization.
+31 audits + 5 cross-verifications of [[cyb]] wallet security. scope: [[mnemonic]] import/unlock, [[Keplr]] removal, [[Ledger]] hardware integration, error message sanitization, mobile browser hardening.
 
 surface: `D` = desktop, `M` = mobile, `DM` = both
 
@@ -40,15 +40,16 @@ deletion:   removeEncryptedMnemonic(bech32) → localStorage cleanup
 
 ## findings
 
-### CRITICAL (3 total, 3 fixed)
+### CRITICAL (4 total, 3 fixed, 1 open)
 
 | audit | surface | finding | fix |
 |-------|---------|---------|-----|
 | 1 | DM | plaintext mnemonic in localStorage | AES-256-GCM encryption via [[Web Crypto API]] |
 | 1 | DM | mnemonic persisted in React state after modal close | useEffect cleanup on unmount, clearState() in parent |
 | 13 | DM | Rune VM `compile()` receives secrets (API keys) — any user script exfiltrates credentials | destructure secrets before compile: `{ secrets: _s, ...safeContext }` |
+| 31 | DM | `setMnemonic()` writes plaintext mnemonic to localStorage — Tauri path reachable from web code (`utils.ts:441`) | OPEN — guard with IS_TAURI check, add migration to remove plaintext keys on web |
 
-### HIGH (14 total, 14 fixed)
+### HIGH (17 total, 14 fixed, 3 open)
 
 | audit | surface | finding | fix |
 |-------|---------|---------|-----|
@@ -66,8 +67,11 @@ deletion:   removeEncryptedMnemonic(bech32) → localStorage cleanup
 | 22 | D | Ledger signing fails silently — stale WebUSB transport | ReconnectingLedgerSigner + 30s health monitoring |
 | 26 | D | APDU collision — health check corrupts active signing | _signingInProgress mutex flag |
 | 29 | DM | IBC bridge withdraw crash — MsgTransfer built as plain object | MsgTransfer.fromPartial() for amino-safe defaults |
+| 31 | DM | mnemonic inputs type="text" — seed words visible, no show/hide toggle (`MnemonicInput.tsx:52`) | OPEN — type="password" + toggle eye icon, or -webkit-text-security: disc |
+| 31 | M | secrets input (API keys) lacks keyboard hardening — mobile keyboard caches values (`actionBarSecrets.tsx:35`) | OPEN — type="password" + spellCheck/autoCorrect/autoCapitalize off |
+| 31 | M | mnemonic words remain on screen when app goes to background — iOS app switcher screenshot (`ConnectWalletModal.tsx`) | OPEN — visibilitychange listener to clear values or render blur overlay |
 
-### MEDIUM (31 total, 19 fixed, 12 noted)
+### MEDIUM (35 total, 19 fixed, 12 noted, 4 open)
 
 | audit | surface | finding | fix |
 |-------|---------|---------|-----|
@@ -90,32 +94,38 @@ deletion:   removeEncryptedMnemonic(bech32) → localStorage cleanup
 | 28 | D | sign doc overflow with 41 validators (~10 KB) | batch claiming: 5 validators per tx, poll confirmation between |
 | 29 | DM | regex global flag — validation fails every other call | removed `g` flag from all 12 patterns |
 | 30 | D | health check CLA 0xe0 causes unnecessary transport recreation | changed to CLA 0x55 (Cosmos getVersion) |
+| 31 | M | long-press on mnemonic inputs triggers system share sheet — no -webkit-touch-callout: none (`ConnectWalletModal.style.ts`) | OPEN |
+| 31 | M | long-press on revealed secret values triggers text selection (`KeyItemSecrets.tsx:34`) | OPEN |
+| 31 | DM | service worker caches ALL POST responses — potential API data leak (`service-worker.ts:86`) | OPEN |
+| 31 | M | no -webkit-text-security: disc on mnemonic inputs as CSS fallback | OPEN |
 
 noted (12): setSigner public context (DM), `as any` in CosmJS constructor (DM), weak password below 12 chars (DM), signer retains seed — CosmJS requirement (DM), dual signer memory — JS immutable strings (DM), unguarded JSON.parse in 5 Redux slices (DM), checkAddressNetwork unbounded recursion — fixed in #24 (DM), Ledger reconnect error leaks addresses (D), amino-only Ledger in relayer (D), secrets unencrypted in localStorage — pre-existing (DM), seed word inputs type="text" — by design (M), no beforeunload cleanup — fixed in #24 (D)
 
-### LOW (48 total, 19 fixed, 26 noted)
+### LOW (52 total, 19 fixed, 26 noted, 4 open)
 
 fixed: modal tabIndex (DM), error message internals (DM), version detection false positive — try-fallback (DM), persist-before-signer ordering (DM), Array.from instead of spread — stack safety (DM), DOMException-only catch (DM), autoComplete/autoCorrect/autoCapitalize on mnemonic inputs (M), autoComplete="new-password" on password inputs (M), autoCorrect/autoCapitalize/spellCheck on all password inputs + autoComplete on unlock (M), __cyb_wallet_locked event name — internal (DM), `wallet` label for non-Keplr signers (DM), typed Dropdown callback (DM), getDebug() secrets stripped (DM), blob versioning for migration (DM), removeEncryptedMnemonic for deletion (DM), neuron errors wrapped in friendlyErrorMessage (DM), wasm action bar errors wrapped (DM), console.log sign doc removed (D), regex patterns fixed (DM)
+
+open (4): address clipboard never cleared — iOS Universal Clipboard sync (`copy.tsx:12`) (DM), secret key name input lacks keyboard hardening (`actionBarSecrets.tsx:27`) (M), user-select not applied to sensitive elements (M), console.log proximity to mnemonic variable (`signerClient.tsx:133`) (DM)
 
 noted (26): focus trap absent (DM), mnemonic inputs visible — by design (M), eslint-disable scope (DM), gasPrice hardcoded — standard (DM), JS memory mnemonic immutable (DM), unlockWallet concurrency — UI guard sufficient (DM), CustomEvent spoofable — cosmetic only (DM), stack overflow safe for mnemonic sizes (DM), packed length — AES-GCM validates (DM), chainId ignored in signArbitrary — ADR-036 by design (DM), HD path locked to index 0 (D), idle timer race (D), no initial Ledger address verification (D), raw Ledger errors (D), localStorage quota silent fail (DM), recursive setTimeout without cleanup (DM), window.open without noopener (D), forceQuitter legacy key (DM), Tendermint query interpolation (DM), password in useState — DevTools (D), mnemonic words in useState — React limitation (D), secrets in Redux DevTools (D), transaction response logged (D), no negative amount guard (DM), address validation lacks bech32 checksum (DM), error oracle — wrong password vs no mnemonic (DM)
 
 ## cumulative status
 
-| severity | total | fixed | accepted | roadmap |
-|----------|-------|-------|----------|---------|
-| CRITICAL | 3 | 3 | 0 | 0 |
-| HIGH | 14 | 14 | 0 | 0 |
-| MEDIUM | 31 | 19 | 12 | 0 |
-| LOW | 48 | 19 | 26 | 0 |
+| severity | total | fixed | accepted | open |
+|----------|-------|-------|----------|------|
+| CRITICAL | 4 | 3 | 0 | 1 |
+| HIGH | 17 | 14 | 0 | 3 |
+| MEDIUM | 35 | 19 | 12 | 4 |
+| LOW | 52 | 19 | 26 | 4 |
 
 by surface:
 
 | severity | desktop only | mobile only | both |
 |----------|-------------|-------------|------|
-| CRITICAL | 0 | 0 | 3 |
-| HIGH | 2 | 0 | 12 |
-| MEDIUM | 5 | 1 | 13 |
-| LOW | 10 | 3 | 32 |
+| CRITICAL | 0 | 0 | 4 |
+| HIGH | 2 | 2 | 13 |
+| MEDIUM | 5 | 5 | 25 |
+| LOW | 10 | 5 | 34 |
 
 ## Keplr isolation
 
