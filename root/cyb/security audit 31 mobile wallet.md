@@ -52,6 +52,27 @@ Mobile wallet support: mnemonic import, Ledger signer, encrypted storage, auto-l
 - error messages sanitized — no mnemonic/key/password leaks
 - Ledger handles WebUSB absence gracefully on mobile
 
+## verification pass (re-audit)
+
+13 files audited. 0 critical, 0 high, 0 medium findings. 3 low (inherent JS limitations):
+
+| # | file | finding | severity |
+|---|------|---------|----------|
+| 1 | `signerClient.tsx:135,159` | console logs mention "mnemonic" as label, not the value | low |
+| 2 | `signerClient.tsx:117-230` | plaintext mnemonic variable in JS heap until GC (same as MetaMask/Keplr) | low |
+| 3 | `DownloadSection.tsx:85-96` | decrypted mnemonic in closure scope until GC (same inherent limitation) | low |
+
+Verified:
+- `getObfuscationKey()` and `getTauriDeviceKey()` share the same `cyb:device-key` — compatible
+- no console.log or error message leaks mnemonics, passwords, or keys
+- legacy plaintext migration guard (`split(' ').length >= 12`) rejects encrypted base64 — safe
+- obfuscation fallback in `loadJsonFromLocalStorage` is read-only — cannot corrupt data
+- BroadcastChannel never transmits secrets — only account metadata
+- Ledger transport mutex, health ping, and idle timeout all correct
+- password input fields have autocomplete/autocorrect/spellcheck disabled
+- mnemonic paste clears clipboard
+- `deleteAddress` removes encrypted mnemonic and fires lock event
+
 ## known limitations
 
 - finding 3: signer object holds mnemonic in memory until garbage collected — inherent to `@cosmjs/proto-signing` `DirectSecp256k1HdWallet`. mitigated by auto-lock (15 min) and visibility-change lock
