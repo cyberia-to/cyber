@@ -4,6 +4,12 @@ crystal-type: entity
 crystal-domain: cybics
 alias: Prigogine
 stake: 7571752767623661
+diffusion: 0.0001992812344031826
+springs: 0.0010697468153420923
+heat: 0.0008111000469230283
+focus: 0.0005827846711888171
+gravity: 2
+density: 9.69
 ---
 1917-2003. Belgian physical chemist. Nobel Prize in Chemistry (1977).
 

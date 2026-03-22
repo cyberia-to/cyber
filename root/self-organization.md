@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11953703305482460
+diffusion: 0.00022632883943852217
+springs: 0.0016958701870885308
+heat: 0.0012390056576936698
+focus: 0.0008697266073845431
+gravity: 4
+density: 7.73
 ---
 the ability of a system to structure itself without external control
 

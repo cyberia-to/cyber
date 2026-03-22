@@ -3,6 +3,12 @@ tags: food
 crystal-type: process
 crystal-domain: agriculture
 stake: 3923707344357226
+diffusion: 0.0003510260552717413
+springs: 0.00007564314794866269
+heat: 0.0001814352911341117
+focus: 0.00023449303024728878
+gravity: 15
+density: 5.49
 ---
 gathering of mature [[crops]] from the field
 

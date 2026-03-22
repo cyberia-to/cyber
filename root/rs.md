@@ -8,6 +8,12 @@ stake: 2440926101748440
 subgraph: true
 repo: ../rs
 exclude: ".claude/**, target/**"
+diffusion: 0.00024006147289607868
+springs: 0.00018620675920410918
+heat: 0.000219841758272851
+focus: 0.00021986111586383948
+gravity: 8
+density: 4.22
 ---
 [[Rust]] with everything dynamically-sized removed. no heap. no `Vec`. no `String`. no unbounded recursion. every value has a known size at compile time. every loop has a known bound
 

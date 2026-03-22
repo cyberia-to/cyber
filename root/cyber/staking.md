@@ -3,6 +3,12 @@ tags: cyber, core
 alias: staking, staking on particles, staking on cyberlinks, stake
 crystal-type: process
 crystal-domain: cyber
+diffusion: 0.00026367007490676956
+springs: 0.0016419115536230734
+heat: 0.0012150062724577099
+focus: 0.0008674097580318376
+gravity: 11
+density: 5.4
 ---
 directing economic weight toward [[particles]] and [[axons]] in the [[cybergraph]]
 

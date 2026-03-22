@@ -4,6 +4,12 @@ crystal-type: pattern
 crystal-domain: cyber
 status: draft
 stake: 19039223593637832
+diffusion: 0.00013717454349515123
+springs: 0.0013917354320882684
+heat: 0.0010087107225346791
+focus: 0.0006878500458809831
+gravity: 2
+density: 3.92
 ---
 
 the mathematical framework of [[cyber]]: why a token-weighted graph converges to a unique [[focus]] distribution, how three operators form a complete basis for collective [[intelligence]], and what happens when agents optimize against the resulting [[free energy]] landscape

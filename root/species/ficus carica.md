@@ -6,6 +6,12 @@ crystal-domain: biology
 wood: "yes"
 grow-speed: "4"
 stake: 6846797715404375
+diffusion: 0.0002774277499370472
+springs: 0.0004390827093409643
+heat: 0.0003918272945761474
+focus: 0.00034880414668603786
+gravity: 3
+density: 2.14
 ---
 [[dioecious]]
 

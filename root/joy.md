@@ -3,6 +3,12 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 stake: 3345045129836062
+diffusion: 0.0003227390994314654
+springs: 0.0004973114782472912
+heat: 0.0004672904129047989
+focus: 0.00040402107577087467
+gravity: 6
+density: 6.87
 ---
 the [[emotion]] of [[green]] — life reward, the center of the spectrum
 

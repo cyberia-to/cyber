@@ -3,6 +3,12 @@ tags: species
 crystal-type: process
 crystal-domain: biology
 stake: 6454784983463575
+diffusion: 0.00019836856038828106
+springs: 0.000022858870457901604
+heat: 0.00007583399679146265
+focus: 0.00012120874068980198
+gravity: 1
+density: 0
 ---
 1. stop feeding sheeps inside their home. most of parasites come from fecal mass
   2. every day you must start from moving sheeps to the place with meal, and move them back at the end of the day

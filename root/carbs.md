@@ -4,6 +4,12 @@ alias: carbohidrate, carbohydrates, carb
 crystal-type: entity
 crystal-domain: economics
 stake: 17143844475630170
+diffusion: 0.0002476235995739793
+springs: 0.00009598752966811236
+heat: 0.00016753924023113652
+focus: 0.00018611590673364828
+gravity: 7
+density: 5.02
 ---
 the most important species for [[eat]] carbs
 

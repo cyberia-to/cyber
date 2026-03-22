@@ -3,6 +3,12 @@ tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
 stake: 4717821969459385
+diffusion: 0.00042283973046158103
+springs: 0.00011361215063478327
+heat: 0.0002240133146967453
+focus: 0.0002903061733605708
+gravity: 5
+density: 1.84
 ---
 Movement of water across a semipermeable membrane from a region of low solute concentration to high solute concentration. Nature seeking equilibrium.
 

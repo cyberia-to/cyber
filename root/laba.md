@@ -5,6 +5,12 @@ crystal-domain: cyberia
 size: "80"
 shape: 20*4
 stake: 5683289606904284
+diffusion: 0.0001629466726626792
+springs: 0.00005412781981154771
+heat: 0.00012723959396899562
+focus: 0.00012315960106860143
+gravity: 5
+density: 3.66
 ---
 production facility for autonomous estate
 

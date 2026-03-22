@@ -3,6 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5061260271975390
+diffusion: 0.00015726784163527178
+springs: 0.00006143357996624871
+heat: 0.00010901981096373981
+focus: 0.00011886795700025693
+gravity: 4
+density: 0.66
 ---
 - [[osmosis]]
 

@@ -2,6 +2,12 @@
 tags: discipline, socio, lang, spiri
 crystal-type: entity
 crystal-domain: socio
+diffusion: 0.00010722364868599256
+springs: 0.00022280576676497355
+heat: 0.0001992938156324503
+focus: 0.00016031231749897635
+gravity: 0
+density: 11.85
 ---
 # sociology
 

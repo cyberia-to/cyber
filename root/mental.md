@@ -3,8 +3,13 @@ tags: cybernomics
 alias: psycho
 crystal-type: entity
 crystal-domain: economics
-focus: "true"
 stake: 15881885681026224
+diffusion: 0.00010722364868599256
+springs: 0.00005557102397111908
+heat: 0.00007708201401437765
+focus: 0.00008569953433720643
+gravity: 0
+density: 0.6
 ---
 ## [[plants/mental]]
 

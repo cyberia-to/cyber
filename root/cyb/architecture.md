@@ -6,6 +6,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 stake: 14015797676239542
+diffusion: 0.00022952335023342161
+springs: 0.0003467199391371774
+heat: 0.0003309382362433205
+focus: 0.00028496530410652445
+gravity: 7
+density: 1.66
 ---
 # Architecture
 

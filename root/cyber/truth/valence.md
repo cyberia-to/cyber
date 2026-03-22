@@ -4,6 +4,12 @@ alias: valences, epistemic valence, link valence, v field, ternary signal, valen
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
+diffusion: 0.001302283444041584
+springs: 0.000718416340430178
+heat: 0.0009183606413716773
+focus: 0.0010503387524241675
+gravity: 22
+density: 2.4
 ---
 the ternary epistemic field of a [[cyberlink]]. $v \in \{-1,\, 0,\, +1\}$
 

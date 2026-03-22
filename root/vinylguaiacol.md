@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5656439419785051
+diffusion: 0.0001102618124094022
+springs: 0.00003069079888064918
+heat: 0.000060164212655603605
+focus: 0.00007637098840001559
+gravity: 1
+density: 0.43
 ---
 vinylguaiacol is a naturally occurring [[phenolic]] compound derived from [[ferulic acid]] and found in plants, fermented foods, and as a volatile product in thermal processing. it has a distinct clove-like aroma and plays a significant role in the flavor profile of certain beers, wines, breads, and smoked foods. it is also a metabolic product of some yeast and bacterial strains.
 

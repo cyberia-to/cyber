@@ -5,6 +5,12 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 stake: 28444600048894916
+diffusion: 0.004111109362384451
+springs: 0.000607010248885526
+heat: 0.001705973339427295
+focus: 0.002578852423743309
+gravity: 63
+density: 8.93
 ---
 
 the pulse of the [[cybergraph]]. syntropy measures [[order]] in [[bits]] — the [[key metabolic factor]] of [[superintelligence]]

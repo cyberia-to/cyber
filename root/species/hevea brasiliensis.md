@@ -8,6 +8,12 @@ wood-availability: high
 wood-durability: low
 wood-density: "600"
 stake: 8139268086280173
+diffusion: 0.00013566019035595955
+springs: 0.000059065899370193456
+heat: 0.00009110879917694035
+focus: 0.00010377162482442453
+gravity: 1
+density: 1.1
 ---
 [[resin]]
 

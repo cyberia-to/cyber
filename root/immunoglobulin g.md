@@ -4,6 +4,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: biology
 stake: 8605484971714124
+diffusion: 0.00017294830906604142
+springs: 0.0000580844511706815
+heat: 0.00010213823454734028
+focus: 0.0001243271367936916
+gravity: 1
+density: 0.38
 ---
 immunoglobulin g is the most abundant [[antibody]] class in the human body, comprising about 75% of all serum antibodies. it is a vital [[glycoprotein]] produced by [[b cells]] and plays a central role in the [[adaptive immune system]]. igg is responsible for identifying and neutralizing [[bacteria]], [[viruses]], and [[toxins]]. it can cross the [[placenta]], providing passive immunity to newborns.
 

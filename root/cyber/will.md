@@ -1,10 +1,16 @@
 ---
-alias: bandwidth unit, bandwidth units, cyber/will, will
+alias: bandwidth unit, bandwidth units, cyber/will, will, inner drive
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 9358510674103518
+diffusion: 0.00309562919002198
+springs: 0.0008599834874279843
+heat: 0.001562147620164367
+focus: 0.0021182391652722313
+gravity: 46
+density: 9.8
 ---
 committed capacity to act. [[balance]] locked for duration — the longer and more you lock, the more will you have
 

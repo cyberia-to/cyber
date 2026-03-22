@@ -3,6 +3,12 @@ tags: cyber, language
 alias: Dif, differential language, differential geometry language
 crystal-type: entity
 crystal-domain: cyber
+diffusion: 0.00012795464176633905
+springs: 0.0004088598432152116
+heat: 0.0003496919324985506
+focus: 0.0002565736603474398
+gravity: 3
+density: 4.82
 ---
 differential [[geometry]]. Riemannian manifolds, tangent spaces, geodesics, Laplace-Beltrami operator. the [[geometry]] of continuous curved space
 

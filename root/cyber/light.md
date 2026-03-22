@@ -3,6 +3,12 @@ tags: cyber, cip
 crystal-type: pattern
 crystal-domain: cyber
 alias: light client, light node, cyber light client
+diffusion: 0.00011584399949539474
+springs: 0.0018941340224074225
+heat: 0.0013362372989325056
+focus: 0.0008934096662564137
+gravity: 1
+density: 1.71
 ---
 # light client
 

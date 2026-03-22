@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8283282726283331
+diffusion: 0.0001382507450975944
+springs: 0.00016187381341955468
+heat: 0.00016075006013543047
+focus: 0.0001498375286017478
+gravity: 3
+density: 2.1
 ---
 alias: chlorogenic acid
 

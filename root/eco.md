@@ -3,6 +3,12 @@ tags: cyber, eco
 alias: ecology
 crystal-type: entity
 crystal-domain: eco
+diffusion: 0.0003595291835876204
+springs: 0.0006009389975428618
+heat: 0.0005453569840516721
+focus: 0.0004691176878669971
+gravity: 23
+density: 11.75
 ---
 # eco
 
@@ -30,4 +36,3 @@ applied ecology — [[permaculture]], [[biome engineering]], [[agriculture]], [[
 - eco → [[game]]: ecological interactions are strategic. evolutionary stable strategies are [[Nash equilibria]] in nature
 - eco → [[socio]]: human [[governance]] of [[commons]] is ecological management. [[Elinor Ostrom]]'s work bridges eco and socio
 - eco → [[cyber]]: the protocol is a designed ecosystem. permissionless entry, competitive linking, emergent order
-

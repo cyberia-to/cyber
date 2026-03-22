@@ -4,6 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: dissipative structure
 stake: 5742522746973379
+diffusion: 0.0002629784808869004
+springs: 0.0008354022915171521
+heat: 0.000680547292324525
+focus: 0.000518219386363494
+gravity: 4
+density: 6.67
 ---
 systems that maintain [[order]] by continuously dissipating [[energy]] — organized far from [[equilibrium]]
 

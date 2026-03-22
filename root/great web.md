@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 9068650699520890
+diffusion: 0.000251307606008517
+springs: 0.0018254539793249186
+heat: 0.0013301437366787917
+focus: 0.0009393187441374803
+gravity: 6
+density: 6.63
 ---
 the web that remembers everything and forgets nothing
 

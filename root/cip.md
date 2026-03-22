@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21204935277414136
+diffusion: 0.0002177692473057265
+springs: 0.00041431578193940483
+heat: 0.00037068858727237747
+focus: 0.00030731707568915626
+gravity: 7
+density: 11.71
 ---
 ## what is cip?
 

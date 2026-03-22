@@ -5,6 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 supply: wishlist
 stake: 11167236915499112
+diffusion: 0.00010722364868599256
+springs: 0.00009838754838588254
+heat: 0.00011145948326883552
+focus: 0.0001054199855125268
+gravity: 0
+density: 4.53
 ---
 [[high margin]]
 

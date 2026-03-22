@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5070210334348468
+diffusion: 0.00016846833600068234
+springs: 0.0014699741239729762
+heat: 0.0010664487937172968
+focus: 0.0007385161639356839
+gravity: 4
+density: 5.28
 ---
 1923-2016. American mathematician and Nobel laureate.
 

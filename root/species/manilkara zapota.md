@@ -7,6 +7,12 @@ alias: manilkara, sawo, sapodilla
 wood: "yes"
 grow-speed: "3"
 stake: 7579075545928905
+diffusion: 0.0002032751585362165
+springs: 0.0004226489962591274
+heat: 0.000358241068399558
+focus: 0.0003000804918257542
+gravity: 3
+density: 1.81
 ---
 ![image.png](https://ipfs.io/ipfs/QmRMTs6LwDpmW71tayKZhVqczmL5XSpWQwM5YVh5tRXDtG)
 

@@ -3,8 +3,13 @@ tags: cybernomics
 alias: nutraceuticals, biohacking
 crystal-type: entity
 crystal-domain: economics
-focus: "true"
 stake: 17291520504785948
+diffusion: 0.007631918936870841
+springs: 0.0002616167360784223
+heat: 0.002536027376073045
+focus: 0.0044016499644735
+gravity: 46
+density: 0.83
 ---
 [[plants/wishlist]]
 

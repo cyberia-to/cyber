@@ -5,6 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
+diffusion: 0.0003004615208803426
+springs: 0.0015755233191066212
+heat: 0.0011813867802202471
+focus: 0.000859165112216196
+gravity: 5
+density: 1.64
 ---
 
 an architectural principle for decentralized [[superintelligence]]

@@ -3,6 +3,12 @@ tags: biology, chemistry
 crystal-type: process
 crystal-domain: biology
 stake: 4581130107761472
+diffusion: 0.0010521643771089434
+springs: 0.00013228091158976624
+heat: 0.0004334072554499421
+focus: 0.0006524479131213816
+gravity: 11
+density: 2.78
 ---
 Anaerobic metabolism converting sugars into acids, gases, or alcohol. Life extracting energy without oxygen.
 

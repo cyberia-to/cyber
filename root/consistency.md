@@ -3,6 +3,12 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: enzyme
+diffusion: 0.0005668157239613529
+springs: 0.0019057705786085348
+heat: 0.0014862359336208753
+focus: 0.0011523862222873973
+gravity: 2
+density: 10.27
 ---
 agreement between independent descriptions of the same thing
 

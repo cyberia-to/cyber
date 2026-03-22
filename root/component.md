@@ -3,6 +3,12 @@ tags: cyb, cyber, core
 alias: component particle, aip, composed interface, interactive application
 crystal-type: entity
 crystal-domain: cyb
+diffusion: 0.0013598991470935302
+springs: 0.0005932209272942863
+heat: 0.0008464553716903047
+focus: 0.0010272069260730988
+gravity: 22
+density: 4.25
 ---
 composition as [[particle]]. the native format for interactive applications, dashboards, tools, and any knowledge that combines multiple content types into a unified, stateful experience
 

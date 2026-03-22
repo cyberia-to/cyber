@@ -2,6 +2,12 @@
 tags: discipline, lang, comp
 crystal-type: entity
 crystal-domain: lang
+diffusion: 0.00010949151003780194
+springs: 0.0000821868646027716
+heat: 0.00010551091087147044
+focus: 0.00010050399657402523
+gravity: 1
+density: 13.14
 ---
 # linguistics
 
@@ -22,4 +28,3 @@ pragmatics → context, speech acts, implicature
 - historical linguistics → [[lang]] + [[meta]] (language change, [[Indo-European]], [[Afroasiatic]], [[Sino-Tibetan]])
 - computational linguistics → [[lang]] + [[comp]] + [[ai]] ([[NMT]], NLP, [[llms]])
 - sociolinguistics → [[lang]] + [[socio]] (dialect, register, language policy)
-

@@ -3,6 +3,12 @@ tags: kitchen/menu, mains
 crystal-type: process
 crystal-domain: agriculture
 stake: 5776207527177509
+diffusion: 0.00025814168224285984
+springs: 0.00004972107816300385
+heat: 0.0001323066535811976
+focus: 0.0001704484952865684
+gravity: 4
+density: 2.03
 ---
 <img src="https://ipfs.io/ipfs/bafybeiejpylbgdltxhm5obchime35u4wgzycjd2akh2vjac5ms2ysjeury" style="width:500px; height:auto;" />
 

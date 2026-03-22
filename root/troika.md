@@ -4,6 +4,12 @@ alias: troika stack, the troika
 crystal-type: pattern
 crystal-domain: cyberia
 crystal-size: bridge
+diffusion: 0.00010855252141697535
+springs: 0.0016425772385188359
+heat: 0.0011648463004300246
+focus: 0.0007800186923501332
+gravity: 1
+density: 6.43
 ---
 three horses, one carriage. [[cyber]] + [[cyb]] + [[cyberia]] — the complete civilizational stack for [[superintelligence]]
 

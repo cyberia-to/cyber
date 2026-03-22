@@ -4,6 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: content addressing, particle addressing, nox CID
 stake: 42267076377875984
+diffusion: 0.0001096870246779463
+springs: 0.002531550017551388
+heat: 0.0017534163705138304
+focus: 0.0011649917917071406
+gravity: 1
+density: 1.48
 ---
 # particle: content addressing
 

@@ -6,6 +6,12 @@ crystal-size: article
 alias: cyber hierarchy, folding, scaling, graph folding
 status: draft
 stake: 80000000000000000
+diffusion: 0.00041372405466627685
+springs: 0.001139368603318028
+heat: 0.0009250299951613572
+focus: 0.0007336786073608088
+gravity: 14
+density: 2.79
 ---
 # cyber hierarchy
 
@@ -226,7 +232,7 @@ address space:
 | IPv6 | 2^128 = 3 × 10^38 |
 | [[cyber]] | [[Hemera]] = 2^256 ≈ 10^77 (content-addressed, [[Avogadro]] is a rounding error) |
 
-the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the ranking engine, the folding oracle, and the routing advisor. one computation serves all three purposes
+the key difference: every other system designs the hierarchy. [[cyber]] computes it. the [[tri-kernel]] is simultaneously the probabilistic engine, the folding oracle, and the routing advisor. one computation serves all three purposes
 
 ---
 

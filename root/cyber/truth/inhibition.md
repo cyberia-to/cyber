@@ -5,6 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
+diffusion: 0.0006474432739599406
+springs: 0.0010703624023385345
+heat: 0.00095362471078233
+focus: 0.0008355552998379859
+gravity: 15
+density: 2.73
 ---
 
 why the [[cybergraph]] without [[market|markets]] is not a functional model — and what markets provide that raw [[cyberlinks]] cannot

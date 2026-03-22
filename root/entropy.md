@@ -3,6 +3,12 @@ tags: physics
 crystal-type: measure
 crystal-domain: physics
 stake: 3031386125761388
+diffusion: 0.002619985584202766
+springs: 0.0002462961474496791
+heat: 0.0009989232163190227
+focus: 0.001583666279600071
+gravity: 40
+density: 7.01
 ---
 A measure of the number of microscopic configurations consistent with a macroscopic state — quantifying disorder and missing [[information theory]].
 

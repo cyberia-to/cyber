@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5016509960110002
+diffusion: 0.00011400812724907998
+springs: 0.0019949362079921826
+heat: 0.001399764261057672
+focus: 0.0009354377782337172
+gravity: 1
+density: 4.79
 ---
 1949-. Taiwanese-American mathematician, professor at UC San Diego.
 

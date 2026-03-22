@@ -3,6 +3,12 @@ tags: bostrom
 crystal-type: entity
 crystal-domain: cyber
 stake: 23829541068319144
+diffusion: 0.00013760528592008875
+springs: 0.00007227031938573997
+heat: 0.00011053030895264991
+focus: 0.0001125898005662949
+gravity: 1
+density: 2.4
 ---
 [[go-cyber]]
 

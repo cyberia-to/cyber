@@ -3,6 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8493609192050655
+diffusion: 0.00046788502189735244
+springs: 0.0001236058301625766
+heat: 0.0002470387003943761
+focus: 0.0003204320000763203
+gravity: 10
+density: 4.21
 ---
 > the art of designing living systems in resonance with nature’s intelligence
 

@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: computer science
 stake: 7309963443211140
+diffusion: 0.00030495267554273296
+springs: 0.00017951221736186188
+heat: 0.00024433034318864646
+focus: 0.00025519607161765106
+gravity: 8
+density: 6.58
 ---
 a virtual machine designed for generating [[stark]] proofs of program execution
 

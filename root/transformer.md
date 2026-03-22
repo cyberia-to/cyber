@@ -4,6 +4,12 @@ alias: transformer, transformers, transformer architecture, transformer model, l
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
+diffusion: 0.0007743432781674563
+springs: 0.0011529927283237408
+heat: 0.0010472766107290732
+focus: 0.000942524779726653
+gravity: 12
+density: 1.76
 ---
 
 a neural network architecture that processes sequences by computing weighted [[attention]] over all elements simultaneously — the foundation of modern [[llms|language models]]

@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 8243007445604482
+diffusion: 0.0011678010237137935
+springs: 0.0009613009618758112
+heat: 0.001042530180086549
+focus: 0.001080796836436936
+gravity: 18
+density: 13.24
 ---
 what the [[tru]] computes and makes visible. the language of the [[tru]]
 

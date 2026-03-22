@@ -4,6 +4,12 @@ alias: veritas, Veritas, decentralized truth discovery, living truth, truth emer
 crystal-type: entity
 crystal-domain: cybics
 crystal-size: bridge
+diffusion: 0.0007881507666328333
+springs: 0.0012132093342248405
+heat: 0.001089774545010054
+focus: 0.000975993092585867
+gravity: 11
+density: 2.19
 ---
 
 a protocol for continuous collective truth discovery, scaling [[Bayesian Truth Serum]] into a persistent epistemic system

@@ -4,6 +4,12 @@ tags: species, genus
 crystal-type: entity
 crystal-domain: biology
 stake: 9490320683597934
+diffusion: 0.0001768381453837564
+springs: 0.00013733419390630396
+heat: 0.00016481273090631536
+focus: 0.00016258187704503037
+gravity: 4
+density: 0
 ---
 ![Lantana Camara Flower Seeds,Rare Perennial Herb Gorgeous Bonsai Suitable  Tree 25 Seeds Eco Pack. : Amazon.in: Garden & Outdoors](https://ipfs.io/ipfs/QmXXFLtXv6Mqavb9YfUFKupsekCRC4XQmVV59EqvoB4khr)
 

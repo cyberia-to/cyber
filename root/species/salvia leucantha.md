@@ -4,6 +4,12 @@ alias: leucantha
 crystal-type: entity
 crystal-domain: biology
 stake: 7028036478459194
+diffusion: 0.00013398796714585466
+springs: 0.00029868273301048096
+heat: 0.00025721699866939555
+focus: 0.00020804220320994805
+gravity: 2
+density: 6.09
 ---
 ![](https://ipfs.io/ipfs/QmbC3z3oJ481Dri3mR5GYqscD9vYSGTeRZwimMauBNaAha)
 

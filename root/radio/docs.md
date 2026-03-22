@@ -3,6 +3,12 @@ alias: iroh-docs, replica, document sync, radio docs
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+diffusion: 0.00019433426947227455
+springs: 0.0010132160830654588
+heat: 0.0007706408652630955
+focus: 0.0005552601327083869
+gravity: 5
+density: 2.78
 ---
 
 # docs

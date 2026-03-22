@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: biology
 stake: 9037772984333774
+diffusion: 0.00041869538575705056
+springs: 0.001222976540576046
+heat: 0.0009756337993295271
+focus: 0.0007713674149172345
+gravity: 6
+density: 1.01
 ---
 - whole brain emulation looks feasible at current state of technology
 - [[cyberlinks]] offer amazing opportunity for modeling physical and artificial [[brains]]

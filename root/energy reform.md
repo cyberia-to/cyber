@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 4797233431969601
+diffusion: 0.0003431999107184466
+springs: 0.00011269438665203107
+heat: 0.00020588233417305967
+focus: 0.0002465847381894414
+gravity: 6
+density: 14.89
 ---
 seven [[cips]] with [[$CYB]] optimizations
 

@@ -3,6 +3,12 @@ alias: signals, signaling, tx, transaction, txs, transactions
 tags: concept
 crystal-type: entity
 crystal-domain: information
+diffusion: 0.0035920928830771933
+springs: 0.0006141716815328751
+heat: 0.0015477455872262055
+focus: 0.0022898470634436707
+gravity: 35
+density: 4.98
 ---
 # signal
 

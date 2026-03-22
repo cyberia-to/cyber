@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14928704038293460
+diffusion: 0.00010959756939246216
+springs: 0.000022895316274533086
+heat: 0.00005396283294363059
+focus: 0.00007245994616731619
+gravity: 1
+density: 0
 ---
 - The Problem
 	- Current AI models (GPT, Claude, etc.) have fixed attention mechanisms

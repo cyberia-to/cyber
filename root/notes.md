@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14982404412531926
+diffusion: 0.00010722364868599256
+springs: 0.00004908444165107859
+heat: 0.00007794342864808268
+focus: 0.00008392584256793531
+gravity: 0
+density: 1.07
 ---
 emission must go to partial compute towards `pi`
 

@@ -3,6 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 5616164139106202
+diffusion: 0.0003092452162643472
+springs: 0.00005083930150541251
+heat: 0.00014319184643441142
+focus: 0.0001985127678706771
+gravity: 2
+density: 1.64
 ---
 a glycoprotein is a molecule that consists of a [[protein]] covalently bonded to one or more [[carbohydrate chains]]. glycoproteins are found throughout the body, especially on [[cell surfaces]] and in [[plasma]], where they play essential roles in [[cell signaling]], [[immune response]], [[coagulation]], and [[cell–cell recognition]]. they are synthesized in the [[endoplasmic reticulum]] and [[golgi apparatus]] of cells.
 

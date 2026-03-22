@@ -3,6 +3,12 @@ tags: chemistry
 crystal-type: process
 crystal-domain: chemistry
 stake: 4242329564838789
+diffusion: 0.0007090239110015078
+springs: 0.00014247885450346142
+heat: 0.00034014130737482505
+focus: 0.00046528387332675134
+gravity: 6
+density: 1.96
 ---
 Loss of electrons from an atom, ion, or molecule. Always paired with reduction (gain of electrons) in redox reactions -- one cannot occur without the other.
 

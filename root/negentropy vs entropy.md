@@ -5,6 +5,12 @@ crystal-domain: physics
 alias:: entropy vs negentropy
 status: draft
 stake: 2671349525753492
+diffusion: 0.00029907141106160705
+springs: 0.0002268546323144935
+heat: 0.00027858125802530346
+focus: 0.00027330834683020875
+gravity: 5
+density: 0
 ---
 # from entropy reduction to negentropy maximization: the dual thermodynamics of decentralized intelligence
 ## abstract

@@ -5,6 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 7469233871350226
+diffusion: 0.00014459907257560295
+springs: 0.00017168655808497444
+heat: 0.00017972449905675182
+focus: 0.00015975040352464212
+gravity: 2
+density: 1.8
 ---
 [[staple]]
 

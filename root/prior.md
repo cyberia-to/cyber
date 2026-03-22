@@ -4,6 +4,12 @@ alias: prior, prior probability, prior distribution, prior belief
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
+diffusion: 0.00020378743925793705
+springs: 0.0014073660457038248
+heat: 0.0010377866813339163
+focus: 0.0007316608696068897
+gravity: 7
+density: 3.85
 ---
 
 the [[belief]] an agent holds before observing evidence — the starting distribution in [[Bayes theorem]]

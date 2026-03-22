@@ -3,6 +3,12 @@ tags: cyber, spiri
 alias: spirituality
 crystal-type: entity
 crystal-domain: spiri
+diffusion: 0.00018827238940908526
+springs: 0.00047167298745767695
+heat: 0.00040767415261894766
+focus: 0.0003171729214656312
+gravity: 12
+density: 13.3
 ---
 # spiri
 
@@ -28,4 +34,3 @@ the sacred — [[temple]], ceremony, ritual, [[monastery]], [[banya]]. the pract
 - spiri → [[socio]]: shared values form the basis of [[governance]], [[constitution]], [[law]]
 - spiri → [[bio]]: reverence for life. [[ecology]], [[biodiversity]], the sacredness of living systems
 - spiri → [[cyber]]: the [[manifesto]] is cyber's spiritual document. the protocol exists because knowledge is sacred
-

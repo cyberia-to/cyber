@@ -3,6 +3,12 @@ tags: aip, cyb, prysm
 crystal-type: entity
 crystal-domain: cyber
 stake: 17230497352242240
+diffusion: 0.00046693043773050164
+springs: 0.00045626673935404266
+heat: 0.00048036624493294044
+focus: 0.0004664184896580457
+gravity: 13
+density: 20.88
 ---
 the onboarding [[aip]] in [[cyb]]
 

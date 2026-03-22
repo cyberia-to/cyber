@@ -3,6 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5029935053669619
+diffusion: 0.0002466546739859238
+springs: 0.000057596503051750994
+heat: 0.00012514006946649252
+focus: 0.00016563430180178355
+gravity: 5
+density: 3.6
 ---
 legal system where law emerges from judicial decisions and precedent rather than codified statutes
 

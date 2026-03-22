@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8269857632723714
+diffusion: 0.00014461289043739156
+springs: 0.00006705214262444446
+heat: 0.00010227811905946061
+focus: 0.00011287771181791979
+gravity: 3
+density: 1.87
 ---
 alias: stearic acid
 

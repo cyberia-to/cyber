@@ -3,6 +3,12 @@ tags: superhuman
 crystal-type: relation
 crystal-domain: superhuman
 stake: 1236898619959326
+diffusion: 0.00010722364868599256
+springs: 0.00007019991600688145
+heat: 0.00003419142694206788
+focus: 0.00008151008453347325
+gravity: 0
+density: 0
 ---
 A consequence is a result of a COURSE OF ACTION (or of a decision) taken by the DECISION MAKER (Synonym: outcome; see IMPACT)
 

@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 16338338862053182
+diffusion: 0.0001251211125595094
+springs: 0.00009097075551690836
+heat: 0.00011850897567523829
+focus: 0.00011355357806987341
+gravity: 1
+density: 1.18
 ---
 [source](http://langchain.com/stateofaiagents)
 

@@ -1,33 +1,83 @@
 ---
 tags: cyber, info
 alias: information
+icon: "\U00002B50"
 crystal-type: entity
 crystal-domain: info
+diffusion: 0.005364618333658055
+springs: 0.000615660621123263
+heat: 0.002090672536246441
+focus: 0.003285141860415252
+gravity: 44
+density: 7.4
 ---
 # info
 
-the domain of distinction. wherever one state differs from another, information exists. a [[bit]] is the smallest distinction — yes or no, 0 or 1. everything above that is structure built on bits: [[signals]], codes, messages, [[compression]], channels
+the science of [[bit]]. what can be distinguished — and how distinctions encode, transmit, and compose
 
-[[Shannon]] proved that every channel has a capacity — a maximum rate at which distinctions can be transmitted reliably. [[entropy]] measures how much surprise a source carries. these are physical laws, as binding as [[thermodynamics]]
+the primitive object is the bit: the minimal distinction. 0 or 1. yes or no. this or that. remove distinction and everything is noise. a [[qubit]] extends the bit with superposition — distinction that exists in multiple states simultaneously
 
-for [[cyber]], info is the native medium. every [[particle]] is a content-addressed distinction (an IPFS hash). every [[cyberlink]] carries information from source to target. [[cyberank]] computes relevance — which distinctions matter given what the graph already knows. the entire protocol is an information-processing architecture: neurons produce signals, the graph propagates them, and [[focus]] concentrates on what reduces uncertainty
+info is the second element of the [[form]] triad: [[proof]], [[bit]], [[step]]. together they produce the [[graph]]. [[math]] verifies the graph. info populates it with distinctions. [[comp]] traverses it with transformations
 
-## scope
+---
 
-signals — [[frequency]], [[wavelength]], [[spectrum]], [[sampling]], [[noise]]. the physics of carrying distinctions through a medium. [[radio]], [[light]], sound are all channels
+## the primitive
 
-coding — [[binary]], [[compression]], [[entropy]], [[bit]]. how to represent and shrink information without losing it. the [[crystal]] targets irreducibility: no particle is compressible given the rest
+a bit is not a number — it is a distinction. the number 0 and the number 1 are mathematical objects. the bit "0 vs 1" is an informational object — the act of telling apart
 
-channels — capacity, error correction, [[bandwidth]]. the constraints on how fast distinctions flow. Bostrom's [[bandwidth limiting]] is an information-theoretic throttle on the [[cybergraph]]
+[[entropy]] measures how many distinctions a system contains: $H = -\sum p_i \log p_i$. maximum entropy = maximum distinction = maximum information. zero entropy = no distinction = no information
+
+a [[qubit]] is a bit in superposition: $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ where $|\alpha|^2 + |\beta|^2 = 1$. the distinction exists but is not resolved until measured. [[entanglement]] creates distinctions between qubits that have no classical analog
+
+---
+
+## objects of info
+
+| object | what it is |
+|--------|-----------|
+| [[bit]] | minimal distinction |
+| [[qubit]] | distinction in superposition |
+| [[entropy]] | measure of distinction in a system |
+| code | mapping from one set of distinctions to another |
+| [[signal]] | distinction carried through a medium |
+| channel | constraint on how distinctions flow |
+| [[entanglement]] | correlated distinctions without classical link |
+
+---
+
+## info is not [[Shannon]] alone
+
+[[Shannon]] proved that every channel has a capacity — a maximum rate of reliable distinction-transmission. this is one theorem about one object (channel). info is much larger:
+
+- [[Kolmogorov complexity]] — the minimum description of a distinction (algorithmic information)
+- [[quantum information]] — distinctions in superposition, entanglement, teleportation
+- [[Fisher information]] — how much a measurement distinguishes between parameters
+- [[mutual information]] — how much one variable distinguishes about another
+
+all are different measures of the same primitive: distinction
+
+---
+
+## for [[cyber]]
+
+every [[particle]] is a content-addressed distinction — a [[Hemera]] hash that distinguishes this content from all other content. every [[cyberlink]] creates a new distinction: "A relates to B." [[entropy]] in the [[cybergraph]] = [[syntropy]] — the measure of how much structure the graph has beyond noise
+
+the [[bit]] is to info what the [[cyberlink]] is to [[cyber]]: the minimal act that creates something from nothing. one distinction. one link. one bit of [[knowledge]]
+
+---
 
 ## bridges
 
-- info → [[math]]: [[entropy]] is a function. coding theory is applied [[combinatorics]] and [[linear algebra]]
-- info → [[comp]]: data structures are information laid out for efficient access. [[databases]] are persistent channels
-- info → [[energo]]: [[Landauer]] principle — erasing one bit costs kT ln 2 joules. information and [[thermodynamics]] are unified
-- info → [[neuro]]: the [[brain]] is an information-processing organ. [[predictive coding]] says it minimizes surprise — [[free energy principle]]
-- info → [[cyber]]: the protocol is an information architecture. [[focus]] is a conserved information-relevance measure
+- info → [[math]]: [[entropy]] is a function. coding theory is [[combinatorics]] + [[linear algebra]]
+- info → [[comp]]: data structures are distinctions organized for efficient access
+- info → [[energo]]: [[Landauer]] principle — erasing one bit costs kT ln 2 joules
+- info → [[neuro]]: the [[brain]] minimizes surprise — [[free energy principle]]
+- info → [[cyber]]: the protocol is a distinction-processing architecture. [[focus]] concentrates on what reduces uncertainty
 
 ## key figures
 
-[[Shannon]], [[Ludwig Boltzmann]], [[Norbert Wiener]], [[Landauer]], [[Alan Turing]]
+[[Shannon]], [[Ludwig Boltzmann]], [[Norbert Wiener]], [[Rolf Landauer]], [[Alan Turing]]
+
+## pages
+
+{{query (and (page-tags [[info]]))}}

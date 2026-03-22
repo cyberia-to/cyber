@@ -3,6 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5119435677400394
+diffusion: 0.00010722364868599256
+springs: 0.00013250556946859868
+heat: 0.0001421314587730283
+focus: 0.00012178978693817998
+gravity: 0
+density: 9.55
 ---
 ## repair
 - lead:: [[@sutar]]

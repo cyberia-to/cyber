@@ -4,6 +4,12 @@ alias: soils
 crystal-type: entity
 crystal-domain: cyberia
 stake: 13425093559616420
+diffusion: 0.0012106396463650605
+springs: 0.00007459782247612169
+heat: 0.00043795525524357895
+focus: 0.0007152902209740733
+gravity: 41
+density: 0.15
 ---
 
 [[compost]] and [[biochar]]

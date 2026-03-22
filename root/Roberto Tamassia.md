@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4792758400783061
+diffusion: 0.0001847101578036759
+springs: 0.000588944036349595
+heat: 0.0004696856726173449
+focus: 0.0003629754243301808
+gravity: 2
+density: 3.74
 ---
 Italian-American computer scientist, professor at Brown University.
 

@@ -7,6 +7,12 @@ scalable: "true"
 wood: "yes"
 grow-speed: "4"
 stake: 7520493319486942
+diffusion: 0.00029925972040823807
+springs: 0.00042982394150224343
+heat: 0.0003973919788533069
+focus: 0.0003580554384254488
+gravity: 3
+density: 0
 ---
 [[staple]]
 

@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8122181603567934
+diffusion: 0.00015163694208924017
+springs: 0.00003582556114838748
+heat: 0.00007959430445147646
+focus: 0.0001024850002794303
+gravity: 2
+density: 1.47
 ---
 alias: moringinine
 

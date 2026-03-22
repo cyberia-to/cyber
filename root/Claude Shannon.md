@@ -4,6 +4,12 @@ tags: cyber, article, person
 crystal-type: entity
 crystal-domain: biology
 stake: 13795504095556744
+diffusion: 0.00039791915655514504
+springs: 0.0013203738059446627
+heat: 0.001041965521591866
+focus: 0.0008034648243793343
+gravity: 8
+density: 4.68
 ---
 1916-2001. American mathematician and electrical engineer
 

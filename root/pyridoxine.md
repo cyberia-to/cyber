@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8088618869668893
+diffusion: 0.0001890029601370447
+springs: 0.000035059141976056804
+heat: 0.0000879100077666097
+focus: 0.00012260122421465977
+gravity: 2
+density: 0.97
 ---
 alias: pyridoxine, vitamin b6
 

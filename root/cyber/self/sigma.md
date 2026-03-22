@@ -4,6 +4,12 @@ alias: own balances, protocol treasury, protocol balances, system balances, prot
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
+diffusion: 0.00013350113055713363
+springs: 0.001869888275765677
+heat: 0.0013241879671681593
+focus: 0.0008925546414418903
+gravity: 3
+density: 1.54
 ---
 
 the resources the [[cybergraph]] manages for itself — the protocol's own economic agency

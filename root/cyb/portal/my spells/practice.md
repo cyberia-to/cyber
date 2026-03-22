@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14875003664054992
+diffusion: 0.0005447207822557645
+springs: 0.0001985328950291939
+heat: 0.00033820814826654254
+focus: 0.00039956188928994376
+gravity: 1
+density: 7.69
 ---
 practical guidance for managing [[spells]]
 

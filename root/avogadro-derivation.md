@@ -2,6 +2,12 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
+diffusion: 0.00011400812724907998
+springs: 0.001764165586145798
+heat: 0.0012484102486158227
+focus: 0.0008359357891914331
+gravity: 1
+density: 1.28
 ---
 # Why 6.022 × 10²³: Deriving Avogadro's Number from [[knowledge graph]] Theory
 

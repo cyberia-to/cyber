@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 20594093520451588
+diffusion: 0.00011002089637827295
+springs: 0.0005646952780388708
+heat: 0.0004497514358205498
+focus: 0.00031436931876490363
+gravity: 1
+density: 6.44
 ---
 emerging paradigm of computations
 

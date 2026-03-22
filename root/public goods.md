@@ -3,6 +3,12 @@ tags: cybernomics, governance
 crystal-type: entity
 crystal-domain: economics
 stake: 10710783734472154
+diffusion: 0.0001679832207255585
+springs: 0.0007768969660872214
+heat: 0.0005961292899545117
+focus: 0.00043628655817984233
+gravity: 6
+density: 4.17
 ---
 resources that are non-excludable (cannot prevent access) and non-rival (one person's use does not diminish another's)
 

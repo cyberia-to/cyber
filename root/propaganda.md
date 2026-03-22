@@ -3,6 +3,12 @@ tags: governance
 crystal-type: entity
 crystal-domain: governance
 stake: 5150760895706166
+diffusion: 0.00019884815323933442
+springs: 0.00041769023669426973
+heat: 0.00036953462369520863
+focus: 0.000298638072366986
+gravity: 5
+density: 6.06
 ---
 systematic shaping of perception, belief, and behavior through selective presentation of information
 

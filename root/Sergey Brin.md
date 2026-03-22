@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4918059274006148
+diffusion: 0.0001356283735137949
+springs: 0.001358156018698191
+heat: 0.0009847839174060321
+focus: 0.0006722177758475525
+gravity: 3
+density: 7.63
 ---
 1973-. Russian-American computer scientist and entrepreneur.
 

@@ -3,6 +3,12 @@ tags: geography, pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 3233738899596334
+diffusion: 0.0004157219484762619
+springs: 0.00011836313002069887
+heat: 0.00022408746612269544
+focus: 0.000288187406468876
+gravity: 14
+density: 11.26
 ---
 continuous movement of [[water]] through Earth's systems
 

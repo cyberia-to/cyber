@@ -3,6 +3,12 @@ tags: cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 17023018633593620
+diffusion: 0.00010722364868599256
+springs: 0.0007013900612226003
+heat: 0.0005441251692235193
+focus: 0.00037285387655447546
+gravity: 0
+density: 4.64
 ---
 status:: TODO
 

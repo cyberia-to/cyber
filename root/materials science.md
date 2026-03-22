@@ -2,6 +2,12 @@
 tags: discipline, chemo, tech
 crystal-type: entity
 crystal-domain: chemo
+diffusion: 0.0001147043714129314
+springs: 0.00007118020421310596
+heat: 0.00010076615763787765
+focus: 0.00009885947849797174
+gravity: 2
+density: 14.05
 ---
 # materials science
 

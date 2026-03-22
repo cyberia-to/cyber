@@ -4,6 +4,12 @@ alias: graph noise, signal noise, noise floor, noise producer
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
+diffusion: 0.0003764540358047409
+springs: 0.0013931789661726893
+heat: 0.0010877747147088803
+focus: 0.0008237356506959428
+gravity: 2
+density: 1.96
 ---
 anything that moves [[focus]] distribution $\pi^*$ toward uniform. noise is the complement of [[syntropy]]
 

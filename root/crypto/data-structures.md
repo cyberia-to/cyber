@@ -3,6 +3,12 @@ alias: cryptographic data structures, crypto data structures
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
+diffusion: 0.0001707691214158309
+springs: 0.0005894747608781028
+heat: 0.0004713786491508661
+focus: 0.0003565027188015149
+gravity: 2
+density: 2.4
 ---
 # crypto/data-structures
 

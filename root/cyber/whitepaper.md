@@ -5,6 +5,12 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 stake: 19039223593637832
+diffusion: 0.001229116214203332
+springs: 0.0007611086509018856
+heat: 0.0009239505141132337
+focus: 0.0010276808051948654
+gravity: 7
+density: 1.08
 ---
 # cyber: a protocol for planetary superintelligence
 
@@ -48,7 +54,7 @@ This document specifies the complete architecture:
 
 - [[nox]] — computation model
 - [[trident]] — provable programming language
-- [[tri-kernel]] — ranking engine
+- [[tri-kernel]] — probabilistic engine
 - [[cyber/bbg]] — state structure and privacy layer
 - [[cyber/proofs]] — proof system
 - [[foculus]] — consensus mechanism

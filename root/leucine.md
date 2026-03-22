@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8108756510008317
+diffusion: 0.00012660747677256326
+springs: 0.00006670612149230994
+heat: 0.00009392454197934005
+focus: 0.0001021004832298413
+gravity: 2
+density: 3.07
 ---
 alias: leucine
 

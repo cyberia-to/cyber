@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5405837673338878
+diffusion: 0.00012912989696424947
+springs: 0.000031602201952692694
+heat: 0.00006538753839914295
+focus: 0.00008712311674776002
+gravity: 2
+density: 1.03
 ---
 sitosterol (β-sitosterol) is one of the most abundant [[phytosterols]] found widely in plants, nuts, seeds, vegetable oils, fruits, and legumes. structurally similar to cholesterol, sitosterol is known for its cholesterol-lowering properties and beneficial effects on prostate health, inflammation, and immune modulation
 

@@ -5,6 +5,12 @@ crystal-domain: biology
 scalable: "true"
 alias: camellia
 stake: 8178933135433584
+diffusion: 0.00010722364868599256
+springs: 0.00056305247063039
+heat: 0.0004249572090794482
+focus: 0.00030751900734799897
+gravity: 0
+density: 4.69
 ---
 [[staple]] [[drink]] and [[health]] as [[green tea]]
 

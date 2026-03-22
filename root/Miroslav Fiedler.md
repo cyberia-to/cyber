@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4980709710617692
+diffusion: 0.00014647642559877702
+springs: 0.0009975247421683698
+heat: 0.0007402254643233754
+focus: 0.0005205407283145678
+gravity: 3
+density: 2.06
 ---
 1926-2015. Czech mathematician.
 

@@ -4,6 +4,12 @@ tags: genus, species
 crystal-type: entity
 crystal-domain: biology
 stake: 7535138876097433
+diffusion: 0.00017832763258692692
+springs: 0.0004896777850265613
+heat: 0.0003943456325160326
+focus: 0.0003149362783046343
+gravity: 1
+density: 1.8
 ---
 wood-density:: 450
   market:: edible oils

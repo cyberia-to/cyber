@@ -3,6 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4106288616768009
+diffusion: 0.0001468368914061947
+springs: 0.00005142911124267156
+heat: 0.0000986833781960952
+focus: 0.00010858385471511646
+gravity: 5
+density: 0
 ---
 TODO lecture at [[bootcamp/v0]]
 

@@ -3,6 +3,12 @@ tags: cybernomics, governance
 crystal-type: entity
 crystal-domain: economics
 stake: 11003694866681968
+diffusion: 0.00011366810789201007
+springs: 0.00007429944820677203
+heat: 0.00009705955072166881
+focus: 0.00009853579855236915
+gravity: 2
+density: 2.58
 ---
 government decisions on spending and taxation that shape aggregate demand and resource allocation
 

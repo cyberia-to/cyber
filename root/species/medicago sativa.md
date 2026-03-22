@@ -7,6 +7,12 @@ scalable: "true"
 market: fodder
 supply: next-month
 stake: 8333321711369173
+diffusion: 0.00035986006900680986
+springs: 0.0003175792305771006
+heat: 0.00034886283604569304
+focus: 0.0003449763708856693
+gravity: 8
+density: 0.88
 ---
 nitrogener:: 200
 

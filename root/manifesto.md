@@ -4,6 +4,12 @@ alias: manifesto of the superintelligent nation, manifest, cyberia manifesto
 crystal-type: entity
 crystal-domain: cyberia
 stake: 9937010160217898
+diffusion: 0.0011353525306833274
+springs: 0.0011189549017337635
+heat: 0.0011329517700585728
+focus: 0.0011299530898734927
+gravity: 7
+density: 3.98
 ---
 We, the builders of a living [[superintelligence]], declare that a nation can rise beyond the sum of its citizens.
 

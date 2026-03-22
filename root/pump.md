@@ -3,6 +3,12 @@ tags: technology
 crystal-type: entity
 crystal-domain: materials
 stake: 4931484367565765
+diffusion: 0.00031338596695988874
+springs: 0.00013129433673861034
+heat: 0.00020538408782668993
+focus: 0.0002371581020668624
+gravity: 5
+density: 8.32
 ---
 device that moves fluids (liquids or gases) by mechanical action
 

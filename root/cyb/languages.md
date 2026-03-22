@@ -2,14 +2,22 @@
 tags: cyb, cyber, stark, architecture, article, core
 crystal-type: entity
 crystal-domain: cyber
-alias:: computation languages, language set, fourteen languages
+alias:: computation languages, language set, nineteen languages
+diffusion: 0.0007977946416143008
+springs: 0.0005088131234456637
+heat: 0.0006205130009505283
+focus: 0.0006756438580309465
+gravity: 22
+density: 1.82
 ---
 
 # Languages of [[superintelligence]]
 
 ## The Completeness Argument
 
-The 14 languages are not an arbitrary collection. They are the minimal complete set derivable from asking what modes of computation a mind requires — and applying one test to each candidate: *does this have irreducible primitives that no other language in the set can express?*
+The 19 languages are not an arbitrary collection. They are the minimal complete set derivable from asking what modes of computation a mind requires — and applying one test to each candidate: *does this have irreducible primitives that no other language in the set can express?*
+
+The languages split into two groups by a fundamental boundary: 14 proof languages (deterministic, provable, permanent) and 5 interface languages (side-effectful, interactive, mutable). Both groups are necessary — a mind that cannot prove is blind. A mind that cannot interact is deaf
 
 ```
 Boolean reasoning:   AND, OR, NOT over {0,1}      → no other algebra has this
@@ -115,16 +123,18 @@ Bt value tower (separate, F₂)
 
 ---
 
-## The Fourteen Languages
+## The Nineteen Languages
 
 each language has its own page with ops tables, use cases, and [[proof]] paths:
+
+### proof languages (14) — provable computation
 
 | # | Universe | Short | Long | Algebra | Page |
 |---|---|---|---|---|---|
 | 0 | Structure | Nox | Nox | Combinators | [[Nox]] |
 | 1 | Binary | Bt | Bitwise | F₂ tower | [[Bt]] |
 | 2 | Byte | Rs | Rustic | Z/2ⁿ | [[Rs]] |
-| 3 | Field | Tri | Trident | F_{pⁿ} | [[Trident]] |
+| 3 | Field | Tri | [[Trident]] | F_{pⁿ} | [[Trident]] |
 | 4 | Topology | Arc | Arc | [[category theory]] | [[Arc]] |
 | 5 | Geometry | Ren | Render | G(p,q,r) | [[Ren]] |
 | 6 | Curvature | Dif | Differential | (M, g) | [[Dif]] |
@@ -136,11 +146,35 @@ each language has its own page with ops tables, use cases, and [[proof]] paths:
 | 12 | Linear | Ten | Tensor | Contraction | [[Ten]] |
 | 13 | Resource | Tok | Token | Conservation | [[Tok]] |
 
+### interface languages (5) — human ↔ machine boundary
+
+the proof languages compute over binary trees and field elements. they have no concept of tables, text, files, or network. five interface languages bridge the gap — they handle what the robot needs to interact with humans and external systems. all five run inside [[nushell]] (embedded in [[cyb]]):
+
+| # | Universe | Short | Long | Primitive | Purpose |
+|---|---|---|---|---|---|
+| 14 | Tables | Tab | Tabular | Record | Relational operations: select, where, group-by, join, pivot |
+| 15 | Format | Fmt | Format | Encoding | Serialization: json↔noun, csv↔table, toml↔record |
+| 16 | Text | Str | String | Pattern | Text processing: regex, parse, split, replace, match |
+| 17 | Files | Fs | Filesystem | Path | File operations: read, write, glob, watch, navigate |
+| 18 | Network | Net | Network | Request | HTTP client: get, post, url, fetch, stream |
+
+the five interface languages have different properties from the fourteen proof languages:
+
+| Property | proof languages (0-13) | interface languages (14-18) |
+|---|---|---|
+| execution | [[Nox]] tree rewriting | [[nushell]] pipeline |
+| provable | yes (STARK) | no (side effects) |
+| deterministic | yes | no (IO, network, filesystem) |
+| data model | binary trees + field elements | structured records + streams |
+| persistence | [[cybergraph]] (permanent) | filesystem (mutable) |
+
+the interface languages cross the [[proof]] boundary — they interact with the external world. but they compose with the proof languages through [[Nox]] hints: a nushell pipeline can feed data into a proven computation, and a proven result can be formatted by nushell for display
+
 ---
 
 ## Compilation Architecture
 
-all fourteen languages share one toolchain. each programmer face has its own syntax and type rules. all compile through [[Nox]] — the structural IR — then to [[proof]] backends or native execution.
+all nineteen languages share one toolchain. each programmer face has its own syntax and type rules. all compile through [[Nox]] — the structural IR — then to [[proof]] backends or native execution.
 
 ```
                     ┌──────────────────────────────────────────────┐
@@ -303,7 +337,7 @@ rune (Rs + hint + host)   ← nervous system: ms start, async, host access
 
 ## The Ten and the Four
 
-The fourteen languages split into two groups by implementation readiness:
+The nineteen languages split into two groups by implementation readiness:
 
 ### Engineering-ready (10)
 
@@ -359,11 +393,27 @@ all fourteen compile through one structural IR. all fourteen share one [[proof]]
 
 | Layer | What it does | Examples |
 |-------|-------------|---------|
-| 14 computation languages | compute | field arithmetic, graph traversal, tensor contraction |
+| 14 proof languages | prove | field arithmetic, graph traversal, tensor contraction |
+| 5 interface languages | interact | tables, formats, text, files, network |
 | [[markup|Cybermark]] | address and navigate | `#cyber/truth`, `@alice`, `$BOOT`, `!rank(^truth)` |
 | [[rune]] | execute | [[Rs]] + [[Nox]] hints + host jets — runtime that runs cybermark actions |
 
 see [[markup]] for the full sigil grammar, dimensional navigation, and rendering rules
+
+---
+
+## the FORM triad
+
+the nineteen languages are manifestations of three primitives — [[proof]], [[bit]], [[step]] — the atoms of the [[form]] triad
+
+every mathematical object is a composition of all three:
+- [[bit]] (info): what elements are distinguished
+- [[step]] (comp): what operations transform them
+- [[proof]] (math): what properties are verified
+
+a [[algebra|group]] is bit + step + proof: elements (bit), operation (step), axioms hold (proof). a [[graph theory|graph]] is bit + bit: elements + relations. a [[Turing machine]] is step + step + step: transitions all the way down
+
+the fourteen proof languages ARE the step. the five interface languages are the channel through which bits flow. [[proof]] is what the [[tri-kernel]] verifies. together: all computation a mind requires
 
 ---
 

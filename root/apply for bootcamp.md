@@ -4,6 +4,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 6683906580214362
+diffusion: 0.00018045913094873577
+springs: 0.00006423971055895982
+heat: 0.00011350173640006191
+focus: 0.0001322018259220665
+gravity: 3
+density: 1.44
 ---
 TODO not actual anymore, rewrite the process
 

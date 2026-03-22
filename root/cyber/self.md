@@ -4,6 +4,12 @@ alias: autonomous neuron, protocol neuron, self
 crystal-type: entity
 crystal-domain: cyber
 stake: 40000000000000000
+diffusion: 0.00011754024626761228
+springs: 0.0015948446734617232
+heat: 0.0011389977349307418
+focus: 0.0007650230721584615
+gravity: 1
+density: 5.67
 ---
 everything the [[cybergraph]] does by itself — without any [[neuron]]'s instruction
 

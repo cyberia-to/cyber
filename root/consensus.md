@@ -5,6 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
 stake: 37820685390931024
+diffusion: 0.008288087230742562
+springs: 0.0005396809765075947
+heat: 0.0029371961883995247
+focus: 0.004893387146003401
+gravity: 100
+density: 14.22
 ---
 the moment a [[signal]] becomes [[knowledge]]. before consensus, a [[cyberlink]] is a proposal. after, it has [[finality]]
 

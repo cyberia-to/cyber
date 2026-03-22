@@ -6,6 +6,12 @@ crystal-domain: cyber
 crystal-size: deep
 whitepaper: neural language for superintelligence
 stake: 43936669831471920
+diffusion: 0.0020970828423846136
+springs: 0.0008807614058758878
+heat: 0.001268347985171876
+focus: 0.0015664394399894281
+gravity: 27
+density: 5.54
 ---
 semantic [[language]] for [[neurons]] over the [[cybergraph]]. whitepaper: [[neural language for superintelligence]]
 

@@ -4,6 +4,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4913584242819610
+diffusion: 0.0002082968114414955
+springs: 0.0002125248166158344
+heat: 0.00023325620445729343
+focus: 0.00021455709159695397
+gravity: 3
+density: 3.13
 ---
 1887-1961. Austrian-Irish physicist.
 

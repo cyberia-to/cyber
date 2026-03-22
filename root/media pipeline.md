@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 17868799527849454
+diffusion: 0.00010722364868599256
+springs: 0.0003379128385688332
+heat: 0.0002898382308828618
+focus: 0.00021295332209021587
+gravity: 0
+density: 1.24
 ---
 
 how the [[crystal]] handles media files from authoring to publishing

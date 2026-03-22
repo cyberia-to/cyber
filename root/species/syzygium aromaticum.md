@@ -7,6 +7,12 @@ wood-availability: local
 wood-density: "900"
 wood-durability: high
 stake: 6907210636422646
+diffusion: 0.0001452245577968455
+springs: 0.000542831529963811
+heat: 0.00042053203112190436
+focus: 0.0003195681441119428
+gravity: 2
+density: 2.5
 ---
 [[high margin]] [[oil]] for [[health]]
 

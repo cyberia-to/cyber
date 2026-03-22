@@ -5,6 +5,12 @@ crystal-type: process
 crystal-domain: cyber
 crystal-size: deep
 authors: mastercyb
+diffusion: 0.0003128573797334053
+springs: 0.0010310011859317964
+heat: 0.0008257203391920859
+focus: 0.0006308731134846506
+gravity: 11
+density: 1.69
 ---
 
 a self-evaluating [[knowledge]] graph with two-dimensional epistemic signal

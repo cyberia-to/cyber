@@ -4,6 +4,12 @@ alias: LMSR, Logarithmic Market Scoring Rule, Hanson market scoring rule, log ma
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
+diffusion: 0.00030746747480452444
+springs: 0.0006983463439723999
+heat: 0.0005987726763335773
+focus: 0.0004829921758606914
+gravity: 3
+density: 1.82
 ---
 
 a market mechanism for [[prediction markets]] invented by Robin Hanson (2003) — the canonical automated market maker for thin markets

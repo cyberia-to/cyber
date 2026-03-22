@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8122181603567934
+diffusion: 0.00013267771698123812
+springs: 0.00006253513876909829
+heat: 0.00009445117980525011
+focus: 0.00010398963608239723
+gravity: 3
+density: 3.06
 ---
 alias: lysine
 

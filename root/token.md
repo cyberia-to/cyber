@@ -6,6 +6,12 @@ crystal-type: entity
 crystal-domain: economics
 crystal-size: bridge
 stake: 32044477863753520
+diffusion: 0.011877808053958796
+springs: 0.0005177664819082758
+heat: 0.004015534923050546
+focus: 0.0068973409561619015
+gravity: 128
+density: 8.17
 ---
 the type system of [[value]]. two axes — fungible or unique, movable or immovable — produce four kinds
 

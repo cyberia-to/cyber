@@ -3,6 +3,12 @@ alias: encryption, crypto encryption
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
+diffusion: 0.000331767392836589
+springs: 0.00011030898186629458
+heat: 0.00019282217459235285
+focus: 0.00023754082589665036
+gravity: 8
+density: 1.52
 ---
 # crypto/encryption
 

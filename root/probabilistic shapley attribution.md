@@ -4,6 +4,12 @@ crystal-type: measure
 crystal-domain: economics
 status: draft
 stake: 8804908634226972
+diffusion: 0.00021942099734334033
+springs: 0.00009081918966541681
+heat: 0.00015555300335827542
+focus: 0.00016806685624294813
+gravity: 6
+density: 0
 ---
 ## abstract
 

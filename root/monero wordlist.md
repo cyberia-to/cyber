@@ -5,6 +5,12 @@ crystal-domain: computer science
 source: https://github.com/monero-project/monero/blob/master/src/mnemonics/english.h
 words: "1626"
 stake: 9763704406993760
+diffusion: 0.00011121692922439959
+springs: 0.00029486153376351765
+heat: 0.0002669711013555493
+focus: 0.00019746114501236237
+gravity: 1
+density: 3.92
 ---
 the english mnemonic wordlist for [[monero]] [[seed]] generation
 

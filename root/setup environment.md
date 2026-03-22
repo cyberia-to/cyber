@@ -3,6 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 4063328317377237
+diffusion: 0.00019836856038828106
+springs: 0.000022858870457901604
+heat: 0.00007583399679146265
+focus: 0.00012120874068980198
+gravity: 1
+density: 0
 ---
 if you want to join our game you must play the rules for basic software environment
 

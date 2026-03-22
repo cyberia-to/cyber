@@ -4,6 +4,12 @@ crystal-type: pattern
 crystal-domain: cyb
 crystal-size: deep
 status: draft
+diffusion: 0.00012662576903535626
+springs: 0.0007963886567205351
+heat: 0.0006085959222537779
+focus: 0.00042394866598458877
+gravity: 2
+density: 2.59
 ---
 # cyb: the immortal robot
 

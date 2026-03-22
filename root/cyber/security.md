@@ -4,6 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: draft
 stake: 21118892632327500
+diffusion: 0.00018851330417289563
+springs: 0.00010433796842820856
+heat: 0.000147334707095196
+focus: 0.0001550249840339476
+gravity: 8
+density: 0.44
 ---
 # nox security
 

@@ -3,6 +3,12 @@ tags: chemistry, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3198589563731156
+diffusion: 0.00011799166256102974
+springs: 0.000042255921562003955
+heat: 0.00007729579911425332
+focus: 0.0000871317675719656
+gravity: 1
+density: 1.28
 ---
 SI unit of amount of substance
 

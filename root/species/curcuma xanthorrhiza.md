@@ -4,6 +4,12 @@ alias: temulawak
 crystal-type: entity
 crystal-domain: biology
 stake: 6813234981505332
+diffusion: 0.00010722364868599256
+springs: 0.00018314268895976526
+heat: 0.00018183294506488
+focus: 0.0001449212200439
+gravity: 0
+density: 1.64
 ---
 [[staple]]
 

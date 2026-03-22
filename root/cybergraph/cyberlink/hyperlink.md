@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: relation
 crystal-domain: cyber
 stake: 2894450171453301
+diffusion: 0.00010722364868599256
+springs: 0.0032800538716012515
+heat: 0.0022533603616399236
+focus: 0.0014883000581513374
+gravity: 0
+density: 7.11
 ---
 difference between [[cyberlink]] and hyperlink
 

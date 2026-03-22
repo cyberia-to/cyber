@@ -3,6 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4756958151290751
+diffusion: 0.00010722364868599256
+springs: 0.0006263947551832156
+heat: 0.00046949813079519444
+focus: 0.00033542987705699554
+gravity: 0
+density: 3.03
 ---
 [[batuka]] biome
 

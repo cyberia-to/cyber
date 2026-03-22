@@ -5,6 +5,12 @@ crystal-domain: economics
 crystal-size: article
 alias: cyber tokens, token registry
 stake: 40000000000000000
+diffusion: 0.000424243095564553
+springs: 0.0014880581991725073
+heat: 0.0011614917224825787
+focus: 0.0008908373520305329
+gravity: 3
+density: 7.5
 ---
 # cyber tokens
 
@@ -55,4 +61,8 @@ net new supply: $\text{net} = E(t) - F \cdot \beta$. when fees exceed emission, 
 
 new [[$CYB]] is minted only when Δπ > 0 — inflation is literally evidence of [[knowledge]] creation
 
-see [[cyber/nomics]] for the verbs and rules that operate across these tokens. see [[cyber/tokenomics]] for the full monetary policy. see [[cybernomics]] for the universal theory
+## all tokens
+
+{{query (and (page-tags [[ticker]]))}}
+
+see [[cyber/nomics]] for the verbs and rules that operate across these tokens. see [[cybernomics]] for the universal theory

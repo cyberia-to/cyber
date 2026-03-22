@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8028205948650618
+diffusion: 0.00012931835980315348
+springs: 0.00006172545137100953
+heat: 0.00010602443024821465
+focus: 0.00010438170136252119
+gravity: 3
+density: 1.07
 ---
 alias: thiamine, vitamin b1
 

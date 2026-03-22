@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8283282726283331
+diffusion: 0.0001860454876295479
+springs: 0.00006639715093394706
+heat: 0.00011291288486007991
+focus: 0.00013552446606697233
+gravity: 5
+density: 1.28
 ---
 alias: saponins
 

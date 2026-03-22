@@ -1,0 +1,29 @@
+---
+tags: mathematics
+crystal-type: entity
+crystal-domain: mathematics
+stake: 4931484367565765
+diffusion: 0.00010722364868599256
+springs: 0.0003068876762991304
+heat: 0.0002624998264857426
+focus: 0.00019817809252988138
+gravity: 0
+density: 6
+---
+The study of mathematical structure through [[groups]], [[rings]], [[fields]], and their operations.
+
+A [[group]] is a set with an associative binary operation, identity element, and inverses
+
+A [[ring]] extends groups with a second operation (addition and multiplication)
+
+A [[field]] is a ring where every nonzero element has a multiplicative inverse
+
+[[homomorphisms]] are structure-preserving maps between algebraic objects
+
+[[Galois theory]] connects field extensions to group symmetry, resolving solvability of polynomials
+
+[[Boolean algebra]] underpins [[logic]], digital circuits, and [[set theory]]
+
+Foundation of [[cryptography]], [[number theory]], [[linear algebra]], and [[category theory]]
+
+Related:: [[geometry]], [[topology]], [[combinatorics]], [[game theory]]

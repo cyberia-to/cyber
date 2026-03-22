@@ -9,6 +9,12 @@ supply: next-month
 market: technical oil
 propagate-plants: seeds
 stake: 7593721102539395
+diffusion: 0.00011657831326085597
+springs: 0.0003230666615513907
+heat: 0.0002708896767356653
+focus: 0.00020938709044297557
+gravity: 2
+density: 2.9
 ---
 ![image.png](https://ipfs.io/ipfs/Qma8Et35R8iZQyy6cnqc9czJRhTgbzFEaYw6GgUzCNdQ5U){:height 407, :width 628}
 

@@ -4,6 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: computer science
 stake: 7887242466274646
+diffusion: 0.00011002089637827295
+springs: 0.0006586644105338616
+heat: 0.0005166103369424048
+focus: 0.00035593183873777127
+gravity: 1
+density: 12.67
 ---
 TODO make visualization of [[soft3]] architecture
 

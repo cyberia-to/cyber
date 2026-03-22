@@ -3,6 +3,12 @@ alias: blobs, iroh-blobs, radio blob
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+diffusion: 0.0002582121049399323
+springs: 0.0011484743398086524
+heat: 0.0008826550498629013
+focus: 0.0006501793643851338
+gravity: 9
+density: 6.27
 ---
 
 the fundamental data unit of [[radio]]: content-addressed binary data of any size, from bytes to terabytes

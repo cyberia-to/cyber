@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5003084866550385
+diffusion: 0.00013611360737422856
+springs: 0.0000745554811820069
+heat: 0.00011127911267610029
+focus: 0.00011267927057693497
+gravity: 3
+density: 0
 ---
 1920-1958, British biophysicist and X-ray crystallographer
 

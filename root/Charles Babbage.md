@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4868833930954221
+diffusion: 0.0002521813382976587
+springs: 0.00015398571938931432
+heat: 0.00020108757541642048
+focus: 0.000212503900048905
+gravity: 3
+density: 2.34
 ---
 1791-1871. British mathematician, engineer, and inventor.
 

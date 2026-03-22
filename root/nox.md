@@ -6,6 +6,12 @@ crystal-domain: cyber
 subgraph: true
 repo: ../nox
 exclude: ".claude/**, target/**, CLAUDE.md"
+diffusion: 0.0021529145114107143
+springs: 0.00025919016917663035
+heat: 0.0008606571487396801
+focus: 0.0013263457362062653
+gravity: 74
+density: 3.09
 ---
 the composition language and virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
 
@@ -48,5 +54,21 @@ zheng (proofs)
   ↓
 bbg (state)
 ```
+
+## computation as cyberlink
+
+```
+ask(ν, subject, formula, τ, a, v, t) → answer
+```
+
+the seven arguments of `ask` are the seven fields of a [[cyberlink]]. computation IS linking
+
+1. compute `order_axon = H(formula, subject)`
+2. lookup: does `axon(formula, subject)` have a verified result in the [[cybergraph]]?
+   → yes: return cached result (zero computation — memoized)
+   → no: `reduce(subject, formula)`, prove via [[zheng|STARK]]
+3. link `order_axon → result` (with [[proof]])
+
+the [[cybergraph]] is a universal, persistent, proven memo cache. every computation anyone ever did is reusable by everyone. the more the graph grows, the fewer computations actually execute
 
 see [[cyber/nox]] for the full specification, [[zheng]] for the proof system, [[trident]] for the high-level language

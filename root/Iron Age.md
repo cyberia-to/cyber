@@ -3,6 +3,12 @@ tags: time, history
 crystal-type: entity
 crystal-domain: history
 stake: 5291927788590618
+diffusion: 0.0002794293197213538
+springs: 0.00013955348612456516
+heat: 0.00020585142958247458
+focus: 0.0002227509916145385
+gravity: 7
+density: 7.38
 ---
 period ~1200 BCE-600 CE defined by widespread use of [[iron]] tools and weapons
 

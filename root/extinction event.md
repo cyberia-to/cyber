@@ -4,6 +4,12 @@ alias: extinction events
 crystal-type: process
 crystal-domain: biology
 stake: 6490910689769451
+diffusion: 0.00021359567437979028
+springs: 0.00021077906415467763
+heat: 0.0002360680214403933
+focus: 0.0002172451607243743
+gravity: 5
+density: 3.13
 ---
 rapid, widespread loss of species across multiple taxa and habitats
 

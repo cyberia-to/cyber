@@ -3,6 +3,12 @@ tags: governance, computer science
 crystal-type: process
 crystal-domain: computer science
 stake: 4405383428435585
+diffusion: 0.00020556974921714664
+springs: 0.0002814367293963625
+heat: 0.0002688067508814872
+focus: 0.00024097724360377644
+gravity: 4
+density: 4.57
 ---
 systematic observation, collection, and analysis of information about individuals or populations
 

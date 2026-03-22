@@ -3,6 +3,12 @@ alias: BlobTicket, blob ticket, radio ticket
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
+diffusion: 0.0001266225366049729
+springs: 0.0017841533847976739
+heat: 0.0012626931406090993
+focus: 0.0008510959118635976
+gravity: 1
+density: 7.3
 ---
 
 # ticket

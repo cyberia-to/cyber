@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8283282726283331
+diffusion: 0.00020193916834794015
+springs: 0.00012678557549151704
+heat: 0.00016394230275405532
+focus: 0.00017179371737223404
+gravity: 8
+density: 1.73
 ---
 alias: quercetin
 

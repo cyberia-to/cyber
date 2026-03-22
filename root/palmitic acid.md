@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8249719992384290
+diffusion: 0.00022430148865397025
+springs: 0.00006005098910235928
+heat: 0.00012239836043452672
+focus: 0.0001546457131445963
+gravity: 4
+density: 1.43
 ---
 alias: palmitic acid
 

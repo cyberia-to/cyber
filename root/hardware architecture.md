@@ -3,6 +3,12 @@ tags: cyber, hardware, architecture
 crystal-type: article
 crystal-domain: cyber
 alias:: hardware architecture, compute-memory split
+diffusion: 0.00010722364868599256
+springs: 0.00022777410290113534
+heat: 0.00020264045374735295
+focus: 0.00016247214596280539
+gravity: 0
+density: 0.55
 ---
 # hardware architecture
 

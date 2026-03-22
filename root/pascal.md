@@ -3,6 +3,12 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3210306009019548
+diffusion: 0.00025716624738389464
+springs: 0.00006744025608728273
+heat: 0.00015963511556408511
+focus: 0.00018074222363094683
+gravity: 2
+density: 2.49
 ---
 SI unit of [[pressure]], equal to one [[newton]] per square meter
 

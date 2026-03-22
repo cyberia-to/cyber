@@ -3,6 +3,12 @@ tags: prysm, cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 16344441177307554
+diffusion: 0.00024723626327222657
+springs: 0.0005151009444735916
+heat: 0.00046292422692658145
+focus: 0.0003707332603635023
+gravity: 4
+density: 6.3
 ---
 
 numeric display atom in [[prysm]]

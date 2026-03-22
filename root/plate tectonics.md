@@ -3,6 +3,12 @@ tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5394446684864052
+diffusion: 0.0003551213797406312
+springs: 0.00006557558535283415
+heat: 0.00016444711267638793
+focus: 0.0002301227880114405
+gravity: 10
+density: 5.07
 ---
 theory describing the movement of lithospheric plates on Earth's asthenosphere
 

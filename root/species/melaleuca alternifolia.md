@@ -4,6 +4,12 @@ alias: tea tree
 crystal-type: entity
 crystal-domain: biology
 stake: 6987761197780345
+diffusion: 0.00010722364868599256
+springs: 0.00019649658610310886
+heat: 0.0001859919435989158
+focus: 0.00014975918889371018
+gravity: 0
+density: 2.84
 ---
 [[high margin]]
 

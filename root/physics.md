@@ -2,6 +2,12 @@
 tags: discipline, quantum, energo, cosmo
 crystal-type: entity
 crystal-domain: quantum
+diffusion: 0.0009654728975894667
+springs: 0.00018755990782430053
+heat: 0.00045417657985069023
+focus: 0.0006298397371121534
+gravity: 15
+density: 14.85
 ---
 # physics
 

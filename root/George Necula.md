@@ -3,6 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4980709710617692
+diffusion: 0.00011400812724907998
+springs: 0.0009392319994085538
+heat: 0.0006812000244004186
+focus: 0.0004750136683271837
+gravity: 1
+density: 2.02
 ---
 Romanian-American computer scientist, professor at UC Berkeley.
 

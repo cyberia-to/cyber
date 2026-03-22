@@ -3,6 +3,12 @@ tags: cyb, cyber, core
 alias: sound particle, audio, waveform, acoustic
 crystal-type: entity
 crystal-domain: cyb
+diffusion: 0.0002886999362421293
+springs: 0.0007428355128239987
+heat: 0.0006223454923659422
+focus: 0.0004916697204414464
+gravity: 11
+density: 2.84
 ---
 waveforms — acoustic knowledge — as [[particle]]. the native format for voice, music, animal communication, physical signals, and any knowledge that is a pressure wave over time
 

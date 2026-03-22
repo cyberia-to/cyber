@@ -3,6 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 4712207839425363
+diffusion: 0.00013458699425211764
+springs: 0.0000867480107941975
+heat: 0.0001140078038772267
+focus: 0.00011611946113976192
+gravity: 3
+density: 0
 ---
 TODO lecture at [[bootcamp/v0]]
 

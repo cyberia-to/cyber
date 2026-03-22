@@ -4,6 +4,12 @@ alias: core
 crystal-type: pattern
 crystal-domain: cyber
 stake: 9710004032755294
+diffusion: 0.0002065863608322569
+springs: 0.0008555192719086357
+heat: 0.0006780888950113287
+focus: 0.0004955667409909786
+gravity: 1
+density: 48.72
 ---
 # core
 

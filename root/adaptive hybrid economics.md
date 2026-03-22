@@ -3,6 +3,12 @@ tags: cyber, uhash
 crystal-type: entity
 crystal-domain: cybics
 stake: 9378038082917506
+diffusion: 0.00014903010592233533
+springs: 0.000056442792067475227
+heat: 0.0000926550508314296
+focus: 0.00010997890074769473
+gravity: 2
+density: 0.17
 ---
 
 ## Minimal Implementation Spec

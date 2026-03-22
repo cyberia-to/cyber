@@ -4,6 +4,12 @@ tags: aos
 crystal-type: entity
 crystal-domain: biology
 stake: 7571752767623661
+diffusion: 0.00020980055798590258
+springs: 0.0014790087636105743
+heat: 0.001087365963344815
+focus: 0.0007660761007450768
+gravity: 2
+density: 9.8
 ---
 energy layer
 

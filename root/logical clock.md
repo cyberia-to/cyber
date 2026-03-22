@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 16432314516970496
+diffusion: 0.00011853988546201182
+springs: 0.00003946638241287545
+heat: 0.00007821360019278259
+focus: 0.00008675257749342396
+gravity: 2
+density: 0
 ---
 concept used in distributed systems to provide a way of ordering events without relying on synchronized physical clocks
 

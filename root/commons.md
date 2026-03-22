@@ -3,6 +3,12 @@ tags: cybernomics, governance
 crystal-type: entity
 crystal-domain: economics
 stake: 10827948187356080
+diffusion: 0.00011889485468110004
+springs: 0.0014912288401970934
+heat: 0.0010623934067956913
+focus: 0.0007192947607588071
+gravity: 2
+density: 3.65
 ---
 shared resources accessible to a community, governed by collective rules rather than private ownership or state control
 

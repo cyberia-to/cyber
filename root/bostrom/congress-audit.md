@@ -3,6 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11212638140991634
+diffusion: 0.00010722364868599256
+springs: 0.00007019991600688145
+heat: 0.00003419142694206788
+focus: 0.00008151008453347325
+gravity: 0
+density: 0
 ---
 [first multisig](https://github.com/cybercongress/cybercongress/commit/3498fddfddb71d2c66cda35ebdcbc64363ea3447#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5R71) with gleb
 

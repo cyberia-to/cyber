@@ -3,6 +3,12 @@ tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3201518675053254
+diffusion: 0.00010722364868599256
+springs: 0.0000553251446556933
+heat: 0.00008155866795810787
+focus: 0.00008652110133132473
+gravity: 0
+density: 3.94
 ---
 SI unit of electric potential difference (voltage)
 

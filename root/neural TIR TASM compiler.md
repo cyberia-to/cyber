@@ -9,6 +9,12 @@ stack: Rust, burn (wgpu backend), rayon, Triton VM
 priority: high — critical path for cyb agent runtime proof performance
 version: 2.0 (incorporates architecture review)
 stake: 47598058984094576
+diffusion: 0.00010722364868599256
+springs: 0.0005553856611352998
+heat: 0.0004419323055260608
+focus: 0.0003086139837887944
+gravity: 0
+density: 0.52
 ---
 
 # Neural Compiler: TIR → TASM (Triton VM Assembly)

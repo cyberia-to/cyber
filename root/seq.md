@@ -3,6 +3,12 @@ tags: cyber, language
 alias: Seq, sequence language, causality language
 crystal-type: entity
 crystal-domain: cyber
+diffusion: 0.00013719299826451213
+springs: 0.00007309684597103481
+heat: 0.00010672202229331822
+focus: 0.00011186995738222872
+gravity: 5
+density: 1.54
 ---
 the event language. time in distributed systems is not a clock — it is the ordering. the causal structure that determines what could have influenced what
 

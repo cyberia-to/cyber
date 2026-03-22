@@ -3,6 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8243007445604482
+diffusion: 0.00016828593215871193
+springs: 0.00008098740996697657
+heat: 0.00011498912328929677
+focus: 0.0001314370137273066
+gravity: 4
+density: 1.31
 ---
 alias: ellagic acid
 

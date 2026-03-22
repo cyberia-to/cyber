@@ -3,6 +3,12 @@ tags: aip, cyb, prysm
 crystal-type: entity
 crystal-domain: cyber
 stake: 17912736197680926
+diffusion: 0.0008214768920266675
+springs: 0.0008405025802754457
+heat: 0.0008517231529875046
+focus: 0.0008332338506934577
+gravity: 16
+density: 20.32
 ---
 the search and discovery [[aip]] in [[cyb]]
 

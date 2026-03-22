@@ -3,6 +3,12 @@ alias: zero knowledge proofs, zero-knowledge proofs, ZKP, crypto zero-knowledge
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
+diffusion: 0.0004944025175293877
+springs: 0.0002419604877392766
+heat: 0.00033267026115188595
+focus: 0.00038632345731684904
+gravity: 14
+density: 2.26
 ---
 # crypto/zero-knowledge
 

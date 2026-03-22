@@ -4,6 +4,12 @@ tags: discipline, crypto, math, comp
 crystal-type: entity
 crystal-domain: crypto
 stake: 7021323931679387
+diffusion: 0.002053107744550114
+springs: 0.00016655271837485666
+heat: 0.0007630047915886818
+focus: 0.0012291206461052344
+gravity: 37
+density: 6.57
 ---
 # cryptography
 

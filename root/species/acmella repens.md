@@ -8,6 +8,12 @@ supply: "no"
 margin: high
 autonomy: extra
 stake: 8480387508999516
+diffusion: 0.00010722364868599256
+springs: 0.0009209947222589635
+heat: 0.0006600632327142087
+focus: 0.0004619228875635211
+gravity: 0
+density: 3.1
 ---
 [[biohacking]]
 

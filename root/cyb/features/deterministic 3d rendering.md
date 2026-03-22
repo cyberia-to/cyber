@@ -5,6 +5,12 @@ crystal-domain: cyber
 crystal-size: deep
 alias:: deterministic 3d rendering, deterministic rendering, cyberworld rendering
 stake: 26362001898883148
+diffusion: 0.00010722364868599256
+springs: 0.002645260752825776
+heat: 0.0018356483902618106
+focus: 0.0012143197282430756
+gravity: 0
+density: 0.91
 ---
 
 # deterministic 3d rendering

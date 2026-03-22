@@ -2,6 +2,12 @@
 tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
+diffusion: 0.00011349048562508279
+springs: 0.0019093395145460003
+heat: 0.0013449452507769584
+focus: 0.0008985361473317215
+gravity: 1
+density: 6.64
 ---
 # com
 

@@ -3,6 +3,12 @@ tags: cyber, geo
 alias: geography
 crystal-type: entity
 crystal-domain: geo
+diffusion: 0.00024251430860942509
+springs: 0.00010346188169984343
+heat: 0.0001607020254915528
+focus: 0.00018443612391297375
+gravity: 15
+density: 20.22
 ---
 # geo
 

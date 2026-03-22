@@ -3,6 +3,12 @@ tags: biology
 crystal-type: process
 crystal-domain: biology
 stake: 4278129814331100
+diffusion: 0.000541288416146785
+springs: 0.00014300603164925057
+heat: 0.000281998156599103
+focus: 0.0003699456488879835
+gravity: 4
+density: 1.93
 ---
 
 Copying a DNA sequence into messenger RNA (mRNA). The first step of gene expression -- reading the genome.

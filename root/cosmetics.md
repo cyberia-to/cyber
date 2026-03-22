@@ -2,8 +2,13 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
-focus: "true"
 stake: 9531816427327658
+diffusion: 0.0003248168460017463
+springs: 0.00004972216222773153
+heat: 0.00015060722413938617
+focus: 0.00020744651649706717
+gravity: 8
+density: 1.76
 ---
 definition
 

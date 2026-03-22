@@ -2,6 +2,12 @@
 tags: discipline, socio, game
 crystal-type: entity
 crystal-domain: socio
+diffusion: 0.00010949151003780194
+springs: 0.00007637422926734698
+heat: 0.00010030747005128618
+focus: 0.00009771951780936104
+gravity: 1
+density: 14.91
 ---
 # political science
 

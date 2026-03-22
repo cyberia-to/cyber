@@ -2,6 +2,12 @@
 tags: discipline, ai, comp, neuro
 crystal-type: entity
 crystal-domain: ai
+diffusion: 0.00010722364868599256
+springs: 0.0002031480141813792
+heat: 0.00019426241553020137
+focus: 0.00015340871170344832
+gravity: 0
+density: 17.85
 ---
 # artificial intelligence
 

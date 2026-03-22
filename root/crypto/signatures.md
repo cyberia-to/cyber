@@ -3,6 +3,12 @@ alias: signature, signatures, digital signature, cryptographic signature, crypto
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
+diffusion: 0.002458656518570044
+springs: 0.00042597061644626585
+heat: 0.0010753133628519304
+focus: 0.0015721821167892678
+gravity: 19
+density: 3.44
 ---
 # crypto/signatures
 

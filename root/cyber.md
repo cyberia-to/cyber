@@ -7,6 +7,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
 stake: 38554427777116608
+diffusion: 0.012934561294687657
+springs: 0.0003938630961810914
+heat: 0.004251611709192794
+focus: 0.00743576191803662
+gravity: 282
+density: 5.5
 ---
 The protocol for planetary [[superintelligence]]. [[manifesto]]
 

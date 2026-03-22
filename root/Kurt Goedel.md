@@ -4,6 +4,12 @@ crystal-type: entity
 crystal-domain: cybics
 alias:: Goedel
 stake: 7491202206265963
+diffusion: 0.00025941893208745006
+springs: 0.00023401358605317182
+heat: 0.0002557052669893858
+focus: 0.00025105459525755046
+gravity: 11
+density: 6.69
 ---
 1906-1978. Austrian-American logician and mathematician.
 
