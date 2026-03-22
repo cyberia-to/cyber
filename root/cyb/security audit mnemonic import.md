@@ -93,9 +93,9 @@ deletion:   removeEncryptedMnemonic(bech32) → localStorage cleanup
 
 noted (12): setSigner public context (DM), `as any` in CosmJS constructor (DM), weak password below 12 chars (DM), signer retains seed — CosmJS requirement (DM), dual signer memory — JS immutable strings (DM), unguarded JSON.parse in 5 Redux slices (DM), checkAddressNetwork unbounded recursion — fixed in #24 (DM), Ledger reconnect error leaks addresses (D), amino-only Ledger in relayer (D), secrets unencrypted in localStorage — pre-existing (DM), seed word inputs type="text" — by design (M), no beforeunload cleanup — fixed in #24 (D)
 
-### LOW (47 total, 18 fixed, 26 noted)
+### LOW (48 total, 19 fixed, 26 noted)
 
-fixed: modal tabIndex (DM), error message internals (DM), version detection false positive — try-fallback (DM), persist-before-signer ordering (DM), Array.from instead of spread — stack safety (DM), DOMException-only catch (DM), autoComplete/autoCorrect/autoCapitalize on mnemonic inputs (M), autoComplete="new-password" on password inputs (M), __cyb_wallet_locked event name — internal (DM), `wallet` label for non-Keplr signers (DM), typed Dropdown callback (DM), getDebug() secrets stripped (DM), blob versioning for migration (DM), removeEncryptedMnemonic for deletion (DM), neuron errors wrapped in friendlyErrorMessage (DM), wasm action bar errors wrapped (DM), console.log sign doc removed (D), regex patterns fixed (DM)
+fixed: modal tabIndex (DM), error message internals (DM), version detection false positive — try-fallback (DM), persist-before-signer ordering (DM), Array.from instead of spread — stack safety (DM), DOMException-only catch (DM), autoComplete/autoCorrect/autoCapitalize on mnemonic inputs (M), autoComplete="new-password" on password inputs (M), autoCorrect/autoCapitalize/spellCheck on all password inputs + autoComplete on unlock (M), __cyb_wallet_locked event name — internal (DM), `wallet` label for non-Keplr signers (DM), typed Dropdown callback (DM), getDebug() secrets stripped (DM), blob versioning for migration (DM), removeEncryptedMnemonic for deletion (DM), neuron errors wrapped in friendlyErrorMessage (DM), wasm action bar errors wrapped (DM), console.log sign doc removed (D), regex patterns fixed (DM)
 
 noted (26): focus trap absent (DM), mnemonic inputs visible — by design (M), eslint-disable scope (DM), gasPrice hardcoded — standard (DM), JS memory mnemonic immutable (DM), unlockWallet concurrency — UI guard sufficient (DM), CustomEvent spoofable — cosmetic only (DM), stack overflow safe for mnemonic sizes (DM), packed length — AES-GCM validates (DM), chainId ignored in signArbitrary — ADR-036 by design (DM), HD path locked to index 0 (D), idle timer race (D), no initial Ledger address verification (D), raw Ledger errors (D), localStorage quota silent fail (DM), recursive setTimeout without cleanup (DM), window.open without noopener (D), forceQuitter legacy key (DM), Tendermint query interpolation (DM), password in useState — DevTools (D), mnemonic words in useState — React limitation (D), secrets in Redux DevTools (D), transaction response logged (D), no negative amount guard (DM), address validation lacks bech32 checksum (DM), error oracle — wrong password vs no mnemonic (DM)
 
@@ -106,7 +106,7 @@ noted (26): focus trap absent (DM), mnemonic inputs visible — by design (M), e
 | CRITICAL | 3 | 3 | 0 | 0 |
 | HIGH | 14 | 14 | 0 | 0 |
 | MEDIUM | 31 | 19 | 12 | 0 |
-| LOW | 47 | 18 | 26 | 0 |
+| LOW | 48 | 19 | 26 | 0 |
 
 by surface:
 
@@ -115,7 +115,7 @@ by surface:
 | CRITICAL | 0 | 0 | 3 |
 | HIGH | 2 | 0 | 12 |
 | MEDIUM | 5 | 1 | 13 |
-| LOW | 10 | 2 | 32 |
+| LOW | 10 | 3 | 32 |
 
 ## Keplr isolation
 
