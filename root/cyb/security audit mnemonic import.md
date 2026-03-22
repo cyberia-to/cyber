@@ -154,6 +154,17 @@ three account types after [[Keplr]] removal:
 
 ReconnectingLedgerSigner: fresh transport per sign, 30s health ping (skipped during signing), address verification on reconnect, adaptive HRP for firmware v2.34+, batch claiming (5 validators per tx).
 
+## open TODO
+
+| priority | surface | finding | action |
+|----------|---------|---------|--------|
+| HIGH | DM | mnemonic inputs type="text" — seed words visible | add show/hide toggle (eye icon), default type="password" |
+| MEDIUM | M | long-press on revealed secrets in KeyItemSecrets | CSS: user-select: none, -webkit-touch-callout: none |
+| MEDIUM | DM | service worker caches ALL POST responses | filter: exclude signing/wallet endpoints from cache |
+| MEDIUM | M | no -webkit-text-security: disc on mnemonic inputs | CSS fallback alongside type="password" |
+| LOW | DM | address clipboard never cleared after copy | add 30s auto-clear timer in copy.tsx |
+| LOW | DM | console.log proximity to mnemonic variable | remove or gate behind DEBUG in signerClient.tsx:133 |
+
 ## cross-verifications
 
 | # | agent | result |
