@@ -53,13 +53,13 @@ zheng
 ├── Hash:         hemera-2                             (one hash, universal)
 │                 x⁻¹ S-box, 32-byte output
 │                 ~736 constraints per permutation
-├── PCS₁:         WHIR / Brakedown (Goldilocks F_p)
+├── PCS₁:         Brakedown (Goldilocks F_p, Merkle-free)
 ├── PCS₂:         Binius (F₂ tower)
 ├── Constraints:  CCS (Customizable Constraint System)
 └── Languages:    14 nox instantiations → 2 fields → 2 PCS → 1 IOP → 1 hash
 ```
 
-one hash. two fields. two PCS backends. one IOP. one folding scheme. 14 source languages.
+one hash. two fields. two PCS backends (both Merkle-free). one IOP. one folding scheme. 14 source languages.
 
 ## 2. Hemera-2: the trust anchor
 
@@ -115,54 +115,47 @@ combined: hemera goes from dominant proof cost to negligible trust anchor.
 
 ## 3. Polynomial Commitment Schemes
 
-### 3.1 WHIR (Goldilocks)
+### 3.1 Brakedown (Goldilocks, primary)
 
-WHIR commits to multilinear polynomials via hemera Merkle trees over evaluation domains. the current zheng-1 backend.
-
-```
-commitment:    hemera Merkle tree over evaluations
-opening:       log N folding rounds + Merkle authentication paths
-proof size:    60–157 KiB (77% is Merkle paths)
-verification:  ~1 ms (Merkle path walking)
-security:      transparent, post-quantum, hash-only
-```
-
-WHIR is the starting point. its Merkle paths are the primary optimization target.
-
-### 3.2 Algebraic extraction (WHIR optimization)
-
-replace k individual Merkle path openings with one batch algebraic opening:
+Brakedown commits to multilinear polynomials via expander-graph linear codes. no Merkle tree. no hemera in the PCS at all. the bottleneck shifts from hashing to field arithmetic — exactly where Goldilocks and nebu excel.
 
 ```
-given k query positions and claimed values:
-  construct quotient Q(x) = (f(x) - I(x)) / Z(x)
-  one sumcheck verifies: f(r) - I(r) = Q(r) · Z(r)
-
-proof content: sumcheck transcript + one quotient commitment + one evaluation
-proof size:    5–12 KiB (vs 60–157 KiB)
-verification:  ~150 μs (vs ~1 ms)
-recursive:     ~5K constraints (vs ~50K for Merkle paths)
-```
-
-near-term improvement on existing WHIR. no new cryptographic assumptions.
-
-### 3.3 Brakedown (Goldilocks, Merkle-free)
-
-polynomial commitment via expander-graph linear codes. no Merkle tree at all.
-
-```
-commitment:    linear code encoding (no tree)
+commitment:    linear code encoding via expander graph (no tree)
 opening:       O(√N) proximity proof
 proof size:    1–5 KiB
 verification:  O(√N) field operations
+prover:        O(N) linear time (code encoding is linear)
 security:      transparent, post-quantum, code-based
 
-advantage:     Merkle tree eliminated entirely
+key property:  Merkle tree eliminated entirely
                hemera calls for PCS: 0
-               bottleneck shifts from hemera to field arithmetic (nebu)
+               proof cost dominated by field arithmetic (nebu)
+               not by hash computation (hemera)
 ```
 
-Brakedown is the endgame Goldilocks PCS. WHIR + algebraic extraction is the near-term path.
+Brakedown's linear-time commitment is native to the sumcheck architecture: both are O(N). the prover never leaves the field — no hash tree construction, no NTT for evaluation domain, no O(N log N) bottleneck anywhere in the pipeline.
+
+### 3.2 WHIR (bootstrap path)
+
+WHIR commits via hemera Merkle trees over evaluation domains. it is the zheng-1 backend and serves as the bootstrap path before Brakedown is production-ready.
+
+```
+commitment:    hemera Merkle tree over evaluations
+proof size:    60–157 KiB (77% is Merkle paths)
+verification:  ~1 ms
+```
+
+WHIR's Merkle paths are its weakness. algebraic extraction (batch algebraic opening via quotient polynomial) reduces proof size to 5–12 KiB without changing the PCS:
+
+```
+algebraic extraction:
+  replace k Merkle openings with one quotient Q(x) = (f(x) - I(x)) / Z(x)
+  proof: sumcheck transcript + quotient commitment + one evaluation
+  size: 5–12 KiB (vs 60–157 KiB)
+  verification: ~150 μs (vs ~1 ms)
+```
+
+the migration path: WHIR → WHIR + algebraic extraction → Brakedown. each step is independently deployable. Brakedown is the target architecture.
 
 ### 3.4 Binius (F₂ tower)
 
@@ -435,38 +428,82 @@ the cost of adding one edge to a permanent, verified, globally-available knowled
 
 compared to FRI-based architecture: ~148,000 constraints. **17× reduction** in proving overhead beyond raw computation.
 
-## 8. Honest Assessment
+## 8. The Landscape (Early 2026)
 
-### 8.1 Where zheng-2 is stronger
+| system | field | PCS | proof size | verification | prover | status |
+|---|---|---|---|---|---|---|
+| Stwo (StarkWare) | M31 | FRI | ~200 KiB | 10–50 ms | O(N log N) | production (Starknet) |
+| Plonky3 (Polygon) | Goldilocks | FRI | 100–200 KiB | 10–50 ms | O(N log N) | production (zkEVM) |
+| SP1 (Succinct) | BabyBear | FRI | ~150 KiB | ~30 ms | O(N log N) | production (zkVM) |
+| RISC Zero | BabyBear | FRI | ~200 KiB | ~50 ms | O(N log N) | production (Bonsai) |
+| Binius (Irreducible) | F₂ tower | sumcheck | research | research | O(N) | early research |
+| **zheng** | **Goldilocks + F₂** | **Brakedown + Binius** | **1–5 KiB** | **10–50 μs** | **O(N)** | **spec draft** |
 
-| claim | basis | confidence |
-|---|---|---|
-| 30–150× smaller proofs | algebraic extraction (proven) → Brakedown (newer) | high (5–12 KiB) to medium (1–5 KiB) |
-| 1,000× faster verification | no Merkle paths in verifier | high |
-| 2,300× cheaper recursion | HyperNova folding (peer-reviewed, 2023) | high |
-| O(N) prover | sumcheck is inherently linear | high (large N) |
-| O(√N) memory | tensor compression | medium (needs empirical rank validation) |
-| 33× cheaper state | polynomial state natural in sumcheck | high |
-| 157× cheaper DAS | algebraic DAS (PCS openings) | high |
-| 32–64× binary | Binius native F₂ | high |
+every production system shares: FRI-based univariate polynomial commitment with Merkle trees.
 
-### 8.2 Where zheng-2 is weaker
+zheng is structurally different:
+- **multilinear** (not univariate) — SuperSpartan with multilinear extensions
+- **sumcheck** (not FRI) — inherently O(N), no FFT
+- **Brakedown** (not Merkle) — expander-graph codes, no tree
+- **folding** (not recursive verification) — HyperNova, ~30 ops vs ~70K constraints
+- **dual PCS** — Brakedown for Goldilocks, Binius for F₂
+- **one hash** — hemera for trust anchoring, not for proof internals
 
-| concern | reality | mitigation |
-|---|---|---|
-| zero production hours | biggest risk. Stwo/Plonky3 have years of deployment | phased migration, formal verification |
-| hemera cost vs 31-bit hash | hemera-2: 736 constraints vs ~300 for Poseidon2-M31 | GFP hardware; hemera-3 reduces calls to trust anchoring |
-| 64-bit field overhead | Goldilocks 2–4× slower per-op than BabyBear on commodity | GFP native silicon; compensated by fewer operations total |
-| single implementation | one codebase vs multiple independent implementations | formal spec enables independent implementations |
-| Brakedown novelty | less battle-tested than FRI | algebraic extraction on WHIR as near-term fallback |
+## 9. Honest Assessment
 
-### 8.3 What makes the comparison unfair
+### 9.1 Where zheng is stronger
 
-production STARKs (Stwo, Plonky3, SP1) are running systems. zheng-2 is a specification. the numbers above are architectural analysis, not benchmarks. the real comparison happens when zheng-2 ships code.
+| claim | basis | real? | confidence |
+|---|---|---|---|
+| 30–150× smaller proofs | Brakedown: expander codes, no Merkle paths | yes — O(√N) proof, no tree overhead | medium-high (Brakedown newer than FRI) |
+| 1,000× faster verification | no Merkle paths in verifier, O(√N) field ops | yes — field ops only, no hashing | high |
+| 2,300× cheaper recursion | HyperNova folding (peer-reviewed, 2023) | yes — accumulate, don't verify | high |
+| O(N) prover | sumcheck + Brakedown both linear | yes — mathematically inherent | high (at large N) |
+| O(√N) memory | tensor compression of structured traces | plausible — needs empirical rank | medium |
+| 33× cheaper state | polynomial state natural in sumcheck | yes — architecture, not optimization | high |
+| 157× cheaper DAS | PCS openings replace NMT paths | yes — follows from Brakedown | high |
+| 32–64× binary | Binius native F₂, 128 elements/u128 | yes — algebraic distance F_p vs F₂ | high |
 
-what the architectural analysis DOES establish: the sumcheck + folding + multilinear foundation provides structural advantages that FRI cannot match without changing its foundation. these are not constant-factor optimizations — they are asymptotic improvements (O(1) vs O(log N) state reads, O(N) vs O(N log N) proving, ~30 ops vs ~70K constraints for recursion).
+### 9.2 Where zheng is weaker
 
-## 9. Language Mapping
+| concern | severity | reality | mitigation |
+|---|---|---|---|
+| zero production hours | critical | Stwo/Plonky3: years of deployment, hundreds of bugs found and fixed. zheng: zero code, zero audits, zero bugs found because zero code | phased migration (WHIR → Brakedown), formal verification, spec-first development |
+| hemera cost | medium | hemera-2: ~736 constraints/perm. Poseidon2 over M31: ~300. 2.4× more expensive per hash. this is the cost of 64-bit field + 256-bit security designed for century-scale content addressing | GFP hardware makes Goldilocks native. hemera-3 reduces remaining calls to trust anchoring only. Brakedown eliminates hemera from PCS entirely |
+| 64-bit field overhead | medium | Goldilocks: 2–4× slower per field operation than BabyBear/M31 on commodity x86. constant factor, not asymptotic | GFP: custom silicon where 64-bit is native. zheng compensates by doing FEWER total operations (sumcheck O(N) vs FRI O(N log N), Brakedown O(N) vs FRI Merkle O(N log N)) |
+| Brakedown maturity | medium | less battle-tested than FRI. fewer implementations, fewer audits, fewer years of cryptanalysis | WHIR bootstrap path as fallback. algebraic extraction gives 5–12 KiB proofs on WHIR if Brakedown issues arise |
+| single implementation | low-medium | one planned codebase vs 4+ independent FRI implementations | formal spec enables independent implementations. Rs deterministic language enforces correctness by construction |
+
+### 9.3 What makes the comparison unfair
+
+production STARKs are running systems. zheng is a specification. the numbers above are architectural analysis, not benchmarks. the real comparison happens when zheng ships code.
+
+what the architectural analysis DOES establish: sumcheck + folding + Brakedown provides structural advantages that FRI cannot match without changing its foundation. these are asymptotic improvements, not constant factors:
+
+```
+state read:     O(1) field ops    vs  O(log N) hemera hashes      (asymptotic)
+prover time:    O(N) linear       vs  O(N log N) FFT               (asymptotic)
+recursion:      ~30 field ops     vs  ~70K constraints              (2,300×)
+proof internal: 0 hemera calls    vs  O(N log N) hemera calls       (architectural)
+```
+
+a FRI-based system optimizing constants will always lose to a sumcheck-based system at sufficient scale. the question is whether that scale arrives before zheng achieves production maturity.
+
+### 9.4 What zheng enables that FRI cannot
+
+1. **provable consensus.** tri-kernel π computation = 1.42B constraint circuit. zheng at 33% capacity handles this. FRI-based systems need 4× larger proofs for the same circuit. validators compute π, not vote — consensus becomes a mathematical fixed point.
+
+2. **polynomial state.** state reads are O(1) field operations in sumcheck. state IS a polynomial, and the proof system operates on polynomials natively. FRI-based systems pay O(log N) hemera hashes per state read because FRI commits via Merkle trees. section 5 details why this is architectural, not optimizable.
+
+3. **algebraic data availability.** DAS samples are PCS openings (~200 bytes) instead of Merkle paths (~1 KiB). 157× fewer constraints for 20-sample verification. again: architecture, not optimization.
+
+4. **mobile proving.** O(√N) prover memory via tensor compression. a phone with 4 GB RAM proves computations that require 64 GB in FRI-based provers.
+
+5. **zero-latency recursion.** HyperNova folds during execution. no separate proving step. proof-carrying computation: the proof is ready when the computation finishes.
+
+6. **unified mining.** one primitive set (nebu field arithmetic) serves both signal proof and consensus computation. FRI provers are NTT-biased — different hardware for proving vs execution. zheng's sumcheck + Brakedown are both linear — same hardware profile throughout.
+
+## 10. Language Mapping
 
 zheng serves 14 nox instantiations:
 
@@ -482,36 +519,38 @@ each language has optimized jets (pre-compiled constraint gadgets). binary jets 
 
 ring-aware CCS encoding handles FHE bootstrapping natively: TFHE blind rotation maps to Wav (NTT), gadget decomposition maps to Bt (binary), key switching maps to Ten (tensor), noise tracking maps to Tri (arithmetic). q = Goldilocks prime makes R_q native to nebu NTT.
 
-## 10. Migration
+## 11. Migration
 
 ```
-phase 1:   algebraic extraction on WHIR          (157 KiB → 5–12 KiB proofs)
-phase 2:   folding-first composition              (700× epoch composition)
-phase 3:   Binius PCS + kuro arithmetic           (binary workloads native)
-phase 4:   proof-carrying computation             (zero proving latency)
-phase 5:   ring-aware FHE jets                    (native FHE bootstrapping)
-phase 6:   Brakedown PCS replaces WHIR            (Merkle-free, 1–5 KiB proofs)
-phase 7:   gravity commitment                     (power-law verification cost)
-phase 8:   tensor compression                     (O(√N) memory, mobile provers)
-phase 9:   universal accumulator                  (240-byte checkpoint)
-phase 10:  GPU-native pipeline                    (45–100× throughput)
+phase 1:   WHIR + algebraic extraction            bootstrap (157 KiB → 5–12 KiB)
+phase 2:   Brakedown replaces WHIR                target PCS (Merkle-free, 1–5 KiB)
+phase 3:   folding-first composition              700× epoch composition
+phase 4:   Binius PCS + kuro arithmetic           binary workloads native
+phase 5:   proof-carrying computation             zero proving latency
+phase 6:   ring-aware FHE jets                    native FHE bootstrapping
+phase 7:   gravity commitment                     power-law verification cost
+phase 8:   tensor compression                     O(√N) memory, mobile provers
+phase 9:   universal accumulator                  240-byte checkpoint
+phase 10:  GPU-native pipeline                    45–100× throughput
 ```
 
-each phase is independently deployable. phases 1–2 provide the largest near-term impact. phases 3–5 enable new workloads. phases 6–10 approach theoretical limits.
+Brakedown moves to phase 2 — it is the target architecture, not a late optimization. WHIR + algebraic extraction is the bootstrap path only. once Brakedown is validated, hemera exits the PCS entirely. each subsequent phase builds on Brakedown's Merkle-free foundation.
 
-## 11. Open Problems
+## 12. Open Problems
 
-1. **Brakedown concrete security.** Which expander family achieves optimal security/proof-size tradeoff for Goldilocks? Concrete parameters needed.
+1. **Brakedown expander construction.** Brakedown's proof size and security depend on the expander graph family. which family achieves optimal security/proof-size tradeoff for the Goldilocks field? concrete parameters for 128-bit security needed. this is the most critical near-term research question — Brakedown is the target PCS.
 
-2. **Cross-algebra soundness.** Universal CCS with algebra selectors folds heterogeneous instances. Does folding across fields preserve HyperNova's security reduction?
+2. **Brakedown bivariate openings.** algebraic DAS requires efficient openings on bivariate erasure-coded grids. does Brakedown support bivariate polynomial evaluation natively via its linear code structure, or must the 2D grid be flattened to univariate? flattening works but may lose the 2D structure that makes DAS fraud proofs efficient.
 
-3. **Tensor rank of real traces.** Tensor compression assumes low rank (r ≈ 32). Empirical validation on cyberlink, inference, and tri-kernel workloads needed.
+3. **Cross-algebra soundness.** universal CCS with algebra selectors folds heterogeneous instances (F_p and F₂). does folding across fields preserve HyperNova's security reduction? formal proof needed.
 
-4. **Gravity weight stability.** Mass-weighted polynomial encoding by π. If π changes (new edges shift attention), existing proofs remain valid (frozen weights at commitment time), but the layered structure must be re-committed. Optimal re-commitment frequency?
+4. **Tensor rank of real traces.** tensor compression assumes low rank (r ≈ 32) for nox execution traces. empirical validation on cyberlink insertion, quantized inference, and tri-kernel SpMV workloads needed. if r >> 32, tensor compression may not help.
 
-5. **Algebraic DAS composition.** The erasure-coded 2D grid is naturally bivariate. Does WHIR/Brakedown support efficient bivariate openings natively, or must the grid be flattened?
+5. **Gravity weight stability.** mass-weighted polynomial encoding by π. if π changes (new edges shift attention), existing proofs remain valid (frozen weights at commitment time), but the layered structure must be re-committed. optimal re-commitment frequency?
 
-6. **VEC formalization.** Verified Eventual Consistency needs formal treatment — precise adversary model, safety/liveness proofs, relationship to existing consistency models.
+6. **VEC formalization.** Verified Eventual Consistency needs formal treatment — precise adversary model, safety/liveness proofs, relationship to existing consistency models (SEC, causal+, linearizability).
+
+7. **Brakedown + Binius unification.** both Brakedown and Binius are linear-code-based PCS. can the two backends share infrastructure (code construction, proximity testing) despite operating over different fields? a unified linear-code PCS framework could simplify the dual-algebra architecture.
 
 ## References
 
