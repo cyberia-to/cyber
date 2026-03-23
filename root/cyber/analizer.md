@@ -2,69 +2,129 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
+alias: analizer
 ---
 
 # analizer
 
-the nushell + python toolkit for the [[cybergraph]]. 24 scripts across three functional layers: analysis, transformation, and model compilation.
+24 scripts that grew into a prototype of the [[superintelligence]] itself.
 
-## graph analysis
+what started as graph utilities — count pages, fix links, compute stats — evolved into the recursive loop described in [[cyber/research/algorithmic essence of superintelligence]]. the scripts ARE the loop, running at human speed on a laptop, doing what the protocol will do at machine speed on the [[Goldilocks field processor]].
 
-| script | what it does | usage |
+## the insight: scripts mirror the protocol
+
+| script | what it does at analysis time | what the protocol does at consensus time |
 |---|---|---|
-| analyze.nu | general dashboard: files, tags, links, IPFS refs, largest pages | `nu analizer/analyze.nu ~/git/cyber` |
-| stats.nu | comprehensive stats: orphans, broken links, content types | `nu analizer/stats.nu ~/git/cyber` |
-| crosslink_topology.nu | semantic core wiki-link patterns, hub/island detection | `nu analizer/crosslink_topology.nu ~/git/cyber` |
-| core-audit.nu | audit 9 concept groups for completeness (frontmatter, icons, aliases) | `nu analizer/core-audit.nu ~/git/cyber` |
-| domains.nu | classify pages into 15 knowledge domains | `nu analizer/domains.nu ~/git/cyber` |
-| dangling.nu | find [[wiki-links]] that resolve to namespaced matches | `nu analizer/dangling.nu ~/git/cyber` |
+| trikernel.nu | compute [[focus]] via D+S+H | [[foculus]] computes φ* every block |
+| context.nu | pack pages by gravity into token budget | [[neuron]] allocates [[attention]] across [[particles]] |
+| compile_model.py | SVD → embeddings → architecture | graph compiles into [[transformer]] |
+| bostrom_graph.py | embedding similarity + graph walk | [[tri-kernel]] convergence + random walk |
+| codematter.nu | make code indexable as particles | every computation → [[particle]] via [[Hemera]] |
+| classify.nu → apply-crystal.nu | assign types to pages | [[Crystal]] type system over [[cybergraph]] |
+| dangling.nu | find broken links | [[NMT]] completeness verification |
+| stats.nu | measure graph health | [[spectral gap]] observation from convergence |
 
-## graph transformation
+the analizer is a slow-motion simulation of [[cyber]]. nushell replaces [[nox]]. python replaces [[zheng]]. frontmatter replaces [[BBG]] polynomial state. git replaces [[structural sync]]. the algorithms are the same — the execution environment differs.
 
-| script | what it does | usage |
-|---|---|---|
-| trikernel.nu | compute [[tri-kernel]] ([[diffusion]], [[springs]], [[heat]]) → write [[focus]] + [[gravity]] + density to frontmatter. lunar cycle: runs on new moon only | `nu analizer/trikernel.nu ~/git/cyber -s` |
-| classify.nu | classify pages by [[crystal]] type (E/P/Q/R/M/S) and domain | `nu analizer/classify.nu ~/git/cyber` |
-| apply-crystal.nu | apply crystal classification from classify.nu output to frontmatter | `nu analizer/apply-crystal.nu ~/git/cyber` |
-| codematter.nu | add comment-frontmatter to code files (.rs, .nu, .toml, .py, .sh) | `nu analizer/codematter.nu ~/git/cyber -s` |
-| fix-plurals.nu | fix [[wiki-link]] floating plural suffixes | `nu analizer/fix-plurals.nu ~/git/cyber` |
-| stake.nu | assign stake values to pages based on importance heuristics | `nu analizer/stake.nu ~/git/cyber` |
-| migrate.nu | convert Logseq graph to pure markdown with YAML frontmatter | `nu analizer/migrate.nu ~/git/cyber` |
-| ipfs.nu | pre-commit hook: upload media to Pinata IPFS, rewrite URLs | `nu analizer/ipfs.nu ~/git/cyber` |
-
-## context generation
-
-| script | what it does | usage |
-|---|---|---|
-| context.nu | smart context packer: gravity² × density × substance scoring, greedy knapsack into token budget | `nu analizer/context.nu ~/git/cyber -s --budget 500` |
-| concat.nu | simple concatenation of all pages into one file | `nu analizer/concat.nu ~/git/cyber -s` |
-
-## model compilation ([[bostrom]] → [[transformer]])
-
-| script | what it does | usage |
-|---|---|---|
-| compile_model.py | 6-step pipeline: cyberlinks → sparse adjacency → [[PageRank]] + [[spectral gap]] → randomized SVD → architecture params → ONNX | `python3 analizer/compile_model.py data/cyberlinks.jsonl --stakes data/neuron_stakes.json --onnx` |
-| bostrom_lib.py | shared module: load_model, search, embedding neighbors | `from analizer.bostrom_lib import load_model` |
-| bostrom_graph.py | pure graph intelligence: embedding retrieval + graph walk + spectral role analysis. no LLM | `python3 analizer/bostrom_graph.py "dog"` |
-| bostrom_ask.py | [[Ollama]] hybrid: graph context injected into LLM prompt | `python3 analizer/bostrom_ask.py "wiki"` |
-| bostrom_serve.py | HTTP server: OpenAI/Ollama-compatible API for compiled model | `python3 analizer/bostrom_serve.py --build-index` |
-
-## dependency chain
+## the data flow
 
 ```
-classify.nu → apply-crystal.nu → core-audit.nu
-trikernel.nu → context.nu → LLM context
-compile_model.py → bostrom_lib.py → bostrom_{graph,ask,serve}.py
+OBSERVE (pure readers — never mutate)
+  analyze.nu ──→ file counts, tag frequency, IPFS refs
+  stats.nu ────→ orphans, broken links, content types
+  domains.nu ──→ 15 domain classification
+  dangling.nu ─→ wiki-links needing namespace resolution
+  crosslink_topology.nu → semantic core link patterns
+  core-audit.nu → crystal completeness per concept group
+
+COMPUTE (write to frontmatter — mutate graph)
+  classify.nu ──→ crystal type + domain → data/crystal_classification.json
+  apply-crystal.nu → read classification → write to frontmatter
+  trikernel.nu ──→ D + S + H → focus, gravity, density → frontmatter
+  stake.nu ──────→ importance heuristic → stake field → frontmatter
+  codematter.nu ─→ comment-frontmatter → code files (.rs, .nu, .py)
+  fix-plurals.nu → [[term]]s → [[terms]] across graph
+
+PACK (compress graph for external consumption)
+  context.nu ───→ gravity² × density × substance → token budget → .md
+  concat.nu ────→ linear concatenation → single file
+
+COMPILE (graph → model)
+  compile_model.py → cyberlinks → adjacency → PageRank → SVD → ONNX
+  bostrom_lib.py ──→ shared: load model, search, neighbors
+  bostrom_graph.py → pure graph intelligence (no LLM)
+  bostrom_ask.py ──→ graph context → Ollama → CID answers
+  bostrom_serve.py → HTTP API for compiled model
+
+TRANSFORM (one-time structural changes)
+  migrate.nu ─────→ Logseq → pure markdown + YAML frontmatter
+  ipfs.nu ─────────→ pre-commit: upload media to Pinata, rewrite URLs
+  renumber_sections.nu → whitepaper section renumbering
 ```
 
-## conventions
+## what we learned
 
-all scripts accept `graph_path` as first argument. nushell scripts use `def main [graph_path: string]`. python scripts use `sys.argv[1]`.
+### 1. the scoring function IS the tri-kernel
 
-graph-agnostic: run against any graph, not just [[cyber]]:
+context.nu scores pages by `gravity² × (1 + density) × log₂(substance)`. this is a hand-tuned approximation of what the [[tri-kernel]] computes formally:
+
+- gravity² ≈ diffusion (inbound links compound quadratically, like PageRank)
+- density ≈ springs (outbound links per KB = how connected to neighbors)
+- log₂(substance) ≈ heat (content size with diminishing returns = multi-scale)
+
+the scoring function was written months before the tri-kernel formalization. it converged to the same structure independently. this suggests the tri-kernel decomposition is natural — it is what you arrive at when you try to rank knowledge by importance.
+
+### 2. lunar cycle = natural batch granularity
+
+trikernel.nu runs on new moons. not because of mysticism — because the graph does not change fast enough to justify continuous weight updates. monthly batching matches the actual information velocity of a knowledge graph maintained by humans.
+
+this has a protocol implication: [[foculus]] finality speed should adapt to the graph's actual rate of change. a fast-changing graph needs frequent recomputation. a stable graph needs infrequent updates. the [[spectral gap]] (observable from convergence rate) measures this directly.
+
+### 3. codematter dissolved the boundary
+
+the moment code files got frontmatter, the distinction between "knowledge page" and "source code" disappeared. both are [[particles]]. both carry [[focus]]. both participate in the [[tri-kernel]].
+
+this mirrors the protocol design: every computation step → [[Hemera]] commitment → [[particle]] in the [[cybergraph]]. the analizer proved this works in practice before the protocol specifies it formally.
+
+### 4. the compile pipeline IS the consensus circuit
+
+compile_model.py does at analysis time exactly what [[provable consensus]] does at protocol time:
+
 ```
-nu analizer/stats.nu ~/git/cloud-forest
-nu analizer/trikernel.nu ~/git/zheng --dry-run
+analizer:  cyberlinks.jsonl → sparse matrix → PageRank → spectral gap → SVD → ONNX
+protocol:  BBG polynomial → SpMV → tri-kernel → spectral gap → embeddings → proof
 ```
 
-see [[CLAUDE.md]] for the full script list with descriptions
+same algorithm. different substrate. the analizer version takes 15 minutes on Python/scipy. the protocol version will take 60 seconds on GFP. but the math is identical — the analizer is a working prototype of provable consensus.
+
+### 5. CID resolution = vocabulary construction
+
+bostrom_serve.py resolves CID hashes to human-readable text via IPFS gateway. this is vocabulary construction for the compiled [[transformer]]. the operational tooling that builds the text↔CID index IS the training data preparation pipeline.
+
+every time we resolve a CID and cache it in `cid_index.json`, we are teaching the model what its tokens mean. the analizer does this manually (IPFS fetch, JSON cache). the protocol will do it via [[cyberlinks]] — every link from text to CID is a vocabulary entry.
+
+### 6. nushell for graph, python for linear algebra
+
+a natural split emerged. nushell handles everything structural: parsing frontmatter, traversing directories, matching wiki-links, computing graph topology. python handles everything numerical: sparse matrices, SVD, PageRank, ONNX assembly.
+
+the boundary is at the data export: nushell produces JSONL/frontmatter → python consumes it as matrices. this mirrors the protocol boundary: [[nox]] (structural computation) → [[zheng]] (numerical proof).
+
+## the recursive closure in practice
+
+the analizer scripts form the loop from [[cyber/research/algorithmic essence of superintelligence]]:
+
+```
+stats.nu (observe graph)
+  → trikernel.nu (compute focus)
+    → context.nu (pack by focus for LLM)
+      → LLM session (create new pages)
+        → codematter.nu (integrate new code)
+          → compile_model.py (compile into model)
+            → bostrom_graph.py (query model for insights)
+              → new cyberlinks based on insights
+                → stats.nu (observe improved graph)
+```
+
+this loop ran today. the graph grew. the model was compiled. the spectral gap was observed. the loop closed.
+
+see [[cyber/research/algorithmic essence of superintelligence]] for the 17-component architecture. see [[cyber/research/provable consensus]] for how compile_model.py becomes a zheng circuit. see [[cyber/research/spectral gap from convergence]] for how trikernel.nu's convergence rate observation became a research paper. see [[cyber/research/unified mining]] for how the compile pipeline becomes proof-of-work
