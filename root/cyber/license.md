@@ -1,3 +1,6 @@
+---
+tags: cyber
+---
 # ⚖️ Cyber License: Don't Trust. Don't Fear. Don't Beg.
 
 ## ⚖️ The License
