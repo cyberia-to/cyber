@@ -16,11 +16,11 @@ the mathematical framework of [[cyber]]: why a token-weighted graph converges to
 
 ## the core result
 
-the [[collective focus theorem]] proves that a token-weighted random walk on an authenticated, strongly connected, aperiodic directed [[cybergraph]] converges to a unique stationary distribution π — the collective [[focus]] of the system
+the [[collective focus theorem]] proves that a token-weighted [[random walk]] on an authenticated, strongly connected, aperiodic directed [[cybergraph]] converges to a unique stationary distribution π — the collective [[focus]] of the system
 
 $$\pi P = \pi, \quad \sum_j \pi_j = 1$$
 
-π emerges from topology and stake, requires no central authority, and shifts continuously under perturbation. the [[spectral gap]] of the transition matrix controls convergence speed and robustness to noise
+π emerges from topology and [[stake]], requires no central authority, and shifts continuously under perturbation. the [[spectral gap]] of the transition matrix controls convergence speed and robustness to noise
 
 ## five primitives
 
@@ -41,7 +41,7 @@ three operators span the space of local, convergent, verifiable graph computatio
 | operator | function | what it computes |
 |---|---|---|
 | [[diffusion]] (M) | Markov random walk | global popularity at equilibrium |
-| [[springs]] (L) | Laplacian energy minimization | ordinal hierarchy from pairwise relations |
+| [[springs]] (L) | [[Laplacian]] energy minimization | ordinal hierarchy from pairwise relations |
 | [[heat kernel]] (H) | heat-kernel pagerank | locality dial interpolating local↔global views |
 
 the composite operator $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ is a contraction (κ < 1), guaranteeing unique fixed point and geometric convergence
@@ -54,7 +54,7 @@ the system minimizes a [[free energy]] functional:
 
 $$\mathcal{F}(p \mid \text{context}) = E_{\text{spring}} + \lambda\, E_{\text{diffusion}} + \gamma\, C(\text{context}) - \tau\, S(p)$$
 
-where $S(p)$ is entropy and $\tau$ is temperature. at equilibrium, the distribution is Boltzmann: high-energy states (incoherent linking) are exponentially suppressed, low-energy states (coherent [[knowledge]] structure) dominate
+where $S(p)$ is [[entropy]] and $\tau$ is temperature. at equilibrium, the distribution is Boltzmann: high-energy states (incoherent linking) are exponentially suppressed, low-energy states (coherent [[knowledge]] structure) dominate
 
 see [[free energy]] for the three formulations (thermodynamic, variational, tri-kernel)
 
@@ -65,7 +65,7 @@ see [[free energy]] for the three formulations (thermodynamic, variational, tri-
 - each [[neuron]] updates its local state using only neighbor information
 - gossip normalization ensures global consistency without global softmax
 - complexity: O(V+E) per step, unbounded context window
-- convergence to the same Boltzmann equilibrium as the global solution
+- [[convergence]] to the same Boltzmann equilibrium as the global solution
 
 this is what makes planetary-scale computation feasible
 
@@ -81,7 +81,7 @@ coherent global [[focus]] emerges only above critical thresholds:
 
 the [[free energy]] landscape aligns individual and collective optimization:
 
-- influence ∝ stake × connectivity — skin-in-the-game for quality linking
+- influence ∝ [[stake]] × connectivity — skin-in-the-game for quality linking
 - [[learning incentives]] reward Δπ contributions via [[Shapley value]] attribution
 - anti-capture: stake dispersion, rate limits, decay, context-specific caps
 
@@ -105,8 +105,8 @@ convergence and structure
 - [[Perron-Frobenius theorem]] — guarantees the positive eigenvector
 
 the three operators
-- random walks, eigenvector centrality, PageRank — diffusion primitive
-- spring/electrical network models — Laplacian primitive, convex optimization on graph Laplacians
+- random walks, eigenvector centrality, [[PageRank]] — [[diffusion]] primitive
+- spring/electrical network models — [[Laplacian]] primitive, convex optimization on graph Laplacians
 - heat kernels, diffusion geometry — heat primitive, locality control
 
 energy and inference
@@ -125,7 +125,7 @@ economics and mechanism design
 - economics of [[attention]], rational inattention — cognitive budget constraints
 
 distributed systems
-- Byzantine consensus, state machine replication — authenticated state under faults
+- Byzantine [[consensus]], state machine replication — authenticated state under faults
 - cryptography (signatures, VRF, ZKP, MPC) — integrity, randomness, privacy
 - identity and reputation — sybil mitigation via blended stake and web-of-trust
 
