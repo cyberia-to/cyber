@@ -1,6 +1,6 @@
 ---
 alias: individuals, users, agents
-tags: page
+tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 stake: 20459842584855424

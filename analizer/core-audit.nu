@@ -35,15 +35,15 @@ def main [graph_path: string] {
         let lines = ($c | lines)
         let ct = ($lines | where {|l| $l starts-with "crystal-type:"} | if ($in | is-empty) { ["crystal-type: NONE"] } else { $in } | first | str replace "crystal-type: " "" | str trim)
         let cd = ($lines | where {|l| $l starts-with "crystal-domain:"} | if ($in | is-empty) { ["crystal-domain: NONE"] } else { $in } | first | str replace "crystal-domain: " "" | str trim)
-        let has_icon = ($lines | where {|l| $l starts-with "icon:"} | is-not-empty)
+        let has_icon = ($lines | where {|l| $l starts-with "icon:"} | length) > 0
         let alias_line = ($lines | where {|l| $l starts-with "alias:"} | if ($in | is-empty) { ["alias: "] } else { $in } | first | str replace "alias: " "" | str trim)
-        let has_core_tag = ($lines | where {|l| $l =~ "tags:.*core"} | is-not-empty)
-        let has_discover = ($lines | where {|l| $l =~ "discover all"} | is-not-empty)
+        let has_core_tag = ($lines | where {|l| $l =~ "tags:.*core"} | length) > 0
+        let has_discover = ($lines | where {|l| $l =~ "discover all"} | length) > 0
 
         # count non-empty lines after frontmatter
         let in_body = ($c | split row "---" | skip 1 | if ($in | length) >= 2 { $in | skip 1 | str join "---" } else { "" })
         let body_count = ($in_body | lines | where {|l| ($l | str trim | str length) > 0} | length)
-        let has_headers = ($in_body | lines | where {|l| $l starts-with "#"} | is-not-empty)
+        let has_headers = ($in_body | lines | where {|l| $l starts-with "#"} | length) > 0
 
         {page: $p, group: $g.group, role: $role, type: $ct, domain: $cd, icon: $has_icon, core_tag: $has_core_tag, aliases: $alias_line, body_lines: $body_count, headers: $has_headers, discover: $has_discover}
       } else {
