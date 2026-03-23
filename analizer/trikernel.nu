@@ -36,15 +36,34 @@ const NEW_MOONS = [
   "2027-10-30" "2027-11-29" "2027-12-28"
 ]
 
-def is-new-moon [] {
+def current-moon [] {
+  # returns the new moon date if today is within ±1 day, else null
   let today = (date now | format date "%Y-%m-%d")
   let today_ts = ($today | into datetime | into int)
   let one_day = 86_400_000_000_000  # nanoseconds
-  $NEW_MOONS | any {|moon|
+  let match = ($NEW_MOONS | where {|moon|
     let moon_ts = ($moon | into datetime | into int)
     let diff = (($today_ts - $moon_ts) | math abs)
     $diff <= $one_day
-  }
+  })
+  if ($match | is-empty) { null } else { $match | first }
+}
+
+def is-new-moon [] {
+  (current-moon) != null
+}
+
+def last-moon-file [graph_path: string] {
+  $"($graph_path)/analizer/.last-moon"
+}
+
+def already-computed [graph_path: string] {
+  let marker = (last-moon-file $graph_path)
+  if not ($marker | path exists) { return false }
+  let recorded = (open --raw $marker | str trim)
+  let moon = (current-moon)
+  if $moon == null { return false }
+  $recorded == $moon
 }
 
 def main [
@@ -59,14 +78,22 @@ def main [
   --lambda-h: float = 0.2,        # heat weight
   --tau: float = 1.0,             # heat kernel bandwidth
 ] {
-  # new moon guard — only write weights on new moon (±1 day)
-  if (not $dry_run) and (not $force) and (not (is-new-moon)) {
-    let today = (date now | format date "%Y-%m-%d")
-    let next = ($NEW_MOONS | where {|m| ($m | into datetime) > (date now)} | first)
-    print $"⏳ Not a new moon today \(($today)\). Next new moon: ($next)"
-    print "  Weights are updated once per lunar cycle."
-    print "  Use --dry-run to compute without writing, or --force to override."
-    return
+  # new moon guard — only write weights on new moon (±1 day), once per moon
+  if (not $dry_run) and (not $force) {
+    if not (is-new-moon) {
+      let today = (date now | format date "%Y-%m-%d")
+      let next = ($NEW_MOONS | where {|m| ($m | into datetime) > (date now)} | first)
+      print $"⏳ Not a new moon today \(($today)\). Next new moon: ($next)"
+      print "  Weights are updated once per lunar cycle."
+      print "  Use --dry-run to compute without writing, or --force to override."
+      return
+    }
+    if (already-computed $graph_path) {
+      let moon = (current-moon)
+      print $"🌑 New moon ($moon) already computed. Weights are up to date."
+      print "  Use --force to recompute."
+      return
+    }
   }
 
   print "Scanning pages..."
@@ -461,6 +488,11 @@ def main [
     $new_content | save -f $f
     $written = $written + 1
   }
+
+  # record completion marker
+  let moon = if (is-new-moon) { current-moon } else { date now | format date "%Y-%m-%d" }
+  $moon | save -f (last-moon-file $graph_path)
+  print $"🌑 Recorded moon marker: ($moon)"
 
   print $"Written 6 fields to ($written) pages"
   print "\nTop 10 by focus:"

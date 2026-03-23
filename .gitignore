@@ -11,6 +11,9 @@ build/
 /node_modules
 **/target/
 
+# Tri-kernel moon marker (local state)
+analizer/.last-moon
+
 # Claude Code
 .claude/
 /logseq
