@@ -722,7 +722,7 @@ all production systems share: FRI + univariate + Merkle. zheng: sumcheck + multi
 | zero production hours | critical | biggest risk. algorithms are peer-reviewed. implementation is zero |
 | hemera cost | medium | 736 vs ~300 constraints (2.4×). permanent 256-bit security tradeoff. Brakedown eliminates hemera from PCS |
 | 64-bit field | medium | 2–4× slower per op vs BabyBear. compensated by fewer total ops (O(N) vs O(N log N)) and GFP hardware |
-| Brakedown maturity | medium | less battle-tested than FRI. WHIR as bootstrap fallback |
+| Brakedown maturity | medium | less battle-tested than FRI. fewer years of cryptanalysis |
 | single implementation | low-medium | formal spec enables independent implementations |
 
 ### 14.3 Structural advantages (asymptotic, not constant-factor)
