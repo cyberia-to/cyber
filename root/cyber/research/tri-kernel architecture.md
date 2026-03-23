@@ -46,10 +46,10 @@ We scored algorithms on critical properties, filtering by locality first:
 | Property | Why Critical | Filter Type |
 |----------|--------------|-------------|
 | Locality | No global recompute for local change | HARD (must have) |
-| Convergence | Need stable equilibrium | Required |
+| [[convergence]] | Need stable equilibrium | Required |
 | Uniqueness | [[consensus]] requires one answer | Required |
 | Verifiability | Light clients must check | Required |
-| Token-weightable | Sybil resistance via stake | Required |
+| Token-weightable | Sybil resistance via [[stake]] | Required |
 | Incremental update | Handle streaming edits | Preferred |
 | Privacy-compatible | FHE/ZK friendly operations | Preferred |
 
@@ -57,7 +57,7 @@ Applying the locality filter:
 
 | Algorithm | Local? | Status |
 |-----------|--------|--------|
-| PageRank (power iteration) | No (global) | ✂️ Cut |
+| [[PageRank]] (power iteration) | No (global) | ✂️ Cut |
 | Personalized PageRank (truncated) | Yes | ✓ Survives |
 | HITS | No (global) | ✂️ Cut |
 | Eigenvector centrality | No (global) | ✂️ Cut |
@@ -82,8 +82,8 @@ BP is local but not convergent, not unique, not composable, and not token-compat
 
 After applying all required properties (locality, convergence, uniqueness, verifiability, token-weightability), exactly three families of local operators remained:
 
-- Local random walk ([[diffusion]] with truncation/restart)
-- Local screened Laplacian solve ([[springs]] with boundary pinning)
+- Local [[random walk]] ([[diffusion]] with truncation/restart)
+- Local screened [[Laplacian]] solve ([[springs]] with boundary pinning)
 - Local [[heat]] kernel approximation (Chebyshev polynomial truncation)
 
 These are the complete set of local operators for graph ranking. The [[tri-kernel]] is what remains after impossibility eliminates everything else.
@@ -111,7 +111,7 @@ Claim C (Adaptation): Temperature τ in the [[heat]] kernel provides simulated a
 
 Track per epoch:
 - Cross-entropy on held-out edges (prediction quality)
-- Entropy H(π) and negentropy J = log|V| - H ([[focus]] sharpness)
+- [[entropy]] H(π) and negentropy J = log|V| - H ([[focus]] sharpness)
 - Convergence/mixing time (stability)
 
 If adding small λ_s, λ_h monotonically improves these metrics without destabilizing mixing, the system demonstrably performs [[intelligence]].
@@ -180,7 +180,7 @@ This universality reflects deep structural necessity. Every domain achieving com
 
 ### 4.1 Why These Three Are Fundamental
 
-[[diffusion]] and [[heat]] describe irreversible spreading — entropy growth and the arrow of time. [[springs]] describe reversible oscillation — coherent energy and information storage. Together they form the simplest basis for the three families of linear PDEs: diffusion/heat (parabolic), oscillations/waves (hyperbolic), and steady states (elliptic).
+[[diffusion]] and [[heat]] describe irreversible spreading — [[entropy]] growth and the arrow of time. [[springs]] describe reversible oscillation — coherent energy and information storage. Together they form the simplest basis for the three families of linear PDEs: diffusion/heat (parabolic), oscillations/waves (hyperbolic), and steady states (elliptic).
 
 Each conserves a different quantity: mass/probability ([[diffusion]]), potential/kinetic energy ([[springs]]), and thermal energy ([[heat]]). Each minimizes a different functional: entropy production, potential energy, free energy. Together they are Pareto-optimal: they explain the majority of natural transport, oscillation, and dissipation with minimal assumptions.
 
