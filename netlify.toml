@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, config
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Build is done in GitHub Actions, not Netlify
 # We use `netlify deploy --dir=public` directly
 
