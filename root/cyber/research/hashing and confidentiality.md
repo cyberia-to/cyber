@@ -16,11 +16,11 @@ migration risk: recomputing hashes later requires the original bytes. if some ch
 
 negligible performance cost: blake3’s cost is dominated by message compression, not output size. moving from 32 to 64 bytes adds <5% cpu on large streams and only tens of nanoseconds on small items, while storage proofs roughly double but remain <2% of payload.
 
-privacy-by-default: publishing only anonymised node ids plus commitments to weights lets anyone audit topology without exposing personal balances or authorship by default. this resists “store now, decrypt later” and casual scraping.
+[[privacy]]-by-default: publishing only anonymised node ids plus commitments to weights lets anyone audit [[topology]] without exposing personal balances or authorship by default. this resists “store now, decrypt later” and casual scraping.
 
 selective transparency: commitments are homomorphic. any stakeholder can later open chosen edges or identities and prove consistency with the canonical state, enabling targeted audits and disclosures without blanket deanonymisation.
 
-zk readiness: the ranking and audit logic runs inside zk circuits using poseidon2 (constraint-cheap), while storage and networking continue to use blake3 (hardware-fast). this separation keeps everyday ops fast and proofs practical.
+[[zero knowledge]] readiness: the ranking and audit logic runs inside zk circuits using [[poseidon2]] (constraint-cheap), while storage and networking continue to use [[Blake3]] (hardware-fast). this separation keeps everyday ops fast and proofs practical.
 
 dedup and upgrade agility: fastcdc chunking plus content addressing preserves dedup across edits. multicodec tagging and auxiliary poseidon2 tags let us evolve circuit-level primitives without changing stored blake3 roots.
 
@@ -32,7 +32,7 @@ blake3-xof-512 for storage: saturates modern simd, supports verified streaming, 
 
 pedersen commitments for weights: perfectly hiding, additively homomorphic, mature libraries, no need to alter storage keys. later migration to kzg/ipa is possible via zk equivalence proofs.
 
-poseidon2 in circuits: field-friendly hash with low constraint count; we attach poseidon2 tags to blake3 nodes where zk needs to traverse merkle paths.
+[[poseidon2]] in circuits: field-friendly hash with low constraint count; we attach poseidon2 tags to blake3 nodes where zk needs to traverse merkle paths.
 
 anonymised node ids: poseidon2(pubkey ∥ salt) gives unlinkability by default and a clean path for voluntary identity disclosure.
 
@@ -40,7 +40,7 @@ range proofs on weights: ensure values are non-negative and bounded, preventing 
 
 foundational choices
 
-content addressing: blake3-xof, fixed 64-byte digests for all merkle nodes and cids.
+content addressing: [[Blake3]]-xof, fixed 64-byte digests for all merkle nodes and cids.
 
 chunking/dedup: variable-size fastcdc with target 32 kiB (min 4 kiB, max 256 kiB). each chunk is stored once and referenced by its 64-byte digest.
 
@@ -74,7 +74,7 @@ cₑ: pedersen commitment to total edge weight wₑ (additively homomorphic).
 
 leaf hash for storage: blake3-512(u′ ∥ v′ ∥ cₑ ∥ πₑ).
 
-staking/deposit flow (confidential)
+[[staking]]/deposit flow (confidential)
 
 depositor chooses random rᵢ and computes cᵢ = g^{wᵢ} h^{rᵢ}.
 
@@ -92,7 +92,7 @@ inputs (private witness): openings of commitments (weights), salts for any node-
 
 computation: run k power-iteration steps or chosen ranking algorithm using private weights.
 
-outputs: rank vector r (quantised) + poseidon2 root of r + zk proof π that r was computed exactly from the hidden weights and published topology.
+outputs: rank vector r (quantised) + [[poseidon2]] root of r + zk [[proof]] π that r was computed exactly from the hidden weights and published topology.
 
 selective disclosure of subgraphs
 
@@ -100,13 +100,13 @@ reveal chosen edges by providing their pedersen openings (wᵢ, rᵢ) and verify
 
 reveal authorship by disclosing the salt for affected node ids to map back to pubkeys.
 
-partial disclosure is zero-knowledge for everything not revealed; unopened edges remain perfectly hidden.
+partial disclosure is [[zero knowledge]] for everything not revealed; unopened edges remain perfectly hidden.
 
 hashing inside vs outside circuits
 
-outside (fast path): blake3-xof-512 for all content-addressed storage and merkle nodes.
+outside (fast path): [[Blake3]]-xof-512 for all content-addressed storage and merkle nodes.
 
-inside zk (constraint-minimal): poseidon2 for merkle steps and vector commitments.
+inside zk (constraint-minimal): [[poseidon2]] for merkle steps and vector commitments.
 
 glue: store poseidon2 tags of blake3 nodes where circuits need to traverse the same paths cheaply.
 
@@ -148,7 +148,7 @@ define edge record schema and merkle layout.
 
 integrate pedersen commitments and range proofs for weights.
 
-build poseidon2 merkle helpers and rank circuit (groth16/plonk/stark as appropriate).
+build poseidon2 merkle helpers and rank circuit (groth16/plonk/[[stark]] as appropriate).
 
 define selective disclosure api (openings, salt reveal, audit routines).
 
@@ -158,13 +158,13 @@ open questions / to decide
 
 exact ranking algorithm parameters (α, iterations k, damping, normalisation).
 
-choice of proof system (groth16 vs plonk vs stark) based on ecosystem and performance.
+choice of [[proof]] system (groth16 vs plonk vs [[stark]]) based on ecosystem and performance.
 
 range-proof system (bulletproofs, plonkish custom gates, or halo2 native) and aggregation strategy.
 
 privacy budget for node-id salts and rotation policy.
 
-governance policy for subgraph disclosures and audit procedures.
+[[governance]] policy for subgraph disclosures and audit procedures.
 
 appendix: example edge object (informal)
 
