@@ -1,215 +1,175 @@
 ---
-tags: article, cip
+tags: cyber, research, article
 crystal-type: process
-crystal-domain: computer science
-status: draft
-stake: 7810963525595007
-diffusion: 0.00011991008583496344
-springs: 0.00002612460245186173
-heat: 0.0000650363639794429
-focus: 0.0000807996964489312
-gravity: 2
-density: 0
+crystal-domain: cyber
+date: 2026-03-23
 ---
-prefer transparent cryptography with no trusted setup or social committees.
 
-separate compute/consensus from data availability; keep a clean, swappable boundary.
+# data availability: from sampling to algebraic proofs
 
-tier data by criticality and expected half-life to optimize cost versus permanence.
+how [[cyber]] guarantees that data physically exists without downloading it. layer 4 of [[structural sync]]. the mechanism that closes the gap between "the data is committed" and "the data is retrievable."
 
-make light verification the default path; anyone should verify on a phone.
+## the problem
 
-design for graceful degradation and reversible choices via governance.
+a node commits to data (posts a hash, signs a root). the hash proves integrity — if you have the data, you can verify it matches. but the hash says nothing about whether the data is AVAILABLE. the committer could publish the root and discard the payload. every verifier sees a valid commitment to data nobody can retrieve.
 
-threat model (high-level)
+this is the data availability problem. it is independent of consensus, ordering, and validity — a system can have perfect proofs of correct computation while the underlying data is lost.
 
-da withholding by block producers or operators.
+## the solution: erasure coding + sampling
 
-long-range or governance capture of a single da provider.
+### 2D Reed-Solomon encoding
 
-corruption of trusted-setup ceremonies (where used) or committee collusion.
-
-network partition and economic attacks that raise posting costs beyond thresholds.
-
-trust stack summary
-
-no-ceremony cryptography: hash trees + [[erasure coding]] (celestia), fri/[[stark]]-style sampling (frida research).
-
-escape hatch: [[ethereum]] calldata for minimal checkpoints (fully trustless, expensive).
-
-avoid committee trust for mission-critical data; allow as optional low-cost tier if ever needed.
-
-layered da stack
-
-tier 0 — critical roots: post checkpoint roots to ethereum calldata once per [[epoch]]; immutable forever; low bandwidth (≈32–64 kb/epoch); used for ultimate recovery and dispute resolution.
-
-tier 1 — active graph: post "[[focus]] blobs" (≈10k links + proofs) to celestia; retain for ≥30 days; mirror to [[ipfs]]/filecoin; verified by celestia light sampling on phones.
-
-tier 2 — historical tails: erasure-coded archival to filecoin/arweave/ipfs pinning; refreshed by archivers; used for deep replay and research analytics.
-
-target sLOs and kpis
-
-blob post success rate ≥ 99.95% over rolling 7 days.
-
-median light-client acceptance latency ≤ 2 seconds per blob.
-
-cost per mb (tier 1) below budget b (governance parameter) with automated reroute if exceeded.
-
-checkpoint cadence hit rate 100% with zero missed epochs.
-
-posting unit: focus blob
-
-content: batch of cyberlinks + minimal per-link metadata + optional sampling metadata.
-
-size target: 1–4 mb per blob (tunable); bounded by da provider limits.
-
-retention: min 30 days on tier 1; long-term via tier 2.
-
-light-client verification path
-
-today: celestia das with √n random share sampling until acceptance threshold reached.
-
-feature flag: embed fri/frida-style proofs in blob metadata to enable poly-log sampling when available.
-
-phones-first: default clients verify availability before accepting any on-chain reference.
-
-checkpoints and replay
-
-every n blocks form a state commitment (e.g., merkle/patricia root + rolling hash of blob ids).
-
-write the commitment to ethereum calldata; store a small proof-of-inclusion reference on our chain.
-
-replay requires: retrieve blobs from celestia/ipfs → apply to state → compare to last checkpoint root.
-
-failure and degradation modes
-
-if celestia posting cost > max\_blob\_fee, pause tier-1 posting and increase checkpoint frequency; queue blobs for later or route to backup da if approved by governance.
-
-if retrieval fails from celestia, fetch via ipfs/filecoin mirrors; if still unavailable, mark range as contested and trigger dispute protocol using checkpoints.
-
-if [[governance]] capture suspected, switch da target via on-chain parameter without hard fork.
-
-on-chain parameters (governance knobs)
-
-min\_sampling\_confidence: default 0.999 (probability data is available given samples).
-
-max\_blob\_fee: absolute or dynamic cap (e.g., usd/mb); triggers reroute or defer.
-
-checkpoint\_interval: blocks per ethereum checkpoint; trade cost vs recovery speed.
-
-redundancy\_factor: number of independent pinning providers for each blob.
-
-retention\_days\_tier1: minimum retention requirement before archiving.
-
-kzg/committee exposure policy
-
-mission-critical data (tier 0/1) must avoid trusted setup and committee trust.
-
-optional experimental tier may use kzg-based or dac-backed da for non-critical, short-lived analytics; disabled by default.
-
-interfaces and data structures
-
-blob descriptor (on-chain):
-
-- hash: [[Blake3]]/sha256 of blob payload.
-- da\_target: enum { celestia, future\_frida, reserved }.
-- size\_bytes: uint64.
-- retention\_class: enum { hot, warm, cold }.
-- mirrors: list for [[ipfs]]/filecoin.
-
-posting api (off-chain service → da adaptor):
-
-- post\_blob(payload, policy) → da\_receipt { target, height/slot, commitment, inclusion\_proof }.
-- verify\_availability(da\_receipt, confidence) → bool.
-- publish\_descriptor(da\_receipt, mirrors) → tx\_hash (our chain).
-
-routing policy (pseudo):
+data is arranged in a $\sqrt{n} \times \sqrt{n}$ grid and extended with parity rows and columns via Reed-Solomon over [[Goldilocks field]]:
 
 ```
-fn route(policy, market):
-  if policy.trust_minimized_only and market.target != celestia:
-    target = celestia
-  if market.celestia_fee_per_mb > policy.max_blob_fee:
-    target = pause_and_queue
-  return target
+original: k × k data cells
+extended: 2k × 2k (data + parity)
+any k × k submatrix → full reconstruction
+default rate 1/2: 2× storage overhead, distributed across N devices
 ```
 
-
+withholding >50% makes reconstruction fail — but random sampling detects it exponentially fast. withholding <50% means the data is recoverable from parity anyway. binary outcome: available or detectable.
 
-operational runbook (excerpt)
+### data availability sampling (DAS)
 
-assemble batch every block or at size threshold.
+a verifier samples O(√n) random cells, each with an [[NMT]] inclusion proof against the committed root:
 
-run [[erasure coding]] locally for redundancy hints; compute hash.
+```
+for i in 1..k:
+  pos ← random_cell()
+  (cell, proof) ← request(pos)
+  verify: NMT_proof(cell, proof, root)
 
-call post\_blob to celestia; receive da receipt.
+k = 20: confidence 1 - (1/2)^20 = 99.9999%
+k = 30: confidence 1 - (1/2)^30 = 99.99999999%
+```
 
-perform light-client sampling to target confidence; on success, publish descriptor on our chain.
+a phone verifies 1 TB of data with ~30 random samples. no full download. no trust in the data holder.
 
-push payload to ipfs/filecoin with redundancy\_factor mirrors; store multihashes in descriptor.
+### fraud proofs for bad encoding
 
-emit metrics: cost per mb, acceptance latency, failure reasons.
+if a block producer encodes data incorrectly (wrong Reed-Solomon), any node that obtains k+1 cells from one row can detect it:
 
-implementation timeline
+```
+1. download k+1 cells from row
+2. Reed-Solomon decode → expected polynomial
+3. check: decoded polynomial matches committed row root?
+4. if not → fraud proof (k+1 cells + proofs)
+5. verification: O(k log n) — linear in row, logarithmic in block
+```
 
-q3 2025: celestia blob poster + ipfs fallback; light sampling in mobile client; basic dashboards.
+## three scales
 
-q4 2025: ethereum calldata checkpoint writer; incident automation; cost benchmarks public.
+the same mechanism works at every scale. only parameters change:
 
-q1 2026: embed fri/frida-style sampling metadata; feature-flag rollout; adversarial testing.
+| scale | participants | distribution | commitment | fraud handling |
+|---|---|---|---|---|
+| local (devices) | 1-20 devices of one [[neuron]] | capacity-weighted | per-device [[NMT]] | key revocation |
+| global ([[neurons]]) | 10³-10⁶ neurons | [[stake]]-weighted | per-neuron NMT | stake slashing |
+| query (light clients) | 10⁹ clients | pull-based | [[BBG]] root | proof rejection |
 
-h2 2026: evaluate production frida-based da; migration playbook; staged cutover if justified.
+at local scale: a phone verifies its server has all files without downloading them. at global scale: light clients verify block data availability without running a full node.
 
-comparison snapshot (july 2025)
+## the cost (current NMT-based)
 
-\| solution | type | trusted setup | committee trust | throughput (now/roadmap) | retention | light sampling | maturity | |---|---|---|---|---|---|---|---| | celestia | modular da l1 | none | none | high → roadmap to \~1 gb blocks | persistent | yes (das) | mainnet | | ethereum eip-4844 blobs | l1 blobspace | kzg ceremony | none | moderate; cheap for l2s | \~18 days then pruned | commitment only | mainnet (mar 2024) | | eigenda | restaked da | kzg ceremony | none | high (operator-limited) | operator-configurable | roadmap | mainnet | | avail | modular da | kzg ceremony | none | high; "infinity blocks" roadmap | persistent | yes | mainnet | | arbitrum anytrust dac | committee da | none | ≥1 honest member | variable | committee policy | no (assumption-based) | mainnet | | starknet volition/validium | hybrid | none (stark proofs) | optional dac | variable | mode-dependent | n/a | rolling out | | frida (research) | sampling algo | none | none | theoretical poly-log overhead | n/a | yes (core) | academic |
+```
+per sample:      NMT inclusion proof → O(log n) Hemera hashes
+                 at n = 2³²: 32 × 736 = 23,552 constraints per sample
+20 samples:      20 × 23,552 = 471,040 constraints
+bandwidth:       20 × 1 KiB = 20 KiB per verification
+```
 
-risk register (initial)
+this is layer 4's contribution to [[Verified Eventual Consistency]]. combined with layer 3 ([[NMT]] completeness) and layer 5 ([[CRDT]] merge), it provides the full VEC guarantee: convergence verified + completeness verified + availability verified.
 
-celestia throughput or fee volatility makes tier-1 uneconomical → mitigation: max\_blob\_fee guard, dynamic batch sizing, temporary checkpoint frequency increase.
+## algebraic DAS: the evolution
 
-ipfs/filecoin mirror unreliability → mitigation: redundancy\_factor ≥ 3, periodic verify-and-repin jobs.
+### the shift
 
-ethereum calldata spikes in gas price → mitigation: elastic checkpoint\_interval with floor; pre-funded gas vault and hedging.
+replace [[NMT]] inclusion proofs with [[PCS]] (polynomial commitment scheme) openings. every sample becomes a polynomial evaluation instead of a Merkle path:
 
-future frida networks slip or underperform → mitigation: keep feature-flagged and optional; do not block tier-1 operations.
+```
+current (NMT):
+  sample cell → NMT inclusion proof → O(log n) Hemera hashes
+  proof size: ~1 KiB per sample
+  verification: walk Merkle path, check sorting invariant
 
-monitoring and alerts
+algebraic:
+  sample cell → PCS opening → O(1) field operations
+  proof size: ~200 bytes per sample
+  verification: one polynomial evaluation check
+```
 
-blob\_post\_cost\_usd\_mb (p95) crossing threshold.
+### the numbers
 
-light\_accept\_latency\_ms (p95) crossing threshold.
+| metric | NMT DAS | algebraic DAS | improvement |
+|---|---|---|---|
+| proof size per sample | ~1 KiB | ~200 bytes | 5× smaller |
+| constraints per sample | 23,552 | ~100 | 235× fewer |
+| 20 samples bandwidth | 20 KiB | 4 KiB | 5× less |
+| 20 samples constraints | 471K | 2K | 235× fewer |
+| in-circuit verification | prohibitive for bulk | feasible | enables provable DAS |
 
-missing\_checkpoints count > 0 within window.
+### why this matters
 
-mirror\_retrieve\_errors > x per day.
+algebraic DAS is not a standalone optimization. it is a consequence of [[algebraic state commitments]]: when the state layer moves from hash trees to polynomials, the availability layer inherits the efficiency automatically. the NMT that commits erasure-coded chunks becomes a polynomial that commits them algebraically.
 
-open questions
+the cascade:
+- [[BBG]] polynomial state (one commitment for all state) → state reads are O(1) field ops
+- algebraic DAS (PCS openings for samples) → availability verification is O(1) field ops
+- [[provable consensus]] (tri-kernel in [[zheng]] circuit) → the circuit can verify availability IN the proof
 
-optimal batch sizing under varying network conditions without hurting light verification latency.
+with NMT DAS: verifying 20 samples in-circuit costs 471K constraints. feasible but expensive.
+with algebraic DAS: 2K constraints. negligible. the prover can verify data availability as part of proving consensus correctness — zero marginal cost.
 
-standardized receipt format across da providers to simplify bridges and wallets.
+## the complete availability stack
 
-best-in-class [[erasure coding]] parameters for our data shape and retrieval patterns.
+```
+layer 4 in structural sync:
 
-next actions
+  DATA CREATION
+    neuron creates signal → content chunks
+         ↓
+  ERASURE ENCODING
+    2D Reed-Solomon over Goldilocks field
+    k data chunks → 2k encoded chunks
+         ↓
+  COMMITMENT
+    NMT (current): namespace Merkle tree over chunks
+    polynomial (future): PCS commitment over chunk evaluations
+         ↓
+  DISTRIBUTION
+    local: capacity-weighted across device set
+    global: stake-weighted across neuron set
+         ↓
+  SAMPLING (DAS)
+    verifier samples O(√n) random cells
+    each cell: inclusion proof (NMT path or PCS opening)
+    confidence: 1 - (1/2)^k with k samples
+         ↓
+  RECONSTRUCTION (on failure)
+    any k-of-2k chunks → full reconstruction
+    device dies → other devices hold parity → data survives
+```
 
-implement the da adaptor skeleton and wire to celestia light clients.
+## what DAS does NOT solve
 
-ship the calldata checkpoint writer and recovery/replay tool.
+availability proves data EXISTS. it does not prove data is CORRECT (that is layer 1: [[zheng]] validity), ORDERED (layer 2: [[hash chain]] + [[VDF]]), or COMPLETE for a given source (layer 3: [[NMT]] completeness). each layer provides an independent guarantee. together: [[Verified Eventual Consistency]].
 
-draft the [[governance]] parameters and defaults; socialize with stakeholders.
+DAS also does not provide PERMANENT availability. erasure coding survives k failures out of 2k holders. if more than k holders disappear, data is lost. long-term persistence requires archival strategies — replication to additional holders as existing holders leave.
 
-define the archiver incentives and service-level requirements for mirrors.
+## relationship to other systems
 
-glossary (brief)
+| system | erasure coding | sampling | commitment | transparent |
+|---|---|---|---|---|
+| [[Celestia]] | 2D Reed-Solomon | DAS (O(√n)) | [[NMT]] | yes |
+| Ethereum (EIP-4844) | 1D RS | no sampling | KZG | no (trusted setup) |
+| EigenDA | 1D RS | no sampling | KZG | no |
+| Avail | 2D RS (Kate) | DAS | KZG | no |
+| cyber (current) | 2D RS over [[Goldilocks field]] | DAS (O(√n)) | [[NMT]] + [[Hemera]] | yes |
+| cyber (algebraic) | 2D RS over Goldilocks | DAS (O(√n)) | PCS ([[WHIR]]/Brakedown) | yes |
 
-da: data availability — the guarantee that posted data can be retrieved by anyone.
+cyber's approach is closest to [[Celestia]] (both use NMT + 2D RS + transparent DAS). the key difference: cyber's algebraic evolution replaces NMT with PCS, making availability verification algebraic — composable with the [[zheng]] proof system. Celestia keeps NMT permanently.
 
-light client: a verifier that checks availability/proofs without downloading full data.
+the other difference: cyber uses [[Goldilocks field]] for erasure coding (same field as proofs, consensus, FHE). no field mismatch. Celestia uses a separate field.
 
-kzg: polynomial commitment scheme needing a multi-party trusted setup ceremony.
-
-fri/[[stark]]: transparent [[proof]] systems with no trusted setup; used by frida/starknet.
-
-dac: data availability committee; a social trust model requiring one or more honest members.
+see [[DAS]] for the sampling algorithm. see [[erasure coding]] for Reed-Solomon construction. see [[NMT]] for namespace Merkle trees. see [[structural sync]] for the five-layer framework. see [[algebraic state commitments]] for the polynomial transition. see [[cyber/research/vec formalization]] for formal availability guarantees. see [[BBG]] for the authenticated state layer
