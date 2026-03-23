@@ -19,6 +19,7 @@ cycles × halving ≈ 33 (approximately constant, see tokenomics.md)
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # Parameters from go-cyber x/resources
 HALF_LIFE_V = 4_000_000_000
@@ -107,7 +108,11 @@ fig.text(0.5, 0.01,
          ha='center', fontsize=10, color='#484f58')
 
 plt.tight_layout(rect=[0, 0.04, 1, 1])
-plt.savefig('/Users/joyrocket/git/cyber/media/mint_price_chart.png', dpi=150, bbox_inches='tight',
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_dir = os.path.dirname(script_dir)
+media_dir = os.path.join(repo_dir, 'media')
+os.makedirs(media_dir, exist_ok=True)
+plt.savefig(os.path.join(media_dir, 'mint_price_chart.png'), dpi=150, bbox_inches='tight',
             facecolor='#0d1117', edgecolor='none')
 print(f"Saved: media/mint_price_chart.png")
 print(f"Current $V price: {cur_price_v/1e6:.1f}M H per 1 V")

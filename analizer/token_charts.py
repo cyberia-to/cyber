@@ -28,7 +28,7 @@ HALF_LIFE_A = 32_000_000_000
 BASE_AMOUNT_V = 1_000_000_000
 BASE_AMOUNT_A = 100_000_000
 
-MEDIA_DIR = '/Users/joyrocket/git/cyber/media'
+MEDIA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'media')
 os.makedirs(MEDIA_DIR, exist_ok=True)
 
 # Dark theme
