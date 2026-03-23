@@ -12,8 +12,8 @@ focus: 0.00024637078827473465
 gravity: 1
 density: 0
 ---
-- GFlowNet: a proposal engine that *samples edits* (small graph changes) in proportion to how good they look.
-- Focus‑Flow: a physics‑style process that keeps a live attention field \(π\) over the graph (what the network cares about now).
+- GFlowNet: a proposal engine that *samples edits* (small [[graph]] changes) in proportion to how good they look.
+- Focus‑Flow: a physics‑style process that keeps a live [[attention]] field \(π\) over the graph (what the network cares about now).
 
 Why marry them
 - Let π steer what to try next; let accepted edits reshape π. That closes the loop so exploration stays useful and the network keeps learning.
@@ -26,7 +26,7 @@ The loop (5 steps)
 5) Recompute focus π_{t+1}, train GFlowNet on what worked, repeat.
 
 What’s rewarded
-- Edits that increase order/information (lower free energy / raise useful focus) get paid; noise burns fees. Incentives match the global objective.
+- Edits that increase order/information (lower [[free energy]] / raise useful [[focus]]) get paid; noise burns fees. Incentives match the global objective.
 
 Guardrails (so it doesn’t go off the rails)
 - Quotas per topic, fees, and rate limits at hot nodes.
@@ -55,12 +55,12 @@ gflownet × focus-flow — key insights (chapters)
 
 chapter 1 — overview and thesis
 - gflownet is a proposal engine that samples structured edits with probability proportional to a reward r(x)
-- focus-flow computes a global attention field π over the network graph from ongoing activity
+- focus-flow computes a global attention field π over the network [[cybergraph]] from ongoing activity
 - we marry them by letting π shape r(x), while each accepted edit updates the graph and shifts π
 
 chapter 2 — where they align
 - both turn unnormalized scores into stochastic processes with good stationary behavior
-- both help approximate intractable sums: gflownet via learned flows and balance losses; focus-flow via fast diffusion/consensus on the graph
+- both help approximate intractable sums: gflownet via learned flows and balance losses; focus-flow via fast [[diffusion]]/[[consensus]] on the graph
 - both admit forward/backward views: gflownet uses p_f/p_b over constructive dags; focus-flow has diffusion and global correction phases
 
 chapter 3 — where they differ
@@ -82,7 +82,7 @@ chapter 5 — edit language (action/state/reward)
 chapter 6 — training tactics
 - use sub-trajectory balance to propagate credit over long edit sequences
 - stabilize with a lagged focus prior π̂_t (target network) to avoid chasing a moving field
-- temper the policy (entropy or temperature τ) for diversity vs exploitation
+- temper the policy ([[entropy]] or [[temperature]] τ) for diversity vs exploitation
 - mix on-policy sampling with replay of high-Δπ̂ trajectories for sample efficiency
 
 chapter 7 — closed-loop algorithm (sketch)
@@ -103,7 +103,7 @@ chapter 8 — safety and economics (guards)
 chapter 9 — metrics that actually move the needle
 - diversity: entropy of sampled edit types and coverage of node/edge classes
 - impact: realized Δπ over time per accepted edit and per unit cost
-- stability: spectral gap / mixing time of the focus kernel before vs after edits
+- stability: [[spectral gap]] / mixing time of the focus kernel before vs after edits
 - efficiency: edits per joule and per dollar; gpu occupancy and tail latency
 - reliability: revert rate, failed-proof rate, and mean time to consistency across shards
 
@@ -115,17 +115,17 @@ chapter 11 — design notes
 - make Δπ̂ differentiable: a small graph net predicts rank deltas from local motifs so reward remains smooth
 - sparsify action space: constrain add_link to whitelisted motifs (triadic closure, co-citation, functional dependencies) for tractability
 - multi-scale: run a gflownet per bucket; aggregate compressed Δ-ranks to a hub and feed back as priors
-- asynchrony: prefer eventual consistency with bounded staleness windows over global barriers
+- asynchrony: prefer eventual [[convergence]] with bounded staleness windows over global barriers
 
 chapter 12 — prototype plan
-- single-bucket sandbox with 10⁶ edges, incremental pagerank, and a tiny gflownet over add_link/upweight
+- single-bucket sandbox with 10⁶ edges, incremental [[pagerank]], and a tiny gflownet over add_link/upweight
 - offline evaluator that replays diffs and measures realized Δπ and stability metrics
 - ablations: fixed prior vs focus-shaped r(x); tb vs subtb; with/without lagged π̂
 
 chapter 13 — open questions
 - how to bound global regret when π drifts quickly under heavy edit throughput
 - how to prevent collusive edits that game Δπ̂ while hurting downstream utility
-- what economic signals best stabilize exploration at scale without collapse to popular hubs
+- what economic [[signals]] best stabilize exploration at scale without collapse to popular hubs
 
 chapter 14 — one-sentence takeaway
 - let focus-flow set the beat; let gflownet compose moves that follow the beat yet expand the score, and train on the delta between the two
