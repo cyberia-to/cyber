@@ -1,6 +1,6 @@
 ---
 tags: cyber
-alias: nox, nox vm, nox virtual machine
+alias: nox, nox vm, nox virtual machine, cyber/nox
 crystal-type: entity
 crystal-domain: cyber
 subgraph: true

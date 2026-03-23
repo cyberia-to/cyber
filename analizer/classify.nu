@@ -8,7 +8,14 @@
 # Outputs JSON classification to /tmp/crystal_classification.json
 
 def main [graph_path: string] {
-    let pages_dir = ($graph_path | path join "pages")
+    # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+    let pages_dir = if ($graph_path | path join "root" | path exists) {
+        $graph_path | path join "root"
+    } else if ($graph_path | path join "graph" | path exists) {
+        $graph_path | path join "graph"
+    } else {
+        $graph_path | path join "pages"
+    }
 
     # Type tag mappings: tag -> crystal type
     let entity_tags = [

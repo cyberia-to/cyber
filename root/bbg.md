@@ -1,6 +1,6 @@
 ---
 tags: cyber
-alias: bbg, Big Badass Graph, authenticated state
+alias: bbg, Big Badass Graph, authenticated state, cyber/bbg
 crystal-type: entity
 crystal-domain: cyber
 subgraph: true

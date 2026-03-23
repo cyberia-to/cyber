@@ -8,6 +8,14 @@
 # Usage: nu nu/crosslink_topology.nu <graph_path>
 
 def main [graph_path: string] {
+    # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+    let pages_subdir = if ($graph_path | path join "root" | path exists) {
+        "root"
+    } else if ($graph_path | path join "graph" | path exists) {
+        "graph"
+    } else {
+        "pages"
+    }
     let core_concepts = [
         "graph" "link" "particle" "cyberlink" "cybergraph"
         "axon" "neuron" "avatar" "spell" "focus"
@@ -118,7 +126,7 @@ def main [graph_path: string] {
 
     let results = $core_concepts | each {|concept|
         let rel_path = ($page_map | get $concept)
-        let full_path = ($graph_path | path join "pages" $rel_path)
+        let full_path = ($graph_path | path join $pages_subdir $rel_path)
         let content = (open --raw $full_path)
 
         # Split off frontmatter

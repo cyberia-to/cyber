@@ -4,6 +4,14 @@
 # crystal-domain: cyber
 # ---
 def main [graph_path: string] {
+  # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+  let pages_dir = if ($graph_path | path join "root" | path exists) {
+      "root"
+  } else if ($graph_path | path join "graph" | path exists) {
+      "graph"
+  } else {
+      "pages"
+  }
   let groups = [
     {group: "graph", members: ["link", "particle", "cyberlink", "cybergraph", "axon"]},
     {group: "neuron", members: ["avatar", "spell", "focus", "karma", "skill", "soul", "attention", "will"]},
@@ -21,7 +29,7 @@ def main [graph_path: string] {
     $all_pages | enumerate | each {|it|
       let p = $it.item
       let role = if $it.index == 0 { "head" } else { "member" }
-      let path = ($graph_path | path join "pages" $"($p).md")
+      let path = ($graph_path | path join $pages_dir $"($p).md")
       if ($path | path exists) {
         let c = (open --raw $path)
         let lines = ($c | lines)
