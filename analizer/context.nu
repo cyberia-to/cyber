@@ -27,8 +27,17 @@ def main [
 
   print $"Scanning pages..."
 
+  # --- auto-detect page directory: root/ → graph/ → pages/ (same as optica) ---
+  let pages_subdir = if ($graph_path | path join "root" | path exists) {
+    "root"
+  } else if ($graph_path | path join "graph" | path exists) {
+    "graph"
+  } else {
+    "pages"
+  }
+
   # --- collect all markdown files ---
-  mut all_files = (glob $"($graph_path)/root/**/*.md" | sort)
+  mut all_files = (glob $"($graph_path)/($pages_subdir)/**/*.md" | sort)
 
   # blog and scripts
   let blog = (glob $"($graph_path)/blog/*.md" | sort)
@@ -36,29 +45,52 @@ def main [
   let configs = (glob $"($graph_path)/*.md" | append (glob $"($graph_path)/*.toml") | sort)
   $all_files = ($all_files | append $blog | append $scripts | append $configs)
 
-  # subgraph repos (sibling directories)
+  # subgraph repos — auto-discover from frontmatter `subgraph: true` + `repo:` fields
   mut subgraph_files = []
   if $subgraphs {
     let git_root = ($graph_path | path dirname)
-    let repos = [hemera zheng nebu nox bbg cybernode mudra trident optica]
-    for repo in $repos {
-      let repo_path = $"($git_root)/($repo)"
-      if ($repo_path | path exists) {
-        let md = if ($"($repo_path)/root" | path exists) {
-          glob $"($repo_path)/root/**/*.md"
-        } else if ($"($repo_path)/graph" | path exists) {
-          glob $"($repo_path)/graph/**/*.md"
-        } else if ($"($repo_path)/pages" | path exists) {
-          glob $"($repo_path)/pages/**/*.md"
-        } else {
-          glob $"($repo_path)/**/*.md"
-            | where {|f| not ($f | str contains "/.git/")}
-            | where {|f| not ($f | str contains "/build/")}
-            | where {|f| not ($f | str contains "/target/")}
-            | where {|f| not ($f | str contains "/node_modules/")}
-        }
-        $subgraph_files = ($subgraph_files | append $md)
+
+    # scan pages for subgraph: true and extract repo: paths
+    let subgraph_repos = ($all_files | each {|f|
+      let raw = (try { open --raw $f } catch { "" })
+      if ($raw | str starts-with "---") and ($raw | str contains "subgraph: true") {
+        let repo_lines = ($raw | lines | where {|l| $l | str starts-with "repo:"})
+        if ($repo_lines | length) > 0 {
+          let repo_rel = ($repo_lines | first | str replace "repo:" "" | str trim)
+          # resolve relative path from graph_path
+          let repo_path = ($graph_path | path join $repo_rel | path expand)
+          if ($repo_path | path exists) { $repo_path } else { null }
+        } else { null }
+      } else { null }
+    } | where {|x| $x != null} | uniq)
+
+    print $"Discovered ($subgraph_repos | length) subgraph repos from frontmatter"
+
+    for repo_path in $subgraph_repos {
+      let exclude_raw = ($all_files | each {|f|
+        let raw = (try { open --raw $f } catch { "" })
+        if ($raw | str contains ($repo_path | path basename)) and ($raw | str contains "exclude:") {
+          let ex_lines = ($raw | lines | where {|l| $l | str starts-with "exclude:"})
+          if ($ex_lines | length) > 0 {
+            ($ex_lines | first | str replace "exclude:" "" | str trim | str replace '"' '' | split row "," | each {|e| $e | str trim})
+          } else { [] }
+        } else { [] }
+      } | flatten | uniq)
+
+      let md = if ($repo_path | path join "root" | path exists) {
+        glob $"($repo_path)/root/**/*.md"
+      } else if ($repo_path | path join "graph" | path exists) {
+        glob $"($repo_path)/graph/**/*.md"
+      } else if ($repo_path | path join "pages" | path exists) {
+        glob $"($repo_path)/pages/**/*.md"
+      } else {
+        glob $"($repo_path)/**/*.md"
+          | where {|f| not ($f | str contains "/.git/")}
+          | where {|f| not ($f | str contains "/build/")}
+          | where {|f| not ($f | str contains "/target/")}
+          | where {|f| not ($f | str contains "/node_modules/")}
       }
+      $subgraph_files = ($subgraph_files | append $md)
     }
     $all_files = ($all_files | append ($subgraph_files | sort))
   }
@@ -79,8 +111,8 @@ def main [
     }
 
     # derive page name from path: root/cyber/focus.md → cyber/focus
-    let page_name = if ($rel | str starts-with "root/") {
-      $rel | str replace "root/" "" | str replace ".md" ""
+    let page_name = if ($rel | str starts-with $"($pages_subdir)/") {
+      $rel | str replace $"($pages_subdir)/" "" | str replace ".md" ""
     } else {
       $rel | str replace ".md" "" | str replace ".nu" "" | str replace ".toml" ""
     }
@@ -130,8 +162,8 @@ def main [
       $f | str replace $"($git_root)/" ""
     }
 
-    let page_name = if ($rel | str starts-with "root/") {
-      $rel | str replace "root/" "" | str replace ".md" ""
+    let page_name = if ($rel | str starts-with $"($pages_subdir)/") {
+      $rel | str replace $"($pages_subdir)/" "" | str replace ".md" ""
     } else {
       $rel | str replace ".md" "" | str replace ".nu" "" | str replace ".toml" ""
     }
@@ -143,20 +175,20 @@ def main [
     # resolve each link and count inbound
     for link in $links_lower {
       # resolve alias → canonical
-      let target = if ($alias_map | get -o $link) != null {
+      let target = if ($alias_map | get -i $link) != null {
         $alias_map | get $link
       } else {
         $link
       }
 
       # increment inbound count
-      let current = ($inbound_counts | get -o $target | default 0)
+      let current = ($inbound_counts | get -i $target | default 0)
       $inbound_counts = ($inbound_counts | merge {$target: ($current + 1)})
     }
 
     # resolve targets for reflected gravity
     let resolved = ($links_lower | each {|l|
-      if ($alias_map | get -o $l) != null { $alias_map | get $l } else { $l }
+      if ($alias_map | get -i $l) != null { $alias_map | get $l } else { $l }
     })
 
     $page_data = ($page_data | append {
@@ -180,7 +212,7 @@ def main [
   for page in $page_data {
     mut ref_sum = 0.0
     for target in $page.targets {
-      let target_gravity = ($inbound_counts | get -o $target | default 0)
+      let target_gravity = ($inbound_counts | get -i $target | default 0)
       $ref_sum = $ref_sum + ($target_gravity | into float)
     }
     $reflected = ($reflected | merge {$page.name: ($ref_sum * $alpha)})
@@ -195,8 +227,8 @@ def main [
 
   mut scored = []
   for page in $page_data {
-    let raw_gravity = ($inbound_counts | get -o $page.name | default 0)
-    let ref_gravity = ($reflected | get -o $page.name | default 0.0)
+    let raw_gravity = ($inbound_counts | get -i $page.name | default 0)
+    let ref_gravity = ($reflected | get -i $page.name | default 0.0)
     let gravity = (($raw_gravity | into float) + $ref_gravity)
     let density = if $page.size > 0 { ($page.outbound / ($page.size / 1024.0)) } else { 0.0 }
     let substance = if $page.size > 100 { ($page.size | math log 2) } else { 1.0 }

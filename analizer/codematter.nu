@@ -55,14 +55,14 @@ const CODE_EXTENSIONS = ["rs" "nu" "py" "sh" "toml" "yml" "yaml"]
 const SKIP_DIRS = ["target" "node_modules" "build" ".git" ".claude" "public"]
 
 def has-codematter [content: string, ext: string] {
-  let prefix = ($COMMENT_MAP | get -o $ext | default "#")
+  let prefix = ($COMMENT_MAP | get -i $ext | default "#")
   let marker = $"($prefix) ---"
   $content | str starts-with $marker
 }
 
 def make-codematter [repo_name: string, file_path: string, ext: string] {
-  let prefix = ($COMMENT_MAP | get -o $ext | default "#")
-  let domain = ($DOMAIN_MAP | get -o $repo_name | default "comp")
+  let prefix = ($COMMENT_MAP | get -i $ext | default "#")
+  let domain = ($DOMAIN_MAP | get -i $repo_name | default "comp")
   let lang_tag = (match $ext {
     "rs" => "rust"
     "nu" => "nushell"

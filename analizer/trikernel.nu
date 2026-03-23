@@ -205,8 +205,8 @@ def main [
     let links = ($raw | parse --regex '\[\[([^\]]+)\]\]' | get capture0 | uniq)
     let resolved = ($links | each {|l|
       let lower = ($l | str downcase)
-      if ($alias_map | get -o $lower) != null { $alias_map | get $lower } else { $lower }
-    } | where {|t| ($page_index | get -o $t) != null})
+      if ($alias_map | get -i $lower) != null { $alias_map | get $lower } else { $lower }
+    } | where {|t| ($page_index | get -i $t) != null})
 
     $outbound = ($outbound | merge {$name: $resolved})
     $out_count = ($out_count | merge {$name: ($resolved | length)})
