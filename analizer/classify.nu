@@ -5,7 +5,7 @@
 # ---
 # Crystal ontology classifier for graph pages
 # Usage: nu nu/classify.nu ~/git/cyber
-# Outputs JSON classification to /tmp/crystal_classification.json
+# Outputs JSON classification to $graph_path/data/crystal_classification.json
 
 def main [graph_path: string] {
     # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
@@ -123,7 +123,9 @@ def main [graph_path: string] {
         }
     })
 
-    $results | to json | save -f /tmp/crystal_classification.json
+    let data_dir = ($graph_path | path join "data")
+    mkdir $data_dir
+    $results | to json | save -f ($data_dir | path join "crystal_classification.json")
 
     let total = ($results | length)
     let high = ($results | where confidence == "high" | length)

@@ -4,7 +4,7 @@
 # crystal-domain: cyber
 # ---
 # Apply Crystal ontology classification to graph pages
-# Reads classification from /tmp/crystal_classification.json
+# Reads classification from $graph_path/data/crystal_classification.json
 # Adds crystal-type:: and crystal-domain:: properties after tags:: line
 # Usage: nu nu/apply-crystal.nu ~/git/cyber
 
@@ -17,7 +17,7 @@ def main [graph_path: string] {
     } else {
         $graph_path | path join "pages"
     }
-    let classification = (open /tmp/crystal_classification.json)
+    let classification = (open ($graph_path | path join "data" "crystal_classification.json"))
 
     let type_names = {
         E: "entity"
