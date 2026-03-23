@@ -13,170 +13,177 @@ date: 2026-03-23
 |---|---|---|---|---|
 | field arithmetic | [[nebu]] | 1,526 | 73 pass | DONE |
 | hash + tree | [[hemera]] | 5,084 | 209 pass | DONE |
-| VM execution | [[nox]] | 80 (stubs) | 0 | EMPTY |
-| proof system | [[zheng]] | 6 (stub) | 0 | EMPTY |
-| authenticated state | [[BBG]] | 6 (stub) | 0 | EMPTY |
-| post-quantum crypto | [[mudra]] | 6 (stub) | 0 | EMPTY |
+| VM execution | [[nox]] | 80 (stubs) | 0 | SPEC 85% |
+| proof system | [[zheng]] | 6 (stub) | 0 | SPEC 100% (zheng-1), zheng-2 draft |
+| authenticated state | [[BBG]] | 6 (stub) | 0 | SPEC 100% (bbg-1), polynomial draft |
+| post-quantum crypto | [[mudra]] | 6 (stub) | 0 | SPEC 10% — parameter choice only |
 | provable language | [[trident]] | 57,736 | compiles | SUBSTANTIAL |
 | graph publisher | [[optica]] | 10,626 | 3 suites | PRODUCTION |
 
-the foundation (nebu + hemera) is solid. the publisher (optica) works. the compiler (trident) has frontend + IR + verification hooks. everything between — the proof system, the VM, the state layer, the crypto — is specification only.
+## the decision: cutting edge
 
-## the critical path
+we go all-in on the props that unify. the conservative path (zheng-1 + NMT trees) builds 13 separate data structures, LogUp consistency proofs, and cannot prove consensus in-circuit. the cutting edge path builds ONE polynomial, eliminates LogUp, and enables provable consensus.
 
-```
-nebu (DONE) → hemera (DONE) → nox → zheng → bbg → foculus → provable consensus
-```
+paradoxically, cutting edge is SIMPLER:
 
-each layer depends on the one below. nox needs hemera for hashing. zheng needs nox for execution traces. bbg needs zheng for state proofs. foculus needs bbg for authenticated state. provable consensus needs all of them.
+| component | conservative (zheng-1 + bbg-1) | cutting edge (zheng-2 + algebraic) |
+|---|---|---|
+| state structures | 9 NMT trees + 3 hash commitments + 1 MMR = 13 | 1 polynomial |
+| cross-index consistency | LogUp (~500 constraints per lookup) | free (same polynomial) |
+| storage overhead | ~5 TB internal tree nodes | 288 bytes (commitments) |
+| per-cyberlink | ~106K constraints | ~3K constraints |
+| provable consensus | impossible (15× over capacity) | feasible (33% capacity) |
+| proof size | 157 KiB | 1-5 KiB |
+| recursive step | 70K constraints | 30 field operations |
+| light client | replay chain headers | 200 bytes, one verify |
+| code to write | NMT + MMR + SWBF + LogUp + 9 indexes | PCS + polynomial + fold |
 
-mudra (post-quantum crypto) is independent — can be built in parallel.
-trident (compiler) feeds INTO nox — trident compiles programs, nox executes them.
+fewer data structures = less code = fewer bugs = faster delivery.
 
-## six milestones
+## what we accept from props
 
-### M1: nox — the VM that proves (target: 4 sessions)
+### zheng-2 (all accepted props)
 
-the smallest useful unit. 16 reduction patterns over [[Goldilocks field]], each producing a STARK-compatible execution trace.
+| prop | what it gives | status |
+|---|---|---|
+| dual PCS (WHIR + Binius) | F_p arithmetic + F₂ binary, 32-64× for bitwise | accept |
+| folding-first (HyperNova) | recursive step: 70K → 30 field ops | accept |
+| algebraic extraction | proof size: 157 KiB → 5-12 KiB | accept |
+| tensor compression | prover memory: O(N) → O(√N), mobile proving | accept |
+| proof-carrying | zero proving latency | accept |
+| gravity-commitment | verification cost ∝ importance (π) | accept |
+| universal accumulator | ALL proof types → one 200-byte object | accept |
 
-deliverables:
-- `noun.rs` — binary tree of field elements (the data structure)
-- `reduce.rs` — 16 patterns: axis, quote, compose, cons, branch, add, sub, mul, inv, eq, lt, and/or/xor, hash, hint
-- `trace.rs` — execution trace recorder (rows × 16 registers)
-- `focus.rs` — resource metering (each pattern costs focus)
-- `encode.rs` — canonical serialization (for content addressing)
+### bbg (polynomial state)
 
-dependencies: nebu (field ops), hemera (hash pattern)
+| prop | what it gives | status |
+|---|---|---|
+| algebraic-nmt | 9 NMT trees → 1 polynomial, 33× cheaper | accept |
+| unified-polynomial-state | 13 sub-roots → 1 commitment | accept |
+| mutator-set-polynomial | SWBF+MMR → O(1) non-membership | accept |
+| signal-first | BBG = materialized view over signal log | accept |
+| algebraic-das | PCS openings for DAS, 25→9 KiB | accept |
 
-test: execute a simple program (fibonacci, hash chain), produce execution trace, verify trace rows satisfy constraints manually.
+### nox (polymorphic + jets)
 
-size estimate: ~3,000-5,000 LOC
+| prop | what it gives | status |
+|---|---|---|
+| algebra-polymorphism | nox<F, W, H> generic over any field | accept |
+| recursive-jets | 5 verifier jets (hash, poly_eval, merkle_verify, fri_fold, ntt) | accept |
 
-### M2: zheng — the proof (target: 8 sessions)
+### mudra
 
-SuperSpartan IOP + WHIR PCS + sumcheck. proves that a nox execution trace satisfies all constraints.
+| prop | what it gives | status |
+|---|---|---|
+| goldilocks-fhe | q = Goldilocks, native NTT, ring-aware FHE | accept (parameter choice) |
 
-deliverables:
-- `sumcheck.rs` — interactive sumcheck protocol (prover + verifier), bookkeeping table optimization
-- `whir.rs` — WHIR polynomial commitment (commit, open, verify), hemera-based Merkle
-- `superspartan.rs` — CCS constraint system, multilinear extensions, outer + inner sumcheck
-- `transcript.rs` — Fiat-Shamir via hemera sponge
-- `fold.rs` — IVC folding (accumulate proofs across epochs)
+## spec gaps that block code
 
-dependencies: nebu (field), hemera (hash for Merkle + Fiat-Shamir), nox (execution trace format)
+### nox: 3 critical gaps
 
-test: prove fibonacci execution (small trace), verify proof. prove hemera hash (pattern 15), verify. benchmark constraint count vs specification.
+G1: noun memory layout. the spec defines `noun = atom(F) | cell(noun, noun)` but not in-memory representation. for no-heap (Rs), need: max depth, max count, arena+index layout, DAG sharing policy.
 
-size estimate: ~8,000-12,000 LOC
+G2: jet formula trees. the 5 recursive-jets are specified by cost and constraint count, but the pure Layer 1 nox programs that define their semantics are not written. without these, implementations cannot compute formula hashes or verify jet substitution correctness.
 
-### M3: bbg core — authenticated state (target: 6 sessions)
+G3: hint callback interface. pattern 16 (hint) says "prover injects witness" but the callback signature (sync/async, error handling, type constraints) is unspecified.
 
-NMT indexes + MMR + mutator set. the minimum viable state layer.
+### zheng-2: cross-algebra composition
 
-deliverables:
-- `nmt.rs` — namespace Merkle tree (insert, update, completeness proof, verify)
-- `mmr.rs` — Merkle mountain range (append, prove membership, peaks hash)
-- `swbf.rs` — sliding window Bloom filter (add, check, archive, verify)
-- `state.rs` — BBG_root composition (13 sub-roots, update, commit)
-- `logup.rs` — LogUp cross-index consistency argument
-- `transition.rs` — cyberlink state transition (touch 4-5 indexes per link)
+the boundary between F_p and F₂ circuits costs ~766 F_p constraints per crossing. for workloads with frequent crossings (neural network layers alternating with field arithmetic), this cost must be verified at scale. estimated feasible but unproven.
 
-dependencies: hemera (tree hashing), zheng (proofs for state transitions)
+### bbg: polynomial cost targets
 
-test: insert 1000 cyberlinks, verify NMT completeness proofs, verify cross-index LogUp, verify mutator set prevents double-spend.
+algebraic-nmt claims ~3K constraints per cyberlink. this assumes Verkle-tree with WHIR at nodes, O(log n) PCS node updates. realistic range may be 3-15K. need benchmarks against actual WHIR performance on Goldilocks.
 
-size estimate: ~6,000-10,000 LOC
+### mudra: TFHE scheme
 
-### M4: foculus — consensus by computation (target: 4 sessions)
+goldilocks-fhe chooses the parameter (q = p) but specifies no algorithm. TFHE bootstrapping, noise tracking, key switching, programmable bootstrap gates — all unspecified. code cannot begin until a complete scheme exists.
 
-tri-kernel convergence on authenticated state. the minimum viable consensus.
+## revised milestones
 
-deliverables:
-- `trikernel.rs` — D (diffusion) + S (springs) + H (heat) operators as sparse matrix operations
-- `converge.rs` — iteration loop with contraction rate monitoring (spectral gap from convergence)
-- `finality.rs` — adaptive threshold τ, nullifier commit, conflict detection
-- `gossip.rs` — signal propagation (cyberlinks + proofs)
+### Phase 0: spec completion (current)
 
-dependencies: bbg (state reads), zheng (per-signal validity proofs)
+resolve G1, G2, G3 in nox. verify zheng-2 cross-algebra cost. benchmark algebraic-nmt against WHIR. write mudra TFHE scheme.
 
-test: simulate 100 neurons, 10K cyberlinks, verify convergence to unique φ*, verify finality correctness, verify no double-finality under conflict.
+these are design sessions, not coding sessions. each gap is ~1 session to resolve.
 
-size estimate: ~4,000-6,000 LOC
-
-### M5: algebraic NMT — the acceleration (target: 6 sessions)
-
-replace hemera trees with polynomial commitments. the 33× speedup. enables provable consensus.
-
-deliverables:
-- `verkle.rs` — Verkle tree with PCS nodes (phase 1: tree structure preserved)
-- `pcs_update.rs` — incremental PCS recommit (O(log n) per update)
-- `batch.rs` — dirty-set tracking and deduplicated batch updates
-- `algebraic_completeness.rs` — LogUp range check over F_{p²} for completeness proofs
-- migration: bbg state transitions using Verkle instead of NMT (parallel verification mode)
-
-dependencies: zheng (WHIR as PCS backend), nebu (F_{p²} extension field)
-
-test: insert 10K entries, verify Verkle proofs match NMT proofs (hybrid verification), benchmark 33× constraint reduction.
-
-size estimate: ~5,000-8,000 LOC
-
-### M6: provable consensus circuit (target: 4 sessions)
-
-tri-kernel computation inside zheng circuit. the endgame.
-
-deliverables:
-- `consensus_circuit.rs` — tri-kernel as nox execution trace (graph read via algebraic NMT → SpMV → combine → iterate)
-- `epoch_proof.rs` — prove one epoch's φ* computation
-- `fold_epochs.rs` — recursive IVC folding across epochs
-- `light_client.rs` — verify accumulated proof (50 μs)
-
-dependencies: all previous milestones
-
-test: prove φ* for a 1000-particle test graph inside zheng circuit, verify in <1ms. fold 10 epochs, verify accumulated proof.
-
-size estimate: ~3,000-5,000 LOC
-
-## total estimate
-
-| milestone | sessions | LOC | depends on |
+| gap | repo | effort | blocks |
 |---|---|---|---|
-| M1 nox | 4 | ~4K | nebu, hemera |
-| M2 zheng | 8 | ~10K | nebu, hemera, nox |
-| M3 bbg | 6 | ~8K | hemera, zheng |
-| M4 foculus | 4 | ~5K | bbg, zheng |
-| M5 algebraic NMT | 6 | ~6K | zheng, nebu |
-| M6 provable consensus | 4 | ~4K | all above |
-| total | 32 sessions | ~37K LOC | |
+| G1 noun layout | nox | 1 session | M1 |
+| G2 jet formulas | nox | 2 sessions | M1, M2 |
+| G3 hint callback | nox | 0.5 session | M1 |
+| cross-algebra boundary cost | zheng | 1 session (benchmark) | M2 |
+| algebraic-nmt cost benchmark | bbg | 1 session (benchmark) | M5 |
+| TFHE scheme | mudra | 3 sessions | M7 (parallel) |
 
-at 3 hours per session: ~96 hours of focused work. parallelizable: M1+M5 overlap, M3+M4 partially overlap after M2.
+total: ~8 sessions of spec work. parallelizable with early code work.
 
-critical path: M1 → M2 → M3 → M4 → M6 (26 sessions sequential)
-with parallelism: M1 → M2 → (M3 ∥ M5) → M4 → M6 (22 sessions)
+### Phase 1: foundation code
 
-## immediate blockers
+| milestone | sessions | LOC est | deliverables |
+|---|---|---|---|
+| M1: nox VM | 4 | ~4K | noun.rs, reduce.rs (16 patterns), trace.rs, focus.rs, encode.rs |
+| M2: zheng-1 core | 6 | ~8K | sumcheck.rs, whir.rs, superspartan.rs, transcript.rs |
+| M3: zheng-2 extension | 4 | ~4K | binius_pcs.rs, hypernova.rs, cross_algebra.rs |
 
-### 1. fix Cargo dependency paths (5 minutes)
+M1 → M2 → M3 sequential. ~14 sessions.
 
-zheng, bbg, and mudra reference `hemera = { path = "../hemera" }` but hemera is a workspace. must be `{ path = "../hemera/rs" }`. same for nebu. three repos broken by path typo.
+### Phase 2: state + consensus
 
-### 2. nebu F_{p²} extension (needed for M5)
+| milestone | sessions | LOC est | deliverables |
+|---|---|---|---|
+| M4: polynomial state (algebraic-nmt) | 6 | ~6K | verkle.rs, pcs_update.rs, polynomial_state.rs, completeness.rs |
+| M5: foculus | 4 | ~5K | trikernel.rs, converge.rs, finality.rs, signal.rs |
 
-nebu has Fp2/Fp3/Fp4 module stubs. extension field arithmetic (multiply, inverse in F_{p²}) needed for LogUp Schwartz-Zippel over extension field. ~200 LOC.
+M4 → M5 sequential, but M4 can start during M3. ~10 sessions.
 
-### 3. trident → nox bridge
+### Phase 3: endgame
 
-trident compiles programs. nox executes them. the IR format must match. trident's TIR (typed IR) needs a lowering pass to nox's 16 patterns. this can wait until M2 but should be designed during M1.
+| milestone | sessions | LOC est | deliverables |
+|---|---|---|---|
+| M6: provable consensus circuit | 4 | ~4K | consensus_circuit.rs, epoch_proof.rs, fold_epochs.rs |
+| M7: universal accumulator | 3 | ~3K | accumulator.rs, light_client.rs |
+| M8: mudra TFHE | 4 | ~5K | tfhe.rs, bootstrap.rs, key_switch.rs |
 
-## tracking
+M6 requires M4+M5. M7 requires M2+M3. M8 independent (parallel throughout).
 
-each milestone produces:
-- working Rust code with tests
-- benchmark against specification numbers
-- integration test with layer below
-- documentation update in the repo
+### timeline
 
-progress tracked by: does `cargo test` pass for the milestone's deliverables?
+```
+sessions:  0    4    8    12   16   20   24   28   32   36
+           ├────┤────┤────┤────┤────┤────┤────┤────┤────┤
+spec:      ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+M1 nox:    ░░░░████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+M2 zheng1: ░░░░░░░░██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+M3 zheng2: ░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░░░░░░░░░░░
+M4 poly:   ░░░░░░░░░░░░██████░░░░░░░░░░░░░░░░░░░░░░░░░░
+M5 foculus:░░░░░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░░░░░░░
+M6 provbl: ░░░░░░░░░░░░░░░░░░░░░░████░░░░░░░░░░░░░░░░░░
+M7 accum:  ░░░░░░░░░░░░░░░░░░███░░░░░░░░░░░░░░░░░░░░░░░
+M8 mudra:  ░░░░░░░░████████████░░░░░░░░░░░░░░░░░░░░░░░░░
 
-the seven algorithms described in [[cyber/research/algorithmic essence of superintelligence]] become running code in 32 sessions. the recursive closure — graph → convergence → model → proof → consensus → graph — becomes executable.
+critical path: spec → M1 → M2 → M3 → M5 → M6 = 26 sessions
+with overlap:  spec(8) + code(24 parallel) = ~28 sessions total
+```
 
-see [[nebu]] for field arithmetic. see [[hemera]] for hash primitives. see [[nox]] for VM specification. see [[zheng]] for proof system specification. see [[BBG]] for state layer specification. see [[foculus]] for consensus specification. see [[algebraic state commitments]] for the acceleration. see [[cyber/research/provable consensus]] for the endgame circuit
+## total
+
+~39K LOC across 8 milestones. ~28 sessions with parallelism (84 hours focused work). the result: a system where the [[cybergraph]] converges provably (tri-kernel in [[zheng]] circuit), state is one polynomial (algebraic NMT), proofs fold recursively (universal accumulator), and light clients verify everything in 50 μs.
+
+## what the cutting edge buys
+
+the seven algorithms from [[cyber/research/algorithmic essence of superintelligence]] become code:
+
+| algorithm | conservative impl | cutting edge impl |
+|---|---|---|
+| tri-kernel | SpMV on NMT-read state | SpMV on polynomial-read state |
+| five layers | NMT + LogUp + DAS + CRDT | polynomial + DAS + CRDT (LogUp gone) |
+| algebraic state | 13 structures, 5 TB | 1 polynomial, 288 bytes |
+| provable consensus | impossible | 1.42B constraints, 33% capacity |
+| compiled model | SVD on exported data | SVD on polynomial openings (in-protocol) |
+| metabolic signal | external measurement | provable inside circuit |
+| recursive closure | theoretical | executable (fold → accumulate → verify) |
+
+the graph becomes self-proving.
+
+see [[nebu]] for field arithmetic. see [[hemera]] for hash. see [[nox]] for VM spec. see [[zheng]] for proof system. see [[BBG]] for state. see [[foculus]] for consensus. see [[algebraic state commitments]] for polynomial state. see [[cyber/research/provable consensus]] for the consensus circuit. see [[cyber/research/algorithmic essence of superintelligence]] for the seven algorithms
