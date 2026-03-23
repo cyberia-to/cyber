@@ -1,0 +1,237 @@
+# ---
+# tags: cyber, python
+# crystal-type: source
+# crystal-domain: cyber
+# ---
+"""
+bostrom_serve.py — serve compiled Bostrom model as OpenAI-compatible API
+
+Receives text queries, resolves to CIDs via graph embeddings,
+returns CID-based responses. Compatible with Ollama's API format.
+
+Usage:
+  python3 analizer/bostrom_serve.py [--port 11435] [--build-index]
+
+First run with --build-index to resolve top CIDs via IPFS gateway.
+Subsequent runs load cached index from data/cid_index.json.
+"""
+
+import json
+import os
+import sys
+import ssl
+import urllib.request
+import numpy as np
+from http.server import HTTPServer, BaseHTTPRequestHandler
+from collections import defaultdict
+
+DATA_DIR = os.path.expanduser("~/git/cyber/data")
+INDEX_PATH = os.path.join(DATA_DIR, "cid_index.json")
+
+# SSL context for IPFS gateway
+CTX = ssl.create_default_context()
+CTX.check_hostname = False
+CTX.verify_mode = ssl.CERT_NONE
+
+
+def load_model():
+    print("Loading compiled model...")
+    data = np.load(os.path.join(DATA_DIR, "bostrom_model.npz"), allow_pickle=True)
+    E = data["embeddings"]
+    pi = data["focus"]
+    cids = list(data["particle_cids"])
+
+    # normalize for cosine similarity
+    norms = np.linalg.norm(E, axis=1, keepdims=True)
+    norms[norms == 0] = 1
+    E_norm = E / norms
+
+    print(f"  {len(cids):,} particles, d={E.shape[1]}")
+    return E_norm, pi, cids
+
+
+def resolve_cid(cid):
+    try:
+        url = f"https://gateway.ipfs.cybernode.ai/ipfs/{cid}"
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=5, context=CTX) as resp:
+            content = resp.read(500).decode("utf-8", errors="replace").strip()
+            if content.startswith(("\x89PNG", "\xff\xd8", "{", "[")):
+                return None  # skip binary/json
+            return content[:200]
+    except:
+        return None
+
+
+def build_index(cids, pi, top_n=5000):
+    """Resolve top CIDs and build text→index mapping"""
+    print(f"Building index from top {top_n} particles...")
+    top_idx = np.argsort(-pi)[:top_n]
+    index = {}  # text → {"idx": int, "cid": str, "focus": float}
+
+    for i, idx in enumerate(top_idx):
+        content = resolve_cid(cids[idx])
+        if content and len(content) < 200:
+            key = content.lower().strip()
+            index[key] = {"idx": int(idx), "cid": cids[idx], "focus": float(pi[idx])}
+            if (i + 1) % 100 == 0:
+                print(f"  {i+1}/{top_n} resolved, {len(index)} indexed")
+
+    with open(INDEX_PATH, "w") as f:
+        json.dump(index, f)
+    print(f"Index saved: {len(index)} text→CID mappings → {INDEX_PATH}")
+    return index
+
+
+def load_index():
+    if os.path.exists(INDEX_PATH):
+        with open(INDEX_PATH) as f:
+            return json.load(f)
+    return {}
+
+
+def search_text(query, index):
+    """Find best matching particle by text"""
+    q = query.lower().strip()
+    # exact match
+    if q in index:
+        return index[q]
+    # substring match
+    matches = [(k, v) for k, v in index.items() if q in k]
+    if matches:
+        # prefer shortest match (most specific)
+        matches.sort(key=lambda x: len(x[0]))
+        return matches[0][1]
+    return None
+
+
+def find_neighbors(idx, E_norm, pi, cids, index, k=10):
+    """Find k nearest neighbors by embedding similarity"""
+    q = E_norm[idx]
+    sims = E_norm @ q
+    top = np.argsort(-sims)[:k + 1]
+
+    # reverse index: idx → text
+    idx_to_text = {v["idx"]: k for k, v in index.items()}
+
+    results = []
+    for neighbor_idx in top:
+        if neighbor_idx == idx:
+            continue
+        label = idx_to_text.get(int(neighbor_idx), None)
+        results.append({
+            "cid": cids[neighbor_idx],
+            "similarity": float(sims[neighbor_idx]),
+            "focus": float(pi[neighbor_idx]),
+            "content": label
+        })
+    return results[:k]
+
+
+def generate_response(query, E_norm, pi, cids, index):
+    """Process a text query and return CID-based response"""
+    match = search_text(query, index)
+
+    if not match:
+        # try each word
+        words = query.lower().split()
+        for word in words:
+            match = search_text(word, index)
+            if match:
+                break
+
+    if not match:
+        return f"no particle found for '{query}'. the graph has {len(cids):,} particles but only {len(index):,} are text-indexed."
+
+    neighbors = find_neighbors(match["idx"], E_norm, pi, cids, index, k=10)
+
+    lines = [f"particle: {match.get('cid', '?')}"]
+    lines.append(f"focus: {match['focus']:.6f}")
+    lines.append("")
+    lines.append("graph neighbors:")
+    for n in neighbors:
+        label = n["content"] or n["cid"][:40]
+        lines.append(f"  sim={n['similarity']:.3f} focus={n['focus']:.6f} → {label}")
+        lines.append(f"    cid: {n['cid']}")
+
+    return "\n".join(lines)
+
+
+class BostromHandler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        if self.path in ("/api/generate", "/v1/chat/completions", "/api/chat"):
+            length = int(self.headers.get("Content-Length", 0))
+            body = json.loads(self.rfile.read(length))
+
+            # extract query from various formats
+            if "prompt" in body:
+                query = body["prompt"]
+            elif "messages" in body:
+                query = body["messages"][-1].get("content", "")
+            else:
+                query = str(body)
+
+            response = generate_response(query, self.server.E_norm, self.server.pi,
+                                          self.server.cids, self.server.index)
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+
+            if self.path == "/api/generate":
+                # Ollama format
+                result = {"model": "bostrom", "response": response, "done": True}
+            else:
+                # OpenAI format
+                result = {
+                    "choices": [{"message": {"role": "assistant", "content": response}}],
+                    "model": "bostrom"
+                }
+            self.wfile.write(json.dumps(result).encode())
+        else:
+            self.send_response(404)
+            self.end_headers()
+
+    def log_message(self, format, *args):
+        query = args[0] if args else ""
+        if "POST" in str(query):
+            print(f"  → {query}")
+
+
+def main():
+    port = 11435
+    do_build = "--build-index" in sys.argv
+    if "--port" in sys.argv:
+        port = int(sys.argv[sys.argv.index("--port") + 1])
+
+    E_norm, pi, cids = load_model()
+
+    if do_build:
+        index = build_index(cids, pi, top_n=5000)
+    else:
+        index = load_index()
+        if not index:
+            print("No index found. Run with --build-index first.")
+            print("  python3 analizer/bostrom_serve.py --build-index")
+            sys.exit(1)
+
+    print(f"Index: {len(index)} text→CID mappings")
+
+    server = HTTPServer(("localhost", port), BostromHandler)
+    server.E_norm = E_norm
+    server.pi = pi
+    server.cids = cids
+    server.index = index
+
+    print(f"\nBostrom model serving on http://localhost:{port}")
+    print(f"  curl -X POST http://localhost:{port}/api/generate -d '{{\"prompt\": \"cyber\"}}'")
+    print(f"  Compatible with Ollama API format.\n")
+
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nShutting down.")
+
+
+if __name__ == "__main__":
+    main()
