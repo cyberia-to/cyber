@@ -44,7 +44,7 @@ every reward traces back to one quantity: how much did your action shift the [[t
 
 $$\text{reward}(v) \propto \Delta\pi(v)$$
 
-$\Delta\pi$ is the gradient of the system's [[free energy]]. creating valuable structure literally creates [[value]]. no designed loss function — the physics of convergence defines what deserves to be optimized.
+$\Delta\pi$ is the gradient of the system's [[free energy]]. creating valuable structure literally creates [[value]]. no designed loss function — the physics of [[convergence]] defines what deserves to be optimized.
 
 the hybrid reward function:
 
@@ -66,7 +66,7 @@ complexity: $O(k \cdot n)$ with $k \ll n$, feasible for $10^6+$ transactions per
 
 ## epistemic markets
 
-every [[cyberlink]] carries a perpetual prediction market on its own truth. one atomic act — creating a link — simultaneously asserts structural [[knowledge]] and opens an epistemic market on it.
+every [[cyberlink]] carries a perpetual prediction market on its own [[truth]]. one atomic act — creating a link — simultaneously asserts structural [[knowledge]] and opens an epistemic market on it.
 
 the market mechanism is [[inversely coupled bonding surface|ICBS]]:
 
@@ -88,7 +88,7 @@ the [[cybergraph]] achieves honest markets through [[Bayesian Truth Serum]] (Pre
 
 ## the GFP flywheel
 
-the optimal mining hardware and the optimal proving hardware are the same chip. the [[Goldilocks field processor]] exercises four primitives (fma, ntt, p2r, lut) for both PoUW mining and real workloads (stark proving, focus computation, neural inference). mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users pay fees. fees replace emission. no stranded assets.
+the optimal mining hardware and the optimal proving hardware are the same chip. the [[Goldilocks field processor]] exercises four primitives (fma, ntt, p2r, lut) for both PoUW mining and real workloads ([[stark]] proving, focus computation, neural inference). mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users pay fees. fees replace emission. no stranded assets.
 
 ---
 
