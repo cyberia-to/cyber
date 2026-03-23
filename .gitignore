@@ -11,6 +11,9 @@ build/
 /node_modules
 **/target/
 
+# Compiled data (large, reproducible from pipeline)
+data/
+
 # Tri-kernel moon marker (local state)
 analizer/.last-moon
 
