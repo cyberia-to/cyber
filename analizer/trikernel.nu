@@ -20,11 +20,38 @@
 #   nu analizer/trikernel.nu ~/git/cyber --subgraphs        # include subgraph repos
 #   nu analizer/trikernel.nu ~/git/cyber --dry-run          # compute and print, don't write
 #   nu analizer/trikernel.nu ~/git/cyber --iterations 30    # more iterations (default 20)
+#   nu analizer/trikernel.nu ~/git/cyber --force             # bypass new moon check
+#
+# Schedule: weights are updated once per lunar cycle (new moon).
+# The script checks the date and refuses to write unless --force is passed
+# or today is within ±1 day of a new moon.
+
+# new moon dates 2026-2027 (UTC)
+const NEW_MOONS = [
+  "2026-01-18" "2026-02-17" "2026-03-19" "2026-04-17" "2026-05-16"
+  "2026-06-15" "2026-07-14" "2026-08-12" "2026-09-11" "2026-10-10"
+  "2026-11-09" "2026-12-08"
+  "2027-01-07" "2027-02-06" "2027-03-08" "2027-04-06" "2027-05-06"
+  "2027-06-04" "2027-07-04" "2027-08-02" "2027-09-01" "2027-10-01"
+  "2027-10-30" "2027-11-29" "2027-12-28"
+]
+
+def is-new-moon [] {
+  let today = (date now | format date "%Y-%m-%d")
+  let today_ts = ($today | into datetime | into int)
+  let one_day = 86_400_000_000_000  # nanoseconds
+  $NEW_MOONS | any {|moon|
+    let moon_ts = ($moon | into datetime | into int)
+    let diff = (($today_ts - $moon_ts) | math abs)
+    $diff <= $one_day
+  }
+}
 
 def main [
   graph_path: string,
   --subgraphs (-s),
   --dry-run (-d),
+  --force (-f),            # bypass new moon check
   --iterations (-i): int = 20,
   --alpha (-a): float = 0.85,     # diffusion damping (teleport = 1-alpha)
   --lambda-d: float = 0.5,        # diffusion weight
@@ -32,6 +59,16 @@ def main [
   --lambda-h: float = 0.2,        # heat weight
   --tau: float = 1.0,             # heat kernel bandwidth
 ] {
+  # new moon guard — only write weights on new moon (±1 day)
+  if (not $dry_run) and (not $force) and (not (is-new-moon)) {
+    let today = (date now | format date "%Y-%m-%d")
+    let next = ($NEW_MOONS | where {|m| ($m | into datetime) > (date now)} | first)
+    print $"⏳ Not a new moon today \(($today)\). Next new moon: ($next)"
+    print "  Weights are updated once per lunar cycle."
+    print "  Use --dry-run to compute without writing, or --force to override."
+    return
+  }
+
   print "Scanning pages..."
 
   # --- collect files ---

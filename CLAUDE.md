@@ -113,10 +113,25 @@ Scripts:
 - `analizer/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
 - `analizer/concat.nu` — concatenate entire graph into single file for LLM context loading
 - `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget
-- `analizer/trikernel.nu` — compute diffusion (PageRank) over wiki-link graph, write focus + gravity to frontmatter
+- `analizer/trikernel.nu` — compute tri-kernel (diffusion, springs, heat) over wiki-link graph, write focus + gravity + density to frontmatter. Runs on new moon only (±1 day); use `--force` to override, `--dry-run` to preview
 
 When adding a new script: place it in `analizer/`, accept `graph_path` as first
 arg, and update this list.
+## Tri-Kernel Weight Updates (Lunar Cycle)
+
+Frontmatter weights (diffusion, springs, heat, focus, gravity, density)
+are updated once per lunar cycle on the new moon (±1 day). This prevents
+constant git noise from auto-computed fields across all repos.
+
+- `trikernel.nu` enforces this with a date guard; `--force` overrides
+- `--dry-run` computes and prints without writing (always allowed)
+- After a new moon run: commit all weight changes in one atomic commit
+  per repo with prefix `chore: new moon weights YYYY-MM-DD`
+- Between moons: never run trikernel without `--dry-run` or `--force`
+
+2026 new moons: Jan 18, Feb 17, Mar 19, Apr 17, May 16, Jun 15,
+Jul 14, Aug 12, Sep 11, Oct 10, Nov 9, Dec 8.
+
 ## Parallel Agents for Graph-Wide Tasks
 
 When a task touches many pages across the graph (bulk tagging, renaming,
