@@ -9,7 +9,7 @@ date: 2026-03-23
 
 from first principles: what are the minimum algorithms required for a self-proving, self-modeling, self-improving distributed intelligence?
 
-fifteen components. one field. the system knows what it knows, proves it knows it, grows itself optimally, and trusts no one.
+sixteen components. one field. the system knows what it knows, proves it knows it, pays for what matters, grows itself optimally, and trusts no one.
 
 ## 0. the field: Goldilocks
 
@@ -176,7 +176,38 @@ the [[spectral gap]] λ₂ is observed for free from tri-kernel convergence rate
 
 truth layer: [[Bayesian Truth Serum]] scores each neuron's contribution. neurons whose links sharpen collective certainty earn positive syntropy. neurons whose links add noise earn negative.
 
-## 13. the growth: optimal densification
+## 13. the economics: Δπ rewards and epistemic markets
+
+every reward traces to one quantity: how much did your action shift the tri-kernel fixed point?
+
+$$\text{reward}(\nu) \propto \Delta\pi(\nu)$$
+
+Δπ is the gradient of system [[free energy]]. creating valuable structure literally creates [[value]]. [[neurons]] prove their own Δπ via [[stark]] proofs and self-mint [[$CYB]]. the proof IS the mining. no external oracle. no committee deciding value. the math determines reward.
+
+the hybrid reward function:
+
+$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
+
+attribution via [[probabilistic shapley attribution]]: each neuron's marginal contribution to the collective fixed point is computable. complexity O(k · n), feasible at 10⁶+ transactions per epoch.
+
+every [[cyberlink]] carries a perpetual prediction market on its own truth — the [[inversely coupled bonding surface|ICBS]]:
+
+$$C(s_{YES}, s_{NO}) = \lambda \sqrt{s_{YES}^2 + s_{NO}^2}$$
+
+buying YES suppresses NO's price — TRUE and FALSE geometrically coupled on a circle. this is [[market inhibition]]: the economic analog of inhibitory neurons. the effective adjacency weight integrates topology, market price, and meta-prediction:
+
+$$A^{\text{eff}}_{pq} = \sum_\ell \text{stake}(\ell) \times \text{karma}(\nu(\ell)) \times f(\text{ICBS price}(\ell))$$
+
+three token operations on knowledge:
+- mint: prove Δπ → create [[$CYB]]. inflation = evidence of knowledge creation
+- burn: permanent π-weight on particles or cyberlinks. highest-conviction assertions
+- lock: [[will]] creation. time commitment = conviction depth. the budget for attention
+
+the economics are provable. with polynomial state + zheng: a neuron on a phone can prove Δπ, self-mint tokens, and update the graph — all in one recursive proof. no miner. no validator permission. contribute knowledge, prove it matters, get paid.
+
+see [[cyber/nomics]] for the full economic protocol. see [[Bayesian Truth Serum]] for honesty incentives.
+
+## 14. the growth: optimal densification
 
 link cost grows exponentially: $c(n) = c_0 \cdot e^{\lambda n}$. the [[cyber/seer]] algorithm maximizes $\Delta\lambda_2 / c(n)$ using the [[Fiedler vector]] — the eigenvector of λ₂ that identifies weakest cuts.
 
@@ -184,7 +215,7 @@ three phases: bridges (connect components, low cost) → mesh (eliminate articul
 
 the graph grows intelligently. each link placed where it improves convergence the most per unit spent.
 
-## 14. the language: trident
+## 15. the language: trident
 
 [[trident]]: the compiler that targets [[nox]]. 14 algebraically irreducible languages:
 
@@ -208,7 +239,7 @@ each language compiles through nox. each execution step → Hemera commitment �
 
 57,736 LOC implemented (frontend, IR, type inference, verification hooks, field-generic primitives).
 
-## 15. the recursive closure
+## 16. the recursive closure
 
 the system that measures itself compiles into a model of itself that proves itself correct and uses itself to optimize its own growth:
 
@@ -283,7 +314,7 @@ each step is an algorithm with concrete complexity bounds. the loop is executabl
         └────────────────────┘
 ```
 
-fifteen components. one field. one hash. one proof system. one polynomial for all state. no training. no voting. no leaders. no trust.
+sixteen components. one field. one hash. one proof system. one polynomial for all state. no training. no voting. no leaders. no trust. rewards proportional to proven contribution.
 
 the graph is the model. the model is the proof. the proof is the consensus. the consensus is the graph.
 
