@@ -57,18 +57,40 @@ def load_cyberlinks(path, max_links=None):
     return links, particles
 
 
-def build_adjacency(links, particles):
+def load_stakes(stakes_path):
+    """Load neuron stake weights from JSON"""
+    if not stakes_path or not os.path.exists(stakes_path):
+        return {}
+    with open(stakes_path) as f:
+        stakes = json.load(f)
+    nonzero = sum(1 for v in stakes.values() if v > 0)
+    total = sum(stakes.values())
+    print(f"  Loaded {len(stakes)} neuron stakes ({nonzero} nonzero, {total:,.0f} total BOOT)")
+    return stakes
+
+
+def build_adjacency(links, particles, stakes=None):
     """Step 2: Sparse adjacency matrix (CSR)"""
     print("Step 2: Building sparse adjacency matrix...")
     t0 = time.time()
 
+    if stakes:
+        # normalize stakes to [0,1] range with log scaling
+        max_stake = max(stakes.values()) if stakes else 1
+        print(f"  Using stake weights (max: {max_stake:,.0f} BOOT)")
+
     rows, cols, vals = [], [], []
-    # aggregate duplicate edges
+    # aggregate duplicate edges weighted by neuron stake
     edge_weights = defaultdict(float)
     for p_from, p_to, neuron in links:
         i = particles[p_from]
         j = particles[p_to]
-        edge_weights[(i, j)] += 1.0  # uniform weight (no stake data yet)
+        if stakes and neuron in stakes and stakes[neuron] > 0:
+            # log-scale stake to prevent domination by whales
+            w = np.log1p(stakes[neuron])
+        else:
+            w = 1.0  # fallback: uniform weight
+        edge_weights[(i, j)] += w
 
     for (i, j), w in edge_weights.items():
         rows.append(i)
@@ -241,20 +263,25 @@ def estimate_architecture(d_star, lambda2, kappa, n_particles, n_links):
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python3 compile_model.py <cyberlinks.jsonl> [--max-links N]")
+        print("Usage: python3 compile_model.py <cyberlinks.jsonl> [--max-links N] [--stakes <stakes.json>]")
         sys.exit(1)
 
     path = sys.argv[1]
     max_links = None
+    stakes_path = None
     if "--max-links" in sys.argv:
         idx = sys.argv.index("--max-links")
         max_links = int(sys.argv[idx + 1])
+    if "--stakes" in sys.argv:
+        idx = sys.argv.index("--stakes")
+        stakes_path = sys.argv[idx + 1]
 
     t_total = time.time()
 
     # Pipeline
     links, particles = load_cyberlinks(path, max_links)
-    A = build_adjacency(links, particles)
+    stakes = load_stakes(stakes_path) if stakes_path else None
+    A = build_adjacency(links, particles, stakes)
     pi = compute_focus(A)
     lambda2, kappa, T_conv = compute_spectral_gap(A)
     E, d_star, sigma = compute_embeddings(A, pi)
