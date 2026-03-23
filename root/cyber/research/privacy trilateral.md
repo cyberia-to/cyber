@@ -31,7 +31,7 @@ No single cryptographic technology solves all three. Each technology in the tril
 
 ## Why One Is Not Enough
 
-Consider a concrete scenario: Alice wants to query the nox knowledge graph for medical information without revealing her query, and she wants the result to be correct.
+Consider a concrete scenario: Alice wants to query the [[nox]] [[knowledge graph]] for medical information without revealing her query, and she wants the result to be correct.
 
 ZK alone can prove the result is correct, but cannot hide Alice's query from the node that processes it. The prover must see the inputs to generate the proof. Alice's medical query is exposed to whoever runs the computation.
 
@@ -72,13 +72,13 @@ Prove a statement is true without revealing why it is true.
 
 Mechanism: The prover generates a mathematical proof $\pi$ that a computation was executed correctly. The proof reveals only the public inputs and the result — nothing about the private witness (the secret data used during computation). Verification is fast: $O(\log n)$ work regardless of computation size.
 
-nox uses [[starks]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every stark in nox operates over the [[Goldilocks field]] $\mathbb{F}_p$.
+[[nox]] uses [[starks]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every [[stark]] in nox operates over the [[Goldilocks field]] $\mathbb{F}_p$.
 
 Where ZK appears in nox:
 
 Private transfers. A transaction proves that energy is conserved (total inputs = total outputs + fee) and that the sender owns the input records, without revealing amounts, sender identity, or receiver identity. The network sees only nullifiers (preventing double-spend) and commitments (encoding new records). The stark proof guarantees conservation; the commitment scheme guarantees privacy. Circuit cost: ~44,000 constraints.
 
-Provable computation. Every state transition in nox — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a stark proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains consensus without requiring every node to redo every computation.
+Provable computation. Every state transition in nox — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a stark proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains [[consensus]] without requiring every node to redo every computation.
 
 Selective disclosure. A [[neuron]] can prove properties about its state without revealing the state itself. "I have staked more than 10,000 FOCUS" is provable without revealing the exact stake. "My focus contribution to this subgraph exceeds the threshold for voting" is provable without revealing the contribution amount. These are range proofs and threshold proofs — standard ZK primitives composed from the same stark infrastructure.
 
@@ -154,7 +154,7 @@ Properties:
   - Proof is O(log n) to verify            (stark)
 ```
 
-This works natively in nox because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that stark constraints express. The stark proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
+This works natively in [[nox]] because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that stark constraints express. The stark proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
 
 ### ZK + MPC: Distributed Proving
 
@@ -223,7 +223,7 @@ This is not a theoretical composition — it is a practical protocol where each 
 
 ## Privacy Tiers
 
-nox doesn't require full trilateral privacy for every operation. Privacy is opt-in and escalating. Each tier activates more of the trilateral as the privacy requirements increase:
+[[nox]] doesn't require full trilateral privacy for every operation. Privacy is opt-in and escalating. Each tier activates more of the trilateral as the privacy requirements increase:
 
 ### Tier 0 — Transparent
 
@@ -231,7 +231,7 @@ Everything public. All data visible on-chain.
 
 Technologies: ZK only (proof of correctness, not privacy).
 
-Use case: Public knowledge graph contributions. A neuron that wants to publicly link two particles and be credited for the link. The stark proves the link is valid (neuron has sufficient stake, particles exist, weight is within bounds). No secrets involved.
+Use case: Public [[knowledge graph]] contributions. A [[neuron]] that wants to publicly link two [[particles]] and be credited for the link. The [[stark]] proves the link is valid (neuron has sufficient [[stake]], particles exist, weight is within bounds). No secrets involved.
 
 What is hidden: Nothing.
 
@@ -279,11 +279,11 @@ The trilateral is not three independent libraries bolted together. It is three a
 
 | Technology | Algebraic home | Key operation | Field primitive |
 |------------|---------------|---------------|-----------------|
-| ZK (stark) | $\mathbb{F}_p$ polynomial constraints | WHIR commitment (polynomial evaluation + low-degree test) | `ntt` + `p2r` |
+| ZK ([[stark]]) | $\mathbb{F}_p$ polynomial constraints | [[WHIR]] commitment (polynomial evaluation + low-degree test) | `ntt` + `p2r` |
 | FHE (TFHE) | $R_p = \mathbb{F}_p[X]/(X^N+1)$ | Programmable Bootstrapping (blind rotation of test polynomial) | `ntt` + `lut` |
 | MPC (Shamir) | $\mathbb{F}_p$ secret shares | Threshold reconstruction ($k$ shares → secret via Lagrange interpolation) | `fma` |
 
-All three operate over the Goldilocks field $p = 2^{64} - 2^{32} + 1$. All three use Poseidon2 for commitments and hashing — chosen specifically because its $x^7$ S-box is efficient in all three domains (7 constraints in stark, multiplicative depth 3 in MPC, moderate depth in FHE). All three benefit from NTT acceleration — the same butterfly network serves WHIR folding (ZK), polynomial multiplication (FHE), and, if needed, verifiable secret-share refresh (MPC).
+All three operate over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. All three use [[Poseidon2]] for commitments and hashing — chosen specifically because its $x^7$ S-box is efficient in all three domains (7 constraints in stark, multiplicative depth 3 in MPC, moderate depth in FHE). All three benefit from NTT acceleration — the same butterfly network serves WHIR folding (ZK), polynomial multiplication (FHE), and, if needed, verifiable secret-share refresh (MPC).
 
 This is why the [[GFP]] (Goldilocks Field Processor) accelerates the entire privacy stack with four hardware primitives:
 
@@ -300,7 +300,7 @@ One chip. Three technologies. Four primitives. One field.
 
 ### Why starks, not SNARKs
 
-SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but require trusted setup and rely on elliptic curve assumptions that quantum computers break. starks are larger but transparent (no setup ceremony), hash-based (post-quantum), and native to the Goldilocks field. For a system meant to outlast current hardware generations, stark is the only choice.
+SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but require trusted setup and rely on elliptic curve assumptions that quantum computers break. starks are larger but transparent (no setup ceremony), hash-based (post-quantum), and native to the [[Goldilocks field]]. For a system meant to outlast current hardware generations, stark is the only choice.
 
 ### Why TFHE, not BGV/CKKS
 
