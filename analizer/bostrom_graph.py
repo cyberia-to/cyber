@@ -29,7 +29,9 @@ import numpy as np
 from scipy.sparse import csr_matrix
 from collections import defaultdict
 
-DATA_DIR = os.path.expanduser("~/git/cyber/data")
+from analizer.bostrom_lib import (
+    DATA_DIR, search, label as lib_label, embedding_neighbors as lib_embedding_neighbors,
+)
 
 
 class BostromGraph:
@@ -96,36 +98,19 @@ class BostromGraph:
 
     def label(self, idx):
         """Get human-readable label for particle index"""
-        text = self.idx_to_text.get(idx)
-        if text:
-            return text
-        return self.cids[idx][:16] + "..."
+        return lib_label(idx, self.idx_to_text, self.cids)
 
     def find(self, query):
-        """Text → particle index"""
-        q = query.lower().strip().rstrip("?!.")
-        if q in self.index:
-            return self.index[q]["idx"]
-        for k, v in self.index.items():
-            if q in k:
-                return v["idx"]
-        stops = {"what","is","the","a","an","of","in","to","for","and","or","how","why","where","who","about","tell","me"}
-        words = [w for w in q.split() if w not in stops and len(w) > 2]
-        for word in sorted(words, key=len, reverse=True):
-            if word in self.index:
-                return self.index[word]["idx"]
-            for k, v in self.index.items():
-                if word in k:
-                    return v["idx"]
+        """Text -> particle index"""
+        match = search(query, self.index)
+        if match is not None:
+            return match["idx"]
         return None
 
     # === MODE 1: Embedding retrieval ===
     def embedding_neighbors(self, idx, k=20):
         """Cosine similarity in SVD space"""
-        q = self.E_norm[idx]
-        sims = self.E_norm @ q
-        top = np.argsort(-sims)[1:k+1]
-        return [(int(i), float(sims[i]), float(self.pi[i])) for i in top]
+        return lib_embedding_neighbors(idx, self.E_norm, self.pi, k)
 
     # === MODE 2: Graph walk ===
     def graph_walk(self, idx, steps=50, walks=100):
@@ -222,7 +207,7 @@ class BostromGraph:
         cid = self.cids[idx]
 
         # Header
-        lines.append(f"═══ {name} ═══")
+        lines.append(f"=== {name} ===")
         lines.append(f"CID: {cid}")
         lines.append("")
 
@@ -236,23 +221,23 @@ class BostromGraph:
         lines.append("")
 
         # Embedding neighbors (structural similarity)
-        lines.append("── structural neighbors (embedding cosine) ──")
+        lines.append("-- structural neighbors (embedding cosine) --")
         emb_nbrs = self.embedding_neighbors(idx, k=15)
         for i, (n_idx, sim, focus) in enumerate(emb_nbrs):
-            label = self.label(n_idx)
-            marker = "●" if focus > 0.0001 else "○"
-            lines.append(f"  {marker} {sim:.3f}  {label}")
+            lbl = self.label(n_idx)
+            marker = "+" if focus > 0.0001 else "o"
+            lines.append(f"  {marker} {sim:.3f}  {lbl}")
 
         # Graph walk (actual cyberlink paths)
         if self.A is not None:
             lines.append("")
-            lines.append("── graph walk (focus-weighted, 100 walks × 50 steps) ──")
+            lines.append("-- graph walk (focus-weighted, 100 walks x 50 steps) --")
             walk_results = self.graph_walk(idx, steps=50, walks=100)
             if walk_results:
                 for n_idx, visit_freq, focus in walk_results[:15]:
-                    label = self.label(n_idx)
-                    bar = "█" * int(visit_freq * 100)
-                    lines.append(f"  {visit_freq:.3f} {bar} {label}")
+                    lbl = self.label(n_idx)
+                    bar = "#" * int(visit_freq * 100)
+                    lines.append(f"  {visit_freq:.3f} {bar} {lbl}")
             else:
                 lines.append("  (no outgoing links — isolated particle)")
 
@@ -262,20 +247,20 @@ class BostromGraph:
         overlap = emb_set & walk_set
         if overlap:
             lines.append("")
-            lines.append("── confirmed (both structural + walk) ──")
+            lines.append("-- confirmed (both structural + walk) --")
             for n_idx in overlap:
-                label = self.label(n_idx)
-                lines.append(f"  ◆ {label}")
+                lbl = self.label(n_idx)
+                lines.append(f"  * {lbl}")
 
         # Focus neighborhood: highest-focus particles nearby
         lines.append("")
-        lines.append("── focus gravity (high-focus particles in neighborhood) ──")
+        lines.append("-- focus gravity (high-focus particles in neighborhood) --")
         focus_weighted = [(n_idx, sim * self.pi[n_idx], self.pi[n_idx])
                           for n_idx, sim, _ in emb_nbrs if self.pi[n_idx] > 0.00001]
         focus_weighted.sort(key=lambda x: -x[1])
         for n_idx, gravity, focus in focus_weighted[:10]:
-            label = self.label(n_idx)
-            lines.append(f"  ★ gravity={gravity:.6f} focus={focus:.6f} {label}")
+            lbl = self.label(n_idx)
+            lines.append(f"  gravity={gravity:.6f} focus={focus:.6f} {lbl}")
 
         if not focus_weighted:
             lines.append("  (no high-focus neighbors — peripheral particle)")
@@ -300,7 +285,7 @@ def main():
 
     while True:
         try:
-            query = input("◎ > ").strip()
+            query = input("@ > ").strip()
             if not query:
                 continue
             print()

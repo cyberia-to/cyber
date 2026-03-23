@@ -23,31 +23,17 @@ import ssl
 import urllib.request
 import numpy as np
 from http.server import HTTPServer, BaseHTTPRequestHandler
-from collections import defaultdict
 
-DATA_DIR = os.path.expanduser("~/git/cyber/data")
+from analizer.bostrom_lib import (
+    DATA_DIR, load_model, search, label, embedding_neighbors,
+)
+
 INDEX_PATH = os.path.join(DATA_DIR, "cid_index.json")
 
 # SSL context for IPFS gateway
 CTX = ssl.create_default_context()
 CTX.check_hostname = False
 CTX.verify_mode = ssl.CERT_NONE
-
-
-def load_model():
-    print("Loading compiled model...")
-    data = np.load(os.path.join(DATA_DIR, "bostrom_model.npz"), allow_pickle=True)
-    E = data["embeddings"]
-    pi = data["focus"]
-    cids = list(data["particle_cids"])
-
-    # normalize for cosine similarity
-    norms = np.linalg.norm(E, axis=1, keepdims=True)
-    norms[norms == 0] = 1
-    E_norm = E / norms
-
-    print(f"  {len(cids):,} particles, d={E.shape[1]}")
-    return E_norm, pi, cids
 
 
 def resolve_cid(cid):
@@ -64,10 +50,10 @@ def resolve_cid(cid):
 
 
 def build_index(cids, pi, top_n=5000):
-    """Resolve top CIDs and build text→index mapping"""
+    """Resolve top CIDs and build text->index mapping"""
     print(f"Building index from top {top_n} particles...")
     top_idx = np.argsort(-pi)[:top_n]
-    index = {}  # text → {"idx": int, "cid": str, "focus": float}
+    index = {}  # text -> {"idx": int, "cid": str, "focus": float}
 
     for i, idx in enumerate(top_idx):
         content = resolve_cid(cids[idx])
@@ -79,80 +65,35 @@ def build_index(cids, pi, top_n=5000):
 
     with open(INDEX_PATH, "w") as f:
         json.dump(index, f)
-    print(f"Index saved: {len(index)} text→CID mappings → {INDEX_PATH}")
+    print(f"Index saved: {len(index)} text->CID mappings -> {INDEX_PATH}")
     return index
 
 
-def load_index():
-    if os.path.exists(INDEX_PATH):
-        with open(INDEX_PATH) as f:
-            return json.load(f)
-    return {}
-
-
-def search_text(query, index):
-    """Find best matching particle by text"""
-    q = query.lower().strip()
-    # exact match
-    if q in index:
-        return index[q]
-    # substring match
-    matches = [(k, v) for k, v in index.items() if q in k]
-    if matches:
-        # prefer shortest match (most specific)
-        matches.sort(key=lambda x: len(x[0]))
-        return matches[0][1]
-    return None
-
-
-def find_neighbors(idx, E_norm, pi, cids, index, k=10):
-    """Find k nearest neighbors by embedding similarity"""
-    q = E_norm[idx]
-    sims = E_norm @ q
-    top = np.argsort(-sims)[:k + 1]
-
-    # reverse index: idx → text
-    idx_to_text = {v["idx"]: k for k, v in index.items()}
-
-    results = []
-    for neighbor_idx in top:
-        if neighbor_idx == idx:
-            continue
-        label = idx_to_text.get(int(neighbor_idx), None)
-        results.append({
-            "cid": cids[neighbor_idx],
-            "similarity": float(sims[neighbor_idx]),
-            "focus": float(pi[neighbor_idx]),
-            "content": label
-        })
-    return results[:k]
-
-
-def generate_response(query, E_norm, pi, cids, index):
+def generate_response(query, E_norm, pi, cids, index, idx_to_text):
     """Process a text query and return CID-based response"""
-    match = search_text(query, index)
+    match = search(query, index)
 
     if not match:
         # try each word
         words = query.lower().split()
         for word in words:
-            match = search_text(word, index)
+            match = search(word, index)
             if match:
                 break
 
     if not match:
         return f"no particle found for '{query}'. the graph has {len(cids):,} particles but only {len(index):,} are text-indexed."
 
-    neighbors = find_neighbors(match["idx"], E_norm, pi, cids, index, k=10)
+    neighbors = embedding_neighbors(match["idx"], E_norm, pi, k=10)
 
     lines = [f"particle: {match.get('cid', '?')}"]
     lines.append(f"focus: {match['focus']:.6f}")
     lines.append("")
     lines.append("graph neighbors:")
-    for n in neighbors:
-        label = n["content"] or n["cid"][:40]
-        lines.append(f"  sim={n['similarity']:.3f} focus={n['focus']:.6f} → {label}")
-        lines.append(f"    cid: {n['cid']}")
+    for n_idx, sim, focus in neighbors:
+        lbl = label(n_idx, idx_to_text, cids)
+        lines.append(f"  sim={sim:.3f} focus={focus:.6f} -> {lbl}")
+        lines.append(f"    cid: {cids[n_idx]}")
 
     return "\n".join(lines)
 
@@ -172,7 +113,8 @@ class BostromHandler(BaseHTTPRequestHandler):
                 query = str(body)
 
             response = generate_response(query, self.server.E_norm, self.server.pi,
-                                          self.server.cids, self.server.index)
+                                          self.server.cids, self.server.index,
+                                          self.server.idx_to_text)
 
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -195,7 +137,7 @@ class BostromHandler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         query = args[0] if args else ""
         if "POST" in str(query):
-            print(f"  → {query}")
+            print(f"  -> {query}")
 
 
 def main():
@@ -204,24 +146,25 @@ def main():
     if "--port" in sys.argv:
         port = int(sys.argv[sys.argv.index("--port") + 1])
 
-    E_norm, pi, cids = load_model()
+    E_norm, pi, cids, index, idx_to_text = load_model()
 
     if do_build:
         index = build_index(cids, pi, top_n=5000)
-    else:
-        index = load_index()
-        if not index:
-            print("No index found. Run with --build-index first.")
-            print("  python3 analizer/bostrom_serve.py --build-index")
-            sys.exit(1)
+        idx_to_text = {v["idx"]: k for k, v in index.items()}
 
-    print(f"Index: {len(index)} text→CID mappings")
+    if not index:
+        print("No index found. Run with --build-index first.")
+        print("  python3 analizer/bostrom_serve.py --build-index")
+        sys.exit(1)
+
+    print(f"Index: {len(index)} text->CID mappings")
 
     server = HTTPServer(("localhost", port), BostromHandler)
     server.E_norm = E_norm
     server.pi = pi
     server.cids = cids
     server.index = index
+    server.idx_to_text = idx_to_text
 
     print(f"\nBostrom model serving on http://localhost:{port}")
     print(f"  curl -X POST http://localhost:{port}/api/generate -d '{{\"prompt\": \"cyber\"}}'")

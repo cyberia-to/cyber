@@ -16,72 +16,12 @@ Usage:
 """
 
 import json
-import os
 import sys
 import urllib.request
-import numpy as np
 
-DATA_DIR = os.path.expanduser("~/git/cyber/data")
+from analizer.bostrom_lib import load_model, search, label, embedding_neighbors
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
-
-
-def load_all():
-    print("Loading model...", flush=True)
-    data = np.load(os.path.join(DATA_DIR, "bostrom_model.npz"), allow_pickle=True)
-    E = data["embeddings"]
-    pi = data["focus"]
-    cids = list(data["particle_cids"])
-
-    norms = np.linalg.norm(E, axis=1, keepdims=True)
-    norms[norms == 0] = 1
-    E_norm = E / norms
-
-    with open(os.path.join(DATA_DIR, "cid_index.json")) as f:
-        index = json.load(f)
-
-    # reverse index
-    idx_to_text = {v["idx"]: k for k, v in index.items()}
-
-    print(f"  {len(cids):,} particles, {len(index)} indexed")
-    return E_norm, pi, cids, index, idx_to_text
-
-
-STOPWORDS = {"what", "is", "the", "a", "an", "of", "in", "to", "for", "and", "or", "how", "why", "where", "who", "does", "do", "can", "about", "tell", "me"}
-
-def search(query, index):
-    q = query.lower().strip().rstrip("?!.")
-    # exact match
-    if q in index:
-        return index[q]
-    # exact substring
-    for k, v in index.items():
-        if q in k:
-            return v
-    # try meaningful words (skip stopwords), prefer longer matches
-    words = [w for w in q.split() if w not in STOPWORDS and len(w) > 2]
-    for word in sorted(words, key=len, reverse=True):
-        if word in index:
-            return index[word]
-        for k, v in index.items():
-            if word in k:
-                return v
-    return None
-
-
-def neighbors(idx, E_norm, pi, cids, idx_to_text, k=10):
-    q = E_norm[idx]
-    sims = E_norm @ q
-    top = np.argsort(-sims)[1:k+1]  # skip self
-    results = []
-    for n_idx in top:
-        label = idx_to_text.get(int(n_idx))
-        results.append({
-            "cid": cids[n_idx],
-            "sim": float(sims[n_idx]),
-            "focus": float(pi[n_idx]),
-            "label": label
-        })
-    return results
 
 
 def build_context(query, E_norm, pi, cids, index, idx_to_text):
@@ -89,7 +29,7 @@ def build_context(query, E_norm, pi, cids, index, idx_to_text):
     if not match:
         return f"No particle found for '{query}'. Try: " + ", ".join(list(index.keys())[:20])
 
-    nbrs = neighbors(match["idx"], E_norm, pi, cids, idx_to_text, k=15)
+    nbrs = embedding_neighbors(match["idx"], E_norm, pi, k=15)
 
     lines = [f"Query particle: {match.get('cid', '?')}"]
     # find text label
@@ -100,9 +40,10 @@ def build_context(query, E_norm, pi, cids, index, idx_to_text):
     lines.append(f"Focus: {match['focus']:.6f}")
     lines.append("")
     lines.append("Top 15 graph neighbors by embedding similarity:")
-    for n in nbrs:
-        label = n["label"] or n["cid"][:40]
-        lines.append(f"  sim={n['sim']:.3f} focus={n['focus']:.6f} | {label} ({n['cid'][:20]}...)")
+    for n_idx, sim, focus in nbrs:
+        lbl = label(n_idx, idx_to_text, cids)
+        cid = cids[n_idx]
+        lines.append(f"  sim={sim:.3f} focus={focus:.6f} | {lbl} ({cid[:20]}...)")
 
     return "\n".join(lines)
 
@@ -141,7 +82,7 @@ Answer using the CID particles above. Reference specific CIDs. Explain what the 
 
 
 def main():
-    E_norm, pi, cids, index, idx_to_text = load_all()
+    E_norm, pi, cids, index, idx_to_text = load_model()
 
     if len(sys.argv) > 1:
         query = " ".join(sys.argv[1:])
@@ -156,7 +97,7 @@ def main():
 
     while True:
         try:
-            query = input("🔵 > ").strip()
+            query = input("\U0001f535 > ").strip()
             if not query:
                 continue
             context = build_context(query, E_norm, pi, cids, index, idx_to_text)
