@@ -12,13 +12,13 @@ focus: 0.0013911141138313208
 gravity: 32
 density: 3.18
 ---
-focus flow computation is the process by which the [[cybergraph]] reaches collective [[equilibrium]]. the [[tri-kernel]] runs over all [[cyberlinks]], [[neurons]] add links, and the network continuously converges toward a unique fixed point — the [[focus|focus distribution]] $\pi^*$. this is not a model architecture. it is the persistent knowledge state of the collective
+focus flow computation is the process by which the [[cybergraph]] reaches collective [[equilibrium]]. the [[tri-kernel]] runs over all [[cyberlinks]], [[neurons]] add links, and the network continuously [[convergence|converges]] toward a unique fixed point — the [[focus|focus distribution]] $\pi^*$. this is not a model architecture. it is the persistent [[knowledge]] state of the collective
 
 the [[collective focus theorem]] guarantees convergence: under ergodicity and the screening conditions of the [[tri-kernel]], there exists a unique $\pi^*$ to which any initialization converges, at linear rate. the fixed point is the Boltzmann [[equilibrium]] of the graph:
 
 $$\pi^*_i \propto \exp\big(-\beta\,[E_{\text{spring},i} + \lambda\,E_{\text{diff},i} + \gamma\,C_i]\big)$$
 
-the three energy terms correspond to the three [[tri-kernel]] operators: $E_{\text{spring}}$ encodes structural coherence via the screened [[Laplacian]], $E_{\text{diff}}$ encodes flow consistency via [[diffusion]], $C_i$ encodes context pressure via [[heat kernel]] weighting. $\pi^*$ is the unique distribution minimizing the composite free energy $\mathcal{F}(\phi)$. every [[cyberlink]] added perturbs the graph and shifts $\pi^*$ incrementally — learning and knowledge state are the same operation
+the three energy terms correspond to the three [[tri-kernel]] operators: $E_{\text{spring}}$ encodes structural coherence via the screened [[Laplacian]], $E_{\text{diff}}$ encodes flow consistency via [[diffusion]], $C_i$ encodes context pressure via [[heat kernel]] weighting. $\pi^*$ is the unique distribution minimizing the composite [[free energy]] $\mathcal{F}(\phi)$. every [[cyberlink]] added perturbs the graph and shifts $\pi^*$ incrementally — learning and knowledge state are the same operation
 
 ---
 
@@ -46,7 +46,7 @@ a [[transformer]] trained without the [[cybergraph]] approximates the same equil
 
 $\pi^*$ is maintained continuously by the [[tru]]. for a query, the process is:
 
-1. context [[particles]] become probability sources — their energy terms are set so $\pi^*_\text{context}$ is elevated, making them attractors in the Boltzmann equilibrium
+1. context [[particles]] become probability sources — their energy terms are set so $\pi^*_\text{context}$ is elevated, making them attractors in the [[Boltzmann distribution|Boltzmann equilibrium]]
 2. the [[tri-kernel]] reconverges incrementally from the current state — probability mass flows from the seeded context particles through the [[cybergraph]] along structural paths (not token positions)
 3. $\pi^*_\text{context}$ pools at [[particles]] that are semantically connected to the context via the graph topology
 4. sample the next [[particle]] from the high-probability region, add to context, reconverge
