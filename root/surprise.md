@@ -3,12 +3,12 @@ tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
 stake: 3145865559933390
-diffusion: 0.0002496956532938538
-springs: 0.00008263130332869021
-heat: 0.0001448409128273436
-focus: 0.00017860540021100038
+diffusion: 0.0002704586776716448
+springs: 0.00009761885138852224
+heat: 0.00016584273955826256
+focus: 0.00019768354216403742
 gravity: 5
-density: 4.27
+density: 4.25
 ---
 
 the [[emotion]] of [[yellow]] — orienting response to sudden change

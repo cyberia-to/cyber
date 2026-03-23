@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 4609282122134971
-diffusion: 0.00011079397675702042
-springs: 0.000023687768552457148
-heat: 0.00005445184300838917
-focus: 0.00007339368754592424
-gravity: 1
-density: 15.31
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 ![](https://ipfs.io/ipfs/Qmcj7d15i6E5hKhw1fvMjYp5jippWoV587b95NYmWuYpDk)
 

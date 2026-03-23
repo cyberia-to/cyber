@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: sound particle, audio, waveform, acoustic
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.0002886999362421293
-springs: 0.0007428355128239987
-heat: 0.0006223454923659422
-focus: 0.0004916697204414464
+diffusion: 0.0003145146214772185
+springs: 0.0008023022992136016
+heat: 0.0006688254896170449
+focus: 0.0005317130984261143
 gravity: 11
 density: 2.84
 ---

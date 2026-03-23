@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: property
 crystal-domain: cyber
 stake: 2864914965622144
-diffusion: 0.0002866621749164172
-springs: 0.0006397328372681813
-heat: 0.0005547805591039576
-focus: 0.0004462070504594488
-gravity: 6
-density: 7.25
+diffusion: 0.0002956224235638713
+springs: 0.0005775332928481735
+heat: 0.0005162636678770136
+focus: 0.00042432393321180286
+gravity: 8
+density: 7.26
 ---
 happiness index according to ralph merkle
 

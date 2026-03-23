@@ -4,11 +4,11 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4654032434000359
-diffusion: 0.0002901246502971462
-springs: 0.00017366236359157259
-heat: 0.0002373740660055873
-focus: 0.0002446358474271592
-gravity: 9
+diffusion: 0.00032676284145251853
+springs: 0.00019681665228946698
+heat: 0.0002658938532624807
+focus: 0.00027560518706560357
+gravity: 10
 density: 4.09
 ---
 Nicolas de Condorcet, French mathematician and philosopher (1743–1794)

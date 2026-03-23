@@ -3,12 +3,12 @@ alias: HashSeq, collection, hash sequence
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00014237595671140588
-springs: 0.0016424286226267763
-heat: 0.0011733365862070652
-focus: 0.0007985838823851387
+diffusion: 0.00015004242412435225
+springs: 0.0017140876650427873
+heat: 0.0012112113494502873
+focus: 0.0008314897814650943
 gravity: 2
-density: 5.98
+density: 5.96
 ---
 
 a [[radio/blob]] whose content is a sequence of 64-byte [[Hemera]] hashes — pointers to other [[blobs]]

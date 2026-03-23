@@ -5,10 +5,10 @@ crystal-domain: cyber
 status: draft
 alias: Conserved Observable Reduction Equilibrium, CORE
 stake: 43936669831471920
-diffusion: 0.0001151877922680175
-springs: 0.0012548138595770218
-heat: 0.0009129965061755434
-focus: 0.000616637355242216
+diffusion: 0.00012073360221730074
+springs: 0.001315950828154437
+heat: 0.0009468353040807478
+focus: 0.0006445191103711499
 gravity: 3
 density: 1.81
 ---

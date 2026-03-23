@@ -3,12 +3,12 @@ tags: computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5195511207571555
-diffusion: 0.00025757962094659977
-springs: 0.00008176712140768221
-heat: 0.00015052848569320818
-focus: 0.00018342564403424385
+diffusion: 0.0002754689835283585
+springs: 0.00009462530268604872
+heat: 0.00016989212619834254
+focus: 0.00020010050780966822
 gravity: 5
-density: 3.53
+density: 3.52
 ---
 Software layer managing hardware resources and providing an environment for programs to run. The bridge between silicon and [[algorithms]].
 

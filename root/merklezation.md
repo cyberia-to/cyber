@@ -3,11 +3,11 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 10890435895560840
-diffusion: 0.00011692527087829794
-springs: 0.0014509302410665957
-heat: 0.0010473686434498367
-focus: 0.000703215436449086
+diffusion: 0.0001225867946895381
+springs: 0.0015651112014172031
+heat: 0.0011138382520977234
+focus: 0.0007535944081894968
 gravity: 2
-density: 7.21
+density: 7.26
 ---
 process of computing [[particle]] from [[file]]

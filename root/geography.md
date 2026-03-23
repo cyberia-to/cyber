@@ -2,12 +2,12 @@
 tags: discipline, geo, eco, socio
 crystal-type: entity
 crystal-domain: geo
-diffusion: 0.00010722364868599256
-springs: 0.00012893933000657307
-heat: 0.00013643661015356784
-focus: 0.00011958094537568024
+diffusion: 0.00011233815923477823
+springs: 0.0001542949943390561
+heat: 0.00015705298710177627
+focus: 0.00013386817533946513
 gravity: 0
-density: 16.01
+density: 15.98
 ---
 # geography
 

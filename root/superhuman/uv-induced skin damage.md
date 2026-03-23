@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: property
 crystal-domain: superhuman
 stake: 905746312155455
-diffusion: 0.0007669558363372145
-springs: 0.00007706192163510206
-heat: 0.00029904484159738124
-focus: 0.0004664054629786081
-gravity: 4
-density: 7.14
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 [[sunburn]],
 

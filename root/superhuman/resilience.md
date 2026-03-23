@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: property
 crystal-domain: superhuman
 stake: 974661792428152
-diffusion: 0.00010722364868599256
-springs: 0.0018673297135848135
-heat: 0.0013136276085071211
-focus: 0.0008765362601198533
+diffusion: 0.00011233815923477823
+springs: 0.001778868114957517
+heat: 0.0012423968850520223
+focus: 0.0008383088911150733
 gravity: 0
-density: 8.46
+density: 9.67
 ---
 the ability of a system to absorb changes and still persist (Holling). a resilient system returns to its stable domain after perturbation, or transitions smoothly to a new stable state (Turoff)
 

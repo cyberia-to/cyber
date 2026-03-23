@@ -4,10 +4,10 @@ alias: dmn, default mode network, cyber dmn, self-projection, resting inference
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-diffusion: 0.0003079458554085867
-springs: 0.0015063647603920296
-heat: 0.0011393753973124238
-focus: 0.0008337574352843762
+diffusion: 0.00031762818588493985
+springs: 0.0016231016008219634
+heat: 0.0012105807821641825
+focus: 0.0008878607296219214
 gravity: 7
 density: 1.99
 ---

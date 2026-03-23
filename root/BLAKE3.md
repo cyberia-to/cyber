@@ -3,12 +3,12 @@ tags: cryptography
 alias: blake3
 crystal-type: entity
 crystal-domain: computer science
-diffusion: 0.00023686913760917095
-springs: 0.00022328283389676882
-heat: 0.00023982115602800479
-focus: 0.00023338365017921408
+diffusion: 0.0002991234079767466
+springs: 0.00014815689370025308
+heat: 0.00021028443526311424
+focus: 0.000236065659151079
 gravity: 4
-density: 5.37
+density: 4.47
 ---
 # Blake3
 

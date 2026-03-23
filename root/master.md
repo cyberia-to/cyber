@@ -4,6 +4,12 @@ alias: mastercyb, Dmitry Starodubtsev, @mastercyb
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
+diffusion: 0.00013989120506240662
+springs: 0.000646694299630945
+heat: 0.000505640691530361
+focus: 0.0003650820307265697
+gravity: 6
+density: 6.19
 ---
 genesis [[neuron]] of [[cyber]]. legal name Dmitry Starodubtsev. architect of the [[cybergraph]], the [[tri-kernel]], and the [[Crystal]]. co-founder of [[cyberia]] with [[joy]]. builder of [[cyber valley]]
 

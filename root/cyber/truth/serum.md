@@ -4,11 +4,11 @@ alias: Bayesian Truth Serum, BTS, peer prediction, truth serum, bayesian truth s
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.0028856004739013234
-springs: 0.0008149997118166976
-heat: 0.0014667773592697898
-focus: 0.0019806556223496033
-gravity: 40
+diffusion: 0.0029880978672473376
+springs: 0.0008623349839878109
+heat: 0.0015701597202844532
+focus: 0.0020667813728769634
+gravity: 41
 density: 2.42
 ---
 

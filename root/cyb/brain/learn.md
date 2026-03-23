@@ -4,12 +4,12 @@ tags: page
 crystal-type: process
 crystal-domain: cyber
 stake: 16673966201043592
-diffusion: 0.00017485149110160484
-springs: 0.0015932514141700667
-heat: 0.001149124233362009
-focus: 0.000795226016474214
+diffusion: 0.00017998508212368992
+springs: 0.0016864998964130405
+heat: 0.0012007946012160178
+focus: 0.0008361014302289852
 gravity: 1
-density: 4.55
+density: 4.56
 ---
 [[cyberlinks]] composer
 

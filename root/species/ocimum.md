@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 4569006841456121
-diffusion: 0.00011760628563415568
-springs: 0.00039254492166753823
-heat: 0.0003125086679868872
-focus: 0.00023906835291471364
-gravity: 2
-density: 2.99
+diffusion: 0.00011233815923477823
+springs: 0.0009630694269163283
+heat: 0.00067739910211672
+focus: 0.0004805697281156457
+gravity: 0
+density: 2.97
 ---
 selected for [[edem]]
 

@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 21124384716056436
-diffusion: 0.0005410306827216122
-springs: 0.00029116821169832566
-heat: 0.00040180436039154735
-focus: 0.00043822667694860763
-gravity: 16
-density: 11.68
+diffusion: 0.0005673107841784824
+springs: 0.000288054647506421
+heat: 0.00041584462906163596
+focus: 0.0004532407121535079
+gravity: 17
+density: 13.58
 ---
 paying [[token]] for [[gas]]
 

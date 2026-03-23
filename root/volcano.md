@@ -3,12 +3,12 @@ tags: geography, physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5531138546561965
-diffusion: 0.00020280384418002644
-springs: 0.0001445706252652934
-heat: 0.00017665204560719347
-focus: 0.0001801035187910376
-gravity: 6
-density: 7.04
+diffusion: 0.00022199324826789542
+springs: 0.0001646704907172256
+heat: 0.0001975350115924888
+focus: 0.000199904773667619
+gravity: 7
+density: 7.03
 ---
 an opening in Earth's crust where magma, gases, and ash reach the surface
 

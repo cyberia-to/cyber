@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8256432539164097
-diffusion: 0.00026631558731665027
-springs: 0.000058542553799179905
-heat: 0.00012889538752740794
-focus: 0.00017649963730355844
-gravity: 9
-density: 1.44
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 alias: tocopherol
 

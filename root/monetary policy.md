@@ -3,12 +3,12 @@ tags: cybernomics, governance
 crystal-type: entity
 crystal-domain: economics
 stake: 10876766709391050
-diffusion: 0.000162367866010689
-springs: 0.00004605343885079829
-heat: 0.00009083737848159068
-focus: 0.00011316744035690067
+diffusion: 0.00017519829984444257
+springs: 0.000054290801884299864
+heat: 0.00010390253848539693
+focus: 0.0001246668981845943
 gravity: 3
-density: 3.67
+density: 3.68
 ---
 control of money supply and interest rates by a central authority to influence economic activity
 

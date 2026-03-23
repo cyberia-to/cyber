@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4783808338409984
-diffusion: 0.0001754667758984001
-springs: 0.0006616785379447828
-heat: 0.0005469164455359711
-focus: 0.00039562023843982405
+diffusion: 0.00018296613494925648
+springs: 0.0007276244030158677
+heat: 0.0005905201217197061
+focus: 0.0004278744127233423
 gravity: 3
-density: 7.16
+density: 7.17
 ---
 American mathematician, professor at Oberlin College.
 

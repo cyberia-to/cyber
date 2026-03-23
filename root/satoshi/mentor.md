@@ -3,6 +3,12 @@ tags: cyberia, satoshi, ai
 alias: satoshi mentor, satoshi ai, ai mentor
 crystal-type: entity
 crystal-domain: cyberia
+diffusion: 0.00011822056990776866
+springs: 0.0008900298093084434
+heat: 0.0006587691296639032
+focus: 0.0004578730536792115
+gravity: 2
+density: 4.94
 ---
 # Satoshi
 

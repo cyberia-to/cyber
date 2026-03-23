@@ -3,12 +3,12 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: cyber channel, state channel, proof channel, bilateral channel
-diffusion: 0.0001262964436555319
-springs: 0.0014241295045330081
-heat: 0.0010229664735893187
-focus: 0.0006949803679055232
+diffusion: 0.0001277176499828049
+springs: 0.0015058951172691175
+heat: 0.001068285139386645
+focus: 0.0007292843880494881
 gravity: 2
-density: 1.92
+density: 1.84
 ---
 # channel
 

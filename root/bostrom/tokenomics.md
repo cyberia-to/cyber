@@ -4,12 +4,12 @@ alias: bostrom tokenomics, bostrom token model
 crystal-type: article
 crystal-domain: economics
 stake: 4994622989397658
-diffusion: 0.00022947825453867917
-springs: 0.001052710187280804
-heat: 0.0008128543425604262
-focus: 0.0005931230519656584
+diffusion: 0.00024071706833126856
+springs: 0.0011685515086808512
+heat: 0.0008874998686161718
+focus: 0.000648423960493143
 gravity: 7
-density: 5.31
+density: 5.09
 ---
 # Bostrom Tokenomics
 

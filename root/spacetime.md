@@ -3,12 +3,12 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 5137335802146549
-diffusion: 0.002657900649128922
-springs: 0.0005987892867866799
-heat: 0.001255071854563463
-focus: 0.0017596014815131349
-gravity: 19
-density: 9.5
+diffusion: 0.002689944693576864
+springs: 0.0005906277782317383
+heat: 0.0012956743116041445
+focus: 0.0017812955425788347
+gravity: 23
+density: 10.31
 ---
 
 The four-dimensional fabric unifying three spatial dimensions with time into a single continuum.

@@ -3,12 +3,12 @@ tags: time, biology
 crystal-type: entity
 crystal-domain: biology
 stake: 5326100754015095
-diffusion: 0.00013770795306662227
-springs: 0.00011166188838667598
-heat: 0.00013192337556080535
-focus: 0.00012873721816147334
+diffusion: 0.00015176760188409828
+springs: 0.00009057050388726111
+heat: 0.00012508885811965604
+focus: 0.00012807272373216243
 gravity: 4
-density: 3.5
+density: 2.33
 ---
 rapid diversification of multicellular animal life ~541 million years ago
 

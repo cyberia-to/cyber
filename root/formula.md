@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: formula particle, latex, mathml, equation, mathematical notation
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.0004042157182960642
-springs: 0.0006816427206995214
-heat: 0.0006176407758440969
-focus: 0.0005301288305267011
+diffusion: 0.00044657327814204257
+springs: 0.0007475574935311687
+heat: 0.0006761393443018615
+focus: 0.0005827817559907613
 gravity: 10
 density: 2.76
 ---

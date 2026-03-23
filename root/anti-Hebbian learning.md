@@ -3,12 +3,12 @@ alias: anti-Hebbian rule, anti-Hebbian plasticity, decorrelation learning
 tags: neuro, learning
 crystal-type: process
 crystal-domain: biology
-diffusion: 0.00020927019862580746
-springs: 0.0009981559286919726
-heat: 0.000768277617249388
-focus: 0.000557737401370366
+diffusion: 0.0002178684963017787
+springs: 0.001069654927112657
+heat: 0.0008135146622730151
+focus: 0.0005925336587393068
 gravity: 5
-density: 7.19
+density: 7.2
 ---
 # anti-Hebbian learning
 

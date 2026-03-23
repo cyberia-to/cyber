@@ -3,6 +3,12 @@ tags: cyber, article
 crystal-type: relation
 crystal-domain: mathematics
 stake: 1314194613181360
+diffusion: 0.00029488206689311995
+springs: 0.0009822614434420467
+heat: 0.0007731222319902604
+focus: 0.0005967439128772436
+gravity: 6
+density: 7.4
 ---
 A structure-preserving correspondence between two systems that reveals identical mathematical patterns operating at different scales or in different substrates.
 

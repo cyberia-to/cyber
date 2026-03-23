@@ -3,10 +3,10 @@ tags: cyber, language
 alias: Seq, sequence language, causality language
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00013719299826451213
-springs: 0.00007309684597103481
-heat: 0.00010672202229331822
-focus: 0.00011186995738222872
+diffusion: 0.0001389297138886883
+springs: 0.00006565125693245418
+heat: 0.00010049410553259958
+focus: 0.00010925905513060352
 gravity: 5
 density: 1.54
 ---

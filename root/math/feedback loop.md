@@ -3,12 +3,12 @@ tags: pattern
 crystal-type: pattern
 crystal-domain: mathematics
 stake: 2934725452132150
-diffusion: 0.00010722364868599256
-springs: 0.00010661240066357625
-heat: 0.00012224616434531886
-focus: 0.0001100447774111315
+diffusion: 0.00011233815923477823
+springs: 0.00013094072350159616
+heat: 0.00014258095463313703
+focus: 0.000123967487594499
 gravity: 0
-density: 6.31
+density: 6.32
 ---
 system structure where output feeds back as input, modifying subsequent behavior
 

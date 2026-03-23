@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: relation
 crystal-domain: cyber
 stake: 2848804853350604
-diffusion: 0.0002508019591026015
-springs: 0.0015597179168555725
-heat: 0.0011490189975407196
-focus: 0.0008231201541161058
-gravity: 8
-density: 9.48
+diffusion: 0.00029253723194742475
+springs: 0.0013894971621846736
+heat: 0.0010411506101206164
+focus: 0.0007713478866532604
+gravity: 11
+density: 9.5
 ---
 indirect coordination through a shared environment
 

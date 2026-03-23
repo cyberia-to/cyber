@@ -4,11 +4,11 @@ alias: metabolism, metabolic signals, metabolic health, metabolic oracle, cap sy
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-diffusion: 0.0007163883092123278
-springs: 0.0012683798091755547
-heat: 0.0011047391318449317
-focus: 0.0009596559237278043
-gravity: 14
+diffusion: 0.0005755036471027354
+springs: 0.0010500469915179773
+heat: 0.0009163439065936403
+focus: 0.0007860347023255119
+gravity: 23
 density: 2
 ---
 

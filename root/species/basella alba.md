@@ -5,11 +5,11 @@ crystal-domain: biology
 scalable: "true"
 alias: basella, gandola
 stake: 7454588314739736
-diffusion: 0.0001649501543968227
-springs: 0.0006308436750796076
-heat: 0.000494857109246054
-focus: 0.00037069960157149964
+diffusion: 0.0002181363145790022
+springs: 0.000715590526878141
+heat: 0.000563664713071485
+focus: 0.0004364782579672532
 gravity: 3
-density: 3.28
+density: 3.29
 ---
 [[salad]] : amazing source

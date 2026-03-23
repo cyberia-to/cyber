@@ -4,12 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 stake: 11244858365534712
-diffusion: 0.00015082826824097337
-springs: 0.00010871088078812818
-heat: 0.00015642936901362858
-focus: 0.00013931327215964905
+diffusion: 0.00015807879192321272
+springs: 0.00011649874138053343
+heat: 0.0001664224949983708
+focus: 0.00014727351737544485
 gravity: 3
-density: 9.96
+density: 9.92
 ---
 [[daodao]] is amazing [[prog]] which is widely adopted in [[cosmos]]
 

@@ -3,12 +3,12 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 stake: 4564531810269583
-diffusion: 0.00013840290997876718
-springs: 0.0006062309380385353
-heat: 0.00045962997360409456
-focus: 0.0003429967311217587
-gravity: 1
-density: 3.04
+diffusion: 0.00011233815923477823
+springs: 0.0009630694269163283
+heat: 0.00067739910211672
+focus: 0.0004805697281156457
+gravity: 0
+density: 3.03
 ---
 selected for [[edem]]
 

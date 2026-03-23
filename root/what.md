@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13733870711487598
-diffusion: 0.0009751928572786394
-springs: 0.0019520998152993284
-heat: 0.0016361067429543363
-focus: 0.0014004477218199675
+diffusion: 0.0010065233027122301
+springs: 0.0020868498671391704
+heat: 0.0017321533888837106
+focus: 0.0014757472892746515
 gravity: 6
-density: 11.22
+density: 11.13
 ---
 fundamental question in [[knowledge theory]]
 

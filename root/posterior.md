@@ -4,10 +4,10 @@ alias: posterior, posterior probability, posterior distribution, posterior belie
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00035168403262482683
-springs: 0.0013297979811122411
-heat: 0.0010334077692698593
-focus: 0.0007814629645000476
+diffusion: 0.0003855133274178652
+springs: 0.0014364460569152885
+heat: 0.0011086976800633965
+focus: 0.0008454300167962233
 gravity: 8
 density: 4.72
 ---

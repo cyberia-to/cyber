@@ -4,11 +4,11 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: Gibbs distribution, canonical ensemble
 stake: 5852364421552060
-diffusion: 0.0005936873241413933
-springs: 0.0007959367067675693
-heat: 0.0007561436569664867
-focus: 0.0006868534054942559
-gravity: 14
+diffusion: 0.0006077534267281003
+springs: 0.0008557876371575225
+heat: 0.0008025773636552581
+focus: 0.0007211284772423796
+gravity: 15
 density: 6.51
 ---
 the probability distribution that maximizes [[entropy]] subject to a fixed average [[energy]] — the unique [[equilibrium]] of any system minimizing [[free energy]]

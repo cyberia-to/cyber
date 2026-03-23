@@ -3,12 +3,12 @@ tags: cyb
 crystal-type: entity
 crystal-domain: cyber
 stake: 16029561710182006
-diffusion: 0.00010722364868599256
-springs: 0.0006713900550749695
-heat: 0.0005219388983107659
-focus: 0.0003594166205276357
+diffusion: 0.00011233815923477823
+springs: 0.0007257286144518625
+heat: 0.000556789190955919
+focus: 0.00038524550214414293
 gravity: 0
-density: 11.53
+density: 11.54
 ---
 one [high level board](https://github.com/orgs/cybercongress/projects/41/views/1) for the project
 

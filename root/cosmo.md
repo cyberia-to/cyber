@@ -3,11 +3,11 @@ tags: cyber, cosmo
 alias: cosmology
 crystal-type: entity
 crystal-domain: cosmo
-diffusion: 0.0012174035945678383
-springs: 0.0003702824035236779
-heat: 0.0006512624913848746
-focus: 0.0008500390166179865
-gravity: 23
+diffusion: 0.0013746812152025095
+springs: 0.0003499761903125136
+heat: 0.0007040918358826127
+focus: 0.0009331518318715587
+gravity: 33
 density: 7.98
 ---
 # cosmo

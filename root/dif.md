@@ -3,10 +3,10 @@ tags: cyber, language
 alias: Dif, differential language, differential geometry language
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00012795464176633905
-springs: 0.0004088598432152116
-heat: 0.0003496919324985506
-focus: 0.0002565736603474398
+diffusion: 0.00012940619876276828
+springs: 0.0004060352500650644
+heat: 0.0003469629732439746
+focus: 0.0002559062690497059
 gravity: 3
 density: 4.82
 ---

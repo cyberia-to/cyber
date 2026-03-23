@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cybics
 alias:: Taelin
 stake: 7424076738467881
-diffusion: 0.00011400812724907998
-springs: 0.0007114524072833965
-heat: 0.0005301316624244584
-focus: 0.0003764661182944458
+diffusion: 0.00011888206746268246
+springs: 0.0007399728923461001
+heat: 0.0005474295113942295
+focus: 0.00039091880371402857
 gravity: 1
-density: 3
+density: 3.01
 ---
 Brazilian computer scientist and programmer.
 

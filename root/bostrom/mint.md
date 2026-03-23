@@ -4,10 +4,10 @@ alias: bostrom/mint, bostrom mint, energy mint
 crystal-type: entity
 crystal-domain: economics
 stake: 19639691414667944
-diffusion: 0.00015478421525697033
-springs: 0.0012029798908012902
-heat: 0.000887549964082048
-focus: 0.000615796067685274
+diffusion: 0.00016282257632298797
+springs: 0.0012905364265434053
+heat: 0.0009400500705659263
+focus: 0.00065658223023772
 gravity: 2
 density: 3.22
 ---

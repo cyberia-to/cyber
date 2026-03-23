@@ -4,12 +4,12 @@ alias: ceylon spinach, waterleaf, cariru, gbure
 crystal-type: entity
 crystal-domain: biology
 stake: 10988439078546040
-diffusion: 0.00010722364868599256
-springs: 0.00013196472437573833
-heat: 0.00013639202743224806
-focus: 0.00012047964714216585
+diffusion: 0.00011233815923477823
+springs: 0.0003432872916405084
+heat: 0.0002816964044110483
+focus: 0.00021549454799175762
 gravity: 0
-density: 4.99
+density: 1.38
 ---
 [[staple]]
 

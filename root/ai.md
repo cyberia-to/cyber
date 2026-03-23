@@ -3,12 +3,12 @@ tags: cyber, ai
 alias: artificial intelligence
 crystal-type: entity
 crystal-domain: ai
-diffusion: 0.0008632354890431396
-springs: 0.0005015659661553297
-heat: 0.0006357480591183356
-focus: 0.0007092371461918267
-gravity: 21
-density: 12.62
+diffusion: 0.000878115278469678
+springs: 0.0004979447979284429
+heat: 0.0006476872734822275
+focus: 0.0007179785333098384
+gravity: 27
+density: 13.85
 ---
 # ai
 

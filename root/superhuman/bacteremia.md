@@ -3,11 +3,11 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 4519781498404194
-diffusion: 0.00011861676264877863
-springs: 0.000021291855534364845
-heat: 0.00005040278083000659
-focus: 0.00007577649415069912
-gravity: 1
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
 density: 0
 ---
 bloodstream infection

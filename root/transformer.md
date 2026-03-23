@@ -4,11 +4,11 @@ alias: transformer, transformers, transformer architecture, transformer model, l
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
-diffusion: 0.0007743432781674563
-springs: 0.0011529927283237408
-heat: 0.0010472766107290732
-focus: 0.000942524779726653
-gravity: 12
+diffusion: 0.0007905200385330493
+springs: 0.001195117325931056
+heat: 0.0010825922987167552
+focus: 0.0009703136767892208
+gravity: 13
 density: 1.76
 ---
 

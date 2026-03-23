@@ -3,12 +3,12 @@ tags: computer science, measure
 crystal-type: measure
 crystal-domain: physics
 stake: 3254242678851020
-diffusion: 0.00048017828646434004
-springs: 0.00034609120514655554
-heat: 0.00041255132058086187
-focus: 0.0004264267688923036
-gravity: 8
-density: 3.5
+diffusion: 0.0005607921067427718
+springs: 0.000407411743989503
+heat: 0.00048562650726797585
+focus: 0.0004997448780218466
+gravity: 9
+density: 3.49
 ---
 fundamental unit of [[information]], a binary digit: 0 or 1
 

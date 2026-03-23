@@ -4,10 +4,10 @@ alias: personal bandwidth, account bandwidth
 crystal-type: measure
 crystal-domain: cyber
 stake: 13834558913184722
-diffusion: 0.0003638793398589353
-springs: 0.0011695826212322006
-heat: 0.0009285174551603388
-focus: 0.0007185179473311864
+diffusion: 0.00038571399111724674
+springs: 0.001255636846252088
+heat: 0.0009882365224386344
+focus: 0.0007671953539219992
 gravity: 7
 density: 5.06
 ---

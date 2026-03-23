@@ -3,12 +3,12 @@ tags: term, cv.land
 crystal-type: entity
 crystal-domain: cybics
 stake: 4969725543159824
-diffusion: 0.0011083161075177443
-springs: 0.00015470231234451765
-heat: 0.00047175685719081105
-focus: 0.0006949201189003807
+diffusion: 0.0011954990560142013
+springs: 0.00017897145631754025
+heat: 0.0005357535258176892
+focus: 0.0007585916700659229
 gravity: 2
-density: 6.44
+density: 6.4
 ---
 short repeatable tasks
 

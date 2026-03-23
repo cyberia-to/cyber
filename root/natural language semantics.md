@@ -3,12 +3,12 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 stake: 2999165901218308
-diffusion: 0.00017390972961276526
-springs: 0.0015566076754338948
-heat: 0.001130478172950355
-focus: 0.0007800328020266121
+diffusion: 0.00018017686882855992
+springs: 0.0015646611856109534
+heat: 0.0011261992783439892
+focus: 0.0007847266457663868
 gravity: 5
-density: 6.58
+density: 7.52
 ---
 the study of meaning in human [[language]] — how words, phrases, and sentences map to referents, truth conditions, and intentions
 

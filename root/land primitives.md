@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 5204461269944632
-diffusion: 0.00014606088846184036
-springs: 0.0000382901433625386
-heat: 0.00007721984806896119
-focus: 0.00009996145685347271
+diffusion: 0.00015303955899544934
+springs: 0.00004433753741921667
+heat: 0.0000862628097866278
+focus: 0.00010707360268081839
 gravity: 3
-density: 4.36
+density: 4.37
 ---
 - five primitives for all land operations
 - ## Primitives

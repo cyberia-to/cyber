@@ -4,12 +4,12 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: agriculture
 stake: 7115299586596703
-diffusion: 0.00036362630319098114
-springs: 0.00006279567744051034
-heat: 0.00017338590155642055
-focus: 0.00023532903513892475
+diffusion: 0.0003953366020937785
+springs: 0.000054292170873554484
+heat: 0.00017554272557357387
+focus: 0.0002490644974236777
 gravity: 4
-density: 1.58
+density: 0
 ---
 high trafic more sun
 

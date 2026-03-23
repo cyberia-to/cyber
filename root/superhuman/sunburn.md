@@ -3,11 +3,11 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 4573481872642661
-diffusion: 0.00045152720068958205
-springs: 0.0001128098461371325
-heat: 0.00022631741055410514
-focus: 0.0003048700362967479
-gravity: 2
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
 density: 0
 ---
 sunburn: skin damage caused by uv radiation; symptoms include red, painful, and peeling skin.

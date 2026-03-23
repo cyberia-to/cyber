@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 status: implemented
 stake: 17023018633593620
-diffusion: 0.00011699907773212802
-springs: 0.0004809189361754609
-heat: 0.00039505744094385097
-focus: 0.0002817867079074688
+diffusion: 0.00012257961383120867
+springs: 0.0005193616770777362
+heat: 0.0004213896344902927
+focus: 0.00030137623693699255
 gravity: 1
-density: 7.37
+density: 7.36
 ---
 implemented in [[v6]]
 

@@ -4,12 +4,12 @@ alias: calendars
 crystal-type: measure
 crystal-domain: physics
 stake: 4824246347495616
-diffusion: 0.0001950411149423722
-springs: 0.00035536787668789826
-heat: 0.0003147706459700994
-focus: 0.00026708504967157205
+diffusion: 0.00020747210688624125
+springs: 0.00037662297670690043
+heat: 0.0003345786040507077
+focus: 0.0002836386672653406
 gravity: 4
-density: 4.43
+density: 4.42
 ---
 system for organizing days into repeating cycles aligned to astronomical events
 

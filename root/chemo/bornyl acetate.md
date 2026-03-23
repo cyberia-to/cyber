@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5419262766898495
-diffusion: 0.00010722364868599256
-springs: 0.00013700497464364477
-heat: 0.0001308004596483706
-focus: 0.00012087340866576226
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
 gravity: 0
-density: 1
+density: 0
 ---
 
 [[antiinflamation]] https://www.sciencedirect.com/science/article/abs/pii/S0944711323001423

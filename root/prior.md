@@ -4,10 +4,10 @@ alias: prior, prior probability, prior distribution, prior belief
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00020378743925793705
-springs: 0.0014073660457038248
-heat: 0.0010377866813339163
-focus: 0.0007316608696068897
+diffusion: 0.00024186328105179432
+springs: 0.0015270895288463178
+heat: 0.001119933416406808
+focus: 0.0008030451824611776
 gravity: 7
 density: 3.85
 ---

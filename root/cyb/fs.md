@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: cyb filesystem, cyber filesystem, cyb/fs
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.00015095267999804354
-springs: 0.0023786312455608464
-heat: 0.0016657539233860725
-focus: 0.0011222164983444758
+diffusion: 0.00015801300406439675
+springs: 0.0025088332484823105
+heat: 0.001733833867715761
+focus: 0.0011784232501200781
 gravity: 2
 density: 7.7
 ---

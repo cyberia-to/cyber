@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: process
 crystal-domain: superhuman
 stake: 5523978496663503
-diffusion: 0.00024954620478403024
-springs: 0.00002881451263001726
-heat: 0.00010515090170815124
-focus: 0.00015444763652264857
-gravity: 2
-density: 2.55
+diffusion: 0.00011233815923477823
+springs: 0.00003381501179892162
+heat: 0.00006677900205067952
+focus: 0.00007966938356720384
+gravity: 0
+density: 1.02
 ---
 discover the rejuvenating practice of prunichakra—a harmonious blend of physical effort and mindful connection with nature. much like tai chi, prunichakra encourages smooth, intentional movements, from cutting and reaching to twisting and balancing. as you engage your arms, shoulders, and core in the act of pruning, you build strength, coordination, and flexibility. more than just a workout, it fosters a deep relationship with the natural world, enhancing your mental clarity and reducing stress. pruning offers a meditative rhythm as you shape and care for the plants around you, bringing both your garden and inner self into balance. no fancy gym equipment or membership required—just a pair of shears, the open air, and your intention. embrace prunichakra as a natural way to stay fit, grounded, and connected to the earth, transforming both your surroundings and your well-being in the process.
 

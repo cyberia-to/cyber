@@ -3,10 +3,10 @@ tags: cyber, core
 alias: suppressed, FALSE, false
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00016888091016413508
-springs: 0.0012171287779729814
-heat: 0.0009024749968223198
-focus: 0.0006300740878384179
+diffusion: 0.0001765518899447115
+springs: 0.0013072993033583266
+heat: 0.0009566331423674847
+focus: 0.0006717923644533704
 gravity: 7
 density: 8.18
 ---

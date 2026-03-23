@@ -4,12 +4,12 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: Markov blankets
 stake: 5207593791775209
-diffusion: 0.00016605269241674127
-springs: 0.001632475825726768
-heat: 0.00117592070947864
-focus: 0.0008079532358221185
-gravity: 4
-density: 4.35
+diffusion: 0.00018723933708997755
+springs: 0.0016336708960490718
+heat: 0.0011712185444584507
+focus: 0.0008179646462514244
+gravity: 5
+density: 4.36
 ---
 the statistical boundary between an agent and its environment — the set of states that separates internal dynamics from external dynamics
 

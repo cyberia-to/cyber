@@ -5,11 +5,11 @@ crystal-domain: cyberia
 size: "16"
 shape: 4*4
 stake: 5727633097752714
-diffusion: 0.0003956721999548791
-springs: 0.000041766863089989086
-heat: 0.00016212637371659086
-focus: 0.00024279143364775135
-gravity: 10
+diffusion: 0.0004247680312656121
+springs: 0.00004607755660267519
+heat: 0.0001793688568087289
+focus: 0.0002620810539753621
+gravity: 12
 density: 1.33
 ---
 Currently there are only 4 real banya on the hole Bali island.

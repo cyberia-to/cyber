@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5378987486219645
-diffusion: 0.00021538045178594282
-springs: 0.00006539839394264512
-heat: 0.00012211026754101816
-focus: 0.00015173179758396662
-gravity: 4
-density: 1.74
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 ferulic acid is a naturally occurring phenolic compound belonging to the group of hydroxycinnamic acids. widely found in plant cell walls, seeds, grains (especially rice, wheat, oats), fruits, and vegetables, it serves as a potent antioxidant protecting against [[oxidative stress]], [[uv radiation]], and [[pathogens]].
 

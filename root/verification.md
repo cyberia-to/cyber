@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 11169677841600862
-diffusion: 0.000155913454032628
-springs: 0.0006962445029425682
-heat: 0.0005563040886426162
-focus: 0.00039809089562760255
+diffusion: 0.00016359306384805544
+springs: 0.000757716014714089
+heat: 0.0005972570334026247
+focus: 0.0004285627430187919
 gravity: 6
-density: 8.71
+density: 8.75
 ---
 process of computing that statement is true
 

@@ -4,10 +4,10 @@ alias: graph noise, signal noise, noise floor, noise producer
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
-diffusion: 0.0003764540358047409
-springs: 0.0013931789661726893
-heat: 0.0010877747147088803
-focus: 0.0008237356506959428
+diffusion: 0.0003920881013510438
+springs: 0.0015090497937354976
+heat: 0.0011621306694830586
+focus: 0.0008811851226928086
 gravity: 2
 density: 1.96
 ---

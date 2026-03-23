@@ -4,10 +4,10 @@ alias: volt, millivolt, volts, millivolts
 crystal-type: entity
 crystal-domain: economics
 stake: 17680848218014824
-diffusion: 0.0003475512435044227
-springs: 0.0007690612309364612
-heat: 0.0006551650994540091
-focus: 0.0005355270109239445
+diffusion: 0.0003640019589749111
+springs: 0.0008200271004968256
+heat: 0.0006940514933833956
+focus: 0.000566819408313199
 gravity: 10
 density: 6.42
 ---

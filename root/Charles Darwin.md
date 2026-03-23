@@ -3,11 +3,11 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4846458775021527
-diffusion: 0.00011977515874929748
-springs: 0.00020503675412805012
-heat: 0.00018802151631307676
-focus: 0.00015900290887567708
-gravity: 1
+diffusion: 0.00013775910070778526
+springs: 0.0001584001216455203
+heat: 0.00016454265080609795
+focus: 0.00014930811700877267
+gravity: 3
 density: 2.43
 ---
 1809-1882. British naturalist and geologist.

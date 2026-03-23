@@ -3,11 +3,11 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13639895056570282
-diffusion: 0.00010766133189731737
-springs: 0.00013465129935990813
-heat: 0.0001468181602960449
-focus: 0.0001235896878158385
+diffusion: 0.00011283935690711712
+springs: 0.00014998590222971815
+heat: 0.0001603712479461167
+focus: 0.00013348969871170127
 gravity: 1
-density: 6.99
+density: 7.01
 ---
 small pieces of [[aip]] which connected to [[cyb/robot]]

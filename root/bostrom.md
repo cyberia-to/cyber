@@ -6,11 +6,11 @@ alias: enhanced blockchain
 crystal-type: entity
 crystal-domain: cyber
 stake: 33985014114643528
-diffusion: 0.0066056227700052325
-springs: 0.0003589406192754983
-heat: 0.0022988621023991977
-focus: 0.0038702659912650556
-gravity: 99
+diffusion: 0.00662853950352528
+springs: 0.00038456895736321877
+heat: 0.0024231099564600077
+focus: 0.003914262430263721
+gravity: 101
 density: 6.78
 ---
 The [[bootloader]] of [[cyber]]. The proving ground where every component of planetary [[superintelligence]] runs before it graduates to the protocol.

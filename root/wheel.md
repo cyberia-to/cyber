@@ -3,12 +3,12 @@ tags: technology
 crystal-type: entity
 crystal-domain: materials
 stake: 4815133556715756
-diffusion: 0.00019462352734078448
-springs: 0.00013228761159115085
-heat: 0.00017360494863253892
-focus: 0.00017171903687424305
+diffusion: 0.00020686469852812986
+springs: 0.00015579345076308492
+heat: 0.00019569645369984975
+focus: 0.00018930967523296592
 gravity: 5
-density: 5.38
+density: 5.36
 ---
 circular component rotating on an axle
 

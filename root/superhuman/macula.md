@@ -4,12 +4,12 @@ tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
 stake: 7685866062880401
-diffusion: 0.00016498977191538671
-springs: 0.00003755095494112857
-heat: 0.00008433388382831082
-focus: 0.00011062694920569266
-gravity: 3
-density: 4.15
+diffusion: 0.0007465734681691992
+springs: 0.0001566970343888032
+heat: 0.00037612063406388134
+focus: 0.0004955199712140313
+gravity: 1
+density: 0.83
 ---
 the macula (also known as [[macula lutea]]) is a small, oval-shaped area near the center of the [[retina]] in the human eye, responsible for sharp central vision (also called high-acuity vision). it contains a high concentration of [[photoreceptor cells]], especially [[cone cells]], essential for detailed vision, color perception, reading, and recognizing faces.
 

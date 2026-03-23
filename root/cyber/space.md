@@ -4,10 +4,10 @@ alias: particle space, cyber space, address space
 crystal-type: entity
 crystal-domain: cyber
 stake: 13626469963010664
-diffusion: 0.00012524914988988365
-springs: 0.0026345239468275453
-heat: 0.0018290924317148009
-focus: 0.0012188002453361502
+diffusion: 0.00013065643035865964
+springs: 0.0027954430758477416
+heat: 0.0019133569342204989
+focus: 0.0012866325247777898
 gravity: 1
 density: 6.42
 ---

@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13921822021322226
-diffusion: 0.0015042123709427984
-springs: 0.00015247797574599495
-heat: 0.0005811660578092062
-focus: 0.0009140827897570271
+diffusion: 0.0015114495343796542
+springs: 0.00016607992398012732
+heat: 0.0006159134929191731
+focus: 0.0009287314429677272
 gravity: 13
-density: 11.66
+density: 11.61
 ---
 what is [[network state]]?
 

@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: component particle, aip, composed interface, interactive application
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.0013598991470935302
-springs: 0.0005932209272942863
-heat: 0.0008464553716903047
-focus: 0.0010272069260730988
+diffusion: 0.0014201166381332725
+springs: 0.0006422948407907959
+heat: 0.0009155986281100963
+focus: 0.0010858664969259262
 gravity: 22
 density: 4.25
 ---

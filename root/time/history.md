@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14834728383376142
-diffusion: 0.0003119965600775683
-springs: 0.00012489707139500274
-heat: 0.0001989189150205098
-focus: 0.0002332511844613839
+diffusion: 0.0003272178865195371
+springs: 0.00013994115644208081
+heat: 0.0002181067499184696
+focus: 0.00024921264017609406
 gravity: 6
-density: 6.35
+density: 6.37
 ---
 history of [[time]] in machines
 

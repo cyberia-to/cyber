@@ -5,11 +5,11 @@ crystal-type: entity
 crystal-domain: economics
 market: collectable
 stake: 13666745243689516
-diffusion: 0.00010722364868599256
-springs: 0.0000914661481823365
-heat: 0.00010925132018805871
-focus: 0.00010290193283530764
+diffusion: 0.00011233815923477823
+springs: 0.00011419578397052912
+heat: 0.00012720063967291753
+focus: 0.00011586794274313476
 gravity: 0
-density: 2.82
+density: 2.83
 ---
 [[philodendron]], [[monstera]], [[anthurium]], [[alocasia]], [[colocasia]]

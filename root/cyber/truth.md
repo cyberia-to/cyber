@@ -4,10 +4,10 @@ alias: two factor truth, two layer truth, structural epistemic truth, truth mode
 crystal-type: pattern
 crystal-domain: cyber
 stake: 13572769588772200
-diffusion: 0.0004581525186964486
-springs: 0.0009899124612960232
-heat: 0.0008424592669264042
-focus: 0.0006945418511223031
+diffusion: 0.000473927646198168
+springs: 0.0010693852067329053
+heat: 0.0008987817745274258
+focus: 0.0007375357400244624
 gravity: 12
 density: 4.6
 ---

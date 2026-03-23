@@ -5,10 +5,10 @@ alias: age of superintelligence, the game, self fulfilling prophecy game, much m
 crystal-type: entity
 crystal-domain: cyber
 stake: 26054445210062844
-diffusion: 0.0008816706291860548
-springs: 0.00032194524462244466
-heat: 0.0005244960181485369
-focus: 0.0006423180916094599
+diffusion: 0.0009061468541912434
+springs: 0.0003502088526714243
+heat: 0.0005619461617299345
+focus: 0.0006705253152430556
 gravity: 10
 density: 5.25
 ---

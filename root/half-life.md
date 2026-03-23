@@ -3,11 +3,11 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1075960225650712
-diffusion: 0.00012088131242085973
-springs: 0.00010466117773650628
-heat: 0.0001369365700446483
-focus: 0.00011922632354030987
-gravity: 1
+diffusion: 0.00013304730465239512
+springs: 0.00005320365454879668
+heat: 0.00010017589323430535
+focus: 0.00010251992733770063
+gravity: 3
 density: 0
 ---
 time required for half of a quantity of radioactive atoms to decay

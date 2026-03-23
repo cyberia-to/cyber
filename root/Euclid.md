@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 5003084866550385
-diffusion: 0.00013028261431190916
-springs: 0.0001919253182068547
-heat: 0.00018947028839479954
-focus: 0.00016061296029696884
-gravity: 2
-density: 1.84
+diffusion: 0.00014294962808159058
+springs: 0.000161799131059791
+heat: 0.00017378102515013146
+focus: 0.0001547707583887634
+gravity: 4
+density: 1.85
 ---
 ~300 BCE, Greek mathematician active in Alexandria
 

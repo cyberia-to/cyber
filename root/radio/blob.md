@@ -3,10 +3,10 @@ alias: blobs, iroh-blobs, radio blob
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0002582121049399323
-springs: 0.0011484743398086524
-heat: 0.0008826550498629013
-focus: 0.0006501793643851338
+diffusion: 0.0002767324581779381
+springs: 0.001212786331835946
+heat: 0.0009263388806551501
+focus: 0.0006874699047708031
 gravity: 9
 density: 6.27
 ---

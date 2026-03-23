@@ -8,11 +8,11 @@ subgraph: true
 repo: ../cw-cyber
 exclude: ".claude/**, target/**, artifacts/**, vendor/**"
 stake: 14176898798954938
-diffusion: 0.00023337565778954285
-springs: 0.0001756069176030584
-heat: 0.00021393010501395527
-focus: 0.00021215592517847726
-gravity: 6
+diffusion: 0.000235075733984399
+springs: 0.00020138857284610613
+heat: 0.00023580736309666256
+focus: 0.00022511591146537045
+gravity: 5
 density: 4.04
 ---
 [[cosmwasm]] smart contracts for [[bostrom]] — the bootloader chain

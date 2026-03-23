@@ -3,11 +3,11 @@ tags: cyber
 crystal-type: relation
 crystal-domain: biology
 stake: 1161718096025474
-diffusion: 0.00030020376232596833
-springs: 0.0008421040484249882
-heat: 0.0006943509005536302
-focus: 0.0005416032758011997
-gravity: 10
+diffusion: 0.00034683474790016706
+springs: 0.000808185623071177
+heat: 0.0006845291599652727
+focus: 0.0005527788928645073
+gravity: 14
 density: 6.47
 ---
 agents acting together for mutual benefit — paying individual costs to produce shared gains

@@ -3,12 +3,12 @@ tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
 alias: cyb stack, software stack, proof pipeline
-diffusion: 0.0001791152486938365
-springs: 0.0010142704168356052
-heat: 0.0007715924492703325
-focus: 0.0005481572392516592
+diffusion: 0.0001875203252339389
+springs: 0.0010881103028447855
+heat: 0.0008189020023478881
+focus: 0.0005839736539399998
 gravity: 5
-density: 5.56
+density: 5.36
 ---
 # Stack
 

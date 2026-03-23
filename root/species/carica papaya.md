@@ -5,12 +5,12 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 7476556649655471
-diffusion: 0.00022263288024197895
-springs: 0.00033083354460044693
-heat: 0.00030985238288987687
-focus: 0.0002725369800790954
-gravity: 4
-density: 2.47
+diffusion: 0.00027258118600342917
+springs: 0.0003150169860142144
+heat: 0.0003112438126987681
+focus: 0.00029304445134574106
+gravity: 6
+density: 2.46
 ---
 [[dioecious]]
 

@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8155744337466976
-diffusion: 0.0002202007018192854
-springs: 0.00007672785232775601
-heat: 0.0001252496712656924
-focus: 0.00015816864086110594
-gravity: 3
-density: 0.89
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 alias: glucomoringin
 

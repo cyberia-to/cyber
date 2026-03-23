@@ -4,6 +4,12 @@ crystal-type: pattern
 crystal-domain: cyberia
 alias: will to learn, teaching method, lazy mom method
 icon: "\U0001F525"
+diffusion: 0.0001408782905221011
+springs: 0.0009242047382732199
+heat: 0.0006918117721087853
+focus: 0.00048606292116478784
+gravity: 6
+density: 3.37
 ---
 # will
 

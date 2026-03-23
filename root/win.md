@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 13639895056570282
-diffusion: 0.00010766133189731737
-springs: 0.00003693907164006852
-heat: 0.00007233706742470049
-focus: 0.00007937980092561832
+diffusion: 0.00011283935690711712
+springs: 0.00004204161274454881
+heat: 0.00007939307807387609
+focus: 0.00008491077789170092
 gravity: 1
-density: 6.94
+density: 6.97
 ---
 you win by increasing your [[cyb/sigma]]
 

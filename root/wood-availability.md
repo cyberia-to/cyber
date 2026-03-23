@@ -4,12 +4,12 @@ crystal-type: property
 crystal-domain: cyberia
 local: "true"
 stake: 1023887135480079
-diffusion: 0.00023416585373339932
-springs: 0.000036917593370683486
-heat: 0.0001161304414111106
-focus: 0.00015138429316012488
+diffusion: 0.0002531043976402234
+springs: 0.00004681823738326564
+heat: 0.00013362359356578222
+focus: 0.00016732238874825274
 gravity: 2
-density: 7.01
+density: 6.01
 ---
 - ## available by [[wood-durability]] class
   

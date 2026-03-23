@@ -3,12 +3,12 @@ tags: cyber, quantum
 alias: quantum physics, quantum, quant
 crystal-type: entity
 crystal-domain: quantum
-diffusion: 0.0005784171147428279
-springs: 0.0005214273710794718
-heat: 0.0005604407211756289
-focus: 0.0005577249129303741
-gravity: 19
-density: 13.18
+diffusion: 0.0005558916995357508
+springs: 0.0004963169937839819
+heat: 0.0005409289416843185
+focus: 0.0005350267362399494
+gravity: 26
+density: 13.55
 ---
 # quantum
 

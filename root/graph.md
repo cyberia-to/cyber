@@ -5,12 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 stake: 28892754081175936
-diffusion: 0.0014992901520707877
-springs: 0.0008258796702262892
-heat: 0.0010463102738031852
-focus: 0.001206671031863902
-gravity: 21
-density: 11.43
+diffusion: 0.0015932748810745618
+springs: 0.0008478522744231328
+heat: 0.0011074851961785555
+focus: 0.0012724901620999691
+gravity: 23
+density: 11.44
 ---
 two primitives — [[nodes]] and [[links]] — and everything else emerges
 

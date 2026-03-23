@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: relation
 crystal-domain: cyber
 stake: 2813899610095602
-diffusion: 0.00010722364868599256
-springs: 0.0000321413161959717
-heat: 0.00006212775033647656
-focus: 0.00007567976926908213
+diffusion: 0.00011233815923477823
+springs: 0.00003991144250108591
+heat: 0.00007234369095603885
+focus: 0.00008261125055892509
 gravity: 0
-density: 6.12
+density: 6.13
 ---
 property of a [[cryptographic proof]]
 

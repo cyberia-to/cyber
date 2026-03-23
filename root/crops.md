@@ -3,12 +3,12 @@ tags: food, biology
 crystal-type: entity
 crystal-domain: biology
 stake: 5243109266555650
-diffusion: 0.0003950184013411989
-springs: 0.00014472290118511827
-heat: 0.00023943580621969002
-focus: 0.0002888132322700692
+diffusion: 0.00048227825493960414
+springs: 0.00018215382547944104
+heat: 0.0002980771305216596
+focus: 0.0003554007012179767
 gravity: 11
-density: 11.61
+density: 11.64
 ---
 plants cultivated by humans for food, fiber, and fuel
 

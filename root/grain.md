@@ -3,12 +3,12 @@ tags: food
 crystal-type: entity
 crystal-domain: agriculture
 stake: 4837508712648450
-diffusion: 0.00029070337522328903
-springs: 0.00012728478738846595
-heat: 0.00019184287092761788
-focus: 0.00022190569801370505
+diffusion: 0.00035758753755286537
+springs: 0.00015674113375938135
+heat: 0.0002377565814981082
+focus: 0.0002733674252038767
 gravity: 6
-density: 8.82
+density: 8.78
 ---
 cereal [[crops]]: wheat, rice, corn, barley, oats, sorghum, millet
 

@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: cyber
 stake: 12318865850304028
-diffusion: 0.00023821560706109132
-springs: 0.0007183830201865652
-heat: 0.0005898008690744752
-focus: 0.0004525828834014044
-gravity: 5
-density: 5.39
+diffusion: 0.0002443104605777138
+springs: 0.0008431794138213592
+heat: 0.0006722675656291951
+focus: 0.0005095625675611186
+gravity: 4
+density: 5.38
 ---
 the paradigm that nature has been computing all along
 

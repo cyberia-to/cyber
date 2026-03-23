@@ -6,12 +6,12 @@ crystal-domain: cyberia
 size: "64"
 shape: 8*8
 stake: 7893955013054455
-diffusion: 0.0006933895973330301
-springs: 0.00010620729081543816
-heat: 0.000311664406127913
-focus: 0.0004408898671367234
-gravity: 11
-density: 25.53
+diffusion: 0.0007864069310304366
+springs: 0.00010280207914649759
+heat: 0.0003444484980794885
+focus: 0.0004929337888750796
+gravity: 18
+density: 24.21
 ---
 market of nutrient dense food grown on healthy soil
 

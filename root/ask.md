@@ -5,12 +5,12 @@ alias: infer
 crystal-type: process
 crystal-domain: cyber
 stake: 17415031365534420
-diffusion: 0.00048201639832360423
-springs: 0.00021631163445230434
-heat: 0.00031522421684172553
-focus: 0.00036894653286583375
-gravity: 8
-density: 11.36
+diffusion: 0.00048069330097063543
+springs: 0.00025485427162339933
+heat: 0.0003482000859760631
+focus: 0.00038644294916756147
+gravity: 6
+density: 11.3
 ---
 ask [[cyber]] protocol
 

@@ -3,12 +3,12 @@ tags: term
 crystal-type: entity
 crystal-domain: cybics
 stake: 4533206591963810
-diffusion: 0.0007150696602729518
-springs: 0.00010490684603717909
-heat: 0.0003091653557732026
-focus: 0.00045083995510226434
+diffusion: 0.0007498985560931301
+springs: 0.00011812151244241267
+heat: 0.00033777316929624004
+focus: 0.00047794036563855084
 gravity: 2
-density: 3.82
+density: 3.81
 ---
 - {{query (page-tags [[team]])}}
 -

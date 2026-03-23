@@ -6,12 +6,12 @@ crystal-domain: cyber
 subgraph: true
 repo: ../context
 exclude: ".claude/**, .git/**"
-diffusion: 0.00010722364868599256
-springs: 0.00123205735191915
-heat: 0.0008964420009889739
-focus: 0.0006025174301165282
+diffusion: 0.00011233815923477823
+springs: 0.0012945378796904849
+heat: 0.0009306147133424351
+focus: 0.0006306533861930401
 gravity: 0
-density: 4.85
+density: 5.01
 ---
 the winning default [[context]] for language models — the [[cybergraph]] ranked by [[tri-kernel]] and packed to fit any token budget
 

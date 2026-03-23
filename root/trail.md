@@ -3,11 +3,11 @@ tags: building type
 crystal-type: entity
 crystal-domain: cyberia
 stake: 4524256529590733
-diffusion: 0.00023950325090603565
-springs: 0.00004459540577694963
-heat: 0.00011520674855135596
-focus: 0.0001561715968963719
+diffusion: 0.0002563188875877735
+springs: 0.00005284971001294697
+heat: 0.0001309086957674058
+focus: 0.000170196095951257
 gravity: 8
-density: 3.86
+density: 3.88
 ---
 {{embed [[lawn]]}}

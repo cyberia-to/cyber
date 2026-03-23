@@ -4,6 +4,12 @@ crystal-type: entity
 crystal-domain: cyberia
 alias: multimedia, media database, satoshi media
 icon: "\U0001F3AC"
+diffusion: 0.00011532691001093996
+springs: 0.0003005943757826993
+heat: 0.00026642007193497264
+focus: 0.0002011257821272802
+gravity: 1
+density: 1.16
 ---
 # media
 

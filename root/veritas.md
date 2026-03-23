@@ -4,10 +4,10 @@ alias: veritas, Veritas, decentralized truth discovery, living truth, truth emer
 crystal-type: entity
 crystal-domain: cybics
 crystal-size: bridge
-diffusion: 0.0007881507666328333
-springs: 0.0012132093342248405
-heat: 0.001089774545010054
-focus: 0.000975993092585867
+diffusion: 0.0008338241368104741
+springs: 0.0013090166595815704
+heat: 0.0011695265929283448
+focus: 0.0010435223848654078
 gravity: 11
 density: 2.19
 ---

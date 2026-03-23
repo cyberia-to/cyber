@@ -3,12 +3,12 @@ tags: physics, property
 crystal-type: property
 crystal-domain: physics
 stake: 1070102003006516
-diffusion: 0.00040872761999293287
-springs: 0.00005563549973897071
-heat: 0.00017945732618143971
-focus: 0.00025694592515444227
+diffusion: 0.0004817738830539505
+springs: 0.00006609561451278819
+heat: 0.00021169215467875852
+focus: 0.0003030540568165723
 gravity: 6
-density: 4.91
+density: 3.67
 ---
 number of oscillations or cycles per unit time
 

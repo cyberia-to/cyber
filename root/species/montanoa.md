@@ -3,11 +3,11 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 stake: 4537681623150350
-diffusion: 0.0001148190579945166
-springs: 0.00002121723577610119
-heat: 0.00004919177054612773
-focus: 0.00007361305383931326
-gravity: 1
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
 density: 0
 ---
 {{embed [[montanoa hibiscifolia]]}}

@@ -4,12 +4,12 @@ crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 stake: 7592256546878347
-diffusion: 0.0013741036161499603
-springs: 0.001306379190047855
-heat: 0.0013386260746515227
-focus: 0.0013466907800196238
+diffusion: 0.0013756336919598384
+springs: 0.001417060308514015
+heat: 0.0014216081755491859
+focus: 0.001397256573644002
 gravity: 14
-density: 8.36
+density: 8.35
 ---
 the measure of what matters — the output of the [[tri-kernel]] when [[focus]] converges
 

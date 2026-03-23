@@ -8,12 +8,12 @@ title: cananga odorata
 wood: "yes"
 grow-speed: "3"
 stake: 11745736401613492
-diffusion: 0.0001641525303381442
-springs: 0.0001626059550019219
-heat: 0.0001794391243179627
-focus: 0.00016674587653323907
+diffusion: 0.00024322371640122568
+springs: 0.00024657846672899406
+heat: 0.00026370146271070864
+focus: 0.00024832569076146005
 gravity: 3
-density: 3.43
+density: 2.53
 ---
 ![image.png](https://ipfs.io/ipfs/QmcFTqwzBsbRj8s8EGtzNDYAFGTANUitzePLGvUUidMWGo){:height 377, :width 262}
 

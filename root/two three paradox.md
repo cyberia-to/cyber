@@ -5,10 +5,10 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 authors: mastercyb
-diffusion: 0.0010944286136763336
-springs: 0.0006318754494055376
-heat: 0.0007947606698542396
-focus: 0.0008957290756306645
+diffusion: 0.0011212077508872334
+springs: 0.0006835105681058235
+heat: 0.0008500773274005826
+focus: 0.0009356725113555077
 gravity: 9
 density: 2.08
 ---

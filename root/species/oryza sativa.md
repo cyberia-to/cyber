@@ -4,11 +4,11 @@ alias: oryza, rice
 crystal-type: entity
 crystal-domain: biology
 stake: 11855578076192172
-diffusion: 0.00010766133189731737
-springs: 0.00002178275918050634
-heat: 0.0000804224359565252
-focus: 0.00007644998089411463
-gravity: 1
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
 density: 0
 ---
 ![](https://ipfs.io/ipfs/QmY9k7CXY6hgYCqvgPDKZ26P9Jm4ipekkEktYFpTCNCdLY)

@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: process
 crystal-domain: superhuman
 stake: 5269796725268099
-diffusion: 0.00012887123889110185
-springs: 0.00005596498913598233
-heat: 0.00010370184165794797
-focus: 0.0001019654845179339
-gravity: 4
-density: 0.86
+diffusion: 0.00011233815923477823
+springs: 0.00010412741274703173
+heat: 0.0001381974253381993
+focus: 0.00011504678850914187
+gravity: 0
+density: 0.57
 ---
 vision
 

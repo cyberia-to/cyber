@@ -3,12 +3,12 @@ tags: product
 crystal-type: entity
 crystal-domain: cyber
 stake: 13680170337249130
-diffusion: 0.00032311157157187924
-springs: 0.00041049672849859846
-heat: 0.00039362197792617155
-focus: 0.00036342919992074887
+diffusion: 0.00035191318899980694
+springs: 0.0004864604165929028
+heat: 0.00045389982226618945
+focus: 0.0004126746839310243
 gravity: 1
-density: 2.63
+density: 2.62
 ---
 experimental (rather stupid) president of [[cyberia]]
 

@@ -3,12 +3,12 @@ tags: cyber, article
 crystal-type: process
 crystal-domain: cyber
 stake: 23432890576785020
-diffusion: 0.0001708780475545348
-springs: 0.001262577998629971
-heat: 0.0009317419298013684
-focus: 0.000650560809326524
+diffusion: 0.00017933590791500815
+springs: 0.0014029963239665275
+heat: 0.0010192272844458407
+focus: 0.0007144123080366514
 gravity: 4
-density: 0.9
+density: 0.85
 ---
 # The Future of Computation: From Turing Machines to Planetary Superintelligence
 

@@ -3,10 +3,10 @@ alias: cyber-bao, BAO, verified streaming
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0002000524682905677
-springs: 0.000697318377842587
-heat: 0.0005607660611499159
-focus: 0.00042137495972803773
+diffusion: 0.00023007619077695186
+springs: 0.0006973785790717689
+heat: 0.0005716241128622577
+focus: 0.0004385764916824709
 gravity: 6
 density: 1.9
 ---

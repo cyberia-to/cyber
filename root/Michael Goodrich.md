@@ -3,12 +3,12 @@ tags: person
 crystal-type: entity
 crystal-domain: cybics
 stake: 4761433182477290
-diffusion: 0.00016634635344236538
-springs: 0.00016470568696532871
-heat: 0.00018706292192290444
-focus: 0.00016999746719536
+diffusion: 0.0001734560369316714
+springs: 0.0001989033908132184
+heat: 0.00021411847743457014
+focus: 0.0001892227311967208
 gravity: 2
-density: 2.91
+density: 2.92
 ---
 American computer scientist, professor at UC Irvine.
 

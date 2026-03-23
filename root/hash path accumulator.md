@@ -4,12 +4,12 @@ tags: cyber, cryptographic proofs
 crystal-type: entity
 crystal-domain: computer science
 stake: 10566769094468996
-diffusion: 0.0003317530861934892
-springs: 0.0012189644875075193
-heat: 0.000951041505155037
-focus: 0.0007217741903799984
+diffusion: 0.00037845664374145386
+springs: 0.0012584545758626306
+heat: 0.0009873177232385796
+focus: 0.0007642282392772545
 gravity: 8
-density: 3.79
+density: 4.1
 ---
 authenticated data structure that represents a path in a graph as a balanced or biased binary tree of [[hash]] digests
 

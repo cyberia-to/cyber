@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: cyber
 alias: Inf, infer, inference language, datalog, CozoScript, cozodb
 stake: 32461876227152508
-diffusion: 0.0005908187948474601
-springs: 0.00040705852454747855
-heat: 0.0004905922407901196
-focus: 0.0005156454029459909
-gravity: 24
-density: 3.84
+diffusion: 0.0006070921681758061
+springs: 0.00044017080767643586
+heat: 0.0005245607216541663
+focus: 0.0005405094707216829
+gravity: 23
+density: 3.63
 ---
 declarative graph query [[language]] for the [[cybergraph]], implemented via [CozoDB](https://github.com/cozodb/cozo)
 

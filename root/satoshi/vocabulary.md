@@ -4,6 +4,12 @@ crystal-type: pattern
 crystal-domain: cyberia
 alias: crystal vocabulary, core vocabulary, civilizational vocabulary
 icon: "\U0001F4D6"
+diffusion: 0.00014098237183947132
+springs: 0.0003381066302055733
+heat: 0.0002943543107709806
+focus: 0.00023079403713561054
+gravity: 6
+density: 3.37
 ---
 # vocabulary
 

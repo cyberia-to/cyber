@@ -4,12 +4,12 @@ alias:
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5499813328256194
-diffusion: 0.00017761319689023325
-springs: 0.00005432783636154628
-heat: 0.0001075992570637288
-focus: 0.00012662480076632465
-gravity: 6
-density: 1.38
+diffusion: 0.00011233815923477823
+springs: 0.00008481352746524951
+heat: 0.00010038486386739838
+focus: 0.00010169011063044663
+gravity: 0
+density: 0.46
 ---
 
 [[oleic acid]] is a monounsaturated omega-9 fatty acid found in various plant oils (e.g., olive oil, avocado oil) and animal fats. it is widely recognized for its health benefits, particularly in promoting cardiovascular health, reducing inflammation, and supporting skin health.

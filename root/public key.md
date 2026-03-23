@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14217174079633786
-diffusion: 0.0015826706660230807
-springs: 0.002199857393993078
-heat: 0.001986554585499696
-focus: 0.001848603468309379
+diffusion: 0.0017142806073372986
+springs: 0.002377195294002562
+heat: 0.0021493165360109198
+focus: 0.0020001621990716604
 gravity: 4
-density: 12.92
+density: 12.94
 ---
 the open half of a cryptographic keypair. derived from the [[private key]]
 

@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: process
 crystal-domain: governance
 stake: 6342014197562797
-diffusion: 0.0009386132659077625
-springs: 0.0003745138696763578
-heat: 0.0005726184032437543
-focus: 0.0006961844745055304
-gravity: 37
-density: 5.08
+diffusion: 0.0010386550255492193
+springs: 0.00039757060132149935
+heat: 0.0006327799722774832
+focus: 0.0007651546876265786
+gravity: 38
+density: 5.71
 ---
 discussing only for dunbar scale (150 ppl)
 

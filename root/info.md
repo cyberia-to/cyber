@@ -4,11 +4,11 @@ alias: information
 icon: "\U00002B50"
 crystal-type: entity
 crystal-domain: info
-diffusion: 0.005364618333658055
-springs: 0.000615660621123263
-heat: 0.002090672536246441
-focus: 0.003285141860415252
-gravity: 44
+diffusion: 0.005696669443993811
+springs: 0.0006396951547220153
+heat: 0.002292177361657037
+focus: 0.00349867874074502
+gravity: 50
 density: 7.4
 ---
 # info

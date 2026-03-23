@@ -4,10 +4,10 @@ alias: amper, milliamper, ampers, milliampers
 crystal-type: entity
 crystal-domain: economics
 stake: 15975861335943538
-diffusion: 0.00010722364868599256
-springs: 0.001996225614103417
-heat: 0.0014019866734187594
-focus: 0.0009328768432577612
+diffusion: 0.00011233815923477823
+springs: 0.0021324590584602117
+heat: 0.0014764468577413972
+focus: 0.0009911961687037612
 gravity: 0
 density: 7.2
 ---

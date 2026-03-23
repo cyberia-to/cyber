@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: video particle, moving image, recording, temporal pixels
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.0002435199446371511
-springs: 0.0011079173656809804
-heat: 0.00085243514667685
-focus: 0.0006246222113582317
+diffusion: 0.0002578036360107953
+springs: 0.001195796886080008
+heat: 0.0009094357856546914
+focus: 0.000669528040960358
 gravity: 6
 density: 2.74
 ---

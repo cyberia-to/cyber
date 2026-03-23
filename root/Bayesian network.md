@@ -4,10 +4,10 @@ alias: Bayesian network, Bayesian networks, belief network, belief networks, dir
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
-diffusion: 0.00019246756367819582
-springs: 0.0019499229062921875
-heat: 0.0013982715862253877
-focus: 0.0009608649709718193
+diffusion: 0.00022445703407537673
+springs: 0.0021168449032590085
+heat: 0.0015030059665830206
+focus: 0.0010478831813320259
 gravity: 2
 density: 2.3
 ---

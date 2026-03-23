@@ -5,10 +5,10 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
 authors: mastercyb
-diffusion: 0.0003614045756055532
-springs: 0.001649609564484454
-heat: 0.0012511082500185576
-focus: 0.0009258068071518123
+diffusion: 0.0003586382606617705
+springs: 0.0017737828655061932
+heat: 0.001322582580634635
+focus: 0.0009759705061096988
 gravity: 6
 density: 3.36
 ---

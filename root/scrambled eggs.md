@@ -3,12 +3,12 @@ tags: kitchen/menu, breakfast
 crystal-type: process
 crystal-domain: agriculture
 stake: 4819364495292119
-diffusion: 0.00010722364868599256
-springs: 0.00030249332277815206
-heat: 0.0002475218242969356
-focus: 0.00019386418603582653
+diffusion: 0.00011233815923477823
+springs: 0.0005367046580828738
+heat: 0.0004044680572911308
+focus: 0.00029807408850048613
 gravity: 0
-density: 1.88
+density: 1.25
 ---
 ![](https://ipfs.io/ipfs/bafkreid4xke6bwgcebgrtzovq36x5qemxokuoci5rodvgyj6djhxzc5tnq)
 

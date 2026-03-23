@@ -5,12 +5,12 @@ crystal-type: relation
 crystal-domain: cyber
 crystal-size: bridge
 stake: 9630918027058644
-diffusion: 0.002527907453128188
-springs: 0.0012267761888633461
-heat: 0.0016339018910613238
-focus: 0.0019587669614353374
-gravity: 29
-density: 10.67
+diffusion: 0.0024213141286863844
+springs: 0.0015992376433980324
+heat: 0.0018723405853819722
+focus: 0.002064896474439057
+gravity: 21
+density: 10.66
 ---
 zoom out from a [[cyberlink]] and you see the axon — the bundle of all links between two [[particles]] across all [[neurons]] and time
 

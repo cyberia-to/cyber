@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
 stake: 911116349579301
-diffusion: 0.0001448709617312371
-springs: 0.00004361791989191755
-heat: 0.00009374376352336472
-focus: 0.00010426960953786541
+diffusion: 0.00015989507472929156
+springs: 0.00005236772133001964
+heat: 0.00010650936047656551
+focus: 0.00011695972585896822
 gravity: 3
-density: 3.11
+density: 3.1
 ---
 - {{query (page-property :wood-durability)}}
 - ## local insights: [[wood-availability]]

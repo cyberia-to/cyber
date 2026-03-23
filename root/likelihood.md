@@ -4,10 +4,10 @@ alias: likelihood, likelihood function, likelihood ratio, log-likelihood, MLE, m
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00028240442393733943
-springs: 0.0009942452693088258
-heat: 0.000784988921600534
-focus: 0.0005964735770814165
+diffusion: 0.00030744363060260406
+springs: 0.0010865328468833626
+heat: 0.0008509868809386119
+focus: 0.0006498790455540522
 gravity: 3
 density: 2.63
 ---

@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14217174079633786
-diffusion: 0.00010722364868599256
-springs: 0.00025334833868649993
-heat: 0.0002231970667239461
-focus: 0.00017425573929373322
+diffusion: 0.00011233815923477823
+springs: 0.00031451946087008225
+heat: 0.00026032748270863373
+focus: 0.00020259041442014647
 gravity: 0
-density: 3.58
+density: 3.57
 ---
 family clan established by [[@master]] and [[@joy]]
 

@@ -4,10 +4,10 @@ alias: belief, degree of belief, credence, subjective probability
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00022957220265472112
-springs: 0.0011653962511323718
-heat: 0.000885667323160509
-focus: 0.0006415384412991656
+diffusion: 0.00025917983048855055
+springs: 0.001262292773248741
+heat: 0.0009528731577361125
+focus: 0.0006988523787661405
 gravity: 9
 density: 3.52
 ---

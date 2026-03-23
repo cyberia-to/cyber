@@ -3,12 +3,12 @@ tags: cyb, core
 crystal-type: entity
 crystal-domain: cyber
 alias: cybos, CybOS, cyb operating system
-diffusion: 0.00017775040675008377
-springs: 0.001386905940738869
-heat: 0.0010205725584803472
-focus: 0.0007090614972927629
+diffusion: 0.00018607844155463024
+springs: 0.0015030379168922455
+heat: 0.0010907838648961123
+focus: 0.0007621073688242336
 gravity: 5
-density: 2.99
+density: 2.91
 ---
 # CybOS
 

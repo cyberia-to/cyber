@@ -4,10 +4,10 @@ alias: self-linking, autonomous linking, graph completion, inference completion,
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
-diffusion: 0.00015585312479714887
-springs: 0.0020647441053419733
-heat: 0.0014622718932396337
-focus: 0.0009898041726490803
+diffusion: 0.00016312460847767358
+springs: 0.0022173089687241884
+heat: 0.0015479371543274576
+focus: 0.0010563424257216158
 gravity: 6
 density: 1.6
 ---

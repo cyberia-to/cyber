@@ -3,12 +3,12 @@ tags: physics, time
 alias: synodic months, lunar month, lunar months
 crystal-type: measure
 crystal-domain: physics
-diffusion: 0.00012896064170803985
-springs: 0.00006115206372754627
-heat: 0.00010972449465388896
-focus: 0.00010477083890306025
+diffusion: 0.00013511150688146723
+springs: 0.00006720233205505287
+heat: 0.00011959749594408873
+focus: 0.0001116359522460705
 gravity: 2
-density: 5.11
+density: 5.1
 ---
 the interval between two identical [[moon]] phases as observed from [[Earth]]: 29 days, 12 hours, 44 minutes, 2.9 seconds (29.53059 days)
 

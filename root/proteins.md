@@ -4,12 +4,12 @@ alias: protein
 crystal-type: entity
 crystal-domain: economics
 stake: 21332473666230488
-diffusion: 0.00047676586173511597
-springs: 0.00006286189717682244
-heat: 0.00021549861238747697
-focus: 0.00030034122249809626
+diffusion: 0.0006624930749405434
+springs: 0.00008845851719258834
+heat: 0.0002980537049115633
+focus: 0.0004173948336103731
 gravity: 14
-density: 2.6
+density: 1.6
 ---
 system synergy potential (micro-ecosystem stacking)
 

@@ -5,12 +5,12 @@ crystal-domain: cybics
 crystal-size: deep
 alias: converge, converges
 stake: 12091371537621072
-diffusion: 0.00043079462578890645
-springs: 0.0011094538244553912
-heat: 0.0009135084203341395
-focus: 0.000730935144297889
-gravity: 8
-density: 2.4
+diffusion: 0.0005557621313108845
+springs: 0.001096846423472081
+heat: 0.000943020007339195
+focus: 0.0007955389941649288
+gravity: 12
+density: 2.47
 ---
 
 the process by which iteration approaches a destination that iteration itself defines. the [[tri-kernel]] iterates until [[focus]] stabilizes, [[neurons]] approach [[knowledge]], and the protocol approaches [[intelligence]]

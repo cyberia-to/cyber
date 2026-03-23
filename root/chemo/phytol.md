@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: chemistry
 tags: precursor vitamin k1, precursor vitamin e
 stake: 5562463764867736
-diffusion: 0.00021691662251016827
-springs: 0.00016110917897294925
-heat: 0.00019360417144440037
-focus: 0.00019551189923584645
-gravity: 5
-density: 3.08
+diffusion: 0.00011233815923477823
+springs: 0.0016733878877855796
+heat: 0.001195501022557546
+focus: 0.0007972856504645955
+gravity: 0
+density: 0.44
 ---
 [[phytol]] is a vital [[diterpenoid alcohol]] primarily found in [[chlorophyll]] and is an important precursor in the synthesis of [[vitamin e]] and [[vitamin k1]]. it plays a significant role in [[antioxidant defense]], [[cellular signaling]], and [[metabolic processes]]. it is naturally present in many green plants and [[essential oils]].
 

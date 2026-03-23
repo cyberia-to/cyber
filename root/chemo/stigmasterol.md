@@ -3,11 +3,11 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5423737798085033
-diffusion: 0.00022572483228416277
-springs: 0.000034136929270399894
-heat: 0.00012206608399576639
-focus: 0.00014751671172235275
-gravity: 4
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
 density: 0
 ---
 stigmasterol is a naturally occurring [[phytosterol]] structurally related to cholesterol, commonly found in vegetable oils, nuts, seeds, legumes, fruits, and medicinal plants. stigmasterol plays a significant role as a precursor in the biosynthesis of plant hormones such as [[brassinosteroids]], and possesses notable health-promoting properties.

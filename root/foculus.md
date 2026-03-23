@@ -4,12 +4,12 @@ crystal-type: process
 crystal-domain: cyber
 status: draft
 stake: 23432890576785020
-diffusion: 0.0003426593071054212
-springs: 0.0013461650308445852
-heat: 0.0010432890961209753
-focus: 0.0007838369820302712
-gravity: 16
-density: 1.18
+diffusion: 0.00032012214294601987
+springs: 0.0014955253851135061
+heat: 0.0011274815360720384
+focus: 0.000834214994221494
+gravity: 14
+density: 1.25
 ---
 # foculus consensus
 

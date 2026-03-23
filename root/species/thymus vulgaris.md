@@ -5,12 +5,12 @@ crystal-domain: biology
 scalable: "true"
 alias: thymus, thyme
 stake: 7476556649655471
-diffusion: 0.000324466122245811
-springs: 0.00019547462573708848
-heat: 0.0002494473945642733
-focus: 0.0002707649277568832
+diffusion: 0.0004364009073436133
+springs: 0.00023303789867535645
+heat: 0.00031363715181483194
+focus: 0.00035083925363739026
 gravity: 10
-density: 7.53
+density: 7.6
 ---
 ![](https://ipfs.io/ipfs/QmRjCnZVkRiGqcaaXbz7ysYMaYizwpFVd4wvBWq3rWfJFY)
 

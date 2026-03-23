@@ -3,10 +3,10 @@ tags: cyber, language
 alias: Tok, token language, resource language, resource logic
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00012795464176633905
-springs: 0.001357266653571462
-heat: 0.0009803884195648512
-focus: 0.0006672350008675698
+diffusion: 0.00012940619876276828
+springs: 0.0014311530657106775
+heat: 0.0010198212719974634
+focus: 0.0006980132734941005
 gravity: 3
 density: 6.94
 ---

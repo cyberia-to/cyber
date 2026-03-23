@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5472963141136961
-diffusion: 0.00011036657667572666
-springs: 0.000029826072880997375
-heat: 0.000060874023940968816
-focus: 0.00007630591499035532
-gravity: 1
-density: 1.65
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 omega-6 fatty acids are polyunsaturated fatty acids essential for human nutrition, characterized by the first double bond located at the sixth carbon from the methyl end. they are crucial for skin health, [[cellular membrane integrity]],[[inflammation regulation]] , and [[immune function]]. since the body cannot produce omega-6 fatty acids, dietary intake is necessary.
 

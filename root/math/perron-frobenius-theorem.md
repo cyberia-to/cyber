@@ -4,10 +4,10 @@ alias: Perron-Frobenius, Perron root, Perron vector, Perron eigenvector, Frobeni
 crystal-type: pattern
 crystal-domain: mathematics
 crystal-size: bridge
-diffusion: 0.00010722364868599256
-springs: 0.0014669007739457917
-heat: 0.0010570007923260407
-focus: 0.0007050822149919328
+diffusion: 0.00011233815923477823
+springs: 0.0015908592340539913
+heat: 0.001128151635737126
+focus: 0.0007590571769810339
 gravity: 0
 density: 2.51
 ---

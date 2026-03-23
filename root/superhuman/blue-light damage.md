@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: property
 crystal-domain: superhuman
 stake: 1004196998259308
-diffusion: 0.00013527427130409917
-springs: 0.00003695916086557132
-heat: 0.00007388532815445743
-focus: 0.00009350194954261126
-gravity: 1
-density: 1.85
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 violet portion (around 400–500 nm) of the visible light spectrum, often emitted by sunlight, digital screens (phones, tablets, computers), and artificial lighting (LEDs).
 

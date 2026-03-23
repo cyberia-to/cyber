@@ -5,12 +5,12 @@ crystal-domain: biology
 scalable: "true"
 alias: lavandula
 stake: 7447265536434489
-diffusion: 0.0003259966667599698
-springs: 0.00025055502710128217
-heat: 0.0002844468552510391
-focus: 0.0002950542125605736
+diffusion: 0.00041629784685104945
+springs: 0.00026350575768623356
+heat: 0.0003238250377967167
+focus: 0.00035196565829074845
 gravity: 12
-density: 2.63
+density: 2.64
 ---
 ![image.png](https://ipfs.io/ipfs/QmVPSRQsshUtgU2jtpi9TfbYqEK59rp61cFdaX5Xsfuach)
 

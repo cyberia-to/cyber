@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: process
 crystal-domain: superhuman
 stake: 3637305348418743
-diffusion: 0.00022535684230724502
-springs: 0.00006272580483520406
-heat: 0.0001186682246706387
-focus: 0.00015522980753830947
-gravity: 1
-density: 12.12
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
+density: 0
 ---
 [[skin moisturizing]]
 

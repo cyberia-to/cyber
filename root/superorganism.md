@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14633351979981900
-diffusion: 0.0002032467889499839
-springs: 0.0016778559125454108
-heat: 0.001215937229501659
-focus: 0.000848167614138936
+diffusion: 0.00022080037632167255
+springs: 0.0018084059924099337
+heat: 0.0012947553564985038
+focus: 0.0009118730571835439
 gravity: 4
-density: 11.92
+density: 11.93
 ---
 a colony that behaves as a single organism — coined by Wheeler (1911) studying ant colonies
 

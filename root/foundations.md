@@ -5,12 +5,12 @@ alias: and more, sytech
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8142319243907359
-diffusion: 0.0005462927511940574
-springs: 0.00012765628546175143
-heat: 0.0002784760407205869
-focus: 0.00036713846937966673
+diffusion: 0.0005482619906710609
+springs: 0.00016067211946729545
+heat: 0.0003039434051552742
+focus: 0.00038312131220678516
 gravity: 6
-density: 13.51
+density: 12.21
 ---
 welcome to the cyberia foundations
 

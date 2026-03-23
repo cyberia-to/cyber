@@ -3,12 +3,12 @@ tags: district, team, cv.land
 crystal-type: entity
 crystal-domain: cyberia
 stake: 8266196243571091
-diffusion: 0.006348827182231604
-springs: 0.00022520858291307487
-heat: 0.002138728303897457
-focus: 0.003669721826769169
-gravity: 51
-density: 12.33
+diffusion: 0.005085835289297589
+springs: 0.00022103541378094211
+heat: 0.0018150286019252915
+focus: 0.0029722339891682225
+gravity: 56
+density: 8.66
 ---
 ops:: false
 dev:: false

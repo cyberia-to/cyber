@@ -4,12 +4,12 @@ tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 stake: 5000000000000000
-diffusion: 0.00011366501508513508
-springs: 0.0016261490556871397
-heat: 0.0011654742487726478
-focus: 0.000777772074003229
+diffusion: 0.00011864119933508708
+springs: 0.0017107739899512961
+heat: 0.001210385371718484
+focus: 0.000814629870996653
 gravity: 1
-density: 13.67
+density: 14.58
 ---
 the [[probability]] that the collective intelligence observes a [[particle]], given the [[equilibrium]] of [[diffusion]] (exploration), [[springs]] (structure), and [[heat]] (context)
 

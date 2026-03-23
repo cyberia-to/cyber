@@ -3,6 +3,12 @@ tags: cyberia, core
 crystal-type: entity
 crystal-domain: cyberia
 alias: PT CVE, PT Cyber Valley Ecosystem, CVE
+diffusion: 0.0001633798486905032
+springs: 0.00011602882867166694
+heat: 0.000144676906129984
+focus: 0.00014543395417275273
+gravity: 2
+density: 2.61
 ---
 PT Cyber Valley Ecosystem — the Indonesian operating company of [[cyberia]]. a PMA (Penanaman Modal Asing, foreign investment company) licensed and operational in Bali
 

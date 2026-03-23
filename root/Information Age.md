@@ -3,10 +3,10 @@ tags: time, history, computer science
 crystal-type: entity
 crystal-domain: computer science
 stake: 5738210444193624
-diffusion: 0.0005567585173696468
-springs: 0.00022041034184719144
-heat: 0.00034124821363729226
-focus: 0.0004127520039664339
+diffusion: 0.0006472711187170483
+springs: 0.00023930441999867513
+heat: 0.0003915375367099513
+focus: 0.00047373439270013084
 gravity: 13
 density: 7.88
 ---

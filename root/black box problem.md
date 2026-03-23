@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 stake: 14056072956918388
-diffusion: 0.00016040312710388323
-springs: 0.000053787048439489357
-heat: 0.00010222855762909962
-focus: 0.00011678338960960683
+diffusion: 0.00016713386966307755
+springs: 0.000060816694283604907
+heat: 0.00011083088702893413
+focus: 0.0001239781205224107
 gravity: 1
-density: 1.95
+density: 1.94
 ---
 inability to transparently explain decisions of [[llm]]
 

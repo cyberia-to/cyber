@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 5915991228604303
-diffusion: 0.00011016253436499897
-springs: 0.00005700922272609536
-heat: 0.00008337160197024864
-focus: 0.00008885835439437669
+diffusion: 0.00011587425681917049
+springs: 0.00006936007333038662
+heat: 0.00009686227339576296
+focus: 0.00009811760508785669
 gravity: 1
-density: 0.99
+density: 0.66
 ---
 - The project is established according to the idea of [[7 level of compliance]]
 

@@ -3,12 +3,12 @@ tags: cyber, language
 alias: Bel, belief language, information geometry language
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00012795464176633905
-springs: 0.0013561263294954518
-heat: 0.0009838320626542425
-focus: 0.000667581632262645
+diffusion: 0.00012940619876276828
+springs: 0.0014153558885512567
+heat: 0.0010138146948116252
+focus: 0.0006920728049091064
 gravity: 3
-density: 7.31
+density: 8.12
 ---
 information [[geometry]]. Fisher information metric on the simplex of [[probability]] distributions
 

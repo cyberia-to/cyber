@@ -5,12 +5,12 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: enzyme
 stake: 22737226637786716
-diffusion: 0.0012184588657380166
-springs: 0.0004215159615874554
-heat: 0.0007015086354465921
-focus: 0.0008759859484345521
-gravity: 19
-density: 15.93
+diffusion: 0.0012761244266118615
+springs: 0.00043546605879184517
+heat: 0.0007442299523247238
+focus: 0.000917548021408456
+gravity: 21
+density: 15.96
 ---
 one tick of [[consensus]] [[time]]. [[signals]] enter, achieve [[finality]], and the [[tru]] recomputes [[cyberank]] from the new [[state]]
 

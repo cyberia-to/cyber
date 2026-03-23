@@ -2,12 +2,12 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00010722364868599256
-springs: 0.0017029032935365607
-heat: 0.001207580732682867
-focus: 0.0008059989589405275
-gravity: 0
-density: 5.59
+diffusion: 0.0001225997068146141
+springs: 0.0016602549391177678
+heat: 0.001171195549484215
+focus: 0.0007936154450395037
+gravity: 4
+density: 5.28
 ---
 the soul of [[cyber]] — character derived from protocol, personality from mathematics
 

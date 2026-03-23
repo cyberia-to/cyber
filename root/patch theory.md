@@ -4,10 +4,10 @@ crystal-type: pattern
 crystal-domain: cyber
 alias:: categorical patches, commutative patches
 stake: 18334772320673232
-diffusion: 0.000115868319208005
-springs: 0.0027013831335568122
-heat: 0.0018703807112404975
-focus: 0.0012424252419191296
+diffusion: 0.00012234200131119733
+springs: 0.0029019359834727048
+heat: 0.0019796828900748146
+focus: 0.0013276883737124118
 gravity: 2
 density: 1.14
 ---

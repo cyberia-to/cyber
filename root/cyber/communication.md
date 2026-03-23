@@ -3,12 +3,12 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: proof of delivery, private messaging, cyber messaging, neuron communication
-diffusion: 0.0002373074313534087
-springs: 0.0015867831758576182
-heat: 0.0011687663183808947
-focus: 0.0008284419321101581
+diffusion: 0.0002473412565973999
+springs: 0.0017329386268169164
+heat: 0.0012587964190080207
+focus: 0.0008953115001454053
 gravity: 7
-density: 1.36
+density: 1.24
 ---
 # communication
 

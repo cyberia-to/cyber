@@ -3,6 +3,12 @@ tags: cyberia, core, cyber
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
+diffusion: 0.00011688476595944397
+springs: 0.0013097125701958254
+heat: 0.0009383386437290112
+focus: 0.0006390238827842906
+gravity: 1
+density: 1.67
 ---
 self-regulation of 147 [[neurons]] through [[metabolic]] signal — goal trees on the [[cybergraph]], contribution via [[Shapley value]], death by parasitism
 

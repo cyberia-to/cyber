@@ -3,11 +3,11 @@ tags: genus
 crystal-type: entity
 crystal-domain: biology
 stake: 4537681623150350
-diffusion: 0.00020412976916184055
-springs: 0.0000978957284714543
-heat: 0.00017338947875768912
-focus: 0.00016611149887389224
-gravity: 8
+diffusion: 0.00011233815923477823
+springs: 0.00008246788381555257
+heat: 0.000037649645370807764
+focus: 0.00008843937383621902
+gravity: 0
 density: 0
 ---
 {{embed [[casuarina junghuhniana]]}}

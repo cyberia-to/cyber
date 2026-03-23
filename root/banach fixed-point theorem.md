@@ -4,10 +4,10 @@ alias: contraction mapping theorem, contraction mapping, banach theorem
 crystal-type: pattern
 crystal-domain: cybics
 stake: 8500000000000000
-diffusion: 0.00017604595669212108
-springs: 0.0014102125447075105
-heat: 0.0010348566570969673
-focus: 0.000718058073177698
+diffusion: 0.00018467834634055272
+springs: 0.0015236318641093027
+heat: 0.0011022805043167999
+focus: 0.0007698848332664497
 gravity: 4
 density: 2.88
 ---

@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 8249719992384290
-diffusion: 0.00014210316500099616
-springs: 0.00008794770866188794
-heat: 0.00011356244480386305
-focus: 0.00012014838405983553
-gravity: 4
-density: 2.58
+diffusion: 0.00011233815923477823
+springs: 0.0001669384939575306
+heat: 0.00016326061620693366
+focus: 0.0001389027510460391
+gravity: 0
+density: 0.43
 ---
 alias: kaempferol
 

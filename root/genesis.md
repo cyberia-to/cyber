@@ -5,11 +5,11 @@ icon: 🧬
 crystal-type: entity
 crystal-domain: cyberia
 stake: 11505305180591270
-diffusion: 0.0016669536924646636
-springs: 0.0001427309107728737
-heat: 0.0006275723411079345
-focus: 0.001001810587685768
-gravity: 25
+diffusion: 0.0020021629561169257
+springs: 0.00015947066970598792
+heat: 0.0007688896622379501
+focus: 0.0012027006114178845
+gravity: 26
 density: 1.85
 ---
 # Regenerative event infrastructure

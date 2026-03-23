@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: struct particle, structured data, json, toml
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.0002054506739203656
-springs: 0.000912436438269215
-heat: 0.0007102001156421635
-focus: 0.0005184962915693733
+diffusion: 0.00021497175364692457
+springs: 0.0009929010749272975
+heat: 0.0007622542082757204
+focus: 0.000557807040956812
 gravity: 3
 density: 3.63
 ---

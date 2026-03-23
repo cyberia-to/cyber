@@ -6,12 +6,12 @@ crystal-domain: economics
 crystal-size: article
 status: draft
 stake: 66218419658672376
-diffusion: 0.001303381363290461
-springs: 0.0010610321557410285
-heat: 0.0011497015275792237
-focus: 0.0011999406338833684
-gravity: 24
-density: 4.04
+diffusion: 0.0013820152299540785
+springs: 0.0011163276004283616
+heat: 0.001223107287953102
+focus: 0.0012705273526962056
+gravity: 26
+density: 3.89
 ---
 # learning incentives
 

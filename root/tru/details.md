@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 stake: 4783808338409984
-diffusion: 0.00031209595145221294
-springs: 0.0006980373294409447
-heat: 0.0006056648377406685
-focus: 0.0004865921421065173
+diffusion: 0.00032219381513642475
+springs: 0.000748275771371275
+heat: 0.0006426236651229028
+focus: 0.0005141043720041905
 gravity: 1
-density: 13.73
+density: 13.69
 ---
 technical details of the [[tru]]
 

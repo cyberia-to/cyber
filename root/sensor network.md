@@ -3,11 +3,11 @@ tags: cyber, cyberia
 crystal-type: entity
 crystal-domain: cyberia
 stake: 6868766050320110
-diffusion: 0.00035075577568890326
-springs: 0.0011198687895413292
-heat: 0.0008894951099611353
-focus: 0.0006892375466990686
-gravity: 6
+diffusion: 0.00041879792945703455
+springs: 0.001045614679299343
+heat: 0.0008586971918147384
+focus: 0.0006948228068812882
+gravity: 9
 density: 3.66
 ---
 - # Sensor Network

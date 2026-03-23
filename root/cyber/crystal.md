@@ -5,12 +5,12 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 stake: 28558835390456748
-diffusion: 0.0007657089564357925
-springs: 0.00040802272376898123
-heat: 0.0005420754656134493
-focus: 0.0006136763884712725
-gravity: 52
-density: 2.81
+diffusion: 0.0009732723092327999
+springs: 0.00043883526227879677
+heat: 0.000637931951985678
+focus: 0.0007458731236971965
+gravity: 62
+density: 2.84
 ---
 # THE CRYSTAL
 

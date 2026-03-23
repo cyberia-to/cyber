@@ -4,10 +4,10 @@ alias: inversely coupled bonding surface, ICBS, Euclidean norm ICBS, bonding sur
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.0005527412197810618
-springs: 0.0006763757688898617
-heat: 0.0006575465974637672
-focus: 0.0006107926600502349
+diffusion: 0.0005623365406273855
+springs: 0.0007226277893769917
+heat: 0.000695433240895934
+focus: 0.0006370432553059958
 gravity: 21
 density: 1.52
 ---

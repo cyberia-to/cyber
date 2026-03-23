@@ -3,12 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4886734055700377
-diffusion: 0.00010722364868599256
-springs: 0.0002902722792947917
-heat: 0.00026447705224000496
-focus: 0.0001935889185794323
+diffusion: 0.00011233815923477823
+springs: 0.0002383440900586737
+heat: 0.00022652185210972236
+focus: 0.00017297667705694076
 gravity: 0
-density: 3.02
+density: 7.05
 ---
 The study of shape, [[space]], position, and measurement.
 

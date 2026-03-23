@@ -3,12 +3,12 @@ tags: physics
 crystal-type: entity
 crystal-domain: physics
 stake: 4980709710617692
-diffusion: 0.0004314081815463236
-springs: 0.000267886088636139
-heat: 0.00034718675378344894
-focus: 0.00036550726812068857
-gravity: 6
-density: 10.25
+diffusion: 0.00043317984172203014
+springs: 0.0002623400600899072
+heat: 0.0003465139463609755
+focus: 0.000364594728160193
+gravity: 8
+density: 10.27
 ---
 
 The emission and propagation of [[energy]] as electromagnetic [[waves]] or subatomic particles.

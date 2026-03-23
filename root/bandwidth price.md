@@ -3,12 +3,12 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cyber
 stake: 8417533661879494
-diffusion: 0.00028135238267612593
-springs: 0.0017636528983359604
-heat: 0.0012962060955847522
-focus: 0.0009290132799557897
+diffusion: 0.0003021687548733935
+springs: 0.0018798885366426948
+heat: 0.001367809695485166
+focus: 0.0009886128775265675
 gravity: 4
-density: 8.66
+density: 8.64
 ---
 it's a multiplier for default bandwidth price
 

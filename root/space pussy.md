@@ -5,12 +5,12 @@ icon: 🫦
 crystal-type: entity
 crystal-domain: cyber
 stake: 22554157180155588
-diffusion: 0.0010969853178189367
-springs: 0.00017937778243716453
-heat: 0.0004982196441105914
-focus: 0.0007019499224627271
-gravity: 16
-density: 2.35
+diffusion: 0.0011542909126072986
+springs: 0.0001736358055981268
+heat: 0.0005272759082428249
+focus: 0.0007346913796316739
+gravity: 19
+density: 3.13
 ---
 - memecoin with balls and vision
 

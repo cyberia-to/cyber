@@ -6,11 +6,11 @@ scalable: "true"
 alias: theobroma, cacao, coklat, kakao
 wood-density: "450"
 stake: 8202732164925632
-diffusion: 0.00018973379772922307
-springs: 0.0005802464538196663
-heat: 0.0004639094686414313
-focus: 0.00036172272873879303
-gravity: 3
+diffusion: 0.00023117348995987724
+springs: 0.0005968339862085576
+heat: 0.00048449943648492773
+focus: 0.000391536828139503
+gravity: 4
 density: 2.66
 ---
 ![](https://ipfs.io/ipfs/QmXij4UgeYZMTcrNiTWN42KJnTAvusrKuCSkmPaGZAZiMF){:height 411, :width 628}

@@ -5,12 +5,12 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 stake: 19039223593637832
-diffusion: 0.001229116214203332
-springs: 0.0007611086509018856
-heat: 0.0009239505141132337
-focus: 0.0010276808051948654
+diffusion: 0.0011932252095256265
+springs: 0.0008054574937956081
+heat: 0.0009556151085324485
+focus: 0.0010293728746080155
 gravity: 7
-density: 1.08
+density: 1.09
 ---
 # cyber: a protocol for planetary superintelligence
 

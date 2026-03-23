@@ -3,10 +3,10 @@ tags: cyb, cyber, core
 alias: pixels particle, image, raster, photograph
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.0003278283653643965
-springs: 0.001095815962277449
-heat: 0.0008683969723012883
-focus: 0.0006663383658256821
+diffusion: 0.00036034278064389055
+springs: 0.001184781145672163
+heat: 0.0009334635956410023
+focus: 0.0007222984531518158
 gravity: 9
 density: 3.26
 ---

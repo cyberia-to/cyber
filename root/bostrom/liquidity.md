@@ -2,12 +2,12 @@
 tags: module, bostrom
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00014596573659759733
-springs: 0.0001636334604329727
-heat: 0.00017953845569081367
-focus: 0.00015798059756685117
+diffusion: 0.00015292113142548427
+springs: 0.00017683885706268337
+heat: 0.00019318079487391345
+focus: 0.00016814838180633477
 gravity: 3
-density: 1.87
+density: 1.88
 ---
 # Liquidity Module
 

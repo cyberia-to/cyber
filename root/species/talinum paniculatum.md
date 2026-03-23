@@ -4,12 +4,12 @@ alias: fameflower, jewels-of-opar
 crystal-type: entity
 crystal-domain: biology
 stake: 10746787394472944
-diffusion: 0.00010722364868599256
-springs: 0.0001266335226800042
-heat: 0.00013293821180101933
-focus: 0.00011818952350719989
+diffusion: 0.00011233815923477823
+springs: 0.0004277749433780998
+heat: 0.00033843514056951625
+focus: 0.00025218859074472964
 gravity: 0
-density: 5.29
+density: 1.06
 ---
 ![](https://ipfs.io/ipfs/QmY78iNwt1QHjrTNxNimphV6v59CcoRL6b8D2MTs9pkSQY)
 

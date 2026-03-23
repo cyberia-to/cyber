@@ -3,12 +3,12 @@ tags: compound
 crystal-type: entity
 crystal-domain: chemistry
 stake: 5370037423846567
-diffusion: 0.00010722364868599256
-springs: 0.00003505710582165876
-heat: 0.00007062802892437207
-focus: 0.00007825456187436732
+diffusion: 0.00011233815923477823
+springs: 0.00004830267713142432
+heat: 0.00010938466529928925
+focus: 0.00009253681581667699
 gravity: 0
-density: 1.37
+density: 0.46
 ---
 
 general description about myrcene:

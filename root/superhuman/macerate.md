@@ -3,12 +3,12 @@ tags: superhuman
 crystal-type: process
 crystal-domain: superhuman
 stake: 7160049898462091
-diffusion: 0.00010722364868599256
-springs: 0.00006170234919333161
-heat: 0.00008781880931757771
-focus: 0.00008968629096451016
+diffusion: 0.00011233815923477823
+springs: 0.00004534154859562223
+heat: 0.00009005229123311329
+focus: 0.00008778200244270102
 gravity: 0
-density: 1.74
+density: 0.32
 ---
 [[passiflora edulis]]
 

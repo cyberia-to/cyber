@@ -3,12 +3,12 @@ alias: hashing, crypto hashing, hash families
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
-diffusion: 0.00017476240195423795
-springs: 0.0004985492485903759
-heat: 0.000408105149166695
-focus: 0.0003185670053875666
+diffusion: 0.0002081347781292904
+springs: 0.0005027229075705771
+heat: 0.0004229029499577088
+focus: 0.0003394648513273701
 gravity: 3
-density: 5.09
+density: 3.96
 ---
 # crypto/hashing
 

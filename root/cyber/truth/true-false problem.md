@@ -4,12 +4,12 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cyber
 stake: 14027880260443198
-diffusion: 0.0002789540793093856
-springs: 0.0015986034475101486
-heat: 0.001189752359314591
-focus: 0.0008570085457706445
+diffusion: 0.000291274827106239
+springs: 0.0016829923992258075
+heat: 0.001239821451976401
+focus: 0.0008984994237161682
 gravity: 5
-density: 7.05
+density: 7.5
 ---
 the foundational problem of [[cyber]] [[inference]]
 

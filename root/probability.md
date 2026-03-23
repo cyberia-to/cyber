@@ -3,6 +3,12 @@ tags: mathematics
 crystal-type: measure
 crystal-domain: mathematics
 stake: 2945465526979843
+diffusion: 0.004479202261207333
+springs: 0.00045008257323276353
+heat: 0.0017738484189571157
+focus: 0.0027293955863649986
+gravity: 31
+density: 10.37
 ---
 
 A measure of uncertainty over events, formalized as a function mapping outcomes to values in [0, 1].

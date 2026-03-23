@@ -3,6 +3,12 @@ tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
 stake: 10355222165650798
+diffusion: 0.00022862154198332696
+springs: 0.00033338757789508317
+heat: 0.0003307491646281119
+focus: 0.00028047687728581907
+gravity: 6
+density: 1.78
 ---
 framework for efficient design, modeling and simulation of [[cybernomics]] for [[token]] creators
 

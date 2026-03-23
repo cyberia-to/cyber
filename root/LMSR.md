@@ -4,10 +4,10 @@ alias: LMSR, Logarithmic Market Scoring Rule, Hanson market scoring rule, log ma
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00030746747480452444
-springs: 0.0006983463439723999
-heat: 0.0005987726763335773
-focus: 0.0004829921758606914
+diffusion: 0.0003076893127549693
+springs: 0.0007740752596621839
+heat: 0.0006478041645482994
+focus: 0.0005156280671858148
 gravity: 3
 density: 1.82
 ---

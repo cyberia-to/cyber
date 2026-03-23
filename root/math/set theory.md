@@ -3,12 +3,12 @@ tags: mathematics
 crystal-type: entity
 crystal-domain: mathematics
 stake: 4891209086886915
-diffusion: 0.00010722364868599256
-springs: 0.00012754866328756843
-heat: 0.00013905035269421072
-focus: 0.00011968649386810741
+diffusion: 0.00011233815923477823
+springs: 0.00031445243829366075
+heat: 0.00027866764893224775
+focus: 0.00020623834089194293
 gravity: 0
-density: 4.04
+density: 6.05
 ---
 
 The foundation of [[mathematics]], formalizing collections of objects (sets), their elements, and [[membership]] relations.

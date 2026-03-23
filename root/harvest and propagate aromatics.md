@@ -3,12 +3,12 @@ tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
 stake: 3751866146794136
-diffusion: 0.00010722364868599256
-springs: 0.00005529820456069706
-heat: 0.00009566866357944403
-focus: 0.00008933501842709306
+diffusion: 0.00011233815923477823
+springs: 0.000060508310174140696
+heat: 0.00010431868924347937
+focus: 0.00009518531051832999
 gravity: 0
-density: 18.09
+density: 16.28
 ---
 [github](https://github.com/cyberia-to/rockets/issues/1114)
 

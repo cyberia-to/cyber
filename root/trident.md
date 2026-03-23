@@ -7,12 +7,12 @@ stake: 37851441059813056
 subgraph: true
 repo: ../trident
 exclude: ".claude/**, baselines/**"
-diffusion: 0.0017841675646526863
-springs: 0.00017105102074006217
-heat: 0.000684014774436441
-focus: 0.001080202043435636
-gravity: 46
-density: 5.08
+diffusion: 0.0009119223559642708
+springs: 0.00012722640211562233
+heat: 0.0004023783381942181
+focus: 0.0005746047662556825
+gravity: 39
+density: 5.09
 ---
 where the [[field]] is visible and the programmer thinks in constraints. division is exact (multiplicative inverse). every operation becomes a polynomial constraint in the [[zheng]] execution trace
 

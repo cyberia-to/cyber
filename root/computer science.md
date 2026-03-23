@@ -2,12 +2,12 @@
 tags: discipline, comp, info
 crystal-type: entity
 crystal-domain: comp
-diffusion: 0.00018951324739101478
-springs: 0.0001406897449534114
-heat: 0.0001768455452022591
-focus: 0.0001723326562219804
+diffusion: 0.00020267392422169413
+springs: 0.0001764785690340903
+heat: 0.00020929775187491684
+focus: 0.00019614008319606327
 gravity: 4
-density: 16.07
+density: 16.78
 ---
 # computer science
 

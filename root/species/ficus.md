@@ -4,12 +4,12 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 stake: 5056785240788851
-diffusion: 0.00022425865934882605
-springs: 0.00019501275670947608
-heat: 0.00022169211337031778
-focus: 0.00021497157936131662
-gravity: 5
-density: 1.83
+diffusion: 0.00011233815923477823
+springs: 0.0009630694269163283
+heat: 0.00067739910211672
+focus: 0.0004805697281156457
+gravity: 0
+density: 0.91
 ---
 native to [[batuka]]
 

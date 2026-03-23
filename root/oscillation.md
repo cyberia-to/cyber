@@ -3,11 +3,11 @@ tags: pattern, physics
 crystal-type: pattern
 crystal-domain: physics
 stake: 3181014895798567
-diffusion: 0.00026999172736179506
-springs: 0.00005711176961233957
-heat: 0.00014475683617787074
-focus: 0.00018108076180017122
-gravity: 5
+diffusion: 0.0003093623113469225
+springs: 0.00006048161826897912
+heat: 0.00015850873449377892
+focus: 0.00020452738805291676
+gravity: 7
 density: 2.2
 ---
 periodic motion between two states or extremes

@@ -4,11 +4,11 @@ tags: page
 crystal-type: entity
 crystal-domain: cyber
 stake: 20459842584855424
-diffusion: 0.000264033021070223
-springs: 0.001047137941031478
-heat: 0.0008190750254071744
-focus: 0.0006099728979259819
+diffusion: 0.0002810357482321719
+springs: 0.0011289008544003612
+heat: 0.0008741641101486947
+focus: 0.0006540209524659524
 gravity: 4
-density: 3.51
+density: 3.54
 ---
 more than one [[neuron]]

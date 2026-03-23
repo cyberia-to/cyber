@@ -2,6 +2,12 @@
 tags: cyberia, satoshi
 crystal-type: pattern
 crystal-domain: cyberia
+diffusion: 0.00026018435481232086
+springs: 0.0002532380951310535
+heat: 0.00027964589260330526
+focus: 0.0002619927844661452
+gravity: 30
+density: 10.44
 ---
 # domains
 

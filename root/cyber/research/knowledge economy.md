@@ -4,10 +4,10 @@ alias: knowledge economy, epistemic economy, cyber knowledge economy, knowledge 
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-diffusion: 0.0009103323785877986
-springs: 0.0022074346573596826
-heat: 0.0017876086694257147
-focus: 0.001474918320386928
+diffusion: 0.0009385683757468901
+springs: 0.0023643389005248033
+heat: 0.0018928491061059652
+focus: 0.0015571556792521248
 gravity: 2
 density: 2.94
 ---

@@ -3,6 +3,12 @@ tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
 icon: "\U0001F96C"
+diffusion: 0.00013443210973543315
+springs: 0.00020725519285787918
+heat: 0.00019821392608379625
+focus: 0.00016903539794184454
+gravity: 5
+density: 3.84
 ---
 # nutrition
 

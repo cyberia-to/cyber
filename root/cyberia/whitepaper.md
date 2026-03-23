@@ -5,12 +5,12 @@ icon: "\U0001F30F"
 crystal-type: entity
 crystal-domain: cyberia
 crystal-size: deep
-diffusion: 0.00011478963556028322
-springs: 0.0006674856244823658
-heat: 0.0005196628242150286
-focus: 0.00036157306996785244
+diffusion: 0.00012026564291189706
+springs: 0.0007290179318164027
+heat: 0.0005585870492607514
+focus: 0.0003905556108530311
 gravity: 1
-density: 5.06
+density: 4.93
 ---
 # Cyberia: the Superintelligent Nation
 

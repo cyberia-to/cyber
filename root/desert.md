@@ -4,12 +4,12 @@ alias: deserts
 crystal-type: entity
 crystal-domain: geography
 stake: 8252771150011476
-diffusion: 0.0001802328221279384
-springs: 0.00013230259441774506
-heat: 0.00016018931786694176
-focus: 0.000161845052962679
+diffusion: 0.0001911827796337275
+springs: 0.0001580197175101793
+heat: 0.0001835889307406235
+focus: 0.0001797150912180475
 gravity: 5
-density: 6.98
+density: 7
 ---
 [[biome]] receiving less than 250mm precipitation per year
 
