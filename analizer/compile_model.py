@@ -28,7 +28,7 @@ import os
 import time
 import numpy as np
 from scipy.sparse import csr_matrix, diags
-from scipy.sparse.linalg import svds, eigsh
+from scipy.sparse.linalg import svds
 from collections import defaultdict
 
 
@@ -108,71 +108,73 @@ def build_adjacency(links, particles, stakes=None):
     return A
 
 
-def compute_focus(A, alpha=0.85, iterations=29, tol=1e-6):
-    """Step 3: Focus distribution (PageRank)"""
-    print(f"Step 3: Computing focus (PageRank, alpha={alpha}, max_iter={iterations})...")
+def compute_focus(A, alpha=0.85, iterations=50, tol=1e-8):
+    """Step 3+4: Focus distribution (PageRank) + spectral gap from convergence rate
+
+    The convergence rate of PageRank IS the spectral gap, observed empirically.
+    Between iterations: ||π^(t+1) - π*|| / ||π^(t) - π*|| → κ = α(1-λ₂)
+    So we track the ratio of successive diffs to extract κ without eigsh.
+    """
+    print(f"Step 3+4: Computing focus + spectral gap (PageRank, alpha={alpha})...")
     t0 = time.time()
 
     n = A.shape[0]
-    # column-normalize: M = D^{-1} A
     out_degree = np.array(A.sum(axis=1)).flatten()
-    out_degree[out_degree == 0] = 1  # avoid division by zero (dangling nodes)
+    out_degree[out_degree == 0] = 1
     D_inv = diags(1.0 / out_degree)
     M = D_inv @ A
 
     pi = np.ones(n) / n
     teleport = (1 - alpha) / n
 
+    diffs = []
+    convergence_iter = iterations
+
     for t in range(iterations):
         pi_new = alpha * (M.T @ pi) + teleport
-        # handle dangling nodes
-        dangling_mass = alpha * pi[out_degree == 1].sum() / n  # approximate
+        dangling_mass = alpha * pi[out_degree == 1].sum() / n
         pi_new += dangling_mass
         pi_new /= pi_new.sum()
 
         diff = np.abs(pi_new - pi).sum()
+        diffs.append(diff)
         pi = pi_new
+
         if diff < tol:
+            convergence_iter = t + 1
             print(f"  Converged at iteration {t+1}, diff={diff:.2e}")
             break
+
+    # Extract spectral gap from convergence rate
+    # κ = ratio of successive diffs in the tail (where it's geometric)
+    # Use last 5 ratios for stability
+    ratios = []
+    for i in range(max(3, len(diffs) - 5), len(diffs)):
+        if diffs[i-1] > 1e-15:
+            ratios.append(diffs[i] / diffs[i-1])
+
+    if ratios:
+        kappa = np.median(ratios)  # median is robust to outliers
+        # κ = α(1 - λ₂)  →  λ₂ = 1 - κ/α
+        lambda2 = max(0, 1 - kappa / alpha)
+    else:
+        kappa = alpha  # worst case: no gap
+        lambda2 = 0
+
+    T_converge = convergence_iter
 
     # stats
     top_idx = np.argsort(-pi)[:10]
     print(f"  Focus computed in {time.time()-t0:.1f}s")
     print(f"  Max focus: {pi[top_idx[0]]:.6f}, min: {pi.min():.2e}")
     print(f"  Entropy: {-np.sum(pi * np.log(pi + 1e-15)):.2f} bits")
-    return pi
-
-
-def compute_spectral_gap(A):
-    """Step 4: Spectral gap via Lanczos"""
-    print("Step 4: Computing spectral gap...")
-    t0 = time.time()
-
-    n = A.shape[0]
-    # normalized Laplacian: L = I - D^{-1/2} A D^{-1/2}
-    degree = np.array(A.sum(axis=1)).flatten()
-    degree[degree == 0] = 1
-    D_inv_sqrt = diags(1.0 / np.sqrt(degree))
-    L = diags(np.ones(n)) - D_inv_sqrt @ A @ D_inv_sqrt
-
-    # find smallest eigenvalues (lambda_1 ≈ 0, lambda_2 = spectral gap)
-    try:
-        eigenvalues, _ = eigsh(L, k=min(6, n-1), which='SM', maxiter=100)
-        eigenvalues = np.sort(eigenvalues)
-        lambda2 = eigenvalues[1] if len(eigenvalues) > 1 else 0
-    except Exception as e:
-        print(f"  Warning: eigsh failed ({e}), estimating lambda2=0.001")
-        lambda2 = 0.001
-
-    kappa = 0.85 * (1 - lambda2)
-    T_converge = int(np.ceil(np.log(100) / np.log(1 / kappa))) if kappa < 1 else 100
-
-    print(f"  λ₂ = {lambda2:.6f}")
-    print(f"  κ (contraction) = {kappa:.4f}")
+    print(f"  Convergence diffs (last 5): {[f'{d:.2e}' for d in diffs[-5:]]}")
+    print(f"  Contraction ratios (last 5): {[f'{r:.4f}' for r in ratios[-5:]]}")
+    print(f"  κ (measured contraction) = {kappa:.6f}")
+    print(f"  λ₂ (spectral gap) = {lambda2:.6f}")
     print(f"  T_converge = {T_converge} iterations")
-    print(f"  Computed in {time.time()-t0:.1f}s")
-    return lambda2, kappa, T_converge
+
+    return pi, lambda2, kappa, T_converge
 
 
 def compute_embeddings(A, pi, target_d=None, oversampling=10):
@@ -380,7 +382,6 @@ def main():
     max_links = None
     stakes_path = None
     do_onnx = "--onnx" in sys.argv
-    skip_spectral = "--skip-spectral" in sys.argv
     if "--max-links" in sys.argv:
         idx = sys.argv.index("--max-links")
         max_links = int(sys.argv[idx + 1])
@@ -394,13 +395,7 @@ def main():
     links, particles = load_cyberlinks(path, max_links)
     stakes = load_stakes(stakes_path) if stakes_path else None
     A = build_adjacency(links, particles, stakes)
-    pi = compute_focus(A)
-
-    if skip_spectral:
-        print("Step 4: Skipping spectral gap (--skip-spectral), using estimate λ₂=0.001")
-        lambda2, kappa, T_conv = 0.001, 0.8491, 29
-    else:
-        lambda2, kappa, T_conv = compute_spectral_gap(A)
+    pi, lambda2, kappa, T_conv = compute_focus(A)
 
     E, d_star, sigma = compute_embeddings(A, pi)
     arch = estimate_architecture(d_star, lambda2, kappa, len(particles), len(links))
