@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # IPFS pre-commit hook: upload local media to Pinata, rewrite URLs in markdown
 # Usage: nu nu/ipfs.nu <graph-path>
 # Reads PINATA_JWT and PINATA_GATEWAY from ~/.config/cyber/env

@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 let pages = (glob "/Users/mastercyb/git/cyber/pages/**/*.md" | each {|f| ls $f | first} | flatten)
 let files = $pages
 let link_data = ($files | each {|f|

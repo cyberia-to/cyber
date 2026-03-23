@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 def main [graph_path: string, --output (-o): string = "", --full (-f), --subgraphs (-s)] {
   mut files = (glob $"($graph_path)/root/**/*.md" | sort)
 

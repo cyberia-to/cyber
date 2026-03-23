@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # context.nu — smart context packer for LLM consumption
 # Scores pages by graph gravity (inbound links) and density,
 # then greedily packs the most valuable content into a token budget.

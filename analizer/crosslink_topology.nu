@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 #!/usr/bin/env nu
 # Crosslink topology analysis for the semantic core
 # Usage: nu nu/crosslink_topology.nu <graph_path>

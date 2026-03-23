@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # migrate.nu — Convert Logseq graph to pure markdown
 # Usage: nu nu/migrate.nu ~/git/cyber
 #

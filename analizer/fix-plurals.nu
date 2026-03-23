@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Fix floating plural suffixes across the graph
 # For each [[term]]s pattern, adds plural alias to the term page
 # and replaces [[term]]s with [[terms]] in all files

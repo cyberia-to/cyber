@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Crystal ontology classifier for graph pages
 # Usage: nu nu/classify.nu ~/git/cyber
 # Outputs JSON classification to /tmp/crystal_classification.json

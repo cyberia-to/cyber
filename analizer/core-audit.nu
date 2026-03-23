@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 def main [graph_path: string] {
   let groups = [
     {group: "graph", members: ["link", "particle", "cyberlink", "cybergraph", "axon"]},

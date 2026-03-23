@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # trikernel.nu — compute tri-kernel focus distribution and write to frontmatter
 #
 # Three operators over the wiki-link graph:

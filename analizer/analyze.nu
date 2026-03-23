@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Аналитика Logseq графа
 # запуск: nu nu/analyze.nu <путь-к-графу>
 # пример: nu nu/analyze.nu ~/git/cloud-forest

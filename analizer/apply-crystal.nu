@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Apply Crystal ontology classification to graph pages
 # Reads classification from /tmp/crystal_classification.json
 # Adds crystal-type:: and crystal-domain:: properties after tags:: line

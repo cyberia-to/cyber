@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, python
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 """
 Individual token charts for $BOOT, $H, $V, $A pages.
 Generates 4 charts uploaded to IPFS via Pinata.

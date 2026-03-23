@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 def main [graph_path: string] {
     let p = ($graph_path | path join "pages")
     let files = (glob ($p | path join "*.md") | each {|f|

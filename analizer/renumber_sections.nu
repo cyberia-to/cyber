@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 #!/usr/bin/env nu
 # renumber_sections.nu
 # Shifts all section numbers >= 14 by +1 in the whitepaper

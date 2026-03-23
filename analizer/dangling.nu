@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Find dangling wiki-links that have a namespaced match
 # A link [[foo]] is dangling if graph/foo.md does NOT exist
 # but graph/*/foo.md or graph/*/*/foo.md DOES exist somewhere

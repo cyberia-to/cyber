@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Assign stake values to graph pages based on importance heuristics
 # Total stake ≈ Goldilocks field p = 2^64 - 2^32 + 1
 # Usage: nu analizer/stake.nu ~/git/cyber/graph

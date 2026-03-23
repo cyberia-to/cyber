@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, nushell
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 # Graph statistics
 # run: nu nu/stats.nu <path-to-graph>
 # example: nu nu/stats.nu ~/git/cyber

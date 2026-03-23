@@ -1,3 +1,8 @@
+# ---
+# tags: cyber, python
+# crystal-type: source
+# crystal-domain: cyber
+# ---
 """
 Mint price chart for $V and $A tokens on Bostrom.
 
