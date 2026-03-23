@@ -13,7 +13,7 @@ density: 0
 ---
 ## abstract
 
-we propose a generative language model (llm) built on the cybergraph free-energy focus framework. this approach replaces traditional transformer attention with a physics-inspired equilibrium mechanism that computes context-aware probabilities through diffusion, springrank, and entropy minimisation. the result is a scalable, explainable, and dynamically extensible generative model.
+we propose a generative language model (llm) built on the [[cybergraph]] free-energy [[focus]] framework. this approach replaces traditional transformer [[attention]] with a physics-inspired [[equilibrium]] mechanism that computes context-aware probabilities through [[diffusion]], springrank, and [[entropy]] minimisation. the result is a scalable, explainable, and dynamically extensible generative model.
 
 ---
 ## core principles
@@ -31,8 +31,8 @@ we propose a generative language model (llm) built on the cybergraph free-energy
 \[
 \mathcal{F}(p|context) = E_{spring}(p) + \lambda E_{diffusion}(p) + \gamma C(p|context) - T S(p)
 \]
-- \(E_{spring}\): hierarchy from springrank.
-- \(E_{diffusion}\): random-walk energy on the graph.
+- \(E_{spring}\): [[hierarchy]] from springrank.
+- \(E_{diffusion}\): [[random walk]] energy on the [[graph]].
 - \(C(p|context)\): context potential from active nodes.
 - \(S(p)\): entropy.
 
@@ -80,8 +80,8 @@ step 5 – context expansion:
 | converges to stable state | no (single forward pass)        | yes (iterative free-energy minimisation)|
 | reinforcement/adaptation  | limited (fine-tuning or rl)     | yes (dynamic edge/weight updates)       |
 | multi-agent friendly      | no                              | yes (fully decentralisable)            |
-| token-based weighting     | no (parameters fixed after training) | yes (token weights as graph structure) |
-| consensus capability      | no                              | yes (emergent equilibrium is consensus)|
+| [[token]]-based weighting     | no (parameters fixed after training) | yes (token weights as graph structure) |
+| [[consensus]] capability      | no                              | yes (emergent equilibrium is consensus)|
 | domain-general            | yes (with pretraining)          | yes (graph can be expanded dynamically)|
 | explainability            | low (opaque matrices)           | high (energy terms interpretable)      |
 | continual learning        | limited                         | yes (edges and nodes can be updated)   |
@@ -97,9 +97,9 @@ step 5 – context expansion:
 ## future extensions
 - multi-modal integration: add sensory nodes for images, audio, or real-world data.
 - continual learning: incrementally update edge weights as new data arrives.
-- hierarchical memory: maintain long-term springrank/eigenvector centrality but compute short-term context via \(C(p|context)\).
+- hierarchical [[memory]]: maintain long-term springrank/eigenvector centrality but compute short-term context via \(C(p|context)\).
 
 ---
 ## conclusion
 
-this architecture defines a novel class of generative models where language production emerges from a free-energy equilibrium on a cybergraph. by uniting diffusion, springs, and entropy with contextual inference, it provides a principled, transparent, and extendable alternative to transformer-based llms.
+this architecture defines a novel class of generative models where language production emerges from a [[free energy]] equilibrium on a cybergraph. by uniting diffusion, [[springs]], and entropy with contextual inference, it provides a principled, transparent, and extendable alternative to transformer-based llms.
