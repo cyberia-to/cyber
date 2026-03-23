@@ -16,9 +16,9 @@ density: 0
 
 option a — cyberlinks-only creation
 
-particles cannot be created independently; every new particle must be the target or source of a cyberlink from an existing particle
+[[particles]] cannot be created independently; every new [[particle]] must be the target or source of a cyberlink from an existing particle
 
-ensures strict graph continuity, preserving strong connectivity for the collective focus theorem
+ensures strict graph continuity, preserving strong connectivity for the [[collective focus theorem]]
 
 simplifies data availability proofs since every particle is born linked to the graph's current frontier
 
@@ -30,13 +30,13 @@ allows creation of unlinked particles ("orphans") in addition to cyberlinks
 
 increases flexibility — useful for staging data, private preparation, or pre-commit phases
 
-risk: too many unlinked particles can fragment focus and increase storage of unused nodes
+risk: too many unlinked particles can fragment [[focus]] and increase storage of unused nodes
 
 requires periodic pruning or decay to keep orphan set bounded
 
 trade-off summary:
 
-cyberlinks-only = maximal structural discipline, better convergence guarantees
+cyberlinks-only = maximal structural discipline, better [[convergence]] guarantees
 
 dual creation = more expressive, but needs governance or automated decay to prevent graph dilution
 ### 2. hanging cyberlinks vs strict connectivity
@@ -47,7 +47,7 @@ new cyberlinks must attach to an existing particle (previously finalised or at l
 
 preserves strong connectivity invariant from the first step
 
-ensures that every random walk can traverse newly added structure without special cases
+ensures that every [[random walk]] can traverse newly added structure without special cases
 
 hanging (free-floating) cyberlinks
 
@@ -64,16 +64,16 @@ design consideration:
 if the protocol enforces *eventual resolution* of hanging links (e.g., missing endpoint must be created within N epochs), they could be a powerful speculative tool without harming integrity
 ### 3. recommended synthesis
 
-adopt cyberlinks-only creation for the mainnet consensus-critical path — guarantees strong connectivity and simplifies convergence proofs under CFT
+adopt cyberlinks-only creation for the mainnet [[consensus]]-critical path — guarantees strong connectivity and simplifies convergence proofs under CFT
 
 allow temporary orphan staging in mempool or local state, but they are not part of consensus until linked
 
-permit future-pointing hanging cyberlinks only with a stake bond and expiry, so speculative graph shaping is possible without spam risk
+permit future-pointing hanging cyberlinks only with a [[stake]] bond and expiry, so speculative graph shaping is possible without spam risk
 ### 4. interaction with economic & state models
 
 in a cyberlinks-only model, all focus rewards directly trace to link creation, aligning perfectly with the minting-for-focus rule【57†source】
 
-strict connectivity means every new unit of attention (Δπ) is measurable and attributable, strengthening the π-minting theorem【54†source】
+strict connectivity means every new unit of [[attention]] (Δπ) is measurable and attributable, strengthening the π-minting theorem【54†source】
 
 authenticated graph data structures can prove existence and weight of every link without handling orphan cases【59†source】
 
