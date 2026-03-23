@@ -8,7 +8,14 @@
 # example: nu nu/stats.nu ~/git/cyber
 
 def main [graph_path: string] {
-    let pages = ([$graph_path "pages"] | path join)
+    # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+    let pages = if ([$graph_path "root"] | path join | path exists) {
+        [$graph_path "root"] | path join
+    } else if ([$graph_path "graph"] | path join | path exists) {
+        [$graph_path "graph"] | path join
+    } else {
+        [$graph_path "pages"] | path join
+    }
     let graph_name = ($graph_path | path basename)
     let files = (glob $"($pages)/**/*.md" | each {|f| ls $f | first} | flatten)
     let total = ($files | length)
@@ -32,14 +39,15 @@ def main [graph_path: string] {
 
     # --- Tags (YAML frontmatter) ---
     let tag_data = ($files | each {|f|
-        let content = (open $f.name)
+        let content = (try { open --raw $f.name } catch { "" })
         let ls = ($content | lines)
         let has_fm = ($ls | length) > 0 and ($ls | first) == "---"
-        let tags = if $has_fm {
-            let tag_line = ($ls | skip 1 | take while {|l| $l != "---"} | where {|l| $l =~ "^tags:"} | first | default "")
-            if ($tag_line | is-empty) { [] } else {
-                $tag_line | str replace "tags:" "" | split row "," | each {|t| $t | str trim} | where {|t| not ($t | is-empty)}
-            }
+        let tag_matches = if $has_fm {
+            $ls | skip 1 | take while {|l| $l != "---"} | where {|l| $l =~ "^tags:"}
+        } else { [] }
+        let tags = if ($tag_matches | length) > 0 {
+            let tag_line = ($tag_matches | first)
+            $tag_line | str replace "tags:" "" | split row "," | each {|t| $t | str trim} | where {|t| not ($t | is-empty)}
         } else { [] }
         {file: ($f.name | path basename | str replace ".md" ""), tags: $tags}
     })

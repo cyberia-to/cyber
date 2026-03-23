@@ -4,7 +4,14 @@
 # crystal-domain: cyber
 # ---
 def main [graph_path: string] {
-    let p = ($graph_path | path join "pages")
+    # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+    let p = if ($graph_path | path join "root" | path exists) {
+        $graph_path | path join "root"
+    } else if ($graph_path | path join "graph" | path exists) {
+        $graph_path | path join "graph"
+    } else {
+        $graph_path | path join "pages"
+    }
     let files = (glob ($p | path join "*.md") | each {|f|
         let name = ($f | path basename | str replace ".md" "" | str replace "%3A" ":" | str replace "%2F" "/" | str replace "___" "/")
         let nl = ($name | str downcase)

@@ -8,7 +8,14 @@
 # пример: nu nu/analyze.nu ~/git/cloud-forest
 
 def main [graph_path: string] {
-    let pages = ([$graph_path "pages"] | path join)
+    # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+    let pages = if ([$graph_path "root"] | path join | path exists) {
+        [$graph_path "root"] | path join
+    } else if ([$graph_path "graph"] | path join | path exists) {
+        [$graph_path "graph"] | path join
+    } else {
+        [$graph_path "pages"] | path join
+    }
     let graph_name = ($graph_path | path basename)
     let files = (glob $"($pages)/*.md" | each {|f| ls $f | first} | flatten)
     let total = ($files | length)

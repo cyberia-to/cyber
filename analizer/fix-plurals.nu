@@ -7,7 +7,14 @@
 # For each [[term]]s pattern, adds plural alias to the term page
 # and replaces [[term]]s with [[terms]] in all files
 def main [graph_path: string] {
-  let pages_dir = ($graph_path | path join "pages")
+  # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+  let pages_dir = if ($graph_path | path join "root" | path exists) {
+      $graph_path | path join "root"
+  } else if ($graph_path | path join "graph" | path exists) {
+      $graph_path | path join "graph"
+  } else {
+      $graph_path | path join "pages"
+  }
 
   # Mapping of singular -> plural for all terms found with floating suffixes
   # Excludes false positives like [[evolution]]ary, [[volcano]]ic, [[antisepti]]c, [[antimicrobia]]l, [[compost]]ed
