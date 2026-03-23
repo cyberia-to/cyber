@@ -48,12 +48,16 @@ a [[signal]] $s = (\nu, \vec\ell, \pi_\Delta, \sigma, \text{prev}, \text{mc}, \t
 
 - $\nu$: neuron identity (who)
 - $\vec\ell$: batch of [[cyberlinks]] (what)
-- $\pi_\Delta$: focus impulse — sparse update to φ (how much)
-- $\sigma$: [[zheng]] proof covering all operations (proof)
+- $\pi_\Delta$: focus impulse — sparse local tri-kernel recomputation (the key field)
+- $\sigma$: [[zheng]] proof covering cyberlinks + impulse + conviction (proof of everything)
 - prev: hash of author's previous signal ([[hash chain]])
 - mc: Merkle clock (compact causal state)
 - vdf: [[VDF]] proof (physical time since previous)
 - step: monotonic counter (logical clock)
+
+the impulse $\pi_\Delta$ is critical. the neuron does not just submit links — it computes the LOCAL effect of those links on the [[tri-kernel]] fixed point and includes the result. the zheng proof σ certifies this computation is correct. the network does not need to recompute φ* from scratch — it applies proven impulses incrementally.
+
+this is the mechanism that makes reward ∝ Δπ work: the neuron proves its own Δπ inside the signal. the proof IS the claim. the claim IS the mining.
 
 signals are [[patches]]. patches are signals. the same object described by [[patch theory]] (categorical morphism) and [[structural sync]] (verified broadcast unit). this is the [[cyb/fs/sync]] unification.
 
@@ -67,7 +71,15 @@ $$\phi^{(t+1)} = \text{norm}\left[\lambda_d \cdot \mathcal{D}(\phi^t) + \lambda_
 - $\mathcal{S}$ (springs): screened [[Laplacian]], mean neighbor focus. finds equilibria
 - $\mathcal{H}_\tau$ (heat): 2-hop smoothing at resolution τ. finds clusters
 
-the [[collective focus theorem]]: the composite is contractive ($\kappa < 1$), unique fixed point $\phi^*$ exists, every initial distribution converges exponentially. $\phi^*$ IS [[focus]] — the consensus ranking. 23 iterations on [[bostrom]]. sub-second on GPU.
+the [[collective focus theorem]]: the composite is contractive ($\kappa < 1$), unique fixed point $\phi^*$ exists, every initial distribution converges exponentially. $\phi^*$ IS [[focus]] — the consensus ranking.
+
+two modes of computation:
+
+- incremental (per signal): each [[signal]] carries $\pi_\Delta$ — the neuron's local tri-kernel recomputation for its [[cyberlinks]]. the network accumulates proven impulses. φ updates continuously as signals arrive — no global recomputation per block
+
+- global (per epoch): full tri-kernel iteration from committed graph state. 23 iterations on [[bostrom]], sub-second on GPU. validates accumulated impulses. with [[algebraic state commitments]]: fits in [[zheng]] circuit (1.42B constraints, 33% capacity) — [[provable consensus|provable]]
+
+the impulse design means: a [[neuron]] contributing knowledge immediately shifts φ in its neighborhood. the shift propagates through subsequent signals. consensus emerges from accumulated local impulses, verified by periodic global proofs. the neuron proves its own Δπ inside the signal — the proof IS the mining.
 
 ## 5. the trust: five verification layers
 
