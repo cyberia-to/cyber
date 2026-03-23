@@ -9,10 +9,20 @@ date: 2026-03-23
 
 ## the claim
 
-[[foculus]] consensus — the stationary distribution π* of a stake-weighted [[random walk]] on the [[cybergraph]] — can be proven correct inside a [[zheng]] circuit. a single proof (~50 μs to verify) replaces all voting rounds, all message passing, all quorum checks. consensus becomes computation.
+[[foculus]] consensus — the fixed point of the [[tri-kernel]] composite operator over the [[cybergraph]] — can be proven correct inside a [[zheng]] circuit. a single proof (~50 μs to verify) replaces all voting rounds, all message passing, all quorum checks. consensus becomes computation.
+
+the [[tri-kernel]] is three operators, not one. [[PageRank]] (diffusion) is only a third of the picture:
+
+$$\phi^{(t+1)} = \text{norm}[\lambda_d \cdot \mathcal{D}(\phi^t) + \lambda_s \cdot \mathcal{S}(\phi^t) + \lambda_h \cdot \mathcal{H}_\tau(\phi^t)]$$
+
+- $\mathcal{D}$ (diffusion) — where does probability flow? [[random walk]] on weighted adjacency
+- $\mathcal{S}$ (springs) — screened Laplacian: what satisfies structural constraints? mean neighbor [[focus]]
+- $\mathcal{H}_\tau$ (heat) — multi-scale smoothing: what does the graph look like at resolution τ? 2-hop context
+
+the composite converges to a unique fixed point $\phi^*$ by the [[collective focus theorem]]. this $\phi^*$ is [[focus]] — the consensus ranking.
 
 this is possible because of two ingredients:
-1. π* is deterministic given the graph — same adjacency → same π* → verifiable
+1. $\phi^*$ is deterministic given the graph — same adjacency → same $\phi^*$ → verifiable
 2. [[algebraic state commitments]] let the circuit read the graph as polynomial evaluations instead of hash paths — O(|E|) field ops instead of O(|E| × log n) [[Hemera]] hashes
 
 without algebraic NMT, provable consensus is impossible in practice — hemera cost inside the circuit is prohibitive. with algebraic NMT, it fits within [[zheng]]'s capacity with room to spare.
@@ -34,48 +44,47 @@ no messages between validators. no leader. no quorum. no voting. no finality gad
 
 ## the computation
 
-### PageRank iteration
+### tri-kernel iteration
 
-π* is the fixed point of:
-
-$$\pi^{(t+1)} = \alpha M^\top \pi^{(t)} + \frac{1-\alpha}{|P|} \mathbf{1}$$
-
-where $M = D^{-1}A$ is the column-normalized transition matrix, $\alpha = 0.85$, and $A$ is the stake-weighted adjacency matrix of the [[cybergraph]].
-
-each iteration is a sparse matrix-vector multiply (SpMV):
+$\phi^*$ is the fixed point of the composite [[tri-kernel]] operator. each iteration applies three sparse matrix operations and combines them:
 
 ```
-for each edge (i → j) with weight w_ij:
-  π_new[j] += α × w_ij × π[i] / out_degree[i]
+D_step:  d[j] += α × w_ij × φ[i] / out_degree[i]    # diffusion (PageRank)
+         d[i] += (1-α) / |P|                           # teleport
 
-for each particle i:
-  π_new[i] += (1 - α) / |P|  # teleport
+S_step:  s[i] = Σ_j (A_ij + A_ji) × φ[j] / degree[i] # springs (mean neighbor)
 
-normalize: π_new /= sum(π_new)
+H_step:  h = A × (A × φ)                               # heat (2-hop)
+         h[i] /= degree²[i]                            # normalize
+
+combine: φ_new = normalize(λ_d × d + λ_s × s + λ_h × h)
 ```
+
+with default weights $\lambda_d = 0.5$, $\lambda_s = 0.3$, $\lambda_h = 0.2$.
 
 ### cost per iteration
 
-| operation | count | constraints per op | total |
-|---|---|---|---|
-| edge multiplication | \|E\| = 2.7M | 1 (field mul) | 2.7M |
-| degree division | \|E\| | 1 (field mul by precomputed inverse) | 2.7M |
-| accumulation | \|P\| = 2.9M | 1 (field add) | 2.9M |
-| teleport | \|P\| | 1 (field add) | 2.9M |
-| normalization | \|P\| | 1 (field mul) | 2.9M |
-| total per iteration | | | ~13.2M |
+each operator is a sparse matrix-vector multiply (SpMV). heat requires TWO SpMV (A²φ = A(Aφ)).
+
+| operator | SpMV count | edge ops | particle ops | constraints |
+|---|---|---|---|---|
+| D (diffusion) | 1 | \|E\| muls + divs | \|P\| adds (teleport) | ~8.3M |
+| S (springs) | 1 | \|E\| muls + divs (symmetric) | \|P\| divs | ~8.3M |
+| H (heat) | 2 | 2×\|E\| muls + divs | \|P\| divs | ~16.6M |
+| combine | 0 | 0 | 3×\|P\| muls + \|P\| adds + normalize | ~14.6M |
+| total per iteration | 4 SpMV | | | ~47.8M |
 
 ### convergence
 
-from the [[spectral gap]] observation: [[bostrom]] converges in 23 iterations (measured contraction κ = 0.74, λ₂ = 0.13).
+from the [[spectral gap]] observation: [[bostrom]] converges in 23 iterations (measured contraction κ = 0.74, λ₂ = 0.13). the tri-kernel composite has contraction rate $\kappa = \max(\lambda_d \kappa_D, \lambda_s \kappa_S, \lambda_h \kappa_H)$ — the slowest operator determines convergence. empirically: 23 iterations suffice for all three operators simultaneously.
 
-total constraints for π* computation: 23 × 13.2M ≈ 304M
+total constraints for $\phi^*$ computation: 23 × 47.8M ≈ 1.1B
 
 ### zheng capacity
 
-[[zheng]] (SuperSpartan + WHIR) handles up to 2^32 ≈ 4.3 billion constraints. 304M / 4.3B = 7% of capacity. π* computation uses 7% of what zheng can prove.
+[[zheng]] (SuperSpartan + WHIR) handles up to 2^32 ≈ 4.3 billion constraints. 1.1B / 4.3B = 25.6% of capacity. the full tri-kernel uses a quarter of what zheng can prove.
 
-remaining capacity: finalization checks (τ threshold), nullifier verification, state transition application — all fit in the remaining 93%.
+remaining capacity (74.4%): graph reads (algebraic NMT openings), finalization checks (τ threshold), nullifier verification, state transition application.
 
 ## the bottleneck: reading the graph
 
@@ -105,15 +114,17 @@ each edge read = PCS evaluation = O(1) field operations.
 per edge:    ~100 field operations ≈ 100 constraints
 2.7M edges:  2.7M × 100 = 270M constraints
 
-plus π computation: 304M constraints
-plus finalization:  ~50M constraints
+plus tri-kernel computation: 1,100M constraints
+plus finalization:            50M constraints
 
-total:              ~624M constraints
-zheng capacity:     4.3B constraints
-utilization:        14.5%
+total:                       1,420M constraints
+zheng capacity:              4,300M constraints
+utilization:                 33%
 ```
 
-feasible with 85% headroom. the algebraic representation transforms "read the graph" from a hash-intensive operation to an algebraic one. this is the enabling factor.
+feasible with 67% headroom. the algebraic representation transforms "read the graph" from a hash-intensive operation to an algebraic one. this is the enabling factor.
+
+note: the tri-kernel requires reading edges THREE times per iteration (D reads once, S reads once, H reads twice via A²φ). with caching of edge values from the first read, subsequent reads are free (the circuit already has the values in witness). effective graph read cost: 270M for the first read, then reuse.
 
 ### the circuit
 
@@ -122,13 +133,14 @@ PROVABLE_CONSENSUS_CIRCUIT:
 
 inputs:
   BBG_commitment  — polynomial commitment to graph state (32 bytes)
-  π_claimed       — claimed stationary distribution
-  finality_set    — particles claimed to be final (π_i > τ)
+  φ_claimed       — claimed tri-kernel fixed point (focus distribution)
+  finality_set    — particles claimed to be final (φ_i > τ)
 
 witness:
   A_edges         — all edge weights (opened from BBG_commitment)
   out_degrees     — per-particle out-degree
-  π_iterations    — intermediate π vectors for each iteration
+  sym_edges       — symmetric adjacency (A + A^T) for springs
+  φ_iterations    — intermediate φ vectors for each iteration
 
 constraints:
 
@@ -136,47 +148,66 @@ constraints:
   for each edge (i, j, w) in A_edges:
     assert PCS_eval(BBG_commitment, (axons_out, i, j)) == w
     // one polynomial evaluation check per edge
+    // values cached in witness — reused by D, S, H without re-reading
 
-  // SECTION 2: degree consistency (2.9M constraints)
+  // SECTION 2: degree + symmetry consistency (5.8M constraints)
   for each particle i:
     assert sum(w_ij for j in outgoing[i]) == out_degree[i]
+    assert sym_degree[i] == in_degree[i] + out_degree[i]
 
-  // SECTION 3: π iteration (304M constraints)
+  // SECTION 3: tri-kernel iteration (1,100M constraints)
   for t in 0..22:
+    // D: diffusion (PageRank)
     for each edge (i → j, w):
-      π_next[j] += α × w × π_t[i] / out_degree[i]
+      d[j] += α × w × φ_t[i] / out_degree[i]
+    for each particle i: d[i] += (1-α) / |P|
+
+    // S: springs (mean neighbor focus)
+    for each edge (i, j, w_sym):
+      s[i] += w_sym × φ_t[j] / sym_degree[i]
+
+    // H: heat (2-hop smoothed)
+    // first pass: h_temp = A × φ_t
+    for each edge (i → j, w):
+      h_temp[j] += w × φ_t[i]
+    // second pass: h = A × h_temp
+    for each edge (i → j, w):
+      h[j] += w × h_temp[i]
+    for each particle i: h[i] /= degree²[i]
+
+    // combine: φ_{t+1} = normalize(λ_d·d + λ_s·s + λ_h·h)
     for each particle i:
-      π_next[i] += (1 - α) / |P|
-    π_next /= sum(π_next)
-    assert π_iterations[t+1] == π_next
+      φ_next[i] = λ_d × d[i] + λ_s × s[i] + λ_h × h[i]
+    φ_next /= sum(φ_next)
+    assert φ_iterations[t+1] == φ_next
 
   // SECTION 4: convergence check (2.9M constraints)
-  assert ||π_iterations[22] - π_iterations[21]||_1 < ε
+  assert ||φ_iterations[22] - φ_iterations[21]||_1 < ε
 
   // SECTION 5: finality check (|F| × 3 constraints)
   for each particle i in finality_set:
-    assert π_claimed[i] > τ(t)
+    assert φ_claimed[i] > τ(t)
     assert i has valid nullifiers (not in spent set)
 
   // SECTION 6: output binding
-  assert π_claimed == π_iterations[22]
+  assert φ_claimed == φ_iterations[22]
 
-total: ~624M constraints
+total: ~1,420M constraints (33% of zheng capacity)
 ```
 
 ### proof generation
 
-prover time: 624M constraints at ~1 μs per constraint (zheng prover on modern hardware) ≈ 624 seconds ≈ ~10 minutes.
+prover time: 1.42B constraints at ~1 μs per constraint (zheng prover on modern hardware) ≈ 1,420 seconds ≈ ~24 minutes.
 
-this is per-epoch, not per-block. one proof covers the full π* computation for the entire graph state. blocks within the epoch inherit the proven π*.
+this is per-epoch, not per-block. one proof covers the full tri-kernel computation for the entire graph state. blocks within the epoch inherit the proven φ*.
 
-with GPU acceleration (SuperSpartan is embarrassingly parallel): ~60 seconds. practical for epoch boundaries.
+with GPU acceleration (SuperSpartan's SpMV is embarrassingly parallel): ~2-3 minutes. practical for epoch boundaries (e.g. every 100 blocks ≈ 500 seconds).
 
 ### proof verification
 
-verifier time: O(log N) = O(log 624M) ≈ 30 Hemera hashes + field ops ≈ 50 μs.
+verifier time: O(log N) = O(log 1.42B) ≈ 31 Hemera hashes + field ops ≈ 50 μs.
 
-one number: 50 μs to verify that 2.9 million particles have the correct consensus ranking. on a phone. without downloading the graph.
+one number: 50 μs to verify that the complete tri-kernel (diffusion + springs + heat) over 2.9 million particles converged to the correct φ*. on a phone. without downloading the graph.
 
 ## what this replaces
 
