@@ -314,9 +314,11 @@ def assemble_onnx(E, pi, arch, out_path):
         # QKV projection
         nodes.append(helper.make_node("MatMul", [h_in, f"W_qkv_{l}"], [f"qkv_{l}"]))
 
-        # Split into Q, K, V
-        nodes.append(helper.make_node("Split", [f"qkv_{l}"], [f"q_{l}", f"k_{l}", f"v_{l}"],
-                                       axis=-1, num_outputs=3))
+        # Split into Q, K, V using explicit split sizes
+        split_sizes = np.array([d_star, d_star, d_star], dtype=np.int64)
+        initializers.append(numpy_helper.from_array(split_sizes, name=f"split_{l}"))
+        nodes.append(helper.make_node("Split", [f"qkv_{l}", f"split_{l}"], [f"q_{l}", f"k_{l}", f"v_{l}"],
+                                       axis=-1))
 
         # Attention scores: Q @ K^T / sqrt(d)
         nodes.append(helper.make_node("Transpose", [f"k_{l}"], [f"kt_{l}"], perm=[0, 2, 1]))
@@ -361,7 +363,7 @@ def assemble_onnx(E, pi, arch, out_path):
                                outputs=[output],
                                initializer=initializers)
 
-    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 17)])
+    model = helper.make_model(graph, opset_imports=[helper.make_opsetid("", 18)])
     model.ir_version = 8
 
     onnx.save(model, out_path)
