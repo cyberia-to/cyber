@@ -33,17 +33,17 @@ network partition and economic attacks that raise posting costs beyond threshold
 
 trust stack summary
 
-no-ceremony cryptography: hash trees + erasure coding (celestia), fri/stark-style sampling (frida research).
+no-ceremony cryptography: hash trees + [[erasure coding]] (celestia), fri/[[stark]]-style sampling (frida research).
 
-escape hatch: ethereum calldata for minimal checkpoints (fully trustless, expensive).
+escape hatch: [[ethereum]] calldata for minimal checkpoints (fully trustless, expensive).
 
 avoid committee trust for mission-critical data; allow as optional low-cost tier if ever needed.
 
 layered da stack
 
-tier 0 — critical roots: post checkpoint roots to ethereum calldata once per epoch; immutable forever; low bandwidth (≈32–64 kb/epoch); used for ultimate recovery and dispute resolution.
+tier 0 — critical roots: post checkpoint roots to ethereum calldata once per [[epoch]]; immutable forever; low bandwidth (≈32–64 kb/epoch); used for ultimate recovery and dispute resolution.
 
-tier 1 — active graph: post "focus blobs" (≈10k links + proofs) to celestia; retain for ≥30 days; mirror to ipfs/filecoin; verified by celestia light sampling on phones.
+tier 1 — active graph: post "[[focus]] blobs" (≈10k links + proofs) to celestia; retain for ≥30 days; mirror to [[ipfs]]/filecoin; verified by celestia light sampling on phones.
 
 tier 2 — historical tails: erasure-coded archival to filecoin/arweave/ipfs pinning; refreshed by archivers; used for deep replay and research analytics.
 
@@ -87,7 +87,7 @@ if celestia posting cost > max\_blob\_fee, pause tier-1 posting and increase che
 
 if retrieval fails from celestia, fetch via ipfs/filecoin mirrors; if still unavailable, mark range as contested and trigger dispute protocol using checkpoints.
 
-if governance capture suspected, switch da target via on-chain parameter without hard fork.
+if [[governance]] capture suspected, switch da target via on-chain parameter without hard fork.
 
 on-chain parameters (governance knobs)
 
@@ -111,11 +111,11 @@ interfaces and data structures
 
 blob descriptor (on-chain):
 
-- hash: blake3/sha256 of blob payload.
+- hash: [[Blake3]]/sha256 of blob payload.
 - da\_target: enum { celestia, future\_frida, reserved }.
 - size\_bytes: uint64.
 - retention\_class: enum { hot, warm, cold }.
-- mirrors: list for ipfs/filecoin.
+- mirrors: list for [[ipfs]]/filecoin.
 
 posting api (off-chain service → da adaptor):
 
@@ -140,7 +140,7 @@ operational runbook (excerpt)
 
 assemble batch every block or at size threshold.
 
-run erasure-coding locally for redundancy hints; compute hash.
+run [[erasure coding]] locally for redundancy hints; compute hash.
 
 call post\_blob to celestia; receive da receipt.
 
@@ -190,7 +190,7 @@ optimal batch sizing under varying network conditions without hurting light veri
 
 standardized receipt format across da providers to simplify bridges and wallets.
 
-best-in-class erasure coding parameters for our data shape and retrieval patterns.
+best-in-class [[erasure coding]] parameters for our data shape and retrieval patterns.
 
 next actions
 
@@ -198,7 +198,7 @@ implement the da adaptor skeleton and wire to celestia light clients.
 
 ship the calldata checkpoint writer and recovery/replay tool.
 
-draft the governance parameters and defaults; socialize with stakeholders.
+draft the [[governance]] parameters and defaults; socialize with stakeholders.
 
 define the archiver incentives and service-level requirements for mirrors.
 
@@ -210,6 +210,6 @@ light client: a verifier that checks availability/proofs without downloading ful
 
 kzg: polynomial commitment scheme needing a multi-party trusted setup ceremony.
 
-fri/stark: transparent proof systems with no trusted setup; used by frida/starknet.
+fri/[[stark]]: transparent [[proof]] systems with no trusted setup; used by frida/starknet.
 
 dac: data availability committee; a social trust model requiring one or more honest members.
