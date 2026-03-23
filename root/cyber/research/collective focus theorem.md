@@ -22,7 +22,7 @@ Two convergence results for [[collective focus]] on [[authenticated graphs]].
 
 Part I (Special Case): token-weighted [[random walk]] on a strongly connected [[cybergraph]] converges to a unique stationary distribution $\pi^*$ — the system's [[collective focus]]. This is the [[diffusion]] primitive alone.
 
-Part II (General Case): the composite [[tri-kernel]] operator $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ is a contraction. Its fixed point $\phi^*$ minimizes a free-energy functional and is computable locally. When $\lambda_s = \lambda_h = 0$, Part II reduces to Part I.
+Part II (General Case): the composite [[tri-kernel]] operator $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ is a contraction. Its fixed point $\phi^*$ minimizes a [[free energy]] functional and is computable locally. When $\lambda_s = \lambda_h = 0$, Part II reduces to Part I.
 
 Together these establish that [[collective focus]] converges under the full [[tri-kernel]] — the mathematical foundation for [[egregore]].
 
@@ -129,7 +129,7 @@ where $\lambda_d + \lambda_s + \lambda_h = 1$, $D$ is the [[diffusion]] step, $S
 
 Lemma 1 (Diffusion Contracts): Under ergodicity of $P$ with teleport parameter $\alpha \in (0,1)$, the diffusion map $D$ satisfies $\|D\phi - D\psi\|_1 \leq \alpha \|\phi - \psi\|_1$. This follows from Part I: the teleport ensures geometric mixing with rate $\alpha$.
 
-Lemma 2 (Springs Contract): Under screening parameter $\mu > 0$, the screened Laplacian solve $S: \phi \mapsto (L + \mu I)^{-1}(\mu x_0)$ satisfies $\|S\phi - S\psi\|_2 \leq \frac{\|L\|}{\|L\| + \mu} \|\phi - \psi\|_2$. The Green's function $(L + \mu I)^{-1}$ decays exponentially with distance — screening ensures locality and contraction.
+Lemma 2 (Springs Contract): Under screening parameter $\mu > 0$, the screened [[Laplacian]] solve $S: \phi \mapsto (L + \mu I)^{-1}(\mu x_0)$ satisfies $\|S\phi - S\psi\|_2 \leq \frac{\|L\|}{\|L\| + \mu} \|\phi - \psi\|_2$. The Green's function $(L + \mu I)^{-1}$ decays exponentially with distance — screening ensures locality and contraction.
 
 Lemma 3 (Heat Contracts): For bounded temperature $\tau > 0$, the heat kernel $H_\tau = \exp(-\tau L)$ satisfies $\|H_\tau \phi - H_\tau \psi\|_2 \leq e^{-\tau \lambda_2} \|\phi - \psi\|_2$ where $\lambda_2$ is the Fiedler eigenvalue. Positivity-preserving and semigroup properties ensure well-defined contraction.
 
@@ -147,7 +147,7 @@ The fixed point $\phi^*$ minimizes:
 
 $$\mathcal{F}(\phi) = \lambda_s\left[\frac{1}{2}\phi^\top L\phi + \frac{\mu}{2}\|\phi-x_0\|^2\right] + \lambda_h\left[\frac{1}{2}\|\phi-H_\tau\phi\|^2\right] + \lambda_d \cdot D_{KL}(\phi \| D\phi)$$
 
-elastic structure + deviation from heat-smoothed context + alignment with diffusion image. this is variational free-energy minimization in the sense of Friston.
+elastic structure + deviation from heat-smoothed context + alignment with diffusion image. this is variational [[free energy]] minimization in the sense of Friston.
 
 ### Locality Radius
 
@@ -174,13 +174,13 @@ total work to reach precision $\varepsilon$:
 
 $$O\left(\frac{(E + V) \cdot \log(1/\varepsilon)}{\lambda}\right)$$
 
-where $\lambda$ is the spectral gap governing convergence rate. see [[emergence]] for scaling estimates across [[intelligence]] phases
+where $\lambda$ is the [[spectral gap]] governing [[convergence]] rate. see [[emergence]] for scaling estimates across [[intelligence]] phases
 
 ---
 
 ## Conclusion
 
-Two results, one framework. Part I establishes that token-weighted [[random walk]] converges to a unique [[collective focus]] — the Schelling point of the [[cybergraph]]. Part II extends this to the full [[tri-kernel]], proving the composite operator contracts and its fixed point minimizes free energy. Together they provide the mathematical foundation for [[egregore]]: a convergent, local, verifiable computation of collective [[intelligence]].
+Two results, one framework. Part I establishes that token-weighted [[random walk]] converges to a unique [[collective focus]] — the Schelling point of the [[cybergraph]]. Part II extends this to the full [[tri-kernel]], proving the composite operator contracts and its fixed point minimizes [[free energy]]. Together they provide the mathematical foundation for [[egregore]]: a convergent, local, verifiable computation of collective [[intelligence]].
 
 the fixed point π* is a mathematical consequence of three properties: ergodicity ([[diffusion]]), screening ([[springs]]), bounded temperature ([[heat]]). convergence follows from [[Banach]] fixed-point theorem — it is proven, not postulated. no selection principle is needed to pick the "right" state: the contraction mapping leaves exactly one. see [[consistency]] for why this matters and [[locality]] for why it scales.
 
