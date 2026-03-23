@@ -46,7 +46,7 @@ proof               │ by the block producer               │ decode, compare 
                     │                                     │ mismatch = fraud proof
 ```
 
-storage proofs and replication proofs verify individual [[particle]] content. size proofs guarantee content dimensions — DAS proves data is accessible, but a [[particle]] claiming 1 MB that actually holds 10 bytes is undetectable without a size commitment. retrievability proofs add latency bounds. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible. encoding fraud proofs catch dishonest block producers who encode data incorrectly.
+storage proofs and replication proofs verify individual [[particle]] content. size proofs guarantee content dimensions — [[DAS]] proves data is accessible, but a [[particle]] claiming 1 MB that actually holds 10 bytes is undetectable without a size commitment. retrievability proofs add latency bounds. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible. encoding fraud proofs catch dishonest block producers who encode data incorrectly.
 
 ## storage proof
 
@@ -95,7 +95,7 @@ size proofs matter for three reasons:
 
 - storage pricing: [[neurons]] pay for storage proportional to size. inflated size claims extract unearned rewards from storage providers. deflated claims underpay
 - bandwidth allocation: relay and retrieval protocols allocate bandwidth based on declared size. wrong size wastes network resources or enables denial of service
-- erasure coding: DAS grid dimensions depend on content size. incorrect size breaks the 2D Reed-Solomon encoding — rows and columns do not align
+- [[erasure coding]]: [[DAS]] grid dimensions depend on content size. incorrect size breaks the 2D Reed-Solomon encoding — rows and columns do not align
 
 size proofs compose with storage proofs: storage proves the bytes exist, size proves how many bytes exist. together they bind a [[particle]] to both its content and its dimensions.
 
@@ -140,7 +140,7 @@ the retrievability proof turns a static property ("bytes exist") into an operati
 
 ## data availability proof (DAS)
 
-verifies that block data was published and is accessible to all participants. uses 2D Reed-Solomon erasure coding over [[Goldilocks field]] with [[NMT]] commitments.
+verifies that block data was published and is accessible to all participants. uses 2D Reed-Solomon [[erasure coding]] over [[Goldilocks field]] with [[NMT]] commitments.
 
 ```
 2D ERASURE CODING:
@@ -187,7 +187,7 @@ FRAUD DETECTION:
   verification: O(k log n) — linear in row size, logarithmic in block
 ```
 
-encoding fraud proofs are the safety net for DAS: sampling gives probabilistic availability, but if a block producer cheats the encoding, anyone who detects it can produce a compact fraud proof that invalidates the block.
+encoding fraud proofs are the safety net for [[DAS]]: sampling gives probabilistic availability, but if a block producer cheats the encoding, anyone who detects it can produce a compact fraud proof that invalidates the block.
 
 ## layered data availability
 
