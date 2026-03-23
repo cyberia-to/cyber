@@ -3,72 +3,117 @@
 # crystal-type: source
 # crystal-domain: cyber
 # ---
-# Find dangling wiki-links that have a namespaced match
-# A link [[foo]] is dangling if graph/foo.md does NOT exist
-# but graph/*/foo.md or graph/*/*/foo.md DOES exist somewhere
-#
-# run: nu analizer/dangling.nu ~/git/cyber/graph
-# output: table of dangling links, their namespaced match, and referencing files
+# Alias-aware dangling wiki-link detector
+# Usage: nu analizer/dangling.nu ~/git/cyber
 
 def main [graph_path: string] {
-    # 1. Build page index: page_name → file_path
-    let files = (glob $"($graph_path)/**/*.md")
-    let page_index = ($files | each {|f|
-        let rel = ($f | str replace $"($graph_path)/" "")
-        let name = ($rel | str replace ".md" "")
-        {name: $name, path: $rel}
-    })
-    let page_names = ($page_index | get name)
-
-    print $"pages indexed: ($page_names | length)"
-    print ""
-
-    # 2. Extract all wiki-links from all files
-    let all_links = ($files | each {|f|
-        let content = (open --raw $f)
-        let rel = ($f | str replace $"($graph_path)/" "")
-        let links = ($content | parse --regex '\[\[([^\[\]]+)\]\]' | get capture0)
-        $links | each {|link| {source: $rel, link: $link}}
-    } | flatten)
-
-    # 3. Find dangling: link target not in page_names
-    let dangling = ($all_links | where {|row|
-        not ($row.link in $page_names)
-    })
-
-    # 4. For each dangling link, check if a namespaced version exists
-    #    e.g. [[oracle]] is dangling, but cyb/oracle exists
-    let with_match = ($dangling | each {|row|
-        let bare = ($row.link | path basename)
-        let matches = ($page_names | where {|name|
-            ($name | str ends-with $"/($bare)") and $name != $row.link
-        })
-        if ($matches | length) > 0 {
-            {
-                link: $row.link
-                source: $row.source
-                match: ($matches | str join ", ")
-            }
-        }
-    } | compact)
-
-    if ($with_match | length) == 0 {
-        print "no dangling links with namespaced matches found"
-        return
+    # auto-detect page directory: root/ → graph/ → pages/ (same as optica)
+    let pages = if ($graph_path | path join "root" | path exists) {
+        $graph_path | path join "root"
+    } else if ($graph_path | path join "graph" | path exists) {
+        $graph_path | path join "graph"
+    } else {
+        $graph_path | path join "pages"
     }
 
-    # 5. Group by dangling link for readable output
-    let grouped = ($with_match
+    let files = (glob $"($pages)/**/*.md")
+    let total_pages = ($files | length)
+
+    print $"scanning ($total_pages) pages in ($pages)"
+    print ""
+
+    # --- build lookup set from basenames, relative paths, and aliases ---
+    # every entry is lowercased for case-insensitive matching
+
+    mut known: list<string> = []
+
+    let page_records = ($files | each {|f|
+        let rel = ($f | str replace $"($pages)/" "" | str replace ".md" "")
+        let base = ($f | path parse | get stem)
+        let content = (try { open --raw $f } catch { "" })
+
+        # extract aliases from frontmatter (both alias: and alias:: forms)
+        let ls = ($content | lines)
+        let has_fm = ($ls | length) > 0 and ($ls | first) == "---"
+        let fm_lines = if $has_fm {
+            $ls | skip 1 | take while {|l| $l != "---"}
+        } else {
+            []
+        }
+
+        let alias_lines = ($fm_lines | where {|l| $l =~ "^alias"})
+        let aliases = if ($alias_lines | length) > 0 {
+            let raw = ($alias_lines | first)
+            # strip "alias::" or "alias:" prefix
+            let after = ($raw | str replace --regex '^alias::?\s*' '')
+            $after | split row "," | each {|a| $a | str trim | str downcase} | where {|a| ($a | str length) > 0}
+        } else {
+            []
+        }
+
+        {rel: ($rel | str downcase), base: ($base | str downcase), aliases: $aliases}
+    })
+
+    # flatten all known names into one list
+    let known = (
+        ($page_records | get rel)
+        | append ($page_records | get base)
+        | append ($page_records | get aliases | flatten)
+        | uniq
+    )
+
+    print $"known names [basenames + paths + aliases]: ($known | length)"
+    print ""
+
+    # --- extract wiki-links from all pages ---
+    # regex captures the link target before any | (display text)
+    let all_links = ($files | each {|f|
+        let content = (try { open --raw $f } catch { "" })
+        let rel = ($f | str replace $"($pages)/" "" | str replace ".md" "")
+        let links = ($content | parse --regex '\[\[([^\]|]+)' | get -i capture0 | default [])
+        $links | each {|link| {source: $rel, link: ($link | str trim | str downcase)}}
+    } | flatten)
+
+    let total_links = ($all_links | length)
+    let unique_targets = ($all_links | get link | uniq | length)
+
+    # --- find dangling: link target not in known set ---
+    let dangling = ($all_links | where {|row|
+        not ($row.link in $known)
+    })
+
+    let dangling_total = ($dangling | length)
+    let dangling_unique = ($dangling | get link | uniq | length)
+
+    # --- group by link, count occurrences, show top 50 ---
+    let grouped = ($dangling
         | group-by link
         | items {|link, rows|
-            let sources = ($rows | get source | uniq | str join ", ")
-            let match = ($rows | first | get match)
-            {dangling: $link, should_be: $match, referenced_in: $sources, count: ($rows | get source | uniq | length)}
+            let sources = ($rows | get source | uniq)
+            {
+                link: $link
+                count: ($sources | length)
+                referenced_in: ($sources | first 5 | str join ", ")
+            }
         }
         | sort-by count --reverse
     )
 
-    print $"found ($grouped | length) dangling links with namespaced matches:"
+    let top = ($grouped | first ([$grouped | length, 50] | math min))
+
+    print "── top dangling wiki-links ──"
+    print ($top | table)
     print ""
-    print ($grouped | table)
+
+    print "── stats ──"
+    print $"total pages:            ($total_pages)"
+    print $"total wiki-links:       ($total_links)"
+    print $"unique link targets:    ($unique_targets)"
+    print $"dangling references:    ($dangling_total)"
+    print $"unique dangling:        ($dangling_unique)"
+    let resolved = $unique_targets - $dangling_unique
+    let pct = if $unique_targets > 0 {
+        ($resolved * 100) / $unique_targets | math round --precision 1
+    } else { 0 }
+    print $"resolution rate:        ($pct)%"
 }
