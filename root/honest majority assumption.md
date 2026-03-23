@@ -1,5 +1,6 @@
 ---
 tags: cyber
+alias: trust, honest majority
 crystal-type: relation
 crystal-domain: cyber
 stake: 2762884254569059

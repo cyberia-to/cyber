@@ -63,6 +63,7 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 13. Amount > 10% pool reserves shows warning (cyb [#1382](https://github.com/cyberia-to/cyb/pull/1382))
 14. ~~Auto-refresh destination balance after [[IBC]] transfer completes on [[teleport]]~~ done — cyb `343352fb` ([#1385](https://github.com/cyberia-to/cyb/issues/1385))
 15. ~~Fix [[IBC]] denom hash — sha256 received string instead of Uint8Array → wrong denom → balance always 0~~ done — cyb `343352fb` ([#1386](https://github.com/cyberia-to/cyb/issues/1386))
+16. Dynamic RPC endpoints — chain registry + Keplr fallback + user-configurable per-chain RPC in settings (cyb [#1387](https://github.com/cyberia-to/cyb/issues/1387))
 
 ### Phase 1: Contracts + features (weeks, dependencies between items)
 
