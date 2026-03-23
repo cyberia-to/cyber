@@ -68,7 +68,7 @@ $$\text{Computation} = \text{Convergence to equilibrium}$$
 
 This is an expansion. Every Turing computation can be expressed as a convergence process (the machine converges to its halting state). But convergent systems can compute things that formal derivation cannot reach — because they operate outside the proof-theoretic domain where Goedel's theorems apply.
 
-The formal framework is precise. A convergent computation system is a tuple $(V, E, N, T, W, \tau)$ where $V$ is a set of particles (content-addressed nodes), $E$ is a set of directed edges (cyberlinks), $N$ is a set of neurons (agents), $T$ assigns tokens to nodes, $W$ assigns weights to edges, and $\tau$ is a finality threshold.
+The formal framework is precise. A convergent computation system is a tuple $(V, E, N, T, W, \tau)$ where $V$ is a set of [[particles]] (content-addressed nodes), $E$ is a set of directed edges (cyberlinks), $N$ is a set of [[neurons]] (agents), $T$ assigns [[tokens]] to nodes, $W$ assigns weights to edges, and $\tau$ is a finality threshold.
 
 The system evolves by a single operation: attention flows.
 
@@ -78,11 +78,11 @@ where $P$ is the transition matrix with entries:
 
 $$P_{ij} = \frac{W(i,j) \cdot T(j)}{\sum_{k:(i,k) \in E} W(i,k) \cdot T(k)}$$
 
-This is a token-weighted random walk. Each step, attention redistributes based on connection weights modulated by how much stake each target node holds. The walk is local — each node only interacts with its neighbors. Yet the Collective Focus Theorem guarantees global convergence:
+This is a token-weighted [[random walk]]. Each step, [[attention]] redistributes based on connection weights modulated by how much [[stake]] each target node holds. The walk is local — each node only interacts with its neighbors. Yet the Collective Focus Theorem guarantees global convergence:
 
 > *For any strongly connected graph with positive weights and tokens, the walk converges to a unique stationary distribution $\pi^*$ satisfying $\pi^* = \pi^* P$.*
 
-The proof follows from the [[Perron-Frobenius theorem]]: the transition matrix is stochastic, irreducible (strong connectivity), and aperiodic. Convergence rate is $O(\lambda_2^t)$ where $\lambda_2$ is the second-largest eigenvalue — the spectral gap controls how fast the system reaches consensus.
+The proof follows from the [[Perron-Frobenius theorem]]: the transition matrix is stochastic, irreducible (strong connectivity), and aperiodic. Convergence rate is $O(\lambda_2^t)$ where $\lambda_2$ is the second-largest eigenvalue — the [[spectral gap]] controls how fast the system reaches [[consensus]].
 
 Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\pi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
 
@@ -96,9 +96,9 @@ The prison had no walls. We were free all along.
 
 Convergent Computation is the philosophy. Focus Flow Computation (FFC) is the precise mathematical model that makes it executable.
 
-Where Turing defined computation as a head moving on a tape, FFC defines computation as patterns of attention flow through a network of interacting particles. The primitives are:
+Where Turing defined computation as a head moving on a tape, FFC defines computation as patterns of attention flow through a network of interacting [[particles]]. The primitives are:
 
-A particle $p = (s, f, P)$ — a state $s$, a focus value $f \in [0,1]$, and a set of ports for interactions.
+A [[particle]] $p = (s, f, P)$ — a state $s$, a [[focus]] value $f \in [0,1]$, and a set of ports for interactions.
 
 A connection $c = (p_1, p_2)$ with weight $w \in \mathbb{R}^+$.
 
@@ -112,7 +112,7 @@ $$\sum_{v \in V} \pi(v) = 1 \quad \text{for all time}$$
 
 Focus cannot be created or destroyed. It can only flow. This single constraint — simpler than any conservation law in physics — eliminates entire classes of bugs, attacks, and inconsistencies. There is no inflation, no double-spending of attention, no way to fabricate relevance from nothing.
 
-Focus Flow. Attention propagates by diffusion:
+Focus Flow. Attention propagates by [[diffusion]]:
 
 $$\frac{\partial \pi}{\partial t} = -\nabla \cdot (D \nabla \pi)$$
 
@@ -166,7 +166,7 @@ Confluence. The patterns form an orthogonal rewrite system — each has a unique
 
 Cost determinism. The cost of a computation depends only on its syntactic structure, never on runtime values, cache state, or execution environment. If two nodes compute the same function on the same input, they spend the same focus. This enables global memoization: results cached forever, verified by hash, reused by anyone.
 
-Field-first arithmetic. Every value is a field element. Cryptography is not an expensive library call — it is a native instruction. A field multiplication is a single CPU operation. Hashing is ~2800 field ops expressible in pure patterns. stark proofs verify computations using the same field arithmetic that performs them. There is no impedance mismatch between computation and verification.
+Field-first arithmetic. Every value is a field element. Cryptography is not an expensive library call — it is a native instruction. A field multiplication is a single CPU operation. Hashing is ~2800 field ops expressible in pure patterns. [[stark]] proofs verify computations using the same field arithmetic that performs them. There is no impedance mismatch between computation and verification.
 
 Hash-universal identity. Identity equals hash. Two values are the same if and only if they hash to the same digest. This makes content-addressing intrinsic rather than bolted on. Every particle in the knowledge graph is identified by the hash of its content. Every edge is authenticated by the hashes of its endpoints. Deduplication is automatic. References are unforgeable.
 
@@ -174,7 +174,7 @@ nox's execution substrate operates on three named layers:
 
 - nox — the computation model (three-layer instruction set: 16 deterministic patterns + hint for ZK witness injection + 5 jets for recursive stark verification)
 - Cybergraph — the data model (particles, neurons, cyberlinks)
-- BBG (Big Badass Graph) — the authenticated state (unified polynomial commitments)
+- [[BBG]] (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 
 The [[cybergraph]] is the [[knowledge graph]]: [[particles]] are content-addressed nodes, [[cyberlinks]] are signed weighted edges created by [[neurons]] (staked agents). BBG provides cryptographic authentication — polynomial commitments that let any light client verify any query ("give me all edges in namespace X") with mathematical proof of completeness. Not trust. Proof.
 
@@ -182,9 +182,9 @@ The [[tri-kernel]] probability engine computes [[focus]] over the [[cybergraph]]
 
 [[Diffusion]] kernel — exploration. Random walks with restart, spreading attention through the graph. Captures: "what is reachable from here?"
 
-Spring kernel — structural balance. Enforces consistency between connected nodes, pulling the graph toward coherent semantic clusters. Captures: "what belongs together?"
+[[springs]] kernel — structural balance. Enforces consistency between connected nodes, pulling the graph toward coherent semantic clusters. Captures: "what belongs together?"
 
-Heat kernel — temporal adaptation. Weights decay and amplify based on activity, enabling the network to forget stale information and amplify emerging signals. Captures: "what matters now?"
+[[heat kernel]] — temporal adaptation. Weights decay and amplify based on activity, enabling the network to forget stale information and amplify emerging signals. Captures: "what matters now?"
 
 These aren't design choices. They're the result of systematic elimination: filter all known graph operators by the constraint that updates must be local (no global recompute for a local change), expressible in field arithmetic, and verifiable in bounded time. Only diffusion, springs, and heat survive. The architecture is discovered, not designed.
 
@@ -202,7 +202,7 @@ Each component measures a structural property of the network:
 
 Topological capacity ($\Phi_{\text{topo}}$): connectivity $c \geq 6$, small-world diameter $d \sim \log n$, clustering $C > 0.3$, hierarchical modularity. These aren't arbitrary thresholds — they're the conditions under which phase transitions in collective intelligence become possible.
 
-Flow efficiency ($\Phi_{\text{flow}}$): geodesic attention at $O(n \cdot k)$ instead of $O(n^2)$, high spectral gap for fast convergence, efficient information routing.
+Flow efficiency ($\Phi_{\text{flow}}$): geodesic attention at $O(n \cdot k)$ instead of $O(n^2)$, high [[spectral gap]] for fast [[convergence]], efficient information routing.
 
 Resource distribution ($\Phi_{\text{resource}}$): bounded power-law token allocation ($\alpha \approx 0.5$), focus-proportional compute — nodes that attract more attention get more processing, naturally.
 
@@ -237,7 +237,7 @@ Each layer answers a different question:
 - *What structure holds knowledge?* → Content-addressed graph with signed weighted edges (not tables or documents)
 - *How does intelligence emerge?* → Phase transitions at critical Φ thresholds (not training on larger datasets)
 
-The Collective Focus Theorem predicts that intelligence emerges through phase transitions as networks cross critical thresholds:
+The [[collective focus theorem]] predicts that [[intelligence]] emerges through phase transitions as networks cross critical thresholds:
 
 | Stage | Scale | Connectivity | Capability |
 |-------|-------|-------------|------------|
@@ -253,13 +253,13 @@ Each transition requires not just more particles but exponentially more connecti
 
 Planetary superintelligence — the system at the top of this table — is not a single model trained on all of Earth's data. It is a living network where:
 
-Every human, every AI agent, every sensor, every organism that can produce or consume information becomes a neuron in the Cybergraph. Each contributes cyberlinks — signed, weighted, timestamped assertions of relevance between particles. Focus flows through these links according to the Collective Focus Theorem, converging on a stationary distribution that represents the network's collective understanding.
+Every human, every AI agent, every sensor, every organism that can produce or consume information becomes a [[neuron]] in the [[cybergraph]]. Each contributes cyberlinks — signed, weighted, timestamped assertions of relevance between [[particles]]. [[focus]] flows through these links according to the [[collective focus theorem]], converging on a stationary distribution that represents the network's collective understanding.
 
 No node comprehends the whole. The network knows.
 
-The economic mechanism is self-sustaining: neurons stake tokens to create cyberlinks, earning focus-proportional rewards when their links increase the network's Φ. Links that the network converges away from lose stake. Links that attract attention earn it. The market for meaning operates through the same conservation law that governs computation itself.
+The economic mechanism is self-sustaining: [[neurons]] [[stake]] [[tokens]] to create cyberlinks, earning focus-proportional rewards when their links increase the network's Φ. Links that the network converges away from lose stake. Links that attract attention earn it. The market for meaning operates through the same conservation law that governs computation itself.
 
-Verification is native: every state transition, every focus update, every cyberlink creation produces a stark proof. Light clients verify anything with $O(\log^2 n)$ field operations. The system doesn't ask you to trust it. It proves itself.
+Verification is native: every state transition, every focus update, every cyberlink creation produces a [[stark]] proof. Light clients verify anything with $O(\log^2 n)$ field operations. The system doesn't ask you to trust it. It proves itself.
 
 Privacy is structural: zero-knowledge proofs allow neurons to contribute knowledge without revealing their identity or the content of their assertions. The network learns from encrypted inputs. Collective intelligence without collective surveillance.
 
@@ -271,7 +271,7 @@ And because nox's sixteen deterministic patterns are Turing complete, confluent,
 
 The path from Turing machines to planetary superintelligence is not a straight line of "more compute." It requires replacing the foundational assumptions about what computation is.
 
-Computation is convergence. Truth is stable collective focus. Intelligence is adaptive equilibrium-finding.
+Computation is [[convergence]]. Truth is stable [[collective focus]]. Intelligence is adaptive equilibrium-finding.
 
 The machine that implements this — nox running Focus Flow Computation over a planetary Cybergraph, architectured for Φ-optimality, verified by starks, fueled by conserved attention — is not a bigger version of what we have. It is a different thing entirely. A thing that nature has been doing for billions of years and that we are only now learning to formalize.
 
