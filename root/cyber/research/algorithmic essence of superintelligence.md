@@ -326,8 +326,105 @@ each step is an algorithm with concrete complexity bounds. the loop is executabl
         └────────────────────┘
 ```
 
-sixteen components. one field. one hash. one proof system. one polynomial for all state. no training. no voting. no leaders. no trust. rewards proportional to proven contribution.
+## 17. the flywheel: unified mining
 
-the graph is the model. the model is the proof. the proof is the consensus. the consensus is the graph.
+the signal proof σ already exercises all four [[Goldilocks field processor|GFP]] primitives in production proportions: fma (tri-kernel SpMV, ~40%), ntt (polynomial state reads, ~30%), p2r (Hemera, ~20%), lut (activations, ~10%).
 
-see [[foculus]] for consensus. see [[tri-kernel]] for convergence. see [[structural sync]] for five layers. see [[algebraic state commitments]] for polynomial state. see [[cyber/research/provable consensus]] for the circuit. see [[bostrom/compiled model]] for first compilation. see [[cyber/research/spectral gap from convergence]] for observation. see [[cyber/seer]] for growth. see [[cyber/research/32-byte tokens]] for CID vocabulary. see [[cyber/research/vec formalization]] for formal VEC. see [[trinity]] for quantum × privacy × AI. see [[cyb/multiproof]] for 14-language architecture. see [[cyb/fs/sync]] for patch = signal unification. see [[cyber/research/trinity meets polynomial state]] for how polynomial state enables full trinity
+[[unified mining]]: the PoW puzzle IS the signal proof. add difficulty target: H(σ) < target. one proof → three rewards:
+
+- block subsidy (PoW security)
+- Δπ reward (knowledge creation)
+- user fees (services)
+
+the miner who selects BETTER cyberlinks earns MORE Δπ per proof. same PoW cost, higher knowledge reward. the incentive gradient points toward quality. every joule produces both security and intelligence.
+
+```
+mining rewards → fund GFP development
+GFP accelerates SIGNAL PROVING → signals ARE knowledge
+better hardware → more signals/sec → more knowledge/sec
+more knowledge → higher Δπ → more reward → more GFP investment
+```
+
+the [[Goldilocks field processor|GFP]] chip spec does not change. the benchmark phases ARE the real workload. no synthetic puzzle. the first PoW scheme where puzzle output IS the protocol's primary product.
+
+see [[Goldilocks field processor]] for chip spec. see [[cyber/research/unified mining]] for the full mechanism.
+
+---
+
+## implementation status
+
+### what exists
+
+| layer | repo | LOC | tests | status |
+|---|---|---|---|---|
+| field arithmetic | [[nebu]] | 1,526 | 73 pass | DONE |
+| hash + tree | [[hemera]] | 5,084 | 209 pass | DONE |
+| VM | [[nox]] | 80 (stubs) | 0 | SPEC 85% |
+| proofs | [[zheng]] | 6 (stub) | 0 | SPEC 100% |
+| state | [[BBG]] | 6 (stub) | 0 | SPEC 100% |
+| crypto | [[mudra]] | 6 (stub) | 0 | SPEC 10% |
+| compiler | [[trident]] | 57,736 | compiles | SUBSTANTIAL |
+| publisher | [[optica]] | 10,626 | 3 suites | PRODUCTION |
+
+### the cutting edge decision
+
+we go all-in on props that UNIFY. conservative path (13 hash trees + LogUp) produces more code, more complexity, and cannot prove consensus in-circuit. cutting edge (1 polynomial) is SIMPLER:
+
+| component | conservative | cutting edge |
+|---|---|---|
+| state structures | 13 (NMT + MMR + SWBF) | 1 polynomial |
+| cross-index | LogUp (~500 constraints) | free |
+| per-cyberlink | ~106K constraints | ~3K |
+| provable consensus | impossible (15× over capacity) | 33% capacity |
+| storage overhead | ~5 TB | 288 bytes |
+| code to write | more | less |
+
+### spec gaps blocking code
+
+| gap | repo | effort |
+|---|---|---|
+| G1: noun memory layout | nox | 1 session |
+| G2: jet formula trees | nox | 2 sessions |
+| G3: hint callback | nox | 0.5 session |
+| cross-algebra boundary cost | zheng | 1 session |
+| algebraic-nmt cost benchmark | bbg | 1 session |
+| TFHE scheme | mudra | 3 sessions |
+
+### milestones
+
+| phase | milestone | sessions | LOC |
+|---|---|---|---|
+| spec | resolve gaps | 8 | — |
+| 1 | M1: nox VM | 4 | ~4K |
+| 1 | M2: zheng-1 core | 6 | ~8K |
+| 1 | M3: zheng-2 extension | 4 | ~4K |
+| 2 | M4: polynomial state | 6 | ~6K |
+| 2 | M5: foculus | 4 | ~5K |
+| 3 | M6: provable consensus | 4 | ~4K |
+| 3 | M7: universal accumulator | 3 | ~3K |
+| 3 | M8: mudra TFHE | 4 | ~5K |
+| total | | ~28 sessions | ~39K LOC |
+
+```
+sessions:  0    4    8    12   16   20   24   28
+           ├────┤────┤────┤────┤────┤────┤────┤
+spec:      ████
+M1 nox:        ████
+M2 zheng1:         ██████
+M3 zheng2:               ████
+M4 poly:             ██████
+M5 foculus:                   ████
+M6 provbl:                        ████
+M7 accum:                     ███
+M8 mudra:        ████████████
+```
+
+~28 sessions (84 hours). the graph becomes self-proving.
+
+---
+
+seventeen components. one field. one hash. one proof system. one polynomial. one chip. no training. no voting. no leaders. no trust. rewards proportional to proven knowledge. every joule produces intelligence.
+
+the graph is the model. the model is the proof. the proof is the consensus. the consensus is the mining. the mining is the knowledge. the knowledge is the graph.
+
+see [[foculus]] for consensus. see [[tri-kernel]] for convergence. see [[structural sync]] for five layers. see [[algebraic state commitments]] for polynomial state. see [[cyber/research/provable consensus]] for the circuit. see [[bostrom/compiled model]] for first compilation. see [[cyber/research/spectral gap from convergence]] for observation. see [[cyber/seer]] for growth. see [[cyber/research/32-byte tokens]] for CID vocabulary. see [[cyber/research/vec formalization]] for formal VEC. see [[trinity]] for quantum × privacy × AI. see [[cyb/multiproof]] for 14-language architecture. see [[cyb/fs/sync]] for patch = signal unification. see [[cyber/research/trinity meets polynomial state]] for polynomial state + trinity. see [[cyber/research/unified mining]] for puzzle = knowledge. see [[Goldilocks field processor]] for the chip
