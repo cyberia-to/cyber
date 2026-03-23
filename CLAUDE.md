@@ -115,6 +115,8 @@ Scripts:
 - `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget
 - `analizer/trikernel.nu` — compute tri-kernel (diffusion, springs, heat) over wiki-link graph, write focus + gravity + density to frontmatter. Runs on new moon only (±1 day); use `--force` to override, `--dry-run` to preview
 
+- `analizer/codematter.nu` — add comment-frontmatter to code files (.rs, .nu, .toml, .py, .sh, .yml), integrating source into cybergraph as particles
+
 When adding a new script: place it in `analizer/`, accept `graph_path` as first
 arg, and update this list.
 ## Tri-Kernel Weight Updates (Lunar Cycle)
