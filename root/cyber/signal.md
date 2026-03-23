@@ -1,5 +1,5 @@
 ---
-alias: cyber signal, cyber signals
+alias: cyber signal, cyber signals, cyber/signals
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber

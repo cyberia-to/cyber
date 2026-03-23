@@ -3,7 +3,7 @@ tags: cyber, cybernomics, cip
 crystal-type: entity
 crystal-domain: economics
 crystal-size: article
-alias: cyber nomics, cybernomics protocol, cyber tokenomics, cyber economics, economic model
+alias: cyber nomics, cybernomics protocol, cyber tokenomics, cyber economics, economic model, cyber/tokenomics
 stake: 50000000000000000
 diffusion: 0.00012950849423123132
 springs: 0.0014299770393565166
