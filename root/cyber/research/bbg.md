@@ -5,241 +5,303 @@ crystal-domain: cyber
 status: draft
 date: 2026-03-24
 ---
-# BBG: the authenticated state layer
+# BBG: polynomial authenticated state
 
 ## abstract
 
-[[BBG]] (Big Badass Graph) is the authenticated state layer for [[cyber]]. it commits the entire [[cybergraph]] — particles, axons, neurons, tokens, temporal state — to a single cryptographic root. individual [[cyberlinks]] are private. the public aggregate (axon weights, neuron summaries, particle energy, token supplies) is committed to [[NMT]] trees with completeness proofs. [[mutator set]] (AOCL + SWBF) handles private records. the architecture is governed by three laws: bounded locality, constant-cost verification, and structural security.
-
-this paper describes the current architecture and its evolution path toward polynomial state — where 13 hash-tree sub-roots collapse to one polynomial commitment, cross-index consistency becomes structural, and a 240-byte checkpoint proves all history.
-
-## 1. three laws
-
-every design decision in BBG follows from three laws:
-
-**law 1: bounded locality.** the cost of an operation is proportional to what it touches, not total state size. at $10^{15}$ particles, no operation touches the whole graph. every read is $O(\log n)$. every update is $O(\log n)$. global recomputation is physically impossible and architecturally forbidden.
-
-**law 2: constant-cost verification.** verifying any claim about the graph costs $O(1)$ — independent of graph size, history length, or computation complexity. one [[zheng]] decider call (10-50 μs) verifies any proof. a light client with 240 bytes of state has the same verification power as a full node.
-
-**law 3: structural security.** guarantees come from data structure invariants, not protocol correctness. an [[NMT]] sorting invariant cannot be violated — the tree structure prevents it. a [[mutator set]] cannot double-spend — the SWBF bitmap prevents it. security is not "the protocol was followed" but "the structure makes cheating impossible."
-
-## 2. the five primitives
-
-| primitive | what it is | identity | role |
-|---|---|---|---|
-| [[particles\|particle]] | content-addressed node | $H(\text{content})$ — 32 bytes | atom of knowledge |
-| [[cyberlinks\|cyberlink]] | private authenticated edge | $H(\nu, p, q, \tau, a, v, t)$ — 7-tuple | unit of assertion |
-| [[neurons\|neuron]] | agent with stake and focus | $H(\text{public\_key})$ | decision-maker |
-| [[token]] | economic value | denomination hash / content hash | coin, card, score, badge |
-| [[focus]] | emergent attention | $\pi^*$ from [[tri-kernel]] | what the network pays attention to |
-
-derived: **axon** = $H(\text{from}, \text{to}) \in P$. aggregate of all cyberlinks between two particles. the axon is public; the individual cyberlinks composing it are private.
-
-## 3. BBG root: 13 sub-roots
-
-the entire state commits to one root:
-
-$$\text{BBG\_root} = H(\text{13 sub-roots}) = H(416 \text{ bytes})$$
-
-### public indexes (9 NMTs)
-
-each is a [[NMT|Namespace Merkle Tree]] with [[Hemera]] hash nodes and sorted namespace labels for completeness proofs.
-
-| index | key → value | leaf size | what it proves |
-|---|---|---|---|
-| particles.root | CID → particle record | 48-96 B | particle exists with this energy and $\pi^*$ |
-| axons_out.root | source CID → axon pointer | 64 B | all outgoing edges from this particle |
-| axons_in.root | target CID → axon pointer | 64 B | all incoming edges to this particle |
-| neurons.root | neuron ID → neuron record | 56 B | neuron's focus, karma, stake |
-| locations.root | neuron ID → location record | 104 B | spatial association |
-| coins.root | denomination → supply record | 81 B | fungible token supply |
-| cards.root | card ID → card record | 104 B | non-fungible knowledge asset |
-| files.root | CID → availability record | 76 B | content availability ([[DAS]]) |
-| time.root | time namespace → BBG snapshot | 72 B | state at historical time T |
-
-NMT completeness guarantee: "if you ask for all particles in namespace P, the tree PROVES it gave you everything. omission is structurally impossible."
-
-### private state (3 commitments)
-
-| commitment | structure | what it protects |
-|---|---|---|
-| cyberlinks.root | MMR peaks hash (AOCL) | append-only list of all committed cyberlinks |
-| spent.root | MMR root (archived SWBF) | nullifier history — prevents double-spend |
-| balance.root | Hemera hash (active SWBF) | 128 KB sliding window bitmap — current nullifiers |
-
-the [[mutator set]] (AOCL + SWBF) is the universal privacy primitive. every private record — cyberlinks, transfers, positions — uses the same mechanism. membership proof: $O(\log N)$ Hemera hashes. non-membership proof: bitmap check + $O(\log N)$ MMR walk.
-
-### finalization (1 root)
-
-| root | structure | purpose |
-|---|---|---|
-| signals.root | MMR of finalized signal batches | append-only record of all processed [[signals]] |
-
-## 4. privacy model
-
-the privacy boundary separates individual actions from public aggregates:
-
-```
-PRIVATE (mutator set):                  PUBLIC (NMT indexes):
-  who linked what (individual cyberlinks)  axon weights (aggregate conviction)
-  individual conviction amounts             particle energy, π*
-  neuron linking history                    neuron summaries (focus, karma, stake)
-  market positions                          token supplies
-  UTXO values and owners                   axon market state
-```
-
-a neuron proves it has sufficient stake and creates a valid cyberlink — without revealing which neuron it is. the graph sees edges and weights. the graph does not see authors.
-
-the mechanism: [[zheng]] zero-knowledge proof (~13,000 constraints) covers identity ($H(\text{secret}) \in \text{neuron\_set}$), stake sufficiency, nullifier freshness, and cyberlink well-formedness. see [[cyber/proofs|proofs]] for the full circuit.
-
-## 5. state transitions
-
-six transaction types modify BBG state:
-
-| transaction | what changes | proof cost | frequency |
-|---|---|---|---|
-| CYBERLINK | create private record + update public aggregates | ~13K constraints | dominant (every edge) |
-| PRIVATE TRANSFER | move value between private records (UTXO) | ~40K constraints | moderate |
-| COMPUTATION | execute [[nox]] program, deduct focus | varies | moderate |
-| MINT CARD | create non-fungible knowledge asset | ~5K constraints | rare |
-| TRANSFER CARD | change card ownership | ~3K constraints | rare |
-| BRIDGE | convert coin to focus | ~3K constraints | rare |
-
-every transaction produces a [[zheng]] proof. every proof folds into the block accumulator via [[HyperNova]].
-
-cross-index consistency: when a cyberlink updates axons_out, axons_in, particles, AND neurons simultaneously, [[LogUp]] proves all four indexes agree on the shared data (~500 constraints per lookup, ~1,500 per cyberlink).
-
-## 6. sync
-
-one mechanism at three scales. the [[signal]] is the universal unit of state change. five verification layers apply at every scale:
-
-| layer | mechanism | guarantee |
-|---|---|---|
-| 1. validity | [[zheng]] proof | state transition is correct |
-| 2. ordering | hash chain + [[VDF]] | operations carry their own order |
-| 3. completeness | [[NMT]] | nothing withheld |
-| 4. availability | [[DAS]] + erasure | data physically exists |
-| 5. merge | [[CRDT]] / [[foculus]] | convergence is deterministic |
-
-layers 1-4 are scale-invariant. layer 5 adapts: CRDT for local device sync, foculus ($\pi$ convergence) for global consensus.
-
-a light client joins by downloading a 240-byte checkpoint (BBG_root + accumulator + height), running one [[zheng]] decider (10-50 μs), and syncing namespaces of interest via NMT completeness proofs.
-
-see [[structural-sync]] for the full theory (Verified Eventual Consistency).
-
-## 7. the polynomial evolution
-
-the current architecture uses hash trees (NMTs). the evolution path replaces them with polynomial commitments — where the proof system's native operation (polynomial evaluation) IS the state query.
-
-### phase 1: algebraic NMT
-
-replace 9 independent NMT trees with one multivariate polynomial:
-
-$$\text{BBG\_poly}(\text{index}, \text{namespace}, \text{position}) = \text{value}$$
-
-| metric | NMT (current) | algebraic NMT |
-|---|---|---|
-| per-cyberlink | ~107.5K constraints | ~3.2K constraints (33×) |
-| per-block (1000 tx) | ~108M constraints | ~7.5M constraints (14×) |
-| LogUp cost | ~6M constraints | 0 (structural — same polynomial) |
-| inclusion proof | ~1 KiB (Merkle path) | ~200 bytes (PCS opening) |
-| internal node storage | ~5 TB (9 indexes) | 0 |
-
-the key insight: [[sumcheck]] architecture makes polynomial state NATURAL. state reads are polynomial evaluations — the proof system's native operation. see [[algebraic state commitments]] and the [[cyber/research/zheng vs starks|zheng whitepaper]] §5 for why this is architectural, not a separate optimisation.
-
-### phase 2: polynomial mutator set
-
-replace SWBF (128 KB bitmap) + archived MMR with polynomial commitment over nullifiers:
-
-$$N(x) = \prod(x - n_i) \text{ for all nullifiers } n_i$$
-
-non-membership proof: one PCS opening (O(1)) instead of bitmap + MMR walk ($O(\log N)$). witness shrinks from 128 KB to 32 bytes.
-
-### phase 3: unified polynomial state
-
-all 13 sub-roots → one polynomial commitment:
+[[BBG]] (Big Badass Graph) is the authenticated state layer for [[cyber]]. the entire [[cybergraph]] — [[particles]], [[axons]], [[neurons]], [[tokens]], temporal state, private records — commits to a single polynomial:
 
 $$\text{BBG\_root} = \text{PCS.commit}(\text{BBG\_poly})$$
 
-32 bytes. one polynomial. all state. all time. every query = one PCS opening. cross-index consistency = structural (same polynomial, different evaluation dimensions). LogUp eliminated entirely.
+32 bytes. one polynomial. all state. every query is a polynomial opening. cross-index consistency is structural — different evaluation dimensions of the same polynomial cannot disagree. [[LogUp]] is unnecessary. a 240-byte checkpoint (BBG_root + [[universal accumulator]] + height) proves all history from genesis in 10–50 μs.
 
-### phase 4: algebraic DAS
+the architecture follows from [[zheng]]'s [[sumcheck]] foundation: the proof system operates on multilinear polynomials natively. making the STATE a polynomial means state reads ARE the proof system's native operation. this is not optimisation — it is alignment between state and proof architecture.
 
-when completeness proofs become polynomial openings (phase 1), [[DAS]] inherits the efficiency. each sample proof = one PCS opening (~200 bytes) instead of NMT path (~1 KiB). 20-sample DAS verification: 4 KiB instead of 20 KiB, ~3K constraints instead of ~471K (157× improvement).
+## 1. three laws
 
-## 8. signal-first architecture
+**law 1: bounded locality.** operation cost $\propto$ what it touches, not total state size. at $10^{15}$ particles, a single [[cyberlink]] costs $O(\log n)$ polynomial path updates. global recomputation is physically impossible and architecturally forbidden.
 
-BBG state is a deterministic function of the [[signal]] log:
+**law 2: constant-cost verification.** verifying any claim about the graph costs $O(1)$: one PCS opening (~200 bytes, 10–50 μs). independent of graph size, history length, or computation complexity. a light client with 240 bytes has the same verification power as a full node.
 
-$$\text{BBG\_state}(h) = \text{fold}(\text{genesis}, \text{signals}[0..h])$$
+**law 3: structural security.** guarantees come from mathematical structure, not protocol correctness. polynomial binding prevents lying — a committed polynomial evaluates to a unique value at each point. the [[Brakedown]] PCS is post-quantum (code-based, no pairings). privacy comes from the [[mutator set]] (SWBF bitmap prevents double-spend by construction).
 
-the signal log is append-only, content-addressed, and [[DAS]]-protected. BBG state (13 sub-roots, NMT trees, mutator set) is DERIVED DATA — a materialised view over signals.
+## 2. five primitives
+
+| primitive | identity | role |
+|---|---|---|
+| [[particles\|particle]] | $H(\text{content})$ — 32 bytes | content-addressed node, atom of knowledge |
+| [[cyberlinks\|cyberlink]] | $H(\nu, p, q, \tau, a, v, t)$ — 7-tuple | private authenticated edge |
+| [[neurons\|neuron]] | $H(\text{public\_key})$ | agent with stake and [[focus]] budget |
+| [[token]] | denomination hash | economic value (coin, card, score, badge) |
+| [[focus]] | $\pi^*$ from [[tri-kernel]] | emergent attention distribution |
+
+derived: **axon** = $H(\text{from}, \text{to})$. aggregate of all cyberlinks between two particles. the axon is public; individual cyberlinks are private.
+
+## 3. the polynomial state
+
+### BBG_poly
+
+all state encodes as evaluations of a single multivariate polynomial:
+
+$$\text{BBG\_poly}(\text{index}, \text{key}, t) = \text{value}$$
+
+three dimensions:
+- **index** $\in \{0..9\}$ — which data domain (particles, axons_out, axons_in, neurons, locations, coins, cards, files, time, signals)
+- **key** $\in \mathbb{F}_p$ — namespace key (particle CID, neuron ID, denomination hash, etc.)
+- **$t$** $\in \mathbb{N}$ — block height (temporal dimension)
+
+committed via [[Brakedown]] PCS:
+
+$$\text{BBG\_root} = \text{Brakedown.commit}(\text{BBG\_poly}) \quad \text{(32 bytes)}$$
+
+### what each dimension encodes
+
+| index | domain | key | value |
+|---|---|---|---|
+| 0: particles | content-addressed nodes | CID | energy, $\pi^*$, axon fields |
+| 1: axons_out | outgoing edges by source | source CID | axon pointer, weight, market state |
+| 2: axons_in | incoming edges by target | target CID | axon pointer, weight |
+| 3: neurons | agent state | neuron ID | focus, karma, stake |
+| 4: locations | spatial association | neuron ID | geohash, attestation |
+| 5: coins | fungible tokens | denomination | supply, parameters |
+| 6: cards | non-fungible assets | card ID | owner, content CID, metadata |
+| 7: files | content availability | CID | DAS commitment, chunk count |
+| 8: time | historical snapshots | time namespace | BBG_root at that time |
+| 9: signals | finalized signal batches | step | signal hash |
+
+### why one polynomial
+
+nine independent data structures (the old NMT approach) force redundant computation:
+
+```
+old (NMTs):    cyberlink touches 4-5 trees → 4.5 × O(log n) hemera hashes
+               cross-index: LogUp proves trees agree (~1,500 constraints)
+               total: ~107,500 constraints per cyberlink
+
+new (one poly): cyberlink updates polynomial at 4-5 evaluation points
+               cross-index: STRUCTURAL (same polynomial, different dimensions)
+               total: ~3,200 constraints per cyberlink
+```
+
+the polynomial makes cross-index consistency FREE. axons_out and axons_in are different evaluation dimensions of BBG_poly. they CANNOT disagree because they are the same committed object. [[LogUp]] — which cost ~6M constraints per block — is eliminated entirely.
+
+### state reads
+
+a state read IS a polynomial evaluation:
+
+```
+"what is the energy of particle P?"
+= Brakedown.open(BBG_root, (particles, P, t_now))
+= one PCS opening: ~200 bytes proof, O(√N) field operations, 10-50 μs
+
+"all outgoing axons from particle P?"
+= Brakedown.open(BBG_root, (axons_out, P, t_now))
+= one PCS opening: ~200 bytes, completeness guaranteed by PCS binding
+```
+
+compare with the hash-tree approach: $O(\log n) \times 32$ bytes Merkle path, $O(\log n)$ [[Hemera]] hashes to verify. the polynomial approach is O(1) proof size and O(√N) field operations — no hashing.
+
+### state updates
+
+a [[cyberlink]] updates the polynomial at multiple evaluation points:
+
+```
+cyberlink (ν, p, q, τ, a, v, t):
+  BBG_poly(particles, p, t)    ← energy update for source
+  BBG_poly(particles, q, t)    ← energy update for target
+  BBG_poly(axons_out, p, t)    ← outgoing axon update
+  BBG_poly(axons_in, q, t)     ← incoming axon update
+  BBG_poly(neurons, ν, t)      ← focus deduction
+
+each update: O(log n) polynomial path operations × ~100 field ops
+total: ~3,200 constraints per cyberlink
+```
+
+with [[Brakedown]] (Merkle-free PCS), the update cost is O(N) for batch recommit at block boundary. no hemera hashing for state verification — 0 calls per block (was 144,000 in the NMT approach).
+
+## 4. private state
+
+individual [[cyberlinks]] are private. the polynomial state handles this:
+
+**commitment polynomial** $A(x)$: all committed private records. $A(c_i) = v_i$ for commitment $c_i$ with value $v_i$. membership proof: one PCS opening — O(1).
+
+**nullifier polynomial** $N(x) = \prod(x - n_i)$: all spent nullifiers. $N(n) = 0$ iff nullifier $n$ is spent. non-membership proof: one PCS opening showing $N(c) \neq 0$ — O(1).
+
+```
+old (SWBF + MMR):
+  membership:      O(log N) hemera hashes (AOCL MMR)
+  non-membership:  128 KB witness (SWBF bitmap) + O(log N) MMR walk
+  update:          bitmap flip + periodic archive
+  total:           ~40,000 constraints per spend
+
+new (polynomial):
+  membership:      one PCS opening — O(1)
+  non-membership:  one PCS opening — O(1)
+  update:          N'(x) = N(x) × (x - n_new) — O(1) polynomial extend
+  witness:         32 bytes (PCS commitment, was 128 KB)
+  total:           ~5,000 constraints per spend
+```
+
+privacy is preserved: PCS opening proofs are zero-knowledge. opening $A(c_i)$ reveals nothing about other commitments. opening $N(n)$ reveals nothing about other nullifiers.
+
+## 5. temporal state
+
+the temporal dimension $t$ in BBG_poly enables continuous-time queries:
+
+```
+"what was π of particle P at block 1000?"
+= Brakedown.open(BBG_root, (particles, P, 1000))
+= one PCS opening — no separate time index needed
+```
+
+the old approach used a time.root NMT with 7 namespaces (steps, seconds, hours, days, weeks, moons, years). the polynomial absorbs time as a native dimension — any historical query is one evaluation.
+
+with [[gravity commitment]]: recent + high-$\pi$ queries are cheapest (low-degree polynomial terms). old + low-$\pi$ queries cost more (high-degree terms). verification cost follows the [[universal law|exponential]] — important facts are cheaper to verify.
+
+## 6. algebraic DAS
+
+[[DAS|Data Availability Sampling]] uses the same polynomial infrastructure. the erasure-coded block is a bivariate polynomial $P(\text{row}, \text{col})$. each DAS sample is one PCS opening:
+
+```
+sample: Brakedown.open(block_commitment, (row_i, col_i)) → value + proof
+
+old (NMT-based DAS):
+  per sample:  O(log n) × 32 bytes NMT path, O(log n) hemera hashes
+  20 samples:  ~25 KiB bandwidth, ~471K constraints
+
+algebraic DAS:
+  per sample:  ~200 bytes PCS opening, O(√N) field ops
+  20 samples:  ~4 KiB bandwidth, ~3K constraints
+
+improvement: 157× fewer constraints, 6× less bandwidth
+```
+
+the same PCS serves state queries AND availability sampling. one commitment scheme for everything.
+
+## 7. signal-first architecture
+
+BBG_poly is DERIVED DATA. the source of truth is the [[signal]] log:
+
+$$\text{BBG\_poly}(t) = \text{fold}(\text{genesis\_poly}, \sigma[0..t])$$
+
+each signal updates the polynomial at specific evaluation points. the fold is deterministic. any node can reconstruct BBG_poly at any height by replaying signals.
 
 consequences:
-- any node can reconstruct any historical BBG_root from signals
-- crash recovery: fetch checkpoint (~240 bytes) + replay signals since checkpoint
-- storage proofs reduce to signal availability proofs (no separate PoSt needed)
+- crash recovery: download checkpoint (240 bytes) + replay signals since checkpoint
+- storage proofs: prove signal availability ([[DAS]]), derive everything else
 - the irreducible minimum per node: signal log + latest checkpoint
+- BBG_poly is a materialised view, not primary data
 
 see [[signal-first]] for the full design.
 
-## 9. π-weighted replication
+## 8. sync
 
-storage replication factor proportional to $\pi$ ([[cyberank]]):
+one mechanism at three scales. five verification layers ([[structural-sync]]):
+
+| layer | mechanism | what it costs |
+|---|---|---|
+| 1. validity | [[zheng]] proof per [[signal]] | 10-50 μs verification |
+| 2. ordering | hash chain + [[VDF]] | O(1) per signal |
+| 3. completeness | PCS opening (polynomial completeness) | ~200 bytes per namespace |
+| 4. availability | algebraic [[DAS]] (PCS samples) | ~4 KiB for 20 samples |
+| 5. merge | [[CRDT]] (local) / [[foculus]] (global) | deterministic convergence |
+
+a light client joins:
 
 ```
-top-100 particle (π ~ 10⁻²):     ~1000 replicas
-median particle (π ~ 10⁻⁶):       ~10 replicas
-tail particle (π ~ 10⁻¹²):        3 replicas (minimum)
+1. download checkpoint                    ~240 bytes
+2. verify (one zheng decider)             10-50 μs
+3. sync namespaces (PCS openings)         ~200 bytes each
+4. DAS sample (algebraic)                 ~4 KiB
+5. maintain (fold each block)             ~30 field ops / block
+
+total: < 10 KiB, 10-50 μs, ZERO trust
 ```
 
-the network spends storage budget where attention goes. [[DAS]] parameters scale with replication — high-$\pi$ content needs fewer samples for the same confidence. verification cost ([[gravity commitment]]) follows the same power law. the entire stack — proof cost, storage, replication, verification — follows the $\pi$ distribution.
+this is [[structural-sync|Verified Eventual Consistency]] (VEC): convergence guaranteed (CRDT), completeness verifiable (PCS), availability verifiable (DAS). no consensus protocol needed.
 
-see [[pi-weighted-replication]], [[gravity commitment]], [[universal law]].
+## 9. π-weighted everything
+
+$\pi^*$ ([[cyberank]] from [[tri-kernel]]) is the master distribution. the entire stack follows it:
+
+| what | how it follows π |
+|---|---|
+| verification cost | [[gravity commitment]]: high-$\pi$ particles verify cheaper |
+| storage replication | [[pi-weighted-replication]]: replicas $\propto \pi$ |
+| DAS parameters | high-$\pi$: fewer samples needed (more replicas = higher base availability) |
+| temporal decay | low-$\pi$ links decay faster (nobody reinforces them) |
+| query routing | hot queries (high-$\pi$) served from low-degree polynomial (fast) |
+
+one distribution governs proof cost, storage, availability, decay, and query performance. the [[universal law]] predicts this: given finite resources, exponential allocation minimises total cost.
 
 ## 10. the numbers
 
-```
-                        current (NMT)        polynomial (all phases)   improvement
-per-cyberlink:          ~107.5K constraints  ~3.2K constraints         33×
-per-block (1000):       ~148M constraints    ~8.3M constraints         18×
-epoch (1000 blocks):    ~70M constraints     ~100K constraints         700×
-non-membership:         128 KB + O(log N)    32 bytes + O(1)           O(1)
-inclusion proof:        ~1 KiB               ~200 bytes                5×
-DAS (20 samples):       ~471K constraints    ~3K constraints           157×
-sub-root count:         13                   1                         13×
-LogUp:                  ~6M constraints/block 0 (structural)           ∞
-NMT storage:            ~5 TB                0                         ∞
-BBG_root:               416 bytes            32 bytes                  13×
-light client join:      full chain           < 10 KiB, 10-50 μs       —
-checkpoint:             varies               ~240 bytes                —
-hemera calls/block:     ~144,000             0 (state) + batched       ∞
-```
+| metric | value |
+|---|---|
+| BBG_root | 32 bytes (one PCS commitment) |
+| checkpoint | ~240 bytes (root + accumulator + height) |
+| checkpoint verification | 10-50 μs (one zheng decider) |
+| per-cyberlink | ~3,200 constraints (public) + ~5,000 (private) = ~8,200 total |
+| per-block (1000 tx) | ~8.3M constraints |
+| epoch (1000 blocks) | ~100K constraints (HyperNova folding) |
+| inclusion proof | ~200 bytes (PCS opening) |
+| non-membership | ~200 bytes (PCS opening, was 128 KB SWBF witness) |
+| DAS (20 samples) | ~4 KiB bandwidth, ~3K constraints |
+| hemera calls/block (state) | 0 (polynomial, no tree hashing) |
+| light client join | < 10 KiB bandwidth |
+| cross-index consistency | 0 constraints (structural — same polynomial) |
 
-the cost of adding one edge to the permanent, verified, globally-available knowledge graph:
+cost of one cyberlink in the permanent, verified, globally-available knowledge graph:
 
 ```
 proof:           ~30 field ops per nox step (proof-carrying)
 identity:        ~164 constraints (folded hemera sponge)
-public state:    ~3.2K constraints (algebraic polynomial)
-private state:   ~5K constraints (polynomial mutator set)
-total overhead:  ~8.5K constraints (was ~148K — 17× reduction)
+public state:    ~3,200 constraints (polynomial update)
+private state:   ~5,000 constraints (polynomial mutator set)
+total overhead:  ~8,400 constraints
 ```
 
-## 11. honest assessment
+## 11. state transitions
 
-| claim | confidence | caveat |
+six transaction types modify BBG_poly:
+
+| transaction | what it does | constraints |
 |---|---|---|
-| three laws hold | high | architectural properties, not implementation claims |
-| 13-root structure | high | fully specified, NMT well-understood |
-| privacy (mutator set) | high | Neptune heritage, AOCL+SWBF proven |
-| 33× per-cyberlink (algebraic NMT) | high | architectural consequence of sumcheck |
-| polynomial mutator set | medium | novel, needs implementation validation |
-| unified polynomial (1 root) | medium | multivariate PCS at scale unproven |
-| signal-first reconstruction | high | deterministic fold, standard approach |
-| 157× algebraic DAS | high | follows from polynomial completeness |
-| zero implementation | critical | the stack is specification, not code |
+| CYBERLINK | update public aggregates + create private record | ~8,200 |
+| PRIVATE TRANSFER | move value between private records | ~10,000 |
+| COMPUTATION | execute [[nox]] program, deduct focus | varies |
+| MINT CARD | create non-fungible knowledge asset | ~5,000 |
+| TRANSFER CARD | change card ownership | ~3,000 |
+| BRIDGE | convert coin to focus | ~3,000 |
 
-BBG is a specification. the architecture is sound. the numbers are analytical. the real test is implementation — and the dependency chain is deep: nebu → hemera → nox → zheng → BBG.
+every transaction produces a [[zheng]] proof via [[proof-carrying computation|proof-carrying]]. every proof folds into the block accumulator via [[HyperNova]] (~30 field ops per fold).
 
-see [[structural-sync]] for the sync theory, [[cyber/research/zheng vs starks|zheng]] for the proof system, [[nox]] for the VM, [[Hemera]] for the hash, [[tri-kernel architecture]] for the focus computation, [[knowledge capacity]] for the information-theoretic limits, [[link production]] for the intelligence problem
+## 12. privacy model
+
+```
+PRIVATE (polynomial commitments):          PUBLIC (BBG_poly dimensions):
+  who linked what (individual cyberlinks)    axon weights (aggregate conviction)
+  individual conviction amounts               particle energy, π*
+  neuron linking history                      neuron summaries (focus, karma, stake)
+  market positions                            token supplies
+  UTXO values and owners                     axon market state
+```
+
+anonymous [[cyberlinks]]: a [[neurons|neuron]] proves identity ($H(\text{secret}) \in$ neuron set), stake sufficiency, nullifier freshness — without revealing which neuron. ~13,000 constraint [[zheng]] proof. the graph sees edges and weights. not authors.
+
+## 13. honest assessment
+
+| claim | confidence | basis |
+|---|---|---|
+| three laws | high | architectural properties |
+| one polynomial for all state | medium-high | multivariate PCS well-understood, scale unproven |
+| polynomial mutator set | medium | novel, needs implementation |
+| ~3,200 constraints/cyberlink | high | follows from sumcheck + Brakedown architecture |
+| algebraic DAS (157×) | high | follows from polynomial completeness |
+| signal-first reconstruction | high | deterministic fold |
+| 240-byte checkpoint | high | HyperNova accumulator well-understood |
+| zero implementation | critical | specification only, no code |
+
+the dependency chain: [[nebu]] → [[Hemera]] → [[nox]] → [[zheng]] → BBG. nothing runs until the stack beneath it runs.
+
+see [[structural-sync]] for the sync theory, [[cyber/research/zheng vs starks|zheng]] for the proof system, [[cyber/research/nox|nox]] for the VM, [[Hemera]] for the hash, [[tri-kernel architecture]] for focus, [[knowledge capacity]] for limits, [[link production]] for the intelligence problem, [[algebraic state commitments]] for why polynomial state is natural
