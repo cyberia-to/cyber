@@ -627,7 +627,236 @@ a light client:
 3. gets: all signals valid, all ordered, nothing withheld, data available, merge correct
 4. from genesis to now
 
-## 12. Hemera: Trust Anchor, Not Prover
+## 12. The Full Pipeline
+
+the mechanisms in sections 2–11 compose into one end-to-end pipeline. seven stages, from cyberlink creation to light client verification. every stage is a fold.
+
+### 12.1 Overview
+
+```
+DEVICE                          NETWORK                         CLIENT
+──────                          ───────                         ──────
+create cyberlinks               include in block                download checkpoint
+  ↓ proof-carrying                ↓ algebraic state               ↓ one decider
+hemera identity                 fold into block accumulator     sync namespaces
+  ↓ folded sponge                 ↓ folding-first                 ↓ PCS openings
+build signal                    fold into epoch accumulator     DAS sample
+  ↓ (ν, l⃗, π_Δ, σ, prev...)     ↓ universal accumulator          ↓ algebraic DAS
+local sync                      publish checkpoint              full VEC state
+  ↓ CRDT + NMT + DAS              ↓ ~240 bytes                    ↓ < 10 KiB total
+submit to network
+  ↓ foculus π convergence
+```
+
+### 12.2 Stage 1: signal creation (device)
+
+a neuron creates cyberlinks on a device. computation, hashing, and proving happen in one pass.
+
+nox execution with proof-carrying: each reduce() call dispatches a pattern, generates one trace row, and folds it into the accumulator (~30 field ops). at computation end, the accumulator IS the proof.
+
+for binary workloads (quantized AI inference, tri-kernel SpMV): nox<F₂> execution → Binius PCS → fold into F_p accumulator. boundary cost: ~766 F_p constraints. binary jets (popcount, packed_inner_product, binary_matvec) give 1,400× over naive F_p.
+
+hemera identity with folded sponge: content addressing H(cyberlink) = particle identity. K absorption blocks × 30 field ops + 1 decider = ~2,956 constraints for a 4 KiB particle (vs ~54K current, 18× savings).
+
+signal assembly:
+
+```
+signal = {
+  ν:    neuron_id                          subject
+  l⃗:    [cyberlink]                        the batch
+  π_Δ:  [(particle, F_p)]                  impulse (focus shift)
+  σ:    proof_carrying_accumulator         the proof
+  prev: H(previous signal)                ordering (hash chain)
+  mc:   H(causal DAG root)                ordering (Merkle clock)
+  vdf:  VDF(prev, T_min)                  ordering (physical time)
+  step: u64                               ordering (logical clock)
+}
+
+signal size: ~1-5 KiB
+proof cost:  ZERO additional (proof-carrying)
+```
+
+### 12.3 Stage 2: local sync (device ↔ device)
+
+same neuron's devices sync via structural sync layers 1-5.
+
+```
+1. compare merkle_clock roots                      O(1), 32 bytes
+2. exchange signal polynomial commitments           O(1), 32 bytes
+3. request missing step ranges with PCS proofs      ~200 bytes per namespace
+4. DAS sample content chunks (algebraic)            20 × ~200B = 4 KiB
+5. verify each signal (decider)                     10-50 μs
+6. CRDT merge → deterministic total order           O(signals)
+
+total bandwidth (catch up 1 hour, ~100 signals):    ~204 KiB
+```
+
+### 12.4 Stage 3: network submission
+
+```
+1. neuron submits signal to network
+2. peers verify σ                                   10-50 μs
+3. foculus: π convergence (1-3 seconds)
+4. block producer includes signals, assigns t
+```
+
+no ordering coordination. deterministic ordering from signal metadata (causal > VDF > hash tiebreak). foculus determines WEIGHTS, not ORDER.
+
+### 12.5 Stage 4: block processing
+
+every operation is a polynomial update, not a tree rehash.
+
+per-cyberlink public state update (algebraic polynomial):
+```
+4.5 path updates × 32 depth × ~100 field ops = ~3.2K constraints
+LogUp: 0 (structural — same polynomial)
+total: ~3.2K constraints (was ~107.5K, improvement: 33×)
+```
+
+per-cyberlink private state update (polynomial mutator set):
+```
+commitment polynomial: O(1) PCS opening
+nullifier polynomial: O(1) PCS opening
+total: ~5K constraints (was ~40K, improvement: 8×)
+```
+
+per-block accumulation (1000 cyberlinks):
+```
+state updates:        1000 × 3.2K = ~3.2M constraints   (was ~108M)
+private updates:      1000 × 5K = ~5M constraints       (was ~40M)
+hemera identity:      batched → 736 + O(1000) ≈ ~2K     (was 736K)
+fold per signal:      1000 × 30 field ops = 30K          (negligible)
+block decider:        1 × 70K constraints
+total:                ~8.3M constraints                   (was ~148M, 18×)
+hemera for state:     0                                   (was 144,000 calls)
+```
+
+BBG commitment evolution:
+```
+current:     BBG_root = H(13 × 32-byte sub-roots) = H(416 bytes)
+phase 1:     BBG_root = H(BBG_poly ‖ private_roots ‖ signals.root) — 9 NMTs → 1 poly
+endgame:     BBG_root = PCS.commit(BBG_poly) — one 32-byte commitment
+```
+
+### 12.6 Stage 5: epoch finalization
+
+```
+epoch = 1000 blocks
+
+folding-first: 1000 folds × 30 field ops + 1 decider = ~100K constraints
+(was: 1000 × 70K = 70M constraints, improvement: 700×)
+
+universal accumulator: fold ALL five structural sync layers into one ~200 byte object
+```
+
+### 12.7 Stage 6: light client
+
+```
+1. download checkpoint                              ~240 bytes
+2. verify accumulator (one decider)                  10-50 μs
+3. sync namespaces (PCS opening each)                ~200 bytes per namespace
+4. DAS sample (20 algebraic samples)                 ~4 KiB
+5. maintain (fold each new block)                    ~30 field ops / block
+
+total join:
+  bandwidth:     < 10 KiB
+  computation:   10-50 μs
+  storage:       ~240 bytes + monitored namespaces
+  trust:         ZERO (mathematics only)
+```
+
+### 12.8 Stage 7: verifiable queries
+
+```
+verifiable query compiler:
+  CozoDB query → relational algebra → CCS constraints → zheng proof
+
+examples:
+  "top 100 particles by π":                batch opening + permutation + range check
+                                            proof: ~5 KiB, verify: 10-50 μs
+
+  "all cyberlinks from neuron N after t":   temporal polynomial opening + decomposition
+                                            proof: ~3 KiB, verify: 10-50 μs
+
+gravity commitment:
+  high-π queries (hot layer):  ~1 KiB proof, ~10 μs
+  low-π queries (cold layer):  ~8 KiB proof, ~200 μs
+  average (power-law):         ~2 KiB proof, ~30 μs
+```
+
+### 12.9 End-to-end numbers
+
+```
+                        current              full pipeline         improvement
+SIGNAL CREATION
+  proving latency:      separate phase       zero (proof-carrying) ∞
+  hemera per hash:      ~736 constraints     ~164 (folded sponge)  4.5×
+  binary workloads:     32-64× overhead      native (Binius)       32-64×
+
+LOCAL SYNC
+  completeness proof:   ~1 KiB (NMT)        ~200 bytes (PCS)      5×
+  DAS verification:     ~20 KiB              ~4 KiB                5×
+  signal verify:        ~1 ms                10-50 μs              20-100×
+
+BLOCK PROCESSING
+  per cyberlink:        ~107.5K constraints  ~3.2K                 33×
+  per block (1000):     ~148M constraints    ~8.3M                 18×
+  hemera calls/block:   ~144,000             0 (state) + batched   ∞ / 400×
+  LogUp cost:           ~6M constraints      0 (structural)        ∞
+
+EPOCH (1000 blocks)
+  composition:          ~70M constraints     ~100K                 700×
+
+LIGHT CLIENT
+  join bandwidth:       full chain           < 10 KiB              1000×+
+  join verification:    O(chain) replay      10-50 μs              ∞
+  checkpoint size:      varies               ~240 bytes            —
+  DAS bandwidth:        ~20 KiB              ~4 KiB                5×
+
+QUERY
+  namespace proof:      ~1 KiB (NMT)        ~200 bytes (PCS)      5×
+  arbitrary query:      custom proof         compiler-generated     general
+  hot query:            ~1 ms                ~10 μs                100×
+
+STORAGE
+  NMT internal nodes:   ~5 TB (9 indexes)   0                     ∞
+  BBG_root:             416 bytes            32 bytes (1 poly)     13×
+```
+
+### 12.10 Cost of one cyberlink
+
+the cost of adding one edge to the permanent, verified, globally-available knowledge graph:
+
+```
+computation:    nox execution (application-dependent)
+proof:          ~30 field ops per reduce() step (folded into execution)
+identity:       ~164 constraints (folded hemera sponge)
+public state:   ~3.2K constraints (algebraic polynomial update)
+private state:  ~5K constraints (polynomial mutator set)
+ordering:       1 VDF computation (T_min wall-clock)
+availability:   erasure encoding of signal (O(n log² n) field ops)
+
+total proving overhead: ~8.5K constraints
+(vs ~148K in current architecture — 17× reduction)
+```
+
+### 12.11 The quantum jump
+
+the current architecture has distinct systems: a VM (nox), a prover (zheng), a hash (hemera), an authenticated state layer (bbg), and sync protocols. they connect through interfaces.
+
+the full pipeline dissolves the boundaries. one continuous fold starts inside the VM and ends at the light client:
+
+```
+VM → hash → proof → signal → sync → block → epoch → checkpoint → client
+     ↑                                                              ↓
+     └──────────── one accumulator, ~30 ops per step ──────────────┘
+```
+
+the accumulator is the universal witness. it proves computation happened correctly (layer 1), in the right order (layer 2), completely (layer 3), on available data (layer 4), with deterministic merge (layer 5). five independent properties, one object, one verification.
+
+this is a **self-proving knowledge graph**: every edge carries its own proof, every query is verified, every sync is complete, and the entire history compresses to 240 bytes.
+
+## 13. Hemera: Trust Anchor, Not Prover
 
 ### 12.1 hemera-2 parameters
 
@@ -660,7 +889,7 @@ Brakedown commitment    1 per proof         always hemera (binding hash)
 
 hemera starts as dominant cost (>90% of constraints) and converges to trust anchor (~1% of constraints). Brakedown eliminates hemera from PCS. algebraic NMT eliminates hemera from state. algebraic DAS eliminates hemera from availability. what remains: content identity and privacy — the irreducible cryptographic anchors.
 
-## 13. Polynomial State and Algebraic DAS
+## 14. Polynomial State and Algebraic DAS
 
 ### 13.1 Why polynomial state is natural
 
@@ -700,7 +929,7 @@ ratio: 157×
 
 the erasure-coded grid P(row, col) IS a bivariate polynomial. Brakedown commits to it with O(N) field operations. each DAS sample is one PCS opening.
 
-## 14. The Landscape and Honest Assessment
+## 15. The Landscape and Honest Assessment
 
 ### 14.1 Production systems (early 2026)
 
@@ -737,7 +966,7 @@ proof hemera:   1 call vs O(N log N)      Brakedown vs Merkle tree
 
 these cannot be closed by optimizing FRI. they require changing the foundation.
 
-## 15. Open Problems
+## 16. Open Problems
 
 1. **Brakedown expander construction.** which family (Margulis, Ramanujan, random) achieves optimal security/size for Goldilocks? concrete parameters for 128-bit security.
 
