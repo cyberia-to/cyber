@@ -327,3 +327,5 @@ The architecture implies specific capabilities for [[cyb]] as the interface to t
 
 see [[cyb/languages]] for the fourteen computation languages and their algebraic completeness. see [[cyb/architecture]] for how the proving architecture integrates into the operating system. see [[zheng]] for the STARK implementation. see [[Hemera]] for the commitment scheme. see [[cybergraph]] for the accumulation state.
 y
+
+discover all [[concepts]]

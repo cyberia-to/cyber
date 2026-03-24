@@ -44,3 +44,5 @@ formula particles are the most precise objects in the [[cybergraph]]. a text par
 formula states what must be true with precision. [[text]] argues for it in prose. [[table]] contains the data that supports it. [[vector]] visualizes the geometry it describes. [[component]] makes it interactive. together they are the complete scientific artifact
 
 see [[latex]] for the primary source format. see [[text]] for prose argumentation. see [[table]] for quantitative data that formulas model
+
+discover all [[concepts]]

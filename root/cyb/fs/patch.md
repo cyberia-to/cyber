@@ -73,3 +73,5 @@ designed for parallel [[neuron]] and agent workflows at planetary scale. multipl
 post-quantum [[cryptography]] from [[genesis]]. [[hash]] via [[Poseidon2]]-Goldilocks, [[signatures]] via the protocol's post-quantum scheme, proofs via [[starks]] over [[Goldilocks field]]
 
 see [[cyber/patch/spec]] for the full specification. see [[cyb/fs/sync]] for how patches pass through the five verification layers of [[structural sync]]
+
+discover all [[concepts]]

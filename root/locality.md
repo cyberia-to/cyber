@@ -33,3 +33,5 @@ every other operator family (global spectral methods, all-pairs shortest paths, 
 locality means edits are cheap: when a [[neuron]] creates a [[cyberlink]], only the local neighborhood needs recomputation. the rest of the [[cybergraph]] is unaffected up to error ε. this is what makes [[collective focus]] computable in real time on a planetary network
 
 see [[tri-kernel architecture]] for the full derivation. see [[collective focus theorem]] for the locality radius proof
+
+discover all [[concepts]]

@@ -865,3 +865,5 @@ T8. Adversarial soundness: no patch can forge authorship under ML-DSA
 CyberPatch Specification v0.1 — draft for internal review
 [[cyber]] Ecosystem — nox
 Status: Pre-implementation design
+
+discover all [[concepts]]

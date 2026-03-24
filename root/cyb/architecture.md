@@ -355,3 +355,5 @@ Decision:     split / merge    (diverge / converge)
 fourteen languages. nine primitives. ten decisions. three atoms. three times. one fork. one join. one tree. one [[proof]]. one operating system.
 
 see [[cyb]], [[cyb/whitepaper]], [[cyb/languages]], [[cyb/multiproof]], [[Rust]], [[cyber]]
+
+discover all [[concepts]]

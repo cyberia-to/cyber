@@ -44,3 +44,5 @@ a pixels particle is often the most irreplaceable in the graph: it is the observ
 pixels is the ground truth. [[vector]] draws what must be understood; pixels captures what is. [[video]] extends pixels into the time dimension. [[text]] annotates what pixels shows; pixels shows what [[text]] describes
 
 see [[vector]] for resolution-independent imagery. see [[video]] for temporal sequences. see [[sound]] for the acoustic complement to visual evidence
+
+discover all [[concepts]]

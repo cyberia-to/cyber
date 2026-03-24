@@ -77,3 +77,5 @@ each particle renders independently. no cascading styles, no reflow between part
 each tab is a different layout mode over the same particle stream
 
 see [[particle]] for the protocol concept. see [[cyb/features]] for the PureRender engine. see [[cyb/wgpu]] for GPU abstraction
+
+discover all [[concepts]]

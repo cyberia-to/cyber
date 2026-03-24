@@ -131,3 +131,5 @@ see [[collective focus theorem]] for convergence proof. see [[tri-kernel]] for w
 ## extensions
 - [[gflownet focus flow]]
 - [[topos ffc integration]]
+
+discover all [[concepts]]

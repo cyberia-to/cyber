@@ -31,3 +31,5 @@ linkchains capture multi-hop reasoning. a single [[cyberlink]] states one relati
 the [[tru]] indexes linkchains during [[consensus]], enabling queries like "all directed paths of length $k$ from [[particle]] $p$." this makes the graph traversable as a reasoning substrate
 
 see [[cyberlinks]], [[cybergraph]], [[particle]], [[neuron]], [[tri-kernel]]
+
+discover all [[concepts]]

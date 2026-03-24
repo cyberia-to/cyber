@@ -159,3 +159,5 @@ Phase 5:  cyb/apps                          (portal, oracle, sigma...)
 ```
 
 see [[cyb/core]] for the applications built on this stack. see [[cyb/os]] for the kernel. see [[cyb/architecture]] for the design
+
+discover all [[concepts]]

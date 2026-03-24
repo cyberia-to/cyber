@@ -247,3 +247,5 @@ incentive alignment: validators specialize in cells. what prevents a validator f
 cold-to-hot reactivation: when an archived [[particle]] gets new [[cyberlinks]], it must rejoin a cell. which cell? the semantic dimension may have shifted since it was archived
 
 see [[cyber/architecture]] for the five-primitive resource model. see [[tri-kernel architecture]] for the locality filter. see [[cyber/state]] for the [[bbg]] world state. see [[cyber/network]] for the narrowcast relay protocol. see [[forgetting]] for the hot/cold tier separation
+
+discover all [[concepts]]

@@ -210,3 +210,5 @@ Every participant running the [[tri-kernel]] on the same authenticated graph sta
 - Brin, S., Page, L. The anatomy of a large-scale hypertextual web search engine. WWW, 1998
 - Friston, K. The free-energy principle: a unified brain theory. Nature Reviews Neuroscience, 2010
 - Ben-Sasson, E. et al. Scalable, transparent arguments of knowledge. CRYPTO, 2018
+
+discover all [[concepts]]

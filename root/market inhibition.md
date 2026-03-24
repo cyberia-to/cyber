@@ -31,3 +31,5 @@ the [[tri-kernel]] processes both signals simultaneously: [[diffusion]] spreads 
 inhibition carries a cost. a [[neuron]] that inhibits a link must stake into the [[ICBS]] market against it. if the link turns out to be valid, the inhibitor loses stake. this symmetry ensures that both belief and disbelief are costly — cheap talk in either direction is eliminated
 
 see [[cyberlinks]], [[cybergraph]], [[ICBS]], [[tri-kernel]], [[attention]], [[tru]]
+
+discover all [[concepts]]

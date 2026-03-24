@@ -44,3 +44,5 @@ a video particle is timestamped evidence at its highest resolution. the observat
 video is pixels made temporal. [[pixels]] is the individual frame; video is the sequence. [[sound]] is often the acoustic component of the same event — a video particle and a sound particle may link to the same underlying event. [[text]] annotates what video shows
 
 see [[pixels]] for single-frame content. see [[sound]] for acoustic knowledge. see [[component]] for interactive video players with synchronized annotation
+
+discover all [[concepts]]

@@ -44,3 +44,5 @@ a single vector particle can carry the complete structural knowledge of a domain
 vector is the visual language of structure. [[pixels]] captures reality as it is; vector describes it as it must be understood. [[formula]] states a physical law; vector shows the geometry it describes. together they are the diagram and the equation
 
 see [[svg]] for the source format. see [[pixels]] for raster content. see [[formula]] for mathematical notation that vector paths can render
+
+discover all [[concepts]]

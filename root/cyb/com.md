@@ -71,3 +71,5 @@ com adapts to where you are:
 the palette shows only relevant commands for the current context
 
 see [[cyb/core]] for how com fits among the nine core apps. see [[cyb/robot]] for the autonomous counterpart that acts without keyboard input
+
+discover all [[concepts]]

@@ -35,3 +35,5 @@ at 10^15 [[neurons]] with ~10^8 [[cyberlinks]] each, the graph holds ~10^23 edge
 most of 2^256 is empty. the occupied region is a tiny cluster in the hash space, structured by [[cyberlinks]] into [[cyberspace]]. the [[cyber/hierarchy]] organizes this cluster into [[cells]], zones, and domains. the hash provides identity. the links provide structure. the [[tri-kernel]] provides meaning
 
 see [[cyberspace]] for the navigable semantic space. see [[cyber/hierarchy]] for how the occupied region scales. see [[Hemera]] for the hash function
+
+discover all [[concepts]]

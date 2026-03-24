@@ -25,3 +25,5 @@ the machine is deterministic: given the same [[cybergraph]] state, it always pro
 the relevance machine replaces centralized ranking algorithms with a cryptoeconomic consensus on what deserves attention
 
 see [[tru]], [[cybergraph]], [[focus]], [[particle]], [[cyberlink]], [[diffusion]]
+
+discover all [[concepts]]

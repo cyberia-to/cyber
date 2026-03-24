@@ -18,3 +18,5 @@ maps to native backends: Vulkan on Linux, Metal on macOS/iOS, DX12 on Windows, O
 used by [[cyb/features]] PureRender for all visual output: glyph atlases, Vello path rasterization, texture sampling, compute shaders for waveform visualization and table virtualization
 
 see [[cyb/features]] for the render pipeline. see [[cyb/onnx]] for the neural inference complement
+
+discover all [[concepts]]

@@ -41,3 +41,5 @@ the core apps cover the fundamental interactions a [[neuron]] has with the [[cyb
 - command: [[cyb/com]] provides direct keyboard-driven control
 
 see [[cyb/apps]] for the full application catalog including non-core apps. see [[cyb/stack]] for the seven crates these apps are built from. see [[cyb/os]] for the kernel they run on
+
+discover all [[concepts]]

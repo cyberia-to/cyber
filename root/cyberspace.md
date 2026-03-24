@@ -178,3 +178,5 @@ it is a semantic space with [[geometry]] — a space where concepts have positio
 cyberspace is that space. the [[cyber/hierarchy]] scales it to [[Avogadro]] numbers. the [[tri-kernel]] computes its meaning. [[optica]] renders it visible
 
 see [[markup]] for the grammar. see [[cyber/hierarchy]] for the scaling architecture. see [[focus]] for the collective [[attention]] distribution. see [[cyberank]] for the per-[[particle]] score
+
+discover all [[concepts]]

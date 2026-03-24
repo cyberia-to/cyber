@@ -805,3 +805,5 @@ The outer district bridges these seven inward-facing spaces to the world — thr
 ---
 
 Five axioms. One grammar. Twenty-one domains. An irreducible basis for thought.
+
+discover all [[concepts]]

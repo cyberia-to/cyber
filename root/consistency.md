@@ -27,3 +27,5 @@ three forces make inconsistency unsustainable:
 the result: consistency across the [[cybergraph]] is a [[nash equilibrium]] maintained by [[game theory]], computed by [[mathematics]], and enforced by [[economics]]
 
 see [[consensus]] for the process that produces consistency. see [[collective focus theorem]] for the convergence proof
+
+discover all [[concepts]]

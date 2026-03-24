@@ -37,3 +37,5 @@ cyber/truth         by path (mutable, human-navigable)
 ```
 
 see [[markup]] for the full sigil grammar. see [[cyberspace]] for navigating the filesystem as a space. see [[cyb/fs/sync]] for how file operations sync across devices with five-layer verification. see [[cyb/fs/patch]] for commutative patch semantics
+
+discover all [[concepts]]

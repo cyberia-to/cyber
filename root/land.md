@@ -21,3 +21,5 @@ in [[cyber valley]]: 37 ha of andosol on the slope of Sanghyang volcano. andosol
 five [[land primitives]] for all operations: [[plot]] (construction), [[pond]] (water retention), [[road]] (vehicle access), [[terrace]] (cultivation), [[trail]] (foot traffic). every clearing has a target type. drainage integrated into all elements. protected forest managed separately
 
 see [[territory]] for the political claim, [[land primitives]] for the operational grammar, [[biome engineering]] for the growing system, [[soil]] for the living substrate
+
+discover all [[concepts]]

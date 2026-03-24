@@ -439,3 +439,5 @@ all [[particles]] are currently public by default. no syntax for access control:
 ### non-issues (resolved by design)
 
 language / locale — translation is a rendering artifact. any [[particle]] can be rendered in any language on the fly. no syntax needed; locale belongs in the view layer, not the address layer
+
+discover all [[concepts]]

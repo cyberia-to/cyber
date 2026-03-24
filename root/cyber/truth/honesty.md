@@ -41,3 +41,5 @@ dishonest [[neurons]] face the opposite: wrong predictions → [[karma]] stagnat
 most systems enforce honesty through rules, moderation, or reputation voting. the [[cybergraph]] produces honesty from mechanics: cost prevents spam, scoring rewards accuracy, markets correct errors, and [[karma]] compounds the advantage. no administrator decides who is honest. the [[tri-kernel]] computes it
 
 see [[cost]] for the entry barrier. see [[serum]] for the scoring proof. see [[coupling]] for the market mechanism. see [[karma]] for the compounding effect
+
+discover all [[concepts]]

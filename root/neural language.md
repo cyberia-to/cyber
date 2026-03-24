@@ -26,3 +26,5 @@ one of the 19 [[computation]] [[languages]] in [[cyber]]. neural language sits a
 the [[relevance machine]] computes [[focus]] over particles, but neural language defines what those focus values mean. a high-focus particle in a dense cluster signifies a core concept; a high-focus particle with sparse links signifies a gateway
 
 see [[cyberlink]], [[topology]], [[cybergraph]], [[computation]], [[languages]], [[datalog]], [[focus]]
+
+discover all [[concepts]]

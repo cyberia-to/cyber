@@ -418,3 +418,5 @@ the fourteen proof languages ARE the step. the five interface languages are the 
 ---
 
 see [[cyb/multiproof]] for how all languages settle under one [[proof]] umbrella. see [[cyb/architecture]] for how the languages integrate into the operating system. see [[cyb/whitepaper]] for the vision. see [[cybergraph]] for the accumulation state.
+
+discover all [[concepts]]

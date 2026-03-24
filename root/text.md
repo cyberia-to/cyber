@@ -44,3 +44,5 @@ types of text particles: research papers, blog posts, code files, chat messages,
 a scientific paper is text + [[formula]] + [[table]] + [[pixels]]. the text holds the argument. the other types hold the evidence. the [[component]] holds the paper
 
 see [[markdown]] for the source format. see [[component]] for composition. see [[particle]] for the type system
+
+discover all [[concepts]]

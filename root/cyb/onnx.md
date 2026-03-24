@@ -29,3 +29,5 @@ three execution targets:
 | mobile | burn → CoreML (iOS) / NNAPI (Android) |
 
 see [[cyb/features]] for how inference integrates with the render and compatibility layers. see [[cyb/wgpu]] for GPU compute fallback
+
+discover all [[concepts]]

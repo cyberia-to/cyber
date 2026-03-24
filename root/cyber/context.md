@@ -56,3 +56,5 @@ cat ~/git/context/200k.md | claude --system-prompt -
 ```
 
 see [[cyber/context packing]] for the ranking algorithm. see [[tri-kernel]] for the three operators. see [[focus]] for the composite measure
+
+discover all [[concepts]]
