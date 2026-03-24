@@ -1,6 +1,6 @@
 ---
 tags: biology
-alias: leaf, foliage
+alias: leaf, foliage, leave
 ---
 
 the primary photosynthetic organ of a [[plant]]. leaves capture light energy, exchange gases (CO2 in, O2 out), and transpire water — collectively driving the carbon cycle and atmospheric composition
