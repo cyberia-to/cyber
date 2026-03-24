@@ -441,10 +441,10 @@ the proof is the transcript: all the prover's messages concatenated. the verifie
 ```
 Fiat-Shamir cost:
   current: ~20 hemera squeeze calls per proof = 20 × 736 = ~14,720 constraints
-  hemera-3 algebraic FS: 1 hemera seed + 19 polynomial challenges = ~1,686 constraints
+  with algebraic FS: 1 hemera seed + 19 polynomial challenges = ~1,686 constraints
 ```
 
-hemera-3's [[algebraic Fiat-Shamir]] derives subsequent challenges from polynomial evaluations rather than additional hash calls — 8.7× reduction in Fiat-Shamir cost.
+[[algebraic Fiat-Shamir]] derives subsequent challenges from polynomial evaluations rather than additional hash calls — 8.7× reduction in Fiat-Shamir cost.
 
 ## 9. HyperNova: Folding Instead of Verifying
 
@@ -861,7 +861,7 @@ this is a **self-proving [[cybergraph|knowledge graph]]**: every edge carries it
 
 ## 13. [[Hemera]]: Trust Anchor, Not Prover
 
-### 13.1 hemera-2 parameters
+### 13.1 hemera parameters
 
 ```
 hash:            Poseidon2 over Goldilocks
@@ -884,7 +884,7 @@ role                    hemera calls        evolution
 content identity        1 per particle      always hemera (identity must persist)
 private records         1 per UTXO          always hemera (privacy binding)
 Fiat-Shamir seed        1 per proof         always hemera (transcript binding)
-Fiat-Shamir challenges  19 per proof        hemera-3: algebraic (polynomial)
+Fiat-Shamir challenges  19 per proof        algebraic FS: polynomial challenges
 NMT tree hashing        144K per block      algebraic NMT: 0 (polynomial state)
 DAS inclusion proofs    640 per verify      algebraic DAS: 0 (PCS openings)
 Brakedown commitment    1 per proof         always hemera (binding hash)
