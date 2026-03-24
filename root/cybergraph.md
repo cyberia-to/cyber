@@ -2,7 +2,9 @@
 icon: 🕸
 tags: cyber, core, mathematics
 alias: cybergraphs
-crystal-type: observed
+crystal-type: entity
+crystal-domain: cyber
+subgraph: true
 crystal-domain: cyber
 crystal-size: article
 diffusion: 0.022987905434778945

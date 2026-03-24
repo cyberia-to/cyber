@@ -1,8 +1,8 @@
 ---
-tags: article, cip
+tags: cyber, core, cip
 crystal-type: process
 crystal-domain: cyber
-status: draft
+subgraph: true
 stake: 23432890576785020
 diffusion: 0.00032012214294601987
 springs: 0.0014955253851135061

@@ -3,7 +3,8 @@ alias: truth machine, relevance machine, truth medium, rm, tm
 icon: 🖖🏽
 tags: cyber, core
 crystal-type: entity
-crystal-domain: biology
+crystal-domain: cyber
+subgraph: true
 crystal-size: bridge
 stake: 16417668960360008
 diffusion: 0.005184624863262818
