@@ -13,34 +13,97 @@ the [[cybergraph]] must be stored, indexed, and queried. the polynomial commitme
 
 the [[BBG]] state at [[bostrom]] scale:
 
-| index | entries | record size | total |
+| index | entries | record size | total | notes |
+|---|---|---|---|---|
+| particles | 3M | 128 bytes (4 × F_p CID + energy + π* + flags) | 384 MB | CID = 4 field elements |
+| axons_out | 2.7M | 64 bytes | 173 MB | |
+| axons_in | 2.7M | 64 bytes | 173 MB | |
+| neurons | 70K | 56 bytes | 4 MB | |
+| locations | 70K | 104 bytes | 7 MB | |
+| coins | ~100 | 81 bytes | 8 KB | |
+| cards | ~10K | 104 bytes | 1 MB | |
+| files | ~100K | 76 bytes | 8 MB | |
+| time | ~1M snapshots | 72 bytes | 72 MB | |
+| total | ~12M entries | | ~822 MB | |
+
+these are [[bostrom]] numbers — the bootloader. the design target is [[Avogadro scale]]:
+
+| scale | particles | cyberlinks | state size | fits on |
+|---|---|---|---|---|
+| bostrom (now) | 3 × 10⁶ | 2.7 × 10⁶ | ~822 MB | phone |
+| city (10³ neurons, dense) | 10⁹ | 10¹⁰ | ~128 GB | server |
+| planet (10⁶ neurons) | 10¹⁵ | 10¹⁶ | ~128 PB | datacenter cluster |
+| solar system | 10¹⁸ | 10¹⁹ | ~128 EB | civilization-scale |
+| Avogadro | 10²³ | 10²⁴ | ~12.8 ZB | distributed across all participants |
+
+no single machine holds the full state past city scale. the data structure must be DISTRIBUTED from the design, not "sharded later." every participant stores a namespace shard and verifies the whole via polynomial commitment.
+
+## the design constraint: Avogadro from day one
+
+the architecture cannot assume "fits on one machine." at 10²³ particles, no machine, no datacenter, no company holds the full state. the state is INHERENTLY distributed across all participants.
+
+this changes everything about data structure choice:
+
+- there is no "hot state in RAM" for the full graph
+- every node stores a SHARD (its namespace neighborhood)
+- the polynomial commitment authenticates the WHOLE (32 bytes regardless of scale)
+- proof = PCS opening: "this value at this position in this shard is consistent with the global commitment"
+- a phone storing 1 MB of its neuron's state can verify claims about 12.8 ZB of global state
+
+the access pattern PER NODE:
+
+| operation | what | frequency | latency budget |
 |---|---|---|---|
-| particles | 3M | 96 bytes | 288 MB |
-| axons_out | 2.7M | 64 bytes | 173 MB |
-| axons_in | 2.7M | 64 bytes | 173 MB |
-| neurons | 70K | 56 bytes | 4 MB |
-| locations | 70K | 104 bytes | 7 MB |
-| coins | ~100 | 81 bytes | 8 KB |
-| cards | ~10K | 104 bytes | 1 MB |
-| files | ~100K | 76 bytes | 8 MB |
-| time | ~1M snapshots | 72 bytes | 72 MB |
-| total | ~12M entries | | ~726 MB |
+| local read | entries in my namespace shard | ~5000/block | nanoseconds (RAM) |
+| local write | update my particles, my axons | ~1000/block | nanoseconds (RAM) |
+| remote verify | PCS opening proof from another shard | ~100/block | microseconds (network + verify) |
+| commitment delta | update my shard's sub-commitment | 1/block | microseconds (field arithmetic) |
+| global commitment | compose all shard sub-commitments | 1/epoch | milliseconds (aggregate) |
 
-at 10× growth (30M particles, 27M cyberlinks): ~7.3 GB
-at 100× growth (300M particles): ~73 GB
-at Avogadro scale: impossible on one machine — sharding required
+the key insight: reads and writes are LOCAL (to my shard, in my RAM). verification is GLOBAL (any shard, via PCS opening). the data structure optimizes local access. the polynomial optimizes global verification.
 
-## the access pattern
+## the distributed polynomial: shard commitments compose
 
-every block (~5 seconds):
-- read: ~5000 random entries (validate signals, check nullifiers, read neuron states)
-- write: ~1000 entries (update particles, axons, neurons for new cyberlinks)
-- scan: 0-10 range queries (namespace completeness proofs, light client sync)
-- commit: compute polynomial delta from ~1000 dirty entries
+the global BBG_poly is not one giant polynomial. it is a composition of shard polynomials:
 
-the key observation: reads dominate (5:1 ratio). writes are batched per block. scans are rare. commitment is pure computation (field arithmetic, not I/O).
+$$\text{BBG\_root} = \text{compose}(C_1, C_2, \ldots, C_S)$$
 
-## tier 1: in-memory (the state fits in RAM)
+each shard $C_i$ commits to a namespace range. the composition is a polynomial operation (not a hash tree merge). properties:
+
+- update shard $C_i$: O(|dirty_i|) field ops (local)
+- compose all shards: O(S) field ops where S = number of shards
+- cross-shard proof: open $C_i$ at point + compose proof against BBG_root
+- verify: O(1) field ops (same as single-shard)
+
+sharding by namespace is natural: particles are CID-addressed (uniformly distributed hash space). split hash space into ranges. each range = one shard. each shard = one node (or redundant set of nodes).
+
+```
+shard assignment:
+  CID space: [0, 2²⁵⁶)
+  S shards: each covers [i × 2²⁵⁶/S, (i+1) × 2²⁵⁶/S)
+  neuron stores: shards containing its particles + shards it queries frequently
+
+at Avogadro (10²³ particles, S = 10⁶ shards):
+  particles per shard: 10¹⁷
+  state per shard: ~12.8 TB
+  → each shard is a serious machine (or cluster)
+
+at planet (10¹⁵ particles, S = 10³ shards):
+  particles per shard: 10¹²
+  state per shard: ~128 GB
+  → one server per shard
+
+at city (10⁹ particles, S = 10 shards):
+  particles per shard: 10⁸
+  state per shard: ~12.8 GB
+  → one machine holds several shards
+```
+
+## within a shard: the local data structure
+
+each shard is a self-contained polynomial state. the data structure question is: how does a shard store its entries locally?
+
+## tier 1: in-memory (shard fits in RAM)
 
 when total state < available RAM (currently 726 MB, fits on any machine with 2+ GB):
 
@@ -221,27 +284,31 @@ but honestly: HDD is for archival/historical state, not hot path. active consens
 ## the complete storage architecture
 
 ```
-HOT STATE (current block, in RAM):
-  flat array + Swiss table HashMap
-  ~726 MB at current scale
-  50 ns reads, 60 ns writes
-  polynomial commitment: 32 bytes
+PER-NODE (each participant):
 
-WARM STATE (recent history, SSD):
-  B+ tree with top-3-level RAM cache
-  20-50 μs reads
-  for: light client historical queries, replay
+  MY SHARD (hot, in RAM or SSD depending on shard size):
+    flat array + HashMap    if shard < RAM
+    B+ tree on SSD          if shard > RAM
+    polynomial sub-commitment: 32 bytes
 
-COLD STATE (full history, HDD/network):
-  LSM with bloom filters in RAM
-  8 ms per random read (avoided by bloom)
-  for: archival, research analytics, deep replay
+  NEIGHBOR CACHE (warm, for frequent cross-shard queries):
+    LRU cache of PCS openings from other shards
+    no trust: every cached value has a proof
 
-POLYNOMIAL COMMITMENT:
-  always in RAM (32 bytes)
-  delta update per block: O(|dirty|) field ops
-  full recompute: O(N) field ops (for snapshot verification)
+  HISTORY (cold, SSD or HDD):
+    append-only log of my shard's state changes
+    B+ tree for historical queries by time
+    for: replay, analytics, archival
+
+GLOBAL (network-wide):
+
+  BBG_root = compose(C₁, C₂, ..., C_S)
+  32 bytes regardless of total state size
+  every node knows BBG_root (from consensus)
+  cross-shard verification: O(1) field ops per opening
 ```
+
+the critical property: a node holding 1 MB of its own namespace can verify claims about the ENTIRE graph via BBG_root. the polynomial commitment is scale-invariant — verification cost is O(1) whether the graph has 3M or 10²³ particles.
 
 ## the relationship to hardware evolution
 
@@ -268,66 +335,68 @@ the data structure disappears. what remains: memory and math.
 
 ## implications for BBG
 
-### near-term (bostrom scale, 726 MB)
+### bostrom (3M particles, 822 MB) — phone
 
 ```
-store.rs:
-  hot:        flat mmap'd arrays + Swiss table CID→idx
-  persist:    mmap + WAL (fsync per block)
-  commitment: polynomial delta, 32 bytes
-
-  total: ~822 MB RAM, ~726 MB disk
-  block time: ~100 μs (reads + writes + commitment)
+one node holds everything: flat array + mmap
+100 μs per block. polynomial delta: 21 μs.
+even a phone can be a full validator.
 ```
 
-### medium-term (10× growth, 7.3 GB)
+### city (10⁹ particles, 128 GB) — server
 
 ```
-same architecture, just more RAM
-  total: ~8 GB RAM, ~7.3 GB disk
-  still fits on any modern machine (16 GB minimum)
-  block time: ~200 μs (more dirty entries per block)
+10 shards, each ~12.8 GB
+per-shard: flat array in RAM (if 16+ GB machine) or B+ tree on SSD
+cross-shard: PCS openings over network (~1 ms RTT + verify)
+block time: ~5 ms (dominated by cross-shard queries)
 ```
 
-### long-term (100× growth, 73 GB)
+### planet (10¹⁵ particles, 128 PB) — datacenter cluster
 
 ```
-split:
-  hot partition (current epoch, most-accessed):  flat array in RAM (~8 GB)
-  warm partition (older state):                  B+ tree on SSD (~65 GB)
-
-  reads: 95% hit hot partition (50 ns), 5% go to SSD (20 μs)
-  weighted average: ~1 μs per read
-  block time: ~5 ms
+1000 shards, each ~128 GB → one server per shard
+per-shard: B+ tree on SSD with RAM cache
+cross-shard: dedicated network fabric, batched PCS openings
+block time: ~50 ms (network-dominated)
+each neuron: stores its own namespace (~1-100 GB) + caches neighbors
 ```
 
-### planetary scale (10⁹ particles, 730 GB+)
+### Avogadro (10²³ particles, 12.8 ZB) — all participants
 
 ```
-sharding by namespace:
-  each shard: one polynomial commitment for a namespace range
-  cross-shard: batch PCS openings
-
-  per-shard size: ~73 GB → B+ tree on SSD per shard
-  total shards: ~10
-  each shard: independent machine or CXL-attached memory pool
+10⁶ shards, each ~12.8 TB
+per-shard: B+ tree on SSD cluster (or distributed across shard participants)
+cross-shard: internet-scale, locality-aware routing
+block time: ~1 second (speed of light limited for global consensus)
+BBG_root: still 32 bytes. verification: still O(1) field ops.
+a phone verifying a claim about 10²³ particles: 50 μs.
 ```
 
-## the surprising conclusion
+## the conclusion
 
-the optimal data structure for polynomial state is the SIMPLEST one that fits the hardware tier:
+the data structure problem for polynomial state has two parts:
 
-| state size | structure | why |
+### within a shard: match the hardware
+
+| shard size | structure | why |
 |---|---|---|
-| < 8 GB | flat array + mmap | everything in RAM, no overhead needed |
-| 8-64 GB | flat array (hot) + B+ tree (warm) | hot/warm split, SSD for overflow |
-| 64 GB+ | B+ tree on SSD, sharded | B-tree minimizes SSD random I/O |
-| archival | LSM on HDD | sequential access, bloom filters |
+| < RAM | flat array + mmap | direct memory access, 50 ns reads |
+| < SSD | B+ tree with RAM cache | minimize SSD random reads, 20 μs |
+| < disk cluster | B+ tree distributed | partition across disks |
 
-no novel data structure is needed. the polynomial commitment eliminates the TREE OVERHEAD (5 TB of Merkle nodes). what remains is the RAW DATA — and raw data is best stored in the simplest structure that matches the hardware.
+this is not novel. it is the simplest structure that fits the storage tier.
 
-the innovation is not in the data structure. it is in REMOVING the data structure. NMT added 5 TB of tree nodes. polynomial state removes them. what's left is a flat key-value store — the simplest possible thing.
+### across shards: polynomial composition
 
-trees are a tax we pay for authentication. polynomial commitments are a different authentication mechanism that doesn't require trees. the tax disappears.
+this IS novel. the polynomial commitment composes across shards:
+
+$$\text{BBG\_root} = \text{compose}(C_1, \ldots, C_S)$$
+
+each shard updates independently. composition is O(S) field ops. verification is O(1) regardless of total state size. no Merkle tree aggregation. no root recomputation from all leaves. the global state is authenticated by 32 bytes that compose algebraically.
+
+the innovation is not in the local data structure (B+ tree, flat array — these are 50-year-old solutions). the innovation is in the AUTHENTICATION that makes local data globally verifiable. polynomial commitments compose. hash trees do not (merging two Merkle roots requires rebuilding the tree). this is why polynomial state scales to Avogadro and Merkle state does not.
+
+trees are a tax we pay for hash-based authentication. polynomial commitments are a different authentication that composes algebraically. the tax disappears. the local data structure becomes whatever is fastest for the hardware. the global data structure is 32 bytes.
 
 see [[algebraic state commitments]] for the polynomial commitment mechanism. see [[BBG]] for the state layer specification. see [[Goldilocks field processor]] for how hardware acceleration of field arithmetic removes the remaining compute bottleneck. see [[cyber/research/provable consensus]] for why fast state access matters (tri-kernel in-circuit needs O(1) reads)
