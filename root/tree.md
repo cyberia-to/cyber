@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: entity
-alias:: trees
+alias: trees
 ---
 
 # tree

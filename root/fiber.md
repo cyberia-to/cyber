@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: entity
-alias:: fibre, fibers, fibres, dietary fiber
+alias: fibre, fibers, fibres, dietary fiber
 ---
 
 # fiber

@@ -1,7 +1,7 @@
 ---
 tags: cyber, core
 crystal-type: entity
-alias:: hash chains
+alias: hash chains
 ---
 
 # hash chain

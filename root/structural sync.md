@@ -1,7 +1,7 @@
 ---
 tags: cyber, core
 crystal-type: pattern
-alias:: structural synchronization, sync layers
+alias: structural synchronization, sync layers
 ---
 
 # structural sync

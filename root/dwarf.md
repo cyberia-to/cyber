@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: property
-alias:: dwarf variety, compact
+alias: dwarf variety, compact
 ---
 
 # dwarf

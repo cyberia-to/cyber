@@ -1,7 +1,7 @@
 ---
 tags: article
 crystal-type: pattern
-alias:: unspent transaction output
+alias: unspent transaction output
 ---
 
 # UTXO

@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: process
-alias:: ecological succession
+alias: ecological succession
 ---
 
 # succession

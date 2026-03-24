@@ -1,7 +1,7 @@
 ---
 tags: recipe, biology
 crystal-type: entity
-alias:: leafy greens, salad greens
+alias: leafy greens, salad greens
 ---
 
 # greens

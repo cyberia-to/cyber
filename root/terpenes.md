@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: entity
-alias:: terpene, terpenoid, terpenoids
+alias: terpene, terpenoid, terpenoids
 ---
 
 # terpenes

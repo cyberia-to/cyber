@@ -1,7 +1,7 @@
 ---
 tags: article
 crystal-type: entity
-alias:: Neptune
+alias: Neptune
 ---
 
 # neptune

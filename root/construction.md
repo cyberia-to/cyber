@@ -1,7 +1,7 @@
 ---
 tags: cyber valley
 crystal-type: process
-alias:: building
+alias: building
 ---
 
 # construction

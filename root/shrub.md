@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: entity
-alias:: shrubs, bush, bushes
+alias: shrubs, bush, bushes
 ---
 
 # shrub

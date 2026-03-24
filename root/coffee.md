@@ -1,7 +1,7 @@
 ---
 tags: recipe
 crystal-type: entity
-alias:: coffea
+alias: coffea
 ---
 
 # coffee

@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: entity
-alias:: genetic, gene, genes
+alias: genetic, gene, genes
 ---
 
 # genetics

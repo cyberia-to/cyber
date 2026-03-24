@@ -1,7 +1,7 @@
 ---
 tags: cyber, core
 crystal-type: measure
-alias:: gas fee, gas fees, gas cost
+alias: gas fee, gas fees, gas cost
 ---
 
 # gas

@@ -1,7 +1,7 @@
 ---
 tags: biology
 crystal-type: process
-alias:: digestive, digest
+alias: digestive, digest
 ---
 
 # digestion

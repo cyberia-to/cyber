@@ -1,7 +1,7 @@
 ---
 tags: cyber, core
 crystal-type: entity
-alias:: eternal particle, permanent particle
+alias: eternal particle, permanent particle
 ---
 
 # eternal particles
