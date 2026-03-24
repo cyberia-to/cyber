@@ -35,3 +35,5 @@ the impulse proof doubles as a reward claim. if $\|\pi_\Delta\| > 0$ and $\sigma
 total minting per epoch is bounded by the actual global $\Delta\pi$, verifiable from consecutive headers. if the sum of individual impulses exceeds the actual shift (overlapping neighborhoods), all claims are scaled proportionally
 
 see [[cyber/signal]], [[focus]], [[cyber/rewards]], [[cyber/network]]
+
+discover all [[concepts]]

@@ -2,7 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-alias:: Taelin
+alias: Taelin
 stake: 7424076738467881
 diffusion: 0.00011888206746268246
 springs: 0.0007399728923461001

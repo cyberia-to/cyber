@@ -63,3 +63,5 @@ four mechanisms suppress noise at four timescales:
 no single mechanism is sufficient. spam resistance requires conviction cost. false assertion resistance requires market inhibition. staleness resistance requires forgetting. the stack works because each kind of noise has a different structure and requires a different filter.
 
 see [[syntropy]] for the information measure noise reduces. see [[forgetting]] for the primary long-term noise filter. see [[market inhibition]] for suppression of false assertions in $A^{\text{eff}}$. see [[Bayesian Truth Serum]] for the neuron-level noise scoring.
+
+discover all [[concepts]]

@@ -46,3 +46,5 @@ truthfulness is a property of track record, not individual acts. a single truthf
 trust is not agreement. a truthful neuron can consistently disagree with the majority — setting $v = -1$ on links others rate highly — and earn high karma if its contrarian predictions repeatedly prove accurate.
 
 see [[truth]] for the probabilistic truth signal. see [[truth model]] for the two-layer structure. see [[valence]] for the ternary field that carries the honesty signal. see [[Bayesian Truth Serum]] for the scoring formula. see [[karma]] for the accumulated truthfulness record.
+
+discover all [[concepts]]

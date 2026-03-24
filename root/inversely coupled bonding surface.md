@@ -47,3 +47,5 @@ self-scaling liquidity means trading volume automatically grows the market. the 
 | inverse coupling | buying one side directly suppresses the other |
 
 see [[cyber/truth/coupling]] for the full specification. see [[market inhibition]] for how ICBS provides inhibitory signals to the [[tri-kernel]]. see [[valence]] for the ternary epistemic field on [[cyberlinks]]. see [[Bayesian Truth Serum]] for the scoring layer. see [[cyber/nomics]] for the broader economic design
+
+discover all [[concepts]]

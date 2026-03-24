@@ -21,3 +21,5 @@ suppression is the inhibitory signal that raw [[cyberlinks]] cannot provide. wit
 corresponds to [[valence]] $v = -1$ — the [[neuron]]'s prediction at link creation that the market would converge here. a [[neuron]] can rationally create a link and predict its suppression: asserting the structural connection while signaling that the collective will reject it. [[bayesian truth serum]] rewards this when correct
 
 see [[cyber/truth]] for the two-factor model. see [[true]] for the validation attractor. see [[void]] for the empty state
+
+discover all [[concepts]]

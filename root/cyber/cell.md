@@ -80,3 +80,5 @@ Avogadro scale
 no cell appears from nowhere. every cell descends from the root cell through a chain of splits. every merge combines cells that share ancestry. the [[hierarchy]] is a living tree that grows by division — the same mechanism that builds biological organisms from a single fertilized cell
 
 see [[cyber/hierarchy]] for the full scaling architecture. see [[root cell]] for the genesis state. see [[AOCL]] and [[SWBF]] for the [[mutator set]]
+
+discover all [[concepts]]

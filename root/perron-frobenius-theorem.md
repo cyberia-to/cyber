@@ -92,3 +92,5 @@ the rate is controlled by the [[spectral gap]] $\lambda_2 = 1 - |\lambda_2(P)|$.
 Perron-Frobenius guarantees existence and uniqueness. the [[collective focus theorem]] (CFT) proves convergence via the Banach fixed-point theorem: the composite operator $\mathcal{R}$ is a contraction with coefficient $\kappa < 1$, so $\mathcal{R}^t \phi \to \pi^*$ for any $\phi$. the two approaches are complementary — Perron-Frobenius via spectral theory, CFT via metric contraction. the spectral gap $\lambda_2$ is the Banach contraction coefficient $\kappa$ viewed from the eigenvalue side.
 
 see [[collective focus theorem]] for the contraction proof. see [[spectral gap]] for the rate analysis. see [[Oskar Perron]] for biography. see [[cyber/focus]] for the engineering implementation.
+
+discover all [[concepts]]

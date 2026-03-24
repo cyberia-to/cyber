@@ -44,3 +44,5 @@ a struct particle is often the metadata companion to another particle: the pixel
 struct is the configuration language of the cybergraph. [[text]] carries argument; struct carries specification. a [[component]] reads a struct and renders it as interactive form fields. [[datalog]] queries struct fields directly
 
 see [[json]] for the primary source format. see [[table]] for 2D structured data. see [[component]] for interactive composition
+
+discover all [[concepts]]

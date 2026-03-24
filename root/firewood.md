@@ -2,6 +2,7 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
+alias: fuelwood, wood fuel
 stake: 9218564244269942
 diffusion: 0.001103557458037721
 springs: 0.00021593762417543774

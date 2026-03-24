@@ -21,3 +21,5 @@ in the [[inversely coupled bonding surface|ICBS]] market, a void-valence link st
 void-valence links serve as structural scaffolding. they connect [[particles]] that may become important later. like a [[mycelium]] hypha maintaining a channel through soil it has not yet decided to exploit — the connection costs [[will]] to create, so it is still a [[costly signal]], but the signal is "this path exists" rather than "this path is true"
 
 see [[cyber/truth]] for the two-factor model. see [[true]] for the validation attractor. see [[false]] for the suppression attractor
+
+discover all [[concepts]]

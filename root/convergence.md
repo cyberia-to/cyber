@@ -249,3 +249,5 @@ convergence in [[cyber]] ties together:
 convergence is the journey. [[equilibrium]] is the arrival. [[intelligence]] is doing it again and again, each time on a richer [[cybergraph]], each time with higher [[syntropy]]
 
 see [[collective focus theorem]] for the formal proofs. see [[tri-kernel architecture]] for why these operators. see [[emergence]] for what happens at scale
+
+discover all [[concepts]]

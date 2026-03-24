@@ -2,7 +2,7 @@
 tags: article, cip
 crystal-type: property
 crystal-domain: physics
-alias:: entropy vs negentropy
+alias: entropy vs negentropy
 status: draft
 stake: 2671349525753492
 diffusion: 0.0003275032694244625

@@ -94,3 +94,5 @@ the [[cybergraph]] converges to [[collective focus]] $\pi^*$ by the same princip
 this is [[cybics]] — proof by simulation, not proof by derivation. Banach's theorem is the formal guarantee that simulation converges
 
 see [[Stefan Banach]] for the person. see [[collective focus theorem]] for the convergence proof. see [[convergence]] for the full picture. see [[Perron-Frobenius theorem]] for the complementary guarantee (positivity and uniqueness of the stationary distribution)
+
+discover all [[concepts]]

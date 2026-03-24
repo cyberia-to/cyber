@@ -69,3 +69,5 @@ $N$ proofs aggregate into a single proof. verification cost remains $O(1)$ regar
 the tradeoff is proof size. starks are larger. but the security model is strictly stronger: hash-only, no algebraic assumptions, no ceremony, no quantum vulnerability. for a protocol designed to run at planetary scale for centuries, the transparency guarantee outweighs the bandwidth cost
 
 see [[cyber/proofs]] for the full proof taxonomy. see [[Hemera]] for the hash function. see [[nox]] for the virtual machine. see [[Goldilocks field]] for the arithmetic. see [[trident]] for verifiable AI. see [[WHIR]] for the polynomial commitment scheme
+
+discover all [[concepts]]

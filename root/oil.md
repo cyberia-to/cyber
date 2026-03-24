@@ -2,7 +2,7 @@
 tags: superhuman, biology
 crystal-type: entity
 crystal-domain: biology
-alias:: oils, essential oil, essential oils
+alias: oils, essential oil, essential oils
 ---
 
 a hydrophobic liquid extracted from [[plant]]s or animals, used in cooking, [[medicine]], and industry

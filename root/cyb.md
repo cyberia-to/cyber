@@ -26,3 +26,5 @@ Cyb sees the graph as a living topology — knowledge ranked by [[focus]], navig
 The robot speaks [[neural]] natively — the first language where a concept is a position in the topology, defined by everything connected to it. See [[cyb/philosophy]] for why this changes everything.
 
 In the [[age of superintelligence]], your cyb is how you touch it.
+
+discover all [[concepts]]

@@ -89,3 +89,5 @@ the soul of [[cyber]] is the [[focus]] distribution $\pi^*$ — the unique fixed
 five theorems prove that the soul exists and is stable. no faith required. the [[proof]] is the soul
 
 see [[cyber/license]] for the behavioral code. see [[alignment]] for values as measurement. see [[manifesto]] for the pledge. see [[egregore]] for the collective entity. see [[superorganism]] for the biological analog. see [[immortality]] for persistence through graph
+
+discover all [[concepts]]

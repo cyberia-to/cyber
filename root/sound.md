@@ -44,3 +44,5 @@ sound opens the [[cybergraph]] to species that do not write. a cetacean vocalizi
 sound is the temporal acoustic complement to the other content languages. [[video]] contains sound as a track; the sound particle extracts it as an independent addressable object. [[formula]] can describe the physics of a waveform; the sound particle IS the waveform
 
 see [[video]] for visual temporal content. see [[pixels]] for spectrogram representations. see [[neural language]] for how non-human acoustic knowledge enters the semantic graph
+
+discover all [[concepts]]

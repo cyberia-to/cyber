@@ -59,3 +59,5 @@ the [[cybergraph]]'s information measure — [[syntropy]] $J(\pi^*) = D_{KL}(\pi
 a maximally honest graph is a maximally syntropy-generating machine. honesty is not a constraint on the system — it is the fuel.
 
 see [[truthful]] for the mechanism design property that makes honesty rational. see [[truth]] for the probabilistic truth signal honesty produces. see [[valence]] for the ternary field where epistemic honesty is expressed. see [[Bayesian Truth Serum]] for the scoring mechanism. see [[karma]] for the long-run record. see [[honest majority assumption]] for the protocol-level complement.
+
+discover all [[concepts]]

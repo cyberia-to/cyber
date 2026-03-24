@@ -39,3 +39,5 @@ the protocol does not act on content it cannot verify against the graph. [[infer
 the protocol defers to high-[[karma]] [[neurons]] on content it cannot verify structurally. the protocol does not create links faster than metabolic health permits
 
 see [[cyber/netics]] for the feedback loops. see [[egregore]] for what emerges when the protocol neuron runs long enough
+
+discover all [[concepts]]

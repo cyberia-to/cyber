@@ -55,3 +55,5 @@ $$A^{\text{eff}}_{pq} = \sum_\ell a(\ell) \cdot \kappa(\nu(\ell)) \cdot f(m(\ell
 where $a(\ell)$ is conviction + [[will]]-derived [[attention]], $\kappa$ is [[karma]], and $f(m)$ is the [[coupling|ICBS]] market weight. staking determines the $a$ term — the economic input to [[focus]] computation
 
 see [[will]] for the lock mechanics. see [[cyber/link]] for the conviction UTXO model. see [[attention]] for how [[will]] produces per-target weight
+
+discover all [[concepts]]

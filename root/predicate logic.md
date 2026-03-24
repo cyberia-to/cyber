@@ -2,7 +2,7 @@
 tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
-alias:: first-order logic
+alias: first-order logic
 stake: 4414170762401879
 diffusion: 0.00026359276364130014
 springs: 0.001286748805519633

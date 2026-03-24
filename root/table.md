@@ -44,3 +44,5 @@ a table particle is often the most linked type in scientific domains: the data t
 table carries the numbers. [[formula]] carries the equations that model those numbers. [[text]] carries the interpretation of those numbers. [[vector]] visualizes them. together they are the complete scientific record
 
 see [[csv]] for the source format. see [[datalog]] for querying table particles. see [[component]] for binding table data to interactive UI
+
+discover all [[concepts]]

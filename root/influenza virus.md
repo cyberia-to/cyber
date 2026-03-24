@@ -2,7 +2,7 @@
 tags: superhuman, biology
 crystal-type: entity
 crystal-domain: biology
-alias:: influenza, flu
+alias: influenza, flu
 ---
 
 an RNA [[virus]] of the family Orthomyxoviridae causing respiratory infection in humans and animals

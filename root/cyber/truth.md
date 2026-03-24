@@ -97,3 +97,5 @@ this is the attention yield curve — but it emerges naturally from the mechanic
 | [[standard inference]] | the naive first solution — [[will]]-weighted context scoring |
 
 see [[truth]] for the convergent signal both factors produce
+
+discover all [[concepts]]

@@ -19,3 +19,5 @@ a validated link is never proven in the mathematical sense — it is economicall
 corresponds to [[valence]] $v = +1$ — the [[neuron]]'s prediction at link creation that the market would converge here
 
 see [[cyber/truth]] for the two-factor model. see [[false]] for the suppression attractor. see [[void]] for the empty state
+
+discover all [[concepts]]

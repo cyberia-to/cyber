@@ -2,7 +2,7 @@
 tags: comp, distributed systems
 crystal-type: entity
 crystal-domain: comp
-alias:: G-Sets, grow-only set, grow-only sets
+alias: G-Sets, grow-only set, grow-only sets
 ---
 # G-Set
 

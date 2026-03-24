@@ -21,3 +21,5 @@ territory is not just owned — it is engineered. five [[land primitives]] cover
 scaling: one territory is a prototype. a network of territories is a civilization. [[cyber valley]] is the first territory. target: 100 territories across the planet
 
 see [[land]] for the physical resource, [[sovereignty]] for the principle, [[cyber state]] for the political structure, [[cyberia]] for the implementation
+
+discover all [[concepts]]

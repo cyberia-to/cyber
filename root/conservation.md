@@ -97,3 +97,5 @@ in the formal definition: a simulation-proof of property $P$ requires a dynamica
 in the [[cybergraph]], focus conservation corresponds to a symmetry: the [[tri-kernel]] is invariant under relabeling of time steps. it does not matter when a [[cyberlink]] is created — the same graph structure produces the same $\pi^*$. this time-invariance is the symmetry; focus conservation is the consequence
 
 see [[convergence]] for why conservation shapes the destination. see [[focus]] for the conserved quantity. see [[costly signal]] for the economic consequence. see [[cybics]] for the philosophical role
+
+discover all [[concepts]]
