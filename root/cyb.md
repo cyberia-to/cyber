@@ -6,6 +6,9 @@ tags: cyb, menu, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
+subgraph: true
+repo: ../cyb
+exclude: "node_modules/**, build/**, target/**, .claude/**, contracts/**"
 stake: 34080210232611716
 diffusion: 0.004132786361928683
 springs: 0.0003778838107317919
