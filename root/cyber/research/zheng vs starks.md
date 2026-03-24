@@ -1,5 +1,8 @@
 ---
 title: "zheng: a self-proving proof system"
+tags: cyber, research, article
+crystal-type: article
+crystal-domain: cyber
 authors: [cyber]
 date: 2026-03-23
 status: draft
@@ -9,9 +12,9 @@ status: draft
 
 ## Abstract
 
-zheng is a proof system where computation IS proving. a nox program executes, generating an execution trace. the trace is a table of field elements — 16 registers wide, N rows deep. a multilinear polynomial interpolates this table over the Boolean hypercube. CCS constraints express what a valid trace looks like. SuperSpartan reduces constraint checking to a sumcheck over the constraint polynomial. Brakedown commits to the trace polynomial using expander-graph codes — no Merkle trees, no hashing, O(N) field operations. HyperNova folds multiple proof instances into a running accumulator with ~30 field operations per fold. the accumulator IS the proof — run one decider to verify everything.
+[[zheng]] is a proof system where computation IS proving. a [[nox]] program executes, generating an execution trace. the trace is a table of [[Goldilocks field|field elements]] — 16 registers wide, N rows deep. a multilinear polynomial interpolates this table over the Boolean hypercube. [[CCS]] constraints express what a valid trace looks like. [[SuperSpartan]] reduces constraint checking to a [[sumcheck]] over the constraint polynomial. [[Brakedown]] commits to the trace polynomial using expander-graph codes — no Merkle trees, no hashing, O(N) field operations. [[HyperNova]] folds multiple proof instances into a running accumulator with ~30 field operations per fold. the accumulator IS the proof — run one decider to verify everything.
 
-the result: proving overhead is ~30 field operations per computation step. a 240-byte checkpoint proves the entire history of a planetary-scale knowledge graph. verification takes 10–50 μs.
+the result: proving overhead is ~30 field operations per computation step. a 240-byte checkpoint proves the entire history of a planetary-scale [[cybergraph|knowledge graph]]. verification takes 10–50 μs.
 
 this paper shows HOW each mechanism works, not just what it achieves.
 
@@ -41,7 +44,7 @@ final proof              one STARK proof verifiable in 10-50 μs
 
 ### 2.1 What the trace IS
 
-a nox program is a sequence of reduce() calls. each call dispatches one of 17 patterns (axis, quote, compose, cons, branch, add, sub, mul, inv, eq, lt, xor, and, not, shl, hash, hint). each pattern produces one or more rows in the execution trace.
+a [[nox]] program is a sequence of reduce() calls. each call dispatches one of 17 [[nox patterns|patterns]] (axis, quote, compose, cons, branch, add, sub, mul, inv, eq, lt, xor, and, not, shl, hash, hint). each pattern produces one or more rows in the execution trace.
 
 the trace is a matrix T with 16 columns (registers r0–r15) and N rows:
 
@@ -69,7 +72,7 @@ register assignments:
 | r14 | prev_hash | hash of previous row (chain integrity) |
 | r15 | status | 0 = ok, nonzero = error code |
 
-every value is a Goldilocks field element (64 bits, p = 2⁶⁴ − 2³² + 1).
+every value is a [[Goldilocks field]] element (64 bits, p = 2⁶⁴ − 2³² + 1).
 
 ### 2.2 How patterns generate rows
 
@@ -433,7 +436,7 @@ the proof is the transcript: all the prover's messages concatenated. the verifie
 
 ### 8.3 hemera in Fiat-Shamir
 
-hemera's Poseidon2 sponge (16-element state, 8-element capacity) absorbs field elements directly. no serialization overhead — the native data type IS the field element.
+[[Hemera]]'s [[Poseidon2]] sponge (16-element state, 8-element capacity) absorbs field elements directly. no serialization overhead — the native data type IS the field element.
 
 ```
 Fiat-Shamir cost:
@@ -441,7 +444,7 @@ Fiat-Shamir cost:
   hemera-3 algebraic FS: 1 hemera seed + 19 polynomial challenges = ~1,686 constraints
 ```
 
-hemera-3's algebraic Fiat-Shamir derives subsequent challenges from polynomial evaluations rather than additional hash calls — 8.7× reduction in Fiat-Shamir cost.
+hemera-3's [[algebraic Fiat-Shamir]] derives subsequent challenges from polynomial evaluations rather than additional hash calls — 8.7× reduction in Fiat-Shamir cost.
 
 ## 9. HyperNova: Folding Instead of Verifying
 
@@ -650,13 +653,13 @@ submit to network
 
 ### 12.2 Stage 1: signal creation (device)
 
-a neuron creates cyberlinks on a device. computation, hashing, and proving happen in one pass.
+a [[neurons|neuron]] creates [[cyberlinks]] on a device. computation, hashing, and proving happen in one pass.
 
-nox execution with proof-carrying: each reduce() call dispatches a pattern, generates one trace row, and folds it into the accumulator (~30 field ops). at computation end, the accumulator IS the proof.
+[[nox]] execution with proof-carrying: each reduce() call dispatches a pattern, generates one trace row, and folds it into the accumulator (~30 field ops). at computation end, the accumulator IS the proof.
 
-for binary workloads (quantized AI inference, tri-kernel SpMV): nox<F₂> execution → Binius PCS → fold into F_p accumulator. boundary cost: ~766 F_p constraints. binary jets (popcount, packed_inner_product, binary_matvec) give 1,400× over naive F_p.
+for binary workloads (quantized AI inference, [[tri-kernel]] SpMV): nox<F₂> execution → [[Binius]] PCS → fold into F_p accumulator. boundary cost: ~766 F_p constraints. binary jets (popcount, packed_inner_product, binary_matvec) give 1,400× over naive F_p.
 
-hemera identity with folded sponge: content addressing H(cyberlink) = particle identity. K absorption blocks × 30 field ops + 1 decider = ~2,956 constraints for a 4 KiB particle (vs ~54K current, 18× savings).
+[[Hemera]] identity with folded sponge: content addressing H([[cyberlink]]) = [[particles|particle]] identity. K absorption blocks × 30 field ops + 1 decider = ~2,956 constraints for a 4 KiB particle (vs ~54K current, 18× savings).
 
 signal assembly:
 
@@ -678,7 +681,7 @@ proof cost:  ZERO additional (proof-carrying)
 
 ### 12.3 Stage 2: local sync (device ↔ device)
 
-same neuron's devices sync via structural sync layers 1-5.
+same neuron's devices sync via [[structural-sync|structural sync]] layers 1-5.
 
 ```
 1. compare merkle_clock roots                      O(1), 32 bytes
@@ -700,13 +703,13 @@ total bandwidth (catch up 1 hour, ~100 signals):    ~204 KiB
 4. block producer includes signals, assigns t
 ```
 
-no ordering coordination. deterministic ordering from signal metadata (causal > VDF > hash tiebreak). foculus determines WEIGHTS, not ORDER.
+no ordering coordination. deterministic ordering from [[signal]] metadata (causal > [[VDF]] > hash tiebreak). [[foculus]] determines WEIGHTS, not ORDER.
 
 ### 12.5 Stage 4: block processing
 
-every operation is a polynomial update, not a tree rehash.
+every operation is a polynomial update, not a tree rehash. see [[algebraic state commitments]].
 
-per-cyberlink public state update (algebraic polynomial):
+per-[[cyberlink]] public state update (algebraic polynomial):
 ```
 4.5 path updates × 32 depth × ~100 field ops = ~3.2K constraints
 LogUp: 0 (structural — same polynomial)
@@ -746,7 +749,7 @@ epoch = 1000 blocks
 folding-first: 1000 folds × 30 field ops + 1 decider = ~100K constraints
 (was: 1000 × 70K = 70M constraints, improvement: 700×)
 
-universal accumulator: fold ALL five structural sync layers into one ~200 byte object
+universal accumulator: fold ALL five [[structural-sync|structural sync]] layers into one ~200 byte object
 ```
 
 ### 12.7 Stage 6: light client
@@ -854,11 +857,11 @@ VM → hash → proof → signal → sync → block → epoch → checkpoint →
 
 the accumulator is the universal witness. it proves computation happened correctly (layer 1), in the right order (layer 2), completely (layer 3), on available data (layer 4), with deterministic merge (layer 5). five independent properties, one object, one verification.
 
-this is a **self-proving knowledge graph**: every edge carries its own proof, every query is verified, every sync is complete, and the entire history compresses to 240 bytes.
+this is a **self-proving [[cybergraph|knowledge graph]]**: every edge carries its own proof, every query is verified, every sync is complete, and the entire history compresses to 240 bytes.
 
-## 13. Hemera: Trust Anchor, Not Prover
+## 13. [[Hemera]]: Trust Anchor, Not Prover
 
-### 12.1 hemera-2 parameters
+### 13.1 hemera-2 parameters
 
 ```
 hash:            Poseidon2 over Goldilocks
@@ -887,7 +890,7 @@ DAS inclusion proofs    640 per verify      algebraic DAS: 0 (PCS openings)
 Brakedown commitment    1 per proof         always hemera (binding hash)
 ```
 
-hemera starts as dominant cost (>90% of constraints) and converges to trust anchor (~1% of constraints). Brakedown eliminates hemera from PCS. algebraic NMT eliminates hemera from state. algebraic DAS eliminates hemera from availability. what remains: content identity and privacy — the irreducible cryptographic anchors.
+[[Hemera]] starts as dominant cost (>90% of constraints) and converges to trust anchor (~1% of constraints). [[Brakedown]] eliminates hemera from PCS. [[algebraic state commitments|algebraic NMT]] eliminates hemera from state. algebraic DAS eliminates hemera from availability. what remains: content identity and privacy — the irreducible cryptographic anchors.
 
 ## 14. Polynomial State and Algebraic DAS
 
@@ -942,7 +945,7 @@ the erasure-coded grid P(row, col) IS a bivariate polynomial. Brakedown commits 
 | Binius | F₂ tower | sumcheck | — | — | O(N) | research |
 | **zheng** | **Gold + F₂** | **Brakedown + Binius** | **1–5 KiB** | **10–50 μs** | **O(N)** | **spec** |
 
-all production systems share: FRI + univariate + Merkle. zheng: sumcheck + multilinear + Brakedown.
+all production systems share: [[FRI]] + univariate + Merkle. [[zheng]]: [[sumcheck]] + multilinear + [[Brakedown]].
 
 ### 14.2 Honest weaknesses
 
