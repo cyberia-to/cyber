@@ -1,5 +1,5 @@
 ---
-tags: article, cip
+tags: cyber, research, article
 alias: gflownet focus flow
 crystal-type: process
 crystal-domain: cyber
@@ -12,120 +12,166 @@ focus: 0.00024637078827473465
 gravity: 1
 density: 0
 ---
-- GFlowNet: a proposal engine that *samples edits* (small [[graph]] changes) in proportion to how good they look.
-- Focus‑Flow: a physics‑style process that keeps a live [[attention]] field \(π\) over the graph (what the network cares about now).
+# GFlowNet × Focus-Flow: learned proposal engine for the [[cybergraph]]
 
-Why marry them
-- Let π steer what to try next; let accepted edits reshape π. That closes the loop so exploration stays useful and the network keeps learning.
+## the problem
 
-The loop (5 steps)
-1) Snapshot the current focus \(π_t\).  
-2) GFlowNet proposes a batch of edits (add link, up‑weight, attach evidence…).  
-3) Score each edit with a *fast local* focus‑gain estimate Δπ̂ (no global recompute).  
-4) Pass budget/guard checks → commit the best subset.  
-5) Recompute focus π_{t+1}, train GFlowNet on what worked, repeat.
+the [[cybergraph]] grows by [[neurons]] creating [[cyberlinks]]. each cyberlink costs [[focus]] — an irreversible resource commitment. a neuron choosing what to link faces a combinatorial search: which [[particles]] to connect, with what weight, to maximise the value of its remaining focus budget.
 
-What’s rewarded
-- Edits that increase order/information (lower [[free energy]] / raise useful [[focus]]) get paid; noise burns fees. Incentives match the global objective.
+the question: can a learned model propose high-value edits — not the single best edit, but a DISTRIBUTION over good edits proportional to their quality?
 
-Guardrails (so it doesn’t go off the rails)
-- Quotas per topic, fees, and rate limits at hot nodes.
-- Proofs/audits for suspicious Δπ̂.
-- Costs in the reward: storage/compute/network all counted.
-- Rollback window + revert metrics keep reliability in check.
+## why GFlowNets
 
-Glossary (one‑liners)
-- π: the network’s current attention allocation over nodes.
-- Δπ̂: quick estimate of how much an edit would shift π locally.
-- Edit/Diff: a small set of graph changes (e.g., add_link u→v with weight/tag).
-- R(x): the reward used by GFlowNet when proposing edits.
-- SubTB: a training trick (sub‑trajectory balance) that spreads credit over long edit sequences.
-- Cyberlink: a signed edge; the atomic “fact” we add.
+a Generative Flow Network (GFlowNet, Bengio et al. 2021) is a learned sampler that constructs structured objects by sequential actions, producing samples with probability proportional to a reward $R(x)$:
 
-Tiny worked example (concrete)
-1) Question spikes interest in *Cat*.  
-2) π raises near Cat; GFlowNet proposes: (Cat→Animal [h‑edge]), (Cat→Wikipedia‑Cat [d‑edge]).  
-3) Δπ̂ says both improve coverage with low cost; budgets OK.  
-4) Commit; Focus‑Flow diffuses attention to Animal + sources.  
-5) π_{t+1} stabilises with better hierarchy & references.  
-6) GFlowNet is trained on this success pattern; next time it proposes similar high‑yield motifs.
+$$p_\theta(x) \propto R(x)$$
 
-—
-gflownet × focus-flow — key insights (chapters)
-
-chapter 1 — overview and thesis
-- gflownet is a proposal engine that samples structured edits with probability proportional to a reward r(x)
-- focus-flow computes a global attention field π over the network [[cybergraph]] from ongoing activity
-- we marry them by letting π shape r(x), while each accepted edit updates the graph and shifts π
-
-chapter 2 — where they align
-- both turn unnormalized scores into stochastic processes with good stationary behavior
-- both help approximate intractable sums: gflownet via learned flows and balance losses; focus-flow via fast [[diffusion]]/[[consensus]] on the graph
-- both admit forward/backward views: gflownet uses p_f/p_b over constructive dags; focus-flow has diffusion and global correction phases
-
-chapter 3 — where they differ
-- objective: gflownet learns to generate; focus-flow computes to rank
-- substrate: gflownet reasons over trajectories of edits; focus-flow maintains a global stationary distribution over existing nodes/edges
-- agency: gflownet is agentic and exploratory; focus-flow is deterministic aggregation with economic constraints
-
-chapter 4 — coupling pattern (one line)
-- r(x) = exp(β·φ(x, π_t) + u_task(x) − cost(x) + novelty(x))
-- retrain gflownet against a lagged snapshot π_t while the network updates to π_{t+1}
-
-chapter 5 — edit language (action/state/reward)
-- actions: add_link(u→v, w, tag) · upweight(u→v, Δw) · spawn_node(z) · attach_evidence(v, blob_id)
-- state: a partial subgraph (the pending diff) plus local context features
-- terminal: a validated batch of edits ready to commit
-- reward: r(x) = exp(β₁·Δπ̂(x) + β₂·u_task(x) − β₃·cost(x) + β₄·novelty(x))
-- Δπ̂(x): fast local estimate of focus lift from applying diff x (learned surrogate or incremental rank)
-
-chapter 6 — training tactics
-- use sub-trajectory balance to propagate credit over long edit sequences
-- stabilize with a lagged focus prior π̂_t (target network) to avoid chasing a moving field
-- temper the policy ([[entropy]] or [[temperature]] τ) for diversity vs exploitation
-- mix on-policy sampling with replay of high-Δπ̂ trajectories for sample efficiency
-
-chapter 7 — closed-loop algorithm (sketch)
-- snapshot π_t and local graph view
-- gflownet proposes k candidate diffs x₁…x_k
-- compute Δπ̂(x_i) via incremental rank or a learned surrogate
-- filter by budgets/guards; select a feasible subset s ⊆ {x_i}
-- commit s → graph_t+1; run focus-flow to compute π_{t+1}
-- train gflownet on accepted/rejected trajectories with subtb; update lagged π̂ on schedule
-- repeat continuously per bucket/lane
-
-chapter 8 — safety and economics (guards)
-- quotas: per-bucket caps, rate limits, and fee weights to prevent spam at hot nodes
-- fast checks: existence of referenced blobs, schema/acl validation before inclusion
-- fraud proofs: require rank-delta proofs or audits on suspicious Δπ̂
-- cost shaping: include compute/storage/network costs directly in cost(x)
-
-chapter 9 — metrics that actually move the needle
-- diversity: entropy of sampled edit types and coverage of node/edge classes
-- impact: realized Δπ over time per accepted edit and per unit cost
-- stability: [[spectral gap]] / mixing time of the focus kernel before vs after edits
-- efficiency: edits per joule and per dollar; gpu occupancy and tail latency
-- reliability: revert rate, failed-proof rate, and mean time to consistency across shards
-
-chapter 10 — minimal pseudocode
-- training loop: for each epoch → snapshot π_t → for b in 1..batches: sample τ ~ p_f(·|π_t); score r(τ); backprop subtb → every m steps update target π̂
-- deployment loop: at wall-clock ticks, take top-k by r(τ) under budgets; commit; recompute π; log realized Δπ and training targets
-
-chapter 11 — design notes
-- make Δπ̂ differentiable: a small graph net predicts rank deltas from local motifs so reward remains smooth
-- sparsify action space: constrain add_link to whitelisted motifs (triadic closure, co-citation, functional dependencies) for tractability
-- multi-scale: run a gflownet per bucket; aggregate compressed Δ-ranks to a hub and feed back as priors
-- asynchrony: prefer eventual [[convergence]] with bounded staleness windows over global barriers
-
-chapter 12 — prototype plan
-- single-bucket sandbox with 10⁶ edges, incremental [[pagerank]], and a tiny gflownet over add_link/upweight
-- offline evaluator that replays diffs and measures realized Δπ and stability metrics
-- ablations: fixed prior vs focus-shaped r(x); tb vs subtb; with/without lagged π̂
-
-chapter 13 — open questions
-- how to bound global regret when π drifts quickly under heavy edit throughput
-- how to prevent collusive edits that game Δπ̂ while hurting downstream utility
-- what economic [[signals]] best stabilize exploration at scale without collapse to popular hubs
-
-chapter 14 — one-sentence takeaway
-- let focus-flow set the beat; let gflownet compose moves that follow the beat yet expand the score, and train on the delta between the two
+unlike RL (which finds the mode — the single best action), GFlowNets sample the DISTRIBUTION. this matters for a knowledge graph:
+- RL would always propose the same "best" link → monoculture
+- GFlowNet proposes diverse links proportional to quality → exploration
+
+unlike MCMC (which also samples the distribution), GFlowNets are AMORTISED — once trained, each sample is a single forward pass. no mixing time, no burn-in, no chain convergence.
+
+the training objective (trajectory balance, Malkin et al. 2022):
+
+$$\log \frac{Z \cdot \prod_{t} p_F(s_{t+1} | s_t)}{\prod_{t} p_B(s_t | s_{t+1}) \cdot R(x)} = 0$$
+
+where $p_F$ is the forward (construction) policy, $p_B$ is the backward (decomposition) policy, and $Z$ is the partition function. credit propagates over full trajectories via sub-trajectory balance (SubTB).
+
+## the coupling
+
+GFlowNet proposes edits. [[tri-kernel]] focus-flow evaluates them. the loop:
+
+```
+1. snapshot current focus π_t from tri-kernel
+2. GFlowNet proposes batch of candidate edits
+   (add cyberlink, upweight axon, attach evidence)
+3. score each edit: Δπ̂ = estimated focus gain
+4. filter by budget/guards → commit best subset
+5. recompute π_{t+1} via tri-kernel
+6. train GFlowNet on realised Δπ
+7. repeat
+```
+
+the reward function:
+
+$$R(x) = \exp\left(\beta_1 \cdot \Delta\hat{\pi}(x) + \beta_2 \cdot u_{\text{task}}(x) - \beta_3 \cdot \text{cost}(x) + \beta_4 \cdot \text{novelty}(x)\right)$$
+
+where:
+- $\Delta\hat{\pi}(x)$ = estimated focus lift from edit $x$ (fast local proxy for full tri-kernel)
+- $u_{\text{task}}(x)$ = task-specific utility (e.g., answer a query, complete a pattern)
+- $\text{cost}(x)$ = focus + storage + compute cost of the edit
+- $\text{novelty}(x)$ = information gain (new connections vs redundant)
+
+the exponential form follows from the [[universal law|exponential optimality under constraint]]: given finite focus budget, the optimal proposal distribution is exponential in quality.
+
+## what the architecture already provides
+
+several components of the original 14-chapter design have landed in the architecture through other mechanisms:
+
+| original idea | where it landed | mechanism |
+|---|---|---|
+| focus-shaped reward | [[tri-kernel]] $\pi^*$ | stationary distribution IS the quality signal |
+| edit validation | [[zheng]] proof per signal | every cyberlink carries a validity proof |
+| budget/guards | [[focus]] metering in [[nox]] | focus is the native rate limiter |
+| fraud proofs | [[structural-sync]] layer 1 | zheng proof prevents invalid edits |
+| cost shaping | [[temporal decay]] | unused edges decay exponentially |
+| metrics (spectral gap) | [[spectral gap from convergence]] | tri-kernel convergence already measured |
+| rollback window | [[signal]] hash chain | append-only, immutable history |
+
+the GFlowNet adds ONE thing the architecture doesn't have: a LEARNED proposal policy that improves over time. the rest is infrastructure that already exists (or will exist once the stack is built).
+
+## the concrete research questions
+
+### Q1: can $\Delta\hat{\pi}$ be estimated locally?
+
+the full tri-kernel computation (diffusion + springs + heat kernel over the entire graph) is the most expensive operation in cyber. a GFlowNet reward that requires running the full tri-kernel per candidate edit is intractable.
+
+the research question: can a cheap local proxy predict focus gain?
+
+approaches:
+- **graph neural network surrogate**: train a GNN to predict $\Delta\pi$ from a local subgraph around the edit. cost: O(1) per evaluation after training
+- **incremental rank update**: personalised PageRank allows O(1/ε) push-back updates for single-edge changes. approximate $\Delta\pi$ by running a few push-back steps
+- **spectral proxy**: the edit's effect on $\pi$ depends on how it changes the graph's spectral properties. low-rank spectral updates may give fast approximations
+
+the quality of the GFlowNet depends entirely on the quality of $\Delta\hat{\pi}$. if the proxy is poor, the GFlowNet proposes noise.
+
+### Q2: can GFlowNets scale to 10^6+ action spaces?
+
+current GFlowNets (DAG-GFlowNet for Bayesian structure learning, molecular GFlowNets) operate on graphs with ~50 nodes and ~1000 possible actions per step. the [[cybergraph]] has billions of particles.
+
+approaches:
+- **hierarchical action space**: first select a namespace (coarse), then select a particle within namespace (fine). reduces action space from O(N) to O(√N) per level
+- **attention-guided masking**: use $\pi_t$ to mask the action space — only consider particles with $\pi > \epsilon$ as link targets. the [[universal law]] predicts most focus concentrates on a small fraction of particles
+- **per-neuron GFlowNet**: each neuron runs a small personal GFlowNet over its local context (particles it knows about). the global effect emerges from many local proposals. matches the decentralised architecture
+
+### Q3: how does privacy interact?
+
+individual [[cyberlinks]] are private (mutator set). the GFlowNet needs to evaluate candidate links. tension:
+- training requires seeing which edits improved $\pi$ → but individual edits are private
+- inference requires evaluating candidates against the graph → but the graph is partially hidden
+
+resolution: the GFlowNet operates on PUBLIC aggregates only. $\pi^*$ is public. axon weights (aggregates) are public. individual cyberlinks are hidden. the GFlowNet proposes links to public particles, and the neuron decides privately whether to commit them.
+
+this means the GFlowNet cannot optimise for specific private patterns. it optimises for publicly visible focus flow — which is exactly the right objective (public knowledge improvement, not private advantage).
+
+### Q4: can the proposal be proved?
+
+if a GFlowNet is a [[nox]] program, its execution produces a [[zheng]] proof via [[proof-carrying computation|proof-carrying]]. the proposal itself is provable: "this neuron ran a GFlowNet policy and it produced these candidate links."
+
+this doesn't prove the links are GOOD — it proves the proposal process was correctly executed. quality comes from the reward function and focus economics, not from the proof.
+
+the interesting question: can the GFlowNet's TRAINING be proved? if training uses gradient descent on the trajectory balance loss, can the gradient computation be proved in [[nox]]? this would enable verified model updates — provable learning.
+
+## where it fits in the timeline
+
+```
+prerequisite stack (must exist first):
+  nox VM          → trace generation, proof-carrying computation
+  zheng prover    → signal validity proofs
+  hemera hash     → content addressing, Fiat-Shamir
+  bbg state       → NMT/polynomial state, mutator set
+  tri-kernel      → π* computation (the reward signal)
+  foculus          → global convergence
+
+GFlowNet layer (builds on top):
+  Δπ̂ surrogate   → train GNN proxy for focus gain prediction
+  action space    → hierarchical namespace-aware proposal
+  local GFlowNet  → per-neuron proposal policy
+  training loop   → online learning from realised Δπ
+```
+
+the GFlowNet is a LAYER 6 component — it sits above the five structural sync layers and uses them as infrastructure. it does not affect the core architecture. it is an optimisation for neuron decision-making, not a protocol requirement.
+
+estimated timeline: after tri-kernel is operational and producing $\pi^*$ on a live graph with measurable $\Delta\pi$ per edit.
+
+## honest assessment
+
+| aspect | status | confidence |
+|---|---|---|
+| GFlowNet theory | mature (2021-2025, peer-reviewed) | high |
+| GFlowNet for graph construction | demonstrated (DAG-GFlowNet) | high |
+| GFlowNet at 10^6+ scale | undemonstrated | low |
+| $\Delta\hat{\pi}$ local proxy | research question | medium |
+| privacy-compatible training | feasible (public aggregates) | medium |
+| provable proposals via nox | architecturally possible | medium |
+| provable training | open research question | low |
+| dependency on unbuilt stack | critical path blocker | — |
+
+the research direction is valid. the architecture is compatible. the timing is wrong — this layer needs the stack beneath it to exist before it can be built or validated.
+
+## what to do now
+
+1. **formalise $\Delta\hat{\pi}$ estimation** as a standalone research question. this is valuable regardless of GFlowNet — any system that proposes edits needs a fast focus-gain proxy
+2. **prototype DAG-GFlowNet on a synthetic cybergraph** (10^4 particles, known $\pi^*$). measure: does the GFlowNet learn to propose high-$\Delta\pi$ links? how does diversity compare to random/greedy baselines?
+3. **defer integration** until tri-kernel is live and producing real $\pi^*$ values on a real graph
+
+## references
+
+[1] E. Bengio et al., "Flow Network based Generative Models for Non-Iterative Diverse Candidate Generation," NeurIPS 2021.
+[2] N. Malkin et al., "Trajectory Balance: Improved Credit Assignment in GFlowNets," NeurIPS 2022.
+[3] T. Deleu et al., "DAG-GFlowNet: Bayesian Structure Learning with GFlowNets," ICML 2022.
+[4] N. Malkin et al., "GFlowNets and Variational Inference," ICLR 2023.
+[5] E. Bengio et al., "GFlowNet Foundations," JMLR 2023.
+
+see [[tri-kernel architecture]] for the focus computation, [[collective focus theorem]] for why exponential proposals are optimal, [[universal law]] for the variational principle, [[structural-sync]] for the infrastructure layers, [[cyber/research/zheng vs starks|zheng]] for the proof system
