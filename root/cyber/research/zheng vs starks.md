@@ -968,17 +968,17 @@ these cannot be closed by optimizing FRI. they require changing the foundation.
 
 ## 16. Open Problems
 
-1. **Brakedown expander construction.** which family (Margulis, Ramanujan, random) achieves optimal security/size for Goldilocks? concrete parameters for 128-bit security.
+1. **Brakedown expander construction.** which family (Margulis, Ramanujan, random) achieves optimal security/size for [[Goldilocks field]]? concrete parameters for 128-bit security.
 
-2. **Brakedown bivariate openings.** algebraic DAS needs efficient openings on 2D erasure grids. does Brakedown's linear code structure support bivariate evaluation natively?
+2. **Brakedown bivariate openings.** [[algebraic state commitments|algebraic DAS]] needs efficient openings on 2D erasure grids. does Brakedown's linear code structure support bivariate evaluation natively?
 
-3. **Cross-algebra soundness.** universal CCS with selectors folds F_p and F₂ instances. formal proof that this preserves HyperNova's security.
+3. **Cross-algebra soundness.** universal CCS with selectors folds F_p and F₂ instances. formal proof that this preserves [[HyperNova]]'s security.
 
-4. **Tensor rank of nox traces.** tensor compression assumes rank ≈ 32. empirical validation on real workloads needed.
+4. **Tensor rank of [[nox]] traces.** tensor compression assumes rank ≈ 32. empirical validation on real workloads needed.
 
-5. **VEC formalization.** Verified Eventual Consistency (safety + verifiable completeness + verifiable availability + liveness) needs formal treatment under a precise adversary model.
+5. **[[vec formalization|VEC formalization]].** Verified Eventual Consistency (safety + verifiable completeness + verifiable availability + liveness) needs formal treatment under a precise adversary model. see [[structural-sync]] for the informal definition.
 
-6. **Brakedown + Binius unification.** both are linear-code-based PCS over different fields. can they share infrastructure?
+6. **Brakedown + [[Binius]] unification.** both are linear-code-based PCS over different fields. can they share infrastructure?
 
 7. **Row-by-row folding for AIR.** proof-carrying computation folds one trace row at a time. AIR transition constraints reference adjacent rows. sliding-window (width 2) folding needs formal correctness proof.
 
