@@ -38,6 +38,32 @@ $$\log \frac{Z \cdot \prod_{t} p_F(s_{t+1} | s_t)}{\prod_{t} p_B(s_t | s_{t+1}) 
 
 where $p_F$ is the forward (construction) policy, $p_B$ is the backward (decomposition) policy, and $Z$ is the partition function. credit propagates over full trajectories via sub-trajectory balance (SubTB).
 
+## connection to [[cyber/seer|cyber-seer]]
+
+cyber-seer and GFlowNet solve the same problem: WHERE to link. they differ in method:
+
+| | [[cyber/seer|cyber-seer]] | GFlowNet |
+|---|---|---|
+| approach | analytical (Fiedler vector, Lanczos) | learned (policy network, trajectory balance) |
+| signal | $\Delta\lambda_2 = (v_2(i) - v_2(j))^2$ | $R(x) \propto \exp(\beta \cdot \text{quality})$ |
+| output | ranked list of optimal links | distribution over candidate links |
+| diversity | deterministic top-K | stochastic sampling proportional to quality |
+| phases | explicit (bridge → mesh → semantic) | learned (reward terms shift automatically) |
+| cost | cheap (Lanczos is O(k·|E|)) | expensive (training + inference) |
+
+they compose naturally. cyber-seer's three signals become GFlowNet reward components:
+
+$$R(x) = \exp\left(\beta_1 \cdot \underbrace{\Delta\lambda_2(x)}_{\text{seer: bridges}} + \beta_2 \cdot \underbrace{\Delta\pi(x)}_{\text{seer: semantic}} + \beta_3 \cdot \underbrace{\text{resilience}(x)}_{\text{seer: mesh}} - \beta_4 \cdot \underbrace{c(n)}_{\text{exponential cost}}\right)$$
+
+cyber-seer's three phases emerge automatically from the reward balance:
+- **early** (cost low): all $\beta$ terms matter, $\Delta\lambda_2$ dominates because graph has large spectral gaps → GFlowNet learns to propose bridges
+- **mid** (cost rising): $\Delta\lambda_2$ saturates, resilience term matters → GFlowNet learns mesh patterns
+- **late** (cost high): exponential cost crushes low-value proposals, only high-$\Delta\pi$ semantic links survive → GFlowNet proposes precision links
+
+the GFlowNet doesn't need to be told which phase it's in. the reward function's exponential cost term (from the [[universal law]]) naturally shifts the learned policy from structural to semantic as the graph matures.
+
+**cyber-seer as GFlowNet teacher**: cyber-seer's Fiedler-optimal links can pre-train the GFlowNet (behavioural cloning on analytical decisions). the GFlowNet then generalises beyond the analytical signal — discovering link patterns that improve $\pi^*$ in ways the spectral analysis doesn't predict (semantic shortcuts, multi-hop bridges, creative connections).
+
 ## the coupling
 
 GFlowNet proposes edits. [[tri-kernel]] focus-flow evaluates them. the loop:

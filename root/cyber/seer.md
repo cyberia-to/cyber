@@ -173,4 +173,12 @@ after each epoch, cyber-seer publishes a report to the [[cybergraph]]:
 
 this report is itself a [[cyberlink]] — the seer's analysis feeds back into the graph it analyzes.
 
-see [[spectral gap]] for the mathematical foundation. see [[cyberia/architecture]] for cyber-seer's role in the agent network. see [[foculus]] for how $\lambda_2$ determines consensus speed. see [[bostrom]] for current network statistics
+## connection to [[gflownet focus flow|GFlowNet]]
+
+cyber-seer is analytical — it computes the Fiedler vector and ranks links by $\Delta\lambda_2$. [[gflownet focus flow|GFlowNet focus-flow]] is learned — it samples links proportional to a reward that INCLUDES $\Delta\lambda_2$.
+
+the composition: cyber-seer provides the analytical signal (spectral gap, articulation points, focus redistribution). GFlowNet learns to sample from this signal, generalising beyond what the Fiedler vector alone predicts — discovering semantic shortcuts, multi-hop bridges, and creative connections.
+
+cyber-seer's three phases (bridge → mesh → semantic) emerge automatically in the GFlowNet's learned policy because the exponential cost function naturally shifts the reward from structural ($\Delta\lambda_2$ dominant) to semantic ($\Delta\pi$ dominant) as the graph matures.
+
+see [[spectral gap]] for the mathematical foundation. see [[cyberia/architecture]] for cyber-seer's role in the agent network. see [[foculus]] for how $\lambda_2$ determines consensus speed. see [[bostrom]] for current network statistics. see [[gflownet focus flow]] for the learned extension
