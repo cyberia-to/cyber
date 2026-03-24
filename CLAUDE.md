@@ -71,7 +71,7 @@ Domain tags: `article`, `cybernomics`, `compound`, `ticker`, `person`,
 
 Never write `[[term]]s` with a floating `s` outside the link. Every
 concept page that has a meaningful plural must include both forms in its
-`alias::` line (e.g. `alias:: isomorphisms` on the `isomorphism` page).
+`alias:` line (e.g. `alias: isomorphisms` on the `isomorphism` page).
 Then link the plural directly: `[[isomorphisms]]` instead of
 `[[isomorphism]]s`. This keeps links clean and resolvable.
 ## Shell: Nushell
@@ -116,6 +116,7 @@ Scripts:
 - `analizer/trikernel.nu` — compute tri-kernel (diffusion, springs, heat) over wiki-link graph, write focus + gravity + density to frontmatter. Runs on new moon only (±1 day); use `--force` to override, `--dry-run` to preview
 
 - `analizer/dangling.nu` — alias-aware dangling wiki-link detector (basenames, paths, alias: frontmatter; case-insensitive; top 50 + stats)
+- `analizer/add-footer.nu` — append `discover all [[concepts]]` footer to core-tagged pages missing it
 - `analizer/codematter.nu` — add comment-frontmatter to code files (.rs, .nu, .toml, .py, .sh, .yml), integrating source into cybergraph as particles
 
 When adding a new script: place it in `analizer/`, accept `graph_path` as first
