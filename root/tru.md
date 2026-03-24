@@ -5,6 +5,7 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 subgraph: true
+repo: ../tru
 crystal-size: bridge
 stake: 16417668960360008
 diffusion: 0.005184624863262818

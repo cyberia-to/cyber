@@ -5,6 +5,7 @@ alias: cybergraphs
 crystal-type: entity
 crystal-domain: cyber
 subgraph: true
+repo: ../cybergraph
 crystal-domain: cyber
 crystal-size: article
 diffusion: 0.022987905434778945
