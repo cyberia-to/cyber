@@ -1,17 +1,21 @@
 ---
-tags: cyber valley
+tags: cybernomics
 crystal-type: entity
-alias: fuelwood, wood fuel
+crystal-domain: economics
+stake: 9218564244269942
+diffusion: 0.001103557458037721
+springs: 0.00021593762417543774
+heat: 0.0005526643441774334
+focus: 0.000727092885107
+gravity: 7
+density: 13.16
 ---
+wood species with highest [[heat]] and [[biochar]] yield per ha
 
-# firewood
+- [[kaliandra]]
+- [[lamtoro]]
 
-Wood harvested for fuel, providing heat energy for cooking, water heating, and other thermal needs.
+good for ignition only
 
-In [[cyber valley]], firewood comes from sustainably coppiced [[fast growing]] species like [[leucaena]], [[gliricidia]], and [[calliandra]]. Coppicing involves cutting trees at the base and allowing regrowth from the stump, yielding repeated harvests without replanting. These [[nitrogen-fixing]] species simultaneously improve [[soil]] while producing fuel.
-
-Proper drying and storage increase combustion efficiency and reduce smoke emissions. A well-managed woodlot of 0.5 hectares can supply year-round cooking fuel for a household in tropical climates.
-
-Firewood remains the primary energy source for billions of people worldwide and a key element of [[permaculture]] energy planning.
-
-discover all [[concepts]]
+- [[trema]]
+- [[sengon]]
