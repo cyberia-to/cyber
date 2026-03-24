@@ -5,7 +5,7 @@ crystal-type: entity
 crystal-domain: cyber
 subgraph: true
 repo: ../optica
-exclude: ".claude/**, target/**"
+exclude: ".claude/**, target/**, templates/**"
 diffusion: 0.00011995724671972114
 springs: 0.0005498271614917363
 heat: 0.0004460146902295187
