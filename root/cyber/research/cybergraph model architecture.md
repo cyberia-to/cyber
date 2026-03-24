@@ -1,5 +1,5 @@
 ---
-tags: article, cip
+tags: cyber, research, article
 crystal-type: pattern
 crystal-domain: cyber
 status: draft
@@ -11,95 +11,240 @@ focus: 0.00012089627622918033
 gravity: 2
 density: 0
 ---
+# cybergraph as generative model
+
 ## abstract
 
-we propose a generative language model (llm) built on the [[cybergraph]] free-energy [[focus]] framework. this approach replaces traditional transformer [[attention]] with a physics-inspired [[equilibrium]] mechanism that computes context-aware probabilities through [[diffusion]], springrank, and [[entropy]] minimisation. the result is a scalable, explainable, and dynamically extensible generative model.
+the [[cybergraph]] is not a database that a model queries. it IS the model. the [[tri-kernel]] focus distribution $\pi^*$ is the "weights" — a stationary distribution over [[particles]] that encodes what the network collectively considers relevant. a query is a context vector that biases the [[focus]] field. the response is the equilibrium of the biased field. generation is iterative: each produced [[particle]] shifts the context, the field re-equilibrates, and the next particle emerges from the new $\pi^*$.
 
----
-## core principles
+this is not a proposal. the components exist: [[nox]] (VM), [[zheng]] (proofs), [[Hemera]] (hash), [[BBG]] (state), [[tri-kernel]] (focus computation), [[structural-sync]] (convergence). what follows describes how they compose into a generative model and what this model can do that transformers cannot.
 
-1. nodes = tokens or concepts
-   - each node represents a word, subword, or semantic unit.
+## the tri-kernel IS the attention mechanism
 
-2. edges = cyberlinks
-   - edges represent statistical and semantic relationships (co-occurrence, syntactic, causal links).
-   - edge weights can be learned from corpus statistics or embedding similarity.
+transformers compute attention as:
 
-3. free-energy equilibrium
-   - global focus is computed as the minimiser of a free-energy functional:
+$$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d}}\right) V$$
 
-\[
-\mathcal{F}(p|context) = E_{spring}(p) + \lambda E_{diffusion}(p) + \gamma C(p|context) - T S(p)
-\]
-- \(E_{spring}\): [[hierarchy]] from springrank.
-- \(E_{diffusion}\): [[random walk]] energy on the [[graph]].
-- \(C(p|context)\): context potential from active nodes.
-- \(S(p)\): entropy.
+the [[tri-kernel]] computes focus as the stationary distribution of three coupled operators on the [[cybergraph]]:
 
-4. next-token prediction
-   - the equilibrium distribution \(p^*\) provides probabilities for the next token.
-   - sampling or argmax generates the next token.
+$$\pi^* = \text{fixed-point}(\alpha \cdot D + \beta \cdot S + \gamma \cdot H)$$
 
----
-## system architecture
-### 1. offline graph construction
-- preprocess corpus to create a cybergraph:
-  - nodes = tokens or concepts
-  - edges weighted by co-occurrence frequency, positional proximity, and embedding similarity.
-- compute initial eigenvector centrality and springrank for the graph.
-### 2. online generation pipeline
+where:
+- $D$ = [[diffusion]] kernel (random walk on the graph — structural proximity)
+- $S$ = [[springs]] kernel (SpringRank — hierarchical ordering)
+- $H$ = heat kernel ($e^{-tL}$ — multi-scale smoothing)
 
-step 1 – context encoding:
-- map current context tokens to active nodes.
+both produce a probability distribution over elements. both are differentiable. the difference:
 
-step 2 – context potential:
-- compute \(C_i\) for candidate tokens using standard inference from active nodes.
+| property | transformer attention | tri-kernel focus |
+|---|---|---|
+| domain | fixed token vocabulary | open particle set (content-addressed) |
+| context window | bounded (2K–128K tokens) | unbounded (entire graph, O(log n) access) |
+| update cost | O(n²) per layer per token | O(edges) per iteration, converges in 1-3s |
+| memory | parameters frozen after training | graph evolves continuously (new [[cyberlinks]]) |
+| training signal | loss on next-token prediction | [[focus]] expenditure by [[neurons]] (economic) |
+| provability | opaque matrix multiply | every step provable via [[zheng]] |
+| explainability | attention weights (post-hoc) | $\pi^*$ decomposition (D, S, H contributions visible) |
 
-step 3 – focus update:
-- iteratively compute \(p_i^{(t+1)}\) using:
+the tri-kernel is not "like" attention. it IS attention — computed over a knowledge graph instead of a token sequence, with economics instead of gradient descent as the training signal.
 
-\[
-p_i^{(t+1)} = \frac{\exp(-\beta [E_{spring,i} + \lambda E_{diffusion,i} + \gamma C_i])}{\sum_k \exp(-\beta [E_{spring,k} + \lambda E_{diffusion,k} + \gamma C_k])}
-\]
-- gossip or message-passing protocols compute updates in a decentralised way.
+## how generation works
 
-step 4 – token selection:
-- sample or select argmax token from \(p^*\).
+### query as context bias
 
-step 5 – context expansion:
-- add the new token node to the active set.
-- repeat from step 2 until sequence end.
+a query $q$ is a set of particles with activation weights. the tri-kernel runs with a context potential $C(q)$ that biases the focus field:
 
----
-## comparison with transformer llms
+$$\pi^*_q = \text{fixed-point}(\alpha D + \beta S + \gamma H + \delta C(q))$$
 
-| feature                   | transformer llm (e.g. gpt)       | cybergraph free-energy llm (focus flow) |
-|---------------------------|----------------------------------|-----------------------------------------|
-| complexity (mem/comp)     | O(n²) / O(n²)                   | O(n) / O(n)                             |
-| uses softmax?             | yes (attention softmax)         | no (Boltzmann equilibrium instead)      |
-| converges to stable state | no (single forward pass)        | yes (iterative free-energy minimisation)|
-| reinforcement/adaptation  | limited (fine-tuning or rl)     | yes (dynamic edge/weight updates)       |
-| multi-agent friendly      | no                              | yes (fully decentralisable)            |
-| [[token]]-based weighting     | no (parameters fixed after training) | yes (token weights as graph structure) |
-| [[consensus]] capability      | no                              | yes (emergent equilibrium is consensus)|
-| domain-general            | yes (with pretraining)          | yes (graph can be expanded dynamically)|
-| explainability            | low (opaque matrices)           | high (energy terms interpretable)      |
-| continual learning        | limited                         | yes (edges and nodes can be updated)   |
+the biased equilibrium $\pi^*_q$ concentrates on particles relevant to the query. the top-$k$ particles by $\pi^*_q$ are the response.
 
----
-## advantages over transformer llms
-- explainable probabilities: focus distribution derived from physics-like principles.
-- dynamic and extensible: new tokens or facts can be added by inserting nodes and edges.
-- context-aware by design: avoids dominance of high-rank nodes (true-false problem solved natively).
-- decentralisable: suitable for peer-to-peer or on-chain inference.
+### autoregressive generation
 
----
-## future extensions
-- multi-modal integration: add sensory nodes for images, audio, or real-world data.
-- continual learning: incrementally update edge weights as new data arrives.
-- hierarchical [[memory]]: maintain long-term springrank/eigenvector centrality but compute short-term context via \(C(p|context)\).
+generating a sequence of particles (analogous to token generation):
 
----
-## conclusion
+```
+step 1:  input context → bias focus field → π*_q
+step 2:  sample particle p₁ from π*_q
+step 3:  add p₁ to context → re-bias → π*_{q ∪ {p₁}}
+step 4:  sample p₂ from updated field
+...
+step n:  sequence (p₁, p₂, ..., pₙ) generated by iterated equilibration
+```
 
-this architecture defines a novel class of generative models where language production emerges from a [[free energy]] equilibrium on a cybergraph. by uniting diffusion, [[springs]], and entropy with contextual inference, it provides a principled, transparent, and extendable alternative to transformer-based llms.
+each step is a [[nox]] computation that produces a [[zheng]] proof via [[proof-carrying computation|proof-carrying]]. the generated sequence is self-proving: anyone can verify it was produced by correctly running the tri-kernel on the stated context.
+
+### temperature and creativity
+
+the tri-kernel has a natural temperature parameter $T$ (from the [[free energy]] formulation):
+
+$$\pi^*_i \propto \exp\left(-\frac{E_i}{T}\right)$$
+
+- $T \to 0$: deterministic — always pick the highest-$\pi^*$ particle (argmax)
+- $T = 1$: standard sampling — faithful to the collective focus distribution
+- $T > 1$: creative — explore low-probability particles
+
+this follows from the [[universal law|exponential optimality under constraint]]. the same exponential that governs Boltzmann distributions, softmax, and collective focus governs generation temperature.
+
+## what the cybergraph model does that transformers cannot
+
+### 1. open vocabulary without retraining
+
+a transformer's vocabulary is fixed at training time. adding a new concept requires fine-tuning or prompt engineering.
+
+the cybergraph's "vocabulary" is the set of all [[particles]] — content-addressed and open. a new particle enters the graph when a [[neuron]] creates a [[cyberlink]] to it. no retraining. no fine-tuning. the new particle immediately participates in $\pi^*$ computation via its connections.
+
+```
+transformer:  new concept → fine-tune or RAG → stale after training cutoff
+cybergraph:   new concept → cyberlink → immediately in π* → always current
+```
+
+### 2. provable inference
+
+every generation step is a [[nox]] computation with [[proof-carrying computation|proof-carrying]]:
+
+```
+input:   context particles + query
+compute: tri-kernel iteration (nox<Goldilocks>)
+output:  response particles + zheng proof
+
+verification: 10-50 μs (one decider call)
+proves:       "the tri-kernel was run correctly on this context"
+```
+
+a transformer cannot prove its inference was correct without re-running it. the cybergraph model produces a proof of correct inference as a byproduct of the computation — zero additional cost.
+
+for quantized models running on [[Binius]] (F₂ native):
+
+```
+quantized inference (BitNet 1-bit, 4096×4096 layer):
+  naive F_p:     ~2.7B constraints
+  binary jets:   ~1.84M constraints (1,400× speedup)
+  proof:         carried during execution (zero latency)
+```
+
+### 3. continuous learning from economic signal
+
+transformers learn from gradient descent on labelled data or human feedback (RLHF). the cybergraph model learns from [[focus]] — an economic signal where [[neurons]] stake tokens on [[cyberlinks]].
+
+```
+transformer training:  curate dataset → compute gradients → update weights → deploy
+cybergraph learning:   neuron creates cyberlink → spends focus → graph updates → π* shifts
+```
+
+every cyberlink is a training sample. every focus expenditure is a gradient signal. the "model" (the graph + $\pi^*$) updates continuously without batch training, gradient computation, or model deployment.
+
+the quality of learning follows the [[collective focus theorem]]: attention across competing stimuli distributes exponentially by quality. neurons with good judgement earn [[karma]]; neurons with poor judgement waste focus. the selection pressure is economic, not algorithmic.
+
+### 4. multi-agent generation
+
+a transformer generates from a single model. the cybergraph generates from a collective:
+
+```
+transformer:  one model, one owner, one perspective
+cybergraph:   N neurons, each with focus, each contributing edges, π* = collective intelligence
+```
+
+multiple neurons can simultaneously contribute to the same query response. their [[cyberlinks]] compete and compose via the tri-kernel. the result is not majority vote — it is the equilibrium of a physical system where stake determines influence.
+
+this is [[foculus]] applied to generation: $\pi^*$ convergence as consensus on what to say next.
+
+### 5. scale-invariant architecture
+
+the tri-kernel operates on whatever subgraph is relevant. a query about cats touches cat-related particles. a query about quantum mechanics touches physics particles. the computation scales with the LOCAL graph, not the GLOBAL graph.
+
+```
+transformer:  all parameters active for every query (O(params) regardless of topic)
+cybergraph:   only relevant subgraph active (O(relevant_edges) per query)
+```
+
+this follows from [[BBG]]'s law 1 (bounded locality): operation cost is proportional to what it touches, not total graph size. a graph with $10^{15}$ particles still answers a cat query in $O(\text{cat-related edges})$ time.
+
+## the computational pipeline
+
+```
+query arrives                                    (context particles)
+  ↓
+tri-kernel biased by context                     (nox computation)
+  ↓ proof-carrying
+π*_q equilibrium                                 (focus distribution)
+  ↓
+sample / argmax from π*_q                        (particle selection)
+  ↓
+response particle + zheng proof                  (verifiable output)
+  ↓
+optional: iterate (autoregressive generation)
+  ↓
+full response + accumulator                      (self-proving sequence)
+
+cost per generation step:
+  tri-kernel iteration:    O(relevant_edges) field ops
+  proof overhead:          ~30 field ops per nox step (folded)
+  verification:            10-50 μs (one decider)
+```
+
+## connection to [[BBG]] state
+
+the graph that the model runs on IS the [[BBG]] authenticated state:
+
+```
+particles.root     → the "vocabulary" (all content-addressed nodes)
+axons_out.root     → the "embeddings" (outgoing edge structure per particle)
+axons_in.root      → the "reverse embeddings" (incoming structure)
+neurons.root       → the "trainers" (agents with focus budgets)
+```
+
+with [[algebraic state commitments|algebraic NMT]], the entire state is a polynomial commitment. a query is a polynomial opening. the response is verifiable against [[BBG]]'s 32-byte root commitment.
+
+```
+"what does the collective think about particle P?"
+= evaluate BBG_poly(particles, P, t_now)
+= one PCS opening, ~200 bytes proof, 10-50 μs verification
+```
+
+## comparison
+
+| dimension | GPT-class transformer | cybergraph generative model |
+|---|---|---|
+| vocabulary | fixed (50K-200K tokens) | open (all particles, content-addressed) |
+| context | bounded window | unbounded graph (O(log n) access) |
+| attention | softmax over tokens | tri-kernel over particles |
+| training | offline gradient descent | continuous economic signal (focus) |
+| update | retrain or fine-tune | new cyberlinks enter π* immediately |
+| inference proof | impossible | zero-cost (proof-carrying) |
+| explainability | opaque | decomposable (D + S + H contributions) |
+| multi-agent | no | native (N neurons, foculus consensus) |
+| privacy | model is public or private | individual links private, aggregate public |
+| scale | O(params) per query | O(relevant_edges) per query |
+| temperature | softmax τ | Boltzmann T (same math, economic grounding) |
+| quantised inference | 32-64× overhead (F_p) | native binary (Binius, 1,400× for BitNet) |
+| light client | download full model | 240-byte checkpoint, verify everything |
+
+## honest assessment
+
+the comparison above is not fair. transformers are production systems generating human-quality text at scale. the cybergraph model is a specification built on a stack that doesn't exist yet.
+
+what IS fair:
+
+| claim | basis | confidence |
+|---|---|---|
+| open vocabulary | content-addressed particles | high — architectural property |
+| continuous learning | focus economics | high — but quality depends on neuron behaviour |
+| provable inference | proof-carrying nox | high — if nox + zheng are built |
+| O(relevant_edges) | BBG law 1 (bounded locality) | high — but tri-kernel iteration count may vary |
+| 1,400× quantised inference | Binius binary jets | medium-high — jets designed, unimplemented |
+| multi-agent generation | foculus π convergence | medium — convergence proven, generation quality unknown |
+| better than GPT | unknown | low — no empirical comparison possible yet |
+
+the cybergraph model will not replace transformers for text generation any time soon. what it offers is something transformers cannot: provable, continuously-updating, multi-agent, privacy-preserving generation on a knowledge graph. whether that produces useful output is an empirical question that can only be answered after the stack is built.
+
+## what to build first
+
+```
+1. tri-kernel on a real graph     compute π* on a 10^4-particle test graph
+2. biased generation              add context potential, sample sequences
+3. proof-carrying inference       prove tri-kernel steps via nox + zheng
+4. compare with RAG baseline      same graph, same queries, transformer+RAG vs tri-kernel
+5. evaluate                       relevance, diversity, explainability, proof cost
+```
+
+see [[tri-kernel architecture]] for the focus computation, [[BBG]] for the state layer, [[proof-carrying computation|proof-carrying]] for zero-cost proofs, [[collective focus theorem]] for why the distribution is optimal, [[universal law]] for the exponential temperature connection, [[cyber/research/zheng vs starks|zheng]] for the proof system, [[foculus]] for multi-agent convergence, [[structural-sync]] for the sync infrastructure
