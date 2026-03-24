@@ -2,7 +2,7 @@
 tags: comp, algebra
 crystal-type: entity
 crystal-domain: comp
-alias:: join-semilattices
+alias: join-semilattices
 ---
 # join-semilattice
 

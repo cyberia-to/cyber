@@ -2,7 +2,7 @@
 tags: comp, distributed systems
 crystal-type: entity
 crystal-domain: comp
-alias:: Brewer's theorem, CAP
+alias: Brewer's theorem, CAP
 ---
 # CAP theorem
 

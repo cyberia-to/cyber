@@ -2,7 +2,7 @@
 tags: comp, distributed systems
 crystal-type: entity
 crystal-domain: comp
-alias:: CRDTs, conflict-free replicated data type, conflict-free replicated data types
+alias: CRDTs, conflict-free replicated data type, conflict-free replicated data types
 ---
 # CRDT
 

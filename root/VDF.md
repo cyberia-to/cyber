@@ -2,7 +2,7 @@
 tags: comp, cryptography
 crystal-type: entity
 crystal-domain: comp
-alias:: VDFs, verifiable delay function, verifiable delay functions
+alias: VDFs, verifiable delay function, verifiable delay functions
 ---
 # VDF
 

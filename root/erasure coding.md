@@ -2,7 +2,7 @@
 tags: comp, coding theory
 crystal-type: entity
 crystal-domain: comp
-alias:: erasure codes
+alias: erasure codes
 ---
 # erasure coding
 

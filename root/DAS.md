@@ -2,7 +2,7 @@
 tags: comp, data availability
 crystal-type: entity
 crystal-domain: comp
-alias:: data availability sampling
+alias: data availability sampling
 ---
 # DAS
 
