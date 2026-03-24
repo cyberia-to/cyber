@@ -2,7 +2,7 @@
 tags: cybernomics, cyber
 crystal-type: pattern
 crystal-domain: cybics
-alias:: Shapley, Shapley values, shapley value
+alias: Shapley, Shapley values, shapley value
 stake: 5452540726085665
 diffusion: 0.00041505610926947207
 springs: 0.0010027347696212501

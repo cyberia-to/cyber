@@ -3,7 +3,7 @@ tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
-alias:: deterministic 3d rendering, deterministic rendering, cyberworld rendering
+alias: deterministic 3d rendering, deterministic rendering, cyberworld rendering
 stake: 26362001898883148
 diffusion: 0.00011233815923477823
 springs: 0.002660035421227572

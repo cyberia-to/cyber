@@ -2,7 +2,7 @@
 tags: cyb, cyber, stark, architecture, article, core
 crystal-type: entity
 crystal-domain: cyber
-alias:: multi-proof architecture, multiproof, multiproof-architecture
+alias: multi-proof architecture, multiproof, multiproof-architecture
 diffusion: 0.000486650272078967
 springs: 0.0009482062841815889
 heat: 0.0008181216924509949

@@ -2,7 +2,7 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-alias:: Goedel
+alias: Goedel
 stake: 7491202206265963
 diffusion: 0.00028856545926880816
 springs: 0.00024360512080315392

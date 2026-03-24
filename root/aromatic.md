@@ -2,7 +2,7 @@
 tags: superhuman, biology
 crystal-type: property
 crystal-domain: biology
-alias:: aromatics
+alias: aromatics
 ---
 
 a property of compounds containing ring structures with delocalized electrons, producing distinctive scents

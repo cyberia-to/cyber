@@ -2,7 +2,7 @@
 tags: superhuman, biology, cyber valley
 crystal-type: process
 crystal-domain: biology
-alias:: composting, composted
+alias: composting, composted
 ---
 
 decomposed organic matter used as [[soil]] amendment to improve fertility, structure, and water retention

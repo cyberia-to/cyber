@@ -2,7 +2,7 @@
 tags: superhuman, biology
 crystal-type: entity
 crystal-domain: biology
-alias:: herb, herbal
+alias: herb, herbal
 ---
 
 [[plant]]s used for flavoring, [[medicine]], or fragrance

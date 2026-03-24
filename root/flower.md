@@ -2,7 +2,7 @@
 tags: superhuman, biology
 crystal-type: entity
 crystal-domain: biology
-alias:: flowers, flowering
+alias: flowers, flowering
 ---
 
 the reproductive structure of angiosperms, containing organs for [[pollination]] and [[seed]] production

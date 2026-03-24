@@ -2,7 +2,7 @@
 tags: research, math
 crystal-type: pattern
 crystal-domain: cyber
-alias:: categorical patches, commutative patches
+alias: categorical patches, commutative patches
 stake: 18334772320673232
 diffusion: 0.00012234200131119733
 springs: 0.0029019359834727048

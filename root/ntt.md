@@ -2,7 +2,7 @@
 tags: cyber, mathematics, cryptography
 crystal-type: entity
 crystal-domain: cyber
-alias:: NTT, number theoretic transform
+alias: NTT, number theoretic transform
 ---
 
 Number Theoretic Transform: a discrete Fourier transform over a finite field, enabling fast polynomial multiplication in [[stark]] proof systems over the [[goldilocks field]]

@@ -3,7 +3,7 @@ tags: cyber, core, research
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
-alias:: cyberpatch spec, cyberpatch specification, patch spec
+alias: cyberpatch spec, cyberpatch specification, patch spec
 stake: 28558835390456748
 diffusion: 0.00011233815923477823
 springs: 0.0024239358233028533

@@ -3,7 +3,7 @@ tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-alias:: patch, cyberpatch, patch system, patches
+alias: patch, cyberpatch, patch system, patches
 icon: "\U0001FA79"
 stake: 39885708873010200
 diffusion: 0.00015236411240884443

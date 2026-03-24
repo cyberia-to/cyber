@@ -2,7 +2,7 @@
 tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
-alias:: probabilistic logic
+alias: probabilistic logic
 stake: 4474583683420153
 diffusion: 0.00025885244775050546
 springs: 0.002021195197205134

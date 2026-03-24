@@ -2,7 +2,7 @@
 tags: superhuman, compound
 crystal-type: entity
 crystal-domain: biology
-alias:: eucalyptol, 1,8-cineole
+alias: eucalyptol, 1,8-cineole
 ---
 
 a monoterpenoid found in many [[essential oil]]s, providing cooling and [[anti-inflammatory]] effects
