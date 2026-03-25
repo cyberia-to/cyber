@@ -288,4 +288,82 @@ a superintelligence that can prove truth, execute efficiently, optimize decision
 
 the claim is not that four algebraic structures exhaust mathematics. the claim is that four execution regimes exhaust the computational surface of provable intelligence. probability, continuity, logic, and composition are programs OVER these regimes, not regimes of their own.
 
+## why four
+
+the four regimes converge from radically different origins — algebra, complexity theory, order theory, cryptographic hardness — yet land on exactly four. this is not coincidence. it reflects the structure of computation itself.
+
+### four failure modes
+
+computation can go wrong in exactly four independent ways:
+
+| failure | remedy | regime |
+|---------|--------|--------|
+| incorrect | proof of correctness | nebu |
+| slow | efficient representation | kuro |
+| suboptimal | proof of optimality | trop |
+| exposed | one-way hiding | genies |
+
+four failure modes → four remedies. if computation could fail in three ways, three regimes would suffice. but incorrectness, inefficiency, suboptimality, and exposure are independent — fixing one does not fix another. a correct computation can still be slow. an efficient computation can still be suboptimal. an optimal computation can still be exposed.
+
+### four branches of mathematics
+
+each regime draws from a different irreducible branch:
+
+| regime | mathematical foundation | what it provides |
+|--------|------------------------|-----------------|
+| nebu | abstract algebra (fields, rings, polynomials) | structure for proofs |
+| kuro | complexity theory (circuit complexity, representation cost) | efficiency boundary |
+| trop | order theory (lattices, semirings, fixed points) | optimization structure |
+| genies | computational hardness (one-way functions, trapdoors) | asymmetry as resource |
+
+these four branches do not reduce to each other:
+- algebra does not contain order theory — fields have no natural order compatible with both operations
+- order theory does not contain algebra — semirings lack inverses, different structure
+- neither contains complexity theory — efficiency is not an algebraic property
+- none contain hardness — one-way functions are conjectural, not constructive
+
+the four regimes are irreducible because the four mathematical foundations are irreducible.
+
+### four information operations
+
+every computation transforms information. the four regimes correspond to four things you can DO with information:
+
+| operation | regime | foundation |
+|-----------|--------|------------|
+| verify | nebu | Shannon channel coding — error detection/correction |
+| compress | kuro | Shannon source coding — minimal representation |
+| select | trop | decision theory — choose the best |
+| hide | genies | information-theoretic security — selective access |
+
+Shannon covered verify and compress. decision theory covers select. cryptography covers hide. four fields of information science, four regimes.
+
+### the [[cybergraph]] decomposition
+
+the four regimes are not abstract — they are the four aspects of the [[cybergraph]] itself:
+
+| cybergraph element | regime | what it computes |
+|-------------------|--------|-----------------|
+| [[particles]] (content) | nebu | content addressing, hashing, commitment |
+| [[cyberlinks]] (edges) | trop | graph optimization, shortest paths, ranking |
+| [[neurons]] (agents) | genies | identity, privacy, selective disclosure |
+| [[focus]] (attention vector π) | kuro | efficient SpMV, quantized tri-kernel iteration |
+
+the cybergraph IS the four regimes composed:
+- particles are field elements (nebu)
+- links are weighted edges optimized tropically (trop)
+- neurons are agents with private keys (genies)
+- focus is a probability vector computed efficiently (kuro)
+
+### convergence
+
+four different starting points — field theory, binary complexity, semiring structure, computational hardness — converge to four capabilities — truth, speed, choice, shadow. the convergence suggests that computation has exactly four degrees of freedom. not as a design decision, but as a mathematical fact about what provable intelligence requires.
+
+a system missing any one of the four is fundamentally incomplete:
+- without nebu: cannot prove anything (no verification)
+- without kuro: cannot run AI inference at scale (32× overhead kills throughput)
+- without trop: cannot make optimal decisions (no provable optimization)
+- without genies: cannot protect identity (no privacy, no selective disclosure)
+
+four is not minimal by convention. four is minimal by necessity.
+
 discover all [[concepts]]
