@@ -162,15 +162,58 @@ proof size:      ~1.3 KiB (PCS) + ~0.5 KiB (sumcheck) + ~0.3 KiB (eval) = ~2 KiB
 verify:          ~660 field ops, ~5 μs
 fold:            ~30 field ops, ~0.2 μs
 prover memory:   O(√N) via tensor compression
-decider:         ~8K constraints, ~5 μs
+decider:         ~89 constraints, ~0.1 μs (with decider jet)
 ```
 
 composition at scale:
 
 ```
-1000-transaction block:    1000 folds + 1 decider = 30K field ops + 8K constraints
-1000-block epoch:          1000 folds + 1 decider = 30K + 8K
-1M-block chain history:    1 accumulator = ~200 bytes, verify ~5 μs
+1000-transaction block:    1000 folds + 1 decider = 30K + 89 field ops
+1000-block epoch:          1000 folds + 1 decider = 30K + 89
+1M-block chain history:    1 accumulator = ~200 bytes, verify ~0.1 μs
+```
+
+## the decider jet
+
+the decider — the ONE verification that runs at the end of all folding — is a fixed computation: [[sumcheck]] replay + [[Brakedown]] spot-checks + CCS evaluation. three optimizations reduce it from ~8K constraints to ~89:
+
+**CCS jet for the decider.** the decider always does the same thing. express it as a direct CCS encoding instead of a [[nox]] trace:
+
+```
+sumcheck replay:    k rounds of g_i(0) + g_i(1) = prev           20 ASSERT_EQ
+CCS evaluation:     Σ c_j × ∏(M_i · z)(r) = 0                   34 MUL + ASSERT_EQ
+Brakedown checks:   λ × log log N spot-checks                    1,280 MUL + ASSERT_EQ
+hemera seed:        1 call                                        736 constraints
+                                                                  ─────────
+total with CCS jet:                                               ~2,070 constraints
+```
+
+**batch spot-checks.** the 1,280 Brakedown spot-checks are repetitive — same operation, different inputs. one batched [[sumcheck]] replaces 640 independent checks:
+
+```
+640 multiplications → 1 batched sumcheck
+  log₂(640) = 10 rounds × 3 elements + 1 assertion = ~35 constraints
+                                                      (was 1,280)
+```
+
+**algebraic Fiat-Shamir.** the [[Brakedown]] commitment already contains a [[hemera]] binding hash. derive challenges from the existing hash — zero additional hemera calls in the decider:
+
+```
+sumcheck:     20 constraints
+CCS eval:     34 constraints
+Brakedown:    35 constraints (batched)
+hemera:        0 (challenges from existing PCS commitment)
+              ────
+total:        ~89 constraints
+```
+
+~89 constraints to verify ALL history from genesis. cheaper than one [[hemera]] permutation (736). the entire chain reduces to a ~200-byte accumulator verifiable in ~100 nanoseconds.
+
+```
+                    generic     + CCS jet    + batch      + algebraic FS
+decider:            ~8,000      ~2,070       ~825         ~89
+verify ALL history: ~5 μs       ~1.5 μs      ~0.6 μs      ~0.1 μs
+cost vs hemera:     11× hash    3× hash      1× hash      0.12× hash
 ```
 
 ## what this makes possible
@@ -179,7 +222,7 @@ composition at scale:
 
 **O(1) content access.** any byte range of any [[particles|particle]] verified by one PCS opening. no download of full content. a phone verifies a 1 GB model's layer 47 weights with a 75-byte proof.
 
-**240-byte chain checkpoint.** the [[universal accumulator]] ([[BBG]] root + [[HyperNova]] folding accumulator + height) proves ALL history. join the network: download 240 bytes, verify in 5 μs. full confidence from genesis.
+**240-byte chain checkpoint.** the [[universal accumulator]] ([[BBG]] root + [[HyperNova]] folding accumulator + height) proves ALL history. join the network: download 240 bytes, verify in ~0.1 μs (~89 constraints). cheaper than hashing 56 bytes. full confidence from genesis.
 
 **native [[DAS|data availability]].** no separate [[erasure coding]]. the polynomial IS the code. DAS = PCS opening at random positions. 20 samples, ~1.5 KiB, 99.9999% confidence.
 
