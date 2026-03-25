@@ -260,35 +260,37 @@ current:    5 verification layers, each with its own mechanism
 algebraic:  5 verification layers, layers 3+4 merge into PCS operations
 ```
 
-## the cost threshold
+## the cost: no threshold needed
 
-PCS commitment is expensive for small data. hemera is cheaper for tiny nouns:
-
-```
-cell(1, 2) = 2 atoms:
-  hemera: 1 permutation = ~736 constraints
-  PCS:    Brakedown encode of 2 elements = ~thousands of field ops (overhead)
-
-particle with 1000 elements:
-  hemera: ~125 permutations (1000/8 rate blocks) = ~92K constraints
-  PCS:    Brakedown encode of 1000 elements = ~1000 field ops
-
-particle with 1M elements:
-  hemera: ~125K permutations = ~92M constraints
-  PCS:    Brakedown encode of 1M elements = ~1M field ops (92× cheaper)
-```
-
-the crossover: PCS wins above ~100 elements (~800 bytes). below that, hemera is cheaper.
-
-practical strategy:
+the PCS overhead for small content is NEGLIGIBLE. Brakedown encoding is O(d×N) field ops where d is expander degree (~6-10). for small N, this is a handful of multiplications — drowned by the hemera wrap.
 
 ```
-atom (8 bytes):          hemera hash — trivially cheap
-small noun (< 100 elements): hemera hash — O(N/8) permutations
-large noun (≥ 100 elements): PCS commitment — O(N) field ops, O(1) access
+"cat" = 1 field element:
+  PCS path:    Brakedown.commit(1 element) ≈ 6 field ops + hemera wrap = ~736 constraints
+  hemera path: hemera("cat") = 1 permutation = ~736 constraints
+  IDENTICAL COST.
+
+sentence = 10 field elements (80 bytes):
+  PCS path:    Brakedown.commit(10 elements) ≈ 60 field ops + hemera wrap = ~740 constraints
+  hemera path: hemera(80 bytes) = 2 permutations (80/56 rate) = ~1,472 constraints
+  PCS IS CHEAPER. (hemera needs 2 absorption blocks; Brakedown encoding is trivial.)
+
+document = 1000 field elements (8 KiB):
+  PCS path:    Brakedown.commit(1000) ≈ 6,000 field ops + hemera wrap = ~6,736 constraints
+  hemera path: hemera(8 KiB) = ~143 permutations = ~105K constraints
+  PCS IS 15× CHEAPER.
+
+neural net = 1M field elements (8 MB):
+  PCS path:    Brakedown.commit(1M) ≈ 6M field ops + hemera wrap = ~6M constraints
+  hemera path: hemera(8 MB) = ~143K permutations = ~105M constraints
+  PCS IS 17× CHEAPER.
 ```
 
-the 16 nox patterns handle both representations transparently. axis on a hemera-identified noun = tree traversal. axis on a PCS-identified noun = polynomial evaluation. the pattern semantics are the same. the jet dispatches differently based on the identity type.
+the crossover is at 56 bytes (one hemera rate block). below 56 bytes: identical cost. above: PCS path wins because hemera needs multiple absorption blocks while Brakedown encoding scales as cheap field ops.
+
+**decision: `hemera(PCS.commit(content) ‖ tag)` for EVERYTHING.** zero threshold. zero type dispatch. one identity scheme. one code path.
+
+the shortest particles ("cat", "dog", "love") have the MOST links — they are the hottest nodes in the graph. making their identity PCS-based means graph operations on the most-queried particles are algebraically composable with everything else. no boundary crossing. no dual paths.
 
 ## the unified primitive
 
@@ -314,7 +316,7 @@ one PCS. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now 
 
 ## open questions
 
-1. **small noun overhead.** Brakedown encoding of 2-element polynomials is wasteful. can a lightweight commitment (hemera hash) coexist with heavyweight commitment (PCS) under one identity scheme? the domain tag could encode the commitment type: DOMAIN_HASH vs DOMAIN_PCS. axis dispatch checks the type.
+1. **~~small noun overhead.~~** RESOLVED. Brakedown encoding of small content is negligible (~6 field ops for 1 element). the hemera wrap dominates either way (~736 constraints). use `hemera(PCS.commit(content) ‖ tag)` for everything. zero threshold. the shortest particles ("cat") have the most links — uniformity of identity scheme benefits the hottest nodes most.
 
 2. **cons homomorphism.** can Brakedown.commit(cons(a,b)) be computed from commit(a) and commit(b) without re-encoding? Brakedown's linearity suggests yes: $\text{commit}(g) = (1-r) \cdot \text{commit}(a) + r \cdot \text{commit}(b)$ for a challenge $r$. needs formal verification.
 
@@ -330,9 +332,9 @@ one PCS. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now 
 
 ### phase 1: nox reference (data model)
 
-- [ ] nox/reference/nouns.md — add polynomial representation: noun = multilinear polynomial over {0,1}^k. dual identity: hemera hash for small nouns (< 100 elements), PCS commitment for large nouns
-- [ ] nox/reference/vm.md — axis = polynomial evaluation O(1) for PCS nouns, tree walk for hemera nouns. jet dispatch checks identity type
-- [ ] nox/reference/encoding.md — identity: hemera(PCS.commit ‖ domain_tag) for large nouns, hemera(content) for small nouns. domain_tag encodes commitment type
+- [ ] nox/reference/nouns.md — add polynomial representation: noun = multilinear polynomial over {0,1}^k. identity = hemera(PCS.commit(content) ‖ tag) for ALL nouns. no threshold, no dual identity
+- [ ] nox/reference/vm.md — axis = polynomial evaluation O(1) via PCS opening. one code path for all nouns
+- [ ] nox/reference/encoding.md — identity = hemera(PCS.commit(content) ‖ domain_tag). one scheme for everything
 - [ ] nox/reference/patterns.md — pattern 0 (axis): O(1) for PCS nouns. pattern 15 (hash): hemera wraps PCS commit for large content
 - [ ] nox/reference/trace.md — trace registers may contain PCS commitments as values
 - [ ] nox/reference/jets.md — state jets use O(1) axis. add: PCS noun jets
