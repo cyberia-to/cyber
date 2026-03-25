@@ -240,6 +240,24 @@ nox `compose` pattern IS categorical composition. [[cyberlink]] IS a morphism. [
 
 this is not a missing layer. it is the structure of nox and the cybergraph. composition is how the four regimes interact, not a regime of its own.
 
+## what about quantum computation?
+
+[[no-cloning theorem]] makes standalone quantum computers structurally impossible. quantum hardware is always a co-processor: classical input → state preparation → quantum gates → measurement → classical output. the control loop is classical. the programming is classical. only the execution exploits superposition.
+
+the algebra is F_p² (quadratic extension of [[Goldilocks field]], already in [[Trident]]: n=2, f = x²+1). gate matrices are 2×2 over F_p². the circuit description is a [[nox]] program over existing field extensions.
+
+quantum enters the stack as [[Qu]] — the 15th [[cyb/languages|computation language]]:
+
+| layer | what | regime used |
+|-------|------|-------------|
+| description | circuits as nox programs over F_p² | nebu (field extension) |
+| compilation | T-count optimization via Reed-Muller decoding | kuro (F₂ codes) + trop (min distance) |
+| execution | dispatch to quantum hardware | host jet (crosses [[proof]] boundary) |
+
+nox cannot BE a quantum VM — five structural conflicts: copyable nouns violate no-cloning, deterministic branch violates probabilistic measurement, observable trace violates decoherence, axis reads without destroying, hint is pseudo-random not quantum-random. these are physics constraints, not efficiency gaps.
+
+quantum is not a fifth regime. it is a language + compiler + jets over existing regimes.
+
 ## what is NOT a fifth regime
 
 | candidate | why not |
@@ -248,6 +266,7 @@ this is not a missing layer. it is the structure of nox and the cybergraph. comp
 | continuous / differentiable | dual numbers F_p[ε]/(ε²), extension of nebu |
 | logic / type theory | arithmetization to F_p circuits, nox tree types |
 | categorical composition | nox compose + cybergraph morphisms, structural |
+| quantum computation | F_p² algebra (nebu), kuro+trop compiler, host jet execution. see [[Qu]] |
 | lattices (Ring-LWE, Module-LWE) | polynomial rings F_p[x] — built on nebu via NTT |
 | elliptic curves / pairings | deliberate exclusion — [[STARK]] over [[SNARK]], no trusted setup |
 | floating point (IEEE 754) | quantization trend → kuro ([[BitNet]]). training off-chain |
