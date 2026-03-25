@@ -360,4 +360,25 @@ with λ = 128 and log log N ≈ 5: verification is ~640 field ops ≈ ~5 μs. th
 
 6. **batch opening formal analysis.** the batch opening via random linear combination is standard (used in KZG batch). formal analysis needed for the Brakedown-specific case: does the expander code structure interact with the batching?
 
+## implementation plan
+
+### phase 1: zheng reference (PCS upgrade)
+
+- [ ] zheng/reference/polynomial-commitment.md — rewrite with recursive protocol (commit unchanged, open/verify recursive)
+- [ ] zheng/reference/verifier.md — update: proof ~1.3 KiB, verify ~5 μs, circuit ~8K constraints
+- [ ] zheng/reference/whirlaway.md — update architecture numbers
+- [ ] zheng/reference/api.md — update Proof type size
+
+### phase 2: cascade numbers to bbg
+
+- [ ] bbg/reference/architecture.md — proof sizes in pipeline
+- [ ] bbg/reference/data-availability.md — DAS batch: 20 samples → ~1.5 KiB
+- [ ] bbg/reference/query.md — query proof sizes
+- [ ] bbg/reference/sync.md — sync proof sizes
+- [ ] bbg/docs/explanation/architecture-overview.md — key numbers table
+
+### phase 3: roadmap cleanup
+
+- [ ] DELETE zheng/roadmap/algebraic-extraction.md — superseded (no Merkle paths to extract)
+
 see [[Brakedown]] for the base PCS, [[zheng]] for the proof system, [[polynomial nouns]] for all-algebraic computation, [[algebraic state commitments]] for polynomial state, [[structural-sync]] for the five-layer framework that recursive Brakedown accelerates

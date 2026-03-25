@@ -326,4 +326,43 @@ one PCS. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now 
 
 6. **SIMD and hardware.** hemera maps to the p2r (Poseidon2 round) GFP hardware primitive. Brakedown maps to fma (field multiply-accumulate). going all-algebraic shifts the hardware bottleneck from p2r to fma. the [[Goldilocks field processor]] design may need rebalancing.
 
+## implementation plan
+
+### phase 1: nox reference (data model)
+
+- [ ] nox/reference/nouns.md — add polynomial representation: noun = multilinear polynomial over {0,1}^k. dual identity: hemera hash for small nouns (< 100 elements), PCS commitment for large nouns
+- [ ] nox/reference/vm.md — axis = polynomial evaluation O(1) for PCS nouns, tree walk for hemera nouns. jet dispatch checks identity type
+- [ ] nox/reference/encoding.md — identity: hemera(PCS.commit ‖ domain_tag) for large nouns, hemera(content) for small nouns. domain_tag encodes commitment type
+- [ ] nox/reference/patterns.md — pattern 0 (axis): O(1) for PCS nouns. pattern 15 (hash): hemera wraps PCS commit for large content
+- [ ] nox/reference/trace.md — trace registers may contain PCS commitments as values
+- [ ] nox/reference/jets.md — state jets use O(1) axis. add: PCS noun jets
+- [ ] nox/reference/reduction.md — proof-carrying: ~3 hemera calls per execution (was hundreds)
+- [ ] nox/reference/state-operations.md — READ = O(1) polynomial evaluation
+
+### phase 2: hemera reference (role collapse)
+
+- [ ] hemera/reference/README.md — role: ~3 calls per execution (domain separation, Fiat-Shamir, Brakedown binding)
+- [ ] hemera/reference/tree.md — tree hashing for small nouns only. large nouns use PCS commitment
+
+### phase 3: bbg reference (particles ARE polynomials)
+
+- [ ] bbg/reference/architecture.md — particles are polynomials with native PCS openings. axis on particle content = O(1)
+- [ ] bbg/reference/data-availability.md — DAS native: polynomial extension beyond hypercube IS erasure code. no separate 2D Reed-Solomon step
+- [ ] bbg/reference/storage.md — ShardStore serves polynomial nouns. particle storage = polynomial evaluation table
+- [ ] bbg/reference/indexes.md — polynomial access via PCS opening
+
+### phase 4: bbg + nox explanation
+
+- [ ] bbg/docs/explanation/architecture-overview.md — pipeline: axis O(1), hemera ~3 calls, DAS native
+- [ ] bbg/docs/explanation/data-availability.md — DAS = polynomial extension (no separate erasure step)
+- [ ] bbg/docs/explanation/why-polynomial-state.md — add: nouns ARE polynomials (not just state)
+
+### phase 5: roadmap cleanup
+
+- [ ] DELETE hemera/roadmap/batched-proving.md — ~3 hemera calls, batching is pointless
+- [ ] DELETE hemera/roadmap/folded-sponge.md — ~3 hemera calls, folding is pointless
+- [ ] DEPRIORITIZE hemera/roadmap/algebraic-fiat-shamir.md — still relevant (1 of 3 calls is FS)
+- [ ] DEPRIORITIZE hemera/roadmap/constraint-free-mds.md — marginal with 3 calls
+- [ ] DEPRIORITIZE hemera/roadmap/partial-round-collapse.md — marginal with 3 calls
+
 see [[nox]] for the 16 patterns, [[hemera]] for the hash primitive, [[BBG]] for polynomial state, [[zheng]] for the proof system, [[Brakedown]] for the PCS, [[data structures for polynomial state]] for storage architecture, [[algebraic state commitments]] for why polynomial state is natural, [[structural-sync]] for the five verification layers
