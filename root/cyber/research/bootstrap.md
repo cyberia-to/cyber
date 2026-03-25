@@ -6,213 +6,343 @@ date: 2026-03-25
 ---
 # bootstrap plan
 
-implementation plan for the [[cyber]] execution stack. principle: maximize [[nox]] code, minimize Rust. the nox kernel is the only irreducible Rust. everything else — proofs, state, crypto, compiler — executes as nox programs + jets.
+implementation plan for the [[cyber]] execution stack. two tracks: Rust (reference + prover, forever) and [[Trident]] (provable, compiles to [[nox]]). dual-language invariant: both produce identical output on all inputs. divergence = bug.
 
 ## current state
 
-| repo | status | LOC |
-|------|--------|-----|
-| [[nebu]] | DONE | ~1.5k Rust |
-| [[hemera]] | DONE | ~5k Rust |
-| [[genies]] | DONE | ~1.9k Rust |
-| [[jali]] | DONE | ~1.4k Rust |
-| [[kuro]] | DONE | working Rust |
-| [[trop]] | STUBS | spec only |
-| [[nox]] | STUBS | 8 modules, 80 LOC (all empty), full spec (9 reference files) |
-| [[zheng]] | STUB | empty lib.rs, full spec (16 reference files) |
-| [[bbg]] | STUB | empty lib.rs, full spec (10 files), BLOCKED on nox + zheng |
-| [[mudra]] | STUB | empty lib.rs, full spec (9 files), deps satisfied |
-| [[Trident]] | IMPLEMENTED | mature compiler, 24 VM targets, NO nox target |
+| repo | status | LOC | tests |
+|------|--------|-----|-------|
+| [[nebu]] | DONE | 1,526 Rust | 73 |
+| [[hemera]] | DONE | 5,084 Rust | 202 |
+| [[jali]] | DONE | 1,442 Rust | 70 |
+| [[kuro]] | DONE | 1,157 Rust | 77 |
+| [[trop]] | DONE | 1,567 Rust | 77 |
+| [[genies]] | DONE | 1,997 Rust | 55 |
+| [[nox]] | SPEC COMPLETE | 35 Rust (stubs) | — |
+| [[zheng]] | SPEC COMPLETE | 6 Rust (stub) | — |
+| [[bbg]] | SPEC COMPLETE | 7 Rust (stub) | — |
+| [[mudra]] | SPEC COMPLETE | 6 Rust (stub) | — |
+| [[Trident]] | 57K Rust | 236 source files, 24 VM targets | working compiler |
+
+arithmetic layer: 12,773 LOC, 554 tests. all six repos compile and pass tests.
+
+Trident has a nock target (tree architecture, Goldilocks field, level 3). nox target needed: same tree architecture, hemera hash (not Tip5), 4-element digest (not 5).
 
 ## dependency graph
 
 ```
-nebu (DONE) → hemera (DONE) → nox (STUB) → zheng (STUB) → bbg (STUB)
-                                    ↓
-                              trident (needs nox target)
-                                    ↓
-                              mudra (needs hemera + genies + jali)
+DONE (arithmetic):
+  nebu (F_p) → hemera (hash)
+  jali (R_q), kuro (F₂), trop (min,+), genies (F_q)
+
+TO BUILD:
+  nox (VM)  → trident (nox target) → trident self-hosts
+                                         ↓
+                                    hemera.td (provable hash)
+                                         ↓
+                              zheng verifier.td + Rust prover
+                                         ↓
+                              jet formulas via trident
+                                         ↓
+                    ┌────────────────┬────────────────┐
+                 mudra.td         bbg.td          tru.td
+                    └────────────────┴────────────────┘
 ```
 
-## phase 0: nox Rust kernel (irreducible minimum)
+## checkpoints (freeze points)
 
-the nox interpreter MUST be Rust — it cannot interpret itself.
+each checkpoint = "stop iterating, build on top." before mainnet: unfreezing = rebuild everything above (days). after mainnet: unfreezing = catastrophic rehash (hours across 10^6 nodes).
 
-| file | what | LOC |
-|------|------|-----|
-| noun.rs | arena, hash-consing, structural hash via [[hemera]] | ~250 |
+```
+CHECKPOINT 0: nox patterns             ← before Phase 1
+  16 pattern semantics, tag numbering, noun model (atom|cell),
+  focus cost model, hint interface, arena bounds (depth 64, count 2^24)
+
+CHECKPOINT 1: trident language          ← before Phase 3
+  syntax, type system, compilation strategy
+  (stable, not frozen — can evolve with re-self-host)
+
+CHECKPOINT 2: hemera parameters         ← before Phase 4
+  permutation (t=16, Rp=16, Rf=8, d=x⁻¹), constants, sponge mode,
+  output size (32 bytes), capacity layout
+  (additive extensions safe: erasure coding, capacity typing)
+
+CHECKPOINT 3: zheng protocol            ← before Phase 5
+  CCS format, SuperSpartan IOP, Brakedown PCS, HyperNova folding,
+  Fiat-Shamir transcript, proof format
+
+CHECKPOINT 4: jet formulas              ← before Phase 6
+  H(formula) for each jet — protocol constants
+  (depends on checkpoints 1 + 2)
+```
+
+## two tracks
+
+```
+Rust track (reference + prover):        Trident track (provable):
+  permanent, fast, NOT proven              compiles to nox, produces proofs
+
+  nebu       ✓ done                        —
+  hemera     ✓ done                        hemera.td
+  jali       ✓ done                        —
+  kuro       ✓ done                        —
+  trop       ✓ done                        —
+  genies     ✓ done                        —
+  nox VM     → Phase 1                     —
+  trident    → Phase 2 (nox target)        trident.td (Phase 3, self-hosting)
+  zheng      → prover (Rust, forever)      verifier.td (Phase 5)
+  mudra      → reference tests             mudra.td (Phase 7)
+  bbg        → reference tests             bbg.td (Phase 8)
+  tru        → reference simulation        tru.td (Phase 9)
+```
+
+Rust arithmetic (nebu, jali, kuro, trop, genies) stays forever — hardware-close, optimized. zheng PROVER stays Rust — generates witnesses, not proven. nox VM stays Rust — IS the interpreter. everything else moves to Trident.
+
+## Phase 1: nox VM (Rust kernel)
+
+the irreducible Rust — nox cannot interpret itself.
+
+| file | what | est. LOC |
+|------|------|----------|
+| noun.rs | arena + hash-consing + structural hash via hemera | ~250 |
 | reduce.rs | 16 pattern dispatch + focus deduction | ~350 |
 | focus.rs | focus metering, cost table | ~50 |
-| hint.rs | Layer 2 non-deterministic witness, trait + null provider | ~80 |
-| encode.rs | wire format (8/32/64 byte atoms/cells), content-addressed store trait | ~120 |
-| memo.rs | computation cache: (H(object), H(formula)) → H(result) | ~60 |
-| trace.rs | TraceRow recording during reduction | ~30 |
+| hint.rs | HintProvider trait, sync callback, NoHint → Halt | ~80 |
+| encode.rs | wire format, content-addressed store trait | ~120 |
+| memo.rs | (H(object), H(formula)) → H(result) cache | ~60 |
+| trace.rs | TraceRow recording per reduce() call | ~30 |
 | jet.rs | jet registry: formula hash → native fn, empty initially | ~60 |
-| lib.rs | top-level ask() = memo check + reduce + record | ~40 |
+| lib.rs | ask() = memo check + reduce + record | ~40 |
 
-total: ~1,040 LOC Rust. this is the entire irreducible kernel.
+~1,040 LOC Rust. Layer 1 only, no jets.
 
-exit criterion: all test vectors from patterns.md pass. ask() executes arbitrary formulas with correct focus metering.
+exit criterion: all test vectors from patterns.md pass.
 
-## phase 1: wire the jets
+**CHECKPOINT 0 must pass before starting.**
 
-connect existing Rust implementations as nox Layer 3 jets.
+est: 2-3 sessions
 
-| jet | wraps | LOC |
-|-----|-------|-----|
-| jet_hash | hemera::hash() | ~30 |
-| jet_ntt | nebu::ntt::ntt() | ~50 |
-| jet_poly_eval | Horner's method via nebu | ~40 |
-| jet_merkle_verify | hemera path walk | ~50 |
-| jet_fri_fold | FRI folding via nebu | ~50 |
-| equivalence test harness | jet vs Layer 1 on random inputs | ~100 |
+## Phase 2: Trident nox target
 
-total: ~320 LOC Rust. all jet wrappers, no new algorithms.
+add nox as compilation target to Trident. the nock target (tree architecture, level 3) is the starting point — change hash to hemera, digest to 4 elements.
 
-exit criterion: each jet produces identical output to Layer 1 pure formula on 1000 random inputs.
+| step | what | est. LOC |
+|------|------|----------|
+| 2a | vm/nox/target.toml (hemera, 4-element digest) | ~50 |
+| 2b | replace Tip5 references with hemera in tree lowering | ~200 |
+| 2c | NounBuilder: AST → nox noun (extend tree lowering) | ~800 |
+| 2d | os/cyber/ type definitions (Particle, Neuron, Cyberlink) | ~200 |
+| 2e | pipeline integration: `trident build --target nox` | ~250 |
 
-## phase 2: sumcheck as nox program
+~1,500 LOC Rust.
 
-the [[sumcheck]] protocol from zheng/reference/sumcheck.md. pure field arithmetic — patterns 5 (add), 7 (mul), 9 (eq), 15 (hash).
+exit criterion: `trident build --target nox fibonacci.td` → valid nox noun → `nox_eval(input, noun, focus)` → correct result.
 
-the verifier is ~200 field ops. the prover is O(2^k) field ops accelerated by jet_ntt.
+est: 3-4 sessions
 
-Rust in zheng/src/ = formula CONSTRUCTORS (build nox nouns). execution happens in nox.
+## Phase 3: Trident self-hosting
+
+write the Trident compiler IN Trident. the compiler itself becomes a nox program.
 
 ```
-pub fn sumcheck_verifier_formula(arena: &mut nox::Arena) -> nox::NounRef
-pub fn sumcheck_prover_formula(arena: &mut nox::Arena) -> nox::NounRef
+trident_source ──Rust compiler──→ nox_noun_v1
+trident_source ──nox_eval(source, nox_noun_v1)──→ nox_noun_v2
+
+fixed point check: nox_noun_v1 == nox_noun_v2 (structural equality)
 ```
 
-~300 LOC Rust (formula builders). the actual programs are nox nouns.
-
-exit criterion: prover + verifier round-trip. valid proofs accepted, invalid rejected.
-
-## phase 3: full [[zheng]] proof pipeline
-
-[[Brakedown]] PCS + [[SuperSpartan]] IOP + Fiat-Shamir transcript. all as nox programs + jets.
-
-| component | nox patterns used | jets used |
-|-----------|------------------|-----------|
-| transcript | hash (15) | jet_hash |
-| Brakedown commit | mul (7), add (5) | jet_ntt |
-| Brakedown open | mul (7), compose (2) | jet_poly_eval |
-| Brakedown verify | mul (7), eq (9) | none (pure arithmetic) |
-| SuperSpartan prover | mul (7), add (5), sumcheck | jet_ntt |
-| SuperSpartan verifier | sumcheck verify, PCS verify | jet_poly_eval |
-| constraint encoding | CCS matrices as constant nouns | none |
-
-the verifier is ~825 constraints (per zheng/reference/verifier.md). the prover is dominated by matrix-vector products.
-
-~600 LOC Rust (formula builders).
-
-exit criterion: ask(object, formula, focus) → trace → prove(trace) → proof → verify(proof) → accept. end-to-end proven computation.
-
-## phase 4: [[Trident]] nox target
-
-add nox as compilation target. plan exists at trident/.claude/plans/cyber-stack-adoption.md.
-
-| step | what | LOC |
-|------|------|-----|
-| 4a | replace trident's internal Goldilocks/Poseidon2 with nebu/hemera | ~200 |
-| 4b | vm/nox/ target profile (target.toml) | ~50 |
-| 4c | NounBuilder: AST → nox noun (direct, bypass TIR) | ~800 |
-| 4d | os/cyber/ type definitions (Particle, Neuron, Cyberlink) | ~200 |
-| 4e | pipeline integration: `trident build --target nox` | ~250 |
-
-total: ~1,500 LOC Rust.
-
-exit criterion: `trident build --target nox fibonacci.tri` produces valid nox noun.
-
-## phase 5: trident self-hosting
-
-write the trident compiler AS a nox program. trident compiles itself to nox.
-
-| component | nox mechanism |
-|-----------|--------------|
-| tokenizer | pattern 9 (eq) + pattern 4 (branch) + pattern 3 (cons) |
+| component | nox patterns used |
+|-----------|------------------|
+| tokenizer | eq (9), branch (4), cons (3) |
 | parser | recursive descent via compose (2), branch (4), cons (3) |
-| type checker | pattern matching over AST noun, environment = subject |
+| type checker | pattern matching over AST noun |
 | NounBuilder | tree rewriting = nox native strength |
 
-verification: compile trident source with (a) Rust-hosted trident and (b) nox-hosted trident. outputs must be identical nouns (same structural hash).
+exit criterion: compiler compiles itself, produces identical output. hemera NOT required for this check — structural noun equality.
 
-~5,000-10,000 nox patterns (the compiler itself, as a noun). zero new Rust.
+**CHECKPOINT 1 must pass before starting.**
 
-exit criterion: ask(trident_source_noun, self_hosted_compiler_noun, focus) = same output as `trident build --target nox`.
+est: 3-4 sessions
 
-## phase 6: [[bbg]] authenticated state
+**── BOOTSTRAP COMPLETE ──**
 
-BLOCKED on phase 0 + phase 3.
+## Phase 4: hemera in Trident
 
-state operations as nox programs:
-- READ = PCS.open (polynomial evaluation)
-- WRITE = axis + cons
-- ASSERT_EQ = pattern 9
-- transactions: CYBERLINK (~3,200 constraints), PRIVATE TRANSFER, COMPUTATION, MINT/TRANSFER CARD, BRIDGE
+write Poseidon2 permutation as hemera.td. compile → nox noun. this noun IS jet 0 (hash) formula. H(noun) = jet 0 formula hash.
 
-~500 LOC Rust (formula builders) + nox programs.
+```
+hemera.td ──trident compile──→ nox noun (hemera program)
+  ↓
+H(nox_noun) = formula_hash for jet 0 (hash)
+  ↓
+register in jet registry
+  ↓
+test: ∀ inputs: trident_hemera(x) == rust_hemera(x)
+      (cross-verify on all 202 existing test vectors)
+```
 
-## phase 7: [[mudra]] crypto protocols
+exit criterion: bit-exact match on all 202 hemera test vectors.
 
-7 protocols as nox programs + algebra jets:
+**CHECKPOINT 2 must pass before starting.**
 
-| protocol | jet | source |
-|----------|-----|--------|
-| seal (ML-KEM) | jet_ntt | [[jali]] |
-| stealth | jet_genies_action | [[genies]] |
-| veil (TFHE) | jet_ntt | [[jali]] |
-| quorum (threshold) | jet_genies_action | [[genies]] |
-| delay (VDF) | jet_genies_action | [[genies]] |
-| order (consensus) | jet_hash | [[hemera]] |
-| place (location) | jet_hash | [[hemera]] |
+est: 2 sessions
 
-~400 LOC Rust (jet wrappers) + nox programs.
+## Phase 5: zheng (split across tracks)
+
+PARALLEL TRACK A — Rust prover (stays forever):
+- sumcheck prover (generates round polynomials)
+- Brakedown committer (encode + commit)
+- HyperNova folder (accumulate instances)
+- output: Proof struct
+
+PARALLEL TRACK B — Trident verifier (provable):
+- sumcheck_verify.td (replay rounds, check consistency)
+- brakedown_verify.td (spot-check openings)
+- hypernova_decide.td (final decider)
+- compile → nox nouns → formula hashes for verifier jets
+
+```
+Rust prover generates proof
+  ↓
+Trident verifier (running on nox) accepts/rejects
+  ↓
+test: valid proofs accepted, invalid proofs rejected
+```
+
+exit criterion: end-to-end proven computation. ask(object, formula, focus) → trace → prove(trace) → proof → verify(proof) → accept.
+
+**CHECKPOINT 3 must pass before starting.**
+
+est: 5-8 sessions (parallel tracks)
+
+**── SELF-VERIFYING PROOFS ──**
+
+## Phase 6: jet formulas via Trident
+
+write ALL jet formulas in Trident. compile → nox nouns → formula hashes → jet registry.
+
+five algebras, 30 named jets:
+
+| algebra | jets | source |
+|---------|------|--------|
+| nebu (F_p) | hash, poly_eval, merkle_verify, fri_fold, ntt | nebu arithmetic |
+| kuro (F₂) | popcount, packed_inner_product, binary_matvec, quantize, dequantize, activation_lut, gadget_decompose, barrel_shift | kuro arithmetic |
+| jali (R_q) | ntt_batch, key_switch, gadget_decomp, noise_track, blind_rotate | jali arithmetic |
+| genies (F_q) | group_action, isogeny_walk, vrf_eval, vdf_step, secret_hash | genies arithmetic |
+| trop (min,+) | trop_matmul, trop_shortest, trop_hungarian, trop_viterbi, trop_transport, witness_commit | trop arithmetic |
+| decider | decider (89 constraints) | zheng verifier |
+
+each jet: write in Trident → compile to nox noun → H(noun) = formula hash → register in Rust nox VM jet registry → test: jet(x) == pure_formula(x).
+
+**CHECKPOINT 4 passes when all formula hashes are computed.**
+
+exit criterion: all jets produce identical output to pure Trident formulas. nox VM 8× faster with jets.
+
+est: 3-4 sessions
+
+## Phase 7: mudra in Trident
+
+seven crypto protocols, each independent (parallelizable):
+
+| protocol | algebra | est. sessions |
+|----------|---------|---------------|
+| seal.td | jali (R_q) | 2 |
+| stealth.td | genies (F_q) | 1 |
+| veil.td | jali (R_q) | 2 |
+| quorum.td | nebu (F_p) | 1 |
+| delay.td | genies (F_q) | 1 |
+| order.td | hemera (hash) | 0.5 |
+| place.td | hemera + delay | 0.5 |
+
+cross-verify: ∀ modules: trident_module(x) == rust_arithmetic(x)
+
+est: 5-7 sessions (parallelizable)
+
+## Phase 8: bbg in Trident
+
+authenticated state as Trident programs:
+
+| component | what |
+|-----------|------|
+| bbg_poly.td | 10-dimension polynomial state |
+| mutator_set.td | A(x) commitment + N(x) nullifier |
+| signal_validate.td | signal structure verification |
+| state_transition.td | 6 transaction types |
+| sync_verify.td | 5 verification layers |
+| das_verify.td | algebraic DAS sampling |
+
+est: 5-8 sessions
+
+## Phase 9: tru + foculus in Trident
+
+provable ranking and consensus:
+
+| component | what |
+|-----------|------|
+| tri_kernel.td | diffusion + springs + heat |
+| focus_update.td | local π_Δ computation |
+| foculus.td | π-convergence finality |
+| karma.td | BTS scoring |
+| decay.td | temporal weight decay |
+
+test: tri-kernel converges to same fixed point as Rust simulation. Σπ = 1.
+
+est: 4-6 sessions
 
 ## critical path
 
 ```
-Phase 0 (nox kernel)     3 sessions ─── BLOCKS EVERYTHING
-  │
-  ├── Phase 1 (jets)           1.5 sessions
-  │     │
-  │     └── Phase 2 (sumcheck) 2 sessions
-  │           │
-  │           └── Phase 3 (zheng) 4 sessions
-  │                 │
-  │                 └── Phase 6 (bbg) 4 sessions
-  │
-  ├── Phase 4 (trident)  7.5 sessions ─── parallel with 2-3
-  │     │
-  │     └── Phase 5 (self-host) 6-8 sessions
-  │
-  └── Phase 7 (mudra)    3 sessions ─── parallel with 2-7
+CHECKPOINT 0: nox patterns frozen
+  ↓
+Phase 1: nox VM (Rust)                2-3 sessions
+  ↓
+Phase 2: trident nox target           3-4 sessions
+  ↓
+CHECKPOINT 1: trident stable
+  ↓
+Phase 3: trident self-hosts            3-4 sessions
+  ↓                                    ── BOOTSTRAP COMPLETE ──
+CHECKPOINT 2: hemera frozen
+  ↓
+Phase 4: hemera.td                     2 sessions
+  ↓
+CHECKPOINT 3: zheng frozen
+  ↓
+Phase 5: zheng (Rust prover ∥          5-8 sessions
+         Trident verifier)             ── SELF-VERIFYING PROOFS ──
+  ↓
+CHECKPOINT 4: jet formulas frozen
+  ↓
+Phase 6: jet formulas                  3-4 sessions
+  ↓
+  ├── Phase 7: mudra.td               5-7 sessions  ┐
+  ├── Phase 8: bbg.td                 5-8 sessions  ├─ parallel
+  └── Phase 9: tru.td                 4-6 sessions  ┘
+                                       ── FULL STACK PROVEN ──
 ```
 
-total critical path: ~14.5 sessions (0→1→2→3→6) + 13.5-15.5 sessions (4→5, parallel)
+critical path to self-verifying proofs: ~16-21 sessions (Phase 1 → 5)
+parallel phase (7+8+9): ~14-21 sessions concurrent
+total: ~30-40 sessions to full proven stack
 
-## Rust vs nox boundary
+## Rust vs nox boundary (final state)
 
-| component | Rust | nox | why |
-|-----------|------|-----|-----|
-| noun arena + hash-consing | yes | — | cannot interpret itself |
-| 16-pattern dispatch | yes | — | IS the interpreter |
-| focus metering | yes | — | inner loop |
-| wire encoding | yes | — | byte-level |
-| field arithmetic | nebu (done) | — | performance |
-| hash function | hemera (done) | — | performance |
-| NTT | nebu (done) | — | performance |
-| sumcheck | formula builder | execution | pure field arithmetic |
-| Brakedown PCS | formula builder | execution | matrix-vector multiply |
-| SuperSpartan IOP | formula builder | execution | composes sumcheck + PCS |
-| verifier | — | 825 constraints | field arithmetic |
-| state operations | — | execution | patterns 5, 7, 9 |
-| bbg transactions | — | execution | state ops + hash |
-| crypto protocols | jet wrappers | execution | field arithmetic + jets |
-| trident compiler | NounBuilder (Rust) | self-hosts as nox | phase 5 goal |
+| component | Rust (permanent) | Trident/nox (provable) |
+|-----------|-----------------|----------------------|
+| field arithmetic | nebu, jali, kuro, trop, genies | — |
+| hash function | hemera (reference) | hemera.td (provable) |
+| VM interpreter | nox kernel (~1,040 LOC) | — |
+| jet dispatch | jet registry + wrappers | jet formulas (Trident) |
+| proof generation | zheng prover (Rust) | — |
+| proof verification | — | zheng verifier.td |
+| crypto protocols | — | mudra.td |
+| authenticated state | — | bbg.td |
+| ranking + consensus | — | tru.td |
+| compiler | trident (Rust, bootstrap) | trident.td (self-hosted) |
 
-new Rust: ~4,660 LOC. nox programs: ~20,000-40,000 patterns. ratio 1:5 to 1:9 in favor of nox.
+Rust: ~4,500 LOC permanent (kernel + prover + arithmetic wrappers)
+Trident/nox: all application logic, provable end-to-end
 
-the end state: only the nox kernel (1,040 LOC) + jet wrappers (~1,220 LOC) + formula builders (~1,400 LOC) + trident NounBuilder (~1,500 LOC) are Rust. everything else is nox programs executing on nox. the compiler self-hosts. proofs self-verify. the machine bootstraps itself.
+dual-language invariant: `∀ f, x: rust_f(x) == trident_f(x)`. Rust reference exists for every Trident module. both tested, divergence = bug.
 
 discover all [[concepts]]
