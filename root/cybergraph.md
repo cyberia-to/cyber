@@ -4,10 +4,9 @@ tags: cyber, core, mathematics
 alias: cybergraphs
 crystal-type: entity
 crystal-domain: cyber
+crystal-size: article
 subgraph: true
 repo: ../cybergraph
-crystal-domain: cyber
-crystal-size: article
 diffusion: 0.022987905434778945
 springs: 0.0007296156422623783
 heat: 0.007908188795209293
