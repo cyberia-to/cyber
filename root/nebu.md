@@ -32,6 +32,8 @@ Six field operations matching [[nox]] Layer 1 arithmetic patterns:
 
 Plus [[NTT]] — the Number Theoretic Transform over $2^{32}$ roots of unity that $p - 1 = 2^{32}(2^{32} - 1)$ provides. Used by [[stark]] proofs, [[TFHE]] polynomial rings, and [[hemera]] permutations.
 
+Extension fields F_p², F_p³, F_p⁴ for algebraic operations that require higher degree. 7-byte absorption rate for constant-time stream processing.
+
 ## dependency graph
 
 ```

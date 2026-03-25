@@ -16,13 +16,15 @@ density: 0
 ---
 Hemera is the [[hash function]] of the [[cyber]] protocol. It is a [[STARK]]-friendly hash built on [[Poseidon2]] over the [[Goldilocks field]], designed for efficient arithmetic circuit evaluation.
 
-Every [[particle]] in the [[cybergraph]] receives a content identifier computed by Hemera. This content-addressed scheme ensures that identical data always maps to the same hash, enabling deduplication and integrity verification across the network.
+parameters: p = [[Goldilocks field|Goldilocks]], d = 7, t = 16 (state width), Rf = 8 (full rounds), Rp = 64 (partial rounds), r = 8 (rate), c = 8 (capacity). single function, single mode (sponge), 64-byte output. round constants via zero-constant permutation (Hemera₀).
 
-Hemera powers the [[Merkle tree]] structures that commit to protocol state. Each state root is a Hemera digest, anchoring the entire graph in a single compact value that any [[neuron]] can verify.
+every [[particle]] in the [[cybergraph]] receives a content identifier computed by Hemera. this content-addressed scheme ensures that identical data always maps to the same hash, enabling deduplication and integrity verification across the network.
 
-Inside [[zheng]], the proof system of cyber, Hemera serves as the algebraic hash for [[commitment scheme]] operations. Its arithmetization-friendly design keeps proof generation fast and verification cheap.
+Hemera powers the [[Merkle tree]] structures that commit to protocol state. each state root is a Hemera digest, anchoring the entire graph in a single compact value that any [[neuron]] can verify.
 
-The hash operates natively over the [[Goldilocks field]] (p = 2^64 - 2^32 + 1), making it a natural fit for the 64-bit arithmetic used throughout the protocol stack.
+inside [[zheng]], the proof system of cyber, Hemera serves as the algebraic hash for [[commitment scheme]] operations. its arithmetization-friendly design keeps proof generation fast and verification cheap.
+
+three implementations: rs (Rust), wgsl (GPU), cli (command-line). all cross-verify against shared test vectors.
 
 Hemera transforms raw knowledge into verifiable [[particles]], giving the [[cybergraph]] its cryptographic backbone.
 
