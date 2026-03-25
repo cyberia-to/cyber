@@ -105,17 +105,11 @@ tropical is where decisions live. every time the superintelligence chooses the b
 
 verification: tropical execution produces a witness (the optimal assignment and its value). [[zheng]] proof covers: (a) the assignment is valid (structural check in F_p), (b) the claimed cost equals the sum of assigned edges (arithmetic in F_p), (c) no cheaper assignment exists (dual certificate in F_p). the optimization runs tropical, the [[zheng]] proof runs prime.
 
-### tropical patterns for [[nox]]
+### tropical jets for [[nox]]
 
-Layer 1 extensions:
+no new Layer 1 patterns needed. min(a, b) = branch(lt(a, b), a, b) — two existing nox patterns. tropical execution is a PROGRAM on nox, not an extension of nox. 16 patterns remain 16.
 
-| pattern | semantics | constraint cost in F_p |
-|---------|-----------|----------------------|
-| tmin | min(a, b) → result + witness bit | ~10 |
-| tmax | max(a, b) → result + witness bit | ~10 |
-| tadd | tropical multiply (a + b, standard addition) | 1 (same as F_p add) |
-
-Layer 3 jets:
+Layer 3 jets accelerate tropical workloads without changing semantics:
 
 | jet | workload | native ops |
 |-----|----------|-----------|
@@ -163,28 +157,20 @@ verification: isogeny computations produce witnesses (the action path). [[zheng]
 
 ## the composition principle
 
-all four algebras share one interface: [[nox]].
+all four algebras share one VM: [[nox]]. the 16 deterministic patterns do not change. nox is not parameterized by algebra — it runs over [[nebu]] (F_p) always. the other three algebras enter through two doors:
 
-```
-nox<F_p>       — nebu instantiation (default, proof backbone)
-nox<F₂>        — kuro instantiation (binary execution)
-nox<Trop>      — tropical instantiation (optimization)
-nox<F_q>       — genies instantiation (privacy primitives)
-```
+1. Layer 2 ([[hint]]): non-deterministic witness injection. kuro, tropical, and genies computations produce witnesses that nox verifies through its existing patterns (branch, lt, add, mul, eq).
 
-each instantiation runs the same 16 deterministic patterns. what changes is the underlying algebra:
+2. Layer 3 (jets): performance accelerators. each algebra contributes jets that compute the same result as an equivalent nox program, but at native speed.
 
-| nox pattern | nebu (F_p) | kuro (F₂) | trop (min,+) | genies (F_q) |
-|-------------|-----------|-----------|-------------|-------------|
-| add | field add | XOR | tropical add (=F_p add) | field add (mod q) |
-| mul | field mul | AND | tropical mul (=min) | field mul (mod q) |
-| inv | Fermat inverse | tower inverse | ∞ (no inverse) | Fermat inverse |
-| eq | field equality | bit equality | value equality | field equality |
-| hash | [[hemera]] | hemera (3 calls) | hemera over result | hemera (adapter) |
+| algebra | jets | what they accelerate |
+|---------|------|---------------------|
+| nebu | ntt, poly_eval, fri_fold | polynomial arithmetic, proof generation |
+| kuro | popcount, xor_matrix | binary inference, tri-kernel SpMV |
+| trop | shortest_path, hungarian, viterbi | optimization, assignment, decoding |
+| genies | group_action, isogeny_walk | privacy primitives, key exchange |
 
-the [[hint]] pattern (Layer 2) works identically across all instantiations — the verifier checks the witness in whatever algebra produced it.
-
-jets (Layer 3) are algebra-specific. nebu has ntt, kuro has popcount, trop has shortest_path, genies has group_action.
+the principle: nox Layer 1 is universal and fixed. Layer 2 is the prover-verifier boundary. Layer 3 is where algebra-specific performance lives. remove Layer 3: identical results, slower. remove Layer 2: no privacy, no ZK. remove Layer 1: nothing remains.
 
 ## what is NOT a fifth algebra
 
