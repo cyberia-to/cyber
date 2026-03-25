@@ -1,8 +1,7 @@
 ---
-tags: compound-
+tags: compound, precursor vitamin k1, precursor vitamin e
 crystal-type: entity
 crystal-domain: chemistry
-tags: precursor vitamin k1, precursor vitamin e
 stake: 5562463764867736
 diffusion: 0.00011233815923477823
 springs: 0.0016733878877855796

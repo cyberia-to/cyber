@@ -3,7 +3,7 @@ tags: genus
 crystal-type: property
 crystal-domain: biology
 query-table: "true"
-query-properties: [:page]
+query-properties: "[:page]"
 stake: 912011355816609
 diffusion: 0.00011233815923477823
 springs: 0.0009320770072100253
