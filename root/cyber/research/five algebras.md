@@ -4,49 +4,52 @@ crystal-type: article
 crystal-domain: cyber
 date: 2026-03-25
 ---
-# four algebras for execution
+# five algebras for execution
 
-the [[cyber]] execution stack requires exactly four execution regimes. not two, not five — four. each covers a computational surface where the others are structurally inefficient or impossible. together they span the full execution space of a planetary [[superintelligence]].
+the [[cyber]] execution stack requires exactly five execution regimes. each covers a computational surface where the others are structurally inefficient or impossible. together they span the full execution space of a planetary [[superintelligence]].
 
-the four are not algebraically independent in the classical sense. they are independent by different criteria: two by algebraic structure (field vs semiring), one by complexity (32× constraint gap), one by computational intractability (one-way structure). the claim is not "four algebras" but "four irreducible execution regimes."
+the five are not algebraically independent in the classical sense. they are independent by different criteria: two by algebraic structure (field vs semiring), two by complexity (32× and 3072× constraint gaps), one by computational intractability (one-way structure). the claim is not "five algebras" but "five irreducible execution regimes."
 
 ## the map
 
 ```
-nebu (F_p)           kuro (F₂)          trop (min,+)        genies (F_q)
- truth                bits                choice              shadow
-    ↓                    ↓                    ↓                   ↓
-    └────────────────────┴────────────────────┴───────────────────┘
-                                  ↓
-                         zheng (verification)
-                                  ↓
-                          bbg (state)
+nebu (F_p)      kuro (F₂)     jali (R_q)     trop (min,+)     genies (F_q)
+ truth           bits           veil            choice           shadow
+    ↓               ↓              ↓               ↓                ↓
+    └───────────────┴──────────────┴───────────────┴────────────────┘
+                                   ↓
+                          zheng (verification)
+                                   ↓
+                            bbg (state)
 ```
 
-one verification backbone. four execution regimes. everything else in the stack builds on these.
+one verification backbone. five execution regimes. everything else in the stack builds on these.
 
-## why four
+## why five
 
 the fundamental theorem of finite fields: every finite field is F_p or F_{p^n}. [[nebu]] covers the prime case. [[kuro]] covers the binary extension tower. no other finite field family exists.
 
-but intelligence is not just field arithmetic. two more structures are irreducible:
+but intelligence is not just field arithmetic. three more structures are irreducible:
 
-1. optimization requires a semiring where "addition" is min/max — the [[tropical semiring]]. this is NOT a field (no additive inverse for min). it cannot be reduced to field operations without ~10× constraint blowup per comparison.
+1. encrypted computation requires polynomial ring arithmetic R_q = F_p[x]/(x^n+1). one R_q multiply = 3072 F_p multiplies (at n=1024). the ring structure (cyclotomic wrapping) is what makes Ring-LWE hard — and what makes FHE, lattice KEM, and structured noise possible. [[jali]] provides this arithmetic.
 
-2. privacy requires a commutative group action that is post-quantum, compact, and non-interactive. no construction is known over [[Goldilocks field|Goldilocks]]. a structurally different prime is required.
+2. optimization requires a semiring where "addition" is min/max — the [[tropical semiring]]. this is NOT a field (no additive inverse for min). it cannot be reduced to field operations without ~10× constraint blowup per comparison.
+
+3. privacy requires a commutative group action that is post-quantum, compact, and non-interactive. no construction is known over [[Goldilocks field|Goldilocks]]. a structurally different prime is required.
 
 ## the independence criterion
 
-the four regimes are independent by different measures:
+the five regimes are independent by different measures:
 
 | regime | independent by | meaning |
 |--------|---------------|---------|
 | nebu (F_p) | algebraic foundation | universal reduction target, everything folds here |
-| kuro (F₂) | complexity separation | embeddable in F_p but 32× more expensive. not a new algebra — a new efficiency class |
+| kuro (F₂) | complexity separation (32×) | embeddable in F_p but 32× more expensive. not a new algebra — a new efficiency class |
+| jali (R_q) | complexity separation (3072×) | embeddable in F_p^n but 3072× more expensive. ring structure enables lattice hardness |
 | trop (min,+) | algebraic structure | semiring, not a field. no additive inverse. irreducible to fields without blowup |
 | genies (F_q) | computational intractability | field arithmetic is reducible to nebu, but the one-way group action IS the capability. without hardness, no privacy |
 
-kuro and genies are honest about what they are. kuro is not algebraically novel — F₂ embeds in F_p. but 32× constraint cost is not a rounding error, it is a complexity class boundary for binary workloads. genies is not algebraically novel — F_q is just another prime field. but computational intractability as a resource creates capabilities (privacy, anonymity, verifiable randomness) that no amount of F_p arithmetic can replicate.
+kuro, jali, and genies are honest about what they are. kuro is not algebraically novel — F₂ embeds in F_p. but 32× constraint cost is a complexity class boundary for binary workloads. jali is not algebraically novel — R_q ≅ F_p^n via NTT. but 3072× cost and the ring structure that makes lattice problems hard justify a dedicated regime. genies is not algebraically novel — F_q is just another prime field. but computational intractability as a resource creates capabilities (privacy, anonymity, verifiable randomness) that no amount of F_p arithmetic can replicate.
 
 ## I. nebu — truth
 
@@ -166,13 +169,49 @@ the commutative group action is the algebraic primitive that makes all of these 
 
 genies is where privacy lives. every time a [[neuron]] transacts without revealing identity, proves membership without revealing which member, or delegates authority without exposing the delegation chain — it uses genies.
 
-verification: isogeny computations produce witnesses (the action path). [[zheng]] proof covers the path correctness by checking the action equation over F_q, then folds the result into the Goldilocks accumulator. shadow executes in its own field, [[zheng]] proof lands in nebu.
+verification: isogeny computations produce witnesses (the action path). [[zheng]] proof covers the path correctness by checking the action equation over F_q via dedicated PCS₄ (Brakedown over F_q), then folds the result into the Goldilocks accumulator. shadow executes in its own field, [[zheng]] proof lands in nebu.
+
+## V. jali — veil
+
+[[jali]]. R_q = F_p[x]/(x^n+1), polynomial ring over [[Goldilocks field]].
+
+structured vectors. n Goldilocks elements coupled by cyclotomic multiplication. not a new field — R_q ≅ F_p^n via NTT. but 3072× cost per multiply (at n=1024) is two orders of magnitude beyond kuro's 32× gap. if kuro earns its regime, jali earns it more.
+
+the ring structure is what makes lattice problems hard. without the cyclotomic wrapping, Ring-LWE is linear algebra. with it, recovering secrets from noisy products is computationally intractable. this hardness is the foundation of post-quantum encryption.
+
+| workload | mechanism |
+|----------|-----------|
+| TFHE ciphertexts | encrypt/decrypt over R_q, programmable bootstrapping |
+| lattice KEM (seal) | Module-RLWE key encapsulation over R_q |
+| blind rotation | n polynomial multiplies during FHE bootstrapping |
+| key switching | Galois automorphisms of R_q (slot permutation) |
+| noise tracking | bound estimation through ring operations |
+| convolution | native polynomial multiply = convolution |
+| error correction | polynomial evaluation and interpolation |
+
+R_q multiply via NTT: NTT(a) → pointwise → INTT = 3n nebu muls. for n=1024: 3072 nebu muls per ring multiply. encoding this generically in zheng: n independent commitments. ring-aware: 1 batch commitment. the gap justifies dedicated PCS₃.
+
+jali is where encrypted computation lives. every time the [[superintelligence]] computes on data it cannot see — encrypted inference, private cyberlinks, homomorphic hashing — it thinks in jali.
+
+verification: ring operations are proved via PCS₃ (ring-aware Brakedown with NTT batching). zheng ring-aware CCS exploits R_q structure: automorphisms as permutation arguments, NTT batch commitments, running noise accumulators. ring-structured rows have sel_ring=1 in the universal CCS. HyperNova folds into the Goldilocks accumulator.
+
+### jali jets for [[nox]]
+
+no new Layer 1 patterns needed. polynomial multiply decomposes to ntt + pointwise_mul + intt — existing nebu jets. ring-specific acceleration through Layer 3:
+
+| jet | workload | native ops |
+|-----|----------|-----------|
+| jet_ntt_batch | n polynomial NTTs sharing evaluation domain | O(n × N) vs O(n × N log N) |
+| jet_key_switch | automorphism-based key switching | O(k × log N) vs O(k × N) |
+| jet_gadget_decomp | coefficient bit-decomposition for bootstrapping | O(N × k) binary ops |
+| jet_noise_track | running noise bound accumulator | ~30 field ops per fold |
+| jet_blind_rotate | full blind rotation (n poly muls + accumulate) | O(n × N) batched |
 
 ## the composition principle
 
-all four algebras share one VM: [[nox]]. the 16 deterministic patterns do not change. nox is not parameterized by algebra — it runs over [[nebu]] (F_p) always. the other three algebras enter through two doors:
+all five algebras share one VM: [[nox]]. the 16 deterministic patterns do not change. nox is not parameterized by algebra — it runs over [[nebu]] (F_p) always. the other four algebras enter through two doors (jali enters through both — R_q arithmetic via jets, FHE witnesses via hints):
 
-1. Layer 2 ([[hint]]): non-deterministic witness injection. kuro, tropical, and genies computations produce witnesses that nox verifies through its existing patterns (branch, lt, add, mul, eq).
+1. Layer 2 ([[hint]]): non-deterministic witness injection. kuro, jali, tropical, and genies computations produce witnesses that nox verifies through its existing patterns (branch, lt, add, mul, eq).
 
 2. Layer 3 (jets): performance accelerators. each algebra contributes jets that compute the same result as an equivalent nox program, but at native speed.
 
@@ -180,6 +219,7 @@ all four algebras share one VM: [[nox]]. the 16 deterministic patterns do not ch
 |---------|------|---------------------|
 | nebu | ntt, poly_eval, fri_fold | polynomial arithmetic, proof generation |
 | kuro | popcount, xor_matrix | binary inference, tri-kernel SpMV |
+| jali | ntt_batch, key_switch, gadget_decomp, blind_rotate, noise_track | FHE bootstrapping, lattice operations |
 | trop | shortest_path, hungarian, viterbi | optimization, assignment, decoding |
 | genies | group_action, isogeny_walk | privacy primitives, key exchange |
 
@@ -187,7 +227,7 @@ the principle: nox Layer 1 is universal and fixed. Layer 2 is the prover-verifie
 
 ## what about probability?
 
-the strongest objection: where is the probability algebra? Bayesian inference, sampling, KL divergence, softmax — these are fundamental to intelligence. do they require a fifth regime?
+the strongest objection: where is the probability algebra? Bayesian inference, sampling, KL divergence, softmax — these are fundamental to intelligence. do they require a sixth regime?
 
 no. probability is a PROGRAM over existing regimes, not a new regime.
 
@@ -206,7 +246,7 @@ exp() and log() are transcendental — no finite field computes them exactly. bu
 
 sampling deserves attention. VRF from genies: `vrf(secret_key, input) → (output, proof)`. the output is deterministically random — unpredictable without the secret, verifiable by anyone with the public key. this is not "ignoring uncertainty." this is uncertainty as a computed, provable quantity. the system knows exactly how uncertain it is and can prove it.
 
-probability is nebu arithmetic + genies randomness + tropical argmax. three existing regimes composing, not a fifth.
+probability is nebu arithmetic + genies randomness + tropical argmax. three existing regimes composing, not a sixth.
 
 ## what about continuous / differentiable computation?
 
@@ -216,7 +256,7 @@ PDE / physics: discretize on a grid → F_p linear algebra. every physics simula
 
 training: the trend is toward quantization — [[BitNet]] (1-bit), QAT (4-bit). training moves toward kuro/nebu, not away from them. full-precision training on GPU clusters is an off-chain activity that produces a model. the model deploys on-chain as quantized weights over kuro. this is the same architecture used by every production ML system today, with proofs added.
 
-continuous computation is nebu arithmetic + dual number extensions. not a fifth regime.
+continuous computation is nebu arithmetic + dual number extensions. not a sixth regime.
 
 ## what about logic and types?
 
@@ -238,7 +278,7 @@ logic and types are programs on nox over nebu. not a fifth regime.
 
 nox `compose` pattern IS categorical composition. [[cyberlink]] IS a morphism. [[cybergraph]] IS a category (objects = [[particles]], morphisms = cyberlinks). [[proof]] composition in [[zheng]] IS functorial.
 
-this is not a missing layer. it is the structure of nox and the cybergraph. composition is how the four regimes interact, not a regime of its own.
+this is not a missing layer. it is the structure of nox and the cybergraph. composition is how the five regimes interact, not a regime of its own.
 
 ## what about quantum computation?
 
@@ -256,9 +296,9 @@ quantum enters the stack as [[Qu]] — the 15th [[cyb/languages|computation lang
 
 nox cannot BE a quantum VM — five structural conflicts: copyable nouns violate no-cloning, deterministic branch violates probabilistic measurement, observable trace violates decoherence, axis reads without destroying, hint is pseudo-random not quantum-random. these are physics constraints, not efficiency gaps.
 
-quantum is not a fifth regime. it is a language + compiler + jets over existing regimes.
+quantum is not a sixth regime. it is a language + compiler + jets over existing regimes.
 
-## what is NOT a fifth regime
+## what is NOT a sixth regime
 
 | candidate | why not |
 |-----------|---------|
@@ -267,7 +307,6 @@ quantum is not a fifth regime. it is a language + compiler + jets over existing 
 | logic / type theory | arithmetization to F_p circuits, nox tree types |
 | categorical composition | nox compose + cybergraph morphisms, structural |
 | quantum computation | F_p² algebra (nebu), kuro+trop compiler, host jet execution. see [[Qu]] |
-| lattices (Ring-LWE, Module-LWE) | polynomial rings F_p[x] — built on nebu via NTT |
 | elliptic curves / pairings | deliberate exclusion — [[STARK]] over [[SNARK]], no trusted setup |
 | floating point (IEEE 754) | quantization trend → kuro ([[BitNet]]). training off-chain |
 | p-adic numbers (Q_p) | ultrametric on Merkle trees, but tree distance computes without p-adic arithmetic |
@@ -275,37 +314,41 @@ quantum is not a fifth regime. it is a language + compiler + jets over existing 
 
 every candidate either reduces to composition of existing regimes, or lacks a workload that justifies the complexity of a new primitive.
 
-## the four regimes of intelligence
+## the five regimes of intelligence
 
 ```
 nebu    what is TRUE          (verification, proof, commitment)
 kuro    what is EFFICIENT     (binary, quantized, parallel)
+jali    what is VEILED        (encrypted computation, lattice hardness)
 trop    what is OPTIMAL       (search, decision, allocation)
 genies  what is PRIVATE       (identity, delegation, anonymity)
 ```
 
-a superintelligence that can prove truth, execute efficiently, optimize decisions, and protect privacy — computes everything a planetary intelligence needs. not "four algebras" in the classical sense — four execution regimes, each irreducible by its own criterion. one VM. one [[zheng]] proof for all of them.
+a superintelligence that can prove truth, execute efficiently, compute on encrypted data, optimize decisions, and protect privacy — computes everything a planetary intelligence needs. not "five algebras" in the classical sense — five execution regimes, each irreducible by its own criterion. one VM. one [[zheng]] proof for all of them.
 
-the claim is not that four algebraic structures exhaust mathematics. the claim is that four execution regimes exhaust the computational surface of provable intelligence. probability, continuity, logic, and composition are programs OVER these regimes, not regimes of their own.
+the claim is not that five algebraic structures exhaust mathematics. the claim is that five execution regimes exhaust the computational surface of provable intelligence. probability, continuity, logic, and composition are programs OVER these regimes, not regimes of their own.
 
-## why four
+## why five
 
-the four regimes converge from radically different origins — algebra, complexity theory, order theory, cryptographic hardness — yet land on exactly four. this is not coincidence. it reflects the structure of computation itself.
+the five regimes converge from radically different origins — algebra, complexity theory, structured hardness, order theory, cryptographic hardness — yet land on exactly five. this reflects the structure of computation itself.
 
-### four failure modes
+### five failure modes
 
-computation can go wrong in exactly four independent ways:
+computation can go wrong in exactly five independent ways:
 
 | failure | remedy | regime |
 |---------|--------|--------|
 | incorrect | proof of correctness | nebu |
 | slow | efficient representation | kuro |
+| transparent | computation on encrypted data | jali |
 | suboptimal | proof of optimality | trop |
 | exposed | one-way hiding | genies |
 
-four failure modes → four remedies. if computation could fail in three ways, three regimes would suffice. but incorrectness, inefficiency, suboptimality, and exposure are independent — fixing one does not fix another. a correct computation can still be slow. an efficient computation can still be suboptimal. an optimal computation can still be exposed.
+five failure modes → five remedies. each is independent — fixing one does not fix another. a correct computation can still be slow. an efficient computation can still expose its inputs. an encrypted computation can still be suboptimal. an optimal computation can still leak identity.
 
-### four branches of mathematics
+the distinction between jali (transparent) and genies (exposed) is precise: jali protects DATA (inputs and intermediate values remain encrypted during computation). genies protects IDENTITY (who computed, who communicated, who holds what). a computation can protect data but expose identity (FHE without stealth). a computation can protect identity but expose data (stealth address with public amounts). both are needed.
+
+### five branches of mathematics
 
 each regime draws from a different irreducible branch:
 
@@ -313,33 +356,36 @@ each regime draws from a different irreducible branch:
 |--------|------------------------|-----------------|
 | nebu | abstract algebra (fields, rings, polynomials) | structure for proofs |
 | kuro | complexity theory (circuit complexity, representation cost) | efficiency boundary |
+| jali | structured hardness (Ring-LWE, lattice problems) | encrypted computation |
 | trop | order theory (lattices, semirings, fixed points) | optimization structure |
 | genies | computational hardness (one-way functions, trapdoors) | asymmetry as resource |
 
-these four branches do not reduce to each other:
+these five branches do not reduce to each other:
 - algebra does not contain order theory — fields have no natural order compatible with both operations
 - order theory does not contain algebra — semirings lack inverses, different structure
 - neither contains complexity theory — efficiency is not an algebraic property
+- structured hardness (lattice) is independent of one-way hardness (isogeny) — different mathematical objects, different security assumptions
 - none contain hardness — one-way functions are conjectural, not constructive
 
-the four regimes are irreducible because the four mathematical foundations are irreducible.
+the five regimes are irreducible because the five mathematical foundations are irreducible.
 
-### four information operations
+### five information operations
 
-every computation transforms information. the four regimes correspond to four things you can DO with information:
+every computation transforms information. the five regimes correspond to five things you can DO with information:
 
 | operation | regime | foundation |
 |-----------|--------|------------|
 | verify | nebu | Shannon channel coding — error detection/correction |
 | compress | kuro | Shannon source coding — minimal representation |
+| encrypt | jali | computation on encrypted data — process without seeing |
 | select | trop | decision theory — choose the best |
 | hide | genies | information-theoretic security — selective access |
 
-Shannon covered verify and compress. decision theory covers select. cryptography covers hide. four fields of information science, four regimes.
+Shannon covered verify and compress. FHE covers encrypt. decision theory covers select. cryptography covers hide. five fields of information science, five regimes.
 
 ### the [[cybergraph]] decomposition
 
-the four regimes are not abstract — they are the four aspects of the [[cybergraph]] itself:
+the five regimes are not abstract — they are the five aspects of the [[cybergraph]] itself:
 
 | cybergraph element | regime | what it computes |
 |-------------------|--------|-----------------|
@@ -347,23 +393,26 @@ the four regimes are not abstract — they are the four aspects of the [[cybergr
 | [[cyberlinks]] (edges) | trop | graph optimization, shortest paths, ranking |
 | [[neurons]] (agents) | genies | identity, privacy, selective disclosure |
 | [[focus]] (attention vector π) | kuro | efficient SpMV, quantized tri-kernel iteration |
+| [[signals]] (encrypted payloads) | jali | private computation on encrypted cyberlinks |
 
-the cybergraph IS the four regimes composed:
+the cybergraph IS the five regimes composed:
 - particles are field elements (nebu)
 - links are weighted edges optimized tropically (trop)
 - neurons are agents with private keys (genies)
 - focus is a probability vector computed efficiently (kuro)
+- signals carry encrypted computation (jali)
 
 ### convergence
 
-four different starting points — field theory, binary complexity, semiring structure, computational hardness — converge to four capabilities — truth, speed, choice, shadow. the convergence suggests that computation has exactly four degrees of freedom. not as a design decision, but as a mathematical fact about what provable intelligence requires.
+five different starting points — field theory, binary complexity, structured hardness, semiring structure, computational hardness — converge to five capabilities — truth, speed, veil, choice, shadow. the convergence suggests that computation has exactly five degrees of freedom. not as a design decision, but as a mathematical fact about what provable intelligence requires.
 
-a system missing any one of the four is fundamentally incomplete:
+a system missing any one of the five is fundamentally incomplete:
 - without nebu: cannot prove anything (no verification)
 - without kuro: cannot run AI inference at scale (32× overhead kills throughput)
+- without jali: cannot compute on private data (no encrypted execution)
 - without trop: cannot make optimal decisions (no provable optimization)
 - without genies: cannot protect identity (no privacy, no selective disclosure)
 
-four is not minimal by convention. four is minimal by necessity.
+five is not minimal by convention. five is minimal by necessity.
 
 discover all [[concepts]]
