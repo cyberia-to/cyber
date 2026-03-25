@@ -8,7 +8,7 @@ crystal-domain: cyber
 crystal-size: deep
 subgraph: true
 repo: ../cyb
-exclude: "node_modules/**, build/**, target/**, .claude/**, contracts/**, src/**, cyb/**, public/**, scripts/**, netlify/**, .github/**, .vscode/**, docs/**, reference/**, *.json, *.lock, *.js, *.ts, *.toml, *.yml, Dockerfile, .env, .editorconfig, .gitignore, .gitmodules, .npmrc"
+exclude: "node_modules/**, build/**, target/**, .claude/**, contracts/**, src/**, cyb/**, public/**, scripts/**, netlify/**, .github/**, .vscode/**, docs/**, reference/**, leptos/**, bevy/**, react/**, vendor/**, nu/**, *.json, *.lock, *.js, *.ts, *.toml, *.yml, Dockerfile, .env, .editorconfig, .gitignore, .gitmodules, .npmrc"
 stake: 34080210232611716
 diffusion: 0.004132786361928683
 springs: 0.0003778838107317919
