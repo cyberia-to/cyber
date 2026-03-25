@@ -6,7 +6,9 @@ date: 2026-03-25
 ---
 # four algebras for execution
 
-the [[cyber]] execution stack requires exactly four algebraic primitives. not two, not five — four. each covers a regime where the others are structurally inefficient or impossible. together they span the full computational surface of a planetary [[superintelligence]].
+the [[cyber]] execution stack requires exactly four execution regimes. not two, not five — four. each covers a computational surface where the others are structurally inefficient or impossible. together they span the full execution space of a planetary [[superintelligence]].
+
+the four are not algebraically independent in the classical sense. they are independent by different criteria: two by algebraic structure (field vs semiring), one by complexity (32× constraint gap), one by computational intractability (one-way structure). the claim is not "four algebras" but "four irreducible execution regimes."
 
 ## the map
 
@@ -29,11 +31,22 @@ the fundamental theorem of finite fields: every finite field is F_p or F_{p^n}. 
 
 but intelligence is not just field arithmetic. two more structures are irreducible:
 
-1. optimization requires a semiring where "addition" is min/max — the [[tropical semiring]]. this is NOT a field (no additive inverse for min). it cannot be reduced to field operations without ~32× constraint blowup.
+1. optimization requires a semiring where "addition" is min/max — the [[tropical semiring]]. this is NOT a field (no additive inverse for min). it cannot be reduced to field operations without ~10× constraint blowup per comparison.
 
 2. privacy requires a commutative group action that is post-quantum, compact, and non-interactive. no construction is known over [[Goldilocks field|Goldilocks]]. a structurally different prime is required.
 
-four primitives. each irreducible. each covering a domain the others cannot.
+## the independence criterion
+
+the four regimes are independent by different measures:
+
+| regime | independent by | meaning |
+|--------|---------------|---------|
+| nebu (F_p) | algebraic foundation | universal reduction target, everything folds here |
+| kuro (F₂) | complexity separation | embeddable in F_p but 32× more expensive. not a new algebra — a new efficiency class |
+| trop (min,+) | algebraic structure | semiring, not a field. no additive inverse. irreducible to fields without blowup |
+| genies (F_q) | computational intractability | field arithmetic is reducible to nebu, but the one-way group action IS the capability. without hardness, no privacy |
+
+kuro and genies are honest about what they are. kuro is not algebraically novel — F₂ embeds in F_p. but 32× constraint cost is not a rounding error, it is a complexity class boundary for binary workloads. genies is not algebraically novel — F_q is just another prime field. but computational intractability as a resource creates capabilities (privacy, anonymity, verifiable randomness) that no amount of F_p arithmetic can replicate.
 
 ## I. nebu — truth
 
@@ -172,19 +185,76 @@ all four algebras share one VM: [[nox]]. the 16 deterministic patterns do not ch
 
 the principle: nox Layer 1 is universal and fixed. Layer 2 is the prover-verifier boundary. Layer 3 is where algebra-specific performance lives. remove Layer 3: identical results, slower. remove Layer 2: no privacy, no ZK. remove Layer 1: nothing remains.
 
-## what is NOT a fifth algebra
+## what about probability?
+
+the strongest objection: where is the probability algebra? Bayesian inference, sampling, KL divergence, softmax — these are fundamental to intelligence. do they require a fifth regime?
+
+no. probability is a PROGRAM over existing regimes, not a new regime.
+
+a probability distribution over n outcomes: vector (p₁, ..., pₙ) where Σpᵢ = 1. this is a vector over F_p with one linear constraint. every operation decomposes:
+
+| operation | reduction | regime |
+|-----------|-----------|--------|
+| Bayesian update | multiply + normalize: pᵢ · likelihood / Σ(pⱼ · likelihoodⱼ) | nebu (mul, inv) |
+| Markov chain step | matrix-vector multiply | nebu (mul, add) |
+| sampling | [[VRF]] from genies: vrf(secret, input) → deterministic_random + proof | genies |
+| softmax | exp() approximated via fixed-point lookup table over F_p | nebu (mul, add, branch) |
+| KL divergence | log() approximated via fixed-point, Σpᵢ · log(pᵢ/qᵢ) | nebu (mul, add) |
+| argmax / MAP | max over vector | trop (branch + lt) |
+
+exp() and log() are transcendental — no finite field computes them exactly. but no computer computes them exactly either. PyTorch uses float64 approximation. we use F_p fixed-point approximation. the difference: our approximation carries a [[zheng]] proof of correctness.
+
+sampling deserves attention. VRF from genies: `vrf(secret_key, input) → (output, proof)`. the output is deterministically random — unpredictable without the secret, verifiable by anyone with the public key. this is not "ignoring uncertainty." this is uncertainty as a computed, provable quantity. the system knows exactly how uncertain it is and can prove it.
+
+probability is nebu arithmetic + genies randomness + tropical argmax. three existing regimes composing, not a fifth.
+
+## what about continuous / differentiable computation?
+
+automatic differentiation: dual numbers F_p[ε]/(ε²), an algebraic extension of nebu. `f(a + bε) = f(a) + f'(a)·bε`. forward-mode AD is exact over F_p — no floating point rounding, no vanishing gradients from representation. the gradient is precise to the last bit.
+
+PDE / physics: discretize on a grid → F_p linear algebra. every physics simulation already does this. F_p is exact up to p ≈ 2⁶⁴. IEEE 754 float64 is exact up to 2⁵³ mantissa. F_p is strictly more precise for the same word size.
+
+training: the trend is toward quantization — [[BitNet]] (1-bit), QAT (4-bit). training moves toward kuro/nebu, not away from them. full-precision training on GPU clusters is an off-chain activity that produces a model. the model deploys on-chain as quantized weights over kuro. this is the same architecture used by every production ML system today, with proofs added.
+
+continuous computation is nebu arithmetic + dual number extensions. not a fifth regime.
+
+## what about logic and types?
+
+arithmetization. every decidable logic reduces to arithmetic circuits over F_p. this is not an approximation — it is a theorem.
+
+| logic | arithmetization |
+|-------|----------------|
+| propositional | boolean circuit → F_p gates |
+| first-order (bounded) | quantifier elimination → F_p polynomial |
+| modal (Kripke) | graph reachability → F_p matrix over [[cybergraph]] |
+| temporal (LTL/CTL) | sequence constraints → F_p polynomial |
+| type theory | nox tree structure: cons(type, value) IS a typed term |
+
+nox is already a type system. every nox value is a binary tree. `cons(tag, payload)` is a tagged union. `branch(test, then, else)` is type-checked dispatch. this is how [[Nock]]/[[Urbit]] works — the tree IS the type.
+
+logic and types are programs on nox over nebu. not a fifth regime.
+
+## what about categorical composition?
+
+nox `compose` pattern IS categorical composition. [[cyberlink]] IS a morphism. [[cybergraph]] IS a category (objects = [[particles]], morphisms = cyberlinks). [[proof]] composition in [[zheng]] IS functorial.
+
+this is not a missing layer. it is the structure of nox and the cybergraph. composition is how the four regimes interact, not a regime of its own.
+
+## what is NOT a fifth regime
 
 | candidate | why not |
 |-----------|---------|
+| probability algebra | nebu vectors + genies VRF + trop argmax (see above) |
+| continuous / differentiable | dual numbers F_p[ε]/(ε²), extension of nebu |
+| logic / type theory | arithmetization to F_p circuits, nox tree types |
+| categorical composition | nox compose + cybergraph morphisms, structural |
 | lattices (Ring-LWE, Module-LWE) | polynomial rings F_p[x] — built on nebu via NTT |
 | elliptic curves / pairings | deliberate exclusion — [[STARK]] over [[SNARK]], no trusted setup |
-| floating point (IEEE 754) | quantization trend → kuro ([[BitNet]]). training moves off-chain |
-| p-adic numbers (Q_p) | ultrametric structure models hierarchies (Merkle tree distance), but tree operations compute without p-adic arithmetic. theoretical beauty, no constraint advantage |
+| floating point (IEEE 754) | quantization trend → kuro ([[BitNet]]). training off-chain |
+| p-adic numbers (Q_p) | ultrametric on Merkle trees, but tree distance computes without p-adic arithmetic |
 | quaternions / Clifford algebras | F_p extension fields, no irreducible workload |
-| differential algebra | dual numbers F_p[ε]/(ε²), extension of nebu |
-| residue number system | parallel F_p instances, not a new algebra |
 
-every candidate either reduces to one of the four, or lacks a workload that justifies the complexity.
+every candidate either reduces to composition of existing regimes, or lacks a workload that justifies the complexity of a new primitive.
 
 ## the four regimes of intelligence
 
@@ -195,6 +265,8 @@ trop    what is OPTIMAL       (search, decision, allocation)
 genies  what is PRIVATE       (identity, delegation, anonymity)
 ```
 
-a superintelligence that can prove truth, execute efficiently, optimize decisions, and protect privacy — computes everything a planetary intelligence needs. four algebras. one VM. one [[zheng]] proof for all of them.
+a superintelligence that can prove truth, execute efficiently, optimize decisions, and protect privacy — computes everything a planetary intelligence needs. not "four algebras" in the classical sense — four execution regimes, each irreducible by its own criterion. one VM. one [[zheng]] proof for all of them.
+
+the claim is not that four algebraic structures exhaust mathematics. the claim is that four execution regimes exhaust the computational surface of provable intelligence. probability, continuity, logic, and composition are programs OVER these regimes, not regimes of their own.
 
 discover all [[concepts]]
