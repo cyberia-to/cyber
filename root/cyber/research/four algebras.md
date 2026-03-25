@@ -43,7 +43,7 @@ the backbone of the entire stack. every proof, every hash, every commitment redu
 
 | workload | mechanism |
 |----------|-----------|
-| [[STARK]] proofs | polynomial IOP over F_p |
+| [[zheng]] proofs | [[SuperSpartan]] IOP + [[WHIR]] PCS + [[sumcheck]] over F_p |
 | [[hemera]] hashing | [[Poseidon2]] permutation over F_p |
 | polynomial commitments ([[WHIR]]) | evaluation + low-degree testing over F_p |
 | [[NTT]] | 2³² roots of unity (p - 1 = 2³² · (2³² - 1)) |
@@ -53,7 +53,7 @@ the backbone of the entire stack. every proof, every hash, every commitment redu
 
 why Goldilocks: 64-bit native arithmetic with u128 multiply and branchless reduction. massive 2-adicity for NTT. the field fits the machine word — no multi-limb arithmetic needed.
 
-nebu is where truth lives. if a statement is proved, the proof is over F_p.
+nebu is where truth lives. if a statement is proved, the [[zheng]] proof is over F_p.
 
 ## II. kuro — bits
 
@@ -74,7 +74,7 @@ F₂¹²⁸ = 128 F₂ elements packed in one u128 word. one XOR = 128 parallel 
 
 kuro is where efficiency lives. when the computation is fundamentally binary, forcing it through F_p wastes 32× constraints.
 
-verification: binary execution traces fold into the Goldilocks accumulator. [[zheng]] verifies through F_p arithmetization. kuro computes, nebu proves.
+verification: binary execution traces fold into the Goldilocks accumulator. [[zheng]] produces a proof over F_p arithmetization. kuro computes, zheng proves.
 
 ## III. trop — choice
 
@@ -103,7 +103,7 @@ the gap compounds. a 1000-step shortest path over 100 nodes: ~10⁹ F_p constrai
 
 tropical is where decisions live. every time the superintelligence chooses the best path, allocates resources, or decodes an optimal sequence — it thinks in tropical.
 
-verification: tropical execution produces a witness (the optimal assignment and its value). [[zheng]] verifies: (a) the assignment is valid (structural check in F_p), (b) the claimed cost equals the sum of assigned edges (arithmetic in F_p), (c) no cheaper assignment exists (dual certificate in F_p). the optimization runs tropical, the proof runs prime.
+verification: tropical execution produces a witness (the optimal assignment and its value). [[zheng]] proof covers: (a) the assignment is valid (structural check in F_p), (b) the claimed cost equals the sum of assigned edges (arithmetic in F_p), (c) no cheaper assignment exists (dual certificate in F_p). the optimization runs tropical, the [[zheng]] proof runs prime.
 
 ### tropical patterns for [[nox]]
 
@@ -159,7 +159,7 @@ the commutative group action is the algebraic primitive that makes all of these 
 
 genies is where privacy lives. every time a [[neuron]] transacts without revealing identity, proves membership without revealing which member, or delegates authority without exposing the delegation chain — it uses genies.
 
-verification: isogeny computations produce witnesses (the action path). [[zheng]] verifies the path is correct by checking the action equation over F_q, then folds the result into the Goldilocks accumulator. shadow executes in its own field, proof lands in nebu.
+verification: isogeny computations produce witnesses (the action path). [[zheng]] proof covers the path correctness by checking the action equation over F_q, then folds the result into the Goldilocks accumulator. shadow executes in its own field, [[zheng]] proof lands in nebu.
 
 ## the composition principle
 
@@ -209,6 +209,6 @@ trop    what is OPTIMAL       (search, decision, allocation)
 genies  what is PRIVATE       (identity, delegation, anonymity)
 ```
 
-a superintelligence that can prove truth, execute efficiently, optimize decisions, and protect privacy — computes everything a planetary intelligence needs. four algebras. one VM. one proof system.
+a superintelligence that can prove truth, execute efficiently, optimize decisions, and protect privacy — computes everything a planetary intelligence needs. four algebras. one VM. one [[zheng]] proof for all of them.
 
 discover all [[concepts]]
