@@ -6,7 +6,49 @@ date: 2026-03-26
 ---
 # programming model
 
-how programs work in [[cyber]]. no contracts. no calls. no account state. every action is a [[cyberlink]]. every rule is a semcon. every proof composes.
+how programs work in [[cyber]]. two objects: [[cyberlinks]] (what CAN happen) and [[neurons]] (what DOES happen). no contracts. no calls. proofs compose.
+
+## two programming objects
+
+every other system has one programming model. [[cyber]] has two, and they are complementary:
+
+| object | nature | programs | what it governs |
+|--------|--------|----------|-----------------|
+| [[cyberlink]] (UTXO) | stateless, private, proof-composed | lock scripts + semcons (type scripts) | rules of the world |
+| [[neuron]] (agent) | persistent state, autonomous | [[progs]] (nox programs in [[rune]]) | beings in the world |
+
+semcons define what CAN happen — the physics. progs define what DOES happen — the agency. one without the other does not work: semcon without prog = rules without players. prog without semcon = players without rules.
+
+this combination exists nowhere else:
+
+| system | UTXO programming | agent programming |
+|--------|-----------------|-------------------|
+| Bitcoin | script (limited) | — |
+| Ethereum | — | accounts + contracts |
+| Cardano | eUTXO validators | — |
+| Nervos | lock + type scripts | — |
+| Ergo | boxes + registers | — |
+| Neptune | lock + type (STARK) | — |
+| Solana | — | programs + accounts |
+| cyber | lock + semcon ([[zheng]] proof) | [[progs]] (autonomous [[neurons]]) |
+
+### cyberlink programming (UTXO layer)
+
+the cyberlink is the value + meaning carrier. lock scripts say WHO can create it. type scripts (semcons) say WHAT rules it follows. both are [[nox]] programs verified by [[zheng]]. the neuron that created the cyberlink is hidden (private UTXO). the aggregate effect is public (BBG polynomial).
+
+### neuron programming (agent layer)
+
+the [[neuron]] is the actor. it has persistent state in [[BBG]] polynomial (focus, karma, balance aggregates, delegation relationships). a [[prog]] is a nox program running in [[rune]] that gives the neuron autonomous behavior — it listens for events via [[hint]], reads state via BBG queries, and creates cyberlinks in response.
+
+the prog has no special privileges. its cyberlinks pass through the same lock + type scripts as manual ones. the prog IS the neuron's brain. what the prog decides to do, the semcons constrain whether it is allowed.
+
+### the bridge: BBG_poly
+
+the two layers see each other through the [[BBG]] polynomial:
+- semcons (UTXO scripts) READ neuron state: `bbg_query(neurons, ν, karma)` — is this neuron reputable enough?
+- progs (neuron programs) READ UTXO aggregates: `bbg_query(particles, p, energy)` — how much attention does this particle have?
+
+the polynomial IS the shared state between the two programming models. O(1) queries, no call stack, no reentrancy.
 
 ## the primitive
 
