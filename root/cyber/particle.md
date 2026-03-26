@@ -13,7 +13,7 @@ density: 1.31
 ---
 # particle: content addressing
 
-a [[particle]] is a content-addressed node. identity = [[Hemera]] hash of content. 64 raw bytes, no headers, no version prefix. one hash function, one address space, permanent
+a [[particle]] is a content-addressed node. identity = [[Hemera]] hash of content. 32 raw bytes, no headers, no version prefix. one hash function, one address space, permanent
 
 every other system wraps hashes in self-describing envelopes — IPFS CIDv1 carries version, multicodec, multihash function, digest length, then the digest. at planetary scale ($10^{15}$ [[particles]]), 5 bytes of framing overhead is 5 petabytes of pure waste, forever. worse: headers imply upgradability, but in an immutable graph there is nothing to upgrade. one function means nothing to disambiguate
 
@@ -27,25 +27,25 @@ Hemera = Poseidon2(
   d  = 7                   S-box: x → x⁷
   t  = 16                  state width (elements)
   Rꜰ = 8                   full rounds (4 + 4)
-  Rₚ = 64                  partial rounds
+  Rₚ = 16                  partial rounds
   r  = 8                   rate (64 bytes in)
   c  = 8                   capacity (64 bytes)
-  out = 8 elements          64 bytes out
+  out = 4 elements          32 bytes out
 )
 ```
 
 every parameter is a power of 2. the [[Goldilocks field]] gives native 64-bit CPU arithmetic — a field multiplication is a single instruction. the S-box exponent $d = 7$ is the minimum invertible exponent for this field ($\gcd(7, p-1) = 1$; both 3 and 5 divide $p-1$)
 
-capacity 8 (256-bit) provides 256-bit classical collision resistance, 170-bit quantum collision resistance (BHT), and algebraic degree $7^{64} \approx 2^{180}$. production systems use capacity 4 (128-bit) because their hashes are ephemeral — trace commitments that live seconds. particle addresses live decades. the parameter choice matches the lifetime
+capacity 8 (256-bit) provides 256-bit classical collision resistance, 170-bit quantum collision resistance (BHT), and algebraic degree $7^{64} \approx 2^{1046}$. production systems use capacity 4 (128-bit) because their hashes are ephemeral — trace commitments that live seconds. particle addresses live decades. the parameter choice matches the lifetime
 
-one mode only: sponge. no compression mode. two modes producing the same 64-byte output from different inputs would break the address space as a function. the sponge is the particle, the particle is the sponge
+one mode only: sponge. no compression mode. two modes producing the same 32-byte output from different inputs would break the address space as a function. the sponge is the particle, the particle is the sponge
 
 ```
 initialize:  state ← [0; 16]
 absorb:      for each 8-element chunk of padded input:
                state[0..8] ⊕= chunk
                state ← permute(state)
-squeeze:     output ← state[0..8]
+squeeze:     output ← state[0..4]
 ```
 
 round constants are self-bootstrapping: Hemera generates its own constants from the seed `"cyber"` (5 bytes) through the zero-constant permutation. no foreign primitives in the dependency chain
@@ -58,14 +58,14 @@ large content splits into 4 KB chunks — OS page aligned, L1 cache fit, 512 fie
 
 ```
 leaf:          Hemera(chunk_bytes)
-internal node: Hemera(left_id ∥ right_id)    128 bytes in, 64 bytes out
+internal node: Hemera(left_id ∥ right_id)    64 bytes in, 32 bytes out
 tree shape:    binary, left-balanced
 particle:      root hash of the tree
 ```
 
 left-balanced means the same content prefix always produces the same left subtree. streaming: buffer at most 4 KB + proof per step. deduplication: 4 KB blocks show meaningful repetition in real data. overhead: 1.6% tree metadata
 
-a single chunk (≤4 KB) hashes directly — no tree, just `Hemera(content)`. the particle address is the same whether content is 10 bytes or 10 gigabytes: always 64 bytes, always a Hemera output
+a single chunk (≤4 KB) hashes directly — no tree, just `Hemera(content)`. the particle address is the same whether content is 10 bytes or 10 gigabytes: always 32 bytes, always a Hemera output
 
 ## domain separation
 
@@ -86,16 +86,16 @@ different uses of Hemera are separated at the input, not the output:
 
 ```
 IPFS CIDv1:  <version><multicodec><multihash><length><digest>   36-69 bytes
-nox CID:     <digest>                                           64 bytes
+nox CID:     <digest>                                           32 bytes
 ```
 
-inside the protocol, the 64-byte digest is the complete identifier. IPFS compatibility is a thin translation layer at the gateway — inside [[nox]], the wrapper never exists
+inside the protocol, the 32-byte digest is the complete identifier. IPFS compatibility is a thin translation layer at the gateway — inside [[nox]], the wrapper never exists
 
-all identities live in one flat 64-byte namespace: [[particles]], edges, [[neurons]], commitments, nullifiers. no type tags in the address. the type is determined by where the address appears in the [[BBG]] structure, not by what it contains
+all identities live in one flat 32-byte namespace: [[particles]], edges, [[neurons]], commitments, nullifiers. no type tags in the address. the type is determined by where the address appears in the [[BBG]] structure, not by what it contains
 
 ## endofunction
 
-`Hemera(Hemera(x) ∥ Hemera(y))` type-checks: 64 bytes in one side, 64 bytes the other, 64 bytes out. hash of hashes is a hash. this closure under composition is why Merkle trees, polynomial commitments, and recursive proofs all use the same function without conversion
+`Hemera(Hemera(x) ∥ Hemera(y))` type-checks: 32 bytes in one side, 32 bytes the other, 32 bytes out. hash of hashes is a hash. this closure under composition is why Merkle trees, polynomial commitments, and recursive proofs all use the same function without conversion
 
 ## permanence
 
@@ -113,7 +113,7 @@ if Hemera is ever broken: full graph rehash under a new primitive. no version by
 | metric | Hemera | SHA-256 in stark |
 |--------|--------|-----------------|
 | hash rate (single core) | ~62 MB/s | ~200 MB/s |
-| stark constraints per hash | ~1,200 | ~25,000 |
+| stark constraints per hash | ~736 | ~25,000 |
 | particles per second (200 B avg) | ~310K | — |
 
 20× cheaper in proofs than SHA-256. 0.6× the raw throughput. the tradeoff is clear: particle addresses are verified far more often than they are created. optimizing for proof cost is optimizing for the common case

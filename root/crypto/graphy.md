@@ -57,7 +57,7 @@ Shor's algorithm breaks RSA, ECDSA, ECDH. Grover halves symmetric/hash security.
 
 ```
 field:   Goldilocks (p = 2^64 - 2^32 + 1)
-hash:    Hemera (Poseidon2 over Goldilocks) — ~250 constraints
+hash:    Hemera (Poseidon2 over Goldilocks) — ~736 constraints
 IOP:     SuperSpartan (CCS/AIR via sumcheck) — linear-time prover
 lens:    WHIR (multilinear polynomial commitment) — 290 us verification
 VM:      nox (register machine over Goldilocks)

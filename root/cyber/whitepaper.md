@@ -177,20 +177,20 @@ Hemera = Poseidon2(
     d  = 7,                 -- S-box: x → x⁷
     t  = 16,                -- state width
     Rꜰ = 8,                 -- full rounds (4 + 4)
-    Rₚ = 64,                -- partial rounds
+    Rₚ = 16,                -- partial rounds
     r  = 8,                 -- rate (64 bytes)
     c  = 8,                 -- capacity (64 bytes)
-    out = 8 elements        -- 64 bytes
+    out = 4 elements        -- 32 bytes
 )
 ```
 
 Every parameter that appears as a code-level quantity is a power of 2. The only exception is $d = 7$, which is the minimum invertible S-box exponent over Goldilocks — a mathematical constraint.
 
-Security properties: 256-bit classical collision resistance, 170-bit quantum collision resistance, algebraic degree $7^{64} \approx 2^{180}$.
+Security properties: 256-bit classical collision resistance, 170-bit quantum collision resistance, algebraic degree $7^{64} \approx 2^{1046}$.
 
 ### 4.3 Self-Bootstrapping
 
-[[Hemera]] generates her own round constants. The permutation with all 192 constants set to zero (Hemera₀) is already a well-defined nonlinear function — the S-box and MDS matrices provide all the mixing. Feed the bytes `[0x63, 0x79, 0x62, 0x65, 0x72]` through Hemera₀ as a sponge and squeeze 192 field elements. These become the round constants. Hemera = Hemera₀ + these constants. Freeze forever.
+[[Hemera]] generates her own round constants. The permutation with all 144 constants set to zero (Hemera₀) is already a well-defined nonlinear function — the S-box and MDS matrices provide all the mixing. Feed the bytes `[0x63, 0x79, 0x62, 0x65, 0x72]` through Hemera₀ as a sponge and squeeze 144 field elements. These become the round constants. Hemera = Hemera₀ + these constants. Freeze forever.
 
 No external primitives. No SHA-256 in the construction. No foreign dependencies. The security of the constants reduces to the security of the structure itself. If Hemera₀ cannot produce pseudorandom output from a non-trivial input, then the S-box and MDS layers relied on by the final Hemera are already broken.
 
@@ -198,9 +198,9 @@ The seed — five bytes that happen to spell "cyber" in ASCII — is specified a
 
 ### 4.4 One Function, One Mode
 
-[[Hemera]] has exactly one entry point: `hash(bytes) → [GoldilocksField; 8]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[particle]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 64 raw bytes — no header, no escape hatch.
+[[Hemera]] has exactly one entry point: `hash(bytes) → [GoldilocksField; 4]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[particle]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 32 raw bytes — no header, no escape hatch.
 
-This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[stark]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~1,200 [[stark]] constraints per permutation, versus ~25,000 for SHA-256.
+This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[stark]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~736 [[stark]] constraints per permutation, versus ~25,000 for SHA-256.
 
 ### 4.5 No Algorithm Agility
 
@@ -217,10 +217,10 @@ Plonky3        Goldilocks    12         22          128-bit   Production
 SP1            BabyBear      16         13          124-bit   Production
 RISC Zero      BabyBear      16         13          124-bit   Production
 Stwo/Starknet  M31           16         14          124-bit   Production
-Hemera         Goldilocks    16         64          256-bit   Genesis
+Hemera         Goldilocks    16         16          256-bit   Genesis
 ```
 
-The combination of Goldilocks + $t=16$ + $R_P=64$ is novel. The individual components are battle-tested across billions of proofs. The 3.2× proving cost increase over Plonky3 baseline is the price of permanent-grade security — acceptable because hash proving is a minority of total system proving cost. See [[hemera/spec]] for the full decision record.
+The combination of Goldilocks + $t=16$ + $R_P=16$ is novel. The individual components are battle-tested across billions of proofs. The 3.2× proving cost increase over Plonky3 baseline is the price of permanent-grade security — acceptable because hash proving is a minority of total system proving cost. See [[hemera/spec]] for the full decision record.
 
 ## 5. The Tri-Kernel
 
@@ -457,7 +457,7 @@ $$p = 2^{64} - 2^{32} + 1 = 18446744069414584321$$
 
 Efficient reduction: $a \bmod p = a_{\text{lo}} - a_{\text{hi}} \times (2^{32} - 1) + \text{correction}$. A field multiplication is a single CPU instruction. The primitive root is 7. The $2^{32}$-th root of unity exists, enabling NTT-based polynomial multiplication for proofs.
 
-Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=64$). State: 16 field elements. Rate: 8 elements. Cost: ~1,200 stark constraints per permutation. See §4.
+Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=16$). State: 16 field elements. Rate: 8 elements. Cost: ~736 stark constraints per permutation. See §4.
 
 ### 7.2 Value Tower
 
