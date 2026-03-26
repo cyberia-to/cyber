@@ -196,7 +196,7 @@ When completeness proofs transition from NMT paths to polynomial openings (algeb
 
 | | NMT-based DAS | Algebraic DAS |
 |---|---|---|
-| Sample proof | $O(\log n) \times 32$ bytes | $\sim$200 bytes (PCS opening) |
+| Sample proof | $O(\log n) \times 32$ bytes | $\sim$200 bytes (Lens opening) |
 | 20-sample verification | 20 KiB bandwidth | 4 KiB bandwidth |
 | Per-sample verification | $O(\log n)$ hash operations | $O(1)$ field operations |
 

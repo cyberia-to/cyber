@@ -17,7 +17,7 @@ the answer is yes. the polynomial doesn't know what it stores. it evaluates at a
 
 $$\text{BBG\_poly}: \mathbb{F}_p^3 \to \mathbb{F}_p$$
 
-a function from (index, key, time) to value, committed via [[Brakedown]] PCS. the current 12 evaluation dimensions (particles, axons, neurons, etc.) are a CONVENTION — the polynomial evaluates happily at index=42 or index=10000. nothing in the mathematics constrains the dimension count.
+a function from (index, key, time) to value, committed via [[Brakedown]] lens. the current 12 evaluation dimensions (particles, axons, neurons, etc.) are a CONVENTION — the polynomial evaluates happily at index=42 or index=10000. nothing in the mathematics constrains the dimension count.
 
 the constraint is not the polynomial. it is the CIRCUIT — the [[CCS]] constraints that validate state transitions. the cyberlink circuit says "update dimensions 0,1,2,3,4 with these specific relationships." if you want dimension 42, you need a circuit that validates transitions for dimension 42.
 
@@ -25,7 +25,7 @@ the constraint is not the polynomial. it is the CIRCUIT — the [[CCS]] constrai
 
 ```
 LAYER 1: COMMITMENT (authentication)
-  BBG_poly committed via Brakedown PCS
+  BBG_poly committed via Brakedown lens
   any (key → value) pair can be committed, opened, verified
   O(1) proof, ~200 bytes, 10-50 μs
   NO SCHEMA — raw field elements at arbitrary evaluation points
@@ -63,7 +63,7 @@ step 1: define the schema
 
 step 2: write the transition program (nox)
   reputation_update = [nox formula]:
-    // read current values via PCS opening
+    // read current values via Lens opening
     // validate: caller is authorized (neuron signature)
     // validate: score change is within bounds
     // validate: level derived from score (deterministic)
@@ -77,11 +77,11 @@ step 3: deploy
 step 4: use
   any neuron can call the transition program
   zheng proves the nox execution was correct
-  BBG_poly(12, neuron_id, t) is queryable via PCS opening
+  BBG_poly(12, neuron_id, t) is queryable via Lens opening
   CozoDB queries work immediately: ?[score] := reputation[key, score, _, _], key = $neuron_id
 ```
 
-the table exists. it is authenticated (PCS commitment). it is queryable (CozoDB + PCS openings). it is provable ([[zheng]]). no protocol change.
+the table exists. it is authenticated (Lens commitment). it is queryable (CozoDB + Lens openings). it is provable ([[zheng]]). no protocol change.
 
 ## CCS jets: the efficiency breakthrough
 
@@ -144,13 +144,13 @@ if a user table becomes widely used, a level-1 CCS jet can be added for it (prot
 | column | field within the value at an evaluation point |
 | INSERT | nox program executing INSERT pattern → CCS jet (5 constraints) |
 | UPDATE | nox program executing UPDATE pattern → CCS jet (5 constraints) |
-| SELECT | PCS opening (~200 bytes, 10-50 μs) |
-| JOIN | batch PCS opening across dimensions (structural — same polynomial) |
+| SELECT | Lens opening (~200 bytes, 10-50 μs) |
+| JOIN | batch Lens opening across dimensions (structural — same polynomial) |
 | WHERE | verifiable query compilation (CozoDB → CCS) |
 | query optimizer | CCS jet recognition (pattern match) |
 | fast path (index scan) | CCS jet (optimized encoding) |
 | slow path (full scan) | generic nox execution proof |
-| authentication | PCS binding (every query is cryptographically verified) |
+| authentication | Lens binding (every query is cryptographically verified) |
 | replication | π-weighted (storage follows attention) |
 | backup | signal-first (replay signals → reconstruct state) |
 
@@ -160,11 +160,11 @@ every database operation has a polynomial equivalent. the key difference: every 
 
 ### 1. permissionless table creation
 
-any [[neurons|neuron]] can deploy a table. the table is immediately authenticated (PCS), queryable (CozoDB), and provable ([[zheng]]). no approval process. the [[focus]] cost of creating entries provides the spam filter.
+any [[neurons|neuron]] can deploy a table. the table is immediately authenticated (lens), queryable (CozoDB), and provable ([[zheng]]). no approval process. the [[focus]] cost of creating entries provides the spam filter.
 
 ### 2. composable state
 
-different tables share the same polynomial. a query that JOINs across tables is one batch PCS opening — same polynomial, different dimensions. cross-table consistency is structural (definitional, not proven). this is impossible with separate databases.
+different tables share the same polynomial. a query that JOINs across tables is one batch Lens opening — same polynomial, different dimensions. cross-table consistency is structural (definitional, not proven). this is impossible with separate databases.
 
 ### 3. programmable transitions
 
@@ -192,7 +192,7 @@ shard assignment:
 
 a query for (dimension=12, key=neuron_X):
   route to shard containing H(12, neuron_X)
-  PCS opening within that shard
+  Lens opening within that shard
   shard composition proof verifies against BBG_root
 ```
 
@@ -204,7 +204,7 @@ this is not a general-purpose SQL database that happens to be authenticated. it 
 
 - **no ad-hoc schema changes**: once a table is deployed, its schema (nox program) is immutable (content-addressed). deploying a new version = deploying a new program = new dimension. migrations are explicit, not ALTER TABLE.
 
-- **no free reads**: every read is a PCS opening. on a local node, this is O(1) field ops (fast). over the network, it costs ~200 bytes bandwidth. there is no "free SELECT" — every query is authenticated.
+- **no free reads**: every read is a Lens opening. on a local node, this is O(1) field ops (fast). over the network, it costs ~200 bytes bandwidth. there is no "free SELECT" — every query is authenticated.
 
 - **no ACID transactions across tables**: a single [[signal]] can update multiple dimensions (like a cyberlink updates 5), but the transition program must be a single nox formula. there is no BEGIN/COMMIT/ROLLBACK across independent programs.
 

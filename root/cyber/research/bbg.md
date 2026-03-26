@@ -11,7 +11,7 @@ date: 2026-03-24
 
 [[BBG]] (Big Badass Graph) is the authenticated state layer for [[cyber]]. the entire [[cybergraph]] — [[particles]], [[axons]], [[neurons]], [[tokens]], temporal state, private records — commits to a single polynomial:
 
-$$\text{BBG\_root} = \text{PCS.commit}(\text{BBG\_poly})$$
+$$\text{BBG\_root} = \text{Lens.commit}(\text{BBG\_poly})$$
 
 32 bytes. one polynomial. all state. every query is a polynomial opening. cross-index consistency is structural — different evaluation dimensions of the same polynomial cannot disagree. [[LogUp]] is unnecessary. a 240-byte checkpoint (BBG_root + [[universal accumulator]] + height) proves all history from genesis in 10–50 μs.
 
@@ -21,9 +21,9 @@ the architecture follows from [[zheng]]'s [[sumcheck]] foundation: the proof sys
 
 **law 1: bounded locality.** operation cost $\propto$ what it touches, not total state size. at $10^{15}$ particles, a single [[cyberlink]] costs $O(\log n)$ polynomial path updates. global recomputation is physically impossible and architecturally forbidden.
 
-**law 2: constant-cost verification.** verifying any claim about the graph costs $O(1)$: one PCS opening (~200 bytes, 10–50 μs). independent of graph size, history length, or computation complexity. a light client with 240 bytes has the same verification power as a full node.
+**law 2: constant-cost verification.** verifying any claim about the graph costs $O(1)$: one Lens opening (~200 bytes, 10–50 μs). independent of graph size, history length, or computation complexity. a light client with 240 bytes has the same verification power as a full node.
 
-**law 3: structural security.** guarantees come from mathematical structure, not protocol correctness. polynomial binding prevents lying — a committed polynomial evaluates to a unique value at each point. the [[Brakedown]] PCS is post-quantum (code-based, no pairings). privacy comes from the [[mutator set]] (SWBF bitmap prevents double-spend by construction).
+**law 3: structural security.** guarantees come from mathematical structure, not protocol correctness. polynomial binding prevents lying — a committed polynomial evaluates to a unique value at each point. the [[Brakedown]] lens is post-quantum (code-based, no pairings). privacy comes from the [[mutator set]] (SWBF bitmap prevents double-spend by construction).
 
 ## 2. five primitives
 
@@ -50,7 +50,7 @@ three dimensions:
 - **key** $\in \mathbb{F}_p$ — namespace key (particle CID, neuron ID, denomination hash, etc.)
 - **$t$** $\in \mathbb{N}$ — block height (temporal dimension)
 
-committed via [[Brakedown]] PCS:
+committed via [[Brakedown]] lens:
 
 $$\text{BBG\_root} = \text{Brakedown.commit}(\text{BBG\_poly}) \quad \text{(32 bytes)}$$
 
@@ -92,11 +92,11 @@ a state read IS a polynomial evaluation:
 ```
 "what is the energy of particle P?"
 = Brakedown.open(BBG_root, (particles, P, t_now))
-= one PCS opening: ~200 bytes proof, O(√N) field operations, 10-50 μs
+= one Lens opening: ~200 bytes proof, O(√N) field operations, 10-50 μs
 
 "all outgoing axons from particle P?"
 = Brakedown.open(BBG_root, (axons_out, P, t_now))
-= one PCS opening: ~200 bytes, completeness guaranteed by PCS binding
+= one Lens opening: ~200 bytes, completeness guaranteed by Lens binding
 ```
 
 compare with the hash-tree approach: $O(\log n) \times 32$ bytes Merkle path, $O(\log n)$ [[Hemera]] hashes to verify. the polynomial approach is O(1) proof size and O(√N) field operations — no hashing.
@@ -117,15 +117,15 @@ each update: O(log n) polynomial path operations × ~100 field ops
 total: ~3,200 constraints per cyberlink
 ```
 
-with [[Brakedown]] (Merkle-free PCS), the update cost is O(N) for batch recommit at block boundary. no hemera hashing for state verification — 0 calls per block (was 144,000 in the NMT approach).
+with [[Brakedown]] (Merkle-free lens), the update cost is O(N) for batch recommit at block boundary. no hemera hashing for state verification — 0 calls per block (was 144,000 in the NMT approach).
 
 ## 4. private state
 
 individual [[cyberlinks]] are private. the polynomial state handles this:
 
-**commitment polynomial** $A(x)$: all committed private records. $A(c_i) = v_i$ for commitment $c_i$ with value $v_i$. membership proof: one PCS opening — O(1).
+**commitment polynomial** $A(x)$: all committed private records. $A(c_i) = v_i$ for commitment $c_i$ with value $v_i$. membership proof: one Lens opening — O(1).
 
-**nullifier polynomial** $N(x) = \prod(x - n_i)$: all spent nullifiers. $N(n) = 0$ iff nullifier $n$ is spent. non-membership proof: one PCS opening showing $N(c) \neq 0$ — O(1).
+**nullifier polynomial** $N(x) = \prod(x - n_i)$: all spent nullifiers. $N(n) = 0$ iff nullifier $n$ is spent. non-membership proof: one Lens opening showing $N(c) \neq 0$ — O(1).
 
 ```
 old (SWBF + MMR):
@@ -135,14 +135,14 @@ old (SWBF + MMR):
   total:           ~40,000 constraints per spend
 
 new (polynomial):
-  membership:      one PCS opening — O(1)
-  non-membership:  one PCS opening — O(1)
+  membership:      one Lens opening — O(1)
+  non-membership:  one Lens opening — O(1)
   update:          N'(x) = N(x) × (x - n_new) — O(1) polynomial extend
-  witness:         32 bytes (PCS commitment, was 128 KB)
+  witness:         32 bytes (Lens commitment, was 128 KB)
   total:           ~5,000 constraints per spend
 ```
 
-privacy is preserved: PCS opening proofs are zero-knowledge. opening $A(c_i)$ reveals nothing about other commitments. opening $N(n)$ reveals nothing about other nullifiers.
+privacy is preserved: Lens opening proofs are zero-knowledge. opening $A(c_i)$ reveals nothing about other commitments. opening $N(n)$ reveals nothing about other nullifiers.
 
 ## 5. temporal state
 
@@ -151,7 +151,7 @@ the temporal dimension $t$ in BBG_poly enables continuous-time queries:
 ```
 "what was π of particle P at block 1000?"
 = Brakedown.open(BBG_root, (particles, P, 1000))
-= one PCS opening — no separate time index needed
+= one Lens opening — no separate time index needed
 ```
 
 the old approach used a time.root NMT with 7 namespaces (steps, seconds, hours, days, weeks, moons, years). the polynomial absorbs time as a native dimension — any historical query is one evaluation.
@@ -160,7 +160,7 @@ with [[gravity commitment]]: recent + high-$\pi$ queries are cheapest (low-degre
 
 ## 6. algebraic DAS
 
-[[DAS|Data Availability Sampling]] uses the same polynomial infrastructure. the erasure-coded block is a bivariate polynomial $P(\text{row}, \text{col})$. each DAS sample is one PCS opening:
+[[DAS|Data Availability Sampling]] uses the same polynomial infrastructure. the erasure-coded block is a bivariate polynomial $P(\text{row}, \text{col})$. each DAS sample is one Lens opening:
 
 ```
 sample: Brakedown.open(block_commitment, (row_i, col_i)) → value + proof
@@ -170,13 +170,13 @@ old (NMT-based DAS):
   20 samples:  ~25 KiB bandwidth, ~471K constraints
 
 algebraic DAS:
-  per sample:  ~200 bytes PCS opening, O(√N) field ops
+  per sample:  ~200 bytes Lens opening, O(√N) field ops
   20 samples:  ~4 KiB bandwidth, ~3K constraints
 
 improvement: 157× fewer constraints, 6× less bandwidth
 ```
 
-the same PCS serves state queries AND availability sampling. one commitment scheme for everything.
+the same lens serves state queries AND availability sampling. one commitment scheme for everything.
 
 ## 7. signal-first architecture
 
@@ -202,8 +202,8 @@ one mechanism at three scales. five verification layers ([[structural-sync]]):
 |---|---|---|
 | 1. validity | [[zheng]] proof per [[signal]] | 10-50 μs verification |
 | 2. ordering | hash chain + [[VDF]] | O(1) per signal |
-| 3. completeness | PCS opening (polynomial completeness) | ~200 bytes per namespace |
-| 4. availability | algebraic [[DAS]] (PCS samples) | ~4 KiB for 20 samples |
+| 3. completeness | Lens opening (polynomial completeness) | ~200 bytes per namespace |
+| 4. availability | algebraic [[DAS]] (Lens samples) | ~4 KiB for 20 samples |
 | 5. merge | [[CRDT]] (local) / [[foculus]] (global) | deterministic convergence |
 
 a light client joins:
@@ -211,14 +211,14 @@ a light client joins:
 ```
 1. download checkpoint                    ~240 bytes
 2. verify (one zheng decider)             10-50 μs
-3. sync namespaces (PCS openings)         ~200 bytes each
+3. sync namespaces (Lens openings)         ~200 bytes each
 4. DAS sample (algebraic)                 ~4 KiB
 5. maintain (fold each block)             ~30 field ops / block
 
 total: < 10 KiB, 10-50 μs, ZERO trust
 ```
 
-this is [[structural-sync|Verified Eventual Consistency]] (VEC): convergence guaranteed (CRDT), completeness verifiable (PCS), availability verifiable (DAS). no consensus protocol needed.
+this is [[structural-sync|Verified Eventual Consistency]] (VEC): convergence guaranteed (CRDT), completeness verifiable (lens), availability verifiable (DAS). no consensus protocol needed.
 
 ## 9. π-weighted everything
 
@@ -238,14 +238,14 @@ one distribution governs proof cost, storage, availability, decay, and query per
 
 | metric | value |
 |---|---|
-| BBG_root | 32 bytes (one PCS commitment) |
+| BBG_root | 32 bytes (one Lens commitment) |
 | checkpoint | ~240 bytes (root + accumulator + height) |
 | checkpoint verification | 10-50 μs (one zheng decider) |
 | per-cyberlink | ~3,200 constraints (public) + ~5,000 (private) = ~8,200 total |
 | per-block (1000 tx) | ~8.3M constraints |
 | epoch (1000 blocks) | ~100K constraints (HyperNova folding) |
-| inclusion proof | ~200 bytes (PCS opening) |
-| non-membership | ~200 bytes (PCS opening, was 128 KB SWBF witness) |
+| inclusion proof | ~200 bytes (Lens opening) |
+| non-membership | ~200 bytes (Lens opening, was 128 KB SWBF witness) |
 | DAS (20 samples) | ~4 KiB bandwidth, ~3K constraints |
 | hemera calls/block (state) | 0 (polynomial, no tree hashing) |
 | light client join | < 10 KiB bandwidth |
@@ -294,7 +294,7 @@ anonymous [[cyberlinks]]: a [[neurons|neuron]] proves identity ($H(\text{secret}
 | claim | confidence | basis |
 |---|---|---|
 | three laws | high | architectural properties |
-| one polynomial for all state | medium-high | multivariate PCS well-understood, scale unproven |
+| one polynomial for all state | medium-high | multivariate lens well-understood, scale unproven |
 | polynomial mutator set | medium | novel, needs implementation |
 | ~3,200 constraints/cyberlink | high | follows from sumcheck + Brakedown architecture |
 | algebraic DAS (157×) | high | follows from polynomial completeness |

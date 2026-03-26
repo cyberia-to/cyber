@@ -5,11 +5,11 @@ crystal-domain: cyber
 status: draft
 date: 2026-03-24
 ---
-# recursive Brakedown: the perfect PCS
+# recursive Brakedown: the perfect lens
 
 ## the gap
 
-[[Brakedown]] is the best transparent, post-quantum, Merkle-free PCS. O(N) commit. O(√N) proof. zero hash trees. but FRI/WHIR have O(log² N) proofs — smaller for large N.
+[[Brakedown]] is the best transparent, post-quantum, Merkle-free lens. O(N) commit. O(√N) proof. zero hash trees. but FRI/WHIR have O(log² N) proofs — smaller for large N.
 
 the question: can we get O(log N) proof size while keeping O(N) commit, Merkle-free, and post-quantum?
 
@@ -282,7 +282,7 @@ m openings for the price of 1. this is critical for:
 
 ### [[zheng]] proof size
 
-zheng proofs contain PCS openings. with recursive Brakedown:
+zheng proofs contain Lens openings. with recursive Brakedown:
 
 ```
 current (standard Brakedown):   ~8 KiB per proof
@@ -291,7 +291,7 @@ recursive Brakedown:            ~1.3 KiB per proof
 zheng total proof:
   sumcheck transcript:   ~0.5 KiB
   evaluation claims:     ~0.3 KiB
-  PCS opening:           ~1.3 KiB (was ~8 KiB)
+  Lens opening:           ~1.3 KiB (was ~8 KiB)
   total:                 ~2.1 KiB (was ~9 KiB)
 ```
 
@@ -308,7 +308,7 @@ lighter proofs everywhere.
 
 ### polynomial nouns
 
-[[polynomial nouns]] use PCS commitment as noun identity. per-axis verification:
+[[polynomial nouns]] use Lens commitment as noun identity. per-axis verification:
 
 ```
 current (standard Brakedown):  O(√N) field ops per axis
@@ -336,7 +336,7 @@ is there anything left to improve?
                     recursive Brakedown     theoretical lower bound
 commit:             O(N)                    O(N) — must read all data
 proof size:         O(log N + λ)            O(log N) — sumcheck + security
-verify:             O(λ log log N)          O(log N) — depends on PCS
+verify:             O(λ log log N)          O(log N) — depends on lens
 prover:             O(N)                    O(N)
 Merkle-free:        yes                     yes
 post-quantum:       yes                     yes
@@ -362,7 +362,7 @@ with λ = 128 and log log N ≈ 5: verification is ~640 field ops ≈ ~5 μs. th
 
 ## implementation plan
 
-### phase 1: zheng reference (PCS upgrade)
+### phase 1: zheng reference (lens upgrade)
 
 - [ ] zheng/reference/polynomial-commitment.md — rewrite with recursive protocol (commit unchanged, open/verify recursive)
 - [ ] zheng/reference/verifier.md — update: proof ~1.3 KiB, verify ~5 μs, circuit ~8K constraints
@@ -381,4 +381,4 @@ with λ = 128 and log log N ≈ 5: verification is ~640 field ops ≈ ~5 μs. th
 
 - [ ] DELETE zheng/roadmap/algebraic-extraction.md — superseded (no Merkle paths to extract)
 
-see [[Brakedown]] for the base PCS, [[zheng]] for the proof system, [[polynomial nouns]] for all-algebraic computation, [[algebraic state commitments]] for polynomial state, [[structural-sync]] for the five-layer framework that recursive Brakedown accelerates
+see [[Brakedown]] for the base lens, [[zheng]] for the proof system, [[polynomial nouns]] for all-algebraic computation, [[algebraic state commitments]] for polynomial state, [[structural-sync]] for the five-layer framework that recursive Brakedown accelerates

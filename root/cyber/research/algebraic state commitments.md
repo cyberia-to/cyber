@@ -17,7 +17,7 @@ the insight: the 9 trees contain the SAME data viewed from different angles. [[p
 
 ## the primitive: polynomial state
 
-replace hash trees with a polynomial commitment. commit to a function $f: \text{index} \times \text{namespace} \times \text{position} \to \text{value}$ via a single [[PCS]] (polynomial commitment scheme). querying any view is a polynomial opening — one proof that $f$ evaluates to the claimed value at the queried point.
+replace hash trees with a polynomial commitment. commit to a function $f: \text{index} \times \text{namespace} \times \text{position} \to \text{value}$ via a single [[lens]] (polynomial commitment scheme). querying any view is a polynomial opening — one proof that $f$ evaluates to the claimed value at the queried point.
 
 ```
 NMT approach:    9 independent trees, each O(log n) to update
@@ -26,7 +26,7 @@ NMT approach:    9 independent trees, each O(log n) to update
 
 polynomial:      1 commitment, O(1) to open at any point
                  cross-index: free (same polynomial, different evaluation)
-                 completeness: algebraic (PCS binding)
+                 completeness: algebraic (Lens binding)
 ```
 
 ## what changes
@@ -58,10 +58,10 @@ with one polynomial, `BBG_poly(axons_out, P, _)` and `BBG_poly(axons_in, P, _)` 
 
 | operation | NMT proof | polynomial proof |
 |---|---|---|
-| single inclusion | 32 × 32B = 1 KiB | ~200 bytes (PCS opening) |
+| single inclusion | 32 × 32B = 1 KiB | ~200 bytes (Lens opening) |
 | namespace range (100 entries) | ~100 KiB | ~5 KiB |
 | light client sync per namespace | ~1 KiB | ~200 bytes |
-| DAS sample | 1 KiB (NMT path) | 200 bytes (PCS opening) |
+| DAS sample | 1 KiB (NMT path) | 200 bytes (Lens opening) |
 
 a light client on a phone downloading 100 namespace proofs: 100 KiB → 20 KiB. 5× less bandwidth. in regions with expensive mobile data, this is the difference between usable and unusable.
 
@@ -71,9 +71,9 @@ a light client on a phone downloading 100 namespace proofs: 100 KiB → 20 KiB. 
 
 [[NMT]] completeness is structural: the sorting invariant is a property of the data structure itself. the tree CANNOT omit entries by construction. no computational assumption.
 
-polynomial completeness is computational: the PCS (polynomial commitment scheme) must be sound. if the PCS breaks, the polynomial can produce false proofs. this is weaker.
+polynomial completeness is computational: the Lens (polynomial commitment scheme) must be sound. if the Lens breaks, the polynomial can produce false proofs. this is weaker.
 
-the mitigation: [[WHIR]] and Brakedown are hash-based PCS — their soundness relies on collision resistance of [[Hemera]], the same hash that NMT nodes use. the trust root is identical. the difference: NMTs use [[Hemera]] structurally (tree shape = completeness). polynomials use [[Hemera]] algebraically (polynomial binding = completeness). both trust the same primitive.
+the mitigation: [[WHIR]] and Brakedown are hash-based lens — their soundness relies on collision resistance of [[Hemera]], the same hash that NMT nodes use. the trust root is identical. the difference: NMTs use [[Hemera]] structurally (tree shape = completeness). polynomials use [[Hemera]] algebraically (polynomial binding = completeness). both trust the same primitive.
 
 the hybrid migration: during transition, run BOTH systems. NMT and polynomial must agree on every query. divergence = bug or cryptographic break. years of agreement build confidence.
 
@@ -82,7 +82,7 @@ the hybrid migration: during transition, run BOTH systems. NMT and polynomial mu
 Merkle trees are understood since 1979. polynomial commitments over extension fields are 2019+. operational experience matters. bugs in novel cryptography can be catastrophic.
 
 the migration path (prop in [[algebraic-nmt]]):
-1. Verkle-tree hybrid: tree structure preserved, PCS at nodes (33× cheaper, NMT as backup)
+1. Verkle-tree hybrid: tree structure preserved, lens at nodes (33× cheaper, NMT as backup)
 2. Flat polynomial: tree eliminated, Brakedown commitment, NMT removed after confidence
 3. Unified polynomial: all 9 indexes → one commitment, cross-index structural
 
@@ -90,13 +90,13 @@ the migration path (prop in [[algebraic-nmt]]):
 
 ### structure
 
-replace [[Hemera]] hashes at NMT internal nodes with PCS node commitments:
+replace [[Hemera]] hashes at NMT internal nodes with lens node commitments:
 
 ```
 NMT node:      H(left_hash ‖ right_hash ‖ ns_min ‖ ns_max)
                → 1 Hemera permutation = 736 constraints
 
-Verkle node:   PCS.commit([child_0, child_1, ..., child_{b-1}])
+Verkle node:   Lens.commit([child_0, child_1, ..., child_{b-1}])
                → ~100 field operations (for arity b)
 
 with binary tree (b=2):
@@ -121,7 +121,7 @@ update(tree, leaf_index, new_value):
   for level in path (leaf to root):
     children ← level.children
     children[child_index] ← updated_hash
-    level.commitment ← PCS.recommit(level.old_commitment, child_index, delta)
+    level.commitment ← lens.recommit(level.old_commitment, child_index, delta)
     # incremental recommit: O(1) field ops per child change
 
   tree.root ← path.root.commitment
@@ -145,7 +145,7 @@ batch_update(tree, updates: [(leaf_index, new_value)]):
 
   # bottom-up: recompute each dirty node exactly once
   for node in dirty_nodes.sorted_by_depth(deepest_first):
-    node.commitment ← PCS.recommit(node.children)
+    node.commitment ← lens.recommit(node.children)
 
   # power-law: 1000 updates touching 200 unique leaves
   # dirty internal nodes: ~800 (not 4500)
@@ -161,7 +161,7 @@ open(tree, index, namespace, key):
 
   proof ← []
   for level in path:
-    proof.append(PCS.open(level.commitment, child_index))
+    proof.append(Lens.open(level.commitment, child_index))
 
   return (leaf.value, proof)
   # proof size: depth × PCS_opening_size
@@ -171,7 +171,7 @@ open(tree, index, namespace, key):
 verify(root, namespace, key, value, proof):
   current ← root
   for (level_proof, child_index) in proof:
-    assert PCS.verify(current, child_index, level_proof)
+    assert Lens.verify(current, child_index, level_proof)
     current ← level_proof.child_commitment
   assert current == H(value)
   return true
@@ -250,7 +250,7 @@ current:
 
 algebraic:
   signal → nox execution trace → SuperSpartan proof
-  NMT verification replaced by PCS evaluation check
+  NMT verification replaced by Lens evaluation check
   ~33× fewer constraints in state transition circuits
   → smaller proofs → faster prover → faster verifier
 ```
@@ -263,7 +263,7 @@ current DAS:
   cost per sample: O(log n) hemera hashes
 
 algebraic DAS:
-  sample cell → PCS opening → field op verification
+  sample cell → Lens opening → field op verification
   cost per sample: O(1) field ops
 
   20 samples: 20 KiB → 4 KiB bandwidth, hemera calls → field ops
@@ -277,7 +277,7 @@ current:
   each read: NMT proof verification → hemera path
 
 algebraic:
-  read neuron states via PCS opening → field ops
+  read neuron states via Lens opening → field ops
   convergence check becomes algebraically verifiable
 
   potential: prove π convergence inside zheng circuit
@@ -291,10 +291,10 @@ current:
   join: 1 zheng proof (50 μs) + NMT namespace sync (~1 KiB per namespace)
 
 algebraic:
-  join: 1 zheng proof (50 μs) + PCS namespace sync (~200 bytes per namespace)
+  join: 1 zheng proof (50 μs) + lens namespace sync (~200 bytes per namespace)
 
   full state verification: ONE polynomial commitment (32 bytes)
-  every query: ONE PCS opening (~200 bytes)
+  every query: ONE Lens opening (~200 bytes)
 
   the lightest possible client: store 32 bytes, verify anything
 ```
@@ -315,4 +315,4 @@ no Merkle tree for public state. no internal nodes. no tree rebalancing. no path
 
 every blockchain since Bitcoin uses hash trees for state authentication. algebraic state commitments are a departure from this 15-year architectural assumption. the question is not "is it faster?" (yes, 33×). the question is: "is the algebraic trust model sound enough to replace the structural trust model?" the [[Hemera]] collision resistance underlies both. the migration path with hybrid verification provides the empirical answer.
 
-see [[algebraic-nmt]] for the BBG proposal with migration phases. see [[structural sync]] for how this changes layer 3 (completeness). see [[cyber/research/vec formalization]] for the formal VEC model. see [[unified-polynomial-state]] for the endgame (single polynomial for ALL state). see [[Hemera]] for the hash primitive that underlies both NMT and PCS trust
+see [[algebraic-nmt]] for the BBG proposal with migration phases. see [[structural sync]] for how this changes layer 3 (completeness). see [[cyber/research/vec formalization]] for the formal VEC model. see [[unified-polynomial-state]] for the endgame (single polynomial for ALL state). see [[Hemera]] for the hash primitive that underlies both NMT and lens trust

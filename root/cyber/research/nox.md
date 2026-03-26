@@ -173,8 +173,8 @@ nox is parameterised: nox<F, W, H>. the same 16 patterns, the same reduction rul
 | nox<F_{p²}> | $\mathbb{F}_{p^2}$ | $\mathbb{Z}/2^{32}$ | Hemera | extension field operations |
 
 the proof system ([[zheng]]) is also polymorphic:
-- nox<Goldilocks> → [[Brakedown]] PCS (Goldilocks-native)
-- nox<F₂> → [[Binius]] PCS (binary-native)
+- nox<Goldilocks> → [[Brakedown]] lens (Goldilocks-native)
+- nox<F₂> → [[Binius]] lens (binary-native)
 - both fold into ONE [[HyperNova]] accumulator via universal CCS
 
 14 source languages compile to nox with domain-specific constraint encodings:

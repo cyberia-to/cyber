@@ -252,7 +252,7 @@ if the CCS is satisfied, Q(τ) = 0 for every τ with overwhelming probability (S
 
 **step 2: sumcheck.** the prover and verifier run the sumcheck protocol on Q(τ). this reduces the exponential sum (over $2^{\log N}$ terms) to a single evaluation at a random point $r$.
 
-**step 3: evaluation check.** the verifier needs $\widetilde{M_i \cdot z}(r)$ for each matrix $M_i$. the prover provides these values plus opening proofs via the PCS (Brakedown).
+**step 3: evaluation check.** the verifier needs $\widetilde{M_i \cdot z}(r)$ for each matrix $M_i$. the prover provides these values plus opening proofs via the Lens (Brakedown).
 
 the verifier checks: the claimed values are consistent with the committed polynomial, and the sumcheck transcript is correct.
 
@@ -267,12 +267,12 @@ prover:   O(t × N) field operations
 verifier: O(t × log N) field operations
           ~17 × k multiplications to check evaluation
           + sumcheck verification (k rounds, O(1) per round)
-          + PCS verification (Brakedown: O(√N))
+          + Lens verification (Brakedown: O(√N))
           total: ~300 field operations + O(√N)
 
 proof:    sumcheck transcript: ~2 KiB
           evaluation claims: ~1 KiB
-          PCS opening: ~1-5 KiB (Brakedown)
+          Lens opening: ~1-5 KiB (Brakedown)
           total: ~4-8 KiB
 ```
 
@@ -311,7 +311,7 @@ the verifier sends random $r_2$.
 
 $$g_k(r_k) = g(r_1, r_2, ..., r_k)$$
 
-the right side requires evaluating g at one point. the verifier asks the prover for the evaluation and checks it via the PCS.
+the right side requires evaluating g at one point. the verifier asks the prover for the evaluation and checks it via the Lens.
 
 ### 6.3 Why this is sound
 
@@ -642,7 +642,7 @@ DEVICE                          NETWORK                         CLIENT
 create cyberlinks               include in block                download checkpoint
   ↓ proof-carrying                ↓ algebraic state               ↓ one decider
 hemera identity                 fold into block accumulator     sync namespaces
-  ↓ folded sponge                 ↓ folding-first                 ↓ PCS openings
+  ↓ folded sponge                 ↓ folding-first                 ↓ Lens openings
 build signal                    fold into epoch accumulator     DAS sample
   ↓ (ν, l⃗, π_Δ, σ, prev...)     ↓ universal accumulator          ↓ algebraic DAS
 local sync                      publish checkpoint              full VEC state
@@ -657,7 +657,7 @@ a [[neurons|neuron]] creates [[cyberlinks]] on a device. computation, hashing, a
 
 [[nox]] execution with proof-carrying: each reduce() call dispatches a pattern, generates one trace row, and folds it into the accumulator (~30 field ops). at computation end, the accumulator IS the proof.
 
-for binary workloads (quantized AI inference, [[tri-kernel]] SpMV): nox<F₂> execution → [[Binius]] PCS → fold into F_p accumulator. boundary cost: ~766 F_p constraints. binary jets (popcount, packed_inner_product, binary_matvec) give 1,400× over naive F_p.
+for binary workloads (quantized AI inference, [[tri-kernel]] SpMV): nox<F₂> execution → [[Binius]] lens → fold into F_p accumulator. boundary cost: ~766 F_p constraints. binary jets (popcount, packed_inner_product, binary_matvec) give 1,400× over naive F_p.
 
 [[Hemera]] identity with folded sponge: content addressing H([[cyberlink]]) = [[particles|particle]] identity. K absorption blocks × 30 field ops + 1 decider = ~2,956 constraints for a 4 KiB particle (vs ~54K current, 18× savings).
 
@@ -686,7 +686,7 @@ same neuron's devices sync via [[structural-sync|structural sync]] layers 1-5.
 ```
 1. compare merkle_clock roots                      O(1), 32 bytes
 2. exchange signal polynomial commitments           O(1), 32 bytes
-3. request missing step ranges with PCS proofs      ~200 bytes per namespace
+3. request missing step ranges with Lens proofs      ~200 bytes per namespace
 4. DAS sample content chunks (algebraic)            20 × ~200B = 4 KiB
 5. verify each signal (decider)                     10-50 μs
 6. CRDT merge → deterministic total order           O(signals)
@@ -718,8 +718,8 @@ total: ~3.2K constraints (was ~107.5K, improvement: 33×)
 
 per-cyberlink private state update (polynomial mutator set):
 ```
-commitment polynomial: O(1) PCS opening
-nullifier polynomial: O(1) PCS opening
+commitment polynomial: O(1) Lens opening
+nullifier polynomial: O(1) Lens opening
 total: ~5K constraints (was ~40K, improvement: 8×)
 ```
 
@@ -738,7 +738,7 @@ BBG commitment evolution:
 ```
 current:     BBG_root = H(13 × 32-byte sub-roots) = H(416 bytes)
 phase 1:     BBG_root = H(BBG_poly ‖ private_roots ‖ signals.root) — 9 NMTs → 1 poly
-endgame:     BBG_root = PCS.commit(BBG_poly) — one 32-byte commitment
+endgame:     BBG_root = Lens.commit(BBG_poly) — one 32-byte commitment
 ```
 
 ### 12.6 Stage 5: epoch finalization
@@ -757,7 +757,7 @@ universal accumulator: fold ALL five [[structural-sync|structural sync]] layers 
 ```
 1. download checkpoint                              ~240 bytes
 2. verify accumulator (one decider)                  10-50 μs
-3. sync namespaces (PCS opening each)                ~200 bytes per namespace
+3. sync namespaces (Lens opening each)                ~200 bytes per namespace
 4. DAS sample (20 algebraic samples)                 ~4 KiB
 5. maintain (fold each new block)                    ~30 field ops / block
 
@@ -797,7 +797,7 @@ SIGNAL CREATION
   binary workloads:     32-64× overhead      native (Binius)       32-64×
 
 LOCAL SYNC
-  completeness proof:   ~1 KiB (NMT)        ~200 bytes (PCS)      5×
+  completeness proof:   ~1 KiB (NMT)        ~200 bytes (lens)      5×
   DAS verification:     ~20 KiB              ~4 KiB                5×
   signal verify:        ~1 ms                10-50 μs              20-100×
 
@@ -817,7 +817,7 @@ LIGHT CLIENT
   DAS bandwidth:        ~20 KiB              ~4 KiB                5×
 
 QUERY
-  namespace proof:      ~1 KiB (NMT)        ~200 bytes (PCS)      5×
+  namespace proof:      ~1 KiB (NMT)        ~200 bytes (lens)      5×
   arbitrary query:      custom proof         compiler-generated     general
   hot query:            ~1 ms                ~10 μs                100×
 
@@ -886,11 +886,11 @@ private records         1 per UTXO          always hemera (privacy binding)
 Fiat-Shamir seed        1 per proof         always hemera (transcript binding)
 Fiat-Shamir challenges  19 per proof        algebraic FS: polynomial challenges
 NMT tree hashing        144K per block      algebraic NMT: 0 (polynomial state)
-DAS inclusion proofs    640 per verify      algebraic DAS: 0 (PCS openings)
+DAS inclusion proofs    640 per verify      algebraic DAS: 0 (Lens openings)
 Brakedown commitment    1 per proof         always hemera (binding hash)
 ```
 
-[[Hemera]] starts as dominant cost (>90% of constraints) and converges to trust anchor (~1% of constraints). [[Brakedown]] eliminates hemera from PCS. [[algebraic state commitments|algebraic NMT]] eliminates hemera from state. algebraic DAS eliminates hemera from availability. what remains: content identity and privacy — the irreducible cryptographic anchors.
+[[Hemera]] starts as dominant cost (>90% of constraints) and converges to trust anchor (~1% of constraints). [[Brakedown]] eliminates hemera from lens. [[algebraic state commitments|algebraic NMT]] eliminates hemera from state. algebraic DAS eliminates hemera from availability. what remains: content identity and privacy — the irreducible cryptographic anchors.
 
 ## 14. Polynomial State and Algebraic DAS
 
@@ -921,7 +921,7 @@ DAS requires proving "this cell at position (row, col) is committed in the erasu
 
 ```
 FRI-based DAS:    NMT inclusion proof per sample → O(log N) hemera hashes
-zheng-based DAS:  PCS opening per sample → O(1) field operations
+zheng-based DAS:  Lens opening per sample → O(1) field operations
 
 20 samples:
   FRI:    ~25 KiB bandwidth, ~471K constraints
@@ -930,13 +930,13 @@ zheng-based DAS:  PCS opening per sample → O(1) field operations
 ratio: 157×
 ```
 
-the erasure-coded grid P(row, col) IS a bivariate polynomial. Brakedown commits to it with O(N) field operations. each DAS sample is one PCS opening.
+the erasure-coded grid P(row, col) IS a bivariate polynomial. Brakedown commits to it with O(N) field operations. each DAS sample is one Lens opening.
 
 ## 15. The Landscape and Honest Assessment
 
 ### 14.1 Production systems (early 2026)
 
-| system | field | PCS | proof | verify | prover | status |
+| system | field | lens | proof | verify | prover | status |
 |---|---|---|---|---|---|---|
 | Stwo | M31 | FRI+Merkle | ~200 KiB | 10–50 ms | O(N log N) | production |
 | Plonky3 | Goldilocks | FRI+Merkle | 100–200 KiB | 10–50 ms | O(N log N) | production |
@@ -952,7 +952,7 @@ all production systems share: [[FRI]] + univariate + Merkle. [[zheng]]: [[sumche
 | weakness | severity | reality |
 |---|---|---|
 | zero production hours | critical | biggest risk. algorithms are peer-reviewed. implementation is zero |
-| hemera cost | medium | 736 vs ~300 constraints (2.4×). permanent 256-bit security tradeoff. Brakedown eliminates hemera from PCS |
+| hemera cost | medium | 736 vs ~300 constraints (2.4×). permanent 256-bit security tradeoff. Brakedown eliminates hemera from lens |
 | 64-bit field | medium | 2–4× slower per op vs BabyBear. compensated by fewer total ops (O(N) vs O(N log N)) and GFP hardware |
 | Brakedown maturity | medium | less battle-tested than FRI. fewer years of cryptanalysis |
 | single implementation | low-medium | formal spec enables independent implementations |
@@ -963,7 +963,7 @@ all production systems share: [[FRI]] + univariate + Merkle. [[zheng]]: [[sumche
 state read:     O(1) vs O(log N)         architecture
 prover time:    O(N) vs O(N log N)        sumcheck vs FFT
 recursion:      30 ops vs 12K+ constraints folding vs verification
-DAS verify:     O(1) vs O(log N)          PCS opening vs Merkle path
+DAS verify:     O(1) vs O(log N)          Lens opening vs Merkle path
 proof hemera:   1 call vs O(N log N)      Brakedown vs Merkle tree
 ```
 
@@ -981,7 +981,7 @@ these cannot be closed by optimizing FRI. they require changing the foundation.
 
 5. **[[vec formalization|VEC formalization]].** Verified Eventual Consistency (safety + verifiable completeness + verifiable availability + liveness) needs formal treatment under a precise adversary model. see [[structural-sync]] for the informal definition.
 
-6. **Brakedown + [[Binius]] unification.** both are linear-code-based PCS over different fields. can they share infrastructure?
+6. **Brakedown + [[Binius]] unification.** both are linear-code-based lens over different fields. can they share infrastructure?
 
 7. **Row-by-row folding for AIR.** proof-carrying computation folds one trace row at a time. AIR transition constraints reference adjacent rows. sliding-window (width 2) folding needs formal correctness proof.
 

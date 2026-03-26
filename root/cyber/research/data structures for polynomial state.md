@@ -76,7 +76,7 @@ a [[neuron]] does not store all shards. it stores:
 ```
 my namespace:    particles I created, my neuron record         ~1 KB - 1 GB
 my neighborhood: shards I query frequently (cached)            ~1 GB - 100 GB
-proof cache:     PCS openings from remote shards (LRU)         ~100 MB
+proof cache:     Lens openings from remote shards (LRU)         ~100 MB
 BBG_root:        global commitment                             32 bytes
 ```
 
@@ -148,7 +148,7 @@ NMT on archival tier is a STORAGE INDEX, not a TRUST MECHANISM. the polynomial c
 │                                              │
 │ my_shard_commitment: 32 bytes                │
 │ update: O(|dirty|) field ops per block       │
-│ cross-shard verify: O(1) PCS opening         │
+│ cross-shard verify: O(1) Lens opening         │
 └──────────────────┬───────────────────────────┘
                    │
 ┌──────────────────▼───────────────────────────┐
@@ -196,17 +196,17 @@ GFP is the endgame: field arithmetic in silicon + flat array in RAM. the data st
 
 ## what NMT actually is (reframed)
 
-NMT was designed as an authentication structure (completeness proofs via sorted invariant). in polynomial state, authentication is handled by PCS.
+NMT was designed as an authentication structure (completeness proofs via sorted invariant). in polynomial state, authentication is handled by lens.
 
 but NMT's sorted namespace property has a second life: optimal disk layout for cold storage. sorted data = sequential reads = fast on slow disks.
 
 | role | polynomial state | NMT |
 |---|---|---|
-| authentication (trust) | primary: PCS opening, O(1) | unnecessary |
+| authentication (trust) | primary: Lens opening, O(1) | unnecessary |
 | hot storage index (RAM) | flat array | unnecessary |
 | warm storage index (SSD) | B+ tree | unnecessary (B+ tree is better for random access) |
 | cold storage layout (HDD) | not designed for disk | useful: sorted namespace = sequential scan |
-| DAS chunk organization | PCS-based algebraic DAS | useful: namespace-sorted chunks |
+| DAS chunk organization | lens-based algebraic DAS | useful: namespace-sorted chunks |
 
 NMT survives in the architecture — not where it was designed to be (authentication), but where its sorted property happens to match the hardware (cold storage, DAS chunk layout).
 

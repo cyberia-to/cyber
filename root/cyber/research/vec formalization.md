@@ -128,7 +128,7 @@ every signal carries a [[zheng]] proof σ covering all operations in the batch:
 
 $$\text{verify\_signal}(s, \sigma) \to \{\text{valid}, \text{invalid}\}$$
 
-algorithm: SuperSpartan IOP + WHIR PCS over [[Goldilocks field]]:
+algorithm: SuperSpartan IOP + WHIR lens over [[Goldilocks field]]:
 
 ```
 verify_signal(signal, proof):
@@ -202,7 +202,7 @@ algebraic NMT:
 
 cost reduction:
   current: ~106K constraints per cyberlink (NMT paths)
-  algebraic: ~3.2K constraints (PCS evaluation)
+  algebraic: ~3.2K constraints (Lens evaluation)
   → 33× improvement
 ```
 
@@ -219,7 +219,7 @@ application (cybergraph operations)
      ↓ expressed as
 nox (16 reduction patterns, focus-metered execution)
      ↓ proven by
-zheng (SuperSpartan IOP + WHIR PCS)
+zheng (SuperSpartan IOP + WHIR lens)
      ↓ committed via
 hemera (Poseidon2 hashing, NMT/MMR construction)
      ↓ over
@@ -252,7 +252,7 @@ cross-graph cyberlinks (A links to B) require: NMT inclusion proof in both names
 | layer | current | proposed optimization | improvement |
 |---|---|---|---|
 | P1 (merge) | [[G-Set]] union | algebraic accumulator | O(1) membership instead of O(n) scan |
-| P2 (completeness) | NMT (23.5K constraints/path) | algebraic NMT (PCS evaluation) | 33× constraint reduction |
+| P2 (completeness) | NMT (23.5K constraints/path) | algebraic NMT (Lens evaluation) | 33× constraint reduction |
 | P3 (availability) | 2D Reed-Solomon | 3D tensor codes | O(∛n) sampling instead of O(√n) |
 | P5 (validity) | zheng proof (~70K constraints/verify) | jets (precompiled verification) | 8.5× constraint reduction |
 | P5 (recursion) | fold per block | batched folding (IVC) | amortized O(1) per signal |

@@ -26,7 +26,7 @@ a signal proof σ already exercises all four GFP primitives:
 | phase of signal proof | GFP primitive | % of constraints | what it does |
 |---|---|---|---|
 | tri-kernel impulse computation (SpMV) | fma | ~40% | matrix-vector for D, S, H operators |
-| polynomial state reads (algebraic NMT) | ntt | ~30% | PCS evaluation + commitment |
+| polynomial state reads (algebraic NMT) | ntt | ~30% | Lens evaluation + commitment |
 | content addressing + Fiat-Shamir | p2r | ~20% | Hemera permutations |
 | conviction + activation functions | lut | ~10% | threshold checks, nonlinear ops |
 
@@ -187,7 +187,7 @@ the GFP page describes the benchmark circuit as four phases mimicking real workl
 | GFP benchmark phase | unified mining equivalent |
 |---|---|
 | Phase 1: matrix-vector (fma) | tri-kernel impulse SpMV |
-| Phase 2: NTT polynomial (ntt) | algebraic NMT PCS openings |
+| Phase 2: NTT polynomial (ntt) | algebraic NMT Lens openings |
 | Phase 3: Poseidon2 hashing (p2r) | Hemera content addressing + Fiat-Shamir |
 | Phase 4: lookup table (lut) | activation + threshold checks |
 

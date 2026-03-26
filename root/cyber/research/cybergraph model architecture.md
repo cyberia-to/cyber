@@ -198,7 +198,7 @@ with [[algebraic state commitments|algebraic NMT]], the entire state is a polyno
 ```
 "what does the collective think about particle P?"
 = evaluate BBG_poly(particles, P, t_now)
-= one PCS opening, ~200 bytes proof, 10-50 μs verification
+= one Lens opening, ~200 bytes proof, 10-50 μs verification
 ```
 
 ## comparison

@@ -108,7 +108,7 @@ impossible. the hash cost of reading the graph through NMT destroys the entire a
 
 ### with algebraic NMT: feasible
 
-each edge read = PCS evaluation = O(1) field operations.
+each edge read = Lens evaluation = O(1) field operations.
 
 ```
 per edge:    ~100 field operations ≈ 100 constraints

@@ -15,13 +15,13 @@ the decision to go all-in on [[algebraic state commitments]] (one polynomial ins
 
 trinity promises: hash-based everything, post-quantum from genesis.
 
-the concern: polynomial commitments add a computational assumption. NMT completeness is structural (information-theoretic). PCS completeness is computational (collision-resistance).
+the concern: polynomial commitments add a computational assumption. NMT completeness is structural (information-theoretic). Lens completeness is computational (collision-resistance).
 
-the resolution: [[WHIR]] and Brakedown are hash-based PCS. their soundness relies on [[Hemera]] collision resistance — the SAME hash that NMT nodes use. the trust root is identical. polynomial state does not weaken the quantum pillar because the polynomial is committed via hashes, not pairings or discrete log.
+the resolution: [[WHIR]] and Brakedown are hash-based lens. their soundness relies on [[Hemera]] collision resistance — the SAME hash that NMT nodes use. the trust root is identical. polynomial state does not weaken the quantum pillar because the polynomial is committed via hashes, not pairings or discrete log.
 
 what polynomial state ADDS to quantum:
 
-- quantum circuit simulation provable in-circuit. a quantum gate is a matrix over F_{p²}. the state vector is a polynomial evaluation. with polynomial state, the prover reads the quantum state via PCS opening (O(1) field ops), applies the gate, writes the result — all inside a [[zheng]] proof. NMT would require O(log n) hemera hashes per state read — prohibitive for million-qubit simulation
+- quantum circuit simulation provable in-circuit. a quantum gate is a matrix over F_{p²}. the state vector is a polynomial evaluation. with polynomial state, the prover reads the quantum state via Lens opening (O(1) field ops), applies the gate, writes the result — all inside a [[zheng]] proof. NMT would require O(log n) hemera hashes per state read — prohibitive for million-qubit simulation
 - [[VQE]] and QAOA optimization loops become provable end-to-end. the variational optimizer reads parameters from polynomial state, computes energy expectation, updates parameters — all in one recursive proof
 - quantum error correction codes can be verified algebraically. stabilizer measurements are polynomial evaluations — same structure as state queries
 
@@ -37,7 +37,7 @@ the resolution: polynomial state preserves the privacy boundary exactly. private
 
 what polynomial state ADDS to privacy:
 
-- TFHE bootstrapping IN polynomial state. the bootstrap key is a polynomial evaluation. key switching reads polynomial state. with [[goldilocks-fhe]] (q = p), the entire FHE bootstrap is field-native AND reads state via O(1) PCS openings. NMT reads would add O(log n) hemera per key element — at 1024 key elements, that is 32,768 hemera calls vs 1,024 field ops. 32× cheaper bootstrapping
+- TFHE bootstrapping IN polynomial state. the bootstrap key is a polynomial evaluation. key switching reads polynomial state. with [[goldilocks-fhe]] (q = p), the entire FHE bootstrap is field-native AND reads state via O(1) Lens openings. NMT reads would add O(log n) hemera per key element — at 1024 key elements, that is 32,768 hemera calls vs 1,024 field ops. 32× cheaper bootstrapping
 
 - private state transitions (tier 1-3) produce zheng proofs that reference polynomial state. the proof says "I correctly updated the mutator set given these polynomial state reads." verifier checks ONE polynomial opening per state read instead of ONE NMT path. proof size: ~200 bytes per state read instead of ~1 KiB. private transactions become 5× lighter
 
@@ -53,7 +53,7 @@ the resolution: the opposite. polynomial state makes AI faster and more capable.
 
 what polynomial state ADDS to AI:
 
-- the compiled [[transformer]] ([[bostrom/compiled model]]) reads graph topology via PCS openings. embedding lookup = polynomial evaluation. attention weights = polynomial openings at semcon-typed dimensions. with NMT: embedding lookup costs O(log n) hemera per particle. with polynomial state: O(1) field ops per particle. for 2.9M particles: 96M hemera calls → 2.9M field ops
+- the compiled [[transformer]] ([[bostrom/compiled model]]) reads graph topology via Lens openings. embedding lookup = polynomial evaluation. attention weights = polynomial openings at semcon-typed dimensions. with NMT: embedding lookup costs O(log n) hemera per particle. with polynomial state: O(1) field ops per particle. for 2.9M particles: 96M hemera calls → 2.9M field ops
 
 - tri-kernel convergence (the AI core of [[foculus]]) fits in zheng circuit at 33% capacity BECAUSE graph reads are algebraic. without polynomial state: 15× over capacity → AI cannot prove its own consensus. with polynomial state: the network's intelligence (φ*) is self-proving
 
@@ -73,7 +73,7 @@ quantum-accelerated tri-kernel. quantum walks on the [[cybergraph]] achieve quad
 
 ### Privacy × AI (with polynomial state)
 
-private model inference on polynomial state. the model weights are a polynomial commitment. the input data is FHE-encrypted. the inference reads weights via PCS opening (private — the verifier sees the opening proof but not the weights). the output is a focus update (Δπ) that enters the public polynomial. privacy-preserving AI that updates collective intelligence — made algebraically efficient by polynomial state.
+private model inference on polynomial state. the model weights are a polynomial commitment. the input data is FHE-encrypted. the inference reads weights via Lens opening (private — the verifier sees the opening proof but not the weights). the output is a focus update (Δπ) that enters the public polynomial. privacy-preserving AI that updates collective intelligence — made algebraically efficient by polynomial state.
 
 ### Quantum × Privacy × AI (full trinity, with polynomial state)
 
@@ -97,7 +97,7 @@ polynomial state shifts the balance:
 
 | primitive | NMT architecture | polynomial architecture | change |
 |---|---|---|---|
-| fma | SpMV for tri-kernel, AI inference | SpMV + polynomial evaluation + PCS | MORE — fma becomes dominant |
+| fma | SpMV for tri-kernel, AI inference | SpMV + polynomial evaluation + lens | MORE — fma becomes dominant |
 | ntt | proof commitment (WHIR) | proof commitment + polynomial updates + FHE bootstrap | MORE — ntt handles state too |
 | p2r | EVERYTHING: state reads, commitments, Fiat-Shamir | Fiat-Shamir + signal identity (NOT state reads) | LESS — freed from state duty |
 | lut | activations, S-box, bootstrap | same | unchanged |
@@ -112,7 +112,7 @@ the trinity test (from [[trinity]]): can the system simultaneously achieve quant
 
 | metric | NMT architecture | polynomial architecture | what changes |
 |---|---|---|---|
-| post-quantum | yes (hash-based) | yes (same hash-based PCS) | unchanged |
+| post-quantum | yes (hash-based) | yes (same hash-based lens) | unchanged |
 | per-cyberlink constraints | ~106K | ~3K | 33× cheaper participation |
 | FHE bootstrap in-circuit | prohibitive (hemera reads) | feasible (field reads) | privacy tier 2-3 enabled |
 | provable consensus | impossible (15× over capacity) | 33% capacity | AI becomes self-proving |

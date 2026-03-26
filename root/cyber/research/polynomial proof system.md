@@ -16,13 +16,13 @@ a polynomial proof system is a transparent argument of knowledge where:
 2. **the commitment is a linear-code encoding.** no hash tree. the prover encodes the polynomial via an expander graph ([[Brakedown]]). binding from one [[hemera]] call. opening from [[recursive brakedown|recursive tensor decomposition]]
 3. **the constraint check is a [[sumcheck]].** the verifier reduces an exponential sum to one evaluation. the prover's table halves each round. total prover work: O(N)
 4. **composition is [[folding]].** multiple proof instances fold into one [[HyperNova]] accumulator with ~30 field operations. verification happens once at the end
-5. **identity is the commitment.** the PCS commitment to content IS the content's identity ([[particles|CID]]). accessing content IS opening the commitment. proving IS committing. one primitive
+5. **identity is the commitment.** the Lens commitment to content IS the content's identity ([[particles|CID]]). accessing content IS opening the commitment. proving IS committing. one primitive
 
 properties: transparent (no setup), post-quantum (code-based), linear-time prover, logarithmic proof size, Merkle-free, algebraically composable.
 
 ## the five operations
 
-one PCS. five uses.
+one Lens. five uses.
 
 **commit.** encode the polynomial via expander graph. O(N) [[Goldilocks field|field]] operations. one [[hemera]] call for binding. 32 bytes.
 
@@ -126,7 +126,7 @@ folding enables [[proof-carrying computation|proof-carrying]]: each [[nox]] VM s
 
 ## the polynomial IS the identity
 
-in hash-based systems, content identity ([[hash]]) and proof commitment (PCS) are separate primitives. a file's CID is SHA-256 of its bytes. a proof's commitment is [[FRI]] over its trace. two different operations. two different security analyses.
+in hash-based systems, content identity ([[hash]]) and proof commitment (lens) are separate primitives. a file's CID is SHA-256 of its bytes. a proof's commitment is [[FRI]] over its trace. two different operations. two different security analyses.
 
 in a polynomial proof system, they merge:
 
@@ -150,7 +150,7 @@ a multilinear polynomial over $\{0,1\}^k$ evaluates naturally on the larger doma
 
 reshape as $\sqrt{N} \times \sqrt{N}$ bivariate polynomial. the extension to $2\sqrt{N} \times 2\sqrt{N}$ is standard 2D Reed-Solomon. any $\sqrt{N} \times \sqrt{N}$ submatrix reconstructs the original.
 
-[[DAS]] sampling = PCS opening at random positions. each sample: ~75 bytes. 20 samples for 99.9999% confidence: ~1.5 KiB. no separate [[erasure coding]] pipeline. no separate commitment scheme. the content polynomial IS the erasure code.
+[[DAS]] sampling = Lens opening at random positions. each sample: ~75 bytes. 20 samples for 99.9999% confidence: ~1.5 KiB. no separate [[erasure coding]] pipeline. no separate commitment scheme. the content polynomial IS the erasure code.
 
 ## the numbers
 
@@ -158,7 +158,7 @@ for N = 2²⁰ (typical execution trace or large particle):
 
 ```
 commit:          O(N) field ops, ~40 ms single core
-proof size:      ~1.3 KiB (PCS) + ~0.5 KiB (sumcheck) + ~0.3 KiB (eval) = ~2 KiB
+proof size:      ~1.3 KiB (lens) + ~0.5 KiB (sumcheck) + ~0.3 KiB (eval) = ~2 KiB
 verify:          ~660 field ops, ~5 μs
 fold:            ~30 field ops, ~0.2 μs
 prover memory:   O(√N) via tensor compression
@@ -202,7 +202,7 @@ total with CCS jet:                                               ~2,070 constra
 sumcheck:     20 constraints
 CCS eval:     34 constraints
 Brakedown:    35 constraints (batched)
-hemera:        0 (challenges from existing PCS commitment)
+hemera:        0 (challenges from existing Lens commitment)
               ────
 total:        ~89 constraints
 ```
@@ -220,11 +220,11 @@ cost vs hemera:     11× hash    3× hash      1× hash      0.12× hash
 
 **self-proving computation.** every [[nox]] VM step carries its proof via [[proof-carrying computation|proof-carrying]]. no separate proving phase. no prover infrastructure. the computation IS the proof.
 
-**O(1) content access.** any byte range of any [[particles|particle]] verified by one PCS opening. no download of full content. a phone verifies a 1 GB model's layer 47 weights with a 75-byte proof.
+**O(1) content access.** any byte range of any [[particles|particle]] verified by one Lens opening. no download of full content. a phone verifies a 1 GB model's layer 47 weights with a 75-byte proof.
 
 **240-byte chain checkpoint.** the [[universal accumulator]] ([[BBG]] root + [[HyperNova]] folding accumulator + height) proves ALL history. join the network: download 240 bytes, verify in ~0.1 μs (~89 constraints). cheaper than hashing 56 bytes. full confidence from genesis.
 
-**native [[DAS|data availability]].** no separate [[erasure coding]]. the polynomial IS the code. DAS = PCS opening at random positions. 20 samples, ~1.5 KiB, 99.9999% confidence.
+**native [[DAS|data availability]].** no separate [[erasure coding]]. the polynomial IS the code. DAS = Lens opening at random positions. 20 samples, ~1.5 KiB, 99.9999% confidence.
 
 **[[programmable state|programmable authenticated state]].** deploy new tables by writing a [[nox]] program. standard operations (INSERT, UPDATE, TRANSFER) get automatic [[state jets|CCS jet]] optimization: 3-5 constraints per operation. no protocol upgrade.
 
@@ -235,15 +235,15 @@ cost vs hemera:     11× hash    3× hash      1× hash      0.12× hash
 ```
 one field:      Goldilocks (p = 2⁶⁴ - 2³² + 1)
 one hash:       hemera (~3 calls per execution, trust anchor)
-one PCS:        recursive Brakedown (everything: proof, state, identity, DAS)
+one Lens:        recursive Brakedown (everything: proof, state, identity, DAS)
 one VM:         nox (16 patterns, polynomial nouns)
-one state:      BBG_poly(10 dims) + A(x) + N(x), all PCS-committed
-one sync:       structural sync (CRDT + PCS + DAS native)
-one identity:   hemera(PCS.commit(content) ‖ tag) — 32 bytes
+one state:      BBG_poly(10 dims) + A(x) + N(x), all lens-committed
+one sync:       structural sync (CRDT + lens + DAS native)
+one identity:   hemera(Lens.commit(content) ‖ tag) — 32 bytes
 ```
 
 see also [[Goldilocks field]], [[hemera]], [[Brakedown]], [[nox]], [[BBG]], [[structural-sync]], [[particles]]
 
 seven components. every pair shares at least one primitive. the system is algebraically closed: proofs about proofs, commitments to commitments, identities of identities — all reduce to polynomial evaluation over one field.
 
-see [[nox]] for the VM, [[hemera]] for the hash, [[zheng]] for the proof system, [[BBG]] for polynomial state, [[structural-sync]] for sync, [[recursive brakedown]] for the PCS, [[polynomial nouns]] for the data model
+see [[nox]] for the VM, [[hemera]] for the hash, [[zheng]] for the proof system, [[BBG]] for polynomial state, [[structural-sync]] for sync, [[recursive brakedown]] for the Lens, [[polynomial nouns]] for the data model

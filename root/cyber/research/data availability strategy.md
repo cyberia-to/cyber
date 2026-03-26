@@ -85,7 +85,7 @@ this is layer 4's contribution to [[Verified Eventual Consistency]]. combined wi
 
 ### the shift
 
-replace [[NMT]] inclusion proofs with [[PCS]] (polynomial commitment scheme) openings. every sample becomes a polynomial evaluation instead of a Merkle path:
+replace [[NMT]] inclusion proofs with [[lens]] (polynomial commitment scheme) openings. every sample becomes a polynomial evaluation instead of a Merkle path:
 
 ```
 current (NMT):
@@ -94,7 +94,7 @@ current (NMT):
   verification: walk Merkle path, check sorting invariant
 
 algebraic:
-  sample cell → PCS opening → O(1) field operations
+  sample cell → Lens opening → O(1) field operations
   proof size: ~200 bytes per sample
   verification: one polynomial evaluation check
 ```
@@ -115,7 +115,7 @@ algebraic DAS is not a standalone optimization. it is a consequence of [[algebra
 
 the cascade:
 - [[BBG]] polynomial state (one commitment for all state) → state reads are O(1) field ops
-- algebraic DAS (PCS openings for samples) → availability verification is O(1) field ops
+- algebraic DAS (Lens openings for samples) → availability verification is O(1) field ops
 - [[provable consensus]] (tri-kernel in [[zheng]] circuit) → the circuit can verify availability IN the proof
 
 with NMT DAS: verifying 20 samples in-circuit costs 471K constraints. feasible but expensive.
@@ -135,7 +135,7 @@ layer 4 in structural sync:
          ↓
   COMMITMENT
     NMT (current): namespace Merkle tree over chunks
-    polynomial (future): PCS commitment over chunk evaluations
+    polynomial (future): Lens commitment over chunk evaluations
          ↓
   DISTRIBUTION
     local: capacity-weighted across device set
@@ -143,7 +143,7 @@ layer 4 in structural sync:
          ↓
   SAMPLING (DAS)
     verifier samples O(√n) random cells
-    each cell: inclusion proof (NMT path or PCS opening)
+    each cell: inclusion proof (NMT path or Lens opening)
     confidence: 1 - (1/2)^k with k samples
          ↓
   RECONSTRUCTION (on failure)
@@ -166,9 +166,9 @@ DAS also does not provide PERMANENT availability. erasure coding survives k fail
 | EigenDA | 1D RS | no sampling | KZG | no |
 | Avail | 2D RS (Kate) | DAS | KZG | no |
 | cyber (current) | 2D RS over [[Goldilocks field]] | DAS (O(√n)) | [[NMT]] + [[Hemera]] | yes |
-| cyber (algebraic) | 2D RS over Goldilocks | DAS (O(√n)) | PCS ([[WHIR]]/Brakedown) | yes |
+| cyber (algebraic) | 2D RS over Goldilocks | DAS (O(√n)) | lens ([[WHIR]]/Brakedown) | yes |
 
-cyber's approach is closest to [[Celestia]] (both use NMT + 2D RS + transparent DAS). the key difference: cyber's algebraic evolution replaces NMT with PCS, making availability verification algebraic — composable with the [[zheng]] proof system. Celestia keeps NMT permanently.
+cyber's approach is closest to [[Celestia]] (both use NMT + 2D RS + transparent DAS). the key difference: cyber's algebraic evolution replaces NMT with lens, making availability verification algebraic — composable with the [[zheng]] proof system. Celestia keeps NMT permanently.
 
 the other difference: cyber uses [[Goldilocks field]] for erasure coding (same field as proofs, consensus, FHE). no field mismatch. Celestia uses a separate field.
 
