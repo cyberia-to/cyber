@@ -17,13 +17,13 @@ hemera → lens → nox → zheng → bbg
 
 ## five lenses
 
-| lens | algebra | what it sees |
-|------|---------|-------------|
-| nebu | [[nebu]] (F_p, F_p², F_p³, F_p⁴) | scalar and extension field polynomials |
-| kuro | [[kuro]] (F₂) | binary tower polynomials |
-| jali | [[jali]] (R_q) | polynomial ring operations via NTT batching |
-| genies | [[genies]] (F_q) | supersingular curve polynomials |
-| trop | [[trop]] (min,+) | optimization witnesses via dual certificates |
+| full name | construction | impl | what it sees |
+|-----------|-------------|------|-------------|
+| scalar field | Brakedown | [[nebu]] | F_p scalar and extension polynomials |
+| binary tower | Binius | [[kuro]] | F₂ tower polynomials |
+| polynomial ring | Ikat | [[jali]] | R_q ring operations via NTT batching |
+| tropical semiring | Assayer | [[trop]] | optimization witnesses via dual certificates |
+| isogeny curves | Porphyry | [[genies]] | F_q curve polynomials |
 
 ## three operations
 
