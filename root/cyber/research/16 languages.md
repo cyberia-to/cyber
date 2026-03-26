@@ -16,11 +16,11 @@ date: 2026-03-26
                           type of each expression
                           determines everything:
                                     ↓
-              Field → nebu → nebu lens → 1 constraint per mul
-              BitVec → kuro → kuro lens → 1 constraint per op
-              RingElement → jali → jali lens → batched
-              Tropical → trop → trop lens → witness-proportional
-              Curve → genies → genies lens → 1 F_q per op
+              Field → nebu → Brakedown → 1 constraint per mul
+              BitVec → kuro → Binius → 1 constraint per op
+              RingElement → jali → Ikat → batched
+              Tropical → trop → Assayer → witness-proportional
+              Curve → genies → Porphyry → 1 F_q per op
 ```
 
 the programmer writes typed code. the types ARE the dispatch. no `#[algebra(...)]`. no backend selection. no prover hints. one nox noun comes out. one accumulator at the end.
