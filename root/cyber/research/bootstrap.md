@@ -94,15 +94,18 @@ each checkpoint = "stop iterating, build on top." before mainnet: unfreezing = r
 ## dependency graph
 
 ```
-DONE:
-  nebu → hemera → {jali, kuro, trop, genies}     arithmetic layer
-  trident (57K LOC, nock target exists)            compiler
+DONE (arithmetic + identity):
+  nebu → hemera → {jali, kuro, trop, genies}
+  trident (57K LOC, nock target exists)
+
+five layers:
+  hemera → lens → nox → zheng → bbg
 
 STAGE 1 (Rust bootstrap):
   nox VM (Rust) → trident nox target
 
 STAGE 2 (classical self-host):
-  trident.td → nebu.td + hemera.td → nox.td
+  trident.td → nebu.td + hemera.td + lens.td → nox.td
 
 STAGE 3 (proven bootstrap):
   zheng (Rust prover + Trident verifier) → proven re-self-host

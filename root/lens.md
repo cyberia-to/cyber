@@ -3,10 +3,17 @@ tags: cyber, core
 alias: lenses, PCS, polynomial commitment scheme, polynomial commitment
 crystal-type: entity
 crystal-domain: crypto
+subgraph: true
+repo: ../lens
+exclude: ".claude/**, target/**, CLAUDE.md"
 ---
-a lens is how an algebra presents its computation for verification. each of the [[five algebras]] computes in its own structure — scalars, binary, rings, semirings, isogenies. the lens makes that computation verifiable without revealing the polynomial.
+the commitment layer for [[cyber]]. five polynomial commitment backends — one per [[five algebras|algebra]]. the layer between [[hemera]] (identity) and [[nox]] (execution).
 
-same laws of verification ([[SuperSpartan]] + [[sumcheck]]). different lenses for different structures.
+a lens makes computation verifiable: commit to a polynomial, prove evaluations, verify without seeing the polynomial. each algebra sees through its own optic. same laws of verification ([[SuperSpartan]] + [[sumcheck]]). different lenses for different structures.
+
+```
+hemera → lens → nox → zheng → bbg
+```
 
 ## five lenses
 
@@ -28,10 +35,18 @@ verify(commitment, point, value) → ok  check without seeing
 
 ## three roles
 
-proof commitment — seal a [[nox]] execution trace for verification
+proof commitment — seal a [[nox]] execution trace for [[zheng]] verification
 state commitment — seal [[bbg]] polynomial state for authenticated queries
 noun identity — seal a [[nox]] noun for content addressing
 
-one trait. five lenses. three roles. see [[zheng]] for the proof system that uses them.
+## consumers
+
+| consumer | uses lens for |
+|----------|-------------|
+| [[nox]] | noun identity: hemera(Lens.commit(noun_poly) ‖ tag) |
+| [[zheng]] | proof commitment: SuperSpartan queries Lens |
+| [[bbg]] | state root: BBG_root = hemera(Lens.commit(BBG_poly) ‖ ...) |
+
+one trait. five lenses. three roles. three consumers.
 
 discover all [[concepts]]
