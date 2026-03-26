@@ -45,13 +45,13 @@ what the STARK proof does NOT cover:
 
 a Thompson worm in Rust/LLVM could make the Rust nox VM produce CORRECT-LOOKING proofs for INCORRECT executions. the proof says "this nox program produced this output" — but the Rust VM that ran the program might have been compromised.
 
-**the escape:** nox.td (the proven interpreter) running on Rust nox VM creates a provable SECOND interpreter. if the Rust VM has a worm, the outputs of nox.td-on-Rust-VM and nox.td-on-independent-VM will DIFFER. multi-implementation verification:
+**the escape:** nox.tri (the proven interpreter) running on Rust nox VM creates a provable SECOND interpreter. if the Rust VM has a worm, the outputs of nox.tri-on-Rust-VM and nox.tri-on-independent-VM will DIFFER. multi-implementation verification:
 
 ```
 implementation A: Rust nox VM (potentially compromised)
 implementation B: independent nox VM (different compiler, different hardware)
-implementation C: nox.td running on A
-implementation D: nox.td running on B
+implementation C: nox.tri running on A
+implementation D: nox.tri running on B
 
 if A(program) == B(program) == C(program) == D(program):
   no worm detected (or all four are compromised — requires conspiracy)
@@ -102,19 +102,19 @@ hemera → lens → trident → cybergraph → nox → zheng → bbg
 
 ## the self-hosting boundary
 
-the spine is the MINIMAL set that cannot implement itself. once it exists, everything above is pure .td:
+the spine is the MINIMAL set that cannot implement itself. once it exists, everything above is pure .tri:
 
-| below boundary (needs Rust bootstrap) | above boundary (pure .td) |
+| below boundary (needs Rust bootstrap) | above boundary (pure .tri) |
 |---------------------------------------|--------------------------|
 | hemera, lens, trident, nox, zheng, bbg | plumb, identity, social, geo, tru, foculus, mudra |
 | dual existence: Rust + Trident | single existence: Trident only |
 
 ## genesis crystal
 
-the [[cybergraph]] starts empty. core semcons need tokens to deploy. tokens need plumb semcon to exist. the crystal resolves this: a .td program that runs once with unlimited focus.
+the [[cybergraph]] starts empty. core semcons need tokens to deploy. tokens need plumb semcon to exist. the crystal resolves this: a .tri program that runs once with unlimited focus.
 
 ```
-genesis.td:
+genesis.tri:
   create_token(CYB, HYDROGEN, VOLT, AMPERE)
   register_semcon(plumb, identity, social, geo)
   distribute(initial_balances)
@@ -137,13 +137,13 @@ STAGE 1 (Rust bootstrap):
   nox VM (Rs) → trident nox target
 
 STAGE 2 (classical self-host):
-  trident.td → nebu.td + hemera.td + lens.td → nox.td
+  trident.tri → nebu.tri + hemera.tri + lens.tri → nox.tri
 
 STAGE 3 (proven bootstrap):
   zheng (Rust prover + Trident verifier) → proven re-self-host
-    → remaining arithmetic.td → jet registry (in cybergraph)
-      → genesis.td (crystal)
-        → plumb.td, identity.td, tru.td (parallel)
+    → remaining arithmetic.tri → jet registry (in cybergraph)
+      → genesis.tri (crystal)
+        → plumb.tri, identity.tri, tru.tri (parallel)
 ```
 
 ## Stage 1: Rust bootstrap (untrusted foundation)
@@ -183,7 +183,7 @@ NounBuilder: direct AST → Noun path. every Trident construct maps to exactly o
 
 ~1,500 LOC Rs.
 
-exit: `trident build --target nox fibonacci.td` → nox noun → `nox_eval(input, noun, focus)` → correct.
+exit: `trident build --target nox fibonacci.tri` → nox noun → `nox_eval(input, noun, focus)` → correct.
 
 ```
 STATE AFTER STAGE 1:
@@ -194,9 +194,9 @@ STATE AFTER STAGE 1:
 
 ## Stage 2: classical self-host (trust by equality)
 
-### Phase 3: trident.td (self-hosting)                       3-4 sessions
+### Phase 3: trident.tri (self-hosting)                       3-4 sessions
 
-write Trident compiler IN Trident. tokenizer, parser, type checker, NounBuilder — all in .td files.
+write Trident compiler IN Trident. tokenizer, parser, type checker, NounBuilder — all in .tri files.
 
 ```
 trident_source ──Rust compiler──→ nox_noun_v1
@@ -213,41 +213,41 @@ ALL six arithmetics + hemera as Trident programs:
 
 | file | what | cross-verify against |
 |------|------|---------------------|
-| nebu.td | add, sub, mul, inv, eq, lt over F_p | nebu (Rust, 73 tests) |
-| hemera.td | Poseidon2 permutation | hemera (Rust, 202 tests) |
-| jali.td | R_q ring ops, NTT multiply, automorphisms | jali (Rust, 70 tests) |
-| kuro.td | F₂ tower ops, XOR, AND, Karatsuba | kuro (Rust, 77 tests) |
-| trop.td | tropical min, saturating add, matrix power | trop (Rust, 77 tests) |
-| genies.td | F_q Montgomery, isogeny walk, class group | genies (Rust, 55 tests) |
+| nebu.tri | add, sub, mul, inv, eq, lt over F_p | nebu (Rust, 73 tests) |
+| hemera.tri | Poseidon2 permutation | hemera (Rust, 202 tests) |
+| jali.tri | R_q ring ops, NTT multiply, automorphisms | jali (Rust, 70 tests) |
+| kuro.tri | F₂ tower ops, XOR, AND, Karatsuba | kuro (Rust, 77 tests) |
+| trop.tri | tropical min, saturating add, matrix power | trop (Rust, 77 tests) |
+| genies.tri | F_q Montgomery, isogeny walk, class group | genies (Rust, 55 tests) |
 
 compiled by self-hosted Trident. cross-verified: `∀ inputs: trident_f(x) == rust_f(x)` on all existing test vectors (554 total).
 
-each .td file → nox noun → H(noun) = jet formula hash (used in Stage 3).
+each .tri file → nox noun → H(noun) = jet formula hash (used in Stage 3).
 
-CHECKPOINT 2 must hold (hemera frozen before hemera.td).
+CHECKPOINT 2 must hold (hemera frozen before hemera.tri).
 
-### Phase 5: nox.td (proven interpreter)                     3-4 sessions
+### Phase 5: nox.tri (proven interpreter)                     3-4 sessions
 
-16 pattern dispatch written in Trident. uses nebu.td + hemera.td.
+16 pattern dispatch written in Trident. uses nebu.tri + hemera.tri.
 
 ```
-nox.td ──self-hosted trident──→ nox noun (meta-circular interpreter)
+nox.tri ──self-hosted trident──→ nox noun (meta-circular interpreter)
 
-test: nox.td interpreting program P == Rust nox interpreting P
+test: nox.tri interpreting program P == Rust nox interpreting P
 ```
 
 meta-circular: nox noun interprets nox nouns on Rust nox VM. correctness = cross-verification against Rust VM.
 
 ```
 STATE AFTER STAGE 2:
-  trident.td  self-hosted compiler (nox noun)
-  nebu.td     field arithmetic (nox noun)
-  hemera.td   hash function (nox noun)
-  jali.td     ring arithmetic (nox noun)
-  kuro.td     binary arithmetic (nox noun)
-  trop.td     tropical arithmetic (nox noun)
-  genies.td   isogeny arithmetic (nox noun)
-  nox.td      interpreter (nox noun)
+  trident.tri  self-hosted compiler (nox noun)
+  nebu.tri     field arithmetic (nox noun)
+  hemera.tri   hash function (nox noun)
+  jali.tri     ring arithmetic (nox noun)
+  kuro.tri     binary arithmetic (nox noun)
+  trop.tri     tropical arithmetic (nox noun)
+  genies.tri   isogeny arithmetic (nox noun)
+  nox.tri      interpreter (nox noun)
   ALL cross-verified against Rust references
   trust: "structural equality + cross-verification"
   NO proofs yet
@@ -262,7 +262,7 @@ PARALLEL TRACK A — Rust prover (permanent):
   generates STARK proofs from nox traces
 
 PARALLEL TRACK B — Trident verifier:
-  sumcheck_verify.td, brakedown_verify.td, decider.td
+  sumcheck_verify.tri, brakedown_verify.tri, decider.tri
   compiled by self-hosted Trident → nox nouns
   cross-verify: Trident verifier agrees with Rust reference
 
@@ -278,30 +278,30 @@ RE-RUN Phase 3 with proof generation:
 trident_source ──nox_eval(source, compiler_v1)──→ compiler_v2
                    ↓ (trace recorded)
                    Rust zheng prover → STARK proof
-                   zheng.td verifier → ACCEPTS
+                   zheng.tri verifier → ACCEPTS
 ```
 
 the SAME compilation as Phase 3, but now with STARK proof.
 
-### Phase 8: proven nox.td                                   1 session
+### Phase 8: proven nox.tri                                   1 session
 
-RE-COMPILE nox.td with proven compiler + proof generation. the proven interpreter: programs running on it produce double proofs (program correct AND interpreter correct).
+RE-COMPILE nox.tri with proven compiler + proof generation. the proven interpreter: programs running on it produce double proofs (program correct AND interpreter correct).
 
 ### Phase 9: jet registry                                    2-3 sessions
 
-Trident arithmetic (.td files from Phase 4) = jet formulas. formula hashes computed from Phase 4 nox nouns. register Rust arithmetic as jet IMPLEMENTATIONS for Trident-derived formula hashes.
+Trident arithmetic (.tri files from Phase 4) = jet formulas. formula hashes computed from Phase 4 nox nouns. register Rust arithmetic as jet IMPLEMENTATIONS for Trident-derived formula hashes.
 
 30 named jets across five algebras + decider:
 
 | algebra | formulas from | Rust jet impl | jets |
 |---------|--------------|---------------|------|
-| nebu | nebu.td | nebu crate | 5 |
-| kuro | kuro.td | kuro crate | 8 |
-| jali | jali.td | jali crate | 5 |
-| genies | genies.td | genies crate | 5 |
-| trop | trop.td | trop crate | 6 |
-| hemera | hemera.td | hemera crate | 1 (hash) |
-| zheng | zheng.td | — | 1 (decider, 89 constraints) |
+| nebu | nebu.tri | nebu crate | 5 |
+| kuro | kuro.tri | kuro crate | 8 |
+| jali | jali.tri | jali crate | 5 |
+| genies | genies.tri | genies crate | 5 |
+| trop | trop.tri | trop crate | 6 |
+| hemera | hemera.tri | hemera crate | 1 (hash) |
+| zheng | zheng.tri | — | 1 (decider, 89 constraints) |
 
 test: `∀ jets: rust_jet(x) == trident_formula(x)` on random inputs. CHECKPOINT 4 passes.
 
@@ -318,7 +318,7 @@ STATE AFTER STAGE 3:
 
 ### Phase 10: genesis crystal                                1 session
 
-the seed. runs once with unlimited focus. creates tokens, registers core semcons, distributes initial balances. proven: compiled by trident.td, executed by nox, proof by zheng.
+the seed. runs once with unlimited focus. creates tokens, registers core semcons, distributes initial balances. proven: compiled by trident.tri, executed by nox, proof by zheng.
 
 ### Phase 11: core semcons                                   8-12 sessions
 
@@ -326,10 +326,10 @@ four "heavy" semcons that reach deep into the spine:
 
 | semcon | what | sessions |
 |--------|------|----------|
-| plumb.td | tokens, staking, delegation, conservation, UTXO | 3-4 |
-| identity.td | neuron registration, key proof, ownership | 2-3 |
-| social.td | following, reputation edges | 1-2 |
-| geo.td | location proofs, physical attestation | 2-3 |
+| plumb.tri | tokens, staking, delegation, conservation, UTXO | 3-4 |
+| identity.tri | neuron registration, key proof, ownership | 2-3 |
+| social.tri | following, reputation edges | 1-2 |
+| geo.tri | location proofs, physical attestation | 2-3 |
 
 partially parallel (plumb blocks identity, social and geo independent).
 
@@ -337,10 +337,10 @@ partially parallel (plumb blocks identity, social and geo independent).
 
 | program | what | sessions |
 |---------|------|----------|
-| tru.td | tri-kernel, focus, cyberank, karma, decay | 4-6 |
-| foculus.td | consensus, finality from topology | 2-4 |
+| tru.tri | tri-kernel, focus, cyberank, karma, decay | 4-6 |
+| foculus.tri | consensus, finality from topology | 2-4 |
 
-### Phase 13: mudra.td                                       5-7 sessions
+### Phase 13: mudra.tri                                       5-7 sessions
 
 seven crypto protocols, each independent:
   seal, stealth, veil, quorum, delay, order, place
@@ -359,32 +359,32 @@ STAGE 1 (Rust bootstrap)
 CHECKPOINT 1: trident stable
   ↓
 STAGE 2 (classical self-host)
-  Phase 3: trident.td self-hosts               3-4 sessions ── BOOTSTRAP MOMENT
+  Phase 3: trident.tri self-hosts               3-4 sessions ── BOOTSTRAP MOMENT
   CHECKPOINT 2: hemera frozen
-  Phase 4: arithmetic.td (6 repos + hemera)    4-6 sessions
-  Phase 5: nox.td (proven interpreter)         3-4 sessions
+  Phase 4: arithmetic.tri (6 repos + hemera)    4-6 sessions
+  Phase 5: nox.tri (proven interpreter)         3-4 sessions
   ↓
 CHECKPOINT 3: zheng frozen
   ↓
 STAGE 3 (proven bootstrap)
   Phase 6: zheng (prover ∥ verifier)           5-8 sessions ── PROOFS
   Phase 7: proven re-self-host                 1-2 sessions
-  Phase 8: proven nox.td                       1 session
+  Phase 8: proven nox.tri                       1 session
   Phase 9: jet registry (in cybergraph)        2-3 sessions
   CHECKPOINT 4: jets frozen
   ↓
 ═══════════════════════════════════════════════════════════
-  THE BOUNDARY: above here = pure .td on proven spine
+  THE BOUNDARY: above here = pure .tri on proven spine
 ═══════════════════════════════════════════════════════════
   ↓
 GENESIS
-  Phase 10: genesis.td (crystal)               1 session
+  Phase 10: genesis.tri (crystal)               1 session
   ↓
 PROTOCOL (core semcons)
-  Phase 11: plumb.td + identity.td             5-7 sessions  ┐
-            social.td + geo.td                 3-5 sessions  ├─ partial parallel
-  Phase 12: tru.td + foculus.td                6-10 sessions ┘
-  Phase 13: mudra.td                           5-7 sessions (parallel)
+  Phase 11: plumb.tri + identity.tri             5-7 sessions  ┐
+            social.tri + geo.tri                 3-5 sessions  ├─ partial parallel
+  Phase 12: tru.tri + foculus.tri                6-10 sessions ┘
+  Phase 13: mudra.tri                           5-7 sessions (parallel)
 ```
 
 critical path to proven spine: ~25-34 sessions (Phase 1 → 9)
@@ -395,19 +395,19 @@ total: ~40-55 sessions to full proven system
 
 | component | Rust (fast, permanent) | Trident (proven, canonical) |
 |-----------|----------------------|---------------------------|
-| F_p arithmetic | nebu (jet impl) | nebu.td (jet formula) |
-| F₂ arithmetic | kuro (jet impl) | kuro.td (jet formula) |
-| R_q arithmetic | jali (jet impl) | jali.td (jet formula) |
-| (min,+) arithmetic | trop (jet impl) | trop.td (jet formula) |
-| F_q arithmetic | genies (jet impl) | genies.td (jet formula) |
-| hash | hemera (jet impl) | hemera.td (jet formula) |
-| VM interpreter | nox VM (bootstrap) | nox.td (proven interpreter) |
+| F_p arithmetic | nebu (jet impl) | nebu.tri (jet formula) |
+| F₂ arithmetic | kuro (jet impl) | kuro.tri (jet formula) |
+| R_q arithmetic | jali (jet impl) | jali.tri (jet formula) |
+| (min,+) arithmetic | trop (jet impl) | trop.tri (jet formula) |
+| F_q arithmetic | genies (jet impl) | genies.tri (jet formula) |
+| hash | hemera (jet impl) | hemera.tri (jet formula) |
+| VM interpreter | nox VM (bootstrap) | nox.tri (proven interpreter) |
 | proof generation | zheng prover | — |
-| proof verification | — | zheng.td (proven verifier) |
-| crypto protocols | — | mudra.td |
-| authenticated state | — | bbg.td |
-| ranking + consensus | — | tru.td |
-| compiler | trident (bootstrap) | trident.td (self-hosted, proven) |
+| proof verification | — | zheng.tri (proven verifier) |
+| crypto protocols | — | mudra.tri |
+| authenticated state | — | bbg.tri |
+| ranking + consensus | — | tru.tri |
+| compiler | trident (bootstrap) | trident.tri (self-hosted, proven) |
 
 dual-language invariant at EVERY level, including arithmetic.
 

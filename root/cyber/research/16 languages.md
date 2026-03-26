@@ -11,7 +11,7 @@ date: 2026-03-26
 ## the type-driven pipeline
 
 ```
-.td source → Trident frontend → typed AST → NounBuilder → nox noun
+.tri source → Trident frontend → typed AST → NounBuilder → nox noun
                                     ↓
                           type of each expression
                           determines everything:
