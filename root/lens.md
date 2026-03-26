@@ -19,11 +19,11 @@ hemera → lens → nox → zheng → bbg
 
 | lens | algebra | what it sees |
 |------|---------|-------------|
-| Brakedown | [[nebu]] (F_p, F_p², F_p³, F_p⁴) | scalar and extension field polynomials |
-| Binius | [[kuro]] (F₂) | binary tower polynomials |
-| Ring-aware | [[jali]] (R_q) | polynomial ring operations via NTT batching |
-| Isogeny | [[genies]] (F_q) | supersingular curve polynomials |
-| Tropical | [[trop]] (min,+) | optimization witnesses via dual certificates |
+| nebu | [[nebu]] (F_p, F_p², F_p³, F_p⁴) | scalar and extension field polynomials |
+| kuro | [[kuro]] (F₂) | binary tower polynomials |
+| jali | [[jali]] (R_q) | polynomial ring operations via NTT batching |
+| genies | [[genies]] (F_q) | supersingular curve polynomials |
+| trop | [[trop]] (min,+) | optimization witnesses via dual certificates |
 
 ## three operations
 

@@ -59,7 +59,7 @@ the backbone of the entire stack. every proof, every hash, every commitment redu
 
 | workload | mechanism |
 |----------|-----------|
-| [[zheng]] proofs | [[SuperSpartan]] IOP + Brakedown [[lens]] + [[sumcheck]] over F_p |
+| [[zheng]] proofs | [[SuperSpartan]] IOP + nebu [[lens]] + [[sumcheck]] over F_p |
 | [[hemera]] hashing | [[Poseidon2]] permutation over F_p |
 | polynomial commitments ([[WHIR]]) | evaluation + low-degree testing over F_p |
 | [[NTT]] | 2³² roots of unity (p - 1 = 2³² · (2³² - 1)) |
@@ -81,7 +81,7 @@ bitwise operations in F_p cost ~32 constraints each (bit decomposition). in F₂
 |----------|-----------|
 | quantized AI inference ([[BitNet]]) | 1-bit matrix-vector multiply = XOR + popcount |
 | [[tri-kernel]] SpMV | quantized axon weights for π iteration |
-| binary proving | Binius [[lens]] via [[zheng]] |
+| binary proving | kuro [[lens]] via [[zheng]] |
 | bitwise logic | XOR, AND, NOT at native cost |
 | error correction codes | Reed-Solomon over F₂ⁿ |
 | AES / symmetric crypto | native binary field operations |
@@ -169,7 +169,7 @@ the commutative group action is the algebraic primitive that makes all of these 
 
 genies is where privacy lives. every time a [[neuron]] transacts without revealing identity, proves membership without revealing which member, or delegates authority without exposing the delegation chain — it uses genies.
 
-verification: isogeny computations produce witnesses (the action path). [[zheng]] proof covers the path correctness by checking the action equation over F_q via dedicated Isogeny [[lens]] (Brakedown over F_q), then folds the result into the Goldilocks accumulator. shadow executes in its own field, [[zheng]] proof lands in nebu.
+verification: isogeny computations produce witnesses (the action path). [[zheng]] proof covers the path correctness by checking the action equation over F_q via dedicated genies [[lens]] (Brakedown over F_q), then folds the result into the Goldilocks accumulator. shadow executes in its own field, [[zheng]] proof lands in nebu.
 
 ## V. jali — veil
 
@@ -189,11 +189,11 @@ the ring structure is what makes lattice problems hard. without the cyclotomic w
 | convolution | native polynomial multiply = convolution |
 | error correction | polynomial evaluation and interpolation |
 
-R_q multiply via NTT: NTT(a) → pointwise → INTT = 3n nebu muls. for n=1024: 3072 nebu muls per ring multiply. encoding this generically in zheng: n independent commitments. Ring-aware [[lens]]: 1 batch commitment. the gap justifies a dedicated lens.
+R_q multiply via NTT: NTT(a) → pointwise → INTT = 3n nebu muls. for n=1024: 3072 nebu muls per ring multiply. encoding this generically in zheng: n independent commitments. jali [[lens]]: 1 batch commitment. the gap justifies a dedicated lens.
 
 jali is where encrypted computation lives. every time the [[superintelligence]] computes on data it cannot see — encrypted inference, private cyberlinks, homomorphic hashing — it thinks in jali.
 
-verification: ring operations are proved via the Ring-aware [[lens]] (Brakedown with NTT batching). zheng ring-aware CCS exploits R_q structure: automorphisms as permutation arguments, NTT batch commitments, running noise accumulators. ring-structured rows have sel_ring=1 in the universal CCS. HyperNova folds into the Goldilocks accumulator.
+verification: ring operations are proved via the jali [[lens]] (Brakedown with NTT batching). zheng ring-aware CCS exploits R_q structure: automorphisms as permutation arguments, NTT batch commitments, running noise accumulators. ring-structured rows have sel_ring=1 in the universal CCS. HyperNova folds into the Goldilocks accumulator.
 
 ### jali jets for [[nox]]
 

@@ -16,11 +16,11 @@ date: 2026-03-26
                           type of each expression
                           determines everything:
                                     ↓
-              Field → nebu → Brakedown lens → 1 constraint per mul
-              BitVec → kuro → Binius lens → 1 constraint per op
-              RingElement → jali → Ring-aware lens → batched
-              Tropical → trop → Tropical lens → witness-proportional
-              Curve → genies → Isogeny lens → 1 F_q per op
+              Field → nebu → nebu lens → 1 constraint per mul
+              BitVec → kuro → kuro lens → 1 constraint per op
+              RingElement → jali → jali lens → batched
+              Tropical → trop → trop lens → witness-proportional
+              Curve → genies → genies lens → 1 F_q per op
 ```
 
 the programmer writes typed code. the types ARE the dispatch. no `#[algebra(...)]`. no backend selection. no prover hints. one nox noun comes out. one accumulator at the end.
@@ -29,22 +29,22 @@ the programmer writes typed code. the types ARE the dispatch. no `#[algebra(...)
 
 | # | language | types | arithmetic | regime | [[lens]] | domain |
 |---|----------|-------|-----------|--------|----------|--------|
-| 1 | [[Tri]] | Fp2, Fp3, Fp4 | [[nebu]] | nebu²/³/⁴ | Brakedown | field tower, proofs |
-| 2 | [[Tok]] | UTXO, Balance, Conservation | [[nebu]] | nebu | Brakedown | economic transactions |
-| 3 | [[Arc]] | Object, Morphism, Functor | [[nebu]] | nebu | Brakedown | schema, graph structure |
-| 4 | [[Seq]] | Order, Timestamp, Causality | [[nebu]] | nebu | Brakedown | sequence, ordering |
-| 5 | [[Inf]] | Term, Clause, Substitution | [[nebu]] | nebu | Brakedown | logic, unification |
-| 6 | [[Bel]] | Distribution, Probability | [[nebu]] | nebu | Brakedown | belief, self-model |
-| 7 | [[Ren]] | Multivector, Rotor, Blade | [[nebu]] | nebu | Brakedown | geometry, rendering |
-| 8 | [[Dif]] | DualNumber, Manifold | [[nebu]] | nebu | Brakedown | continuous dynamics |
-| 9 | [[Sym]] | PhaseSpace, Hamiltonian | [[nebu]] | nebu | Brakedown | physics simulation |
-| 10 | [[Ten]] | Matrix, Tensor | [[nebu]] | nebu | Brakedown | neural networks |
-| 11 | [[Rs]] | u32, u64, bool, BoundedVec | [[nebu]] | nebu | Brakedown | systems programming |
-| 12 | [[Wav]] | RingElement, NTTForm | [[jali]] | jali | Ring-aware | FHE, signal processing |
-| 13 | [[Bt]] | BitVec, BitMatrix, Packed128 | [[kuro]] | kuro | Binius | binary, quantized inference |
-| 14 | [[Qu]] | Qubit, Gate, Amplitude | [[nebu]] | nebu² | Brakedown | quantum simulation |
-| 15 | [[Opt]] | Tropical, CostMatrix, Graph | [[trop]] | trop | Tropical | optimization, decisions |
-| 16 | [[Sec]] | Curve, Secret, StealthAddress | [[genies]] | genies | Isogeny | privacy, anonymity |
+| 1 | [[Tri]] | Fp2, Fp3, Fp4 | [[nebu]] | nebu²/³/⁴ | nebu | field tower, proofs |
+| 2 | [[Tok]] | UTXO, Balance, Conservation | [[nebu]] | nebu | nebu | economic transactions |
+| 3 | [[Arc]] | Object, Morphism, Functor | [[nebu]] | nebu | nebu | schema, graph structure |
+| 4 | [[Seq]] | Order, Timestamp, Causality | [[nebu]] | nebu | nebu | sequence, ordering |
+| 5 | [[Inf]] | Term, Clause, Substitution | [[nebu]] | nebu | nebu | logic, unification |
+| 6 | [[Bel]] | Distribution, Probability | [[nebu]] | nebu | nebu | belief, self-model |
+| 7 | [[Ren]] | Multivector, Rotor, Blade | [[nebu]] | nebu | nebu | geometry, rendering |
+| 8 | [[Dif]] | DualNumber, Manifold | [[nebu]] | nebu | nebu | continuous dynamics |
+| 9 | [[Sym]] | PhaseSpace, Hamiltonian | [[nebu]] | nebu | nebu | physics simulation |
+| 10 | [[Ten]] | Matrix, Tensor | [[nebu]] | nebu | nebu | neural networks |
+| 11 | [[Rs]] | u32, u64, bool, BoundedVec | [[nebu]] | nebu | nebu | systems programming |
+| 12 | [[Wav]] | RingElement, NTTForm | [[jali]] | jali | jali | FHE, signal processing |
+| 13 | [[Bt]] | BitVec, BitMatrix, Packed128 | [[kuro]] | kuro | kuro | binary, quantized inference |
+| 14 | [[Qu]] | Qubit, Gate, Amplitude | [[nebu]] | nebu² | nebu | quantum simulation |
+| 15 | [[Opt]] | Tropical, CostMatrix, Graph | [[trop]] | trop | trop | optimization, decisions |
+| 16 | [[Sec]] | Curve, Secret, StealthAddress | [[genies]] | genies | genies | privacy, anonymity |
 
 every algebra has at least one language. every language has types that map to one algebra. the mapping is exhaustive — no orphan types, no orphan algebras.
 
