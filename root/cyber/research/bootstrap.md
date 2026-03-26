@@ -91,6 +91,38 @@ each checkpoint = "stop iterating, build on top." before mainnet: unfreezing = r
 | 3 | zheng protocol | before Stage 3 Phase 6 | proof format. changing = all proofs invalid |
 | 4 | jet formulas | before Stage 3 Phase 9 | H(formula) = jet identity. protocol constants |
 
+## the spine (seven repos, seven verbs)
+
+```
+hemera → lens → trident → cybergraph → nox → zheng → bbg
+ hash    commit  compile      link      run    prove   store
+```
+
+[[cybergraph]] is the vertebra — the center that everything attaches to. jets, memos, types, dependencies, knowledge — all cyberlinks in one graph. see [[cyb/stack]] for full architecture.
+
+## the self-hosting boundary
+
+the spine is the MINIMAL set that cannot implement itself. once it exists, everything above is pure .td:
+
+| below boundary (needs Rust bootstrap) | above boundary (pure .td) |
+|---------------------------------------|--------------------------|
+| hemera, lens, trident, nox, zheng, bbg | plumb, identity, social, geo, tru, foculus, mudra |
+| dual existence: Rust + Trident | single existence: Trident only |
+
+## genesis crystal
+
+the [[cybergraph]] starts empty. core semcons need tokens to deploy. tokens need plumb semcon to exist. the crystal resolves this: a .td program that runs once with unlimited focus.
+
+```
+genesis.td:
+  create_token(CYB, HYDROGEN, VOLT, AMPERE)
+  register_semcon(plumb, identity, social, geo)
+  distribute(initial_balances)
+  // genesis focus expires. normal rules apply.
+```
+
+the crystal is the seed structure. without it — empty graph, no rules. with it — economics, types, constraints. even genesis is proven (compiled by trident, executed by nox, proof by zheng).
+
 ## dependency graph
 
 ```
@@ -98,19 +130,20 @@ DONE (arithmetic + identity):
   nebu → hemera → {jali, kuro, trop, genies}
   trident (57K LOC, nock target exists)
 
-five layers:
-  hemera → lens → nox → zheng → bbg
+spine (seven repos):
+  hemera → lens → trident → cybergraph → nox → zheng → bbg
 
 STAGE 1 (Rust bootstrap):
-  nox VM (Rust) → trident nox target
+  nox VM (Rs) → trident nox target
 
 STAGE 2 (classical self-host):
   trident.td → nebu.td + hemera.td + lens.td → nox.td
 
 STAGE 3 (proven bootstrap):
   zheng (Rust prover + Trident verifier) → proven re-self-host
-    → remaining arithmetic.td → jet registry
-      → mudra.td, bbg.td, tru.td (parallel)
+    → remaining arithmetic.td → jet registry (in cybergraph)
+      → genesis.td (crystal)
+        → plumb.td, identity.td, tru.td (parallel)
 ```
 
 ## Stage 1: Rust bootstrap (untrusted foundation)
@@ -281,60 +314,82 @@ STATE AFTER STAGE 3:
   trust: mathematical certainty
 ```
 
-## application layer (on proven foundation)
+## genesis and protocol layer (on proven foundation)
 
-### Phase 10: mudra.td                                       5-7 sessions
+### Phase 10: genesis crystal                                1 session
+
+the seed. runs once with unlimited focus. creates tokens, registers core semcons, distributes initial balances. proven: compiled by trident.td, executed by nox, proof by zheng.
+
+### Phase 11: core semcons                                   8-12 sessions
+
+four "heavy" semcons that reach deep into the spine:
+
+| semcon | what | sessions |
+|--------|------|----------|
+| plumb.td | tokens, staking, delegation, conservation, UTXO | 3-4 |
+| identity.td | neuron registration, key proof, ownership | 2-3 |
+| social.td | following, reputation edges | 1-2 |
+| geo.td | location proofs, physical attestation | 2-3 |
+
+partially parallel (plumb blocks identity, social and geo independent).
+
+### Phase 12: computed layer                                 6-10 sessions
+
+| program | what | sessions |
+|---------|------|----------|
+| tru.td | tri-kernel, focus, cyberank, karma, decay | 4-6 |
+| foculus.td | consensus, finality from topology | 2-4 |
+
+### Phase 13: mudra.td                                       5-7 sessions
 
 seven crypto protocols, each independent:
   seal, stealth, veil, quorum, delay, order, place
 
-### Phase 11: bbg.td                                         5-8 sessions
-
-authenticated state:
-  BBG_poly, mutator set, signal validation, state transitions, sync, DAS
-
-### Phase 12: tru.td                                         4-6 sessions
-
-ranking + consensus:
-  tri-kernel, focus update, foculus, karma, decay
-
-Phases 10-12 parallel (different file scopes).
+Phases 11-13 partially parallel (different file scopes).
 
 ## critical path
 
 ```
 CHECKPOINT 0: nox patterns frozen
   ↓
-STAGE 1
+STAGE 1 (Rust bootstrap)
   Phase 1: nox VM (Rs)                        2-3 sessions
   Phase 2: trident nox target                  3-4 sessions
   ↓
 CHECKPOINT 1: trident stable
   ↓
-STAGE 2
-  Phase 3: trident.td self-hosts               3-4 sessions ── BOOTSTRAP
+STAGE 2 (classical self-host)
+  Phase 3: trident.td self-hosts               3-4 sessions ── BOOTSTRAP MOMENT
   CHECKPOINT 2: hemera frozen
   Phase 4: arithmetic.td (6 repos + hemera)    4-6 sessions
   Phase 5: nox.td (proven interpreter)         3-4 sessions
   ↓
 CHECKPOINT 3: zheng frozen
   ↓
-STAGE 3
+STAGE 3 (proven bootstrap)
   Phase 6: zheng (prover ∥ verifier)           5-8 sessions ── PROOFS
   Phase 7: proven re-self-host                 1-2 sessions
   Phase 8: proven nox.td                       1 session
-  Phase 9: jet registry                        2-3 sessions
+  Phase 9: jet registry (in cybergraph)        2-3 sessions
   CHECKPOINT 4: jets frozen
   ↓
-APPLICATION
-  Phase 10: mudra.td     5-7 sessions  ┐
-  Phase 11: bbg.td       5-8 sessions  ├─ parallel
-  Phase 12: tru.td       4-6 sessions  ┘
+═══════════════════════════════════════════════════════════
+  THE BOUNDARY: above here = pure .td on proven spine
+═══════════════════════════════════════════════════════════
+  ↓
+GENESIS
+  Phase 10: genesis.td (crystal)               1 session
+  ↓
+PROTOCOL (core semcons)
+  Phase 11: plumb.td + identity.td             5-7 sessions  ┐
+            social.td + geo.td                 3-5 sessions  ├─ partial parallel
+  Phase 12: tru.td + foculus.td                6-10 sessions ┘
+  Phase 13: mudra.td                           5-7 sessions (parallel)
 ```
 
-critical path to proven bootstrap: ~25-34 sessions (Phase 1 → 9)
-application layer: ~14-21 sessions (parallel)
-total: ~35-50 sessions to full proven stack
+critical path to proven spine: ~25-34 sessions (Phase 1 → 9)
+genesis + protocol: ~20-30 sessions (partially parallel)
+total: ~40-55 sessions to full proven system
 
 ## the two columns (final state)
 
