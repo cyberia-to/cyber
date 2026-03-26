@@ -13,62 +13,55 @@ focus: 0.0009472257109702348
 gravity: 26
 density: 4.19
 ---
-the authenticated state layer for [[cyber]]. stores the [[cybergraph]] — edges ([[cyberlinks]]), [[neuron]] state, [[particle]] energy, [[focus]], balances — with polynomial commitment indexes that provide cryptographic completeness proofs.
+the authenticated state layer for [[cyber]]. the entire [[cybergraph]] commits to a single polynomial:
 
-when you sync a namespace, you get mathematical proof that nothing was withheld. the graph cannot exist without its indexes being consistent and complete — this is structural, not policy.
+$$\text{BBG\_root} = \text{Lens.commit}(\text{BBG\_poly}) \quad \text{(32 bytes)}$$
+
+one polynomial. all state. every query is a polynomial opening (~200 bytes, 10-50 μs). cross-index consistency is structural — different evaluation dimensions of the same polynomial cannot disagree.
+
+bbg is to [[cybergraph]] what a database engine is to a schema. cybergraph defines WHAT. bbg implements HOW.
 
 ## three laws
 
-1. bounded locality — every query touches O(log n) nodes
-2. constant-cost verification — proof size ~2 KiB, verification ~5 μs
-3. structural security — the graph cannot exist with inconsistent indexes
+1. bounded locality — operation cost $\propto$ what it touches, not total state size
+2. constant-cost verification — one [[lens]] opening: ~200 bytes proof, 10-50 μs
+3. structural security — polynomial binding prevents lying. post-quantum ([[Brakedown]], no pairings)
 
 ## structure
 
-13 sub-roots under one state commitment:
+BBG_poly is a single multivariate polynomial with three dimensions:
 
-9 public [[NMT]] indexes:
+$$\text{BBG\_poly}(\text{index}, \text{key}, t) = \text{value}$$
 
-| index | content |
-|-------|---------|
-| particles | content-addressed particle store |
-| axons_out | outgoing cyberlink index by creator |
-| axons_in | incoming cyberlink index by target |
-| neurons | neuron identity and metadata |
-| locations | namespace location index |
-| coins | token denomination registry |
-| cards | delegation and staking cards |
-| files | binary blob references |
-| time | temporal ordering index |
+| index | domain | key | value |
+|-------|--------|-----|-------|
+| 0: particles | content-addressed nodes | CID | energy, π*, axon fields |
+| 1: axons_out | outgoing edges by source | source CID | axon pointer, weight |
+| 2: axons_in | incoming edges by target | target CID | axon pointer, weight |
+| 3: neurons | agent state | neuron ID | focus, karma, stake |
+| 4: locations | spatial association | neuron ID | geohash, attestation |
+| 5: coins | fungible tokens | denomination | supply, parameters |
+| 6: cards | non-fungible assets | card ID | owner, content CID |
+| 7: files | content availability | CID | DAS commitment, chunk count |
+| 8: time | historical snapshots | time namespace | BBG_root at that time |
+| 9: signals | finalized signal batches | step | signal hash |
 
-3 private indexes (mutator set: AOCL + SWBF):
+no NMT. no [[LogUp]]. cross-index consistency is FREE — axons_out and axons_in are different evaluation dimensions of the same committed polynomial.
 
-| index | content |
-|-------|---------|
-| cyberlinks | private edge store |
-| spent | spent nullifier set |
-| balance | encrypted balance commitments |
+## private state
 
-1 finalization index:
+individual [[cyberlinks]] are private. polynomial commitments handle this:
+- commitment polynomial A(x): all committed private records. membership = one [[lens]] opening
+- nullifier polynomial N(x): all spent nullifiers. non-membership = one [[lens]] opening showing N(c) ≠ 0
 
-| index | content |
-|-------|---------|
-| signals | pending signal queue |
-
-[[LogUp]] ensures cross-index consistency across all 13 sub-roots.
+~5,000 constraints per private operation (was ~40,000 with SWBF + MMR). 32-byte witness (was 128 KB).
 
 ## dependency graph
 
 ```
-nebu (field)
-  ↓
-hemera (hash + trees)
-  ↓
-nox (VM)
-  ↓
-zheng (proofs)
-  ↓
-bbg (state) ← this repo
+hemera (hash) → lens (commit) → nox (run) → zheng (prove) → bbg (store) ← this repo
 ```
 
-see [[cyber/bbg]] for the full specification, [[WHIR]] for polynomial commitments, [[LogUp]] for cross-index consistency, [[data structure for superintelligence]] for mutator set architecture
+see [[cyber/research/bbg]] for the full polynomial state specification, [[lens]] for commitment backends, [[Brakedown]] for the polynomial commitment scheme
+
+discover all [[concepts]]
