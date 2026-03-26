@@ -59,7 +59,7 @@ applications in [[cyber]]
 zero-knowledge friendly variants
 
 - when using [[hash]] functions like Poseidon, the accumulator tree can be verified inside a ZK circuit efficiently
-- each hash costs ~300 constraints vs ~1 constraint per field operation
+- each hash costs ~736 constraints vs ~1 constraint per field operation
 - this is why [[hash]] function choice (see ADR-001) is critical for accumulator performance in proof systems
 
 related

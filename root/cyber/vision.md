@@ -83,7 +83,7 @@ naming:
 ten principles, each addressing a failure mode of existing systems:
 
 - field-first — every value is a Goldilocks field element ($p = 2^{64} - 2^{32} + 1$). cryptographic operations become native. a field multiplication is a single CPU instruction
-- hash-universal — identity is hash. one hash everywhere (Poseidon-Goldilocks, ~300 constraints)
+- hash-universal — identity is hash. one hash everywhere (Poseidon-Goldilocks, ~736 constraints)
 - confluence-guaranteed — any reduction order yields the same result. sixteen deterministic patterns, no overlaps (Huet 1980). Layer 2 (hint) breaks confluence intentionally for ZK
 - parallel-safe — no locks, no synchronization. confluence enables this directly
 - flow-conserved — [[focus]] sums to 1, always. one resource unifies [[attention]], fuel, and [[consensus]] weight

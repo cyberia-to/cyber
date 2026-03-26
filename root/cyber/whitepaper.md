@@ -506,9 +506,9 @@ Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify
 | 1 | lt | 1 | ~64 |
 | 1 | xor, and, not, shl | 1 | ~64 each |
 | 2 | hint | 1 + constraint | constraint rows |
-| 3 | hash | 300 | ~300 |
+| 3 | hash | 736 | ~736 |
 | 3 | poly_eval(N) | N | ~N |
-| 3 | merkle_verify(d) | d × 300 | ~d × 300 |
+| 3 | merkle_verify(d) | d × 736 | ~d × 736 |
 | 3 | fri_fold(N) | N/2 | ~N/2 |
 | 3 | ntt(N) | N·log(N) | ~N·log(N) |
 
@@ -687,7 +687,7 @@ The nullifier cannot be derived from the commitment (needs secret), cannot revea
 
 ### 10.3 Transaction Circuit
 
-The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~9,600 for Merkle — a 10× improvement, because field operations cost 1 constraint each while hash operations cost ~300.
+The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~9,600 for Merkle — a 10× improvement, because field operations cost 1 constraint each while hash operations cost ~736.
 
 Total circuit: ~10,000 constraints. With stark optimizations: ~7,000 gates. Proof generation: ~0.3-0.8 seconds. Proof size: ~50-80 KB. Verification: ~1-3 ms.
 

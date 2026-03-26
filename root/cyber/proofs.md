@@ -21,7 +21,7 @@ PROOF TAXONOMY
 
 CATEGORY              │ PROOF TYPE                │ WHAT IT PROVES                          │ CONSTRAINTS
 ──────────────────────┼───────────────────────────┼─────────────────────────────────────────┼────────────
-identity              │ preimage knowledge         │ neuron knows secret behind address       │ ~300
+identity              │ preimage knowledge         │ neuron knows secret behind address       │ ~736
                       │ set membership             │ neuron belongs to valid set              │ ~1,000
                       │ stake sufficiency          │ neuron has enough stake for action       │ ~1,000
                       │ nullifier freshness        │ action has not been performed before     │ ~3,000
@@ -159,7 +159,7 @@ neuron_secret → Hemera(neuron_secret) = neuron_address
 auth = stark_proof(∃ x : Hemera(x) = neuron_address)
 ```
 
-the preimage proof costs ~300 constraints. the full lock script verification (with [[nox]] jets) costs ~70,000 constraints. programmable lock scripts extend this to multisig, timelocks, delegation, and recovery — all via the same mechanism.
+the preimage proof costs ~736 constraints. the full lock script verification (with [[nox]] jets) costs ~70,000 constraints. programmable lock scripts extend this to multisig, timelocks, delegation, and recovery — all via the same mechanism.
 
 see [[cyber/identity]] for the full specification.
 
@@ -169,7 +169,7 @@ a [[neuron]] proves it is valid, has sufficient [[stake]], and has not double-li
 
 1. identity: `Hemera(secret) ∈ neuron_set` (~1,000 via WHIR membership)
 2. stake: `stake(Hemera(secret)) ≥ weight` (~1,000 via WHIR lookup)
-3. nullifier: `nullifier == Hemera(secret ∥ source ∥ target)` (~300)
+3. nullifier: `nullifier == Hemera(secret ∥ source ∥ target)` (~736)
 4. freshness: `nullifier ∉ spent_set` (~3,000 via SWBF check)
 
 the graph sees edges and weights. the graph does not see authors. see [[cyber/identity]] for the privacy boundary.

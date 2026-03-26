@@ -18,7 +18,7 @@ connectivity for [[superintelligence]]. a fork of [[iroh]] where every hash — 
 
 ## why
 
-Blake3 hashes at 2 GB/s. [[Hemera]] reaches ~50–100 MB/s on CPU. the tradeoff: proving a single Blake3 hash inside a stark costs 50,000–100,000 constraints. [[Hemera]] costs ~300. this enables:
+Blake3 hashes at 2 GB/s. [[Hemera]] reaches ~50–100 MB/s on CPU. the tradeoff: proving a single Blake3 hash inside a stark costs 50,000–100,000 constraints. [[Hemera]] costs ~736. this enables:
 
 - [[storage proofs]] without downloading content
 - verified streaming with [[Hemera]] Merkle trees

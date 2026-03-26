@@ -92,7 +92,7 @@ one mechanism. no new cryptography per pattern. the lock script is a [[nox]] pro
 ## stark constraints
 
 ```
-Hemera hash:          ~300 constraints (vs ~25,000 for SHA-256)
+Hemera hash:          ~736 constraints (vs ~25,000 for SHA-256)
 lock script verify:   ~70,000 constraints (with jets)
 recursive composition: O(1) verification for O(N) links
 ```
@@ -133,7 +133,7 @@ CONSTRAINTS:
    prove the neuron has sufficient stake
    without revealing total stake or neuron identity
 
-3. Nullifier:  nullifier == Hemera(secret ∥ source ∥ target)    ~300
+3. Nullifier:  nullifier == Hemera(secret ∥ source ∥ target)    ~736
    deterministic: same neuron + same particle pair = same nullifier
    reveals duplicate links, conceals author
 

@@ -186,7 +186,7 @@ relays earn [[focus]] for proven delivery. the proof of delivery is the claim â€
 ```
 CSIDH shared secret:       ~50,000 constraints (isogeny evaluation in circuit)
 AES-256-GCM decrypt:       ~10,000 constraints
-Hemera MAC verify:             ~300 constraints
+Hemera MAC verify:             ~736 constraints
 per-hop relay proof:       ~60,000 constraints total
 recursive aggregation:     ~70,000 constraints (stark verifier)
 
