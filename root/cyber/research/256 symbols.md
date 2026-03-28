@@ -2,197 +2,174 @@
 tags: cyber, research, nox
 crystal-type: research
 crystal-domain: comp
-alias: cyber control codes, dead codes, reclaimed bytes
+alias: cyber control codes, dead codes, reclaimed bytes, 256 symbols
 ---
-# Cyber Control Codes: Reclaiming Dead Unicode for Graph Operations
 
-## The Idea
+# 256 symbols
 
-ASCII 0–31 contains 21 dead teletype control codes. Unicode 128–159 contains 29 more dead C1 control codes. Total: **50 dead codes** carrying no meaning in modern computing.
+one byte. 256 values. every value has a meaning.
 
-nox reclaims them as native graph operations. When these bytes appear in a cybergraph stream, they ARE the protocol — not text, not legacy, but living instructions for a planetary knowledge graph.
+the byte table splits into seven groups. three are alive (text). three are dead (reclaimed). one is the null boundary.
 
-## Layer 1: nox Reduction Patterns (0x01–0x0F)
-
-The 16 reduction patterns map directly onto the first 16 dead/reclaimable ASCII positions. We skip 0x00 (NUL — still used as string terminator in C).
+## the full table
 
 ```
-HEX  OLD NAME    NEW: nox PATTERN         OPCODE
-───  ────────    ─────────────────         ──────
-01   SOH         axis    — navigate tree      0
-02   STX         quote   — literal value      1
-03   ETX*        compose — recursion          2
-04   EOT*        cons    — build cell         3
-05   ENQ         branch  — conditional        4
-06   ACK         add     — field addition     5
-07   BEL         sub     — field subtraction  6
-08   BS*         mul     — field multiply     7
-09   HT*         inv     — field inverse      8
-0A   LF*         eq      — equality test      9
-0B   VT          lt      — less-than         10
-0C   FF          xor     — bitwise xor       11
-0D   CR*         and     — bitwise and       12
-0E   SO          not     — bitwise not       13
-0F   SI          shl     — shift left        14
-
-* = code still used in legacy contexts (ETX=Ctrl+C, EOT=Ctrl+D, 
-    BS=backspace, HT=tab, LF=newline, CR=return)
+GROUP           RANGE         COUNT   STATUS     PURPOSE
+─────           ─────         ─────   ──────     ───────
+null            0x00          1       boundary   NUL — zero delimiter
+nox ISA         0x01–0x1E     30      reclaimed  18 instructions + 12 reserved
+spare           0x1F          1       dead       future
+printable       0x20–0x7E     95      alive      text, numbers, punctuation
+delete          0x7F          1       dead       spare
+graph ops       0x80–0x9F     32      reclaimed  cybergraph protocol
+extended        0xA0–0xFF     96      alive      Latin-1 supplement / UTF-8 lead
 ```
 
-**Problem:** 6 of these codes (0x03, 0x04, 0x08, 0x09, 0x0A, 0x0D) are still alive in legacy systems. This creates ambiguity — is 0x0A a newline or an `eq` operation?
+## group 1: nox ISA (0x01–0x1E)
 
-**Solution:** Context. In a nox binary stream (identified by magic bytes or protocol framing), these are opcodes. In a text file, they're control characters. The same byte means different things in different contexts — which is how computing has always worked. A byte in a JPEG is not a byte in UTF-8.
-
-But cleaner: use ONLY the 100% dead codes for the core patterns, and put conflicted codes elsewhere.
-
-## Layer 1 (Clean): nox Patterns in Dead-Only Codes
-
-Using only codes that are completely dead — zero modern usage:
+18 frozen instructions. 12 reserved slots for future (jets?).
 
 ```
-HEX  OLD NAME              NEW: nox PATTERN
-───  ────────              ─────────────────
-01   SOH  Start of Header  → axis     (0)  navigate
-02   STX  Start of Text    → quote    (1)  literal
-05   ENQ  Enquiry          → compose  (2)  recursion
-06   ACK  Acknowledge      → cons     (3)  build cell
-0E   SO   Shift Out        → branch   (4)  conditional
-0F   SI   Shift In         → add      (5)  field add
-10   DLE  Data Link Escape → sub      (6)  field sub
-11   DC1  Device Ctrl 1    → mul      (7)  field multiply
-12   DC2  Device Ctrl 2    → inv      (8)  field inverse
-14   DC4  Device Ctrl 4    → eq       (9)  equality
-15   NAK  Neg. Acknowledge → lt       (10) less-than
-16   SYN  Synchronize      → xor      (11) bitwise xor
-17   ETB  End Trans Block  → and      (12) bitwise and
-18   CAN  Cancel           → not      (13) bitwise not
-19   EM   End of Medium    → shl      (14) shift left
-1C   FS   File Separator   → hash     (15) structural hash
+HEX  OLD        nox              #   GROUP
+───  ───        ───              ─   ─────
+01   SOH        axis             0   structural
+02   STX        quote            1   structural
+05   ENQ        compose          2   structural
+06   ACK        cons             3   structural
+0E   SO         branch           4   structural
+0F   SI         add              5   field
+10   DLE        sub              6   field
+11   DC1        mul              7   field
+12   DC2        inv              8   field
+14   DC4        eq               9   field
+15   NAK        lt              10   field
+16   SYN        xor             11   bitwise
+17   ETB        and             12   bitwise
+18   CAN        not             13   bitwise
+19   EM         shl             14   bitwise
+1C   FS         hash            15   hash
+1D   GS         hint            16   non-deterministic
+1E   RS         look            17   state access
 ```
 
-16 patterns → 16 dead codes. Perfect fit. Zero conflicts with living codes.
-
-Remaining dead codes in 0–31 range: `0x1D (GS), 0x1E (RS), 0x1F (US)` — 0x1D = hint, 0x1E = look, 0x1F spare.
-
-## Layer 2: Graph Semantics (0x80–0x9F)
-
-The C1 control range (128–159) is **completely dead** in UTF-8. These bytes cannot appear as standalone characters in valid UTF-8 — they're always continuation bytes. Perfect for graph operations that are definitionally not text.
+reserved (within 0x01–0x1E, not yet assigned):
 
 ```
-HEX  OLD NAME                  NEW: GRAPH OPERATION
-───  ────────                  ────────────────────
-80   PAD  Padding              → PARTICLE    create content-addressed node
-81   HOP  High Octet Preset    → CYBERLINK   create weighted edge
-82   BPH  Break Permitted      → NEURON      register agent identity
-83   NBH  No Break Here        → STAKE       lock tokens on particle
-84   IND  Index                → UNSTAKE     unlock tokens from particle
-85   NEL  Next Line            → TRANSFER    move tokens between neurons
-86   SSA  Start Selected Area  → FOCUS_QUERY query current π for particle
-87   ESA  End Selected Area    → EDGE_QUERY  query edges by particle/neuron
-88   HTS  Horiz Tab Set        → PROOF       submit ZK proof
-89   HTJ  Horiz Tab Justify    → VERIFY      verify proof
-8A   VTS  Vert Tab Set         → COMMIT      polynomial commitment
-8B   PLD  Partial Line Down    → NULLIFY     spend record (prevent double-spend)
-8C   PLU  Partial Line Up      → REVEAL      make sealed value public
-8D   RI   Reverse Index        → SEAL        hide value with commitment
-8E   SS2  Single Shift Two     → NAMESPACE   declare namespace
-8F   SS3  Single Shift Three   → COMPLETE    prove namespace completeness
-
-90   DCS  Device Ctrl String   → EPOCH       mark epoch boundary
-91   PU1  Private Use One      → CHECKPOINT  state checkpoint
-92   PU2  Private Use Two      → MIGRATE     storage proof for rehash
-93   STS  Set Transmit State   → DELEGATE    delegate focus to another neuron
-94   CCH  Cancel Character     → REVOKE      revoke delegation
-95   MW   Message Waiting      → CHALLENGE   challenge a claim
-96   SPA  Start Protected      → RESPOND     respond to challenge
-97   EPA  End Protected        → FINALIZE    finality threshold reached
-98   SOS  Start of String      → SPONGE_INIT init incremental hash
-99   SGCI Single Graphic       → ABSORB      absorb into sponge state
-9A   SCI  Single Char Intro    → SQUEEZE     squeeze from sponge state
-9B   CSI  Ctrl Sequence Intro  → MERKLE_STEP one level of Merkle proof
-9C   ST   String Terminator    → MERKLE_ROOT root of authenticated structure
-9D   OSC  OS Command           → SYNC        request state synchronization
-9E   PM   Privacy Message      → SUBSCRIBE   subscribe to focus changes
-9F   APC  Application Program  → RESERVED    future use
+03   ETX        reserved              (legacy: Ctrl+C)
+04   EOT        reserved              (legacy: Ctrl+D)
+07   BEL        reserved              (legacy: bell)
+08   BS         reserved              (legacy: backspace)
+09   HT         reserved              (legacy: tab)
+0A   LF         reserved              (legacy: newline)
+0B   VT         reserved              (legacy: vertical tab)
+0C   FF         reserved              (legacy: form feed)
+0D   CR         reserved              (legacy: carriage return)
+13   DC3        reserved              (legacy: XOFF)
+1A   SUB        reserved              (legacy: Ctrl+Z)
+1B   ESC        reserved              (legacy: escape)
 ```
 
-**32 graph operations → 32 dead C1 codes.** One-to-one. Zero conflicts.
+12 reserved slots. conflict-free codes used first (18 instructions). conflicted legacy codes available for expansion — context disambiguates (nox binary stream vs text).
 
-## nox instructions 16-17 (0x1D-0x1E)
+## group 2: printable ASCII (0x20–0x7E)
 
-```
-HEX  OLD NAME              NEW: nox INSTRUCTION
-───  ────────              ─────────────────────
-1D   GS   Group Separator  → hint    (16) prover injects witness
-1E   RS   Record Separator → look    (17) read from BBG (pure state access)
-```
-
-hint: non-deterministic gate. prover supplies witness, Layer 1 constraints verify. zero-knowledge proofs — demonstrate knowledge without revealing the witness.
-
-look: deterministic state read. look(namespace, key) reads [[bbg]] polynomial state. Brakedown opening proof in STARK trace. this is what makes [[nox]] programs pure functions with full state access. see [[cyber/research/nox: frozen provable computer]].
-
-## spare codes
+95 symbols. untouched. text lives here.
 
 ```
-FROM 0x00–0x1F (1 remaining dead):
-  1F   US   Unit Separator     → spare
-
-FROM 0x7F:
-  7F   DEL  Delete             → spare
-
-Total spare: 2 codes for future expansion (jets?).
+0x20       space
+0x21–0x2F  punctuation:  ! " # $ % & ' ( ) * + , - . /
+0x30–0x39  digits:       0 1 2 3 4 5 6 7 8 9
+0x3A–0x40  punctuation:  : ; < = > ? @
+0x41–0x5A  uppercase:    A B C ... Z
+0x5B–0x60  punctuation:  [ \ ] ^ _ `
+0x61–0x7A  lowercase:    a b c ... z
+0x7B–0x7E  punctuation:  { | } ~
 ```
 
-## Summary
+nox does not touch printable ASCII. text is sacred.
+
+## group 3: graph operations (0x80–0x9F)
+
+32 dead C1 control codes. completely dead in UTF-8 — these bytes cannot appear standalone in valid UTF-8. self-identifying: if you see 0x85 as independent byte, it is definitionally not text.
 
 ```
-RANGE       COUNT   ORIGINAL PURPOSE       NEW PURPOSE
-──────      ─────   ────────────────       ───────────
-0x01–0x1C   16      Teletype control       nox — 16 reduction patterns
-0x1D        1       Group Separator        nox — hint (witness input)
-0x1E        1       Record Separator       nox — look (BBG state read)
-0x80–0x9F   32      C1 terminal control    graph semantic operations
-0x1F        1       Unit Separator         spare
-0x7F        1       Delete                 spare
-
-TOTAL RECLAIMED: 52 codes
-TOTAL USED:      50 (16 patterns + hint + look + 32 graph ops)
-TOTAL SPARE:      2
+HEX  OLD    GRAPH OP         WHAT
+───  ───    ────────         ────
+80   PAD    PARTICLE         create content-addressed node
+81   HOP    CYBERLINK        create weighted edge
+82   BPH    NEURON           register agent identity
+83   NBH    STAKE            lock tokens on particle
+84   IND    UNSTAKE          unlock tokens
+85   NEL    TRANSFER         move tokens between neurons
+86   SSA    FOCUS_QUERY      query current π
+87   ESA    EDGE_QUERY       query edges by particle/neuron
+88   HTS    PROOF            submit zheng proof
+89   HTJ    VERIFY           verify proof
+8A   VTS    COMMIT           polynomial commitment
+8B   PLD    NULLIFY          spend record (prevent double-spend)
+8C   PLU    REVEAL           make sealed value public
+8D   RI     SEAL             hide value with commitment
+8E   SS2    NAMESPACE        declare namespace
+8F   SS3    COMPLETE         prove namespace completeness
+90   DCS    EPOCH            mark epoch boundary
+91   PU1    CHECKPOINT       state checkpoint
+92   PU2    MIGRATE          storage proof for rehash
+93   STS    DELEGATE         delegate focus to another neuron
+94   CCH    REVOKE           revoke delegation
+95   MW     CHALLENGE        challenge a claim
+96   SPA    RESPOND          respond to challenge
+97   EPA    FINALIZE         finality threshold reached
+98   SOS    SPONGE_INIT      init incremental hash
+99   SGCI   ABSORB           absorb into sponge state
+9A   SCI    SQUEEZE          squeeze from sponge state
+9B   CSI    MERKLE_STEP      one level of Merkle proof
+9C   ST     MERKLE_ROOT      root of authenticated structure
+9D   OSC    SYNC             request state synchronization
+9E   PM     SUBSCRIBE        subscribe to focus changes
+9F   APC    RESERVED         future use
 ```
 
-## The Poetry
+## group 4: extended (0xA0–0xFF)
 
-SOH (Start of Header) becomes `axis` — navigating to the start of a structure.
-ACK (Acknowledge) becomes `cons` — acknowledging two values into a cell.
-BEL (Ring the Bell) becomes `sub` — because subtraction rings true.
-SYN (Synchronize) becomes `xor` — the original synchronization primitive.
-CAN (Cancel) becomes `not` — canceling every bit.
-FS (File Separator) becomes `hash` — the separator of all content into identity.
+96 values. in Latin-1: printable characters (¡ ¢ £ ... ÿ). in UTF-8: lead bytes for multi-byte sequences. alive — not reclaimed.
 
-PAD (Padding) becomes `PARTICLE` — padding the graph with new knowledge.
-SOS (Start of String) becomes `SPONGE_INIT` — starting the absorb.
-ST (String Terminator) becomes `MERKLE_ROOT` — terminating the tree.
+```
+0xA0       non-breaking space
+0xA1–0xBF  Latin-1 symbols and letters
+0xC0–0xDF  UTF-8 two-byte lead (0xC0–0xC1 overlong, technically dead)
+0xE0–0xEF  UTF-8 three-byte lead
+0xF0–0xF7  UTF-8 four-byte lead
+0xF8–0xFF  invalid UTF-8 (dead — 8 more reclaimable codes?)
+```
 
-The teletype is dead. Long live the cybergraph.
+## group 5: boundaries
 
-## Technical Note: UTF-8 Safety
+```
+0x00  NUL   null delimiter. universal zero. not reclaimed.
+0x1F  US    spare. one free slot in control range.
+0x7F  DEL   spare. between printable and extended.
+```
 
-This encoding is **UTF-8 safe** by construction:
+## summary
 
-- Codes 0x01–0x1F: In UTF-8, these ARE valid single-byte characters (C0 controls). But they never appear in well-formed text content. A binary stream using these as opcodes will not be confused with text.
+```
+nox ISA:         18 used + 12 reserved  = 30 slots  (0x01–0x1E)
+printable:       95 untouched                        (0x20–0x7E)
+graph ops:       31 used + 1 reserved   = 32 slots  (0x80–0x9F)
+extended:        96 alive (Latin-1/UTF-8)            (0xA0–0xFF)
+boundaries:      3 (NUL + 2 spare)                   (0x00, 0x1F, 0x7F)
+                ───
+                256
+```
 
-- Codes 0x80–0x9F: In UTF-8, any byte in this range MUST be a continuation byte (10xxxxxx pattern). A standalone 0x80 is **invalid UTF-8**. This means: if you see 0x80 as an independent byte, it is definitionally not text. It is a nox graph operation. No ambiguity. No context needed. The byte itself declares its domain.
+49 reclaimed codes carry living meaning. 12 reserved for growth. 95 printable characters untouched. 96 extended characters untouched. every byte accounted for.
 
-This is why the graph operations live in 0x80–0x9F: they are **self-identifying**. A parser encountering 0x85 knows immediately — without any framing, without any protocol negotiation — that this is not text. It is either invalid data or a graph instruction. nox claims it as graph instruction.
+## UTF-8 safety
 
-## What This Means
+by construction:
+- 0x01–0x1E: valid single-byte UTF-8 but never in well-formed text. binary stream context disambiguates
+- 0x80–0x9F: standalone bytes in this range are invalid UTF-8. self-identifying — no framing needed
+- 0x20–0x7E: printable. untouched
+- 0xA0–0xFF: valid UTF-8 lead/continuation. untouched
 
-Every nox transaction, every cyberlink, every particle creation can be encoded as a sequence of bytes that:
-
-1. Are valid in the existing byte ecosystem (no new bit widths, no new hardware)
-2. Cannot be confused with text (self-identifying domain)
-3. Reuse humanity's 70-year investment in byte infrastructure
-4. Replace dead teletype ghosts with living graph operations
-5. Fit in a single byte per opcode (maximum density)
-
-The byte was IBM's accident. nox turns it into the instruction set for planetary intelligence.
+the teletype is dead. long live the [[cybergraph]].
