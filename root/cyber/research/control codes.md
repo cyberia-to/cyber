@@ -1,12 +1,8 @@
 ---
-tags: cyber
-stake: 1627284067832293
-diffusion: 0.00011233815923477823
-springs: 0.00008246788381555257
-heat: 0.000037649645370807764
-focus: 0.00008843937383621902
-gravity: 0
-density: 0
+tags: cyber, research, nox
+crystal-type: research
+crystal-domain: comp
+alias: cyber control codes, dead codes, reclaimed bytes
 ---
 # Cyber Control Codes: Reclaiming Dead Unicode for Graph Operations
 
@@ -76,7 +72,7 @@ HEX  OLD NAME              NEW: nox PATTERN
 
 16 patterns → 16 dead codes. Perfect fit. Zero conflicts with living codes.
 
-Remaining dead codes in 0–31 range: `0x1D (GS), 0x1E (RS), 0x1F (US)` — 0x1D is assigned to hint (nox Layer 2), 2 spare.
+Remaining dead codes in 0–31 range: `0x1D (GS), 0x1E (RS), 0x1F (US)` — 0x1D = hint, 0x1E = look, 0x1F spare.
 
 ## Layer 2: Graph Semantics (0x80–0x9F)
 
@@ -122,35 +118,29 @@ HEX  OLD NAME                  NEW: GRAPH OPERATION
 
 **32 graph operations → 32 dead C1 codes.** One-to-one. Zero conflicts.
 
-## nox Layer 2: Non-Deterministic Input (0x1D)
+## nox instructions 16-17 (0x1D-0x1E)
 
 ```
 HEX  OLD NAME              NEW: nox INSTRUCTION
 ───  ────────              ─────────────────────
 1D   GS   Group Separator  → hint    (16) prover injects witness
+1E   RS   Record Separator → look    (17) read from BBG (pure state access)
 ```
 
-hint is the single Layer 2 instruction. The prover supplies a witness value; Layer 1 constraints verify it. This is the non-deterministic gate that makes zero-knowledge proofs possible — the prover demonstrates knowledge without revealing the witness.
+hint: non-deterministic gate. prover supplies witness, Layer 1 constraints verify. zero-knowledge proofs — demonstrate knowledge without revealing the witness.
 
-GS (Group Separator) → hint: the separator between deterministic reduction and prover knowledge.
+look: deterministic state read. look(namespace, key) reads [[bbg]] polynomial state. Brakedown opening proof in STARK trace. this is what makes [[nox]] programs pure functions with full state access. see [[cyber/research/nox: frozen provable computer]].
 
-## nox Layer 3: Jets
-
-Jets (hash, poly_eval, merkle_verify, fri_fold, ntt) have no separate opcodes. They are runtime-recognized optimizations of Layer 1 pattern combinations — observationally equivalent, just faster. The verifier and prover agree on jet semantics; the encoding remains pure Layer 1.
-
-This follows the Nock/Urbit model: jets accelerate without changing the formal spec.
-
-## Spare Codes
+## spare codes
 
 ```
-FROM 0x00–0x1F (2 remaining dead):
-  1E   RS   Record Separator   → spare
+FROM 0x00–0x1F (1 remaining dead):
   1F   US   Unit Separator     → spare
 
 FROM 0x7F:
   7F   DEL  Delete             → spare
 
-Total spare: 3 codes for future expansion.
+Total spare: 2 codes for future expansion (jets?).
 ```
 
 ## Summary
@@ -158,17 +148,16 @@ Total spare: 3 codes for future expansion.
 ```
 RANGE       COUNT   ORIGINAL PURPOSE       NEW PURPOSE
 ──────      ─────   ────────────────       ───────────
-0x01–0x1C   16      Teletype control       nox Layer 1 — reduction patterns
-0x1D        1       Group Separator        nox Layer 2 — hint (witness input)
-0x80–0x9F   32      C1 terminal control    Graph semantic operations
-0x1E–0x1F   2       Separators             Spare
-0x7F        1       Delete                 Spare
-
-nox Layer 3 jets share Layer 1 encodings (runtime optimization, no extra opcodes).
+0x01–0x1C   16      Teletype control       nox — 16 reduction patterns
+0x1D        1       Group Separator        nox — hint (witness input)
+0x1E        1       Record Separator       nox — look (BBG state read)
+0x80–0x9F   32      C1 terminal control    graph semantic operations
+0x1F        1       Unit Separator         spare
+0x7F        1       Delete                 spare
 
 TOTAL RECLAIMED: 52 codes
-TOTAL USED:      49 (16 patterns + 1 hint + 32 graph ops)
-TOTAL SPARE:      3
+TOTAL USED:      50 (16 patterns + hint + look + 32 graph ops)
+TOTAL SPARE:      2
 ```
 
 ## The Poetry
