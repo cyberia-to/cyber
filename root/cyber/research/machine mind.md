@@ -2,7 +2,7 @@
 tags: cyber, nox, cybos, architecture
 crystal-type: research
 crystal-domain: comp
-alias: cybos architecture, machine mind, provable memory, machine survival
+alias: cybos architecture, cybos, provable memory, machine survival
 ---
 
 a machine that does not hang, does not die, and grows.
