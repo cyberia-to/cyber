@@ -28,19 +28,20 @@ no effects. all features. provable by construction.
 
 everything is a noun: atom(v) or cell(noun, noun). binary tree with [[Goldilocks field]] elements at leaves. code and data are the same structure. every noun has identity via [[hemera]] structural hash — computing a noun IS creating its CID. see [[nox/nouns]].
 
-## 16 patterns
+## 18 instructions
 
-4 bits. frozen forever.
+frozen forever.
 
-| group | patterns | what | why |
-|-------|----------|------|-----|
-| structural (0-4) | axis, quote, compose, cons, branch | Turing completeness | data access, recursion, conditionals |
-| field (5-10) | add, sub, mul, inv, eq, lt | F_p arithmetic | crypto, proofs, consensus |
-| bitwise (11-14) | xor, and, not, shl | Boolean / Z/2^W | hashing, encryption |
-| hash (15) | hemera(x) | content addressing | particle identity, Merkle trees |
-| hint (16) | prover injects witness | non-determinism | privacy (ZK), oracle access |
+| group | # | patterns | what | why |
+|-------|---|----------|------|-----|
+| structural | 0-4 | axis, quote, compose, cons, branch | Turing completeness | data access, recursion, conditionals |
+| field | 5-10 | add, sub, mul, inv, eq, lt | F_p arithmetic | crypto, proofs, consensus |
+| bitwise | 11-14 | xor, and, not, shl | Boolean / Z/2^W | hashing, encryption |
+| hash | 15 | hemera(x) | content addressing | particle identity, Merkle trees |
+| hint | 16 | prover injects witness | non-determinism | privacy (ZK), oracle access |
+| look | 17 | read from [[bbg]] | state access | pure functions with full state |
 
-fewer → incomplete. more → wider tag, larger verifier. 16 = sweet spot. verifier circuit ~70K constraints.
+16 deterministic compute patterns + hint (non-deterministic) + look (state read). fewer → incomplete. more → wider tag, larger verifier. verifier circuit ~70K constraints.
 
 ## computation = linking
 
