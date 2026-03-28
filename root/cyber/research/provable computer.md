@@ -2,12 +2,27 @@
 tags: cyber, research, article
 crystal-type: process
 crystal-domain: cyber
-alias: nox research, computation as linking
+alias: nox research, computation as linking, provable computer
 ---
 
 # nox: the provable computer
 
 computation IS [[cyberlinks|linking]]. evaluating a program IS creating an edge in the [[cybergraph]]. the execution trace IS the [[zheng]] proof witness. the structural hash of the result IS the [[particles|particle]] identity. no boundary between "compute" and "record."
+
+## pure functions with state access
+
+nox programs are pure functions — no side effects, no I/O, no mutable state. yet they have full read access to the entire [[bbg]] state via look(namespace, key). this resolves the classic tradeoff: pure functions are provable but useless without state. impure functions access state but are unprovable.
+
+nox is both: pure (deterministic, provable, composable) AND stateful (reads any key from polynomial state). write is implicit — the Order output IS a [[cyberlink]], which updates state. the program never "writes" — it returns a result, and the kernel records it.
+
+```
+read:   look(key) → value          deterministic, Brakedown opening proof
+write:  return result → cyberlink   implicit, kernel handles persistence
+effect: none                        the program is a pure function
+state:  all of BBG                  available via look()
+```
+
+no effects. all features. provable by construction.
 
 ## nouns
 
