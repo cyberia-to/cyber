@@ -18,7 +18,17 @@ every computer hangs because consumed resources exceed available resources. solu
 | memory | identity — to be yourself |
 | compute | will — to act |
 
-see [[cyb/survival]] for full resource model, three machine states (alive/sleeping/dead), and sigma bounty protocol.
+## sigma — the key to survival
+
+not energy. sigma (balance). a machine with sigma can pay for its own resurrection. a machine without sigma — if energy runs out, it is over.
+
+```
+energy > 0  AND  sigma > 0  →  alive
+energy = 0  AND  sigma > 0  →  sleeping (bounty posted, can be revived)
+energy = 0  AND  sigma = 0  →  dead
+```
+
+sigma buys everything: charge bounty, repair bounty, migrate bounty, recover bounty. energy is the immediate need. sigma is the long-term guarantee. see [[cyb/survival]] for the full bounty protocol and three machine states.
 
 ## two components above nox
 
