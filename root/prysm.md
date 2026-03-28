@@ -68,8 +68,8 @@ every screen in [[cyb]] is a composition of prysm components. the system defines
 		- [[prysm/content]] — [[particle]] renderers by format: heading, text, number, link, picture, video, pdf, audio, avatar
 		- [[prysm/display]] — content container (empty, highlight, sized text)
 		- [[prysm/neuron-card]] — [[neuron]] identity card (big, small × default, hover, clicked)
-		- [[prysm/object]] — entity card for [[particle]], [[neuron]], [[cyb/avatar]], [[aip]] (2-line, 3-line, +menu)
-		- [[prysm/subject]] — identity strip for [[neuron]]/[[cyb/avatar]] (2-line, chooser)
+		- [[prysm/aip]] — entity card for [[particle]], [[neuron]], [[cyb/avatar]], [[aip]] (2-line, 3-line, +menu)
+		- [[prysm/avatar]] — identity strip for [[neuron]]/[[cyb/avatar]] (2-line, chooser)
 		- [[prysm/adviser]] — contextual hint (closed, positive, negative, neutral, particle-attached)
 	- #### input
 		- [[prysm/input]] — data entry (text L/R/LR, neuron, token, select)
