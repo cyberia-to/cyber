@@ -66,7 +66,7 @@ working memory (KV cache, context):
 | 0.5 | intent extractor | ~494M | canonical form before downstream |
 | 0.6 | anomaly detector | ~151M | sensor/log streams — always watching |
 | 0.7 | context splitter | ~360M | manage context window before tier 1-3 |
-| 0.8 | safety filter | ~163M | first-pass filter, never bypassed |
+| 0.8 | injection detector | ~163M | external input only — owner input bypasses this slot |
 
 collective latency target: <100ms per input.
 
@@ -141,7 +141,7 @@ all models uncensored by design: generative models abliterated (refusal vectors 
 | 0.5 intent | qwen2.5-0.5b-abliterated-v3 | huihui-ai | 32K | ~350MB | ~15ms | 0% refusal rate on 320 harmful-instruction tests, constrained JSON |
 | 0.6 anomaly | tranad + modernbert-base | imperial-qore / answerdotai | 8K | ~120MB | ~10ms | tranad (<1M) for numeric streams, modernbert (150M) for text logs |
 | 0.7 splitter | smollm2-360m-instruct | HuggingFace | 8K | ~200MB | ~12ms | 4T tokens training, generative splitting with priority labels |
-| 0.8 safety | granite-guardian-hap-125m + 38m | IBM | 512 | ~130MB | <3ms | binary toxicity classifier, YOU set the threshold, no corporate censorship |
+| 0.8 injection detector | granite-guardian-hap-125m + 38m | IBM | 512 | ~130MB | <3ms | external input only. owner input bypasses completely. binary classifier, owner sets threshold |
 | | | | total: | ~1.38GB | <40ms | all 8 run in parallel, critical path ~15ms GPU |
 
 ### tier 1
