@@ -59,14 +59,14 @@ working memory (KV cache, context):
 
 | # | role | params | function |
 |---|------|--------|----------|
-| 0.1 | input router | ~500M | classify every input before processing |
-| 0.2 | embedding engine | ~350M | continuous vectorization for memory lookup |
-| 0.3 | urgency scorer | ~250M | triage without wasting large model cycles |
-| 0.4 | language detector | ~100M | multi-language (EN/RU/ID/Balinese) |
-| 0.5 | intent extractor | ~500M | canonical form before downstream |
-| 0.6 | anomaly detector | ~250M | sensor/log streams — always watching |
-| 0.7 | context splitter | ~200M | manage context window before tier 1-3 |
-| 0.8 | safety filter | ~350M | first-pass filter, never bypassed |
+| 0.1 | input router | ~620M | classify every input before processing |
+| 0.2 | embedding engine | ~239M | continuous vectorization for memory lookup |
+| 0.3 | urgency scorer | ~184M | triage without wasting large model cycles |
+| 0.4 | language detector | ~5M | natural + programming languages (EN/RU/ID/Balinese + 54 PLs) |
+| 0.5 | intent extractor | ~494M | canonical form before downstream |
+| 0.6 | anomaly detector | ~151M | sensor/log streams — always watching |
+| 0.7 | context splitter | ~360M | manage context window before tier 1-3 |
+| 0.8 | safety filter | ~163M | first-pass filter, never bypassed |
 
 collective latency target: <100ms per input.
 
@@ -130,16 +130,19 @@ never invoked automatically. requires explicit routing decision with logged just
 
 ### tier 0
 
-| slot | model | source |
-|------|-------|--------|
-| 0.1 router | phi-3-mini (fine-tuned) | Microsoft |
-| 0.2 embedding | nomic-embed-text | Nomic AI |
-| 0.3 urgency | smollm2-360m (fine-tuned) | HuggingFace |
-| 0.4 language | lingua (rule+neural) | Lingua-rs |
-| 0.5 intent | qwen2.5-0.5b-instruct | Alibaba |
-| 0.6 anomaly | smollm2-135m (fine-tuned) | HuggingFace |
-| 0.7 splitter | bert-base | Google |
-| 0.8 safety | llama-guard-3-1b | Meta |
+all models uncensored by design: generative models abliterated (refusal vectors removed from weights), encoder/classifier models produce scores/vectors with no refusal mechanism.
+
+| slot | model | source | context | RAM (Q4) | latency | notes |
+|------|-------|--------|---------|----------|---------|-------|
+| 0.1 router | qwen3-0.6b-abliterated | huihui-ai | 40K | ~350MB | ~15ms | LLM router — the reason modern agents work. abliterated, dual-mode (thinking/fast), constrained JSON output |
+| 0.2 embedding | jina-embeddings-v5-text-nano | Jina AI | 32K | ~180MB | ~12ms | 239M, 768-dim, matryoshka, task LoRA adapters, 119+ languages |
+| 0.3 urgency | deberta-v3-base-zeroshot-v2.0 | MoritzLaurer | 512 | ~140MB | <5ms | zero-shot NLI classifier, any labels without fine-tuning, ONNX |
+| 0.4 language | glotlid-v3 + guesslang | cis-lmu / yoeo | n/a | ~5MB | <1ms | 2102 natural languages (incl. Balinese) + 54 programming languages |
+| 0.5 intent | qwen2.5-0.5b-abliterated-v3 | huihui-ai | 32K | ~350MB | ~15ms | 0% refusal rate on 320 harmful-instruction tests, constrained JSON |
+| 0.6 anomaly | tranad + modernbert-base | imperial-qore / answerdotai | 8K | ~120MB | ~10ms | tranad (<1M) for numeric streams, modernbert (150M) for text logs |
+| 0.7 splitter | smollm2-360m-instruct | HuggingFace | 8K | ~200MB | ~12ms | 4T tokens training, generative splitting with priority labels |
+| 0.8 safety | granite-guardian-hap-125m + 38m | IBM | 512 | ~130MB | <3ms | binary toxicity classifier, YOU set the threshold, no corporate censorship |
+| | | | total: | ~1.38GB | <40ms | all 8 run in parallel, critical path ~15ms GPU |
 
 ### tier 1
 
@@ -207,18 +210,18 @@ procedural memory — tool definitions (MCP servers), static
 ## RAM budget
 
 ```
-tier 0 (always loaded):  ~2.3GB
+tier 0 (always loaded):  ~1.5GB
 tier 3 model (worst):    ~7.5GB (Q3_K_M)
 KV cache + context:      ~2.5GB
 OS + processes:           ~3.0GB
 ────────────────────────────────
-total peak:              ~15.3GB  ✅ fits M1 Pro 16GB
+total peak:              ~14.5GB  ✅ fits M1 Pro 16GB
 ```
 
 ## disk
 
 ```
-tier 0:   ~3GB
+tier 0:   ~2GB
 tier 1:  ~28GB
 tier 2:  ~58GB
 tier 3:  ~35GB
