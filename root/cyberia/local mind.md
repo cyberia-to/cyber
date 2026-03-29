@@ -132,16 +132,26 @@ never invoked automatically. requires explicit routing decision with logged just
 
 all models uncensored by design: generative models abliterated (refusal vectors removed from weights), encoder/classifier models produce scores/vectors with no refusal mechanism.
 
-| slot | model | format | context | RAM | latency | notes |
-|------|-------|--------|---------|-----|---------|-------|
-| 0.1 router | [qwen3-0.6b-abliterated](https://huggingface.co/huihui-ai/Qwen3-0.6B-abliterated) | GGUF | 40K | ~350MB | ~15ms | LLM router — the reason modern agents work. abliterated, dual-mode (thinking/fast), constrained JSON output |
-| 0.2 embedding | [jina-embeddings-v5-text-nano](https://huggingface.co/jinaai/jina-embeddings-v5-text-nano) | ONNX | 32K | ~180MB | ~12ms | 239M, 768-dim, matryoshka, task LoRA adapters, 119+ languages. ONNX in [task-specific repos](https://huggingface.co/jinaai/jina-embeddings-v5-text-nano-retrieval) |
-| 0.3 urgency | [deberta-v3-base-zeroshot-v2.0](https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0) | ONNX | 512 | ~140MB | <5ms | zero-shot NLI classifier, any labels without fine-tuning. ONNX in repo |
-| 0.4 language | [glotlid-v3](https://huggingface.co/cis-lmu/glotlid) + [guesslang](https://github.com/yoeo/guesslang) | fasttext + tf | n/a | ~5MB | <1ms | 2102 natural languages (incl. Balinese) + 54 programming languages |
-| 0.5 intent | [qwen2.5-0.5b-abliterated-v3](https://huggingface.co/huihui-ai/Qwen2.5-0.5B-Instruct-abliterated-v3) | GGUF | 32K | ~350MB | ~15ms | 0% refusal rate on 320 harmful-instruction tests, constrained JSON |
-| 0.6 anomaly | [tranad](https://github.com/imperial-qore/TranAD) + [modernbert-base](https://huggingface.co/answerdotai/ModernBERT-base) | pytorch + ONNX | 8K | ~120MB | ~10ms | tranad (<1M) for numeric streams, modernbert (150M, ONNX in repo) for text logs |
-| 0.7 splitter | [smollm2-360m-instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) | ONNX | 8K | ~200MB | ~12ms | 4T tokens training, generative splitting with priority labels. ONNX in repo |
-| 0.8 injection detector | [granite-guardian-hap-125m](https://huggingface.co/ibm-granite/granite-guardian-hap-125m) + [38m](https://huggingface.co/ibm-granite/granite-guardian-hap-38m) | pytorch | 512 | ~130MB | <3ms | external input only. owner input bypasses completely. binary classifier, owner sets threshold |
+runtime stack: ONNX Runtime (7 slots) + native Rust (1 slot). zero Python, zero PyTorch, zero TensorFlow.
+
+convert commands for models without ONNX in repo:
+```
+optimum-cli export onnx --model huihui-ai/Qwen3-0.6B-abliterated ./onnx/router/
+optimum-cli export onnx --model huihui-ai/Qwen2.5-0.5B-Instruct-abliterated-v3 ./onnx/intent/
+optimum-cli export onnx --model ibm-granite/granite-guardian-hap-125m ./onnx/injection-125m/
+optimum-cli export onnx --model ibm-granite/granite-guardian-hap-38m ./onnx/injection-38m/
+```
+
+| slot | model | runtime | context | RAM | latency | notes |
+|------|-------|---------|---------|-----|---------|-------|
+| 0.1 router | [qwen3-0.6b-abliterated](https://huggingface.co/huihui-ai/Qwen3-0.6B-abliterated) | ONNX (convert) | 40K | ~350MB | ~15ms | LLM router — the reason modern agents work. abliterated, dual-mode (thinking/fast), constrained JSON output |
+| 0.2 embedding | [jina-embeddings-v5-text-nano](https://huggingface.co/jinaai/jina-embeddings-v5-text-nano-retrieval) | ONNX (in repo) | 32K | ~180MB | ~12ms | 239M, 768-dim, matryoshka, task LoRA adapters, 119+ languages |
+| 0.3 urgency | [deberta-v3-base-zeroshot-v2.0](https://huggingface.co/MoritzLaurer/deberta-v3-base-zeroshot-v2.0) | ONNX (in repo) | 512 | ~140MB | <5ms | zero-shot NLI classifier, any labels without fine-tuning |
+| 0.4 language | [glotlid-v3](https://huggingface.co/cis-lmu/glotlid) + [hyperpolyglot](https://github.com/monkslc/hyperpolyglot) | native Rust | n/a | ~5MB | <1ms | fasttext-rs loads .bin directly. 2102 natural langs (incl. Balinese) + 100+ programming langs (Rust port of GitHub Linguist) |
+| 0.5 intent | [qwen2.5-0.5b-abliterated-v3](https://huggingface.co/huihui-ai/Qwen2.5-0.5B-Instruct-abliterated-v3) | ONNX (convert) | 32K | ~350MB | ~15ms | 0% refusal rate on 320 harmful-instruction tests, constrained JSON |
+| 0.6 anomaly | [tranad](https://github.com/imperial-qore/TranAD) + [modernbert-base](https://huggingface.co/answerdotai/ModernBERT-base) | ONNX (convert + in repo) | 8K | ~120MB | ~10ms | tranad: torch.onnx.export one-liner. modernbert: 8 ONNX variants in repo |
+| 0.7 splitter | [smollm2-360m-instruct](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct) | ONNX (in repo) | 8K | ~200MB | ~12ms | 4T tokens training, generative splitting with priority labels |
+| 0.8 injection detector | [granite-guardian-hap-125m](https://huggingface.co/ibm-granite/granite-guardian-hap-125m) + [38m](https://huggingface.co/ibm-granite/granite-guardian-hap-38m) | ONNX (convert) | 512 | ~130MB | <3ms | external input only. owner input bypasses completely. binary classifier, owner sets threshold |
 | | | | total: | ~1.38GB | <40ms | all 8 run in parallel, critical path ~15ms GPU |
 
 ### tier 1
