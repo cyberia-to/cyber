@@ -166,6 +166,31 @@ rechunking is incremental — files re-encode independently. the system remains 
 
 the commitment root updates atomically after rechunking completes for each file batch. devices running old and new chunk layouts simultaneously is safe — both layouts are valid against their respective roots. convergence to the new layout is [[eventual consistency]] at the device level.
 
+### virtual disks
+
+the local device set presents as a virtual filesystem with multiple disks. each disk has its own erasure parameters, cache policy, and rechunking priority. the [[neuron]] sees a unified namespace; the system maps files to erasure-coded chunks across devices transparently.
+
+```
+/vault/keys        → disk0: replication=full,  f=n-1
+/vault/work        → disk1: erasure=(k,n),     f=1
+/vault/archive     → disk2: erasure=(k,n),     f=1, cold fetch
+/vault/media       → disk3: erasure=(k,n),     f=1, lazy rechunk
+```
+
+disk parameters adapt as devices join or leave. a [[neuron]] with 2 devices has k=1 everywhere (full replication, the only option). at 3 devices, disk1 can switch to (2,3) — each device drops from 100% to 50% for that volume. at 5 devices, media can run (4,5) — 25% per device.
+
+```
+devices   disk0 (keys)   disk1 (work)   disk2 (archive)   disk3 (media)
+  2       full (1,2)     full (1,2)     full (1,2)        full (1,2)
+  3       full (1,3)     (2,3) 50%      (2,3) 50%         (2,3) 50%
+  5       full (1,5)     (4,5) 25%      (4,5) 25%         (4,5) 25%
+ 10       full (1,10)    (9,10) 11%     (9,10) 11%        (9,10) 11%
+```
+
+each disk is a separate commitment subtree under the [[neuron]]'s root. per-disk rechunking means adding a device only re-encodes volumes that change parameters — disk0 (full replication) just copies to the new member, disk1 re-encodes only if the neuron opts for tighter k.
+
+this is the local-scale instance of [[cyb/fs]]: a content-addressed virtual filesystem over the [[cybergraph]]. at global scale the same abstraction applies — [[neurons]] instead of devices, [[stake]]-weighted distribution instead of capacity-weighted, slashing instead of key revocation. the FS interface is identical. only the trust model and parameters change.
+
 ## the cost (current NMT-based)
 
 ```
