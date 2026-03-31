@@ -70,6 +70,102 @@ the same mechanism works at every scale. only parameters change:
 
 at local scale: a phone verifies its server has all files without downloading them. at global scale: light clients verify block data availability without running a full node.
 
+## local scale: personal device erasure coding
+
+a [[neuron]] with n devices and data of size D wants to survive f device failures without storing D on every device. erasure coding (k, n) where k = n − f gives the minimum: each device stores D/k.
+
+| devices (n) | tolerated losses (f) | k = n−f | per device | total across devices | overhead vs full replication |
+|---|---|---|---|---|---|
+| 3 | 1 | 2 | D/2 | 1.5 × D | 2× less than 3-copy |
+| 5 | 1 | 4 | D/4 | 1.25 × D | 4× less than 5-copy |
+| 5 | 2 | 3 | D/3 | 1.67 × D | 3× less than 5-copy |
+| 10 | 2 | 8 | D/8 | 1.25 × D | 8× less than 10-copy |
+
+combined with tiering by criticality (same tiers as global DA, scaled to personal use):
+
+```
+tier 0 — keys, seeds, irreplaceable documents
+  full replication on every device. small (<1 GB). loss = identity death.
+
+tier 1 — active working files
+  (k, n) erasure coding. each device holds D₁/k.
+  frequent access, low latency required.
+
+tier 2 — archive, media, old projects
+  (k, n) erasure coding. cold storage acceptable.
+  bulk of data lives here. retrieval latency in seconds is fine.
+```
+
+for a neuron with 3 devices and 100 GB:
+
+```
+tier 0:   5 GB × 3 copies  =  15 GB total, 5 GB per device
+tier 1:  30 GB ÷ k=2       =  45 GB total, 15 GB per device
+tier 2:  65 GB ÷ k=2       =  97 GB total, ~33 GB per device
+─────────────────────────────────────────────────────────────
+total:                        157 GB total, ~53 GB per device
+vs full 3× replication:       300 GB total, 100 GB per device
+```
+
+### transparent fetch
+
+a device that holds chunk i but needs chunk j (stored on a peer device) fetches it on demand. the flow:
+
+```
+1. local read for file F
+2. check: do I hold the chunk(s) for F?
+   → yes: serve from local storage
+   → no:  query peer devices for missing chunk(s)
+3. peer returns chunk + NMT inclusion proof
+4. verify chunk against local commitment root
+5. reconstruct file from k chunks (local + fetched)
+6. optionally cache reconstructed file locally (LRU eviction)
+```
+
+the key property: the local commitment root is the same across all devices. a fetched chunk is verified cryptographically — no trust in the peer device, only in the math. a compromised device cannot serve bad chunks undetected.
+
+cache policy matters: frequently accessed files that live on another device should migrate locally (hot promotion). rarely accessed local files can be evicted to parity-only (cold demotion). the device set collectively maintains the invariant that k of n chunks exist for every file — which chunks live where is a local optimization.
+
+### rechunking on configuration change
+
+when a device joins or leaves, the (k, n) parameters change and chunks must be redistributed. the cost depends on the change type:
+
+```
+DEVICE JOINS (n → n+1):
+  option A — keep k, increase redundancy (f+1 tolerated failures)
+    generate 1 new parity chunk per file, send to new device
+    cost: O(D/k) encoding + O(D/k) network transfer
+    no existing device re-encodes. only parity generation for the new member.
+
+  option B — increase k (keep f, reduce per-device storage)
+    full re-encode: split data into k+1 chunks instead of k
+    cost: O(D) encoding + O(D) redistribution
+    every device gets a smaller chunk set. storage per device drops.
+
+DEVICE LEAVES (n → n-1):
+  if f > 1: reduce f by 1. no rechunking needed. system still survives f-1 losses.
+  if f = 1: critical — must rechunk to restore fault tolerance.
+    reconstruct lost chunks from remaining k devices: O(D/k) decoding.
+    re-encode with new (k', n-1) parameters.
+    cost: O(D) encoding + O(D/(n-1)) transfer to each remaining device.
+
+PRACTICAL NUMBERS (100 GB, 3 devices → 4 devices, option A):
+  generate 1 parity chunk: ~50 GB encoding (RS over existing chunks)
+  transfer to new device: ~50 GB over local network
+  at 1 Gbps LAN: ~7 minutes
+  existing devices: zero downtime, serve reads throughout
+
+PRACTICAL NUMBERS (100 GB, 3 devices → 2 devices, emergency):
+  reconstruct from 2 remaining: ~50 GB decoding
+  re-encode as (1, 2) = full replication: 100 GB per device
+  at 1 Gbps: ~14 minutes for full recovery
+  during recovery: all data accessible from the 2 survivors (k=2 satisfied)
+```
+
+rechunking is incremental — files re-encode independently. the system remains available throughout: any k surviving chunks serve reads while background rechunking runs. priority queue: tier 0 (already fully replicated, zero work), tier 1 (active files first), tier 2 (archive last).
+
+the commitment root updates atomically after rechunking completes for each file batch. devices running old and new chunk layouts simultaneously is safe — both layouts are valid against their respective roots. convergence to the new layout is [[eventual consistency]] at the device level.
+
 ## the cost (current NMT-based)
 
 ```
