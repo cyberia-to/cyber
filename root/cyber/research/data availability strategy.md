@@ -222,6 +222,47 @@ device A fills up (user installs app):
 
 the virtual disk parameters (k, n, f) set the redundancy target. capacity weighting decides where chunks physically sit. these are orthogonal: the same (2,3) erasure code works whether devices are 50/50/50 GB or 10/40/100 GB. the only hard constraint is sum of capacities ≥ encoded size.
 
+### two user-facing primitives
+
+from the [[neuron]]'s perspective, the entire local storage system reduces to two operations:
+
+```
+create-disk <name> --redundancy f --tier <0|1|2> --cache-policy <hot|cold|lru>
+attach <device> <disk> --capacity <size>
+```
+
+create-disk defines a logical volume: what redundancy, what access pattern. it has no physical storage until devices are attached. the system derives k = n − f automatically once enough devices exist (n ≥ f + 1).
+
+attach allocates physical space from a specific device into a logical disk. one device can contribute to multiple disks. one disk spans multiple devices.
+
+```
+create-disk keys   --redundancy max  --tier 0  --cache-policy hot
+create-disk work   --redundancy 1    --tier 1  --cache-policy lru
+create-disk archive --redundancy 1   --tier 2  --cache-policy cold
+
+attach phone  keys    --capacity 1GB
+attach phone  work    --capacity 20GB
+attach laptop keys    --capacity 1GB
+attach laptop work    --capacity 50GB
+attach laptop archive --capacity 100GB
+attach server keys    --capacity 1GB
+attach server work    --capacity 30GB
+attach server archive --capacity 200GB
+```
+
+the system computes from attachments:
+
+```
+disk    devices   total capacity   k    per-file overhead   status
+keys    3         3 GB             1    full replication     ✓ healthy (f=2)
+work    3         100 GB           2    1.5×                 ✓ healthy (f=1)
+archive 2         300 GB           1    full replication     ⚠ needs 3rd device for f=1
+```
+
+when a new device is attached to a disk, k increases (if the neuron opts in) and per-device storage drops. when a device detaches, the system rechunks in background to maintain the redundancy target. if total capacity falls below the encoded size, the system alerts before data loss becomes possible.
+
+the separation is clean: create-disk is a policy decision (how safe). attach is a resource decision (how much space from where). chunk placement, rebalancing, transparent fetch, and rechunking are internal — the neuron never manages individual chunks.
+
 this is the local-scale instance of [[cyb/fs]]: a content-addressed virtual filesystem over the [[cybergraph]]. at global scale the same abstraction applies — [[neurons]] instead of devices, [[stake]]-weighted distribution instead of capacity-weighted, slashing instead of key revocation. the FS interface is identical. only the trust model and parameters change.
 
 ## the cost (current NMT-based)
