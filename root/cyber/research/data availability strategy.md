@@ -263,7 +263,32 @@ when a new device is attached to a disk, k increases (if the neuron opts in) and
 
 the separation is clean: create-disk is a policy decision (how safe). attach is a resource decision (how much space from where). chunk placement, rebalancing, transparent fetch, and rechunking are internal — the neuron never manages individual chunks.
 
+### structural sync at local scale
+
+the local device system is [[structural sync]] — the same five-layer verification framework that runs the global [[cybergraph]], with one difference in trust model:
+
+```
+layer   mechanism           local (devices)              global (neurons)
+─────   ─────────           ───────────────              ────────────────
+1       validity (zheng)    file write = valid signal     cyberlink = valid signal
+                            chunk encoding proven         state transition proven
+2       ordering            hash chain per device         hash chain + VDF per neuron
+                            causal order, no coordination causal + temporal order
+3       completeness (NMT)  sync between devices:         sync between neurons:
+                            nothing withheld              nothing withheld
+4       availability (DAS)  erasure coding across         erasure coding across
+                            device set                    neuron set
+5       merge               CRDT (cooperative)            foculus (adversarial)
+                            same neuron, no sybil         stake-weighted convergence
+```
+
+layers 1-4 are identical at both scales. layer 5 is the only difference: local devices share one [[neuron]] identity (cooperative trust, [[CRDT]] merge is sufficient), global neurons have adversarial trust (stake-weighted [[foculus]] convergence required).
+
+each virtual disk is a namespace in the [[NMT]]. create-disk defines the namespace and its layer 3-4 parameters (completeness proof scope, erasure coding rate). attach allocates physical storage for layer 4 within that namespace. the five layers compose the same way at both scales — [[Verified Eventual Consistency]] holds whether the "network" is three phones or ten billion neurons.
+
 this is the local-scale instance of [[cyb/fs]]: a content-addressed virtual filesystem over the [[cybergraph]]. at global scale the same abstraction applies — [[neurons]] instead of devices, [[stake]]-weighted distribution instead of capacity-weighted, slashing instead of key revocation. the FS interface is identical. only the trust model and parameters change.
+
+see [[structural sync]] for the five-layer framework. see [[cyber/research/structural-sync]] for the formal VEC definition and minimum structure theorem.
 
 ## the cost (current NMT-based)
 
