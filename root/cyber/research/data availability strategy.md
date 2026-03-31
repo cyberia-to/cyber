@@ -189,6 +189,39 @@ devices   disk0 (keys)   disk1 (work)   disk2 (archive)   disk3 (media)
 
 each disk is a separate commitment subtree under the [[neuron]]'s root. per-disk rechunking means adding a device only re-encodes volumes that change parameters — disk0 (full replication) just copies to the new member, disk1 re-encodes only if the neuron opts for tighter k.
 
+### capacity-weighted chunk distribution
+
+devices rarely have equal free space. the system adapts by using fine-grained chunks (per-file or fixed-size blocks, 1-4 MB) and distributing them proportional to each device's available capacity. the constraint: total available capacity across all devices ≥ D × n/k (the encoded data size).
+
+```
+100 GB data, rate 1/2 (k=2, n=3), encoded total = 150 GB:
+
+device A (phone, 30 GB free):   gets  30 GB of chunks   (20%)
+device B (laptop, 70 GB free):  gets  70 GB of chunks   (47%)
+device C (server, 50 GB free):  gets  50 GB of chunks   (33%)
+──────────────────────────────────────────────────────────────
+total available: 150 GB = 150 GB needed                    ✓
+```
+
+any k chunks per file reconstruct it regardless of which device holds them. the placement is a bin-packing problem, not a rigid 1-chunk-per-device assignment. a file's chunks can all live on the largest device if needed — the redundancy guarantee is per-file (k of n chunks survive), not per-device (equal load).
+
+rebalancing on capacity change:
+
+```
+device B frees 20 GB (user deletes local files):
+  → B now has 90 GB free
+  → system can migrate chunks from A (constrained) to B (spacious)
+  → per-file k-of-n invariant maintained throughout
+  → background process, zero downtime
+
+device A fills up (user installs app):
+  → A has 10 GB free, holds 30 GB of chunks → 20 GB must migrate out
+  → system moves lowest-priority chunks (tier 2 archive) to B or C
+  → if total capacity drops below D × n/k → alert: add device or reduce data
+```
+
+the virtual disk parameters (k, n, f) set the redundancy target. capacity weighting decides where chunks physically sit. these are orthogonal: the same (2,3) erasure code works whether devices are 50/50/50 GB or 10/40/100 GB. the only hard constraint is sum of capacities ≥ encoded size.
+
 this is the local-scale instance of [[cyb/fs]]: a content-addressed virtual filesystem over the [[cybergraph]]. at global scale the same abstraction applies — [[neurons]] instead of devices, [[stake]]-weighted distribution instead of capacity-weighted, slashing instead of key revocation. the FS interface is identical. only the trust model and parameters change.
 
 ## the cost (current NMT-based)
