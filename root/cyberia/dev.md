@@ -12,12 +12,13 @@ density: 0
 ---
 # dev
 
-principles for working with AI coding agents across any project. this page is the bootstrap entry point — read it and the four foundational documents to have complete development context:
+principles for working with AI coding agents across any project. this page is the bootstrap entry point — read it and the five foundational documents to have complete development context:
 
 - [[cyber/engineering]] — pipeline contracts, dual-stream optimization, verification dimensions
 - [[cyber/quality]] — 12 review passes, severity tiers, audit protocol
 - [[cyber/projects]] — repo layout, namespace conventions, git workflow
 - [[cyber/documentation]] — Diataxis framework, reference vs docs, spec before code
+- [[cyber/refinement]] — document polishing: kill the zoo, hunt violations, seven-round audit
 
 ## auditor mindset
 
