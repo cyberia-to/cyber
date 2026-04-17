@@ -25,21 +25,22 @@ no GPUs needed for the compile step. the entire procedure is a sequence of SVDs 
 
 ## prerequisites
 
-the graph must already have:
+the only required input is the raw cyberlink list — the 7-tuples `(ν, p, q, τ, a, v, t)` straight from chain. everything else is computed by the compiler:
 
-- focus distribution π* — computed by [[trikernel]] over particles
-- semcon assignments σ — every cyberlink labeled with a [[semcon]]
-- adjacency matrix A — sparse, stake-weighted
+- particle index — assign each unique CID an integer id (pass 1)
+- semcon set — discovered from labeling structure (pass 2)
+- focus distribution π* — fixed point of [[trikernel]] over the adjacency (pass 3)
+- adjacency matrix A — sparse CSR, stake-weighted (folded into pass 3)
 
-if the graph lacks these, run `analizer/trikernel.nu` first to populate the frontmatter weights, then fold the per-page values into a global π vector.
+if the graph already has `focus` precomputed in frontmatter (run `analizer/trikernel.nu`), pass 3 reuses it; otherwise it computes π* on the fly.
 
 ---
 
-## the seven passes
+## the eight passes
 
 ### pass 1 — vocabulary
 
-walk every [[particle]] in the graph. assign each a token id by ascending CID. emit `vocab.json`:
+walk every [[particle]] referenced by any cyberlink. assign each a token id by ascending CID. emit `vocab.json`:
 
 ```json
 { "QmA1...": 0, "QmB2...": 1, ... }
@@ -47,7 +48,51 @@ walk every [[particle]] in the graph. assign each a token id by ascending CID. e
 
 vocabulary size equals particle count. for a graph with 100k particles the vocab has 100k entries — comparable to BPE tokenizers but with content-addressed identity instead of statistical merges.
 
-### pass 2 — architecture parameters
+### pass 2 — semcon discovery
+
+a [[cyberlink]] has no built-in type field (see [[cyber/link]] §edge labeling). labels emerge through the graph itself. every directed edge `p → q` induces an [[axon]]-particle `H(p, q) ∈ P` by axiom A6. an edge is labeled when some other particle `t` has been linked to that axon: a cyberlink `t → axon(p, q)` says "the relation `p → q` is of type `t`". the labeling particle `t` IS the [[semcon]].
+
+discovery procedure:
+
+```
+1. for every cyberlink (ν, p, q, ...): compute axon_id = H(p, q)
+   axon_set = { axon_id : axon_id appears as target of some cyberlink }
+
+2. for every cyberlink whose target q is in axon_set:
+   record (source p, target axon q, stake a)
+   p is a "label particle" — a candidate semcon
+
+3. score each candidate p:
+   usage[p] = sum of stake over all cyberlinks (p → axon ∈ axon_set)
+   coverage[p] = number of distinct axons p has labeled
+
+4. rank by usage × log(coverage). take top h candidates whose
+   stake-weighted usage exceeds threshold θ (e.g. 0.1% of total stake).
+   these are the registered semcons.
+
+5. assign σ to every cyberlink ℓ:
+   σ(ℓ) = argmax over registered semcons of stake(s → axon(ℓ))
+   if no registered semcon labels axon(ℓ): σ(ℓ) = "default"
+```
+
+a cyberlink can have multiple labels — pick the highest-staked one, or split its weight across labels (multi-label assignment). multi-label is more faithful but costs an extra factor of `h` in pass 5; single-label is the practical default.
+
+unlabeled edges go to a single "default" semcon bucket. on a young graph this is the largest bucket; as the network matures and labeling conventions consolidate, default shrinks. on bostrom end of 2024, default holds about 60% of edges. the registered semcons (`is-a`, `tags`, `cites`, `contradicts`, `extends`, `created-by`, `replies-to`, `name`, `summary`, `instance-of`, `part-of`, `derived-from`) hold the rest.
+
+emit `semcons.json`:
+
+```json
+{
+  "QmIsA...":   { "id": 0, "edges": 412331, "stake": 1.2e18 },
+  "QmTags...":  { "id": 1, "edges": 287104, "stake": 8.4e17 },
+  ...
+  "default":    { "id": 11, "edges": 1623450, "stake": 4.1e17 }
+}
+```
+
+cost: O(\|E\|) — one pass to build the axon set, one pass to score labels, one pass to assign. on bostrom this finishes in under two seconds.
+
+### pass 3 — architecture parameters
 
 compute three numbers from the graph:
 
@@ -61,7 +106,7 @@ L  = diam(G) * ceil(log(1/ε) / log(1/κ))  # layer count
 
 write these to `arch.toml`. all subsequent passes read them.
 
-### pass 3 — embedding matrix
+### pass 4 — embedding matrix
 
 build the diagonal-rescaled adjacency:
 
@@ -78,7 +123,7 @@ E = U[:, :d]                              # shape (|P|, d)
 
 `E` is the embedding matrix. each row is one particle's coordinates in focus space. the Eckart-Young theorem guarantees this is the optimal rank-`d` reconstruction of the focus-weighted graph. no learned embedding can beat it under the same dimension budget.
 
-### pass 4 — per-semcon attention weights
+### pass 5 — per-semcon attention weights
 
 partition the edge set by semcon. for each semcon `s`:
 
@@ -93,7 +138,7 @@ W_V[s] = E^T · A_s.T                      # value projection: aggregate neighbo
 
 where `d_h = d / h` is the per-head dimension. one head per semcon, weights derived directly from that semcon's connectivity pattern. attention matrices have the same shape as a trained transformer's — they just come from SVD rather than SGD.
 
-### pass 5 — MLP weights from path statistics
+### pass 6 — MLP weights from path statistics
 
 for each layer `l ∈ [1, L]`, walk all `l`-hop paths in the graph. count co-occurrences of (start particle, end particle) pairs weighted by path stake. the resulting matrix `C_l` encodes which particles tend to follow which through `l` hops of reasoning.
 
@@ -106,13 +151,13 @@ W_up[l], W_down[l] = low_rank_factorization(C_l_proj, rank=4d)
 
 standard transformer MLPs have hidden dimension `4d`. the factorization gives the up- and down-projections directly. activation function: SiLU, same as Llama family — this choice is empirical, not derived.
 
-### pass 6 — layer norm and position encoding
+### pass 7 — layer norm and position encoding
 
 layer norms are initialized identity (γ=1, β=0) and remain so. compiled weights produce activations already at unit scale because the SVDs were normalized — runtime layer norm corrects only for distribution shift across context, not for the compiled weights themselves.
 
 position encoding follows RoPE with base 10000. position is a property of the input sequence, not the graph, so it carries no graph-derived structure.
 
-### pass 7 — serialization
+### pass 8 — serialization
 
 emit a single safetensors file:
 
@@ -140,12 +185,13 @@ format is interchangeable with any HuggingFace transformer of the same shape. lo
 | pass | dominant op | cost | notes |
 |---|---|---|---|
 | 1 vocab | linear scan | O(P) | trivial |
-| 2 arch | rank of cov(π) | O(P d²) | one SVD on a small matrix |
-| 3 embed | top-d SVD of M | O(P² d) sparse → O(P d log P) | use randomized SVD |
-| 4 attn | h SVDs of P×P | O(h · d³) after projection | per-semcon, parallel |
-| 5 MLP | l-hop walks | O(L · P · avg_degree^L) | bounded by capping path count per pair |
-| 6 norm | none | O(L d) | constants |
-| 7 save | I/O | O(L d²) | one disk write |
+| 2 semcon | axon scan + label scoring | O(\|E\|) | three linear passes over edge list |
+| 3 arch | rank of cov(π) | O(P d²) | one SVD on a small matrix |
+| 4 embed | top-d SVD of M | O(P² d) sparse → O(P d log P) | use randomized SVD |
+| 5 attn | h SVDs of P×P | O(h · d³) after projection | per-semcon, parallel |
+| 6 MLP | l-hop walks | O(L · P · avg_degree^L) | bounded by capping path count per pair |
+| 7 norm | none | O(L d) | constants |
+| 8 save | I/O | O(L d²) | one disk write |
 
 a 100k-particle graph compiles to a `d=768, h=12, L=24` model in roughly 30 minutes on one machine. the same architecture trained from scratch takes weeks on a GPU cluster.
 
@@ -183,13 +229,14 @@ single machine, 1 TFLOPS, 20 GB RAM, no GPU:
 |---|---|
 | extract from chain (GraphQL) | ~1 s |
 | sparse adjacency CSR | <0.1 s |
+| semcon discovery (axon scan + label scoring) | ~1.8 s |
 | focus by power iteration (29 rounds, α=0.85) | 0.08 s |
 | spectral gap (Lanczos, k=10) | 0.03 s |
 | randomized SVD for embedding (Halko-Martinsson-Tropp) | 0.007 s |
 | 12 semcon attention SVDs | 0.8 s |
 | MLP from random walks (314k walks × 290 hops) | 0.06 s |
 | safetensors / ONNX assembly | ~60 s (disk I/O bound) |
-| total | ~62 s |
+| total | ~64 s |
 
 the compile finishes faster than `git pull` on the chain snapshot itself. inference afterwards runs on the same hardware as any 4B-parameter transformer.
 
@@ -207,9 +254,9 @@ at Avogadro scale (\|P\| = 10²³, \|E\| ≈ 10³⁰, ρ ≈ 10⁻¹⁶), the sa
 
 ### what bostrom's current model knows
 
-the 4.19B-parameter compile encodes everything the chain has explicitly staked: which particles connect to which, weighted by who staked the link and how much. it does not encode implicit associations (text patterns never linked), local language fluency (no text training), or anything outside the chain. for that, run the fine-tune step in the loop below.
+the 4.19B-parameter compile encodes everything the chain has explicitly staked: which particles connect to which, labeled by which semcons, weighted by who staked the link and how much. coverage stops at the chain boundary — implicit text patterns, local language fluency, and out-of-chain knowledge enter only through the fine-tune step in the loop below.
 
-what it does encode, perfectly: the structural truth of bostrom at one block height, with every weight traceable to a specific cyberlink and the neuron that staked it. an alignment audit on this model is `git blame` against weights.
+inside the chain boundary, encoding is exact: the structural truth of bostrom at one block height, every weight traceable to a specific cyberlink and the neuron that staked it. an alignment audit on this model is `git blame` against weights.
 
 ---
 
@@ -270,11 +317,12 @@ minimum viable implementation:
 # analizer/compile-transformer.nu
 def main [graph_path: string, out: string] {
     let particles = (load_particles $graph_path)
-    let cyberlinks = (load_cyberlinks $graph_path)
-    let pi = (load_focus $graph_path)
-    let semcons = ($cyberlinks | get semcon | uniq)
+    let cyberlinks = (load_cyberlinks $graph_path)        # raw 7-tuples
+    let pi = (load_or_compute_focus $graph_path)
 
     let vocab = (build_vocab $particles)
+    let semcons = (discover_semcons $cyberlinks)          # pass 2: axon scan
+    let cyberlinks = ($cyberlinks | each {|l| assign_semcon $l $semcons })
     let arch = (compute_arch $pi $semcons $cyberlinks)
     let E = (compile_embedding $particles $cyberlinks $pi $arch.d)
     let attn = ($semcons | each {|s| compile_attention $cyberlinks $E $s $arch.d_h })
