@@ -18,7 +18,7 @@ CT-1 specifies a deterministic function
 
 $$\text{compile}: G \to \mathcal{M}$$
 
-where $G$ is a cybergraph snapshot at a fixed block height and $\mathcal{M}$ is a transformer checkpoint serializable as safetensors. Two implementations conforming to CT-1 must produce byte-identical $\mathcal{M}$ given byte-identical $G$ and the same compiler version.
+where $G$ is a cybergraph snapshot in [[cyb-graph|.graph format]] and $\mathcal{M}$ is a transformer checkpoint in [[cyb-model|.model format]]. Two implementations conforming to CT-1 must produce a byte-identical $\mathcal{M}$ given a byte-identical $G$ and the same compiler version.
 
 ---
 
@@ -26,11 +26,13 @@ where $G$ is a cybergraph snapshot at a fixed block height and $\mathcal{M}$ is 
 
 ### 2.1 Snapshot
 
-A snapshot is a tuple $G = (L, h, \nu_{\text{compiler}})$ where:
+A snapshot is a `.graph` container (see [[cyb-graph]]) read into the tuple $G = (L, h, \nu_{\text{compiler}})$ where:
 
-- $L$ — the cyberlink list, ordered by block height then by intra-block index
-- $h$ — the block height at which the snapshot is taken
+- $L$ — the `cyberlinks` records, ordered as written in the file (canonical chain order)
+- $h$ — the `block` field of the `config` section
 - $\nu_{\text{compiler}}$ — the compiler version string (`"CT-1.0"` for this spec)
+
+The `proof` section of the `.graph` is verified before compilation begins; CT-1 conforming compilers refuse to compile snapshots that fail proof verification when `[provenance].proof_required = true`.
 
 ### 2.2 Cyberlink
 
@@ -320,7 +322,7 @@ RoPE with base $\theta_0 = 10000$, max sequence length 8192. Inverse frequencies
 
 ### 10.1 Container
 
-A single safetensors file `model.safetensors`. Tensor naming follows the HuggingFace `LlamaForCausalLM` convention so that `transformers.AutoModelForCausalLM.from_pretrained(...)` loads the file directly.
+A single `.model` file (see [[cyb-model]]). Tensors are packed in the `weights` section with HuggingFace `LlamaForCausalLM` naming so that the same byte stream is loadable by both the cyb runtime and `transformers.AutoModelForCausalLM.from_pretrained(...)` when extracted to a HuggingFace directory.
 
 ### 10.2 Metadata
 
@@ -415,6 +417,6 @@ Open items expected in CT-1.1:
 
 ---
 
-see [[compiled transformers]] for the readable how-to. see [[graph-native-transformer]] for the mathematical derivation. see [[cyber/link]] for the cyberlink seven-tuple. see [[cyber/tri-kernel]] for the focus computation. see [[cybergraph]] for the underlying axioms. see [[cyber-compile]] for the reference rust implementation.
+see [[compiled transformers]] for the readable how-to. see [[graph-native-transformer]] for the mathematical derivation. see [[cyb-graph]] for the input file format. see [[cyb-model]] for the output file format. see [[cyber/link]] for the cyberlink seven-tuple. see [[cyber/tri-kernel]] for the focus computation. see [[cybergraph]] for the underlying axioms. see [[cyber-compile]] for the reference rust implementation.
 
 discover all [[concepts]]
