@@ -553,14 +553,14 @@ A round-trip extraction to a HuggingFace directory (config.json + model.safetens
 
 ## 12. Reference Implementation
 
-The reference is `~/git/cyber-compile` (rust, sprs + ndarray, writes `.model` directly via the cyb-format crate from `~/git/cyb/llm`). It depends on no Python and produces no intermediate safetensors — the `.model` file is the only artifact.
+The reference is [[mc]] (model compilation) at `~/git/mc` — rust, sprs + ndarray, writes `.model` directly via the cyb-format crate from `~/git/cyb/llm`. It depends on no Python and produces no intermediate safetensors — the `.model` file is the only artifact.
 
 Build and run:
 
 ```
-cd ~/git/cyber-compile
+cd ~/git/mc
 cargo build --release
-./target/release/cyber-compile bostrom-23195000.graph -o bostrom-23195000-ct1.model
+./target/release/mc bostrom-23195000.graph -o bostrom-23195000-ct1.model
 ```
 
 The certificate is embedded in the `.model`'s `eval` section (§10.7). The CLI also writes a sidecar `certificate.toml` for human inspection:
@@ -581,7 +581,7 @@ End-to-end pipe from go-cyber to a loaded model in one command:
 
 ```
 curl -s https://node.bostrom.cybernode.ai/cyber/graph/snapshot?block=23195000 \
-  | cyber-compile - -o bostrom-latest.model \
+  | mc - -o bostrom-latest.model \
   && cyb-llm load bostrom-latest.model
 ```
 
@@ -599,6 +599,6 @@ Open items expected in CT-1.1:
 
 ---
 
-see [[compiled transformers]] for the readable how-to. see [[graph-native-transformer]] for the mathematical derivation. see [[cyb-graph]] for the input file format. see [[cyb-model]] for the output file format. see [[cyber/link]] for the cyberlink seven-tuple. see [[cyber/tri-kernel]] for the focus computation. see [[cybergraph]] for the underlying axioms. see [[cyber-compile]] for the reference rust implementation.
+see [[compiled transformers]] for the readable how-to. see [[graph-native-transformer]] for the mathematical derivation. see [[cyb-graph]] for the input file format. see [[cyb-model]] for the output file format. see [[cyber/link]] for the cyberlink seven-tuple. see [[cyber/tri-kernel]] for the focus computation. see [[cybergraph]] for the underlying axioms. see [[mc]] for the reference rust implementation.
 
 discover all [[concepts]]

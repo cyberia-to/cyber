@@ -332,7 +332,7 @@ def main [graph_path: string, out: string] {
 }
 ```
 
-the rust version lives in `~/git/cyber-compile` and produces production-quality output. the nu version is fast enough to experiment with smaller graphs (`|P| < 10k`) and validate the procedure before scaling.
+the rust version lives at [[mc]] (`~/git/mc`, model compilation) and produces production-quality output. the nu version is fast enough to experiment with smaller graphs (`|P| < 10k`) and validate the procedure before scaling.
 
 ---
 
