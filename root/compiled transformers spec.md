@@ -318,44 +318,202 @@ RoPE with base $\theta_0 = 10000$, max sequence length 8192. Inverse frequencies
 
 ---
 
-## 10. Pass 8 — Serialization
+## 10. Pass 8 — Packaging as `.model`
 
-### 10.1 Container
+The output of CT-1 is a single `.model` file (see [[cyb-model]]) loadable by the cyb-llm runtime at `~/git/cyb/llm`. The runtime mmaps the file, parses the TOML frontmatter, jumps to the binary `weights` section, and starts inference — no extraction step.
 
-A single `.model` file (see [[cyb-model]]). Tensors are packed in the `weights` section with HuggingFace `LlamaForCausalLM` naming so that the same byte stream is loadable by both the cyb runtime and `transformers.AutoModelForCausalLM.from_pretrained(...)` when extracted to a HuggingFace directory.
+### 10.1 Container layout
 
-### 10.2 Metadata
+`.cyb` three-rule contract: TOML frontmatter, `~~~name` delimiters, `size` for binary sections.
 
-The safetensors metadata header includes:
+```toml
+[cyb]
+types = ["model"]
+name = "bostrom-23195000-ct1"
 
-```json
-{
-  "compiler":      "CT-1.0",
-  "snapshot_cid":  "blake3:...",
-  "block":         12345678,
-  "graph_root":    "blake3:...",
-  "arch_hash":     "blake3(arch.toml)",
-  "vocab_hash":    "blake3(vocab.json)",
-  "semcons_hash":  "blake3(semcons.json)"
+[[files]]
+name = "card"
+format = "md"
+
+[[files]]
+name = "config"
+format = "toml"
+
+[[files]]
+name = "program"
+format = "rs"
+
+[[files]]
+name = "tensors"
+format = "toml"
+
+[[files]]
+name = "vocab"
+format = "toml"
+
+[[files]]
+name = "eval"
+format = "toml"
+
+[[files]]
+name = "weights"
+format = "tensors"
+size = 16823492608
+```
+
+### 10.2 `card` section
+
+Markdown. Auto-generated from compile inputs:
+
+```markdown
+~~~card
+# bostrom-23195000-ct1
+
+Compiled from bostrom-23195000.graph at 2026-03-23 14:42 UTC.
+Spec: CT-1.0. d=300, h=13, L=290, params=4.19B.
+
+snapshot CID: blake3:9f3c...
+compile CID:  blake3:1a2b...
+```
+
+### 10.3 `config` section
+
+Compile parameters and architecture, integers only per cyb-model convention.
+
+```toml
+~~~config
+model_type = "llama"
+parameters = 4192804864
+license = "cyber license"
+languages = []  # graph-native, vocabulary is CIDs
+
+[architecture]
+hidden_size = 300
+num_attention_heads = 13
+num_key_value_heads = 13
+head_dim = 24            # = 300 / 13, rounded
+num_hidden_layers = 290
+intermediate_size = 1200  # 4 × hidden_size
+vocab_size = 3143630
+context_length = 8192
+max_position_embeddings = 8192
+rope_theta = 10000
+rms_norm_eps = 1000000   # 1/ε convention; 1e-6
+
+[tokenizer]
+type = "cid"             # particle CIDs, not BPE
+bos_id = 0
+eos_id = 0
+pad_id = 0
+
+[sampling]
+temperature = 700        # 0.7
+top_p = 900              # 0.9
+scale = 1000
+
+[lineage]
+spec          = "CT-1.0"
+source        = "blake3:9f3c..."
+source_kind   = ".graph"
+chain_id      = "bostrom-1"
+block         = 23195000
+arch_hash     = "blake3:..."
+vocab_hash    = "blake3:..."
+semcons_hash  = "blake3:..."
+```
+
+### 10.4 `program` section
+
+The standard Llama transformer-decoder program from cyb-model.md applies unchanged. CT-1 emits the trident form by default; the `.rs` form is acceptable when proof is not required.
+
+```trident
+~~~program
+module model.pipeline
+use std.nn.transformer_llama  # standard library
+
+pub fn forward(input: Field, output: Field, seq: Field, cfg: Config) {
+    transformer_llama.forward(input, output, seq, cfg)
 }
 ```
 
-### 10.3 Companion files
+CT-1 does not emit a custom program. The architecture parameters in `config` parameterize the standard one. Custom programs (e.g. for graph-walk inference instead of token-sequence inference) are CT-1.1 territory.
 
-Alongside the safetensors:
+### 10.5 `tensors` section
 
-- `vocab.json` (from §3.2)
-- `semcons.json` (from §4.6)
-- `arch.toml` (from §5.5)
-- `manifest.json` — list of all tensor names with shapes and BLAKE3 of each tensor's bytes
+TOML index keyed by HuggingFace LlamaForCausalLM tensor names. Encoding is `u16` for projections and `u32` for norms by default; cyb-model encoding rules apply (no floats on disk).
 
-### 10.4 Reproducibility CID
+```toml
+~~~tensors
+["model.embed_tokens.weight"]
+shape    = [3143630, 300]
+encoding = "u16"
+offset   = 0
+size     = 1886178000
+
+["model.layers.0.self_attn.q_proj.weight"]
+shape    = [300, 300]
+encoding = "u16"
+offset   = 1886178000
+size     = 180000
+
+# ... attn k/v/o, mlp up/down, layer norms × 290 layers
+```
+
+Tensor names match those listed in §6.3, §7.6, §8.4, §9.1. Storage order: embedding first, then layer 0 through layer L*-1 in struct order, then `model.norm.weight`. `lm_head.weight` is omitted (tied to `embed_tokens`).
+
+### 10.6 `vocab` section
+
+For graph-native compiles the tokenizer type is `cid`: every token id is a particle hash. The vocab section is the particle index from pass 1 written as a flat table.
+
+```toml
+~~~vocab
+[tokens]
+0 = "0x1a2b3c4d..."
+1 = "0x5e6f7a8b..."
+2 = "0x9c0d1e2f..."
+# ...
+```
+
+For CIDs there are no merge rules; the `[merges]` table is omitted.
+
+### 10.7 `eval` section
+
+CT-1 conformance scores per §11, plus optional downstream metrics. Per-mille integers.
+
+```toml
+~~~eval
+[ct1_conformance]
+P_EMBED = 31         # reconstruction error × 1000; 0.031
+P_ATTN_min = 810     # min Pearson × 1000
+P_ATTN_mean = 890
+P_LAYER_max_ratio = 930
+P_DET = 1000         # 1 if deterministic, 0 if not
+P_LOAD = 1000
+
+[focus]
+top_concentration = 1040  # top particle's focus, per-mille of total
+```
+
+Updatable by the runtime after benchmark runs, same convention as cyb-model.
+
+### 10.8 `weights` section
+
+Raw tensor data, 4096-byte page-aligned per tensor for zero-copy mmap and `unimem` integration. Encodings follow cyb-model §weights:
+
+| from CT-1 internal | to disk encoding | conversion |
+|---|---|---|
+| float32 projections | u16 | `round(value * 256)` |
+| float32 norms | u32 | `round(value * 65536)` |
+
+For inference-time fidelity, CT-1.1 will allow `q4`/`q8` quantization passes after CT-1 produces the u16 baseline.
+
+### 10.9 Reproducibility CID
 
 The compile output CID is
 
-$$\text{CID}(\mathcal{M}) = \text{BLAKE3}(\text{model.safetensors})$$
+$$\text{CID}(\mathcal{M}) = \text{BLAKE3}(\text{model file bytes})$$
 
-Two CT-1 conforming implementations on the same snapshot must produce the same CID.
+over the entire `.model` file including frontmatter. Two CT-1 conforming implementations on the same `.graph` snapshot must produce the same CID.
 
 ---
 
@@ -379,28 +537,52 @@ For a fixed pseudo-random seed and a length-128 random embedding sequence, layer
 
 ### 11.4 Determinism (P-DET)
 
-Two independent runs of the conforming implementation on the same $G$ produce the same `model.safetensors` bytes.
+Two independent runs of the conforming implementation on the same `.graph` produce byte-identical `.model` files (same CID per §10.9).
 
-### 11.5 Round-trip load (P-LOAD)
+### 11.5 Runtime load (P-LOAD)
 
-`transformers.AutoModelForCausalLM.from_pretrained(<output_dir>)` succeeds and a forward pass on input length 1 returns finite logits.
+The cyb-llm runtime at `~/git/cyb/llm` loads the `.model` file via the `.cyb` parser, mmaps the `weights` section, and performs one forward pass of context length 1. The pass returns finite logits and respects the architecture parameters declared in `config`. Reference command:
+
+```
+cyb-llm load <output.model> --warmup 1 --check-finite
+```
+
+A round-trip extraction to a HuggingFace directory (config.json + model.safetensors) is also supported via `cyb-llm export hf <output.model>` and must succeed for the file to be CT-1 conforming. This guarantees the compiled model is consumable by both the cyb stack and the wider ecosystem.
 
 ---
 
 ## 12. Reference Implementation
 
-The reference is `~/git/cyber-compile` (rust, sprs + ndarray + safetensors crates). The reference produces a CT-1 conformance certificate alongside `model.safetensors`:
+The reference is `~/git/cyber-compile` (rust, sprs + ndarray, writes `.model` directly via the cyb-format crate from `~/git/cyb/llm`). It depends on no Python and produces no intermediate safetensors — the `.model` file is the only artifact.
+
+Build and run:
+
+```
+cd ~/git/cyber-compile
+cargo build --release
+./target/release/cyber-compile bostrom-23195000.graph -o bostrom-23195000-ct1.model
+```
+
+The certificate is embedded in the `.model`'s `eval` section (§10.7). The CLI also writes a sidecar `certificate.toml` for human inspection:
 
 ```toml
 # certificate.toml
 spec        = "CT-1.0"
 snapshot    = "blake3:..."
-output      = "blake3:..."
-P-EMBED     = { value = 0.0312, pass = true }
+output_cid  = "blake3:..."
+P-EMBED     = { value = 0.031, pass = true }
 P-ATTN      = { min = 0.81, mean = 0.89, pass = true }
 P-LAYER     = { contracting = true, max_ratio = 0.93, pass = true }
 P-DET       = { runs = 2, identical = true, pass = true }
-P-LOAD      = { hf_load = true, finite_logits = true, pass = true }
+P-LOAD      = { cyb_llm_load = true, hf_export = true, finite_logits = true, pass = true }
+```
+
+End-to-end pipe from go-cyber to a loaded model in one command:
+
+```
+curl -s https://node.bostrom.cybernode.ai/cyber/graph/snapshot?block=23195000 \
+  | cyber-compile - -o bostrom-latest.model \
+  && cyb-llm load bostrom-latest.model
 ```
 
 ---
