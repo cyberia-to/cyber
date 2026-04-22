@@ -41,10 +41,10 @@ Each $s \in \mathcal{S}$ is a signal per [[cyber/signal]]:
 $$s = (\nu_s, t_s, \vec\ell_s) \quad \text{where} \quad \vec\ell_s = (\ell_{s,1}, \ldots, \ell_{s,n_s})$$
 
 - $\nu_s$ — signing neuron (one per signal)
-- $t_s \in [1, h]$ — block height (one per signal)
+- $t_s$ — unix timestamp in seconds (one per signal), with $t_s \leq \text{config.captured\_at}$
 - $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$
 
-The seven-tuple cyberlink from [[cyber/link]] is reconstructed at iteration time:
+The seven-tuple cyberlink from [[cyber/link]] is reconstructed at iteration time. Note that $t_s$ in the snapshot is a unix timestamp; the chain's own link tuple carries a block height. Conversion happens at snapshot emission, not at compile time.
 
 $$\ell = (\nu_s, p, q, \tau, a, v, t_s) \in N \times P \times P \times \mathcal{T} \times \mathbb{Z}_{\geq 0} \times \{-1, 0, +1\} \times \mathbb{Z}_{\geq 0}$$
 
