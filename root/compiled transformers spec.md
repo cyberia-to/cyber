@@ -26,21 +26,39 @@ where $G$ is a cybergraph snapshot in [[cyb-graph|.graph format]] and $\mathcal{
 
 ### 2.1 Snapshot
 
-A snapshot is a `.graph` container (see [[cyb-graph]]) read into the tuple $G = (L, h, \nu_{\text{compiler}})$ where:
+A snapshot is a `.graph` container (see [[cyb-graph]]) read into the tuple $G = (\mathcal{S}, h, \nu_{\text{compiler}})$ where:
 
-- $L$ — the `cyberlinks` records, ordered as written in the file (canonical chain order)
+- $\mathcal{S}$ — the `signals` records, ordered as written in the file (canonical chain order)
 - $h$ — the `block` field of the `config` section
 - $\nu_{\text{compiler}}$ — the compiler version string (`"CT-1.0"` for this spec)
 
-If the optional `proof` extension section is present (see [[cyb-graph]] §extensions), conforming compilers verify it before compilation. Snapshots without a `proof` section are accepted — the base `.graph` spec has no provenance layer.
+If the optional `proof` or `impulse` extension sections are present (see [[cyb-graph]] §extensions), conforming compilers verify proofs before compilation and may reuse impulses to skip power iteration (see §5.1). Snapshots without these extensions are accepted — the base `.graph` spec has no provenance layer.
 
-### 2.2 Cyberlink
+### 2.2 Signal and cyberlink
 
-Each $\ell \in L$ is the seven-tuple from [[cyber/link]]:
+Each $s \in \mathcal{S}$ is a signal per [[cyber/signal]]:
 
-$$\ell = (\nu, p, q, \tau, a, v, t) \in N \times P \times P \times \mathcal{T} \times \mathbb{Z}_{\geq 0} \times \{-1, 0, +1\} \times \mathbb{Z}_{\geq 0}$$
+$$s = (\nu_s, t_s, k_s, \vec\ell_s) \quad \text{where} \quad \vec\ell_s = (\ell_{s,1}, \ldots, \ell_{s,n_s})$$
 
-where stake amount $a$ is in the smallest token unit (no floats) and $t \leq h$.
+- $\nu_s$ — signing neuron (one per signal)
+- $t_s \in [1, h]$ — block height (one per signal)
+- $k_s \in \mathbb{Z}_{\geq 0}$ — signal type (`0` = standard)
+- $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$
+
+The seven-tuple cyberlink from [[cyber/link]] is reconstructed at iteration time:
+
+$$\ell = (\nu_s, p, q, \tau, a, v, t_s) \in N \times P \times P \times \mathcal{T} \times \mathbb{Z}_{\geq 0} \times \{-1, 0, +1\} \times \mathbb{Z}_{\geq 0}$$
+
+$a$ is in the smallest token unit (no floats). The set $L$ of all cyberlinks is $L = \bigcup_{s \in \mathcal{S}} \vec\ell_s$, concretely yielded by
+
+```
+fn links(S) -> Iterator<Cyberlink>:
+    for s in S:
+        for ℓ in s.links:
+            yield (s.ν, ℓ.p, ℓ.q, ℓ.τ, ℓ.a, ℓ.v, s.t)
+```
+
+All passes that read "links" use this iterator. Passes that need per-signal grouping (5.1 impulse reuse, 8.3 walks) iterate $\mathcal{S}$ directly.
 
 ### 2.3 Particle and axon
 
@@ -143,6 +161,12 @@ Compute $\pi^* \in \Delta^{|V|}$ by power iteration of the column-stochastic tra
 $$\pi^{(k+1)} = \alpha P \pi^{(k)} + (1 - \alpha) u, \quad \pi^{(0)} = u, \quad u_i = \frac{1}{|V|}$$
 
 with $\alpha = 0.85$. Halt when $\|\pi^{(k+1)} - \pi^{(k)}\|_1 < \varepsilon_\pi$ with $\varepsilon_\pi = 10^{-8}$.
+
+**Impulse reuse.** If the optional `impulse` extension is present, each signal $s$ carries a sparse focus delta $\pi_\Delta^{(s)}$ that was proven on chain when the signal was accepted. The base distribution is then
+
+$$\pi^*_{\text{chain}} = \pi_0 + \sum_{s \in \mathcal{S}} \pi_\Delta^{(s)}$$
+
+where $\pi_0$ is the genesis prior from `config`. Power iteration is unnecessary for the set of signals covered by impulses; it runs only over the residual adjacency (signals without impulse). On a fully proof-carrying snapshot this skips the entire iteration.
 
 ### 5.2 Embedding dimension
 
@@ -265,9 +289,18 @@ dtype `float32`, row-major.
 
 ## 8. Pass 6 — MLP Weights
 
-### 8.1 Co-occurrence by deterministic walks
+### 8.1 Co-occurrence by signal-respecting walks
 
-For each layer $l$, draw $W = \min(|V|/10, 10^6)$ random walks of length $l_{\text{eff}}$ (from §7.2) seeded by ChaCha20 with seed $\text{BLAKE3}(L \,\|\, \nu_{\text{compiler}} \,\|\, \text{"mlp"} \,\|\, l)$. Edge selection at each step is weighted by $w(\ell)$.
+For each layer $l$, draw $W = \min(|V|/10, 10^6)$ walks of length $l_{\text{eff}}$ (from §7.2) seeded by ChaCha20 with seed $\text{BLAKE3}(L \,\|\, \nu_{\text{compiler}} \,\|\, \text{"mlp"} \,\|\, l)$.
+
+Walks are **signal-respecting**: at every step, the next edge is drawn preferentially from links inside the same signal as the current edge, with probability proportional to effective stake $w(\ell)$. Only when the signal is exhausted does the walker cross to a neighboring link in a different signal (again weighted by $w(\ell)$ across all incident links).
+
+$$P(\text{next} = \ell' \mid \text{current} = \ell) = \begin{cases}
+\frac{w(\ell')}{\sum_{\ell'' \in \text{signal}(\ell) \setminus \{\ell\}} w(\ell'')} & \text{if } \ell' \in \text{signal}(\ell) \\
+(1 - \beta) \cdot \frac{w(\ell')}{\sum_{\ell''} w(\ell'')} & \text{otherwise}
+\end{cases}$$
+
+with $\beta = 0.8$ (the mixing weight favoring intra-signal continuation). Signals are coherent epistemic acts — their internal co-occurrence encodes intent; cross-signal co-occurrence encodes weaker associative noise. $\beta$ controls how much of each the MLP weights absorb.
 
 ### 8.2 PMI matrix
 
