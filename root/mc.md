@@ -51,7 +51,7 @@ mc executes the eight passes from the spec — vocabulary, semcon discovery, arc
 sprs = "0.11"             # sparse CSR matrices
 ndarray = "0.16"          # dense linalg
 ndarray-linalg = "0.17"   # SVD, Lanczos
-blake3 = "1"              # hashing for CIDs and seeds
+cyber-hemera = { path = "../../hemera/rs" }  # Poseidon2 over Goldilocks — CIDs and RNG seeds
 rand_chacha = "0.3"       # deterministic RNG
 toml_edit = "0.22"        # frontmatter parsing
 memmap2 = "0.9"           # zero-copy graph load

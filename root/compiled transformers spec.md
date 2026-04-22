@@ -65,7 +65,7 @@ A particle is a 32-byte CID. The axon-particle of $(p, q)$ is
 
 $$\text{axon}(p, q) = H(p \,\|\, q) \in P$$
 
-where $H$ is BLAKE3 over the concatenation of the two 32-byte CIDs. This matches [[cybergraph]] axiom A6.
+where $H$ is hemera over the concatenation of the two 32-byte CIDs. This matches [[cybergraph]] axiom A6.
 
 ### 2.4 Effective stake
 
@@ -225,7 +225,7 @@ $$E = U_{:, 1:d^*} \cdot \text{diag}(\sqrt{\Sigma_{1:d^*}}) \in \mathbb{R}^{|V| 
 
 ### 6.2 Determinism
 
-Randomized SVD uses ChaCha20 seeded with $\text{BLAKE3}(L \,\|\, \nu_{\text{compiler}})$ truncated to 32 bytes. Singular vector signs are normalized so the entry of largest absolute value in each column is positive (sign convention SC-1).
+Randomized SVD uses ChaCha20 seeded with $\text{hemera}(L \,\|\, \nu_{\text{compiler}})$ truncated to 32 bytes. Singular vector signs are normalized so the entry of largest absolute value in each column is positive (sign convention SC-1).
 
 ### 6.3 Output tensor
 
@@ -290,7 +290,7 @@ dtype `float32`, row-major.
 
 ### 8.1 Co-occurrence by signal-respecting walks
 
-For each layer $l$, draw $W = \min(|V|/10, 10^6)$ walks of length $l_{\text{eff}}$ (from §7.2) seeded by ChaCha20 with seed $\text{BLAKE3}(L \,\|\, \nu_{\text{compiler}} \,\|\, \text{"mlp"} \,\|\, l)$.
+For each layer $l$, draw $W = \min(|V|/10, 10^6)$ walks of length $l_{\text{eff}}$ (from §7.2) seeded by ChaCha20 with seed $\text{hemera}(L \,\|\, \nu_{\text{compiler}} \,\|\, \text{"mlp"} \,\|\, l)$.
 
 Walks are **signal-respecting**: at every step, the next edge is drawn preferentially from links inside the same signal as the current edge, with probability proportional to effective stake $w(\ell)$. Only when the signal is exhausted does the walker cross to a neighboring link in a different signal (again weighted by $w(\ell)$ across all incident links).
 
@@ -404,8 +404,8 @@ Markdown. Auto-generated from compile inputs:
 Compiled from bostrom-23195000.graph at 2026-03-23 14:42 UTC.
 Spec: CT-1.0. d=300, h=13, L=290, params=4.19B.
 
-snapshot CID: blake3:9f3c...
-compile CID:  blake3:1a2b...
+snapshot CID: hemera:9f3c...
+compile CID:  hemera:1a2b...
 ```
 
 ### 10.3 `config` section
@@ -445,13 +445,13 @@ scale = 1000
 
 [lineage]
 spec          = "CT-1.0"
-source        = "blake3:9f3c..."
+source        = "hemera:9f3c..."
 source_kind   = ".graph"
 chain_id      = "bostrom-1"
 block         = 23195000
-arch_hash     = "blake3:..."
-vocab_hash    = "blake3:..."
-semcons_hash  = "blake3:..."
+arch_hash     = "hemera:..."
+vocab_hash    = "hemera:..."
+semcons_hash  = "hemera:..."
 ```
 
 ### 10.4 `program` section
@@ -543,7 +543,7 @@ For inference-time fidelity, CT-1.1 will allow `q4`/`q8` quantization passes aft
 
 The compile output CID is
 
-$$\text{CID}(\mathcal{M}) = \text{BLAKE3}(\text{model file bytes})$$
+$$\text{CID}(\mathcal{M}) = \text{hemera}(\text{model file bytes})$$
 
 over the entire `.model` file including frontmatter. Two CT-1 conforming implementations on the same `.graph` snapshot must produce the same CID.
 
@@ -600,8 +600,8 @@ The certificate is embedded in the `.model`'s `eval` section (§10.7). The CLI a
 ```toml
 # certificate.toml
 spec        = "CT-1.0"
-snapshot    = "blake3:..."
-output_cid  = "blake3:..."
+snapshot    = "hemera:..."
+output_cid  = "hemera:..."
 P-EMBED     = { value = 0.031, pass = true }
 P-ATTN      = { min = 0.81, mean = 0.89, pass = true }
 P-LAYER     = { contracting = true, max_ratio = 0.93, pass = true }
