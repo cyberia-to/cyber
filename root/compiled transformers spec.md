@@ -32,7 +32,7 @@ A snapshot is a `.graph` container (see [[cyb-graph]]) read into the tuple $G = 
 - $h$ — the `block` field of the `config` section
 - $\nu_{\text{compiler}}$ — the compiler version string (`"CT-1.0"` for this spec)
 
-The `proof` section of the `.graph` is verified before compilation begins; CT-1 conforming compilers refuse to compile snapshots that fail proof verification when `[provenance].proof_required = true`.
+If the optional `proof` extension section is present (see [[cyb-graph]] §extensions), conforming compilers verify it before compilation. Snapshots without a `proof` section are accepted — the base `.graph` spec has no provenance layer.
 
 ### 2.2 Cyberlink
 
@@ -56,7 +56,7 @@ The effective stake of cyberlink $\ell = (\nu, p, q, \tau, a, v, t)$ is
 
 $$w(\ell) = \begin{cases} a \cdot \rho_\tau & v = +1 \\ 0 & v = 0 \\ -a \cdot \rho_\tau & v = -1 \end{cases}$$
 
-where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight from the registry at block $h$. Negative effective stake is clipped to zero before any matrix construction (see §3.4).
+where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight from `config.tokens[τ].weight` in the input `.graph`. Negative effective stake is clipped to zero before any matrix construction (see §3.4).
 
 ---
 
