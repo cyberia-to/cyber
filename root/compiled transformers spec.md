@@ -42,7 +42,7 @@ $$s = (\nu_s, t_s, \vec\ell_s) \quad \text{where} \quad \vec\ell_s = (\ell_{s,1}
 
 - $\nu_s$ — signing neuron (one per signal)
 - $t_s$ — unix timestamp in seconds (one per signal), with $t_s \leq \text{config.captured\_at}$
-- $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$, where $p, q, \tau \in P$ (all three are particle CIDs, including the token denomination), $a \in \mathbb{F}_p$ (Goldilocks field element, $p = 2^{64} - 2^{32} + 1$), $v \in \{-1, 0, +1\}$
+- $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$, where $p, q, \tau \in P$ (all three are particles, including the token denomination), $a \in \mathbb{F}_p$ (Goldilocks field element, $p = 2^{64} - 2^{32} + 1$), $v \in \{-1, 0, +1\}$
 
 The seven-tuple cyberlink from [[cyber/link]] is reconstructed at iteration time. Note that $t_s$ in the snapshot is a unix timestamp; the chain's own link tuple carries a block height. Conversion happens at snapshot emission, not at compile time.
 
@@ -61,11 +61,11 @@ All passes that read "links" use this iterator. Passes that need per-signal grou
 
 ### 2.3 Particle and axon
 
-A particle is a 32-byte CID. The axon-particle of $(p, q)$ is
+A particle is a 32-byte hemera hash. The axon-particle of $(p, q)$ is
 
 $$\text{axon}(p, q) = H(p \,\|\, q) \in P$$
 
-where $H$ is hemera over the concatenation of the two 32-byte CIDs. This matches [[cybergraph]] axiom A6.
+where $H$ is hemera over the concatenation of the two 32-byte particles. This matches [[cybergraph]] axiom A6.
 
 ### 2.4 Effective stake
 
@@ -73,7 +73,7 @@ The effective stake of cyberlink $\ell = (\nu, p, q, \tau, a, v, t)$ is
 
 $$w(\ell) = \begin{cases} a \cdot \rho_\tau & v = +1 \\ 0 & v = 0 \\ -a \cdot \rho_\tau & v = -1 \end{cases}$$
 
-where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight looked up by content match: the entry in `config.tokens` whose `cid` equals $\tau$ provides `weight`. Conforming compilers reject snapshots where any signal references a $\tau$ absent from the `config.tokens` table. Negative effective stake is clipped to zero before any matrix construction (see §3.4).
+where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight looked up by content match: the entry in `config.tokens` whose `particle` equals $\tau$ provides `weight`. Conforming compilers reject snapshots where any signal references a $\tau$ absent from the `config.tokens` table. Negative effective stake is clipped to zero before any matrix construction (see §3.4).
 
 ---
 
@@ -82,13 +82,13 @@ where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight looked up
 ### 3.1 Procedure
 
 1. Initialize $V := \emptyset$, an ordered set.
-2. **Seed from vocab refs.** For each `[[vocab]]` entry in `config` in declared order, load the referenced [[cyb-vocab|.vocab]] file (a sorted list of CIDs) and insert each CID into $V$ if absent. Order within a vocab file is preserved; vocab files are processed in their declared order.
+2. **Seed from vocab refs.** For each `[[vocab]]` entry in `config` in declared order, load the referenced [[cyb-vocab|.vocab]] file (a particle dictionary). For each entry in the vocab file, in file order, insert its particle into $V$ if absent. Vocab data bytes (when present) are recorded for `vocab` section emission in §10.6 but do not affect id assignment.
 3. **Append from signals.** Iterate $\mathcal{S}$ via the `links()` iterator. For each $\ell = (\nu, p, q, \ldots)$: insert $p$, then $q$, then $\text{axon}(p, q)$ into $V$ if absent.
 4. Assign $\text{idx}: V \to \{0, 1, \ldots, |V|-1\}$ in insertion order.
 
 ### 3.2 Output
 
-`vocab.json` — the JSON object $\{ \text{cid}_{\text{hex}} \mapsto \text{idx} \}$ with keys lowercase-hex-encoded. The compiled `.model`'s `vocab` section contains the same id assignment.
+`vocab.json` — the JSON object $\{ \text{particle}_{\text{hex}} \mapsto \text{idx} \}$ with keys lowercase-hex-encoded. The compiled `.model`'s `vocab` section contains the same id assignment.
 
 ### 3.3 Determinism
 
@@ -130,9 +130,9 @@ The registered semcon set $S \subseteq P$ is
 
 $$S = \{ p : \text{score}(p) \geq \theta \cdot \max_{p'} \text{score}(p') \}$$
 
-with $\theta = 10^{-3}$ (one-thousandth of the strongest semcon by score). Order $S$ by descending score; ties broken by ascending CID.
+with $\theta = 10^{-3}$ (one-thousandth of the strongest semcon by score). Order $S$ by descending score; ties broken by ascending particle hash.
 
-The default semcon is the reserved CID $0x00 \times 32$, denoted $\bot$. It is appended to $S$ at the highest index.
+The default semcon is the reserved particle $0x00 \times 32$, denoted $\bot$. It is appended to $S$ at the highest index.
 
 ### 4.5 Assignment
 
@@ -405,8 +405,8 @@ Markdown. Auto-generated from compile inputs:
 Compiled from bostrom-23195000.graph at 2026-03-23 14:42 UTC.
 Spec: CT-1.0. d=300, h=13, L=290, params=4.19B.
 
-snapshot CID: hemera:9f3c...
-compile CID:  hemera:1a2b...
+snapshot particle: hemera:9f3c...
+model particle:    hemera:1a2b...
 ```
 
 ### 10.3 `config` section
@@ -418,7 +418,7 @@ Compile parameters and architecture, integers only per cyb-model convention.
 model_type = "llama"
 parameters = 4192804864
 license = "cyber license"
-languages = []  # graph-native, vocabulary is CIDs
+languages = []  # graph-native, vocabulary is particles
 
 [architecture]
 hidden_size = 300
@@ -434,7 +434,7 @@ rope_theta = 10000
 rms_norm_eps = 1000000   # 1/ε convention; 1e-6
 
 [tokenizer]
-type = "cid"             # particle CIDs, not BPE
+type = "particle"        # particle hashes as token ids, not BPE
 bos_id = 0
 eos_id = 0
 pad_id = 0
@@ -496,7 +496,7 @@ Tensor names match those listed in §6.3, §7.6, §8.4, §9.1. Storage order: em
 
 ### 10.6 `vocab` section
 
-For graph-native compiles the tokenizer type is `cid`: every token id is a particle hash. The vocab section is the particle index from pass 1 written as a flat table.
+For graph-native compiles the tokenizer type is `particle`: every token id is a particle. The vocab section is the particle index from pass 1 written as a flat table.
 
 ```toml
 ~~~vocab
@@ -507,7 +507,7 @@ For graph-native compiles the tokenizer type is `cid`: every token id is a parti
 # ...
 ```
 
-For CIDs there are no merge rules; the `[merges]` table is omitted.
+For particle vocabularies there are no merge rules; the `[merges]` table is omitted.
 
 ### 10.7 `eval` section
 
@@ -540,13 +540,13 @@ Raw tensor data, 4096-byte page-aligned per tensor for zero-copy mmap and `unime
 
 For inference-time fidelity, CT-1.1 will allow `q4`/`q8` quantization passes after CT-1 produces the u16 baseline.
 
-### 10.9 Reproducibility CID
+### 10.9 Reproducibility particle
 
-The compile output CID is
+The compiled `.model` file is itself a particle. Its identity is
 
-$$\text{CID}(\mathcal{M}) = \text{hemera}(\text{model file bytes})$$
+$$\text{particle}(\mathcal{M}) = \text{hemera}(\text{model file bytes})$$
 
-over the entire `.model` file including frontmatter. Two CT-1 conforming implementations on the same `.graph` snapshot must produce the same CID.
+over the entire `.model` file including frontmatter. Two CT-1 conforming implementations on the same `.graph` snapshot must produce the same particle.
 
 ---
 
@@ -570,7 +570,7 @@ For a fixed pseudo-random seed and a length-128 random embedding sequence, layer
 
 ### 11.4 Determinism (P-DET)
 
-Two independent runs of the conforming implementation on the same `.graph` produce byte-identical `.model` files (same CID per §10.9).
+Two independent runs of the conforming implementation on the same `.graph` produce byte-identical `.model` files (same particle per §10.9).
 
 ### 11.5 Runtime load (P-LOAD)
 
@@ -602,7 +602,7 @@ The certificate is embedded in the `.model`'s `eval` section (§10.7). The CLI a
 # certificate.toml
 spec        = "CT-1.0"
 snapshot    = "hemera:..."
-output_cid  = "hemera:..."
+output      = "hemera:..."   # the model's particle
 P-EMBED     = { value = 0.031, pass = true }
 P-ATTN      = { min = 0.81, mean = 0.89, pass = true }
 P-LAYER     = { contracting = true, max_ratio = 0.93, pass = true }
