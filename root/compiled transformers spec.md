@@ -42,11 +42,11 @@ $$s = (\nu_s, t_s, \vec\ell_s) \quad \text{where} \quad \vec\ell_s = (\ell_{s,1}
 
 - $\nu_s$ — signing neuron (one per signal)
 - $t_s$ — unix timestamp in seconds (one per signal), with $t_s \leq \text{config.captured\_at}$
-- $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$
+- $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$, where $p, q, \tau \in P$ (all three are particle CIDs, including the token denomination), $a \in \mathbb{F}_p$ (Goldilocks field element, $p = 2^{64} - 2^{32} + 1$), $v \in \{-1, 0, +1\}$
 
 The seven-tuple cyberlink from [[cyber/link]] is reconstructed at iteration time. Note that $t_s$ in the snapshot is a unix timestamp; the chain's own link tuple carries a block height. Conversion happens at snapshot emission, not at compile time.
 
-$$\ell = (\nu_s, p, q, \tau, a, v, t_s) \in N \times P \times P \times \mathcal{T} \times \mathbb{Z}_{\geq 0} \times \{-1, 0, +1\} \times \mathbb{Z}_{\geq 0}$$
+$$\ell = (\nu_s, p, q, \tau, a, v, t_s)$$
 
 $a$ is in the smallest token unit (no floats). The set $L$ of all cyberlinks is $L = \bigcup_{s \in \mathcal{S}} \vec\ell_s$, concretely yielded by
 
@@ -73,7 +73,7 @@ The effective stake of cyberlink $\ell = (\nu, p, q, \tau, a, v, t)$ is
 
 $$w(\ell) = \begin{cases} a \cdot \rho_\tau & v = +1 \\ 0 & v = 0 \\ -a \cdot \rho_\tau & v = -1 \end{cases}$$
 
-where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight from `config.tokens[τ].weight` in the input `.graph`. Negative effective stake is clipped to zero before any matrix construction (see §3.4).
+where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight looked up by content match: the entry in `config.tokens` whose `cid` equals $\tau$ provides `weight`. Conforming compilers reject snapshots where any signal references a $\tau$ absent from the `config.tokens` table. Negative effective stake is clipped to zero before any matrix construction (see §3.4).
 
 ---
 
