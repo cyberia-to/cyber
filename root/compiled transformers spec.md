@@ -82,16 +82,17 @@ where $\rho_\tau \in \mathbb{Q}_{>0}$ is the token-denomination weight looked up
 ### 3.1 Procedure
 
 1. Initialize $V := \emptyset$, an ordered set.
-2. For each $\ell = (\nu, p, q, \ldots) \in L$ in snapshot order: insert $p$, then $q$, then $\text{axon}(p, q)$ into $V$ if absent.
-3. Assign $\text{idx}: V \to \{0, 1, \ldots, |V|-1\}$ in insertion order.
+2. **Seed from vocab refs.** For each `[[vocab]]` entry in `config` in declared order, load the referenced [[cyb-vocab|.vocab]] file (a sorted list of CIDs) and insert each CID into $V$ if absent. Order within a vocab file is preserved; vocab files are processed in their declared order.
+3. **Append from signals.** Iterate $\mathcal{S}$ via the `links()` iterator. For each $\ell = (\nu, p, q, \ldots)$: insert $p$, then $q$, then $\text{axon}(p, q)$ into $V$ if absent.
+4. Assign $\text{idx}: V \to \{0, 1, \ldots, |V|-1\}$ in insertion order.
 
 ### 3.2 Output
 
-`vocab.json` — the JSON object $\{ \text{cid}_{\text{hex}} \mapsto \text{idx} \}$ with keys lowercase-hex-encoded.
+`vocab.json` — the JSON object $\{ \text{cid}_{\text{hex}} \mapsto \text{idx} \}$ with keys lowercase-hex-encoded. The compiled `.model`'s `vocab` section contains the same id assignment.
 
 ### 3.3 Determinism
 
-Insertion order is fixed by snapshot order. Two compilers seeing the same $L$ produce the same $\text{idx}$.
+Insertion order is fixed by (vocab refs in declared order) then (snapshot signal order). Two compilers seeing the same `.graph` and the same referenced `.vocab` files produce the same $\text{idx}$. Snapshots that share a `[[vocab]]` reference yield models with stable, comparable token id assignments — a particle has the same id across compiles that pull the same vocab.
 
 ### 3.4 Adjacency construction
 
