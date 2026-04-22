@@ -38,11 +38,10 @@ If the optional `proof` or `impulse` extension sections are present (see [[cyb-g
 
 Each $s \in \mathcal{S}$ is a signal per [[cyber/signal]]:
 
-$$s = (\nu_s, t_s, k_s, \vec\ell_s) \quad \text{where} \quad \vec\ell_s = (\ell_{s,1}, \ldots, \ell_{s,n_s})$$
+$$s = (\nu_s, t_s, \vec\ell_s) \quad \text{where} \quad \vec\ell_s = (\ell_{s,1}, \ldots, \ell_{s,n_s})$$
 
 - $\nu_s$ — signing neuron (one per signal)
 - $t_s \in [1, h]$ — block height (one per signal)
-- $k_s \in \mathbb{Z}_{\geq 0}$ — signal type (`0` = standard)
 - $\vec\ell_s$ — ordered vector of link records $\ell_{s,i} = (p, q, \tau, a, v)$, $1 \leq i \leq n_s$
 
 The seven-tuple cyberlink from [[cyber/link]] is reconstructed at iteration time:
