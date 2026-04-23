@@ -3,9 +3,6 @@ tags: cyber
 alias: mudra, मुद्रा, crypto primitives
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../mudra
-exclude: ".claude/**, target/**, CLAUDE.md"
 diffusion: 0.00014198035953269462
 springs: 0.001308120356526955
 heat: 0.0009439618432885126

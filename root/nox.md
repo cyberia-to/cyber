@@ -3,9 +3,6 @@ tags: cyber
 alias: nox, nox vm, nox virtual machine, cyber/nox
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../nox
-exclude: ".claude/**, target/**, CLAUDE.md"
 diffusion: 0.0008686004251168347
 springs: 0.00032657839478899214
 heat: 0.0005274880368023667

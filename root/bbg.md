@@ -3,9 +3,6 @@ tags: cyber
 alias: bbg, Big Badass Graph, authenticated state, cyber/bbg
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../bbg
-exclude: ".claude/**, target/**, CLAUDE.md"
 diffusion: 0.0009830749016173444
 springs: 0.0008907866604507944
 heat: 0.000942261310131483

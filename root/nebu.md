@@ -3,9 +3,6 @@ tags: cyber
 alias: nebu, Nebu, goldilocks field library
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../nebu
-exclude: ".claude/**, target/**, CLAUDE.md"
 diffusion: 0.00014100215954381112
 springs: 0.00035296231852670654
 heat: 0.0002988221840095174

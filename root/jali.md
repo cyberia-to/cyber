@@ -3,9 +3,6 @@ tags: cyber
 alias: jali, जाली, polynomial ring, R_q, lattice arithmetic, ring arithmetic
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../jali
-exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 polynomial ring arithmetic for [[cyber]]. R_q = F_p[x]/(x^n+1) over [[Goldilocks field|Goldilocks]]. jali is the encrypted computation engine — where [[nebu]] proves truth and [[genies]] proves privacy, jali proves that computation happened correctly on data nobody saw.
 

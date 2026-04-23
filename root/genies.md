@@ -3,9 +3,6 @@ tags: cyber
 alias: genies, commutative group action, isogeny cryptography, CSIDH, dCTIDH, cyber privacy
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../genies
-exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 commutative group action over supersingular isogenies for [[cyber]]. genies is the privacy engine — where [[nebu]] proves truth, genies proves that truth was revealed selectively.
 

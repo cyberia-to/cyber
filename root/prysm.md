@@ -4,9 +4,6 @@ tags: cyb, prysm
 alias: design system, prism, prysm design system
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../prysm
-exclude: "README.md, COLOR_AUDIT.md, SKETCH_DIFF.md, svg/**, components/**, .claude/**"
 stake: 43936669831471920
 diffusion: 0.0014254717304230974
 springs: 0.0006068291356678248

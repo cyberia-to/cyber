@@ -3,9 +3,6 @@ alias: cyber-sdk
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../go-cyber
-exclude: "vendor/**, app/**, client/**, cmd/**, contrib/**, cosmrs/**, merkle/**, plugins/**, proto/**, scripts/**, testutil/**, types/**, utils/**, x/**, build/**, .claude/**, .github/**, *.go, *.proto, *.sum, *.mod, *.yml, *.yaml, *.toml, *.json, *.lock, *.png, *.sh, *.wasm, Makefile, Dockerfile, LICENSE, CONTRIBUTING.md, CHANGELOG.md, CLAUDE.md"
 stake: 20983421233680464
 diffusion: 0.0032926438378247545
 springs: 0.0003335796451459317

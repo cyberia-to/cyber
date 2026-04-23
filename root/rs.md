@@ -5,9 +5,6 @@ icon: "\u2699\uFE0F"
 crystal-type: entity
 crystal-domain: cyber
 stake: 2440926101748440
-subgraph: true
-repo: ../rs
-exclude: ".claude/**, target/**"
 diffusion: 0.00022511157146064474
 springs: 0.00011689529764623842
 heat: 0.00017090740252070542

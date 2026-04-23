@@ -4,9 +4,6 @@ crystal-type: entity
 crystal-domain: cyber
 alias: Hemera hash
 stake: 31195035580345060
-subgraph: true
-repo: ../hemera
-exclude: ".claude/**, target/**, bench/target/**"
 diffusion: 0.0014078565592466588
 springs: 0.00012848967675181902
 heat: 0.0005629636161339202

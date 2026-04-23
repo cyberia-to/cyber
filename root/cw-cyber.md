@@ -4,9 +4,6 @@ icon: "\U0001F4DC"
 crystal-type: entity
 crystal-domain: cyber
 alias: cw-cyber
-subgraph: true
-repo: ../cw-cyber
-exclude: ".claude/**, target/**, artifacts/**, vendor/**"
 stake: 14176898798954938
 diffusion: 0.000235075733984399
 springs: 0.00020138857284610613

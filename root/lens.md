@@ -3,9 +3,6 @@ tags: cyber, core
 alias: lenses, PCS, polynomial commitment scheme, polynomial commitment
 crystal-type: entity
 crystal-domain: crypto
-subgraph: true
-repo: ../lens
-exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 the commitment layer for [[cyber]]. five polynomial commitment backends — one per [[five algebras|algebra]]. the layer between [[hemera]] (identity) and [[nox]] (execution).
 

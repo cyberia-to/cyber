@@ -3,9 +3,6 @@ tags: cyber
 alias: kuro, 黒, F2 tower, binary field arithmetic, binary field
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../kuro
-exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 F₂ tower field arithmetic for binary proving. kuro is to F₂ what [[nebu]] is to [[Goldilocks field|Goldilocks]].
 

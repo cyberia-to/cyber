@@ -4,9 +4,6 @@ alias: trident language, Trident, Tri, tri
 crystal-type: entity
 crystal-domain: cyber
 stake: 37851441059813056
-subgraph: true
-repo: ../trident
-exclude: ".claude/**, baselines/**"
 diffusion: 0.0009119223559642708
 springs: 0.00012722640211562233
 heat: 0.0004023783381942181

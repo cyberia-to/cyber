@@ -3,9 +3,6 @@ tags: cyber
 alias: trop, tropical semiring, tropical algebra, tropical optimization
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../trop
-exclude: ".claude/**, target/**, CLAUDE.md"
 ---
 the tropical semiring execution engine for [[cyber]]. (min, +) algebra for provable optimization. trop is the decision engine — where [[nebu]] proves truth and [[kuro]] proves bits, trop proves optimality.
 

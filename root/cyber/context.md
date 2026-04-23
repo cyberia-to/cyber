@@ -3,9 +3,6 @@ tags: cyber, core
 icon: "\U0001F9E0"
 crystal-type: entity
 crystal-domain: cyber
-subgraph: true
-repo: ../context
-exclude: ".claude/**, .git/**"
 diffusion: 0.00011233815923477823
 springs: 0.0012945378796904849
 heat: 0.0009306147133424351
