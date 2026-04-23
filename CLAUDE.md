@@ -14,7 +14,8 @@
 
 This is the seed knowledge base for planetary superintelligence. Pages
 are pure markdown with YAML frontmatter. The publisher is
-[optica](~/git/optica) — a standalone knowledge graph publisher.
+[optica](https://github.com/cyberia-to/optica) — a standalone knowledge
+graph publisher.
 
 ## Page Format
 
@@ -33,17 +34,27 @@ publisher.
 
 Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
 
-The publisher is `optica` at `~/git/optica`. It looks for `root/` as
-the primary page directory (fallback: `graph/`, `pages/`).
+## Building cyber
 
-## Running the Publisher
+Builds are orchestrated by the workspace anchor
+[cyberia-to/.github](https://github.com/cyberia-to/.github), which holds
+subgraph declarations, sync scripts, and the optica config generator.
+cyber does not declare its own subgraphs — that concern belongs to the
+workspace.
 
 ```
-~/git/optica/target/release/optica serve ~/git/cyber --open
-~/git/optica/target/release/optica build ~/git/cyber
+cd ~/cyberia-to/.github
+nu scripts/build.nu       # builds the full graph (private-inclusive)
+nu scripts/serve.nu       # builds + serves with live reload
 ```
 
-Build optica: `cd ~/git/optica && cargo build --release`
+For standalone development on cyber content alone (no subgraphs),
+optica can be invoked directly:
+
+```
+optica build ~/cyberia-to/cyber
+optica serve ~/cyberia-to/cyber --open
+```
 
 Port 8888 (from `publish.toml` base_url). Port 8080 is reserved.
 ## Tagging Conventions

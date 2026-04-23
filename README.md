@@ -53,16 +53,16 @@ root/                          # all pages
 
 browse at [cyber.page](https://cyber.page/)
 
-or serve locally:
+or serve locally through the workspace anchor
+[cyberia-to/.github](https://github.com/cyberia-to/.github), which
+orchestrates subgraph sync + optica build:
 
 ```bash
-git clone https://github.com/cyberia-to/cyber.git ~/git/cyber
-git clone https://github.com/cyberia-to/optica.git ~/git/optica
-cd ~/git/optica && cargo build --release
-~/git/optica/target/release/optica serve ~/git/cyber --open
+git clone https://github.com/cyberia-to/.github.git ~/cyberia-to/.github
+cd ~/cyberia-to/.github
+nu scripts/sync-org.nu --apply   # clones every repo gh auth can see
+nu scripts/serve.nu              # builds + serves at localhost:8888
 ```
-
-serves on http://localhost:8888
 
 ## how to contribute
 
@@ -70,8 +70,7 @@ serves on http://localhost:8888
 git clone https://github.com/cyberia-to/cyber.git
 cd cyber
 # edit pages in root/ using any markdown editor
-# make contribution into a feature branch
-# pull request
+# feature branch; pull request
 ```
 
 pages are pure markdown with YAML frontmatter:
