@@ -3,186 +3,37 @@
 # crystal-type: source
 # crystal-domain: cyber
 # ---
-name: Publish
+# Deployment orchestration moved to cyberia-to/.github per SPEC.md.
+# On push to master, fire a repository_dispatch at the workspace repo
+# so the workspace's publish workflow rebuilds the full graph.
+#
+# Requires a repo secret WORKSPACE_DISPATCH_TOKEN — a PAT (classic or
+# fine-grained) with `repo:public_repo` scope on cyberia-to/.github.
+# Without it this step no-ops and the workspace rebuilds on its own
+# push/schedule/manual triggers.
+name: Notify workspace
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   workflow_dispatch:
 
 jobs:
-  publish-cyber:
+  dispatch:
     runs-on: ubuntu-latest
-    environment: cyber
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Checkout subgraph repos
+      - name: Fire repository_dispatch at cyberia-to/.github
         env:
-          GH_TOKEN: ${{ github.token }}
+          TOKEN: ${{ secrets.WORKSPACE_DISPATCH_TOKEN }}
         run: |
-          # Scan all markdown files for subgraph declarations and clone from the same org
-          ORG="cyberia-to"
-          GRAPH_ROOT="$(pwd)"
-          find root/ -name '*.md' | while read f; do
-            if grep -q '^subgraph: true' "$f" 2>/dev/null; then
-              REPO_REL=$(grep '^repo:' "$f" | head -1 | sed 's/^repo: *//')
-              if [ -n "$REPO_REL" ]; then
-                REPO_NAME=$(basename "$REPO_REL")
-                TARGET_DIR=$(realpath -m "$GRAPH_ROOT/$REPO_REL")
-                if [ ! -d "$TARGET_DIR" ]; then
-                  echo "Cloning $ORG/$REPO_NAME → $TARGET_DIR"
-                  git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/$ORG/$REPO_NAME.git" "$TARGET_DIR" || echo "  WARNING: $REPO_NAME not found, skipping"
-                fi
-              fi
-            fi
-          done
-
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: Cache optica build
-        uses: actions/cache@v4
-        with:
-          path: |
-            /tmp/optica-target-cache
-            ~/.cargo/registry
-            ~/.cargo/git
-          key: ${{ runner.os }}-optica-v2
-          restore-keys: |
-            ${{ runner.os }}-optica-
-
-      - name: Install optica
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          rm -rf /tmp/optica
-          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" /tmp/optica
-          # Restore cached target dir if available
-          if [ -d /tmp/optica-target-cache ]; then
-            mv /tmp/optica-target-cache /tmp/optica/target
-          fi
-          cd /tmp/optica && cargo build --release
-          sudo cp target/release/optica /usr/local/bin/
-          # Save target for cache
-          cp -r /tmp/optica/target /tmp/optica-target-cache
-
-      - name: Cache IPFS CIDs
-        uses: actions/cache@v4
-        with:
-          path: ipfs-cache.json
-          key: ipfs-cids-${{ github.run_id }}
-          restore-keys: ipfs-cids-
-
-      - name: Resolve IPFS media
-        env:
-          PINATA_JWT: ${{ secrets.PINATA_JWT }}
-          PINATA_GATEWAY: ${{ secrets.PINATA_GATEWAY }}
-        run: |
-          PUBLIC_GATEWAY="https://gateway.pinata.cloud"
-          if [ -n "$PINATA_GATEWAY" ]; then
-            GATEWAY="$PINATA_GATEWAY"
-          else
-            GATEWAY="$PUBLIC_GATEWAY"
-          fi
-
-          CACHE_FILE="ipfs-cache.json"
-          if [ ! -f "$CACHE_FILE" ]; then
-            echo '{}' > "$CACHE_FILE"
-          fi
-
-          # Collect unique media filenames from markdown
-          FILENAMES=$(grep -roh '\.\./media/[^)"'"'"' ]*' root/ | sed 's|\.\./media/||' | sort -u || true)
-          if [ -z "$FILENAMES" ]; then
-            echo "No media references found"
-            BEFORE=$(jq 'length' "$CACHE_FILE")
-            if [ "$BEFORE" -gt 0 ]; then
-              echo '{}' > "$CACHE_FILE"
-              echo "Pruned all $BEFORE stale entries from cache"
-            fi
+          if [ -z "$TOKEN" ]; then
+            echo "WORKSPACE_DISPATCH_TOKEN not set; skipping. Publish workflow"
+            echo "in cyberia-to/.github can still be triggered manually."
             exit 0
           fi
-
-          COUNT=$(echo "$FILENAMES" | wc -l | tr -d ' ')
-          echo "Found $COUNT unique media references"
-
-          GATEWAY_TESTED=false
-          SED_SCRIPT=""
-          UPLOADED=0
-          CACHED=0
-
-          while IFS= read -r filename; do
-            [ -z "$filename" ] && continue
-            CID=$(jq -r --arg f "$filename" '.[$f] // empty' "$CACHE_FILE")
-            if [ -n "$CID" ]; then
-              CACHED=$((CACHED + 1))
-            else
-              if [ -z "$PINATA_JWT" ]; then
-                echo "  SKIP: $filename (no JWT, not in cache)"
-                continue
-              fi
-              if [ ! -f "media/$filename" ]; then
-                echo "  SKIP: $filename (not in cache, file not found)"
-                continue
-              fi
-              echo "  Uploading media/$filename..."
-              RESP=$(curl -s -X POST \
-                "https://api.pinata.cloud/pinning/pinFileToIPFS" \
-                -H "Authorization: Bearer ${PINATA_JWT}" \
-                -F "file=@media/${filename}")
-              CID=$(echo "$RESP" | jq -r '.IpfsHash // empty')
-              if [ -z "$CID" ]; then
-                echo "  WARNING: Failed to upload $filename: $(echo "$RESP" | jq -r '.error // .message // "unknown"')"
-                continue
-              fi
-              jq --arg f "$filename" --arg c "$CID" '. + {($f): $c}' "$CACHE_FILE" > tmp.json && mv tmp.json "$CACHE_FILE"
-              UPLOADED=$((UPLOADED + 1))
-            fi
-
-            if [ "$GATEWAY_TESTED" = false ] && [ "$GATEWAY" != "$PUBLIC_GATEWAY" ]; then
-              HTTP_CODE=$(curl -s -o /dev/null -w '%{http_code}' --max-time 5 "$GATEWAY/ipfs/$CID")
-              if [ "$HTTP_CODE" != "200" ]; then
-                echo "Custom gateway returned $HTTP_CODE, falling back to public"
-                GATEWAY="$PUBLIC_GATEWAY"
-              else
-                echo "Custom gateway OK"
-              fi
-              GATEWAY_TESTED=true
-            fi
-
-            IPFS_URL="${GATEWAY}/ipfs/${CID}"
-            SED_SCRIPT="${SED_SCRIPT}s|\.\./media/${filename}|${IPFS_URL}|g;"
-          done <<< "$FILENAMES"
-
-          echo "Cached: $CACHED, Uploaded: $UPLOADED"
-
-          # Prune stale cache entries
-          BEFORE=$(jq 'length' "$CACHE_FILE")
-          jq --argjson keys "$(echo "$FILENAMES" | jq -R -s 'split("\n") | map(select(length > 0))')" \
-            'with_entries(select(.key as $k | $keys | index($k)))' "$CACHE_FILE" > tmp.json && mv tmp.json "$CACHE_FILE"
-          AFTER=$(jq 'length' "$CACHE_FILE")
-          PRUNED=$((BEFORE - AFTER))
-          if [ "$PRUNED" -gt 0 ]; then
-            echo "Pruned $PRUNED stale entries from cache ($BEFORE → $AFTER)"
-          fi
-
-          if [ -n "$SED_SCRIPT" ]; then
-            find root/ -name '*.md' -exec sed -i "$SED_SCRIPT" {} +
-            echo "Rewrote media URLs using $GATEWAY"
-          fi
-
-      - name: Build site
-        run: optica build . --base-url "https://cyber.page"
-
-      - name: Add deploy files
-        run: touch build/.nojekyll
-
-      - name: Deploy to Netlify
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: |
-          npm install -g netlify-cli
-          netlify deploy --prod --dir=build --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN"
+          curl -sSf -X POST \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/cyberia-to/.github/dispatches \
+            -d '{"event_type":"content-changed","client_payload":{"source":"cyber","sha":"${{ github.sha }}"}}'
+          echo "Dispatched content-changed to cyberia-to/.github"
