@@ -10,6 +10,8 @@ status: draft
 
 formal contract for compiling a transformer from a [[cybergraph]] snapshot. companion to [[compiled transformers]] (the how-to article) and [[graph-native-transformer]] (the derivation). this page is what the rust crate implements; conformance is checked against the predicates in §10.
 
+**Version CT-1.1** adds Clifford geometric-algebra extensions atop the CT-1.0 baseline: wedge-augmented attention (§7.7), Clifford-block MLP as a No-FFN alternative (§8.5), and the corresponding conformance predicate (§11.6). All CT-1.0 semantics remain unchanged; CT-1.1 is a strict superset. See [[clifford]] for the underlying primitive extensions to [[cybergraph]] and the shifted geometric product used by the new sections.
+
 ---
 
 ## 1. Scope
@@ -30,7 +32,7 @@ A snapshot is a `.graph` container (see [[cyb-graph]]) read into the tuple $G = 
 
 - $\mathcal{S}$ — the `signals` records, ordered as written in the file (canonical chain order)
 - $h$ — the `block` field of the `config` section
-- $\nu_{\text{compiler}}$ — the compiler version string (`"CT-1.0"` for this spec)
+- $\nu_{\text{compiler}}$ — the compiler version string. `"CT-1.0"` for the scalar baseline (passes 1–8 as originally specified); `"CT-1.1"` when the Clifford extensions of §§7.7, 8.5, 11.6 are active. A CT-1.1 implementation must also correctly emit CT-1.0 output when the input `.graph` has no bivector extensions present (see [[clifford]] §6).
 
 If the optional `proof` or `impulse` extension sections are present (see [[cyb-graph]] §extensions), conforming compilers verify proofs before compilation and may reuse impulses to skip power iteration (see §5.1). Snapshots without these extensions are accepted — the base `.graph` spec has no provenance layer.
 
@@ -285,6 +287,25 @@ Per layer $l$:
 
 dtype `float32`, row-major.
 
+### 7.7 CT-1.1 Wedge-Augmented Attention
+
+CT-1.1 extends the scalar score $Q K^\top$ with a bivector magnitude term capturing orientation mismatch between query and key. The per-head score at inference time is
+
+$$\mathrm{score}_{ij}^{(l, h)} = \alpha \cdot \frac{Q_i^{(l, h)} \cdot K_j^{(l, h)}}{\sqrt{d_h}} + \beta \cdot \frac{\|Q_i^{(l, h)} \wedge K_j^{(l, h)}\|}{\sqrt{d_h}}$$
+
+where the bivector norm uses the shifted wedge product from [[clifford]] §5.2 with the default shift set $S = \{1, 2, 4, 8, 16\}$:
+
+$$\|Q \wedge K\|^2 = \sum_{s \in S} \sum_c \left( Q_c K_{(c+s) \bmod d_h} - Q_{(c+s) \bmod d_h} K_c \right)^2$$
+
+The scalars $\alpha, \beta \in \mathbb{F}_p$ are per-layer learnable (2 additional parameters per layer), initialized at $\alpha = 1, \beta = 0$ so that a freshly compiled CT-1.1 model matches CT-1.0 bit-exactly on the zero-wedge initialization before any training. When $\beta = 0$ the wedge term degenerates and inference equals CT-1.0 with no performance penalty.
+
+The attention weights $W_Q, W_K, W_V, W_O$ in §7.4–7.5 are unchanged. Only the score function adds the wedge magnitude term.
+
+Emitted tensors per layer:
+- `layers.{l}.attn.alpha_beta.weight` of shape $(2,)$, dtype `float32`
+
+Compatibility: CT-1.0 inference ignores the `alpha_beta` tensor and applies the legacy score. CT-1.1 runtime reads both. See [[clifford]] §C3 for the wedge anti-symmetry conformance check.
+
 ---
 
 ## 8. Pass 6 — MLP Weights
@@ -328,6 +349,56 @@ $$W_2^{(l)} = \sqrt{\Sigma_{1:4d^*}} \cdot V^\top_{:, 1:4d^*}$$
 - `layers.{l}.mlp.down_proj.weight` of shape $(4d^*, d^*)$
 
 Activation between them is SiLU; this is implicit in the architecture, not stored.
+
+### 8.5 CT-1.1 Clifford-Block MLP (No-FFN Variant)
+
+CT-1.1 offers an alternative MLP path that replaces the SwiGLU pair `up_proj` + `down_proj` with a **Clifford block** per CliffordNet (Ji, 2026). When active, the MLP stage is the shifted geometric product from [[clifford]] §5 followed by a single learnable projection — no expanded inner dimension, no FFN ratio.
+
+Per-layer computation (replaces §§8.1–8.4 when `clifford_mlp = true` in `config`):
+
+$$H_{\mathrm{out}} = H + \gamma \odot \left[ \sigma(H) + \mathrm{gate}(H, G) \odot G \right]$$
+
+$$G = \mathrm{Linear}_{\mathrm{proj}} \!\left( \bigoplus_{s \in S} \left[ \mathrm{Wedge}_s(H, C) \,\|\, \mathrm{Inner}_s(H, C) \right] \right)$$
+
+$$C = \mathrm{DWConv}_{3 \times 3} \!\left( \mathrm{DWConv}_{3 \times 3}(H) \right) - \lambda H$$
+
+with:
+- shift set $S = \{1, 2, 4, 8, 16\}$ (default, stored in `config`)
+- self-energy suppression $\lambda \in \{0, 1\}$ (default $\lambda = 1$, "differential mode")
+- $\sigma$ is SiLU over $\mathbb{F}_p$ via LUT (see [[Goldilocks field processor]])
+- $\gamma$ is a learnable LayerScale vector of shape $(d^*,)$
+- $\mathrm{gate}$ is a sigmoid over a concatenation-then-linear of $(H, G)$
+
+For graph-native compiles, the "DWConv" is replaced by a local graph convolution over the [[cybergraph]] 1-hop neighborhood — the graph Laplacian action $\mathcal{L} H$ — computed by SpMV against the cybergraph adjacency. This preserves spatial-topological fidelity since the cybergraph is the native topology.
+
+#### 8.5.1 Weights emitted
+
+Per layer $l$ when Clifford-MLP active:
+
+- `layers.{l}.mlp_clifford.proj.weight` of shape $(|S| \cdot 2 d^*, d^*)$ — the projection $\mathrm{Linear}_{\mathrm{proj}}$
+- `layers.{l}.mlp_clifford.gate.weight` of shape $(2 d^*, d^*)$ — gate linear layer
+- `layers.{l}.mlp_clifford.gamma` of shape $(d^*,)$ — LayerScale
+- `layers.{l}.mlp_clifford.context.weight_1` of shape $(d^*, 3, 3)$ — first DWConv (or graph-conv kernel)
+- `layers.{l}.mlp_clifford.context.weight_2` of shape $(d^*, 3, 3)$ — second DWConv
+
+Total MLP parameters per layer: $2 |S| d^{*2} + 2 d^{*2} + d^* + 18 d^*$.
+
+At $|S| = 5$ and $d^* = 300$: $2 \cdot 5 \cdot 300^2 + 2 \cdot 300^2 + 5700 = 1{,}085{,}700$ params per layer.
+
+Compare to SwiGLU ($3 \cdot d^* \cdot 4 d^* = 12 \cdot 300^2 = 1{,}080{,}000$): the Clifford block is **roughly same as SwiGLU at identical width**, but with $|S| = 2$ (Nano config) the params drop to $2 \cdot 2 \cdot 300^2 + \ldots \approx 365{,}000$ per layer — a 3× reduction.
+
+The intended deployment saves depth: CT-1.1 Clifford achieves SwiGLU-equivalent capability at **fewer layers** ($L^*/2$ to $L^*/3$ in CIFAR-class experiments per the paper), so the total param budget drops proportionally. Run §5.4 with $\lambda_2$ and $\kappa$ recomputed against the Clifford layer contraction rate (which improves by a constant factor per the paper's reaction-diffusion analysis) — the emitted $L^*$ scales down automatically.
+
+#### 8.5.2 Compatibility
+
+A CT-1.1 `.model` with `clifford_mlp = false` is byte-identical to a CT-1.0 `.model` of the same $G$. Runtimes detect the flag in `config` and dispatch accordingly:
+
+- CT-1.0 runtime loading a `clifford_mlp = true` model rejects it with "unsupported MLP variant".
+- CT-1.1 runtime loading a `clifford_mlp = false` model runs the legacy SwiGLU path.
+
+#### 8.5.3 Compile determinism
+
+Context DWConv / graph-conv weights are initialized by seeded ChaCha20 per §6.2 with salt `"mlp_clifford"`. The LayerScale $\gamma$ initializes to $10^{-5}$ (fp32). All other weights initialized by He-normal seeded from hemera hash of $(L, \nu_{\mathrm{compiler}}, l)$. Sign convention SC-1 applies to the projection SVD where factorization is used for initialization.
 
 ---
 
@@ -444,8 +515,15 @@ temperature = 700        # 0.7
 top_p = 900              # 0.9
 scale = 1000
 
+# CT-1.1 extension — omitted entirely on CT-1.0 compiles
+[clifford]
+shift_set              = [1, 2, 4, 8, 16]   # S in clifford.md §5.3
+self_energy_suppression = 1                 # λ ∈ {0, 1}; 1 = differential mode
+clifford_mlp           = false              # §8.5; when true, replaces SwiGLU
+wedge_attention        = false              # §7.7; when true, β is learnable (≠ 0)
+
 [lineage]
-spec          = "CT-1.0"
+spec          = "CT-1.1"
 source        = "hemera:9f3c..."
 source_kind   = ".graph"
 chain_id      = "bostrom-1"
@@ -582,6 +660,27 @@ cyb-llm load <output.model> --warmup 1 --check-finite
 
 A round-trip extraction to a HuggingFace directory (config.json + model.safetensors) is also supported via `cyb-llm export hf <output.model>` and must succeed for the file to be CT-1 conforming. This guarantees the compiled model is consumable by both the cyb stack and the wider ecosystem.
 
+### 11.6 Clifford Conformance (P-CLIFFORD, CT-1.1 only)
+
+For CT-1.1 models with Clifford extensions active, an additional predicate P-CLIFFORD decomposes into three sub-checks. All must pass.
+
+**P-CLIFFORD-A** — wedge anti-symmetry. For every layer $l$, the shifted wedge operator satisfies $\mathrm{Wedge}_s(X, X) = 0$ numerically to within $\varepsilon_w = 10^{-6}$ on a fixed-seed length-128 random embedding sequence, for every $s \in S$.
+
+**P-CLIFFORD-B** — CT-1.0 degeneracy. A CT-1.1 model compiled with `clifford_mlp = false`, initialized with $\beta = 0$ in §7.7 and no other CT-1.1 tensors present, produces logits bit-identical to its CT-1.0 counterpart on the cyb-llm warmup pass. Enforces the strict-superset invariant.
+
+**P-CLIFFORD-C** — jet equivalence. The shifted geometric product output computed via the [[nox]] jets (`shifted_inner_product`, `shifted_wedge_product`) matches a reference scalar-field implementation within $\varepsilon_j = 10^{-9}$ on a 64-element fixed test vector set emitted by the compiler alongside the `.model`.
+
+Stored in the `eval` section (§10.7) as:
+
+```toml
+[ct1_1_conformance]
+P_CLIFFORD_A = 1      # wedge antisymmetry
+P_CLIFFORD_B = 1      # CT-1.0 degeneracy when flags off
+P_CLIFFORD_C = 1      # jet-vs-reference equivalence
+```
+
+P-CLIFFORD is `1` (pass) if and only if all three sub-checks pass. Omitted from the `eval` section on CT-1.0-only compiles.
+
 ---
 
 ## 12. Reference Implementation
@@ -600,7 +699,7 @@ The certificate is embedded in the `.model`'s `eval` section (§10.7). The CLI a
 
 ```toml
 # certificate.toml
-spec        = "CT-1.0"
+spec        = "CT-1.1"
 snapshot    = "hemera:..."
 output      = "hemera:..."   # the model's particle
 P-EMBED     = { value = 0.031, pass = true }
@@ -608,6 +707,7 @@ P-ATTN      = { min = 0.81, mean = 0.89, pass = true }
 P-LAYER     = { contracting = true, max_ratio = 0.93, pass = true }
 P-DET       = { runs = 2, identical = true, pass = true }
 P-LOAD      = { cyb_llm_load = true, hf_export = true, finite_logits = true, pass = true }
+P-CLIFFORD  = { A_antisym = true, B_degeneracy = true, C_jet_equiv = true, pass = true }
 ```
 
 End-to-end pipe from go-cyber to a loaded model in one command:
@@ -622,16 +722,25 @@ curl -s https://node.bostrom.cybernode.ai/cyber/graph/snapshot?block=23195000 \
 
 ## 13. Versioning
 
-CT-1 is the initial spec. Backward-incompatible changes increment the major version (CT-2). Compatible refinements increment the minor version (CT-1.1). The compiler version string in §2.1 must match the spec version exactly.
+CT-1.1 is the current spec. Backward-incompatible changes increment the major version (CT-2). Compatible refinements increment the minor version (CT-1.2). The compiler version string in §2.1 must match the spec version exactly.
 
-Open items expected in CT-1.1:
+**CT-1.1 (current)** — adds (relative to CT-1.0):
+- §7.7 wedge-augmented attention (two scalars per layer, default-disabled via $\beta = 0$ init)
+- §8.5 Clifford-block MLP (No-FFN alternative, default-disabled via `clifford_mlp = false`)
+- §10.3 `config` gains `[clifford]` block: `shift_set`, `self_energy_suppression`, `clifford_mlp`, `wedge_attention`
+- §11.6 P-CLIFFORD conformance decomposed into A/B/C checks
+- consumes [[clifford]] extensions on extended `.graph` inputs; degenerates to CT-1.0 on legacy `.graph`
+
+Open items expected in CT-1.2:
 
 - multi-label semcon assignment (split-weight variant of §4.5)
 - ε-incremental recompile when only $\Delta L$ is supplied
-- valence-weighted attention (use $v$ explicitly rather than the simple sign clip in §2.4)
+- decoupled shift sets $S_{\mathrm{inner}} \neq S_{\mathrm{wedge}}$ per CliffordNet future-work §6
+- learned shift offsets (adaptive geometric topology)
+- rotor-RoPE extension to 4D rotors via the quaternion slot of $G(3, 0, 0)$
 
 ---
 
-see [[compiled transformers]] for the readable how-to. see [[graph-native-transformer]] for the mathematical derivation. see [[cyb-graph]] for the input file format. see [[cyb-model]] for the output file format. see [[cyber/link]] for the cyberlink seven-tuple. see [[cyber/tri-kernel]] for the focus computation. see [[cybergraph]] for the underlying axioms. see [[mc]] for the reference rust implementation.
+see [[compiled transformers]] for the readable how-to. see [[graph-native-transformer]] for the mathematical derivation. see [[cyb-graph]] for the input file format. see [[cyb-model]] for the output file format. see [[cyber/link]] for the cyberlink seven-tuple. see [[cyber/tri-kernel]] for the focus computation. see [[cybergraph]] for the underlying axioms. see [[clifford]] for the Clifford extensions consumed by CT-1.1 sections §7.7, §8.5, §11.6. see [[render]] for the T∞ rendering tier that runs inference on CT-1.1 output. see [[mc]] for the reference rust implementation.
 
 discover all [[concepts]]
