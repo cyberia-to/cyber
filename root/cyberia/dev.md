@@ -112,6 +112,22 @@ split parallel agents by non-overlapping file scopes. never let two
 agents edit the same file. partition by directory. use subagents for
 codebase exploration. keep main context clean for implementation.
 
+## clean up after yourself
+
+deletion is the agent's job. if a file becomes orphaned — leftover
+from reverted work, abandoned experiment, dead module — the agent
+that created it must remove it. never leave the workspace dirtier
+than you found it. never punt cleanup to the user with "left for
+you to delete". the user is not a janitor for the agent's discarded
+work.
+
+if a tool denies a destructive operation (rm, git rm), find another
+correct way: `mv` to /tmp, `git restore` for tracked files, ask once
+if truly stuck. never settle for "orphan stays" as the resolution.
+
+verify the cleanup: `git status` should show a clean working tree at
+the end of the work, with only the changes the user agreed to.
+
 ## writing style
 
 state what something is directly. never use "this is not X, it is Y"
