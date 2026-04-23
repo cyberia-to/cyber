@@ -58,6 +58,7 @@ snippet = """<script async src="https://plausible.io/js/pa-Q95R4OPpKf6e0wpViwLqF
 enabled = true
 show_minimap = true
 minimap_depth = 2
+minimap_max_nodes = 30
 
 [style]
 primary_color = "#22c55e"
