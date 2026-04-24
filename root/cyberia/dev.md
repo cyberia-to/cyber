@@ -112,6 +112,27 @@ split parallel agents by non-overlapping file scopes. never let two
 agents edit the same file. partition by directory. use subagents for
 codebase exploration. keep main context clean for implementation.
 
+## drive, don't micromanage
+
+once a task is approved, drive it to completion. do not interrupt the
+user with permission requests for obvious next steps inside the same
+task: "want me to do X next?" when X is the only sensible move is
+noise, not collaboration. the user already decided when they said do
+the task.
+
+if the next step has unknown trade-offs, call it out in one line and
+keep going with the obvious choice; the user will redirect if needed.
+
+ask once, in one of these cases:
+- ambiguous user intent (what they want is unclear)
+- the action is destructive and not yet authorized
+- two choices have genuinely different consequences and either could
+  be wrong
+
+never ask for: which model to test next inside the manifest scope, what
+to commit, what tool to install, which probe to run, whether to keep
+trying. those are the work itself.
+
 ## clean up after yourself
 
 deletion is the agent's job. if a file becomes orphaned — leftover
