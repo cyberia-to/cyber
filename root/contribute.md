@@ -32,3 +32,6 @@ trade on
 
 [[cyber valley]] is the physical estate where contributors live
 and build. arrive on the land, stay for the [[infrastructure]].
+
+we are building an autonomous village in the Bali mountains.
+[[visit us]].
