@@ -1,7 +1,7 @@
 ---
 icon: 🧀
 tags: cyberia
-alias: day pass, visit us
+alias: day pass
 crystal-type: entity
 crystal-domain: cyberia
 stake: 7068311759138044

@@ -1,6 +1,6 @@
 ---
 tags: cv.land
-alias: residency
+alias: residency, visit us
 crystal-type: process
 crystal-domain: cyberia
 stake: 7426761757179804
