@@ -21,8 +21,11 @@ direct support keeps the lights on while the [[hash]] stays open.
 # buy $BOOT
 
 $BOOT is the stake token of the [[bootloader]] — the chain that
-runs the [[cybergraph]]. holding $BOOT funds the bootloader and
-weights your voice in [[hash]] decisions. trade on
+runs the [[cybergraph]]. holding $BOOT funds [[hero]] nodes that
+pay the [[infrastructure]] costs and motivates contributors to
+advance the code. staking $BOOT opens write access to the
+[[cybergraph]] and weights your voice in [[hash]] decisions.
+trade on
 [osmosis](https://app.osmosis.zone/assets/ibc/FE2CD1E6828EC0FAB8AF39BAC45BC25B965BA67CCBC50C13A14BD610B0D1E2C4?ref=portfolio).
 
 # visit cyber valley
