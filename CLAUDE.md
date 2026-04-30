@@ -36,20 +36,23 @@ Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
 
 ## Building cyber
 
-Builds are orchestrated by the workspace anchor
-[cyberia-to/.github](https://github.com/cyberia-to/.github), which holds
-subgraph declarations, sync scripts, and the optica config generator.
-cyber does not declare its own subgraphs — that concern belongs to the
-workspace.
+cyber is the workspace anchor. It holds the content graph plus the
+subgraph declarations (`subgraphs/*.md`), the optica config
+generator (`scripts/build.nu`), the publish workflow
+(`.github/workflows/publish.yml`), and the IPFS cache
+(`ipfs-cache.json`). One repo to fork, one repo to clone.
+
+Local workflow (subgraph repos are siblings of cyber/):
 
 ```
-cd ~/cyberia-to/.github
-nu scripts/build.nu       # builds the full graph (private-inclusive)
-nu scripts/serve.nu       # builds + serves with live reload
+cd ~/cyberia-to/cyber
+nu scripts/sync.nu        # bootstrap: clone every active subgraph
+nu scripts/build.nu       # full graph build
+nu scripts/serve.nu       # build + serve with live reload
+nu scripts/dev.nu         # rebuild optica + restart serve
 ```
 
-For standalone development on cyber content alone (no subgraphs),
-optica can be invoked directly:
+For pure content edits without subgraphs, optica works standalone:
 
 ```
 optica build ~/cyberia-to/cyber

@@ -1,8 +1,16 @@
 name: Publish
 
-# Triggered manually only during the migration. After verification we
-# add a push trigger and disable the legacy .github workflow.
 on:
+  push:
+    branches: [master]
+    paths:
+      - 'root/**'
+      - 'blog/**'
+      - 'subgraphs/**'
+      - 'scripts/**'
+      - 'workspace.toml'
+      - 'publish.toml'
+      - '.github/workflows/publish.yml'
   workflow_dispatch:
   repository_dispatch:
     types: [content-changed]

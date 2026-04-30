@@ -7,12 +7,25 @@ four ways in.
 
 # pull request
 
-clone [[github]]'s workspace at
-[cyberia-to/.github](https://github.com/cyberia-to/.github), or any
-subgraph repo it lists. add or edit a `.md` file under `root/`, write
-plain markdown with a YAML frontmatter header, link it from related
-pages with `[[wiki-link]]`, push, open a pull request. every merged
-PR adds new context to the [[cybergraph]] — content, code, or both.
+fork [cyberia-to/cyber](https://github.com/cyberia-to/cyber). add
+or edit a `.md` file under `root/` — plain markdown, YAML
+frontmatter on top, `[[wiki-link]]` to related pages — push, open
+a pull request. every merged PR adds new context to the
+[[cybergraph]].
+
+want to work on tools or subgraphs (optica, trident, hemera, …)?
+each one has its own repo at
+[github.com/cyberia-to](https://github.com/cyberia-to). fork the
+specific one and PR there — same flow.
+
+run a full local mirror:
+
+```
+git clone https://github.com/<you>/cyber.git
+cd cyber
+nu scripts/sync.nu       # clones every active subgraph as a sibling
+nu scripts/serve.nu      # builds + serves at localhost:8888
+```
 
 # donate
 
