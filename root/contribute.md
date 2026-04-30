@@ -3,22 +3,29 @@ tags: cyber, menu
 crystal-type: process
 crystal-domain: cyber
 ---
-TODO
+four ways in.
 
-every cyber matters. choose a way in:
+# fork and pull request
 
-# code
+clone any repo from [[github]], change something, send a pull request.
+every merged PR moves the protocol forward — code, content, or both.
 
-work on the protocol or its tools — see [[github]]
+# donate
 
-# stake
+[[ETH]] or any ERC-20 token to:
 
-become a [[hero]], lock [[boot]] for the [[hash]]
+`0x0F29df83BCb651E172F5cd467313de64a3EA0Cf9`
 
-# write
+direct support keeps the lights on while the [[hash]] stays open.
 
-expand the graph — every page is a [[particle]] of the [[cybergraph]]
+# buy $BOOT
 
-# explore
+$BOOT is the stake token of the [[bootloader]] — the chain that
+runs the [[cybergraph]]. holding $BOOT funds the bootloader and
+weights your voice in [[hash]] decisions.
 
-[[join]] the [[aicosystem]], propose a [[cip]]
+# visit cyber valley
+
+[[cyber valley]] is the physical estate where contributors live
+and build. arrive for an [[apply for bootcamp]], stay for the
+[[infrastructure]].
