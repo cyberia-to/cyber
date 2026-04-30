@@ -1,39 +1,107 @@
-# ---
-# tags: cyber, config
-# crystal-type: source
-# crystal-domain: cyber
-# ---
-# Deployment orchestration moved to cyberia-to/.github per SPEC.md.
-# On push to master, fire a repository_dispatch at the workspace repo
-# so the workspace's publish workflow rebuilds the full graph.
-#
-# Requires a repo secret WORKSPACE_DISPATCH_TOKEN — a PAT (classic or
-# fine-grained) with `repo:public_repo` scope on cyberia-to/.github.
-# Without it this step no-ops and the workspace rebuilds on its own
-# push/schedule/manual triggers.
-name: Notify workspace
+name: Publish
 
+# Triggered manually only during the migration. After verification we
+# add a push trigger and disable the legacy .github workflow.
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
+  repository_dispatch:
+    types: [content-changed]
+
+concurrency:
+  group: publish
+  cancel-in-progress: true
 
 jobs:
-  dispatch:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Fire repository_dispatch at cyberia-to/.github
-        env:
-          TOKEN: ${{ secrets.WORKSPACE_DISPATCH_TOKEN }}
+      - name: Checkout cyber into ~/cyberia-to/cyber
+        uses: actions/checkout@v4
+        with:
+          path: cyber
+      - name: Move into ~/cyberia-to/
         run: |
-          if [ -z "$TOKEN" ]; then
-            echo "WORKSPACE_DISPATCH_TOKEN not set; skipping. Publish workflow"
-            echo "in cyberia-to/.github can still be triggered manually."
-            exit 0
+          mkdir -p "$HOME/cyberia-to"
+          mv cyber "$HOME/cyberia-to/cyber"
+
+      - name: Clone declared subgraphs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ORG: cyberia-to
+        run: |
+          cd "$HOME/cyberia-to/cyber"
+          for decl in subgraphs/*.md; do
+            [ -f "$decl" ] || continue
+            NAME=$(awk '/^name:/ {print $2; exit}' "$decl")
+            REPO=$(awk '/^repo:/ {print $2; exit}' "$decl")
+            ARCHIVED=$(awk '/^archived:/ {print $2; exit}' "$decl")
+            ORPHAN=$(awk '/^orphan:/ {print $2; exit}' "$decl")
+            VISIBILITY=$(awk '/^visibility:/ {print $2; exit}' "$decl")
+            LOCAL_ONLY=$(awk '/^local-only:/ {print $2; exit}' "$decl")
+
+            [ -z "$NAME" ] && continue
+            [ -z "$REPO" ] && REPO="$NAME"
+            [ "$ARCHIVED" = "true" ] && continue
+            [ "$ORPHAN" = "true" ] && continue
+            [ "$LOCAL_ONLY" = "true" ] && continue
+            [ "$VISIBILITY" = "private" ] && continue
+            [ "$REPO" = "cyber" ] && continue
+
+            TARGET="$HOME/cyberia-to/$REPO"
+            if [ ! -d "$TARGET" ]; then
+              git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/${ORG}/${REPO}.git" "$TARGET" \
+                || echo "skip ${REPO}: clone failed"
+            fi
+          done
+
+      - name: Install Nushell
+        uses: hustcer/setup-nu@v3
+        with:
+          version: '*'
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache optica build
+        uses: actions/cache@v4
+        with:
+          path: |
+            /tmp/optica-target-cache
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-optica-v2
+          restore-keys: |
+            ${{ runner.os }}-optica-
+
+      - name: Build optica
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf "$HOME/cyberia-to/optica"
+          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" "$HOME/cyberia-to/optica"
+          if [ -d /tmp/optica-target-cache ]; then
+            mv /tmp/optica-target-cache "$HOME/cyberia-to/optica/target"
           fi
-          curl -sSf -X POST \
-            -H "Authorization: Bearer $TOKEN" \
-            -H "Accept: application/vnd.github+json" \
-            https://api.github.com/repos/cyberia-to/.github/dispatches \
-            -d '{"event_type":"content-changed","client_payload":{"source":"cyber","sha":"${{ github.sha }}"}}'
-          echo "Dispatched content-changed to cyberia-to/.github"
+          cd "$HOME/cyberia-to/optica" && cargo build --release
+          cp -r "$HOME/cyberia-to/optica/target" /tmp/optica-target-cache
+
+      - name: Build site
+        run: |
+          cd "$HOME/cyberia-to/cyber"
+          nu scripts/build.nu --public-only \
+            --optica "$HOME/cyberia-to/optica/target/release/optica" \
+            --output "$HOME/cyberia-to/cyber/build"
+
+      - name: Add deploy files
+        run: touch "$HOME/cyberia-to/cyber/build/.nojekyll"
+
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          npm install -g netlify-cli
+          netlify deploy --prod \
+            --dir="$HOME/cyberia-to/cyber/build" \
+            --site="$NETLIFY_SITE_ID" \
+            --auth="$NETLIFY_AUTH_TOKEN"

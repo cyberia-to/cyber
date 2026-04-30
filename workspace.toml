@@ -1,0 +1,29 @@
+# cyberia-to workspace configuration
+# read by scripts/sync-org.nu and scripts/build.nu
+# see SPEC.md for the reconciliation model
+
+org      = "cyberia-to"
+root_dir = "~/cyberia-to"
+
+[graph]
+root_subgraph = "cyber"          # donates the root namespace
+output        = "build"
+
+[subgraphs.policy]
+clone_archived  = false          # archived repos are skipped on clone
+include_private = true           # private repos included in local builds
+public_flag     = "--public-only"
+
+[media]
+# Gateway prefix for IPFS-hosted media. Optica rewrites
+# `../media/<filename>` in markdown to `<ipfs_gateway>/ipfs/<CID>`
+# at build time using the filename→CID map below.
+# Using the public gateway — the dedicated `emerald-raw-leopon-384`
+# gateway has access controls enabled and returns 401 from browsers.
+# Switch back once those allow cyber.page + localhost origins.
+ipfs_gateway    = "https://gateway.pinata.cloud"
+ipfs_map        = "ipfs-cache.json"   # relative to workspace root
+
+[sync]
+lock_file       = "subgraphs.lock.toml"
+default_action  = "dry-run"      # mutations require --apply
