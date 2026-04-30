@@ -7,18 +7,9 @@ four ways in.
 
 # pull request
 
-fork [cyberia-to/cyber](https://github.com/cyberia-to/cyber). add
-or edit a `.md` file under `root/` — plain markdown, YAML
-frontmatter on top, `[[wiki-link]]` to related pages — push, open
-a pull request. every merged PR adds new context to the
-[[cybergraph]].
-
-want to work on tools or subgraphs (optica, trident, hemera, …)?
-each one has its own repo at
-[github.com/cyberia-to](https://github.com/cyberia-to). fork the
-specific one and PR there — same flow.
-
-run a full local mirror:
+cyberia spans ~50 repos and ~200 MB of source — and we collapsed
+setup into a single clone. one fork, one bootstrap, full local
+mirror.
 
 ```
 git clone https://github.com/<you>/cyber.git
@@ -26,6 +17,26 @@ cd cyber
 nu scripts/sync.nu       # clones every active subgraph as a sibling
 nu scripts/serve.nu      # builds + serves at localhost:8888
 ```
+
+after `sync.nu`, the whole network sits next to `cyber/` —
+[[optica]], [[trident]], [[hemera]], every public subgraph. edit
+a `.md` under `cyber/root/`, or jump into any sibling repo and
+work there. each repo is its own git remote; fork → branch →
+push → PR against that upstream.
+
+`CONTEXT.md` at the repo root is the cyber graph distilled for
+language models — drop it into your model's system prompt and the
+agent inherits the voice and the structural awareness needed to
+navigate the graph.
+
+scripts:
+- `sync.nu` — bootstrap; clones missing, fetches present
+- `build.nu` — full graph build
+- `serve.nu` — build + live-reload server
+- `dev.nu` — rebuild optica + restart serve
+
+every merged PR adds new context to the [[cybergraph]] — content,
+code, or both.
 
 # donate
 
