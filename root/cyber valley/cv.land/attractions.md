@@ -9,10 +9,10 @@ crystal-domain: cyberia
 - [[sanghyang]]
 - [[firefly canyon]]
 - [[magic forest]]
-- [[twin peaks]]
+- twin peaks
 
 [[sunset]]
 
 - [[sinwood]]
-- [[twin peaks]]
+- twin peaks
 - [[rockets estate]]

@@ -14,7 +14,7 @@ crystal-domain: cyberia
 | new moon | $500 |
 
 - ## camping and wilderness
-	- [[twin peaks]] site is provided as part of [[black]] ticket program
+	- twin peaks site is provided as part of [[black]] ticket program
 	- all residents have right for using tents in wilderness of cyber valley
 	- given that they [[follow the rules]]
 - ## equipment rents

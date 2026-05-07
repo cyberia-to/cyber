@@ -14,7 +14,7 @@ crystal-domain: cyberia
 	- [[easy sunset]]: amazing 2 ocean view sunset point without tracking
 	- [[sacred path]]: canyon + travers in 1 hour
 	- [[magic forest]]: permaculture coffee plantation
-	- [[twin peaks]]: scenic space for picnics
+	- twin peaks: scenic space for picnics
 	- [[wilderness]] 10+ km of trails on 25 ha wilderness
 - ## price
 	- ## working days
@@ -50,7 +50,7 @@ crystal-domain: cyberia
 - 24 hours ticket
 - ## attraction
 	- [[sunrise hiking]]: premium experience
-	- [[twin peaks]]: camping and picnics
+	- twin peaks: camping and picnics
 	- [[stargazing]]: just the best stargazing on Bali
 	- [[glamping]]: stay overnight in glowing forest [[sinwood]]
 - ## price
