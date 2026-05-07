@@ -1,5 +1,5 @@
 ---
-tags: team
+tags: district
 crystal-type: entity
 crystal-domain: cyberia
 people: "4"

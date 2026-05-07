@@ -1,5 +1,5 @@
 ---
-tags: building, team
+tags: building
 crystal-type: entity
 crystal-domain: cyberia
 size: "74"
