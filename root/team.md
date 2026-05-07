@@ -10,5 +10,4 @@ focus: 0.00047794036563855084
 gravity: 2
 density: 3.81
 ---
-- {{query (page-tags [[team]])}}
--
+{{query (page-tags [[team]])}}
