@@ -1,5 +1,5 @@
 ---
-tags: district, team, cv.land
+tags: district, cv.land
 crystal-type: entity
 crystal-domain: cyberia
 type: attraction

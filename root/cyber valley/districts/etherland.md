@@ -1,5 +1,5 @@
 ---
-tags: district, team
+tags: district
 crystal-type: entity
 crystal-domain: cyberia
 ops: "false"

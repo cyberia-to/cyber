@@ -1,5 +1,5 @@
 ---
-tags: team
+tags: district
 crystal-type: process
 crystal-domain: cyberia
 ops: "false"
