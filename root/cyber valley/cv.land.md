@@ -14,7 +14,7 @@ main
 
 menu
 
-- [[attractions]]
+- [[hike]]
 - [[cyb/features]]
 - TODO [[visit]]
 - TODO [[eat]]
