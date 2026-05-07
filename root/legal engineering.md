@@ -47,6 +47,6 @@ crystal-domain: biology
 
 -
 - The following PT PMA companies established according to Indonesian laws
-	- [[cyber valley estate]]: holding company
+	- [[cve]]: holding company
 	- TODO cyber devops force: development company
 	- TODO [[rockets estate]]: anchor investor
