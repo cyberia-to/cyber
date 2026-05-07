@@ -6,8 +6,6 @@ alias: PT CVE, PT PMA Cyber Valley Estate, CVE
 ---
 PT PMA Cyber Valley Estate — the Indonesian operating company of [[cyberia]]. a PMA (Penanaman Modal Asing, foreign investment company) licensed and operational in Bali
 
-estimated formation value: >$1M. licensed, operational, with 32 employees, 37 hectares under management, and active revenue streams. companies of this class in Indonesia require 6-12 months of formation, significant capital deposits, and multiple government licenses
-
 ---
 
 ## legal structure
