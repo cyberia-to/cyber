@@ -55,5 +55,5 @@ density: 0.66
 -
 - The following PT PMA companies established according to Indonesian laws
 	- [[cyber valley estate]]: holding company
-	- TODO [[cyber devops force]]: development company
+	- TODO cyber devops force: development company
 	- TODO [[rockets estate]]: anchor investor

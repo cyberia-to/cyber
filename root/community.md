@@ -14,4 +14,4 @@ TODO quantify ability to count
 
 TODO new process of hiring people
 
-TODO merge spreadsheets [[CDF]] and [[rfe]] after [[legal]] is done
+TODO merge spreadsheets CDF and [[rfe]] after [[legal]] is done
