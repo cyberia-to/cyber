@@ -4,13 +4,6 @@ alias: wisdom of the crowds, crowd wisdom, collective judgment
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: enzyme
-stake: 14566226512183814
-diffusion: 0.0005659998403635296
-springs: 0.0014153785242075102
-heat: 0.0011520272831781842
-focus: 0.0009380189340796822
-gravity: 7
-density: 3.17
 ---
 
 the aggregated judgment of many independent agents outperforms most individuals — and often the best expert

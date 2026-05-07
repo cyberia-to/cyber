@@ -3,13 +3,6 @@ alias: unified structure
 tags: cyberia
 crystal-type: pattern
 crystal-domain: biology
-stake: 4430280874673419
-diffusion: 0.00012840844347086373
-springs: 0.00009972004087038047
-heat: 0.0001228627231510749
-focus: 0.00011869277862676447
-gravity: 1
-density: 1.16
 ---
 stratification = layered unfolding
 

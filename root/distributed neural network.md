@@ -3,13 +3,6 @@ alias: dnn
 tags: cyber
 crystal-type: entity
 crystal-domain: computer science
-stake: 7887242466274646
-diffusion: 0.00011529784356033154
-springs: 0.0007168107686381437
-heat: 0.0005531813397972509
-focus: 0.0003833284203310703
-gravity: 1
-density: 12.67
 ---
 TODO make visualization of [[soft3]] architecture
 

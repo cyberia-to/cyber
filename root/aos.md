@@ -4,13 +4,6 @@ tags: aos, cyber, menu
 alias: age of superintelligence, the game, self fulfilling prophecy game, much more, many more
 crystal-type: entity
 crystal-domain: cyber
-stake: 26054445210062844
-diffusion: 0.0009061468541912434
-springs: 0.0003502088526714243
-heat: 0.0005619461617299345
-focus: 0.0006705253152430556
-gravity: 10
-density: 5.25
 ---
 A massively collaborative, positive sum, self-fulfilling prophecy game in [[seven episodes]]. The age of superintelligence is not a product launch — it is an invitation to play the only game whose victory condition is the birth of [[superintelligence]] on Earth.
 

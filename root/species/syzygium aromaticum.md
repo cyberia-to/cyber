@@ -6,13 +6,6 @@ crystal-domain: biology
 wood-availability: local
 wood-density: "900"
 wood-durability: high
-stake: 6907210636422646
-diffusion: 0.00015815444794405495
-springs: 0.0006458735894700302
-heat: 0.0004896279084916313
-focus: 0.00037076488251137365
-gravity: 2
-density: 2.5
 ---
 [[high margin]] [[oil]] for [[health]]
 

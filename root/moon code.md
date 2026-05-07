@@ -2,13 +2,6 @@
 tags: aos
 crystal-type: entity
 crystal-domain: cyber
-stake: 21372748946909340
-diffusion: 0.0005466052647869838
-springs: 0.001407198355646266
-heat: 0.0011365879595960809
-focus: 0.0009227797310066149
-gravity: 2
-density: 3.52
 ---
 [original text](https://cyb.ai/oracle/ask/QmcHB9GKHAKCLQhmSj71qNJhENJJg8Gymd1PvvsCQBhG7M) and [original video](https://cyb.ai/oracle/ask/QmanZyMFnEti618crNPkn93g7MFaoDGrZ4Pta5drfdt9jb)
 

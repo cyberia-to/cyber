@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4855408837394604
-diffusion: 0.0002474369998493835
-springs: 0.00021965960495355394
-heat: 0.0002475894157818818
-focus: 0.0002391342645671413
-gravity: 7
-density: 3.48
 ---
 1903-1957. Hungarian-American mathematician and polymath.
 

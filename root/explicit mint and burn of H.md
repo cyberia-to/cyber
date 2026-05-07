@@ -3,13 +3,6 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
-stake: 12275905550913256
-diffusion: 0.000186718240047719
-springs: 0.0007241923224293761
-heat: 0.0005766299227930675
-focus: 0.0004259428013112983
-gravity: 3
-density: 7.08
 ---
 currently [[bostrom]] [[mint]] [[$H]] on every staking operation automatically
 

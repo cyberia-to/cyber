@@ -2,13 +2,6 @@
 tags: genus, species, class
 crystal-type: entity
 crystal-domain: biology
-stake: 6081974203523196
-diffusion: 0.00011233815923477823
-springs: 0.00004161662191204803
-heat: 0.00006836886416742412
-focus: 0.00008232783902449077
-gravity: 0
-density: 0.76
 ---
 
 | operation                     | frequency for sheep          | frequency for goats          | notes                          |

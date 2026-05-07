@@ -3,13 +3,6 @@ tags: pattern
 alias: cycles
 crystal-type: pattern
 crystal-domain: mathematics
-stake: 4462501099216498
-diffusion: 0.00012233794131689195
-springs: 0.0001198316321208332
-heat: 0.00014106201117550007
-focus: 0.00012533086252979964
-gravity: 2
-density: 2.97
 ---
 recurring sequence of events or states that returns to its starting point
 

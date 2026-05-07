@@ -3,13 +3,6 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: draft
-stake: 12372566224542492
-diffusion: 0.00014435817041301739
-springs: 0.0001291347341237582
-heat: 0.00017347719156033268
-focus: 0.00014561494375570693
-gravity: 2
-density: 2.27
 ---
 replace native [[cosmos-sdk]] [liquidity module](https://github.com/tendermint/liquidity) with [aqua](https://github.com/1inch/aqua)-style decentralized exchange
 

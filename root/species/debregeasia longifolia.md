@@ -9,13 +9,6 @@ margin: low
 autonomy: support
 wood: "yes"
 grow-speed: "5"
-stake: 10134725174459522
-diffusion: 0.00012987613369967575
-springs: 0.00010015672791332789
-heat: 0.00011812143441520589
-focus: 0.00011860937210688091
-gravity: 1
-density: 0
 ---
 ![image](https://ipfs.io/ipfs/QmPTsuUveBovcEgX9Feee9sVqb6La2b5xCU4J4Jx1t5mvo)
 

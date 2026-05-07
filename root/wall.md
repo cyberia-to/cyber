@@ -3,13 +3,6 @@ alias: walls
 tags: cyber
 crystal-type: entity
 crystal-domain: agriculture
-stake: 8491371676457386
-diffusion: 0.0005157811236298487
-springs: 0.00009840960905432993
-heat: 0.0002568547381096967
-focus: 0.0003387843921531726
-gravity: 9
-density: 12.48
 ---
 [[layer]] for productivity
 

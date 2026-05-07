@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
-stake: 4106288616768009
-diffusion: 0.00016245847165667938
-springs: 0.000056417317609256175
-heat: 0.00010586965510106726
-focus: 0.0001193283621313335
-gravity: 6
-density: 0
 ---
 
 we are obsessed with the idea of fast, cheap and lowtech construction

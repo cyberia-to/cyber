@@ -3,13 +3,6 @@ alias: ananas, pineapple
 tags: genus, species
 crystal-type: entity
 crystal-domain: biology
-stake: 10310471853785410
-diffusion: 0.0003819387749891116
-springs: 0.00038574918343253127
-heat: 0.000390908333912596
-focus: 0.0003848758093068457
-gravity: 7
-density: 0.32
 ---
 ![image](https://ipfs.io/ipfs/QmQ4ebij2qVq5SN1tgGfwejsQrdVfgmYPMHgxFnthGwuaU)
 

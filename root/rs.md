@@ -4,13 +4,6 @@ alias: Rs, rs language
 icon: "\u2699\uFE0F"
 crystal-type: entity
 crystal-domain: cyber
-stake: 2440926101748440
-diffusion: 0.00022511157146064474
-springs: 0.00011689529764623842
-heat: 0.00017090740252070542
-focus: 0.0001818058555283403
-gravity: 7
-density: 4.22
 ---
 [[Rust]] with everything dynamically-sized removed. no heap. no `Vec`. no `String`. no unbounded recursion. every value has a known size at compile time. every loop has a known bound
 

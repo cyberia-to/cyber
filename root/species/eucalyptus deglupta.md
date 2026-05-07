@@ -7,13 +7,6 @@ alias: eucalyptus, rainbow tree, leda
 wood: "yes"
 grow-speed: "4"
 wood-density: "500"
-stake: 7557107211013170
-diffusion: 0.00027066994280879443
-springs: 0.00010365858733904193
-heat: 0.00019782587684725455
-focus: 0.00020599772297556678
-gravity: 8
-density: 0
 ---
 ![](https://ipfs.io/ipfs/Qmb1AXnjLDowod535ZgSC5x35rp4gzJQHwadsqvBT3DFEJ)
 

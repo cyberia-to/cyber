@@ -2,13 +2,6 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
-stake: 5389564832660556
-diffusion: 0.0005479312128554824
-springs: 0.0002243304623914665
-heat: 0.0003494668816586842
-focus: 0.00041115812147693
-gravity: 8
-density: 5.07
 ---
 device converting [[energy]] into mechanical work
 

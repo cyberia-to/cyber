@@ -3,13 +3,6 @@ tags: cyber, cip, article
 crystal-type: process
 crystal-domain: cyber
 status: draft
-stake: 25385631458183776
-diffusion: 0.000145374618926814
-springs: 0.001738669702633591
-heat: 0.0012276494737492284
-focus: 0.0008398181150033546
-gravity: 3
-density: 0.82
 ---
 # hash function selection for [[cybergraph]] [[particles]]
 

@@ -2,13 +2,6 @@
 tags: class
 crystal-type: entity
 crystal-domain: biology
-stake: 4743533057731135
-diffusion: 0.0006461668622693531
-springs: 0.0002554194471883497
-heat: 0.0003927188665819707
-focus: 0.00047825303860758966
-gravity: 12
-density: 6.62
 ---
 how to describe [[the plant]]?
 

@@ -3,12 +3,6 @@ tags: cyb, cyber, core
 alias: formula particle, latex, mathml, equation, mathematical notation
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.00044657327814204257
-springs: 0.0007475574935311687
-heat: 0.0006761393443018615
-focus: 0.0005827817559907613
-gravity: 10
-density: 2.76
 ---
 mathematical meaning as [[particle]]. the native format for equations, proofs, chemical notation, physical laws, and any knowledge that requires precise symbolic structure
 

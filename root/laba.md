@@ -4,13 +4,6 @@ crystal-type: entity
 crystal-domain: cyberia
 size: "80"
 shape: 20*4
-stake: 5683289606904284
-diffusion: 0.00018817164805613797
-springs: 0.000056077868059911494
-heat: 0.00012687882187704206
-focus: 0.00013628494882145483
-gravity: 9
-density: 3.66
 ---
 production facility for autonomous estate
 

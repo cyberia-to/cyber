@@ -3,13 +3,6 @@ tags: geography
 alias: climate zones
 crystal-type: entity
 crystal-domain: geography
-stake: 7618740595082318
-diffusion: 0.00027152493047365715
-springs: 0.0000683995649331025
-heat: 0.00014631777888806253
-focus: 0.00018554589049437728
-gravity: 8
-density: 8.57
 ---
 regions of Earth classified by temperature and precipitation patterns
 

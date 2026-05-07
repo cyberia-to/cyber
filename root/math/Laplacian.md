@@ -3,13 +3,6 @@ alias: Laplace-Beltrami, graph Laplacian
 tags: physics, cyber
 crystal-type: entity
 crystal-domain: mathematics
-stake: 9050953985283216
-diffusion: 0.00011233815923477823
-springs: 0.001552564171127766
-heat: 0.0010988680009630532
-focus: 0.0007417119311483514
-gravity: 0
-density: 7.18
 ---
 the operator that measures how a value at a point differs from its neighborhood average
 

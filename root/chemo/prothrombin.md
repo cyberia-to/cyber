@@ -3,13 +3,6 @@ alias: coagulation factor ii
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8464521489338154
-diffusion: 0.0007465734681691992
-springs: 0.0001566970343888032
-heat: 0.00037612063406388134
-focus: 0.0004955199712140313
-gravity: 1
-density: 0.46
 ---
 [[prothrombin]], also known as [[coagulation factor ii]], is a vital [[plasma protein]] produced by the [[liver]] that plays a central role in the [[blood clotting cascade]]. it is the inactive precursor of [[thrombin]], an enzyme that converts [[fibrinogen]] into [[fibrin]], forming the structural basis of a blood clot. [[vitamin k]] is essential for the synthesis of prothrombin.
 

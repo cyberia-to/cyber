@@ -10,13 +10,6 @@ margin: medium
 autonomy: staple
 wood: "yes"
 grow-speed: "5"
-stake: 9860731219538260
-diffusion: 0.0005737629702154942
-springs: 0.0003937738217370971
-heat: 0.0004574438185958837
-focus: 0.0004965023953480674
-gravity: 12
-density: 0.79
 ---
 [[staple]]
 

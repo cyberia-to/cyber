@@ -3,12 +3,6 @@ tags: cyber
 alias: nebu, Nebu, goldilocks field library
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00014100215954381112
-springs: 0.00035296231852670654
-heat: 0.0002988221840095174
-focus: 0.0002361542121318279
-gravity: 4
-density: 3.86
 ---
 The [[Goldilocks field]] as a standalone Rust crate. Provides field arithmetic (add, sub, mul, inv, eq, lt) and [[NTT]] over roots of unity in $\mathbb{F}_p$ where $p = 2^{64} - 2^{32} + 1$.
 

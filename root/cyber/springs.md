@@ -3,13 +3,6 @@ alias: screened laplacian, structural constraints, hierarchy, springs
 tags: cyber
 crystal-type: entity
 crystal-domain: mathematics
-stake: 8182594524586208
-diffusion: 0.007281264720845058
-springs: 0.00061637207619647
-heat: 0.002797586796024438
-focus: 0.004385061342486486
-gravity: 70
-density: 5.65
 ---
 second operator of the [[tri-kernel]]
 

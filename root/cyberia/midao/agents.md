@@ -3,12 +3,6 @@ tags: cyberia, core, cyber
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
-diffusion: 0.00012398159494750766
-springs: 0.0009210886402165627
-heat: 0.0006818879103950729
-focus: 0.00047469497161775116
-gravity: 2
-density: 3.28
 ---
 practical agent deployment for [[cyberia/architecture]] — 147 [[neurons]] running on [[OpenFang]], coordinated through the [[cybergraph]]
 

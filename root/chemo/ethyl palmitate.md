@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5629589232665819
-diffusion: 0.00011233815923477823
-springs: 0.00008246788381555257
-heat: 0.000037649645370807764
-focus: 0.00008843937383621902
-gravity: 0
-density: 0
 ---
 ethyl palmitate is a naturally occurring [[fatty acid ester]] formed by the reaction of [[palmitic acid]] and [[ethanol]]. it is found in small amounts in [[plant oils]], [[animal fats]], and [[fermented foods]], and is also synthesized for use in cosmetics, food, and pharmaceutical applications. ethyl palmitate is valued for its [[emollient]], [[solvent]], and potential bioactive properties.
 

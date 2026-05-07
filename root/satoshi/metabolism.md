@@ -4,12 +4,6 @@ crystal-type: pattern
 crystal-domain: cyberia
 alias: developmental health, vital signs, satoshi oracle
 icon: "\U0001F4C8"
-diffusion: 0.000128766157494629
-springs: 0.000205220237111466
-heat: 0.00019941857922171826
-focus: 0.0001658328657251028
-gravity: 4
-density: 1.48
 ---
 # metabolism
 

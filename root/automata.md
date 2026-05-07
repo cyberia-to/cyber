@@ -2,13 +2,6 @@
 tags: computer science
 crystal-type: pattern
 crystal-domain: computer science
-stake: 3160267023933706
-diffusion: 0.00028037497993132213
-springs: 0.00013012372655969452
-heat: 0.00019579057729708472
-focus: 0.00021838272339299276
-gravity: 3
-density: 4.03
 ---
 
 Abstract machines that process input strings according to formal rules. The theoretical foundation of [[computation]] and [[compilers]].

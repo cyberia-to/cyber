@@ -3,13 +3,6 @@ alias: cryptography, modern cryptography, crypto primitives
 tags: discipline, crypto, math, comp
 crystal-type: entity
 crystal-domain: crypto
-stake: 7021323931679387
-diffusion: 0.0025563102592701366
-springs: 0.00017286305606227346
-heat: 0.0009643665484157858
-focus: 0.0015228873561369523
-gravity: 37
-density: 5.67
 ---
 # cryptography
 

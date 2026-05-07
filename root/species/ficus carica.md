@@ -5,13 +5,6 @@ crystal-type: entity
 crystal-domain: biology
 wood: "yes"
 grow-speed: "4"
-stake: 6846797715404375
-diffusion: 0.00032179516993492333
-springs: 0.0005614239421706194
-heat: 0.00048574718645251903
-focus: 0.00042647420490916384
-gravity: 3
-density: 2.14
 ---
 [[dioecious]]
 

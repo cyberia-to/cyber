@@ -2,13 +2,6 @@
 tags: cyber, cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 6868766050320110
-diffusion: 0.00041879792945703455
-springs: 0.001045614679299343
-heat: 0.0008586971918147384
-focus: 0.0006948228068812882
-gravity: 9
-density: 3.66
 ---
 - # Sensor Network
 - a distributed system that transforms physical measurements into persistent, queryable knowledge

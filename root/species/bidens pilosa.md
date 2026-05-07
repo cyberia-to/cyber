@@ -3,13 +3,6 @@ alias: ketul
 tags: species
 crystal-type: entity
 crystal-domain: biology
-stake: 6833372621844758
-diffusion: 0.00011233815923477823
-springs: 0.0018812369090272269
-heat: 0.0012875627297150303
-focus: 0.0008780526982685889
-gravity: 0
-density: 3.76
 ---
 [[health]]
 

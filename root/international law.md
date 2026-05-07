@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
-stake: 5106010583840778
-diffusion: 0.00034739438918430664
-springs: 0.00007531269908232435
-heat: 0.0001760043299725855
-focus: 0.0002314918703113745
-gravity: 7
-density: 6.11
 ---
 body of rules governing relations between states, international organizations, and increasingly, individuals
 

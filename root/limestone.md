@@ -3,13 +3,6 @@ alias: batu kapur
 tags: cyberia
 crystal-type: entity
 crystal-domain: materials
-stake: 6786384794386100
-diffusion: 0.00045499026547812755
-springs: 0.00006604910311690553
-heat: 0.00020733765789140266
-focus: 0.0002887773952524244
-gravity: 4
-density: 0
 ---
 
 Limestone is a [[sedimentary rock]] composed primarily of [[calcium carbonate]] (CaCO3), formed from the accumulated remains of marine organisms such as [[coral]], [[shells]], and [[foraminifera]].

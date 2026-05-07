@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5562463764867736
-diffusion: 0.00011233815923477823
-springs: 0.000920163190871555
-heat: 0.0006863797846463186
-focus: 0.0004694939938081331
-gravity: 0
-density: 0.76
 ---
 cycloergostanol is a complex [[steroid derivative]] belonging to the class of [[phytosterols]] or ergostane-type steroids, often found in [[fungi]], [[lichens]], and some [[medicinal plants]]. structurally related to [[ergosterol]], cycloergostanol compounds have been studied for their potential [[anticancer]], [[antimicrobial]], and [[anti-inflammatory]] activities. they feature a [[cyclopropane ring]] and multiple methyl substitutions in their sterol backbone.
 

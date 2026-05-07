@@ -5,13 +5,6 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
-stake: 26362001898883148
-diffusion: 0.0035302808316669447
-springs: 0.00099180745763743
-heat: 0.0018325097440203008
-focus: 0.0024291846019288328
-gravity: 51
-density: 2.29
 ---
 
 authors: [@mastercyb](https://cyb.ai/@mastercyb), [GPT-4](https://openai.com/index/gpt-4/), [claude-3.5 Sonnet](https://www.anthropic.com/news/claude-3-5-sonnet)

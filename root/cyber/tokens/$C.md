@@ -3,13 +3,6 @@ tags: cybernomics
 alias: carbon, $TOCYB
 crystal-type: entity
 crystal-domain: economics
-stake: 14096348237597240
-diffusion: 0.00036023124565239315
-springs: 0.00040024179475780516
-heat: 0.00040522232406760967
-focus: 0.00038123262606707124
-gravity: 7
-density: 6.07
 ---
 [[store of value]] for [[superintelligence]]
 

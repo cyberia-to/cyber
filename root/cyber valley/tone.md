@@ -2,13 +2,6 @@
 tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
-stake: 5267111706556176
-diffusion: 0.00022706192524298872
-springs: 0.00003879780940075155
-heat: 0.0001291973967202941
-focus: 0.00015100978478578306
-gravity: 3
-density: 0
 ---
 the tone
 

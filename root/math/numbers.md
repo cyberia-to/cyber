@@ -3,13 +3,6 @@ tags: math
 alias: number theory, numbers
 crystal-type: entity
 crystal-domain: math
-stake: 4927009336379226
-diffusion: 0.0004608766072003777
-springs: 0.00012928761905135232
-heat: 0.00025189648252103077
-focus: 0.00031960388581981004
-gravity: 15
-density: 4.92
 ---
 The study of properties and relationships of [[integers]], especially [[prime]] numbers.
 

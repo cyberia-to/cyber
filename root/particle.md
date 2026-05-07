@@ -5,13 +5,6 @@ tags: cyber, cyb, page, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
-stake: 56744209087345984
-diffusion: 0.0292311120739352
-springs: 0.0008910820502003292
-heat: 0.010023793032088111
-focus: 0.016887639258445816
-gravity: 365
-density: 9.04
 ---
 content-addressed node in the [[cybergraph]]. identity = [[hash]] of content
 

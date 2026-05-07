@@ -4,13 +4,6 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: myristica, nutmeg
-stake: 7608366659149886
-diffusion: 0.00016324762997798
-springs: 0.00005855373978592514
-heat: 0.0001263836024368686
-focus: 0.00012446665741214493
-gravity: 2
-density: 0
 ---
 ![Screenshot 2024-05-26 at 02.46.24.png](https://ipfs.io/ipfs/QmR2H3DHGKGeYmGZGrv9JE7pu51Ti7A3dyZaQPAanbMfwN)
 

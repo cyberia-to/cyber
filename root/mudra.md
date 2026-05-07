@@ -3,12 +3,6 @@ tags: cyber
 alias: mudra, मुद्रा, crypto primitives
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00014198035953269462
-springs: 0.001308120356526955
-heat: 0.0009439618432885126
-focus: 0.0006522186553821554
-gravity: 3
-density: 1.59
 ---
 post-quantum cryptographic primitives for [[neurons]]. mudra (मुद्रा — seal/gesture in Sanskrit) is to [[neurons]] what [[hemera]] is to [[particles]]: hemera gives content its identity and integrity (hashing, commitment, tree proofs); mudra gives agents their confidentiality and privacy (encrypting, exchanging keys, computing privately, distributing keys).
 

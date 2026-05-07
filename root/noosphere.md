@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 14767602915578062
-diffusion: 0.000306627803185776
-springs: 0.0017494108075801682
-heat: 0.0012817414525509291
-focus: 0.0009344854343771516
-gravity: 3
-density: 8.26
 ---
 the sphere of human thought enveloping the planet — conceived independently by [[Vernadsky]] and Teilhard de Chardin (1920s)
 

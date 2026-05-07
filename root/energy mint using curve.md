@@ -3,13 +3,6 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: implemented
-stake: 12404786449085574
-diffusion: 0.0001625504554193784
-springs: 0.00023306821962639727
-heat: 0.00023009035357788587
-focus: 0.00019721376431319133
-gravity: 3
-density: 1.88
 ---
 implemented in [[v6]]
 

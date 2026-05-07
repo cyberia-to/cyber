@@ -8,13 +8,6 @@ wood: "yes"
 grow-speed: "5"
 availability: cv
 nitrogener: "250"
-stake: 14645556610490640
-diffusion: 0.00028891190206525776
-springs: 0.00018305212728507932
-heat: 0.00023801767313606572
-focus: 0.00024697512384537306
-gravity: 6
-density: 1.92
 ---
 [[plant/miracle]]
 

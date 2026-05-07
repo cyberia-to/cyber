@@ -3,12 +3,6 @@ tags: cyber, meta
 alias: metaknowledge
 crystal-type: entity
 crystal-domain: meta
-diffusion: 0.00027975037981689283
-springs: 0.0003649648690311629
-heat: 0.0003644415912601356
-focus: 0.00032225296886983183
-gravity: 18
-density: 15.51
 ---
 # meta
 

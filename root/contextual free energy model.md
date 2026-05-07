@@ -3,13 +3,6 @@ tags: article, cip
 crystal-type: pattern
 crystal-domain: cyber
 status: draft
-stake: 13576430977924820
-diffusion: 0.00016361040489783356
-springs: 0.0001214838920095164
-heat: 0.00015610311384771722
-focus: 0.00014947099282131953
-gravity: 2
-density: 0
 ---
 ## abstract
 

@@ -3,13 +3,6 @@ tags: geography
 alias: glaciers
 crystal-type: entity
 crystal-domain: geography
-stake: 7591890407963085
-diffusion: 0.0001574280882717643
-springs: 0.00007632386120895244
-heat: 0.00011408298758264931
-focus: 0.00012442780001510143
-gravity: 3
-density: 4.5
 ---
 a persistent body of dense ice formed from compressed snow over centuries
 

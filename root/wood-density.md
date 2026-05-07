@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
-stake: 971081767478921
-diffusion: 0.00012403678419771217
-springs: 0.0001124714564761817
-heat: 0.0001339576526657196
-focus: 0.0001225513595748581
-gravity: 2
-density: 2.77
 ---
 {{query (property :wood-density)}}
 

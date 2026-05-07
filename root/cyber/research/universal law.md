@@ -2,13 +2,6 @@
 tags: cyber, research, article
 crystal-type: entity
 crystal-domain: cyber
-stake: 19238159070930328
-diffusion: 0.00011601088141152234
-springs: 0.00002365555115616213
-heat: 0.00005273107273047644
-focus: 0.00007564832059870732
-gravity: 1
-density: 0
 ---
 # exponential optimality under constraint
 

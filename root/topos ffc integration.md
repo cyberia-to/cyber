@@ -3,13 +3,6 @@ tags: article, cip
 crystal-type: pattern
 crystal-domain: mathematics
 status: draft
-stake: 4882828573937579
-diffusion: 0.00016480463754004374
-springs: 0.00032993069929768235
-heat: 0.00032494629857700443
-focus: 0.00024637078827473465
-gravity: 1
-density: 0
 ---
 ## marrying topos theory and focus flow computation
 ### 1. philosophical and mathematical motivation

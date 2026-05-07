@@ -6,13 +6,6 @@ scalable: "true"
 alias: chrysopogon, vetiver
 supply: next-month
 market: herbs
-stake: 8266196243571091
-diffusion: 0.00018196674245754576
-springs: 0.00019824550295823544
-heat: 0.0002094389380369008
-focus: 0.00019234480972362932
-gravity: 4
-density: 1.44
 ---
 [[high margin]] [[oil]]
 

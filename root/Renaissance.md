@@ -2,13 +2,6 @@
 tags: time, history
 crystal-type: entity
 crystal-domain: history
-stake: 5311455197404606
-diffusion: 0.0003420032563933387
-springs: 0.00012035501363835501
-heat: 0.0002165032481573283
-focus: 0.00025040878191964885
-gravity: 7
-density: 10.05
 ---
 cultural and intellectual movement in Europe, 14th-17th century
 

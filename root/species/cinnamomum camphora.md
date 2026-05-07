@@ -8,13 +8,6 @@ wood-availability: high
 wood-durability: moderate
 market: hardwoods
 supply: next-month
-stake: 7520493319486942
-diffusion: 0.00014819644976635764
-springs: 0.0003257088272245636
-heat: 0.00027450322792921505
-focus: 0.00022671151863639755
-gravity: 1
-density: 1.32
 ---
 [tokopedia](https://www.tokopedia.com/mitraplant/bibit-pohon-kayu-kamper-tanaman-kayu-kamper-cinnamomum-camphora?extParam=ivf%3Dfalse%26src%3Dsearch)
 

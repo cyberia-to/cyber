@@ -3,13 +3,6 @@ tags: trident, cyber
 alias: trident language, Trident, Tri, tri
 crystal-type: entity
 crystal-domain: cyber
-stake: 37851441059813056
-diffusion: 0.0009119223559642708
-springs: 0.00012722640211562233
-heat: 0.0004023783381942181
-focus: 0.0005746047662556825
-gravity: 39
-density: 5.09
 ---
 where the [[field]] is visible and the programmer thinks in constraints. division is exact (multiplicative inverse). every operation becomes a polynomial constraint in the [[zheng]] execution trace
 

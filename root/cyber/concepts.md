@@ -3,13 +3,6 @@ icon: ☯️
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
-stake: 12267850494777486
-diffusion: 0.00011233815923477823
-springs: 0.0010232267720569324
-heat: 0.000753885939039259
-focus: 0.0005139142990423357
-gravity: 0
-density: 19.34
 ---
 
 ## genesis

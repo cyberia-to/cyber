@@ -3,13 +3,6 @@ tags: cv.land
 alias: residency, visit us
 crystal-type: process
 crystal-domain: cyberia
-stake: 7426761757179804
-diffusion: 0.00012018480126060532
-springs: 0.00006025873148337369
-heat: 0.00009678701740546405
-focus: 0.00009752742355641045
-gravity: 2
-density: 3.27
 ---
 ## white ticket
 

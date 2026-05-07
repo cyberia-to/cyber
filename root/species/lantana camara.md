@@ -3,13 +3,6 @@ alias: krasi, lantana
 tags: species, genus
 crystal-type: entity
 crystal-domain: biology
-stake: 9490320683597934
-diffusion: 0.00022341757269076515
-springs: 0.0001638316995172828
-heat: 0.0001984813298594473
-focus: 0.00020055456217246275
-gravity: 4
-density: 0
 ---
 ![Lantana Camara Flower Seeds,Rare Perennial Herb Gorgeous Bonsai Suitable  Tree 25 Seeds Eco Pack. : Amazon.in: Garden & Outdoors](https://ipfs.io/ipfs/QmXXFLtXv6Mqavb9YfUFKupsekCRC4XQmVV59EqvoB4khr)
 

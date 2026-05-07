@@ -3,13 +3,6 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 labor: 10 h/year/are
-stake: 4815133556715756
-diffusion: 0.00023380411136727784
-springs: 0.000027473868865919353
-heat: 0.00010844719627651287
-focus: 0.0001468336555987216
-gravity: 3
-density: 0
 ---
 - capital:: [[eth/are]]
 - care:: [[2]] ;; scale 1 (none) to 5 (very demanding)

@@ -3,13 +3,6 @@ alias: α-pinene
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 7768654139831368
-diffusion: 0.00014067915919076853
-springs: 0.000044483173412433495
-heat: 0.00009244789378254878
-focus: 0.00010217411037562707
-gravity: 2
-density: 0.54
 ---
 
 α-pinene is a naturally occurring organic compound belonging to the terpene class. it is one of the most common [[terpenes]] found in nature and is notably present in the oils of many coniferous trees, particularly pine trees. here is a detailed overview of its medicinal uses and chemical information:

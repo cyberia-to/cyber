@@ -3,12 +3,6 @@ tags: cyberia, core
 crystal-type: process
 crystal-domain: cyber
 crystal-size: deep
-diffusion: 0.00011688476595944397
-springs: 0.0015374401687373283
-heat: 0.001080690485986395
-focus: 0.0007358125307982211
-gravity: 1
-density: 0.85
 ---
 what must be defined before the first agent runs — the gap between [[cyberia/architecture]] theory and operational reality
 

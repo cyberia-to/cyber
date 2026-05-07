@@ -2,13 +2,6 @@
 tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
-stake: 3233738899596334
-diffusion: 0.00035706198448186993
-springs: 0.00011851388992025107
-heat: 0.0002291826394433461
-focus: 0.00025992168710568716
-gravity: 3
-density: 5.43
 ---
 SI unit of [[force]], equal to the force needed to accelerate 1 kg at 1 m/s2
 

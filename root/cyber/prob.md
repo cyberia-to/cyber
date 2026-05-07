@@ -3,13 +3,6 @@ alias: probability of observation, prob
 tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
-stake: 5000000000000000
-diffusion: 0.00011864119933508708
-springs: 0.0017107739899512961
-heat: 0.001210385371718484
-focus: 0.000814629870996653
-gravity: 1
-density: 14.58
 ---
 the [[probability]] that the collective intelligence observes a [[particle]], given the [[equilibrium]] of [[diffusion]] (exploration), [[springs]] (structure), and [[heat]] (context)
 

@@ -4,13 +4,6 @@ tags: cyber, core, cybernomics
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
-stake: 52357864882504040
-diffusion: 0.003520177004428565
-springs: 0.0005132119675035246
-heat: 0.0015117649555703324
-focus: 0.0022164050835794713
-gravity: 50
-density: 12.85
 ---
 many machines, one mind. a vimputer coordinates physical nodes into a single computing entity through [[consensus]]
 

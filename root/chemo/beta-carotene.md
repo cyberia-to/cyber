@@ -3,13 +3,6 @@ alias: β-carotene, b-carotene
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8363833287641030
-diffusion: 0.0002197652829045432
-springs: 0.00010575584192655197
-heat: 0.0001644275908306372
-focus: 0.00017449491219636976
-gravity: 3
-density: 0.88
 ---
 
 

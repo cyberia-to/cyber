@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4944909461125381
-diffusion: 0.0004571360219592957
-springs: 0.00048481545078901255
-heat: 0.0004919042170084505
-focus: 0.00047239348961805556
-gravity: 7
-density: 4.06
 ---
 1894-1964. American mathematician and philosopher.
 

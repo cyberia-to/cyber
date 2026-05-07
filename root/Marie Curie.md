@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4944909461125381
-diffusion: 0.00014905126630759298
-springs: 0.00004078573603993077
-heat: 0.00009157062331796572
-focus: 0.00010507547862937194
-gravity: 5
-density: 0
 ---
 1867-1934, Polish-French physicist and chemist
 

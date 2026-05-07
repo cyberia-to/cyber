@@ -3,12 +3,6 @@ tags: bostrom, cybernomics, operation
 crystal-type: process
 crystal-domain: cyber
 status: active
-diffusion: 0.00013400297857636212
-springs: 0.0002629554305539303
-heat: 0.0002479627120120367
-focus: 0.0001954806608567732
-gravity: 1
-density: 1.51
 ---
 # Liquidity Roadmap
 

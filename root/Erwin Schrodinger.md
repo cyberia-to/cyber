@@ -3,13 +3,6 @@ alias: Erwin Schrödinger
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4913584242819610
-diffusion: 0.00024211622237152547
-springs: 0.00019288055637535435
-heat: 0.00023284472519101846
-focus: 0.00022549122313657936
-gravity: 6
-density: 3.13
 ---
 1887-1961. Austrian-Irish physicist.
 

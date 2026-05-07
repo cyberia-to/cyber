@@ -2,13 +2,6 @@
 tags: technology
 crystal-type: process
 crystal-domain: materials
-stake: 3977407718595692
-diffusion: 0.00012327366742432956
-springs: 0.00018263107992561798
-heat: 0.00018009647856197445
-focus: 0.00015244545340224955
-gravity: 2
-density: 1.88
 ---
 additive manufacturing: building objects layer by layer from digital models
 

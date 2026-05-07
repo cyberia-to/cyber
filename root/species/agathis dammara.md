@@ -8,13 +8,6 @@ market: resins
 supply: next-month
 wood: "yes"
 grow-speed: "4"
-stake: 7549784432707924
-diffusion: 0.00029096910469889904
-springs: 0.00021409205590819993
-heat: 0.0002509663751665591
-focus: 0.000259905444155229
-gravity: 4
-density: 3.21
 ---
 [[high margin]]
 

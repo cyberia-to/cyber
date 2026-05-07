@@ -2,13 +2,6 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
-stake: 5710139794023517
-diffusion: 0.00011233815923477823
-springs: 0.00008246788381555257
-heat: 0.000037649645370807764
-focus: 0.00008843937383621902
-gravity: 0
-density: 0
 ---
 thrombin is a vital [[serine protease enzyme]] that plays a key role in the [[coagulation cascade]] by converting [[fibrinogen]] into [[fibrin]], which forms the structural mesh of a [[blood clot]]. it is generated from its inactive precursor [[prothrombin]] through the action of [[factor xa]] in the presence of [[calcium ions]], [[phospholipids]], and [[factor v]]. thrombin also activates other coagulation factors and contributes to [[platelet activation]] and [[wound healing]].
 

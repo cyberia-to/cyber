@@ -2,13 +2,6 @@
 tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
-stake: 3142936448611291
-diffusion: 0.00019242779451923052
-springs: 0.000780880655255856
-heat: 0.0006147571787785724
-focus: 0.00045342952959209987
-gravity: 4
-density: 5.74
 ---
 
 the [[emotion]] of [[orange]] — contamination avoidance

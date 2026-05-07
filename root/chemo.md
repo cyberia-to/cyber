@@ -3,12 +3,6 @@ tags: cyber, chemo
 alias: chemistry
 crystal-type: entity
 crystal-domain: chemo
-diffusion: 0.00047183796616248185
-springs: 0.00042080538394115573
-heat: 0.0004610103545373896
-focus: 0.0004543626691710789
-gravity: 27
-density: 10.39
 ---
 # chemo
 

@@ -4,13 +4,6 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: camellia
-stake: 8178933135433584
-diffusion: 0.00011233815923477823
-springs: 0.0006462051324987029
-heat: 0.0004769278228155404
-focus: 0.00034541618393011823
-gravity: 0
-density: 4.7
 ---
 [[staple]] [[drink]] and [[health]] as [[green tea]]
 

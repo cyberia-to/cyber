@@ -3,13 +3,6 @@ tags: pattern, physics, mathematics
 alias: gradients
 crystal-type: pattern
 crystal-domain: physics
-stake: 5226266876453586
-diffusion: 0.00016495888172520095
-springs: 0.00032581629442355995
-heat: 0.0003154544949289275
-focus: 0.0002433152281754611
-gravity: 4
-density: 7.37
 ---
 rate of change of a quantity across space or along a dimension
 

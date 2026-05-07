@@ -3,12 +3,6 @@ alias: Königsberg, Konigsberg, Kaliningrad
 tags: geo, socio, math, meta
 crystal-type: entity
 crystal-domain: geo
-diffusion: 0.0001604848871113829
-springs: 0.0005126550607634289
-heat: 0.00041826911960821046
-focus: 0.00031769278570637155
-gravity: 4
-density: 4.03
 ---
 # Koenigsberg
 

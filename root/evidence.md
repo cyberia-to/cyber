@@ -4,12 +4,6 @@ alias: evidence, Bayesian evidence, marginal likelihood, model evidence, normali
 crystal-type: measure
 crystal-domain: cybics
 crystal-size: enzyme
-diffusion: 0.00016984217397097013
-springs: 0.0016352809896031978
-heat: 0.0011687053023474896
-focus: 0.0008092464443359661
-gravity: 3
-density: 3
 ---
 
 $P(E)$ — the total probability of observing the evidence across all hypotheses — the denominator in [[Bayes theorem]]

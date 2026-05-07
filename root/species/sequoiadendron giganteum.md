@@ -4,13 +4,6 @@ tags: species, research
 crystal-type: entity
 crystal-domain: biology
 supply: wishlist
-stake: 11167236915499112
-diffusion: 0.00011233815923477823
-springs: 0.00016014311588601805
-heat: 0.00015724215356686152
-focus: 0.0001356604450965708
-gravity: 0
-density: 3.27
 ---
 [[high margin]]
 

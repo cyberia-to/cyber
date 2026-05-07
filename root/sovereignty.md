@@ -3,13 +3,6 @@ tags: governance
 alias: autonomy, self-rule, self-governance
 crystal-type: entity
 crystal-domain: governance
-stake: 5146285864519627
-diffusion: 0.0008344772037601843
-springs: 0.00010997816216606904
-heat: 0.0003553237994102772
-focus: 0.0005212968104119836
-gravity: 33
-density: 8.52
 ---
 supreme authority over a territory, population, or domain
 

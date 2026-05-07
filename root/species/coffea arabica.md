@@ -10,13 +10,6 @@ margin: high
 autonomy: staple
 wood: "yes"
 grow-speed: "3"
-stake: 8670779744935895
-diffusion: 0.00012781344090411013
-springs: 0.00013722757880573863
-heat: 0.00015826602165933316
-focus: 0.0001367281984256473
-gravity: 2
-density: 12.75
 ---
 ![What Does a Coffee Plant Look Like? - Square Coffee Co.](https://ipfs.io/ipfs/QmQYWS8DM2s9meBH8YAGSSXMYayKcLxdh1N6FfyNLc4YZE)
 

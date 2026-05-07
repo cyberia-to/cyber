@@ -4,13 +4,6 @@ icon: "\U0001F4DC"
 crystal-type: entity
 crystal-domain: cyber
 alias: cw-cyber
-stake: 14176898798954938
-diffusion: 0.000235075733984399
-springs: 0.00020138857284610613
-heat: 0.00023580736309666256
-focus: 0.00022511591146537045
-gravity: 5
-density: 4.04
 ---
 [[cosmwasm]] smart contracts for [[bostrom]] — the bootloader chain
 

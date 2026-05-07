@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
-stake: 4861673881055760
-diffusion: 0.0007408049919869974
-springs: 0.0001357144735567366
-heat: 0.00033903534460459216
-focus: 0.00047892390698145215
-gravity: 3
-density: 0
 ---
 
 | step                                                       | strengths                                                                                                                                               | considerations                                                                                                                        |

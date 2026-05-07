@@ -2,13 +2,6 @@
 tags: module
 crystal-type: entity
 crystal-domain: cyber
-stake: 21574125350303584
-diffusion: 0.00028731049439806327
-springs: 0.0008037490396555826
-heat: 0.0006607340227910599
-focus: 0.0005169267636539336
-gravity: 4
-density: 7.66
 ---
 current implementation on [[bostrom]] bootloader
 

@@ -3,12 +3,6 @@ tags: cyber, cyb, language
 crystal-type: entity
 crystal-domain: cyber
 alias: rune language, rune scripting
-diffusion: 0.00043173483206454153
-springs: 0.0006319259901685892
-heat: 0.0005926407367342093
-focus: 0.0005239733604297048
-gravity: 16
-density: 2.26
 ---
 # rune
 

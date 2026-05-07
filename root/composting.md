@@ -2,13 +2,6 @@
 tags: food, biology
 crystal-type: process
 crystal-domain: agriculture
-stake: 4268691566737672
-diffusion: 0.00024560850847961553
-springs: 0.00011651492028002356
-heat: 0.0001695590958385901
-focus: 0.00019167054949153847
-gravity: 11
-density: 5.41
 ---
 aerobic decomposition of organic matter into humus by bacteria, fungi, and invertebrates
 

@@ -3,13 +3,6 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cybics
 alias: FEP
-stake: 5175373567232129
-diffusion: 0.0005892499634355435
-springs: 0.0008691968875834624
-heat: 0.0007989670626313843
-focus: 0.0007151774605191082
-gravity: 20
-density: 7.85
 ---
 any system that persists must minimize variational [[free energy]] — or equivalently, maximize the evidence for its own generative model of the world
 

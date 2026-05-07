@@ -3,13 +3,6 @@ icon: 💰
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
-stake: 6708071748621671
-diffusion: 0.0001602730924764171
-springs: 0.00008848822925268424
-heat: 0.00012958801480494254
-focus: 0.0001326006179750062
-gravity: 5
-density: 1.24
 ---
 TODO lecture at [[edge city residency]]
 

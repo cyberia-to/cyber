@@ -3,13 +3,6 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: Hemera hash
-stake: 31195035580345060
-diffusion: 0.0014078565592466588
-springs: 0.00012848967675181902
-heat: 0.0005629636161339202
-focus: 0.0008550679058756842
-gravity: 51
-density: 0
 ---
 Hemera is the [[hash function]] of the [[cyber]] protocol. It is a [[STARK]]-friendly hash built on [[Poseidon2]] over the [[Goldilocks field]], designed for efficient arithmetic circuit evaluation.
 

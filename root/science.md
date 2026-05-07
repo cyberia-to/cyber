@@ -2,13 +2,6 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
-stake: 5012034928923463
-diffusion: 0.00036994209906052785
-springs: 0.0002884937848661853
-heat: 0.00033497813179709656
-focus: 0.00033851481134954874
-gravity: 9
-density: 10.7
 ---
 systematic study of the natural world through observation, hypothesis, experiment, and theory
 

@@ -4,13 +4,6 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: article
-stake: 15342685105149990
-diffusion: 0.0029978219888404435
-springs: 0.0007258646914807984
-heat: 0.0014860158626985467
-focus: 0.0020138735744042297
-gravity: 54
-density: 13.52
 ---
 the loop that thinks
 

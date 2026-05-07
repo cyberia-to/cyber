@@ -8,13 +8,6 @@ wood-durability: extreme
 wood-availability: high
 supply: next-month
 market: ironwoods
-stake: 7586398324234151
-diffusion: 0.00014819644976635764
-springs: 0.00022952095511501994
-heat: 0.00021163315936770742
-focus: 0.00018528114329123172
-gravity: 1
-density: 1.85
 ---
 [[high margin]]
 

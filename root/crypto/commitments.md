@@ -3,12 +3,6 @@ alias: commitment scheme, commitment schemes, crypto commitments
 tags: computer science, cryptography
 crystal-type: entity
 crystal-domain: computer science
-diffusion: 0.0002031207855375134
-springs: 0.00034535576730456536
-heat: 0.0003075557506986232
-focus: 0.00026667827309985876
-gravity: 2
-density: 0.54
 ---
 # crypto/commitments
 

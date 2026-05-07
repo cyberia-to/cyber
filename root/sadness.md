@@ -2,13 +2,6 @@
 tags: cyber, cyb
 crystal-type: property
 crystal-domain: cyber
-stake: 3169298450510175
-diffusion: 0.00023674605092913068
-springs: 0.0010870850023639762
-heat: 0.0008335332967006298
-focus: 0.0006112051855139021
-gravity: 6
-density: 7.86
 ---
 
 the [[emotion]] of [[indigo]] — withdrawal and introspection

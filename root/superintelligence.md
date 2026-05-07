@@ -4,13 +4,6 @@ tags: aos, cyber, core
 alias: asi, planetary superintelligence, collective ai
 crystal-type: entity
 crystal-domain: cyber
-stake: 28514898720625276
-diffusion: 0.007133281357655555
-springs: 0.0007005505514496084
-heat: 0.0027931572346477406
-focus: 0.004335437291192336
-gravity: 92
-density: 6.36
 ---
 [[intelligence]] that surpasses all human minds combined in every cognitive domain — speed, creativity, breadth, depth, and ability to improve itself
 

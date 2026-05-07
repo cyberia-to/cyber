@@ -3,13 +3,6 @@ tags: cybernomics
 alias: volt, millivolt, volts, millivolts
 crystal-type: entity
 crystal-domain: economics
-stake: 17680848218014824
-diffusion: 0.0003640019589749111
-springs: 0.0008200271004968256
-heat: 0.0006940514933833956
-focus: 0.000566819408313199
-gravity: 10
-density: 6.42
 ---
 [[token]] of [[will]] in [[bostrom]]
 

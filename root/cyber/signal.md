@@ -4,13 +4,6 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: enzyme
-stake: 23154625001185704
-diffusion: 0.001609903583479337
-springs: 0.0018781886030599193
-heat: 0.0017892611244695845
-focus: 0.0017262605975516118
-gravity: 7
-density: 5.19
 ---
 a bundle of [[cyberlinks]] a [[neuron]] commits in a single [[step]] — the atomic broadcast unit in [[cyber]]. each link in the signal consumes [[focus]], making every statement a [[costly signal]]
 

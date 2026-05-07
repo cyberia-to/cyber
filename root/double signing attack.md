@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
-stake: 11459659862488576
-diffusion: 0.00019829399988316175
-springs: 0.00038945441730641725
-heat: 0.00035924926327065486
-focus: 0.0002878331777876455
-gravity: 3
-density: 6.13
 ---
 type of [[cyber/attacks]] involving malicious behavior
 

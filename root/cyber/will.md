@@ -4,13 +4,6 @@ tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
-stake: 9358510674103518
-diffusion: 0.0031567920624636842
-springs: 0.0008467219194162029
-heat: 0.001614880558379205
-focus: 0.002155388718732607
-gravity: 52
-density: 9.73
 ---
 committed capacity to act. [[balance]] locked for duration — the longer and more you lock, the more will you have
 

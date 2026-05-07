@@ -3,12 +3,6 @@ alias: fine-tuning, finetuning, model fine-tuning, transfer learning
 tags: cybics, article, research
 crystal-type: pattern
 crystal-domain: computer science
-diffusion: 0.00011233815923477823
-springs: 0.001435561537029062
-heat: 0.0010188263921622363
-focus: 0.0006906028191585753
-gravity: 0
-density: 1.25
 ---
 
 adapting a pre-trained [[neural networks|neural network]] to a specific task by continuing [[learning]] on a narrow dataset. the core technique behind specialization of [[llms|language models]] and other foundation models.

@@ -3,13 +3,6 @@ tags: trident
 alias: Self_Optimizing_Compilation_for_Algebraic_Virtual_Machines
 crystal-type: article
 crystal-domain: cyber
-stake: 8055056135769852
-diffusion: 0.00012677712069650757
-springs: 0.000617970676699074
-heat: 0.0004856878355443198
-focus: 0.00034591733046685007
-gravity: 2
-density: 0.6
 ---
 # Self-Optimizing Compilation for Algebraic Virtual Machines
 

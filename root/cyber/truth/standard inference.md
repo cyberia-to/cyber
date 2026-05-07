@@ -3,13 +3,6 @@ alias: cyberlinks weight, cyberlinks weights, standard inference
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 7746278983898673
-diffusion: 0.0010217189690970635
-springs: 0.0013572426318955713
-heat: 0.0012645308383175831
-focus: 0.0011709384417807542
-gravity: 14
-density: 5.93
 ---
 the naive first solution to the [[true-false problem]] — a single-factor contextual weighting that preceded the full [[cyber/truth]] architecture
 

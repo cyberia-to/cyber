@@ -5,13 +5,6 @@ alias: find truth, compute truth, answer truth, truth consensus
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
-stake: 4745160341798967
-diffusion: 0.0008339743664354625
-springs: 0.0008665992382296788
-heat: 0.0008818133156083661
-focus: 0.0008533296178083331
-gravity: 30
-density: 6.22
 ---
 [[consensus]] on the probability of [[observation]]. the [[tru]] computes it, [[cyberank]] measures it, [[focus]] prices it. what survives the [[tri-kernel]] is what the [[cybergraph]] calls true
 

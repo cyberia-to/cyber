@@ -3,13 +3,6 @@ tags: compound
 alias: tetraterpenoids
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8209444711705441
-diffusion: 0.00011233815923477823
-springs: 0.00005503799715785731
-heat: 0.00008177993697320961
-focus: 0.00008903646615939085
-gravity: 0
-density: 1.01
 ---
 [[carotenoids]], also known as tetraterpenoids, are a diverse group of [[fat-soluble pigments]] naturally occurring in plants, algae, and photosynthetic bacteria. they serve essential roles as precursors of [[vitamin a]], antioxidants, and protective agents against photooxidative damage. carotenoids such as [[β-carotene]], [[lutein]], and [[zeaxanthin]] are vital for [[eye vision]], [[skin health]], and [[immune function]].
 

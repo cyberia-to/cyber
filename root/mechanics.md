@@ -2,13 +2,6 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
-stake: 4792758400783061
-diffusion: 0.0011753401655369606
-springs: 0.0004042785622297206
-heat: 0.0006792782021128765
-focus: 0.0008448092918599964
-gravity: 6
-density: 14.65
 ---
 The branch of [[physics]] describing motion of bodies under the action of [[force]].
 

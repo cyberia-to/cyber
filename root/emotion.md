@@ -2,13 +2,6 @@
 tags: cyber, cyb
 crystal-type: entity
 crystal-domain: cyber
-stake: 18101907970566432
-diffusion: 0.0006938786991783321
-springs: 0.0004923308151991122
-heat: 0.0005883091871231209
-focus: 0.000612300431573542
-gravity: 22
-density: 13.88
 ---
 - # Emotion
 - a computed color signal in [[prysm]] grounded in the [[color-emotion spectrum]]

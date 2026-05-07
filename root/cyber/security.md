@@ -3,13 +3,6 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-stake: 21118892632327500
-diffusion: 0.00020681996430815648
-springs: 0.00007840834156010453
-heat: 0.00014528337711742966
-focus: 0.0001559891600456001
-gravity: 8
-density: 0.44
 ---
 # nox security
 

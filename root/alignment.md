@@ -3,12 +3,6 @@ tags: cyber, ai, article
 alias: AI alignment, ai alignment
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0013599519456739062
-springs: 0.0016563635868207692
-heat: 0.0015615073417275392
-focus: 0.0014891865172287353
-gravity: 8
-density: 4.62
 ---
 # alignment
 

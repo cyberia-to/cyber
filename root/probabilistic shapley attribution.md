@@ -3,13 +3,6 @@ tags: article, cip
 crystal-type: measure
 crystal-domain: economics
 status: draft
-stake: 8804908634226972
-diffusion: 0.0002534620317620982
-springs: 0.00011300879202509679
-heat: 0.00018614439773342577
-focus: 0.0001978625330352691
-gravity: 7
-density: 0
 ---
 ## abstract
 

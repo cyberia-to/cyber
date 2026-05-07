@@ -4,13 +4,6 @@ alias: spacepussy
 icon: 🫦
 crystal-type: entity
 crystal-domain: cyber
-stake: 22554157180155588
-diffusion: 0.0011542909126072986
-springs: 0.0001736358055981268
-heat: 0.0005272759082428249
-focus: 0.0007346913796316739
-gravity: 19
-density: 3.13
 ---
 - memecoin with balls and vision
 

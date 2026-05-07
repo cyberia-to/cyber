@@ -4,13 +4,6 @@ tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
-stake: 13826869995964210
-diffusion: 0.003695171859228409
-springs: 0.0005840330256744968
-heat: 0.0016186975760396894
-focus: 0.0023465353525245606
-gravity: 75
-density: 6.37
 ---
 how much a [[neuron]] projects onto a target [[particle]] or [[axon]]. the measurable quantity at the receiving end
 

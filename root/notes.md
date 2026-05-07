@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 14982404412531926
-diffusion: 0.00011233815923477823
-springs: 0.00005454628365475146
-heat: 0.00008535505949248685
-focus: 0.00008960397661231454
-gravity: 0
-density: 1.07
 ---
 emission must go to partial compute towards `pi`
 

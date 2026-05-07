@@ -3,13 +3,6 @@ icon: 🔮
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 5240261519436942
-diffusion: 0.00011233815923477823
-springs: 0.00008789855738957296
-heat: 0.0001067433018045773
-focus: 0.00010388730719517951
-gravity: 0
-density: 10.74
 ---
 main
 

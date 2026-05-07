@@ -3,13 +3,6 @@ tags: cybernomics
 alias: carbohidrate, carbohydrates, carb
 crystal-type: entity
 crystal-domain: economics
-stake: 17143844475630170
-diffusion: 0.0002651725786819881
-springs: 0.00011871646691785344
-heat: 0.0001929351945442588
-focus: 0.0002067882683252079
-gravity: 7
-density: 4.64
 ---
 the most important species for [[eat]] carbs
 

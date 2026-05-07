@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 4922534305192688
-diffusion: 0.0005201636396260418
-springs: 0.00012881659872433153
-heat: 0.00027139336096895274
-focus: 0.00035300547162412125
-gravity: 7
-density: 1.22
 ---
 # first festival: 17-20 march 2026
 

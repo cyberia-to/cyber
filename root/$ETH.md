@@ -2,13 +2,6 @@
 tags: cybernomics
 crystal-type: entity
 crystal-domain: economics
-stake: 9021662872062234
-diffusion: 0.00027023572763456747
-springs: 0.000053417621090055
-heat: 0.00014455737288700745
-focus: 0.00018005462472170703
-gravity: 7
-density: 0
 ---
 
 $ETH is the native token of the [[Ethereum]] network, serving as the fundamental unit of value for gas fees, [[staking]], and economic security across the ecosystem.

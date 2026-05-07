@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
-stake: 5074685365535006
-diffusion: 0.00032046141514712
-springs: 0.0002389417282309839
-heat: 0.0002798567923951623
-focus: 0.0002878845845218961
-gravity: 6
-density: 7.35
 ---
 fundamental and rapid transformation of political power, social structures, or technological paradigms
 

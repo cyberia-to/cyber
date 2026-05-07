@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
-stake: 12232945251522482
-diffusion: 0.0002253577214958754
-springs: 0.00012987611042559005
-heat: 0.0001875459861075815
-focus: 0.00018915089109713655
-gravity: 3
-density: 4.48
 ---
 mitigation of [[nothing at stake]] problem
   an integral security mechanism in consensus algorithms, such as [[tendermint]]

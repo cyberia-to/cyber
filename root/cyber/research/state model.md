@@ -3,13 +3,6 @@ tags: article, cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-stake: 27226089738902100
-diffusion: 0.00011601088141152234
-springs: 0.00002365555115616213
-heat: 0.00005273107273047644
-focus: 0.00007564832059870732
-gravity: 1
-density: 0
 ---
 # Design Rationale of the State Model for Superintelligence
 ## Objective

@@ -3,13 +3,6 @@ tags: service
 crystal-type: process
 crystal-domain: cyber
 type: public
-stake: 12737728769364060
-diffusion: 0.00011233815923477823
-springs: 0.00025107120071385017
-heat: 0.00023356741796552415
-focus: 0.00017820392342465422
-gravity: 0
-density: 5.42
 ---
 product based circulation of materials
 

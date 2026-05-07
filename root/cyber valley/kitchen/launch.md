@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
-stake: 5309176999709641
-diffusion: 0.00014429212695658475
-springs: 0.00004563431411074365
-heat: 0.00008267170419820426
-focus: 0.00010237069855115932
-gravity: 1
-density: 0
 ---
 opening kitchen
 

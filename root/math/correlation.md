@@ -2,13 +2,6 @@
 tags: relation, statistics
 crystal-type: relation
 crystal-domain: mathematics
-stake: 1067172891684418
-diffusion: 0.00011233815923477823
-springs: 0.00016647457505070349
-heat: 0.00016185272777691434
-focus: 0.0001384819976879871
-gravity: 0
-density: 2.17
 ---
 statistical relationship where two variables change together
 

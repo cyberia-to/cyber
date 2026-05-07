@@ -3,13 +3,6 @@ tags: trident, cyber, article
 alias: master plan, nox master plan, nox_master_plan, cyber/launch
 crystal-type: article
 crystal-domain: cyber
-stake: 9519611796818916
-diffusion: 0.0001633742862139825
-springs: 0.001256147695375213
-heat: 0.0009182124101322228
-focus: 0.0006421739337460186
-gravity: 2
-density: 2.54
 ---
 # cyber/launch
 

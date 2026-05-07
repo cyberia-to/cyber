@@ -2,12 +2,6 @@
 tags: person, meta, spiri, math, sense, cosmo
 crystal-type: entity
 crystal-domain: meta
-diffusion: 0.00014026610292759695
-springs: 0.00036106527536188036
-heat: 0.00031192393299459724
-focus: 0.0002408374206712891
-gravity: 4
-density: 8.19
 ---
 # Immanuel Kant
 

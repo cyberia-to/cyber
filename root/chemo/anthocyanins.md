@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8243007445604482
-diffusion: 0.00011233815923477823
-springs: 0.00021498912291700018
-heat: 0.00019157102495391442
-focus: 0.00015898002148327672
-gravity: 0
-density: 2.08
 ---
 alias: anthocyanins
 

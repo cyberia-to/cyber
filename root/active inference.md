@@ -4,13 +4,6 @@ crystal-type: pattern
 crystal-domain: cybics
 alias: active inference framework
 status: draft
-stake: 6647618145501701
-diffusion: 0.00033759337477354446
-springs: 0.0007800450610740007
-heat: 0.0006656801486364913
-focus: 0.0005359462354362864
-gravity: 18
-density: 5.36
 ---
 
 a framework where perception, action, and [[learning]] are aspects of one optimization: minimizing variational [[free energy]]

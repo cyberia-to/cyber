@@ -2,13 +2,6 @@
 tags: technology, physics
 crystal-type: entity
 crystal-domain: physics
-stake: 5360273719439575
-diffusion: 0.00031119862342070476
-springs: 0.00021560933129491887
-heat: 0.0002657456579496974
-focus: 0.0002734312426887755
-gravity: 5
-density: 4.07
 ---
 device converting electric signals to electromagnetic (radio) waves and back
 

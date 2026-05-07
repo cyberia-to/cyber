@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5745940043515828
-diffusion: 0.00011233815923477823
-springs: 0.00006356183519036702
-heat: 0.00008651144989083968
-focus: 0.00009253992015266987
-gravity: 0
-density: 0.4
 ---
 
 general description:

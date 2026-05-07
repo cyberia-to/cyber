@@ -5,13 +5,6 @@ icon: "\U0001F30C"
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: article
-stake: 50000000000000000
-diffusion: 0.00013465539668561398
-springs: 0.0019190152291673967
-heat: 0.001346601785196363
-focus: 0.0009123526241323255
-gravity: 3
-density: 2.67
 ---
 # cyberspace
 

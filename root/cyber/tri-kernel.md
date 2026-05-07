@@ -4,13 +4,6 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
-stake: 17953987848800476
-diffusion: 0.0013077702378105464
-springs: 0.0012562018815668748
-heat: 0.0013027481331388461
-focus: 0.001291295310003143
-gravity: 5
-density: 1.76
 ---
 # Tri-Kernel Specification
 

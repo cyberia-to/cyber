@@ -2,13 +2,6 @@
 tags: computer science
 crystal-type: process
 crystal-domain: computer science
-stake: 4213689365244941
-diffusion: 0.0005257407432848711
-springs: 0.0002264624552415453
-heat: 0.00033943550130739226
-focus: 0.0003986962084763893
-gravity: 10
-density: 3.89
 ---
 Mathematical proof that a system (software, hardware, protocol) meets its specification. Certainty beyond testing.
 

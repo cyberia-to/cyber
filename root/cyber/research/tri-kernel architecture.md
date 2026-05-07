@@ -5,13 +5,6 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 alias: tri-kernel architecture
-stake: 28558835390456748
-diffusion: 0.0013545834106709102
-springs: 0.0011732801060479487
-heat: 0.0012544199961121159
-focus: 0.0012801597363723005
-gravity: 8
-density: 1.38
 ---
 # Tri-Kernel Architecture for Networked Collective Intelligence
 

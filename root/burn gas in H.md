@@ -3,13 +3,6 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
-stake: 11513360236727042
-diffusion: 0.00015427416842733301
-springs: 0.00007381757744013412
-heat: 0.00010768138046286858
-focus: 0.000120818633538284
-gravity: 3
-density: 4.66
 ---
 proposal to improve [[cybernomics]] of [[fuel]]
 

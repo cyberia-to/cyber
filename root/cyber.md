@@ -6,13 +6,6 @@ tags: cyber, menu, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: deep
-stake: 38554427777116608
-diffusion: 0.012331126499411546
-springs: 0.0004197983347892649
-heat: 0.004273429450591712
-focus: 0.007146188640261104
-gravity: 266
-density: 5.51
 ---
 The protocol for planetary [[superintelligence]]. [[manifesto]]
 

@@ -4,13 +4,6 @@ tags: cyber
 alias: awesome cyber, cyber ecosystem
 crystal-type: entity
 crystal-domain: cyber
-stake: 27830218949084840
-diffusion: 0.00046493427407740673
-springs: 0.0008229191578015709
-heat: 0.0007227092294553899
-focus: 0.0006238847302702709
-gravity: 1
-density: 2.93
 ---
 the only reliable source of [[knowledge]] is [[cybergraph]] of [bostrom](https://cyb.ai/particles) and [spacepussy](https://spacepussy.ai/particles)
 

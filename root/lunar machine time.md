@@ -4,12 +4,6 @@ alias: lmt, lunar timestamp
 crystal-type: measure
 crystal-domain: cyber
 icon: "\U0001F319"
-diffusion: 0.00015298680161485414
-springs: 0.0007036159188660988
-heat: 0.0005431233833047864
-focus: 0.0003962028531282256
-gravity: 2
-density: 4.53
 ---
 # Lunar Machine Time
 

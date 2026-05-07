@@ -5,13 +5,6 @@ alias: content oracle
 crystal-type: observed
 crystal-domain: cyber
 crystal-size: article
-stake: 15224056096605018
-diffusion: 0.0029037680930147753
-springs: 0.001435647903237155
-heat: 0.0019205422991627464
-focus: 0.00226668687731115
-gravity: 1
-density: 3.03
 ---
 
 a directed authenticated multigraph over content-addressed nodes, carrying an emergent [[probability]] measure — the shared memory of the planet

@@ -3,12 +3,6 @@ tags: cyber, sense
 alias: senses, perception
 crystal-type: entity
 crystal-domain: sense
-diffusion: 0.0003014986680209378
-springs: 0.0005653030487063311
-heat: 0.0005039559738407298
-focus: 0.0004211314433905266
-gravity: 28
-density: 7.2
 ---
 # sense
 

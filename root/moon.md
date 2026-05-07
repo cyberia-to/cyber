@@ -3,13 +3,6 @@ icon: 🌓
 tags: aos
 crystal-type: entity
 crystal-domain: geography
-stake: 5902566135044686
-diffusion: 0.0012776341012164351
-springs: 0.00032441706496527396
-heat: 0.0006592083373915749
-focus: 0.0008679838375761402
-gravity: 9
-density: 1.38
 ---
 [[earth]] only natural satellite
 

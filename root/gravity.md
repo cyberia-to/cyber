@@ -2,13 +2,6 @@
 tags: physics
 crystal-type: entity
 crystal-domain: physics
-stake: 5119435677400394
-diffusion: 0.0025241768181681165
-springs: 0.0005053209450227518
-heat: 0.0011859055499861479
-focus: 0.0016508658025881618
-gravity: 26
-density: 12.65
 ---
 The fundamental [[force]] by which [[mass]] and [[energy]] curve [[spacetime]], drawing bodies together.
 

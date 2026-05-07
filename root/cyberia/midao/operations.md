@@ -3,12 +3,6 @@ tags: cyberia, core
 crystal-type: process
 crystal-domain: cyber
 crystal-size: deep
-diffusion: 0.00012302117848223706
-springs: 0.0009703709179984784
-heat: 0.0007160975325089295
-focus: 0.0004958413711424625
-gravity: 1
-density: 1.71
 ---
 management objects and process system for 147 [[neurons]] — what they control and how work flows through [[cyber valley]]
 

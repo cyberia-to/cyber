@@ -3,12 +3,6 @@ tags: cyber, cip
 crystal-type: pattern
 crystal-domain: cyber
 alias: network layer, p2p, peer-to-peer, cyber network
-diffusion: 0.0003086868578055296
-springs: 0.0013736304118639945
-heat: 0.0010449928456879197
-focus: 0.0007754311215995698
-gravity: 4
-density: 1.46
 ---
 # network
 

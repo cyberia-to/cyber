@@ -3,13 +3,6 @@ alias: threshold cryptography, thresholds
 tags: cyber
 crystal-type: measure
 crystal-domain: cyber
-stake: 14511183628589390
-diffusion: 0.00015862869538019197
-springs: 0.002236173768065292
-heat: 0.0015593759233559752
-focus: 0.00106204166278091
-gravity: 2
-density: 5.18
 ---
 boundary condition that separates one regime from another
 

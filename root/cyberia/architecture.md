@@ -3,12 +3,6 @@ tags: cyberia, core
 crystal-type: pattern
 crystal-domain: socio
 crystal-size: deep
-diffusion: 0.00014008048304003324
-springs: 0.0008700586782247457
-heat: 0.0006553290983852116
-focus: 0.00046212366466449623
-gravity: 5
-density: 2.71
 ---
 organizational architecture of [[cyberia]] — from a village on a volcano to a planetary [[superintelligence]], bootstrapped by two founders, governed by 147 [[neurons]] through the [[tri-kernel]]
 

@@ -2,13 +2,6 @@
 tags: time, computer science
 crystal-type: entity
 crystal-domain: computer science
-stake: 5345628162829084
-diffusion: 0.0001909443349603148
-springs: 0.0007419273274501814
-heat: 0.0005737717117762767
-focus: 0.00043280470807047987
-gravity: 1
-density: 6.24
 ---
 hypothetical point where [[AI]] surpasses human cognitive capacity across all domains
 

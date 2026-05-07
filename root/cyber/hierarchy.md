@@ -5,13 +5,6 @@ crystal-domain: cyber
 crystal-size: article
 alias: cyber hierarchy, folding, scaling, graph folding
 status: draft
-stake: 80000000000000000
-diffusion: 0.0004669053175446973
-springs: 0.0011905728208696943
-heat: 0.0009736518396428102
-focus: 0.000785354872961842
-gravity: 14
-density: 2.95
 ---
 # cyber hierarchy
 

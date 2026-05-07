@@ -3,13 +3,6 @@ tags: cybernomics, cyber
 crystal-type: pattern
 crystal-domain: cybics
 alias: Shapley, Shapley values, shapley value
-stake: 5452540726085665
-diffusion: 0.00041505610926947207
-springs: 0.0010027347696212501
-heat: 0.0008311096462626496
-focus: 0.0006745704147736607
-gravity: 15
-density: 4.21
 ---
 a solution concept from cooperative game theory that assigns each player their exact fair share of the total value created by a coalition
 

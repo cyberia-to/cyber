@@ -2,13 +2,6 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
-stake: 1063267409921620
-diffusion: 0.0024528876821095754
-springs: 0.0002590471211966878
-heat: 0.0009950474719004818
-focus: 0.0015031674717939343
-gravity: 18
-density: 3.39
 ---
 measure of the average [[kinetic energy]] of particles in a system
 

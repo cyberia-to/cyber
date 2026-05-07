@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 14955554225412692
-diffusion: 0.00011233815923477823
-springs: 0.0004249812407551378
-heat: 0.0003457502943084177
-focus: 0.0002528135107056214
-gravity: 0
-density: 1.32
 ---
 page to gather experience of [[cybercongress]] team related to cutting edge ai tools
   title:: ai boost

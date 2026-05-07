@@ -2,13 +2,6 @@
 tags: superhuman
 crystal-type: property
 crystal-domain: superhuman
-stake: 1109807734261624
-diffusion: 0.00011233815923477823
-springs: 0.00006980124206278102
-heat: 0.0000867647436631809
-focus: 0.00009446240096886237
-gravity: 0
-density: 0.98
 ---
 antioxidants are molecules that neutralize or prevent cellular damage caused by [[free radicals]] and reactive oxygen species (ros). they protect cells from [[oxidative stress]], which can lead to cellular injury, inflammation, aging, and chronic diseases such as [[cardiovascular diseases]], [[cancer]], and [[neurodegenerative disorders]].
 

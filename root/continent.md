@@ -3,13 +3,6 @@ tags: geography
 alias: continents
 crystal-type: entity
 crystal-domain: geography
-stake: 7256263068972675
-diffusion: 0.00023723968115197403
-springs: 0.00009344122637298725
-heat: 0.0001517845690178972
-focus: 0.00017700912229146783
-gravity: 6
-density: 6.97
 ---
 a major continuous landmass on [[Earth]]
 

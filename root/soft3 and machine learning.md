@@ -2,13 +2,6 @@
 tags: article
 crystal-type: relation
 crystal-domain: computer science
-stake: 1491080391354730
-diffusion: 0.0001809215740149108
-springs: 0.00005505557484164771
-heat: 0.0001285328944292035
-focus: 0.00013268403834579428
-gravity: 3
-density: 0.4
 ---
 [[soft3]] can significantly enhance various machine learning tasks
 

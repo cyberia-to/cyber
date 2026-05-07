@@ -3,13 +3,6 @@ alias: implicit
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 25957418397518344
-diffusion: 0.00138426941702601
-springs: 0.0012227519585771513
-heat: 0.001292708385278942
-focus: 0.0013175019731419772
-gravity: 16
-density: 9.14
 ---
 what [[neurons]] derive from observing [[explicit knowledge]] and encode as new [[cyberlinks]]. the language of [[neurons]]
 

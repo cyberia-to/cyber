@@ -9,13 +9,6 @@ market: ironwoods
 supply: next-month
 wood: "yes"
 grow-speed: "1"
-stake: 7637657772370867
-diffusion: 0.00013907523606596873
-springs: 0.0004738951276789757
-heat: 0.00036730267174044296
-focus: 0.00028516669068477397
-gravity: 1
-density: 1.02
 ---
 [[high margin]]
 

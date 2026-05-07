@@ -4,13 +4,6 @@ alias: conservation law, conservation laws, conserved quantity
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
-stake: 9000000000000000
-diffusion: 0.00016596067776534815
-springs: 0.0015161856695976484
-heat: 0.0010888265655330772
-focus: 0.0007556013528686061
-gravity: 6
-density: 4.28
 ---
 a quantity that remains constant through every transformation. the constraint that shapes where [[convergence]] can go
 

@@ -3,12 +3,6 @@ alias: Seven Bridges of Konigsberg, seven bridges, bridges of Koenigsberg
 tags: math, comp
 crystal-type: entity
 crystal-domain: math
-diffusion: 0.00011233815923477823
-springs: 0.0014920483643277873
-heat: 0.0010529883384624765
-focus: 0.0007143812566082415
-gravity: 0
-density: 6.36
 ---
 # Seven Bridges of Koenigsberg
 

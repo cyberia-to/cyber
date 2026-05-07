@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: relation
 crystal-domain: governance
-stake: 1014042066869694
-diffusion: 0.0002415873997593407
-springs: 0.00011496213072218427
-heat: 0.00017064158819999045
-focus: 0.0001894106567363293
-gravity: 5
-density: 4.88
 ---
 formal binding agreement between two or more sovereign entities under [[international law]]
 

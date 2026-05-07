@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 8202732164925632
-diffusion: 0.00025374427189410047
-springs: 0.0000764286306599772
-heat: 0.00014676593849923634
-focus: 0.0001791539128448959
-gravity: 2
-density: 1.1
 ---
 alias: amylose
 

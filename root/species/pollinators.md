@@ -2,13 +2,6 @@
 tags: genus
 crystal-type: entity
 crystal-domain: biology
-stake: 8950062373077613
-diffusion: 0.00011233815923477823
-springs: 0.00011615736603288389
-heat: 0.00014007695824392604
-focus: 0.00011903168107604298
-gravity: 0
-density: 0.33
 ---
 [[buddleia]]
 

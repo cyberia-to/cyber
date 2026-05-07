@@ -4,13 +4,6 @@ tags: cyber
 icon: 🦄
 crystal-type: entity
 crystal-domain: cybics
-stake: 7752991530678483
-diffusion: 0.00027866780885486294
-springs: 0.00045012344241668616
-heat: 0.00041506121845017184
-focus: 0.0003573831808424822
-gravity: 3
-density: 12.93
 ---
 [source code](https://github.com/cybercongress/cyber): [@mastercyb](https://cyb.ai/@mastercyb)
 

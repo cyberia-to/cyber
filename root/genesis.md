@@ -4,13 +4,6 @@ tags: cyber
 icon: 🧬
 crystal-type: entity
 crystal-domain: cyberia
-stake: 11505305180591270
-diffusion: 0.0020021629561169257
-springs: 0.00015947066970598792
-heat: 0.0007688896622379501
-focus: 0.0012027006114178845
-gravity: 26
-density: 1.85
 ---
 # Regenerative event infrastructure
 

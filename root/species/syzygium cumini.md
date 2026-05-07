@@ -4,13 +4,6 @@ alias: jamblang
 crystal-type: entity
 crystal-domain: biology
 availability: cv
-stake: 13425093559616420
-diffusion: 0.0002075421927921177
-springs: 0.00022751314963068777
-heat: 0.0002327264740928998
-focus: 0.00021857033610385155
-gravity: 1
-density: 1.56
 ---
 products
 

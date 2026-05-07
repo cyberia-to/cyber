@@ -4,13 +4,6 @@ alias: context, context window, query context, inference context, context partic
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: bridge
-stake: 13653320150129898
-diffusion: 0.00038781117337332346
-springs: 0.0018919877730202274
-heat: 0.0014076077544840856
-focus: 0.0010430234694895778
-gravity: 8
-density: 2.96
 ---
 
 the set of information currently active in an inference process — the seed that determines what is relevant, what gets [[attention]], and what the next step produces

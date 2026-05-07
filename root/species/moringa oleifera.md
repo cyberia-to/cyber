@@ -6,13 +6,6 @@ crystal-domain: biology
 supply: next-month
 market: edible oils
 wood-density:
-stake: 14645556610490640
-diffusion: 0.00011233815923477823
-springs: 0.00020932231729211813
-heat: 0.0001912633610665332
-focus: 0.0001572184470183358
-gravity: 0
-density: 3.18
 ---
 ![Screenshot 2024-05-26 at 08.19.22.png](https://ipfs.io/ipfs/QmQfBx32Rc1A1HfLdaYkvV2PmE1ufavJSU8RHvB4745PFU)
 

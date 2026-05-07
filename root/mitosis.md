@@ -2,13 +2,6 @@
 tags: biology
 crystal-type: process
 crystal-domain: biology
-stake: 4213689365244941
-diffusion: 0.0011472320653079606
-springs: 0.00024694587265332475
-heat: 0.0005583620341861088
-focus: 0.0007593722012872217
-gravity: 5
-density: 2.67
 ---
 Cell division producing two genetically identical daughter cells. The engine of growth, repair, and asexual reproduction.
 

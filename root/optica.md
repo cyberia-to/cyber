@@ -3,12 +3,6 @@ tags: cyber, optica
 icon: "\U0001F52D"
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00011995724671972114
-springs: 0.0005498271614917363
-heat: 0.0004460146902295187
-focus: 0.00031412970985329443
-gravity: 2
-density: 3.55
 ---
 knowledge graph publisher — transforms markdown with [[wiki-links]] into a fast static site
 

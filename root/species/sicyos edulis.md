@@ -8,13 +8,6 @@ supply: "no"
 margin: medium
 autonomy: staple
 availability: cv
-stake: 12294944774506892
-diffusion: 0.0004218206633559332
-springs: 0.0001795195966482975
-heat: 0.0002678581402673432
-focus: 0.00031833783872593384
-gravity: 10
-density: 1.8
 ---
 ![](https://ipfs.io/ipfs/QmR24VjmWmFzphF9bXMhKHSqTA9YMSxGkpZzdXCUSedFMb)
 

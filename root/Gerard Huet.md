@@ -3,13 +3,6 @@ alias: Gérard Huet
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4904634180446532
-diffusion: 0.00011888206746268246
-springs: 0.00017107131803202507
-heat: 0.00017504426214551752
-focus: 0.00014577128157005655
-gravity: 1
-density: 2.11
 ---
 1947-. French computer scientist, senior researcher at INRIA.
 

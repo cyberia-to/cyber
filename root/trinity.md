@@ -3,13 +3,6 @@ tags: trident, cyber, article
 alias: trinity thesis, trinity
 crystal-type: article
 crystal-domain: cyber
-stake: 9519611796818916
-diffusion: 0.00024495251944458944
-springs: 0.0014783861268677706
-heat: 0.0010901519000643507
-focus: 0.0007840224777955191
-gravity: 6
-density: 0.52
 ---
 # Trinity: Quantum · Privacy · AI
 

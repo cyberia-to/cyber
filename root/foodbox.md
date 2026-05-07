@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 5826490604873526
-diffusion: 0.00011233815923477823
-springs: 0.0002046119024597838
-heat: 0.00020138985639299526
-focus: 0.00015783062163392793
-gravity: 0
-density: 7.49
 ---
 fresh set of the product for living from cyber valley
 

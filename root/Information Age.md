@@ -2,13 +2,6 @@
 tags: time, history, computer science
 crystal-type: entity
 crystal-domain: computer science
-stake: 5738210444193624
-diffusion: 0.0006472711187170483
-springs: 0.00023930441999867513
-heat: 0.0003915375367099513
-focus: 0.00047373439270013084
-gravity: 13
-density: 7.88
 ---
 current [[epoch]] beginning in the 1970s, defined by digital computation and networked communication
 

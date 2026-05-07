@@ -4,13 +4,6 @@ tags: cyber, bip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-stake: 17867579064798580
-diffusion: 0.0003643063205261479
-springs: 0.0003491745890000172
-heat: 0.0003805296735113893
-focus: 0.00036301147166536757
-gravity: 17
-density: 8.88
 ---
 experimental [[learning incentives]] layer for [[cyber]] using [[cosmwasm]] [[progs]]
 

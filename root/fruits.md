@@ -3,13 +3,6 @@ tags: cybernomics
 alias: fruit
 crystal-type: entity
 crystal-domain: economics
-stake: 18137301399041780
-diffusion: 0.004703250133763161
-springs: 0.00016107264221426978
-heat: 0.001673275202838531
-focus: 0.002734601900113648
-gravity: 43
-density: 14.96
 ---
 [[staple]]
 

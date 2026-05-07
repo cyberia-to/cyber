@@ -3,13 +3,6 @@ icon: 💵
 tags: cyber
 crystal-type: entity
 crystal-domain: economics
-stake: 10122520543950780
-diffusion: 0.00011233815923477823
-springs: 0.0006385821631316277
-heat: 0.0004911980854562501
-focus: 0.0003459833456481376
-gravity: 0
-density: 17.46
 ---
 status:: DONE
 

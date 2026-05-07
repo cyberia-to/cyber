@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4931484367565765
-diffusion: 0.00012274438063387532
-springs: 0.0018013120463000922
-heat: 0.0012512239322733268
-focus: 0.0008520105906616557
-gravity: 2
-density: 2.09
 ---
 British cryptographer and protocol engineer.
 

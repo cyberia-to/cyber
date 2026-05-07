@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8081906322889084
-diffusion: 0.00011233815923477823
-springs: 0.00007968076059314276
-heat: 0.00009839160841889202
-focus: 0.00009975162947911327
-gravity: 0
-density: 0.53
 ---
 alias: valine
 

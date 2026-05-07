@@ -8,13 +8,6 @@ abundance: "yes"
 supply: "no"
 margin: medium
 autonomy: staple
-stake: 10559446316163750
-diffusion: 0.0005920500394263865
-springs: 0.00009661885415859154
-heat: 0.0002702001741477363
-focus: 0.0003790507107903291
-gravity: 18
-density: 4.18
 ---
 ![Taro | Description, Plant, Root, Edible, Poisonous, & Facts | Britannica](https://ipfs.io/ipfs/QmX2EgRoVrKzidXrrJprTmk6i1qqvwVxXJhMBnC95JU9ut)
 

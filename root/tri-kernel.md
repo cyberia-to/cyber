@@ -3,13 +3,6 @@ tags: cyber, core
 crystal-type: pattern
 crystal-domain: cyber
 crystal-size: enzyme
-stake: 9710004032755294
-diffusion: 0.013574505239494859
-springs: 0.0006055814391129039
-heat: 0.004807784932265426
-focus: 0.007930484037934619
-gravity: 192
-density: 12.06
 ---
 three local operators whose fixed point is [[cyberank]]
 

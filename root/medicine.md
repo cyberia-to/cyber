@@ -2,13 +2,6 @@
 tags: discipline, bio, chemo, neuro
 crystal-type: entity
 crystal-domain: bio
-stake: 9236464369016096
-diffusion: 0.00036872501202974203
-springs: 0.00013044283666200268
-heat: 0.00022137100472878926
-focus: 0.0002677695579592375
-gravity: 9
-density: 6.65
 ---
 # medicine
 

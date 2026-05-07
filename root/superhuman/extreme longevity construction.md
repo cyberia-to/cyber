@@ -2,13 +2,6 @@
 tags: superhuman
 crystal-type: process
 crystal-domain: superhuman
-stake: 5352137299100413
-diffusion: 0.00011233815923477823
-springs: 0.000050562168799264146
-heat: 0.0000796972225817985
-focus: 0.00008727717477353062
-gravity: 0
-density: 0.3
 ---
 🛡️ architectural rules for a truly eternal wall (target: 10,000–100,000+ years)
 

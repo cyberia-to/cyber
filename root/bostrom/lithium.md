@@ -2,13 +2,6 @@
 tags: uhash
 crystal-type: entity
 crystal-domain: cybics
-stake: 8950062373077613
-diffusion: 0.00024524738874963
-springs: 0.00003468313590564746
-heat: 0.0001186836426498342
-focus: 0.0001567653636764807
-gravity: 1
-density: 0
 ---
 # Litium (LI)
 

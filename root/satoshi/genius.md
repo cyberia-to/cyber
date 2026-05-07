@@ -4,12 +4,6 @@ crystal-type: pattern
 crystal-domain: cyberia
 alias: accelerated learning, genius children, early graduation
 icon: "\U0001F31F"
-diffusion: 0.00012862542203437286
-springs: 0.00014233045678741865
-heat: 0.00016055639927082453
-focus: 0.000139123127907581
-gravity: 4
-density: 1.74
 ---
 # genius
 

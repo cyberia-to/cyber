@@ -2,13 +2,6 @@
 tags: chemistry, physics
 crystal-type: process
 crystal-domain: chemistry
-stake: 4631901370677839
-diffusion: 0.0016207300027428636
-springs: 0.000348125456248763
-heat: 0.000777627600064967
-focus: 0.0010703281582590855
-gravity: 6
-density: 2
 ---
 
 Rapid [[oxidation]] of a fuel releasing heat and light. The chemical reaction that powered civilization from the first campfire to the rocket engine.

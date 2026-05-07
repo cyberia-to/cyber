@@ -4,13 +4,6 @@ menu-order: "3"
 tags: cyberia, menu
 crystal-type: entity
 crystal-domain: cyberia
-stake: 5653184851649386
-diffusion: 0.0025361329795140315
-springs: 0.00025300702032505227
-heat: 0.0010054955361789959
-focus: 0.0015450677030903759
-gravity: 46
-density: 5.68
 ---
 The [[superintelligence]] nation. A growing network of sovereign cities where nomads settle because the land itself is designed for them — energy, water, food, and data produced locally, owned collectively, governed by an [[egregore]] that learns from every resident.
 

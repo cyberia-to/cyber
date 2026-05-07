@@ -3,13 +3,6 @@ tags: bip
 crystal-type: process
 crystal-domain: cyber
 status: accepted
-stake: 12587367721496354
-diffusion: 0.00016698556639496346
-springs: 0.0009571983814571505
-heat: 0.0007233957698231989
-focus: 0.0005153314515992817
-gravity: 2
-density: 4.76
 ---
 [[$H]] [[staking loan]] proved its utility and reliability during last several years
 

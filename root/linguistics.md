@@ -2,12 +2,6 @@
 tags: discipline, lang, comp
 crystal-type: entity
 crystal-domain: lang
-diffusion: 0.00011477837121203961
-springs: 0.00009781547574011124
-heat: 0.00011952175866940458
-focus: 0.00011063818006193733
-gravity: 1
-density: 13.15
 ---
 # linguistics
 

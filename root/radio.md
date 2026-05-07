@@ -3,12 +3,6 @@ tags: cyber, cyb
 alias: iroh
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0005863656244205511
-springs: 0.00022842857581221928
-heat: 0.0003722842672836782
-focus: 0.0004361682384106898
-gravity: 28
-density: 5.85
 ---
 # radio
 

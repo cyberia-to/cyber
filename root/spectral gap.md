@@ -3,13 +3,6 @@ tags: cyber
 crystal-type: measure
 crystal-domain: cybics
 alias: mixing time
-stake: 6564870750652429
-diffusion: 0.0003482631123780544
-springs: 0.0008348838535674331
-heat: 0.0007046283978403778
-focus: 0.0005655223918273494
-gravity: 16
-density: 4.91
 ---
 
 the difference between the two largest eigenvalues of a transition matrix or graph [[Laplacian]] — the single number that controls how fast a system reaches [[equilibrium]]

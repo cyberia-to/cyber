@@ -3,13 +3,6 @@ tags: cybernomics
 alias: amper, milliamper, ampers, milliampers
 crystal-type: entity
 crystal-domain: economics
-stake: 15975861335943538
-diffusion: 0.00011233815923477823
-springs: 0.0021324590584602117
-heat: 0.0014764468577413972
-focus: 0.0009911961687037612
-gravity: 0
-density: 7.2
 ---
 [[token]] of [[focus]] in [[bostrom]]
 

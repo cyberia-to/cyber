@@ -4,13 +4,6 @@ alias: gflownet focus flow
 crystal-type: process
 crystal-domain: cyber
 status: draft
-stake: 23432890576785020
-diffusion: 0.00016480463754004374
-springs: 0.00032993069929768235
-heat: 0.00032494629857700443
-focus: 0.00024637078827473465
-gravity: 1
-density: 0
 ---
 # GFlowNet × Focus-Flow: learned proposal engine for the [[cybergraph]]
 

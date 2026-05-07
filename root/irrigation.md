@@ -2,13 +2,6 @@
 tags: food, technology
 crystal-type: process
 crystal-domain: agriculture
-stake: 4249164157923685
-diffusion: 0.0002826517975250613
-springs: 0.00016382184159414765
-heat: 0.00021914542521021216
-focus: 0.00023430153628282424
-gravity: 6
-density: 8.19
 ---
 artificial supply of [[water]] to [[crops]] beyond natural rainfall
 

@@ -4,13 +4,6 @@ tags: cyber
 alias: learning, labeling, answer
 crystal-type: process
 crystal-domain: cyber
-stake: 17753343723236754
-diffusion: 0.0035877797511088675
-springs: 0.0005769946242160175
-heat: 0.001574346155680719
-focus: 0.0022818574939554494
-gravity: 39
-density: 15.3
 ---
 [[create links]] between [[particles]] of [[information]]
 

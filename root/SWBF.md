@@ -3,12 +3,6 @@ tags: cyber, computer science, cryptography
 crystal-type: entity
 crystal-domain: cyber
 alias: sliding-window bloom filter, sliding window bloom filter
-diffusion: 0.00036822632512087904
-springs: 0.0001306911781898897
-heat: 0.00022584260319320513
-focus: 0.0002684890366560553
-gravity: 6
-density: 0.61
 ---
 # SWBF
 

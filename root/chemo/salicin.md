@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5222361394690787
-diffusion: 0.00011233815923477823
-springs: 0.00009573109260145536
-heat: 0.00010368895279927714
-focus: 0.00010562619795768424
-gravity: 0
-density: 0.72
 ---
 salicin is a naturally occurring glycoside compound found primarily in the bark of willow trees (Salix species). It is notable as a precursor to salicylic acid and has historically been used for its medicinal properties, particularly as an [[analgesic]] and [[anti-inflammatory]] agent.
 

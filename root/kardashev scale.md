@@ -3,13 +3,6 @@ alias: civilization types
 tags: cyber
 crystal-type: measure
 crystal-domain: biology
-stake: 4071830876631660
-diffusion: 0.00039046943944482065
-springs: 0.00007557472386471553
-heat: 0.0001945317167386459
-focus: 0.0002568134802295617
-gravity: 6
-density: 0
 ---
 The Kardashev scale is a method of measuring a [[civilization]]'s level of technological advancement based on its total [[energy]] consumption. Proposed by Soviet astronomer Nikolai Kardashev in 1964, it classifies civilizations into three primary types.
 

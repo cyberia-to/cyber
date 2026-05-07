@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4922534305192688
-diffusion: 0.00026113573785707894
-springs: 0.00022639142069581092
-heat: 0.0002600260001574442
-focus: 0.00025049049516877894
-gravity: 6
-density: 0
 ---
 1856-1943, Serbian-American inventor and electrical engineer
 

@@ -3,12 +3,6 @@ alias: relay, relay server, home relay, iroh-relay
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0002761389687332679
-springs: 0.0003383468185149082
-heat: 0.0003530564777068605
-focus: 0.00031018482546248767
-gravity: 6
-density: 4.21
 ---
 
 # relay

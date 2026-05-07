@@ -3,12 +3,6 @@ tags: cyber, eco
 alias: ecology
 crystal-type: entity
 crystal-domain: eco
-diffusion: 0.00043224033048959296
-springs: 0.0006018364314716577
-heat: 0.000570021904128049
-focus: 0.0005106754755119185
-gravity: 30
-density: 11.41
 ---
 # eco
 

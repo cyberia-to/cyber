@@ -3,13 +3,6 @@ alias: Condorcet jury theorem
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
-stake: 7303250896431333
-diffusion: 0.00045631863232850796
-springs: 0.0013279353212037625
-heat: 0.0010556866941068151
-focus: 0.0008376772513467702
-gravity: 7
-density: 11.7
 ---
 if each voter is right more often than wrong (p > 0.5), majority vote approaches certainty as the group grows
 

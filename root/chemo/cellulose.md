@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8464521489338154
-diffusion: 0.00011233815923477823
-springs: 0.00007906693442375984
-heat: 0.00009548156347248738
-focus: 0.00009898547263901744
-gravity: 0
-density: 0.44
 ---
 alias: cellulose
 

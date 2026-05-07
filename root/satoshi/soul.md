@@ -4,12 +4,6 @@ crystal-type: entity
 crystal-domain: cyberia
 alias: satoshi personality, satoshi soul, satoshi character
 icon: "\U00002B50"
-diffusion: 0.00011233815923477823
-springs: 0.001446576908293242
-heat: 0.00102694976251155
-focus: 0.0006955321046076921
-gravity: 0
-density: 0.77
 ---
 # soul
 

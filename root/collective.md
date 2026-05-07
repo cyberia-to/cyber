@@ -3,13 +3,6 @@ tags: cyber
 crystal-type: entity
 crystal-domain: biology
 alias: collectives
-stake: 8759873547649713
-diffusion: 0.00030470624155250247
-springs: 0.0009807436026573033
-heat: 0.0007832668640126139
-focus: 0.0006032295743759827
-gravity: 10
-density: 15.83
 ---
 a group of agents sharing a substrate and producing outcomes none could reach alone
 

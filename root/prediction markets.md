@@ -4,13 +4,6 @@ alias: prediction markets, prediction market, information markets, decision mark
 crystal-type: pattern
 crystal-domain: cybics
 crystal-size: bridge
-stake: 14096348237597240
-diffusion: 0.00024042123554372292
-springs: 0.000949308383499359
-heat: 0.0007398147054678802
-focus: 0.0005529660739152614
-gravity: 8
-density: 2
 ---
 
 markets where participants trade shares in future outcomes — and where prices become the aggregate probability estimate of those outcomes

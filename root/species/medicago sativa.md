@@ -6,13 +6,6 @@ crystal-domain: biology
 scalable: "true"
 market: fodder
 supply: next-month
-stake: 8333321711369173
-diffusion: 0.0005019959073330419
-springs: 0.0003647382212263707
-heat: 0.00042665240862248103
-focus: 0.00044574990175894145
-gravity: 8
-density: 0.88
 ---
 nitrogener:: 200
 

@@ -38,29 +38,32 @@ def main [
     mut skipped = 0
     for d in $active {
         let target = ($parent | path join $d.repo)
-        if ($target | path exists) {
+        let result = if ($target | path exists) {
             if ($"($target)/.git" | path exists) {
                 print $"▸ fetch ($d.name)"
                 ^git -C $target fetch --quiet
-                $fetched = $fetched + 1
+                "fetched"
             } else {
                 print $"  skip ($d.name) — directory exists but is not a git repo"
-                $skipped = $skipped + 1
+                "skipped"
             }
         } else if $fetch {
             print $"  skip ($d.name) — missing (re-run without --fetch to clone)"
-            $skipped = $skipped + 1
+            "skipped"
         } else {
             let url = $"https://github.com/($org)/($d.repo).git"
             print $"▸ clone ($d.name) ← ($url)"
             try {
                 ^git clone --quiet $url $target
-                $cloned = $cloned + 1
+                "cloned"
             } catch {
                 print $"  failed to clone ($d.name) — likely private. authenticate with `gh auth login` and retry"
-                $skipped = $skipped + 1
+                "skipped"
             }
         }
+        if $result == "cloned" { $cloned = $cloned + 1 }
+        if $result == "fetched" { $fetched = $fetched + 1 }
+        if $result == "skipped" { $skipped = $skipped + 1 }
     }
     print ""
     print $"done. cloned=($cloned) fetched=($fetched) skipped=($skipped)"

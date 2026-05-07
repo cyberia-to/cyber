@@ -4,13 +4,6 @@ alias: create cyberlink twice
 crystal-type: process
 crystal-domain: cyber
 status: accepted
-stake: 11846302557005530
-diffusion: 0.00012427450630919656
-springs: 0.002136966920821033
-heat: 0.0014803663301629231
-focus: 0.000999300595433522
-gravity: 1
-density: 6.39
 ---
 in current [[go-cyber]] implementation there is one property
 

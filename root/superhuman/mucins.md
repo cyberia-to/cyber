@@ -2,13 +2,6 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
-stake: 5736989981142750
-diffusion: 0.00011233815923477823
-springs: 0.00008246788381555257
-heat: 0.000037649645370807764
-focus: 0.00008843937383621902
-gravity: 0
-density: 0
 ---
 mucins are high-molecular-weight [[glycoproteins]] that are the main components of [[mucus]], a protective secretion found on the surfaces of the [[respiratory]], [[gastrointestinal]], [[urogenital]], and [[ocular]] systems. mucins are produced by [[epithelial cells]] and function to trap pathogens, lubricate tissues, and create a physical barrier that protects against [[chemical]], [[mechanical]], and [[microbial damage]].
 

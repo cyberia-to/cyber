@@ -2,13 +2,6 @@
 tags: kitchen/menu
 crystal-type: process
 crystal-domain: agriculture
-stake: 4682672633594207
-diffusion: 0.0003826651085055567
-springs: 0.00015008523593951166
-heat: 0.000245083817106947
-focus: 0.0002853748884560296
-gravity: 2
-density: 1.44
 ---
 ## 🥥✨ ginger [[ginger kombucha]] with coconut sugar
 

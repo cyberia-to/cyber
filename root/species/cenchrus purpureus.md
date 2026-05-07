@@ -8,13 +8,6 @@ abundance: "yes"
 supply: "no"
 margin: low
 autonomy: support
-stake: 9966301273438880
-diffusion: 0.0001769052346820106
-springs: 0.0000905065828017897
-heat: 0.00015049035812971488
-focus: 0.00014570266380748947
-gravity: 3
-density: 0.36
 ---
 [[grass]]
 

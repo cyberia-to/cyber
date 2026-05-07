@@ -3,13 +3,6 @@ tags: cyber, core
 alias: contraction mapping theorem, contraction mapping, banach theorem
 crystal-type: pattern
 crystal-domain: cybics
-stake: 8500000000000000
-diffusion: 0.00018467834634055272
-springs: 0.0015236318641093027
-heat: 0.0011022805043167999
-focus: 0.0007698848332664497
-gravity: 4
-density: 2.88
 ---
 if a function always brings points closer together, repeated application converges to exactly one point that the function leaves unchanged. that point is the [[fixed point]], and nothing can prevent the system from reaching it
 

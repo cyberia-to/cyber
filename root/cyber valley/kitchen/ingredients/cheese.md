@@ -3,13 +3,6 @@ title: kitchen/ingredients/cheese
 tags: kitchen/menu
 crystal-type: entity
 crystal-domain: agriculture
-stake: 5401362642152340
-diffusion: 0.00023499156548759952
-springs: 0.000032188903983602496
-heat: 0.00010677680043612403
-focus: 0.0001485078140261097
-gravity: 1
-density: 0
 ---
 
 #### cheese storage guide

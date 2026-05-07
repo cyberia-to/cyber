@@ -3,13 +3,6 @@ tags: district
 alias: rocket estate
 crystal-type: entity
 crystal-domain: cyberia
-stake: 9223039275456482
-diffusion: 0.0006226138280903633
-springs: 0.00014452712395889448
-heat: 0.00031277540453629763
-focus: 0.00041722013214012175
-gravity: 10
-density: 6.67
 ---
 We bring a unique offer to the market
 

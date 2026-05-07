@@ -2,13 +2,6 @@
 tags: cv.land
 crystal-type: entity
 crystal-domain: cyberia
-stake: 4819608587902294
-diffusion: 0.0001633798486905032
-springs: 0.00015371233996980263
-heat: 0.0001638401158926538
-focus: 0.00016057164951472787
-gravity: 2
-density: 13.49
 ---
 earn starting from 10% up to 25% of business revenue
 

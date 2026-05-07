@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8216157258485248
-diffusion: 0.00011233815923477823
-springs: 0.0001669384939575306
-heat: 0.00016326061620693366
-focus: 0.0001389027510460391
-gravity: 0
-density: 0.44
 ---
 alias: moringin
 

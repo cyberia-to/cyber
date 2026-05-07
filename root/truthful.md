@@ -3,13 +3,6 @@ tags: cyber, core
 alias: truthfulness, truthful neuron, honest neuron, incentive compatible
 crystal-type: property
 crystal-domain: cyber
-stake: 13613044869451050
-diffusion: 0.00015654165806213658
-springs: 0.00097760370313419
-heat: 0.0007367683968573319
-focus: 0.0005189056193428069
-gravity: 3
-density: 3.23
 ---
 a [[neuron]] is truthful when its [[cyberlinks]] report its actual private beliefs — not adjusted for social pressure, predicted popularity, or gaming the reward signal
 

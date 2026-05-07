@@ -3,13 +3,6 @@ tags: physics
 alias: waves
 crystal-type: entity
 crystal-domain: physics
-stake: 7377088911009222
-diffusion: 0.0017617940559572626
-springs: 0.0003103428439170755
-heat: 0.0008071050673218327
-focus: 0.0011354208946181537
-gravity: 19
-density: 8.13
 ---
 
 A disturbance that propagates through space or a medium, transferring [[energy]] without net transport of matter.

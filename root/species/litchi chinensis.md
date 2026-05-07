@@ -4,13 +4,6 @@ crystal-type: entity
 crystal-domain: biology
 wood: "yes"
 grow-speed: "3"
-stake: 6251618567594713
-diffusion: 0.00011233815923477823
-springs: 0.00009331727127699513
-heat: 0.00013243548698568285
-focus: 0.00011065135839762746
-gravity: 0
-density: 0.97
 ---
 [Lychee.pdf](https://ipfs.io/ipfs/QmfCM3LqMjARu2uPudnjHENngi3P8J7BWCDRyhqR7pEtG9)
 

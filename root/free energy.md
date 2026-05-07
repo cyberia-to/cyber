@@ -2,13 +2,6 @@
 tags: cyber, physics
 crystal-type: measure
 crystal-domain: cybics
-stake: 3963087618798767
-diffusion: 0.0009122767527589391
-springs: 0.000413009940346194
-heat: 0.0006019444271665589
-focus: 0.00070043024391666
-gravity: 28
-density: 7.51
 ---
 the energy available to do work — the portion of total [[energy]] not locked up in [[entropy]]
 

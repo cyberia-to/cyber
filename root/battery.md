@@ -2,13 +2,6 @@
 tags: technology, physics, energy
 crystal-type: entity
 crystal-domain: physics
-stake: 5801674522839083
-diffusion: 0.0004499683447009822
-springs: 0.0002934863794143446
-heat: 0.0003650999274123436
-focus: 0.00038605007165727455
-gravity: 6
-density: 3.03
 ---
 device storing chemical [[energy]] and converting it to electrical energy on demand
 

@@ -2,12 +2,6 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
-diffusion: 0.00044556509299377683
-springs: 0.001189314082466591
-heat: 0.0009647220554053211
-focus: 0.0007725211823179525
-gravity: 5
-density: 0.53
 ---
 # Graph-Native Transformers: Deriving Architecture from Knowledge Graph Structure
 

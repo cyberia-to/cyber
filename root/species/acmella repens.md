@@ -7,13 +7,6 @@ alias: "acmellaabundance:: yes"
 supply: "no"
 margin: high
 autonomy: extra
-stake: 8480387508999516
-diffusion: 0.00011233815923477823
-springs: 0.0010559965005994887
-heat: 0.0007430230960167048
-focus: 0.000521572649000592
-gravity: 0
-density: 3.1
 ---
 [[biohacking]]
 

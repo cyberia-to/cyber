@@ -3,13 +3,6 @@ alias: cyber improvement proposal, cyber improvement proposals, list of cips, ci
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 21204935277414136
-diffusion: 0.00023067683689509156
-springs: 0.0004272958605355231
-heat: 0.0003857983329525064
-focus: 0.00032068684319871337
-gravity: 7
-density: 11.67
 ---
 ## what is cip?
 

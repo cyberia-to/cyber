@@ -3,13 +3,6 @@ tags: geography, physics
 alias: earthquakes
 crystal-type: entity
 crystal-domain: physics
-stake: 8157575032043287
-diffusion: 0.00026174986082583865
-springs: 0.00014030690168123598
-heat: 0.000198605843587087
-focus: 0.00021268816963471377
-gravity: 5
-density: 5.4
 ---
 sudden release of [[energy]] in Earth's lithosphere producing seismic waves
 

@@ -8,13 +8,6 @@ nitrogener: "250"
 wood-density: "1050"
 supply: next-month
 market: ironwoods
-stake: 7021323931679387
-diffusion: 0.00011233815923477823
-springs: 0.00019865869977962115
-heat: 0.00019272816771704143
-focus: 0.00015431232309468827
-gravity: 0
-density: 1.32
 ---
 ![Casuarina - Wikipedia bahasa Indonesia, ensiklopedia bebas](https://ipfs.io/ipfs/QmPK9i5RrFRZ2vP7yxFbivJGpeWcFRQfuRL53Dq8o6R2Sb){:height 762, :width 1008}
 

@@ -8,13 +8,6 @@ wood-density: "600"
 supply: next-month
 market: technical oil
 propagate-plants: seeds
-stake: 7593721102539395
-diffusion: 0.0001270799743819045
-springs: 0.000422877395402179
-heat: 0.0003383737837355305
-focus: 0.00025807796255871964
-gravity: 2
-density: 2.9
 ---
 ![image.png](https://ipfs.io/ipfs/Qma8Et35R8iZQyy6cnqc9czJRhTgbzFEaYw6GgUzCNdQ5U){:height 407, :width 628}
 

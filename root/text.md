@@ -3,12 +3,6 @@ tags: cyb, cyber, core
 alias: text particle, prose, markdown
 crystal-type: entity
 crystal-domain: cyb
-diffusion: 0.00046944492078112443
-springs: 0.0008587494392219051
-heat: 0.0007576875892400693
-focus: 0.0006438848100051665
-gravity: 14
-density: 4.68
 ---
 prose, code, and thought as [[particle]]. the most linked content type in the [[cybergraph]]
 

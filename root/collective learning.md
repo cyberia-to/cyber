@@ -3,13 +3,6 @@ alias: colearning
 tags: cyber
 crystal-type: process
 crystal-domain: biology
-stake: 7061599212358237
-diffusion: 0.00170122487730228
-springs: 0.0012213634719460676
-heat: 0.001390088537160594
-focus: 0.0014950391876671228
-gravity: 20
-density: 9.1
 ---
 [[neurons]] creating [[cyberlinks]] on the same [[vimputer]] — [[learning]] together
 

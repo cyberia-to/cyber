@@ -2,13 +2,6 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
-stake: 5047835178415774
-diffusion: 0.0002583946343268261
-springs: 0.0000735755601834707
-heat: 0.00014579520035110013
-focus: 0.00018042902528867956
-gravity: 8
-density: 5.08
 ---
 organized sound in time, structured by rhythm, melody, harmony, and timbre
 

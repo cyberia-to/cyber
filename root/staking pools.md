@@ -3,13 +3,6 @@ tags: bip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-stake: 19305284538728412
-diffusion: 0.00011978076783119164
-springs: 0.001044782830495618
-heat: 0.0007693264035834066
-focus: 0.000527190513780978
-gravity: 1
-density: 1.66
 ---
 most of [[$BOOT]] stake is unstaked due to complexities related to multisig management
 

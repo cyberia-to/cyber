@@ -3,13 +3,6 @@ alias: pow
 tags: cyber
 crystal-type: process
 crystal-domain: computer science
-stake: 6685696592688977
-diffusion: 0.00026772096184966897
-springs: 0.0002421339222900384
-heat: 0.00028186286597330144
-focus: 0.000262873230806514
-gravity: 7
-density: 2.85
 ---
 class of [[consensus]] mechanism used in [[blockchains]]
 

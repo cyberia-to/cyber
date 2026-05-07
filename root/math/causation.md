@@ -2,13 +2,6 @@
 tags: relation
 crystal-type: relation
 crystal-domain: mathematics
-stake: 975556798665460
-diffusion: 0.00011233815923477823
-springs: 0.00006464764177401706
-heat: 0.0001002209858364211
-focus: 0.00009560756931688126
-gravity: 0
-density: 3.32
 ---
 relationship where one event (cause) produces another (effect)
 

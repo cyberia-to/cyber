@@ -3,12 +3,6 @@ tags: cyber, meta
 alias: phenomenon
 crystal-type: entity
 crystal-domain: meta
-diffusion: 0.0001825661728657919
-springs: 0.0002991065305932127
-heat: 0.00028078044105966606
-focus: 0.00023717113382279992
-gravity: 7
-density: 11.62
 ---
 # phenomena
 

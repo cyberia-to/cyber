@@ -4,13 +4,6 @@ crystal-type: entity
 crystal-domain: computer science
 source: https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt
 words: "2048"
-stake: 9763704406993760
-diffusion: 0.000126179187119314
-springs: 0.00031497250809422485
-heat: 0.00028784713860224934
-focus: 0.00021515077370838065
-gravity: 3
-density: 9.18
 ---
 the standard english mnemonic wordlist for deterministic [[wallet]] [[seed]] generation
 

@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5660914450971591
-diffusion: 0.00011233815923477823
-springs: 0.00004285402229377395
-heat: 0.00008118005376849684
-focus: 0.00008526129705922316
-gravity: 0
-density: 1.21
 ---
 eugenol is a naturally occurring [[phenolic compound]] found primarily in [[clove oil]], as well as in [[cinnamon]], [[nutmeg]], [[basil]], and other aromatic plants. it has a warm, spicy aroma and is widely used in [[flavorings]], [[fragrances]], and [[traditional medicine]]. eugenol exhibits strong [[antimicrobial]], [[anti-inflammatory]], and [[analgesic]] properties, making it valuable in dentistry and pharmaceuticals.
 

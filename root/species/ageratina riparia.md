@@ -7,13 +7,6 @@ abundance: "yes"
 supply: "no"
 margin: low
 autonomy: support
-stake: 7773129171017907
-diffusion: 0.00025529839152733713
-springs: 0.0003141514230906337
-heat: 0.0003042473800648463
-focus: 0.0002827440987038362
-gravity: 4
-density: 0
 ---
 ![image](https://ipfs.io/ipfs/QmeNoF8yhzUqxyPZsoRQQKNFfcDaydKUZfpgxFgV3Rg7G6)
 

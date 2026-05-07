@@ -7,13 +7,6 @@ abundance: "yes"
 supply: "no"
 margin: medium
 autonomy: staple
-stake: 6887072996083224
-diffusion: 0.0004513253079120734
-springs: 0.00025277496772236653
-heat: 0.00033072924536409605
-focus: 0.00036764099334557666
-gravity: 10
-density: 2
 ---
 [[staple]] [[health]]
 

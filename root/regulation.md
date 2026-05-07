@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: process
 crystal-domain: cyberia
-stake: 4893894105598839
-diffusion: 0.00012468198398259074
-springs: 0.00003446732697168004
-heat: 0.00007660174309252585
-focus: 0.00008800153870130713
-gravity: 3
-density: 0
 ---
 - ....if an environmental variable (such as temperature)
   or an input or output variable (such as the flow demand on a

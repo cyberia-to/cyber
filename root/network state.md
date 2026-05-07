@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 14566226512183814
-diffusion: 0.0008707038712046125
-springs: 0.00011735894053889955
-heat: 0.00037734348219653393
-focus: 0.000546028314203299
-gravity: 18
-density: 2.5
 ---
 concept where groups of people, often with shared values or goals
 

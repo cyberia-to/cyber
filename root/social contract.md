@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: relation
 crystal-domain: governance
-stake: 1044472278938158
-diffusion: 0.00037733748091218176
-springs: 0.00031042838371874234
-heat: 0.0003490799583571016
-focus: 0.0003516132472431442
-gravity: 7
-density: 8.45
 ---
 implicit agreement between individuals and the state: individuals yield some liberty in exchange for security, order, and public goods
 

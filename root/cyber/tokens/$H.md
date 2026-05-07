@@ -3,13 +3,6 @@ tags: cybernomics
 alias: hydrogen
 crystal-type: entity
 crystal-domain: economics
-stake: 15505983061356966
-diffusion: 0.00029204551527042686
-springs: 0.000446974306318796
-heat: 0.0004264684656464329
-focus: 0.00036540874266014953
-gravity: 13
-density: 8.9
 ---
 [[token]] of [[fuel]] in [[bostrom]]
 

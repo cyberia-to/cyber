@@ -3,13 +3,6 @@ tags: trident, cyber, article
 alias: Rosetta Stone, lookup table duality, rosetta stone, rosetta-stone
 crystal-type: article
 crystal-domain: cyber
-stake: 9519611796818916
-diffusion: 0.0002648159172891241
-springs: 0.00009423461475397303
-heat: 0.00016712385089605292
-focus: 0.00019410311324997024
-gravity: 8
-density: 0.34
 ---
 # The Rosetta Stone
 

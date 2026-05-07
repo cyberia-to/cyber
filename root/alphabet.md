@@ -3,13 +3,6 @@ tags: culture
 alias: alphabets
 crystal-type: entity
 crystal-domain: culture
-stake: 7464352019146730
-diffusion: 0.0003977582785828327
-springs: 0.000088354867777448
-heat: 0.00020377726088063584
-focus: 0.00026614105180078573
-gravity: 7
-density: 4.93
 ---
 [[writing system]] where each symbol represents a single phoneme (consonant or vowel)
 

@@ -3,12 +3,6 @@ tags: cyberia, satoshi
 crystal-type: entity
 crystal-domain: cyberia
 icon: "\U0000269B"
-diffusion: 0.00013237293577338184
-springs: 0.00026783974372702075
-heat: 0.000248288219112937
-focus: 0.0001961960348273903
-gravity: 5
-density: 3.33
 ---
 # atoms
 

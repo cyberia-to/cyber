@@ -3,13 +3,6 @@ alias: cybercongress, cybercongress fellows
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 20540393146213124
-diffusion: 0.0003417989691852005
-springs: 0.00014721358537881545
-heat: 0.00024192848763896524
-focus: 0.0002634492577340456
-gravity: 12
-density: 1.38
 ---
 the team who launched [[Bostrom]] [[bootloader]]. dissolved in 2025
 

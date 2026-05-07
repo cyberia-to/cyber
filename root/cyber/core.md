@@ -3,13 +3,6 @@ tags: cyber, core
 alias: core
 crystal-type: pattern
 crystal-domain: cyber
-stake: 9710004032755294
-diffusion: 0.00021691308110505526
-springs: 0.0009130462943562379
-heat: 0.0007158597289696961
-focus: 0.0005255423746533536
-gravity: 2
-density: 48.72
 ---
 # core
 

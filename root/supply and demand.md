@@ -2,13 +2,6 @@
 tags: cybernomics
 crystal-type: relation
 crystal-domain: economics
-stake: 1963643684653229
-diffusion: 0.00019703953064937994
-springs: 0.0007731360599017945
-heat: 0.0006006083635352369
-focus: 0.0004505822560022889
-gravity: 4
-density: 6.79
 ---
 fundamental market mechanism where [[price]] acts as a signal coordinating [[scarcity]] and desire
 

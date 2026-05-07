@@ -2,13 +2,6 @@
 tags: computer science, cyber
 crystal-type: entity
 crystal-domain: computer science
-stake: 5750821895719324
-diffusion: 0.0004996641798109964
-springs: 0.00034272768038978024
-heat: 0.00041369940850908557
-focus: 0.0004353902757242621
-gravity: 8
-density: 5.86
 ---
 
 Protocols enabling distributed nodes to agree on a single state despite failures and adversaries. The foundation of decentralized [[computation]].

@@ -3,12 +3,6 @@ tags: cyber, language
 alias: Ten, tensor language, linear language
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.00012990739643510717
-springs: 0.0009295602997826244
-heat: 0.0006951459139900115
-focus: 0.00048285097095035733
-gravity: 4
-density: 6.42
 ---
 the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-time constants. shape mismatches are compile errors
 

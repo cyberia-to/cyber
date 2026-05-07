@@ -3,12 +3,6 @@ tags: cyber, cybernomics, draft, research
 crystal-type: entity
 crystal-domain: cyber
 alias: token traits
-diffusion: 0.00011233815923477823
-springs: 0.0007151894342453774
-heat: 0.0005508265255346511
-focus: 0.0003808912149979437
-gravity: 0
-density: 0.09
 ---
 
 # Token Traits

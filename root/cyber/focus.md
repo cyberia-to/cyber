@@ -3,13 +3,6 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: focus dynamics, nox focus
-stake: 30382207188462832
-diffusion: 0.0008518586454801633
-springs: 0.0017136649193924098
-heat: 0.0014444406382283143
-focus: 0.0012289169262035035
-gravity: 9
-density: 6.85
 ---
 # Focus Dynamics
 

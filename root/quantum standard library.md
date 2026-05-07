@@ -3,13 +3,6 @@ tags: trident, cyber, article
 alias: std.quantum, quantum standard library, quantum deep dive, std-quantum-deep-dive
 crystal-type: article
 crystal-domain: cyber
-stake: 9519611796818916
-diffusion: 0.00011233815923477823
-springs: 0.002483104000707215
-heat: 0.0017037558361953395
-focus: 0.0011418514470686548
-gravity: 0
-density: 0.31
 ---
 # std.quantum: A Quantum Standard Library for [[trident]]
 

@@ -3,13 +3,6 @@ tags: cyber, core
 alias: particle space, cyber space, address space
 crystal-type: entity
 crystal-domain: cyber
-stake: 13626469963010664
-diffusion: 0.00013065643035865964
-springs: 0.0027954430758477416
-heat: 0.0019133569342204989
-focus: 0.0012866325247777898
-gravity: 1
-density: 6.42
 ---
 the set of all possible [[particles]] — bounded by two limits
 

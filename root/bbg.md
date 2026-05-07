@@ -3,12 +3,6 @@ tags: cyber
 alias: bbg, Big Badass Graph, authenticated state, cyber/bbg
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0009830749016173444
-springs: 0.0008907866604507944
-heat: 0.000942261310131483
-focus: 0.0009472257109702348
-gravity: 26
-density: 4.19
 ---
 the authenticated state layer for [[cyber]]. the entire [[cybergraph]] commits to a single polynomial:
 

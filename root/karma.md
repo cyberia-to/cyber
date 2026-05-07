@@ -4,13 +4,6 @@ tags: cyber, core
 crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
-stake: 27943722012816140
-diffusion: 0.006720590077344313
-springs: 0.0005965378229072889
-heat: 0.002597981070219556
-focus: 0.004058852599588373
-gravity: 100
-density: 6.75
 ---
 
 how much the [[egregore]] trusts a [[neuron]]

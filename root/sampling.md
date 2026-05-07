@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
-stake: 14681682316796518
-diffusion: 0.00013929010923118787
-springs: 0.0000829038115135298
-heat: 0.00011950938160481792
-focus: 0.00011841807439061993
-gravity: 3
-density: 0
 ---
 Data sampling is a technique used in machine learning to create a subset of the original data for training, validation, or testing a machine learning model. The goal of data sampling is to reduce the computational complexity and memory requirements of the machine learning algorithm, while still preserving the important characteristics of the data and avoiding overfitting.
 

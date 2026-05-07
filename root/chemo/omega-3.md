@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8041631042210236
-diffusion: 0.00011233815923477823
-springs: 0.000031699013493565995
-heat: 0.00006330118612755182
-focus: 0.00007833902089097158
-gravity: 0
-density: 0.63
 ---
 omega-3 fatty acids are essential fats that plays a crucial role in maintaining
 

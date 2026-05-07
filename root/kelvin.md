@@ -2,13 +2,6 @@
 tags: physics, measure
 crystal-type: measure
 crystal-domain: physics
-stake: 3192731341086960
-diffusion: 0.0008073355216732511
-springs: 0.00048029420601762465
-heat: 0.000614041310458654
-focus: 0.0006705642847336633
-gravity: 1
-density: 1.37
 ---
 SI unit of [[temperature]], the absolute thermodynamic scale
 

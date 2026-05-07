@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8122181603567934
-diffusion: 0.00011233815923477823
-springs: 0.00007527354398576871
-heat: 0.00009746657591137816
-focus: 0.00009824445799539824
-gravity: 0
-density: 1.98
 ---
 alias: methionine
 

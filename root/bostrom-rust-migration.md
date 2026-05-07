@@ -2,13 +2,6 @@
 tags: cyber, bostrom, migration, rust, research
 icon: "\U0001F980"
 alias: go-cyber-to-rust-migration, go-to-rust-host-migration, cyber-os-unified-blueprint
-stake: 3661389152622660
-diffusion: 0.00011233815923477823
-springs: 0.0010653606533441123
-heat: 0.0007720890269108398
-focus: 0.0005301950810028064
-gravity: 0
-density: 0.17
 ---
 
 # Bostrom → Rust: Complete Migration Path

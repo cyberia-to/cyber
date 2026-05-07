@@ -3,13 +3,6 @@ alias: roselle
 tags: species
 crystal-type: entity
 crystal-domain: biology
-stake: 8363833287641030
-diffusion: 0.00011233815923477823
-springs: 0.0009631012351884466
-heat: 0.0006821959360486371
-focus: 0.0004815386373836646
-gravity: 0
-density: 1.64
 ---
 ![image.png](https://ipfs.io/ipfs/QmeCFx9a4RHz81djR62ytQNAcWkrCSG3CB2DfB8oj2KTPj)
 

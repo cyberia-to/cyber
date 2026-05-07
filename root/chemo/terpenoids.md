@@ -2,13 +2,6 @@
 tags: compound-
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5450587985204266
-diffusion: 0.00011233815923477823
-springs: 0.00009573109260145536
-heat: 0.00010368895279927714
-focus: 0.00010562619795768424
-gravity: 0
-density: 0.48
 ---
 terpenoids (also known as isoprenoids) are a large, diverse class of organic compounds derived from [[isoprene]] units, widely produced by plants, fungi, and some animals. terpenoids serve important ecological roles, including plant defense against herbivores, pathogens, and environmental stresses, as well as attracting pollinators.
 

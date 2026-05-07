@@ -2,13 +2,6 @@
 tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
-stake: 2993795863794462
-diffusion: 0.00028293822847530106
-springs: 0.001678938702379388
-heat: 0.0012321972809305325
-focus: 0.0008915901811375997
-gravity: 9
-density: 6.99
 ---
 extends [[propositional logic]] with necessity ($\square$) and possibility ($\diamond$) operators
 

@@ -2,13 +2,6 @@
 tags: cyber, cyb
 crystal-type: entity
 crystal-domain: cyber
-stake: 15919720035603324
-diffusion: 0.00018273162556742883
-springs: 0.0011861327614838143
-heat: 0.0008765145431357674
-focus: 0.0006225085498560304
-gravity: 5
-density: 10.36
 ---
 the [[emotion]] of [[blue]] — curiosity and exploration drive
 

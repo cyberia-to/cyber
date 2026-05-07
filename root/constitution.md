@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
-stake: 4998609835363846
-diffusion: 0.0004556834831844204
-springs: 0.00028574555018050625
-heat: 0.00035814473449054506
-focus: 0.00038519435354448237
-gravity: 11
-density: 8.45
 ---
 foundational document defining the structure of a state, the rights of its members, and the limits of power
 

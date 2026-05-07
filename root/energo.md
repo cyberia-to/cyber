@@ -3,12 +3,6 @@ tags: cyber, energo
 alias: energy
 crystal-type: entity
 crystal-domain: energo
-diffusion: 0.004873862076413517
-springs: 0.0003787144267479486
-heat: 0.0018545136266491468
-focus: 0.002921448091561058
-gravity: 96
-density: 16.14
 ---
 # energo
 

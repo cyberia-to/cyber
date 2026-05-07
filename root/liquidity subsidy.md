@@ -3,13 +3,6 @@ tags: cip
 crystal-type: entity
 crystal-domain: cyber
 status: draft
-stake: 14525951231504966
-diffusion: 0.0001720931777330469
-springs: 0.0003456142440284027
-heat: 0.0003308073951409189
-focus: 0.0002558923411032355
-gravity: 4
-density: 7.32
 ---
 propose simple mechanism for optimization of [[$CYB]] [[tokens]] [[value]]
 

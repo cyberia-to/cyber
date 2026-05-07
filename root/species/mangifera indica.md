@@ -7,13 +7,6 @@ alias: mangifera, mango, mangga
 wood: "yes"
 grow-speed: "3"
 wood-density: "600"
-stake: 14645556610490640
-diffusion: 0.00044808632601036133
-springs: 0.0001972051008096026
-heat: 0.0002928962235767625
-focus: 0.00034178393796342396
-gravity: 11
-density: 1.5
 ---
 ![Screenshot 2024-06-03 at 08.07.24.png](https://ipfs.io/ipfs/QmbTU1UdHYvbLxEbyYjEmRN6QXNSmvd6ZGj6g8JpXWuXyH){:height 527, :width 676}
 

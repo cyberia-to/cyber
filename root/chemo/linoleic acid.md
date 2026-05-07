@@ -2,13 +2,6 @@
 tags: compound
 crystal-type: entity
 crystal-domain: chemistry
-stake: 5481913203510038
-diffusion: 0.00011233815923477823
-springs: 0.00008246788381555257
-heat: 0.000037649645370807764
-focus: 0.00008843937383621902
-gravity: 0
-density: 0
 ---
 linoleic acid is a polyunsaturated omega-6 fatty acid essential for human nutrition, meaning it must be obtained from the diet because the body cannot synthesize it. linoleic acid serves critical roles in maintaining healthy cell membranes, supporting skin barrier function, and acting as a precursor for other bioactive lipids involved in inflammation and cellular signaling.
 

@@ -3,13 +3,6 @@ alias: Shannon, Shannon information theory, information theory
 tags: cyber, article, person
 crystal-type: entity
 crystal-domain: biology
-stake: 13795504095556744
-diffusion: 0.0004739973214467023
-springs: 0.001454266134754281
-heat: 0.0011490915661503888
-focus: 0.0009030968143797396
-gravity: 8
-density: 4.68
 ---
 1916-2001. American mathematician and electrical engineer
 

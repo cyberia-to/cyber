@@ -4,12 +4,6 @@ crystal-type: entity
 crystal-domain: cyberia
 alias: mom support, parent support, mama, caretaker support
 icon: "\U0001F49C"
-diffusion: 0.00012267654252224897
-springs: 0.00041059632106691296
-heat: 0.00034277166937198537
-focus: 0.00025307150145560285
-gravity: 3
-density: 1.04
 ---
 # mama
 

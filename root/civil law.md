@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
-stake: 5052310209602313
-diffusion: 0.00025208353511532884
-springs: 0.00006800066216064104
-heat: 0.00013935714385911605
-focus: 0.00017431339497768505
-gravity: 4
-density: 3.51
 ---
 legal system based on comprehensive codified statutes and written legal codes
 

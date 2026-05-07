@@ -3,13 +3,6 @@ alias: stf
 tags: cyber
 crystal-type: entity
 crystal-domain: computer science
-stake: 6786384794386100
-diffusion: 0.00027627625270469825
-springs: 0.00006261566602522275
-heat: 0.00017934132871649986
-focus: 0.00019279109190322157
-gravity: 3
-density: 0
 ---
 
 The state transition function is the deterministic rule that maps a current [[state]] and an input to a new [[state]]. Given identical inputs and starting conditions, the function always produces the same output, ensuring reproducibility across all [[validators]].

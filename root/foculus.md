@@ -2,13 +2,6 @@
 tags: cyber, core, cip
 crystal-type: process
 crystal-domain: cyber
-stake: 23432890576785020
-diffusion: 0.00032012214294601987
-springs: 0.0014955253851135061
-heat: 0.0011274815360720384
-focus: 0.000834214994221494
-gravity: 14
-density: 1.25
 ---
 # foculus consensus
 

@@ -3,13 +3,6 @@ alias: the story of bostrom
 tags: cyber
 crystal-type: entity
 crystal-domain: biology
-stake: 8907549576805494
-diffusion: 0.00017308047001534152
-springs: 0.00010674319866422388
-heat: 0.0001435583342946907
-focus: 0.00014727486146588037
-gravity: 1
-density: 0.42
 ---
 ## History
 

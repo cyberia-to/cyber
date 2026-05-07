@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 14619926886422280
-diffusion: 0.0028730978227196734
-springs: 0.0020546216117023285
-heat: 0.0023152805078893402
-focus: 0.002515991496448477
-gravity: 1
-density: 6.84
 ---
 tools to compute and work with [[particles]]
 

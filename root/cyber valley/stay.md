@@ -2,13 +2,6 @@
 tags: cv.land
 crystal-type: process
 crystal-domain: cyberia
-stake: 4127768766463396
-diffusion: 0.00012018480126060532
-springs: 0.000029176442975517632
-heat: 0.00006777086132102867
-focus: 0.00008239950578716609
-gravity: 2
-density: 3.36
 ---
 - ## glamping
 

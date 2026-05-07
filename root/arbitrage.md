@@ -2,13 +2,6 @@
 tags: cybernomics
 crystal-type: process
 crystal-domain: economics
-stake: 7890374988105225
-diffusion: 0.00011620047240597109
-springs: 0.00006709871779879404
-heat: 0.00010260046592672816
-focus: 0.00009874994472797228
-gravity: 1
-density: 1.01
 ---
 simultaneous purchase and sale of an asset across different markets to profit from price differences
 

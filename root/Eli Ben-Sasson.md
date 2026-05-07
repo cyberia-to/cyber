@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4958334554684998
-diffusion: 0.00012274438063387532
-springs: 0.0008733259428608736
-heat: 0.0006360044617049668
-focus: 0.0004505708655162063
-gravity: 2
-density: 0.98
 ---
 Israeli computer scientist and mathematician, professor at Technion.
 

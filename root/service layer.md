@@ -3,13 +3,6 @@ alias: services
 tags: aos
 crystal-type: entity
 crystal-domain: biology
-stake: 7571752767623661
-diffusion: 0.0002179405561155968
-springs: 0.0015916178684517459
-heat: 0.0011542171368536336
-focus: 0.0008172990659640728
-gravity: 2
-density: 9.83
 ---
 energy layer
 

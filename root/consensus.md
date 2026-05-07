@@ -4,13 +4,6 @@ alias: consensus mechanism, consensus algorithm
 crystal-type: process
 crystal-domain: cyber
 crystal-size: bridge
-stake: 37820685390931024
-diffusion: 0.008477793757918094
-springs: 0.0005734325089305057
-heat: 0.003145648582598903
-focus: 0.005040056348158127
-gravity: 105
-density: 14.21
 ---
 the moment a [[signal]] becomes [[knowledge]]. before consensus, a [[cyberlink]] is a proposal. after, it has [[finality]]
 

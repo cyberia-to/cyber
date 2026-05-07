@@ -2,13 +2,6 @@
 tags: physics, property
 crystal-type: property
 crystal-domain: physics
-stake: 1058385557718124
-diffusion: 0.0004083858043327208
-springs: 0.00023711043873443524
-heat: 0.00031402327743361837
-focus: 0.0003381306892734246
-gravity: 5
-density: 5.08
 ---
 [[force]] per unit area, measured in [[pascal]] (Pa)
 

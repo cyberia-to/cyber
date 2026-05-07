@@ -4,12 +4,6 @@ crystal-type: pattern
 crystal-domain: cyberia
 alias: conditions for will, conditions for learning, learning conditions
 icon: "\U0001F331"
-diffusion: 0.00012473800175958553
-springs: 0.0006235829615839837
-heat: 0.0004876275371853514
-focus: 0.00034696939679206836
-gravity: 3
-density: 2.57
 ---
 # conditions
 

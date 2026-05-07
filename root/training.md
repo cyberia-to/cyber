@@ -4,13 +4,6 @@ tags: cyber, core
 crystal-type: process
 crystal-domain: biology
 crystal-size: bridge
-stake: 12876373371943368
-diffusion: 0.00025565468973368517
-springs: 0.0011464882993319498
-heat: 0.0008731268275502924
-focus: 0.000646399200176505
-gravity: 9
-density: 9.38
 ---
 the ML word for [[learning]] — and where the analogy breaks
 

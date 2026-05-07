@@ -3,13 +3,6 @@ alias: nodes, vertex, vertices
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 22272230215403644
-diffusion: 0.0003463697626523115
-springs: 0.0011969436297824575
-heat: 0.0009381635123109978
-focus: 0.0007199006727231137
-gravity: 10
-density: 9.72
 ---
 a point in a [[graph]] that can be connected to other points by [[links]]
 

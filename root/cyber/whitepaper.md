@@ -4,13 +4,6 @@ crystal-type: pattern
 crystal-domain: cyber
 crystal-size: deep
 status: draft
-stake: 19039223593637832
-diffusion: 0.0011932252095256265
-springs: 0.0008054574937956081
-heat: 0.0009556151085324485
-focus: 0.0010293728746080155
-gravity: 7
-density: 1.09
 ---
 # cyber: a protocol for planetary superintelligence
 

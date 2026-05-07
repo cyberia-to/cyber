@@ -3,12 +3,6 @@ tags: cyber
 alias: nox, nox vm, nox virtual machine, cyber/nox
 crystal-type: entity
 crystal-domain: cyber
-diffusion: 0.0008686004251168347
-springs: 0.00032657839478899214
-heat: 0.0005274880368023667
-focus: 0.0006377713383556071
-gravity: 43
-density: 2.48
 ---
 the composition language and virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
 

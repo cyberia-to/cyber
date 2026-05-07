@@ -3,13 +3,6 @@ tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
 alias: content addressing, particle addressing, nox CID
-stake: 42267076377875984
-diffusion: 0.00011514671148758254
-springs: 0.002899252570172658
-heat: 0.0019753872300903104
-focus: 0.0013224265728136895
-gravity: 1
-density: 1.31
 ---
 # particle: content addressing
 

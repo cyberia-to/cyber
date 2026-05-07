@@ -3,13 +3,6 @@ tags: time, biology
 alias: extinction events
 crystal-type: process
 crystal-domain: biology
-stake: 6490910689769451
-diffusion: 0.0002374401440905588
-springs: 0.00026178876815706237
-heat: 0.00028009103083650013
-focus: 0.0002532749086597056
-gravity: 5
-density: 3.13
 ---
 rapid, widespread loss of species across multiple taxa and habitats
 

@@ -3,12 +3,6 @@ tags: cyber, game
 alias: game theory
 crystal-type: entity
 crystal-domain: game
-diffusion: 0.0016215370109803177
-springs: 0.0005738959995838014
-heat: 0.0009386153492276932
-focus: 0.0011706603752108724
-gravity: 43
-density: 13.41
 ---
 # game
 

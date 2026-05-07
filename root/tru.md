@@ -5,13 +5,6 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
-stake: 16417668960360008
-diffusion: 0.005184624863262818
-springs: 0.0007972557691947954
-heat: 0.0022379730991114104
-focus: 0.003279083782212226
-gravity: 67
-density: 19.99
 ---
 the engine that reads the [[cybergraph]] and computes what matters
 

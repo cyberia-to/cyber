@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 26850187119232840
-diffusion: 0.00011991008583496344
-springs: 0.00002612460245186173
-heat: 0.0000650363639794429
-focus: 0.0000807996964489312
-gravity: 2
-density: 0
 ---
 long-term integrity: 64-byte (512-bit) digests provide full 256-bit post-quantum pre-image margin (grover only halves the exponent). this keeps verification sound well past 2040 without needing a risky, late migration.
 

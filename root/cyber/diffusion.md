@@ -3,13 +3,6 @@ alias: random walk, markov, exploration, diffusion, freedom
 tags: cyber
 crystal-type: process
 crystal-domain: cyber
-stake: 18413858326369884
-diffusion: 0.006822545976140939
-springs: 0.0005329677470729766
-heat: 0.0025926243808041247
-focus: 0.004089688188353307
-gravity: 83
-density: 4.08
 ---
 first operator of the [[tri-kernel]]
 

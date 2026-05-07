@@ -2,12 +2,6 @@
 tags: research, draft, cyber, bostrom
 crystal-type: article
 crystal-domain: cyber
-diffusion: 0.00017411863254180346
-springs: 0.0013585923525710978
-heat: 0.0009879622053444437
-focus: 0.0006922294631111402
-gravity: 2
-density: 0.51
 ---
 # Provably Optimal Initialization: Why Knowledge Graph Structure is the Right Starting Point for Language Model Training
 

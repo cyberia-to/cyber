@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 5817540542500449
-diffusion: 0.00011233815923477823
-springs: 0.00005198416086267344
-heat: 0.00008022594898706959
-focus: 0.00008780951767360765
-gravity: 0
-density: 1.11
 ---
 - recipe for high-durability pozzolanic concrete with aggregate inspired by [[roman concrete]]
 - table: mix per 1 m³ compacted concrete

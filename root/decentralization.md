@@ -2,13 +2,6 @@
 tags: governance, cyber
 crystal-type: process
 crystal-domain: governance
-stake: 4491304027217129
-diffusion: 0.0005145753200484814
-springs: 0.0003414461593019859
-heat: 0.0004153338884689569
-focus: 0.0004427882855086408
-gravity: 12
-density: 6.11
 ---
 distribution of authority, control, and decision-making from a central entity to a distributed network of participants
 

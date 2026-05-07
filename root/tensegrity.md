@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: pattern
 crystal-domain: cyber
-stake: 9086103321148394
-diffusion: 0.00017006966890093701
-springs: 0.0001072101153134988
-heat: 0.00014083438216159103
-focus: 0.00014536474547684062
-gravity: 2
-density: 0
 ---
 systems that are structural frameworks where tension and compression elements work together
 

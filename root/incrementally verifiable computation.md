@@ -3,13 +3,6 @@ alias: IVC
 tags: cyber, cryptographic proofs
 crystal-type: process
 crystal-domain: computer science
-stake: 7644980550676113
-diffusion: 0.0004169737120778751
-springs: 0.0009106618574366022
-heat: 0.0007695696666794667
-focus: 0.0006355993466058302
-gravity: 8
-density: 6.16
 ---
 paradigm where a long computation is broken into steps, and each step produces a [[cryptographic proof]] that
 

@@ -3,13 +3,6 @@ tags: compound
 alias: xanthophyll
 crystal-type: entity
 crystal-domain: chemistry
-stake: 8276570179503523
-diffusion: 0.00011233815923477823
-springs: 0.000043420437601694946
-heat: 0.00006954620045515256
-focus: 0.00008310445098893055
-gravity: 0
-density: 1.05
 ---
 [[lutein]], also known as xanthophyll, is a naturally occurring, oxygenated [[carotenoids]] essential for human [[eye health]]. it is concentrated primarily in the [[macula]] and [[retina]] of the human eye, acting as a potent antioxidant that filters harmful blue light, protecting ocular tissues from oxidative stress and reducing the risk of [[age-related macular degeneration (AMD)]], [[cataracts]], and [[retinal damage]].
 

@@ -3,12 +3,6 @@ tags: cyber, article, mathematics
 alias: loss functions and physics, physics of convergence, gradient descent and the cybergraph
 crystal-type: pattern
 crystal-domain: cyber
-diffusion: 0.00011233815923477823
-springs: 0.0026426499081892915
-heat: 0.0018101821639998868
-focus: 0.0012110004848741895
-gravity: 0
-density: 1.54
 ---
 # Gradient Descent and the Cybergraph
 

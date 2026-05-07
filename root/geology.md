@@ -2,12 +2,6 @@
 tags: discipline, geo, chemo
 crystal-type: entity
 crystal-domain: geo
-diffusion: 0.00011477837121203961
-springs: 0.00007630352059258082
-heat: 0.00010311986437229058
-focus: 0.00010090421465825513
-gravity: 1
-density: 16.84
 ---
 # geology
 

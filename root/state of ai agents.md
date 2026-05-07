@@ -2,13 +2,6 @@
 tags: cyber
 crystal-type: entity
 crystal-domain: cyber
-stake: 16338338862053182
-diffusion: 0.0001289258079637585
-springs: 0.00009935871916859798
-heat: 0.00012721445882761957
-focus: 0.00011971341149798607
-gravity: 1
-density: 1.18
 ---
 [source](http://langchain.com/stateofaiagents)
 

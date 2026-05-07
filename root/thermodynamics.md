@@ -2,13 +2,6 @@
 tags: discipline, energo, info, quantum
 crystal-type: entity
 crystal-domain: energo
-stake: 4859883868581144
-diffusion: 0.002456216344274237
-springs: 0.00026346986771278705
-heat: 0.000996544866915918
-focus: 0.0015064581058341824
-gravity: 34
-density: 8.27
 ---
 
 The branch of [[physics]] governing [[energy]] transfer as heat and work, and the evolution of [[entropy]].

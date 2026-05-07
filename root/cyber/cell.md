@@ -3,13 +3,6 @@ tags: cyber, core
 alias: cells, shard, shards, cyber cell
 crystal-type: entity
 crystal-domain: cyber
-stake: 30000000000000000
-diffusion: 0.00015697801860089746
-springs: 0.0015653483031745582
-heat: 0.001120940523264001
-focus: 0.0007722816049056391
-gravity: 5
-density: 3.77
 ---
 the atomic unit of the [[cyber/hierarchy]] — a group of [[particles]] that share a 4D coordinate and maintain their own local state
 

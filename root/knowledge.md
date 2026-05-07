@@ -3,13 +3,6 @@ tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
 crystal-size: bridge
-stake: 33626197977686504
-diffusion: 0.005186441317249108
-springs: 0.0005330511135151438
-heat: 0.002061362762389827
-focus: 0.0031654085451571553
-gravity: 130
-density: 18.59
 ---
 [[neurons]] [[link]] [[particles]] in [[time]]. the sum of all [[cyberlinks]] is knowledge
 

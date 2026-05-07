@@ -2,13 +2,6 @@
 tags: governance
 crystal-type: entity
 crystal-domain: governance
-stake: 5079160396721545
-diffusion: 0.0001436001455547232
-springs: 0.00025913335894786485
-heat: 0.0002362522641313593
-focus: 0.00019679053328799866
-gravity: 5
-density: 6.24
 ---
 multi-ethnic, multi-territorial state controlled by a single sovereign authority
 

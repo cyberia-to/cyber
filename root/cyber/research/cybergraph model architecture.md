@@ -3,13 +3,6 @@ tags: cyber, research, article
 crystal-type: pattern
 crystal-domain: cyber
 status: draft
-stake: 14235481025396900
-diffusion: 0.0001325985301405026
-springs: 0.00009633115170153828
-heat: 0.00012848832824232008
-focus: 0.00012089627622918033
-gravity: 2
-density: 0
 ---
 # cybergraph as generative model
 

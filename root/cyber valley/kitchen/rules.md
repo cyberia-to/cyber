@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
-stake: 5830965636060064
-diffusion: 0.00014429212695658475
-springs: 0.0002599101066156487
-heat: 0.00024082740936405734
-focus: 0.00019828457733580426
-gravity: 1
-density: 2.63
 ---
 ### how meals work
 

@@ -2,13 +2,6 @@
 tags: culture
 crystal-type: entity
 crystal-domain: culture
-stake: 5025460022483080
-diffusion: 0.00024294366133227821
-springs: 0.00004965177926098004
-heat: 0.00012297928755982646
-focus: 0.00016096322195640312
-gravity: 6
-density: 6.69
 ---
 organized system of beliefs, practices, rituals, and community centered on the sacred or transcendent
 

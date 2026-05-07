@@ -4,13 +4,6 @@ crystal-type: entity
 crystal-domain: biology
 scalable: "true"
 alias: manihot, cassava, tapioca, singkong
-stake: 7608366659149886
-diffusion: 0.0003747836081474553
-springs: 0.00010292643302388808
-heat: 0.00021030379480462254
-focus: 0.0002603304929418262
-gravity: 12
-density: 1.17
 ---
 [[staple]]
 

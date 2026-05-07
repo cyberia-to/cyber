@@ -3,13 +3,6 @@ tags: cybics
 crystal-type: pattern
 crystal-domain: cybics
 alias: probabilistic logic
-stake: 4474583683420153
-diffusion: 0.00025885244775050546
-springs: 0.002021195197205134
-heat: 0.0014520259625771838
-focus: 0.00102618997555226
-gravity: 5
-density: 6.63
 ---
 replaces binary truth values with continuous degrees of truth in $[0, 1]$
 

@@ -7,13 +7,6 @@ wood-availability: high
 wood-durability: moderate
 wood-density: "700"
 nitrogener: "300"
-stake: 7513170541181698
-diffusion: 0.00014819644976635764
-springs: 0.00005092175611684943
-heat: 0.00009381513720026426
-focus: 0.00010813777915828967
-gravity: 1
-density: 0
 ---
 ![image](https://ipfs.io/ipfs/QmbJF3NNyhFbVsKv8PnA8iqvbaVhiuSNK7KG97MHTY4vCX)
 

@@ -3,13 +3,6 @@ tags: geography
 alias: oceans
 crystal-type: entity
 crystal-domain: geography
-stake: 7336813630330374
-diffusion: 0.0005756743652401549
-springs: 0.00011403358335358551
-heat: 0.00027741265371201534
-focus: 0.00037752978836856724
-gravity: 18
-density: 9.3
 ---
 continuous body of salt [[water]] covering 71% of Earth's surface
 

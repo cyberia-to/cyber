@@ -3,13 +3,6 @@ icon: 🔒
 tags: cybernomics
 crystal-type: entity
 crystal-domain: cyber
-stake: 14646777073541514
-diffusion: 0.00015891140062931398
-springs: 0.003174180352282056
-heat: 0.002170235111724464
-focus: 0.0014657568283442093
-gravity: 2
-density: 6.39
 ---
 private value instance within the [[cybergraph]]
 

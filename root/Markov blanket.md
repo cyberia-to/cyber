@@ -3,13 +3,6 @@ tags: cyber
 crystal-type: pattern
 crystal-domain: cybics
 alias: Markov blankets
-stake: 5207593791775209
-diffusion: 0.00018723933708997755
-springs: 0.0016336708960490718
-heat: 0.0011712185444584507
-focus: 0.0008179646462514244
-gravity: 5
-density: 4.36
 ---
 the statistical boundary between an agent and its environment — the set of states that separates internal dynamics from external dynamics
 

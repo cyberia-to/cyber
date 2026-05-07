@@ -2,13 +2,6 @@
 tags: cyberia
 crystal-type: property
 crystal-domain: cyberia
-stake: 1171563164635860
-diffusion: 0.0002858224854375218
-springs: 0.00035095051112179804
-heat: 0.00035053606927145867
-focus: 0.00031830360990960137
-gravity: 3
-density: 0
 ---
 
 | material             | thermal (W/m·K) | acoustic performance      | moisture behavior               | durability        | density (kg/m³) | fire resistance        | sustainability                  |

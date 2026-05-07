@@ -2,13 +2,6 @@
 tags: person
 crystal-type: entity
 crystal-domain: cybics
-stake: 4900159149259993
-diffusion: 0.0005802624108191055
-springs: 0.0005310920342356509
-heat: 0.0005675070551098844
-focus: 0.0005629602267022413
-gravity: 5
-density: 5.29
 ---
 1844-1906. Austrian physicist and philosopher.
 

@@ -2,13 +2,6 @@
 tags: superhuman
 crystal-type: entity
 crystal-domain: superhuman
-stake: 4841983743834989
-diffusion: 0.00011233815923477823
-springs: 0.00005655121758159103
-heat: 0.00009720645519315955
-focus: 0.00009257573593050104
-gravity: 0
-density: 1.21
 ---
 micro
 
