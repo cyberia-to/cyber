@@ -33,4 +33,4 @@ you can use any electric device and offline software during first 10 days
 - we recommend you to avoid consuming new, unknown media though
 - as this strengthen your gain
 
-last 5 days of bootcamp you will have the connection again
+last 5 days you will have the connection again

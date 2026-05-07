@@ -314,7 +314,6 @@ we pledge allegiance to life itself — on earth and on other worlds. we shall s
 ## 15. join
 
 - [[visit us]] at [[cyber valley]]
-- [[apply for bootcamp]]
 - telegram: [@cybervalleyland](https://t.me/cybervalleyland)
 - github: [cyberia-to](https://github.com/cyberia-to)
 - twitter: [@mastercyb](https://x.com/mastercyb), [@st_joy](https://x.com/st_joy)

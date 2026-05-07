@@ -10,7 +10,6 @@ focus: 0.00011181207484839637
 gravity: 2
 density: 0
 ---
-TODO lecture at [[bootcamp/v0]]
 
 we are developers of [cyber](https://cyber.page) and [cyb](https://cyb.ai): web3 powertools for collective learning
 

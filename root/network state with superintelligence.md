@@ -52,5 +52,3 @@ thoughts on network state conference
 https://cv.land
 
 - about
-- bootcamp
-- game of freedom

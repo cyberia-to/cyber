@@ -10,7 +10,6 @@ focus: 0.00011612213557213786
 gravity: 3
 density: 0
 ---
-TODO lecture at [[bootcamp/v0]]
 
 efforts
 

@@ -10,7 +10,6 @@ focus: 0.0001193283621313335
 gravity: 6
 density: 0
 ---
-TODO lecture at [[bootcamp/v0]]
 
 we are obsessed with the idea of fast, cheap and lowtech construction
 

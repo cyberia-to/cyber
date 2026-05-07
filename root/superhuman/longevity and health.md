@@ -10,7 +10,6 @@ focus: 0.00008843937383621902
 gravity: 0
 density: 0
 ---
-TODO lecture at [[bootcamp/v0]]
 
 it is a complex topic which looks like the most important for advanced societies
 
