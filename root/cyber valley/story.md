@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+alias: cyber valley story
 ---
 published on [x.com](https://x.com/mastercyb/status/1981362331386097745)
 
