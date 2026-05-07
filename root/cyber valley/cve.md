@@ -13,7 +13,7 @@ PT PMA Cyber Valley Estate — the Indonesian operating company of [[cyberia]]. 
 | field | value |
 |---|---|
 | type | PT PMA (foreign investment limited liability company) |
-| jurisdiction | Republic of Indonesia |
+| jurisdiction | [[Indonesia]] |
 | registered location | Bali, Indonesia |
 | directors | [[master]] (Dmitry Starodubtsev), [[joy]] |
 | parent entity | [[cyberia/midao/midao]] (Marshall Islands DAO LLC) |
