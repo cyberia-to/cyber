@@ -1,9 +1,22 @@
 ---
 tags: cv.land
-alias: residency, visit us
+alias: residency, visit us, pricing
 crystal-type: process
 crystal-domain: cyberia
 ---
+stay a little longer, do a little more, feel a lot deeper.
+
+## tours
+
+| tour | price |
+|---|---|
+| feed animals | 100k |
+| plant tree | 100k |
+| food forest, group, bahasa | 300k |
+| food forest, group, english | 500k |
+| [[edem]], group, bahasa | 300k |
+| [[edem]], group, english | 500k |
+
 ## white ticket
 
 - day experience

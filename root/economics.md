@@ -9,7 +9,7 @@ the discipline that studies how agents allocate scarce resources. economics brid
 
 in the [[crystal]], economics spans three domains:
 
-- [[crypto]] — [[tokens]], [[mechanism design]], [[market making]], [[pricing]], [[monetary policy]]
+- [[crypto]] — [[tokens]], [[mechanism design]], [[market making]], pricing, [[monetary policy]]
 - [[game]] — [[game theory]], [[auction]], [[Shapley value]], [[public goods]], [[externality]]
 - [[socio]] — [[taxation]], [[fiscal policy]], [[regulation]], [[supply and demand]], [[market]]
 

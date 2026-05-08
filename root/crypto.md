@@ -18,7 +18,7 @@ tokens — [[$CYB]], [[$BOOT]], [[$H]], [[$A]], [[$V]], [[token]], [[tokens]], [
 
 consensus — [[consensus]], [[consensus algorithms]], [[proof of stake]], [[proof of work]], [[finality]], [[tendermint]], [[nothing at stake]], [[double signing attack]], [[honest majority assumption]]. how distributed agents agree on truth. [[Bostrom]] uses Tendermint BFT [[consensus]]
 
-mechanism design — [[staking]], [[delegation]], [[delegation rewards]], [[automated market maker]], [[arbitrage]], [[prediction markets]], [[auction]], [[pricing]], [[liquidity subsidy]]. the engineering of incentive structures. [[cybernomics]] is cyber's mechanism design
+mechanism design — [[staking]], [[delegation]], [[delegation rewards]], [[automated market maker]], [[arbitrage]], [[prediction markets]], [[auction]], pricing, [[liquidity subsidy]]. the engineering of incentive structures. [[cybernomics]] is cyber's mechanism design
 
 infrastructure — [[Bostrom]], [[ibc]], [[evm]], [[cosmwasm]], [[cosmos-sdk]], [[ipfs]], [[dht]], [[distributed systems]]. the technical stack that runs crypto systems. cyber builds on Cosmos SDK with IBC for cross-chain communication
 
