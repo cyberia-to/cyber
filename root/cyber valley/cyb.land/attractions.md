@@ -5,10 +5,14 @@ crystal-domain: cyberia
 ---
 named places to see across 37 ha. all included with any [[daypass]] or [[nightpass]] — no per-attraction purchase.
 
+## miracle
+
+- [[sinwood]] — the bioluminescent forest
+- [[sanghyang dick]] — sacred tree
+
 ## volcanoes
 
 - [[sanghyang]] — the volcano, day trek
-- [[sanghyang dick]] — sister peak
 - [[batukaru]] — biome
 - [[pucuk]] — fourth peak
 
@@ -20,7 +24,6 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 
 ## forest
 
-- [[sinwood]] — the bioluminescent miracle
 - [[firefly canyon]] — night spectacle
 - [[coffee plantation]] — magic forest
 - [[travers]] — canyon traverse
