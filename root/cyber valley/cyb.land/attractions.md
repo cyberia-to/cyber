@@ -5,20 +5,19 @@ crystal-domain: cyberia
 ---
 named places to see across 37 ha. all included with any [[daypass]] or [[nightpass]] — no per-attraction purchase.
 
-## landscape
+## volcanoes
 
 - [[sanghyang]] — the volcano, day trek
 - [[sanghyang dick]] — sister peak
 - [[batukaru]] — biome
-- [[andara]] — sacred site
-- [[pucuk]] — viewpoint
-- [[lesung]] — old grain mortar landmark
+- [[andara]] — sacred mountain
 
 ## sky
 
 - [[sunrise]] — premium dawn point
 - [[sunset]] — 2-ocean view
 - [[stargazing]] — best on bali
+- [[pucuk]] — daytime viewpoint
 
 ## forest
 
@@ -26,6 +25,10 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 - [[firefly canyon]] — night spectacle
 - [[coffee plantation]] — magic forest
 - [[travers]] — canyon traverse
+
+## culture
+
+- [[lesung]] — old grain mortar landmark
 
 ## life
 
