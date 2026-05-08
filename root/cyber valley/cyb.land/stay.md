@@ -34,6 +34,10 @@ bring your own camp, rent the gear:
 
 twin peaks camping is part of the [[nightpass]]. residents may pitch tents in the wilderness given they [[follow the rules]].
 
+named camp sites:
+
+- [[andara]] — sacred camp near the andara site
+
 ## monthly stays
 
 [[nomads]] — monthly programs for digital nomads (custom rate).

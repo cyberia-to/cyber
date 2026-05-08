@@ -10,14 +10,13 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 - [[sanghyang]] — the volcano, day trek
 - [[sanghyang dick]] — sister peak
 - [[batukaru]] — biome
-- [[andara]] — sacred mountain
+- [[pucuk]] — fourth peak
 
 ## sky
 
 - [[sunrise]] — premium dawn point
 - [[sunset]] — 2-ocean view
 - [[stargazing]] — best on bali
-- [[pucuk]] — daytime viewpoint
 
 ## forest
 
@@ -35,6 +34,6 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 - [[animals]] — sheep, chickens, dogs, parrots
 - [[robots]] — [[cyber-sheep]] autonomous platform
 
-book a [[daypass]] or [[nightpass]] for full access.
+book a [[daypass]] or [[nightpass]] for full access. for camping, see [[stay]].
 
 [view cart →](/cyber-valley/cyb.land/cart)
