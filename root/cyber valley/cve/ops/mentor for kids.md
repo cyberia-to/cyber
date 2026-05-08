@@ -12,7 +12,7 @@ fierce curiosity, incredible energy and persistent disposition
 ## Who are we?
 
 - [[amazing family]]
-- building [cyber valley](https://cv.land) autonomous community
+- building [cyber valley](https://cyb.land) autonomous community
 - we focus on [renewable energy](https://en.wikipedia.org/wiki/Renewable_energy), [permaculture](https://en.wikipedia.org/wiki/Permaculture) and [superintelligence](https://en.wikipedia.org/wiki/Superintelligence)
 - proficient in modern technology including [ai](https://en.wikipedia.org/wiki/Artificial_intelligence) and [blockchain](https://en.wikipedia.org/wiki/Blockchain)
 - [[open minded and freedom-loving persons]]
@@ -57,7 +57,7 @@ fierce curiosity, incredible energy and persistent disposition
 ## Opportunity
 
 - work with advanced and intelligent family
-- participate in one of the [biggest development project](https://cv.land) in Bali
+- participate in one of the [biggest development project](https://cyb.land) in Bali
 - you can learn a lot of [[cool and inspiring things]] with us
 - ability to grow develop next generation humans for cyber valley
 - significant growth in case of strategic match

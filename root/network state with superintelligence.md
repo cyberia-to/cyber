@@ -42,6 +42,6 @@ thoughts on network state conference
 	- collaborative labeling
 	- personal finetuning
 
-https://cv.land
+https://cyb.land
 
 - about

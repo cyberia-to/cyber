@@ -1,5 +1,5 @@
 ---
-tags: building, cv.land
+tags: building, cyb.land
 alias: organic market
 crystal-type: entity
 crystal-domain: cyberia

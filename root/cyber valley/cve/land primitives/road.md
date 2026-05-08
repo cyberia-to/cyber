@@ -4,7 +4,7 @@ crystal-type: entity
 crystal-domain: cyberia
 ---
 
-A road is a type of infrastructure at [[cyber valley]] that connects buildings, [[terrace]] levels, and [[cv.land]] parcels across the estate. Roads form the circulation network through which people, materials, and energy flow between structures.
+A road is a type of infrastructure at [[cyber valley]] that connects buildings, [[terrace]] levels, and [[cyb.land]] parcels across the estate. Roads form the circulation network through which people, materials, and energy flow between structures.
 
 At [[cyber valley]], roads follow the natural contours of the hillside terrain, minimizing earthwork while providing access to all key locations. Some roads serve as vehicular paths for transporting construction materials and supplies, while others function as pedestrian walkways linking living quarters to workspaces.
 

@@ -1,7 +1,7 @@
 ---
 icon: 🐦
 alias: bird, birds research
-tags: cv.land
+tags: cyb.land
 crystal-type: entity
 crystal-domain: biology
 ---

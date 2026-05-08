@@ -46,7 +46,7 @@ example: [[coffea arabica]]
   
   cyberlinks from this particle:
     coffea arabica → "family" → Rubiaceae
-    coffea arabica → "grows_at" → cv.land
+    coffea arabica → "grows_at" → cyb.land
     coffea arabica → "needs" → shade
     coffea arabica → "companion" → calliandra calothyrsus
     coffea arabica → "produces" → caffeine

@@ -3,7 +3,7 @@ tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
 ---
-internal product/strategy notes for cv.land. drafts and analysis that
+internal product/strategy notes for cyb.land. drafts and analysis that
 inform but do not appear on the public site.
 
 ## product analysis

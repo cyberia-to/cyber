@@ -2,7 +2,7 @@
 icon: ⛰
 menu-order: "4"
 alias: cv, about
-tags: cv.land, menu
+tags: cyb.land, menu
 crystal-type: entity
 crystal-domain: biology
 ---
@@ -12,6 +12,6 @@ Thirty-seven hectares of land at the foot of [Sanghyang volcano](https://maps.ap
 
 Everything here grows from [[foundations]] — a practical philosophy of [[autonomy]] where comfortable independent life costs less than an average car, clean energy is harnessed rather than purchased, and the stars are visible every night. The [[cv/districts]] are designed symbiotically, each one a proof that human settlement can be redesigned. The [[magic forest]] weaves five hundred species into a regenerative system where food, medicine, materials, and beauty grow from the same soil.
 
-The project is deliberately self-funded to protect one core idea: an outstanding environment for planet-aware people to live and prosper. Everything learned is published openly at [cv.land](https://cv.land) so anyone anywhere can start their own [[sustainable community]] from real knowledge. The environment changes everyone who encounters it — and the [[superhuman]] begins where the environment is built for transformation.
+The project is deliberately self-funded to protect one core idea: an outstanding environment for planet-aware people to live and prosper. Everything learned is published openly at [cyb.land](https://cyb.land) so anyone anywhere can start their own [[sustainable community]] from real knowledge. The environment changes everyone who encounters it — and the [[superhuman]] begins where the environment is built for transformation.
 
 [[visit us]], or [[join us]] from wherever you are.

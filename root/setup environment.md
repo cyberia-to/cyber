@@ -11,7 +11,7 @@ luckily we are using plain text for core matters
 
 but the way text become accepted requires works with git version control system
 
-our site: https://cv.land is build completely using logseq knowledge graph notation published to github
+our site: https://cyb.land is build completely using logseq knowledge graph notation published to github
 
 ## must haves for leaders
 

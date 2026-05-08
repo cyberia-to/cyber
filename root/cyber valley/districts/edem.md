@@ -1,5 +1,5 @@
 ---
-tags: district, cv.land
+tags: district, cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 ---

@@ -1,5 +1,5 @@
 ---
-tags: cybernomics, cv.land
+tags: cybernomics, cyb.land
 crystal-type: entity
 crystal-domain: economics
 ---

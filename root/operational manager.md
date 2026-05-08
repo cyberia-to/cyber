@@ -9,7 +9,7 @@ the job: operational manager for [[rockets estate]]
 - generating products
 - identify leaders for scopes
 - support better teaming
-- cv.land: transfer the knowledge graph to local languages supported by workers of project
+- cyb.land: transfer the knowledge graph to local languages supported by workers of project
 - advance knowledge graph
 - help to comply with regulations
 

@@ -1,6 +1,6 @@
 ---
 icon: 🪷
-tags: cv.land, tech
+tags: cyb.land, tech
 crystal-type: entity
 crystal-domain: biology
 ---

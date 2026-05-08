@@ -59,7 +59,7 @@ so i want to start from the first part: reporting our results to the community
 	- data published on https://sensors.social
 		- micro particles 2.5 and 10
 		- temperature and humidity
-	- public knowledge graph on https://cv.land
+	- public knowledge graph on https://cyb.land
 	- collaboration is open source through https://github.com
 - community: around 100 workers and 300 visitors from all around the world
 - bioluminescence: fireflies, caterpillars and roots of some plants are glowing

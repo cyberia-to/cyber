@@ -8,7 +8,7 @@ A dye is a natural colorant extracted from [[plant]] species, minerals, or anima
 
 At [[cyber valley]], dye production draws on the tropical biodiversity of [[Bali]], where numerous [[plant]] species yield pigments across the full color spectrum. Indigo plants produce deep blues, turmeric delivers vivid yellows, and various bark and root extracts provide earth tones.
 
-The economics of natural dye production align with the self-sufficient model of [[cyber valley]]. Raw materials grow on [[terrace]] gardens or in wild stands across [[cv.land]] parcels, converting agricultural output into artisanal products with minimal external inputs.
+The economics of natural dye production align with the self-sufficient model of [[cyber valley]]. Raw materials grow on [[terrace]] gardens or in wild stands across [[cyb.land]] parcels, converting agricultural output into artisanal products with minimal external inputs.
 
 Dye extraction involves harvesting, processing, and fermenting plant material to release pigments, then fixing colors onto fibers through mordanting techniques. Each dye source requires specific preparation methods refined through traditional knowledge.
 

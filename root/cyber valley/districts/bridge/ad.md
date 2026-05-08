@@ -17,9 +17,9 @@ Essentials
 
 Location & Neighbourhood
 
-- • Directly neighboring cv.land (Cyber Valley) — the area’s anchor project for sustainable mountain development; brand adjacency and destination halo support premium positioning
+- • Directly neighboring cyb.land (Cyber Valley) — the area’s anchor project for sustainable mountain development; brand adjacency and destination halo support premium positioning
 - • Private, low-density surroundings; green belts nearby preserve lifelong view corridors
-	- *No affiliation or rights to cv.land amenities are implied; any cooperation is subject to separate agreements.*
+	- *No affiliation or rights to cyb.land amenities are implied; any cooperation is subject to separate agreements.*
 
 Zoning & Compliance (RTRW)
 
@@ -41,7 +41,7 @@ Existing Orchard & Food Forest (conveys with lease)
 
 Investment Notes
 
-- • Anchor-project adjacency (cv.land) and scarcity of west-facing panoramic hillsides in Gesing underpin premium value
+- • Anchor-project adjacency (cyb.land) and scarcity of west-facing panoramic hillsides in Gesing underpin premium value
 - • Regional infrastructure momentum in North Bali supports long-term desirability
 
 Inspections

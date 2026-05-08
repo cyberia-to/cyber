@@ -1,5 +1,5 @@
 ---
-tags: cv.land
+tags: cyb.land
 crystal-type: process
 crystal-domain: cyberia
 ---

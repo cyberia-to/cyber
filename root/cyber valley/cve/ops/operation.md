@@ -1,5 +1,5 @@
 ---
-tags: term, cv.land
+tags: term, cyb.land
 crystal-type: entity
 crystal-domain: cybics
 ---
