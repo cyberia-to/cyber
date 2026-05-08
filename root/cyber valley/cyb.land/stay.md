@@ -7,7 +7,7 @@ sleep in the cloud forest.
 
 ## glamping
 
-cabin-tent overnight in the bioluminescent [[sinwood]] forest. includes a [[black]] ticket for the day.
+cabin-tent overnight in the bioluminescent [[sinwood]] forest. includes a [[nightpass]] for the day.
 
 | sku | rate per night | |
 |---|---|---|
@@ -32,7 +32,7 @@ bring your own camp, rent the gear:
 
 ## camping and wilderness
 
-twin peaks camping is part of the [[black]] ticket. residents may pitch tents in the wilderness given they [[follow the rules]].
+twin peaks camping is part of the [[nightpass]]. residents may pitch tents in the wilderness given they [[follow the rules]].
 
 ## monthly stays
 

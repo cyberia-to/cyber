@@ -13,7 +13,7 @@ free play for kids under 10 with parents.
 - toys, bikes, climbing, water play
 - daily snack from [[organiq]]
 
-free with any [[white]] or [[black]] ticket — no separate purchase needed.
+free with any [[daypass]] or [[nightpass]] — no separate purchase needed.
 
 ## extras
 

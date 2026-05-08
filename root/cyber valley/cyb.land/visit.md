@@ -6,43 +6,50 @@ crystal-domain: cyberia
 ---
 stay a little longer, do a little more, feel a lot deeper.
 
-two ticket tiers. pick a day type. add to cart.
+two ticket tiers. pick a day length. add to cart.
 
-## white ticket — day, 07:00–22:00
+- [[daypass]] — daytime, 07:00–22:00. trails, sunsets, picnics.
+- [[nightpass]] — overnight, 24h. premium sunrise, stargazing, glamping option.
+
+vehicles left after 22:00 on a daypass are upgraded to nightpass.
+
+## daypass — day, 07:00–22:00
 
 includes: [[sanghyang]] day trek, [[easy sunset]], [[sacred path]], [[magic forest]], twin peaks picnics, 10+ km of [[wilderness]] trails, all public infrastructure ({{query (page-property :type "public")}}).
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| white, working day, normal | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
-| white, working day, woman <42 | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
-| white, working day, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
-| white, weekend, normal | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
-| white, weekend, woman <42 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| white, weekend, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
-| white, holiday + moon, normal | $12 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
-| white, holiday + moon, woman <42 | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
-| white, holiday + moon, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, normal | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, woman <42 | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, normal | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, woman <42 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, normal | $12 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, woman <42 | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
 
-vehicles parked after 22:00 on a white ticket are upgraded to black.
+friends of project — silent walks free of charge. [request →](/cyber-valley/cyb.land/cart)
 
-## black ticket — overnight, 24h
+## nightpass — overnight, 24h
 
-everything in white plus: [[sunrise hiking]] premium, twin peaks camping, [[stargazing]], optional [[glamping]] in [[sinwood]].
+everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[stargazing]], optional [[glamping]] in [[sinwood]].
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| black, working day, normal | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, working day, woman <42 | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, working day, kid <10 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, weekend, normal | $25 | $50 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, weekend, woman <42 | $12 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, weekend, kid <10 | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, holiday + moon, normal | $30 | $60 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, holiday + moon, woman <42 | $15 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
-| black, holiday + moon, kid <10 | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, working day, normal | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, working day, woman <42 | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, working day, kid <10 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, weekend, normal | $25 | $50 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, weekend, woman <42 | $12 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, weekend, kid <10 | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, holiday + moon, normal | $30 | $60 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, holiday + moon, woman <42 | $15 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, holiday + moon, kid <10 | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## tours
+
+short guided experiences, by appointment:
 
 | tour | price | |
 |---|---|---|
@@ -57,6 +64,6 @@ everything in white plus: [[sunrise hiking]] premium, twin peaks camping, [[star
 
 - [[parking]] — 130 cars + 200 motorbikes
 - [[cyberlink]] — 4 ha of high-speed wifi
-- [[daypass]] — silent walks for friends of the project
+- [[edu]], [[gym]], [[water]], [[wilderness]], [[recycling]], [[kids]] — all free with any pass
 
 [view cart →](/cyber-valley/cyb.land/cart)

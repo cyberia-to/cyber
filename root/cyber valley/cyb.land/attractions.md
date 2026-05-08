@@ -3,7 +3,7 @@ tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 ---
-named places to see across 37 ha. all included with any [[white]] or [[black]] ticket — no per-attraction purchase.
+named places to see across 37 ha. all included with any [[daypass]] or [[nightpass]] — no per-attraction purchase.
 
 ## landscape
 
@@ -32,6 +32,6 @@ named places to see across 37 ha. all included with any [[white]] or [[black]] t
 - [[animals]] — sheep, chickens, dogs, parrots
 - [[robots]] — [[cyber-sheep]] autonomous platform
 
-book a [[white]] or [[black]] ticket for full access.
+book a [[daypass]] or [[nightpass]] for full access.
 
 [view cart →](/cyber-valley/cyb.land/cart)
