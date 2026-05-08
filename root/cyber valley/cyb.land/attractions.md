@@ -12,9 +12,12 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 
 ## volcanoes
 
-- [[sanghyang]] — the volcano, day trek
+four peaks reachable from the site:
+
+- [[sanghyang]] — day trek
 - [[batukaru]] — biome
 - [[pucuk]] — fourth peak
+- [[lesung]] — volcanic ridge
 
 ## sky
 
@@ -27,10 +30,6 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 - [[firefly canyon]] — night spectacle
 - [[coffee plantation]] — magic forest
 - [[travers]] — canyon traverse
-
-## culture
-
-- [[lesung]] — old grain mortar landmark
 
 ## life
 
