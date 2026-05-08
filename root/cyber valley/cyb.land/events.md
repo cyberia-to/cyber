@@ -3,31 +3,35 @@ tags: cybernomics, cyb.land
 crystal-type: entity
 crystal-domain: economics
 ---
-we are working on a permanent event platform for iconic events.
+permanent event platform. seven private camps. yearly [[burn.city]] festival.
 
-are you organizing events? let us know what you would do here => tg.
+## private camp rent
 
-## private camp rents
+per night, single camp. seven camps available — all currently bookable.
 
-| period | price |
-|---|---|
-| working day | $30 |
-| peak day | $50 |
-| full moon | $70 |
-| holiday moon | $100 |
-| new moon | $200 |
-| burn.city | $300 |
+| sku | rate per night | |
+|---|---|---|
+| camp, working day | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, peak day | $50 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, full moon | $70 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, holiday moon | $100 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, new moon | $200 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, burn.city | $300 | [+ add](/cyber-valley/cyb.land/cart) |
 
-we have 7 private camps available for rent.
-
-{{query (and (page-tags [[camp]]) (not (page-property :type "public")))}}
+available camps: {{query (and (page-tags [[camp]]) (not (page-property :type "public")))}}
 
 ## burn.city
 
-8-day package: yearly festival starting a week before nyepi and finishing one day after.
+eight-day yearly festival, starting a week before nyepi, ending one day after.
 
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $500 | $1000 |
-| discount: women under 42 | $250 | $500 |
-| discount: kids under 10 and animals | $120 | $250 |
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| burn.city pass, normal | $500 | $1000 | [+ add](/cyber-valley/cyb.land/cart) |
+| burn.city pass, woman <42 | $250 | $500 | [+ add](/cyber-valley/cyb.land/cart) |
+| burn.city pass, kid <10 + animals | $120 | $250 | [+ add](/cyber-valley/cyb.land/cart) |
+
+## custom programming
+
+are you organizing? request a tailored event proposal. [request →](/cyber-valley/cyb.land/cart)
+
+[view cart →](/cyber-valley/cyb.land/cart)

@@ -3,29 +3,39 @@ tags: cyb.land
 crystal-type: process
 crystal-domain: cyberia
 ---
-- ## glamping
+sleep in the cloud forest.
 
-| period | price |
-|---|---|
-| working day | $100 |
-| peak day | $150 |
-| full moon | $200 |
-| holiday | $300 |
-| new moon | $500 |
+## glamping
 
-- ## camping and wilderness
-	- twin peaks site is provided as part of [[black]] ticket program
-	- all residents have right for using tents in wilderness of cyber valley
-	- given that they [[follow the rules]]
-- ## equipment rents
+cabin-tent overnight in the bioluminescent [[sinwood]] forest. includes a [[black]] ticket for the day.
 
-| equipment | price per day |
-|---|---|
-| family tent, 24 m2, 4-10 people | $40 |
-| open tent, 20 m2, best for kitchen | $40 |
-| service tent, 15 m2, storage or service | $30 |
-| romantic tent, 4 m2, 2-3 people | $15 |
-| sponge cushion, 2 people | $10 |
-| sleeping bag, personal | $5 |
+| sku | rate per night | |
+|---|---|---|
+| glamping, working day | $100 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, peak day | $150 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, full moon | $200 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, holiday | $300 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, new moon | $500 | [+ add](/cyber-valley/cyb.land/cart) |
 
--
+## tent rent
+
+bring your own camp, rent the gear:
+
+| sku | per day | |
+|---|---|---|
+| family tent, 24 m², 4–10 ppl | $40 | [+ add](/cyber-valley/cyb.land/cart) |
+| open tent, 20 m² | $40 | [+ add](/cyber-valley/cyb.land/cart) |
+| service tent, 15 m² | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| romantic tent, 4 m², 2–3 ppl | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| sponge cushion, 2 ppl | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| sleeping bag, personal | $5 | [+ add](/cyber-valley/cyb.land/cart) |
+
+## camping and wilderness
+
+twin peaks camping is part of the [[black]] ticket. residents may pitch tents in the wilderness given they [[follow the rules]].
+
+## monthly stays
+
+[[nomads]] — monthly programs for digital nomads (custom rate).
+
+[view cart →](/cyber-valley/cyb.land/cart)

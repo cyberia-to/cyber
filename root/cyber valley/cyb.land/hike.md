@@ -1,21 +1,35 @@
 ---
-tags: cyberia
+tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 ---
-[[sunrise]]
+hike high, touch sky.
 
-- [[sacred path]]
-- [[sanghyang]]
-- [[firefly canyon]]
-- [[magic forest]]
-- twin peaks
+10+ km of trails on 25 ha of protected wilderness. self-guided with any ticket.
 
-[[sunset]]
+## sunrise routes
 
-- [[sinwood]]
-- twin peaks
-- [[rockets estate]]
+- [[sacred path]] — canyon and traverse, 1 hour
+- [[sanghyang]] — full volcano day trek, 5 hours
+- [[firefly canyon]] — night-into-dawn route
+- [[magic forest]] — permaculture coffee plantation walk
+- twin peaks — picnic-friendly ridge
+
+## sunset routes
+
+- [[sinwood]] — bioluminescent forest, dusk into dark
+- twin peaks — same ridge, west-facing return
+- [[rockets estate]] — adjacent estate, 2-ocean view
+
+## guided hikes
+
+self-guided is free with any ticket. add a guide for context, plant lore, and safety:
+
+| sku | duration | price | |
+|---|---|---|---|
+| guide, sunrise hike | 4 hours | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| guide, full day | 8 hours | $60 | [+ add](/cyber-valley/cyb.land/cart) |
+| guide, sinwood night | 3 hours | $50 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## poems
 
@@ -40,4 +54,4 @@ crystal-domain: cyberia
 - melayang tinggi — bintang menari
 - peluk dunia — sepenuh hati
 
-### TODO chinese
+[view cart →](/cyber-valley/cyb.land/cart)

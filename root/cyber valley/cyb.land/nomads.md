@@ -3,13 +3,26 @@ tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 ---
-# From Urban Survival to Forest Arrival
+# from urban survival to forest arrival
 
-we are working on a product for digital nomads
+a product for digital nomads who want to live in the most beautiful forest on the planet.
 
-you will be able to live in the most beautiful forest on the planet soon (besok)
-  :LOGBOOK:
-  CLOCK: [2025-06-20 Fri 09:12:39]--[2025-06-20 Fri 09:12:40] =>  00:00:01
-  :END:
+## what's included
 
-let us know if you are interested in monthly programs => tg
+- private camp + [[cyberlink]] high-speed internet
+- two meals a day at [[organiq]]
+- weekly [[banya]] session
+- access to [[hike]], [[attractions]], [[learn]] programs
+- monthly community dinners
+- co-working at [[etherland]]
+
+## monthly programs
+
+| sku | duration | price | |
+|---|---|---|---|
+| nomad month, basic | 30 days | $1,500 | [+ add](/cyber-valley/cyb.land/cart) |
+| nomad month, premium camp | 30 days | $2,500 | [+ add](/cyber-valley/cyb.land/cart) |
+| nomad season | 90 days | $4,000 | [+ add](/cyber-valley/cyb.land/cart) |
+| nomad year | 365 days | $12,000 | [+ add](/cyber-valley/cyb.land/cart) |
+
+[view cart →](/cyber-valley/cyb.land/cart)

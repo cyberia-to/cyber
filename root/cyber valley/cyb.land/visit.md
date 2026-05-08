@@ -6,87 +6,57 @@ crystal-domain: cyberia
 ---
 stay a little longer, do a little more, feel a lot deeper.
 
+two ticket tiers. pick a day type. add to cart.
+
+## white ticket — day, 07:00–22:00
+
+includes: [[sanghyang]] day trek, [[easy sunset]], [[sacred path]], [[magic forest]], twin peaks picnics, 10+ km of [[wilderness]] trails, all public infrastructure ({{query (page-property :type "public")}}).
+
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| white, working day, normal | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| white, working day, woman <42 | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| white, working day, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+| white, weekend, normal | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| white, weekend, woman <42 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| white, weekend, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+| white, holiday + moon, normal | $12 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
+| white, holiday + moon, woman <42 | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
+| white, holiday + moon, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+
+vehicles parked after 22:00 on a white ticket are upgraded to black.
+
+## black ticket — overnight, 24h
+
+everything in white plus: [[sunrise hiking]] premium, twin peaks camping, [[stargazing]], optional [[glamping]] in [[sinwood]].
+
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| black, working day, normal | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, working day, woman <42 | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, working day, kid <10 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, weekend, normal | $25 | $50 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, weekend, woman <42 | $12 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, weekend, kid <10 | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, holiday + moon, normal | $30 | $60 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, holiday + moon, woman <42 | $15 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| black, holiday + moon, kid <10 | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+
 ## tours
 
-| tour | price |
-|---|---|
-| feed animals | 100k |
-| plant tree | 100k |
-| food forest, group, bahasa | 300k |
-| food forest, group, english | 500k |
-| [[edem]], group, bahasa | 300k |
-| [[edem]], group, english | 500k |
-
-## white ticket
-
-- day experience
-- from 07:00 to 22:00
-- vehicles left after 22.00 are charged black
-- ## include attractions
-	- [[sanghyang]]: 5 hours day trek with unforgettable sunsets
-	- [[easy sunset]]: amazing 2 ocean view sunset point without tracking
-	- [[sacred path]]: canyon + travers in 1 hour
-	- [[magic forest]]: permaculture coffee plantation
-	- twin peaks: scenic space for picnics
-	- [[wilderness]] 10+ km of trails on 25 ha wilderness
-- ## price
-	- ## working days
-
-| category | indonesian | foreigner |
+| tour | price | |
 |---|---|---|
-| normal price | $7 | $15 |
-| discount: woman under 42 | $4 | $7 |
-| discount: kids under 10 | free | free |
+| feed animals | 100k IDR | [+ add](/cyber-valley/cyb.land/cart) |
+| plant a tree | 100k IDR | [+ add](/cyber-valley/cyb.land/cart) |
+| food forest tour, group, bahasa | 300k IDR | [+ add](/cyber-valley/cyb.land/cart) |
+| food forest tour, group, english | 500k IDR | [+ add](/cyber-valley/cyb.land/cart) |
+| [[edem]] tour, group, bahasa | 300k IDR | [+ add](/cyber-valley/cyb.land/cart) |
+| [[edem]] tour, group, english | 500k IDR | [+ add](/cyber-valley/cyb.land/cart) |
 
-	- ## weekends
+## extras
 
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $10 | $20 |
-| discount: woman under 42 | $5 | $10 |
-| discount: kids under 10 | free | free |
+- [[parking]] — 130 cars + 200 motorbikes
+- [[cyberlink]] — 4 ha of high-speed wifi
+- [[daypass]] — silent walks for friends of the project
 
-	- ## holidays + moons
-
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $12 | $25 |
-| discount: woman under 42 | $6 | $12 |
-| discount: kids under 10 | free | free |
-
-- ## include access to public infrastructure
-	- {{query (page-property :type "public")}}
-
-## black ticket
-
-- overnight experience
-- 24 hours ticket
-- ## attraction
-	- [[sunrise hiking]]: premium experience
-	- twin peaks: camping and picnics
-	- [[stargazing]]: just the best stargazing on Bali
-	- [[glamping]]: stay overnight in glowing forest [[sinwood]]
-- ## price
-	- ## working days
-
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $20 | $40 |
-| discount: woman under 42 | $10 | $20 |
-| discount: kids under 10 | $5 | $10 |
-
-	- ## weekends
-
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $25 | $50 |
-| discount: woman under 42 | $12 | $25 |
-| discount: kids under 10 | $6 | $12 |
-
-	- ## holidays + moons
-
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $30 | $60 |
-| discount: woman under 42 | $15 | $30 |
-| discount: kids under 10 | $7 | $15 |
+[view cart →](/cyber-valley/cyb.land/cart)

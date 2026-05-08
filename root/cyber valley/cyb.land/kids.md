@@ -1,11 +1,25 @@
 ---
-tags: building type
+tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 type: public
 ---
-revenue:: animator
+free play for kids under 10 with parents.
 
-revenue:: toys
+## what's included
 
-public:: free access with parents
+- supervised play at [[satoshi]] (the kids building)
+- [[mama]] curriculum for early learners — atoms, body, language, math, music
+- toys, bikes, climbing, water play
+- daily snack from [[organiq]]
+
+free with any [[white]] or [[black]] ticket — no separate purchase needed.
+
+## extras
+
+| sku | price | |
+|---|---|---|
+| birthday party hosting, half day | $200 | [+ add](/cyber-valley/cyb.land/cart) |
+| dedicated animator, hourly | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+
+[view cart →](/cyber-valley/cyb.land/cart)

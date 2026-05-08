@@ -1,13 +1,11 @@
 ---
-tags: building type
+tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 type: public
 ---
-TODO signs on the road to [[cyber valley]] and [[citadel genesis]]
+gravel parking zones at the gate. capacity: 130 cars + 200 motorbikes.
 
-TODO publish instructions on how to get here
+free with any [[white]] or [[black]] ticket. on-site repair box for emergencies.
 
-TODO pour gravel
-
-TODO build repair box
+[location](https://maps.app.goo.gl/6rYxA3Btvb8e36qx7)

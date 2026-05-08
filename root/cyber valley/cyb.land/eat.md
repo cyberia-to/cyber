@@ -4,48 +4,52 @@ crystal-type: process
 crystal-domain: cyberia
 alias: diet, dietary, nutrition, food regimen
 ---
-## diet
+locally grown, nutrient-dense whole foods from [[permaculture]] systems. seasonal harvests, soil-to-cup vertical integration.
 
-the habitual pattern of food intake that shapes health, energy, and longevity.
+## organiq — restaurant
 
-in [[cyber valley]]: emphasis on locally grown, nutrient-dense whole foods from [[permaculture]] systems. a well-designed diet draws from seasonal harvests, minimizing supply chain dependency and maximizing freshness.
+free-flow local-only restaurant.
 
-key principles include diversity of [[plant]] sources, adequate protein from legumes and animal products, and fermented foods for gut health. [[medicinal]] plants and [[spice]] crops complement the core diet by providing bioactive compounds that support immune function.
+### day dose · [[gm]] 07:00–10:00 · [[zenith]] 12:00–15:00
 
-tracking dietary patterns across the community generates data for optimizing [[food forest]] composition and harvest schedules.
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| day dose, normal | $6 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| day dose, woman <42 | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
+| day dose, kid <10 | $2 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
 
-## organiq — free flow local products only restaurant
+### evening dose · [[sunset]] 18:00–21:00 · [[dawn]] 03:00–04:00 (TODO)
 
-### day dose
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| evening dose, normal | $12 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| evening dose, woman <42 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| evening dose, kid <10 + animals | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
 
-| dose | serving time |
-|------|--------------|
-| [[gm]] | 7:00 – 10:00 |
-| [[zenith]] | 12:00 – 15:00 |
+tea is included with every dose.
 
-| category | indonesian | foreigner |
-|----------|------------|-----------|
-| normal price | $6 | $10 |
-| discount: woman under 42 | $3 | $5 |
-| discount: kid under 10 | $2 | $3 |
+### drinks
 
-### evening dose
+| drink | price | |
+|---|---|---|
+| tea, from [[edem]] garden | $3 | [+ add](/cyber-valley/cyb.land/cart) |
+| coffee, local plantations | $3 | [+ add](/cyber-valley/cyb.land/cart) |
+| cacao, local plantations | $3 | [+ add](/cyber-valley/cyb.land/cart) |
 
-| dose | serving time |
-|------|--------------|
-| [[sunset]] | 18:00 – 21:00 |
-| TODO [[dawn]] | 03:00 – 04:00 |
+## picnic
 
-| category | indonesian | foreigner |
-|----------|------------|-----------|
-| normal price | $12 | $20 |
-| discount: woman under 42 | $5 | $10 |
-| discount: kids under 10 and animals | $3 | $5 |
+[[picnic]] — packed picnic for the trail. (price on request)
 
-tea included.
+## grazing
 
-### drinks: $3
+[[grazing]] — eat anything you find growing in the gardens. free with any ticket.
 
-- tea — from edem garden
-- coffee — from local plantations
-- cacao — from local plantations
+## snacks
+
+[[snacks]] — rotating menu. current item: [[sweet potato chips]].
+
+## diet philosophy
+
+emphasis on diversity of [[plant]] sources, adequate protein from legumes and animal products, fermented foods for gut health. [[medicinal]] plants and [[spice]] crops complement the core diet by providing bioactive compounds that support immune function. tracking dietary patterns across the community generates data for optimizing [[food forest]] composition and harvest schedules.
+
+[view cart →](/cyber-valley/cyb.land/cart)
