@@ -19,15 +19,12 @@ your visa into the estate. base entrance + music in public venues + toilets + [[
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| daypass, working day, normal | $2 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, working day, woman <42 | $1 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, working day, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, weekend, normal | $3 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, weekend, woman <42 | $2 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, weekend, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, holiday + moon, normal | $5 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, holiday + moon, woman <42 | $3 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, holiday + moon, kid <10 | free | free | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, normal | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, women + kids | $2 | $4 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, normal | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, women + kids | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, normal | $8 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, women + kids | $4 | $8 | [+ add](/cyber-valley/cyb.land/cart) |
 
 friends of project — silent walks free of charge. [request →](/cyber-valley/cyb.land/cart)
 
@@ -37,15 +34,12 @@ everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[st
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| nightpass, working day, normal | $7 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, working day, woman <42 | $4 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, working day, kid <10 | $2 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, weekend, normal | $10 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, weekend, woman <42 | $5 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, weekend, kid <10 | $3 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, holiday + moon, normal | $15 | $35 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, holiday + moon, woman <42 | $7 | $17 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, holiday + moon, kid <10 | $4 | $8 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, working day, normal | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, working day, women + kids | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, weekend, normal | $13 | $25 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, weekend, women + kids | $6 | $12 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, holiday + moon, normal | $18 | $35 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, holiday + moon, women + kids | $9 | $18 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## tours
 

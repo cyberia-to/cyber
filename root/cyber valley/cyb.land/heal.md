@@ -24,7 +24,7 @@ includes hot steam, [[bath broom]], cold plunge, [[herbal tea]]. session capacit
 
 | sku | duration | indonesian | foreigner | |
 |---|---|---|---|---|
-| massage, 60 min | 60 min | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| massage, 60 min | 60 min | $8 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
 | massage, 90 min | 90 min | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## meditation

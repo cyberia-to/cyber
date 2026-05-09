@@ -23,11 +23,12 @@ base entrance only. think of it as the visa — you're in, you can roam:
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| daypass, working day, normal | $2 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, weekend, normal | $3 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, holiday + moon, normal | $5 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
-
-discounts: woman <42 — half price · kid <10 — free.
+| daypass, working day, normal | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, women + kids | $2 | $4 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, normal | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, women + kids | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, normal | $8 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, women + kids | $4 | $8 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## friends of project — silent walks
 
