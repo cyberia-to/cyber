@@ -29,7 +29,7 @@ four peaks reachable from the site:
 ## nature
 
 - [[batuka]] — the magic forest array between the volcanoes
-- [[firefly canyon]] — night spectacle
+- [[firefly canyon]] — accessible 1 km canyon trail
 - [[coffee plantation]] — 7 ha of permaculture food forest to explore
 - [[travers]] — 1 km horizontal accessible trail, unique to bali mountains
 - [[animals]] — sheep, chickens, birds, wildlife
