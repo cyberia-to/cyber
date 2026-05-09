@@ -15,3 +15,4 @@ breakfast spread at [[organiq]] — included with the [[gm]] day-dose, 07:00–1
 - [[nuts]] — almonds, cashews, peanuts, mixed
 - [[fruit plate]] — seasonal, cut on the spot
 - [[dried fruits]] — sun-dried on site
+- [[batat waffle]] — pressed sweet-potato waffles, with yogurt and fruit
