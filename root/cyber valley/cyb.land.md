@@ -27,7 +27,6 @@ modern infrastructure with verified non-toxic local food. clean, natural, protec
 - [[hike]] — 10+ km of trails on 25 ha
 - [[attractions]] — named places to see across the estate
 - [[learn]] — education platform
-- [[kids]] — animator and toys, free with parents
 
 ## community
 

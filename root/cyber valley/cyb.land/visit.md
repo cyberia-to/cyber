@@ -45,6 +45,6 @@ everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[st
 
 - [[parking]] — 130 cars + 200 motorbikes
 - [[cyberlink]] — 4 ha of high-speed wifi
-- [[edu]], [[gym]], [[water]], [[wilderness]], [[recycling]], [[kids]] — all free with any pass
+- [[wilderness]], [[recycling]], [[wc]], [[trails]], [[lighting]], [[sound]] — all free with any pass
 
 [view cart →](/cyber-valley/cyb.land/cart)
