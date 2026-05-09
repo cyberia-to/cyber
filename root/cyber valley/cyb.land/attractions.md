@@ -34,7 +34,7 @@ four peaks reachable from the site:
 - [[travers]] — canyon traverse
 - [[animals]] — sheep, chickens, birds, wildlife
 
-## life
+## tech
 
 - [[robots]] — [[cyber-sheep]] autonomous platform
 
