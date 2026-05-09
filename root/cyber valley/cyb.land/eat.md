@@ -28,10 +28,6 @@ free-flow local-only restaurant.
 
 tea is included with every dose.
 
-## breakfast
-
-[[breakfast]] — self-serve spread, included with any [[gm]] day-dose. links into the items below.
-
 ## avocado
 
 [[avocado]] — abundant, year-round, multiple varieties from on-site trees. served halved, sliced, mashed, blended.
