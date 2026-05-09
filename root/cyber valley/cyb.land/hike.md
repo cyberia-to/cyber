@@ -10,7 +10,7 @@ three fixed routes through 25 ha of protected wilderness. each runs daily.
 ## routes
 
 - [[sacred path]] — 1-hour walk, [[travers]] + [[firefly canyon]]
-- sanghyang black — daily track to the top of [[sanghyang]]
+- [[sanghyang black]] — daily track to the top of [[sanghyang]]
 - [[sunrise hiking]] — wake up early, see the best sunrise on bali
 
 ## guided hikes
