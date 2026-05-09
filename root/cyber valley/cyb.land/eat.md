@@ -48,6 +48,10 @@ tea is included with every dose.
 
 [[vegies]] — fern, batat leaves, chayote leaves, chayote, carrot, cauliflower, broccoli, bell pepper, tomato, cucumber, fennel. each steamed, roasted, or grilled.
 
+## shrooms
+
+[[shrooms]] — oyster and tree ears, grown on site.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)
