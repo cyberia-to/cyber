@@ -6,8 +6,7 @@ crystal-domain: cyberia
 mixed nuts — raw or lightly toasted with sea salt.
 
 - almonds
-- cashews
-- peanuts
 - walnuts
+- macadamia
 
 served on the [[breakfast]] table, with [[porridge]], [[yogurt]], or as a snack.
