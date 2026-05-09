@@ -7,7 +7,7 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 
 ## miracle
 
-- [[sinwood]] — the bioluminescent forest
+- [[sinwood]] — bioluminescent forest
 - [[lolok gunung]] — mighty tree
 - [[andara]] — the place of power
 
