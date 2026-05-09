@@ -49,6 +49,12 @@ vehicles left on the estate after 22:00 on a daypass are upgraded to a [[nightpa
 - [[sound]] — music in public venues
 - [[security]] — guards, first aid, emergency response
 
-## not included
+## paid add-ons
 
-paid sessions and goods — [[banya]], [[massage]], guided [[meditation]], guided [[hike]]s, [[organiq]] meals, [[stay|glamping & tent rent]], [[ride|e-vehicles]] — sold separately. add to cart on each product page.
+sold separately, add to cart on each product page:
+
+- [[banya]], [[massage]] — heal sessions
+- guided [[hikes]] — led tours
+- [[organiq]] meals
+- [[stay|glamping & tent rent]]
+- [[ride|e-vehicles]] rentals

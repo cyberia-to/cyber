@@ -2,6 +2,7 @@
 tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
+alias: hikes, hiking
 ---
 hike high, touch sky.
 

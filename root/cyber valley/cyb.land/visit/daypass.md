@@ -17,7 +17,7 @@ base entrance only. think of it as the visa — you're in, you can roam:
 - [[cyberlink]] wifi
 - 10+ km of [[wilderness]] trails — self-guided
 
-[[attractions]] (sunrise, sunset, sinwood, peaks) are free to see along the way. paid sessions ([[banya]], [[massage]], [[meditation]] guided, guided [[hike]]s, [[organiq]] meals) are separate add-ons.
+[[attractions]] (sunrise, sunset, sinwood, peaks) are free to see along the way. [[meditation]] is open by [[daypass]]. paid add-ons — [[banya]], [[massage]], guided [[hikes]], [[organiq]] meals — are separate.
 
 ## price
 
