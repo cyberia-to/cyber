@@ -14,8 +14,6 @@ stay a little longer, do a little more, feel a lot deeper.
 
 vehicles left after 22:00 on a daypass are upgraded to a [[nightpass]].
 
-friends of project — silent walks free of charge. [request →](/cyber-valley/cyb.land/cart)
-
 ## infrastructure included in your pass
 
 - [[parking]] — 130 cars + 200 motorbikes
