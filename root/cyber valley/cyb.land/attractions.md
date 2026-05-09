@@ -25,6 +25,8 @@ four peaks reachable from the site:
 - [[sunrise hiking]] — best sunrise on bali, from [[sanghyang]] top
 - [[sunset]] — 2-ocean view sunset, accessible from the village
 - [[stargazing]] — best on bali
+- [[new moon]] — darkest sky, peak [[stargazing]] and [[sinwood]] glow
+- [[full moon]] — lit landscape, night hikes without a torch
 
 ## nature
 
