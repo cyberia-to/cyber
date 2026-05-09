@@ -15,9 +15,9 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 
 four peaks reachable from the site:
 
+- [[sanghyang]] — medium, 5 hour track
 - [[pucuk]] — light, 1 hour track
-- [[lesung]] — accessible, 2 hour track
-- [[sanghyang]] — medium, 4–6 hour track
+- [[lesung]] — accessible, 3 hour track
 - [[batukaru]] — heavy, 12 hour track
 
 ## sky
