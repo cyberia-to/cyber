@@ -56,6 +56,10 @@ tea is included with every dose.
 
 [[salads]] — cress, romaine, iceberg, arugula, hibiscus, talinum, mulberry, fennel, onion, garlic, chives, nasturtium, plantago, gotu kola.
 
+## carbs
+
+[[carbs]] — potato, batat, taro, cassava pasta. each boiled, roasted, grilled, or mashed.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)
