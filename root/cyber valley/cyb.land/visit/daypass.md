@@ -23,7 +23,7 @@ base entrance only. think of it as the visa — you're in, you can roam:
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| daypass, working day, normal | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, >16 men | $4 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
 | daypass, working day, women + kids | $2 | $4 | [+ add](/cyber-valley/cyb.land/cart) |
 | daypass, weekend, normal | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
 | daypass, weekend, women + kids | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
