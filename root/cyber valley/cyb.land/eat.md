@@ -28,13 +28,9 @@ free-flow local-only restaurant.
 
 tea is included with every dose.
 
-### drinks
+## drinks
 
-| drink | price | |
-|---|---|---|
-| tea, from [[edem]] garden | $3 | [+ add](/cyber-valley/cyb.land/cart) |
-| coffee, local plantations | $3 | [+ add](/cyber-valley/cyb.land/cart) |
-| cacao, local plantations | $3 | [+ add](/cyber-valley/cyb.land/cart) |
+[[drinks]] — coffee, cacao, tea, herbs, smoothy, fermentee. all $3, refill included with any dose.
 
 ## picnic
 
