@@ -10,7 +10,6 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 - [[sinwood]] — the bioluminescent forest
 - [[sanghyang dick]] — sacred tree
 - [[andara]] — sacred camp site
-- [[batuka]] — the magic forest array between the volcanoes
 
 ## volcanoes
 
@@ -27,15 +26,16 @@ four peaks reachable from the site:
 - [[sunset]] — 2-ocean view
 - [[stargazing]] — best on bali
 
-## forest
+## nature
 
+- [[batuka]] — the magic forest array between the volcanoes
 - [[firefly canyon]] — night spectacle
 - [[coffee plantation]] — magic forest
 - [[travers]] — canyon traverse
+- [[animals]] — sheep, chickens, dogs, parrots
 
 ## life
 
-- [[animals]] — sheep, chickens, dogs, parrots
 - [[robots]] — [[cyber-sheep]] autonomous platform
 
 book a [[daypass]] or [[nightpass]] for full access. for camping, see [[stay]].
