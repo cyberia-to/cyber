@@ -26,7 +26,7 @@ four peaks reachable from the site:
 - [[sunset]] — 2-ocean view sunset, accessible from the village
 - [[stargazing]] — best on bali
 - [[new moon]] — darkest sky, peak [[stargazing]] and [[sinwood]] glow
-- [[full moon]] — lit landscape, night hikes without a torch
+- [[full moon]] — lit landscape, night [[sunrise hiking]] without a torch
 
 ## nature
 
