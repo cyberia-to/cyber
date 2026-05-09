@@ -7,16 +7,16 @@ fresh salad greens, herbs, and edible flowers — picked the same morning, serve
 
 ## leaves and lettuce
 
-- [[cress]] — крес, peppery mustard greens
-- [[romaine]] — роман, crisp upright leaves
-- [[iceberg]] — айсберг, crunchy, mild
-- [[arugula]] — руккола, peppery rocket
-- [[hibiscus]] — гибискус, tart edible leaves
-- [[talinum]] — талинум, succulent spinach-like
-- [[mulberry leaves]] — морус, mild and tender
+- [[cress]] — peppery mustard greens
+- [[romaine]] — crisp upright leaves
+- [[iceberg]] — crunchy, mild
+- [[arugula]] — peppery rocket
+- [[hibiscus]] — tart edible leaves
+- [[talinum]] — succulent spinach-like
+- [[mulberry leaves]] — mild and tender
 - [[nasturtium]] — peppery edible flowers and leaves
 - [[plantago]] — plantain herb, mineral-rich
-- [[gotu kola]] — gotu cola, traditional bali green
+- [[gotu kola]] — traditional bali green
 
 ## alliums and aromatics
 
