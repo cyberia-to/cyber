@@ -28,9 +28,9 @@ a place for digital nomads who want to work in the most beautiful forest on the 
 
 extended-stay passes for nomads live in [[visit/visas|visas]]:
 
-- [[week]] — 7 days, ~45% off daily
-- [[month]] — 30 days, ~60% off daily
-- [[year]] — 365 days, ~75% off daily
+- week — 7 days, ~45% off daily
+- month — 30 days, ~60% off daily
+- year — 365 days, ~75% off daily
 
 monthly passes start mid-month or month-start, your choice. see [[visit/visas|visas]] for the full price grid (indonesian / foreigner × men / women + kids).
 
