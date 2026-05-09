@@ -3,7 +3,7 @@ tags: cybernomics, cyb.land
 crystal-type: entity
 crystal-domain: economics
 ---
-permanent event platform. private camps for rent. yearly [[burn.city]] festival.
+permanent event platform. private camps for rent.
 
 ## private camp rent
 
@@ -16,16 +16,6 @@ per night, single camp. seven camps available — all currently bookable.
 | camp, holiday or moon | $50 | [+ add](/cyber-valley/cyb.land/cart) |
 
 available camps: {{query (and (page-tags [[camp]]) (not (page-property :type "public")))}}
-
-## burn.city
-
-eight-day yearly festival, starting a week before nyepi, ending one day after.
-
-| sku | indonesian | foreigner | |
-|---|---|---|---|
-| burn.city pass, >16 men | $500 | $1000 | [+ add](/cyber-valley/cyb.land/cart) |
-| burn.city pass, woman <42 | $250 | $500 | [+ add](/cyber-valley/cyb.land/cart) |
-| burn.city pass, kid <10 + animals | $120 | $250 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## custom programming
 
