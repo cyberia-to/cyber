@@ -62,7 +62,11 @@ tea is included with every dose.
 
 ## fruits
 
-[[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut.
+[[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut, avocado, markiza.
+
+## berries
+
+[[berries]] — strawberry, rubus, mulberry.
 
 ## desserts
 
