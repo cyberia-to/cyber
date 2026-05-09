@@ -44,6 +44,10 @@ tea is included with every dose.
 
 [[meat]] — goat and chicken, each boiled, grilled, or roasted. evening dose.
 
+## vegies
+
+[[vegies]] — fern, batat leaves, chayote leaves, chayote, carrot, cauliflower, broccoli, bell pepper, tomato, cucumber, fennel. each steamed, roasted, or grilled.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)
