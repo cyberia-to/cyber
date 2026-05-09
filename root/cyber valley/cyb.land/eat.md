@@ -28,6 +28,10 @@ free-flow local-only restaurant.
 
 tea is included with every dose.
 
+## breakfast
+
+[[breakfast]] — avocado, eggs, salad bar, cheese, ham cuts, porridge, yogurt, nuts, fruit plate, dried fruits. self-serve, included with any [[gm]] day-dose.
+
 ## drinks
 
 [[drinks]] — coffee, cacao, tea, herbs, smoothy, fermentee, coconut, shots. all $3, refill included with any dose.
