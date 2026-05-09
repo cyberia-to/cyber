@@ -34,7 +34,7 @@ tea is included with every dose.
 
 ## soups
 
-[[soups]] — pumpkin, chicken broth, beef broth, okroshka. made daily.
+[[soups]] — pumpkin, chicken broth, goat broth, okroshka. made daily.
 
 ## picnic
 

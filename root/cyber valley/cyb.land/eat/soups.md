@@ -9,5 +9,5 @@ hot soups, made daily from on-site harvests and local farms. served at [[organiq
 
 - [[pumpkin soup]] — coconut, ginger, kabocha
 - [[chicken broth]] — slow-cooked free-range
-- [[beef broth]] — bone broth, slow-simmered
+- [[goat broth]] — bone broth, slow-simmered
 - [[okroshka]] — cold summer soup, kefir base
