@@ -46,7 +46,7 @@ tea is included with every dose.
 
 ## yogurt
 
-[[yogurt]] — house-cultured, plain full-fat, live cultures.
+[[yogurt]] — house-cultured from coconut milk, lactose-free, live cultures.
 
 ## nuts
 
