@@ -8,7 +8,7 @@ named places to see across 37 ha. all included with any [[daypass]] or [[nightpa
 ## miracle
 
 - [[sinwood]] — the bioluminescent forest
-- [[sanghyang dick]] — sacred tree
+- [[lolok gunung]] — sacred tree
 - [[andara]] — sacred camp site
 
 ## volcanoes
