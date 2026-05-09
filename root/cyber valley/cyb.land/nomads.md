@@ -5,24 +5,35 @@ crystal-domain: cyberia
 ---
 # from urban survival to forest arrival
 
-a product for digital nomads who want to live in the most beautiful forest on the planet.
+extended-stay infrastructure passes for digital nomads. same scope as the [[daypass]] — entrance, music, toilets, [[cyberlink]] wifi, 10+ km of [[trails]] — just longer.
 
-## what's included
+no living quarters or food included. for sleep, see [[stay]]. for meals, see [[eat]].
 
-- private camp + [[cyberlink]] high-speed internet
-- two meals a day at [[organiq]]
-- weekly [[banya]] session
-- access to [[hike]], [[attractions]], [[learn]] programs
-- monthly community dinners
-- co-working at [[etherland]]
+## week
 
-## monthly programs
+7 days of unlimited entry. ~45% discount vs daily.
 
-| sku | duration | price | |
+| sku | indonesian | foreigner | |
 |---|---|---|---|
-| nomad month, basic | 30 days | $1,500 | [+ add](/cyber-valley/cyb.land/cart) |
-| nomad month, premium camp | 30 days | $2,500 | [+ add](/cyber-valley/cyb.land/cart) |
-| nomad season | 90 days | $4,000 | [+ add](/cyber-valley/cyb.land/cart) |
-| nomad year | 365 days | $12,000 | [+ add](/cyber-valley/cyb.land/cart) |
+| week, >16 men | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
+| week, women + kids | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+
+## month
+
+30 days of unlimited entry. ~60% discount vs daily.
+
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| month, >16 men | $60 | $120 | [+ add](/cyber-valley/cyb.land/cart) |
+| month, women + kids | $30 | $60 | [+ add](/cyber-valley/cyb.land/cart) |
+
+## year
+
+365 days of unlimited entry. ~75% discount vs daily.
+
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| year, >16 men | $350 | $700 | [+ add](/cyber-valley/cyb.land/cart) |
+| year, women + kids | $175 | $350 | [+ add](/cyber-valley/cyb.land/cart) |
 
 [view cart →](/cyber-valley/cyb.land/cart)
