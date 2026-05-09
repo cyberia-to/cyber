@@ -15,8 +15,8 @@ includes hot steam, [[bath broom]], cold plunge, [[herbal tea]]. session capacit
 
 | sku | session | indonesian | foreigner | |
 |---|---|---|---|---|
-| banya, morning | 08:00 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| banya, afternoon | 16:00 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| banya, morning | 08:00 | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| banya, afternoon | 16:00 | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## massage
 
