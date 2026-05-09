@@ -4,17 +4,40 @@ alias: residency, visit us, pricing
 crystal-type: process
 crystal-domain: cyberia
 ---
+# visit cyber valley
+
 stay a little longer, do a little more, feel a lot deeper.
 
-## passes
+## where
 
-- [[daypass]] — daytime, 07:00–22:00. trails, sunsets, picnics.
-- [[nightpass]] — overnight, 24h. premium sunrise, stargazing, glamping option.
-- [[visas]] — extended passes for week, month, year stays.
+- 37 hectares on the slope of [[sanghyang]] volcano, north bali
+- village: [[gesing]], buleleng regency
+- [location on maps](https://maps.app.goo.gl/6rYxA3Btvb8e36qx7)
+- nearest airport: north bali (planned) · denpasar (3 h drive) · lovina port (45 min)
 
-vehicles left after 22:00 on a daypass are upgraded to a [[nightpass]].
+## book your visit
 
-## infrastructure included in your pass
+### 1. pick dates
+
+| | |
+|---|---|
+| arrival | _select date_ |
+| departure | _select date_ |
+| guests | _adults · women + kids_ |
+
+### 2. pick a pass
+
+- [[daypass]] — daytime only, 07:00–22:00. one calendar day.
+- [[nightpass]] — one overnight. 24h rolling from check-in. for 2 nights book 2.
+- [[visas]] — week / month / year passes for extended stays.
+
+vehicles left on the estate after 22:00 on a daypass are upgraded to a [[nightpass]].
+
+### 3. review and pay
+
+[view cart →](/cyber-valley/cyb.land/cart)
+
+## infrastructure included in any pass
 
 - [[parking]] — 130 cars + 200 motorbikes
 - [[cyberlink]] — 4 ha of high-speed wifi
@@ -26,4 +49,6 @@ vehicles left after 22:00 on a daypass are upgraded to a [[nightpass]].
 - [[sound]] — music in public venues
 - [[security]] — guards, first aid, emergency response
 
-[view cart →](/cyber-valley/cyb.land/cart)
+## not included
+
+paid sessions and goods — [[banya]], [[massage]], guided [[meditation]], guided [[hike]]s, [[organiq]] meals, [[stay|glamping & tent rent]], [[ride|e-vehicles]] — sold separately. add to cart on each product page.

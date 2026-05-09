@@ -5,7 +5,19 @@ alias: night pass, black, black ticket
 crystal-type: entity
 crystal-domain: cyberia
 ---
-nightpass — overnight visit to cyber valley. 24 hours.
+nightpass — one overnight at cyber valley. 24 hours rolling from check-in.
+
+## validity
+
+valid for **24 hours** from your scanned-in check-in time. one nightpass = one overnight.
+
+examples:
+
+- check in 18:00 mon → exit by 18:00 tue
+- check in 09:00 mon → exit by 09:00 tue
+- check in 22:00 mon → exit by 22:00 tue
+
+want mon → wed? book **2 nightpasses**. want a week+? see [[visas]].
 
 ## includes
 
