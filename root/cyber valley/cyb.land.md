@@ -25,6 +25,7 @@ modern infrastructure with verified non-toxic local food. clean, natural, protec
 
 ## explore
 
+- [[camps]] — private camps spread across the estate
 - [[events]] — private camps [→](/cyber-valley/cyb.land/events)
 - [[attractions]] — named places to see across the estate
 
