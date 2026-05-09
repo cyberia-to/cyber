@@ -9,7 +9,7 @@ get around 37 ha without breaking a sweat. small electric vehicles for the estat
 
 | sku | per hour | per day | |
 |---|---|---|---|
-| e-bike | $5 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| e-bike | $6 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
 | e-scooter | $2 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
 
 prices indicative — confirm current fleet at the gate.
