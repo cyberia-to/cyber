@@ -32,7 +32,7 @@ four peaks reachable from the site:
 - [[firefly canyon]] — night spectacle
 - [[coffee plantation]] — magic forest
 - [[travers]] — canyon traverse
-- [[animals]] — sheep, chickens, dogs, parrots
+- [[animals]] — sheep, chickens, birds, wildlife
 
 ## life
 
