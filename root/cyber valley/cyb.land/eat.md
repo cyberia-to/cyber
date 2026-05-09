@@ -14,7 +14,7 @@ free-flow local-only restaurant.
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| day dose, normal | $6 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| day dose, >16 men | $6 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
 | day dose, woman <42 | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
 | day dose, kid <10 | $2 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
 
@@ -22,7 +22,7 @@ free-flow local-only restaurant.
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| evening dose, normal | $12 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| evening dose, >16 men | $12 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
 | evening dose, woman <42 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
 | evening dose, kid <10 + animals | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
 

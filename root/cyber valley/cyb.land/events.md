@@ -26,7 +26,7 @@ eight-day yearly festival, starting a week before nyepi, ending one day after.
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| burn.city pass, normal | $500 | $1000 | [+ add](/cyber-valley/cyb.land/cart) |
+| burn.city pass, >16 men | $500 | $1000 | [+ add](/cyber-valley/cyb.land/cart) |
 | burn.city pass, woman <42 | $250 | $500 | [+ add](/cyber-valley/cyb.land/cart) |
 | burn.city pass, kid <10 + animals | $120 | $250 | [+ add](/cyber-valley/cyb.land/cart) |
 
