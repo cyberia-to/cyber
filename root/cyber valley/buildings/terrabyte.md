@@ -1,5 +1,5 @@
 ---
-tags: building, camp
+tags: building
 crystal-type: entity
 crystal-domain: cyberia
 ---
