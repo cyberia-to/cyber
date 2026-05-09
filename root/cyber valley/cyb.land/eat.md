@@ -60,6 +60,10 @@ tea is included with every dose.
 
 [[carbs]] — potato, batat, taro, cassava pasta. each boiled, roasted, grilled, or mashed.
 
+## bread
+
+[[bread]] — banana flour loaf, cassava lepeshki. gluten-free, baked on site.
+
 ## fruits
 
 [[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut, avocado, markiza.
