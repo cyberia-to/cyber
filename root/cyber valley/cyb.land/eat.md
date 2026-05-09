@@ -30,7 +30,31 @@ tea is included with every dose.
 
 ## breakfast
 
-[[breakfast]] — avocado, eggs, salad bar, cheese, ham cuts, porridge, yogurt, nuts, fruit plate, dried fruits. self-serve, included with any [[gm]] day-dose.
+[[breakfast]] — self-serve spread, included with any [[gm]] day-dose. links into the items below.
+
+## avocado
+
+[[avocado]] — abundant, year-round, multiple varieties from on-site trees. served halved, sliced, mashed, blended.
+
+## eggs
+
+[[eggs]] — free-range, daily collected. boiled, poached, scrambled, omelette.
+
+## cheese
+
+[[cheese]] — local soft (ricotta, paneer, mozzarella) and aged (cheddar, blue, halloumi).
+
+## yogurt
+
+[[yogurt]] — house-cultured, plain full-fat, live cultures.
+
+## nuts
+
+[[nuts]] — almonds, cashews, peanuts, walnuts. raw or lightly toasted.
+
+## porridge
+
+[[porridge]] — black rice, sorghum, amaranth. rotating daily.
 
 ## drinks
 

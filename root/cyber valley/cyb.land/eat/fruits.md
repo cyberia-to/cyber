@@ -13,7 +13,6 @@ fresh fruit from on-site trees and trusted local farms.
 - [[mango]] — alphonso, harum manis, gedong
 - [[orange]] — bali oranges, juice variety
 - [[coconut]] — young, opened on the spot
-- [[avocado]] — fresh from on-site trees
 - [[markiza]] — passion fruit, fragrant and tart
 
 served whole, on the [[fruit plate]], in [[smoothy]], or as [[sorbets]].

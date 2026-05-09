@@ -10,6 +10,10 @@ pasture-raised meat from the on-site farm and trusted neighbors. served at [[org
 - [[goat]] — local pasture, milk-fed
 - [[chicken]] — free-range, on-site
 
+## cured
+
+- [[ham cuts]] — house-cured pork, dry-aged 6+ months
+
 ## preparations
 
 each meat is offered three ways:
