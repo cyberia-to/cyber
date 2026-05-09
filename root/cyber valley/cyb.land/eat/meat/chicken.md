@@ -2,6 +2,7 @@
 tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
+alias: chickens
 ---
 free-range chicken from on-site flock — same flock that supplies daily [[eggs]].
 

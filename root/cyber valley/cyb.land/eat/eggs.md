@@ -3,7 +3,7 @@ tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 ---
-eggs from on-site free-range [[chicken]]s — collected daily.
+eggs from on-site free-range [[chickens]] — collected daily.
 
 prepared:
 
