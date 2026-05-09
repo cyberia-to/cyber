@@ -40,6 +40,10 @@ tea is included with every dose.
 
 [[soups]] — pumpkin, chicken broth, goat broth, okroshka. made daily.
 
+## meat
+
+[[meat]] — goat and chicken, each boiled, grilled, or roasted. evening dose.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)
