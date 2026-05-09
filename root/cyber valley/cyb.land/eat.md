@@ -30,7 +30,11 @@ tea is included with every dose.
 
 ## drinks
 
-[[drinks]] — coffee, cacao, tea, herbs, smoothy, fermentee. all $3, refill included with any dose.
+[[drinks]] — coffee, cacao, tea, herbs, smoothy, fermentee, coconut, shots. all $3, refill included with any dose.
+
+## soups
+
+[[soups]] — pumpkin, chicken broth, beef broth, okroshka. made daily.
 
 ## picnic
 
