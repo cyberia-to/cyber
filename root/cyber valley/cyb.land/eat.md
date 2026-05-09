@@ -60,6 +60,14 @@ tea is included with every dose.
 
 [[carbs]] — potato, batat, taro, cassava pasta. each boiled, roasted, grilled, or mashed.
 
+## fruits
+
+[[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut.
+
+## desserts
+
+[[desserts]] — cookies, sorbets, waffles, chocolate.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)

@@ -17,6 +17,7 @@ fresh salad greens, herbs, and edible flowers — picked the same morning, serve
 - [[nasturtium]] — peppery edible flowers and leaves
 - [[plantago]] — plantain herb, mineral-rich
 - [[gotu kola]] — traditional bali green
+- [[green papaya]] — shredded raw, crisp and tangy
 
 ## alliums and aromatics
 
