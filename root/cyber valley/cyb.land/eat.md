@@ -72,6 +72,14 @@ tea is included with every dose.
 
 [[desserts]] — cookies, sorbets, waffles, chocolate.
 
+## sweet
+
+[[sweet]] — honey, cane sugar, coconut sugar, palm sugar.
+
+## spices
+
+[[spices]] — oregano, ginger, mint, thyme, basil, rosemary, turmeric, lemongrass, chili, black pepper, cinnamon, cardamom, coriander, cumin.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)
