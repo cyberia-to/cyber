@@ -36,7 +36,7 @@ four peaks reachable from the site:
 
 ## tech
 
-- [[robots]] — [[cyber-sheep]] autonomous platform
+- [[robots]] — play with walking and flying drones
 
 book a [[daypass]] or [[nightpass]] for full access. for camping, see [[stay]].
 
