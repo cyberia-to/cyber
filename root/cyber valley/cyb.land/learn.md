@@ -14,9 +14,6 @@ learn how to live autonomously — clean energy, clean water, clean food, sovere
 
 ## programs
 
-| sku | duration | price | |
-|---|---|---|---|
-| autonomy tour, group, bahasa | half day | 300k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| autonomy tour, group, english | half day | 500k IDR | [+ add](/cyber-valley/cyb.land/cart) |
+- [[autonomy tour]] — monthly tour from founders, half day, bahasa or english
 
 [view cart →](/cyber-valley/cyb.land/cart)
