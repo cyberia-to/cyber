@@ -52,6 +52,10 @@ tea is included with every dose.
 
 [[shrooms]] — oyster and tree ears, grown on site.
 
+## salads
+
+[[salads]] — cress, romaine, iceberg, arugula, hibiscus, talinum, mulberry, fennel, onion, garlic, chives, nasturtium, plantago, gotu kola.
+
 ## picnic
 
 [[picnic]] — packed picnic for the trail. (price on request)
