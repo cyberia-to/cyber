@@ -1,32 +1,20 @@
 ---
-tags: building, block, product
+tags: cyb.land, building
 crystal-type: entity
 crystal-domain: cyberia
 size: "16"
 shape: 4*4
 ---
-Currently there are only 4 real banya on the hole Bali island.
+only 4 real banyas exist on the whole bali island. ours is one of them — set in the cloud forest.
 
-Real banya require several things
+a real banya requires:
 
-- during session
-	- [[hot steam]]
-	- [[bath broom]]
-- after session
-	- [[cold plunge]]
-	- [[herbal tea]]
-	- [[massage]]
+- during session — [[hot steam]], [[bath broom]]
+- after session — [[cold plunge]], [[herbal tea]], [[massage]]
 
-Our offer is unique - banya in the cloud forest!
+session capacity ~4–6 people. two sessions per day, schedule and pricing on [[heal]].
 
-Currently banya is available only as the part of [[daypass]]
-
-Schedule of sessions
-
-- [[08:00]]
-- [[16:00]]
-
-Management
+management
 
 - [board](https://github.com/orgs/cyberia-to/projects/40)
 - [chat](https://t.me/c/2245058785/9569)
