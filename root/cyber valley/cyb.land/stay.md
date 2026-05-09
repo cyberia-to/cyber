@@ -43,4 +43,8 @@ named camp sites:
 
 [[nomads]] — monthly programs for digital nomads (custom rate).
 
+## around
+
+[[around]] — good guesthouses and villas nearby, for groups beyond our capacity or different-style stays.
+
 [view cart →](/cyber-valley/cyb.land/cart)
