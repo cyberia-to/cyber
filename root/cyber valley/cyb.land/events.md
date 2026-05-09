@@ -11,12 +11,9 @@ per night, single camp. seven camps available — all currently bookable.
 
 | sku | rate per night | |
 |---|---|---|
-| camp, working day | $30 | [+ add](/cyber-valley/cyb.land/cart) |
-| camp, peak day | $50 | [+ add](/cyber-valley/cyb.land/cart) |
-| camp, full moon | $70 | [+ add](/cyber-valley/cyb.land/cart) |
-| camp, holiday moon | $100 | [+ add](/cyber-valley/cyb.land/cart) |
-| camp, new moon | $200 | [+ add](/cyber-valley/cyb.land/cart) |
-| camp, burn.city | $300 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, working day | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, weekend | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| camp, holiday or moon | $50 | [+ add](/cyber-valley/cyb.land/cart) |
 
 available camps: {{query (and (page-tags [[camp]]) (not (page-property :type "public")))}}
 
