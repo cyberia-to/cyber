@@ -6,5 +6,9 @@ alias: cheeses
 ---
 local cheeses made from [[goat]] and cow milk on site and from trusted neighbours.
 
-- soft — fresh ricotta, paneer, mozzarella
-- aged — cheddar, blue, halloumi
+- ricotta
+- mozzarella
+- parmesan
+- cheddar
+- gouda
+- halloumi

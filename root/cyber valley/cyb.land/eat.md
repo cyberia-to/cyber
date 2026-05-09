@@ -42,7 +42,7 @@ tea is included with every dose.
 
 ## cheese
 
-[[cheese]] — local soft (ricotta, paneer, mozzarella) and aged (cheddar, blue, halloumi).
+[[cheese]] — ricotta, mozzarella, parmesan, cheddar, gouda, halloumi.
 
 ## yogurt
 
