@@ -18,8 +18,5 @@ learn how to live autonomously — clean energy, clean water, clean food, sovere
 |---|---|---|---|
 | autonomy tour, group, bahasa | half day | 300k IDR | [+ add](/cyber-valley/cyb.land/cart) |
 | autonomy tour, group, english | half day | 500k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| permaculture course | 3 days | $250 | [+ add](/cyber-valley/cyb.land/cart) |
-| survival course | 3 days | $250 | [+ add](/cyber-valley/cyb.land/cart) |
-| coding-in-the-canopy retreat | 5 days | $500 | [+ add](/cyber-valley/cyb.land/cart) |
 
 [view cart →](/cyber-valley/cyb.land/cart)
