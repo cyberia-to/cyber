@@ -8,5 +8,6 @@ mixed nuts — raw or lightly toasted with sea salt.
 - almonds
 - walnuts
 - macadamia
+- hazelnuts
 
 served on the [[breakfast]] table, with [[porridge]], [[yogurt]], or as a snack.
