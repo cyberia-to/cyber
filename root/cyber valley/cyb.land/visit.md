@@ -45,6 +45,11 @@ everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[st
 
 - [[parking]] — 130 cars + 200 motorbikes
 - [[cyberlink]] — 4 ha of high-speed wifi
-- [[wilderness]], [[recycling]], [[wc]], [[trails]], [[lighting]], [[sound]]
+- [[wilderness]] — 25 ha of protected forest
+- [[trails]] — 10+ km of self-guided routes
+- [[wc]] — public toilets across the estate
+- [[recycling]] — 7-bin product circulation
+- [[lighting]] — pathway lights at night
+- [[sound]] — music in public venues
 
 [view cart →](/cyber-valley/cyb.land/cart)
