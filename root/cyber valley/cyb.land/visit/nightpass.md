@@ -20,9 +20,9 @@ everything in [[daypass]] plus:
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| nightpass, working day, normal | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, weekend, normal | $25 | $50 | [+ add](/cyber-valley/cyb.land/cart) |
-| nightpass, holiday + moon, normal | $30 | $60 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, working day, normal | $15 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, weekend, normal | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
+| nightpass, holiday + moon, normal | $25 | $50 | [+ add](/cyber-valley/cyb.land/cart) |
 
 discounts: woman <42 — half price · kid <10 — quarter price.
 
