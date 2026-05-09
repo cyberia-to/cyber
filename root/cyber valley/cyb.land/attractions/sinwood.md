@@ -1,31 +1,21 @@
 ---
-tags: district, cyb.land
+tags: cyb.land, district
 crystal-type: entity
 crystal-domain: cyberia
 type: attraction
 alias: senwood, miracle, glowing forest
-ops: "false"
-dev: "false"
 ---
-district in [[rockets estate]] — the bioluminescent glowing forest.
+district in [[rockets estate]] — the bioluminescent glowing forest. free to walk through with any [[daypass]] or [[nightpass]].
 
-## price
+## new moon 3-day package
 
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $15 | $30 |
-| discount: woman under 42 | $7 | $15 |
-| discount: kids under 10 | free | free |
+new moon, day before, day after — the glow peaks at the dark of the moon.
 
-## glowing forest 3-day package
-
-3 days package: new moon, day before and after.
-
-| category | indonesian | foreigner |
-|---|---|---|
-| normal price | $250 | $400 |
-| discount: women under 42 | $100 | $200 |
-| discount: kids under 10 and animals | $50 | $100 |
+| sku | indonesian | foreigner | |
+|---|---|---|---|
+| sinwood new moon, >16 men | $250 | $400 | [+ add](/cyber-valley/cyb.land/cart) |
+| sinwood new moon, woman <42 | $100 | $200 | [+ add](/cyber-valley/cyb.land/cart) |
+| sinwood new moon, kid <10 + animals | $50 | $100 | [+ add](/cyber-valley/cyb.land/cart) |
 
 
 existing
