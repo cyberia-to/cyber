@@ -13,3 +13,4 @@ all drinks served at [[organiq]] — $3 each, refills included with any [[daypas
 - [[herbs]] — fresh from on-site beds
 - [[smoothy]] — seasonal fruit blends
 - [[fermentee]] — kombucha, jun, water kefir
+- [[coconut]] — fresh, opened on the spot
