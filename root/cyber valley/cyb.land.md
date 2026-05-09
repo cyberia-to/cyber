@@ -20,7 +20,7 @@ modern infrastructure with verified non-toxic local food. clean, natural, protec
 - [[eat]] — meal doses, picnics, snacks [→](/cyber-valley/cyb.land/eat)
 - [[heal]] — banya sessions [→](/cyber-valley/cyb.land/heal)
 - [[ride]] — rent small electric vehicles [→](/cyber-valley/cyb.land/ride)
-- [[hike]] — hub of mountain tourism, 10+ km of trails on 25 ha [→](/cyber-valley/cyb.land/hike)
+- [[hike]] — hub of mountain tourism [→](/cyber-valley/cyb.land/hike)
 - [[learn]] — education platform [→](/cyber-valley/cyb.land/learn)
 
 ## explore
