@@ -3,7 +3,7 @@ tags: cybernomics, cyb.land
 crystal-type: entity
 crystal-domain: economics
 ---
-permanent event platform. seven private camps. yearly [[burn.city]] festival.
+permanent event platform. private camps for rent. yearly [[burn.city]] festival.
 
 ## private camp rent
 
