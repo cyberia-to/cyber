@@ -41,19 +41,6 @@ everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[st
 | nightpass, holiday + moon, >16 men | $18 | $35 | [+ add](/cyber-valley/cyb.land/cart) |
 | nightpass, holiday + moon, women + kids | $9 | $18 | [+ add](/cyber-valley/cyb.land/cart) |
 
-## tours
-
-short guided experiences, by appointment:
-
-| tour | price | |
-|---|---|---|
-| feed animals | 100k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| plant a tree | 100k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| food forest tour, group, bahasa | 300k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| food forest tour, group, english | 500k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| [[edem]] tour, group, bahasa | 300k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-| [[edem]] tour, group, english | 500k IDR | [+ add](/cyber-valley/cyb.land/cart) |
-
 ## extras
 
 - [[parking]] — 130 cars + 200 motorbikes
