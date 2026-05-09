@@ -5,17 +5,19 @@ alias: day pass, white, white ticket
 crystal-type: entity
 crystal-domain: cyberia
 ---
-daypass — daytime visit to cyber valley. 07:00–22:00.
+daypass — your visa into cyber valley. 07:00–22:00.
 
-## includes
+## what's included
 
-- [[sanghyang]] day trek
-- [[easy sunset]] viewpoint
-- [[sacred path]] canyon and traverse
-- [[magic forest]] permaculture coffee plantation
-- twin peaks for picnics
-- [[wilderness]] trails (10+ km on 25 ha)
-- access to all public infrastructure: {{query (page-property :type "public")}}
+base entrance only. think of it as the visa — you're in, you can roam:
+
+- entrance to the estate
+- music in public venues
+- toilets and water stations
+- [[cyberlink]] wifi
+- 10+ km of [[wilderness]] trails — self-guided
+
+[[attractions]] (sunrise, sunset, sinwood, peaks) are free to see along the way. paid sessions ([[banya]], [[massage]], [[meditation]] guided, guided [[hike]]s, [[organiq]] meals) are separate add-ons.
 
 ## price
 
