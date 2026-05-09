@@ -21,6 +21,9 @@ fresh vegetables and greens, picked the same morning. each can be ordered steame
 - [[tomato]] — heirloom varieties
 - [[cucumber]] — japanese and lebanese
 - [[fennel]] — bulb and fronds
+- [[zucchini]] — green and yellow
+- [[eggplant]] — purple, white, striped
+- [[pumpkin]] — kabocha, butternut
 
 ## preparations
 

@@ -46,7 +46,7 @@ tea is included with every dose.
 
 ## vegies
 
-[[vegies]] — fern, batat leaves, chayote leaves, chayote, carrot, cauliflower, broccoli, bell pepper, tomato, cucumber, fennel. each steamed, roasted, or grilled.
+[[vegies]] — fern, batat leaves, chayote leaves, chayote, carrot, cauliflower, broccoli, bell pepper, tomato, cucumber, fennel, zucchini, eggplant, pumpkin. each steamed, roasted, or grilled.
 
 ## shrooms
 
