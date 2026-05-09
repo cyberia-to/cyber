@@ -31,6 +31,7 @@ modern infrastructure with verified non-toxic local food. clean, natural, protec
 
 ## community
 
+- [[talents]] — residents and the crafts they offer
 - [[nomads]] — monthly programs for digital nomads
 - [[invest]] — equity partnership in pt pma cyber valley estate
 
