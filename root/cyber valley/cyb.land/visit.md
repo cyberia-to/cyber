@@ -6,10 +6,11 @@ crystal-domain: cyberia
 ---
 stay a little longer, do a little more, feel a lot deeper.
 
-two ticket tiers. pick a day length. add to cart.
+pick a pass:
 
 - [[daypass]] — daytime, 07:00–22:00. trails, sunsets, picnics.
 - [[nightpass]] — overnight, 24h. premium sunrise, stargazing, glamping option.
+- [[visas]] — extended passes for week, month, year stays.
 
 vehicles left after 22:00 on a daypass are upgraded to nightpass.
 

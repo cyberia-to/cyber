@@ -5,35 +5,38 @@ crystal-domain: cyberia
 ---
 # from urban survival to forest arrival
 
-extended-stay infrastructure passes for digital nomads. same scope as the [[daypass]] — entrance, music, toilets, [[cyberlink]] wifi, 10+ km of [[trails]] — just longer.
+a place for digital nomads who want to work in the most beautiful forest on the planet — fast wifi, calm trails, clean food, real community.
 
-no living quarters or food included. for sleep, see [[stay]]. for meals, see [[eat]].
+## who comes here
 
-## week
+- founders and engineers between cycles
+- writers, designers, and researchers needing quiet
+- families homeschooling on the road
+- people running an online business who want their evenings back
 
-7 days of unlimited entry. ~45% discount vs daily.
+## what you find
 
-| sku | indonesian | foreigner | |
-|---|---|---|---|
-| week, >16 men | $20 | $40 | [+ add](/cyber-valley/cyb.land/cart) |
-| week, women + kids | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+- [[cyberlink]] — fiber + 7g wifi across 4 ha
+- [[edu]]-grade workspaces in [[soft]] and [[etherland]]
+- silence: 25 ha of [[wilderness]], 10+ km of [[trails]]
+- [[organiq]] meals, daily — soil-to-cup
+- [[banya]] mornings and afternoons
+- a [[community]] that talks about real things at dinner
+- [[satoshi]] curriculum for kids
 
-## month
+## passes
 
-30 days of unlimited entry. ~60% discount vs daily.
+extended-stay passes for nomads live in [[visit/visas|visas]]:
 
-| sku | indonesian | foreigner | |
-|---|---|---|---|
-| month, >16 men | $60 | $120 | [+ add](/cyber-valley/cyb.land/cart) |
-| month, women + kids | $30 | $60 | [+ add](/cyber-valley/cyb.land/cart) |
+- [[week]] — 7 days, ~45% off daily
+- [[month]] — 30 days, ~60% off daily
+- [[year]] — 365 days, ~75% off daily
 
-## year
+monthly passes start mid-month or month-start, your choice. see [[visit/visas|visas]] for the full price grid (indonesian / foreigner × men / women + kids).
 
-365 days of unlimited entry. ~75% discount vs daily.
+## sleep + eat
 
-| sku | indonesian | foreigner | |
-|---|---|---|---|
-| year, >16 men | $350 | $700 | [+ add](/cyber-valley/cyb.land/cart) |
-| year, women + kids | $175 | $350 | [+ add](/cyber-valley/cyb.land/cart) |
+- [[stay]] — [[glamping]], [[tent rent]], camp sites
+- [[eat]] — [[organiq]] day and evening doses, [[picnic]], [[grazing]]
 
 [view cart →](/cyber-valley/cyb.land/cart)
