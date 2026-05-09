@@ -1,7 +1,7 @@
 ---
-tags: service
+tags: cyb.land
 crystal-type: process
-crystal-domain: cyber
+crystal-domain: cyberia
 type: public
 ---
 eat anything you find in the gardens
