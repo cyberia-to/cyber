@@ -7,4 +7,4 @@ the 37 ha estate at a glance — trails, camps, attractions, infrastructure.
 
 [open in google maps →](https://maps.app.goo.gl/6rYxA3Btvb8e36qx7)
 
-see also [[attractions]], [[camps]], [[hike]].
+see also [[attractions]], [[camp]], [[hike]].

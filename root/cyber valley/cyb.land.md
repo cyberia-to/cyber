@@ -22,11 +22,11 @@ modern infrastructure with verified non-toxic local food. clean, natural, protec
 - [[ride]] — rent small electric vehicles [→](/cyber-valley/cyb.land/ride)
 - [[hike]] — hub of mountain tourism [→](/cyber-valley/cyb.land/hike)
 - [[learn]] — education platform [→](/cyber-valley/cyb.land/learn)
+- [[camp]] — private camps spread across the estate [→](/cyber-valley/cyb.land/camp)
 
 ## explore
 
 - [[map]] — trails, camps, attractions, infrastructure at a glance
-- [[camps]] — private camps spread across the estate
 - [[events]] — private camps [→](/cyber-valley/cyb.land/events)
 - [[attractions]] — named places to see across the estate
 

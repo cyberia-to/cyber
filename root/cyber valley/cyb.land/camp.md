@@ -2,6 +2,7 @@
 tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
+alias: camps
 ---
 private camps spread across the 37 ha estate. each camp is a stand-alone site with its own character — gardens, views, structures, mood. rentable by the night for groups and private events (see [[events]]).
 
