@@ -1,6 +1,6 @@
 ---
 icon: 🔮
-tags: cyberia
+tags: cyb.land, cyberia
 crystal-type: entity
 alias: cv.land
 crystal-domain: cyberia
@@ -27,7 +27,7 @@ modern infrastructure with verified non-toxic local food. clean, natural, protec
 ## explore
 
 - [[map]] — trails, camps, attractions, infrastructure at a glance
-- [[events]] — private camps [→](/cyber-valley/cyb.land/events)
+- [[events]] — rent a camp, host an event [→](/cyber-valley/cyb.land/events)
 - [[attractions]] — named places to see across the estate
 
 ## community
