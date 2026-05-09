@@ -29,12 +29,10 @@ includes hot steam, [[bath broom]], cold plunge, [[herbal tea]]. session capacit
 
 ## meditation
 
-[[meditation]] — silent sessions in dedicated practice spaces.
+[[meditation]] — silent sessions in dedicated practice spaces. free, open to anyone with a [[daypass]].
 
-| sku | session | price | |
-|---|---|---|---|
-| meditation, sunrise | 06:00 | by donation | [+ add](/cyber-valley/cyb.land/cart) |
-| meditation, sunset | 18:00 | by donation | [+ add](/cyber-valley/cyb.land/cart) |
-| guided meditation, group | by appointment | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| sku | per day | |
+|---|---|---|
+| meditation mat, rent | $2 | [+ add](/cyber-valley/cyb.land/cart) |
 
 [view cart →](/cyber-valley/cyb.land/cart)

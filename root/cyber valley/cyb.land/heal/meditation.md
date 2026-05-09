@@ -3,10 +3,10 @@ tags: cyb.land
 crystal-type: entity
 crystal-domain: cyberia
 ---
-silent meditation sessions in dedicated practice spaces.
+silent meditation sessions in dedicated practice spaces. free with any [[daypass]] — sit any time, sunrise and sunset are the unspoken communal hours.
 
-| sku | session | price | |
-|---|---|---|---|
-| meditation, sunrise | 06:00 | included with [[daypass]] | [+ add](/cyber-valley/cyb.land/cart) |
-| meditation, sunset | 18:00 | included with [[daypass]] | [+ add](/cyber-valley/cyb.land/cart) |
-| guided meditation, group | by appointment | $20 / session | [+ add](/cyber-valley/cyb.land/cart) |
+bring your own cushion or rent a mat at the entrance.
+
+| sku | per day | |
+|---|---|---|
+| meditation mat, rent | $2 | [+ add](/cyber-valley/cyb.land/cart) |
