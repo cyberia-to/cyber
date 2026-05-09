@@ -9,12 +9,12 @@ your selection.
 
 | sku | qty | price | |
 |---|---|---|---|
-| white ticket, working day, foreigner | 2 | $30 | remove |
+| daypass, working day, >16 men, foreigner | 2 | $14 | remove |
 | evening dose, >16 men, foreigner | 2 | $40 | remove |
-| banya, afternoon (16:00) | 2 | included | remove |
+| banya, afternoon (16:00), foreigner | 2 | $40 | remove |
 | glamping, working day | 1 | $50 | remove |
 
-subtotal: $120 USD
+subtotal: $144 USD
 
 ## checkout
 
