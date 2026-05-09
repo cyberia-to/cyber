@@ -15,8 +15,8 @@ includes hot steam, [[bath broom]], cold plunge, [[herbal tea]]. session capacit
 
 | sku | session | indonesian | foreigner | |
 |---|---|---|---|---|
-| banya, morning | 08:00 | $10 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
-| banya, afternoon | 16:00 | $10 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| banya, morning | 08:00 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| banya, afternoon | 16:00 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## massage
 
@@ -24,8 +24,8 @@ includes hot steam, [[bath broom]], cold plunge, [[herbal tea]]. session capacit
 
 | sku | duration | indonesian | foreigner | |
 |---|---|---|---|---|
-| massage, 60 min | 60 min | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
-| massage, 90 min | 90 min | $15 | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| massage, 60 min | 60 min | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| massage, 90 min | 90 min | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## meditation
 
@@ -33,8 +33,8 @@ includes hot steam, [[bath broom]], cold plunge, [[herbal tea]]. session capacit
 
 | sku | session | price | |
 |---|---|---|---|
-| meditation, sunrise | 06:00 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
-| meditation, sunset | 18:00 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
-| guided meditation, group | by appointment | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| meditation, sunrise | 06:00 | by donation | [+ add](/cyber-valley/cyb.land/cart) |
+| meditation, sunset | 18:00 | by donation | [+ add](/cyber-valley/cyb.land/cart) |
+| guided meditation, group | by appointment | $7 | [+ add](/cyber-valley/cyb.land/cart) |
 
 [view cart →](/cyber-valley/cyb.land/cart)

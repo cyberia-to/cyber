@@ -23,9 +23,9 @@ base entrance only. think of it as the visa — you're in, you can roam:
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
-| daypass, working day, normal | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, weekend, normal | $7 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
-| daypass, holiday + moon, normal | $10 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, working day, normal | $2 | $7 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, weekend, normal | $3 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
+| daypass, holiday + moon, normal | $5 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
 
 discounts: woman <42 — half price · kid <10 — free.
 
