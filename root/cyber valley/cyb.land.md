@@ -13,20 +13,20 @@ unique trio in one place: [[sunrise]] + [[sunset]] + [[miracle]] (the biolumines
 
 modern infrastructure with verified non-toxic local food. clean, natural, protected environment for outstanding hiking.
 
-## shop
+## actions
 
 - [[visit]] — day or overnight tickets [→](/cyber-valley/cyb.land/visit)
 - [[stay]] — glamping nights, tent rents [→](/cyber-valley/cyb.land/stay)
 - [[eat]] — meal doses, picnics, snacks [→](/cyber-valley/cyb.land/eat)
 - [[heal]] — banya sessions [→](/cyber-valley/cyb.land/heal)
-- [[events]] — private camps, [[burn.city]] [→](/cyber-valley/cyb.land/events)
 - [[ride]] — rent small electric vehicles [→](/cyber-valley/cyb.land/ride)
+- [[hike]] — 10+ km of trails on 25 ha [→](/cyber-valley/cyb.land/hike)
+- [[learn]] — education platform [→](/cyber-valley/cyb.land/learn)
+- [[events]] — private camps [→](/cyber-valley/cyb.land/events)
 
 ## explore
 
-- [[hike]] — 10+ km of trails on 25 ha
 - [[attractions]] — named places to see across the estate
-- [[learn]] — education platform
 
 ## community
 
