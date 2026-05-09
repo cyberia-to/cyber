@@ -11,4 +11,4 @@ we maintain a curated list of trusted neighbors. range: walking distance to ~15 
 |---|---|---|---|
 | _coming soon_ | | | |
 
-ask at the gate or — TODO — contact us for current recommendations.
+ask at the gate for current recommendations.

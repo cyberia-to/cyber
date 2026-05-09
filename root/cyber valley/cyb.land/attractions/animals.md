@@ -1,55 +1,18 @@
 ---
-tags: class
+tags: cyb.land
 crystal-type: entity
 crystal-domain: biology
 ---
-animals are foundational for biome development
+animals are foundational for biome development. we support as many native species as the land can hold and introduce only those smart enough for cooperation.
 
-we try to support as many animals as possible
+native to [[batuka]]:
 
-trying to provide them comfortable habitat
+- [[tiger]], [[bird]], [[deer]], [[luwak]], [[monkey]], [[squirrel]], [[worm]], [[mouse]]
 
-we integrate support for native species
+selected for [[citadel genesis]]:
 
-and introduce only the most useful for biome
+- [[sheep]], [[chicken]], [[bee]]
 
-which are smart enough for cooperation
+under [[research]]:
 
-native for [[batuka]]
-
-- [[tiger]]
-- [[birds]]
-- [[deer]]
-- [[luwak]]
-- [[monkey]]
-- [[squirrel]]
-- [[worm]]
-- [[mouse]]
-
-selected for [[citadel genesis]]
-
-- [[sheep]]
-- [[chicken]]
-- [[bees]]
-
-[[research]]
-
-- TODO [[felis catus]]
-- [[rabbit]]
-- [[minipig]]
-- [[raven]]
-- [[grey parrot]]
-- [[dogs]]
-- [[snail]]
-- [[firefly]]
-- [[glowworm]]
-- [[silk spider]]
-- [[cricket]]
-- [[frog]]
-- [[silk moth]]
-- [[mealworm]]
-- [[silkworm]]
-- [[alpaca]]
-- [[ostrich]]
-- [[guinea pig]]
-- [[aquatics]]
+- [[rabbit]], [[minipig]], [[raven]], [[grey parrot]], [[dog]], [[snail]], [[firefly]], [[glowworm]], [[silk spider]], [[cricket]], [[frog]], [[silk moth]], [[mealworm]], [[silkworm]], [[alpaca]], [[ostrich]], [[guinea pig]], aquatics
