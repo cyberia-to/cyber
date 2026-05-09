@@ -11,11 +11,9 @@ cabin-tent overnight in the bioluminescent [[sinwood]] forest. includes a [[nigh
 
 | sku | rate per night | |
 |---|---|---|
-| glamping, working day | $100 | [+ add](/cyber-valley/cyb.land/cart) |
-| glamping, peak day | $150 | [+ add](/cyber-valley/cyb.land/cart) |
-| glamping, full moon | $200 | [+ add](/cyber-valley/cyb.land/cart) |
-| glamping, holiday | $300 | [+ add](/cyber-valley/cyb.land/cart) |
-| glamping, new moon | $500 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, working day | $50 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, weekend | $70 | [+ add](/cyber-valley/cyb.land/cart) |
+| glamping, holiday or moon | $100 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## tent rent
 
