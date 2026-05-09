@@ -5,21 +5,13 @@ crystal-domain: cyberia
 ---
 hike high, touch sky.
 
-10+ km of trails on 25 ha of protected wilderness. self-guided with any ticket.
+three fixed routes through 25 ha of protected wilderness. each runs daily.
 
-## sunrise routes
+## routes
 
-- [[sacred path]] — canyon and traverse, 1 hour
-- [[sanghyang]] — full volcano day trek, 5 hours
-- [[firefly canyon]] — night-into-dawn route
-- [[magic forest]] — permaculture coffee plantation walk
-- twin peaks — picnic-friendly ridge
-
-## sunset routes
-
-- [[sinwood]] — bioluminescent forest, dusk into dark
-- twin peaks — same ridge, west-facing return
-- [[rockets estate]] — adjacent estate, 2-ocean view
+- [[sacred path]] — 1-hour walk, [[travers]] + [[firefly canyon]]
+- sanghyang black — daily track to the top of [[sanghyang]]
+- [[sunrise hiking]] — wake up early, see the best sunrise on bali
 
 ## guided hikes
 
@@ -27,9 +19,9 @@ self-guided is free with any ticket. add a guide for context, plant lore, and sa
 
 | sku | duration | price | |
 |---|---|---|---|
-| guide, sunrise hike | 4 hours | $30 | [+ add](/cyber-valley/cyb.land/cart) |
-| guide, full day | 8 hours | $60 | [+ add](/cyber-valley/cyb.land/cart) |
-| guide, sinwood night | 3 hours | $50 | [+ add](/cyber-valley/cyb.land/cart) |
+| guide, sacred path | 1 hour | $15 | [+ add](/cyber-valley/cyb.land/cart) |
+| guide, sanghyang black | 5 hours | $30 | [+ add](/cyber-valley/cyb.land/cart) |
+| guide, sunrise hiking | 4 hours | $30 | [+ add](/cyber-valley/cyb.land/cart) |
 
 ## poems
 
