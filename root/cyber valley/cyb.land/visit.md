@@ -41,10 +41,10 @@ everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[st
 | nightpass, holiday + moon, >16 men | $18 | $35 | [+ add](/cyber-valley/cyb.land/cart) |
 | nightpass, holiday + moon, women + kids | $9 | $18 | [+ add](/cyber-valley/cyb.land/cart) |
 
-## extras
+## infrastructure included in visa
 
 - [[parking]] — 130 cars + 200 motorbikes
 - [[cyberlink]] — 4 ha of high-speed wifi
-- [[wilderness]], [[recycling]], [[wc]], [[trails]], [[lighting]], [[sound]] — all free with any pass
+- [[wilderness]], [[recycling]], [[wc]], [[trails]], [[lighting]], [[sound]]
 
 [view cart →](/cyber-valley/cyb.land/cart)
