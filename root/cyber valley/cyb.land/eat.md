@@ -16,9 +16,9 @@ free-flow local-only restaurant.
 |---|---|---|---|
 | day dose, >16 men | $6 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
 | day dose, woman <42 | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
-| day dose, kid <10 | $2 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
+| day dose, kid <10 + animals | $2 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
 
-### evening dose · [[sunset]] 18:00–21:00 · [[dawn]] 03:00–04:00 (TODO)
+### evening dose · [[sunset]] 18:00–21:00
 
 | sku | indonesian | foreigner | |
 |---|---|---|---|
@@ -46,7 +46,7 @@ tea is included with every dose.
 
 ## nuts
 
-[[nuts]] — almonds, cashews, peanuts, walnuts. raw or lightly toasted.
+[[nuts]] — almonds, walnuts, macadamia, hazelnuts. raw or lightly toasted.
 
 ## porridge
 
@@ -74,7 +74,7 @@ tea is included with every dose.
 
 ## salads
 
-[[salads]] — cress, romaine, iceberg, arugula, hibiscus, talinum, mulberry, fennel, onion, garlic, chives, nasturtium, plantago, gotu kola.
+[[salads]] — cress, romaine, iceberg, arugula, hibiscus, talinum, mulberry leaves, fennel, onion, garlic, chives, nasturtium, plantago, gotu kola.
 
 ## carbs
 
@@ -86,7 +86,7 @@ tea is included with every dose.
 
 ## fruits
 
-[[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut, avocado, markiza.
+[[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut, markiza.
 
 ## berries
 
