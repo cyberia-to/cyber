@@ -51,5 +51,6 @@ everything in daypass plus: [[sunrise hiking]] premium, twin peaks camping, [[st
 - [[recycling]] — 7-bin product circulation
 - [[lighting]] — pathway lights at night
 - [[sound]] — music in public venues
+- [[security]] — guards, first aid, emergency response
 
 [view cart →](/cyber-valley/cyb.land/cart)
