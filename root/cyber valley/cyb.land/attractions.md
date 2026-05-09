@@ -22,8 +22,8 @@ four peaks reachable from the site:
 
 ## sky
 
-- [[sunrise]] — premium dawn point
-- [[sunset]] — 2-ocean view
+- [[sunrise]] — best sunrise on bali, from [[sanghyang]] top
+- [[sunset]] — 2-ocean view sunset, accessible from the village
 - [[stargazing]] — best on bali
 
 ## nature
