@@ -40,4 +40,4 @@ the first sustainable nature-tech society in the world. 37 ha of owned land in n
 | land acquisition | $250,000 | direct title + lease-back | [request →](/cyber-valley/cyb.land/cart) |
 | anchor partnership | $1,000,000+ | board seat + custom terms | [request →](/cyber-valley/cyb.land/cart) |
 
-this is not a public offering. all investments are private and subject to indonesian law and pma regulation. our commitment: full transparency, strong compliance, long-term alignment.
+this is a private offering subject to indonesian law and pma regulation. our commitment: full transparency, strong compliance, long-term alignment.
