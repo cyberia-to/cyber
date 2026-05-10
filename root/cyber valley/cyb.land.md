@@ -5,13 +5,9 @@ crystal-type: entity
 alias: cv.land
 crystal-domain: cyberia
 ---
-# cyber valley
+# Welcome to cyb.land: Bali North Star
 
-bali's new rising star. 37 hectares on the slope of [[sanghyang]] volcano in north bali.
-
-unique trio in one place: [[sunrise]] + [[sunset]] + [[miracle]] (the bioluminescent [[sinwood]]).
-
-modern infrastructure with verified non-toxic local food. clean, natural, protected environment for outstanding hiking.
+Connect with nature, embrace the tech
 
 ## main
 
