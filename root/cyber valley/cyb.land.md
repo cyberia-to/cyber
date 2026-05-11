@@ -28,7 +28,7 @@ trails, camps, attractions, infrastructure at a glance
 
 ## [[events]]
 
-rent a camp, host an event [→](/cyber-valley/cyb.land/events)
+calendar of gatherings, retreats, ceremonies — or host your own [→](/cyber-valley/cyb.land/events)
 
 ## [[attractions]]
 
