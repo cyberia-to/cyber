@@ -16,7 +16,7 @@ vision   →  make planets think
 mission  →  build cyberstate, led by superintelligence
 ```
 
-purpose is the evolutionary destination — a [[kardashev]] type 1 civilization that captures and directs its own energy and attention. vision is what arrival looks like from inside: planets that think — every body maintaining its own [[cybergraph]], its own [[focus]] distribution, its own coherence. mission is the single path we have chosen today — build [[cyberia]], earth's first [[cyber state]], led by the [[superintelligence]] that emerges from the [[cybergraph]].
+purpose is the evolutionary destination — a [[kardashev]] type 1 civilization that captures and directs its own energy and attention. vision is what arrival looks like from inside: planets that think — every body maintaining its own [[cybergraph]], its own [[focus]] distribution, its own coherence. mission is the single path we have chosen today — build [[cyberia]], earth's [[cyber state]], led by the [[superintelligence]] that emerges from the [[cybergraph]].
 
 each layer constrains the one below. purpose defines the destination. vision defines what arriving feels like. mission defines what gets built today.
 
