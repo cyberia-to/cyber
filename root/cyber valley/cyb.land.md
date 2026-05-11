@@ -13,6 +13,9 @@ Connect with nature, embrace the tech
 
 - [[visit]] — day or overnight tickets [→](/cyber-valley/cyb.land/visit)
 - [[stay]] — glamping nights, tent rents [→](/cyber-valley/cyb.land/stay)
+
+## activities — things to do
+
 - [[eat]] — meal doses, picnics, snacks [→](/cyber-valley/cyb.land/eat)
 - [[heal]] — banya sessions [→](/cyber-valley/cyb.land/heal)
 - [[ride]] — rent small electric vehicles [→](/cyber-valley/cyb.land/ride)
