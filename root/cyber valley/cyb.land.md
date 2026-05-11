@@ -13,14 +13,14 @@ Connect with nature, embrace the tech
 
 plan your visit: dates, group, overnight wish — get a list of bookable options [→](/cyber-valley/cyb.land/visit-stay)
 
-## activities — things to do
+## [[activities]]
 
-- [[eat]] — meal doses, picnics, snacks [→](/cyber-valley/cyb.land/eat)
-- [[heal]] — banya sessions [→](/cyber-valley/cyb.land/heal)
-- [[ride]] — rent small electric vehicles [→](/cyber-valley/cyb.land/ride)
-- [[hike]] — hub of mountain tourism [→](/cyber-valley/cyb.land/hike)
-- [[learn]] — education platform [→](/cyber-valley/cyb.land/learn)
-- [[camp]] — private camps spread across the estate [→](/cyber-valley/cyb.land/camp)
+- [[eat]] — meal doses, picnics, snacks [→](/cyber-valley/cyb.land/activities/eat)
+- [[heal]] — banya sessions [→](/cyber-valley/cyb.land/activities/heal)
+- [[ride]] — rent small electric vehicles [→](/cyber-valley/cyb.land/activities/ride)
+- [[hike]] — hub of mountain tourism [→](/cyber-valley/cyb.land/activities/hike)
+- [[learn]] — education platform [→](/cyber-valley/cyb.land/activities/learn)
+- [[camp]] — private camps spread across the estate [→](/cyber-valley/cyb.land/activities/camp)
 
 ## [[map]]
 
