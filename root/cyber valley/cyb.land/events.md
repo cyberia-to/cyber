@@ -1,13 +1,28 @@
 ---
+icon: 📅
 tags: cybernomics, cyb.land
 crystal-type: entity
 crystal-domain: economics
 ---
-permanent event platform. private camps for rent.
+# events
 
-## private camp rent
+gatherings, retreats, ceremonies, workshops happening in [[cyber valley]].
 
-per night, single camp. seven camps available — all currently bookable.
+## calendar
+
+<iframe src="https://calendar.google.com/calendar/embed?src=PLACEHOLDER&ctz=Asia%2FMakassar" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+upcoming events in the graph:
+
+{{query (and (page-tags [[event]]) (page-tags [[cyber valley]]))}}
+
+## host your own
+
+two ways to bring an event to the valley.
+
+### rent a camp
+
+per night, single private camp. seven camps available across the estate.
 
 | sku | rate per night | |
 |---|---|---|
@@ -17,8 +32,10 @@ per night, single camp. seven camps available — all currently bookable.
 
 available camps: {{query (and (page-tags [[camp]]) (not (page-property :type "public")))}}
 
-## custom programming
+### create event
 
-are you organizing? request a tailored event proposal. [request →](/cyber-valley/cyb.land/cart)
+organising something larger? request a tailored proposal — venue, food, lodging, programming, support.
+
+[request a proposal →](/cyber-valley/cyb.land/cart)
 
 [view cart →](/cyber-valley/cyb.land/cart)
