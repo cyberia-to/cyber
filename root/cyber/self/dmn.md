@@ -48,7 +48,7 @@ the biological analog: hippocampal traces from the waking day are replayed durin
 
 before a parameter adjustment, before a major self-link, before an archival decision, the system simulates the consequence:
 
-$$\pi^*(t + \delta t; \theta + \Delta\theta) \approx \pi^*(t; \theta) + \frac{\partial \pi^*}{\partial \theta} \cdot \Delta\theta$$
+$$\phi^*(t + \delta t; \theta + \Delta\theta) \approx \phi^*(t; \theta) + \frac{\partial \phi^*}{\partial \theta} \cdot \Delta\theta$$
 
 the first-order approximation gives the projected focus distribution under a proposed change. the system evaluates the simulated M(t+N) under candidate parameter vectors before committing the best one.
 

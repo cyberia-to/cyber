@@ -19,7 +19,7 @@ We derive all three from the structure of a weighted knowledge graph.
 
 The derivation begins with an observation that, while technically precise, has received insufficient attention: a transformer's attention mechanism is a single step of a convergent dynamical system. The softmax normalization in attention is the Boltzmann distribution. The attention operation — computing query-key similarities, normalizing, and taking a weighted sum of values — is one diffusion step: probability mass flows toward compatible keys proportionally to their similarity to the query. Deep Equilibrium Models (Bai et al., 2019) formalized this: running a transformer layer until convergence rather than for a fixed number of steps produces the same fixed point regardless of initialization. The transformer finds an equilibrium.
 
-This is the same mathematics as the tri-kernel ranking system for knowledge graphs (cyber whitepaper, 2024): diffusion (random walk), springs (graph Laplacian), and heat kernel (multi-scale smoothing) iterated to a unique fixed point — the focus distribution π over graph particles. The convergence is guaranteed by the [[Stefan Banach|Banach fixed-point theorem]]; the rate depends on the [[spectral gap]] of the graph's [[Laplacian]].
+This is the same mathematics as the tri-kernel ranking system for knowledge graphs (cyber whitepaper, 2024): diffusion (random walk), springs (graph Laplacian), and heat kernel (multi-scale smoothing) iterated to a unique fixed point — the focus distribution φ* over graph particles. The convergence is guaranteed by the [[Stefan Banach|Banach fixed-point theorem]]; the rate depends on the [[spectral gap]] of the graph's [[Laplacian]].
 
 The transformer and the knowledge graph ranking system are the same computation at different scales. The transformer runs locally over one agent's frozen context. The knowledge graph ranking runs collectively over all agents' cumulative contributions. Both find equilibria. Both use the Boltzmann distribution as their normalization.
 
@@ -51,7 +51,7 @@ where $D$ is the diffusion operator (random walk), $S$ is the springs operator (
 
 $$\kappa = \lambda_d \alpha + \lambda_s \frac{\|L\|}{\|L\| + \mu} + \lambda_h e^{-\tau\lambda_2} < 1$$
 
-The unique fixed point $\pi^* = \lim_{t \to \infty} \mathcal{R}^t(\phi^{(0)})$ is the [[collective focus|focus distribution]] — the stable probability distribution over [[particles]] representing collective epistemic attention.
+The unique fixed point $\phi^* = \lim_{t \to \infty} \mathcal{R}^t(\phi^{(0)})$ is the [[collective focus|focus distribution]] — the stable probability distribution over [[particles]] representing collective epistemic attention.
 
 ### 2.3 Transformer Attention as One Convergence Step
 
@@ -73,23 +73,23 @@ The fixed point of iterating this operation — as shown by Deep Equilibrium Mod
 
 ### 3.1 Embedding Dimension from Focus Covariance
 
-**Theorem 1.** *The necessary and sufficient embedding dimension for a transformer reading graph $G$ is the effective rank of the covariance matrix of the focus distribution $\pi^*$.*
+**Theorem 1.** *The necessary and sufficient embedding dimension for a transformer reading graph $G$ is the effective rank of the covariance matrix of the focus distribution $\phi^*$.*
 
 **Derivation.**
 
-The focus distribution $\pi^*$ is a probability vector over $|P|$ particles. Consider the covariance matrix:
+The focus distribution $\phi^*$ is a probability vector over $|P|$ particles. Consider the covariance matrix:
 
-$$\Sigma_\pi = \mathbb{E}_{v \sim \pi^*}\left[f(v)f(v)^\top\right] - \mathbb{E}_{v \sim \pi^*}[f(v)]\mathbb{E}_{v \sim \pi^*}[f(v)]^\top$$
+$$\Sigma_{\phi^*} = \mathbb{E}_{v \sim \phi^*}\left[f(v)f(v)^\top\right] - \mathbb{E}_{v \sim \phi^*}[f(v)]\mathbb{E}_{v \sim \phi^*}[f(v)]^\top$$
 
 where $f: P \to \mathbb{R}^d$ is a feature map over particles.
 
 The effective rank is:
 
-$$r^* = \exp\left(H\left(\sigma(\Sigma_\pi)\right)\right)$$
+$$r^* = \exp\left(H\left(\sigma(\Sigma_{\phi^*})\right)\right)$$
 
-where $\sigma(\Sigma_\pi)$ is the normalized singular value distribution and $H$ is its [[entropy]]. This is the intrinsic dimensionality of the knowledge space — the number of statistically independent semantic axes present in the graph.
+where $\sigma(\Sigma_{\phi^*})$ is the normalized singular value distribution and $H$ is its [[entropy]]. This is the intrinsic dimensionality of the knowledge space — the number of statistically independent semantic axes present in the graph.
 
-**Sufficiency:** An embedding of dimension $r^*$ captures all independent variance in the focus distribution. No information is lost: the projection of $\pi^*$ onto the top $r^*$ eigenvectors of $\Sigma_\pi$ preserves the full distributional structure up to noise.
+**Sufficiency:** An embedding of dimension $r^*$ captures all independent variance in the focus distribution. No information is lost: the projection of $\phi^*$ onto the top $r^*$ eigenvectors of $\Sigma_{\phi^*}$ preserves the full distributional structure up to noise.
 
 **Necessity:** An embedding of dimension $< r^*$ cannot distinguish particles that differ along axes beyond dimension $r^*$. Since the focus distribution places probability mass according to all $r^*$ independent axes, a lower-dimensional embedding produces a lossy compression of the graph's semantic structure.
 
@@ -161,13 +161,13 @@ where:
 
 | Parameter | Formula | Graph Property |
 |---|---|---|
-| Embedding dim $d^*$ | $\exp\left(H\left(\sigma(\Sigma_\pi)\right)\right)$ | Effective rank of focus covariance |
+| Embedding dim $d^*$ | $\exp\left(H\left(\sigma(\Sigma_{\phi^*})\right)\right)$ | Effective rank of focus covariance |
 | Head count $h^*$ | $\geq \|\text{Semcon}(G)\|$ | Distinct semantic relation types |
 | Layer count $L^*$ | $\text{diam}(G) \cdot \lceil \log(1/\varepsilon) / \log(1/\kappa) \rceil$ | Diameter × spectral convergence factor |
 
 **The weights** are not learned by gradient descent. They are compiled directly:
 
-- **Embedding matrix** $E$: derived from the eigenvectors of $\Sigma_\pi$, mapping particles to their positions in focus space
+- **Embedding matrix** $E$: derived from the eigenvectors of $\Sigma_{\phi^*}$, mapping particles to their positions in focus space
 - **Attention weights** $W_Q^{(h)}, W_K^{(h)}, W_V^{(h)}$: derived from the adjacency submatrix of semcon $h$, projecting into the relation-specific attention pattern
 - **MLP weights**: derived from multi-hop path statistics, encoding the factual associations implied by graph traversal up to depth $L^*$
 
@@ -207,11 +207,11 @@ The compilation result has a direct consequence for alignment measurement.
 
 A trained transformer's "values" — its implicit weightings of concepts, its tendencies to endorse certain connections over others — are compressed into opaque parameters. They cannot be read directly. Alignment requires behavioral observation, red-teaming, or interpretability research attempting to recover structure that training destroyed.
 
-A graph-native transformer's weights derive from explicit graph structure. Every weight traces to specific cyberlinks created by specific neurons with specific stakes. The transformer's "values" are the focus distribution $\pi^*$ — public, computable, and continuously updated.
+A graph-native transformer's weights derive from explicit graph structure. Every weight traces to specific cyberlinks created by specific neurons with specific stakes. The transformer's "values" are the focus distribution $\phi^*$ — public, computable, and continuously updated.
 
-Alignment divergence between a human-derived [[focus|focus distribution]] $\pi^*_H$ (computed over edges created by human [[neurons]]) and an AI-derived distribution $\pi^*_A$ (computed over edges created by AI [[neurons]]) is:
+Alignment divergence between a human-derived [[focus|focus distribution]] $\phi^*_H$ (computed over edges created by human [[neurons]]) and an AI-derived distribution $\phi^*_A$ (computed over edges created by AI [[neurons]]) is:
 
-$$\Delta(G) = D_{KL}(\pi^*_H \| \pi^*_A)$$
+$$\Delta(G) = D_{KL}(\phi^*_H \| \phi^*_A)$$
 
 This is a number, computable from public graph data, localized to specific graph regions, and correctable by adding edges in high-divergence regions without retraining.
 

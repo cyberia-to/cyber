@@ -49,13 +49,13 @@ the universal law is not an abstraction that floats above the system. it appears
 
 ### [[focus]] and [[tri-kernel]] convergence
 
-the [[tri-kernel]] computes the stationary distribution $\pi^*$ of the [[cybergraph]]. this distribution determines where collective attention goes. the convergence follows exponential mixing:
+the [[tri-kernel]] computes the stationary distribution $\phi^*$ of the [[cybergraph]]. this distribution determines where collective attention goes. the convergence follows exponential mixing:
 
-$$\|\pi_t - \pi^*\|_1 \leq C \cdot \lambda_2^t$$
+$$\|\phi^*_t - \phi^*\|_1 \leq C \cdot \lambda_2^t$$
 
 where $\lambda_2$ is the second-largest eigenvalue (the [[spectral gap from convergence|spectral gap]]). convergence speed is exponential in time. the universal law predicts this: the optimal path to the fixed point (least action) has exponential weight.
 
-the resulting $\pi^*$ itself follows a power law (Zipf) — which is log-linear, the discrete shadow of the exponential on a rank axis. see [[collective focus theorem]].
+the resulting $\phi^*$ itself follows a power law (Zipf) — which is log-linear, the discrete shadow of the exponential on a rank axis. see [[collective focus theorem]].
 
 ### [[temporal decay]]
 
@@ -67,19 +67,19 @@ this IS the universal law applied to attention over time. given finite focus, th
 
 ### [[pi-weighted replication]]
 
-storage replication factor is proportional to $\pi$ (cyberank). particles follow a power law:
+storage replication factor is proportional to $\phi^*$ (cyberank). particles follow a power law:
 
 ```
-top-100 particle:    π ~ 10⁻²    → R = 1000 replicas
-median particle:     π ~ 10⁻⁶    → R = 10 replicas
-tail particle:       π ~ 10⁻¹²   → R = 3 replicas (minimum)
+top-100 particle:    φ* ~ 10⁻²    → R = 1000 replicas
+median particle:     φ* ~ 10⁻⁶    → R = 10 replicas
+tail particle:       φ* ~ 10⁻¹²   → R = 3 replicas (minimum)
 ```
 
-given finite storage across the network, the exponential allocation minimises total retrieval cost. storing everything equally wastes resources on content nobody queries. storing proportionally to $\pi$ is the maximum-entropy allocation under the storage budget constraint.
+given finite storage across the network, the exponential allocation minimises total retrieval cost. storing everything equally wastes resources on content nobody queries. storing proportionally to $\phi^*$ is the maximum-entropy allocation under the storage budget constraint.
 
 ### [[gravity commitment]]
 
-mass-weighted polynomial encoding: high-$\pi$ particles occupy low-degree polynomial terms (cheap to verify), low-$\pi$ particles occupy high-degree terms (expensive).
+mass-weighted polynomial encoding: high-$\phi^*$ particles occupy low-degree polynomial terms (cheap to verify), low-$\phi^*$ particles occupy high-degree terms (expensive).
 
 ```
 hot layer (top 2⁸):     8 rounds, ~2 KiB proof, ~50 μs
@@ -178,12 +178,12 @@ the three traditions are not analogies. they are the same functional with differ
 
 exponential optimality under constraint is the thread connecting:
 - why [[Hemera]]'s S-box degree grows as $2^{1046}$ (security per round)
-- why [[tri-kernel]] $\pi^*$ converges exponentially (mixing time)
+- why [[tri-kernel]] $\phi^*$ converges exponentially (mixing time)
 - why [[DAS]] gives $1 - 2^{-k}$ confidence (evidence per sample)
 - why [[sumcheck]] is O(N) (halving per round)
 - why [[temporal decay]] is $\alpha^t$ (relevance over time)
-- why [[gravity commitment]] layers by $\pi$ (verification per importance)
-- why replication follows $\pi$ (storage per attention)
+- why [[gravity commitment]] layers by $\phi^*$ (verification per importance)
+- why replication follows $\phi^*$ (storage per attention)
 - why Verkle branching near 3 is optimal (cost per lookup)
 
 one principle. not separate stories but chapters of one law: efficient differentiation when resources are bounded, the optimal allocation is always exponential.

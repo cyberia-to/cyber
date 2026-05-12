@@ -17,11 +17,11 @@ formal definition of the three local operators whose fixed point is [[cyberank]]
 
 The transition matrix M = D⁻¹A (or column-stochastic P = AD⁻¹) governs probability flow:
 
-$$\pi^{(t+1)} = \alpha P^\top \pi^{(t)} + (1-\alpha)u$$
+$$\phi^{(t+1)} = \alpha P^\top \phi^{(t)} + (1-\alpha)u$$
 
 where α ∈ (0,1) is the teleport parameter and u is a prior (often uniform or stake-weighted).
 
-Properties: Row-stochastic, preserves probability mass, powers remain local. Under ergodicity (strong connectivity + aperiodicity), converges to unique stationary distribution π*.
+Properties: Row-stochastic, preserves probability mass, powers remain local. Under ergodicity (strong connectivity + aperiodicity), converges to unique stationary distribution φ*.
 
 Answers: *"Where does probability flow?"*
 
@@ -134,9 +134,9 @@ Complexity: O(|N_h| · c) per kernel for average degree c.
 ### 4.3 Telemetry
 
 Monitor per epoch:
-- Entropy H(π), negentropy J(π)
+- Entropy H(φ*), negentropy J(φ*)
 - Spectral gap estimate
-- ℓ₁ drift ‖π^t - π^(t-1)‖
+- ℓ₁ drift ‖φ*^t - φ*^(t-1)‖
 - Locality radius h, nodes touched
 - Compute vs verify wall-time
 

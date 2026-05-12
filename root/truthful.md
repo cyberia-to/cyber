@@ -18,7 +18,7 @@ in mechanism design, a protocol is truthful (dominant strategy incentive compati
 
 ## truthfulness and [[syntropy]]
 
-a truthful link increases [[syntropy]]: the cyberlink sharpens the collective picture, reducing uncertainty ($D_{KL}(\pi^*_{\text{after}} \| u) > D_{KL}(\pi^*_{\text{before}} \| u)$). a spammy or false link decreases syntropy — it moves $\pi^*$ toward noise.
+a truthful link increases [[syntropy]]: the cyberlink sharpens the collective picture, reducing uncertainty ($D_{KL}(\phi^*_{\text{after}} \| u) > D_{KL}(\phi^*_{\text{before}} \| u)$). a spammy or false link decreases syntropy — it moves $\phi^*$ toward noise.
 
 [[karma]] is the accumulated truthfulness record: the running sum of [[Bayesian Truth Serum|BTS]] scores across all a neuron's links. high karma means a consistent track record of signal over noise. karma enters [[effective adjacency]] as the multiplier $\kappa(\nu)$, making past truthfulness a structural property of current influence.
 

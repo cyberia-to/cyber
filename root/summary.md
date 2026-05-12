@@ -15,9 +15,9 @@ Implication: Optimal cognitive and computational systems—like Cybergraph—sho
 
 CFT applied to consensus enables probabilistic attention finality instead of block ordering.
 
-Nodes model the network as a token-weighted directed graph; repeated random walks converge to a stable stationary distribution (π).
+Nodes model the network as a token-weighted directed graph; repeated random walks converge to a stable stationary distribution (φ*).
 
-Transactions finalize when their π-value exceeds a threshold τ, guaranteeing safety under honest-majority focus.
+Transactions finalize when their φ*-value exceeds a threshold τ, guaranteeing safety under honest-majority focus.
 
 This approach allows millions of TPS, sub-3s finality, and low communication overhead.
 ### 3. Foculus Consensus Protocol
@@ -28,20 +28,20 @@ GPU-accelerated sparse matrix × vector updates every ~100 ms.
 
 Particles = transactions/data, cyberlinks = weighted endorsements.
 
-Finality = πᵢ > τ, conflicts below τ are discarded.
+Finality = φ*ᵢ > τ, conflicts below τ are discarded.
 
-Safety: ≥50% honest π-mass prevents double finality.
+Safety: ≥50% honest φ*-mass prevents double finality.
 
 Liveness: Ergodicity ensures all honest transactions finalize.
 ### 4. Economic Model
 
-Minting rewards tied to Δπ(p) — measurable shift in collective focus caused by a proof particle.
+Minting rewards tied to Δφ*(p) — measurable shift in collective focus caused by a proof particle.
 
 Only focus updates mint; all other useful proofs rewarded from transaction fees.
 
 Fee split: 50% burned, 50% funds auxiliary proofs.
 
-Stake delegation = attention delegation; long-term reputation from accumulated π-weight.
+Stake delegation = attention delegation; long-term reputation from accumulated φ*-weight.
 
 Eternal weight via burn anchors critical knowledge permanently.
 ### 5. State Model for Superintelligence
@@ -72,7 +72,7 @@ Fully-authenticated focus cascading (FFC):
 - Fractional cascading overlays for O(log n) cross-shard lookups.
 - Sharding strategies: id-hash, neuron-centric, topic, community, geo/ownership, temporal, hybrid.
 
-Ensures every edge and weight shaping π is cryptographically verifiable.
+Ensures every edge and weight shaping φ* is cryptographically verifiable.
 ### 8. Confidentiality Model
 
 64-byte Blake3-XOF digests for quantum-resilient content addressing.
@@ -113,7 +113,7 @@ Conclusion: The integration of CFT, exponential optimality, authenticated/confid
 
 Scalable: 10⁶–10⁷ TPS class.
 
-Secure: Honest-majority π-mass safety, quantum-resilient checkpoints.
+Secure: Honest-majority φ*-mass safety, quantum-resilient checkpoints.
 
 Economically aligned: Rewards tied directly to measurable contribution to collective cognition.
 

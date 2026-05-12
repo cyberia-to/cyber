@@ -17,8 +17,8 @@ everything in [[BBG]] polynomial state is [[Goldilocks field]] elements ($\mathb
 
 | dimension | per-entry fields | field elements | bytes | what each field stores |
 |---|---|---|---|---|
-| particles (content) | CID + energy + π* | 4 + 1 + 1 = 6 | 48 | identity (4 F_p hemera hash), aggregate inbound weight, tri-kernel focus |
-| particles (axon) | CID + energy + π* + weight + s_YES + s_NO + meta | 4 + 1 + 1 + 1 + 2 + 1 = 10 | 80 | above + conviction weight, ICBS market reserves, valence prediction |
+| particles (content) | CID + energy + φ* | 4 + 1 + 1 = 6 | 48 | identity (4 F_p hemera hash), aggregate inbound weight, tri-kernel focus |
+| particles (axon) | CID + energy + φ* + weight + s_YES + s_NO + meta | 4 + 1 + 1 + 1 + 2 + 1 = 10 | 80 | above + conviction weight, ICBS market reserves, valence prediction |
 | axons_out | source_CID + pointer | 4 + 1 = 5 | 40 | source particle identity, pointer to axon-particle |
 | axons_in | target_CID + pointer | 4 + 1 = 5 | 40 | target particle identity, pointer to axon-particle |
 | neurons | neuron_id + focus + karma + stake | 4 + 1 + 1 + 1 = 7 | 56 | identity, attention budget, BTS score, committed conviction |
@@ -82,7 +82,7 @@ BBG_root:        global commitment                             32 bytes
 
 a neuron on a phone: ~1 GB total. stores its own data, caches neighbors, verifies everything else via 32-byte root.
 
-a validator: stores multiple shards. more shards = more responsibility = more reward (proof-of-storage incentive from [[DAS]] + π-weighted replication).
+a validator: stores multiple shards. more shards = more responsibility = more reward (proof-of-storage incentive from [[DAS]] + φ*-weighted replication).
 
 ## within a shard: the local data structure
 

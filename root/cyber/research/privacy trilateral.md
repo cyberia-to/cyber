@@ -63,7 +63,7 @@ The triangle is not a Venn diagram of overlapping capabilities. It is a structur
 
 Prove a statement is true without revealing why it is true.
 
-Mechanism: The prover generates a mathematical proof $\pi$ that a computation was executed correctly. The proof reveals only the public inputs and the result — nothing about the private witness (the secret data used during computation). Verification is fast: $O(\log n)$ work regardless of computation size.
+Mechanism: The prover generates a mathematical proof $\phi^*$ that a computation was executed correctly. The proof reveals only the public inputs and the result — nothing about the private witness (the secret data used during computation). Verification is fast: $O(\log n)$ work regardless of computation size.
 
 [[nox]] uses [[starks]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every [[stark]] in nox operates over the [[Goldilocks field]] $\mathbb{F}_p$.
 
@@ -137,8 +137,8 @@ FHE computes on encrypted data. ZK proves the computation was correct. Together:
 Flow:
   1. Client encrypts input under FHE:     ct = Enc(pk, data)
   2. Server evaluates circuit on ct:       ct' = Eval(circuit, ct)
-  3. Server generates [[zheng]] proof:         π = Prove(circuit, ct, ct')
-  4. Client verifies proof:                Verify(π) → accept/reject
+  3. Server generates [[zheng]] proof:         φ* = Prove(circuit, ct, ct')
+  4. Client verifies proof:                Verify(φ*) → accept/reject
   5. Client decrypts result:               result = Dec(sk, ct')
 
 Properties:
@@ -157,8 +157,8 @@ MPC distributes trust. ZK produces a proof. Together: multiple parties jointly g
 Flow:
   1. Each party holds secret share:        [x]_i = share_i(x)
   2. Parties run MPC to evaluate circuit:  [y]_i = MPC_Eval(circuit, [x]_i)
-  3. Parties jointly construct [[zheng]] proof: π = MPC_Prove([trace]_i)
-  4. Anyone verifies proof:                Verify(π) → accept/reject
+  3. Parties jointly construct [[zheng]] proof: φ* = MPC_Prove([trace]_i)
+  4. Anyone verifies proof:                Verify(φ*) → accept/reject
 
 Properties:
   - No single party sees full input        (MPC)
@@ -197,9 +197,9 @@ Scenario: Private verifiable AI inference on encrypted medical data
   1. MPC key ceremony:     Guardians generate (pk, [sk]_i) — no party sees full key
   2. FHE encryption:       Alice encrypts medical data: ct = Enc(pk, data)
   3. FHE evaluation:       Node runs diagnostic model: ct' = Model(ct)
-  4. [[zheng]] proof:      Node generates proof π of correct execution
+  4. [[zheng]] proof:      Node generates proof φ* of correct execution
   5. Threshold decryption: Alice requests result from guardians: result = MPC_Dec([sk]_i, ct')
-  6. Verification:         Anyone checks Verify(π) → accept
+  6. Verification:         Anyone checks Verify(φ*) → accept
 
   Properties achieved:
     ✓ Alice's data never exposed                (FHE)

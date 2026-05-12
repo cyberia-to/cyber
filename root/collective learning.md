@@ -22,13 +22,13 @@ $$S(t+1) = F(S(t), W(t), T(t))$$
 
 weight updates follow a [[Hebbian learning]] rule modulated by [[consensus]]:
 
-$$w_{ij}(t+1) = w_{ij}(t) + \alpha \cdot f(x_i, x_j) + \beta \cdot g(\pi_i, \pi_j)$$
+$$w_{ij}(t+1) = w_{ij}(t) + \alpha \cdot f(x_i, x_j) + \beta \cdot g(\phi^*_i, \phi^*_j)$$
 
-where the first term captures local co-activation and the second aligns with global [[focus]] $\pi$. the resulting weight change per [[cyberlink]]:
+where the first term captures local co-activation and the second aligns with global [[focus]] $\phi^*$. the resulting weight change per [[cyberlink]]:
 
-$$\Delta w_{ij} = \alpha \cdot r_{ij} \cdot \pi_j$$
+$$\Delta w_{ij} = \alpha \cdot r_{ij} \cdot \phi^*_j$$
 
-where $r_{ij}$ is the information-theoretic value exchanged and $\pi_j$ is the [[consensus]]-based importance of each [[particle]]
+where $r_{ij}$ is the information-theoretic value exchanged and $\phi^*_j$ is the [[consensus]]-based importance of each [[particle]]
 
 ### exploration and exploitation
 

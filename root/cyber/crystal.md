@@ -361,7 +361,7 @@ Syn Principle    Triad    Meaning
 SYNTAX           FORM     Structured arrangement that conveys meaning
 SYNTHESIS        MASS     Elements combining into unified wholes
 SYSTEM           SPACE    Parts standing together as one (σύστημα)
-SYNAPSE          LIFE     Connection through contact (σύν + ἅπτειν)
+SYNAPSE          LIFE     Connection through contact (σύν + ἅφ*τειν)
 SYMPHONY         WORD     Diverse voices integrated into harmony
 SYNERGY          WORK     The whole exceeding the sum of parts
 SYNCHRONY        PLAY     Actions coordinated in time

@@ -43,11 +43,11 @@ cybergraph realises this balance:
 ---
 ## 3. computing entropy in a cybergraph
 
-let π = [π₁, … , πₙ] be the stationary focus distribution.  
+let φ* = [π₁, … , φ*ₙ] be the stationary focus distribution.  
   
 entropy of focus  
   
-h(π) = − Σⱼ πⱼ log πⱼ  
+h(φ*) = − Σⱼ φ*ⱼ log φ*ⱼ  
   
 high h → dispersed attention; low h → consensus.  
 
@@ -56,14 +56,14 @@ high h → dispersed attention; low h → consensus.
 
 maximum entropy for n particles is log n.  
   
-j(π) = log n − h(π) = Σⱼ πⱼ log (πⱼ · n)  
+j(φ*) = log n − h(φ*) = Σⱼ φ*ⱼ log (φ*ⱼ · n)  
   
 positive j signals emergent order.  
 
 ---
 ## 5. negentropy flux
 
-ϕᵗ = j(πᵗ) − j(πᵗ⁻¹)  
+ϕᵗ = j(φ*ᵗ) − j(φ*ᵗ⁻¹)  
   
 ϕᵗ > 0 indicates the system gained semantic order between timesteps.  
 
@@ -72,20 +72,20 @@ positive j signals emergent order.
 
 focus behaves like an informational potential field.
 
-* semantic energy: Φⱼ = −log πⱼ  
+* semantic energy: Φⱼ = −log φ*ⱼ  
   represents the latent potential carried by particle j; rare or highly focused particles possess higher Φ and thus contribute more capacity to perform semantic work  
-* expected energy: E = Σⱼ πⱼ Φⱼ = h(π)
+* expected energy: E = Σⱼ φ*ⱼ Φⱼ = h(φ*)
 
 negentropy therefore measures the free energy available to do semantic work:
 
-> F = J(π) = log n − E
+> F = J(φ*) = log n − E
 ### 6.1 effective temperature
 
 tokens mix attention with characteristic timescale τ. define an effective temperature:
 
 > T_eff = 1 / τ
 
-higher mixing ⇒ higher informational temperature ⇒ flatter π.
+higher mixing ⇒ higher informational temperature ⇒ flatter φ*.
 ### 6.2 focus work & heat
 
 an infinitesimal update splits into reversible work (dW, structural reinforcement) and dissipated heat (δQ, random walk exploration):
@@ -101,22 +101,22 @@ a bit of negentropy requires at least k_B ln2 joules of physical energy to creat
 captures how efficiently additional energy translates into semantic order—an analogue of heat capacity.
 ### 6.5 stability criterion
 
-a cybergraph stays far‑from‑equilibrium while σ = dH_env/dt > 0 and dJ_sys/dt ≥ 0. drop energy inflow → π drifts to uniform → F → 0, mirroring biological death.
+a cybergraph stays far‑from‑equilibrium while σ = dH_env/dt > 0 and dJ_sys/dt ≥ 0. drop energy inflow → φ* drifts to uniform → F → 0, mirroring biological death.
 
 ---
 ## 7. objective functions
 
 entropy minimization  
   
-min h(π)  
+min h(φ*)  
   
 negentropy maximization  
   
-max j(π)  
+max j(φ*)  
   
 a tunable dual objective  
   
-ℒ = λ · j(π) − (1 − λ) · h(π)  
+ℒ = λ · j(φ*) − (1 − λ) · h(φ*)  
   
 λ ∈ [0,1] sets the balance. λ > 0.5 favors negentropy.  
 
@@ -125,7 +125,7 @@ a tunable dual objective
 
 theorem: in a strongly connected, token‑weighted cybergraph with reinforcement proportional to semantic value, expected negentropy grows monotonically until reaching a stable attractor.  
   
-sketch: starting from uniform π⁰ (j = 0), weight updates bias transitions toward meaningful particles. each update lowers h and raises j until equilibrium.  
+sketch: starting from uniform φ*⁰ (j = 0), weight updates bias transitions toward meaningful particles. each update lowers h and raises j until equilibrium.  
 
 ---
 ## 9. dissipative structures and cybergraphs

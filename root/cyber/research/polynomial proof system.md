@@ -228,7 +228,7 @@ cost vs hemera:     11× hash    3× hash      1× hash      0.12× hash
 
 **[[programmable state|programmable authenticated state]].** deploy new tables by writing a [[nox]] program. standard operations (INSERT, UPDATE, TRANSFER) get automatic [[state jets|CCS jet]] optimization: 3-5 constraints per operation. no protocol upgrade.
 
-**[[provable consensus]].** the [[tri-kernel]] computation (1.42B constraints) fits at 33% of polynomial proof capacity. validators prove they computed π* correctly. [[consensus]] = computation + proof.
+**[[provable consensus]].** the [[tri-kernel]] computation (1.42B constraints) fits at 33% of polynomial proof capacity. validators prove they computed φ* correctly. [[consensus]] = computation + proof.
 
 ## the complete stack
 

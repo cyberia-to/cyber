@@ -11,11 +11,11 @@ date: 2026-03-23
 
 [[cyber]] has two reward mechanisms:
 
-1. Δπ mining: a [[neuron]] creates [[cyberlinks]], computes the local tri-kernel impulse $\pi_\Delta$, proves it correct ([[zheng]] proof σ), submits as [[signal]]. reward ∝ proven Δπ. the neuron mints [[$CYB]] proportional to how much it shifted [[focus]].
+1. Δφ* mining: a [[neuron]] creates [[cyberlinks]], computes the local tri-kernel impulse $\Delta\phi^*$, proves it correct ([[zheng]] proof σ), submits as [[signal]]. reward ∝ proven Δφ*. the neuron mints [[$CYB]] proportional to how much it shifted [[focus]].
 
 2. [[Goldilocks field processor|GFP]] PoUW mining: a miner produces a [[stark]] proof of a benchmark circuit exercising all four GFP primitives (fma, ntt, p2r, lut). reward = block subsidy. the puzzle trains hardware that serves the network.
 
-currently they are separate: Δπ mining rewards knowledge, PoUW mining rewards computation. the flywheel connects them economically (mining funds chip development, chips accelerate proving, proving serves users). but the WORK is different — PoUW proves a synthetic benchmark, not real knowledge.
+currently they are separate: Δφ* mining rewards knowledge, PoUW mining rewards computation. the flywheel connects them economically (mining funds chip development, chips accelerate proving, proving serves users). but the WORK is different — PoUW proves a synthetic benchmark, not real knowledge.
 
 ## the unification
 
@@ -37,22 +37,22 @@ the signal proof IS a benchmark that exercises all four primitives in production
 ```
 CURRENT (separate):
   miner:   prove benchmark B(challenge, nonce) → block reward
-  neuron:  prove signal s = (ν, l⃗, π_Δ, σ) → Δπ reward
+  neuron:  prove signal s = (ν, l⃗, Δφ*, σ) → Δφ* reward
   two separate computations, two separate reward streams
 
 UNIFIED:
   miner-neuron: prove signal with difficulty target
     signal proof σ must satisfy:
       1. all cyberlinks valid (correctness)
-      2. π_Δ impulse correct (tri-kernel recomputation)
+      2. Δφ* impulse correct (tri-kernel recomputation)
       3. H(σ) < target (difficulty, partial preimage)
 
   one computation → two rewards:
-    - Δπ reward for knowledge contribution (proportional to focus shift)
+    - Δφ* reward for knowledge contribution (proportional to focus shift)
     - block reward for proof-of-work (proportional to difficulty met)
 ```
 
-the difficulty target serves sybil resistance. the Δπ serves knowledge incentive. same proof, two functions.
+the difficulty target serves sybil resistance. the Δφ* serves knowledge incentive. same proof, two functions.
 
 ## the mechanism
 
@@ -61,10 +61,10 @@ the difficulty target serves sybil resistance. the Δπ serves knowledge incenti
 a miner-neuron:
 
 1. selects cyberlinks to include (the knowledge contribution)
-2. computes tri-kernel impulse π_Δ (the local recomputation)
+2. computes tri-kernel impulse Δφ* (the local recomputation)
 3. generates zheng proof σ (exercises all 4 GFP primitives)
 4. checks if H(σ) < target (difficulty)
-5. if yes: submit signal. earn block reward + Δπ reward
+5. if yes: submit signal. earn block reward + Δφ* reward
 6. if no: adjust nonce field in signal, reprove
 
 the nonce is embedded in the signal structure — a field that can be freely varied without changing the semantic content. each nonce produces a different σ (different zheng randomness → different proof → different hash). the miner searches for a σ whose hash meets the target.
@@ -84,12 +84,12 @@ the benchmark circuit in the current GFP spec simulates these exact operations w
 
 block reward target adjusts like Bitcoin: maintain average block time by scaling target. higher hash rate → lower target → harder to find qualifying σ.
 
-Δπ reward is independent of difficulty: the neuron earns Δπ regardless of whether σ also meets the difficulty target. but only signals that meet difficulty qualify for block reward.
+Δφ* reward is independent of difficulty: the neuron earns Δφ* regardless of whether σ also meets the difficulty target. but only signals that meet difficulty qualify for block reward.
 
 this means:
-- small neurons (phone, laptop): earn Δπ rewards for knowledge. never meet block difficulty. this is fine — knowledge mining is accessible to everyone
-- large miners (GFP cluster): earn Δπ + block rewards. optimize for both knowledge quality (higher Δπ) and hash rate (more attempts per second)
-- the incentive: a miner who selects BETTER cyberlinks earns MORE Δπ per proof, making each mining attempt more valuable. knowledge quality improves hash revenue
+- small neurons (phone, laptop): earn Δφ* rewards for knowledge. never meet block difficulty. this is fine — knowledge mining is accessible to everyone
+- large miners (GFP cluster): earn Δφ* + block rewards. optimize for both knowledge quality (higher Δφ*) and hash rate (more attempts per second)
+- the incentive: a miner who selects BETTER cyberlinks earns MORE Δφ* per proof, making each mining attempt more valuable. knowledge quality improves hash revenue
 
 ### the flywheel tightens
 
@@ -103,10 +103,10 @@ UNIFIED FLYWHEEL:
   mining rewards → fund GFP development
   GFP accelerates SIGNAL PROVING → signals ARE knowledge
   better hardware → more signals per second → more knowledge per second
-  more knowledge → higher Δπ → more reward → more investment in GFP
+  more knowledge → higher Δφ* → more reward → more investment in GFP
   same chip. same operation. THREE revenue streams:
     1. block reward (PoW)
-    2. Δπ reward (knowledge)
+    2. Δφ* reward (knowledge)
     3. user fees (services)
 ```
 
@@ -117,16 +117,16 @@ the flywheel gains a third spoke. GFP development is funded by mining. mining pr
 ### miner incentive to create good cyberlinks
 
 a miner who submits garbage cyberlinks:
-- low Δπ → low Δπ reward
+- low Δφ* → low Δφ* reward
 - same hash difficulty → same PoW cost
 - net: wastes energy on low-value proofs
 
 a miner who submits high-quality cyberlinks:
-- high Δπ → high Δπ reward
+- high Δφ* → high Δφ* reward
 - same hash difficulty → same PoW cost
 - net: earns more per proof
 
-the incentive gradient points toward knowledge quality. mining energy goes to proving USEFUL signals, not synthetic benchmarks. every joule produces both security (PoW) and intelligence (Δπ).
+the incentive gradient points toward knowledge quality. mining energy goes to proving USEFUL signals, not synthetic benchmarks. every joule produces both security (PoW) and intelligence (Δφ*).
 
 ### hardware alignment
 
@@ -156,9 +156,9 @@ unified mining is the first scheme where the puzzle output IS the protocol's pri
 
 add a 2-element nonce field to the signal structure:
 
-$$s = (\nu, \vec\ell, \pi_\Delta, \sigma, \text{prev}, \text{mc}, \text{vdf}, \text{step}, \textbf{nonce})$$
+$$s = (\nu, \vec\ell, \Delta\phi^*, \sigma, \text{prev}, \text{mc}, \text{vdf}, \text{step}, \textbf{nonce})$$
 
-the nonce does not affect signal semantics (same cyberlinks, same π_Δ). it only affects the zheng proof randomness → different σ → different H(σ). this is the search space for miners.
+the nonce does not affect signal semantics (same cyberlinks, same Δφ*). it only affects the zheng proof randomness → different σ → different H(σ). this is the search space for miners.
 
 ### proof binding
 
@@ -175,7 +175,7 @@ block:
 
   validity: each sᵢ has valid zheng proof σᵢ
   difficulty: aggregate hash below target
-  reward: block_subsidy + Σ Δπ(sᵢ)
+  reward: block_subsidy + Σ Δφ*(sᵢ)
 ```
 
 multiple signals per block means miners can aggregate knowledge from multiple neurons. a miner-pool collects signals from many neurons, proves them all, and splits rewards.

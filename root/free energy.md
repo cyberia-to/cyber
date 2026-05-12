@@ -41,6 +41,6 @@ the solution: $\phi^*_i \propto \exp(-\beta[E_{\text{spring},i} + \lambda E_{\te
 
 all three formulations share the same structure: an energy term competing with an entropy term, balanced by temperature. the minimum is always a [[Boltzmann distribution]]. [[thermodynamics]] discovered it for gases. [[Karl Friston]] applied it to brains. [[cyber]] applies it to [[knowledge]]
 
-Δπ in [[learning incentives]] is the gradient of $\mathcal{F}$ — creating valuable structure in the [[cybergraph]] is literally reducing free energy
+Δφ* in [[learning incentives]] is the gradient of $\mathcal{F}$ — creating valuable structure in the [[cybergraph]] is literally reducing free energy
 
 see [[cybics]] for the full unification. see [[negentropy vs entropy]] for the dual thermodynamics framework. see [[contextual free energy model]] for the context-dependent extension

@@ -15,6 +15,6 @@ the [[cybergraph]] can encode every major logical system:
 - [[predicate logic]] — quantification over [[particles]] and typed [[cyberlinks]]
 - [[modal logic]] — necessity and possibility via neighborhood accessibility
 - [[temporal logic]] — time-indexed links with epoch ordering
-- [[fuzzy logic]] — continuous confidence as $\pi$-weight
+- [[fuzzy logic]] — continuous confidence as $\phi^*$-weight
 
 each is a projection of the full graph structure onto a restricted formal [[language]]. the graph itself is richer than any single logic — it holds all of them simultaneously.

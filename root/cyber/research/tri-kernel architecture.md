@@ -94,9 +94,9 @@ We establish that the [[tri-kernel]] satisfies formal definitions of [[intellige
 
 ### 2.2 Claims
 
-Claim A (Inference): The fixed point of ℛ minimizes a free-energy functional. Therefore the update π^(t+1) ← ℛπ^t reduces a well-defined energy and converges—which is precisely "doing inference."
+Claim A (Inference): The fixed point of ℛ minimizes a free-energy functional. Therefore the update φ*^(t+1) ← ℛφ*^t reduces a well-defined energy and converges—which is precisely "doing inference."
 
-Claim B (Compression): [[diffusion]] maps/[[heat]] kernels compress high-dimensional relations while preserving geometry. The resulting π concentrates mass (negentropy rises) subject to structural constraints—the "accurate yet parsimonious" balance of free-energy minimization.
+Claim B (Compression): [[diffusion]] maps/[[heat]] kernels compress high-dimensional relations while preserving geometry. The resulting φ* concentrates mass (negentropy rises) subject to structural constraints—the "accurate yet parsimonious" balance of free-energy minimization.
 
 Claim C (Adaptation): Temperature τ in the [[heat]] kernel provides simulated annealing: high τ explores, low τ commits. This is the textbook mechanism for adaptive [[intelligence]].
 
@@ -104,7 +104,7 @@ Claim C (Adaptation): Temperature τ in the [[heat]] kernel provides simulated a
 
 Track per epoch:
 - Cross-entropy on held-out edges (prediction quality)
-- [[entropy]] H(π) and negentropy J = log|V| - H ([[focus]] sharpness)
+- [[entropy]] H(φ*) and negentropy J = log|V| - H ([[focus]] sharpness)
 - Convergence/mixing time (stability)
 
 If adding small λ_s, λ_h monotonically improves these metrics without destabilizing mixing, the system demonstrably performs [[intelligence]].
@@ -125,7 +125,7 @@ We establish positive [[collective intelligence]] factor (c > 0): the group outp
 
 ### 3.2 Mapping to Tri-Kernel
 
-Aggregation: [[focus]] π is computed from all agents' [[cyberlinks]] via Markov/harmonic/[[heat]] operators—formal aggregation of many partial [[signals]].
+Aggregation: [[focus]] φ* is computed from all agents' [[cyberlinks]] via Markov/harmonic/[[heat]] operators—formal aggregation of many partial [[signals]].
 
 Diversity: [[diffusion]] explores remote regions; [[springs]] encode structural priors; [[heat]] rebalances on drift. Three kernels sample different solution modes.
 
@@ -143,7 +143,7 @@ This follows from three independent lines:
 ### 3.4 Measurement Protocol
 
 Define task battery T = {retrieval, link prediction, question routing}. For each epoch:
-- Compute S_group using [[tri-kernel]] π on full [[graph]]
+- Compute S_group using [[tri-kernel]] φ* on full [[graph]]
 - Compute S_a for each agent using only their ego-subgraph
 - Report: S_group - max_a(S_a) and S_group - mean_a(S_a)
 - Estimate c = PC1 variance explained across tasks

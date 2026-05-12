@@ -11,7 +11,7 @@ the quantum circuit language. describes, optimizes, and dispatches quantum compu
 | `qubit(n)` | Allocate n qubits in |0⟩ state |
 | `h(q)` | Hadamard gate — create superposition |
 | `cx(control, target)` | CNOT — entangle two qubits |
-| `t(q)` | T gate (π/8 rotation) — the expensive universal gate |
+| `t(q)` | T gate (φ*/8 rotation) — the expensive universal gate |
 | `rz(q, θ)` | Z-rotation by angle θ (encoded as F_p² phase) |
 | `measure(q)` | Collapse qubit — returns classical bit |
 | `barrier()` | Scheduling boundary — no reordering across |

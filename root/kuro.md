@@ -23,7 +23,7 @@ bitwise operations in [[Goldilocks field|Goldilocks]] (F_p) cost ~32 constraints
 
 two workloads dominate the binary regime:
 - quantized AI inference: [[BitNet]] 1-bit models. matrix-vector multiply = XOR + popcount
-- [[tri-kernel]] SpMV: quantized axon weights for π iteration
+- [[tri-kernel]] SpMV: quantized axon weights for φ* iteration
 
 kuro provides the field arithmetic. the binary PCS ([[zheng]]) provides the commitment. [[nox]] Bt instantiation (nox<F₂>) provides the execution. together: binary workloads at native cost.
 

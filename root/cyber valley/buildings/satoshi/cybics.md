@@ -114,7 +114,7 @@ target by age 7: names the three operators in daily situations, explains why a s
 | network | [[mycelium]] connects trees | [[neurons]] connect in brain | [[cyberlinks]] connect [[particles]] | "everything is connected through networks" |
 | feedback | predator-prey cycles | hunger → eat → full | observe → link → rank → observe | "what comes back around affects what happens next" |
 | convergence | ecosystem reaches balance | body temperature stabilizes | [[focus]] stabilizes | "things settle into a pattern" |
-| conservation | matter cycles through food web | energy in = energy out | Σπ = 1 always | "nothing is created or destroyed, just moves" |
+| conservation | matter cycles through food web | energy in = energy out | Σφ* = 1 always | "nothing is created or destroyed, just moves" |
 | emergence | flock from bird rules | consciousness from neuron firing | [[egregore]] from [[cyberlinks]] | "the whole is something the parts could not do alone" |
 | self-organization | crystals form without instruction | wounds heal without commands | [[cyberank]] emerges without authority | "order appears by itself when conditions are right" |
 

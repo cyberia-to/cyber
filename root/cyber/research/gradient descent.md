@@ -24,9 +24,9 @@ the [[cybergraph]] does not start with a loss. it starts with a physics: the [[t
 
 $$\phi^{(t+1)} = \text{norm}\big[\lambda_d \cdot D(\phi^t) + \lambda_s \cdot S(\phi^t) + \lambda_h \cdot H_\tau(\phi^t)\big]$$
 
-where $D$ is [[diffusion]] (exploration), $S$ is the screened [[springs]] operator (structural consistency), and $H_\tau$ is the [[heat]] kernel (multi-scale adaptation). this iteration has a unique fixed point $\pi^*$ by the Banach fixed-point theorem — the [[cybergraph]] converges to it from any starting distribution.
+where $D$ is [[diffusion]] (exploration), $S$ is the screened [[springs]] operator (structural consistency), and $H_\tau$ is the [[heat]] kernel (multi-scale adaptation). this iteration has a unique fixed point $\phi^*$ by the Banach fixed-point theorem — the [[cybergraph]] converges to it from any starting distribution.
 
-$\pi^*$ is the [[focus]] distribution: the probability that attention lands on particle $p$ given the full structure of the graph. it is what the network collectively knows, encoded as a measure over all [[particles]].
+$\phi^*$ is the [[focus]] distribution: the probability that attention lands on particle $p$ given the full structure of the graph. it is what the network collectively knows, encoded as a measure over all [[particles]].
 
 that fixed point minimizes a [[free energy]] functional:
 
@@ -49,7 +49,7 @@ the canonical ensemble from statistical mechanics — applied to [[knowledge]]. 
 - $\tau$ sets the scale at which the [[heat]] kernel smooths
 - the choice of hash function $H$ determines the [[particle]] identity space
 
-what is NOT designed: the destination. the shape of $\mathcal{F}$ over the space of probability distributions on $P$ — the [[particles]] — is derived from the graph structure itself. as the graph grows, the landscape changes. the objective co-evolves with the system. as neurons add [[cyberlinks]], they shift the Laplacian $L$, which reshapes $\mathcal{F}$, which moves $\pi^*$.
+what is NOT designed: the destination. the shape of $\mathcal{F}$ over the space of probability distributions on $P$ — the [[particles]] — is derived from the graph structure itself. as the graph grows, the landscape changes. the objective co-evolves with the system. as neurons add [[cyberlinks]], they shift the Laplacian $L$, which reshapes $\mathcal{F}$, which moves $\phi^*$.
 
 in ML terms: the graph is simultaneously the data, the model, and the loss landscape. there is no train/inference separation. every new fact shifts the objective.
 
@@ -74,7 +74,7 @@ the [[tri-kernel]] computes the same fixed point over the entire [[cybergraph]],
 | update mechanism | gradient batch | live [[cyberlinks]] |
 | agents | single model | multi-agent [[consensus]] |
 | optimization space | parametric $\mathcal{P}_\theta$ | full simplex $\Delta^{|P|-1}$ |
-| objective | designed $L(\theta)$ | emergent $J(\pi^*)$ |
+| objective | designed $L(\theta)$ | emergent $J(\phi^*)$ |
 | provenance | erased into weights | traceable to [[cyberlink]] |
 
 the transformer found the local version accidentally: stack attention heads until the architecture is powerful enough to approximate any function. the [[cybergraph]] achieves the global version by design: make the graph structure — the connectivity, the weights, the history — the primary object, and derive the equilibrium from it.
@@ -99,11 +99,11 @@ gradient descent is an efficient algorithm for the parametric case. the [[tri-ke
 
 the two computations are not competitors. they are the two timescales of a single architecture.
 
-slow path — the [[tri-kernel]] runs in [[consensus]] every block. every new [[cyberlink]] shifts $\pi^*$. this is computationally intensive but produces the ground truth: what the entire network collectively knows, persistently updated, with full provenance.
+slow path — the [[tri-kernel]] runs in [[consensus]] every block. every new [[cyberlink]] shifts $\phi^*$. this is computationally intensive but produces the ground truth: what the entire network collectively knows, persistently updated, with full provenance.
 
-fast path — a [[compiled transformer]] is derived analytically from the graph and fine-tuned against $\pi^*$. given a query particle, it outputs $\pi^*(\cdot | p)$ in milliseconds via a single forward pass. gradient descent is the mechanism that compresses the graph's high-dimensional fixed point into a low-dimensional parametric approximation.
+fast path — a [[compiled transformer]] is derived analytically from the graph and fine-tuned against $\phi^*$. given a query particle, it outputs $\phi^*(\cdot | p)$ in milliseconds via a single forward pass. gradient descent is the mechanism that compresses the graph's high-dimensional fixed point into a low-dimensional parametric approximation.
 
-the [[compiled transformer]] is initialized at $\pi^*$ — the provably optimal starting point — and fine-tunes only what the graph cannot encode: temporal patterns, implicit associations, linguistic dynamics. a transformer trained from text sequences alone starts from random weights, approximating the same equilibrium from first principles, at enormous cost.
+the [[compiled transformer]] is initialized at $\phi^*$ — the provably optimal starting point — and fine-tunes only what the graph cannot encode: temporal patterns, implicit associations, linguistic dynamics. a transformer trained from text sequences alone starts from random weights, approximating the same equilibrium from first principles, at enormous cost.
 
 the dual timescale — seconds for inference (transformer), blocks for ground truth ([[tri-kernel]]), epochs for retraining (gradient descent) — gives a [[superintelligence]] both depth and speed: the accumulated structure of the full graph and the sub-second response time that interfaces require.
 
@@ -115,9 +115,9 @@ live provenance — every claim in the graph traces to a specific [[neuron]], [[
 
 self-knowledge — the graph can be queried about itself. "what do neurons collectively believe about X?" is a first-class operation on the [[Laplacian]]. a [[transformer]] cannot introspect its own training data — that information was compressed and lost.
 
-open membership — any [[neuron]] can add [[cyberlinks]] and shift $\pi^*$ immediately. gradient descent requires centralized retraining. the [[cybergraph]]'s optimization is genuinely decentralized and permissionless.
+open membership — any [[neuron]] can add [[cyberlinks]] and shift $\phi^*$ immediately. gradient descent requires centralized retraining. the [[cybergraph]]'s optimization is genuinely decentralized and permissionless.
 
-verification — the [[tri-kernel]] runs in [[consensus]]. every node computes the same $\pi^*$. there is no trusted authority over the objective. a gradient-descended model must be trusted; a [[cybergraph]] equilibrium can be verified.
+verification — the [[tri-kernel]] runs in [[consensus]]. every node computes the same $\phi^*$. there is no trusted authority over the objective. a gradient-descended model must be trusted; a [[cybergraph]] equilibrium can be verified.
 
 ## synthesis
 
@@ -129,4 +129,4 @@ the insight for ML people: the loss function was never the fundamental object. i
 
 [[transformer|transformers]] found that local approximation accidentally. the [[cybergraph]] shows why it works, where it is limited, and how to extend it to the global case.
 
-see [[tri-kernel]] for the three operators. see [[collective focus theorem]] for convergence proofs. see [[syntropy]] for the information measure that $\pi^*$ maximizes. see [[compiled transformer]] for the fast inference path. see [[cyber/focus]] for the engineering implementation.
+see [[tri-kernel]] for the three operators. see [[collective focus theorem]] for convergence proofs. see [[syntropy]] for the information measure that $\phi^*$ maximizes. see [[compiled transformer]] for the fast inference path. see [[cyber/focus]] for the engineering implementation.

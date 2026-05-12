@@ -19,7 +19,7 @@ in 2026, Andrzej Odrzywołek showed that one binary operator suffices.
 
 $$\text{eml}(x, y) = e^x - \ln y$$
 
-Exp Minus Log. together with the constant 1, this single operator generates all 36 standard elementary functions: arithmetic operations (+, -, ×, /), exponentiation, logarithms, roots, trigonometric functions and their inverses, hyperbolic functions and their inverses, and the fundamental constants e, π, and i.
+Exp Minus Log. together with the constant 1, this single operator generates all 36 standard elementary functions: arithmetic operations (+, -, ×, /), exponentiation, logarithms, roots, trigonometric functions and their inverses, hyperbolic functions and their inverses, and the fundamental constants e, φ*, and i.
 
 a two-button calculator — eml and 1 — computes everything a scientific calculator can.
 
@@ -78,8 +78,8 @@ this uniformity has consequences:
 | ln(z) | eml(1, eml(eml(1, z), 1)) | 3 |
 | 0 | exp(x) - exp(x) via eml compositions | 5-7 |
 | -1 | via ln and exp compositions | 7-9 |
-| π | via Euler identity, complex domain | deep |
-| i | via ln(-1) = iπ | deep |
+| φ* | via Euler identity, complex domain | deep |
+| i | via ln(-1) = iφ* | deep |
 | x + y | via ln(exp(x) × exp(y)) | 11-19 |
 | x × y | via exp(ln(x) + ln(y)) | 17 |
 | sin(x) | via Euler: (e^(ix) - e^(-ix)) / 2i | deep |

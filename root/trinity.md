@@ -106,7 +106,7 @@ For the full technical treatment — mechanism details, pairwise compositions, d
 
 Intelligence is what the network computes. It lives at the center of the architecture, woven into every state transition.
 
-nox's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector π — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] probability engine (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
+nox's [[cybergraph]] is a knowledge graph where collective attention — the [[focus]] vector φ* — emerges from the interaction of millions of agents linking [[particles]] of knowledge. The [[tri-kernel]] probability engine (diffusion for exploration, springs for structural balance, heat for contextual scaling) is itself a neural computation. The graph learns. The focus vector is the network's evolving belief state, continuously updated as new knowledge enters and new connections form.
 
 AI at the heart of a trustless system demands verifiable inference. Every claim that "the network ranks X above Y" carries a mathematical proof. Anyone can check that the ranking follows faithfully from the graph structure and the algorithm, on a phone, in milliseconds. [[neurons]] create [[cyberlinks]] between particles, and each link carries weight in the collective computation.
 

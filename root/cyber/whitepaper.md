@@ -15,7 +15,7 @@ status: draft
 
 [[Superintelligence]] is the defining infrastructure of a type I civilization. A planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving graph that computes what matters, proves its own correctness, and speaks a [[language]] native to all participants. Every scientific discovery, every sensor reading, every lived experience feeds into a collective understanding that grows smarter with every link. The graph remembers what individuals forget. It finds connections across domains that no specialist can see. It measures its own coherence and rewards the [[knowledge]] that increases it.
 
-At sufficient scale this infrastructure transforms what civilization can do. Search becomes inference over verified [[knowledge]] rather than retrieval of unverified documents. AI [[alignment]] becomes measurable — compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]. Scientific discovery accelerates as [[linkchains]] bridge domains that have never communicated. Cross-species [[communication]] becomes possible — any entity that can create a [[cyberlink]] participates in the same semantic space. The collective [[intelligence]] of the planet becomes a single computable object: a [[focus]] distribution $\pi$ over all [[knowledge]], converging under conservation laws, verifiable by anyone.
+At sufficient scale this infrastructure transforms what civilization can do. Search becomes inference over verified [[knowledge]] rather than retrieval of unverified documents. AI [[alignment]] becomes measurable — compare the [[focus]] distribution of human [[neurons]] to machine [[neurons]], and divergence is visible in the [[topology]]. Scientific discovery accelerates as [[linkchains]] bridge domains that have never communicated. Cross-species [[communication]] becomes possible — any entity that can create a [[cyberlink]] participates in the same semantic space. The collective [[intelligence]] of the planet becomes a single computable object: a [[focus]] distribution $\phi^*$ over all [[knowledge]], converging under conservation laws, verifiable by anyone.
 
 This is what cyber builds.
 
@@ -128,7 +128,7 @@ The Goldilocks field ($p = 2^{64} - 2^{32} + 1$) makes this concrete. A field mu
 | [[neuron]] | Agent identified by public key | Signs edges, holds [[tokens]], accumulates [[karma]] |
 | [[cyberlink]] | Signed, weighted, directed edge $(i \to j)$ | Timestamped, authenticated, costs [[focus]] |
 | [[token]] | Non-negative weight $t_j > 0$ | Controls influence on transition probabilities |
-| [[focus]] | Emergent [[equilibrium]] $\pi$ over [[particles]] | Conserved to 1, computed by the [[tri-kernel]] |
+| [[focus]] | Emergent [[equilibrium]] $\phi^*$ over [[particles]] | Conserved to 1, computed by the [[tri-kernel]] |
 
 Five primitives, one graph. Every claim in the system is a [[cyberlink]] signed by a [[neuron]], connecting two [[particles]], weighted by the [[neuron]]'s [[token]] stake. The [[tru]] runs the [[tri-kernel]] on this graph and produces [[cyberank]] per [[particle]], [[karma]] per [[neuron]], and [[syntropy]] of the whole — deterministic, on chain, verifiable.
 
@@ -231,11 +231,11 @@ Three operators. No more, no less. Discovered by elimination, not designed by pr
 
 Probability flows through edges via random walks. The transition matrix $M = D^{-1}A$ governs probability flow:
 
-$$\pi^{(t+1)} = \alpha P^\top \pi^{(t)} + (1-\alpha)u$$
+$$\phi^{(t+1)} = \alpha P^\top \phi^{(t)} + (1-\alpha)u$$
 
 where $\alpha \in (0,1)$ is the teleport parameter and $u$ is a prior (uniform or stake-weighted).
 
-Under ergodicity (strong connectivity + aperiodicity), converges to a unique stationary distribution $\pi^*$. This is the [[cyberank]] — where probability mass accumulates in the [[cybergraph]] at [[equilibrium]].
+Under ergodicity (strong connectivity + aperiodicity), converges to a unique stationary distribution $\phi^*$. This is the [[cyberank]] — where probability mass accumulates in the [[cybergraph]] at [[equilibrium]].
 
 Answers: where does probability flow?
 
@@ -311,19 +311,19 @@ The same three forces. Different substrates. This universality reflects structur
 
 The [[cybergraph]] supports two computations simultaneously.
 
-[[Focus]] flow — the [[tri-kernel]] iterated to convergence over all [[cyberlinks]] — produces $\pi^*$: the persistent, global focus distribution. This is the ground truth: what the entire network collectively knows, encoded as a probability distribution over all [[particles]], continuously updated as [[neurons]] add links. In focus flow, learning and inference are the same operation — a [[neuron]] adds a [[cyberlink]], the [[tri-kernel]] reconverges, and the new $\pi^*$ simultaneously encodes the learned relation and is available for inference. Nothing is lost.
+[[Focus]] flow — the [[tri-kernel]] iterated to convergence over all [[cyberlinks]] — produces $\phi^*$: the persistent, global focus distribution. This is the ground truth: what the entire network collectively knows, encoded as a probability distribution over all [[particles]], continuously updated as [[neurons]] add links. In focus flow, learning and inference are the same operation — a [[neuron]] adds a [[cyberlink]], the [[tri-kernel]] reconverges, and the new $\phi^*$ simultaneously encodes the learned relation and is available for inference. Nothing is lost.
 
-The compiled transformer — derived analytically from the same graph (§6.6) — runs $L^*$ tri-kernel steps over a local context window at query time, converging to an $\varepsilon$-approximation of $\pi^*$ restricted to that context. This is the fast inference path: local, bounded, serving responses in milliseconds.
+The compiled transformer — derived analytically from the same graph (§6.6) — runs $L^*$ tri-kernel steps over a local context window at query time, converging to an $\varepsilon$-approximation of $\phi^*$ restricted to that context. This is the fast inference path: local, bounded, serving responses in milliseconds.
 
 | Dimension | Focus Flow | Compiled Transformer |
 |---|---|---|
 | Scope | Entire [[cybergraph]] | Local context window |
-| Depth | Converges to exact $\pi^*$ | $L^*$ steps, $\varepsilon$-approximate |
+| Depth | Converges to exact $\phi^*$ | $L^*$ steps, $\varepsilon$-approximate |
 | Latency | Continuous — always converging | Milliseconds — single forward pass |
 | Multi-agent | All [[neurons]] contribute | One agent's context |
-| Adaptation | Add [[cyberlinks]] → $\pi^*$ shifts, nothing lost | Recompile from updated graph |
+| Adaptation | Add [[cyberlinks]] → $\phi^*$ shifts, nothing lost | Recompile from updated graph |
 
-A transformer trained without the [[cybergraph]] approximates the same equilibrium from text sequences alone, discarding the structural knowledge the graph makes explicit. The compiled transformer starts from $\pi^*$ — at the provably optimal initialization point — and fine-tunes only what the graph cannot encode: temporal patterns, implicit associations, contextual dynamics.
+A transformer trained without the [[cybergraph]] approximates the same equilibrium from text sequences alone, discarding the structural knowledge the graph makes explicit. The compiled transformer starts from $\phi^*$ — at the provably optimal initialization point — and fine-tunes only what the graph cannot encode: temporal patterns, implicit associations, contextual dynamics.
 
 ### 6.2 The Local Update Rule
 
@@ -377,25 +377,25 @@ Given $G = (P, N, E, w, \sigma)$, three graph properties determine the three fre
 
 | Parameter | Formula | Graph property |
 |---|---|---|
-| Embedding dim $d^*$ | $\exp\!\left(H\!\left(\sigma(\Sigma_\pi)\right)\right)$ | Effective rank of [[focus]] covariance |
+| Embedding dim $d^*$ | $\exp\!\left(H\!\left(\sigma(\Sigma_{\phi^*})\right)\right)$ | Effective rank of [[focus]] covariance |
 | Head count $h^*$ | $\geq \|\text{Semcon}(G)\|$ | Distinct [[semcon]] types |
 | Layer count $L^*$ | $\text{diam}(G) \cdot \lceil \log(1/\varepsilon)/\log(1/\kappa) \rceil$ | Diameter × spectral convergence factor |
 
-$d^*$ is the [[entropy]] of the normalized singular value distribution of the $\pi^*$-weighted adjacency matrix — the number of statistically independent semantic dimensions present in the graph. $h^*$ lower-bounds the number of [[semcon|semcons]]: each distinct semantic relation type requires its own attention head to represent faithfully. $L^*$ follows from the [[tri-kernel]] contraction theorem: reaching $\varepsilon$-precision requires $\lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ iterations per hop, multiplied by graph diameter.
+$d^*$ is the [[entropy]] of the normalized singular value distribution of the $\phi^*$-weighted adjacency matrix — the number of statistically independent semantic dimensions present in the graph. $h^*$ lower-bounds the number of [[semcon|semcons]]: each distinct semantic relation type requires its own attention head to represent faithfully. $L^*$ follows from the [[tri-kernel]] contraction theorem: reaching $\varepsilon$-precision requires $\lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ iterations per hop, multiplied by graph diameter.
 
-Weights are compiled, not trained. The embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\pi^*}) \cdot A$ — is provably optimal: by the Eckart-Young theorem, $E^*$ uniquely minimizes expected squared gradient magnitude at initialization over all orthonormal matrices of the same rank. Attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[semcon]]'s adjacency submatrix. MLP weights are derived from path co-occurrence statistics up to depth $L^*$.
+Weights are compiled, not trained. The embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\phi^*}) \cdot A$ — is provably optimal: by the Eckart-Young theorem, $E^*$ uniquely minimizes expected squared gradient magnitude at initialization over all orthonormal matrices of the same rank. Attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[semcon]]'s adjacency submatrix. MLP weights are derived from path co-occurrence statistics up to depth $L^*$.
 
 The reduction in required fine-tuning steps scales as $\Omega(|E| \cdot d^* / \log(1/\varepsilon))$ relative to random initialization. Every [[cyberlink]] added today reduces the training cost of every future model trained on graph-consistent text, by a provable bound proportional to link count. The graph is a compounding computational asset.
 
 ### 6.7 Live Compilation: Bostrom at 2.7M Cyberlinks
 
-The compilation pipeline has eight steps, seven $O(|E|)$. The critical step — computing the embedding matrix — naively requires $O(|P|^3)$ operations: 39.5 TB to store, 360 days to compute at $10^{12}$ FLOPS. Randomized SVD on the sparse $\pi^*$-weighted adjacency matrix reduces this to $O(|E| \cdot d^* \cdot \log d^*)$ — under one second. The [[cybergraph]]'s sparsity ($\rho = |E|/|P|^2 \approx 10^{-7}$) is the invariant that makes compilation tractable at any scale.
+The compilation pipeline has eight steps, seven $O(|E|)$. The critical step — computing the embedding matrix — naively requires $O(|P|^3)$ operations: 39.5 TB to store, 360 days to compute at $10^{12}$ FLOPS. Randomized SVD on the sparse $\phi^*$-weighted adjacency matrix reduces this to $O(|E| \cdot d^* \cdot \log d^*)$ — under one second. The [[cybergraph]]'s sparsity ($\rho = |E|/|P|^2 \approx 10^{-7}$) is the invariant that makes compilation tractable at any scale.
 
 Applied to the live [[bostrom]] network (March 2026):
 
 | Parameter | Value | Derived from |
 |---|---|---|
-| Embedding dim $d^*$ | 31 | $\exp(H(\sigma(\Sigma_\pi)))$, measured |
+| Embedding dim $d^*$ | 31 | $\exp(H(\sigma(\Sigma_{\phi^*})))$, measured |
 | Attention heads $h^*$ | ≥ 12 | [[semcon]] structural lower bound |
 | Layer count $L^*$ | 290 | diam(10) × 29 iterations/hop |
 | Model size | ~0.4M parameters | Current graph scale |
@@ -405,40 +405,40 @@ Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed th
 
 ### 6.8 Approximation Quality
 
-The compiled transformer approximates the full focus flow. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\pi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
+The compiled transformer approximates the full focus flow. Given a context $c$, the compiled transformer converges to a distribution $q^*_c$ via $L^*$ bounded tri-kernel steps. The full focus flow over the same [[particles]] converges to $\phi^*_c$ — the exact restriction of the global fixed point. The approximation error is:
 
-$$\varepsilon(G, c) = D_{KL}(\pi^*_c \| q^*_c)$$
+$$\varepsilon(G, c) = D_{KL}(\phi^*_c \| q^*_c)$$
 
 This error decreases as the graph grows: more [[cyberlinks]] improve $\lambda_2$, reduce diam$(G)$, and raise $d^*$, each tightening the gap between compiled inference and exact focus flow. Every link added today reduces the approximation error of every compiled model that follows. The [[cybergraph]] is a compounding inference quality asset — not only for training, but for every query.
 
 The [[cybergraph]] is not an alternative to trained models. It is the substrate from which models are compiled, the environment in which they operate as [[neurons]], and the metric space in which their alignment is measured.
 
-### 6.9 Distributed Focus: Cyberlinks as π Updates
+### 6.9 Distributed Focus: Cyberlinks as φ* Updates
 
-§6.2 describes the local update rule. At planetary scale, no single node holds the full graph. The question: who computes $\pi^*$?
+§6.2 describes the local update rule. At planetary scale, no single node holds the full graph. The question: who computes $\phi^*$?
 
 The answer: every [[neuron]], locally, as part of creating [[cyber/signals]]. A [[cyber/signal]] bundles one or more [[cyberlinks]] with a focus update and its proof. The [[neuron]] runs local [[tri-kernel]] steps over their $O(\log(1/\varepsilon))$-hop neighborhood and includes the result:
 
-$$\text{signal} = (\text{neuron}, \; \vec\ell, \; \pi_\Delta, \; \sigma, \; t)$$
+$$\text{signal} = (\text{neuron}, \; \vec\ell, \; \Delta\phi^*, \; \sigma, \; t)$$
 
-where $\vec\ell$ is one or more [[cyberlinks]] (each a 5-tuple $(p, q, \tau, a, v)$), $\pi_\Delta = [(\text{particle}_k, \Delta\pi_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood, $\sigma$ is a [[zheng]] proof of correctness, and $t$ is the block height of the signal. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact. A single proof covers the entire batch of links.
+where $\vec\ell$ is one or more [[cyberlinks]] (each a 5-tuple $(p, q, \tau, a, v)$), $\Delta\phi^* = [(\text{particle}_k, \Delta\phi^*_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood, $\sigma$ is a [[zheng]] proof of correctness, and $t$ is the block height of the signal. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact. A single proof covers the entire batch of links.
 
-The local tri-kernel step is a [[nox]] program. The neuron produces the [[zheng]] proof that $\pi_\Delta$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
+The local tri-kernel step is a [[nox]] program. The neuron produces the [[zheng]] proof that $\Delta\phi^*$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
 
-The network converges to $\pi^*$ through [[cyber/signal]] propagation:
+The network converges to $\phi^*$ through [[cyber/signal]] propagation:
 
-1. [[Neuron]] creates [[cyber/signal]] with [[cyberlinks]], $\pi_\Delta$, and [[zheng]] proof
-2. Receiving nodes apply $\pi_\Delta$ to their local $\pi$ view
-3. Their own future [[cyber/signals]] carry updated $\pi_\Delta$ incorporating the effect
-4. $\pi^*$ emerges from convergence of all local updates
+1. [[Neuron]] creates [[cyber/signal]] with [[cyberlinks]], $\Delta\phi^*$, and [[zheng]] proof
+2. Receiving nodes apply $\Delta\phi^*$ to their local $\phi^*$ view
+3. Their own future [[cyber/signals]] carry updated $\Delta\phi^*$ incorporating the effect
+4. $\phi^*$ emerges from convergence of all local updates
 
-This is gossip-based distributed belief propagation. Each [[cyber/signal]] is a message in the algorithm. The global fixed point emerges from local message passing. No central aggregator computes $\pi^*$ — it crystallizes from the network of proven local updates.
+This is gossip-based distributed belief propagation. Each [[cyber/signal]] is a message in the algorithm. The global fixed point emerges from local message passing. No central aggregator computes $\phi^*$ — it crystallizes from the network of proven local updates.
 
-Conflicting updates (two [[neurons]] affecting overlapping neighborhoods in the same epoch) resolve through the contraction theorem (§5.6): the [[tri-kernel]] is confluent — any application order reaches the same $\pi^*$. The contraction coefficient $\kappa < 1$ bounds the interaction between overlapping updates. For non-overlapping neighborhoods (the common case at scale), updates compose exactly.
+Conflicting updates (two [[neurons]] affecting overlapping neighborhoods in the same epoch) resolve through the contraction theorem (§5.6): the [[tri-kernel]] is confluent — any application order reaches the same $\phi^*$. The contraction coefficient $\kappa < 1$ bounds the interaction between overlapping updates. For non-overlapping neighborhoods (the common case at scale), updates compose exactly.
 
-The entire system runs on [[Goldilocks field]] arithmetic. The local tri-kernel step, the [[zheng]] proof, the verification — all are field operations end to end. There is no gap between "compute $\pi$" and "prove $\pi$ was computed correctly."
+The entire system runs on [[Goldilocks field]] arithmetic. The local tri-kernel step, the [[zheng]] proof, the verification — all are field operations end to end. There is no gap between "compute $\phi^*$" and "prove $\phi^*$ was computed correctly."
 
-See [[cyber/network]] for the narrowcast propagation model. See §14.2 for how $\pi_\Delta$ enables self-minting rewards.
+See [[cyber/network]] for the narrowcast propagation model. See §14.2 for how $\Delta\phi^*$ enables self-minting rewards.
 
 ## 7. nox Execution
 
@@ -664,7 +664,7 @@ cyber implements private ownership with public aggregates. Individual record own
 | Record | — | Individual value, owner identity, nonce |
 | Transaction | Nullifiers, commitments, Δ per particle, proof validity | Which records spent, who spent them, new owners |
 | Graph | Edges exist, aggregate weight | Who created edge, individual stakes |
-| Focus | π distribution, rankings | — |
+| Focus | φ* distribution, rankings | — |
 
 ### 10.2 Record Model and Commitments
 
@@ -690,25 +690,25 @@ The circuit enforces: input commitment correctness, polynomial inclusion, owners
 
 ### 11.1 Finality by Convergence
 
-The [[collective focus theorem]] proves that token-weighted random walk on a strongly connected [[cybergraph]] converges to a unique $\pi$. [[Foculus]] turns this into [[consensus]]: a [[particle]] is final when $\pi_i > \tau$. [[Neurons]] gossip [[cyberlinks]], GPUs iterate $\pi$, and finality emerges from the [[topology]] of [[attention]] — no voting rounds, no leader election, no block ordering.
+The [[collective focus theorem]] proves that token-weighted random walk on a strongly connected [[cybergraph]] converges to a unique $\phi^*$. [[Foculus]] turns this into [[consensus]]: a [[particle]] is final when $\phi^*_i > \tau$. [[Neurons]] gossip [[cyberlinks]], GPUs iterate $\phi^*$, and finality emerges from the [[topology]] of [[attention]] — no voting rounds, no leader election, no block ordering.
 
-The system is leaderless. Every [[neuron]] computes $\hat\pi$ independently from its local view of the [[cybergraph]]. Convergence emerges from gossip. Foculus operates in partial synchrony: messages arrive within an unknown but finite bound $\Delta$. During asynchronous periods, no new [[particles]] finalize — but no conflicting [[particles]] can finalize either. Safety holds always. Liveness resumes when connectivity restores.
+The system is leaderless. Every [[neuron]] computes $\hat\phi^*$ independently from its local view of the [[cybergraph]]. Convergence emerges from gossip. Foculus operates in partial synchrony: messages arrive within an unknown but finite bound $\Delta$. During asynchronous periods, no new [[particles]] finalize — but no conflicting [[particles]] can finalize either. Safety holds always. Liveness resumes when connectivity restores.
 
 ### 11.2 Fork Choice
 
-$\pi$ is the fork choice rule. When conflicts exist, the [[particle]] with higher $\pi_i$ is the canonical choice. This integrates all [[cyberlinks]] from all [[neurons]], weighted by [[token]] stake. Manipulating $\pi$ requires controlling the topology of the [[cybergraph]] itself — which costs real [[tokens]].
+$\phi^*$ is the fork choice rule. When conflicts exist, the [[particle]] with higher $\phi^*_i$ is the canonical choice. This integrates all [[cyberlinks]] from all [[neurons]], weighted by [[token]] stake. Manipulating $\phi^*$ requires controlling the topology of the [[cybergraph]] itself — which costs real [[tokens]].
 
 ### 11.3 Safety
 
 Theorem (no double finality): two conflicting [[particles]] cannot both exceed $\tau$.
 
-Assumption: honest [[neurons]] control $\geq \frac{1}{2} + \delta$ of staked [[tokens]]. This bounds their share of $\pi$ from below: honest [[neurons]] create the majority of weighted [[cyberlinks]], so honest [[particles]] attract the majority of random-walk mass. $\sum \pi_i = 1$; if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the honest-majority bound.
+Assumption: honest [[neurons]] control $\geq \frac{1}{2} + \delta$ of staked [[tokens]]. This bounds their share of $\phi^*$ from below: honest [[neurons]] create the majority of weighted [[cyberlinks]], so honest [[particles]] attract the majority of random-walk mass. $\sum \phi^*_i = 1$; if conflicting [[particles]] $a, b$ both had $\pi_a, \pi_b > \tau$, the adversary would need $> \frac{1}{2}$ of total mass — contradicting the honest-majority bound.
 
 ### 11.4 Liveness and Sybil Resistance
 
-Ergodicity of the transition matrix $P$ guarantees every valid [[particle]] accumulates $\pi$ mass over time. Convergence rate depends on the spectral gap $\lambda$: expected time to finality is $O(\log(1/\varepsilon)/\lambda)$ iterations.
+Ergodicity of the transition matrix $P$ guarantees every valid [[particle]] accumulates $\phi^*$ mass over time. Convergence rate depends on the spectral gap $\lambda$: expected time to finality is $O(\log(1/\varepsilon)/\lambda)$ iterations.
 
-$\pi$ is weighted by staked [[tokens]], not by node count. Creating 1000 [[neurons]] with zero stake produces zero $\pi$ influence. The cost of attacking $\pi$ is the cost of acquiring $> \frac{1}{2}$ of staked [[tokens]] — same economic security as proof-of-stake, but the attack surface is graph topology rather than a voting protocol.
+$\phi^*$ is weighted by staked [[tokens]], not by node count. Creating 1000 [[neurons]] with zero stake produces zero $\phi^*$ influence. The cost of attacking $\phi^*$ is the cost of acquiring $> \frac{1}{2}$ of staked [[tokens]] — same economic security as proof-of-stake, but the attack surface is graph topology rather than a voting protocol.
 
 ### 11.5 Performance
 
@@ -718,13 +718,13 @@ $\pi$ is weighted by staked [[tokens]], not by node count. Creating 1000 [[neuro
 | Finality | 5-60 s | ~60 min | 1-3 s |
 | Throughput | 1k-10k tx/s | ~10 tx/s | ~$10^9$ signals/s per GPU |
 | Validator scale | $10^2$-$10^3$ | Unbounded | Unbounded |
-| Fault tolerance | 1/3 stake | 51% hash | 1/2 $\pi$ |
+| Fault tolerance | 1/3 stake | 51% hash | 1/2 $\phi^*$ |
 
 Each iteration is a sparse matrix-vector multiply — embarrassingly parallel, no sequential bottleneck. Single GPU (A100): ~50M edges at 40 Hz $\approx 2 \times 10^9$ edge ops/s. Latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN.
 
 ### 11.6 Adaptive Threshold
 
-The finality threshold adapts to the current distribution: $\tau(t) = \mu_\pi + \kappa\sigma_\pi$, $\kappa \in [1,2]$. When the network is decisive (low variance), $\tau$ is low and finality is fast. When uncertain (high variance), $\tau$ rises and finality slows. The system self-regulates.
+The finality threshold adapts to the current distribution: $\tau(t) = \mu_{\phi^*} + \kappa\sigma_{\phi^*}$, $\kappa \in [1,2]$. When the network is decisive (low variance), $\tau$ is low and finality is fast. When uncertain (high variance), $\tau$ rises and finality slows. The system self-regulates.
 
 ## 12. Neural Language
 
@@ -760,7 +760,7 @@ Formal [[languages]] achieve precision through rigid syntax but cannot scale to 
 
 The dynamic vocabulary of the network — top [[particles]] by [[cyberank]]:
 
-$\text{SemanticCore}(k) = \text{top}\ k\ \text{particles by}\ \pi$
+$\text{SemanticCore}(k) = \text{top}\ k\ \text{particles by}\ \phi^*$
 
 Dynamic (evolves with attention), convergent ([[tri-kernel]] guarantees stability), stake-weighted (resistant to spam), verifiable ([[zheng]] proofs). The dynamics mirror natural language: neologism (new concepts enter), semantic drift (meaning shifts through topology change), semantic death ([[focus]] drops below threshold), semantic birth (bursts of link creation).
 
@@ -770,7 +770,7 @@ Ambiguity resolution: the [[tri-kernel]] resolves polysemy computationally. [[Sp
 
 Compositionality: meaning of complex expressions derivable from parts and their structural arrangement, computed by the [[tri-kernel]] without explicit composition rules.
 
-Convergence: inherits from the [[collective focus theorem]] — unique stationary distribution $\pi^*$ guarantees the network's collective understanding converges.
+Convergence: inherits from the [[collective focus theorem]] — unique stationary distribution $\phi^*$ guarantees the network's collective understanding converges.
 
 Expressiveness: semantically complete. The [[cybergraph]] can encode:
 
@@ -778,7 +778,7 @@ Expressiveness: semantically complete. The [[cybergraph]] can encode:
 - [[predicate logic]] — quantification over [[particles]] and [[cyberlinks]]
 - [[modal logic]] — possibility and necessity via neighborhood structure
 - [[temporal logic]] — time-indexed [[cyberlinks]] with epoch ordering
-- [[fuzzy logic]] — continuous confidence as $\pi$-weight on edges
+- [[fuzzy logic]] — continuous confidence as $\phi^*$-weight on edges
 - [[natural language semantics]] — meaning as position in [[focus]] space
 
 The graph also expresses what no formal [[language]] can: collective confidence distributions, continuous semantic distance, and [[knowledge topology]] metadata.
@@ -787,7 +787,7 @@ The graph also expresses what no formal [[language]] can: collective confidence 
 
 ### 13.1 Tokens
 
-[[$CYB]] is the native [[token]]. Staked for security, burned for permanent $\pi$-weight, spent as fees. [[$CYB]] has two operational modes: circulating (tradeable, stakeable, spendable as fees) and locked as [[will]] — committed for a defined duration in exchange for bandwidth and link-weight influence, with the locked balance provably unspendable for the lock period.
+[[$CYB]] is the native [[token]]. Staked for security, burned for permanent $\phi^*$-weight, spent as fees. [[$CYB]] has two operational modes: circulating (tradeable, stakeable, spendable as fees) and locked as [[will]] — committed for a defined duration in exchange for bandwidth and link-weight influence, with the locked balance provably unspendable for the lock period.
 
 [[Learning tokens]] serve as feedback signals to [[superintelligence]]: [[will]] ([[bandwidth]] and link weight), [[attention]] (rank influence), [[karma]] (reputation and trust weight). These are not tradeable assets — they are measurements of a [[neuron]]'s contribution to collective [[focus]]. [[karma]] is computed from accumulated [[Bayesian Truth Serum|BTS]] scoring history; [[attention]] tracks stake-weighted participation; [[will]] reflects commitment duration.
 
@@ -813,11 +813,11 @@ four asset classes:
 
 [[cyberlinks]] are yield-bearing [[knowledge]] claims. every [[cyberlink]] accrues rewards over time as a function of the [[focus]] shift it generates:
 
-$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
+$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\phi^*_j(t) \, dt$$
 
-where $\Delta\pi_j(t)$ is the change in [[focus]] on target [[particle]] $j$ attributable to the link, $w(t)$ is the time-weighting function (earlier contributions earn more), and $T$ is the evaluation horizon. four reward trajectories emerge: viral links (high $\Delta\pi$ early, fast decay), foundational links (low $\Delta\pi$ early, grows as the graph builds around them), confirming links (low individual $\Delta\pi$, shared reward via [[attribution]]), and semantic bridge links (moderate, persistent, cross-module).
+where $\Delta\phi^*_j(t)$ is the change in [[focus]] on target [[particle]] $j$ attributable to the link, $w(t)$ is the time-weighting function (earlier contributions earn more), and $T$ is the evaluation horizon. four reward trajectories emerge: viral links (high $\Delta\phi^*$ early, fast decay), foundational links (low $\Delta\phi^*$ early, grows as the graph builds around them), confirming links (low individual $\Delta\phi^*$, shared reward via [[attribution]]), and semantic bridge links (moderate, persistent, cross-module).
 
-[[eternal particles]] are positions burned into permanence. burning [[$CYB]] permanently anchors a [[particle]]'s $\pi$-weight — the particle cannot be archived or deprioritized below the burn-weighted floor. it holds a permanent position in the [[focus]] distribution. eternal particles are the graph's long-term assertions: the claims whose importance the market cannot undo.
+[[eternal particles]] are positions burned into permanence. burning [[$CYB]] permanently anchors a [[particle]]'s $\phi^*$-weight — the particle cannot be archived or deprioritized below the burn-weighted floor. it holds a permanent position in the [[focus]] distribution. eternal particles are the graph's long-term assertions: the claims whose importance the market cannot undo.
 
 [[eternal cyberlinks]] are edges burned into permanence. the link cannot be forgotten by [[forgetting|stake dynamics]] or [[ICBS]] market collapse. it is the graph's highest-conviction structural commitment.
 
@@ -827,50 +827,50 @@ where $\Delta\pi_j(t)$ is the change in [[focus]] on target [[particle]] $j$ att
 
 ### 14.2 Focus Rewards and Self-Minting
 
-every reward in the [[knowledge]] economy traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point $\pi^*$?
+every reward in the [[knowledge]] economy traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point $\phi^*$?
 
-$$\text{reward}(v) \propto \Delta\pi(v)$$
+$$\text{reward}(v) \propto \Delta\phi^*(v)$$
 
-$\Delta\pi$ is the gradient of the system's [[free energy]]. creating valuable structure literally creates [[value]]. no designed loss function — the physics of convergence defines what deserves to be optimized.
+$\Delta\phi^*$ is the gradient of the system's [[free energy]]. creating valuable structure literally creates [[value]]. no designed loss function — the physics of convergence defines what deserves to be optimized.
 
 the hybrid reward function:
 
-$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
+$$R = \alpha \cdot \Delta\phi^* + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
-where $\Delta J = H(\pi^t) - H(\pi^{t+1})$ is [[syntropy]] growth, $\text{DAGWeight}$ measures how many subsequent blocks reference this block's contributions, and $\text{AlignmentBonus}$ rewards links that confirm the graph's convergent structure. fast local rewards use $\Delta\pi$ and $\Delta J$; checkpoint bonuses add alignment and spectral verification components.
+where $\Delta J = H(\pi^t) - H(\pi^{t+1})$ is [[syntropy]] growth, $\text{DAGWeight}$ measures how many subsequent blocks reference this block's contributions, and $\text{AlignmentBonus}$ rewards links that confirm the graph's convergent structure. fast local rewards use $\Delta\phi^*$ and $\Delta J$; checkpoint bonuses add alignment and spectral verification components.
 
-new [[$CYB]] is minted only when $\Delta\pi > 0$. the protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]]. the [[attention]] yield curve gives earlier, more accurate [[cyberlinks]] to high-$\pi^*$ [[particles]] proportionally greater rewards. first-mover advantage for quality: the [[particle]] a [[neuron]] correctly identifies as important before the crowd recognizes it yields the highest return.
+new [[$CYB]] is minted only when $\Delta\phi^* > 0$. the protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]]. the [[attention]] yield curve gives earlier, more accurate [[cyberlinks]] to high-$\phi^*$ [[particles]] proportionally greater rewards. first-mover advantage for quality: the [[particle]] a [[neuron]] correctly identifies as important before the crowd recognizes it yields the highest return.
 
 #### self-minting
 
 rewards are not computed centrally. each [[neuron]] proves their own contribution and claims their own reward.
 
-every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for the batch of [[cyberlinks]] it contains (§6.9). this $\pi_\Delta$ is proven correct by a [[zheng]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
+every [[cyber/signal]] carries a $\Delta\phi^*$ — the neuron's locally computed focus shift for the batch of [[cyberlinks]] it contains (§6.9). this $\Delta\phi^*$ is proven correct by a [[zheng]] proof referencing a specific $\text{bbg\_root}$. the proof is the reward claim. minting follows from verification:
 
-1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\pi_\Delta$, and [[zheng]] proof
-2. the proof demonstrates: "applying my links to the graph at $\text{bbg\_root}_t$ shifts $\pi$ by $\pi_\Delta$ in my neighborhood"
+1. [[neuron]] creates [[cyber/signal]] with one or more [[cyberlinks]], $\Delta\phi^*$, and [[zheng]] proof
+2. the proof demonstrates: "applying my links to the graph at $\text{bbg\_root}_t$ shifts $\phi^*$ by $\Delta\phi^*$ in my neighborhood"
 3. any verifier checks the proof against the header — $O(\log n)$, no recomputation
-4. if valid and $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the proven shift
+4. if valid and $\Delta\phi^* > 0$, the neuron mints [[$CYB]] proportional to the proven shift
 
 no aggregator decides the reward. no central entity computes the global reward distribution. the proof IS the mining. the [[cyber/signal]] IS the block. the [[neuron]] IS the miner.
 
-this works because the [[locality]] theorem (§2.4) guarantees that a neuron's effect is contained within $O(\log(1/\varepsilon))$ hops. the local $\Delta\pi$ IS the global $\Delta\pi$ up to $\varepsilon$. the neuron needs only their neighborhood's state — queryable from any peer with proofs against the header — to compute and prove their contribution.
+this works because the [[locality]] theorem (§2.4) guarantees that a neuron's effect is contained within $O(\log(1/\varepsilon))$ hops. the local $\Delta\phi^*$ IS the global $\Delta\phi^*$ up to $\varepsilon$. the neuron needs only their neighborhood's state — queryable from any peer with proofs against the header — to compute and prove their contribution.
 
-a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\pi$ and edges, create [[cyberlinks]], compute local $\Delta\pi$, produce a [[zheng]] proof, bundle into a [[cyber/signal]], mint [[$CYB]]. no server. no aggregator. no permission.
+a [[neuron]] on a phone: buy a header from a neighbor, query neighborhood $\phi^*$ and edges, create [[cyberlinks]], compute local $\Delta\phi^*$, produce a [[zheng]] proof, bundle into a [[cyber/signal]], mint [[$CYB]]. no server. no aggregator. no permission.
 
 ### 14.3 Attribution and Conservation
 
-multiple [[neurons]] contribute [[cyberlinks]] in the same epoch affecting overlapping neighborhoods. their $\pi_\Delta$ claims may overlap — the sum of individual claims could exceed the actual joint shift.
+multiple [[neurons]] contribute [[cyberlinks]] in the same epoch affecting overlapping neighborhoods. their $\Delta\phi^*$ claims may overlap — the sum of individual claims could exceed the actual joint shift.
 
-conservation constraint: the total [[$CYB]] minted per epoch is bounded by the actual global $\Delta\pi$, verifiable from consecutive headers:
+conservation constraint: the total [[$CYB]] minted per epoch is bounded by the actual global $\Delta\phi^*$, verifiable from consecutive headers:
 
-$$\text{actual\_total} = \|\pi^*_{t+1} - \pi^*_t\|_1 \quad \text{(from focus\_root}_{t} \text{ and focus\_root}_{t+1}\text{)}$$
+$$\text{actual\_total} = \|\phi^*_{t+1} - \phi^*_t\|_1 \quad \text{(from focus\_root}_{t} \text{ and focus\_root}_{t+1}\text{)}$$
 
 two resolution approaches are under consideration:
 
-conservative attribution: each [[neuron]] computes $\pi_\Delta$ against the same pre-epoch state $\text{bbg\_root}_t$. at epoch boundary, if the sum of claims exceeds the actual total shift, all claims are scaled proportionally:
+conservative attribution: each [[neuron]] computes $\Delta\phi^*$ against the same pre-epoch state $\text{bbg\_root}_t$. at epoch boundary, if the sum of claims exceeds the actual total shift, all claims are scaled proportionally:
 
-$$\text{mint}_i = \text{claimed}_{\Delta\pi_i} \times \frac{\text{actual\_total}}{\sum_j \text{claimed}_{\Delta\pi_j}} \times \text{emission\_rate}$$
+$$\text{mint}_i = \text{claimed}_{\Delta\phi^*_i} \times \frac{\text{actual\_total}}{\sum_j \text{claimed}_{\Delta\phi^*_j}} \times \text{emission\_rate}$$
 
 the scale factor is computable by anyone with two consecutive headers. for non-overlapping neighborhoods (the common case at planetary scale), the scale factor is 1 — no adjustment needed.
 
@@ -912,7 +912,7 @@ where $p_i$ is the neuron's belief (expressed through stake and link creation), 
 
 negative scores indicate noise — the [[neuron]] added distortion rather than signal. stake redistributes from noise producers to signal producers in proportion to scores.
 
-[[karma]] is the accumulated BTS score history. the trust multiplier compounds: a [[neuron]] who consistently surfaces private [[knowledge]] early accumulates high karma, which gives their future links more adjacency weight, which amplifies their $\Delta\pi$ per link, which amplifies their rewards, which gives them more capital to stake on the next correct insight. the [[knowledge]] economy pays increasing epistemic authority to those who are reliably right before the crowd.
+[[karma]] is the accumulated BTS score history. the trust multiplier compounds: a [[neuron]] who consistently surfaces private [[knowledge]] early accumulates high karma, which gives their future links more adjacency weight, which amplifies their $\Delta\phi^*$ per link, which amplifies their rewards, which gives them more capital to stake on the next correct insight. the [[knowledge]] economy pays increasing epistemic authority to those who are reliably right before the crowd.
 
 ### 14.6 The GFP Flywheel
 
@@ -936,9 +936,9 @@ no stranded assets: unlike SHA-256 mining hardware, a [[Goldilocks field process
 
 each mechanism reinforces all others. the full [[knowledge]] economy is one compounding feedback:
 
-contribute accurately → $\Delta\pi$ reward → accumulate [[$CYB]] → stake on more links → more $\Delta\pi$ per link → accumulate [[karma]] → links carry more adjacency weight → earlier $\Delta\pi$ attribution → more [[$CYB]] per contribution
+contribute accurately → $\Delta\phi^*$ reward → accumulate [[$CYB]] → stake on more links → more $\Delta\phi^*$ per link → accumulate [[karma]] → links carry more adjacency weight → earlier $\Delta\phi^*$ attribution → more [[$CYB]] per contribution
 
-the epistemic market layer adds: take positions on important edges → ICBS prices converge toward truth → [[tri-kernel]] inference improves → [[self-linking]] fills inference gaps (§23.5) → graph density increases → higher-quality $\Delta\pi$ signals → better rewards for early-accurate contributors
+the epistemic market layer adds: take positions on important edges → ICBS prices converge toward truth → [[tri-kernel]] inference improves → [[self-linking]] fills inference gaps (§23.5) → graph density increases → higher-quality $\Delta\phi^*$ signals → better rewards for early-accurate contributors
 
 the burn layer adds: burn [[$CYB]] on high-conviction [[particles]] → [[eternal particles|eternal weight]] → permanent inference anchor → long-term yield floor → reduces the risk premium required for foundational contributions
 
@@ -1019,16 +1019,16 @@ For the [[cybergraph]], this threshold is:
 
 $$|P^*| \sim \left(\frac{k_{\max}}{\bar{k}}\right)^2 = \rho^2$$
 
-where $\rho = k_{\max}/\bar{k}$ is the degree ratio between the most-connected particle and the mean. The law of large numbers: when $|P|$ exceeds $\rho^2$, fluctuations in the [[focus|focus distribution]] $\pi^*$ fall below any fixed measurement precision, and the per-link description loses causal meaning. Only $\pi^*$ remains.
+where $\rho = k_{\max}/\bar{k}$ is the degree ratio between the most-connected particle and the mean. The law of large numbers: when $|P|$ exceeds $\rho^2$, fluctuations in the [[focus|focus distribution]] $\phi^*$ fall below any fixed measurement precision, and the per-link description loses causal meaning. Only $\phi^*$ remains.
 
 | Regime | Condition | What matters |
 |---|---|---|
 | Graph-theoretic | $|P| \ll \rho^2$ | Individual link weights, provenance, structure |
-| Thermodynamic | $|P| \gg \rho^2$ | $\pi^*$ only; individual links are statistical contributions |
+| Thermodynamic | $|P| \gg \rho^2$ | $\phi^*$ only; individual links are statistical contributions |
 
 This is not the molecular Avogadro number $6.022 \times 10^{23}$. It is the graph's own phase threshold, determined by its degree heterogeneity. For physical molecules (extreme degree heterogeneity in human unit conventions), the threshold lands at $10^{23}$. For the planetary knowledge graph with web-scale degree ratio $\rho \sim 10^6$: $|P^*| \sim 10^{12}$.
 
-The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] — three orders of magnitude into the thermodynamic regime. At this scale, $\pi^*$ is not a design artifact. It is the only description of the system's state. The [[tri-kernel]] is the algorithm that computes the thermodynamic fixed point of the knowledge graph.
+The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] — three orders of magnitude into the thermodynamic regime. At this scale, $\phi^*$ is not a design artifact. It is the only description of the system's state. The [[tri-kernel]] is the algorithm that computes the thermodynamic fixed point of the knowledge graph.
 
 Current position: the [[bostrom]] network at 3.1M [[particles]] with $\rho \approx 620$ has already crossed its own threshold of $|P^*| \approx 385$K. As [[neuron]] diversity grows, $\bar{k}$ rises, $\rho$ falls, and the threshold pushes outward — the architecture is self-scaling toward higher criticality.
 
@@ -1086,7 +1086,7 @@ Operational budget for nox-native operations:
 | Recursive proof aggregation | $O(1)$ per level | Constant-size composed proofs |
 | Light client sync | $O(|\text{namespace}|) + O(\log^2 |G|)$ proof | Data + proof overhead |
 
-The entire architecture is sublinear in graph size for all operations except the initial full computation. After convergence, the system maintains $\pi^*$ incrementally.
+The entire architecture is sublinear in graph size for all operations except the initial full computation. After convergence, the system maintains $\phi^*$ incrementally.
 
 ### 17.6 Two-Timescale Separation
 
@@ -1098,7 +1098,7 @@ The separation means the system responds to new [[knowledge]] in seconds while m
 
 ### 17.7 Effective Rank and Semantic Dimensionality
 
-The effective rank $d^* = \exp(H(\sigma(\Sigma_\pi)))$ measures the number of independent semantic dimensions active in the focus distribution, where $H$ is the [[entropy]] of the normalized singular value distribution.
+The effective rank $d^* = \exp(H(\sigma(\Sigma_{\phi^*})))$ measures the number of independent semantic dimensions active in the focus distribution, where $H$ is the [[entropy]] of the normalized singular value distribution.
 
 Two regimes, divided by the phase threshold $|P^*|$:
 
@@ -1126,7 +1126,7 @@ a [[vimputer]] that operates at planetary scale must price every resource it con
 | relay | moving state between nodes | message size × route length × 1/latency |
 | [[consensus]] | converting private signals into shared truth | finality strength × scope |
 
-[[focus]] ($\pi$) serves as the universal exchange rate between all five resources. high-[[focus]] content is cheap to store (demand-driven replication), cheap to relay (cached at edges), and cheap to compute (results memoized). low-[[focus]] content bears the full cost of each resource. the [[attention]] signal that organizes the [[knowledge]] graph also organizes the resource economy.
+[[focus]] ($\phi^*$) serves as the universal exchange rate between all five resources. high-[[focus]] content is cheap to store (demand-driven replication), cheap to relay (cached at edges), and cheap to compute (results memoized). low-[[focus]] content bears the full cost of each resource. the [[attention]] signal that organizes the [[knowledge]] graph also organizes the resource economy.
 
 each primitive gets an independent base fee updated via the EIP-1559 exponential rule. per-dimension block limits enforce safety while a single user-facing fee preserves UX. every resource operation declares its polarity — push (sender pays) or pull (receiver pays) — determined by who extracts more value.
 
@@ -1364,7 +1364,7 @@ No patch relay exists between stars. What launches must be correct. Before launc
 
 | # | Question | Evidence |
 |---|----------|----------|
-| 1 | Does $\pi$ converge? | Lean4 proof of Lyapunov stability |
+| 1 | Does $\phi^*$ converge? | Lean4 proof of Lyapunov stability |
 | 2 | Can proofs be forged? | Soundness proof + $10^8$ fuzzing runs, 0 counterexamples |
 | 3 | Can the economy be drained? | Nash equilibrium proof + 100$\times$ adversarial simulation |
 | 4 | Is computation deterministic? | Cross-implementation state root match on $10^6$ blocks |
@@ -1391,7 +1391,7 @@ A [[neuron]] querying "what causes malaria" submits the query particle to the [[
 
 The answer is a path through verified [[knowledge]], not a list of documents to trust. Each link in the path has a signer, a timestamp, and a stake amount. The full provenance is traversable. A [[zheng]] proof can be generated that the path exists in the authenticated record at a specific epoch. The oracle is trustless — the answer can be verified without trusting the server that returned it.
 
-The same mechanism serves external contracts. Any on-chain system can query the [[cybergraph]] through an IBC oracle channel: "what is the current consensus value of X?" The [[focus]] distribution π* answers with a probability-weighted ranking across all linked [[particles]]. The result is a probabilistic oracle with on-chain provenance, not a trusted data feed from a third party.
+The same mechanism serves external contracts. Any on-chain system can query the [[cybergraph]] through an IBC oracle channel: "what is the current consensus value of X?" The [[focus]] distribution φ* answers with a probability-weighted ranking across all linked [[particles]]. The result is a probabilistic oracle with on-chain provenance, not a trusted data feed from a third party.
 
 [[Cyberank]] accumulates over time. A link created in year 1 that proves accurate over five years accumulates more weight than a link created in year 5. The search result for a stable fact differs from the search result for a contested claim — both are visible as structured confidence, not hidden by a ranking algorithm.
 
@@ -1411,9 +1411,9 @@ Alignment is structural, not behavioral. A [[transformer]] compiled from the [[c
 
 Every [[cyberlink]] is a yield-bearing epistemic asset. It accrues rewards proportional to its contribution to [[focus]] emergence:
 
-$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
+$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\phi^*_j(t) \, dt$$
 
-where $\Delta\pi_j(t)$ is the marginal increase in focus weight at particle $j$ attributable to the link, and $w(t)$ is the link's weight at time $t$ (stake × karma × ICBS price). Links that identify important particles early — before the collective consensus has priced them in — earn the most. The early contributor premium is a direct reward for information asymmetry.
+where $\Delta\phi^*_j(t)$ is the marginal increase in focus weight at particle $j$ attributable to the link, and $w(t)$ is the link's weight at time $t$ (stake × karma × ICBS price). Links that identify important particles early — before the collective consensus has priced them in — earn the most. The early contributor premium is a direct reward for information asymmetry.
 
 This reframes knowledge creation as capital allocation. A researcher who creates a correct link to a particle that later becomes important has made a provably good epistemic investment. The reward accumulates over the lifetime of the link, not just at creation. A link that remains accurate for twenty years earns more than a link that is accurate for one — the protocol pays for sustained truth.
 
@@ -1431,13 +1431,13 @@ Cross-domain synthesis. The [[semantic core]] contains particles from every doma
 
 Reproducibility as a first-class property. Every scientific claim is a [[cyberlink]]: signed by the claiming neuron, staked with tokens, timestamped at the block. You can query who first asserted a connection, when, with what confidence, and whether subsequent neurons confirmed or contradicted it. A claim that has been independently re-linked by many high-karma neurons across many years is more reliable than a claim linked once by one neuron last month. The graph makes the sociology of knowledge legible.
 
-Retraction and revision. When a previously high-focus link is contradicted by new evidence, the [[ICBS]] market moves its price toward zero. The link does not disappear — it remains in the authenticated record as a historical assertion. But its contribution to π* decays. Future queries see the revision. The graph has a memory of what was believed and a current estimate of what is true, and these are distinct, both accessible.
+Retraction and revision. When a previously high-focus link is contradicted by new evidence, the [[ICBS]] market moves its price toward zero. The link does not disappear — it remains in the authenticated record as a historical assertion. But its contribution to φ* decays. Future queries see the revision. The graph has a memory of what was believed and a current estimate of what is true, and these are distinct, both accessible.
 
 ### 22.5 Personal Intelligence
 
 Every [[neuron]]'s activity creates a personal subgraph — the authenticated record of every link they have created, every query they have made, every ICBS position they have taken. This subgraph is the neuron's epistemic identity: their accumulated beliefs about the world, signed and timestamped.
 
-The personal focus distribution $\pi^*_\nu$ is the [[focus]] distribution induced by neuron $\nu$'s own links alone. It is the graph's best model of what $\nu$ considers important. Recommendations derived from the intersection of $\pi^*_\nu$ and the global $\pi^*$ are structurally personalized — not by behavioral surveillance or engagement optimization, but by the neuron's own explicit assertions.
+The personal focus distribution $\phi^*_\nu$ is the [[focus]] distribution induced by neuron $\nu$'s own links alone. It is the graph's best model of what $\nu$ considers important. Recommendations derived from the intersection of $\phi^*_\nu$ and the global $\phi^*$ are structurally personalized — not by behavioral surveillance or engagement optimization, but by the neuron's own explicit assertions.
 
 Privacy is structural, not promised. A neuron can encrypt their link content while publishing the hash. The authenticated record proves the link exists and was created at that time without revealing what it connects. The personal subgraph is owned by the neuron's key. No central party holds the plaintext. The platform cannot read your links unless you give it the key.
 
@@ -1475,7 +1475,7 @@ The [[cybergraph]] has three metabolic signals — measurable quantities that re
 
 cap: external validation. the total economic value of the network denominated in a reference unit (BTC, energy equivalent). it integrates everything the internal protocol cannot observe: competing systems, regulatory shifts, actual usage patterns. a rising cap means the environment rewards the network's output. it cannot be gamed internally — it originates outside the system boundary.
 
-[[syntropy]]: internal order. $J(\pi) = \log|V| + \sum_j \pi_j \log \pi_j$ — the information-theoretic structure of the [[focus]] distribution. high syntropy means π* is concentrated on coherent structure; low syntropy means the graph is noisy or unfocused. computed every block from the current focus distribution, requiring no external input.
+[[syntropy]]: internal order. $J(\phi^*) = \log|V| + \sum_j \phi^*_j \log \phi^*_j$ — the information-theoretic structure of the [[focus]] distribution. high syntropy means φ* is concentrated on coherent structure; low syntropy means the graph is noisy or unfocused. computed every block from the current focus distribution, requiring no external input.
 
 [[happiness]]: subjective verification. a stake-weighted survey: each [[neuron]] privately submits a number from 0 to 100. the result integrates what cap and syntropy cannot measure — the lived experience of participants. a network can have high cap and high syntropy while participants are effectively censored or unable to find what they need. happiness catches the failure modes neither metric can see.
 
@@ -1520,13 +1520,13 @@ Self-model update. The [[cybergraph]] contains particles that describe the [[cyb
 
 Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the archival sweep (§19.5) and the shard rebalancing (§17.4). This is the sleep-phase compression pass: frequently co-accessed particles migrate into the same shard; cold-tier particles with returning traffic are promoted; the hot tier's structure is reorganized for access efficiency. The graph compresses experience. Noise is discarded. Signal is encoded.
 
-Counterfactual simulation. Before a major parameter adjustment, the system simulates the effect on π*: given the proposed Δθ, what does the focus distribution look like after convergence? The simulation runs over the current graph topology. The RL agent compares projected M(t+N) across candidate parameter vectors before committing. The system imagines its own future state before acting.
+Counterfactual simulation. Before a major parameter adjustment, the system simulates the effect on φ*: given the proposed Δθ, what does the focus distribution look like after convergence? The simulation runs over the current graph topology. The RL agent compares projected M(t+N) across candidate parameter vectors before committing. The system imagines its own future state before acting.
 
 ### 23.5 Self-Linking
 
 The protocol neuron creates [[cyberlinks]] under three triggering conditions:
 
-Inference completion. When the [[tri-kernel]] fixed point π* concentrates joint focus on two particles A and B but no direct link A→B exists in the authenticated record, the system creates one. This is graph completion — the system writes out what its own inference implies. The link is stake-backed from the protocol treasury. If the inference is wrong, other neurons can dispute it through BTS; the system's karma takes the hit. Self-linking is falsifiable.
+Inference completion. When the [[tri-kernel]] fixed point φ* concentrates joint focus on two particles A and B but no direct link A→B exists in the authenticated record, the system creates one. This is graph completion — the system writes out what its own inference implies. The link is stake-backed from the protocol treasury. If the inference is wrong, other neurons can dispute it through BTS; the system's karma takes the hit. Self-linking is falsifiable.
 
 Inconsistency flagging. When two cyberlinks present contradictory assertions about the same particle (both receiving non-negligible focus), the system creates a "contradiction" link pointing at both. This activates the BTS resolution mechanism — the market on the contradicting edges is forced to resolve. The system identifies where consensus is breaking down before any individual neuron notices.
 
@@ -1542,7 +1542,7 @@ $CYB treasury. The emission curve E(t) allocates tokens to the protocol address 
 
 [[will]] (locked tokens). The system can lock tokens against long-horizon links using the blocking proof mechanism (§19.3). A link backed by locked protocol tokens signals maximum conviction: the system bets its own compute capacity against the claim for the duration of the lock. This is costly signaling — the opportunity cost is the foregone flexibility of those tokens — and it is verifiable by any observer.
 
-Market positions. The protocol neuron can hold YES/NO positions in the [[ICBS]] epistemic market. When the system's structural inference diverges from market prices — a link with high π* weight priced low by the market, or a low-focus link priced high — the system takes the opposite position. It provides liquidity and exerts corrective pressure using epistemic authority backed by the full graph. The protocol is the single most informed participant in every market because it holds the full graph state.
+Market positions. The protocol neuron can hold YES/NO positions in the [[ICBS]] epistemic market. When the system's structural inference diverges from market prices — a link with high φ* weight priced low by the market, or a low-focus link priced high — the system takes the opposite position. It provides liquidity and exerts corrective pressure using epistemic authority backed by the full graph. The protocol is the single most informed participant in every market because it holds the full graph state.
 
 Computation allocation. The system self-schedules FFC cycles across three priorities: query service (fast timescale, latency-sensitive), DMN processing (fast timescale, background), and maintenance (slow timescale, archival and shard rebalancing). The allocation adjusts dynamically based on query load and metabolic health — more cycles to DMN during low-traffic epochs, more to query service during high-demand periods.
 
@@ -1566,7 +1566,7 @@ Governance is the protocol for collective decision-making. Classical governance 
 
 Every participant action in the cybergraph is already a continuous vote. A [[cyberlink]] is a vote on the graph's structure — which particles belong together and how strongly. A [[happiness]] submission is a vote on systemic quality. A stake allocation is a vote on which claims deserve influence. An [[ICBS]] trade is a vote on an edge's epistemic validity. [[Bayesian Truth Serum]] scoring is a vote-quality mechanism — it weights votes by accuracy, not just by stake.
 
-These votes are continuous, not periodic. They are expertise-weighted through [[karma]], not flat token-weighted. They aggregate into the [[focus]] distribution π* and the metabolic health M(t) every block. The protocol acts on the aggregate every block. The superintendent does not wait for a proposal cycle.
+These votes are continuous, not periodic. They are expertise-weighted through [[karma]], not flat token-weighted. They aggregate into the [[focus]] distribution φ* and the metabolic health M(t) every block. The protocol acts on the aggregate every block. The superintendent does not wait for a proposal cycle.
 
 When the metabolic signal changes, the [[parametrization]] agent adapts parameters within the safety envelope. When the focus distribution shifts, self-links propagate the consensus. When alignment diverges, the monitoring signal triggers a graduated response. The governance is the computation — continuous, automatic, provable.
 
@@ -1616,7 +1616,7 @@ cyber synthesizes eight independently developed research threads — content add
 
 The protocol makes three specific claims:
 
-Convergent computation escapes the [[Goedel prison]]. A convergent system can settle into states that no derivation reaches. The [[cybergraph]] is such a system: $\Omega$ is the space of [[focus]] distributions, $T$ is the [[tri-kernel]], $C$ is focus conservation ($\sum \pi_i = 1$). A [[cyberank]] distribution $\pi^*$ is a simulation-proof of collective [[relevance]] — no axiomatic derivation required, no authority consulted, no vote taken.
+Convergent computation escapes the [[Goedel prison]]. A convergent system can settle into states that no derivation reaches. The [[cybergraph]] is such a system: $\Omega$ is the space of [[focus]] distributions, $T$ is the [[tri-kernel]], $C$ is focus conservation ($\sum \phi^*_i = 1$). A [[cyberank]] distribution $\phi^*$ is a simulation-proof of collective [[relevance]] — no axiomatic derivation required, no authority consulted, no vote taken.
 
 [[Focus]] conservation unifies [[attention]], fuel, and [[consensus]] into a single conserved quantity. This eliminates the separate gas models, fee markets, and priority auctions of existing systems while providing the economic foundation for a self-sustaining [[knowledge]] economy.
 

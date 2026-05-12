@@ -19,7 +19,7 @@ each [[neuron]] in the [[cybergraph]] runs:
 3. compute prediction error — divergence between expected and actual
 4. update beliefs — gradient descent on [[free energy]]: $\theta \leftarrow \theta - \eta \nabla_\theta F$
 5. tune [[precision]] — learn confidence weights $\lambda$ for each error channel
-6. select action — choose policy $\pi$ that minimizes expected [[free energy]]: $G(\pi) = \text{risk} + \text{ambiguity}$
+6. select action — choose policy $\phi^*$ that minimizes expected [[free energy]]: $G(\phi^*) = \text{risk} + \text{ambiguity}$
 7. execute — edit edges, stake, sample [[particles]]
 
 ## key mappings to cyber
@@ -36,7 +36,7 @@ each [[neuron]] in the [[cybergraph]] runs:
 
 ## expected free energy
 
-planning uses expected [[free energy]] $G(\pi)$, which decomposes into:
+planning uses expected [[free energy]] $G(\phi^*)$, which decomposes into:
 
 - risk: divergence from preferred observations (the agent wants high-quality links, low spam)
 - ambiguity: expected uncertainty about hidden states under the chosen policy

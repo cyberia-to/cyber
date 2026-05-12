@@ -56,7 +56,7 @@ valence is what makes the [[cybergraph]] computationally equivalent to a neural 
 
 ## connection to [[syntropy]]
 
-the aggregate of valence-seeded market prices, once resolved toward collective consensus, raises [[syntropy]] when predictors are accurate ($J(\pi^*) = D_{KL}(\pi^* \| u)$ increases when $\pi^*$ sharpens around true structure) and lowers it when markets remain uncertain or divided. a neuron whose $v$ predictions proved correct contributed positive BTS score $s_i$ — that neuron increased the graph's organizational quality.
+the aggregate of valence-seeded market prices, once resolved toward collective consensus, raises [[syntropy]] when predictors are accurate ($J(\phi^*) = D_{KL}(\phi^* \| u)$ increases when $\phi^*$ sharpens around true structure) and lowers it when markets remain uncertain or divided. a neuron whose $v$ predictions proved correct contributed positive BTS score $s_i$ — that neuron increased the graph's organizational quality.
 
 see [[Bayesian Truth Serum]] for the BTS scoring formula that uses $v$ as input. see [[inversely coupled bonding surface]] for the market that converts valence seeds into continuous prices. see [[market inhibition]] for the suppression mechanism. see [[two three paradox]] for why 3 is irreducible to 2. see [[two kinds of knowledge]] for the structural / epistemic split the valence field bridges.
 

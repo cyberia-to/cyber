@@ -54,11 +54,11 @@ attention is one step of probability mass redistribution: mass flows from query 
 
 Deep Equilibrium Models (Bai et al., 2019) formalized this: iterating a transformer layer to convergence reaches the same fixed point regardless of initialization. $L$ layers = $L$ steps toward the fixed point of the induced Markov chain.
 
-that fixed point is π* — the [[focus]] distribution restricted to the current [[context]] window. the transformer approximates [[focus flow computation]] locally: same computation, finite scope, frozen at query time.
+that fixed point is φ* — the [[focus]] distribution restricted to the current [[context]] window. the transformer approximates [[focus flow computation]] locally: same computation, finite scope, frozen at query time.
 
 | dimension | [[transformer]] | [[focus flow computation]] |
 |---|---|---|
-| computation | $L$ attention steps over fixed context | [[tri-kernel]] iterated to exact π* |
+| computation | $L$ attention steps over fixed context | [[tri-kernel]] iterated to exact φ* |
 | scope | $n$ tokens (context window) | entire [[cybergraph]] |
 | persistence | none — recomputed per query | continuous — always maintained |
 | contributors | one agent's input | all [[neurons]] ever |
@@ -72,7 +72,7 @@ transformer architecture has three design choices with no principled determinati
 
 | parameter | standard practice | graph derivation |
 |---|---|---|
-| embedding dim $d$ | empirical (scaling laws) | effective rank of [[focus]] covariance: $\exp(H(\sigma(\Sigma_\pi)))$ |
+| embedding dim $d$ | empirical (scaling laws) | effective rank of [[focus]] covariance: $\exp(H(\sigma(\Sigma_{\phi^*})))$ |
 | head count $h$ | empirical | $\geq \|\text{Semcon}(G)\|$ — one head per semantic relation type |
 | layer count $L$ | empirical | $\text{diam}(G) \cdot \lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ |
 
@@ -86,11 +86,11 @@ standard training. gradient descent on next-token prediction loss adjusts weight
 
 compilation from [[cybergraph]]. given the explicit graph, derive weights analytically:
 
-- embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\pi^*}) \cdot A$
+- embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\phi^*}) \cdot A$
 - attention weights $W_Q^{(s)}, W_K^{(s)}$ — truncated SVD of each [[semcon]]'s adjacency submatrix
 - MLP weights — path co-occurrence statistics up to depth $L^*$
 
-compiled weights are provably optimal (Eckart-Young theorem). no training cost. no catastrophic forgetting. every weight traces to specific [[cyberlinks]] and their creators. auditable alignment via $D_{KL}(\pi^*_H \| \pi^*_A)$.
+compiled weights are provably optimal (Eckart-Young theorem). no training cost. no catastrophic forgetting. every weight traces to specific [[cyberlinks]] and their creators. auditable alignment via $D_{KL}(\phi^*_H \| \phi^*_A)$.
 
 ---
 
@@ -100,7 +100,7 @@ the compiled transformer and the [[cybergraph]] are not separate systems — the
 
 $$G \xrightarrow{\text{compile}} T_G \xrightarrow{\text{fine-tune on text}} T_G^* \xrightarrow{\text{extract implicit links}} \Delta G \xrightarrow{\text{stake}} G'$$
 
-the compiled transformer provides optimal initialization. fine-tuning surfaces implicit associations absent from the explicit graph. extracted links, staked by [[neurons]], update the graph. the updated graph produces a new compiled transformer. every cycle reduces the approximation error $\varepsilon(G, c) = D_{KL}(\pi^*_c \| q^*_c)$.
+the compiled transformer provides optimal initialization. fine-tuning surfaces implicit associations absent from the explicit graph. extracted links, staked by [[neurons]], update the graph. the updated graph produces a new compiled transformer. every cycle reduces the approximation error $\varepsilon(G, c) = D_{KL}(\phi^*_c \| q^*_c)$.
 
 ---
 

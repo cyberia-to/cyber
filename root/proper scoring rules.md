@@ -74,7 +74,7 @@ the estimator $\hat{\mu} = \frac{1}{n}\sum_i w(x_i) f(x_i)$ is unbiased precisel
 
 [[Bayesian Truth Serum]], [[inversely coupled bonding surface]] settlement, and importance sampling are three instantiations of the same mathematical object: a proper scoring rule under log utility. all three use inverse probability weights. all three measure information gain via [[KL divergence]]. all three reward calibrated beliefs and punish distorted ones.
 
-this is why [[syntropy]] in [[cyber]] — the aggregate information gain in the [[cybergraph]] — can be measured consistently across scales: the same scoring structure applies at the individual [[neuron]] level (BTS score), the market level (ICBS settlement), and the compiled model level (approximation quality metric $\varepsilon = D_{KL}(\pi^*_c \| q^*_c)$).
+this is why [[syntropy]] in [[cyber]] — the aggregate information gain in the [[cybergraph]] — can be measured consistently across scales: the same scoring structure applies at the individual [[neuron]] level (BTS score), the market level (ICBS settlement), and the compiled model level (approximation quality metric $\varepsilon = D_{KL}(\phi^*_c \| q^*_c)$).
 
 ---
 
@@ -85,6 +85,6 @@ this is why [[syntropy]] in [[cyber]] — the aggregate information gain in the 
 | [[Bayesian Truth Serum]] | log-score peer comparison | individual belief vs collective |
 | [[inversely coupled bonding surface]] | log-score settlement | market position vs resolution |
 | [[karma]] accumulation | BTS score history | cumulative epistemic contribution |
-| [[focus]] convergence | implicit via [[KL divergence]] in π* | collective belief vs graph state |
+| [[focus]] convergence | implicit via [[KL divergence]] in φ* | collective belief vs graph state |
 
 see [[Bayesian Truth Serum]] for the peer prediction application. see [[inversely coupled bonding surface]] for the market scoring. see [[KL divergence]] for the underlying measure. see [[veritas]] for the full protocol.

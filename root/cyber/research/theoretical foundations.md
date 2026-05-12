@@ -9,11 +9,11 @@ the mathematical framework of [[cyber]]: why a token-weighted graph converges to
 
 ## the core result
 
-the [[collective focus theorem]] proves that a token-weighted [[random walk]] on an authenticated, strongly connected, aperiodic directed [[cybergraph]] converges to a unique stationary distribution π — the collective [[focus]] of the system
+the [[collective focus theorem]] proves that a token-weighted [[random walk]] on an authenticated, strongly connected, aperiodic directed [[cybergraph]] converges to a unique stationary distribution φ* — the collective [[focus]] of the system
 
-$$\pi P = \pi, \quad \sum_j \pi_j = 1$$
+$$\phi^* P = \phi^*, \quad \sum_j \phi^*_j = 1$$
 
-π emerges from topology and [[stake]], requires no central authority, and shifts continuously under perturbation. the [[spectral gap]] of the transition matrix controls convergence speed and robustness to noise
+φ* emerges from topology and [[stake]], requires no central authority, and shifts continuously under perturbation. the [[spectral gap]] of the transition matrix controls convergence speed and robustness to noise
 
 ## five primitives
 
@@ -23,7 +23,7 @@ $$\pi P = \pi, \quad \sum_j \pi_j = 1$$
 | [[neuron]] | agent (public key) that signs edges |
 | [[cyberlink]] | signed, timestamped, weighted directed edge i→j |
 | [[token]] | non-negative weight controlling influence |
-| [[focus]] | the emergent equilibrium π over [[particles]] |
+| [[focus]] | the emergent equilibrium φ* over [[particles]] |
 
 [[attention]] is fast, local reweighting. [[focus]] is the slow, global equilibrium. see [[cyber/focus]] for conservation laws and flow equations
 
@@ -75,7 +75,7 @@ coherent global [[focus]] emerges only above critical thresholds:
 the [[free energy]] landscape aligns individual and collective optimization:
 
 - influence ∝ [[stake]] × connectivity — skin-in-the-game for quality linking
-- [[learning incentives]] reward Δπ contributions via [[Shapley value]] attribution
+- [[learning incentives]] reward Δφ* contributions via [[Shapley value]] attribution
 - anti-capture: stake dispersion, rate limits, decay, context-specific caps
 
 see [[learning incentives]] for reward functions, [[cyber/tokenomics]] for monetary policy
@@ -85,7 +85,7 @@ see [[learning incentives]] for reward functions, [[cyber/tokenomics]] for monet
 the [[cybergraph]] learns through three coupled processes:
 
 - local: hebbian reinforcement of successful [[cyberlinks]], exploration policies for novelty, decay for staleness
-- global: π is recomputed (or tracked incrementally) after each batch of edge and stake changes
+- global: φ* is recomputed (or tracked incrementally) after each batch of edge and stake changes
 - macro: $s^{(t+1)} = f(s^{(t)}, w^{(t)}, t^{(t)})$ — the system state evolves as a dynamical system on the [[free energy]] landscape
 
 ## theory stack
@@ -93,7 +93,7 @@ the [[cybergraph]] learns through three coupled processes:
 the mathematical lineage, grouped by role:
 
 convergence and structure
-- Markov chains, ergodic theory — existence/uniqueness of π, mixing time bounds
+- Markov chains, ergodic theory — existence/uniqueness of φ*, mixing time bounds
 - spectral graph theory — conductance/Cheeger constants relate to mixing speed
 - [[Perron-Frobenius theorem]] — guarantees the positive eigenvector
 
@@ -131,7 +131,7 @@ see [[data structure for superintelligence]] for the full BBG exposition, [[cybe
 ## open questions
 
 - formal mixing-time bounds for token-weighted chains with dynamic weights
-- perturbation lemmas giving $\|\Delta\pi\|$ bounds under bounded $\|\Delta w\|$ and $\|\Delta t\|$
+- perturbation lemmas giving $\|\Delta\phi^*\|$ bounds under bounded $\|\Delta w\|$ and $\|\Delta t\|$
 - incentive proofs that long-run stake tracks epistemic accuracy
 - interpretability and earth-aligned values at planetary scale
 

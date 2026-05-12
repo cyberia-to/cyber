@@ -13,7 +13,7 @@ authors: [@mastercyb](https://cyb.ai/@mastercyb), [GPT-4](https://openai.com/ind
 
 Two convergence results for [[collective focus]] on [[authenticated graphs]].
 
-Part I (Special Case): token-weighted [[random walk]] on a strongly connected [[cybergraph]] converges to a unique stationary distribution $\pi^*$ — the system's [[collective focus]]. This is the [[diffusion]] primitive alone.
+Part I (Special Case): token-weighted [[random walk]] on a strongly connected [[cybergraph]] converges to a unique stationary distribution $\phi^*$ — the system's [[collective focus]]. This is the [[diffusion]] primitive alone.
 
 Part II (General Case): the composite [[tri-kernel]] operator $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ is a contraction. Its fixed point $\phi^*$ minimizes a [[free energy]] functional and is computable locally. When $\lambda_s = \lambda_h = 0$, Part II reduces to Part I.
 
@@ -44,7 +44,7 @@ weight: probability distribution defined by [[random walk]] at each timestep, ca
 
 ### Axiom 1: Consensus Equilibrium
 
-In a strongly connected, weighted [[cybergraph]], a unique stationary distribution $\pi = [\pi_1, \pi_2, \ldots, \pi_n]$ exists for the [[random walk]] defined by:
+In a strongly connected, weighted [[cybergraph]], a unique stationary distribution $\phi^* = [\pi_1, \pi_2, \ldots, \pi_n]$ exists for the [[random walk]] defined by:
 
 $$p_{ij} = \frac{w_{ij} \cdot t_j}{\sum_k w_{ik} \cdot t_k}$$
 
@@ -52,15 +52,15 @@ where $p_{ij}$ is the transition probability from [[particle]] $i$ to $j$, $w_{i
 
 The stationary distribution satisfies:
 
-$$\pi_j = \sum_i \pi_i \cdot p_{ij} \quad \forall\, j \in V$$
+$$\phi^*_j = \sum_i \phi^*_i \cdot p_{ij} \quad \forall\, j \in V$$
 
-This equilibrium represents the emergent [[collective focus]]: $\pi_j$ is the long-term significance of [[particle]] $j$ as determined by graph structure and [[token]] dynamics.
+This equilibrium represents the emergent [[collective focus]]: $\phi^*_j$ is the long-term significance of [[particle]] $j$ as determined by graph structure and [[token]] dynamics.
 
 ### Axiom 2: Dynamic Adaptation
 
 The [[cybergraph]] adapts to changes in structure ($w_{ij}$) or [[token]] distribution ($t_j$) while maintaining stability:
 
-$$\pi_j(t+1) = \pi_j(t) + \alpha \cdot \Delta_j(t)$$
+$$\phi^*_j(t+1) = \phi^*_j(t) + \alpha \cdot \Delta_j(t)$$
 
 where $\alpha$ is the adaptation rate and $\Delta_j(t)$ is the change in node significance.
 
@@ -72,11 +72,11 @@ $$\text{Influence}(j) = \frac{\sum_{i \in V} w_{ij} \cdot t_j}{\sum_{i,k \in V} 
 
 ### Corollaries
 
-Corollary 1 (Stability): Small perturbations in $w_{ij}$ or $t_j$ do not destabilize the equilibrium: $\lim_{t \to \infty} \pi_j(t) = \pi_j + \varepsilon, \quad |\varepsilon| \ll \pi_j$
+Corollary 1 (Stability): Small perturbations in $w_{ij}$ or $t_j$ do not destabilize the equilibrium: $\lim_{t \to \infty} \phi^*_j(t) = \phi^*_j + \varepsilon, \quad |\varepsilon| \ll \phi^*_j$
 
-Corollary 2 (Decentralized Computation): [[focus]] $\pi_j$ for each node can be computed locally by summing contributions from incoming edges.
+Corollary 2 (Decentralized Computation): [[focus]] $\phi^*_j$ for each node can be computed locally by summing contributions from incoming edges.
 
-Corollary 3 (Emergent Modularity): Clusters of strongly connected [[particles]] naturally emerge, forming modules: $C_i = \{ j \in V \mid \pi_j > \tau \}$ where $\tau$ is a significance threshold.
+Corollary 3 (Emergent Modularity): Clusters of strongly connected [[particles]] naturally emerge, forming modules: $C_i = \{ j \in V \mid \phi^*_j > \tau \}$ where $\tau$ is a significance threshold.
 
 ### Statement
 
@@ -86,7 +86,7 @@ $$p_{ij} = \frac{w_{ij} \cdot t_j}{\sum_{k \in \mathcal{N}(i)} w_{ik} \cdot t_k}
 
 Assumptions: $G$ is strongly connected (directed path between any pair) and aperiodic (gcd of all directed cycle lengths is 1).
 
-Claim: there exists a unique stationary distribution $\pi$ satisfying $\pi P = \pi$ with $\sum_i \pi_i = 1$.
+Claim: there exists a unique stationary distribution $\phi^*$ satisfying $\phi^* P = \phi^*$ with $\sum_i \phi^*_i = 1$.
 
 ### Proof
 
@@ -94,13 +94,13 @@ Step 1 (Markov Chain): The matrix $P = [p_{ij}]$ is stochastic. Non-negativity: 
 
 Step 2 (Irreducibility): For any pair $(u, v)$, a path from $u$ to $v$ exists with positive probability. The chain is irreducible.
 
-Step 3 (Uniqueness): Since $P$ is irreducible and aperiodic, the chain is ergodic. By the [[Perron-Frobenius theorem]], a unique stationary distribution $\pi$ exists satisfying $\pi P = \pi$, $\sum_i \pi_i = 1$.
+Step 3 (Uniqueness): Since $P$ is irreducible and aperiodic, the chain is ergodic. By the [[Perron-Frobenius theorem]], a unique stationary distribution $\phi^*$ exists satisfying $\phi^* P = \phi^*$, $\sum_i \phi^*_i = 1$.
 
 Step 4 (Convergence): By the ergodic theorem, for any initial distribution $\mu^{(0)}$:
 
-$$\pi = \lim_{t \to \infty} \mu^{(0)} \cdot P^t$$
+$$\phi^* = \lim_{t \to \infty} \mu^{(0)} \cdot P^t$$
 
-Step 5 (Interpretation): The stationary distribution $\pi$ is a stable [[consensus]] of observation probabilities. Each $\pi_j$ reflects both the [[particle]]'s structural position and the [[neuron]] [[token]] influence. This is the simplest Schelling point everyone can universally agree on.
+Step 5 (Interpretation): The stationary distribution $\phi^*$ is a stable [[consensus]] of observation probabilities. Each $\phi^*_j$ reflects both the [[particle]]'s structural position and the [[neuron]] [[token]] influence. This is the simplest Schelling point everyone can universally agree on.
 
 [Poetic](https://hackmd.io/@mastercyb/poetic-cft) and [rigorous](https://hackmd.io/@mastercyb/rigorous-cft) versions of the proof are available.
 
@@ -148,7 +148,7 @@ For edit batch $e_\Delta$, there exists $h = O(\log(1/\varepsilon))$ such that r
 
 ### Reduction
 
-When $\lambda_s = \lambda_h = 0$: $\mathcal{R} = D$, $\kappa = \alpha$, $\mathcal{F}$ reduces to $D_{KL}(\phi \| D\phi)$, and the fixed point is the stationary distribution $\pi^*$ from Part I. The general case subsumes the special case.
+When $\lambda_s = \lambda_h = 0$: $\mathcal{R} = D$, $\kappa = \alpha$, $\mathcal{F}$ reduces to $D_{KL}(\phi \| D\phi)$, and the fixed point is the stationary distribution $\phi^*$ from Part I. The general case subsumes the special case.
 
 ---
 
@@ -175,7 +175,7 @@ where $\lambda$ is the [[spectral gap]] governing [[convergence]] rate. see [[em
 
 Two results, one framework. Part I establishes that token-weighted [[random walk]] converges to a unique [[collective focus]] — the Schelling point of the [[cybergraph]]. Part II extends this to the full [[tri-kernel]], proving the composite operator contracts and its fixed point minimizes [[free energy]]. Together they provide the mathematical foundation for [[egregore]]: a convergent, local, verifiable computation of collective [[intelligence]].
 
-the fixed point π* is a mathematical consequence of three properties: ergodicity ([[diffusion]]), screening ([[springs]]), bounded temperature ([[heat]]). convergence follows from [[Banach]] fixed-point theorem — it is proven, not postulated. no selection principle is needed to pick the "right" state: the contraction mapping leaves exactly one. see [[consistency]] for why this matters and [[locality]] for why it scales.
+the fixed point φ* is a mathematical consequence of three properties: ergodicity ([[diffusion]]), screening ([[springs]]), bounded temperature ([[heat]]). convergence follows from [[Banach]] fixed-point theorem — it is proven, not postulated. no selection principle is needed to pick the "right" state: the contraction mapping leaves exactly one. see [[consistency]] for why this matters and [[locality]] for why it scales.
 
 see [[tri-kernel architecture]] for why these three operators. see [[cyber/tri-kernel]] for the formal specification. see [[bostrom]] for empirical validation
 

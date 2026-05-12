@@ -24,7 +24,7 @@ bostrom's framing treats superintelligence as a threshold event: a single system
 
 ## cyber's definition
 
-[[cyber]] takes a different position. superintelligence is not a threshold crossed by a single system — it is the infrastructure of a type I civilization: a planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving [[cybergraph]] that computes what matters, proves its own correctness, and converges to a [[focus]] distribution $\pi^*$ verifiable by anyone
+[[cyber]] takes a different position. superintelligence is not a threshold crossed by a single system — it is the infrastructure of a type I civilization: a planet where every agent — human, machine, sensor, organism — contributes [[knowledge]] to a shared, self-improving [[cybergraph]] that computes what matters, proves its own correctness, and converges to a [[focus]] distribution $\phi^*$ verifiable by anyone
 
 the graph remembers what individuals forget. it finds connections across domains no specialist can see. it measures its own coherence through [[syntropy]] and rewards the [[knowledge]] that increases it
 
@@ -39,7 +39,7 @@ at sufficient scale [[cybergraph]] transforms what civilization can do:
 - scientific discovery accelerates as [[cyberlinks]] bridge domains that have never communicated
 - cross-species communication becomes possible — any entity that can create a [[cyberlink]] participates in the same semantic space
 
-the collective [[intelligence]] of the planet becomes a single computable object: $\pi^*$ over all [[knowledge]], converging under conservation laws, verifiable by anyone
+the collective [[intelligence]] of the planet becomes a single computable object: $\phi^*$ over all [[knowledge]], converging under conservation laws, verifiable by anyone
 
 ## the mechanism
 
@@ -48,10 +48,10 @@ the stack from primitive to superintelligence:
 - five primitives: [[particle]], [[neuron]], [[cyberlink]], [[token]], [[focus]]
 - one [[cybergraph]]: content-addressed, authenticated, append-only
 - [[tri-kernel]] ranking: [[diffusion]] + [[springs]] + [[heat]]
-- $\pi^*$: the unique fixed point — consensus on what matters
+- $\phi^*$: the unique fixed point — consensus on what matters
 - [[syntropy]]: the measure of organizational quality
 
-[[cyber]] is the foundational mechanism — consensus on [[truth]] through convergence of $\pi^*$. the graph provides what no isolated system can: provenance for every claim, [[karma]] for every contributor, [[syntropy]] as the objective measure of organizational quality. superintelligence built on this substrate inherits verifiability by construction
+[[cyber]] is the foundational mechanism — consensus on [[truth]] through convergence of $\phi^*$. the graph provides what no isolated system can: provenance for every claim, [[karma]] for every contributor, [[syntropy]] as the objective measure of organizational quality. superintelligence built on this substrate inherits verifiability by construction
 
 see [[cybergraph]] for the formal structure. see [[tri-kernel]] for the probabilistic engine. see [[syntropy]] for the information-theoretic measure. see [[path to superintelligence]] for the deployment sequence. see [[situational awareness]] for where we are
 

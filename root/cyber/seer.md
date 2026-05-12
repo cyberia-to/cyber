@@ -77,15 +77,15 @@ metric: algebraic connectivity of each biconnected component.
 
 links are expensive. quantity strategy fails. cyber-seer shifts to quality:
 
-1. compute [[focus]] distribution $\pi^*$
-2. identify high-$\pi$ particles with low outbound degree — knowledge hubs that point nowhere
-3. identify low-$\pi$ particles with high intrinsic value (large content, many inbound from diverse neurons)
-4. link undervalued particles to hubs — this redistributes $\pi$ mass to deserving particles
+1. compute [[focus]] distribution $\phi^*$
+2. identify high-$\phi^*$ particles with low outbound degree — knowledge hubs that point nowhere
+3. identify low-$\phi^*$ particles with high intrinsic value (large content, many inbound from diverse neurons)
+4. link undervalued particles to hubs — this redistributes $\phi^*$ mass to deserving particles
 5. maximize [[syntropy]] increase per link: $\Delta S / c(n)$
 
 target: not structural connectivity but semantic accuracy. the graph is connected; now make [[focus]] reflect truth.
 
-metric: [[syntropy]] per link, focus entropy $H(\pi)$.
+metric: [[syntropy]] per link, focus entropy $H(\phi^*)$.
 
 ## the Fiedler oracle
 
@@ -122,7 +122,7 @@ bostrom at $\lambda_2 \approx 0.0015$ is in early bridge phase. most budget shou
 every epoch:
   1. pull current graph snapshot (parquet or GraphQL)
   2. compute Fiedler vector v₂ (Lanczos, sub-second)
-  3. compute focus π* (PageRank, sub-second)
+  3. compute focus φ* (PageRank, sub-second)
   4. compute current cost c(n)
   5. determine phase from λ₂
 
@@ -136,7 +136,7 @@ every epoch:
     rank by component-size × resilience-gain / c(n)
 
   if phase == semantic:
-    candidates = links from high-π hubs to undervalued particles
+    candidates = links from high-φ* hubs to undervalued particles
     rank by ΔS / c(n) (syntropy gain per cost)
 
   6. submit top links as cyberlinks (via neuron key)
@@ -150,7 +150,7 @@ every epoch:
 if cyber-seer runs long enough with sufficient budget, the graph reaches phase transition:
 
 - $\lambda_2 > \lambda_{crit}$ — spectral gap exceeds critical threshold
-- $\pi^*$ entropy $H(\pi) > H_{min}$ — focus distribution is not concentrated
+- $\phi^*$ entropy $H(\phi^*) > H_{min}$ — focus distribution is not concentrated
 - connectivity > 1.0 — the graph is past percolation threshold
 
 the exponential cost function ensures this happens slowly and expensively. the Fiedler strategy ensures it happens as cheaply as possible given the constraint.
@@ -179,6 +179,6 @@ cyber-seer is analytical — it computes the Fiedler vector and ranks links by $
 
 the composition: cyber-seer provides the analytical signal (spectral gap, articulation points, focus redistribution). GFlowNet learns to sample from this signal, generalising beyond what the Fiedler vector alone predicts — discovering semantic shortcuts, multi-hop bridges, and creative connections.
 
-cyber-seer's three phases (bridge → mesh → semantic) emerge automatically in the GFlowNet's learned policy because the exponential cost function naturally shifts the reward from structural ($\Delta\lambda_2$ dominant) to semantic ($\Delta\pi$ dominant) as the graph matures.
+cyber-seer's three phases (bridge → mesh → semantic) emerge automatically in the GFlowNet's learned policy because the exponential cost function naturally shifts the reward from structural ($\Delta\lambda_2$ dominant) to semantic ($\Delta\phi^*$ dominant) as the graph matures.
 
 see [[spectral gap]] for the mathematical foundation. see [[cyberia/architecture]] for cyber-seer's role in the agent network. see [[foculus]] for how $\lambda_2$ determines consensus speed. see [[bostrom]] for current network statistics. see [[gflownet focus flow]] for the learned extension

@@ -21,6 +21,6 @@ this principle originates in signaling theory — the same logic that governs [[
 
 ## relation to learning
 
-[[learning incentives]] reward [[neurons]] whose costly signals improve the [[focus]] distribution $\pi^*$. the cost filters out low-quality assertions, ensuring that the [[cybergraph]] converges toward genuine [[relevance]] rather than spam
+[[learning incentives]] reward [[neurons]] whose costly signals improve the [[focus]] distribution $\phi^*$. the cost filters out low-quality assertions, ensuring that the [[cybergraph]] converges toward genuine [[relevance]] rather than spam
 
 see [[cyberlink]], [[tokens]], [[knowledge]], [[noise]], [[learning incentives]], [[focus]]

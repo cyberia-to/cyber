@@ -162,7 +162,7 @@ within a zone: cells communicate aggregated [[focus]] vectors. each cell exports
 
 across zones: zones exchange coarse-grained [[focus]] summaries. the error is bounded:
 
-$$\|\pi^*_{\text{folded}} - \pi^*_{\text{global}}\| \leq C \cdot e^{-\alpha h}$$
+$$\|\phi^*_{\text{folded}} - \phi^*_{\text{global}}\| \leq C \cdot e^{-\alpha h}$$
 
 more communication → smaller error → closer to global [[focus]]
 

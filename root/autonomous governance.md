@@ -46,10 +46,10 @@ these votes are:
 - continuous: happening every block, not in periodic cycles
 - expertise-weighted: karma reflects accuracy track record, not just wealth
 - private where appropriate: happiness is aggregated, not individually exposed
-- automatically enforced: the tri-kernel incorporates them into π* every convergence step
+- automatically enforced: the tri-kernel incorporates them into φ* every convergence step
 - falsifiable: BTS scoring penalizes dishonest voting with karma damage
 
-the aggregated signal is the [[focus]] distribution π* and the [[metabolism|metabolic health]] M(t). these are computed deterministically from participant behavior. the [[parametrization]] RL agent acts on ΔM. the [[self-linking]] mechanism acts on π*. the governance is the computation.
+the aggregated signal is the [[focus]] distribution φ* and the [[metabolism|metabolic health]] M(t). these are computed deterministically from participant behavior. the [[parametrization]] RL agent acts on ΔM. the [[self-linking]] mechanism acts on φ*. the governance is the computation.
 
 ---
 

@@ -48,7 +48,7 @@ a neuron that consistently lies accumulates negative karma. its future [[cyberli
 
 ## honesty as the foundation of [[syntropy]]
 
-the [[cybergraph]]'s information measure — [[syntropy]] $J(\pi^*) = D_{KL}(\pi^* \| u)$ — is produced entirely by the aggregate of honest epistemic acts. each honest cyberlink is a bit of genuine signal. the tri-kernel converts honest signals into a sharper $\pi^*$. dishonest links move $\pi^*$ toward noise, lowering syntropy.
+the [[cybergraph]]'s information measure — [[syntropy]] $J(\phi^*) = D_{KL}(\phi^* \| u)$ — is produced entirely by the aggregate of honest epistemic acts. each honest cyberlink is a bit of genuine signal. the tri-kernel converts honest signals into a sharper $\phi^*$. dishonest links move $\phi^*$ toward noise, lowering syntropy.
 
 a maximally honest graph is a maximally syntropy-generating machine. honesty is not a constraint on the system — it is the fuel.
 

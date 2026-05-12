@@ -74,7 +74,7 @@ each component contracts independently:
 
 the composite inherits contraction because it is a convex combination of contractions
 
-consequence: the [[focus]] distribution $\pi^*$ exists, is unique, and every [[neuron]]'s local computation converges to it. no central authority computes $\pi^*$. no vote decides it. the contraction mapping makes it inevitable
+consequence: the [[focus]] distribution $\phi^*$ exists, is unique, and every [[neuron]]'s local computation converges to it. no central authority computes $\phi^*$. no vote decides it. the contraction mapping makes it inevitable
 
 ## why this matters more than it looks
 
@@ -82,7 +82,7 @@ Banach's theorem is the reason [[convergent computation]] works. derivation (Tur
 
 a protein folds to its native state by free energy minimization — a contraction in configuration space. no theorem of chemistry "proves" the correct fold. the protein converges to it
 
-the [[cybergraph]] converges to [[collective focus]] $\pi^*$ by the same principle. no axiom system derives the correct ranking. the contraction mapping finds it
+the [[cybergraph]] converges to [[collective focus]] $\phi^*$ by the same principle. no axiom system derives the correct ranking. the contraction mapping finds it
 
 this is [[cybics]] — proof by simulation, not proof by derivation. Banach's theorem is the formal guarantee that simulation converges
 

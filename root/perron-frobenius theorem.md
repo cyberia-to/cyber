@@ -6,7 +6,7 @@ alias: Perron-Frobenius, perron-frobenius
 ---
 the theorem guaranteeing that an irreducible non-negative matrix has a unique largest real eigenvalue with a strictly positive eigenvector
 
-mathematical foundation of the [[collective focus theorem]]: ensures a unique [[focus]] distribution $\pi^*$ exists for the [[cybergraph]]
+mathematical foundation of the [[collective focus theorem]]: ensures a unique [[focus]] distribution $\phi^*$ exists for the [[cybergraph]]
 
 statement: let $A$ be an irreducible non-negative square matrix. then $A$ has a real eigenvalue $\lambda_1 > 0$ such that $\lambda_1 \geq |\lambda|$ for every eigenvalue $\lambda$ of $A$. the eigenvector corresponding to $\lambda_1$ has all strictly positive entries
 

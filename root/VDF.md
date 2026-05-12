@@ -15,8 +15,8 @@ VDFs prove minimum elapsed time without trusted clocks. the output is determinis
 a typical VDF consists of three algorithms:
 
 - setup(T) — produces public parameters for delay parameter T
-- eval(x, T) — computes output y and proof π after T sequential steps
-- verify(x, y, π) — checks the proof in O(log T) or O(1) time
+- eval(x, T) — computes output y and proof φ* after T sequential steps
+- verify(x, y, φ*) — checks the proof in O(log T) or O(1) time
 
 the sequential nature comes from iterated squaring in groups of unknown order, or from iterated hashing in a [[hash chain]]. the key property: no amount of parallelism reduces the wall-clock time below T steps
 

@@ -26,7 +26,7 @@ traditional state channels need dispute windows because the chain cannot verify 
 S_{n+1} = reduce(S_n, formula, focus)    with proof π_{n+1}
 ```
 
-the proof π is self-verifying. it says: "S_{n+1} is the mathematically correct result of applying this formula to S_n." any party can check it. the chain, a third neuron, or a program running a century later — the proof speaks for itself.
+the proof φ* is self-verifying. it says: "S_{n+1} is the mathematically correct result of applying this formula to S_n." any party can check it. the chain, a third neuron, or a program running a century later — the proof speaks for itself.
 
 ```
 CHANNEL LIFECYCLE
@@ -183,7 +183,7 @@ after:    A ↔ B ↔ C
           A ↔ C              (direct, new channel)
 ```
 
-this IS π-calculus name passing. the "name" is a [[particle]] — a content-addressed reference to a channel endpoint. passing a [[particle]] inside a channel state transition is passing a channel name. the [[cybergraph]]'s content-addressing makes every channel endpoint a first-class transferable name.
+this IS φ*-calculus name passing. the "name" is a [[particle]] — a content-addressed reference to a channel endpoint. passing a [[particle]] inside a channel state transition is passing a channel name. the [[cybergraph]]'s content-addressing makes every channel endpoint a first-class transferable name.
 
 ### multi-party convergence
 
@@ -226,7 +226,7 @@ the channel is not a fourteenth language. it is an application pattern over exis
 - [[Arc]] — the topology of who connects to whom (dynamic [[graph]])
 - [[Hemera]] — content-addressed state history and name identity
 
-the π-calculus semantics emerge from [[Arc]]'s dynamic [[topology]] (new edges = new channels) + [[Nox]]'s proven bilateral state transitions + [[Seq]]'s causal ordering + name passing through [[particle]] references in shared_data. no irreducible primitive is missing — concurrency is a composition, not an atom.
+the φ*-calculus semantics emerge from [[Arc]]'s dynamic [[topology]] (new edges = new channels) + [[Nox]]'s proven bilateral state transitions + [[Seq]]'s causal ordering + name passing through [[particle]] references in shared_data. no irreducible primitive is missing — concurrency is a composition, not an atom.
 
 ## the atomic unit
 

@@ -54,13 +54,13 @@ the information gain term measures how much the agent's belief deviated from wha
 
 ## in [[focus flow computation]]
 
-the approximation quality metric $\varepsilon(G,c) = D_{KL}(\pi^*_c \| q^*_c)$ measures how much the compiled [[transformer]] deviates from the exact [[focus]] distribution. the same measure quantifies epistemic quality at three scales:
+the approximation quality metric $\varepsilon(G,c) = D_{KL}(\phi^*_c \| q^*_c)$ measures how much the compiled [[transformer]] deviates from the exact [[focus]] distribution. the same measure quantifies epistemic quality at three scales:
 
 | scale | formula | what it measures |
 |---|---|---|
 | individual [[neuron]] | BTS score $s_i$ | one agent's information contribution |
-| compiled model | $D_{KL}(\pi^*_c \| q^*_c)$ | approximation gap vs exact focus |
-| collective state | $D_{KL}(\pi^*_\text{prior} \| \pi^*_\text{updated})$ | how much the graph learned |
+| compiled model | $D_{KL}(\phi^*_c \| q^*_c)$ | approximation gap vs exact focus |
+| collective state | $D_{KL}(\phi^*_\text{prior} \| \phi^*_\text{updated})$ | how much the graph learned |
 
 ---
 

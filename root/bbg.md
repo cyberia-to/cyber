@@ -26,7 +26,7 @@ $$\text{BBG\_poly}(\text{index}, \text{key}, t) = \text{value}$$
 
 | index | domain | key | value |
 |-------|--------|-----|-------|
-| 0: particles | content-addressed nodes | CID | energy, π*, axon fields |
+| 0: particles | content-addressed nodes | CID | energy, φ*, axon fields |
 | 1: axons_out | outgoing edges by source | source CID | axon pointer, weight |
 | 2: axons_in | incoming edges by target | target CID | axon pointer, weight |
 | 3: neurons | agent state | neuron ID | focus, karma, stake |

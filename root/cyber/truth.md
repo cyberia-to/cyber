@@ -19,7 +19,7 @@ the structural layer is permanent and append-only — a link that exists cannot 
 
 a single-factor truth model fails in one of two directions
 
-structural only: all [[cyberlinks]] weighted by stake alone. $\pi^*$ reflects link count and economic weight, but the graph cannot distinguish a well-supported theorem from well-funded spam. the [[tri-kernel]] converges — but possibly to a false attractor. there is no inhibitory signal
+structural only: all [[cyberlinks]] weighted by stake alone. $\phi^*$ reflects link count and economic weight, but the graph cannot distinguish a well-supported theorem from well-funded spam. the [[tri-kernel]] converges — but possibly to a false attractor. there is no inhibitory signal
 
 epistemic only: markets over propositions with no underlying link structure. the market has no substrate — nothing to trade on. belief without assertion is formless
 
@@ -41,7 +41,7 @@ the two factors multiply. a high-stake link the market disbelieves is suppressed
 
 between binary structure and continuous belief sits [[valence]] $v \in \{-1, 0, +1\}$ — the coarse epistemic signal provided at link creation. it is not a third truth factor but the seed that initializes the market. the [[neuron]]'s prediction of where the [[coupling]] market will settle, expressed in three states, before the collective has spoken
 
-the full truth model: binary structure → ternary seed → continuous market → [[focus]] distribution $\pi^*$. each layer requires the one below it
+the full truth model: binary structure → ternary seed → continuous market → [[focus]] distribution $\phi^*$. each layer requires the one below it
 
 ## valence strategy
 

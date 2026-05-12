@@ -17,6 +17,6 @@ the tensor language. `Tensor<[D1, D2, ..., Dk]>` where dimensions are compile-ti
 | `conv2d(X, K)` | 2D convolution |
 | `softmax(T, axis)` | Softmax activation |
 
-dense and sparse. SpMV over sparse adjacency matrices = [[graph]] computation ([[focus]] [[vector]] π, [[tri-kernel]] diffusion). quantized [[inference]] (int4, int8 matmul) = contraction over Z/2ⁿ. full-precision neural layers = contraction over F_p. Ten is the compute engine for both the [[cybergraph]] and AI [[inference]]. CYBERRANK is literally repeated `matmul`. compiles to Tri
+dense and sparse. SpMV over sparse adjacency matrices = [[graph]] computation ([[focus]] [[vector]] φ*, [[tri-kernel]] diffusion). quantized [[inference]] (int4, int8 matmul) = contraction over Z/2ⁿ. full-precision neural layers = contraction over F_p. Ten is the compute engine for both the [[cybergraph]] and AI [[inference]]. CYBERRANK is literally repeated `matmul`. compiles to Tri
 
 see [[cyb/languages]] for the complete language set. see [[cyb/multiproof]] for the proving architecture

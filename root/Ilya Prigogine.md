@@ -12,6 +12,6 @@ Showed that [[self-organization]] emerges spontaneously in open systems driven f
 
 His central insight: [[order]] does not require design. it emerges from energy flow through a system under conservation laws.
 
-The [[cybergraph]] operates in this regime: [[token]] stake provides energy inflow, link decay and exploration export [[entropy]], and [[focus]] sharpening creates [[syntropy]]. stop the energy inflow and π drifts to uniform — the system dies.
+The [[cybergraph]] operates in this regime: [[token]] stake provides energy inflow, link decay and exploration export [[entropy]], and [[focus]] sharpening creates [[syntropy]]. stop the energy inflow and φ* drifts to uniform — the system dies.
 
 see [[dissipative structures]] for the theory. see [[negentropy vs entropy]] for the full thermodynamic framework applied to [[cyber]]

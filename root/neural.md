@@ -75,7 +75,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 ## semantic core
 
 - the dynamic vocabulary of the network — top [[particles]] by [[cyberank]]
-- defined by [[focus]] distribution: SemanticCore(k) = top k particles by π
+- defined by [[focus]] distribution: SemanticCore(k) = top k particles by φ*
 - current core shaped by [[bostrom]] [[bootloader]]
 - explore at [cyb.ai/particles](https://cyb.ai/particles)
 - properties: dynamic (evolves with attention), convergent (tri-kernel guarantees stability), stake-weighted (resistant to spam), verifiable (stark proofs)
@@ -102,7 +102,7 @@ the language of [[egregore]]: meaning emerges from how many [[neurons]] independ
 
 - ambiguity resolution: [[topology]] around a [[particle]] disambiguates meaning computationally — [[springs]] detect polysemy as high tension, [[heat]] concentrates on contextually appropriate meaning
 - compositionality: meaning of complex expression derivable from parts and their structural arrangement — computed by [[tri-kernel]] without explicit composition rules
-- convergence: inherits from the Collective [[Focus]] Theorem — unique stationary distribution π* guarantees the network's collective understanding converges
+- convergence: inherits from the Collective [[Focus]] Theorem — unique stationary distribution φ* guarantees the network's collective understanding converges
 - expressiveness: semantically complete — can encode [[propositional logic]], [[predicate logic]], [[modal logic]], [[temporal logic]], [[fuzzy logic]], and [[natural language semantics]]. can also express collective confidence distributions, continuous semantic distance, and [[knowledge topology]] metadata
 
 ## evolution phases

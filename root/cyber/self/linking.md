@@ -16,11 +16,11 @@ the protocol creating [[cyberlinks]] from its own inference — the graph writin
 
 ### inference completion
 
-the [[tri-kernel]] fixed point π* assigns focus weight to every [[particle]]. when the joint focus on two particles A and B is high — the graph collectively attends to both, they share many common neighbors, they co-occur across many [[neuron]]'s link patterns — but no direct link A→B exists in the authenticated record, the gap is an inference recommendation.
+the [[tri-kernel]] fixed point φ* assigns focus weight to every [[particle]]. when the joint focus on two particles A and B is high — the graph collectively attends to both, they share many common neighbors, they co-occur across many [[neuron]]'s link patterns — but no direct link A→B exists in the authenticated record, the gap is an inference recommendation.
 
 the system computes:
 
-$$\text{completion\_score}(A, B) = \pi^*_A \cdot \pi^*_B \cdot \text{semantic\_proximity}(A, B) / \text{link\_density}(A, B)$$
+$$\text{completion\_score}(A, B) = \phi^*_A \cdot \phi^*_B \cdot \text{semantic\_proximity}(A, B) / \text{link\_density}(A, B)$$
 
 where semantic proximity is the cosine similarity in the effective embedding (derived from the graph's spectral structure) and link density penalizes pairs already well-connected. high completion score without an existing link is a proposal: the graph implies this connection exists but has not said so explicitly.
 

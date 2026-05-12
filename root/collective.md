@@ -16,7 +16,7 @@ in [[cyber]]: [[neurons]] sharing the [[cybergraph]], producing [[knowledge]] th
 
 [[collective memory]] — the [[cybergraph]] accumulates all links across all time — authenticated, immutable, traversable
 
-[[collective focus]] — the [[tri-kernel]] converges [[attention]] into a stationary distribution π — what the group actually attends to
+[[collective focus]] — the [[tri-kernel]] converges [[attention]] into a stationary distribution φ* — what the group actually attends to
 
 [[collective computation]] — probabilistic [[inference]] at planetary scale, no single agent could perform alone
 

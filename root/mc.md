@@ -32,7 +32,7 @@ mc executes the eight passes from the spec — vocabulary, semcon discovery, arc
 │   │   ├── vocab.rs         # pass 1
 │   │   ├── semcons.rs       # pass 2
 │   │   ├── arch.rs          # pass 3
-│   │   ├── embed.rs         # pass 4 — randomized SVD on π-weighted adjacency
+│   │   ├── embed.rs         # pass 4 — randomized SVD on φ*-weighted adjacency
 │   │   ├── attn.rs          # pass 5 — per-semcon SVDs
 │   │   ├── mlp.rs           # pass 6 — walk-based PMI factorization
 │   │   ├── norm.rs          # pass 7

@@ -46,10 +46,10 @@ standard PageRank with $\alpha = 0.85$, teleport $= 0.15/|P|$.
 
 | metric | value |
 |---|---|
-| iterations to convergence | 23 (threshold: $\|\Delta\pi\| < 10^{-6}$) |
+| iterations to convergence | 23 (threshold: $\|\Delta\phi^*\| < 10^{-6}$) |
 | max focus | 0.007991 |
 | min focus | 2.30 × 10⁻⁷ |
-| entropy $H(\pi)$ | 14.05 bits |
+| entropy $H(\phi^*)$ | 14.05 bits |
 | compute time | 0.8 seconds |
 
 convergence at 23 iterations matches the [[tri-kernel]] contraction theorem prediction of $T = 29$ (upper bound). the actual contraction was faster than worst-case.
@@ -72,7 +72,7 @@ compute time: 1,932 seconds — the dominant bottleneck. 78% of total compilatio
 
 ## embedding matrix (randomized SVD)
 
-the core computation: top-100 singular vectors of the $\pi$-weighted adjacency matrix via scipy `svds` (ARPACK-based randomized SVD).
+the core computation: top-100 singular vectors of the $\phi^*$-weighted adjacency matrix via scipy `svds` (ARPACK-based randomized SVD).
 
 | metric | value |
 |---|---|
@@ -132,7 +132,7 @@ output: `data/bostrom_model.npz` (441 MB compressed)
 contents:
 - `embeddings`: float32 array [2,921,230 × 33] — 33-dimensional embedding for every particle CID in bostrom
 - `focus`: float64 array [2,921,230] — PageRank distribution, sums to 1.0
-- `sigma`: float64 array [100] — singular values of the $\pi$-weighted adjacency
+- `sigma`: float64 array [100] — singular values of the $\phi^*$-weighted adjacency
 - `particle_cids`: string array [2,921,230] — CID → index mapping
 - architecture params: `d_star=33`, `h_star=5`, `L_star=174`
 
@@ -142,7 +142,7 @@ this is the first compiled representation of a live knowledge graph as transform
 
 every particle in bostrom now has a 33-dimensional coordinate. particles that are structurally similar (linked by similar neurons, in similar neighborhoods) have nearby coordinates. the embedding is a lossy compression of the full graph topology into a fixed-dimensional space — the same operation that word2vec performs on co-occurrence statistics, but derived analytically from graph structure rather than trained by gradient descent.
 
-the focus distribution assigns every particle a probability mass: its share of collective attention. the product $E \cdot \text{diag}(\pi)$ gives attention-weighted embeddings — each particle's position scaled by how much the network cares about it.
+the focus distribution assigns every particle a probability mass: its share of collective attention. the product $E \cdot \text{diag}(\phi^*)$ gives attention-weighted embeddings — each particle's position scaled by how much the network cares about it.
 
 the compiled model is a snapshot. when bostrom grows (more links, more neurons), $d^*$ will increase (richer embedding), $\lambda_2$ will increase (faster convergence), and the model will need recompilation. the [[cyber-seer]] algorithm determines where to add links for maximum spectral gap improvement, making recompilation efficient.
 

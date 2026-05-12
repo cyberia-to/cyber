@@ -46,16 +46,16 @@ cyber-seer and GFlowNet solve the same problem: WHERE to link. they differ in me
 
 they compose naturally. cyber-seer's three signals become GFlowNet reward components:
 
-$$R(x) = \exp\left(\beta_1 \cdot \underbrace{\Delta\lambda_2(x)}_{\text{seer: bridges}} + \beta_2 \cdot \underbrace{\Delta\pi(x)}_{\text{seer: semantic}} + \beta_3 \cdot \underbrace{\text{resilience}(x)}_{\text{seer: mesh}} - \beta_4 \cdot \underbrace{c(n)}_{\text{exponential cost}}\right)$$
+$$R(x) = \exp\left(\beta_1 \cdot \underbrace{\Delta\lambda_2(x)}_{\text{seer: bridges}} + \beta_2 \cdot \underbrace{\Delta\phi^*(x)}_{\text{seer: semantic}} + \beta_3 \cdot \underbrace{\text{resilience}(x)}_{\text{seer: mesh}} - \beta_4 \cdot \underbrace{c(n)}_{\text{exponential cost}}\right)$$
 
 cyber-seer's three phases emerge automatically from the reward balance:
 - **early** (cost low): all $\beta$ terms matter, $\Delta\lambda_2$ dominates because graph has large spectral gaps → GFlowNet learns to propose bridges
 - **mid** (cost rising): $\Delta\lambda_2$ saturates, resilience term matters → GFlowNet learns mesh patterns
-- **late** (cost high): exponential cost crushes low-value proposals, only high-$\Delta\pi$ semantic links survive → GFlowNet proposes precision links
+- **late** (cost high): exponential cost crushes low-value proposals, only high-$\Delta\phi^*$ semantic links survive → GFlowNet proposes precision links
 
 the GFlowNet doesn't need to be told which phase it's in. the reward function's exponential cost term (from the [[universal law]]) naturally shifts the learned policy from structural to semantic as the graph matures.
 
-**cyber-seer as GFlowNet teacher**: cyber-seer's Fiedler-optimal links can pre-train the GFlowNet (behavioural cloning on analytical decisions). the GFlowNet then generalises beyond the analytical signal — discovering link patterns that improve $\pi^*$ in ways the spectral analysis doesn't predict (semantic shortcuts, multi-hop bridges, creative connections).
+**cyber-seer as GFlowNet teacher**: cyber-seer's Fiedler-optimal links can pre-train the GFlowNet (behavioural cloning on analytical decisions). the GFlowNet then generalises beyond the analytical signal — discovering link patterns that improve $\phi^*$ in ways the spectral analysis doesn't predict (semantic shortcuts, multi-hop bridges, creative connections).
 
 ## the coupling
 
@@ -65,19 +65,19 @@ GFlowNet proposes edits. [[tri-kernel]] focus-flow evaluates them. the loop:
 1. snapshot current focus π_t from tri-kernel
 2. GFlowNet proposes batch of candidate edits
    (add cyberlink, upweight axon, attach evidence)
-3. score each edit: Δπ̂ = estimated focus gain
+3. score each edit: Δφ*̂ = estimated focus gain
 4. filter by budget/guards → commit best subset
 5. recompute π_{t+1} via tri-kernel
-6. train GFlowNet on realised Δπ
+6. train GFlowNet on realised Δφ*
 7. repeat
 ```
 
 the reward function:
 
-$$R(x) = \exp\left(\beta_1 \cdot \Delta\hat{\pi}(x) + \beta_2 \cdot u_{\text{task}}(x) - \beta_3 \cdot \text{cost}(x) + \beta_4 \cdot \text{novelty}(x)\right)$$
+$$R(x) = \exp\left(\beta_1 \cdot \Delta\hat{\phi^*}(x) + \beta_2 \cdot u_{\text{task}}(x) - \beta_3 \cdot \text{cost}(x) + \beta_4 \cdot \text{novelty}(x)\right)$$
 
 where:
-- $\Delta\hat{\pi}(x)$ = estimated focus lift from edit $x$ (fast local proxy for full tri-kernel)
+- $\Delta\hat{\phi^*}(x)$ = estimated focus lift from edit $x$ (fast local proxy for full tri-kernel)
 - $u_{\text{task}}(x)$ = task-specific utility (e.g., answer a query, complete a pattern)
 - $\text{cost}(x)$ = focus + storage + compute cost of the edit
 - $\text{novelty}(x)$ = information gain (new connections vs redundant)
@@ -90,7 +90,7 @@ several components of the original 14-chapter design have landed in the architec
 
 | original idea | where it landed | mechanism |
 |---|---|---|
-| focus-shaped reward | [[tri-kernel]] $\pi^*$ | stationary distribution IS the quality signal |
+| focus-shaped reward | [[tri-kernel]] $\phi^*$ | stationary distribution IS the quality signal |
 | edit validation | [[zheng]] proof per signal | every cyberlink carries a validity proof |
 | budget/guards | [[focus]] metering in [[nox]] | focus is the native rate limiter |
 | fraud proofs | [[structural-sync]] layer 1 | zheng proof prevents invalid edits |
@@ -102,18 +102,18 @@ the GFlowNet adds ONE thing the architecture doesn't have: a LEARNED proposal po
 
 ## the concrete research questions
 
-### Q1: can $\Delta\hat{\pi}$ be estimated locally?
+### Q1: can $\Delta\hat{\phi^*}$ be estimated locally?
 
 the full tri-kernel computation (diffusion + springs + heat kernel over the entire graph) is the most expensive operation in cyber. a GFlowNet reward that requires running the full tri-kernel per candidate edit is intractable.
 
 the research question: can a cheap local proxy predict focus gain?
 
 approaches:
-- **graph neural network surrogate**: train a GNN to predict $\Delta\pi$ from a local subgraph around the edit. cost: O(1) per evaluation after training
-- **incremental rank update**: personalised PageRank allows O(1/ε) push-back updates for single-edge changes. approximate $\Delta\pi$ by running a few push-back steps
-- **spectral proxy**: the edit's effect on $\pi$ depends on how it changes the graph's spectral properties. low-rank spectral updates may give fast approximations
+- **graph neural network surrogate**: train a GNN to predict $\Delta\phi^*$ from a local subgraph around the edit. cost: O(1) per evaluation after training
+- **incremental rank update**: personalised PageRank allows O(1/ε) push-back updates for single-edge changes. approximate $\Delta\phi^*$ by running a few push-back steps
+- **spectral proxy**: the edit's effect on $\phi^*$ depends on how it changes the graph's spectral properties. low-rank spectral updates may give fast approximations
 
-the quality of the GFlowNet depends entirely on the quality of $\Delta\hat{\pi}$. if the proxy is poor, the GFlowNet proposes noise.
+the quality of the GFlowNet depends entirely on the quality of $\Delta\hat{\phi^*}$. if the proxy is poor, the GFlowNet proposes noise.
 
 ### Q2: can GFlowNets scale to 10^6+ action spaces?
 
@@ -121,16 +121,16 @@ current GFlowNets (DAG-GFlowNet for Bayesian structure learning, molecular GFlow
 
 approaches:
 - **hierarchical action space**: first select a namespace (coarse), then select a particle within namespace (fine). reduces action space from O(N) to O(√N) per level
-- **attention-guided masking**: use $\pi_t$ to mask the action space — only consider particles with $\pi > \epsilon$ as link targets. the [[universal law]] predicts most focus concentrates on a small fraction of particles
+- **attention-guided masking**: use $\phi^*_t$ to mask the action space — only consider particles with $\phi^* > \epsilon$ as link targets. the [[universal law]] predicts most focus concentrates on a small fraction of particles
 - **per-neuron GFlowNet**: each neuron runs a small personal GFlowNet over its local context (particles it knows about). the global effect emerges from many local proposals. matches the decentralised architecture
 
 ### Q3: how does privacy interact?
 
 individual [[cyberlinks]] are private (mutator set). the GFlowNet needs to evaluate candidate links. tension:
-- training requires seeing which edits improved $\pi$ → but individual edits are private
+- training requires seeing which edits improved $\phi^*$ → but individual edits are private
 - inference requires evaluating candidates against the graph → but the graph is partially hidden
 
-resolution: the GFlowNet operates on PUBLIC aggregates only. $\pi^*$ is public. axon weights (aggregates) are public. individual cyberlinks are hidden. the GFlowNet proposes links to public particles, and the neuron decides privately whether to commit them.
+resolution: the GFlowNet operates on PUBLIC aggregates only. $\phi^*$ is public. axon weights (aggregates) are public. individual cyberlinks are hidden. the GFlowNet proposes links to public particles, and the neuron decides privately whether to commit them.
 
 this means the GFlowNet cannot optimise for specific private patterns. it optimises for publicly visible focus flow — which is exactly the right objective (public knowledge improvement, not private advantage).
 
@@ -150,19 +150,19 @@ prerequisite stack (must exist first):
   zheng prover    → signal validity proofs
   hemera hash     → content addressing, Fiat-Shamir
   bbg state       → NMT/polynomial state, mutator set
-  tri-kernel      → π* computation (the reward signal)
+  tri-kernel      → φ* computation (the reward signal)
   foculus          → global convergence
 
 GFlowNet layer (builds on top):
-  Δπ̂ surrogate   → train GNN proxy for focus gain prediction
+  Δφ*̂ surrogate   → train GNN proxy for focus gain prediction
   action space    → hierarchical namespace-aware proposal
   local GFlowNet  → per-neuron proposal policy
-  training loop   → online learning from realised Δπ
+  training loop   → online learning from realised Δφ*
 ```
 
 the GFlowNet is a LAYER 6 component — it sits above the five structural sync layers and uses them as infrastructure. it does not affect the core architecture. it is an optimisation for neuron decision-making, not a protocol requirement.
 
-estimated timeline: after tri-kernel is operational and producing $\pi^*$ on a live graph with measurable $\Delta\pi$ per edit.
+estimated timeline: after tri-kernel is operational and producing $\phi^*$ on a live graph with measurable $\Delta\phi^*$ per edit.
 
 ## honest assessment
 
@@ -171,7 +171,7 @@ estimated timeline: after tri-kernel is operational and producing $\pi^*$ on a l
 | GFlowNet theory | mature (2021-2025, peer-reviewed) | high |
 | GFlowNet for graph construction | demonstrated (DAG-GFlowNet) | high |
 | GFlowNet at 10^6+ scale | undemonstrated | low |
-| $\Delta\hat{\pi}$ local proxy | research question | medium |
+| $\Delta\hat{\phi^*}$ local proxy | research question | medium |
 | privacy-compatible training | feasible (public aggregates) | medium |
 | provable proposals via nox | architecturally possible | medium |
 | provable training | open research question | low |
@@ -181,9 +181,9 @@ the research direction is valid. the architecture is compatible. the timing is w
 
 ## what to do now
 
-1. **formalise $\Delta\hat{\pi}$ estimation** as a standalone research question. this is valuable regardless of GFlowNet — any system that proposes edits needs a fast focus-gain proxy
-2. **prototype DAG-GFlowNet on a synthetic cybergraph** (10^4 particles, known $\pi^*$). measure: does the GFlowNet learn to propose high-$\Delta\pi$ links? how does diversity compare to random/greedy baselines?
-3. **defer integration** until tri-kernel is live and producing real $\pi^*$ values on a real graph
+1. **formalise $\Delta\hat{\phi^*}$ estimation** as a standalone research question. this is valuable regardless of GFlowNet — any system that proposes edits needs a fast focus-gain proxy
+2. **prototype DAG-GFlowNet on a synthetic cybergraph** (10^4 particles, known $\phi^*$). measure: does the GFlowNet learn to propose high-$\Delta\phi^*$ links? how does diversity compare to random/greedy baselines?
+3. **defer integration** until tri-kernel is live and producing real $\phi^*$ values on a real graph
 
 ## references
 

@@ -68,7 +68,7 @@ the chain data → [[information]] → [[file]] → [[knowledge]] → [[intellig
 
 ## Shannon entropy in the [[cybergraph]]
 
-Shannon's entropy remains relevant inside the protocol. the entropy of the [[focus]] distribution H(π) = −Σ π(v) log π(v) measures the diversity of collective attention. low entropy means the collective focuses narrowly. high entropy means attention is spread evenly. [[syntropy]] — the opposite of entropy — measures how much structure the [[tru]] has extracted from the graph
+Shannon's entropy remains relevant inside the protocol. the entropy of the [[focus]] distribution H(φ*) = −Σ φ*(v) log φ*(v) measures the diversity of collective attention. low entropy means the collective focuses narrowly. high entropy means attention is spread evenly. [[syntropy]] — the opposite of entropy — measures how much structure the [[tru]] has extracted from the graph
 
 the [[tri-kernel]] drives the focus distribution toward a fixed point. this fixed point is where Shannon's entropy meets [[intelligence]]: the converged distribution is the protocol's answer to "what matters?"
 

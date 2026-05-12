@@ -349,7 +349,7 @@ Layer 2 — Global State (derived, O(log S) update)
 
 Layer 3 — Indices (derived, ephemeral, rebuildable)
   Similarity:    Embedding vectors stored as particles, linked via cyberlinks
-  Ranking:       π (focus vector) computed by tri-kernel dynamics
+  Ranking:       φ* (focus vector) computed by tri-kernel dynamics
   Search:        HNSW/IVF indices over embedding cyberlinks
 ```
 

@@ -80,7 +80,7 @@ bitwise operations in F_p cost ~32 constraints each (bit decomposition). in F₂
 | workload | mechanism |
 |----------|-----------|
 | quantized AI inference ([[BitNet]]) | 1-bit matrix-vector multiply = XOR + popcount |
-| [[tri-kernel]] SpMV | quantized axon weights for π iteration |
+| [[tri-kernel]] SpMV | quantized axon weights for φ* iteration |
 | binary proving | kuro [[lens]] via [[zheng]] |
 | bitwise logic | XOR, AND, NOT at native cost |
 | error correction codes | Reed-Solomon over F₂ⁿ |
@@ -392,7 +392,7 @@ the five regimes are not abstract — they are the five aspects of the [[cybergr
 | [[particles]] (content) | nebu | content addressing, hashing, commitment |
 | [[cyberlinks]] (edges) | trop | graph optimization, shortest paths, ranking |
 | [[neurons]] (agents) | genies | identity, privacy, selective disclosure |
-| [[focus]] (attention vector π) | kuro | efficient SpMV, quantized tri-kernel iteration |
+| [[focus]] (attention vector φ*) | kuro | efficient SpMV, quantized tri-kernel iteration |
 | [[signals]] (encrypted payloads) | jali | private computation on encrypted cyberlinks |
 
 the cybergraph IS the five regimes composed:

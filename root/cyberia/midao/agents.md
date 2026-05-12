@@ -224,7 +224,7 @@ declining $\dot{M}_{\text{triad}}$ triggers council-level review. the three doma
 
 ### global: the 148th agent
 
-the [[tru]] computes planetary $\pi^*$ from all [[cyberlinks]] across all 7 instances. this is the final quality gate — the mathematics that no agent can override. if an agent's links consistently decrease global [[syntropy]], the tri-kernel naturally suppresses their weight. no vote needed. the fixed point self-corrects
+the [[tru]] computes planetary $\phi^*$ from all [[cyberlinks]] across all 7 instances. this is the final quality gate — the mathematics that no agent can override. if an agent's links consistently decrease global [[syntropy]], the tri-kernel naturally suppresses their weight. no vote needed. the fixed point self-corrects
 
 ---
 

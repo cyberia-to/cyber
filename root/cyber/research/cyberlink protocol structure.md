@@ -66,7 +66,7 @@ permit future-pointing hanging cyberlinks only with a [[stake]] bond and expiry,
 
 in a cyberlinks-only model, all focus rewards directly trace to link creation, aligning perfectly with the minting-for-focus rule【57†source】
 
-strict connectivity means every new unit of [[attention]] (Δπ) is measurable and attributable, strengthening the π-minting theorem【54†source】
+strict connectivity means every new unit of [[attention]] (Δφ*) is measurable and attributable, strengthening the φ*-minting theorem【54†source】
 
 authenticated graph data structures can prove existence and weight of every link without handling orphan cases【59†source】
 

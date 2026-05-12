@@ -44,7 +44,7 @@ prev_header_hash:    [F_p; 4]     chain link
 height:              u64           monotonic counter
 timestamp:           u64           block time
 bbg_root:            [F_p; 4]     root of the Big Badass Graph
-focus_root:          [F_p; 4]     commitment to current π* distribution
+focus_root:          [F_p; 4]     commitment to current φ* distribution
 execution_proof:     [F_p; 4]     hash of [[zheng]] proof of block execution
 validator_set_hash:  [F_p; 4]     commitment to current validator set
 

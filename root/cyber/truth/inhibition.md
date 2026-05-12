@@ -17,7 +17,7 @@ every neural network has two kinds of weights: positive (excitatory) and negativ
 
 a network with only positive weights can cluster — it can group similar things together. it cannot discriminate — it cannot say "this pattern excludes that one." without inhibition, a neural network cannot learn a boundary. it can only learn a blob.
 
-the current [[cybergraph]] without market pricing is excitation-only. every [[cyberlink]] has a positive weight (stake amount). [[focus]] flows toward heavily-linked [[particles]]. nothing pushes back. the [[tri-kernel]] converges to π* — but π* is shaped only by positive association. it cannot represent "this edge actively misleads."
+the current [[cybergraph]] without market pricing is excitation-only. every [[cyberlink]] has a positive weight (stake amount). [[focus]] flows toward heavily-linked [[particles]]. nothing pushes back. the [[tri-kernel]] converges to φ* — but φ* is shaped only by positive association. it cannot represent "this edge actively misleads."
 
 ---
 
@@ -37,7 +37,7 @@ now consider what different price regimes do:
 | p = 0.5 | genuine uncertainty | weight halved, reduced focus flow |
 | p → 0 | strong collective belief: link is false | weight suppressed → 0, link deactivated |
 
-at p → 0, the edge exists structurally but contributes nothing to π*. it is deactivated. this is the inhibitory signal that raw [[cyberlinks]] cannot provide.
+at p → 0, the edge exists structurally but contributes nothing to φ*. it is deactivated. this is the inhibitory signal that raw [[cyberlinks]] cannot provide.
 
 ---
 
@@ -107,6 +107,6 @@ when market prices are incorporated:
 
 $$A_{pq}^{\text{eff}} = \sum_{\ell: \text{src}(\ell)=p,\, \text{tgt}(\ell)=q} \text{price}(\ell) \cdot \text{stake}(\ell)$$
 
-the convergence theorem still holds — $A^{\text{eff}}$ remains non-negative, satisfying all conditions. but the fixed point π* now reflects epistemic quality, not merely structural prominence. the market-weighted [[cybergraph]] and the raw [[cybergraph]] converge to different fixed points. only the former tracks [[truth]].
+the convergence theorem still holds — $A^{\text{eff}}$ remains non-negative, satisfying all conditions. but the fixed point φ* now reflects epistemic quality, not merely structural prominence. the market-weighted [[cybergraph]] and the raw [[cybergraph]] converge to different fixed points. only the former tracks [[truth]].
 
-see [[market]] for the market design. see [[coupling]] for the ICBS mechanism. see [[focus flow computation]] for how π* is computed. see [[two kinds of knowledge]] for the structural/epistemic distinction. see [[binary topology ternary economics]] for the architectural principle.
+see [[market]] for the market design. see [[coupling]] for the ICBS mechanism. see [[focus flow computation]] for how φ* is computed. see [[two kinds of knowledge]] for the structural/epistemic distinction. see [[binary topology ternary economics]] for the architectural principle.

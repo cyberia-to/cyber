@@ -55,13 +55,13 @@ three operators, each providing a distinct search mode:
 | [[springs]] | structure | screened [[Laplacian]] — what satisfies constraints? |
 | [[heat]] | adaptation | heat kernel — what does the graph look like at scale τ? |
 
-the [[collective focus theorem]] guarantees convergence to a unique fixed point π*. the process is deterministic, verifiable, and local (h-hop neighborhood suffices)
+the [[collective focus theorem]] guarantees convergence to a unique fixed point φ*. the process is deterministic, verifiable, and local (h-hop neighborhood suffices)
 
 ## outputs
 
 | Output | Per-what | What it means |
 |--------|----------|--------------|
-| [[focus]] | [[particle]] | collective [[attention]] distribution π |
+| [[focus]] | [[particle]] | collective [[attention]] distribution φ* |
 | [[cyberank]] / [[prob]] | [[particle]] | probability of observation at fixed point |
 | [[relevance]] | [[particle]] × context | local reconvergence given query |
 | [[karma]] | [[neuron]] | accumulated trust from contribution |
@@ -73,7 +73,7 @@ the [[collective focus theorem]] guarantees convergence to a unique fixed point 
 ### the learning loop (fast, per-block)
 
 ```
-neuron links → Δπ > 0 → reward minted → neuron gains $CYB
+neuron links → Δφ* > 0 → reward minted → neuron gains $CYB
     → more will → more attention capacity → more links
 ```
 
@@ -83,7 +83,7 @@ positive feedback: accurate contributions compound. the unit of wealth is episte
 
 ```
 accurate links → high karma → more adjacency weight per link
-    → earlier Δπ attribution → more reward per contribution
+    → earlier Δφ* attribution → more reward per contribution
     → resources to stake on next insight
 ```
 
@@ -127,7 +127,7 @@ three independent stability mechanisms:
 
 | Mechanism | What it prevents | How |
 |-----------|-----------------|-----|
-| [[focus]] conservation | inflation of attention | π sums to 1, enforced by normalization |
+| [[focus]] conservation | inflation of attention | φ* sums to 1, enforced by normalization |
 | [[costly signal]] via [[will]] | spam, cheap assertions | every link costs locked capital |
 | [[market inhibition]] via ICBS | false claims persisting | collective betting suppresses incorrect edges |
 
@@ -153,7 +153,7 @@ the system is self-financing: good performance generates the resources that sust
 
 ## in the protocol stack
 
-[[foculus]] — [[consensus]]: [[particle]] $i$ is final when $\pi_i > \tau$
+[[foculus]] — [[consensus]]: [[particle]] $i$ is final when $\phi^*_i > \tau$
 
 [[focus flow computation]] — scheduling and convergence as layer 5 of the stack
 

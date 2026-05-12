@@ -63,9 +63,9 @@ u′, v′: anonymised node ids (field elements).
 
 cₑ: pedersen commitment to total edge weight wₑ (additively homomorphic).
 
-πₑ: range proof that 0 ≤ wₑ < 2⁶⁴ (bulletproof or halo2 equivalent).
+φ*ₑ: range proof that 0 ≤ wₑ < 2⁶⁴ (bulletproof or halo2 equivalent).
 
-leaf hash for storage: blake3-512(u′ ∥ v′ ∥ cₑ ∥ πₑ).
+leaf hash for storage: blake3-512(u′ ∥ v′ ∥ cₑ ∥ φ*ₑ).
 
 [[staking]]/deposit flow (confidential)
 
@@ -85,7 +85,7 @@ inputs (private witness): openings of commitments (weights), salts for any node-
 
 computation: run k power-iteration steps or chosen ranking algorithm using private weights.
 
-outputs: rank vector r (quantised) + [[poseidon2]] root of r + zk [[proof]] π that r was computed exactly from the hidden weights and published topology.
+outputs: rank vector r (quantised) + [[poseidon2]] root of r + zk [[proof]] φ* that r was computed exactly from the hidden weights and published topology.
 
 selective disclosure of subgraphs
 
@@ -163,11 +163,11 @@ appendix: example edge object (informal)
 
 ```
 edge {
-  uid: blake3-512(u′ ∥ v′ ∥ cₑ ∥ πₑ)
+  uid: blake3-512(u′ ∥ v′ ∥ cₑ ∥ φ*ₑ)
   from: u′            // poseidon2(pubkey ∥ salt)
   to:   v′            // poseidon2(pubkey ∥ salt)
   commit: cₑ          // pedersen commitment to total weight
-  range_proof: πₑ     // non-negative, bounded
+  range_proof: φ*ₑ     // non-negative, bounded
   tags: [poseidon2(uid)] // optional, for in-circuit traversal
 }
 ```

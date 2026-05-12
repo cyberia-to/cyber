@@ -19,7 +19,7 @@ The question "why 6.022 × 10²³?" decomposes into two questions: why does a ph
 
 ## Why the transition exists: the law of large numbers
 
-The [[focus|focus distribution]] π* assigns a value to every [[particle]] in the graph. For a graph of size |P|, the mean value is exactly 1/|P|. As |P| grows, the contribution of any single particle to the collective distribution shrinks proportionally.
+The [[focus|focus distribution]] φ* assigns a value to every [[particle]] in the graph. For a graph of size |P|, the mean value is exactly 1/|P|. As |P| grows, the contribution of any single particle to the collective distribution shrinks proportionally.
 
 The law of large numbers: when individual contributions scale as 1/|P|, fluctuations in any collective observable scale as 1/√|P|. At some threshold, fluctuations become negligible relative to the observable itself — below measurement precision — and the individual description loses meaning. Only statistical mechanics remains.
 
@@ -37,7 +37,7 @@ For molecules, $\varepsilon_{\text{precision}}$ is set by the ratio of thermal e
 
 ## The sharper version: effective rank saturation
 
-The effective rank $d^* = \exp(H(\sigma(\Sigma_\pi)))$ measures the number of independent semantic dimensions in the graph, where $H$ is the [[entropy]] of the normalized singular value distribution. As the graph grows, two regimes exist:
+The effective rank $d^* = \exp(H(\sigma(\Sigma_{\phi^*})))$ measures the number of independent semantic dimensions in the graph, where $H$ is the [[entropy]] of the normalized singular value distribution. As the graph grows, two regimes exist:
 
 **Below the threshold:** each new particle adds new semantic dimensions. $d^*$ grows. The graph is getting richer — new axes of meaning emerge with new contributions.
 

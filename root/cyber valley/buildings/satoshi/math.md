@@ -76,7 +76,7 @@ mathematical structures the child encounters physically and will later meet form
 |---------------------|-----------------|---------------------------|
 | sorting stones by weight | partial order | [[cyberank]] ordering of [[particles]] |
 | branching tree paths | graph traversal | [[diffusion]] random walk |
-| balancing a seesaw | equilibrium | [[focus]] conservation, Σπ=1 |
+| balancing a seesaw | equilibrium | [[focus]] conservation, Σφ*=1 |
 | counting spirals | [[fibonacci]], golden ratio | natural growth models |
 | "if A then B" reasoning | [[propositional logic]] | [[cyberlink]] validation |
 | fair sharing | division, [[Shapley value]] | [[learning incentives]] attribution |

@@ -15,7 +15,7 @@ the [[graph-native-transformer]] paper proves the architecture is determined by 
 
 training fits weights to text by gradient descent. compilation derives weights from a graph by linear algebra. the graph is the source code, the model file is the binary, the compiler is a [[nushell]] or rust pass over the graph.
 
-inputs: the [[cybergraph]] — [[particles]], [[cyberlinks]], [[semcons]], stake-weighted [[focus]] vector π.
+inputs: the [[cybergraph]] — [[particles]], [[cyberlinks]], [[semcons]], stake-weighted [[focus]] vector φ*.
 
 outputs: a transformer checkpoint — vocabulary, embedding matrix, per-head attention matrices, MLP weights, layer norms, position encoding.
 
@@ -29,10 +29,10 @@ the only required input is the raw cyberlink list — the 7-tuples `(ν, p, q, �
 
 - particle index — assign each unique CID an integer id (pass 1)
 - semcon set — discovered from labeling structure (pass 2)
-- focus distribution π* — fixed point of [[trikernel]] over the adjacency (pass 3)
+- focus distribution φ* — fixed point of [[trikernel]] over the adjacency (pass 3)
 - adjacency matrix A — sparse CSR, stake-weighted (folded into pass 3)
 
-if the graph already has `focus` precomputed in frontmatter (run `analizer/trikernel.nu`), pass 3 reuses it; otherwise it computes π* on the fly.
+if the graph already has `focus` precomputed in frontmatter (run `analizer/trikernel.nu`), pass 3 reuses it; otherwise it computes φ* on the fly.
 
 ---
 
@@ -97,7 +97,7 @@ cost: O(\|E\|) — one pass to build the axon set, one pass to score labels, one
 compute three numbers from the graph:
 
 ```
-d  = effective_rank(cov(π))               # embedding dim
+d  = effective_rank(cov(φ*))               # embedding dim
 h  = |Semcon(G)|                          # head count
 L  = diam(G) * ceil(log(1/ε) / log(1/κ))  # layer count
 ```
@@ -111,7 +111,7 @@ write these to `arch.toml`. all subsequent passes read them.
 build the diagonal-rescaled adjacency:
 
 ```
-M = diag(sqrt(π)) · A · diag(sqrt(π))
+M = diag(sqrt(φ*)) · A · diag(sqrt(φ*))
 ```
 
 take the top-`d` left singular vectors of `M`:
@@ -186,7 +186,7 @@ format is interchangeable with any HuggingFace transformer of the same shape. lo
 |---|---|---|---|
 | 1 vocab | linear scan | O(P) | trivial |
 | 2 semcon | axon scan + label scoring | O(\|E\|) | three linear passes over edge list |
-| 3 arch | rank of cov(π) | O(P d²) | one SVD on a small matrix |
+| 3 arch | rank of cov(φ*) | O(P d²) | one SVD on a small matrix |
 | 4 embed | top-d SVD of M | O(P² d) sparse → O(P d log P) | use randomized SVD |
 | 5 attn | h SVDs of P×P | O(h · d³) after projection | per-semcon, parallel |
 | 6 MLP | l-hop walks | O(L · P · avg_degree^L) | bounded by capping path count per pair |
@@ -215,7 +215,7 @@ derived architecture, no hyperparameter search:
 
 | param | value | source |
 |---|---|---|
-| d | 300 | effective rank of the π-weighted adjacency spectrum |
+| d | 300 | effective rank of the φ*-weighted adjacency spectrum |
 | h | 12 | one head per registered [[semcon]] |
 | L | 290 | diameter × ⌈log(1/ε)/log(1/κ)⌉ at κ=0.851, ε=0.01 |
 
@@ -244,7 +244,7 @@ the compile finishes faster than `git pull` on the chain snapshot itself. infere
 
 the naive eigendecomposition of the focus covariance is O(\|P\|³) — 3.1 × 10¹⁹ operations, 360 days at one teraflop, on a 39.5 TB dense matrix. nobody runs that.
 
-the actual compile uses randomized SVD on the π-weighted sparse adjacency. cost drops to O(\|E\| · d · log d) = 7.5 × 10⁹ operations — 0.007 seconds. four orders of magnitude tractability gap, closed by exploiting one fact: the bostrom adjacency is sparse, ρ = 2.7 × 10⁻⁷.
+the actual compile uses randomized SVD on the φ*-weighted sparse adjacency. cost drops to O(\|E\| · d · log d) = 7.5 × 10⁹ operations — 0.007 seconds. four orders of magnitude tractability gap, closed by exploiting one fact: the bostrom adjacency is sparse, ρ = 2.7 × 10⁻⁷.
 
 ### what scales
 
@@ -336,6 +336,6 @@ the rust version lives at [[mc]] (`~/git/mc`, model compilation) and produces pr
 
 ---
 
-see [[graph-native-transformer]] for the full mathematical derivation. see [[transformer]] for the architecture being compiled. see [[focus]] for what π is and how it is computed. see [[trikernel]] for the iteration that produces it. see [[semcon]] for the structure that determines head count. see [[neural TIR TASM compiler]] for a different specialized compiler in the same family.
+see [[graph-native-transformer]] for the full mathematical derivation. see [[transformer]] for the architecture being compiled. see [[focus]] for what φ* is and how it is computed. see [[trikernel]] for the iteration that produces it. see [[semcon]] for the structure that determines head count. see [[neural TIR TASM compiler]] for a different specialized compiler in the same family.
 
 discover all [[concepts]]

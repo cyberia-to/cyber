@@ -22,7 +22,7 @@ the protocol contains at least twelve tunables that are parameters in every mean
 | κ | adaptive threshold scaling in [[foculus]] | [1, 2], self-regulating |
 | γ | damping rate for temporal decay | (0, 1), unspecified |
 | α_R | Shapley vs. marginal blend in [[learning incentives]] | [0, 1], unspecified |
-| β_R, γ_R, ε_R | reward function coefficients (Δπ, ΔJ, DAG, alignment) | unspecified |
+| β_R, γ_R, ε_R | reward function coefficients (Δφ*, ΔJ, DAG, alignment) | unspecified |
 | E(t) | emission curve in [[cyber/tokenomics]] | PID-controlled |
 | F | fee distribution | unspecified |
 
@@ -49,18 +49,18 @@ cap as a metabolic signal:
 
 ### 2.2 syntropy: internal order
 
-[[syntropy]] (negentropy) J(π) = log|V| - H(π) measures the information-theoretic structure of the [[focus]] distribution π. high syntropy means π is concentrated on a structured set of [[particles]] — the network has organized its [[attention]] into coherent [[knowledge]]. low syntropy means π is diffuse — the network is noisy, unfocused, or spammed.
+[[syntropy]] (negentropy) J(φ*) = log|V| - H(φ*) measures the information-theoretic structure of the [[focus]] distribution φ*. high syntropy means φ* is concentrated on a structured set of [[particles]] — the network has organized its [[attention]] into coherent [[knowledge]]. low syntropy means φ* is diffuse — the network is noisy, unfocused, or spammed.
 
 syntropy is computed every block. it is the objective, graph-intrinsic measure of organizational quality:
 
-$$J(\pi) = \log|V| + \sum_j \pi_j \log \pi_j$$
+$$J(\phi^*) = \log|V| + \sum_j \phi^*_j \log \phi^*_j$$
 
 syntropy as a metabolic signal:
 - rising syntropy → [[cyberlinks]] are creating structure → [[neurons]] are contributing meaningful [[knowledge]]
 - falling syntropy → noise outpaces structure → the graph is being degraded
 - syntropy growth rate → velocity of [[knowledge]] organization
 
-syntropy can be gamed by concentration — a cartel focusing all π on a few [[particles]] would produce high syntropy without genuine [[knowledge]]. this is why syntropy alone is insufficient. it must compound with cap (external validation) and [[happiness]] (subjective verification).
+syntropy can be gamed by concentration — a cartel focusing all φ* on a few [[particles]] would produce high syntropy without genuine [[knowledge]]. this is why syntropy alone is insufficient. it must compound with cap (external validation) and [[happiness]] (subjective verification).
 
 ### 2.3 happiness: subjective verification
 
@@ -97,7 +97,7 @@ this is the growth rate of metabolic health — the signal that parameter optimi
 the protocol is a parameterized dynamical system. the state evolves under the [[tri-kernel]] with parameters θ = (α, μ, τ, κ, γ, α_R, ...). the metabolic health M(t) is the long-horizon reward.
 
 this is a reinforcement learning problem:
-- state: the current [[cybergraph]] topology, [[focus]] distribution π, and metabolic history
+- state: the current [[cybergraph]] topology, [[focus]] distribution φ*, and metabolic history
 - action: adjust parameter vector θ
 - reward: ΔM over an evaluation window
 - policy: a mapping from metabolic state to parameter adjustment
@@ -158,7 +158,7 @@ a dedicated computation, running alongside the [[tri-kernel]], that tracks the t
 
 ```
 every epoch:
-  1. compute syntropy J(π) from current focus distribution
+  1. compute syntropy J(φ*) from current focus distribution
   2. read cap from on-chain oracle (IBC price feed or DEX TWAP)
   3. aggregate happiness from neuron submissions (stake-weighted)
   4. compute M(t) = cap^w_c · J^w_s · H_happy^w_h

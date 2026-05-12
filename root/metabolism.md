@@ -29,9 +29,9 @@ the critical property: cap cannot be gamed from inside the protocol. it originat
 
 ### syntropy: internal order
 
-$$J(\pi) = \log|V| + \sum_j \pi_j \log \pi_j$$
+$$J(\phi^*) = \log|V| + \sum_j \phi^*_j \log \phi^*_j$$
 
-the information-theoretic structure of the [[focus]] distribution π*. high syntropy means π* is concentrated on a structured set of [[particles]] — the network has organized its [[attention]] into coherent [[knowledge]]. low syntropy means π* is diffuse — the graph is noisy, unfocused, or spammed.
+the information-theoretic structure of the [[focus]] distribution φ*. high syntropy means φ* is concentrated on a structured set of [[particles]] — the network has organized its [[attention]] into coherent [[knowledge]]. low syntropy means φ* is diffuse — the graph is noisy, unfocused, or spammed.
 
 syntropy is computed every block from the current focus distribution. it requires no external input, no oracle, no participant vote. it is the graph's own objective measure of organizational quality.
 
@@ -40,7 +40,7 @@ syntropy as metabolic signal:
 - falling syntropy → noise outpaces signal → quality of the knowledge base is degrading
 - syntropy growth rate → velocity of knowledge organization, independent of raw size
 
-the failure mode: syntropy can be gamed by concentration. a cartel focusing all π* on a small set of controlled [[particles]] produces high syntropy without genuine knowledge diversity. this is why syntropy alone is insufficient — it must be checked by cap (would a concentrated cartel actually raise external value?) and [[happiness]] (would participants served only cartel content report satisfaction?).
+the failure mode: syntropy can be gamed by concentration. a cartel focusing all φ* on a small set of controlled [[particles]] produces high syntropy without genuine knowledge diversity. this is why syntropy alone is insufficient — it must be checked by cap (would a concentrated cartel actually raise external value?) and [[happiness]] (would participants served only cartel content report satisfaction?).
 
 ### happiness: subjective verification
 
@@ -86,7 +86,7 @@ a dedicated computation running alongside the [[tri-kernel]]:
 
 ```
 every epoch:
-  1. compute J(π) from current focus distribution
+  1. compute J(φ*) from current focus distribution
   2. read cap from on-chain oracle (IBC price feed or DEX TWAP)
   3. aggregate happiness from neuron submissions (stake-weighted median)
   4. compute M(t) = cap^w_c · J^w_s · H_happy^w_h

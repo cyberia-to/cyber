@@ -16,7 +16,7 @@ homeostatic plasticity operates on a slower timescale than [[Hebbian learning]] 
 
 ## in [[cyber]]
 
-[[focus]] conservation ($\sum \pi_i = 1$) is the homeostatic constraint on the [[cybergraph]]. total [[attention]] is fixed — if one [[particle]] gains [[focus]], others lose it. this is synaptic scaling at the graph level: the system cannot run away because the total resource is conserved.
+[[focus]] conservation ($\sum \phi^*_i = 1$) is the homeostatic constraint on the [[cybergraph]]. total [[attention]] is fixed — if one [[particle]] gains [[focus]], others lose it. this is synaptic scaling at the graph level: the system cannot run away because the total resource is conserved.
 
 the exploration-exploitation balance in [[collective learning]] serves the same function:
 

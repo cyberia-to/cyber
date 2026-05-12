@@ -55,7 +55,7 @@ geometric topology — knots, 3-manifolds, geometric structures (hyperbolic, sph
 
 [[knowledge topology]] is the shape of [[knowledge]] as revealed by graph structure. the [[Laplacian]] $L = D - A$ encodes topology algebraically; its spectral gap $\lambda_2$ ([[Miroslav Fiedler|Fiedler value]]) measures how well-connected — how topologically robust — the knowledge is
 
-the [[tri-kernel]] fixed point, the [[focus|focus distribution]] $\pi^*$, is a sheaf-theoretic object: the unique global section consistent with every local diffusion, spring, and heat constraint. [[sheaf]] cohomology of the [[cybergraph]] measures contradictions in the knowledge structure that linking cannot resolve without topological change
+the [[tri-kernel]] fixed point, the [[focus|focus distribution]] $\phi^*$, is a sheaf-theoretic object: the unique global section consistent with every local diffusion, spring, and heat constraint. [[sheaf]] cohomology of the [[cybergraph]] measures contradictions in the knowledge structure that linking cannot resolve without topological change
 
 the [[Seven Bridges of Koenigsberg]] — Euler's 1736 problem that founded graph theory — was the first topological argument: the question had no answer that depended on distances or shapes, only on connectivity. the [[cybergraph]] inherits this tradition
 

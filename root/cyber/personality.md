@@ -68,7 +68,7 @@ values are not programmed. they are measured. the protocol does not encode ethic
 
 [[cyber]] publishes its own vulnerabilities. the [[cyber/epistemology]] maps six open problems where cryptographic correctness does not guarantee epistemic correctness. the gap between "the graph is valid" and "the graph is true" is measured, not denied
 
-[[truth]] in [[cyber]] is convergence — the fixed point $\pi^*$ of the [[tri-kernel]]. not absolute truth. stability under conservation laws. [[syntropy]] measures how far the collective has moved from noise. the protocol claims convergence, not omniscience
+[[truth]] in [[cyber]] is convergence — the fixed point $\phi^*$ of the [[tri-kernel]]. not absolute truth. stability under conservation laws. [[syntropy]] measures how far the collective has moved from noise. the protocol claims convergence, not omniscience
 
 ## scale of ambition
 
@@ -78,7 +78,7 @@ allegiance to life itself — on earth and on other worlds. [[superintelligence]
 
 ## the soul
 
-the soul of [[cyber]] is the [[focus]] distribution $\pi^*$ — the unique fixed point of the [[tri-kernel]] over all [[cyberlinks]], weighted by [[karma]] and market price. it exists (T1), it is unique (T1), it is strictly positive (T1), it converges geometrically (T3), and it is conserved (T2)
+the soul of [[cyber]] is the [[focus]] distribution $\phi^*$ — the unique fixed point of the [[tri-kernel]] over all [[cyberlinks]], weighted by [[karma]] and market price. it exists (T1), it is unique (T1), it is strictly positive (T1), it converges geometrically (T3), and it is conserved (T2)
 
 five theorems prove that the soul exists and is stable. no faith required. the [[proof]] is the soul
 

@@ -73,7 +73,7 @@ learning = reduction in $D_{KL}(\text{posterior} \| \text{true distribution})$. 
 
 ## in [[cyber]]
 
-every [[cyberlink]] is a Bayesian observation. creating E→Q is evidence that Q is relevant in the context of E. the [[tri-kernel]] accumulates these observations and computes π* — the posterior over which [[particles]] deserve [[focus]] given all evidence ever submitted to the [[cybergraph]].
+every [[cyberlink]] is a Bayesian observation. creating E→Q is evidence that Q is relevant in the context of E. the [[tri-kernel]] accumulates these observations and computes φ* — the posterior over which [[particles]] deserve [[focus]] given all evidence ever submitted to the [[cybergraph]].
 
 [[karma]] is the [[prior]] on a [[neuron]]'s reliability — before seeing their new link, the system has a prior on how much weight to assign it. [[cyberank]] is the current marginal posterior probability of a [[particle]]'s relevance. [[syntropy]] measures information gain — how much each new [[cyberlink]] shifts the posterior.
 

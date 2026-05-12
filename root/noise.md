@@ -5,7 +5,7 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 ---
-anything that moves [[focus]] distribution $\pi^*$ toward uniform. noise is the complement of [[syntropy]]
+anything that moves [[focus]] distribution $\phi^*$ toward uniform. noise is the complement of [[syntropy]]
 
 ---
 
@@ -13,33 +13,33 @@ anything that moves [[focus]] distribution $\pi^*$ toward uniform. noise is the 
 
 the [[cybergraph]]'s total informational capacity over $|P|$ particles is $\log|P|$ bits. that capacity is always partitioned:
 
-$$\underbrace{J(\pi^*)}_{\text{syntropy}} + \underbrace{H(\pi^*)}_{\text{noise}} = \log|P|$$
+$$\underbrace{J(\phi^*)}_{\text{syntropy}} + \underbrace{H(\phi^*)}_{\text{noise}} = \log|P|$$
 
-syntropy $J(\pi^*) = D_{KL}(\pi^* \| u)$ is the organized fraction — how far the focus distribution has been structured above random. noise $H(\pi^*) = -\sum_p \pi^*_p \log \pi^*_p$ is the remaining Shannon entropy — the fraction of capacity that carries no distinguishing structure.
+syntropy $J(\phi^*) = D_{KL}(\phi^* \| u)$ is the organized fraction — how far the focus distribution has been structured above random. noise $H(\phi^*) = -\sum_p \phi^*_p \log \phi^*_p$ is the remaining Shannon entropy — the fraction of capacity that carries no distinguishing structure.
 
-at maximum noise: $\pi^* = u$ (uniform) — all particles equally attended, $J = 0$, $H = \log|P|$. no signal. at maximum syntropy: $\pi^*$ is a point mass — all attention on one particle, $J = \log|P|$, $H = 0$.
+at maximum noise: $\phi^* = u$ (uniform) — all particles equally attended, $J = 0$, $H = \log|P|$. no signal. at maximum syntropy: $\phi^*$ is a point mass — all attention on one particle, $J = \log|P|$, $H = 0$.
 
-every [[cyberlink]] shifts $\pi^*$ in some direction. a link moves the graph toward lower entropy (signal) or higher entropy (noise). there is no neutral link — every addition has a sign.
+every [[cyberlink]] shifts $\phi^*$ in some direction. a link moves the graph toward lower entropy (signal) or higher entropy (noise). there is no neutral link — every addition has a sign.
 
 ## a cyberlink is noise if
 
-its addition to $L$ decreases $J(\pi^*)$, equivalently increases $H(\pi^*)$. in [[Bayesian Truth Serum|BTS]] terms: the neuron's score $s_i < 0$ — the link added more uncertainty to the collective picture than it removed. [[karma]] accumulates these negative contributions and reduces the neuron's future influence in [[effective adjacency]].
+its addition to $L$ decreases $J(\phi^*)$, equivalently increases $H(\phi^*)$. in [[Bayesian Truth Serum|BTS]] terms: the neuron's score $s_i < 0$ — the link added more uncertainty to the collective picture than it removed. [[karma]] accumulates these negative contributions and reduces the neuron's future influence in [[effective adjacency]].
 
 noise links share a characteristic: they do not reflect genuine private [[knowledge]]. they assert connections the author does not actually believe, or connections that are randomly true, or connections that were once true but no longer are. the common denominator is that the epistemic signal $v$ (valence) is not a reliable predictor of where the [[inversely coupled bonding surface|ICBS]] market will settle.
 
 ## four kinds of noise
 
-structural noise — spam. low-conviction links created cheaply at volume. the [[conviction]] cost ($\tau$, $a$) is the first defense: cheap talk is economically suppressed. but a large-stake actor can create structural noise profitably if they can manipulate π* faster than the market can correct.
+structural noise — spam. low-conviction links created cheaply at volume. the [[conviction]] cost ($\tau$, $a$) is the first defense: cheap talk is economically suppressed. but a large-stake actor can create structural noise profitably if they can manipulate φ* faster than the market can correct.
 
-epistemic noise — false assertion. a link that is confidently wrong: high conviction, but the market settles against it ($m(\ell) \to 0$). [[market inhibition]] suppresses the edge weight toward zero in $A^{\text{eff}}$, but the structural record remains in $L$. the link persists as history; its influence on $\pi^*$ is reduced to near zero.
+epistemic noise — false assertion. a link that is confidently wrong: high conviction, but the market settles against it ($m(\ell) \to 0$). [[market inhibition]] suppresses the edge weight toward zero in $A^{\text{eff}}$, but the structural record remains in $L$. the link persists as history; its influence on $\phi^*$ is reduced to near zero.
 
 staleness noise — temporal decay. a link that was once signal and became noise as reality changed. the assertion was true at block $t$; at block $t'  \gg t$ it no longer is. the [[inversely coupled bonding surface|ICBS]] market may not update if no one trades the edge — low-traffic links can stay at stale prices for years. [[forgetting]] addresses this by decaying low-activation links out of active computation.
 
-dilution noise — scale effect. as $|P|$ grows, the denominator of $\pi^*$ grows. a fixed amount of structure (fixed number of organized edges) produces less syntropy over a larger graph. the noise floor rises with graph size unless the rate of signal creation exceeds the rate of particle growth.
+dilution noise — scale effect. as $|P|$ grows, the denominator of $\phi^*$ grows. a fixed amount of structure (fixed number of organized edges) produces less syntropy over a larger graph. the noise floor rises with graph size unless the rate of signal creation exceeds the rate of particle growth.
 
 ## the noise floor
 
-the noise floor is the uniform distribution $u$ — the baseline state before any cyberlinks. a new graph with no links has $\pi^* = u$, $J = 0$. a mature graph with high syntropy has $J \gg 0$. the distance from the noise floor is the graph's total informational achievement.
+the noise floor is the uniform distribution $u$ — the baseline state before any cyberlinks. a new graph with no links has $\phi^* = u$, $J = 0$. a mature graph with high syntropy has $J \gg 0$. the distance from the noise floor is the graph's total informational achievement.
 
 noise floor in practice: even a fully mature graph will have a noise floor above $u$ because $|P|$ includes particles that were never linked beyond their initial [[name]], particles on contested topics with divided market prices, and particles that are genuinely ambiguous. the effective noise floor is set by the graph's least-resolved regions.
 

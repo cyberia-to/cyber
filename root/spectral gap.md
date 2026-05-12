@@ -11,7 +11,7 @@ $$\lambda = 1 - |\lambda_2|$$
 
 where $\lambda_2$ is the second-largest eigenvalue of the transition matrix $P$. $\lambda = 0$ means the system never mixes. $\lambda = 1$ means instant convergence. everything in between is governed by exponential decay:
 
-$$\|\pi^{(t)} - \pi^*\| \leq C \cdot (1-\lambda)^t$$
+$$\|\phi^{(t)} - \phi^*\| \leq C \cdot (1-\lambda)^t$$
 
 ## why it matters for cyber
 
@@ -22,7 +22,7 @@ the spectral gap is the heartbeat of the [[cybergraph]]. it determines:
 - [[learning incentives]] — spectral gap improvement $\lambda_2^t - \lambda_2^{t+1}$ is one of five candidate reward functions. linking that tightens the gap accelerates the entire system
 - [[emergence]] thresholds — phase transitions in [[collective]] [[intelligence]] depend on $\lambda$ crossing critical values. sparse graphs have small gaps (slow mixing). dense, well-connected [[cybergraphs]] have large gaps (fast convergence)
 - bootstrapping — a cold network has few [[cyberlinks]] and small spectral gap. finality may be slow until the [[cybergraph]] reaches sufficient density
-- partition recovery — when two halves reconnect after a partition, $\lambda$ determines how quickly $\pi$ reconverges
+- partition recovery — when two halves reconnect after a partition, $\lambda$ determines how quickly $\phi^*$ reconverges
 
 ## the math
 
@@ -62,11 +62,11 @@ see [[collective focus theorem]] Part II for the contraction proof
 
 [[convergence]] — the process the spectral gap controls
 
-[[equilibrium]] — the destination: $\pi^* = \pi^* P$
+[[equilibrium]] — the destination: $\phi^* = \phi^* P$
 
 [[Laplacian]] — the graph operator whose eigenvalues define the gap. $L = D - A$, and the Fiedler eigenvalue $\lambda_2(L)$ is the algebraic connectivity
 
-[[Perron-Frobenius theorem]] — guarantees existence and uniqueness of $\pi^*$ for irreducible aperiodic chains
+[[Perron-Frobenius theorem]] — guarantees existence and uniqueness of $\phi^*$ for irreducible aperiodic chains
 
 [[entropy]] — the spectral gap bounds entropy production rate: $dH/dt \leq -\lambda \cdot H$
 

@@ -47,9 +47,9 @@ Any distributed consensus system performs some combination of these three. The d
 
 Definition 1 (Aggregation). Let $S = \{s_1, s_2, \ldots, s_n\}$ be a set of signals from $n$ participants, where each $s_i$ is private to participant $i$. An *aggregation function* $A: \mathcal{P}(S) \to \Sigma$ maps subsets of signals to a global state $\sigma \in \Sigma$. The function $A$ has the property that computing $A(S)$ requires access to all (or a threshold of) signals in $S$.
 
-Definition 2 (Proof). A *proof* $\pi$ for a computation $f(x) = y$ is an efficiently constructible certificate such that $|\pi|$ and the time to construct $\pi$ are polynomial in the computation's complexity, while the time to check $\pi$ is polylogarithmic (or at least substantially sub-linear) in the same.
+Definition 2 (Proof). A *proof* $\phi^*$ for a computation $f(x) = y$ is an efficiently constructible certificate such that $|\pi|$ and the time to construct $\phi^*$ are polynomial in the computation's complexity, while the time to check $\phi^*$ is polylogarithmic (or at least substantially sub-linear) in the same.
 
-Definition 3 (Verification). A *verification function* $V(\pi, y) \to \{0, 1\}$ accepts or rejects a claimed output $y$ given a proof $\pi$. Verification is *efficient* if its cost is independent of or polylogarithmic in the original computation's complexity.
+Definition 3 (Verification). A *verification function* $V(\phi^*, y) \to \{0, 1\}$ accepts or rejects a claimed output $y$ given a proof $\phi^*$. Verification is *efficient* if its cost is independent of or polylogarithmic in the original computation's complexity.
 
 The relationship between these operations is asymmetric:
 

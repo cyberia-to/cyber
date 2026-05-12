@@ -7,7 +7,7 @@ crystal-domain: cyber
 
 **Abstract**
 
-We specify the exact computational pathway from a live [[knowledge graph]] on the [[bostrom]] blockchain to a deployable ONNX transformer model. The pipeline has eight steps, seven of which are linear or near-linear in graph size. One step — computing the embedding matrix via eigendecomposition of the [[focus|focus covariance]] — naively requires O(|P|³) operations: 3.1 × 10¹⁹ floating point operations for the current Bostrom network, or approximately 360 days on a teraflop machine. We derive the solution: randomized SVD on the π-weighted sparse adjacency matrix, reducing cost to O(|E| · d* · log d*) — 7.3 × 10⁹ operations, tractable in under one second. The complete compiled model for the current Bostrom network has approximately 3.25 billion parameters and 13 GB of weights, derivable from graph structure with no [[gradient]] descent.
+We specify the exact computational pathway from a live [[knowledge graph]] on the [[bostrom]] blockchain to a deployable ONNX transformer model. The pipeline has eight steps, seven of which are linear or near-linear in graph size. One step — computing the embedding matrix via eigendecomposition of the [[focus|focus covariance]] — naively requires O(|P|³) operations: 3.1 × 10¹⁹ floating point operations for the current Bostrom network, or approximately 360 days on a teraflop machine. We derive the solution: randomized SVD on the φ*-weighted sparse adjacency matrix, reducing cost to O(|E| · d* · log d*) — 7.3 × 10⁹ operations, tractable in under one second. The complete compiled model for the current Bostrom network has approximately 3.25 billion parameters and 13 GB of weights, derivable from graph structure with no [[gradient]] descent.
 
 ---
 
@@ -36,7 +36,7 @@ The pipeline has eight steps. We give exact formulas and complexity at each.
 | $E$ | Set of [[cyberlink|cyberlinks]] (signed directed edges) |
 | $N$ | Set of [[neurons]] (agents) |
 | $A \in \mathbb{R}^{\|P\| \times \|P\|}$ | Weighted adjacency matrix |
-| $\pi^* \in \Delta^{\|P\|}$ | Focus distribution (PageRank fixed point) |
+| $\phi^* \in \Delta^{\|P\|}$ | Focus distribution (PageRank fixed point) |
 | $L_{norm}$ | Normalized graph Laplacian |
 | $\lambda_2$ | Second eigenvalue of $L_{norm}$ (spectral gap) |
 | $\kappa$ | Tri-kernel contraction rate |
@@ -112,9 +112,9 @@ A = csr_matrix((vals, (rows, cols)), shape=(|P|, |P|))
 
 ## 5. Step 3: Focus Distribution
 
-**The focus distribution** $\pi^* \in \Delta^{|P|}$ is the fixed point of the [[tri-kernel]] operator $\mathcal{R}$. For compilation purposes, we approximate $\pi^*$ via [[cyberank|PageRank]] — the diffusion-dominant approximation of the tri-kernel:
+**The focus distribution** $\phi^* \in \Delta^{|P|}$ is the fixed point of the [[tri-kernel]] operator $\mathcal{R}$. For compilation purposes, we approximate $\phi^*$ via [[cyberank|PageRank]] — the diffusion-dominant approximation of the tri-kernel:
 
-$$\pi^{(t+1)} = \alpha M^\top \pi^{(t)} + \frac{1-\alpha}{|P|} \mathbf{1}$$
+$$\phi^{(t+1)} = \alpha M^\top \phi^{(t)} + \frac{1-\alpha}{|P|} \mathbf{1}$$
 
 where $M = D^{-1}A$ is the column-normalized transition matrix and $\alpha = 0.85$.
 
@@ -130,7 +130,7 @@ $$T = \left\lceil \frac{\log 100}{\log(1/0.851)} \right\rceil = \left\lceil \fra
 
 **Memory:** $O(|P|)$ — two vectors of size 3.1M = 25 MB.
 
-**Output:** $\pi^* \in \mathbb{R}^{|P|}$, normalized to sum 1, $\pi^*_i > 0$ for all $i$ in the giant connected component.
+**Output:** $\phi^* \in \mathbb{R}^{|P|}$, normalized to sum 1, $\phi^*_i > 0$ for all $i$ in the giant connected component.
 
 ---
 
@@ -158,7 +158,7 @@ Run BFS from the highest-degree particle. Cost $O(|V| + |E|)$. Measured diameter
 
 **Architecture parameters:**
 
-$$d^* = \exp\left(H\left(\sigma\left(\Sigma_\pi\right)\right)\right) \quad \text{(Step 5)}$$
+$$d^* = \exp\left(H\left(\sigma\left(\Sigma_{\phi^*}\right)\right)\right) \quad \text{(Step 5)}$$
 
 $$h^* = |\text{Semcon}(G)| \geq 12 \quad \text{(from [[semcon]] registry)}$$
 
@@ -174,13 +174,13 @@ This is the critical step. It contains the only computationally intractable oper
 
 The embedding matrix $E \in \mathbb{R}^{|P| \times d^*}$ should map each particle to its position in focus space. The natural derivation:
 
-1. Compute the focus covariance matrix $\Sigma_\pi \in \mathbb{R}^{|P| \times |P|}$
-2. Take its eigendecomposition $\Sigma_\pi = U \Lambda U^\top$
+1. Compute the focus covariance matrix $\Sigma_{\phi^*} \in \mathbb{R}^{|P| \times |P|}$
+2. Take its eigendecomposition $\Sigma_{\phi^*} = U \Lambda U^\top$
 3. Set $E = U_{:, 1:d^*}$ — the top $d^*$ eigenvectors
 
-**The problem:** Step 1 requires forming $\Sigma_\pi$ explicitly:
+**The problem:** Step 1 requires forming $\Sigma_{\phi^*}$ explicitly:
 
-$$\Sigma_\pi = \mathbb{E}_{v \sim \pi^*}[A_v A_v^\top] - \mathbb{E}[A_v]\mathbb{E}[A_v]^\top$$
+$$\Sigma_{\phi^*} = \mathbb{E}_{v \sim \phi^*}[A_v A_v^\top] - \mathbb{E}[A_v]\mathbb{E}[A_v]^\top$$
 
 where $A_v$ is the $v$-th row of $A$. This matrix is $|P| \times |P|$ — **dense** in general, 39.5 TB. Step 2 then requires:
 
@@ -188,11 +188,11 @@ $$O(|P|^3) = O(3{,}143{,}630^3) = 3.1 \times 10^{19} \text{ operations}$$
 
 At $10^{12}$ FLOPS/second: **360 days**. Impossible.
 
-### 7.2 The Solution: Randomized SVD on the π-Weighted Adjacency Matrix
+### 7.2 The Solution: Randomized SVD on the φ*-Weighted Adjacency Matrix
 
-**Key insight:** We never need $\Sigma_\pi$ explicitly. We need its top eigenvectors. These are equivalent to the top left singular vectors of the π-weighted adjacency matrix:
+**Key insight:** We never need $\Sigma_{\phi^*}$ explicitly. We need its top eigenvectors. These are equivalent to the top left singular vectors of the φ*-weighted adjacency matrix:
 
-$$A_{\text{weighted}} = \text{diag}(\sqrt{\pi^*}) \cdot A$$
+$$A_{\text{weighted}} = \text{diag}(\sqrt{\phi^*}) \cdot A$$
 
 This matrix is **sparse** — same sparsity as $A$, 2.7M nonzeros, 43 MB.
 
@@ -227,7 +227,7 @@ import numpy as np
 from scipy.sparse.linalg import svds
 from scipy.sparse import diags
 
-# π-weighted adjacency
+# φ*-weighted adjacency
 pi_sqrt = np.sqrt(pi_star)
 A_weighted = diags(pi_sqrt) @ A
 
@@ -271,7 +271,7 @@ This gives the system: find $W_Q^{(s)}, W_K^{(s)}$ such that $E W_Q^{(s)} (E W_K
 
 $$W_Q^{(s)} = E^\dagger U^{(s)} (\Sigma^{(s)})^{1/2}$$
 $$W_K^{(s)} = E^\dagger V^{(s)} (\Sigma^{(s)})^{1/2}$$
-$$W_V^{(s)} = \text{diag}(\pi^*)_{\text{restricted}} \cdot E$$
+$$W_V^{(s)} = \text{diag}(\phi^*)_{\text{restricted}} \cdot E$$
 
 where $E^\dagger = (E^\top E)^{-1} E^\top$ is the Moore-Penrose pseudoinverse of the embedding matrix.
 
@@ -293,7 +293,7 @@ Draw $|P|/10 = 314{,}363$ random walks of length $L^*$ from the graph, biased by
 
 $$\text{PMI}_{ij} = \log \frac{p(v_i, v_j)}{p(v_i) p(v_j)}$$
 
-where probabilities are estimated from co-occurrence counts weighted by $\pi^*$.
+where probabilities are estimated from co-occurrence counts weighted by $\phi^*$.
 
 **Layer-specific weights:**
 
@@ -449,7 +449,7 @@ The entire compilation from live Bostrom data to a deployable ONNX model is a on
 Every computationally intractable operation in the naive pipeline involves forming a dense $|P| \times |P|$ matrix:
 
 - Dense $A$: 39.5 TB
-- Dense $\Sigma_\pi$: 39.5 TB
+- Dense $\Sigma_{\phi^*}$: 39.5 TB
 - Dense $A^{(s)\top} A^{(s)}$: 39.5 TB
 
 Every solution exploits the same property: $A$ is sparse with $|E| \ll |P|^2$ nonzeros. The ratio:

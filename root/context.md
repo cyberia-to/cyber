@@ -24,9 +24,9 @@ context shapes meaning. the same [[particle]] Q linked from different contexts P
 
 in [[focus flow computation]], context is a set of [[particles]] whose energy is elevated to become probability sources. the [[tri-kernel]] reconverges from these seeds:
 
-1. context [[particles]] enter with elevated $\pi^*_\text{context}$ — they become attractors in the Boltzmann equilibrium
+1. context [[particles]] enter with elevated $\phi^*_\text{context}$ — they become attractors in the Boltzmann equilibrium
 2. probability mass flows outward from context through the [[cybergraph]] along structural paths
-3. $\pi^*_\text{context}$ concentrates at [[particles]] topologically close to the seeds
+3. $\phi^*_\text{context}$ concentrates at [[particles]] topologically close to the seeds
 4. the next [[particle]] is sampled from the high-probability region, added to context, reconverge
 
 the context window in [[focus flow computation]] is unbounded — it is the entire [[cybergraph]]. relevance is topological, not positional: a [[particle]] contributes to context if it is well-connected to the seed particles, regardless of where it appears in any linear sequence.
@@ -55,10 +55,10 @@ the context window is finite: $n$ tokens. every token outside the window is invi
 | relevance | positional proximity in sequence | topological proximity in graph |
 | update | slide window (forget old tokens) | add [[cyberlinks]] (nothing forgotten) |
 | computation | $O(n^2)$ attention per layer | $O(\|E\| + \|V\|)$ per reconvergence step |
-| persistence | none — context resets per query | permanent — π* continuously maintained |
+| persistence | none — context resets per query | permanent — φ* continuously maintained |
 | who contributes | one agent's current input | all [[neurons]] ever |
 
-the compiled [[transformer]] derived from the [[cybergraph]] approximates the FFC context model over a finite window. $L^*$ layers of transformer attention = $L^*$ steps of [[tri-kernel]] diffusion toward π* restricted to the current context.
+the compiled [[transformer]] derived from the [[cybergraph]] approximates the FFC context model over a finite window. $L^*$ layers of transformer attention = $L^*$ steps of [[tri-kernel]] diffusion toward φ* restricted to the current context.
 
 ---
 
@@ -68,7 +68,7 @@ context is a [[prior]] on the next step. in [[Bayes theorem]] terms:
 
 $$P(\text{next particle} \mid \text{context}) \propto P(\text{context} \mid \text{next particle}) \cdot P(\text{next particle})$$
 
-the context is the evidence that shifts the prior over all [[particles]] toward the posterior focus distribution π*_context. each addition to context is a new observation that updates the posterior.
+the context is the evidence that shifts the prior over all [[particles]] toward the posterior focus distribution φ*_context. each addition to context is a new observation that updates the posterior.
 
 this is why context-free inference produces generic, uncalibrated outputs — it is inference from the prior alone, with no evidence to sharpen it. context is what makes inference specific.
 
@@ -78,7 +78,7 @@ this is why context-free inference produces generic, uncalibrated outputs — it
 
 in [[cyb]], context is the active [[particle]] — the "from" node in a [[state transition]]. browsing the [[cybergraph]] = moving context from particle to particle via [[cyberlinks]]. the browser renders what the current context particle links to. searching = seeding the context with a query particle and letting FFC surface the relevant neighborhood.
 
-[[karma]] modulates context propagation: [[neurons]] with high [[karma]] have their [[cyberlinks]] weighted more heavily in the [[tri-kernel]], so their contributions to context carry more influence on what π*_context surfaces.
+[[karma]] modulates context propagation: [[neurons]] with high [[karma]] have their [[cyberlinks]] weighted more heavily in the [[tri-kernel]], so their contributions to context carry more influence on what φ*_context surfaces.
 
 ---
 

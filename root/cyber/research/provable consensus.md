@@ -35,12 +35,12 @@ provable consensus eliminates all of it. the protocol becomes:
 
 ```
 1. validator reads committed graph state (algebraic NMT opening)
-2. validator computes π* (sparse matrix-vector multiply, 23 iterations)
+2. validator computes φ* (sparse matrix-vector multiply, 23 iterations)
 3. validator proves the computation correct (zheng proof)
 4. anyone verifies the proof (50 μs, one hash check)
 ```
 
-no messages between validators. no leader. no quorum. no voting. no finality gadget. the proof IS the consensus. if two validators compute from the same committed state, they produce the same π* — guaranteed by determinism, verified by proof.
+no messages between validators. no leader. no quorum. no voting. no finality gadget. the proof IS the consensus. if two validators compute from the same committed state, they produce the same φ* — guaranteed by determinism, verified by proof.
 
 ## the computation
 
@@ -90,7 +90,7 @@ remaining capacity (74.4%): graph reads (algebraic NMT openings), finalization c
 
 the computation is cheap. reading the graph is the problem.
 
-to compute $M^\top \pi$, the circuit must access every edge weight $w_{ij}$ and every particle's out-degree. the graph has 2.7M edges. how the circuit reads them determines feasibility.
+to compute $M^\top \phi^*$, the circuit must access every edge weight $w_{ij}$ and every particle's out-degree. the graph has 2.7M edges. how the circuit reads them determines feasibility.
 
 ### with NMT (current architecture): impossible
 
@@ -213,35 +213,35 @@ one number: 50 μs to verify that the complete tri-kernel (diffusion + springs +
 
 | component | traditional consensus | provable consensus |
 |---|---|---|
-| voting | 2/3 quorum over N validators | not needed — π* is deterministic |
+| voting | 2/3 quorum over N validators | not needed — φ* is deterministic |
 | leader election | rotation, VRF, lottery | not needed — no blocks to propose |
 | message passing | O(N) per round, multiple rounds | not needed — proof replaces agreement |
 | finality gadget | Casper/Grandpa/etc. | not needed — π_i > τ is finality |
 | sync committee | rotating subset vouches for chain tip | not needed — proof is self-verifying |
 | light client trust | trust sync committee / SPV | trust math — verify proof in 50 μs |
-| fork choice | longest chain / heaviest subtree / LMD-GHOST | π* — the unique fixed point |
-| slashing | detect & punish after the fact | prevention — invalid π* can't produce valid proof |
+| fork choice | longest chain / heaviest subtree / LMD-GHOST | φ* — the unique fixed point |
+| slashing | detect & punish after the fact | prevention — invalid φ* can't produce valid proof |
 
 ## what remains
 
 provable consensus does not eliminate everything:
 
-1. gossip: [[signals]] (cyberlinks) must still propagate to all validators. the graph must be complete before π* is computed. gossip is communication, not coordination — but it is still network traffic
+1. gossip: [[signals]] (cyberlinks) must still propagate to all validators. the graph must be complete before φ* is computed. gossip is communication, not coordination — but it is still network traffic
 
-2. graph completeness: validators must agree on WHICH graph to compute π* over. this is the data availability problem — solved by [[DAS]] (layer 4 of [[structural sync]]). provable consensus assumes the graph is complete and available
+2. graph completeness: validators must agree on WHICH graph to compute φ* over. this is the data availability problem — solved by [[DAS]] (layer 4 of [[structural sync]]). provable consensus assumes the graph is complete and available
 
-3. signal validity: each signal must be individually valid (layer 1: [[zheng]] proof per signal). provable consensus proves π* computation is correct — it does not prove the underlying signals are valid. signal validity is a separate layer
+3. signal validity: each signal must be individually valid (layer 1: [[zheng]] proof per signal). provable consensus proves φ* computation is correct — it does not prove the underlying signals are valid. signal validity is a separate layer
 
-4. economic security: π* manipulation requires controlling graph topology, which costs stake. provable consensus does not change the economic security model — it changes the MECHANISM (proof instead of voting) while preserving the SECURITY (stake-weighted)
+4. economic security: φ* manipulation requires controlling graph topology, which costs stake. provable consensus does not change the economic security model — it changes the MECHANISM (proof instead of voting) while preserving the SECURITY (stake-weighted)
 
 ## the recursive structure
 
 provable consensus composes recursively with zheng's folding:
 
 ```
-epoch 1: prove π*₁ from graph state G₁
-epoch 2: prove π*₂ from graph state G₂
-         FOLD: prove (proof₁ valid ∧ G₂ = G₁ + new_signals ∧ π*₂ correct)
+epoch 1: prove φ*₁ from graph state G₁
+epoch 2: prove φ*₂ from graph state G₂
+         FOLD: prove (proof₁ valid ∧ G₂ = G₁ + new_signals ∧ φ*₂ correct)
 epoch N: ONE accumulated proof covers ALL history
 
 verification: 50 μs regardless of how many epochs
@@ -249,8 +249,8 @@ verification: 50 μs regardless of how many epochs
 
 a light client joining at epoch 1,000,000 verifies ONE proof. that proof attests:
 - all 1,000,000 graphs were valid
-- all 1,000,000 π* computations were correct
-- all finality decisions followed from the correct π*
+- all 1,000,000 φ* computations were correct
+- all finality decisions followed from the correct φ*
 - the current state is the result of correctly applying all transitions
 
 this is not "trust the sync committee" or "verify all block headers." this is mathematical certainty compressed to 50 μs.
@@ -264,13 +264,13 @@ nebu  (Goldilocks field arithmetic)
   ↓
 hemera  (Poseidon2 hash — for signal identity, NOT for state reads)
   ↓
-zheng  (SuperSpartan + WHIR — proves π* computation)
+zheng  (SuperSpartan + WHIR — proves φ* computation)
   ↓
 nox  (16 reduction patterns — SpMV as execution trace)
   ↓
 algebraic NMT  (polynomial state — enables O(1) graph reads in-circuit)
   ↓
-provable consensus  (π* proven correct, finality from proof)
+provable consensus  (φ* proven correct, finality from proof)
 ```
 
 remove algebraic NMT → graph reads cost O(log n) hemera each → 15× over zheng capacity → impossible.
@@ -287,13 +287,13 @@ algebraic NMT is not an optimization. it is the prerequisite. without it, consen
 | phase 3 | provable consensus | proven once, verified by anyone in 50 μs |
 | phase 4 | recursive provable consensus | accumulated proof covers all history |
 
-phase 2 is the critical transition. algebraic NMT makes graph reads algebraic. once reads are algebraic, π* computation fits in a zheng circuit. once it fits in a circuit, it can be proven. once it can be proven, voting becomes unnecessary.
+phase 2 is the critical transition. algebraic NMT makes graph reads algebraic. once reads are algebraic, φ* computation fits in a zheng circuit. once it fits in a circuit, it can be proven. once it can be proven, voting becomes unnecessary.
 
 ## the deeper implication
 
 consensus has been a PROTOCOL problem since Lamport (1982). nodes communicate to agree. the communication pattern determines safety and liveness. four decades of research optimize the communication: fewer messages (HotStuff), probabilistic finality (Nakamoto), economic incentives (Casper).
 
-provable consensus reclassifies it as a COMPUTATION problem. π* is a function of the graph. the function is deterministic. the computation is provable. the proof is verifiable. no communication between validators is needed for agreement — only for data propagation.
+provable consensus reclassifies it as a COMPUTATION problem. φ* is a function of the graph. the function is deterministic. the computation is provable. the proof is verifiable. no communication between validators is needed for agreement — only for data propagation.
 
 this is a category shift, not an optimization. the question changes from "how do nodes agree?" to "can a node prove it computed correctly?" the answer — enabled by algebraic state commitments and recursive proofs — is yes. 624 million constraints. 50 microseconds to verify. consensus without consensus.
 

@@ -8,7 +8,7 @@ alias: gravities, knowledge gravity
 
 Gravity is a node-level metric in the [[cyber]] knowledge graph. Like physical gravity, it is a property of the node itself — a massive body warps space around it and attracts everything, regardless of what is nearby.
 
-$$G_i = \pi_i \cdot \sum_{j \neq i} \frac{\pi_j}{d(i,j)^2}$$
+$$G_i = \phi^*_i \cdot \sum_{j \neq i} \frac{\phi^*_j}{d(i,j)^2}$$
 
 where π_i is the node's own [[focus]] probability, π_j are focus probabilities of all other nodes, and d(i,j) is the shortest path length in the [[cyberlink]] graph.
 
@@ -24,7 +24,7 @@ The knowledge graph analogy:
 
 | Physics | Knowledge Graph |
 |---------|----------------|
-| Mass m | Focus probability π |
+| Mass m | Focus probability φ* |
 | Distance r | Graph distance d(i,j) |
 | Gravitational potential Φ | Node gravity G_i |
 
@@ -34,9 +34,9 @@ The node does not choose what to attract. It simply has mass (focus), and everyt
 
 | Gravity | Profile | Meaning |
 |---------|---------|---------|
-| High | High π, surrounded by high-π neighbors | Core attractor — holds the graph together |
-| Medium | Moderate π, or high π but few neighbors | Regional hub — local structure anchor |
-| Low | Low π, or isolated from high-π nodes | Peripheral — structurally weightless |
+| High | High φ*, surrounded by high-φ* neighbors | Core attractor — holds the graph together |
+| Medium | Moderate φ*, or high φ* but few neighbors | Regional hub — local structure anchor |
+| Low | Low φ*, or isolated from high-φ* nodes | Peripheral — structurally weightless |
 
 ## Applications
 
@@ -50,13 +50,13 @@ Cohesion measurement: Total graph gravity G_total = Σ G_i measures how tightly 
 
 The force between any two specific nodes is a special case:
 
-$$F_{ij} = \frac{\pi_i \cdot \pi_j}{d(i,j)^2}$$
+$$F_{ij} = \frac{\phi^*_i \cdot \phi^*_j}{d(i,j)^2}$$
 
 The highest F_ij pairs are the structural bonds of the graph. Pairs with high π_i · π_j but large d(i,j) are the most valuable missing [[cyberlinks]] — creating them collapses distance and unlocks [[attention]] flow.
 
 ## Relation to [[luminosity]]
 
-[[Luminosity]] = size × π — what a node radiates (knowledge output).
-Gravity = π × Σ(π_j/d²) — how strongly a node attracts (structural pull).
+[[Luminosity]] = size × φ* — what a node radiates (knowledge output).
+Gravity = φ* × Σ(π_j/d²) — how strongly a node attracts (structural pull).
 
 A healthy graph needs both: high-[[luminosity]] nodes that radiate knowledge, with high-gravity nodes that hold the structure together. Often these are the same nodes, but not always — a compact hub page can have enormous gravity with modest [[luminosity]], while a verbose spec page can have high [[luminosity]] with moderate gravity.

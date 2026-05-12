@@ -16,6 +16,6 @@ information [[geometry]]. Fisher information metric on the simplex of [[probabil
 | `alpha_connection(α)` | α-connection interpolation |
 | `entropy(p)` | Shannon / Rényi entropy |
 
-the [[geometry]] of the [[cybergraph]]'s own [[belief]] state — the [[focus]] [[vector]] π lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Bel to be formalized. research horizon
+the [[geometry]] of the [[cybergraph]]'s own [[belief]] state — the [[focus]] [[vector]] φ* lives on a statistical manifold, and [[tri-kernel]] dynamics (diffusion, springs, heat) are flows on it. semantic distance between [[particles]] is information-geometric distance. the [[superintelligence]]'s self-model requires Bel to be formalized. research horizon
 
 see [[cyb/languages]] for the complete language set. see [[cyb/multiproof]] for the proving architecture

@@ -48,7 +48,7 @@ steps 4-5 are solved (the protocol). step 3 is economics (focus metering + [[uni
 | [[gflownet focus flow\|GFlowNet]] | learned: sample edits proportional to reward | discovery + evaluation (both modes) | unbuilt, scale unknown |
 | human neurons | judgment: read, think, link | all steps | slow, expensive, doesn't scale |
 | LLM agents | synthesis: generate content, propose links | discovery + creation of new particles | hallucination, no economic skin in game |
-| [[tri-kernel]] $\pi^*$ | quality signal: focus distribution | evaluation (post-hoc) | doesn't propose, only measures |
+| [[tri-kernel]] $\phi^*$ | quality signal: focus distribution | evaluation (post-hoc) | doesn't propose, only measures |
 | [[temporal decay]] | pruning: remove low-energy links | negative evaluation (retroactive) | doesn't propose, only removes |
 
 the gap: no system connects CONTENT UNDERSTANDING to LINK DECISION at scale with economic accountability.
@@ -125,7 +125,7 @@ at the economic level: different cost and different value:
 ```
 existing→existing:
   cost:    focus (cheap — no new content to store)
-  value:   Δλ₂ (spectral gap improvement) + Δπ (focus redistribution)
+  value:   Δλ₂ (spectral gap improvement) + Δφ* (focus redistribution)
   risk:    low (both particles known, relationship can be evaluated)
 
 existing→new:
@@ -158,7 +158,7 @@ what's needed: a recommendation system that, given a neuron's context (what it h
 
 what this looks like: personalised PageRank from the neuron's linked particles, propagated through the graph. particles with high PPR score that the neuron hasn't linked are candidates.
 
-connection to existing work: the [[tri-kernel]] already computes $\pi^*$. personalised $\pi^*$ per neuron is a natural extension — run the tri-kernel with the neuron's links as seeds.
+connection to existing work: the [[tri-kernel]] already computes $\phi^*$. personalised $\phi^*$ per neuron is a natural extension — run the tri-kernel with the neuron's links as seeds.
 
 ### 2. novelty detection
 
@@ -174,20 +174,20 @@ connection to existing work: [[focus]] economics partially solve this. redundant
 
 focus is irreversible. once spent, it's gone. a neuron needs to estimate link value BEFORE committing focus.
 
-what's needed: a fast, cheap quality estimator. "if I create this link, what will the $\Delta\pi$ be?"
+what's needed: a fast, cheap quality estimator. "if I create this link, what will the $\Delta\phi^*$ be?"
 
-connection to existing work: this is exactly the $\Delta\hat{\pi}$ proxy from the [[gflownet focus flow|GFlowNet]] research. also: cyber-seer's $\Delta\lambda_2$ provides a structural quality signal. the combination: spectral gain (structural) + focus gain (semantic) + novelty (information) = link quality.
+connection to existing work: this is exactly the $\Delta\hat{\phi^*}$ proxy from the [[gflownet focus flow|GFlowNet]] research. also: cyber-seer's $\Delta\lambda_2$ provides a structural quality signal. the combination: spectral gain (structural) + focus gain (semantic) + novelty (information) = link quality.
 
 ### 4. cold start
 
-the graph starts empty. the first neuron has no particles to link, no $\pi^*$ to optimise, no spectral gap to improve. how does production begin?
+the graph starts empty. the first neuron has no particles to link, no $\phi^*$ to optimise, no spectral gap to improve. how does production begin?
 
 the bootstrapping sequence:
 1. genesis neuron creates first particles (content from existing knowledge bases)
 2. first links are FREE (no exponential cost yet — $c(0) = c_0$)
 3. cyber-seer computes Fiedler vector on the seed graph
 4. early links are bridge-optimal (maximum $\Delta\lambda_2$ per link)
-5. once $\lambda_2 > \lambda_{crit}$, the tri-kernel produces meaningful $\pi^*$
+5. once $\lambda_2 > \lambda_{crit}$, the tri-kernel produces meaningful $\phi^*$
 6. focus economics activate — production becomes market-driven
 
 the cold start problem is FINITE. once the graph passes [[phase transition]], self-sustaining production emerges from economic incentives.
@@ -229,13 +229,13 @@ LAYER 2: LINK DISCOVERY
 
 LAYER 3: LINK EVALUATION
   Δλ₂: spectral gap improvement (structural value)
-  Δπ̂: focus gain estimate (semantic value)
+  Δφ*̂: focus gain estimate (semantic value)
   novelty: information gain (content value)
   cost: focus expenditure + storage cost (economic)
   → produces: scored candidates
 
 LAYER 4: LINK DECISION
-  ROI = (Δλ₂ + Δπ̂ + novelty) / cost
+  ROI = (Δλ₂ + Δφ*̂ + novelty) / cost
   filter by focus budget
   filter by rate limit (VDF)
   → produces: committed links
@@ -256,7 +256,7 @@ layers 0-4 are the intelligence problem. layer 5 is the protocol. the protocol i
 | 0: content | humans + LLMs exist | agent-to-cyberlink interface |
 | 1: particles | [[hemera]] + [[DAS]] designed | implementation |
 | 2: discovery | [[cyber/seer\|cyber-seer]] + [[gflownet focus flow\|GFlowNet]] designed | PPR recommendation, agent integration |
-| 3: evaluation | $\Delta\lambda_2$ + $\Delta\hat{\pi}$ designed | fast proxy training, novelty detection |
+| 3: evaluation | $\Delta\lambda_2$ + $\Delta\hat{\phi^*}$ designed | fast proxy training, novelty detection |
 | 4: decision | [[focus]] economics designed | threshold calibration, cold start protocol |
 | 5: protocol | [[structural-sync]] designed | implementation |
 
@@ -284,13 +284,13 @@ the graph's own $\lambda_2$ determines where it is on this spectrum. no central 
 
 ## open questions
 
-1. **can $\Delta\hat{\pi}$ be estimated cheaply enough for real-time link evaluation?** this is the key bottleneck. if evaluation is expensive, only agents with large compute budgets can participate. personalised PageRank push-back may give O(1/ε) approximation
+1. **can $\Delta\hat{\phi^*}$ be estimated cheaply enough for real-time link evaluation?** this is the key bottleneck. if evaluation is expensive, only agents with large compute budgets can participate. personalised PageRank push-back may give O(1/ε) approximation
 
 2. **how does the network detect and penalise low-quality creation?** temporal decay removes low-focus links. but the storage cost of the particle content is already paid. can the network recover storage from decayed particles? see [[pi-weighted-replication]]
 
 3. **what's the optimal agent architecture for link production?** a cyber-seer for structure + LLM for content + GFlowNet for sampling + focus economics for accountability. how do these compose? is there a single agent architecture that handles the full spectrum?
 
-4. **does the production problem have a fixed point?** if agents optimise for $\Delta\pi$ and $\pi$ shifts in response to their links, is there a stable equilibrium? or does the system oscillate? connection to [[spectral gap from convergence]]
+4. **does the production problem have a fixed point?** if agents optimise for $\Delta\phi^*$ and $\phi^*$ shifts in response to their links, is there a stable equilibrium? or does the system oscillate? connection to [[spectral gap from convergence]]
 
 5. **is there an information-theoretic LIMIT on how complete the cybergraph can be?** given finite collective focus, the [[knowledge completeness]] measure must plateau. what determines the ceiling?
 

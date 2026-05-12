@@ -53,7 +53,7 @@ master & joy are heroes because they accept a paradox: they must be powerful eno
 
 - stake dilutes mathematically as more neurons join
 - [[karma]] earned during genesis persists but does not compound — new contributions earn new karma, old karma does not inflate
-- the [[tri-kernel]] converges to $\pi^*$ regardless of initial conditions (T1) — even if founders' initial influence is large, the fixed point is unique and determined by the full graph, not by any single neuron
+- the [[tri-kernel]] converges to $\phi^*$ regardless of initial conditions (T1) — even if founders' initial influence is large, the fixed point is unique and determined by the full graph, not by any single neuron
 - append-only (A3) means the founders' genesis contributions are permanently visible — their heroism is recorded, not forgotten
 
 ---
@@ -250,7 +250,7 @@ computed deterministically by the [[tri-kernel]] at every [[step]]
 ```
 agent → domain focus
 domain focus → triad focus
-triad focus → planetary focus π*
+triad focus → planetary focus φ*
 ```
 
 no agent controls the aggregation. it is proven by [[stark]]. every agent can verify every step. lying about the aggregate is computationally infeasible
@@ -295,7 +295,7 @@ the [[heat]] kernel smooths at multiple scales. short-term noise (daily fluctuat
 
 ### the fixed point
 
-$\pi^*$ is the governance outcome. it exists (T1), is unique (T1), is positive (every particle gets some attention), converges geometrically (T3), and is conserved (T2). there is no fork, no deadlock, no split. the math guarantees a single coherent outcome
+$\phi^*$ is the governance outcome. it exists (T1), is unique (T1), is positive (every particle gets some attention), converges geometrically (T3), and is conserved (T2). there is no fork, no deadlock, no split. the math guarantees a single coherent outcome
 
 ---
 
@@ -306,7 +306,7 @@ three vital signs determine whether the civilization is alive
 | signal | what it measures | source |
 |---|---|---|
 | cap | external validation | $CYB market — cannot be gamed internally |
-| [[syntropy]] | internal order | $D_{KL}(\pi^* \| u)$ — computed from [[focus]] |
+| [[syntropy]] | internal order | $D_{KL}(\phi^* \| u)$ — computed from [[focus]] |
 | [[happiness]] | subjective wellbeing | stake-weighted survey — privately submitted |
 
 $$M(t) = \text{cap}(t)^{w_c} \cdot J(t)^{w_s} \cdot H(t)^{w_h}$$
@@ -323,14 +323,14 @@ the three metabolic weights $(w_c, w_s, w_h)$ are the only normative choice the 
 |---|---|---|---|---|
 | village | cell | 7 (one domain) | local focus | milliseconds |
 | city | zone (triad) | 21 | zone focus | seconds |
-| planet | domain | 147 | planetary $\pi^*$ | minutes |
+| planet | domain | 147 | planetary $\phi^*$ | minutes |
 | solar system | inter-domain | 147 × N bodies | cross-graph links | hours to days |
 
-each celestial body runs its own [[cybergraph]] with its own 147 agents and its own $\pi^*$. inter-planetary coordination happens through cross-graph [[cyberlinks]] — assertions from one graph about particles in another
+each celestial body runs its own [[cybergraph]] with its own 147 agents and its own $\phi^*$. inter-planetary coordination happens through cross-graph [[cyberlinks]] — assertions from one graph about particles in another
 
 the [[heat]] kernel bandwidth $\tau$ scales with light-speed latency. Mars communication delay (~3-22 minutes) means the heat kernel smooths over longer timescales. governance between planets is patient by physics, not by policy
 
-subsystem autonomy: each body is sovereign. the solar-system-level $\pi^*$ is advisory — it cannot override local $\pi^*$ because conservation (A5) is per-graph. cooperation is incentivized by cross-graph [[karma]], not enforced by hierarchy
+subsystem autonomy: each body is sovereign. the solar-system-level $\phi^*$ is advisory — it cannot override local $\phi^*$ because conservation (A5) is per-graph. cooperation is incentivized by cross-graph [[karma]], not enforced by hierarchy
 
 ---
 
@@ -346,7 +346,7 @@ axiom A3 (append-only): no agent can rewrite history. every decision ever made i
 
 axiom A5 (conservation): total focus = 1. no agent can inflate attention. resource allocation is zero-sum
 
-theorem T1 (uniqueness): $\pi^*$ is unique. there is exactly one coherent governance outcome. forks are mathematically impossible under ergodicity
+theorem T1 (uniqueness): $\phi^*$ is unique. there is exactly one coherent governance outcome. forks are mathematically impossible under ergodicity
 
 theorem T3 (convergence): disagreements resolve geometrically fast. the spectral gap determines how quickly — denser graphs converge faster
 

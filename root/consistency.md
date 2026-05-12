@@ -16,7 +16,7 @@ three forces make inconsistency unsustainable:
 
 [[bayesian truth serum]]: rewards predictions that match the crowd's private distribution. neurons who report honestly earn [[karma]], neurons who distort lose it. honesty is the dominant strategy
 
-[[contraction mapping]]: the [[tri-kernel]] is a proven contraction (κ < 1). regardless of initial state, the graph converges to a unique fixed point π*. inconsistent signals get absorbed into the equilibrium — they shift it slightly but cannot prevent convergence
+[[contraction mapping]]: the [[tri-kernel]] is a proven contraction (κ < 1). regardless of initial state, the graph converges to a unique fixed point φ*. inconsistent signals get absorbed into the equilibrium — they shift it slightly but cannot prevent convergence
 
 the result: consistency across the [[cybergraph]] is a [[nash equilibrium]] maintained by [[game theory]], computed by [[mathematics]], and enforced by [[economics]]
 

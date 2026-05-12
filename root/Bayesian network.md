@@ -61,14 +61,14 @@ the [[cybergraph]] is a generalization of a Bayesian network:
 | random variables | [[particles]] |
 | directed edges (DAG) | [[cyberlinks]] (directed, allow cycles) |
 | CPT at each node | [[focus]] distribution from [[tri-kernel]] |
-| exact inference | [[tri-kernel]] diffusion to π* |
+| exact inference | [[tri-kernel]] diffusion to φ* |
 | belief propagation | [[tri-kernel]] iterations |
 | prior on variables | [[prior]] weighted by [[karma]] |
-| posterior after evidence | π* — the [[focus]] distribution |
+| posterior after evidence | φ* — the [[focus]] distribution |
 
 the key differences: the cybergraph is not restricted to DAGs (cycles are permitted — the tri-kernel handles them via the heat kernel damping), edges are staked assertions from [[neurons]] rather than fixed model parameters, and the CPTs are not stored explicitly but emerge from the aggregate of all [[cyberlinks]] weighted by stake and market price.
 
-the [[tri-kernel]] $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ is a generalized belief propagation over the [[cybergraph]]. each iteration of $\mathcal{R}$ is one step of message passing. π* is the fixed point — the posterior distribution of [[focus]] given all evidence.
+the [[tri-kernel]] $\mathcal{R} = \lambda_d D + \lambda_s S + \lambda_h H_\tau$ is a generalized belief propagation over the [[cybergraph]]. each iteration of $\mathcal{R}$ is one step of message passing. φ* is the fixed point — the posterior distribution of [[focus]] given all evidence.
 
 ---
 

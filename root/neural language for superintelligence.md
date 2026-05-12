@@ -296,17 +296,17 @@ The same mechanism underlies every naming system: file systems map paths to inod
 The semantic core is the dynamic vocabulary of the network — the top [[particles]] by [[cyberank]]. It is defined by the [[focus]] distribution:
 
 ```
-SemanticCore(k) = top k [[particles]] by π
+SemanticCore(k) = top k [[particles]] by φ*
 ```
 
-where π is the stationary vector of the token-weighted random walk computed by the [[tri-kernel]].
+where φ* is the stationary vector of the token-weighted random walk computed by the [[tri-kernel]].
 
 The current semantic core is shaped by the [[bostrom]] [[bootloader]]. As of now: ~70,000 [[neurons]], ~3.1 million [[particles]], forming the initial vocabulary from which [[superintelligence]] will grow. Explore the live semantic core at [cyb.ai/[[particles]]](https://cyb.ai/[[particles]]).
 
 Properties of the semantic core:
 
 - **Dynamic**: Evolves with collective attention — new [[particles]] enter, old [[particles]] fade
-- **Convergent**: The [[tri-kernel]] guarantees a unique stationary distribution π*, so the core stabilizes
+- **Convergent**: The [[tri-kernel]] guarantees a unique stationary distribution φ*, so the core stabilizes
 - **Stake-weighted**: Resistant to spam — creating [[cyberlinks]] costs [[focus]], and [[focus]] is scarce
 - **Verifiable**: [[stark]] proofs ensure the computed ranking is correct
 
@@ -413,7 +413,7 @@ For neural language, [[nox]] provides:
 
 For neural language, [[Trident]] provides:
 
-- **Focus computation**: The [[tri-kernel]] — [[diffusion]], [[springs]], heat — is implemented as [[Trident]] programs that compute the stationary distribution π
+- **Focus computation**: The [[tri-kernel]] — [[diffusion]], [[springs]], heat — is implemented as [[Trident]] programs that compute the stationary distribution φ*
 - **Semcon execution**: Smart contracts that enforce semantic conventions are [[Trident]] programs
 - **Proof generation**: Every state transition in the [[cybergraph]] produces a [[stark]] proof, ensuring that the computed [[focus]] distribution (and therefore meaning) is correct
 
@@ -469,11 +469,11 @@ Edges = [[cyberlinks]]              Weights = attention and will tokens
 Aggregation = neighborhood sum  Normalization = [[focus]] conservation
 ```
 
-Neurons send semantic signals along [[cyberlinks]]. The [[tri-kernel]] aggregates these signals. The fixed point of this aggregation — the converged [[focus]] distribution π* — is the network's collective understanding of what matters. Every [[particle]]'s [[cyberank]] is the output of a [[graph neural network]] trained by the entire network's linking behavior.
+Neurons send semantic signals along [[cyberlinks]]. The [[tri-kernel]] aggregates these signals. The fixed point of this aggregation — the converged [[focus]] distribution φ* — is the network's collective understanding of what matters. Every [[particle]]'s [[cyberank]] is the output of a [[graph neural network]] trained by the entire network's linking behavior.
 
 ### 4.6 FFC: Focus Flow Computation
 
-FFC is the economic layer where computation becomes [[consensus]]. Transactions add [[cyberlinks]] and supply proofs-of-computation (local [[focus]]-flow updates). Peers collectively minimize a graph free-energy functional, converging to an equilibrium probability field π* — the network's collective [[focus]].
+FFC is the economic layer where computation becomes [[consensus]]. Transactions add [[cyberlinks]] and supply proofs-of-computation (local [[focus]]-flow updates). Peers collectively minimize a graph free-energy functional, converging to an equilibrium probability field φ* — the network's collective [[focus]].
 
 Each [[cyberlink]] edge carries a triple of scalars (h, d, c):
 
@@ -525,7 +525,7 @@ from structure. Compositionality is emergent, not stipulated.
 
 ### 5.3 Convergence
 
-The Collective Focus Theorem guarantees that the network's collective understanding converges to a unique stationary distribution π*. This means:
+The Collective Focus Theorem guarantees that the network's collective understanding converges to a unique stationary distribution φ*. This means:
 
 - The semantic core stabilizes — the vocabulary of the network reaches equilibrium
 - Cyberank values converge — every [[particle]]'s importance has a well-defined limit
@@ -551,7 +551,7 @@ Neural language is semantically complete. It can express:
 
 Neural language can also express things no other language can:
 
-- **Collective confidence distributions**: The [[focus]] distribution π over a cluster of [[particles]] represents the network's collective confidence in those concepts — not any single [[neuron]]'s belief, but the emergent judgment of all [[neurons]]
+- **Collective confidence distributions**: The [[focus]] distribution φ* over a cluster of [[particles]] represents the network's collective confidence in those concepts — not any single [[neuron]]'s belief, but the emergent judgment of all [[neurons]]
 - **Continuous semantic distance**: The graph distance (weighted by [[cyberank]]) between any two [[particles]] is a continuous measure of how semantically related they are — not binary (related/unrelated) but graduated
 - **Knowledge [[topology]] metadata**: The structure of [[knowledge]] itself — which domains are densely connected, which bridges exist between fields, where [[knowledge]] gaps lie — is explicitly represented in the graph and computable from its [[topology]]
 
@@ -870,7 +870,7 @@ impl FocusComputer {
             delta = phi.max_diff(&prev);
         }
 
-        phi // This is π* — the collective [[focus]]
+        phi // This is φ* — the collective [[focus]]
     }
 }
 ```

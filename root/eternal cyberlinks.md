@@ -8,7 +8,7 @@ alias: eternal cyberlink, permanent links, eternal links
 
 standard [[cyberlinks]] allow conviction withdrawal: the [[neuron]] can spend the conviction [[UTXO]] back to its wallet, closing the economic position while leaving the structural record in the [[cybergraph]]. eternal cyberlinks remove this option. the conviction is permanently bound to the link, and the [[tokens]] locked into it are effectively [[burned]] from circulation
 
-the economic consequence is a permanent claim on the target [[particle]]'s [[focus]] yield. the yield formula $R_\ell(T) = \int_0^T w(t) \cdot \Delta\pi^*(q, t)\, dt$ runs to $T = \infty$ — the link earns as long as the [[cybergraph]] exists. early eternal links to [[particles]] that later become central earn disproportionately, because conviction weight accumulated before consensus carries more influence in the [[tri-kernel]]
+the economic consequence is a permanent claim on the target [[particle]]'s [[focus]] yield. the yield formula $R_\ell(T) = \int_0^T w(t) \cdot \Delta\phi^*(q, t)\, dt$ runs to $T = \infty$ — the link earns as long as the [[cybergraph]] exists. early eternal links to [[particles]] that later become central earn disproportionately, because conviction weight accumulated before consensus carries more influence in the [[tri-kernel]]
 
 eternal cyberlinks serve as the strongest [[costly signal]] in the protocol. a neuron that permanently commits [[tokens]] to a link is declaring irreversible conviction about the relationship between two [[particles]]. the cost of being wrong is total — the tokens are gone. this makes eternal links the most credible assertions in the [[knowledge economy]]
 

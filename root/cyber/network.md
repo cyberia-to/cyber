@@ -151,9 +151,9 @@ a [[neuron]] creating a biology [[cyberlink]] resolves `~*/serves/biology` to fi
 
 aggregators earn fees for inclusion (sender pays — the neuron creating the link). competition between aggregators for the same namespace keeps fees low and inclusion fast.
 
-## focus propagation: signals as π updates
+## focus propagation: signals as φ* updates
 
-the network has no central node that computes the [[focus]] distribution π*. instead, π* emerges from [[cyber/signals]]. every [[cyber/signal]] carries a $\pi_\Delta$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]] — proven by a single [[zheng]] proof.
+the network has no central node that computes the [[focus]] distribution φ*. instead, φ* emerges from [[cyber/signals]]. every [[cyber/signal]] carries a $\Delta\phi^*$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]] — proven by a single [[zheng]] proof.
 
 ### signal structure
 
@@ -161,7 +161,7 @@ the network has no central node that computes the [[focus]] distribution π*. in
 signal {
     neuron:     pubkey
     links:      [cyberlink]                one or more 5-tuple assertions
-    pi_delta:   [(particle_id, Δπ)]        sparse focus update for the batch
+    pi_delta:   [(particle_id, Δφ*)]        sparse focus update for the batch
     proof:      zheng                       proof of correct local computation
     timestamp:  u64
 }
@@ -169,10 +169,10 @@ signal {
 
 the `pi_delta` covers particles within the neuron's O(log(1/ε))-hop neighborhood. the [[locality]] theorem guarantees effects beyond that radius are below ε. the proof references a specific `bbg_root` from a header the neuron has verified. a single proof covers the entire batch of links — proving $n$ links together costs less than $n$ separate proofs because shared neighborhood state is proved once.
 
-### how π converges without central computation
+### how φ* converges without central computation
 
 ```
-neuron queries neighborhood π + edges (with proofs from any peer)
+neuron queries neighborhood φ* + edges (with proofs from any peer)
     │
     ▼
 creates cyberlinks, runs local tri-kernel step for the batch
@@ -185,7 +185,7 @@ produces [[zheng]] proof: "this pi_delta follows from
 bundles into signal, sends to aggregator
     │
     ▼
-aggregator applies pi_delta to local π view
+aggregator applies pi_delta to local φ* view
     │
     ▼
 namespace subscribers receive signal, apply pi_delta
@@ -194,16 +194,16 @@ namespace subscribers receive signal, apply pi_delta
 their future signals carry updated pi_deltas
     │
     ▼
-π* emerges from convergence of all local proven updates
+φ* emerges from convergence of all local proven updates
 ```
 
-this is gossip-based distributed belief propagation. the [[tri-kernel]] contraction theorem (§5.6 of the whitepaper) guarantees convergence: any order of applying proven pi_deltas reaches the same π*. the global fixed point crystallizes from local proofs without any node computing it centrally.
+this is gossip-based distributed belief propagation. the [[tri-kernel]] contraction theorem (§5.6 of the whitepaper) guarantees convergence: any order of applying proven pi_deltas reaches the same φ*. the global fixed point crystallizes from local proofs without any node computing it centrally.
 
 ### self-minting
 
-the $\pi_\Delta$ proof doubles as a reward claim. if the proven $\Delta\pi > 0$, the neuron mints [[$CYB]] proportional to the shift. no aggregator decides the reward — the proof IS the mining. see §14.2 of the whitepaper for the conservation constraint and attribution mechanism.
+the $\Delta\phi^*$ proof doubles as a reward claim. if the proven $\Delta\phi^* > 0$, the neuron mints [[$CYB]] proportional to the shift. no aggregator decides the reward — the proof IS the mining. see §14.2 of the whitepaper for the conservation constraint and attribution mechanism.
 
-a [[neuron]] on a phone: buy a header, query neighborhood state, create [[cyberlinks]], prove Δπ, bundle into a [[cyber/signal]], mint tokens. the device that creates knowledge is the device that earns from it.
+a [[neuron]] on a phone: buy a header, query neighborhood state, create [[cyberlinks]], prove Δφ*, bundle into a [[cyber/signal]], mint tokens. the device that creates knowledge is the device that earns from it.
 
 ## data availability: sampling without global knowledge
 
@@ -259,13 +259,13 @@ this is the [[foculus]] finality budget. the header is the finality signal. ever
 
 ## the cybergraph as its own routing table
 
-the [[cybergraph]] encodes which [[neurons]] are interested in which [[particles]]. a [[neuron]] that has created many [[cyberlinks]] involving biology [[particles]] is interested in biology links. the [[focus]] distribution $\pi^*$ provides a natural routing metric.
+the [[cybergraph]] encodes which [[neurons]] are interested in which [[particles]]. a [[neuron]] that has created many [[cyberlinks]] involving biology [[particles]] is interested in biology links. the [[focus]] distribution $\phi^*$ provides a natural routing metric.
 
 ### interest-based peering
 
 nodes maintain connections to peers whose [[focus]] distributions overlap with their own:
 
-$$\text{peering\_affinity}(A, B) = \sum_{p \in P} \min(\pi^*_A(p), \pi^*_B(p))$$
+$$\text{peering\_affinity}(A, B) = \sum_{p \in P} \min(\phi^*_A(p), \phi^*_B(p))$$
 
 the Bhattacharyya coefficient between two nodes' focus distributions. high affinity means shared attention on the same [[particles]]. the gossip layer maintains a partial view biased toward high-affinity peers — relevant cyberlinks arrive from peers who care about the same subgraph.
 
@@ -284,7 +284,7 @@ local node checks local cybergraph view
     └── insufficient? → route to high-affinity peers
                               │
                               ▼
-                        peers with high π* on
+                        peers with high φ* on
                         query-relevant particles
                               │
                               ▼

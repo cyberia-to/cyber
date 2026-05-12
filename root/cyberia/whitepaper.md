@@ -133,7 +133,7 @@ the world's first cyberstate fund: instant global access to capital, regulatory 
 
 cyberia does not govern by voting. it governs by [[cyber]] — the converged [[focus]] of all participants, computed by the [[tri-kernel]] over the [[cybergraph]].
 
-the mathematical foundation is the [[collective focus theorem]]: token-weighted random walks in fully authenticated graphs converge to a unique stationary distribution $\pi^*$. this is provable, deterministic, on-chain. the result of 10 years of research.
+the mathematical foundation is the [[collective focus theorem]]: token-weighted random walks in fully authenticated graphs converge to a unique stationary distribution $\phi^*$. this is provable, deterministic, on-chain. the result of 10 years of research.
 
 | property | traditional state | [[network state]] | cyber state |
 |----------|------------------|------------------|-------------|

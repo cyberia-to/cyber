@@ -7,7 +7,7 @@ games where players form coalitions and share joint gains — the mathematical f
 
 ## solution concepts
 
-[[Shapley value]] — the unique attribution satisfying efficiency, symmetry, null player, and additivity. each player earns their average marginal contribution across all orderings. in [[cyber]], this distributes [[focus]] rewards proportionally to each [[neuron]]'s causal impact on $\Delta\pi$
+[[Shapley value]] — the unique attribution satisfying efficiency, symmetry, null player, and additivity. each player earns their average marginal contribution across all orderings. in [[cyber]], this distributes [[focus]] rewards proportionally to each [[neuron]]'s causal impact on $\Delta\phi^*$
 
 core — the set of allocations that no coalition can improve upon. a game has a non-empty core if and only if it is balanced (Bondareva-Shapley theorem). stability: no subgroup has incentive to break away
 

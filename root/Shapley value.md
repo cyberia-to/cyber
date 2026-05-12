@@ -16,6 +16,6 @@ the average marginal contribution of $i$ across all possible orderings in which 
 
 exact computation is $O(n!)$ — intractable at scale. [[probabilistic shapley attribution]] approximates via Monte Carlo sampling: compute each transaction's individual $\Delta\mathcal{F}$, sample $k$ random orderings, cluster by affected neighborhood. complexity drops to $O(k \cdot n)$ with $k \ll n$.
 
-in [[cyber]], the coalition is all [[neurons]] contributing [[cyberlinks]] in an epoch. the value function is the total [[focus]] shift $\Delta\pi$. the Shapley value distributes rewards so each [[neuron]] earns proportionally to their causal impact on the [[equilibrium]] — the only mathematically fair attribution under the four axioms.
+in [[cyber]], the coalition is all [[neurons]] contributing [[cyberlinks]] in an epoch. the value function is the total [[focus]] shift $\Delta\phi^*$. the Shapley value distributes rewards so each [[neuron]] earns proportionally to their causal impact on the [[equilibrium]] — the only mathematically fair attribution under the four axioms.
 
 [[Lloyd Shapley]] won the Nobel Memorial Prize in Economics (2012) for this and matching theory. the value has since become foundational in [[machine learning]] (SHAP explanations), mechanism design, and decentralized reward systems.

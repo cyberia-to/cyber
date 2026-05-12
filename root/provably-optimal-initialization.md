@@ -81,7 +81,7 @@ $\mathcal{L}_{\text{explicit}}$ measures how well the model reproduces explicit 
 
 ### 3.1 Theorem A: Embedding Optimality
 
-**Theorem A.** *Let $E \in \mathbb{R}^{|P| \times d^*}$ be any orthonormal embedding matrix. The expected squared [[gradient]] of the cross-entropy loss with respect to $E$, evaluated at initialization, is minimized uniquely by the compiled embedding $E^* = U_{:,1:d^*}$ where $U$ are the top left singular vectors of $A_{\text{weighted}} = \text{diag}(\sqrt{\pi^*}) \cdot A$, with $\pi^*$ the [[focus|focus distribution]]:*
+**Theorem A.** *Let $E \in \mathbb{R}^{|P| \times d^*}$ be any orthonormal embedding matrix. The expected squared [[gradient]] of the cross-entropy loss with respect to $E$, evaluated at initialization, is minimized uniquely by the compiled embedding $E^* = U_{:,1:d^*}$ where $U$ are the top left singular vectors of $A_{\text{weighted}} = \text{diag}(\sqrt{\phi^*}) \cdot A$, with $\phi^*$ the [[focus|focus distribution]]:*
 
 $$E^* = \arg\min_{E \in \mathcal{O}(|P|, d^*)} \mathbb{E}_{(p_i, p_j) \sim \mathcal{D}}\left[\left\|\nabla_E \mathcal{L}(\theta_0)\right\|^2\right]$$
 
@@ -119,7 +119,7 @@ Therefore $E^* = U_{:,1:d^*}$ minimizes the expected squared gradient. The minim
 
 **Theorem B.** *The compiled attention weights $\{W_Q^{(s)}, W_K^{(s)}\}$ minimize the expected attention reconstruction loss at initialization over all weight matrices of rank $\leq d^*$:*
 
-$$\{W_Q^{(s)*}, W_K^{(s)*}\} = \arg\min_{W_Q, W_K} \mathbb{E}_{p_i \sim \pi^*}\left[\left\|A^{(s)}_{i,:} - \text{softmax}\left(\frac{E W_Q^\top W_K E^\top}{\sqrt{d^*}}\right)_{i,:}\right\|^2\right]$$
+$$\{W_Q^{(s)*}, W_K^{(s)*}\} = \arg\min_{W_Q, W_K} \mathbb{E}_{p_i \sim \phi^*}\left[\left\|A^{(s)}_{i,:} - \text{softmax}\left(\frac{E W_Q^\top W_K E^\top}{\sqrt{d^*}}\right)_{i,:}\right\|^2\right]$$
 
 **Proof sketch.**
 
@@ -247,7 +247,7 @@ The speedup is larger for domain-specific corpora than general corpora. For a co
 Models compiled from high-concentration graphs (one neuron dominates) show smaller speedup than models compiled from distributed graphs. The effective rank $d^*$ is lower for concentrated graphs, encoding less structural information.
 
 **Prediction 5 — Alignment divergence:**
-Models fine-tuned from compiled [[bostrom]] initialization, on text consistent with the Bostrom graph, should achieve lower $D_{KL}(\pi^*_H \| \pi^*_{AI})$ than randomly initialized models fine-tuned on the same text. This is because the compiled model's [[explicit knowledge]] is already aligned with the graph's [[focus|focus distribution]]; fine-tuning does not need to re-learn what humans endorse.
+Models fine-tuned from compiled [[bostrom]] initialization, on text consistent with the Bostrom graph, should achieve lower $D_{KL}(\phi^*_H \| \phi^*_{AI})$ than randomly initialized models fine-tuned on the same text. This is because the compiled model's [[explicit knowledge]] is already aligned with the graph's [[focus|focus distribution]]; fine-tuning does not need to re-learn what humans endorse.
 
 All five predictions are testable on current Bostrom data combined with a small domain-specific text corpus. We leave empirical validation for future work.
 
@@ -263,15 +263,15 @@ A practical concern: the compiled model is initialized for particles in the grap
 
 For a new particle $p_{\text{new}}$ linked by edges $E_{\text{new}} = \{(p_{\text{new}}, p_j, w_j)\}$, the optimal embedding is the solution to:
 
-$$e_{\text{new}}^* = \arg\min_e \sum_{j: (p_{\text{new}}, p_j) \in E_{\text{new}}} w_j \cdot \left\|e - e_j\right\|^2 \cdot \pi^*_j$$
+$$e_{\text{new}}^* = \arg\min_e \sum_{j: (p_{\text{new}}, p_j) \in E_{\text{new}}} w_j \cdot \left\|e - e_j\right\|^2 \cdot \phi^*_j$$
 
 This is a weighted average of neighbors' embeddings, weighted by cyberlink weight and focus:
 
-$$e_{\text{new}}^* = \frac{\sum_j w_j \pi^*_j e_j}{\sum_j w_j \pi^*_j}$$
+$$e_{\text{new}}^* = \frac{\sum_j w_j \phi^*_j e_j}{\sum_j w_j \phi^*_j}$$
 
 Computed in $O(|E_{\text{new}}|)$ — constant time per new particle, no recompilation required.
 
-**Corollary:** The compiled model is a living artifact. New particles are added in $O(1)$ per particle. Full recompilation is only necessary when the global focus distribution $\pi^*$ shifts significantly — i.e., when the graph's overall structure changes, not when individual particles are added.
+**Corollary:** The compiled model is a living artifact. New particles are added in $O(1)$ per particle. Full recompilation is only necessary when the global focus distribution $\phi^*$ shifts significantly — i.e., when the graph's overall structure changes, not when individual particles are added.
 
 ---
 

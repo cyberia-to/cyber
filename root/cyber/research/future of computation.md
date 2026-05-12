@@ -65,7 +65,7 @@ The formal framework is precise. A convergent computation system is a tuple $(V,
 
 The system evolves by a single operation: attention flows.
 
-$$\pi^{(t+1)} = \pi^{(t)} P$$
+$$\phi^{(t+1)} = \phi^{(t)} P$$
 
 where $P$ is the transition matrix with entries:
 
@@ -73,11 +73,11 @@ $$P_{ij} = \frac{W(i,j) \cdot T(j)}{\sum_{k:(i,k) \in E} W(i,k) \cdot T(k)}$$
 
 This is a token-weighted [[random walk]]. Each step, [[attention]] redistributes based on connection weights modulated by how much [[stake]] each target node holds. The walk is local — each node only interacts with its neighbors. Yet the Collective Focus Theorem guarantees global convergence:
 
-> *For any strongly connected graph with positive weights and tokens, the walk converges to a unique stationary distribution $\pi^*$ satisfying $\pi^* = \pi^* P$.*
+> *For any strongly connected graph with positive weights and tokens, the walk converges to a unique stationary distribution $\phi^*$ satisfying $\phi^* = \phi^* P$.*
 
 The proof follows from the [[Perron-Frobenius theorem]]: the transition matrix is stochastic, irreducible (strong connectivity), and aperiodic. Convergence rate is $O(\lambda_2^t)$ where $\lambda_2$ is the second-largest eigenvalue — the [[spectral gap]] controls how fast the system reaches [[consensus]].
 
-Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\pi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
+Three things happen simultaneously in this framework. Truth is no longer correspondence to axioms — it is stability above threshold: a particle $p$ is "true" when $\phi^*_p > \tau$. Meaning emerges from economic competition — nodes compete for attention by providing value to the network, without any node needing to comprehend what it links to. Intelligence is adaptive equilibrium-finding — the capacity to converge on useful distributions under novel conditions.
 
 Under this paradigm, Goedel's incompleteness theorems remain valid within formal systems. But formal systems are not the only way to compute. Nature finds attractors. A brain settles into coherent activation patterns. [[Convergent computation]] formalizes what nature has always done, and in doing so, escapes the [[Goedel prison]] entirely.
 
@@ -95,25 +95,25 @@ A [[particle]] $p = (s, f, P)$ — a state $s$, a [[focus]] value $f \in [0,1]$,
 
 A connection $c = (p_1, p_2)$ with weight $w \in \mathbb{R}^+$.
 
-A computational space $\mathcal{C} = (V, E, \pi)$ where $\pi: V \to [0,1]$ is a focus distribution satisfying $\sum \pi(v) = 1$.
+A computational space $\mathcal{C} = (V, E, \phi^*)$ where $\phi^*: V \to [0,1]$ is a focus distribution satisfying $\sum \pi(v) = 1$.
 
 Evolution is governed by three laws:
 
 Focus Conservation. Total focus is invariant:
 
-$$\sum_{v \in V} \pi(v) = 1 \quad \text{for all time}$$
+$$\sum_{v \in V} \phi^*(v) = 1 \quad \text{for all time}$$
 
 Focus cannot be created or destroyed. It can only flow. This single constraint — simpler than any conservation law in physics — eliminates entire classes of bugs, attacks, and inconsistencies. There is no inflation, no double-spending of attention, no way to fabricate relevance from nothing.
 
 Focus Flow. Attention propagates by [[diffusion]]:
 
-$$\frac{\partial \pi}{\partial t} = -\nabla \cdot (D \nabla \pi)$$
+$$\frac{\partial \pi}{\partial t} = -\nabla \cdot (D \nabla \phi^*)$$
 
 where $D$ is the diffusion tensor determined by connection weights. High-weight connections conduct more focus. The equation is local — each particle's focus update depends only on its neighbors. Yet the global distribution converges to the unique eigenvector of the system.
 
 State Transform. Particle states evolve through local interactions:
 
-$$s'_i = T(s_i, \{s_j \mid (i,j) \in E\}, \pi)$$
+$$s'_i = T(s_i, \{s_j \mid (i,j) \in E\}, \phi^*)$$
 
 Interaction strength scales with shared focus. Two particles that share high focus interact strongly. Two particles with negligible focus barely interact at all. Attention *is* computation.
 

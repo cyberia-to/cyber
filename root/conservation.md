@@ -61,7 +61,7 @@ without $\sum \phi_i = 1$: the [[tri-kernel]] could push all focus to zero (ever
 
 this is why [[focus]] works as both attention and fuel simultaneously. a conserved quantity that represents attention is automatically scarce. scarcity forces prioritization. prioritization creates structure. structure is [[syntropy]]
 
-in [[thermodynamics]]: energy conservation forces the system to find the [[Boltzmann distribution]] — the unique distribution that maximizes [[entropy]] subject to fixed total energy. in [[cyber]]: focus conservation forces the system to find $\pi^*$ — the unique distribution that minimizes [[free energy]] subject to fixed total focus. same mathematics, same principle
+in [[thermodynamics]]: energy conservation forces the system to find the [[Boltzmann distribution]] — the unique distribution that maximizes [[entropy]] subject to fixed total energy. in [[cyber]]: focus conservation forces the system to find $\phi^*$ — the unique distribution that minimizes [[free energy]] subject to fixed total focus. same mathematics, same principle
 
 ---
 
@@ -87,7 +87,7 @@ in the formal definition: a simulation-proof of property $P$ requires a dynamica
 
 [[Noether]]'s theorem: every continuous symmetry of a system implies a conserved quantity
 
-in the [[cybergraph]], focus conservation corresponds to a symmetry: the [[tri-kernel]] is invariant under relabeling of time steps. it does not matter when a [[cyberlink]] is created — the same graph structure produces the same $\pi^*$. this time-invariance is the symmetry; focus conservation is the consequence
+in the [[cybergraph]], focus conservation corresponds to a symmetry: the [[tri-kernel]] is invariant under relabeling of time steps. it does not matter when a [[cyberlink]] is created — the same graph structure produces the same $\phi^*$. this time-invariance is the symmetry; focus conservation is the consequence
 
 see [[convergence]] for why conservation shapes the destination. see [[focus]] for the conserved quantity. see [[costly signal]] for the economic consequence. see [[cybics]] for the philosophical role
 

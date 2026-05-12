@@ -24,7 +24,7 @@ this makes [[precision]] an economic signal: backing beliefs with [[value]]. gam
 | [[predictive coding]] | [[cyber]] |
 |---|---|
 | increase [[precision]] on a sensory channel | stake more [[tokens]] on a [[particle]] or [[cyberlink]] |
-| suppress low-[[precision]] errors | low-stake links contribute less to π |
+| suppress low-[[precision]] errors | low-stake links contribute less to φ* |
 | [[attention]] = selective [[precision]] | [[focus]] = stake-weighted [[attention]] distribution |
 
 see [[active inference]] for the framework. see [[free energy principle]] for the theory. see [[predictive coding]] for the neural architecture

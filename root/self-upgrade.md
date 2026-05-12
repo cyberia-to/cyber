@@ -24,7 +24,7 @@ this is not inflexibility. it is the precondition for genuine autonomy. a system
 
 not everything. two categories are structurally frozen:
 
-frozen at genesis: the [[Hemera]] hash primitive, the focus conservation law ($\sum \pi_i = 1$), the stark proof system's soundness parameters, and the contraction requirement (κ < 1). these are the mathematical bedrock. changing them would invalidate every proof the system has ever produced. they cannot be upgraded without forking the chain — which produces a new system, not an upgrade of the existing one.
+frozen at genesis: the [[Hemera]] hash primitive, the focus conservation law ($\sum \phi^*_i = 1$), the stark proof system's soundness parameters, and the contraction requirement (κ < 1). these are the mathematical bedrock. changing them would invalidate every proof the system has ever produced. they cannot be upgraded without forking the chain — which produces a new system, not an upgrade of the existing one.
 
 self-upgradeable submodules: the [[parametrization]] RL agent (objective function, search bounds, evaluation windows), the archival criteria thresholds (ε_s, ε_p, N from §17), the [[self-linking]] inference algorithm (completion score formula, trigger thresholds), the compiler optimization weights from [[self-optimizing compilation]] (when the compiler reaches a new provably-better fixed point), and the shard boundary criteria.
 

@@ -36,7 +36,7 @@ cybics rests on three universal operators — the [[tri-kernel]]. they are not c
 
 probability flows through edges via random walks. gas wanders, neurons fire stochastically, memes spread through populations, prices diffuse through markets.
 
-the operator: π(t+1) = α P^T π(t) + (1-α)u
+the operator: φ*(t+1) = α P^T φ*(t) + (1-α)u
 
 provides randomness-driven exploration. ensures the system does not get stuck in local optima. geometric decay via teleport guarantees [[locality]].
 
@@ -68,18 +68,18 @@ three operators. no more, no less. discovered by elimination, not designed by pr
 
 the [[tri-kernel]] fixed point minimizes a unified free energy:
 
-F(π) = λ_s [½ π^T L π + μ/2 ‖π - x₀‖²] + λ_h [½ ‖π - H_τ π‖²] + λ_d · D_KL(π ‖ Dπ) - T · S(π)
+F(φ*) = λ_s [½ φ*^T L φ* + μ/2 ‖φ* - x₀‖²] + λ_h [½ ‖φ* - H_τ φ*‖²] + λ_d · D_KL(φ* ‖ Dφ*) - T · S(φ*)
 
 where:
 - spring term encodes structural coherence via graph [[Laplacian]]
 - heat term penalizes deviation from context-smoothed state
 - [[diffusion]] term aligns with random walk distribution
-- [[entropy]] term S(π) = -Σ πⱼ log πⱼ encourages diversity
+- [[entropy]] term S(φ*) = -Σ φ*ⱼ log φ*ⱼ encourages diversity
 - temperature T controls exploration vs exploitation
 
 the weights λ_s, λ_h, λ_d are not tuned. they emerge as Lagrange multipliers from the variational optimization — the same way [[thermodynamics]] derives the Boltzmann distribution. no parameters. only physics.
 
-the solution: π*_i ∝ exp(-β [E_spring,i + λ E_diffusion,i + γ C_i])
+the solution: φ*_i ∝ exp(-β [E_spring,i + λ E_diffusion,i + γ C_i])
 
 a Boltzmann-Gibbs [[equilibrium]]. the canonical ensemble from statistical mechanics — applied to [[knowledge]].
 
@@ -117,8 +117,8 @@ every intelligent system balances two forces:
 
 negentropy maximization — long-term structure, memory, meaning. increase emergent order. global, constructive, long-term.
 
-H(π) = -Σ πⱼ log πⱼ (entropy)
-J(π) = log n - H(π) (negentropy)
+H(φ*) = -Σ φ*ⱼ log φ*ⱼ (entropy)
+J(φ*) = log n - H(φ*) (negentropy)
 
 Landauer's principle (1961): one bit of negentropy requires at least k_B ln 2 joules of physical [[energy]]. this links physical energy to semantic organization. no organization without work. no intelligence without energy.
 
@@ -127,7 +127,7 @@ Prigogine's dissipative structures: far-from-[[equilibrium]] systems maintain or
 - entropy export: noise terms, link decay, exploration phases
 - order creation: negentropy growth, [[focus]] sharpening, semantic coherence
 
-stop energy inflow → π drifts to uniform → coherence collapses → the system dies. intelligence is a dissipative structure. it exists only while energy flows through it.
+stop energy inflow → φ* drifts to uniform → coherence collapses → the system dies. intelligence is a dissipative structure. it exists only while energy flows through it.
 
 ## [[active inference]] integration
 
@@ -167,4 +167,4 @@ claim: for every property P decidable by a Turing machine, there exists a conver
 
 stronger claim: there exist properties P that can be simulation-proved but not derivation-proved in any consistent formal system of bounded complexity. these are the truths that Goedel showed inaccessible to derivation — but accessible to convergence.
 
-the [[cybergraph]] is such a system. Ω is the space of [[focus]] distributions. T is the [[tri-kernel]]. C is focus conservation (Σ πᵢ = 1). a [[cyberank]] distribution π* is a simulation-proof of collective relevance — no axiomatic derivation required, no authority consulted, no vote taken. just convergence under physics.
+the [[cybergraph]] is such a system. Ω is the space of [[focus]] distributions. T is the [[tri-kernel]]. C is focus conservation (Σ φ*ᵢ = 1). a [[cyberank]] distribution φ* is a simulation-proof of collective relevance — no axiomatic derivation required, no authority consulted, no vote taken. just convergence under physics.

@@ -33,7 +33,7 @@ NMT guarantees you got ALL the graph's edges. knowledge completeness asks whethe
 
 ## how it grows
 
-knowledge completeness increases when [[neurons]] create [[cyberlinks]] between [[particles]] that represent previously unconnected facts. the [[tri-kernel]] [[focus]] distribution $\pi^*$ reflects collective attention — high-$\pi$ regions are well-covered, low-$\pi$ regions are sparse.
+knowledge completeness increases when [[neurons]] create [[cyberlinks]] between [[particles]] that represent previously unconnected facts. the [[tri-kernel]] [[focus]] distribution $\phi^*$ reflects collective attention — high-$\phi^*$ regions are well-covered, low-$\phi^*$ regions are sparse.
 
 the growth follows the [[universal law|exponential optimality under constraint]]: given finite collective [[focus]], attention distributes exponentially across ranked domains. well-known domains attract more links, deepening coverage. obscure domains receive minimal attention until a [[neuron]] with relevant knowledge acts.
 

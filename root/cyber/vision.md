@@ -91,8 +91,8 @@ ten principles, each addressing a failure mode of existing systems:
 at sufficient scale, nox dissolves the distinction between distributed computation and distributed cognition:
 
 - computation becomes physics: reduction patterns conserve [[focus]] the way physical laws conserve energy. the network doesn't simulate thinking — the network IS thinking
-- [[consensus]] becomes emergent: [[foculus]] replaces voting rounds with [[focus]] convergence. a [[particle]] is final when $\pi_i > \tau$. no leaders, no block ordering
-- [[intelligence]] becomes measurable: the [[focus]] distribution π over [[particles]] is the collective mind's belief state. AI [[alignment]] reduces to comparing human and machine π — divergence is visible in the [[topology]]
+- [[consensus]] becomes emergent: [[foculus]] replaces voting rounds with [[focus]] convergence. a [[particle]] is final when $\phi^*_i > \tau$. no leaders, no block ordering
+- [[intelligence]] becomes measurable: the [[focus]] distribution φ* over [[particles]] is the collective mind's belief state. AI [[alignment]] reduces to comparing human and machine φ* — divergence is visible in the [[topology]]
 - privacy becomes structural: individual ownership hidden, aggregate properties verifiable. enough transparency for [[consensus]], enough privacy for participation
 
 ## the stack

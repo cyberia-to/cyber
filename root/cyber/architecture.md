@@ -33,7 +33,7 @@ a [[vimputer]] consumes exactly five fundamental resources. each is irreducible 
 │        │                                                │
 │        └── CONSENSUS ── agree on state                  │
 │                                                         │
-│              π (focus) = exchange rate between all five  │
+│              φ* (focus) = exchange rate between all five  │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
@@ -276,7 +276,7 @@ in the current internet, Tier 1 providers are hubs because they institutionally 
 
 in a [[vimputer]], centrality is a computed quantity:
 
-$$\text{centrality}(n) = f(\pi_n,\ \text{relay\_throughput}_n,\ \text{location\_utility}_n)$$
+$$\text{centrality}(n) = f(\phi^*_n,\ \text{relay\_throughput}_n,\ \text{location\_utility}_n)$$
 
 a node with high [[focus]] has lots of [[attention]] flowing through it. a node with high relay throughput moves lots of data. a node with high location utility sits where routing is physically efficient. these three signals reinforce each other:
 
@@ -285,7 +285,7 @@ good location → attracts relay traffic
   → generates relay fees
     → enables more stake
       → higher weight on cyberlinks
-        → higher π for content through this node
+        → higher φ* for content through this node
           → more demand for storage/compute nearby
             → more economic activity
               → even more relay traffic
@@ -361,7 +361,7 @@ the five primitives collapse into two verification types:
 
 ## [[focus]] as universal resource pricing oracle
 
-the [[focus]] vector $\pi$ — the stationary distribution of the [[token]]-weighted random walk on the [[cybergraph]] — is not just an [[attention]] metric. it is the exchange rate between all five resource types.
+the [[focus]] vector $\phi^*$ — the stationary distribution of the [[token]]-weighted random walk on the [[cybergraph]] — is not just an [[attention]] metric. it is the exchange rate between all five resource types.
 
 how [[focus]] prices each resource:
 
@@ -375,7 +375,7 @@ how [[focus]] prices each resource:
 
 [[focus]] is not set by [[governance]]. it emerges from the same [[focus]] dynamics that drive ranking. the market does not need to discover resource prices separately — the [[attention]] signal that already organizes the [[knowledge]] graph also organizes the resource economy.
 
-conservation: $\sum_i \pi_i = 1$ always. [[focus]] is a zero-sum resource. [[attention]] given to one [[particle]] is [[attention]] taken from another. this creates natural scarcity without artificial supply caps.
+conservation: $\sum_i \phi^*_i = 1$ always. [[focus]] is a zero-sum resource. [[attention]] given to one [[particle]] is [[attention]] taken from another. this creates natural scarcity without artificial supply caps.
 
 ## economic design principles
 
@@ -438,10 +438,10 @@ CONSENSUS   converting private signals into shared truth.
             spectrum: probabilistic → deterministic → irreversible
             priced by: finality strength × scope
 
-π (FOCUS)   the universal exchange rate between all five resources.
+φ* (FOCUS)   the universal exchange rate between all five resources.
             emergent from token-weighted random walks on the cybergraph.
             not governance-set — computed. not voted — converged.
-            conservation: Σ πᵢ = 1 (always)
+            conservation: Σ φ*ᵢ = 1 (always)
 
 PROOF OF LOCATION
 ═════════════════
@@ -459,7 +459,7 @@ PROOF OF LOCATION
 EMERGENT HIERARCHY
 ══════════════════
 
-            π + relay economics + proof of location →
+            φ* + relay economics + proof of location →
             hubs form without permission.
             liquid hierarchy: reversible in real time.
             no sharding needed for structure to emerge.

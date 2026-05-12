@@ -158,23 +158,23 @@ $O(|L|)$ time, $O(|S| + |\Omega|)$ extra space.
 
 ### 5.1 Focus distribution
 
-Compute $\pi^* \in \Delta^{|V|}$ by power iteration of the column-stochastic transition matrix $P = A^\top D^{-1}$ (with $D = \text{diag}(A^\top \mathbf{1})$, treating zero-degree rows as teleport):
+Compute $\phi^* \in \Delta^{|V|}$ by power iteration of the column-stochastic transition matrix $P = A^\top D^{-1}$ (with $D = \text{diag}(A^\top \mathbf{1})$, treating zero-degree rows as teleport):
 
-$$\pi^{(k+1)} = \alpha P \pi^{(k)} + (1 - \alpha) u, \quad \pi^{(0)} = u, \quad u_i = \frac{1}{|V|}$$
+$$\phi^{(k+1)} = \alpha P \phi^{(k)} + (1 - \alpha) u, \quad \phi^{(0)} = u, \quad u_i = \frac{1}{|V|}$$
 
-with $\alpha = 0.85$. Halt when $\|\pi^{(k+1)} - \pi^{(k)}\|_1 < \varepsilon_\pi$ with $\varepsilon_\pi = 10^{-8}$.
+with $\alpha = 0.85$. Halt when $\|\phi^{(k+1)} - \phi^{(k)}\|_1 < \varepsilon_\pi$ with $\varepsilon_\pi = 10^{-8}$.
 
-**Impulse reuse.** If the optional `impulse` extension is present, each signal $s$ carries a sparse focus delta $\pi_\Delta^{(s)}$ that was proven on chain when the signal was accepted. The base distribution is then
+**Impulse reuse.** If the optional `impulse` extension is present, each signal $s$ carries a sparse focus delta $\Delta\phi^*^{(s)}$ that was proven on chain when the signal was accepted. The base distribution is then
 
-$$\pi^*_{\text{chain}} = \pi_0 + \sum_{s \in \mathcal{S}} \pi_\Delta^{(s)}$$
+$$\phi^*_{\text{chain}} = \phi^{(0)} + \sum_{s \in \mathcal{S}} \Delta\phi^*^{(s)}$$
 
-where $\pi_0$ is the genesis prior from `config`. Power iteration is unnecessary for the set of signals covered by impulses; it runs only over the residual adjacency (signals without impulse). On a fully proof-carrying snapshot this skips the entire iteration.
+where $\phi^{(0)}$ is the genesis prior from `config`. Power iteration is unnecessary for the set of signals covered by impulses; it runs only over the residual adjacency (signals without impulse). On a fully proof-carrying snapshot this skips the entire iteration.
 
 ### 5.2 Embedding dimension
 
-Take the singular value spectrum $\Sigma = (\sigma_1, \ldots, \sigma_r)$ of the $\pi$-weighted adjacency
+Take the singular value spectrum $\Sigma = (\sigma_1, \ldots, \sigma_r)$ of the $\phi^*$-weighted adjacency
 
-$$M = \text{diag}(\sqrt{\pi^*}) \cdot A \cdot \text{diag}(\sqrt{\pi^*})$$
+$$M = \text{diag}(\sqrt{\phi^*}) \cdot A \cdot \text{diag}(\sqrt{\phi^*})$$
 
 via randomized SVD truncated to rank $r = 1024$ (oversampled). Normalize: $\hat{\sigma}_i = \sigma_i / \sum_j \sigma_j$. Then
 
@@ -266,7 +266,7 @@ $$W_Q^{(l, h_s)} = U^{(s,l)}_{:, 1:d_h} \cdot \sqrt{\Sigma^{(s,l)}_{1:d_h}}$$
 
 $$W_K^{(l, h_s)} = V^{(s,l)}_{:, 1:d_h} \cdot \sqrt{\Sigma^{(s,l)}_{1:d_h}}$$
 
-$$W_V^{(l, h_s)} = E^\top \cdot \text{diag}(\pi^*) \cdot A^{(s)} \cdot E_{:, h_s \cdot d_h : (h_s+1) \cdot d_h}$$
+$$W_V^{(l, h_s)} = E^\top \cdot \text{diag}(\phi^*) \cdot A^{(s)} \cdot E_{:, h_s \cdot d_h : (h_s+1) \cdot d_h}$$
 
 Sign convention SC-1 applied to $U^{(s,l)}, V^{(s,l)}$.
 
@@ -329,7 +329,7 @@ For window $w_{\text{co}} = 5$, accumulate weighted co-occurrence counts $C^{(l)
 
 $$\text{PMI}^{(l)}_{ij} = \max\left(0, \log \frac{p^{(l)}(v_i, v_j) \cdot Z}{p(v_i) \cdot p(v_j)}\right)$$
 
-with $p(v_i) = \pi^*_i$ and $Z = \sum_{ij} C^{(l)}_{ij}$.
+with $p(v_i) = \phi^*_i$ and $Z = \sum_{ij} C^{(l)}_{ij}$.
 
 ### 8.3 Projection and factorization
 

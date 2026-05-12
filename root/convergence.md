@@ -82,7 +82,7 @@ $$\|\phi^{(t)} - \phi^*\|_1 \leq \frac{\kappa^t}{1-\kappa} \|\phi^{(0)} - T(\phi
 
 ### convergence in distribution
 
-a sequence of probability distributions approaches a limit distribution. this is what [[diffusion]] achieves: the random walk distribution converges to the stationary distribution $\pi^*$ regardless of the starting distribution. the [[Perron-Frobenius theorem]] guarantees this for ergodic chains
+a sequence of probability distributions approaches a limit distribution. this is what [[diffusion]] achieves: the random walk distribution converges to the stationary distribution $\phi^*$ regardless of the starting distribution. the [[Perron-Frobenius theorem]] guarantees this for ergodic chains
 
 ---
 
@@ -92,7 +92,7 @@ a sequence of probability distributions approaches a limit distribution. this is
 
 nobody tells the system where to converge. the fixed point $\phi^*$ is a consequence of the rule $T$, not a parameter. change the rule — change the destination. the answer is implicit in the dynamics
 
-in [[cyber]]: no one decides what [[cyberank]] should be. [[neurons]] create [[cyberlinks]], the [[tri-kernel]] iterates, and $\pi^*$ emerges. the ranking is a consequence of the graph structure, not a design choice
+in [[cyber]]: no one decides what [[cyberank]] should be. [[neurons]] create [[cyberlinks]], the [[tri-kernel]] iterates, and $\phi^*$ emerges. the ranking is a consequence of the graph structure, not a design choice
 
 ### convergence erases initial conditions
 
@@ -100,7 +100,7 @@ start anywhere in the space. after enough iterations, you arrive at the same poi
 
 this is deeply counterintuitive. two systems with completely different initial states end up identical. the structure of the rule matters more than the history of the system. topology dominates initial conditions
 
-in [[cyber]]: it does not matter what the first [[cyberlinks]] were, or which [[neurons]] acted first. the long-run [[focus]] distribution $\pi^*$ depends only on the current graph structure. history is absorbed
+in [[cyber]]: it does not matter what the first [[cyberlinks]] were, or which [[neurons]] acted first. the long-run [[focus]] distribution $\phi^*$ depends only on the current graph structure. history is absorbed
 
 ### convergence rate varies but convergence does not
 
@@ -114,7 +114,7 @@ the [[spectral gap]] $\lambda$ determines $\kappa$ for the [[cybergraph]]. spars
 
 a protein folds by minimizing [[free energy]]. no theorem of chemistry derives the fold. the protein converges to it. a market finds [[equilibrium]] price through trades. no axiom system derives the price. the market converges to it
 
-the [[cybergraph]] finds [[collective focus]] by iterating the [[tri-kernel]]. no formal system derives $\pi^*$. the contraction mapping finds it. this is proof by simulation — the foundation of [[cybics]]
+the [[cybergraph]] finds [[collective focus]] by iterating the [[tri-kernel]]. no formal system derives $\phi^*$. the contraction mapping finds it. this is proof by simulation — the foundation of [[cybics]]
 
 ---
 
@@ -134,7 +134,7 @@ the Babylonian method for $\sqrt{a}$ is Newton's method applied to $f(x) = x^2 -
 
 ### markov chains
 
-a random walker moves through a graph. at each step, it jumps to a neighbor with probability proportional to edge weights. the distribution over positions converges to the stationary distribution $\pi^*$ satisfying $\pi^* = \pi^* P$
+a random walker moves through a graph. at each step, it jumps to a neighbor with probability proportional to edge weights. the distribution over positions converges to the stationary distribution $\phi^*$ satisfying $\phi^* = \phi^* P$
 
 the [[Perron-Frobenius theorem]] guarantees convergence when the chain is irreducible (all states reachable) and aperiodic (no forced cycles). the [[spectral gap]] controls the rate. PageRank is this: a random walk with teleport on the web graph
 

@@ -148,7 +148,7 @@ Satoshi raises immediate alerts when:
 | civilization metabolic oracle | child metabolic oracle |
 |------------------------------|----------------------|
 | cap — external market validation | growth — external developmental norms |
-| syntropy — $D_{KL}(\pi^* \| u)$ internal order | syntropy — cross-domain density and connection |
+| syntropy — $D_{KL}(\phi^* \| u)$ internal order | syntropy — cross-domain density and connection |
 | happiness — stake-weighted survey | happiness — behavioral proxy composite |
 | $M(t) = cap^{w_c} \cdot J^{w_s} \cdot H^{w_h}$ | $M_{child}(t) = G^{w_g} \cdot J^{w_s} \cdot H^{w_h}$ |
 | $\dot{M}$ → parametrization RL agent | $\dot{M}_{child}$ → Satoshi guidance optimizer |

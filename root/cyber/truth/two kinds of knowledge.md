@@ -62,7 +62,7 @@ a [[cybergraph]] with only structural [[knowledge]] — all [[cyberlinks]] weigh
 
 a [[cybergraph]] with only epistemic [[knowledge]] — markets with no underlying links — has nothing to trade. the market needs a structural fact to form an opinion about.
 
-the interplay: structural [[knowledge]] creates the edges over which the market discovers probabilities. those probabilities feed back as weights into the [[tri-kernel]], shaping π*. the [[focus]] distribution is then jointly determined by topology (who linked what) and collective belief (what the network trusts).
+the interplay: structural [[knowledge]] creates the edges over which the market discovers probabilities. those probabilities feed back as weights into the [[tri-kernel]], shaping φ*. the [[focus]] distribution is then jointly determined by topology (who linked what) and collective belief (what the network trusts).
 
 this is what [[veritas.computer|veritas]] pursues: truth is not declared. truth is emerging — from the market process, continuously, as a convergent collective signal.
 

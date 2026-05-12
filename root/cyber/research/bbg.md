@@ -33,7 +33,7 @@ the architecture follows from [[zheng]]'s [[sumcheck]] foundation: the proof sys
 | [[cyberlinks\|cyberlink]] | $H(p, q, \tau, a, v)$ — 5-tuple | private authenticated edge |
 | [[neurons\|neuron]] | $H(\text{public\_key})$ | agent with stake and [[focus]] budget |
 | [[token]] | denomination hash | economic value (coin, card, score, badge) |
-| [[focus]] | $\pi^*$ from [[tri-kernel]] | emergent attention distribution |
+| [[focus]] | $\phi^*$ from [[tri-kernel]] | emergent attention distribution |
 
 derived: **axon** = $H(\text{from}, \text{to})$. aggregate of all cyberlinks between two particles. the axon is public; individual cyberlinks are private.
 
@@ -58,7 +58,7 @@ $$\text{BBG\_root} = \text{Brakedown.commit}(\text{BBG\_poly}) \quad \text{(32 b
 
 | index | domain | key | value |
 |---|---|---|---|
-| 0: particles | content-addressed nodes | CID | energy, $\pi^*$, axon fields |
+| 0: particles | content-addressed nodes | CID | energy, $\phi^*$, axon fields |
 | 1: axons_out | outgoing edges by source | source CID | axon pointer, weight, market state |
 | 2: axons_in | incoming edges by target | target CID | axon pointer, weight |
 | 3: neurons | agent state | neuron ID | focus, karma, stake |
@@ -149,14 +149,14 @@ privacy is preserved: Lens opening proofs are zero-knowledge. opening $A(c_i)$ r
 the temporal dimension $t$ in BBG_poly enables continuous-time queries:
 
 ```
-"what was π of particle P at block 1000?"
+"what was φ* of particle P at block 1000?"
 = Brakedown.open(BBG_root, (particles, P, 1000))
 = one Lens opening — no separate time index needed
 ```
 
 the old approach used a time.root NMT with 7 namespaces (steps, seconds, hours, days, weeks, moons, years). the polynomial absorbs time as a native dimension — any historical query is one evaluation.
 
-with [[gravity commitment]]: recent + high-$\pi$ queries are cheapest (low-degree polynomial terms). old + low-$\pi$ queries cost more (high-degree terms). verification cost follows the [[universal law|exponential]] — important facts are cheaper to verify.
+with [[gravity commitment]]: recent + high-$\phi^*$ queries are cheapest (low-degree polynomial terms). old + low-$\phi^*$ queries cost more (high-degree terms). verification cost follows the [[universal law|exponential]] — important facts are cheaper to verify.
 
 ## 6. algebraic DAS
 
@@ -220,17 +220,17 @@ total: < 10 KiB, 10-50 μs, ZERO trust
 
 this is [[structural-sync|Verified Eventual Consistency]] (VEC): convergence guaranteed (CRDT), completeness verifiable (lens), availability verifiable (DAS). no consensus protocol needed.
 
-## 9. π-weighted everything
+## 9. φ*-weighted everything
 
-$\pi^*$ ([[cyberank]] from [[tri-kernel]]) is the master distribution. the entire stack follows it:
+$\phi^*$ ([[cyberank]] from [[tri-kernel]]) is the master distribution. the entire stack follows it:
 
-| what | how it follows π |
+| what | how it follows φ* |
 |---|---|
-| verification cost | [[gravity commitment]]: high-$\pi$ particles verify cheaper |
-| storage replication | [[pi-weighted-replication]]: replicas $\propto \pi$ |
-| DAS parameters | high-$\pi$: fewer samples needed (more replicas = higher base availability) |
-| temporal decay | low-$\pi$ links decay faster (nobody reinforces them) |
-| query routing | hot queries (high-$\pi$) served from low-degree polynomial (fast) |
+| verification cost | [[gravity commitment]]: high-$\phi^*$ particles verify cheaper |
+| storage replication | [[pi-weighted-replication]]: replicas $\propto \phi^*$ |
+| DAS parameters | high-$\phi^*$: fewer samples needed (more replicas = higher base availability) |
+| temporal decay | low-$\phi^*$ links decay faster (nobody reinforces them) |
+| query routing | hot queries (high-$\phi^*$) served from low-degree polynomial (fast) |
 
 one distribution governs proof cost, storage, availability, decay, and query performance. the [[universal law]] predicts this: given finite resources, exponential allocation minimises total cost.
 
@@ -281,7 +281,7 @@ every transaction produces a [[zheng]] proof via [[proof-carrying computation|pr
 ```
 PRIVATE (polynomial commitments):          PUBLIC (BBG_poly dimensions):
   who linked what (individual cyberlinks)    axon weights (aggregate conviction)
-  individual conviction amounts               particle energy, π*
+  individual conviction amounts               particle energy, φ*
   neuron linking history                      neuron summaries (focus, karma, stake)
   market positions                            token supplies
   UTXO values and owners                     axon market state

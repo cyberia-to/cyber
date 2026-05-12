@@ -25,13 +25,13 @@ $$\kappa = \alpha(1 - \lambda_2)$$
 
 where $\alpha = 0.85$ is the damping factor and $\lambda_2$ is the spectral gap. this is not an approximation. it is the spectral theorem applied to the [[random walk]] transition matrix. the second eigenvalue of the transition matrix is $\alpha(1 - \lambda_2)$, and it governs exponential convergence:
 
-$$\|\pi^{(t)} - \pi^*\|_1 \leq C \cdot \kappa^t$$
+$$\|\phi^{(t)} - \phi^*\|_1 \leq C \cdot \kappa^t$$
 
 ## the method
 
 track the L1 norm of successive differences during PageRank iteration:
 
-$$d_t = \|\pi^{(t)} - \pi^{(t-1)}\|_1$$
+$$d_t = \|\phi^{(t)} - \phi^{(t-1)}\|_1$$
 
 in the convergence regime (after initial transients), the ratio of successive differences approaches $\kappa$:
 

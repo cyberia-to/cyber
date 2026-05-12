@@ -381,19 +381,19 @@ The miner doesn't just find a nonce where digest < target. The miner produces a 
 MINING STEP:
   1. Receive challenge from latest block header
   2. Try nonce values until digest < target
-  3. For the winning nonce, generate stark proof π:
-       π proves "B(challenge, nonce) = digest AND digest < target"
-  4. Submit (nonce, π) as proof of work
+  3. For the winning nonce, generate stark proof φ*:
+       φ* proves "B(challenge, nonce) = digest AND digest < target"
+  4. Submit (nonce, φ*) as proof of work
 
 VERIFICATION (by any node):
-  1. Check π is a valid stark proof (O(log n) time, ~100K constraints)
+  1. Check φ* is a valid stark proof (O(log n) time, ~100K constraints)
   2. Check public inputs match (challenge from block header, digest < target)
   3. Done. No re-execution of B needed.
 ```
 
 Why proof-of-proof, not just proof-of-evaluation:
 
-The stark proof π itself requires producing an execution trace, committing it via WHIR (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
+The stark proof φ* itself requires producing an execution trace, committing it via WHIR (NTT-heavy), hashing with Poseidon2, and verifying lookup arguments. The proof generation process exercises the same four primitives AGAIN, amplifying the useful-work requirement.
 
 Verification is O(log n) — any light client can verify in milliseconds. This satisfies compute-verify symmetry.
 
@@ -473,7 +473,7 @@ BLOCK STRUCTURE:
 │                                      │
 │ Body                                 │
 │   transactions   : [cyberlink, ...]  │
-│   focus_updates  : [Δπ, ...]        │
+│   focus_updates  : [Δφ*, ...]        │
 │   fee_proofs     : [stark, ...]      │
 └──────────────────────────────────────┘
 
@@ -703,12 +703,12 @@ FULL BLOCK PRODUCTION CYCLE:
        // This IS useful work — it proves real transactions
 
   4. FOCUS COMPUTATION (GFP utility workload)
-     Δπ = tri_kernel_step(current_graph, new_edges)
-     proof_focus = GFP.prove(tri_kernel_circuit, Δπ)
+     Δφ* = tri_kernel_step(current_graph, new_edges)
+     proof_focus = GFP.prove(tri_kernel_circuit, Δφ*)
      // Focus update is also proven via stark
 
   5. STATE COMMITMENT
-     new_bbg_root = update_bbg(proven_txs, Δπ)
+     new_bbg_root = update_bbg(proven_txs, Δφ*)
      // NMT updates, MMR appends, polynomial recommitments
 
   6. POW PUZZLE (GFP mining workload)

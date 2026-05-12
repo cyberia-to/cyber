@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 # cyber/launch
 
-A self-verifying knowledge graph where attention, computation, and [[consensus]] converge into a single metric (π), enabling [[intelligence]] emergence without central control.
+A self-verifying knowledge graph where attention, computation, and [[consensus]] converge into a single metric (φ*), enabling [[intelligence]] emergence without central control.
 
 nox
 Optimizing civilization's ability to know what matters
@@ -28,12 +28,12 @@ Version: 2026.02 | Status: Genesis → Self-Hosting transition
 
 Theoretical foundations established:
 
-- Convergence guarantee: unique π* exists, exponential convergence, bounded mixing time
-- Conservation law: Σπᵢ = 1, always — no inflation, no leakage
+- Convergence guarantee: unique φ* exists, exponential convergence, bounded mixing time
+- Conservation law: Σφ*ᵢ = 1, always — no inflation, no leakage
 - GNN [[isomorphism]]: [[tri-kernel]] update ≡ multi-channel graph neural network message pass
 - Transformer equivalence: CGC [[focus]] ≡ iterated sparse attention with economic grounding
 - [[convergent computation]]: replaces halting problem — system converges, never halts
-- Free energy minimization: Δπ is literally the gradient of system free energy
+- Free energy minimization: Δφ* is literally the gradient of system free energy
 - Blackbox principle: no node comprehends, the network knows
 
 ## Crystal Formation
@@ -93,7 +93,7 @@ On-chain storage budget: ~15 MB (IPFS content 6.5 MB + CIDs 0.5 MB + [[cyberlink
 
 ## Incentive Design
 
-[[knowledge]] creation is costly, benefits are collective. without incentives, rational agents free-ride on others' [[cyberlinks]]. reward(v) ∝ Δπ(v) — creating valuable structure is literally creating [[value]]
+[[knowledge]] creation is costly, benefits are collective. without incentives, rational agents free-ride on others' [[cyberlinks]]. reward(v) ∝ Δφ*(v) — creating valuable structure is literally creating [[value]]
 
 see [[cyber/tokenomics]] for the 7-mechanism spec (minting, staking, burn, fees, yield curve, reputation). see [[learning incentives]] for reward function design, link valuation, and attribution
 
@@ -178,7 +178,7 @@ UTXO-based privacy with ZK proofs for all state transitions.
 | Nullifier system | Deterministic nullifier = H(nonce, secret) |
 | Privacy boundary | Formal leakage budget L(queries, graph_size) bounded |
 
-Privacy boundary (non-negotiable): PUBLIC = edge existence, aggregate energy per [[particle]], [[focus]] distribution π. PRIVATE = [[neuron]] identity behind edges, individual energy ownership, link authorship.
+Privacy boundary (non-negotiable): PUBLIC = edge existence, aggregate energy per [[particle]], [[focus]] distribution φ*. PRIVATE = [[neuron]] identity behind edges, individual energy ownership, link authorship.
 
 [[focus]] is computable from PUBLIC aggregates only. This is secure multi-party computation of a GNN forward pass.
 
@@ -208,7 +208,7 @@ Duration: 9-12 months
 | [[diffusion]] kernel (personalized PageRank) | Convergence proof (Lyapunov) in Lean4 |
 | [[springs]] kernel (screened Laplacian) | Exponential decay proof, locality bound |
 | [[heat kernel]] (Chebyshev approximation) | Positivity-preserving, semigroup property |
-| Combined convergence | Explicit Lyapunov function V(π), dV/dt < 0 |
+| Combined convergence | Explicit Lyapunov function V(φ*), dV/dt < 0 |
 | Adversarial equilibrium | Nash equilibrium for honest participation |
 
 The composite operator: φ(t+1) = norm[λ_d · D(φ^t) + λ_s · S(φ^t) + λ_h · H_τ(φ^t)]
@@ -231,7 +231,7 @@ Distributed protocol for [[cybergraph]] [[consensus]] and [[focus]] propagation.
 | Shard architecture | Categorical pruning for semantic coherence |
 | Economic engine | Simulation-tested under 100× adversarial load |
 
-[[particles]] and [[cyberlinks]] = yield-bearing epistemic non-fungible assets. [[neurons]] = non-fungible names valuated by personal fungible asset. π-minting tied to Δπ: creating valuable structure is literally creating value. No designed loss function — physics itself defines what should be optimized.
+[[particles]] and [[cyberlinks]] = yield-bearing epistemic non-fungible assets. [[neurons]] = non-fungible names valuated by personal fungible asset. φ*-minting tied to Δφ*: creating valuable structure is literally creating value. No designed loss function — physics itself defines what should be optimized.
 
 Shards as subtopoi. Sheaf of attention weights ensures cross-shard consistency.
 
@@ -269,7 +269,7 @@ Running parallel to all phases. Each item maps to the Pre-Launch Verification Pr
 |------|-----|------|
 | Layer 1 confluence (16 patterns) | Lean4 / Coq | Phase 1-2 |
 | Cost determinism | Structural induction, machine-checked | Phase 2 |
-| [[focus]] conservation (Σπᵢ = 1) | Proof by transition analysis | Phase 3 |
+| [[focus]] conservation (Σφ*ᵢ = 1) | Proof by transition analysis | Phase 3 |
 | Privacy soundness (< 2⁻¹²⁸) | stark/Plonky2 soundness theorem | Phase 4 |
 | [[tri-kernel]] convergence | Lyapunov function, explicit constants | Phase 5 |
 | Adversarial equilibrium | Game-theoretic analysis, simulation | Phase 5-6 |
@@ -300,7 +300,7 @@ vs. Traditional AI (GPT, Claude): no central training, no black box, no single o
 
 vs. Existing Blockchains (Ethereum, Cosmos): knowledge-first, [[focus]] as native primitive, self-verifying, convergent.
 
-vs. Decentralized AI (Bittensor): no external model, provable correctness, universal substrate, Δπ rewards.
+vs. Decentralized AI (Bittensor): no external model, provable correctness, universal substrate, Δφ* rewards.
 
 ## Risk Register
 
@@ -333,7 +333,7 @@ Before launch, answer five questions with machine-checked evidence:
 
 | # | Question | Evidence Required |
 |---|----------|-------------------|
-| 1 | Does π converge? | Lean4 proof of Lyapunov stability |
+| 1 | Does φ* converge? | Lean4 proof of Lyapunov stability |
 | 2 | Can proofs be forged? | Soundness proof + 10⁸ fuzzing runs, 0 counterexamples |
 | 3 | Can the economy be drained? | Nash equilibrium proof + 100× adversarial simulation |
 | 4 | Is computation deterministic? | Cross-implementation state root match on 10⁶ blocks |

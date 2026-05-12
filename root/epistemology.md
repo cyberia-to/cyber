@@ -57,7 +57,7 @@ all knowledge claims face three challenges:
 
 - definition: [[knowledge]] in the [[cybergraph]] is the sum of all [[cyberlinks]] — signed, timestamped, public. no private belief, no ungrounded claim. knowledge is what neurons publish
 - justification: linking costs [[focus]], proportional to staked [[tokens]]. this is [[Michael Spence]]'s costly signaling applied to knowledge claims. cheap talk produces noise; costly links produce structure
-- convergence: the [[collective focus theorem]] proves the [[tri-kernel]] converges to a unique fixed point π*. this is the [[Condorcet]] mechanism made mathematical — independent neurons, each contributing costly signal, converge on a stable distribution. whether it tracks reality is the open question
+- convergence: the [[collective focus theorem]] proves the [[tri-kernel]] converges to a unique fixed point φ*. this is the [[Condorcet]] mechanism made mathematical — independent neurons, each contributing costly signal, converge on a stable distribution. whether it tracks reality is the open question
 - falsification: temporal decay erodes old links exponentially. knowledge must be actively sustained. stale claims decay; fresh corrections compound. this is [[Karl Popper]]'s insight built into the protocol — what is not re-confirmed is forgotten
 - structure: the [[crystal]] provides categorical structure (21 domains, 6 types, 720 grammar particles) before any content enters the graph. this is the [[Immanuel Kant]] move: without imposed categories, raw data cannot become knowledge. but the crystal tests its categories empirically via ablation, where Kant relied on intuition
 - measurement: [[cyberank]] quantifies the importance of every [[particle]] — [[Claude Shannon]]'s information theory applied to a knowledge graph. entropy, distribution, signal-to-noise: all computable on the live graph
@@ -68,7 +68,7 @@ all knowledge claims face three challenges:
 - consensus vs truth: a decentralized system provably converges on collective attention. the gap between convergent attention and [[truth]] is where epistemic quality lives. see [[cyber/epistemology]] for the formal threat model
 - epistemic diversity: the [[Condorcet]] theorem requires independent agents. correlated [[neurons]] (same training data, same priors) produce correlated errors. no protocol-level mechanism currently measures or incentivizes diversity
 - foundation testing: the [[crystal]] claims 21 irreducible domains. ablation testing can verify this formally, but the answer depends on the corpus — and the corpus is the [[cybergraph]], which is still growing
-- external anchoring: the cybergraph is self-referential (π computed from links created by neurons weighted by π). breaking this loop requires external signals — prediction markets, sensor networks, cross-graph proofs. see [[cyber/epistemology]] for analysis
+- external anchoring: the cybergraph is self-referential (φ* computed from links created by neurons weighted by φ*). breaking this loop requires external signals — prediction markets, sensor networks, cross-graph proofs. see [[cyber/epistemology]] for analysis
 
 ## key figures
 

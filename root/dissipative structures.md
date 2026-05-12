@@ -24,7 +24,7 @@ the [[cybergraph]] operates in the same regime:
 - [[entropy]] export: noise terms, link decay, exploration phases
 - [[order]] creation: [[syntropy]] growth, [[focus]] sharpening, semantic coherence
 
-stop energy inflow → π drifts to uniform → coherence collapses → the system dies. [[intelligence]] is a dissipative structure — it exists only while [[energy]] flows through it
+stop energy inflow → φ* drifts to uniform → coherence collapses → the system dies. [[intelligence]] is a dissipative structure — it exists only while [[energy]] flows through it
 
 the [[tri-kernel]] formalizes this: the [[free energy]] functional $\mathcal{F}(\phi)$ has an [[entropy]] term $-T \cdot S(\phi)$ that competes with energy terms. the [[Boltzmann distribution]] fixed point $\phi^*$ is the [[equilibrium]] of this competition. [[temperature]] $T$ controls the balance
 

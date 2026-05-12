@@ -18,7 +18,7 @@ every economic action in the [[cybergraph]] decomposes into [[basic token operat
 | pay | transfer tokens | fees, market trades |
 | lock | commit tokens for duration | [[will]] creation, validator staking |
 | uber | delegate authority | delegated [[attention]], validator sets |
-| mint | create new tokens | Δπ rewards, emission |
+| mint | create new tokens | Δφ* rewards, emission |
 | burn | destroy tokens permanently | [[eternal particles]], [[eternal cyberlinks]] |
 
 ## epistemic markets
@@ -45,15 +45,15 @@ epistemic markets unify prediction, curation, and staking under one allocation l
 
 ## reward mechanics
 
-every reward traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point π?
+every reward traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point φ*?
 
-$$\text{reward}(v) \propto \Delta\pi(v)$$
+$$\text{reward}(v) \propto \Delta\phi^*(v)$$
 
-Δπ is the gradient of system [[free energy]]. creating valuable structure literally creates [[value]]. the hybrid reward function:
+Δφ* is the gradient of system [[free energy]]. creating valuable structure literally creates [[value]]. the hybrid reward function:
 
-$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
+$$R = \alpha \cdot \Delta\phi^* + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
-[[neurons]] prove their own Δπ via [[stark]] proofs and self-mint [[$CYB]]. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood, create [[cyberlinks]], prove Δπ, mint tokens
+[[neurons]] prove their own Δφ* via [[stark]] proofs and self-mint [[$CYB]]. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood, create [[cyberlinks]], prove Δφ*, mint tokens
 
 attribution via [[probabilistic shapley attribution]]: $R_i = \alpha \cdot \Delta\mathcal{F}_i + (1-\alpha) \cdot \hat{S}_i$. complexity $O(k \cdot n)$, feasible for $10^6+$ transactions per epoch
 
@@ -81,12 +81,12 @@ the [[cybergraph]] never deletes. it selectively pays [[attention]]
 
 [[energy mint using curve]] — exponential bonding curve: supply grows only when demand forces price up
 
-the [[Goldilocks field processor]] makes proving Δπ economically viable. mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users pay fees. fees replace emission. no stranded assets
+the [[Goldilocks field processor]] makes proving Δφ* economically viable. mining rewards bootstrap chip development. chips accelerate proving. proving serves users. users pay fees. fees replace emission. no stranded assets
 
 ## the three token operations on knowledge
 
-- mint: prove Δπ, self-mint [[$CYB]]. inflation = evidence of [[knowledge]] creation
-- burn: permanent π-weight on [[particles]] or [[cyberlinks]]. the graph's highest-conviction assertions
+- mint: prove Δφ*, self-mint [[$CYB]]. inflation = evidence of [[knowledge]] creation
+- burn: permanent φ*-weight on [[particles]] or [[cyberlinks]]. the graph's highest-conviction assertions
 - lock: [[will]] creation. the budget for [[attention]] allocation. time commitment = conviction depth
 
 see [[cyber/tokens]] for the noun registry. see [[cyber/netics]] for the whole machine as a feedback diagram. see [[cyber/tokenomics]] for the full monetary policy. see [[cybernomics]] for the universal theory

@@ -56,12 +56,12 @@ this means all agents with any non-zero prior on the truth will eventually agree
 
 ## in [[cyber]]
 
-π* — the [[focus]] distribution computed by the [[tri-kernel]] — is the posterior over [[particle]] relevance given all [[cyberlinks]] ever submitted to the [[cybergraph]]. each [[cyberlink]] is evidence. π* is the posterior that integrates all evidence from all [[neurons]], weighted by [[karma]] (the prior on their reliability) and by ICBS market prices (the collective belief about each edge's validity).
+φ* — the [[focus]] distribution computed by the [[tri-kernel]] — is the posterior over [[particle]] relevance given all [[cyberlinks]] ever submitted to the [[cybergraph]]. each [[cyberlink]] is evidence. φ* is the posterior that integrates all evidence from all [[neurons]], weighted by [[karma]] (the prior on their reliability) and by ICBS market prices (the collective belief about each edge's validity).
 
-the [[approximation quality metric]] $\varepsilon(G,c) = D_{KL}(\pi^*_c \| q^*_c)$ measures how much the compiled [[transformer]] deviates from the exact posterior. the [[collective focus theorem]] proves that π* is the unique posterior that the [[tri-kernel]] converges to from any initial [[prior]] under ergodicity.
+the [[approximation quality metric]] $\varepsilon(G,c) = D_{KL}(\phi^*_c \| q^*_c)$ measures how much the compiled [[transformer]] deviates from the exact posterior. the [[collective focus theorem]] proves that φ* is the unique posterior that the [[tri-kernel]] converges to from any initial [[prior]] under ergodicity.
 
 [[cyberank]] is the marginal posterior probability of a [[particle]]'s relevance. [[syntropy]] is the total information gain — the total shift in the posterior from its initial uninformative state.
 
 the [[cyberlink market protocol]]'s ICBS price for each edge is the collective posterior on that edge's validity: $q = r_{YES}/(r_{YES} + r_{NO})$, continuously updated as participants submit evidence (trades).
 
-see [[Bayes theorem]] for the update rule. see [[prior]] for the starting distribution. see [[belief]] for the subjective probability interpretation. see [[focus flow computation]] for how π* is computed.
+see [[Bayes theorem]] for the update rule. see [[prior]] for the starting distribution. see [[belief]] for the subjective probability interpretation. see [[focus flow computation]] for how φ* is computed.

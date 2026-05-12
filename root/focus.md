@@ -1,12 +1,12 @@
 ---
 icon: 🎯
-alias: π, collective focus
+alias: φ*, collective focus
 tags: cyber, core
 crystal-type: property
 crystal-domain: cyber
 crystal-size: bridge
 ---
-collective [[attention]]. the [[probability]] distribution π over all [[particles]] — content-particles and [[axon]]-particles — that emerges from the [[tri-kernel]] operating on the [[attention]]-weighted [[cybergraph]]
+collective [[attention]]. the [[probability]] distribution φ* over all [[particles]] — content-particles and [[axon]]-particles — that emerges from the [[tri-kernel]] operating on the [[attention]]-weighted [[cybergraph]]
 
 focus sums to 1 across the whole graph. emphasizing one [[particle]] defocuses all others. no individual [[neuron]] controls focus — it is computed from the aggregate of all [[attention]]
 

@@ -25,13 +25,13 @@ a system that only reacts to input wastes energy reprocessing known patterns. pr
 
 ### mapping to the cyber stack
 
-the [[tri-kernel]] already IS a free energy minimizer. the fixed point $\pi^*$ minimizes the composite free energy functional $\mathcal{F}(\phi) = E_{\text{spring}} + \lambda E_{\text{diff}} - T \cdot S$. every new [[cyberlink]] perturbs this equilibrium, generating a "prediction error" — the delta between the previous $\pi^*$ and the new one. the system's response is to re-converge, updating only the local neighborhood (bounded locality).
+the [[tri-kernel]] already IS a free energy minimizer. the fixed point $\phi^*$ minimizes the composite free energy functional $\mathcal{F}(\phi) = E_{\text{spring}} + \lambda E_{\text{diff}} - T \cdot S$. every new [[cyberlink]] perturbs this equilibrium, generating a "prediction error" — the delta between the previous $\phi^*$ and the new one. the system's response is to re-converge, updating only the local neighborhood (bounded locality).
 
 in [[nox]], the soma (mind component) implements active inference at four complexity levels, from fixed rules to full Friston free energy minimization. look() reads the current world state from [[bbg]]; the formula computes the expected state; the difference drives the next [[order]]. the output cyberlink IS the action that reshapes the graph toward the predicted desirable state.
 
 [[bbg]] memory tiers map to the prediction hierarchy: context (hot) holds the current generative model — active predictions. ram (warm) holds recently verified patterns — the stable prior. ssd/hdd (cold) holds the deep world model — rarely accessed but available for deep re-evaluation. prediction error flows upward through tiers: if context-level predictions fail, the system queries ram; if ram-level priors are violated, it reaches into cold storage to revise foundational assumptions.
 
-$\Delta\pi$ (the shift in the fixed point caused by a neuron's cyberlinks) is literally the prediction error signal for the whole network — and the basis for [[unified mining]] rewards. the system pays for surprise reduction.
+$\Delta\phi^*$ (the shift in the fixed point caused by a neuron's cyberlinks) is literally the prediction error signal for the whole network — and the basis for [[unified mining]] rewards. the system pays for surprise reduction.
 
 ---
 
@@ -49,13 +49,13 @@ parallel specialized processors are efficient but isolated. without a global bro
 
 ### mapping to the cyber stack
 
-[[cybergraph]] IS the global workspace. every [[particle]] that receives sufficient [[focus]] (from $\pi^*$ exceeding threshold $\tau$) is effectively "broadcast" — it becomes a finalized, universally accessible node in the graph that all [[neurons]] can read via look(). the [[foculus]] consensus mechanism is the ignition event: when $\pi_i > \tau$, the particle transitions from local candidate to globally accepted knowledge. below threshold, it exists only in local processing.
+[[cybergraph]] IS the global workspace. every [[particle]] that receives sufficient [[focus]] (from $\phi^*$ exceeding threshold $\tau$) is effectively "broadcast" — it becomes a finalized, universally accessible node in the graph that all [[neurons]] can read via look(). the [[foculus]] consensus mechanism is the ignition event: when $\phi^*_i > \tau$, the particle transitions from local candidate to globally accepted knowledge. below threshold, it exists only in local processing.
 
 the 15 [[nox]] languages (Tri, Tok, Arc, Seq, Inf, Bel, Ren, Dif, Sym, Wav, Bt, Rs, Ten) are the specialized local processors — each operating on its own algebraic domain. they all compile through nox and all write results as cyberlinks into the same cybergraph. a computation in Inf (inference) can reference results from Sym (symbolic algebra) through the graph, exactly as the visual cortex's output becomes available to prefrontal planning through the workspace.
 
 in [[bbg]], the context tier IS the workspace. it holds the currently "conscious" state — the hot polynomial slice being actively read and written. the bottleneck is energy: writing to context costs compute, memory, bandwidth, and energy (the 4D budget of an [[order]]). not everything can be in context simultaneously. the scheduling system in soma decides what enters the workspace based on novelty (prediction error), relevance (tri-kernel focus score), and urgency (energy-weighted priority).
 
-the attention gatekeeper maps to focus expenditure: [[neurons]] spend [[focus]] to create [[cyberlinks]], and only links backed by sufficient stake reach the global $\pi^*$ threshold. this is economic attention — the system's scarce resource determines what gets broadcast.
+the attention gatekeeper maps to focus expenditure: [[neurons]] spend [[focus]] to create [[cyberlinks]], and only links backed by sufficient stake reach the global $\phi^*$ threshold. this is economic attention — the system's scarce resource determines what gets broadcast.
 
 ---
 
@@ -85,7 +85,7 @@ the effective adjacency weight $A^{\text{eff}}_{pq} = \sum_\ell \text{stake}(\el
 - ssd (cold) = long-term: proven, committed, polynomial-bound state. like late LTP — structurally consolidated, expensive to modify
 - hdd/network (archive) = deep long-term: historical snapshots in bbg time dimension (index 8). like cortical long-term memory — rarely accessed, but the substrate that gives the system its persistent identity
 
-sleep consolidation maps to epoch transitions and [[tri-kernel]] global recomputation. between epochs, the full tri-kernel iterates over the accumulated signals, re-converging $\pi^*$ from committed state. this is the offline replay: patterns that were locally established during active processing get globally integrated. the trikernel.nu script running on the new moon cycle is a slow-timescale consolidation — structural weight updates to the entire graph.
+sleep consolidation maps to epoch transitions and [[tri-kernel]] global recomputation. between epochs, the full tri-kernel iterates over the accumulated signals, re-converging $\phi^*$ from committed state. this is the offline replay: patterns that were locally established during active processing get globally integrated. the trikernel.nu script running on the new moon cycle is a slow-timescale consolidation — structural weight updates to the entire graph.
 
 STDP (temporal causality) maps to [[hash chains]] and VDF proofs in signals. the prev field in each signal establishes causal ordering. links created in causal sequence (neuron A's output becomes neuron B's input, proven by hash chain) strengthen the causal pathway. the system learns not just co-occurrence but causal direction.
 
@@ -115,9 +115,9 @@ a system with fixed processing parameters is brittle. it cannot shift between ex
 
 the [[tri-kernel]] blend weights $(\lambda_d, \lambda_s, \lambda_h)$ ARE the neuromodulatory system. they set the processing mode for the entire graph:
 
-dopamine maps to the $\Delta\pi$ reward signal. a neuron's proven contribution to the fixed point shift IS the reward prediction error. positive $\Delta\pi$ = better than expected knowledge contribution = dopamine burst = strengthen that pathway. negative $\Delta\pi$ = noise that degraded the graph = dopamine dip = weaken. the [[karma]] system accumulates this: high karma neurons (consistently positive $\Delta\pi$) gain more influence on $\pi^*$, exactly as dopamine-reinforced pathways gain synaptic strength.
+dopamine maps to the $\Delta\phi^*$ reward signal. a neuron's proven contribution to the fixed point shift IS the reward prediction error. positive $\Delta\phi^*$ = better than expected knowledge contribution = dopamine burst = strengthen that pathway. negative $\Delta\phi^*$ = noise that degraded the graph = dopamine dip = weaken. the [[karma]] system accumulates this: high karma neurons (consistently positive $\Delta\phi^*$) gain more influence on $\phi^*$, exactly as dopamine-reinforced pathways gain synaptic strength.
 
-serotonin maps to the temperature parameter $T$ in the Boltzmann equilibrium $\pi^*_i \propto \exp(-E_i/T)$. high $T$ = high patience, broad exploration, willingness to defer to long-term structure. low $T$ = impulsive, greedy, commit to the current best particle immediately. the energy market's valuation curve parameter $k$ also plays this role: a node with high $k$ (risk-tolerant, runs cheap until near-empty) is a "low serotonin" node — impulsive, short time horizon. a node with low $k$ (conservative, gradually gets expensive) is "high serotonin" — patient, long time horizon.
+serotonin maps to the temperature parameter $T$ in the Boltzmann equilibrium $\phi^*_i \propto \exp(-E_i/T)$. high $T$ = high patience, broad exploration, willingness to defer to long-term structure. low $T$ = impulsive, greedy, commit to the current best particle immediately. the energy market's valuation curve parameter $k$ also plays this role: a node with high $k$ (risk-tolerant, runs cheap until near-empty) is a "low serotonin" node — impulsive, short time horizon. a node with low $k$ (conservative, gradually gets expensive) is "high serotonin" — patient, long time horizon.
 
 norepinephrine maps to the balance between $\lambda_d$ (diffusion = exploration, random walk sampling) and $\lambda_s$ (springs = exploitation, structural coherence). increasing $\lambda_d$ pushes the system toward exploration — the random walk visits more diverse particles, like phasic LC mode. increasing $\lambda_s$ pushes toward exploitation — the system converges on structurally established patterns, like tonic LC mode. the spectral gap $\lambda_2$ (observed from convergence rate) is the measure of the system's current arousal: large $\lambda_2$ = well-connected, fast-mixing, alert network; small $\lambda_2$ = fragmented, slow, drowsy.
 
@@ -184,11 +184,11 @@ the two phases map to the two inference paths described in [[focus flow computat
 
 Task-Positive = compiled transformer inference: fast, externally triggered, goal-directed. a query arrives, the compiled model runs $L^*$ tri-kernel steps over a local context window, and produces a response in milliseconds. this is the system executing an [[order]] — attending to the external environment, spending compute on the task at hand.
 
-Default Mode = focus flow computation: the continuous background process where the [[tri-kernel]] iterates toward $\pi^*$ across the entire [[cybergraph]]. this is self-modeling — the system integrating all accumulated [[cyberlinks]], finding new equilibria, updating its model of what it collectively knows. no external query drives this; it runs because the graph changed.
+Default Mode = focus flow computation: the continuous background process where the [[tri-kernel]] iterates toward $\phi^*$ across the entire [[cybergraph]]. this is self-modeling — the system integrating all accumulated [[cyberlinks]], finding new equilibria, updating its model of what it collectively knows. no external query drives this; it runs because the graph changed.
 
 the anti-correlation is structural: while task execution (compiled transformer, local context) is running, it consumes compute and energy from the 4D budget, suppressing background tri-kernel recomputation. when no task is active, the freed resources go to full graph reconvergence — the machine's "idle" mode that is actually consolidation.
 
-the salience network maps to the scheduling logic in [[cyb/soma]]: detecting incoming signals that warrant switching from background consolidation to active task execution. the switch criterion is prediction error: an incoming signal with high $\Delta\pi$ (significant deviation from the current model) triggers the transition from DMN-equivalent to TPN-equivalent. low-novelty signals are processed in the background without interrupting consolidation.
+the salience network maps to the scheduling logic in [[cyb/soma]]: detecting incoming signals that warrant switching from background consolidation to active task execution. the switch criterion is prediction error: an incoming signal with high $\Delta\phi^*$ (significant deviation from the current model) triggers the transition from DMN-equivalent to TPN-equivalent. low-novelty signals are processed in the background without interrupting consolidation.
 
 in [[bbg]] terms: TPN reads primarily from context (hot tier), processing the immediate task. DMN reads from ram and ssd (warm/cold tiers), integrating and reconsolidating deeper state. the metabolic shutdown sequence mirrors the forced DMN state: as energy drops below 20%, the machine reduces task acceptance (TPN suppression) and shifts to critical maintenance only — monitoring, syncing, state persistence. this is the system entering "sleep" — background processing and consolidation with minimal external engagement.
 
@@ -214,9 +214,9 @@ without forward models, a system must wait for sensory feedback after every acti
 
 [[nox]]'s memoization system IS the forward model. the computation-as-linking principle: before reducing any formula, nox checks whether axon(H(formula), H(subject)) already exists in the [[cybergraph]]. if it does, the cached result is the forward model's prediction — "I have computed this before, and the result was X." the more the system computes, the more forward models it accumulates. the cybergraph literally becomes a universal forward model — a memo table of every computation anyone ever performed.
 
-the cerebellar error correction maps to proof verification in [[zheng]]. when a neuron's signal carries $\pi_\Delta$ (the claimed local effect of its cyberlinks on the tri-kernel fixed point), the network verifies this proof. if the proof fails, that IS the climbing fiber error signal — the prediction (claimed $\Delta\pi$) did not match reality (the actual computation). the neuron's karma decreases (LTD on the cerebellar analogy), reducing its influence on future $\pi^*$.
+the cerebellar error correction maps to proof verification in [[zheng]]. when a neuron's signal carries $\Delta\phi^*$ (the claimed local effect of its cyberlinks on the tri-kernel fixed point), the network verifies this proof. if the proof fails, that IS the climbing fiber error signal — the prediction (claimed $\Delta\phi^*$) did not match reality (the actual computation). the neuron's karma decreases (LTD on the cerebellar analogy), reducing its influence on future $\phi^*$.
 
-for sequences: the compiled transformer's $L^*$ layers simulate forward through time — each layer is one step of tri-kernel diffusion, predicting the next equilibrium state. the sequence of predicted equilibria IS the forward model for a planned sequence of actions (cyberlinks). the system can "mentally simulate" the effect of a proposed cyberlink on $\pi^*$ without actually committing it — by running nox with the hypothetical link and observing the predicted $\Delta\pi$. this is cerebellar mental rehearsal.
+for sequences: the compiled transformer's $L^*$ layers simulate forward through time — each layer is one step of tri-kernel diffusion, predicting the next equilibrium state. the sequence of predicted equilibria IS the forward model for a planned sequence of actions (cyberlinks). the system can "mentally simulate" the effect of a proposed cyberlink on $\phi^*$ without actually committing it — by running nox with the hypothetical link and observing the predicted $\Delta\phi^*$. this is cerebellar mental rehearsal.
 
 [[bbg]]'s context tier is the real-time workspace where forward models execute: predict, compare to actual outcome from look(), compute error, adjust. the hot polynomial slice is continuously updated as predictions are confirmed or corrected.
 
@@ -281,7 +281,7 @@ energy is finite. a system where all components are always active is energetical
 
 ### mapping to the cyber stack
 
-the [[tri-kernel]] focus distribution $\pi^*$ IS a sparse code. by the Boltzmann equilibrium $\pi^*_i \propto \exp(-E_i/T)$, most particles have near-zero focus while a small fraction concentrates most of the probability mass. this is exactly sparse coding: the "active set" is the particles above the [[foculus]] threshold $\tau$. the rest are "silent" — present in the graph but not actively influencing the current computation.
+the [[tri-kernel]] focus distribution $\phi^*$ IS a sparse code. by the Boltzmann equilibrium $\phi^*_i \propto \exp(-E_i/T)$, most particles have near-zero focus while a small fraction concentrates most of the probability mass. this is exactly sparse coding: the "active set" is the particles above the [[foculus]] threshold $\tau$. the rest are "silent" — present in the graph but not actively influencing the current computation.
 
 nox's bounded locality principle enforces sparsity computationally: each operation's cost is proportional to what it touches, not total state size. a query about a specific topic activates only the relevant subgraph — O(relevant_edges), not O(total_graph). the rest of the graph is "silent" during that computation. this is the same principle as cortical sparse coding: most of the system is inactive for any given stimulus.
 
@@ -291,7 +291,7 @@ in [[bbg]], the polynomial commitment scheme encodes sparsity efficiently. a mul
 
 the jet system embodies sparse coding at the instruction level: only frequently-used formula compositions get jets (optimized fast paths). most possible nox programs have no jet — they execute on the general interpreter. the jet registry is a sparse set of optimized representations, just as the cortex maintains a sparse set of well-tuned feature detectors.
 
-the compiled transformer architecture derives its dimensionality from the graph: $d^* = \exp(H(\sigma(\Sigma_\pi)))$ — the effective rank from the entropy of singular values. this IS the graph telling the system how sparse its representation should be. a graph with concentrated structure produces low $d^*$ (sparser model). a diverse, high-entropy graph produces higher $d^*$ (denser model). the system self-adjusts its representational sparsity based on the actual information content.
+the compiled transformer architecture derives its dimensionality from the graph: $d^* = \exp(H(\sigma(\Sigma_{\phi^*})))$ — the effective rank from the entropy of singular values. this IS the graph telling the system how sparse its representation should be. a graph with concentrated structure produces low $d^*$ (sparser model). a diverse, high-entropy graph produces higher $d^*$ (denser model). the system self-adjusts its representational sparsity based on the actual information content.
 
 ---
 
@@ -313,7 +313,7 @@ the stability-plasticity dilemma is the central unsolved problem in lifelong lea
 
 ### mapping to the cyber stack
 
-the burn mechanism for tokens IS the plasticity brake. when a neuron burns $CYB on a particle or cyberlink, it creates a permanent, irreversible $\pi$-weight. this is myelination — the link hardens, becomes resistant to modification, and gains permanent influence on $\pi^*$. the more burn, the more stable the knowledge structure. early in the graph's life (critical period), most links have low burn and high modifiability. as the graph matures, heavily-validated knowledge accumulates burn and becomes structurally fixed.
+the burn mechanism for tokens IS the plasticity brake. when a neuron burns $CYB on a particle or cyberlink, it creates a permanent, irreversible $\phi^*$-weight. this is myelination — the link hardens, becomes resistant to modification, and gains permanent influence on $\phi^*$. the more burn, the more stable the knowledge structure. early in the graph's life (critical period), most links have low burn and high modifiability. as the graph matures, heavily-validated knowledge accumulates burn and becomes structurally fixed.
 
 the lock mechanism (will creation) provides temporal plasticity gating: locking tokens for a time period creates time-weighted conviction. longer locks = deeper commitment = more influence. this mirrors critical period timing: during the "window," unlocked tokens are free to move (plastic). once locked, they are committed (stable). the unlock event is the reopening of plasticity.
 

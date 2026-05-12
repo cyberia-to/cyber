@@ -16,9 +16,9 @@ Hebbian learning is excitatory: correlated activity increases connection weight.
 
 ## in [[cyber]]
 
-a [[cyberlink]] between two [[particles]] that both accumulate [[focus]] is a Hebbian connection — correlated [[attention]] strengthens the link's economic weight. the reward signal $\Delta\pi$ reinforces links between particles that the [[cybergraph]] treats as co-relevant.
+a [[cyberlink]] between two [[particles]] that both accumulate [[focus]] is a Hebbian connection — correlated [[attention]] strengthens the link's economic weight. the reward signal $\Delta\phi^*$ reinforces links between particles that the [[cybergraph]] treats as co-relevant.
 
-$$\Delta w_{ij} = \alpha \cdot r_{ij} \cdot \pi_j$$
+$$\Delta w_{ij} = \alpha \cdot r_{ij} \cdot \phi^*_j$$
 
 see [[collective learning]] for the full weight update rule in the [[cybergraph]].
 

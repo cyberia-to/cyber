@@ -8,7 +8,7 @@ first operator of the [[tri-kernel]]
 
 transition matrix `P = AD⁻¹` governs probability flow across the [[cybergraph]]
 
-`π^(t+1) = α P^T π^(t) + (1-α)u`
+`π^(t+1) = α P^T φ*^(t) + (1-α)u`
 
 - α = teleport parameter
 - u = prior (stake-weighted)

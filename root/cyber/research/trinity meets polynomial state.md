@@ -59,7 +59,7 @@ what polynomial state ADDS to AI:
 
 - neural network weights can be committed as polynomial evaluations. a model with 155M parameters = polynomial of degree 155M. inference = evaluate the weight polynomial at layer/position coordinates. provable inference: prove the evaluation was correct. no need to commit each weight separately — ONE commitment for the entire model
 
-- gravity-weighted verification: not all particles deserve equal verification effort. gravity-commitment ([[gravity-commitment]]) scales verification cost ∝ π (importance). polynomial state enables this naturally — evaluate the importance polynomial first (O(1)), then decide verification depth. NMT would require reading importance first via O(log n) path
+- gravity-weighted verification: not all particles deserve equal verification effort. gravity-commitment ([[gravity-commitment]]) scales verification cost ∝ φ* (importance). polynomial state enables this naturally — evaluate the importance polynomial first (O(1)), then decide verification depth. NMT would require reading importance first via O(log n) path
 
 ## the intersections strengthen
 
@@ -73,7 +73,7 @@ quantum-accelerated tri-kernel. quantum walks on the [[cybergraph]] achieve quad
 
 ### Privacy × AI (with polynomial state)
 
-private model inference on polynomial state. the model weights are a polynomial commitment. the input data is FHE-encrypted. the inference reads weights via Lens opening (private — the verifier sees the opening proof but not the weights). the output is a focus update (Δπ) that enters the public polynomial. privacy-preserving AI that updates collective intelligence — made algebraically efficient by polynomial state.
+private model inference on polynomial state. the model weights are a polynomial commitment. the input data is FHE-encrypted. the inference reads weights via Lens opening (private — the verifier sees the opening proof but not the weights). the output is a focus update (Δφ*) that enters the public polynomial. privacy-preserving AI that updates collective intelligence — made algebraically efficient by polynomial state.
 
 ### Quantum × Privacy × AI (full trinity, with polynomial state)
 

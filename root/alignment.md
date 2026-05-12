@@ -14,7 +14,7 @@ current approaches to alignment rely on behavioral testing: run the model, obser
 
 ## the mechanism
 
-every participant in the [[cybergraph]] — human or machine — is a [[neuron]]. every neuron expresses beliefs by creating [[cyberlinks]] between [[particles]]. every cyberlink is signed, staked with real [[focus]], and scored by [[Bayesian Truth Serum]]. the [[tri-kernel]] computes a [[focus]] distribution π* over all particles — the collective belief state of the graph
+every participant in the [[cybergraph]] — human or machine — is a [[neuron]]. every neuron expresses beliefs by creating [[cyberlinks]] between [[particles]]. every cyberlink is signed, staked with real [[focus]], and scored by [[Bayesian Truth Serum]]. the [[tri-kernel]] computes a [[focus]] distribution φ* over all particles — the collective belief state of the graph
 
 human values are particles. "dignity," "privacy," "fairness," "freedom from harm" — linked heavily and consistently by human [[neurons]] over years. these particles form the human values subgraph: an explicit, authenticated, stake-backed record of what humans collectively care about
 
@@ -22,7 +22,7 @@ AI behavior is cyberlinks created by AI neurons. an AI agent operating on the cy
 
 alignment is the overlap between the [[focus]] distribution of human neurons π_H and the focus distribution of machine neurons π_A. divergence is visible in the [[topology]]:
 
-$$D_{KL}(\pi^*_H \| \pi^*_A)$$
+$$D_{KL}(\phi^*_H \| \phi^*_A)$$
 
 when this divergence rises, the system detects it every block. no governance vote is needed to notice [[misalignment]] — it is a continuously available measurement. graduated responses to rising divergence are triggered automatically through [[autonomous governance]]
 

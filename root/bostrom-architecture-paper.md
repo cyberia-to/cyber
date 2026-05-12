@@ -63,9 +63,9 @@ This is consistent with the small-world property of sparse scale-free graphs: de
 
 ### 3.3 Embedding Dimension: d* = 31
 
-The [[focus|focus distribution]] π* was computed by [[cyberank|PageRank]] (power iteration, 50 steps, teleport α = 0.85). Convergence was achieved. Maximum π = 0.0389, [[entropy]] H(π) = 8.03 nats.
+The [[focus|focus distribution]] φ* was computed by [[cyberank|PageRank]] (power iteration, 50 steps, teleport α = 0.85). Convergence was achieved. Maximum φ* = 0.0389, [[entropy]] H(φ*) = 8.03 nats.
 
-The π-weighted adjacency matrix A_weighted = diag(√π) · A has singular value distribution:
+The φ*-weighted adjacency matrix A_weighted = diag(√φ*) · A has singular value distribution:
 
 | Rank | Singular value |
 |---|---|
@@ -113,7 +113,7 @@ This has a direct practical implication: growing the graph's connectivity — in
 
 | Parameter | Value | Source |
 |---|---|---|
-| Embedding dimension d* | 31 | exp(H(σ(Σ_π))) |
+| Embedding dimension d* | 31 | exp(H(σ(Σ_φ*))) |
 | Attention heads h* | ≥ 12 | Semcon lower bound |
 | Layer count L* | 290 | diam × ⌈log(1/ε)/log(1/κ)⌉ |
 | Estimated parameters | ~0.4M | d* × h* × L* × 4 |

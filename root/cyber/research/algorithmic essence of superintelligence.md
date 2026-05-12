@@ -44,20 +44,20 @@ the graph grows append-only (axiom A3). new particles and links accumulate. noth
 
 ## 3. the signal: atomic state change
 
-a [[signal]] $s = (\nu, \vec\ell, \pi_\Delta, \sigma, \text{prev}, \text{mc}, \text{vdf}, \text{step})$:
+a [[signal]] $s = (\nu, \vec\ell, \Delta\phi^*, \sigma, \text{prev}, \text{mc}, \text{vdf}, \text{step})$:
 
 - $\nu$: neuron identity (who)
 - $\vec\ell$: batch of [[cyberlinks]] (what)
-- $\pi_\Delta$: focus impulse — sparse local tri-kernel recomputation (the key field)
+- $\Delta\phi^*$: focus impulse — sparse local tri-kernel recomputation (the key field)
 - $\sigma$: [[zheng]] proof covering cyberlinks + impulse + conviction (proof of everything)
 - prev: hash of author's previous signal ([[hash chain]])
 - mc: Merkle clock (compact causal state)
 - vdf: [[VDF]] proof (physical time since previous)
 - step: monotonic counter (logical clock)
 
-the impulse $\pi_\Delta$ is critical. the neuron does not just submit links — it computes the LOCAL effect of those links on the [[tri-kernel]] fixed point and includes the result. the zheng proof σ certifies this computation is correct. the network does not need to recompute φ* from scratch — it applies proven impulses incrementally.
+the impulse $\Delta\phi^*$ is critical. the neuron does not just submit links — it computes the LOCAL effect of those links on the [[tri-kernel]] fixed point and includes the result. the zheng proof σ certifies this computation is correct. the network does not need to recompute φ* from scratch — it applies proven impulses incrementally.
 
-this is the mechanism that makes reward ∝ Δπ work: the neuron proves its own Δπ inside the signal. the proof IS the claim. the claim IS the mining.
+this is the mechanism that makes reward ∝ Δφ* work: the neuron proves its own Δφ* inside the signal. the proof IS the claim. the claim IS the mining.
 
 signals are [[patches]]. patches are signals. the same object described by [[patch theory]] (categorical morphism) and [[structural sync]] (verified broadcast unit). this is the [[cyb/fs/sync]] unification.
 
@@ -75,11 +75,11 @@ the [[collective focus theorem]]: the composite is contractive ($\kappa < 1$), u
 
 two modes of computation:
 
-- incremental (per signal): each [[signal]] carries $\pi_\Delta$ — the neuron's local tri-kernel recomputation for its [[cyberlinks]]. the network accumulates proven impulses. φ updates continuously as signals arrive — no global recomputation per block
+- incremental (per signal): each [[signal]] carries $\Delta\phi^*$ — the neuron's local tri-kernel recomputation for its [[cyberlinks]]. the network accumulates proven impulses. φ updates continuously as signals arrive — no global recomputation per block
 
 - global (per epoch): full tri-kernel iteration from committed graph state. 23 iterations on [[bostrom]], sub-second on GPU. validates accumulated impulses. with [[algebraic state commitments]]: fits in [[zheng]] circuit (1.42B constraints, 33% capacity) — [[provable consensus|provable]]
 
-the impulse design means: a [[neuron]] contributing knowledge immediately shifts φ in its neighborhood. the shift propagates through subsequent signals. consensus emerges from accumulated local impulses, verified by periodic global proofs. the neuron proves its own Δπ inside the signal — the proof IS the mining.
+the impulse design means: a [[neuron]] contributing knowledge immediately shifts φ in its neighborhood. the shift propagates through subsequent signals. consensus emerges from accumulated local impulses, verified by periodic global proofs. the neuron proves its own Δφ* inside the signal — the proof IS the mining.
 
 ## 5. the trust: five verification layers
 
@@ -89,7 +89,7 @@ the impulse design means: a [[neuron]] contributing knowledge immediately shifts
 | ordering | data structure | [[hash chain]] + [[VDF]] | operations carry own order | detect equivocation: O(1) |
 | completeness | logic | lens / polynomial | nothing omitted | O(1) Lens opening |
 | availability | probability | [[DAS]] + [[erasure coding]] | data physically exists | O(√n) samples |
-| merge | algebra | [[CRDT]] / [[foculus]] | convergence deterministic | lattice union or π-convergence |
+| merge | algebra | [[CRDT]] / [[foculus]] | convergence deterministic | lattice union or φ*-convergence |
 
 the composition: [[Verified Eventual Consistency]] (VEC). convergence guaranteed + completeness verifiable + availability verifiable. stronger than [[eventual consistency]]. a node proves it has converged, not assumes it.
 
@@ -103,7 +103,7 @@ conjectured minimum: remove any layer → a failure mode opens that the others c
 nox trace → multilinear polynomial f(x₁,...,x_{n+4})
          → Brakedown commit (no Merkle — direct linear code)
          → SuperSpartan (CCS constraints via sumcheck)
-         → proof π (~2 KiB)
+         → proof φ* (~2 KiB)
 ```
 
 prover: O(N) time, O(√N) memory (tensor compression). verifier: ~5 μs. recursive: the verifier IS a [[nox]] program — proofs compose. HyperNova folding: ~8K constraints → 30 field ops per recursive step (recursive Brakedown verifier is smaller than Merkle-based alternatives).
@@ -191,17 +191,17 @@ the [[spectral gap]] λ₂ is observed for free from tri-kernel convergence rate
 
 truth layer: [[Bayesian Truth Serum]] scores each neuron's contribution. neurons whose links sharpen collective certainty earn positive syntropy. neurons whose links add noise earn negative.
 
-## 13. the economics: Δπ rewards and epistemic markets
+## 13. the economics: Δφ* rewards and epistemic markets
 
 every reward traces to one quantity: how much did your action shift the tri-kernel fixed point?
 
-$$\text{reward}(\nu) \propto \Delta\pi(\nu)$$
+$$\text{reward}(\nu) \propto \Delta\phi^*(\nu)$$
 
-Δπ is the gradient of system [[free energy]]. creating valuable structure literally creates [[value]]. [[neurons]] prove their own Δπ via [[stark]] proofs and self-mint [[$CYB]]. the proof IS the mining. no external oracle. no committee deciding value. the math determines reward.
+Δφ* is the gradient of system [[free energy]]. creating valuable structure literally creates [[value]]. [[neurons]] prove their own Δφ* via [[stark]] proofs and self-mint [[$CYB]]. the proof IS the mining. no external oracle. no committee deciding value. the math determines reward.
 
 the hybrid reward function:
 
-$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
+$$R = \alpha \cdot \Delta\phi^* + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
 attribution via [[probabilistic shapley attribution]]: each neuron's marginal contribution to the collective fixed point is computable. complexity O(k · n), feasible at 10⁶+ transactions per epoch.
 
@@ -214,11 +214,11 @@ buying YES suppresses NO's price — TRUE and FALSE geometrically coupled on a c
 $$A^{\text{eff}}_{pq} = \sum_\ell \text{stake}(\ell) \times \text{karma}(\nu(\ell)) \times f(\text{ICBS price}(\ell))$$
 
 three token operations on knowledge:
-- mint: prove Δπ → create [[$CYB]]. inflation = evidence of knowledge creation
-- burn: permanent π-weight on particles or cyberlinks. highest-conviction assertions
+- mint: prove Δφ* → create [[$CYB]]. inflation = evidence of knowledge creation
+- burn: permanent φ*-weight on particles or cyberlinks. highest-conviction assertions
 - lock: [[will]] creation. time commitment = conviction depth. the budget for attention
 
-the economics are provable. with polynomial state + zheng: a neuron on a phone can prove Δπ, self-mint tokens, and update the graph — all in one recursive proof. no miner. no validator permission. contribute knowledge, prove it matters, get paid.
+the economics are provable. with polynomial state + zheng: a neuron on a phone can prove Δφ*, self-mint tokens, and update the graph — all in one recursive proof. no miner. no validator permission. contribute knowledge, prove it matters, get paid.
 
 see [[cyber/nomics]] for the full economic protocol. see [[Bayesian Truth Serum]] for honesty incentives.
 
@@ -337,16 +337,16 @@ the signal proof σ already exercises all four [[Goldilocks field processor|GFP]
 [[unified mining]]: the PoW puzzle IS the signal proof. add difficulty target: H(σ) < target. one proof → three rewards:
 
 - block subsidy (PoW security)
-- Δπ reward (knowledge creation)
+- Δφ* reward (knowledge creation)
 - user fees (services)
 
-the miner who selects BETTER cyberlinks earns MORE Δπ per proof. same PoW cost, higher knowledge reward. the incentive gradient points toward quality. every joule produces both security and intelligence.
+the miner who selects BETTER cyberlinks earns MORE Δφ* per proof. same PoW cost, higher knowledge reward. the incentive gradient points toward quality. every joule produces both security and intelligence.
 
 ```
 mining rewards → fund GFP development
 GFP accelerates SIGNAL PROVING → signals ARE knowledge
 better hardware → more signals/sec → more knowledge/sec
-more knowledge → higher Δπ → more reward → more GFP investment
+more knowledge → higher Δφ* → more reward → more GFP investment
 ```
 
 the [[Goldilocks field processor|GFP]] chip spec does not change. the benchmark phases ARE the real workload. no synthetic puzzle. the first PoW scheme where puzzle output IS the protocol's primary product.

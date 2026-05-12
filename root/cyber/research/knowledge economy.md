@@ -18,11 +18,11 @@ four asset classes:
 
 [[cyberlinks]] are yield-bearing [[knowledge]] claims. every [[cyberlink]] accrues rewards over time as a function of the [[focus]] shift it generates:
 
-$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\pi_j(t) \, dt$$
+$$R_{i \to j}(T) = \int_0^T w(t) \cdot \Delta\phi^*_j(t) \, dt$$
 
-where $\Delta\pi_j(t)$ is the change in [[focus]] on target [[particle]] $j$ attributable to the link and $w(t)$ is the time-weighting function. four reward trajectories: viral (high $\Delta\pi$ early, fast decay), foundational (low early, grows as graph builds around it), confirming (shared reward via [[Shapley]] attribution), semantic bridge (moderate, persistent, cross-module).
+where $\Delta\phi^*_j(t)$ is the change in [[focus]] on target [[particle]] $j$ attributable to the link and $w(t)$ is the time-weighting function. four reward trajectories: viral (high $\Delta\phi^*$ early, fast decay), foundational (low early, grows as graph builds around it), confirming (shared reward via [[Shapley]] attribution), semantic bridge (moderate, persistent, cross-module).
 
-[[eternal particles]] are positions burned into permanence. burning [[$CYB]] permanently anchors a [[particle]]'s $\pi$-weight — the particle cannot be archived or deprioritized below the burn-weighted floor. the graph's long-term assertions: the claims whose importance the market cannot undo.
+[[eternal particles]] are positions burned into permanence. burning [[$CYB]] permanently anchors a [[particle]]'s $\phi^*$-weight — the particle cannot be archived or deprioritized below the burn-weighted floor. the graph's long-term assertions: the claims whose importance the market cannot undo.
 
 [[eternal cyberlinks]] are edges burned into permanence. the link cannot be forgotten by stake dynamics or [[inversely coupled bonding surface|ICBS]] market collapse. the graph's highest-conviction structural commitment.
 
@@ -34,23 +34,23 @@ where $\Delta\pi_j(t)$ is the change in [[focus]] on target [[particle]] $j$ att
 
 ## the focus reward
 
-every reward traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point $\pi^*$?
+every reward traces back to one quantity: how much did your action shift the [[tri-kernel]] fixed point $\phi^*$?
 
-$$\text{reward}(v) \propto \Delta\pi(v)$$
+$$\text{reward}(v) \propto \Delta\phi^*(v)$$
 
-$\Delta\pi$ is the gradient of the system's [[free energy]]. creating valuable structure literally creates [[value]]. no designed loss function — the physics of [[convergence]] defines what deserves to be optimized.
+$\Delta\phi^*$ is the gradient of the system's [[free energy]]. creating valuable structure literally creates [[value]]. no designed loss function — the physics of [[convergence]] defines what deserves to be optimized.
 
 the hybrid reward function:
 
-$$R = \alpha \cdot \Delta\pi + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
+$$R = \alpha \cdot \Delta\phi^* + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
-new [[$CYB]] is minted only when $\Delta\pi > 0$. the protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]].
+new [[$CYB]] is minted only when $\Delta\phi^* > 0$. the protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]].
 
 ---
 
 ## attribution
 
-multiple [[neurons]] contribute [[cyberlinks]] in the same epoch. the total $\Delta\pi$ shift is a joint outcome. the [[Shapley value]] distributes fair credit: each agent's reward equals their average marginal contribution across all possible orderings. exact computation is $O(n!)$. the approximation:
+multiple [[neurons]] contribute [[cyberlinks]] in the same epoch. the total $\Delta\phi^*$ shift is a joint outcome. the [[Shapley value]] distributes fair credit: each agent's reward equals their average marginal contribution across all possible orderings. exact computation is $O(n!)$. the approximation:
 
 $$R_i = \alpha \cdot \Delta\mathcal{F}_i + (1-\alpha) \cdot \hat{S}_i$$
 
@@ -88,7 +88,7 @@ the optimal mining hardware and the optimal proving hardware are the same chip. 
 
 ## the evolutionary loop
 
-contribute accurately → $\Delta\pi$ reward → accumulate [[$CYB]] → stake on more links → accumulate [[karma]] → links carry more adjacency weight → earlier $\Delta\pi$ attribution → more [[$CYB]] per contribution
+contribute accurately → $\Delta\phi^*$ reward → accumulate [[$CYB]] → stake on more links → accumulate [[karma]] → links carry more adjacency weight → earlier $\Delta\phi^*$ attribution → more [[$CYB]] per contribution
 
 the burn layer: burn on high-conviction [[particles]] → [[eternal particles|eternal weight]] → long-term yield floor → reduces risk premium for foundational contributions
 

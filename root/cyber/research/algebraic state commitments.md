@@ -194,8 +194,8 @@ where:
   pos ∈ [0, n_max):   position within namespace
 
 committed: C = Brakedown.commit(BBG_poly)
-opened:    (v, π) = Brakedown.open(BBG_poly, (i, ns, pos))
-verified:  Brakedown.verify(C, (i, ns, pos), v, π)
+opened:    (v, φ*) = Brakedown.open(BBG_poly, (i, ns, pos))
+verified:  Brakedown.verify(C, (i, ns, pos), v, φ*)
 ```
 
 ### completeness via LogUp range check
@@ -273,14 +273,14 @@ algebraic DAS:
 
 ```
 current:
-  π convergence requires reading neuron states from NMT
+  φ* convergence requires reading neuron states from NMT
   each read: NMT proof verification → hemera path
 
 algebraic:
   read neuron states via Lens opening → field ops
   convergence check becomes algebraically verifiable
 
-  potential: prove π convergence inside zheng circuit
+  potential: prove φ* convergence inside zheng circuit
   → recursive proof of consensus itself
 ```
 

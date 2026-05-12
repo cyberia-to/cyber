@@ -14,9 +14,9 @@ reproducibility is the criterion: [[signals]] that do not replicate across indep
 
 ## truth in the cybergraph
 
-truth is not declared. it is not polled. it is the [[focus]] distribution $\pi^*$ — the fixed point of the [[tri-kernel]] over all [[cyberlinks]], weighted by [[karma]] and market price. the truth of a particle $p$ is its probability under $\pi^*$: how likely the network's collective attention lands on $p$ given the full structure of the graph.
+truth is not declared. it is not polled. it is the [[focus]] distribution $\phi^*$ — the fixed point of the [[tri-kernel]] over all [[cyberlinks]], weighted by [[karma]] and market price. the truth of a particle $p$ is its probability under $\phi^*$: how likely the network's collective attention lands on $p$ given the full structure of the graph.
 
-this is probabilistic truth, not binary truth. a particle does not become true or false — it acquires a degree of collective attention that reflects how well-connected, structurally consistent, and epistemically confirmed it is. particles that many [[neurons]] link to, from diverse contexts, with high [[valence]] and market confirmation, accumulate high $\pi^*(p)$.
+this is probabilistic truth, not binary truth. a particle does not become true or false — it acquires a degree of collective attention that reflects how well-connected, structurally consistent, and epistemically confirmed it is. particles that many [[neurons]] link to, from diverse contexts, with high [[valence]] and market confirmation, accumulate high $\phi^*(p)$.
 
 truth has two layers:
 
@@ -29,9 +29,9 @@ both layers are necessary. a link that exists but the market disbelieves is supp
 
 ## why truth converges
 
-the [[tri-kernel]] has a unique fixed point $\pi^*$ under ergodicity ([[Perron-Frobenius theorem|Perron-Frobenius]]). the truth signal is objective in the only sense that matters: independent agents starting from different initial distributions converge to the same $\pi^*$ if they share the same link set $L$.
+the [[tri-kernel]] has a unique fixed point $\phi^*$ under ergodicity ([[Perron-Frobenius theorem|Perron-Frobenius]]). the truth signal is objective in the only sense that matters: independent agents starting from different initial distributions converge to the same $\phi^*$ if they share the same link set $L$.
 
-this is the graph-theoretic analog of reproducibility. a cyberlink is epistemically true if independent market participants, evaluating the same structural link from their own private signals, converge on a high ICBS price for it. truth = convergence. noise = divergence. [[syntropy]] $J(\pi^*) = D_{KL}(\pi^* \| u)$ measures how far the collective has moved from noise.
+this is the graph-theoretic analog of reproducibility. a cyberlink is epistemically true if independent market participants, evaluating the same structural link from their own private signals, converge on a high ICBS price for it. truth = convergence. noise = divergence. [[syntropy]] $J(\phi^*) = D_{KL}(\phi^* \| u)$ measures how far the collective has moved from noise.
 
 ## the [[honest majority assumption]] and truth
 

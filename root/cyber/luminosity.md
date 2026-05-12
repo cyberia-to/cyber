@@ -8,7 +8,7 @@ alias: luminosities, knowledge luminosity
 
 Luminosity is a node-level metric in the [[cyber]] knowledge graph defined as the product of content size and [[focus]] probability:
 
-$$L_i = s_i \cdot \pi_i$$
+$$L_i = s_i \cdot \phi^*_i$$
 
 where s_i is the size of page i (in bytes or words) and π_i is its stationary [[focus]] probability from the [[tri-kernel]].
 
@@ -55,15 +55,15 @@ In astronomy the Hertzsprung-Russell diagram plots luminosity vs temperature, cl
      |  · White Dwarfs
      |    (small content, high focus)
      |
-     +————————————————————————————→ π
+     +————————————————————————————→ φ*
 ```
 
 | Class | Profile | Example |
 |-------|---------|---------|
-| Red Giant | Large s, moderate π | Verbose page that accumulated content but lost structural centrality |
-| White Dwarf | Small s, high π | Hub page — compact, highly linked, concentrates [[attention]] |
-| Supergiant | Large s, high π | Core spec page — comprehensive and central |
-| Main Sequence | s ∝ π | Healthy pages — content matches the [[attention]] they receive |
+| Red Giant | Large s, moderate φ* | Verbose page that accumulated content but lost structural centrality |
+| White Dwarf | Small s, high φ* | Hub page — compact, highly linked, concentrates [[attention]] |
+| Supergiant | Large s, high φ* | Core spec page — comprehensive and central |
+| Main Sequence | s ∝ φ* | Healthy pages — content matches the [[attention]] they receive |
 
 Pages off the main sequence signal structural imbalance: either content should be pruned (red giants) or expanded (white dwarfs).
 
@@ -71,7 +71,7 @@ Pages off the main sequence signal structural imbalance: either content should b
 
 Since Σ π_i = 1, total luminosity equals the [[focus]]-weighted average size:
 
-$$L_{total} = \sum_i s_i \cdot \pi_i = \mathbb{E}_\pi[s]$$
+$$L_{total} = \sum_i s_i \cdot \phi^*_i = \mathbb{E}_\pi[s]$$
 
 This is the expected content size encountered by a random walker — the effective knowledge bandwidth of the graph. Maximizing L_total means either growing content on high-focus pages or increasing focus on content-rich pages.
 
@@ -87,4 +87,4 @@ Computed as a derived metric from [[focus]] and file size, available in the publ
 L_i = size_bytes(i) × π_i
 ```
 
-Displayed in the files table alongside [[focus]] probability π%.
+Displayed in the files table alongside [[focus]] probability φ*%.

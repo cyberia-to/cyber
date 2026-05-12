@@ -107,7 +107,7 @@ Each step down is a Schelling point — a predictable supply shock that market p
 ### 2.6 Annualized Inflation
 
 ```
-π(t) = E(t) × 365 / M(t)
+φ*(t) = E(t) × 365 / M(t)
 ```
 
 Where M(t) = cumulative mined at time t. Inflation starts at ∞ (genesis) and steps down with each component exhaustion, converging to single-digit % as Li∞ becomes the sole emission source.

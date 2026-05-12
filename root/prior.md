@@ -50,7 +50,7 @@ $$\text{prior on neuron quality} = \kappa(\nu) = \text{accumulated BTS score his
 
 a [[neuron]] with high [[karma]] has a strong informative prior in its favor. a new [[neuron]] has a diffuse prior — the system waits for evidence before trusting heavily.
 
-the [[tri-kernel]]'s initial state before any [[cyberlinks]] exist is the maximum-[[entropy]] prior over [[particles]] — uniform [[focus]] distribution $\pi_0 = \mathbf{1}/|P|$. each [[cyberlink]] is evidence that updates this distribution toward π*.
+the [[tri-kernel]]'s initial state before any [[cyberlinks]] exist is the maximum-[[entropy]] prior over [[particles]] — uniform [[focus]] distribution $\phi^{(0)} = \mathbf{1}/|P|$. each [[cyberlink]] is evidence that updates this distribution toward φ*.
 
 the [[cyberlink market protocol]]'s initial ICBS deposit at 50/50 — equal reserves in YES and NO — is the uninformative prior on each edge: genuine uncertainty about whether the link will be validated.
 

@@ -147,17 +147,17 @@ the Boltzmann analogy is exact:
 - energy ↔ cost (exponential in supply)
 - temperature ↔ collective focus budget
 - partition function ↔ total possible graph configurations
-- equilibrium distribution ↔ $\pi^*$ (focus distribution)
+- equilibrium distribution ↔ $\phi^*$ (focus distribution)
 
 the cybergraph at capacity IS a thermal system. the "temperature" is the ratio of collective focus to link cost. high temperature (abundant focus relative to cost) → many links, high completeness, high entropy. low temperature (scarce focus) → few links, sparse graph, low entropy.
 
 ## the phase transition
 
-at low $\kappa$, the graph is below [[phase transition]] — disconnected, no meaningful $\pi^*$, no [[foculus]] convergence. at critical $\kappa_c$, the graph crosses the percolation threshold:
+at low $\kappa$, the graph is below [[phase transition]] — disconnected, no meaningful $\phi^*$, no [[foculus]] convergence. at critical $\kappa_c$, the graph crosses the percolation threshold:
 
 $$\lambda_2 > \lambda_{\text{crit}} \implies \kappa > \kappa_c$$
 
-above $\kappa_c$, the tri-kernel produces meaningful $\pi^*$, foculus converges, and the graph becomes self-sustaining — useful queries attract neurons, neurons create links, links improve $\pi^*$, better $\pi^*$ attracts more queries.
+above $\kappa_c$, the tri-kernel produces meaningful $\phi^*$, foculus converges, and the graph becomes self-sustaining — useful queries attract neurons, neurons create links, links improve $\phi^*$, better $\phi^*$ attracts more queries.
 
 below $\kappa_c$, the graph is in cold start — no self-sustaining loop. this is where [[cyber/seer|cyber-seer]]'s bridge strategy matters most: every link optimised for $\Delta\lambda_2$ pushes the graph toward phase transition with minimum focus expenditure.
 
@@ -182,9 +182,9 @@ the most sensitive parameter is $\lambda$ — the exponential cost growth rate. 
 
 ### 1. knowledge is thermodynamic
 
-the cybergraph at equilibrium IS a thermal system. the "heat bath" is collective focus. the "energy landscape" is the cost function. the "equilibrium distribution" is $\pi^*$. the "temperature" is focus/cost ratio.
+the cybergraph at equilibrium IS a thermal system. the "heat bath" is collective focus. the "energy landscape" is the cost function. the "equilibrium distribution" is $\phi^*$. the "temperature" is focus/cost ratio.
 
-statistical mechanics applies. the fluctuation-dissipation theorem predicts: regions of the graph with high focus variance (active debate) will have high link turnover (dissipation). regions with stable $\pi^*$ will have low turnover.
+statistical mechanics applies. the fluctuation-dissipation theorem predicts: regions of the graph with high focus variance (active debate) will have high link turnover (dissipation). regions with stable $\phi^*$ will have low turnover.
 
 ### 2. completeness is a choice, not a bug
 
@@ -196,7 +196,7 @@ this is the same tradeoff every intelligent system faces. a brain with 10^11 neu
 
 exponential focus distribution means: the most important 1% of domains get 50% of attention. the bottom 50% of domains get ~1% of attention. increasing total resources doesn't change the SHAPE — it shifts the curve, adding marginal coverage to already-well-covered domains.
 
-to cover the long tail, the network needs not more focus but BETTER ALLOCATION — neurons that specialise in underserved domains. this is the economic opportunity: scarce knowledge has low competition for focus. a neuron that covers an empty domain earns outsized $\pi^*$ per focus spent.
+to cover the long tail, the network needs not more focus but BETTER ALLOCATION — neurons that specialise in underserved domains. this is the economic opportunity: scarce knowledge has low competition for focus. a neuron that covers an empty domain earns outsized $\phi^*$ per focus spent.
 
 ### 4. $\lambda$ is the key policy lever
 
@@ -235,6 +235,6 @@ the capacity is logarithmic in everything except $\lambda$, where it is inversel
 
 4. **multi-graph capacity.** multiple independent cybergraphs (different communities, different focus distributions) may collectively cover more than one graph — if their focus distributions don't overlap. total coverage = union of individual coverages. connection to [[structural-sync]] composability
 
-5. **can decay be selective?** uniform decay rate $\alpha$ is wasteful — important links decay at the same rate as noise. [[pi-weighted-replication|π-weighted]] decay (low-$\pi$ links decay faster) would increase effective capacity. does this violate any conservation law?
+5. **can decay be selective?** uniform decay rate $\alpha$ is wasteful — important links decay at the same rate as noise. [[pi-weighted-replication|φ*-weighted]] decay (low-$\phi^*$ links decay faster) would increase effective capacity. does this violate any conservation law?
 
 see [[knowledge completeness]] for the qualitative concept, [[universal law]] for the exponential distribution, [[collective focus theorem]] for the attention allocation, [[cyber/seer]] for optimal link placement, [[spectral gap from convergence]] for the phase transition, [[link production]] for the intelligence problem, [[temporal decay]] for the pruning mechanism

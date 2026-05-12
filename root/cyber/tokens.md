@@ -11,7 +11,7 @@ the nouns of the [[cyber]] economy — every named quantity a [[neuron]] can hol
 
 ## the native pair
 
-[[$CYB]] — scarce [[value]] anchor. staked for [[security]], locked for [[will]], burned for permanent π-weight, spent as fees. the unit of economic commitment in the [[cybergraph]]
+[[$CYB]] — scarce [[value]] anchor. staked for [[security]], locked for [[will]], burned for permanent φ*-weight, spent as fees. the unit of economic commitment in the [[cybergraph]]
 
 [[$H]] — [[liquidity]] engine. paired with [[$CYB]] via [[bonding curves]]. provides the external price signal that feeds [[cyber/parametrization]]
 
@@ -40,7 +40,7 @@ from [[token theory]] — two axes (fungible/unique × movable/immovable):
 
 ## permanent weight tokens
 
-[[eternal particles]] — burn [[$CYB]] to permanently anchor a [[particle]]'s π-weight. the graph's long-term assertions that the market cannot undo
+[[eternal particles]] — burn [[$CYB]] to permanently anchor a [[particle]]'s φ*-weight. the graph's long-term assertions that the market cannot undo
 
 [[eternal cyberlinks]] — burn [[$CYB]] to permanently anchor an edge. structural commitments that cannot be [[forgetting|forgotten]]
 
@@ -52,7 +52,7 @@ $$G = E(t) + F \cdot (1 - \beta)$$
 
 net new supply: $\text{net} = E(t) - F \cdot \beta$. when fees exceed emission, the network is net deflationary
 
-new [[$CYB]] is minted only when Δπ > 0 — inflation is literally evidence of [[knowledge]] creation
+new [[$CYB]] is minted only when Δφ* > 0 — inflation is literally evidence of [[knowledge]] creation
 
 ## all tokens
 

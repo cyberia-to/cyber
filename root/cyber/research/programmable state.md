@@ -151,7 +151,7 @@ if a user table becomes widely used, a level-1 CCS jet can be added for it (prot
 | fast path (index scan) | CCS jet (optimized encoding) |
 | slow path (full scan) | generic nox execution proof |
 | authentication | Lens binding (every query is cryptographically verified) |
-| replication | π-weighted (storage follows attention) |
+| replication | φ*-weighted (storage follows attention) |
 | backup | signal-first (replay signals → reconstruct state) |
 
 every database operation has a polynomial equivalent. the key difference: every query produces a CRYPTOGRAPHIC PROOF. every state change is VERIFIED. there is no trusted database server — the polynomial commitment IS the trust.

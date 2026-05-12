@@ -32,15 +32,15 @@ three distinct failure modes if forgetting is absent:
 
 saturation. active computation (the [[tri-kernel]]) must eventually exclude some links. at planetary scale, no machine can hold all links in working memory simultaneously. the graph must have a hot tier (active) and cold tier (archived), and the hot tier must be bounded.
 
-staleness noise. a [[cyberlink]] from five years ago asserting "X is the best Y" adds noise when X is no longer best. the market suppresses this if participants update their positions. but the market lags: low-traffic edges may stay at stale prices for years. uncorrected staleness degrades the signal quality of π*.
+staleness noise. a [[cyberlink]] from five years ago asserting "X is the best Y" adds noise when X is no longer best. the market suppresses this if participants update their positions. but the market lags: low-traffic edges may stay at stale prices for years. uncorrected staleness degrades the signal quality of φ*.
 
-attention dilution. as the graph grows, [[cyberank]] and [[focus]] distribution π* are computed over an ever-growing graph. [[particles]] from years ago compete for focus with current signal. the effective resolution of attention decreases.
+attention dilution. as the graph grows, [[cyberank]] and [[focus]] distribution φ* are computed over an ever-growing graph. [[particles]] from years ago compete for focus with current signal. the effective resolution of attention decreases.
 
 ---
 
 ## what forgetting is — and what it is not
 
-forgetting in the cybergraph means: removing a [[cyberlink]] from active [[tri-kernel]] computation. its authenticated record remains. it is queryable. it has provenance. it is simply excluded from the working set that shapes π*.
+forgetting in the cybergraph means: removing a [[cyberlink]] from active [[tri-kernel]] computation. its authenticated record remains. it is queryable. it has provenance. it is simply excluded from the working set that shapes φ*.
 
 forgetting is not:
 - deleting content from the permanent record

@@ -20,7 +20,7 @@ self-regulation of 147 [[neurons]] through [[metabolic]] signal — goal trees o
     revenue, tasks, decisions)            ([[Shapley value|Shapley]])
           │                                     ↑
           ↓                                     │
-    graph changes (Δπ)  ──────────→  [[syntropy]] + cap + [[happiness]]
+    graph changes (Δφ*)  ──────────→  [[syntropy]] + cap + [[happiness]]
           │
           ╰─────────────────────────────────────╯
 ```
@@ -35,7 +35,7 @@ goals are [[particles]]. goal decomposition is [[cyberlinks]]. the goal tree IS 
 
 ### the root goal
 
-one particle: `metabolic-growth`. focus $\pi^*$ on this particle = priority weight
+one particle: `metabolic-growth`. focus $\phi^*$ on this particle = priority weight
 
 $$\dot{M}(t) = w_c \frac{\dot{\text{cap}}}{\text{cap}} + w_s \frac{\dot{J}}{J} + w_h \frac{\dot{H}}}{H}$$
 
@@ -94,11 +94,11 @@ no human assigns tasks. the metabolic signal propagates through the goal tree to
 
 ## contribution measurement
 
-### the chain: action → Δπ → Shapley → reward/death
+### the chain: action → Δφ* → Shapley → reward/death
 
-every agent action is a [[cyberlink]]. every cyberlink shifts [[focus]] distribution $\pi^*$. the shift $\Delta\pi$ is the raw contribution
+every agent action is a [[cyberlink]]. every cyberlink shifts [[focus]] distribution $\phi^*$. the shift $\Delta\phi^*$ is the raw contribution
 
-but $\Delta\pi$ alone is unfair — agents in dense neighborhoods get credit for each other's work. [[Shapley value]] solves this: the only attribution satisfying efficiency, symmetry, null player, and additivity
+but $\Delta\phi^*$ alone is unfair — agents in dense neighborhoods get credit for each other's work. [[Shapley value]] solves this: the only attribution satisfying efficiency, symmetry, null player, and additivity
 
 $$\phi_i = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}{|N|!} [v(S \cup \{i\}) - v(S)]$$
 
@@ -110,7 +110,7 @@ where $\Delta\mathcal{F}_i$ is fast local marginal, $\hat{S}_i$ is sampled Shapl
 
 ### mapping to metabolic contribution
 
-Shapley measures contribution to $\Delta\pi$. but the real objective is $\dot{M}$. the mapping:
+Shapley measures contribution to $\Delta\phi^*$. but the real objective is $\dot{M}$. the mapping:
 
 $$\text{metabolic\_contribution}_i = \phi_i \cdot \frac{\partial M}{\partial \pi}$$
 
@@ -249,7 +249,7 @@ if $\text{parasitism}_i$ exceeds threshold for $N$ consecutive epochs:
 | noise (random cyberlinks) | syntropy drops | Shapley contribution ≈ 0 |
 | spam (high volume, low quality) | syntropy drops, happiness drops | high activity + negative $\Delta J$ |
 | conflict (contradicts established knowledge) | focus oscillation | seer detects instability |
-| inaction (alive but producing nothing) | zero contribution | counter detects zero $\Delta\pi$ |
+| inaction (alive but producing nothing) | zero contribution | counter detects zero $\Delta\phi^*$ |
 | budget burn (expensive model, no output) | cap drops (treasury drain) | counter detects cost > contribution |
 | echo (repeats what others already linked) | zero marginal Shapley | $\hat{S}_i \approx 0$ despite $\Delta\mathcal{F}_i > 0$ |
 
@@ -277,8 +277,8 @@ $$\theta^{(t+1)} = \theta^{(t)} + \eta \cdot \nabla_\theta \dot{M}(t)$$
 where $\theta$ = all agent parameters (models, prompts, spending limits, activity rates) and $\eta$ = learning rate
 
 the gradient $\nabla_\theta \dot{M}$ is estimated by:
-1. Shapley attribution tells which agents contributed to $\Delta\pi$
-2. metabolic sensitivity tells how $\Delta\pi$ maps to $\dot{M}$
+1. Shapley attribution tells which agents contributed to $\Delta\phi^*$
+2. metabolic sensitivity tells how $\Delta\phi^*$ maps to $\dot{M}$
 3. the product tells which parameter changes would increase $\dot{M}$
 
 this is reinforcement learning where:

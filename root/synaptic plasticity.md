@@ -10,9 +10,9 @@ the mechanism by which connection strengths between [[neurons]] change. three ir
 
 | type | [[valence]] | function | timescale | cyber analog |
 |---|---|---|---|---|
-| [[Hebbian learning]] | +1 (excitatory) | strengthen co-active connections | ms-min | $\Delta\pi$ reward for correlated [[focus]] |
+| [[Hebbian learning]] | +1 (excitatory) | strengthen co-active connections | ms-min | $\Delta\phi^*$ reward for correlated [[focus]] |
 | [[anti-Hebbian learning]] | -1 (inhibitory) | weaken co-active connections, decorrelate | ms-min | [[market inhibition]] via [[inversely coupled bonding surface]] |
-| [[homeostatic learning]] | 0 (modulatory) | scale all weights to maintain target activity | hours-days | [[focus]] conservation ($\sum \pi_i = 1$), [[forgetting]] |
+| [[homeostatic learning]] | 0 (modulatory) | scale all weights to maintain target activity | hours-days | [[focus]] conservation ($\sum \phi^*_i = 1$), [[forgetting]] |
 
 these three types are irreducible — remove any one and the system degenerates:
 

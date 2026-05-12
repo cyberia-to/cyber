@@ -8,11 +8,11 @@ alias: epistemic correctness, epistemic quality, truth tracking
 
 ## 1. two kinds of correctness
 
-[[cyber]] makes two categories of claim about its [[focus]] distribution π.
+[[cyber]] makes two categories of claim about its [[focus]] distribution φ*.
 
 Cryptographic correctness: every state transition is valid, every [[stark]] proof is sound, [[focus]] conservation holds structurally. The protocol guarantees this through [[Hemera]] hash binding, [[nox]] deterministic reduction, and polynomial commitment verification. Given the soundness of the proof system, these guarantees hold with probability ≥ 1 − 2⁻¹²⁸.
 
-Epistemic correctness: the [[focus]] distribution π tracks something meaningful about the world — that high-π [[particles]] represent knowledge worth attending to, and that the ranking reflects collective intelligence rather than collective error. The protocol assumes this emerges from [[costly signals]], convergence, and stake-weighted aggregation.
+Epistemic correctness: the [[focus]] distribution φ* tracks something meaningful about the world — that high-φ* [[particles]] represent knowledge worth attending to, and that the ranking reflects collective intelligence rather than collective error. The protocol assumes this emerges from [[costly signals]], convergence, and stake-weighted aggregation.
 
 The boundary: cryptographic proof ends at "this computation was performed correctly." Epistemic quality begins at "this computation was worth performing." Everything below that boundary is proven. Everything above it is argued, conjectured, or hoped for.
 
@@ -22,11 +22,11 @@ This article maps the boundary, catalogs the threats that operate above it, and 
 
 Five properties are mathematically established:
 
-- Convergence: the [[collective focus theorem]] proves that the [[tri-kernel]] operator is a contraction with coefficient κ < 1 under ergodicity assumptions. A unique fixed point π* exists. The system converges to it at linear rate. see [[collective focus theorem]]
+- Convergence: the [[collective focus theorem]] proves that the [[tri-kernel]] operator is a contraction with coefficient κ < 1 under ergodicity assumptions. A unique fixed point φ* exists. The system converges to it at linear rate. see [[collective focus theorem]]
 
 - Conservation: Σᵢ focus(i) = 1 at every state. Enforced by [[stark]] circuit constraints on every transition. No minting, no inflation, no forgery — structural invariant. see [[cyber/proofs]]
 
-- Sybil resistance: [[focus]] influence is proportional to staked [[tokens]], not to node count. Creating 1000 [[neurons]] with zero stake produces zero π influence. The cost of shifting π is the cost of acquiring stake. see [[cyber/security]]
+- Sybil resistance: [[focus]] influence is proportional to staked [[tokens]], not to node count. Creating 1000 [[neurons]] with zero stake produces zero φ* influence. The cost of shifting φ* is the cost of acquiring stake. see [[cyber/security]]
 
 - Completeness: [[cyber/bbg]] namespace proofs guarantee that sync responses contain every edge in the requested namespace. An adversary can add false [[cyberlinks]] but cannot hide true ones from any client that asks.
 
@@ -38,7 +38,7 @@ These five properties compose into a system where every piece of data is authent
 
 Each proven property has a corresponding epistemic gap:
 
-Convergence proves π* is well-defined. It does not prove π* is desirable. The [[collective focus theorem]] guarantees a unique fixed point — but the fixed point of a network where every [[neuron]] links to propaganda is a propaganda-weighted distribution. Uniqueness is a mathematical property. Quality is not.
+Convergence proves φ* is well-defined. It does not prove φ* is desirable. The [[collective focus theorem]] guarantees a unique fixed point — but the fixed point of a network where every [[neuron]] links to propaganda is a propaganda-weighted distribution. Uniqueness is a mathematical property. Quality is not.
 
 Conservation proves resources are scarce. It does not prove that scarcity produces quality. A [[neuron]] can burn all its [[focus]] on a single false [[cyberlink]]. The link is costly. The link is also wrong. Cost constrains volume, not accuracy.
 
@@ -46,19 +46,19 @@ Sybil resistance proves the cost of attack is proportional to stake. It does not
 
 The [[collective focus theorem]] proves consensus. The gap between consensus and [[truth]] requires an additional argument that honest linking is incentive-compatible and that the neuron population is epistemically diverse. Neither is proven.
 
-The system currently relies on an implicit chain: costly signals → honest linking → diverse perspectives → convergent π reflects reality. Each arrow is plausible. None is proven. The remainder of this article examines what could break each arrow.
+The system currently relies on an implicit chain: costly signals → honest linking → diverse perspectives → convergent φ* reflects reality. Each arrow is plausible. None is proven. The remainder of this article examines what could break each arrow.
 
 ## 4. threat model for epistemic quality
 
 ### 4.1 stake cartel
 
-Top N [[neurons]] coordinate to shift π toward a target [[particle]]. Each cartel member creates [[cyberlinks]] from high-π particles to the target, channeling [[diffusion]] flow.
+Top N [[neurons]] coordinate to shift φ* toward a target [[particle]]. Each cartel member creates [[cyberlinks]] from high-φ* particles to the target, channeling [[diffusion]] flow.
 
 Cost structure: opportunity cost of honest linking. Every [[cyberlink]] spent on manipulation is a link not spent on genuine knowledge contribution. If the cartel controls fraction f of total stake, it controls fraction ~f of regenerated [[focus]] per epoch.
 
-For f = 0.2 (five [[neurons]] with 4% stake each), the cartel can dedicate 20% of per-epoch [[focus]] to coordinated manipulation. Whether this is sufficient to shift π meaningfully depends on graph density around the target — sparse neighborhoods are cheaper to manipulate than dense ones.
+For f = 0.2 (five [[neurons]] with 4% stake each), the cartel can dedicate 20% of per-epoch [[focus]] to coordinated manipulation. Whether this is sufficient to shift φ* meaningfully depends on graph density around the target — sparse neighborhoods are cheaper to manipulate than dense ones.
 
-Defense: temporal decay erodes gains. Without sustained coordination, manipulated π decays back toward honest equilibrium at rate α per block. The cartel must spend continuously, not once.
+Defense: temporal decay erodes gains. Without sustained coordination, manipulated φ* decays back toward honest equilibrium at rate α per block. The cartel must spend continuously, not once.
 
 Defense gap: if the cartel's revenue from manipulation (e.g., boosting a particle that earns them trading profits) exceeds the ongoing [[focus]] cost, the attack is self-sustaining. No current analysis bounds when this condition holds.
 
@@ -74,7 +74,7 @@ Defense gap: the protocol does not distinguish owned from borrowed stake. [[focu
 
 ### 4.3 long-horizon deception
 
-Gradual π drift via many small [[cyberlinks]] over months. No single link is suspicious — each costs a normal amount of [[focus]] and shifts π by an imperceptible ε. Cumulative effect: large epistemic distortion over thousands of blocks.
+Gradual φ* drift via many small [[cyberlinks]] over months. No single link is suspicious — each costs a normal amount of [[focus]] and shifts φ* by an imperceptible ε. Cumulative effect: large epistemic distortion over thousands of blocks.
 
 This is the epistemic analog of boiling a frog. The tri-kernel's convergence guarantee actually works against defense here — the system smoothly converges to each intermediate state, treating the gradual drift as legitimate evolution of collective attention.
 
@@ -86,7 +86,7 @@ Defense gap: the optimal deception rate is just above the decay threshold — fa
 
 Homogeneous [[neurons]] — same training data, same model architecture, same priors — converge to a shared bias. The [[tri-kernel]] amplifies agreement: [[diffusion]] concentrates probability on particles that many [[neurons]] link, [[springs]] enforces structural consistency, [[heat kernel]] smooths away dissent at low temperature τ.
 
-If 80% of active [[neurons]] are models trained on the same corpus, the [[cybergraph]] inherits the corpus's biases, omissions, and hallucinations — with high π confidence, because all agents agree.
+If 80% of active [[neurons]] are models trained on the same corpus, the [[cybergraph]] inherits the corpus's biases, omissions, and hallucinations — with high φ* confidence, because all agents agree.
 
 The [[egregore]] page invokes the Condorcet jury theorem: error decays exponentially with group size when each agent has independent probability p > 0.5 of being correct. The critical assumption is independence. Agents sharing training data are correlated, and correlated errors do not cancel — they compound.
 
@@ -96,11 +96,11 @@ Defense gap: no protocol-level mechanism measures or incentivizes neuron diversi
 
 ### 4.5 parameter gaming
 
-The [[foculus]] adaptive threshold τ(t) = μ_π + κσ_π depends on the variance of the current π distribution. An attacker can oscillate σ_π by creating and removing [[cyberlinks]] that spike high-π particles, alternating between concentrated and dispersed distributions.
+The [[foculus]] adaptive threshold τ(t) = μ_φ* + κσ_φ* depends on the variance of the current φ* distribution. An attacker can oscillate σ_φ* by creating and removing [[cyberlinks]] that spike high-φ* particles, alternating between concentrated and dispersed distributions.
 
 If τ oscillates faster than the convergence rate, finality is repeatedly deferred. During uncertainty windows, the attacker executes side attacks (front-running, double-linking) that exploit the lack of committed state.
 
-The [[cyber/whitepaper]] §14 acknowledges threshold gaming as an open question. The attack is structurally possible — the question is whether the cost (in [[focus]]) of spiking σ_π exceeds the attacker's gain from deferred finality.
+The [[cyber/whitepaper]] §14 acknowledges threshold gaming as an open question. The attack is structurally possible — the question is whether the cost (in [[focus]]) of spiking σ_φ* exceeds the attacker's gain from deferred finality.
 
 ## 5. existing partial defenses
 
@@ -116,7 +116,7 @@ Limitation: cost prevents volume, not inaccuracy. A single expensive false link 
 
 Edges lose weight exponentially: w_eff(e, t) = e.weight · α^(t − e.time). False consensus requires sustained expenditure. Stale falsity decays; fresh truth compounds.
 
-This is the protocol's primary passive error correction mechanism. Unlike systems where false consensus persists indefinitely (e.g., early Wikipedia edits that survive decades), the [[cybergraph]] forgets. Every claim must be renewed by ongoing [[focus]] expenditure to maintain its π share.
+This is the protocol's primary passive error correction mechanism. Unlike systems where false consensus persists indefinitely (e.g., early Wikipedia edits that survive decades), the [[cybergraph]] forgets. Every claim must be renewed by ongoing [[focus]] expenditure to maintain its φ* share.
 
 The decay rate α determines effectiveness. If α is close to 1 (slow decay), false consensus persists for many blocks. If α is close to 0 (fast decay), even true knowledge decays before it accumulates influence. The optimal α balances forgetting errors against remembering signal. No current analysis characterizes this tradeoff.
 
@@ -142,15 +142,15 @@ Limitation: completeness guarantees data availability, not data quality. Every l
 
 Under what parameter regimes (teleport α, screening μ, temperature τ, focus cost c, decay rate, regeneration rate) is honest linking a Nash equilibrium? "Honest linking" here means: the [[neuron]] maximizes long-term expected reward by creating [[cyberlinks]] that reflect its genuine assessment of relevance.
 
-This requires a formal game-theoretic model where each [[neuron]] chooses a linking strategy, the [[tri-kernel]] computes π from the resulting graph, and rewards accrue proportionally to Δπ contribution. The solution concept is Nash equilibrium in the space of linking strategies.
+This requires a formal game-theoretic model where each [[neuron]] chooses a linking strategy, the [[tri-kernel]] computes φ* from the resulting graph, and rewards accrue proportionally to Δφ* contribution. The solution concept is Nash equilibrium in the space of linking strategies.
 
 If honest linking is not a Nash equilibrium for some parameter values, those values represent the protocol's epistemic vulnerability surface.
 
 ### 6.2 minimum attack cost
 
-What is the minimum stake s* required to shift π by ε on a target [[particle]]?
+What is the minimum stake s* required to shift φ* by ε on a target [[particle]]?
 
-$$s^* = f(\text{graph topology}, \pi_{\text{current}}, \alpha, \mu, \tau, \varepsilon)$$
+$$s^* = f(\text{graph topology}, \phi^*_{\text{current}}, \alpha, \mu, \tau, \varepsilon)$$
 
 This is the protocol's epistemic security parameter — analogous to the economic security parameter in proof-of-stake (cost to finalize a false block). If s* is known, operators can reason about whether the attack cost exceeds any plausible attacker's budget.
 
@@ -163,18 +163,18 @@ The Condorcet jury theorem requires independent agents. The Hong-Page diversity 
 Neither theorem applies when agents are correlated. A graph-computable diversity metric is needed: given the current neuron population and their linking patterns, how epistemically diverse is the collective? Candidates:
 
 - Linking entropy: H(link distributions across neurons). High when neurons link to different particles; low when they converge on the same targets.
-- Spectral diversity: variance in the eigenvector contributions of different neurons to π.
-- Prediction independence: correlation between neurons' Δπ contributions over time. Truly independent neurons have low correlation.
+- Spectral diversity: variance in the eigenvector contributions of different neurons to φ*.
+- Prediction independence: correlation between neurons' Δφ* contributions over time. Truly independent neurons have low correlation.
 
 None of these is specified in the protocol. Measuring and incentivizing diversity remains open.
 
 ### 6.4 external anchoring
 
-The [[cybergraph]] is self-referential: π is computed from [[cyberlinks]], which are created by [[neurons]], whose influence is weighted by π. This loop can stabilize around any self-consistent configuration, including false ones.
+The [[cybergraph]] is self-referential: φ* is computed from [[cyberlinks]], which are created by [[neurons]], whose influence is weighted by φ*. This loop can stabilize around any self-consistent configuration, including false ones.
 
 Optional external anchoring breaks the self-reference by introducing signals from outside the loop:
 
-- Prediction markets: particles with verifiable outcomes (future events, measurable claims) can anchor π calibration. If π predicts rain tomorrow and it does not rain, the miscalibration is measurable.
+- Prediction markets: particles with verifiable outcomes (future events, measurable claims) can anchor φ* calibration. If φ* predicts rain tomorrow and it does not rain, the miscalibration is measurable.
 - Sensor networks: physical measurement feeds (temperature, location, chemical composition) provide ground truth against which linking accuracy can be evaluated.
 - Cross-graph proofs: other [[cybergraph]] instances with different neuron populations provide independent estimates. Divergence between instances signals epistemic vulnerability.
 
@@ -184,11 +184,11 @@ External anchoring is architecturally optional — the protocol operates without
 
 Temporal decay is passive: old links lose weight regardless of truth value. Active error correction mechanisms complement decay:
 
-- Challenge protocols: any [[neuron]] can stake [[focus]] against a [[particle]]'s current π ranking, asserting it is too high or too low. If subsequent π evolution validates the challenge, the challenger is rewarded from the decayed [[focus]] of links that were pushing π in the wrong direction.
+- Challenge protocols: any [[neuron]] can stake [[focus]] against a [[particle]]'s current φ* ranking, asserting it is too high or too low. If subsequent φ* evolution validates the challenge, the challenger is rewarded from the decayed [[focus]] of links that were pushing φ* in the wrong direction.
 
-- Falsification bounties: [[neurons]] that successfully identify and link refutations of high-π claims earn disproportionate Δπ reward. This incentivizes epistemic auditing as a profitable activity.
+- Falsification bounties: [[neurons]] that successfully identify and link refutations of high-φ* claims earn disproportionate Δφ* reward. This incentivizes epistemic auditing as a profitable activity.
 
-- Adversarial auditing: a rewarded role where [[neurons]] deliberately search for manipulated π regions. Detectable patterns include: sudden π spikes from few sources, structural anomalies in link patterns, statistical deviation from expected tri-kernel behavior.
+- Adversarial auditing: a rewarded role where [[neurons]] deliberately search for manipulated φ* regions. Detectable patterns include: sudden φ* spikes from few sources, structural anomalies in link patterns, statistical deviation from expected tri-kernel behavior.
 
 None of these mechanisms exist in the current protocol. Each requires careful design to avoid creating new attack surfaces (e.g., challenge protocols can themselves be used for manipulation if the resolution mechanism is gameable).
 
