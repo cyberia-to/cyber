@@ -5,72 +5,46 @@ crystal-domain: cyber
 ---
 # security audit: private key import
 
-date: 2026-05-12
-status: passed — 0 critical, 0 high, 0 medium, 1 low (optional)
-scope: addition of raw [[secp256k1]] [[private key]] import to [[cyb]] wallet
-part of: [[bostrom/liquidity roadmap]] — wallet and key management improvements
+date: 2026-05-12. status: passed. part of [[bostrom/liquidity roadmap]].
 
-## changes audited
+scope: raw [[secp256k1]] [[private key]] import into [[cyb]] wallet. 6 files, 331 lines changed.
 
-| file | change |
-|---|---|
-| `defaultAccount.d.ts` | added `private-key` to keys union type |
-| `offlineSigner.ts` | `CybPrivateKeySigner` class, `getOfflineSignerFromPrivateKey()` |
-| `ConnectWalletModal.tsx` | UI tabs, private key input field |
-| `actionBarConnect.tsx` | import routing, encryption, account registration |
-| `signerClient.tsx` | unlock and auto-switch for private-key accounts |
-| `pocket.ts` | deletion cleanup for private-key accounts |
+## result
+
+0 critical. 0 high. 0 medium. 1 low (optional defensive null-check).
 
 ## threat model
 
 | threat | mitigation | status |
 |---|---|---|
-| private key in React state | stored in `useRef` | fixed |
-| key leak on unmount | ref cleared in cleanup effect | fixed |
-| key leak on background | ref + display cleared on `visibilitychange` | fixed |
-| clipboard leak on paste | `navigator.clipboard.writeText('')` after paste | fixed |
-| pending ref retained after success | `clearState()` zeroes all refs | fixed |
-| invalid key accepted | 3-layer validation: regex, `fromHex()`, `fromKey()` | secure |
-| error messages expose key material | generic errors only | secure |
-| encryption at rest | [[AES-256-GCM]] + [[PBKDF2]] (1M iterations), same as [[mnemonic]] | secure |
-| password brute force | 8+ chars, 3/4 character classes if under 12 chars | adequate |
-| key type disclosure in Redux | `keys: 'private-key'` visible, contains no key material | accepted |
-| Tauri device key in localStorage | pre-existing trade-off | accepted |
-| auto-lock timer disabled | pre-existing design decision | accepted |
+| key in React state | `useRef` | fixed |
+| leak on unmount | ref cleared in cleanup | fixed |
+| leak on background | cleared on `visibilitychange` | fixed |
+| clipboard retention | cleared after paste | fixed |
+| refs retained after success | zeroed in `clearState()` | fixed |
+| invalid key stored | 3-layer: regex → `fromHex` → `fromKey` | secure |
+| key in error messages | generic text only | secure |
+| encryption at rest | [[AES-256-GCM]] + [[PBKDF2]] 1M iterations | secure |
+| password strength | 8+ chars, 3/4 classes under 12 | adequate |
+| key type in Redux | no key material | accepted |
+| Tauri device key in localStorage | pre-existing | accepted |
+| auto-lock disabled | pre-existing | accepted |
 
-## encryption format
-
-private key hex encrypted with identical format as mnemonic:
+## encryption
 
 ```
-version(1 byte) + salt(16 bytes) + iv(12 bytes) + AES-GCM-256(plaintext)
-→ base64 → localStorage['cyb:mnemonic:{address}']
+version(1) + salt(16) + iv(12) + AES-GCM-256(plaintext) → base64
 ```
 
-`decryptMnemonic()` returns any stored plaintext. the account type (`keys` field in Redux) determines whether to call `getOfflineSignerFromMnemonic()` or `getOfflineSignerFromPrivateKey()`.
+same format as [[mnemonic]]. `keys` field in Redux routes to correct signer on decrypt.
 
-## [[CosmJS]] validation chain
+## validation
 
-1. `fromHex(privkeyHex)` — validates hex format, throws on non-hex or odd-length
-2. `DirectSecp256k1Wallet.fromKey(privkey)` — validates 32-byte length, validates against [[secp256k1]] curve order
-3. `Secp256k1Wallet.fromKey(privkey)` — same validation for Amino signer
+`fromHex` → `DirectSecp256k1Wallet.fromKey` → `Secp256k1Wallet.fromKey`. all throw before storage.
 
-all three layers throw before any storage occurs.
+## fixes applied
 
-## signArbitrary (ADR-036)
-
-`CybPrivateKeySigner.signArbitrary()` composes `Secp256k1Wallet` (Amino) for ADR-036 signing — same MsgSignData format as `CybOfflineSigner`. `hasSignArbitrary()` type guard works via duck-typing.
-
-## findings fixed before commit
-
-1. moved `privateKeyHex` from `useState` to `useRef` — prevents React DevTools exposure
-2. added ref cleanup on unmount
-3. added ref + display cleanup on `visibilitychange` (background)
-4. added clipboard clearing on private key paste
-5. added `pendingImportModeRef` reset in `clearState()`
-
-## accepted risks
-
-- device key for Tauri auto-unlock stored in localStorage (pre-existing)
-- auto-lock timer disabled (pre-existing design decision)
-- account type visible in Redux state (information disclosure only)
+1. `useState` → `useRef` for key material
+2. cleanup on unmount, background, success
+3. clipboard cleared on paste
+4. refs reset in `clearState()`
