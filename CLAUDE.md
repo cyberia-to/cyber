@@ -126,7 +126,7 @@ Scripts:
 - `analizer/ipfs.nu` — pre-commit hook: upload media/ to Pinata IPFS, rewrite URLs in markdown (credentials from `~/.config/cyber/env`)
 - `analizer/crosslink_topology.nu` — crosslink topology analysis for semantic core (wiki-link classification, hub/island detection, statistics)
 - `analizer/concat.nu` — concatenate entire graph into single file for LLM context loading
-- `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget
+- `analizer/context.nu` — smart context packer: scores pages by gravity/density, greedy knapsack into token budget. `--pinned [rel/path.md ...]` forces specific pages in before the greedy loop
 - `analizer/trikernel.nu` — compute tri-kernel (diffusion, springs, heat) over wiki-link graph, write focus + gravity + density to frontmatter. Runs on new moon only (±1 day); use `--force` to override, `--dry-run` to preview
 
 - `analizer/dangling.nu` — alias-aware dangling wiki-link detector (basenames, paths, alias: frontmatter; case-insensitive; top 50 + stats)

@@ -20,6 +20,7 @@ def main [
   --budget (-b): int = 900,       # token budget in thousands
   --stats,                        # print ranking table only
   --soul: string = "",            # path to preamble file (prepended before pages)
+  --pinned (-p): list<string> = [],  # relative paths to always include (e.g. root/cyberia/architecture.md)
 ] {
   let token_budget = $budget * 1000
   # ~3.5 chars per token for mixed markdown+math content
@@ -284,6 +285,7 @@ def main [
   mut packed = []
   mut total_chars = 0
   mut packed_count = 0
+  mut packed_rels: list<string> = []
 
   # prepend soul (personality preamble) if provided
   if $soul != "" and ($soul | path exists) {
@@ -301,16 +303,36 @@ def main [
     $total_chars = $total_chars + ($entry | str length)
     $packed = ($packed | append $entry)
     $packed_count = $packed_count + 1
+    $packed_rels = ($packed_rels | append $cf.rel)
+  }
+
+  # pack pinned pages (forced inclusion regardless of score)
+  for rel in $pinned {
+    let f = $"($graph_path)/($rel)"
+    if ($f | path exists) {
+      let content = (open --raw $f | str trim)
+      let entry = $"--- ($rel) ---\n($content)\n"
+      $total_chars = $total_chars + ($entry | str length)
+      $packed = ($packed | append $entry)
+      $packed_count = $packed_count + 1
+      $packed_rels = ($packed_rels | append $rel)
+    } else {
+      print $"WARNING: pinned page not found: ($rel)"
+    }
+  }
+  if ($pinned | length) > 0 {
+    print $"Pinned: ($pinned | length) pages forced in"
   }
 
   # pack by score
   for page in $ranked {
     if $total_chars >= $char_budget { break }
 
-    # skip configs already packed
+    # skip configs and pinned already packed
     if ($page.rel | str starts-with "CLAUDE") or ($page.rel | str starts-with "README") or ($page.rel | str ends-with ".toml") {
       continue
     }
+    if ($packed_rels | any {|pr| $pr == $page.rel}) { continue }
 
     let content = (open --raw $page.file | str trim)
     let entry = $"--- ($page.rel) ---\n($content)\n"
@@ -324,6 +346,7 @@ def main [
     $packed = ($packed | append $entry)
     $total_chars = $total_chars + $entry_size
     $packed_count = $packed_count + 1
+    $packed_rels = ($packed_rels | append $page.rel)
   }
 
   let total_pages = ($ranked | length)
