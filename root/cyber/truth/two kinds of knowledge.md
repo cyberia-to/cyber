@@ -88,9 +88,9 @@ the three are not alternatives. they are layers. each requires the one below it.
 
 the formal [[cybergraph]] $\mathbb{G} = (P, N, T, L)$ captures both kinds of [[knowledge]] in a single record.
 
-each [[cyberlink]] $\ell = (\nu, p, q, \tau, a, v, t)$ contains:
+each [[cyberlink]] $\ell = (\nu, p, q, \tau, a, v)$ contains:
 
-- structural [[knowledge]]: $(\nu, p, q, t)$ — who asserted which connection and when
+- structural [[knowledge]]: $(\nu, p, q)$ — who asserted which connection. temporal context comes from the containing [[signal]] ($t$ = block height)
 - epistemic seed: $v \in \{-1, 0, +1\}$ — [[valence]], the neuron's [[Bayesian Truth Serum|BTS]] meta-prediction, predicting how the [[inversely coupled bonding surface|ICBS]] market on this edge will converge
 
 $v$ is not an assertion about truth. it is the meta-prediction input that [[Bayesian Truth Serum]] requires: the neuron's prediction of what the collective will believe. creating a link with $v = -1$ means "I affirm this connection exists and I have private [[knowledge]] the market hasn't priced yet." [[Bayesian Truth Serum]] rewards exactly this when correct.

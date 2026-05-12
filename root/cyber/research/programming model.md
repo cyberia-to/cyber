@@ -55,14 +55,13 @@ the polynomial IS the shared state between the two programming models. O(1) quer
 the only record type is [[cyberlink]]:
 
 ```
-cyberlink(ν, p, q, τ, a, v, t)
+cyberlink(ν, p, q, τ, a, v)          -- t (block height) belongs to the signal
   ν = neuron         WHO acts
   p = from particle  semantic source
   q = to particle    semantic target
   τ = token          WHICH denomination (CYB / H / VOLT / AMPERE)
   a = amount         HOW MUCH value at stake
   v = valence        DIRECTION (+1 reinforce / -1 challenge)
-  t = timestamp      WHEN
 ```
 
 every cyberlink moves value AND conveys meaning. always both. `a > 0` always — free links do not exist. a signal is a batch of cyberlinks. nothing else enters the system.
