@@ -2,6 +2,6 @@
 tags: cyber, cip
 crystal-type: entity
 crystal-domain: cyber
-alias: proof, stark verification, nox starks, stark proofs, proof system, cyber proofs
+alias: proof, zheng proof, zheng proofs, signal proof, cyber proofs
 ---
-recursive [[stark]] proofs cover every [[cyber/signal]] atomically — cyberlinks, conviction UTXOs, and [[cyber/impulse]] in one $O(\log n)$ verification. see [[cybergraph/reference/proof]].
+[[zheng]] proofs cover every [[cyber/signal]] atomically — cyberlinks, conviction UTXOs, and [[cyber/impulse]] in one verification. see [[cybergraph/reference/proof]].

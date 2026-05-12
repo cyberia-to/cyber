@@ -69,9 +69,9 @@ Mechanism: The prover generates a mathematical proof $\pi$ that a computation wa
 
 Where ZK appears in nox:
 
-Private transfers. A transaction proves that energy is conserved (total inputs = total outputs + fee) and that the sender owns the input records, without revealing amounts, sender identity, or receiver identity. The network sees only nullifiers (preventing double-spend) and commitments (encoding new records). The stark proof guarantees conservation; the commitment scheme guarantees privacy. Circuit cost: ~44,000 constraints.
+Private transfers. A transaction proves that energy is conserved (total inputs = total outputs + fee) and that the sender owns the input records, without revealing amounts, sender identity, or receiver identity. The network sees only nullifiers (preventing double-spend) and commitments (encoding new records). The [[zheng]] proof guarantees conservation; the commitment scheme guarantees privacy. Circuit cost: ~44,000 constraints.
 
-Provable computation. Every state transition in nox — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a stark proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains [[consensus]] without requiring every node to redo every computation.
+Provable computation. Every state transition in nox — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a [[zheng]] proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains [[consensus]] without requiring every node to redo every computation.
 
 Selective disclosure. A [[neuron]] can prove properties about its state without revealing the state itself. "I have staked more than 10,000 FOCUS" is provable without revealing the exact stake. "My focus contribution to this subgraph exceeds the threshold for voting" is provable without revealing the contribution amount. These are range proofs and threshold proofs — standard ZK primitives composed from the same stark infrastructure.
 
@@ -137,7 +137,7 @@ FHE computes on encrypted data. ZK proves the computation was correct. Together:
 Flow:
   1. Client encrypts input under FHE:     ct = Enc(pk, data)
   2. Server evaluates circuit on ct:       ct' = Eval(circuit, ct)
-  3. Server generates stark proof:         π = Prove(circuit, ct, ct')
+  3. Server generates [[zheng]] proof:         π = Prove(circuit, ct, ct')
   4. Client verifies proof:                Verify(π) → accept/reject
   5. Client decrypts result:               result = Dec(sk, ct')
 
@@ -147,7 +147,7 @@ Properties:
   - Proof is O(log n) to verify            (stark)
 ```
 
-This works natively in [[nox]] because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that stark constraints express. The stark proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
+This works natively in [[nox]] because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that stark constraints express. The [[zheng]] proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
 
 ### ZK + MPC: Distributed Proving
 
@@ -157,7 +157,7 @@ MPC distributes trust. ZK produces a proof. Together: multiple parties jointly g
 Flow:
   1. Each party holds secret share:        [x]_i = share_i(x)
   2. Parties run MPC to evaluate circuit:  [y]_i = MPC_Eval(circuit, [x]_i)
-  3. Parties jointly construct stark proof: π = MPC_Prove([trace]_i)
+  3. Parties jointly construct [[zheng]] proof: π = MPC_Prove([trace]_i)
   4. Anyone verifies proof:                Verify(π) → accept/reject
 
 Properties:
@@ -197,7 +197,7 @@ Scenario: Private verifiable AI inference on encrypted medical data
   1. MPC key ceremony:     Guardians generate (pk, [sk]_i) — no party sees full key
   2. FHE encryption:       Alice encrypts medical data: ct = Enc(pk, data)
   3. FHE evaluation:       Node runs diagnostic model: ct' = Model(ct)
-  4. stark proof:          Node generates proof π of correct execution
+  4. [[zheng]] proof:      Node generates proof π of correct execution
   5. Threshold decryption: Alice requests result from guardians: result = MPC_Dec([sk]_i, ct')
   6. Verification:         Anyone checks Verify(π) → accept
 
@@ -224,7 +224,7 @@ Everything public. All data visible on-chain.
 
 Technologies: ZK only (proof of correctness, not privacy).
 
-Use case: Public [[knowledge graph]] contributions. A [[neuron]] that wants to publicly link two [[particles]] and be credited for the link. The [[stark]] proves the link is valid (neuron has sufficient [[stake]], particles exist, weight is within bounds). No secrets involved.
+Use case: Public [[knowledge graph]] contributions. A [[neuron]] that wants to publicly link two [[particles]] and be credited for the link. The [[zheng]] proof proves the link is valid (neuron has sufficient [[stake]], particles exist, weight is within bounds). No secrets involved.
 
 What is hidden: Nothing.
 
@@ -234,7 +234,7 @@ Who owns what is hidden. Amounts are hidden. The graph structure (which particle
 
 Technologies: ZK with commitments and nullifiers.
 
-Mechanism: Records are Poseidon2 commitments: $\text{commit}(r) = \text{Poseidon2}(\text{particle}, \text{value}, \text{owner}, \text{nonce})$. Spending a record reveals only a nullifier (preventing double-spend) and creates new commitments. The stark proof guarantees conservation ($\sum \text{inputs} = \sum \text{outputs} + \text{fee}$) without revealing individual values or owners.
+Mechanism: Records are Poseidon2 commitments: $\text{commit}(r) = \text{Poseidon2}(\text{particle}, \text{value}, \text{owner}, \text{nonce})$. Spending a record reveals only a nullifier (preventing double-spend) and creates new commitments. The [[zheng]] proof guarantees conservation ($\sum \text{inputs} = \sum \text{outputs} + \text{fee}$) without revealing individual values or owners.
 
 Use case: Every standard nox transaction. This is the baseline — the minimum privacy level for all economic activity on the network.
 
@@ -246,7 +246,7 @@ Inputs and intermediate values are hidden even from the computing node. The comp
 
 Technologies: ZK + FHE.
 
-Mechanism: User encrypts inputs under FHE. A node evaluates the computation on ciphertexts. A stark proof attests to correct evaluation. The user decrypts the result.
+Mechanism: User encrypts inputs under FHE. A node evaluates the computation on ciphertexts. A [[zheng]] proof attests to correct evaluation. The user decrypts the result.
 
 Use case: Private knowledge graph queries. Encrypted model inference. Any scenario where the user does not trust the processing node with their data.
 
@@ -316,7 +316,7 @@ BN254 is the standard SNARK field — optimized for elliptic curve pairings that
 | Threat | Technology | Defense mechanism |
 |--------|-----------|-------------------|
 | Node sees user data | FHE | Computation on encrypted data; node never sees plaintext |
-| Node returns wrong result | ZK | stark proof of correct execution; verifiable by anyone |
+| Node returns wrong result | ZK | [[zheng]] proof of correct execution; verifiable by anyone |
 | Single key holder is compromised | MPC | Threshold key distribution; no single point of failure |
 | Quantum computer breaks crypto | ZK (stark) | Hash-based proofs; no elliptic curve assumptions |
 | Surveillance of transaction graph | ZK | Commitments + nullifiers hide sender, receiver, amounts |

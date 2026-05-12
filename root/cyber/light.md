@@ -19,7 +19,7 @@ the cyber light client does not re-execute transactions, does not store the full
 │  stores: full cybergraph, all cyberlinks,     │
 │          all proofs, all history              │
 │  computes: tri-kernel, focus, karma, syntropy │
-│  produces: stark proofs of block execution    │
+│  produces: [[zheng]] proofs of block execution    │
 │  size: unbounded (grows with graph)           │
 └───────────────────┬──────────────────────────┘
                     │ headers + proofs
@@ -28,7 +28,7 @@ the cyber light client does not re-execute transactions, does not store the full
 │  LIGHT CLIENT                                 │
 │                                               │
 │  stores: chain of headers (~64 KB)            │
-│  verifies: stark proofs against header roots  │
+│  verifies: [[zheng]] proofs against header roots  │
 │  trusts: nothing — proof is the guarantee     │
 │  size: constant                               │
 └───────────────────────────────────────────────┘
@@ -45,13 +45,13 @@ height:              u64           monotonic counter
 timestamp:           u64           block time
 bbg_root:            [F_p; 4]     root of the Big Badass Graph
 focus_root:          [F_p; 4]     commitment to current π* distribution
-execution_proof:     [F_p; 4]     hash of stark proof of block execution
+execution_proof:     [F_p; 4]     hash of [[zheng]] proof of block execution
 validator_set_hash:  [F_p; 4]     commitment to current validator set
 
 total: 29 field elements = 232 bytes
 ```
 
-the header chain is the spine. every header commits to the full system state via `bbg_root`. the `execution_proof` field commits to a [[stark]] proof that all state transitions in the block were valid. the light client never needs to see the proof itself during normal sync — it trusts the header chain's continuity and the validator signatures (or, post-stark-verification, the recursive proof).
+the header chain is the spine. every header commits to the full system state via `bbg_root`. the `execution_proof` field commits to a [[zheng]] proof that all state transitions in the block were valid. the light client never needs to see the proof itself during normal sync — it trusts the header chain's continuity and the validator signatures (or, post-stark-verification, the recursive proof).
 
 ## sync protocol
 
@@ -60,7 +60,7 @@ the header chain is the spine. every header commits to the full system state via
 1. obtain the genesis header (hardcoded, ~232 bytes)
 2. download the header chain from any peer (or multiple peers for redundancy)
 3. verify header chain continuity: each header's `prev_header_hash` matches the hash of the previous header
-4. verify validator signatures on each header (or verify the recursive stark proof that covers the entire chain)
+4. verify validator signatures on each header (or verify the recursive [[zheng]] proof that covers the entire chain)
 5. store the latest header as the trusted state root
 
 at ~232 bytes per header and ~1 block per second, one year of headers is ~7.3 GB uncompressed. with recursive stark composition, the entire chain collapses into a single proof of ~100-200 KB plus the latest header. the light client can sync from genesis in one verification step.
@@ -71,7 +71,7 @@ once synced, the light client follows new headers as they arrive:
 
 1. receive new header from any peer
 2. verify it extends the current chain (prev_header_hash matches)
-3. verify validator signatures (or stark proof of consensus)
+3. verify validator signatures (or [[zheng]] proof of consensus)
 4. update trusted state root
 
 one verification per block. no re-execution. no graph download.
@@ -122,7 +122,7 @@ response: `(exclusion_proof)` — range proof showing no edge in the sorted poly
 | membership (link exists) | ~1-2 KB | O(log² &#124;G&#124;) |
 | completeness (namespace sync) | ~2-4 KB + O(log² &#124;G&#124;) | O(log² &#124;G&#124;) |
 | non-existence (absence proof) | ~2-4 KB | O(log² &#124;G&#124;) |
-| full chain (recursive stark) | ~100-200 KB | O(1) |
+| full chain (recursive [[zheng]]) | ~100-200 KB | O(1) |
 
 all proofs are constant-size relative to the query, logarithmic in graph size. a phone verifies any claim about a $10^{15}$-particle graph with a few KB proof and milliseconds of computation.
 
@@ -130,7 +130,7 @@ all proofs are constant-size relative to the query, logarithmic in graph size. a
 
 - run the [[tri-kernel]] (requires the full graph)
 - compute [[focus]] independently (requires all [[cyberlinks]])
-- produce [[stark]] proofs (requires full execution trace)
+- produce [[zheng]] proofs (requires full execution trace)
 - serve as a relay for other light clients (has no data to relay)
 
 the light client is a pure verifier. it consumes proofs, never produces them. it trusts mathematics, never nodes.
@@ -148,8 +148,8 @@ the constant-size proof model makes the light client viable on:
 
 | property | SPV (Bitcoin) | Tendermint light client | cyber light client |
 |---|---|---|---|
-| trusts | miners (longest chain) | 2/3 validators | nothing (stark proofs) |
-| verifies | PoW + Merkle inclusion | signatures + Merkle inclusion | stark proofs + polynomial openings |
+| trusts | miners (longest chain) | 2/3 validators | nothing ([[zheng]] proofs) |
+| verifies | PoW + Merkle inclusion | signatures + Merkle inclusion | [[zheng]] proofs + polynomial openings |
 | can prove absence | no | no | yes (BBG completeness) |
 | sync from genesis | download all headers | download validator set changes | verify one recursive proof |
 | proof size | O(log n) per tx | O(1) per header | O(log² n) per query, O(1) for chain |

@@ -6,7 +6,7 @@ alias: proof of delivery, private messaging, cyber messaging, neuron communicati
 ---
 # communication
 
-private messaging between [[neurons]] with cryptographic proof that messages arrive. the transport is [[radio]] (QUIC, hole-punching, relays). the encryption uses commutative key agreement (CSIDH). the delivery guarantee is a chain of [[stark]] proofs — one per hop — that recursively compose into a single proof: the message was delivered.
+private messaging between [[neurons]] with cryptographic proof that messages arrive. the transport is [[radio]] (QUIC, hole-punching, relays). the encryption uses commutative key agreement (CSIDH). the delivery guarantee is a chain of [[zheng]] proofs — one per hop — that recursively compose into a single proof: the message was delivered.
 
 ## shared secret
 
@@ -82,40 +82,40 @@ where K_X = Hemera([a'] · E_X)     ephemeral shared secret with each hop
 Relay R₁ receives layer_0:
   decrypts with K_R₁ → learns addr_R₂ + layer_1
   forwards layer_1 to R₂
-  produces stark proof of correct forwarding
+  produces [[zheng]] proof of correct forwarding
 
 Relay R₂ receives layer_1:
   decrypts with K_R₂ → learns addr_R₃ + layer_2
   forwards layer_2 to R₃
-  produces stark proof of correct forwarding
+  produces [[zheng]] proof of correct forwarding
 
 Relay R₃ receives layer_2:
   decrypts with K_R₃ → learns addr_B + layer_3
   forwards layer_3 to B
-  produces stark proof of correct forwarding
+  produces [[zheng]] proof of correct forwarding
 
 Recipient B receives layer_3:
   decrypts with K_B → reads plaintext
-  produces stark proof of receipt
+  produces [[zheng]] proof of receipt
 ```
 
 each relay computes a CSIDH shared secret with the sender's ephemeral key. every relay sees exactly one address: the next hop. the sender's identity, the recipient's identity, and the message content are hidden from all relays.
 
 ## proof of delivery
 
-each hop produces a [[stark]] proof attesting: "I received a valid encrypted blob, decrypted my layer correctly, and forwarded the result to the next address." the proofs chain:
+each hop produces a [[zheng]] proof attesting: "I received a valid encrypted blob, decrypted my layer correctly, and forwarded the result to the next address." the proofs chain:
 
 ```
 PROOF OF DELIVERY
 ═════════════════
 
-π₁ = stark(R₁ received blob, peeled layer, forwarded to R₂)
-π₂ = stark(R₂ received blob, peeled layer, forwarded to R₃)
-π₃ = stark(R₃ received blob, peeled layer, forwarded to B)
-π_B = stark(B received blob, decrypted plaintext, MAC verified)
+π₁ = zheng(R₁ received blob, peeled layer, forwarded to R₂)
+π₂ = zheng(R₂ received blob, peeled layer, forwarded to R₃)
+π₃ = zheng(R₃ received blob, peeled layer, forwarded to B)
+π_B = zheng(B received blob, decrypted plaintext, MAC verified)
 
 Chained verification:
-  π_chain = stark(verify(π₁) ∧ verify(π₂) ∧ verify(π₃) ∧ verify(π_B))
+  π_chain = zheng(verify(π₁) ∧ verify(π₂) ∧ verify(π₃) ∧ verify(π_B))
 
 Recursive composition:
   one proof (~100-200 KB) covers the entire route
@@ -142,7 +142,7 @@ relays earn [[focus]] for proven delivery. the proof of delivery is the claim �
 
 - correct relay: earn focus, proof is valid
 - drop the message: no proof, no payment
-- tamper with content: stark proof fails, no payment, reputation penalty
+- tamper with content: [[zheng]] proof fails, no payment, reputation penalty
 - delay: timestamps in proof chain reveal latency, market prefers fast relays
 
 ## transport layer
@@ -152,7 +152,7 @@ relays earn [[focus]] for proven delivery. the proof of delivery is the claim �
 ```
 ┌─────────────────────────────────────┐
 │  cyber/communication                │ proof of delivery, onion routing
-│  (this page)                        │ CSIDH key agreement, stark proofs
+│  (this page)                        │ CSIDH key agreement, [[zheng]] proofs
 ├─────────────────────────────────────┤
 │  radio                              │ QUIC, hole-punching, relays
 │  (iroh fork with Hemera)            │ verified streaming, blob transfer
@@ -169,7 +169,7 @@ relays earn [[focus]] for proven delivery. the proof of delivery is the claim �
 |----------|-----------|--------|-----|---------------------|
 | end-to-end encryption | optional (PGP) | yes (Signal Protocol) | yes (onion layers) | yes (CSIDH + AES-256-GCM) |
 | metadata privacy | no (headers exposed) | partial (server sees who) | yes (onion routing) | yes (onion routing) |
-| delivery proof | no | delivery receipts (trust) | no | yes (stark chain) |
+| delivery proof | no | delivery receipts (trust) | no | yes ([[zheng]] chain) |
 | post-quantum | no | partial (PQXDH) | no | yes (CSIDH + Hemera) |
 | non-interactive key exchange | no (requires handshake) | no (requires prekeys) | no (circuit setup) | yes (CSIDH from graph) |
 | relay incentive | none | none | volunteer | [[focus]] for proven delivery |

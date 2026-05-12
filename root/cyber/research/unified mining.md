@@ -145,7 +145,7 @@ there is no divergence between mining hardware and utility hardware. the miner's
 | Bitcoin | SHA-256 preimage | no | ASICs are single-purpose |
 | Ethereum (PoS) | no puzzle | N/A | staking capital, not compute |
 | Filecoin | storage proofs | partially (stores data) | storage hardware reusable |
-| cyber (benchmark PoUW) | synthetic stark proof | partially (trains hardware) | GFP serves network |
+| cyber (benchmark PoUW) | synthetic [[zheng]] proof | partially (trains hardware) | GFP serves network |
 | cyber (unified mining) | real signal proof | yes (IS knowledge) | GFP IS the intelligence |
 
 unified mining is the first scheme where the puzzle output IS the protocol's primary product. not a side effect. not a secondary benefit. the proof that secures the network IS the proof that creates knowledge.

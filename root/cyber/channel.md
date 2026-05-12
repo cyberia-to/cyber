@@ -72,11 +72,11 @@ ledger:
   balance_A:  F_p     tokens held by neuron A
   balance_B:  F_p     tokens held by neuron B
 
-conservation invariant (enforced by STARK proof):
+conservation invariant (enforced by [[zheng]] proof):
   balance_A + balance_B = deposit     (constant for the channel lifetime)
 ```
 
-every state transition adjusts the ledger. the [[stark]] proof guarantees conservation — no tokens created or destroyed within the channel. the formula that updates the state must preserve the sum. if it does not, the proof fails and the counterparty rejects it.
+every state transition adjusts the ledger. the [[zheng]] proof guarantees conservation — no tokens created or destroyed within the channel. the formula that updates the state must preserve the sum. if it does not, the proof fails and the counterparty rejects it.
 
 ```
 EXAMPLE TRANSITIONS
@@ -115,7 +115,7 @@ the channel state is a full [[noun]] — the ledger is the foundation, but the `
 - a negotiation protocol (offers, counteroffers, constraints)
 - a collaborative computation (partial results, work allocation)
 
-every update is a [[nox]] formula applied to the previous state, with a [[stark]] proof of correctness. the channel is a bilateral computer with a built-in economy. the ledger prices the computation. the computation enriches the shared state. the proof guarantees both.
+every update is a [[nox]] formula applied to the previous state, with a [[zheng]] proof of correctness. the channel is a bilateral computer with a built-in economy. the ledger prices the computation. the computation enriches the shared state. the proof guarantees both.
 
 ## content-addressed history
 
@@ -159,12 +159,12 @@ the chain is an option, not a requirement. two neurons can maintain a channel in
 | property | Lightning/Raiden | cyber channel |
 |----------|-----------------|---------------|
 | liveness required | yes (dispute window) | no (proof is self-verifying) |
-| dispute mechanism | timelock + watchtower | none needed (STARK proof) |
+| dispute mechanism | timelock + watchtower | none needed ([[zheng]] proof) |
 | state type | balance allocation | arbitrary noun (any computation) |
 | settlement | mandatory on-chain close | optional (proof is self-sufficient) |
 | capital lockup | yes (fund channel on-chain) | no (focus flows, not locked) |
 | routing | multi-hop with hidden balances | direct bilateral (no routing) |
-| proof size | signatures only | ~100 KB STARK proof per transition |
+| proof size | signatures only | ~100 KB [[zheng]] proof per transition |
 | verification | replay state transitions | O(log n) proof check |
 | privacy | partial (channel visible on-chain) | full (channel can be entirely off-chain) |
 

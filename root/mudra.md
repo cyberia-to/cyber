@@ -39,7 +39,7 @@ each module has its own security boundary. they share no cryptographic code with
 
 ```
 neuron creates identity    → hemera (hash preimage)
-neuron authenticates       → zheng (STARK proof of key knowledge)
+neuron authenticates       → zheng proof of key knowledge
 neuron exchanges keys      → kem (interactive) or ctidh (non-interactive)
 neuron encrypts channels   → aead (Poseidon2-based)
 neuron computes privately  → tfhe (homomorphic)
