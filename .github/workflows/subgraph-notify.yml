@@ -1,0 +1,15 @@
+name: Subgraph notify (reusable)
+
+on:
+  workflow_call:
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger cyber rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
+          repository: cyberia-to/cyber
+          event-type: content-changed
