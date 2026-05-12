@@ -11,7 +11,7 @@ Connect with nature, embrace the tech
 
 ## [[visit & stay]]
 
-plan your visit: dates, group, overnight wish — get a list of bookable options [→](/cyber-valley/cyb.land/visit-stay)
+plan your visit: dates, group, overnight wish — get a list of bookable options [→](/cyber-valley/cyb.land/visit)
 
 ## [[activities]]
 

@@ -1,41 +1,47 @@
 ---
+icon: 🏕️
 tags: cyb.land
-alias: residency, visit us, pricing
 crystal-type: process
 crystal-domain: cyberia
+alias: visit, visit us, visit & stay, visit-stay, plan your visit, pricing, residency
 ---
-# visit cyber valley
+# visit & stay
 
 stay a little longer, do a little more, feel a lot deeper.
 
 ## where
 
-- 37 hectares on the slope of [[sanghyang]] volcano, north bali
-- village: [[gesing]], buleleng regency
-- [location on maps](https://maps.app.goo.gl/6rYxA3Btvb8e36qx7)
-- nearest airport: north bali (planned) · denpasar (3 h drive) · lovina port (45 min)
+north bali, cyber valley. [location on maps](https://maps.app.goo.gl/6rYxA3Btvb8e36qx7)
 
-## book your visit
+[illustration: vector map showing cyber valley's location within bali island]
 
-### 1. pick dates
+## plan your visit
 
-| | |
-|---|---|
-| arrival | _select date_ |
-| departure | _select date_ |
-| guests | _adults · women + kids_ |
+inputs:
 
-### 2. pick a pass
+- dates of arrival and departure
+- group composition — count of >16 men, count of women + kids
+- nationality — indonesian or foreigner
+- overnight wish (day visit · glamping · private camp · camping · wilderness · sanghyang top)
 
-- [[daypass]] — daytime only, 07:00–22:00. one calendar day.
-- [[nightpass]] — one overnight. 24h rolling from check-in. for 2 nights book 2.
-- [[visas]] — week / month / year passes for extended stays.
+output: a personalised list of bookable items matching your inputs — with prices, real-time availability, and direct booking links. add to cart. add-ons (banya, meal doses, vehicle rentals, hikes) are offered at the cart stage.
+
+## passes
+
+prices vary by:
+
+- day type (working day · weekend · holiday or moon)
+- nationality (indonesian · foreigner)
+- group (>16 men · women + kids)
+- duration
+
+passes:
+
+- [[daypass]] — 07:00–22:00, single calendar day.
+- [[nightpass]] — one overnight, 24h rolling from check-in.
+- [[visas]] — extended-stay passes for nomads: week, month, year.
 
 vehicles left on the estate after 22:00 on a daypass are upgraded to a [[nightpass]].
-
-### 3. review and pay
-
-[view cart →](/cyber-valley/cyb.land/cart)
 
 ## infrastructure included in any pass
 
@@ -49,12 +55,4 @@ vehicles left on the estate after 22:00 on a daypass are upgraded to a [[nightpa
 - [[sound]] — music in public venues
 - [[security]] — guards, first aid, emergency response
 
-## paid add-ons
-
-sold separately, add to cart on each product page:
-
-- [[banya]], [[massage]] — heal sessions
-- guided [[hikes]] — led tours
-- [[organiq]] meals
-- [[stay|glamping & tent rent]]
-- [[ride|e-vehicles]] rentals
+[view cart →](/cyber-valley/cyb.land/cart)

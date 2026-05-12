@@ -30,12 +30,6 @@ base entrance only. think of it as the visa — you're in, you can roam:
 | daypass, holiday or moon, >16 men | $8 | $15 | [+ add](/cyber-valley/cyb.land/cart) |
 | daypass, holiday or moon, women + kids | $4 | $8 | [+ add](/cyber-valley/cyb.land/cart) |
 
-## friends of project — silent walks
-
-free daypass for friends of the project — quiet, by request. 10 km of calm trails: [[sanghyang]], [[sacred path]], [[firefly canyon]].
-
-[request →](/cyber-valley/cyb.land/cart)
-
 ## upgrade to nightpass
 
 vehicles parked after 22:00 are upgraded to a [[nightpass]] (overnight, full estate access).
