@@ -4,120 +4,47 @@ crystal-type: process
 crystal-domain: cyberia
 alias: diet, dietary, nutrition, food regimen
 ---
-locally grown, nutrient-dense whole foods from [[permaculture]] systems. seasonal harvests, soil-to-cup vertical integration.
+most food comes from our farm or neighbouring farms. cheese and olive oil are the only external supplies.
 
-## organiq — restaurant
+## fresh
 
-free-flow local-only restaurant.
+- [[avocado]] — year-round, on-site trees.
+- [[vegies]] — leaves, roots, fruits, gourds.
+- [[salads]] — leafy greens and herbs.
+- [[fruits]] — tropical, on-site harvest.
+- [[berries]] — strawberry, rubus, mulberry.
 
-### day dose · [[gm]] 07:00–10:00 · [[zenith]] 12:00–15:00
+## protein
 
-| sku | indonesian | foreigner | |
-|---|---|---|---|
-| day dose, >16 men | $6 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| day dose, woman <42 | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
-| day dose, kid <10 + animals | $2 | $3 | [+ add](/cyber-valley/cyb.land/cart) |
+- [[meat]] — goat and chicken.
+- [[eggs]] — free-range, daily collected.
+- [[cheese]] — six house-made varieties.
+- [[yogurt]] — house-cultured coconut milk.
+- [[nuts]] — four varieties, raw or toasted.
 
-### evening dose · [[sunset]] 18:00–21:00
+## staples
 
-| sku | indonesian | foreigner | |
-|---|---|---|---|
-| evening dose, >16 men | $12 | $20 | [+ add](/cyber-valley/cyb.land/cart) |
-| evening dose, woman <42 | $5 | $10 | [+ add](/cyber-valley/cyb.land/cart) |
-| evening dose, kid <10 + animals | $3 | $5 | [+ add](/cyber-valley/cyb.land/cart) |
+- [[porridge]] — black rice, sorghum, amaranth.
+- [[carbs]] — tubers and cassava pasta.
+- [[bread]] — gluten-free, baked on site.
 
-tea is included with every dose.
+## cooked
 
-## avocado
+- [[shrooms]] — oyster and tree ears.
+- [[soups]] — four soups, made daily.
+- [[desserts]] — cookies, sorbets, waffles, chocolate.
+- [[drinks]] — coffee, tea, smoothies, shots.
+- [[sweet]] — honey and natural sugars.
+- [[spices]] — fresh and dried herbs.
 
-[[avocado]] — abundant, year-round, multiple varieties from on-site trees. served halved, sliced, mashed, blended.
+## formats
 
-## eggs
-
-[[eggs]] — free-range, daily collected. boiled, poached, scrambled, omelette.
-
-## cheese
-
-[[cheese]] — ricotta, mozzarella, parmesan, cheddar, gouda, halloumi.
-
-## yogurt
-
-[[yogurt]] — house-cultured from coconut milk, lactose-free, live cultures.
-
-## nuts
-
-[[nuts]] — almonds, walnuts, macadamia, hazelnuts. raw or lightly toasted.
-
-## porridge
-
-[[porridge]] — black rice, sorghum, amaranth. rotating daily.
-
-## drinks
-
-[[drinks]] — coffee, cacao, tea, herbs, smoothy, fermentee, coconut, shots. all $3, refill included with any dose.
-
-## soups
-
-[[soups]] — pumpkin, chicken broth, goat broth, okroshka. made daily.
-
-## meat
-
-[[meat]] — goat and chicken, each boiled, grilled, or roasted. evening dose.
-
-## vegies
-
-[[vegies]] — fern, batat leaves, chayote leaves, chayote, carrot, cauliflower, broccoli, bell pepper, tomato, cucumber, fennel, zucchini, eggplant, pumpkin. each steamed, roasted, or grilled.
-
-## shrooms
-
-[[shrooms]] — oyster and tree ears, grown on site.
-
-## salads
-
-[[salads]] — cress, romaine, iceberg, arugula, hibiscus, talinum, mulberry leaves, fennel, onion, garlic, chives, nasturtium, plantago, gotu kola.
-
-## carbs
-
-[[carbs]] — potato, batat, taro, cassava pasta. each boiled, roasted, grilled, or mashed.
-
-## bread
-
-[[bread]] — banana flour loaf, cassava lepeshki. gluten-free, baked on site.
-
-## fruits
-
-[[fruits]] — banana, ananas, papaya, dragon fruit, salak, mango, orange, coconut, markiza.
-
-## berries
-
-[[berries]] — strawberry, rubus, mulberry.
-
-## desserts
-
-[[desserts]] — cookies, sorbets, waffles, chocolate.
-
-## sweet
-
-[[sweet]] — honey, cane sugar, coconut sugar, palm sugar.
-
-## spices
-
-[[spices]] — oregano, ginger, mint, thyme, basil, rosemary, turmeric, lemongrass, chili, black pepper, cinnamon, cardamom, coriander, cumin.
-
-## picnic
-
-[[picnic]] — packed picnic for the trail. (price on request)
-
-## grazing
-
-[[grazing]] — eat anything you find growing in the gardens. free with any ticket.
-
-## snacks
-
-[[snacks]] — rotating menu. current item: [[sweet potato chips]].
+- [[picnic]] — packed for the trail.
+- [[grazing]] — eat from the gardens.
+- [[snacks]] — rotating local menu.
 
 ## diet philosophy
 
-emphasis on diversity of [[plant]] sources, adequate protein from legumes and animal products, fermented foods for gut health. [[medicinal]] plants and [[spice]] crops complement the core diet by providing bioactive compounds that support immune function. tracking dietary patterns across the community generates data for optimizing [[food forest]] composition and harvest schedules.
+diverse [[plant]] sources, protein from legumes and animals, fermented foods for gut health. [[medicinal]] plants and [[spice]] crops add bioactive compounds for immunity.
 
 [view cart →](/cyber-valley/cyb.land/cart)
