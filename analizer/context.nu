@@ -20,8 +20,9 @@ def main [
   --budget (-b): int = 900,       # token budget in thousands
   --stats,                        # print ranking table only
   --soul: string = "",            # path to preamble file (prepended before pages)
-  --pinned (-p): list<string> = [],  # relative paths to always include (e.g. root/cyberia/architecture.md)
+  --pinned (-p): string = "",  # JSON array of relative paths to always include, e.g. '["root/cyberia/architecture.md"]'
 ] {
+  let pinned = if $pinned != "" { $pinned | from json } else { [] }
   let token_budget = $budget * 1000
   # ~3.5 chars per token for mixed markdown+math content
   let char_budget = ($token_budget * 3.5 | into int)
@@ -176,20 +177,20 @@ def main [
     # resolve each link and count inbound
     for link in $links_lower {
       # resolve alias → canonical
-      let target = if ($alias_map | get -i $link) != null {
+      let target = if ($alias_map | get -o $link) != null {
         $alias_map | get $link
       } else {
         $link
       }
 
       # increment inbound count
-      let current = ($inbound_counts | get -i $target | default 0)
+      let current = ($inbound_counts | get -o $target | default 0)
       $inbound_counts = ($inbound_counts | merge {$target: ($current + 1)})
     }
 
     # resolve targets for reflected gravity
     let resolved = ($links_lower | each {|l|
-      if ($alias_map | get -i $l) != null { $alias_map | get $l } else { $l }
+      if ($alias_map | get -o $l) != null { $alias_map | get $l } else { $l }
     })
 
     $page_data = ($page_data | append {
@@ -213,7 +214,7 @@ def main [
   for page in $page_data {
     mut ref_sum = 0.0
     for target in $page.targets {
-      let target_gravity = ($inbound_counts | get -i $target | default 0)
+      let target_gravity = ($inbound_counts | get -o $target | default 0)
       $ref_sum = $ref_sum + ($target_gravity | into float)
     }
     $reflected = ($reflected | merge {$page.name: ($ref_sum * $alpha)})
@@ -228,8 +229,8 @@ def main [
 
   mut scored = []
   for page in $page_data {
-    let raw_gravity = ($inbound_counts | get -i $page.name | default 0)
-    let ref_gravity = ($reflected | get -i $page.name | default 0.0)
+    let raw_gravity = ($inbound_counts | get -o $page.name | default 0)
+    let ref_gravity = ($reflected | get -o $page.name | default 0.0)
     let gravity = (($raw_gravity | into float) + $ref_gravity)
     let density = if $page.size > 0 { ($page.outbound / ($page.size / 1024.0)) } else { 0.0 }
     let substance = if $page.size > 100 { ($page.size | math log 2) } else { 1.0 }
