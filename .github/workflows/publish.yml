@@ -78,8 +78,6 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
           key: ${{ runner.os }}-optica-v3
-          restore-keys: |
-            ${{ runner.os }}-optica-
 
       - name: Build optica
         env:
