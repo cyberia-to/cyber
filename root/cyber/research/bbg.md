@@ -30,7 +30,7 @@ the architecture follows from [[zheng]]'s [[sumcheck]] foundation: the proof sys
 | primitive | identity | role |
 |---|---|---|
 | [[particles\|particle]] | $H(\text{content})$ — 32 bytes | content-addressed node, atom of knowledge |
-| [[cyberlinks\|cyberlink]] | $H(\nu, p, q, \tau, a, v)$ — 6-tuple | private authenticated edge |
+| [[cyberlinks\|cyberlink]] | $H(p, q, \tau, a, v)$ — 5-tuple | private authenticated edge |
 | [[neurons\|neuron]] | $H(\text{public\_key})$ | agent with stake and [[focus]] budget |
 | [[token]] | denomination hash | economic value (coin, card, score, badge) |
 | [[focus]] | $\pi^*$ from [[tri-kernel]] | emergent attention distribution |
@@ -106,7 +106,7 @@ compare with the hash-tree approach: $O(\log n) \times 32$ bytes Merkle path, $O
 a [[cyberlink]] updates the polynomial at multiple evaluation points:
 
 ```
-cyberlink (ν, p, q, τ, a, v):     // t comes from the containing signal
+cyberlink (p, q, τ, a, v):         // ν and t come from the containing signal
   BBG_poly(particles, p, t)    ← energy update for source
   BBG_poly(particles, q, t)    ← energy update for target
   BBG_poly(axons_out, p, t)    ← outgoing axon update

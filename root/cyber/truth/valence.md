@@ -38,11 +38,11 @@ the zero state carries information even when it carries no directional belief. a
 
 ## valence in the formal record
 
-each $\ell \in L$ is a 6-tuple:
+each $\ell \in L$ is a 5-tuple:
 
-$$\ell = (\nu,\; p,\; q,\; \tau,\; a,\; v) \;\in\; N \times P \times P \times \mathcal{T} \times \mathbb{R}_+ \times \{-1,0,+1\}$$
+$$\ell = (p,\; q,\; \tau,\; a,\; v) \;\in\; P \times P \times \mathcal{T} \times \mathbb{R}_+ \times \{-1,0,+1\}$$
 
-$v$ is at position six. it is fixed at link creation — immutable once signed into the append-only record. block height $t$ belongs to the containing [[signal]]. the [[inversely coupled bonding surface|ICBS]] market price $m(\ell) \in (0,1)$ that emerges afterward is the continuous refinement of what $v$ anticipated as a coarse signal.
+$v$ is at position five. it is fixed at link creation — immutable once signed into the append-only record. authorship $\nu$ and block height $t$ belong to the containing [[signal]]. the [[inversely coupled bonding surface|ICBS]] market price $m(\ell) \in (0,1)$ that emerges afterward is the continuous refinement of what $v$ anticipated as a coarse signal.
 
 ## effect on the graph computation
 

@@ -55,8 +55,7 @@ the polynomial IS the shared state between the two programming models. O(1) quer
 the only record type is [[cyberlink]]:
 
 ```
-cyberlink(ν, p, q, τ, a, v)          -- t (block height) belongs to the signal
-  ν = neuron         WHO acts
+cyberlink(p, q, τ, a, v)              -- ν and t belong to the containing signal
   p = from particle  semantic source
   q = to particle    semantic target
   τ = token          WHICH denomination (CYB / H / VOLT / AMPERE)

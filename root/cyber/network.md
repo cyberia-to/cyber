@@ -160,7 +160,7 @@ the network has no central node that computes the [[focus]] distribution π*. in
 ```
 signal {
     neuron:     pubkey
-    links:      [cyberlink]                one or more 6-tuple assertions
+    links:      [cyberlink]                one or more 5-tuple assertions
     pi_delta:   [(particle_id, Δπ)]        sparse focus update for the batch
     proof:      stark                       proof of correct local computation
     timestamp:  u64

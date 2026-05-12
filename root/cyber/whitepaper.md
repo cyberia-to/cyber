@@ -421,7 +421,7 @@ The answer: every [[neuron]], locally, as part of creating [[cyber/signals]]. A 
 
 $$\text{signal} = (\text{neuron}, \; \vec\ell, \; \pi_\Delta, \; \sigma, \; t)$$
 
-where $\vec\ell$ is one or more [[cyberlinks]] (each a 6-tuple $(\nu, p, q, \tau, a, v)$), $\pi_\Delta = [(\text{particle}_k, \Delta\pi_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood, $\sigma$ is a [[stark]] proof of correctness, and $t$ is the block height of the signal. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact. A single proof covers the entire batch of links.
+where $\vec\ell$ is one or more [[cyberlinks]] (each a 5-tuple $(p, q, \tau, a, v)$), $\pi_\Delta = [(\text{particle}_k, \Delta\pi_k)]$ is a sparse vector of focus shifts for particles in the neuron's neighborhood, $\sigma$ is a [[stark]] proof of correctness, and $t$ is the block height of the signal. The [[locality]] theorem (§2.4) guarantees that effects beyond $O(\log(1/\varepsilon))$ hops are below $\varepsilon$ — so the update is compact. A single proof covers the entire batch of links.
 
 The local tri-kernel step is a [[nox]] program. The neuron produces the [[stark]] proof that $\pi_\Delta$ was correctly computed from the neighborhood state at a specific $\text{bbg\_root}$. Verification is $O(\log n)$ — any node checks the proof against the header without recomputing.
 

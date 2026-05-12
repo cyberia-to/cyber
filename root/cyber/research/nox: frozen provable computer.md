@@ -46,10 +46,10 @@ frozen forever.
 ## computation = linking
 
 ```
-ask(ν, p, q, τ, a, v) → Answer    -- t (block height) comes from the containing signal
+ask(p, q, τ, a, v) → Answer        -- ν and t come from the containing signal
 ```
 
-the arguments ARE the [[cyberlink]] 6-tuple. evaluating IS creating an edge. before reducing, check [[cybergraph]]: if axon(H(formula), H(subject)) exists, return cached result. the graph IS the memo table. the more the network computes, the faster it gets.
+the arguments ARE the [[cyberlink]] 5-tuple. evaluating IS creating an edge. before reducing, check [[cybergraph]]: if axon(H(formula), H(subject)) exists, return cached result. the graph IS the memo table. the more the network computes, the faster it gets.
 
 ## trace = proof
 

@@ -26,7 +26,7 @@ $$\mathbb{G} = (P,\; N,\; L)$$
 
 $H: \text{Val} \to \mathbb{F}_p^8$ is the global [[Hemera]] hash primitive, fixed at genesis. every particle is a hash of some value — $P$ is a subset of $H$'s image, not an arbitrary set of identifiers. $\mathcal{T}$ and the karma function $\kappa$ are derived from $L$, not independent parameters.
 
-each element $\ell \in L$ is a [[cyberlink]] — a 6-tuple $(\nu, p, q, \tau, a, v)$ carrying a [[subject]], two [[particles]], a conviction stake, and an epistemic [[valence]]. block height $t$ belongs to the containing [[signal]], not the cyberlink itself. the cyberlink is the only primitive from which the entire graph is built. see [[cyberlink]] for the full field specification, UTXO mechanics, and CRUD semantics
+each element $\ell \in L$ is a [[cyberlink]] — a 5-tuple $(p, q, \tau, a, v)$ carrying two [[particles]], a conviction stake, and an epistemic [[valence]]. the signing [[neuron]] $\nu$ and block height $t$ belong to the containing [[signal]], not the cyberlink itself. the cyberlink is the only primitive from which the entire graph is built. see [[cyberlink]] for the full field specification, UTXO mechanics, and CRUD semantics
 
 ---
 
@@ -160,7 +160,7 @@ such that below $|P^*|$, individual cyberlinks contribute measurably to $\pi^*$ 
 
 ### category of cybergraphs
 
-a cybergraph homomorphism $f: \mathbb{G} \to \mathbb{G}'$ is a pair $(f_P: P \to P',\; f_N: N \to N')$ such that for every $\ell = (\nu, p, q, \tau, a, v) \in L$, there exists $\ell' \in L'$ with $\nu(\ell') = f_N(\nu)$, $\operatorname{src}(\ell') = f_P(p)$, $\operatorname{tgt}(\ell') = f_P(q)$.
+a cybergraph homomorphism $f: \mathbb{G} \to \mathbb{G}'$ is a map $f_P: P \to P'$ such that for every $\ell = (p, q, \tau, a, v) \in L$, there exists $\ell' \in L'$ with $\nu(\ell') = f_N(\nu)$, $\operatorname{src}(\ell') = f_P(p)$, $\operatorname{tgt}(\ell') = f_P(q)$.
 
 cybergraphs and their homomorphisms form a category $\mathbf{CG}$. there is a forgetful functor $U: \mathbf{CG} \to \mathbf{DiGraph}$ (to directed multigraphs) and a focus functor $\Pi: \mathbf{CG} \to \mathbf{Prob}$ sending $\mathbb{G} \mapsto (P, \pi^*)$ (a finite probability space). the composition $\Pi \circ U^{-1}$ is the functor that extracts collective intelligence from graph structure.
 

@@ -24,7 +24,7 @@ this is not a secondary concern. without good link production, the [[cybergraph]
 
 ## what link production IS
 
-a [[cyberlink]] is a 6-tuple: (ν, from, to, τ, a, v) — neuron, source [[particles|particle]], target particle, token, amount, [[valence]]. block height $t$ belongs to the containing [[signal]].
+a [[cyberlink]] is a 5-tuple: (from, to, τ, a, v) — source [[particles|particle]], target particle, token, amount, [[valence]]. the signing neuron $\nu$ and block height $t$ belong to the containing [[signal]].
 
 producing a link means: a [[neurons|neuron]] decides that particle FROM is relevant to particle TO, and spends [[focus]] to assert this.
 
