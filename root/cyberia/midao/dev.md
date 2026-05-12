@@ -143,6 +143,32 @@ if truly stuck. never settle for "orphan stays" as the resolution.
 verify the cleanup: `git status` should show a clean working tree at
 the end of the work, with only the changes the user agreed to.
 
+## self-verification before reporting
+
+the agent must verify that something works before telling the user it
+works. never hand the user a URL and say "it should be there" — open
+it, check the response, confirm the content. never report a task as
+done without running the output through the same check the user would
+perform.
+
+the failure mode to avoid: agent makes a change, assumes it worked,
+tells the user to check. user finds it broken. agent investigates.
+this loop wastes the user's time and erodes trust. one verification
+pass by the agent eliminates the loop entirely.
+
+rules:
+
+1. after any deploy-affecting change, verify the observable result:
+   HTTP status, page content, build output, test pass — whichever
+   applies. if verification is not possible (e.g. CI in flight),
+   say so explicitly with a time estimate, not "should work"
+2. if localhost differs from production, check both — and report
+   which was checked and what was found
+3. "it's in the build" is not verification. check the rendered result
+4. if something breaks during verification, fix it before reporting
+5. never make the user the tester. the agent's job ends at a
+   confirmed working result, not at a completed action
+
 ## git
 
 commit after every logical unit of work. do not wait for the user to
