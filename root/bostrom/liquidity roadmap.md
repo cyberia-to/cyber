@@ -58,6 +58,11 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 14. ~~Auto-refresh destination balance after [[IBC]] transfer completes on [[teleport]]~~ done — cyb `343352fb` ([#1385](https://github.com/cyberia-to/cyb/issues/1385))
 15. ~~Fix [[IBC]] denom hash — sha256 received string instead of Uint8Array → wrong denom → balance always 0~~ done — cyb `343352fb` ([#1386](https://github.com/cyberia-to/cyb/issues/1386))
 16. Dynamic RPC endpoints — chain registry + Keplr fallback + user-configurable per-chain RPC in settings (cyb [#1387](https://github.com/cyberia-to/cyb/issues/1387))
+17. ~~APR (fees) display per pool and in dashboard, pool sorting by TVL/APR/Vol, on-chain volume fallback~~ done
+18. ~~Fix crash when adding liquidity (react-number-format undefined event)~~ done
+19. ~~Fix race condition in tx confirmation stage (conflicting status messages)~~ done
+20. ~~Private key import with [[security audit private key import|security audit]]~~ done
+21. ~~ActionBar unlock for private-key accounts~~ done
 
 ### Phase 1: Contracts + features (weeks, dependencies between items)
 

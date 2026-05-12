@@ -8,6 +8,7 @@ crystal-domain: cyber
 date: 2026-05-12
 status: passed — 0 critical, 0 high, 0 medium, 1 low (optional)
 scope: addition of raw [[secp256k1]] [[private key]] import to [[cyb]] wallet
+part of: [[bostrom/liquidity roadmap]] — wallet and key management improvements
 
 ## changes audited
 
