@@ -143,6 +143,17 @@ if truly stuck. never settle for "orphan stays" as the resolution.
 verify the cleanup: `git status` should show a clean working tree at
 the end of the work, with only the changes the user agreed to.
 
+## git
+
+commit after every logical unit of work. do not wait for the user to
+ask. one change per commit — never bundle two independent changes.
+
+conventional prefixes: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`,
+`chore:`. message describes why, not what.
+
+before committing: zero lint warnings, all tests pass. if anything
+fails, fix before committing.
+
 ## writing style
 
 state what something is directly. never use "this is not X, it is Y"
