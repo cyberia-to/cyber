@@ -61,7 +61,7 @@ Strategy: deploy CosmWasm proxy contracts → redirect users from module calls t
 17. ~~APR (fees) display per pool and in dashboard, pool sorting by TVL/APR/Vol, on-chain volume fallback~~ done
 18. ~~Fix crash when adding liquidity (react-number-format undefined event)~~ done
 19. ~~Fix race condition in tx confirmation stage (conflicting status messages)~~ done
-20. ~~Private key import with [[security audit private key import|security audit]]~~ done
+20. ~~Private key import with [[cyber/security audit private key import|security audit]]~~ done
 21. ~~ActionBar unlock for private-key accounts~~ done
 
 ### Phase 1: Contracts + features (weeks, dependencies between items)
