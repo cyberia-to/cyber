@@ -2,7 +2,7 @@
 tags: cyber, core
 crystal-type: entity
 crystal-domain: cyber
-alias: convergence vm, convergence virtual machine
+alias: relevance machine, relevance vm, convergence virtual machine
 ---
 a VM that computes by field convergence — reaches the fixed point φ* through iteration
 
