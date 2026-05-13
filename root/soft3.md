@@ -48,8 +48,8 @@ the stack has two compiler/runtime pairs — the same pattern at two levels:
 
 | | compiler | runtime |
 |--|---------|---------|
-| programs | trident (.tri → .nox) | nox (runs any .nox) |
-| models | tru (.graph → .model) | glia (runs any .model) |
+| code | trident (.tri → .nox) | nox (runs any .nox) |
+| model | tru (.graph → .model) | glia (runs any .model) |
 
 trident knows .tri. nox knows nothing about .tri — it just runs .nox. tru knows .graph. glia knows nothing about graphs — it just runs .model. mir reads both.
 
