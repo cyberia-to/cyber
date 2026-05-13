@@ -272,16 +272,16 @@ The trilateral is not three independent libraries bolted together. It is three a
 
 | Technology | Algebraic home | Key operation | Field primitive |
 |------------|---------------|---------------|-----------------|
-| ZK ([[stark]]) | $\mathbb{F}_p$ polynomial constraints | [[WHIR]] commitment (polynomial evaluation + low-degree test) | `ntt` + `p2r` |
+| ZK ([[stark]]) | $\mathbb{F}_p$ polynomial constraints | Brakedown commitment (polynomial evaluation) | `ntt` + `p2r` |
 | FHE (TFHE) | $R_p = \mathbb{F}_p[X]/(X^N+1)$ | Programmable Bootstrapping (blind rotation of test polynomial) | `ntt` + `lut` |
 | MPC (Shamir) | $\mathbb{F}_p$ secret shares | Threshold reconstruction ($k$ shares → secret via Lagrange interpolation) | `fma` |
 
-All three operate over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. All three use [[Poseidon2]] for commitments and hashing — chosen specifically because its $x^7$ S-box is efficient in all three domains (7 constraints in stark, multiplicative depth 3 in MPC, moderate depth in FHE). All three benefit from NTT acceleration — the same butterfly network serves WHIR folding (ZK), polynomial multiplication (FHE), and, if needed, verifiable secret-share refresh (MPC).
+All three operate over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. All three use [[Poseidon2]] for commitments and hashing — chosen specifically because its $x^7$ S-box is efficient in all three domains (7 constraints in stark, multiplicative depth 3 in MPC, moderate depth in FHE). All three benefit from NTT acceleration — the same butterfly network serves Brakedown (ZK), polynomial multiplication (FHE), and, if needed, verifiable secret-share refresh (MPC).
 
 This is why the [[GFP]] (Goldilocks Field Processor) accelerates the entire privacy stack with four hardware primitives:
 
 - `fma` (field multiply-accumulate): stark constraint evaluation, FHE polynomial arithmetic, MPC share recombination
-- `ntt` (Number-Theoretic Transform): WHIR commitment, PBS polynomial multiply, convolution
+- `ntt` (Number-Theoretic Transform): Brakedown commitment, PBS polynomial multiply, convolution
 - `p2r` (Poseidon2 round): Commitment hashing, nullifier derivation, MPC-friendly randomness
 - `lut` (lookup table): stark lookup argument, FHE test polynomial, neural activation
 

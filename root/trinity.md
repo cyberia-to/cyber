@@ -149,7 +149,7 @@ Every component across all three pillars reduces to four primitive operations ov
 
 - Field multiply-accumulate (`fma`): Matrix operations for AI, constraint evaluation for ZK, polynomial arithmetic for FHE, secret-share recombination for MPC — the workhorse of linear computation in every domain.
 
-- [[NTT]] (`ntt`): [[WHIR]] commitment for ZK proofs, polynomial multiplication for FHE ciphertexts, convolution for AI layers, and quantum circuit simulation — the universal transform that accelerates spectral operations across all four pillar applications.
+- [[NTT]] (`ntt`): Brakedown commitment for ZK proofs, polynomial multiplication for FHE ciphertexts, convolution for AI layers, and quantum circuit simulation — the universal transform that accelerates spectral operations across all four pillar applications.
 
 - [[Poseidon2]] round (`p2r`): Hashing for quantum-resistant authentication, commitment schemes for ZK privacy, MPC-friendly hashing for distributed protocols — the one hash function that works efficiently in all three privacy technologies because its $x^7$ power-map S-box has both low algebraic degree (for [[stark]] constraints) and low multiplicative depth (for MPC communication rounds).
 

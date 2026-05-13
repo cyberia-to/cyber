@@ -52,7 +52,7 @@ RSA and bilinear accumulators achieve constant-size proofs but require stronger 
 | structure | property | used in |
 |---|---|---|
 | vector commitments (KZG, IPA) | commit to a vector, open at any index with O(1) proof | Verkle trees, [[Ethereum]] EIP-4844 |
-| [[polynomial commitment]] | commit to polynomial, prove evaluations | [[stark]], PLONK, [[cyber]] ([[WHIR]]-based) |
+| [[polynomial commitment]] | commit to polynomial, prove evaluations | [[stark]], PLONK, [[cyber]] (Brakedown-based) |
 | [[EdgeSet]] | edge membership via polynomial commitment | [[cyber]] [[BBG]] |
 | [[LogUp]] | cross-index consistency via algebraic lookup | Polygon, Scroll, [[cyber]] |
 | LtHash (lattice hash) | homomorphic set commitment — add/remove elements in O(1) | [[cyber]] collection state |

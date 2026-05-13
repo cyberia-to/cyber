@@ -73,7 +73,7 @@ a light client on a phone downloading 100 namespace proofs: 100 KiB → 20 KiB. 
 
 polynomial completeness is computational: the Lens (polynomial commitment scheme) must be sound. if the Lens breaks, the polynomial can produce false proofs. this is weaker.
 
-the mitigation: [[WHIR]] and Brakedown are hash-based lens — their soundness relies on collision resistance of [[Hemera]], the same hash that NMT nodes use. the trust root is identical. the difference: NMTs use [[Hemera]] structurally (tree shape = completeness). polynomials use [[Hemera]] algebraically (polynomial binding = completeness). both trust the same primitive.
+the mitigation: Brakedown is a hash-based lens — its soundness relies on collision resistance of [[Hemera]], the same hash that NMT nodes use. the trust root is identical. the difference: NMTs use [[Hemera]] structurally (tree shape = completeness). polynomials use [[Hemera]] algebraically (polynomial binding = completeness). both trust the same primitive.
 
 the hybrid migration: during transition, run BOTH systems. NMT and polynomial must agree on every query. divergence = bug or cryptographic break. years of agreement build confidence.
 

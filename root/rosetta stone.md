@@ -168,7 +168,7 @@ The trilateral identity requires five conditions, all simultaneously:
 
 2. FHE ciphertext ring = $R_p = \mathbb{F}_p[X]/(X^N+1)$: The FHE modulus $q$ equals the field characteristic $p$. This requires $p-1$ to have large powers of 2 for [[NTT]] support. Goldilocks: $p - 1 = 2^{32}(2^{32}-1)$ — supports NTT up to size $2^{32}$.
 
-3. stark proofs over $\mathbb{F}_p$: The proof system's native field is the same Goldilocks field. WHIR folding, polynomial commitment, constraint evaluation — all natively $\mathbb{F}_p$ arithmetic.
+3. stark proofs over $\mathbb{F}_p$: The proof system's native field is the same Goldilocks field. Brakedown, polynomial commitment, constraint evaluation — all natively $\mathbb{F}_p$ arithmetic.
 
 4. Lookup argument over $\mathbb{F}_p$: The LogUp mechanism operates in the same field as the table entries, the FHE ciphertexts, and the neural network weights.
 

@@ -61,7 +61,7 @@ the backbone of the entire stack. every proof, every hash, every commitment redu
 |----------|-----------|
 | [[zheng]] proofs | [[SuperSpartan]] IOP + nebu [[lens]] + [[sumcheck]] over F_p |
 | [[hemera]] hashing | [[Poseidon2]] permutation over F_p |
-| polynomial commitments ([[WHIR]]) | evaluation + low-degree testing over F_p |
+| polynomial commitments ([[Brakedown]]) | evaluation + low-degree testing over F_p |
 | [[NTT]] | 2³² roots of unity (p - 1 = 2³² · (2³² - 1)) |
 | lattice crypto ([[TFHE]]) | polynomial rings F_p[x]/(xⁿ+1) via NTT |
 | field extensions | F_p², F_p³, F_p⁴ for algebraic operations |

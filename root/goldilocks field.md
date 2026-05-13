@@ -51,6 +51,6 @@ for operations requiring more security bits, [[cyber]] uses quadratic and cubic 
 
 $$\mathbb{F}_{p^2} = \mathbb{F}_p[x] / (x^2 + 1), \quad \mathbb{F}_{p^3} = \mathbb{F}_p[x] / (x^3 - x - 1)$$
 
-extension arithmetic preserves the speed advantage: each extension multiply decomposes into a small constant number of base field multiplies. [[WHIR]] and [[Hemera]] use extensions where the security proof demands a larger evaluation domain
+extension arithmetic preserves the speed advantage: each extension multiply decomposes into a small constant number of base field multiplies. [[Brakedown]] and [[Hemera]] use extensions where the security proof demands a larger evaluation domain
 
 see [[stark]] for the proof system built on this field. see [[Hemera]] for the hash function. see [[nox]] for the virtual machine. see [[Goldilocks field processor]] for dedicated hardware. see [[trident]] for how field arithmetic scales to AI workloads

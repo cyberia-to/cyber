@@ -160,7 +160,7 @@ All cryptographic primitives as nox programs.
 |-------------|------|
 | [[Poseidon2]] sponge + compression | Matches test vectors, constant-time |
 | Merkle tree operations | 32-level proof verified in nox |
-| Polynomial commitments (WHIR) | Binding + hiding proofs checked |
+| Polynomial commitments (Brakedown) | Binding + hiding proofs checked |
 | LtHash for collection state | Add/remove = O(1), matches reference |
 
 CID format locked: [version, algo, params, field, len, digest] — 45 bytes for Goldilocks. Commitment layers: L0 (identity) → L1 (collection) → L2 (global) → L3 (indices).
@@ -364,7 +364,7 @@ No node comprehends. The network knows.
 | [[nebu]] | field arithmetic (Goldilocks) | 2.0K | 762 | — | — | complete |
 | [[hemera]] | hash, commitments (Poseidon2) | 4.9K | 758 | — | — | complete |
 | [[nox]] | proof-native VM | stub | — | — | — | specified, not implemented |
-| [[zheng]] | proof system (SuperSpartan + WHIR) | stub | — | — | — | specified, not implemented |
+| [[zheng]] | proof system (SuperSpartan + Brakedown) | stub | — | — | — | specified, not implemented |
 | [[bbg]] | authenticated state | stub | — | — | — | specified, not implemented |
 | [[mudra]] | confidentiality, key exchange, FHE, threshold | stub | — | — | — | specified, not implemented |
 | [[radio]] | connectivity (iroh fork, Poseidon2) | 131K | — | — | — | hemera migration complete, Ed25519 → STARK pending |

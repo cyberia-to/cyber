@@ -17,7 +17,7 @@ trinity promises: hash-based everything, post-quantum from genesis.
 
 the concern: polynomial commitments add a computational assumption. NMT completeness is structural (information-theoretic). Lens completeness is computational (collision-resistance).
 
-the resolution: [[WHIR]] and Brakedown are hash-based lens. their soundness relies on [[Hemera]] collision resistance — the SAME hash that NMT nodes use. the trust root is identical. polynomial state does not weaken the quantum pillar because the polynomial is committed via hashes, not pairings or discrete log.
+the resolution: Brakedown is a hash-based lens. its soundness relies on [[Hemera]] collision resistance — the SAME hash that NMT nodes use. the trust root is identical. polynomial state does not weaken the quantum pillar because the polynomial is committed via hashes, not pairings or discrete log.
 
 what polynomial state ADDS to quantum:
 
@@ -98,7 +98,7 @@ polynomial state shifts the balance:
 | primitive | NMT architecture | polynomial architecture | change |
 |---|---|---|---|
 | fma | SpMV for tri-kernel, AI inference | SpMV + polynomial evaluation + lens | MORE — fma becomes dominant |
-| ntt | proof commitment (WHIR) | proof commitment + polynomial updates + FHE bootstrap | MORE — ntt handles state too |
+| ntt | proof commitment (Brakedown) | proof commitment + polynomial updates + FHE bootstrap | MORE — ntt handles state too |
 | p2r | EVERYTHING: state reads, commitments, Fiat-Shamir | Fiat-Shamir + signal identity (NOT state reads) | LESS — freed from state duty |
 | lut | activations, S-box, bootstrap | same | unchanged |
 

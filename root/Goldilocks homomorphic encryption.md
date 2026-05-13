@@ -188,7 +188,7 @@ NTT (Number Theoretic Transform) is the workhorse of three separate systems:
 | System | NTT Purpose | Ring |
 |--------|-------------|------|
 | FHE | Polynomial multiplication for CMUX gates | $R_p = \mathbb{F}_p[x]/(x^N+1)$ |
-| stark | Polynomial evaluation for WHIR protocol | $\mathbb{F}_p[x]$ |
+| stark | Polynomial evaluation for Brakedown | $\mathbb{F}_p[x]$ |
 | Quantum | Quantum Fourier Transform simulation | $\mathbb{F}_{p^2}[x]$ |
 
 All three use NTT over $\mathbb{F}_p$ or its extensions. In Trident, `std.field.poly.ntt` serves all three. One implementation. One hardware acceleration path. One optimization effort benefits FHE, stark proving, and quantum simulation simultaneously.

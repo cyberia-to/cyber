@@ -386,7 +386,7 @@ DAS also does not provide PERMANENT availability. erasure coding survives k fail
 | EigenDA | 1D RS | no sampling | KZG | no |
 | Avail | 2D RS (Kate) | DAS | KZG | no |
 | cyber (current) | 2D RS over [[Goldilocks field]] | DAS (O(√n)) | [[NMT]] + [[Hemera]] | yes |
-| cyber (algebraic) | 2D RS over Goldilocks | DAS (O(√n)) | lens ([[WHIR]]/Brakedown) | yes |
+| cyber (algebraic) | 2D RS over Goldilocks | DAS (O(√n)) | lens (Brakedown) | yes |
 
 cyber's approach is closest to [[Celestia]] (both use NMT + 2D RS + transparent DAS). the key difference: cyber's algebraic evolution replaces NMT with lens, making availability verification algebraic — composable with the [[zheng]] proof system. Celestia keeps NMT permanently.
 
