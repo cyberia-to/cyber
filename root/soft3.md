@@ -40,7 +40,7 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 | 10 | [[mir]] | render | positions + features → [[R-1.0]] world | — |
 | 11 | [[mudra]] | encrypt | KEM, dCTIDH, AEAD, TFHE, threshold | — |
 | 12 | [[radio]] | transmit | QUIC + BAO streaming + gossip | — |
-| 13 | [[foculus]] | consensus | [[collective focus theorem]] → finality | — |
+| 13 | [[foculus]] | agree | [[collective focus theorem]] → finality | — |
 
 ## compiler / runtime duality
 
