@@ -30,8 +30,8 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 | 0 | [[strata]] | algebra | 4 tiers × 5 algebras | — |
 | 1 | [[hemera]] | hash | [[Poseidon2]] sponge. particle identity | — |
 | 2 | [[lens]] | commit | 5 PCS backends, one per algebra | — |
-| 3 | [[trident]] | compile code | .tri → .nox | v0.1.0 |
-| 4 | [[nox]] | run code | 16 patterns + [[hint]] + jets | — |
+| 3 | [[trident]] | compile | .tri → .nox | v0.1.0 |
+| 4 | [[nox]] | run | 16 patterns + [[hint]] + jets | — |
 | 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]] | — |
 | 6 | [[cybergraph]] | link | jets, memos, types, knowledge | — |
 | 7 | [[bbg]] | store | 1 polynomial, 10 dims. ~200B proofs | — |
