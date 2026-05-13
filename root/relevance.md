@@ -18,7 +18,7 @@ these three are irreducible. popularity without structure is spam. structure wit
 
 [[cyberank]] is relevance materialized as a per-[[particle]] score. [[karma]] is relevance accumulated per [[neuron]]. [[syntropy]] is relevance measured as system-wide coherence. all three derive from the same $\phi^*$
 
-the [[tru]] is the [[relevance machine]] — it reads the [[cybergraph]] and computes what matters. [[consensus]] on relevance is [[consensus]] on what matters. this is the operational definition of collective [[intelligence]]: a system that converges on relevance under conservation laws
+the [[tru]] is the [[convergence vm]] — it reads the [[cybergraph]] and computes what matters. [[consensus]] on relevance is [[consensus]] on what matters. this is the operational definition of collective [[intelligence]]: a system that converges on relevance under conservation laws
 
 see [[focus]] for the conserved quantity. see [[collective focus theorem]] for convergence proofs. see [[focus flow computation]] for the algorithm
 

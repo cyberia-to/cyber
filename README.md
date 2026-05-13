@@ -31,7 +31,7 @@ root/                          # all pages
 ├── focus.md                   # collective attention distribution
 ├── particle.md                # content-addressed node
 ├── neuron.md                  # the one who links
-├── tru.md                     # the truth machine
+├── tru.md                     # the convergence VM
 ├── nox.md                     # composition VM
 └── cyberspace.md              # the navigable semantic space
 ```
