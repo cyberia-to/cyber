@@ -132,27 +132,18 @@ rune accommodates all fourteen languages — any .tri, .arc, .ten, .tok program 
 
 ## runtimes
 
-the stack has two compile/run pairs — the same duality at two levels:
+four runtimes. two native with dedicated compilers, two legacy migrating toward native:
 
-| | compile | run |
-|--|---------|-----|
-| code | trident (.tri → .nox) | nox (runs any .nox) |
-| model | tru (.graph → .model) | glia (runs any .model) |
+| runtime | compiler | backend | what runs | status |
+|---------|----------|---------|-----------|--------|
+| [[nox]] | trident (.tri → .nox) | native (Rs, AMX) | proven .nox programs, jets | primary |
+| [[glia]] | tru (.graph → .model) | ANE, AMX, Metal | .model inference | primary |
+| [[wasm]] | — | wasmi | WASM modules, rune host jets | → nox |
+| [[wgpu]] | — | Metal, Vulkan, WebGPU | GPU compute shaders | → glia |
 
 trident knows .tri. nox knows nothing about .tri — it just runs .nox. tru knows .graph. glia knows nothing about graphs — it just runs .model. mir reads both.
 
-WASM and wGPU cover existing ecosystems during migration toward the native pair:
-
-| runtime | backend | what runs on it | direction |
-|---------|---------|-----------------|-----------|
-| [[nox]] | native (Rs, AMX) | proven .nox programs, jets | primary |
-| [[glia]] | ANE, AMX, Metal | .model inference | primary |
-| [[wasm]] | wasmi | WASM modules, rune host jets | → nox |
-| [[wgpu]] | Metal, Vulkan, WebGPU | GPU compute shaders | → glia |
-
-WASM: rune host jets call into wasmi for modules not yet ported to nox. migration path: WASM module → Rs → nox (with [[zheng]] proof).
-
-wGPU: compute shaders dispatched via wGPU for GPU workloads not yet on [[glia]]. migration path: wGPU shader → [[Ten]]/[[Wav]] → glia kernel.
+migration paths: WASM module → Rs → nox (with [[zheng]] proof). wGPU shader → [[Ten]]/[[Wav]] → glia kernel.
 
 ## nox — run code
 
