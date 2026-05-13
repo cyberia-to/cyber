@@ -27,7 +27,7 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 
 | # | repo | verb | what it does | release |
 |---|------|------|-------------|---------|
-| 0 | [[strata]] | algebra | 4 tiers × 5 algebras | — |
+| 0 | [[strata]] | abstract | 4 tiers × 5 algebras | — |
 | 1 | [[hemera]] | hash | [[Poseidon2]] sponge. particle identity | — |
 | 2 | [[lens]] | commit | 5 PCS backends, one per algebra | — |
 | 3 | [[trident]] | compile | .tri → .nox | v0.1.0 |
