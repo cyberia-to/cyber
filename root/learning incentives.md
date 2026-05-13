@@ -24,4 +24,4 @@ this creates a race to discover genuine [[relevance]] rather than copy existing 
 
 learning incentives and [[costly signal]] mechanics work together: the staking cost filters out noise, while the reward function amplifies signal. a neuron must risk real [[tokens]] (cost) to earn rewards (incentive), ensuring alignment between economic interest and [[knowledge]] production
 
-see [[cyberlink]], [[focus]], [[neuron]], [[particle]], [[costly signal]], [[relevance machine]]
+see [[cyberlink]], [[focus]], [[neuron]], [[particle]], [[costly signal]], [[convergence vm]]

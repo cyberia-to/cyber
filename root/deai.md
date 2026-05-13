@@ -10,6 +10,6 @@ leveraging [[blockchain]], [[cybergraph]] and [[consensus]] for trustless coordi
 
 [[cyber]] provides foundation through [[collective learning]] of [[simulated brains]]
 
-key components: [[cyberlink]], [[relevance machine]], [[cybernet]]
+key components: [[cyberlink]], [[convergence vm]], [[cybernet]]
 
 discover all [[concepts]]

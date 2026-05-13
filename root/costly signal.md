@@ -15,7 +15,7 @@ costly signals produce [[knowledge]]; cheap talk produces [[noise]]
 
 ## formal grounding
 
-the cost $c(\ell)$ of a [[cyberlink]] $\ell$ is the staked amount $a$ locked for the assertion. credibility scales with stake: high-conviction links carry more weight in the [[cybergraph]] and contribute more to the [[relevance machine]]
+the cost $c(\ell)$ of a [[cyberlink]] $\ell$ is the staked amount $a$ locked for the assertion. credibility scales with stake: high-conviction links carry more weight in the [[cybergraph]] and contribute more to the [[convergence vm]]
 
 this principle originates in signaling theory — the same logic that governs [[evolution]], mate selection, and [[market]] pricing. in [[cyber]], the staking mechanism makes every assertion a costly signal by construction
 

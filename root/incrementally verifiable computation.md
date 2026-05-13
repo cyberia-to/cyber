@@ -35,7 +35,7 @@ constructions
 applications in [[cyber]]
 
 - verifiable [[cybergraph]] state transitions: prove a chain of [[cyberlink]] insertions is valid
-- incremental [[relevance machine]] updates: each rank recomputation proves correctness of the previous one
+- incremental [[convergence vm]] updates: each rank recomputation proves correctness of the previous one
 - light client protocols: a [[neuron]] can verify the full history of a shard by checking one proof
 - scalable [[validator]] pipelines: validators fold block proofs instead of re-executing all transactions
 

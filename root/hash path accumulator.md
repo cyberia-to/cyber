@@ -45,7 +45,7 @@ applications in [[cyber]]
 
 - [[cybergraph]] path verification: prove that two [[particles]] are connected through a specific chain of [[cyberlinks]] without transmitting the full path
 - [[authenticated_graphs]] with fractional cascading: hash path accumulators form the per-shard layer, with fractional cascading overlay for cross-shard queries
-- focus proof infrastructure: every random-walk step in the [[relevance machine]] publishes its proof against the attention root, enabling anyone to recompute focus
+- focus proof infrastructure: every random-walk step in the [[convergence vm]] publishes its proof against the attention root, enabling anyone to recompute focus
 - light client verification: [[neurons]] verify shard integrity with logarithmic bandwidth using path proofs
 - negative proofs: prove that a forbidden relationship is absent via authenticated complement paths
 

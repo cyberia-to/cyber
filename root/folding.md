@@ -39,7 +39,7 @@ relation to accumulators
 applications in [[cyber]]
 
 - fold [[cyberlink]] insertion proofs across blocks instead of re-verifying the full chain
-- fold [[relevance machine]] rank updates incrementally as new links arrive
+- fold [[convergence vm]] rank updates incrementally as new links arrive
 - fold cross-shard proofs when merging [[authenticated_graphs]] digests
 
 related
