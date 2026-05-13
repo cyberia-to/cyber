@@ -8,6 +8,6 @@ status: redirect
 ---
 # Compiled Transformers Specification
 
-the formal CT-1 spec has moved to [[tru/specs/ct1|tru]].
+the formal CT-0 spec has moved to [[tru/specs/ct0|tru]].
 
 see [[compiled transformers]] for the readable how-to.

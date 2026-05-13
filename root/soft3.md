@@ -275,7 +275,7 @@ convergence VM. where [[nox]] derives and [[glia]] executes, tru iterates to a f
 
 two jobs, one engine: compile and field.
 
-compile: reads the [[cybergraph]] as a weighted graph and compiles it to a `.model` artifact — the CT-1.1 model that [[glia]] will run. `.graph` is one compiler target; tru is the compiler that understands graphs.
+compile: reads the [[cybergraph]] as a weighted graph and compiles it to a `.model` artifact — the CT-0.1 model that [[glia]] will run. `.graph` is one compiler target; tru is the compiler that understands graphs.
 
 field: runs graph field computation over every signal. reads signal.a (raw stake) and signal.v (valence) → [[tri-kernel]] → φ* (focus distribution). runs the eigensolver (LOBPCG on the screened Laplacian) → particle positions in spectral space. computes [[cyberank]], [[karma]], [[syntropy]].
 

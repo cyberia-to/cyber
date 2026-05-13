@@ -61,7 +61,7 @@ Tiered DA stack:
 - Tier 1: Active graph focus blobs on Celestia, mirrored to IPFS/Filecoin.
 - Tier 2: Archival erasure-coded storage.
 
-Phone-class light clients can verify via DAS sampling; future-proofed for FRIDA/WHIR proofs.
+Phone-class light clients can verify via DAS sampling; future-proofed for recursive Brakedown proofs.
 
 Governance knobs: min sampling confidence, max blob fee, checkpoint interval.
 ### 7. Authenticated Graph Data Structures (AGDS)

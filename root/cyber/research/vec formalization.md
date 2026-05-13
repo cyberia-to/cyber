@@ -128,7 +128,7 @@ every signal carries a [[zheng]] proof σ covering all operations in the batch:
 
 $$\text{verify\_signal}(s, \sigma) \to \{\text{valid}, \text{invalid}\}$$
 
-algorithm: SuperSpartan IOP + WHIR lens over [[Goldilocks field]]:
+algorithm: SuperSpartan IOP + Brakedown PCS over [[Goldilocks field]]:
 
 ```
 verify_signal(signal, proof):
@@ -139,7 +139,7 @@ verify_signal(signal, proof):
      T.absorb(gᵢ)
      rᵢ ← T.squeeze()  # Fiat-Shamir via Hemera
   3. assert final_claim = constraint_eval(proof.value, r, statement)
-  4. assert WHIR_verify(commitment, r, proof.value, proof.opening)
+  4. assert Brakedown_verify(commitment, r, proof.value, proof.opening)
 ```
 
 cost: O(log N) Hemera hashes + field ops. ~50 μs independent of computation size (recursive proof compresses all history). an invalid signal cannot be constructed — the constraint system (16 deterministic reduction patterns of [[nox]]) prevents it.
@@ -168,7 +168,7 @@ properties:
 | P2 completeness | [[NMT]] proof | namespace range proof | O(log n) | structural (unconditional) |
 | P3 availability | [[DAS]] + [[erasure coding]] | 2D Reed-Solomon + sampling | O(√n) | probabilistic (information-theoretic) |
 | P4 liveness | gossip + erasure | k-of-n reconstruction | network-dependent | eventual (gossip propagation) |
-| P5 validity | [[zheng]] proof | SuperSpartan + WHIR | O(log N) verify | computational (collision resistance) |
+| P5 validity | [[zheng]] proof | SuperSpartan + Brakedown | O(log N) verify | computational (collision resistance) |
 | P6 ordering | [[hash chain]] + [[VDF]] | SHA/Hemera chain + sequential VDF | O(1) verify | physical (sequential time) |
 
 each property has a different guarantee type. each comes from a different branch of mathematics. each is independently verifiable. this is compositional security — failure of one layer does not compromise others.
@@ -219,7 +219,7 @@ application (cybergraph operations)
      ↓ expressed as
 nox (16 reduction patterns, focus-metered execution)
      ↓ proven by
-zheng (SuperSpartan IOP + WHIR lens)
+zheng (SuperSpartan IOP + Brakedown PCS)
      ↓ committed via
 hemera (Poseidon2 hashing, NMT/MMR construction)
      ↓ over
@@ -229,7 +229,7 @@ nebu (Goldilocks field arithmetic, p = 2⁶⁴ - 2³² + 1)
 each layer provides guarantees consumed by the layer above:
 - nebu: field operations are correct (algebraic closure)
 - hemera: hashes are collision-resistant (2^128 security, margin 2^918)
-- zheng: proofs are sound (sumcheck + WHIR, error ≤ 2^-512 at k=16)
+- zheng: proofs are sound (sumcheck + Brakedown, error ≤ 2^-512 at k=16)
 - nox: execution is focus-metered (halt guaranteed)
 - application: state transitions are valid
 

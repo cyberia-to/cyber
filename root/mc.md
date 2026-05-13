@@ -9,7 +9,7 @@ repo: ~/git/mc
 
 # mc — model compilation
 
-reference rust implementation of [[compiled transformers spec|CT-1]]. reads a [[cyb-graph|.graph]] snapshot, writes a [[cyb-model|.model]] file, no python in the path.
+reference rust implementation of [[compiled transformers spec|CT-0]]. reads a [[cyb-graph|.graph]] snapshot, writes a [[cyb-model|.model]] file, no python in the path.
 
 ## what it does
 
@@ -41,7 +41,7 @@ mc executes the eight passes from the spec — vocabulary, semcon discovery, arc
 │   ├── conformance/         # P-EMBED, P-ATTN, P-LAYER, P-DET, P-LOAD checkers
 │   └── cli.rs
 └── tests/
-    └── conformance/         # CT-1 acceptance suite
+    └── conformance/         # CT-0 acceptance suite
 ```
 
 ## dependencies
