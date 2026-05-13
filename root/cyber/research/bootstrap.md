@@ -8,6 +8,19 @@ date: 2026-03-25
 
 three-stage bootstrap for the [[cyber]] execution stack. like GCC: system compiler → self-host → proven self-host. each stage upgrades trust level. Rust = untrusted bootstrap + fast jets. Trident = proven canonical implementation. dual-language invariant at every level: `∀ f, x: rust_f(x) == trident_f(x)`.
 
+## stage overview
+
+```
+Stage 0 (Rust):       strata (nebu, kuro, trop, genies, jali)
+Stage 1 (Rust):       hemera → lens → trident → nox (Rs)
+Stage 2 (self-host):  trident.tri → arithmetic.tri → nox.tri
+Stage 3 (proven):     zheng → proven re-self-host → jets → bbg
+Genesis:              genesis.tri (crystal, unlimited focus, one-time)
+Protocol:             plumb.tri ∥ identity.tri ∥ social.tri ∥ geo.tri
+Computed:             tru ∥ foculus.tri
+Infrastructure:       glia ∥ mir ∥ mudra ∥ radio
+```
+
 ## current state
 
 | repo | status | LOC | tests | role |
