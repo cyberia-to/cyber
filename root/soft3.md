@@ -25,22 +25,22 @@ fourteen repos form the core. [[cybergraph]] is the vertebra — everything atta
 
 fourteen repos. fourteen verbs. remove any one → nothing above works.
 
-| # | repo | verb | one sentence |
-|---|------|------|-------------|
-| 0 | [[strata]] | algebra | four trait tiers × five algebras. the arithmetic every proof reduces to |
-| 1 | [[hemera]] | hash | [[Poseidon2]] sponge. gives [[particles]] identity |
-| 2 | [[lens]] | commit | five polynomial commitment backends — one per algebra |
-| 3 | [[trident]] | compile code | .tri → .nox. the only way to write programs |
-| 4 | [[nox]] | run code | 16 patterns + [[hint]] + jets. trace = constraint system |
-| 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]]. [[zheng]] proof |
-| 6 | [[cybergraph]] | link | connects everything to everything. jets, memos, types, knowledge |
-| 7 | [[bbg]] | store | one polynomial, 10 dimensions. ~200 byte proofs, 10-50 μs |
-| 8 | [[tru]] | compile model | .graph → .model + graph field: φ*, eigenvectors, cyberank |
-| 9 | [[glia]] | run model | universal .model runtime. graph-agnostic |
-| 10 | [[mir]] | render | tru positions + glia features → [[R-1.0]] world. makes it physical |
-| 11 | [[mudra]] | encrypt | post-quantum: KEM, dCTIDH, AEAD, TFHE, threshold |
-| 12 | [[radio]] | transmit | P2P transport: QUIC, BAO streaming, gossip |
-| 13 | [[foculus]] | consensus | [[collective focus theorem]] → finality from topology |
+| # | repo | verb | what it does | release |
+|---|------|------|-------------|---------|
+| 0 | [[strata]] | algebra | 4 tiers × 5 algebras. arithmetic every proof reduces to | 0.1.0 |
+| 1 | [[hemera]] | hash | [[Poseidon2]] sponge. gives [[particles]] identity | v0.3.0 |
+| 2 | [[lens]] | commit | 5 PCS backends — one per algebra | 0.1.0 |
+| 3 | [[trident]] | compile code | .tri → .nox. the only way to write programs | v0.1.0 |
+| 4 | [[nox]] | run code | 16 patterns + [[hint]] + jets. trace = constraint system | dev |
+| 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]] | 0.1.0 |
+| 6 | [[cybergraph]] | link | jets, memos, types, knowledge | 0.1.0 |
+| 7 | [[bbg]] | store | 1 polynomial, 10 dims. ~200B proofs, 10-50 μs | dev |
+| 8 | [[tru]] | compile model | .graph → .model + graph field: φ*, eigenvectors, cyberank | 0.1.0 |
+| 9 | [[glia]] | run model | universal .model runtime. graph-agnostic | dev |
+| 10 | [[mir]] | render | positions + features → [[R-1.0]] world | 0.1.0 |
+| 11 | [[mudra]] | encrypt | post-quantum: KEM, dCTIDH, AEAD, TFHE, threshold | scaffold |
+| 12 | [[radio]] | transmit | QUIC + BAO streaming + gossip | dev |
+| 13 | [[foculus]] | consensus | [[collective focus theorem]] → finality from topology | dev |
 
 ## compiler / runtime duality
 
