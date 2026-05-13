@@ -35,8 +35,8 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 | 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]] | — |
 | 6 | [[cybergraph]] | link | jets, memos, types, knowledge | — |
 | 7 | [[bbg]] | store | 1 polynomial, 10 dims. ~200B proofs | — |
-| 8 | [[tru]] | compile model | .graph → .model. φ*, eigenvectors, cyberank | — |
-| 9 | [[glia]] | run model | universal .model runtime | — |
+| 8 | [[tru]] | converge | .graph → .model. φ*, eigenvectors, cyberank | — |
+| 9 | [[glia]] | infer | universal .model runtime | — |
 | 10 | [[mir]] | render | positions + features → [[R-1.0]] world | — |
 | 11 | [[mudra]] | encrypt | KEM, dCTIDH, AEAD, TFHE, threshold | — |
 | 12 | [[radio]] | transmit | QUIC + BAO streaming + gossip | — |
