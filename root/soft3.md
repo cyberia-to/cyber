@@ -247,7 +247,7 @@ anything.cyb
 |-----------|------|
 | .cyb | universal container (this spec) |
 | .model | [[tru/specs/model]] — compiled transformer checkpoint |
-| .graph | [[cybergraph/graph]] — cybergraph snapshot |
+| .graph | [[cybergraph/specs/graph]] — cybergraph snapshot |
 | .vocab | [[tru/specs/vocab]] — particle dictionary |
 
 any .cyb file is a valid hemera particle. `head -50 file.cyb` tells you everything inside.
