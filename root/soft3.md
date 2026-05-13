@@ -46,7 +46,7 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 
 ---
 
-## strata — algebra
+## strata — abstract
 
 the floor. every proof, every hash, every commitment reduces to operations in one of five algebras. four trait tiers — each consumed by a different set of core components:
 
@@ -93,7 +93,7 @@ see [[lens]]
 
 ---
 
-## trident — compile code
+## trident — compile
 
 the provable language. .tri source compiles to .nox. every trident construct maps to exactly one nox pattern. 57K LOC, 24 VM targets, self-hosts in Stage 2 of the [[bootstrap plan]].
 
@@ -145,7 +145,7 @@ trident knows .tri. nox knows nothing about .tri — it just runs .nox. tru know
 
 migration paths: WASM module → Rs → nox (with [[zheng]] proof). wGPU shader → [[Ten]]/[[Wav]] → glia kernel.
 
-## nox — run code
+## nox — run
 
 sixteen deterministic reduction patterns over hemera-authenticated trees. five structural (axis, quote, compose, cons, branch), six field (add, sub, mul, inv, eq, lt), four bitwise (xor, and, not, shl), one hash. plus non-deterministic [[hint]] injection.
 
@@ -262,7 +262,7 @@ every address resolves to a particle. every connection is a cyberlink. the marku
 
 ---
 
-## tru — compile model
+## tru — converge
 
 convergence VM. where [[nox]] derives and [[glia]] executes, tru iterates to a fixed point — φ* emerges, not derived.
 
@@ -285,7 +285,7 @@ two outputs:
 
 tru closes the feedback loop: [[neurons]] create [[cyberlinks]] → bbg stores → tru reads signal.a × signal.v → tri-kernel → φ* → feeds back into memoization, ranking, markets. see [[tru]]
 
-## glia — run model
+## glia — infer
 
 universal `.model` runtime. graph-agnostic: no knowledge of [[cybergraph]], [[particles]], or [[cyberlinks]]. runs any `.model` → outputs (tensors, features, neural activations).
 
@@ -315,7 +315,7 @@ post-quantum cryptographic primitives. KEM (key encapsulation), dCTIDH (CSIDH-ba
 
 P2P transport layer. QUIC for reliable encrypted streams, BAO for content-addressed streaming with incremental verification, gossip for signal propagation across the [[cybergraph]]. the nervous system that carries signals between [[neurons]]. see [[radio]]
 
-## foculus — consensus
+## foculus — agree
 
 [[collective focus theorem]]: focus topology determines finality. when the φ* distribution converges to a stable attractor, the network has reached consensus. no leader election, no voting rounds — consensus emerges from the same field equations that drive [[tru]]. see [[foculus]]
 
