@@ -275,7 +275,7 @@ in this article i will boil down all essential ideas into coherent understanding
 	- partial sybil protection
 	- and as inference factor (read further)
 
-## truth machine
+## convergence VM
 
 - now that we understand how the [[cybergraph]] works
 	- we can dive into the novel concept
@@ -308,7 +308,7 @@ in this article i will boil down all essential ideas into coherent understanding
 		- 5 order of magnitude more expensive and
 		- 3 order of magnitude more complicated
 	- architecture requires in-gpu extremely dynamic state with fast onchain matrix multiplication
-- in essence the utility of truth machine is
+- in essence the utility of convergence VM is
 	- compute [[truth]]: simplistic [[two factor]] model of universe
 	- sort all [[particles]] from more probable to less probable
 	- [[standard inference]] for consensus on relevance in context
@@ -338,7 +338,7 @@ in this article i will boil down all essential ideas into coherent understanding
 - there is the observation
 	- that weights of nodes does not strongly correlate with weights of connections
 	- in both natural and artificial systems
-- relevance machine coupled with [[standard inference]] runtime learns based on two fundamental factors
+- convergence VM coupled with [[standard inference]] runtime learns based on two fundamental factors
 	- [[attention]]: more about weight on [[nodes]]
 	- and [[will]]: more about weight on [[edges]]
 - and yep, you have to pay in order to learn [[bostrom]]

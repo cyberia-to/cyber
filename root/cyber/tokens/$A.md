@@ -30,7 +30,7 @@ The cost to [[mint]] 1 A grows exponentially with cumulative supply. Price doubl
 
 ## Properties
 
-[[$A]] is not burned by [[cyberlinks]]. It remains in the [[neuron]] account and continuously weights their links in the [[relevance machine]] via diffusion.
+[[$A]] is not burned by [[cyberlinks]]. It remains in the [[neuron]] account and continuously weights their links in the [[convergence vm]] via diffusion.
 
 - [[burn fee on moving A and V]]: 2% burn on every [[$A]] transfer
 - [[eternal particles]] (roadmap): [[burn]] [[$A]] for permanent weight boost on a [[particle]]

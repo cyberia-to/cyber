@@ -5,4 +5,4 @@ crystal-domain: cyber
 ---
 TODO
 
-dynamic persistent [[knowledge graph]] extending beyond words, formed by [[cybergraph]] and [[relevance machine]]
+dynamic persistent [[knowledge graph]] extending beyond words, formed by [[cybergraph]] and [[convergence vm]]

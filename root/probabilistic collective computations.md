@@ -86,7 +86,7 @@ challenges
 
 solution
 
-- [[relevance machine]] removes complexity of design and implementation
+- [[convergence vm]] removes complexity of design and implementation
 - [[cyb]] soft offer vast ecosystem with universal access
 - [[bostrom]] blockchain ever grows to support needs of [[civilization]]
 

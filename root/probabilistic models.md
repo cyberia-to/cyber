@@ -9,4 +9,4 @@ what is [[probabilistic model]]?
 
 - bayesian networks
 - markov chains
-- [[relevance machine]]
+- [[convergence vm]]

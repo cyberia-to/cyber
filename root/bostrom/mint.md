@@ -45,7 +45,7 @@ Each unit of [[$V]] or [[$A]] ever minted — including [[$V]] burned by [[cyber
 
 The [[$A]] half-life (32B) is 8x larger than [[$V]] (4B). [[$V]] gets expensive 8x faster — writing to the graph ([[$V]]) is scarcer than influencing focus ([[$A]]).
 
-[[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[relevance machine]] via [[diffusion]].
+[[$A]] is not burned — it remains in the [[neuron]] account and continuously weights their [[cyberlinks]] in the [[convergence vm]] via [[diffusion]].
 
 No oracle, [[governance]] vote, or external trigger required. [[scarcity]] increases automatically and continuously as the network is used.
 

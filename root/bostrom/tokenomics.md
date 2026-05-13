@@ -15,7 +15,7 @@ crystal-domain: economics
 | [[$BOOT]] | [[bostrom/security]] and [[governance]] | [[inflation]] (~1.09% annually) |
 | [[$H]] | liquid representation of [[bostrom/staking]] | [[mint]] 1:1 on [[$BOOT]] [[bostrom/staking]]<br>[[burn]] 1:1 on unstaking |
 | [[$V]] | write access to the [[knowledge graph]] | [[burn]] of [[$H]] via [[bostrom/mint]] |
-| [[$A]] | [[relevance machine]] focus influence | [[burn]] of [[$H]] via [[bostrom/mint]] |
+| [[$A]] | [[convergence vm]] focus influence | [[burn]] of [[$H]] via [[bostrom/mint]] |
 
 Every token derives from the one above it. [[$H]] requires staked [[$BOOT]]. [[$V]] and [[$A]] require burned [[$H]]. Every unit of network resource has a provable, on-chain opportunity cost denominated in committed stake.
 

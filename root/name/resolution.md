@@ -6,7 +6,7 @@ alias: deterministic resolution
 ---
 resolution modes of [[name]] in the [[cybergraph]]
 
-a [[cyberlink]] is a dynamic pointer: from [[particle]] resolves to a ranked set of to [[particles]]. standard resolution is probabilistic — the [[relevance machine]] returns candidates sorted by [[cyberank]]. a name is a [[cyberlink]] that resolves deterministically: given from, return exactly one to — the latest [[particle]] linked by the owning [[neuron]]
+a [[cyberlink]] is a dynamic pointer: from [[particle]] resolves to a ranked set of to [[particles]]. standard resolution is probabilistic — the [[convergence vm]] returns candidates sorted by [[cyberank]]. a name is a [[cyberlink]] that resolves deterministically: given from, return exactly one to — the latest [[particle]] linked by the owning [[neuron]]
 
 the same mechanism underlies every naming system: [[file]] systems map paths to inodes, [[DNS]] maps domains to IP addresses, ENS maps .eth to wallets. all are dynamic pointers where a fixed label resolves to a mutable target. in the [[cybergraph]] this is native — a [[cyberlink]] already is a dynamic pointer, the only question is the resolution mode
 
