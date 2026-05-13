@@ -27,20 +27,20 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 
 | # | repo | verb | what it does | release |
 |---|------|------|-------------|---------|
-| 0 | [[strata]] | algebra | 4 tiers × 5 algebras | 0.1.0 |
-| 1 | [[hemera]] | hash | [[Poseidon2]] sponge. particle identity | v0.3.0 |
-| 2 | [[lens]] | commit | 5 PCS backends, one per algebra | 0.1.0 |
+| 0 | [[strata]] | algebra | 4 tiers × 5 algebras | — |
+| 1 | [[hemera]] | hash | [[Poseidon2]] sponge. particle identity | — |
+| 2 | [[lens]] | commit | 5 PCS backends, one per algebra | — |
 | 3 | [[trident]] | compile code | .tri → .nox | v0.1.0 |
-| 4 | [[nox]] | run code | 16 patterns + [[hint]] + jets | dev |
-| 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]] | 0.1.0 |
-| 6 | [[cybergraph]] | link | jets, memos, types, knowledge | 0.1.0 |
-| 7 | [[bbg]] | store | 1 polynomial, 10 dims. ~200B proofs | dev |
-| 8 | [[tru]] | compile model | .graph → .model. φ*, eigenvectors, cyberank | 0.1.0 |
-| 9 | [[glia]] | run model | universal .model runtime | dev |
-| 10 | [[mir]] | render | positions + features → [[R-1.0]] world | 0.1.0 |
-| 11 | [[mudra]] | encrypt | KEM, dCTIDH, AEAD, TFHE, threshold | scaffold |
-| 12 | [[radio]] | transmit | QUIC + BAO streaming + gossip | dev |
-| 13 | [[foculus]] | consensus | [[collective focus theorem]] → finality | dev |
+| 4 | [[nox]] | run code | 16 patterns + [[hint]] + jets | — |
+| 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]] | — |
+| 6 | [[cybergraph]] | link | jets, memos, types, knowledge | — |
+| 7 | [[bbg]] | store | 1 polynomial, 10 dims. ~200B proofs | — |
+| 8 | [[tru]] | compile model | .graph → .model. φ*, eigenvectors, cyberank | — |
+| 9 | [[glia]] | run model | universal .model runtime | — |
+| 10 | [[mir]] | render | positions + features → [[R-1.0]] world | — |
+| 11 | [[mudra]] | encrypt | KEM, dCTIDH, AEAD, TFHE, threshold | — |
+| 12 | [[radio]] | transmit | QUIC + BAO streaming + gossip | — |
+| 13 | [[foculus]] | consensus | [[collective focus theorem]] → finality | — |
 
 ## compiler / runtime duality
 
