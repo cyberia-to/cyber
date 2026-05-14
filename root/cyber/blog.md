@@ -1,5 +1,5 @@
 ---
-tags: cyber, menu
+tags: cyber
 crystal-type: entity
 crystal-domain: cyber
 alias: cyber blog, dev log, changelog
