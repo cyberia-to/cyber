@@ -23,7 +23,7 @@ see [[cyber]] for the full stack breakdown and [[specifications]]
 
 fourteen repos form the core. [[cybergraph]] is the vertebra — everything attaches to it. [[strata]] is the floor — every proof reduces to operations in its five algebras. the boundary is sharp: below it, Rust bootstrap required. above it, everything is pure [[trident]].
 
-fourteen repos. fourteen verbs. remove any one → nothing above works.
+fourteen core repos. plus [[rune]]: the async layer above.
 
 | # | repo | verb | what it does | release |
 |---|------|------|-------------|---------|
@@ -41,6 +41,7 @@ fourteen repos. fourteen verbs. remove any one → nothing above works.
 | 11 | [[mudra]] | encrypt | KEM, dCTIDH, AEAD, TFHE, threshold | — |
 | 12 | [[radio]] | transmit | QUIC + BAO streaming + gossip | — |
 | 13 | [[foculus]] | agree | [[collective focus theorem]] → finality | — |
+| + | [[rune]] | eval | Rs + hint + host + eval. dynamic async layer | — |
 
 ## foundation — math, identity, commitment
 
@@ -122,7 +123,9 @@ fourteen languages compile to nox:
 
 see [[trident]] and [[cyb/languages]]
 
-[[rune]] sits above the fourteen — the dynamic, async layer. where the fourteen languages are deterministic and provable, rune is interactive and side-effectful: [[Rs]] syntax executed via [[nox]] tree rewriting, extended with three capabilities none of the fourteen have:
+## rune — eval
+
+sits above the fourteen — the dynamic, async layer. where the fourteen languages are deterministic and provable, rune is interactive and side-effectful: [[Rs]] syntax executed via [[nox]] tree rewriting, extended with three capabilities none of the fourteen have:
 
 - `hint` — async input. yields execution, resumes when data arrives (network event, user input, epoch tick, graph change)
 - `host(target, args)` — calls WASM or wGPU. exits the proof boundary, returns a noun
