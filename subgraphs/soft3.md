@@ -1,8 +1,7 @@
 ---
 name: soft3
 repo: soft3
-visibility: private
-local-only: true
+visibility: public
 archived: false
 ---
 
