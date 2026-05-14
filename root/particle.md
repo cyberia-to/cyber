@@ -1,6 +1,6 @@
 ---
 icon: ⭕️
-alias: particles, object, cid, content address, content
+alias: particles, object, cid, content address, content, pid
 tags: cyber, cyb, page, core
 crystal-type: entity
 crystal-domain: cyber
