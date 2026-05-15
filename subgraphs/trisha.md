@@ -1,6 +1,7 @@
 ---
 name: trisha
-repo: trisha
+repo: ../trisha
+subgraph: true
 visibility: private
 archived: false
 ---
