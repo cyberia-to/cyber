@@ -12,7 +12,7 @@ the formal mathematical framework behind [[cybics]] — proof by simulation, the
 
 classical science operates by proof by derivation — you start from axioms, apply inference rules, arrive at theorems. this is the Turing-Goedel paradigm: computation as derivation, knowledge as proof.
 
-cybics replaces this with proof by simulation.
+cybics extends to proof by simulation.
 
 a claim is true when a system converges to a stable state that embodies that claim. not because it was derived from axioms, but because a network of agents, under conservation laws, settled into an [[equilibrium]] that makes the claim hold. nature does not prove theorems — it runs simulations until they converge.
 

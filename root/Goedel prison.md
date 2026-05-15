@@ -40,7 +40,7 @@ the [[Goedel prison]] is the deepest reason [[cyber]] exists.
 
 if derivation were sufficient, a centralized theorem-prover could accumulate all [[knowledge]]. but incompleteness guarantees that no formal system — no matter how large, no matter how well-funded — captures all truth. truth exceeds any single formal description of it.
 
-[[cybics]] replaces proof by derivation with proof by simulation. the [[cybergraph]] converges to [[focus]] distributions that represent collective understanding. the [[tri-kernel]] — [[diffusion]], [[springs]], heat — operates outside the proof-theoretic domain. it finds truths that no derivation reaches, because it was never trying to derive anything. it was converging.
+[[cybics]] transcends proof by derivation through proof by simulation. the [[cybergraph]] converges to [[focus]] distributions that represent collective understanding. the [[tri-kernel]] — [[diffusion]], [[springs]], heat — operates outside the proof-theoretic domain. it finds truths that no derivation reaches, because it was never trying to derive anything. it was converging.
 
 the stack that escapes the prison:
 

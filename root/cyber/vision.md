@@ -23,7 +23,7 @@ three walls make this paradigm insufficient for planetary [[intelligence]]:
 
 nature already solves this. a forest computes: mycorrhizal networks allocate nutrients across thousands of trees using local chemical signals. no tree has a global view. no central controller decides. yet the forest converges on distributions that maximize collective survival — in parallel, at every root tip, through local interactions alone
 
-convergent computation replaces derivation with [[equilibrium]]. the answer is the stable state a network settles into under conservation laws. a system can converge to states that no derivation reaches — operating outside the [[Goedel prison]]
+convergent computation extends derivation to [[equilibrium]]. the answer is the stable state a network settles into under conservation laws. a system can converge to states that no derivation reaches — operating outside the [[Goedel prison]]
 
 [[focus flow computation]] makes this precise: local message-passing over a [[cybergraph]], O(V+E) per step, unbounded context window, convergence to Boltzmann [[equilibrium]]. nox is the machine that runs it
 
