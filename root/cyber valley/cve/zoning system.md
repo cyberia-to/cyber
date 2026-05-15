@@ -2,6 +2,7 @@
 tags: cyberia
 crystal-type: entity
 crystal-domain: cyberia
+alias: land usage policy, land-usage-policy
 ---
 [[land primitives]]
 
