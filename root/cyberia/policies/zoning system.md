@@ -72,6 +72,51 @@ alias: land usage policy
 
 - 20 plant species per hectare
 
+## Pollution
+
+pollution is a resource in the wrong place. each type has specific standards governed by its own policy. the zoning system enforces compliance as a condition of land use.
+
+### sound pollution
+
+governed by [[sound policy]]. key constraints:
+- residential zones: 55 dB(A) day, 40 dB(A) night at the boundary
+- forest and conservation zones: 45 dB(A) day, 35 dB(A) night
+- dawn chorus window (05:00 – 07:00): no amplified sound anywhere
+- amplified events: 48 h advance notice to neighbors within 300 m
+
+### water pollution
+
+governed by [[water policy]]. key constraints:
+- all supply pipes: PPR (polypropylene random) only — no PVC, no galvanized steel
+- greywater: on-site treatment to BOD < 30 mg/L before soil discharge
+- blackwater: closed composting or biodigester — no direct soil discharge
+- 15 m spring buffer: no construction, no chemical inputs
+- discharge monitoring: quarterly, results published to cyberia ledger
+
+### light pollution
+
+governed by [[light policy]]. key constraints:
+- all outdoor lighting: 2200 K or warmer, full cutoff (zero upward emission)
+- non-essential outdoor lights off by 23:00
+- conservation buffer: unlit (0 lux)
+- target sky quality: SQM > 21.0 mag/arcsec² at zenith on new moon nights
+
+### air pollution
+
+governed by [[air policy]]. key constraints:
+- open burning of synthetics: prohibited at all times
+- biochar kilns: permitted with smoke-free secondary combustion
+- diesel generators: emergency backup only, maximum 4 h/day
+- indoor materials: zero-VOC finishes only in occupied spaces
+
+### soil pollution
+
+governed by [[soil policy]]. key constraints:
+- all synthetic pesticides, herbicides, and chemical fertilizers: unconditional prohibition
+- bare soil: prohibited for more than 30 days — mulch or living cover required
+- biochar: minimum 0.5 t/ha/year in food-production zones
+- annual soil test per parcel, results published to cyberia ledger
+
 ## Incentives
 
 - cyberia tax income at the rate of 10% from revenue generated within its area
