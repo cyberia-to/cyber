@@ -7,9 +7,9 @@ crystal-size: deep
 ---
 # rune/future
 
-what [[rune]] becomes when it absorbs the three correct ideas: [[hoon]]'s subject-oriented evaluation, [[Rs]]'s human-readable surface, [[cybermark]]'s sigil-based address layer. one [[language]] with one model, three syntactic registers — familiar at one end, pure at the other, with a walkable gradient between. compiles to [[Nox]]. provable by construction. dynamic, async, host-capable where the program crosses the [[proof]] boundary
+what [[rune]] becomes when it absorbs the three correct ideas: [[hoon]]'s subject-oriented evaluation, [[Rs]]'s human-readable surface, [[cybermark]]'s sigil-based address layer. one [[language]] with one model, two syntactic registers — classic (familiar) and pure (alien) — sharing one AST that lowers directly to [[Nox]]. provable by construction in its pure subset. dynamic, async, host-capable where the program crosses the [[proof]] boundary. ms-launch by design
 
-this page is the design vision. the principles are stable; specific spellings may shift as the implementation lands
+this page is the design vision and architecture plan. the principles are stable; specific spellings may shift as the implementation lands
 
 ---
 
@@ -17,7 +17,7 @@ this page is the design vision. the principles are stable; specific spellings ma
 
 ### from [[hoon]] — the model
 
-the model is correct. the surface taxes adoption. take the model, keep the original surface as one of three registers
+the model is correct. the surface taxes adoption. take the model, keep the original surface as the pure register alongside a familiar classic register
 
 | inherit | what it gives |
 |---------|--------------|
@@ -62,15 +62,14 @@ cybermark already solved the addressing problem. its eight sigils are the noun-l
 
 ## the central idea
 
-one [[language]] with one AST, parsed from three syntactic registers. all three lower to the same [[Nox]] noun. files can mix registers freely. the gradient from familiar to alien is walkable, not a cliff
+one [[language]] with one AST, parsed from two syntactic registers. both lower to the same [[Nox]] noun. files can mix registers freely. classic gets you onboarded; pure gives you the full power; nothing in between dilutes the choice
 
 | register | tag | who writes it |
 |----------|-----|--------------|
 | classic | `rune` | every Rust, Go, or TypeScript programmer day one |
-| mid | `rune-mid` | adopters comfortable with mixed sigils |
 | pure | `rune-pure` | systems programmers, [[semcons|semcon]] authors, agent kernels |
 
-a `rune fmt --register=pure` converts mechanically. nothing forces movement. all three coexist in the codebase forever
+a `rune fmt --register=pure` converts mechanically. nothing forces movement. both coexist in the codebase forever. the gradient from familiar to alien is a single step, taken when the team is ready
 
 ---
 
@@ -275,21 +274,15 @@ this is the core of dynamic execution. macros, interpreters, hot patching, runti
 
 ---
 
-## one model, three registers — examples
+## one model, two registers — examples
 
-every program shown three ways. all three parse to the same AST and lower to the same [[Nox]] noun
+every program shown two ways. both parse to the same AST and lower to the same [[Nox]] noun
 
 ### double a number
 
 ```rust
 // classic
 fn double(x: @nebu) -> @nebu { x * 2 }
-```
-
-```
-:: mid
-fn double  x:@nebu  ->  @nebu
-  *(x 2)
 ```
 
 ```
@@ -364,22 +357,202 @@ agents stored as [[particles]]. loaded by address. evaluated against a subject t
 
 ---
 
-## compilation pipeline
+## ms-launch — the load-bearing property
+
+[[rune]]'s ms-launch is the genus, not an incidental optimization. parse Rs syntax → [[Nox]] noun → tree-walk. zero compilation step. tree construction stands in for compilation. the whole pipeline runs in milliseconds
+
+this is what makes [[rune]] useful for:
+
+- REPL-style interaction with the [[cybergraph]]
+- agent kernels reacting to events with low latency
+- `eval()` of dynamically-built formulas
+- hot code reload by subject rewrite
+- [[semcons]] evaluated on demand
+- the [[cyb/robot]] starting up and being responsive immediately
+
+losing ms-launch loses the wedge that distinguishes [[cyber]] from Solidity-on-EVM, where every dApp needs an off-chain build step and a deployment ceremony. preserving ms-launch is non-negotiable. every architectural decision in this section is checked against the question "does this preserve the ability to run the program now, right now, this millisecond"
+
+---
+
+## workload split
+
+different workloads sit at different points on the launch-vs-throughput spectrum. one execution strategy cannot be optimal for all of them. the architecture handles the split by tiering the same source through different back-ends
+
+| workload | profile | right strategy |
+|----------|---------|----------------|
+| REPL, scripts, ad-hoc exploration | run once, dies fast | interpret directly |
+| event handlers, UI logic | run often per session, short bursts | interpret + jet substitution on hot ops |
+| agent kernels ([[cyb/robot]]) | run for years | interpret first, compile in background, swap when ready |
+| [[semcons]] (consensus-critical) | called by every [[neuron]], must be deterministic and fast | compile AOT through [[trident]] pipeline, deploy as proven .nox |
+| inner-loop primitives | hot, narrow, performance-critical | written in [[Rs]], AOT-compiled, called as jets |
+
+the source language is the same in all five rows. the execution strategy varies. choice is per-particle, opportunistic, and reversible — the user never declares "this is interpreted" or "this is compiled" except as an override
+
+---
+
+## execution architecture
 
 ```
-rune source (any register)
+rune source (classic or pure)
      │
-     ▼  parse
+     ▼  parse (ms)
 shared AST (rune-core)
      │
-     ▼  lower
+     ▼  lower (ms)
 [[Nox]] noun (16 patterns + hints)
      │
-     ▼  jets recognized? substitute
-runtime execution
+     ├──────────────────────────┐
+     ▼                          ▼
+tree-walking interpreter    compile pipeline
+(default, ms-launch)        ([[Nox]] → TIR → optimized TASM)
+     │                          │
+     │                     neural optimizer
+     │                     (extended for hint/host/eval)
+     │                          │
+     │                     proven .nox + jet hints
+     │                          │
+     │                     [[zheng]] proof (lazy)
+     ├──────────────────────────┘
+     ▼
+[[Nox]] runtime
++ [[Rs]] jets (compiled hot paths)
++ host bridge (WASM, wGPU, ONNX)
++ cybergraph cache (compiled artifacts as particles)
 ```
 
-the AST is small enough to publish as a stable artifact. the AST itself is a noun. so the AST IS a particle. one more level of self-reference: programs and their parses are both particles, addressable by [[cybermark]]
+three subsystems, each preserves ms-launch when invoked at the right time
+
+### front-end (shared)
+
+one parser per register, both producing the same AST. AST lowers to a [[Nox]] noun. this step stays in milliseconds. parses are content-addressed by source CID, so re-parses are free across the planetary cache
+
+the AST is itself a noun. the AST IS a [[particle]]. programs and their parses are both addressable by [[cybermark]]
+
+### interpreter back-end (the ms-launch path)
+
+rune evaluates directly into [[Nox]] tree rewriting. there is no separate rune VM. the original rune-VM concept dissolves — [[Nox]] is the VM, rune is one of its surfaces
+
+direct [[Nox]] interpretation gives:
+- ms-launch by construction (no intermediate VM to spin up)
+- noun representation preserved (cybergraph integration trivial — every value is a particle)
+- proof story preserved (every pure trace is provable by [[zheng]])
+- one VM to optimize, one VM to maintain, one VM to verify
+
+optimizations that keep the interpreter fast without losing ms-launch:
+
+- inline caches: arm lookups, slot accesses, mold dispatches cached per call site after first execution
+- jet substitution: matching [[Nox]] subtrees swap to native [[Rs]] jets at runtime
+- subject pinning: the subject does not change during a call; cache slot offsets
+- pre-flattening: cons-list `[1 2 3 nil]` exposes as an array view for sequential access
+- escape analysis: short-lived intermediate nouns can live on a stack rather than the heap
+
+these are runtime tricks. none requires a compilation phase. ms-launch preserved at every step
+
+### compiler back-end (the steady-state path)
+
+same [[Nox]] noun, lowered further to [[trident]]'s TIR. same TIR passes (DCE, inlining, constant folding, algebra-specific lowering). same neural optimizer (extended for hint/host/eval opcodes). output: optimized TASM → final .nox bytecode with annotations identifying jettable subtrees
+
+compilation result is itself a [[particle]]. indexed in the [[cybergraph]] by source-particle CID. reusable across all [[neurons]] — the planetary compilation cache
+
+three new TIR opcodes are added to handle rune's dynamism:
+
+- `hint` — yields execution, resumes on matching event. opaque to optimizer, preserved as-is
+- `host` — escapes to WASM/wGPU/ONNX, returns a noun. typed return shape lets the optimizer reason about callers
+- `eval` — runs a dynamically constructed formula against a subject. requires runtime interpreter callback from compiled code
+
+these are side-effecting node types. the neural optimizer learns to leave them alone and optimize the pure regions around them. the proof system records host and hint results as witnesses; the pure regions between them produce real [[zheng]] proofs
+
+### the planetary cache
+
+compiled artifacts are [[particles]] in the [[cybergraph]], addressed by source CID. once any [[neuron]] compiles a function, every other [[neuron]] can fetch the compiled form rather than recompile
+
+cache semantics:
+- compilation cache key: source particle CID
+- when source CID changes, cache misses, compilation invalidates automatically
+- jet identity is itself a particle CID — when a jet upgrades, the new particle has a new CID, so compiled artifacts that referenced the old jet point at the old CID and any new compilation uses the new one
+- granularity is per-particle: a particle is a coherent unit, easy to cache, easy to address, easy to invalidate
+
+this turns the cybergraph into a global JIT cache. cold starts amortize across the planet
+
+### tier mechanics
+
+| trigger | from | to | latency to caller |
+|---------|------|----|-------------------|
+| first call | source | parse + lower + interpret | ms |
+| second call, cold | interp | interp + inline-cache | none added |
+| function hot (>N calls/sec) | interp | submit for compile in background | none — user never waits |
+| compile finishes | interp | compiled .nox | swap on next call |
+| source CID changes | any | reset to interp | no compile-time wait |
+| explicit `#![compile]` pragma | first call | compile then run | one-time compile cost |
+| explicit `#![interpret-only]` | always | interp | never compiles |
+| jet upgrade (new CID) | compiled | mark stale | next call recompiles in background |
+
+proof generation is lazy. compiled pure regions can produce [[zheng]] proofs, but only when requested. the proof itself is a particle, cached by trace CID. one proof can be reused across every [[neuron]] that needs to verify the same computation
+
+---
+
+## rejected alternatives
+
+reflected here so future contributors do not redebate the choices
+
+### separate conventional stack VM for rune
+
+a hypothetical traditional bytecode VM, JVM-shaped, optimized purely for interpretation speed, was considered and rejected. reasons:
+
+- introduces a third execution model (interpret, compile-to-Nox, stack-VM) — pure complexity tax with no architectural justification
+- breaks the noun representation that makes [[cybergraph]] integration trivial — values stop being [[particles]] when they live in a separate VM's stack
+- loses provability for everything that goes through it — exactly what [[cyber]]'s architecture refuses
+- fragments tooling — debugger, profiler, formatter, type checker all have to handle two VMs
+
+the better answer for "faster interpretation": optimize the [[Nox]] interpreter (inline caches, jet substitution, slot caching). these keep ms-launch and noun-shape while closing most of the speed gap
+
+### keeping the original "rune VM" concept
+
+[[rune]] today is described as "[[Rs]] syntax executed via [[Nox]] tree rewriting." that is the right model and it stays. there is no "rune VM" distinct from [[Nox]]. removing the conceptual indirection makes the stack cleaner: [[Nox]] is the universal VM; rune is a surface language on top of it
+
+### merging rune and trident into one language
+
+evaluated. rejected for now. see the next section
+
+---
+
+## relation to [[trident]] and [[Rs]]
+
+three languages, one back-end family. each has a distinct nature; they share infrastructure
+
+| dimension | [[trident]] | rune | [[Rs]] |
+|-----------|-------------|------|--------|
+| primary purpose | provable consensus-critical code ([[semcons]], on-chain) | dynamic personal/agent code (kernels, scripts, UI) | native-speed jets, hot inner loops |
+| type system | field-typed, algebra-aware, fully static | mold-based, structural, dynamic options available | Rust-subset static |
+| dynamism | none — total determinism | eval, hint, host as first-class | none |
+| provability | mandatory — every program produces a [[zheng]] proof | optional — pure subset proves; dynamic parts do not | reference + jet equivalence verified at compile time |
+| evaluation | AOT compiled to optimized .nox | interpret first, compile in background | AOT compiled to native, deployed as jet |
+| launch latency | slow (compile + prove) | ms (parse + lower + walk) | n/a — runs as called |
+| audience | protocol authors, semcon writers | agent developers, scripters, neuron operators | runtime engineers, performance specialists |
+
+these are genuinely different concerns. forcing them into one language compromises both — [[trident]] wants to stay small and stable, rune needs to keep adding dynamic features, [[Rs]] wants to stay Rust-subset for jet authoring
+
+shared infrastructure, separate languages:
+
+- both rune and [[trident]] target [[Nox]] as bytecode
+- both compile through TIR (rune optionally; [[trident]] always)
+- both benefit from the neural optimizer
+- both use [[Rs]] jets for native-speed primitives
+- both reference [[particles]] in the [[cybergraph]] by CID
+- both follow Kelvin discipline for spec stability
+
+unification is at the IR and VM level, not at the language level. two front-ends, one back-end family. [[trident]] keeps its small frozen spec; rune evolves; neither blocks the other
+
+### why not merge
+
+even if rune-pure starts to resemble [[trident]], keeping them separate serves:
+
+- [[trident]]'s Kelvin freeze depends on its scope staying narrow. if they share a spec, [[trident]] cannot freeze while rune keeps evolving
+- the abstraction barrier between "code I run locally" and "code I deploy to consensus" is healthy — different review standards, different audiences, different threat models
+- cost of two front-ends is small (parsing is cheap); cost of one bloated language is permanent
+- a focused language with clear constraints (trident) and a flexible language with optional discipline (rune) serve their audiences better than one language trying to be both
+
+if convergence ever happens, it happens at the shared infrastructure level — TIR opcodes, jet protocols, [[Nox]] patterns — never at the surface level
 
 ---
 
@@ -431,19 +604,24 @@ cyber already uses this triangle for [[Nox]]. rune makes it explicit at the lang
 
 ---
 
-## transition path
+## implementation plan
 
-walking from where [[rune]] is today (Rs syntax over Nox with hint+host+eval) to the unified vision is incremental. nothing breaks at any step
+walking from where [[rune]] is today ([[Rs]] syntax over [[Nox]] with hint/host/eval) to the unified architecture is incremental. nothing breaks at any step. each phase ships value on its own
 
-| phase | what changes | what stays |
-|-------|--------------|------------|
-| 0 — today | classic register exists, Rs-shape with extensions | — |
-| 1 — formalize subject | introduce `~self`, `~here`, `~mem` as accessible slots | existing rune code unchanged; subject hidden by default |
-| 2 — add mid register | `=/`, `?:`, `\|-` available as alternative spellings of `let`, `if`, `loop` | classic still parses, mid is opt-in per block |
-| 3 — add pure register | full sigil grammar via fenced block or file pragma | all three registers coexist; AST shared |
-| 4 — Kelvin freeze | declare `rune-core` stable at some Kelvin number | surface registers can still evolve above the freeze |
+| phase | what lands | what stays preserved |
+|-------|------------|----------------------|
+| 1 — unified front-end | parser for classic register over a shared AST that lowers directly to [[Nox]] noun | existing rune programs run unchanged |
+| 2 — interpreter optimizations | inline caches, jet substitution, slot caching, pre-flattening — purely runtime improvements | ms-launch; no compilation phase introduced |
+| 3 — subject formalization | `~self`, `~here`, `~mem`, `~world` as accessible subject slots | existing rune code unchanged; subject hidden by default |
+| 4 — pure register | full sigil grammar via fenced block or `.rune-pure` file | classic still parses; pure is opt-in per particle |
+| 5 — TIR extensions | three new TIR opcodes (hint, host, eval), neural optimizer retrained to respect them | trident pipeline unchanged for its own programs |
+| 6 — compile back-end for rune | rune source routes through [[trident]] pipeline as a second back-end; output compiled .nox | interpreter back-end remains the default |
+| 7 — planetary cache | compiled artifacts published as [[particles]] indexed by source CID; auto-fetch on cache hit | both back-ends still work standalone |
+| 8 — profile-guided tiering | hot-path detection, background compilation, transparent swap | user never waits for compilation |
+| 9 — lazy proof generation | [[zheng]] proofs produced on demand for compiled pure regions, cached by trace CID | proof-free execution remains the fast path |
+| 10 — Kelvin freeze | declare `rune-core` stable at some Kelvin number | surface registers can still evolve above the freeze |
 
-each phase keeps earlier-phase code running. the gradient is real and walkable. teams move at their own pace
+each phase keeps earlier-phase code running. nothing forces movement. ms-launch is checked at every step
 
 ---
 
@@ -463,13 +641,13 @@ each phase keeps earlier-phase code running. the gradient is real and walkable. 
 
 ## relation to other layers
 
+[[trident]] and [[Rs]] are covered in detail above. other layers in one line each
+
 | layer | role |
 |-------|------|
 | [[cybermark]] | the address sigil set — addresses everywhere in rune |
 | [[Nox]] | the target — every rune AST lowers to a Nox noun |
-| [[Rs]] | the inspiration for classic register surface |
 | [[hoon]] | the inspiration for the subject model and pure register |
-| [[trident]] | a sibling — Tri is field-typed for proofs, rune is general-purpose |
 | [[zheng]] | the prover — every pure Nox trace becomes a proof |
 | [[cyb/robot]] | the canonical consumer — kernel functions in rune |
 | [[semcons]] | first-class rune constructs |
@@ -478,16 +656,30 @@ each phase keeps earlier-phase code running. the gradient is real and walkable. 
 
 ---
 
-## open questions
+## resolved decisions
 
-1. register interleaving — can a single function body mix classic and pure on a per-line basis, or must each block commit? leaning toward per-block via fenced markdown
+these started as open questions and have answers
+
+| question | decision |
+|----------|----------|
+| tier granularity | per-particle. a particle is a coherent unit, easy to cache, address, and invalidate |
+| jet invalidation | jet identity is a particle CID. jet upgrade produces a new CID. compiled artifacts referencing the old CID stay pointing at the old jet; new compilations use the new CID. no global invalidation event needed |
+| proof generation timing | lazy. proofs produced on demand for compiled pure regions, cached by trace CID, reusable across [[neurons]] |
+| trident/rune merger | not for now. separate languages, shared back-end. trident stays small and frozen; rune evolves |
+| separate stack VM | rejected. direct [[Nox]] interpretation preserves ms-launch, noun representation, provability, tooling unity |
+| eval at compiled tier | runtime interpreter callback from compiled code. compiled functions containing eval cannot fully compile — they retain an interp escape at the eval point |
+
+## still open
+
+1. register interleaving — can a single function body mix classic and pure on a per-line basis, or must each block commit? leaning toward per-block via fenced markdown or file-level pragma
 2. mold inference across algebras — `@nebu` and `@kuro` are distinct molds; wet gates inline at call site, but does the type system need explicit algebra parameters or can it always infer from sample
 3. subject capability model — what restricts which code can read or write subject slots? capability tokens in subject itself? per-block declared imports? security needs design
-4. markdown hosting — rune lives primarily inside markdown fenced blocks (graph-native) or as `.rn` files (file-native)? probably both, cybergraph canonical
-5. wet gate caching — wet gates re-typecheck at every call site; need build-system caching tied to particle hashes for large programs
+4. markdown hosting — rune lives primarily inside markdown fenced blocks (graph-native) or as `.rune` files (file-native)? probably both, [[cybergraph]] canonical
+5. wet gate caching in compiled mode — wet gates re-typecheck at every call site; each call site becomes effectively a separate function. need dedup by argument-type fingerprint to avoid compilation explosion
 6. hint event matching — by type, by selector pattern, by subject slot path? leans toward selector patterns over [[cybermark]] addresses
-7. scry pure-or-async — `.^` reads from cybergraph; pure when graph slice is local, hint when remote? unified primitive with mode inferred from address scope
-8. proof generation cost — pure reduction produces proof; hot loops need batching and proof-on-demand discipline
+7. scry pure-or-async — `.^` reads from cybergraph; pure when graph slice is local, hint when remote. unified primitive with mode inferred from address scope, or two distinct primitives
+8. host call typing — fully typed (optimizer can reason about return shape) or untyped (worst-case assumptions). leans typed with a typed-void escape for genuinely opaque calls
+9. parallel rune at the door level — doors are state-isolated by construction; can a runtime run multiple doors in parallel without coordination? likely yes, with cyberlinks as the only cross-door communication channel
 
 ---
 
