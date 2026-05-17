@@ -1,9 +1,9 @@
-# cyberia-to workspace configuration
+# cyber workspace configuration
 # read by scripts/sync-org.nu and scripts/build.nu
 # see SPEC.md for the reconciliation model
 
 org      = "cyberia-to"
-root_dir = "~/cyberia-to"
+root_dir = "~/cyber"
 
 [graph]
 root_subgraph = "cyber"          # donates the root namespace

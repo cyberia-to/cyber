@@ -7,8 +7,8 @@ Every contributor gets the full cyberia-to workspace from a single clone and a s
 ## Onboarding
 
 ```
-git clone git@github.com:cyberia-to/.github.git ~/cyberia-to/.github
-cd ~/cyberia-to/.github
+git clone git@github.com:cyberia-to/.github.git ~/cyber/.github
+cd ~/cyber/.github
 nu scripts/sync-org.nu --apply
 nu scripts/serve.nu
 ```
@@ -35,7 +35,7 @@ Optica loses all org-awareness. It accepts a generated config listing absolute p
 ## Layout on disk
 
 ```
-~/cyberia-to/
+~/cyber/
 ├── .github/                         # workspace anchor
 │   ├── README.md                    # how to join the workspace
 │   ├── profile/README.md            # org profile page (GH convention)
@@ -60,7 +60,7 @@ Optica loses all org-awareness. It accepts a generated config listing absolute p
 └── ...
 ```
 
-Non-org repos never appear in `~/cyberia-to/`. They stay in `~/git/` or wherever the contributor keeps unrelated work.
+Non-org repos never appear in `~/cyber/`. They stay in `~/git/` or wherever the contributor keeps unrelated work.
 
 ## Dependency direction
 
@@ -79,7 +79,7 @@ One-way, always:
 
 ```toml
 org      = "cyberia-to"
-root_dir = "~/cyberia-to"
+root_dir = "~/cyber"
 
 [graph]
 root_subgraph = "cyber"              # donates the root namespace
@@ -367,7 +367,7 @@ Phase 2 — move declarations:
 - Optica config change ships in the same PR so builds keep working.
 
 Phase 3 — layout migration:
-- `sync-org.nu --apply-migration` moves `~/git/<name>/` → `~/cyberia-to/<name>/` for every org repo. Non-org repos stay in `~/git/`.
+- `sync-org.nu --apply-migration` moves `~/git/<name>/` → `~/cyber/<name>/` for every org repo. Non-org repos stay in `~/git/`.
 - One-time, scripted, reviewable.
 
 Phase 4 — CI cutover:

@@ -58,8 +58,8 @@ or serve locally through the workspace anchor
 orchestrates subgraph sync + optica build:
 
 ```bash
-git clone https://github.com/cyberia-to/.github.git ~/cyberia-to/.github
-cd ~/cyberia-to/.github
+git clone https://github.com/cyberia-to/.github.git ~/cyber/.github
+cd ~/cyber/.github
 nu scripts/sync-org.nu --apply   # clones every repo gh auth can see
 nu scripts/serve.nu              # builds + serves at localhost:8888
 ```

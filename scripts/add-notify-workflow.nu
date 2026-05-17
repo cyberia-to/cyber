@@ -9,7 +9,7 @@ def parse_field [content: string, field: string] {
 }
 
 def main [--dry-run (-n)] {
-    let base = ($env.HOME | path join "cyberia-to")
+    let base = ($env.HOME | path join "cyber")
     let caller = "name: Notify cyber
 
 on:

@@ -45,7 +45,7 @@ generator (`scripts/build.nu`), the publish workflow
 Local workflow (subgraph repos are siblings of cyber/):
 
 ```
-cd ~/cyberia-to/cyber
+cd ~/cyber/cyber
 nu scripts/sync.nu        # bootstrap: clone every active subgraph
 nu scripts/build.nu       # full graph build
 nu scripts/serve.nu       # build + serve with live reload
@@ -55,8 +55,8 @@ nu scripts/dev.nu         # rebuild optica + restart serve
 For pure content edits without subgraphs, optica works standalone:
 
 ```
-optica build ~/cyberia-to/cyber
-optica serve ~/cyberia-to/cyber --open
+optica build ~/cyber/cyber
+optica serve ~/cyber/cyber --open
 ```
 
 Port 8888 (from `publish.toml` base_url). Port 8080 is reserved.
@@ -110,13 +110,13 @@ Reserve bash only for git commands and system tools that have no nu equivalent.
   for the last expression — intermediate tables need explicit `print`.
 ### Nushell script library (`analizer/`)
 
-All nushell scripts live in `~/git/cyber/analizer/`. Scripts are graph-agnostic:
+All nushell scripts live in `~/cyber/cyber/analizer/`. Scripts are graph-agnostic:
 they take the graph path as an argument via `def main [graph_path: string]`.
 
 Usage from any directory:
 ```
-nu ~/git/cyber/analizer/stats.nu ~/git/cloud-forest
-nu ~/git/cyber/analizer/analyze.nu ~/git/cyber
+nu ~/cyber/cyber/analizer/stats.nu ~/git/cloud-forest
+nu ~/cyber/cyber/analizer/analyze.nu ~/cyber/cyber
 ```
 
 Scripts:

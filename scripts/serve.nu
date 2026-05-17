@@ -25,7 +25,7 @@ def main [
     ({subgraphs: $subgraphs} | to toml) | save --force $config_path
 
     let optica_bin = if $optica == null {
-        $"($env.HOME)/cyberia-to/optica/target/release/optica"
+        $"($env.HOME)/cyber/optica/target/release/optica"
     } else {
         $optica
     }

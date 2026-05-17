@@ -1,7 +1,7 @@
 #!/usr/bin/env nu
 # dev.nu — one-step rebuild + restart for local dev.
 #
-# Run this after ANY change under ~/cyberia-to/optica (Rust source,
+# Run this after ANY change under ~/cyber/optica (Rust source,
 # templates/*.html, static/*.css|js|woff2). Optica's binary embeds
 # templates and static assets via include_str!, so editing the source
 # files alone has no effect on the running serve.
@@ -13,8 +13,8 @@
 def main [
     --port: int = 8888
 ] {
-    let optica_dir = $"($env.HOME)/cyberia-to/optica"
-    let workspace = $"($env.HOME)/cyberia-to/cyber"
+    let optica_dir = $"($env.HOME)/cyber/optica"
+    let workspace = $"($env.HOME)/cyber/cyber"
 
     print "▸ build"
     do {

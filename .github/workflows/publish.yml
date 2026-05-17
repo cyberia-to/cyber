@@ -23,21 +23,21 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout cyber into ~/cyberia-to/cyber
+      - name: Checkout cyber into ~/cyber/cyber
         uses: actions/checkout@v4
         with:
           path: cyber
-      - name: Move into ~/cyberia-to/
+      - name: Move into ~/cyber/
         run: |
-          mkdir -p "$HOME/cyberia-to"
-          mv cyber "$HOME/cyberia-to/cyber"
+          mkdir -p "$HOME/cyber"
+          mv cyber "$HOME/cyber/cyber"
 
       - name: Clone declared subgraphs
         env:
           GH_TOKEN: ${{ github.token }}
           ORG: cyberia-to
         run: |
-          cd "$HOME/cyberia-to/cyber"
+          cd "$HOME/cyber/cyber"
           for decl in subgraphs/*.md; do
             [ -f "$decl" ] || continue
             NAME=$(awk '/^name:/ {print $2; exit}' "$decl")
@@ -55,7 +55,7 @@ jobs:
             [ "$VISIBILITY" = "private" ] && continue
             [ "$REPO" = "cyber" ] && continue
 
-            TARGET="$HOME/cyberia-to/$REPO"
+            TARGET="$HOME/cyber/$REPO"
             if [ ! -d "$TARGET" ]; then
               git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/${ORG}/${REPO}.git" "$TARGET" \
                 || echo "skip ${REPO}: clone failed"
@@ -83,23 +83,23 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          rm -rf "$HOME/cyberia-to/optica"
-          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" "$HOME/cyberia-to/optica"
+          rm -rf "$HOME/cyber/optica"
+          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" "$HOME/cyber/optica"
           if [ -d /tmp/optica-target-cache ]; then
-            mv /tmp/optica-target-cache "$HOME/cyberia-to/optica/target"
+            mv /tmp/optica-target-cache "$HOME/cyber/optica/target"
           fi
-          cd "$HOME/cyberia-to/optica" && cargo build --release
-          cp -r "$HOME/cyberia-to/optica/target" /tmp/optica-target-cache
+          cd "$HOME/cyber/optica" && cargo build --release
+          cp -r "$HOME/cyber/optica/target" /tmp/optica-target-cache
 
       - name: Build site
         run: |
-          cd "$HOME/cyberia-to/cyber"
+          cd "$HOME/cyber/cyber"
           nu scripts/build.nu --public-only \
-            --optica "$HOME/cyberia-to/optica/target/release/optica" \
-            --output "$HOME/cyberia-to/cyber/build"
+            --optica "$HOME/cyber/optica/target/release/optica" \
+            --output "$HOME/cyber/cyber/build"
 
       - name: Add deploy files
-        run: touch "$HOME/cyberia-to/cyber/build/.nojekyll"
+        run: touch "$HOME/cyber/cyber/build/.nojekyll"
 
       - name: Deploy to Netlify
         env:
@@ -108,6 +108,6 @@ jobs:
         run: |
           npm install -g netlify-cli
           netlify deploy --prod \
-            --dir="$HOME/cyberia-to/cyber/build" \
+            --dir="$HOME/cyber/cyber/build" \
             --site="$NETLIFY_SITE_ID" \
             --auth="$NETLIFY_AUTH_TOKEN"

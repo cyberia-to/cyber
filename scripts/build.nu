@@ -8,7 +8,7 @@
 def main [
     --public-only          # exclude private + local-only subgraphs (for public deploys)
     --output: path         # override output directory
-    --optica: path         # path to optica binary (defaults to ~/cyberia-to/optica/target/release/optica)
+    --optica: path         # path to optica binary (defaults to ~/cyber/optica/target/release/optica)
 ] {
     let ws_root = (workspace-root)
     let ws = (open $"($ws_root)/workspace.toml")
@@ -32,13 +32,13 @@ def main [
     $toml_content | save --force $config_path
 
     let optica_bin = if $optica == null {
-        $"($env.HOME)/cyberia-to/optica/target/release/optica"
+        $"($env.HOME)/cyber/optica/target/release/optica"
     } else {
         $optica
     }
 
     if not ($optica_bin | path exists) {
-        error make {msg: $"optica binary not found at ($optica_bin). build it with: cd ($env.HOME)/cyberia-to/optica && cargo build --release"}
+        error make {msg: $"optica binary not found at ($optica_bin). build it with: cd ($env.HOME)/cyber/optica && cargo build --release"}
     }
 
     print $"root graph: ($root_graph)"

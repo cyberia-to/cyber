@@ -1,5 +1,5 @@
 #!/usr/bin/env nu
-# sync.nu — bootstrap a local cyberia-to workspace.
+# sync.nu — bootstrap a local cyber workspace.
 #
 # Reads cyber/subgraphs/*.md, clones every declared repo as a sibling
 # of cyber/ if missing, fetches if present. Run once after forking
