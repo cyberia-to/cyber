@@ -128,37 +128,89 @@ two families share the alphabet:
 | `!` | zap | n verb + args | action |
 | `.` | dot | n stages | pipeline |
 
-### computation digraphs (new, ordered by family)
+### computation digraphs — the two-axis grammar
 
-| family | sigil | name | arity | what it does |
-|--------|-------|------|-------|--------------|
-| core | `\|=` | bartis | 2 | dry gate — function |
-| core | `\|*` | bartar | 2 | wet gate — generic |
-| core | `\|-` | barhep | 1 | trap — recursion point |
-| core | `\|%` | barcen | 1 | door — multi-arm core |
-| core | `++` | luslus | 2 | arm definition |
-| bind | `=/` | tisfas | 3 | let binding |
-| bind | `=.` | tisdot | 3 | rebind subject slot |
-| bind | `=>` | tisgar | 2 | compose — evaluate right against left |
-| test | `?:` | wutcol | 3 | if-then-else |
-| test | `?-` | wuthep | 2 | switch by tag |
-| test | `?=` | wuttis | 2 | pattern match |
-| test | `?~` | wutsig | 3 | null test |
-| eval | `.*` | dottar | 2 | evaluate formula against subject |
-| eval | `.+` | dotlus | 1 | increment |
-| eval | `.^` | dotket | 2 | scry — read from graph |
-| cell | `:-` | colhep | 2 | cell pair |
-| cell | `:_` | colcab | 2 | flipped cell |
-| cell | `:+` | collus | 3 | triple |
-| cast | `^-` | kethep | 2 | cast to mold |
-| cast | `^+` | ketlus | 2 | cast to value's mold |
-| hint | `~&` | sigpam | 2 | trace |
-| hint | `~_` | sigcab | 2 | hint pair |
-| build | `/+` | faslus | 1 | import library |
-| build | `/-` | fashep | 1 | import types |
-| crash | `!!` | zapzap | 0 | crash |
+every digraph is `family × variant`. first character picks the semantic domain. second character picks the shape within that domain. this orthogonal structure is what makes the alphabet learnable as a grammar rather than memorized as a list
 
-every digraph carries a fixed arity. precedence disappears. tall and flat forms parse identically. categorization is regular — first character marks family. `?:` reads as "this is a test." `=/` reads as "this is a binding." visual structure mirrors semantic structure
+#### family axis (first character)
+
+| char | name | family |
+|------|------|--------|
+| `\|` | bar | core — gates, doors, traps |
+| `=` | tis | bind — let, compose, mutate |
+| `?` | wut | test — conditional, pattern match |
+| `:` | col | cell — tuple construction |
+| `^` | ket | cast — type ascription |
+| `.` | dot | eval — computation, evaluation |
+| `~` | sig | hint — trace, annotate |
+| `/` | fas | build — import, scope |
+| `+` | lus | arm — definition |
+| `!` | zap | crash — exceptional control flow |
+
+#### variant axis (second character)
+
+| char | name | shape within family |
+|------|------|---------------------|
+| `-` | hep | minimal — the bare, simple, degenerate form |
+| `=` | tis | explicit — with binding, with comparison |
+| `*` | tar | generic — wildcard, broadcast, polymorphic |
+| `+` | lus | augmented — more arguments, larger arity |
+| `/` | fas | structural — scoped, path-aware |
+| `.` | dot | composed — transform, pipeline |
+| `:` | col | paired — two-branch, two-way |
+| `>` | gar | flowing — sequential composition |
+| `~` | sig | null — absent, optional, empty |
+| `^` | ket | meta — abstract, lifted |
+| `&` | pam | combined — trace, accumulate |
+| `_` | cab | reversed — alternative, mirror |
+| `%` | cen | rich — multi-part, structured |
+| (doubled) | — | canonical — the prototype of the family |
+
+#### reading the digraphs
+
+| digraph | family × variant | what it makes | arity |
+|---------|------------------|---------------|-------|
+| `\|=` bartis | core × explicit | gate (with sample) | 2 |
+| `\|*` bartar | core × generic | wet gate | 2 |
+| `\|-` barhep | core × minimal | trap (no sample) | 1 |
+| `\|%` barcen | core × rich | door (multi-arm) | 1 |
+| `=/` tisfas | bind × structural | let binding | 3 |
+| `=.` tisdot | bind × composed | rebind subject slot | 3 |
+| `=>` tisgar | bind × flowing | compose right against left | 2 |
+| `?:` wutcol | test × paired | if-then-else | 3 |
+| `?-` wuthep | test × minimal | switch by tag | 2 |
+| `?=` wuttis | test × explicit | pattern match with binding | 2 |
+| `?~` wutsig | test × null | null test | 3 |
+| `:-` colhep | cell × minimal | pair | 2 |
+| `:+` collus | cell × augmented | triple | 3 |
+| `:_` colcab | cell × reversed | flipped pair | 2 |
+| `^-` kethep | cast × minimal | cast to explicit mold | 2 |
+| `^+` ketlus | cast × augmented | cast to value's mold | 2 |
+| `.*` dottar | eval × generic | evaluate formula against subject | 2 |
+| `.+` dotlus | eval × augmented | increment | 1 |
+| `.^` dotket | eval × meta | scry — read from graph | 2 |
+| `~&` sigpam | hint × combined | trace | 2 |
+| `~_` sigcab | hint × reversed | hint pair | 2 |
+| `/+` faslus | build × augmented | import library | 1 |
+| `/-` fashep | build × minimal | import types only | 1 |
+| `++` luslus | arm × canonical | arm definition | 2 |
+| `!!` zapzap | crash × canonical | crash | 0 |
+
+#### why two axes matter
+
+every digraph decomposes. you read `?-` as "test-minimal" and know it is the simplest test form — switch. you read `|*` as "core-generic" and know it is the generic core variant — wet gate. you read `.^` as "eval-meta" and know it is the lifted evaluation — scry over the graph layer
+
+learnability collapses. instead of memorizing 25 arbitrary digraphs you learn:
+
+- 10 family characters
+- 13 variant characters
+- one composition rule (family-then-variant)
+
+= 23 atoms and one rule. every digraph derives from this. new digraphs added in future kelvins must fit the grid — `?+` would mean "test-augmented" and would slot in if needed
+
+this is more orthogonal than [[hoon]]. hoon's original design has the family axis explicit but variant conventions only informal — sometimes followed, sometimes broken. a from-scratch design enforces both axes as strict invariants. no exceptions, no historical baggage
+
+every digraph carries a fixed arity. precedence disappears. tall and flat forms parse identically. visual structure mirrors semantic structure on both axes
 
 ### digraphs do not collide with cybermark sigils
 
