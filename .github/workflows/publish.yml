@@ -111,3 +111,10 @@ jobs:
             --dir="$HOME/cyber/cyber/build" \
             --site="$NETLIFY_SITE_ID" \
             --auth="$NETLIFY_AUTH_TOKEN"
+
+      - name: Trigger .github rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
+          repository: cyberia-to/.github
+          event-type: content-changed
