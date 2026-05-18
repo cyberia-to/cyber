@@ -588,63 +588,71 @@ the better answer for "faster interpretation": optimize the [[Nox]] interpreter 
 
 ### merging rune and trident into one language
 
-evaluated. rejected for now. see the next section
+not a merger — a superset relationship. [[trident]] is the substrate grammar. rune = [[trident]] grammar + three dynamic forms (hint, host, eval). separate tools, separate deployment contexts, one grammar lineage. see the next section
 
 ---
 
 ## relation to [[trident]] and [[Rs]]
 
-three languages, one back-end family. each has a distinct nature; they share infrastructure
+[[trident]] is the substrate. rune is [[trident]] extended. one grammar lineage, two tools, three roles
 
 | dimension | [[trident]] | rune | [[Rs]] |
 |-----------|-------------|------|--------|
 | primary purpose | provable consensus-critical code ([[semcons]], on-chain) | dynamic personal/agent code (kernels, scripts, UI) | native-speed jets, hot inner loops |
-| type system | field-typed, algebra-aware, fully static | mold-based, structural, dynamic options available | Rust-subset static |
+| type system | mold-based, algebra-aware, mandatory static enforcement | mold-based, structural, optional enforcement | Rust-subset static |
 | dynamism | none — total determinism | eval, hint, host as first-class | none |
 | provability | mandatory — every program produces a [[zheng]] proof | optional — pure subset proves; dynamic parts do not | reference + jet equivalence verified at compile time |
 | evaluation | AOT compiled to optimized .nox | interpret first, compile in background | AOT compiled to native, deployed as jet |
 | launch latency | slow (compile + prove) | instant (parse + lower + walk) | n/a — runs as called |
 | audience | protocol authors, semcon writers | agent developers, scripters, neuron operators | runtime engineers, performance specialists |
 
-these are genuinely different concerns. forcing them into one language compromises both — [[trident]] wants to stay small and stable, rune needs to keep adding dynamic features, [[Rs]] wants to stay Rust-subset for jet authoring
+[[trident]] is the grammar foundation — self-contained, auditable without rune. rune's grammar is [[trident]]'s grammar plus hint, host, and eval. same type representation (molds in both), different enforcement obligation. same [[Nox]] target. different execution contract and deployment context
 
-shared infrastructure, separate languages:
+the execution models are genuinely different and justify two separate tools:
+- [[trident]]: compiler + prover — source never runs without a proof
+- rune: interpreter first, compiler optional — instant start is the contract
 
-- both rune and [[trident]] target [[Nox]] as bytecode
-- both compile through TIR — rune defaults to interpretation but takes the TIR path when compiled; [[trident]] always takes the compile path
+one grammar lineage, two tools:
+
+- rune grammar = [[trident]] grammar + three dynamic forms (hint, host, eval)
+- [[trident]] is self-contained; rune depends on [[trident]]'s grammar spec, not its toolchain
+- both target [[Nox]] as bytecode
+- both compile through TIR — [[trident]] always; rune when taking the compile path
 - both benefit from the neural optimizer
 - both use [[Rs]] jets for native-speed primitives
 - both reference [[particles]] in the [[cybergraph]] directly
-- both follow Kelvin discipline for spec stability
+- [[trident]] freezes first; rune's pure grammar freezes with it; the dynamic extension layer has its own Kelvin
 
-unification is at the IR and VM level, not at the language level. two front-ends, one back-end family. [[trident]] keeps its small frozen spec; rune evolves; neither blocks the other
+### why [[trident]] stays dynamic-free
 
-### why not merge
+[[trident]]'s proof-mandatory guarantee requires total determinism. the three rune extensions break this:
 
-even if rune-pure starts to resemble [[trident]], keeping them separate serves:
+- hint: execution parks until an external event arrives — non-deterministic timing
+- host: escapes to WASM/wGPU/ONNX — result is an asserted witness, not a proof
+- eval: evaluates dynamically-constructed formulas — proof depends on runtime content
 
-- [[trident]]'s Kelvin freeze depends on its scope staying narrow. if they share a spec, [[trident]] cannot freeze while rune keeps evolving
-- the abstraction barrier between "code I run locally" and "code I deploy to consensus" is healthy — different review standards, different audiences, different threat models
-- cost of two front-ends is small (parsing is cheap); cost of one bloated language is permanent
-- a focused language with clear constraints (trident) and a flexible language with optional discipline (rune) serve their audiences better than one language trying to be both
+adding any of these to [[trident]] forces proof obligations to become conditional. [[trident]]'s Kelvin discipline depends on its scope being narrow and total. the dynamic forms live in rune's extension layer exactly so [[trident]] never has to touch them
 
-if convergence ever happens, it happens at the shared infrastructure level — TIR opcodes, jet protocols, [[Nox]] patterns — never at the surface level
+the tool boundary enforces the separation: a trident binary rejects hint/host/eval at the checker level. a rune binary accepts them but marks those regions as unproven. pure rune code — no dynamic forms — is [[trident]]-compatible and can be verified by the trident checker
 
 ---
 
 ## Kelvin discipline
 
-`rune-core` (AST + Nox lowering) is Kelvin-versioned. starts at K140. decreases over time. each decrement is a sealed spec — code written against K100 runs identically against K90
+[[trident]]'s grammar is the Kelvin-versioned substrate shared by both tools. starts at K140. rune inherits this Kelvin for its pure subset. rune's dynamic extension layer (hint, host, eval) carries its own Kelvin number and can evolve independently above the frozen core
 
 ```
-rune K140    :: working spec, mutations expected
-rune K50     :: production spec, narrow corrections only
-rune K0      :: frozen forever, the planetary commitment
+trident  K140    :: working spec, mutations expected
+trident  K50     :: production spec, narrow corrections only
+trident  K0      :: frozen forever — the planetary commitment
+
+rune-core K0     :: inherits trident freeze — pure rune is frozen when trident is
+rune-dyn  K140   :: dynamic extension layer — evolves above the frozen core
 ```
 
-at K0 the language is the protocol. no syntax additions, no behavior changes, no breakage. programs written today run unchanged for as long as anyone runs a [[Nox]] interpreter
+at trident K0 the pure grammar is the protocol. programs using only pure forms run unchanged for as long as anyone runs a [[Nox]] interpreter. programs using dynamic forms depend additionally on the dynamic layer's Kelvin
 
-surface registers can evolve at higher kelvins. adding a syntactic spelling does not change the AST, the lowering, or the [[Nox]] noun. the core is what freezes
+surface registers (classic vs pure spelling) can evolve at higher kelvins — adding a syntactic spelling changes neither the AST nor the [[Nox]] noun. the core is what freezes
 
 ---
 
