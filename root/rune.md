@@ -111,43 +111,11 @@ the dot is the same dot. addresses ARE computations against the subject. this is
 
 ---
 
-## sigil grammar
+## computation digraphs
 
-two families share the alphabet:
+the sigil alphabet, inline computation, and address grammar are defined in [[cybermark]]. digraphs compose two characters: the first character (family) carries the atomic semantic from the [[cybermark]] unified alphabet; the second character (variant) determines the shape within that family
 
-### address sigils (cybermark, unchanged)
-
-| sigil | name | arity | family |
-|-------|------|-------|--------|
-| `#` | hax | 1 path or hash | particle |
-| `@` | pat | 1 name or hash | neuron |
-| `~` | sig | 1 name | alias |
-| `/` | fas | n segments | scope |
-| `$` | buc | 1 symbol | token |
-| `^` | ket | 1 concept | abstract |
-| `!` | zap | n verb + args | action |
-| `.` | dot | n stages | pipeline |
-
-### computation digraphs — the two-axis grammar
-
-every digraph is `family × variant`. first character picks the semantic domain. second character picks the shape within that domain. this orthogonal structure is what makes the alphabet learnable as a grammar rather than memorized as a list
-
-#### family axis (first character)
-
-| char | name | family |
-|------|------|--------|
-| `\|` | bar | core — gates, doors, traps |
-| `=` | tis | bind — let, compose, mutate |
-| `?` | wut | test — conditional, pattern match |
-| `:` | col | cell — tuple construction |
-| `^` | ket | cast — type ascription |
-| `.` | dot | eval — computation, evaluation |
-| `~` | sig | hint — trace, annotate |
-| `/` | fas | build — import, scope |
-| `+` | lus | arm — definition |
-| `!` | zap | crash — exceptional control flow |
-
-#### variant axis (second character)
+### variant axis (second character)
 
 | char | name | shape within family |
 |------|------|---------------------|
@@ -166,31 +134,7 @@ every digraph is `family × variant`. first character picks the semantic domain.
 | `%` | cen | rich — multi-part, structured |
 | (doubled) | — | canonical — the prototype of the family |
 
-#### the unified alphabet
-
-family axis (first character of digraph) overlaps with cybermark sigils — `~`, `^`, `/`, `.`, `!` appear in both. that overlap is the deepest structural claim of the language: each character carries one atomic semantic that applies in both noun position ([[cybermark]] address) and verb position (digraph family). position determines syntactic role; meaning is invariant
-
-| char | atomic semantic | as [[cybermark]] noun | as digraph family |
-|------|-----------------|------------------------|--------------------|
-| `~` | annotation, label, side-info | `~truth` labels a [[particle]] | hint family — `~&` traces a value |
-| `^` | lift, abstract, establish-as | `^truth` lifts to root concept | cast family — `^-` lifts value to mold |
-| `/` | scope, contain, structure | `cyber/truth` scopes a name | build family — `/+` brings library into scope |
-| `.` | transform, compute, apply | `.rank` pipes through transform | eval family — `.*` evaluates formula |
-| `!` | effect, imperative intervention | `!rank(p)` invokes action | crash family — `!!` is exceptional intervention |
-| `#` | content, particle identity | particle | (unused as digraph family) |
-| `@` | identity, agent | neuron | (unused as digraph family) |
-| `$` | economic, value-bearing | token | (unused as digraph family) |
-| `\|` | composition, code-with-data | (unused in cybermark) | core family — gates, doors, traps |
-| `=` | binding, equivalence | (unused in cybermark) | bind family — let, compose, mutate |
-| `?` | test, decision | (unused in cybermark) | test family — match, branch |
-| `:` | pair, two-way | (unused in cybermark) | cell family — tuples |
-| `+` | augment, plus | (unused in cybermark) | arm family — definitions |
-
-the alphabet has 13 atomic characters. [[cybermark]] uses 8 in noun position. digraphs use 10 in verb position. five overlap because they should — the atomic semantic transfers across positions without distortion
-
-new sigils added in future kelvins must commit to one atomic semantic. a hypothetical `&` cybermark sigil and a `&`-family digraph would have to share meaning, or one of them does not get added
-
-#### reading the digraphs
+### the 25 digraphs
 
 | digraph | family × variant | what it makes | arity |
 |---------|------------------|---------------|-------|
@@ -220,52 +164,25 @@ new sigils added in future kelvins must commit to one atomic semantic. a hypothe
 | `++` luslus | arm × canonical | arm definition | 2 |
 | `!!` zapzap | crash × canonical | crash | 0 |
 
-#### why two axes matter
+### why two axes matter
 
-every digraph decomposes. you read `?-` as "test-minimal" and know it is the simplest test form — switch. you read `|*` as "core-generic" and know it is the generic core variant — wet gate. you read `.^` as "eval-meta" and know it is the lifted evaluation — scry over the graph layer
+every digraph decomposes. `?-` = test-minimal = the simplest test form (switch). `|*` = core-generic = wet gate. `.^` = eval-meta = scry over the graph layer
 
-learnability collapses. instead of memorizing 25 arbitrary digraphs you learn:
+instead of memorizing 25 arbitrary digraphs you learn 10 family characters + 13 variant characters + one composition rule. every digraph derives from this. new digraphs added in future kelvins must fit the grid — `?+` would mean "test-augmented" and slots in cleanly
 
-- 10 family characters
-- 13 variant characters
-- one composition rule (family-then-variant)
-
-= 23 atoms and one rule. every digraph derives from this. new digraphs added in future kelvins must fit the grid — `?+` would mean "test-augmented" and would slot in if needed
-
-this is more orthogonal than [[hoon]]. hoon's original design has the family axis explicit but variant conventions only informal — sometimes followed, sometimes broken. a from-scratch design enforces both axes as strict invariants. no exceptions, no historical baggage
-
-every digraph carries a fixed arity. precedence disappears. tall and flat forms parse identically. visual structure mirrors semantic structure on both axes
+every digraph carries a fixed arity. precedence disappears. tall and flat forms parse identically
 
 ### digraphs do not collide with cybermark sigils
 
-cybermark sigils stand alone — `#name`, `@alice`, `~truth`. they prefix a noun
+cybermark sigils stand alone — `#name`, `@alice`, `~truth` — single symbol followed by a name or path
 
-computation digraphs are exactly two ASCII symbols with no whitespace between — `|=`, `?:`, `=/`. they prefix code
-
-the parser distinguishes by structure: digraph = two-symbol prefix; cybermark = single-symbol prefix followed by name or path. zero ambiguity, small parser
-
-### pronounceable
-
-every ASCII symbol carries a one-syllable name. `bar`, `wut`, `tis`, `col`, `lus`, `dot`, `sig`, `zap`, `ket`, `fas`, `tar`, `hep`, `hax`, `pat`, `buc`, `pam`, `cab`. every digraph reads as two syllables. `bartis`, `wutcol`, `tisfas`, `dottar`. pair programming over voice works. teaching out loud works. search-by-name works
+digraphs are exactly two symbols with no whitespace — `|=`, `?:`, `=/` — followed by code. the parser distinguishes by structure. zero ambiguity, small parser
 
 ---
 
-## cybermark — embeddable address layer
+## cybermark — the address layer
 
-[[cybermark]] is a standalone micro-syntax. eight sigils, a small parser, no runtime required for address resolution. embeddable in any text context — the semantic web's typed, content-addressed, composable addressing scheme
-
-| sigil | name | addresses | example |
-|-------|------|-----------|---------|
-| `#` | hax | particle — by path or hash | `#cyber/truth`, `#QmXyz...` |
-| `@` | pat | neuron — by name or hash | `@alice.cyber` |
-| `~` | sig | alias — named concept | `~truth`, `~causation` |
-| `/` | fas | scope — path segment | `/cyber/root/concept` |
-| `$` | buc | token — economic value | `$CYB`, `$TOCYB` |
-| `^` | ket | concept — abstract | `^truth`, `^causation` |
-| `!` | zap | action — effect | `!rank(p)`, `!cyberlink(a,b,w)` |
-| `.` | dot | pipeline — transform | `.rank`, `.normalize` |
-
-any app adds cybermark support by embedding the parser. addresses are inert text in contexts that do not parse them — graceful degradation. the same `#cyber/truth` in a markdown page, a rune program, a trident proof, or an Rs jet signature carries one meaning
+the sigil alphabet is defined in [[cybermark]]. the same `#cyber/truth` in a markdown page, a rune program, a trident proof, or an Rs jet signature carries one meaning. address grammar, inline computation (`sigil[expr]`), and reactive documents are all specified in [[cybermark]]
 
 embedding model — each layer adds exactly one thing:
 
@@ -280,35 +197,6 @@ trident       proven subset — consensus-critical, frozen
     ↓  types
 Rs            @nebu, #, @neuron as jet argument type annotations
 ```
-
-the parser is the only dependency. the [[cybergraph]] is the resolution context — optional at parse time, required at runtime for live addresses
-
----
-
-## inline computation — living documents
-
-[[cybermark]] addresses name things. inline computation extends them: `sigil[expr]` evaluates a rune expression and embeds the result in the document. the bracket switches a sigil from address-mode to evaluation-mode
-
-| form | what it produces | example |
-|------|-----------------|---------|
-| `#[expr]` | inline eval → particle | `top concept: #[first (ranked ~world)]` |
-| `@[expr]` | inline eval → neuron | `most connected: @[most-linked ~world]` |
-| `~[expr]` | inline annotation with computed value | `entropy: ~[entropy ~world]` |
-| `.[expr\|step\|step]` | inline pipeline result | `rank: .[#cyber/truth \| rank \| pct]` |
-| `?[cond true false]` | inline conditional text | `market is ?[gth .price .threshold "bull" "bear"]` |
-| `=[name val]` | bind into document scope | `=[threshold 0.7]` — use `~threshold` later |
-| `$[amount token]` | inline token expression | `fee: $[current-fee CYB]` |
-| `\|[gate args]` | inline gate application | `result: \|[double 42]` |
-
-contrast with block rune: `sigil[expr]` is inline — one expression, result embedded in text flow. digraph followed by a code block is block-level computation
-
-### reactive documents
-
-a page that mentions `#cyber/truth` inline subscribes to that particle. when the particle changes in the [[cybergraph]], the inline expressions depending on it re-evaluate. the page stays current without any user action
-
-this is Jupyter's "re-run all cells" — except automatic, fine-grained, and tracked at the particle dependency level. the page's subject includes `~world` (the local cybergraph slice), so every inline expression runs against live graph state
-
-every inline result IS a particle. the page itself IS a particle. computation is not separate from content — computation IS content
 
 ---
 

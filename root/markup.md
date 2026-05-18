@@ -10,7 +10,7 @@ crystal-size: article
 
 a markup language for the [[cybergraph]]. text-based, human-readable, graph-native. built on the principle that all [[knowledge]] is [[particles]] connected by [[cyberlinks]] — cybermark is how you write, address, and navigate that structure
 
-cybermark is the address language that sits above the fourteen [[cyb/languages|computation languages]]. it does not compute — it names, links, and navigates. every address in cybermark resolves to a [[particle]]. every connection is a [[cyberlink]]. the markup is the graph
+cybermark is the address and inline-computation language that sits above the fourteen [[cyb/languages|computation languages]]. it names, navigates, and computes inline. every address in cybermark resolves to a [[particle]]. every connection is a [[cyberlink]]. the markup is the graph
 
 ---
 
@@ -18,7 +18,7 @@ cybermark is the address language that sits above the fourteen [[cyb/languages|c
 
 ### everything is a [[particle]]
 
-a [[particle]] is the atomic unit — any text-based thing with a content address ([[Hemera|CID]]). [[particles]] have no inherent type or location. meaning comes from:
+a [[particle]] is the atomic unit — any text-based thing with a [[Hemera|hemera hash]]. [[particles]] have no inherent type or location. meaning comes from:
 
 1. [[cyberlinks]] — directed edges connecting [[particles]]
 2. path — where the [[particle]] lives in a domain tree
@@ -31,28 +31,47 @@ all structure — hierarchy, naming, typing, ownership — is expressed as [[cyb
 
 ---
 
-## sigil grammar
+## the unified alphabet
 
-eight sigils form the complete address space:
+thirteen characters, one atomic semantic each. position determines syntactic role — meaning is invariant across positions
 
-| sigil | name | meaning | type |
-|-------|------|---------|------|
-| `#` | [[particle]] | content node, CID or path | noun |
-| `@` | [[neuron]] | agent, avatar, identity | noun |
-| `~` | name | human alias layer | relation |
-| `/` | scope | path containment | location |
-| `$` | [[token]] | economic unit | noun |
-| `^` | root | abstract / generalize | operator |
-| `!` | action | execution, verb | verb |
-| `.` | pipeline | process-with, transform | operator |
+| sigil | name | atomic semantic | address form | inline computation | [[rune]] digraph family |
+|-------|------|-----------------|--------------|-------------------|------------------------|
+| `#` | hax | content, particle identity | `#path` or `#hash` | `#[expr]` → particle | — |
+| `@` | pat | identity, agent | `@neuron` | `@[expr]` → neuron | — |
+| `~` | sig | annotation, label, side-info | `~alias` | `~[expr]` annotated value | hint |
+| `/` | fas | scope, contain, structure | `/path/segment` | path literal | build |
+| `$` | buc | economic, value-bearing | `$token` | `$[amount token]` | — |
+| `^` | ket | lift, abstract, establish-as | `^concept` | `^[mold expr]` | cast |
+| `!` | zap | effect, imperative | `!action(args)` | reactive subscription | crash |
+| `.` | dot | transform, apply | `.step` | `.[expr\|step\|step]` | eval |
+| `\|` | bar | composition, code-with-data | — | `\|[gate args]` | core |
+| `=` | tis | binding, equivalence | — | `=[name val]` | bind |
+| `?` | wut | test, decision | — | `?[cond true false]` | test |
+| `:` | col | pair, two-way | `a:b` chaining | `:[a b]` pair | cell |
+| `+` | lus | augment, plus | `+1` weight modifier | `+[n]` augment | arm |
+
+eight sigils have address forms (`#`, `@`, `~`, `/`, `$`, `^`, `!`, `.`). all thirteen have inline computation forms. ten are [[rune]] digraph families. five overlap address and digraph (`~`, `/`, `^`, `!`, `.`) — the atomic semantic is the same in both positions
+
+### two positions, one meaning
+
+address form — single sigil prefix followed by a name, path, or hash. no brackets. static: names things in the [[cybergraph]]
+
+inline computation form — single sigil followed by `[expression]`. the bracket switches from address mode to evaluation mode. evaluates a [[rune]] expression and embeds the result in the document
+
+block computation — [[rune]] digraphs use the sigil as the semantic family (first character). see [[rune]] for the full digraph grammar
 
 ### combinators
 
-| combinator | meaning |
-|-----------|---------|
+| form | meaning |
+|------|---------|
 | `*` | wildcard — all instances matching pattern |
-| `\|` | display alias in wikilink |
 | `~/` | home — personal namespace root |
+| `../` | parent scope |
+
+### pronounceable names
+
+every sigil has a one-syllable name: `hax` `pat` `sig` `fas` `buc` `ket` `zap` `dot` `bar` `tis` `wut` `col` `lus`
 
 ---
 
@@ -87,7 +106,7 @@ anywhere inside text, `#` is a link to another [[particle]]:
 the concept of #truth is central to #cyber/rank
 ```
 
-`#QmXyz...` — reference by [[Hemera|CID]] (immutable, content-addressed)
+`#QmXyz...` — reference by hash (immutable, content-addressed)
 `#cyber/truth` — reference by path (mutable, human-navigable)
 
 both resolve to the same [[particle]] if the name mapping exists
@@ -126,7 +145,7 @@ reads as: `market` scoped under `truth` scoped under `cyber`. the path is semant
 ```
 
 name is separate from path. the same [[particle]] can have:
-- a CID (`#QmXyz...`)
+- a hash (`#QmXyz...`)
 - a path (`cyber/truth/market`)
 - a name (`~market`)
 
@@ -187,6 +206,29 @@ pipeline is composable:
 ```
 cyber/truth/market.render.graph    scope → type → render → visualize
 ```
+
+---
+
+## inline computation — living documents
+
+`sigil[expr]` evaluates a [[rune]] expression and embeds the result in the document. the bracket switches any sigil from address mode to evaluation mode
+
+| form | produces | example |
+|------|----------|---------|
+| `#[expr]` | particle | `top concept: #[first (ranked ~world)]` |
+| `@[expr]` | neuron | `most connected: @[most-linked ~world]` |
+| `~[expr]` | annotated value | `entropy: ~[entropy ~world]` |
+| `.[expr\|step\|step]` | pipeline result | `rank: .[#cyber/truth \| rank \| pct]` |
+| `?[cond true false]` | conditional text | `market is ?[gth .price .threshold "bull" "bear"]` |
+| `=[name val]` | binds into document scope | `=[threshold 0.7]` — `~threshold` usable thereafter |
+| `$[amount token]` | token expression | `fee: $[current-fee CYB]` |
+| `\|[gate args]` | gate application result | `doubled: \|[double 42]` |
+
+expressions run against the page's [[rune]] subject — `~world` is the local [[cybergraph]] slice, `~self` is the authoring [[neuron]], `~now` is the current time. every inline result IS a [[particle]]. the page itself IS a [[particle]]
+
+### reactive documents
+
+a page mentioning `#cyber/truth` subscribes to that particle. when it changes in the [[cybergraph]], inline expressions depending on it re-evaluate automatically. this is Jupyter's "re-run all cells" — except fine-grained, dependency-tracked at the particle level, and without a run step
 
 ---
 
@@ -296,6 +338,7 @@ this is itself a set of [[cyberlinks]] — the front-matter is not metadata sepa
 ## grammar summary
 
 ```
+:: address forms
 particle        #QmXyz | #path/to/concept
 neuron          @alice | @QmNeuron
 name            ~concept | ~/@alice/concept
@@ -308,6 +351,16 @@ wildcard        */name | domain/* | domain/*/name
 parent          ../concept
 wikilink        [[target|display]]
 header          # name (block) → declares particle + depth
+
+:: inline computation forms  (sigil[rune-expr])
+#[expr]         evaluate → particle
+@[expr]         evaluate → neuron
+~[expr]         evaluate → annotated value
+.[expr|steps]   evaluate → pipeline result
+?[c t f]        conditional text
+=[name val]     bind name into document scope
+$[amt tok]      inline token expression
+|[gate args]    inline gate application
 ```
 
 every address in cybermark resolves to a [[particle]]. every [[particle]] is content-addressed. every connection is a [[cyberlink]]. the markup is the graph
@@ -316,15 +369,17 @@ every address in cybermark resolves to a [[particle]]. every [[particle]] is con
 
 ## relation to [[cyb/languages]]
 
-cybermark is the address and navigation language — the fifteenth layer that wraps the fourteen [[cyb/languages|computation languages]]. it does not compute. it names, scopes, and connects
+cybermark is the address and inline-computation language — the shared vocabulary embedded in every layer of the [[cyber]] stack
 
-| Layer | What | Example |
-|-------|------|---------|
-| [[cyb/languages]] (14) | computation | [[Tri]] computes field arithmetic, [[Arc]] stores graph structure |
-| cybermark | addressing | `#cyber/truth` names a [[particle]], `!rank(^truth)` invokes computation |
-| [[rune]] | nervous system | [[Rs]] + [[Nox]] hints + host jets — runtime that executes cybermark actions |
+| layer | what | cybermark role |
+|-------|------|---------------|
+| [[cyb/languages]] (14) | computation | cybermark addresses their inputs and outputs |
+| [[rune]] | language | extends cybermark — adds digraph computation grammar on top of the sigil alphabet |
+| [[trident]] | proven subset of rune | uses cybermark sigils as type annotations and graph references |
+| [[Rs]] | native jets | uses cybermark mold annotations (`@nebu`, `#`, `@neuron`) in jet signatures |
+| any text | prose, email, config | cybermark is embeddable anywhere — parser is the only dependency |
 
-cybermark addresses what [[rune]] executes and what the fourteen languages compute
+the sigil alphabet defined here IS the shared vocabulary. [[rune]] adds the block computation grammar (digraphs). everything else resolves addresses against the [[cybergraph]]
 
 ---
 
