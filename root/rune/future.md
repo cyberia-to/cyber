@@ -7,7 +7,7 @@ crystal-size: deep
 ---
 # rune/future
 
-what [[rune]] becomes when it absorbs the three correct ideas: [[hoon]]'s subject-oriented evaluation, [[Rs]]'s human-readable surface, [[cybermark]]'s sigil-based address layer. one [[language]] with one model, two syntactic registers — classic (familiar) and pure (alien) — sharing one AST that lowers directly to [[Nox]]. provable by construction in its pure subset. dynamic, async, host-capable where the program crosses the [[proof]] boundary. ms-launch by design
+what [[rune]] becomes when it absorbs the three correct ideas: [[hoon]]'s subject-oriented evaluation, [[Rs]]'s human-readable surface, [[cybermark]]'s sigil-based address layer. one [[language]] with one model, two syntactic registers — classic (familiar) and pure (alien) — sharing one AST that lowers directly to [[Nox]]. provable by construction in its pure subset. dynamic, async, host-capable where the program crosses the [[proof]] boundary. instant start by design
 
 this page is the design vision and architecture plan. the principles are stable; specific spellings may shift as the implementation lands
 
@@ -43,7 +43,7 @@ what [[rune]] today gets right: a familiar surface running on [[Nox]]
 | `hint` for async | explicit yield/resume tied to [[cybergraph]] events |
 | `host()` for FFI | clear boundary to WASM, wGPU, ONNX |
 | `eval()` ergonomic form | syntax sugar over `.*` for everyday code |
-| millisecond start | tree construction stands in for compilation |
+| instant start | tree construction stands in for compilation — no build phase between source and run |
 | three jet categories | pure (proven), host (practical), hint (async) |
 
 ### from [[cybermark]] — the address layer
@@ -165,6 +165,30 @@ every digraph is `family × variant`. first character picks the semantic domain.
 | `_` | cab | reversed — alternative, mirror |
 | `%` | cen | rich — multi-part, structured |
 | (doubled) | — | canonical — the prototype of the family |
+
+#### the unified alphabet
+
+family axis (first character of digraph) overlaps with cybermark sigils — `~`, `^`, `/`, `.`, `!` appear in both. that overlap is the deepest structural claim of the language: each character carries one atomic semantic that applies in both noun position ([[cybermark]] address) and verb position (digraph family). position determines syntactic role; meaning is invariant
+
+| char | atomic semantic | as [[cybermark]] noun | as digraph family |
+|------|-----------------|------------------------|--------------------|
+| `~` | annotation, label, side-info | `~truth` labels a [[particle]] | hint family — `~&` traces a value |
+| `^` | lift, abstract, establish-as | `^truth` lifts to root concept | cast family — `^-` lifts value to mold |
+| `/` | scope, contain, structure | `cyber/truth` scopes a name | build family — `/+` brings library into scope |
+| `.` | transform, compute, apply | `.rank` pipes through transform | eval family — `.*` evaluates formula |
+| `!` | effect, imperative intervention | `!rank(p)` invokes action | crash family — `!!` is exceptional intervention |
+| `#` | content, particle identity | particle CID | (unused as digraph family) |
+| `@` | identity, agent | neuron | (unused as digraph family) |
+| `$` | economic, value-bearing | token | (unused as digraph family) |
+| `\|` | composition, code-with-data | (unused in cybermark) | core family — gates, doors, traps |
+| `=` | binding, equivalence | (unused in cybermark) | bind family — let, compose, mutate |
+| `?` | test, decision | (unused in cybermark) | test family — match, branch |
+| `:` | pair, two-way | (unused in cybermark) | cell family — tuples |
+| `+` | augment, plus | (unused in cybermark) | arm family — definitions |
+
+the alphabet has 13 atomic characters. [[cybermark]] uses 8 in noun position. digraphs use 10 in verb position. five overlap because they should — the atomic semantic transfers across positions without distortion
+
+new sigils added in future kelvins must commit to one atomic semantic. a hypothetical `&` cybermark sigil and a `&`-family digraph would have to share meaning, or one of them does not get added
 
 #### reading the digraphs
 
@@ -409,11 +433,11 @@ agents stored as [[particles]]. loaded by address. evaluated against a subject t
 
 ---
 
-## ms-launch — the load-bearing property
+## instant start — the load-bearing property
 
-[[rune]]'s ms-launch is the genus, not an incidental optimization. parse Rs syntax → [[Nox]] noun → tree-walk. zero compilation step. tree construction stands in for compilation. the whole pipeline runs in milliseconds
+between source becoming available and execution starting, only parsing happens. parse → [[Nox]] noun → tree-walk reduction begins immediately. there is no compilation phase, no bytecode generation, no static analysis pass between source and run. the latency budget is bounded by parsing time alone — milliseconds for any human-scale program. the runtime can begin reducing while the rest of source is still streaming in
 
-this is what makes [[rune]] useful for:
+instant start is the genus of [[rune]], not an incidental optimization. it is what makes [[rune]] useful for:
 
 - REPL-style interaction with the [[cybergraph]]
 - agent kernels reacting to events with low latency
@@ -422,7 +446,7 @@ this is what makes [[rune]] useful for:
 - [[semcons]] evaluated on demand
 - the [[cyb/robot]] starting up and being responsive immediately
 
-losing ms-launch loses the wedge that distinguishes [[cyber]] from Solidity-on-EVM, where every dApp needs an off-chain build step and a deployment ceremony. preserving ms-launch is non-negotiable. every architectural decision in this section is checked against the question "does this preserve the ability to run the program now, right now, this millisecond"
+losing instant start loses the wedge that distinguishes [[cyber]] from Solidity-on-EVM, where every dApp needs an off-chain build step and a deployment ceremony before execution. preserving instant start is non-negotiable. every architectural decision is checked against one question: does this preserve the ability to run the program the moment its source becomes available, with no phase between
 
 ---
 
@@ -456,7 +480,7 @@ shared AST (rune-core)
      ├──────────────────────────┐
      ▼                          ▼
 tree-walking interpreter    compile pipeline
-(default, ms-launch)        ([[Nox]] → TIR → optimized TASM)
+(default, instant start)        ([[Nox]] → TIR → optimized TASM)
      │                          │
      │                     neural optimizer
      │                     (extended for hint/host/eval)
@@ -472,7 +496,7 @@ tree-walking interpreter    compile pipeline
 + cybergraph cache (compiled artifacts as particles)
 ```
 
-three subsystems, each preserves ms-launch when invoked at the right time
+three subsystems, each preserves instant start when invoked at the right time
 
 ### front-end (shared)
 
@@ -480,17 +504,17 @@ one parser per register, both producing the same AST. AST lowers to a [[Nox]] no
 
 the AST is itself a noun. the AST IS a [[particle]]. programs and their parses are both addressable by [[cybermark]]
 
-### interpreter back-end (the ms-launch path)
+### interpreter back-end (the instant start path)
 
 rune evaluates directly into [[Nox]] tree rewriting. there is no separate rune VM. the original rune-VM concept dissolves — [[Nox]] is the VM, rune is one of its surfaces
 
 direct [[Nox]] interpretation gives:
-- ms-launch by construction (no intermediate VM to spin up)
+- instant start by construction (no intermediate VM to spin up)
 - noun representation preserved (cybergraph integration trivial — every value is a particle)
 - proof story preserved (every pure trace is provable by [[zheng]])
 - one VM to optimize, one VM to maintain, one VM to verify
 
-optimizations that keep the interpreter fast without losing ms-launch:
+optimizations that keep the interpreter fast without losing instant start:
 
 - inline caches: arm lookups, slot accesses, mold dispatches cached per call site after first execution
 - jet substitution: matching [[Nox]] subtrees swap to native [[Rs]] jets at runtime
@@ -498,7 +522,7 @@ optimizations that keep the interpreter fast without losing ms-launch:
 - pre-flattening: cons-list `[1 2 3 nil]` exposes as an array view for sequential access
 - escape analysis: short-lived intermediate nouns can live on a stack rather than the heap
 
-these are runtime tricks. none requires a compilation phase. ms-launch preserved at every step
+these are runtime tricks. none requires a compilation phase. instant start preserved at every step
 
 ### compiler back-end (the steady-state path)
 
@@ -556,7 +580,7 @@ a hypothetical traditional bytecode VM, JVM-shaped, optimized purely for interpr
 - loses provability for everything that goes through it — exactly what [[cyber]]'s architecture refuses
 - fragments tooling — debugger, profiler, formatter, type checker all have to handle two VMs
 
-the better answer for "faster interpretation": optimize the [[Nox]] interpreter (inline caches, jet substitution, slot caching). these keep ms-launch and noun-shape while closing most of the speed gap
+the better answer for "faster interpretation": optimize the [[Nox]] interpreter (inline caches, jet substitution, slot caching). these keep instant start and noun-shape while closing most of the speed gap
 
 ### keeping the original "rune VM" concept
 
@@ -663,7 +687,7 @@ walking from where [[rune]] is today ([[Rs]] syntax over [[Nox]] with hint/host/
 | phase | what lands | what stays preserved |
 |-------|------------|----------------------|
 | 1 — unified front-end | parser for classic register over a shared AST that lowers directly to [[Nox]] noun | existing rune programs run unchanged |
-| 2 — interpreter optimizations | inline caches, jet substitution, slot caching, pre-flattening — purely runtime improvements | ms-launch; no compilation phase introduced |
+| 2 — interpreter optimizations | inline caches, jet substitution, slot caching, pre-flattening — purely runtime improvements | instant start; no compilation phase introduced |
 | 3 — subject formalization | `~self`, `~here`, `~mem`, `~world` as accessible subject slots | existing rune code unchanged; subject hidden by default |
 | 4 — pure register | full sigil grammar via fenced block or `.rune-pure` file | classic still parses; pure is opt-in per particle |
 | 5 — TIR extensions | three new TIR opcodes (hint, host, eval), neural optimizer retrained to respect them | trident pipeline unchanged for its own programs |
@@ -673,7 +697,7 @@ walking from where [[rune]] is today ([[Rs]] syntax over [[Nox]] with hint/host/
 | 9 — lazy proof generation | [[zheng]] proofs produced on demand for compiled pure regions, cached by trace CID | proof-free execution remains the fast path |
 | 10 — Kelvin freeze | declare `rune-core` stable at some Kelvin number | surface registers can still evolve above the freeze |
 
-each phase keeps earlier-phase code running. nothing forces movement. ms-launch is checked at every step
+each phase keeps earlier-phase code running. nothing forces movement. instant start is checked at every step
 
 ---
 
@@ -718,7 +742,7 @@ these started as open questions and have answers
 | jet invalidation | jet identity is a particle CID. jet upgrade produces a new CID. compiled artifacts referencing the old CID stay pointing at the old jet; new compilations use the new CID. no global invalidation event needed |
 | proof generation timing | lazy. proofs produced on demand for compiled pure regions, cached by trace CID, reusable across [[neurons]] |
 | trident/rune merger | not for now. separate languages, shared back-end. trident stays small and frozen; rune evolves |
-| separate stack VM | rejected. direct [[Nox]] interpretation preserves ms-launch, noun representation, provability, tooling unity |
+| separate stack VM | rejected. direct [[Nox]] interpretation preserves instant start, noun representation, provability, tooling unity |
 | eval at compiled tier | runtime interpreter callback from compiled code. compiled functions containing eval cannot fully compile — they retain an interp escape at the eval point |
 
 ## still open
