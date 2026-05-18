@@ -119,7 +119,7 @@ two families share the alphabet:
 
 | sigil | name | arity | family |
 |-------|------|-------|--------|
-| `#` | hax | 1 path or CID | particle |
+| `#` | hax | 1 path or hash | particle |
 | `@` | pat | 1 name or hash | neuron |
 | `~` | sig | 1 name | alias |
 | `/` | fas | n segments | scope |
@@ -177,7 +177,7 @@ family axis (first character of digraph) overlaps with cybermark sigils — `~`,
 | `/` | scope, contain, structure | `cyber/truth` scopes a name | build family — `/+` brings library into scope |
 | `.` | transform, compute, apply | `.rank` pipes through transform | eval family — `.*` evaluates formula |
 | `!` | effect, imperative intervention | `!rank(p)` invokes action | crash family — `!!` is exceptional intervention |
-| `#` | content, particle identity | particle CID | (unused as digraph family) |
+| `#` | content, particle identity | particle | (unused as digraph family) |
 | `@` | identity, agent | neuron | (unused as digraph family) |
 | `$` | economic, value-bearing | token | (unused as digraph family) |
 | `\|` | composition, code-with-data | (unused in cybermark) | core family — gates, doors, traps |
@@ -285,7 +285,7 @@ a mold is a gate `noun -> noun` that idempotently normalizes a value to its cano
 @ud         :: unsigned decimal mold
 @p          :: phonetic name mold
 @da         :: absolute date mold
-#           :: any particle CID mold
+#           :: any particle mold
 @neuron     :: neuron mold
 ```
 
@@ -500,7 +500,7 @@ three subsystems, each preserves instant start when invoked at the right time
 
 ### front-end (shared)
 
-one parser per register, both producing the same AST. AST lowers to a [[Nox]] noun. this step stays in milliseconds. parses are content-addressed by source CID, so re-parses are free across the planetary cache
+one parser per register, both producing the same AST. AST lowers to a [[Nox]] noun. this step stays in milliseconds. parses are content-addressed by source particle, so re-parses are free across the planetary cache
 
 the AST is itself a noun. the AST IS a [[particle]]. programs and their parses are both addressable by [[cybermark]]
 
@@ -528,7 +528,7 @@ these are runtime tricks. none requires a compilation phase. instant start prese
 
 same [[Nox]] noun, lowered further to [[trident]]'s TIR. same TIR passes (DCE, inlining, constant folding, algebra-specific lowering). same neural optimizer (extended for hint/host/eval opcodes). output: optimized TASM → final .nox bytecode with annotations identifying jettable subtrees
 
-compilation result is itself a [[particle]]. indexed in the [[cybergraph]] by source-particle CID. reusable across all [[neurons]] — the planetary compilation cache
+compilation result is itself a [[particle]]. indexed in the [[cybergraph]] by source particle. reusable across all [[neurons]] — the planetary compilation cache
 
 three new TIR opcodes are added to handle rune's dynamism:
 
@@ -540,12 +540,12 @@ these are side-effecting node types. the neural optimizer learns to leave them a
 
 ### the planetary cache
 
-compiled artifacts are [[particles]] in the [[cybergraph]], addressed by source CID. once any [[neuron]] compiles a function, every other [[neuron]] can fetch the compiled form rather than recompile
+compiled artifacts are [[particles]] in the [[cybergraph]], addressed by source particle. once any [[neuron]] compiles a function, every other [[neuron]] can fetch the compiled form rather than recompile
 
 cache semantics:
-- compilation cache key: source particle CID
-- when source CID changes, cache misses, compilation invalidates automatically
-- jet identity is itself a particle CID — when a jet upgrades, the new particle has a new CID, so compiled artifacts that referenced the old jet point at the old CID and any new compilation uses the new one
+- compilation cache key: source particle
+- when source particle changes, cache misses, compilation invalidates automatically
+- jet identity is itself a [[particle]] — when a jet upgrades, it becomes a new [[particle]], so compiled artifacts that referenced the old jet stay pointing at the old [[particle]] and any new compilation references the new one
 - granularity is per-particle: a particle is a coherent unit, easy to cache, easy to address, easy to invalidate
 
 this turns the cybergraph into a global JIT cache. cold starts amortize across the planet
@@ -558,12 +558,12 @@ this turns the cybergraph into a global JIT cache. cold starts amortize across t
 | second call, cold | interp | interp + inline-cache | none added |
 | function hot (>N calls/sec) | interp | submit for compile in background | none — user never waits |
 | compile finishes | interp | compiled .nox | swap on next call |
-| source CID changes | any | reset to interp | no compile-time wait |
+| source particle changes | any | reset to interp | no compile-time wait |
 | explicit `#![compile]` pragma | first call | compile then run | one-time compile cost |
 | explicit `#![interpret-only]` | always | interp | never compiles |
-| jet upgrade (new CID) | compiled | mark stale | next call recompiles in background |
+| jet upgrade (new particle) | compiled | mark stale | next call recompiles in background |
 
-proof generation is lazy. compiled pure regions can produce [[zheng]] proofs, but only when requested. the proof itself is a particle, cached by trace CID. one proof can be reused across every [[neuron]] that needs to verify the same computation
+proof generation is lazy. compiled pure regions can produce [[zheng]] proofs, but only when requested. the proof itself is a particle, cached by trace particle. one proof can be reused across every [[neuron]] that needs to verify the same computation
 
 ---
 
@@ -614,7 +614,7 @@ shared infrastructure, separate languages:
 - both compile through TIR (rune optionally; [[trident]] always)
 - both benefit from the neural optimizer
 - both use [[Rs]] jets for native-speed primitives
-- both reference [[particles]] in the [[cybergraph]] by CID
+- both reference [[particles]] in the [[cybergraph]] directly
 - both follow Kelvin discipline for spec stability
 
 unification is at the IR and VM level, not at the language level. two front-ends, one back-end family. [[trident]] keeps its small frozen spec; rune evolves; neither blocks the other
@@ -692,9 +692,9 @@ walking from where [[rune]] is today ([[Rs]] syntax over [[Nox]] with hint/host/
 | 4 — pure register | full sigil grammar via fenced block or `.rune-pure` file | classic still parses; pure is opt-in per particle |
 | 5 — TIR extensions | three new TIR opcodes (hint, host, eval), neural optimizer retrained to respect them | trident pipeline unchanged for its own programs |
 | 6 — compile back-end for rune | rune source routes through [[trident]] pipeline as a second back-end; output compiled .nox | interpreter back-end remains the default |
-| 7 — planetary cache | compiled artifacts published as [[particles]] indexed by source CID; auto-fetch on cache hit | both back-ends still work standalone |
+| 7 — planetary cache | compiled artifacts published as [[particles]] indexed by source particle; auto-fetch on cache hit | both back-ends still work standalone |
 | 8 — profile-guided tiering | hot-path detection, background compilation, transparent swap | user never waits for compilation |
-| 9 — lazy proof generation | [[zheng]] proofs produced on demand for compiled pure regions, cached by trace CID | proof-free execution remains the fast path |
+| 9 — lazy proof generation | [[zheng]] proofs produced on demand for compiled pure regions, cached by trace particle | proof-free execution remains the fast path |
 | 10 — Kelvin freeze | declare `rune-core` stable at some Kelvin number | surface registers can still evolve above the freeze |
 
 each phase keeps earlier-phase code running. nothing forces movement. instant start is checked at every step
@@ -739,8 +739,8 @@ these started as open questions and have answers
 | question | decision |
 |----------|----------|
 | tier granularity | per-particle. a particle is a coherent unit, easy to cache, address, and invalidate |
-| jet invalidation | jet identity is a particle CID. jet upgrade produces a new CID. compiled artifacts referencing the old CID stay pointing at the old jet; new compilations use the new CID. no global invalidation event needed |
-| proof generation timing | lazy. proofs produced on demand for compiled pure regions, cached by trace CID, reusable across [[neurons]] |
+| jet invalidation | jet identity is a [[particle]]. jet upgrade produces a new [[particle]]. compiled artifacts referencing the old [[particle]] stay pointing at the old jet; new compilations reference the new one. no global invalidation event needed |
+| proof generation timing | lazy. proofs produced on demand for compiled pure regions, cached by trace particle, reusable across [[neurons]] |
 | trident/rune merger | not for now. separate languages, shared back-end. trident stays small and frozen; rune evolves |
 | separate stack VM | rejected. direct [[Nox]] interpretation preserves instant start, noun representation, provability, tooling unity |
 | eval at compiled tier | runtime interpreter callback from compiled code. compiled functions containing eval cannot fully compile — they retain an interp escape at the eval point |
