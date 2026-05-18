@@ -47,7 +47,7 @@ HEX  OLD        nox              #   GROUP
 18   CAN        not             13   bitwise
 19   EM         shl             14   bitwise
 1C   FS         hash            15   hash
-1D   GS         hint            16   non-deterministic
+1D   GS         call            16   non-deterministic
 1E   RS         look            17   state access
 ```
 

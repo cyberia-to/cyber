@@ -31,7 +31,7 @@ fourteen core repos. plus [[rune]]: the async layer above.
 | 1 | [[hemera]] | hash | [[Poseidon2]] sponge. particle identity | v0.2.0 |
 | 2 | [[lens]] | commit | 5 PCS backends, one per algebra | — |
 | 3 | [[trident]] | compile | .tri → .nox | v0.1.0 |
-| 4 | [[nox]] | run | 16 patterns + [[hint]] + jets | — |
+| 4 | [[nox]] | run | 18 patterns (16 compute + call + look) + jets | — |
 | 5 | [[zheng]] | prove & verify | [[SuperSpartan]] + Brakedown + [[sumcheck]] | — |
 | 6 | [[cybergraph]] | link | jets, memos, types, knowledge | — |
 | 7 | [[bbg]] | store | 1 polynomial, 10 dims. ~200B proofs | — |
@@ -150,9 +150,9 @@ migration paths: WASM module → Rs → nox (with [[zheng]] proof). wGPU shader 
 
 ## nox — run
 
-sixteen deterministic reduction patterns over hemera-authenticated trees. five structural (axis, quote, compose, cons, branch), six field (add, sub, mul, inv, eq, lt), four bitwise (xor, and, not, shl), one hash. plus non-deterministic [[hint]] injection.
+eighteen patterns total: sixteen deterministic compute over hemera-authenticated trees — five structural (axis, quote, compose, cons, branch), six field (add, sub, mul, inv, eq, lt), four bitwise (xor, and, not, shl), one hash — plus call (non-deterministic witness injection) and look (deterministic BBG read). 16 compute + call + look = 18.
 
-nox core is frozen (16 patterns, [[checkpoint]] 0). jets are external — looked up in the [[cybergraph]] by formula hash during reduction. adding a jet does not change nox. removing all jets does not break nox (just slower).
+nox core is frozen (18 patterns, [[checkpoint]] 0). jets are external — looked up in the [[cybergraph]] by formula hash during reduction. adding a jet does not change nox. removing all jets does not break nox (just slower).
 
 computation IS linking: `ask(ν, subject, formula, τ, a, v, t)` — seven arguments = seven fields of a [[cyberlink]]. the [[cybergraph]] is a universal memo cache. see [[nox]]
 

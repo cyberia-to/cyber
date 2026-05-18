@@ -137,9 +137,9 @@ commit(g) = (1-r₁) · commit(a) + r₁ · commit(b)    for challenge r₁
 
 one field operation to combine two existing commitments.
 
-### the 16 patterns stay
+### the 16 compute patterns stay
 
-all 16 nox patterns operate on nouns. nouns become polynomials. but the PATTERNS don't change — their semantics are defined over the noun abstraction (atom | cell), not over the representation (tree vs polynomial).
+all 16 compute patterns operate on nouns. nouns become polynomials. but the PATTERNS don't change — their semantics are defined over the noun abstraction (atom | cell), not over the representation (tree vs polynomial).
 
 ```
 pattern 0 (axis):     evaluate polynomial at binary point     (was: traverse tree)
@@ -150,10 +150,11 @@ pattern 4 (branch):   conditional on polynomial evaluation     (unchanged)
 pattern 5-10:         field arithmetic on atom values           (unchanged)
 pattern 11-14:        bitwise on word values                    (unchanged)
 pattern 15 (hash):    hemera(Lens.commit ‖ domain_tag)           (was: hemera recursive)
-pattern 16 (hint):    prover injects witness                    (unchanged)
+pattern 16 (call):    prover injects witness                    (unchanged)
+pattern 17 (look):    deterministic BBG polynomial read         (unchanged)
 ```
 
-16 patterns. same semantics. different performance characteristics for axis and hash.
+18 patterns total (16 compute + call + look). same semantics. different performance characteristics for axis and hash.
 
 ## implications for [[hemera]]
 
@@ -312,7 +313,7 @@ hemera's remaining role:
   Brakedown binding: hemera internally — one call per commit
 ```
 
-one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now ~3 calls per execution). one proof system ([[zheng]]). one VM ([[nox]], 16 patterns). trees and polynomials are the same object. computation and state share one commitment scheme. proving and accessing share one opening protocol.
+one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now ~3 calls per execution). one proof system ([[zheng]]). one VM ([[nox]], 18 patterns: 16 compute + call + look). trees and polynomials are the same object. computation and state share one commitment scheme. proving and accessing share one opening protocol.
 
 ## open questions
 
@@ -367,4 +368,4 @@ one Lens. one field ([[Goldilocks field|Goldilocks]]). one hash ([[hemera]], now
 - [ ] DEPRIORITIZE hemera/roadmap/constraint-free-mds.md — marginal with 3 calls
 - [ ] DEPRIORITIZE hemera/roadmap/partial-round-collapse.md — marginal with 3 calls
 
-see [[nox]] for the 16 patterns, [[hemera]] for the hash primitive, [[BBG]] for polynomial state, [[zheng]] for the proof system, [[Brakedown]] for the Lens, [[data structures for polynomial state]] for storage architecture, [[algebraic state commitments]] for why polynomial state is natural, [[structural-sync]] for the five verification layers
+see [[nox]] for the 18 patterns (16 compute + call + look), [[hemera]] for the hash primitive, [[BBG]] for polynomial state, [[zheng]] for the proof system, [[Brakedown]] for the Lens, [[data structures for polynomial state]] for storage architecture, [[algebraic state commitments]] for why polynomial state is natural, [[structural-sync]] for the five verification layers

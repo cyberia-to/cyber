@@ -38,10 +38,10 @@ frozen forever.
 | field | 5-10 | add, sub, mul, inv, eq, lt | F_p arithmetic | crypto, proofs, consensus |
 | bitwise | 11-14 | xor, and, not, shl | Boolean / Z/2^W | hashing, encryption |
 | hash | 15 | hemera(x) | content addressing | particle identity, Merkle trees |
-| hint | 16 | prover injects witness | non-determinism | privacy (ZK), oracle access |
+| call | 16 | prover injects witness | non-determinism | privacy (ZK), oracle access |
 | look | 17 | read from [[bbg]] | state access | pure functions with full state |
 
-16 deterministic compute patterns + hint (non-deterministic) + look (state read). fewer → incomplete. more → wider tag, larger verifier. verifier circuit ~70K constraints.
+16 deterministic compute patterns + call (non-deterministic) + look (state read). fewer → incomplete. more → wider tag, larger verifier. verifier circuit ~70K constraints.
 
 ## computation = linking
 
@@ -115,9 +115,9 @@ lambda calculus (Church 1936)
   ↓
 Nock (Yarvin 2008) — 12 rules, natural numbers, no field
   ↓
-nox — 16 patterns, field elements, hash, hint, proof-native
+nox — 18 patterns (16 compute + call + look), field elements, hash, witness injection, proof-native
 ```
 
-cost: 4 more patterns (16 vs 12). gain: proof-native execution, five algebra regimes, content-addressed identity, privacy boundary.
+cost: 6 more patterns (18 vs 12). gain: proof-native execution, five algebra regimes, content-addressed identity, privacy boundary, authenticated state reads.
 
 see [[nox]] for specs. see [[Trident]] for the compiler. see [[zheng]] for proofs. see [[cybergraph]] for the knowledge graph. see [[cyb/soma]] for the machine mind that runs nox programs. see [[cyb/order]] for the execution unit.

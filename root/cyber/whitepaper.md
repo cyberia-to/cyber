@@ -480,7 +480,7 @@ Hash (1): structural hash $H(x)$.
 
 Each pattern has a unique tag. No two overlap. Left-hand sides are linear. By Huet-Levy (1980), orthogonal rewrite systems are confluent without requiring termination. Parallel and sequential reduction yield identical results.
 
-Layer 2 — one non-deterministic instruction: `hint`. The prover injects a witness value from outside the VM; Layer 1 constraints verify it. This is what makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it. `hint` breaks [[confluence]] intentionally: multiple valid witnesses may satisfy the same constraints. Soundness is preserved. [[Trident]]'s `divine()` compiles to [[nox]]'s `hint`. In quantum compilation, `hint` maps to a quantum oracle query.
+Layer 2 — two patterns: `call` (pattern 16, non-deterministic) and `look` (pattern 17, deterministic). `call`: the prover injects a witness value from outside the VM; Layer 1 constraints verify it. This is what makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it. `call` breaks [[confluence]] intentionally: multiple valid witnesses may satisfy the same constraints. Soundness is preserved. [[Trident]]'s `divine()` compiles to [[nox]]'s `call`. In quantum compilation, `call` maps to a quantum oracle query. `look`: a deterministic read from [[bbg]] authenticated state; the prover supplies the value and its Merkle proof against the BBG root. 16 compute + call + look = 18 patterns total.
 
 Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[stark]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
 
@@ -498,7 +498,8 @@ Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify
 | 1 | eq | 1 | 1 |
 | 1 | lt | 1 | ~64 |
 | 1 | xor, and, not, shl | 1 | ~64 each |
-| 2 | hint | 1 + constraint | constraint rows |
+| 2 | call | 1 + constraint | constraint rows |
+| 2 | look | 1 + proof | BBG proof rows |
 | 3 | hash | 736 | ~736 |
 | 3 | poly_eval(N) | N | ~N |
 | 3 | merkle_verify(d) | d × 736 | ~d × 736 |
@@ -511,11 +512,11 @@ Layer 1 cost depends only on syntactic structure, never on runtime values. Layer
 
 Layer 1 confluence (Huet-Levy 1980): the sixteen patterns form an orthogonal rewrite system. Any evaluation order yields the same result. This enables automatic parallelism without locks or synchronization.
 
-Layer 2 breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `hint`; it checks constraints via the [[stark]] algebraic trace.
+Layer 2 call breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `call`; it checks constraints via the [[stark]] algebraic trace. look is deterministic and does not break confluence.
 
 Layer 3 preserves confluence — jets are observationally equivalent to their Layer 1 expansions.
 
-Global memoization: key $(H(\text{subject}), H(\text{formula}))$, value $H(\text{result})$. Applies to Layers 1 and 3 (deterministic). Computations containing `hint` are excluded from the global cache — the witness is prover-specific. Pure subexpressions within a hint-containing computation remain memoizable.
+Global memoization: key $(H(\text{subject}), H(\text{formula}))$, value $H(\text{result})$. Applies to Layers 1 and 3 (deterministic). Computations containing `call` are excluded from the global cache — the witness is prover-specific. Pure subexpressions within a call-containing computation remain memoizable.
 
 ## 8. Trident: Provable Programming
 
@@ -640,7 +641,7 @@ starks (Scalable Transparent Arguments of Knowledge) provide the proof system. T
 
 Self-verification property: the stark verifier is expressible as a [[nox]] program. stark verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
 
-This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `hint` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[stark]] constrains without the verifier knowing them — this is how privacy and provability coexist.
+This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `call` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[stark]] constrains without the verifier knowing them — this is how privacy and provability coexist. The Layer 2 `look` instruction enables programs to read authenticated state from [[bbg]] without embedding full state in the trace.
 
 The system closes on itself. No trusted external verifier remains.
 

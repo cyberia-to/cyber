@@ -14,7 +14,7 @@ in a proof-native system, [[stark]] proofs replace both. a neuron proves `H(secr
 
 what proofs provide that signatures cannot: composability (prove arbitrary statements, not just key ownership), chargeability (every proof is metered), and universality (one mechanism for authentication, integrity, randomness, and metering).
 
-the [[hint]] mechanism in [[nox]] makes this concrete: a neuron proves knowledge of its secret key without revealing it, both on-chain and off-chain. every message is proved and charged for — proof of delivery replaces signed delivery.
+the [[call]] mechanism in [[nox]] (pattern 16) makes this concrete: a neuron proves knowledge of its secret key without revealing it, both on-chain and off-chain. every message is proved and charged for — proof of delivery replaces signed delivery.
 
 ## the separation
 

@@ -4,7 +4,7 @@ alias: nox, nox vm, nox virtual machine, cyber/nox
 crystal-type: entity
 crystal-domain: cyber
 ---
-the composition language and virtual machine of [[cyber]]. sixteen deterministic reduction patterns over the [[Goldilocks field]], plus one non-deterministic [[hint]] pattern and five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
+the composition language and virtual machine of [[cyber]]. eighteen patterns total over the [[Goldilocks field]]: sixteen deterministic compute patterns, plus [[call]] (pattern 16, non-deterministic witness injection) and [[look]] (pattern 17, deterministic BBG read), plus five [[jets]]. every computation produces a [[stark]] proof of correct execution as a byproduct.
 
 nox descends from [[Nock]] ([[Urbit]]), replacing natural numbers with [[Goldilocks field]] elements and decrement with field inverse. the execution trace IS the algebraic constraint system — there is no translation layer between the program and the proof.
 
@@ -25,8 +25,8 @@ nox is simultaneously the structural IR (the grammar all [[cyb/languages]] compi
 ## three layers
 
 ```
-Layer 1: 16 deterministic patterns (structural + field arithmetic + bitwise + hash)
-Layer 2: hint (non-deterministic witness injection, verified by Layer 1)
+Layer 1: 16 deterministic compute patterns (structural + field arithmetic + bitwise + hash)
+Layer 2: call (16, non-deterministic witness injection, verified by Layer 1) + look (17, deterministic BBG read)
 Layer 3: 5 jets (hash, poly_eval, merkle_verify, fri_fold, ntt)
 ```
 

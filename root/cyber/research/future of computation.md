@@ -145,9 +145,13 @@ STRUCTURAL (5)              FIELD ARITHMETIC (6)
 BITWISE (4)                 HASH (1)
 11: xor    12: and         15: hash — structural H(x)
 13: not    14: shl
+
+LAYER 2 (2)
+16: call — non-deterministic witness injection
+17: look — deterministic BBG read
 ```
 
-Sixteen patterns. That's the entire instruction set for planetary computation. The reduction signature captures the key insight:
+Eighteen patterns. That's the entire instruction set for planetary computation. The reduction signature captures the key insight:
 
 $$\texttt{reduce}(Subject, Formula, Focus) \to (Result, Focus')$$
 
@@ -165,7 +169,7 @@ Hash-universal identity. Identity equals hash. Two values are the same if and on
 
 nox's execution substrate operates on three named layers:
 
-- nox — the computation model (three-layer instruction set: 16 deterministic patterns + hint for ZK witness injection + 5 jets for recursive stark verification)
+- nox — the computation model (three-layer instruction set: 18 patterns total — 16 deterministic compute + call for ZK witness injection + look for BBG state access + 5 jets for recursive stark verification)
 - Cybergraph — the data model (particles, neurons, cyberlinks)
 - [[BBG]] (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 
@@ -256,7 +260,7 @@ Verification is native: every state transition, every focus update, every cyberl
 
 Privacy is structural: zero-knowledge proofs allow neurons to contribute knowledge without revealing their identity or the content of their assertions. The network learns from encrypted inputs. Collective intelligence without collective surveillance.
 
-And because nox's sixteen deterministic patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but compute on it. The hint instruction (Layer 2) adds non-deterministic witness injection for zero-knowledge proofs, and five jets (Layer 3) make recursive stark verification practical. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
+And because nox's sixteen deterministic compute patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but compute on it. The call instruction (Layer 2, pattern 16) adds non-deterministic witness injection for zero-knowledge proofs, look (Layer 2, pattern 17) adds authenticated state access, and five jets (Layer 3) make recursive stark verification practical. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
 
 ---
 

@@ -488,7 +488,7 @@ rune source (classic or pure)
 shared AST (rune-core)
      │
      ▼  lower (ms)
-[[Nox]] noun (16 patterns + hints)
+[[Nox]] noun (18 patterns: 16 compute + call + look)
      │
      ├──────────────────────────┐
      ▼                          ▼

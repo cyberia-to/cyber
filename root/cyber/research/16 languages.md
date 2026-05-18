@@ -110,7 +110,7 @@ source (typed)
 typed AST (each expression tagged with type → algebra)
   ↓ NounBuilder (type-aware lowering)
 nox noun (sub-trees correspond to different algebras)
-  ↓ nox VM (executes uniformly, 16 patterns)
+  ↓ nox VM (executes uniformly, 18 patterns: 16 compute + call + look)
 trace (each row carries operand types)
   ↓ zheng (partitions trace by type)
 partition per algebra → prove via native lens

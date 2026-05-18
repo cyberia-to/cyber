@@ -642,9 +642,9 @@ Decentralization via utility: Home miners (Tier 2) can earn by proving their own
 
 # The Memory Architecture Insight
 
-nox's 16 algebra-polymorphic patterns decompose into compute and memory. the four GFP primitives (fma, ntt, p2r, lut) cover compute. the missing piece is the memory system.
+nox's 16 compute patterns (Layer 1) decompose into compute and memory. the four GFP primitives (fma, ntt, p2r, lut) cover compute. the missing piece is the memory system.
 
-the 16 patterns split into two hardware concerns:
+the 16 compute patterns split into two hardware concerns:
 
 **compute (small, universal — the four GFP primitives):**
 - field ALU (patterns 5-10): fma unit handles all field arithmetic

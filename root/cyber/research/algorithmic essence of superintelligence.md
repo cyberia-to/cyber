@@ -114,17 +114,17 @@ see [[zheng]] for spec. see [[stark]] for the proof taxonomy.
 
 ## 7. the VM: nox
 
-[[nox]]: 16 deterministic reduction patterns over binary trees of field elements. the computation substrate. every noun is a multilinear polynomial. axis = O(1) polynomial evaluation via Lens opening. identity = hemera(Lens.commit(noun) ‖ tag).
+[[nox]]: 18 patterns over binary trees of field elements — 16 deterministic compute (Layer 1) + call (16) + look (17) (Layer 2). the computation substrate. every noun is a multilinear polynomial. axis = O(1) polynomial evaluation via Lens opening. identity = hemera(Lens.commit(noun) ‖ tag).
 
 | layer | patterns | what they do |
 |---|---|---|
 | 1 | 0-15 | axis, quote, compose, cons, branch, add, sub, mul, inv, eq, lt, bit ops, hash |
-| 2 | 16 (hint) | prover injects witness |
+| 2 | 16 (call), 17 (look) | prover injects witness; deterministic BBG read |
 | 3 | 3 jet categories | 5 verifier jets + 8 binary jets + state jets (TRANSFER, INSERT, UPDATE patterns) |
 
-the 16 patterns ARE the axiom. state operations, CCS jets, zheng itself — all derived from the 16 patterns.
+the 16 compute patterns ARE the axiom. state operations, CCS jets, zheng itself — all derived from the 16 compute patterns.
 
-algebra-polymorphic: nox<F, W, H> parameterized over field, word, hash. the same 16 patterns work over Goldilocks, F₂, F_{p²}. [[trident]] compiles 14 languages through nox.
+algebra-polymorphic: nox<F, W, H> parameterized over field, word, hash. the same 16 compute patterns work over Goldilocks, F₂, F_{p²}. [[trident]] compiles 14 languages through nox.
 
 focus metering: each pattern costs focus. insufficient focus → halt. the VM cannot loop forever — metering is structural, not a gas limit that can be circumvented.
 
@@ -285,7 +285,7 @@ each step is an algorithm with concrete complexity bounds. the loop is executabl
         ┌─────▼─────┐      ┌──────▼──────┐     ┌──────▼──────┐
         │  HEMERA   │      │    NOX      │     │  TRIDENT    │
         │  hash     │      │    VM       │     │  compiler   │
-        │  ~3 calls │      │ 16 patterns │     │ 14 langs    │
+        │  ~3 calls │      │ 18 patterns │     │ 14 langs    │
         └─────┬─────┘      │ poly nouns  │     └──────┬──────┘
               │             └──────┬──────┘            │
               └────────────────────┼────────────────────┘
@@ -389,7 +389,7 @@ we go all-in on props that UNIFY. conservative path (13 hash trees + LogUp) prod
 |---|---|---|
 | G1: noun memory layout | nox | 1 session |
 | G2: jet formula trees | nox | 2 sessions |
-| G3: hint callback | nox | 0.5 session |
+| G3: call callback | nox | 0.5 session |
 | cross-algebra boundary cost | zheng | 1 session |
 | algebraic-nmt cost benchmark | bbg | 1 session |
 | TFHE scheme | mudra | 3 sessions |
@@ -430,7 +430,7 @@ M8 mudra:        ████████████
 one field:      Goldilocks
 one hash:       hemera (~3 calls per execution, domain separation + trust anchor)
 one Lens:        recursive Brakedown (commit, open, verify — for everything)
-one VM:         nox (16 patterns, polynomial nouns, 3 jet categories)
+one VM:         nox (18 patterns: 16 compute + call + look, polynomial nouns, 3 jet categories)
 one state:      BBG_poly + A(x) + N(x) (all lens-committed, 10+2 model)
 one sync:       structural sync (CRDT + lens + DAS — DAS native)
 one identity:   hemera(Lens.commit(content) ‖ tag) — 32 bytes, universal

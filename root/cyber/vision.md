@@ -67,7 +67,7 @@ six research threads developed independently over four decades — none referenc
 the unifying element: hashing is [[field]] operations, proofs are field polynomials, reduction preserves field structure, flow is conserved across field-valued edges. nox makes this latent unity explicit
 
 naming:
-- nox — the computation model (three-layer: 16 patterns + hint + 5 jets)
+- nox — the computation model (18 patterns: 16 compute + call + look; plus 5 jets)
 - [[cybergraph]] — the data model ([[particles]], [[neurons]], edges)
 - [[cyber/bbg]] — the authenticated state (unified polynomial commitments)
 
@@ -77,7 +77,7 @@ ten principles, each addressing a failure mode of existing systems:
 
 - field-first — every value is a Goldilocks field element ($p = 2^{64} - 2^{32} + 1$). cryptographic operations become native. a field multiplication is a single CPU instruction
 - hash-universal — identity is hash. one hash everywhere (Poseidon-Goldilocks, ~736 constraints)
-- confluence-guaranteed — any reduction order yields the same result. sixteen deterministic patterns, no overlaps (Huet 1980). Layer 2 (hint) breaks confluence intentionally for ZK
+- confluence-guaranteed — any reduction order yields the same result. sixteen deterministic compute patterns, no overlaps (Huet 1980). Layer 2 call breaks confluence intentionally for ZK
 - parallel-safe — no locks, no synchronization. confluence enables this directly
 - flow-conserved — [[focus]] sums to 1, always. one resource unifies [[attention]], fuel, and [[consensus]] weight
 - namespace-intrinsic — the graph is multi-indexed from genesis. completeness proofs are structural
@@ -109,7 +109,7 @@ natural computing paradigm
 
 ## specifications
 
-- [[cyber/nox]] — three-layer instruction set (16 patterns + hint + 5 jets), value tower, cost table, parallel reduction, memoization
+- [[cyber/nox]] — three-layer instruction set (18 patterns: 16 compute + call + look; plus 5 jets), value tower, cost table, parallel reduction, memoization
 - [[cyber/bbg]] — multi-indexed polynomial commitments, namespace sync, completeness proofs, ZK privacy model, transaction circuit (~10K constraints)
 - [[zheng]] — stark verification, self-verification, recursive composition
 - [[cyber/focus]] — focus dynamics, conservation laws, flow equation, convergence theorem

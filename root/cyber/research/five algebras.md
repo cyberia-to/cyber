@@ -209,9 +209,9 @@ no new Layer 1 patterns needed. polynomial multiply decomposes to ntt + pointwis
 
 ## the composition principle
 
-all five algebras share one VM: [[nox]]. the 16 deterministic patterns do not change. nox is not parameterized by algebra — it runs over [[nebu]] (F_p) always. the other four algebras enter through two doors (jali enters through both — R_q arithmetic via jets, FHE witnesses via hints):
+all five algebras share one VM: [[nox]]. the 16 deterministic compute patterns do not change. nox is not parameterized by algebra — it runs over [[nebu]] (F_p) always. the other four algebras enter through two doors (jali enters through both — R_q arithmetic via jets, FHE witnesses via call):
 
-1. Layer 2 ([[hint]]): non-deterministic witness injection. kuro, jali, tropical, and genies computations produce witnesses that nox verifies through its existing patterns (branch, lt, add, mul, eq).
+1. Layer 2 ([[call]]): non-deterministic witness injection. kuro, jali, tropical, and genies computations produce witnesses that nox verifies through its existing patterns (branch, lt, add, mul, eq).
 
 2. Layer 3 (jets): performance accelerators. each algebra contributes jets that compute the same result as an equivalent nox program, but at native speed.
 

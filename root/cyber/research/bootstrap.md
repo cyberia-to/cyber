@@ -48,7 +48,7 @@ Rust inherits from LLVM. LLVM inherits from GCC. GCC inherits from the first C c
 **does our Stage 3 (proven bootstrap) detect a Thompson worm?**
 
 what the STARK proof covers:
-- the nox interpreter correctly dispatched 16 patterns (field arithmetic verified)
+- the nox interpreter correctly dispatched 18 patterns (field arithmetic verified)
 - the Trident compiler correctly lowered AST to nox nouns (tree rewriting verified)
 - hemera correctly hashed content (permutation verified)
 
@@ -98,7 +98,7 @@ each checkpoint = "stop iterating, build on top." before mainnet: unfreezing = r
 
 | checkpoint | what freezes | when | why |
 |------------|-------------|------|-----|
-| 0 | nox patterns | before Stage 1 | 16 patterns = instruction set. changing = new CPU |
+| 0 | nox patterns | before Stage 1 | 18 patterns = instruction set. changing = new CPU |
 | 1 | trident language | before Stage 2 Phase 3 | self-hosting requires stable syntax |
 | 2 | hemera parameters | before Stage 2 Phase 4 | H(noun) = identity. changing = rehash everything |
 | 3 | zheng protocol | before Stage 3 Phase 6 | proof format. changing = all proofs invalid |
@@ -168,9 +168,9 @@ the irreducible Rust — nox cannot interpret itself (at this stage).
 | file | what | LOC |
 |------|------|-----|
 | noun.rs | arena + hash-consing + structural hash via hemera | ~250 |
-| reduce.rs | 16 pattern dispatch + focus deduction | ~350 |
+| reduce.rs | 18 pattern dispatch + focus deduction | ~350 |
 | focus.rs | focus metering, cost table | ~50 |
-| hint.rs | HintProvider trait, sync, NoHint → Halt | ~80 |
+| call.rs | HintProvider trait, sync, NoHint → Halt | ~80 |
 | encode.rs | wire format, content-addressed store trait | ~120 |
 | memo.rs | (H(object), H(formula)) → H(result) cache | ~60 |
 | trace.rs | TraceRow recording per reduce() | ~30 |
@@ -241,7 +241,7 @@ CHECKPOINT 2 must hold (hemera frozen before hemera.tri).
 
 ### Phase 5: nox.tri (proven interpreter)                     3-4 sessions
 
-16 pattern dispatch written in Trident. uses nebu.tri + hemera.tri.
+18 pattern dispatch written in Trident. uses nebu.tri + hemera.tri.
 
 ```
 nox.tri ──self-hosted trident──→ nox noun (meta-circular interpreter)

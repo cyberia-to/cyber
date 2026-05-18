@@ -19,7 +19,7 @@ Version: 2026.02 | Status: Genesis → Self-Hosting transition
 |-----------|--------|----------|
 | [[cft]] | Mathematically proven | [[Perron-Frobenius theorem\|Perron-Frobenius]] convergence, 8 years R&D |
 | [[tri-kernel]] discovery | Complete | Systematic elimination — only 3 operator families survive locality filter |
-| Three-layer instruction set (16 patterns + hint + 5 jets) | Specified + Layer 1 implemented | Python interpreter, Rust interpreter |
+| Three-layer instruction set (18 patterns: 16 compute + call + look; plus 5 jets) | Specified + Layer 1 implemented | Python interpreter, Rust interpreter |
 | [[focus]]-based cost metering | Implemented | Deterministic costs over [[Goldilocks field]] |
 | Content-addressed cells | Implemented | CID = hash(content), universal identity |
 | [[bostrom]] network | Live 3+ years | ~70K [[neurons]], 1K active, 2.9M [[cyberlinks]], 3.1M [[particles]] |
@@ -146,7 +146,7 @@ nox evaluates nox. The system executes its own programs.
 
 | Deliverable | Gate |
 |-------------|------|
-| nox-in-nox interpreter (16 patterns + hint + 5 jets self-hosted) | Passes all test vectors from Python/Rust impls |
+| nox-in-nox interpreter (18 patterns + 5 jets self-hosted) | Passes all test vectors from Python/Rust impls |
 | [[Poseidon2]] as nox program | Output matches reference on 10⁶ inputs |
 | [[focus]] metering self-test | Deterministic cost ± 0 across all paths |
 

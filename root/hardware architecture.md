@@ -66,7 +66,7 @@ this means:
 │    13 languages × domain-specific jets       │
 ├─────────────────────────────────────────────┤
 │              nox execution                   │
-│    16 patterns → instruction sequences       │
+│    18 patterns → instruction sequences       │
 ├──────────────────────┬──────────────────────┤
 │    GFP (compute)     │    bbg (memory)       │
 │                      │                       │
@@ -119,7 +119,7 @@ the jet mechanism is the same one that accelerates the STARK verifier. every dom
 
 - [[Goldilocks field processor]] — compute substrate specification
 - [[bbg]] — authenticated state layer (memory substrate)
-- [[nox]] — execution model (16 patterns, jet system)
+- [[nox]] — execution model (18 patterns: 16 compute + call + look, jet system)
 - [[multiproof architecture]] — batch proof composition across algebras
 - [[languages]] — the thirteen execution algebras
 - [[rosetta stone]] — why the four primitives unify all domains

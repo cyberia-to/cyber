@@ -236,7 +236,7 @@ cost vs hemera:     11× hash    3× hash      1× hash      0.12× hash
 one field:      Goldilocks (p = 2⁶⁴ - 2³² + 1)
 one hash:       hemera (~3 calls per execution, trust anchor)
 one Lens:        recursive Brakedown (everything: proof, state, identity, DAS)
-one VM:         nox (16 patterns, polynomial nouns)
+one VM:         nox (18 patterns: 16 compute + call + look, polynomial nouns)
 one state:      BBG_poly(10 dims) + A(x) + N(x), all lens-committed
 one sync:       structural sync (CRDT + lens + DAS native)
 one identity:   hemera(Lens.commit(content) ‖ tag) — 32 bytes
