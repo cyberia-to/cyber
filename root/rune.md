@@ -7,9 +7,9 @@ crystal-size: deep
 ---
 # rune
 
-[[Rs]] syntax + [[hoon]]'s subject model + [[cybermark]]'s sigil layer. one [[language]], one AST, two syntactic registers — classic (familiar) and pure (alien) — lowering directly to [[Nox]]. provable by construction in the pure subset, which IS the [[trident]] grammar. dynamic, async, host-capable where the program crosses the [[proof]] boundary. instant start by design
+[[Rs]] syntax + [[hoon]]'s subject model + [[cybermark]]'s sigil layer. one [[language]], one AST, two syntactic registers — classic (familiar) and pure (alien) — lowering directly to [[Nox]]. provable at every tier: pure code unconditionally, event-reactive code relative to its event log, host calls relative to their results. instant start by design
 
-rune is the operative layer of the [[cyber]] stack: nervous system of [[cyb/robot]], authoring surface for [[semcons]], substrate for agent kernels and scripts. its pure subset and [[trident]] share one grammar — three dynamic extensions (hint, host, eval) are what rune adds on top
+rune is the language for open computation — programs that interact with the world and are proven relative to their interaction history. [[trident]] closes over its inputs and proves unconditionally. rune opens to the world via three extensions: `hint` (event stream), `eval` (runtime formulas), `host` (external compute) — each with its own proof contract. `host` is the only genuine trust boundary, where the external computation itself carries no Nox trace
 
 ---
 
@@ -275,9 +275,9 @@ every reduction in the pure subset has a [[Nox]] trace, which has a [[zheng]] pr
 (add (mul x x) (mul y y))
 ```
 
-### async — hint as event
+### reactive — event-driven computation
 
-a `hint` yields execution until matching data arrives. the program is a function of `(subject, event) -> (new-subject, effects)`. this is the solid-state interpreter pattern, with cybergraph events as the input stream
+a `hint` yields execution until matching data arrives. the kernel is a pure function `(subject, event) -> (new-subject, effects)` — the event is the witness. [[Nox]] is confluent: reduction order does not affect the result. the proof is conditional on the event log — given the sequence of events as witnesses, every step is fully provable
 
 ```
 |=  p=#
@@ -291,25 +291,26 @@ $
 
 the runtime parks the trap. when [[radio]] delivers a matching event or the [[cybergraph]] observes the addressed [[particle]] change, the runtime resumes with the event noun in the appropriate subject slot
 
-### host — escape the proof boundary
+### host — the only genuine trust boundary
 
-a host call runs native code outside [[Nox]] — WASM module, wGPU shader, ONNX inference. the call returns a noun. the proof system records "host result was N" as a witness; the surrounding pure computation is provable, the host call itself is an asserted input
+a host call runs native code outside [[Nox]] — WASM module, wGPU shader, ONNX inference. the call returns a noun. the proof system records "host result was N" as a witness; the surrounding pure computation is provable conditional on that witness. the host computation itself carries no [[Nox]] trace — this is the only real trust boundary
 
 ```
 =/  features  ~host:%infer.model.input
 =/  ranked    (rank-by-features features)
 ```
 
-pure rune is provable. host is the named, typed, explicit escape
-
-the proof boundary is explicit and typed:
+the proof spectrum is three tiers:
 
 ```
-proven:     any pure digraph reduction, mold normalization, arm lookup
-not proven: hint (external event), host::infer, host::gpu, host::wasm
+unconditional proof:    any pure digraph reduction, mold normalization, arm lookup
+conditional proof       any computation containing hint — proven given the event log
+  (event log witnesses):  as witnesses. full provability, external inputs as given
+conditional proof       any computation containing host — proven given the host
+  (host witnesses):       results as witnesses. trust boundary is the host itself
 ```
 
-the trace says: given these hint values and these host results, the pure computation was correct. hints and host results are witnesses. the [[proof]] verifies everything except the external inputs — which is the best any system can do
+the trace says: given these events and host results, the pure computation was correct. events and host results are witnesses. the [[proof]] verifies everything except the external inputs — which is the best any system can do. the event log is the difference between the two: events are [[cybergraph]]-native and verifiable by anyone; host results require trusting the host runtime
 
 ---
 
@@ -609,7 +610,7 @@ not a merger — a superset relationship. [[trident]] is the substrate grammar. 
 | primary purpose | provable consensus-critical code ([[semcons]], on-chain) | dynamic personal/agent code (kernels, scripts, UI) | native-speed jets, hot inner loops |
 | type system | mold-based, algebra-aware, mandatory static enforcement | mold-based, structural, optional enforcement | Rust-subset static |
 | dynamism | none — total determinism | eval, hint, host as first-class | none |
-| provability | mandatory — every program produces a [[zheng]] proof | optional — pure subset proves; dynamic parts do not | reference + jet equivalence verified at compile time |
+| provability | mandatory — every program produces a [[zheng]] proof | tiered — pure: unconditional; reactive: conditional on event log; host: conditional on host results | reference + jet equivalence verified at compile time |
 | evaluation | AOT compiled to optimized .nox | interpret first, compile in background | AOT compiled to native, deployed as jet |
 | launch latency | slow (compile + prove) | instant (parse + lower + walk) | n/a — runs as called |
 | audience | protocol authors, semcon writers | agent developers, scripters, neuron operators | runtime engineers, performance specialists |
@@ -635,13 +636,13 @@ one grammar lineage, two tools:
 
 [[trident]]'s proof-mandatory guarantee requires total determinism. the three rune extensions break this:
 
-- hint: execution parks until an external event arrives — non-deterministic timing
-- host: escapes to WASM/wGPU/ONNX — result is an asserted witness, not a proof
-- eval: evaluates dynamically-constructed formulas — proof depends on runtime content
+- hint: proof becomes conditional on the event log — trident requires unconditional proofs
+- host: result is an asserted witness — the host runtime carries no [[Nox]] trace
+- eval: proof depends on runtime content — formula is unknown at compile time
 
 adding any of these to [[trident]] forces proof obligations to become conditional. [[trident]]'s Kelvin discipline depends on its scope being narrow and total. the dynamic forms live in rune's extension layer exactly so [[trident]] never has to touch them
 
-the tool boundary enforces the separation: a trident binary rejects hint/host/eval at the checker level. a rune binary accepts them but marks those regions as unproven. pure rune code — no dynamic forms — is [[trident]]-compatible and can be verified by the trident checker
+the tool boundary enforces the separation: a trident binary rejects hint/host/eval at the checker level. a rune binary accepts them and marks those regions as conditionally proven. pure rune code — no dynamic forms — is [[trident]]-compatible and can be verified by the trident checker
 
 ### the trident subset — explicit scope
 
@@ -661,9 +662,9 @@ rune-only extensions — what the trident checker explicitly rejects:
 
 | form | what it does | why excluded |
 |------|-------------|--------------|
-| `hint expr` | parks execution until external event | non-deterministic timing breaks proof obligation |
-| `host(target, args)` | escapes to WASM/wGPU/ONNX | result is an asserted witness, not a proof |
-| `eval(formula)` | executes a runtime-constructed formula | proof depends on runtime content |
+| `hint expr` | parks execution until external event | proofs become conditional on event log — trident requires unconditional proofs |
+| `host(target, args)` | escapes to WASM/wGPU/ONNX | result is an asserted witness — host runtime carries no [[Nox]] trace |
+| `eval(formula)` | executes a runtime-constructed formula | proof depends on runtime content — formula unknown at compile time |
 
 a rune file containing none of the three dynamic forms is [[trident]]-compatible as-is — no translation, same grammar. the trident checker runs it with mandatory static mold enforcement and full proof obligation
 
