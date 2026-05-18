@@ -603,7 +603,7 @@ three languages, one back-end family. each has a distinct nature; they share inf
 | dynamism | none — total determinism | eval, hint, host as first-class | none |
 | provability | mandatory — every program produces a [[zheng]] proof | optional — pure subset proves; dynamic parts do not | reference + jet equivalence verified at compile time |
 | evaluation | AOT compiled to optimized .nox | interpret first, compile in background | AOT compiled to native, deployed as jet |
-| launch latency | slow (compile + prove) | ms (parse + lower + walk) | n/a — runs as called |
+| launch latency | slow (compile + prove) | instant (parse + lower + walk) | n/a — runs as called |
 | audience | protocol authors, semcon writers | agent developers, scripters, neuron operators | runtime engineers, performance specialists |
 
 these are genuinely different concerns. forcing them into one language compromises both — [[trident]] wants to stay small and stable, rune needs to keep adding dynamic features, [[Rs]] wants to stay Rust-subset for jet authoring
@@ -611,7 +611,7 @@ these are genuinely different concerns. forcing them into one language compromis
 shared infrastructure, separate languages:
 
 - both rune and [[trident]] target [[Nox]] as bytecode
-- both compile through TIR (rune optionally; [[trident]] always)
+- both compile through TIR — rune defaults to interpretation but takes the TIR path when compiled; [[trident]] always takes the compile path
 - both benefit from the neural optimizer
 - both use [[Rs]] jets for native-speed primitives
 - both reference [[particles]] in the [[cybergraph]] directly
