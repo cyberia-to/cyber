@@ -62,14 +62,14 @@ cybermark already solved the addressing problem. its eight sigils are the noun-l
 
 ## the central idea
 
-one [[language]] with one AST, parsed from two syntactic registers. both lower to the same [[Nox]] noun. files can mix registers freely. classic gets you onboarded; pure gives you the full power; nothing in between dilutes the choice
+one [[language]] with one AST, parsed from two syntactic registers. both lower to the same [[Nox]] noun. files can mix registers freely. `rust` gets you onboarded; `rune` gives you the full power; nothing in between dilutes the choice
 
 | register | tag | who writes it |
 |----------|-----|--------------|
-| classic | `rune` | every Rust, Go, or TypeScript programmer day one |
-| pure | `rune-pure` | systems programmers, [[semcons|semcon]] authors, agent kernels |
+| `rust` | `rust` | every Rust, Go, or TypeScript programmer day one |
+| `rune` | `rune` | systems programmers, [[semcons|semcon]] authors, agent kernels |
 
-a `rune fmt --register=pure` converts mechanically. nothing forces movement. both coexist in the codebase forever. the gradient from familiar to alien is a single step, taken when the team is ready
+a `rune fmt --to=rune` converts mechanically. nothing forces movement. both coexist in the codebase forever. the gradient from familiar to alien is a single step, taken when the team is ready
 
 ---
 
@@ -123,7 +123,7 @@ two families share the alphabet:
 | `@` | pat | 1 name or hash | neuron |
 | `~` | sig | 1 name | alias |
 | `/` | fas | n segments | scope |
-| `$` | bus | 1 symbol | token |
+| `$` | buc | 1 symbol | token |
 | `^` | ket | 1 concept | abstract |
 | `!` | zap | n verb + args | action |
 | `.` | dot | n stages | pipeline |
@@ -246,7 +246,69 @@ the parser distinguishes by structure: digraph = two-symbol prefix; cybermark = 
 
 ### pronounceable
 
-every ASCII symbol carries a one-syllable name. `bar`, `wut`, `tis`, `col`, `lus`, `dot`, `sig`, `zap`, `ket`, `fas`, `tar`, `hep`, `hax`, `pat`, `bus`, `pam`, `cab`. every digraph reads as two syllables. `bartis`, `wutcol`, `tisfas`, `dottar`. pair programming over voice works. teaching out loud works. search-by-name works
+every ASCII symbol carries a one-syllable name. `bar`, `wut`, `tis`, `col`, `lus`, `dot`, `sig`, `zap`, `ket`, `fas`, `tar`, `hep`, `hax`, `pat`, `buc`, `pam`, `cab`. every digraph reads as two syllables. `bartis`, `wutcol`, `tisfas`, `dottar`. pair programming over voice works. teaching out loud works. search-by-name works
+
+---
+
+## cybermark — embeddable address layer
+
+[[cybermark]] is a standalone micro-syntax. eight sigils, a small parser, no runtime required for address resolution. embeddable in any text context — the semantic web's typed, content-addressed, composable addressing scheme
+
+| sigil | name | addresses | example |
+|-------|------|-----------|---------|
+| `#` | hax | particle — by path or hash | `#cyber/truth`, `#QmXyz...` |
+| `@` | pat | neuron — by name or hash | `@alice.cyber` |
+| `~` | sig | alias — named concept | `~truth`, `~causation` |
+| `/` | fas | scope — path segment | `/cyber/root/concept` |
+| `$` | buc | token — economic value | `$CYB`, `$TOCYB` |
+| `^` | ket | concept — abstract | `^truth`, `^causation` |
+| `!` | zap | action — effect | `!rank(p)`, `!cyberlink(a,b,w)` |
+| `.` | dot | pipeline — transform | `.rank`, `.normalize` |
+
+any app adds cybermark support by embedding the parser. addresses are inert text in contexts that do not parse them — graceful degradation. the same `#cyber/truth` in a markdown page, a rune program, a trident proof, or an Rs jet signature carries one meaning
+
+embedding model — each layer adds exactly one thing:
+
+```
+cybermark     any text — email, markdown, config, comment, any natural language
+    ↓  +inline computation
+rune inline   cybermark + sigil[expr] — reactive prose, living documents
+    ↓  +block grammar
+rune          full language — gates, doors, agents, kernels
+    ↓  subset
+trident       proven subset — consensus-critical, frozen
+    ↓  types
+Rs            @nebu, #, @neuron as jet argument type annotations
+```
+
+the parser is the only dependency. the [[cybergraph]] is the resolution context — optional at parse time, required at runtime for live addresses
+
+---
+
+## inline computation — living documents
+
+[[cybermark]] addresses name things. inline computation extends them: `sigil[expr]` evaluates a rune expression and embeds the result in the document. the bracket switches a sigil from address-mode to evaluation-mode
+
+| form | what it produces | example |
+|------|-----------------|---------|
+| `#[expr]` | inline eval → particle | `top concept: #[first (ranked ~world)]` |
+| `@[expr]` | inline eval → neuron | `most connected: @[most-linked ~world]` |
+| `~[expr]` | inline annotation with computed value | `entropy: ~[entropy ~world]` |
+| `.[expr\|step\|step]` | inline pipeline result | `rank: .[#cyber/truth \| rank \| pct]` |
+| `?[cond true false]` | inline conditional text | `market is ?[gth .price .threshold "bull" "bear"]` |
+| `=[name val]` | bind into document scope | `=[threshold 0.7]` — use `~threshold` later |
+| `$[amount token]` | inline token expression | `fee: $[current-fee CYB]` |
+| `\|[gate args]` | inline gate application | `result: \|[double 42]` |
+
+contrast with block rune: `sigil[expr]` is inline — one expression, result embedded in text flow. digraph followed by a code block is block-level computation
+
+### reactive documents
+
+a page that mentions `#cyber/truth` inline subscribes to that particle. when the particle changes in the [[cybergraph]], the inline expressions depending on it re-evaluate. the page stays current without any user action
+
+this is Jupyter's "re-run all cells" — except automatic, fine-grained, and tracked at the particle dependency level. the page's subject includes `~world` (the local cybergraph slice), so every inline expression runs against live graph state
+
+every inline result IS a particle. the page itself IS a particle. computation is not separate from content — computation IS content
 
 ---
 
@@ -385,19 +447,19 @@ every program shown two ways. both parse to the same AST and lower to the same [
 ### double a number
 
 ```rust
-// classic
+// rust
 fn double(x: @nebu) -> @nebu { x * 2 }
 ```
 
 ```
-:: pure
+:: rune
 |=  x=@nebu  (mul x 2)
 ```
 
 ### graph reactor — watch, rank, link
 
 ```rust
-// classic
+// rust
 async fn reactor(p: #) {
     loop {
         let _ = hint::particle_changed(p);
@@ -410,7 +472,7 @@ async fn reactor(p: #) {
 ```
 
 ```
-:: pure
+:: rune
 |=  p=#
 |-
 =/  _   ~hint:%particle.p
@@ -423,7 +485,7 @@ $
 ### trading agent — hint + host + pure
 
 ```rust
-// classic
+// rust
 fn trading_agent(pair: #, model: #) {
     let threshold = 0.7;
     loop {
@@ -440,7 +502,7 @@ fn trading_agent(pair: #, model: #) {
 ```
 
 ```
-:: pure
+:: rune
 |=  [pair=# model=#]
 =/  threshold  .7
 |-
