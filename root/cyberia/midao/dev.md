@@ -184,3 +184,45 @@ fails, fix before committing.
 
 state what something is directly. never use "this is not X, it is Y"
 formulations. never define by negation.
+
+## graph vocabulary — root terms only
+
+cyber has its own ontology. when writing in any cyber project (specs,
+code comments, design docs, commit messages), use the root term from
+the cybergraph — never an alias borrowed from a different stack.
+
+aliases dilute the established term. readers must mentally re-translate,
+search misses instances, and the canonical vocabulary erodes one
+substitution at a time.
+
+common substitutions to make:
+
+| alias / borrowed term | root term in cyber |
+|------------------------|---------------------|
+| CID | particle |
+| hash (when meaning content id) | particle |
+| node, vertex (in graph context) | particle |
+| edge, link | cyberlink |
+| user, actor, account | neuron |
+| post, tweet, document, card | particle |
+| knowledge graph | cybergraph |
+| smart contract | .tri program (or .nox program) |
+| wallet | neuron, sigma |
+| IPFS, content addressing layer | radio (or BAO for streaming) |
+
+the rule: before writing a term that names something in the cyber
+stack, check if there is a root particle for that concept. if yes,
+use the root name. if the concept genuinely names something foreign
+(e.g. "IPFS CID" specifically refers to IPFS's convention, not
+cyber's), use the foreign term explicitly and qualify it.
+
+how to check: every root concept's particle has an `alias:` field in
+its YAML frontmatter listing common substitutes. `grep -r "alias:.*<term>"
+~/cyber/cyber/root/` finds the root particle for any alias. when in
+doubt, search the graph before writing.
+
+the failure mode to avoid: when writing about architecture that
+borrows from a non-cyber stack (Bevy, ECS, wgpu, REST, OAuth), the
+borrowed-stack vocabulary tends to pull cyber terms into its idiom.
+resist this. cyber concepts keep their cyber names even when sitting
+next to borrowed ones.
