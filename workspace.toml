@@ -7,7 +7,7 @@ root_dir = "~/cyber"
 
 [graph]
 root_subgraph = "cyber"          # donates the root namespace
-output        = "build"
+output        = "cyber/build"
 
 [subgraphs.policy]
 clone_archived  = false          # archived repos are skipped on clone

@@ -46,7 +46,7 @@ def main [
     print $"config: ($config_path)"
     print ""
 
-    let out = (resolve-output $ws_root $ws.graph.output $output)
+    let out = (resolve-output $root_dir $ws.graph.output $output)
     let ipfs_args = (ipfs-args $ws_root $ws)
     ^$optica_bin build $root_graph --output $out --subgraphs $config_path ...$ipfs_args
 }
@@ -62,14 +62,14 @@ def ipfs-args [ws_root: string, ws] {
     }
 }
 
-def resolve-output [ws_root: string, ws_output: string, cli_override] {
-    # Build output is a workspace concern; relative paths resolve against
-    # the workspace root, never against the content-repo graph root.
+def resolve-output [root_dir: string, ws_output: string, cli_override] {
+    # Relative paths resolve against root_dir (same base optica uses),
+    # so `optica build` standalone and `build.nu` land in the same place.
     let raw = if $cli_override == null { $ws_output } else { $cli_override }
     if ($raw | str starts-with "/") {
         $raw
     } else {
-        $ws_root | path join $raw
+        $root_dir | path join $raw
     }
 }
 
