@@ -1,8 +1,0 @@
----
-tags: cyberia
-crystal-type: entity
-crystal-domain: cyberia
----
-the key is to gather critical mass of tinkers and thinkers
-
-local labs creation must become a strategic priority for the development of [[citadel genesis]]
