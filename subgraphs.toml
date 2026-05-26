@@ -297,10 +297,6 @@ name = "midao"
 parent = "cyberia"
 visibility = "private"
 
-[[subgraph]]
-name = "cyberia-to"
-parent = "cyberia"
-visibility = "private"
 
 [[subgraph]]
 name = "cybaca"
