@@ -60,7 +60,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "glia"
-parent = "soft3"
+parent = "cyb"
 visibility = "private"
 
 # /cybics ──────────────────────────────────
@@ -200,7 +200,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "foculus"
-parent = "cyber"
+parent = "soft3"
 visibility = "private"
 
 # /trident ──────────────────────────────────
@@ -211,27 +211,27 @@ visibility = "public"
 
 [[subgraph]]
 name = "eidos"
-parent = "languages"
+parent = "trident"
 visibility = "private"
 
 [[subgraph]]
 name = "inf"
-parent = "languages"
+parent = "trident"
 visibility = "private"
 
 [[subgraph]]
 name = "nu"
-parent = "languages"
+parent = "trident"
 visibility = "private"
 
 [[subgraph]]
 name = "rs"
-parent = "languages"
+parent = "trident"
 visibility = "private"
 
 [[subgraph]]
 name = "rune"
-parent = "languages"
+parent = "trident"
 visibility = "private"
 
 # /warriors ──────────────────────────────────
@@ -316,7 +316,6 @@ visibility = "private"
 
 [[subgraph]]
 name = "cyber-valley"
-parent = "cyber-valley"
 visibility = "private"
 
 [[subgraph]]
