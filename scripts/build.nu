@@ -20,7 +20,8 @@ def main [
     let decls = (load-declarations $ws_root)
     let filtered = (filter-decls $decls $public_only $root_name)
 
-    let subgraphs = ($filtered | each {|d|
+    let subgraphs = ($filtered | enumerate | each {|it|
+        let d = $it.item
         let repo_path = ($root_dir | path join ($d.repo? | default $d.name))
         if $pinned and ($d.commit? | is-not-empty) {
             ^git -C $repo_path checkout $d.commit
@@ -32,12 +33,14 @@ def main [
         } else {
             $d.name
         }
+        let is_menu = ($d.parent? | is-empty)
         {
             name: $d.name,
             path: $repo_path,
             mount: $derived_mount,
             visibility: ($d.visibility? | default "public"),
-            menu: ($d.parent? | is-empty),
+            menu: $is_menu,
+            menu_order: (if $is_menu { $it.index } else { null }),
         }
     })
 
