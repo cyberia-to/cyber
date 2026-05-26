@@ -72,7 +72,9 @@ jobs:
           '
 
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
+        run: |
+          rustup update stable
+          rustup default stable
 
       - name: Cache optica build
         uses: actions/cache@v4
@@ -118,8 +120,13 @@ jobs:
 
       - name: Trigger .github rebuild
         continue-on-error: true
-        uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
-          repository: cyberia-to/.github
-          event-type: content-changed
+        env:
+          CYBER_DISPATCH_TOKEN: ${{ secrets.CYBER_DISPATCH_TOKEN }}
+        run: |
+          [ -z "$CYBER_DISPATCH_TOKEN" ] && exit 0
+          curl -fsSL \
+            -X POST \
+            -H "Authorization: token $CYBER_DISPATCH_TOKEN" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/cyberia-to/.github/dispatches \
+            -d '{"event_type":"content-changed"}'
