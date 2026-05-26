@@ -18,17 +18,7 @@ name = "cyber"
 visibility = "public"
 
 [[subgraph]]
-name = "crystal"
-parent = "cyber"
-visibility = "private"
-
-[[subgraph]]
 name = "ctx"
-parent = "cyber"
-visibility = "private"
-
-[[subgraph]]
-name = "foculus"
 parent = "cyber"
 visibility = "private"
 
@@ -63,10 +53,26 @@ name = "optica"
 parent = "cyb"
 visibility = "public"
 
+[[subgraph]]
+name = "wysm"
+parent = "cyb"
+visibility = "private"
+
+[[subgraph]]
+name = "glia"
+parent = "soft3"
+visibility = "private"
+
 # /cybics ──────────────────────────────────
 
 [[subgraph]]
 name = "cybics"
+visibility = "private"
+
+
+[[subgraph]]
+name = "crystal"
+parent = "cybics"
 visibility = "private"
 
 # /aos ──────────────────────────────────
@@ -108,6 +114,10 @@ visibility = "private"
 # /bootloader ──────────────────────────────────
 
 [[subgraph]]
+name = "bootloader"
+visibility = "private"
+
+[[subgraph]]
 name = "bostrom"
 parent = "bootloader"
 visibility = "public"
@@ -140,11 +150,6 @@ visibility = "private"
 
 [[subgraph]]
 name = "fs"
-parent = "soft3"
-visibility = "private"
-
-[[subgraph]]
-name = "glia"
 parent = "soft3"
 visibility = "private"
 
@@ -193,7 +198,47 @@ name = "cybergraph"
 parent = "soft3"
 visibility = "private"
 
+[[subgraph]]
+name = "foculus"
+parent = "cyber"
+visibility = "private"
+
+# /trident ──────────────────────────────────
+
+[[subgraph]]
+name = "trident"
+visibility = "public"
+
+[[subgraph]]
+name = "eidos"
+parent = "languages"
+visibility = "private"
+
+[[subgraph]]
+name = "inf"
+parent = "languages"
+visibility = "private"
+
+[[subgraph]]
+name = "nu"
+parent = "languages"
+visibility = "private"
+
+[[subgraph]]
+name = "rs"
+parent = "languages"
+visibility = "private"
+
+[[subgraph]]
+name = "rune"
+parent = "languages"
+visibility = "private"
+
 # /warriors ──────────────────────────────────
+
+[[subgraph]]
+name = "warriors"
+visibility = "private"
 
 [[subgraph]]
 name = "bita"
@@ -230,43 +275,6 @@ name = "zoya"
 parent = "warriors"
 visibility = "private"
 
-# /languages ──────────────────────────────────
-
-[[subgraph]]
-name = "trident"
-parent = "languages"
-visibility = "public"
-
-[[subgraph]]
-name = "eidos"
-parent = "languages"
-visibility = "private"
-
-[[subgraph]]
-name = "inf"
-parent = "languages"
-visibility = "private"
-
-[[subgraph]]
-name = "nu"
-parent = "languages"
-visibility = "private"
-
-[[subgraph]]
-name = "rs"
-parent = "languages"
-visibility = "private"
-
-[[subgraph]]
-name = "rune"
-parent = "languages"
-visibility = "private"
-
-[[subgraph]]
-name = "wysm"
-parent = "languages"
-visibility = "private"
-
 # /superhuman ──────────────────────────────────
 
 [[subgraph]]
@@ -277,6 +285,11 @@ visibility = "private"
 
 [[subgraph]]
 name = "cyberia"
+visibility = "private"
+
+[[subgraph]]
+name = "mimi"
+parent = "cyberia"
 visibility = "private"
 
 [[subgraph]]
@@ -294,42 +307,39 @@ name = "cyberia.me"
 parent = "cyberia"
 visibility = "private"
 
-[[subgraph]]
-name = "maker"
-parent = "cyberia"
-visibility = "private"
+# /cyber-valley ──────────────────────────────────
 
 [[subgraph]]
 name = "cve"
-parent = "cyberia"
+parent = "cyber-valley"
 visibility = "private"
 
 [[subgraph]]
 name = "cyber-valley"
-parent = "cyberia"
-visibility = "private"
-
-[[subgraph]]
-name = "cybernode"
-parent = "cyberia"
-visibility = "private"
-
-[[subgraph]]
-name = "rockets"
-parent = "cyberia"
-visibility = "private"
-
-[[subgraph]]
-name = "mimi"
-parent = "cyberia"
+parent = "cyber-valley"
 visibility = "private"
 
 [[subgraph]]
 name = "oxytocin"
-parent = "cyberia"
+parent = "cyber-valley"
 visibility = "private"
 
 [[subgraph]]
 name = "cybland"
-parent = "cyberia"
+parent = "cyber-valley"
+visibility = "private"
+
+# /rockets ──────────────────────────────────
+[[subgraph]]
+name = "rockets"
+visibility = "private"
+
+[[subgraph]]
+name = "maker"
+parent = "rockets"
+visibility = "private"
+
+[[subgraph]]
+name = "cybernode"
+parent = "rockets"
 visibility = "private"
