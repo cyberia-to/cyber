@@ -15,7 +15,7 @@ root_page = "Cyber"      # Page to render as homepage
 favicon = "\U0001F535"
 
 [nav]
-menu_tag = "menu"
+menu_tag = "nav"
 
 [nav.sidebar]
 show_namespaces = true
