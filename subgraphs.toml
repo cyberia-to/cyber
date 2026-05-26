@@ -299,7 +299,7 @@ visibility = "private"
 
 
 [[subgraph]]
-name = "cybaca"
+name = "my"
 parent = "cyberia"
 visibility = "private"
 
