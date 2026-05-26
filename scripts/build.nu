@@ -9,6 +9,7 @@ def main [
     --public-only          # exclude private + local-only subgraphs (for public deploys)
     --output: path         # override output directory
     --optica: path         # path to optica binary (defaults to ~/cyber/optica/target/release/optica)
+    --pinned               # checkout each subgraph at its commit field (for reproducible CI builds)
 ] {
     let ws_root = (workspace-root)
     let ws = (open $"($ws_root)/workspace.toml")
@@ -20,6 +21,10 @@ def main [
     let filtered = (filter-decls $decls $public_only $root_name)
 
     let subgraphs = ($filtered | each {|d|
+        let repo_path = ($root_dir | path join ($d.repo? | default $d.name))
+        if $pinned and ($d.commit? | is-not-empty) {
+            ^git -C $repo_path checkout $d.commit
+        }
         let derived_mount = if ($d.mount? | is-not-empty) {
             $d.mount
         } else if ($d.parent? | is-not-empty) {
@@ -29,7 +34,7 @@ def main [
         }
         {
             name: $d.name,
-            path: ($root_dir | path join ($d.repo? | default $d.name)),
+            path: $repo_path,
             mount: $derived_mount,
             visibility: ($d.visibility? | default "public"),
             menu: ($d.parent? | is-empty),

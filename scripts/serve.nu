@@ -10,6 +10,7 @@ def main [
     --bind: string = "127.0.0.1"
     --open                     # open browser on start
     --optica: path             # path to optica binary
+    --pinned                   # checkout each subgraph at its commit field (for reproducible CI builds)
 ] {
     let ws_root = (workspace-root)
     let ws = (open $"($ws_root)/workspace.toml")
@@ -20,6 +21,10 @@ def main [
     let decls = (load-declarations $ws_root)
     let filtered = (filter-decls $decls $public_only $root_name)
     let subgraphs = ($filtered | each {|d|
+        let repo_path = ($root_dir | path join ($d.repo? | default $d.name))
+        if $pinned and ($d.commit? | is-not-empty) {
+            ^git -C $repo_path checkout $d.commit
+        }
         let derived_mount = if ($d.mount? | is-not-empty) {
             $d.mount
         } else if ($d.parent? | is-not-empty) {
@@ -27,7 +32,7 @@ def main [
         } else {
             $d.name
         }
-        {name: $d.name, path: ($root_dir | path join ($d.repo? | default $d.name)), mount: $derived_mount, visibility: ($d.visibility? | default "public"), menu: ($d.parent? | is-empty)}
+        {name: $d.name, path: $repo_path, mount: $derived_mount, visibility: ($d.visibility? | default "public"), menu: ($d.parent? | is-empty)}
     })
 
     let config_path = "/tmp/optica-subgraphs.toml"

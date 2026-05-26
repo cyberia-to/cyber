@@ -50,6 +50,7 @@ nu scripts/sync.nu        # bootstrap: clone every active subgraph
 nu scripts/build.nu       # full graph build
 nu scripts/serve.nu       # build + serve with live reload
 nu scripts/dev.nu         # rebuild optica + restart serve
+nu scripts/lock.nu        # snapshot current HEAD of each subgraph into subgraphs.toml
 ```
 
 For pure content edits without subgraphs, optica works standalone:
