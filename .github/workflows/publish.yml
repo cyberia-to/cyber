@@ -33,9 +33,14 @@ jobs:
           mv cyber "$HOME/cyber/cyber"
 
       - name: Install Nushell
-        uses: hustcer/setup-nu@v3
-        with:
-          version: '*'
+        run: |
+          NU_TAG=$(curl -fsSL https://api.github.com/repos/nushell/nushell/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
+          NU_VER="${NU_TAG#v}"
+          ARCHIVE="nu-${NU_VER}-x86_64-unknown-linux-gnu.tar.gz"
+          curl -fsSL "https://github.com/nushell/nushell/releases/download/${NU_TAG}/${ARCHIVE}" -o /tmp/nu.tar.gz
+          tar -xzf /tmp/nu.tar.gz -C /tmp
+          sudo cp "/tmp/nu-${NU_VER}-x86_64-unknown-linux-gnu/nu" /usr/local/bin/nu
+          nu --version
 
       - name: Clone public subgraphs from subgraphs.toml
         env:
@@ -112,6 +117,7 @@ jobs:
             --auth="$NETLIFY_AUTH_TOKEN"
 
       - name: Trigger .github rebuild
+        continue-on-error: true
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
