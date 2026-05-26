@@ -20,7 +20,7 @@ def main [
     let decls = (load-declarations $ws_root)
     let filtered = (filter-decls $decls $public_only $root_name)
     let subgraphs = ($filtered | each {|d|
-        let base = {name: $d.name, path: ($root_dir | path join $d.repo), visibility: ($d.visibility? | default "public")}
+        let base = {name: $d.name, path: ($root_dir | path join ($d.repo? | default $d.name)), visibility: ($d.visibility? | default "public")}
         if ($d.mount? | is-not-empty) { $base | insert mount $d.mount } else { $base }
     })
 
