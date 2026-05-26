@@ -10,21 +10,68 @@
 #   local-only  — true = exclude from public builds (default = false)
 #   orphan      — true = repo vanished from org, exclude (default = false)
 
+
+# /cyber ──────────────────────────────────
+
+[[subgraph]]
+name = "cyb"
+parent = "cyber"
+visibility = "public"
+
 [[subgraph]]
 name = "aos"
-visibility = "private"
-
-[[subgraph]]
-name = "bbg"
-visibility = "private"
-
-[[subgraph]]
-name = "bita"
+parent = "cyber"
 visibility = "private"
 
 [[subgraph]]
 name = "bostrom"
+parent = "cyber"
 visibility = "public"
+
+# /soft3 ──────────────────────────────────
+[[subgraph]]
+name = "bbg"
+parent = "soft3"
+visibility = "private"
+
+# /warriors ──────────────────────────────────
+
+[[subgraph]]
+name = "bita"
+parent = "warriors"
+visibility = "private"
+
+[[subgraph]]
+name = "erga"
+parent = "warriors"
+visibility = "private"
+
+[[subgraph]]
+name = "mona"
+parent = "warriors"
+visibility = "private"
+
+[[subgraph]]
+name = "nika"
+parent = "warriors"
+visibility = "private"
+
+[[subgraph]]
+name = "trisha"
+parent = "warriors"
+visibility = "private"
+
+[[subgraph]]
+name = "xena"
+parent = "warriors"
+visibility = "private"
+
+[[subgraph]]
+name = "zoya"
+parent = "warriors"
+visibility = "private"
+
+
 
 [[subgraph]]
 name = "crystal"
@@ -38,9 +85,7 @@ visibility = "private"
 name = "cve"
 visibility = "private"
 
-[[subgraph]]
-name = "cyb"
-visibility = "public"
+
 
 [[subgraph]]
 name = "cyber-valley"
@@ -90,9 +135,8 @@ visibility = "private"
 name = "eidos"
 visibility = "private"
 
-[[subgraph]]
-name = "erga"
-visibility = "private"
+
+
 
 [[subgraph]]
 name = "evy"
@@ -150,17 +194,15 @@ visibility = "private"
 name = "mir"
 visibility = "private"
 
-[[subgraph]]
-name = "mona"
-visibility = "private"
+
+
 
 [[subgraph]]
 name = "mudra"
 visibility = "private"
 
-[[subgraph]]
-name = "nika"
-visibility = "private"
+
+
 
 [[subgraph]]
 name = "nox"
@@ -230,9 +272,7 @@ visibility = "private"
 name = "trident"
 visibility = "public"
 
-[[subgraph]]
-name = "trisha"
-visibility = "private"
+
 
 [[subgraph]]
 name = "tru"
@@ -246,14 +286,8 @@ visibility = "private"
 name = "wysm"
 visibility = "private"
 
-[[subgraph]]
-name = "xena"
-visibility = "private"
+
 
 [[subgraph]]
 name = "zheng"
-visibility = "private"
-
-[[subgraph]]
-name = "zoya"
 visibility = "private"

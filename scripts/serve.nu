@@ -20,8 +20,14 @@ def main [
     let decls = (load-declarations $ws_root)
     let filtered = (filter-decls $decls $public_only $root_name)
     let subgraphs = ($filtered | each {|d|
-        let base = {name: $d.name, path: ($root_dir | path join ($d.repo? | default $d.name)), visibility: ($d.visibility? | default "public")}
-        if ($d.mount? | is-not-empty) { $base | insert mount $d.mount } else { $base }
+        let derived_mount = if ($d.mount? | is-not-empty) {
+            $d.mount
+        } else if ($d.parent? | is-not-empty) {
+            $"($d.parent)/($d.name)"
+        } else {
+            $d.name
+        }
+        {name: $d.name, path: ($root_dir | path join ($d.repo? | default $d.name)), mount: $derived_mount, visibility: ($d.visibility? | default "public")}
     })
 
     let config_path = "/tmp/optica-subgraphs.toml"
