@@ -1,7 +1,7 @@
 ---
 name: evy
 repo: evy
-visibility: public
+visibility: private
 archived: false
 ---
 

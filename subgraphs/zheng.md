@@ -1,7 +1,7 @@
 ---
 name: zheng
 repo: zheng
-visibility: public
+visibility: private
 archived: false
 ---
 

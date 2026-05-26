@@ -1,7 +1,7 @@
 ---
 name: lens
 repo: lens
-visibility: public
+visibility: private
 archived: false
 ---
 

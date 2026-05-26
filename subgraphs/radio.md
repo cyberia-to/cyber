@@ -1,7 +1,7 @@
 ---
 name: radio
 repo: radio
-visibility: public
+visibility: private
 archived: false
 ---
 

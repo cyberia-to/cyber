@@ -1,7 +1,7 @@
 ---
 name: glia
 repo: glia
-visibility: public
+visibility: private
 archived: false
 ---
 

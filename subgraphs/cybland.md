@@ -1,7 +1,7 @@
 ---
-name: cyb.land
-repo: cyb.land
-visibility: public
+name: cybland
+repo: cybland
+visibility: private
 archived: false
 ---
 

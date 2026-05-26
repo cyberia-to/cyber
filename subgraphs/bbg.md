@@ -1,7 +1,7 @@
 ---
 name: bbg
 repo: bbg
-visibility: public
+visibility: private
 archived: false
 ---
 

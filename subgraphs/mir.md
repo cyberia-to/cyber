@@ -1,7 +1,7 @@
 ---
 name: mir
 repo: mir
-visibility: public
+visibility: private
 archived: false
 ---
 

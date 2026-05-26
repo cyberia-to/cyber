@@ -1,7 +1,7 @@
 ---
 name: cyberia-eth
 repo: cyberia-eth
-visibility: public
+visibility: private
 archived: false
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: prysm
 repo: prysm
-visibility: public
+visibility: private
 archived: false
 ---
 

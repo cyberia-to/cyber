@@ -1,7 +1,7 @@
 ---
 name: cybergraph
 repo: cybergraph
-visibility: public
+visibility: private
 archived: false
 ---
 

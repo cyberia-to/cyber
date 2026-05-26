@@ -1,10 +1,10 @@
 ---
-name: cyberindex
-repo: cyberindex
+name: bostrom
+repo: bostrom
 visibility: public
 archived: false
 ---
 
-# cyberindex
+# bostrom.network
 
 <!-- auto-generated stub. replace freely with human-written context. -->

@@ -1,10 +1,10 @@
 ---
-name: bostrom.network
-repo: bostrom.network
-visibility: public
+name: cybernet
+repo: cybernet
+visibility: private
 archived: false
 ---
 
-# bostrom.network
+# cybertensor
 
 <!-- auto-generated stub. replace freely with human-written context. -->

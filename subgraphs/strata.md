@@ -1,7 +1,7 @@
 ---
 name: strata
 repo: strata
-visibility: public
+visibility: private
 archived: false
 ---
 

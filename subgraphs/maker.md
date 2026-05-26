@@ -1,6 +1,6 @@
 ---
-name: cyber-maker
-repo: cyber-maker
+name: maker
+repo: maker
 visibility: private
 archived: false
 ---

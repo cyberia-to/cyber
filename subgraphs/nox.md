@@ -1,7 +1,7 @@
 ---
 name: nox
 repo: nox
-visibility: public
+visibility: private
 archived: false
 ---
 

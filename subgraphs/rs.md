@@ -1,7 +1,7 @@
 ---
 name: rs
 repo: rs
-visibility: public
+visibility: private
 archived: false
 ---
 
