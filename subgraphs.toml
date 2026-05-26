@@ -293,7 +293,7 @@ parent = "cyberia"
 visibility = "private"
 
 [[subgraph]]
-name = "cyberia-eth"
+name = "midao"
 parent = "cyberia"
 visibility = "private"
 
