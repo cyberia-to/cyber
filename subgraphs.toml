@@ -1,0 +1,321 @@
+# Subgraph declarations for the cyber knowledge graph.
+# Each entry declares one repository to include in the build.
+#
+# Fields:
+#   name        — subgraph identifier (used internally and as default mount)
+#   repo        — path relative to workspace root_dir (default = name)
+#   mount       — URL prefix for all pages (default = name; "" = root-mounted)
+#   visibility  — "public" | "private" (default = "public")
+#   archived    — true = exclude from build (default = false)
+#   local-only  — true = exclude from public builds (default = false)
+#   orphan      — true = repo vanished from org, exclude (default = false)
+
+[[subgraph]]
+name = "aos"
+repo = "aos"
+visibility = "private"
+
+[[subgraph]]
+name = "bbg"
+repo = "bbg"
+visibility = "private"
+
+[[subgraph]]
+name = "bita"
+repo = "../bita"
+visibility = "private"
+
+[[subgraph]]
+name = "bostrom"
+repo = "bostrom"
+visibility = "public"
+
+[[subgraph]]
+name = "crystal"
+repo = "crystal"
+visibility = "private"
+
+[[subgraph]]
+name = "ctx"
+repo = "../ctx"
+visibility = "private"
+
+[[subgraph]]
+name = "cve"
+repo = "cve"
+visibility = "private"
+
+[[subgraph]]
+name = "cyb"
+repo = "cyb"
+visibility = "public"
+
+[[subgraph]]
+name = "cyber-valley"
+repo = "cyber-valley"
+visibility = "private"
+
+[[subgraph]]
+name = "cyber"
+repo = "cyber"
+visibility = "public"
+
+[[subgraph]]
+name = "cybergraph"
+repo = "cybergraph"
+visibility = "private"
+
+[[subgraph]]
+name = "cyberia-eth"
+repo = "cyberia-eth"
+visibility = "private"
+
+[[subgraph]]
+name = "cyberia-to"
+repo = "cyberia-to"
+visibility = "private"
+
+[[subgraph]]
+name = "cyberia"
+repo = "cyberia"
+visibility = "private"
+
+[[subgraph]]
+name = "cyberia.me"
+repo = "cyberia.me"
+visibility = "private"
+
+[[subgraph]]
+name = "cybernet"
+repo = "cybernet"
+visibility = "private"
+
+[[subgraph]]
+name = "cybernode"
+repo = "cybernode"
+visibility = "private"
+
+[[subgraph]]
+name = "cybics"
+repo = "cybics"
+visibility = "private"
+
+[[subgraph]]
+name = "cybland"
+repo = "cybland"
+visibility = "private"
+
+[[subgraph]]
+name = "eidos"
+repo = "../eidos"
+visibility = "private"
+
+[[subgraph]]
+name = "erga"
+repo = "../erga"
+visibility = "private"
+
+[[subgraph]]
+name = "evy"
+repo = "evy"
+visibility = "private"
+
+[[subgraph]]
+name = "foculus"
+repo = "foculus"
+visibility = "private"
+
+[[subgraph]]
+name = "fs"
+repo = "../fs"
+visibility = "private"
+
+[[subgraph]]
+name = "glia"
+repo = "glia"
+visibility = "private"
+
+[[subgraph]]
+name = "go-cyber"
+repo = "go-cyber"
+visibility = "public"
+
+[[subgraph]]
+name = "hemera"
+repo = "hemera"
+visibility = "public"
+
+[[subgraph]]
+name = "honeycrisp"
+repo = "honeycrisp"
+visibility = "public"
+
+[[subgraph]]
+name = "hub"
+repo = "hub"
+visibility = "private"
+
+[[subgraph]]
+name = "inf"
+repo = "inf"
+visibility = "private"
+
+[[subgraph]]
+name = "lens"
+repo = "lens"
+visibility = "private"
+
+[[subgraph]]
+name = "li"
+repo = "li"
+visibility = "private"
+
+[[subgraph]]
+name = "maker"
+repo = "maker"
+visibility = "private"
+
+[[subgraph]]
+name = "mimi"
+repo = "mimi"
+visibility = "private"
+
+[[subgraph]]
+name = "mir"
+repo = "mir"
+visibility = "private"
+
+[[subgraph]]
+name = "mona"
+repo = "../mona"
+visibility = "private"
+
+[[subgraph]]
+name = "mudra"
+repo = "mudra"
+visibility = "private"
+
+[[subgraph]]
+name = "nika"
+repo = "../nika"
+visibility = "private"
+
+[[subgraph]]
+name = "nox"
+repo = "nox"
+visibility = "private"
+
+[[subgraph]]
+name = "nu"
+repo = "../nu"
+visibility = "private"
+
+[[subgraph]]
+name = "optica"
+repo = "optica"
+visibility = "public"
+
+[[subgraph]]
+name = "oxytocin"
+repo = "oxytocin"
+visibility = "private"
+
+[[subgraph]]
+name = "portal"
+repo = "portal"
+visibility = "private"
+
+[[subgraph]]
+name = "prysm"
+repo = "prysm"
+visibility = "private"
+
+[[subgraph]]
+name = "pure"
+repo = "pure"
+visibility = "private"
+
+[[subgraph]]
+name = "radio"
+repo = "radio"
+visibility = "private"
+
+[[subgraph]]
+name = "rockets"
+repo = "rockets"
+visibility = "private"
+
+[[subgraph]]
+name = "rs"
+repo = "rs"
+visibility = "private"
+
+[[subgraph]]
+name = "rune"
+repo = "../rune"
+visibility = "private"
+
+[[subgraph]]
+name = "soft3"
+repo = "soft3"
+visibility = "private"
+
+[[subgraph]]
+name = "space-pussy"
+repo = "space-pussy"
+visibility = "public"
+
+[[subgraph]]
+name = "strata"
+repo = "strata"
+visibility = "private"
+
+[[subgraph]]
+name = "superhuman"
+repo = "superhuman"
+visibility = "private"
+
+[[subgraph]]
+name = "sync"
+repo = "../sync"
+visibility = "private"
+
+[[subgraph]]
+name = "trident"
+repo = "trident"
+visibility = "public"
+
+[[subgraph]]
+name = "trisha"
+repo = "../trisha"
+visibility = "private"
+
+[[subgraph]]
+name = "tru"
+repo = "tru"
+visibility = "private"
+
+[[subgraph]]
+name = "uhash"
+repo = "uhash"
+visibility = "private"
+
+[[subgraph]]
+name = "wysm"
+repo = "wysm"
+visibility = "private"
+
+[[subgraph]]
+name = "xena"
+repo = "../xena"
+visibility = "private"
+
+[[subgraph]]
+name = "zheng"
+repo = "zheng"
+visibility = "private"
+
+[[subgraph]]
+name = "zoya"
+repo = "../zoya"
+visibility = "private"

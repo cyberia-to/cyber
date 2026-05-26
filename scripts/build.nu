@@ -20,10 +20,15 @@ def main [
     let filtered = (filter-decls $decls $public_only $root_name)
 
     let subgraphs = ($filtered | each {|d|
-        {
+        let base = {
             name: $d.name,
             path: ($root_dir | path join $d.repo),
             visibility: ($d.visibility? | default "public"),
+        }
+        if ($d.mount? | is-not-empty) {
+            $base | insert mount $d.mount
+        } else {
+            $base
         }
     })
 
@@ -83,48 +88,14 @@ def workspace-root [] {
 }
 
 def load-declarations [root: string] {
-    let dir = $"($root)/subgraphs"
-    if not ($dir | path exists) { return [] }
-    let files = (glob $"($dir)/*.md")
-    if ($files | length) == 0 { return [] }
-    $files | each {|f|
-        let parsed = (parse-declaration $f)
-        $parsed | merge {_path: $f}
-    } | where ($it.name? | is-not-empty)
-}
-
-def parse-declaration [path: string] {
-    let raw = (open --raw $path)
-    let split = (split-frontmatter $raw)
-    if $split.frontmatter == null { return {} }
-    try { $split.frontmatter | from yaml } catch { {} }
-}
-
-def split-frontmatter [raw: string] {
-    let lines = ($raw | lines)
-    if ($lines | length) < 2 or ($lines | get 0) != "---" {
-        return {frontmatter: null, body: $raw}
-    }
-    let end_idx = ($lines
-        | enumerate
-        | skip 1
-        | where item == "---"
-        | get index
-        | first)
-    if $end_idx == null { return {frontmatter: null, body: $raw} }
-    let fm_lines = ($lines | skip 1 | take ($end_idx - 1))
-    let body_lines = ($lines | skip ($end_idx + 1))
-    {
-        frontmatter: ($fm_lines | str join "\n")
-        body: ($body_lines | str join "\n")
-    }
+    let path = $"($root)/subgraphs.toml"
+    if not ($path | path exists) { return [] }
+    let data = (open $path)
+    let key = if ($data | get -o subgraph | is-not-empty) { "subgraph" } else { "subgraphs" }
+    $data | get $key | where ($it.name? | is-not-empty)
 }
 
 def filter-decls [decls, public_only: bool, root_name: string] {
-    # .github is included as a subgraph — per SPEC.md open question 2, the
-    # workspace repo is self-describing. Only the root-subgraph entry and
-    # archived/orphan decls are excluded. Visibility and local-only are
-    # honored for public-only builds.
     $decls
         | where ($it.archived? | default false) != true
         | where ($it.orphan? | default false) != true
@@ -134,7 +105,7 @@ def filter-decls [decls, public_only: bool, root_name: string] {
                 true
             } else {
                 let vis = ($d.visibility? | default "public")
-                let local_only = ($d.local-only? | default false)
+                let local_only = ($d."local-only"? | default false)
                 $vis == "public" and not $local_only
             }
         }

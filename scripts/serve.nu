@@ -19,7 +19,10 @@ def main [
     let root_name = $ws.graph.root_subgraph
     let decls = (load-declarations $ws_root)
     let filtered = (filter-decls $decls $public_only $root_name)
-    let subgraphs = ($filtered | each {|d| {name: $d.name, path: ($root_dir | path join $d.repo), visibility: ($d.visibility? | default "public")}})
+    let subgraphs = ($filtered | each {|d|
+        let base = {name: $d.name, path: ($root_dir | path join $d.repo), visibility: ($d.visibility? | default "public")}
+        if ($d.mount? | is-not-empty) { $base | insert mount $d.mount } else { $base }
+    })
 
     let config_path = "/tmp/optica-subgraphs.toml"
     ({subgraphs: $subgraphs} | to toml) | save --force $config_path
@@ -73,38 +76,11 @@ def workspace-root [] {
 }
 
 def load-declarations [root: string] {
-    let dir = $"($root)/subgraphs"
-    if not ($dir | path exists) { return [] }
-    let files = (glob $"($dir)/*.md")
-    if ($files | length) == 0 { return [] }
-    $files | each {|f|
-        let parsed = (parse-declaration $f)
-        $parsed | merge {_path: $f}
-    } | where ($it.name? | is-not-empty)
-}
-
-def parse-declaration [path: string] {
-    let raw = (open --raw $path)
-    let split = (split-frontmatter $raw)
-    if $split.frontmatter == null { return {} }
-    try { $split.frontmatter | from yaml } catch { {} }
-}
-
-def split-frontmatter [raw: string] {
-    let lines = ($raw | lines)
-    if ($lines | length) < 2 or ($lines | get 0) != "---" {
-        return {frontmatter: null, body: $raw}
-    }
-    let end_idx = ($lines
-        | enumerate
-        | skip 1
-        | where item == "---"
-        | get index
-        | first)
-    if $end_idx == null { return {frontmatter: null, body: $raw} }
-    let fm_lines = ($lines | skip 1 | take ($end_idx - 1))
-    let body_lines = ($lines | skip ($end_idx + 1))
-    {frontmatter: ($fm_lines | str join "\n"), body: ($body_lines | str join "\n")}
+    let path = $"($root)/subgraphs.toml"
+    if not ($path | path exists) { return [] }
+    let data = (open $path)
+    let key = if ($data | get -o subgraph | is-not-empty) { "subgraph" } else { "subgraphs" }
+    $data | get $key | where ($it.name? | is-not-empty)
 }
 
 def filter-decls [decls, public_only: bool, root_name: string] {
@@ -117,7 +93,7 @@ def filter-decls [decls, public_only: bool, root_name: string] {
                 true
             } else {
                 let vis = ($d.visibility? | default "public")
-                let local_only = ($d.local-only? | default false)
+                let local_only = ($d."local-only"? | default false)
                 $vis == "public" and not $local_only
             }
         }
