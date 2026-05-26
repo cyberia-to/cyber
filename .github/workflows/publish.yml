@@ -43,13 +43,13 @@ jobs:
           cd "$HOME/cyber/cyber"
           nu -c '
             let decls = (open subgraphs.toml | get subgraph)
-            $decls | where {|d|
-              ($d.name? | default "") != "cyber"
-              and ($d.archived? | default false) != true
-              and ($d.orphan? | default false) != true
-              and ($d."local-only"? | default false) != true
-              and ($d.visibility? | default "public") == "public"
-            } | each {|d|
+            $decls
+            | where {|d| ($d.name? | default "") != "cyber"}
+            | where {|d| ($d.archived? | default false) != true}
+            | where {|d| ($d.orphan? | default false) != true}
+            | where {|d| ($d."local-only"? | default false) != true}
+            | where {|d| ($d.visibility? | default "public") == "public"}
+            | each {|d|
               let name = $d.name
               let target = $"($env.HOME)/cyber/($name)"
               if not ($target | path exists) {
