@@ -67,7 +67,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "cybics"
-visibility = "private"
+visibility = "public"
 
 
 [[subgraph]]
@@ -115,7 +115,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "bootloader"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "bostrom"
@@ -136,7 +136,7 @@ visibility = "public"
 
 [[subgraph]]
 name = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "bbg"
@@ -312,7 +312,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "cyber-valley"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "oxytocin"
