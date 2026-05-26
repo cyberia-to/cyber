@@ -23,14 +23,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout cyber into ~/cyber/cyber
-        uses: actions/checkout@v4
-        with:
-          path: cyber
-      - name: Move into ~/cyber/
+      - name: Clone cyber into ~/cyber/cyber
         run: |
           mkdir -p "$HOME/cyber"
-          mv cyber "$HOME/cyber/cyber"
+          git clone --depth 1 https://github.com/cyberia-to/cyber.git "$HOME/cyber/cyber"
 
       - name: Install Nushell
         run: |
@@ -43,9 +39,6 @@ jobs:
           nu --version
 
       - name: Clone public subgraphs from subgraphs.toml
-        env:
-          GH_TOKEN: ${{ github.token }}
-          ORG: cyberia-to
         run: |
           cd "$HOME/cyber/cyber"
           nu -c '
@@ -61,7 +54,7 @@ jobs:
               let target = $"($env.HOME)/cyber/($name)"
               if not ($target | path exists) {
                 print $"Cloning ($name)..."
-                let url = $"https://x-access-token:($env.GH_TOKEN)@github.com/($env.ORG)/($name).git"
+                let url = $"https://github.com/cyberia-to/($name).git"
                 try {
                   ^git clone --depth 1 $url $target
                 } catch {|e|
@@ -86,11 +79,9 @@ jobs:
           key: ${{ runner.os }}-optica-v4
 
       - name: Build optica
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           rm -rf "$HOME/cyber/optica"
-          git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/cyberia-to/optica.git" "$HOME/cyber/optica"
+          git clone --depth 1 https://github.com/cyberia-to/optica.git "$HOME/cyber/optica"
           if [ -d /tmp/optica-target-cache ]; then
             mv /tmp/optica-target-cache "$HOME/cyber/optica/target"
           fi
