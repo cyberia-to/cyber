@@ -1,9 +1,10 @@
 ---
-tags: cyber, core
+tags: cyber, core, nav
 crystal-type: entity
 crystal-domain: cyber
 icon: "🔵"
 alias: the superintelligence protocol
+menu-order: 0
 ---
 # cyber
 
