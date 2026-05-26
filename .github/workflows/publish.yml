@@ -4,9 +4,9 @@ on:
   push:
     branches: [master]
     paths:
-      - 'root/**'
+      - '**.md'
       - 'blog/**'
-      - 'subgraphs/**'
+      - 'subgraphs.toml'
       - 'scripts/**'
       - 'workspace.toml'
       - 'publish.toml'
@@ -32,40 +32,39 @@ jobs:
           mkdir -p "$HOME/cyber"
           mv cyber "$HOME/cyber/cyber"
 
-      - name: Clone declared subgraphs
+      - name: Install Nushell
+        uses: hustcer/setup-nu@v3
+        with:
+          version: '*'
+
+      - name: Clone public subgraphs from subgraphs.toml
         env:
           GH_TOKEN: ${{ github.token }}
           ORG: cyberia-to
         run: |
           cd "$HOME/cyber/cyber"
-          for decl in subgraphs/*.md; do
-            [ -f "$decl" ] || continue
-            NAME=$(awk '/^name:/ {print $2; exit}' "$decl")
-            REPO=$(awk '/^repo:/ {print $2; exit}' "$decl")
-            ARCHIVED=$(awk '/^archived:/ {print $2; exit}' "$decl")
-            ORPHAN=$(awk '/^orphan:/ {print $2; exit}' "$decl")
-            VISIBILITY=$(awk '/^visibility:/ {print $2; exit}' "$decl")
-            LOCAL_ONLY=$(awk '/^local-only:/ {print $2; exit}' "$decl")
-
-            [ -z "$NAME" ] && continue
-            [ -z "$REPO" ] && REPO="$NAME"
-            [ "$ARCHIVED" = "true" ] && continue
-            [ "$ORPHAN" = "true" ] && continue
-            [ "$LOCAL_ONLY" = "true" ] && continue
-            [ "$VISIBILITY" = "private" ] && continue
-            [ "$REPO" = "cyber" ] && continue
-
-            TARGET="$HOME/cyber/$REPO"
-            if [ ! -d "$TARGET" ]; then
-              git clone --depth 1 "https://x-access-token:${GH_TOKEN}@github.com/${ORG}/${REPO}.git" "$TARGET" \
-                || echo "skip ${REPO}: clone failed"
-            fi
-          done
-
-      - name: Install Nushell
-        uses: hustcer/setup-nu@v3
-        with:
-          version: '*'
+          nu -c '
+            let decls = (open subgraphs.toml | get subgraph)
+            $decls | where {|d|
+              ($d.name? | default "") != "cyber"
+              and ($d.archived? | default false) != true
+              and ($d.orphan? | default false) != true
+              and ($d."local-only"? | default false) != true
+              and ($d.visibility? | default "public") == "public"
+            } | each {|d|
+              let name = $d.name
+              let target = $"($env.HOME)/cyber/($name)"
+              if not ($target | path exists) {
+                print $"Cloning ($name)..."
+                let url = $"https://x-access-token:($env.GH_TOKEN)@github.com/($env.ORG)/($name).git"
+                try {
+                  ^git clone --depth 1 $url $target
+                } catch {|e|
+                  print $"skip ($name): ($e.msg)"
+                }
+              }
+            }
+          '
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -77,7 +76,7 @@ jobs:
             /tmp/optica-target-cache
             ~/.cargo/registry
             ~/.cargo/git
-          key: ${{ runner.os }}-optica-v3
+          key: ${{ runner.os }}-optica-v4
 
       - name: Build optica
         env:
