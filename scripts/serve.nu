@@ -27,7 +27,7 @@ def main [
         } else {
             $d.name
         }
-        {name: $d.name, path: ($root_dir | path join ($d.repo? | default $d.name)), mount: $derived_mount, visibility: ($d.visibility? | default "public")}
+        {name: $d.name, path: ($root_dir | path join ($d.repo? | default $d.name)), mount: $derived_mount, visibility: ($d.visibility? | default "public"), menu: ($d.parent? | is-empty)}
     })
 
     let config_path = "/tmp/optica-subgraphs.toml"

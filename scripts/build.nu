@@ -32,6 +32,7 @@ def main [
             path: ($root_dir | path join ($d.repo? | default $d.name)),
             mount: $derived_mount,
             visibility: ($d.visibility? | default "public"),
+            menu: ($d.parent? | is-empty),
         }
     })
 
