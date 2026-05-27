@@ -1,4 +1,5 @@
 ---
+title: Cyber
 tags: cyber, core, nav
 crystal-type: entity
 crystal-domain: cyber
