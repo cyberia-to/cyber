@@ -25,7 +25,7 @@ def main [graph_path: string] {
     { singular: "neuron", plural: "neurons", suffix: "s" }
     { singular: "motif", plural: "motifs", suffix: "s" }
     { singular: "linkchain", plural: "linkchains", suffix: "s" }
-    { singular: "semcon", plural: "semcons", suffix: "s" }
+    { singular: "dialect", plural: "dialects", suffix: "s" }
     { singular: "wave", plural: "waves", suffix: "s" }
     { singular: "sentence", plural: "sentences", suffix: "s" }
     # Medium frequency

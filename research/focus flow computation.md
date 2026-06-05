@@ -76,12 +76,12 @@ given $G = (P, N, E, w, \sigma)$, three graph properties determine the three fre
 | parameter | formula | graph property |
 |---|---|---|
 | embedding dim $d^*$ | $\exp(H(\sigma(\Sigma_{\phi^*})))$ | effective rank of [[focus]] covariance |
-| heads $h^*$ | $\geq \|\text{Semcon}(G)\|$ | distinct [[semcon]] relation types |
+| heads $h^*$ | $\geq \|\text{Dialect}(G)\|$ | distinct [[dialect]] relation types |
 | layers $L^*$ | $\text{diam}(G) \cdot \lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ | diameter × spectral convergence factor |
 
 no hyperparameter search. the graph tells you what the transformer should be
 
-weights are compiled, not trained. the embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\phi^*}) \cdot A$ — is provably optimal by the Eckart-Young theorem: it uniquely minimizes expected squared gradient at step zero over all matrices of the same rank. attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[semcon]]'s adjacency submatrix. MLP weights encode path co-occurrence statistics up to depth $L^*$
+weights are compiled, not trained. the embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\phi^*}) \cdot A$ — is provably optimal by the Eckart-Young theorem: it uniquely minimizes expected squared gradient at step zero over all matrices of the same rank. attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[dialect]]'s adjacency submatrix. MLP weights encode path co-occurrence statistics up to depth $L^*$
 
 fine-tuning from this point learns only what the graph cannot encode: temporal patterns, implicit associations, contextual dynamics absent from the explicit graph. the reduction in required fine-tuning steps scales as $\Omega(|E| \cdot d^* / \log(1/\varepsilon))$ relative to random initialization
 

@@ -7,6 +7,8 @@ status: draft
 ---
 # cyber: a protocol for planetary superintelligence
 
+> is the machine into which anyone may speak and be rewarded for truth — no one knows who said what, and yet everyone knows what everyone said.
+
 > DRAFT — work in progress. this document is research and educational material only. specifications, mechanisms, and numbers will change. do not use as the basis for financial or technical decisions. not ready for production.
 
 ## 1. Introduction
@@ -378,12 +380,12 @@ Given $G = (P, N, E, w, \sigma)$, three graph properties determine the three fre
 | Parameter | Formula | Graph property |
 |---|---|---|
 | Embedding dim $d^*$ | $\exp\!\left(H\!\left(\sigma(\Sigma_{\phi^*})\right)\right)$ | Effective rank of [[focus]] covariance |
-| Head count $h^*$ | $\geq \|\text{Semcon}(G)\|$ | Distinct [[semcon]] types |
+| Head count $h^*$ | $\geq \|\text{Dialect}(G)\|$ | Distinct [[dialect]] types |
 | Layer count $L^*$ | $\text{diam}(G) \cdot \lceil \log(1/\varepsilon)/\log(1/\kappa) \rceil$ | Diameter × spectral convergence factor |
 
-$d^*$ is the [[entropy]] of the normalized singular value distribution of the $\phi^*$-weighted adjacency matrix — the number of statistically independent semantic dimensions present in the graph. $h^*$ lower-bounds the number of [[semcon|semcons]]: each distinct semantic relation type requires its own attention head to represent faithfully. $L^*$ follows from the [[tri-kernel]] contraction theorem: reaching $\varepsilon$-precision requires $\lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ iterations per hop, multiplied by graph diameter.
+$d^*$ is the [[entropy]] of the normalized singular value distribution of the $\phi^*$-weighted adjacency matrix — the number of statistically independent semantic dimensions present in the graph. $h^*$ lower-bounds the number of [[dialect|dialects]]: each distinct semantic relation type requires its own attention head to represent faithfully. $L^*$ follows from the [[tri-kernel]] contraction theorem: reaching $\varepsilon$-precision requires $\lceil\log(1/\varepsilon)/\log(1/\kappa)\rceil$ iterations per hop, multiplied by graph diameter.
 
-Weights are compiled, not trained. The embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\phi^*}) \cdot A$ — is provably optimal: by the Eckart-Young theorem, $E^*$ uniquely minimizes expected squared gradient magnitude at initialization over all orthonormal matrices of the same rank. Attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[semcon]]'s adjacency submatrix. MLP weights are derived from path co-occurrence statistics up to depth $L^*$.
+Weights are compiled, not trained. The embedding matrix $E^* = U_{:,1:d^*}$ — top left singular vectors of $\text{diag}(\sqrt{\phi^*}) \cdot A$ — is provably optimal: by the Eckart-Young theorem, $E^*$ uniquely minimizes expected squared gradient magnitude at initialization over all orthonormal matrices of the same rank. Attention weights $W_Q^{(s)}, W_K^{(s)}$ are derived from the truncated SVD of each [[dialect]]'s adjacency submatrix. MLP weights are derived from path co-occurrence statistics up to depth $L^*$.
 
 The reduction in required fine-tuning steps scales as $\Omega(|E| \cdot d^* / \log(1/\varepsilon))$ relative to random initialization. Every [[cyberlink]] added today reduces the training cost of every future model trained on graph-consistent text, by a provable bound proportional to link count. The graph is a compounding computational asset.
 
@@ -396,12 +398,12 @@ Applied to the live [[bostrom]] network (March 2026):
 | Parameter | Value | Derived from |
 |---|---|---|
 | Embedding dim $d^*$ | 31 | $\exp(H(\sigma(\Sigma_{\phi^*})))$, measured |
-| Attention heads $h^*$ | ≥ 12 | [[semcon]] structural lower bound |
+| Attention heads $h^*$ | ≥ 12 | [[dialect]] structural lower bound |
 | Layer count $L^*$ | 290 | diam(10) × 29 iterations/hop |
 | Model size | ~0.4M parameters | Current graph scale |
 | Compilation time | ~62 seconds | Single machine, 20 GB RAM |
 
-Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed them. The compiled model is fully auditable: given any output, contributing links and authors are recoverable from the graph. As [[bostrom]] grows — $|E| \uparrow$ raises $d^*$, $\lambda_2 \uparrow$ lowers $L^*$, [[semcon]] count raises $h^*$ — each recompilation produces a structurally better model from the same pipeline, with no training budget.
+Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed them. The compiled model is fully auditable: given any output, contributing links and authors are recoverable from the graph. As [[bostrom]] grows — $|E| \uparrow$ raises $d^*$, $\lambda_2 \uparrow$ lowers $L^*$, [[dialect]] count raises $h^*$ — each recompilation produces a structurally better model from the same pipeline, with no training budget.
 
 ### 6.8 Approximation Quality
 
@@ -747,7 +749,7 @@ Formal [[languages]] achieve precision through rigid syntax but cannot scale to 
 
 ### 12.2 Primitives
 
-[[Semcon]] (semantic convention): mutual agreement of [[neurons]] to use the same [[particles]] for structuring thought. The grammar of the graph. A [[semcon]] is a smart contract that creates [[cyberlinks]] according to convention — invocation produces well-formed graph structure. Bootloader semcons installed at genesis: TRUE, FALSE. Emergent semcons discovered by the network: is-a, follows, causes, contradicts.
+[[Dialect]] (dialect): mutual agreement of [[neurons]] to use the same [[particles]] for structuring thought. The grammar of the graph. A [[dialect]] is a smart contract that creates [[cyberlinks]] according to convention — invocation produces well-formed graph structure. Bootloader dialects installed at genesis: TRUE, FALSE. Emergent dialects discovered by the network: is-a, follows, causes, contradicts.
 
 [[Sentence]]: ordered instruction set of [[cyberlinks]] packed into a single transaction. The transaction boundary defines the utterance. Order within the batch encodes grammar. Types by topological signature: assertion (chain → TRUE), query (open-ended chain), instruction (temporal sequence), argument (branching to TRUE/FALSE), definition (star pattern).
 
@@ -1003,7 +1005,7 @@ Every generation of the web had its stack. Web1 had LAMP. Web2 had React + Node 
 - [[trident]] — provable programming language; every variable, every operation compiles to arithmetic over the Goldilocks field; programs produce [[zheng]] proofs — hash-based, post-quantum, no trusted setup
 - [[Bostrom]] — the [[bootloader]] chain
   - [[tru]] — onchain language model; reads the [[cybergraph]] every block and computes [[cyberank]] per [[particle]], [[karma]] per [[neuron]], [[syntropy]] of the whole
-  - [[neural]] — structures meaning through [[semantic conventions]] so the graph speaks a [[language]] both humans and machines understand
+  - [[neural]] — structures meaning through [[dialects]] so the graph speaks a [[language]] both humans and machines understand
 - [[cyb]] — the immortal [[cyb/robot]]
   - [[rune]] — dynamic async scripting language for [[cybergraph]] operations
   - [[datalog]] — graph query language

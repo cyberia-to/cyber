@@ -53,7 +53,7 @@ the resolution: the opposite. polynomial state makes AI faster and more capable.
 
 what polynomial state ADDS to AI:
 
-- the compiled [[transformer]] ([[bostrom/compiled model]]) reads graph topology via Lens openings. embedding lookup = polynomial evaluation. attention weights = polynomial openings at semcon-typed dimensions. with NMT: embedding lookup costs O(log n) hemera per particle. with polynomial state: O(1) field ops per particle. for 2.9M particles: 96M hemera calls → 2.9M field ops
+- the compiled [[transformer]] ([[bostrom/compiled model]]) reads graph topology via Lens openings. embedding lookup = polynomial evaluation. attention weights = polynomial openings at dialect-typed dimensions. with NMT: embedding lookup costs O(log n) hemera per particle. with polynomial state: O(1) field ops per particle. for 2.9M particles: 96M hemera calls → 2.9M field ops
 
 - tri-kernel convergence (the AI core of [[foculus]]) fits in zheng circuit at 33% capacity BECAUSE graph reads are algebraic. without polynomial state: 15× over capacity → AI cannot prove its own consensus. with polynomial state: the network's intelligence (φ*) is self-proving
 

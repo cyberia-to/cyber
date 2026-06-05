@@ -223,7 +223,7 @@ def estimate_architecture(d_star, lambda2, kappa, n_particles, n_links):
     """Step 6: Architecture parameters"""
     print("Step 6: Architecture parameters...")
 
-    # attention heads from semcon estimate (minimum 4)
+    # attention heads from dialect estimate (minimum 4)
     h_star = max(4, int(np.sqrt(d_star)))
 
     # layers from diameter × convergence
@@ -308,7 +308,7 @@ def assemble_onnx(E, pi, arch, out_path):
         # QKV combined: [d_star, 3*d_star]
         W_qkv = (rng.randn(d_star, 3 * d_star) * 0.02).astype(np.float32)
         # Initialize Q,K from SVD structure: project through pi-weighted space
-        # This is a simplification — full pipeline would use per-semcon SVD
+        # This is a simplification — full pipeline would use per-dialect SVD
         initializers.append(numpy_helper.from_array(W_qkv, name=f"W_qkv_{l}"))
 
         # QKV projection

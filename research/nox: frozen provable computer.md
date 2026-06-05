@@ -85,7 +85,7 @@ domain-specific constraint encodings. one VM, many frontends:
 
 | language | domain | example |
 |----------|--------|---------|
-| [[Tri]] | general purpose | semcons, progs, kernel |
+| [[Tri]] | general purpose | dialects, progs, kernel |
 | [[Tok]] | tokenomics | plumb conservation, staking |
 | [[Arc]] | state machines | BBG transitions, consensus |
 | [[Seq]] | sequences | time series, signal processing |

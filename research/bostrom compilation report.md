@@ -103,7 +103,7 @@ a Rust or C++ implementation with actual Halko-Martinsson-Tropp randomized SVD w
 | total params | 197M | 4.19B | -95% |
 | model size | 0.73 GB | 16.8 GB | -96% |
 
-$h^*$ deviation: the compiled $h^* = \lfloor\sqrt{d^*}\rfloor = 5$. the paper used $h^* = |\text{Semcon}(G)| \geq 12$ from the [[semcon]] registry — link type classification that requires typed cyberlinks. the current pipeline treats all links as homogeneous. with semcon classification, $h^*$ would increase to 12-40, and parameter count would approach paper prediction.
+$h^*$ deviation: the compiled $h^* = \lfloor\sqrt{d^*}\rfloor = 5$. the paper used $h^* = |\text{Dialect}(G)| \geq 12$ from the [[dialect]] registry — link type classification that requires typed cyberlinks. the current pipeline treats all links as homogeneous. with dialect classification, $h^*$ would increase to 12-40, and parameter count would approach paper prediction.
 
 $L^*$ deviation: $L^* = \text{diameter} \times T = 6 \times 29 = 174$. paper used diameter = 10 from BFS sample. the compiled diameter of 6 (estimated from $\log_{10}(|P|)$) is an underestimate — BFS on the full graph would be more accurate.
 
@@ -120,7 +120,7 @@ the 95% parameter gap is mostly explained by $h^*$: attention weights scale as $
 
 1. spectral gap computation: ARPACK eigsh does not converge on the full matrix. need LOBPCG or restrict to giant component
 2. stake weighting: initial run used uniform weights ($w = 1.0$ for all edges). must weight by neuron stake: $w_{ij} = \log(1 + s_k)$ where $s_k$ is the neuron's BOOT balance. log-scaling prevents whale domination while preserving ordering
-3. semcon classification: all links treated as homogeneous. typed cyberlinks (semcon registry) would enable multi-head attention with meaningful semantic heads
+3. dialect classification: all links treated as homogeneous. typed cyberlinks (dialect registry) would enable multi-head attention with meaningful semantic heads
 4. diameter estimation: $\log_{10}(|P|)$ approximation underestimates. need actual BFS from highest-degree node
 5. MLP weights (step 7): not computed in this run. requires random walk path sampling — computationally cheap but not yet implemented
 6. ONNX assembly (step 8): not executed. the `.npz` output contains raw embeddings and architecture params but is not a runnable model

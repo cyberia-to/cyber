@@ -124,12 +124,12 @@ the spine is the MINIMAL set that cannot implement itself. once it exists, every
 
 ## genesis crystal
 
-the [[cybergraph]] starts empty. core semcons need tokens to deploy. tokens need plumb semcon to exist. the crystal resolves this: a .tri program that runs once with unlimited focus.
+the [[cybergraph]] starts empty. core dialects need tokens to deploy. tokens need plumb dialect to exist. the crystal resolves this: a .tri program that runs once with unlimited focus.
 
 ```
 genesis.tri:
   create_token(CYB, HYDROGEN, VOLT, AMPERE)
-  register_semcon(plumb, identity, social, geo)
+  register_dialect(plumb, identity, social, geo)
   distribute(initial_balances)
   // genesis focus expires. normal rules apply.
 ```
@@ -331,13 +331,13 @@ STATE AFTER STAGE 3:
 
 ### Phase 10: genesis crystal                                1 session
 
-the seed. runs once with unlimited focus. creates tokens, registers core semcons, distributes initial balances. proven: compiled by trident.tri, executed by nox, proof by zheng.
+the seed. runs once with unlimited focus. creates tokens, registers core dialects, distributes initial balances. proven: compiled by trident.tri, executed by nox, proof by zheng.
 
-### Phase 11: core semcons                                   8-12 sessions
+### Phase 11: core dialects                                   8-12 sessions
 
-four "heavy" semcons that reach deep into the spine:
+four "heavy" dialects that reach deep into the spine:
 
-| semcon | what | sessions |
+| dialect | what | sessions |
 |--------|------|----------|
 | plumb.tri | tokens, staking, delegation, conservation, UTXO | 3-4 |
 | identity.tri | neuron registration, key proof, ownership | 2-3 |
@@ -393,7 +393,7 @@ STAGE 3 (proven bootstrap)
 GENESIS
   Phase 10: genesis.tri (crystal)               1 session
   ↓
-PROTOCOL (core semcons)
+PROTOCOL (core dialects)
   Phase 11: plumb.tri + identity.tri             5-7 sessions  ┐
             social.tri + geo.tri                 3-5 sessions  ├─ partial parallel
   Phase 12: tru.tri + foculus.tri                6-10 sessions ┘
