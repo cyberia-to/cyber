@@ -189,6 +189,11 @@ parent = "soft3"
 visibility = "private"
 
 [[subgraph]]
+name = "plumb"
+parent = "soft3"
+visibility = "private"
+
+[[subgraph]]
 name = "nox"
 parent = "soft3"
 visibility = "private"
