@@ -59,11 +59,6 @@ parent = "cyb"
 visibility = "private"
 
 [[subgraph]]
-name = "soma"
-parent = "cyb"
-visibility = "private"
-
-[[subgraph]]
 name = "optica"
 parent = "cyb"
 visibility = "public"
@@ -215,6 +210,16 @@ visibility = "private"
 
 [[subgraph]]
 name = "foculus"
+parent = "soft3"
+visibility = "private"
+
+[[subgraph]]
+name = "soma"
+parent = "soft3"
+visibility = "private"
+
+[[subgraph]]
+name = "conformance"
 parent = "soft3"
 visibility = "private"
 
