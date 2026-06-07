@@ -40,7 +40,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "glia"
-parent = "cyb"
+parent = "soft3"
 visibility = "private"
 
 [[subgraph]]
@@ -55,7 +55,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "mir"
-parent = "cyb"
+parent = "soft3"
 visibility = "private"
 
 [[subgraph]]
