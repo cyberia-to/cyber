@@ -34,6 +34,21 @@ parent = "cyb"
 visibility = "public"
 
 [[subgraph]]
+name = "wysm"
+parent = "cyb"
+visibility = "private"
+
+[[subgraph]]
+name = "glia"
+parent = "cyb"
+visibility = "private"
+
+[[subgraph]]
+name = "prysm"
+parent = "cyb"
+visibility = "private"
+
+[[subgraph]]
 name = "evy"
 parent = "cyb"
 visibility = "private"
@@ -44,7 +59,7 @@ parent = "cyb"
 visibility = "private"
 
 [[subgraph]]
-name = "prysm"
+name = "soma"
 parent = "cyb"
 visibility = "private"
 
@@ -52,16 +67,6 @@ visibility = "private"
 name = "optica"
 parent = "cyb"
 visibility = "public"
-
-[[subgraph]]
-name = "wysm"
-parent = "cyb"
-visibility = "private"
-
-[[subgraph]]
-name = "glia"
-parent = "cyb"
-visibility = "private"
 
 # /cybics ──────────────────────────────────
 
