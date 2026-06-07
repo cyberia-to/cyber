@@ -39,11 +39,6 @@ parent = "cyb"
 visibility = "private"
 
 [[subgraph]]
-name = "glia"
-parent = "soft3"
-visibility = "private"
-
-[[subgraph]]
 name = "prysm"
 parent = "cyb"
 visibility = "private"
@@ -51,11 +46,6 @@ visibility = "private"
 [[subgraph]]
 name = "evy"
 parent = "cyb"
-visibility = "private"
-
-[[subgraph]]
-name = "mir"
-parent = "soft3"
 visibility = "private"
 
 [[subgraph]]
@@ -185,6 +175,16 @@ visibility = "private"
 
 [[subgraph]]
 name = "tru"
+parent = "soft3"
+visibility = "private"
+
+[[subgraph]]
+name = "glia"
+parent = "soft3"
+visibility = "private"
+
+[[subgraph]]
+name = "mir"
 parent = "soft3"
 visibility = "private"
 
