@@ -209,6 +209,11 @@ parent = "soft3"
 visibility = "private"
 
 [[subgraph]]
+name = "tape"
+parent = "soft3"
+visibility = "private"
+
+[[subgraph]]
 name = "foculus"
 parent = "soft3"
 visibility = "private"
