@@ -216,7 +216,7 @@ B includes H(result_1) in the B↔C state transition. the [[proof]] chain is com
 
 this generalizes to arbitrary DAGs of channel interactions. each edge is a bilateral channel. each node is a [[neuron]] that receives proven inputs and produces proven outputs. the DAG topology emerges dynamically through name passing — channels create channels.
 
-### reduction to the thirteen [[cyb/languages]]
+### reduction to the thirteen [[languages]]
 
 the channel is not a fourteenth language. it is an application pattern over existing algebras:
 

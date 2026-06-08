@@ -286,7 +286,7 @@ this is not a missing layer. it is the structure of nox and the cybergraph. comp
 
 the algebra is F_p² (quadratic extension of [[Goldilocks field]], already in [[Trident]]: n=2, f = x²+1). gate matrices are 2×2 over F_p². the circuit description is a [[nox]] program over existing field extensions.
 
-quantum enters the stack as [[Qu]] — the 15th [[cyb/languages|computation language]]:
+quantum enters the stack as [[Qu]] — the 15th [[languages|computation language]]:
 
 | layer | what | regime used |
 |-------|------|-------------|

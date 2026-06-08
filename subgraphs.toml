@@ -254,6 +254,51 @@ name = "rune"
 parent = "trident"
 visibility = "private"
 
+[[subgraph]]
+name = "arc"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "bt"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "ren"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "dif"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "sym"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "bel"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "seq"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "wav"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "ten"
+parent = "trident"
+visibility = "private"
+
 # /warriors ──────────────────────────────────
 
 [[subgraph]]
