@@ -64,9 +64,7 @@ jobs:
 
         cd $repo_path
         git add .github/workflows/notify-cyber.yml
-        git commit -m $"chore: add notify-cyber workflow — trigger cyber rebuild on push
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
+        git commit -m "chore: add notify-cyber workflow — trigger cyber rebuild on push"
         git push origin HEAD
         print $"  done  ($s.repo)"
         cd ($base | path join "cyber")
