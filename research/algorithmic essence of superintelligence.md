@@ -234,7 +234,7 @@ the graph grows intelligently. each link placed where it improves convergence th
 
 [[trident]]: the compiler that targets [[nox]]. sixteen algebraically irreducible languages, one or more per algebra:
 
-{{embed [[soft3/specs/languages-table]]}}
+{{embed [[languages#the languages]]}}
 
 the canonical set is the [[languages]] spec. each language compiles through nox. each execution step → Hemera commitment → particle in cybergraph. the graph accumulates verified computation from all algebras.
 

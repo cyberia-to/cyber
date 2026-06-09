@@ -83,7 +83,7 @@ the registry lives in [[cybergraph]] as cyberlinks: formula particle → impleme
 
 domain-specific constraint encodings. one VM, many frontends:
 
-{{embed [[soft3/specs/languages-table]]}}
+{{embed [[languages#the languages]]}}
 
 [[Nox]] itself is the substrate, not a frontend — raw hand-written noun formulas compile directly. the canonical list (sixteen, over five algebras) is the [[languages]] spec. all compiled by [[Trident]], all proven by [[zheng]], all stored in [[bbg]].
 

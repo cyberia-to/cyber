@@ -44,6 +44,8 @@ the [[cybergraph]] has four dimensions — the four primitives themselves. [[par
 
 each [[token]] naturally forms its own cluster. [[particles]] priced in [[$CYB]] cluster in $CYB cells. trading $CYB for $H is a cross-cell hop in the token dimension. a new [[token]] creates a new cluster. the number of token cells scales with the number of live [[tokens]]
 
+the economic dimension is the only one of the four that is already a discrete label rather than a computed clustering — so it is realized explicitly first: a [[signal]] carries a `network` field (a [[card]] id), naming the network it is delivered to. a network is a [[card]] — unique, owned, transferable. the default is the neuron's private network, $H(\texttt{"network:"} \| \nu)$ — every [[neuron]] writes to its own sovereign shard by default, and joining a shared network is opt-in. the other three dimensions (semantic, social, geographic) remain tri-kernel-computed. see [[network]].
+
 ### locations — geographic
 
 latency matters for interactive use. [[neurons]] in the same physical region want low-latency access to their neighborhood. [[location proof]] provides this dimension. validators in a region preferentially serve that region's cells
