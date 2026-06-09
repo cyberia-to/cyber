@@ -223,95 +223,100 @@ name = "conformance"
 parent = "soft3"
 visibility = "private"
 
-# /trident ──────────────────────────────────
+# /neural ──────────────────────────────────
+
+[[subgraph]]
+name = "neural"
+visibility = "public"
 
 [[subgraph]]
 name = "trident"
+parent = "neural"
 visibility = "public"
 
 [[subgraph]]
 name = "eidos"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "inf"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "nu"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "rs"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "rune"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "arc"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "bt"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "ren"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "dif"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "sym"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "bel"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "seq"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "wav"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "ten"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "qu"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "opt"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 [[subgraph]]
 name = "sec"
-parent = "trident"
+parent = "neural"
 visibility = "private"
 
 # /warriors ──────────────────────────────────
