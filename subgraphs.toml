@@ -189,7 +189,7 @@ parent = "soft3"
 visibility = "private"
 
 [[subgraph]]
-name = "plumb"
+name = "tok"
 parent = "soft3"
 visibility = "private"
 
@@ -296,6 +296,21 @@ visibility = "private"
 
 [[subgraph]]
 name = "ten"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "qu"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "opt"
+parent = "trident"
+visibility = "private"
+
+[[subgraph]]
+name = "sec"
 parent = "trident"
 visibility = "private"
 

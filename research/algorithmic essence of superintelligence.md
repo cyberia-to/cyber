@@ -232,25 +232,11 @@ the graph grows intelligently. each link placed where it improves convergence th
 
 ## 15. the language: trident
 
-[[trident]]: the compiler that targets [[nox]]. 14 algebraically irreducible languages:
+[[trident]]: the compiler that targets [[nox]]. sixteen algebraically irreducible languages, one or more per algebra:
 
-| language | algebra | domain |
-|---|---|---|
-| Tri | $\mathbb{F}_{p^n}$ tower | proofs, field arithmetic |
-| Tok | UTXO conservation | economic transactions |
-| Arc | category theory | schema, graph structure |
-| Seq | partial order | sequence, causality |
-| Inf | Horn clauses | logic, unification |
-| Bel | distributions on Δⁿ | belief, self-model |
-| Ren | Clifford G(p,q,r) | geometry, rendering |
-| Dif | (M, g) manifolds | continuous dynamics |
-| Sym | (M, ω) Hamiltonian | physics simulation |
-| Wav | R_q convolution | FHE, signal processing |
-| Ten | contraction | neural networks, tensors |
-| Bt | F₂ tower | binary, bitwise |
-| Rs | Z/2ⁿ words | systems programming |
+{{embed [[soft3/specs/languages-table]]}}
 
-each language compiles through nox. each execution step → Hemera commitment → particle in cybergraph. the graph accumulates verified computation from all algebras.
+the canonical set is the [[languages]] spec. each language compiles through nox. each execution step → Hemera commitment → particle in cybergraph. the graph accumulates verified computation from all algebras.
 
 57,736 LOC implemented (frontend, IR, type inference, verification hooks, field-generic primitives).
 

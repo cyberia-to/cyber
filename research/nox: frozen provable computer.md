@@ -79,28 +79,13 @@ jet_registry: H(formula_noun) → optimized_impl
 
 the registry lives in [[cybergraph]] as cyberlinks: formula particle → implementation particle. nox without jets works. just slower. see [[cyb/mind]] for how jets map to the four-tier cognitive architecture.
 
-## 15 languages compile to nox
+## the languages compile to nox
 
 domain-specific constraint encodings. one VM, many frontends:
 
-| language | domain | example |
-|----------|--------|---------|
-| [[Tri]] | general purpose | dialects, progs, kernel |
-| [[Tok]] | tokenomics | plumb conservation, staking |
-| [[Arc]] | state machines | BBG transitions, consensus |
-| [[Seq]] | sequences | time series, signal processing |
-| [[Inf]] | inference | neural network forward pass |
-| [[Bel]] | belief | Bayesian update, probabilistic |
-| [[Ren]] | rendering | UI layout, visualization |
-| [[Dif]] | differentiation | gradients, optimization |
-| [[Sym]] | symbolic | algebra, equation solving |
-| [[Wav]] | wavelets | signal analysis, compression |
-| [[Bt]] | binary | kuro quantized models |
-| [[Rs]] | systems | low-level, hardware interaction |
-| [[Ten]] | tensors | matrix ops, ML training |
-| Nox | raw | hand-written noun formulas |
+{{embed [[soft3/specs/languages-table]]}}
 
-all compiled by [[Trident]]. all proven by [[zheng]]. all stored in [[bbg]].
+[[Nox]] itself is the substrate, not a frontend — raw hand-written noun formulas compile directly. the canonical list (sixteen, over five algebras) is the [[languages]] spec. all compiled by [[Trident]], all proven by [[zheng]], all stored in [[bbg]].
 
 ## self-verification
 
