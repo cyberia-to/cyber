@@ -1,4 +1,6 @@
 ---
+title: BBG polynomial authenticated state
+alias: bbg research, bbg polynomial state
 tags: cyber, research, article
 crystal-type: process
 crystal-domain: cyber
