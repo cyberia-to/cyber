@@ -59,22 +59,22 @@ Cumulative supply emitted:
 128y |████████████████████████████████████████████  |   94.9%
 ```
 
-Share of supply minted in each year — the bootstrap lands in year one, then the tail:
+Yearly inflation — new supply ÷ circulating supply at year start. Year one is the bootstrap: the 1% genesis fills to half the supply, a one-time ~50× expansion that sits off the scale below. From year two it cools fast:
 
 ```
-  1y |██████████████████████████████████████████████|  50.2%
-  2y |███████████                                   |  12.2%
-  3y |██████                                        |   6.2%
-  4y |████                                          |   3.9%
-  5y |██                                            |   2.7%
-  6y |██                                            |   2.0%
-  8y |█                                             |   1.3%
- 10y |█                                             |   0.9%
- 20y |                                              |   0.3%
- 50y |                                              |   0.1%
+  1y |████████████████████████████████████████████| 4890%  ← bootstrap, off-scale
+  2y |████████████████████████████████████████████|  23.8%
+  3y |██████████████████                          |   9.7%
+  4y |██████████                                  |   5.6%
+  5y |███████                                     |   3.7%
+  6y |█████                                       |   2.7%
+  8y |███                                         |   1.6%
+ 10y |██                                          |   1.1%
+ 20y |█                                           |   0.4%
+ 50y |                                            |   0.1%
 ```
 
-After the year-one bootstrap, yearly inflation cools fast: 24% (year 2), 9.7% (year 3), 3.7% (year 5), ~1% past year 10 — dropping below a flat-issuance design (Bittensor sits near 16% for years) by year three, while the heavy tail keeps issuing far longer than any halving.
+Inflation drops below a flat-issuance design (Bittensor sits near 16% for years) by year three, while the heavy tail keeps issuing far longer than any halving.
 
 ## allocation is focus
 
