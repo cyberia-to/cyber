@@ -273,7 +273,7 @@ Staking yield at equilibrium: r_s = (G · S^(α-1)) / M. Master safety indicator
 
 ### Supply and emission
 
-Total supply is the [[nebu|Goldilocks field]] order (p = 2⁶⁴ − 2³² + 1). Genesis seeds a 281,405,532,467,645 [[$CYB]] starting balance for TOCYB holders (0.001526% of total); the rest emits along a power-law curve — a hot bootstrap head and a heavy multi-decade tail. Full supply cap, genesis, and the emission curve live on [[$CYB]].
+Total supply is the [[nebu|Goldilocks field]] order (p = 2⁶⁴ − 2³² + 1). Genesis seeds a 187,416,084,623,451,570 [[$CYB]] starting balance for TOCYB holders (≈ 1% of total); the rest emits along a power-law curve — a hot bootstrap head and a heavy multi-decade tail. Full supply cap, genesis, and the emission curve live on [[$CYB]].
 
 ## The genesis seed
 

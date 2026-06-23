@@ -18,7 +18,7 @@ Total $CYB supply is the [[nebu|Goldilocks field]] order itself — p = 2⁶⁴ 
 
 ## Genesis
 
-At genesis, TOCYB holders hold 281,405,532,467,645 $CYB — the migration snapshot, 0.001526% of total (≈ 1/65,552 of the field). Every other unit enters supply through emission.
+At genesis, TOCYB holders hold 187,416,084,623,451,570 $CYB — ≈ 1% of total supply (the migration snapshot of 281,405,532,467,645, lifted 666×). Every other unit enters supply through emission.
 
 ## Emission — a power law
 
