@@ -24,7 +24,7 @@ The cap is how many elements the field has — arithmetic, not a governance numb
 
 ## genesis
 
-At the first block, TOCYB holders — the migrated holders of [[$BOOT]] and [[$PUSSY]], the two bootloader chains — hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply (their snapshot of 281,405,532,467,645, lifted 666×). Every other unit is earned through emission. The migration runs $PUSSY first, then $BOOT — see [[cyber/launch|launch]].
+At the first block, $C holders — the existing cyber energy token on [[bostrom]] — hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×. [[$BOOT]] and [[$PUSSY]] are separate tokens and take no part in the $CYB genesis. Every other unit is earned through emission.
 
 ## emission is blind, by design
 

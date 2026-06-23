@@ -70,15 +70,15 @@ Theoretical foundations established:
 | S4 | Networking | nodes exchange signals | push gossip propagates, transport wired |
 | S5 | Consensus v0 | nodes agree on finality | [[foculus]] φ*ᵢ > τ on a multi-node run |
 | S6 | Node + genesis | one binary boots a network | soft3-node + genesis tooling |
-| ★ | MVP testnet | the network agrees | 30 days, zero critical bugs under attack |
+| S7 | Economics | value + rewards live | conservation enforced, equilibrium simulated |
+| S8 | Ranking | φ* ranks the graph | [[tru]] CT-0, Lyapunov proof |
+| ★ | MVP testnet | the network agrees, with a live economy | 30 days, zero critical bugs under attack |
+| R1 | Migrate $PUSSY | pipeline proven on the low-stakes net | space-pussy graph reproduced, zero loss |
 | P1 | Privacy | links public, owners private | nullifier soundness, leakage budget bounded |
-| P2 | Economics | value + rewards live | conservation enforced, equilibrium simulated |
-| P3 | Ranking at scale | φ* over the live graph | [[tru]] CT-0, Lyapunov proof |
-| P4 | Recursive proof | light clients, verifier-as-nox | O(log n) state verification |
-| P5 | Sharding & DA | planet-scale graph | DAS verifier, cross-shard sheaf consistency |
-| P6 | Formal spine | machine-checked safety | the five Pre-Launch gates green |
-| R1 | Migrate $PUSSY | pipeline proven on the low-stakes net | space-pussy state reproduced, zero loss |
-| R2 | Migrate $BOOT | bostrom comes home, genesis 1% minted | bijective snapshot, karma + balances reconcile |
+| P2 | Recursive proof | light clients, verifier-as-nox | O(log n) state verification |
+| P3 | Sharding & DA | planet-scale graph | DAS verifier, cross-shard sheaf consistency |
+| P4 | Formal spine | machine-checked safety | the five Pre-Launch gates green |
+| R2 | Migrate $BOOT | bostrom graph comes home | bijective snapshot, karma reconciles |
 | R3 | Align crystal | the 5,040-particle seed is the basis | 12 genesis invariants green |
 | ★ | Mainnet | the launch that arrives correct | Pre-Launch Verification passes |
 
@@ -100,8 +100,8 @@ Open inside this floor, carried as work into later milestones: [[hemera]] audit,
 
 Goal: two or more independent nodes converge on one [[soft3/cybergraph|cybergraph]] — signals gossip, order into per-[[cybics/crystal/neuron|neuron]] chains, apply their [[cyberlinks]] to state, and reach φ*ᵢ > τ finality, with every signal carrying a proof the [[cybics/crystal/neuron|neuron]] did what it declared.
 
-In scope: signal lifecycle, proof at seal, gossip, minimal [[consensus]], a node binary.
-Deferred past the testnet (see P-milestones): privacy circuits, the value layer and rewards, φ*-derived models, recursive proofs, sharding, formal verification. The testnet proves the architecture agrees; it does not yet carry value or hide owners.
+In scope: signal lifecycle, proof at seal, gossip, minimal [[consensus]], a node binary, the value layer ([[cyber/$CYB|$CYB]] emission and rewards), and φ* ranking — an MVP with a live economy and focus, not a bare consensus net.
+Deferred past the testnet (see P-milestones): privacy circuits, recursive proofs, sharding, formal verification, and the chain migrations. The testnet proves the architecture agrees and the economy runs; it does not yet hide owners.
 
 ### S1 — Wire & framing
 
@@ -170,6 +170,18 @@ No binary wires the spine together, and there is no genesis. [[soft3/soma|soma]]
 
 Estimate: 5-8 sessions.
 
+### S7 — Economics
+
+[[tok]] carries value: [[coin]] (fungible) and [[card]] (non-fungible), all change a [[plumb]] mutation under conservation. Rewards mint on Δφ* — creating valuable structure is creating [[value]] — Sybil-resistant via stake-weighting. The testnet runs a live [[cyber/$CYB|$CYB]] economy from day one, so price and rewards are exercised, not deferred.
+
+Gate: conservation enforced by proof, reward equilibrium simulation-tested under 100× adversarial load.
+
+### S8 — Ranking
+
+[[tru]] computes the field today; the CT-0 model-compilation passes bail. This milestone runs the [[tri-kernel]] over the network's graph, deriving models from φ*, adversarially proven — so the testnet ranks by focus, the metric everything else serves.
+
+Gate: φ* over the network graph, explicit Lyapunov function with dV/dt < 0, bounded locality k = O(log(1/ε)).
+
 ## MVP testnet — the gate
 
 | milestone | gate |
@@ -177,11 +189,11 @@ Estimate: 5-8 sessions.
 | Devnet | all unit + integration tests pass; signal flows end-to-end on one machine |
 | Testnet | multi-node, public; 30 days with zero critical bugs under attack |
 
-The testnet is the proof that the architecture converges: the dumb processor ([[soft3/cybergraph\|cybergraph]]) and the smart runtime ([[soft3/soma|soma]]) drive one network to agreement. It does not yet carry private value — that is the work from here to mainnet.
+The testnet is the proof that the architecture converges with a live economy: the dumb processor ([[soft3/cybergraph\|cybergraph]]) and the smart runtime ([[soft3/soma|soma]]) drive one network to agreement, carrying [[cyber/$CYB|$CYB]] and ranking by φ*. Owners are still public and the bootloader graph has not migrated — that is the work from here to mainnet. The first move past the gate is the [[bootloader/space-pussy|$PUSSY]] migration rehearsal (R1).
 
 ## Structural milestones: testnet → mainnet
 
-Each one a capability the testnet lacks, ordered by dependency.
+Each one a capability the testnet lacks, ordered by dependency. ($PUSSY migrates first, right after the gate — see Migration.)
 
 ### P1 — Privacy circuits
 
@@ -189,31 +201,19 @@ UTXO-style privacy with ZK proofs for every state transition. Public: edge exist
 
 Gate: transaction + cyberlink circuits, nullifier soundness, leakage budget L(queries, graph) bounded.
 
-### P2 — Economics
-
-[[tok]] carries value: [[coin]] (fungible) and [[card]] (non-fungible), all change a [[plumb]] mutation under conservation. Rewards mint on Δφ* — creating valuable structure is creating [[value]] — Sybil-resistant via stake-weighting. Both [[tok]] and the reward spec are specified, not built.
-
-Gate: conservation enforced by proof, reward equilibrium simulation-tested under 100× adversarial load.
-
-### P3 — Ranking at scale
-
-[[tru]] computes the field today; the CT-0 model-compilation passes bail. This milestone runs the [[tri-kernel]] over the live graph, deriving models from φ*, adversarially proven.
-
-Gate: φ* over the production graph, explicit Lyapunov function with dV/dt < 0, bounded locality k = O(log(1/ε)).
-
-### P4 — Recursive proof
+### P2 — Recursive proof
 
 The [[stark]] verifier is itself a [[soft3/nox|nox]] program: proofs can be verified, and verification can be proven. Unlocks O(log n) light clients.
 
 Gate: inner verification circuit arithmetized, light-client verification of any state claim.
 
-### P5 — Sharding & data availability
+### P3 — Sharding & data availability
 
 Shards as subtopoi, a sheaf of attention weights keeping cross-shard [[soft3/tru/specs/focus|focus]] consistent. [[sync]] has erasure coding and DAS commitments; the sample verifier is missing.
 
 Gate: DAS verifier complete, cross-shard consistency proven, gossip bandwidth ∝ stake.
 
-### P6 — Formal verification spine
+### P4 — Formal verification spine
 
 Runs parallel to every milestone, converging here. Each line below is one of the Pre-Launch gates.
 
@@ -229,19 +229,19 @@ Runs parallel to every milestone, converging here. Each line below is one of the
 
 ## Migration — the bootloader chains come home
 
-The soft3 network launches with state, not empty. Two live Cosmos chains carry the graph and its neurons today, and they come home in sequence — lowest stakes first, so the pipeline is proven before it touches real value. Their holder snapshot is the TOCYB genesis on [[cyber/$CYB|$CYB]] (≈ 1% of supply). The capabilities above (privacy, economics, ranking) land before the rollout; only a capable network is worth migrating real value onto.
+The soft3 network launches with state, not empty. Two live Cosmos chains carry the graph and its neurons today; the migration brings that graph — particles, cyberlinks, neurons, karma — home onto the soft3 network, lowest stakes first. $PUSSY migrates right after the MVP testnet as the rehearsal; $BOOT and the crystal come at mainnet. The [[cyber/$CYB|$CYB]] genesis is separate from all of this: it is the $C-holder snapshot (≈ 1% of supply); [[$BOOT]] and [[$PUSSY]] balances do not convert.
 
 ### R1 — migrate $PUSSY (the rehearsal)
 
-[[bootloader/space-pussy|space-pussy]] is the experimental net; migrating it first proves the whole pipeline — export state, map it into [[soft3/cybergraph|cybergraph]] form, convert [[$PUSSY]] → [[cyber/$CYB|$CYB]], verify bijectively — without risking [[bostrom]]. A dress rehearsal at low stakes.
+[[bootloader/space-pussy|space-pussy]] is the experimental net; migrating its graph first proves the whole pipeline — export state, map it into [[soft3/cybergraph|cybergraph]] form, verify bijectively — without risking [[bostrom]]. A dress rehearsal at low stakes, run as soon as the testnet stands.
 
-Gate: full space-pussy state (particles, cyberlinks, neurons, balances) reproduced on the soft3 net with zero loss; the replayed root matches; $PUSSY balances reconcile to the snapshot.
+Gate: full space-pussy graph (particles, cyberlinks, neurons, karma) reproduced on the soft3 net with zero loss; the replayed root matches.
 
 ### R2 — migrate $BOOT (the real one)
 
-The same pipeline at mainnet scale: every [[cybics/crystal/neuron|neuron]], [[cyberlink]], and [[cybics/crystal/particle|particle]] from [[bostrom]] — ~70K neurons, 3.1M particles, 2.9M cyberlinks, three years of history — with [[cybics/crystal/karma|karma]] carried as reputation and the [[$BOOT]] / $H / $V / $A balances mapped to [[cyber/$CYB|$CYB]] and the focus and will mechanics. This snapshot mints the genesis 1%.
+The same pipeline at mainnet scale: every [[cybics/crystal/neuron|neuron]], [[cyberlink]], and [[cybics/crystal/particle|particle]] from [[bostrom]] — ~70K neurons, 3.1M particles, 2.9M cyberlinks, three years of history — with [[cybics/crystal/karma|karma]] carried as reputation. The graph comes home; the separate $C-holder snapshot taken here is what mints the genesis 1% ([[$BOOT]], $H, $V, $A, and [[$PUSSY]] balances do not convert to [[cyber/$CYB|$CYB]]).
 
-Gate: bijective state mapping, zero data loss; frozen snapshot signed; karma and balances reconcile to the last grain; every particle re-addressable under [[hemera]] identity.
+Gate: bijective state mapping, zero data loss; frozen snapshot signed; karma reconciles; every particle re-addressable under [[hemera]] identity.
 
 ### R3 — align the genesis crystal
 
