@@ -78,7 +78,7 @@ Theoretical foundations established:
 | P1 | Privacy | links public, owners private | nullifier soundness, leakage budget bounded |
 | P2 | Recursive proof | light clients, verifier-as-nox | O(log n) state verification |
 | P3 | Sharding & DA | planet-scale graph | DAS verifier, cross-shard sheaf consistency |
-| P4 | Formal spine | machine-checked safety | the five Pre-Launch gates green |
+| P4 | Formal spine | machine-checked safety | the five machine-checked gates green |
 | R2 | Migrate $BOOT | bostrom graph comes home | bijective snapshot, karma reconciles |
 | R3 | Align crystal | the 5,040-particle seed is the basis | 12 genesis invariants green |
 | ★ | Mainnet | the launch that arrives correct | Pre-Launch Verification passes |
@@ -262,7 +262,7 @@ Mainnet genesis is then this migrated, crystal-aligned state going live under th
 
 ## Mainnet — the gate
 
-No patch relay exists between stars. What launches must be correct. Before launch, answer five questions with machine-checked evidence:
+No patch relay exists between stars. What launches must be correct. Before launch, answer six questions — five with machine-checked evidence, one with the record of real use:
 
 | # | question | evidence |
 |---|----------|----------|
@@ -271,8 +271,9 @@ No patch relay exists between stars. What launches must be correct. Before launc
 | 3 | Can the economy be drained? | Nash equilibrium proof + 100× adversarial simulation |
 | 4 | Is computation deterministic? | cross-implementation state-root match on 10⁶ blocks |
 | 5 | Does it survive partial failure? | chaos test, zero safety violations |
+| 6 | Does it provide real utility? | canary record: neurons join, stay, and create focus — sustained use, not headcount |
 
-All five green → launch. Any red → no launch. No exceptions.
+All six green → launch. Any red → no launch. No exceptions.
 
 | milestone | gate |
 |-----------|------|
