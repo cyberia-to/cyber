@@ -12,7 +12,7 @@ cyber organizes one quantity: [[soft3/tru/specs/focus|focus]] (φ*), the collect
 
 ## $CYB is the energy of focus
 
-Moving focus costs work; creating focus is work done. $CYB is that work made fungible — the energy a [[cybics/crystal/neuron|neuron]] spends to write a [[cyberlink]], compute, and reach [[consensus]], and the energy it earns for raising the graph's focus. Δφ* is the gradient of the system's free energy, so $CYB is that free energy in transferable form. Bandwidth, focus, and tokens are three faces of one energy.
+Moving focus costs work; creating focus is work done. $CYB is that work made fungible — the energy a [[cybics/crystal/neuron|neuron]] spends to write a [[cyberlink]], compute, and reach [[cybics/crystal/consensus|consensus]], and the energy it earns for raising the graph's focus. Δφ* is the gradient of the system's free energy, so $CYB is that free energy in transferable form. Bandwidth, focus, and tokens are three faces of one energy.
 
 ## supply is a law of the field
 
