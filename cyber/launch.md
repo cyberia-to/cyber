@@ -228,7 +228,7 @@ Runs parallel to every milestone, converging here. Each line below is one of the
 
 | what | how |
 |------|-----|
-| Layer 1 confluence (16 patterns) | Lean4 / Coq |
+| Layer 1 confluence (16 patterns) | [[eidos]] |
 | cost determinism | structural induction, machine-checked |
 | [[soft3/tru/specs/focus|focus]] conservation (Σφ*ᵢ = 1) | transition analysis |
 | privacy soundness (< 2⁻¹²⁸) | [[stark]] soundness theorem |
@@ -266,7 +266,7 @@ No patch relay exists between stars. What launches must be correct. Before launc
 
 | # | question | evidence |
 |---|----------|----------|
-| 1 | Does φ* converge? | Lean4 proof of Lyapunov stability |
+| 1 | Does φ* converge? | [[eidos]] proof of Lyapunov stability |
 | 2 | Can proofs be forged? | soundness proof + 10⁸ fuzzing runs, 0 counterexamples |
 | 3 | Can the economy be drained? | Nash equilibrium proof + 100× adversarial simulation |
 | 4 | Is computation deterministic? | cross-implementation state-root match on 10⁶ blocks |
