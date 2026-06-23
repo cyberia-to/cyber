@@ -26,11 +26,11 @@ The cap is how many elements the field has — arithmetic, not a governance numb
 
 At the first block, [[$C]] holders hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×.
 
-## emission is blind, by design
+## emission answers to time alone
 
-Focus is the value, so the tempting schedule would mint $CYB against focus, or neurons, or adoption. That is the schedule to refuse. There is no honest threshold for how much focus "deserves" issuance, and any quantity the money is minted against becomes a quantity attackers are paid to forge — emission would fund its own sybil attack. So emission reads one input: the clock. Blind to the graph, it cannot be gamed.
+Supply at age t is M(t): a function of the clock and nothing else — identical on every node, known in full from genesis. With time as the only input, the schedule is a fixed commitment, predictable in advance and immune to forgery.
 
-Focus is not discarded — it is moved to where it is safe. The schedule fixes how much $CYB exists; allocation (below) decides who earns it, by focus. The two never mix.
+Focus enters on the other side. The clock sets how much $CYB exists; focus sets who earns it (see allocation). Supply is a law of time, reward a law of φ* — kept apart.
 
 ## emission follows the network's own law
 
