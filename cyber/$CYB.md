@@ -59,10 +59,9 @@ Cumulative supply emitted:
 128y |████████████████████████████████████████████  |   94.9%
 ```
 
-Yearly inflation — new supply ÷ circulating supply at year start. Year one is the bootstrap: the 1% genesis fills to half the supply, a one-time ~50× expansion that sits off the scale below. From year two it cools fast:
+Yearly inflation — new supply ÷ circulating supply at year start. Year one is the bootstrap: the 1% genesis fills to half the supply, a one-time ~50× expansion. From year two it cools fast:
 
 ```
-  1y |████████████████████████████████████████████| 4890%  ← bootstrap, off-scale
   2y |████████████████████████████████████████████|  23.8%
   3y |██████████████████                          |   9.7%
   4y |██████████                                  |   5.6%
