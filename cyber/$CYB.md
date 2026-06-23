@@ -20,11 +20,11 @@ Value and computation share one arithmetic: balances are elements of the [[nebu|
 
 p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321
 
-The cap is how many elements the field has — arithmetic, not a governance number. (On the [[bostrom]] [[bootloader]] today this energy circulates as [[$C]].)
+The cap is how many elements the field has — arithmetic, not a governance number. (On the [[bootloader/bostrom|bostrom]] [[bootloader]] today this energy circulates as [[$C]].)
 
 ## genesis
 
-At the first block, $C holders — the existing cyber energy token on [[bostrom]] — hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×. [[$BOOT]] and [[$PUSSY]] are separate tokens and take no part in the $CYB genesis. Every other unit is earned through emission.
+At the first block, $C holders — the existing cyber energy token on [[bootloader/bostrom|bostrom]] — hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×. [[tokens/$BOOT|$BOOT]] and [[tokens/$PUSSY|$PUSSY]] are separate tokens and take no part in the $CYB genesis. Every other unit is earned through emission.
 
 ## emission is blind, by design
 

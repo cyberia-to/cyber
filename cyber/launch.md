@@ -48,7 +48,7 @@ The stack was built bottom-up, so it inverts the textbook order. The hard crypto
 | [[foculus]] | consensus by convergence | spec | — | specified, no code |
 | [[soft3/soma|soma]] | runtime / the mind | spec | — | specified, no code |
 
-The [[bostrom]] network has run 3+ years as the bootloader — ~70K [[cybics/crystal/neuron|neurons]], 2.9M [[cyberlinks]], 3.1M [[cybics/crystal/particle|particles]] — and is the migration source, not the soft3 network. The soft3-native node does not exist yet; building it is the spine of this plan.
+The [[bootloader/bostrom|bostrom]] network has run 3+ years as the bootloader — ~70K [[cybics/crystal/neuron|neurons]], 2.9M [[cyberlinks]], 3.1M [[cybics/crystal/particle|particles]] — and is the migration source, not the soft3 network. The soft3-native node does not exist yet; building it is the spine of this plan.
 
 Theoretical foundations established:
 
@@ -229,17 +229,17 @@ Runs parallel to every milestone, converging here. Each line below is one of the
 
 ## Migration — the bootloader chains come home
 
-The soft3 network launches with state, not empty. Two live Cosmos chains carry the graph and its neurons today; the migration brings that graph — particles, cyberlinks, neurons, karma — home onto the soft3 network, lowest stakes first. $PUSSY migrates right after the MVP testnet as the rehearsal; $BOOT and the crystal come at mainnet. The [[cyber/$CYB|$CYB]] genesis is separate from all of this: it is the $C-holder snapshot (≈ 1% of supply); [[$BOOT]] and [[$PUSSY]] balances do not convert.
+The soft3 network launches with state, not empty. Two live Cosmos chains carry the graph and its neurons today; the migration brings that graph — particles, cyberlinks, neurons, karma — home onto the soft3 network, lowest stakes first. $PUSSY migrates right after the MVP testnet as the rehearsal; $BOOT and the crystal come at mainnet. The [[cyber/$CYB|$CYB]] genesis is separate from all of this: it is the $C-holder snapshot (≈ 1% of supply); [[tokens/$BOOT|$BOOT]] and [[tokens/$PUSSY|$PUSSY]] balances do not convert.
 
 ### R1 — migrate $PUSSY (the rehearsal)
 
-[[bootloader/space-pussy|space-pussy]] is the experimental net; migrating its graph first proves the whole pipeline — export state, map it into [[soft3/cybergraph|cybergraph]] form, verify bijectively — without risking [[bostrom]]. A dress rehearsal at low stakes, run as soon as the testnet stands.
+[[bootloader/space-pussy|space-pussy]] is the experimental net; migrating its graph first proves the whole pipeline — export state, map it into [[soft3/cybergraph|cybergraph]] form, verify bijectively — without risking [[bootloader/bostrom|bostrom]]. A dress rehearsal at low stakes, run as soon as the testnet stands.
 
 Gate: full space-pussy graph (particles, cyberlinks, neurons, karma) reproduced on the soft3 net with zero loss; the replayed root matches.
 
 ### R2 — migrate $BOOT (the real one)
 
-The same pipeline at mainnet scale: every [[cybics/crystal/neuron|neuron]], [[cyberlink]], and [[cybics/crystal/particle|particle]] from [[bostrom]] — ~70K neurons, 3.1M particles, 2.9M cyberlinks, three years of history — with [[cybics/crystal/karma|karma]] carried as reputation. The graph comes home; the separate $C-holder snapshot taken here is what mints the genesis 1% ([[$BOOT]], $H, $V, $A, and [[$PUSSY]] balances do not convert to [[cyber/$CYB|$CYB]]).
+The same pipeline at mainnet scale: every [[cybics/crystal/neuron|neuron]], [[cyberlink]], and [[cybics/crystal/particle|particle]] from [[bootloader/bostrom|bostrom]] — ~70K neurons, 3.1M particles, 2.9M cyberlinks, three years of history — with [[cybics/crystal/karma|karma]] carried as reputation. The graph comes home; the separate $C-holder snapshot taken here is what mints the genesis 1% ([[tokens/$BOOT|$BOOT]], $H, $V, $A, and [[tokens/$PUSSY|$PUSSY]] balances do not convert to [[cyber/$CYB|$CYB]]).
 
 Gate: bijective state mapping, zero data loss; frozen snapshot signed; karma reconciles; every particle re-addressable under [[hemera]] identity.
 
@@ -269,7 +269,7 @@ All five green → launch. Any red → no launch. No exceptions.
 |-----------|------|
 | Canary net | 90 days stability, all economic invariants hold |
 | Mainnet genesis | migrated + crystal-aligned state live; Pre-Launch Verification green (all 5) |
-| [[bostrom]] migration | bijective state mapping, zero data loss |
+| [[bootloader/bostrom|bostrom]] migration | bijective state mapping, zero data loss |
 
 The light-cone is merciless. What you ship is what arrives.
 
@@ -279,12 +279,12 @@ The light-cone is merciless. What you ship is what arrives.
 
 | Type | Fungible | Movable | Role | Examples |
 |------|----------|---------|------|----------|
-| [[coin]] | yes | yes | [[consensus]], fees, stake | [[cyber/$CYB|$CYB]], [[$BOOT]] |
+| [[coin]] | yes | yes | [[consensus]], fees, stake | [[cyber/$CYB|$CYB]], [[tokens/$BOOT|$BOOT]] |
 | [[card]] | no | yes | knowledge assets, provenance | authorship proofs, dataset ownership |
 | [[score]] | yes | no | reputation, credentials | [[cybics/crystal/karma|karma]] |
 | [[badge]] | no | no | unique non-transferable credentials | achievements |
 
-[[cyber/$CYB|$CYB]] is the [[consensus]] token of the full [[cyber]] network. On [[bostrom]] (bootloader): [[$BOOT]] (stake/fees), [[$H]] (liquid fuel), [[$V]] (will), [[$A]] (attention).
+[[cyber/$CYB|$CYB]] is the [[consensus]] token of the full [[cyber]] network. On [[bootloader/bostrom|bostrom]] (bootloader): [[tokens/$BOOT|$BOOT]] (stake/fees), [[$H]] (liquid fuel), [[$V]] (will), [[$A]] (attention).
 
 ### Adaptive Economics
 
@@ -300,7 +300,7 @@ Staking yield at equilibrium: r_s = (G · S^(α-1)) / M. Master safety indicator
 
 ### Supply and emission
 
-Total supply is the [[nebu|Goldilocks field]] order (p = 2⁶⁴ − 2³² + 1). Genesis seeds a 187,416,084,623,451,570 [[cyber/$CYB|$CYB]] starting balance for TOCYB holders (≈ 1% of total); the rest emits along a power-law curve — a hot bootstrap head and a heavy multi-decade tail. Full supply cap, genesis, and the emission curve live on [[cyber/$CYB|$CYB]].
+Total supply is the [[nebu|Goldilocks field]] order (p = 2⁶⁴ − 2³² + 1). Genesis seeds a 187,416,084,623,451,570 [[cyber/$CYB|$CYB]] starting balance for $C holders (≈ 1% of total); the rest emits along a power-law curve — a hot bootstrap head and a heavy multi-decade tail. Full supply cap, genesis, and the emission curve live on [[cyber/$CYB|$CYB]].
 
 ## The genesis seed
 
