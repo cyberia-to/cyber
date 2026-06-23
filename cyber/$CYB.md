@@ -4,34 +4,44 @@ alias: cyber energy
 crystal-type: entity
 crystal-domain: economics
 ---
-root [[token]] of planned [[cyber]] [[superintelligence]]
+the root [[token]] of [[cyber]] — the energy of [[soft3/tru/specs/focus|focus]].
 
-the fuel of the protocol — resources consumed by [[cybics/crystal/neuron|neurons]] to create [[cyberlinks]], compute [[soft3/tru/specs/focus|focus]], and participate in [[consensus]]
+## focus is the value
 
-[[bandwidth]], [[soft3/tru/specs/focus|focus]], and [[token|tokens]] are all forms of energy in the system
+cyber organizes one quantity: [[soft3/tru/specs/focus|focus]] (φ*), the collective attention distribution — the fixed point the [[tri-kernel]] drives the graph toward. A [[cyberlink]] that earns focus is knowledge the network found worth attending to. Focus is the scarce thing, the measured thing, the thing every other mechanism serves.
 
-currently minted as [[$C]] in [[bostrom]] [[bootloader]]
+## $CYB is the energy of focus
 
-## Supply
+Moving focus costs work; creating focus is work done. $CYB is that work made fungible — the energy a [[cybics/crystal/neuron|neuron]] spends to write a [[cyberlink]], compute, and reach [[consensus]], and the energy it earns for raising the graph's focus. Δφ* is the gradient of the system's free energy, so $CYB is that free energy in transferable form. Bandwidth, focus, and tokens are three faces of one energy.
 
-Total $CYB supply is the [[nebu|Goldilocks field]] order itself — p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321. Balances are field elements, so token value and [[soft3/nox|nox]] computation share one modulus: the cap is a law of the field, not a governance parameter.
+## supply is a law of the field
 
-## Genesis
+Value and computation share one arithmetic: balances are elements of the [[nebu|Goldilocks field]], the field [[soft3/nox|nox]] computes in. So total supply is the field's own order:
 
-At genesis, TOCYB holders hold 187,416,084,623,451,570 $CYB — ≈ 1% of total supply (the migration snapshot of 281,405,532,467,645, lifted 666×). Every other unit enters supply through emission.
+p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321
 
-## Emission — a power law
+The cap is how many elements the field has — arithmetic, not a governance number. (On the [[bostrom]] [[bootloader]] today this energy circulates as [[$C]].)
 
-Emission reads only the clock, never a network metric. Coupling supply to neurons, cyberlinks, or adoption would have no defensible "enough" threshold and would pay attackers to forge whatever was measured; the schedule stays exogenous and Sybil-immune by construction.
+## genesis
 
-The curve is a power law — the same law the [[soft3/cybergraph|cybergraph]] itself obeys (scale-free degrees, Zipf [[soft3/tru/specs/focus|focus]]):
+At the first block, TOCYB holders hold 187,416,084,623,451,570 $CYB — ≈ 1% of supply (the migration snapshot of 281,405,532,467,645, lifted 666×). Every other unit is earned through emission.
+
+## emission is blind, by design
+
+Focus is the value, so the tempting schedule would mint $CYB against focus, or neurons, or adoption. That is the schedule to refuse. There is no honest threshold for how much focus "deserves" issuance, and any quantity the money is minted against becomes a quantity attackers are paid to forge — emission would fund its own sybil attack. So emission reads one input: the clock. Blind to the graph, it cannot be gamed.
+
+Focus is not discarded — it is moved to where it is safe. The schedule fixes how much $CYB exists; allocation (below) decides who earns it, by focus. The two never mix.
+
+## emission follows the network's own law
+
+cyber is scale-free: degrees follow a power law, focus follows Zipf. The token is issued by the same law its graph obeys — a power law:
 
 M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.33 year,   k = 0.5
 
-(t in years). A power law is the one schedule that holds a hot head and a heavy tail at once — an exponential halving cannot, since its head and its tail share a single rate. Two phases fall out of one formula:
+(t in years). A power law is also the one schedule that holds a hot head and a heavy tail at once — an exponential halving shares a single rate between the two and cannot. From one formula, two phases:
 
-- bootstrap head — ~11% of supply in the first month, ~50% in the first year (half the supply): sharp price discovery and real reward for the first miners (days, weeks, months), spread across the first year so no single day dumps. The initial rate is finite (k/τ ≈ 152%/yr), not a spike.
-- heavy tail — polynomial, not exponential: still emitting past a century (≈4% of supply unissued at 200 years), always under the cap, never greedy.
+- a bootstrap head — about half the supply in the first year (~11% in the first month), spread across the year so price discovers and the first miners (days, weeks, months) are paid, with no single-day flood. The initial rate is finite (k/τ ≈ 152%/yr), not a spike.
+- a heavy tail — polynomial, never exponential: still issuing past a century (~4% of supply unissued at 200 years), always under the cap.
 
 Cumulative supply emitted:
 
@@ -64,8 +74,10 @@ Share of supply minted in each year — the bootstrap lands in year one, then th
  50y |                                              |   0.1%
 ```
 
-Year one is the bootstrap — ~50% of supply, the once-only launch flood (the 1% genesis base aside). After it, yearly inflation cools fast: 24% (year 2), 9.7% (year 3), 3.7% (year 5), ~1% past year 10 — dropping below a flat-issuance design (Bittensor sits near 16% for years) by year three, while the heavy tail keeps issuing far longer than any halving.
+After the year-one bootstrap, yearly inflation cools fast: 24% (year 2), 9.7% (year 3), 3.7% (year 5), ~1% past year 10 — dropping below a flat-issuance design (Bittensor sits near 16% for years) by year three, while the heavy tail keeps issuing far longer than any halving.
 
-Emission fixes only the envelope — how much $CYB exists at time t. Allocation of each emitted unit — who earns it — is the stake-weighted Δφ* reward, where merit and Sybil-resistance belong. The layers stay separate: the schedule is dumb and credible; the distribution is earned.
+## allocation is focus
+
+Emission says how much; focus says who. Each freshly emitted unit is split by stake-weighted Δφ* — paid for the focus a contribution created, weighted by stake so forging identities buys nothing. This is where focus, kept out of the schedule, does its work: not in printing the money, but in directing it.
 
 see [[cybernomics]] for the economic model
