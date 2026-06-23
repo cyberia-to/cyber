@@ -273,21 +273,19 @@ Staking yield at equilibrium: r_s = (G · S^(α-1)) / M. Master safety indicator
 
 ### Supply
 
-Max [[$CYB]] supply is the [[nebu|Goldilocks field]] order itself — p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321. Balances are field elements, so token value and [[soft3/nox|nox]] computation share one modulus: the cap is a law of the field, not a governance parameter. Genesis mints a tiny seed of it; the rest issues over time against Δφ*.
+Total [[$CYB]] supply is the [[nebu|Goldilocks field]] order itself — p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321. Balances are field elements, so token value and [[soft3/nox|nox]] computation share one modulus: the cap is a law of the field, not a governance parameter.
 
-### Genesis Distribution
+### Genesis Supply
 
-Genesis sets a starting balance of 281,405,532,467,645 [[$CYB]] for TOCYB holders, allocated:
+Genesis mints only the TOCYB-holder starting balance, computed against total supply:
 
-| Recipient | Share | Role |
-|-----------|-------|------|
-| [[cybergift]] | 70% | community incentives |
-| [[cyber/congress]] | 11.6% | founders |
-| [[epizode zero]] community | 8.3% | early supporters |
-| [[aos/senate|senate]] | 5.1% | governance |
-| [[cybics/crystal/great-web|great web foundation]] | 5% | external stake |
+| quantity | [[$CYB]] | share of total |
+|----------|------|----------------|
+| genesis (TOCYB holders) | 281,405,532,467,645 | 0.001526% (≈ 1/65,552 of the field) |
+| mintable (issues over time) | 18,446,462,663,882,116,676 | 99.998474% |
+| total (field order p) | 18,446,744,069,414,584,321 | 100% |
 
-Target: power-law distribution with long-tail [[cybics/crystal/neuron|neuron]] ownership at 42-51%.
+The remaining 99.998% is not pre-allocated — it enters supply over time against Δφ*, as the graph creates structure. Long-run target: power-law distribution with long-tail [[cybics/crystal/neuron|neuron]] ownership.
 
 ## The genesis seed
 
