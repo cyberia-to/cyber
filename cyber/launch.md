@@ -72,6 +72,7 @@ Theoretical foundations established:
 | S6 | Node + genesis | one binary boots a network | soft3-node + genesis tooling |
 | S7 | Economics | value + rewards live | conservation enforced, equilibrium simulated |
 | S8 | Ranking | φ* ranks the graph | [[tru]] CT-0, Lyapunov proof |
+| S9 | Client (cyb) | day-one utility — neurons use it | working [[cyb]]: link, rank, query from the app |
 | ★ | MVP testnet | the network agrees, with a live economy | 30 days, zero critical bugs under attack |
 | R1 | Migrate $PUSSY | pipeline proven on the low-stakes net | space-pussy graph reproduced, zero loss |
 | P1 | Privacy | links public, owners private | nullifier soundness, leakage budget bounded |
@@ -174,13 +175,21 @@ Estimate: 5-8 sessions.
 
 [[tok]] carries value: [[coin]] (fungible) and [[card]] (non-fungible), all change a [[plumb]] mutation under conservation. Rewards mint on Δφ* — creating valuable structure is creating [[value]] — Sybil-resistant via stake-weighting. The testnet runs a live [[cyber/$CYB|$CYB]] economy from day one, so price and rewards are exercised, not deferred.
 
-Gate: conservation enforced by proof, reward equilibrium simulation-tested under 100× adversarial load.
+Onboarding is rewarded by a referral built into the protocol: a referrer earns a lifetime cut of the stake-weighted Δφ* their referees generate — never a per-head bounty. Paying on focus created, not headcount, keeps the referral Sybil-resistant (a fake account creates no focus, so referring it pays nothing) and turns early movers into growth agents aligned with the network rather than dumpers.
+
+Gate: conservation enforced by proof; reward and referral equilibrium simulation-tested under 100× adversarial load, including Sybil onboarding.
 
 ### S8 — Ranking
 
 [[tru]] computes the field today; the CT-0 model-compilation passes bail. This milestone runs the [[tri-kernel]] over the network's graph, deriving models from φ*, adversarially proven — so the testnet ranks by focus, the metric everything else serves.
 
 Gate: φ* over the network graph, explicit Lyapunov function with dV/dt < 0, bounded locality k = O(log(1/ε)).
+
+### S9 — Client (cyb)
+
+The sharp emission head is justified only if the network is useful from block one — a front-loaded incentive converts no one onto a thing that does not yet work. [[cyb]] is that utility: the browser and avatar where a [[cybics/crystal/neuron|neuron]] writes [[cyberlinks]], sees [[soft3/tru/specs/focus|focus]], and queries the graph. It exists and builds today; this milestone wires it to the soft3 node so value lands immediately, not after years of protocol maturation — the gap that left earlier chains' tokens speculative until utility caught up.
+
+Gate: a neuron installs cyb, creates a cyberlink, sees it ranked by φ*, and queries the graph — end to end, day one.
 
 ## MVP testnet — the gate
 
