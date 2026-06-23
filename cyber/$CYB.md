@@ -49,7 +49,21 @@ Cumulative supply emitted:
 128y |███████████████████████████████████████████   |   93.8%
 ```
 
-Yearly inflation cools fast once the bootstrap passes: 31% (year 2), 12.5% (year 3), 4.8% (year 5), 1.5% (year 10), 0.5% (year 20). That undercuts a fixed 4-year halving (≈16% at year 5) and a flat-issuance design (Bittensor sits near 16% for years) while keeping a longer tail than either.
+Yearly inflation (new emission ÷ circulating supply at year start):
+
+```
+  2y |██████████████████████████████████████████████|  30.1%
+  3y |███████████████████                           |  12.3%
+  4y |███████████                                   |   7.1%
+  5y |███████                                       |   4.7%
+  6y |█████                                         |   3.4%
+  8y |███                                           |   2.1%
+ 10y |██                                            |   1.4%
+ 20y |█                                             |   0.5%
+ 50y |                                              |   0.1%
+```
+
+Year 1 is the bootstrap — the 1% genesis base expands to ~42% of supply emitted, the once-only launch flood. From year 2 it cools fast, undercutting a fixed 4-year halving (≈16% at year 5) and a flat-issuance design (Bittensor sits near 16% for years), while the heavy tail keeps issuing far longer than either.
 
 Emission fixes only the envelope — how much $CYB exists at time t. Allocation of each emitted unit — who earns it — is the stake-weighted Δφ* reward, where merit and Sybil-resistance belong. The layers stay separate: the schedule is dumb and credible; the distribution is earned.
 
