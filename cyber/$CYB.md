@@ -24,7 +24,7 @@ The cap is how many elements the field has — arithmetic, not a governance numb
 
 ## genesis
 
-At the first block, $C holders — the existing cyber energy token on [[bootloader/bostrom|bostrom]] — hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×. [[tokens/$BOOT|$BOOT]] and [[tokens/$PUSSY|$PUSSY]] are separate tokens and take no part in the $CYB genesis. Every other unit is earned through emission.
+At the first block, [[$C]] holders hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×.
 
 ## emission is blind, by design
 
