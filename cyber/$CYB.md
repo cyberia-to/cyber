@@ -26,44 +26,45 @@ Emission reads only the clock, never a network metric. Coupling supply to neuron
 
 The curve is a power law — the same law the [[soft3/cybergraph|cybergraph]] itself obeys (scale-free degrees, Zipf [[soft3/tru/specs/focus|focus]]):
 
-M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.5 year,   k = 0.5
+M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.21 year,   k = 0.5
 
 (t in years). A power law is the one schedule that holds a hot head and a heavy tail at once — an exponential halving cannot, since its head and its tail share a single rate. Two phases fall out of one formula:
 
-- bootstrap head — ~7% of supply in the first month, ~42% in the first year: sharp price discovery and real reward for the first miners (days, weeks, months), spread smoothly so no single day dumps. The initial rate is finite (k/τ = 100%/yr), not a spike.
-- heavy tail — polynomial, not exponential: still emitting past a century, always under the cap, never greedy. The tail is the security budget that lasts as many years as possible.
+- bootstrap head — ~15% of supply in the first month, ~58% in the first year: the bootstrap finishes inside year one — sharp price discovery and real reward for the first miners (days, weeks, months), spread across the first months so no single day dumps. The initial rate is finite (k/τ ≈ 238%/yr), not a spike.
+- heavy tail — polynomial, not exponential: still emitting past a century (≈3% of supply unissued at 200 years), always under the cap, never greedy.
 
 Cumulative supply emitted:
 
 ```
- 1mo |███                                           |    7.4%
- 3mo |████████                                      |   18.4%
- 6mo |█████████████                                 |   29.3%
-  1y |███████████████████                           |   42.3%
-  2y |█████████████████████████                     |   55.3%
-  4y |███████████████████████████████               |   66.7%
-  8y |███████████████████████████████████           |   75.7%
- 16y |██████████████████████████████████████        |   82.6%
- 32y |████████████████████████████████████████      |   87.6%
- 64y |██████████████████████████████████████████    |   91.2%
-128y |███████████████████████████████████████████   |   93.8%
+ 1mo |███████                                       |   15.4%
+ 3mo |███████████████                               |   32.4%
+ 6mo |█████████████████████                         |   45.6%
+  1y |███████████████████████████                   |   58.3%
+  2y |████████████████████████████████              |   69.2%
+  4y |████████████████████████████████████          |   77.7%
+  8y |███████████████████████████████████████       |   84.0%
+ 16y |█████████████████████████████████████████     |   88.6%
+ 32y |██████████████████████████████████████████    |   91.9%
+ 64y |███████████████████████████████████████████   |   94.3%
+128y |████████████████████████████████████████████  |   96.0%
 ```
 
-Yearly inflation (new emission ÷ circulating supply at year start):
+Share of supply minted in each year — the bootstrap lands in year one, then the tail:
 
 ```
-  2y |██████████████████████████████████████████████|  30.1%
-  3y |███████████████████                           |  12.3%
-  4y |███████████                                   |   7.1%
-  5y |███████                                       |   4.7%
-  6y |█████                                         |   3.4%
-  8y |███                                           |   2.1%
- 10y |██                                            |   1.4%
- 20y |█                                             |   0.5%
- 50y |                                              |   0.1%
+  1y |██████████████████████████████████████████████|  58.3%
+  2y |█████████                                     |  10.8%
+  3y |████                                          |    5.2%
+  4y |███                                           |    3.2%
+  5y |██                                            |    2.3%
+  6y |█                                             |    1.7%
+  8y |█                                             |    1.1%
+ 10y |█                                             |    0.8%
+ 20y |                                              |    0.3%
+ 50y |                                              |    0.1%
 ```
 
-Year 1 is the bootstrap — the 1% genesis base expands to ~42% of supply emitted, the once-only launch flood. From year 2 it cools fast, undercutting a fixed 4-year halving (≈16% at year 5) and a flat-issuance design (Bittensor sits near 16% for years), while the heavy tail keeps issuing far longer than either.
+Year one is the bootstrap — ~58% of supply, the once-only launch flood (the 1% genesis base aside). After it, yearly inflation cools fast: 18% (year 2), 7.5% (year 3), 2.9% (year 5), under 1% past year 10 — below a flat-issuance design (Bittensor sits near 16% for years) by year three, while the heavy tail keeps issuing far longer than any halving.
 
 Emission fixes only the envelope — how much $CYB exists at time t. Allocation of each emitted unit — who earns it — is the stake-weighted Δφ* reward, where merit and Sybil-resistance belong. The layers stay separate: the schedule is dumb and credible; the distribution is earned.
 
