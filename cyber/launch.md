@@ -271,7 +271,13 @@ Three PID-controlled variables adapt automatically — no [[governance]] vote ne
 
 Staking yield at equilibrium: r_s = (G · S^(α-1)) / M. Master safety indicator: ρ = d(Attack Cost)/dt ÷ d(Attack Profit)/dt; ρ > 1 means defenses grow faster than threats.
 
+### Supply
+
+Max [[$CYB]] supply is the [[nebu|Goldilocks field]] order itself — p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321. Balances are field elements, so token value and [[soft3/nox|nox]] computation share one modulus: the cap is a law of the field, not a governance parameter. Genesis mints a tiny seed of it; the rest issues over time against Δφ*.
+
 ### Genesis Distribution
+
+Genesis sets a starting balance of 281,405,532,467,645 [[$CYB]] for TOCYB holders, allocated:
 
 | Recipient | Share | Role |
 |-----------|-------|------|
