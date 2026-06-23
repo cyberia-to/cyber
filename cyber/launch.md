@@ -77,6 +77,9 @@ Theoretical foundations established:
 | P4 | Recursive proof | light clients, verifier-as-nox | O(log n) state verification |
 | P5 | Sharding & DA | planet-scale graph | DAS verifier, cross-shard sheaf consistency |
 | P6 | Formal spine | machine-checked safety | the five Pre-Launch gates green |
+| R1 | Migrate $PUSSY | pipeline proven on the low-stakes net | space-pussy state reproduced, zero loss |
+| R2 | Migrate $BOOT | bostrom comes home, genesis 1% minted | bijective snapshot, karma + balances reconcile |
+| R3 | Align crystal | the 5,040-particle seed is the basis | 12 genesis invariants green |
 | ★ | Mainnet | the launch that arrives correct | Pre-Launch Verification passes |
 
 ## M0 — Foundations (complete)
@@ -224,6 +227,30 @@ Runs parallel to every milestone, converging here. Each line below is one of the
 | adversarial equilibrium | game theory + simulation |
 | double-spend prevention | nullifier uniqueness proof |
 
+## Migration — the bootloader chains come home
+
+The soft3 network launches with state, not empty. Two live Cosmos chains carry the graph and its neurons today, and they come home in sequence — lowest stakes first, so the pipeline is proven before it touches real value. Their holder snapshot is the TOCYB genesis on [[$CYB]] (≈ 1% of supply). The capabilities above (privacy, economics, ranking) land before the rollout; only a capable network is worth migrating real value onto.
+
+### R1 — migrate $PUSSY (the rehearsal)
+
+[[bootloader/space-pussy|space-pussy]] is the experimental net; migrating it first proves the whole pipeline — export state, map it into [[soft3/cybergraph|cybergraph]] form, convert [[$PUSSY]] → [[$CYB]], verify bijectively — without risking [[bostrom]]. A dress rehearsal at low stakes.
+
+Gate: full space-pussy state (particles, cyberlinks, neurons, balances) reproduced on the soft3 net with zero loss; the replayed root matches; $PUSSY balances reconcile to the snapshot.
+
+### R2 — migrate $BOOT (the real one)
+
+The same pipeline at mainnet scale: every [[cybics/crystal/neuron|neuron]], [[cyberlink]], and [[cybics/crystal/particle|particle]] from [[bostrom]] — ~70K neurons, 3.1M particles, 2.9M cyberlinks, three years of history — with [[cybics/crystal/karma|karma]] carried as reputation and the [[$BOOT]] / $H / $V / $A balances mapped to [[$CYB]] and the focus and will mechanics. This snapshot mints the genesis 1%.
+
+Gate: bijective state mapping, zero data loss; frozen snapshot signed; karma and balances reconcile to the last grain; every particle re-addressable under [[hemera]] identity.
+
+### R3 — align the genesis crystal
+
+The migrated graph is organic and large; the [[cybics/crystal|crystal]] is the curated 5,040-particle irreducible seed — the grammar and vocabulary. Alignment makes the crystal the foundational lattice and the migrated knowledge the flesh hung on it, deduplicated against the seed. The 12 genesis invariants are the gate.
+
+Gate: 12 invariants green (completeness, connectivity, reachability ≤ 6 hops, irreducibility, positivity, …); the crystal is the basis; zero orphans, zero red links.
+
+Mainnet genesis is then this migrated, crystal-aligned state going live under the soft3 protocol and the [[$CYB]] emission curve.
+
 ## Mainnet — the gate
 
 No patch relay exists between stars. What launches must be correct. Before launch, answer five questions with machine-checked evidence:
@@ -241,7 +268,7 @@ All five green → launch. Any red → no launch. No exceptions.
 | milestone | gate |
 |-----------|------|
 | Canary net | 90 days stability, all economic invariants hold |
-| Mainnet genesis | Pre-Launch Verification passes (all 5 gates green) |
+| Mainnet genesis | migrated + crystal-aligned state live; Pre-Launch Verification green (all 5) |
 | [[bostrom]] migration | bijective state mapping, zero data loss |
 
 The light-cone is merciless. What you ship is what arrives.
