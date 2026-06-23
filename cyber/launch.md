@@ -271,21 +271,9 @@ Three PID-controlled variables adapt automatically — no [[governance]] vote ne
 
 Staking yield at equilibrium: r_s = (G · S^(α-1)) / M. Master safety indicator: ρ = d(Attack Cost)/dt ÷ d(Attack Profit)/dt; ρ > 1 means defenses grow faster than threats.
 
-### Supply
+### Supply and emission
 
-Total [[$CYB]] supply is the [[nebu|Goldilocks field]] order itself — p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321. Balances are field elements, so token value and [[soft3/nox|nox]] computation share one modulus: the cap is a law of the field, not a governance parameter.
-
-### Genesis Supply
-
-Genesis mints only the TOCYB-holder starting balance, computed against total supply:
-
-| quantity | [[$CYB]] | share of total |
-|----------|------|----------------|
-| genesis (TOCYB holders) | 281,405,532,467,645 | 0.001526% (≈ 1/65,552 of the field) |
-| mintable (issues over time) | 18,446,462,663,882,116,676 | 99.998474% |
-| total (field order p) | 18,446,744,069,414,584,321 | 100% |
-
-The remaining 99.998% is not pre-allocated — it enters supply over time against Δφ*, as the graph creates structure. Long-run target: power-law distribution with long-tail [[cybics/crystal/neuron|neuron]] ownership.
+Total supply is the [[nebu|Goldilocks field]] order (p = 2⁶⁴ − 2³² + 1). Genesis seeds a 281,405,532,467,645 [[$CYB]] starting balance for TOCYB holders (0.001526% of total); the rest emits over decades along a seven-halving curve. Full supply cap, genesis, and the emission curve live on [[$CYB]].
 
 ## The genesis seed
 
