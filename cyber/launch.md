@@ -37,7 +37,7 @@ The stack was built bottom-up, so it inverts the textbook order. The hard crypto
 | [[zheng]] | [[SuperSpartan]] + Brakedown proofs | 4.5K | 87 | complete; look-argument soundness gap open |
 | [[soft3/bbg|bbg]] | authenticated state | 3.5K | 53 | core complete; private scanning open |
 | [[radio]] | iroh fork, QUIC + Poseidon2 | 130K | 478 | transport complete; Ed25519 → [[stark]] pending |
-| [[sync]] | ordering, chain, VDF, DAS, erasure | 5.8K | 103 | core complete; push gossip + DAS verifier open |
+| [[foculus]] | ordering, chain, VDF, DAS, erasure | 5.8K | 103 | core complete; push gossip + DAS verifier open |
 | [[trident]] | .tri compiler | 76K | 981 | compiler in progress |
 | [[glia]] | universal .model runtime | 24.8K | 145 | runs (CPU correct); backend parity ongoing |
 | [[soft3/cybergraph\|cybergraph]] | signal processor | 2.0K | 49 | local-first; network + seal binding open |
@@ -139,12 +139,12 @@ Estimate: 3-5 sessions.
 
 ### S4 — Networking
 
-[[radio]] moves bytes; [[sync]] orders them. Today [[sync]] is pull-only — peers fetch on demand, signals do not propagate. A network needs a mempool membrane that pushes a new signal to peers.
+[[radio]] moves bytes; [[foculus]] orders them. Today [[foculus]] is pull-only — peers fetch on demand, signals do not propagate. A network needs a mempool membrane that pushes a new signal to peers.
 
 | deliverable | gate |
 |-------------|------|
 | push gossip for new signals | a signal reaches all peers before finality |
-| [[sync]] ordering over the wire | per-neuron chains agree across nodes, equivocation rejected |
+| [[foculus]] ordering over the wire | per-neuron chains agree across nodes, equivocation rejected |
 
 Estimate: 3-4 sessions.
 
@@ -218,7 +218,7 @@ Gate: inner verification circuit arithmetized, light-client verification of any 
 
 ### P3 — Sharding & data availability
 
-Shards as subtopoi, a sheaf of attention weights keeping cross-shard [[soft3/tru/specs/focus|focus]] consistent. [[sync]] has erasure coding and DAS commitments; the sample verifier is missing.
+Shards as subtopoi, a sheaf of attention weights keeping cross-shard [[soft3/tru/specs/focus|focus]] consistent. [[foculus]] has erasure coding and DAS commitments; the sample verifier is missing.
 
 Gate: DAS verifier complete, cross-shard consistency proven, gossip bandwidth ∝ stake.
 
