@@ -36,17 +36,17 @@ visibility = "public"
 [[subgraph]]
 name = "wysm"
 parent = "cyb"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "prysm"
 parent = "cyb"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "evy"
 parent = "cyb"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "optica"
@@ -63,7 +63,7 @@ visibility = "public"
 [[subgraph]]
 name = "crystal"
 parent = "cybics"
-visibility = "private"
+visibility = "public"
 
 # /aos ──────────────────────────────────
 
@@ -131,12 +131,12 @@ visibility = "public"
 [[subgraph]]
 name = "bbg"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "lens"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "fs"
@@ -146,12 +146,12 @@ visibility = "private"
 [[subgraph]]
 name = "mudra"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "radio"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "hemera"
@@ -161,7 +161,7 @@ visibility = "public"
 [[subgraph]]
 name = "strata"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "sync"
@@ -171,22 +171,22 @@ visibility = "private"
 [[subgraph]]
 name = "zheng"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "tru"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "glia"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "mir"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "tok"
@@ -196,27 +196,27 @@ visibility = "private"
 [[subgraph]]
 name = "nox"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "cybergraph"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "tape"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "foculus"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "soma"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "conformance"
@@ -237,12 +237,12 @@ visibility = "public"
 [[subgraph]]
 name = "eidos"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "inf"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "nu"
@@ -252,47 +252,47 @@ visibility = "private"
 [[subgraph]]
 name = "rs"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "rune"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "arc"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "bt"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "ren"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "dif"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "sym"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "bel"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "seq"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "wav"
@@ -302,7 +302,7 @@ visibility = "private"
 [[subgraph]]
 name = "ten"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "qu"
@@ -317,7 +317,7 @@ visibility = "private"
 [[subgraph]]
 name = "sec"
 parent = "neural"
-visibility = "private"
+visibility = "public"
 
 # /warriors ──────────────────────────────────
 
@@ -348,7 +348,7 @@ visibility = "private"
 [[subgraph]]
 name = "trisha"
 parent = "warriors"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "xena"
@@ -370,7 +370,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "cyberia"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "mimi"
