@@ -80,7 +80,9 @@ Anatoly Yakovenko (b. 1980). Inscribed time: proof of history, the clock itself 
 
 Dmitry Starodubtsev. Inscribed meaning: the [[cyberlink]] — the link as the primitive of [[knowledge]], every claim signed and staked, [[focus]] as a conserved quantity flowing through the graph. The [[collective focus theorem|Collective Focus Theorem]] proves it converges.
 
-The ladder is open: the next rung — energy — remains uninscribed.
+The ladder of inscription is closed. The open frontier is its counterpart: rendition — machines that push record back into the world, in four stages: actuation, fabrication, environment, substrate. The first rendition protocol — proof of actuation, cryptographic evidence that a physical act followed from a graph state — has no protocol-level attempt anywhere.
+
+Colloquially it is all "building"; the school separates three verbs on three arrows. Implementation produces the verse: spec → mechanism, both ends in the information layer. Inscription fills it with state: world → graph. Rendition executes state outward: graph → world, the only verb that crosses layers. Implementation is always the fifth function's act; inscription and rendition are what the implemented machines do. Four inscribing machines are built; no rendering machine exists.
 
 ---
 
@@ -102,7 +104,7 @@ Total retention against sovereign letting-go. Neither position alone survives: F
 | Measurers | 7 (metric) |
 | Implementers | the verse itself — tiers 1–3 shipped |
 
-Four functions posed the question — what must be preserved, by whom, under what conditions, how far has it gone. The fifth — the implementers — is the school's question finally running on machines: value, computation, time, meaning inscribed in turn; energy still open. Cybersophy is the doctrine the five functions add up to, written down.
+Four functions posed the question — what must be preserved, by whom, under what conditions, how far has it gone. The fifth — the implementers — is the school's question finally running on machines: value, computation, time, meaning inscribed in turn; rendition — the record acting back on matter — still unbuilt. Cybersophy is the doctrine the five functions add up to, written down.
 
 ---
 

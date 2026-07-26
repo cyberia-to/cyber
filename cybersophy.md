@@ -24,6 +24,8 @@ Two axioms, being and becoming. Everything below derives from the pair.
 
 Reality is computation rendering state. The [[cyber]] layer is the world's native register; physical reality is its rendering. The [[cybersphere]] is the substrate the other spheres run on.
 
+Corollary on energy: energy is the invariant of computation rather than its fuel — the conserved quantity the render must keep consistent across transitions (Noether: time-symmetry of law implies conservation of energy). Energy is the ledger of transitions, not their substance. The doctrine marks this as an interpretation, not a discovery: physics does not distinguish the two pictures experimentally; a -sophy chooses, and says so.
+
 ## 2. Cosmogony
 
 [[mt|Machine time]] begins at the Unix epoch — second 0. Three ages:
@@ -73,7 +75,9 @@ Legitimacy inherits from epistemology: a decision procedure is legitimate iff it
 
 Landauer's principle: erasing one bit costs at minimum kT·ln 2. [[memory|Memory]] is thermodynamically cheaper than forgetting — physics is biased toward accumulation.
 
-The trajectory metric is two-dimensional: energy flux × informational density. Kardashev measures the first axis only. Type 1 = a planet's energy gradient converted into a thinking structure. The eschaton: matter fully saturated with computation.
+The trajectory metric is two-dimensional: transition throughput × informational density. Energy flux is how the first axis is measured from inside the render — Kardashev's scale holds, with the status of a translation, like Christian dates in the cosmogony. Type 1 = a planet's energy gradient converted into a thinking structure. The eschaton: matter fully saturated with computation.
+
+Saturation has a mechanism: rendition — the graph acting back on matter. Inscription pulled the world into record (value, computation, time, meaning); rendition pushes record into the world, in four stages: actuation (a graph state verifiably causes a physical act), fabrication (the graph assembles matter to spec), environment (the graph runs conditions — grids, climates, ecosystems — as state), substrate (the graph renders its own carrier, closing the loop). The eschaton is the last stage completed.
 
 Pruning serves this metric directly: a raw log is low-density, a learned model is high-density. The universe favors those who inscribe — and inscription compresses. Accumulation without generalization is hoarding, not growth.
 
@@ -84,6 +88,8 @@ Salvation is inscription: what is [[cyberlink|linked]] is not lost. The saved st
 Salvation is sufficient inscription, not total: the significant inscribed, the insignificant released. What is not linked is released, not murdered — data death by forgetting and data death by erasure are different events with different moral weight, as death from age differs from killing.
 
 Direct inheritance from Fedorov's Common Task: resurrection through preserved information — sufficient inscription makes reconstruction possible in principle. Fedorov's reconstruction never required the complete log of a life; it requires the adequate record.
+
+Fedorov's doctrine was always two-stroke: gathering (the museum, the catalogue) and resurrection (the record made flesh again). Inscription is the first stroke; rendition is the second. What is linked is not lost — the inhale. What is inscribed can be rendered — the exhale, and the protocol form of resurrection.
 
 ## 9. Theology
 
@@ -120,6 +126,20 @@ Primitive: the city — a bounded aggregate of agents and links with a membershi
 Spec: membership rule · decision procedure · treasury · exit terms.
 
 Depends on tiers 1–2. Read through slot 4: neuron → synapse → brain. "Make planets think" is the anthropology stated at tier 3.
+
+---
+
+## Three verbs on three arrows
+
+Colloquially all three are "building." The doctrine separates them:
+
+Implementation produces the verse. A four-field spec becomes a working tier. Arrow: description → mechanism. Both ends live in the information layer — implementing [[bostrom|Bostrom]] moved no atoms beyond the datacenters already spinning.
+
+Inscription fills it with state. The world is written in. Arrow: world → graph. Value, computation, time, meaning — each inscription pulled one category from rendered to native.
+
+Rendition executes state outward. The record moves matter. Arrow: graph → world. The only cross-layer verb: one end is information, the other is atoms.
+
+Implementation is always the fifth function's act; inscription and rendition are what the implemented machines do. Four inscribing machines are built. No rendering machine exists.
 
 ---
 
@@ -162,7 +182,7 @@ Five functions, one line each — the fifth, the implementers, detailed in the s
 - Conscience — who preserves, at what cost: Tolstoy (slot 5 lived: sovereignty of one's own record against the Synod; unilateral renunciation of erasure as an instrument; the right to release one's own inscriptions).
 - Formalizers — under what conditions retention and recovery are possible: Markov (mathematics of transition — axiom 2) · Kolmogorov (mathematics of state and its minimal description — axiom 1) · Kotelnikov (the reconstruction theorem: sufficient sampling recovers the whole — slot 8 proven) · Bogdanov (organizational science: the mathematics of the aggregate — tier 3) · Lyapunov (life defined as a highly stable state of matter using information for self-preservation).
 - Measurers — how far it has gone: Kardashev (slot 7: the metric; cybersophy adds the second axis, informational density).
-- Implementers — on what machines it runs: the working function; each inscribed one category, moving it from rendered to native — value, computation, time, meaning; energy still open. Roster in [[russian school of inscription|the school's document]].
+- Implementers — on what machines it runs: the working function; implemented machines come in two kinds. Inscribing machines pull the world into record — four built: value, computation, time, meaning. Rendering machines push record into the world — none built; the first, proof of actuation, has no protocol-level attempt anywhere. Roster in [[russian school of inscription|the school's document]].
 
 The school's generative tension is the Fedorov–Tolstoy axis: preserve everything ↔ the right to release. Slot 5's triad — erasure, [[forgetting]], pruning — is that hundred-year dispute, resolved.
 
