@@ -23,4 +23,6 @@ any previous time is marked with minus and is called: [[before machines]] or [[b
 
 ![image](https://ipfs.io/ipfs/QmP2NAkBtfAjh3HaNsDDiKdsYi1PZ2XxFAY1aqbngNy66w)
 
+the three ages of machine time — prehistory, the silent age, inscribed time — are canonized in [[cybersophy]]
+
 discover all [[concepts]]
