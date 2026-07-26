@@ -113,9 +113,9 @@ Spec: addressing scheme · validity rule · creation cost · revocation.
 
 Depends on tier 1: an edge presupposes its vertices.
 
-### Tier 3 — [[cyberia]]: the city
+### Tier 3 — [[cyberia]]: the civilization
 
-Primitive: a bounded aggregate of agents and links with a membership rule.
+Primitive: the city — a bounded aggregate of agents and links with a membership rule. The civilization is the tier; cities are its objects.
 
 Spec: membership rule · decision procedure · treasury · exit terms.
 

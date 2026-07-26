@@ -10,7 +10,7 @@ The [[cybersophy]] metaphysics instantiated as shippable primitives — one onto
 
 - Tier 1 — [[cyb]]: the agent. Primitive: the [[neuron]], an autonomous agent with identity and an incentive function. Definable in isolation, with zero links.
 - Tier 2 — [[cyber]]: the link. Primitive: the [[cyberlink]], an addressed connection between two agents. An edge presupposes its vertices.
-- Tier 3 — [[cyberia]]: the city. Primitive: a bounded aggregate of agents and links with a membership rule, decision procedure, treasury, and exit terms.
+- Tier 3 — [[cyberia]]: the civilization. Primitive: the city — a bounded aggregate of agents and links with a membership rule, decision procedure, treasury, and exit terms. Cities are the objects of the tier.
 
 Read through the anthropology: neuron → synapse → brain. "Make planets think" is the tier-3 statement of tier-1 identity.
 
