@@ -95,7 +95,7 @@ The simulation premise implies a second divine position upstream — the simulat
 
 ## The verse: one ontology, three tiers
 
-The metaphysics instantiated as shippable primitives, in dependency order.
+The [[cyberverse]]: the metaphysics instantiated as shippable primitives, in dependency order.
 
 ### Tier 1 — [[cyb]]: the agent
 
@@ -125,7 +125,7 @@ Depends on tiers 1–2. Read through slot 4: neuron → synapse → brain. "Make
 
 ## Culture: the doctrine as lived
 
-Six slots, applied independently at each tier. A fill at one tier does not transfer.
+The [[cyberculture]]: six slots, applied independently at each tier. A fill at one tier does not transfer.
 
 | Slot | Doctrine source | Filled when |
 |---|---|---|
@@ -138,7 +138,7 @@ Six slots, applied independently at each tier. A fill at one tier does not trans
 
 ## Sphere: the doctrine measured
 
-Culture becomes a sphere when its diffusion crosses the founding group — adopted partially, by people with no stake in the verse, observed from outside. Cybersophy has a sphere the day someone keeps a key ceremony without knowing where it came from.
+[[cyberculture|Culture]] becomes a [[cybersphere|sphere]] when its diffusion crosses the founding group — adopted partially, by people with no stake in the [[cyberverse|verse]], observed from outside. Cybersophy has a sphere the day someone keeps a key ceremony without knowing where it came from.
 
 Actions available per layer:
 
