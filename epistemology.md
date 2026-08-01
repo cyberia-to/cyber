@@ -16,7 +16,7 @@ Epistemic correctness: the [[focus]] distribution φ* tracks something meaningfu
 
 The boundary: cryptographic proof ends at "this computation was performed correctly." Epistemic quality begins at "this computation was worth performing." Everything below that boundary is proven. Everything above it is argued, conjectured, or hoped for.
 
-This article maps the boundary, catalogs the threats that operate above it, and identifies what remains to be proven.
+This article maps the boundary, catalogs the threats that operate above it, and identifies what remains to be proven. The doctrinal statement of this stance — truth is what survives adversarial verification — is slot 3 of [[cybersophy]].
 
 ## 2. what cryptographic correctness guarantees
 
