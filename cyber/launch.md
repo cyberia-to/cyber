@@ -11,7 +11,7 @@ A self-verifying knowledge graph where attention, computation, and [[consensus]]
 nox
 Optimizing civilization's ability to know what matters
 
-Version: 2026.06 | Status: foundations complete → integration spine
+Version: 2026.07 | Status: foundations complete → integration spine
 
 ## How to read this plan
 
@@ -23,9 +23,9 @@ Three anchors fix the whole path:
 
 A milestone is code that passes its gate, never a date on a calendar. Durations below are work estimates in sessions, not deadlines. The order is a dependency order: a milestone starts when its predecessors pass.
 
-## Where we are — 2026.06
+## Where we are — 2026.07
 
-The stack was built bottom-up, so it inverts the textbook order. The hard cryptographic floor — field, hash, commitments, the proof-native VM, the proof system, authenticated state — is implemented and tested. The frontier is the integration spine above it: the [[consensus]] that lets nodes agree, the runtime that drives the loop, and the single binary that wires them into a node.
+The stack was built bottom-up, so it inverts the textbook order. The hard cryptographic floor — field, hash, commitments, the proof-native VM, the proof system, authenticated state — is implemented and tested. The [[consensus]] core (φ* finality, fork choice) now exists as tested single-node code. The frontier is the integration spine above it: signals onto the wire, verification enforced at the commit port, and the single binary that wires the pieces into a node.
 
 | component | role | rust | tests | status |
 |-----------|------|------|-------|--------|
@@ -34,18 +34,17 @@ The stack was built bottom-up, so it inverts the textbook order. The hard crypto
 | [[hemera]] | [[Poseidon2]] hash, [[cybics/crystal/particle|particle]] identity | 9.5K | 304 | complete, unaudited |
 | [[lens]] | 5 commitment backends | 2.7K | 86 | complete; Ikat / Porphyry lightly tested |
 | [[soft3/nox|nox]] | proof-native VM (18 patterns + jets) | 8.5K | 166 | complete; parallel reduction draft |
-| [[zheng]] | [[SuperSpartan]] + Brakedown proofs | 4.5K | 87 | complete; look-argument soundness gap open |
+| [[zheng]] | [[SuperSpartan]] + Brakedown proofs | 4.5K | 87 | complete; look folds into CCS, commitment↔root binding open (pattern-15) |
 | [[soft3/bbg|bbg]] | authenticated state | 3.5K | 53 | core complete; private scanning open |
-| [[radio]] | iroh fork, QUIC + Poseidon2 | 130K | 478 | transport complete; Ed25519 → [[stark]] pending |
-| [[foculus]] | ordering, chain, VDF, DAS, erasure | 5.8K | 103 | core complete; push gossip + DAS verifier open |
-| [[trident]] | .tri compiler | 76K | 981 | compiler in progress |
+| [[radio]] | iroh fork, QUIC + Poseidon2 | 117K | 505 | transport + push gossip (Plumtree) complete, multi-node tested; Ed25519 → [[stark]] pending |
+| [[foculus]] | ordering, finality, chain, VDF, DAS, erasure | 6.2K | 111 | φ* finality (φ*ᵢ > τ_D) + fork choice implemented, single-node; signal→gossip wiring + DAS verifier open |
+| [[trident]] | .tri compiler | 68K | 1004 | aligned to the nox arena API; compiler in progress |
 | [[glia]] | universal .model runtime | 24.8K | 145 | runs (CPU correct); backend parity ongoing |
-| [[soft3/cybergraph\|cybergraph]] | signal processor | 2.0K | 49 | local-first; network + seal binding open |
-| [[tru]] | φ*, [[tri-kernel]] | 1.0K | 7 | field converges; CT-0 model compile open |
-| [[tape]] | particle framing | 1.0K | 24 | partial; wire format draft |
+| [[soft3/cybergraph\|cybergraph]] | signal processor | 2.0K | 49 | local-first; seal binding + proof verification at the commit port open |
+| [[tru]] | φ*, [[tri-kernel]] | 6.0K | 82 | φ* + contraction κ<1 live; CT-0 orchestrator runs, SVD weight passes open |
+| [[tape]] | particle framing | 1.0K | 24 | frame codec round-trips; particle/cyberlink/signal encodings, conformance vectors, schema freeze open |
 | [[tok]] | value layer (coin + card) | spec | — | specified |
-| [[mudra]] | identity, crypto | scaffold | — | specified; build broken (path deps) |
-| [[foculus]] | consensus by convergence | spec | — | specified, no code |
+| [[mudra]] | identity, crypto | 2.0K | 42 | builds; keys + ECDSA claims verify, provable secp256k1 gadget; signature check at order unwired |
 | [[soft3/soma|soma]] | runtime / the mind | spec | — | specified, no code |
 
 The [[bootloader/bostrom|bostrom]] network has run 3+ years as the bootloader — ~70K [[cybics/crystal/neuron|neurons]], 2.9M [[cyberlinks]], 3.1M [[cybics/crystal/particle|particles]] — and is the migration source, not the soft3 network. The soft3-native node does not exist yet; building it is the spine of this plan.
@@ -106,7 +105,7 @@ Deferred past the testnet (see P-milestones): privacy circuits, recursive proofs
 
 ### S1 — Wire & framing
 
-[[tape]] is the typed frame every [[cybics/crystal/particle|particle]] and [[soft3/cybergraph/specs/signal|signal]] travels in. The encoder/decoder is partial and the wire format is a draft.
+[[tape]] is the typed frame every [[cybics/crystal/particle|particle]] and [[soft3/cybergraph/specs/signal|signal]] travels in. The generic frame codec round-trips (24 tests); the dialect encodings for particle, cyberlink and signal, the conformance vectors, and the schema freeze are open — and the spec and the implementation disagree on the frame header (one type byte vs sigil + render), a divergence to reconcile before freezing.
 
 | deliverable | gate |
 |-------------|------|
@@ -117,14 +116,13 @@ Estimate: 2-3 sessions.
 
 ### S2 — Identity
 
-[[mudra]] gives a [[cybics/crystal/neuron|neuron]] its keys and signatures. The crate is a scaffold and its build is broken on path dependencies. The testnet needs signing and addressing only; FHE, stealth, and threshold are P-milestone work.
+[[mudra]] gives a [[cybics/crystal/neuron|neuron]] its keys and signatures. The crate builds with 42 tests: BIP-39 keys, ECDSA claim verification, and a provable secp256k1 gadget over Goldilocks limbs. What remains is the wire-in: Signal carries no signature field, and the order/commit path performs no crypto check — mudra is a dependency of nothing on the signal path. The testnet needs signing and addressing only; FHE, stealth, and threshold are P-milestone work.
 
 | deliverable | gate |
 |-------------|------|
-| fix [[mudra]] path deps, crate builds | green build in the workspace |
-| signing + verification (Ed25519 now, [[stark]] path later) | a signal's signature verifies at order |
+| Signal carries a signature; [[mudra]] wired into the signal stack | a signal's signature verifies at order, forged neuron rejected |
 
-Estimate: 1-2 sessions for the testnet subset.
+Estimate: 2-3 sessions for the testnet subset.
 
 ### S3 — Proven processor (single node)
 
@@ -139,7 +137,7 @@ Estimate: 3-5 sessions.
 
 ### S4 — Networking
 
-[[radio]] moves bytes; [[foculus]] orders them. Today [[foculus]] is pull-only — peers fetch on demand, signals do not propagate. A network needs a mempool membrane that pushes a new signal to peers.
+[[radio]] moves bytes; [[foculus]] orders them. [[radio]]'s gossip is push (Plumtree, eager + lazy, multi-node tested) and [[foculus]] has the frame codec — but no signal ever enters the gossip: the publish-on-append and on_frame handlers are the missing membrane. [[foculus]]'s own iroh path syncs blobs and DAS chunks only.
 
 | deliverable | gate |
 |-------------|------|
@@ -150,14 +148,14 @@ Estimate: 3-4 sessions.
 
 ### S5 — Consensus v0
 
-[[foculus]] is a complete specification with zero code — the largest single gap. A [[cybics/crystal/particle|particle]] is final when φ*ᵢ > τ. The testnet needs the minimal core: compute φ* over committed state, apply the fork-choice rule, declare finality.
+A [[cybics/crystal/particle|particle]] is final when φ*ᵢ > τ. The minimal core exists as tested single-node code: [[foculus]] computes the adaptive threshold τ_D = μ_D + κ'·σ_D in fixed-point field arithmetic, gates finality on it, and resolves forks by φ* — all driven by [[tru]]'s field computation. The open half is running it across nodes.
 
 | deliverable | gate |
 |-------------|------|
-| φ* finality check (φ*ᵢ > τ) | matches [[tru]] field computation on the same graph |
+| φ* finality check (φ*ᵢ > τ) | complete — matches [[tru]] field computation on the same graph |
 | fork choice + safety on a multi-node run | no two nodes finalize conflicting state |
 
-Estimate: 6-10 sessions. This is the critical path.
+Estimate: 3-4 sessions, gated on S4 — the multi-node run needs signals on the wire first.
 
 ### S6 — Node + genesis
 
