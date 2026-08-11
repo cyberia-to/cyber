@@ -161,4 +161,6 @@ at maturity with recursive stark composition: the entire blockchain state from a
 
 a blockchain that fits in a QR code.
 
-see [[cyber/proofs]] for the stark proof taxonomy. see [[cyber/bbg]] for the polynomial commitment structure. see [[foculus]] for the consensus mechanism that produces headers. see [[cyber/architecture]] for the fractal layer model where light clients operate at L3
+see [[cyber/proofs]] for the stark proof taxonomy. see [[cyber/bbg]] for the polynomial commitment structure. see [[foculus]] for the consensus mechanism that produces headers. see [[cyber/architecture]] for the fractal layer model where light clients operate at L3.
+
+normative money + light integration: [[specs/light-money]], [[specs/money-loop]], [[specs/node-modes]]. explanation of clocks: [[latency targets]].

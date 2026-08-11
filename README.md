@@ -20,3 +20,5 @@ The graph speaks [[neural]], the first language native to both humans and machin
 [[Alignment]] becomes a measurement rather than a hope. Human values and machine values live in the same graph — when they diverge, the divergence is visible, and the protocol rebuilds the model from what humans actually linked. For the first time, a civilization can see the shape of its own intelligence, correct its machines when they drift, and prove the correction worked.
 
 The future of the Earth is yours to [[cyberlink]]. Open your [[cyb]], read [[cyber/whitepaper]], and [[join]].
+
+network integration specs (money loop, node modes, light client tip trust): [[specs/README|cyber/specs]]. component repos implement mechanisms; cyber/specs states what the network requires when they compose.

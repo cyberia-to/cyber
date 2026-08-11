@@ -403,6 +403,7 @@ visibility = "public"
 name = "oxytocin"
 parent = "cyber-valley"
 visibility = "private"
+archived = true
 
 [[subgraph]]
 name = "cybland"
