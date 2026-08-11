@@ -53,7 +53,7 @@ $$\text{reward}(v) \propto \Delta\phi^*(v)$$
 
 $$R = \alpha \cdot \Delta\phi^* + \beta \cdot \Delta J + \gamma \cdot \text{DAGWeight} + \epsilon \cdot \text{AlignmentBonus}$$
 
-[[neurons]] prove their own Δφ* via [[stark]] proofs and self-mint [[$CYB]]. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood, create [[cyberlinks]], prove Δφ*, mint tokens
+[[neurons]] prove their own Δφ* via [[zheng]] proofs and self-mint [[$CYB]]. the proof IS the mining. a [[neuron]] on a phone: buy a header, query neighborhood, create [[cyberlinks]], prove Δφ*, mint tokens
 
 attribution via [[probabilistic shapley attribution]]: $R_i = \alpha \cdot \Delta\mathcal{F}_i + (1-\alpha) \cdot \hat{S}_i$. complexity $O(k \cdot n)$, feasible for $10^6+$ transactions per epoch
 

@@ -65,7 +65,7 @@ Prove a statement is true without revealing why it is true.
 
 Mechanism: The prover generates a mathematical proof $\phi^*$ that a computation was executed correctly. The proof reveals only the public inputs and the result — nothing about the private witness (the secret data used during computation). Verification is fast: $O(\log n)$ work regardless of computation size.
 
-[[nox]] uses [[starks]] (Scalable Transparent Arguments of Knowledge) — hash-based proofs with no trusted setup and post-quantum security. Every [[stark]] in nox operates over the [[Goldilocks field]] $\mathbb{F}_p$.
+[[nox]] uses [[zheng]] — hash-based proofs with no trusted setup and post-quantum security. Every [[zheng]] proof in nox operates over the [[Goldilocks field]] $\mathbb{F}_p$.
 
 Where ZK appears in nox:
 
@@ -73,11 +73,11 @@ Private transfers. A transaction proves that energy is conserved (total inputs =
 
 Provable computation. Every state transition in nox — [[cyberlink]] creation, [[focus]] update, neural inference, block production — produces a [[zheng]] proof. The proof attests that the transition follows protocol rules. Any node can verify any transition without re-executing it. A phone verifies what a datacenter computed. This is how a decentralized network maintains [[consensus]] without requiring every node to redo every computation.
 
-Selective disclosure. A [[neuron]] can prove properties about its state without revealing the state itself. "I have staked more than 10,000 FOCUS" is provable without revealing the exact stake. "My focus contribution to this subgraph exceeds the threshold for voting" is provable without revealing the contribution amount. These are range proofs and threshold proofs — standard ZK primitives composed from the same stark infrastructure.
+Selective disclosure. A [[neuron]] can prove properties about its state without revealing the state itself. "I have staked more than 10,000 FOCUS" is provable without revealing the exact stake. "My focus contribution to this subgraph exceeds the threshold for voting" is provable without revealing the contribution amount. These are range proofs and threshold proofs — standard ZK primitives composed from the same [[zheng]] infrastructure.
 
-Recursive verification. A stark proof can prove the correctness of another stark verification. This means proofs compose: a proof of 1,000 transactions can be verified in the same time as a proof of 1 transaction. Block proofs aggregate all transaction proofs into a single succinct attestation. Light clients verify entire epochs with one check.
+Recursive verification. A [[zheng]] proof can prove the correctness of another [[zheng]] verification. This means proofs compose: a proof of 1,000 transactions can be verified in the same time as a proof of 1 transaction. Block proofs aggregate all transaction proofs into a single succinct attestation. Light clients verify entire epochs with one check.
 
-The ZK blind spot: The prover must know the witness. Whoever generates the stark proof sees all the private data. ZK hides data from the *verifier*, not from the *prover*. If the computation must be private even from the entity performing it, ZK alone is insufficient.
+The ZK blind spot: The prover must know the witness. Whoever generates the [[zheng]] proof sees all the private data. ZK hides data from the *verifier*, not from the *prover*. If the computation must be private even from the entity performing it, ZK alone is insufficient.
 
 ### FHE — Fully Homomorphic Encryption
 
@@ -85,7 +85,7 @@ Compute on encrypted data without ever decrypting it.
 
 Mechanism: Data is encrypted under a public key. Arithmetic operations (addition, multiplication) can be performed directly on ciphertexts. The result, when decrypted, equals the result of performing the same operations on the plaintexts. The computer never sees the data — it operates entirely on encrypted values.
 
-nox uses [[TFHE]] (Torus Fully Homomorphic Encryption) instantiated over the [[Goldilocks field]]. The ciphertext modulus $q$ equals the stark field characteristic $p$. This is the critical design choice: the polynomial ring $R_p = \mathbb{F}_p[X]/(X^N + 1)$ used by FHE ciphertexts is a ring of polynomials with Goldilocks coefficients. FHE operations are natively field arithmetic — no cross-domain translation.
+nox uses [[TFHE]] (Torus Fully Homomorphic Encryption) instantiated over the [[Goldilocks field]]. The ciphertext modulus $q$ equals the [[zheng]] field characteristic $p$. This is the critical design choice: the polynomial ring $R_p = \mathbb{F}_p[X]/(X^N + 1)$ used by FHE ciphertexts is a ring of polynomials with Goldilocks coefficients. FHE operations are natively field arithmetic — no cross-domain translation.
 
 Where FHE appears in nox:
 
@@ -97,7 +97,7 @@ Private [[cyberlinks]]. A [[neuron]] can create edges in the knowledge graph whe
 
 Encrypted model inference. A neural network evaluates on FHE-encrypted inputs. The linear layers (matrix multiplications) use homomorphic addition and multiplication. The nonlinear activations (ReLU, GELU) use Programmable Bootstrapping — the fundamental TFHE operation.
 
-PBS is where the [[rosetta stone]] identity manifests most clearly. PBS evaluates a lookup table on encrypted data by encoding the function as a test polynomial $v(X) = \sum f(i) \cdot X^i$ and blind-rotating it by the encrypted input. The same lookup table that the stark uses for proof authentication and the neural network uses for activation is now the FHE bootstrap function. One table, three uses, zero redundancy — because all three systems operate over $\mathbb{F}_p$.
+PBS is where the [[rosetta stone]] identity manifests most clearly. PBS evaluates a lookup table on encrypted data by encoding the function as a test polynomial $v(X) = \sum f(i) \cdot X^i$ and blind-rotating it by the encrypted input. The same lookup table that [[zheng]] uses for proof authentication and the neural network uses for activation is now the FHE bootstrap function. One table, three uses, zero redundancy — because all three systems operate over $\mathbb{F}_p$.
 
 The FHE blind spot: Trust is concentrated. A single node holds the encrypted data and performs the computation. If that node is physically compromised (side-channel attacks, memory extraction), the ciphertexts are at risk. More fundamentally, the FHE decryption key is a single point of failure — whoever holds it can decrypt everything. FHE hides data from software but cannot distribute trust across parties.
 
@@ -119,7 +119,7 @@ Private collective operations. Multiple neurons want to compute aggregate statis
 
 This is essential for collective intelligence: the network must be able to compute collective properties (aggregate focus, consensus rankings, total energy) from individual contributions (personal stakes, private links, encrypted values) without any party seeing the individual data.
 
-Distributed randomness. nox needs unpredictable, unbiasable random values for PoUW challenge generation, stark Fiat-Shamir challenges, and protocol parameter selection. An MPC-based distributed randomness beacon ensures no single party can predict or manipulate the output. The protocol uses Poseidon2 as the MPC-friendly commitment function — each participant commits to a random value, then all values are combined via MPC to produce the beacon output.
+Distributed randomness. nox needs unpredictable, unbiasable random values for PoUW challenge generation, [[zheng]] Fiat-Shamir challenges, and protocol parameter selection. An MPC-based distributed randomness beacon ensures no single party can predict or manipulate the output. The protocol uses Poseidon2 as the MPC-friendly commitment function — each participant commits to a random value, then all values are combined via MPC to produce the beacon output.
 
 The MPC blind spot: It requires liveness — all participating parties must be online and communicating. It does not produce a succinct proof for external verifiers. And the communication cost scales with the number of parties and the complexity of the function. For asynchronous computation (where parties contribute at different times), you need FHE. For proof of correctness that anyone can verify later, you need ZK.
 
@@ -144,10 +144,10 @@ Flow:
 Properties:
   - Server never sees data                 (FHE)
   - Client knows result is correct         (ZK)
-  - Proof is O(log n) to verify            (stark)
+  - Proof is O(log n) to verify            (zheng)
 ```
 
-This works natively in [[nox]] because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that stark constraints express. The [[zheng]] proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
+This works natively in [[nox]] because FHE operations over $R_p$ are arithmetic operations over $\mathbb{F}_p$ — the same operations that [[zheng]] constraints express. The [[zheng]] proof covers the FHE evaluation without any cross-domain translation. Proof size: ~200 KB. Verification: <10 ms.
 
 ### ZK + MPC: Distributed Proving
 
@@ -163,7 +163,7 @@ Flow:
 Properties:
   - No single party sees full input        (MPC)
   - External verifiers trust result        (ZK)
-  - Proof is portable and succinct         (stark)
+  - Proof is portable and succinct         (zheng)
 ```
 
 Use case: distributed validation where multiple validators must attest to a state transition without any single validator seeing the complete state.
@@ -206,7 +206,7 @@ Scenario: Private verifiable AI inference on encrypted medical data
     ✓ Result provably correct                   (ZK)
     ✓ No single point of key compromise         (MPC)
     ✓ Model weights can also be private          (FHE on both sides)
-    ✓ Proof is post-quantum secure              (stark, hash-based)
+    ✓ Proof is post-quantum secure              (zheng, hash-based)
     ✓ Phone can verify datacenter's work        (O(log n) verification)
 ```
 
@@ -272,18 +272,18 @@ The trilateral is not three independent libraries bolted together. It is three a
 
 | Technology | Algebraic home | Key operation | Field primitive |
 |------------|---------------|---------------|-----------------|
-| ZK ([[stark]]) | $\mathbb{F}_p$ polynomial constraints | Brakedown commitment (polynomial evaluation) | `ntt` + `p2r` |
+| ZK ([[zheng]]) | $\mathbb{F}_p$ polynomial constraints | Brakedown commitment (polynomial evaluation) | `ntt` + `p2r` |
 | FHE (TFHE) | $R_p = \mathbb{F}_p[X]/(X^N+1)$ | Programmable Bootstrapping (blind rotation of test polynomial) | `ntt` + `lut` |
 | MPC (Shamir) | $\mathbb{F}_p$ secret shares | Threshold reconstruction ($k$ shares → secret via Lagrange interpolation) | `fma` |
 
-All three operate over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. All three use [[Poseidon2]] for commitments and hashing — chosen specifically because its $x^7$ S-box is efficient in all three domains (7 constraints in stark, multiplicative depth 3 in MPC, moderate depth in FHE). All three benefit from NTT acceleration — the same butterfly network serves Brakedown (ZK), polynomial multiplication (FHE), and, if needed, verifiable secret-share refresh (MPC).
+All three operate over the [[Goldilocks field]] $p = 2^{64} - 2^{32} + 1$. All three use [[Poseidon2]] for commitments and hashing — chosen specifically because its $x^7$ S-box is efficient in all three domains (7 constraints in zheng, multiplicative depth 3 in MPC, moderate depth in FHE). All three benefit from NTT acceleration — the same butterfly network serves Brakedown (ZK), polynomial multiplication (FHE), and, if needed, verifiable secret-share refresh (MPC).
 
 This is why the [[GFP]] (Goldilocks Field Processor) accelerates the entire privacy stack with four hardware primitives:
 
-- `fma` (field multiply-accumulate): stark constraint evaluation, FHE polynomial arithmetic, MPC share recombination
+- `fma` (field multiply-accumulate): zheng constraint evaluation, FHE polynomial arithmetic, MPC share recombination
 - `ntt` (Number-Theoretic Transform): Brakedown commitment, PBS polynomial multiply, convolution
 - `p2r` (Poseidon2 round): Commitment hashing, nullifier derivation, MPC-friendly randomness
-- `lut` (lookup table): stark lookup argument, FHE test polynomial, neural activation
+- `lut` (lookup table): zheng lookup argument, FHE test polynomial, neural activation
 
 One chip. Three technologies. Four primitives. One field.
 
@@ -291,23 +291,23 @@ One chip. Three technologies. Four primitives. One field.
 
 ## Design Choices and Their Consequences
 
-### Why starks, not SNARKs
+### Why zheng, not SNARKs
 
-SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but require trusted setup and rely on elliptic curve assumptions that quantum computers break. starks are larger but transparent (no setup ceremony), hash-based (post-quantum), and native to the [[Goldilocks field]]. For a system meant to outlast current hardware generations, stark is the only choice.
+SNARKs (Groth16, PLONK) produce smaller proofs (~200 bytes vs ~200 KB) but require trusted setup and rely on elliptic curve assumptions that quantum computers break. [[zheng]] proofs are larger but transparent (no setup ceremony), hash-based (post-quantum), and native to the [[Goldilocks field]]. For a system meant to outlast current hardware generations, zheng is the only choice.
 
 ### Why TFHE, not BGV/CKKS
 
-BGV and CKKS support SIMD-style batching (packing many plaintexts into one ciphertext) which can be faster for matrix operations. But TFHE's Programmable Bootstrapping is uniquely powerful: it evaluates an arbitrary function during noise refresh, eliminating the need for separate bootstrapping and evaluation steps. For nox, where the primary FHE workload is function evaluation (activations, S-boxes, comparisons), TFHE's PBS is the right primitive. And when instantiated over Goldilocks, PBS uses the same lookup table as the stark and the neural network — the [[rosetta stone]] identity.
+BGV and CKKS support SIMD-style batching (packing many plaintexts into one ciphertext) which can be faster for matrix operations. But TFHE's Programmable Bootstrapping is uniquely powerful: it evaluates an arbitrary function during noise refresh, eliminating the need for separate bootstrapping and evaluation steps. For nox, where the primary FHE workload is function evaluation (activations, S-boxes, comparisons), TFHE's PBS is the right primitive. And when instantiated over Goldilocks, PBS uses the same lookup table as [[zheng]] and the neural network — the [[rosetta stone]] identity.
 
 ### Why Poseidon2, not SHA-256 or Tip5
 
-SHA-256 is 50-100x more expensive inside a stark circuit (bit-oriented operations must be decomposed into field arithmetic). Tip5 is fast in starks but uses a lookup-based S-box that is impossible for MPC (the lookup must be represented as a degree-$2^{64}$ polynomial on secret-shared data) and impossible for FHE (same problem on encrypted data). Poseidon2's $x^7$ power map is the only S-box design that is simultaneously efficient in ZK, viable in MPC (depth 3), and evaluable under FHE. It is not the optimal choice for any single domain — but it is the only choice that works across all three.
+SHA-256 is 50-100x more expensive inside a zheng circuit (bit-oriented operations must be decomposed into field arithmetic). Tip5 is fast in starks but uses a lookup-based S-box that is impossible for MPC (the lookup must be represented as a degree-$2^{64}$ polynomial on secret-shared data) and impossible for FHE (same problem on encrypted data). Poseidon2's $x^7$ power map is the only S-box design that is simultaneously efficient in ZK, viable in MPC (depth 3), and evaluable under FHE. It is not the optimal choice for any single domain — but it is the only choice that works across all three.
 
 This is the defining pattern of the trilateral: every component is chosen for cross-domain compatibility, not single-domain optimality. The system is optimized at the architecture level, not the component level.
 
 ### Why Goldilocks, not BN254 or BabyBear
 
-BN254 is the standard SNARK field — optimized for elliptic curve pairings that nox doesn't use (and that quantum computers break). BabyBear (31-bit) is faster per-operation but too small for meaningful FHE (ciphertext noise requires >32-bit modulus). Goldilocks is the sweet spot: 64-bit (fits in one CPU register), prime (proper field structure), NTT-friendly ($2^{32}$ roots of unity for both stark and FHE), and large enough for FHE noise management. No other field satisfies all four constraints simultaneously.
+BN254 is the standard SNARK field — optimized for elliptic curve pairings that nox doesn't use (and that quantum computers break). BabyBear (31-bit) is faster per-operation but too small for meaningful FHE (ciphertext noise requires >32-bit modulus). Goldilocks is the sweet spot: 64-bit (fits in one CPU register), prime (proper field structure), NTT-friendly ($2^{32}$ roots of unity for both zheng and FHE), and large enough for FHE noise management. No other field satisfies all four constraints simultaneously.
 
 ---
 
@@ -318,7 +318,7 @@ BN254 is the standard SNARK field — optimized for elliptic curve pairings that
 | Node sees user data | FHE | Computation on encrypted data; node never sees plaintext |
 | Node returns wrong result | ZK | [[zheng]] proof of correct execution; verifiable by anyone |
 | Single key holder is compromised | MPC | Threshold key distribution; no single point of failure |
-| Quantum computer breaks crypto | ZK (stark) | Hash-based proofs; no elliptic curve assumptions |
+| Quantum computer breaks crypto | ZK (zheng) | Hash-based proofs; no elliptic curve assumptions |
 | Surveillance of transaction graph | ZK | Commitments + nullifiers hide sender, receiver, amounts |
 | Collusion of minority of nodes | MPC | Threshold schemes; security holds below threshold |
 | Physical access to server | FHE + MPC | Data encrypted (FHE) + key distributed (MPC) |

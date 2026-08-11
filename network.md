@@ -92,9 +92,9 @@ header price = base_fee(relay) × header_size × 1/peer_latency
 
 a neighbor on the local network (mDNS-discovered) offers headers at near-zero cost. a peer across the planet charges more. the header market creates the same geographic hierarchy that [[location proof]] formalizes — without requiring location proof infrastructure to be operational first.
 
-### recursive stark headers
+### recursive zheng headers
 
-with recursive [[stark]] composition, a new node does not need the full header chain. it needs one recursive proof (~100-200 KB) covering the entire chain from genesis, plus the latest header. the cost of syncing from genesis is the cost of purchasing and verifying one proof — seconds of compute, kilobytes of data.
+with recursive [[zheng]] composition, a new node does not need the full header chain. it needs one recursive proof (~100-200 KB) covering the entire chain from genesis, plus the latest header. the cost of syncing from genesis is the cost of purchasing and verifying one proof — seconds of compute, kilobytes of data.
 
 this proof is itself a saleable artifact. a node that maintains the recursive chain proof can sell "instant sync" to new participants at a premium over raw header-by-header sync.
 

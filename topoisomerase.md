@@ -20,14 +20,14 @@ topoisomerases are the cell's topological bookkeepers. during DNA replication th
 
 ## the computational interpretation
 
-topoisomerase is nature's [[STARK]] verifier:
+topoisomerase is nature's [[zheng]] verifier:
 
 - temporary break = introducing an intermediate witness into the proof circuit
 - passing the strand through = the polynomial commitment passing through an evaluation
 - resealing = the verification check that the algebraic constraint holds
 - linking number conservation = the algebraic invariants preserved through the computation
 
-the sequential bottleneck in [[STARK]] proving — each step constrained by the previous — mirrors Type II topoisomerase processing one crossing at a time. the speedup from parallel proving — identifying topologically independent segments and processing simultaneously — mirrors multiple topoisomerase molecules working different regions of the same chromosome.
+the sequential bottleneck in [[zheng]] proving — each step constrained by the previous — mirrors Type II topoisomerase processing one crossing at a time. the speedup from parallel proving — identifying topologically independent segments and processing simultaneously — mirrors multiple topoisomerase molecules working different regions of the same chromosome.
 
 ## ATP as proof cost
 
@@ -35,6 +35,6 @@ each Type II topoisomerase step consumes 2 ATP. this is not waste — it is the 
 
 in the [[zheng]] proof system the analog is the verifier's computational cost per step (~5μs). you cannot verify a topological invariant without checking it.
 
-[[analogous-to]] [[helix]], [[topological-invariant]], [[STARK]], [[zheng]]
+[[analogous-to]] [[helix]], [[topological-invariant]], [[zheng]]
 
 discover all [[concepts]]

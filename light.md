@@ -51,7 +51,7 @@ validator_set_hash:  [F_p; 4]     commitment to current validator set
 total: 29 field elements = 232 bytes
 ```
 
-the header chain is the spine. every header commits to the full system state via `bbg_root`. the `execution_proof` field commits to a [[zheng]] proof that all state transitions in the block were valid. the light client never needs to see the proof itself during normal sync — it trusts the header chain's continuity and the validator signatures (or, post-stark-verification, the recursive proof).
+the header chain is the spine. every header commits to the full system state via `bbg_root`. the `execution_proof` field commits to a [[zheng]] proof that all state transitions in the block were valid. the light client never needs to see the proof itself during normal sync — it trusts the header chain's continuity and the validator signatures (or, post-zheng-verification, the recursive proof).
 
 ## sync protocol
 
@@ -63,7 +63,7 @@ the header chain is the spine. every header commits to the full system state via
 4. verify validator signatures on each header (or verify the recursive [[zheng]] proof that covers the entire chain)
 5. store the latest header as the trusted state root
 
-at ~232 bytes per header and ~1 block per second, one year of headers is ~7.3 GB uncompressed. with recursive stark composition, the entire chain collapses into a single proof of ~100-200 KB plus the latest header. the light client can sync from genesis in one verification step.
+at ~232 bytes per header and ~1 block per second, one year of headers is ~7.3 GB uncompressed. with recursive zheng composition, the entire chain collapses into a single proof of ~100-200 KB plus the latest header. the light client can sync from genesis in one verification step.
 
 ### steady-state
 
@@ -153,14 +153,14 @@ the constant-size proof model makes the light client viable on:
 | can prove absence | no | no | yes (BBG completeness) |
 | sync from genesis | download all headers | download validator set changes | verify one recursive proof |
 | proof size | O(log n) per tx | O(1) per header | O(log² n) per query, O(1) for chain |
-| post-quantum | no | no | yes (hash-based starks) |
+| post-quantum | no | no | yes (hash-based [[zheng]] proofs) |
 
 ## the 64 KB blockchain
 
-at maturity with recursive stark composition: the entire blockchain state from any light client's perspective is the latest header (~232 bytes) plus the recursive proof covering the full chain history (~100-200 KB). this is the state. everything else — the full graph, every cyberlink, every proof, every transaction — is verified against this constant-size commitment.
+at maturity with recursive zheng composition: the entire blockchain state from any light client's perspective is the latest header (~232 bytes) plus the recursive proof covering the full chain history (~100-200 KB). this is the state. everything else — the full graph, every cyberlink, every proof, every transaction — is verified against this constant-size commitment.
 
 a blockchain that fits in a QR code.
 
-see [[cyber/proofs]] for the stark proof taxonomy. see [[cyber/bbg]] for the polynomial commitment structure. see [[foculus]] for the consensus mechanism that produces headers. see [[cyber/architecture]] for the fractal layer model where light clients operate at L3.
+see [[cyber/proofs]] for the zheng proof taxonomy. see [[cyber/bbg]] for the polynomial commitment structure. see [[foculus]] for the consensus mechanism that produces headers. see [[cyber/architecture]] for the fractal layer model where light clients operate at L3.
 
 normative money + light integration: [[specs/light-money]], [[specs/money-loop]], [[specs/node-modes]]. explanation of clocks: [[latency targets]].

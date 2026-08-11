@@ -6,7 +6,7 @@ alias: cyber channel, state channel, proof channel, bilateral channel
 ---
 # channel
 
-a bilateral value exchange between two [[neurons]] where every interaction — message delivery, computation, knowledge — adjusts a mutual token ledger through [[stark]]-proven [[nox]] state transitions, exchanged directly via [[radio]]. the proof replaces the chain. the ledger prices the interaction. the channel is the atomic unit of the network economy.
+a bilateral value exchange between two [[neurons]] where every interaction — message delivery, computation, knowledge — adjusts a mutual token ledger through [[zheng]]-proven [[nox]] state transitions, exchanged directly via [[radio]]. the proof replaces the chain. the ledger prices the interaction. the channel is the atomic unit of the network economy.
 
 ## the state channel problem
 
@@ -16,11 +16,11 @@ the reason is liveness. traditional state channels need the chain as a "court of
 
 liveness is the fundamental problem. routing, capital lockup, and channel management are problems of payment channel networks (Lightning), which compound channels into a routing topology. the direct bilateral channel is clean — except for liveness.
 
-## how STARK proofs kill liveness
+## how zheng proofs kill liveness
 
 traditional state channels need dispute windows because the chain cannot verify which state is correct without both parties showing up. the chain sees two signed states and must wait to see if anyone submits a newer one. the chain is a dumb judge that needs time.
 
-[[nox]] changes this. every state transition is a STARK-proven computation:
+[[nox]] changes this. every state transition is a [[zheng]]-proven computation:
 
 ```
 S_{n+1} = reduce(S_n, formula, focus)    with proof π_{n+1}
@@ -222,7 +222,7 @@ the channel is not a fourteenth language. it is an application pattern over exis
 
 - [[Nox]] — the channel state is a [[noun]], transitions are formula application
 - [[Seq]] — causal ordering of state transitions (nonce chain)
-- [[Tri]] — [[proof]] of correct state transitions ([[stark]])
+- [[Tri]] — [[proof]] of correct state transitions ([[zheng]])
 - [[Arc]] — the topology of who connects to whom (dynamic [[graph]])
 - [[Hemera]] — content-addressed state history and name identity
 
@@ -230,10 +230,10 @@ the φ*-calculus semantics emerge from [[Arc]]'s dynamic [[topology]] (new edges
 
 ## the atomic unit
 
-a channel is the atomic unit of the network economy. every service in [[cyber]] reduces to a bilateral exchange: relay a message (pay), compute a result (pay), share knowledge (get paid), store data (pay), verify a proof (pay). the channel is where all of these happen — at [[radio]] speed, with [[stark]] guarantees, priced by the mutual ledger.
+a channel is the atomic unit of the network economy. every service in [[cyber]] reduces to a bilateral exchange: relay a message (pay), compute a result (pay), share knowledge (get paid), store data (pay), verify a proof (pay). the channel is where all of these happen — at [[radio]] speed, with [[zheng]] guarantees, priced by the mutual ledger.
 
 the [[cybergraph]] is what neurons choose to make public. the channel layer is where neurons compute, negotiate, exchange, and prove — bilaterally, privately, continuously.
 
 the network is channels. the graph is publication. the ledger is the economy. the proofs are trust.
 
-see [[cyber/communication]], [[radio]], [[nox]], [[stark]], [[cybergraph]], [[cyber/focus]]
+see [[cyber/communication]], [[radio]], [[nox]], [[zheng]], [[cybergraph]], [[cyber/focus]]

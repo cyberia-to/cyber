@@ -10,7 +10,7 @@ alias: epistemic correctness, epistemic quality, truth tracking
 
 [[cyber]] makes two categories of claim about its [[focus]] distribution φ*.
 
-Cryptographic correctness: every state transition is valid, every [[stark]] proof is sound, [[focus]] conservation holds structurally. The protocol guarantees this through [[Hemera]] hash binding, [[nox]] deterministic reduction, and polynomial commitment verification. Given the soundness of the proof system, these guarantees hold with probability ≥ 1 − 2⁻¹²⁸.
+Cryptographic correctness: every state transition is valid, every [[zheng]] proof is sound, [[focus]] conservation holds structurally. The protocol guarantees this through [[Hemera]] hash binding, [[nox]] deterministic reduction, and polynomial commitment verification. Given the soundness of the proof system, these guarantees hold with probability ≥ 1 − 2⁻¹²⁸.
 
 Epistemic correctness: the [[focus]] distribution φ* tracks something meaningful about the world — that high-φ* [[particles]] represent knowledge worth attending to, and that the ranking reflects collective intelligence rather than collective error. The protocol assumes this emerges from [[costly signals]], convergence, and stake-weighted aggregation.
 
@@ -24,7 +24,7 @@ Five properties are mathematically established:
 
 - Convergence: the [[collective focus theorem]] proves that the [[tri-kernel]] operator is a contraction with coefficient κ < 1 under ergodicity assumptions. A unique fixed point φ* exists. The system converges to it at linear rate. see [[collective focus theorem]]
 
-- Conservation: Σᵢ focus(i) = 1 at every state. Enforced by [[stark]] circuit constraints on every transition. No minting, no inflation, no forgery — structural invariant. see [[cyber/proofs]]
+- Conservation: Σᵢ focus(i) = 1 at every state. Enforced by [[zheng]] circuit constraints on every transition. No minting, no inflation, no forgery — structural invariant. see [[cyber/proofs]]
 
 - Sybil resistance: [[focus]] influence is proportional to staked [[tokens]], not to node count. Creating 1000 [[neurons]] with zero stake produces zero φ* influence. The cost of shifting φ* is the cost of acquiring stake. see [[cyber/security]]
 

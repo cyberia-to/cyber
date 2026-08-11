@@ -47,12 +47,12 @@ Rust inherits from LLVM. LLVM inherits from GCC. GCC inherits from the first C c
 
 **does our Stage 3 (proven bootstrap) detect a Thompson worm?**
 
-what the STARK proof covers:
+what the zheng proof covers:
 - the nox interpreter correctly dispatched 18 patterns (field arithmetic verified)
 - the Trident compiler correctly lowered AST to nox nouns (tree rewriting verified)
 - hemera correctly hashed content (permutation verified)
 
-what the STARK proof does NOT cover:
+what the zheng proof does NOT cover:
 - the Rust nox VM that EXECUTED the nox program (the VM itself is unproven Rust)
 - the hardware that ran the Rust VM
 
@@ -70,7 +70,7 @@ if A(program) == B(program) == C(program) == D(program):
   no worm detected (or all four are compromised — requires conspiracy)
 ```
 
-the STARK proof is the mathematical layer. multi-implementation is the physical layer. together they cover both source-level and binary-level attacks.
+the zheng proof is the mathematical layer. multi-implementation is the physical layer. together they cover both source-level and binary-level attacks.
 
 practical: implement nox VM in at least TWO independent toolchains (Rust + one other — Go, Zig, or hand-written assembly). cross-verify outputs. a worm that compromises ALL toolchains simultaneously is science fiction.
 
@@ -90,7 +90,7 @@ Rs (~/git/rs) is a restricted Rust edition that enforces determinism by construc
 
 Rs depends on the Rust compiler (which depends on LLVM). the restrictions eliminate non-determinism at the LANGUAGE level, but the COMPILER BINARY is still in the LLVM trust chain.
 
-the path to full independence: Rs → Trident (self-hosted, proven) → no LLVM dependency. Trident compiled by proven Trident on proven nox = compiler with STARK-verified correctness. the LLVM lineage becomes irrelevant once the proven compiler exists.
+the path to full independence: Rs → Trident (self-hosted, proven) → no LLVM dependency. Trident compiled by proven Trident on proven nox = compiler with zheng-verified correctness. the LLVM lineage becomes irrelevant once the proven compiler exists.
 
 ## checkpoints (freeze points)
 
@@ -266,13 +266,13 @@ STATE AFTER STAGE 2:
   NO proofs yet
 ```
 
-## Stage 3: proven bootstrap (trust by STARK proof)
+## Stage 3: proven bootstrap (trust by zheng proof)
 
 ### Phase 6: zheng (proof infrastructure)                    5-8 sessions
 
 PARALLEL TRACK A — Rust prover (permanent):
   sumcheck prover, Brakedown committer, HyperNova folder
-  generates STARK proofs from nox traces
+  generates zheng proofs from nox traces
 
 PARALLEL TRACK B — Trident verifier:
   sumcheck_verify.tri, brakedown_verify.tri, decider.tri
@@ -290,11 +290,11 @@ RE-RUN Phase 3 with proof generation:
 ```
 trident_source ──nox_eval(source, compiler_v1)──→ compiler_v2
                    ↓ (trace recorded)
-                   Rust zheng prover → STARK proof
+                   Rust zheng prover → zheng proof
                    zheng.tri verifier → ACCEPTS
 ```
 
-the SAME compilation as Phase 3, but now with STARK proof.
+the SAME compilation as Phase 3, but now with zheng proof.
 
 ### Phase 8: proven nox.tri                                   1 session
 
@@ -320,9 +320,9 @@ test: `∀ jets: rust_jet(x) == trident_formula(x)` on random inputs. CHECKPOINT
 
 ```
 STATE AFTER STAGE 3:
-  PROVEN compiler (STARK proof)
-  PROVEN interpreter (STARK proof)
-  PROVEN hash, arithmetic, verifier (STARK proofs)
+  PROVEN compiler (zheng proof)
+  PROVEN interpreter (zheng proof)
+  PROVEN hash, arithmetic, verifier (zheng proofs)
   JET REGISTRY frozen (formula hashes = protocol constants)
   trust: mathematical certainty
 ```

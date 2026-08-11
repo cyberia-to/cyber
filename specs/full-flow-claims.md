@@ -42,7 +42,7 @@ Default product path: `LiveNode` full/cell closes epoch via peer SelfAccs when p
 | optional φ* SpMV attach | `phi: Option<PhiProof>` + `verify_phi_on_cert` |
 
 **status: implemented for continuous LiveNode epoch steps + verifiable `EpochCertificate`.**  
-Full planetary φ* STARK remains scale work; domain φ* attach path exists.
+Full planetary φ* zheng proof remains scale work; domain φ* attach path exists.
 
 ---
 

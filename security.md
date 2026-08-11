@@ -52,7 +52,7 @@ Proof: All operations preserve sum; invalid transitions rejected by verification
 
 ### privacy soundness
 Theorem: A valid ZK proof implies all circuit constraints are satisfied with probability $\geq 1 - 2^{-128}$.
-Proof: By stark/Plonky2 soundness. ∎
+Proof: By [[zheng]] soundness. ∎
 
 ### double-spend prevention
 Theorem: Same record cannot be spent twice.
@@ -73,7 +73,7 @@ Proof:
 │ Equality check      │ O(n) compare  │ O(n) compare  │ O(n) compare  │ O(1) hash     │
 │ Membership proof    │ O(n) scan     │ O(log n) MPT  │ O(log n) index│ O(log² n) poly│
 │ Completeness proof  │ impossible    │ impossible    │ impossible    │ O(log² n) poly│
-│ Computation verify  │ O(n) re-exec  │ O(n) re-exec  │ N/A           │ O(log n) stark│
+│ Computation verify  │ O(n) re-exec  │ O(n) re-exec  │ N/A           │ O(log n) zheng│
 │ Recursive verify    │ O(n) re-exec  │ O(n) re-exec  │ N/A           │ O(1) composed │
 │ Privacy + verify    │ incompatible  │ incompatible  │ incompatible  │ O(1) ZK proof │
 ├─────────────────────┼───────────────┼───────────────┼───────────────┼───────────────┤

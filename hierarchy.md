@@ -120,7 +120,7 @@ cell     ← receives cyberlinks, tokens (subjective from neurons)
          → computes local focus, propagates upward (objective)
 ```
 
-a [[neuron]] cannot push a fake [[rank]] summary upward — the cell computes it deterministically from the [[tri-kernel]] and proves it via [[zheng|STARK]]. the [[proof]] propagates with the summary. each level verifies the level below
+a [[neuron]] cannot push a fake [[rank]] summary upward — the cell computes it deterministically from the [[tri-kernel]] and proves it via [[zheng]]. the [[proof]] propagates with the summary. each level verifies the level below
 
 the subjective layer (what [[neurons]] want) and the objective layer (what the graph computes) flow in different directions through the same structure. [[tokens]] flow wherever [[neurons]] send them. truth flows wherever the math says it goes
 
@@ -138,7 +138,7 @@ moving [[tokens]] between cells costs hops. the cost depends on how many dimensi
 | differ in 1 dimension at zone level | 2 | same field, different community |
 | differ in 1 dimension at domain level | 3 | same continent of meaning, different network |
 
-[[small world]] theory: average path length ~ O(log N). [[bostrom]] at 3.1M [[particles]] already has diameter ≤ 10. at [[Avogadro]] scale, small-world shortcuts compress the 4D address space — the dimensions correlate heavily. realistic maximum is ~6-7 hops. cross-cell [[proof]] relay via [[zheng|STARK]] at each hop
+[[small world]] theory: average path length ~ O(log N). [[bostrom]] at 3.1M [[particles]] already has diameter ≤ 10. at [[Avogadro]] scale, small-world shortcuts compress the 4D address space — the dimensions correlate heavily. realistic maximum is ~6-7 hops. cross-cell [[proof]] relay via [[zheng]] at each hop
 
 ---
 
@@ -148,7 +148,7 @@ all UTXOs are private by default. every UTXO is a commitment. every transfer is 
 
 each cell maintains its own [[mutator set]]: [[AOCL]] for creation, [[SWBF]] for spending. no nullifiers — bit positions in a bloom filter replace them. creation and spending events are unlinkable by construction. storage grows O(log N) via [[MMR]] compaction
 
-within-cell transfers are cheap — local state update, no cross-cell coordination. cross-cell transfers require [[zheng|STARK]] [[proof]] relay. the social dimension co-locates frequent transactors in the same cell
+within-cell transfers are cheap — local state update, no cross-cell coordination. cross-cell transfers require [[zheng]] [[proof]] relay. the social dimension co-locates frequent transactors in the same cell
 
 see [[cyber/state]] for transfer mechanics. see [[AOCL]] and [[SWBF]] for the [[mutator set]]
 

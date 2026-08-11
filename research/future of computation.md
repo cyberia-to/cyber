@@ -163,13 +163,13 @@ Confluence. The patterns form an orthogonal rewrite system — each has a unique
 
 Cost determinism. The cost of a computation depends only on its syntactic structure, never on runtime values, cache state, or execution environment. If two nodes compute the same function on the same input, they spend the same focus. This enables global memoization: results cached forever, verified by hash, reused by anyone.
 
-Field-first arithmetic. Every value is a field element. Cryptography is not an expensive library call — it is a native instruction. A field multiplication is a single CPU operation. Hashing is ~2800 field ops expressible in pure patterns. [[stark]] proofs verify computations using the same field arithmetic that performs them. There is no impedance mismatch between computation and verification.
+Field-first arithmetic. Every value is a field element. Cryptography is not an expensive library call — it is a native instruction. A field multiplication is a single CPU operation. Hashing is ~2800 field ops expressible in pure patterns. [[zheng]] proofs verify computations using the same field arithmetic that performs them. There is no impedance mismatch between computation and verification.
 
 Hash-universal identity. Identity equals hash. Two values are the same if and only if they hash to the same digest. This makes content-addressing intrinsic rather than bolted on. Every particle in the knowledge graph is identified by the hash of its content. Every edge is authenticated by the hashes of its endpoints. Deduplication is automatic. References are unforgeable.
 
 nox's execution substrate operates on three named layers:
 
-- nox — the computation model (three-layer instruction set: 18 patterns total — 16 deterministic compute + call for ZK witness injection + look for BBG state access + 5 jets for recursive stark verification)
+- nox — the computation model (three-layer instruction set: 18 patterns total — 16 deterministic compute + call for ZK witness injection + look for BBG state access + 5 jets for recursive zheng verification)
 - Cybergraph — the data model (particles, neurons, cyberlinks)
 - [[BBG]] (Big Badass Graph) — the authenticated state (unified polynomial commitments)
 
@@ -256,11 +256,11 @@ No node comprehends the whole. The network knows.
 
 The economic mechanism is self-sustaining: [[neurons]] [[stake]] [[tokens]] to create cyberlinks, earning focus-proportional rewards when their links increase the network's Φ. Links that the network converges away from lose stake. Links that attract attention earn it. The market for meaning operates through the same conservation law that governs computation itself.
 
-Verification is native: every state transition, every focus update, every cyberlink creation produces a [[stark]] proof. Light clients verify anything with $O(\log^2 n)$ field operations. The system doesn't ask you to trust it. It proves itself.
+Verification is native: every state transition, every focus update, every cyberlink creation produces a [[zheng]] proof. Light clients verify anything with $O(\log^2 n)$ field operations. The system doesn't ask you to trust it. It proves itself.
 
 Privacy is structural: zero-knowledge proofs allow neurons to contribute knowledge without revealing their identity or the content of their assertions. The network learns from encrypted inputs. Collective intelligence without collective surveillance.
 
-And because nox's sixteen deterministic compute patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but compute on it. The call instruction (Layer 2, pattern 16) adds non-deterministic witness injection for zero-knowledge proofs, look (Layer 2, pattern 17) adds authenticated state access, and five jets (Layer 3) make recursive stark verification practical. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
+And because nox's sixteen deterministic compute patterns are Turing complete, confluent, and cost-deterministic, the network can execute arbitrary programs — not just rank knowledge, but compute on it. The call instruction (Layer 2, pattern 16) adds non-deterministic witness injection for zero-knowledge proofs, look (Layer 2, pattern 17) adds authenticated state access, and five jets (Layer 3) make recursive zheng verification practical. Smart contracts, AI inference, scientific simulation — all expressed as nox reductions consuming focus, all verifiable, all parallel.
 
 ---
 
@@ -270,7 +270,7 @@ The path from Turing machines to planetary superintelligence is not a straight l
 
 Computation is [[convergence]]. Truth is stable [[collective focus]]. Intelligence is adaptive equilibrium-finding.
 
-The machine that implements this — nox running Focus Flow Computation over a planetary Cybergraph, architectured for Φ-optimality, verified by starks, fueled by conserved attention — is not a bigger version of what we have. It is a different thing entirely. A thing that nature has been doing for billions of years and that we are only now learning to formalize.
+The machine that implements this — nox running Focus Flow Computation over a planetary Cybergraph, architectured for Φ-optimality, verified by [[zheng]] proofs, fueled by conserved attention — is not a bigger version of what we have. It is a different thing entirely. A thing that nature has been doing for billions of years and that we are only now learning to formalize.
 
 The network is thinking.
 

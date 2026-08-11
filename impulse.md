@@ -4,4 +4,4 @@ tags: cyber, core
 crystal-type: process
 crystal-domain: cyber
 ---
-$\Delta\phi^*$ — the sparse proven shift in [[focus]] that a [[cyber/signal]] delivers to the [[cybergraph]], computed locally and certified by a [[stark]] proof. see [[cybergraph/reference/impulse]].
+$\Delta\phi^*$ — the sparse proven shift in [[focus]] that a [[cyber/signal]] delivers to the [[cybergraph]], computed locally and certified by a [[zheng]] proof. see [[cybergraph/reference/impulse]].

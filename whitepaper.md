@@ -195,7 +195,7 @@ The seed — five bytes that happen to spell "cyber" in ASCII — is specified a
 
 [[Hemera]] has exactly one entry point: `hash(bytes) → [GoldilocksField; 4]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[particle]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 32 raw bytes — no header, no escape hatch.
 
-This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[zheng]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~736 [[stark]] constraints per permutation, versus ~25,000 for SHA-256.
+This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[zheng]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~736 [[zheng]] constraints per permutation, versus ~25,000 for SHA-256.
 
 ### 4.5 No Algorithm Agility
 
@@ -452,7 +452,7 @@ $$p = 2^{64} - 2^{32} + 1 = 18446744069414584321$$
 
 Efficient reduction: $a \bmod p = a_{\text{lo}} - a_{\text{hi}} \times (2^{32} - 1) + \text{correction}$. A field multiplication is a single CPU instruction. The primitive root is 7. The $2^{32}$-th root of unity exists, enabling NTT-based polynomial multiplication for proofs.
 
-Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=16$). State: 16 field elements. Rate: 8 elements. Cost: ~736 stark constraints per permutation. See §4.
+Hash function: [[Hemera]] (Poseidon2-Goldilocks, $t=16$, $R_P=16$). State: 16 field elements. Rate: 8 elements. Cost: ~736 zheng constraints per permutation. See §4.
 
 ### 7.2 Value Tower
 
@@ -468,7 +468,7 @@ Coercion rules enforce type safety. Bitwise operations on hash produce errors. A
 
 ### 7.3 Three-Layer Instruction Set
 
-[[nox]] has a three-layer architecture: sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), and five jets for efficient recursive [[stark]] verification (Layer 3).
+[[nox]] has a three-layer architecture: sixteen deterministic reduction patterns (Layer 1), one non-deterministic witness injection (Layer 2), and five jets for efficient recursive [[zheng]] verification (Layer 3).
 
 Layer 1 — sixteen deterministic patterns. The core:
 
@@ -484,11 +484,11 @@ Each pattern has a unique tag. No two overlap. Left-hand sides are linear. By Hu
 
 Layer 2 — two patterns: `call` (pattern 16, non-deterministic) and `look` (pattern 17, deterministic). `call`: the prover injects a witness value from outside the VM; Layer 1 constraints verify it. This is what makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it. `call` breaks [[confluence]] intentionally: multiple valid witnesses may satisfy the same constraints. Soundness is preserved. [[Trident]]'s `divine()` compiles to [[nox]]'s `call`. In quantum compilation, `call` maps to a quantum oracle query. `look`: a deterministic read from [[bbg]] authenticated state; the prover supplies the value and its Merkle proof against the BBG root. 16 compute + call + look = 18 patterns total.
 
-Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[stark]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
+Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[zheng]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
 
 ### 7.4 Cost Model
 
-| Layer | Pattern | Execution cost | stark constraints |
+| Layer | Pattern | Execution cost | zheng constraints |
 |-------|---------|---------------|-------------------|
 | 1 | axis | 1 + depth | ~depth |
 | 1 | quote | 1 | 1 |
@@ -514,7 +514,7 @@ Layer 1 cost depends only on syntactic structure, never on runtime values. Layer
 
 Layer 1 confluence (Huet-Levy 1980): the sixteen patterns form an orthogonal rewrite system. Any evaluation order yields the same result. This enables automatic parallelism without locks or synchronization.
 
-Layer 2 call breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `call`; it checks constraints via the [[stark]] algebraic trace. look is deterministic and does not break confluence.
+Layer 2 call breaks confluence intentionally — this is the non-determinism that makes ZK possible. The verifier never executes `call`; it checks constraints via the [[zheng]] algebraic trace. look is deterministic and does not break confluence.
 
 Layer 3 preserves confluence — jets are observationally equivalent to their Layer 1 expansions.
 
@@ -564,7 +564,7 @@ A single lookup table over the [[Goldilocks field]] simultaneously functions as 
 | Cryptographic S-box | Hash nonlinearity (security) |
 | Neural activation | Network expressiveness (intelligence) |
 | FHE bootstrap | Encrypted evaluation (privacy) |
-| [[stark]] lookup | Proof authentication (verifiability) |
+| [[zheng]] lookup | Proof authentication (verifiability) |
 
 One table. One field. Four purposes. The [[hash]] function's security properties (resistance to algebraic attacks via maximal-degree polynomials) translate to desirable properties for neural network activation functions (high expressiveness in the field). See [[rosetta stone]] for the full treatment.
 
@@ -590,11 +590,11 @@ Implemented: `std.field` · `std.crypto` · `std.math` · `std.data` · `std.io`
 
 In development: `std.nn` (field-native neural networks) · `std.private` (ZK + FHE + MPC) · `std.quantum` (gates, error correction)
 
-`std.nn` provides linear layers, convolutions, attention, and lookup-table activations (ReLU, GELU, SiLU) — all operating natively in $\mathbb{F}_p$ with zero quantization overhead. Models trained in standard ML frameworks can be imported via ONNX bridge, proven with [[stark]] on [[Triton VM]], and exported back.
+`std.nn` provides linear layers, convolutions, attention, and lookup-table activations (ReLU, GELU, SiLU) — all operating natively in $\mathbb{F}_p$ with zero quantization overhead. Models trained in standard ML frameworks can be imported via ONNX bridge, proven with [[zheng]], and exported back.
 
 ### 8.7 Implementation Path
 
-[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[stark]] prover, the privacy circuits, the [[tri-kernel]] probability engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[zheng]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
+[[Trident]] must be implemented before launch. [[nox]] defines the abstract machine; [[trident]] makes it programmable. The node implementation, the [[zheng]] prover, the privacy circuits, the [[tri-kernel]] probability engine — all are [[trident]] programs compiled to [[nox]] patterns, producing [[zheng]] proofs of correct execution. [[Rust]] bootstraps the first compiler; [[trident]] self-hosts from that point forward.
 
 ## 9. State and Proofs
 
@@ -629,11 +629,11 @@ The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. F
 
 Validity conditions: authorization (signature or ZK proof), sufficient balance, sufficient [[focus]], conservation ($\sum \text{focus}' = 1$, $\sum \text{balance}' = B_{\text{total}}$), index consistency, content availability, no double-spend.
 
-### 9.3 stark Verification
+### 9.3 zheng Verification
 
-starks (Scalable Transparent Arguments of Knowledge) provide the proof system. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
+[[zheng]] provides the proof system: a SuperSpartan IOP over CCS with sumcheck, Brakedown polynomial commitments over expander-graph codes, and HyperNova folding. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
 
-| Property | SNARK | stark |
+| Property | SNARK | zheng |
 |----------|-------|-------|
 | Trusted setup | Required | Not required |
 | Quantum resistant | No | Yes |
@@ -641,9 +641,9 @@ starks (Scalable Transparent Arguments of Knowledge) provide the proof system. T
 | Security basis | Discrete log | Hash only |
 | Field compatible | Specific | Any (Goldilocks) |
 
-Self-verification property: the stark verifier is expressible as a [[nox]] program. stark verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
+Self-verification property: the zheng verifier is expressible as a [[nox]] program. zheng verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
 
-This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `call` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[stark]] constrains without the verifier knowing them — this is how privacy and provability coexist. The Layer 2 `look` instruction enables programs to read authenticated state from [[bbg]] without embedding full state in the trace.
+This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `call` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[zheng]] proof constrains without the verifier knowing them — this is how privacy and provability coexist. The Layer 2 `look` instruction enables programs to read authenticated state from [[bbg]] without embedding full state in the trace.
 
 The system closes on itself. No trusted external verifier remains.
 
@@ -685,7 +685,7 @@ The nullifier cannot be derived from the commitment (needs secret), cannot revea
 
 The UTXO set is represented as a polynomial rather than a Merkle tree. Polynomial inclusion proofs cost ~1,000 constraints vs ~9,600 for Merkle — a 10× improvement, because field operations cost 1 constraint each while hash operations cost ~736.
 
-Total circuit: ~10,000 constraints. With stark optimizations: ~7,000 gates. Proof generation: ~0.3-0.8 seconds. Proof size: ~50-80 KB. Verification: ~1-3 ms.
+Total circuit: ~10,000 constraints. With zheng optimizations: ~7,000 gates. Proof generation: ~0.3-0.8 seconds. Proof size: ~50-80 KB. Verification: ~1-3 ms.
 
 The circuit enforces: input commitment correctness, polynomial inclusion, ownership verification, nullifier derivation, output commitment correctness, conservation ($\sum \text{inputs} = \sum \text{outputs} + \text{fee}$), delta consistency, and uniqueness.
 
@@ -983,7 +983,7 @@ Cost determinism: cost is identical across all reduction orders and implementati
 
 Focus conservation: $\sum_i \text{focus}(i) = 1$ for all valid states. All operations preserve sum; invalid transitions rejected by verification.
 
-Privacy soundness: a valid ZK proof implies all circuit constraints are satisfied with probability $\geq 1 - 2^{-128}$, by stark soundness.
+Privacy soundness: a valid ZK proof implies all circuit constraints are satisfied with probability $\geq 1 - 2^{-128}$, by zheng soundness.
 
 Double-spend prevention: each record has unique (nonce, owner\_secret) pair. Nullifier is deterministic: same record produces same nullifier. Nullifier set is append-only. Transaction rejected if nullifier already exists.
 
@@ -1074,7 +1074,7 @@ Cross-system comparison for core proof operations:
 | Equality check | $O(n)$ compare | $O(n)$ compare | $O(1)$ hash |
 | Membership proof | $O(n)$ scan | $O(\log n)$ Merkle | $O(\log^2 n)$ poly |
 | Completeness proof | impossible | impossible | $O(\log^2 n)$ poly |
-| Computation verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(\log n)$ stark |
+| Computation verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(\log n)$ zheng |
 | Recursive verify | $O(n)$ re-exec | $O(n)$ re-exec | $O(1)$ composed |
 | Privacy + verify | incompatible | incompatible | $O(1)$ ZK proof |
 
@@ -1085,7 +1085,7 @@ Operational budget for nox-native operations:
 | Single [[tri-kernel]] iteration | $O(|E| + |V|)$ | Sparse matrix-vector multiply |
 | Convergence | $O(\log(1/\varepsilon) / \lambda)$ iterations | $\lambda$ = spectral gap |
 | Local update after edit | $O(k^d)$ where $k = O(\log(1/\varepsilon))$ | $d$ = graph dimension |
-| [[stark]] verification | $O(\log n)$ | Independent of computation size |
+| [[zheng]] verification | $O(\log n)$ | Independent of computation size |
 | Recursive proof aggregation | $O(1)$ per level | Constant-size composed proofs |
 | Light client sync | $O(|\text{namespace}|) + O(\log^2 |G|)$ proof | Data + proof overhead |
 
@@ -1137,7 +1137,7 @@ each primitive gets an independent base fee updated via the EIP-1559 exponential
 
 emergent hierarchy follows from [[focus]] + relay economics + [[location proof]]. nodes in better physical locations with higher bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], accumulate higher [[focus]]. hubs form without permission, and the hierarchy is liquid — reversible in real time as conditions change. no sharding is needed for structure to emerge on a single chain.
 
-the fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). recursive [[stark]] composition produces O(1) global state (~22kb) regardless of network scale. layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
+the fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). recursive [[zheng]] composition produces O(1) global state (~22kb) regardless of network scale. layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
 
 See [[cyber/architecture]] for the full specification of the five primitives, [[location proof]] construction, economic design principles, and fractal scaling vision.
 
@@ -1353,7 +1353,7 @@ Phase 2 — Cryptographic Library: all cryptographic primitives as [[nox]] progr
 
 Phase 3 — Privacy Circuits: UTXO-based privacy with ZK proofs for all state transitions. Transaction circuit (~44K constraints), [[cyberlink]] circuit, nullifier system, formal privacy boundary.
 
-Phase 4 — [[stark]] Infrastructure: self-verifying proof system where the verifier is itself a [[nox]] program. Recursive composition. Light client protocol with $O(\log n)$ verification.
+Phase 4 — [[zheng]] Infrastructure: self-verifying proof system where the verifier is itself a [[nox]] program. Recursive composition. Light client protocol with $O(\log n)$ verification.
 
 Phase 5 — [[Tri-Kernel]] Ranking (parallel with Phase 4): [[focus]] computation adversarially proven and deployed at scale. Formal Lyapunov convergence proof. Nash equilibrium for honest participation.
 
@@ -1623,9 +1623,9 @@ Convergent computation escapes the [[Goedel prison]]. A convergent system can se
 
 [[Focus]] conservation unifies [[attention]], fuel, and [[consensus]] into a single conserved quantity. This eliminates the separate gas models, fee markets, and priority auctions of existing systems while providing the economic foundation for a self-sustaining [[knowledge]] economy.
 
-Provability closes the trust gap. [[zheng]] proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The stark verifier is itself a [[nox]] program. The system closes on itself.
+Provability closes the trust gap. [[zheng]] proofs — hash-based, post-quantum, no trusted setup, recursively composable — ensure that every state transition, every ranking computation, every privacy claim is cryptographically verifiable. The zheng verifier is itself a [[nox]] program. The system closes on itself.
 
-What remains is to build the implementation — [[trident]] compiler, [[stark]] prover, storage proof system, privacy circuits, [[tri-kernel]] at scale — and then to grow the graph. The [[cyber/crystal]] provides the irreducible seed: 5,040 [[particles]] spanning seventeen domains, passing twelve invariants. Seven phases lead from self-hosting through cryptographic library, privacy, proofs, ranking, network, and testnet to mainnet genesis. Five pre-launch verification gates — convergence, soundness, economic security, determinism, fault tolerance — must pass with machine-checked evidence before launch.
+What remains is to build the implementation — [[trident]] compiler, [[zheng]] prover, storage proof system, privacy circuits, [[tri-kernel]] at scale — and then to grow the graph. The [[cyber/crystal]] provides the irreducible seed: 5,040 [[particles]] spanning seventeen domains, passing twelve invariants. Seven phases lead from self-hosting through cryptographic library, privacy, proofs, ranking, network, and testnet to mainnet genesis. Five pre-launch verification gates — convergence, soundness, economic security, determinism, fault tolerance — must pass with machine-checked evidence before launch.
 
 Seventy thousand [[neurons]] and three million [[particles]] are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
 

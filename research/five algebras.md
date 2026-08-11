@@ -307,7 +307,7 @@ quantum is not a sixth regime. it is a language + compiler + jets over existing 
 | logic / type theory | arithmetization to F_p circuits, nox tree types |
 | categorical composition | nox compose + cybergraph morphisms, structural |
 | quantum computation | F_p² algebra (nebu), kuro+trop compiler, host jet execution. see [[Qu]] |
-| elliptic curves / pairings | deliberate exclusion — [[STARK]] over [[SNARK]], no trusted setup |
+| elliptic curves / pairings | deliberate exclusion — [[zheng]] is hash-based, no trusted setup |
 | floating point (IEEE 754) | quantization trend → kuro ([[BitNet]]). training off-chain |
 | p-adic numbers (Q_p) | ultrametric on Merkle trees, but tree distance computes without p-adic arithmetic |
 | quaternions / Clifford algebras | F_p extension fields, no irreducible workload |

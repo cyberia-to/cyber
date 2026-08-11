@@ -36,7 +36,7 @@ The stack was built bottom-up, so it inverts the textbook order. The hard crypto
 | [[soft3/nox|nox]] | proof-native VM (18 patterns + jets) | 8.5K | 166 | complete; parallel reduction draft |
 | [[zheng]] | [[SuperSpartan]] + Brakedown proofs | 4.5K | 87 | complete; look folds into CCS, commitment↔root binding open (pattern-15) |
 | [[soft3/bbg|bbg]] | authenticated state | 3.5K | 53 | core complete; private scanning open |
-| [[radio]] | iroh fork, QUIC + Poseidon2 | 117K | 505 | transport + push gossip (Plumtree) complete, multi-node tested; Ed25519 → [[stark]] pending |
+| [[radio]] | iroh fork, QUIC + Poseidon2 | 117K | 505 | transport + push gossip (Plumtree) complete, multi-node tested; Ed25519 → [[zheng]] pending |
 | [[foculus]] | ordering, finality, chain, VDF, DAS, erasure | 6.2K | 111 | φ* finality (φ*ᵢ > τ_D) + fork choice implemented, single-node; signal→gossip wiring + DAS verifier open |
 | [[trident]] | .tri compiler | 68K | 1004 | aligned to the nox arena API; compiler in progress |
 | [[glia]] | universal .model runtime | 24.8K | 145 | runs (CPU correct); backend parity ongoing |
@@ -89,7 +89,7 @@ The floor every other milestone stands on. Implemented and tested today:
 - [[strata]] — the five algebras (Goldilocks, F₂¹²⁸, R_q, tropical, isogeny) under one trait stack
 - [[hemera]] — [[Poseidon2]] over Goldilocks; [[cybics/crystal/particle|particle]] identity, the [[soft3/nox|nox]] hash jet. Audit pending before any address is frozen.
 - [[lens]] — Brakedown, Binius, Ikat, Assayer, Porphyry, one commitment per algebra
-- [[soft3/nox|nox]] — the proof-native VM; 18 reduction patterns (16 compute + call + look) plus jets, every run a [[stark]] by construction
+- [[soft3/nox|nox]] — the proof-native VM; 18 reduction patterns (16 compute + call + look) plus jets, every run a [[zheng]] proof by construction
 - [[zheng]] — [[SuperSpartan]] + Brakedown + [[sumcheck]]; prove and verify wired
 - [[soft3/bbg|bbg]] — authenticated state, the mutator set, query proofs
 - [[radio]] — QUIC transport with Poseidon2 verified streaming, gossip, and a docs store
@@ -210,7 +210,7 @@ Gate: transaction + cyberlink circuits, nullifier soundness, leakage budget L(qu
 
 ### P2 — Recursive proof
 
-The [[stark]] verifier is itself a [[soft3/nox|nox]] program: proofs can be verified, and verification can be proven. Unlocks O(log n) light clients.
+The [[zheng]] verifier is itself a [[soft3/nox|nox]] program: proofs can be verified, and verification can be proven. Unlocks O(log n) light clients.
 
 Gate: inner verification circuit arithmetized, light-client verification of any state claim.
 
@@ -229,7 +229,7 @@ Runs parallel to every milestone, converging here. Each line below is one of the
 | Layer 1 confluence (16 patterns) | [[eidos]] |
 | cost determinism | structural induction, machine-checked |
 | [[soft3/tru/specs/focus|focus]] conservation (Σφ*ᵢ = 1) | transition analysis |
-| privacy soundness (< 2⁻¹²⁸) | [[stark]] soundness theorem |
+| privacy soundness (< 2⁻¹²⁸) | [[zheng]] soundness theorem |
 | [[tri-kernel]] convergence | Lyapunov function, explicit constants |
 | adversarial equilibrium | game theory + simulation |
 | double-spend prevention | nullifier uniqueness proof |

@@ -17,7 +17,7 @@ the [[license]] sets the register:
 
 | imperative | meaning | mechanic |
 |---|---|---|
-| don't trust | verify | every claim is a [[stark]] proof |
+| don't trust | verify | every claim is a [[zheng]] proof |
 | don't fear | publish | correctness has nothing to hide |
 | don't beg | permissionless | hand them a proof, they check it |
 

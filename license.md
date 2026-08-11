@@ -91,7 +91,7 @@ The three imperatives map directly:
 
 Don't trust. Verify. This is the founding principle of
 cryptographic proof systems. You do not trust the prover, the chain,
-the validator, or the counterparty. You verify the proof. A stark
+the validator, or the counterparty. You verify the proof. A [[zheng]]
 proof is a mathematical object -- it either verifies or it doesn't.
 No reputation, no track record, no authority makes a false proof
 verify.

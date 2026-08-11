@@ -49,13 +49,13 @@ when a cell grows too large (too many [[particles]], too much UTXO traffic, [[tr
 4. [[mutator set]] state partitions along the same boundary
 5. routing tables update on the slow timescale
 
-the split is proven via [[zheng|STARK]] — any observer can verify the division was correct
+the split is proven via [[zheng]] — any observer can verify the division was correct
 
 ## merging
 
 when two cells have become tightly coupled (high cross-cell [[focus]] flow, many cross-cell UTXO transfers, the boundary between them carries more traffic than the boundary with other neighbors):
 
-the cells merge. state combines. the [[mutator set]] unifies. routing tables update. merging is the reverse of splitting — also proven via [[zheng|STARK]]
+the cells merge. state combines. the [[mutator set]] unifies. routing tables update. merging is the reverse of splitting — also proven via [[zheng]]
 
 ## the lifecycle
 

@@ -13,7 +13,7 @@ date: 2026-03-23
 
 1. Δφ* mining: a [[neuron]] creates [[cyberlinks]], computes the local tri-kernel impulse $\Delta\phi^*$, proves it correct ([[zheng]] proof σ), submits as [[signal]]. reward ∝ proven Δφ*. the neuron mints [[$CYB]] proportional to how much it shifted [[focus]].
 
-2. [[Goldilocks field processor|GFP]] PoUW mining: a miner produces a [[stark]] proof of a benchmark circuit exercising all four GFP primitives (fma, ntt, p2r, lut). reward = block subsidy. the puzzle trains hardware that serves the network.
+2. [[Goldilocks field processor|GFP]] PoUW mining: a miner produces a [[zheng]] proof of a benchmark circuit exercising all four GFP primitives (fma, ntt, p2r, lut). reward = block subsidy. the puzzle trains hardware that serves the network.
 
 currently they are separate: Δφ* mining rewards knowledge, PoUW mining rewards computation. the flywheel connects them economically (mining funds chip development, chips accelerate proving, proving serves users). but the WORK is different — PoUW proves a synthetic benchmark, not real knowledge.
 
