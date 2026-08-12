@@ -164,11 +164,6 @@ parent = "soft3"
 visibility = "public"
 
 [[subgraph]]
-name = "sync"
-parent = "soft3"
-visibility = "private"
-
-[[subgraph]]
 name = "zheng"
 parent = "soft3"
 visibility = "public"
@@ -215,6 +210,11 @@ visibility = "public"
 
 [[subgraph]]
 name = "soma"
+parent = "soft3"
+visibility = "public"
+
+[[subgraph]]
+name = "lytics"
 parent = "soft3"
 visibility = "public"
 
