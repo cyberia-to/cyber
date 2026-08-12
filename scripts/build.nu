@@ -17,6 +17,10 @@ def main [
     let root_graph = ($root_dir | path join $ws.graph.root_subgraph)
     let root_name = $ws.graph.root_subgraph
 
+    if not ($"($root_graph)/publish.toml" | path exists) {
+        error make {msg: $"root graph not found at ($root_graph) — no publish.toml there. Check root_dir in workspace.toml matches where repos are cloned"}
+    }
+
     let decls = (load-declarations $ws_root)
     let filtered = (filter-decls $decls $public_only $root_name)
 
