@@ -1,6 +1,6 @@
 schema = 1
 org = "cyberia-to"
-synced_at = "2026-04-23T06:13:16Z"
+synced_at = "2026-08-12T00:43:07Z"
 
 [repos.hemera]
 visibility = "public"
@@ -289,3 +289,9 @@ visibility = "private"
 archived = false
 default_branch = "master"
 last_seen = "2026-05-27T00:00:00Z"
+
+[repos.lytics]
+visibility = "public"
+archived = false
+default_branch = "main"
+last_seen = "2026-08-12T00:43:07Z"
