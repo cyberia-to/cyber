@@ -185,8 +185,9 @@ visibility = "public"
 
 [[subgraph]]
 name = "tok"
+repo = "plumb"
 parent = "soft3"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "nox"

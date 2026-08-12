@@ -51,10 +51,11 @@ jobs:
             | where {|d| ($d.visibility? | default "public") == "public"}
             | each {|d|
               let name = $d.name
+              let repo = ($d.repo? | default $d.name)
               let target = $"($env.HOME)/cyber/($name)"
               if not ($target | path exists) {
-                print $"Cloning ($name)..."
-                let url = $"https://github.com/cyberia-to/($name).git"
+                print $"Cloning ($name) from ($repo)..."
+                let url = $"https://github.com/cyberia-to/($repo).git"
                 try {
                   ^git clone --depth 1 $url $target
                 } catch {|e|
