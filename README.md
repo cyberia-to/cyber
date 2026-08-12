@@ -21,4 +21,14 @@ The graph speaks [[neural]], the first language native to both humans and machin
 
 The future of the Earth is yours to [[cyberlink]]. Open your [[cyb]], read [[cyber/whitepaper]], and [[join]].
 
+## install
+
+```bash
+cargo install soft3
+cargo install cyb
+soft3 sync          # default network: space-pussy
+```
+
+full guide: [[install]] · site: [soft3.org](https://soft3.org) · crates: [soft3](https://crates.io/crates/soft3) · [cyb](https://crates.io/crates/cyb)
+
 network integration specs (money loop, node modes, light client tip trust): [[specs/README|cyber/specs]]. component repos implement mechanisms; cyber/specs states what the network requires when they compose.
