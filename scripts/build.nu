@@ -26,7 +26,9 @@ def main [
 
     let subgraphs = ($filtered | enumerate | each {|it|
         let d = $it.item
-        let repo_path = ($root_dir | path join ($d.repo? | default $d.name))
+        # local checkout always lives at the component's name; `repo` only
+        # names the org repository to clone from (see publish.yml clone step)
+        let repo_path = ($root_dir | path join $d.name)
         if $pinned and ($d.commit? | is-not-empty) {
             ^git -C $repo_path checkout $d.commit
         }
