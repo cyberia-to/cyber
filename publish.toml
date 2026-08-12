@@ -52,7 +52,8 @@ engine = "json"
 plausible_domain = "cyber.page"
 plausible_script = "https://plausible.io/js/pa-Q95R4OPpKf6e0wpViwLqF.js"
 snippet = """<script async src="https://plausible.io/js/pa-Q95R4OPpKf6e0wpViwLqF.js"></script>
-<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>"""
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+<script type="module" src="https://lytics.cyb.ai/tracker/loader.js" data-endpoint="https://lytics.cyb.ai"></script>"""
 
 [graph]
 enabled = true
