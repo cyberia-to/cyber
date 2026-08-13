@@ -39,7 +39,8 @@ def main [
         } else {
             $d.name
         }
-        let is_menu = ($d.parent? | is-empty)
+        # top-level subgraphs enter the nav menu; `menu = false` opts out
+        let is_menu = ($d.parent? | is-empty) and (($d.menu? | default true) == true)
         let base = {name: $d.name, path: $repo_path, mount: $derived_mount, visibility: ($d.visibility? | default "public"), menu: $is_menu}
         if $is_menu { $base | insert menu_order $it.index } else { $base }
     })

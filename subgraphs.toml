@@ -58,6 +58,7 @@ visibility = "public"
 [[subgraph]]
 name = "cybics"
 visibility = "public"
+menu = false
 
 
 [[subgraph]]
