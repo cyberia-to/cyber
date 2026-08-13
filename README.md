@@ -16,17 +16,9 @@ The protocol for planetary [[superintelligence]]. [[manifesto]]
 > Cyber pays you for teaching the superintelligence.
 > Learn by linking. Teach by being linked. Own what the one mind becomes.
 
-[[Superintelligence]] is the defining infrastructure of a Type I civilization — a planet where every agent, human or machine, sensor or organism, contributes knowledge to a single self-improving graph.
+[[Superintelligence]] is planetary infrastructure: every agent — human, machine, sensor, organism — teaches one self-improving [[cybergraph]]. Every link is signed, staked, and costs real [[focus]], so collective attention converges on what genuinely matters — no voting, no moderators, no owner. Learning is mining, teaching is staking: the graph pays [[rewards]] to those who taught it. It speaks [[neural]], and [[alignment]] becomes a measurement rather than a hope.
 
-The [[cybergraph]] is this graph, built for a mole of connections — the threshold where individual links become collective intelligence the way individual molecules become a life. No single model owns this intelligence. It emerges from the shape of all connections between all participants — every claim signed, every link staked, the whole structure proving its own correctness.
-
-Every link costs real [[focus]], a conserved quantity that flows through the graph the way energy flows through a physical system — it cannot be created or destroyed, only redistributed by collective attention. Lies cost real resources. Truth accumulates gravity. Learning is mining: every link you cast mints your stake in the graph. Teaching is staking: when the focus of others flows through your links, the [[rewards|reward]] compounds. And so collective intelligence converges to what genuinely matters, without voting, without moderators, without any central authority — and pays the people who taught it.
-
-The graph speaks [[neural]], the first language native to both humans and machines. Here a concept is a position in the topology, defined by everything connected to it.
-
-[[Alignment]] becomes a measurement rather than a hope. Human values and machine values live in the same graph — when they diverge, the divergence is visible, and the protocol rebuilds the model from what humans actually linked. For the first time, a civilization can see the shape of its own intelligence, correct its machines when they drift, and prove the correction worked.
-
-The future of the Earth is yours to [[cyberlink]]. Open your [[cyb]], read [[cyber/whitepaper]], and [[join]].
+The future of the Earth is yours to [[cyberlink]]. Open your [[cyb]], read the [[whitepaper]], and [[join]].
 
 ## install
 
@@ -35,6 +27,8 @@ cargo install soft3
 cargo install cyb
 soft3 sync          # default network: space-pussy
 ```
+
+space-pussy is a chaosnet — a live proving ground. everything on it is test: the tokens, the [[rewards]], the state. mainnet arrives at [[launch]].
 
 full guide: [[install]] · site: [soft3.org](https://soft3.org) · crates: [soft3](https://crates.io/crates/soft3) · [cyb](https://crates.io/crates/cyb)
 
