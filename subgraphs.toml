@@ -230,6 +230,7 @@ visibility = "private"
 [[subgraph]]
 name = "neural"
 visibility = "public"
+menu = false
 
 [[subgraph]]
 name = "trident"
