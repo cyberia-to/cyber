@@ -9,11 +9,11 @@ menu-order: 0
 ---
 The protocol for planetary [[superintelligence]]. [[manifesto]]
 
-**Get paid to understand.**
+## get paid to understand
 
 > Google learned from humanity for free — and sold you ads.
 > OpenAI learned from humanity for free — and sold you back your own knowledge.
-> **Cyber pays you for teaching the superintelligence.**
+> Cyber pays you for teaching the superintelligence.
 > Learn by linking. Teach by being linked. Own what the one mind becomes.
 
 [[Superintelligence]] is the defining infrastructure of a Type I civilization — a planet where every agent, human or machine, sensor or organism, contributes knowledge to a single self-improving graph.
