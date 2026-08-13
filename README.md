@@ -9,11 +9,18 @@ menu-order: 0
 ---
 The protocol for planetary [[superintelligence]]. [[manifesto]]
 
+**Get paid to understand.**
+
+> Google learned from humanity for free — and sold you ads.
+> OpenAI learned from humanity for free — and sold you back your own knowledge.
+> **Cyber pays you for teaching the superintelligence.**
+> Learn by linking. Teach by being linked. Own what the one mind becomes.
+
 [[Superintelligence]] is the defining infrastructure of a Type I civilization — a planet where every agent, human or machine, sensor or organism, contributes knowledge to a single self-improving graph.
 
 The [[cybergraph]] is this graph, built for a mole of connections — the threshold where individual links become collective intelligence the way individual molecules become a life. No single model owns this intelligence. It emerges from the shape of all connections between all participants — every claim signed, every link staked, the whole structure proving its own correctness.
 
-Every link costs real [[focus]], a conserved quantity that flows through the graph the way energy flows through a physical system — it cannot be created or destroyed, only redistributed by collective attention. Lies cost real resources. Truth accumulates gravity. And so collective intelligence converges to what genuinely matters, without voting, without moderators, without any central authority.
+Every link costs real [[focus]], a conserved quantity that flows through the graph the way energy flows through a physical system — it cannot be created or destroyed, only redistributed by collective attention. Lies cost real resources. Truth accumulates gravity. Learning is mining: every link you cast mints your stake in the graph. Teaching is staking: when the focus of others flows through your links, the [[rewards|reward]] compounds. And so collective intelligence converges to what genuinely matters, without voting, without moderators, without any central authority — and pays the people who taught it.
 
 The graph speaks [[neural]], the first language native to both humans and machines. Here a concept is a position in the topology, defined by everything connected to it.
 
