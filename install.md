@@ -6,34 +6,34 @@ crystal-domain: cyber
 ---
 # install
 
-get the soft3 stack on your machine. after install, **default sync network is [[space pussy]]**.
-
-## cargo (recommended)
+one crate. one binary. default network: [[space pussy]].
 
 ```bash
-cargo install soft3
-cargo install cyb
+cargo install true-cyber
+cyber sync
 ```
 
-| binary | crate | role |
-|--------|-------|------|
-| `soft3` | [soft3](https://crates.io/crates/soft3) | stack CLI · `soft3 sync` probes the graph |
-| `cy` | [cyb](https://crates.io/crates/cyb) | runtime cell · product face |
+| | |
+|--|--|
+| crate | [true-cyber](https://crates.io/crates/true-cyber) on crates.io |
+| binary | `cyber` (name `cyber` is taken on crates.io by an unrelated crate) |
+| default network | `space-pussy` |
+| override | `cyber sync -n bostrom` |
 
 ```bash
-soft3 sync
-# soft3 sync · space-pussy
+cyber sync
+# cyber sync · space-pussy
 #   chain_id        space-pussy
 #   latest_height   …
 #   rpc             https://rpc.space-pussy.cybernode.ai
 ```
 
-override network:
-
 ```bash
-soft3 sync --network bostrom
-soft3 network bostrom
-cy network space-pussy
+cyber network                 # endpoints for the default network
+cyber network bostrom
+cyber sync -n bostrom
+cyber manifesto
+cyber help
 ```
 
 ## default endpoints (space-pussy)
@@ -47,30 +47,31 @@ cy network space-pussy
 | bech32 | `pussy` |
 | denom | `pussy` |
 
-[[bostrom]] remains available via `--network bostrom`.
+[[bostrom]] remains available via `-n bostrom`. both chains still run on cosmos-sdk ([[go-cyber]]) and are exercised as [[soft3]] chaosnets for a fast cutover.
 
-## what about `cyber` CLI?
+## optional faces
 
-there is **no first-party `cargo install cyber`** for the product stack:
+day-one is `cyber` alone. deeper faces when you want them:
 
-- crates.io [`cyber`](https://crates.io/crates/cyber) is an **unrelated** crate (CipherDogs / cyber-rs)
-- the **chain daemons** are built from [[go-cyber]] (`cyber` binary for bostrom) and [[space pussy]] (`pussy` binary)
-- the **product CLIs** you install today are **`soft3`** + **`cy`** (from `cyb`)
+| face | install | role |
+|------|---------|------|
+| [[soft3]] | `cargo install soft3` | stack CLI · also reachable as `cyber soft3 …` if on PATH |
+| [[cyb]] | `cargo install cyb` | robot · binary `cy` · also `cyber cy …` if on PATH |
 
-so for day-one graph sync and light status: use soft3, not `cyber`.
+## why not `cargo install cyber`?
 
-## libs
+crates.io [`cyber`](https://crates.io/crates/cyber) is an unrelated crate (CipherDogs). the product package is **true-cyber**; the binary it installs is **cyber**.
+
+chain daemons remain separate: [[go-cyber]] (`cyber` binary on bostrom nodes) and [[space pussy]] (`pussy` binary). different programs, different jobs.
+
+## libs (builders)
 
 ```toml
 soft3 = "0.3"   # facade + network defaults
 cyb = "0.2"     # runtime cell
-cyb-lens = "0.1"
-foculus = { version = "0.1", default-features = false }
 ```
 
 ## more
 
-- site: [soft3.org](https://soft3.org)
-- stack docs: [[soft3]]
-- space pussy: [[space pussy]]
-- bostrom: [[bostrom]]
+- site: [cyber.page](https://cyber.page)
+- stack: [[soft3]] · robot: [[cyb]] · bootloader: [[bootloader]]

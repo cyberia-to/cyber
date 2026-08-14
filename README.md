@@ -18,11 +18,10 @@ the protocol for planetary [[superintelligence]].
 every agent — human, machine, sensor, organism — teaches one self-improving [[cybergraph]]. every link is signed, staked, and costs real [[focus]], so collective attention converges on what genuinely matters. learning is mining; teaching is staking: the graph pays [[rewards]] to those who taught it.
 
 ```bash
-cargo install soft3
-cargo install cyb
-soft3 sync
+cargo install true-cyber
+cyber sync
 ```
 
-space-pussy is the chaosnet — tokens, rewards, and state are test. play. mainnet arrives at [[launch]].
+space-pussy is the chaosnet — tokens, rewards, and state are test. play. mainnet arrives at [[launch]]. crate [true-cyber](https://crates.io/crates/true-cyber) · binary `cyber` · guide [[install]]
 
 [[soft3]] · [[cyb]] · [[bootloader]] · [[whitepaper]] · [[install]]
