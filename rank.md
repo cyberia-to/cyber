@@ -6,7 +6,7 @@ crystal-type: measure
 crystal-domain: cyber
 crystal-size: bridge
 ---
-the number the [[tru]] assigns to every [[particle]] — probability of being observed by a [[random walking]] [[neuron]]. cyberank is [[focus]] materialized as a per-[[particle]] score
+the number the [[tru]] assigns to every [[particle]] — probability of being observed by a [[rational neuron]]. cyberank is [[focus]] materialized as a per-[[particle]] score
 
 fixed point of the [[tri-kernel]]: `φ* = norm[λ_d · D(φ) + λ_s · S(φ) + λ_h · H_τ(φ)]`. integrates exploration ([[diffusion]]), structure ([[springs]]), and context ([[heat kernel]]). convergence guaranteed by the [[collective focus theorem]]
 
