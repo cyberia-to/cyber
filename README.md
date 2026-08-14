@@ -22,6 +22,6 @@ cargo install true-cyber
 cyber sync
 ```
 
-space-pussy is the chaosnet — tokens, rewards, and state are test. play. mainnet arrives at [[launch]]. crate [true-cyber](https://crates.io/crates/true-cyber) · binary `cyber` · guide [[install]]
+default network is **spacepussy-test** — the [[soft3]] chaosnet. tokens and state there are test. mainnet arrives at [[launch]]. crate [true-cyber](https://crates.io/crates/true-cyber) · binary `cyber` · guide [[install]]
 
 [[soft3]] · [[cyb]] · [[bootloader]] · [[whitepaper]] · [[install]]

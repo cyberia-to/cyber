@@ -6,7 +6,7 @@ crystal-domain: cyber
 ---
 # install
 
-one crate. one binary. default network: [[space pussy]].
+one crate. one binary. default network: **spacepussy-test** (soft3 chaosnet).
 
 ```bash
 cargo install true-cyber
@@ -15,63 +15,49 @@ cyber sync
 
 | | |
 |--|--|
-| crate | [true-cyber](https://crates.io/crates/true-cyber) on crates.io |
-| binary | `cyber` (name `cyber` is taken on crates.io by an unrelated crate) |
-| default network | `space-pussy` |
-| override | `cyber sync -n bostrom` |
+| crate | [true-cyber](https://crates.io/crates/true-cyber) |
+| binary | `cyber` |
+| default network | `spacepussy-test` |
+| default rpc | `http://127.0.0.1:7780` (local soft3 node) |
 
 ```bash
 cyber sync
-# cyber sync · space-pussy
-#   chain_id        space-pussy
-#   latest_height   …
-#   rpc             https://rpc.space-pussy.cybernode.ai
+# cyber sync · spacepussy-test
+#   role             soft3 chaosnet (product default)
+#   rpc              http://127.0.0.1:7780
+#   reachable        yes | no
 ```
 
 ```bash
-cyber network                 # endpoints for the default network
-cyber network bostrom
-cyber sync -n bostrom
+cyber network
 cyber manifesto
 cyber help
 ```
 
-## default endpoints (space-pussy)
+## two different "space pussy" names
 
-| | |
-|--|--|
-| chain-id | `space-pussy` |
-| rpc | `https://rpc.space-pussy.cybernode.ai` |
-| lcd | `https://lcd.space-pussy.cybernode.ai` |
-| index | `https://index.space-pussy.cybernode.ai/v1/graphql` |
-| bech32 | `pussy` |
-| denom | `pussy` |
+| name | substrate | role |
+|------|-----------|------|
+| **spacepussy-test** | soft3 | product chaosnet — default after install |
+| **space-pussy** | cosmos-sdk / [[go-cyber]] on cybernode | bootloader experimental chain — migration source |
 
-[[bostrom]] remains available via `-n bostrom`. both chains still run on cosmos-sdk ([[go-cyber]]) and are exercised as [[soft3]] chaosnets for a fast cutover.
+`cyber sync` never points at cybernode cosmos RPC. typing `-n space-pussy` or `-n bostrom` is rejected with a clear error.
+
+[[bostrom]] and cosmos [[space pussy]] remain live bootloader history — see [[bootloader]]. they are not the soft3 product network.
 
 ## optional faces
 
-day-one is `cyber` alone. deeper faces when you want them:
-
 | face | install | role |
 |------|---------|------|
-| [[soft3]] | `cargo install soft3` | stack CLI · also reachable as `cyber soft3 …` if on PATH |
-| [[cyb]] | `cargo install cyb` | robot · binary `cy` · also `cyber cy …` if on PATH |
+| [[soft3]] | `cargo install soft3` | stack CLI |
+| [[cyb]] | `cargo install cyb` | robot · binary `cy` |
+
+day-one is `true-cyber` alone.
 
 ## why not `cargo install cyber`?
 
-crates.io [`cyber`](https://crates.io/crates/cyber) is an unrelated crate (CipherDogs). the product package is **true-cyber**; the binary it installs is **cyber**.
-
-chain daemons remain separate: [[go-cyber]] (`cyber` binary on bostrom nodes) and [[space pussy]] (`pussy` binary). different programs, different jobs.
-
-## libs (builders)
-
-```toml
-soft3 = "0.3"   # facade + network defaults
-cyb = "0.2"     # runtime cell
-```
+crates.io [`cyber`](https://crates.io/crates/cyber) is an unrelated crate. product package is **true-cyber**; binary is **cyber**.
 
 ## more
 
-- site: [cyber.page](https://cyber.page)
-- stack: [[soft3]] · robot: [[cyb]] · bootloader: [[bootloader]]
+- [cyber.page](https://cyber.page) · [[soft3]] · [[cyb]] · [[bootloader]] · [[launch]]
