@@ -58,6 +58,17 @@ day-one is `true-cyber` alone.
 
 crates.io [`cyber`](https://crates.io/crates/cyber) is an unrelated crate. product package is **true-cyber**; binary is **cyber**.
 
+## launch the network
+
+product chaosnet is **spacepussy-test**. operator manual: [[soft3/docs/launch|launch spacepussy-test]].
+
+```bash
+cyber network              # presets
+cyber sync                 # probe local soft3-node on :7780
+# when soft3-node ships:
+# soft3 node --network spacepussy-test
+```
+
 ## more
 
-- [cyber.page](https://cyber.page) · [[soft3]] · [[cyb]] · [[bootloader]] · [[launch]]
+- [cyber.page](https://cyber.page) · [[soft3]] · [[cyb]] · [[bootloader]] · [[cyber/launch|launch plan]] · [[soft3/docs/launch|launch guide]]
