@@ -18,14 +18,17 @@ cyber sync
 | crate | [true-cyber](https://crates.io/crates/true-cyber) |
 | binary | `cyber` |
 | default network | `spacepussy-test` |
-| default rpc | `http://127.0.0.1:7780` (local soft3 node) |
+| public rpc | `https://cyb.ai/spacepussy-test` (cybernode) |
 
 ```bash
 cyber sync
 # cyber sync · spacepussy-test
 #   role             soft3 chaosnet (product default)
-#   rpc              http://127.0.0.1:7780
-#   reachable        yes | no
+#   rpc              https://cyb.ai/spacepussy-test
+#   reachable        yes
+#   chain_id         spacepussy-test
+#   moniker          cyberproxy-spt
+#   latest_height    …
 ```
 
 ```bash
@@ -63,10 +66,8 @@ crates.io [`cyber`](https://crates.io/crates/cyber) is an unrelated crate. produ
 product chaosnet is **spacepussy-test**. operator manual: [[soft3/docs/launch|launch spacepussy-test]].
 
 ```bash
-cyber network              # presets
-cyber sync                 # probe local soft3-node on :7780
-# when soft3-node ships:
-# soft3 node --network spacepussy-test
+cyber network
+cyber sync                 # public spacepussy-test on cybernode
 ```
 
 ## more
