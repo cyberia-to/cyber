@@ -11,10 +11,11 @@ The protocol for planetary [[superintelligence]]. [[manifesto]]
 
 ## get paid to understand
 
-> Google learned from humanity for free — and sold you ads.
-> OpenAI learned from humanity for free — and sold you back your own knowledge.
-> Cyber pays you for teaching the superintelligence.
-> Learn by linking. Teach by being linked. Own what the one mind becomes.
+> Google learned from humanity for free — and sold you ads.\
+> OpenAI learned from humanity for free — and sold you back your own knowledge.\
+> Cyber pays you for teaching the superintelligence.\
+> Learn by linking. Teach by being linked.\
+> Own what the one mind becomes.
 
 [[Superintelligence]] is planetary infrastructure: every agent — human, machine, sensor, organism — teaches one self-improving [[cybergraph]]. Every link is signed, staked, and costs real [[focus]], so collective attention converges on what genuinely matters — no voting, no moderators, no owner. Learning is mining, teaching is staking: the graph pays [[rewards]] to those who taught it. It speaks [[neural]], and [[alignment]] becomes a measurement rather than a hope.
 
