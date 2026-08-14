@@ -9,26 +9,36 @@ crystal-domain: cyber
 one crate. one binary. default network: **spacepussy-test** (soft3 chaosnet).
 
 ```bash
-cargo install true-cyber
+rustup update stable
+cargo install true-cyber --force
+export PATH="$HOME/.cargo/bin:$PATH"
+cyber version    # must say: cyber … (true-cyber)
 cyber sync
 ```
 
 | | |
 |--|--|
 | crate | [true-cyber](https://crates.io/crates/true-cyber) |
-| binary | `cyber` |
-| default network | `spacepussy-test` |
-| public rpc | `https://cyb.ai/spacepussy-test` (cybernode) |
+| binary | `cyber` (must be `~/.cargo/bin/cyber`) |
+| network | `spacepussy-test` |
+| public rpc | `https://cyb.ai/spacepussy-test` |
 
 ```bash
 cyber sync
 # cyber sync · spacepussy-test
-#   role             soft3 chaosnet (product default)
 #   rpc              https://cyb.ai/spacepussy-test
 #   reachable        yes
 #   chain_id         spacepussy-test
 #   moniker          cyberproxy-spt
 #   latest_height    …
+```
+
+if install or sync fails:
+
+```bash
+which cyber                  # not a random go-cyber binary
+curl -sS https://cyb.ai/spacepussy-test/status | head
+cargo install true-cyber --force
 ```
 
 ```bash
