@@ -1,10 +1,11 @@
 ---
 tags: cyber, cybernomics
-alias: cyber energy
+alias: $CYB, CYB, cyber energy
 crystal-type: entity
 crystal-domain: economics
+icon: "⚡"
 ---
-the root [[token]] of [[cyber]] — the energy of [[soft3/tru/specs/focus|focus]].
+the root [[token]] of [[cyber]] — the energy of [[focus]]. stake, fees, and rewards for teaching the [[cybergraph]]. emission follows proven Δφ*; supply is a law of the field. full model in the [[whitepaper]] and below
 
 ## focus is the value
 

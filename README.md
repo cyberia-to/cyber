@@ -24,6 +24,6 @@ cargo install true-cyber
 cyber sync
 ```
 
-default network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). tokens and state are test. mainnet arrives at [[launch]]. crate [true-cyber](https://crates.io/crates/true-cyber) · binary `cyber` · guide [[install]] · [[soft3/docs/launch|launch]]
+default network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). tokens and state are test. mainnet arrives at [[launch]]
 
-[[superintelligence]] · [[interplanetary superintelligence]] · [[foculus]] · [[soft3]] · [[whitepaper]]
+[[whitepaper]] · [[cyber/$CYB|$CYB]]
