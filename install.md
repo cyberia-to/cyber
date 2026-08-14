@@ -9,36 +9,42 @@ crystal-domain: cyber
 one crate. one binary. default network: **spacepussy-test** (soft3 chaosnet).
 
 ```bash
-rustup update stable
-cargo install true-cyber --force
+rustup update stable         # soft3 needs ≥ 1.85
 export PATH="$HOME/.cargo/bin:$PATH"
-cyber version    # must say: cyber … (true-cyber)
+
+cargo install soft3 --force    # real node + operator CLI
+cargo install true-cyber --force
+
+cyber version                  # cyber … (true-cyber)
 cyber sync
+soft3 sync                     # same network via soft3
 ```
 
 | | |
 |--|--|
-| crate | [true-cyber](https://crates.io/crates/true-cyber) |
-| binary | `cyber` (must be `~/.cargo/bin/cyber`) |
-| network | `spacepussy-test` |
+| network | **spacepussy-test** (soft3 chaosnet) |
+| engine | cybergraph + bbg |
 | public rpc | `https://cyb.ai/spacepussy-test` |
+| node crate | [soft3](https://crates.io/crates/soft3) `soft3 node` |
+| product face | [true-cyber](https://crates.io/crates/true-cyber) binary `cyber` |
 
 ```bash
 cyber sync
-# cyber sync · spacepussy-test
-#   rpc              https://cyb.ai/spacepussy-test
-#   reachable        yes
+#   engine           cybergraph+bbg
 #   chain_id         spacepussy-test
 #   moniker          cyberproxy-spt
 #   latest_height    …
+#   bbg_root         …
+#   signals / particles / axons
 ```
 
-if install or sync fails:
+run your own node: see [[soft3/docs/launch|launch spacepussy-test]].
 
 ```bash
-which cyber                  # not a random go-cyber binary
-curl -sS https://cyb.ai/spacepussy-test/status | head
-cargo install true-cyber --force
+soft3 node --home ~/.spacepussy-test --bind 127.0.0.1:7780
+curl -sS -X POST http://127.0.0.1:7780/v1/link \
+  -H 'content-type: application/json' \
+  -d '{"neuron":"01","from":"0a","to":"0b","amount":1}'
 ```
 
 ```bash
