@@ -27,7 +27,7 @@ volume of price estimation (VoPE) — approximating token [[value]] from observa
 
 [[supply and demand]] — the demand-supply [[equilibrium]]: where quantity sought meets quantity available
 
-[[adaptive hybrid economics]] — the stability-fluidity [[equilibrium]]: self-calibrating PoW/PoS with PID control (cyber design: [[research/adaptive hybrid economics|research article]])
+[[adaptive hybrid economics]] — the stability-fluidity [[equilibrium]]: self-calibrating PoW/PoS with PID control (spec home under [[specs]])
 
 two equilibria govern every token economy: demand-supply (price discovery) and stability-fluidity (security vs liquidity)
 

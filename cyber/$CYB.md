@@ -433,7 +433,8 @@ Hover a factor.
 <div id="cyb-loop"></div>
 
 <style>
-#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#c084fc;--sky:#38bdf8;--hw:#f97316;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:20px 0 32px;box-sizing:border-box}
+/* cyberia logo palette: green cyan blue violet red orange yellow */
+#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#00ff01;--cyan:#00b4ff;--blue:#1700fe;--vio:#6b00fe;--red:#fe0000;--ora:#ff6501;--yel:#ffc501;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:20px 0 32px;box-sizing:border-box}
 #cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:18px}
 #cyb-loop .stage{position:relative;width:100%;max-width:720px;margin:0 auto}
 #cyb-loop svg{width:100%;height:auto;display:block}
@@ -443,7 +444,7 @@ Hover a factor.
 #cyb-loop .seg path.hit{fill:none;stroke:transparent;stroke-width:54;cursor:pointer}
 #cyb-loop .hub{pointer-events:none}
 #cyb-loop .hub-circle{fill:#050505;stroke:#2a2a2a;stroke-width:2}
-#cyb-loop .hub-glow{fill:none;stroke:rgba(34,197,94,.35);stroke-width:1.5}
+#cyb-loop .hub-glow{fill:none;stroke:rgba(0,255,1,.4);stroke-width:1.5}
 #cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:18px;fill:var(--neon);font-weight:700;text-anchor:middle;letter-spacing:0.5px}
 #cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;fill:var(--mut);text-anchor:middle}
 #cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;fill:var(--tx);font-weight:700;text-anchor:middle;pointer-events:none}
@@ -458,7 +459,7 @@ Hover a factor.
 #cyb-loop .chips{display:flex;flex-wrap:nowrap;gap:6px;width:100%;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 #cyb-loop .chip{flex:1 1 0;min-width:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:9px 3px;border-radius:999px;border:1px solid var(--ln);background:#0a0a0a;color:var(--mut);cursor:pointer;text-align:center;white-space:nowrap;transition:background .12s,color .12s,border-color .12s,box-shadow .12s}
 #cyb-loop .chip:hover{border-color:#444;color:var(--tx)}
-#cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(34,197,94,.35);font-weight:700}
+#cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(0,255,1,.4);font-weight:700}
 @media(min-width:900px){
   #cyb-loop .panel{padding:24px 28px 22px}
   #cyb-loop .stage{max-width:660px}
@@ -480,7 +481,7 @@ Hover a factor.
       chip: "fairness",
       label: "fairness",
       sub: "mine · hashrate",
-      color: "#2bd12b",
+      color: "#00ff01",
       title: "Fairness",
       body: "Fairness is mining. Credit for who taught a focus shift is computed as a <a href=\"/shapley-value\" class=\"internal-link\">split</a> — and your share of that work is settled by hashrate: more useful compute, more of the fair division. No bag required. Anyone with ordinary machines can join; hashrate is the open measure of contribution, not who already holds coins."
     },
@@ -489,7 +490,7 @@ Hover a factor.
       chip: "finality",
       label: "finality",
       sub: "fold · settlement",
-      color: "#45b6fe",
+      color: "#00b4ff",
       title: "Finality",
       body: "<a href=\"/fold-mining\" class=\"internal-link\">Fold</a> compresses many local proofs into one durable claim the whole network can accept. That is finality: settlement that still works when light is slow and planets are far — not a chatty round-trip, a packed proof that arrives and sticks."
     },
@@ -498,7 +499,7 @@ Hover a factor.
       chip: "truth",
       label: "truth",
       sub: "stake · capital",
-      color: "#2929ff",
+      color: "#1700fe",
       title: "Truth",
       body: "Truth is staking. You lock CYB on a claim you believe. You earn only if the graph’s knowledge moves with you. Parked coins that take no side do not mint. Capital is paid for backing what is true, not for sitting still."
     },
@@ -507,7 +508,7 @@ Hover a factor.
       chip: "intelligence",
       label: "intelligence",
       sub: "syntropy · answers",
-      color: "#8a2be2",
+      color: "#6b00fe",
       title: "Intelligence",
       body: "Syntropy and inference are the same product: denser true structure on the graph is sharper rank, compile, and answers. The smarter the network gets, the more people and robots want to query it — demand rises with quality, not with marketing."
     },
@@ -516,7 +517,7 @@ Hover a factor.
       chip: "revenue",
       label: "revenue",
       sub: "fees · use pays",
-      color: "#e8262e",
+      color: "#fe0000",
       title: "Revenue",
       body: "Queries, data, and answers are paid in CYB. A small cut of each payment is burned; the rest funds the reward budget for creators, miners, and stakers. Early on, scheduled new coins seed the budget. Later, people who use intelligence pay those who produced it."
     },
@@ -525,7 +526,7 @@ Hover a factor.
       chip: "efficiency",
       label: "efficiency",
       sub: "GFP · mine = prove",
-      color: "#f5820d",
+      color: "#ff6501",
       title: "Efficiency",
       body: "Efficiency is the <a href=\"/goldilocks-field-processor\" class=\"internal-link\">GFP</a> flywheel: mining rewards and fees fund better Goldilocks field processors — silicon for fma, ntt, p2r, lut. The same chip that mines is the same chip that proves and serves the network, so hardware is never stranded heat. Better GFP → cheaper useful split/fold and cheaper answers → more use → more revenue → better GFP."
     },
@@ -534,7 +535,7 @@ Hover a factor.
       chip: "population",
       label: "population",
       sub: "robots · scale",
-      color: "#ffcf26",
+      color: "#ffc501",
       title: "Population",
       body: "Population is how many robots (agents) live on the graph. Create one once; freeze a lifetime cut of its later mints and fees for the creator — permanent residual, not a second money printer. Residual makes shipping robots rational → more agents → more fairness, truth, and intelligence work on a larger graph."
     }
