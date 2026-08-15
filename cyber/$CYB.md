@@ -160,12 +160,34 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply Ã
       ptsI.push(x(series[j].y).toFixed(1) + "," + yI(series[j].infl).toFixed(1));
     }
 
-    var dots = "";
+    // Full-height hit strips per year so hover works for both lines (log spacing).
+    var hits = "";
     for (var k = 0; k < series.length; k++) {
       var p = series[k];
-      var cx = x(p.y).toFixed(1);
-      var cy = yS(p.supply).toFixed(1);
-      dots += '<circle class="pt" data-y="' + p.y + '" cx="' + cx + '" cy="' + cy + '" r="10" fill="transparent"></circle>';
+      var cx = x(p.y);
+      var prevX = k === 0 ? left : (x(series[k - 1].y) + cx) / 2;
+      var nextX = k === series.length - 1 ? left + plotW : (cx + x(series[k + 1].y)) / 2;
+      var hx = prevX;
+      var hw = Math.max(nextX - prevX, 2);
+      hits +=
+        '<rect class="pt" data-y="' + p.y + '" x="' + hx.toFixed(1) + '" y="' + top +
+        '" width="' + hw.toFixed(1) + '" height="' + plotH +
+        '" fill="transparent"></rect>';
+    }
+
+    // Markers on both series (drawn under hits, above polylines via order: lines then marks then hits)
+    var marks = "";
+    for (var m = 0; m < series.length; m++) {
+      var q = series[m];
+      var mx = x(q.y).toFixed(1);
+      marks +=
+        '<circle class="mk-s" data-y="' + q.y + '" cx="' + mx + '" cy="' + yS(q.supply).toFixed(1) +
+        '" r="3.5" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.6" opacity="0"></circle>';
+      if (q.y >= 2) {
+        marks +=
+          '<circle class="mk-i" data-y="' + q.y + '" cx="' + mx + '" cy="' + yI(q.infl).toFixed(1) +
+          '" r="3.5" fill="#0a0a0a" stroke="#06b6d4" stroke-width="1.6" opacity="0"></circle>';
+      }
     }
 
     return (
@@ -173,7 +195,10 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply Ã
       grid +
       '<polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="' + ptsS + '"></polyline>' +
       '<polyline fill="none" stroke="#06b6d4" stroke-width="2" points="' + ptsI.join(" ") + '"></polyline>' +
-      dots +
+      marks +
+      '<line id="cyb-emi-guide" x1="0" y1="' + top + '" x2="0" y2="' + (top + plotH) +
+      '" stroke="#444" stroke-width="1" stroke-dasharray="3 3" opacity="0"></line>' +
+      hits +
       "</svg>"
     );
   }
@@ -200,31 +225,53 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply Ã
       tip.className = "tip";
       wrap.appendChild(tip);
     }
-    function show(circle, year) {
+    var guide = svg.querySelector("#cyb-emi-guide");
+    function clearMarks() {
+      svg.querySelectorAll(".mk-s, .mk-i").forEach(function (el) { el.setAttribute("opacity", "0"); });
+      if (guide) guide.setAttribute("opacity", "0");
+    }
+    function show(hit, year, clientX, clientY) {
       var p = series[year];
       var infl = year === 0 ? "\u2014" : year === 1 ? "~50\u00d7 (genesis \u2192 half cap)" : pct(p.infl, 2);
       tip.style.display = "block";
       tip.innerHTML = "year " + year + "<br>supply " + pct(p.supply, 2) + "<br>inflation " + infl;
       var wrapRect = wrap.getBoundingClientRect();
-      var pt = circle.getBoundingClientRect();
       var tipW = tip.offsetWidth || 160;
       var tipH = tip.offsetHeight || 48;
-      var cx = pt.left - wrapRect.left + pt.width / 2;
-      var cy = pt.top - wrapRect.top;
-      var left = cx + 12;
-      var top = cy - tipH - 8;
-      if (left + tipW > wrapRect.width - 4) left = cx - tipW - 12;
+      var cx = clientX - wrapRect.left;
+      var cy = clientY - wrapRect.top;
+      var left = cx + 14;
+      var top = cy - tipH - 10;
+      if (left + tipW > wrapRect.width - 4) left = cx - tipW - 14;
       if (left < 4) left = 4;
-      if (top < 4) top = cy + 14;
+      if (top < 4) top = cy + 16;
       tip.style.left = left + "px";
       tip.style.top = top + "px";
+      clearMarks();
+      svg.querySelectorAll('.mk-s[data-y="' + year + '"], .mk-i[data-y="' + year + '"]').forEach(function (el) {
+        el.setAttribute("opacity", "1");
+      });
+      if (guide) {
+        var gx = hit.getAttribute("x");
+        var gw = hit.getAttribute("width");
+        var mid = (+gx) + (+gw) / 2;
+        // better: use mark x if available
+        var mk = svg.querySelector('.mk-s[data-y="' + year + '"]');
+        if (mk) mid = +mk.getAttribute("cx");
+        guide.setAttribute("x1", mid);
+        guide.setAttribute("x2", mid);
+        guide.setAttribute("opacity", "1");
+      }
       render(year);
     }
-    function hide() { tip.style.display = "none"; }
-    svg.querySelectorAll("circle.pt").forEach(function (c) {
+    function hide() {
+      tip.style.display = "none";
+      clearMarks();
+    }
+    svg.querySelectorAll("rect.pt").forEach(function (c) {
       var year = +c.getAttribute("data-y");
-      c.addEventListener("mouseenter", function () { show(c, year); });
-      c.addEventListener("mousemove", function () { show(c, year); });
+      c.addEventListener("mouseenter", function (e) { show(c, year, e.clientX, e.clientY); });
+      c.addEventListener("mousemove", function (e) { show(c, year, e.clientX, e.clientY); });
       c.addEventListener("mouseleave", hide);
     });
   }
@@ -235,7 +282,7 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply Ã
     '<div class="legend"><span><i class="s"></i>supply % of cap</span><span><i class="i"></i>yearly inflation</span></div></div>' +
     '<div class="stats" id="cyb-emi-stats"></div>' +
     '<div class="chart-wrap" id="cyb-emi-chart"></div>' +
-    '<p class="note">M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. Genesis floor 1% of cap. Inflation axis scaled from year 2 (year 1 is the bootstrap expansion). Left axis: cumulative supply. Right axis: yearly inflation.</p>' +
+    '<p class="note">M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. Genesis floor 1% of cap. Time axis: log(1 + years) over 300y. Inflation axis scaled from year 2 (year 1 is the bootstrap expansion). Left: cumulative supply. Right: yearly inflation.</p>' +
     "</div>";
 
   root.querySelector("#cyb-emi-chart").innerHTML = buildChart();
