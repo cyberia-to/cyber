@@ -73,9 +73,10 @@ when diffusion burn exceeds floor, net inflation is negative: velocity shrinks s
 
 fee path for CYB ([[cyber/$CYB]]):
 
-- tax on diffusion \(\tau = 1\%\) on every transfer of CYB — pay, lock, unlock, including [[staking]] — fully burned (\(\mathrm{burn} = \tau G\)). not a fee pool
+- tax on diffusion \(\tau = 1\%\) on every transfer of CYB — pay, lock, unlock, including [[staking]]: \(\mathrm{burn} = \tfrac12\tau G\), \(\mathrm{creator} = \tfrac12\tau G\) (permanent referral to the account’s creator Card). not a fee pool into \(B\)
+- if the account has no creator, the creator half burns as well
 - service fees (queries, DA, inference peer leg) may still feed \(F\) into \(B\); they are separate from the diffusion tax
-- \(\beta\) in the budget equations above applies to the service-fee leg if any is split burn/pool; the diffusion tax itself is always burn
+- \(\beta\) in the budget equations above applies to the service-fee leg if any is split burn/pool; diffusion tax burn is the fixed half above
 
 ## security floor
 

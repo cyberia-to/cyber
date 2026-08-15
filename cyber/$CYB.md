@@ -519,7 +519,7 @@ Hover a factor.
       sub: "fees · diffusion tax",
       color: "#fe0000",
       title: "Revenue",
-      body: "Two money flows. Service: queries, data, answers pay the people who serve. Diffusion tax: every transfer of CYB — pay, lock, unlock, including staking — burns 1%. Moving energy through the field is not free; the tax on diffusion is destroyed, not recycled. Early emission still seeds security while usage is thin; velocity then deflates."
+      body: "Two money flows. Service: queries, data, answers pay the people who serve. Diffusion tax: every transfer of CYB — pay, lock, unlock, including staking — takes 1%. Half burns (deflation). Half goes to the creator of the account that moved the energy — permanent referral on that identity Card, not a second emission schedule. Shipping accounts that later transfer is rational; velocity still hurts pure hoppers."
     },
     {
       id: "efficiency",
@@ -660,31 +660,33 @@ $$
 
 Δφ* mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
 
-**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and fee-leg pays through that agent; optional royalty on card transfer. Robots redirect who receives $M(t)$ — they do not open a second schedule
+**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze creator residual: `creator_mint_share`, `creator_pay_share`, and the fixed half of the diffusion tax on that account’s later transfers (referral). Optional royalty on card transfer. Creators earn residual on mints, service pays, and diffusion tax through the agent — not a second $M(t)$
 
 ```
 M(t), B, service fees → hybrid α → PoW / PoS mint  [− creator_mint_share if via robot]
-pay / lock / unlock   → 1% diffusion tax → burn (full τ)
+pay / lock / unlock   → 1% diffusion tax → ½ burn + ½ account creator (referral)
 service pay (query…)  → peer + optional pool + creator_pay_share
 ```
 
 ### lock
 
-Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers: they pay the 1% tax on diffusion (burned) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
+Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers: they pay the 1% tax on diffusion (½ burn, ½ to the account’s creator) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
 
 ### pay
 
-Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock — pays the tax on diffusion $\tau = 1\%$. The tax is burned:
+Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock — pays the tax on diffusion $\tau = 1\%$. The tax splits half burn / half referral to the creator of the transferring account:
 
 $$
-\text{received or locked} = (1 - \tau)\,G, \qquad \text{burn} = \tau\,G
+\text{received or locked} = (1 - \tau)\,G, \qquad
+\text{burn} = \tfrac{1}{2}\,\tau\,G, \qquad
+\text{creator} = \tfrac{1}{2}\,\tau\,G
 $$
 
-No carve-out for staking: locking energy onto a claim is still diffusion of mass through the field. Headers, queries, DA, inference are ordinary pays under the same $\tau$. Service revenue to peers is separate from the burned cut — the 1% does not refill a fee pool; it shrinks supply. Robot-mediated service: `creator_pay_share` of the peer/service leg only, not of the burn
+No carve-out for staking: locking energy onto a claim is still diffusion. Creator is the frozen residual owner of the identity Card (robot/neuron) that signed the transfer — permanent referral, same pot, not a second schedule. If the account has no creator (genesis self), that half burns too. Headers, queries, DA, inference are ordinary pays under the same $\tau$. Service peer leg is separate; `creator_pay_share` may still skim the service fee, orthogonal to the diffusion-tax half
 
 ### burn
 
-Primary continuous burn is the tax on diffusion: $\tau = 1\%$ of every transfer including stake lock/unlock. Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; the diffusion tax makes movement costly; burn makes influence permanent
+Continuous burn includes half the tax on diffusion ($\tfrac{1}{2}\tau$ of every transfer including stake lock/unlock). Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn; unclaimed creator half when no creator is set. Mint makes energy transferable; diffusion tax makes movement costly and pays who shipped the account; burn makes residual influence permanent
 
 ## allocation
 
