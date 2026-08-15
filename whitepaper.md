@@ -5,28 +5,23 @@ crystal-domain: cyber
 crystal-size: deep
 status: draft
 ---
-# cyber: a protocol for planetary superintelligence
+# cyber: a protocol for interplanetary superintelligence
 
-> is the machine into which anyone may speak and be rewarded for truth — no one knows who said what, and yet everyone knows what everyone said.
+> the machine into which anyone may speak and be rewarded for truth — no one knows who said what, and yet everyone knows what everyone said.
 
-> DRAFT — work in progress. this document is research and educational material only. specifications, mechanisms, and numbers will change. do not use as the basis for financial or technical decisions. not ready for production.
+> DRAFT — litepaper. research and educational material only. mechanisms and numbers will change. not a basis for financial or technical decisions.
 
 ## 1. Introduction
 
-[[Superintelligence]] is Type I infrastructure: every agent — human, machine, sensor — teaches one self-improving [[cybergraph]]. Today’s path fails three ways: quadratic [[attention]], closed models, and the [[Goedel prison]]. cyber answers with five primitives — [[particle]], [[neuron]], [[cyberlink]], [[token]], [[focus]] — and a single fixed point $\phi^*$ from the [[tri-kernel]]. claims are signed, stake-weighted, and proven by [[zheng]]; finality is [[foculus]]. intelligence is topology, not hidden weights.
+Commerce on the internet still leans on institutions that mediate trust. intelligence on the internet leans on a few closed models that train on humanity for free and sell the result back. both patterns share the same flaw: a third party stands between the act and the settlement. digital signatures solve identity for value transfer, but not double-spend without that third party. likewise, open content solves publication of knowledge, but not *who taught what*, *what is worth attending to*, or *how a network pays for truth* without a platform that owns the ranking.
 
-deeper:
+There is a harder bound. Earth to Mars is four to twenty-four minutes one way. any protocol that elects a leader, collects two-thirds of a global committee, or waits on a global clock must close a round trip across that delay. a committee that meets by interplanetary post decides nothing. voting BFT and Nakamoto-style global stopwatches are Earth-scale tools. if civilization is to hold one mind across worlds — [[interplanetary superintelligence]] — agreement must survive light-minutes, long partitions, and worlds that mostly live on local facts while shared facts eventually agree. that is the high bar. planetary [[superintelligence]] is the first mountain; the ridge is interplanetary.
 
-| | |
-|--|--|
-| graph | [[cybergraph]] · [[particle]] · [[cyberlink]] · [[neuron]] |
-| ranking | [[tri-kernel]] · [[focus]] · [[cyberank]] · [[rational neuron]] |
-| compute | [[nox]] · [[trident]] · [[zheng]] · [[hemera]] |
-| consensus | [[foculus]] · [[collective focus theorem]] |
-| state | [[cyber/bbg]] · [[cyber/proofs]] · [[storage proofs]] |
-| language | [[neural]] · [[dialect]] |
-| economy | [[cybernomics]] · [[cyber/$CYB|$CYB]] · [[rewards]] |
-| scale | [[cyber/scaling]] · [[interplanetary superintelligence]] · [[cyber/crystal]] |
+We propose cyber: a protocol where [[neurons]] — humans, AIs, sensors, agents — link content-addressed [[particles]] with signed, staked [[cyberlinks]] into one [[cybergraph]]. five primitives are enough: particle, neuron, cyberlink, [[token]], and [[focus]]. the network does not vote on importance. it *computes* it. [[tru]] runs the [[tri-kernel]] — diffusion, springs, heat — to a unique fixed point $\phi^*$, the collective focus of the graph. that result is the same math three times: ranking (what matters), compilation (a model measured from the graph, not trained as a black box), and money (new [[cyber/$CYB|$CYB]] is minted only where proven focus shift was created). the [[collective focus theorem]] is why this is not a slogan: under ordinary connectivity the fixed point exists, is unique, and can be approached locally.
+
+Finality is the other half of the same idea. [[foculus]] holds no vote. a particle is final when enough attention has gathered: $\phi^*_i > \tau$ — a condition on information, not on a stopwatch. each node gossips what it saw and runs the same arithmetic on what it holds; the operator is a contraction, so identical signals yield one root everywhere, the way a pond finds one level without phoning the far shore. domains finalize at domain speed; a dark link freezes cross-world trade of rings but invents no conflicting truth; shared conflicts pay light-time only where water is truly shared. the full walk is [[foculus/docs/explanation/interplanetary|foculus between planets]].
+
+What exists is not only prose. [[soft3]] is the substrate stack — cybergraph, [[bbg]], proofs, a real node — with a public chaosnet (spacepussy-test) for live signals. [[tru]] converges, compiles, and prices impulse in fixed-point field arithmetic so results are bit-reproducible and provable. [[foculus]] is specified for protocol, parameters, gossip, VEC, and security at scale toward $10^{15}$ particles. this document is the short spine: problem, bar, and what follows. the deep articles are linked where a claim needs a room of its own.
 
 ## 2. Design Philosophy
 
