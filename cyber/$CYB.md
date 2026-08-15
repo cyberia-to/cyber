@@ -5,52 +5,41 @@ crystal-type: entity
 crystal-domain: economics
 icon: "⚡"
 ---
-the root [[token]] of [[cyber]] — the energy of [[focus]]. stake, fees, and rewards for teaching the [[cybergraph]]. emission follows proven Δφ*; supply is a law of the field. full model in the [[whitepaper]] and below
+root [[token]] of cyber. unit of stake, fees, and rewards for proven contribution to [[focus]] φ*. emission schedule is a function of time alone; who receives emission is a function of φ*. see [[whitepaper]], [[mining]], [[staking]]
 
-## focus is the value
+## role
 
-cyber organizes one quantity: [[soft3/tru/specs/focus|focus]] (φ*), the collective attention distribution — the fixed point the [[tri-kernel]] drives the graph toward. A [[cyberlink]] that earns focus is knowledge the network found worth attending to. Focus is the scarce thing, the measured thing, the thing every other mechanism serves.
+[[Focus]] is the scarce object: the unique [[fixed point]] of the [[tri-kernel]] over the [[cybergraph]]. Moving and creating focus costs work. [[CYB]] makes that work transferable — spend to link and prove, earn when your links raise collective focus (proven Δφ*). It is not a fee token bolted onto ranking; ranking and payment share one physics
 
-## $CYB is the energy of focus
+## cap
 
-Moving focus costs work; creating focus is work done. $CYB is that work made fungible — the energy a [[cybics/crystal/neuron|neuron]] spends to write a [[cyberlink]], compute, and reach [[cybics/crystal/consensus|consensus]], and the energy it earns for raising the graph's focus. Δφ* is the gradient of the system's free energy, so $CYB is that free energy in transferable form.
-
-## supply is a law of the field
-
-Value and computation share one arithmetic: balances are elements of the [[nebu|Goldilocks field]], the field [[soft3/nox|nox]] computes in. So total supply is the field's own order:
+Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and proofs:
 
 p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321
 
-The cap is how many elements the field has — arithmetic, not a governance number. (On the [[bootloader/bostrom|bostrom]] [[bootloader]] today this energy circulates as [[$C]].)
+Cap is arithmetic, not a governance vote. On the [[bootloader]] ([[bostrom]]) the same energy currently circulates as [[$C]]
 
 ## genesis
 
-At the first block, [[$C]] holders hold 187,416,084,623,451,570 $CYB, ≈ 1% of supply: their snapshot of 281,405,532,467,645, lifted 666×.
+At block 0, [[$C]] holders receive 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666). Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule
 
-## emission answers to time alone
+## emission
 
-Supply at age t is M(t): a function of the clock and nothing else — identical on every node, known in full from genesis. With time as the only input, the schedule is a fixed commitment, predictable in advance and immune to forgery.
-
-Focus enters on the other side. The clock sets how much $CYB exists; focus sets who earns it (see allocation). Supply is a law of time, reward a law of φ* — kept apart.
-
-## emission follows the network's own law
-
-cyber is scale-free: degrees follow a power law, focus follows Zipf. The token is issued by the same law its graph obeys — a power law:
+How much exists at network age t (years) is fixed by the clock — identical on every honest node, no oracle, no forgery surface:
 
 M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.33 year,   k = 0.5
 
-(t in years). A power law is also the one schedule that holds a hot head and a heavy tail at once — an exponential halving shares a single rate between the two and cannot. From one formula, two phases:
+π(t) = M′(t)/M(t) is instantaneous inflation (1/year). There is no discrete year step and no halving epoch
 
-- a bootstrap head — about half the supply in the first year (~11% in the first month), spread across the year so price discovers and the first miners (days, weeks, months) are paid, with no single-day flood. The initial rate is finite (k/τ ≈ 152%/yr), not a spike.
-- a heavy tail — polynomial, never exponential: still issuing past a century (~4% of supply unissued at 200 years), always under the cap.
+### why this shape
 
-### emission schedule (continuous)
+The graph needs proving and settlement capacity most when it is empty and growing. A power-law head puts most of the emission in the first years so early useful work (mining division and fold, early links that set topology) is paid while the network is still cheap to dominate with capital alone. Finite initial rate k/τ ≈ 152% of cap per year avoids a single-block flood; the year-1 integral still reaches ≈ half of p, so the main prize for compute is front-loaded without a cliff
 
-No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t/\tau)^{-k})\). Green: cumulative supply / field cap. Cyan: **instantaneous** inflation \(\pi(t) = M'(t)/M(t)\) (per year) — continuous, not a yearly step. Time is log-scaled; the first year is sampled denser and called out below. Hover anywhere on the plot.
+The polynomial tail keeps residual issuance for centuries under the same cap: long-run security budget without reintroducing a policy rate. Scale-free graphs and Zipf focus already are power laws; emission matches the same family so the money supply does not impose a foreign timescale (e.g. fixed halvings) on a structure that does not have one
 
-#### first year (bootstrap head)
+Clock and focus stay separated: M(t) only answers how much is available; stake-weighted Δφ* answers who mints (see allocation)
 
-About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 152\%\) of cap per year at \(t \to 0^+\)), then cools — miners in days, weeks, and months all get paid, without a single-day flood. Milestone chips under the chart are the same path; hover or click them.
+### schedule
 
 <div id="cyb-emi"></div>
 
@@ -390,7 +379,7 @@ About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 1
     '<div class="milestones" id="cyb-emi-ms">' + milestonesHtml() + "</div>" +
     '<div class="stats" id="cyb-emi-stats"></div>' +
     '<div class="chart-wrap" id="cyb-emi-chart"></div>' +
-    '<p class="note">Continuous: M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. No halving. Green band = year 1. Left: supply/cap. Right: log \u03c0(t) = M\u2032/M per year. Time: log(1+t), denser samples in year 1 (220 pts) then to 300y. Click a milestone chip to jump.</p>' +
+    '<p class="note">M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. Green: cumulative supply/cap. Cyan: log \u03c0(t) = M\u2032/M (1/y). Time: log(1+t), 1d\u2013300y. Green band = year 1 (\u224850% of cap).</p>' +
     "</div>";
 
   root.querySelector("#cyb-emi-chart").innerHTML = buildChart();
@@ -399,10 +388,6 @@ About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 1
 })();
 </script>
 
-By year three instantaneous inflation is already low single digits and still falling, while the heavy tail keeps issuing under the cap for centuries.
+## allocation
 
-## allocation is focus
-
-Emission says how much; focus says who. Each freshly emitted unit is split by stake-weighted Δφ* — paid for the focus a contribution created, weighted by stake so forging identities buys nothing. This is where focus, kept out of the schedule, does its work: not in printing the money, but in directing it.
-
-see [[cybernomics]] for the economic model
+Each unit of new emission is assigned by stake-weighted proven Δφ* — the directed focus shift a contribution creates. Sybil identities without stake earn nothing. Emission is time-law; attribution is focus-law. Full stack: [[rewards]], [[mining]], [[fold mining]], [[Shapley value]], [[cybernomics]]
