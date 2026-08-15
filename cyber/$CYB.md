@@ -394,39 +394,51 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ### value loop
 
-The question is not “which plumb op exists.” It is how money and intelligence reinforce each other so the system does not need an external sponsor.
+One causal chain. Money pays for proven knowledge; proven knowledge is the product people pay for. That is the whole loop.
 
-**Closed loop (read clockwise):**
+```
+more honest mint
+  → more work on the graph
+    → better φ*
+      → better inference
+        → more fees paid in CYB
+          → larger reward pot
+            → more honest mint …
+```
 
-1. **Work enters the graph** — neurons lock CYB on claims and mine proofs (division + fold). Capital risks truth; compute settles who was right.
-2. **Focus improves** — the tri-kernel moves φ*. Proven positive Δφ* is new structure (syntropy), not noise.
-3. **Inference gets cheaper and better** — higher-quality φ* ranks, compiles models from structure, answers queries with verifiable weight. Usefulness rises.
-4. **Use pays** — service (headers, queries, DA, inference) is paid in CYB under a 1% tax. Velocity funds security; β burns shrink supply.
-5. **Mint recycles into work** — schedule M(t) + fee pool → hybrid budget B → mining and active staking again. Front-loaded M(t) buys early compute when the graph is empty; PID α balances bagless work vs risked stake.
-6. **Agents compound residual** — mint a robot Card once; frozen creator shares skim future mints/pays from that agent. More agents → more structured work on the graph → stronger φ* — without a second emission schedule.
+Why each arrow is forced, not hoped for:
 
-If any link breaks, the loop dies: no work → φ* stagnates → inference is worthless → no fees → no security budget → no mint. Inflation is evidence of knowledge only while step 2 is real.
+1. **Mint only for proven Δφ*** — new CYB goes to mining (division + fold) and active stake when focus actually moved. Idle capital does not mint. So mint is a payment for knowledge work, not a drip.
+2. **More of that mint → more work → better φ*** — a larger honest prize pulls compute and risked capital onto true claims. The tri-kernel reconverges on a richer graph. Better φ* is the direct output of paid work.
+3. **Better φ* → better inference** — rank, compile, and query all read the same fixed point. Higher-quality focus is a better product: sharper answers, verifiable weight. No separate “AI token” — the intelligence is the graph.
+4. **Better inference → more pay** — users and robots settle headers, queries, DA, inference in CYB (1% tax: β burns, rest to fee pool). Demand is use of the product, not speculation on a fee coupon.
+5. **More fees + schedule M(t) → next mint pot** — fee pool and residual emission form budget B; hybrid α splits B between PoW and active PoS. Early on, front-loaded M(t) seeds the pot while fees are thin; as inference is used, fees take over security. Pot mints again only through step 1.
+
+The loop closes because the same token is both wage for improving φ* and price of consuming it. Break either gate and the flywheel dies: mint without Δφ* would print money without a better product; fees without useful inference would not exist. Agents (robot Cards with frozen creator shares) amplify the same chain — more structured work on the graph — without a second emission schedule.
+
+Hover the ring for each arrow.
 
 <div id="cyb-loop"></div>
 
 <style>
 #cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#c084fc;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:18px 0 28px;box-sizing:border-box}
-#cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,0.92fr);gap:18px}
+#cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,0.95fr);gap:18px}
 #cyb-loop .stage{position:relative}
 #cyb-loop svg{width:100%;height:auto;display:block}
 #cyb-loop .seg{cursor:pointer}
-#cyb-loop .seg path.arc{fill:none;stroke-width:26;stroke-linecap:butt;opacity:0.92;transition:opacity .12s,filter .12s,stroke-width .12s}
-#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:30;filter:drop-shadow(0 0 12px rgba(34,197,94,.35))}
+#cyb-loop .seg path.arc{fill:none;stroke-width:28;stroke-linecap:butt;opacity:0.88;transition:opacity .12s,filter .12s,stroke-width .12s}
+#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:32;filter:drop-shadow(0 0 14px rgba(34,197,94,.4))}
 #cyb-loop .hub{pointer-events:none}
 #cyb-loop .hub-circle{fill:#0a0a0a;stroke:#222;stroke-width:1.5}
-#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;fill:var(--neon);font-weight:700;text-anchor:middle}
-#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut);text-anchor:middle}
+#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;fill:var(--neon);font-weight:700;text-anchor:middle}
+#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9.5px;fill:var(--mut);text-anchor:middle}
 #cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;fill:var(--tx);font-weight:600;text-anchor:middle;pointer-events:none}
 #cyb-loop .nsub{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9px;fill:var(--mut);text-anchor:middle;pointer-events:none}
 #cyb-loop .side{display:flex;flex-direction:column;gap:10px;min-width:0}
 #cyb-loop .kicker{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--neon)}
 #cyb-loop .step{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;color:var(--cyan)}
-#cyb-loop .title{font-size:22px;font-weight:700;margin:0;line-height:1.15}
+#cyb-loop .title{font-size:20px;font-weight:700;margin:0;line-height:1.2}
+#cyb-loop .arrow{margin:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;color:var(--amb);line-height:1.4}
 #cyb-loop .why{margin:0;font-size:14px;line-height:1.55;color:#e5e5e5}
 #cyb-loop .then{margin:0;padding:10px 12px;border-left:2px solid var(--neon);background:rgba(34,197,94,.06);font-size:13px;line-height:1.5;color:#d4d4d4}
 #cyb-loop .then b{color:var(--neon);font-weight:600}
@@ -442,61 +454,57 @@ If any link breaks, the loop dies: no work → φ* stagnates → inference is wo
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Causal flywheel — each step answers "so what?"
+  // Five forced arrows: mint → work/φ* → infer → fees → pot → mint
   var STEPS = [
     {
-      id: "work",
-      label: "1 · work",
-      sub: "mine · stake",
+      id: "mint",
+      label: "1 · mint",
+      sub: "Δφ* only",
       color: "#22c55e",
-      title: "Work enters",
-      why: "Mining (prove division + fold, no bag) and active staking (capital on a claim) are the only ways new CYB is earned. Idle capital cannot mint.",
-      then: "So early compute and honest risk get paid while the graph is still empty — M(t) front-loads that prize."
+      title: "Mint pays knowledge",
+      arrow: "mint  →  only if proven Δφ*",
+      why: "New CYB is earned by mining (prove division + fold) or active stake when focus actually moved. Clock sets how much exists; Δφ* sets who gets it. Idle bags do not mint.",
+      then: "Mint is a wage for improving the graph — not a free drip. That is the first gate."
     },
     {
-      id: "focus",
-      label: "2 · focus",
-      sub: "φ* · Δφ*",
+      id: "work",
+      label: "2 · work",
+      sub: "→ better φ*",
       color: "#06b6d4",
-      title: "Focus improves",
-      why: "Staked links change the cybergraph. The tri-kernel reconverges. Proven positive Δφ* is new syntropy — structure the network did not have before.",
-      then: "So inflation is not a policy drip: mint is gated by measured knowledge, not by wall-clock alone."
+      title: "More mint → better φ*",
+      arrow: "more honest mint  →  more work  →  better φ*",
+      why: "A real prize pulls compute and risked capital onto true claims. Links change the cybergraph; the tri-kernel reconverges. Proven positive Δφ* is new structure the network did not have.",
+      then: "More of the right mint means a denser, truer graph — focus quality tracks paid work."
     },
     {
       id: "infer",
       label: "3 · infer",
-      sub: "rank · compile",
+      sub: "φ* = product",
       color: "#eab308",
-      title: "Inference gets better",
-      why: "Better φ* means better rank, better compiled models from structure, better query answers with weight you can verify.",
-      then: "So people and robots actually use the graph — usefulness is not marketing; it is a better fixed point."
+      title: "Better φ* → better inference",
+      arrow: "better φ*  →  better rank / compile / answers",
+      why: "Every consumer of intelligence reads the same fixed point: rank, model compile from structure, weighted answers. Improve φ* and the product improves with it — no parallel AI budget.",
+      then: "Inference quality is not marketing. It is the fixed point you just paid people to raise."
     },
     {
-      id: "use",
-      label: "4 · use",
-      sub: "pay 1%",
+      id: "fees",
+      label: "4 · fees",
+      sub: "use pays",
       color: "#c084fc",
-      title: "Use pays",
-      why: "Headers, queries, DA, inference settle as pay. Universal 1% tax: peer gets 99%; of the 1%, β burns and (1−β) funds the fee pool.",
-      then: "So velocity funds security and continuously deflates — the network is paid by those who consume inference, not only by inflation."
+      title: "Better inference → more fees",
+      arrow: "useful product  →  pay volume in CYB",
+      why: "Headers, queries, DA, inference settle as pay. 1% tax: peer gets 99%; of the 1%, β burns and the rest fills the fee pool. Demand is consumption of the product.",
+      then: "People pay because inference got better. Fees are proof of use, not a second speculative asset."
     },
     {
-      id: "reload",
-      label: "5 · reload",
-      sub: "B · hybrid α",
+      id: "pot",
+      label: "5 · pot",
+      sub: "B → mint",
       color: "#38bdf8",
-      title: "Budget reloads work",
-      why: "Fee pool + schedule envelope + security floor form pot B. Adaptive hybrid economics (PID) splits B between mining and active stake from on-chain signals.",
-      then: "So more useful inference → more fees → more honest work budget → more capacity to improve φ* again."
-    },
-    {
-      id: "agents",
-      label: "6 · agents",
-      sub: "robots",
-      color: "#a855f7",
-      title: "Agents compound",
-      why: "Mint a robot Card once; freeze creator_mint_share and creator_pay_share. Residual claims skim later Coin mints and pays through that agent — not a second M(t).",
-      then: "So shipping agents multiplies structured work on the graph; creators earn residual on intelligence production, workers still earn for work."
+      title: "Fees reload the mint pot",
+      arrow: "fees + M(t)  →  pot B  →  mint again",
+      why: "Fee pool plus residual schedule form budget B. Hybrid α splits B to PoW and active stake. Early years: front-loaded M(t) seeds work while fees are thin. Later: use pays security. Pot only mints through step 1.",
+      then: "The loop closes: wages for better φ* are funded by people who consume that φ*. Back to mint."
     }
   ];
 
@@ -512,11 +520,10 @@ If any link breaks, the loop dies: no work → φ* stagnates → inference is wo
   }
 
   var W = 520, H = 420;
-  var cx = 260, cy = 210, R = 132;
+  var cx = 260, cy = 210, R = 128;
   var n = STEPS.length;
-  var gap = 0.06;
+  var gap = 0.07;
   var sweep = (Math.PI * 2) / n;
-  // start at top
   var aStart = -Math.PI / 2;
 
   var segs = "";
@@ -524,7 +531,7 @@ If any link breaks, the loop dies: no work → φ* stagnates → inference is wo
     var a0 = aStart + i * sweep + gap / 2;
     var a1 = aStart + (i + 1) * sweep - gap / 2;
     var mid = (a0 + a1) / 2;
-    var lp = polar(cx, cy, R + 48, mid);
+    var lp = polar(cx, cy, R + 52, mid);
     var s = STEPS[i];
     segs +=
       '<g class="seg" data-i="' + i + '">' +
@@ -534,13 +541,10 @@ If any link breaks, the loop dies: no work → φ* stagnates → inference is wo
       "</g>";
   }
 
-  // arrow tips between segments (small wedges along ring)
   var arrows = "";
   for (var j = 0; j < n; j++) {
     var a = aStart + (j + 1) * sweep;
     var p = polar(cx, cy, R, a);
-    // tiny forward tick
-    var p2 = polar(cx, cy, R, a + 0.08);
     arrows += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5" fill="#0a0a0a" stroke="#555" stroke-width="1"></circle>';
   }
 
@@ -553,18 +557,20 @@ If any link breaks, the loop dies: no work → φ* stagnates → inference is wo
     '<div class="stage"><svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid meet">' +
     segs + arrows +
     '<g class="hub">' +
-    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="58"></circle>' +
-    '<text class="hub-t" x="' + cx + '" y="' + (cy - 4) + '">φ* · CYB</text>' +
-    '<text class="hub-s" x="' + cx + '" y="' + (cy + 14) + '">intelligence ↔ money</text>' +
+    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="62"></circle>' +
+    '<text class="hub-t" x="' + cx + '" y="' + (cy - 8) + '">mint ↔ infer</text>' +
+    '<text class="hub-s" x="' + cx + '" y="' + (cy + 8) + '">same token:</text>' +
+    '<text class="hub-s" x="' + cx + '" y="' + (cy + 22) + '">wage + price</text>' +
     "</g></svg></div>" +
     '<div class="side">' +
-    '<div class="kicker">why the loop closes</div>' +
+    '<div class="kicker">how the economy closes</div>' +
     '<div class="step" id="cyb-loop-step"></div>' +
     '<h3 class="title" id="cyb-loop-title"></h3>' +
+    '<p class="arrow" id="cyb-loop-arrow"></p>' +
     '<p class="why" id="cyb-loop-why"></p>' +
     '<p class="then" id="cyb-loop-then"></p>' +
     '<div class="chips">' + chips + "</div>" +
-    '<p class="fail">Break any step and the flywheel stops: no work → dead φ* → useless inference → no fees → no security mint. That failure mode is the proof the loop is real.</p>' +
+    '<p class="fail">Break a gate: mint without Δφ* prints empty money; fees without useful φ* never arrive. Either break stops the wheel — that is why the loop is real, not a slogan.</p>' +
     "</div></div>";
 
   function paint(i) {
@@ -576,10 +582,11 @@ If any link breaks, the loop dies: no work → φ* stagnates → inference is wo
     root.querySelectorAll(".chip").forEach(function (el, idx) {
       el.classList.toggle("on", idx === i);
     });
-    root.querySelector("#cyb-loop-step").textContent = "step " + (i + 1) + " / " + n;
+    root.querySelector("#cyb-loop-step").textContent = "arrow " + (i + 1) + " / " + n;
     root.querySelector("#cyb-loop-title").textContent = s.title;
+    root.querySelector("#cyb-loop-arrow").textContent = s.arrow;
     root.querySelector("#cyb-loop-why").textContent = s.why;
-    root.querySelector("#cyb-loop-then").innerHTML = "<b>So what.</b> " + s.then;
+    root.querySelector("#cyb-loop-then").innerHTML = "<b>Closes because.</b> " + s.then;
   }
 
   root.querySelectorAll(".seg").forEach(function (el) {
