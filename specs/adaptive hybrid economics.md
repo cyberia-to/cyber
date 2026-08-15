@@ -69,9 +69,13 @@ B = \mathrm{floor}\cdot M + (1-\gamma)(1-\beta)F
 I_{\mathrm{net}} = \mathrm{floor} - \frac{F\beta}{M}
 \]
 
-when fee burn exceeds floor, net inflation is negative: security funded by velocity, supply shrinks. gross rewards to workers can still exceed net mint (fee recycle)
+when diffusion burn exceeds floor, net inflation is negative: velocity shrinks supply while floor still pays security. gross rewards to workers can still exceed net mint when service fees recycle into \(B\)
 
-fee path for CYB: universal pay tax \(\tau_{\mathrm{pay}}=1\%\), of which \(\beta\) burns and \(1-\beta\) feeds \(F\) — [[cyber/$CYB]]
+fee path for CYB ([[cyber/$CYB]]):
+
+- tax on diffusion \(\tau = 1\%\) on every transfer of CYB — pay, lock, unlock, including [[staking]] — fully burned (\(\mathrm{burn} = \tau G\)). not a fee pool
+- service fees (queries, DA, inference peer leg) may still feed \(F\) into \(B\); they are separate from the diffusion tax
+- \(\beta\) in the budget equations above applies to the service-fee leg if any is split burn/pool; the diffusion tax itself is always burn
 
 ## security floor
 

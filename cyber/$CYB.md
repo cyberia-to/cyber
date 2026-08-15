@@ -401,7 +401,7 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ## utility (plumb)
 
-[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
+[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns. Every movement of energy (pay, lock, unlock — including [[staking]]) pays a 1% tax on diffusion that is burned
 
 ### network effects
 
@@ -422,7 +422,7 @@ fairness  +  finality  +  truth
 | 2 | **finality** | [[Fold mining\|Fold]] packs proofs into durable settlement — reliable across planets and long delay. |
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
-| 5 | **revenue** | Use pays in CYB. Fees (plus early emission) fund creators, miners, and stakers. |
+| 5 | **revenue** | Use and every transfer pay in CYB. Service fees fund work; the 1% tax on diffusion burns. Early emission seeds security until velocity covers it. |
 | 6 | **efficiency** | Revenue funds better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
 | 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
 
@@ -474,7 +474,7 @@ Hover a factor.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Network-effect factors (not action checklist). One body each. v2
+  // Network-effect factors (not action checklist). One body each. v3
   var STEPS = [
     {
       id: "fairness",
@@ -516,10 +516,10 @@ Hover a factor.
       id: "revenue",
       chip: "revenue",
       label: "revenue",
-      sub: "fees · use pays",
+      sub: "fees · diffusion tax",
       color: "#fe0000",
       title: "Revenue",
-      body: "Queries, data, and answers are paid in CYB. A small cut of each payment is burned; the rest funds the reward budget for creators, miners, and stakers. Early on, scheduled new coins seed the budget. Later, people who use intelligence pay those who produced it."
+      body: "Two money flows. Service: queries, data, answers pay the people who serve. Diffusion tax: every transfer of CYB — pay, lock, unlock, including staking — burns 1%. Moving energy through the field is not free; the tax on diffusion is destroyed, not recycled. Early emission still seeds security while usage is thin; velocity then deflates."
     },
     {
       id: "efficiency",
@@ -663,29 +663,28 @@ $$
 **Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and fee-leg pays through that agent; optional royalty on card transfer. Robots redirect who receives $M(t)$ — they do not open a second schedule
 
 ```
-M(t), B, fees → hybrid α → PoW / PoS mint  [− creator_mint_share if via robot]
-pay volume    → 1% tax    → burn β·tax + pool + creator_pay_share
+M(t), B, service fees → hybrid α → PoW / PoS mint  [− creator_mint_share if via robot]
+pay / lock / unlock   → 1% diffusion tax → burn (full τ)
+service pay (query…)  → peer + optional pool + creator_pay_share
 ```
 
 ### lock
 
-Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
+Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers: they pay the 1% tax on diffusion (burned) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
 
 ### pay
 
-Every transfer of amount $G$ pays protocol tax $\tau = 1\%$:
+Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock — pays the tax on diffusion $\tau = 1\%$. The tax is burned:
 
 $$
-\text{recipient} = (1 - \tau)\,G, \quad
-\text{burn} = \beta\,\tau\,G, \quad
-\text{fee pool} = (1 - \beta)\,\tau\,G
+\text{received or locked} = (1 - \tau)\,G, \qquad \text{burn} = \tau\,G
 $$
 
-Fee pool funds security + service. Robot-mediated: `creator_pay_share` of the fee-pool leg to creator first. Headers, queries, DA, inference — all pays under the same tax
+No carve-out for staking: locking energy onto a claim is still diffusion of mass through the field. Headers, queries, DA, inference are ordinary pays under the same $\tau$. Service revenue to peers is separate from the burned cut — the 1% does not refill a fee pool; it shrinks supply. Robot-mediated service: `creator_pay_share` of the peer/service leg only, not of the burn
 
 ### burn
 
-Fee burn (velocity → deflation); eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; burn makes influence permanent
+Primary continuous burn is the tax on diffusion: $\tau = 1\%$ of every transfer including stake lock/unlock. Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; the diffusion tax makes movement costly; burn makes influence permanent
 
 ## allocation
 
