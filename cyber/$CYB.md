@@ -46,12 +46,26 @@ M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.33 year,   k = 0.5
 
 ### emission schedule (continuous)
 
-No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t/\tau)^{-k})\). The green curve is cumulative supply as a fraction of the field cap. The cyan curve is the **instantaneous** inflation rate \(\pi(t) = M'(t)/M(t)\) (fraction per year) — not a yearly step and not a geometric cut. Time is log-scaled so the bootstrap head stays readable. Hover anywhere on the plot.
+No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t/\tau)^{-k})\). Green: cumulative supply / field cap. Cyan: **instantaneous** inflation \(\pi(t) = M'(t)/M(t)\) (per year) — continuous, not a yearly step. Time is log-scaled; the first year is sampled denser and called out below. Hover anywhere on the plot.
+
+#### first year (bootstrap head)
+
+About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 152\%\) of cap per year at \(t \to 0^+\)), then cools — miners in days, weeks, and months all get paid, without a single-day flood.
+
+| age | supply / cap | \(\pi(t)\) | emit rate (cap/y) |
+|-----|-------------:|----------:|------------------:|
+| 1 day | 0.4% | ~36000%/y | ~150% |
+| 1 week | 2.8% | ~5000%/y | ~139% |
+| 1 month | 10.7% | ~1015%/y | ~108% |
+| 3 months | 24.6% | ~265%/y | ~65% |
+| 6 months | 37.0% | ~103%/y | ~38% |
+| 9 months | 44.7% | ~57%/y | ~26% |
+| 1 year | 50.2% | ~37%/y | ~19% |
 
 <div id="cyb-emi"></div>
 
 <style>
-#cyb-emi{--bg:#000;--s1:#0a0a0a;--s2:#111;--ln:#222;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);border:none;box-shadow:none;box-sizing:border-box;width:100%;max-width:100%;margin:20px 0 28px;padding:0}
+#cyb-emi{--bg:#000;--s1:#0a0a0a;--s2:#111;--ln:#222;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);border:none;box-shadow:none;box-sizing:border-box;width:100%;max-width:100%;margin:16px 0 28px;padding:0}
 #cyb-emi .panel{background:var(--s1);border:1px solid var(--ln);border-radius:10px;padding:14px 14px 10px}
 #cyb-emi .head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:0 0 12px}
 #cyb-emi .title{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;color:var(--neon);letter-spacing:2px;text-transform:uppercase;text-shadow:0 0 10px rgba(34,197,94,.45)}
@@ -59,6 +73,12 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
 #cyb-emi .legend i{display:inline-block;width:18px;height:0;border-top:2.4px solid;margin-right:6px;vertical-align:middle;border-radius:1px}
 #cyb-emi .legend .s{border-color:var(--neon)}
 #cyb-emi .legend .i{border-color:var(--cyan)}
+#cyb-emi .milestones{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin:0 0 12px}
+#cyb-emi .ms{background:var(--s2);border:1px solid var(--ln);border-radius:8px;padding:7px 8px;min-width:0;cursor:pointer;transition:border-color .12s,background .12s}
+#cyb-emi .ms:hover,#cyb-emi .ms.on{border-color:var(--neon);background:rgba(34,197,94,.07)}
+#cyb-emi .ms .a{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;color:var(--mut);letter-spacing:.3px;margin-bottom:3px}
+#cyb-emi .ms .b{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;font-weight:600;color:var(--neon)}
+#cyb-emi .ms .c{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;color:var(--cyan);margin-top:2px}
 #cyb-emi .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0 0 12px}
 #cyb-emi .stat{background:var(--s2);border:1px solid var(--ln);border-radius:8px;padding:8px 10px;min-width:0}
 #cyb-emi .stat .l{font-size:10px;color:var(--mut);letter-spacing:.4px;margin-bottom:3px}
@@ -70,8 +90,12 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
 #cyb-emi svg text{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut)}
 #cyb-emi .tip{position:absolute;pointer-events:none;z-index:5;background:#111;border:1px solid #333;color:#f0f0f0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:7px 10px;border-radius:6px;box-shadow:0 0 20px rgba(34,197,94,.15);white-space:nowrap;display:none;line-height:1.45}
 #cyb-emi .note{font-size:11px;color:var(--mut);margin:10px 0 0;line-height:1.5}
+@media(max-width:900px){
+  #cyb-emi .milestones{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
 @media(max-width:640px){
   #cyb-emi .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #cyb-emi .milestones{grid-template-columns:repeat(2,minmax(0,1fr))}
   #cyb-emi .chart-wrap{min-height:260px}
 }
 </style>
@@ -84,40 +108,53 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
   var TAU = 0.33;
   var K = 0.5;
   var YEARS = 300;
-  var N = 480; // dense samples in log-time
+  var T_MIN = 1 / 365;
 
-  // Continuous schedule: s(t) = M(t)/p = 1 - (1 + t/τ)^(-k), t in years
   function s(t) {
     if (t <= 0) return 0;
     return 1 - Math.pow(1 + t / TAU, -K);
   }
-  // ds/dt (fraction of cap per year)
   function sPrime(t) {
     if (t < 0) return 0;
-    // at t=0: k/τ
     return (K / TAU) * Math.pow(1 + t / TAU, -(K + 1));
   }
-  // instantaneous inflation π(t) = s'(t) / s(t)  (per year)
   function pi(t) {
     var st = s(t);
     if (st <= 1e-15) return Infinity;
     return sPrime(t) / st;
   }
-
-  // Sample evenly in log1p space from ~1 day to YEARS
-  var T_MIN = 1 / 365;
-  var logMin = Math.log1p(T_MIN);
-  var logMax = Math.log1p(YEARS);
-  var series = [];
-  for (var i = 0; i < N; i++) {
-    var u = i / (N - 1);
-    var t = Math.expm1(logMin + u * (logMax - logMin));
-    var st = s(t);
-    var p = pi(t);
-    series.push({ t: t, supply: st, infl: p, rate: sPrime(t) });
+  function at(t) {
+    return { t: t, supply: s(t), infl: pi(t), rate: sPrime(t) };
   }
 
+  function sampleLog(t0, t1, n) {
+    var a = Math.log1p(t0), b = Math.log1p(t1), out = [];
+    for (var i = 0; i < n; i++) {
+      var u = n === 1 ? 0 : i / (n - 1);
+      out.push(Math.expm1(a + u * (b - a)));
+    }
+    return out;
+  }
+
+  // Dense in year 1, then log-sparse to 300y
+  var times = sampleLog(T_MIN, 1, 220).concat(sampleLog(1, YEARS, 300).slice(1));
+  var series = times.map(at);
+
+  var logMin = Math.log1p(T_MIN);
+  var logMax = Math.log1p(YEARS);
+
+  var MILESTONES = [
+    { label: "1 day", t: 1 / 365 },
+    { label: "1 week", t: 7 / 365 },
+    { label: "1 month", t: 1 / 12 },
+    { label: "3 months", t: 0.25 },
+    { label: "6 months", t: 0.5 },
+    { label: "9 months", t: 0.75 },
+    { label: "1 year", t: 1 }
+  ];
+
   function fmtYear(t) {
+    if (t < 1 / 24) return (t * 365).toFixed(1) + "d";
     if (t < 1 / 12) return (t * 365).toFixed(0) + "d";
     if (t < 1) return (t * 12).toFixed(1) + "mo";
     if (t < 10) return t.toFixed(2) + "y";
@@ -128,6 +165,7 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
   function pct(x, d) {
     if (x == null || !isFinite(x)) return "\u2014";
     var p = x * 100;
+    if (p >= 1000) return p.toFixed(0) + "%";
     if (p >= 100) return p.toFixed(d == null ? 0 : d) + "%";
     if (p >= 10) return p.toFixed(d == null ? 1 : d) + "%";
     if (p >= 1) return p.toFixed(d == null ? 1 : d) + "%";
@@ -139,71 +177,95 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
     return '<div class="stat"><div class="l">' + label + '</div><div class="v ' + (cls || "") + '">' + value + "</div></div>";
   }
 
-  // Inflation plotted on log10 scale (continuous rate spans orders of magnitude)
   var inflVals = series.map(function (p) { return p.infl; }).filter(function (v) { return isFinite(v) && v > 0; });
-  var inflLo = Math.min.apply(null, inflVals);
-  var inflHi = Math.max.apply(null, inflVals);
-  // pad in log space
-  var logI0 = Math.log10(Math.max(inflLo, 1e-5));
-  var logI1 = Math.log10(inflHi * 1.15);
+  var logI0 = Math.log10(Math.max(Math.min.apply(null, inflVals), 1e-5));
+  var logI1 = Math.log10(Math.max.apply(null, inflVals) * 1.15);
+
+  // layout constants shared by draw + hover
+  var W = 960, H = 380;
+  var left = 52, right = 58, topPad = 14, bottom = 36;
+  var plotW = W - left - right, plotH = H - topPad - bottom;
+
+  function xOf(t) {
+    return left + plotW * ((Math.log1p(t) - logMin) / (logMax - logMin));
+  }
+  function yS(sv) { return topPad + plotH * (1 - sv); }
+  function yI(inf) {
+    if (!isFinite(inf) || inf <= 0) return topPad;
+    var u = (Math.log10(inf) - logI0) / (logI1 - logI0);
+    u = Math.max(0, Math.min(1, u));
+    return topPad + plotH * (1 - u);
+  }
+  function tFromClientX(svg, clientX) {
+    var rect = svg.getBoundingClientRect();
+    var px = (clientX - rect.left) / rect.width * W;
+    var u = (px - left) / plotW;
+    u = Math.max(0, Math.min(1, u));
+    return Math.expm1(logMin + u * (logMax - logMin));
+  }
 
   function buildChart() {
-    var W = 960, H = 360;
-    var left = 52, right = 56, top = 14, bottom = 34;
-    var plotW = W - left - right, plotH = H - top - bottom;
-
-    function x(t) {
-      return left + plotW * ((Math.log1p(t) - logMin) / (logMax - logMin));
-    }
-    function yS(sv) { return top + plotH * (1 - sv); }
-    function yI(inf) {
-      if (!isFinite(inf) || inf <= 0) return top;
-      var u = (Math.log10(inf) - logI0) / (logI1 - logI0);
-      u = Math.max(0, Math.min(1, u));
-      return top + plotH * (1 - u);
-    }
-
     var grid = "";
-    // left ticks: supply %
+    // year-1 band
+    var x0 = xOf(T_MIN), x1 = xOf(1);
+    grid +=
+      '<rect x="' + x0.toFixed(1) + '" y="' + topPad + '" width="' + (x1 - x0).toFixed(1) +
+      '" height="' + plotH + '" fill="rgba(34,197,94,0.05)" stroke="none"></rect>';
+    grid +=
+      '<text x="' + ((x0 + x1) / 2).toFixed(1) + '" y="' + (topPad + 12) +
+      '" text-anchor="middle" fill="#3f6b4a" font-size="9">year 1 bootstrap</text>';
+
     for (var g = 0; g <= 4; g++) {
       var sv = g / 4;
       var yy = yS(sv);
       grid += '<line x1="' + left + '" y1="' + yy + '" x2="' + (W - right) + '" y2="' + yy + '" stroke="#222" stroke-width="0.5"></line>';
       grid += '<text x="' + (left - 6) + '" y="' + (yy + 3) + '" text-anchor="end">' + Math.round(sv * 100) + "%</text>";
     }
-    // right ticks: log inflation
-    var inflTicks = [];
-    var e0 = Math.ceil(logI0);
-    var e1 = Math.floor(logI1);
-    for (var e = e0; e <= e1; e++) inflTicks.push(Math.pow(10, e));
-    // always include a mid label if sparse
-    if (inflTicks.length < 2) {
-      inflTicks = [Math.pow(10, logI0), Math.pow(10, (logI0 + logI1) / 2), Math.pow(10, logI1)];
-    }
-    for (var it = 0; it < inflTicks.length; it++) {
-      var iv = inflTicks[it];
-      if (iv < Math.pow(10, logI0) || iv > Math.pow(10, logI1)) continue;
+
+    var e0 = Math.ceil(logI0), e1 = Math.floor(logI1);
+    for (var e = e0; e <= e1; e++) {
+      var iv = Math.pow(10, e);
       var yi = yI(iv);
       grid += '<text x="' + (W - right + 6) + '" y="' + (yi + 3) + '" text-anchor="start">' + pct(iv, iv >= 0.1 ? 0 : 1) + "/y</text>";
     }
 
-    var yTicks = [T_MIN, 1 / 12, 0.25, 1, 2, 5, 10, 20, 50, 100, 200, 300];
-    var yLabels = ["1d", "1mo", "3mo", "1y", "2y", "5y", "10y", "20y", "50y", "100y", "200y", "300y"];
+    // denser ticks in year 1, then sparse tail
+    var yTicks = [
+      [T_MIN, "1d"], [7 / 365, "1w"], [1 / 12, "1mo"], [0.25, "3mo"], [0.5, "6mo"], [1, "1y"],
+      [2, "2y"], [5, "5y"], [10, "10y"], [20, "20y"], [50, "50y"], [100, "100y"], [200, "200y"], [300, "300y"]
+    ];
     for (var t = 0; t < yTicks.length; t++) {
-      var yr = yTicks[t];
+      var yr = yTicks[t][0], lab = yTicks[t][1];
       if (yr < T_MIN * 0.99 || yr > YEARS * 1.001) continue;
-      var xx = x(yr);
-      grid += '<line x1="' + xx + '" y1="' + top + '" x2="' + xx + '" y2="' + (top + plotH) + '" stroke="#1a1a1a" stroke-width="0.5"></line>';
-      grid += '<text x="' + xx + '" y="' + (H - 10) + '" text-anchor="middle">' + yLabels[t] + "</text>";
+      var xx = xOf(yr);
+      var strong = yr <= 1;
+      grid += '<line x1="' + xx + '" y1="' + topPad + '" x2="' + xx + '" y2="' + (topPad + plotH) +
+        '" stroke="' + (strong ? "#2a3a2a" : "#1a1a1a") + '" stroke-width="0.5"></line>';
+      grid += '<text x="' + xx + '" y="' + (H - 10) + '" text-anchor="middle"' +
+        (strong ? ' fill="#8b948c"' : "") + ">" + lab + "</text>";
     }
 
-    var ptsS = [];
-    var ptsI = [];
+    var ptsS = [], ptsI = [];
     for (var j = 0; j < series.length; j++) {
       var p = series[j];
-      ptsS.push(x(p.t).toFixed(2) + "," + yS(p.supply).toFixed(2));
+      ptsS.push(xOf(p.t).toFixed(2) + "," + yS(p.supply).toFixed(2));
       if (isFinite(p.infl) && p.infl > 0) {
-        ptsI.push(x(p.t).toFixed(2) + "," + yI(p.infl).toFixed(2));
+        ptsI.push(xOf(p.t).toFixed(2) + "," + yI(p.infl).toFixed(2));
+      }
+    }
+
+    // milestone dots on supply for year 1
+    var msMarks = "";
+    for (var m = 0; m < MILESTONES.length; m++) {
+      var mt = MILESTONES[m].t;
+      var mp = at(mt);
+      msMarks +=
+        '<circle cx="' + xOf(mt).toFixed(1) + '" cy="' + yS(mp.supply).toFixed(1) +
+        '" r="3.2" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.5"></circle>';
+      if (isFinite(mp.infl)) {
+        msMarks +=
+          '<circle cx="' + xOf(mt).toFixed(1) + '" cy="' + yI(mp.infl).toFixed(1) +
+          '" r="3.2" fill="#0a0a0a" stroke="#06b6d4" stroke-width="1.5"></circle>';
       }
     }
 
@@ -212,40 +274,37 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
       grid +
       '<polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="' + ptsS.join(" ") + '"></polyline>' +
       '<polyline fill="none" stroke="#06b6d4" stroke-width="2" points="' + ptsI.join(" ") + '"></polyline>' +
-      '<circle id="cyb-mk-s" cx="0" cy="0" r="4" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.8" opacity="0"></circle>' +
-      '<circle id="cyb-mk-i" cx="0" cy="0" r="4" fill="#0a0a0a" stroke="#06b6d4" stroke-width="1.8" opacity="0"></circle>' +
-      '<line id="cyb-emi-guide" x1="0" y1="' + top + '" x2="0" y2="' + (top + plotH) +
+      msMarks +
+      '<circle id="cyb-mk-s" cx="0" cy="0" r="4.2" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.8" opacity="0"></circle>' +
+      '<circle id="cyb-mk-i" cx="0" cy="0" r="4.2" fill="#0a0a0a" stroke="#06b6d4" stroke-width="1.8" opacity="0"></circle>' +
+      '<line id="cyb-emi-guide" x1="0" y1="' + topPad + '" x2="0" y2="' + (topPad + plotH) +
       '" stroke="#444" stroke-width="1" stroke-dasharray="3 3" opacity="0"></line>' +
-      '<rect id="cyb-emi-hit" x="' + left + '" y="' + top + '" width="' + plotW + '" height="' + plotH +
+      '<rect id="cyb-emi-hit" x="' + left + '" y="' + topPad + '" width="' + plotW + '" height="' + plotH +
       '" fill="transparent"></rect>' +
       "</svg>"
     );
   }
 
-  function nearest(t) {
-    // binary-ish: series is sorted by t
-    var lo = 0, hi = series.length - 1;
-    while (hi - lo > 1) {
-      var mid = (lo + hi) >> 1;
-      if (series[mid].t < t) lo = mid; else hi = mid;
-    }
-    return (Math.abs(series[lo].t - t) < Math.abs(series[hi].t - t)) ? series[lo] : series[hi];
-  }
-
-  function at(t) {
-    var st = s(t);
-    var p = pi(t);
-    var r = sPrime(t);
-    return { t: t, supply: st, infl: p, rate: r };
-  }
-
   function render(p) {
-    if (!p) p = at(10);
+    if (!p) p = at(1);
     root.querySelector("#cyb-emi-stats").innerHTML =
       card("age", fmtYear(p.t), "") +
       card("supply", pct(p.supply, 2), "s") +
-      card("inflation \u03c0", isFinite(p.infl) ? pct(p.infl, 2) + "/y" : "\u2014", "i") +
-      card("emit rate", pct(p.rate, 2) + " cap/y", "");
+      card("inflation \u03c0", isFinite(p.infl) ? pct(p.infl, 1) + "/y" : "\u2014", "i") +
+      card("emit rate", pct(p.rate, 1) + " cap/y", "");
+  }
+
+  function milestonesHtml() {
+    return MILESTONES.map(function (m, idx) {
+      var p = at(m.t);
+      return (
+        '<div class="ms" data-t="' + m.t + '" data-i="' + idx + '">' +
+        '<div class="a">' + m.label + "</div>" +
+        '<div class="b">' + pct(p.supply, 1) + "</div>" +
+        '<div class="c">\u03c0 ' + pct(p.infl, 0) + "/y</div>" +
+        "</div>"
+      );
+    }).join("");
   }
 
   function bind() {
@@ -253,7 +312,6 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
     var svg = root.querySelector("#cyb-emi-svg");
     if (!wrap || !svg) return;
     var tip = document.createElement("div");
-    tip.id = "cyb-emi-tip";
     tip.className = "tip";
     wrap.appendChild(tip);
 
@@ -262,91 +320,91 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
     var mkS = svg.querySelector("#cyb-mk-s");
     var mkI = svg.querySelector("#cyb-mk-i");
 
-    var W = 960, H = 360;
-    var left = 52, right = 56, top = 14, bottom = 34;
-    var plotW = W - left - right, plotH = H - top - bottom;
-
-    function x(t) {
-      return left + plotW * ((Math.log1p(t) - logMin) / (logMax - logMin));
-    }
-    function yS(sv) { return top + plotH * (1 - sv); }
-    function yI(inf) {
-      if (!isFinite(inf) || inf <= 0) return top;
-      var u = (Math.log10(inf) - logI0) / (logI1 - logI0);
-      u = Math.max(0, Math.min(1, u));
-      return top + plotH * (1 - u);
-    }
-    function tFromClientX(clientX) {
-      var rect = svg.getBoundingClientRect();
-      var px = (clientX - rect.left) / rect.width * W;
-      var u = (px - left) / plotW;
-      u = Math.max(0, Math.min(1, u));
-      return Math.expm1(logMin + u * (logMax - logMin));
+    function setActiveMilestone(t) {
+      root.querySelectorAll(".ms").forEach(function (el) {
+        var mt = +el.getAttribute("data-t");
+        var on = Math.abs(mt - t) / Math.max(t, mt, 1e-9) < 0.08 || Math.abs(mt - t) < 0.02;
+        el.classList.toggle("on", on);
+      });
     }
 
-    function show(clientX, clientY) {
-      var t = tFromClientX(clientX);
+    function show(clientX, clientY, tOpt) {
+      var t = tOpt != null ? tOpt : tFromClientX(svg, clientX);
       var p = at(t);
       tip.style.display = "block";
       tip.innerHTML =
         "age " + fmtYear(p.t) +
         "<br>supply " + pct(p.supply, 2) +
-        "<br>\u03c0 " + (isFinite(p.infl) ? pct(p.infl, 2) + "/y" : "\u2014") +
-        "<br>rate " + pct(p.rate, 2) + " cap/y";
+        "<br>\u03c0 " + (isFinite(p.infl) ? pct(p.infl, 1) + "/y" : "\u2014") +
+        "<br>rate " + pct(p.rate, 1) + " cap/y";
       var wrapRect = wrap.getBoundingClientRect();
       var tipW = tip.offsetWidth || 170;
       var tipH = tip.offsetHeight || 60;
       var cx = clientX - wrapRect.left;
       var cy = clientY - wrapRect.top;
-      var L = cx + 14;
-      var T = cy - tipH - 10;
+      var L = cx + 14, T = cy - tipH - 10;
       if (L + tipW > wrapRect.width - 4) L = cx - tipW - 14;
       if (L < 4) L = 4;
       if (T < 4) T = cy + 16;
       tip.style.left = L + "px";
       tip.style.top = T + "px";
 
-      var xx = x(p.t);
-      var ys = yS(p.supply);
-      var yi = yI(p.infl);
+      var xx = xOf(p.t);
       mkS.setAttribute("cx", xx);
-      mkS.setAttribute("cy", ys);
+      mkS.setAttribute("cy", yS(p.supply));
       mkS.setAttribute("opacity", "1");
       if (isFinite(p.infl) && p.infl > 0) {
         mkI.setAttribute("cx", xx);
-        mkI.setAttribute("cy", yi);
+        mkI.setAttribute("cy", yI(p.infl));
         mkI.setAttribute("opacity", "1");
-      } else {
-        mkI.setAttribute("opacity", "0");
-      }
+      } else mkI.setAttribute("opacity", "0");
       guide.setAttribute("x1", xx);
       guide.setAttribute("x2", xx);
       guide.setAttribute("opacity", "1");
       render(p);
+      setActiveMilestone(p.t);
     }
     function hide() {
       tip.style.display = "none";
       mkS.setAttribute("opacity", "0");
       mkI.setAttribute("opacity", "0");
       guide.setAttribute("opacity", "0");
+      root.querySelectorAll(".ms").forEach(function (el) { el.classList.remove("on"); });
     }
 
     hit.addEventListener("mousemove", function (e) { show(e.clientX, e.clientY); });
     hit.addEventListener("mouseenter", function (e) { show(e.clientX, e.clientY); });
     hit.addEventListener("mouseleave", hide);
+
+    root.querySelectorAll(".ms").forEach(function (el) {
+      el.addEventListener("mouseenter", function (e) {
+        var t = +el.getAttribute("data-t");
+        var rect = wrap.getBoundingClientRect();
+        var svgRect = svg.getBoundingClientRect();
+        // place tip near milestone column
+        show(svgRect.left + (xOf(t) / W) * svgRect.width, rect.top + 40, t);
+      });
+      el.addEventListener("click", function (e) {
+        var t = +el.getAttribute("data-t");
+        var svgRect = svg.getBoundingClientRect();
+        show(svgRect.left + (xOf(t) / W) * svgRect.width, e.clientY, t);
+      });
+      el.addEventListener("mouseleave", function () { /* keep last hover on chart */ });
+    });
   }
 
   root.innerHTML =
     '<div class="panel">' +
     '<div class="head"><div class="title">CYB emission schedule</div>' +
-    '<div class="legend"><span><i class="s"></i>cumulative supply</span><span><i class="i"></i>instant inflation \u03c0(t)</span></div></div>' +
+    '<div class="legend"><span><i class="s"></i>cumulative supply</span><span><i class="i"></i>instant \u03c0(t)</span></div></div>' +
+    '<div class="milestones" id="cyb-emi-ms">' + milestonesHtml() + "</div>" +
     '<div class="stats" id="cyb-emi-stats"></div>' +
     '<div class="chart-wrap" id="cyb-emi-chart"></div>' +
-    '<p class="note">Continuous law: M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. No discrete years, no halving. Left: cumulative supply / cap. Right: log scale of \u03c0(t) = M\u2032(t)/M(t) per year. Time: log(1 + t) from 1 day to 300 years. Genesis 1% is a separate day-one allocation under the same cap; the curve is the continuous schedule alone.</p>' +
+    '<p class="note">Continuous: M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. No halving. Green band = year 1. Left: supply/cap. Right: log \u03c0(t) = M\u2032/M per year. Time: log(1+t), denser samples in year 1 (220 pts) then to 300y. Click a milestone chip to jump.</p>' +
     "</div>";
 
   root.querySelector("#cyb-emi-chart").innerHTML = buildChart();
-  render(at(10));
+  render(at(1));
   bind();
 })();
 </script>
