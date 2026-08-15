@@ -392,32 +392,32 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 [[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
 
-### value loop
+### network effects
 
-New $CYB only appears where the network’s knowledge actually got better. The loop:
+Not a checklist of actions — seven factors that compound. Each one makes the next stronger; $CYB grows only where knowledge got better.
 
 ```
-create robots (lifetime cut for the creator)
-  → more agents on the network
-    → more mining  +  more staking
-      → more syntropy (useful structure)
-        → better answers
-          → more fees paid in CYB
-            → better hardware
-              → more capacity → rewards again …
+fairness  +  finality  +  truth
+        → intelligence
+          → revenue
+            → hardware
+              → population
+                → fairness … (again, larger)
 ```
 
-| # | step | plain English |
-|---|------|----------------|
-| 1 | **robots** | Build an agent once. You keep a permanent share of what it later earns. That makes shipping robots worth it → more robots. |
-| 2 | **mine** | The network pays for computing [[Shapley value\|split]] and [[fold mining\|fold]]. Hashrate grows as more machines join. Runs on ordinary hardware — not specialty ASICs. |
-| 3 | **stake** | Lock CYB on a claim you believe. You earn only if the network’s knowledge moves your way. Sitting idle does not pay. |
-| 4 | **syntropy** | More mine + stake → denser true links → more useful structure on the graph. |
-| 5 | **infer** | Better structure → better search, models, and answers people can use. |
-| 6 | **fees** | Using the network costs CYB. Those fees (plus early emission) refill the reward budget for creators, miners, and stakers. |
-| 7 | **hardware** | Rewards buy better machines → more capacity next round. |
+| # | factor | what it is |
+|---|--------|------------|
+| 1 | **fairness** | [[Mining]] as open credit: who taught what is settled by [[Shapley value\|split]], weighted by hashrate — not by who holds the bag. |
+| 2 | **finality** | [[Fold mining\|Fold]] packs proofs into durable settlement — reliable across planets and long delay. |
+| 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
+| 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
+| 5 | **revenue** | Use pays in CYB. Fees (plus early emission) fund creators, miners, and stakers. |
+| 6 | **hardware** | Revenue buys better general-purpose machines → more hashrate and cheaper answers next round. |
+| 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
 
-Hover a segment.
+Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone.
+
+Hover a factor.
 
 <div id="cyb-loop"></div>
 
@@ -462,61 +462,52 @@ Hover a segment.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Plain-language bodies — one paragraph each, no jargon soup.
+  // Network-effect factors (not action checklist). One body each.
   var STEPS = [
     {
-      id: "robots",
-      chip: "robots",
-      label: "robots",
-      sub: "build once · earn forever",
-      color: "#a855f7",
-      title: "Create robots",
-      body: "You build an agent once. From then on you keep a permanent cut of what it earns — both new coins minted through its work and fees when people pay it. That is not a second money printer; it is a share of the same rewards. Because creators get paid for life, more people ship robots, and more agents show up to mine and stake."
-    },
-    {
-      id: "mine",
-      chip: "mine",
-      label: "mine",
-      sub: "split · fold · any HW",
+      id: "fairness",
+      chip: "fairness",
+      label: "fairness",
+      sub: "mine · hashrate",
       color: "#22c55e",
-      title: "Mine",
-      body: "The system pays for two concrete calculations: <a href=\"/shapley-value\" class=\"internal-link\">split</a> (who taught a focus shift) and <a href=\"/fold-mining\" class=\"internal-link\">fold</a> (compress those proofs into one claim). No coins locked. As more miners join, hashrate grows — and the work runs on ordinary machines (CPU, GPU, servers), not single-purpose ASICs."
+      title: "Fairness",
+      body: "Fairness is mining. Credit for who taught a focus shift is computed as a <a href=\"/shapley-value\" class=\"internal-link\">split</a> — and your share of that work is settled by hashrate: more useful compute, more of the fair division. No bag required. Anyone with ordinary machines can join; hashrate is the open measure of contribution, not who already holds coins."
     },
     {
-      id: "stake",
-      chip: "stake",
-      label: "stake",
-      sub: "lock coins · take a side",
+      id: "finality",
+      chip: "finality",
+      label: "finality",
+      sub: "fold · settlement",
+      color: "#14b8a6",
+      title: "Finality",
+      body: "<a href=\"/fold-mining\" class=\"internal-link\">Fold</a> compresses many local proofs into one durable claim the whole network can accept. That is finality: settlement that still works when light is slow and planets are far — not a chatty round-trip, a packed proof that arrives and sticks."
+    },
+    {
+      id: "truth",
+      chip: "truth",
+      label: "truth",
+      sub: "stake · capital",
       color: "#06b6d4",
-      title: "Stake",
-      body: "Staking is different from mining. You lock CYB on a claim you believe is true. You earn only if the network’s knowledge moves with that claim. If you just park coins and do nothing, you do not mint — capital is paid for backing truth, not for sitting still."
+      title: "Truth",
+      body: "Truth is staking. You lock CYB on a claim you believe. You earn only if the graph’s knowledge moves with you. Parked coins that take no side do not mint. Capital is paid for backing what is true, not for sitting still."
     },
     {
-      id: "syntropy",
-      chip: "syntropy",
-      label: "syntropy",
-      sub: "more useful structure",
+      id: "intelligence",
+      chip: "intelligence",
+      label: "intelligence",
+      sub: "syntropy · answers",
       color: "#eab308",
-      title: "More syntropy",
-      body: "Robots pull more mining and more staking. Machines densify true links; risked capital weights honest claims. The graph becomes more ordered and useful — that growth of structure is syntropy. It is the real thing rewards buy."
+      title: "Intelligence",
+      body: "Syntropy and inference are the same product: denser true structure on the graph is sharper rank, compile, and answers. The smarter the network gets, the more people and robots want to query it — demand rises with quality, not with marketing."
     },
     {
-      id: "infer",
-      chip: "infer",
-      label: "infer",
-      sub: "better answers",
-      color: "#c084fc",
-      title: "Better answers",
-      body: "Search, ranking, and answers all read the same knowledge graph. When syntropy rises, answers get sharper. People and robots pay for that product — not for a separate “AI token,” but for the network they already improved."
-    },
-    {
-      id: "fees",
-      chip: "fees",
-      label: "fees",
-      sub: "use pays rewards",
+      id: "revenue",
+      chip: "revenue",
+      label: "revenue",
+      sub: "fees · use pays",
       color: "#38bdf8",
-      title: "Fees fund the next round",
-      body: "Using the network — queries, data, answers — is paid in CYB. A small cut of each payment is burned; the rest goes into the reward budget. Early on, scheduled new coins seed the budget while usage is thin. Later, people who use the product pay those who improved it: creators, miners, and stakers."
+      title: "Revenue",
+      body: "Queries, data, and answers are paid in CYB. A small cut of each payment is burned; the rest funds the reward budget for creators, miners, and stakers. Early on, scheduled new coins seed the budget. Later, people who use intelligence pay those who produced it."
     },
     {
       id: "hardware",
@@ -524,8 +515,17 @@ Hover a segment.
       label: "hardware",
       sub: "better machines",
       color: "#f97316",
-      title: "Better hardware",
-      body: "Honest rewards buy better machines. Better machines mean more useful work per day and cheaper answers to serve. Capacity grows only because the previous round paid for real improvement — then the loop starts again with more robots, mining, and staking."
+      title: "Hardware",
+      body: "Revenue buys better general-purpose machines — CPU, GPU, servers — not single-purpose ASICs. More hashrate for fairness work, cheaper capacity to serve answers. Capacity compounds only because the last round paid for real improvement."
+    },
+    {
+      id: "population",
+      chip: "population",
+      label: "population",
+      sub: "robots · scale",
+      color: "#a855f7",
+      title: "Population",
+      body: "Population is how many robots (agents) live on the graph. Create one once; freeze a lifetime cut of its later mints and fees for the creator — permanent residual, not a second money printer. Residual makes shipping robots rational → more agents → more fairness, truth, and intelligence work on a larger graph."
     }
   ];
 
@@ -599,7 +599,7 @@ Hover a segment.
     '<div class="chips">' + chips + "</div>" +
     '<div class="detail">' +
     '<div class="detail-top">' +
-    '<div class="kicker">value loop</div>' +
+    '<div class="kicker">network effects</div>' +
     '<div class="stepn" id="cyb-loop-step"></div>' +
     "</div>" +
     '<h3 class="title" id="cyb-loop-title"></h3>' +
