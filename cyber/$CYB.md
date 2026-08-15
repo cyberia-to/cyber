@@ -390,14 +390,38 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ## utility (plumb)
 
-[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Every use is one of: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns; [[zheng]] rejects the rest
+[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
 
-| op | CYB |
-|----|-----|
-| [[mint]] | Coin emission or Card birth ([[neuron]] / [[cyb/robot\|robot]]) |
-| [[lock]] | stake / [[will]] — risk for influence |
-| [[pay]] | transfer under 1% tax |
-| [[burn]] | fee deflation + eternal φ*-weight |
+### value loop
+
+```text
+                         M(t) time schedule
+                                │
+                                ▼
+              ┌──────────── mint Coin ────────────┐
+              │  mining (no bag)   staking (risk) │
+              └──────────────┬────────────────────┘
+                             │ CYB in wallet
+              ┌──────────────┼────────────────────┐
+              ▼              ▼                    ▼
+           lock            pay                 burn
+        stake / will     transfer 1%        eternal φ*
+        → influence      ├─ 99% to peer
+                         ├─ β·1% burn
+                         └─ (1−β)·1% → fee pool ──┐
+                                                   │
+              robot Card ── residual ──► creator   │
+              (mint once; share frozen at create)  │
+                                                   ▼
+                                        hybrid B (α) ──► mint again
+```
+
+| op | does |
+|----|------|
+| [[mint]] | Coin from work (mine / active stake) · Card for robot/neuron birth |
+| [[lock]] | freeze CYB on a claim → φ* weight; active earns, passive only ranks |
+| [[pay]] | move CYB; 1% tax splits burn / fee pool / peer |
+| [[burn]] | destroy supply: fee velocity or eternal topology |
 
 ### mint
 
@@ -443,8 +467,4 @@ Fee burn (velocity → deflation); eternal [[particle]] / [[cyberlink]] (φ* flo
 
 ## allocation
 
-How much: M(t) + hybrid B. Who: Δφ* [[Shapley value]] (knowledge); fold/settlement work (PoW); active stake × karma (PoS). Zero stake and zero work → zero. [[rewards]]
-
-## loop
-
-Lock truth; pay under 1% tax that burns; mint Coin by hybrid work or mint Card agents with frozen creator residuals. [[tok]] · [[plumb]] · [[adaptive hybrid economics]] · [[cyb/robot]] · [[rewards]] · [[self]]
+How much: $M(t)$ + hybrid $B$. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]
