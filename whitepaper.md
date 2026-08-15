@@ -13,7 +13,31 @@ status: draft
 
 ## Abstract
 
-The world built a public ledger for coins and left the ledger of meaning in private hands. A transfer of value settles without a bank. A transfer of understanding still rents its rank from whoever owns the feed and the weight file trained on everyone for free: what deserves attention, who taught the pattern, who is paid when the shared picture sharpens. We propose cyber, a protocol in which [[neurons]] maintain one [[cybergraph]] of content-addressed [[particles]] joined by signed, weighted [[cyberlinks]]. [[Tru]] iterates the [[tri-kernel]] to a [[fixed point]] $\phi^*$ of collective [[focus]]. Under the contraction condition of the [[collective focus theorem]] that fixed point is unique, computable from local neighborhoods, and the same object from which the graph is ranked and a model is [[tru/docs/explanation/graph-native-transformer|compiled]]. New [[CYB]] is minted only for proven positive focus shift. Influence on $\phi^*$ requires [[staking]] capital on links, so a wrong claim costs the staker. Attribution of a shift is separate work: [[mining]], with no capital at risk, samples the [[Shapley value]] of contributors and [[fold mining|folds]] the proofs into a constant-size mint claim. [[Foculus]] takes $\phi^*_i > \tau$ as finality — enough attention has gathered — so agreement is local contraction and gossip rather than a global vote, and shared facts can survive light-minutes of delay. [[Soft3]] is the frozen foundation under all of it: one field and one proof path; authenticated graph state; [[privacy trilateral|privacy]] so a neuron may speak without fear; [[neural]] as the native language of the graph; an open surface with no schema gatekeeper, entry by stake, not permission. What makes the construction [[superintelligence]], not another ranked ledger, is [[self]]: the protocol is itself a [[neuron]] — key, stake, [[karma]] — that links, holds treasury, and retunes its parameters from the graph’s own $\phi^*$, so codebase and development vector settle in the same consensus as every other claim, as the collective focus of all who teach the graph. The design target is [[interplanetary superintelligence]]: one focus that light-delay cannot split and that no platform can unpublish, a mind across worlds that no empire can mute and that no founder can steer alone.
+The world built a public ledger for coins and left the ledger of meaning in private hands. A transfer of value settles without a bank. A transfer of understanding still rents its rank from whoever owns the feed and the weight file trained on everyone for free: what deserves attention, who taught the pattern, who is paid when the shared picture sharpens. We propose cyber, a protocol in which [[neurons]] maintain one [[cybergraph]] of content-addressed [[particles]] joined by signed, weighted [[cyberlinks]]. [[Tru]] iterates the [[tri-kernel]] to a [[fixed point]] $\phi^*$ of collective [[focus]]. Under the contraction condition of the [[collective focus theorem]] that fixed point is unique, computable from local neighborhoods, and the same object from which the graph is ranked and a model is [[tru/docs/explanation/graph-native-transformer|compiled]]. New [[CYB]] is minted only for proven positive focus shift. Influence on $\phi^*$ requires [[staking]] capital on links, so a wrong claim costs the staker. Attribution of a shift is separate work: [[mining]], with no capital at risk, samples the [[Shapley value]] of contributors and [[fold mining|folds]] the proofs into a constant-size mint claim. [[Foculus]] takes $\phi^*_i > \tau$ as finality — enough attention has gathered — so agreement is local contraction and gossip rather than a global vote, and shared facts can survive light-minutes of delay. [[Soft3]] is the frozen foundation under all of it: one field and one proof path; authenticated graph state; [[privacy trilateral|privacy]] so a neuron may speak without fear; [[neural]] as the native language of the graph; an open surface with no schema gatekeeper — entry by stake and work, not permission and not capital alone. Influence on $\phi^*$ is staked capital on links; attribution of a proven focus shift is separate [[mining|work]] (Shapley sampling and fold proofs) with no capital at risk. What makes the construction [[superintelligence]], not another ranked ledger, is [[self]]: the protocol is itself a [[neuron]] — key, stake, work, [[karma]] — that links, holds treasury, and retunes its parameters from the graph’s own $\phi^*$, so codebase and development vector settle in the same consensus as every other claim, as the collective focus of all who teach the graph. The design target is [[interplanetary superintelligence]]: one focus that light-delay cannot split and that no platform can unpublish, a mind across worlds that no empire can mute and that no founder can steer alone.
+
+## Teaser
+
+The short spine of the design, as slides — read top to bottom, then the sections that unpack each claim.
+
+![Cyber teaser](svg-slides/cyber-teaser.svg)
+
+![Interplanetary · collective focus](svg-slides/slide-01.svg)
+
+![Value vs meaning](svg-slides/slide-02.svg)
+
+![Cybergraph — particles, cyberlinks, neurons](svg-slides/slide-03.svg)
+
+![Collective focus — tri-kernel to φ*](svg-slides/slide-04.svg)
+
+![Stake · mine · mint — influence is capital; attribution is work](svg-slides/slide-05.svg)
+
+![Local contraction — finality without global vote](svg-slides/slide-06.svg)
+
+![Soft3 — one field, one proof path](svg-slides/slide-07.svg)
+
+![Self-reference — the protocol is a neuron](svg-slides/slide-08.svg)
+
+![Interplanetary superintelligence](svg-slides/slide-09.svg)
 
 ## 1. Introduction
 

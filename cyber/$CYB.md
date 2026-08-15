@@ -11,6 +11,17 @@ root [[token]] of cyber. unit of stake, fees, and rewards for proven contributio
 
 [[Focus]] is the scarce object: the unique [[fixed point]] of the [[tri-kernel]] over the [[cybergraph]]. Moving and creating focus costs work. [[CYB]] makes that work transferable — spend to link and prove, earn when your links raise collective focus (proven Δφ*). It is not a fee token bolted onto ranking; ranking and payment share one physics
 
+## hard money
+
+$CYB is hard money in the oldest sense — expensive to make, impossible to counterfeit — and in four new ones:
+
+- backed by conservation. [[focus]] sums to one across the whole graph — the backing quantity cannot be printed, only redistributed. Emission happens only against proven Δφ*: new supply exists exactly when the graph provably grew smarter. Inflation is evidence of knowledge, not a policy
+- quantum-hard by construction. Identity is a [[hemera]] hash (Poseidon2 over the [[nebu|Goldilocks field]]), state is a polynomial commitment, proofs are [[zheng]] — hash-and-field cryptography with no discrete log for Shor to unwind; key exchange in the [[mudra]] ladder is isogeny-based (dCTIDH)
+- private by the same field. The field that proves also encrypts: [[strata]] hosts the FHE regime (jali R_q, TFHE in the [[mudra]] ladder), so balances can compute without being seen — prove the property, keep the number
+- it means something, literally. Every unit traces to links in the [[cybergraph]], and [[neural]] reads value as position in the topology. This is money whose backing you can query
+
+And the mint is in your pocket. Proving work targets the devices people already own — Mac and Android — with direct access to the silicon through [[honeycrisp]]: NEON/AMX/SME, Metal GPU, ANE, zero-copy unified memory. A million laptops and phones instead of three datacenters: issuance lands where the hands are
+
 ## cap
 
 Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and proofs:
@@ -388,19 +399,54 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 })();
 </script>
 
-## utility (plumb)
+## revenue
 
 [[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
 
+**Emission** $M(t)$ bootstraps the field when it is empty. **Revenue** is the long-run metabolism: every movement of energy pays a tax on diffusion. That tax is the main source of self-development once the schedule thins — same merit brain as inflation, different faucet
+
+### tax on diffusion
+
+Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock, including [[staking]] — pays $\tau = 1\%$:
+
+$$
+\text{received or locked} = (1 - \tau)\,G, \qquad V = \tau\,G
+$$
+
+No carve-out for staking: locking mass onto a claim is still diffusion. Hopping energy without improving the graph is not free
+
+### how $V$ splits — half burn, half to everyone
+
+Simple rule on the tax pot $V$:
+
+| half | leg | role |
+|------|-----|------|
+| $\tfrac12 V$ | **burn** | Price of diffusion with no recipient. Deflates supply when velocity is high. Discipline for hoppers — not self-development directly, anti-spam and anti-empty circulation |
+| $\tfrac12 V$ | **to everyone** | Recycled into the reward budget and paid out with the **same allocation logic as main inflation** — [[adaptive hybrid economics]] + [[rewards]]: mining (division + fold), active stake × [[karma]], proven work only. Idle bags get nothing |
+
+$$
+\text{burn} = \tfrac12\,\tau\,G, \qquad
+B_V = \tfrac12\,\tau\,G \ \xrightarrow{\ \text{hybrid }\alpha\ }\ R_{\mathrm{PoW}},\ R_{\mathrm{PoS}}
+$$
+
+So: **half destroy, half pay everyone who earns** — “everyone” means every channel that already earns under emission, not a pro-rata airdrop to all holders. Creator residuals (`creator_mint_share`, `creator_pay_share`) still skim their frozen shares of mints and service legs through robots; they do not take a fixed half of $\tau$ off the top
+
+```
+pay / lock / unlock  →  τ = 1%  →  ½ burn  +  ½ → B_V → same hybrid as emission
+M(t), floor, service →  B     → hybrid α → PoW / PoS / Δφ* mint
+```
+
+Early life: $M(t)$ dominates. Mature life: $B_V$ from velocity dominates self-development. One merit function, two faucets
+
 ### network effects
 
-Not a checklist of actions — seven factors that compound. Each one makes the next stronger; $CYB grows only where knowledge got better.
+Not a checklist of actions — seven factors that compound. Each one makes the next stronger; $CYB growth only where knowledge got better
 
 ```
 fairness  +  finality  +  truth
         → intelligence
           → revenue
-            → hardware
+            → efficiency
               → population
                 → fairness … (again, larger)
 ```
@@ -411,18 +457,19 @@ fairness  +  finality  +  truth
 | 2 | **finality** | [[Fold mining\|Fold]] packs proofs into durable settlement — reliable across planets and long delay. |
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
-| 5 | **revenue** | Use pays in CYB. Fees (plus early emission) fund creators, miners, and stakers. |
-| 6 | **hardware** | Revenue buys better general-purpose machines → more hashrate and cheaper answers next round. |
-| 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
+| 5 | **revenue** | Tax on diffusion $\tau=1\%$ on every transfer. Half burns; half pays everyone who earns under the same hybrid as emission. Long-run self-development faucet |
+| 6 | **efficiency** | Revenue and emission fund better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
+| 7 | **population** | More robots (agents). Create once; frozen creator shares on mints and service through that agent → shipping robots is rational → more nodes on the graph. |
 
-Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone.
+Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone
 
 Hover a factor.
 
 <div id="cyb-loop"></div>
 
 <style>
-#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#c084fc;--sky:#38bdf8;--hw:#f97316;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:20px 0 32px;box-sizing:border-box}
+/* cyberia logo palette: green cyan blue violet red orange yellow */
+#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#00ff01;--cyan:#00b4ff;--blue:#1700fe;--vio:#6b00fe;--red:#fe0000;--ora:#ff6501;--yel:#ffc501;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:20px 0 32px;box-sizing:border-box}
 #cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:18px}
 #cyb-loop .stage{position:relative;width:100%;max-width:720px;margin:0 auto}
 #cyb-loop svg{width:100%;height:auto;display:block}
@@ -432,7 +479,7 @@ Hover a factor.
 #cyb-loop .seg path.hit{fill:none;stroke:transparent;stroke-width:54;cursor:pointer}
 #cyb-loop .hub{pointer-events:none}
 #cyb-loop .hub-circle{fill:#050505;stroke:#2a2a2a;stroke-width:2}
-#cyb-loop .hub-glow{fill:none;stroke:rgba(34,197,94,.35);stroke-width:1.5}
+#cyb-loop .hub-glow{fill:none;stroke:rgba(0,255,1,.4);stroke-width:1.5}
 #cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:18px;fill:var(--neon);font-weight:700;text-anchor:middle;letter-spacing:0.5px}
 #cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;fill:var(--mut);text-anchor:middle}
 #cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;fill:var(--tx);font-weight:700;text-anchor:middle;pointer-events:none}
@@ -447,7 +494,7 @@ Hover a factor.
 #cyb-loop .chips{display:flex;flex-wrap:nowrap;gap:6px;width:100%;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 #cyb-loop .chip{flex:1 1 0;min-width:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:9px 3px;border-radius:999px;border:1px solid var(--ln);background:#0a0a0a;color:var(--mut);cursor:pointer;text-align:center;white-space:nowrap;transition:background .12s,color .12s,border-color .12s,box-shadow .12s}
 #cyb-loop .chip:hover{border-color:#444;color:var(--tx)}
-#cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(34,197,94,.35);font-weight:700}
+#cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(0,255,1,.4);font-weight:700}
 @media(min-width:900px){
   #cyb-loop .panel{padding:24px 28px 22px}
   #cyb-loop .stage{max-width:660px}
@@ -462,14 +509,14 @@ Hover a factor.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Network-effect factors (not action checklist). One body each. v2
+  // Network-effect factors (not action checklist). One body each. v3
   var STEPS = [
     {
       id: "fairness",
       chip: "fairness",
       label: "fairness",
       sub: "mine · hashrate",
-      color: "#22c55e",
+      color: "#00ff01",
       title: "Fairness",
       body: "Fairness is mining. Credit for who taught a focus shift is computed as a <a href=\"/shapley-value\" class=\"internal-link\">split</a> — and your share of that work is settled by hashrate: more useful compute, more of the fair division. No bag required. Anyone with ordinary machines can join; hashrate is the open measure of contribution, not who already holds coins."
     },
@@ -478,7 +525,7 @@ Hover a factor.
       chip: "finality",
       label: "finality",
       sub: "fold · settlement",
-      color: "#14b8a6",
+      color: "#00b4ff",
       title: "Finality",
       body: "<a href=\"/fold-mining\" class=\"internal-link\">Fold</a> compresses many local proofs into one durable claim the whole network can accept. That is finality: settlement that still works when light is slow and planets are far — not a chatty round-trip, a packed proof that arrives and sticks."
     },
@@ -487,7 +534,7 @@ Hover a factor.
       chip: "truth",
       label: "truth",
       sub: "stake · capital",
-      color: "#06b6d4",
+      color: "#1700fe",
       title: "Truth",
       body: "Truth is staking. You lock CYB on a claim you believe. You earn only if the graph’s knowledge moves with you. Parked coins that take no side do not mint. Capital is paid for backing what is true, not for sitting still."
     },
@@ -496,7 +543,7 @@ Hover a factor.
       chip: "intelligence",
       label: "intelligence",
       sub: "syntropy · answers",
-      color: "#eab308",
+      color: "#6b00fe",
       title: "Intelligence",
       body: "Syntropy and inference are the same product: denser true structure on the graph is sharper rank, compile, and answers. The smarter the network gets, the more people and robots want to query it — demand rises with quality, not with marketing."
     },
@@ -504,26 +551,26 @@ Hover a factor.
       id: "revenue",
       chip: "revenue",
       label: "revenue",
-      sub: "fees · use pays",
-      color: "#38bdf8",
+      sub: "½ burn · ½ to all earners",
+      color: "#fe0000",
       title: "Revenue",
-      body: "Queries, data, and answers are paid in CYB. A small cut of each payment is burned; the rest funds the reward budget for creators, miners, and stakers. Early on, scheduled new coins seed the budget. Later, people who use intelligence pay those who produced it."
+      body: "Every transfer of CYB — pay, lock, unlock, including staking — pays a 1% tax on diffusion. Half burns: price of empty hops, supply shrinks with velocity. Half goes to everyone who earns — same hybrid allocation as emission (mine division+fold, active stake × karma). Idle bags get nothing. Emission bootstraps; revenue is the long-run self-development faucet."
     },
     {
-      id: "hardware",
-      chip: "hardware",
-      label: "hardware",
-      sub: "better machines",
-      color: "#f97316",
-      title: "Hardware",
-      body: "Revenue buys better general-purpose machines — CPU, GPU, servers — not single-purpose ASICs. More hashrate for fairness work, cheaper capacity to serve answers. Capacity compounds only because the last round paid for real improvement."
+      id: "efficiency",
+      chip: "efficiency",
+      label: "efficiency",
+      sub: "GFP · mine = prove",
+      color: "#ff6501",
+      title: "Efficiency",
+      body: "Efficiency is the <a href=\"/goldilocks-field-processor\" class=\"internal-link\">GFP</a> flywheel: mining rewards and fees fund better Goldilocks field processors — silicon for fma, ntt, p2r, lut. The same chip that mines is the same chip that proves and serves the network, so hardware is never stranded heat. Better GFP → cheaper useful split/fold and cheaper answers → more use → more revenue → better GFP."
     },
     {
       id: "population",
       chip: "population",
       label: "population",
       sub: "robots · scale",
-      color: "#a855f7",
+      color: "#ffc501",
       title: "Population",
       body: "Population is how many robots (agents) live on the graph. Create one once; freeze a lifetime cut of its later mints and fees for the creator — permanent residual, not a second money printer. Residual makes shipping robots rational → more agents → more fairness, truth, and intelligence work on a larger graph."
     }
@@ -635,10 +682,13 @@ Hover a factor.
 
 ### mint
 
-**Coin.** Budget from schedule $M(t)$ and hybrid pot $B$. Split under [[adaptive hybrid economics]] (PID controls $\alpha$, floor, $\beta$):
+**Coin.** Two faucets, one hybrid brain under [[adaptive hybrid economics]] (PID on $\alpha$, floor, $\beta$):
+
+- schedule envelope + security floor + optional service fees $\to$ pot $B$
+- half of diffusion tax $\to B_V$
 
 $$
-R_{\mathrm{PoW}} = B\,(1 - \theta^{\alpha}), \qquad R_{\mathrm{PoS}} = B\,\theta^{\alpha}
+R_{\mathrm{PoW}} = B_{\mathrm{tot}}\,(1 - \theta^{\alpha}), \qquad R_{\mathrm{PoS}} = B_{\mathrm{tot}}\,\theta^{\alpha}, \qquad B_{\mathrm{tot}} = B + B_V
 $$
 
 | channel | risk | earn |
@@ -646,35 +696,28 @@ $$
 | [[mining]] | none | prove Δφ* [[Shapley value\|division]] + [[fold mining\|fold]] → mint |
 | [[staking]] active ($v \neq 0$) | lock CYB | stake-side mint if focus moves with the claim |
 
-Δφ* mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
+Δφ* knowledge mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as velocity ($B_V$) and fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
 
-**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and fee-leg pays through that agent; optional royalty on card transfer. Robots redirect who receives $M(t)$ — they do not open a second schedule
+**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and service-leg pays through that agent — including when the agent earns from the “to everyone” half. Optional royalty on card transfer. Not a second $M(t)$
 
 ```
-M(t), B, fees → hybrid α → PoW / PoS mint  [− creator_mint_share if via robot]
-pay volume    → 1% tax    → burn β·tax + pool + creator_pay_share
+M(t), floor, service  → B  ─┐
+pay/lock/unlock τ=1%  → ½ V → B_V ─┼→ hybrid α → PoW / PoS  [− creator shares]
+                      → ½ V → burn  ┘
 ```
 
 ### lock
 
-Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
+Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers under the tax on diffusion (½ burn, ½ into $B_V$) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + share of reward pots × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
 
 ### pay
 
-Every transfer of amount $G$ pays protocol tax $\tau = 1\%$:
-
-$$
-\text{recipient} = (1 - \tau)\,G, \quad
-\text{burn} = \beta\,\tau\,G, \quad
-\text{fee pool} = (1 - \beta)\,\tau\,G
-$$
-
-Fee pool funds security + service. Robot-mediated: `creator_pay_share` of the fee-pool leg to creator first. Headers, queries, DA, inference — all pays under the same tax
+[[Pay]], [[lock]], unlock — all move $G$ under $\tau = 1\%$ (half burn, half $B_V$). Headers, queries, DA, inference are ordinary pays under the same $\tau$; the peer may still receive the service leg after tax. `creator_pay_share` skims service residual through robots, orthogonal to the half that entered $B_V$ for everyone
 
 ### burn
 
-Fee burn (velocity → deflation); eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; burn makes influence permanent
+Half of every diffusion tax ($\tfrac12\tau G$) is destroyed — discipline of hoppers, deflation under high velocity. Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; burn makes empty circulation expensive and deliberate eternal influence permanent
 
 ## allocation
 
-How much: $M(t)$ + hybrid $B$. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]
+How much: $M(t)$ + floor + $B_V$ (half of velocity tax) + service fees. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. The other half of velocity tax burns. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]
