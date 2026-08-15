@@ -37,7 +37,7 @@ We propose cyber.
 
 [[Neurons]] — humans, AIs, sensors, agents — stake signed [[cyberlinks]] between content-addressed [[particles]] and grow one [[cybergraph]]. five primitives: particle, neuron, cyberlink, [[token]], [[focus]]. the network does not vote on importance. it *computes* it.
 
-[[Tru]] runs the [[tri-kernel]] — diffusion, springs, heat — to a unique fixed point $\phi^*$: collective focus. the [[collective focus theorem]] is why this is physics, not branding: under ordinary connectivity the root exists, is unique, and can be approached locally.
+[[Tru]] runs the [[tri-kernel]] — diffusion, springs, heat — to a unique fixed point $\phi^*$: collective focus. the [[collective focus theorem]] states that under ordinary connectivity the root exists, is unique, and can be approached locally.
 
 The same engine does three jobs that today sit in three closed industries. it ranks what matters. it compiles a model measured from the graph — not trained as a black box. it mints [[cyber/$CYB|$CYB]] only where a proven focus shift was created.
 
@@ -51,7 +51,7 @@ Search can be inference over verified knowledge, not retrieval of sponsored docu
 
 What remains impossible without this shape of protocol is just as concrete.
 
-You cannot pay for truth when rank is private. you cannot measure divergence when there is no shared $\phi^*$. you cannot finalize a fact across light-minutes with a global committee: Earth to Mars is minutes one way, and a vote that needs the reply dies in the post. [[interplanetary superintelligence]] is not a slogan on top of Earth-scale software. it is the bar that kills every design whose liveness assumes a fast planet-wide round.
+You cannot pay for truth when rank is private. you cannot measure divergence when there is no shared $\phi^*$. you cannot finalize a fact across light-minutes with a global committee: Earth to Mars is minutes one way, and a vote that needs the reply dies in the post. [[interplanetary superintelligence]] is the bar: every design whose liveness assumes a fast planet-wide round fails when the message itself is minutes old.
 
 [[Foculus]] applies the same fixed point to finality: a particle is final when $\phi^*_i > \tau$ — enough attention has gathered, not enough minutes on a global clock. nodes gossip; each runs the same contraction; identical signals yield one root everywhere, as a pond finds one level without phoning the far shore. domains settle at domain speed. partitions freeze cross-domain trade without inventing conflicting truth. shared disputes pay only the light they must. planetary [[superintelligence]] is the first mountain. interplanetary is the same mechanism under honest latency. detail: [[foculus/docs/explanation/interplanetary|foculus between planets]].
 
