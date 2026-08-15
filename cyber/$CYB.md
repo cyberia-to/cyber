@@ -50,17 +50,7 @@ No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t
 
 #### first year (bootstrap head)
 
-About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 152\%\) of cap per year at \(t \to 0^+\)), then cools — miners in days, weeks, and months all get paid, without a single-day flood.
-
-| age | supply / cap | \(\pi(t)\) | emit rate (cap/y) |
-|-----|-------------:|----------:|------------------:|
-| 1 day | 0.4% | ~36000%/y | ~150% |
-| 1 week | 2.8% | ~5000%/y | ~139% |
-| 1 month | 10.7% | ~1015%/y | ~108% |
-| 3 months | 24.6% | ~265%/y | ~65% |
-| 6 months | 37.0% | ~103%/y | ~38% |
-| 9 months | 44.7% | ~57%/y | ~26% |
-| 1 year | 50.2% | ~37%/y | ~19% |
+About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 152\%\) of cap per year at \(t \to 0^+\)), then cools — miners in days, weeks, and months all get paid, without a single-day flood. Milestone chips under the chart are the same path; hover or click them.
 
 <div id="cyb-emi"></div>
 
