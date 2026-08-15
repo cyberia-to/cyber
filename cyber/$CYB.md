@@ -401,29 +401,41 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ### mint
 
-**Coin.** Budget M(t) and hybrid B under [[adaptive hybrid economics]] (PID α, floor, β): \(R_{\mathrm{PoW}}=B(1-\theta^\alpha)\), \(R_{\mathrm{PoS}}=B\theta^\alpha\).
+**Coin.** Budget from schedule $M(t)$ and hybrid pot $B$. Split under [[adaptive hybrid economics]] (PID controls $\alpha$, floor, $\beta$):
+
+$$
+R_{\mathrm{PoW}} = B\,(1 - \theta^{\alpha}), \qquad R_{\mathrm{PoS}} = B\,\theta^{\alpha}
+$$
 
 | channel | risk | earn |
 |---------|------|------|
 | [[mining]] | none | prove Δφ* [[Shapley value\|division]] + [[fold mining\|fold]] → mint |
-| [[staking]] active (v≠0) | lock CYB | stake-side mint if focus moves with the claim |
+| [[staking]] active ($v \neq 0$) | lock CYB | stake-side mint if focus moves with the claim |
 
-Δφ* mint only if proven Δφ* > 0. Security floor mints only to PoW + active stake; PID-decays as fees cover security. Passive lock (v=0): rank only. Spec: [[rewards]]
+Δφ* mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
 
-**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` ∈ [0,1]: residual on later Coin mints and fee-leg pays through that agent; optional royalty on card transfer. Robots redirect who receives M(t) — they do not open a second schedule
+**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and fee-leg pays through that agent; optional royalty on card transfer. Robots redirect who receives $M(t)$ — they do not open a second schedule
 
 ```
-M(t), B, fees → hybrid α → PoW/PoS mint [− creator_mint_share if via robot]
-pay volume    → 1% tax → burn β·tax + pool + creator_pay_share
+M(t), B, fees → hybrid α → PoW / PoS mint  [− creator_mint_share if via robot]
+pay volume    → 1% tax    → burn β·tax + pool + creator_pay_share
 ```
 
 ### lock
 
-Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Active (v=±1): weight + stake mint + fee yield × [[karma]]. Passive (v=0): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
+Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
 
 ### pay
 
-Every transfer G: recipient \(1-\tau\), \(\tau=1\%\). Of the tax: burn \(\beta\cdot\tau\cdot G\), fee pool \((1-\beta)\tau\cdot G\) (security + service). Robot-mediated: `creator_pay_share` of the fee-pool leg to creator first. Headers, queries, DA, inference — all pays under the same tax
+Every transfer of amount $G$ pays protocol tax $\tau = 1\%$:
+
+$$
+\text{recipient} = (1 - \tau)\,G, \quad
+\text{burn} = \beta\,\tau\,G, \quad
+\text{fee pool} = (1 - \beta)\,\tau\,G
+$$
+
+Fee pool funds security + service. Robot-mediated: `creator_pay_share` of the fee-pool leg to creator first. Headers, queries, DA, inference — all pays under the same tax
 
 ### burn
 
