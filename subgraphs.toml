@@ -221,13 +221,6 @@ parent = "soft3"
 visibility = "public"
 
 [[subgraph]]
-name = "conformance"
-parent = "soft3"
-visibility = "private"
-
-# /neural ──────────────────────────────────
-
-[[subgraph]]
 name = "neural"
 visibility = "public"
 menu = false
