@@ -44,7 +44,7 @@ M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.33 year,   k = 0.5
 - a bootstrap head — about half the supply in the first year (~11% in the first month), spread across the year so price discovers and the first miners (days, weeks, months) are paid, with no single-day flood. The initial rate is finite (k/τ ≈ 152%/yr), not a spike.
 - a heavy tail — polynomial, never exponential: still issuing past a century (~4% of supply unissued at 200 years), always under the cap.
 
-### emission over 300 years
+### emission over 100 years
 
 Cumulative supply as % of field cap (left axis). Yearly inflation = new supply ÷ circulating at year start (right axis; year 1 is the genesis → half-cap jump, shown in the readout). Hover any year.
 
@@ -85,7 +85,7 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply �
   var TAU = 0.33;
   var K = 0.5;
   var GENESIS = 0.01;
-  var YEARS = 300;
+  var YEARS = 100;
 
   function supplyFrac(t) {
     if (t <= 0) return GENESIS;
@@ -141,7 +141,7 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply �
       var iv = inflMax * (g / 4);
       grid += '<text x="' + (W - right + 6) + '" y="' + (yy + 3) + '" text-anchor="start">' + (iv * 100).toFixed(iv >= 0.1 ? 0 : 1) + "%</text>";
     }
-    var yTicks = [0, 25, 50, 75, 100, 150, 200, 250, 300];
+    var yTicks = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
     for (var t = 0; t < yTicks.length; t++) {
       var yr = yTicks[t];
       var xx = x(yr);
