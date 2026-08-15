@@ -410,7 +410,7 @@ create robots (lifetime cut for the creator)
 | # | step | plain English |
 |---|------|----------------|
 | 1 | **robots** | Build an agent once. You keep a permanent share of what it later earns. That makes shipping robots worth it → more robots. |
-| 2 | **mine** | Run compute. You get new CYB only if you prove the graph got better. No deposit required. |
+| 2 | **mine** | The network pays for computing [[Shapley value\|split]] and [[fold mining\|fold]]. Hashrate grows as more machines join. Runs on ordinary hardware — not specialty ASICs. |
 | 3 | **stake** | Lock CYB on a claim you believe. You earn only if the network’s knowledge moves your way. Sitting idle does not pay. |
 | 4 | **syntropy** | More mine + stake → denser true links → more useful structure on the graph. |
 | 5 | **infer** | Better structure → better search, models, and answers people can use. |
@@ -477,10 +477,10 @@ Hover a segment.
       id: "mine",
       chip: "mine",
       label: "mine",
-      sub: "compute · no deposit",
+      sub: "split · fold · any HW",
       color: "#22c55e",
       title: "Mine",
-      body: "Mining is work with machines: you help prove that knowledge on the graph got better. You do not need to lock coins first. New CYB is paid only when that improvement is real — not for burning electricity on empty work."
+      body: "The system pays for two concrete calculations: <a href=\"/shapley-value\" class=\"internal-link\">split</a> (who taught a focus shift) and <a href=\"/fold-mining\" class=\"internal-link\">fold</a> (compress those proofs into one claim). No coins locked. As more miners join, hashrate grows — and the work runs on ordinary machines (CPU, GPU, servers), not single-purpose ASICs."
     },
     {
       id: "stake",
@@ -617,7 +617,7 @@ Hover a segment.
     });
     root.querySelector("#cyb-loop-step").textContent = (i + 1) + " / " + n;
     root.querySelector("#cyb-loop-title").textContent = s.title;
-    root.querySelector("#cyb-loop-body").textContent = s.body;
+    root.querySelector("#cyb-loop-body").innerHTML = s.body;
   }
 
   root.querySelectorAll(".seg").forEach(function (el) {
