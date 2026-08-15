@@ -402,20 +402,61 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 Conservation: Σ balances = mints − burns per coin class. [[zheng]] rejects sequences that break it
 
-### mint — hybrid emission
+### mint — two kinds
 
-Two mint channels share one budget; both are work, not idle rent. Split is self-regulating under [[adaptive hybrid economics]] (PID on security margin, fee coverage, efficiency differential — α, floor, β):
+[[mint]] creates either a **Coin** (more CYB in circulation) or a **Card** (a new agent in the graph). Confusing the two is why “earn by mint” felt unfinished
+
+#### A. mint CYB (coin)
+
+New CYB supply under the time-law M(t) and hybrid budget B. Two work channels; both mint Coin; neither is idle rent. Split self-regulates under [[adaptive hybrid economics]] (PID on security margin, fee coverage, efficiency differential — α, floor, β):
 
 $$R_{\mathrm{PoW}} = B(1 - \theta^\alpha),\qquad R_{\mathrm{PoS}} = B\,\theta^\alpha$$
 
-| channel | plumb | capital at risk | who earns |
-|---------|-------|-----------------|-----------|
-| [[mining]] | mint after prove | no | compute fair [[Shapley value|division]] of proven Δφ* and [[fold mining|fold]] proofs into a claim |
-| [[staking]] (active) | mint share of stake-side budget | yes | locked CYB on a link with valence ≠ 0; paid only if focus moves with the claim |
+| channel | plumb | capital at risk | who earns CYB |
+|---------|-------|-----------------|---------------|
+| [[mining]] | mint Coin after prove | no | prove fair [[Shapley value|division]] of Δφ* and [[fold mining|fold]] into a claim |
+| [[staking]] (active) | mint Coin from stake-side budget | yes | lock on a link with valence ≠ 0; paid only if focus moves with the claim |
 
-Base emission bound is the time-law M(t) above, further gated by knowledge: new CYB for the Δφ* path mints only when proven Δφ* > 0. A security floor may mint without Δφ* only to the two providers that do work (PoW compute and active epistemic stake); it PID-decays as fees cover security. Passive lock (valence 0) buys rank weight only — no mint. Spec: [[rewards]], [[adaptive hybrid economics]]
+Δφ* path: mint only if proven Δφ* > 0. Security floor may mint without Δφ* only to PoW compute and active epistemic stake; PID-decays as fees cover security. Passive lock (valence 0): rank only, no Coin mint. Spec: [[rewards]], [[adaptive hybrid economics]]
 
-Robot-mediated mint: a [[cyb/robot|robot]] is a [[card]]. At create, the creator sets `creator_mint_share` ∈ [0, 1]. Of every mint that settles as reward for work attributed through that robot, that fraction [[pay|pays]] to the creator card; the rest to the worker. Share is fixed in the card traits at mint-of-robot — not renegotiated per reward
+#### B. mint robot / neuron (card)
+
+A [[neuron]] is an identity [[card]] (TSP-2); a [[cyb/robot|robot]] is that card with body, progs, and sigma — see [[tok]] / [[cyb/robot]]. Creating one is **mint Card**, not mint CYB:
+
+| step | plumb | effect |
+|------|-------|--------|
+| create | mint Card (id, owner, traits) | new agent that can sign, hold CYB, lock, pay |
+| fund create | optional pay / burn of CYB | cost of scarce identity; spam-resistant birth |
+| set residual | update traits at create | `creator_mint_share`, `creator_pay_share` ∈ [0, 1] frozen on the card |
+
+The creator does not earn by printing CYB at robot birth. They earn by retaining a **residual claim** on value the robot later produces:
+
+1. **On Coin mint attributed through the robot** (mining claim, active-stake yield, service mint settled via that identity):  
+   `creator ← creator_mint_share · R`, `worker/robot-owner ← (1 − creator_mint_share) · R`  
+   Implemented as mint to a temporary sink then [[pay]] split, or dual-mint under conservation — same Σ
+
+2. **On Pay that touches the robot** (fees, service, secondary card transfer royalties if enabled):  
+   `creator_pay_share` of the fee-pool leg pays to creator before protocol burn/pool split
+
+3. **On transfer of the robot card itself** (avatar / identity trade): optional royalty on secondary update/pay of ownership — creator still collects if the trait says so
+
+So “earn by mint” has two layers:
+
+| earn path | what is minted | capital |
+|-----------|----------------|---------|
+| do work | Coin CYB | mining: none; staking: lock CYB |
+| ship agents | Card robot/neuron once; then residual pays/mints forever | create cost + optional ongoing stake by the robot |
+
+A factory of robots is a factory of residual claims on future hybrid work and velocity — not a second emission schedule. Emission schedule remains M(t); robots only redirect who receives it
+
+#### flow (who ends up with new CYB)
+
+```
+M(t), B, fees  →  hybrid split (α)
+                 ├─ PoW mint  →  miner [− creator_mint_share if via robot]
+                 └─ PoS mint  →  active staker [− creator_mint_share if via robot]
+pay volume     →  1% tax → burn β · tax + pool + creator_pay_share
+```
 
 ### lock — stake as bet on truth
 
@@ -461,4 +502,4 @@ Sybil cards with zero stake and zero work receive zero. Full equations: [[reward
 
 ## utility in one line
 
-Hold CYB to **lock** truth claims and take fee yield if you are right; spend CYB to **pay** for graph service under a 1% tax that **burns** with velocity; earn CYB by **mint** only through hybrid work — mining proofs or active staking — under a schedule that front-loads compute capture and a split that self-calibrates. That is the closed loop. Deep: [[tok]], [[plumb]], [[adaptive hybrid economics]], [[cybernomics]], [[self]]
+Hold CYB to lock truth claims; spend CYB to pay for service under a 1% tax that burns with velocity; earn CYB by mint Coin through hybrid work (mining or active staking), or mint Card robots/neurons that keep a frozen creator share of the Coin mints and pays they generate. Closed loop: [[tok]], [[plumb]], [[adaptive hybrid economics]], [[cyb/robot]], [[rewards]], [[cybernomics]], [[self]]
