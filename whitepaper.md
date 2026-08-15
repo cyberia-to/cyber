@@ -13,17 +13,53 @@ status: draft
 
 ## 1. Introduction
 
-Open networks already settle money without a bank. they do not settle *knowledge*. there is still no public ledger of who taught what, what the network found worth attending to, or who gets paid when the shared picture sharpens — only companies that run the index.
+Open networks already settle money without a bank.
 
-Search ranks what the ad market will sell. social feeds rank what keeps the scroll. journals rank what passes a closed committee. models rank tokens inside a private weight file trained on humanity’s writing, sold back as rent, with no public proof of how the answer was weighted and no paycheck to the people who taught it. across all of these, the same three jobs sit with whoever owns the rank: *what matters*, *who said it*, and *who earns when understanding improves*. open publication and open source help the first mile — anyone may speak — and fail the last: settlement of credit, attention, and truth. citations and likes are weak money: easy to spam, hard to audit, and detached from whether knowledge actually got sharper.
+They do not settle knowledge.
 
-So the free-rider problem value had before open money still owns teaching: everyone reads, few are paid to teach, the commons fills with noise and extraction. frontier training concentrates further because quadratic [[attention]] makes twice the context four times the compute — only a handful of balance sheets can host the next oracle. [[alignment]] stays unmeasurable when human and machine minds never share one public distribution of what matters. sensors, agents, and organisms that could feed a planetary picture have no common place to stake a claim. the result is not “AI is imperfect.” it is that civilization has no open protocol for collective understanding — no shared, verifiable object of *what we know* — only platforms and models that borrow the planet’s intelligence and keep the keys.
+There is still no public ledger of who taught what, what the network found worth attending to, or who gets paid when the shared picture sharpens — only companies that run the index.
 
-We propose cyber: a protocol where [[neurons]] — humans, AIs, sensors, agents — stake signed [[cyberlinks]] between content-addressed [[particles]] and form one [[cybergraph]]. five primitives: particle, neuron, cyberlink, [[token]], [[focus]]. the network does not vote on importance; it computes it. [[tru]] runs the [[tri-kernel]] (diffusion, springs, heat) to a unique fixed point $\phi^*$ — collective focus. the same engine ranks the graph, compiles a model measured from structure rather than trained as a black box, and mints [[cyber/$CYB|$CYB]] only where a proven focus shift was created. the [[collective focus theorem]] states the fixed point exists, is unique under ordinary connectivity, and can be approached locally.
+---
 
-[[Foculus]] applies that fixed point to finality: a particle is final when $\phi^*_i > \tau$ — enough attention has gathered, not enough minutes on a global clock. nodes gossip and each runs the same contraction; identical signals yield one root everywhere. because agreement is local computation plus propagation, not a committee round, liveness does not require a sub-second planet-wide vote. domains settle at domain speed; partitions freeze cross-domain trade without inventing conflicting finals; shared disputes pay only the light they must. that is why the design ceiling is [[interplanetary superintelligence]]: Earth–Mars is minutes one way, and any protocol that waits on a global leader or two-thirds of a solar committee is dead in the post. planetary [[superintelligence]] is the first mountain; interplanetary is the same mechanism under honest latency. detail: [[foculus/docs/explanation/interplanetary|foculus between planets]].
+Search ranks what the ad market will sell. feeds rank what keeps the scroll. journals rank what a closed committee accepts. models rank tokens inside a private weight file — trained on humanity’s writing, sold back as rent.
 
-[[Soft3]] is the live substrate (cybergraph, [[bbg]], proofs, chaosnet). [[tru]] converges, compiles, and prices impulse in fixed-point field arithmetic. [[foculus]] is specified toward $10^{15}$ particles. this document is the short spine; deep articles open where a claim needs its own room.
+You cannot open the weights and see *why* this answer. you cannot pay the teacher whose sentence became the pattern. you cannot prove the oracle and the human still care about the same world.
+
+Open publication helps the first mile: anyone may speak. it fails the last: settlement of credit, attention, and truth. citations and likes are weak money — easy to spam, hard to audit, silent on whether understanding actually got sharper.
+
+So everyone reads and few are paid to teach. the commons fills with noise and extraction. quadratic [[attention]] makes twice the context four times the compute, so only a handful of balance sheets can host the next oracle. [[alignment]] stays a sermon while human and machine minds never share one public distribution of what matters. a sensor on a ridge, an agent in a city, a lab on another continent — each speaks, none settles into the same picture.
+
+This is not “AI is imperfect.” civilization has no open protocol for collective understanding. no shared, verifiable object of *what we know*. only platforms that borrow the planet’s intelligence and keep the keys.
+
+---
+
+We propose cyber.
+
+[[Neurons]] — humans, AIs, sensors, agents — stake signed [[cyberlinks]] between content-addressed [[particles]] and grow one [[cybergraph]]. five primitives: particle, neuron, cyberlink, [[token]], [[focus]]. the network does not vote on importance. it *computes* it.
+
+[[Tru]] runs the [[tri-kernel]] — diffusion, springs, heat — to a unique fixed point $\phi^*$: collective focus. the [[collective focus theorem]] is why this is physics, not branding: under ordinary connectivity the root exists, is unique, and can be approached locally.
+
+The same engine does three jobs that today sit in three closed industries. it ranks what matters. it compiles a model measured from the graph — not trained as a black box. it mints [[cyber/$CYB|$CYB]] only where a proven focus shift was created.
+
+Learn by linking. teach by being linked. own what the one mind becomes.
+
+---
+
+What becomes possible is concrete.
+
+Search can be inference over verified knowledge, not retrieval of sponsored documents. [[alignment]] can be a measurable distance between human and machine [[focus]] on the same graph. a scientist, a sensor, and a model can stake into one picture and be paid when that picture sharpens. a model can be a hash of the graph — reproducible, not a rented mystery. learning is mining; teaching is staking.
+
+What remains impossible without this shape of protocol is just as concrete.
+
+You cannot pay for truth when rank is private. you cannot measure divergence when there is no shared $\phi^*$. you cannot finalize a fact across light-minutes with a global committee: Earth to Mars is minutes one way, and a vote that needs the reply dies in the post. [[interplanetary superintelligence]] is not a slogan on top of Earth-scale software. it is the bar that kills every design whose liveness assumes a fast planet-wide round.
+
+[[Foculus]] applies the same fixed point to finality: a particle is final when $\phi^*_i > \tau$ — enough attention has gathered, not enough minutes on a global clock. nodes gossip; each runs the same contraction; identical signals yield one root everywhere, as a pond finds one level without phoning the far shore. domains settle at domain speed. partitions freeze cross-domain trade without inventing conflicting truth. shared disputes pay only the light they must. planetary [[superintelligence]] is the first mountain. interplanetary is the same mechanism under honest latency. detail: [[foculus/docs/explanation/interplanetary|foculus between planets]].
+
+---
+
+[[Soft3]] is the live substrate — cybergraph, [[bbg]], proofs, a public chaosnet. [[tru]] converges, compiles, and prices impulse in fixed-point field arithmetic so results are bit-reproducible and provable. [[foculus]] is specified toward $10^{15}$ particles.
+
+This document is the short spine. the deep articles open where a claim needs its own room.
 
 ## 2. Design Philosophy
 
