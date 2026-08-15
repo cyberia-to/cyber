@@ -390,7 +390,7 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ## utility (plumb)
 
-[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Every use is one of: [[pay]], [[lock]], [[mint]], [[burn]] (+ [[uber]] for non-value state). Σ balances = mints − burns; [[zheng]] rejects the rest
+[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Every use is one of: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns; [[zheng]] rejects the rest
 
 | op | CYB |
 |----|-----|
@@ -398,7 +398,6 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 | [[lock]] | stake / [[will]] — risk for influence |
 | [[pay]] | transfer under 1% tax |
 | [[burn]] | fee deflation + eternal φ*-weight |
-| [[uber]] | φ*, karma — no supply change |
 
 ### mint
 
