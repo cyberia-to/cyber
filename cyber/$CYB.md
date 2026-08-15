@@ -44,9 +44,9 @@ M(t) = p · (1 − (1 + t/τ)^(−k)),    τ = 0.33 year,   k = 0.5
 - a bootstrap head — about half the supply in the first year (~11% in the first month), spread across the year so price discovers and the first miners (days, weeks, months) are paid, with no single-day flood. The initial rate is finite (k/τ ≈ 152%/yr), not a spike.
 - a heavy tail — polynomial, never exponential: still issuing past a century (~4% of supply unissued at 200 years), always under the cap.
 
-### emission (log years, 300y)
+### emission schedule (continuous)
 
-Cumulative supply as % of field cap (left axis). Yearly inflation = new supply ÷ circulating at year start (right axis; year 1 is the genesis → half-cap jump, shown in the readout). Time axis is logarithmic so the bootstrap head stays readable. Hover any year.
+No halving. Supply follows the continuous power law \(M(t) = p \cdot (1 - (1 + t/\tau)^{-k})\). The green curve is cumulative supply as a fraction of the field cap. The cyan curve is the **instantaneous** inflation rate \(\pi(t) = M'(t)/M(t)\) (fraction per year) — not a yearly step and not a geometric cut. Time is log-scaled so the bootstrap head stays readable. Hover anywhere on the plot.
 
 <div id="cyb-emi"></div>
 
@@ -66,11 +66,10 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply �
 #cyb-emi .stat .v.s{color:var(--neon);text-shadow:0 0 12px rgba(34,197,94,.25)}
 #cyb-emi .stat .v.i{color:var(--cyan);text-shadow:0 0 12px rgba(6,182,212,.25)}
 #cyb-emi .chart-wrap{position:relative;width:100%;min-height:300px}
-#cyb-emi .chart-wrap svg{width:100%;height:auto;display:block}
+#cyb-emi .chart-wrap svg{width:100%;height:auto;display:block;cursor:crosshair}
 #cyb-emi svg text{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut)}
 #cyb-emi .tip{position:absolute;pointer-events:none;z-index:5;background:#111;border:1px solid #333;color:#f0f0f0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:7px 10px;border-radius:6px;box-shadow:0 0 20px rgba(34,197,94,.15);white-space:nowrap;display:none;line-height:1.45}
 #cyb-emi .note{font-size:11px;color:var(--mut);margin:10px 0 0;line-height:1.5}
-#cyb-emi .pt{cursor:crosshair}
 @media(max-width:640px){
   #cyb-emi .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   #cyb-emi .chart-wrap{min-height:260px}
@@ -84,210 +83,271 @@ Cumulative supply as % of field cap (left axis). Yearly inflation = new supply �
 
   var TAU = 0.33;
   var K = 0.5;
-  var GENESIS = 0.01;
   var YEARS = 300;
+  var N = 480; // dense samples in log-time
 
-  function supplyFrac(t) {
-    if (t <= 0) return GENESIS;
-    var m = 1 - Math.pow(1 + t / TAU, -K);
-    return Math.max(GENESIS, m);
+  // Continuous schedule: s(t) = M(t)/p = 1 - (1 + t/τ)^(-k), t in years
+  function s(t) {
+    if (t <= 0) return 0;
+    return 1 - Math.pow(1 + t / TAU, -K);
+  }
+  // ds/dt (fraction of cap per year)
+  function sPrime(t) {
+    if (t < 0) return 0;
+    // at t=0: k/τ
+    return (K / TAU) * Math.pow(1 + t / TAU, -(K + 1));
+  }
+  // instantaneous inflation π(t) = s'(t) / s(t)  (per year)
+  function pi(t) {
+    var st = s(t);
+    if (st <= 1e-15) return Infinity;
+    return sPrime(t) / st;
   }
 
-  function inflationAt(y) {
-    var prev = supplyFrac(y - 1);
-    var cur = supplyFrac(y);
-    if (prev <= 0) return 0;
-    return (cur - prev) / prev;
-  }
-
+  // Sample evenly in log1p space from ~1 day to YEARS
+  var T_MIN = 1 / 365;
+  var logMin = Math.log1p(T_MIN);
+  var logMax = Math.log1p(YEARS);
   var series = [];
-  for (var y = 0; y <= YEARS; y++) {
-    series.push({ y: y, supply: supplyFrac(y), infl: y === 0 ? null : inflationAt(y) });
+  for (var i = 0; i < N; i++) {
+    var u = i / (N - 1);
+    var t = Math.expm1(logMin + u * (logMax - logMin));
+    var st = s(t);
+    var p = pi(t);
+    series.push({ t: t, supply: st, infl: p, rate: sPrime(t) });
+  }
+
+  function fmtYear(t) {
+    if (t < 1 / 12) return (t * 365).toFixed(0) + "d";
+    if (t < 1) return (t * 12).toFixed(1) + "mo";
+    if (t < 10) return t.toFixed(2) + "y";
+    if (t < 100) return t.toFixed(1) + "y";
+    return t.toFixed(0) + "y";
   }
 
   function pct(x, d) {
     if (x == null || !isFinite(x)) return "\u2014";
     var p = x * 100;
+    if (p >= 100) return p.toFixed(d == null ? 0 : d) + "%";
     if (p >= 10) return p.toFixed(d == null ? 1 : d) + "%";
     if (p >= 1) return p.toFixed(d == null ? 1 : d) + "%";
-    return p.toFixed(d == null ? 2 : d) + "%";
+    if (p >= 0.01) return p.toFixed(d == null ? 2 : d) + "%";
+    return p.toFixed(3) + "%";
   }
 
   function card(label, value, cls) {
     return '<div class="stat"><div class="l">' + label + '</div><div class="v ' + (cls || "") + '">' + value + "</div></div>";
   }
 
+  // Inflation plotted on log10 scale (continuous rate spans orders of magnitude)
+  var inflVals = series.map(function (p) { return p.infl; }).filter(function (v) { return isFinite(v) && v > 0; });
+  var inflLo = Math.min.apply(null, inflVals);
+  var inflHi = Math.max.apply(null, inflVals);
+  // pad in log space
+  var logI0 = Math.log10(Math.max(inflLo, 1e-5));
+  var logI1 = Math.log10(inflHi * 1.15);
+
   function buildChart() {
-    var W = 960, H = 340;
-    var left = 52, right = 52, top = 14, bottom = 32;
+    var W = 960, H = 360;
+    var left = 52, right = 56, top = 14, bottom = 34;
     var plotW = W - left - right, plotH = H - top - bottom;
 
-    var inflMax = 0;
-    for (var i = 2; i < series.length; i++) {
-      if (series[i].infl > inflMax) inflMax = series[i].infl;
+    function x(t) {
+      return left + plotW * ((Math.log1p(t) - logMin) / (logMax - logMin));
     }
-    inflMax = Math.max(inflMax * 1.08, 0.05);
-
-    // log time: log1p(y) stretches the bootstrap head, keeps a 300y tail
-    var logMax = Math.log1p(YEARS);
-    function x(y) { return left + plotW * (Math.log1p(y) / logMax); }
-    function yS(s) { return top + plotH * (1 - s); }
-    function yI(inf) { return top + plotH * (1 - Math.min(inf, inflMax) / inflMax); }
+    function yS(sv) { return top + plotH * (1 - sv); }
+    function yI(inf) {
+      if (!isFinite(inf) || inf <= 0) return top;
+      var u = (Math.log10(inf) - logI0) / (logI1 - logI0);
+      u = Math.max(0, Math.min(1, u));
+      return top + plotH * (1 - u);
+    }
 
     var grid = "";
+    // left ticks: supply %
     for (var g = 0; g <= 4; g++) {
       var sv = g / 4;
       var yy = yS(sv);
       grid += '<line x1="' + left + '" y1="' + yy + '" x2="' + (W - right) + '" y2="' + yy + '" stroke="#222" stroke-width="0.5"></line>';
       grid += '<text x="' + (left - 6) + '" y="' + (yy + 3) + '" text-anchor="end">' + Math.round(sv * 100) + "%</text>";
-      var iv = inflMax * (g / 4);
-      grid += '<text x="' + (W - right + 6) + '" y="' + (yy + 3) + '" text-anchor="start">' + (iv * 100).toFixed(iv >= 0.1 ? 0 : 1) + "%</text>";
     }
-    var yTicks = [0, 1, 2, 5, 10, 20, 50, 100, 200, 300];
+    // right ticks: log inflation
+    var inflTicks = [];
+    var e0 = Math.ceil(logI0);
+    var e1 = Math.floor(logI1);
+    for (var e = e0; e <= e1; e++) inflTicks.push(Math.pow(10, e));
+    // always include a mid label if sparse
+    if (inflTicks.length < 2) {
+      inflTicks = [Math.pow(10, logI0), Math.pow(10, (logI0 + logI1) / 2), Math.pow(10, logI1)];
+    }
+    for (var it = 0; it < inflTicks.length; it++) {
+      var iv = inflTicks[it];
+      if (iv < Math.pow(10, logI0) || iv > Math.pow(10, logI1)) continue;
+      var yi = yI(iv);
+      grid += '<text x="' + (W - right + 6) + '" y="' + (yi + 3) + '" text-anchor="start">' + pct(iv, iv >= 0.1 ? 0 : 1) + "/y</text>";
+    }
+
+    var yTicks = [T_MIN, 1 / 12, 0.25, 1, 2, 5, 10, 20, 50, 100, 200, 300];
+    var yLabels = ["1d", "1mo", "3mo", "1y", "2y", "5y", "10y", "20y", "50y", "100y", "200y", "300y"];
     for (var t = 0; t < yTicks.length; t++) {
       var yr = yTicks[t];
+      if (yr < T_MIN * 0.99 || yr > YEARS * 1.001) continue;
       var xx = x(yr);
       grid += '<line x1="' + xx + '" y1="' + top + '" x2="' + xx + '" y2="' + (top + plotH) + '" stroke="#1a1a1a" stroke-width="0.5"></line>';
-      grid += '<text x="' + xx + '" y="' + (H - 10) + '" text-anchor="middle">' + yr + "y</text>";
+      grid += '<text x="' + xx + '" y="' + (H - 10) + '" text-anchor="middle">' + yLabels[t] + "</text>";
     }
 
-    var ptsS = series.map(function (p) {
-      return x(p.y).toFixed(1) + "," + yS(p.supply).toFixed(1);
-    }).join(" ");
-
+    var ptsS = [];
     var ptsI = [];
-    for (var j = 2; j < series.length; j++) {
-      ptsI.push(x(series[j].y).toFixed(1) + "," + yI(series[j].infl).toFixed(1));
-    }
-
-    // Full-height hit strips per year so hover works for both lines (log spacing).
-    var hits = "";
-    for (var k = 0; k < series.length; k++) {
-      var p = series[k];
-      var cx = x(p.y);
-      var prevX = k === 0 ? left : (x(series[k - 1].y) + cx) / 2;
-      var nextX = k === series.length - 1 ? left + plotW : (cx + x(series[k + 1].y)) / 2;
-      var hx = prevX;
-      var hw = Math.max(nextX - prevX, 2);
-      hits +=
-        '<rect class="pt" data-y="' + p.y + '" x="' + hx.toFixed(1) + '" y="' + top +
-        '" width="' + hw.toFixed(1) + '" height="' + plotH +
-        '" fill="transparent"></rect>';
-    }
-
-    // Markers on both series (drawn under hits, above polylines via order: lines then marks then hits)
-    var marks = "";
-    for (var m = 0; m < series.length; m++) {
-      var q = series[m];
-      var mx = x(q.y).toFixed(1);
-      marks +=
-        '<circle class="mk-s" data-y="' + q.y + '" cx="' + mx + '" cy="' + yS(q.supply).toFixed(1) +
-        '" r="3.5" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.6" opacity="0"></circle>';
-      if (q.y >= 2) {
-        marks +=
-          '<circle class="mk-i" data-y="' + q.y + '" cx="' + mx + '" cy="' + yI(q.infl).toFixed(1) +
-          '" r="3.5" fill="#0a0a0a" stroke="#06b6d4" stroke-width="1.6" opacity="0"></circle>';
+    for (var j = 0; j < series.length; j++) {
+      var p = series[j];
+      ptsS.push(x(p.t).toFixed(2) + "," + yS(p.supply).toFixed(2));
+      if (isFinite(p.infl) && p.infl > 0) {
+        ptsI.push(x(p.t).toFixed(2) + "," + yI(p.infl).toFixed(2));
       }
     }
 
     return (
       '<svg id="cyb-emi-svg" viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid meet">' +
       grid +
-      '<polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="' + ptsS + '"></polyline>' +
+      '<polyline fill="none" stroke="#22c55e" stroke-width="2.2" points="' + ptsS.join(" ") + '"></polyline>' +
       '<polyline fill="none" stroke="#06b6d4" stroke-width="2" points="' + ptsI.join(" ") + '"></polyline>' +
-      marks +
+      '<circle id="cyb-mk-s" cx="0" cy="0" r="4" fill="#0a0a0a" stroke="#22c55e" stroke-width="1.8" opacity="0"></circle>' +
+      '<circle id="cyb-mk-i" cx="0" cy="0" r="4" fill="#0a0a0a" stroke="#06b6d4" stroke-width="1.8" opacity="0"></circle>' +
       '<line id="cyb-emi-guide" x1="0" y1="' + top + '" x2="0" y2="' + (top + plotH) +
       '" stroke="#444" stroke-width="1" stroke-dasharray="3 3" opacity="0"></line>' +
-      hits +
+      '<rect id="cyb-emi-hit" x="' + left + '" y="' + top + '" width="' + plotW + '" height="' + plotH +
+      '" fill="transparent"></rect>' +
       "</svg>"
     );
   }
 
-  function render(hoverY) {
-    var y = hoverY == null ? 10 : hoverY;
-    var p = series[y];
-    var inflLabel = y === 0 ? "\u2014" : (y === 1 ? "~50\u00d7 from genesis" : pct(p.infl, 1));
-    root.querySelector("#cyb-emi-stats").innerHTML =
-      card("year", y + " / " + YEARS, "") +
-      card("supply", pct(p.supply, 1), "s") +
-      card("inflation", inflLabel, "i") +
-      card("unissued", pct(1 - p.supply, 1), "");
+  function nearest(t) {
+    // binary-ish: series is sorted by t
+    var lo = 0, hi = series.length - 1;
+    while (hi - lo > 1) {
+      var mid = (lo + hi) >> 1;
+      if (series[mid].t < t) lo = mid; else hi = mid;
+    }
+    return (Math.abs(series[lo].t - t) < Math.abs(series[hi].t - t)) ? series[lo] : series[hi];
   }
 
-  function bindTip() {
+  function at(t) {
+    var st = s(t);
+    var p = pi(t);
+    var r = sPrime(t);
+    return { t: t, supply: st, infl: p, rate: r };
+  }
+
+  function render(p) {
+    if (!p) p = at(10);
+    root.querySelector("#cyb-emi-stats").innerHTML =
+      card("age", fmtYear(p.t), "") +
+      card("supply", pct(p.supply, 2), "s") +
+      card("inflation \u03c0", isFinite(p.infl) ? pct(p.infl, 2) + "/y" : "\u2014", "i") +
+      card("emit rate", pct(p.rate, 2) + " cap/y", "");
+  }
+
+  function bind() {
     var wrap = root.querySelector("#cyb-emi-chart");
     var svg = root.querySelector("#cyb-emi-svg");
     if (!wrap || !svg) return;
-    var tip = root.querySelector("#cyb-emi-tip");
-    if (!tip) {
-      tip = document.createElement("div");
-      tip.id = "cyb-emi-tip";
-      tip.className = "tip";
-      wrap.appendChild(tip);
-    }
+    var tip = document.createElement("div");
+    tip.id = "cyb-emi-tip";
+    tip.className = "tip";
+    wrap.appendChild(tip);
+
+    var hit = svg.querySelector("#cyb-emi-hit");
     var guide = svg.querySelector("#cyb-emi-guide");
-    function clearMarks() {
-      svg.querySelectorAll(".mk-s, .mk-i").forEach(function (el) { el.setAttribute("opacity", "0"); });
-      if (guide) guide.setAttribute("opacity", "0");
+    var mkS = svg.querySelector("#cyb-mk-s");
+    var mkI = svg.querySelector("#cyb-mk-i");
+
+    var W = 960, H = 360;
+    var left = 52, right = 56, top = 14, bottom = 34;
+    var plotW = W - left - right, plotH = H - top - bottom;
+
+    function x(t) {
+      return left + plotW * ((Math.log1p(t) - logMin) / (logMax - logMin));
     }
-    function show(hit, year, clientX, clientY) {
-      var p = series[year];
-      var infl = year === 0 ? "\u2014" : year === 1 ? "~50\u00d7 (genesis \u2192 half cap)" : pct(p.infl, 2);
+    function yS(sv) { return top + plotH * (1 - sv); }
+    function yI(inf) {
+      if (!isFinite(inf) || inf <= 0) return top;
+      var u = (Math.log10(inf) - logI0) / (logI1 - logI0);
+      u = Math.max(0, Math.min(1, u));
+      return top + plotH * (1 - u);
+    }
+    function tFromClientX(clientX) {
+      var rect = svg.getBoundingClientRect();
+      var px = (clientX - rect.left) / rect.width * W;
+      var u = (px - left) / plotW;
+      u = Math.max(0, Math.min(1, u));
+      return Math.expm1(logMin + u * (logMax - logMin));
+    }
+
+    function show(clientX, clientY) {
+      var t = tFromClientX(clientX);
+      var p = at(t);
       tip.style.display = "block";
-      tip.innerHTML = "year " + year + "<br>supply " + pct(p.supply, 2) + "<br>inflation " + infl;
+      tip.innerHTML =
+        "age " + fmtYear(p.t) +
+        "<br>supply " + pct(p.supply, 2) +
+        "<br>\u03c0 " + (isFinite(p.infl) ? pct(p.infl, 2) + "/y" : "\u2014") +
+        "<br>rate " + pct(p.rate, 2) + " cap/y";
       var wrapRect = wrap.getBoundingClientRect();
-      var tipW = tip.offsetWidth || 160;
-      var tipH = tip.offsetHeight || 48;
+      var tipW = tip.offsetWidth || 170;
+      var tipH = tip.offsetHeight || 60;
       var cx = clientX - wrapRect.left;
       var cy = clientY - wrapRect.top;
-      var left = cx + 14;
-      var top = cy - tipH - 10;
-      if (left + tipW > wrapRect.width - 4) left = cx - tipW - 14;
-      if (left < 4) left = 4;
-      if (top < 4) top = cy + 16;
-      tip.style.left = left + "px";
-      tip.style.top = top + "px";
-      clearMarks();
-      svg.querySelectorAll('.mk-s[data-y="' + year + '"], .mk-i[data-y="' + year + '"]').forEach(function (el) {
-        el.setAttribute("opacity", "1");
-      });
-      if (guide) {
-        var gx = hit.getAttribute("x");
-        var gw = hit.getAttribute("width");
-        var mid = (+gx) + (+gw) / 2;
-        // better: use mark x if available
-        var mk = svg.querySelector('.mk-s[data-y="' + year + '"]');
-        if (mk) mid = +mk.getAttribute("cx");
-        guide.setAttribute("x1", mid);
-        guide.setAttribute("x2", mid);
-        guide.setAttribute("opacity", "1");
+      var L = cx + 14;
+      var T = cy - tipH - 10;
+      if (L + tipW > wrapRect.width - 4) L = cx - tipW - 14;
+      if (L < 4) L = 4;
+      if (T < 4) T = cy + 16;
+      tip.style.left = L + "px";
+      tip.style.top = T + "px";
+
+      var xx = x(p.t);
+      var ys = yS(p.supply);
+      var yi = yI(p.infl);
+      mkS.setAttribute("cx", xx);
+      mkS.setAttribute("cy", ys);
+      mkS.setAttribute("opacity", "1");
+      if (isFinite(p.infl) && p.infl > 0) {
+        mkI.setAttribute("cx", xx);
+        mkI.setAttribute("cy", yi);
+        mkI.setAttribute("opacity", "1");
+      } else {
+        mkI.setAttribute("opacity", "0");
       }
-      render(year);
+      guide.setAttribute("x1", xx);
+      guide.setAttribute("x2", xx);
+      guide.setAttribute("opacity", "1");
+      render(p);
     }
     function hide() {
       tip.style.display = "none";
-      clearMarks();
+      mkS.setAttribute("opacity", "0");
+      mkI.setAttribute("opacity", "0");
+      guide.setAttribute("opacity", "0");
     }
-    svg.querySelectorAll("rect.pt").forEach(function (c) {
-      var year = +c.getAttribute("data-y");
-      c.addEventListener("mouseenter", function (e) { show(c, year, e.clientX, e.clientY); });
-      c.addEventListener("mousemove", function (e) { show(c, year, e.clientX, e.clientY); });
-      c.addEventListener("mouseleave", hide);
-    });
+
+    hit.addEventListener("mousemove", function (e) { show(e.clientX, e.clientY); });
+    hit.addEventListener("mouseenter", function (e) { show(e.clientX, e.clientY); });
+    hit.addEventListener("mouseleave", hide);
   }
 
   root.innerHTML =
     '<div class="panel">' +
     '<div class="head"><div class="title">CYB emission schedule</div>' +
-    '<div class="legend"><span><i class="s"></i>supply % of cap</span><span><i class="i"></i>yearly inflation</span></div></div>' +
+    '<div class="legend"><span><i class="s"></i>cumulative supply</span><span><i class="i"></i>instant inflation \u03c0(t)</span></div></div>' +
     '<div class="stats" id="cyb-emi-stats"></div>' +
     '<div class="chart-wrap" id="cyb-emi-chart"></div>' +
-    '<p class="note">M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. Genesis floor 1% of cap. Time axis: log(1 + years) over 300y. Inflation axis scaled from year 2 (year 1 is the bootstrap expansion). Left: cumulative supply. Right: yearly inflation.</p>' +
+    '<p class="note">Continuous law: M(t)/p = 1 \u2212 (1 + t/\u03c4)^(\u2212k), \u03c4 = 0.33 y, k = 0.5. No discrete years, no halving. Left: cumulative supply / cap. Right: log scale of \u03c0(t) = M\u2032(t)/M(t) per year. Time: log(1 + t) from 1 day to 300 years. Genesis 1% is a separate day-one allocation under the same cap; the curve is the continuous schedule alone.</p>' +
     "</div>";
 
   root.querySelector("#cyb-emi-chart").innerHTML = buildChart();
-  render(10);
-  bindTip();
+  render(at(10));
+  bind();
 })();
 </script>
 
