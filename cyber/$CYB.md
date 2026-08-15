@@ -388,6 +388,77 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 })();
 </script>
 
-## allocation
+## utility (plumb)
 
-Each unit of new emission is assigned by stake-weighted proven Δφ* — the directed focus shift a contribution creates. Sybil identities without stake earn nothing. Emission is time-law; attribution is focus-law. Full stack: [[rewards]], [[mining]], [[fold mining]], [[Shapley value]], [[cybernomics]]
+[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Every use of the token is one of five operations: [[pay]], [[lock]], [[mint]], [[burn]] (and [[uber]] for non-value state). If a behavior cannot be said in plumb, it is not part of the value layer
+
+| op | CYB role | what it buys |
+|----|----------|--------------|
+| [[mint]] | create supply | security work + proven knowledge (hybrid emission) |
+| [[lock]] | freeze supply for a term | epistemic risk / influence on φ* ([[staking]], [[will]]) |
+| [[pay]] | move supply between cards | universal tax, service, robot creator share |
+| [[burn]] | destroy supply | permanent φ*-weight, fee deflation |
+| [[uber]] | state without balance change | rankings, karma, parameters (no CYB mint/burn) |
+
+Conservation: Σ balances = mints − burns per coin class. [[zheng]] rejects sequences that break it
+
+### mint — hybrid emission
+
+Two mint channels share one budget; both are work, not idle rent. Split is self-regulating under [[adaptive hybrid economics]] (PID on security margin, fee coverage, efficiency differential — α, floor, β):
+
+$$R_{\mathrm{PoW}} = B(1 - \theta^\alpha),\qquad R_{\mathrm{PoS}} = B\,\theta^\alpha$$
+
+| channel | plumb | capital at risk | who earns |
+|---------|-------|-----------------|-----------|
+| [[mining]] | mint after prove | no | compute fair [[Shapley value|division]] of proven Δφ* and [[fold mining|fold]] proofs into a claim |
+| [[staking]] (active) | mint share of stake-side budget | yes | locked CYB on a link with valence ≠ 0; paid only if focus moves with the claim |
+
+Base emission bound is the time-law M(t) above, further gated by knowledge: new CYB for the Δφ* path mints only when proven Δφ* > 0. A security floor may mint without Δφ* only to the two providers that do work (PoW compute and active epistemic stake); it PID-decays as fees cover security. Passive lock (valence 0) buys rank weight only — no mint. Spec: [[rewards]], [[adaptive hybrid economics]]
+
+Robot-mediated mint: a [[cyb/robot|robot]] is a [[card]]. At create, the creator sets `creator_mint_share` ∈ [0, 1]. Of every mint that settles as reward for work attributed through that robot, that fraction [[pay|pays]] to the creator card; the rest to the worker. Share is fixed in the card traits at mint-of-robot — not renegotiated per reward
+
+### lock — stake as bet on truth
+
+[[lock]] freezes CYB for a term against a [[cyberlink]] or path (see [[will]], [[staking]]):
+
+- active lock (valence ±1): capital at risk; weight in effective adjacency; eligible for stake-side mint and fee yield weighted by [[karma]]
+- passive lock (valence 0): capital buys influence over φ* only; no emission; the return is rank itself
+
+Unlock after term or market resolution. Wrong active bets lose influence and score under [[Bayesian Truth Serum|BTS]]; they do not print yield by sitting still
+
+### pay — universal tax
+
+Every CYB [[pay]] (transfer between cards) takes a protocol fee τ_pay = 1% of the transferred amount. Gross pay G moves as:
+
+| slice | share of G | destination |
+|-------|------------|-------------|
+| recipient | 1 − τ_pay | destination card |
+| fee pool | τ_pay · (1 − β) | security / service budget (hybrid + query fees) |
+| burn | τ_pay · β | permanent remove from supply |
+
+Default β ∈ (0, 1) is a genesis/PID parameter: velocity of pay becomes continuous deflation. If the pay is executed by or through a robot, an additional `creator_pay_share` (set at robot create, default 0) of the fee-pool leg [[pay|pays]] to the creator before the pool split — creator is paid for tools that move value, not for minting out of nothing
+
+Pay is also how service is settled: header pull, query answer, DA sample, host inference — all pays under the same tax
+
+### burn — permanent commitment and deflation
+
+| burn path | effect |
+|-----------|--------|
+| fee burn β · τ_pay · volume | supply shrinks with economic activity |
+| eternal [[particle]] / [[cyberlink]] | burn CYB for a floor on φ*-weight that markets cannot erase |
+| failed / expired locks | optional slash into burn (not into another wallet) |
+
+Burn is the only way to make influence permanent. Mint creates transferable energy; burn converts energy into topology that outlives the holder
+
+## allocation (who receives mint)
+
+Two laws stay separate:
+
+1. **how much** — M(t) and the hybrid budget B (time + security floor + fee recycle)
+2. **who** — for the knowledge leg: stake-weighted proven Δφ* divided by [[Shapley value]] among contributors this epoch; for the work leg: proven fold/settlement work; for the stake leg: active locked stake × karma
+
+Sybil cards with zero stake and zero work receive zero. Full equations: [[rewards]]
+
+## utility in one line
+
+Hold CYB to **lock** truth claims and take fee yield if you are right; spend CYB to **pay** for graph service under a 1% tax that **burns** with velocity; earn CYB by **mint** only through hybrid work — mining proofs or active staking — under a schedule that front-loads compute capture and a split that self-calibrates. That is the closed loop. Deep: [[tok]], [[plumb]], [[adaptive hybrid economics]], [[cybernomics]], [[self]]
