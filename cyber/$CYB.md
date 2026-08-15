@@ -400,7 +400,7 @@ Not a checklist of actions — seven factors that compound. Each one makes the n
 fairness  +  finality  +  truth
         → intelligence
           → revenue
-            → hardware
+            → efficiency
               → population
                 → fairness … (again, larger)
 ```
@@ -412,7 +412,7 @@ fairness  +  finality  +  truth
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
 | 5 | **revenue** | Use pays in CYB. Fees (plus early emission) fund creators, miners, and stakers. |
-| 6 | **hardware** | Revenue buys better general-purpose machines → more hashrate and cheaper answers next round. |
+| 6 | **efficiency** | Revenue reinvests in better general-purpose machines → more useful work per joule and per dollar → cheaper fairness and answers next round. |
 | 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
 
 Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone.
@@ -510,13 +510,13 @@ Hover a factor.
       body: "Queries, data, and answers are paid in CYB. A small cut of each payment is burned; the rest funds the reward budget for creators, miners, and stakers. Early on, scheduled new coins seed the budget. Later, people who use intelligence pay those who produced it."
     },
     {
-      id: "hardware",
-      chip: "hardware",
-      label: "hardware",
-      sub: "better machines",
+      id: "efficiency",
+      chip: "efficiency",
+      label: "efficiency",
+      sub: "work per joule",
       color: "#f97316",
-      title: "Hardware",
-      body: "Revenue buys better general-purpose machines — CPU, GPU, servers — not single-purpose ASICs. More hashrate for fairness work, cheaper capacity to serve answers. Capacity compounds only because the last round paid for real improvement."
+      title: "Efficiency",
+      body: "Revenue buys better general-purpose machines — CPU, GPU, servers — not single-purpose ASICs. The factor is efficiency: more useful split/fold and cheaper answers per joule and per dollar. Hashrate and serving capacity rise because the last round paid for real improvement, not empty heat."
     },
     {
       id: "population",
