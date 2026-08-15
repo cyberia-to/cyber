@@ -445,7 +445,7 @@ Hover a factor.
 #cyb-loop .title{font-size:26px;font-weight:700;margin:0;line-height:1.15;letter-spacing:-0.02em}
 #cyb-loop .body{margin:0;font-size:16px;line-height:1.6;color:#e8e8e8;max-width:64ch}
 #cyb-loop .chips{display:flex;flex-wrap:nowrap;gap:6px;width:100%;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-#cyb-loop .chip{flex:1 1 0;min-width:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;padding:9px 4px;border-radius:999px;border:1px solid var(--ln);background:#0a0a0a;color:var(--mut);cursor:pointer;text-align:center;white-space:nowrap;transition:background .12s,color .12s,border-color .12s,box-shadow .12s}
+#cyb-loop .chip{flex:1 1 0;min-width:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:9px 3px;border-radius:999px;border:1px solid var(--ln);background:#0a0a0a;color:var(--mut);cursor:pointer;text-align:center;white-space:nowrap;transition:background .12s,color .12s,border-color .12s,box-shadow .12s}
 #cyb-loop .chip:hover{border-color:#444;color:var(--tx)}
 #cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(34,197,94,.35);font-weight:700}
 @media(min-width:900px){
@@ -462,7 +462,7 @@ Hover a factor.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Network-effect factors (not action checklist). One body each.
+  // Network-effect factors (not action checklist). One body each. v2
   var STEPS = [
     {
       id: "fairness",
