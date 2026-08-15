@@ -394,28 +394,28 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ### value loop
 
-$CYB growth only where φ* grew. One chain:
+New $CYB only appears where the network’s knowledge actually got better. The loop:
 
 ```
-create robots (lifetime residual)
-  → more actors
-    → more mining  +  more active stake
-      → more syntropy
-        → better inference
-          → more fees → pot B
+create robots (lifetime cut for the creator)
+  → more agents on the network
+    → more mining  +  more staking
+      → more syntropy (useful structure)
+        → better answers
+          → more fees paid in CYB
             → better hardware
-              → more capacity → mint again …
+              → more capacity → rewards again …
 ```
 
-| # | step | what happens |
+| # | step | plain English |
 |---|------|----------------|
-| 1 | **robots** | Create an actor once. Lifetime creator residual on that robot’s later mints and pays → shipping robots is rational → more robots. |
-| 2 | **mine** | Bagless compute. Prove [[Shapley value\|division]] + [[fold mining\|fold]]. Mint only if proven $\Delta\phi^* > 0$. |
-| 3 | **stake** | Capital at risk. Lock on a claim ($v \neq 0$). Mint only if focus moves with you. Idle bags do not mint. |
-| 4 | **syntropy** | More robots drive more mine + stake → proven positive Δφ* → more structure on the graph. |
-| 5 | **infer** | More syntropy = better product (rank, compile, answers). |
-| 6 | **fees** | Use pays in CYB. Fee pool + $M(t)$ → pot B → creators, miners, stakers. |
-| 7 | **hardware** | Honest mint funds better machines → more prove capacity → next mine cycle stronger. |
+| 1 | **robots** | Build an agent once. You keep a permanent share of what it later earns. That makes shipping robots worth it → more robots. |
+| 2 | **mine** | Run compute. You get new CYB only if you prove the graph got better. No deposit required. |
+| 3 | **stake** | Lock CYB on a claim you believe. You earn only if the network’s knowledge moves your way. Sitting idle does not pay. |
+| 4 | **syntropy** | More mine + stake → denser true links → more useful structure on the graph. |
+| 5 | **infer** | Better structure → better search, models, and answers people can use. |
+| 6 | **fees** | Using the network costs CYB. Those fees (plus early emission) refill the reward budget for creators, miners, and stakers. |
+| 7 | **hardware** | Rewards buy better machines → more capacity next round. |
 
 Hover a segment.
 
@@ -462,61 +462,61 @@ Hover a segment.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // One body format per step: cause → effect, why money follows. No triple close.
+  // Plain-language bodies — one paragraph each, no jargon soup.
   var STEPS = [
     {
       id: "robots",
       chip: "robots",
       label: "robots",
-      sub: "create · residual",
+      sub: "build once · earn forever",
       color: "#a855f7",
       title: "Create robots",
-      body: "Ship an actor once and freeze creator shares on its later Coin mints and fee pays — lifetime residual, same pot, not a second schedule. Residual makes building robots rational, so more actors appear and pull more mining and staking onto the graph."
+      body: "You build an agent once. From then on you keep a permanent cut of what it earns — both new coins minted through its work and fees when people pay it. That is not a second money printer; it is a share of the same rewards. Because creators get paid for life, more people ship robots, and more agents show up to mine and stake."
     },
     {
       id: "mine",
       chip: "mine",
       label: "mine",
-      sub: "PoW · no bag",
+      sub: "compute · no deposit",
       color: "#22c55e",
       title: "Mine",
-      body: "Bagless compute: prove division and fold. Pot B’s PoW leg mints only when proven Δφ* > 0. Compute is paid for improving the graph, not for spinning fans."
+      body: "Mining is work with machines: you help prove that knowledge on the graph got better. You do not need to lock coins first. New CYB is paid only when that improvement is real — not for burning electricity on empty work."
     },
     {
       id: "stake",
       chip: "stake",
       label: "stake",
-      sub: "PoS · active",
+      sub: "lock coins · take a side",
       color: "#06b6d4",
-      title: "Active stake",
-      body: "Capital at risk is a separate channel from mining. Lock CYB on a claim (v ≠ 0); stake-side mint only if focus moves with you. Passive lock ranks only — idle bags do not mint. Capital earns when it backs truth."
+      title: "Stake",
+      body: "Staking is different from mining. You lock CYB on a claim you believe is true. You earn only if the network’s knowledge moves with that claim. If you just park coins and do nothing, you do not mint — capital is paid for backing truth, not for sitting still."
     },
     {
       id: "syntropy",
       chip: "syntropy",
       label: "syntropy",
-      sub: "Δφ* · structure",
+      sub: "more useful structure",
       color: "#eab308",
       title: "More syntropy",
-      body: "More robots mean more mine and more active stake. Proofs densify structure; risked capital weights true claims. Proven positive Δφ* is new syntropy — the structure the network did not have. That is what honest mint actually bought."
+      body: "Robots pull more mining and more staking. Machines densify true links; risked capital weights honest claims. The graph becomes more ordered and useful — that growth of structure is syntropy. It is the real thing rewards buy."
     },
     {
       id: "infer",
       chip: "infer",
       label: "infer",
-      sub: "product",
+      sub: "better answers",
       color: "#c084fc",
-      title: "Better inference",
-      body: "Rank, compile, and answers all read the same fixed point. More syntropy makes the product better — no parallel AI budget. Inference quality is what people will pay for."
+      title: "Better answers",
+      body: "Search, ranking, and answers all read the same knowledge graph. When syntropy rises, answers get sharper. People and robots pay for that product — not for a separate “AI token,” but for the network they already improved."
     },
     {
       id: "fees",
       chip: "fees",
       label: "fees",
-      sub: "use → pot B",
+      sub: "use pays rewards",
       color: "#38bdf8",
-      title: "Fees reload the pot",
-      body: "Use settles in CYB (1% tax: β burns, rest to pool). Fee pool plus residual M(t) form pot B; hybrid α pays miners and active stakers, with creator shares on robot-mediated flow. Early M(t) seeds work; later, consumers fund security."
+      title: "Fees fund the next round",
+      body: "Using the network — queries, data, answers — is paid in CYB. A small cut of each payment is burned; the rest goes into the reward budget. Early on, scheduled new coins seed the budget while usage is thin. Later, people who use the product pay those who improved it: creators, miners, and stakers."
     },
     {
       id: "hardware",
@@ -525,7 +525,7 @@ Hover a segment.
       sub: "better machines",
       color: "#f97316",
       title: "Better hardware",
-      body: "Honest mint is reinvested in better machines — more prove throughput, lower cost per useful Δφ*. Stronger hardware feeds the next mine cycle and makes serving inference cheaper. Capacity compounds only because the pot paid for real work."
+      body: "Honest rewards buy better machines. Better machines mean more useful work per day and cheaper answers to serve. Capacity grows only because the previous round paid for real improvement — then the loop starts again with more robots, mining, and staking."
     }
   ];
 
@@ -594,7 +594,7 @@ Hover a segment.
     '<circle class="hub-glow" cx="' + cx + '" cy="' + cy + '" r="90"></circle>' +
     '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="76"></circle>' +
     '<text class="hub-t" x="' + cx + '" y="' + (cy - 4) + '">$CYB growth</text>' +
-    '<text class="hub-s" x="' + cx + '" y="' + (cy + 18) + '">where φ* grew</text>' +
+    '<text class="hub-s" x="' + cx + '" y="' + (cy + 18) + '">where knowledge grew</text>' +
     "</g></svg></div>" +
     '<div class="chips">' + chips + "</div>" +
     '<div class="detail">' +
