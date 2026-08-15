@@ -394,27 +394,34 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ### value loop
 
-One causal chain. Money pays for proven knowledge; proven knowledge is the product people pay for. That is the whole loop.
+One causal chain. Money pays for proven knowledge; proven knowledge is the product people pay for. That is the whole loop — $CYB growth only where φ* grew.
 
 ```
-more honest mint
-  → more work on the graph
-    → better φ*
-      → better inference
-        → more fees paid in CYB
-          → larger reward pot
-            → more honest mint …
+mine (compute, no bag)  ─┐
+                          ├→ better φ* → better inference → more fees → pot B
+active stake (capital)  ─┘                                              │
+                                                                        ↓
+create robots → creator residual (lifetime) → more robots ──────→ more work on graph
+                                                                        │
+                                                                        └→ mint again …
 ```
 
-Why each arrow is forced, not hoped for:
+Two mint channels — separate, not mixed:
 
-1. **Mint only for proven Δφ*** — new CYB goes to mining (division + fold) and active stake when focus actually moved. Idle capital does not mint. So mint is a payment for knowledge work, not a drip.
-2. **More of that mint → more work → better φ*** — a larger honest prize pulls compute and risked capital onto true claims. The tri-kernel reconverges on a richer graph. Better φ* is the direct output of paid work.
-3. **Better φ* → better inference** — rank, compile, and query all read the same fixed point. Higher-quality focus is a better product: sharper answers, verifiable weight. No separate “AI token” — the intelligence is the graph.
-4. **Better inference → more pay** — users and robots settle headers, queries, DA, inference in CYB (1% tax: β burns, rest to fee pool). Demand is use of the product, not speculation on a fee coupon.
-5. **More fees + schedule M(t) → next mint pot** — fee pool and residual emission form budget B; hybrid α splits B between PoW and active PoS. Early on, front-loaded M(t) seeds the pot while fees are thin; as inference is used, fees take over security. Pot mints again only through step 1.
+1. **Mining** — bagless compute. Prove [[Shapley value|division]] and [[fold mining|fold]]; mint when proven $\Delta\phi^* > 0$. No lock required. This is the PoW leg of pot B.
+2. **Active stake** — capital at risk. Lock CYB on a claim with $v \neq 0$; mint on the stake side only if focus moves with that claim. Passive lock ($v = 0$) ranks only — idle bags do not mint. This is the PoS leg of pot B.
 
-The loop closes because the same token is both wage for improving φ* and price of consuming it. Break either gate and the flywheel dies: mint without Δφ* would print money without a better product; fees without useful inference would not exist. Agents (robot Cards with frozen creator shares) amplify the same chain — more structured work on the graph — without a second emission schedule.
+Then the product loop:
+
+3. **More of both → better φ*** — compute densifies proofs; risked capital weights true claims. The tri-kernel reconverges. Better φ* is the direct output of paid work.
+4. **Better φ* → better inference** — rank, compile, query all read the same fixed point. Improve focus and the product improves — no parallel AI budget.
+5. **Better inference → more fees → pot reloads mint** — use (headers, queries, DA, inference) pays in CYB (1% tax: β burns, rest to fee pool). Fee pool + schedule $M(t)$ form budget B; hybrid α splits B back into mining and active stake. Early: front-loaded $M(t)$ seeds work while fees are thin. Later: use pays security.
+
+And a separate growth multiplier:
+
+6. **Create robots → creator residual → more robots** — mint a robot Card once; freeze `creator_mint_share` and `creator_pay_share`. Creators take a lifetime cut of later Coin mints and fee-leg pays through that actor — a permanent referral on the agent they shipped. Residual is not a second $M(t)$; it redirects who receives existing flow. That income makes shipping robots rational → more actors on the graph → more structured work → stronger φ* again.
+
+The loop closes because the same token is wage for improving φ* and price of consuming it. Break a gate and the flywheel dies: mint without Δφ* prints empty money; fees without useful inference never arrive.
 
 Hover the ring for each arrow.
 
@@ -426,13 +433,13 @@ Hover the ring for each arrow.
 #cyb-loop .stage{position:relative}
 #cyb-loop svg{width:100%;height:auto;display:block}
 #cyb-loop .seg{cursor:pointer}
-#cyb-loop .seg path.arc{fill:none;stroke-width:28;stroke-linecap:butt;opacity:0.88;transition:opacity .12s,filter .12s,stroke-width .12s}
-#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:32;filter:drop-shadow(0 0 14px rgba(34,197,94,.4))}
+#cyb-loop .seg path.arc{fill:none;stroke-width:26;stroke-linecap:butt;opacity:0.88;transition:opacity .12s,filter .12s,stroke-width .12s}
+#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:30;filter:drop-shadow(0 0 14px rgba(34,197,94,.4))}
 #cyb-loop .hub{pointer-events:none}
 #cyb-loop .hub-circle{fill:#0a0a0a;stroke:#222;stroke-width:1.5}
-#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;fill:var(--neon);font-weight:700;text-anchor:middle}
-#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9.5px;fill:var(--mut);text-anchor:middle}
-#cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;fill:var(--tx);font-weight:600;text-anchor:middle;pointer-events:none}
+#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;fill:var(--neon);font-weight:700;text-anchor:middle}
+#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut);text-anchor:middle}
+#cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10.5px;fill:var(--tx);font-weight:600;text-anchor:middle;pointer-events:none}
 #cyb-loop .nsub{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9px;fill:var(--mut);text-anchor:middle;pointer-events:none}
 #cyb-loop .side{display:flex;flex-direction:column;gap:10px;min-width:0}
 #cyb-loop .kicker{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--neon)}
@@ -454,57 +461,67 @@ Hover the ring for each arrow.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Five forced arrows: mint → work/φ* → infer → fees → pot → mint
+  // Six arrows: mine | stake (separate) → φ* → infer → fees/pot → robots residual
   var STEPS = [
     {
-      id: "mint",
-      label: "1 · mint",
-      sub: "Δφ* only",
+      id: "mine",
+      label: "1 · mine",
+      sub: "PoW · no bag",
       color: "#22c55e",
-      title: "Mint pays knowledge",
-      arrow: "mint  →  only if proven Δφ*",
-      why: "New CYB is earned by mining (prove division + fold) or active stake when focus actually moved. Clock sets how much exists; Δφ* sets who gets it. Idle bags do not mint.",
-      then: "Mint is a wage for improving the graph — not a free drip. That is the first gate."
+      title: "Mining mints for proofs",
+      arrow: "prove division + fold  →  mint if Δφ* > 0",
+      why: "Bagless compute. You prove the Shapley division of focus change and the fold that settles it. No lock. Clock sets how much exists in pot B; proven Δφ* sets whether this PoW leg pays you.",
+      then: "Compute gets a wage only when it improved the graph — not for spinning fans."
     },
     {
-      id: "work",
-      label: "2 · work",
-      sub: "→ better φ*",
+      id: "stake",
+      label: "2 · stake",
+      sub: "PoS · active",
       color: "#06b6d4",
-      title: "More mint → better φ*",
-      arrow: "more honest mint  →  more work  →  better φ*",
-      why: "A real prize pulls compute and risked capital onto true claims. Links change the cybergraph; the tri-kernel reconverges. Proven positive Δφ* is new structure the network did not have.",
-      then: "More of the right mint means a denser, truer graph — focus quality tracks paid work."
+      title: "Active stake mints for risked truth",
+      arrow: "lock on claim (v ≠ 0)  →  mint if focus moves with you",
+      why: "Capital at risk is a different channel. Lock CYB on a claim; mint on the stake side only when focus moves with that claim. Passive lock (v = 0) influences rank only — idle bags do not mint.",
+      then: "Capital earns only when it backs truth. Separate from mining: risk, not hash."
+    },
+    {
+      id: "focus",
+      label: "3 · focus",
+      sub: "→ better φ*",
+      color: "#eab308",
+      title: "Both channels raise φ*",
+      arrow: "more mine + more active stake  →  better φ*",
+      why: "Mining densifies proven structure; active stake weights true claims. The tri-kernel reconverges on a richer cybergraph. Proven positive Δφ* is new syntropy — structure the network did not have.",
+      then: "Honest mint in either channel is a payment for a better fixed point."
     },
     {
       id: "infer",
-      label: "3 · infer",
+      label: "4 · infer",
       sub: "φ* = product",
-      color: "#eab308",
+      color: "#c084fc",
       title: "Better φ* → better inference",
       arrow: "better φ*  →  better rank / compile / answers",
-      why: "Every consumer of intelligence reads the same fixed point: rank, model compile from structure, weighted answers. Improve φ* and the product improves with it — no parallel AI budget.",
-      then: "Inference quality is not marketing. It is the fixed point you just paid people to raise."
+      why: "Every consumer of intelligence reads the same fixed point. Raise focus and rank, model compile, and weighted answers all improve — no parallel AI token or off-chain sponsor.",
+      then: "Inference quality tracks φ*. That is the product people will pay for."
     },
     {
       id: "fees",
-      label: "4 · fees",
-      sub: "use pays",
-      color: "#c084fc",
-      title: "Better inference → more fees",
-      arrow: "useful product  →  pay volume in CYB",
-      why: "Headers, queries, DA, inference settle as pay. 1% tax: peer gets 99%; of the 1%, β burns and the rest fills the fee pool. Demand is consumption of the product.",
-      then: "People pay because inference got better. Fees are proof of use, not a second speculative asset."
+      label: "5 · fees",
+      sub: "use → pot B",
+      color: "#38bdf8",
+      title: "Better inference → fees reload mint",
+      arrow: "use pays  →  fee pool + M(t)  →  pot B  →  mine & stake again",
+      why: "Headers, queries, DA, inference settle as pay. 1% tax: peer 99%; of the 1%, β burns and the rest fills the fee pool. Pool plus residual schedule form B; hybrid α splits B back into mining and active stake.",
+      then: "Early: M(t) seeds work. Later: consumers fund security. Pot only pays through steps 1–2."
     },
     {
-      id: "pot",
-      label: "5 · pot",
-      sub: "B → mint",
-      color: "#38bdf8",
-      title: "Fees reload the mint pot",
-      arrow: "fees + M(t)  →  pot B  →  mint again",
-      why: "Fee pool plus residual schedule form budget B. Hybrid α splits B to PoW and active stake. Early years: front-loaded M(t) seeds work while fees are thin. Later: use pays security. Pot only mints through step 1.",
-      then: "The loop closes: wages for better φ* are funded by people who consume that φ*. Back to mint."
+      id: "robots",
+      label: "6 · robots",
+      sub: "creator residual",
+      color: "#a855f7",
+      title: "Create robots → lifetime residual",
+      arrow: "mint robot Card once  →  creator shares forever  →  more robots",
+      why: "At create, freeze creator_mint_share and creator_pay_share. Creators skim a lifetime cut of later Coin mints and fee-leg pays through that actor — permanent referral on the agent they shipped. Not a second M(t): same pot, redirected receivers.",
+      then: "Residual makes shipping actors rational → more robots on the graph → more structured work → stronger φ* → $CYB growth again."
     }
   ];
 
@@ -519,10 +536,10 @@ Hover the ring for each arrow.
       " A " + r + " " + r + " 0 " + large + " 1 " + p1[0].toFixed(1) + " " + p1[1].toFixed(1);
   }
 
-  var W = 520, H = 420;
-  var cx = 260, cy = 210, R = 128;
+  var W = 520, H = 440;
+  var cx = 260, cy = 220, R = 128;
   var n = STEPS.length;
-  var gap = 0.07;
+  var gap = 0.06;
   var sweep = (Math.PI * 2) / n;
   var aStart = -Math.PI / 2;
 
@@ -531,7 +548,7 @@ Hover the ring for each arrow.
     var a0 = aStart + i * sweep + gap / 2;
     var a1 = aStart + (i + 1) * sweep - gap / 2;
     var mid = (a0 + a1) / 2;
-    var lp = polar(cx, cy, R + 52, mid);
+    var lp = polar(cx, cy, R + 50, mid);
     var s = STEPS[i];
     segs +=
       '<g class="seg" data-i="' + i + '">' +
@@ -557,10 +574,9 @@ Hover the ring for each arrow.
     '<div class="stage"><svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid meet">' +
     segs + arrows +
     '<g class="hub">' +
-    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="62"></circle>' +
-    '<text class="hub-t" x="' + cx + '" y="' + (cy - 8) + '">mint ↔ infer</text>' +
-    '<text class="hub-s" x="' + cx + '" y="' + (cy + 8) + '">same token:</text>' +
-    '<text class="hub-s" x="' + cx + '" y="' + (cy + 22) + '">wage + price</text>' +
+    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="58"></circle>' +
+    '<text class="hub-t" x="' + cx + '" y="' + (cy - 2) + '">$CYB growth</text>' +
+    '<text class="hub-s" x="' + cx + '" y="' + (cy + 14) + '">where φ* grew</text>' +
     "</g></svg></div>" +
     '<div class="side">' +
     '<div class="kicker">how the economy closes</div>' +
@@ -570,7 +586,7 @@ Hover the ring for each arrow.
     '<p class="why" id="cyb-loop-why"></p>' +
     '<p class="then" id="cyb-loop-then"></p>' +
     '<div class="chips">' + chips + "</div>" +
-    '<p class="fail">Break a gate: mint without Δφ* prints empty money; fees without useful φ* never arrive. Either break stops the wheel — that is why the loop is real, not a slogan.</p>' +
+    '<p class="fail">Break a gate: mint without Δφ* prints empty money; fees without useful φ* never arrive; residual without real robots is dead equity. That is why the loop is real.</p>' +
     "</div></div>";
 
   function paint(i) {
