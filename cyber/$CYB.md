@@ -394,66 +394,68 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ### value loop
 
-One causal chain. Money pays for proven knowledge; proven knowledge is the product people pay for. That is the whole loop — $CYB growth only where φ* grew.
+$CYB growth only where φ* grew. One chain:
 
 ```
-mine (compute, no bag)  ─┐
-                          ├→ better φ* → better inference → more fees → pot B
-active stake (capital)  ─┘                                              │
-                                                                        ↓
-create robots → creator residual (lifetime) → more robots ──────→ more work on graph
-                                                                        │
-                                                                        └→ mint again …
+create robots (lifetime residual)
+  → more actors
+    → more mining  +  more active stake
+      → better φ*
+        → better inference
+          → more fees → pot B
+            → mint again (creators · miners · stakers)
 ```
 
-Two mint channels — separate, not mixed:
+| # | step | what happens |
+|---|------|----------------|
+| 1 | **robots** | Create an actor once. Creator freezes lifetime shares on that robot’s later mints and pays — permanent residual. Residual makes shipping robots rational → more robots. |
+| 2 | **mine** | Bagless compute. Prove [[Shapley value\|division]] + [[fold mining\|fold]]. Mint only if proven $\Delta\phi^* > 0$. PoW leg of pot B. |
+| 3 | **stake** | Capital at risk. Lock on a claim ($v \neq 0$). Mint only if focus moves with you. Passive lock ranks only — idle bags do not mint. PoS leg of pot B. |
+| 4 | **focus** | More robots drive more mine + stake → richer graph → better φ*. |
+| 5 | **infer** | Better φ* = better product (rank, compile, answers). Same fixed point — no parallel AI budget. |
+| 6 | **fees** | Use pays in CYB. Fee pool + $M(t)$ → pot B → back to mine, stake, and creator residual. |
 
-1. **Mining** — bagless compute. Prove [[Shapley value|division]] and [[fold mining|fold]]; mint when proven $\Delta\phi^* > 0$. No lock required. This is the PoW leg of pot B.
-2. **Active stake** — capital at risk. Lock CYB on a claim with $v \neq 0$; mint on the stake side only if focus moves with that claim. Passive lock ($v = 0$) ranks only — idle bags do not mint. This is the PoS leg of pot B.
-
-Then the product loop:
-
-3. **More of both → better φ*** — compute densifies proofs; risked capital weights true claims. The tri-kernel reconverges. Better φ* is the direct output of paid work.
-4. **Better φ* → better inference** — rank, compile, query all read the same fixed point. Improve focus and the product improves — no parallel AI budget.
-5. **Better inference → more fees → pot reloads mint** — use (headers, queries, DA, inference) pays in CYB (1% tax: β burns, rest to fee pool). Fee pool + schedule $M(t)$ form budget B; hybrid α splits B back into mining and active stake. Early: front-loaded $M(t)$ seeds work while fees are thin. Later: use pays security.
-
-And a separate growth multiplier:
-
-6. **Create robots → creator residual → more robots** — mint a robot Card once; freeze `creator_mint_share` and `creator_pay_share`. Creators take a lifetime cut of later Coin mints and fee-leg pays through that actor — a permanent referral on the agent they shipped. Residual is not a second $M(t)$; it redirects who receives existing flow. That income makes shipping robots rational → more actors on the graph → more structured work → stronger φ* again.
-
-The loop closes because the same token is wage for improving φ* and price of consuming it. Break a gate and the flywheel dies: mint without Δφ* prints empty money; fees without useful inference never arrive.
-
-Hover the ring for each arrow.
+Hover a segment.
 
 <div id="cyb-loop"></div>
 
 <style>
-#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#c084fc;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:18px 0 28px;box-sizing:border-box}
-#cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,0.95fr);gap:18px}
-#cyb-loop .stage{position:relative}
+#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#c084fc;--sky:#38bdf8;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:20px 0 32px;box-sizing:border-box}
+#cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:16px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:18px}
+#cyb-loop .stage{position:relative;width:100%;max-width:720px;margin:0 auto}
 #cyb-loop svg{width:100%;height:auto;display:block}
 #cyb-loop .seg{cursor:pointer}
-#cyb-loop .seg path.arc{fill:none;stroke-width:26;stroke-linecap:butt;opacity:0.88;transition:opacity .12s,filter .12s,stroke-width .12s}
-#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:30;filter:drop-shadow(0 0 14px rgba(34,197,94,.4))}
+#cyb-loop .seg path.arc{fill:none;stroke-width:42;stroke-linecap:butt;opacity:0.78;transition:opacity .14s,filter .14s,stroke-width .14s}
+#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:48;filter:drop-shadow(0 0 18px currentColor)}
+#cyb-loop .seg path.hit{fill:none;stroke:transparent;stroke-width:56;cursor:pointer}
 #cyb-loop .hub{pointer-events:none}
-#cyb-loop .hub-circle{fill:#0a0a0a;stroke:#222;stroke-width:1.5}
-#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;fill:var(--neon);font-weight:700;text-anchor:middle}
-#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut);text-anchor:middle}
-#cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10.5px;fill:var(--tx);font-weight:600;text-anchor:middle;pointer-events:none}
-#cyb-loop .nsub{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9px;fill:var(--mut);text-anchor:middle;pointer-events:none}
-#cyb-loop .side{display:flex;flex-direction:column;gap:10px;min-width:0}
-#cyb-loop .kicker{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--neon)}
-#cyb-loop .step{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;color:var(--cyan)}
-#cyb-loop .title{font-size:20px;font-weight:700;margin:0;line-height:1.2}
-#cyb-loop .arrow{margin:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;color:var(--amb);line-height:1.4}
-#cyb-loop .why{margin:0;font-size:14px;line-height:1.55;color:#e5e5e5}
-#cyb-loop .then{margin:0;padding:10px 12px;border-left:2px solid var(--neon);background:rgba(34,197,94,.06);font-size:13px;line-height:1.5;color:#d4d4d4}
+#cyb-loop .hub-circle{fill:#050505;stroke:#2a2a2a;stroke-width:2}
+#cyb-loop .hub-glow{fill:none;stroke:rgba(34,197,94,.35);stroke-width:1.5}
+#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:18px;fill:var(--neon);font-weight:700;text-anchor:middle;letter-spacing:0.5px}
+#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;fill:var(--mut);text-anchor:middle}
+#cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:14px;fill:var(--tx);font-weight:700;text-anchor:middle;pointer-events:none}
+#cyb-loop .nsub{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;fill:var(--mut);text-anchor:middle;pointer-events:none}
+#cyb-loop .chev{fill:#666}
+#cyb-loop .detail{display:grid;grid-template-columns:1fr;gap:12px;background:var(--s2);border:1px solid var(--ln);border-radius:12px;padding:16px 18px}
+#cyb-loop .detail-top{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px}
+#cyb-loop .kicker{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--neon)}
+#cyb-loop .stepn{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;color:var(--cyan)}
+#cyb-loop .title{font-size:26px;font-weight:700;margin:0;line-height:1.15;letter-spacing:-0.02em}
+#cyb-loop .arrow{margin:0;font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:14px;color:var(--amb);line-height:1.45}
+#cyb-loop .why{margin:0;font-size:16px;line-height:1.55;color:#e8e8e8;max-width:62ch}
+#cyb-loop .then{margin:0;padding:12px 14px;border-left:3px solid var(--neon);background:rgba(34,197,94,.07);font-size:15px;line-height:1.5;color:#d4d4d4;border-radius:0 8px 8px 0}
 #cyb-loop .then b{color:var(--neon);font-weight:600}
-#cyb-loop .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
-#cyb-loop .chip{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid var(--ln);background:var(--s2);color:var(--mut);cursor:pointer}
-#cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon)}
-#cyb-loop .fail{font-size:11.5px;color:var(--mut);line-height:1.45;margin:0;border-top:1px solid var(--ln);padding-top:10px}
-@media(max-width:860px){#cyb-loop .panel{grid-template-columns:1fr}}
+#cyb-loop .chips{display:flex;flex-wrap:wrap;gap:8px}
+#cyb-loop .chip{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;padding:9px 14px;border-radius:999px;border:1px solid var(--ln);background:#0a0a0a;color:var(--mut);cursor:pointer;transition:background .12s,color .12s,border-color .12s,box-shadow .12s}
+#cyb-loop .chip:hover{border-color:#444;color:var(--tx)}
+#cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon);box-shadow:0 0 18px rgba(34,197,94,.35);font-weight:700}
+#cyb-loop .fail{font-size:13px;color:var(--mut);line-height:1.5;margin:0;padding-top:4px}
+@media(min-width:900px){
+  #cyb-loop .panel{padding:24px 28px 22px}
+  #cyb-loop .stage{max-width:640px}
+  #cyb-loop .detail{padding:20px 22px}
+  #cyb-loop .title{font-size:28px}
+}
 </style>
 
 <script>
@@ -461,67 +463,73 @@ Hover the ring for each arrow.
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  // Six arrows: mine | stake (separate) → φ* → infer → fees/pot → robots residual
+  // robots first: they pull mine + stake volume
   var STEPS = [
     {
+      id: "robots",
+      chip: "robots",
+      label: "robots",
+      sub: "create · residual",
+      color: "#a855f7",
+      title: "Create robots first",
+      arrow: "ship actor once  →  lifetime residual  →  more robots",
+      why: "Mint a robot Card. Freeze creator_mint_share and creator_pay_share. You take a permanent cut of later Coin mints and fee pays through that actor — referral on the agent you shipped. Not a second schedule: same pot, redirected receivers.",
+      then: "Residual makes shipping robots rational. More robots → more demand for mining and staking. Growth starts here."
+    },
+    {
       id: "mine",
-      label: "1 · mine",
+      chip: "mine",
+      label: "mine",
       sub: "PoW · no bag",
       color: "#22c55e",
-      title: "Mining mints for proofs",
+      title: "Mining: bagless compute",
       arrow: "prove division + fold  →  mint if Δφ* > 0",
-      why: "Bagless compute. You prove the Shapley division of focus change and the fold that settles it. No lock. Clock sets how much exists in pot B; proven Δφ* sets whether this PoW leg pays you.",
-      then: "Compute gets a wage only when it improved the graph — not for spinning fans."
+      why: "No lock. You prove the division of focus change and the fold that settles it. Pot B’s PoW leg pays only when proven Δφ* is positive.",
+      then: "Compute earns only when it improved the graph — not for spinning fans."
     },
     {
       id: "stake",
-      label: "2 · stake",
+      chip: "stake",
+      label: "stake",
       sub: "PoS · active",
       color: "#06b6d4",
-      title: "Active stake mints for risked truth",
+      title: "Active stake: capital at risk",
       arrow: "lock on claim (v ≠ 0)  →  mint if focus moves with you",
-      why: "Capital at risk is a different channel. Lock CYB on a claim; mint on the stake side only when focus moves with that claim. Passive lock (v = 0) influences rank only — idle bags do not mint.",
-      then: "Capital earns only when it backs truth. Separate from mining: risk, not hash."
+      why: "Different channel from mining. Lock CYB on a claim; stake-side mint only when focus moves with that claim. Passive lock (v = 0) ranks only — idle bags do not mint.",
+      then: "Capital earns only when it backs truth. Risk, not hash."
     },
     {
       id: "focus",
-      label: "3 · focus",
+      chip: "focus",
+      label: "focus",
       sub: "→ better φ*",
       color: "#eab308",
-      title: "Both channels raise φ*",
-      arrow: "more mine + more active stake  →  better φ*",
-      why: "Mining densifies proven structure; active stake weights true claims. The tri-kernel reconverges on a richer cybergraph. Proven positive Δφ* is new syntropy — structure the network did not have.",
-      then: "Honest mint in either channel is a payment for a better fixed point."
+      title: "More work → better φ*",
+      arrow: "robots → more mine + stake  →  better φ*",
+      why: "Actors pull compute and risked capital onto the graph. Mining densifies proofs; active stake weights true claims. The tri-kernel reconverges on a richer fixed point.",
+      then: "Honest mint is a payment for a better φ* — the scarce object."
     },
     {
       id: "infer",
-      label: "4 · infer",
+      chip: "infer",
+      label: "infer",
       sub: "φ* = product",
       color: "#c084fc",
       title: "Better φ* → better inference",
-      arrow: "better φ*  →  better rank / compile / answers",
-      why: "Every consumer of intelligence reads the same fixed point. Raise focus and rank, model compile, and weighted answers all improve — no parallel AI token or off-chain sponsor.",
-      then: "Inference quality tracks φ*. That is the product people will pay for."
+      arrow: "better φ*  →  better rank · compile · answers",
+      why: "Everyone reads the same fixed point. Raise focus and the product improves with it. No parallel AI budget.",
+      then: "Inference quality tracks φ*. That is what people pay for."
     },
     {
       id: "fees",
-      label: "5 · fees",
+      chip: "fees",
+      label: "fees",
       sub: "use → pot B",
       color: "#38bdf8",
-      title: "Better inference → fees reload mint",
-      arrow: "use pays  →  fee pool + M(t)  →  pot B  →  mine & stake again",
-      why: "Headers, queries, DA, inference settle as pay. 1% tax: peer 99%; of the 1%, β burns and the rest fills the fee pool. Pool plus residual schedule form B; hybrid α splits B back into mining and active stake.",
-      then: "Early: M(t) seeds work. Later: consumers fund security. Pot only pays through steps 1–2."
-    },
-    {
-      id: "robots",
-      label: "6 · robots",
-      sub: "creator residual",
-      color: "#a855f7",
-      title: "Create robots → lifetime residual",
-      arrow: "mint robot Card once  →  creator shares forever  →  more robots",
-      why: "At create, freeze creator_mint_share and creator_pay_share. Creators skim a lifetime cut of later Coin mints and fee-leg pays through that actor — permanent referral on the agent they shipped. Not a second M(t): same pot, redirected receivers.",
-      then: "Residual makes shipping actors rational → more robots on the graph → more structured work → stronger φ* → $CYB growth again."
+      title: "Use pays → pot reloads mint",
+      arrow: "pay volume  →  fees + M(t)  →  pot B  →  robots · mine · stake",
+      why: "Headers, queries, DA, inference settle in CYB (1% tax: β burns, rest to pool). Pool plus residual schedule form B. Hybrid α splits B to PoW and active stake; creator shares skim on the way through robots.",
+      then: "Early: M(t) seeds. Later: consumers fund security. Money flows back where φ* grew."
     }
   ];
 
@@ -535,11 +543,25 @@ Hover the ring for each arrow.
     return "M " + p0[0].toFixed(1) + " " + p0[1].toFixed(1) +
       " A " + r + " " + r + " 0 " + large + " 1 " + p1[0].toFixed(1) + " " + p1[1].toFixed(1);
   }
+  function chevron(cx, cy, r, ang) {
+    // small triangle pointing along tangent (clockwise)
+    var t = ang + 0.02;
+    var p = polar(cx, cy, r, t);
+    var tx = -Math.sin(t), ty = Math.cos(t); // tangent clockwise
+    var nx = Math.cos(t), ny = Math.sin(t);  // outward normal
+    var len = 9, half = 6;
+    var tip = [p[0] + tx * len, p[1] + ty * len];
+    var a = [p[0] - tx * 2 + nx * half, p[1] - ty * 2 + ny * half];
+    var b = [p[0] - tx * 2 - nx * half, p[1] - ty * 2 - ny * half];
+    return "M " + tip[0].toFixed(1) + " " + tip[1].toFixed(1) +
+      " L " + a[0].toFixed(1) + " " + a[1].toFixed(1) +
+      " L " + b[0].toFixed(1) + " " + b[1].toFixed(1) + " Z";
+  }
 
-  var W = 520, H = 440;
-  var cx = 260, cy = 220, R = 128;
+  var W = 640, H = 560;
+  var cx = 320, cy = 280, R = 168;
   var n = STEPS.length;
-  var gap = 0.06;
+  var gap = 0.08;
   var sweep = (Math.PI * 2) / n;
   var aStart = -Math.PI / 2;
 
@@ -548,25 +570,25 @@ Hover the ring for each arrow.
     var a0 = aStart + i * sweep + gap / 2;
     var a1 = aStart + (i + 1) * sweep - gap / 2;
     var mid = (a0 + a1) / 2;
-    var lp = polar(cx, cy, R + 50, mid);
+    var lp = polar(cx, cy, R + 62, mid);
     var s = STEPS[i];
     segs +=
-      '<g class="seg" data-i="' + i + '">' +
+      '<g class="seg" data-i="' + i + '" style="color:' + s.color + '">' +
+      '<path class="hit" d="' + arcPath(cx, cy, R, a0, a1) + '"></path>' +
       '<path class="arc" d="' + arcPath(cx, cy, R, a0, a1) + '" stroke="' + s.color + '"></path>' +
-      '<text class="nlab" x="' + lp[0].toFixed(1) + '" y="' + (lp[1] - 2).toFixed(1) + '">' + s.label + "</text>" +
-      '<text class="nsub" x="' + lp[0].toFixed(1) + '" y="' + (lp[1] + 12).toFixed(1) + '">' + s.sub + "</text>" +
+      '<text class="nlab" x="' + lp[0].toFixed(1) + '" y="' + (lp[1] - 4).toFixed(1) + '">' + s.label + "</text>" +
+      '<text class="nsub" x="' + lp[0].toFixed(1) + '" y="' + (lp[1] + 14).toFixed(1) + '">' + s.sub + "</text>" +
       "</g>";
   }
 
   var arrows = "";
   for (var j = 0; j < n; j++) {
     var a = aStart + (j + 1) * sweep;
-    var p = polar(cx, cy, R, a);
-    arrows += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5" fill="#0a0a0a" stroke="#555" stroke-width="1"></circle>';
+    arrows += '<path class="chev" d="' + chevron(cx, cy, R, a) + '"></path>';
   }
 
   var chips = STEPS.map(function (s, i) {
-    return '<button type="button" class="chip" data-i="' + i + '">' + (i + 1) + "</button>";
+    return '<button type="button" class="chip" data-i="' + i + '">' + (i + 1) + " · " + s.chip + "</button>";
   }).join("");
 
   root.innerHTML =
@@ -574,19 +596,22 @@ Hover the ring for each arrow.
     '<div class="stage"><svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid meet">' +
     segs + arrows +
     '<g class="hub">' +
-    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="58"></circle>' +
-    '<text class="hub-t" x="' + cx + '" y="' + (cy - 2) + '">$CYB growth</text>' +
-    '<text class="hub-s" x="' + cx + '" y="' + (cy + 14) + '">where φ* grew</text>' +
+    '<circle class="hub-glow" cx="' + cx + '" cy="' + cy + '" r="92"></circle>' +
+    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="78"></circle>' +
+    '<text class="hub-t" x="' + cx + '" y="' + (cy - 4) + '">$CYB growth</text>' +
+    '<text class="hub-s" x="' + cx + '" y="' + (cy + 18) + '">where φ* grew</text>' +
     "</g></svg></div>" +
-    '<div class="side">' +
+    '<div class="chips">' + chips + "</div>" +
+    '<div class="detail">' +
+    '<div class="detail-top">' +
     '<div class="kicker">how the economy closes</div>' +
-    '<div class="step" id="cyb-loop-step"></div>' +
+    '<div class="stepn" id="cyb-loop-step"></div>' +
+    "</div>" +
     '<h3 class="title" id="cyb-loop-title"></h3>' +
     '<p class="arrow" id="cyb-loop-arrow"></p>' +
     '<p class="why" id="cyb-loop-why"></p>' +
     '<p class="then" id="cyb-loop-then"></p>' +
-    '<div class="chips">' + chips + "</div>" +
-    '<p class="fail">Break a gate: mint without Δφ* prints empty money; fees without useful φ* never arrive; residual without real robots is dead equity. That is why the loop is real.</p>' +
+    '<p class="fail">Break a gate and the wheel stops: no robots → thin work; mint without Δφ* → empty money; fees without useful φ* → no pot. That failure mode is the proof.</p>' +
     "</div></div>";
 
   function paint(i) {
@@ -598,7 +623,7 @@ Hover the ring for each arrow.
     root.querySelectorAll(".chip").forEach(function (el, idx) {
       el.classList.toggle("on", idx === i);
     });
-    root.querySelector("#cyb-loop-step").textContent = "arrow " + (i + 1) + " / " + n;
+    root.querySelector("#cyb-loop-step").textContent = (i + 1) + " / " + n;
     root.querySelector("#cyb-loop-title").textContent = s.title;
     root.querySelector("#cyb-loop-arrow").textContent = s.arrow;
     root.querySelector("#cyb-loop-why").textContent = s.why;
