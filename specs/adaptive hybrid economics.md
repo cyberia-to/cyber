@@ -71,12 +71,13 @@ I_{\mathrm{net}} = \mathrm{floor} - \frac{F\beta}{M}
 
 when diffusion burn exceeds floor, net inflation is negative: velocity shrinks supply while floor still pays security. gross rewards to workers can still exceed net mint when service fees recycle into \(B\)
 
-fee path for CYB ([[cyber/$CYB]]):
+fee path for CYB ([[cyber/$CYB]] §revenue):
 
-- tax on diffusion \(\tau = 1\%\) on every transfer of CYB — pay, lock, unlock, including [[staking]]: \(\mathrm{burn} = \tfrac12\tau G\), \(\mathrm{creator} = \tfrac12\tau G\) (permanent referral to the account’s creator Card). not a fee pool into \(B\)
-- if the account has no creator, the creator half burns as well
-- service fees (queries, DA, inference peer leg) may still feed \(F\) into \(B\); they are separate from the diffusion tax
-- \(\beta\) in the budget equations above applies to the service-fee leg if any is split burn/pool; diffusion tax burn is the fixed half above
+- tax on diffusion \(\tau = 1\%\) on every transfer — pay, lock, unlock, including [[staking]]
+- simple split: \(\mathrm{burn} = \tfrac12\tau G\); \(B_V = \tfrac12\tau G\) paid to everyone who earns under the **same hybrid** as emission (\(R_{\mathrm{PoW}}\), \(R_{\mathrm{PoS}}\)) — not a pro-rata airdrop to idle holders
+- \(B_{\mathrm{tot}} = B + B_V\); velocity is the long-run self-development faucet when \(M(t)\) thins
+- service fees (queries, DA, inference peer leg) may still feed \(F\) into \(B\); orthogonal to the diffusion tax
+- \(\beta\) in the budget equations applies to any service-fee burn/pool split; diffusion tax already fixes half burn
 
 ## security floor
 

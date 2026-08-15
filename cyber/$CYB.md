@@ -399,13 +399,48 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 })();
 </script>
 
-## utility (plumb)
+## revenue
 
-[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns. Every movement of energy (pay, lock, unlock — including [[staking]]) pays a 1% tax on diffusion: half burned, half to the account’s creator (permanent referral)
+[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns
+
+**Emission** $M(t)$ bootstraps the field when it is empty. **Revenue** is the long-run metabolism: every movement of energy pays a tax on diffusion. That tax is the main source of self-development once the schedule thins — same merit brain as inflation, different faucet
+
+### tax on diffusion
+
+Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock, including [[staking]] — pays $\tau = 1\%$:
+
+$$
+\text{received or locked} = (1 - \tau)\,G, \qquad V = \tau\,G
+$$
+
+No carve-out for staking: locking mass onto a claim is still diffusion. Hopping energy without improving the graph is not free
+
+### how $V$ splits — half burn, half to everyone
+
+Simple rule on the tax pot $V$:
+
+| half | leg | role |
+|------|-----|------|
+| $\tfrac12 V$ | **burn** | Price of diffusion with no recipient. Deflates supply when velocity is high. Discipline for hoppers — not self-development directly, anti-spam and anti-empty circulation |
+| $\tfrac12 V$ | **to everyone** | Recycled into the reward budget and paid out with the **same allocation logic as main inflation** — [[adaptive hybrid economics]] + [[rewards]]: mining (division + fold), active stake × [[karma]], proven work only. Idle bags get nothing |
+
+$$
+\text{burn} = \tfrac12\,\tau\,G, \qquad
+B_V = \tfrac12\,\tau\,G \ \xrightarrow{\ \text{hybrid }\alpha\ }\ R_{\mathrm{PoW}},\ R_{\mathrm{PoS}}
+$$
+
+So: **half destroy, half pay everyone who earns** — “everyone” means every channel that already earns under emission, not a pro-rata airdrop to all holders. Creator residuals (`creator_mint_share`, `creator_pay_share`) still skim their frozen shares of mints and service legs through robots; they do not take a fixed half of $\tau$ off the top
+
+```
+pay / lock / unlock  →  τ = 1%  →  ½ burn  +  ½ → B_V → same hybrid as emission
+M(t), floor, service →  B     → hybrid α → PoW / PoS / Δφ* mint
+```
+
+Early life: $M(t)$ dominates. Mature life: $B_V$ from velocity dominates self-development. One merit function, two faucets
 
 ### network effects
 
-Not a checklist of actions — seven factors that compound. Each one makes the next stronger; $CYB grows only where knowledge got better.
+Not a checklist of actions — seven factors that compound. Each one makes the next stronger; $CYB growth only where knowledge got better
 
 ```
 fairness  +  finality  +  truth
@@ -422,11 +457,11 @@ fairness  +  finality  +  truth
 | 2 | **finality** | [[Fold mining\|Fold]] packs proofs into durable settlement — reliable across planets and long delay. |
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
-| 5 | **revenue** | Use and every transfer pay in CYB. Service fees fund work; the 1% tax on diffusion splits half burn / half account-creator referral. |
-| 6 | **efficiency** | Revenue funds better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
-| 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
+| 5 | **revenue** | Tax on diffusion $\tau=1\%$ on every transfer. Half burns; half pays everyone who earns under the same hybrid as emission. Long-run self-development faucet |
+| 6 | **efficiency** | Revenue and emission fund better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
+| 7 | **population** | More robots (agents). Create once; frozen creator shares on mints and service through that agent → shipping robots is rational → more nodes on the graph. |
 
-Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone.
+Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone
 
 Hover a factor.
 
@@ -516,10 +551,10 @@ Hover a factor.
       id: "revenue",
       chip: "revenue",
       label: "revenue",
-      sub: "fees · diffusion tax",
+      sub: "½ burn · ½ to all earners",
       color: "#fe0000",
       title: "Revenue",
-      body: "Two money flows. Service: queries, data, answers pay the people who serve. Diffusion tax: every transfer of CYB — pay, lock, unlock, including staking — takes 1%. Half burns (deflation). Half goes to the creator of the account that moved the energy — permanent referral on that identity Card, not a second emission schedule. Shipping accounts that later transfer is rational; velocity still hurts pure hoppers."
+      body: "Every transfer of CYB — pay, lock, unlock, including staking — pays a 1% tax on diffusion. Half burns: price of empty hops, supply shrinks with velocity. Half goes to everyone who earns — same hybrid allocation as emission (mine division+fold, active stake × karma). Idle bags get nothing. Emission bootstraps; revenue is the long-run self-development faucet."
     },
     {
       id: "efficiency",
@@ -647,10 +682,13 @@ Hover a factor.
 
 ### mint
 
-**Coin.** Budget from schedule $M(t)$ and hybrid pot $B$. Split under [[adaptive hybrid economics]] (PID controls $\alpha$, floor, $\beta$):
+**Coin.** Two faucets, one hybrid brain under [[adaptive hybrid economics]] (PID on $\alpha$, floor, $\beta$):
+
+- schedule envelope + security floor + optional service fees $\to$ pot $B$
+- half of diffusion tax $\to B_V$
 
 $$
-R_{\mathrm{PoW}} = B\,(1 - \theta^{\alpha}), \qquad R_{\mathrm{PoS}} = B\,\theta^{\alpha}
+R_{\mathrm{PoW}} = B_{\mathrm{tot}}\,(1 - \theta^{\alpha}), \qquad R_{\mathrm{PoS}} = B_{\mathrm{tot}}\,\theta^{\alpha}, \qquad B_{\mathrm{tot}} = B + B_V
 $$
 
 | channel | risk | earn |
@@ -658,36 +696,28 @@ $$
 | [[mining]] | none | prove Δφ* [[Shapley value\|division]] + [[fold mining\|fold]] → mint |
 | [[staking]] active ($v \neq 0$) | lock CYB | stake-side mint if focus moves with the claim |
 
-Δφ* mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
+Δφ* knowledge mint only if proven $\Delta\phi^* > 0$. Security floor mints only to PoW + active stake; PID-decays as velocity ($B_V$) and fees cover security. Passive lock ($v = 0$): rank only. Spec: [[rewards]]
 
-**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze creator residual: `creator_mint_share`, `creator_pay_share`, and the fixed half of the diffusion tax on that account’s later transfers (referral). Optional royalty on card transfer. Creators earn residual on mints, service pays, and diffusion tax through the agent — not a second $M(t)$
+**Card.** mint robot/neuron = identity Card, not CYB. Create may cost pay/burn. At create freeze `creator_mint_share`, `creator_pay_share` $\in [0,1]$: residual on later Coin mints and service-leg pays through that agent — including when the agent earns from the “to everyone” half. Optional royalty on card transfer. Not a second $M(t)$
 
 ```
-M(t), B, service fees → hybrid α → PoW / PoS mint  [− creator_mint_share if via robot]
-pay / lock / unlock   → 1% diffusion tax → ½ burn + ½ account creator (referral)
-service pay (query…)  → peer + optional pool + creator_pay_share
+M(t), floor, service  → B  ─┐
+pay/lock/unlock τ=1%  → ½ V → B_V ─┼→ hybrid α → PoW / PoS  [− creator shares]
+                      → ½ V → burn  ┘
 ```
 
 ### lock
 
-Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers: they pay the 1% tax on diffusion (½ burn, ½ to the account’s creator) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + fee yield × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
+Freeze CYB on a [[cyberlink]] ([[staking]], [[will]]). Lock and unlock are transfers under the tax on diffusion (½ burn, ½ into $B_V$) — staking is not a tax-free parking lot. Of the locked mass after tax, active ($v = \pm 1$): weight + stake mint + share of reward pots × [[karma]]. Passive ($v = 0$): φ* influence only. Wrong active bets lose score under [[Bayesian Truth Serum|BTS]]; idle capital does not compound mint
 
 ### pay
 
-Every transfer of amount $G$ that moves CYB — [[pay]], [[lock]], unlock — pays the tax on diffusion $\tau = 1\%$. The tax splits half burn / half referral to the creator of the transferring account:
-
-$$
-\text{received or locked} = (1 - \tau)\,G, \qquad
-\text{burn} = \tfrac{1}{2}\,\tau\,G, \qquad
-\text{creator} = \tfrac{1}{2}\,\tau\,G
-$$
-
-No carve-out for staking: locking energy onto a claim is still diffusion. Creator is the frozen residual owner of the identity Card (robot/neuron) that signed the transfer — permanent referral, same pot, not a second schedule. If the account has no creator (genesis self), that half burns too. Headers, queries, DA, inference are ordinary pays under the same $\tau$. Service peer leg is separate; `creator_pay_share` may still skim the service fee, orthogonal to the diffusion-tax half
+[[Pay]], [[lock]], unlock — all move $G$ under $\tau = 1\%$ (half burn, half $B_V$). Headers, queries, DA, inference are ordinary pays under the same $\tau$; the peer may still receive the service leg after tax. `creator_pay_share` skims service residual through robots, orthogonal to the half that entered $B_V$ for everyone
 
 ### burn
 
-Continuous burn includes half the tax on diffusion ($\tfrac{1}{2}\tau$ of every transfer including stake lock/unlock). Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn; unclaimed creator half when no creator is set. Mint makes energy transferable; diffusion tax makes movement costly and pays who shipped the account; burn makes residual influence permanent
+Half of every diffusion tax ($\tfrac12\tau G$) is destroyed — discipline of hoppers, deflation under high velocity. Also: eternal [[particle]] / [[cyberlink]] (φ* floor); optional slash-to-burn. Mint makes energy transferable; burn makes empty circulation expensive and deliberate eternal influence permanent
 
 ## allocation
 
-How much: $M(t)$ + hybrid $B$. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]
+How much: $M(t)$ + floor + $B_V$ (half of velocity tax) + service fees. Who: Δφ* [[Shapley value]] · fold work · active stake × [[karma]]. Zero stake and zero work → zero. The other half of velocity tax burns. [[rewards]] · [[adaptive hybrid economics]] · [[tok]] · [[self]]
