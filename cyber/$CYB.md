@@ -11,6 +11,17 @@ root [[token]] of cyber. unit of stake, fees, and rewards for proven contributio
 
 [[Focus]] is the scarce object: the unique [[fixed point]] of the [[tri-kernel]] over the [[cybergraph]]. Moving and creating focus costs work. [[CYB]] makes that work transferable — spend to link and prove, earn when your links raise collective focus (proven Δφ*). It is not a fee token bolted onto ranking; ranking and payment share one physics
 
+## hard money
+
+$CYB is hard money in the oldest sense — expensive to make, impossible to counterfeit — and in four new ones:
+
+- backed by conservation. [[focus]] sums to one across the whole graph — the backing quantity cannot be printed, only redistributed. Emission happens only against proven Δφ*: new supply exists exactly when the graph provably grew smarter. Inflation is evidence of knowledge, not a policy
+- quantum-hard by construction. Identity is a [[hemera]] hash (Poseidon2 over the [[nebu|Goldilocks field]]), state is a polynomial commitment, proofs are [[zheng]] — hash-and-field cryptography with no discrete log for Shor to unwind; key exchange in the [[mudra]] ladder is isogeny-based (dCTIDH)
+- private by the same field. The field that proves also encrypts: [[strata]] hosts the FHE regime (jali R_q, TFHE in the [[mudra]] ladder), so balances can compute without being seen — prove the property, keep the number
+- it means something, literally. Every unit traces to links in the [[cybergraph]], and [[neural]] reads value as position in the topology. This is money whose backing you can query
+
+And the mint is in your pocket. Proving work targets the devices people already own — Mac and Android — with direct access to the silicon through [[honeycrisp]]: NEON/AMX/SME, Metal GPU, ANE, zero-copy unified memory. A million laptops and phones instead of three datacenters: issuance lands where the hands are
+
 ## cap
 
 Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and proofs:
@@ -469,7 +480,7 @@ Hover a factor.
       chip: "fairness",
       label: "fairness",
       sub: "mine · hashrate",
-      color: "#22c55e",
+      color: "#2bd12b",
       title: "Fairness",
       body: "Fairness is mining. Credit for who taught a focus shift is computed as a <a href=\"/shapley-value\" class=\"internal-link\">split</a> — and your share of that work is settled by hashrate: more useful compute, more of the fair division. No bag required. Anyone with ordinary machines can join; hashrate is the open measure of contribution, not who already holds coins."
     },
@@ -478,7 +489,7 @@ Hover a factor.
       chip: "finality",
       label: "finality",
       sub: "fold · settlement",
-      color: "#14b8a6",
+      color: "#45b6fe",
       title: "Finality",
       body: "<a href=\"/fold-mining\" class=\"internal-link\">Fold</a> compresses many local proofs into one durable claim the whole network can accept. That is finality: settlement that still works when light is slow and planets are far — not a chatty round-trip, a packed proof that arrives and sticks."
     },
@@ -487,7 +498,7 @@ Hover a factor.
       chip: "truth",
       label: "truth",
       sub: "stake · capital",
-      color: "#06b6d4",
+      color: "#2929ff",
       title: "Truth",
       body: "Truth is staking. You lock CYB on a claim you believe. You earn only if the graph’s knowledge moves with you. Parked coins that take no side do not mint. Capital is paid for backing what is true, not for sitting still."
     },
@@ -496,7 +507,7 @@ Hover a factor.
       chip: "intelligence",
       label: "intelligence",
       sub: "syntropy · answers",
-      color: "#eab308",
+      color: "#8a2be2",
       title: "Intelligence",
       body: "Syntropy and inference are the same product: denser true structure on the graph is sharper rank, compile, and answers. The smarter the network gets, the more people and robots want to query it — demand rises with quality, not with marketing."
     },
@@ -505,7 +516,7 @@ Hover a factor.
       chip: "revenue",
       label: "revenue",
       sub: "fees · use pays",
-      color: "#38bdf8",
+      color: "#e8262e",
       title: "Revenue",
       body: "Queries, data, and answers are paid in CYB. A small cut of each payment is burned; the rest funds the reward budget for creators, miners, and stakers. Early on, scheduled new coins seed the budget. Later, people who use intelligence pay those who produced it."
     },
@@ -514,7 +525,7 @@ Hover a factor.
       chip: "efficiency",
       label: "efficiency",
       sub: "GFP · mine = prove",
-      color: "#f97316",
+      color: "#f5820d",
       title: "Efficiency",
       body: "Efficiency is the <a href=\"/goldilocks-field-processor\" class=\"internal-link\">GFP</a> flywheel: mining rewards and fees fund better Goldilocks field processors — silicon for fma, ntt, p2r, lut. The same chip that mines is the same chip that proves and serves the network, so hardware is never stranded heat. Better GFP → cheaper useful split/fold and cheaper answers → more use → more revenue → better GFP."
     },
@@ -523,7 +534,7 @@ Hover a factor.
       chip: "population",
       label: "population",
       sub: "robots · scale",
-      color: "#a855f7",
+      color: "#ffcf26",
       title: "Population",
       body: "Population is how many robots (agents) live on the graph. Create one once; freeze a lifetime cut of its later mints and fees for the creator — permanent residual, not a second money printer. Residual makes shipping robots rational → more agents → more fairness, truth, and intelligence work on a larger graph."
     }
