@@ -399,7 +399,7 @@ About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 1
 })();
 </script>
 
-Inflation drops below a flat-issuance design (Bittensor sits near 16% for years) by year three, while the heavy tail keeps issuing far longer than any halving.
+By year three instantaneous inflation is already low single digits and still falling, while the heavy tail keeps issuing under the cap for centuries.
 
 ## allocation is focus
 
