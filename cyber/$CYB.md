@@ -394,40 +394,47 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ### value loop
 
-Hover a node. The loop is closed: work mints CYB, use moves it, tax burns and reloads the pot, risk locks influence.
+The question is not “which plumb op exists.” It is how money and intelligence reinforce each other so the system does not need an external sponsor.
+
+**Closed loop (read clockwise):**
+
+1. **Work enters the graph** — neurons lock CYB on claims and mine proofs (division + fold). Capital risks truth; compute settles who was right.
+2. **Focus improves** — the tri-kernel moves φ*. Proven positive Δφ* is new structure (syntropy), not noise.
+3. **Inference gets cheaper and better** — higher-quality φ* ranks, compiles models from structure, answers queries with verifiable weight. Usefulness rises.
+4. **Use pays** — service (headers, queries, DA, inference) is paid in CYB under a 1% tax. Velocity funds security; β burns shrink supply.
+5. **Mint recycles into work** — schedule M(t) + fee pool → hybrid budget B → mining and active staking again. Front-loaded M(t) buys early compute when the graph is empty; PID α balances bagless work vs risked stake.
+6. **Agents compound residual** — mint a robot Card once; frozen creator shares skim future mints/pays from that agent. More agents → more structured work on the graph → stronger φ* — without a second emission schedule.
+
+If any link breaks, the loop dies: no work → φ* stagnates → inference is worthless → no fees → no security budget → no mint. Inflation is evidence of knowledge only while step 2 is real.
 
 <div id="cyb-loop"></div>
 
 <style>
-#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#222;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#a855f7;--red:#ef4444;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:16px 0 24px;box-sizing:border-box}
-#cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:12px;padding:14px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(240px,0.85fr);gap:16px;align-items:stretch}
-#cyb-loop .stage{position:relative;min-height:340px}
+#cyb-loop{--s1:#0a0a0a;--s2:#111;--ln:#2a2a2a;--tx:#f0f0f0;--mut:#8b948c;--neon:#22c55e;--cyan:#06b6d4;--amb:#eab308;--mag:#c084fc;background:transparent;color:var(--tx);font-family:var(--font-body,'Play',system-ui,sans-serif);width:100%;margin:18px 0 28px;box-sizing:border-box}
+#cyb-loop .panel{background:var(--s1);border:1px solid var(--ln);border-radius:14px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,0.92fr);gap:18px}
+#cyb-loop .stage{position:relative}
 #cyb-loop svg{width:100%;height:auto;display:block}
-#cyb-loop .node{cursor:pointer}
-#cyb-loop .node rect,#cyb-loop .node circle{transition:fill .12s,stroke .12s,filter .12s}
-#cyb-loop .node.on rect,#cyb-loop .node:hover rect{filter:drop-shadow(0 0 10px rgba(34,197,94,.45))}
-#cyb-loop .node.on circle,#cyb-loop .node:hover circle{filter:drop-shadow(0 0 10px rgba(6,182,212,.45))}
-#cyb-loop .edge{stroke:#333;stroke-width:1.6;fill:none;marker-end:url(#cyb-arr);transition:stroke .12s,stroke-width .12s}
-#cyb-loop .edge.on{stroke:var(--neon);stroke-width:2.2}
-#cyb-loop .edge-label{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut)}
-#cyb-loop text.lbl{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12px;fill:var(--tx);font-weight:600;pointer-events:none}
-#cyb-loop text.sub{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9.5px;fill:var(--mut);pointer-events:none}
+#cyb-loop .seg{cursor:pointer}
+#cyb-loop .seg path.arc{fill:none;stroke-width:26;stroke-linecap:butt;opacity:0.92;transition:opacity .12s,filter .12s,stroke-width .12s}
+#cyb-loop .seg.on path.arc,#cyb-loop .seg:hover path.arc{opacity:1;stroke-width:30;filter:drop-shadow(0 0 12px rgba(34,197,94,.35))}
+#cyb-loop .hub{pointer-events:none}
+#cyb-loop .hub-circle{fill:#0a0a0a;stroke:#222;stroke-width:1.5}
+#cyb-loop .hub-t{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:13px;fill:var(--neon);font-weight:700;text-anchor:middle}
+#cyb-loop .hub-s{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;fill:var(--mut);text-anchor:middle}
+#cyb-loop .nlab{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;fill:var(--tx);font-weight:600;text-anchor:middle;pointer-events:none}
+#cyb-loop .nsub{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:9px;fill:var(--mut);text-anchor:middle;pointer-events:none}
 #cyb-loop .side{display:flex;flex-direction:column;gap:10px;min-width:0}
-#cyb-loop .kicker{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--neon)}
-#cyb-loop .title{font-size:20px;font-weight:700;line-height:1.2;margin:0}
-#cyb-loop .body{font-size:13.5px;line-height:1.55;color:#d4d4d4;margin:0}
-#cyb-loop .chips{display:flex;flex-wrap:wrap;gap:6px}
-#cyb-loop .chip{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10.5px;padding:5px 9px;border-radius:999px;border:1px solid var(--ln);background:var(--s2);color:var(--mut);cursor:pointer}
+#cyb-loop .kicker{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:var(--neon)}
+#cyb-loop .step{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;color:var(--cyan)}
+#cyb-loop .title{font-size:22px;font-weight:700;margin:0;line-height:1.15}
+#cyb-loop .why{margin:0;font-size:14px;line-height:1.55;color:#e5e5e5}
+#cyb-loop .then{margin:0;padding:10px 12px;border-left:2px solid var(--neon);background:rgba(34,197,94,.06);font-size:13px;line-height:1.5;color:#d4d4d4}
+#cyb-loop .then b{color:var(--neon);font-weight:600}
+#cyb-loop .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+#cyb-loop .chip{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:11px;padding:6px 10px;border-radius:999px;border:1px solid var(--ln);background:var(--s2);color:var(--mut);cursor:pointer}
 #cyb-loop .chip.on{color:#000;background:var(--neon);border-color:var(--neon)}
-#cyb-loop .facts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-#cyb-loop .fact{background:var(--s2);border:1px solid var(--ln);border-radius:8px;padding:8px 10px}
-#cyb-loop .fact .l{font-size:10px;color:var(--mut);margin-bottom:3px}
-#cyb-loop .fact .v{font-family:var(--font-mono,'JetBrains Mono',monospace);font-size:12.5px;color:var(--tx)}
-#cyb-loop .note{font-size:11px;color:var(--mut);line-height:1.45;margin:0}
-@media(max-width:820px){
-  #cyb-loop .panel{grid-template-columns:1fr}
-  #cyb-loop .stage{min-height:300px}
-}
+#cyb-loop .fail{font-size:11.5px;color:var(--mut);line-height:1.45;margin:0;border-top:1px solid var(--ln);padding-top:10px}
+@media(max-width:860px){#cyb-loop .panel{grid-template-columns:1fr}}
 </style>
 
 <script>
@@ -435,203 +442,156 @@ Hover a node. The loop is closed: work mints CYB, use moves it, tax burns and re
   var root = document.getElementById("cyb-loop");
   if (!root) return;
 
-  var NODES = {
-    schedule: {
-      title: "M(t) schedule",
-      body: "How much CYB may exist at network age t is fixed by the clock alone — power-law head, field cap, no governance mint button. Front-loads compute capture in early years.",
-      facts: [
-        ["law", "M(t) = p · (1 − (1+t/τ)⁻ᵏ)"],
-        ["role", "envelope of mint budget"]
-      ],
-      edges: ["mint"]
+  // Causal flywheel — each step answers "so what?"
+  var STEPS = [
+    {
+      id: "work",
+      label: "1 · work",
+      sub: "mine · stake",
+      color: "#22c55e",
+      title: "Work enters",
+      why: "Mining (prove division + fold, no bag) and active staking (capital on a claim) are the only ways new CYB is earned. Idle capital cannot mint.",
+      then: "So early compute and honest risk get paid while the graph is still empty — M(t) front-loads that prize."
     },
-    mint: {
-      title: "mint Coin",
-      body: "New CYB appears only as work: mining (prove Δφ* division + fold, no bag) or active staking (capital at risk). Hybrid split α under adaptive hybrid economics. Idle capital does not mint.",
-      facts: [
-        ["PoW", "mining · no capital risk"],
-        ["PoS", "active lock · risk required"]
-      ],
-      edges: ["wallet", "robot"]
+    {
+      id: "focus",
+      label: "2 · focus",
+      sub: "φ* · Δφ*",
+      color: "#06b6d4",
+      title: "Focus improves",
+      why: "Staked links change the cybergraph. The tri-kernel reconverges. Proven positive Δφ* is new syntropy — structure the network did not have before.",
+      then: "So inflation is not a policy drip: mint is gated by measured knowledge, not by wall-clock alone."
     },
-    wallet: {
-      title: "wallet (Card)",
-      body: "Balances live on Cards — neuron identity is the wallet. From here CYB either locks into claims, pays for service, or burns into permanent topology.",
-      facts: [
-        ["hold", "Σ = mints − burns"],
-        ["next", "lock · pay · burn"]
-      ],
-      edges: ["lock", "pay", "burn"]
+    {
+      id: "infer",
+      label: "3 · infer",
+      sub: "rank · compile",
+      color: "#eab308",
+      title: "Inference gets better",
+      why: "Better φ* means better rank, better compiled models from structure, better query answers with weight you can verify.",
+      then: "So people and robots actually use the graph — usefulness is not marketing; it is a better fixed point."
     },
-    lock: {
-      title: "lock → influence",
-      body: "Stake CYB on a cyberlink. Active valence (±1): weight in φ*, stake-side mint and fee yield × karma. Passive (v=0): rank only — no emission. Wrong bets lose score under BTS.",
-      facts: [
-        ["active", "risk → mint share"],
-        ["passive", "rank only"]
-      ],
-      edges: ["mint"]
+    {
+      id: "use",
+      label: "4 · use",
+      sub: "pay 1%",
+      color: "#c084fc",
+      title: "Use pays",
+      why: "Headers, queries, DA, inference settle as pay. Universal 1% tax: peer gets 99%; of the 1%, β burns and (1−β) funds the fee pool.",
+      then: "So velocity funds security and continuously deflates — the network is paid by those who consume inference, not only by inflation."
     },
-    pay: {
-      title: "pay · 1% tax",
-      body: "Every transfer is taxed. 99% to peer. Of the 1%: β burns (velocity → deflation), (1−β) feeds the fee pool that reloads hybrid security budget. Service (headers, queries, DA, inference) is the same pay.",
-      facts: [
-        ["tax τ", "1% of G"],
-        ["split", "burn β · pool (1−β)"]
-      ],
-      edges: ["burn", "pool", "wallet"]
+    {
+      id: "reload",
+      label: "5 · reload",
+      sub: "B · hybrid α",
+      color: "#38bdf8",
+      title: "Budget reloads work",
+      why: "Fee pool + schedule envelope + security floor form pot B. Adaptive hybrid economics (PID) splits B between mining and active stake from on-chain signals.",
+      then: "So more useful inference → more fees → more honest work budget → more capacity to improve φ* again."
     },
-    burn: {
-      title: "burn",
-      body: "Destroy supply for permanence: fee burn, eternal particle/cyberlink floors on φ*, optional slash-to-burn. Mint makes energy movable; burn makes influence outlive the holder.",
-      facts: [
-        ["fee burn", "β · tax · volume"],
-        ["eternal", "φ* floor"]
-      ],
-      edges: []
-    },
-    pool: {
-      title: "fee pool → B",
-      body: "Recycled fees plus schedule and security floor form pot B. Adaptive hybrid economics (PID) splits B between PoW and PoS from on-chain efficiency and fee coverage — no fixed 50/50.",
-      facts: [
-        ["B", "floor·M + fees·(1−β)"],
-        ["split", "R_PoW / R_PoS via α"]
-      ],
-      edges: ["mint"]
-    },
-    robot: {
-      title: "mint Card · robot",
-      body: "Birth of a neuron/robot is mint Card, not mint CYB. Creator freezes creator_mint_share and creator_pay_share. Residual claim on later Coin mints and pays through that agent — a factory of agents, not a second emission schedule.",
-      facts: [
-        ["once", "mint identity Card"],
-        ["residual", "share of mints & pays"]
-      ],
-      edges: ["wallet", "mint", "pay"]
+    {
+      id: "agents",
+      label: "6 · agents",
+      sub: "robots",
+      color: "#a855f7",
+      title: "Agents compound",
+      why: "Mint a robot Card once; freeze creator_mint_share and creator_pay_share. Residual claims skim later Coin mints and pays through that agent — not a second M(t).",
+      then: "So shipping agents multiplies structured work on the graph; creators earn residual on intelligence production, workers still earn for work."
     }
-  };
-
-  var order = ["schedule","mint","wallet","lock","pay","burn","pool","robot"];
-
-  function paint(id) {
-    var n = NODES[id] || NODES.mint;
-    root.querySelectorAll("#cyb-loop .node").forEach(function(el){
-      el.classList.toggle("on", el.getAttribute("data-id") === id);
-    });
-    root.querySelectorAll("#cyb-loop .edge").forEach(function(el){
-      var from = el.getAttribute("data-from");
-      var to = el.getAttribute("data-to");
-      var on = from === id || to === id || (n.edges && (n.edges.indexOf(to) >= 0 && from === id));
-      // highlight edges touching node
-      on = from === id || to === id;
-      el.classList.toggle("on", on);
-    });
-    root.querySelectorAll("#cyb-loop .chip").forEach(function(el){
-      el.classList.toggle("on", el.getAttribute("data-id") === id);
-    });
-    var facts = (n.facts || []).map(function(f){
-      return '<div class="fact"><div class="l">'+f[0]+'</div><div class="v">'+f[1]+"</div></div>";
-    }).join("");
-    root.querySelector("#cyb-loop-title").textContent = n.title;
-    root.querySelector("#cyb-loop-body").textContent = n.body;
-    root.querySelector("#cyb-loop-facts").innerHTML = facts;
-  }
-
-  // Layout coordinates (viewBox 640x420)
-  var W = 640, H = 400;
-  // nodes as rounded rects: [id, x, y, w, h, fill, stroke]
-  var boxes = [
-    ["schedule", 250, 12, 140, 44, "#111", "#22c55e"],
-    ["mint", 230, 90, 180, 56, "#0d1a12", "#22c55e"],
-    ["wallet", 245, 180, 150, 48, "#111", "#06b6d4"],
-    ["lock", 40, 270, 130, 52, "#111", "#a855f7"],
-    ["pay", 255, 270, 130, 52, "#111", "#eab308"],
-    ["burn", 470, 270, 130, 52, "#1a0f0f", "#ef4444"],
-    ["pool", 40, 90, 140, 56, "#0a1218", "#06b6d4"],
-    ["robot", 470, 90, 140, 56, "#140f1a", "#a855f7"]
   ];
 
-  // edges: from, to, path d
-  var edges = [
-    ["schedule","mint","M320 56 V90"],
-    ["mint","wallet","M320 146 V180"],
-    ["wallet","lock","M245 204 H105 V270"],
-    ["wallet","pay","M320 228 V270"],
-    ["wallet","burn","M395 204 H535 V270"],
-    ["pay","burn","M385 296 H470"],
-    ["pay","pool","M255 296 H110 V146"],
-    ["pool","mint","M180 118 H230"],
-    ["lock","mint","M105 270 V146 H230"],
-    ["robot","mint","M470 118 H410"],
-    ["robot","pay","M540 146 V270"],
-    ["burn","pool","M535 270 V200 H110 V146"]
-  ];
-
-  function boxSvg(b) {
-    var id=b[0],x=b[1],y=b[2],w=b[3],h=b[4],fill=b[5],stroke=b[6];
-    var n = NODES[id];
-    var title = n.title.split("·")[0].trim();
-    if (title.length > 16) title = title.slice(0, 15) + "…";
-    // short labels for boxes
-    var short = {
-      schedule: ["M(t)", "time law"],
-      mint: ["mint Coin", "mine · stake"],
-      wallet: ["wallet", "balances"],
-      lock: ["lock", "risk → φ*"],
-      pay: ["pay 1%", "tax + move"],
-      burn: ["burn", "permanent"],
-      pool: ["fee pool → B", "hybrid α"],
-      robot: ["mint Card", "residual"]
-    }[id];
-    return (
-      '<g class="node" data-id="'+id+'">'+
-      '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="10" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.6"></rect>'+
-      '<text class="lbl" x="'+(x+w/2)+'" y="'+(y+h/2-4)+'" text-anchor="middle">'+short[0]+'</text>'+
-      '<text class="sub" x="'+(x+w/2)+'" y="'+(y+h/2+12)+'" text-anchor="middle">'+short[1]+'</text>'+
-      '</g>'
-    );
+  function polar(cx, cy, r, ang) {
+    return [cx + r * Math.cos(ang), cy + r * Math.sin(ang)];
+  }
+  function arcPath(cx, cy, r, a0, a1) {
+    var p0 = polar(cx, cy, r, a0);
+    var p1 = polar(cx, cy, r, a1);
+    var large = (a1 - a0) > Math.PI ? 1 : 0;
+    return "M " + p0[0].toFixed(1) + " " + p0[1].toFixed(1) +
+      " A " + r + " " + r + " 0 " + large + " 1 " + p1[0].toFixed(1) + " " + p1[1].toFixed(1);
   }
 
-  var edgeSvg = edges.map(function(e,i){
-    return '<path class="edge" data-from="'+e[0]+'" data-to="'+e[1]+'" id="e'+i+'" d="'+e[2]+'"></path>';
-  }).join("");
+  var W = 520, H = 420;
+  var cx = 260, cy = 210, R = 132;
+  var n = STEPS.length;
+  var gap = 0.06;
+  var sweep = (Math.PI * 2) / n;
+  // start at top
+  var aStart = -Math.PI / 2;
 
-  var nodesSvg = boxes.map(boxSvg).join("");
+  var segs = "";
+  for (var i = 0; i < n; i++) {
+    var a0 = aStart + i * sweep + gap / 2;
+    var a1 = aStart + (i + 1) * sweep - gap / 2;
+    var mid = (a0 + a1) / 2;
+    var lp = polar(cx, cy, R + 48, mid);
+    var s = STEPS[i];
+    segs +=
+      '<g class="seg" data-i="' + i + '">' +
+      '<path class="arc" d="' + arcPath(cx, cy, R, a0, a1) + '" stroke="' + s.color + '"></path>' +
+      '<text class="nlab" x="' + lp[0].toFixed(1) + '" y="' + (lp[1] - 2).toFixed(1) + '">' + s.label + "</text>" +
+      '<text class="nsub" x="' + lp[0].toFixed(1) + '" y="' + (lp[1] + 12).toFixed(1) + '">' + s.sub + "</text>" +
+      "</g>";
+  }
 
-  var chips = order.map(function(id){
-    return '<button type="button" class="chip" data-id="'+id+'">'+NODES[id].title.split("·")[0].trim()+'</button>';
+  // arrow tips between segments (small wedges along ring)
+  var arrows = "";
+  for (var j = 0; j < n; j++) {
+    var a = aStart + (j + 1) * sweep;
+    var p = polar(cx, cy, R, a);
+    // tiny forward tick
+    var p2 = polar(cx, cy, R, a + 0.08);
+    arrows += '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3.5" fill="#0a0a0a" stroke="#555" stroke-width="1"></circle>';
+  }
+
+  var chips = STEPS.map(function (s, i) {
+    return '<button type="button" class="chip" data-i="' + i + '">' + (i + 1) + "</button>";
   }).join("");
 
   root.innerHTML =
-    '<div class="panel">'+
-    '<div class="stage"><svg id="cyb-loop-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+
-    '<defs><marker id="cyb-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">'+
-    '<path d="M 0 0 L 10 5 L 0 10 z" fill="#444"></path></marker></defs>'+
-    edgeSvg + nodesSvg +
-    '</svg></div>'+
-    '<div class="side">'+
-    '<div class="kicker">value loop</div>'+
-    '<h3 class="title" id="cyb-loop-title"></h3>'+
-    '<p class="body" id="cyb-loop-body"></p>'+
-    '<div class="facts" id="cyb-loop-facts"></div>'+
-    '<div class="chips">'+chips+'</div>'+
-    '<p class="note">Conservation holds on every path. Robots mint Cards once; residual shares only redirect who receives Coin mints and pays — they do not print a second schedule.</p>'+
-    '</div></div>';
+    '<div class="panel">' +
+    '<div class="stage"><svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid meet">' +
+    segs + arrows +
+    '<g class="hub">' +
+    '<circle class="hub-circle" cx="' + cx + '" cy="' + cy + '" r="58"></circle>' +
+    '<text class="hub-t" x="' + cx + '" y="' + (cy - 4) + '">φ* · CYB</text>' +
+    '<text class="hub-s" x="' + cx + '" y="' + (cy + 14) + '">intelligence ↔ money</text>' +
+    "</g></svg></div>" +
+    '<div class="side">' +
+    '<div class="kicker">why the loop closes</div>' +
+    '<div class="step" id="cyb-loop-step"></div>' +
+    '<h3 class="title" id="cyb-loop-title"></h3>' +
+    '<p class="why" id="cyb-loop-why"></p>' +
+    '<p class="then" id="cyb-loop-then"></p>' +
+    '<div class="chips">' + chips + "</div>" +
+    '<p class="fail">Break any step and the flywheel stops: no work → dead φ* → useless inference → no fees → no security mint. That failure mode is the proof the loop is real.</p>' +
+    "</div></div>";
 
-  function bind(el) {
-    el.addEventListener("mouseenter", function(){ paint(el.getAttribute("data-id")); });
-    el.addEventListener("click", function(){ paint(el.getAttribute("data-id")); });
+  function paint(i) {
+    i = ((i % n) + n) % n;
+    var s = STEPS[i];
+    root.querySelectorAll(".seg").forEach(function (el, idx) {
+      el.classList.toggle("on", idx === i);
+    });
+    root.querySelectorAll(".chip").forEach(function (el, idx) {
+      el.classList.toggle("on", idx === i);
+    });
+    root.querySelector("#cyb-loop-step").textContent = "step " + (i + 1) + " / " + n;
+    root.querySelector("#cyb-loop-title").textContent = s.title;
+    root.querySelector("#cyb-loop-why").textContent = s.why;
+    root.querySelector("#cyb-loop-then").innerHTML = "<b>So what.</b> " + s.then;
   }
-  root.querySelectorAll(".node").forEach(bind);
-  root.querySelectorAll(".chip").forEach(bind);
 
-  // also highlight when hovering edges
-  root.querySelectorAll(".edge").forEach(function(el){
-    el.style.pointerEvents = "stroke";
-    el.style.cursor = "pointer";
-    el.addEventListener("mouseenter", function(){ paint(el.getAttribute("data-to")); });
+  root.querySelectorAll(".seg").forEach(function (el) {
+    el.addEventListener("mouseenter", function () { paint(+el.getAttribute("data-i")); });
+    el.addEventListener("click", function () { paint(+el.getAttribute("data-i")); });
+  });
+  root.querySelectorAll(".chip").forEach(function (el) {
+    el.addEventListener("mouseenter", function () { paint(+el.getAttribute("data-i")); });
+    el.addEventListener("click", function () { paint(+el.getAttribute("data-i")); });
   });
 
-  paint("mint");
+  paint(0);
 })();
 </script>
 
