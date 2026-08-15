@@ -401,7 +401,7 @@ Clock and focus stay separated: M(t) only answers how much is available; stake-w
 
 ## utility (plumb)
 
-[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns. Every movement of energy (pay, lock, unlock — including [[staking]]) pays a 1% tax on diffusion that is burned
+[[CYB]] is a [[coin]] under [[tok]] / [[plumb]]. Four ops: [[pay]], [[lock]], [[mint]], [[burn]]. Σ balances = mints − burns. Every movement of energy (pay, lock, unlock — including [[staking]]) pays a 1% tax on diffusion: half burned, half to the account’s creator (permanent referral)
 
 ### network effects
 
@@ -422,7 +422,7 @@ fairness  +  finality  +  truth
 | 2 | **finality** | [[Fold mining\|Fold]] packs proofs into durable settlement — reliable across planets and long delay. |
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
-| 5 | **revenue** | Use and every transfer pay in CYB. Service fees fund work; the 1% tax on diffusion burns. Early emission seeds security until velocity covers it. |
+| 5 | **revenue** | Use and every transfer pay in CYB. Service fees fund work; the 1% tax on diffusion splits half burn / half account-creator referral. |
 | 6 | **efficiency** | Revenue funds better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
 | 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
 
