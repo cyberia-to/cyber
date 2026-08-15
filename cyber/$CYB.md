@@ -400,7 +400,7 @@ $CYB growth only where φ* grew. One chain:
 create robots (lifetime residual)
   → more actors
     → more mining  +  more active stake
-      → better φ*
+      → more syntropy
         → better inference
           → more fees → pot B
             → better hardware
@@ -412,8 +412,8 @@ create robots (lifetime residual)
 | 1 | **robots** | Create an actor once. Lifetime creator residual on that robot’s later mints and pays → shipping robots is rational → more robots. |
 | 2 | **mine** | Bagless compute. Prove [[Shapley value\|division]] + [[fold mining\|fold]]. Mint only if proven $\Delta\phi^* > 0$. |
 | 3 | **stake** | Capital at risk. Lock on a claim ($v \neq 0$). Mint only if focus moves with you. Idle bags do not mint. |
-| 4 | **focus** | More robots drive more mine + stake → richer graph → better φ*. |
-| 5 | **infer** | Better φ* = better product (rank, compile, answers). |
+| 4 | **syntropy** | More robots drive more mine + stake → proven positive Δφ* → more structure on the graph. |
+| 5 | **infer** | More syntropy = better product (rank, compile, answers). |
 | 6 | **fees** | Use pays in CYB. Fee pool + $M(t)$ → pot B → creators, miners, stakers. |
 | 7 | **hardware** | Honest mint funds better machines → more prove capacity → next mine cycle stronger. |
 
@@ -492,22 +492,22 @@ Hover a segment.
       body: "Capital at risk is a separate channel from mining. Lock CYB on a claim (v ≠ 0); stake-side mint only if focus moves with you. Passive lock ranks only — idle bags do not mint. Capital earns when it backs truth."
     },
     {
-      id: "focus",
-      chip: "focus",
-      label: "focus",
-      sub: "→ better φ*",
+      id: "syntropy",
+      chip: "syntropy",
+      label: "syntropy",
+      sub: "Δφ* · structure",
       color: "#eab308",
-      title: "Better focus",
-      body: "More robots mean more mine and more active stake. Proofs densify structure; risked capital weights true claims. The tri-kernel reconverges — better φ* is what honest mint actually bought."
+      title: "More syntropy",
+      body: "More robots mean more mine and more active stake. Proofs densify structure; risked capital weights true claims. Proven positive Δφ* is new syntropy — the structure the network did not have. That is what honest mint actually bought."
     },
     {
       id: "infer",
       chip: "infer",
       label: "infer",
-      sub: "φ* = product",
+      sub: "product",
       color: "#c084fc",
       title: "Better inference",
-      body: "Rank, compile, and answers all read the same fixed point. Raise φ* and the product improves with it — no parallel AI budget. Inference quality is what people will pay for."
+      body: "Rank, compile, and answers all read the same fixed point. More syntropy makes the product better — no parallel AI budget. Inference quality is what people will pay for."
     },
     {
       id: "fees",
