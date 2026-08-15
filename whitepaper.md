@@ -11,7 +11,9 @@ status: draft
 
 > DRAFT — litepaper. research and educational material only. mechanisms and numbers will change. not a basis for financial or technical decisions.
 
-**Abstract.** Open networks settle money without a bank; they still leave knowledge to whoever runs the index — what matters, who said it, who is paid when understanding sharpens. We propose cyber: [[neurons]] stake signed [[cyberlinks]] between content-addressed [[particles]] into one [[cybergraph]], and [[tru]] computes a unique collective [[focus]] $\phi^*$ via the [[tri-kernel]] (diffusion, springs, heat). The same fixed point ranks the graph, compiles a model measured from structure, and mints [[cyber/$CYB|$CYB]] only for proven focus shift — so teaching is paid and learning is mining. [[Foculus]] takes $\phi^*$ as finality ($\phi^*_i > \tau$): agreement is local contraction plus gossip, not a global committee, so domains settle at domain speed and shared facts survive light-minutes. That is the bar for [[interplanetary superintelligence]]. [[Soft3]] is the live substrate; this document is the short spine into the deep articles.
+## Abstract
+
+Open networks settle money without a bank; they still leave knowledge to whoever runs the index — what matters, who said it, who is paid when understanding sharpens. We propose cyber: [[neurons]] stake signed [[cyberlinks]] between content-addressed [[particles]] into one [[cybergraph]], and [[tru]] computes a unique collective [[focus]] $\phi^*$ via the [[tri-kernel]] (diffusion, springs, heat). The same fixed point ranks the graph, compiles a model measured from structure, and mints [[cyber/$CYB|$CYB]] only for proven focus shift — so teaching is paid and learning is mining. [[Foculus]] takes $\phi^*$ as finality ($\phi^*_i > \tau$): agreement is local contraction plus gossip, not a global committee, so domains settle at domain speed and shared facts survive light-minutes. That is the bar for [[interplanetary superintelligence]]. [[Soft3]] is the live substrate; this document is the short spine into the deep articles.
 
 ## 1. Introduction
 
