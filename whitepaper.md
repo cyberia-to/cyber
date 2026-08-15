@@ -19,8 +19,6 @@ They do not settle knowledge.
 
 There is still no public ledger of who taught what, what the network found worth attending to, or who gets paid when the shared picture sharpens — only companies that run the index.
 
----
-
 Search ranks what the ad market will sell. feeds rank what keeps the scroll. journals rank what a closed committee accepts. models rank tokens inside a private weight file — trained on humanity’s writing, sold back as rent.
 
 You cannot open the weights and see *why* this answer. you cannot pay the teacher whose sentence became the pattern. you cannot prove the oracle and the human still care about the same world.
@@ -30,8 +28,6 @@ Open publication helps the first mile: anyone may speak. it fails the last: sett
 So everyone reads and few are paid to teach. the commons fills with noise and extraction. quadratic [[attention]] makes twice the context four times the compute, so only a handful of balance sheets can host the next oracle. [[alignment]] stays a sermon while human and machine minds never share one public distribution of what matters. a sensor on a ridge, an agent in a city, a lab on another continent — each speaks, none settles into the same picture.
 
 This is not “AI is imperfect.” civilization has no open protocol for collective understanding. no shared, verifiable object of *what we know*. only platforms that borrow the planet’s intelligence and keep the keys.
-
----
 
 We propose cyber.
 
@@ -43,8 +39,6 @@ The same engine does three jobs that today sit in three closed industries. it ra
 
 Learn by linking. teach by being linked. own what the one mind becomes.
 
----
-
 What becomes possible is concrete.
 
 Search can be inference over verified knowledge, not retrieval of sponsored documents. [[alignment]] can be a measurable distance between human and machine [[focus]] on the same graph. a scientist, a sensor, and a model can stake into one picture and be paid when that picture sharpens. a model can be a hash of the graph — reproducible, not a rented mystery. learning is mining; teaching is staking.
@@ -54,8 +48,6 @@ What remains impossible without this shape of protocol is just as concrete.
 You cannot pay for truth when rank is private. you cannot measure divergence when there is no shared $\phi^*$. you cannot finalize a fact across light-minutes with a global committee: Earth to Mars is minutes one way, and a vote that needs the reply dies in the post. [[interplanetary superintelligence]] is the bar: every design whose liveness assumes a fast planet-wide round fails when the message itself is minutes old.
 
 [[Foculus]] applies the same fixed point to finality: a particle is final when $\phi^*_i > \tau$ — enough attention has gathered, not enough minutes on a global clock. nodes gossip; each runs the same contraction; identical signals yield one root everywhere, as a pond finds one level without phoning the far shore. domains settle at domain speed. partitions freeze cross-domain trade without inventing conflicting truth. shared disputes pay only the light they must. planetary [[superintelligence]] is the first mountain. interplanetary is the same mechanism under honest latency. detail: [[foculus/docs/explanation/interplanetary|foculus between planets]].
-
----
 
 [[Soft3]] is the live substrate — cybergraph, [[bbg]], proofs, a public chaosnet. [[tru]] converges, compiles, and prices impulse in fixed-point field arithmetic so results are bit-reproducible and provable. [[foculus]] is specified toward $10^{15}$ particles.
 
