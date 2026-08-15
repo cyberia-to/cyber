@@ -412,7 +412,7 @@ fairness  +  finality  +  truth
 | 3 | **truth** | [[Staking]]: capital takes a side on claims. Earn only if the graph moves with you. Idle bags do not mint. |
 | 4 | **intelligence** | Syntropy + inference as one product: denser true structure → sharper answers → more demand for queries. |
 | 5 | **revenue** | Use pays in CYB. Fees (plus early emission) fund creators, miners, and stakers. |
-| 6 | **efficiency** | Revenue reinvests in better general-purpose machines → more useful work per joule and per dollar → cheaper fairness and answers next round. |
+| 6 | **efficiency** | Revenue funds better [[Goldilocks field processor|GFP]] silicon → the same chip mines and proves → cheaper fairness work and answers next round. |
 | 7 | **population** | More robots (agents). Create once; lifetime residual for the creator → shipping robots is rational → more nodes on the graph. |
 
 Eighth factor if you stretch the ring: [[karma]] — quality of actors so population is not spam. Kept off the wheel for now; it multiplies truth and intelligence rather than standing alone.
@@ -513,10 +513,10 @@ Hover a factor.
       id: "efficiency",
       chip: "efficiency",
       label: "efficiency",
-      sub: "work per joule",
+      sub: "GFP · mine = prove",
       color: "#f97316",
       title: "Efficiency",
-      body: "Revenue buys better general-purpose machines — CPU, GPU, servers — not single-purpose ASICs. The factor is efficiency: more useful split/fold and cheaper answers per joule and per dollar. Hashrate and serving capacity rise because the last round paid for real improvement, not empty heat."
+      body: "Efficiency is the <a href=\"/goldilocks-field-processor\" class=\"internal-link\">GFP</a> flywheel: mining rewards and fees fund better Goldilocks field processors — silicon for fma, ntt, p2r, lut. The same chip that mines is the same chip that proves and serves the network, so hardware is never stranded heat. Better GFP → cheaper useful split/fold and cheaper answers → more use → more revenue → better GFP."
     },
     {
       id: "population",
