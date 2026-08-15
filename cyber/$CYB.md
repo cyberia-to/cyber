@@ -137,10 +137,10 @@ About half the cap is issued in year one. Rate starts finite (\(k/\tau \approx 1
     { label: "1 day", t: 1 / 365 },
     { label: "1 week", t: 7 / 365 },
     { label: "1 month", t: 1 / 12 },
-    { label: "3 months", t: 0.25 },
-    { label: "6 months", t: 0.5 },
-    { label: "9 months", t: 0.75 },
-    { label: "1 year", t: 1 }
+    { label: "3 month", t: 0.25 },
+    { label: "1 year", t: 1 },
+    { label: "2 year", t: 2 },
+    { label: "4 year", t: 4 }
   ];
 
   function fmtYear(t) {
