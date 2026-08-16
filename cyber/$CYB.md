@@ -5,7 +5,13 @@ crystal-type: entity
 crystal-domain: economics
 icon: "⚡"
 ---
-root [[token]] of cyber. unit of stake, fees, and rewards for proven contribution to [[focus]] φ*. emission schedule is a function of time alone; who receives emission is a function of φ*. see [[whitepaper]], [[mining]], [[staking]]
+root [[token]] of cyber.
+
+unit of stake, fees, and rewards for proven contribution to [[focus]] φ*.
+
+emission schedule is a function of time alone; who receives emission is a function of φ*.
+
+see [[whitepaper]], [[mining]], [[staking]]
 
 ## role
 
