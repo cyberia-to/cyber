@@ -19,18 +19,22 @@ see [[whitepaper]], [[mining]], [[staking]]
 
 ## hard money
 
+Classical **sound money**: scarce, costly to create, hard to debase, durable, portable, divisible. Bitcoin took scarcity (fixed cap). Ethereum’s **ultrasound** meme: if capped supply is sound, *decreasing* supply is ultra sound — fee burn can exceed issuance. $CYB takes both, then goes further: the cost of a new unit is proven knowledge, and the machine is small enough to run in your pocket
+
 | hardness | |
 |----------|--|
-| **finite field** | Supply lives in a [[nebu\|finite field]] — max supply is arithmetic (\(p = 2^{64}-2^{32}+1\)), not a vote |
-| **conservation** | [[Focus]] sums to one; mint only on proven Δφ* — inflation is knowledge, not policy |
+| **finite field** | Supply lives in a [[nebu\|finite field]] — max supply is arithmetic (\(p\)), not a vote (sound: hard cap) |
+| **conservation** | [[Focus]] sums to one; mint only on proven Δφ* — unforgeable costliness of knowledge, not policy |
+| **ultrasound** | Tax on diffusion burns; when burn > emission, supply shrinks — usage hardens money |
 | **powerful** | Every unit means something, literally — query the [[cybergraph]], do not trust a treasury |
 | **quantum-hard** | [[hemera]] + [[zheng]] + field ops; no discrete log for Shor; isogeny keys in [[mudra]] |
 | **private** | Same field encrypts ([[strata]] FHE) — prove the property, keep the number |
-| **compact** | Fewer lines of code — easier to carry, audit, and execute |
+| **compact** | Fewer lines of code — easier to carry, audit, and execute (portable money-machine) |
 | **fast** | Lightning paths to silicon ([[Goldilocks field processor\|GFP]], [[honeycrisp]]) — not datacenter-only money |
-| **reliable** | Tests, specs, theorems, proofs; multi-language impl — no single runtime to believe |
+| **reliable** | Tests, specs, theorems, proofs; multi-language impl — durable under force and neglect |
 
 Mint in your pocket: Mac and Android via [[honeycrisp]]. Hard money you can run
+
 ## cap
 
 Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and proofs:
