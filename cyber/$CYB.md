@@ -25,8 +25,8 @@ Oldest sense still holds: expensive to make, impossible to counterfeit. Then sev
 
 | hardness | what it means |
 |----------|----------------|
-| **conservation** | [[Focus]] sums to one across the graph — the backing quantity cannot be printed, only redistributed. New supply exists only against proven Δφ*: inflation is evidence of knowledge, not a policy rate |
-| **semantic** | Every unit **means something, literally**. It traces to links in the [[cybergraph]]; [[neural]] reads value as position in the topology. You do not “believe the treasury” — you **query the backing**. Money whose referent is structure, not a press release |
+| **conservation** | [[Focus]] sums to one across the graph — the backing quantity cannot be printed, only redistributed. New supply exists only against proven Δφ*: inflation is evidence of knowledge, not a policy rate. Supply lives in a [[nebu\|finite field]] — max supply is arithmetic, bolted into the field order \(p = 2^{64}-2^{32}+1\), not a governance ceiling |
+| **powerful** | Every unit **means something, literally**. It traces to links in the [[cybergraph]]; [[neural]] reads value as position in the topology. You do not “believe the treasury” — you **query the backing**. Money whose referent is structure, not a press release |
 | **quantum-hard** | Identity is a [[hemera]] hash (Poseidon2 over the [[nebu|Goldilocks field]]), state is a polynomial commitment, proofs are [[zheng]] — hash-and-field crypto with no discrete log for Shor to unwind; key exchange in the [[mudra]] ladder is isogeny-based (dCTIDH) |
 | **private** | The same field that proves also encrypts: [[strata]] hosts the FHE regime (jali R_q, TFHE in the [[mudra]] ladder). Prove the property, keep the number |
 | **compact** | Fewer lines of code — easier to carry, audit, and execute. The money machine is a small artifact: field ops + proofs + conservation, not a sprawling bank stack. Compactness is hardness against complexity attacks |
