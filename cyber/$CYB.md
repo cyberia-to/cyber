@@ -13,15 +13,21 @@ root [[token]] of cyber. unit of stake, fees, and rewards for proven contributio
 
 ## hard money
 
-$CYB is hard money in the oldest sense — expensive to make, impossible to counterfeit — and in four new ones:
+Hard money is not a slogan. It is money that **stays true under force** — force of printing, of forgery, of time, of distance, of neglect. Gold was hard because nature was expensive. Bitcoin is hard because hash is expensive. **$CYB is hard because knowledge is expensive to fake and cheap to verify** — and because the machine that carries it is small, fast, and proven.
 
-- backed by conservation. [[focus]] sums to one across the whole graph — the backing quantity cannot be printed, only redistributed. Emission happens only against proven Δφ*: new supply exists exactly when the graph provably grew smarter. Inflation is evidence of knowledge, not a policy
-- quantum-hard by construction. Identity is a [[hemera]] hash (Poseidon2 over the [[nebu|Goldilocks field]]), state is a polynomial commitment, proofs are [[zheng]] — hash-and-field cryptography with no discrete log for Shor to unwind; key exchange in the [[mudra]] ladder is isogeny-based (dCTIDH)
-- private by the same field. The field that proves also encrypts: [[strata]] hosts the FHE regime (jali R_q, TFHE in the [[mudra]] ladder), so balances can compute without being seen — prove the property, keep the number
-- it means something, literally. Every unit traces to links in the [[cybergraph]], and [[neural]] reads value as position in the topology. This is money whose backing you can query
+Oldest sense still holds: expensive to make, impossible to counterfeit. Then seven hard properties:
 
-And the mint is in your pocket. Proving work targets the devices people already own — Mac and Android — with direct access to the silicon through [[honeycrisp]]: NEON/AMX/SME, Metal GPU, ANE, zero-copy unified memory. A million laptops and phones instead of three datacenters: issuance lands where the hands are
+| hardness | what it means |
+|----------|----------------|
+| **conservation** | [[Focus]] sums to one across the graph — the backing quantity cannot be printed, only redistributed. New supply exists only against proven Δφ*: inflation is evidence of knowledge, not a policy rate |
+| **semantic** | Every unit **means something, literally**. It traces to links in the [[cybergraph]]; [[neural]] reads value as position in the topology. You do not “believe the treasury” — you **query the backing**. Money whose referent is structure, not a press release |
+| **quantum-hard** | Identity is a [[hemera]] hash (Poseidon2 over the [[nebu|Goldilocks field]]), state is a polynomial commitment, proofs are [[zheng]] — hash-and-field crypto with no discrete log for Shor to unwind; key exchange in the [[mudra]] ladder is isogeny-based (dCTIDH) |
+| **private** | The same field that proves also encrypts: [[strata]] hosts the FHE regime (jali R_q, TFHE in the [[mudra]] ladder). Prove the property, keep the number |
+| **compact** | Fewer lines of code — easier to carry, audit, and execute. The money machine is a small artifact: field ops + proofs + conservation, not a sprawling bank stack. Compactness is hardness against complexity attacks |
+| **fast** | Must run lightning-fast: local neighborhoods, GFP-aligned primitives ([[Goldilocks field processor|GFP]]), [[honeycrisp]] paths to silicon (NEON/AMX/SME, Metal GPU, ANE, zero-copy unified memory). Hard money that only settles in a datacenter is soft in practice |
+| **reliable** | Covered by tests, specs, theorems, and proofs — and by implementations across languages so no single runtime is the single point of belief. Reliability is hardness against “trust me, it works on my machine” |
 
+The mint is in your pocket. Proving targets devices people already own — Mac and Android — not three datacenters. A million hands instead of one issuer: issuance lands where the work is. Hard money that **you can run** is harder than hard money you can only hold
 ## cap
 
 Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and proofs:
