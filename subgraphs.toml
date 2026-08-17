@@ -407,6 +407,7 @@ archived = true
 name = "cybland"
 parent = "cyber-valley"
 visibility = "private"
+archived = true
 
 # /rockets ──────────────────────────────────
 [[subgraph]]
