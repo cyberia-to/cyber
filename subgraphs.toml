@@ -387,17 +387,14 @@ name = "events"
 parent = "cyberia"
 visibility = "private"
 archived = true
-# content at cyberia/research/events
-# clone lives at cyberia/research/events; symlink ~/cyber/events for workspace tools
-# github remote still cyberia-to/my until renamed
+# content at cyberia/research/events (not a separate mount); github still cyberia-to/my
 
 [[subgraph]]
 name = "cyberia-my"
 parent = "cyberia"
 visibility = "private"
 archived = true
-# content at cyberia/research/cyberia-my
-# clone lives at cyberia/research/cyberia-my; symlink ~/cyber/cyberia-my
+# content at cyberia/research/cyberia-my (not a separate mount)
 
 # /cyber-valley ──────────────────────────────────
 
