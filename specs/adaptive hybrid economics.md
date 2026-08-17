@@ -101,6 +101,8 @@ protocol does not target \(S^*\); it emerges. α moves the equilibrium sensitivi
 
 ## FEEDBACK (PID)
 
+**not agree**
+
 errors from observables only — no price oracle required for the core loop:
 
 | error | definition | drives |
