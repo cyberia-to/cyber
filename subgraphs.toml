@@ -373,6 +373,7 @@ menu = false
 name = "mimi"
 parent = "cyberia"
 visibility = "private"
+# clone lives at cyberia/research/mimi; symlink ~/cyber/mimi
 
 [[subgraph]]
 name = "midao"
