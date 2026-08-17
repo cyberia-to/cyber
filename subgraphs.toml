@@ -381,9 +381,17 @@ visibility = "private"
 
 
 [[subgraph]]
-name = "my"
+name = "events"
 parent = "cyberia"
 visibility = "private"
+# clone lives at cyberia/research/events; symlink ~/cyber/events for workspace tools
+# github remote still cyberia-to/my until renamed
+
+[[subgraph]]
+name = "cyberia-my"
+parent = "cyberia"
+visibility = "private"
+# clone lives at cyberia/research/cyberia-my; symlink ~/cyber/cyberia-my
 
 # /cyber-valley ──────────────────────────────────
 
