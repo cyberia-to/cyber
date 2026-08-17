@@ -99,7 +99,7 @@ S^* = \min\!\left(1,\ \Big(\frac{B}{r M}\Big)^{\frac{1}{1-\alpha}}\right)
 
 protocol does not target \(S^*\); it emerges. α moves the equilibrium sensitivity
 
-## feedback (PID)
+## FEEDBACK (PID)
 
 errors from observables only — no price oracle required for the core loop:
 
