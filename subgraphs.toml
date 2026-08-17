@@ -373,7 +373,8 @@ menu = false
 name = "mimi"
 parent = "cyberia"
 visibility = "private"
-# clone lives at cyberia/research/mimi; symlink ~/cyber/mimi
+archived = true
+# content lives inside cyberia repo tree: cyberia/research/mimi (not a separate mount)
 
 [[subgraph]]
 name = "midao"
@@ -385,6 +386,8 @@ visibility = "private"
 name = "events"
 parent = "cyberia"
 visibility = "private"
+archived = true
+# content at cyberia/research/events
 # clone lives at cyberia/research/events; symlink ~/cyber/events for workspace tools
 # github remote still cyberia-to/my until renamed
 
@@ -392,6 +395,8 @@ visibility = "private"
 name = "cyberia-my"
 parent = "cyberia"
 visibility = "private"
+archived = true
+# content at cyberia/research/cyberia-my
 # clone lives at cyberia/research/cyberia-my; symlink ~/cyber/cyberia-my
 
 # /cyber-valley ──────────────────────────────────
