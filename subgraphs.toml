@@ -367,7 +367,7 @@ visibility = "private"
 [[subgraph]]
 name = "cyberia"
 visibility = "public"
-menu = false
+menu = true
 
 [[subgraph]]
 name = "mimi"
@@ -406,7 +406,7 @@ visibility = "private"
 [[subgraph]]
 name = "cyber-valley"
 visibility = "public"
-menu = false
+menu = true
 
 [[subgraph]]
 name = "oxytocin"
