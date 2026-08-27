@@ -9,7 +9,7 @@
 [site]
 title = "Cyber"
 description = "Root Knowledge graph"
-base_url = "http://localhost:8888"
+base_url = "https://cyber.page"
 language = "en"
 root_page = "Cyber"      # Page to render as homepage
 favicon = "\U0001F535"
