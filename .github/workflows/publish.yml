@@ -104,7 +104,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          npm install -g netlify-cli
+          npm install -g netlify-cli@27.3.1
           netlify deploy --prod \
             --dir="$HOME/cyber/cyber/build" \
             --site="$NETLIFY_SITE_ID" \
