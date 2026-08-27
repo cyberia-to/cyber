@@ -104,8 +104,23 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         run: |
-          npm install -g netlify-cli@27.3.1
-          netlify deploy --prod \
-            --dir="$HOME/cyber/cyber/build" \
-            --site="$NETLIFY_SITE_ID" \
-            --auth="$NETLIFY_AUTH_TOKEN"
+          cd "$HOME/cyber/cyber/build"
+          zip -r -q /tmp/site.zip .
+          deploy_id=$(curl -sf -X POST \
+            -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+            -H "Content-Type: application/zip" \
+            --data-binary "@/tmp/site.zip" \
+            "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys" | jq -r .id)
+          test -n "$deploy_id" && test "$deploy_id" != null
+          echo "deploy $deploy_id"
+          for i in $(seq 1 90); do
+            state=$(curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+              "https://api.netlify.com/api/v1/deploys/$deploy_id" | jq -r .state)
+            echo "state: $state"
+            case "$state" in
+              ready) exit 0;;
+              error) exit 1;;
+            esac
+            sleep 10
+          done
+          echo "timeout waiting for netlify processing"; exit 1
