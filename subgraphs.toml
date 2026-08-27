@@ -390,7 +390,7 @@ visibility = "private"
 [[subgraph]]
 name = "cve"
 parent = "cyber-valley"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "cyber-valley"
