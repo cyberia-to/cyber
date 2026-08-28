@@ -5,7 +5,7 @@ crystal-domain: cyber
 alias: nox research, computation as linking, provable computer
 ---
 
-# nox: frozen provable computer
+# nox — frozen provable computer
 
 computation IS [[cyberlinks|linking]]. evaluating a program IS creating an edge in the [[cybergraph]]. the execution trace IS the [[zheng]] proof witness. the structural hash of the result IS the [[particles|particle]] identity. no boundary between "compute" and "record."
 

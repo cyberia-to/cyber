@@ -5,7 +5,13 @@ crystal-type: entity
 crystal-domain: economics
 icon: "⚡"
 ---
-root [[token]] of cyber. unit of stake, fees, and rewards for proven contribution to [[focus]] φ*. emission schedule is a function of time alone; who receives emission is a function of φ*. see [[whitepaper]], [[mining]], [[staking]]
+root [[token]] of cyber.
+
+unit of stake, fees, and rewards for proven contribution to [[focus]] φ*.
+
+emission schedule is a function of time alone; who receives emission is a function of φ*.
+
+see [[whitepaper]], [[mining]], [[staking]]
 
 ## role
 
@@ -13,14 +19,21 @@ root [[token]] of cyber. unit of stake, fees, and rewards for proven contributio
 
 ## hard money
 
-$CYB is hard money in the oldest sense — expensive to make, impossible to counterfeit — and in four new ones:
+Classical **sound money**: scarce, costly to create, hard to debase, durable, portable, divisible. Bitcoin took scarcity (fixed cap). Ethereum’s **ultrasound** meme: if capped supply is sound, *decreasing* supply is ultra sound — fee burn can exceed issuance. $CYB takes both, then goes further: the cost of a new unit is proven knowledge, and the machine is small enough to run in your pocket
 
-- backed by conservation. [[focus]] sums to one across the whole graph — the backing quantity cannot be printed, only redistributed. Emission happens only against proven Δφ*: new supply exists exactly when the graph provably grew smarter. Inflation is evidence of knowledge, not a policy
-- quantum-hard by construction. Identity is a [[hemera]] hash (Poseidon2 over the [[nebu|Goldilocks field]]), state is a polynomial commitment, proofs are [[zheng]] — hash-and-field cryptography with no discrete log for Shor to unwind; key exchange in the [[mudra]] ladder is isogeny-based (dCTIDH)
-- private by the same field. The field that proves also encrypts: [[strata]] hosts the FHE regime (jali R_q, TFHE in the [[mudra]] ladder), so balances can compute without being seen — prove the property, keep the number
-- it means something, literally. Every unit traces to links in the [[cybergraph]], and [[neural]] reads value as position in the topology. This is money whose backing you can query
+| hardness | |
+|----------|--|
+| **finite field** | Supply lives in a [[nebu\|finite field]] — max supply is arithmetic (\(p\)), not a vote (sound: hard cap) |
+| **conservation** | [[Focus]] sums to one; mint only on proven Δφ* — unforgeable costliness of knowledge, not policy |
+| **ultrasound** | Tax on diffusion burns; when burn > emission, supply shrinks — usage hardens money |
+| **powerful** | Every unit means something, literally — query the [[cybergraph]], do not trust a treasury |
+| **quantum-hard** | [[hemera]] + [[zheng]] + field ops; no discrete log for Shor; isogeny keys in [[mudra]] |
+| **private** | Same field encrypts ([[strata]] FHE) — prove the property, keep the number |
+| **compact** | Fewer lines of code — easier to carry, audit, and execute (portable money-machine) |
+| **fast** | Lightning paths to silicon ([[Goldilocks field processor\|GFP]], [[honeycrisp]]) — not datacenter-only money |
+| **reliable** | Tests, specs, theorems, proofs; multi-language impl — durable under force and neglect |
 
-And the mint is in your pocket. Proving work targets the devices people already own — Mac and Android — with direct access to the silicon through [[honeycrisp]]: NEON/AMX/SME, Metal GPU, ANE, zero-copy unified memory. A million laptops and phones instead of three datacenters: issuance lands where the hands are
+Mint in your pocket: Mac and Android via [[honeycrisp]]. Hard money you can run
 
 ## cap
 
@@ -28,11 +41,11 @@ Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and p
 
 p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321
 
-Cap is arithmetic, not a governance vote. On the [[bootloader]] ([[bostrom]]) the same energy currently circulates as [[$C]]
+Cap is arithmetic, not a governance vote. On the [[bootloader]] ([[bostrom]]) the same energy currently circulates as [[$TOCYB]]
 
 ## genesis
 
-At block 0, [[$C]] holders receive 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666). Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule
+At block 0, [[$TOCYB]] holders receive 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666). Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule
 
 ## emission
 

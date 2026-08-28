@@ -367,12 +367,14 @@ visibility = "private"
 [[subgraph]]
 name = "cyberia"
 visibility = "public"
-menu = false
+menu = true
 
 [[subgraph]]
 name = "mimi"
 parent = "cyberia"
 visibility = "private"
+archived = true
+# content lives inside cyberia repo tree: cyberia/research/mimi (not a separate mount)
 
 [[subgraph]]
 name = "midao"
@@ -381,9 +383,18 @@ visibility = "private"
 
 
 [[subgraph]]
-name = "my"
+name = "events"
 parent = "cyberia"
 visibility = "private"
+archived = true
+# content at cyberia/research/events (not a separate mount); github still cyberia-to/my
+
+[[subgraph]]
+name = "cyberia-my"
+parent = "cyberia"
+visibility = "private"
+archived = true
+# content at cyberia/research/cyberia-my (not a separate mount)
 
 # /cyber-valley ──────────────────────────────────
 
@@ -395,7 +406,7 @@ visibility = "public"
 [[subgraph]]
 name = "cyber-valley"
 visibility = "public"
-menu = false
+menu = true
 
 [[subgraph]]
 name = "oxytocin"
@@ -403,10 +414,6 @@ parent = "cyber-valley"
 visibility = "private"
 archived = true
 
-[[subgraph]]
-name = "cybland"
-parent = "cyber-valley"
-visibility = "private"
 
 # /rockets ──────────────────────────────────
 [[subgraph]]
