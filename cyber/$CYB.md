@@ -41,11 +41,11 @@ Total supply is the order of the [[nebu|Goldilocks field]] used by [[nox]] and p
 
 p = 2⁶⁴ − 2³² + 1 = 18,446,744,069,414,584,321
 
-Cap is arithmetic, not a governance vote. On the [[bootloader]] ([[bostrom]]) the same energy currently circulates as [[$C]]
+Cap is arithmetic, not a governance vote. On the [[bootloader]] ([[bostrom]]) the same energy currently circulates as [[$TOCYB]]
 
 ## genesis
 
-At block 0, [[$C]] holders receive 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666). Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule
+At block 0, [[$TOCYB]] holders receive 187,416,084,623,451,570 CYB ≈ 1% of p (281,405,532,467,645 snapshot × 666). Continuity of prior stake into the soft3 field; remaining mass is reserved for the emission schedule
 
 ## emission
 
