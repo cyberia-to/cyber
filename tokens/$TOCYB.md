@@ -5,7 +5,7 @@ alias: $C, carbon, TOCYB, tocyb
 crystal-type: entity
 crystal-domain: economics
 ---
-the promise token of [[cyber]]: hold tocyb, receive [[$CYB]] when the network arrives. [[store of value]] for [[superintelligence]] with no internal utility — its whole meaning is the claim on the future field
+the promise token of [[cyber]]: hold tocyb, receive [[$CYB]] when the network arrives
 
 # story
 
