@@ -13,7 +13,7 @@ the right to compute on your own state without showing it. in a world where ever
 
 | layer | mechanism |
 |-------|-----------|
-| [[bbg]] | aggregate public, individual private — block-level proofs over a [[bbg/privacy\|mutator set]], commitment and nullifier polynomials |
+| [[bbg]] | aggregate public, individual private — block-level proofs over a [[bbg privacy\|mutator set]], commitment and nullifier polynomials |
 | [[strata]] | the FHE regime: jali $R_q$ hosts encrypted arithmetic in the same [[nebu|Goldilocks field]] that proves |
 | [[mudra]] | TFHE in the key ladder, isogeny-based exchange (dCTIDH) — no discrete log for Shor to unwind |
 | [[zheng]] | hash-and-field proofs — verification without re-exposure |
