@@ -22,15 +22,30 @@ the right to compute on your own state without showing it. in a world where ever
 
 # lessons of the field
 
-a decade of cypherpunk engineering already paid for the big lessons. each system below earned one:
+a decade of cypherpunk engineering already paid for the big lessons. each system earned one — read the table as a history: the field learned to default, then to prove, then to forget, and by 2025 it learned to clear markets, satisfy regulators, and compute blind:
 
-- [[privacy/monero]] — privacy must be the default, or the anonymity set collapses
-- [[privacy/zcash]] — the strongest cryptography loses to opt-in economics
-- [[privacy/aztec]] — private state and public consensus can share one settlement layer
-- [[privacy/starknet]] — transparent hash-based proofs scale and survive quantum; trusted setups age badly
-- [[privacy/aleo]] — execute off-chain, verify on-chain: the chain never needs to see the program run
-- [[privacy/mina]] — recursion compresses history; verification cost can stay constant forever
-- [[privacy/ergo]] — composable sigma protocols make privacy a toolbox, one proof per need
+| system | since | breakthrough | the lesson, kept |
+|--------|-------|--------------|------------------|
+| [[privacy/monero]] | 2014 | ring signatures · RingCT · FCMP++ toward full-chain membership | defaults — an opt-in anonymity set collapses; the set must be everyone |
+| [[privacy/zcash]] | 2016 | first zk-SNARK money · Halo 2 ended ceremonies · Tachyon scales the pool | proves — and the strongest cryptography still loses to opt-in economics |
+| [[privacy/grin]] | 2019 | mimblewimble cut-through, no addresses | forgets — history shrinks to commitments; interactive UX taxes adoption |
+| [[privacy/ergo]] | 2019 | composable sigma protocols | composes — one small proof per need, assembled per contract |
+| [[privacy/zano]] | 2019 | confidential assets · Zarcanum hidden-amount PoS | stakes — consensus weight proven without being shown |
+| [[privacy/semaphore]] | 2020 | anonymous membership + nullifier signaling | belongs — identity is membership without a name |
+| [[privacy/mina]] | 2021 | recursive constant-size chain | compresses — one proof stands for unbounded history |
+| [[privacy/starknet]] | 2021 | hash-based STARKs at scale | survives — transparent proofs outlive quantum and ceremonies |
+| [[privacy/aztec]] | 2021 | private rollup on public settlement | settles — private state and public consensus share one layer |
+| [[privacy/aleo]] | 2024 | off-chain execution, on-chain verification | hides the run — the chain never sees the program execute |
+| [[privacy/xelis]] | 2024 | homomorphic encrypted balances in accounts | encrypts the account — balances live as ciphertexts |
+| [[privacy/penumbra]] | 2024 | sealed-intent batch DEX · threshold aggregate decryption | clears on aggregates — individual intent stays sealed |
+| [[privacy/namada]] | 2024 | one shielded set for all assets · shielded rewards | subsidizes — the anonymity set is a public good, pay to grow it |
+| [[privacy/neptune]] | 2025 | mutator sets · recursive STARK state | accumulates — membership without rings, post-quantum |
+| [[privacy/nockchain]] | 2025 | zkPoW: mining produces STARK proofs | works — the miners' watts become proofs |
+| [[privacy/privacy pools\|privacy pools]] | 2025 | association sets on Ethereum | dissociates — compliance by proof, identity intact |
+| [[privacy/zama]] | 2025 | fhEVM: contracts on ciphertexts · threshold KMS | computes blind — programmable FHE shipped fused with MPC |
+| [[privacy/arcium]] | 2025 | MPC network as encrypted co-processor | shares — many parties compute, no one holds the input |
+
+read the table against the [[privacy trilateral]]: zcash, mina, starknet, aztec, aleo, semaphore and nockchain grew the ZK vertex; monero, grin, zano, namada, neptune and xelis fought for the anonymity set; zama and xelis opened the FHE vertex; penumbra, arcium and zama's threshold keys put MPC into production; privacy pools made the whole triangle legible to regulators. every system in the table roots its guarantees in mathematics; TEE chains root theirs in a vendor's silicon, which is why the table ends here
 
 # the gaps we still close
 
