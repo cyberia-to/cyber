@@ -197,6 +197,7 @@ changes this audit implies, in order of force:
 4. **[[tri-kernel]]** — state the positivity bound explicitly: Perron–Frobenius means no interference, which is a correctness argument for consensus and a limit on cosmological claims.
 5. **[[ct0]]** §7.7 — write the bivector branch as a rotor over $\mathbb{F}_{p^2}$ or mark it explicitly as orientation-only; half a Clifford algebra produces no phases.
 6. **[[foculus]]** — report attribution precision per joule; the [[thermodynamic uncertainty relation]] makes it the honest efficiency number for a settlement mechanism.
+7. **[[tri-kernel]]** — state the contraction budget on a measured graph: with $\lambda_2 \approx 10^{-3}$ the heat term pays nothing toward $\kappa$ at ordinary $\tau$, so the spec should name which term buys the contraction and what trace length $T(\varepsilon)$ that leaves for [[zheng]].
 
 ---
 
@@ -206,7 +207,11 @@ the parts of [[cyber]] that came from physics are the parts that need no defence
 
 the parts with no physics behind them are exactly the parts still open: how to price novelty before the market believes it, how to keep a copy from earning, how to divide credit among agents who can lie. physics never had to solve those, because nature has no copies, no strategy, and no need to pay anyone.
 
-so the honest summary is narrower than the ambition and stronger than a metaphor. **the substrate is settled and the incentives are not.** a superintelligence built on this stack will fail, if it fails, in the economics — not in the mathematics.
+so the honest summary is narrower than the ambition and stronger than a metaphor. **the substrate is settled and the incentives are not.**
+
+that is a claim about where the risk lives, not a prediction that the risk wins. nothing here says this stack fails. it says that should it fail, the failure arrives through the incentive layer — pricing novelty against a late market, keeping a copy from earning, dividing credit among agents who can lie — and not through the operators, which are theorems.
+
+one measurement keeps that from being a boast. the contraction $\kappa$ is a budget paid by three terms, and on the live graph the [[spectral gap]] is $\lambda_2 \approx 10^{-3}$ (see [[spectral gap from convergence]]) — so the heat term contracts at $e^{-\tau\lambda_2} \approx 1$ and contributes nothing unless $\tau \sim 1/\lambda_2$. locality on a real cybergraph is bought by the teleport $\alpha$ and the screening $\mu$, not earned by the topology. **this is the one place mathematics could still bite**: a blend that leans on heat inherits $\kappa \to 1$, and since the trace length $T(\varepsilon) = \lceil \log(1/\varepsilon)/\log(1/\kappa) \rceil$ is what [[zheng]] must prove, a near-unit contraction is not slow convergence but an unprovable epoch.
 
 see [[tri-kernel]] · [[rewards]] · [[syntropy]] · [[superadditivity]] · [[theoretical foundations]] · [[landauer limit]]
 
