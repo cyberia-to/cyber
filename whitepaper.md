@@ -762,7 +762,7 @@ $\phi^*$ is weighted by staked [[tokens]], not by node count. Creating 1000 [[ne
 | Leader | Rotating proposer | Miner (PoW lottery) | None |
 | Finality | 5-60 s | ~60 min | 1-3 s |
 | Throughput | 1k-10k tx/s | ~10 tx/s | ~$10^9$ signals/s per GPU |
-| Validator scale | $10^2$-$10^3$ | Unbounded | Unbounded |
+| Validator scale | 10²–10³ | Unbounded | Unbounded |
 | Fault tolerance | 1/3 stake | 51% hash | 1/2 $\phi^*$ |
 
 Each iteration is a sparse matrix-vector multiply — embarrassingly parallel, no sequential bottleneck. Single GPU (A100): ~50M edges at 40 Hz $\approx 2 \times 10^9$ edge ops/s. Latency: compute ~0.2 s, 5-8 iterations, propagation ~0.4 s → worst-case finality ~1.4 s WAN.
@@ -1145,7 +1145,7 @@ The transition from "graph grows richer" to "graph grows denser" is the knowledg
 
 Measured on the bootloader graph: $d^* = 31$. This is well below the intrinsic ceiling, and the final census says why. Of 2,949,732 [[cyberlinks]], a single archivist neuron signed 2,289,526 — 77.6% — while 400,776 links came from 1,239 human neurons and 259,430 from contracts. One author supplying three quarters of the structure suppresses $\bar{k}$ and raises $\rho$, so the semantic dimensionality the graph could support was never reached. Diversity of authorship, not volume of links, is the binding constraint on $d^*$.
 
-Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of human knowledge structure, estimated at 10³–10⁴ independent semantic axes. The transformer compiled from the graph at that scale would embed at $d^* \sim 10^3$–$10^4$ derived from structure, not chosen.
+Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of human knowledge structure, estimated at 10³–10⁴ independent semantic axes. The transformer compiled from the graph at that scale would embed at $d^*$ ~ 10³–10⁴ derived from structure, not chosen.
 
 See [[avogadro-derivation]] for the phase transition derivation. See [[intelligence-at-avogadro-scale]] for the epistemological framing.
 
@@ -1414,7 +1414,7 @@ All five green → launch. Any red → no launch. No exceptions.
 | 2: Maturation | Years 2-3 | +10,000 | Specialization emerges |
 | 3: Scale | Year 5+ | +100,000 | Scale-free organic growth |
 
-The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Final [[bostrom]] data: 2,949,732 [[cyberlinks]] and 3,143,650 [[particles]] signed by 1,240 linking [[neurons]] out of 61,675 accounts. The bootloader reached the flow phase and stopped short of cognition. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
+The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Final [[bostrom]] data: 2,949,732 [[cyberlinks]] and 3,143,650 [[particles]] signed by 1,240 linking [[neurons]] out of 61,675 accounts. The bootloader reached the flow phase and stopped short of cognition. Target for emergence: 10⁸–10⁹ interconnected [[particles]] with sufficient connectivity density.
 
 ## 22. Applications
 
