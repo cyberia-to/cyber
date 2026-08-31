@@ -63,7 +63,7 @@ Three facts from that corpus carry into the design.
 
 **The content survived without an incentive to store it.** A full walk of the [[cybergraph]] measured 97.62% of particles available in complete form — every block of every file, not merely the root — on a single archive node, five years after the earliest links were made, with no storage rewards, no slashing, and no proof-of-storage mechanism ever deployed. That number is the empirical ceiling that [[storage proofs]] must beat, and the reason to suspect the hard problem in permanence is economic rather than technical.
 
-**Authorship, not volume, was the binding constraint, and the crystal is still thin.** 77.6% of links came from one archivist neuron; 1,239 humans produced 400,776; only 1,240 of 61,675 accounts ever linked anything. The measured semantic dimensionality $d^* = 31$ (§17.7) stands against a planetary target of $10^3$–$10^4$, and the giant component holds 47% of particles — more than half the corpus sits in islands unreachable from the core. By its own metric the bootloader is three orders of magnitude early, and every measurement points at the same dial: the successor network's first job is not more links, it is more independent authors.
+**Authorship, not volume, was the binding constraint, and the crystal is still thin.** 77.6% of links came from one archivist neuron; 1,239 humans produced 400,776; only 1,240 of 61,675 accounts ever linked anything. The measured semantic dimensionality $d^* = 31$ (§17.7) stands against a planetary target of 10³–10⁴, and the giant component holds 47% of particles — more than half the corpus sits in islands unreachable from the core. By its own metric the bootloader is three orders of magnitude early, and every measurement points at the same dial: the successor network's first job is not more links, it is more independent authors.
 
 The bootloader also demonstrated the failure mode this protocol is built to remove: the graph could only be ranked by an operator running an indexer, and its knowledge could not be sold, proven, or paid for by the people who created it. Everything below is the machinery for closing that gap.
 
@@ -1145,7 +1145,7 @@ The transition from "graph grows richer" to "graph grows denser" is the knowledg
 
 Measured on the bootloader graph: $d^* = 31$. This is well below the intrinsic ceiling, and the final census says why. Of 2,949,732 [[cyberlinks]], a single archivist neuron signed 2,289,526 — 77.6% — while 400,776 links came from 1,239 human neurons and 259,430 from contracts. One author supplying three quarters of the structure suppresses $\bar{k}$ and raises $\rho$, so the semantic dimensionality the graph could support was never reached. Diversity of authorship, not volume of links, is the binding constraint on $d^*$.
 
-Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of human knowledge structure, estimated at $10^3$–$10^4$ independent semantic axes. The transformer compiled from the graph at that scale would embed at $d^* \sim 10^3$–$10^4$ derived from structure, not chosen.
+Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of human knowledge structure, estimated at 10³–10⁴ independent semantic axes. The transformer compiled from the graph at that scale would embed at $d^* \sim 10^3$–$10^4$ derived from structure, not chosen.
 
 See [[avogadro-derivation]] for the phase transition derivation. See [[intelligence-at-avogadro-scale]] for the epistemological framing.
 
@@ -1525,7 +1525,7 @@ Parameters operate at different timescales:
 | Tier | parameters | adjustment frequency |
 |---|---|---|
 | Epoch-level | κ (foculus threshold scaling) | every epoch — self-regulating |
-| Seasonal | α, τ (exploration, smoothing) | every $10^3$–$10^4$ blocks |
+| Seasonal | α, τ (exploration, smoothing) | every 10³–10⁴ blocks |
 | Structural | μ (screening strength) | governance cycle only |
 | Permanent | [[Hemera]] hash parameters | never |
 
