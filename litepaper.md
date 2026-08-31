@@ -66,11 +66,13 @@ designing for planets is not decoration. it is what forces the removal of every 
 
 ---
 
-## the evidence
+## the bootloader
 
 we did not argue the premise. we ran it.
 
-[[bostrom]], the [[bootloader]] chain, sealed 25,120,712 blocks over 1,735 days and halted on 2026-08-27. its final state was rebuilt from block events and matched link-for-link against the chain's own statistics.
+the **bootloader** is not a chain. it is the mission of growing the [[crystal]] — the seed graph dense enough to boot a mind — and it has had three vehicles: cyberChain in 2016, the Euler network that put pagerank inside consensus on GPUs in 2018, and [[bostrom]], which ran knowledge-graph consensus on a live cosmos-sdk chain for 1,735 days and sealed 25,120,712 blocks on 2026-08-05. retiring the cosmos vehicle is not finishing the mission. it is changing engines.
+
+what the last vehicle produced, rebuilt from block events and matched link-for-link against the chain's own statistics:
 
 | | |
 |---|---|
@@ -88,9 +90,11 @@ three results matter to anyone deciding whether this is real.
 
 **the content survived with no incentive to store it.** 97.62% of particles are still available in complete form — every block of every file, not just the root — five years on, with no storage rewards and no proof-of-storage ever deployed. that is the number a storage market has to beat, and it suggests the hard part of permanence is economic, not technical.
 
-**the constraint was authorship, not volume.** one archivist neuron signed 77.6% of all links; 1,239 humans produced the rest of the human share. the measured semantic dimensionality of the graph, $d^* = 31$, is a social artifact of that concentration. the successor network's first job is not more links. it is more independent authors.
+**and the crystal is still thin.** this is the number that should be read as opportunity rather than as a result. the graph's measured semantic dimensionality is $d^* = 31$ against a planetary target of $10^3$–$10^4$. its giant component holds 47% of particles — more than half the corpus sits in islands, unreachable from the core. one archivist neuron signed 77.6% of all links, and only 1,240 of 61,675 accounts ever linked anything at all.
 
-the bootloader also demonstrated exactly what it could not do: its graph could only be ranked by whoever ran the indexer, and the knowledge in it could not be proven, priced, or paid for by the people who made it. that gap is the product.
+so the binding constraint is not links, capital, or compute. it is **independent authors**, and every measurement points at the same dial. the bootloader's job is to keep growing the crystal until it can boot a mind, and by its own metric it is three orders of magnitude early.
+
+what the last vehicle also demonstrated is exactly what it could not do: its graph could only be ranked by whoever ran the indexer, and the knowledge in it could not be proven, priced, or paid for by the people who made it. that gap is the product.
 
 ---
 

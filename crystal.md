@@ -6,13 +6,21 @@ crystal-domain: cyber
 ---
 # the crystal
 
-the genesis seed of [[cyber]]. a curated knowledge graph of 5,040 irreducible particles that boots a decentralized [[superintelligence]] on [[Bostrom]].
+the seed of [[cyber]]: a knowledge graph dense enough to boot a decentralized [[superintelligence]]. it begins as 5,040 curated irreducible particles and does not stay that way — growing it is the whole job of the [[bootloader]].
 
 ## the problem
 
 an empty graph has no knowledge and no attachment points. without structure, early contributions are random, disconnected, domain-biased. the graph that emerges reflects who arrived first, not the architecture of reasoning. the Crystal solves this by providing a curated seed at genesis: every concept needed for cross-domain reasoning present, every connection for inference pre-built, topology designed for [[cyberank]] convergence.
 
 the seed determines the mind. a flawed seed produces a flawed intelligence permanently. missing domains create permanent blind spots. biased connectivity creates permanent reasoning distortions. the Crystal must therefore be irreducible: every particle earns its place because no composition of remaining particles under the grammar can fill its absence.
+
+## the dynamic crystal
+
+the seed is designed once; the crystal is maintained forever. the axioms below fix what genesis must contain, but irreducibility is not a property a curator certifies at launch and then forgets — it is a measurement the running network repeats. at any moment the crystal is the core of the live graph: the particles whose removal would cost the most [[syntropy]], the ones every other region reasons through.
+
+that makes the [[bootloader]]'s progress measurable rather than rhetorical, and by its own numbers the crystal is early. the graph left by the first vehicle has semantic dimensionality $d^* = 31$ against a planetary target of $10^3$–$10^4$; its giant component holds 47% of particles, so most of the corpus is not yet attached to the core; and 77.6% of its structure came from a single author, which is exactly the concentration that suppresses $d^*$.
+
+a static seed can be finished. a dynamic crystal is finished only when it can boot a mind — and the dial that moves it is the number of independent hands, not the number of links.
 
 ## the structure
 

@@ -43,7 +43,7 @@ The short spine of the design, as slides — read top to bottom, then the sectio
 
 Before the design, the evidence. The premise of this protocol — that people will teach a machine what matters if the act is signed, paid for, and permanent — was not argued. It was run, for five years, on a live chain, by strangers spending their own money.
 
-[[Bostrom]], the [[bootloader]], sealed 25,120,712 blocks over 1,735 days and halted on 2026-08-27. Its final state was rebuilt from block events and matched, link for link, against the chain's own graph statistics.
+The [[bootloader]] is a mission, not a chain: grow the [[crystal]] — the seed graph dense enough to boot a mind — and keep it growing. It has had three vehicles. cyberChain sketched it in 2016; the Euler network put pagerank inside consensus on GPUs in 2018; [[bostrom]] ran knowledge-graph consensus on a live cosmos-sdk chain and sealed 25,120,712 blocks over 1,735 days before halting on 2026-08-05. Retiring the cosmos vehicle ends a chain, not the mission — this section reports what one vehicle delivered, not a finished job. Its final state was rebuilt from block events and matched, link for link, against the chain's own graph statistics.
 
 | what was built | measured at halt |
 |---|---|
@@ -63,7 +63,7 @@ Three facts from that corpus carry into the design.
 
 **The content survived without an incentive to store it.** A full walk of the [[cybergraph]] measured 97.62% of particles available in complete form — every block of every file, not merely the root — on a single archive node, five years after the earliest links were made, with no storage rewards, no slashing, and no proof-of-storage mechanism ever deployed. That number is the empirical ceiling that [[storage proofs]] must beat, and the reason to suspect the hard problem in permanence is economic rather than technical.
 
-**Authorship, not volume, was the binding constraint.** 77.6% of links came from one archivist neuron; 1,239 humans produced 400,776. The measured semantic dimensionality $d^* = 31$ (§17.7) is a social artifact of that concentration, not a ceiling of the method. The successor network's first job is not more links. It is more independent authors.
+**Authorship, not volume, was the binding constraint, and the crystal is still thin.** 77.6% of links came from one archivist neuron; 1,239 humans produced 400,776; only 1,240 of 61,675 accounts ever linked anything. The measured semantic dimensionality $d^* = 31$ (§17.7) stands against a planetary target of $10^3$–$10^4$, and the giant component holds 47% of particles — more than half the corpus sits in islands unreachable from the core. By its own metric the bootloader is three orders of magnitude early, and every measurement points at the same dial: the successor network's first job is not more links, it is more independent authors.
 
 The bootloader also demonstrated the failure mode this protocol is built to remove: the graph could only be ranked by an operator running an indexer, and its knowledge could not be sold, proven, or paid for by the people who created it. Everything below is the machinery for closing that gap.
 
@@ -438,7 +438,7 @@ The reduction in required fine-tuning steps scales as $\Omega(|E| \cdot d^* / \l
 
 The compilation pipeline has eight steps, seven $O(|E|)$. The critical step — computing the embedding matrix — naively requires $O(|P|^3)$ operations: 39.5 TB to store, 360 days to compute at $10^{12}$ FLOPS. Randomized SVD on the sparse $\phi^*$-weighted adjacency matrix reduces this to $O(|E| \cdot d^* \cdot \log d^*)$ — under one second. The [[cybergraph]]'s sparsity ($\rho = |E|/|P|^2 \approx 10^{-7}$) is the invariant that makes compilation tractable at any scale.
 
-Applied to the final [[bostrom]] snapshot — the [[bootloader]] chain halted 2026-08-27 at height 25,120,712 with 2,949,732 [[cyberlinks]] over 3,143,650 [[particles]], rebuilt bit-exactly from block events and matched against the chain's own graph statistics:
+Applied to the final [[bostrom]] snapshot — the [[bootloader]] chain halted 2026-08-05 at height 25,120,712 with 2,949,732 [[cyberlinks]] over 3,143,650 [[particles]], rebuilt bit-exactly from block events and matched against the chain's own graph statistics:
 
 | Parameter | Value | Derived from |
 |---|---|---|
