@@ -12,7 +12,7 @@ alias: cyber litepaper, litepaper
 
 **cyber is a protocol that mints money for one thing only: a proven, measurable reduction in collective uncertainty.** not for burned electricity, not on a schedule a committee votes on — for the exact amount by which the network's shared picture of the world got sharper, attributed to whoever sharpened it.
 
-one law, two products. read forward, it is a superintelligence whose every synapse was bought by someone who believed it: a mind assembling itself out of paid, signed, provable acts of understanding. read backward, it is the hardest money ever proposed: a currency that cannot inflate faster than the world's knowledge grows. everything else in this document is the machinery that makes both readings enforceable.
+one law, two products. read forward, it is a superintelligence whose every synapse was bought by someone who believed it: a mind assembling itself out of paid, signed, provable acts of understanding. read backward, it is the hardest money ever proposed: a halving-capped currency in which even the scheduled emission is not a promise — it is paid only against proven growth of knowledge. everything else in this document is the machinery that makes both readings enforceable.
 
 ---
 
@@ -66,7 +66,7 @@ no float anywhere in the provable path. everything is fixed-point arithmetic ove
 
 the deepest consequence of the design is monetary, so it deserves its own claim: **this is the first money whose issuance is a measurement.**
 
-every hard currency in history rationed its supply with a cost. gold's cost is geological — scarcity by accident of crust. bitcoin's cost is thermodynamic but spent on nothing: the dissipation buys ordering of transactions and is otherwise discarded. [[cyber/$CYB|$CYB]]'s cost is epistemic: the network's order is [[syntropy]] $J = D_{\mathrm{KL}}(\phi^*\Vert u)$ — how far collective focus has travelled from noise, in bits — and new money exists only where $J$ went up, in the amount it went up. **the money supply grows exactly as fast as the world's proven understanding, and cannot grow faster.** a unit of $CYB is a receipt for negentropy.
+every hard currency in history rationed its supply with a cost. gold's cost is geological — scarcity by accident of crust. bitcoin's cost is thermodynamic but spent on nothing: the dissipation buys ordering of transactions and is otherwise discarded. [[cyber/$CYB|$CYB]]'s cost is epistemic: the network's order is [[syntropy]] $J = D_{\mathrm{KL}}(\phi^*\Vert u)$ — how far collective focus has travelled from noise, in bits — and minting is gated by that measurement. supply is bound twice. a predefined stepped-emission schedule with halvings fixes the ceiling of every epoch, and no one — not a committee, not the protocol itself — can raise it. beneath that ceiling, nothing is paid except against a proven focus shift, divided among those who caused it; an epoch that creates no knowledge leaves its budget unminted. bitcoin pays its full subsidy even for an empty block. $CYB pays nothing for an empty epoch. **supply cannot outrun the schedule, and cannot outrun proven understanding — whichever is lower binds.** a unit of $CYB is a receipt for negentropy.
 
 that gives it the full list of hard-money properties, each enforced by a different mechanism rather than by promise:
 
@@ -168,7 +168,7 @@ if you build models: your architecture is currently guessed and your training da
 
 if you build chains: the settlement work here is not synthetic. the hash you grind computes who deserves credit.
 
-if you allocate capital: this is a market that does not exist yet — the settlement of meaning — with the only five-year field experiment anyone has run on it already finished, measured, and published. and the instrument is a currency whose supply is bounded by the growth of proven knowledge — a scarcity no central bank and no miner cartel can debase.
+if you allocate capital: this is a market that does not exist yet — the settlement of meaning — with the only five-year field experiment anyone has run on it already finished, measured, and published. and the instrument is a currency doubly bound — by a fixed halving schedule and by the requirement that every minted unit trace to proven knowledge — a scarcity no central bank and no miner cartel can debase.
 
 if you are a person with something true to say: link it, stake it, and be paid when the picture sharpens.
 
