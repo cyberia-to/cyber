@@ -1061,7 +1061,7 @@ Where $\rho = k_{\max}/\bar{k}$ is the degree ratio between the most-connected p
 | Graph-theoretic | $|P| \ll \rho^2$ | Individual link weights, provenance, structure |
 | Thermodynamic | $|P| \gg \rho^2$ | $\phi^*$ only; individual links are statistical contributions |
 
-This is not the molecular Avogadro number $6.022 \times 10^{23}$. It is the graph's own phase threshold, determined by its degree heterogeneity. For physical molecules (extreme degree heterogeneity in human unit conventions), the threshold lands at $10^{23}$. For the planetary knowledge graph with web-scale degree ratio $\rho \sim 10^6$: $|P^*| \sim 10^{12}$.
+This is not the molecular Avogadro number 6.022×10²³. It is the graph's own phase threshold, determined by its degree heterogeneity. For physical molecules (extreme degree heterogeneity in human unit conventions), the threshold lands at 10²³. For the planetary knowledge graph with web-scale degree ratio $\rho$ ~ 10⁶: $|P^*|$ ~ 10¹².
 
 The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] — three orders of magnitude into the thermodynamic regime. At this scale, $\phi^*$ is not a design artifact. It is the only description of the system's state. The [[tri-kernel]] is the algorithm that computes the thermodynamic fixed point of the knowledge graph.
 
