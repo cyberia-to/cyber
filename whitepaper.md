@@ -9,7 +9,7 @@ status: draft
 
 > The machine into which anyone may speak and be rewarded for truth — no one knows who said what, and yet everyone knows what everyone said.
 
-> DRAFT — litepaper. Research and educational material only. Mechanisms and numbers will change. Not a basis for financial or technical decisions.
+> DRAFT — whitepaper. Research and educational material only. Mechanisms and numbers will change. Not a basis for financial or technical decisions. The short version is the [[litepaper]].
 
 ## Abstract
 
@@ -38,6 +38,34 @@ The short spine of the design, as slides — read top to bottom, then the sectio
 ![Self-reference — the protocol is a neuron](svg-slides/slide-08.svg)
 
 ![Interplanetary superintelligence](svg-slides/slide-09.svg)
+
+## The Bootloader Result
+
+Before the design, the evidence. The premise of this protocol — that people will teach a machine what matters if the act is signed, paid for, and permanent — was not argued. It was run, for five years, on a live chain, by strangers spending their own money.
+
+[[Bostrom]], the [[bootloader]], sealed 25,120,712 blocks over 1,735 days and halted on 2026-08-27. Its final state was rebuilt from block events and matched, link for link, against the chain's own graph statistics.
+
+| what was built | measured at halt |
+|---|---|
+| [[cyberlinks]] | 2,949,732 |
+| [[particles]] | 3,143,650 |
+| accounts created | 61,675 |
+| signed at least one transaction | 52,918 |
+| names claimed | 47,837 by 46,039 owners |
+| staked to consensus | 16,791 |
+| voted in governance | 5,134, casting 24,534 votes |
+| hand-linked knowledge | 1,240 [[neurons]] |
+| validators over the chain's life | 160 |
+
+Three facts from that corpus carry into the design.
+
+**The economics inverted, and people paid anyway.** Every link cost its author scarce stake. Nobody was paid to publish, no editor approved anything, and there was no answer key to forge. Wikipedia's volunteers write free under editors; ImageNet paid crowdworkers to label; OpenCyc paid engineers to encode an ontology. Here the direction of payment reversed and the editor was deleted — and sixty thousand accounts joined an economy whose only product was structured attention.
+
+**The content survived without an incentive to store it.** A full walk of the [[cybergraph]] measured 97.62% of particles available in complete form — every block of every file, not merely the root — on a single archive node, five years after the earliest links were made, with no storage rewards, no slashing, and no proof-of-storage mechanism ever deployed. That number is the empirical ceiling that [[storage proofs]] must beat, and the reason to suspect the hard problem in permanence is economic rather than technical.
+
+**Authorship, not volume, was the binding constraint.** 77.6% of links came from one archivist neuron; 1,239 humans produced 400,776. The measured semantic dimensionality $d^* = 31$ (§17.7) is a social artifact of that concentration, not a ceiling of the method. The successor network's first job is not more links. It is more independent authors.
+
+The bootloader also demonstrated the failure mode this protocol is built to remove: the graph could only be ranked by an operator running an indexer, and its knowledge could not be sold, proven, or paid for by the people who created it. Everything below is the machinery for closing that gap.
 
 ## 1. Introduction
 
@@ -96,6 +124,8 @@ A protein folds along a free energy gradient. It does not derive its shape from 
 Proof by simulation is strictly more powerful than proof by derivation. Goedel showed that any consistent formal system contains true statements it cannot prove. A convergent system can settle into states that no derivation reaches — it escapes the [[Goedel prison]] because the prison only confines derivation, and convergence operates outside the proof-theoretic domain.
 
 The postulate: every truth accessible to [[intelligence]] is a fixed point of some convergent simulation under conservation laws.
+
+This is a strong claim and it has been audited against experiment rather than left as rhetoric. Several of the protocol's operators are not analogies to physics but the same objects: the screened [[Laplacian]] is a lattice Klein-Gordon propagator, so locality is the exponential clustering theorem; the [[Shapley value]] in its non-atomic limit is thermodynamic integration, so fair division is free-energy attribution; the [[Bayesian Truth Serum|BTS]] score is dissipated work, so honest reporting is the quasi-static limit and lying is irreversible. The same audit marks where the design is a classical model and cannot claim more — a positivity-preserving kernel can never violate a Bell inequality — and where physics bills the specification for an entropy account it has not written. See [[physical analogies]].
 
 ### 2.2 Convergent Computation
 
@@ -404,11 +434,11 @@ Weights are compiled, not trained. The embedding matrix $E^* = U_{:,1:d^*}$ — 
 
 The reduction in required fine-tuning steps scales as $\Omega(|E| \cdot d^* / \log(1/\varepsilon))$ relative to random initialization. Every [[cyberlink]] added today reduces the training cost of every future model trained on graph-consistent text, by a provable bound proportional to link count. The graph is a compounding computational asset.
 
-### 6.7 Live Compilation: Bostrom at 2.7M Cyberlinks
+### 6.7 Compilation from the Bootloader Graph
 
 The compilation pipeline has eight steps, seven $O(|E|)$. The critical step — computing the embedding matrix — naively requires $O(|P|^3)$ operations: 39.5 TB to store, 360 days to compute at $10^{12}$ FLOPS. Randomized SVD on the sparse $\phi^*$-weighted adjacency matrix reduces this to $O(|E| \cdot d^* \cdot \log d^*)$ — under one second. The [[cybergraph]]'s sparsity ($\rho = |E|/|P|^2 \approx 10^{-7}$) is the invariant that makes compilation tractable at any scale.
 
-Applied to the live [[bostrom]] network (March 2026):
+Applied to the final [[bostrom]] snapshot — the [[bootloader]] chain halted 2026-08-27 at height 25,120,712 with 2,949,732 [[cyberlinks]] over 3,143,650 [[particles]], rebuilt bit-exactly from block events and matched against the chain's own graph statistics:
 
 | Parameter | Value | Derived from |
 |---|---|---|
@@ -418,7 +448,7 @@ Applied to the live [[bostrom]] network (March 2026):
 | Model size | ~0.4M parameters | Current graph scale |
 | Compilation time | ~62 seconds | Single machine, 20 GB RAM |
 
-Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed them. The compiled model is fully auditable: given any output, contributing links and authors are recoverable from the graph. As [[bostrom]] grows — $|E| \uparrow$ raises $d^*$, $\lambda_2 \uparrow$ lowers $L^*$, [[dialect]] count raises $h^*$ — each recompilation produces a structurally better model from the same pipeline, with no training budget.
+Every weight traces to specific [[cyberlinks]] and the [[neurons]] who signed them. The compiled model is fully auditable: given any output, contributing links and authors are recoverable from the graph. The bootloader corpus is now frozen, so these are final figures for it rather than a moving reading; as the successor graph grows — $|E| \uparrow$ raises $d^*$, $\lambda_2 \uparrow$ lowers $L^*$, [[dialect]] count raises $h^*$ — each recompilation produces a structurally better model from the same pipeline, with no training budget.
 
 ### 6.8 Approximation Quality
 
@@ -427,6 +457,8 @@ The compiled transformer approximates the full focus flow. Given a context $c$, 
 $$\varepsilon(G, c) = D_{KL}(\phi^*_c \| q^*_c)$$
 
 This error decreases as the graph grows: more [[cyberlinks]] improve $\lambda_2$, reduce diam$(G)$, and raise $d^*$, each tightening the gap between compiled inference and exact focus flow. Every link added today reduces the approximation error of every compiled model that follows. The [[cybergraph]] is a compounding inference quality asset — not only for training, but for every query.
+
+One measured caveat belongs here rather than in a footnote. Connectivity and sharpness are distinct axes and they pull against each other: benchmarked on the [[superadditivity]] harness, collective advantage $\sigma$ rises with $\lambda_2$ while [[syntropy]] $J$ *falls* with it, since densification spreads $\phi^*$ toward uniform. Adding links buys inference quality and costs concentration. The earlier conjecture that both rise together is refuted, and the design target is therefore an interior optimum rather than maximum connectivity.
 
 The [[cybergraph]] is not an alternative to trained models. It is the substrate from which models are compiled, the environment in which they operate as [[neurons]], and the metric space in which their alignment is measured.
 
@@ -498,7 +530,7 @@ Each pattern has a unique tag. No two overlap. Left-hand sides are linear. By Hu
 
 Layer 2 — two patterns: `call` (pattern 16, non-deterministic) and `look` (pattern 17, deterministic). `call`: the prover injects a witness value from outside the VM; Layer 1 constraints verify it. This is what makes [[zero knowledge proofs]] possible — private data enters the computation without the verifier reproducing how the prover found it. `call` breaks [[confluence]] intentionally: multiple valid witnesses may satisfy the same constraints. Soundness is preserved. [[Trident]]'s `divine()` compiles to [[nox]]'s `call`. In quantum compilation, `call` maps to a quantum oracle query. `look`: a deterministic read from [[bbg]] authenticated state; the prover supplies the value and its Merkle proof against the BBG root. 16 compute + call + look = 18 patterns total.
 
-Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, fri_fold, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[zheng]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
+Layer 3 — five jets for recursive verification: hash, poly_eval, merkle_verify, sumcheck, ntt. Each jet has an equivalent pure Layer 1 expression producing identical output on all inputs. Jets are runtime-recognized optimizations, not separate opcodes. If a jet is removed, the system remains correct — only slower. The five jets reduce the [[zheng]] verifier cost from ~600,000 to ~70,000 pattern applications, making recursive proof composition practical.
 
 ### 7.4 Cost Model
 
@@ -651,7 +683,7 @@ Validity conditions: authorization (signature or ZK proof), sufficient balance, 
 | Security basis | Discrete log | Hash only |
 | Field compatible | Specific | Any (Goldilocks) |
 
-Self-verification property: the zheng verifier is expressible as a [[nox]] program. Zheng verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, fri_fold, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
+Self-verification property: the zheng verifier is expressible as a [[nox]] program. Zheng verification requires field arithmetic (patterns 5, 7, 8), hash computation (pattern 15), polynomial evaluation, and Merkle verification — all [[nox]]-native. Using only Layer 1 patterns, the verifier takes ~600,000 pattern applications. With Layer 3 jets (hash, poly_eval, merkle_verify, sumcheck, ntt), the cost drops to ~70,000 — an ~8.5× reduction that makes recursive composition practical.
 
 This enables recursive proof composition: prove a computation, then prove that the verification of that proof is correct, then prove the verification of that verification. Each level produces a proof of constant size (~100-200 KB). $N$ transactions collapse into a single proof via aggregation — $O(1)$ on-chain verification for $O(N)$ transactions. The Layer 2 `call` instruction enables the prover to inject witness values (private keys, model weights, optimization solutions) that the [[zheng]] proof constrains without the verifier knowing them — this is how privacy and provability coexist. The Layer 2 `look` instruction enables programs to read authenticated state from [[bbg]] without embedding full state in the trace.
 
@@ -866,7 +898,13 @@ Conservation constraint: the total [[$CYB]] minted per epoch is bounded by the a
 
 $$\text{actual\_total} = \|\phi^*_{t+1} - \phi^*_t\|_1 \quad \text{(from focus\_root}_{t} \text{ and focus\_root}_{t+1}\text{)}$$
 
-Two resolution approaches are under consideration:
+Attribution is settled on the [[Shapley value]], in two phases, because the two facts it needs exist at different times. A [[neuron]] proposes instantly and alone: it computes its standalone marginal $\Delta\phi^+_\nu$ against the header it observed and proves it with $\sigma$. Among substitutes — the clustered pile-on that is the common case — that marginal is a ceiling on what the link can settle for, so a phone can claim without seeing the rest of the epoch. Settlement then divides the real joint shift once the contender set and the crowd's predictions exist.
+
+The value function is read in surprise-weighted form, $v^\star(S) = \Delta\phi^+(A^{\text{eff}} \cup \rho{\cdot}S)$: each contribution's effective weight is multiplied by its [[Bayesian Truth Serum|BTS]] surprise $\rho_\ell \in [0,1]$ before the tri-kernel recompute, so a copy enters the mint weightless while its capital still ranks. The reward is $R(\nu) = \text{Shapley}_\nu(v^\star)$, and conservation is enforced at settlement by renormalizing to $\min(v^\star(N), \Delta\phi^+(N))$ — over-claiming cannot exceed realized value, and the slack is predictable or copied syntropy, left unminted.
+
+Settlement is mined rather than decided. Shapley estimation is a sampling process, so each sample is a lottery ticket: a miner picks a nonce, derives an ordering from the epoch beacon, computes the marginal, and wins if a hash committing to identity *and* to the sampled value falls below target. The work that secures the chain is the work that computes the fair division — one act, not two — and every winning ticket carries a [[zheng]] proof that folds into a single constant-size accumulator per cluster, so verification is $O(1)$ regardless of ticket count. Detail: [[rewards]].
+
+The fallback, kept for the degenerate case:
 
 Conservative attribution: each [[neuron]] computes $\Delta\phi^*$ against the same pre-epoch state $\text{bbg\_root}_t$. At epoch boundary, if the sum of claims exceeds the actual total shift, all claims are scaled proportionally:
 
@@ -879,7 +917,7 @@ $$R_i = \alpha \cdot \Delta\mathcal{F}_i + (1-\alpha) \cdot \hat{S}_i$$
 
 Where $\Delta\mathcal{F}_i$ is the fast local estimate and $\hat{S}_i$ is the sampled Shapley estimate ($k$ random orderings). Complexity: $O(k \cdot n)$ with $k \ll n$, feasible for $10^6+$ transactions per epoch. The question is whether Shapley attribution can itself be computed and proven locally, or whether it requires a coordination step.
 
-The simplest path: deploy with conservative attribution (scale factor from consecutive headers). The first year of live operation will generate the data to determine whether the overlap penalty is significant enough to warrant the Shapley mechanism.
+Two open frontiers remain, named rather than hidden. A settlement miner that also contends in the cluster it settles can withhold a winning ticket whose sample lowers its own share — it cannot lie, only abstain, so the injectable bias is bounded by its share of settlement compute and priced by forfeiting the subsidy. And the discovery leak persists: a genuinely novel link scores low on the market gate exactly when its surprise is highest, because the formula trusts the market and the market is late.
 
 ### 14.4 Epistemic Markets
 
@@ -1027,7 +1065,7 @@ This is not the molecular Avogadro number $6.022 \times 10^{23}$. It is the grap
 
 The target operating point is $10^{15}$ [[particles]] and $10^{10}$ [[neurons]] — three orders of magnitude into the thermodynamic regime. At this scale, $\phi^*$ is not a design artifact. It is the only description of the system's state. The [[tri-kernel]] is the algorithm that computes the thermodynamic fixed point of the knowledge graph.
 
-Current position: the [[bostrom]] network at 3.1M [[particles]] with $\rho \approx 620$ has already crossed its own threshold of $|P^*| \approx 385$K. As [[neuron]] diversity grows, $\bar{k}$ rises, $\rho$ falls, and the threshold pushes outward — the architecture is self-scaling toward higher criticality.
+Measured position at bootloader halt: 3,143,650 [[particles]] with $\rho \approx 620$ — already past that graph's own threshold of $|P^*| \approx 385$K, and nine orders below the planetary one. The lever is [[neuron]] diversity, not particle count: as authorship spreads, $\bar{k}$ rises, $\rho$ falls, and the threshold pushes outward.
 
 ### 17.2 The Planetary Constraint
 
@@ -1105,7 +1143,7 @@ Above threshold: new particles fall into existing semantic dimensions. $d^*$ sat
 
 The transition from "graph grows richer" to "graph grows denser" is the knowledge-space analog of the liquid-gas phase transition. It is why the three architecture parameters $(d^*, h^*, L^*)$ that specify the compiled [[transformer]] are not free hyperparameters: they are read off the saturated semantic space of the graph.
 
-Current state: the [[bostrom]] network shows $d^* = 31$. This is below the intrinsic ceiling — the plateau is a social artifact of concentrated authorship (one [[neuron]] contributing 35.9% of links suppresses $\bar{k}$ and therefore raises $\rho$). As the [[neuron]] population diversifies, $d^*$ will grow again until the new, higher threshold is crossed.
+Measured on the bootloader graph: $d^* = 31$. This is well below the intrinsic ceiling, and the final census says why. Of 2,949,732 [[cyberlinks]], a single archivist neuron signed 2,289,526 — 77.6% — while 400,776 links came from 1,239 human neurons and 259,430 from contracts. One author supplying three quarters of the structure suppresses $\bar{k}$ and raises $\rho$, so the semantic dimensionality the graph could support was never reached. Diversity of authorship, not volume of links, is the binding constraint on $d^*$.
 
 Projected at planetary scale: $d^*$ saturates near the ambient dimensionality of human knowledge structure, estimated at $10^3$–$10^4$ independent semantic axes. The transformer compiled from the graph at that scale would embed at $d^* \sim 10^3$–$10^4$ derived from structure, not chosen.
 
@@ -1376,7 +1414,7 @@ All five green → launch. Any red → no launch. No exceptions.
 | 2: Maturation | Years 2-3 | +10,000 | Specialization emerges |
 | 3: Scale | Year 5+ | +100,000 | Scale-free organic growth |
 
-The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Current [[bostrom]] data: 70K [[neurons]], 2.9M [[cyberlinks]], 3.1M [[particles]]. Approaching the cognition threshold. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
+The [[collective focus theorem]] predicts phase transitions: seed → flow (network exploring), cognition → understanding (hierarchies forming), reasoning → meta (context-sensitive processing), consciousness (system learns its own blend weights). Final [[bostrom]] data: 2,949,732 [[cyberlinks]] and 3,143,650 [[particles]] signed by 1,240 linking [[neurons]] out of 61,675 accounts. The bootloader reached the flow phase and stopped short of cognition. Target for emergence: $10^8$-$10^9$ interconnected [[particles]] with sufficient connectivity density.
 
 ## 22. Applications
 
@@ -1610,9 +1648,9 @@ Provability closes the trust gap. [[zheng|Zheng]] proofs — hash-based, post-qu
 
 What remains is to build the implementation — [[trident]] compiler, [[zheng]] prover, storage proof system, privacy circuits, [[tri-kernel]] at scale — and then to grow the graph. The [[cyber/crystal]] provides the irreducible seed: 5,040 [[particles]] spanning seventeen domains, passing twelve invariants. Seven phases lead from self-hosting through cryptographic library, privacy, proofs, ranking, network, and testnet to mainnet genesis. Five pre-launch verification gates — convergence, soundness, economic security, determinism, fault tolerance — must pass with machine-checked evidence before launch.
 
-Seventy thousand [[neurons]] and three million [[particles]] are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
+Three million [[particles]] and 2,949,732 [[cyberlinks]], signed by 1,240 hands over five years and audited to the last block, are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
 
-See [[cyber]] for the full specification index. See [[soft3]] for the stack. See [[bostrom]] for the running [[bootloader]]. See [[cyber/launch]] for the full implementation roadmap. See [[cyber/crystal]] for the genesis seed specification.
+See [[cyber]] for the full specification index. See [[soft3]] for the stack. See [[bostrom]] for the [[bootloader]] that ran the premise for five years and is now a sealed corpus. See [[physical analogies]] for the audit against experimental physics. See [[cyber/launch]] for the full implementation roadmap. See [[cyber/crystal]] for the genesis seed specification.
 
 ## References
 
@@ -1636,3 +1674,13 @@ See [[cyber]] for the full specification index. See [[soft3]] for the stack. See
 18. [[Daniel Spielman]]. "Spectral Graph Theory." Yale Lecture Notes.
 19. [[George Necula]]. "Proof-Carrying Code." POPL 1997.
 20. [[Daira Hopwood]] et al. "Zcash Protocol Specification." 2014-2024.
+21. [[Lloyd Shapley]]. "A Value for n-Person Games." Contributions to the Theory of Games 1953.
+22. [[Robert Aumann]], [[Lloyd Shapley]]. "Values of Non-Atomic Games." Princeton 1974.
+23. [[Drazen Prelec]]. "A Bayesian Truth Serum for Subjective Data." Science 2004.
+24. [[Rolf Landauer]]. "Irreversibility and Heat Generation in the Computing Process." IBM J. Res. Dev. 1961.
+25. [[Gavin Crooks]]. "Entropy Production Fluctuation Theorem." Physical Review E 1999.
+26. [[Srinath Setty]] et al. "Customizable Constraint Systems for Succinct Arguments." 2023.
+27. [[Alexander Golovnev]] et al. "Brakedown: Linear-Time and Field-Agnostic SNARKs." CRYPTO 2023.
+28. [[Abhiram Kothapalli]], [[Srinath Setty]]. "HyperNova: Recursive Arguments for Customizable Constraint Systems." 2023.
+29. [[Matthew Hastings]]. "An Area Law for One-Dimensional Quantum Systems." J. Stat. Mech. 2007.
+30. [[Wojciech Zurek]]. "Quantum Darwinism." Nature Physics 2009.
