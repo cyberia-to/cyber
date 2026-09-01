@@ -28,56 +28,50 @@ corollary: **cyber is not [[soft3]].** soft3 owns mechanisms; cyber owns what mu
 
 # 1 · cyber — target structure
 
-the protocol crystal: **7 modules, 133 pages** (+ chronicle). every page listed; *italics* = to be written or renamed in this plan.
+the protocol crystal as a navigation tree: one door, ten branches. every staying page hangs at exactly one node — that is what makes the system closed; cross-links remain free. *italics* = to be written or renamed.
 
-**index** (4): [[README]] · [[blog]] · [[research]] · [[concepts]]
 
-**core — the phenomenon** (42 atoms):
-[[cybergraph]] · [[particle]] · [[neuron]] · [[cyberlink]] · [[token]] · [[focus]] · [[rank]] *(absorbs [[cyberank]])* · [[karma]] · [[attention]] · [[staking]] · [[mining]] · [[rewards]] · [[impulse]] · [[intent]] · [[inception]] · [[sealing]] · [[cascade]] · [[cell]] · [[view]] · [[prob]] · [[rational neuron]] · [[fixed point]] · [[tri-kernel]] · [[tru]] · [[knowledge]] · [[hash]] · [[superintelligence]] · [[interplanetary superintelligence]] · [[self]] · [[happiness]] · [[personality]] · [[landauer limit]] · [[crystal]] · [[core]] · [[subgraphs]] · [[license]] · [[install]] · [[contribute]] · [[context packing]] · [[cyberculture]] · [[cybersophy]] · [[cybersphere]] + [[cyberverse]]
+### the tree
 
-**contract — invariants over soft3** (6): [[cyber/cybergraph]] · [[cyber/$CYB|$CYB]] · [[cyber/launch]] · *cyber/epistemology* (promotion of [[epistemology]]) · *cyber/identity* (promotion of [[identity]]) · *cyber/proofs* (to write — 5 inbound refs already wait for it)
+every staying page hangs at exactly one place; cross-links stay free, but this tree is the canonical way in. bold = hub that owns its branch.
 
-**nomics — the money** (15): [[cybernomics]] · [[nomics]] · [[netics]] · [[cap]] · [[delegation]] · [[automated market maker]] · [[cyberlink market protocol]] · [[tokens]] · [[tokens/plumb|plumb]] · [[tokens/coin|coin]] · [[tokens/badge|badge]] · [[tokens/basic token operations|basic token operations]] · [[specs/adaptive hybrid economics|adaptive hybrid economics]] · [[specs/light-money|light money]] · [[specs/money-loop|money loop]]
-
-**cips — deep protocol articles** (9): [[3c]] · [[channel]] · [[communication]] · [[network]] · [[hierarchy]] · [[light]] · [[gravity]] · [[luminosity]] · [[security]]
-
-**papers** (2 + 20 research): [[litepaper]] · [[whitepaper]] ·
-[[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence of superintelligence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles for machine mind]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics (research)]] · [[analizer]] *(→ research/)* · [[seer]] *(→ research/)*
-
-**specs — engineering contracts** (5): [[specs/README|specs index]] · [[specs/component-ownership|component ownership]] · [[specs/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[specs/rewards-completeness|rewards completeness]]
-
-**self — the protocol as a neuron** (4): [[self/dmn|dmn]] · [[self/linking|linking]] · [[self/parametrization|parametrization]] · [[self/sigma|sigma]]
-
-**chronicle**: blog/ keeps every real entry; the dated one-liners are log lines, not drafts. they split by subject (valley entries → cyberia's chronicle), the two empty ones die ([[blog/2024_09_29]], [[blog/2025_02_15]]).
-
-# 2 · cyb — target structure
-
-the robot: **31 pages**, one flat module set. the repo's `root/` directory dissolves — pages live flat like every other crystal. current pages linked at today's paths.
-
-**spine** (8): [[cyb/root/README|robot (README)]] · [[cyb/root/product|product]] · [[cyb/root/philosophy|philosophy]] · [[cyb/root/story|story]] · [[cyb/root/spec|spec]] · [[cyb/root/roadmap|roadmap]] · [[cyb/root/team|team]] · [[cyb/root/releases/v0.1.0|releases]]
-
-**reference** (17): [[cyb/root/rust-architecture|architecture]] *(absorbs [[cyb/root/architecture|the JS-era architecture]])* · [[cyb/root/rendering|rendering]] · [[cyb/root/routing|routing]] · [[cyb/root/terminal|terminal]] · [[cyb/root/cells|cells]] · [[cyb/root/apps|apps]] · [[cyb/root/avatar|avatar]] · [[cyb/root/format|format]] · [[cyb/root/cyb-registry|cyb-registry]] · [[cyb/root/cyb-model|cyb-model]] · [[cyb/root/cyb-vocab|cyb-vocab]] · [[cyb/root/fs|fs]] · [[cyb/root/scripting|scripting]] · [[cyb/root/truth|truth]] · [[cyb/root/features|features]] · [[cyb/root/android|android]] · [[cyb/root/release-process|release-process]]
-
-**ops** (4): [[cyb/root/dev|dev]] · [[cyb/root/benchmarks|benchmarks]] · [[cyb/root/ward|ward]] · *legacy/README* (one page explaining the JS era, written at fold time)
-
-**incoming** (2): [[security audit private key import]] (from cyber) · plans stay in `.claude/plans/`
-
-# 3 · cyberia — target structure
-
-the nation: **six shelves**, each a directory with a contract README.
-
-**foundation** (9, stays as is): [[cyberia/foundation/vision|vision]] · [[cyberia/foundation/manifesto|manifesto]] · [[cyberia/foundation/architecture|architecture]] · [[cyberia/foundation/strategy|strategy]] · [[cyberia/foundation/whitepaper|whitepaper]] · [[cyberia/foundation/space doctrine|space doctrine]] · [[cyberia/foundation/org|org]] · [[cyberia/foundation/cyberian|cyberian]] · [[cyberia/foundation/README|README]]
-
-**protocol** (14): [[cyberia/protocol/README|README]] · [[cyberia/protocol/century-index|century index]] · [[cyberia/protocol/bank-above-banks|bank above banks]] · [[cyberia/protocol/location proof|location proof]] · [[cyberia/protocol/space-accounting|space accounting]] · [[cyberia/protocol/services|services]] · [[cyberia/protocol/system|system]] · [[cyberia/protocol/marketplace|marketplace]] · [[cyberia/protocol/marketplace-spec|marketplace spec]] · [[cyberia/protocol/ladder|ladder]] · [[cyberia/protocol/orgs|orgs]] · [[cyberia/protocol/ephemeris|ephemeris]] · [[cyberia/protocol/dyson sphere|dyson sphere]] · [[cyberia/protocol/maps|maps]] *(absorbs the 7 one-line maps/\* pages as a table)*
-
-**land** (new shelf — the operating estate, promoted from research/cyb-land): visit · stay · activities · attractions · community — the ~45 pages with content; the 15 empty attraction/stay stubs die or gain their sentence at move time. incoming: [[landscape]] + [[nitrogener]] as land/flora.
-
-**community** (grows): [[cyberia/community|community]] · talents · blog (chronicle; receives the ~20 valley log entries from cyber's blog)
-
-**courses** (stays): [[cyberia/courses/README|README]] + edge-city-patagonia-2025 set
-
-**research** (workbench, explicitly unfinished): [[cyberia/research/README|README]] · mimi · migration-market · genome-protocol · oxytocin · cyber-sheep · cyberia-my · tech *(the 40 seed pages fold into one indexed table; the ~12 with ≥50 words keep their pages)* · incoming: [[team speed competition]] · [[smart capital]]
-
+- [[README]] — **the door**: what cyber is, two reads, two doors in
+    - [[litepaper]] — ten minutes, the whole argument
+        - [[whitepaper]] — the mathematics and the proofs
+    - [[install]] — enter by terminal or robot
+        - [[contribute]] — four lanes in
+    - [[concepts]] — **the atlas**: every atom, grouped by what it answers
+        - the graph — what knowledge is made of
+            - [[cybergraph]] · [[particle]] · [[cyberlink]] · [[neuron]] · [[token]] · [[hash]] · [[knowledge]] · [[cell]]
+        - the focus — how importance is computed
+            - [[focus]] · [[rank]] *(absorbs [[cyberank]])* · [[attention]] · [[view]] · [[prob]] · [[rational neuron]] · [[fixed point]] · [[tri-kernel]] · [[tru]] · [[context packing]]
+        - the acts — what a neuron does
+            - [[staking]] · [[mining]] · [[rewards]] · [[impulse]] · [[intent]] · [[inception]] · [[sealing]] · [[cascade]]
+        - the trust — what cannot be bought
+            - [[karma]] · [[happiness]] · [[personality]] · [[privacy]] · [[license]] · [[landauer limit]]
+        - the mind — what it all becomes
+            - [[superintelligence]] · [[interplanetary superintelligence]] · [[self]] · [[crystal]] · [[core]]
+        - the culture — how it speaks
+            - [[cyberculture]] · [[cybersophy]] · [[cybersphere]] · [[cyberverse]]
+    - [[cyber/cybergraph|contract]] — **what must hold**, whoever implements it
+        - [[cyber/cybergraph|cybergraph contract]] · *cyber/proofs* · *cyber/epistemology* (from [[epistemology]]) · *cyber/identity* (from [[identity]])
+        - [[cyber/$CYB|$CYB]] — the money contract
+        - [[cyber/launch]] — the genesis contract
+    - [[cybernomics]] — **the money**, from law to plumbing
+        - [[nomics]] · [[netics]] · [[cap]] · [[delegation]] · [[automated market maker]] · [[cyberlink market protocol]]
+        - [[tokens]] — the type system: [[tokens/coin|coin]] · [[tokens/badge|badge]] · [[tokens/plumb|plumb]] · [[tokens/basic token operations|basic token operations]]
+        - money specs: [[specs/money-loop|money loop]] · [[specs/light-money|light money]] · [[specs/adaptive hybrid economics|adaptive hybrid economics]]
+    - [[network]] — **the machine room**: the deep protocol articles (cips)
+        - [[3c]] · [[channel]] · [[communication]] · [[hierarchy]] · [[light]] · [[gravity]] · [[luminosity]] · [[security]]
+    - [[research]] — **the papers**: what is argued, not yet law
+        - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]]
+    - [[specs/README|specs]] — **the engineering contracts**
+        - [[specs/component-ownership|component ownership]] · [[specs/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[specs/rewards-completeness|rewards completeness]]
+    - [[self]] — **the protocol's own agency**
+        - [[self/dmn|dmn]] · [[self/linking|linking]] · [[self/parametrization|parametrization]] · [[self/sigma|sigma]]
+    - [[subgraphs]] — the cards of sibling components
+    - [[blog]] — **the chronicle** (~68 entries stay; 23 leave with their subjects)
+    - [[restructure]] — this plan, then this record
 
 ## the ledger — cyber (238 pages, 238 verdicts, 0 undecided)
 
