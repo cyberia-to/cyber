@@ -7,7 +7,7 @@ crystal-domain: cyber
 ---
 # the cybergraph contract
 
-what [[cyber]] demands of its one data structure — the commitments every implementation must honor, stated at protocol altitude. the idea lives at [[cybergraph]]; the full mathematics at [[cybergraph spec]]; the reference machine at [[soft3/cybergraph]]; the query surface at [[inf/cybergraph]]. this page is the interface between them
+what [[cyber]] demands of its one data structure — the commitments every implementation must honor, stated at protocol altitude. the idea lives at [[cybergraph]]; the full mathematics at [[cybergraph spec]]; the reference machine at [[soft3/cybergraph]]; the query surface at [[inf cybergraph]]. this page is the interface between them
 
 ## the object
 
@@ -49,6 +49,6 @@ identity, key exchange, consensus, fork choice, finality, privacy, incentives, v
 
 this is the deepest design bet in [[cyber]]: a protocol with one structure cannot disagree with itself. there is no state that is not graph, so there is nothing to reconcile
 
-see the [[whitepaper]] §3 for the narrative form · [[cybergraph spec]] for axioms with full mathematics · [[soft3/cybergraph]] for the machine that enforces them · [[inf/cybergraph]] for reading the result
+see the [[whitepaper]] §3 for the narrative form · [[cybergraph spec]] for axioms with full mathematics · [[soft3/cybergraph]] for the machine that enforces them · [[inf cybergraph]] for reading the result
 
 discover all [[concepts]]
