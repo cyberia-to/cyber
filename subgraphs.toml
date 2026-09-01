@@ -105,11 +105,6 @@ visibility = "private"
 # /bootloader ──────────────────────────────────
 
 [[subgraph]]
-name = "privacy"
-visibility = "public"
-menu = false
-
-[[subgraph]]
 name = "bootloader"
 visibility = "public"
 
