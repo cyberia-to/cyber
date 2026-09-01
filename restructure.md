@@ -73,7 +73,7 @@ protocol-level research stays: physical analogies, algorithmic essence of superi
 
 | group | pages | → destination |
 |---|---|---|
-| world atoms | skyrmion, time-crystal, topoisomerase, topological-invariant, helix, happiness, history, landscape, nitrogener, russian school of inscription | [[crystal]] |
+| world atoms | skyrmion, time-crystal, topoisomerase, topological-invariant, helix, history, landscape, nitrogener, russian school of inscription | [[crystal]] |
 | bootloader era | cli (go-cyber), congress, 54, 55, analizer, roadmap (2019 post) | [[bootloader]] |
 | cyberia matters | leadership, team speed competition, smart capital, seer, subgraphs/kadek | [[cyberia]] |
 | component stubs | subgraphs/{lytics, tape, conformance} | their own repos ([[lytics]], tape, soft3) |
@@ -81,7 +81,7 @@ protocol-level research stays: physical analogies, algorithmic essence of superi
 
 ### 1c · dies in cyber
 
-- 53 empty blog stubs (2019–2026) — delete; the chronicle keeps only real posts
+- the 53 short blog entries are not drafts — they are a dated chronicle (one-line log entries: releases, launches, decisions). they split by the rule, not by length: entries whose subject is the valley/edem/land (~20: plants, gold mine, leasehold, schedules) move to [[cyberia]]'s chronicle; protocol entries stay; the two truly empty ones (2024_09_29, 2025_02_15) die. entries worth expanding into essays get written in their own phase — deletion is off the table
 - [[cyberank]] vs [[rank]] — one page; rank.md holds the alias and the traffic, cyberank.md folds into it
 - style, sparks — delete
 - research/programming model (11 words) — delete, superseded by [[nox]]
