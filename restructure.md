@@ -69,15 +69,36 @@ component research goes home. every page below is about one component's mechanis
 
 protocol-level research stays: physical analogies, algorithmic essence of superintelligence, knowledge capacity, link production, universal law, egregore properties, future of computation, neuroscience principles for machine mind, unified mining, knowledge economy, theoretical foundations, bootstrap, 32-byte tokens, energy market, gradient descent, cybergraph model architecture, focus flow computation, adaptive hybrid economics. **bostrom compilation report** → [[bootloader]] (it is a report about a vehicle).
 
-### 1b · leaves cyber
+### 1b · leaves cyber — page by page
 
-| group | pages | → destination |
+every departure names its exact landing. no page merely "leaves":
+
+| page | → lands at | why there |
 |---|---|---|
-| world atoms | skyrmion, time-crystal, topoisomerase, topological-invariant, helix, history, landscape, nitrogener, russian school of inscription | [[crystal]] |
-| bootloader era | cli (go-cyber), congress, 54, 55, analizer, roadmap (2019 post) | [[bootloader]] |
-| cyberia matters | leadership, team speed competition, smart capital, seer, subgraphs/kadek | [[cyberia]] |
-| component stubs | subgraphs/{lytics, tape, conformance} | their own repos ([[lytics]], tape, soft3) |
-| org process | SPEC.md (workspace/sync spec) | [[cyberia/midao\|midao]] |
+| skyrmion | crystal/skyrmion.md | physics atom |
+| time-crystal | crystal/time-crystal.md | physics atom |
+| topoisomerase | crystal/topoisomerase.md | biology atom |
+| topological-invariant | crystal/topological-invariant.md | mathematics atom |
+| helix | crystal/helix.md | mathematics atom |
+| history (of time in machines) | crystal/history of computing.md | computing history atom |
+| russian school of inscription | cybics/lang/ | culture essay, lang domain |
+| landscape (path-markup plants) | cyberia land/ (flora) | valley gardening practice |
+| nitrogener (nitrogen fixers) | cyberia land/ (flora) | valley gardening practice |
+| cli (go-cyber feature) | bootloader/cli.md | dead vehicle's tooling |
+| congress (dissolved 2025) | bootloader/congress.md | the team of the vehicle |
+| 54 (mt report) | bootloader chronicle | vehicle-era report |
+| 55 (heroes letter) | bootloader chronicle | vehicle-era letter |
+| roadmap (2019 post) | bootloader chronicle | vehicle-era plan |
+| leadership (Marquet) | cyberia/midao — leadership.md | org practice canon |
+| SPEC.md (workspace sync) | cyberia/midao — workspace.md | org process spec |
+| team speed competition | cyberia research/ | valley idea, workbench |
+| smart capital | cyberia research/ | citadel capital idea |
+| subgraphs/kadek | kadek repo README (card stays one line in [[subgraphs]]) | component's own home |
+| subgraphs/lytics | [[lytics]] repo (merge into its docs) | component's own home |
+| subgraphs/tape | tape repo (merge into its docs) | component's own home |
+| subgraphs/conformance | soft3 (conformance suite note) | stack-level concern |
+
+two pages audited out of the departure list entirely: **analizer** (24 scripts as the protocol running at human speed — a research essay, moves *inward* to research/) and **seer** (optimal link densification under exponential cost — protocol research, moves inward to research/). both had been misfiled by tag, not by subject.
 
 ### 1c · dies in cyber
 
