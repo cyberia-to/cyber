@@ -9,15 +9,17 @@ crystal-domain: culture
 
 the visible [[electromagnetic spectrum]] binds to the seven fundamental [[emotions]] by evolution, not by culture. ancestral environments selected wavelength-affect pairings that enhanced survival: high-arousal threats at the long end, subtle dangers at the short end, life's reward at the sensitive middle. culture modulates the binding; it does not create it.
 
-| color | flag | emotion | wavelength | evolutionary basis |
-|---|---|---|---|---|
-| [[red]] | `#fe0000` | [[anger]] | 620–750 nm | fire, blood, thermal injury — death from burn |
-| [[orange]] | `#ff6501` | [[disgust]] | 590–620 nm | decay, toxic fruit — contamination avoidance |
-| [[yellow]] | `#ffc501` | [[surprise]] | 570–590 nm | sudden brightness, dawn — the orienting response |
-| [[green]] | `#00ff01` | [[joy]] | 495–570 nm | vegetation, [[photosynthesis]] — life's reward |
-| [[blue]] | `#00b4ff` | [[interest]] | 450–495 nm | sky, water, horizons — exploration, calm focus |
-| [[indigo]] | `#1700fe` | [[sadness]] | 420–450 nm | twilight, deep water — withdrawal, introspection |
-| [[violet]] | `#6b00fe` | [[fear]] | 380–420 nm | UV, [[apoptosis]] — death from radiation |
+| color | flag | emotion | symbolizes | wavelength | ancestral stimulus |
+|---|---|---|---|---|---|
+| [[red]] | `#fe0000` | [[anger]] | fire · will · life-blood | 620–750 nm | fire, blood, thermal injury |
+| [[orange]] | `#ff6501` | [[disgust]] | craft · hearth · making | 590–620 nm | decay, toxic fruit, embers |
+| [[yellow]] | `#ffc501` | [[surprise]] | light · clarity · attention | 570–590 nm | sudden brightness, dawn |
+| [[green]] | `#00ff01` | [[joy]] | growth · life · abundance | 495–570 nm | vegetation, [[photosynthesis]] |
+| [[blue]] | `#00b4ff` | [[interest]] | flow · openness · exploration | 450–495 nm | sky, water, horizons |
+| [[indigo]] | `#1700fe` | [[sadness]] | depth · weight · law | 420–450 nm | twilight, deep water |
+| [[violet]] | `#6b00fe` | [[fear]] | spirit · the beyond | 380–420 nm | UV, [[apoptosis]], the invisible |
+
+**emotion is innate; symbol is grown.** the same ancestral stimulus produces both: the wavelength's immediate affect, and the meaning culture built on top of it. the symbol is the domesticated emotion — the fear of the invisible becomes reverence for the beyond; the disgust that kept you from rot becomes the craft of the hearth that makes it safe; the surprise of dawn becomes the light of clarity; the anger of fire becomes will. two readings of one spectrum: what it does to you, and what you made of it.
 
 the full framework — ecological valence, trichromatic foraging, the amygdala's integration, the cross-cultural evidence — is the article: [[color-emotion spectrum]], published at [x.com/mastercyb](https://x.com/mastercyb/status/1983247076147568862).
 
