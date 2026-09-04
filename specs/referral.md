@@ -288,9 +288,9 @@ hover the chart, or a milestone card.
 
 ## the witness gate
 
-decay alone pays for splitting: a referrer at $n = 150$ earns $150F$ per unit of mean referee reward, two fresh identities at 75 each earn $2 \cdot 75 \cdot s(75) \approx 1.82\times$ more. so the curve opens only to a witnessed identity — one [[attested genome protocol|nullifier]], one curve — and an unwitnessed referrer earns the flat floor at any $n$. splitting across unwitnessed identities returns exactly the floor; splitting across witnessed identities requires distinct humans, which is recruiting — the attack becomes the behavior the pool buys. the curve inherits its security from the attestation primitive, the way reward inherits sybil-resistance from karma non-transferability in [[tru]].
+decay alone pays for splitting: a referrer at $n = 150$ earns $150F$ per unit of mean referee reward, two fresh identities at 75 each earn $2 \cdot 75 \cdot s(75) \approx 1.82\times$ more. so the curve opens only to a witnessed identity — one [[cyberia/research/genome-protocol/attested genome protocol|nullifier]], one curve — and an unwitnessed referrer earns the flat floor at any $n$. splitting across unwitnessed identities returns exactly the floor; splitting across witnessed identities requires distinct humans, which is recruiting — the attack becomes the behavior the pool buys. the curve inherits its security from the attestation primitive, the way reward inherits sybil-resistance from karma non-transferability in [[tru]].
 
-[[moon passport]] resolves names, not persons — one owner holds many passports — so the gate mounts on the passport's proof slot, not on the passport itself.
+[[bostrom/moon-passport|moon passport]] resolves names, not persons — one owner holds many passports — so the gate mounts on the passport's proof slot, not on the passport itself.
 
 ## wiring
 
@@ -298,7 +298,7 @@ binding. the referrer arrives in boot.dat ([[cyb-boot]]) and binds on first sync
 
 payout. every settle path converges in `apply_settle_receipt` ([[cyb]] core): the epoch's [[Shapley value|Shapley]] share splits — the referee is marked active, the referrer cut is credited with a matching [[tok]] mint leg (cut + net = share, conservation), the net mints to the referee under clock-B escrow. [[sense]] and sigma read `ReferralAccrued`.
 
-witness. `attest_witness` admits a neuron to the curve; the verifying implementation — a [[moon passport]] extension proof or a genome nullifier — is the mount point, trusted-local until it lands.
+witness. `attest_witness` admits a neuron to the curve; the verifying implementation — a [[bostrom/moon-passport|moon passport]] extension proof or a genome nullifier — is the mount point, trusted-local until it lands.
 
 ## open
 
@@ -306,6 +306,6 @@ witness. `attest_witness` admits a neuron to the curve; the verifying implementa
 - turnover-driven decay instead of the activity window
 - referrer-side clock-B escrow
 
-see [[specs/money-loop|money loop]] for the settle path · [[attested genome protocol]] for the witness primitive
+see [[specs/money-loop|money loop]] for the settle path · [[cyberia/research/genome-protocol/attested genome protocol|attested genome protocol]] for the witness primitive
 
 discover all [[concepts]]
