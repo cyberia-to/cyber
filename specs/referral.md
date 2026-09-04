@@ -12,7 +12,7 @@ growth is work, and the protocol pays for work: a bind-once referrer earns a sha
 
 ## the curve
 
-parameters in micros: pool $P = 100\,000$ (10%), floor $F = 10\,000$ (1%), Dunbar scale $D = 150$, activity window $W = 30$ epochs.
+parameters in micros: pool $P = 100\,000$ (10%), floor $F = 10\,000$ (1%), Dunbar scale $D = 150$ — Dunbar's number, an anthropological estimate rather than a derived constant — activity window $W = 30$ epochs.
 
 $$s(n) = \max\!\left(F,\ \frac{P \cdot D}{D + 9n}\right)$$
 
