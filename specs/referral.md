@@ -296,7 +296,7 @@ decay alone pays for splitting: a referrer at $n = 150$ earns $150F$ per unit of
 
 binding. the referrer arrives in boot.dat ([[cyb-boot]]) and binds on first sync. bind-once: self-binding, rebinding, and upline cycles are rejected.
 
-payout. every settle path converges in `apply_settle_receipt` ([[cyb]] core): the epoch's [[Shapley value|Shapley]] share splits — the referee is marked active, the referrer cut is credited with a matching [[tok]] mint leg (cut + net = share, conservation), the net mints to the referee under clock-B escrow. [[sense]] and sigma read `ReferralAccrued`.
+payout. every settle path converges in `apply_settle_receipt` ([[cyb]] core): the epoch's [[cybics/game/Shapley value|Shapley]] share splits — the referee is marked active, the referrer cut is credited with a matching [[tok]] mint leg (cut + net = share, conservation), the net mints to the referee under clock-B escrow. [[sense]] and sigma read `ReferralAccrued`.
 
 witness. `attest_witness` admits a neuron to the curve; the verifying implementation — a [[bostrom/moon-passport|moon passport]] extension proof or a genome nullifier — is the mount point, trusted-local until it lands.
 
