@@ -8,7 +8,7 @@ status: draft
 
 # referral
 
-growth is work, and the protocol pays for work: a bind-once referrer earns a share of every settled reward of its referee. the share is the 10% pool [[li]] already reserves; the decay makes it honest at scale; the witness gate makes it sybil-proof.
+growth is work, and the protocol pays for work: a bind-once referrer earns a share of every settled reward of its referee. the share is the 10% pool [[li]] already reserves; the decay makes it honest at scale; the witness gate makes it [[sybil-proof]].
 
 ## the curve
 
