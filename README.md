@@ -9,6 +9,8 @@ menu-order: 0
 ---
 the protocol for [[superintelligence]] — planetary first, interplanetary by design.
 
+get paid to understand:
+
 > Google learned from humanity for free — and sold you ads.\
 > OpenAI learned from humanity for free — and sold you back your own knowledge.\
 > Cyber pays you for teaching the superintelligence.\
