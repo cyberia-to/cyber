@@ -24,6 +24,133 @@ membership is decided by one question — **who is the subject of this page?** �
 
 corollary: **cyber is not [[soft3]].** soft3 owns mechanisms; cyber owns what must be true regardless of mechanism. a page explaining *how* something is computed belongs to the component that computes it; a page stating *what must hold* belongs to cyber.
 
+
+---
+
+# 0 · the ground — what all three stand on
+
+the plan above three subjects is incomplete without its floor. **cyb, cyber and cyberia are not peers of the other subgraphs — they are the trinity standing on two shared dependencies**:
+
+- **[[soft3]]** — the stack: the loop, the guarantees, the attractor. every "component matter" row in the rule resolves here;
+- **[[cybics]] / [[crystal]]** — the world's knowledge: every "world at large" row resolves here.
+
+the dependency runs one way. soft3 does not know the robot, the protocol narrative, or the nation; the trinity cannot run a page without the stack. so crystallizing the three subjects and crystallizing soft3 are one program — and the soft3 crystallization now lives here, married into this plan (its soft3-side address, [[soft3/roadmap/crystallization|crystallization]], points home):
+
+## the boundary and the core
+
+soft3 crystallizes into **7 = 4 + 2 + 1: four motions, two guarantees, one attractor** — and every verb is a component's own verb from [[status]]. no invented words: earlier drafts said *say*, *act*, *observe*, *focus* — but the registry already had *link*, *render*, *measure*, *converge*. drawn at [soft3.org/scheme](https://soft3.org/scheme), parts at [soft3.org/chart](https://soft3.org/chart).
+
+**The boundary rule: a component is stack iff the loop cannot run, the medium cannot hold, or the mind cannot converge without it.** Everything else is *enrichment* (a richer way to hold a seat) or a *product* (consumes the loop entire).
+
+## the loop — four motions, all live
+
+the smallest circle a mind can draw, and every station carries real traffic today. the artifacts between stations name themselves: the link, the focus, the world, and the measurement that becomes the next link.
+
+| motion | facet | what happens | sub-verbs | core |
+|---|---|---|---|---|
+| **link** | mass | a thought becomes links — in cyber-speech, linking IS saying | hash · mean · compile · eval · query | [[soft3/cybergraph\|cybergraph]] · [[hemera]] — languages: [[neural]] [[trident]] [[rune]] [[inf]] |
+| **transmit** | space | cells share one graph | hold · frame · sync · mount | [[radio]] · [[cell]] · [[tape]] · [[fs]] |
+| **render** | play | the focus becomes world — worlds, affect, gated effects | paint · authorize | [[mir]] · [[prysm]] — gated by [[cyb/parts/ward\|ward]] |
+| **measure** | play | the world becomes links — cybernetics is impossible without measurement | evaluate | [[lytics]] · [[sigma]] |
+
+the closing arc is the loop's whole point: the measurement becomes the next link. play holds two verbs because play is the membrane where the stack touches the world — render is the way out, measure is the way back.
+
+**why exactly four.** the removal test: remove *link* and the system is mute — it can only react to its own renders. remove *transmit* and it is many private loops, not one mind. remove *render* and it is a diary — no agency. remove *measure* and it is open-loop — no feedback, no cybernetics. each removal kills a distinct property: novelty, unity, agency, feedback. and none merge: link is not measure (a mind's reference input is not a sensor reading), render is not transmit (out to the world is not across the graph). a single agent's OODA collapses to measure → focus → render; link and transmit exist precisely because the mind is distributed. there is no fifth motion — everything else is a property of the channel (encrypt, prove) or the attractor (focus).
+
+**verbs outside, components inside.** the scheme names each seat by its verb and lists the components that hold it; the decomposition within a seat — each component's own registry verb and how they interact — opens on click at [soft3.org/scheme](https://soft3.org/scheme). grouping is a debt: if several components share a seat, the seat owes an internal diagram, and now pays it.
+
+## the loop among loops
+
+the four survive every known control doctrine — and each teaches something:
+
+| framework | its steps | in our verbs | the lesson |
+|---|---|---|---|
+| OODA (Boyd) | observe · orient · decide · act | measure · focus · render | orientation dominates and shapes every station — the centre is not a step; and tempo, the loop's speed, is the competitive quantity |
+| PDCA (Deming) | plan · do · check · adjust | focus · render · measure · link | check and adjust are different verbs — a measurement is not yet the next word |
+| MAPE-K (IBM autonomic) | monitor · analyze · plan · execute over shared K | measure · focus · render around the graph | the shared knowledge sits in the middle — our K is the cybergraph and its focus |
+| D3A (targeting) | decide · detect · deliver · assess | focus · measure · render · measure | detection and assessment are two measurements — [[lytics]] measures, [[sigma]] evaluates, one seat, two components |
+| F3EAD (spec-ops) | find · fix · finish · exploit · analyze · disseminate | measure · render · focus · transmit | every distributed doctrine grows an explicit disseminate step — transmit is a motion, not plumbing |
+| SECI (Nonaka) | socialize · externalize · combine · internalize | humans · link · focus · render | externalization — tacit becoming explicit — is exactly "a thought becomes links" |
+| active inference (Friston) | perception ⇄ action around a generative model | measure ⇄ render around focus | perception and action are dual moves against one model — the attractor picture again |
+
+single-agent loops are three motions — OODA collapses to measure → focus → render. a distributed mind adds exactly two: link, because minds are reference inputs and not sensors, and transmit, because one graph must live in many cells. no doctrine demands a fifth.
+
+## the top-verbs test
+
+against the most frequent English verbs the seats hold: say · tell · ask · write → link; see · hear · watch · find → measure; think · know · decide · understand → focus; do · make · build · show · play → render; send · bring · carry · follow → transmit; have · hold · keep → the medium. the big verbs that are not primitive compose from the loop:
+
+| verb | decomposition |
+|---|---|
+| talk | link + transmit + measure — a conversation is two interleaved loops. english hides the channel inside "talk" because air is free; soft3 names it because the channel is the hard part |
+| learn | the loop iterated until the focus shifts — the spiral, not a station |
+| know | hold + prove — a claim kept together with its checking |
+| remember | store + query — [[soft3/bbg\|bbg]] + [[inf]] |
+| teach | render + transmit aimed at another mind's measure |
+| promise | link + encrypt, with the measurement deferred |
+| understand | converge past τ |
+| want | the weights of φ* — the focus is the want-vector |
+
+the sweep surfaces two honest absences, both already named critical in [[status]]: **want** has no component — it lives implicitly in φ* weights and [[tok]] prices (the economics of writing, critical 1) — and **forget** has no verb at all (deletion and liability, critical 4). the registry will one day owe a verb to forgetting.
+
+## the two guarantees — the medium
+
+not steps but properties of the channel every link enjoys:
+
+| guarantee | facet | what it promises | core |
+|---|---|---|---|
+| **encrypt** | space | every link is owned | [[mudra]] — [[vault]] keeps, [[tok]] pays |
+| **prove** | work | every claim is checked and kept | [[zheng]] · [[soft3/nox\|nox]] · [[soft3/bbg\|bbg]] — [[glia]] infers, [[eidos]] certifies, [[wysm]] sandboxes, [[kern]] shades, [[lens]] commits |
+
+nothing "gets encrypted" as a stage of the journey — linking is owned, rendering is owned, measuring is owned. proving likewise: running is proving ([[soft3/nox|nox]]), storing is proving ([[soft3/bbg|bbg]]).
+
+## the one attractor — the centre
+
+the centre is a noun, not a verb: **the focus** — φ*, [[tru]]'s own word, the name [[foculus]] carries. its verbs from the registry: converge ([[tru]]), agree ([[foculus]]), think ([[soft3/soma|soma]]). it is not a step the signal passes through — it is the point the whole loop orbits: everything dances around it. of two conflicting signals, one survives, chosen by φ* past τ: agreement, not voting.
+
+**beneath it all — the ground.** [[strata]] does the math, [[lens]] commits, [[honeycrisp]] accelerates: form is not a station but what every station is made of, with [[hemera]]'s hash as the ruler.
+
+**the colours are emotions — by evolution, not by assignment.** link wears anger red (the will to speak), transmit interest blue (the open wire), render surprise yellow (the render is what surprises you), measure joy green (the sight of growth — and the closing arc runs green); encrypt wears sadness indigo (weight and law of ownership), prove disgust orange (the craft that keeps rot out); converge wears fear violet (the one). the map is anchored at [[color]], the framework at [[color-emotion spectrum]], the protocol use at [[emotion]].
+
+## the three stages — the registry's own states
+
+the loop is not staged: link → transmit → render → measure circulates from day one. the stages follow the state column of [[status]] literally:
+
+| stage | what lights | property | registry state |
+|---|---|---|---|
+| 1 · medium | the loop + encrypt | **shared** | **live** — [[wire]], 2026-09-01 |
+| 2 · proof | + prove | **trustless** | building — [[zheng]] blocked on openings |
+| 3 · mind | + converge | **one** | undeployed — [[foculus]] has never chosen a fork |
+
+**shared → trustless → one.** the centre lights last: the mind emerges when a proven, shared loop converges. the trinity maps onto the layers: [[cyb]] is the body that runs the loop, [[cyber]] is the mind that lights at stage 3, [[cyberia]] is the state that governs what the alive loop does.
+
+## the stage tests
+
+1. **medium** — a link cast in one cell arrives in another with no third party. **passed live**: [[wire]], 2026-09-01.
+2. **proof** — a stranger verifies a read it never trusted.
+3. **mind** — of two conflicting signals one survives, chosen by φ* past τ.
+
+and one test for the loop itself, on any layer: a render observably changes what is next linked.
+
+## the census
+
+every component, by its registry verb:
+
+| seat | verb | components |
+|---|---|---|
+| loop · link | link, hash + mean, compile, eval, query | [[soft3/cybergraph\|cybergraph]] [[hemera]] + [[neural]] [[trident]] [[rune]] [[inf]] |
+| loop · transmit | transmit, hold, frame, sync, mount | [[radio]] [[cell]] [[tape]] [[fs]] · [[foculus]]'s sync seat |
+| loop · render | render, paint, authorize | [[mir]] [[prysm]] [[cyb/parts/ward\|ward]] |
+| loop · measure | measure, evaluate | [[lytics]] [[sigma]] |
+| medium · encrypt | encrypt, keep, pay | [[mudra]] [[vault]] [[tok]] |
+| medium · prove | prove, run, store, infer, certify, sandbox, shade, commit | [[zheng]] [[soft3/nox\|nox]] [[soft3/bbg\|bbg]] [[glia]] [[eidos]] [[wysm]] [[kern]] [[lens]] |
+| centre · converge | converge, agree, think | [[tru]] [[foculus]] [[soft3/soma\|soma]] |
+
+the ground: math ([[strata]]) · accelerate ([[honeycrisp]]) — beneath every seat. **products** (consume the loop entire, are not in it): [[cyb]] · [[optica]] · [[Signal Studio\|studio]] · [[warriors/erga\|erga]] · [[warriors/zoya\|zoya]] · [[warriors/mona\|mona]] · [[warriors/xena\|xena]]. **the trinity** (what the loop is for): [[cyb]] the body · [[cyber]] the mind · [[cyberia]] the state.
+
+## what this buys
+
+**Focus:** the loop is live end to end; the two dark layers are exactly [[zheng]]'s openings and [[foculus]]'s deployment — the shortest path to a mind is those two components. **Honesty:** the scheme's layers ARE the registry's states; when status changes, the drawing changes. **Discipline:** a proposed component must name its seat by a registry verb — motion, guarantee, or centre; "it would be nice" is not a verb.
+
 ---
 
 # 1 · cyber — target structure
@@ -73,378 +200,9 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[blog]] — **the chronicle** (~68 entries stay; 23 leave with their subjects)
     - [[restructure]] — this plan, then this record
 
-## the ledger — cyber (238 pages, 238 verdicts, 0 undecided)
+## the ledger — cyb
 
-| page | words | verdict | why |
-|---|---|---|---|
-| [[blog/2019_12_01|2019_12_01]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_04_12|2024_04_12]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_06_27|2024_06_27]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_07_06|2024_07_06]] | 22 | stays · chronicle | protocol log entry |
-| [[blog/2024_07_19|2024_07_19]] | 6 | stays · chronicle | protocol log entry |
-| [[blog/2024_07_29|2024_07_29]] | 43 | stays · chronicle | protocol post |
-| [[blog/2024_07_31|2024_07_31]] | 39 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_02|2024_08_02]] | 30 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_03|2024_08_03]] | 19 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_04|2024_08_04]] | 18 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_05|2024_08_05]] | 6 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_06|2024_08_06]] | 11 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_09|2024_08_09]] | 9 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_10|2024_08_10]] | 19 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_11|2024_08_11]] | 12 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_16|2024_08_16]] | 57 | stays · chronicle | protocol post |
-| [[blog/2024_08_22|2024_08_22]] | 12 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_24|2024_08_24]] | 20 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_26|2024_08_26]] | 3 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_01|2024_09_01]] | 58 | stays · chronicle | protocol post |
-| [[blog/2024_09_07|2024_09_07]] | 5 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_08|2024_09_08]] | 50 | stays · chronicle | protocol post |
-| [[blog/2024_09_17|2024_09_17]] | 17 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_20|2024_09_20]] | 22 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_27|2024_09_27]] | 35 | stays · chronicle | protocol log entry |
-| [[blog/2024_10_01|2024_10_01]] | 86 | stays · chronicle | protocol post |
-| [[blog/2024_10_03|2024_10_03]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_11_04|2024_11_04]] | 12 | stays · chronicle | protocol log entry |
-| [[blog/2024_11_05|2024_11_05]] | 3 | stays · chronicle | protocol log entry |
-| [[blog/2024_11_15|2024_11_15]] | 6 | stays · chronicle | protocol log entry |
-| [[blog/2024_12_04|2024_12_04]] | 50 | stays · chronicle | protocol post |
-| [[blog/2026_01_13|2026_01_13]] | 4 | stays · chronicle | protocol log entry |
-| [[blog/2026_01_27|2026_01_27]] | 9 | stays · chronicle | protocol log entry |
-| [[blog/2026_02_26|2026_02_26]] | 17 | stays · chronicle | protocol log entry |
-| [[blog/2026_03_01|2026_03_01]] | 321 | stays · chronicle | protocol post |
-| [[blog/2026_03_05|2026_03_05]] | 64 | stays · chronicle | protocol post |
-| [[blog/2026_03_14|2026_03_14]] | 56 | stays · chronicle | protocol post |
-| [[blog/2026_03_16|2026_03_16]] | 89 | stays · chronicle | protocol post |
-| [[blog/2026_03_23|2026_03_23]] | 804 | stays · chronicle | protocol post |
-| [[blog/2026_03_24|2026_03_24]] | 324 | stays · chronicle | protocol post |
-| [[blog/2026_03_25|2026_03_25]] | 586 | stays · chronicle | protocol post |
-| [[blog/2026_03_26|2026_03_26]] | 298 | stays · chronicle | protocol post |
-| [[blog/2026_03_27|2026_03_27]] | 529 | stays · chronicle | protocol post |
-| [[blog/2026_04_25|2026_04_25]] | 275 | stays · chronicle | protocol post |
-| [[blog/2026_04_26|2026_04_26]] | 191 | stays · chronicle | protocol post |
-| [[blog/2026_04_30|2026_04_30]] | 632 | stays · chronicle | protocol post |
-| [[blog/2026_05_12|2026_05_12]] | 736 | stays · chronicle | protocol post |
-| [[blog/2026_05_21|2026_05_21]] | 736 | stays · chronicle | protocol post |
-| [[blog/2026_08_28|2026_08_28]] | 929 | stays · chronicle | protocol post |
-| [[blog/2026_08_29|2026_08_29]] | 1007 | stays · chronicle | protocol post |
-| [[3c|3c]] | 1144 | stays · cips | deep protocol article |
-| [[channel|channel]] | 1859 | stays · cips | deep protocol article |
-| [[communication|communication]] | 1023 | stays · cips | deep protocol article |
-| [[gravity|gravity]] | 491 | stays · cips | deep protocol article |
-| [[hierarchy|hierarchy]] | 1814 | stays · cips | deep protocol article |
-| [[light|light]] | 1047 | stays · cips | deep protocol article |
-| [[luminosity|luminosity]] | 485 | stays · cips | deep protocol article |
-| [[network|network]] | 2362 | stays · cips | deep protocol article |
-| [[security|security]] | 363 | stays · cips | deep protocol article |
-| [[cyber/$CYB|$CYB]] | 5512 | stays · contract | protocol invariants |
-| [[cyber/cybergraph|cybergraph]] | 515 | stays · contract | protocol invariants |
-| [[cyber/launch|launch]] | 3381 | stays · contract | protocol invariants |
-| [[attention|attention]] | 19 | stays · core | atom of the phenomenon |
-| [[cascade|cascade]] | 194 | stays · core | atom of the phenomenon |
-| [[cell|cell]] | 600 | stays · core | atom of the phenomenon |
-| [[concepts|concepts]] | 483 | stays · core | atom of the phenomenon |
-| [[context packing|context packing]] | 347 | stays · core | how the graph enters an LLM window |
-| [[contribute|contribute]] | 333 | stays · core | atom of the phenomenon |
-| [[core|core]] | 92 | stays · core | atom of the phenomenon |
-| [[crystal|crystal]] | 551 | stays · core | atom of the phenomenon |
-| [[cyberculture|cyberculture]] | 150 | stays · core | atom of the phenomenon |
-| [[cybergraph|cybergraph]] | 151 | stays · core | atom of the phenomenon |
-| [[cyberlink|cyberlink]] | 74 | stays · core | atom of the phenomenon |
-| [[cybersophy|cybersophy]] | 2222 | stays · core | atom of the phenomenon |
-| [[cybersphere|cybersphere]] | 124 | stays · core | atom of the phenomenon |
-| [[cyberverse|cyberverse]] | 145 | stays · core | atom of the phenomenon |
-| [[fixed point|fixed point]] | 161 | stays · core | atom of the phenomenon |
-| [[focus|focus]] | 67 | stays · core | atom of the phenomenon |
-| [[happiness|happiness]] | 53 | stays · core | atom of the phenomenon |
-| [[hash|hash]] | 212 | stays · core | atom of the phenomenon |
-| [[impulse|impulse]] | 28 | stays · core | atom of the phenomenon |
-| [[inception|inception]] | 108 | stays · core | atom of the phenomenon |
-| [[install|install]] | 322 | stays · core | atom of the phenomenon |
-| [[intent|intent]] | 143 | stays · core | atom of the phenomenon |
-| [[interplanetary superintelligence|interplanetary superintelligence]] | 497 | stays · core | atom of the phenomenon |
-| [[karma|karma]] | 24 | stays · core | atom of the phenomenon |
-| [[knowledge|knowledge]] | 35 | stays · core | atom of the phenomenon |
-| [[landauer limit|landauer limit]] | 71 | stays · core | atom of the phenomenon |
-| [[license|license]] | 1887 | stays · core | atom of the phenomenon |
-| [[mining|mining]] | 77 | stays · core | atom of the phenomenon |
-| [[neuron|neuron]] | 29 | stays · core | atom of the phenomenon |
-| [[particle|particle]] | 34 | stays · core | atom of the phenomenon |
-| [[personality|personality]] | 791 | stays · core | atom of the phenomenon |
-| [[privacy|privacy]] | 628 | stays · core | the protocol privacy hub |
-| [[prob|prob]] | 115 | stays · core | atom of the phenomenon |
-| [[rank|rank]] | 88 | stays · core | atom of the phenomenon |
-| [[rational neuron|rational neuron]] | 378 | stays · core | atom of the phenomenon |
-| [[rewards|rewards]] | 184 | stays · core | atom of the phenomenon |
-| [[sealing|sealing]] | 121 | stays · core | atom of the phenomenon |
-| [[self|self]] | 374 | stays · core | atom of the phenomenon |
-| [[staking|staking]] | 113 | stays · core | atom of the phenomenon |
-| [[subgraphs|subgraphs]] | 272 | stays · core | atom of the phenomenon |
-| [[superintelligence|superintelligence]] | 128 | stays · core | atom of the phenomenon |
-| [[token|token]] | 73 | stays · core | atom of the phenomenon |
-| [[tri-kernel|tri-kernel]] | 33 | stays · core | atom of the phenomenon |
-| [[tru|tru]] | 26 | stays · core | atom of the phenomenon |
-| [[view|view]] | 51 | stays · core | atom of the phenomenon |
-| `CLAUDE.md` | 1167 | stays · index | index / infra |
-| [[README|cyber README]] | 285 | stays · index | index / infra |
-| [[blog|blog]] | 16 | stays · index | index / infra |
-| [[research|research]] | 17 | stays · index | index / infra |
-| [[tokens|tokens]] | 101 | stays · index | index / infra |
-| [[automated market maker|automated market maker]] | 202 | stays · nomics | the money |
-| [[cap|cap]] | 193 | stays · nomics | the money |
-| [[cyberlink market protocol|cyberlink market protocol]] | 155 | stays · nomics | the money |
-| [[cybernomics|cybernomics]] | 269 | stays · nomics | the money |
-| [[delegation|delegation]] | 183 | stays · nomics | the money |
-| [[netics|netics]] | 922 | stays · nomics | the money |
-| [[nomics|nomics]] | 709 | stays · nomics | the money |
-| [[specs/adaptive hybrid economics|adaptive hybrid economics]] | 883 | stays · nomics | the money |
-| [[specs/light-money|light-money]] | 908 | stays · nomics | the money |
-| [[specs/money-loop|money-loop]] | 1133 | stays · nomics | the money |
-| [[tokens/badge|badge]] | 23 | stays · nomics | the money |
-| [[tokens/basic token operations|basic token operations]] | 41 | stays · nomics | the money |
-| [[tokens/coin|coin]] | 27 | stays · nomics | the money |
-| [[tokens/plumb|plumb]] | 147 | stays · nomics | the money |
-| [[litepaper|litepaper]] | 2794 | stays · papers | the two papers |
-| [[whitepaper|whitepaper]] | 22639 | stays · papers | the two papers |
-| [[research/32-byte tokens|32-byte tokens]] | 1203 | stays · research | protocol-level research |
-| [[research/adaptive hybrid economics|adaptive hybrid economics]] | 32 | stays · research | protocol-level research |
-| [[research/algorithmic essence of superintelligence|algorithmic essence of superintelligence]] | 3149 | stays · research | protocol-level research |
-| [[research/bootstrap|bootstrap]] | 2440 | stays · research | protocol-level research |
-| [[research/cybergraph model architecture|cybergraph model architecture]] | 1677 | stays · research | protocol-level research |
-| [[research/egregore properties|egregore properties]] | 1992 | stays · research | protocol-level research |
-| [[research/energy market|energy market]] | 1299 | stays · research | protocol-level research |
-| [[research/focus flow computation|focus flow computation]] | 1208 | stays · research | protocol-level research |
-| [[research/future of computation|future of computation]] | 3111 | stays · research | protocol-level research |
-| [[research/gradient descent|gradient descent]] | 1593 | stays · research | protocol-level research |
-| [[research/knowledge capacity|knowledge capacity]] | 2027 | stays · research | protocol-level research |
-| [[research/knowledge economy|knowledge economy]] | 942 | stays · research | protocol-level research |
-| [[research/link production|link production]] | 2205 | stays · research | protocol-level research |
-| [[research/neuroscience principles for machine mind|neuroscience principles for machine mind]] | 6858 | stays · research | protocol-level research |
-| [[research/physical analogies|physical analogies]] | 3352 | stays · research | protocol-level research |
-| [[research/privacy trilateral|privacy trilateral]] | 3867 | stays · research | ZK+FHE+MPC — protocol-level survey |
-| [[research/theoretical foundations|theoretical foundations]] | 898 | stays · research | protocol-level research |
-| [[research/unified mining|unified mining]] | 1317 | stays · research | protocol-level research |
-| [[research/universal law|universal law]] | 1506 | stays · research | protocol-level research |
-| [[self/dmn|dmn]] | 758 | stays · self | protocol as neuron |
-| [[self/linking|linking]] | 905 | stays · self | protocol as neuron |
-| [[self/parametrization|parametrization]] | 1762 | stays · self | protocol as neuron |
-| [[self/sigma|sigma]] | 1004 | stays · self | protocol as neuron |
-| [[specs/README|specs/README README]] | 499 | stays · specs | engineering contract |
-| [[specs/component-ownership|component-ownership]] | 635 | stays · specs | engineering contract |
-| [[specs/full-flow-claims|full-flow-claims]] | 522 | stays · specs | engineering contract |
-| [[specs/node-modes|node-modes]] | 577 | stays · specs | engineering contract |
-| [[specs/rewards-completeness|rewards-completeness]] | 345 | stays · specs | engineering contract |
-| [[epistemology|epistemology]] | 2770 | promotes → cyber/epistemology | contract family, demand measured |
-| [[identity|identity]] | 567 | promotes → cyber/identity | contract family, demand measured |
-| [[cyberank|cyberank]] | 34 | merges → rank | rank owns the alias and all 38 inbound refs |
-| [[research/algebraic state commitments|algebraic state commitments]] | 1806 | moves → bbg | component research goes home |
-| [[research/bbg|bbg]] | 1993 | moves → bbg | component research goes home |
-| [[research/data availability strategy|data availability strategy]] | 3036 | moves → bbg | component research goes home |
-| [[research/data structures for polynomial state|data structures for polynomial state]] | 1626 | moves → bbg | component research goes home |
-| [[research/polynomial nouns|polynomial nouns]] | 2877 | moves → bbg | component research goes home |
-| [[research/programmable state|programmable state]] | 1703 | moves → bbg | component research goes home |
-| [[research/state model|state model]] | 789 | moves → bbg | component research goes home |
-| [[research/storage proofs|storage proofs]] | 1390 | moves → bbg | component research goes home |
-| [[cli|cli]] | 35 | moves → bootloader | vehicle tooling |
-| [[congress|congress]] | 192 | moves → bootloader | the vehicle team |
-| [[research/bostrom compilation report|bostrom compilation report]] | 1523 | moves → bootloader | component research goes home |
-| [[54|54]] | 14 | moves → bootloader chronicle | per the rule |
-| [[55|55]] | 722 | moves → bootloader chronicle | per the rule |
-| [[blog/2024_08_15|2024_08_15]] | 6 | moves → bootloader chronicle | vehicle-era call log |
-| [[roadmap|roadmap]] | 758 | moves → bootloader chronicle | 2019 plan |
-| [[accumulator|accumulator]] | 196 | moves → crystal | cryptography atom |
-| [[helix|helix]] | 363 | moves → crystal | mathematics atom |
-| [[history|history]] | 129 | moves → crystal | history of computing |
-| [[skyrmion|skyrmion]] | 382 | moves → crystal | physics atom |
-| [[time-crystal|time-crystal]] | 375 | moves → crystal | physics atom |
-| [[topoisomerase|topoisomerase]] | 303 | moves → crystal | biology atom |
-| [[topological-invariant|topological-invariant]] | 415 | moves → crystal | mathematics atom |
-| [[security audit private key import|security audit private key import]] | 202 | moves → cyb reference/ | audits the robot |
-| [[research/cyberlink protocol structure|cyberlink protocol structure]] | 472 | moves → cybergraph | component research goes home |
-| [[blog/2024_08_21|2024_08_21]] | 6 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_08_23|2024_08_23]] | 6 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_08_27|2024_08_27]] | 10 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_09_10|2024_09_10]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_09_12|2024_09_12]] | 32 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_09_15|2024_09_15]] | 19 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_10_07|2024_10_07]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_10_13|2024_10_13]] | 14 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_11_23|2024_11_23]] | 3 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_12_05|2024_12_05]] | 5 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_12_22|2024_12_22]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_04|2025_04_04]] | 12 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_07|2025_04_07]] | 19 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_10|2025_04_10]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_15|2025_04_15]] | 28 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_23|2025_04_23]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_01|2025_09_01]] | 11 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_06|2025_09_06]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_08|2025_09_08]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_15|2025_09_15]] | 5 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_10_22|2025_10_22]] | 5 | moves → cyberia chronicle | valley log entry |
-| [[blog/2026_01_24|2026_01_24]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[landscape|landscape]] | 25 | moves → cyberia land/flora | valley gardening |
-| [[nitrogener|nitrogener]] | 93 | moves → cyberia land/flora | valley gardening |
-| [[smart capital|smart capital]] | 15 | moves → cyberia research/ | per the rule |
-| [[team speed competition|team speed competition]] | 55 | moves → cyberia research/ | per the rule |
-| `SPEC.md` | 2603 | moves → cyberia/midao | workspace spec |
-| [[leadership|leadership]] | 833 | moves → cyberia/midao | org canon |
-| [[russian school of inscription|russian school of inscription]] | 1593 | moves → cybics/lang | culture essay |
-| [[research/foculus|foculus]] | 520 | moves → foculus | component research goes home |
-| [[research/provable consensus|provable consensus]] | 2066 | moves → foculus | component research goes home |
-| [[research/structural-sync|structural-sync]] | 2736 | moves → foculus | component research goes home |
-| [[research/vec formalization|vec formalization]] | 1799 | moves → foculus | component research goes home |
-| [[research/hashing and confidentiality|hashing and confidentiality]] | 1151 | moves → hemera | component research goes home |
-| [[subgraphs/kadek|kadek]] | 52 | moves → kadek repo (private card) | per the rule |
-| [[subgraphs/lytics|lytics]] | 36 | moves → lytics repo docs | per the rule |
-| [[research/256 symbols|256 symbols]] | 899 | moves → nox | component research goes home |
-| [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
-| [[analizer|analizer]] | 1009 | moves → research/ | protocol research misfiled at root |
-| [[seer|seer]] | 1318 | moves → research/ | protocol research misfiled at root |
-| [[subgraphs/conformance|conformance]] | 26 | moves → soft3 docs | per the rule |
-| [[research/five algebras|five algebras]] | 3619 | moves → strata | component research goes home |
-| [[subgraphs/tape|tape]] | 12 | moves → tape repo docs | per the rule |
-| [[research/trinity meets polynomial state|trinity meets polynomial state]] | 1496 | moves → trident | component research goes home |
-| [[research/gflownet focus flow|gflownet focus flow]] | 1766 | moves → tru | component research goes home |
-| [[research/spectral gap from convergence|spectral gap from convergence]] | 1229 | moves → tru | component research goes home |
-| [[research/tri-kernel architecture|tri-kernel architecture]] | 1943 | moves → tru | component research goes home |
-| [[research/polynomial proof system|polynomial proof system]] | 1862 | moves → zheng | component research goes home |
-| [[research/recursive brakedown|recursive brakedown]] | 1949 | moves → zheng | component research goes home |
-| [[research/zheng vs starks|zheng vs starks]] | 14 | moves → zheng | component research goes home |
-| [[blog/2024_09_29|2024_09_29]] | 0 | dies | empty entry |
-| [[blog/2025_02_15|2025_02_15]] | 0 | dies | empty entry |
-| [[research/programming model|programming model]] | 11 | dies | empty / superseded |
-| [[sparks|sparks]] | 0 | dies | empty / superseded |
-| [[style|style]] | 11 | dies | empty / superseded |
-
----
-
-# 2 · cyb — target structure
-
-the robot as a navigation tree. the repo's `root/` directory dissolves — pages live flat; links below are today's paths. the anatomy is the contract every name answers to.
-
-- [[cyb/README|README]] — **the robot**: what it is, get it at cyb.ai
-    - [[cyb/anatomy|anatomy]] — **the source of truth**: 20 parts in six layers; every doc, world, and crate names things by it
-        - [[cyb/state|state]] — external truth with a tier: T0 proof · T1 anchor · T3 badge
-    - [[cyb/product/product|product]] — intelligence you own *(absorbs the living claims of [[cyb/decide/whitepaper|the cyb whitepaper]])*
-        - [[cyb/product/philosophy|philosophy]] · [[cyb/product/story|story]] · [[cyb/product/spec|spec]]
-    - [[cyb/product/roadmap|roadmap]] — where it goes
-        - [[cyb/product/team|team]] · [[cyb/decide/dev|dev]]
-    - reference — **how it works**, one page per organ where an organ exists
-        - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/cells|cells]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
-        - formats: [[cyb/reference/format|format]] · [[cyb/reference/cyb-registry|cyb-registry]] · [[cyb/reference/cyb-model|cyb-model]] · [[cyb/reference/cyb-vocab|cyb-vocab]] · [[cyb/parts/fs|fs]]
-        - platforms: [[cyb/reference/android|android]] · [[cyb/reference/benchmarks|benchmarks]]
-        - [[security audit private key import]] — incoming from cyber
-    - releases — **how it ships**
-        - [[cyb/releases/release-process|release-process]] · [[cyb/releases/v0.1.0|v0.1.0]]
-    - [[cyb/parts/ward|ward]] — the guardian
-    - legacy/ — *one README over the retired JS era (32 pages fold here)*
-    - `.claude/plans/` — the workbench (4 plans)
-
-## the ledger — cyb (83 pages, 83 verdicts, 0 undecided)
-
-| page | words | verdict | why |
-|---|---|---|---|
-| `CLAUDE.md` | 279 | stays · index | repo face / infra |
-| [[cyb/README|cyb README]] | 153 | stays · index | repo face / infra |
-| `.claude/plans/android-support.md` | 858 | stays · plans | workbench |
-| `.claude/plans/live-cell-runtime.md` | 1263 | stays · plans | workbench |
-| `.claude/plans/live-cybergraph.md` | 814 | stays · plans | workbench |
-| `.claude/plans/portable-backends.md` | 2193 | stays · plans | workbench |
-| [[cyb/reference/android|android]] | 593 | stays · reference (flattens to /) | how the robot works |
-| apps → aos/apps (the city registry) | 136 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/parts/avatar|avatar]] | 28 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/benchmarks|benchmarks]] | 162 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/parts/cells|cells]] | 721 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/cyb-model|cyb-model]] | 4 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/cyb-registry|cyb-registry]] | 416 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/cyb-vocab|cyb-vocab]] | 4 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/decide/dev|dev]] | 207 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/product/features|features]] | 939 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/format|format]] | 446 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/parts/fs|fs]] | 195 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/particle|particle]] | 337 | stays · reference (flattens to /) | how the robot handles particles |
-| [[cyb/releases/release-process|release-process]] | 966 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/rendering|rendering]] | 2122 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/routing|routing]] | 2526 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/rust-architecture|rust-architecture]] | 1455 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/scripting|scripting]] | 1061 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/terminal|terminal]] | 947 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/product/truth|truth]] | 234 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/parts/ward|ward]] | 1653 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/decide/root-README|root/README README]] | 673 | stays · spine (flattens to /) | the product story |
-| [[cyb/product/philosophy|philosophy]] | 597 | stays · spine (flattens to /) | the product story |
-| [[cyb/product/product|product]] | 2471 | stays · spine (flattens to /) | the product story |
-| [[cyb/releases/v0.1.0|v0.1.0]] | 506 | stays · spine (flattens to /) | the product story |
-| [[cyb/product/roadmap|roadmap]] | 577 | stays · spine (flattens to /) | the product story |
-| [[cyb/product/spec|spec]] | 630 | stays · spine (flattens to /) | the product story |
-| [[cyb/product/story|story]] | 99 | stays · spine (flattens to /) | the product story |
-| [[cyb/product/team|team]] | 113 | stays · spine (flattens to /) | the product story |
-| [[cyb/decide/whitepaper|whitepaper]] | 4362 | merges → product; paper to legacy/ | one product story |
-| [[cyb/legacy/architecture|architecture]] | 2291 | merges → rust-architecture | JS-era architecture, absorbed |
-| [[cyb/decide/wire|wire]] | 745 | moves → cybergraph docs | component matter |
-| [[cyb/decide/hardware|hardware]] | 442 | moves → honeycrisp docs | component matter |
-| [[cyb/decide/runtime|runtime]] | 612 | moves → honeycrisp docs | component matter |
-| [[cyb/decide/order|order]] | 179 | moves → nox docs | component matter |
-| [[cyb/decide/os|os]] | 1465 | moves → soft3 docs | component matter |
-| [[cyb/decide/pipeline|pipeline]] | 279 | moves → soft3 docs | component matter |
-| [[cyb/decide/compile|compile]] | 561 | moves → tru docs | component matter |
-| [[cyb/decide/context|context]] | 821 | moves → tru docs | component matter |
-| [[cyb/decide/model-lifecycle|model-lifecycle]] | 1109 | moves → tru docs | component matter |
-| [[cyb/decide/multiproof|multiproof]] | 2756 | moves → zheng docs | component matter |
-| [[cyb/legacy/backend|backend]] | 663 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/brain/learn|learn]] | 20 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/brain/list|list]] | 272 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/brain/particle|particle]] | 16 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/brain/root|root]] | 15 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/core|core]] | 234 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/main|main]] | 9 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/mvp-screens|mvp-screens]] | 402 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/offline|offline]] | 32 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/decide/oracle|oracle]] | 118 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/ask|ask]] | 21 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/learn|learn]] | 2 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/neurons|neurons]] | 14 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/product|product]] | 133 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/raw|raw]] | 7 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/search|search]] | 18 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/oracle/views|views]] | 13 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/decide/portal|portal]] | 87 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/portal/my avatars/api|api]] | 8 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/portal/my avatars/legacy|legacy]] | 54 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/portal/my spells/api|api]] | 4 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/portal/my spells/practice|practice]] | 101 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/product/robot|robot]] | 1648 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/robot/psycho|psycho]] | 9 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/robot/trainer|trainer]] | 6 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/root|root]] | 8 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/signer|signer]] | 3109 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/studio|studio]] | 4 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/sync|sync]] | 344 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/virus|virus]] | 24 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/wasm|wasm]] | 5024 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/wgpu|wgpu]] | 83 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/legacy/portal/avatars|avatars]] | 0 | dies | zero words |
-| [[cyb/legacy/portal/neurons|neurons]] | 0 | dies | zero words |
-| [[cyb/legacy/portal/skills|skills]] | 0 | dies | zero words |
-| [[cyb/legacy/portal/spells|spells]] | 0 | dies | zero words |
-
----
-
-# 3 · cyberia — target structure
-
-the nation as a navigation tree: six shelves, each with a contract README.
-
-- [[cyberia/README|README]] — **the nation**
-    - [[cyberia/foundation/README|foundation]] — **why**: [[cyberia/foundation/vision|vision]] · [[cyberia/foundation/manifesto|manifesto]] · [[cyberia/foundation/whitepaper|whitepaper]] · [[cyberia/foundation/architecture|architecture]] · [[cyberia/foundation/strategy|strategy]] · [[cyberia/foundation/space doctrine|space doctrine]] · [[cyberia/foundation/org|org]] · [[cyberia/foundation/cyberian|cyberian]] · [[cyberia/explanation/your share of the sun|your share of the sun]] *(moves in)*
-    - [[cyberia/protocol/README|protocol]] — **how the state runs**: [[cyberia/protocol/century-index|century index]] · [[cyberia/protocol/bank-above-banks|bank above banks]] · [[cyberia/protocol/location proof|location proof]] · [[cyberia/protocol/space-accounting|space accounting]] · [[cyberia/protocol/services|services]] · [[cyberia/protocol/system|system]] · [[cyberia/protocol/marketplace|marketplace]] · [[cyberia/protocol/marketplace-spec|marketplace spec]] · [[cyberia/protocol/ladder|ladder]] · [[cyberia/protocol/orgs|orgs]] · [[cyberia/protocol/ephemeris|ephemeris]] · [[cyberia/protocol/dyson sphere|dyson sphere]] · [[cyberia/protocol/maps|maps]] *(absorbs its 7 one-liners)*
-    - land/ — **where** *(promoted from research/cyb-land; 42 pages move in, 23 empty die)*
-        - visit · stay · activities · attractions · community · flora *(receives [[landscape]] + [[nitrogener]])*
-    - [[cyberia/community|community]] — **who**: talents · chronicle *(receives 22 valley entries from cyber's blog)*
-    - [[cyberia/courses/README|courses]] — **teaching**: [[cyberia/courses/edge-city-patagonia-2025|edge-city-patagonia-2025]] (6 lessons)
-    - [[cyberia/research/README|research]] — **the workbench**, explicitly unfinished
-        - [[cyberia/research/mimi/README|mimi]] · [[cyberia/research/migration-market/README|migration-market]] · [[cyberia/research/genome-protocol/README|genome-protocol]] · [[cyberia/research/oxytocin/README|oxytocin]] · [[cyberia/research/cyber-sheep/README|cyber-sheep]] · [[cyberia/research/cyberia-my/README|cyberia-my]] · [[cyberia/research/tech/README|tech]] *(16 seeds keep pages, 26 fold to its table)*
-        - incoming: [[team speed competition]] · [[smart capital]]
-        - events — *extracts to its own repo; a one-page product card stays*
+superseded by the group ledger in §2: the per-file verdicts were executed on 2026-09-06 (root/ dissolved, six shelves, 111 path links healed) and live in the git history of this page and of the cyb repo.
 
 ## the ledger — cyberia (180 pages, 180 verdicts, 0 undecided)
 
