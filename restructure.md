@@ -1,6 +1,7 @@
 ---
 title: restructure
 tags: cyber, core, plan
+alias: restructure, crystallization, soft3 crystallization
 crystal-type: pattern
 crystal-domain: cyber
 status: plan
@@ -34,7 +35,7 @@ the plan above three subjects is incomplete without its floor. **cyb, cyber and 
 - **[[soft3]]** — the stack: the loop, the guarantees, the attractor. every "component matter" row in the rule resolves here;
 - **[[cybics]] / [[crystal]]** — the world's knowledge: every "world at large" row resolves here.
 
-the dependency runs one way. soft3 does not know the robot, the protocol narrative, or the nation; the trinity cannot run a page without the stack. so crystallizing the three subjects and crystallizing soft3 are one program — and the soft3 crystallization now lives here, married into this plan (its soft3-side address, [[soft3/roadmap/crystallization|crystallization]], points home):
+the dependency runs one way. soft3 does not know the robot, the protocol narrative, or the nation; the trinity cannot run a page without the stack. so crystallizing the three subjects and crystallizing soft3 are one program — and the soft3 crystallization now lives here, married into this plan:
 
 ## the boundary and the core
 
