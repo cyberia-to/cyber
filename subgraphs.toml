@@ -324,7 +324,7 @@ visibility = "private"
 [[subgraph]]
 name = "erga"
 parent = "warriors"
-visibility = "private"
+visibility = "public"
 
 [[subgraph]]
 name = "mona"
@@ -368,7 +368,6 @@ menu = true
 name = "mimi"
 parent = "cyberia"
 visibility = "private"
-archived = true
 # content lives inside cyberia repo tree: cyberia/research/mimi (not a separate mount)
 
 [[subgraph]]
@@ -392,7 +391,7 @@ visibility = "public"
 [[subgraph]]
 name = "cybland"
 parent = "cyberia"
-visibility = "public"
+visibility = "private"
 
 # /cyber-valley ──────────────────────────────────
 
@@ -410,7 +409,6 @@ menu = true
 name = "oxytocin"
 parent = "cyber-valley"
 visibility = "private"
-archived = true
 
 
 # /rockets ──────────────────────────────────
