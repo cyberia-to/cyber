@@ -36,28 +36,32 @@ Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
 
 ## Building cyber
 
-cyber is the workspace anchor. It holds the content graph plus the
-subgraph declarations (`subgraphs/*.md`), the optica config
-generator (`scripts/build.nu`), the publish workflow
-(`.github/workflows/publish.yml`), and the IPFS cache
-(`ipfs-cache.json`). One repo to fork, one repo to clone.
+this repo is the protocol. [cyber.page](https://cyber.page) publishes
+these pages alone. the chronicle, the subgraph census, and the full
+project graph live in `~/cyber/cyberia-blog` → [cyberia.blog](https://cyberia.blog).
 
-Local workflow (subgraph repos are siblings of cyber/):
+Local workflow (protocol only):
 
 ```
 cd ~/cyber/cyber
-nu scripts/sync.nu        # bootstrap: clone every active subgraph
-nu scripts/build.nu       # full graph build
-nu scripts/serve.nu       # build + serve with live reload
+nu scripts/build.nu       # protocol-only optica build
+nu scripts/serve.nu       # protocol-only serve
 nu scripts/dev.nu         # rebuild optica + restart serve
-nu scripts/lock.nu        # snapshot current HEAD of each subgraph into subgraphs.toml
 ```
 
-For pure content edits without subgraphs, optica works standalone:
+standalone:
 
 ```
 optica build ~/cyber/cyber
 optica serve ~/cyber/cyber --open
+```
+
+full project graph (subgraphs + blog):
+
+```
+cd ~/cyber/cyberia-blog
+nu scripts/sync.nu
+nu scripts/serve.nu
 ```
 
 Port 8888 (from `publish.toml` base_url). Port 8080 is reserved.

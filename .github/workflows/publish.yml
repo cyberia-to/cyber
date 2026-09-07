@@ -5,15 +5,10 @@ on:
     branches: [master]
     paths:
       - '**.md'
-      - 'blog/**'
-      - 'subgraphs.toml'
-      - 'scripts/**'
-      - 'workspace.toml'
       - 'publish.toml'
+      - '_redirects'
       - '.github/workflows/publish.yml'
   workflow_dispatch:
-  repository_dispatch:
-    types: [content-changed]
 
 concurrency:
   group: publish
@@ -23,47 +18,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone cyber into ~/cyber/cyber
+      - name: Clone cyber
         run: |
           mkdir -p "$HOME/cyber"
           git clone --depth 1 https://github.com/cyberia-to/cyber.git "$HOME/cyber/cyber"
-
-      - name: Install Nushell
-        run: |
-          NU_TAG=$(curl -fsSL https://api.github.com/repos/nushell/nushell/releases/latest | grep '"tag_name"' | cut -d'"' -f4)
-          NU_VER="${NU_TAG#v}"
-          ARCHIVE="nu-${NU_VER}-x86_64-unknown-linux-gnu.tar.gz"
-          curl -fsSL "https://github.com/nushell/nushell/releases/download/${NU_TAG}/${ARCHIVE}" -o /tmp/nu.tar.gz
-          tar -xzf /tmp/nu.tar.gz -C /tmp
-          sudo cp "/tmp/nu-${NU_VER}-x86_64-unknown-linux-gnu/nu" /usr/local/bin/nu
-          nu --version
-
-      - name: Clone public subgraphs from subgraphs.toml
-        run: |
-          cd "$HOME/cyber/cyber"
-          nu -c '
-            let decls = (open subgraphs.toml | get subgraph)
-            $decls
-            | where {|d| ($d.name? | default "") != "cyber"}
-            | where {|d| ($d.archived? | default false) != true}
-            | where {|d| ($d.orphan? | default false) != true}
-            | where {|d| ($d."local-only"? | default false) != true}
-            | where {|d| ($d.visibility? | default "public") == "public"}
-            | each {|d|
-              let name = $d.name
-              let repo = ($d.repo? | default $d.name)
-              let target = $"($env.HOME)/cyber/($name)"
-              if not ($target | path exists) {
-                print $"Cloning ($name) from ($repo)..."
-                let url = $"https://github.com/cyberia-to/($repo).git"
-                try {
-                  ^git clone --depth 1 $url $target
-                } catch {|e|
-                  print $"skip ($name): ($e.msg)"
-                }
-              }
-            }
-          '
 
       - name: Install Rust
         run: |
@@ -91,13 +49,10 @@ jobs:
 
       - name: Build site
         run: |
-          cd "$HOME/cyber/cyber"
-          nu scripts/build.nu --public-only \
-            --optica "$HOME/cyber/optica/target/release/optica" \
+          "$HOME/cyber/optica/target/release/optica" build "$HOME/cyber/cyber" \
             --output "$HOME/cyber/cyber/build"
-
-      - name: Add deploy files
-        run: touch "$HOME/cyber/cyber/build/.nojekyll"
+          cp "$HOME/cyber/cyber/_redirects" "$HOME/cyber/cyber/build/_redirects"
+          touch "$HOME/cyber/cyber/build/.nojekyll"
 
       - name: Deploy to Netlify
         env:
@@ -124,3 +79,10 @@ jobs:
             sleep 10
           done
           echo "timeout waiting for netlify processing"; exit 1
+
+      - name: Dispatch cyberia-blog rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
+          repository: cyberia-to/cyberia-blog
+          event-type: content-changed

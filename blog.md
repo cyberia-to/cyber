@@ -1,11 +1,8 @@
 ---
-tags: cyber
-crystal-type: entity
-crystal-domain: cyber
-alias: cyber blog, dev log, changelog
+tags: cyber, nav
+alias: blog, chronicle
 icon: "📡"
 ---
+# blog
 
-what we build and why.
-
-{{query (and (page-tags [[cyber]]) (page-tags [[article]]) (page-tags [[blog]]))}}
+the chronicle lives at [cyberia.blog/cyber](https://cyberia.blog/cyber).

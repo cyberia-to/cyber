@@ -232,7 +232,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[self]] — **the protocol's own agency**
         - [[self/dmn|dmn]] · [[self/linking|linking]] · [[self/parametrization|parametrization]] · [[self/sigma|sigma]]
     - [[subgraphs]] — the cards of sibling components
-    - [[blog]] — **the chronicle** (~68 entries stay; 23 leave with their subjects)
+    - [[blog]] — **the chronicle** moved to [cyberia.blog](https://cyberia.blog); protocol topic at [cyberia.blog/cyber](https://cyberia.blog/cyber)
     - [[restructure]] — this plan, then this record
 
 ## the ledger — cyber (238 pages, 238 verdicts, 0 undecided)
@@ -826,3 +826,8 @@ the nation as a navigation tree: six shelves, each with a contract README.
 - crystallinity ≥ 95% (was 88%) — same script, number published in each phase's commit message
 
 *plan approved → phases execute as separate commit series. this page then becomes the record of what moved where, and why.*
+
+## executed 2026-09-07 — chronicle + graph assembler → cyberia-blog
+
+all dated journal entries (`YYYY_MM_DD.md`) left this repo for `cyberia-to/cyberia-blog`. the subgraph census (`subgraphs.toml` and the build/serve/sync scripts) moved with them. cyber.page publishes the protocol alone. the full graph and the blog — filterable by [[cyber]] · [[cyb]] · [[soft3]] · [[cyberia]] — live at [cyberia.blog](https://cyberia.blog). `/blog` on this site redirects to [cyberia.blog/cyber](https://cyberia.blog/cyber).
+

@@ -10,27 +10,17 @@ four ways in. pick one lane — or all of them. every path teaches the [[cybergr
 
 ## pull request
 
-cyberia is ~50 repos. setup is one fork and one bootstrap
+this repo is the protocol. fork, edit a `.md`, PR. merged pages become particles on [cyber.page](https://cyber.page).
 
 ```bash
 git clone https://github.com/<you>/cyber.git
 cd cyber
-nu scripts/sync.nu       # clones every active subgraph as a sibling
-nu scripts/serve.nu      # builds + serves at localhost:8888
+nu scripts/serve.nu      # protocol-only, localhost:8888
 ```
 
-after `sync.nu`, the whole network sits next to `cyber/` — [[optica]], [[soft3]], [[trident]], [[hemera]], every public subgraph. edit a `.md` in `cyber/`, or jump into any sibling and work there. each repo is its own remote: fork → branch → push → PR upstream
+the chronicle, the subgraph census, and the full project graph live at [cyberia.blog](https://cyberia.blog) (`cyberia-to/cyberia-blog`) — clone that repo, `nu scripts/sync.nu`, `nu scripts/serve.nu`. each component is its own remote: fork → branch → push → PR upstream.
 
-[github.com/cyberia-to/cyber](https://github.com/cyberia-to/cyber) is the graph root. merged PRs become particles on [cyber.page](https://cyber.page/)
-
-scripts:
-
-- `sync.nu` — bootstrap; clones missing, fetches present
-- `build.nu` — full graph build
-- `serve.nu` — build + live-reload server
-- `dev.nu` — rebuild optica + restart serve
-
-`CLAUDE.md` at the repo root is the graph distilled for agents — drop it into a model’s system prompt and the agent inherits voice and structure
+`CLAUDE.md` at the repo root is the protocol distilled for agents — drop it into a model’s system prompt and the agent inherits voice and structure
 
 ## link on the live net
 

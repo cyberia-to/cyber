@@ -7,9 +7,9 @@ jobs:
   dispatch:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger cyber rebuild
+      - name: Trigger cyberia-blog rebuild
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
-          repository: cyberia-to/cyber
+          repository: cyberia-to/cyberia-blog
           event-type: content-changed

@@ -35,3 +35,5 @@ and the robot: [[cyb]] — one binary that carries the graph, a terminal, and a 
 default network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). tokens and state are test. mainnet arrives at [[launch]]
 
 [[litepaper]] · [[whitepaper]] · [[cyb]] · [[cyber/$CYB|$CYB]]
+
+the chronicle of the project lives at [cyberia.blog](https://cyberia.blog). protocol log: [cyberia.blog/cyber](https://cyberia.blog/cyber).
