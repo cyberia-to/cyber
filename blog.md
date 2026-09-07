@@ -1,5 +1,5 @@
 ---
-tags: cyber, nav
+tags: cyber
 alias: blog, chronicle
 icon: "📡"
 ---
