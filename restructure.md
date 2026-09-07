@@ -316,6 +316,29 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[sparks|sparks]] | 0 | dies | empty / superseded |
 | [[style|style]] | 11 | dies | empty / superseded |
 
+---
+
+# 2 · cyb — target structure
+
+the robot as a navigation tree. the repo's `root/` directory dissolves — pages live flat; links below are today's paths. the anatomy is the contract every name answers to.
+
+- [[cyb/README|README]] — **the robot**: what it is, get it at cyb.ai
+    - [[cyb/anatomy|anatomy]] — **the source of truth**: 19 parts in six layers; every doc, world, and crate names things by it
+    - [[cyb/root/product|product]] — intelligence you own *(absorbs the living claims of [[cyb/root/whitepaper|the cyb whitepaper]])*
+        - [[cyb/root/philosophy|philosophy]] · [[cyb/root/story|story]] · [[cyb/root/spec|spec]]
+    - [[cyb/root/roadmap|roadmap]] — where it goes
+        - [[cyb/root/team|team]] · [[cyb/root/dev|dev]]
+    - reference — **how it works**, one page per organ where an organ exists
+        - [[cyb/root/rust-architecture|architecture]] *(absorbs [[cyb/root/architecture|JS-era architecture]])* · [[cyb/root/rendering|rendering]] · [[cyb/root/routing|routing]] · [[cyb/root/terminal|terminal]] · [[cyb/root/cells|cells]] · [[cyb/root/apps|apps]] · [[cyb/root/particle|particle]] · [[cyb/root/avatar|avatar]] · [[cyb/root/truth|truth]] · [[cyb/root/features|features]] · [[cyb/root/scripting|scripting]]
+        - formats: [[cyb/root/format|format]] · [[cyb/root/cyb-registry|cyb-registry]] · [[cyb/root/cyb-model|cyb-model]] · [[cyb/root/cyb-vocab|cyb-vocab]] · [[cyb/root/fs|fs]]
+        - platforms: [[cyb/root/android|android]] · [[cyb/root/benchmarks|benchmarks]]
+        - [[security audit private key import]] — incoming from cyber
+    - releases — **how it ships**
+        - [[cyb/root/release-process|release-process]] · [[cyb/root/releases/v0.1.0|v0.1.0]]
+    - [[cyb/root/ward|ward]] — the guardian
+    - legacy/ — *one README over the retired JS era (32 pages fold here)*
+    - `.claude/plans/` — the workbench (4 plans)
+
 ## the ledger — cyb (83 pages, 83 verdicts, 0 undecided)
 
 | page | words | verdict | why |
@@ -403,6 +426,24 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[cyb/root/portal/neurons|neurons]] | 0 | dies | zero words |
 | [[cyb/root/portal/skills|skills]] | 0 | dies | zero words |
 | [[cyb/root/portal/spells|spells]] | 0 | dies | zero words |
+
+---
+
+# 3 · cyberia — target structure
+
+the nation as a navigation tree: six shelves, each with a contract README.
+
+- [[cyberia/README|README]] — **the nation**
+    - [[cyberia/foundation/README|foundation]] — **why**: [[cyberia/foundation/vision|vision]] · [[cyberia/foundation/manifesto|manifesto]] · [[cyberia/foundation/whitepaper|whitepaper]] · [[cyberia/foundation/architecture|architecture]] · [[cyberia/foundation/strategy|strategy]] · [[cyberia/foundation/space doctrine|space doctrine]] · [[cyberia/foundation/org|org]] · [[cyberia/foundation/cyberian|cyberian]] · [[cyberia/explanation/your share of the sun|your share of the sun]] *(moves in)*
+    - [[cyberia/protocol/README|protocol]] — **how the state runs**: [[cyberia/protocol/century-index|century index]] · [[cyberia/protocol/bank-above-banks|bank above banks]] · [[cyberia/protocol/location proof|location proof]] · [[cyberia/protocol/space-accounting|space accounting]] · [[cyberia/protocol/services|services]] · [[cyberia/protocol/system|system]] · [[cyberia/protocol/marketplace|marketplace]] · [[cyberia/protocol/marketplace-spec|marketplace spec]] · [[cyberia/protocol/ladder|ladder]] · [[cyberia/protocol/orgs|orgs]] · [[cyberia/protocol/ephemeris|ephemeris]] · [[cyberia/protocol/dyson sphere|dyson sphere]] · [[cyberia/protocol/maps|maps]] *(absorbs its 7 one-liners)*
+    - land/ — **where** *(promoted from research/cyb-land; 42 pages move in, 23 empty die)*
+        - visit · stay · activities · attractions · community · flora *(receives [[landscape]] + [[nitrogener]])*
+    - [[cyberia/community|community]] — **who**: talents · chronicle *(receives 22 valley entries from cyber's blog)*
+    - [[cyberia/courses/README|courses]] — **teaching**: [[cyberia/courses/edge-city-patagonia-2025|edge-city-patagonia-2025]] (6 lessons)
+    - [[cyberia/research/README|research]] — **the workbench**, explicitly unfinished
+        - [[cyberia/research/mimi/README|mimi]] · [[cyberia/research/migration-market/README|migration-market]] · [[cyberia/research/genome-protocol/README|genome-protocol]] · [[cyberia/research/oxytocin/README|oxytocin]] · [[cyberia/research/cyber-sheep/README|cyber-sheep]] · [[cyberia/research/cyberia-my/README|cyberia-my]] · [[cyberia/research/tech/README|tech]] *(16 seeds keep pages, 26 fold to its table)*
+        - incoming: [[team speed competition]] · [[smart capital]]
+        - events — *extracts to its own repo; a one-page product card stays*
 
 ## the ledger — cyberia (180 pages, 180 verdicts, 0 undecided)
 
