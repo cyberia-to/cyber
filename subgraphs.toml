@@ -237,6 +237,7 @@ visibility = "public"
 
 [[subgraph]]
 name = "nu"
+local-only = true
 parent = "neural"
 visibility = "private"
 
@@ -378,6 +379,7 @@ visibility = "private"
 
 [[subgraph]]
 name = "events"
+local-only = true
 parent = "cyberia"
 visibility = "private"
 archived = true
