@@ -330,7 +330,7 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
     - [[cyb/product/roadmap|roadmap]] — where it goes
         - [[cyb/product/team|team]] · [[cyb/decide/dev|dev]]
     - reference — **how it works**, one page per organ where an organ exists
-        - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/cells|cells]] · [[cyb/reference/apps|apps]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
+        - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/cells|cells]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
         - formats: [[cyb/reference/format|format]] · [[cyb/reference/cyb-registry|cyb-registry]] · [[cyb/reference/cyb-model|cyb-model]] · [[cyb/reference/cyb-vocab|cyb-vocab]] · [[cyb/parts/fs|fs]]
         - platforms: [[cyb/reference/android|android]] · [[cyb/reference/benchmarks|benchmarks]]
         - [[security audit private key import]] — incoming from cyber
@@ -351,7 +351,7 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
 | `.claude/plans/live-cybergraph.md` | 814 | stays · plans | workbench |
 | `.claude/plans/portable-backends.md` | 2193 | stays · plans | workbench |
 | [[cyb/reference/android|android]] | 593 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/apps|apps]] | 136 | stays · reference (flattens to /) | how the robot works |
+| apps → aos/apps (the city registry) | 136 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/parts/avatar|avatar]] | 28 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/reference/benchmarks|benchmarks]] | 162 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/parts/cells|cells]] | 721 | stays · reference (flattens to /) | how the robot works |
