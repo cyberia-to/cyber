@@ -323,7 +323,8 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 the robot as a navigation tree. the repo's `root/` directory dissolves — pages live flat; links below are today's paths. the anatomy is the contract every name answers to.
 
 - [[cyb/README|README]] — **the robot**: what it is, get it at cyb.ai
-    - [[cyb/anatomy|anatomy]] — **the source of truth**: 19 parts in six layers; every doc, world, and crate names things by it
+    - [[cyb/anatomy|anatomy]] — **the source of truth**: 20 parts in six layers; every doc, world, and crate names things by it
+        - [[cyb/state|state]] — external truth with a tier: T0 proof · T1 anchor · T3 badge
     - [[cyb/root/product|product]] — intelligence you own *(absorbs the living claims of [[cyb/root/whitepaper|the cyb whitepaper]])*
         - [[cyb/root/philosophy|philosophy]] · [[cyb/root/story|story]] · [[cyb/root/spec|spec]]
     - [[cyb/root/roadmap|roadmap]] — where it goes
