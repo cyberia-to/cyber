@@ -325,18 +325,18 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
 - [[cyb/README|README]] — **the robot**: what it is, get it at cyb.ai
     - [[cyb/anatomy|anatomy]] — **the source of truth**: 20 parts in six layers; every doc, world, and crate names things by it
         - [[cyb/state|state]] — external truth with a tier: T0 proof · T1 anchor · T3 badge
-    - [[cyb/root/product|product]] — intelligence you own *(absorbs the living claims of [[cyb/root/whitepaper|the cyb whitepaper]])*
-        - [[cyb/root/philosophy|philosophy]] · [[cyb/root/story|story]] · [[cyb/root/spec|spec]]
-    - [[cyb/root/roadmap|roadmap]] — where it goes
-        - [[cyb/root/team|team]] · [[cyb/root/dev|dev]]
+    - [[cyb/product/product|product]] — intelligence you own *(absorbs the living claims of [[cyb/decide/whitepaper|the cyb whitepaper]])*
+        - [[cyb/product/philosophy|philosophy]] · [[cyb/product/story|story]] · [[cyb/product/spec|spec]]
+    - [[cyb/product/roadmap|roadmap]] — where it goes
+        - [[cyb/product/team|team]] · [[cyb/decide/dev|dev]]
     - reference — **how it works**, one page per organ where an organ exists
-        - [[cyb/root/rust-architecture|architecture]] *(absorbs [[cyb/root/architecture|JS-era architecture]])* · [[cyb/root/rendering|rendering]] · [[cyb/root/routing|routing]] · [[cyb/root/terminal|terminal]] · [[cyb/root/cells|cells]] · [[cyb/root/apps|apps]] · [[cyb/root/particle|particle]] · [[cyb/root/avatar|avatar]] · [[cyb/root/truth|truth]] · [[cyb/root/features|features]] · [[cyb/root/scripting|scripting]]
-        - formats: [[cyb/root/format|format]] · [[cyb/root/cyb-registry|cyb-registry]] · [[cyb/root/cyb-model|cyb-model]] · [[cyb/root/cyb-vocab|cyb-vocab]] · [[cyb/root/fs|fs]]
-        - platforms: [[cyb/root/android|android]] · [[cyb/root/benchmarks|benchmarks]]
+        - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/cells|cells]] · [[cyb/reference/apps|apps]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
+        - formats: [[cyb/reference/format|format]] · [[cyb/reference/cyb-registry|cyb-registry]] · [[cyb/reference/cyb-model|cyb-model]] · [[cyb/reference/cyb-vocab|cyb-vocab]] · [[cyb/parts/fs|fs]]
+        - platforms: [[cyb/reference/android|android]] · [[cyb/reference/benchmarks|benchmarks]]
         - [[security audit private key import]] — incoming from cyber
     - releases — **how it ships**
-        - [[cyb/root/release-process|release-process]] · [[cyb/root/releases/v0.1.0|v0.1.0]]
-    - [[cyb/root/ward|ward]] — the guardian
+        - [[cyb/releases/release-process|release-process]] · [[cyb/releases/v0.1.0|v0.1.0]]
+    - [[cyb/parts/ward|ward]] — the guardian
     - legacy/ — *one README over the retired JS era (32 pages fold here)*
     - `.claude/plans/` — the workbench (4 plans)
 
@@ -350,83 +350,83 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
 | `.claude/plans/live-cell-runtime.md` | 1263 | stays · plans | workbench |
 | `.claude/plans/live-cybergraph.md` | 814 | stays · plans | workbench |
 | `.claude/plans/portable-backends.md` | 2193 | stays · plans | workbench |
-| [[cyb/root/android|android]] | 593 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/apps|apps]] | 136 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/avatar|avatar]] | 28 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/benchmarks|benchmarks]] | 162 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/cells|cells]] | 721 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/cyb-model|cyb-model]] | 4 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/cyb-registry|cyb-registry]] | 416 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/cyb-vocab|cyb-vocab]] | 4 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/dev|dev]] | 207 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/features|features]] | 939 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/format|format]] | 446 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/fs|fs]] | 195 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/particle|particle]] | 337 | stays · reference (flattens to /) | how the robot handles particles |
-| [[cyb/root/release-process|release-process]] | 966 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/rendering|rendering]] | 2122 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/routing|routing]] | 2526 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/rust-architecture|rust-architecture]] | 1455 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/scripting|scripting]] | 1061 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/terminal|terminal]] | 947 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/truth|truth]] | 234 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/ward|ward]] | 1653 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/root/README|root/README README]] | 673 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/philosophy|philosophy]] | 597 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/product|product]] | 2471 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/releases/v0.1.0|v0.1.0]] | 506 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/roadmap|roadmap]] | 577 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/spec|spec]] | 630 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/story|story]] | 99 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/team|team]] | 113 | stays · spine (flattens to /) | the product story |
-| [[cyb/root/whitepaper|whitepaper]] | 4362 | merges → product; paper to legacy/ | one product story |
-| [[cyb/root/architecture|architecture]] | 2291 | merges → rust-architecture | JS-era architecture, absorbed |
-| [[cyb/root/wire|wire]] | 745 | moves → cybergraph docs | component matter |
-| [[cyb/root/hardware|hardware]] | 442 | moves → honeycrisp docs | component matter |
-| [[cyb/root/runtime|runtime]] | 612 | moves → honeycrisp docs | component matter |
-| [[cyb/root/order|order]] | 179 | moves → nox docs | component matter |
-| [[cyb/root/os|os]] | 1465 | moves → soft3 docs | component matter |
-| [[cyb/root/pipeline|pipeline]] | 279 | moves → soft3 docs | component matter |
-| [[cyb/root/compile|compile]] | 561 | moves → tru docs | component matter |
-| [[cyb/root/context|context]] | 821 | moves → tru docs | component matter |
-| [[cyb/root/model-lifecycle|model-lifecycle]] | 1109 | moves → tru docs | component matter |
-| [[cyb/root/multiproof|multiproof]] | 2756 | moves → zheng docs | component matter |
-| [[cyb/root/backend|backend]] | 663 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/brain/learn|learn]] | 20 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/brain/list|list]] | 272 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/brain/particle|particle]] | 16 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/brain/root|root]] | 15 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/core|core]] | 234 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/main|main]] | 9 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/mvp-screens|mvp-screens]] | 402 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/offline|offline]] | 32 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle|oracle]] | 118 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/ask|ask]] | 21 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/learn|learn]] | 2 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/neurons|neurons]] | 14 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/product|product]] | 133 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/raw|raw]] | 7 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/search|search]] | 18 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/oracle/views|views]] | 13 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/portal|portal]] | 87 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/portal/my avatars/api|api]] | 8 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/portal/my avatars/legacy|legacy]] | 54 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/portal/my spells/api|api]] | 4 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/portal/my spells/practice|practice]] | 101 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/robot|robot]] | 1648 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/robot/psycho|psycho]] | 9 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/robot/trainer|trainer]] | 6 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/root|root]] | 8 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/signer|signer]] | 3109 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/studio|studio]] | 4 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/sync|sync]] | 344 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/virus|virus]] | 24 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/wasm|wasm]] | 5024 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/wgpu|wgpu]] | 83 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
-| [[cyb/root/portal/avatars|avatars]] | 0 | dies | zero words |
-| [[cyb/root/portal/neurons|neurons]] | 0 | dies | zero words |
-| [[cyb/root/portal/skills|skills]] | 0 | dies | zero words |
-| [[cyb/root/portal/spells|spells]] | 0 | dies | zero words |
+| [[cyb/reference/android|android]] | 593 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/apps|apps]] | 136 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/parts/avatar|avatar]] | 28 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/benchmarks|benchmarks]] | 162 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/parts/cells|cells]] | 721 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/cyb-model|cyb-model]] | 4 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/cyb-registry|cyb-registry]] | 416 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/cyb-vocab|cyb-vocab]] | 4 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/decide/dev|dev]] | 207 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/product/features|features]] | 939 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/format|format]] | 446 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/parts/fs|fs]] | 195 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/particle|particle]] | 337 | stays · reference (flattens to /) | how the robot handles particles |
+| [[cyb/releases/release-process|release-process]] | 966 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/rendering|rendering]] | 2122 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/routing|routing]] | 2526 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/rust-architecture|rust-architecture]] | 1455 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/scripting|scripting]] | 1061 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/reference/terminal|terminal]] | 947 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/product/truth|truth]] | 234 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/parts/ward|ward]] | 1653 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/decide/root-README|root/README README]] | 673 | stays · spine (flattens to /) | the product story |
+| [[cyb/product/philosophy|philosophy]] | 597 | stays · spine (flattens to /) | the product story |
+| [[cyb/product/product|product]] | 2471 | stays · spine (flattens to /) | the product story |
+| [[cyb/releases/v0.1.0|v0.1.0]] | 506 | stays · spine (flattens to /) | the product story |
+| [[cyb/product/roadmap|roadmap]] | 577 | stays · spine (flattens to /) | the product story |
+| [[cyb/product/spec|spec]] | 630 | stays · spine (flattens to /) | the product story |
+| [[cyb/product/story|story]] | 99 | stays · spine (flattens to /) | the product story |
+| [[cyb/product/team|team]] | 113 | stays · spine (flattens to /) | the product story |
+| [[cyb/decide/whitepaper|whitepaper]] | 4362 | merges → product; paper to legacy/ | one product story |
+| [[cyb/legacy/architecture|architecture]] | 2291 | merges → rust-architecture | JS-era architecture, absorbed |
+| [[cyb/decide/wire|wire]] | 745 | moves → cybergraph docs | component matter |
+| [[cyb/decide/hardware|hardware]] | 442 | moves → honeycrisp docs | component matter |
+| [[cyb/decide/runtime|runtime]] | 612 | moves → honeycrisp docs | component matter |
+| [[cyb/decide/order|order]] | 179 | moves → nox docs | component matter |
+| [[cyb/decide/os|os]] | 1465 | moves → soft3 docs | component matter |
+| [[cyb/decide/pipeline|pipeline]] | 279 | moves → soft3 docs | component matter |
+| [[cyb/decide/compile|compile]] | 561 | moves → tru docs | component matter |
+| [[cyb/decide/context|context]] | 821 | moves → tru docs | component matter |
+| [[cyb/decide/model-lifecycle|model-lifecycle]] | 1109 | moves → tru docs | component matter |
+| [[cyb/decide/multiproof|multiproof]] | 2756 | moves → zheng docs | component matter |
+| [[cyb/legacy/backend|backend]] | 663 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/brain/learn|learn]] | 20 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/brain/list|list]] | 272 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/brain/particle|particle]] | 16 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/brain/root|root]] | 15 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/core|core]] | 234 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/main|main]] | 9 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/mvp-screens|mvp-screens]] | 402 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/offline|offline]] | 32 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/decide/oracle|oracle]] | 118 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/ask|ask]] | 21 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/learn|learn]] | 2 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/neurons|neurons]] | 14 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/product|product]] | 133 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/raw|raw]] | 7 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/search|search]] | 18 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/oracle/views|views]] | 13 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/decide/portal|portal]] | 87 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/portal/my avatars/api|api]] | 8 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/portal/my avatars/legacy|legacy]] | 54 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/portal/my spells/api|api]] | 4 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/portal/my spells/practice|practice]] | 101 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/product/robot|robot]] | 1648 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/robot/psycho|psycho]] | 9 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/robot/trainer|trainer]] | 6 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/root|root]] | 8 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/signer|signer]] | 3109 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/studio|studio]] | 4 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/sync|sync]] | 344 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/virus|virus]] | 24 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/wasm|wasm]] | 5024 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/wgpu|wgpu]] | 83 | folds → legacy/ | retired JS-era product (old.cyb.ai) |
+| [[cyb/legacy/portal/avatars|avatars]] | 0 | dies | zero words |
+| [[cyb/legacy/portal/neurons|neurons]] | 0 | dies | zero words |
+| [[cyb/legacy/portal/skills|skills]] | 0 | dies | zero words |
+| [[cyb/legacy/portal/spells|spells]] | 0 | dies | zero words |
 
 ---
 
