@@ -16,6 +16,7 @@ favicon = "\U0001F535"
 
 [nav]
 menu_tag = "nav"
+show_blog = false
 
 [nav.sidebar]
 show_namespaces = true
