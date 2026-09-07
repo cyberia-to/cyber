@@ -81,6 +81,7 @@ jobs:
           echo "timeout waiting for netlify processing"; exit 1
 
       - name: Dispatch cyberia-blog rebuild
+        continue-on-error: true
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.CYBER_DISPATCH_TOKEN }}
