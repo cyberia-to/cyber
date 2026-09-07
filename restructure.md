@@ -8,7 +8,9 @@ status: plan
 ---
 # restructure — crystallizing cyb · cyber · cyberia
 
-a plan first, movements second. nothing in this document moves a file; every section is a contract for one commit series, link-fixes included, so the site is never broken in between. every page named below is a live link — click through and judge it. the three ledgers carry a verdict for **all 501 pages** (238 cyber · 83 cyb · 180 cyberia): stays / promotes / merges / moves / folds / extracts / dies — with the destination and the reason. zero pages undecided.
+a plan first, movements second. nothing in this document moves a file; every section is a contract for one commit series, link-fixes included, so the site is never broken in between. every page named below is a live link — click through and judge it. the three ledgers carry a verdict for every page: stays / promotes / merges / moves / folds / extracts / dies — with the destination and the reason. zero pages undecided.
+
+original census: 501 pages (238 cyber · 83 cyb · 180 cyberia). executed 2026-09-07: 75 dated journals left cyber for [cyberia.blog](https://cyberia.blog); the cyber table is the remainder plus the pointer pages.
 
 ## the rule
 
@@ -231,64 +233,15 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
         - [[specs/component-ownership|component ownership]] · [[specs/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[specs/rewards-completeness|rewards completeness]]
     - [[self]] — **the protocol's own agency**
         - [[self/dmn|dmn]] · [[self/linking|linking]] · [[self/parametrization|parametrization]] · [[self/sigma|sigma]]
-    - [[subgraphs]] — the cards of sibling components
-    - [[blog]] — **the chronicle** moved to [cyberia.blog](https://cyberia.blog); protocol topic at [cyberia.blog/cyber](https://cyberia.blog/cyber)
+    - [[blog]] — pointer. the chronicle lives at [cyberia.blog](https://cyberia.blog)
+    - [[cyb]] · [[soft3]] · [[cyberia]] — pointers to the sister subjects, whose graphs live at cyberia.blog
     - [[restructure]] — this plan, then this record
 
-## the ledger — cyber (238 pages, 238 verdicts, 0 undecided)
+## the ledger — cyber (166 pages in this table, 166 verdicts, 0 undecided · 75 journals already at cyberia.blog)
 
 | page | words | verdict | why |
 |---|---|---|---|
-| [[blog/2019_12_01|2019_12_01]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_04_12|2024_04_12]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_06_27|2024_06_27]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_07_06|2024_07_06]] | 22 | stays · chronicle | protocol log entry |
-| [[blog/2024_07_19|2024_07_19]] | 6 | stays · chronicle | protocol log entry |
-| [[blog/2024_07_29|2024_07_29]] | 43 | stays · chronicle | protocol post |
-| [[blog/2024_07_31|2024_07_31]] | 39 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_02|2024_08_02]] | 30 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_03|2024_08_03]] | 19 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_04|2024_08_04]] | 18 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_05|2024_08_05]] | 6 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_06|2024_08_06]] | 11 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_09|2024_08_09]] | 9 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_10|2024_08_10]] | 19 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_11|2024_08_11]] | 12 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_16|2024_08_16]] | 57 | stays · chronicle | protocol post |
-| [[blog/2024_08_22|2024_08_22]] | 12 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_24|2024_08_24]] | 20 | stays · chronicle | protocol log entry |
-| [[blog/2024_08_26|2024_08_26]] | 3 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_01|2024_09_01]] | 58 | stays · chronicle | protocol post |
-| [[blog/2024_09_07|2024_09_07]] | 5 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_08|2024_09_08]] | 50 | stays · chronicle | protocol post |
-| [[blog/2024_09_17|2024_09_17]] | 17 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_20|2024_09_20]] | 22 | stays · chronicle | protocol log entry |
-| [[blog/2024_09_27|2024_09_27]] | 35 | stays · chronicle | protocol log entry |
-| [[blog/2024_10_01|2024_10_01]] | 86 | stays · chronicle | protocol post |
-| [[blog/2024_10_03|2024_10_03]] | 13 | stays · chronicle | protocol log entry |
-| [[blog/2024_11_04|2024_11_04]] | 12 | stays · chronicle | protocol log entry |
-| [[blog/2024_11_05|2024_11_05]] | 3 | stays · chronicle | protocol log entry |
-| [[blog/2024_11_15|2024_11_15]] | 6 | stays · chronicle | protocol log entry |
-| [[blog/2024_12_04|2024_12_04]] | 50 | stays · chronicle | protocol post |
-| [[blog/2026_01_13|2026_01_13]] | 4 | stays · chronicle | protocol log entry |
-| [[blog/2026_01_27|2026_01_27]] | 9 | stays · chronicle | protocol log entry |
-| [[blog/2026_02_26|2026_02_26]] | 17 | stays · chronicle | protocol log entry |
-| [[blog/2026_03_01|2026_03_01]] | 321 | stays · chronicle | protocol post |
-| [[blog/2026_03_05|2026_03_05]] | 64 | stays · chronicle | protocol post |
-| [[blog/2026_03_14|2026_03_14]] | 56 | stays · chronicle | protocol post |
-| [[blog/2026_03_16|2026_03_16]] | 89 | stays · chronicle | protocol post |
-| [[blog/2026_03_23|2026_03_23]] | 804 | stays · chronicle | protocol post |
-| [[blog/2026_03_24|2026_03_24]] | 324 | stays · chronicle | protocol post |
-| [[blog/2026_03_25|2026_03_25]] | 586 | stays · chronicle | protocol post |
-| [[blog/2026_03_26|2026_03_26]] | 298 | stays · chronicle | protocol post |
-| [[blog/2026_03_27|2026_03_27]] | 529 | stays · chronicle | protocol post |
-| [[blog/2026_04_25|2026_04_25]] | 275 | stays · chronicle | protocol post |
-| [[blog/2026_04_26|2026_04_26]] | 191 | stays · chronicle | protocol post |
-| [[blog/2026_04_30|2026_04_30]] | 632 | stays · chronicle | protocol post |
-| [[blog/2026_05_12|2026_05_12]] | 736 | stays · chronicle | protocol post |
-| [[blog/2026_05_21|2026_05_21]] | 736 | stays · chronicle | protocol post |
-| [[blog/2026_08_28|2026_08_28]] | 929 | stays · chronicle | protocol post |
-| [[blog/2026_08_29|2026_08_29]] | 1007 | stays · chronicle | protocol post |
+| 75 dated journals (`YYYY_MM_DD`) | — | moved → [cyberia.blog](https://cyberia.blog) · executed 2026-09-07 | the whole chronicle left the protocol repo |
 | [[3c|3c]] | 1144 | stays · cips | deep protocol article |
 | [[channel|channel]] | 1859 | stays · cips | deep protocol article |
 | [[communication|communication]] | 1023 | stays · cips | deep protocol article |
@@ -340,7 +293,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[sealing|sealing]] | 121 | stays · core | atom of the phenomenon |
 | [[self|self]] | 374 | stays · core | atom of the phenomenon |
 | [[staking|staking]] | 113 | stays · core | atom of the phenomenon |
-| [[subgraphs|subgraphs]] | 272 | stays · core | atom of the phenomenon |
+| [[subgraphs|subgraphs]] | 272 | moved → cyberia-blog · executed 2026-09-07 | assembler census left with the graph |
 | [[superintelligence|superintelligence]] | 128 | stays · core | atom of the phenomenon |
 | [[token|token]] | 73 | stays · core | atom of the phenomenon |
 | [[tri-kernel|tri-kernel]] | 33 | stays · core | atom of the phenomenon |
@@ -348,7 +301,10 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[view|view]] | 51 | stays · core | atom of the phenomenon |
 | `CLAUDE.md` | 1167 | stays · index | index / infra |
 | [[README|cyber README]] | 285 | stays · index | index / infra |
-| [[blog|blog]] | 16 | stays · index | index / infra |
+| [[blog|blog]] | 16 | stays · pointer | stub; chronicle is [cyberia.blog](https://cyberia.blog) |
+| [[cyb|cyb]] | 12 | stays · pointer | sister subject; graph at [cyberia.blog/cyb](https://cyberia.blog/cyb) |
+| [[soft3|soft3]] | 12 | stays · pointer | sister subject; graph at [cyberia.blog/soft3](https://cyberia.blog/soft3) |
+| [[cyberia|cyberia]] | 12 | stays · pointer | sister subject; graph at [cyberia.blog](https://cyberia.blog) |
 | [[research|research]] | 17 | stays · index | index / infra |
 | [[tokens|tokens]] | 101 | stays · index | index / infra |
 | [[automated market maker|automated market maker]] | 202 | stays · nomics | the money |
@@ -411,7 +367,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/bostrom compilation report|bostrom compilation report]] | 1523 | moves → bootloader | component research goes home |
 | [[54|54]] | 14 | moves → bootloader chronicle | per the rule |
 | [[55|55]] | 722 | moves → bootloader chronicle | per the rule |
-| [[blog/2024_08_15|2024_08_15]] | 6 | moves → bootloader chronicle | vehicle-era call log |
 | [[roadmap|roadmap]] | 758 | moves → bootloader chronicle | 2019 plan |
 | [[accumulator|accumulator]] | 196 | moves → crystal | cryptography atom |
 | [[helix|helix]] | 363 | moves → crystal | mathematics atom |
@@ -422,33 +377,11 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[topological-invariant|topological-invariant]] | 415 | moves → crystal | mathematics atom |
 | [[security audit private key import|security audit private key import]] | 202 | moves → cyb reference/ | audits the robot |
 | [[research/cyberlink protocol structure|cyberlink protocol structure]] | 472 | moves → cybergraph | component research goes home |
-| [[blog/2024_08_21|2024_08_21]] | 6 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_08_23|2024_08_23]] | 6 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_08_27|2024_08_27]] | 10 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_09_10|2024_09_10]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_09_12|2024_09_12]] | 32 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_09_15|2024_09_15]] | 19 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_10_07|2024_10_07]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_10_13|2024_10_13]] | 14 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_11_23|2024_11_23]] | 3 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_12_05|2024_12_05]] | 5 | moves → cyberia chronicle | valley log entry |
-| [[blog/2024_12_22|2024_12_22]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_04|2025_04_04]] | 12 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_07|2025_04_07]] | 19 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_10|2025_04_10]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_15|2025_04_15]] | 28 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_04_23|2025_04_23]] | 7 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_01|2025_09_01]] | 11 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_06|2025_09_06]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_08|2025_09_08]] | 4 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_09_15|2025_09_15]] | 5 | moves → cyberia chronicle | valley log entry |
-| [[blog/2025_10_22|2025_10_22]] | 5 | moves → cyberia chronicle | valley log entry |
-| [[blog/2026_01_24|2026_01_24]] | 7 | moves → cyberia chronicle | valley log entry |
 | [[landscape|landscape]] | 25 | moves → cyberia land/flora | valley gardening |
 | [[nitrogener|nitrogener]] | 93 | moves → cyberia land/flora | valley gardening |
 | [[smart capital|smart capital]] | 15 | moves → cyberia research/ | per the rule |
 | [[team speed competition|team speed competition]] | 55 | moves → cyberia research/ | per the rule |
-| `SPEC.md` | 2603 | moves → cyberia/midao | workspace spec |
+| `SPEC.md` | 2603 | moved → cyberia-blog · executed 2026-09-07 | workspace spec travels with the assembler |
 | [[leadership|leadership]] | 833 | moves → cyberia/midao | org canon |
 | [[russian school of inscription|russian school of inscription]] | 1593 | moves → cybics/lang | culture essay |
 | [[research/foculus|foculus]] | 520 | moves → foculus | component research goes home |
@@ -456,15 +389,15 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/structural-sync|structural-sync]] | 2736 | moves → foculus | component research goes home |
 | [[research/vec formalization|vec formalization]] | 1799 | moves → foculus | component research goes home |
 | [[research/hashing and confidentiality|hashing and confidentiality]] | 1151 | moves → hemera | component research goes home |
-| [[subgraphs/kadek|kadek]] | 52 | moves → kadek repo (private card) | per the rule |
-| [[subgraphs/lytics|lytics]] | 36 | moves → lytics repo docs | per the rule |
+| [[subgraphs/kadek|kadek]] | 52 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
+| [[subgraphs/lytics|lytics]] | 36 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
 | [[research/256 symbols|256 symbols]] | 899 | moves → nox | component research goes home |
 | [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
 | [[analizer|analizer]] | 1009 | moves → research/ | protocol research misfiled at root |
 | [[seer|seer]] | 1318 | moves → research/ | protocol research misfiled at root |
-| [[subgraphs/conformance|conformance]] | 26 | moves → soft3 docs | per the rule |
+| [[subgraphs/conformance|conformance]] | 26 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
 | [[research/five algebras|five algebras]] | 3619 | moves → strata | component research goes home |
-| [[subgraphs/tape|tape]] | 12 | moves → tape repo docs | per the rule |
+| [[subgraphs/tape|tape]] | 12 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
 | [[research/trinity meets polynomial state|trinity meets polynomial state]] | 1496 | moves → trident | component research goes home |
 | [[research/gflownet focus flow|gflownet focus flow]] | 1766 | moves → tru | component research goes home |
 | [[research/spectral gap from convergence|spectral gap from convergence]] | 1229 | moves → tru | component research goes home |
@@ -472,12 +405,9 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/polynomial proof system|polynomial proof system]] | 1862 | moves → zheng | component research goes home |
 | [[research/recursive brakedown|recursive brakedown]] | 1949 | moves → zheng | component research goes home |
 | [[research/zheng vs starks|zheng vs starks]] | 14 | moves → zheng | component research goes home |
-| [[blog/2024_09_29|2024_09_29]] | 0 | dies | empty entry |
-| [[blog/2025_02_15|2025_02_15]] | 0 | dies | empty entry |
 | [[research/programming model|programming model]] | 11 | dies | empty / superseded |
 | [[sparks|sparks]] | 0 | dies | empty / superseded |
 | [[style|style]] | 11 | dies | empty / superseded |
-
 ---
 
 # 2 · cyb — target structure
@@ -809,6 +739,7 @@ the nation as a navigation tree: six shelves, each with a contract README.
 
 # 4 · order of movements
 
+0. **chronicle + assembler → cyberia-blog** — executed 2026-09-07. 75 dated journals, `subgraphs.toml`, workspace scripts. cyber.page is protocol-only; [cyberia.blog](https://cyberia.blog) holds the graph and the blog
 1. **deletions that free names** (1c + empty cyb stubs + empty cyberia stubs) — zero inbound by measurement, zero breakage
 2. **within-repo folds** — [[rank]]⊕[[cyberank]] · maps table · tech index · cyb-land → land/ · cyb root/ flattening
 3. **cyber → outward** (1b) — ~24 pages with ~40 link fixes
@@ -829,5 +760,5 @@ the nation as a navigation tree: six shelves, each with a contract README.
 
 ## executed 2026-09-07 — chronicle + graph assembler → cyberia-blog
 
-all dated journal entries (`YYYY_MM_DD.md`) left this repo for `cyberia-to/cyberia-blog`. the subgraph census (`subgraphs.toml` and the build/serve/sync scripts) moved with them. cyber.page publishes the protocol alone. the full graph and the blog — filterable by [[cyber]] · [[cyb]] · [[soft3]] · [[cyberia]] — live at [cyberia.blog](https://cyberia.blog). `/blog` on this site redirects to [cyberia.blog/cyber](https://cyberia.blog/cyber).
+75 dated journals (`YYYY_MM_DD.md`) are gone from this repo — they live in `cyberia-to/cyberia-blog` and render as the timeline at [cyberia.blog](https://cyberia.blog). the subgraph census (`subgraphs.toml`, `subgraphs/*.md`, `workspace.toml`, `SPEC.md`, build/serve/sync scripts) moved with them. this ledger no longer lists those 75 as "stays · chronicle". `blog.md` remains as a pointer; `/blog` on cyber.page redirects to [cyberia.blog/cyber](https://cyberia.blog/cyber).
 
