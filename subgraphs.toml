@@ -73,6 +73,11 @@ name = "aos"
 visibility = "private"
 
 [[subgraph]]
+name = "episode-1"
+parent = "aos"
+visibility = "public"
+
+[[subgraph]]
 name = "portal"
 parent = "aos"
 visibility = "private"
@@ -110,16 +115,6 @@ visibility = "public"
 
 [[subgraph]]
 name = "bostrom"
-parent = "bootloader"
-visibility = "public"
-
-[[subgraph]]
-name = "go-cyber"
-parent = "bootloader"
-visibility = "public"
-
-[[subgraph]]
-name = "space-pussy"
 parent = "bootloader"
 visibility = "public"
 
@@ -392,9 +387,12 @@ archived = true
 [[subgraph]]
 name = "cyberia-my"
 parent = "cyberia"
-visibility = "private"
-archived = true
-# content at cyberia/research/cyberia-my (not a separate mount)
+visibility = "public"
+
+[[subgraph]]
+name = "cybland"
+parent = "cyberia"
+visibility = "public"
 
 # /cyber-valley ──────────────────────────────────
 
