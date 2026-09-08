@@ -10,7 +10,7 @@ status: plan
 
 a plan first, movements second. nothing in this document moves a file; every section is a contract for one commit series, link-fixes included, so the site is never broken in between. every page named below is a live link — click through and judge it. the three ledgers carry a verdict for every page: stays / promotes / merges / moves / folds / extracts / dies — with the destination and the reason. zero pages undecided.
 
-original census: 501 pages (238 cyber · 83 cyb · 180 cyberia). executed 2026-09-07: 75 dated journals left cyber for [cyberia.blog](https://cyberia.blog); the cyber table is the remainder plus the pointer pages.
+original census: 501 pages (238 cyber · 83 cyb · 180 cyberia). the cyber table is the work that remains.
 
 ## the rule
 
@@ -237,13 +237,12 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[cyb]] · [[soft3]] · [[cyberia]] — pointers to the sister subjects, whose graphs live at cyberia.blog
     - [[restructure]] — this plan, then this record
 
-## the ledger — cyber (166 pages, 0 undecided · 75 journals already at cyberia.blog)
+## the ledger — cyber (156 pages, 0 undecided)
 
 *+2 since the census (2026-09-08): [[research/oikos|research/oikos]] — stays · research, the one-token-one-chain architecture proposal (its adoption map names per-page tasks across ~/cyber and soft3 — do not lose them); [[research/spectral cell division|research/spectral cell division]] — stays · research, division mechanics moved out of [[cell]], deliberately unimplemented.*
 
 | page | words | verdict | why |
 |---|---|---|---|
-| 75 dated journals (`YYYY_MM_DD`) | — | moved → [cyberia.blog](https://cyberia.blog) · executed 2026-09-07 | the whole chronicle left the protocol repo |
 | [[3c|3c]] | 1144 | stays · cips | deep protocol article |
 | [[channel|channel]] | 1859 | stays · cips | deep protocol article |
 | [[communication|communication]] | 1023 | stays · cips | deep protocol article |
@@ -295,7 +294,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[sealing|sealing]] | 121 | stays · core | atom of the phenomenon |
 | [[self|self]] | 374 | stays · core | atom of the phenomenon |
 | [[staking|staking]] | 113 | stays · core | atom of the phenomenon |
-| [[subgraphs|subgraphs]] | 272 | moved → cyberia-blog · executed 2026-09-07 | assembler census left with the graph |
 | [[superintelligence|superintelligence]] | 128 | stays · core | atom of the phenomenon |
 | [[token|token]] | 73 | stays · core | atom of the phenomenon |
 | [[tri-kernel|tri-kernel]] | 33 | stays · core | atom of the phenomenon |
@@ -379,11 +377,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[topological-invariant|topological-invariant]] | 415 | moves → crystal | mathematics atom |
 | [[security audit private key import|security audit private key import]] | 202 | moves → cyb reference/ | audits the robot |
 | [[research/cyberlink protocol structure|cyberlink protocol structure]] | 472 | moves → cybergraph | component research goes home |
-| [[landscape|landscape]] | 25 | moved → cyberia `land/flora/landscape.md` · executed 2026-09-08 | valley gardening |
-| [[nitrogener|nitrogener]] | 93 | moved → cyberia `land/flora/nitrogener.md` · executed 2026-09-08 | valley gardening |
-| [[smart capital|smart capital]] | 15 | moved → cyberia `research/smart capital.md` · executed 2026-09-08 | per the rule |
-| [[team speed competition|team speed competition]] | 55 | dies · executed 2026-09-08 | idea stub; deleted |
-| `SPEC.md` | 2603 | moved → cyberia-blog · executed 2026-09-07 | workspace spec travels with the assembler |
 | [[leadership|leadership]] | 833 | moves → cyberia/midao | org canon |
 | [[russian school of inscription|russian school of inscription]] | 1593 | moves → cybics/lang | culture essay |
 | [[research/foculus|foculus]] | 520 | moves → foculus | component research goes home |
@@ -391,15 +384,11 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/structural-sync|structural-sync]] | 2736 | moves → foculus | component research goes home |
 | [[research/vec formalization|vec formalization]] | 1799 | moves → foculus | component research goes home |
 | [[research/hashing and confidentiality|hashing and confidentiality]] | 1151 | moves → hemera | component research goes home |
-| [[subgraphs/kadek|kadek]] | 52 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
-| [[subgraphs/lytics|lytics]] | 36 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
 | [[research/256 symbols|256 symbols]] | 899 | moves → nox | component research goes home |
 | [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
 | [[analizer|analizer]] | 1009 | moves → research/ | protocol research misfiled at root |
 | [[seer|seer]] | 1318 | moves → research/ | protocol research misfiled at root |
-| [[subgraphs/conformance|conformance]] | 26 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
 | [[research/five algebras|five algebras]] | 3619 | moves → strata | component research goes home |
-| [[subgraphs/tape|tape]] | 12 | moved → cyberia-blog · executed 2026-09-07 | declaration file left with the census |
 | [[research/trinity meets polynomial state|trinity meets polynomial state]] | 1496 | moves → trident | component research goes home |
 | [[research/gflownet focus flow|gflownet focus flow]] | 1766 | moves → tru | component research goes home |
 | [[research/spectral gap from convergence|spectral gap from convergence]] | 1229 | moves → tru | component research goes home |
@@ -410,7 +399,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/programming model|programming model]] | 11 | dies | empty / superseded |
 | [[sparks|sparks]] | 0 | dies | empty / superseded |
 | [[style|style]] | 11 | dies | empty / superseded |
-
 ---
 
 # 1a · bbg absorption — refine, do not copy
@@ -607,12 +595,12 @@ the nation as a navigation tree: six shelves, each with a contract README.
     - [[cyberia/foundation/README|foundation]] — **why**: [[cyberia/foundation/vision|vision]] · [[cyberia/foundation/manifesto|manifesto]] · [[cyberia/foundation/whitepaper|whitepaper]] · [[cyberia/foundation/architecture|architecture]] · [[cyberia/foundation/strategy|strategy]] · [[cyberia/foundation/space doctrine|space doctrine]] · [[cyberia/foundation/org|org]] · [[cyberia/foundation/cyberian|cyberian]] · [[cyberia/explanation/your share of the sun|your share of the sun]] *(moves in)*
     - [[cyberia/protocol/README|protocol]] — **how the state runs**: [[cyberia/protocol/century-index|century index]] · [[cyberia/protocol/bank-above-banks|bank above banks]] · [[cyberia/protocol/location proof|location proof]] · [[cyberia/protocol/space-accounting|space accounting]] · [[cyberia/protocol/services|services]] · [[cyberia/protocol/system|system]] · [[cyberia/protocol/marketplace|marketplace]] · [[cyberia/protocol/marketplace-spec|marketplace spec]] · [[cyberia/protocol/ladder|ladder]] · [[cyberia/protocol/orgs|orgs]] · [[cyberia/protocol/ephemeris|ephemeris]] · [[cyberia/protocol/dyson sphere|dyson sphere]] · [[cyberia/protocol/maps|maps]] *(absorbs its 7 one-liners)*
     - land/ — **where** *(promoted from research/cyb-land; 42 pages move in, 23 empty die)*
-        - visit · stay · activities · attractions · community · flora *([[landscape]] + [[nitrogener]] live at cyberia `land/flora/` · executed 2026-09-08)*
+        - visit · stay · activities · attractions · community · flora
     - [[cyberia/community|community]] — **who**: talents · chronicle *(receives 22 valley entries from cyber's blog)*
     - [[cyberia/courses/README|courses]] — **teaching**: [[cyberia/courses/edge-city-patagonia-2025|edge-city-patagonia-2025]] (6 lessons)
     - [[cyberia/research/README|research]] — **the workbench**, explicitly unfinished
         - [[cyberia/research/mimi/README|mimi]] · [[cyberia/research/migration-market/README|migration-market]] · [[cyberia/research/genome-protocol/README|genome-protocol]] · [[cyberia/research/oxytocin/README|oxytocin]] · [[cyberia/research/cyber-sheep/README|cyber-sheep]] · [[cyberia/research/cyberia-my/README|cyberia-my]] · [[cyberia/research/tech/README|tech]] *(16 seeds keep pages, 26 fold to its table)*
-        - incoming: [[smart capital]] *(executed 2026-09-08 → `research/smart capital.md`). [[team speed competition]] deleted*
+        - incoming: [[smart capital]]
         - events — *extracts to its own repo; a one-page product card stays*
 
 ## the ledger — cyberia (180 pages, 180 verdicts, 0 undecided)
@@ -804,7 +792,6 @@ the nation as a navigation tree: six shelves, each with a contract README.
 
 # 4 · order of movements
 
-0. **chronicle + assembler → cyberia-blog** — executed 2026-09-07. 75 dated journals, `subgraphs.toml`, workspace scripts. cyber.page is protocol-only; [cyberia.blog](https://cyberia.blog) holds the graph and the blog
 1. **deletions that free names** (1c + empty cyb stubs + empty cyberia stubs) — zero inbound by measurement, zero breakage
 2. **within-repo folds** — [[rank]]⊕[[cyberank]] · maps table · tech index · cyb-land → land/ · cyb root/ flattening
 3. **cyber → outward** (1b) — ~24 pages with ~40 link fixes
@@ -821,9 +808,5 @@ the nation as a navigation tree: six shelves, each with a contract README.
 - every page passes the rule in one step; arguable pages are named in this document with their tiebreak
 - crystallinity ≥ 95% (was 88%) — same script, number published in each phase's commit message
 
-*plan approved → phases execute as separate commit series. this page then becomes the record of what moved where, and why.*
-
-## executed 2026-09-07 — chronicle + graph assembler → cyberia-blog
-
-75 dated journals (`YYYY_MM_DD.md`) are gone from this repo — they live in `cyberia-to/cyberia-blog` and render as the timeline at [cyberia.blog](https://cyberia.blog). the subgraph census (`subgraphs.toml`, `subgraphs/*.md`, `workspace.toml`, `SPEC.md`, build/serve/sync scripts) moved with them. this ledger no longer lists those 75 as "stays · chronicle". `blog.md` remains as a pointer; `/blog` on cyber.page redirects to [cyberia.blog/cyber](https://cyberia.blog/cyber).
+*plan approved → phases execute as separate commit series. finished rows leave the table.*
 
