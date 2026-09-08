@@ -358,9 +358,9 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[cyberank|cyberank]] | 34 | merges → rank | rank owns the alias and all 38 inbound refs |
 | [[research/algebraic state commitments|algebraic state commitments]] | 1806 | folds → bbg `docs/explanation/why-polynomial-state.md` | residue only: structural vs computational completeness. NMT-as-current framing dies |
 | [[research/bbg|bbg]] | 1993 | dies after reconciling numbers into bbg `specs/state.md` + `specs/architecture.md` | duplicate of the living spec. one root, one checkpoint size |
-| [[research/data availability strategy|data availability strategy]] | 3036 | dies | NMT sampling superseded by bbg `specs/data-availability.md` and `docs/explanation/data-availability.md` |
+| [[research/data availability strategy|data availability strategy]] | 3036 | dies | NMT sampling superseded by `/soft3/bbg/specs/data-availability` and `/soft3/bbg/docs/explanation/data-availability` |
 | [[research/data structures for polynomial state|data structures for polynomial state]] | 1626 | folds → bbg `specs/storage.md` | unique residue: scale table, shard compose, per-node storage. already linked from that spec |
-| [[research/polynomial nouns|polynomial nouns]] | 2877 | splits → cyber `particle.md`/`hash.md` + bbg `docs/explanation/data-availability.md` | identity of a particle is protocol; DAS-native particle is already in the DA explanation |
+| [[research/polynomial nouns|polynomial nouns]] | 2877 | splits → cyber `particle.md`/`hash.md` + `/soft3/bbg/docs/explanation/data-availability` | identity of a particle is protocol; DAS-native particle is already in the DA explanation |
 | [[research/programmable state|programmable state]] | 1703 | open → row on bbg `roadmap/README.md` | chaosnet schema is closed. no new file. do not merge into spec |
 | [[research/state model|state model]] | 789 | folds → cyber `cybergraph.md` | protocol ontology (state = cyberlinks). not a bbg mechanism |
 | [[research/storage proofs|storage proofs]] | 1390 | folds → bbg `specs/storage.md`; closes `roadmap/storage-proofs.md` | six proofs stay; Hemera Merkle paths become Lens openings |
@@ -379,10 +379,10 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[topological-invariant|topological-invariant]] | 415 | moves → crystal | mathematics atom |
 | [[security audit private key import|security audit private key import]] | 202 | moves → cyb reference/ | audits the robot |
 | [[research/cyberlink protocol structure|cyberlink protocol structure]] | 472 | moves → cybergraph | component research goes home |
-| [[landscape|landscape]] | 25 | moves → cyberia land/flora | valley gardening |
-| [[nitrogener|nitrogener]] | 93 | moves → cyberia land/flora | valley gardening |
-| [[smart capital|smart capital]] | 15 | moves → cyberia research/ | per the rule |
-| [[team speed competition|team speed competition]] | 55 | moves → cyberia research/ | per the rule |
+| [[landscape|landscape]] | 25 | moved → cyberia `land/flora/landscape.md` · executed 2026-09-08 | valley gardening |
+| [[nitrogener|nitrogener]] | 93 | moved → cyberia `land/flora/nitrogener.md` · executed 2026-09-08 | valley gardening |
+| [[smart capital|smart capital]] | 15 | moved → cyberia `research/smart capital.md` · executed 2026-09-08 | per the rule |
+| [[team speed competition|team speed competition]] | 55 | dies · executed 2026-09-08 | idea stub; deleted |
 | `SPEC.md` | 2603 | moved → cyberia-blog · executed 2026-09-07 | workspace spec travels with the assembler |
 | [[leadership|leadership]] | 833 | moves → cyberia/midao | org canon |
 | [[russian school of inscription|russian school of inscription]] | 1593 | moves → cybics/lang | culture essay |
@@ -457,9 +457,9 @@ every source is a real file under `cyber/research/`. every target is a real file
 |---|---|---|---|---|
 | `research/algebraic state commitments.md` | fold | `bbg/docs/explanation/why-polynomial-state.md` | the completeness trade-off (NMT structural vs Lens computational) and the hybrid NMT∥poly migration | "BBG maintains 9 NMT indexes" as present tense |
 | `research/bbg.md` | die after reconcile | `bbg/specs/architecture.md`, `bbg/specs/state.md`, `bbg/docs/explanation/architecture-overview.md` | pick one checkpoint size and one verification time; write them once in `specs/state.md` | second definition of BBG; 5-tuple cyberlink; `BBG_root = Lens.commit(poly)` as a single commit |
-| `research/data availability strategy.md` | die | — | nothing. `bbg/specs/data-availability.md` and `bbg/docs/explanation/data-availability.md` already carry algebraic DAS | NMT sampling, 1 KiB paths |
+| `research/data availability strategy.md` | die | — | nothing. live pages: `/soft3/bbg/specs/data-availability` and `/soft3/bbg/docs/explanation/data-availability`. `/data-availability-explained` was a phantom from an inverted wiki-link in `bbg/README.md` | NMT sampling, 1 KiB paths |
 | `research/data structures for polynomial state.md` | fold | `bbg/specs/storage.md` | scale table, algebraic shard compose, per-node storage. that spec already points here | treating A/N as extra dimensions of the same table |
-| `research/polynomial nouns.md` | split | `cyber/particle.md` + `cyber/hash.md` (identity); `bbg/docs/explanation/data-availability.md` (DAS-native particle, algebraic streaming) | CID = hemera(Lens.commit ‖ domain_tag) is a protocol claim — it belongs on the particle, not in bbg research | the monolith; any NMT leftover |
+| `research/polynomial nouns.md` | split | `cyber/particle.md` + `cyber/hash.md` (identity); `/soft3/bbg/docs/explanation/data-availability` (DAS-native particle, algebraic streaming) | CID = hemera(Lens.commit ‖ domain_tag) is a protocol claim — it belongs on the particle, not in bbg research | the monolith; any NMT leftover |
 | `research/programmable state.md` | open | `bbg/roadmap/README.md` remaining-proposals table | one row: chaosnet schema is closed (six dimensions); general tables are research, not spec | merging into `specs/state.md`; inventing a new roadmap page |
 | `research/state model.md` | fold | `cyber/cybergraph.md` | state = the set of cyberlinks; graph-native transitions | account/UTXO/DeFi bridge as bbg mechanism; the file does not enter bbg |
 | `research/storage proofs.md` | fold | `bbg/specs/storage.md`; then close `bbg/roadmap/storage-proofs.md` | the six proof types. that roadmap already asks for this | Hemera Merkle challenge paths — rewrite as Lens openings to match `specs/data-availability.md` |
@@ -607,12 +607,12 @@ the nation as a navigation tree: six shelves, each with a contract README.
     - [[cyberia/foundation/README|foundation]] — **why**: [[cyberia/foundation/vision|vision]] · [[cyberia/foundation/manifesto|manifesto]] · [[cyberia/foundation/whitepaper|whitepaper]] · [[cyberia/foundation/architecture|architecture]] · [[cyberia/foundation/strategy|strategy]] · [[cyberia/foundation/space doctrine|space doctrine]] · [[cyberia/foundation/org|org]] · [[cyberia/foundation/cyberian|cyberian]] · [[cyberia/explanation/your share of the sun|your share of the sun]] *(moves in)*
     - [[cyberia/protocol/README|protocol]] — **how the state runs**: [[cyberia/protocol/century-index|century index]] · [[cyberia/protocol/bank-above-banks|bank above banks]] · [[cyberia/protocol/location proof|location proof]] · [[cyberia/protocol/space-accounting|space accounting]] · [[cyberia/protocol/services|services]] · [[cyberia/protocol/system|system]] · [[cyberia/protocol/marketplace|marketplace]] · [[cyberia/protocol/marketplace-spec|marketplace spec]] · [[cyberia/protocol/ladder|ladder]] · [[cyberia/protocol/orgs|orgs]] · [[cyberia/protocol/ephemeris|ephemeris]] · [[cyberia/protocol/dyson sphere|dyson sphere]] · [[cyberia/protocol/maps|maps]] *(absorbs its 7 one-liners)*
     - land/ — **where** *(promoted from research/cyb-land; 42 pages move in, 23 empty die)*
-        - visit · stay · activities · attractions · community · flora *(receives [[landscape]] + [[nitrogener]])*
+        - visit · stay · activities · attractions · community · flora *([[landscape]] + [[nitrogener]] live at cyberia `land/flora/` · executed 2026-09-08)*
     - [[cyberia/community|community]] — **who**: talents · chronicle *(receives 22 valley entries from cyber's blog)*
     - [[cyberia/courses/README|courses]] — **teaching**: [[cyberia/courses/edge-city-patagonia-2025|edge-city-patagonia-2025]] (6 lessons)
     - [[cyberia/research/README|research]] — **the workbench**, explicitly unfinished
         - [[cyberia/research/mimi/README|mimi]] · [[cyberia/research/migration-market/README|migration-market]] · [[cyberia/research/genome-protocol/README|genome-protocol]] · [[cyberia/research/oxytocin/README|oxytocin]] · [[cyberia/research/cyber-sheep/README|cyber-sheep]] · [[cyberia/research/cyberia-my/README|cyberia-my]] · [[cyberia/research/tech/README|tech]] *(16 seeds keep pages, 26 fold to its table)*
-        - incoming: [[team speed competition]] · [[smart capital]]
+        - incoming: [[smart capital]] *(executed 2026-09-08 → `research/smart capital.md`). [[team speed competition]] deleted*
         - events — *extracts to its own repo; a one-page product card stays*
 
 ## the ledger — cyberia (180 pages, 180 verdicts, 0 undecided)
