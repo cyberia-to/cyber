@@ -366,13 +366,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[congress|congress]] | 192 | moves → bootloader | the vehicle team |
 | [[research/bostrom compilation report|bostrom compilation report]] | 1523 | moves → bootloader | component research goes home |
 | [[roadmap|roadmap]] | 758 | moves → bootloader chronicle | 2019 plan |
-| [[accumulator|accumulator]] | 196 | moves → crystal | cryptography atom |
-| [[helix|helix]] | 363 | moves → crystal | mathematics atom |
-| [[history|history]] | 129 | moves → crystal | history of computing |
-| [[skyrmion|skyrmion]] | 382 | moves → crystal | physics atom |
-| [[time-crystal|time-crystal]] | 375 | moves → crystal | physics atom |
-| [[topoisomerase|topoisomerase]] | 303 | moves → crystal | biology atom |
-| [[topological-invariant|topological-invariant]] | 415 | moves → crystal | mathematics atom |
 | [[security audit private key import|security audit private key import]] | 202 | moves → cyb reference/ | audits the robot |
 | [[research/cyberlink protocol structure|cyberlink protocol structure]] | 472 | moves → cybergraph | component research goes home |
 | [[leadership|leadership]] | 833 | moves → cyberia/midao | org canon |
