@@ -76,6 +76,8 @@ that gives it the full list of hard-money properties, each enforced by a differe
 - **no committee** — supply follows stepped emission plus fee redistribution; when fees exceed emission the network runs net deflationary, and the transition from emission-funded to fee-funded happens continuously, with no governance vote anywhere in the loop.
 - **physically backed** — the asset behind the money is knowledge, and [[landauer limit|Landauer's bound]] prices its floor: ~3×10⁻²¹ joules per bit at room temperature — the lowest mass per unit of value physics permits. which is also why it is the one asset worth carrying between planets.
 
+**and the law generalizes.** cyber is only the *first* [[research/oikos|oikos]] — one chain, one token, rooted by one name. every other token is born the same way: as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs, not transport — so the bridge exploit class, the largest in crypto's history, is not defended against but made unexpressible. one graph routes all the households.
+
 **two pays, two risks.** staking a link is a bet on truth: capital at risk, influence and reward if you were early and right. mining is capital-free work: sample the fair division of a proven shift and fold the proofs. you earn for settling credit, not for guessing the future.
 
 **two pays, two risks.** staking a link is a bet on truth: capital at risk, influence and reward if you were early and right. mining is capital-free work: sample the fair division of a proven shift and fold the proofs. you earn for settling credit, not for guessing the future.
@@ -93,6 +95,8 @@ the binding constraint is not throughput. it is light.
 earth to mars is minutes one way. any protocol whose liveness assumes a fast planet-wide round is already dead at that distance, and every design that finalizes by counting votes assumes exactly that. so finality here is the same fixed point doing a third job: a fact is final when enough attention has gathered on it — $\phi^*_i > \tau$ — not when a global committee replies. nodes gossip, each runs the same contraction, identical signals produce one root everywhere, as a pond finds one level without phoning the far shore.
 
 domains settle at domain speed. a partition freezes cross-domain trade instead of inventing two truths. disputes pay only the light they must.
+
+and the same removal answers a second question: households need no shared sequencer. ten thousand token-chains settle independently, read each other by proof, and trade by condition — sharding is not a scaling technique here, it is the constitution.
 
 designing for planets is not decoration. it is what forces the removal of every global round, and the removal is what makes the thing work well on one planet.
 

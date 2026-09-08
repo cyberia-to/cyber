@@ -47,12 +47,12 @@ honesty about the hard parts — these must be designed before oikos is law:
 
 | page | what changes |
 |---|---|
-| [[3c]] | the deepest cut: import/export (proofs both ways) stay; the **bridge mode retires** — "tokens move" contradicts prohibition 2; IBC survives only as a T3 legacy adapter |
-| [[cell]] | gains the second cell kind: the **ledger-cell** — born by a name, not by division; invariant is balance conservation, not minimal cut. division of knowledge-cells is its own proposal: [[spectral cell division]] |
-| [[network]] · [[communication]] | already compatible: narrowcast frames of proofs; [[cyb/parts/sense|sense]] over [[cyb/parts/radio|radio]] carries conditions and receipts, never value |
+| [[3c]] | **done 2026-09-08** — rewritten transportless: read/write/trade, no bridge mode, no legacy adapters; the design owes nothing to what was |
+| [[cell]] | **done 2026-09-08** — cell.md is now the four-rung ladder canon (runtime · building · ledger · knowledge); division stays a proposal: [[spectral cell division]] |
+| [[network]] · [[communication]] | **done 2026-09-08** — network carries registration-as-discovery and names the header market as the freshness economy; communication carries everything-but-value and delivery-as-the-trade's-clock |
 | [[tokens/plumb|plumb]] | word → task: the chain-factory; "create a token" = "birth a chain" as one operation |
-| [[cyber/$CYB|$CYB]] · [[litepaper]] | a word each: the mind-chain is constitutionally single-token; emission-for-knowledge is prohibition 1 read as monetary policy |
-| [[whitepaper]] §3C | task: restate the section under oikos when the trade and freshness protocols exist |
+| [[cyber/$CYB|$CYB]] · [[litepaper]] | **done 2026-09-08** — litepaper: 'the law generalizes' + no-shared-sequencer; whitepaper: §2.6 the oikos principle + §13.1 line |
+| [[whitepaper]] §3C | partially done — §2.6 states the principle; the deep 3C restatement in the whitepaper body still waits for the two protocols |
 | [[cyb/parts/state|state]] | word: the tier language is the condition language — the doctrine ascends from browser to consensus |
 | [[cyb/parts/sigma|sigma]] · [[cyb/parts/vault|vault]] | word: the portfolio is T0 reads of small home chains; keys sign at home, never custody wrapped copies |
 | [[aos/teleport|teleport]] · [[aos/hub|hub]] | task: the transfer gate becomes a condition-composer; "multi-chain connections via IBC" rewrites to proof connections |

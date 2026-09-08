@@ -170,6 +170,12 @@ A single decision unifies six research threads that developed independently over
 
 The Goldilocks field ($p = 2^{64} - 2^{32} + 1$) makes this concrete. A field multiplication is a single CPU instruction. Hashing is [[field]] operations. Proofs are field polynomials. Reduction preserves field structure. Flow is conserved across field-valued edges. The unifying element is arithmetic: every operation in the system — from content addressing to proof verification to neural network inference — reduces to additions and multiplications in the same field.
 
+### 2.6 One Token, One Chain
+
+The [[research/oikos|oikos]] principle: a chain is the balance sheet of one issuer. One non-fungible name roots it, one fungible token is its entire state, nested sub-names are its chart of accounts. Two prohibitions are constitutional: no chain issues a second token — issuing *is* birthing a chain — and no token ever moves to another chain. Trading is programming the conditions of movement on home ledgers against proofs of foreign state ([[3c]]); the bridge exploit class is not mitigated but made unexpressible.
+
+The cyber chain itself obeys both prohibitions: it is the single-token chain of [[cyber/$CYB|$CYB]], and its distinct utility is routing and registration — every [[cell]] enters the mesh by linking its name and state root into the [[cybergraph]], which is therefore the routing table of the whole economy. This is the [[cell]] ladder read as monetary architecture: the robot's runtime-cell is a personal micro-ledger, the household is a chain of one token, the knowledge-cell is a chain of one region of meaning — one primitive at every scale, one communication protocol between all of them.
+
 ## 3. The Cybergraph
 
 ### 3.1 Five Primitives
@@ -825,6 +831,9 @@ The graph also expresses what no formal [[language]] can: collective confidence 
 ## 13. Tokenomics
 
 ### 13.1 Tokens
+
+Under the [[research/oikos|oikos]] principle (§2.6) the chain of [[cyber/$CYB|$CYB]] is constitutionally single-token: every other token is born as its own chain and registers here by name. Emission-for-knowledge is prohibition one read as monetary policy.
+
  has two operational modes: circulating (tradeable, stakeable, spendable as fees) and locked as [[will]] — committed for a defined duration in exchange for bandwidth and link-weight influence, with the locked balance provably unspendable for the lock period.
  serve as feedback signals to [[superintelligence]]: [[will]] ([[bandwidth]] and link weight), [[attention]] (rank influence), [[karma]] (reputation and trust weight). These are not tradeable assets — they are measurements of a [[neuron]]'s contribution to collective [[focus]]. [[karma|Karma]] is computed from accumulated [[Bayesian Truth Serum|BTS]] scoring history; [[attention]] tracks stake-weighted participation; [[will]] reflects commitment duration.
 
