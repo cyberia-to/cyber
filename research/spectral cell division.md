@@ -27,6 +27,6 @@ open questions that keep this a proposal:
 
 ## relation to nomos
 
-[[research/nomos|nomos]] introduces a second cell kind — the ledger-cell, born by a name rather than by division, conserving a balance rather than minimizing a cut. the two kinds coexist in one hierarchy: knowledge divides, value registers. this page owns only the first kind.
+[[research/oikos|oikos]] introduces a second cell kind — the ledger-cell, born by a name rather than by division, conserving a balance rather than minimizing a cut. the two kinds coexist in one hierarchy: knowledge divides, value registers. this page owns only the first kind.
 
 discover all [[concepts]]
