@@ -101,6 +101,10 @@ Recipient B receives layer_3:
 
 each relay computes a CSIDH shared secret with the sender's ephemeral key. every relay sees exactly one address: the next hop. the sender's identity, the recipient's identity, and the message content are hidden from all relays.
 
+## what messages may carry
+
+everything but value. a message moves content, conditions, and receipts — under [[research/oikos|oikos]] no token ever rides a channel, so the transport layer is constitutionally incapable of losing money. a trade travels as two condition-messages and settles as two home-ledger facts; the channel only ever owes *delivery*, which is exactly what it can prove:
+
 ## proof of delivery
 
 each hop produces a [[zheng]] proof attesting: "I received a valid encrypted blob, decrypted my layer correctly, and forwarded the result to the next address." the proofs chain:
@@ -144,6 +148,11 @@ relays earn [[focus]] for proven delivery. the proof of delivery is the claim �
 - drop the message: no proof, no payment
 - tamper with content: [[zheng]] proof fails, no payment, reputation penalty
 - delay: timestamps in proof chain reveal latency, market prefers fast relays
+
+
+### delivery as the trade's clock
+
+[[3c]]'s matching leans on this section directly: a trade leg is not committed until its delivery to the counterparty is proven within the [[foculus]] epoch. proof-of-delivery, built for paying relayers honestly, turns out to be the primitive that closes the free-option window — the deadline is a delivery deadline
 
 ## transport layer
 

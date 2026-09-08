@@ -44,6 +44,9 @@ what propagates how:
 
 ## peer discovery via cybergraph
 
+the same mechanism routes the [[cell]] ladder: a cell registers by linking its name and state root into the graph, so resolving a peer and resolving a [[research/oikos|household]] are one lookup. the cybergraph is the routing table of the mesh — there is no second registry
+
+
 traditional p2p networks use external mechanisms for peer discovery: DHTs (Kademlia), DNS seeds, hardcoded bootstrap nodes. cyber uses the [[cybergraph]] itself.
 
 every [[neuron]] publishes its endpoint information as a [[cyberlink]]:
@@ -65,6 +68,9 @@ three discovery mechanisms work together (inherited from [[radio/discovery]]):
 Pkarr provides bootstrap — finding the first peers to connect to. once connected, the [[cybergraph]] provides the authoritative, stake-weighted peer directory. a [[neuron]]'s endpoint [[cyberlink]] is authenticated by their key, timestamped, and weighted by their stake. stale or fraudulent endpoint claims decay through standard [[forgetting]] mechanics.
 
 ## paid headers: the lean protocol
+
+> this market is the economic half of the [[research/oikos|oikos]] freshness contract: a condition that demands "tier ≥ τ, no older than t" is a standing bid for fresh counterparty headers, and the header market clears it. staleness is not an error state — it is a price
+
 
 the block header is the trust anchor — it commits to the full [[BBG]] root and lets any light client verify any claim about the [[cybergraph]]. distributing headers for free means light clients extract full verification value at zero cost. cyber does not do this.
 
