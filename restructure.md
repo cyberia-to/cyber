@@ -365,8 +365,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[cli|cli]] | 35 | moves → bootloader | vehicle tooling |
 | [[congress|congress]] | 192 | moves → bootloader | the vehicle team |
 | [[research/bostrom compilation report|bostrom compilation report]] | 1523 | moves → bootloader | component research goes home |
-| [[54|54]] | 14 | moves → bootloader chronicle | per the rule |
-| [[55|55]] | 722 | moves → bootloader chronicle | per the rule |
 | [[roadmap|roadmap]] | 758 | moves → bootloader chronicle | 2019 plan |
 | [[accumulator|accumulator]] | 196 | moves → crystal | cryptography atom |
 | [[helix|helix]] | 363 | moves → crystal | mathematics atom |
@@ -379,10 +377,10 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/cyberlink protocol structure|cyberlink protocol structure]] | 472 | moves → cybergraph | component research goes home |
 | [[leadership|leadership]] | 833 | moves → cyberia/midao | org canon |
 | [[russian school of inscription|russian school of inscription]] | 1593 | moves → cybics/lang | culture essay |
-| [[research/foculus|foculus]] | 520 | moves → foculus | component research goes home |
-| [[research/provable consensus|provable consensus]] | 2066 | moves → foculus | component research goes home |
-| [[research/structural-sync|structural-sync]] | 2736 | moves → foculus | component research goes home |
-| [[research/vec formalization|vec formalization]] | 1799 | moves → foculus | component research goes home |
+| [[research/foculus|foculus]] | 520 | dies | superseded by `/soft3/foculus` and `/soft3/foculus/docs/explanation/overview`. Celestia/committee-shard generation |
+| [[research/provable consensus|provable consensus]] | 2066 | dies | same paper as `/soft3/foculus/specs/provable-consensus` (jaccard 0.81). circuit already there. do not copy κ=max |
+| [[research/structural-sync|structural-sync]] | 2736 | folds residue → `/soft3/foculus/specs/vec` + `/soft3/foculus/specs/structural-sync` | different document from the living spec (jaccard 0.13). take the pairwise gap + FLP/CAP + Byzantine table; "without consensus" title dies |
+| [[research/vec formalization|vec formalization]] | 1799 | folds SEC table → `/soft3/foculus/specs/vec`, then dies | same paper as the spec (jaccard 0.88). spec is newer (P1–P6, 18 nox patterns). NMT in P2 stays until bbg Lens openings land |
 | [[research/hashing and confidentiality|hashing and confidentiality]] | 1151 | moves → hemera | component research goes home |
 | [[research/256 symbols|256 symbols]] | 899 | moves → nox | component research goes home |
 | [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
@@ -460,6 +458,64 @@ after the folds: delete the eight sources. rewrite `cyber/research.md` as a map 
 2. fold residue into the named existing files (one commit per target file)
 3. delete the eight cyber sources; fix wiki-links to the targets
 4. one line on `cyber/research.md` pointing at bbg explanation/spec
+
+---
+
+# 1b · foculus absorption — refine, do not copy
+
+four cyber research pages (march 2026) sit next to a living foculus crate. the crate already has the four matching documents: `README.md`, `specs/provable-consensus.md`, `specs/structural-sync.md`, `specs/vec.md`, `docs/explanation/overview.md`. live URLs (files on disk 2026-09-08; paths match the soft3 mount):
+
+- `/soft3/foculus`
+- `/soft3/foculus/specs/provable-consensus`
+- `/soft3/foculus/specs/structural-sync`
+- `/soft3/foculus/specs/vec`
+- `/soft3/foculus/docs/explanation/overview`
+
+copying the four files into foculus would ship a second textbook. two of them *are* the living specs (older drafts). the move is: fold the unique residue into those existing files, then delete the sources. no new files.
+
+ownership does not move. `specs/structural-sync.md` already says the pipeline is cross-cutting: layers 1–4 belong to cybergraph, bbg, radio; foculus owns layer 5 (global merge). cyber loses the duplicate essays, not the layer map. protocol atoms [[focus]] / [[tri-kernel]] / [[collective focus theorem]] stay in cyber — what must hold.
+
+token overlap of body text (frontmatter stripped), 2026-09-08:
+
+| source vs living | jaccard | reading |
+|---|---|---|
+| `research/provable consensus.md` vs `foculus/specs/provable-consensus.md` | 0.81 | same paper. spec is the corrected copy |
+| `research/vec formalization.md` vs `foculus/specs/vec.md` | 0.88 | same paper. spec is newer (six properties, 18 nox patterns) |
+| `research/structural-sync.md` vs `foculus/specs/structural-sync.md` | 0.13 | different documents: academic paper vs operational spec |
+| `research/foculus.md` vs `foculus/docs/explanation/overview.md` | 0.10 | different generation |
+
+## contradictions — do not copy these
+
+| claim in cyber research | living foculus | keep |
+|---|---|---|
+| `research/foculus.md`: DA on ethereum calldata + celestia + IPFS; committee shards; Blake3-XOF; Pedersen | protocol is φ* > τ, DAS/Lens, no committees | the living protocol |
+| `research/provable consensus.md` line 79: κ = max(λ_d κ_D, λ_s κ_S, λ_h κ_H) | `specs/provable-consensus.md` already records that max-form as a bug; κ is the convex combination | convex combination |
+| `research/structural-sync.md` title: "verified convergence without consensus"; comparison table "Consensus: None" | foculus *is* consensus at layer 5; CRDT is local merge only | substrate + layer-5 split in `specs/structural-sync.md` |
+| `research/vec formalization.md`: "four properties" then lists six; P5 = 16 nox patterns; P2/P3 = NMT | `specs/vec.md`: six properties from the start; P5 = 18 patterns (16 compute + call + look); P2 still NMT pending Lens | spec. NMT→Lens is bbg work, not a new foculus page |
+| research BBG_root / algebraic NMT as if still proposed; "replaces 9 independent hash trees" | bbg already committed to polynomial + Lens; chaosnet public dimensions are six | cite bbg spec, do not re-propose |
+| continuous fold / ~30 field ops / ~200-byte accumulator as foculus content | already specified in `foculus/specs/fold-mining.md` (HyperNova IVC) | fold-mining spec |
+
+living-spec bug, fix if the file is touched: `specs/provable-consensus.md` circuit totals 1,420M constraints; the closing paragraph still says "624 million" (copied from the research draft).
+
+## file table
+
+every source is a real file under `cyber/research/`. every target is a real file under `foculus/`.
+
+| source (cyber, exists) | action | target (exists) | what to take | what dies |
+|---|---|---|---|---|
+| `research/foculus.md` | die | `foculus/README.md`, `foculus/docs/explanation/overview.md` | nothing. overview already states φ* > τ, no leader, fork choice is φ* | ethereum/celestia DA stack, committee shards, "hybrid account layer", the whole page |
+| `research/provable consensus.md` | die | `foculus/specs/provable-consensus.md` | nothing. 6-section circuit, cost tables, recursion, timeline are already in the spec | κ=max; "why this matters" 4-step (overview already has the category shift); stale 624M |
+| `research/structural-sync.md` | fold residue | `foculus/specs/vec.md` and `foculus/specs/structural-sync.md` | into vec: pairwise CRDT×NMT×DAS gap table, failure-mode coverage table, FLP/CAP (set convergence, not SMR), comparison table with "Consensus: None" rewritten as CRDT local / φ* global. into structural-sync spec: Byzantine detection vs tolerance table (5.2) if still missing | the academic paper as a second spec; the title "without consensus"; continuous-fold / performance tables (9 trees, stale); open-problems list (roadmap already owns unsolved questions); references |
+| `research/vec formalization.md` | fold then die | `foculus/specs/vec.md` | the SEC / causal / linearizability comparison table (research §"relationship to existing models") — the spec does not have it | the duplicate; "four properties hold"; 16-pattern nox count; VEC+ framing (spec already unified P1–P6) |
+
+after the folds: delete the four sources. rewrite inbound wiki-links (`[[provable consensus]]`, `[[vec formalization]]`, `[[structural-sync]]`, `[[research/foculus]]` and the research-prefixed forms) to the live `/soft3/foculus/...` pages. `cyber/research.md` points at `/soft3/foculus`.
+
+## work order
+
+1. fold the named residue into `foculus/specs/vec.md` (SEC table, pairwise gap, FLP/CAP, corrected comparison) and `foculus/specs/structural-sync.md` (Byzantine table)
+2. while touching `foculus/specs/provable-consensus.md`, replace the closing "624 million" with 1,420M
+3. delete the four cyber sources; fix wiki-links
+4. one line on `cyber/research.md` pointing at `/soft3/foculus`
 
 ---
 
