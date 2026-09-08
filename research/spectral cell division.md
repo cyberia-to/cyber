@@ -25,7 +25,7 @@ open questions that keep this a proposal:
 4. **merging** — biology has fusion; two under-used sibling cells should re-merge, and the reverse operation is entirely unspecified
 5. **the empirical null** — [[bostrom]] ran 25.1M blocks and 2.9M links and never needed to divide: one cell carried the whole bootloader. division may be a 10⁹-particle problem, which is exactly why it can wait
 
-## relation to nomos
+## relation to oikos
 
 [[research/oikos|oikos]] introduces a second cell kind — the ledger-cell, born by a name rather than by division, conserving a balance rather than minimizing a cut. the two kinds coexist in one hierarchy: knowledge divides, value registers. this page owns only the first kind.
 
