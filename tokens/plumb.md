@@ -24,3 +24,5 @@ what is plumb?
 - this simple but precise tool helps ensure structures or elements are vertically true
 - playing a crucial role in building to achieve accurate alignment and balance
 - ![](https://emerald-raw-leopon-384.mypinata.cloud/ipfs/QmQfWnr4HtcXoowksQi7Lheu4qqPHSj2r3tVSQGjjnqqCK)
+
+under the [[research/nomos|nomos]] proposal plumb is the chain-factory: creating a token and birthing its chain are one operation

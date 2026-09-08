@@ -237,7 +237,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[cyb]] · [[soft3]] · [[cyberia]] — pointers to the sister subjects, whose graphs live at cyberia.blog
     - [[restructure]] — this plan, then this record
 
-## the ledger — cyber (166 pages in this table, 166 verdicts, 0 undecided · 75 journals already at cyberia.blog)
+## the ledger — cyber (166 pages, 0 undecided · 75 journals already at cyberia.blog)
 
 | page | words | verdict | why |
 |---|---|---|---|

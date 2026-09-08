@@ -14,7 +14,7 @@ the cell is the base operational level of the [[cyber/hierarchy]] — it holds s
 
 at genesis there is one cell — the [[root cell]]. it contains the [[crystal]] and all early [[particles]]. as [[neurons]] create [[cyberlinks]] and the graph grows denser, the cell becomes too large for a single validator set to process efficiently
 
-when the [[Laplacian]] eigengap of a cell's internal graph shows two distinct communities ([[springs]] reveals the split): the cell divides. state migrates along the spectral bisection boundary. two cells exist where one was. each inherits half the [[particles]], half the [[mutator set]], half the routing table
+how a cell divides — the [[Laplacian]] eigengap trigger, the Fiedler cut, state migration — is a separate proposal, deliberately unimplemented: [[spectral cell division]]. under the [[research/nomos|nomos]] proposal a second cell kind exists beside this one: the **ledger-cell**, born by a name rather than by division, conserving one token's balance rather than minimizing a cut
 
 this is how the [[hierarchy]] is born — not by decree but by division. the first split produces two cells. each grows, accumulates [[cyberlinks]], and eventually splits again. cells → zones → domains emerge from repeated division over time
 
