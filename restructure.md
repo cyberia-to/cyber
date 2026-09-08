@@ -184,7 +184,7 @@ the ground: math ([[strata]]) · accelerate ([[honeycrisp]]) — beneath every s
     - [[soft3/status|status]] — **the registry of components**: every seat, verb, state — the living census
     - the crystallization (§0 above) — the boundary rule, the loop, the stages
     - roadmap/ — [[soft3/roadmap/component-boundaries|component-boundaries]] · [[soft3/roadmap/migration|migration]] · [[soft3/roadmap/stack-completeness|stack-completeness]] · [[soft3/roadmap/terms-map|terms-map]]
-    - specs/ — [[soft3/specs/terms|terms]] · [[soft3/specs/types|types]] · [[soft3/specs/languages|languages]] · [[soft3/specs/filenames|filenames]]
+    - specs/ — [[soft3/specs/terms|terms]] · [[soft3/specs/types|types]] · [[soft3/specs/languages|languages]] · [[soft3/specs/filenames|filenames]] · *bytes* (the 256-value alphabet — §1c)
     - docs/ — [[soft3/docs/launch|launch]] · [[soft3/docs/chains-as-plugins|chains-as-plugins]]
     - proposals/ · conformance/ · schema/ · cli/ · mcp/ — the workbench README shelf
 
@@ -375,7 +375,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/structural-sync|structural-sync]] | 2736 | folds residue → `/soft3/foculus/specs/vec` + `/soft3/foculus/specs/structural-sync` | different document from the living spec (jaccard 0.13). take the pairwise gap + FLP/CAP + Byzantine table; "without consensus" title dies |
 | [[research/vec formalization|vec formalization]] | 1799 | folds SEC table → `/soft3/foculus/specs/vec`, then dies | same paper as the spec (jaccard 0.88). spec is newer (P1–P6, 18 nox patterns). NMT in P2 stays until bbg Lens openings land |
 | [[research/hashing and confidentiality|hashing and confidentiality]] | 1151 | moves → hemera | component research goes home |
-| [[research/256 symbols|256 symbols]] | 899 | moves → nox | component research goes home |
+| [[research/256 symbols|256 symbols]] | 899 | folds → `soft3/specs/bytes.md` | stack alphabet, not nox ISA. one byte = one meaning; jets as opcodes. see §1c |
 | [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
 | [[analizer|analizer]] | 1009 | moves → research/ | protocol research misfiled at root |
 | [[seer|seer]] | 1318 | moves → research/ | protocol research misfiled at root |
@@ -509,6 +509,45 @@ after the folds: delete the four sources. rewrite inbound wiki-links (`[[provabl
 2. while touching `foculus/specs/provable-consensus.md`, replace the closing "624 million" with 1,420M
 3. delete the four cyber sources; fix wiki-links
 4. one line on `cyber/research.md` pointing at `/soft3/foculus`
+
+---
+
+# 1c · 256 symbols — the byte is a stack law
+
+`cyber/research/256 symbols.md` is ledgered as nox because it lists 18 opcodes. that is the wrong subject. the page allocates **every value of a byte** across the whole stack: nox ISA, hemera, nebu, kuro, jali, genies, trop, state, decider, printable ASCII, UTF-8. nox owns how `axis` reduces; it does not own that `0x80` is hemera and `0x97` is trop_matmul. a byte that names five algebras is a soft3 spec.
+
+the why is energy. one byte, one meaning. 54 reclaimed C0/C1 codes (18 ISA + 36 jets) plus 40 reserved. printable text and UTF-8 lead bytes stay sacred. the 2026-03-27 journal already states the consequence of jets-as-opcodes: 400× code compression against a formula noun, O(1) array dispatch, one range-check constraint instead of formula verification. that is the stack being cheap at the encoding layer, not a nox optimisation note.
+
+live counterparts (do not copy over them):
+
+- `/soft3/nox/specs/patterns` — the 18 reductions. canonical ISA semantics
+- `/soft3/nox/specs/jets` — the 36 genesis jets, same group counts as the research table
+- `/soft3/nox/specs/encoding` — Model B **noun** layout: length-discriminated, tag-free, formula tag is an 8-byte atom 0–17. a different layer
+- `/soft3/specs/languages` — sixteen dialects over five algebras. not a byte map
+- `/soft3/specs/filenames` — NTFS path safety. not this
+
+two encodings, both true. Model B is how **data** lives (an atom is 8 bytes, a pair is 64, type from length — migration phase 3, done). 256 symbols is how a **program** is a byte stream: ISA and jets occupy the teletype's dead codes so instruction fetch is one byte while text still parses as UTF-8. the spec must name both layers or it fights `nox/specs/encoding.md` and `soft3/specs/terms.md` ("never in a tag byte inside the data").
+
+nox hygiene, not a reason to dump the article into nox: `nox/specs/vm.md` still says 12 genesis jets; `nox/docs/explanation/jets.md` still says five. living registry is 36. reconcile those to the jets README.
+
+no existing soft3 spec is this law. inventing a dump page is forbidden; writing the missing spec is the job. filename `soft3/specs/bytes.md`, alias `256 symbols`. live URL `/soft3/specs/bytes`.
+
+## file table
+
+| source (exists) | action | target | what to take | what dies |
+|---|---|---|---|---|
+| `cyber/research/256 symbols.md` | fold then die | `soft3/specs/bytes.md` (new spec) | the 256 group table; UTF-8 safety; energy thesis (one byte = one meaning; jets as opcodes, 400× vs formula noun); opcode index pointing at `/soft3/nox/specs/patterns` and `/soft3/nox/specs/jets`; the Model B / byte-stream split | the research page; ISA listed as if it were the pattern spec; jet-by-jet formulas (already in `nox/specs/jets/`); "long live the cybergraph" closer |
+| `nox/specs/vm.md` | reconcile | itself | genesis jet count = 36, matching `nox/specs/jets/README.md` | "12 genesis jets" |
+| `nox/docs/explanation/jets.md` | reconcile | itself | point at the 36-jet registry | "five jets" as present tense |
+
+`soft3/specs/languages.md` gets one sentence: the substrate's byte alphabet is `[[bytes]]`. do not grow languages.md by 900 words.
+
+## work order
+
+1. write `soft3/specs/bytes.md` as the stack alphabet (groups, UTF-8, energy, two layers). opcode rows are an index into living nox specs, not a second ISA
+2. one sentence on `soft3/specs/languages.md`; add `bytes` to the soft3 spec shelf in this document's target tree
+3. reconcile nox `vm.md` and `docs/explanation/jets.md` to 36 jets
+4. delete `cyber/research/256 symbols.md`; point `[[256 symbols]]` and the 2026-03-27 journal at `/soft3/specs/bytes`
 
 ---
 
