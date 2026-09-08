@@ -356,14 +356,14 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[epistemology|epistemology]] | 2770 | promotes → cyber/epistemology | contract family, demand measured |
 | [[identity|identity]] | 567 | promotes → cyber/identity | contract family, demand measured |
 | [[cyberank|cyberank]] | 34 | merges → rank | rank owns the alias and all 38 inbound refs |
-| [[research/algebraic state commitments|algebraic state commitments]] | 1806 | moves → bbg | component research goes home |
-| [[research/bbg|bbg]] | 1993 | moves → bbg | component research goes home |
-| [[research/data availability strategy|data availability strategy]] | 3036 | moves → bbg | component research goes home |
-| [[research/data structures for polynomial state|data structures for polynomial state]] | 1626 | moves → bbg | component research goes home |
-| [[research/polynomial nouns|polynomial nouns]] | 2877 | moves → bbg | component research goes home |
-| [[research/programmable state|programmable state]] | 1703 | moves → bbg | component research goes home |
-| [[research/state model|state model]] | 789 | moves → bbg | component research goes home |
-| [[research/storage proofs|storage proofs]] | 1390 | moves → bbg | component research goes home |
+| [[research/algebraic state commitments|algebraic state commitments]] | 1806 | folds → bbg `docs/explanation/why-polynomial-state.md` | residue only: structural vs computational completeness. NMT-as-current framing dies |
+| [[research/bbg|bbg]] | 1993 | dies after reconciling numbers into bbg `specs/state.md` + `specs/architecture.md` | duplicate of the living spec. one root, one checkpoint size |
+| [[research/data availability strategy|data availability strategy]] | 3036 | dies | NMT sampling superseded by bbg `specs/data-availability.md` and `docs/explanation/data-availability.md` |
+| [[research/data structures for polynomial state|data structures for polynomial state]] | 1626 | folds → bbg `specs/storage.md` | unique residue: scale table, shard compose, per-node storage. already linked from that spec |
+| [[research/polynomial nouns|polynomial nouns]] | 2877 | splits → cyber `particle.md`/`hash.md` + bbg `docs/explanation/data-availability.md` | identity of a particle is protocol; DAS-native particle is already in the DA explanation |
+| [[research/programmable state|programmable state]] | 1703 | open → row on bbg `roadmap/README.md` | chaosnet schema is closed. no new file. do not merge into spec |
+| [[research/state model|state model]] | 789 | folds → cyber `cybergraph.md` | protocol ontology (state = cyberlinks). not a bbg mechanism |
+| [[research/storage proofs|storage proofs]] | 1390 | folds → bbg `specs/storage.md`; closes `roadmap/storage-proofs.md` | six proofs stay; Hemera Merkle paths become Lens openings |
 | [[cli|cli]] | 35 | moves → bootloader | vehicle tooling |
 | [[congress|congress]] | 192 | moves → bootloader | the vehicle team |
 | [[research/bostrom compilation report|bostrom compilation report]] | 1523 | moves → bootloader | component research goes home |
@@ -410,6 +410,69 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/programming model|programming model]] | 11 | dies | empty / superseded |
 | [[sparks|sparks]] | 0 | dies | empty / superseded |
 | [[style|style]] | 11 | dies | empty / superseded |
+
+---
+
+# 1a · bbg absorption — refine, do not copy
+
+eight cyber research pages (march 2026) argue the NMT → polynomial transition. bbg already has that transition in `specs/` and `docs/explanation/`. copying the eight files into bbg would ship a second, older textbook next to the living one. the move is absorption: unique residue into named existing files, then delete the source.
+
+no new files. landing paths below all exist today.
+
+## the dimension law
+
+`BBG_poly(dimension, key, t)` already has time as the third axis. a `time` *dimension* that stores snapshots duplicates the axis. `signals` as a dimension of state derived from the signal log is circular — the log is primary, the checkpoint commits the fold. `files` can be fields on `particles` (the CID is already the key). `locations` can be fields on `neurons` until location proofs are a live product. `balances` as an 11th dimension is a product feature, not a law — `coins` plus private A(x)/N(x) cover value until public opt-in ledgers ship.
+
+chaosnet public dimensions: six.
+
+| # | dimension | why it is a dimension |
+|---|---|---|
+| 0 | particles | content-addressed nodes: energy, φ*, axon fields |
+| 1 | axons_out | directed walk by source |
+| 2 | axons_in | directed walk by target — second view of the same polynomial, LogUp-free |
+| 3 | neurons | focus, karma, stake |
+| 4 | coins | fungible denominations |
+| 5 | cards | named assets |
+
+private, not dimensions: A(x) commitment polynomial, N(x) nullifier polynomial.
+root: `BBG_root = H(Lens.commit(BBG_poly) ‖ Lens.commit(A) ‖ Lens.commit(N))`.
+
+the current ten in `specs/architecture.md` (and eleven in `specs/state.md`, plus thirteen NMT sub-roots in `README.md`) are the old NMT census copied into the polynomial. that is quantity, not law.
+
+roadmap (rows on existing `bbg/roadmap/README.md`, not new pages):
+
+- collapse `time`, `signals`, `files`, `locations` out of the public polynomial — they are axis, log, or fields
+- `files` as its own dimension only if DAS queries must not load the particle record
+- `locations` as its own dimension when location proofs are queried independently
+- `balances` as a seventh public dimension when plaintext opt-in balances ship
+- do not add an eleventh dimension to match `specs/state.md`
+
+prerequisite inside bbg, before any fold: one voice. `README.md` still says 13 NMT sub-roots; `specs/architecture.md` says 10 public dims; `specs/state.md` says 11. reconcile those three to the six + A/N root above. `specs/indexes.md` and `specs/statistics.md` follow.
+
+## file table
+
+every source is a real file under `cyber/research/`. every target is a real file under `bbg/` or `cyber/`.
+
+| source (cyber) | action | target (exists) | what to take | what dies |
+|---|---|---|---|---|
+| `research/algebraic state commitments.md` | fold | `bbg/docs/explanation/why-polynomial-state.md` | the completeness trade-off (NMT structural vs Lens computational) and the hybrid NMT∥poly migration | "BBG maintains 9 NMT indexes" as present tense |
+| `research/bbg.md` | die after reconcile | `bbg/specs/architecture.md`, `bbg/specs/state.md`, `bbg/docs/explanation/architecture-overview.md` | pick one checkpoint size and one verification time; write them once in `specs/state.md` | second definition of BBG; 5-tuple cyberlink; `BBG_root = Lens.commit(poly)` as a single commit |
+| `research/data availability strategy.md` | die | — | nothing. `bbg/specs/data-availability.md` and `bbg/docs/explanation/data-availability.md` already carry algebraic DAS | NMT sampling, 1 KiB paths |
+| `research/data structures for polynomial state.md` | fold | `bbg/specs/storage.md` | scale table, algebraic shard compose, per-node storage. that spec already points here | treating A/N as extra dimensions of the same table |
+| `research/polynomial nouns.md` | split | `cyber/particle.md` + `cyber/hash.md` (identity); `bbg/docs/explanation/data-availability.md` (DAS-native particle, algebraic streaming) | CID = hemera(Lens.commit ‖ domain_tag) is a protocol claim — it belongs on the particle, not in bbg research | the monolith; any NMT leftover |
+| `research/programmable state.md` | open | `bbg/roadmap/README.md` remaining-proposals table | one row: chaosnet schema is closed (six dimensions); general tables are research, not spec | merging into `specs/state.md`; inventing a new roadmap page |
+| `research/state model.md` | fold | `cyber/cybergraph.md` | state = the set of cyberlinks; graph-native transitions | account/UTXO/DeFi bridge as bbg mechanism; the file does not enter bbg |
+| `research/storage proofs.md` | fold | `bbg/specs/storage.md`; then close `bbg/roadmap/storage-proofs.md` | the six proof types. that roadmap already asks for this | Hemera Merkle challenge paths — rewrite as Lens openings to match `specs/data-availability.md` |
+
+after the folds: delete the eight sources. rewrite `cyber/research.md` as a map of what stayed and where the rest went. `[[bbg]]` in cyber remains the protocol atom (what must hold), not a second architecture essay.
+
+## work order
+
+1. reconcile bbg `README.md` · `specs/architecture.md` · `specs/state.md` · `specs/indexes.md` · `specs/statistics.md` to six public dimensions + A/N root
+2. fold residue into the named existing files (one commit per target file)
+3. delete the eight cyber sources; fix wiki-links to the targets
+4. one line on `cyber/research.md` pointing at bbg explanation/spec
+
 ---
 
 # 2 · cyb — target structure
@@ -745,7 +808,7 @@ the nation as a navigation tree: six shelves, each with a contract README.
 1. **deletions that free names** (1c + empty cyb stubs + empty cyberia stubs) — zero inbound by measurement, zero breakage
 2. **within-repo folds** — [[rank]]⊕[[cyberank]] · maps table · tech index · cyb-land → land/ · cyb root/ flattening
 3. **cyber → outward** (1b) — ~24 pages with ~40 link fixes
-4. **research redistribution** (1a) — 25 pages home; [[research]] index rewritten as the map of what stayed and where the rest went
+4. **research redistribution** (1a) — pages home by subject. bbg eight: absorb into existing spec/explanation (see §1a), do not copy. [[research]] index rewritten as the map of what stayed and where the rest went
 5. **cyb legacy fold** (2a + 2b)
 6. **cyberia boundaries** — events extraction, incoming placements
 7. **contract promotions** — *cyber/epistemology*, *cyber/identity*, *cyber/proofs* written from [[epistemology]], [[identity]], [[security]] material
