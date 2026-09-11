@@ -280,6 +280,7 @@ version = "0.1.1"
 dependencies = [
  "bbg",
  "cyber-hemera 0.3.1",
+ "cyber-nox",
  "foculus",
  "inf-eval",
  "inf-parse",
