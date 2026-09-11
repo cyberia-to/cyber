@@ -32,6 +32,9 @@ cargo build --release --locked
 ./target/release/cyber node
 ```
 
+The [delivery roadmap](roadmap/README.md) follows local cyb reliability →
+integrated Joy computation → verified network participation.
+
 This repository owns the `cyber` product binary, its configuration, and the
 protocol graph. The source build currently uses sibling soft3 component
 checkouts. [[specs/node-product|Node product]] maps the components and the
