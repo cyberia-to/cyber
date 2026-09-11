@@ -1,6 +1,6 @@
 ---
-tags: cyber, specs, claims, rewards, consensus, nodes
-crystal-type: spec
+tags: cyber, audit, claims, rewards, consensus, nodes
+crystal-type: report
 crystal-domain: cyber
 status: draft
 date: 2026-08-11

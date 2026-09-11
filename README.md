@@ -50,7 +50,7 @@ provenance in `dist/`. The existing crates.io `true-cyber` release and sibling
 `true-cyber` repository contain the earlier cell CLI with `sync` and `link`.
 The new node entry point here is version 0.8.0 and is currently unpublished.
 
-The [[specs/node-readiness|binary readiness audit]] reproduces journal data
+The [[audit/node-readiness|binary readiness audit]] reproduces journal data
 loss, duplicate JSON retries and unproved test reward issuance, and tracks
 the missing Joy/worker and network-instance integrations. Use this artifact
 for local development while those acceptance gates are completed.

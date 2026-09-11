@@ -1,7 +1,7 @@
 ---
 title: node readiness audit
-tags: cyber, specs, node, audit, soft3, joy
-crystal-type: spec
+tags: cyber, node, audit, soft3, joy
+crystal-type: report
 crystal-domain: cyber
 status: blocked
 alias: cyber binary readiness, node acceptance audit
@@ -21,12 +21,12 @@ SHA-256: `2fdfba0fb25ddbfc4cce5c80d6331850b98992146a4fa22764503a7b0bb9b217`.
 The JSON report records that checksum and rejects executable changes during
 the audit. Sibling path dependencies remain mutable; a package version alone
 does not identify this build. Source provenance is recorded in
-[the captured build manifest](../audit/node-readiness-build.json).
+[the captured build manifest](node-readiness-build.json).
 
 The [audit runner](../examples/readiness.rs) invokes the real binary and HTTP
 API in disposable homes with temporary loopback ports. It kills and waits for
 its child processes; no existing node, personal cyb store or public endpoint
-is used. [Raw observations](../audit/node-readiness.json) include responses,
+is used. [Raw observations](node-readiness.json) include responses,
 state roots, heights, exit codes and capability declarations.
 
 ```sh

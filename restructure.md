@@ -230,7 +230,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[research]] — **the papers**: what is argued, not yet law
         - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]] · **[[research/oikos|oikos]]** *(proposal: one token, one chain — the architecture; carries its own adoption map over ~/cyber and soft3)* · **[[research/spectral cell division|spectral cell division]]** *(proposal: extracted from [[cell]], deliberately unimplemented)*
     - [[specs/README|specs]] — **the engineering contracts**
-        - [[specs/component-ownership|component ownership]] · [[specs/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[specs/rewards-completeness|rewards completeness]]
+        - [[specs/component-ownership|component ownership]] · [[audit/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[audit/rewards-completeness|rewards completeness]]
     - [[self]] — **the protocol's own agency**
         - [[self/dmn|dmn]] · [[self/linking|linking]] · [[self/parametrization|parametrization]] · [[self/sigma|sigma]]
     - [[blog]] — pointer. the chronicle lives at [cyberia.blog](https://cyberia.blog)
@@ -348,9 +348,9 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[self/sigma|sigma]] | 1004 | stays · self | protocol as neuron |
 | [[specs/README|specs/README README]] | 499 | stays · specs | engineering contract |
 | [[specs/component-ownership|component-ownership]] | 635 | stays · specs | engineering contract |
-| [[specs/full-flow-claims|full-flow-claims]] | 522 | stays · specs | engineering contract |
+| [[audit/full-flow-claims|full-flow-claims]] | 522 | audit | implementation claims and validation report |
 | [[specs/node-modes|node-modes]] | 577 | stays · specs | engineering contract |
-| [[specs/rewards-completeness|rewards-completeness]] | 345 | stays · specs | engineering contract |
+| [[audit/rewards-completeness|rewards-completeness]] | 345 | audit | reward pipeline completeness report |
 | [[epistemology|epistemology]] | 2770 | promotes → cyber/epistemology | contract family, demand measured |
 | [[identity|identity]] | 567 | promotes → cyber/identity | contract family, demand measured |
 | [[cyberank|cyberank]] | 34 | merges → rank | rank owns the alias and all 38 inbound refs |
@@ -565,7 +565,8 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
     - reference — **how it works**, one page per organ where an organ exists
         - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/cells|cells]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
         - formats: [[cyb/reference/format|format]] · [[cyb/reference/cyb-registry|cyb-registry]] · [[cyb-model]] · [[cyb-vocab]] · [[cyb/parts/fs|fs]]
-        - platforms: [[cyb/reference/android|android]] · [[cyb/reference/benchmarks|benchmarks]]
+        - platforms: [[cyb/reference/android|android]]
+        - audit: [[cyb/audit/benchmarks|benchmarks]]
         - [[security audit private key import]] — incoming from cyber
     - releases — **how it ships**
         - [[cyb/releases/release-process|release-process]] · [[cyb/releases/v0.1.0|v0.1.0]]
@@ -598,7 +599,7 @@ four claims on the table, each a separate yes/no:
 | [[cyb/reference/android|android]] | 593 | stays · reference (flattens to /) | how the robot works |
 | apps → aos/apps (the city registry) | 136 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/parts/avatar|avatar]] | 28 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/reference/benchmarks|benchmarks]] | 162 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/audit/benchmarks|benchmarks]] | 162 | audit | historical build measurements |
 | [[cyb/parts/cells|cells]] | 721 | stays · reference (flattens to /) | how the robot works |
 | [[cyb-model]] | 4 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/reference/cyb-registry|cyb-registry]] | 416 | stays · reference (flattens to /) | how the robot works |
@@ -897,4 +898,3 @@ the nation as a navigation tree: six shelves, each with a contract README.
 - crystallinity ≥ 95% (was 88%) — same script, number published in each phase's commit message
 
 *plan approved → phases execute as separate commit series. finished rows leave the table.*
-

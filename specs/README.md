@@ -14,7 +14,6 @@ integration specifications for the [[cyber]] network: the product contracts that
 
 | home | role | wrong for |
 |---|---|---|
-| [[specs/node-readiness\|binary readiness audit]] | blocked | executable evidence: local path passes; reliability, admission and architecture gates remain unmet |
 | [[foculus]]/specs | consensus, structural sync, finality clocks | end-to-end money product; cyb event shapes |
 | [[tok]] | coin/card natures, PLUMB ops, conservation | tip trust, light join, sense notifications |
 | [[zheng]] | prove/verify/fold machinery | balance UX, multi-payee product rules |
@@ -39,8 +38,10 @@ join protocol detail: [[structural sync]] light client section.
 | [[specs/money-loop\|money-loop]] | draft | balance, send, receive, multi-payee reward-after-link, events, certainty grades |
 | [[specs/node-modes\|node-modes]] | draft | full node, cell, light client — storage, duties, what each must implement |
 | [[specs/light-money\|light-money]] | draft | light path for tip trust + money (fold, openings, send/receive on thin devices) |
-| [[specs/component-ownership\|component-ownership]] | draft | ownership matrix, required interfaces, acceptance tests |
-| [[specs/rewards-completeness\|rewards-completeness]] | draft | audit of reward pipeline: math vs protocol vs mint vs product |
+| [[specs/component-ownership\|component-ownership]] | draft | ownership matrix, dependency direction and change control |
+
+Implementation reports and validation evidence are indexed in
+[audit](../audit/README.md).
 
 ## scope boundaries
 
@@ -78,7 +79,8 @@ out of scope for these docs:
 | box_moves | `foculus` Signal + cybergraph bridge |
 | CLI (WP7) | `cy fund/balance/send/events/sense/finalize` |
 
-all WP0–WP7 library + CLI: see [[specs/component-ownership\|component-ownership]] status.
+WP0–WP7 library + CLI status is recorded in
+[[audit/component-implementation\|the component implementation report]].
 
 run tests:
 

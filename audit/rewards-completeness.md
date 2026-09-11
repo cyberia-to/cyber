@@ -1,6 +1,6 @@
 ---
-tags: cyber, specs, rewards, audit
-crystal-type: spec
+tags: cyber, rewards, audit
+crystal-type: report
 crystal-domain: cyber
 alias: rewards completeness, reward audit
 status: draft
