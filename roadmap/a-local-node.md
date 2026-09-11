@@ -31,6 +31,11 @@ have separate evidence. Tests preserve the existing workspace and user data.
 
 Owners: BBG storage and Cybergraph. Prerequisite: A0.
 
+Priority: P0 in BBG. The ordered component work and failure acceptance gates
+live in [BBG storage reliability](../../bbg/roadmap/storage-reliability.md).
+A1 closes only after BBG D1–D5, including native graph publication and real-node
+recovery evidence, close. This dependency blocks the reliable local-node release.
+
 - [ ] Carry I/O failures and ambiguous commit outcomes through the storage API.
   A failed flush cannot clear the only pending copy or return a durable receipt.
 - [ ] Make disk reads and scans usable after reopening through the shared

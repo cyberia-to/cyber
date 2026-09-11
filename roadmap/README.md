@@ -13,6 +13,11 @@ Deliver a reliable node to cyb, extend the same cyber binary with Joy's
 computation capabilities, then ship a verified network participant.
 The owner adopted this order on 2026-09-11: A → B → C.
 
+The first open dependency is
+[BBG P0: durable storage](../../bbg/roadmap/storage-reliability.md).
+It is BBG's highest delivery priority and blocks A1 and reliable local-node
+acceptance until the backend and end-to-end recovery gates close.
+
 | order | milestone | deliverable |
 |---|---|---|
 | A | [local node](a-local-node.md) | cyb submits an operation, receives a durable receipt, and recovers the same result after retry or restart |
@@ -59,7 +64,8 @@ dependencies. An unchecked gate stays open until its executable evidence exists.
 Success for A or B establishes that milestone's scope; C and production
 cryptography have their own acceptance criteria.
 
-Start with [A0: storage integration map](a-local-node.md#a0-storage-integration-map).
+Continue with [A1: complete the storage contract](a-local-node.md#a1-complete-the-existing-storage-contract)
+through [BBG P0](../../bbg/roadmap/storage-reliability.md).
 The existing [node audit](../audit/node-readiness.md) supplies initial failures;
 the [BBG persistence audit](../../bbg/audit/persistence.md) supplies storage findings.
 
