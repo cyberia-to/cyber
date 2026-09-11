@@ -14,6 +14,7 @@ integration specifications for the [[cyber]] network: the product contracts that
 
 | home | role | wrong for |
 |---|---|---|
+| [[specs/node-readiness\|binary readiness audit]] | blocked | executable evidence: local path passes; reliability, admission and architecture gates remain unmet |
 | [[foculus]]/specs | consensus, structural sync, finality clocks | end-to-end money product; cyb event shapes |
 | [[tok]] | coin/card natures, PLUMB ops, conservation | tip trust, light join, sense notifications |
 | [[zheng]] | prove/verify/fold machinery | balance UX, multi-payee product rules |

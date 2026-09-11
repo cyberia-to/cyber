@@ -1,0 +1,292 @@
+{
+  "binary": "/Users/master/cyber/cyber/dist/cyber",
+  "checked": 8,
+  "checked_gates_pass": false,
+  "failed": 7,
+  "gates": [
+    {
+      "gate": "embedded_joy",
+      "observed": {
+        "binary": "cyber",
+        "capabilities": {
+          "authenticated_writes": false,
+          "consensus": false,
+          "graph": true,
+          "joy_worker": false,
+          "peer_sync": false,
+          "replay": true
+        },
+        "cyb_command": "net set spacepussy-test http://127.0.0.1:64617",
+        "home": "/private/var/folders/gc/64p7ymwx60144drqltvslckr0000gn/T/.tmpYlrIpo",
+        "mode": "local-chaosnet",
+        "network": "spacepussy-test",
+        "rpc": "http://127.0.0.1:64617",
+        "schema": "cyber/connection/v1",
+        "status": "/status",
+        "submit": "/v1/link",
+        "version": "0.8.0"
+      },
+      "passed": false
+    },
+    {
+      "gate": "worker_management",
+      "observed": {
+        "exit": 2,
+        "stderr": "error: unrecognized subcommand 'worker'\n\nUsage: cyber [OPTIONS] <COMMAND>\n\nFor more information, try '--help'.\n"
+      },
+      "passed": false
+    },
+    {
+      "gate": "additional_network_configuration",
+      "observed": {
+        "exit": 1,
+        "scope": "Changing the existing network field; a full VM/OS/genesis descriptor is not implemented.",
+        "stderr": "cyber: supported config: version=1, network=spacepussy-test\n"
+      },
+      "passed": false
+    },
+    {
+      "gate": "normal_write_replay",
+      "observed": {
+        "after": {
+          "axons": "1",
+          "bbg-root": "119f29bbb363712741335b696b3dfd73386baf4618a20db01073fd6dcb6a61eb",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 1,
+          "max-degree": "1",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "2",
+          "particle": "status",
+          "particles": "2",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "1",
+          "version": "0.10.0"
+        },
+        "before": {
+          "axons": "1",
+          "bbg-root": "119f29bbb363712741335b696b3dfd73386baf4618a20db01073fd6dcb6a61eb",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 1,
+          "max-degree": "1",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "2",
+          "particle": "status",
+          "particles": "2",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "1",
+          "version": "0.10.0"
+        },
+        "receipt": {
+          "body": {
+            "height": 1,
+            "ok": true,
+            "root": "119f29bbb363712741335b696b3dfd73386baf4618a20db01073fd6dcb6a61eb",
+            "signals": 1
+          },
+          "http": 200
+        }
+      },
+      "passed": true
+    },
+    {
+      "gate": "journal_error_refuses_ack_and_mutation",
+      "observed": {
+        "fault": "directory at journal path after startup",
+        "live": {
+          "axons": "1",
+          "bbg-root": "7a66d3db3a917ca09fd6a5a7ef572d566aa2cd0db620e7a896fddf0a4437d291",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 1,
+          "max-degree": "1",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "2",
+          "particle": "status",
+          "particles": "2",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "1",
+          "version": "0.10.0"
+        },
+        "receipt": {
+          "body": {
+            "height": 1,
+            "ok": true,
+            "root": "7a66d3db3a917ca09fd6a5a7ef572d566aa2cd0db620e7a896fddf0a4437d291",
+            "signals": 1
+          },
+          "http": 200
+        },
+        "replay": {
+          "axons": "0",
+          "bbg-root": "6778e49e73d2935c3e1c397783a44a421b86f8181f51115601ea9cf0112fdfa2",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 0,
+          "max-degree": "0",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "0",
+          "particle": "status",
+          "particles": "0",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "0",
+          "version": "0.10.0"
+        },
+        "restart_ready": true
+      },
+      "passed": false
+    },
+    {
+      "gate": "truncated_journal_fails_closed",
+      "observed": {
+        "after": {
+          "axons": "0",
+          "bbg-root": "6778e49e73d2935c3e1c397783a44a421b86f8181f51115601ea9cf0112fdfa2",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 0,
+          "max-degree": "0",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "0",
+          "particle": "status",
+          "particles": "0",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "0",
+          "version": "0.10.0"
+        },
+        "before": {
+          "axons": "1",
+          "bbg-root": "2db43147413913a4acd229dbc1a61ce44b94d71848edb8812b26bfa510ae1d10",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 1,
+          "max-degree": "1",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "2",
+          "particle": "status",
+          "particles": "2",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "1",
+          "version": "0.10.0"
+        },
+        "exit": null,
+        "original_bytes": 242,
+        "restart_ready": true,
+        "truncated_bytes": 241
+      },
+      "passed": false
+    },
+    {
+      "gate": "json_relay_retry_is_idempotent",
+      "observed": {
+        "after": {
+          "axons": "1",
+          "bbg-root": "2f433bb21cb99f34fb981424bacbeab89a941e2a61c5bd4dfd9343f06d0878f6",
+          "catching-up": "false",
+          "chain": "spacepussy-test",
+          "denom": "testpussy",
+          "engine": "cybergraph+bbg",
+          "genesis": "1789129186",
+          "height": 2,
+          "max-degree": "1",
+          "moniker": "cyber-local",
+          "neurons": "0",
+          "node-count": "2",
+          "particle": "status",
+          "particles": "2",
+          "prefix": "pussy",
+          "protocol": "soft3/spacepussy-test/v2",
+          "role": "soft3 chaosnet (product default)",
+          "rpc": "https://cyb.ai/spacepussy-test",
+          "signals": "2",
+          "version": "0.10.0"
+        },
+        "first": {
+          "body": {
+            "height": 1,
+            "ok": true,
+            "root": "7ae6e7134553f47e0d60d38fd1724e337a9fb4efa782c24f90fae1b7f1cefb89",
+            "signals": 1
+          },
+          "http": 200
+        },
+        "scope": "Replay of the identical JSON body as after a lost response; bridge has no stable request identity.",
+        "second": {
+          "body": {
+            "height": 2,
+            "ok": true,
+            "root": "2f433bb21cb99f34fb981424bacbeab89a941e2a61c5bd4dfd9343f06d0878f6",
+            "signals": 2
+          },
+          "http": 200
+        }
+      },
+      "passed": false
+    },
+    {
+      "gate": "unproved_reward_rejected",
+      "observed": {
+        "issued": 1000000,
+        "receipt": {
+          "body": {
+            "height": 1,
+            "ok": true,
+            "root": "1efbd0362aa9bd7083e28bc500d0a50c2859a4455eda20d8f7a72b255984f62f",
+            "signals": 1
+          },
+          "http": 200
+        },
+        "unsigned_unproved_request_amount": 1000000
+      },
+      "passed": false
+    }
+  ],
+  "schema": "cyber/readiness-audit/v1",
+  "scope": "Selected architecture and failure probes; passing these alone does not establish production readiness.",
+  "sha256": "2fdfba0fb25ddbfc4cce5c80d6331850b98992146a4fa22764503a7b0bb9b217",
+  "unix_time": 1789129186,
+  "version": "cyber 0.8.0"
+}

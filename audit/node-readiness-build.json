@@ -1,0 +1,282 @@
+{
+  "schema": "cyber/build/v1",
+  "built_at": "Fri Sep 11 12:19:26 2026",
+  "version": "cyber 0.8.0",
+  "rustc": "rustc 1.95.0 (59807616e 2026-04-14) (Homebrew)\nbinary: rustc\ncommit-hash: 59807616e1fa2540724bfbac14d7976d7e4a3860\ncommit-date: 2026-04-14\nhost: aarch64-apple-darwin\nrelease: 1.95.0\nLLVM version: 22.1.3",
+  "sha256": "2fdfba0fb25ddbfc4cce5c80d6331850b98992146a4fa22764503a7b0bb9b217",
+  "lock_sha256": "4eaebcaeb8db43dd36177977f3020cb2254ffde9ef8dc077440441b05e9e91b3",
+  "sources": [
+    {
+      "name": "bbg",
+      "version": "0.2.1",
+      "manifest": "/Users/master/cyber/bbg/rs/Cargo.toml",
+      "revision": "450b579ac1335f2a3efb12ce56885d4f5205f3df",
+      "dirty": true,
+      "changes": " M rs/Cargo.lock\n M rs/src/storage/mod.rs\n?? rs/src/storage/application.rs\n?? rs/tests/application_storage.rs\n?? specs/application-storage.md\n"
+    },
+    {
+      "name": "cyber-hemera",
+      "version": "0.3.1",
+      "manifest": "/Users/master/cyber/hemera/rs/Cargo.toml",
+      "revision": "f0747954a40d61094796c0c5d8f6a06ab21a7cf0",
+      "dirty": true,
+      "changes": " M README.md\n?? .claude/plans/production-finalization.md\n?? audit/\n?? research/rational-search-factor-all-results.json\n?? research/rational-search-results.json\n?? research/rational_search.py\n?? research/solver-campaign-results.json\n?? research/solver_campaign.py\n"
+    },
+    {
+      "name": "cyber-lens",
+      "version": "0.1.3",
+      "manifest": "/Users/master/cyber/lens/src/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-lens-assayer",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/lens/assayer/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-lens-binius",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/lens/binius/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-lens-brakedown",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/lens/brakedown/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-lens-core",
+      "version": "0.1.2",
+      "manifest": "/Users/master/cyber/lens/core/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-lens-ikat",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/lens/ikat/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-lens-porphyry",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/lens/porphyry/Cargo.toml",
+      "revision": "9b134c4cc90c051bc3bafb330e1f7a7db9be9a98",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-nox",
+      "version": "0.2.0",
+      "manifest": "/Users/master/cyber/nox/rs/Cargo.toml",
+      "revision": "2612673cae64239cb3511b13027d9ffaba77f48e",
+      "dirty": true,
+      "changes": " M Cargo.lock\n"
+    },
+    {
+      "name": "cyber-tape",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/tape/impl/rust/Cargo.toml",
+      "revision": "a9e26cb5bbd597a7f96c3bfc1400c7f4575f5635",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-tok",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/tok/rs/Cargo.toml",
+      "revision": "118058fee410e6417491b20fb56c92a37b8cfce9",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "cyber-tru",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/tru/rs/Cargo.toml",
+      "revision": "34f2f390917af48b10eb9e57210fcd76b636d55b",
+      "dirty": true,
+      "changes": "?? rs/examples/eval_pussy.rs\n"
+    },
+    {
+      "name": "cybergraph",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/cybergraph/Cargo.toml",
+      "revision": "aa374ced57eed6bbf42de0b77d29b4c5412fd30d",
+      "dirty": true,
+      "changes": " M Cargo.lock\n M Cargo.toml\n M src/lib.rs\n?? specs/applications.md\n?? src/application.rs\n?? src/content.rs\n"
+    },
+    {
+      "name": "foculus",
+      "version": "0.1.3",
+      "manifest": "/Users/master/cyber/foculus/Cargo.toml",
+      "revision": "177fad4c614a8e002aac28c9ca2a8196ce69b6cb",
+      "dirty": true,
+      "changes": " M Cargo.lock\n"
+    },
+    {
+      "name": "inf-ast",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/ast/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "inf-eval",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/eval/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "inf-lex",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/lex/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "inf-parse",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/parse/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "inf-plan",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/plan/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "inf-source",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/source/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "inf-value",
+      "version": "0.1.0",
+      "manifest": "/Users/master/cyber/inf/rs/value/Cargo.toml",
+      "revision": "b0e4506eb7fc254d724f8d619cafbada6cc8663d",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "soft3",
+      "version": "0.10.0",
+      "manifest": "/Users/master/cyber/soft3/crate/Cargo.toml",
+      "revision": "c03deab4841e98232e8177551f208e439084a8ab",
+      "dirty": true,
+      "changes": " M crate/Cargo.lock\n"
+    },
+    {
+      "name": "strata-compute",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/compute/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-core",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/core/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-ext",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/ext/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-genies",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/genies/rs/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-jali",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/jali/rs/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-kuro",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/kuro/rs/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-nebu",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/nebu/rs/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-proof",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/proof/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "strata-trop",
+      "version": "0.1.1",
+      "manifest": "/Users/master/cyber/strata/trop/rs/Cargo.toml",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e",
+      "dirty": false,
+      "changes": ""
+    },
+    {
+      "name": "true-cyber",
+      "version": "0.8.0",
+      "manifest": "/Users/master/cyber/cyber/Cargo.toml",
+      "revision": "ae35b0523a59253c649ad036cf27c5d7935c077d",
+      "dirty": true,
+      "changes": " M Cargo.lock\n?? examples/\n"
+    },
+    {
+      "name": "zheng",
+      "version": "0.3.3",
+      "manifest": "/Users/master/cyber/zheng/rs/Cargo.toml",
+      "revision": "2243a04f8f61b198c73190be76e7a58081094df3",
+      "dirty": true,
+      "changes": " M CLAUDE.md\n M Cargo.lock\n"
+    }
+  ]
+}

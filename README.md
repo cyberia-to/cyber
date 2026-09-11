@@ -50,6 +50,11 @@ provenance in `dist/`. The existing crates.io `true-cyber` release and sibling
 `true-cyber` repository contain the earlier cell CLI with `sync` and `link`.
 The new node entry point here is version 0.8.0 and is currently unpublished.
 
+The [[specs/node-readiness|binary readiness audit]] reproduces journal data
+loss, duplicate JSON retries and unproved test reward issuance, and tracks
+the missing Joy/worker and network-instance integrations. Use this artifact
+for local development while those acceptance gates are completed.
+
 and the robot: [[cyb]] — one binary that carries the graph, a terminal, and a local mind on macOS and Android; it paints the [[cybergraph]] at 100+ fps and answers from a model running on your own silicon. get it at [cyb.ai](https://cyb.ai)
 
 cyb's default public network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). the local node above serves its own state at loopback. tokens and state are test. mainnet arrives at [[launch]]
