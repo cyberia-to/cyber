@@ -12,11 +12,18 @@ Owner: cyber. Backend CLI specification: `joy/specs/cli.md` in the sibling
 joy repository. This is a proposed logical contract v1; neither a deployed
 worker service nor a frozen network wire encoding is claimed.
 
+This specializes the [soft3 warrior/worker/network foundation](../../soft3/specs/warriors.md)
+for Cyber jobs. Soft3 owns the common architecture; this document owns Cyber
+scheduling and admission rules. Network-instance count has no architectural
+limit; each configured instance must satisfy the supported VM/OS/proof profile.
+
 ## authority boundary
 
 Cyber owns scheduling, trusted state, admission policy and reward decisions.
-Joy executes a supplied program and produces or verifies a computation
-artifact. A warrior is the role running a backend such as Joy.
+Joy is a warrior implementation for the nox target family. A worker is a
+running instance of its capabilities using a selected backend. It executes
+a supplied program and produces or verifies a computation artifact. Multiple
+workers and compatible network instances reuse the same warrior implementation.
 
 Worker results are untrusted inputs to cyber. Cyber MUST verify artifacts
 against its own saved job expectations before accepting results. A worker's

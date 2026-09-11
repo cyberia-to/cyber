@@ -11,6 +11,10 @@ alias: node product, cyber binary
 CLI contract: [[specs/cli]]. Computation job contract: [[specs/worker]].
 Joy's developer CLI is specified in `joy/specs/cli.md` in the sibling repo.
 
+The shared architecture is defined by [soft3's warrior/worker/network
+foundation](../../soft3/specs/warriors.md). A warrior implements a VM/OS
+family; workers instantiate it for an open-ended set of compatible networks.
+
 Cyber is the network product assembled from [[soft3]]. This repository owns
 the executable entry point, configuration, product contracts, release
 artifacts, and the explanatory graph. Component repositories own algorithms.
@@ -30,9 +34,9 @@ soft3 — stack assembly and developer interfaces
   ├─ foculus / tru — finality and graph computation libraries
   └─ nox / zheng / hemera / strata — execution, proofs, primitives
 
-warrior — execution/proving role
-  └─ joy — nox backend implementing Trident runtime traits
-       └─ nox + zheng
+joy — warrior implementation for the nox target family
+  └─ workers — embedded, isolated or remote instances
+       └─ selected backend — nox execution + zheng proving/verification
 ```
 
 The bottom branch describes a component boundary to integrate. The current
@@ -48,8 +52,9 @@ proof verification on every accepted transaction.
 | soft3 | reusable stack assembly, SDKs, developer tooling | engine dependency |
 | cybergraph | graph transitions and signal chains | one implementation reused by node and cell |
 | cyb | personal state, secrets, interface, client lifecycle | consumes node HTTP; keeps its local cell |
-| warrior | execution/proving role | a role with a backend and resource budget |
-| joy | Trident Runner/Prover/Verifier implementation for nox | backend for the warrior role |
+| warrior | reusable VM/OS target implementation | supports many compatible network instances |
+| joy | nox warrior integrating Trident, nox and Zheng | planned embedded node library; standalone developer CLI |
+| worker | running instance of warrior capabilities | selected backend, placement and resource budget |
 | warriors | catalogue of proving/mining implementations | discovery and documentation |
 | cybernode | server deployment and operations | hosts selected products and bootloader chains |
 | true-cyber sibling | earlier standalone cell CLI | migration source for sync/link commands |
@@ -64,10 +69,11 @@ disabled in the product binary. Runtime assembly should point from cyber to
 components; cyb consumes the node contract. The GUI belongs in its own
 process and release, with keys remaining in its personal cell.
 
-The soft3 README, its CLAUDE instructions, and `crate/` disagree on whether
-soft3 is only an SDK or the stack assembly. This product uses the existing
-assembly library and leaves component algorithms in their owners. A later
-extraction of its HTTP host must preserve [[specs/cyb-node]].
+Soft3 owns foundational composition contracts and developer interfaces.
+This product uses its existing assembly library and leaves component
+algorithms in their owners. A later extraction of its HTTP host must preserve
+[[specs/cyb-node]]. The product design embeds Joy in the cyber binary;
+separate worker processes remain an optional placement choice.
 
 ## current executable
 

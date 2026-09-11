@@ -20,7 +20,9 @@ commands. MUST, SHOULD and MAY express implementation requirements.
 
 `cyber` owns node configuration, storage lifecycle, network participation,
 job scheduling and acceptance of results into network state. It composes
-soft3 libraries. Joy owns execution and proving through a worker backend.
+soft3 libraries. Joy provides warrior capabilities through a selected backend;
+workers are running instances, following the
+[soft3 foundation](../../soft3/specs/warriors.md).
 User keys and private personal state remain with the cyb cell.
 
 ## implemented baseline
