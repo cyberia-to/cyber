@@ -1,19 +1,20 @@
-.PHONY: build serve check clean
-
-ROOT    := $(shell pwd)
-PUBLISHER := render
+.PHONY: build site serve check test release
 
 build:
-	cd $(PUBLISHER) && cargo run --release -- build $(ROOT)
+	cargo build --release --locked
+
+site:
+	nu scripts/build.nu
 
 serve:
-	cd $(PUBLISHER) && cargo run -- serve $(ROOT)
+	nu scripts/serve.nu
 
 check:
-	cd $(PUBLISHER) && cargo run -- check $(ROOT)
+	cargo fmt --check
+	cargo check --locked
 
 test:
-	cd $(PUBLISHER) && cargo test
+	cargo test --locked
 
-clean:
-	rm -rf build
+release:
+	nu scripts/release.nu

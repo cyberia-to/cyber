@@ -12,7 +12,11 @@
   `docs:`, `test:`, `chore:`.
 ## Knowledge Graph Purpose
 
-This is the seed knowledge base for planetary superintelligence. Pages
+This repository owns the cyber product binary and the seed knowledge base
+for planetary superintelligence. `src/` contains product orchestration;
+component algorithms remain in sibling repositories. `Cargo.toml` consumes
+the soft3 assembly library. `specs/node-product.md` and `specs/cyb-node.md`
+describe the current runtime boundary and integration contract. Pages
 are pure markdown with YAML frontmatter. The publisher is
 [optica](https://github.com/cyberia-to/optica) — a standalone knowledge
 graph publisher.
@@ -35,6 +39,13 @@ publisher.
 Namespaced pages live in directories: `root/bostrom/infrastructure/servers.md`
 
 ## Building cyber
+
+Binary: `cargo build --release --locked`. Tests: `cargo test --locked`.
+Configuration: `./target/release/cyber init`; server:
+`./target/release/cyber node`. `nu scripts/release.nu` builds a local
+artifact and records sibling-source provenance in `dist/`.
+
+The protocol site has a separate build:
 
 this repo is the protocol. [cyber.page](https://cyber.page) publishes
 these pages alone. the chronicle, the subgraph census, and the full

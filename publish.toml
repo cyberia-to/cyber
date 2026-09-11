@@ -4,7 +4,7 @@
 # crystal-domain: cyber
 # ---
 # cyber-publish configuration
-# See render/README.md for documentation.
+# Published by the standalone optica tool.
 
 [site]
 title = "Cyber"

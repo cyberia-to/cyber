@@ -10,6 +10,12 @@ status: draft
 
 who implements what for the cyber money loop + light client. integration contracts live in [[cyber]]/specs; algorithms live in component repos.
 
+The executable composition and current runtime capability boundary live in
+[[specs/node-product]]. Local cyb integration is specified in
+[[specs/cyb-node]]. The library work-package statuses below describe
+component implementations; end-to-end node delivery is tracked separately
+in those product contracts.
+
 ---
 
 ## 1. ownership matrix

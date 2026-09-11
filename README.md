@@ -26,13 +26,33 @@ Type II asks more. worlds are light-minutes apart. any [[consensus]] that waits 
 two doors in. the terminal:
 
 ```bash
-cargo install true-cyber
-cyber sync
+cd ~/cyber/cyber
+cargo build --release --locked
+./target/release/cyber init
+./target/release/cyber node
 ```
+
+This repository owns the `cyber` product binary, its configuration, and the
+protocol graph. The source build currently uses sibling soft3 component
+checkouts. [[specs/node-product|Node product]] maps the components and the
+current implementation boundary. [[specs/cyb-node|Cyb node connection]]
+describes the local HTTP contract and launch commands.
+
+In another terminal, `./target/release/cyber status --json` reads the running
+node and `./target/release/cyber cyb` prints its connection descriptor.
+In cyb's commander, `net set spacepussy-test http://127.0.0.1:7780` connects
+the default network entry to this node. This starts an independent local
+chaosnet state; public network replication and validator consensus remain
+integration work.
+
+`nu scripts/release.nu` produces a host binary, checksum, and dependency
+provenance in `dist/`. The existing crates.io `true-cyber` release and sibling
+`true-cyber` repository contain the earlier cell CLI with `sync` and `link`.
+The new node entry point here is version 0.8.0 and is currently unpublished.
 
 and the robot: [[cyb]] — one binary that carries the graph, a terminal, and a local mind on macOS and Android; it paints the [[cybergraph]] at 100+ fps and answers from a model running on your own silicon. get it at [cyb.ai](https://cyb.ai)
 
-default network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). tokens and state are test. mainnet arrives at [[launch]]
+cyb's default public network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). the local node above serves its own state at loopback. tokens and state are test. mainnet arrives at [[launch]]
 
 [[litepaper]] · [[whitepaper]] · [[cyb]] · [[cyber/$CYB|$CYB]]
 
