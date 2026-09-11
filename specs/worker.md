@@ -12,7 +12,7 @@ Owner: cyber. Backend CLI specification: `joy/specs/cli.md` in the sibling
 joy repository. This is a proposed logical contract v1; neither a deployed
 worker service nor a frozen network wire encoding is claimed.
 
-This specializes the [soft3 warrior/worker/network foundation](../../soft3/specs/warriors.md)
+This specializes the [soft3 execution model](../../soft3/specs/execution-model.md)
 for Cyber jobs. Soft3 owns the common architecture; this document owns Cyber
 scheduling and admission rules. Network-instance count has no architectural
 limit; each configured instance must satisfy the supported VM/OS/proof profile.

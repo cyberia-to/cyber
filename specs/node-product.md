@@ -11,8 +11,8 @@ alias: node product, cyber binary
 CLI contract: [[specs/cli]]. Computation job contract: [[specs/worker]].
 Joy's developer CLI is specified in `joy/specs/cli.md` in the sibling repo.
 
-The shared architecture is defined by [soft3's warrior/worker/network
-foundation](../../soft3/specs/warriors.md). A warrior implements a VM/OS
+The shared architecture is defined by the [soft3 execution model](../../soft3/specs/execution-model.md).
+A warrior implements a VM/OS
 family; workers instantiate it for an open-ended set of compatible networks.
 
 Cyber is the network product assembled from [[soft3]]. This repository owns

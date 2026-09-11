@@ -22,7 +22,7 @@ commands. MUST, SHOULD and MAY express implementation requirements.
 job scheduling and acceptance of results into network state. It composes
 soft3 libraries. Joy provides warrior capabilities through a selected backend;
 workers are running instances, following the
-[soft3 foundation](../../soft3/specs/warriors.md).
+[soft3 execution model](../../soft3/specs/execution-model.md).
 User keys and private personal state remain with the cyb cell.
 
 ## implemented baseline
