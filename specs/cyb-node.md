@@ -8,6 +8,10 @@ alias: cyb node connection
 
 # cyb node connection
 
+The product command specification is [[specs/cli]]; [[specs/worker]] covers
+the future execution/proving backend. This page describes current HTTP
+behavior independently of those target extensions.
+
 The host executable is `cyber`. Cyb connects to its HTTP endpoint and keeps
 its personal cell, identity, and UI state in the cyb home.
 

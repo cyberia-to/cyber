@@ -31,6 +31,10 @@ join protocol detail: [[structural sync]] light client section.
 
 | doc | status | what it specifies |
 |---|---|---|
+| [[specs/cli\|cyber CLI]] | draft | implemented 0.8.0 baseline and target commands, output, lifecycle |
+| [[specs/worker\|worker contract]] | draft | cyber/joy responsibilities, jobs, proof binding, cancellation and acceptance |
+| [[specs/node-product\|node product]] | implementation | executable composition and current runtime boundary |
+| [[specs/cyb-node\|cyb node connection]] | implementation | current launcher and HTTP contract |
 | [[specs/money-loop\|money-loop]] | draft | balance, send, receive, multi-payee reward-after-link, events, certainty grades |
 | [[specs/node-modes\|node-modes]] | draft | full node, cell, light client — storage, duties, what each must implement |
 | [[specs/light-money\|light-money]] | draft | light path for tip trust + money (fold, openings, send/receive on thin devices) |

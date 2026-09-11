@@ -8,6 +8,9 @@ alias: node product, cyber binary
 
 # node product
 
+CLI contract: [[specs/cli]]. Computation job contract: [[specs/worker]].
+Joy's developer CLI is specified in `joy/specs/cli.md` in the sibling repo.
+
 Cyber is the network product assembled from [[soft3]]. This repository owns
 the executable entry point, configuration, product contracts, release
 artifacts, and the explanatory graph. Component repositories own algorithms.
