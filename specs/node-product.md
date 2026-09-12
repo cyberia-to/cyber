@@ -78,11 +78,18 @@ separate worker processes remain an optional placement choice.
 ## current executable
 
 `cyber init` creates `config.toml` once; `cyber config` displays it.
-`cyber node` opens the graph, replays its log, and serves the existing
-soft3 HTTP surface. An OS file lock excludes a second cyber process using
-the same home and releases when the process exits. The older soft3 server
-does not participate in this lock; give each independently run server a
-separate home.
+`cyber node` opens the shared BBG SSD database, checks its genesis, replays
+contiguous native history and compares exact persisted state before serving
+HTTP. The physical database lock also excludes another Soft3 process using
+that store. Cyber holds an additional home lock for lifecycle operations.
+Both locks release when the process exits.
+
+Cybergraph coordinates one durable transaction for graph changes, economics,
+history, block observations and the original request receipt. Explicit request
+IDs support retry after a lost response or restart. Existing development logs
+require `cyber storage import-legacy`; the source is retained and checked.
+The [native storage contract](../../cybergraph/specs/native-storage.md) owns
+acceptance, rollback, import and recovery semantics.
 
 `cyber status` validates the returned cybermark document and reads the
 current state. `cyber cyb` emits a versioned JSON connection descriptor.
@@ -105,8 +112,9 @@ separate validation step.
 
 Before a public node release, complete these work packages in order:
 
-1. Durable acceptance: propagate journal errors, sync before success,
-   reject corrupt/truncated replay, and test crash recovery.
+1. Durable acceptance: the local RAM/Fjall profile commits before success and
+   validates recovery. Extend its process-crash evidence with disk-full and
+   physical power-loss qualification and the archival tier.
 2. Authenticated admission: preserve signed native signals end to end,
    verify proof-bound rewards, enforce resource limits and idempotent retry.
 3. Network lifecycle: join/checkpoint verification, peer replication,
@@ -116,10 +124,10 @@ Before a public node release, complete these work packages in order:
 5. Distribution: immutable component revisions, compatible primitive/wire
    versions, clean-checkout builds, CI artifacts, and platform release tests.
 
-Existing engine risks are concrete: `append_frame` ignores I/O errors;
-`open_store` skips rejected signals; the JSON bridge creates `proof: None`;
-checkpoint rewards derive from labelled edges and amount. Loopback enables
-local development while these paths are hardened.
+The JSON bridge creates unsigned signals; test subsidies derive from labelled
+edges and amount. Full native proof bytes are retained, while proof-bound
+admission and verified rewards remain a separate integration. Loopback enables
+local development with these explicit capabilities.
 
 Current source builds resolve sibling path dependencies, including local
 component changes. Cargo.lock pins registry packages, while `dist/build.json`

@@ -53,10 +53,12 @@ provenance in `dist/`. The existing crates.io `true-cyber` release and sibling
 `true-cyber` repository contain the earlier cell CLI with `sync` and `link`.
 The new node entry point here is version 0.8.0 and is currently unpublished.
 
-The [[audit/node-readiness|binary readiness audit]] reproduces journal data
-loss, duplicate JSON retries and unproved test reward issuance, and tracks
-the missing Joy/worker and network-instance integrations. Use this artifact
-for local development while those acceptance gates are completed.
+The [native acceptance audit](audit/native-acceptance.md) records shared BBG
+commits, strict recovery and original receipts after a lost response and
+process termination. Existing homes migrate with `cyber storage import-legacy`.
+The [[audit/node-readiness|earlier readiness audit]] records the starting
+failures. Authenticated rewards, Joy workers and network participation remain
+separate release gates; this artifact serves local development.
 
 and the robot: [[cyb]] — one binary that carries the graph, a terminal, and a local mind on macOS and Android; it paints the [[cybergraph]] at 100+ fps and answers from a model running on your own silicon. get it at [cyb.ai](https://cyb.ai)
 

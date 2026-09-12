@@ -36,9 +36,9 @@ live in [BBG storage reliability](../../bbg/roadmap/storage-reliability.md).
 A1 closes only after BBG D1–D5, including native graph publication and real-node
 recovery evidence, close. This dependency blocks the reliable local-node release.
 
-- [ ] Carry I/O failures and ambiguous commit outcomes through the storage API.
+- [x] Carry I/O failures and ambiguous commit outcomes through the storage API.
   A failed flush cannot clear the only pending copy or return a durable receipt.
-- [ ] Make disk reads and scans usable after reopening through the shared
+- [x] Make disk reads and scans usable after reopening through the shared
   interface, with bounded reads and malformed-data errors.
 - [ ] Preserve hot mutations across warm commits, retain the last copy during
   eviction, and define explicit archive population and commit boundaries.
@@ -46,12 +46,12 @@ recovery evidence, close. This dependency blocks the reliable local-node release
   HOT/WARM mutation and last-copy eviction repairs are recorded in the
   [BBG persistence audit](../../bbg/audit/persistence.md). Archive population
   and error-returning commit boundaries remain in this package.
-- [ ] Couple accepted native signal bytes, chain position, derived state/head
+- [x] Couple accepted native signal bytes, chain position, derived state/head
   and request receipt through a BBG-owned atomic boundary exposed by Cybergraph.
-- [ ] Reuse application storage for local application records. Specify how
+- [x] Reuse application storage for local application records. Specify how
   native network publication joins that boundary; preserve the distinction
   between application heads and neuron SignalChain positions.
-- [ ] Replace the Soft3 host's independent journal ownership with this path;
+- [x] Replace the Soft3 host's independent journal ownership with this path;
   provide explicit import/recovery for existing development homes.
 
 Exit: new-process restart restores identical accepted operations and state;
@@ -60,6 +60,11 @@ concurrent writers have defined outcomes. Recovery preserves the last accepted
 history. Add process-crash tests, then an explicit disk-barrier/power-loss matrix.
 Root recomputation checks state correctness independently of storage receipts.
 
+The local RAM/Fjall implementation and real-binary recovery tests are recorded
+in [native acceptance](../audit/native-acceptance.md). A1 remains open for
+archive movement and the remaining D5 disk/power-loss qualification. Those
+gates do not silently expand the local artifact's capabilities.
+
 ## A2: authenticated cyb submission and stable retry
 
 Owners: Cybergraph, Cyber, cyb; BBG supplies atomic persistence.
@@ -67,7 +72,7 @@ Prerequisite: A1 and versioned network/domain identity.
 
 - [ ] Carry the caller's signed native signal end to end, including every link
   in the signal, canonical encoding, origin and authorization context.
-- [ ] Bind a stable request identity to the exact payload and network domain.
+- [x] Bind a stable request identity to the exact payload and network domain.
   Equal retries return the original receipt; changed payloads conflict.
 - [ ] Validate identity, sequence, byte/count bounds and required proofs before
   mutation. Enforce reward policy at the receiving node.
@@ -75,6 +80,11 @@ Prerequisite: A1 and versioned network/domain identity.
   submission, with network-scoped cursors and recovery from a lost reply.
 - [ ] Give the unsigned development bridge an explicit capability boundary;
   reward-bearing acceptance requires its actual verification policy.
+
+Native storage now binds the pinned local instance and full command bytes;
+JSON and native requests share the same receipt/commit path. Cyb's current
+relay still submits individual JSON links without a retained request ID, so
+the actual GUI retry and multi-link cursor work above remains required.
 
 Exit: altered signatures, domains, sequences and reward evidence are rejected;
 a multi-link signal is applied atomically; disconnect/retry/restart gives one
@@ -121,5 +131,10 @@ Owner: Cyber. Prerequisites: A1–A4 and the applicable distribution gates.
 
 Exit: an independent clean setup can install and use the supported local cyb
 scenario. Continue with [B](b-computation.md).
+
+The [native acceptance artifact](../audit/native-acceptance.md) is built and
+tested on macOS arm64, including release-binary failure probes. Its working
+source closure contains recorded concurrent component changes. Clean-checkout
+distribution and actual GUI acceptance remain open above.
 
 discover all [[concepts]]
