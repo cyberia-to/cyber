@@ -42,6 +42,10 @@ acceptance until the backend and end-to-end recovery gates close.
   warrior identity. Finite resource limits are explicit.
 - Workers produce results; the node verifies expected statements and owns
   admission, finality and reward decisions.
+- Verifiable private retrieval is a standard read-service capability, hosted
+  by the node or delegated to compatible infrastructure. Cybergraph/Inf define
+  complete evaluation over authenticated state; Mudra supplies privacy
+  operations. Delivery is tracked in [C2.1](c-network.md#c21-verifiable-private-retrieval).
 
 The [execution model](../../soft3/specs/execution-model.md) owns these invariants.
 Product contracts are indexed in [specs](../specs/README.md).

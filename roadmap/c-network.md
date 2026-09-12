@@ -37,6 +37,39 @@ Owners: Cybergraph, Foculus, BBG/Lens and transport owners; Cyber orchestrates.
 Exit: independent nodes converge from different starting states; forged, missing,
 reordered and conflicting data cannot produce a verified-ready node.
 
+## C2.1: verifiable private retrieval
+
+Owners: Cybergraph/Inf query semantics, BBG/Lens authenticated domains,
+Mudra privacy profiles, Zheng execution proofs; Cyber hosts or delegates workers.
+Prerequisites: durable recovery state from A, the required authenticated proof
+profile from B2, and C2's canonical snapshot/history verification.
+
+The owner selected private recovery as a standard node or adjacent-provider
+capability on 2026-09-12. The
+[Cybergraph design note](../../cybergraph/docs/private-retrieval.md) owns the
+composition and links the originating UnifOMR research.
+
+- [ ] Define the committed notification view, clue/payload binding, history
+  ranges and versioned encrypted query/response profile. Reuse Inf's complete
+  query contract and the existing worker execution boundary.
+- [ ] Prove detection over the whole requested domain and PIR answers from the
+  same authenticated board, including derived indexes/preprocessing. Bind the
+  expected root, scope, program, keys/query and exact encrypted response.
+- [ ] Expose capabilities, available history, cost/limits and configured local
+  or remote providers. Keep recipient decryption local and define the combined
+  protocol's disclosure, padding, error and overflow behavior.
+- [ ] Compose recovered notes with verified inclusion, spent status and current
+  witnesses. Persist verified results and complete-range cursors atomically;
+  handle restart, partial responses, missing history and reorg rollback.
+- [ ] Compare full restore and warm sync against a complete local scan. Reject
+  omitted rows, gaps, wrong roots/counts, substituted queries and false empty
+  responses. Measure proving, bandwidth, bootstrap and client-verification costs.
+
+Exit: a fresh client verifies recovery over its declared history/key scope and
+reaches the reference wallet state within the selected failure budget. Local and
+remote workers obey the same statement; partial or unavailable history remains
+explicit until the complete-recovery conditions are satisfied.
+
 ## C3: finality, rewards and node modes
 
 Owners: Foculus/Tru, Cybergraph, Zheng/Lens and Cyber.
