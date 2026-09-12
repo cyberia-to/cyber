@@ -384,9 +384,6 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/gflownet focus flow|gflownet focus flow]] | 1766 | moves → tru | component research goes home |
 | [[research/spectral gap from convergence|spectral gap from convergence]] | 1229 | moves → tru | component research goes home |
 | [[research/tri-kernel architecture|tri-kernel architecture]] | 1943 | moves → tru | component research goes home |
-| [[research/polynomial proof system|polynomial proof system]] | 1862 | moves → zheng | component research goes home |
-| [[research/recursive brakedown|recursive brakedown]] | 1949 | moves → zheng | component research goes home |
-| [[research/zheng vs starks|zheng vs starks]] | 14 | moves → zheng | component research goes home |
 ---
 
 # 1a · bbg absorption — refine, do not copy
