@@ -387,9 +387,9 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[research/polynomial proof system|polynomial proof system]] | 1862 | moves → zheng | component research goes home |
 | [[research/recursive brakedown|recursive brakedown]] | 1949 | moves → zheng | component research goes home |
 | [[research/zheng vs starks|zheng vs starks]] | 14 | moves → zheng | component research goes home |
-| [[research/programming model|programming model]] | 11 | dies | empty / superseded |
-| [[sparks|sparks]] | 0 | dies | empty / superseded |
-| [[style|style]] | 11 | dies | empty / superseded |
+| programming model | 11 | **deleted 2026-09-12** | dead pointer to a nonexistent canonical spec, 0 real inbound |
+| sparks | 0 | **deleted 2026-09-12** | empty; sole reference was in an already-flagged decide/ page |
+| style | 11 | **deleted 2026-09-12** | only inbound "link" was a BIP-39 wordlist bracketing every word — coincidence, not a reference |
 ---
 
 # 1a · bbg absorption — refine, do not copy
