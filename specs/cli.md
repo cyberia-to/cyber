@@ -33,6 +33,7 @@ cyber [--home PATH] node
 cyber [--home PATH] status [--json]
 cyber [--home PATH] config
 cyber [--home PATH] cyb
+cyber [--home PATH] storage import-legacy
 cyber --help
 cyber --version
 ```
@@ -46,7 +47,8 @@ exit code 2; help/version succeed with 0; application errors use 1.
 | command | behavior | stdout |
 |---|---|---|
 | init | validate and exclusively create config; preserve existing files | config path |
-| node | hold home lock, replay log, serve until process termination | no command result |
+| node | hold home lock, validate durable state and genesis, serve until process termination | no command result |
+| storage import-legacy | hold home lock, strictly import home/log into fresh home/bbg, preserve source | JSON import receipt |
 | status | GET configured /status with five-second timeout; validate document | cybermark, or JSON with --json |
 | config | load and validate config without contacting the node | effective TOML |
 | cyb | describe configuration without contacting the node | cyber/connection/v1 JSON |
@@ -70,6 +72,13 @@ contain non-whitespace content and no control characters. `init` creates
 parent directories and refuses to overwrite config. Other files already
 in the home remain intact. A fresh home starts independent local state.
 
+The database lives in `bbg/`. An existing `log` requires the explicit
+`storage import-legacy` command, using the existing `genesis.json`. Import
+preserves the source and rejects malformed or inconsistent events. Normal
+startup checks the imported source marker, pinned genesis and restored roots.
+Source logs are bounded at 64 MiB by this command. Invalid or incomplete
+destinations fail closed; source files remain available for diagnosis.
+
 Current `status --json` emits the cybermark field map: `height` is a JSON
 number; other values, including counters and `catching-up`, remain strings.
 This existing shape and `cyber/connection/v1` MUST remain compatible until
@@ -77,7 +86,7 @@ explicitly superseded. They are distinct from the target envelope below.
 
 The earlier sibling `true-cyber` CLI's `sync` and `link` commands have not
 been migrated. `soft3 node` remains a developer entry point to the shared
-engine. Its home lock is independent; a home must have one engine owner.
+engine. Both entry points share the database's exclusive owner lock.
 
 ## target command surface
 

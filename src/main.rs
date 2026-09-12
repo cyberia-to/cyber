@@ -34,6 +34,17 @@ enum Command {
     Config,
     /// Print the connection descriptor consumed by launchers and cyb.
     Cyb,
+    /// Explicit storage lifecycle operations.
+    Storage {
+        #[command(subcommand)]
+        command: StorageCommand,
+    },
+}
+
+#[derive(Subcommand)]
+enum StorageCommand {
+    /// Strictly import home/log into fresh home/bbg, preserving legacy files.
+    ImportLegacy,
 }
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -100,15 +111,23 @@ fn run(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
     match cli.command {
         Command::Node => {
             // Hold the OS lock for the entire server lifetime. It releases on crash too.
-            let lock = fs::OpenOptions::new()
-                .read(true)
-                .write(true)
-                .create(true)
-                .truncate(false)
-                .open(home.join("node.lock"))?;
-            lock.try_lock_exclusive()
-                .map_err(|e| format!("node home already in use or cannot be locked: {e}"))?;
+            let _lock = lock_home(&home)?;
             soft3::node::run(home, &config.bind.to_string(), &config.moniker)?;
+        }
+        Command::Storage {
+            command: StorageCommand::ImportLegacy,
+        } => {
+            let _lock = lock_home(&home)?;
+            let report = soft3::node::import_legacy(&home)?;
+            let hex = |bytes: &[u8]| bytes.iter().map(|b| format!("{b:02x}")).collect::<String>();
+            println!(
+                "{}",
+                serde_json::json!({
+                    "schema": "cyber/storage-import/v1", "ok": true,
+                    "events": report.events, "signals": report.signals, "height": report.height,
+                    "root": hex(&report.root), "source": hex(&report.source),
+                })
+            );
         }
         Command::Config => print!("{}", toml::to_string_pretty(&config)?),
         Command::Cyb => println!(
@@ -124,7 +143,8 @@ fn run(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
                 "status": "/status",
                 "submit": "/v1/link",
                 "cyb_command": format!("net set spacepussy-test {}", config.rpc()),
-                "capabilities": {"graph": true, "replay": true, "peer_sync": false,
+                "capabilities": {"graph": true, "replay": true, "durable_acceptance": true,
+                    "request_retry": true, "peer_sync": false,
                     "authenticated_writes": false, "consensus": false, "joy_worker": false}
             }))?
         ),
@@ -143,6 +163,18 @@ fn run(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
         Command::Init { .. } => unreachable!(),
     }
     Ok(())
+}
+
+fn lock_home(home: &std::path::Path) -> Result<fs::File, Box<dyn std::error::Error>> {
+    let lock = fs::OpenOptions::new()
+        .read(true)
+        .write(true)
+        .create(true)
+        .truncate(false)
+        .open(home.join("node.lock"))?;
+    lock.try_lock_exclusive()
+        .map_err(|e| format!("node home already in use or cannot be locked: {e}"))?;
+    Ok(lock)
 }
 
 fn parse_status(body: &str) -> Result<serde_json::Value, String> {

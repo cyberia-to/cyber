@@ -7,6 +7,13 @@ use std::{
     time::{Duration, Instant},
 };
 
+#[path = "node/durable.rs"]
+mod durable;
+#[path = "node/http.rs"]
+mod http;
+#[path = "node/legacy.rs"]
+mod legacy;
+
 fn binary() -> std::path::PathBuf {
     std::env::var_os("CYBER_TEST_BINARY")
         .map(Into::into)
@@ -69,6 +76,68 @@ impl Drop for Server {
     fn drop(&mut self) {
         let _ = self.0.kill();
         let _ = self.0.wait();
+    }
+}
+
+fn initialized() -> (tempfile::TempDir, String) {
+    let home = tempfile::tempdir().unwrap();
+    let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+    let bind = listener.local_addr().unwrap().to_string();
+    drop(listener);
+    success(cyber(home.path(), &["init", "--bind", &bind]));
+    (home, format!("http://{bind}"))
+}
+
+fn post(rpc: &str, route: &str, body: &Value) -> Value {
+    ureq::post(&format!("{rpc}{route}"))
+        .timeout(Duration::from_secs(10))
+        .send_json(body)
+        .unwrap()
+        .into_json()
+        .unwrap()
+}
+
+fn get(rpc: &str, route: &str) -> String {
+    ureq::get(&format!("{rpc}{route}"))
+        .timeout(Duration::from_secs(10))
+        .call()
+        .unwrap()
+        .into_string()
+        .unwrap()
+}
+
+fn wire(rpc: &str, from: usize) -> Vec<u8> {
+    use std::io::Read;
+    let mut bytes = Vec::new();
+    ureq::get(&format!("{rpc}/log?from={from}"))
+        .timeout(Duration::from_secs(10))
+        .call()
+        .unwrap()
+        .into_reader()
+        .read_to_end(&mut bytes)
+        .unwrap();
+    bytes
+}
+
+fn field<'a>(body: &'a str, name: &str) -> &'a str {
+    body.lines()
+        .find_map(|line| line.strip_prefix(&format!("{name}: ")))
+        .unwrap()
+}
+
+fn rejected_start(home: &Path) {
+    let mut child = Server::start(home);
+    let deadline = Instant::now() + Duration::from_secs(3);
+    loop {
+        if let Some(status) = child.0.try_wait().unwrap() {
+            assert!(!status.success());
+            return;
+        }
+        assert!(
+            Instant::now() < deadline,
+            "invalid home unexpectedly started"
+        );
+        std::thread::sleep(Duration::from_millis(20));
     }
 }
 
