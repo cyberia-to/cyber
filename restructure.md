@@ -210,7 +210,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
         - [[contribute]] — four lanes in
     - [[concepts]] — **the atlas**: every atom, grouped by what it answers
         - the graph — what knowledge is made of
-            - [[cybergraph]] · [[particle]] · [[cyberlink]] · [[neuron]] · [[token]] · [[hash]] · [[knowledge]] · [[shard]] · [[specs/domain-ladder|domain roles]]
+            - [[cybergraph]] · [[file]] · [[cyberlink]] · [[neuron]] · [[token]] · [[focus]] — the five primitives; under them [[particle]] (a file's name) · [[hash]] (how the name is made) · [[knowledge]] · [[shard]] (how the graph is stored) · [[specs/domain-ladder|domain roles]]
         - the focus — how importance is computed
             - [[focus]] · [[rank]] *(absorbs [[cyberank]])* · [[attention]] · [[view]] · [[prob]] · [[rational neuron]] · [[fixed point]] · [[tri-kernel]] · [[tru]] · [[context packing]]
         - the acts — what a neuron does

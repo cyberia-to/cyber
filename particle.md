@@ -6,6 +6,6 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: atom
 ---
-content-addressed node in the [[cybergraph]]. identity = [[hash]] of content. anything can be a particle — a keyword, an image, a genome, a model. [[particles]] are the objects, [[neurons]] are the subjects
+the identity of a [[file]]: the [[hemera]] hash of its data, 32 bytes, always. what a [[cyberlink]] holds. every node of the [[cybergraph]] is a particle — a document's, a [[neuron]]'s key's, an [[axon]]'s pair's — and the math of the graph ([[focus]], [[folding]], [[DAS]]) sees only these 32 bytes, never the data behind them. not every hemera hash is a particle: transcript digests and proof roots are hashes with no file to name. a file is what the particle names; the particle is the name
 
 discover all [[concepts]]
