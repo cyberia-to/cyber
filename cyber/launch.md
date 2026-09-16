@@ -42,7 +42,7 @@ The stack was built bottom-up, so it inverts the textbook order. The hard crypto
 | [[glia]] | universal .model runtime | 24.8K | 145 | runs (CPU correct); backend parity ongoing |
 | [[soft3/cybergraph\|cybergraph]] | signal processor | 2.0K | 49 | local-first; seal binding + proof verification at the commit port open |
 | [[tru]] | φ*, [[tri-kernel]] | 6.0K | 82 | φ* + contraction κ<1 live; CT-0 orchestrator runs, SVD weight passes open |
-| [[tape]] | particle framing | 1.0K | 24 | frame codec round-trips; particle/cyberlink/signal encodings, conformance vectors, schema freeze open |
+| [[tade]] | particle framing | 1.0K | 24 | frame codec round-trips; particle/cyberlink/signal encodings, conformance vectors, schema freeze open |
 | [[tok]] | value layer (coin + card) | spec | — | specified |
 | [[mudra]] | identity, crypto | 2.0K | 42 | builds; keys + ECDSA claims verify, provable secp256k1 gadget; signature check at order unwired |
 | [[soft3/soma|soma]] | runtime / the mind | spec | — | specified, no code |
@@ -63,7 +63,7 @@ Theoretical foundations established:
 | stage | milestone | gains | gate |
 |-------|-----------|-------|------|
 | M0 | Foundations | field, hash, commitments, VM, proofs, state | complete |
-| S1 | Wire & framing | files travel the network | [[tape]] round-trips, schema frozen |
+| S1 | Wire & framing | files travel the network | [[tade]] round-trips, schema frozen |
 | S2 | Identity | [[cybics/crystal/neuron|neurons]] sign and are addressed | [[mudra]] builds, keys + signatures verify |
 | S3 | Proven processor | one node executes + proves a signal end-to-end | seal binding σ ⊢ scope enforced |
 | S4 | Networking | nodes exchange signals | push gossip propagates, transport wired |
@@ -105,11 +105,11 @@ Deferred past the testnet (see P-milestones): privacy circuits, recursive proofs
 
 ### S1 — Wire & framing
 
-[[tape]] is the typed frame every [[file]] and [[soft3/cybergraph/specs/signal|signal]] travels in. The generic frame codec round-trips (24 tests); the dialect encodings for particle, cyberlink and signal, the conformance vectors, and the schema freeze are open — and the spec and the implementation disagree on the frame header (one type byte vs sigil + render), a divergence to reconcile before freezing.
+[[tade]] is the typed frame every [[file]] and [[soft3/cybergraph/specs/signal|signal]] travels in. The generic frame codec round-trips (24 tests); the dialect encodings for particle, cyberlink and signal, the conformance vectors, and the schema freeze are open — and the spec and the implementation disagree on the frame header (one type byte vs sigil + render), a divergence to reconcile before freezing.
 
 | deliverable | gate |
 |-------------|------|
-| [[tape]] encode/decode for particle, cyberlink, signal | round-trips on the conformance vectors |
+| [[tade]] encode/decode for particle, cyberlink, signal | round-trips on the conformance vectors |
 | wire schema frozen | one schema, all SDKs read it |
 
 Estimate: 2-3 sessions.

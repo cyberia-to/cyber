@@ -26,6 +26,6 @@ a file has exactly one identity and any number of names, or none
 
 a file's data may be absent on this machine — not yet fetched, or never published. the file still exists, its particle still links, focus still flows through it. [[cyb]] shows such a file as a black hole: `cyb://particle/<hex>` until a [[cyb/reference/spark|spark]] can draw the bytes and it becomes `cyb://file/<hex>`
 
-on the wire a file is a [[tape]] frame: `marker type size data` — the type byte says what kind of thing the bytes are, the data is the file's data. [[particles]] are the objects' identities; [[neurons]] are the subjects
+on the wire a file is a [[tade]] frame: `marker type size data` — the type byte says what kind of thing the bytes are, the data is the file's data. [[particles]] are the objects' identities; [[neurons]] are the subjects
 
 discover all [[concepts]]

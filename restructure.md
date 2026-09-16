@@ -49,7 +49,7 @@ the smallest circle a mind can draw, and every station carries real traffic toda
 | motion | facet | what happens | sub-verbs | core |
 |---|---|---|---|---|
 | **link** | mass | a thought becomes links — in cyber-speech, linking IS saying | hash · mean · compile · eval · query | [[soft3/cybergraph\|cybergraph]] · [[hemera]] — languages: [[neural]] [[trident]] [[rune]] [[inf]] |
-| transmit | space | nodes share one graph | frame · sync · mount | [[radio]] · [[tape]] · [[fs]] |
+| transmit | space | nodes share one graph | frame · sync · mount | [[radio]] · [[tade]] · [[fs]] |
 | **render** | play | the focus becomes world — worlds, affect, gated effects | paint · authorize | [[mir]] · [[prysm]] — gated by [[cyb/parts/ward\|ward]] |
 | **measure** | play | the world becomes links — cybernetics is impossible without measurement | evaluate | [[lytics]] · [[sigma]] |
 
@@ -138,7 +138,7 @@ every component, by its registry verb:
 | seat | verb | components |
 |---|---|---|
 | loop · link | link, hash + mean, compile, eval, query | [[soft3/cybergraph\|cybergraph]] [[hemera]] + [[neural]] [[trident]] [[rune]] [[inf]] |
-| loop · transmit | transmit, frame, sync, mount | [[radio]] [[tape]] [[fs]] · [[foculus]]'s sync seat |
+| loop · transmit | transmit, frame, sync, mount | [[radio]] [[tade]] [[fs]] · [[foculus]]'s sync seat |
 | loop · render | render, paint, authorize | [[mir]] [[prysm]] [[cyb/parts/ward\|ward]] |
 | loop · measure | measure, evaluate | [[lytics]] [[sigma]] |
 | medium · encrypt | encrypt, keep, pay | [[mudra]] [[vault]] [[tok]] |
@@ -177,7 +177,7 @@ the ground: math ([[strata]]) · accelerate ([[honeycrisp]]) — beneath every s
 | [[soft3/cli/README|cli/README]] | 232 |
 | [[soft3/schema/README|schema/README]] | 216 |
 | [[soft3/proposals/component-page-canon|proposals/component-page-canon]] | 509 |
-| [[soft3/proposals/cybergraph-sync-tape-architecture|proposals/cybergraph-sync-tape-architecture]] | 1739 |
+| [[soft3/proposals/cybergraph-sync-tade-architecture|proposals/cybergraph-sync-tade-architecture]] | 1739 |
 | [[soft3/conformance/README|conformance/README]] | 194 |
 | [[soft3/conformance/specs/README|conformance/specs/README]] | 591 |
 | [[soft3/conformance/docs/README|conformance/docs/README]] | 477 |
