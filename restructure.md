@@ -233,7 +233,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
         - [[3c]] · [[channel]] · [[communication]] · [[hierarchy]] · [[light]] · [[gravity]] · [[luminosity]] · [[security]]
     - [[research]] — **the papers**: what is argued, not yet law
         - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]] · **[[research/oikos|oikos]]** *(proposal: one token, one chain — the architecture; carries its own adoption map over ~/cyber and soft3)* · [[research/spectral cell division|spectral shard division]] *(proposal: graph partitioning and split/merge obligations; old research path retained for provenance)*
-    - [[specs/README|specs]] — **the engineering contracts**
+    - [[cyber/specs|specs]] — **the engineering contracts**
         - [[specs/component-ownership|component ownership]] · [[audit/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[audit/rewards-completeness|rewards completeness]]
     - [[self]] — **the protocol's own agency**
         - [[self/dmn|dmn]] · [[self/linking|linking]] · [[self/parametrization|parametrization]] · [[self/sigma|sigma]]
@@ -350,7 +350,7 @@ Census additions recorded on 2026-09-08: [[research/oikos|oikos]] carries the mo
 | [[self/linking|linking]] | 905 | stays · self | protocol as neuron |
 | [[self/parametrization|parametrization]] | 1762 | stays · self | protocol as neuron |
 | [[self/sigma|sigma]] | 1004 | stays · self | protocol as neuron |
-| [[specs/README|specs/README README]] | 499 | stays · specs | engineering contract |
+| [[cyber/specs|specs/README]] | 499 | stays · specs | engineering contract |
 | [[specs/component-ownership|component-ownership]] | 635 | stays · specs | engineering contract |
 | [[audit/full-flow-claims|full-flow-claims]] | 522 | audit | implementation claims and validation report |
 | [[specs/node-modes|node-modes]] | 577 | stays · specs | engineering contract |
