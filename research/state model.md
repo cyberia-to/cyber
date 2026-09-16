@@ -28,7 +28,7 @@ Traditional state models used in blockchain architectures (account and UTXO) are
 | Token       | Attention Weight       | Influences the probability of traversal               |
 | [[Focus]]       | Stationary Distribution| Emergent long-term significance (collective consensus)|
 ## Transition Model
-State evolution is defined by the creation of new cyberlinks. A cyberlink is a signed intent from a [[neuron]] linking two particles. The complete state of the system is the set of all cyberlinks, particles, token holdings, and the resulting weighted graph.
+State evolution is defined by the creation of new cyberlinks. A cyberlink is a signed intent from a [[neuron]] linking two files. The complete state of the system is the set of all cyberlinks, particles, token holdings, and the resulting weighted graph.
 
 Each time step:
 - [[Neurons]] evaluate local context

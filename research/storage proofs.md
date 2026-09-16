@@ -6,7 +6,7 @@ alias: storage proof, proof of storage, size proof, replication proof, retrievab
 ---
 # storage proofs
 
-six proof types that guarantee the [[cybergraph]] survives. without them, content-addressed identity is fragile — a hash with lost content is a dead [[particle]]. at planetary scale (10¹⁵ [[particles]]), content loss is the existential risk.
+six proof types that guarantee the [[cybergraph]] survives. without them, content-addressed identity is fragile — a hash with lost content is a dead [[file]]. at planetary scale (10¹⁵ [[particles]]), content loss is the existential risk.
 
 storage proofs are Phase 1 security infrastructure, not a Phase 3 optimization. they must be operational before genesis.
 
@@ -40,7 +40,7 @@ proof               │ by the block producer               │ decode, compare 
                     │                                     │ mismatch = fraud proof
 ```
 
-storage proofs and replication proofs verify individual [[particle]] content. size proofs guarantee content dimensions — [[DAS]] proves data is accessible, but a [[particle]] claiming 1 MB that actually holds 10 bytes is undetectable without a size commitment. retrievability proofs add latency bounds. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible. encoding fraud proofs catch dishonest block producers who encode data incorrectly.
+storage proofs and replication proofs verify individual [[file]] content. size proofs guarantee content dimensions — [[DAS]] proves data is accessible, but a [[file]] claiming 1 MB that actually holds 10 bytes is undetectable without a size commitment. retrievability proofs add latency bounds. data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible. encoding fraud proofs catch dishonest block producers who encode data incorrectly.
 
 ## storage proof
 
@@ -64,7 +64,7 @@ periodic challenges prevent lazy storage — a node that deletes content after i
 
 ## size proof
 
-a [[particle]] hash commits to content identity — the same bytes always produce the same hash. it does not commit to content size. a storage node claiming "this particle is 500 MB" and charging storage fees accordingly is unverifiable from the hash alone. size proofs close this gap.
+a [[particle]] hash commits to content identity — the same bytes always produce the same hash. it does not commit to content size. a storage node claiming "this file is 500 MB" and charging storage fees accordingly is unverifiable from the hash alone. size proofs close this gap.
 
 ```
 SIZE COMMITMENT:
@@ -236,7 +236,7 @@ HASH MIGRATION PROTOCOL:
 
 before genesis, the storage proof system must satisfy:
 
-- coverage: every [[particle]] has at least k ≥ 3 verified replicas
+- coverage: every [[file]] has at least k ≥ 3 verified replicas
 - continuous verification: proofs checked periodically, not just at creation
 - content-completeness: proofs verify actual content bytes, not just the CID
 - retrievability: content fetchable within bounded time

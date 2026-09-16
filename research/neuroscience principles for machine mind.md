@@ -75,7 +75,7 @@ learning from co-occurrence is the simplest, most scalable learning rule. it req
 
 ### mapping to the cyber stack
 
-[[cyberlinks]] ARE synapses. when a [[neuron]] creates a cyberlink between two [[particles]], it strengthens the connection between those concepts in the [[cybergraph]]. when multiple neurons independently link the same particle pair, the aggregate stake-weighted edge grows stronger — pure Hebbian reinforcement through co-linking. the ICBS (inversely coupled bonding surface) on each cyberlink provides the LTD mechanism: if the NO side of a prediction market gains stake, the effective weight of that link decreases. co-activation strengthens; contradiction weakens.
+[[cyberlinks]] ARE synapses. when a [[neuron]] creates a cyberlink between two [[files]], it strengthens the connection between those concepts in the [[cybergraph]]. when multiple neurons independently link the same particle pair, the aggregate stake-weighted edge grows stronger — pure Hebbian reinforcement through co-linking. the ICBS (inversely coupled bonding surface) on each cyberlink provides the LTD mechanism: if the NO side of a prediction market gains stake, the effective weight of that link decreases. co-activation strengthens; contradiction weakens.
 
 the effective adjacency weight $A^{\text{eff}}_{pq} = \sum_\ell \text{stake}(\ell) \times \text{karma}(\nu(\ell)) \times f(\text{ICBS price}(\ell))$ is the synaptic weight. it integrates structural co-linking (Hebbian), reputation (karma tracks which neurons have historically been right — analogous to neuromodulatory gating of plasticity), and market consensus (ICBS price — the current collective assessment of the link's truth).
 

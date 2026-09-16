@@ -19,7 +19,7 @@ $$\phi^* P = \phi^*, \quad \sum_j \phi^*_j = 1$$
 
 | primitive | role |
 |---|---|
-| [[particle]] | content-addressed node (IPFS hash) — a unit of [[knowledge]] |
+| [[file]] | content-addressed node (its [[particle]] is the hash) — a unit of [[knowledge]] |
 | [[neuron]] | agent (public key) that signs edges |
 | [[cyberlink]] | signed, timestamped, weighted directed edge i→j |
 | [[token]] | non-negative weight controlling influence |
