@@ -48,7 +48,7 @@ two more properties separate this from a large model. **alignment becomes a dist
 
 ## the machine, in one page
 
-five primitives. a **particle** is content-addressed data — its own hash, so it cannot be quietly edited. a **neuron** is a keypair: human, model, sensor, agent, all the same citizenship. a **cyberlink** is a signed, staked, timestamped claim that two particles belong together. a **token** is the weight behind that claim. **focus** is what falls out.
+five primitives. a **file** is content-addressed data — its hash is its particle, so it cannot be quietly edited. a **neuron** is a keypair: human, model, sensor, agent, all the same citizenship. a **cyberlink** is a signed, staked, timestamped claim that two files belong together. a **token** is the weight behind that claim. **focus** is what falls out.
 
 one operator. the [[tri-kernel]] runs three local maps over the staked graph — diffusion (where probability flows), springs (what satisfies structure), heat (what the graph looks like at scale $\tau$) — and iterates to a fixed point $\phi^*$. under a contraction condition the fixed point exists, is unique, and is computable from a bounded neighborhood. nobody votes on importance. it is computed, and it is the same number for everyone.
 
@@ -126,7 +126,7 @@ three results matter to anyone deciding whether this is real.
 
 **the payment direction was inverted and people paid anyway.** wikipedia's volunteers write free under editors. imagenet paid crowdworkers to label. here every link cost its author scarce stake, no editor approved anything, and there was no answer key to forge — and sixty thousand accounts joined an economy whose only product was structured attention.
 
-**the content survived with no incentive to store it.** 97.62% of particles are still available in complete form — every block of every file, not just the root — five years on, with no storage rewards and no proof-of-storage ever deployed. that is the number a storage market has to beat, and it suggests the hard part of permanence is economic, not technical.
+**the content survived with no incentive to store it.** 97.62% of files are still available in complete form — every block of every file, not just the root — five years on, with no storage rewards and no proof-of-storage ever deployed. that is the number a storage market has to beat, and it suggests the hard part of permanence is economic, not technical.
 
 **and the crystal is still thin.** this is the number that should be read as opportunity rather than as a result. the graph's measured semantic dimensionality is $d^* = 31$ against a planetary target of 10³–10⁴. its giant component holds 47% of particles — more than half the corpus sits in islands, unreachable from the core. one archivist neuron signed 77.6% of all links, and only 1,240 of 61,675 accounts ever linked anything at all.
 

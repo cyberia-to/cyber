@@ -26,7 +26,7 @@ the full framework — ecological valence, trichromatic foraging, the amygdala's
 ## where the map lives
 
 - **the flag of [[cyberia]]** — the seven, closed into a heptagon: the spectrum bent into a loop. these are the terminal values — channels at their endpoints, no mixes.
-- **[[emotion]] in the protocol** — [[prysm]] computes affect as color: a failing counter glows red, a fresh [[cyberlink]] glows green, an unexplored [[particle]] glows blue. emotion makes the [[cybergraph]] legible to human perception.
+- **[[emotion]] in the protocol** — [[prysm]] computes affect as color: a failing counter glows red, a fresh [[cyberlink]] glows green, an unexplored [[file]] glows blue. emotion makes the [[cybergraph]] legible to human perception.
 - **[soft3.org/scheme](https://soft3.org/scheme)** — the seven seats of soft3 — three motions, three guarantees, one attractor — each wear their color's innate emotion.
 
 as simple as that.

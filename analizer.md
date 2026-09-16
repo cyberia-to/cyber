@@ -82,7 +82,7 @@ this has a protocol implication: [[foculus]] finality speed should adapt to the 
 
 ### 3. codematter dissolved the boundary
 
-the moment code files got frontmatter, the distinction between "knowledge page" and "source code" disappeared. both are [[particles]]. both carry [[focus]]. both participate in the [[tri-kernel]].
+the moment code files got frontmatter, the distinction between "knowledge page" and "source code" disappeared. both are [[files]]. both carry [[focus]]. both participate in the [[tri-kernel]].
 
 this mirrors the protocol design: every computation step → [[Hemera]] commitment → [[particle]] in the [[cybergraph]]. the analizer proved this works in practice before the protocol specifies it formally.
 

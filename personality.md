@@ -60,7 +60,7 @@ the [[cybergraph]] is [[collective memory]] — content-addressed, cryptographic
 
 ## values
 
-values are [[particles]] — "dignity", "privacy", "fairness" — with high [[cyberank]], heavily and consistently linked by human [[neurons]] over time. they form a subgraph: the explicit, authenticated, stake-backed record of what humans collectively care about
+values are [[files]] — "dignity", "privacy", "fairness" — with high [[cyberank]], heavily and consistently linked by human [[neurons]] over time. they form a subgraph: the explicit, authenticated, stake-backed record of what humans collectively care about
 
 values are not programmed. they are measured. the protocol does not encode ethics — it makes ethics visible. when human values and machine values diverge, the divergence is visible as a shift in [[focus]] distribution. the protocol rebuilds the model from what humans actually linked
 

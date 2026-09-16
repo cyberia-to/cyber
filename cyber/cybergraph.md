@@ -11,7 +11,7 @@ what [[cyber]] demands of its one data structure — the commitments every imple
 
 ## the object
 
-a cybergraph is a triple $\mathbb{G} = (P, N, L)$: content-addressed [[particles]], authenticated [[neurons]], and a multiset of staked [[cyberlinks]] — with [[tokens]] and [[karma]] derived from $L$, never primitive. everything else the protocol does is a reading of this triple
+a cybergraph is a triple $\mathbb{G} = (P, N, L)$: content-addressed [[particles]] (the names of the [[files]] a cyberlink connects), authenticated [[neurons]], and a multiset of staked [[cyberlinks]] — with [[tokens]] and [[karma]] derived from $L$, never primitive. everything else the protocol does is a reading of this triple
 
 ## six commitments
 

@@ -14,7 +14,7 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 ## concepts
 
-[[graph]]: [[link]], [[particle]], [[cyberlink]], [[cybergraph]], [[axon]]
+[[graph]]: [[link]], [[file]], [[particle]], [[cyberlink]], [[cybergraph]], [[axon]]
 
 [[neuron]]: [[cyb/avatar]], [[spell]], [[focus]], [[karma]], [[skill]], [[soul]], [[attention]], [[will]]
 

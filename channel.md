@@ -130,7 +130,7 @@ each transition is a fact in the planetary computation cache: `(H(S_n), H(formul
 - duplicate computations are detected and skipped (memoization)
 - the channel history is tamper-evident (any modification breaks the hash chain)
 - either neuron can prove the full history to any third party
-- the history can optionally be published to the [[cybergraph]] (some or all states become [[particles]])
+- the history can optionally be published to the [[cybergraph]] (some or all states become [[files]])
 
 ## transport
 
@@ -147,7 +147,7 @@ the channel protocol operates above [[cyber/communication]] — it inherits priv
 
 a channel never needs the chain. but it can touch the chain when useful:
 
-- publish the final state as a [[particle]] (make the result public)
+- publish the final state as a [[file]] (make the result public)
 - merge a local cybergraph fragment into the global [[cybergraph]] (announce discoveries)
 - submit a [[cyber/signal]] that references the channel state (create [[cyberlinks]] from proven bilateral computation)
 - claim [[focus]] rewards for proven state transitions (the proof qualifies as an [[cyber/impulse]])

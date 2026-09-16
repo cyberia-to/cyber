@@ -19,7 +19,7 @@ SHARED SECRET DERIVATION
 Neuron A: secret a, public curve E_a = [a] · E₀
 Neuron B: secret b, public curve E_b = [b] · E₀
 
-Both curves are published as [[particles]] in the [[cybergraph]].
+Both curves are published as [[files]] in the [[cybergraph]].
 
 Shared secret:
   A computes: K = Hemera([a] · E_b) = Hemera([a]·[b]·E₀)
@@ -126,7 +126,7 @@ Recursive composition:
   O(1) verification regardless of hop count
 ```
 
-the sender publishes π_chain as a [[particle]] in the [[cybergraph]]. anyone can verify delivery happened. no one can read the message or learn the route.
+the sender publishes π_chain as a [[file]] in the [[cybergraph]]. anyone can verify delivery happened. no one can read the message or learn the route.
 
 ### what the proof reveals
 

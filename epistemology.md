@@ -174,7 +174,7 @@ The [[cybergraph]] is self-referential: φ* is computed from [[cyberlinks]], whi
 
 Optional external anchoring breaks the self-reference by introducing signals from outside the loop:
 
-- Prediction markets: particles with verifiable outcomes (future events, measurable claims) can anchor φ* calibration. If φ* predicts rain tomorrow and it does not rain, the miscalibration is measurable.
+- Prediction markets: files with verifiable outcomes (future events, measurable claims) can anchor φ* calibration. If φ* predicts rain tomorrow and it does not rain, the miscalibration is measurable.
 - Sensor networks: physical measurement feeds (temperature, location, chemical composition) provide ground truth against which linking accuracy can be evaluated.
 - Cross-graph proofs: other [[cybergraph]] instances with different neuron populations provide independent estimates. Divergence between instances signals epistemic vulnerability.
 

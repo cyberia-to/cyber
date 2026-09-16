@@ -63,7 +63,7 @@ Theoretical foundations established:
 | stage | milestone | gains | gate |
 |-------|-----------|-------|------|
 | M0 | Foundations | field, hash, commitments, VM, proofs, state | complete |
-| S1 | Wire & framing | particles travel the network | [[tape]] round-trips, schema frozen |
+| S1 | Wire & framing | files travel the network | [[tape]] round-trips, schema frozen |
 | S2 | Identity | [[cybics/crystal/neuron|neurons]] sign and are addressed | [[mudra]] builds, keys + signatures verify |
 | S3 | Proven processor | one node executes + proves a signal end-to-end | seal binding σ ⊢ scope enforced |
 | S4 | Networking | nodes exchange signals | push gossip propagates, transport wired |
@@ -105,7 +105,7 @@ Deferred past the testnet (see P-milestones): privacy circuits, recursive proofs
 
 ### S1 — Wire & framing
 
-[[tape]] is the typed frame every [[cybics/crystal/particle|particle]] and [[soft3/cybergraph/specs/signal|signal]] travels in. The generic frame codec round-trips (24 tests); the dialect encodings for particle, cyberlink and signal, the conformance vectors, and the schema freeze are open — and the spec and the implementation disagree on the frame header (one type byte vs sigil + render), a divergence to reconcile before freezing.
+[[tape]] is the typed frame every [[file]] and [[soft3/cybergraph/specs/signal|signal]] travels in. The generic frame codec round-trips (24 tests); the dialect encodings for particle, cyberlink and signal, the conformance vectors, and the schema freeze are open — and the spec and the implementation disagree on the frame header (one type byte vs sigil + render), a divergence to reconcile before freezing.
 
 | deliverable | gate |
 |-------------|------|
@@ -248,7 +248,7 @@ Gate: full space-pussy graph (particles, cyberlinks, neurons, karma) reproduced 
 
 The same pipeline at mainnet scale: every [[cybics/crystal/neuron|neuron]], [[cyberlink]], and [[cybics/crystal/particle|particle]] from [[bootloader/bostrom|bostrom]] — ~70K neurons, 3.1M particles, 2.9M cyberlinks, three years of history — with [[cybics/crystal/karma|karma]] carried as reputation. The graph comes home; the separate $C-holder snapshot taken here is what mints the genesis 1% ([[$BOOT|$BOOT]], $H, $V, $A, and [[$PUSSY|$PUSSY]] balances do not convert to [[cyber/$CYB|$CYB]]).
 
-Gate: bijective state mapping, zero data loss; frozen snapshot signed; karma reconciles; every particle re-addressable under [[hemera]] identity.
+Gate: bijective state mapping, zero data loss; frozen snapshot signed; karma reconciles; every file re-addressable under [[hemera]] identity.
 
 ### R3 — align the genesis crystal
 

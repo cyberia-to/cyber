@@ -10,7 +10,7 @@ four ways in. pick one lane — or all of them. every path teaches the [[cybergr
 
 ## pull request
 
-this repo is the protocol. fork, edit a `.md`, PR. merged pages become particles on [cyber.page](https://cyber.page).
+this repo is the protocol. fork, edit a `.md`, PR. merged pages become files on [cyber.page](https://cyber.page).
 
 ```bash
 git clone https://github.com/<you>/cyber.git
