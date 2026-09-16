@@ -386,8 +386,6 @@ Census additions recorded on 2026-09-08: [[research/oikos|oikos]] carries the mo
 | [[research/five algebras|five algebras]] | 3619 | moves → strata | component research goes home |
 | [[research/trinity meets polynomial state|trinity meets polynomial state]] | 1496 | moves → trident | component research goes home |
 | [[research/gflownet focus flow|gflownet focus flow]] | 1766 | moves → tru | component research goes home |
-| [[research/spectral gap from convergence|spectral gap from convergence]] | 1229 | moves → tru | component research goes home |
-| [[research/tri-kernel architecture|tri-kernel architecture]] | 1943 | moves → tru | component research goes home |
 ---
 
 # 1a · bbg absorption — refine, do not copy
