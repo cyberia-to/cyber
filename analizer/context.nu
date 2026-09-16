@@ -20,9 +20,17 @@ def main [
   --budget (-b): int = 900,       # token budget in thousands
   --stats,                        # print ranking table only
   --soul: string = "",            # path to preamble file (prepended before pages)
+  --manifest: string = "",        # selected source hashes and omitted paths
   --pinned (-p): string = "",  # JSON array of relative paths to always include, e.g. '["root/cyberia/architecture.md"]'
 ] {
+  let graph_path = ($graph_path | path expand)
   let pinned = if $pinned != "" { $pinned | from json } else { [] }
+  if $budget <= 0 { error make {msg: "budget must be positive"} }
+  for rel in $pinned {
+    if not ($graph_path | path join $rel | path exists) {
+      error make {msg: $"pinned source is missing: ($rel)"}
+    }
+  }
   let token_budget = $budget * 1000
   # ~3.5 chars per token for mixed markdown+math content
   let char_budget = ($token_budget * 3.5 | into int)
@@ -34,12 +42,15 @@ def main [
     "root"
   } else if ($graph_path | path join "graph" | path exists) {
     "graph"
-  } else {
+  } else if ($graph_path | path join "pages" | path exists) {
     "pages"
+  } else {
+    "."
   }
 
   # --- collect all markdown files ---
-  mut all_files = (glob $"($graph_path)/($pages_subdir)/**/*.md" | sort)
+  let excluded = ["**/.git/**" "**/target/**" "**/build/**" "**/node_modules/**" "**/audit/**" "**/dist/**" "**/.venv/**"]
+  mut all_files = (glob $"($graph_path)/($pages_subdir)/**/*.md" --exclude $excluded | sort)
 
   # blog and scripts
   let blog = (glob $"($graph_path)/blog/*.md" | sort)
@@ -86,17 +97,14 @@ def main [
       } else if ($repo_path | path join "pages" | path exists) {
         glob $"($repo_path)/pages/**/*.md"
       } else {
-        glob $"($repo_path)/**/*.md"
-          | where {|f| not ($f | str contains "/.git/")}
-          | where {|f| not ($f | str contains "/build/")}
-          | where {|f| not ($f | str contains "/target/")}
-          | where {|f| not ($f | str contains "/node_modules/")}
+        glob $"($repo_path)/**/*.md" --exclude $excluded
       }
       $subgraph_files = ($subgraph_files | append $md)
     }
     $all_files = ($all_files | append ($subgraph_files | sort))
   }
 
+  $all_files = ($all_files | each {|f| $f | path expand} | uniq | sort)
   print $"Total files: ($all_files | length)"
 
   # --- build page name → file path index and alias map ---
@@ -287,10 +295,14 @@ def main [
   mut total_chars = 0
   mut packed_count = 0
   mut packed_rels: list<string> = []
+  mut packed_files: list<string> = []
+  mut source_manifest = []
 
   # prepend soul (personality preamble) if provided
   if $soul != "" and ($soul | path exists) {
-    let soul_content = (open --raw $soul | str trim)
+    let raw = (open --raw $soul)
+    let soul_content = ($raw | str trim)
+    $source_manifest = ($source_manifest | append {path: ($soul | path expand), sha256: ($raw | hash sha256), role: "preamble"})
     $packed = ($packed | append $soul_content)
     $total_chars = $total_chars + ($soul_content | str length)
     print $"Soul: ($soul_content | str length) chars prepended"
@@ -299,30 +311,40 @@ def main [
   # always include top-level config first
   let config_files = ($ranked | where {|r| ($r.rel | str starts-with "CLAUDE") or ($r.rel | str starts-with "README") or ($r.rel | str ends-with ".toml")})
   for cf in $config_files {
-    let content = (open --raw $cf.file | str trim)
+    let raw = (open --raw $cf.file)
+    let content = ($raw | str trim)
     let entry = $"--- ($cf.rel) ---\n($content)\n"
     $total_chars = $total_chars + ($entry | str length)
     $packed = ($packed | append $entry)
     $packed_count = $packed_count + 1
     $packed_rels = ($packed_rels | append $cf.rel)
+    $packed_files = ($packed_files | append $cf.file)
+    $source_manifest = ($source_manifest | append {path: $cf.file, sha256: ($raw | hash sha256), role: "configuration"})
   }
 
   # pack pinned pages (forced inclusion regardless of score)
   for rel in $pinned {
-    let f = $"($graph_path)/($rel)"
+    let f = ($graph_path | path join $rel | path expand)
+    if $f in $packed_files { continue }
     if ($f | path exists) {
-      let content = (open --raw $f | str trim)
+      let raw = (open --raw $f)
+      let content = ($raw | str trim)
       let entry = $"--- ($rel) ---\n($content)\n"
       $total_chars = $total_chars + ($entry | str length)
       $packed = ($packed | append $entry)
       $packed_count = $packed_count + 1
       $packed_rels = ($packed_rels | append $rel)
+      $packed_files = ($packed_files | append $f)
+      $source_manifest = ($source_manifest | append {path: $f, sha256: ($raw | hash sha256), role: "pinned"})
     } else {
       print $"WARNING: pinned page not found: ($rel)"
     }
   }
   if ($pinned | length) > 0 {
     print $"Pinned: ($pinned | length) pages forced in"
+  }
+  if $total_chars > $char_budget {
+    error make {msg: "required configuration and pinned sources exceed budget"}
   }
 
   # pack by score
@@ -334,8 +356,10 @@ def main [
       continue
     }
     if ($packed_rels | any {|pr| $pr == $page.rel}) { continue }
+    if $page.file in $packed_files { continue }
 
-    let content = (open --raw $page.file | str trim)
+    let raw = (open --raw $page.file)
+    let content = ($raw | str trim)
     let entry = $"--- ($page.rel) ---\n($content)\n"
     let entry_size = ($entry | str length)
 
@@ -348,9 +372,11 @@ def main [
     $total_chars = $total_chars + $entry_size
     $packed_count = $packed_count + 1
     $packed_rels = ($packed_rels | append $page.rel)
+    $packed_files = ($packed_files | append $page.file)
+    $source_manifest = ($source_manifest | append {path: $page.file, sha256: ($raw | hash sha256), role: "ranked"})
   }
 
-  let total_pages = ($ranked | length)
+  let total_pages = ($all_files | append $packed_files | uniq | length)
   let coverage_pct = ($packed_count * 100 / $total_pages | math round -p 1)
   let est_tokens = ($total_chars / 3.5 | math round -p 0 | into int)
 
@@ -366,6 +392,20 @@ def main [
   ] | str join "\n"
 
   let result = ([$header] | append $packed | str join "\n")
+  if $manifest != "" {
+    let selected = $packed_files
+    {
+      schema: "cyber/context-sources/1"
+      generated: $gen_date
+      graph: $graph_path
+      output_sha256: ($result | hash sha256)
+      budget_tokens_estimate: $token_budget
+      estimated_tokens: $est_tokens
+      sources: $source_manifest
+      omitted: ($all_files | where {|f| $f not-in $selected})
+      exclusion_patterns: $excluded
+    } | to json | save -f $manifest
+  }
 
   if $output == "" {
     let out_path = $"/tmp/cyber-context-($budget)k.md"

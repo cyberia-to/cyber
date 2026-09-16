@@ -146,6 +146,7 @@ Scripts:
 - `analizer/trikernel.nu` — compute tri-kernel (diffusion, springs, heat) over wiki-link graph, write focus + gravity + density to frontmatter. Runs on new moon only (±1 day); use `--force` to override, `--dry-run` to preview
 
 - `analizer/dangling.nu` — alias-aware dangling wiki-link detector (basenames, paths, alias: frontmatter; case-insensitive; top 50 + stats)
+- `analizer/local-links.nu` — filesystem Markdown link checker; graph path plus optional explicit JSON `--files` list
 - `analizer/add-footer.nu` — append `discover all [[concepts]]` footer to core-tagged pages missing it
 - `analizer/codematter.nu` — add comment-frontmatter to code files (.rs, .nu, .toml, .py, .sh, .yml), integrating source into cybergraph as particles
 
