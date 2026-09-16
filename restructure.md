@@ -12,6 +12,8 @@ a plan first, movements second. nothing in this document moves a file; every sec
 
 original census: 501 pages (238 cyber · 83 cyb · 180 cyberia). the cyber table is the work that remains.
 
+Terminology update, 2026-09-13: current targets follow [[specs/domain-ladder|subjects, programs and graph domains]]. Neuron owns subject identity and optional prog execution; GraphSession hosts the graph, shard partitions it, service exposes an application, and book records issuer obligations. Census word counts and pre-move source paths below remain historical records. Their compatibility rows point to the current target.
+
 ## the rule
 
 membership is decided by one question — **who is the subject of this page?** — so the split is idempotent: run the rule twice, nothing moves the second time.
@@ -47,7 +49,7 @@ the smallest circle a mind can draw, and every station carries real traffic toda
 | motion | facet | what happens | sub-verbs | core |
 |---|---|---|---|---|
 | **link** | mass | a thought becomes links — in cyber-speech, linking IS saying | hash · mean · compile · eval · query | [[soft3/cybergraph\|cybergraph]] · [[hemera]] — languages: [[neural]] [[trident]] [[rune]] [[inf]] |
-| **transmit** | space | cells share one graph | hold · frame · sync · mount | [[radio]] · [[cell]] · [[tape]] · [[fs]] |
+| transmit | space | nodes share one graph | frame · sync · mount | [[radio]] · [[tape]] · [[fs]] |
 | **render** | play | the focus becomes world — worlds, affect, gated effects | paint · authorize | [[mir]] · [[prysm]] — gated by [[cyb/parts/ward\|ward]] |
 | **measure** | play | the world becomes links — cybernetics is impossible without measurement | evaluate | [[lytics]] · [[sigma]] |
 
@@ -71,7 +73,7 @@ the four survive every known control doctrine — and each teaches something:
 | SECI (Nonaka) | socialize · externalize · combine · internalize | humans · link · focus · render | externalization — tacit becoming explicit — is exactly "a thought becomes links" |
 | active inference (Friston) | perception ⇄ action around a generative model | measure ⇄ render around focus | perception and action are dual moves against one model — the attractor picture again |
 
-single-agent loops are three motions — OODA collapses to measure → focus → render. a distributed mind adds exactly two: link, because minds are reference inputs and not sensors, and transmit, because one graph must live in many cells. no doctrine demands a fifth.
+single-agent loops are three motions — OODA collapses to measure → focus → render. a distributed mind adds exactly two: link, because minds are reference inputs and not sensors, and transmit, because many nodes retain and serve one graph. no doctrine demands a fifth.
 
 ## the top-verbs test
 
@@ -123,7 +125,7 @@ the loop is not staged: link → transmit → render → measure circulates from
 
 ## the stage tests
 
-1. **medium** — a link cast in one cell arrives in another with no third party. **passed live**: [[wire]], 2026-09-01.
+1. medium — a neuron's link published through one graph host arrives at another with no third party. Historical demonstration: [[wire]], 2026-09-01; its original signal and transport profile remain the evidence for that run. Current signed publication requires the captured subject, network and grant.
 2. **proof** — a stranger verifies a read it never trusted.
 3. **mind** — of two conflicting signals one survives, chosen by φ* past τ.
 
@@ -136,12 +138,14 @@ every component, by its registry verb:
 | seat | verb | components |
 |---|---|---|
 | loop · link | link, hash + mean, compile, eval, query | [[soft3/cybergraph\|cybergraph]] [[hemera]] + [[neural]] [[trident]] [[rune]] [[inf]] |
-| loop · transmit | transmit, hold, frame, sync, mount | [[radio]] [[cell]] [[tape]] [[fs]] · [[foculus]]'s sync seat |
+| loop · transmit | transmit, frame, sync, mount | [[radio]] [[tape]] [[fs]] · [[foculus]]'s sync seat |
 | loop · render | render, paint, authorize | [[mir]] [[prysm]] [[cyb/parts/ward\|ward]] |
 | loop · measure | measure, evaluate | [[lytics]] [[sigma]] |
 | medium · encrypt | encrypt, keep, pay | [[mudra]] [[vault]] [[tok]] |
 | medium · prove | prove, run, store, infer, certify, sandbox, shade, commit | [[zheng]] [[soft3/nox\|nox]] [[soft3/bbg\|bbg]] [[glia]] [[eidos]] [[wysm]] [[kern]] [[lens]] |
 | centre · converge | converge, agree, think | [[tru]] [[foculus]] [[soft3/soma\|soma]] |
+
+[[Neuron]] supplies the subject and durable execution boundary around progs: admission, continuation, resource reservations and recovery. Rune evaluates program work; worker adapters perform admitted effects. GraphSession composes [[cybergraph]] and [[bbg]] to retain multi-neuron history. Hosting a graph and transporting its frames give a process storage and delivery duties; signing authority comes from the neuron's current policy.
 
 the ground: math ([[strata]]) · accelerate ([[honeycrisp]]) — beneath every seat. **products** (consume the loop entire, are not in it): [[cyb]] · [[optica]] · [[Signal Studio\|studio]] · [[warriors/erga\|erga]] · [[warriors/zoya\|zoya]] · [[warriors/mona\|mona]] · [[warriors/xena\|xena]]. **the trinity** (what the loop is for): [[cyb]] the body · [[cyber]] the mind · [[cyberia]] the state.
 
@@ -206,7 +210,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
         - [[contribute]] — four lanes in
     - [[concepts]] — **the atlas**: every atom, grouped by what it answers
         - the graph — what knowledge is made of
-            - [[cybergraph]] · [[particle]] · [[cyberlink]] · [[neuron]] · [[token]] · [[hash]] · [[knowledge]] · [[cell]]
+            - [[cybergraph]] · [[particle]] · [[cyberlink]] · [[neuron]] · [[token]] · [[hash]] · [[knowledge]] · [[shard]] · [[specs/domain-ladder|domain roles]]
         - the focus — how importance is computed
             - [[focus]] · [[rank]] *(absorbs [[cyberank]])* · [[attention]] · [[view]] · [[prob]] · [[rational neuron]] · [[fixed point]] · [[tri-kernel]] · [[tru]] · [[context packing]]
         - the acts — what a neuron does
@@ -228,7 +232,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
     - [[network]] — **the machine room**: the deep protocol articles (cips)
         - [[3c]] · [[channel]] · [[communication]] · [[hierarchy]] · [[light]] · [[gravity]] · [[luminosity]] · [[security]]
     - [[research]] — **the papers**: what is argued, not yet law
-        - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]] · **[[research/oikos|oikos]]** *(proposal: one token, one chain — the architecture; carries its own adoption map over ~/cyber and soft3)* · **[[research/spectral cell division|spectral cell division]]** *(proposal: extracted from [[cell]], deliberately unimplemented)*
+        - [[research/physical analogies|physical analogies]] · [[research/algorithmic essence of superintelligence|algorithmic essence]] · [[research/knowledge capacity|knowledge capacity]] · [[research/link production|link production]] · [[research/universal law|universal law]] · [[research/egregore properties|egregore properties]] · [[research/future of computation|future of computation]] · [[research/neuroscience principles for machine mind|neuroscience principles]] · [[research/unified mining|unified mining]] · [[research/knowledge economy|knowledge economy]] · [[research/theoretical foundations|theoretical foundations]] · [[research/bootstrap|bootstrap]] · [[research/32-byte tokens|32-byte tokens]] · [[research/energy market|energy market]] · [[research/gradient descent|gradient descent]] · [[research/cybergraph model architecture|cybergraph model architecture]] · [[research/focus flow computation|focus flow computation]] · [[research/adaptive hybrid economics|adaptive hybrid economics]] · [[analizer]] · [[seer]] · [[research/privacy trilateral|privacy trilateral]] · **[[research/oikos|oikos]]** *(proposal: one token, one chain — the architecture; carries its own adoption map over ~/cyber and soft3)* · [[research/spectral cell division|spectral shard division]] *(proposal: graph partitioning and split/merge obligations; old research path retained for provenance)*
     - [[specs/README|specs]] — **the engineering contracts**
         - [[specs/component-ownership|component ownership]] · [[audit/full-flow-claims|full-flow claims]] · [[specs/node-modes|node modes]] · [[audit/rewards-completeness|rewards completeness]]
     - [[self]] — **the protocol's own agency**
@@ -239,7 +243,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 
 ## the ledger — cyber (156 pages, 0 undecided)
 
-*+2 since the census (2026-09-08): [[research/oikos|research/oikos]] — stays · research, the one-token-one-chain architecture proposal (its adoption map names per-page tasks across ~/cyber and soft3 — do not lose them); [[research/spectral cell division|research/spectral cell division]] — stays · research, division mechanics moved out of [[cell]], deliberately unimplemented.*
+Census additions recorded on 2026-09-08: [[research/oikos|oikos]] carries the monetary proposal and its adoption map; [[research/spectral cell division|spectral shard division]] carries the partitioning proposal originally extracted from the [[cell|old cell ladder]]. Both preserve their research status and outstanding design obligations.
 
 | page | words | verdict | why |
 |---|---|---|---|
@@ -257,7 +261,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[cyber/launch|launch]] | 3381 | stays · contract | protocol invariants |
 | [[attention|attention]] | 19 | stays · core | atom of the phenomenon |
 | [[cascade|cascade]] | 194 | stays · core | atom of the phenomenon |
-| [[cell|cell]] | 600 | stays · core | atom of the phenomenon |
+| [[cell|cell]] | 600 | compatibility source | historical ladder; current roles are [[neuron]], prog, [[shard]], service and book |
 | [[concepts|concepts]] | 483 | stays · core | atom of the phenomenon |
 | [[context packing|context packing]] | 347 | stays · core | how the graph enters an LLM window |
 | [[contribute|contribute]] | 333 | stays · core | atom of the phenomenon |
@@ -300,7 +304,7 @@ every staying page hangs at exactly one place; cross-links stay free, but this t
 | [[tru|tru]] | 26 | stays · core | atom of the phenomenon |
 | [[view|view]] | 51 | stays · core | atom of the phenomenon |
 | `CLAUDE.md` | 1167 | stays · index | index / infra |
-| [[README|cyber README]] | 285 | stays · index | index / infra |
+| [[cyber|cyber README]] | 285 | stays · index | index / infra |
 | [[blog|blog]] | 16 | stays · pointer | stub; chronicle is [cyberia.blog](https://cyberia.blog) |
 | [[cyb|cyb]] | 12 | stays · pointer | sister subject; graph at [cyberia.blog/cyb](https://cyberia.blog/cyb) |
 | [[soft3|soft3]] | 12 | stays · pointer | sister subject; graph at [cyberia.blog/soft3](https://cyberia.blog/soft3) |
@@ -550,14 +554,14 @@ no existing soft3 spec is this law. inventing a dump page is forbidden; writing 
 the robot as a navigation tree. the repo's `root/` directory dissolves — pages live flat; links below are today's paths. the anatomy is the contract every name answers to.
 
 - [[cyb/README|README]] — **the robot**: what it is, get it at cyb.ai
-    - [[cyb/anatomy|anatomy]] — **the source of truth**: 20 parts in six layers; every doc, world, and crate names things by it
+    - [[cyb/anatomy|anatomy]] — the source of truth: 21 parts; every doc, world, and crate names things by it
         - [[cyb/state|state]] — external truth with a tier: T0 proof · T1 anchor · T3 badge
     - [[cyb/product/product|product]] — intelligence you own *(absorbs the living claims of [[cyb/decide/whitepaper|the cyb whitepaper]])*
         - [[cyb/product/philosophy|philosophy]] · [[cyb/product/story|story]] · [[cyb/product/spec|spec]]
     - [[cyb/product/roadmap|roadmap]] — where it goes
         - [[cyb/product/team|team]] · [[cyb/decide/dev|dev]]
     - reference — **how it works**, one page per organ where an organ exists
-        - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/cells|cells]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
+        - [[cyb/reference/rust-architecture|architecture]] *(absorbs [[cyb/legacy/architecture|JS-era architecture]])* · [[cyb/reference/rendering|rendering]] · [[cyb/reference/routing|routing]] · [[cyb/reference/terminal|terminal]] · [[cyb/parts/prog|prog]] · [[cyb/reference/particle|particle]] · [[cyb/parts/avatar|avatar]] · [[cyb/product/truth|truth]] · [[cyb/product/features|features]] · [[cyb/reference/scripting|scripting]]
         - formats: [[cyb/reference/format|format]] · [[cyb/reference/cyb-registry|cyb-registry]] · [[cyb-model]] · [[cyb-vocab]] · [[cyb/parts/fs|fs]]
         - platforms: [[cyb/reference/android|android]]
         - audit: [[cyb/audit/benchmarks|benchmarks]]
@@ -573,7 +577,7 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
 
 four claims on the table, each a separate yes/no:
 
-1. **code must wear the anatomy** — `shell/core/cli/apps` is not anatomy; target mapping: shell worlds (graph · sigma · com · body · cells) → `organs/`, soma bridge → organs/soma, vault code + signing → organs/vault (**signer lives on as vault**, its JS-era file stays in legacy), cyb-core → `tissue/` (shared flesh), [[mir]] = the paint of organs/brain. executed as anatomy phase 4.
+1. code must wear the anatomy — target mapping: shell worlds (graph · sigma · com · body · prog) → `organs/`, soma bridge → organs/soma, vault code + signing → organs/vault (signer lives on as vault, its JS-era file stays in legacy), cyb-core → `tissue/` (shared flesh), [[mir]] = the paint of organs/brain. The anatomical mapping follows [[cyb/anatomy|anatomy]]; actual paths and completed moves remain repository evidence.
 2. **reference/ dissolves into design/**: *design/surface* (how worlds render — [[prysm]]/UX: rendering · routing · particle) · *design/body* (the Bevy runtime: architecture · terminal · android · benchmarks) · *design/stack* (the contracts to [[soft3]]: format · cyb-registry · [[cyb-model]] · [[cyb-vocab]] · scripting).
 3. **product trims to 4** — robot · product (absorbing the living claims of philosophy/story/spec) · roadmap · team.
 4. anything fitting none of the shelves is legacy or a soft3 component's page.
@@ -587,14 +591,14 @@ four claims on the table, each a separate yes/no:
 | `CLAUDE.md` | 279 | stays · index | repo face / infra |
 | [[cyb/README|cyb README]] | 153 | stays · index | repo face / infra |
 | `.claude/plans/android-support.md` | 858 | stays · plans | workbench |
-| `.claude/plans/live-cell-runtime.md` | 1263 | stays · plans | workbench |
+| `.claude/plans/live-cell-runtime.md` | 1263 | historical plan source | old filename retained in the 2026-09-06 census; current execution belongs to neuron/prog |
 | `.claude/plans/live-cybergraph.md` | 814 | stays · plans | workbench |
 | `.claude/plans/portable-backends.md` | 2193 | stays · plans | workbench |
 | [[cyb/reference/android|android]] | 593 | stays · reference (flattens to /) | how the robot works |
 | apps → aos/apps (the city registry) | 136 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/parts/avatar|avatar]] | 28 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/audit/benchmarks|benchmarks]] | 162 | audit | historical build measurements |
-| [[cyb/parts/cells|cells]] | 721 | stays · reference (flattens to /) | how the robot works |
+| [[cyb/parts/cells|cells]] | 721 | compatibility source | current extension ability: [[cyb/parts/prog|prog]] under a neuron |
 | [[cyb-model]] | 4 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/reference/cyb-registry|cyb-registry]] | 416 | stays · reference (flattens to /) | how the robot works |
 | [[cyb-vocab]] | 4 | stays · reference (flattens to /) | how the robot works |
