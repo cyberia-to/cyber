@@ -203,7 +203,7 @@ the protocol crystal as a navigation tree: one door, ten branches. every staying
 
 every staying page hangs at exactly one place; cross-links stay free, but this tree is the canonical way in. bold = hub that owns its branch.
 
-- [[README]] — **the door**: what cyber is, two reads, two doors in
+- [[cyber|README]] — **the door**: what cyber is, two reads, two doors in
     - [[litepaper]] — ten minutes, the whole argument
         - [[whitepaper]] — the mathematics and the proofs
     - [[install]] — enter by terminal or robot
