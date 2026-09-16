@@ -1,7 +1,14 @@
 use clap::{Parser, Subcommand};
 use fs2::FileExt;
 use serde::{Deserialize, Serialize};
-use std::{fs, io::Write, net::SocketAddr, path::PathBuf, time::Duration};
+use std::{
+    fs,
+    io::{Read, Write},
+    net::SocketAddr,
+    path::{Path, PathBuf},
+};
+
+mod connection;
 
 #[derive(Parser)]
 #[command(name = "cyber", version, about = "Cyber local node over soft3")]
@@ -32,8 +39,37 @@ enum Command {
     },
     /// Print the effective configuration.
     Config,
-    /// Print the connection descriptor consumed by launchers and cyb.
-    Cyb,
+    /// Print configuration; --live additionally observes the endpoint's native capabilities.
+    Cyb {
+        #[arg(long)]
+        live: bool,
+    },
+    /// Offline storage operations. Stop the node before migration.
+    Storage {
+        #[command(subcommand)]
+        command: StorageCommand,
+    },
+    /// Explicit offline activation of authenticated native publication.
+    Auth {
+        #[command(subcommand)]
+        command: AuthCommand,
+    },
+}
+
+#[derive(Subcommand)]
+enum StorageCommand {
+    /// Import exact retained legacy log bytes into BBG; exact retries resume safely.
+    ImportLegacy,
+}
+
+#[derive(Subcommand)]
+enum AuthCommand {
+    /// Require signed native writes and retire old writers. This upgrade is permanent.
+    Enable {
+        /// Import the retained legacy log first, under the same home lock.
+        #[arg(long)]
+        import_legacy: bool,
+    },
 }
 
 #[derive(Clone, Serialize, Deserialize)]
@@ -51,10 +87,16 @@ impl Config {
             return Err("supported config: version=1, network=spacepussy-test".into());
         }
         if !self.bind.ip().is_loopback() || self.bind.port() == 0 {
-            return Err("bind must be a loopback address with a nonzero port; the chaosnet bridge accepts unsigned writes".into());
+            return Err(
+                "bind must be a loopback address with a nonzero port for this local node profile"
+                    .into(),
+            );
         }
-        if self.moniker.trim().is_empty() || self.moniker.chars().any(char::is_control) {
-            return Err("moniker must be nonempty and contain no control characters".into());
+        if self.moniker.trim().is_empty()
+            || self.moniker.len() > 256
+            || self.moniker.chars().any(char::is_control)
+        {
+            return Err("moniker must be 1..256 bytes and contain no control characters".into());
         }
         Ok(())
     }
@@ -89,50 +131,53 @@ fn run(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
             .open(&config_path)?;
         file.write_all(text.as_bytes())?;
         file.sync_all()?;
+        #[cfg(unix)]
+        fs::File::open(&home)?.sync_all()?;
         println!("{}", config_path.display());
         return Ok(());
     }
     let config: Config = toml::from_str(
-        &fs::read_to_string(&config_path)
+        &read_config(&config_path)
             .map_err(|e| format!("{}: {e}; create it with cyber init", config_path.display()))?,
     )?;
     config.validate()?;
     match cli.command {
         Command::Node => {
-            // Hold the OS lock for the entire server lifetime. It releases on crash too.
-            let lock = fs::OpenOptions::new()
-                .read(true)
-                .write(true)
-                .create(true)
-                .truncate(false)
-                .open(home.join("node.lock"))?;
-            lock.try_lock_exclusive()
-                .map_err(|e| format!("node home already in use or cannot be locked: {e}"))?;
+            let _locks = lock_home(&home)?;
             soft3::node::run(home, &config.bind.to_string(), &config.moniker)?;
         }
         Command::Config => print!("{}", toml::to_string_pretty(&config)?),
-        Command::Cyb => println!(
+        Command::Cyb { live } => println!(
             "{}",
-            serde_json::to_string_pretty(&serde_json::json!({
-                "schema": "cyber/connection/v1",
-                "binary": "cyber",
-                "version": env!("CARGO_PKG_VERSION"),
-                "network": config.network,
-                "rpc": config.rpc(),
-                "home": fs::canonicalize(&home)?,
-                "mode": "local-chaosnet",
-                "status": "/status",
-                "submit": "/v1/link",
-                "cyb_command": format!("net set spacepussy-test {}", config.rpc()),
-                "capabilities": {"graph": true, "replay": true, "peer_sync": false,
-                    "authenticated_writes": false, "consensus": false, "joy_worker": false}
-            }))?
+            serde_json::to_string_pretty(&connection::descriptor(&home, &config, live)?)?
         ),
+        Command::Storage {
+            command: StorageCommand::ImportLegacy,
+        } => {
+            let _locks = lock_home(&home)?;
+            println!("{}", serde_json::to_string_pretty(&run_import(&home)?)?);
+        }
+        Command::Auth {
+            command: AuthCommand::Enable { import_legacy },
+        } => {
+            let _locks = lock_home(&home)?;
+            let imported = if import_legacy {
+                Some(run_import(&home)?)
+            } else {
+                None
+            };
+            let network = soft3::node::Node::open(home, config.moniker)?.enable_authentication()?;
+            println!(
+                "{}",
+                serde_json::to_string_pretty(&serde_json::json!({
+                    "schema": "cyber/authentication/1", "network": hex(&network),
+                    "profile": connection::SIGNED_PROFILE, "authenticated": true,
+                    "import": imported, "consensus_finality": false,
+                }))?
+            );
+        }
         Command::Status { json } => {
-            let body = ureq::get(&format!("{}/status", config.rpc()))
-                .timeout(Duration::from_secs(5))
-                .call()?
-                .into_string()?;
+            let body = connection::read_endpoint(&format!("{}/status", config.rpc()))?;
             let fields = parse_status(&body)?;
             if json {
                 println!("{}", serde_json::to_string_pretty(&fields)?);
@@ -143,6 +188,50 @@ fn run(cli: Cli) -> Result<(), Box<dyn std::error::Error>> {
         Command::Init { .. } => unreachable!(),
     }
     Ok(())
+}
+
+fn read_config(path: &Path) -> std::io::Result<String> {
+    let file = fs::File::open(path)?;
+    if !file.metadata()?.is_file() {
+        return Err(std::io::Error::other("config must be a regular file"));
+    }
+    let mut text = String::new();
+    file.take(16 * 1024 + 1).read_to_string(&mut text)?;
+    if text.len() > 16 * 1024 {
+        return Err(std::io::Error::other("config exceeds 16 KiB"));
+    }
+    Ok(text)
+}
+
+// Product node and both offline operations share the same lifetime locks.
+// The second lock interoperates with `soft3 auth enable`; BBG also excludes
+// independent processes that open the underlying store directly.
+fn lock_home(home: &Path) -> Result<Vec<fs::File>, Box<dyn std::error::Error>> {
+    let mut locks = Vec::new();
+    for name in ["node.lock", "auth-upgrade.lock"] {
+        let lock = fs::OpenOptions::new()
+            .read(true)
+            .write(true)
+            .create(true)
+            .truncate(false)
+            .open(home.join(name))?;
+        lock.try_lock_exclusive().map_err(|e| format!("node home already in use or cannot be locked ({name}): {e}; stop the node before migration or authentication activation"))?;
+        locks.push(lock);
+    }
+    Ok(locks)
+}
+
+fn hex(bytes: &[u8]) -> String {
+    bytes.iter().map(|b| format!("{b:02x}")).collect()
+}
+
+fn run_import(home: &Path) -> std::io::Result<serde_json::Value> {
+    let report = soft3::node::import_legacy(home)?;
+    Ok(
+        serde_json::json!({"schema":"cyber/legacy-import/1", "events":report.events,
+        "signals":report.signals, "height":report.height, "root":hex(&report.root),
+        "source":hex(&report.source), "source_retained":true}),
+    )
 }
 
 fn parse_status(body: &str) -> Result<serde_json::Value, String> {

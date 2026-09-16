@@ -12,9 +12,10 @@ Product owner: cyber. Implementation: `cyber/src/main.rs`. This document
 specifies the public executable boundary; [[specs/worker]] owns computation
 jobs and [[specs/cyb-node]] owns the existing cyb HTTP connection.
 
-The baseline below describes source version 0.8.0. Sections labelled target
-are requirements for the next interface revision, rather than available
-commands. MUST, SHOULD and MAY express implementation requirements.
+The implemented baseline describes the current unpublished 0.8.0 source,
+including the neuron-convergence launcher and migration revision. Sections
+labelled target specify later interfaces. MUST, SHOULD and MAY express
+implementation requirements; profile acceptance and release evidence remain separate.
 
 ## responsibility
 
@@ -23,7 +24,10 @@ job scheduling and acceptance of results into network state. It composes
 soft3 libraries. Joy provides warrior capabilities through a selected backend;
 workers are running instances, following the
 [soft3 execution model](../../soft3/specs/execution-model.md).
-User keys and private personal state remain with the cyb cell.
+The named robot attaches neurons with explicit keys, networks and device access.
+Vault owns private custody; neuron executes durable progs under those subjects.
+GraphSession retains multi-neuron state without a process signer. These roles
+follow [cyb architecture](../../cyb/specs/architecture.md).
 
 ## implemented baseline
 
@@ -32,7 +36,9 @@ cyber [--home PATH] init [--bind IP:PORT] [--moniker NAME]
 cyber [--home PATH] node
 cyber [--home PATH] status [--json]
 cyber [--home PATH] config
-cyber [--home PATH] cyb
+cyber [--home PATH] cyb [--live]
+cyber [--home PATH] storage import-legacy
+cyber [--home PATH] auth enable [--import-legacy]
 cyber --help
 cyber --version
 ```
@@ -46,10 +52,13 @@ exit code 2; help/version succeed with 0; application errors use 1.
 | command | behavior | stdout |
 |---|---|---|
 | init | validate and exclusively create config; preserve existing files | config path |
-| node | hold home lock, replay log, serve until process termination | no command result |
-| status | GET configured /status with five-second timeout; validate document | cybermark, or JSON with --json |
+| node | hold home/database writer locks, recover native BBG state, serve until termination | no command result |
+| status | bounded GET configured /status; validate document | cybermark, or JSON with --json |
 | config | load and validate config without contacting the node | effective TOML |
-| cyb | describe configuration without contacting the node | cyber/connection/v1 JSON |
+| cyb | describe configuration without opening graph or contacting endpoint | cyber/connection/v2 JSON |
+| cyb --live | add bounded validated /capabilities observation; graph remains unopened | cyber/connection/v2 JSON |
+| storage import-legacy | offline strict import of retained log into the shared BBG owner | cyber/legacy-import/1 JSON |
+| auth enable | offline permanent activation of signed native publication; optional strict import first | cyber/authentication/1 JSON |
 
 All commands except init/help/version require valid `config.toml`.
 Errors and server diagnostics go to stderr. Status success establishes a
@@ -65,39 +74,82 @@ bind = "127.0.0.1:7780"
 moniker = "cyber-local"
 ```
 
-Only loopback IP addresses and nonzero ports are accepted. Monikers must
-contain non-whitespace content and no control characters. `init` creates
+Only loopback IP addresses and nonzero ports are accepted. Monikers contain
+1–256 bytes, non-whitespace content and no control characters. Config reads
+accept at most 16 KiB of a regular UTF-8 file. `init` creates
 parent directories and refuses to overwrite config. Other files already
 in the home remain intact. A fresh home starts independent local state.
 
 Current `status --json` emits the cybermark field map: `height` is a JSON
 number; other values, including counters and `catching-up`, remain strings.
-This existing shape and `cyber/connection/v1` MUST remain compatible until
-explicitly superseded. They are distinct from the target envelope below.
+This shape stays unchanged. Descriptor `cyber/connection/v2` explicitly
+supersedes v1: `network_label` is presentation, `network` is a native ID or
+null, and `cyb_commands` is a list. Old v1's label-valued `network`,
+unsigned `submit` and singular `cyb_command` must not be treated as v2.
 
-The earlier sibling `true-cyber` CLI's `sync` and `link` commands have not
-been migrated. `soft3 node` remains a developer entry point to the shared
-engine. Its home lock is independent; a home must have one engine owner.
+Offline descriptors use `observation: configuration-only` and null
+`network`, `profile`, `submit`, `native_capabilities` and
+`capabilities.authenticated_writes`. The `endpoints` map is a supported
+route catalogue, independently of live activation. `cyb --live` uses
+`observation: endpoint-capabilities` and retains validated endpoint metadata.
+Only a compatible signed profile supplies `submit: /v3/action` and a
+`net pin` command. Both forms state `receipt_meaning: endpoint-acceptance`
+and `consensus_finality: false`.
+
+Status and live capabilities use a five-second HTTP timeout, a 64-KiB body
+limit and zero redirects. Non-200, malformed, oversized or inconsistent
+responses fail with nonzero exit. Neither command opens NativeNode, creates
+keys or changes a profile.
+
+Offline import/auth and the running product hold `node.lock` and
+`auth-upgrade.lock`; BBG additionally fences its writer. Operators stop the
+node and all older writers before migration. Import verifies the complete
+bounded retained source and returns its hash, event/signal counts, height and
+root. Authentication optionally imports first, then promotes the persistent
+reader generation and retires incompatible genesis-reader paths. The upgrade
+is monotonic, preserves native network identity and creates no subject key.
+Its JSON reports profile/network/authentication and the optional import result.
+
+These current reports are distinct from the target generic envelope below.
+
+The sibling `true-cyber` CLI now provides a signed native client over the shared
+GraphSession/Registry/Host: explicit neuron attachment, `sync`, `link`, `relay`,
+`receipt`, and legacy inspection/export. Its `sync` mirrors bounded endpoint
+observations and reports no consensus verification. It does not start this
+product's node. See [the native client contract](../../true-cyber/specs/native-client.md).
+
+`soft3 node` remains a developer entry point to the same native coordinator.
+BBG fences the database writer; each home has one active state owner. Offline
+activation and import preserve exact legacy source and native network genesis.
+Product wrappers reuse the shared owner's migration boundary.
+
+`cy neuron` manages robot attachments; the standalone `neuron` executable manages
+durable runtime/prog operations. `cy task` composes soma tasks over that runtime.
+Command names do not create another authority layer. A task, prog or invocation
+ID names retained work under a neuron and has no key.
 
 ## target command surface
 
 | command | effect | availability |
 |---|---|---|
-| init, node, status, config, cyb | preserve baseline semantics | implemented |
+| init, node, status, config, cyb, storage import-legacy, auth enable | preserve documented baseline semantics | implemented |
 | doctor | report configuration, storage, dependency and readiness checks | planned |
 | worker status | query backend capabilities and active/queued work from running node | planned |
 | worker start --backend joy | enable scheduling in the running node | planned |
-| worker stop | disable new dispatch and cancel active jobs | planned |
+| worker stop | disable new dispatch and request cancellation while retaining attempted/unknown outcomes | planned |
 
 Worker commands control the existing node through an authenticated local
 control channel. They MUST NOT open its state independently or silently
 start a second node. The control-channel transport/authentication is a
-separate implementation prerequisite; the unsigned chaosnet HTTP bridge
-does not satisfy it. Standalone program execution belongs to `joy run`.
+separate implementation prerequisite. The signed-native HTTP profile authorizes
+its declared graph actions; worker administration requires its own explicit
+grant and command contract. Standalone nox program execution belongs to `joy run`;
+neuron owns durable prog execution through supported workers.
 
-`sync` is reserved for verified peer replication. Until checkpoint,
-history and finality policies are implemented it MUST remain unavailable.
-No command may report sync completion after a mere HTTP probe.
+In the `cyber` product, `sync` is reserved for verified peer replication. Its
+availability requires checkpoint, history, coverage and finality policies.
+An observation-mirror command in another client must report that narrower scope.
+No command may report verified synchronization after a mere HTTP probe.
 
 ## target machine interface
 
@@ -166,7 +218,8 @@ Before claiming target conformance:
 - reject unsupported proof/state modes without downgrading;
 - exercise cancellation, disk failure and corrupt replay without false success.
 
-Baseline tests are in `cyber/tests/node.rs`; the target cases remain work.
+Baseline tests are in `cyber/tests/node.rs` and the current launcher/migration
+process tests. Target worker/drain/network cases retain their own release gates.
 Changes to command semantics are made here first, then in code/help/tests
 and [[specs/cyb-node]]. Additive JSON fields are allowed within a schema;
 consumers ignore unknown result fields. Changed meanings/types require a

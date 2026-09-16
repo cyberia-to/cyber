@@ -29,6 +29,7 @@ two doors in. the terminal:
 cd ~/cyber/cyber
 cargo build --release --locked
 ./target/release/cyber init
+./target/release/cyber auth enable
 ./target/release/cyber node
 ```
 
@@ -41,26 +42,58 @@ checkouts. [[specs/node-product|Node product]] maps the components and the
 current implementation boundary. [[specs/cyb-node|Cyb node connection]]
 describes the local HTTP contract and launch commands.
 
-In another terminal, `./target/release/cyber status --json` reads the running
-node and `./target/release/cyber cyb` prints its connection descriptor.
-In cyb's commander, `net set spacepussy-test http://127.0.0.1:7780` connects
-the default network entry to this node. This starts an independent local
-chaosnet state; public network replication and validator consensus remain
-integration work.
+The explicit `auth enable` step activates signed native publication for this
+home and retires incompatible old readers. It creates no subject key. A new
+genesis starts an independent local network; its native network ID is separate
+from the `spacepussy-test` display label. HTTP receipts report endpoint acceptance;
+verified peer replication and validator consensus have their own delivery gates.
+
+In another terminal, `./target/release/cyber status --json` reads local state.
+`./target/release/cyber cyb` prints an offline configuration descriptor with
+unknown live network/profile fields. `./target/release/cyber cyb --live` validates
+the endpoint's capabilities and prints the actual native network ID and profile.
+
+In cyb's commander, add and explicitly pin the local endpoint:
+
+```text
+net add local http://127.0.0.1:7780
+net probe local
+net pin local NETWORK_HEX
+```
+
+Use the expected 64-digit network ID reported by the local node. For an existing
+entry, `net set local URL` changes its endpoint. A name/URL without a network pin
+remains read-only; endpoint ordering cannot choose an action's destination.
+Submission also requires an explicitly controlled neuron attachment for that
+network. The robot can attach different keys, networks and devices; progs run
+under those neurons with their own retained work IDs.
+
+For an existing legacy home, stop all writers and run
+`cyber --home PATH storage import-legacy` before activation, or combine the steps
+with `cyber --home PATH auth enable --import-legacy`. Both reuse the shared
+storage owner and preserve the original source bytes. Existing configuration
+stays intact; activation is a permanent reader-generation upgrade. See
+[[specs/cli]] and [[specs/cyb-node]] for bounds, exact reports and recovery.
 
 `nu scripts/release.nu` produces a host binary, checksum, and dependency
-provenance in `dist/`. The existing crates.io `true-cyber` release and sibling
-`true-cyber` repository contain the earlier cell CLI with `sync` and `link`.
-The new node entry point here is version 0.8.0 and is currently unpublished.
+provenance in `dist/`. The sibling `true-cyber` source now provides a headless
+client over the shared GraphSession and neuron registry: explicit key attachment,
+network-bound signed publication, receipt reconciliation and history sync.
+Its [migration contract](../true-cyber/specs/native-client.md) retains exact
+earlier CLI logs and retires their old writer. The node entry point here is
+version 0.8.0 and is currently unpublished.
 
-The [[audit/node-readiness|binary readiness audit]] reproduces journal data
-loss, duplicate JSON retries and unproved test reward issuance, and tracks
-the missing Joy/worker and network-instance integrations. Use this artifact
-for local development while those acceptance gates are completed.
+The [[audit/node-readiness|binary readiness audit]] records earlier journal,
+retry and reward-admission failures and the broader product release gates.
+Current native acceptance, signed retries, source-preserving migration and
+actual client checks are recorded in the
+[convergence evidence](../soft3/audit/neuron-cell/implementation.md). Those
+local guarantees remain separate from Joy product scheduling, distributed
+finality and release-platform acceptance.
 
 and the robot: [[cyb]] — one binary that carries the graph, a terminal, and a local mind on macOS and Android; it paints the [[cybergraph]] at 100+ fps and answers from a model running on your own silicon. get it at [cyb.ai](https://cyb.ai)
 
-cyb's default public network is spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). the local node above serves its own state at loopback. tokens and state are test. mainnet arrives at [[launch]]
+cyb retains a default public endpoint for spacepussy-test — the [[soft3]] chaosnet on cybernode (`https://cyb.ai/spacepussy-test`). a legacy name/URL entry is read-only until its native network/profile is explicitly pinned. the local node above serves its own state at loopback. tokens and state are test. mainnet arrives at [[launch]]
 
 [[litepaper]] · [[whitepaper]] · [[cyb]] · [[cyber/$CYB|$CYB]]
 
