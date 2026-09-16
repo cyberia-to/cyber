@@ -6,7 +6,7 @@ crystal-type: entity
 crystal-domain: cyber
 crystal-size: atom
 ---
-the thing a [[particle]] names. everything is a file — a document, an image, a model, a genome, a [[neuron]]'s key, an [[axon]]'s pair of endpoints. the [[cybergraph]] is files, linked by [[cyberlinks]] that [[neurons]] sign and [[tokens]] weigh
+the thing a [[particle]] identifies. everything is a file — a document, an image, a model, a genome, a [[neuron]]'s key, an [[axon]]'s pair of endpoints. the [[cybergraph]] is files, linked by [[cyberlinks]] that [[neurons]] sign and [[tokens]] weigh
 
 ```
 file = (particle, data, name, meta)
@@ -23,6 +23,6 @@ the particle is intrinsic: two files with the same data share one particle. name
 
 a file's data may be absent on this machine — not yet fetched, or never published. the file still exists, its particle still links, [[focus]] still flows through it. [[cyb]] shows such a file as a black hole: mass without visible body, `cyb://particle/<hex>` until a [[cyb/reference/spark|spark]] can draw the bytes and it becomes `cyb://file/<hex>`
 
-files are what flows through [[tape]] frames when an agent sends a thing rather than a raw atom. [[particles]] are the objects' names; [[neurons]] are the subjects
+files are what flows through [[tape]] frames when an agent sends a thing rather than a raw atom. [[particles]] are the objects' identities; [[neurons]] are the subjects. a file's name is neither: it is a `~` label a neuron gives by a naming [[cyberlink]], mutable, resolved by supersession
 
 discover all [[concepts]]
