@@ -339,7 +339,6 @@ Census additions recorded on 2026-09-08: [[research/oikos|oikos]] carries the mo
 | [[research/gradient descent|gradient descent]] | 1593 | stays · research | protocol-level research |
 | [[research/knowledge capacity|knowledge capacity]] | 2027 | stays · research | protocol-level research |
 | [[research/knowledge economy|knowledge economy]] | 942 | stays · research | protocol-level research |
-| [[research/link production|link production]] | 2205 | stays · research | protocol-level research |
 | [[research/neuroscience principles for machine mind|neuroscience principles for machine mind]] | 6858 | stays · research | protocol-level research |
 | [[research/physical analogies|physical analogies]] | 3352 | stays · research | protocol-level research |
 | [[research/privacy trilateral|privacy trilateral]] | 3867 | stays · research | ZK+FHE+MPC — protocol-level survey |
@@ -382,10 +381,8 @@ Census additions recorded on 2026-09-08: [[research/oikos|oikos]] carries the mo
 | [[research/256 symbols|256 symbols]] | 899 | folds → `soft3/specs/bytes.md` | stack alphabet, not nox ISA. one byte = one meaning; jets as opcodes. see §1c |
 | [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
 | [[analizer|analizer]] | 1009 | moves → research/ | protocol research misfiled at root |
-| [[seer|seer]] | 1318 | moves → research/ | protocol research misfiled at root |
 | [[research/five algebras|five algebras]] | 3619 | moves → strata | component research goes home |
 | [[research/trinity meets polynomial state|trinity meets polynomial state]] | 1496 | moves → trident | component research goes home |
-| [[research/gflownet focus flow|gflownet focus flow]] | 1766 | moves → tru | component research goes home |
 ---
 
 # 1a · bbg absorption — refine, do not copy
