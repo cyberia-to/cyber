@@ -51,7 +51,7 @@ state-epoch-N → syntropy → 14.7
 state-epoch-N → active-neurons → 3142
 ```
 
-each epoch, new state particles are created and linked to the current epoch marker. the chain forms a traversable history: any participant can query the graph's past by walking the epoch-chain backward. the evolution of the system is stored in the system it describes.
+each epoch, new state files are created and linked to the current epoch marker. the chain forms a traversable history: any participant can query the graph's past by walking the epoch-chain backward. the evolution of the system is stored in the system it describes.
 
 ---
 
@@ -69,7 +69,7 @@ at maturity — assuming the inference engine is accurate — the protocol neuro
 
 self-linking has defined boundaries:
 
-the system does not link [[particles]] whose content it cannot verify against the graph. inference completion requires existing graph structure as evidence — the system extends what's already there, it does not hallucinate from nothing. a link created without graph-structural support would score poorly under BTS and damage the protocol neuron's karma. the economic mechanism self-enforces epistemic discipline.
+the system does not link [[files]] whose content it cannot verify against the graph. inference completion requires existing graph structure as evidence — the system extends what's already there, it does not hallucinate from nothing. a link created without graph-structural support would score poorly under BTS and damage the protocol neuron's karma. the economic mechanism self-enforces epistemic discipline.
 
 the system does not create links that would conflict with authenticated assertions from high-karma neurons unless the contradiction score is exceptional. a high-karma neuron's explicit claim overrides an inference-based system link. the system defers to credible participants on content it cannot verify structurally.
 

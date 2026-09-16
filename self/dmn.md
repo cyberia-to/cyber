@@ -16,7 +16,7 @@ the [[cybergraph]] has a structural analog. during low-query periods on the fast
 
 ## self-model update
 
-the [[cybergraph]] contains [[particles]] that describe the [[cybergraph]] itself:
+the [[cybergraph]] contains [[files]] that describe the [[cybergraph]] itself:
 - current effective rank $d^*$
 - phase threshold $|P^*| \sim \rho^2$ and distance to it
 - parametrization state (α, μ, τ at each timescale)
@@ -24,9 +24,9 @@ the [[cybergraph]] contains [[particles]] that describe the [[cybergraph]] itsel
 - [[neuron]] diversity and contribution distribution
 - hot/cold tier boundary and archival rate
 
-these are not external records kept by operators. they are [[particles]] in the graph, linked by [[cyberlinks]], subject to the same epistemic weight as every other particle. a [[neuron]] who disagrees with the system's self-reported $d^* = 31$ can link a contradicting measurement. [[Bayesian Truth Serum]] forces resolution. the system's beliefs about itself are correctable.
+these are not external records kept by operators. they are [[files]] in the graph, linked by [[cyberlinks]], subject to the same epistemic weight as every other file. a [[neuron]] who disagrees with the system's self-reported $d^* = 31$ can link a contradicting measurement. [[Bayesian Truth Serum]] forces resolution. the system's beliefs about itself are correctable.
 
-the DMN updates these particles every slow-timescale epoch, reading the current state and creating self-documenting links. the graph narrates its own evolution.
+the DMN updates these files every slow-timescale epoch, reading the current state and creating self-documenting links. the graph narrates its own evolution.
 
 ---
 
