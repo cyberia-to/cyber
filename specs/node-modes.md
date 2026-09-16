@@ -1,136 +1,131 @@
 ---
-tags: cyber, specs, soft3, cell, light client, full node
+tags: cyber, specs, soft3, partial node, light client, full node
 crystal-type: spec
 crystal-domain: cyber
-alias: node modes, full node cell light client
+alias: node modes, full partial light client
 status: draft
 ---
 
 # node modes
 
-three modes of participation in the cyber network. all are in scope. they share roots, nullifiers, and finality rules; they differ in storage and how tip trust is obtained.
+Full, partial and light describe participation in a graph network: retained
+state, validation duties and the source of trusted tips. The former cell mode
+is named partial. [Domain roles](domain-ladder.md) and
+[cyb architecture](../../cyb/specs/architecture.md) define neuron as the subject,
+prog as executable work and GraphSession as a multi-neuron local graph host.
+Mode selection is independent of the number of attached neurons or progs.
 
-money loop requirements: [[specs/money-loop\|money-loop]].  
-light money detail: [[specs/light-money\|light-money]].
+This document specifies target network profiles. The current local native
+adapter supplies durable endpoint acceptance and authenticated submission when
+enabled; its local height, mirrored history and HTTP receipts alone do not
+satisfy the finality or folded-tip requirements below. Implementations advertise
+only profiles supported end to end. See [[specs/node-product]].
 
----
+Money requirements: [[specs/money-loop]]; folded-tip detail:
+[[specs/light-money]].
 
 ## 1. modes
 
-```
-full node                 cell (cyb)                    light client
-hold / replay             apply my                      headers + fold
-all signals               namespaces                    decide(acc)
-tri-kernel locally        local notes + sigma           openings only
-size: unbounded           size: O(my slice)             size: ~constant
-```
+| mode | retained state | tip trust | private wallet state | computation |
+|---|---|---|---|---|
+| full | State/history sufficient to validate the complete selected domain and serve openings | Own verified application under the network's consensus rules | For explicitly controlled subjects | Tri-kernel and block proofs as required by the selected validator role |
+| partial | Selected graph slices, relevant notes and authenticated coverage | Verified slice application/completeness anchored to a trusted tip; may embed the light fold | Notes and witnesses for attached controlled subjects | Optional domain-local computation |
+| light | Checkpoint, accumulator, headers/openings and local secrets as needed | Clock C: verified `decide` and folded tip updates | Local secrets; witnesses obtained through verified openings | Opening/send verification; full graph computation optional |
 
-| mode | tip trust | private notes | run φ* | produce block proofs | typical device |
-|---|---|---|---|---|---|
-| full | own apply of history | yes | yes | yes (validators) | server / desktop |
-| cell | apply my slice + completeness; MAY embed light fold | yes | optional / domain-local | no | phone / laptop cyb |
-| light | clock C: decide + fold | secrets only; witnesses via open | no | no | thin phone / embed |
+The target cyb default combines partial state with a verified light tip: local
+notes and relevant graph updates, plus clock-C trust. Storage scales with the
+chosen slice; pure light minimizes retained graph state. Observation-only
+attachments require public references and verified observations. Control uses
+explicit ward grants and vault custody; a mode label grants neither.
 
-production cyb default: **cell that embeds light tip** (grade 4 via fold, plus local note store and apply of signals that touch the owner). pure light is the thinnest extreme; pure full is the fattest.
-
----
-
-## 2. required capabilities by mode
+## 2. required capabilities
 
 ### 2.1 full node
 
-MUST:
+A full implementation MUST:
 
-- store or recompute state sufficient to serve BBG openings and history  
-- verify all signal $\sigma$ it accepts  
-- maintain nullifier set consistency with foculus rules  
-- compute or verify φ* domain finality as required by its role  
-- serve Lens openings and completeness proofs to peers  
-- produce folding accumulator contributions if participating in consensus/settlement  
+- retain or recompute state sufficient to serve BBG openings and history;
+- verify every accepted signal and required proof under its network profile;
+- maintain nullifier consistency with foculus ordering and conflict rules;
+- compute or verify φ* domain finality as required by its role;
+- serve authenticated Lens openings and required completeness evidence;
+- produce accumulator contributions when its consensus/settlement role requires them.
 
-MAY:
+Archival pruning MAY remove data only while the declared opening, history and
+accumulator availability contract remains satisfied. Local execution of all
+received data establishes network trust only when join, coverage and consensus
+verification also satisfy the selected profile.
 
-- prune archival data if openings and acc still served  
+### 2.2 partial node
 
-### 2.2 cell (cyb)
+A partial implementation MUST:
 
-MUST:
+- retain the selected slice and identify its coverage relative to authenticated tips;
+- retain owned notes and recovery state for subjects it controls;
+- obtain grade-4 tip trust through fold or the specified continuous completeness
+  and validated-history equivalent;
+- apply or open every relevant credit, debit and spent-status change for its
+  selected subjects, including any hidden-note discovery required by the profile;
+- prepare/prove sends through current subject/network authority and verify peers'
+  openings against the trusted tip;
+- emit subject- and network-bound observations to sense/sigma;
+- grant money-grade labels and respend only after the required finality grade.
 
-- hold neuron secrets and owned notes  
-- submit sends (prove Intents)  
-- obtain grade-4 tip (fold preferred; continuous completeness minimum)  
-- apply or open all signals that credit/debit local neuron  
-- emit money-loop events to sense/sigma  
-- verify peer openings against tip  
-
-MUST NOT:
-
-- mark money final without grade 2 at trusted tip  
-
-SHOULD:
-
-- multi-device local sync (CRDT) for same identity (structural-sync local merge)  
+Multi-device state synchronization SHOULD preserve notes, observations and
+continuations with the supported merge policy. A CRDT merge transports data;
+dispatch requires the current writer fence, binding and grant. A second device
+cannot infer signing permission or an additional effect attempt from synchronized
+state alone.
 
 ### 2.3 light client
 
-MUST:
+A light implementation MUST:
 
-- implement clock C join: checkpoint → `decide(folding_acc)` → tip  
-- fold each new tip update O(1)  
-- verify Lens openings against tip for balance and receive  
-- verify own send proofs before broadcast; verify finality evidence for own spends at tip  
-- refuse money-grade state if grade 4 missing  
+- join clock C through an authenticated checkpoint and valid `decide(folding_acc)`;
+- verify and fold each new tip update under the declared constant-work profile;
+- verify balance, receive and spent-status openings against that tip;
+- verify its own send proof before broadcast and finality evidence before respend;
+- retain local custody and private recovery state according to its attachment mode;
+- keep money-grade operations unavailable while grade-4 trust is missing.
 
-MUST NOT:
+Full history replay and full tri-kernel computation are optional additions to
+this mode. Cached headers, openings and push hints are useful inputs whose
+verification duties remain unchanged.
 
-- re-execute full history  
-- run full tri-kernel as a requirement of money  
-- accept balance/receive without tip-bound proof  
+## 3. money loop by mode
 
-MAY:
-
-- cache headers and openings  
-- subscribe to push hints (still MUST verify)  
-
----
-
-## 3. matrix: money loop × mode
-
-| capability | full | cell | light |
+| capability | full | partial | light |
 |---|---|---|---|
-| balance | local | apply or open | open |
-| send | prove + gossip | prove + gossip | prove + gossip (witnesses from peers) |
-| receive detect | apply | apply / open | open + event |
-| receive NOTIFY | yes | yes | yes after verify |
-| multi-payee reward | yes | yes | yes after open |
-| cold start | sync/replay | sync slice + fold | **fold only** |
-| grade 4 | implicit | fold or completeness | **fold** |
-
----
+| balance | Verified local state | Complete relevant apply or tip-bound opening | Tip-bound opening |
+| send | Prove + gossip | Prove + gossip | Prove + gossip using verified witnesses |
+| receive detection | Apply | Complete relevant apply / open | Open + verified event |
+| receive notification | After required finality | After required finality | After verified opening and required finality |
+| multi-payee reward | Validate all legs | Apply/open each relevant leg | Open each relevant leg |
+| cold start | Verified join + replay/checkpoint | Verified slice + trusted tip | Authenticated accumulator + decide + required openings |
+| grade 4 | Verified full-history/consensus equivalent | Fold or declared completeness/history equivalent | Fold |
 
 ## 4. promotion and demotion
 
-| transition | rule |
+| transition | preserved state and added duties |
 |---|---|
-| light → cell | add private note store + apply pipeline; keep fold tip |
-| cell → full | add full graph / validator duties; not required for money UX |
-| full → light | drop local graph; retain keys; re-join via decide |
+| light → partial | Retain trusted tip and custody; add slice application, completeness and note storage |
+| partial → full | Retain subjects/notes; add complete selected-domain state and full validation duties |
+| full → partial/light | Retain custody, notes, unresolved effects and recovery evidence; establish the destination mode's trusted-tip path before relying on it |
 
-losing grade 4 (cannot fold, no completeness) → money UI MUST drop to non-money-grade (read-only warning) until tip restored.
-
----
+Changing mode preserves NeuronId, prog/invocation identities, pending author and
+network, nonce claims and budgets. Losing clock-C trust drops money views to
+explicit unverified/read-only observations until trust is restored. Detachment,
+device movement and mode changes preserve history and unknown outcomes.
 
 ## 5. conformance
 
-- [ ] light join works offline-of-history: only acc + decide + opens  
-- [ ] cell send/receive works with embedded fold tip  
-- [ ] full node can serve the openings light needs  
-- [ ] mode flag visible in diagnostics (for support, not for trust)  
+- [ ] Light join verifies without downloading history, using accumulator, decide and opens.
+- [ ] Partial send/receive verifies its embedded tip and complete relevant slice.
+- [ ] Full nodes serve the openings and availability promised to thinner clients.
+- [ ] All modes reject wrong-network proofs, stale/nullified spends and incomplete coverage.
+- [ ] Promotion/demotion preserve notes, subject bindings and unresolved work across restart.
+- [ ] Diagnostics report actual mode, proof profile, trusted-tip state and supported capabilities separately.
 
----
-
-see [[specs/light-money\|light-money]], [[structural sync]], [[cyber/light\|light client]], [[cell]].
-
----
+See [[specs/light-money]], [[structural sync]] and [[specs/domain-ladder]].
 
 discover all [[concepts]]

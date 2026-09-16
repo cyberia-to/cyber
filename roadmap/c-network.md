@@ -12,6 +12,13 @@ Compose the A persistence/admission path and B computation capabilities into a
 network participant. Network identity/versioning is specified during A; the
 distributed behavior and release evidence are completed here.
 
+Subjects follow [cyb architecture](../../cyb/specs/architecture.md): one robot
+can attach many neurons; each can run durable progs without additional signing
+identities. [Domain roles](../specs/domain-ladder.md) distinguish those subjects
+from graph hosts, partial-node slices, services, books and shards. The current
+signed native/local execution profile supplies source-level convergence evidence;
+this roadmap adds verified distributed participation and its release gates.
+
 ## C1: open network instances
 
 Owners: Cyber/OS protocol, Soft3 contracts, Trident/Joy adapters.
@@ -21,6 +28,9 @@ Owners: Cyber/OS protocol, Soft3 contracts, Trident/Joy adapters.
 - [ ] Accept arbitrary compatible instances as data; isolate state, jobs, caches,
   credentials, receipts and relay cursors by network identity.
 - [ ] Preserve identity across endpoint changes and reject the wrong network.
+- [ ] Retain domain-qualified foreign references and explicit native subject,
+  network, binding revision and grant on every job/action. A URL, display name,
+  worker/device ID or prog ID cannot supply signing authority.
 
 Exit: the same installed warrior serves two instances and a previously unknown
 third one without a source enum change or rebuild. Unsupported combinations fail.
@@ -77,8 +87,11 @@ Owners: Foculus/Tru, Cybergraph, Zheng/Lens and Cyber.
 - [ ] Connect live signal acceptance, epoch transitions and finality verification.
 - [ ] Bind reward evidence to the actual challenge, domain/epoch, beneficiary and
   work; reject duplicate or stale work and persist effects atomically.
-- [ ] Implement full/cell/light behavior according to the declared mode contract.
+- [ ] Implement full/partial/light behavior according to the declared mode contract.
   Distinguish local progress from network finality in APIs and cyb.
+- [ ] Preserve each mode's validity, nullifier, coverage, availability and trusted-tip
+  duties across promotion, demotion and partial-slice changes. Keep private notes,
+  original subjects/networks and unresolved work through restart and device moves.
 - [ ] Specify protocol/parameter upgrades and state/primitive migrations.
 
 Exit: a real multi-node scenario covers conflicting proposals, restart during an
@@ -90,6 +103,9 @@ Owners: Cyber admission, Joy deployment adapter, Trident artifact APIs.
 
 - [ ] Specify publication bytes, program identity, network policy, signer authority,
   fees/resources where applicable, and the receipt/finality lifecycle.
+- [ ] Keep published prog identity separate from the controlling neuron subject.
+  Freeze subject/network/current grant and payload before dispatch; preserve
+  original request evidence and unknown effects through cancellation or revocation.
 - [ ] Implement deterministic offline preparation and explicit signed submission.
 - [ ] Handle ambiguous submission, repeat requests, policy rejection and finality
   updates without rebuilding or weakening the frozen artifact/profile.

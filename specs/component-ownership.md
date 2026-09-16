@@ -8,59 +8,67 @@ status: draft
 
 # component ownership
 
-who implements what for the cyber money loop + light client. integration contracts live in [[cyber]]/specs; algorithms live in component repos.
+Cyber owns cross-component network product contracts. Component repositories own
+their algorithms and reusable boundaries. [Cyb architecture](../../cyb/specs/architecture.md)
+defines one subject, neuron, with durable progs; [domain roles](domain-ladder.md)
+separate that subject from nodes, shards, services and books.
 
-The executable composition and current runtime capability boundary live in
-[[specs/node-product]]. Local cyb integration is specified in
-[[specs/cyb-node]]. The [component implementation report](../audit/component-implementation.md)
-records work-package status, code locations and prior checks. The
-[node readiness audit](../audit/node-readiness.md) records executable evidence.
-
----
+[[specs/node-product]] describes the executable composition and supported local
+profile; [[specs/cyb-node]] describes client connections. The
+[convergence evidence](../../soft3/audit/neuron-cell/implementation.md) records
+implemented identity, runtime and migration behavior. Network release status
+remains in [node readiness](../audit/node-readiness.md) and the network roadmap.
 
 ## 1. ownership matrix
 
-| concern | normative spec | implement in | consumed by |
-|---|---|---|---|
-| PLUMB pay/mint/burn, Intent | [[tok]] | tok + nox circuits | cybergraph, cyb |
-| signal structure, seal | cybergraph + [[structural sync]] | cybergraph, foculus | radio, cyb |
-| gossip / DAS / CRDT local | [[structural sync]], gossip | foculus, radio | cell |
-| finality φ* > τ, nullifiers | [[foculus protocol]] | foculus, tru | all modes |
-| thin finality evidence | [[specs/light-money\|light-money]] | foculus `finality_evidence` | cyb money |
-| epoch settle / attribution | reward spec, fold-mining | foculus, tok mint | cyb sense |
-| BBG state + Lens open | bbg research/spec | bbg, lens | light, cell, full |
-| zheng prove/verify/fold | [[zheng]] | zheng | all prove paths |
-| tip checkpoint + decide | [[structural sync]], [[specs/light-money\|light-money]] | foculus `tip` | light, cell |
-| sigma / sense UI events | [[specs/money-loop\|money-loop]] | cyb-core money + sense | human |
-| network product contract | **this directory** | — | all implementers |
+| concern | contract / implementation owner | consumers |
+|---|---|---|
+| Native NeuronId bytes | neuron-id; H(compressed pubkey) in the supported mudra profile | Foundational libraries, identity-only SDKs, graph and applications |
+| Foreign subject / network / attachment context | neuron-model; cyb robot registry composes named attachments | Robot, CLI, soma, native adapters |
+| Prog state, invocations, continuations, reservations, unknown effects | neuron-engine; neuron-node composes graph/authority/worker ports | Soma, services, host CLIs |
+| Goals, task context, tools, delegation, schedules, learning proposals | soma over neuron execution | Robot and applications |
+| Current grants / revocation and secret operations | ward / vault; mudra and proof profiles authenticate | Subject-bound admission and dispatch |
+| Signal application, multi-neuron GraphSession, history and native acceptance | cybergraph | Cyb, node, true-cyber and adapters |
+| Durable state, transactional application records and openings | bbg / lens | GraphSession, full/partial/light implementations |
+| PLUMB pay/mint/burn and Intent laws | tok + supported nox/zheng circuits | Cybergraph, foculus, sigma |
+| Ordering, nullifiers, finality φ* > τ, epoch attribution | foculus / tru with tok mint semantics | All declared network modes |
+| Proofs, accumulator fold, decide | zheng and foculus tip/finality-evidence adapters | Full/partial/light verification paths |
+| Transport / framing / replicated data | radio / tade; structural-sync protocols | Node and client adapters |
+| VM/OS family and running bounded executor | Warriors / workers under the soft3 execution model | Neuron and node job orchestration |
+| Configuration / cognition / visualization / devices | Cyb soul / soma / avatar / body | Named robot composition |
+| Identity and holdings workflows / notifications / history rendering | Cyb sigma / sense / log | Human and program interfaces |
+| Process configuration, network readiness and releases | cyber over soft3 assembly | Local and network deployments |
 
----
+Runtime budgets reserve and account resources; protocol balances, stake, focus
+and karma keep their protocol owners. A prog has an addressable data ID and
+executes under a neuron; installation creates no second signing subject. A
+GraphSession retains many authors without a process signer. Log renders graph
+history, while tade supplies frames and BBG supplies durability.
 
 ## 2. dependency direction
 
-```
-cyb (sigma, sense, CLI)
-  │  uses
-  ▼
-cyber/specs          ◄── product contracts (this tree)
-  │  cites
-  ├─► tok            value ops
-  ├─► foculus        finality, sync, nullifiers, tip fold, finality evidence
-  ├─► zheng          proofs, fold, decide
-  ├─► bbg / lens     state openings
-  ├─► cybergraph     signals + box_moves bridge
-  ├─► radio / tape   transport
-  └─► tru            φ* operators (full/cell consensus compute)
-```
+Foundational BBG/tok/transport clients may import the dependency-free neuron-id
+contract. Identity consumers may add the bounded model and selected crypto
+profile. Engine, node, VM, GUI and inference dependencies belong to hosts that
+actually execute or compose those capabilities.
 
----
+Cyber and cyb compose the same cybergraph implementation. Soft3 assembles
+components; its optional local `stack` facade remains an explicit feature.
+Neuron owns durable execution semantics and delegates bounded work to compatible
+workers. Soma orchestrates cognition through that execution contract. Inf's
+optional neuron query adapter reads retained projections without gaining grant
+or dispatch authority. Radio endpoint keys and tade display labels do not grant
+subject access.
 
-## 3. change control
+## 3. profile and change control
 
-- breaking change to clocks, grades, or tip object → version bump in this directory
-- parameter number changes ($d$, epoch lengths) → [[foculus parameters]] only
-- explanation prose → foculus `docs/explanation/latency-targets.md`
+An ownership row names the responsible component, rather than certifying a
+released integration. Local runtime commit, authenticated endpoint acceptance,
+network ordering and verified finality have separate evidence and readiness.
 
----
+- Changes to clocks, grades, tip objects or authority contexts require versioned contracts.
+- Parameter changes belong in [[foculus parameters]].
+- Domain/wire migrations preserve original bytes and explicit provenance.
+- New node modes retain the same validation, nullifier, coverage and finality obligations.
 
 discover all [[concepts]]

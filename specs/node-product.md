@@ -8,126 +8,146 @@ alias: node product, cyber binary
 
 # node product
 
-CLI contract: [[specs/cli]]. Computation job contract: [[specs/worker]].
-Joy's developer CLI is specified in `joy/specs/cli.md` in the sibling repo.
-
-The shared architecture is defined by the [soft3 execution model](../../soft3/specs/execution-model.md).
-A warrior implements a VM/OS
-family; workers instantiate it for an open-ended set of compatible networks.
-
 Cyber is the network product assembled from [[soft3]]. This repository owns
-the executable entry point, configuration, product contracts, release
-artifacts, and the explanatory graph. Component repositories own algorithms.
+the executable entry point, configuration, product contracts, release artifacts
+and explanatory graph. Component repositories own reusable algorithms.
+[[specs/cli]] owns commands and [[specs/cyb-node]] owns client connections.
+
+[Cyb architecture](../../cyb/specs/architecture.md) defines neuron as the
+subject and prog as its durable work. [Domain roles](domain-ladder.md) separate
+subjects from graph sessions, node participation modes, services, books and
+shards. The [soft3 execution model](../../soft3/specs/execution-model.md)
+defines warriors as VM/OS families and workers as running instances.
 
 ## composition
 
 ```text
-cyb — personal cell, keys, local graph, UI
-  │ HTTP: status, links, balances, explorer
-  ▼
-cyber — node process, configuration, lifecycle, capabilities
-  │ Rust library calls
-  ▼
-soft3 — stack assembly and developer interfaces
-  ├─ cybergraph — signal application
-  ├─ bbg / lens — authenticated state and openings
-  ├─ foculus / tru — finality and graph computation libraries
-  └─ nox / zheng / hemera / strata — execution, proofs, primitives
+cyb — named robot, attached neurons, private custody, UI
+  ├─ soma → neuron execution → compatible workers
+  ├─ GraphSession → cybergraph / BBG
+  └─ explicitly pinned native HTTP client
+       ↓
+cyber — process, configuration, lifecycle, advertised capabilities
+  ↓
+soft3 — assembly and shared HTTP adapter
+  ├─ cybergraph — native acceptance, Signal chains, history/recovery
+  ├─ bbg / lens — transactional state and authenticated openings
+  ├─ foculus / tru — ordering/finality and graph computation
+  └─ nox / zheng / hemera / strata — execution, proofs and primitives
 
-joy — warrior implementation for the nox target family
-  └─ workers — embedded, isolated or remote instances
-       └─ selected backend — nox execution + zheng proving/verification
+joy — warrior for the nox family
+  └─ selected embedded, isolated or remote worker placement
 ```
 
-The bottom branch describes a component boundary to integrate. The current
-`cyber node` process calls `soft3::node::run`; it has no joy worker loop.
-The presence of a proof library in the dependency graph does not establish
-proof verification on every accepted transaction.
+Current `cyber node` calls `soft3::node::run` and shares its native
+coordinator. Joy integration into this product remains a separate job-control
+work package. Neuron's existing local Rune worker and soma's local model/tool
+driver already have their own declared profiles. A dependency on a proof
+library alone cannot establish verification at an ingress boundary.
 
-## ownership and overlap
+## ownership
 
-| part | owns | relationship to the node |
-|---|---|---|
-| cyber | product binary, config, graph, contracts, distribution | main entry point |
-| soft3 | reusable stack assembly, SDKs, developer tooling | engine dependency |
-| cybergraph | graph transitions and signal chains | one implementation reused by node and cell |
-| cyb | personal state, secrets, interface, client lifecycle | consumes node HTTP; keeps its local cell |
-| warrior | reusable VM/OS target implementation | supports many compatible network instances |
-| joy | nox warrior integrating Trident, nox and Zheng | planned embedded node library; standalone developer CLI |
-| worker | running instance of warrior capabilities | selected backend, placement and resource budget |
-| warriors | catalogue of proving/mining implementations | discovery and documentation |
-| cybernode | server deployment and operations | hosts selected products and bootloader chains |
-| true-cyber sibling | earlier standalone cell CLI | migration source for sync/link commands |
+| part | owns / relationship |
+|---|---|
+| cyber | Product entry point, configuration, process lifecycle, contracts and release assembly |
+| soft3 | Reusable stack assembly, adapters, SDKs and developer interfaces |
+| cybergraph | One graph transition/history implementation reused by network hosts and multi-neuron GraphSession |
+| bbg / lens | Durable transactions, application namespaces and supported authenticated state views |
+| cyb | Named robot composition, explicit attachments, private custody, UI and client lifecycle |
+| neuron | Subject model, durable progs, continuations, resource accounting, current-authority execution and recovery |
+| soma | Task/context/tool/delegation/schedule orchestration over neuron execution |
+| warrior / worker | Reusable target capability / running bounded placement |
+| joy | Nox warrior integrating Trident, nox and Zheng; product scheduling integration remains a target |
+| cybernode | Server deployment and operations for selected products and bootloader chains |
+| true-cyber sibling | Current headless native client, sharing GraphSession/Registry/Host and signed-native retry/migration |
 
-There are two kinds of overlap. Sharing cybergraph between a node and a
-personal cell is intentional: they apply the same transitions to different
-state scopes. Independent CLI configuration, log replay code, network
-defaults, and release ownership need consolidation around this product.
+The node and a personal graph apply shared cybergraph transitions at their
+declared state scopes. Each uses explicit database ownership. A GraphSession
+may retain several authors; its database, process, address or home creates no
+additional signing identity. The robot's attached neurons hold the relevant
+subject authority and execute progs with data IDs.
 
-The soft3 `stack` feature currently re-exports a published cyb crate. It is
-disabled in the product binary. Runtime assembly should point from cyber to
-components; cyb consumes the node contract. The GUI belongs in its own
-process and release, with keys remaining in its personal cell.
+The optional soft3 `stack` feature points to the local cyb facade and stays
+disabled in this product. Foundational identity users can depend only on
+neuron-id or the selected bounded model/crypto profile. GUI and inference
+belong to applications that use them.
 
-Soft3 owns foundational composition contracts and developer interfaces.
-This product uses its existing assembly library and leaves component
-algorithms in their owners. A later extraction of its HTTP host must preserve
-[[specs/cyb-node]]. The product design embeds Joy in the cyber binary;
-separate worker processes remain an optional placement choice.
+## current executable and storage
 
-## current executable
+`cyber init` exclusively creates config, `config` displays it, `node`
+holds its home lock and opens the shared native coordinator. BBG owns the
+database writer fence. Independently launched hosts must respect that same
+database ownership; a process-local configuration lock alone is insufficient.
 
-`cyber init` creates `config.toml` once; `cyber config` displays it.
-`cyber node` opens the graph, replays its log, and serves the existing
-soft3 HTTP surface. An OS file lock excludes a second cyber process using
-the same home and releases when the process exits. The older soft3 server
-does not participate in this lock; give each independently run server a
-separate home.
+The current database is `HOME/bbg`. Accepted operations, receipts and derived
+state recover through Cybergraph/BBG. An existing flat `log` needs explicit
+import before normal startup. `cyber storage import-legacy` imports through the shared
+owner; `cyber auth enable [--import-legacy]` permanently activates signed
+HTTP publication. Both operate offline under the same locks as `node` and
+interoperate with `soft3 auth enable --home PATH [--import-legacy]`. They
+preserve source/genesis bytes; authentication promotes the persistent reader
+generation without generating a subject key. [[specs/cli]] defines their reports.
 
-`cyber status` validates the returned cybermark document and reads the
-current state. `cyber cyb` emits a versioned JSON connection descriptor.
-`--home` overrides `CYBER_HOME`, which overrides
-`~/.cyber/spacepussy-test`. An explicit config is required to start.
+`status` validates cybermark and reports local state. `cyb` emits the v2
+configuration-only connection descriptor with null live network/profile fields.
+`cyb --live` validates bounded endpoint capabilities and reports signed submission
+only when active. The endpoint catalogue alone makes no readiness claim. `--home` overrides `CYBER_HOME`,
+then `~/.cyber/spacepussy-test`. Explicit product config remains required,
+and this entry point accepts loopback listeners.
 
-Only loopback bindings are accepted by this entry point. The current bridge
-creates unsigned signals on behalf of a supplied neuron. Its local height
-advances once per accepted signal; distributed finality requires additional
-integration. A new home begins independent local state, even though the
-engine's chain label is `spacepussy-test`.
+A fresh home has the unsigned local development profile until explicit
+activation. An authenticated home advertises `neuron/signed-native/1`,
+requires a verified subject-bound SignedAction for HTTP mutation and rejects
+old unsigned ingress. Its network is H(canonical genesis bytes), independently
+of the display label. The descriptor labels that observation as endpoint acceptance and retains
+`consensus_finality: false`.
 
-## delivery boundary
+## supported local acceptance
 
-The first deliverable is a working local node binary for cyb development:
-configuration → process → HTTP writes → state → restart → same state root.
-Tests exercise this path against the real soft3 engine, including the
-cybermark status and JSON receipt shapes used by cyb. GUI execution is a
-separate validation step.
+The current adapter journals the exact verified action before native acceptance.
+The native coordinator atomically retains accepted operations and request
+receipts; exact retries return the original result, changed payloads conflict,
+and ambiguous storage outcomes stop further acceptance until validated reopen.
+Complete native Signals preserve authors, network, chain position and proofs.
+The signed path validates its configured proof/economic rules before mutation.
 
-Before a public node release, complete these work packages in order:
+Cyb and true-cyber use the same explicit subject/network binding contract,
+complete-Signal outbox and bounded observation mirror. Current grants are
+checked at dispatch; old attempted operations remain reconcilable after revoke.
+Private notes, task continuations and history retain their owning graph/custody
+contracts. Runtime commit index, SignalChain step, native operation position and
+network finality remain distinct.
 
-1. Durable acceptance: propagate journal errors, sync before success,
-   reject corrupt/truncated replay, and test crash recovery.
-2. Authenticated admission: preserve signed native signals end to end,
-   verify proof-bound rewards, enforce resource limits and idempotent retry.
-3. Network lifecycle: join/checkpoint verification, peer replication,
-   competing histories, finality, upgrades, and readiness tied to these states.
-4. Worker integration: root-bound job inputs, joy execution/proof results,
-   verifier-owned acceptance, cancellation and bounded resource budgets.
-5. Distribution: immutable component revisions, compatible primitive/wire
-   versions, clean-checkout builds, CI artifacts, and platform release tests.
+[Native adapter](../../soft3/specs/native-node.md) and
+[signed profile](../../soft3/specs/signed-native-adapter.md) own exact wire,
+limits, generation guards and recovery. Source-level checks are indexed in
+[convergence evidence](../../soft3/audit/neuron-cell/implementation.md).
 
-Existing engine risks are concrete: `append_frame` ignores I/O errors;
-`open_store` skips rejected signals; the JSON bridge creates `proof: None`;
-checkpoint rewards derive from labelled edges and amount. Loopback enables
-local development while these paths are hardened.
+## delivery and remaining network gates
 
-Current source builds resolve sibling path dependencies, including local
-component changes. Cargo.lock pins registry packages, while `dist/build.json`
-records local repository revisions and dirty status. Rebuilding the same
-published version alone cannot reproduce this development artifact.
+Local supported behavior covers explicit custody, durable acceptance/restart,
+signed submission, exact retry, subject/network isolation and strict legacy
+migration. Declared profiles and their test evidence determine the claim.
+The broader reliable-node and network product roadmap still requires:
 
-The declared [[specs/node-modes|full, cell and light modes]] remain protocol
-targets. The delivered runtime reports `local-chaosnet` and its actual
-capabilities until those mode requirements are wired end to end.
+1. Complete storage failure/power-loss and artifact recovery gates for the
+   selected platform and backend.
+2. Complete the versioned product lifecycle and structured diagnostics, including
+   bounded drain. Preserve the delivered live/configuration descriptor distinction
+   and shared offline migration/authentication behavior.
+3. Verified network join, coverage, peer replication, conflict policy, finality
+   and upgrades, with readiness tied to those verified states.
+4. Product worker control, authenticated placement, proof-bound job acceptance,
+   cancellation and advertised resource/isolation guarantees.
+5. Reproducible source closure, compatible wire/primitives and platform releases.
+
+The [[specs/node-modes|full, partial and light modes]] remain target network
+profiles until these duties are composed end to end. Current local height,
+endpoint acceptance and history mirroring do not establish folded-tip trust
+or distributed monetary finality.
+
+Source builds use sibling path dependencies. Cargo.lock pins registry packages;
+release provenance must additionally record component revisions and dirty source
+state. A package version by itself does not reproduce a development artifact.
 
 discover all [[concepts]]

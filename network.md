@@ -3,10 +3,24 @@ tags: cyber, cip
 crystal-type: pattern
 crystal-domain: cyber
 alias: network layer, p2p, peer-to-peer, cyber network
+status: proposal
 ---
 # network
 
 how [[neurons]] find each other, propagate [[cyberlinks]], and maintain a shared view of the [[cybergraph]]. the network is lean: you pay for what you consume, epidemic broadcast is reserved for headers only, and most [[cyberlinks]] never touch most nodes.
+
+This page specifies a proposed coordination profile. Header sizes, timing,
+market formulas, recursive proof sizes and routing examples are design targets;
+each deployed profile must declare its actual codec and verification rules.
+[[radio]] endpoint keys identify transport peers. Neuron authentication, network
+admission and remote consensus evidence have separate contracts.
+
+A named robot attaches [[neurons]]. A neuron may publish through several devices
+and compatible networks; progs execute work under its captured authority. A node
+serves graph state for many subjects, a [[shard]] partitions that state and a
+network reference names a destination. The [domain model](specs/domain-ladder.md)
+keeps these identities separate. Changing peer connections or graph partitioning
+cannot change a pending operation's author or destination.
 
 ## the principle: narrowcast everything, broadcast nothing
 
@@ -44,18 +58,27 @@ what propagates how:
 
 ## peer discovery via cybergraph
 
-the same mechanism routes the [[cell]] ladder: a cell registers by linking its name and state root into the graph, so resolving a peer and resolving a [[research/oikos|household]] are one lookup. the cybergraph is the routing table of the mesh — there is no second registry
+The graph carries typed routes for endpoints, [[shards]], services, networks and
+[[research/oikos|token books]]. An authorized record binds the name to its role,
+network, endpoint or committed state root, and provenance. Resolution discovers
+a route; a consumer separately checks who may publish it, its freshness and the
+proof required for the requested action. A book or shard name has no implicit
+neuron key. See [[3c]] for the application contract.
 
 
 traditional p2p networks use external mechanisms for peer discovery: DHTs (Kademlia), DNS seeds, hardcoded bootstrap nodes. cyber uses the [[cybergraph]] itself.
 
-every [[neuron]] publishes its endpoint information as a [[cyberlink]]:
+A neuron advertising an endpoint can publish its binding as a [[cyberlink]]:
 
 ```
-~neuron/endpoint → particle(addr: relay_url, direct: [socket_addrs])
+~neuron/endpoint → particle(network, endpoint_id, relay_url, direct: [socket_addrs], revision)
 ```
 
-this is a standard [[name]] resolution: the `~` prefix signals deterministic resolution. any [[neuron]] that knows another neuron's public key can resolve their current network address by traversing the [[cybergraph]].
+This is a proposed [[name]] record shape: the `~` prefix denotes deterministic
+resolution. A subject may advertise several endpoints with separate network,
+device and expiry policies. Watch-only attachments need no endpoint or running
+process. Resolution verifies the publishing subject under the named identity
+domain; possessing a transport endpoint key alone supplies no action grant.
 
 three discovery mechanisms work together (inherited from [[radio/discovery]]):
 
@@ -63,9 +86,14 @@ three discovery mechanisms work together (inherited from [[radio/discovery]]):
 |---|---|---|
 | [[cybergraph]] resolution | global | resolve `~neuron/endpoint` via graph traversal |
 | [[Pkarr]] (DHT) | global | PublicKey → EndpointAddr via distributed hash table |
-| mDNS | local network | multicast discovery for nearby [[neurons]] without internet |
+| mDNS | local network | multicast discovery of nearby transport endpoints |
 
-Pkarr provides bootstrap — finding the first peers to connect to. once connected, the [[cybergraph]] provides the authoritative, stake-weighted peer directory. a [[neuron]]'s endpoint [[cyberlink]] is authenticated by their key, timestamped, and weighted by their stake. stale or fraudulent endpoint claims decay through standard [[forgetting]] mechanics.
+Pkarr supplies bootstrap routes. The graph directory adds authenticated endpoint
+bindings and the profile's stake/ranking policy. Discovery requires a verified
+subject-to-endpoint binding before attributing actions to that subject. A
+signature, accepted revision and expiry determine binding validity; ranking and
+[[forgetting]] determine discoverability. Revocation remains enforceable even
+while an older claim retains graph history or rank.
 
 ## paid headers: the lean protocol
 
@@ -82,19 +110,21 @@ a new [[neuron]] entering the network must acquire some [[$CYB]] before download
 
 - receive from another [[neuron]] (gift, payment, grant)
 - earn through relay services (tit-for-tat reciprocity does not require tokens)
-- buy on an external market via [[cyber/ibc]] bridge
+- acquire on an external market through its explicit network adapter, or use a
+  home-book trade when the [[research/oikos|oikos]] settlement profile is available
 
 once the neuron holds tokens, it buys headers from peers. neighbors can offer headers cheaper — lower relay cost due to proximity, reciprocity credits from prior interactions. this creates geographic price differentiation naturally, without protocol-level sharding.
 
 ### header pricing
 
 ```
-header price = base_fee(relay) × header_size × 1/peer_latency
+header price = base_fee(relay) × header_size × route_cost(peer)
 ```
 
 - `base_fee(relay)` is the EIP-1559 exponential fee for the relay primitive (see [[cyber/architecture]])
 - `header_size` is ~232 bytes (constant)
-- `1/peer_latency` rewards geographic proximity: closer peers deliver faster and cheaper
+- `route_cost(peer)` is the quoted transport/availability cost; the market must
+  define its units and constraints. A latency estimate alone does not set price.
 
 a neighbor on the local network (mDNS-discovered) offers headers at near-zero cost. a peer across the planet charges more. the header market creates the same geographic hierarchy that [[location proof]] formalizes — without requiring location proof infrastructure to be operational first.
 
@@ -146,7 +176,10 @@ the [[cyberlink]] itself travels one hop: neuron → aggregator. the header trav
 
 ### aggregator discovery
 
-aggregators are [[neurons]] that serve specific namespaces. they advertise their role via [[cyberlinks]]:
+Aggregators are node services serving specific namespaces. Their controlling
+[[neurons]] advertise the service, endpoint and authority policy via
+[[cyberlinks]]. A single service can use several progs or subjects, and one
+subject can authorize several services:
 
 ```
 ~aggregator/serves → particle(namespace: "biology")
@@ -159,17 +192,27 @@ aggregators earn fees for inclusion (sender pays — the neuron creating the lin
 
 ## focus propagation: signals as φ* updates
 
-the network has no central node that computes the [[focus]] distribution φ*. instead, φ* emerges from [[cyber/signals]]. every [[cyber/signal]] carries a $\Delta\phi^*$ — the neuron's locally computed focus shift for a batch of [[cyberlinks]] — proven by a single [[zheng]] proof.
+The proposed distributed-focus profile carries locally computed $\Delta\phi^*$
+updates for batches of [[cyberlinks]], bound to state and computation evidence.
+It must define how accepted updates converge to the [[focus]] distribution φ*,
+including conflicts, duplicate delivery, stale roots and proof coverage.
 
-### signal structure
+### proposed focus-update envelope
+
+This sketch describes application information, not a replacement for any
+existing signed Signal codec. A profile must define its exact signed bytes and
+domain separation before use.
 
 ```
 signal {
-    neuron:     pubkey
+    neuron:     subject_reference          identity domain + native identifier
+    network:    network_reference          exact destination
+    request:    replay_identity            retained through retries
     links:      [cyberlink]                one or more 5-tuple assertions
     pi_delta:   [(particle_id, Δφ*)]        sparse focus update for the batch
     proof:      zheng                       proof of correct local computation
-    timestamp:  u64
+    at:         authenticated_state_root
+    authority:  authentication_and_grant    binds exact envelope
 }
 ```
 
@@ -203,11 +246,19 @@ their future signals carry updated pi_deltas
 φ* emerges from convergence of all local proven updates
 ```
 
-this is gossip-based distributed belief propagation. the [[tri-kernel]] contraction theorem (§5.6 of the whitepaper) guarantees convergence: any order of applying proven pi_deltas reaches the same φ*. the global fixed point crystallizes from local proofs without any node computing it centrally.
+This is a proposed distributed belief-propagation scheme. The [[tri-kernel]]
+contraction argument (§5.6 of the whitepaper) must be connected to this concrete
+update protocol: a proof of one local step alone does not establish that stale,
+repeated or conflicting deltas can be applied in arbitrary order. Admission,
+revision checks, scheduling and boundary synchronization are part of the
+convergence obligation.
 
 ### self-minting
 
-the $\Delta\phi^*$ proof doubles as a reward claim. if the proven $\Delta\phi^* > 0$, the neuron mints [[$CYB]] proportional to the shift. no aggregator decides the reward — the proof IS the mining. see §14.2 of the whitepaper for the conservation constraint and attribution mechanism.
+The proposal lets a $\Delta\phi^*$ proof support a reward claim. Issuance must
+verify the complete reward rule, its unique attribution and conservation bound;
+a positive local delta alone grants no minting authority. See §14.2 of the
+whitepaper for the proposed conservation constraint and attribution mechanism.
 
 a [[neuron]] on a phone: buy a header, query neighborhood state, create [[cyberlinks]], prove Δφ*, bundle into a [[cyber/signal]], mint tokens. the device that creates knowledge is the device that earns from it.
 
@@ -273,7 +324,10 @@ nodes maintain connections to peers whose [[focus]] distributions overlap with t
 
 $$\text{peering\_affinity}(A, B) = \sum_{p \in P} \min(\phi^*_A(p), \phi^*_B(p))$$
 
-the Bhattacharyya coefficient between two nodes' focus distributions. high affinity means shared attention on the same [[particles]]. the gossip layer maintains a partial view biased toward high-affinity peers — relevant cyberlinks arrive from peers who care about the same subgraph.
+The overlap coefficient of the two normalized focus distributions. High affinity
+means shared attention on the same [[particles]]. The gossip layer can bias its
+partial peer view toward high affinity while retaining diversity and liveness
+requirements; relevant cyberlinks then arrive from peers serving the same subgraph.
 
 ### semantic routing
 
@@ -314,18 +368,25 @@ creating 1000 sybil [[neurons]] with zero stake produces zero influence on the n
 
 the network operates under partial synchrony: messages arrive within an unknown but finite bound $\Delta$.
 
-### what is guaranteed
+### required guarantees under the selected profile
 
-- safety: no conflicting finalized [[particles]] (from [[foculus]])
-- completeness verification: a node can cryptographically verify that it has ALL links in a namespace via [[BBG]] completeness proofs
-- DA guarantee: if DAS passes, the block data is available with overwhelming probability
+- safety: consensus evidence prevents conflicting finalized state under the
+  selected [[foculus]] assumptions
+- completeness verification: authenticated openings cover the requested namespace
+  at the stated root under the [[BBG]] proof profile
+- data availability: sampling meets the declared probability bound, sampling
+  independence and withholding/adversary assumptions
 
 ### what is not guaranteed
 
 - real-time propagation of cyberlinks: during partitions, links may be delayed to aggregators
 - ordered delivery: links may arrive at the aggregator out of creation order. the aggregator determines inclusion order
 
-during asynchronous periods, no new [[particles]] finalize. existing finalized particles remain final. liveness resumes when connectivity restores.
+During partitions, nodes retain their authenticated tips and unresolved requests.
+The consensus profile determines which domains can safely advance and which
+cross-domain operations must wait. Reconnection reconciles original requests;
+local commit and remote acceptance remain distinct from finality. Full, partial
+and light nodes enforce their respective [[specs/node-modes|verification duties]].
 
 ## bandwidth budget
 

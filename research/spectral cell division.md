@@ -7,26 +7,65 @@ alias: spectral cell division, laplacian cell division, cell division
 ---
 # spectral cell division
 
-*status: proposal, explicitly not for implementation — the idea needs finishing. extracted from [[cell]] so the canon page states what a cell IS, and this page argues how cells might MULTIPLY.*
+Status: research proposal. The historical title preserves the biological
+metaphor and earlier links. The object being divided is a [[shard]]: a region of
+graph state under a validation and availability contract. Its open protocol
+questions must be resolved before automatic division can become a consensus rule.
 
 ## the mechanism
 
-a knowledge-cell that grows past what one validator set can process must split, and the graph itself says where. the [[Laplacian]] of the cell's internal graph reads its shape: when two dense communities joined by a thin waist have formed, the second eigenvalue λ₂ falls toward zero and an eigengap opens. the Fiedler vector — the eigenvector at λ₂ — assigns every particle a number; its sign two-colors the cell, and the zero line of that coloring is the **minimal cut**: the split that severs the fewest [[cyberlinks]].
+When a shard approaches its declared capacity, spectral analysis can propose a
+split boundary. Under a chosen weighting and normalization, the [[Laplacian]]
+describes connectivity; a small second eigenvalue λ₂ can indicate weakly joined
+communities. The Fiedler vector assigns each particle a coordinate. A sign cut
+or threshold sweep proposes a partition, evaluated against edge-cut cost,
+balance, data locality and capacity constraints. The spectral relaxation needs
+an explicit cut objective and acceptance rule; its sign cut has no general
+guarantee of being the exact minimum cut.
 
-division follows the biology it is named for: state migrates along the spectral bisection boundary; two cells exist where one was; each inherits its half of the particles, links, [[mutator set]] and routing table, and the two share boundary [[focus]] state. applied recursively, division grows the whole [[hierarchy]] — cells → zones → domains — with the [[heat]] kernel at temperature τ revealing each level. nothing is designed; the hierarchy is born.
+The proposed handoff replaces one serving region with two authenticated regions.
+Particles, links, routing coverage and spending-state obligations acquire explicit
+new owners at the partition layer; boundary [[focus]] state is exchanged with
+coverage proofs. A spending commitment or pending cross-region operation retains
+its protocol identity and conservation rules. Any [[mutator set]] or nullifier
+representation must define how witnesses and uniqueness survive the boundary.
+
+Repeated partitioning could produce the [[hierarchy]] of shards → zones → domains,
+with the [[heat]] kernel suggesting resolution scales. Neuron keys and prog
+identities remain independent of these partitions. Moving a prog's retained
+state requires its runtime migration and writer-fencing contract in addition to
+graph placement; spectral analysis supplies no permission to dispatch work.
 
 ## why it is not ready
 
 open questions that keep this a proposal:
 
-1. **atomicity of migration** — a split moves half a mutator set and half a routing table; what serves queries mid-division, and what proves the division itself was clean?
-2. **validator economics** — who serves a daughter cell the moment it exists? stake must split along the same boundary as state, and no design says how
-3. **the trigger** — an eigengap is a signal, not a decision: who pays for the spectral watch, what threshold fires, and can an adversary sculpt links to force or forbid a split (split-griefing)?
-4. **merging** — biology has fusion; two under-used sibling cells should re-merge, and the reverse operation is entirely unspecified
-5. **the empirical null** — [[bostrom]] ran 25.1M blocks and 2.9M links and never needed to divide: one cell carried the whole bootloader. division may be a 10⁹-particle problem, which is exactly why it can wait
+1. Atomic handoff. Which checkpoint closes the old region, who serves queries
+   during migration, and what proves complete, disjoint new coverage? The protocol
+   must preserve availability, spend uniqueness, open conditions and historical
+   proofs while preventing both old and new writers from accepting conflicting work.
+2. Validator economics. Who serves each new shard immediately, what stake and
+   authority policy applies, and how does finality remain valid during reassignment?
+   Graph partitions alone do not determine how validator stake should move.
+3. Trigger and adversarial cost. Which capacity and spectral thresholds authorize
+   division, who pays for measurement, and how are forced split/merge cycles or
+   manipulated boundaries bounded? An eigengap supplies evidence for a decision.
+4. Merging. Two under-used regions may benefit from reunion. The reverse handoff
+   needs its own coverage, witness, routing and finality rules, including pending
+   operations that refer to either former region.
+5. Scale evidence. [[bostrom]] supplies an unpartitioned bootloader reference.
+   A decision threshold requires a reproducible workload and measurements of
+   capacity, boundary traffic and proof cost. A particle-count estimate alone
+   cannot establish that division is necessary or economically beneficial.
 
 ## relation to oikos
 
-[[research/oikos|oikos]] introduces a second cell kind — the ledger-cell, born by a name rather than by division, conserving a balance rather than minimizing a cut. the two kinds coexist in one hierarchy: knowledge divides, value registers. this page owns only the first kind.
+[[research/oikos|oikos]] describes a token's complete home book under its issuer's
+rules. Book creation registers an economic domain; shard division changes graph
+coverage and serving responsibility. The operations have separate authorization
+and proof requirements. A book can retain its name and full obligations through
+storage repartitioning. This proposal owns graph partitioning; the
+[domain model](../specs/domain-ladder.md) defines its relationship to neurons,
+progs, books and services. The old [[cell|cell ladder]] remains a historical link.
 
 discover all [[concepts]]

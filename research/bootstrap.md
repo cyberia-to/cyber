@@ -21,7 +21,9 @@ Computed:             tru ∥ foculus.tri
 Infrastructure:       glia ∥ mir ∥ mudra ∥ radio
 ```
 
-## current state
+## bootstrap baseline — 2026-03-25
+
+The following inventory records the starting point of this research plan. Current implementation and conformance status belongs to the component repositories and [[soft3/status|stack registry]].
 
 | repo | status | LOC | tests | role |
 |------|--------|-----|-------|------|
@@ -76,7 +78,7 @@ practical: implement nox VM in at least TWO independent toolchains (Rust + one o
 
 ## Rs language
 
-Rs (~/git/rs) is a restricted Rust edition that enforces determinism by construction:
+[[Rs]] is a restricted Rust edition that enforces determinism by construction. Its [[rs/reference/modules|module boundary]] owns code and state; a host can install that code as a prog under a neuron and supply the current authority and resource budget.
 
 | code | forbidden | replacement |
 |------|-----------|-------------|
@@ -84,7 +86,7 @@ Rs (~/git/rs) is a restricted Rust edition that enforces determinism by construc
 | RS502 | `Vec<T>` | `BoundedVec<T, N>` with compile-time capacity |
 | RS503 | `String` | `&str` or `ArrayString<N>` |
 | RS504 | `dyn Trait` | generics or enum dispatch |
-| RS505 | `Arc<T>`, `Rc<T>` | cell-owned state or bounded channels |
+| RS505 | `Arc<T>`, `Rc<T>` | module-owned state or bounded channels |
 | RS506 | `panic!()` | `Result` for recoverable, abort for unrecoverable |
 | RS507 | `HashMap`, `HashSet` | `BTreeMap`, `BTreeSet`, or `BoundedMap<K,V,N>` |
 

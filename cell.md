@@ -1,34 +1,41 @@
 ---
 tags: cyber, core
-alias: cells, cell ladder, shard, shards, cyber cell, ledger-cell, knowledge-cell, runtime-cell
+alias: cells, cell ladder, cyber cell, ledger-cell, knowledge-cell, runtime-cell, building-cell
 crystal-type: entity
 crystal-domain: cyber
+status: compatibility
 ---
-# cell
+# cell — historical terminology
 
-**a bounded sovereign holder of state, with its own lifecycle, addressable by the mesh, provable and syncable.** this is one concept at four scales — the apparent name collision between the protocol's cell, the robot's cells, the city's buildings and the oikos household was never a collision; it was a ladder waiting to be named
+The cell ladder grouped four holders of state under one name. The accepted
+[domain model](specs/domain-ladder.md) gives each responsibility a precise owner:
 
-| instance | holds | governed by | born by |
-|---|---|---|---|
-| **runtime-cell** — [[cyb/parts/cells|the robot's organ]] | a program's state on the [[cyb/parts/log|tape]] | one neuron | loading |
-| **building-cell** — [[aos/apps|the city's building]] | a shared service's state | its players | deployment |
-| **ledger-cell** — the [[research/oikos|oikos]] household | one token's complete book, rooted by one name | its issuer | registering a name |
-| **knowledge-cell** — the graph shard | a region of the [[cybergraph]] | a validator set | division ([[spectral cell division]] — proposal) |
+| Historical term | Current role | Preserved responsibility |
+|---|---|---|
+| runtime-cell | [[neuron]] executing progs | Program state, continuations, work history, resource limits and recovery |
+| building-cell | [[aos/apps|service]] and its progs | Shared service state, player governance, admission and delivery |
+| ledger-cell | [[research/oikos|token book and issuer]] | Complete home ledger, issuance rules, conditional settlement and conservation |
+| knowledge-cell | [[shard]] | Graph partition, availability, validation, boundary proofs and split/merge lifecycle |
 
-the ladder is continuous. a robot's runtime-cell is a micro-chain of one user — its tape is literally a personal ledger. an oikos household is a chain of one token. a knowledge-cell is a chain of one region of meaning. the difference is never the nature of the thing — only what it holds and how it is born
+Neuron is the protocol subject. The named robot attaches neurons; programs,
+services, books and shards have data and routing identities under their own
+contracts. A separate neuron is introduced when independent authority or
+attribution is needed. State, an address and a lifecycle alone provide no such
+authority.
 
-## what every cell has
+The old client mode `cell` is now the partial node mode described in
+[[specs/node-modes|node modes]]. Cyb's former extension organ is
+[[cyb/parts/prog|prog]]. Cybergraph retains history, BBG persists it and
+[[cyb/parts/log|log]] renders it. Tape provides framing.
 
-- **state** it alone owns — no other cell can write it
-- **a boundary** — everything crosses as a [[cyber/signal|signal]]: proofs in, proofs out, conditions and receipts, never raw foreign state
-- **a lifecycle** — born, grows, may split ([[spectral cell division]]), may retire; the mesh outlives every cell
-- **an address** — a name in the graph; registration is a [[cyberlink]], so the [[cybergraph]] is the routing table of all cells
-- **finality** — [[foculus]] finalizes a cell's facts at the cell's own speed: domains settle at domain speed
+This page preserves historical links and terminology. Original signed records,
+legacy codec names and migration provenance retain their bytes. Biological
+cells, virtual-machine pairs, storage cells and table cells retain their ordinary
+meanings. [[spectral cell division]] retains its historical proposal title and
+describes graph shard division.
 
-## one protocol between them
-
-because every rung is the same thing, communication between any two cells — organ to organ, building to building, household to household, shard to shard — is one protocol: [[3c]]. read by proof, write by proof, trade by condition. nothing else crosses a boundary
-
-see [[cyber/hierarchy]] for how knowledge-cells compose into zones and domains · [[research/oikos|oikos]] for the household rung · [[cyb/parts/cells|cells]] for the robot's rung
+See [[hierarchy]] for graph aggregation and [[3c]] for domain read/write/trade
+contracts. The shared transport carries each role's explicit evidence and
+authority requirements.
 
 discover all [[concepts]]

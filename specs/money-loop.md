@@ -21,6 +21,12 @@ non-normative latency narrative: [[latency targets]].
 node modes: [[specs/node-modes\|node-modes]].  
 light path: [[specs/light-money\|light-money]].
 
+This is the target network money contract. Current native HTTP receipts and
+GraphSession projections establish local observations and durable acceptance.
+Library proof/fold support or the development `cy finalize` command alone does
+not establish a deployed network's clocks A, B or C. A product must declare its
+verified profile and evidence before assigning the grades below.
+
 ---
 
 ## 1. objects
@@ -28,8 +34,10 @@ light path: [[specs/light-money\|light-money]].
 | object | definition | owner repo |
 |---|---|---|
 | Coin | fungible class + balances | [[tok]] TSP-1 |
-| Card | unique holder (neuron, asset, …) | [[tok]] TSP-2 |
-| neuron Card | identity + Sigma holdings | [[tok]], [[cyb/robot]] |
+| Card | unique token object / holder reference under its ledger profile | [[tok]] TSP-2 |
+| neuron | sole signing subject; native NeuronId or domain-qualified foreign reference | neuron-id/model, [[cyb]] attachments |
+| neuron Card | ledger's representation of a subject and holdings | [[tok]], [[cyb/robot]] |
+| prog / invocation | retained executable work and continuation under a neuron | neuron |
 | cyberlink | edge + economic weight | [[cybergraph]] |
 | Intent | atomic PLUMB op list | [[tok]] PLUMB |
 | signal | signed cyberlink batch (+ proof when sealed) | [[cybergraph]], [[foculus]] |
@@ -37,7 +45,12 @@ light path: [[specs/light-money\|light-money]].
 | BBG_root | polynomial state commitment | [[bbg]] |
 | tip | trusted (root, height, folding_acc) | [[foculus]] structural-sync, [[zheng]] |
 
-Sigma (product term) = the set of Coin balances and Card bonds held by a neuron Card. not a separate ledger type.
+Sigma presents Coin balances and Card bonds under their subject, network and
+ledger profile. Protocol state owns these values. A Card, prog, book or shard
+ID grants no signing authority by itself; [domain roles](domain-ladder.md)
+identify each role's actual control policy. A named robot can attach several
+neurons with different networks, keys and devices. Public observations and
+private custody remain separately scoped.
 
 ---
 
@@ -63,7 +76,7 @@ pure send/receive uses A (+ C on light). attribution rewards use B. see [[latenc
 | 1 | $\sigma$ accepted by peers; not final | pending |
 | 2 | clock A at trusted tip | sent / received / spendable |
 | 3 | clock B complete for that credit | earned reward spendable |
-| 4 | clock C (or full/cell history equivalent) for tip | tip trusted; openings money-grade |
+| 4 | clock C (or verified full/partial history equivalent) for tip | tip trusted; openings money-grade |
 
 rules:
 
@@ -71,6 +84,10 @@ rules:
 - R2: on light mode, grade 2 REQUIRES grade 4 (tip from fold)  
 - R3: MUST NOT treat unauthenticated peer JSON as balance or receive  
 - R4: sense NOTIFY for money MUST fire only on grade ≥ 2 credits (or grade ≥ 3 for settle-only mints)
+- R5: every observation MUST retain subject, network, commitment/proof profile
+  and source; late results cannot replace another selected subject's view
+- R6: an endpoint's accepted receipt MAY be displayed as pending, with its
+  acceptance scope explicit; grade 2–4 require the corresponding network evidence
 
 ---
 
@@ -82,10 +99,15 @@ query: balances of neuron Card $N$ at tip $T = (\texttt{BBG\_root}, h)$.
 
 | mode | method |
 |---|---|
-| full / cell with apply | local state after apply of all signals ≤ $h$ touching $N$ |
-| light / cell open path | Lens open coins (or private note commitments) at key for $N$ against $\texttt{BBG\_root}$ |
+| full / partial with complete apply | verified state after applying all relevant signals ≤ $h$ with authenticated coverage |
+| light / partial open path | Lens open coins (or private note commitments) at key for $N$ against $\texttt{BBG\_root}$ |
 
 response MUST include: `(token_id, amount, tip_height, proof)` where proof verifies against tip root (or empty proof only if mode is full node serving itself).
+
+The envelope also binds subject, network, root and proof/coverage profile.
+Aggregate GraphSession balances spanning several observations cannot silently
+become a per-network verified balance. Private balances follow the selected
+note/witness contract; a public projection cannot reconstruct missing secrets.
 
 acceptance:
 
@@ -94,11 +116,14 @@ acceptance:
 
 ### 4.2 send
 
-input: `(from_neuron, to_holder, token, amount, optional memo/particle)`.
+Input binds `(from_neuron, network, to_holder, token, amount, optional memo/particle)`
+and a stable request identity. Admission captures the attachment revision,
+current grant, exact operation and selected proof/executor profile. A prog
+supplies its prog/invocation context without introducing another signer.
 
 steps (normative order):
 
-1. tip ready: grade 4 on light; full/cell tip current  
+1. tip ready: grade 4 on light; full/partial tip verified and current
 2. select inputs / notes owned by `from_neuron` with witnesses at tip  
 3. build Intent: one or more PLUMB `pay` ops (change outputs allowed)  
 4. prove with [[zheng]]: auth, conservation, fresh nullifiers, well-formed links  
@@ -107,6 +132,18 @@ steps (normative order):
 7. on clock A final at tip → grade 2; update sigma; optional payer sense echo  
 
 rejection: any peer MUST drop signals failing $\sigma$ or nullifier already in $N$.
+
+Before dispatch, check the captured subject/network and current grant again.
+Selection changes preserve the prepared action. Revocation blocks new dispatch;
+retained requests, notes, reservations and unknown outcomes remain available
+for read-only reconciliation. Identical retries use the original complete bytes
+only under the endpoint's declared idempotency contract. A changed subject,
+destination or payment is a new explicitly authorized action.
+
+Private note preparation and pending-spend evidence must be durable before
+publication. A lost reply cannot release the same input for a second spend.
+Recovery binds observed inclusion/nullifier/change to the original request,
+subject and network before updating spendability.
 
 ### 4.3 receive
 
@@ -190,7 +227,10 @@ minimum events the robot MUST expose to sense/sigma:
 | RewardCredited | … | grade 2 (pay leg) or grade 3 (settle) |
 | FinalityFailed | signal_id, reason | pruned / conflict lost |
 
-intent particle for notifications: `intent/notify` (see cyb-core). payload MUST bind `reason` to signal/link id.
+intent particle for notifications: `intent/notify` (see cyb-core). The event
+envelope MUST bind `reason` to signal/link ID and retain subject/network plus
+the evidence behind its grade. Same-address text on a foreign network is a
+separate domain-qualified reference until its profile proves the association.
 
 ---
 

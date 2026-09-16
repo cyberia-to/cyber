@@ -38,6 +38,6 @@ the full walkthrough — pond metaphor, Earth↔Mars signal path, cross-domain c
 | planetary [[superintelligence]] | Type I | one Earth-scale [[cybergraph]], φ*, rewards, [[soft3]] stack |
 | interplanetary superintelligence | Type II | the same, plus [[foculus]]-class aggregation across light-delay domains |
 
-[[cyber]] is the protocol that aims at both: planetary first (one graph, one focus, one economy of attention), interplanetary as the designed ceiling (bounded locality, domain finality, convergence under delay). [[hierarchy]] and [[location proof]] place cells and validators in space; foculus decides when a fact is final when those places are light-minutes apart
+[[cyber]] is the protocol that aims at both: planetary first (one graph, one focus, one economy of attention), interplanetary as the designed ceiling (bounded locality, domain finality, convergence under delay). [[hierarchy]] and [[location proof]] place [[shards]] and validators in space; foculus decides when a fact is final when those places are light-minutes apart. Shards retain graph routing, availability and boundary-proof duties; [[neurons]] retain subject identity across the deployments that serve them. The [[specs/domain-ladder|domain roles]] keep these responsibilities distinct.
 
 discover all [[concepts]]

@@ -8,88 +8,91 @@ status: draft
 
 # cyber specs
 
-integration specifications for the [[cyber]] network: the product contracts that span soft3 components. component repos own *how* a mechanism works. this directory owns *what the network requires* when those mechanisms compose into money, light clients, and neuron UX.
+Cyber owns integration contracts spanning soft3 components: network product
+behavior, money, participation modes and neuron-facing operations. Component
+repositories own algorithms, encodings and supported implementation profiles.
 
-## why here (not tok, not foculus alone, not cyb alone)
+[Cyb architecture](../../cyb/specs/architecture.md) defines the named robot,
+attached neuron subjects and durable progs. [[specs/domain-ladder]] adapts those
+definitions to nodes, shards, services and token books. Local execution,
+authenticated endpoint acceptance and verified network finality have separate
+contracts and evidence.
 
-| home | role | wrong for |
-|---|---|---|
-| [[foculus]]/specs | consensus, structural sync, finality clocks | end-to-end money product; cyb event shapes |
-| [[tok]] | coin/card natures, PLUMB ops, conservation | tip trust, light join, sense notifications |
-| [[zheng]] | prove/verify/fold machinery | balance UX, multi-payee product rules |
-| [[cyb]] | robot UI, sense, sigma surfaces | protocol-normative wire and finality |
-| [[cyber]]/specs | **network product contracts** | re-deriving φ* math or PLUMB field layouts |
+## ownership
 
-cyber is the root protocol graph and the name of the network. cross-cutting "balance + send/receive + reward-after-link + light client tip trust" is a network property. implementers read these specs, then open the linked component specs for algorithms and constants.
+| home | owns |
+|---|---|
+| neuron | Subject model, prog execution, continuations, resources and recovery |
+| cyb / soma | Robot composition, explicit attachments, custody integration, cognition, sigma/sense/log interfaces |
+| cybergraph / bbg / lens | Graph/history, durable acceptance, transactions and supported openings |
+| foculus / tru | Ordering, structural sync, finality clocks and graph computation |
+| tok | Coin/Card semantics, PLUMB operations and conservation |
+| zheng / nox | Selected proof and execution machinery |
+| cyber/specs | Cross-component network and product requirements |
 
-explanation (non-normative clocks narrative): [[latency targets]] in foculus docs.  
-normative constants: [[foculus parameters]].  
-value ops: [[tok]] / PLUMB.  
-join protocol detail: [[structural sync]] light client section.
+Constants belong in [[foculus parameters]], value operations in [[tok]], and
+join details in [[structural sync]]. [[latency targets]] is explanatory
+background; a target latency alone establishes no security guarantee.
 
 ## documents
 
-| doc | status | what it specifies |
+| document | status | contract |
 |---|---|---|
-| [[specs/cli\|cyber CLI]] | draft | implemented 0.8.0 baseline and target commands, output, lifecycle |
-| [[specs/worker\|worker contract]] | draft | cyber/joy responsibilities, jobs, proof binding, cancellation and acceptance |
-| [[specs/node-product\|node product]] | implementation | executable composition and current runtime boundary |
-| [[specs/cyb-node\|cyb node connection]] | implementation | current launcher and HTTP contract |
-| [[specs/money-loop\|money-loop]] | draft | balance, send, receive, multi-payee reward-after-link, events, certainty grades |
-| [[specs/node-modes\|node-modes]] | draft | full node, cell, light client — storage, duties, what each must implement |
-| [[specs/light-money\|light-money]] | draft | light path for tip trust + money (fold, openings, send/receive on thin devices) |
-| [[specs/component-ownership\|component-ownership]] | draft | ownership matrix, dependency direction and change control |
+| [[specs/domain-ladder]] | accepted | Subject/prog and graph-domain responsibilities; former cell roles |
+| [[specs/cli]] | draft with implemented baseline | Commands, output, lifecycle and explicit migration boundaries |
+| [[specs/worker]] | draft | Cyber/Joy jobs, proof binding, cancellation and acceptance |
+| [[specs/node-product]] | implementation | Composition, local supported profile and remaining network gates |
+| [[specs/cyb-node]] | implementation | Launcher configuration, live capability checks and signed-native client connection |
+| [[specs/money-loop]] | draft | Balance, send/receive, multi-payee reward, events and certainty grades |
+| [[specs/node-modes]] | draft | Full, partial and light state/validation/availability/finality duties |
+| [[specs/light-money]] | draft | Folded-tip trust, openings and money on thin devices |
+| [[specs/component-ownership]] | draft | Implementation boundaries, dependency direction and change control |
 
-Implementation reports and validation evidence are indexed in
-[audit](../audit/README.md).
+Draft network requirements describe required behavior when that profile ships.
+Current source evidence is indexed in [audit](../audit/README.md) and the
+[neuron convergence implementation](../../soft3/audit/neuron-cell/implementation.md).
+A linked library or passing local test does not certify deployed consensus.
 
-## scope boundaries
+## scope
 
-in scope:
+These contracts cover the native cyber money/finality profile, light clients,
+multi-payee rewards and clocks A (transfer finality), B (attribution settlement)
+and C (history trust). Identity attachments also preserve foreign domain/network
+references, whose monetary rules and finality remain with their own profiles.
+Attaching such a subject cannot silently convert its address or balance into
+native cyber state.
 
-- soft3 / cyber protocol only (no foreign chain schedules)
-- light client as first-class tip path for money
-- multi-payee rewards (linker and counterparty in one Intent model)
-- clocks A (transfer finality), B (attribution settle), C (history fold)
+Algorithmic tri-kernel math, PLUMB field encodings, UI layouts and interplanetary
+parameter tables remain with their component/domain owners.
 
-out of scope for these docs:
+## reading order
 
-- re-specifying tri-kernel math (→ [[tru]], [[foculus]])
-- PLUMB field encodings (→ [[tok]])
-- UI layout pixels (→ [[cyb]])
-- interplanetary parameter tables (→ [[interplanetary]], parameters)
+1. [Cyb architecture](../../cyb/specs/architecture.md) and [[specs/domain-ladder]].
+2. [[specs/component-ownership]] and [[specs/node-product]].
+3. [[specs/node-modes]] for the profile being implemented.
+4. [[specs/money-loop]] and [[specs/light-money]] for money-grade behavior.
+5. Component specifications for exact codecs, proofs, bounds and recovery.
 
-## reading order for implementers
+## implementation map
 
-1. [[specs/component-ownership\|component-ownership]] — who builds what  
-2. [[specs/node-modes\|node-modes]] — which mode you ship  
-3. [[specs/money-loop\|money-loop]] — events and state machine  
-4. [[specs/light-money\|light-money]] — if you ship thin tip trust  
-5. component specs linked from each section  
-
-## implementation map (code)
-
-| contract | code |
+| boundary | source owner |
 |---|---|
-| tip / clock C | `foculus/src/tip.rs` — `Tip`, `TipProver`, fold per height |
-| thin finality | `foculus/src/finality_evidence.rs` (nullifier-bound) |
-| pay σ | `foculus/src/pay_proof.rs` — prove_pay / verify_pay |
-| money loop | `cyb/core/src/money.rs` — proofs, private notes, settle |
-| sense | `cyb/core/src/sense.rs` — `money_to_sense` |
-| box_moves | `foculus` Signal + cybergraph bridge |
-| CLI (WP7) | `cy fund/balance/send/events/sense/finalize` |
+| Native ID / bounded contexts | `neuron/id`, `neuron/model` |
+| Durable prog runtime / composition | `neuron/engine`, `neuron/node`; soma task adapters |
+| Named attachments / custody / native outbox | `cyb/core/src/robot/` |
+| Local graph / public history | `cyb/core/src/graph_session.rs` over cybergraph/BBG |
+| Money proofs, local notes and settlement | `cyb/core/src/money.rs`, `private_notes.rs` |
+| Money notification projection | `cyb/core/src/sense.rs` |
+| Tip / clock C and finality evidence | `foculus/src/tip.rs`, `finality_evidence.rs` |
+| Pay proof | `foculus/src/pay_proof.rs` |
+| Native signed adapter | `soft3/crate/src/node/` |
+| Product executable | `cyber/src/main.rs` |
+| Native client | `true-cyber/src/` |
+| Robot commands | `cy neuron`, `cy task`, `cy notes`; local money development commands |
 
-WP0–WP7 library + CLI status is recorded in
-[[audit/component-implementation\|the component implementation report]].
-
-run tests:
-
-```
-cd ~/cyber/foculus && cargo test --lib --no-default-features
-cd ~/cyber/cyb && cargo test -p cyb-core --lib
-cd ~/cyber/cyb && cargo build -p cy
-```
-
----
+The development `cy fund/balance/send/events/sense/finalize` path exercises
+local money composition. Its local finalize operation alone cannot upgrade an
+endpoint observation into distributed finality. Artifact/profile conformance
+requires the applicable network gates.
 
 discover all [[concepts]]

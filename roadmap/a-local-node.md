@@ -12,6 +12,14 @@ Deliver a real cyb → cyber → Cybergraph → BBG path with durable, authentic
 operation receipts and explicit recovery. Existing local development profiles
 retain explicit primitive/version identities throughout this work.
 
+The [accepted subject model](../../cyb/specs/architecture.md) is robot →
+attached neurons → progs/invocations. GraphSession is the client's multi-neuron
+graph host; the former personal cell adds no separate signer. The
+[convergence implementation](../../soft3/audit/neuron-cell/implementation.md)
+records the delivered local native/runtime migration profile. This roadmap's
+release gates also require their broader storage, lifecycle and exact-artifact
+evidence; source-level convergence does not close those gates automatically.
+
 ## A0: storage integration map
 
 Owners: BBG and Cybergraph; product assembly in Cyber/Soft3.
@@ -69,12 +77,20 @@ Prerequisite: A1 and versioned network/domain identity.
   in the signal, canonical encoding, origin and authorization context.
 - [ ] Bind a stable request identity to the exact payload and network domain.
   Equal retries return the original receipt; changed payloads conflict.
+- [ ] Capture the neuron attachment, binding revision and grant before admission;
+  check current authority at dispatch. Preserve author, network, request and
+  unknown outcome across selection changes, revocation and restart.
 - [ ] Validate identity, sequence, byte/count bounds and required proofs before
   mutation. Enforce reward policy at the receiving node.
 - [ ] Migrate cyb's relay from individual JSON link retries to atomic signal
   submission, with network-scoped cursors and recovery from a lost reply.
 - [ ] Give the unsigned development bridge an explicit capability boundary;
   reward-bearing acceptance requires its actual verification policy.
+
+The current signed-native profile and its source-level evidence are specified
+in [the shared adapter](../../soft3/specs/signed-native-adapter.md). It provides
+endpoint acceptance. This package's release acceptance must retain that scope
+and require separate evidence for protocol finality or proof-backed rewards.
 
 Exit: altered signatures, domains, sequences and reward evidence are rejected;
 a multi-link signal is applied atomically; disconnect/retry/restart gives one
@@ -91,8 +107,10 @@ Owner: Cyber, consuming Cybergraph/BBG. Prerequisites: A1–A2.
 - [ ] Implement bounded SIGINT/SIGTERM drain, listener/lock release and consistent
   treatment of acknowledged operations and interrupted work.
 - [ ] Implement doctor and structured errors using the versioned CLI contract.
-- [ ] Consolidate legacy soft3/true-cyber launch, sync and link entry points around
-  one state owner and explicit compatibility/deprecation behavior.
+- [ ] Consolidate product/developer launch and offline migration around one state
+  owner. The migrated true-cyber client reuses GraphSession/Registry/Host and the
+  native signed adapter; its observation sync retains explicit provenance and
+  does not claim verified peer consensus.
 
 Exit: wrong-home, wrong-network, corrupt-store, busy-owner and offline cases
 produce meaningful errors; shutdown and restart preserve accepted state.
@@ -105,8 +123,12 @@ Owners: cyb and Cyber. Prerequisites: A2–A3.
   and exercise status, graph/explorer, submission and supported balances.
 - [ ] Test relay interruption, endpoint change within one network, switching
   networks, multi-link signals and retained personal history.
-- [ ] Keep the personal cell's keys and private state in its own authority scope.
-  Reuse shared graph/cell components as their contracts permit.
+- [ ] Keep each attached neuron's keys, private notes and grants in its explicit
+  custody scope. Reuse GraphSession/cybergraph/BBG for history and neuron for
+  durable prog execution. Observe-only subjects require no key or runtime.
+- [ ] Preserve complete Signal history, private notes, prog continuations, request
+  claims, budgets and unresolved effects across import and device movement.
+  Log renders that history; restoring a rendered log alone cannot restore state.
 
 Exit: the actual GUI and node pass the same persistence/retry scenario in
 isolated homes. HTTP-shape tests remain useful component checks.
