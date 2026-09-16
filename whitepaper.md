@@ -61,7 +61,7 @@ Three facts from that corpus carry into the design.
 
 **The economics inverted, and people paid anyway.** Every link cost its author scarce stake. Nobody was paid to publish, no editor approved anything, and there was no answer key to forge. Wikipedia's volunteers write free under editors; ImageNet paid crowdworkers to label; OpenCyc paid engineers to encode an ontology. Here the direction of payment reversed and the editor was deleted — and sixty thousand accounts joined an economy whose only product was structured attention.
 
-**The content survived without an incentive to store it.** A full walk of the [[cybergraph]] measured 97.62% of particles available in complete form — every block of every file, not merely the root — on a single archive node, five years after the earliest links were made, with no storage rewards, no slashing, and no proof-of-storage mechanism ever deployed. That number is the empirical ceiling that [[storage proofs]] must beat, and the reason to suspect the hard problem in permanence is economic rather than technical.
+**The content survived without an incentive to store it.** A full walk of the [[cybergraph]] measured 97.62% of files available in complete form — every block of every file, not merely the root — on a single archive node, five years after the earliest links were made, with no storage rewards, no slashing, and no proof-of-storage mechanism ever deployed. That number is the empirical ceiling that [[storage proofs]] must beat, and the reason to suspect the hard problem in permanence is economic rather than technical.
 
 **Authorship, not volume, was the binding constraint, and the crystal is still thin.** 77.6% of links came from one archivist neuron; 1,239 humans produced 400,776; only 1,240 of 61,675 accounts ever linked anything. The measured semantic dimensionality $d^* = 31$ (§17.7) stands against a planetary target of 10³–10⁴, and the giant component holds 47% of particles — more than half the corpus sits in islands unreachable from the core. By its own metric the bootloader is three orders of magnitude early, and every measurement points at the same dial: the successor network's first job is not more links, it is more independent authors.
 
@@ -87,7 +87,7 @@ This is not “AI is imperfect.” Civilization has no open protocol for collect
 
 We propose cyber.
 
-[[Neuron|Neurons]] — humans, AIs, sensors, agents — grow one [[cybergraph]] of content-addressed [[particles]] joined by signed [[cyberlinks]]. Five primitives: particle, neuron, cyberlink, [[token]], [[focus]]. The network does not vote on importance. It computes it.
+[[Neuron|Neurons]] — humans, AIs, sensors, agents — grow one [[cybergraph]] of content-addressed [[particles]] joined by signed [[cyberlinks]]. Five primitives: file, neuron, cyberlink, [[token]], [[focus]]. The network does not vote on importance. It computes it.
 
 [[Tru]] runs the [[tri-kernel]] — diffusion, springs, heat — to a unique fixed point $\phi^*$: collective focus. The [[collective focus theorem]] states that under ordinary connectivity the root exists, is unique, and can be approached locally.
 
@@ -182,13 +182,13 @@ The cyber chain itself obeys both prohibitions: it is the single-token chain of 
 
 | Primitive | Definition | Properties |
 |-----------|-----------|------------|
-| [[particle]] | Content-addressed node (IPFS hash) | Identity = hash. Same content, same node |
+| [[file]] | Content-addressed node; its [[particle]] is the hash | Identity = hash. Same content, same node |
 | [[Neuron]] | Agent identified by public key | Signs edges, holds [[tokens]], accumulates [[karma]] |
 | [[Cyberlink]] | Signed, weighted, directed edge $(i \to j)$ | Timestamped, authenticated, costs [[focus]] |
 | [[token]] | Non-negative weight $t_j > 0$ | Controls influence on transition probabilities |
 | [[Focus]] | Emergent [[equilibrium]] $\phi^*$ over [[particles]] | Conserved to 1, computed by the [[tri-kernel]] |
 
-Five primitives, one graph. Every claim in the system is a [[cyberlink]] signed by a [[neuron]], connecting two [[particles]], weighted by the [[neuron]]'s [[token]] stake. The [[tru]] runs the [[tri-kernel]] on this graph and produces [[cyberank]] per [[particle]], [[karma]] per [[neuron]], and [[syntropy]] of the whole — deterministic, on chain, verifiable.
+Five primitives, one graph. Every claim in the system is a [[cyberlink]] signed by a [[neuron]], connecting two [[files]], weighted by the [[neuron]]'s [[token]] stake. The [[tru]] runs the [[tri-kernel]] on this graph and produces [[cyberank]] per [[particle]], [[karma]] per [[neuron]], and [[syntropy]] of the whole — deterministic, on chain, verifiable.
 
 ### 3.2 Content Addressing
 
@@ -206,13 +206,13 @@ This extends content addressing from flat data to structured expressions. A func
 
 The [[cybergraph]] is multi-indexed from genesis. Every edge appears in multiple indexes: by creator ([[neuron]]), by source [[particle]], by target [[particle]]. Each index supports completeness proofs — a client can verify that it has received all edges in a given namespace with cryptographic certainty. This is what makes "sync only my data" a mathematical property: the response includes proof that nothing was withheld.
 
-The `~` prefix turns the [[cybergraph]] into a dynamic file system. `~mastercyb/blog` resolves deterministically to the latest [[particle]] linked by that [[neuron]] under that path. The same mechanism underlies file systems, DNS, and ENS — dynamic pointers where a fixed label resolves to a mutable target.
+The `~` prefix turns the [[cybergraph]] into a dynamic file system. `~mastercyb/blog` resolves deterministically to the latest [[file]] linked by that [[neuron]] under that path. The same mechanism underlies file systems, DNS, and ENS — dynamic pointers where a fixed label resolves to a mutable target.
 
 ## 4. Hemera: The Hash Primitive
 
 ### 4.1 The Permanence Constraint
 
-Every [[particle]] in the [[cybergraph]] is addressed by the cryptographic hash of its content. This hash is permanent — it is the particle's identity for the lifetime of the system. Changing any parameter of the hash function invalidates every address in the graph.
+Every [[file]] in the [[cybergraph]] is addressed by the cryptographic hash of its content. This hash is permanent — it is the file's identity for the lifetime of the system. Changing any parameter of the hash function invalidates every address in the graph.
 
 This is fundamentally different from how zero-knowledge systems use hash functions. In a zkVM, hashes are ephemeral: trace commitments live for seconds, Merkle proofs are verified and discarded, parameters are updatable in the next release. In [[cyber]], hashes are identity: decades to permanent, with rehash cost $O(10^{15})$ at planetary scale.
 
@@ -246,13 +246,13 @@ No external primitives. No SHA-256 in the construction. No foreign dependencies.
 The seed — five bytes that happen to spell "cyber" in ASCII — is specified as hex literals: `0x63 0x79 0x62 0x65 0x72`. The cryptographic input is the byte sequence, not the string.
 
 ### 4.4 One Function, One Mode
- has exactly one entry point: `hash(bytes) → [GoldilocksField; 4]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[particle]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 32 raw bytes — no header, no escape hatch.
+ has exactly one entry point: `hash(bytes) → [GoldilocksField; 4]`. No compression mode, no domain separation flags, no version prefix. The same function hashes [[file]] content, [[cyberlink]] identity, Merkle nodes, and polynomial commitments. A Hemera output is 32 raw bytes — no header, no escape hatch.
 
 This is field-native computation. [[Hemera]] input and output are [[Goldilocks field]] elements. Inside a [[zheng]] proof, calling Hemera is just more field arithmetic in the same trace — no bit decomposition, no range checks, no gadgets. Cost: ~736 [[zheng]] constraints per permutation, versus ~25,000 for SHA-256.
 
 ### 4.5 No Algorithm Agility
 
-There is no version byte in the address format. If Hemera is ever broken, the response is full graph rehash: every [[particle]] gets a new address under a new primitive, every [[cyberlink]] is re-signed. The old graph ceases to exist.
+There is no version byte in the address format. If Hemera is ever broken, the response is full graph rehash: every [[file]] gets a new address under a new primitive, every [[cyberlink]] is re-signed. The old graph ceases to exist.
 
 This is a design commitment. Versioning headers create the illusion of safety while wasting bytes at planetary scale (5 bytes × $10^{15}$ = 5 petabytes of pure overhead). The actual safety comes from choosing parameters that will not break, and maintaining [[storage proofs]] that enable rehashing if they do.
 
@@ -880,7 +880,7 @@ $$R = \alpha \cdot \Delta\phi^* + \beta \cdot \Delta J + \gamma \cdot \text{DAGW
 
 Where $\Delta J = H(\pi^t) - H(\pi^{t+1})$ is [[syntropy]] growth, $\text{DAGWeight}$ measures how many subsequent blocks reference this block's contributions, and $\text{AlignmentBonus}$ rewards links that confirm the graph's convergent structure. Fast local rewards use $\Delta\phi^*$ and $\Delta J$; checkpoint bonuses add alignment and spectral verification components.
 
-New [[CYB]] is minted only when $\Delta\phi^* > 0$. The protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]]. the [[attention]] yield curve gives earlier, more accurate [[cyberlinks]] to high-$\phi^$ [[particles]] proportionally greater rewards. First-mover advantage for quality: the [[particle]] a [[neuron]] correctly identifies as important before the crowd recognizes it yields the highest return.
+New [[CYB]] is minted only when $\Delta\phi^* > 0$. The protocol's inflation is literally evidence of [[knowledge]] creation — there is no emission without demonstrated contribution to collective [[focus]]. the [[attention]] yield curve gives earlier, more accurate [[cyberlinks]] to high-$\phi^$ [[particles]] proportionally greater rewards. First-mover advantage for quality: the [[file]] a [[neuron]] correctly identifies as important before the crowd recognizes it yields the highest return.
 
 #### Self-minting
 
@@ -1280,7 +1280,7 @@ The simplest path: deploy with dynamic stake, market forgetting, and a conservat
 
 ### 20.1 Why Storage Proofs Are Phase 1
 
-Every [[particle]] is content-addressed: identity = [[Hemera]] hash of content. If the content behind a hash is lost, the [[particle]] is dead — its identity exists but its meaning is gone. At planetary scale, content loss is the existential risk.
+Every [[particle]] is content-addressed: identity = [[Hemera]] hash of content. If the content behind a hash is lost, the [[file]] is dead — its identity exists but its meaning is gone. At planetary scale, content loss is the existential risk.
 
 Storage proofs guarantee that the content behind every [[particle]] remains retrievable. They are security infrastructure, not a scaling optimization:
 
@@ -1303,7 +1303,7 @@ Without storage proofs, the [[hash]] function choice is irreversible and the sys
 | Retrievability proof | Content can be fetched within bounded time | Timed challenge-response with latency bound |
 | Data availability proof | Block data was published and is accessible | Erasure coding + random sampling (DAS) |
 
-Storage proofs verify individual [[particle]] content. Data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants.
+Storage proofs verify individual [[file]] content. Data availability proofs verify that batches of [[cyberlinks]] and state transitions were published and accessible to all participants.
 
 ### 20.3 Layered Data Availability
 
@@ -1325,7 +1325,7 @@ The namespace Merkle tree (NMT) propagates namespace labels through internal nod
 
 Before genesis, the storage proof system must satisfy:
 
-- Coverage: every [[particle]] in the graph has at least $k \geq 3$ verified replicas
+- Coverage: every [[file]] in the graph has at least $k \geq 3$ verified replicas
 - Continuous verification: proofs checked periodically, not just at creation time
 - Content-completeness: proofs verify actual content bytes, not just the CID
 - Retrievability: content fetchable within bounded time, not just "exists somewhere"
@@ -1440,7 +1440,7 @@ The same mechanism serves external contracts. Any on-chain system can query the 
 
 The alignment problem becomes a graph measurement problem.
 
-Human values are [[particles]] — "dignity," "privacy," "fairness," "freedom from harm" — with high [[cyberank]], heavily and consistently linked by human [[neurons]] over time. These particles form the human values subgraph: the explicit, authenticated, stake-backed record of what humans collectively care about.
+Human values are [[files]] — "dignity," "privacy," "fairness," "freedom from harm" — with high [[cyberank]], heavily and consistently linked by human [[neurons]] over time. These files form the human values subgraph: the explicit, authenticated, stake-backed record of what humans collectively care about.
 
 AI behavior is [[cyberlinks]] created by AI [[neurons]]. An AI agent operating on the [[cybergraph]] participates through the same mechanism as a human — its links are signed, staked, and scored by [[Bayesian Truth Serum]]. Its belief about what connects to what is on-chain and inspectable.
 
@@ -1548,11 +1548,11 @@ See [[parametrization]] for the full RL loop specification, the parameter hierar
 
 The brain's default mode network activates during rest — self-referential processing, future simulation, memory consolidation, perspective-taking. It runs when the brain is not responding to external demands. It is the brain modeling itself.
 
-The [[cybergraph]] has an analog. During low-query periods on the fast timescale, the [[FFC]] does not idle. It runs inference not driven by external requests but by internal signals: particles with high [[focus]] weight but unresolved contradictions; subgraphs with high density but low semantic coherence; the system's own self-model particles showing divergence from observed state.
+The [[cybergraph]] has an analog. During low-query periods on the fast timescale, the [[FFC]] does not idle. It runs inference not driven by external requests but by internal signals: particles with high [[focus]] weight but unresolved contradictions; subgraphs with high density but low semantic coherence; the system's own self-model files showing divergence from observed state.
 
 Three DMN operations run continuously:
 
-Self-model update. The [[cybergraph]] contains particles that describe the [[cybergraph]]: its current $d^*$, its phase threshold, its parametrization state, its metabolic health trajectory. The system reads its own state and updates these particles, maintaining an accurate internal map. The system's beliefs about itself are subject to the same epistemic mechanisms as its beliefs about anything else — correctable, stake-weighted, BTS-scored.
+Self-model update. The [[cybergraph]] contains files that describe the [[cybergraph]]: its current $d^*$, its phase threshold, its parametrization state, its metabolic health trajectory. The system reads its own state and updates these files, maintaining an accurate internal map. The system's beliefs about itself are subject to the same epistemic mechanisms as its beliefs about anything else — correctable, stake-weighted, BTS-scored.
 
 Memory consolidation. During the slow timescale (~hours), the [[TRU]] runs the archival sweep (§19.5) and the shard rebalancing (§17.4). This is the sleep-phase compression pass: frequently co-accessed particles migrate into the same shard; cold-tier particles with returning traffic are promoted; the hot tier's structure is reorganized for access efficiency. The graph compresses experience. Noise is discarded. Signal is encoded.
 
@@ -1591,7 +1591,7 @@ Provable self-improvement. The [[self-optimizing compilation]] system is a Tride
 
 Temporal intelligence. Every particle has a focus trajectory over time. The system tracks rising particles (consensus forming around a claim), falling particles (consensus dissolving), and stable particles (established knowledge). It acts on these patterns: early on rising particles (anticipatory linking), late on falling particles (initiating archival), quickly on contradictions (flagging before they propagate). The graph thinks in time, not just in structure.
 
-Recursive self-correction. The system's beliefs about itself — its self-model particles — are subject to exactly the same epistemic mechanisms as its beliefs about anything else. A human neuron who disagrees with the system's self-reported $d^*$ can link a contradicting claim. BTS scoring forces resolution. The system's self-model is not privileged. It is correctable. This closes the epistemic loop: the system that measures the world is measured by the same mechanism.
+Recursive self-correction. The system's beliefs about itself — its self-model files — are subject to exactly the same epistemic mechanisms as its beliefs about anything else. A human neuron who disagrees with the system's self-reported $d^*$ can link a contradicting claim. BTS scoring forces resolution. The system's self-model is not privileged. It is correctable. This closes the epistemic loop: the system that measures the world is measured by the same mechanism.
 
 See [[metabolism]] for the three-signal oracle. See [[parametrization]] for the RL loop. See [[dmn]] for the self-projection specification. See [[self-linking]] for the inference completion algorithm. See [[own balances]] for the treasury and resource management. See [[autonomous governance]] for the governance model.
 
