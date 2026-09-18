@@ -7,7 +7,7 @@ alias: roadmap, cyber/roadmap, year/54/roadmap
 ---
 # roadmap
 
-the roadmap of [[cyber]] is the launch, in phases. the contract, the gates, the property registry and the calendar live on one page, [[cyber/launch]]; the engineering order under it lives in the [delivery roadmap](roadmap/README.md). this page is the map between them and the record of what the previous roadmap became.
+the roadmap of [[cyber]] is the launch, in phases. the contract, the gates, the property registry and the calendar live on one page, [[cyber/launch]]; the engineering order under it lives in the [delivery roadmap](/cyber/roadmap/index). this page is the map between them and the record of what the previous roadmap became.
 
 ## now · phase 1 · 2026-11-05
 

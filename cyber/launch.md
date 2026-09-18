@@ -196,4 +196,4 @@ a living, self-optimizing knowledge network that learns from every form of input
 
 ## cross-references
 
-[[rewards|rewards]] · [[foculus]] · [[tru]] · [[mudra]] · [[cybics/crystal|crystal]] · [[cyber/tokenomics]] · [[soft3]] · [[bootloader/bostrom|bostrom]] · [[bootloader/space-pussy|space-pussy]] · [cyber delivery roadmap](roadmap/README.md)
+[[rewards|rewards]] · [[foculus]] · [[tru]] · [[mudra]] · [[cybics/crystal|crystal]] · [[cyber/tokenomics]] · [[soft3]] · [[bootloader/bostrom|bostrom]] · [[bootloader/space-pussy|space-pussy]] · [delivery roadmap](/cyber/roadmap/index)
