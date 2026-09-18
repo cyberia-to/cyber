@@ -11,7 +11,7 @@ the roadmap of [[cyber]] is the launch, in phases. the contract, the gates, the 
 
 ## now · phase 1 · 2026-11-05
 
-the bootloader reborn: [[bootloader/bostrom|bostrom]] and [[bootloader/space-pussy|pussy]] return as two [[soft3]] chains on the fifth anniversary of the bostrom genesis, minutes apart. four cores, none negotiable: mint by Shapley with settlement mining, fold, consensus by convergence in [[foculus]], and privacy. content that people linked must be visible in [[cyb]]: media render, a PDF reader, every referenced particle resolving. user programmability, [[UniversalHash]], fees and [[cyber/$CYB|$CYB]] wait.
+the bootloader reborn: [[bootloader/bostrom|bostrom]] and [[bootloader/tokens/$PUSSY|pussy]] return as two [[soft3]] chains on the fifth anniversary of the bostrom genesis, minutes apart. four cores, none negotiable: mint by Shapley with settlement mining, fold, consensus by convergence in [[foculus]], and privacy. content that people linked must be visible in [[cyb]]: media render, a PDF reader, every referenced particle resolving. user programmability, UniversalHash, fees and [[$CYB]] wait.
 
 | lane | delivers | where tracked |
 |---|---|---|

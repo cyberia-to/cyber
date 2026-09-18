@@ -1,13 +1,13 @@
 ---
 tags: cyber, launch, roadmap, article
-alias: launch, cyber launch, launch phases, master plan, nox master plan, nox_master_plan, cyber/launch, bootloader reborn, 2026-11-05
+alias: launch, cyber launch, launch phases, master plan, nox master plan, nox_master_plan, bootloader reborn, 2026-11-05
 crystal-type: plan
 crystal-domain: cyber
 status: active
 ---
 # cyber/launch
 
-the launch of [[cyber]] is a sequence of phases, each a network that must hold before the next one exists. the phase with a date is the first: on 2026-11-05, five years after the [[bootloader/bostrom|bostrom]] genesis, bostrom and [[bootloader/space-pussy|pussy]] come back to life in a new body, minutes apart, as two [[soft3]] chains with the full reward mechanics. [[cyber/$CYB|$CYB]] launches later, after implementations in several languages and formal verification, and the two reborn chains are the bootloader and the canary that earn it.
+the launch of [[cyber]] is a sequence of phases, each a network that must hold before the next one exists. the phase with a date is the first: on 2026-11-05, five years after the [[bootloader/bostrom|bostrom]] genesis, bostrom and [[bootloader/tokens/$PUSSY|pussy]] come back to life in a new body, minutes apart, as two [[soft3]] chains with the full reward mechanics. [[$CYB]] launches later, after implementations in several languages and formal verification, and the two reborn chains are the bootloader and the canary that earn it.
 
 version: 2026.09 · status: phase 1 in delivery · this page is the single tracker; every gate, decision and status change lands here.
 
@@ -41,13 +41,13 @@ the stack was built bottom-up. the cryptographic floor is implemented and tested
 | [[soft3/cybergraph\|cybergraph]] | signal processor, applications, receipts | 7.5K | 97 | admission, registration of books | durable applications in review |
 | [[inf]] | query engine over authenticated state, 7 crates | 80.8K | 369 | what links this file; reads for cyb | live |
 | [[mudra]] | identity, legacy bridge, spell, stealth, veil | 2.9K | 49 | claims, P1–P3, valence | keys, claims, bridge; stealth and veil specified |
-| [neuron](../../neuron/README.md) | the subject: id, model, engine, node | 9.8K | 50 | one identity across bbg, mudra, tok, inf | local |
+| [neuron](../neuron/README.md) | the subject: id, model, engine, node | 9.8K | 50 | one identity across bbg, mudra, tok, inf | local |
 | [[tade]] | framing | 1.2K | 26 | the wire | 0.1.0 published |
 | [[file]] | `file = (particle, data)`, kinds, sniff | 0.2K | 4 | the one particle type; render kinds | two days old; used by spark and cyb only |
 | spark | opener: file → surface | 0.1K | 3 | media and PDF render | text and image |
 | [[soft3]] | node and CLI | 2.8K | 28 | the chain binary | one node live, HTTP ingress, one signal one block |
 | [[cyb]] | the body: worlds, networks, relay, vault | 19.2K | 76 | the client; content visible | networks, relay, beacon, spell, fleet gate |
-| [vault](../../vault/README.md) | custody, spell, signing | 6.7K | 46 | keys and claims in cyb | local CLI, 46 tests |
+| [vault](../vault/README.md) | custody, spell, signing | 6.7K | 46 | keys and claims in cyb | local CLI, 46 tests |
 | [[rune]] | cyb's page language, 6 crates | 8.3K | 193 | memory and graph worlds | 0.1.0 |
 | [[prysm]] | paint: chunks → UI | 1.6K | 0 | every rendered row | live in cyb, no tests |
 | [[mir]] | render: positions → world | 7.6K | 54 | the graph world | live |
@@ -87,13 +87,13 @@ learning is not a seventh item: it is what the first item measures. φ* is the s
 ### cut from phase 1
 
 - programmability for users: nox programs on chain, [[joy]] for foreign programs, [[trident]] contracts. the chain runs exactly the programs the protocol needs: φ* and impulse, settlement and fold, the ICBS market and the serum, staking with lock, burn and the yield stream, conservation and the mint. programmability for anything else returns as the first canary upgrade.
-- [[UniversalHash]] and the viewing economy: out of scope; a separate network later.
+- UniversalHash and the viewing economy: out of scope; a separate network later.
 - the fee role as paid inference; book-level fees on personal chains are in, because the referral pays from them. sigma, eidos, wysm, kern, soma tasks, IKP/IBC, Neptune.
-- [[cyber/$CYB|$CYB]]: phase 3.
+- [[$CYB]]: phase 3.
 
 ### the two chains
 
-one token, one chain ([[cyber/research/oikos|oikos]]). bostrom carries [[$BOOT|$BOOT]], pussy carries [[$PUSSY|$PUSSY]]. same binary, same genesis pipeline, two genesis roots, launched minutes apart on 2026-11-05. bostrom is the bootloader; pussy is the canary that takes every rehearsal first. they are the two root books; every neuron's personal book hangs off them by registration, so the same binary that runs bostrom runs a neuron's own chain.
+one token, one chain ([[cyber/research/oikos|oikos]]). bostrom carries [[bootloader/tokens/$BOOT|$BOOT]], pussy carries [[bootloader/tokens/$PUSSY|$PUSSY]]. same binary, same genesis pipeline, two genesis roots, launched minutes apart on 2026-11-05. bostrom is the bootloader; pussy is the canary that takes every rehearsal first. they are the two root books; every neuron's personal book hangs off them by registration, so the same binary that runs bostrom runs a neuron's own chain.
 
 genesis rules:
 
@@ -234,13 +234,13 @@ the launch that must be correct on the first try. it needs what the canary canno
 
 the formal spine, running alongside phases 1 and 2 and converging here: layer 1 confluence ([[eidos]]), cost determinism, focus conservation, privacy soundness (< 2⁻¹²⁸), tri-kernel convergence with explicit constants, adversarial equilibrium, double-spend prevention. recursive proofs (the verifier as a nox program, light clients) and sharding with DAS belong here too.
 
-$CYB genesis is separate from the two bootloader chains: a 187,416,084,623,451,570 $CYB starting balance for $C holders (≈ 1% of the Goldilocks field order), the rest along a power-law emission; [[$BOOT|$BOOT]] and [[$PUSSY|$PUSSY]] balances do not convert. the migrated graph is aligned to the [[cybics/crystal|crystal]], the 5,040-particle seed, under its 12 genesis invariants. supply, emission and the crystal keep their own pages: [[cyber/$CYB|$CYB]], [[cybics/crystal|crystal]].
+$CYB genesis is separate from the two bootloader chains: a 187,416,084,623,451,570 $CYB starting balance for $C holders (≈ 1% of the Goldilocks field order), the rest along a power-law emission; [[bootloader/tokens/$BOOT|$BOOT]] and [[bootloader/tokens/$PUSSY|$PUSSY]] balances do not convert. the migrated graph is aligned to the [[cybics/crystal|crystal]], the 5,040-particle seed, under its 12 genesis invariants. supply, emission and the crystal keep their own pages: [[$CYB]], [[cybics/crystal|crystal]].
 
 ## token architecture
 
 | type | fungible | movable | role | examples |
 |---|---|---|---|---|
-| [[coin]] | yes | yes | consensus, stake | [[$BOOT|$BOOT]], [[$PUSSY|$PUSSY]], later [[cyber/$CYB|$CYB]] |
+| [[coin]] | yes | yes | consensus, stake | [[bootloader/tokens/$BOOT|$BOOT]], [[bootloader/tokens/$PUSSY|$PUSSY]], later [[$CYB]] |
 | [[card]] | no | yes | knowledge assets, provenance | authorship proofs |
 | [[score]] | yes | no | reputation | [[cybics/crystal/karma|karma]] |
 | [[badge]] | no | no | non-transferable credentials | achievements |
@@ -251,4 +251,4 @@ a living, self-optimizing knowledge network that learns from every form of input
 
 ## cross-references
 
-[[rewards|rewards]] · [[foculus]] · [[tru]] · [[mudra]] · [[cybics/crystal|crystal]] · [[cyber/tokenomics]] · [[soft3]] · [[bootloader/bostrom|bostrom]] · [[bootloader/space-pussy|space-pussy]] · [delivery roadmap](/cyber/roadmap/index)
+[[rewards|rewards]] · [[foculus]] · [[tru]] · [[mudra]] · [[cybics/crystal|crystal]] · [[cyber/tokenomics]] · [[soft3]] · [[bootloader/bostrom|bostrom]] · [[bootloader/tokens/$PUSSY|space-pussy]] · [delivery roadmap](/cyber/roadmap/index)
