@@ -183,7 +183,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 4 · to 10-16 | privacy P1–P3 and valence (29) in code; two axes and allocation curve (26, 27); domain finality and the referral (31, 32); properties 4, 6, 7, 8 | network gate with conflicts and partition | link → files → links navigation |
 | 5 · to 10-23 | the core on three nodes from real genesis; feature freeze | release train: cyb, node, true-cyber, six builds | property 16 |
 | 6 · to 10-30 | red team fixes; registry closed or deferred | genesis candidates of both chains; runbook, alerts | public rehearsal on pussy-rc |
-| 7 · to 11-05 | freeze | ceremony | two chains live, cyb reads them |
+| 7 · to 11-05 | freeze | ceremony: bostrom genesis at 13:22:42 UTC, five years to the second after bostrom block 1 (2021-11-05T13:22:42Z); pussy at 13:37 UTC | two chains live, cyb reads them |
 
 freezes: core specs 2026-10-09 · features 2026-10-23 · genesis candidates 2026-10-28 · public rehearsal 2026-10-30 → 11-02 · launch 2026-11-05.
 
@@ -201,6 +201,7 @@ freezes: core specs 2026-10-09 · features 2026-10-23 · genesis candidates 2026
 | date | decision |
 |---|---|
 | 2026-09-18 | phase 1 dated 2026-11-05; both chains the same day, minutes apart |
+| 2026-09-18 | ceremony time: bostrom 13:22:42 UTC (block 1 anniversary to the second), pussy 13:37 UTC. Berlin 14:22 · Moscow 16:22 · Bali 21:22 · Beijing 21:22 · New York 08:22 · San Francisco 05:22 |
 | 2026-09-18 | the four cores are non-negotiable; programmability, uhash, fees, $CYB are out of phase 1 |
 | 2026-09-18 | genesis stake bonded uniformly from the snapshot, resource tokens counted |
 | 2026-09-18 | privacy P1–P3 all required at genesis |
