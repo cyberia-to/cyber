@@ -9,22 +9,26 @@ alias: cyber roadmap, cyber delivery plan
 
 # cyber delivery roadmap
 
-Deliver a reliable node to cyb, extend the same cyber binary with Joy's
-computation capabilities, then ship a verified network participant.
-The owner adopted this order on 2026-09-11: A → B → C.
+The contract is [cyber/launch](../cyber/launch.md): phase 1 is the
+bootloader reborn, bostrom and pussy on soft3 on 2026-11-05, with settlement
+mining, fold, foculus consensus and privacy as non-negotiable cores and user
+programmability deferred to the canary. This roadmap orders the engineering
+work under that contract. Owner adopted the order A → C → D for phase 1 on
+2026-09-18; B follows in phase 2.
 
-The first open dependency is
-[BBG P0: durable storage](../../bbg/roadmap/storage-reliability.md).
-It is BBG's highest delivery priority and blocks A1 and reliable local-node
-acceptance until the backend and end-to-end recovery gates close.
+| order | milestone | phase | deliverable |
+|---|---|---|---|
+| A | [local node](a-local-node.md) | 1 | cyb submits an operation, receives a durable receipt, and recovers the same result after retry or restart; BBG P0 storage gates close |
+| C | [network](c-network.md) | 1 | independent nodes on independent machines converge, finalize by φ*, settle and fold rewards, and hold the three privacy invariants |
+| D | content | 1 | every referenced particle resolves in cyb; media and PDF render; link → files → links navigation |
+| B | [computation](b-computation.md) | 2 | one cyber binary builds, runs, proves and verifies user programs through shared Trident/Joy libraries; the first canary upgrade |
+| throughout | [distribution](distribution.md) | 1 | reproducible binaries, configuration, explanatory graph and executable release checks; the friday release train |
+| alongside | [cryptographic readiness](cryptographic-readiness.md) | 1 | finalized primitive/proof profiles and implementation evidence required by each claimed release |
 
-| order | milestone | deliverable |
-|---|---|---|
-| A | [local node](a-local-node.md) | cyb submits an operation, receives a durable receipt, and recovers the same result after retry or restart |
-| B | [computation](b-computation.md) | one cyber binary builds, runs, proves and verifies programs through shared Trident/Joy libraries |
-| C | [network](c-network.md) | compatible network instances, verified synchronization, admission, finality and deployment |
-| throughout | [distribution](distribution.md) | reproducible binaries, configuration, explanatory graph and executable release checks |
-| alongside A–C | [cryptographic readiness](cryptographic-readiness.md) | finalized primitive/proof profiles and implementation evidence required by each claimed release |
+The critical path is C: the pieces exist as tested libraries in foculus, zheng,
+tru and mudra and have never run together as a network. A unblocks C's
+durability; D runs beside them on its own conveyor. The first open dependency
+in A remains [BBG P0: durable storage](../../bbg/roadmap/storage-reliability.md).
 
 ## architecture already selected
 
@@ -33,43 +37,36 @@ acceptance until the backend and end-to-end recovery gates close.
 - BBG owns storage backends and authenticated state. Extend its existing RAM,
   fjall SSD and redb storage paths; use its existing application transactions
   where their semantics fit. Durable node state belongs behind Cybergraph/BBG.
-- Soft3 owns shared composition contracts and developer interfaces. Consolidate
-  its current node host around the product contract as integration progresses.
-- Joy is a reusable warrior library with a standalone developer CLI. Cyber
-  embeds it; isolated and remote workers use the same logical job contract.
+- Foculus owns consensus, the beacon, settlement and fold; tru owns φ* and the
+  single value oracle `impulse`; tok owns conservation and the mint; mudra owns
+  identity and privacy.
+- Soft3 owns shared composition contracts and developer interfaces.
+- Joy is a reusable warrior library with a standalone developer CLI. In phase 1
+  the chain runs only the protocol's own programs; user programs return in B.
 - VM, OS, proof profile, network instance and executor are distinct selections.
-  A new compatible network is configuration. CPU/GPU selection preserves
-  warrior identity. Finite resource limits are explicit.
+  A new compatible network is configuration. Finite resource limits are explicit.
 - Workers produce results; the node verifies expected statements and owns
   admission, finality and reward decisions.
-- Verifiable private retrieval is a standard read-service capability, hosted
-  by the node or delegated to compatible infrastructure. Cybergraph/Inf define
-  complete evaluation over authenticated state; Mudra supplies privacy
-  operations. Delivery is tracked in [C2.1](c-network.md#c21-verifiable-private-retrieval).
+- Verifiable private retrieval is a standard read-service capability, tracked
+  in [C2.1](c-network.md#c21-verifiable-private-retrieval).
 
 The [execution model](../../soft3/specs/execution-model.md) owns these invariants.
 Product contracts are indexed in [specs](../specs/README.md).
 
 ## work order
 
-Start at A0 and close each dependency before relying on it. Work on the
-cryptographic and distribution tracks can proceed alongside the integration
-sequence. Freeze identity and version boundaries early; network consensus
-integration follows the local acceptance and worker contracts.
-
-Each work package names its owner, prerequisites and observable exit criteria.
-Update the relevant specification before changing an interface. Implement in
-the owning component and reuse it from cyber. Preserve supported callers or
-provide an explicit migration. Keep changes reviewable as atomic commits.
+Close each dependency before relying on it. Freeze identity and version
+boundaries early; the core specs freeze on 2026-10-09 and features on
+2026-10-23 per the launch calendar. Each work package names its owner,
+prerequisites and observable exit criteria. Update the relevant specification
+before changing an interface. Implement in the owning component and reuse it
+from cyber. Keep changes reviewable as atomic commits.
 
 Record observations, exact source revisions, command results and remaining
-failures in the owning repository's `audit/`. This roadmap tracks work and
-dependencies. An unchecked gate stays open until its executable evidence exists.
-Success for A or B establishes that milestone's scope; C and production
-cryptography have their own acceptance criteria.
+failures in the owning repository's `audit/`. The launch page tracks gates and
+the property registry; this roadmap tracks work and dependencies. An unchecked
+gate stays open until its executable evidence exists.
 
-Continue with [A1: complete the storage contract](a-local-node.md#a1-complete-the-existing-storage-contract)
-through [BBG P0](../../bbg/roadmap/storage-reliability.md).
 The existing [node audit](../audit/node-readiness.md) supplies initial failures;
 the [BBG persistence audit](../../bbg/audit/persistence.md) supplies storage findings.
 
