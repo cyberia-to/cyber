@@ -65,23 +65,25 @@ these are the point of launching. none of them is cut, none of them is faked.
 4. hybrid economics: truth markets and staking. this is the game changer, and it is what makes the mint more than a payout. two mechanisms, one program set:
    - the truth market. every cyberlink carries an [[ICBS]] position (cost $C = \lambda\sqrt{s_Y^2+s_N^2}$, self-scaling liquidity, the spam cost) and a [[Bayesian Truth Serum]] meta-report; the serum is the oracle, the market the liquidity skin over it, and [[valence]] privacy the third leg that removes the coordination channel. [[strong truthfulness]] proves the fused mechanism extracts truth even in the perpetual market with no external resolver. surprise ρ, the gate of the mint, is read from it.
    - staking on two axes ([[rewards|rewards]] §9–13). any stake moves rank: weight in $A^{\text{eff}}$, hence φ* and [[cyberank]]. only correct risk under $v_\ell \neq 0$ moves reward; passive capital buys influence and earns nothing by category. the security budget splits PoW/PoS by the allocation curve $\theta^\alpha$; base emission goes to work and risk only. operations: mint, burn (eternal particles and cyberlinks), lock (stake on particles or cyberlinks). the pulse is the instant mint; the annuity is the yield stream that pays foundational links as the graph grows around them.
-5. privacy. three invariants, all three at genesis:
+5. personal chains and the referral. every [[neuron]] roots its own home book ([[cyber/research/oikos|oikos]]): one non-fungible name, one token in the neuron's name, $ν. the book is where a personal mind is born: the neuron's links, its local φ*, its obligations, settled at home and registered into the [[cybergraph]] by name and state root; [[foculus]] gives each book domain finality. without personal chains no personal brains are born, so this ships in phase 1 with the two root chains.
+   the referral rides on it. registration is a cyberlink: the referrer's neuron links the newcomer's name. at the birth of ν's book a fixed share r of $ν goes to the referrer, and holding $ν is the right to a pro-rata share of the fees ν's book collects for as long as the book lives. the referrer is paid in the referee's own token, from the referee's own economy: a fake account has a book with no fees and a token worth nothing, so referring it pays nothing, which keeps the referral Sybil-resistant by construction, in the spirit of paying on focus created and never per head.
+6. privacy. three invariants, all three at genesis:
    - P1 · a signal's content is visible to its participants; the network sees a commitment and a proof of validity.
    - P2 · balances and transfers are private by [[mudra]] stealth addresses and veil.
    - P3 · settling a marginal m(n) reveals nothing of the miner's ego-net beyond public aggregates.
 
-learning is not a sixth item: it is what the first item measures. φ* is the state of the collective mind, and a link pays because it moved it.
+learning is not a seventh item: it is what the first item measures. φ* is the state of the collective mind, and a link pays because it moved it.
 
 ### cut from phase 1
 
 - programmability for users: nox programs on chain, [[joy]] for foreign programs, [[trident]] contracts. the chain runs exactly the programs the protocol needs: φ* and impulse, settlement and fold, the ICBS market and the serum, staking with lock, burn and the yield stream, conservation and the mint. programmability for anything else returns as the first canary upgrade.
 - [[UniversalHash]] and the viewing economy: out of scope; a separate network later.
-- the fee role (paid inference; the security budget runs on the floor alone until fees exist), sigma, eidos, wysm, kern, soma tasks, IKP/IBC, Neptune.
+- the fee role as paid inference; book-level fees on personal chains are in, because the referral pays from them. sigma, eidos, wysm, kern, soma tasks, IKP/IBC, Neptune.
 - [[cyber/$CYB|$CYB]]: phase 3.
 
 ### the two chains
 
-one token, one chain ([[cyber/research/oikos|oikos]]). bostrom carries [[$BOOT|$BOOT]], pussy carries [[$PUSSY|$PUSSY]]. same binary, same genesis pipeline, two genesis roots, launched minutes apart on 2026-11-05. bostrom is the bootloader; pussy is the canary that takes every rehearsal first.
+one token, one chain ([[cyber/research/oikos|oikos]]). bostrom carries [[$BOOT|$BOOT]], pussy carries [[$PUSSY|$PUSSY]]. same binary, same genesis pipeline, two genesis roots, launched minutes apart on 2026-11-05. bostrom is the bootloader; pussy is the canary that takes every rehearsal first. they are the two root books; every neuron's personal book hangs off them by registration, so the same binary that runs bostrom runs a neuron's own chain.
 
 genesis rules:
 
@@ -115,7 +117,7 @@ out of scope and noted: five new warriors created on 2026-09-16 (gaw for Polkado
 
 | lane | owns | first gate |
 |---|---|---|
-| A · core | settlement, fold, foculus network, truth market, staking, privacy | one node: impulse → m(n) → ticket → zheng proof; one link with an ICBS position and a serum report scored |
+| A · core | settlement, fold, foculus network, truth market, staking, personal chains and referral, privacy | one node: impulse → m(n) → ticket → zheng proof; one link with an ICBS position and a serum report scored |
 | B · body | genesis pipeline, nodes on three machines, claims, releases | genesis of pussy boots from real data |
 | C · content | one particle type, file store by particle, radio blobs, media and PDF render in cyb | a bostrom PDF opens in cyb from its cyberlink, fetched by particle |
 
@@ -156,6 +158,10 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | parameters fixed on this page, simulation | 2026-10-16 |
 | 28 | the yield annuity pays foundational links; the discovery leak (§12) bounded or accepted | tru, foculus | open | per-epoch re-scoring on real graph; the leak is an accepted open frontier for phase 1 | 2026-10-23 |
 | 29 | valence privacy hides individual positions and reports; only aggregates public | mudra, zheng | open | same proof profile as P1 | 2026-10-16 |
+| 30 | any neuron roots a home book with its own token on the same binary; registration links name and state root into the graph | soft3, tok, cybergraph | open | a neuron on pussy-rc roots a book from cyb; the book settles at home | 2026-10-09 |
+| 31 | domain finality per book: a book settles locally, cross-book conditions wait on evidence | foculus | open | oikos foundation 2 specified and exercised on two books | 2026-10-16 |
+| 32 | referral: a share r of $ν at book birth goes to the referrer who linked the name; $ν holders receive the book's fees pro rata under conservation | tok, cybergraph | open | vectors: birth allocation, fee split, transfer | 2026-10-16 |
+| 33 | referring an inactive or Sybil account yields zero | tok, tru | open | simulation with fake books | 2026-10-23 |
 
 ### calendar
 
@@ -163,8 +169,8 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 |---|---|---|---|
 | 1 · to 09-25 | registry agreed; privacy P1–P3 designed; property 3 measured | particle definition frozen (19); genesis pipeline, both chains, one node | availability map; radio wired into cyb for blob fetch |
 | 2 · to 10-02 | settlement end to end on one node; ICBS positions and serum reports on links (25) | three nodes, three machines, radio gossip (21), re-addressing run (20) | media render in spark; blob fetch by particle (22) |
-| 3 · to 10-09 | fold tree to decide and mint; serum scoring implemented (24); spec freeze of the core | claim by old key in cyb and on bostrom.network | PDF reader in spark |
-| 4 · to 10-16 | privacy P1–P3 and valence (29) in code; two axes and allocation curve (26, 27); properties 4, 6, 7, 8 | network gate with conflicts and partition | link → files → links navigation |
+| 3 · to 10-09 | fold tree to decide and mint; serum scoring implemented (24); a neuron roots its own book (30); spec freeze of the core | claim by old key in cyb and on bostrom.network | PDF reader in spark |
+| 4 · to 10-16 | privacy P1–P3 and valence (29) in code; two axes and allocation curve (26, 27); domain finality and the referral (31, 32); properties 4, 6, 7, 8 | network gate with conflicts and partition | link → files → links navigation |
 | 5 · to 10-23 | the core on three nodes from real genesis; feature freeze | release train: cyb, node, true-cyber, six builds | property 16 |
 | 6 · to 10-30 | red team fixes; registry closed or deferred | genesis candidates of both chains; runbook, alerts | public rehearsal on pussy-rc |
 | 7 · to 11-05 | freeze | ceremony | two chains live, cyb reads them |
@@ -189,6 +195,8 @@ freezes: core specs 2026-10-09 · features 2026-10-23 · genesis candidates 2026
 | 2026-09-18 | genesis stake bonded uniformly from the snapshot, resource tokens counted |
 | 2026-09-18 | privacy P1–P3 all required at genesis |
 | 2026-09-18 | content availability and render in cyb is a phase-1 core requirement |
+| 2026-09-18 | personal chains are a core: every neuron roots a home book with its own token; the referral pays the referrer a share of $ν at birth and pro-rata fees of the book |
+| open | the referral share r; transferability of $ν; whether a referrer's referrer receives anything (default: no) |
 | 2026-09-18 | hybrid economics is a core: truth markets (ICBS + serum + valence) and staking on two axes ship in phase 1 |
 | 2026-09-18 | second scan: file, radio, re-addressing, file store, inf, cybernode added as phase-1 dependencies |
 | open | which particle definition wins: hemera(data) 32 bytes, or hemera over the lens commitment |
