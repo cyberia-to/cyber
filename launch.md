@@ -250,6 +250,13 @@ $CYB genesis is separate from the two bootloader chains: a 187,416,084,623,451,5
 
 a living, self-optimizing knowledge network that learns from every form of input on Earth, holds coherence under interplanetary latency, evolves without central authority, maximizes the flourishing of the biosphere, and proves every claim. the network is thinking. no node comprehends. the network knows.
 
+## work log
+
+one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonnet, launchd `to.cyberia.launch-hour`), one row per PR. the owner merges; a merged row flips its registry property when the evidence is in.
+
+| when (UTC) | property | repo | pull request | state |
+|---|---|---|---|---|
+
 ## cross-references
 
 [[rewards|rewards]] · [[foculus]] · [[tru]] · [[mudra]] · [[cybics/crystal|crystal]] · [[cyber/tokenomics]] · [[soft3]] · [[bootloader/bostrom|bostrom]] · [[bootloader/tokens/$PUSSY|space-pussy]] · [delivery roadmap](/cyber/roadmap/index)
