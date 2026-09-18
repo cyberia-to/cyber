@@ -39,6 +39,11 @@ the stack was built bottom-up. the cryptographic floor is implemented and tested
 | [[tru]] | φ*, [[tri-kernel]], impulse | 10.2K | 86 | φ*, κ < 1, `impulse` as the value oracle; graph → model compile runs on pussy |
 | [[soft3/cybergraph\|cybergraph]] | signal processor | 7.5K | 97 | durable applications and receipts in review |
 | [[tade]] | framing | 1.2K | 26 | 0.1.0 published |
+| [[file]] | the thing: `file = (particle, data)`, kinds, sniff | 0.2K | 5 | crate `cyber-file`, renamed from particle on 2026-09-16; used by spark and cyb only |
+| spark | opener: file → surface | 0.1K | 3 | text and image; media and PDF are lane C |
+| [[inf]] | query over authenticated state | — | — | cybergraph depends on it; cyb reads "what links this file" through it |
+| [[fs]] | edit, patch, sovereign sync | spec | — | target design only; phase 1 moves file bytes over radio blobs |
+| [[cybernode]] | machines: cyberproxy, deimos, jupiter, io | — | — | the three-node network and the burial blockstore live here |
 | [[tok]] | value: coin, card, conservation | 0.6K | 8 | published; no live economy |
 | [[mudra]] | identity, encryption, stealth, veil | 2.9K | 49 | keys, claims, legacy bridge, spell; stealth and veil specified |
 | [[cyb]] | the body | 19.2K | 76 | networks, relay, beacon, spell, vault, fleet gate; renders text and images only |
@@ -90,13 +95,26 @@ the old network let people link and never let them see what they linked. this is
 - render: text and images today; phase 1 adds media (video, audio) and a PDF reader, because a large share of the bootloader's linked files are PDFs. the render lives in `spark`, the opener that turns a file into a surface.
 - from any link to its two files in one tap, and from any file to what links it.
 
+### critical dependencies found on the second scan · 2026-09-18
+
+the first draft of this page missed six dependencies. two of them decide genesis.
+
+1. one particle. three definitions are in play today: the [[file]] crate and [[cyber/file]] say `particle = hemera(data)`, 32 bytes, no prefix; the cybergraph particle spec describes a flat 64-byte namespace; [[cyber/particle]] names bbg's construction, hemera over the [[lens]] commitment to the data, domain-separated. every particle of the migrated graph is computed by whichever wins, so the definition freezes before the genesis pipeline runs, and `file::Particle` becomes the one type bbg, cybergraph, foculus and tru share instead of four private `[u8; 32]` aliases.
+2. re-addressing the bootloader graph. the 3,143,650 particles of bostrom are IPFS CIDs; the new identity is a hemera hash of the bytes. the 97.63% with bytes present are re-hashed and carry their CID as a naming cyberlink; the 2.37% without bytes have a CID and no data, so their particle cannot be computed, and the rule for them is a genesis decision: a black hole addressed by a cyberlink from the CID label, sparked if the bytes ever surface.
+3. transport. [[radio]] is a dependency of nothing in the phase-1 binaries; the node accepts signals over HTTP (`/v1/link`, `/v2/frame`, `/v3/action`) and foculus carries an optional `net` feature on upstream iroh for settle gossip only. signal gossip between nodes and blob transfer of file bytes by particle (iroh-blobs with cyber-bao) both hang on wiring radio into the node and into cyb. this is on the critical path of core 3 and of lane C at once.
+4. serving the burial bytes. 3,069,134 files sit on io's IPFS flatfs under CIDs, on an overloaded machine. phase 1 needs a file store that answers by hemera particle, seeded from that blockstore, replicated to the three network machines, so that cyb resolves what the graph references. storage economics stays open; availability at genesis does not.
+5. file kinds for render. media and PDF enter through `file::Kind` and `sniff`, then spark opens them; the crate is two days old and only cyb uses it.
+6. the subject. `neuron-id` is the identity every core crate already shares (bbg, mudra, tok, inf, soma); claims by old key land on it. it stays in, and it is the model for what `file::Particle` must become for content.
+
+out of scope and noted: five new warriors created on 2026-09-16 (gaw for Polkadot, tolya for Solana, vitalina for Ethereum, zenda for Zcash, pearla for Pearl inference) belong to the warriors program, not to phase 1.
+
 ### lanes
 
 | lane | owns | first gate |
 |---|---|---|
 | A · core | settlement, fold, foculus network, privacy | one node: impulse → m(n) → ticket → zheng proof |
 | B · body | genesis pipeline, nodes on three machines, claims, releases | genesis of pussy boots from real data |
-| C · content | availability, media and PDF render in cyb | a linked PDF opens from a cyberlink |
+| C · content | one particle type, file store by particle, radio blobs, media and PDF render in cyb | a bostrom PDF opens in cyb from its cyberlink, fetched by particle |
 
 lane A is the critical path and yields to nothing. lanes B and C run on the proven conveyors: the burial scripts and the coordinated release train of 2026-09-16.
 
@@ -124,13 +142,18 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 16 | every referenced particle resolves in cyb | cyb | open | availability audit, missing list | 2026-10-23 |
 | 17 | signed signal cannot be forged or replayed | mudra, cybergraph | measured | signal codec strict, consumer audit | closed |
 | 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 | 2026-10-09 |
+| 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared | 2026-09-25 |
+| 20 | every bostrom particle re-addressed under hemera with its CID kept as a naming link; missing bytes have a defined identity | bostrom, cybergraph | open | re-hash run over the burial blockstore, count matches | 2026-10-02 |
+| 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
+| 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
+| 23 | a file store answers by particle on the three network machines, seeded from the burial | cybernode, bbg | open | 3,069,134 files served, availability audit | 2026-10-16 |
 
 ### calendar
 
 | week | lane A · core | lane B · body | lane C · content |
 |---|---|---|---|
-| 1 · to 09-25 | registry agreed; privacy P1–P3 designed; property 3 measured | genesis pipeline, both chains, one node | availability map: what resolves, what is missing |
-| 2 · to 10-02 | settlement end to end on one node | three nodes, three machines, property 9 | media render in spark |
+| 1 · to 09-25 | registry agreed; privacy P1–P3 designed; property 3 measured | particle definition frozen (19); genesis pipeline, both chains, one node | availability map; radio wired into cyb for blob fetch |
+| 2 · to 10-02 | settlement end to end on one node | three nodes, three machines, radio gossip (21), re-addressing run (20) | media render in spark; blob fetch by particle (22) |
 | 3 · to 10-09 | fold tree to decide and mint; spec freeze of the core | claim by old key in cyb and on bostrom.network | PDF reader in spark |
 | 4 · to 10-16 | privacy P1–P3 in code; properties 4, 6, 7, 8 | network gate with conflicts and partition | link → files → links navigation |
 | 5 · to 10-23 | the core on three nodes from real genesis; feature freeze | release train: cyb, node, true-cyber, six builds | property 16 |
@@ -157,6 +180,9 @@ freezes: core specs 2026-10-09 · features 2026-10-23 · genesis candidates 2026
 | 2026-09-18 | genesis stake bonded uniformly from the snapshot, resource tokens counted |
 | 2026-09-18 | privacy P1–P3 all required at genesis |
 | 2026-09-18 | content availability and render in cyb is a phase-1 core requirement |
+| 2026-09-18 | second scan: file, radio, re-addressing, file store, inf, cybernode added as phase-1 dependencies |
+| open | which particle definition wins: hemera(data) 32 bytes, or hemera over the lens commitment |
+| open | identity of the 2.37% of bostrom files without bytes |
 | open | 8.97T BOOT on the passport contract |
 | open | the bond formula for milliampere and millivolt |
 
