@@ -151,7 +151,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 10 | P1 signal privacy | mudra, zheng | open | commitment + validity proof, leakage bounded | 2026-10-16 |
 | 11 | P2 stealth and veil | mudra, tok | open | stealth.md, veil.md, transfer vectors | 2026-10-16 |
 | 12 | P3 miner ego-net hidden beyond aggregates | foculus | open | interface invariant 4, test | 2026-10-16 |
-| 13 | conservation under mint and transfer | tok | open | proof at every mutation | 2026-10-09 |
+| 13 | conservation under mint and transfer | tok | open | proof at every mutation — mint, burn, transfer tested (plumb#1); lock remains | 2026-10-09 |
 | 14 | genesis is bijective with the snapshot | bostrom, cybergraph | open | replayed root matches, zero loss | 2026-10-02 |
 | 15 | claim by old key binds one neuron | mudra | measured | 13 bridge tests | closed |
 | 16 | every referenced particle resolves in cyb | cyb | open | availability audit, missing list | 2026-10-23 |
@@ -256,6 +256,7 @@ one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonn
 
 | when (UTC) | property | repo | pull request | state |
 |---|---|---|---|---|
+| 2026-09-18T21:44:19Z | 13 | plumb (tok) | [launch #13: add transfer to close conservation's second mutation](https://github.com/cyberia-to/plumb/pull/1) | open |
 
 ## cross-references
 
