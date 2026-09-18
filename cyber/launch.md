@@ -26,30 +26,40 @@ a milestone is code that passes its gate. the date exists for phase 1 only, and 
 
 the stack was built bottom-up. the cryptographic floor is implemented and tested; the frontier is running the pieces together as a network. counts are rust lines and `#[test]` functions in the checkout on 2026-09-18.
 
-| component | role | lines | tests | status |
-|---|---|---|---|---|
-| [[strata]] | five algebras, [[nebu]] Goldilocks | 16.1K | 453 | complete |
-| [[hemera]] | [[Poseidon2]] hash, [[particle]] identity | 11.4K | 313 | complete, unaudited |
-| [[lens]] | commitment backends | 5.6K | 128 | complete; Brakedown evaluation binding is `TensorMerkle`, recursive form blocked |
-| [[soft3/nox|nox]] | proof-native VM, 18 patterns + jets | 8.9K | 175 | complete |
-| [[zheng]] | SuperSpartan + Brakedown + HyperNova folding | 12.6K | 211 | execution proofs bind computation to public result (joy 0.5); folding fold + decide exist; private execution and state proofs incomplete |
-| [[soft3/bbg|bbg]] | authenticated state | 13.1K | 216 | core complete; durable storage gates open (bbg P0) |
-| [[radio]] | QUIC transport, gossip | 194K | 559 | transport + push gossip multi-node tested |
-| [[foculus]] | consensus by convergence, beacon, settlement, tickets, fold | 15.7K | 207 | φ* finality, fork choice, beacon VDF, settlement lottery, ticket and marginal certificates, stress to a million — single machine; never deployed as a network |
-| [[tru]] | φ*, [[tri-kernel]], impulse | 10.2K | 86 | φ*, κ < 1, `impulse` as the value oracle; graph → model compile runs on pussy |
-| [[soft3/cybergraph\|cybergraph]] | signal processor | 7.5K | 97 | durable applications and receipts in review |
-| [[tade]] | framing | 1.2K | 26 | 0.1.0 published |
-| [[file]] | the thing: `file = (particle, data)`, kinds, sniff | 0.2K | 5 | crate `cyber-file`, renamed from particle on 2026-09-16; used by spark and cyb only |
-| spark | opener: file → surface | 0.1K | 3 | text and image; media and PDF are lane C |
-| [[inf]] | query over authenticated state | — | — | cybergraph depends on it; cyb reads "what links this file" through it |
-| [[fs]] | edit, patch, sovereign sync | spec | — | target design only; phase 1 moves file bytes over radio blobs |
-| [[cybernode]] | machines: cyberproxy, deimos, jupiter, io | — | — | the three-node network and the burial blockstore live here |
-| [[tok]] | value: coin, card, conservation | 0.6K | 8 | published; no live economy |
-| [[mudra]] | identity, encryption, stealth, veil | 2.9K | 49 | keys, claims, legacy bridge, spell; stealth and veil specified |
-| [[cyb]] | the body | 19.2K | 76 | networks, relay, beacon, spell, vault, fleet gate; renders text and images only |
-| [[soft3]] | node and CLI | 2.8K | 28 | one node live: spacepussy-test, height 39K, one signal one block |
-| [[glia]] | model runtime | 30.5K | 159 | 9 tok/s on honeycrisp |
-| [neuron](../../neuron/README.md) | the subject | 9.8K | 50 | local; identity-only library, durable progs |
+| component | role | lines | tests | phase 1 use | status |
+|---|---|---|---|---|---|
+| [[strata]] | five algebras, [[nebu]] Goldilocks | 16.1K | 453 | every field operation | complete |
+| [[hemera]] | [[Poseidon2]] hash, [[particle]] identity | 11.4K | 313 | particles, transcripts, trees | complete, unaudited |
+| [[lens]] | commitment backends, 7 crates | 5.6K | 128 | Brakedown for zheng, bbg openings | evaluation binding is `TensorMerkle`; recursive form blocked |
+| [[soft3/nox|nox]] | proof-native VM, 18 patterns + jets | 8.9K | 175 | the protocol's own programs | complete |
+| [[zheng]] | SuperSpartan + Brakedown + HyperNova folding | 12.6K | 211 | ticket proofs, fold, decide, privacy proofs | execution proofs bind computation to result; fold + decide exist; private execution incomplete |
+| [[soft3/bbg|bbg]] | authenticated state, vendored fjall | 13.1K | 216 | state, openings, file store | core complete; durable storage gates open (P0) |
+| [[radio]] | QUIC transport, gossip, blobs with cyber-bao | 194K | 559 | signal gossip, file bytes by particle | multi-node tested; a dependency of nothing in phase 1 yet |
+| [[foculus]] | consensus by convergence, beacon, settlement, tickets, fold, domain finality | 15.7K | 207 | cores 2, 3, 5 | single machine, never a network; `net` feature on upstream iroh |
+| [[tru]] | φ*, [[tri-kernel]], impulse, truth scoring | 10.2K | 86 | the value oracle, the serum | φ*, κ < 1, impulse; serum scored in 6 tests |
+| [[tok]] | coin, card, conservation, mint, lock, burn | 0.6K | 8 | mint, stake, ICBS, $ν books, referral | published; no live economy |
+| [[soft3/cybergraph\|cybergraph]] | signal processor, applications, receipts | 7.5K | 97 | admission, registration of books | durable applications in review |
+| [[inf]] | query engine over authenticated state, 7 crates | 80.8K | 369 | what links this file; reads for cyb | live |
+| [[mudra]] | identity, legacy bridge, spell, stealth, veil | 2.9K | 49 | claims, P1–P3, valence | keys, claims, bridge; stealth and veil specified |
+| [neuron](../../neuron/README.md) | the subject: id, model, engine, node | 9.8K | 50 | one identity across bbg, mudra, tok, inf | local |
+| [[tade]] | framing | 1.2K | 26 | the wire | 0.1.0 published |
+| [[file]] | `file = (particle, data)`, kinds, sniff | 0.2K | 4 | the one particle type; render kinds | two days old; used by spark and cyb only |
+| spark | opener: file → surface | 0.1K | 3 | media and PDF render | text and image |
+| [[soft3]] | node and CLI | 2.8K | 28 | the chain binary | one node live, HTTP ingress, one signal one block |
+| [[cyb]] | the body: worlds, networks, relay, vault | 19.2K | 76 | the client; content visible | networks, relay, beacon, spell, fleet gate |
+| [vault](../../vault/README.md) | custody, spell, signing | 6.7K | 46 | keys and claims in cyb | local CLI, 46 tests |
+| [[rune]] | cyb's page language, 6 crates | 8.3K | 193 | memory and graph worlds | 0.1.0 |
+| [[prysm]] | paint: chunks → UI | 1.6K | 0 | every rendered row | live in cyb, no tests |
+| [[mir]] | render: positions → world | 7.6K | 54 | the graph world | live |
+| [[soma]] | kernel and agent | 4.3K | 24 | the mind's tasks in cyb | local |
+| [[glia]] | model runtime, import | 30.5K | 159 | local inference in cyb | 9 tok/s |
+| [[honeycrisp]] | acpu, aruminium, unimem | 134K | 366 | glia's accelerator | live |
+| nu | nushell fork, 24 crates, cyb's console | 387K | 5228 | the terminal world | a local checkout without a git remote; a reproducibility gap for the release train |
+| [[fs]] | edit, patch, sovereign sync | spec | — | none; bytes move over radio | target design only |
+| [[bootloader/bostrom|bostrom]] | burial scripts, snapshot, claim checker | py/js | — | genesis pipeline, claim page | complete for the old chain |
+| [[cybernode]] | cyberproxy, deimos, jupiter, io | ops | — | three nodes, file store, blockstore | io overloaded |
+
+the dependency closure above is computed from the path dependencies of the phase-1 binaries (soft3 node, cyb, cy, true-cyber, foculus, neuron, tok, tru) on 2026-09-18, plus the non-code owners. radio and fs are listed because the cores need them, not because a binary depends on them yet.
 
 the burial is complete and is the genesis material: bostrom halted at 25,120,712 with 61,675 accounts, 46,039 passport owners, 2,949,732 cyberlinks and 3,143,650 particles rebuilt bit-exact from block events, 97.63% of particle bytes present; space-pussy with 29,112 links recovered. every dataset is pinned with a CID and a sha256 at [snapshot.bostrom.network](https://snapshot.bostrom.network).
 
@@ -198,6 +208,7 @@ freezes: core specs 2026-10-09 · features 2026-10-23 · genesis candidates 2026
 | 2026-09-18 | personal chains are a core: every neuron roots a home book with its own token; the referral pays the referrer a share of $ν at birth and pro-rata fees of the book |
 | open | the referral share r; transferability of $ν; whether a referrer's referrer receives anything (default: no) |
 | 2026-09-18 | hybrid economics is a core: truth markets (ICBS + serum + valence) and staking on two axes ship in phase 1 |
+| 2026-09-18 | component table is the computed dependency closure; nu (cyb's console) is a local checkout without a remote and must get one before the release train |
 | 2026-09-18 | second scan: file, radio, re-addressing, file store, inf, cybernode added as phase-1 dependencies |
 | open | which particle definition wins: hemera(data) 32 bytes, or hemera over the lens commitment |
 | open | identity of the 2.37% of bostrom files without bytes |
