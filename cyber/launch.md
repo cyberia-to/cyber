@@ -62,18 +62,21 @@ these are the point of launching. none of them is cut, none of them is faked.
 1. mint by Shapley and settlement mining. a neuron links, [[tru]] measures the directed impulse Δφ⁺, the surprise gate ρ prices it, and the share is settled by the lottery of [[rewards|rewards]] §7: every hash attempt is a real Shapley sample, every winning ticket carries a [[zheng]] proof, and the swarm mean converges by Hoeffding. the subsidy is the same ticket (§8).
 2. fold. winning tickets aggregate per cluster into one O(1) accumulator by HyperNova folding ([[foculus]] fold-mining): self-fold, cluster tree, decide, then [[tok]] mints under conservation. without this, settlement verification is a DoS surface.
 3. consensus by convergence. [[foculus]] on independent nodes: a particle is final when φ*ᵢ > τ, forks resolve by φ*, the beacon comes from a VDF over finalized signals, equivocation is rejected, and nodes converge from different starting states.
-4. privacy. three invariants, all three at genesis:
+4. hybrid economics: truth markets and staking. this is the game changer, and it is what makes the mint more than a payout. two mechanisms, one program set:
+   - the truth market. every cyberlink carries an [[ICBS]] position (cost $C = \lambda\sqrt{s_Y^2+s_N^2}$, self-scaling liquidity, the spam cost) and a [[Bayesian Truth Serum]] meta-report; the serum is the oracle, the market the liquidity skin over it, and [[valence]] privacy the third leg that removes the coordination channel. [[strong truthfulness]] proves the fused mechanism extracts truth even in the perpetual market with no external resolver. surprise ρ, the gate of the mint, is read from it.
+   - staking on two axes ([[rewards|rewards]] §9–13). any stake moves rank: weight in $A^{\text{eff}}$, hence φ* and [[cyberank]]. only correct risk under $v_\ell \neq 0$ moves reward; passive capital buys influence and earns nothing by category. the security budget splits PoW/PoS by the allocation curve $\theta^\alpha$; base emission goes to work and risk only. operations: mint, burn (eternal particles and cyberlinks), lock (stake on particles or cyberlinks). the pulse is the instant mint; the annuity is the yield stream that pays foundational links as the graph grows around them.
+5. privacy. three invariants, all three at genesis:
    - P1 · a signal's content is visible to its participants; the network sees a commitment and a proof of validity.
    - P2 · balances and transfers are private by [[mudra]] stealth addresses and veil.
    - P3 · settling a marginal m(n) reveals nothing of the miner's ego-net beyond public aggregates.
 
-learning is not a fifth item: it is what the first item measures. φ* is the state of the collective mind, and a link pays because it moved it.
+learning is not a sixth item: it is what the first item measures. φ* is the state of the collective mind, and a link pays because it moved it.
 
 ### cut from phase 1
 
-- programmability for users: nox programs on chain, [[joy]] for foreign programs, [[trident]] contracts. the chain runs exactly the programs the protocol needs: settlement, fold, φ*. programmability returns as the first canary upgrade.
+- programmability for users: nox programs on chain, [[joy]] for foreign programs, [[trident]] contracts. the chain runs exactly the programs the protocol needs: φ* and impulse, settlement and fold, the ICBS market and the serum, staking with lock, burn and the yield stream, conservation and the mint. programmability for anything else returns as the first canary upgrade.
 - [[UniversalHash]] and the viewing economy: out of scope; a separate network later.
-- the fee role (paid inference), sigma, eidos, wysm, kern, soma tasks, IKP/IBC, Neptune.
+- the fee role (paid inference; the security budget runs on the floor alone until fees exist), sigma, eidos, wysm, kern, soma tasks, IKP/IBC, Neptune.
 - [[cyber/$CYB|$CYB]]: phase 3.
 
 ### the two chains
@@ -112,7 +115,7 @@ out of scope and noted: five new warriors created on 2026-09-16 (gaw for Polkado
 
 | lane | owns | first gate |
 |---|---|---|
-| A · core | settlement, fold, foculus network, privacy | one node: impulse → m(n) → ticket → zheng proof |
+| A · core | settlement, fold, foculus network, truth market, staking, privacy | one node: impulse → m(n) → ticket → zheng proof; one link with an ICBS position and a serum report scored |
 | B · body | genesis pipeline, nodes on three machines, claims, releases | genesis of pussy boots from real data |
 | C · content | one particle type, file store by particle, radio blobs, media and PDF render in cyb | a bostrom PDF opens in cyb from its cyberlink, fetched by particle |
 
@@ -147,15 +150,21 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
 | 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
 | 23 | a file store answers by particle on the three network machines, seeded from the burial | cybernode, bbg | open | 3,069,134 files served, availability audit | 2026-10-16 |
+| 24 | the serum is strictly proper in the meta-report and selects truth over coordinated consensus | tru | proven | strong-truthfulness.md; truth_scoring.rs 6 tests | implementation open, 2026-10-09 |
+| 25 | ICBS market: cost function, inverse coupling, spam cost, per-link positions under conservation | tok, tru | open | market program on chain, honesty_loop.rs extended | 2026-10-09 |
+| 26 | two axes: passive stake moves rank and earns nothing; only $v_\ell \neq 0$ risk earns | tok, tru | open | reward equation §11 implemented, test with idle and Sybil capital | 2026-10-16 |
+| 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | parameters fixed on this page, simulation | 2026-10-16 |
+| 28 | the yield annuity pays foundational links; the discovery leak (§12) bounded or accepted | tru, foculus | open | per-epoch re-scoring on real graph; the leak is an accepted open frontier for phase 1 | 2026-10-23 |
+| 29 | valence privacy hides individual positions and reports; only aggregates public | mudra, zheng | open | same proof profile as P1 | 2026-10-16 |
 
 ### calendar
 
 | week | lane A · core | lane B · body | lane C · content |
 |---|---|---|---|
 | 1 · to 09-25 | registry agreed; privacy P1–P3 designed; property 3 measured | particle definition frozen (19); genesis pipeline, both chains, one node | availability map; radio wired into cyb for blob fetch |
-| 2 · to 10-02 | settlement end to end on one node | three nodes, three machines, radio gossip (21), re-addressing run (20) | media render in spark; blob fetch by particle (22) |
-| 3 · to 10-09 | fold tree to decide and mint; spec freeze of the core | claim by old key in cyb and on bostrom.network | PDF reader in spark |
-| 4 · to 10-16 | privacy P1–P3 in code; properties 4, 6, 7, 8 | network gate with conflicts and partition | link → files → links navigation |
+| 2 · to 10-02 | settlement end to end on one node; ICBS positions and serum reports on links (25) | three nodes, three machines, radio gossip (21), re-addressing run (20) | media render in spark; blob fetch by particle (22) |
+| 3 · to 10-09 | fold tree to decide and mint; serum scoring implemented (24); spec freeze of the core | claim by old key in cyb and on bostrom.network | PDF reader in spark |
+| 4 · to 10-16 | privacy P1–P3 and valence (29) in code; two axes and allocation curve (26, 27); properties 4, 6, 7, 8 | network gate with conflicts and partition | link → files → links navigation |
 | 5 · to 10-23 | the core on three nodes from real genesis; feature freeze | release train: cyb, node, true-cyber, six builds | property 16 |
 | 6 · to 10-30 | red team fixes; registry closed or deferred | genesis candidates of both chains; runbook, alerts | public rehearsal on pussy-rc |
 | 7 · to 11-05 | freeze | ceremony | two chains live, cyb reads them |
@@ -180,6 +189,7 @@ freezes: core specs 2026-10-09 · features 2026-10-23 · genesis candidates 2026
 | 2026-09-18 | genesis stake bonded uniformly from the snapshot, resource tokens counted |
 | 2026-09-18 | privacy P1–P3 all required at genesis |
 | 2026-09-18 | content availability and render in cyb is a phase-1 core requirement |
+| 2026-09-18 | hybrid economics is a core: truth markets (ICBS + serum + valence) and staking on two axes ship in phase 1 |
 | 2026-09-18 | second scan: file, radio, re-addressing, file store, inf, cybernode added as phase-1 dependencies |
 | open | which particle definition wins: hemera(data) 32 bytes, or hemera over the lens commitment |
 | open | identity of the 2.37% of bostrom files without bytes |
