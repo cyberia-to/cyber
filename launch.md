@@ -145,7 +145,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 4 | progress-freedom across clusters: difficulty schedule corrects per-cluster cost | foculus | open | settle-target banded linearly by cluster size (`tickets::banded_target`); two-point measurement n=4 vs n=32 shows flat target ratio ~12x collapsed to ~1.5x banded (launch #4, foculus/audit/progress-freedom-banding.md); network-scale million.rs simulation still open | 2026-10-09 |
 | 5 | fold is a commutative monoid, decide is O(1) | zheng, foculus | open | end-to-end on three nodes | 2026-10-09 |
 | 6 | beacon unpredictable and unbiasable | foculus | open | VDF over finalized signals, attack_vectors.rs | 2026-10-16 |
-| 7 | withholding bias bounded by compute share | foculus | open | priced forfeit, role separation, simulation | 2026-10-16 |
+| 7 | withholding bias bounded by compute share | foculus | open | analytic bound derived, bias(q) ≤ (mean−min)·q/(1−q); measured on a 400-ticket pool at q=0.05–0.5, within bound and monotone (launch #7, foculus/audit/withholding-bias.md); priced forfeit and role separation still open | 2026-10-16 |
 | 8 | no two nodes finalize conflicting state | foculus | open | network gate with conflicts and partition | 2026-10-16 |
 | 9 | nodes converge from different starting states | foculus, cybergraph | open | network gate | 2026-10-02 |
 | 10 | P1 signal privacy | mudra, zheng | open | commitment + validity proof, leakage bounded | 2026-10-16 |
@@ -270,6 +270,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:04:15Z | 18 | bbg | [launch #18: define WARM archival population and checkpoint boundary](https://github.com/cyberia-to/bbg/pull/10) | open |
 | 2026-09-19T06:05:00Z | 22 | radio | [launch #22: verified-streaming tests for the particle CLI](https://github.com/cyberia-to/radio/pull/4) | open |
 | 2026-09-19T06:07:21Z | 4 | foculus | [launch #4: band settlement target by cluster size](https://github.com/cyberia-to/foculus/pull/10) | open |
+| 2026-09-19T06:14:57Z | 7 | foculus | [launch #7: bound withholding bias by compute share](https://github.com/cyberia-to/foculus/pull/11) | open |
 
 ## cross-references
 
