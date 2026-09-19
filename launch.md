@@ -170,7 +170,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 29 | valence privacy hides individual positions and reports; only aggregates public | mudra, zheng | open | same proof profile as P1 | 2026-10-16 |
 | 30 | any neuron roots a home book with its own token on the same binary; registration links name and state root into the graph | soft3, tok, cybergraph | open | a neuron on pussy-rc roots a book from cyb; the book settles at home — ledger half done: deterministic book token id, one-home-book-per-neuron invariant (launch #30, tok/oikos-book.md); cybergraph naming-link registration still open | 2026-10-09 |
 | 31 | domain finality per book: a book settles locally, cross-book conditions wait on evidence | foculus | open | oikos foundation 2 specified and exercised on two books | 2026-10-16 |
-| 32 | referral: a share r of $ν at book birth goes to the referrer who linked the name; $ν holders receive the book's fees pro rata under conservation | tok, cybergraph | open | vectors: birth allocation, fee split, transfer | 2026-10-16 |
+| 32 | referral: a share r of $ν at book birth goes to the referrer who linked the name; $ν holders receive the book's fees pro rata under conservation | tok, cybergraph | open | birth allocation vector done — split committed atomically under conservation, self-referral rejected, r a caller-supplied parameter pending the open r decision (launch #32, tok/referral.md); fee split and transfer vectors still open | 2026-10-16 |
 | 33 | referring an inactive or Sybil account yields zero | tok, tru | open | simulation with fake books | 2026-10-23 |
 
 ### calendar
@@ -273,6 +273,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:14:57Z | 7 | foculus | [launch #7: bound withholding bias by compute share](https://github.com/cyberia-to/foculus/pull/11) | open |
 | 2026-09-19T06:23:11Z | 14 | cybergraph | [launch #14: genesis replay bijection contract](https://github.com/cyberia-to/cybergraph/pull/5) | open |
 | 2026-09-19T06:26:00Z | 30 | plumb (tok) | [launch #30: neuron roots one home-book token in the ledger](https://github.com/cyberia-to/plumb/pull/3) | open |
+| 2026-09-19T06:35:00Z | 32 | plumb (tok) | [launch #32: referral birth-mint split, self-referral rejected](https://github.com/cyberia-to/plumb/pull/4) | open |
 
 ## cross-references
 
