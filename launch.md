@@ -271,6 +271,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:05:00Z | 22 | radio | [launch #22: verified-streaming tests for the particle CLI](https://github.com/cyberia-to/radio/pull/4) | open |
 | 2026-09-19T06:07:21Z | 4 | foculus | [launch #4: band settlement target by cluster size](https://github.com/cyberia-to/foculus/pull/10) | open |
 | 2026-09-19T06:14:57Z | 7 | foculus | [launch #7: bound withholding bias by compute share](https://github.com/cyberia-to/foculus/pull/11) | open |
+| 2026-09-19T06:23:11Z | 14 | cybergraph | [launch #14: genesis replay bijection contract](https://github.com/cyberia-to/cybergraph/pull/5) | open |
 | 2026-09-19T06:26:00Z | 30 | plumb (tok) | [launch #30: neuron roots one home-book token in the ledger](https://github.com/cyberia-to/plumb/pull/3) | open |
 
 ## cross-references
