@@ -252,7 +252,7 @@ a living, self-optimizing knowledge network that learns from every form of input
 
 ## work log
 
-one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonnet, launchd `to.cyberia.launch-hour`), one row per PR. the owner merges; a merged row flips its registry property when the evidence is in.
+pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd `to.cyberia.launch-hour`): three parallel slots on lanes A, B and C, a tick every 20 minutes, up to three PRs per run, one row per PR, conflicting open PRs merged with their base first. the owner merges; a merged row flips its registry property when the evidence is in.
 
 | when (UTC) | property | repo | pull request | state |
 |---|---|---|---|---|

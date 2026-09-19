@@ -10,7 +10,7 @@
         <string>/Users/master/cyber/cyber/scripts/launch-hour.sh</string>
     </array>
     <key>StartInterval</key>
-    <integer>3600</integer>
+    <integer>1200</integer>
     <key>RunAtLoad</key>
     <false/>
     <key>WorkingDirectory</key>
