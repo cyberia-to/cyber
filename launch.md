@@ -156,7 +156,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 15 | claim by old key binds one neuron | mudra | measured | 13 bridge tests | closed |
 | 16 | every referenced particle resolves in cyb | cyb | open | availability audit, missing list | 2026-10-23 |
 | 17 | signed signal cannot be forged or replayed | mudra, cybergraph | measured | signal codec strict, consumer audit | closed |
-| 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 | 2026-10-09 |
+| 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 — D2 archival population and checkpoint boundary specified (launch #18, bbg specs/storage.md), population code still open | 2026-10-09 |
 | 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared — five current definitions and their contradictions surveyed (launch #19, cybergraph/audit/particle-alias-survey.md) | 2026-09-25 |
 | 20 | every bostrom particle re-addressed under hemera with its CID kept as a naming link; missing bytes have a defined identity | bostrom, cybergraph | open | re-hash run over the burial blockstore, count matches | 2026-10-02 |
 | 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
@@ -267,6 +267,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T05:55:00Z | 8 | foculus | [launch #8: MinHash agrees across n-way conflicts and arrival orders](https://github.com/cyberia-to/foculus/pull/8) | open |
 | 2026-09-19T04:57:02Z | 9 | foculus | [launch #9: prove convergence is order-independent of link arrival](https://github.com/cyberia-to/foculus/pull/9) | open |
 | 2026-09-19T05:00:52Z | 26 | plumb (tok) | [launch #26: stake-yield term pays active risk, zeros passive/Sybil](https://github.com/cyberia-to/plumb/pull/2) | open |
+| 2026-09-19T06:04:15Z | 18 | bbg | [launch #18: define WARM archival population and checkpoint boundary](https://github.com/cyberia-to/bbg/pull/10) | open |
 | 2026-09-19T06:05:00Z | 22 | radio | [launch #22: verified-streaming tests for the particle CLI](https://github.com/cyberia-to/radio/pull/4) | open |
 
 ## cross-references
