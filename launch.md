@@ -258,6 +258,7 @@ one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonn
 |---|---|---|---|---|
 | 2026-09-18T21:44:19Z | 13 | plumb (tok) | [launch #13: add transfer to close conservation's second mutation](https://github.com/cyberia-to/plumb/pull/1) | open |
 | 2026-09-19T00:04:00Z | 3 | foculus | [launch #3: measure ticket proof decide/verify cost](https://github.com/cyberia-to/foculus/pull/6) | open |
+| 2026-09-19T01:14:34Z | 5 | zheng | [launch #5: fold either order, both decide() successfully](https://github.com/cyberia-to/zheng/pull/20) | open |
 
 ## cross-references
 
