@@ -157,7 +157,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 16 | every referenced particle resolves in cyb | cyb | open | availability audit, missing list | 2026-10-23 |
 | 17 | signed signal cannot be forged or replayed | mudra, cybergraph | measured | signal codec strict, consumer audit | closed |
 | 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 | 2026-10-09 |
-| 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared | 2026-09-25 |
+| 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared — five current definitions and their contradictions surveyed (launch #19, cybergraph/audit/particle-alias-survey.md) | 2026-09-25 |
 | 20 | every bostrom particle re-addressed under hemera with its CID kept as a naming link; missing bytes have a defined identity | bostrom, cybergraph | open | re-hash run over the burial blockstore, count matches | 2026-10-02 |
 | 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
 | 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
@@ -263,6 +263,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T03:34:00Z | 6 | foculus | [launch #6: attack tests for beacon VDF binding](https://github.com/cyberia-to/foculus/pull/7) | open |
 | 2026-09-19T04:45:00Z | 24 | tru | [launch #24: informed minority beats coordinated majority at scale](https://github.com/cyberia-to/tru/pull/9) | open |
 | 2026-09-19T05:10:00Z | 16 | file | [launch #16: sniff PDF, video and audio file kinds](https://github.com/cyberia-to/file/pull/1) | open |
+| 2026-09-19T05:35:00Z | 19 | cybergraph | [launch #19: survey particle type definitions across the four owners](https://github.com/cyberia-to/cybergraph/pull/4) | open |
 
 ## cross-references
 
