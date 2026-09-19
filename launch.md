@@ -141,7 +141,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 |---|---|---|---|---|---|
 | 1 | φ* exists, unique, converges with κ < 1 | tru | proven | convergence.md, bostrom measurement λ₂ ≈ 0.13 | closed |
 | 2 | Σφ*ᵢ = 1 | tru | proven | tri-kernel spec | closed |
-| 3 | ticket proof cost < ticket reward | foculus, zheng | open | measure on real m(n) with the folded proof | 2026-09-25 |
+| 3 | ticket proof cost < ticket reward | foculus, zheng | open | measure on real m(n) with the folded proof; foculus/audit/ticket-proof-cost.md — O(1) shape holds (decide ~18.7ms, verify ~9.2ms flat n=8..512), reward-side pricing still blocked on #26/#27 | 2026-09-25 |
 | 4 | progress-freedom across clusters: difficulty schedule corrects per-cluster cost | foculus | open | simulation on million.rs | 2026-10-09 |
 | 5 | fold is a commutative monoid, decide is O(1) | zheng, foculus | open | end-to-end on three nodes | 2026-10-09 |
 | 6 | beacon unpredictable and unbiasable | foculus | open | VDF over finalized signals, attack_vectors.rs | 2026-10-16 |
@@ -257,6 +257,7 @@ one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonn
 | when (UTC) | property | repo | pull request | state |
 |---|---|---|---|---|
 | 2026-09-18T21:44:19Z | 13 | plumb (tok) | [launch #13: add transfer to close conservation's second mutation](https://github.com/cyberia-to/plumb/pull/1) | open |
+| 2026-09-19T00:04:00Z | 3 | foculus | [launch #3: measure ticket proof decide/verify cost](https://github.com/cyberia-to/foculus/pull/6) | open |
 
 ## cross-references
 
