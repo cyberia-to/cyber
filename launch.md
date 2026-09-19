@@ -168,7 +168,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | parameters fixed on this page, simulation | 2026-10-16 |
 | 28 | the yield annuity pays foundational links; the discovery leak (§12) bounded or accepted | tru, foculus | open | per-epoch re-scoring on real graph; the leak is an accepted open frontier for phase 1 | 2026-10-23 |
 | 29 | valence privacy hides individual positions and reports; only aggregates public | mudra, zheng | open | same proof profile as P1 | 2026-10-16 |
-| 30 | any neuron roots a home book with its own token on the same binary; registration links name and state root into the graph | soft3, tok, cybergraph | open | a neuron on pussy-rc roots a book from cyb; the book settles at home | 2026-10-09 |
+| 30 | any neuron roots a home book with its own token on the same binary; registration links name and state root into the graph | soft3, tok, cybergraph | open | a neuron on pussy-rc roots a book from cyb; the book settles at home — ledger half done: deterministic book token id, one-home-book-per-neuron invariant (launch #30, tok/oikos-book.md); cybergraph naming-link registration still open | 2026-10-09 |
 | 31 | domain finality per book: a book settles locally, cross-book conditions wait on evidence | foculus | open | oikos foundation 2 specified and exercised on two books | 2026-10-16 |
 | 32 | referral: a share r of $ν at book birth goes to the referrer who linked the name; $ν holders receive the book's fees pro rata under conservation | tok, cybergraph | open | vectors: birth allocation, fee split, transfer | 2026-10-16 |
 | 33 | referring an inactive or Sybil account yields zero | tok, tru | open | simulation with fake books | 2026-10-23 |
@@ -271,6 +271,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:05:00Z | 22 | radio | [launch #22: verified-streaming tests for the particle CLI](https://github.com/cyberia-to/radio/pull/4) | open |
 | 2026-09-19T06:07:21Z | 4 | foculus | [launch #4: band settlement target by cluster size](https://github.com/cyberia-to/foculus/pull/10) | open |
 | 2026-09-19T06:14:57Z | 7 | foculus | [launch #7: bound withholding bias by compute share](https://github.com/cyberia-to/foculus/pull/11) | open |
+| 2026-09-19T06:26:00Z | 30 | plumb (tok) | [launch #30: neuron roots one home-book token in the ledger](https://github.com/cyberia-to/plumb/pull/3) | open |
 
 ## cross-references
 
