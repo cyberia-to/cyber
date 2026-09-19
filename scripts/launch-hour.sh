@@ -17,17 +17,19 @@ run_slot() {
   mkdir -p "$mirror"
   for d in /Users/master/cyber/*/; do n=$(basename "$d"); [ -e "$mirror/$n" ] || ln -s "${d%/}" "$mirror/$n"; done
   echo "$(ts) start slot=$slot lane=$lane" >> "$log"
-  ( cd /Users/master/cyber && claude -p "lane preference: $lane · mirror: $mirror/ · slot: $slot
+  ( cd /Users/master/cyber && exec claude -p "lane preference: $lane · mirror: $mirror/ · slot: $slot
 $(cat "$PROMPT")" --model sonnet --dangerously-skip-permissions --add-dir /Users/master/cyber --add-dir "$mirror" >> "$log" 2>&1 ) &
   local pid=$!
   for _ in $(seq 1 330); do kill -0 "$pid" 2>/dev/null || break; sleep 10; done
-  if kill -0 "$pid" 2>/dev/null; then echo "$(ts) timeout after 55m, killing" >> "$log"; kill -TERM "$pid"; sleep 5; kill -KILL "$pid" 2>/dev/null; fi
+  if kill -0 "$pid" 2>/dev/null; then echo "$(ts) timeout after 55m, killing" >> "$log"; pkill -TERM -P "$pid" 2>/dev/null; kill -TERM "$pid" 2>/dev/null; sleep 5; pkill -KILL -P "$pid" 2>/dev/null; kill -KILL "$pid" 2>/dev/null; fi
+  for r in /Users/master/cyber/*/; do n=$(basename "$r"); if [ -d "$mirror/$n" ] && [ ! -L "$mirror/$n" ]; then git -C "$r" worktree remove --force "$mirror/$n" 2>/dev/null; rm -rf "$mirror/$n"; ln -s "${r%/}" "$mirror/$n"; echo "$(ts) reclaimed worktree $n" >> "$log"; fi; done
   echo "$(ts) end slot=$slot" >> "$log"
   rm -rf "$lock"
 }
 slots="${*:-a b c}"
 for s in $slots; do
   case $s in a) lane="A core";; b) lane="B body";; c) lane="C content";; *) lane="A core";; esac
-  run_slot "$s" "$lane" &
+  nohup bash -c "$(declare -f ts run_slot); PROMPT=$PROMPT; run_slot $s '$lane'" >/dev/null 2>&1 &
+  disown
 done
-wait
+exit 0

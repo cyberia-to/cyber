@@ -11,6 +11,8 @@
     </array>
     <key>StartInterval</key>
     <integer>1200</integer>
+    <key>AbandonProcessGroup</key>
+    <true/>
     <key>RunAtLoad</key>
     <false/>
     <key>WorkingDirectory</key>
