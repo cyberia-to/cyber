@@ -163,7 +163,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
 | 23 | a file store answers by particle on the three network machines, seeded from the burial | cybernode, bbg | open | 3,069,134 files served, availability audit | 2026-10-16 |
 | 24 | the serum is strictly proper in the meta-report and selects truth over coordinated consensus | tru | proven | strong-truthfulness.md; truth_scoring.rs 6 tests | implementation open, 2026-10-09 |
-| 25 | ICBS market: cost function, inverse coupling, spam cost, per-link positions under conservation | tok, tru | open | market program on chain, honesty_loop.rs extended | 2026-10-09 |
+| 25 | ICBS market: cost function, inverse coupling, spam cost, per-link positions under conservation | tok, tru | open | cost function + prices implemented and tested (tru/rs/icbs.rs, launch #25); market program on chain, honesty_loop.rs extended still open | 2026-10-09 |
 | 26 | two axes: passive stake moves rank and earns nothing; only $v_\ell \neq 0$ risk earns | tok, tru | open | reward equation §11 implemented, test with idle and Sybil capital | 2026-10-16 |
 | 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | parameters fixed on this page, simulation | 2026-10-16 |
 | 28 | the yield annuity pays foundational links; the discovery leak (§12) bounded or accepted | tru, foculus | open | per-epoch re-scoring on real graph; the leak is an accepted open frontier for phase 1 | 2026-10-23 |
@@ -259,6 +259,7 @@ one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonn
 | 2026-09-18T21:44:19Z | 13 | plumb (tok) | [launch #13: add transfer to close conservation's second mutation](https://github.com/cyberia-to/plumb/pull/1) | open |
 | 2026-09-19T00:04:00Z | 3 | foculus | [launch #3: measure ticket proof decide/verify cost](https://github.com/cyberia-to/foculus/pull/6) | open |
 | 2026-09-19T01:14:34Z | 5 | zheng | [launch #5: fold either order, both decide() successfully](https://github.com/cyberia-to/zheng/pull/20) | open |
+| 2026-09-19T02:19:46Z | 25 | tru | [launch #25: ICBS cost function and price derivatives](https://github.com/cyberia-to/tru/pull/8) | open |
 
 ## cross-references
 
