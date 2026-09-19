@@ -260,6 +260,7 @@ one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonn
 | 2026-09-19T00:04:00Z | 3 | foculus | [launch #3: measure ticket proof decide/verify cost](https://github.com/cyberia-to/foculus/pull/6) | open |
 | 2026-09-19T01:14:34Z | 5 | zheng | [launch #5: fold either order, both decide() successfully](https://github.com/cyberia-to/zheng/pull/20) | open |
 | 2026-09-19T02:19:46Z | 25 | tru | [launch #25: ICBS cost function and price derivatives](https://github.com/cyberia-to/tru/pull/8) | open |
+| 2026-09-19T03:34:00Z | 6 | foculus | [launch #6: attack tests for beacon VDF binding](https://github.com/cyberia-to/foculus/pull/7) | open |
 
 ## cross-references
 
