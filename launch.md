@@ -262,6 +262,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T02:19:46Z | 25 | tru | [launch #25: ICBS cost function and price derivatives](https://github.com/cyberia-to/tru/pull/8) | open |
 | 2026-09-19T03:34:00Z | 6 | foculus | [launch #6: attack tests for beacon VDF binding](https://github.com/cyberia-to/foculus/pull/7) | open |
 | 2026-09-19T04:45:00Z | 24 | tru | [launch #24: informed minority beats coordinated majority at scale](https://github.com/cyberia-to/tru/pull/9) | open |
+| 2026-09-19T05:10:00Z | 16 | file | [launch #16: sniff PDF, video and audio file kinds](https://github.com/cyberia-to/file/pull/1) | open |
 
 ## cross-references
 
