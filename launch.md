@@ -266,6 +266,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T05:35:00Z | 19 | cybergraph | [launch #19: survey particle type definitions across the four owners](https://github.com/cyberia-to/cybergraph/pull/4) | open |
 | 2026-09-19T05:55:00Z | 8 | foculus | [launch #8: MinHash agrees across n-way conflicts and arrival orders](https://github.com/cyberia-to/foculus/pull/8) | open |
 | 2026-09-19T04:57:02Z | 9 | foculus | [launch #9: prove convergence is order-independent of link arrival](https://github.com/cyberia-to/foculus/pull/9) | open |
+| 2026-09-19T05:00:52Z | 26 | plumb (tok) | [launch #26: stake-yield term pays active risk, zeros passive/Sybil](https://github.com/cyberia-to/plumb/pull/2) | open |
 
 ## cross-references
 
