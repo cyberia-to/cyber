@@ -275,6 +275,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:26:00Z | 30 | plumb (tok) | [launch #30: neuron roots one home-book token in the ledger](https://github.com/cyberia-to/plumb/pull/3) | open |
 | 2026-09-19T06:35:00Z | 32 | plumb (tok) | [launch #32: referral birth-mint split, self-referral rejected](https://github.com/cyberia-to/plumb/pull/4) | open |
 | 2026-09-19T06:42:00Z | 12 | foculus | [launch #12: audit — settlement tickets leak the full per-contributor marginal vector](https://github.com/cyberia-to/foculus/pull/12) | open |
+| 2026-09-19T06:35:32Z | 31 | foculus | [launch #31: book-level domain finality for oikos foundation 2](https://github.com/cyberia-to/foculus/pull/13) | open |
 
 ## cross-references
 
