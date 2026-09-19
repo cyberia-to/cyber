@@ -150,7 +150,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 9 | nodes converge from different starting states | foculus, cybergraph | open | network gate | 2026-10-02 |
 | 10 | P1 signal privacy | mudra, zheng | open | commitment + validity proof, leakage bounded | 2026-10-16 |
 | 11 | P2 stealth and veil | mudra, tok | open | stealth.md, veil.md, transfer vectors | 2026-10-16 |
-| 12 | P3 miner ego-net hidden beyond aggregates | foculus | open | interface invariant 4, test | 2026-10-16 |
+| 12 | P3 miner ego-net hidden beyond aggregates | foculus | open | interface invariant 4, test — audited: `SettlementTicket.marginals` and `replay_marginals` publish the full per-contributor vector by design, not an aggregate; closing needs zheng private execution (launch #12, foculus/audit/p3-ego-net-leak.md) | 2026-10-16 |
 | 13 | conservation under mint and transfer | tok | open | proof at every mutation — mint, burn, transfer tested (plumb#1); lock remains | 2026-10-09 |
 | 14 | genesis is bijective with the snapshot | bostrom, cybergraph | open | replayed root matches, zero loss | 2026-10-02 |
 | 15 | claim by old key binds one neuron | mudra | measured | 13 bridge tests | closed |
@@ -274,6 +274,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:23:11Z | 14 | cybergraph | [launch #14: genesis replay bijection contract](https://github.com/cyberia-to/cybergraph/pull/5) | open |
 | 2026-09-19T06:26:00Z | 30 | plumb (tok) | [launch #30: neuron roots one home-book token in the ledger](https://github.com/cyberia-to/plumb/pull/3) | open |
 | 2026-09-19T06:35:00Z | 32 | plumb (tok) | [launch #32: referral birth-mint split, self-referral rejected](https://github.com/cyberia-to/plumb/pull/4) | open |
+| 2026-09-19T06:42:00Z | 12 | foculus | [launch #12: audit — settlement tickets leak the full per-contributor marginal vector](https://github.com/cyberia-to/foculus/pull/12) | open |
 
 ## cross-references
 
