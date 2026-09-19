@@ -162,7 +162,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
 | 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
 | 23 | a file store answers by particle on the three network machines, seeded from the burial | cybernode, bbg | open | 3,069,134 files served, availability audit | 2026-10-16 |
-| 24 | the serum is strictly proper in the meta-report and selects truth over coordinated consensus | tru | proven | strong-truthfulness.md; truth_scoring.rs 6 tests | implementation open, 2026-10-09 |
+| 24 | the serum is strictly proper in the meta-report and selects truth over coordinated consensus | tru | proven | strong-truthfulness.md; truth_scoring.rs 7 tests, incl. scaling to 200-agent coordinated majority (launch #24, tru/audit/coordinated-consensus-scoring.md) | implementation open, 2026-10-09 |
 | 25 | ICBS market: cost function, inverse coupling, spam cost, per-link positions under conservation | tok, tru | open | cost function + prices implemented and tested (tru/rs/icbs.rs, launch #25); market program on chain, honesty_loop.rs extended still open | 2026-10-09 |
 | 26 | two axes: passive stake moves rank and earns nothing; only $v_\ell \neq 0$ risk earns | tok, tru | open | reward equation §11 implemented, test with idle and Sybil capital | 2026-10-16 |
 | 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | parameters fixed on this page, simulation | 2026-10-16 |
@@ -261,6 +261,7 @@ one pull request per hour from the launch worker (`scripts/launch-hour.sh`, sonn
 | 2026-09-19T01:14:34Z | 5 | zheng | [launch #5: fold either order, both decide() successfully](https://github.com/cyberia-to/zheng/pull/20) | open |
 | 2026-09-19T02:19:46Z | 25 | tru | [launch #25: ICBS cost function and price derivatives](https://github.com/cyberia-to/tru/pull/8) | open |
 | 2026-09-19T03:34:00Z | 6 | foculus | [launch #6: attack tests for beacon VDF binding](https://github.com/cyberia-to/foculus/pull/7) | open |
+| 2026-09-19T04:45:00Z | 24 | tru | [launch #24: informed minority beats coordinated majority at scale](https://github.com/cyberia-to/tru/pull/9) | open |
 
 ## cross-references
 
