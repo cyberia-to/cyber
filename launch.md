@@ -142,7 +142,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 1 | φ* exists, unique, converges with κ < 1 | tru | proven | convergence.md, bostrom measurement λ₂ ≈ 0.13 | closed |
 | 2 | Σφ*ᵢ = 1 | tru | proven | tri-kernel spec | closed |
 | 3 | ticket proof cost < ticket reward | foculus, zheng | open | measure on real m(n) with the folded proof; foculus/audit/ticket-proof-cost.md — O(1) shape holds (decide ~18.7ms, verify ~9.2ms flat n=8..512), reward-side pricing still blocked on #26/#27 | 2026-09-25 |
-| 4 | progress-freedom across clusters: difficulty schedule corrects per-cluster cost | foculus | open | simulation on million.rs | 2026-10-09 |
+| 4 | progress-freedom across clusters: difficulty schedule corrects per-cluster cost | foculus | open | settle-target banded linearly by cluster size (`tickets::banded_target`); two-point measurement n=4 vs n=32 shows flat target ratio ~12x collapsed to ~1.5x banded (launch #4, foculus/audit/progress-freedom-banding.md); network-scale million.rs simulation still open | 2026-10-09 |
 | 5 | fold is a commutative monoid, decide is O(1) | zheng, foculus | open | end-to-end on three nodes | 2026-10-09 |
 | 6 | beacon unpredictable and unbiasable | foculus | open | VDF over finalized signals, attack_vectors.rs | 2026-10-16 |
 | 7 | withholding bias bounded by compute share | foculus | open | priced forfeit, role separation, simulation | 2026-10-16 |
@@ -269,6 +269,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T05:00:52Z | 26 | plumb (tok) | [launch #26: stake-yield term pays active risk, zeros passive/Sybil](https://github.com/cyberia-to/plumb/pull/2) | open |
 | 2026-09-19T06:04:15Z | 18 | bbg | [launch #18: define WARM archival population and checkpoint boundary](https://github.com/cyberia-to/bbg/pull/10) | open |
 | 2026-09-19T06:05:00Z | 22 | radio | [launch #22: verified-streaming tests for the particle CLI](https://github.com/cyberia-to/radio/pull/4) | open |
+| 2026-09-19T06:07:21Z | 4 | foculus | [launch #4: band settlement target by cluster size](https://github.com/cyberia-to/foculus/pull/10) | open |
 
 ## cross-references
 
