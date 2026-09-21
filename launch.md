@@ -165,8 +165,8 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 24 | the serum is strictly proper in the meta-report and selects truth over coordinated consensus | tru | proven | strong-truthfulness.md; truth_scoring.rs 7 tests, incl. scaling to 200-agent coordinated majority (launch #24, tru/audit/coordinated-consensus-scoring.md) | implementation open, 2026-10-09 |
 | 25 | ICBS market: cost function, inverse coupling, spam cost, per-link positions under conservation | tok, tru | open | cost function + prices implemented and tested (tru/rs/icbs.rs, launch #25); market program on chain, honesty_loop.rs extended still open | 2026-10-09 |
 | 26 | two axes: passive stake moves rank and earns nothing; only $v_\ell \neq 0$ risk earns | tok, tru | open | reward equation §11 implemented, test with idle and Sybil capital | 2026-10-16 |
-| 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | parameters fixed on this page, simulation | 2026-10-16 |
-| 28 | the yield annuity pays foundational links; the discovery leak (§12) bounded or accepted | tru, foculus | open | per-epoch re-scoring on real graph; the leak is an accepted open frontier for phase 1 | 2026-10-23 |
+| 27 | allocation curve $\theta^\alpha$ splits the security budget; floor derived from attack economics | tok | open | split and floor formulas implemented over Fx, simulated across α∈{0.3,0.5,0.7} and c_sec∈{1x..5x} (launch #27, tru/audit/allocation-curve.md); c_sec/r_atk PID loop still open | 2026-10-16 |
+| 28 | the yield annuity pays foundational links; the discovery leak (§12) bounded or accepted | tru, foculus | open | discrete per-epoch accrual primitive implemented and tested, falsified-link non-reversal verified (launch #28, tru/audit/annuity-accrual.md); wiring ω(t)/Δφ*_j(t) to real ICBS price and focusing output still open; the leak is an accepted open frontier for phase 1 | 2026-10-23 |
 | 29 | valence privacy hides individual positions and reports; only aggregates public | mudra, zheng | open | same proof profile as P1 | 2026-10-16 |
 | 30 | any neuron roots a home book with its own token on the same binary; registration links name and state root into the graph | soft3, tok, cybergraph | open | a neuron on pussy-rc roots a book from cyb; the book settles at home — ledger half done: deterministic book token id, one-home-book-per-neuron invariant (launch #30, tok/oikos-book.md); cybergraph naming-link registration still open | 2026-10-09 |
 | 31 | domain finality per book: a book settles locally, cross-book conditions wait on evidence | foculus | open | oikos foundation 2 specified and exercised on two books | 2026-10-16 |
@@ -278,6 +278,8 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:35:32Z | 31 | foculus | [launch #31: book-level domain finality for oikos foundation 2](https://github.com/cyberia-to/foculus/pull/13) | open |
 | 2026-09-21T15:38:19Z | 33 | plumb (tok) | [launch #33: conserve referral payout, zero for inactive/Sybil books](https://github.com/cyberia-to/plumb/pull/5) | open |
 | 2026-09-21T15:52:00Z | 20 | file | [launch #20: re-address bostrom CIDs to Hemera particles](https://github.com/cyberia-to/file/pull/2) | open |
+| 2026-09-21T16:10:00Z | 27 | tru | [launch #27: implement PoW/PoS allocation split and security floor](https://github.com/cyberia-to/tru/pull/10) | open |
+| 2026-09-21T16:32:00Z | 28 | tru | [launch #28: discrete per-epoch accrual for the yield-stream annuity](https://github.com/cyberia-to/tru/pull/11) | open |
 
 ## cross-references
 
