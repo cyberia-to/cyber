@@ -159,7 +159,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 — D2 archival population and checkpoint boundary specified (launch #18, bbg specs/storage.md), population code still open | 2026-10-09 |
 | 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared — five current definitions and their contradictions surveyed (launch #19, cybergraph/audit/particle-alias-survey.md) | 2026-09-25 |
 | 20 | every bostrom particle re-addressed under hemera with its CID kept as a naming link; missing bytes have a defined identity | bostrom, cybergraph | open | `readdress(cid, bytes)` implemented and tested: bytes present → `Particle::hash(bytes)`, missing → black hole `Particle::hash(cid)`, sparks when bytes surface (launch #20, file crate); the run over the 3,143,650-CID burial blockstore with count-matches check still open | 2026-10-02 |
-| 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
+| 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | fixed a pre-existing build break (iroh-docs pulled upstream iroh-blobs/iroh-gossip instead of this workspace's fork); proved multi-hop relay — a 4-node chain where the receiver only knows its immediate neighbor still gets the broadcast (launch #21, radio); real Signal payload, "before finality", and wiring radio as soft3's actual transport still open | 2026-10-02 |
 | 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
 | 23 | a file store answers by particle on the three network machines, seeded from the burial | cybernode, bbg | open | 3,069,134 files served, availability audit | 2026-10-16 |
 | 24 | the serum is strictly proper in the meta-report and selects truth over coordinated consensus | tru | proven | strong-truthfulness.md; truth_scoring.rs 7 tests, incl. scaling to 200-agent coordinated majority (launch #24, tru/audit/coordinated-consensus-scoring.md) | implementation open, 2026-10-09 |
@@ -280,6 +280,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-21T15:52:00Z | 20 | file | [launch #20: re-address bostrom CIDs to Hemera particles](https://github.com/cyberia-to/file/pull/2) | open |
 | 2026-09-21T16:10:00Z | 27 | tru | [launch #27: implement PoW/PoS allocation split and security floor](https://github.com/cyberia-to/tru/pull/10) | open |
 | 2026-09-21T16:32:00Z | 28 | tru | [launch #28: discrete per-epoch accrual for the yield-stream annuity](https://github.com/cyberia-to/tru/pull/11) | open |
+| 2026-09-21T15:40:00Z | 21 | radio | [launch #21: fix iroh-docs fork pins, prove gossip relays multi-hop](https://github.com/cyberia-to/radio/pull/5) | open |
 
 ## cross-references
 
