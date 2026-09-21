@@ -148,7 +148,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 7 | withholding bias bounded by compute share | foculus | open | analytic bound derived, bias(q) ≤ (mean−min)·q/(1−q); measured on a 400-ticket pool at q=0.05–0.5, within bound and monotone (launch #7, foculus/audit/withholding-bias.md); priced forfeit and role separation still open | 2026-10-16 |
 | 8 | no two nodes finalize conflicting state | foculus | open | network gate with conflicts and partition | 2026-10-16 |
 | 9 | nodes converge from different starting states | foculus, cybergraph | open | network gate | 2026-10-02 |
-| 10 | P1 signal privacy | mudra, zheng | open | commitment + validity proof, leakage bounded | 2026-10-16 |
+| 10 | P1 signal privacy | mudra, zheng | open | commitment + validity proof, leakage bounded — audited: cybergraph's signal spec broadcasts `ℓ⃗` in plaintext with a validity proof over disclosed content, the inverse of P1; no mudra spec defines a content-commitment interface; zheng's private-execution backend has no reviewed hiding protocol (launch #10, mudra/audit/p1-signal-content-commitment-gap.md) | 2026-10-16 |
 | 11 | P2 stealth and veil | mudra, tok | open | stealth.md, veil.md, transfer vectors | 2026-10-16 |
 | 12 | P3 miner ego-net hidden beyond aggregates | foculus | open | interface invariant 4, test — audited: `SettlementTicket.marginals` and `replay_marginals` publish the full per-contributor vector by design, not an aggregate; closing needs zheng private execution (launch #12, foculus/audit/p3-ego-net-leak.md) | 2026-10-16 |
 | 13 | conservation under mint and transfer | tok | open | proof at every mutation — mint, burn, transfer tested (plumb#1); lock remains | 2026-10-09 |
@@ -281,6 +281,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-21T16:10:00Z | 27 | tru | [launch #27: implement PoW/PoS allocation split and security floor](https://github.com/cyberia-to/tru/pull/10) | open |
 | 2026-09-21T16:32:00Z | 28 | tru | [launch #28: discrete per-epoch accrual for the yield-stream annuity](https://github.com/cyberia-to/tru/pull/11) | open |
 | 2026-09-21T15:40:00Z | 21 | radio | [launch #21: fix iroh-docs fork pins, prove gossip relays multi-hop](https://github.com/cyberia-to/radio/pull/5) | open |
+| 2026-09-21T16:52:00Z | 10 | mudra | [launch #10 (draft): trace P1 signal content-commitment gap](https://github.com/cyberia-to/mudra/pull/3) | draft |
 
 ## cross-references
 
