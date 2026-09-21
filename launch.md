@@ -149,7 +149,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 8 | no two nodes finalize conflicting state | foculus | open | network gate with conflicts and partition | 2026-10-16 |
 | 9 | nodes converge from different starting states | foculus, cybergraph | open | network gate | 2026-10-02 |
 | 10 | P1 signal privacy | mudra, zheng | open | commitment + validity proof, leakage bounded — audited: cybergraph's signal spec broadcasts `ℓ⃗` in plaintext with a validity proof over disclosed content, the inverse of P1; no mudra spec defines a content-commitment interface; zheng's private-execution backend has no reviewed hiding protocol (launch #10, mudra/audit/p1-signal-content-commitment-gap.md) | 2026-10-16 |
-| 11 | P2 stealth and veil | mudra, tok | open | stealth.md, veil.md, transfer vectors | 2026-10-16 |
+| 11 | P2 stealth and veil | mudra, tok | open | stealth.md, veil.md, transfer vectors — audited: tok's ledger holds every balance plain by `(NeuronId, TokenId) → u64`, no ciphertext type or stealth column; neither stealth nor veil has code in mudra/src, and stealth's dependency crate `genies` does not exist in this checkout (launch #11, mudra/audit/p2-stealth-veil-transfer-gap.md) | 2026-10-16 |
 | 12 | P3 miner ego-net hidden beyond aggregates | foculus | open | interface invariant 4, test — audited: `SettlementTicket.marginals` and `replay_marginals` publish the full per-contributor vector by design, not an aggregate; closing needs zheng private execution (launch #12, foculus/audit/p3-ego-net-leak.md) | 2026-10-16 |
 | 13 | conservation under mint and transfer | tok | open | proof at every mutation — mint, burn, transfer tested (plumb#1); lock remains | 2026-10-09 |
 | 14 | genesis is bijective with the snapshot | bostrom, cybergraph | open | replayed root matches, zero loss | 2026-10-02 |
@@ -282,6 +282,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-21T16:32:00Z | 28 | tru | [launch #28: discrete per-epoch accrual for the yield-stream annuity](https://github.com/cyberia-to/tru/pull/11) | open |
 | 2026-09-21T15:40:00Z | 21 | radio | [launch #21: fix iroh-docs fork pins, prove gossip relays multi-hop](https://github.com/cyberia-to/radio/pull/5) | open |
 | 2026-09-21T16:52:00Z | 10 | mudra | [launch #10 (draft): trace P1 signal content-commitment gap](https://github.com/cyberia-to/mudra/pull/3) | draft |
+| 2026-09-21T17:10:00Z | 11 | mudra | [launch #11 (draft): trace P2 stealth/veil transfer-privacy gap](https://github.com/cyberia-to/mudra/pull/4) | draft |
 
 ## cross-references
 
