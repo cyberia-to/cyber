@@ -285,6 +285,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-21T17:10:00Z | 11 | mudra | [launch #11 (draft): trace P2 stealth/veil transfer-privacy gap](https://github.com/cyberia-to/mudra/pull/4) | draft |
 | 2026-09-21T15:55:09Z | 10 | zheng | [launch #10: audit — signal wire format leaks full link content](https://github.com/cyberia-to/zheng/pull/21) | open — duplicate: mudra#3 above also claims property 10, opened 54s earlier; owner to pick one |
 | 2026-09-21T15:56:50Z | 29 | mudra | [launch #29: audit — valence leaks on the wire, collides with truth-scoring spec](https://github.com/cyberia-to/mudra/pull/5) | open |
+| 2026-09-21T15:58:21Z | 23 | bbg | [launch #23: audit — network fetch has no self-authentication check](https://github.com/cyberia-to/bbg/pull/11) | open |
 
 ## cross-references
 
