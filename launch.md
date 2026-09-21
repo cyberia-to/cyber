@@ -158,7 +158,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 17 | signed signal cannot be forged or replayed | mudra, cybergraph | measured | signal codec strict, consumer audit | closed |
 | 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 — D2 archival population and checkpoint boundary specified (launch #18, bbg specs/storage.md), population code still open | 2026-10-09 |
 | 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared — five current definitions and their contradictions surveyed (launch #19, cybergraph/audit/particle-alias-survey.md) | 2026-09-25 |
-| 20 | every bostrom particle re-addressed under hemera with its CID kept as a naming link; missing bytes have a defined identity | bostrom, cybergraph | open | re-hash run over the burial blockstore, count matches | 2026-10-02 |
+| 20 | every bostrom particle re-addressed under hemera with its CID kept as a naming link; missing bytes have a defined identity | bostrom, cybergraph | open | `readdress(cid, bytes)` implemented and tested: bytes present → `Particle::hash(bytes)`, missing → black hole `Particle::hash(cid)`, sparks when bytes surface (launch #20, file crate); the run over the 3,143,650-CID burial blockstore with count-matches check still open | 2026-10-02 |
 | 21 | signals gossip between nodes over radio | radio, foculus, soft3 | open | three nodes, a signal reaches all peers before finality | 2026-10-02 |
 | 22 | file bytes fetch by particle over radio blobs with verified streaming | radio, cyb | open | cyb opens a file it never had from a peer | 2026-10-09 |
 | 23 | a file store answers by particle on the three network machines, seeded from the burial | cybernode, bbg | open | 3,069,134 files served, availability audit | 2026-10-16 |
@@ -276,6 +276,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:35:00Z | 32 | plumb (tok) | [launch #32: referral birth-mint split, self-referral rejected](https://github.com/cyberia-to/plumb/pull/4) | open |
 | 2026-09-19T06:42:00Z | 12 | foculus | [launch #12: audit — settlement tickets leak the full per-contributor marginal vector](https://github.com/cyberia-to/foculus/pull/12) | open |
 | 2026-09-19T06:35:32Z | 31 | foculus | [launch #31: book-level domain finality for oikos foundation 2](https://github.com/cyberia-to/foculus/pull/13) | open |
+| 2026-09-21T15:52:00Z | 20 | file | [launch #20: re-address bostrom CIDs to Hemera particles](https://github.com/cyberia-to/file/pull/2) | open |
 
 ## cross-references
 
