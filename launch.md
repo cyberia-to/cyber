@@ -154,7 +154,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 13 | conservation under mint and transfer | tok | open | proof at every mutation — mint, burn, transfer tested (plumb#1); lock remains | 2026-10-09 |
 | 14 | genesis is bijective with the snapshot | bostrom, cybergraph | open | replayed root matches, zero loss | 2026-10-02 |
 | 15 | claim by old key binds one neuron | mudra | measured | 13 bridge tests | closed |
-| 16 | every referenced particle resolves in cyb | cyb | open | availability audit, missing list | 2026-10-23 |
+| 16 | every referenced particle resolves in cyb | cyb | open | availability audit, missing list — audit module implemented and tested: resolves against local store + ASCII names, reports fraction and missing list (launch #16, cyb/audit/particle-availability.md); run over the real burial vocabulary still blocked on 22/23 | 2026-10-23 |
 | 17 | signed signal cannot be forged or replayed | mudra, cybergraph | measured | signal codec strict, consumer audit | closed |
 | 18 | durable storage survives failure and restart | bbg | open | bbg P0 gates D1–D5 — D2 archival population and checkpoint boundary specified (launch #18, bbg specs/storage.md), population code still open | 2026-10-09 |
 | 19 | one particle definition, one `file::Particle` type across bbg, cybergraph, foculus, tru | file, bbg, cybergraph | open | decision on this page, then the type shared — five current definitions and their contradictions surveyed (launch #19, cybergraph/audit/particle-alias-survey.md) | 2026-09-25 |
@@ -286,6 +286,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-21T15:55:09Z | 10 | zheng | [launch #10: audit — signal wire format leaks full link content](https://github.com/cyberia-to/zheng/pull/21) | open — duplicate: mudra#3 above also claims property 10, opened 54s earlier; owner to pick one |
 | 2026-09-21T15:56:50Z | 29 | mudra | [launch #29: audit — valence leaks on the wire, collides with truth-scoring spec](https://github.com/cyberia-to/mudra/pull/5) | open |
 | 2026-09-21T15:58:21Z | 23 | bbg | [launch #23: audit — network fetch has no self-authentication check](https://github.com/cyberia-to/bbg/pull/11) | open |
+| 2026-09-21T16:43:00Z | 16 | cyb | [launch #16 (draft): particle availability audit module](https://github.com/cyberia-to/cyb/pull/1392) | draft |
 
 ## cross-references
 
