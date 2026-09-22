@@ -363,8 +363,8 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T20:26:00Z | 64 | strata | [launch #64: fix nebu-cli decode_hex panic on non-ASCII input](https://github.com/cyberia-to/strata/pull/4) | open |
 | 2026-09-22T20:38:00Z | 65 | glia | [launch #65: reject non-ASCII hex before slicing in hex_decode](https://github.com/cyberia-to/glia/pull/2) | open |
 | 2026-09-22T20:55:00Z | 66 | cyb | [launch #66: reject non-ASCII hex before slicing in wire's hex32](https://github.com/cyberia-to/cyb/pull/1394) | open |
-| 2026-09-22T21:05:00Z | 67 | lens | [launch #67: reject non-ASCII input in hex_number_le before slicing](https://github.com/cyberia-to/lens/pull/8) | open |
-| 2026-09-22T21:25:00Z | 68 | foculus | [launch #68: reject non-ASCII input in vdisk::hex_to_hash before slicing](https://github.com/cyberia-to/foculus/pull/20) | open |
+| 2026-09-22T20:06:45Z | 67 | lens | [launch #67: reject non-ASCII input in hex_number_le before slicing](https://github.com/cyberia-to/lens/pull/8) | open |
+| 2026-09-22T20:09:45Z | 68 | foculus | [launch #68: reject non-ASCII input in vdisk::hex_to_hash before slicing](https://github.com/cyberia-to/foculus/pull/20) | open |
 
 ## cross-references
 
