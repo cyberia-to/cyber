@@ -380,6 +380,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T20:46:00Z | 73 | radio | [launch #73: persist radio-cli's blob store across invocations](https://github.com/cyberia-to/radio/pull/9) | open |
 | 2026-09-22T20:37:00Z | 74 | tru | [launch #74: cover Cyberlink::decode and CyberlinkIter with direct unit tests](https://github.com/cyberia-to/tru/pull/13) | open |
 | 2026-09-22T20:34:00Z | 76 | tru | [launch #76: reject overflowing section sizes in frontmatter index_sections](https://github.com/cyberia-to/tru/pull/14) | open |
+| 2026-09-22T20:32:50Z | 75 | bbg | [launch #75: audit — verify_particle ignores its root and particle arguments](https://github.com/cyberia-to/bbg/pull/14) | open |
 
 ## cross-references
 
