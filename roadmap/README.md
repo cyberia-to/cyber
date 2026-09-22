@@ -9,7 +9,7 @@ alias: cyber roadmap, cyber delivery plan
 
 # cyber delivery roadmap
 
-The contract is [cyber/launch](../cyber/launch.md): phase 1 is the
+The contract is [cyber/launch](../launch.md): phase 1 is the
 bootloader reborn, bostrom and pussy on soft3 on 2026-11-05, with settlement
 mining, fold, foculus consensus and privacy as non-negotiable cores and user
 programmability deferred to the canary. This roadmap orders the engineering
