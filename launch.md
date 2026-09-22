@@ -182,6 +182,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 37 | fixed point everywhere on the settle-mint path: tok `conservation.rs` (`fx_to_tokens`, `fx_weight`) still converts through f64 on main | tok | open | found in review; violates arithmetic.md; a one-file fix | 2026-09-30 |
 | 38 | mudra builds from a clean checkout: `cyber-nox` pin 0.1.2 → 0.3 (the owner's dirty tree has it) | mudra | open | pins bumped to match local nox 0.3.0/zheng 0.4.0, `cargo check --tests` and `cargo test` green (20 tests); `--features prove` still broken on a real API break (`Statement.bbg_root`), documented in mudra/audit/nox-pin-build-gate.md as the next slice; PR open: [mudra#6](https://github.com/cyberia-to/mudra/pull/6) — bump cyber-nox/zheng pins so mudra builds from a clean checkout | 2026-09-25 |
 | 39 | soft3 node genesis loading is validated: default genesis creation, chain_id/engine/protocol rejection, `deny_unknown_fields`, and the 16 KiB/64 MiB size bounds all covered by tests | soft3 | open | found in review: the module had zero test coverage though it is the only real validation logic on the node's startup path; 10 tests added, `cargo test` green (14 total); the node still has no `genesis`/`claim` subcommand to load a real burial-snapshot genesis, only the hardcoded `spacepussy-test` default — that remains a separate, larger slice; PR open: [soft3#4](https://github.com/cyberia-to/soft3/pull/4) — cover node genesis load/validate with tests | 2026-10-02 |
+| 40 | HTTP submission identity derivation (`/v1/link`, `/v1/pay`, `/v1/frame`, `/v2/frame`) is covered by tests: Idempotency-Key/request_id reconciliation, length/charset bounds, hex-key passthrough vs domain-separated hash | soft3 | open | found in review: `node/requests.rs`, `routes.rs`, `http.rs` and `node.rs` had zero test coverage despite being all of the node's current HTTP ingress (the transport before radio wiring, critical dependency #3); 13 tests added for `identity()`, `cargo test` green (17 total); `routes.rs`/`http.rs`/`node.rs` and `submit()` end-to-end still untested; PR open: [soft3#5](https://github.com/cyberia-to/soft3/pull/5) — cover HTTP request identity derivation with tests | 2026-10-02 |
 
 ### calendar
 
@@ -309,6 +310,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T11:05:00Z | 38 | mudra | [launch #38: bump cyber-nox/zheng pins so mudra builds from a clean checkout](https://github.com/cyberia-to/mudra/pull/6) | open |
 | 2026-09-22T10:58:41Z | 37 | plumb (tok) | [launch #37: compute settle-mint conservation in fixed point](https://github.com/cyberia-to/plumb/pull/6) | open |
 | 2026-09-22T12:15:00Z | 39 | soft3 | [launch #39: cover node genesis load/validate with tests](https://github.com/cyberia-to/soft3/pull/4) | open |
+| 2026-09-22T12:40:00Z | 40 | soft3 | [launch #40: cover HTTP request identity derivation with tests](https://github.com/cyberia-to/soft3/pull/5) | open |
 
 ## cross-references
 
