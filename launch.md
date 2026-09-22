@@ -334,6 +334,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T19:07:16Z | 50 | file | [launch #50: fix Particle::from_hex panic on non-ASCII input](https://github.com/cyberia-to/file/pull/3) | open |
 | 2026-09-22T19:08:17Z | 49 | soft3 | [launch #49: genesis install subcommand adopts an external genesis file before first boot](https://github.com/cyberia-to/soft3/pull/8) | open |
 | 2026-09-22T19:12:13Z | 52 | true-cyber | [launch #52 (draft): true-cyber does not build from a clean checkout](https://github.com/cyberia-to/true-cyber/pull/1) | draft |
+| 2026-09-22T19:11:55Z | 53 | soft3 | [launch #53: cover key32/hash32 identity derivation with tests](https://github.com/cyberia-to/soft3/pull/9) | open |
 
 ## cross-references
 
