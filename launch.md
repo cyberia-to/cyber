@@ -181,6 +181,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 36 | hardware profile of a ticket measured on the bostrom graph: samples per second and joules per sample on Apple Silicon, x86 desktop, a phone and a GPU; the per-cluster difficulty schedule equalizes pay per second of work | foculus, warriors | open | `hardware_profile` binary grinds real `try_settlement_ticket` samples with a streaming `powermetrics` sampler; one of four points measured — Apple M4 Max: 672.8 samples/s at ε-support 8 down to 2.1 samples/s at ε-support 4096, 5-6.4W, near-linear in support size (launch #36, foculus/audit/hardware-profile.md); x86, phone, GPU runs still open; PR open: [foculus#16](https://github.com/cyberia-to/foculus/pull/16) — samples/s and mJ/sample vs ε-support size on Apple Silicon | 2026-10-16 |
 | 37 | fixed point everywhere on the settle-mint path: tok `conservation.rs` (`fx_to_tokens`, `fx_weight`) still converts through f64 on main | tok | open | found in review; violates arithmetic.md; a one-file fix | 2026-09-30 |
 | 38 | mudra builds from a clean checkout: `cyber-nox` pin 0.1.2 → 0.3 (the owner's dirty tree has it) | mudra | open | pins bumped to match local nox 0.3.0/zheng 0.4.0, `cargo check --tests` and `cargo test` green (20 tests); `--features prove` still broken on a real API break (`Statement.bbg_root`), documented in mudra/audit/nox-pin-build-gate.md as the next slice; PR open: [mudra#6](https://github.com/cyberia-to/mudra/pull/6) — bump cyber-nox/zheng pins so mudra builds from a clean checkout | 2026-09-25 |
+| 39 | soft3 node genesis loading is validated: default genesis creation, chain_id/engine/protocol rejection, `deny_unknown_fields`, and the 16 KiB/64 MiB size bounds all covered by tests | soft3 | open | found in review: the module had zero test coverage though it is the only real validation logic on the node's startup path; 10 tests added, `cargo test` green (14 total); the node still has no `genesis`/`claim` subcommand to load a real burial-snapshot genesis, only the hardcoded `spacepussy-test` default — that remains a separate, larger slice; PR open: [soft3#4](https://github.com/cyberia-to/soft3/pull/4) — cover node genesis load/validate with tests | 2026-10-02 |
 
 ### calendar
 
@@ -307,6 +308,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T08:41:00Z | 36 | foculus | [launch #36: measure settlement-mining hardware profile](https://github.com/cyberia-to/foculus/pull/16) | reviewed 2026-09-22 |
 | 2026-09-22T11:05:00Z | 38 | mudra | [launch #38: bump cyber-nox/zheng pins so mudra builds from a clean checkout](https://github.com/cyberia-to/mudra/pull/6) | open |
 | 2026-09-22T10:58:41Z | 37 | plumb (tok) | [launch #37: compute settle-mint conservation in fixed point](https://github.com/cyberia-to/plumb/pull/6) | open |
+| 2026-09-22T12:15:00Z | 39 | soft3 | [launch #39: cover node genesis load/validate with tests](https://github.com/cyberia-to/soft3/pull/4) | open |
 
 ## cross-references
 
