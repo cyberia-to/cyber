@@ -180,7 +180,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 | 35 | clusters are canonical: an epoch's claims partition into connected components of overlapping ε-supports, derived from the graph and ε, no miner-drawn boundary; the settlement proof commits to the support | foculus, tru | open | `epsilon_support` (bounded-radius neighborhood) and `partition_into_clusters` (union-find, canonical order) implemented and tested (launch #35, foculus/src/cluster.rs); radius not yet derived from ε, wiring into epoch.rs and the settlement-proof boundary commitment still open; PR open: [foculus#15](https://github.com/cyberia-to/foculus/pull/15) — ε-support derivation and canonical cluster partition | 2026-10-09 |
 | 36 | hardware profile of a ticket measured on the bostrom graph: samples per second and joules per sample on Apple Silicon, x86 desktop, a phone and a GPU; the per-cluster difficulty schedule equalizes pay per second of work | foculus, warriors | open | `hardware_profile` binary grinds real `try_settlement_ticket` samples with a streaming `powermetrics` sampler; one of four points measured — Apple M4 Max: 672.8 samples/s at ε-support 8 down to 2.1 samples/s at ε-support 4096, 5-6.4W, near-linear in support size (launch #36, foculus/audit/hardware-profile.md); x86, phone, GPU runs still open; PR open: [foculus#16](https://github.com/cyberia-to/foculus/pull/16) — samples/s and mJ/sample vs ε-support size on Apple Silicon | 2026-10-16 |
 | 37 | fixed point everywhere on the settle-mint path: tok `conservation.rs` (`fx_to_tokens`, `fx_weight`) still converts through f64 on main | tok | open | found in review; violates arithmetic.md; a one-file fix | 2026-09-30 |
-| 38 | mudra builds from a clean checkout: `cyber-nox` pin 0.1.2 → 0.3 (the owner's dirty tree has it) | mudra | open | blocks mudra #3, #4 and every mudra-owned row for the workers | 2026-09-25 |
+| 38 | mudra builds from a clean checkout: `cyber-nox` pin 0.1.2 → 0.3 (the owner's dirty tree has it) | mudra | open | pins bumped to match local nox 0.3.0/zheng 0.4.0, `cargo check --tests` and `cargo test` green (20 tests); `--features prove` still broken on a real API break (`Statement.bbg_root`), documented in mudra/audit/nox-pin-build-gate.md as the next slice; PR open: [mudra#6](https://github.com/cyberia-to/mudra/pull/6) — bump cyber-nox/zheng pins so mudra builds from a clean checkout | 2026-09-25 |
 
 ### calendar
 
@@ -305,6 +305,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T08:52:00Z | 34 | foculus | [launch #34: DAS availability decision treats a withheld shard as a failed sample](https://github.com/cyberia-to/foculus/pull/14) | reviewed 2026-09-22 |
 | 2026-09-22T09:05:00Z | 35 | foculus | [launch #35: ε-support derivation and canonical cluster partition](https://github.com/cyberia-to/foculus/pull/15) | reviewed 2026-09-22 |
 | 2026-09-22T08:41:00Z | 36 | foculus | [launch #36: measure settlement-mining hardware profile](https://github.com/cyberia-to/foculus/pull/16) | reviewed 2026-09-22 |
+| 2026-09-22T11:05:00Z | 38 | mudra | [launch #38: bump cyber-nox/zheng pins so mudra builds from a clean checkout](https://github.com/cyberia-to/mudra/pull/6) | open |
 
 ## cross-references
 
