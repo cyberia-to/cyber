@@ -55,6 +55,39 @@ def main [graph_path: string] {
 
     rejected $script $root collect "tag must match" [--tag v0.0.0 --artifacts $scratch]
     checked nu [$script $root package] | print
+
+    # Synthetic platform labels exercise collection; CI separately builds each ISA.
+    let artifacts = ($scratch | path join artifacts)
+    mkdir $artifacts
+    for target in [x86_64-unknown-linux-gnu aarch64-unknown-linux-gnu aarch64-apple-darwin] {
+        $build | update target $target | to json | save --force ($dist | path join build.json)
+        checked nu [$script $root package] | ignore
+        cp --recursive ($dist | path join release) ($artifacts | path join $"node-($target)")
+    }
+    let version = (open ($root | path join Cargo.toml) | get package.version)
+    let args = [--tag $"v($version)" --artifacts $artifacts]
+    checked nu ([$script $root collect] | append $args) | print
+    rm --recursive ($dist | path join publish)
+    rm ($dist | path join release-notes.md)
+
+    let arm = ($artifacts | path join node-aarch64-unknown-linux-gnu)
+    "altered table" | save --append ($arm | path join soft3-dependencies.md)
+    rejected $script $root collect "platform dependency inventories differ" $args
+    cp --force ($dist | path join soft3-dependencies.md) ($arm | path join soft3-dependencies.md)
+    rm --recursive ($dist | path join publish)
+
+    mv $arm ($arm + ".missing")
+    rejected $script $root collect ".build.json" $args
+    mv ($arm + ".missing") $arm
+    rm --recursive ($dist | path join publish)
+
+    let unpacked = ($scratch | path join unpacked)
+    mkdir $unpacked
+    let archive = ($arm | path join $"cyber-v($version)-aarch64-unknown-linux-gnu.tar.gz")
+    checked tar [-xzf $archive -C $unpacked] | ignore
+    "corrupt executable" | save --force ($unpacked | path join cyber)
+    checked tar [-czf $archive -C $unpacked .] | ignore
+    rejected $script $root collect "archive differs from qualified build" $args
     rm --recursive $scratch
-    print "release guard: six negative checks and restored packaging passed"
+    print "release guard: nine negative checks, packaging and collection passed"
 }

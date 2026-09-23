@@ -65,19 +65,19 @@ jobs:
           rustup toolchain install $toolchain --profile minimal --component rustfmt
           if $env.LAST_EXIT_CODE != 0 { error make {msg: "Rust installation failed"} }
       - name: Assemble pinned sources
-        run: nu analizer/node-sources.nu . checkout --destination sources
+        run: nu analizer/node-sources.nu . checkout --destination ($env.RUNNER_TEMP | path join node-sources)
       - name: Build and qualify native binary
-        working-directory: sources/cyber
+        working-directory: ${{ runner.temp }}/node-sources/cyber
         run: nu scripts/release.nu --locked-sources
       - name: Test source and release guards
         if: matrix.target == 'x86_64-unknown-linux-gnu'
-        working-directory: sources/cyber
+        working-directory: ${{ runner.temp }}/node-sources/cyber
         run: |
           nu analizer/node-sources-test.nu .
           if $env.LAST_EXIT_CODE != 0 { error make {msg: "source guard tests failed"} }
           nu analizer/node-release-test.nu .
       - name: Package qualified binary
-        working-directory: sources/cyber
+        working-directory: ${{ runner.temp }}/node-sources/cyber
         env:
           EXPECTED_TARGET: ${{ matrix.target }}
         run: |
@@ -88,7 +88,7 @@ jobs:
       - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: node-${{ matrix.target }}
-          path: sources/cyber/dist/release/
+          path: ${{ runner.temp }}/node-sources/cyber/dist/release/
           if-no-files-found: error
           retention-days: 14
 
