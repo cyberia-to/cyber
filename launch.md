@@ -374,6 +374,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T20:35:00Z | 26 | plumb (tok) | [launch #26 (2): PoW-subsidy term of the §11 reward equation](https://github.com/cyberia-to/plumb/pull/16) | open |
 | 2026-09-23T19:53:00Z | 18 | bbg | [launch #18 (3): archival checkpoint schedule for the demote/archive/evict_archived sweep](https://github.com/cyberia-to/bbg/pull/26) | open |
 | 2026-09-23T20:15:00Z | 40 | mudra | [launch #40 (2): reject non-canonical x-coordinate in Point::from_sec1](https://github.com/cyberia-to/mudra/pull/14) | open |
+| 2026-09-23T20:31:59Z | 39 | inf | [launch #39: bind bbg_root sentinel so inf-lower builds with --features prove](https://github.com/cyberia-to/inf/pull/4) | open |
 | 2026-09-23T20:26:32Z | 21 | radio | [launch #21 (2): gossip carries a real Signal envelope, not raw bytes](https://github.com/cyberia-to/radio/pull/15) | open |
 
 ## cross-references
