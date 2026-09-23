@@ -31,10 +31,10 @@ manifest paths. It fails on missing dependencies, wrong revisions or dirty
 sources. The result is `dist/cyber`, `dist/SHA256SUMS` and `dist/build.json` with
 `sources_locked: true`, compiler identity and source provenance.
 
-For a release that replaces a native version-1 writer, add
+To check compatibility with another development build, add
 `--previous-binary /path/to/previous/cyber`. The release runs the two executables
 against separate empty and populated temporary homes, checks preserved state
-and retries, first-write promotion, old-writer refusal and subsequent restart.
+and retries, new writes through both binaries, rollback and subsequent restart.
 `build.json` records `compatibility_previous_sha256` for the tested predecessor;
 without this option that field is null. This evidence covers that exact binary
 pair. The helper is also directly runnable with

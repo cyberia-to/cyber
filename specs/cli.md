@@ -62,12 +62,9 @@ exit code 2; help/version succeed with 0; application errors use 1.
 
 All commands except init/help/version require valid `config.toml`.
 
-Native storage recovery checks BBG's record/commitment format before readiness.
-Compatible version-1 stores are fully replayed and remain unchanged on open or
-exact retry. Their first newly accepted operation atomically promotes metadata
-to version 2; earlier writers then refuse the store. Genesis, network identity,
-historical roots and receipts are preserved. Unknown formats and incompatible
-legacy roots prevent startup with an actionable error. See the owning
+Native storage recovery replays committed history and compares every receipt,
+root and record before readiness. Writes use the existing native record layout.
+Compatibility between development binaries is checked through the
 [recovery contract](../../cybergraph/specs/native-storage.md) and the
 [release qualification command](node-sources.md).
 Errors and server diagnostics go to stderr. Status success establishes a
