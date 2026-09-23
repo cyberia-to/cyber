@@ -365,6 +365,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T18:47:58Z | 30 | cybergraph | [launch #30: register_book publishes a neuron's home-book naming link](https://github.com/cyberia-to/cybergraph/pull/9) | open |
 | 2026-09-23T18:53:00Z | 4 | foculus | [launch #4 (2): wire banded_target into a live epoch's settle policy](https://github.com/cyberia-to/foculus/pull/38) | open |
 | 2026-09-23T19:05:00Z | 12 | foculus | [launch #12 (2): specify the marginal-hiding ZK statement for P3](https://github.com/cyberia-to/foculus/pull/39) | open |
+| 2026-09-23T19:22:00Z | 32 | plumb (tok) | [launch #32 (2): pro-rata $ν holder fee distribution](https://github.com/cyberia-to/plumb/pull/14) | open |
 
 ## cross-references
 
