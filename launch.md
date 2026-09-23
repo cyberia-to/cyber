@@ -398,6 +398,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T22:11:26Z | 15 | mudra | [launch #15: Claim::decode rejects non-ASCII hex fields instead of panicking](https://github.com/cyberia-to/mudra/pull/15) | open |
 | 2026-09-23T22:15:00Z | 14 | bostrom | [launch #14 (6): make graph_scan.py import-safe, cover pure logic](https://github.com/cyberia-to/bostrom/pull/17) | open |
 | 2026-09-23T22:26:34Z | 39 | soft3 | [launch #39: soft3 builds and tests clean against current sibling checkouts](https://github.com/cyberia-to/soft3/pull/20) | open |
+| 2026-09-23T22:52:00Z | 37 | foculus | [launch #37 (3): compute k_min/meets_precision in Fx, not f64](https://github.com/cyberia-to/foculus/pull/49) | open |
 | 2026-09-23T22:46:04Z | 16 | spark | [launch #16 (4): WebP dimensions from RIFF chunk bytes](https://github.com/cyberia-to/spark/pull/6) | open |
 
 ## cross-references
