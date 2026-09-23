@@ -286,6 +286,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T04:45:00Z | 24 | tru | [launch #24: informed minority beats coordinated majority at scale](https://github.com/cyberia-to/tru/pull/9) | reviewed 2026-09-22 |
 | 2026-09-19T05:10:00Z | 16 | file | [launch #16: sniff PDF, video and audio file kinds](https://github.com/cyberia-to/file/pull/1) | reviewed 2026-09-22 |
 | 2026-09-19T05:35:00Z | 19 | cybergraph | [launch #19: survey particle type definitions across the four owners](https://github.com/cyberia-to/cybergraph/pull/4) | reviewed 2026-09-22 |
+| 2026-09-23T23:13:48Z | 39 | soft3 | [launch #39: add the phase-1 sibling-pin manifest (release/phase1.toml)](https://github.com/cyberia-to/soft3/pull/21) | open |
 | 2026-09-19T05:55:00Z | 8 | foculus | [launch #8: MinHash agrees across n-way conflicts and arrival orders](https://github.com/cyberia-to/foculus/pull/8) | reviewed 2026-09-22 |
 | 2026-09-19T04:57:02Z | 9 | foculus | [launch #9: prove convergence is order-independent of link arrival](https://github.com/cyberia-to/foculus/pull/9) | reviewed 2026-09-22 |
 | 2026-09-19T05:00:52Z | 26 | plumb (tok) | [launch #26: stake-yield term pays active risk, zeros passive/Sybil](https://github.com/cyberia-to/plumb/pull/2) | reviewed 2026-09-22 |
