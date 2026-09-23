@@ -364,6 +364,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T18:31:20Z | 35 | foculus | [launch #35 (2): expose the canonical cluster partition on EpochRunner](https://github.com/cyberia-to/foculus/pull/36) | open |
 | 2026-09-23T18:47:58Z | 30 | cybergraph | [launch #30: register_book publishes a neuron's home-book naming link](https://github.com/cyberia-to/cybergraph/pull/9) | open |
 | 2026-09-23T18:53:00Z | 4 | foculus | [launch #4 (2): wire banded_target into a live epoch's settle policy](https://github.com/cyberia-to/foculus/pull/38) | open |
+| 2026-09-23T19:05:00Z | 12 | foculus | [launch #12 (2): specify the marginal-hiding ZK statement for P3](https://github.com/cyberia-to/foculus/pull/39) | open |
 
 ## cross-references
 
