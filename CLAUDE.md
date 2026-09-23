@@ -45,6 +45,19 @@ Configuration: `./target/release/cyber init`; server:
 `./target/release/cyber node`. `nu scripts/release.nu` builds a local
 artifact and records sibling-source provenance in `dist/`.
 
+## Release train
+
+Rules: `~/cyber/cyberia/dev.md` § release train. A candidate is cut every
+friday 12:00 UTC by an agent from `origin/master` only; a working tree is
+never an input. Gates: `cargo build --release --locked`, `cargo test --locked`,
+`nu scripts/release.nu --locked-sources` (dist/ + SHA256SUMS + sibling
+provenance), and the graph builds with optica. A red gate ships as a red
+candidate with its evidence. One bump is one PR `chore: cyber <version>`
+(Cargo.toml, CHANGELOG, sibling pins in cyb and soft3). Receipts go to
+`audit/release-<date>/`; the launch page work log gets one row per
+candidate. Agents cut, gate and open bump PRs; only the owner merges a
+bump, promotes a candidate, publishes or tags.
+
 The protocol site has a separate build:
 
 this repo is the protocol. [cyber.page](https://cyber.page) publishes
