@@ -1,0 +1,20 @@
+{
+  "scope": "node binary CI and release assembly rehearsal",
+  "run": "https://github.com/cyberia-to/cyber/actions/runs/35854257803",
+  "source_revision": "28e2fc4e3a4950d05067e87e7befda644aa06341",
+  "reviewed_head": "dc94964fe9199ebb058dc94c27bf6f014c874207",
+  "platforms": [
+    {"target": "x86_64-unknown-linux-gnu", "unit_tests": 1, "debug_process_tests": 6, "release_process_tests": 6, "result": "passed"},
+    {"target": "aarch64-unknown-linux-gnu", "unit_tests": 1, "debug_process_tests": 6, "release_process_tests": 6, "result": "passed"},
+    {"target": "aarch64-apple-darwin", "unit_tests": 1, "debug_process_tests": 6, "release_process_tests": 6, "result": "passed"}
+  ],
+  "source_guard_negative_checks": 5,
+  "release_guard_negative_checks": 9,
+  "component_repositories": 15,
+  "resolved_local_packages": 38,
+  "downloaded_artifact_collection": "passed",
+  "downloaded_macos_checksum_and_startup": "passed",
+  "workflow_lint": "passed",
+  "tag_created": false,
+  "github_release_published": false
+}

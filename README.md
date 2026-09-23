@@ -79,10 +79,12 @@ stays intact; activation is a permanent reader-generation upgrade. See
 
 `nu scripts/release.nu --locked-sources` produces a host binary, checksum,
 build provenance and the exact soft3 dependency inventory in `dist/` from a
-pinned checkout. [GitHub Releases](https://github.com/cyberia-to/cyber/releases)
-distributes tagged prereleases with that inventory and native binaries for
-Linux x86_64/ARM64 and macOS ARM64. The [release contract](specs/releases.md)
-describes the build and publication cycle.
+pinned checkout. The Node workflow publishes tagged prereleases to
+[GitHub Releases](https://github.com/cyberia-to/cyber/releases), with that
+inventory and native binaries for Linux x86_64/ARM64 and macOS ARM64.
+Before a version tag is selected, the same archives are available as artifacts
+in [Node workflow runs](https://github.com/cyberia-to/cyber/actions/workflows/node.yml).
+The [release contract](specs/releases.md) describes the build and publication cycle.
 
 The sibling `true-cyber` source now provides a headless
 client over the shared GraphSession and neuron registry: explicit key attachment,
