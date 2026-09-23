@@ -351,6 +351,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T10:58:00Z | 23 | bbg | [launch #23 (2) (draft): fix misleading tiered.rs module-header comment](https://github.com/cyberia-to/bbg/pull/23) | draft |
 | 2026-09-23T10:34:45Z | 40 | lens | [launch #40: Brakedown/Ikat verify never checks queried codeword values](https://github.com/cyberia-to/lens/pull/13) | open |
 | 2026-09-23T10:45:53Z | 18 | bbg | [launch #18: stage WARM values into COLD's pending batch via demote()](https://github.com/cyberia-to/bbg/pull/24) | open |
+| 2026-09-23T10:49:41Z | 18 | bbg | [launch #18 (2): evict a WARM key once its archival checkpoint succeeds](https://github.com/cyberia-to/bbg/pull/25) | open |
 
 ## cross-references
 
