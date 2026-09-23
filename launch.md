@@ -500,7 +500,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T00:51:00Z | 137 | bostrom | [launch #137: holdings.py importable; cover denom label and pool-rate logic](https://github.com/cyberia-to/bostrom/pull/2) | open |
 | 2026-09-23T00:51:00Z | 138 | bostrom | [launch #138: extract graph_scan's height-window tiling; cover it](https://github.com/cyberia-to/bostrom/pull/3) | open |
 | 2026-09-23T01:40:00Z | 135 | foculus | [launch #135: bound legacy signal frame collection counts](https://github.com/cyberia-to/foculus/pull/25) | open |
-| 2026-09-23T02:05:00Z | 139 | honeycrisp | [launch #139 (retitled from #137, row collision with bostrom#3): check gemv_pure_asm's length/k invariants before AMX asm](https://github.com/cyberia-to/honeycrisp/pull/9) | open |
+| 2026-09-23T00:55:00Z | 139 | honeycrisp | [launch #139 (retitled from #137, row collision with bostrom#3): check gemv_pure_asm's length/k invariants before AMX asm](https://github.com/cyberia-to/honeycrisp/pull/9) | open |
 
 ## cross-references
 
