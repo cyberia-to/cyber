@@ -392,6 +392,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T21:50:32Z | 16 | spark | [launch #16 (3): image dimensions from raw PNG/GIF/JPEG bytes](https://github.com/cyberia-to/spark/pull/5) | open |
 | 2026-09-23T21:51:07Z | 39 | mir | [launch #39: mir builds clean; bevy-plugin tests gated by required-features](https://github.com/cyberia-to/mir/pull/10) | open |
 | 2026-09-23T21:53:38Z | 14 | bostrom | [launch #14 (4): audit — manifest.json particle totals off by 2](https://github.com/cyberia-to/bostrom/pull/15) | open |
+| 2026-09-23T22:12:00Z | 14 | bostrom | [launch #14 (5): unit-cover extract.py's per-record pure logic](https://github.com/cyberia-to/bostrom/pull/16) | open |
 
 ## cross-references
 
