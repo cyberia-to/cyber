@@ -381,6 +381,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T21:05:00Z | 21 | radio | [launch #21 (3): gossip a real ClaimAnnounce/RewardClaim envelope](https://github.com/cyberia-to/radio/pull/16) | open |
 | 2026-09-23T20:52:00Z | 5 | foculus | [launch #5 (2): fold_acc_checked rejects overlapping accumulators](https://github.com/cyberia-to/foculus/pull/44) | open |
 | 2026-09-23T21:06:32Z | 40 | foculus | [launch #40: nmt verify() binds proof.root to a trusted root](https://github.com/cyberia-to/foculus/pull/45) | open |
+| 2026-09-23T21:07:39Z | 21 | radio | [launch #21 (4): gossip a real SelfAcc/ClusterAcc envelope](https://github.com/cyberia-to/radio/pull/17) | open |
 
 ## cross-references
 
