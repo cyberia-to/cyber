@@ -1,0 +1,274 @@
+{
+  "schema": "cyber/node-sources/1",
+  "profile": "default-and-tests",
+  "cargo_lock_sha256": "0858f99daca13c4d224c180a5972f1e9e14501fddacf179a74c49f4688896e9f",
+  "repositories": [
+    {
+      "directory": "bbg",
+      "url": "https://github.com/cyberia-to/bbg.git",
+      "revision": "1467b68cd1eed880ad3d0c16f8b41758d0f62a27"
+    },
+    {
+      "directory": "cybergraph",
+      "url": "https://github.com/cyberia-to/cybergraph.git",
+      "revision": "0eae7ae9fa116ae51fc4ec6d2cd0941c12e86212"
+    },
+    {
+      "directory": "foculus",
+      "url": "https://github.com/cyberia-to/foculus.git",
+      "revision": "9e32aa688e0f03ffa8fd9a3c099bc7e50cc8c744"
+    },
+    {
+      "directory": "hemera",
+      "url": "https://github.com/cyberia-to/hemera.git",
+      "revision": "b365c9a34d8f21cb862068e6f754b22202a5d10b"
+    },
+    {
+      "directory": "inf",
+      "url": "https://github.com/cyberia-to/inf.git",
+      "revision": "bf379879b60d724cb34fead91d703e0090acc08e"
+    },
+    {
+      "directory": "lens",
+      "url": "https://github.com/cyberia-to/lens.git",
+      "revision": "a5f57486ea5f443c2c46c8601ab84827ac69453f"
+    },
+    {
+      "directory": "mudra",
+      "url": "https://github.com/cyberia-to/mudra.git",
+      "revision": "8b19098fd394c459ba01dd98cb6081d469dc27c7"
+    },
+    {
+      "directory": "neuron",
+      "url": "https://github.com/cyberia-to/neuron.git",
+      "revision": "7d214e0233852f448051e9dfd346f763f61a921c"
+    },
+    {
+      "directory": "nox",
+      "url": "https://github.com/cyberia-to/nox.git",
+      "revision": "1f2d9ef0af36392e24e761e9ac823e9dff87ab81"
+    },
+    {
+      "directory": "soft3",
+      "url": "https://github.com/cyberia-to/soft3.git",
+      "revision": "26850f00c0f52ad592ea9dcab04ae5cb377b4251"
+    },
+    {
+      "directory": "strata",
+      "url": "https://github.com/cyberia-to/strata.git",
+      "revision": "7f6864abd2d989cfade7ffd0c13890de1f4b0c4e"
+    },
+    {
+      "directory": "tade",
+      "url": "https://github.com/cyberia-to/tade.git",
+      "revision": "c1d81c75725df0a666c36d81ef33c3a60eb007f3"
+    },
+    {
+      "directory": "tok",
+      "url": "https://github.com/cyberia-to/plumb.git",
+      "revision": "e27da0dff72b948418a5e40a5ed6290c0fd167f3"
+    },
+    {
+      "directory": "tru",
+      "url": "https://github.com/cyberia-to/tru.git",
+      "revision": "8a28c5b5838662a6706068036b8b102b516c5ea1"
+    },
+    {
+      "directory": "zheng",
+      "url": "https://github.com/cyberia-to/zheng.git",
+      "revision": "3760de03d1d37c7791c72dc8ee6306b71bf25f0a"
+    }
+  ],
+  "packages": [
+    {
+      "name": "bbg",
+      "version": "0.3.0",
+      "manifest": "bbg/rs/Cargo.toml"
+    },
+    {
+      "name": "fjall",
+      "version": "2.11.2",
+      "manifest": "bbg/rs/vendor/fjall/Cargo.toml"
+    },
+    {
+      "name": "true-cyber",
+      "version": "0.8.0",
+      "manifest": "cyber/Cargo.toml"
+    },
+    {
+      "name": "cybergraph",
+      "version": "0.1.1",
+      "manifest": "cybergraph/Cargo.toml"
+    },
+    {
+      "name": "foculus",
+      "version": "0.1.3",
+      "manifest": "foculus/Cargo.toml"
+    },
+    {
+      "name": "cyber-hemera",
+      "version": "0.3.1",
+      "manifest": "hemera/rs/Cargo.toml"
+    },
+    {
+      "name": "inf-ast",
+      "version": "0.1.0",
+      "manifest": "inf/rs/ast/Cargo.toml"
+    },
+    {
+      "name": "inf-eval",
+      "version": "0.1.0",
+      "manifest": "inf/rs/eval/Cargo.toml"
+    },
+    {
+      "name": "inf-lex",
+      "version": "0.1.0",
+      "manifest": "inf/rs/lex/Cargo.toml"
+    },
+    {
+      "name": "inf-parse",
+      "version": "0.1.0",
+      "manifest": "inf/rs/parse/Cargo.toml"
+    },
+    {
+      "name": "inf-plan",
+      "version": "0.1.0",
+      "manifest": "inf/rs/plan/Cargo.toml"
+    },
+    {
+      "name": "inf-source",
+      "version": "0.1.0",
+      "manifest": "inf/rs/source/Cargo.toml"
+    },
+    {
+      "name": "inf-value",
+      "version": "0.1.0",
+      "manifest": "inf/rs/value/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens-assayer",
+      "version": "0.2.0",
+      "manifest": "lens/assayer/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens-binius",
+      "version": "0.1.1",
+      "manifest": "lens/binius/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens-brakedown",
+      "version": "0.2.0",
+      "manifest": "lens/brakedown/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens-core",
+      "version": "0.1.2",
+      "manifest": "lens/core/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens-ikat",
+      "version": "0.2.0",
+      "manifest": "lens/ikat/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens-porphyry",
+      "version": "0.2.0",
+      "manifest": "lens/porphyry/Cargo.toml"
+    },
+    {
+      "name": "cyber-lens",
+      "version": "0.2.0",
+      "manifest": "lens/src/Cargo.toml"
+    },
+    {
+      "name": "cyber-mudra",
+      "version": "0.1.0",
+      "manifest": "mudra/Cargo.toml"
+    },
+    {
+      "name": "neuron-id",
+      "version": "0.1.0",
+      "manifest": "neuron/id/Cargo.toml"
+    },
+    {
+      "name": "neuron-model",
+      "version": "0.1.0",
+      "manifest": "neuron/model/Cargo.toml"
+    },
+    {
+      "name": "cyber-nox",
+      "version": "0.3.0",
+      "manifest": "nox/rs/Cargo.toml"
+    },
+    {
+      "name": "soft3",
+      "version": "0.10.0",
+      "manifest": "soft3/crate/Cargo.toml"
+    },
+    {
+      "name": "strata-compute",
+      "version": "0.1.1",
+      "manifest": "strata/compute/Cargo.toml"
+    },
+    {
+      "name": "strata-core",
+      "version": "0.1.1",
+      "manifest": "strata/core/Cargo.toml"
+    },
+    {
+      "name": "strata-ext",
+      "version": "0.1.1",
+      "manifest": "strata/ext/Cargo.toml"
+    },
+    {
+      "name": "strata-genies",
+      "version": "0.1.1",
+      "manifest": "strata/genies/rs/Cargo.toml"
+    },
+    {
+      "name": "strata-jali",
+      "version": "0.1.1",
+      "manifest": "strata/jali/rs/Cargo.toml"
+    },
+    {
+      "name": "strata-kuro",
+      "version": "0.1.1",
+      "manifest": "strata/kuro/rs/Cargo.toml"
+    },
+    {
+      "name": "strata-nebu",
+      "version": "0.1.1",
+      "manifest": "strata/nebu/rs/Cargo.toml"
+    },
+    {
+      "name": "strata-proof",
+      "version": "0.1.1",
+      "manifest": "strata/proof/Cargo.toml"
+    },
+    {
+      "name": "strata-trop",
+      "version": "0.1.1",
+      "manifest": "strata/trop/rs/Cargo.toml"
+    },
+    {
+      "name": "tade",
+      "version": "0.1.0",
+      "manifest": "tade/impl/rust/Cargo.toml"
+    },
+    {
+      "name": "cyber-tok",
+      "version": "0.1.1",
+      "manifest": "tok/rs/Cargo.toml"
+    },
+    {
+      "name": "cyber-tru",
+      "version": "0.1.1",
+      "manifest": "tru/rs/Cargo.toml"
+    },
+    {
+      "name": "zheng",
+      "version": "0.4.0",
+      "manifest": "zheng/rs/Cargo.toml"
+    }
+  ]
+}

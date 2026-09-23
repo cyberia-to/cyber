@@ -39,7 +39,9 @@ integrated Joy computation → verified network participation.
 This repository owns the `cyber` product binary, its configuration, and the
 protocol graph. The source build currently uses sibling soft3 component
 checkouts. [[specs/node-product|Node product]] maps the components and the
-current implementation boundary. [[specs/cyb-node|Cyb node connection]]
+current implementation boundary. [Pinned source builds](specs/node-sources.md)
+assemble the exact committed dependencies in an independent checkout.
+[[specs/cyb-node|Cyb node connection]]
 describes the local HTTP contract and launch commands.
 
 The explicit `auth enable` step activates signed native publication for this
