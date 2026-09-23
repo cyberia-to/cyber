@@ -355,6 +355,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T10:52:39Z | 27 | tru | [launch #27 (2): generic clamped PID controller over Fx for §10's three loops](https://github.com/cyberia-to/tru/pull/22) | open |
 | 2026-09-23T11:04:00Z | 14 | soft3 | [launch #14: add genesis claim subcommand over the mudra legacy bridge](https://github.com/cyberia-to/soft3/pull/18) | open |
 | 2026-09-23T11:24:00Z | 37 | foculus | [launch #37 (2): gate settlement decide on meets_precision](https://github.com/cyberia-to/foculus/pull/34) | open |
+| 2026-09-23T11:48:00Z | 3 | foculus | [launch #3 (2): reconcile decide/verify latency target with measurement](https://github.com/cyberia-to/foculus/pull/35) | open |
 
 ## cross-references
 
