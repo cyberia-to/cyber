@@ -383,6 +383,8 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T21:06:32Z | 40 | foculus | [launch #40: nmt verify() binds proof.root to a trusted root](https://github.com/cyberia-to/foculus/pull/45) | open |
 | 2026-09-23T21:07:39Z | 21 | radio | [launch #21 (4): gossip a real SelfAcc/ClusterAcc envelope](https://github.com/cyberia-to/radio/pull/17) | open |
 | 2026-09-23T21:10:52Z | 40 | lens | [launch #40 (2): Assayer commitment omits edge topology, source, target](https://github.com/cyberia-to/lens/pull/15) | open |
+| 2026-09-23T21:08:19Z | 7 | foculus | [launch #7 (2): price the withholding forfeit deterrent](https://github.com/cyberia-to/foculus/pull/46) | open |
+| 2026-09-23T21:17:00Z | 3 | foculus | [launch #3 (3): measure the steady-state fold-step cost](https://github.com/cyberia-to/foculus/pull/47) | open |
 
 ## cross-references
 
