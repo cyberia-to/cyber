@@ -40,16 +40,20 @@ def main [--locked-sources, --previous-binary: string = ""] {
         }
     }
     if $locked_sources {
-        ^nu analizer/node-sources.nu $root check
+        ^nu analizer/node-sources.nu $root inventory
         if $env.LAST_EXIT_CODE != 0 { error make {msg: "sources changed during release validation"} }
     }
     let checksum = (open --raw $binary | hash sha256)
     mkdir dist
     cp $binary $"dist/cyber($extension)"
     $"($checksum)  cyber($extension)\n" | save --force dist/SHA256SUMS
+    let compiler = (^rustc -vV)
+    let target = ($compiler | lines | where $it =~ '^host: ' | first | str replace 'host: ' '')
+    let inventory_sha256 = if $locked_sources { open --raw dist/soft3-dependencies.json | hash sha256 } else { null }
     {schema: "cyber/build/v1", built_at: (date now | into string), sources_locked: $locked_sources,
-     version: (^$binary --version | str trim), rustc: (^rustc -vV),
+     version: (^$binary --version | str trim), rustc: $compiler, target: $target,
      sha256: $checksum, lock_sha256: (open --raw Cargo.lock | hash sha256),
+     soft3_dependencies_sha256: $inventory_sha256,
      compatibility_previous_sha256: $previous_sha256,
      sources: $sources} | to json | save --force dist/build.json
     print $"artifact: ($root)/dist/cyber($extension)"

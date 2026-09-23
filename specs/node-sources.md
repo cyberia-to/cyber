@@ -29,7 +29,10 @@ source repository is clean, its revision matches, the Cargo lock hash matches,
 and Cargo resolves exactly the recorded local package names, versions and
 manifest paths. It fails on missing dependencies, wrong revisions or dirty
 sources. The result is `dist/cyber`, `dist/SHA256SUMS` and `dist/build.json` with
-`sources_locked: true`, compiler identity and source provenance.
+`sources_locked: true`, compiler identity and source provenance. Every locked
+build also generates `dist/soft3-dependencies.md` and
+`dist/soft3-dependencies.json`; the build manifest records the JSON checksum.
+These inventories are mandatory inputs to the [GitHub release cycle](releases.md).
 
 To check compatibility with another development build, add
 `--previous-binary /path/to/previous/cyber`. The release runs the two executables

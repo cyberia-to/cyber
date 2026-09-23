@@ -77,13 +77,19 @@ storage owner and preserve the original source bytes. Existing configuration
 stays intact; activation is a permanent reader-generation upgrade. See
 [[specs/cli]] and [[specs/cyb-node]] for bounds, exact reports and recovery.
 
-`nu scripts/release.nu` produces a host binary, checksum, and dependency
-provenance in `dist/`. The sibling `true-cyber` source now provides a headless
+`nu scripts/release.nu --locked-sources` produces a host binary, checksum,
+build provenance and the exact soft3 dependency inventory in `dist/` from a
+pinned checkout. [GitHub Releases](https://github.com/cyberia-to/cyber/releases)
+distributes tagged prereleases with that inventory and native binaries for
+Linux x86_64/ARM64 and macOS ARM64. The [release contract](specs/releases.md)
+describes the build and publication cycle.
+
+The sibling `true-cyber` source now provides a headless
 client over the shared GraphSession and neuron registry: explicit key attachment,
 network-bound signed publication, receipt reconciliation and history sync.
 Its [migration contract](../true-cyber/specs/native-client.md) retains exact
 earlier CLI logs and retires their old writer. The node entry point here is
-version 0.8.0 and is currently unpublished.
+version 0.8.0.
 
 The [[audit/node-readiness|binary readiness audit]] records earlier journal,
 retry and reward-admission failures and the broader product release gates.

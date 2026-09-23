@@ -100,6 +100,58 @@ def capture [root: string] {
     print "captured committed revisions; validate them with checkout and check"
 }
 
+# Inventory only verified inputs. Vendored third-party packages remain explicit.
+def inventory [root: string] {
+    verify $root
+    let lock = (read-lock $root)
+    let revision = (checked git [-C $root rev-parse HEAD])
+    let product = ($lock.packages | where name == true-cyber | first)
+    let components = ($lock.repositories | each {|repo|
+        let local = ($lock.packages | where {|p| ($p.manifest | path split | first) == $repo.directory })
+        $repo | insert packages ($local | where {|p| not ($p.manifest | str contains "/vendor/") })
+            | insert vendored ($local | where {|p| $p.manifest | str contains "/vendor/" })
+    })
+    let data = {
+        product: ($product | insert revision $revision | insert url "https://github.com/cyberia-to/cyber.git"),
+        profile: $lock.profile,
+        source_lock_sha256: (open --raw ($root | path join sources.lock.json) | hash sha256),
+        cargo_lock_sha256: $lock.cargo_lock_sha256,
+        components: $components
+    }
+    let rows = ($components | each {|c|
+        let url = ($c.url | str replace --regex '\.git$' '')
+        let packages = ($c.packages | each {|p| $"`($p.name)@($p.version)`" } | str join ", ")
+        $"| [($c.directory)]\(($url)\) | ($packages) | [($c.revision | str substring 0..11)]\(($url)/commit/($c.revision)\) |"
+    })
+    let vendors = ($components | each {|c| $c.vendored | each {|p|
+        $"- `($p.name)@($p.version)` in `($p.manifest)`, carried by `($c.directory)@($c.revision)`."
+    }} | flatten)
+    let notes = ([
+        "## soft3 dependency inventory"
+        ""
+        $"Cyber `($product.version)`, source [($revision)]\(https://github.com/cyberia-to/cyber/commit/($revision)\)."
+        ""
+        $"Profile: `($lock.profile)` — the source closure used to build and test this node."
+        "Component presence records build inputs; runtime capability scope is described in the node product specification."
+        ""
+        "| component | packages | exact source |"
+        "|---|---|---|"
+    ] | append $rows | append [
+        ""
+        "### vendored third-party packages"
+        ""
+    ] | append $vendors | append [
+        ""
+        "Full commit hashes, manifest paths and lock checksums are included in `soft3-dependencies.json`."
+        ""
+    ] | str join (char nl))
+    let dist = ($root | path join dist)
+    mkdir $dist
+    $data | to json | save --force ($dist | path join soft3-dependencies.json)
+    $notes | save --force ($dist | path join soft3-dependencies.md)
+    print $"inventoried ($components | length) soft3 repositories"
+}
+
 def checkout [root: string, destination: string, mirror: string] {
     let lock = (read-lock $root)
     clean $root
@@ -131,11 +183,12 @@ def main [
     let root = ($graph_path | path expand)
     match $action {
         "capture" => { capture $root }
+        "inventory" => { inventory $root }
         "check" => { verify $root }
         "checkout" => {
             if ($destination | is-empty) { error make {msg: "checkout requires --destination"} }
             checkout $root $destination $mirror_root
         }
-        _ => { error make {msg: "expected capture, check or checkout"} }
+        _ => { error make {msg: "expected capture, check, checkout or inventory"} }
     }
 }

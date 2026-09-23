@@ -42,6 +42,7 @@ background; a target latency alone establishes no security guarantee.
 | [[specs/cli]] | draft with implemented baseline | Commands, output, lifecycle and explicit migration boundaries |
 | [[specs/worker]] | draft | Cyber/Joy jobs, proof binding, cancellation and acceptance |
 | [[specs/node-product]] | implementation | Composition, local supported profile and remaining network gates |
+| [[specs/releases]] | implementation | Tagged binary releases and mandatory exact soft3 dependency inventories |
 | [[specs/cyb-node]] | implementation | Launcher configuration, live capability checks and signed-native client connection |
 | [[specs/money-loop]] | draft | Balance, send/receive, multi-payee reward, events and certainty grades |
 | [[specs/node-modes]] | draft | Full, partial and light state/validation/availability/finality duties |
