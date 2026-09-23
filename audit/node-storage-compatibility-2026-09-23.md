@@ -39,6 +39,7 @@ change committed history and needs its own explicit protocol.
 |---|---|
 | BBG all-feature suite | 166 passed, zero ignored |
 | Cybergraph library, native format/storage/import, application and text archive tests | 58 passed; both backends exercised by the staged-promotion failure test |
+| additional archive-boundary suite, release mode | 4 passed in 154.78 seconds, including the 63 MiB multi-transaction/concurrent-capacity case |
 | product source checkout from GitHub | 15 dependency repositories and 38 local packages verified |
 | product debug acceptance | 1 unit + 6 process tests passed |
 | release binary acceptance | all 6 process tests passed |
@@ -49,8 +50,9 @@ The unrestricted Cybergraph suite currently fails to compile its existing
 proof experiments: `tests/common/mod.rs` refers to unpublished Zheng state
 execution, and `stack_call` additionally requires private execution APIs. This
 is a separate test/profile integration gap, not passing coverage. Those tests
-were left visible. The larger archive-boundary stress suite is separate from
-the 58 completed tests above. Three existing vendored Fjall warnings remain.
+were left visible. The duplicate long-running debug archive group was stopped
+after the complete optimized group passed; that interrupted command is not
+reported as a completed debug suite. Three existing vendored Fjall warnings remain.
 
 ## Exact binaries and repetition
 
