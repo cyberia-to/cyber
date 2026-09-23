@@ -296,6 +296,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-19T06:35:32Z | 31 | foculus | [launch #31: book-level domain finality for oikos foundation 2](https://github.com/cyberia-to/foculus/pull/13) | reviewed 2026-09-22 |
 | 2026-09-21T15:38:19Z | 33 | plumb (tok) | [launch #33: conserve referral payout, zero for inactive/Sybil books](https://github.com/cyberia-to/plumb/pull/5) | reviewed 2026-09-22 |
 | 2026-09-21T15:52:00Z | 20 | file | [launch #20: re-address bostrom CIDs to Hemera particles](https://github.com/cyberia-to/file/pull/2) | reviewed 2026-09-22 |
+| 2026-09-23T10:35:00Z | 13 | plumb (tok) | [launch #13 (2): add lock to close conservation's third mutation](https://github.com/cyberia-to/plumb/pull/13) | open |
 | 2026-09-21T16:10:00Z | 27 | tru | [launch #27: implement PoW/PoS allocation split and security floor](https://github.com/cyberia-to/tru/pull/10) | reviewed 2026-09-22 |
 | 2026-09-21T16:32:00Z | 28 | tru | [launch #28: discrete per-epoch accrual for the yield-stream annuity](https://github.com/cyberia-to/tru/pull/11) | reviewed 2026-09-22 |
 | 2026-09-21T15:40:00Z | 21 | radio | [launch #21: fix iroh-docs fork pins, prove gossip relays multi-hop](https://github.com/cyberia-to/radio/pull/5) | reviewed 2026-09-22 |
