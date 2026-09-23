@@ -533,6 +533,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T01:39:00Z | 152 | foculus | [launch #152 (retitled from #148, row collision with bostrom#5): reject a mismatched directed_total in verify_epoch_cert](https://github.com/cyberia-to/foculus/pull/27) | open |
 | 2026-09-23T01:39:00Z | 153 | plumb | [launch #153 (retitled from #149, row collision with cyb#1396/bostrom#6): clip_shares clips to zero on non-positive directed_total](https://github.com/cyberia-to/plumb/pull/9) | open |
 | 2026-09-23T01:39:00Z | 154 | zheng | [launch #154 (retitled from #150, row collision with bostrom#7): verify_phi_star binds graph_commit to the real graphs](https://github.com/cyberia-to/zheng/pull/29) | open |
+| 2026-09-23T02:05:00Z | 37 | plumb (tok) | [launch #37: compute fx_to_tokens/fx_weight in fixed point, not f64](https://github.com/cyberia-to/plumb/pull/10) | open |
 
 ## cross-references
 
