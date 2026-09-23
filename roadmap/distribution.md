@@ -17,6 +17,9 @@ Apply these gates to each delivered capability set.
   selection and generated resources. Record dirty inputs explicitly during
   development; release from reproducible immutable inputs.
 - [ ] Build from a clean checkout without undeclared sibling resources.
+  The default Cyber node profile now meets this gate through
+  [the source lock](../specs/node-sources.md); the full platform/fleet scope
+  remains open. [Host evidence](../audit/node-dependencies-2026-09-23.md).
 - [ ] Produce CI binaries, checksums, source provenance and capability manifests
   for each supported platform. Check the installed artifact in a fresh process.
 - [ ] Define upgrade/rollback compatibility for configuration, databases, graph
