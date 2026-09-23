@@ -31,6 +31,15 @@ manifest paths. It fails on missing dependencies, wrong revisions or dirty
 sources. The result is `dist/cyber`, `dist/SHA256SUMS` and `dist/build.json` with
 `sources_locked: true`, compiler identity and source provenance.
 
+For a release that replaces a native version-1 writer, add
+`--previous-binary /path/to/previous/cyber`. The release runs the two executables
+against separate empty and populated temporary homes, checks preserved state
+and retries, first-write promotion, old-writer refusal and subsequent restart.
+`build.json` records `compatibility_previous_sha256` for the tested predecessor;
+without this option that field is null. This evidence covers that exact binary
+pair. The helper is also directly runnable with
+`cargo run --locked --example node_storage_compat -- PREVIOUS CURRENT`.
+
 This profile includes node compilation and tests. Optional UI/stack features,
 standalone component workspaces, benchmarks and cross-platform builds have
 different dependency sets and are not certified by this lock. Component tests

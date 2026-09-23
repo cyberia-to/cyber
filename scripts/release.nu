@@ -1,6 +1,8 @@
 #!/usr/bin/env nu
 # Build a local host artifact with registry lock and sibling-source provenance.
-def main [--locked-sources] {
+def main [--locked-sources, --previous-binary: string = ""] {
+    let previous = if ($previous_binary | is-empty) { null } else { $previous_binary | path expand }
+    let previous_sha256 = if $previous == null { null } else { open --raw $previous | hash sha256 }
     let root = ($env.FILE_PWD | path dirname)
     cd $root
     if $locked_sources {
@@ -30,6 +32,13 @@ def main [--locked-sources] {
         ^cargo test --locked --test node
         if $env.LAST_EXIT_CODE != 0 { error make {msg: "release binary integration failed"} }
     }
+    if $previous != null {
+        ^cargo run --locked --example node_storage_compat -- $previous $binary
+        if $env.LAST_EXIT_CODE != 0 { error make {msg: "previous-writer compatibility failed"} }
+        if (open --raw $previous | hash sha256) != $previous_sha256 {
+            error make {msg: "previous binary changed during compatibility qualification"}
+        }
+    }
     if $locked_sources {
         ^nu analizer/node-sources.nu $root check
         if $env.LAST_EXIT_CODE != 0 { error make {msg: "sources changed during release validation"} }
@@ -41,6 +50,7 @@ def main [--locked-sources] {
     {schema: "cyber/build/v1", built_at: (date now | into string), sources_locked: $locked_sources,
      version: (^$binary --version | str trim), rustc: (^rustc -vV),
      sha256: $checksum, lock_sha256: (open --raw Cargo.lock | hash sha256),
+     compatibility_previous_sha256: $previous_sha256,
      sources: $sources} | to json | save --force dist/build.json
     print $"artifact: ($root)/dist/cyber($extension)"
     print "provenance: dist/build.json; checksum: dist/SHA256SUMS"
