@@ -13,7 +13,8 @@ node retains its existing native layout. The format-2 bump, automatic promotion
 and older-writer exclusion added needless complexity with unchanged root
 semantics; they have been removed. The executable compatibility check now
 requires successful writes and restart through both binaries. The text below
-preserves the withdrawn experiment's evidence and is not the active contract.
+preserves the withdrawn experiment's evidence. Current qualification is recorded
+in [native storage simplification](native-layout-2026-09-23.md).
 
 The previous source-pinned Cyber binary and the format-2 candidate were tested
 against empty and populated temporary homes. Existing compatible state and

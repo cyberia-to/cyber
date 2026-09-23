@@ -24,8 +24,8 @@ Apply these gates to each delivered capability set.
   for each supported platform. Check the installed artifact in a fresh process.
 - [ ] Define upgrade/rollback compatibility for configuration, databases, graph
   codecs, proof artifacts and network profiles before overwriting a user home.
-  Development builds exercise read/write/retry compatibility with a concrete
-  predecessor. Native storage keeps its existing layout while the protocol is
+  Development builds [exercise read/write/retry compatibility](../audit/native-layout-2026-09-23.md)
+  with a concrete predecessor. Native storage keeps its existing layout while the protocol is
   being finalized; production migration policy belongs to protocol freeze.
 
 ## configuration and explanatory graph

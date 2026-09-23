@@ -14,6 +14,7 @@ live in [specs](../specs/README.md).
 
 | report | evidence |
 |---|---|
+| [native storage simplification, 2026-09-23](native-layout-2026-09-23.md) | existing layout restored; clean build and successful writes, retries and restart through both qualified binaries |
 | [withdrawn format-2 experiment, 2026-09-23](node-storage-compatibility-2026-09-23.md) | historical evidence; artificial version promotion and reader exclusion removed |
 | [node dependencies, 2026-09-23](node-dependencies-2026-09-23.md) | committed sources fetched from GitHub, source-lock rejection tests and clean release-binary acceptance |
 | [launch review, 2026-09-23](launch-review-2026-09-23.md) | nine merged PRs, rejected regressions, current local release acceptance and remaining node gates |
