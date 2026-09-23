@@ -347,6 +347,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T09:59:00Z | 13 | plumb | [launch #13: burn(0) on an untouched neuron/token pair no longer panics](https://github.com/cyberia-to/plumb/pull/11) | kept from the sweep, retitled |
 | 2026-09-23T09:59:00Z | 34 | foculus | [launch #34: capacity-weighted placement no longer starves peers](https://github.com/cyberia-to/foculus/pull/28) | kept from the sweep, retitled |
 | 2026-09-23T09:59:00Z | 22 | radio | [launch #22: persist radio-cli's blob store across invocations](https://github.com/cyberia-to/radio/pull/9) | kept from the sweep, retitled |
+| 2026-09-23T10:47:00Z | 22 | radio | [launch #22 (2): tag a fetched blob by hash so list shows it](https://github.com/cyberia-to/radio/pull/14) | open |
 
 ## cross-references
 
