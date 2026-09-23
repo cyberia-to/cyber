@@ -40,35 +40,6 @@ impl Server {
             std::thread::sleep(Duration::from_millis(25));
         }
     }
-    fn refused(mut self) {
-        use std::io::Read;
-        let deadline = Instant::now() + Duration::from_secs(15);
-        loop {
-            if let Some(status) = self.0.try_wait().unwrap() {
-                assert!(
-                    !status.success(),
-                    "previous writer accepted the upgraded store"
-                );
-                let mut error = String::new();
-                self.0
-                    .stderr
-                    .take()
-                    .unwrap()
-                    .read_to_string(&mut error)
-                    .unwrap();
-                assert!(
-                    error.contains("exact state mismatch"),
-                    "unexpected refusal: {error}"
-                );
-                return;
-            }
-            assert!(
-                Instant::now() < deadline,
-                "previous writer did not refuse the upgraded store"
-            );
-            std::thread::sleep(Duration::from_millis(25));
-        }
-    }
 }
 impl Drop for Server {
     fn drop(&mut self) {
@@ -132,11 +103,18 @@ fn run(previous: &Path, current: &Path, empty: bool) {
     let next = write(&rpc, "compat-next", 3);
     let after = status(current, home.path());
     drop(candidate);
-    Server::start(previous, home.path()).refused();
+    let mut old = Server::start(previous, home.path());
+    old.ready(&rpc);
+    assert_eq!(status(previous, home.path()), after);
+    assert_eq!(write(&rpc, "compat-next", 3), next);
+    let rollback = write(&rpc, "compat-rollback", 2);
+    let after_rollback = status(previous, home.path());
+    drop(old);
     let mut restarted = Server::start(current, home.path());
     restarted.ready(&rpc);
-    assert_eq!(status(current, home.path()), after);
+    assert_eq!(status(current, home.path()), after_rollback);
     assert_eq!(write(&rpc, "compat-next", 3), next);
+    assert_eq!(write(&rpc, "compat-rollback", 2), rollback);
     if let Some(receipt) = original {
         assert_eq!(write(&rpc, "compat-original", 25), receipt);
     }
@@ -144,8 +122,10 @@ fn run(previous: &Path, current: &Path, empty: bool) {
         std::fs::read(home.path().join("config.toml")).unwrap(),
         config
     );
-    println!("{} legacy store: preserved state/receipts, delayed version upgrade, old-writer refusal and restart passed",
-        if empty { "empty" } else { "populated" });
+    println!(
+        "{} store: preserved state/receipts, writes in both binaries, rollback and restart passed",
+        if empty { "empty" } else { "populated" }
+    );
 }
 fn main() {
     let args: Vec<PathBuf> = std::env::args_os().skip(1).map(Into::into).collect();

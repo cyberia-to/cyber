@@ -6,12 +6,12 @@
     {
       "directory": "bbg",
       "url": "https://github.com/cyberia-to/bbg.git",
-      "revision": "d4b812fb657954138f8d1534e9236aaaa15adfd0"
+      "revision": "74065b8be92e35575131b4492adec0a3516cb00d"
     },
     {
       "directory": "cybergraph",
       "url": "https://github.com/cyberia-to/cybergraph.git",
-      "revision": "cf0a51067a838939919cb6f5b83ac4dbdc2310e8"
+      "revision": "b5b13fc5bc42d8ec54d6c13e5397dda9b12be1a4"
     },
     {
       "directory": "foculus",
