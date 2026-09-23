@@ -348,6 +348,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T09:59:00Z | 34 | foculus | [launch #34: capacity-weighted placement no longer starves peers](https://github.com/cyberia-to/foculus/pull/28) | kept from the sweep, retitled |
 | 2026-09-23T09:59:00Z | 22 | radio | [launch #22: persist radio-cli's blob store across invocations](https://github.com/cyberia-to/radio/pull/9) | kept from the sweep, retitled |
 | 2026-09-23T10:47:00Z | 22 | radio | [launch #22 (2): tag a fetched blob by hash so list shows it](https://github.com/cyberia-to/radio/pull/14) | open |
+| 2026-09-23T10:58:00Z | 23 | bbg | [launch #23 (2) (draft): fix misleading tiered.rs module-header comment](https://github.com/cyberia-to/bbg/pull/23) | draft |
 
 ## cross-references
 
