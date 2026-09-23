@@ -369,6 +369,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T19:22:00Z | 32 | plumb (tok) | [launch #32 (2): pro-rata $ν holder fee distribution](https://github.com/cyberia-to/plumb/pull/14) | open |
 | 2026-09-23T19:38:00Z | 25 | plumb (tok) | [launch #25 (2): ICBS reserves and positions market, conservation-checked buy/sell](https://github.com/cyberia-to/plumb/pull/15) | open |
 | 2026-09-23T19:58:00Z | 31 | foculus | [launch #31 (2): bind book_id into FinalityEvidence, close root-collision exposure](https://github.com/cyberia-to/foculus/pull/41) | open |
+| 2026-09-23T19:41:00Z | 24 | tru | [launch #24: harden BTS crowd reference against v_ℓ=0 decoy reports](https://github.com/cyberia-to/tru/pull/23) | open |
 
 ## cross-references
 
