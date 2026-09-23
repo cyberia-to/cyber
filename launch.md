@@ -352,6 +352,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T10:34:45Z | 40 | lens | [launch #40: Brakedown/Ikat verify never checks queried codeword values](https://github.com/cyberia-to/lens/pull/13) | open |
 | 2026-09-23T10:45:53Z | 18 | bbg | [launch #18: stage WARM values into COLD's pending batch via demote()](https://github.com/cyberia-to/bbg/pull/24) | open |
 | 2026-09-23T10:49:41Z | 18 | bbg | [launch #18 (2): evict a WARM key once its archival checkpoint succeeds](https://github.com/cyberia-to/bbg/pull/25) | open |
+| 2026-09-23T10:52:39Z | 27 | tru | [launch #27 (2): generic clamped PID controller over Fx for §10's three loops](https://github.com/cyberia-to/tru/pull/22) | open |
 
 ## cross-references
 
