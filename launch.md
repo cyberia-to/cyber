@@ -378,6 +378,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T20:26:32Z | 21 | radio | [launch #21 (2): gossip carries a real SettleMsg envelope, not raw bytes](https://github.com/cyberia-to/radio/pull/15) | open |
 | 2026-09-23T20:34:55Z | 39 | cybergraph | [launch #39 (2): migrate stack_*.rs tests to nox 0.3/zheng 0.4](https://github.com/cyberia-to/cybergraph/pull/10) | open |
 | 2026-09-23T20:39:39Z | 34 | foculus | [launch #34 (3): compute DAS confidence in Fx, not f64](https://github.com/cyberia-to/foculus/pull/43) | open |
+| 2026-09-23T21:05:00Z | 21 | radio | [launch #21 (3): gossip a real ClaimAnnounce/RewardClaim envelope](https://github.com/cyberia-to/radio/pull/16) | open |
 
 ## cross-references
 
