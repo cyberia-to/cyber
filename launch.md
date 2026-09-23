@@ -313,6 +313,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-22T08:52:00Z | 34 | foculus | [launch #34: DAS availability decision treats a withheld shard as a failed sample](https://github.com/cyberia-to/foculus/pull/14) | reviewed 2026-09-22 |
 | 2026-09-22T09:05:00Z | 35 | foculus | [launch #35: ε-support derivation and canonical cluster partition](https://github.com/cyberia-to/foculus/pull/15) | reviewed 2026-09-22 |
 | 2026-09-22T08:41:00Z | 36 | foculus | [launch #36: measure settlement-mining hardware profile](https://github.com/cyberia-to/foculus/pull/16) | reviewed 2026-09-22 |
+| 2026-09-23T22:10:45Z | 39 | cyb | [launch #39: cyb — serialize make fleet across concurrent invocations](https://github.com/cyberia-to/cyb/pull/1399) | open |
 | 2026-09-22T11:05:00Z | 38 | mudra | [launch #38: bump cyber-nox/zheng pins so mudra builds from a clean checkout](https://github.com/cyberia-to/mudra/pull/6) | open |
 | 2026-09-22T10:58:41Z | 37 | plumb (tok) | [launch #37: compute settle-mint conservation in fixed point](https://github.com/cyberia-to/plumb/pull/6) | open |
 | 2026-09-23T02:05:00Z | 37 | plumb (tok) | [launch #37: compute fx_to_tokens/fx_weight in fixed point, not f64](https://github.com/cyberia-to/plumb/pull/10) | open |
