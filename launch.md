@@ -406,6 +406,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T23:02:00Z | 14 | bostrom | [launch #14 (7): unit-cover extract.py's HTTP-retry and cmd_balances/supply/passport](https://github.com/cyberia-to/bostrom/pull/18) | open |
 | 2026-09-23T22:53:12Z | 39 | plumb | [launch #39: plumb builds and tests clean against sibling origin defaults](https://github.com/cyberia-to/plumb/pull/17) | open |
 | 2026-09-23T23:10:00Z | 40 | bbg | [launch #40 (3): audit — verify_query ignores which dimension and root it answers](https://github.com/cyberia-to/bbg/pull/29) | open |
+| 2026-09-23T23:28:00Z | 16 | spark | [launch #16 (5): BMP dimensions from raw header bytes](https://github.com/cyberia-to/spark/pull/7) | open |
 
 ## cross-references
 
