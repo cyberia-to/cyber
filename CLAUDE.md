@@ -136,8 +136,10 @@ nu ~/cyber/cyber/analizer/analyze.nu ~/cyber/cyber
 ```
 
 Scripts:
-- `analizer/node-sources.nu` — capture, check and independently check out the exact repository revisions for the Cyber node build
+- `analizer/node-sources.nu` — capture, check, inventory and independently check out the exact repository revisions for the Cyber node build
 - `analizer/node-sources-test.nu` — test dirty sources, wrong revisions, Cargo lock drift, missing pins and package drift in disposable checkouts
+- `analizer/node-release.nu` — package qualified native binaries and collect matching platform inventories for GitHub Releases
+- `analizer/node-release-test.nu` — reject unqualified builds, missing or altered inventories, wrong source locks and mismatched release tags
 - `analizer/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
 - `analizer/stats.nu` — graph statistics (orphans, broken links, content types)
 - `analizer/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)
