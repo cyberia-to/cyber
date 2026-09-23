@@ -361,6 +361,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T11:24:00Z | 37 | foculus | [launch #37 (2): gate settlement decide on meets_precision](https://github.com/cyberia-to/foculus/pull/34) | open |
 | 2026-09-23T11:48:00Z | 3 | foculus | [launch #3 (2): reconcile decide/verify latency target with measurement](https://github.com/cyberia-to/foculus/pull/35) | open |
 | 2026-09-23T12:07:00Z | 38 | mudra | [launch #38 (2): bind bbg_root sentinel so mudra builds with --features prove](https://github.com/cyberia-to/mudra/pull/13) | open |
+| 2026-09-23T12:31:00Z | 35 | foculus | [launch #35 (2): expose the canonical cluster partition on EpochRunner](https://github.com/cyberia-to/foculus/pull/36) | open |
 
 ## cross-references
 
