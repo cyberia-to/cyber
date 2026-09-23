@@ -362,6 +362,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T11:48:00Z | 3 | foculus | [launch #3 (2): reconcile decide/verify latency target with measurement](https://github.com/cyberia-to/foculus/pull/35) | open |
 | 2026-09-23T18:24:58Z | 38 | mudra | [launch #38 (2): bind bbg_root sentinel so mudra builds with --features prove](https://github.com/cyberia-to/mudra/pull/13) | open |
 | 2026-09-23T18:31:20Z | 35 | foculus | [launch #35 (2): expose the canonical cluster partition on EpochRunner](https://github.com/cyberia-to/foculus/pull/36) | open |
+| 2026-09-23T18:47:58Z | 30 | cybergraph | [launch #30: register_book publishes a neuron's home-book naming link](https://github.com/cyberia-to/cybergraph/pull/9) | open |
 
 ## cross-references
 
