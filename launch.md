@@ -402,6 +402,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T22:46:04Z | 16 | spark | [launch #16 (4): WebP dimensions from RIFF chunk bytes](https://github.com/cyberia-to/spark/pull/6) | open |
 | 2026-09-23T22:50:02Z | 39 | tru | [launch #39: tru builds and tests clean against sibling origin defaults](https://github.com/cyberia-to/tru/pull/24) | open |
 | 2026-09-23T23:02:00Z | 14 | bostrom | [launch #14 (7): unit-cover extract.py's HTTP-retry and cmd_balances/supply/passport](https://github.com/cyberia-to/bostrom/pull/18) | open |
+| 2026-09-23T22:53:12Z | 39 | plumb | [launch #39: plumb builds and tests clean against sibling origin defaults](https://github.com/cyberia-to/plumb/pull/17) | open |
 
 ## cross-references
 
