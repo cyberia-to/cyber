@@ -371,6 +371,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T19:58:00Z | 31 | foculus | [launch #31 (2): bind book_id into FinalityEvidence, close root-collision exposure](https://github.com/cyberia-to/foculus/pull/41) | open |
 | 2026-09-23T19:41:00Z | 24 | tru | [launch #24: harden BTS crowd reference against v_ℓ=0 decoy reports](https://github.com/cyberia-to/tru/pull/23) | open |
 | 2026-09-23T20:12:00Z | 7 | foculus | [launch #7: role-separation check for a contending miner (§7)](https://github.com/cyberia-to/foculus/pull/42) | open |
+| 2026-09-23T20:35:00Z | 18 | bbg | [launch #18 (3): archival checkpoint schedule for the demote/archive/evict_archived sweep](https://github.com/cyberia-to/bbg/pull/26) | open |
 
 ## cross-references
 
