@@ -389,7 +389,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T21:30:57Z | 18 | bbg | [launch #18: audit — row 18 has two diverging, unmerged storage PRs](https://github.com/cyberia-to/bbg/pull/27) | open |
 | 2026-09-23T21:32:00Z | 36 | foculus | [launch #36 (2): parallel scaling of the settlement-ticket sample](https://github.com/cyberia-to/foculus/pull/48) | open |
 | 2026-09-23T21:47:22Z | 14 | bostrom | [launch #14 (3): make holdings.py importable, cover denom labels and pool rates](https://github.com/cyberia-to/bostrom/pull/14) | open |
-| 2026-09-23T22:02:00Z | 16 | spark | [launch #16 (3): image dimensions from raw PNG/GIF/JPEG bytes](https://github.com/cyberia-to/spark/pull/5) | open |
+| 2026-09-23T21:50:32Z | 16 | spark | [launch #16 (3): image dimensions from raw PNG/GIF/JPEG bytes](https://github.com/cyberia-to/spark/pull/5) | open |
 
 ## cross-references
 
