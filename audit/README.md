@@ -14,6 +14,7 @@ live in [specs](../specs/README.md).
 
 | report | evidence |
 |---|---|
+| [node dependencies, 2026-09-23](node-dependencies-2026-09-23.md) | committed sources fetched from GitHub, source-lock rejection tests and clean release-binary acceptance |
 | [launch review, 2026-09-23](launch-review-2026-09-23.md) | nine merged PRs, rejected regressions, current local release acceptance and remaining node gates |
 | [node readiness](node-readiness.md) | release binary, normal replay and failure probes; [raw results](node-readiness.json), [build provenance](node-readiness-build.json) |
 | [component implementation](component-implementation.md) | prior work-package status, code map and test commands |

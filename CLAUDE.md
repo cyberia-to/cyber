@@ -136,6 +136,8 @@ nu ~/cyber/cyber/analizer/analyze.nu ~/cyber/cyber
 ```
 
 Scripts:
+- `analizer/node-sources.nu` — capture, check and independently check out the exact repository revisions for the Cyber node build
+- `analizer/node-sources-test.nu` — test dirty sources, wrong revisions, Cargo lock drift, missing pins and package drift in disposable checkouts
 - `analizer/analyze.nu` — general analytics (files, tags, categories, links, IPFS)
 - `analizer/stats.nu` — graph statistics (orphans, broken links, content types)
 - `analizer/migrate.nu` — migrate Logseq format to pure markdown (YAML frontmatter, directories)

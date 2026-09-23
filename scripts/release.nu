@@ -1,8 +1,12 @@
 #!/usr/bin/env nu
 # Build a local host artifact with registry lock and sibling-source provenance.
-def main [] {
+def main [--locked-sources] {
     let root = ($env.FILE_PWD | path dirname)
     cd $root
+    if $locked_sources {
+        ^nu analizer/node-sources.nu $root check
+        if $env.LAST_EXIT_CODE != 0 { error make {msg: "source lock verification failed"} }
+    }
     ^cargo fmt --check
     if $env.LAST_EXIT_CODE != 0 { error make {msg: "format check failed"} }
     ^cargo test --locked
@@ -26,11 +30,15 @@ def main [] {
         ^cargo test --locked --test node
         if $env.LAST_EXIT_CODE != 0 { error make {msg: "release binary integration failed"} }
     }
+    if $locked_sources {
+        ^nu analizer/node-sources.nu $root check
+        if $env.LAST_EXIT_CODE != 0 { error make {msg: "sources changed during release validation"} }
+    }
     let checksum = (open --raw $binary | hash sha256)
     mkdir dist
     cp $binary $"dist/cyber($extension)"
     $"($checksum)  cyber($extension)\n" | save --force dist/SHA256SUMS
-    {schema: "cyber/build/v1", built_at: (date now | into string),
+    {schema: "cyber/build/v1", built_at: (date now | into string), sources_locked: $locked_sources,
      version: (^$binary --version | str trim), rustc: (^rustc -vV),
      sha256: $checksum, lock_sha256: (open --raw Cargo.lock | hash sha256),
      sources: $sources} | to json | save --force dist/build.json
