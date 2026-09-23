@@ -54,7 +54,7 @@ retain their original assets. Tags and component pins select immutable sources.
 1. Update reviewed component pins through `node-sources.nu capture` and commit
    the source lock together with any Cargo lock/version changes.
 2. Merge after the Node workflow passes on all three platforms.
-3. Tag the chosen commit `vVERSION` and push the tag. The Node workflow builds
+3. The owner tags the chosen commit `vVERSION` and pushes the tag. The Node workflow builds
    and publishes the prerelease with its mandatory soft3 inventory.
 4. Download the target archive, verify the attached checksums, unpack it and run
    `./cyber --help`. `./cyber init` creates a new local home.
