@@ -387,6 +387,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T21:17:00Z | 3 | foculus | [launch #3 (3): measure the steady-state fold-step cost](https://github.com/cyberia-to/foculus/pull/47) | open |
 | 2026-09-23T21:25:34Z | 14 | bostrom | [launch #14 (2): make graph_rebuild importable, cover event pairing](https://github.com/cyberia-to/bostrom/pull/13) | open |
 | 2026-09-23T21:30:57Z | 18 | bbg | [launch #18: audit — row 18 has two diverging, unmerged storage PRs](https://github.com/cyberia-to/bbg/pull/27) | open |
+| 2026-09-23T21:32:00Z | 36 | foculus | [launch #36 (2): parallel scaling of the settlement-ticket sample](https://github.com/cyberia-to/foculus/pull/48) | open |
 
 ## cross-references
 
