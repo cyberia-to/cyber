@@ -645,6 +645,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T05:22:00Z | 208 | vault | [launch #208: cover history.rs's walk/at corruption-rejection branches](https://github.com/cyberia-to/vault/pull/6) | open |
 | 2026-09-23T05:26:19Z | 209 | true-cyber | [launch #209: cover CLI argv parsing and status-wire decode](https://github.com/cyberia-to/true-cyber/pull/3) | open |
 | 2026-09-23T05:27:51Z | 211 | nox | [launch #211: cover Cost arithmetic; lock PATTERN_COSTS to reduce::COSTS](https://github.com/cyberia-to/nox/pull/11) | open |
+| 2026-09-23T05:37:00Z | 210 | hemera | [launch #210: reject oversized declared_len before decode allocates](https://github.com/cyberia-to/hemera/pull/9) | open |
 
 ## cross-references
 
