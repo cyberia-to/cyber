@@ -368,6 +368,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T19:30:00Z | 12 | foculus | [launch #12 (3): audit — fold-mining ClusterAcc gossips the marginal vector plaintext](https://github.com/cyberia-to/foculus/pull/40) | draft |
 | 2026-09-23T19:22:00Z | 32 | plumb (tok) | [launch #32 (2): pro-rata $ν holder fee distribution](https://github.com/cyberia-to/plumb/pull/14) | open |
 | 2026-09-23T19:38:00Z | 25 | plumb (tok) | [launch #25 (2): ICBS reserves and positions market, conservation-checked buy/sell](https://github.com/cyberia-to/plumb/pull/15) | open |
+| 2026-09-23T19:58:00Z | 31 | foculus | [launch #31 (2): bind book_id into FinalityEvidence, close root-collision exposure](https://github.com/cyberia-to/foculus/pull/41) | open |
 
 ## cross-references
 
