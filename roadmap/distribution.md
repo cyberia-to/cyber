@@ -24,6 +24,9 @@ Apply these gates to each delivered capability set.
   for each supported platform. Check the installed artifact in a fresh process.
 - [ ] Define upgrade/rollback compatibility for configuration, databases, graph
   codecs, proof artifacts and network profiles before overwriting a user home.
+  The previous pinned native writer now has
+  [an exercised format-2 upgrade boundary](../audit/node-storage-compatibility-2026-09-23.md).
+  Other historical commitment formats and the broader fleet remain open.
 
 ## configuration and explanatory graph
 
