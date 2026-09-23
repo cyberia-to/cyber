@@ -560,6 +560,9 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T02:15:12Z | 163 | prysm | [launch #163: cover progress molecule's progress_percent/kv_str/kv_u64](https://github.com/cyberia-to/prysm/pull/7) | open |
 | 2026-09-23T02:28:00Z | 166 | nox | [launch #166: reject fri_fold's k before it can shift out of range](https://github.com/cyberia-to/nox/pull/8) | open |
 | 2026-09-23T02:35:00Z | 167 | honeycrisp | [launch #167: enforce retain_nonnull/release_nonnull's null check in release](https://github.com/cyberia-to/honeycrisp/pull/10) | open |
+| 2026-09-23T02:30:00Z | 168 | strata | [launch #168: enforce TropMatrix bounds check in release builds](https://github.com/cyberia-to/strata/pull/6) | open |
+| 2026-09-23T02:30:00Z | 170 | strata | [launch #170: enforce multilinear_eval's length invariants in release builds](https://github.com/cyberia-to/strata/pull/7) | open |
+| 2026-09-23T02:30:00Z | 169 | hemera | [launch #169: enforce StepSponge's absorb/step/squeeze invariants in release builds](https://github.com/cyberia-to/hemera/pull/5) | open |
 
 ## cross-references
 
