@@ -375,8 +375,9 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T19:53:00Z | 18 | bbg | [launch #18 (3): archival checkpoint schedule for the demote/archive/evict_archived sweep](https://github.com/cyberia-to/bbg/pull/26) | open |
 | 2026-09-23T20:15:00Z | 40 | mudra | [launch #40 (2): reject non-canonical x-coordinate in Point::from_sec1](https://github.com/cyberia-to/mudra/pull/14) | open |
 | 2026-09-23T20:31:59Z | 39 | inf | [launch #39: bind bbg_root sentinel so inf-lower builds with --features prove](https://github.com/cyberia-to/inf/pull/4) | open |
-| 2026-09-23T20:26:32Z | 21 | radio | [launch #21 (2): gossip carries a real Signal envelope, not raw bytes](https://github.com/cyberia-to/radio/pull/15) | open |
+| 2026-09-23T20:26:32Z | 21 | radio | [launch #21 (2): gossip carries a real SettleMsg envelope, not raw bytes](https://github.com/cyberia-to/radio/pull/15) | open |
 | 2026-09-23T20:34:55Z | 39 | cybergraph | [launch #39 (2): migrate stack_*.rs tests to nox 0.3/zheng 0.4](https://github.com/cyberia-to/cybergraph/pull/10) | open |
+| 2026-09-23T20:39:39Z | 34 | foculus | [launch #34 (3): compute DAS confidence in Fx, not f64](https://github.com/cyberia-to/foculus/pull/43) | open |
 
 ## cross-references
 
