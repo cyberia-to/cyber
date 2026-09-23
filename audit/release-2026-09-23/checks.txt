@@ -1,0 +1,30 @@
+Build x86_64-unknown-linux-gnu	Assemble pinned sources	2026-09-23T11:24:02.8372796Z verified 15 dependency repositories and 38 local packages
+Build x86_64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:24:03.1494372Z verified 15 dependency repositories and 38 local packages
+Build x86_64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:24:42.2936033Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Build x86_64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:24:46.9078717Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.61s
+Build x86_64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:26:14.4217222Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.94s
+Build x86_64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:26:14.6694482Z verified 15 dependency repositories and 38 local packages
+Build x86_64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:26:14.6800809Z inventoried 15 soft3 repositories
+Build x86_64-unknown-linux-gnu	Test source and release guards	2026-09-23T11:26:15.0415823Z verified 15 dependency repositories and 38 local packages
+Build x86_64-unknown-linux-gnu	Test source and release guards	2026-09-23T11:26:17.4538178Z verified 15 dependency repositories and 38 local packages
+Build x86_64-unknown-linux-gnu	Test source and release guards	2026-09-23T11:26:17.5004779Z source guard: five negative checks and restored clean acceptance passed
+Build x86_64-unknown-linux-gnu	Test source and release guards	2026-09-23T11:26:18.0130536Z packaged cyber-v0.8.0-x86_64-unknown-linux-gnu
+Build x86_64-unknown-linux-gnu	Test source and release guards	2026-09-23T11:26:18.5677045Z packaged cyber-v0.8.0-x86_64-unknown-linux-gnu
+Build x86_64-unknown-linux-gnu	Test source and release guards	2026-09-23T11:26:20.5842193Z release guard: nine negative checks, packaging and collection passed
+Build x86_64-unknown-linux-gnu	Package qualified binary	2026-09-23T11:26:21.0339611Z packaged cyber-v0.8.0-x86_64-unknown-linux-gnu
+Build aarch64-apple-darwin	Assemble pinned sources	2026-09-23T11:24:07.9948260Z verified 15 dependency repositories and 38 local packages
+Build aarch64-apple-darwin	Build and qualify native binary	2026-09-23T11:24:08.5567370Z verified 15 dependency repositories and 38 local packages
+Build aarch64-apple-darwin	Build and qualify native binary	2026-09-23T11:24:52.4797180Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Build aarch64-apple-darwin	Build and qualify native binary	2026-09-23T11:24:55.7372430Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.26s
+Build aarch64-apple-darwin	Build and qualify native binary	2026-09-23T11:26:48.1065540Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.85s
+Build aarch64-apple-darwin	Build and qualify native binary	2026-09-23T11:26:48.6006380Z verified 15 dependency repositories and 38 local packages
+Build aarch64-apple-darwin	Build and qualify native binary	2026-09-23T11:26:48.6272610Z inventoried 15 soft3 repositories
+Build aarch64-apple-darwin	Package qualified binary	2026-09-23T11:26:49.3083050Z packaged cyber-v0.8.0-aarch64-apple-darwin
+Build aarch64-unknown-linux-gnu	Assemble pinned sources	2026-09-23T11:23:58.3173564Z verified 15 dependency repositories and 38 local packages
+Build aarch64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:23:58.5969247Z verified 15 dependency repositories and 38 local packages
+Build aarch64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:24:33.8520199Z test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+Build aarch64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:24:36.5474694Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.69s
+Build aarch64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:25:40.2742083Z test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.99s
+Build aarch64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:25:40.4904753Z verified 15 dependency repositories and 38 local packages
+Build aarch64-unknown-linux-gnu	Build and qualify native binary	2026-09-23T11:25:40.5003652Z inventoried 15 soft3 repositories
+Build aarch64-unknown-linux-gnu	Package qualified binary	2026-09-23T11:25:40.8935019Z packaged cyber-v0.8.0-aarch64-unknown-linux-gnu
