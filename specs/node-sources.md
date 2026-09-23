@@ -45,6 +45,11 @@ checkout is the required check. `--mirror-root PATH` can fetch Git objects from
 an existing sibling layout for local rehearsal. It never copies working files;
 publication requires a checkout from the recorded remote origins.
 
+`nu analizer/node-sources-test.nu .` tests the source guard using disposable
+Git checkouts. It checks acceptance of the pinned set and rejection of dirty
+sources, wrong revisions, changed Cargo locks, omitted repositories and changed
+package declarations. The input checkout must already pass the source gate.
+
 Without `--locked-sources`, the release script remains a development build and
 records dirty provenance. A source-locked host build establishes availability
 and consistency of its source inputs. It does not establish bit-identical
