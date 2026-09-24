@@ -446,6 +446,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T02:58:00Z | 16 | spark | [launch #16 (12): extract MP4/QuickTime duration from the mvhd box](https://github.com/cyberia-to/spark/pull/14) | open |
 | 2026-09-24T03:08:00Z | 16 | spark | [launch #16 (13): extract FLAC duration from the STREAMINFO block](https://github.com/cyberia-to/spark/pull/15) | open |
 | 2026-09-24T02:46:10Z | 16 | spark | [launch #16 (14): extract Ogg Vorbis duration from the last page granule](https://github.com/cyberia-to/spark/pull/16) | open |
+| 2026-09-24T02:49:00Z | 40 | inf | [launch #40: verify_expr_proof used a Statement that could never match the one proved](https://github.com/cyberia-to/inf/pull/5) | open |
 
 ## cross-references
 
