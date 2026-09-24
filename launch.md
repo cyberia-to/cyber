@@ -186,7 +186,7 @@ every claim the launch stands on, with the kind of evidence it has. states: prov
 
 ### queue · the pull request dashboard
 
-every open pull request in the organization carries one of four labels; only `decision` requests the owner's review, so the owner's inbox holds only what needs the owner. counts as of 2026-09-24 08:30 UTC, re-counted by the daily loop.
+every open pull request in the organization carries one of four labels. GitHub refuses a review request to a PR's own author, and nearly every PR is authored from the owner's account, so `decision` PRs are assigned to the owner instead: the owner's view is the Assigned tab of the pull request inbox; the Review-requested tab holds only outside contributors' PRs, which are also `decision`. nothing else is assigned or requested. counts as of 2026-09-24 08:30 UTC, re-counted by the daily loop.
 
 | label | meaning | who acts | count |
 |---|---|---|---|
