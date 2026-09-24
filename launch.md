@@ -433,6 +433,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T01:41:00Z | 16 | file | [launch #16 (2): sniff AVI and QuickTime MOV containers](https://github.com/cyberia-to/file/pull/12) | open |
 | 2026-09-24T01:59:00Z | 14 | bostrom | [launch #14 (8): cover extract.py's pools/staking/pubkeys/manifest/smart](https://github.com/cyberia-to/bostrom/pull/19) | open |
 | 2026-09-24T01:38:00Z | 39 | cyber | [launch #39: confirm cyber builds and tests clean from origin/master](https://github.com/cyberia-to/cyber/pull/110) | open |
+| 2026-09-24T01:36:00Z | 16 | file | [launch #16 (3): sniff ZIP containers](https://github.com/cyberia-to/file/pull/13) | open |
 
 ## cross-references
 
