@@ -195,3 +195,9 @@ to a separate agent. No two agents should ever touch the same file.
 ## License
 
 Cyber License: Don't trust. Don't fear. Don't beg.
+
+The shared candidate engine is pinned by `release/soft3.toml` and
+`.github/workflows/release-train.yml`. Soft3 runs shared stack gates; Cyber adds
+`cyber-tests`, `cyber-release`, `optica-build`, `protocol-graph`, and
+`soft3-dependency`. `specs/releases.md` defines the evidence contract. Node CI
+artifacts retain their development status until the shared train passes.
