@@ -475,6 +475,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T05:05:00Z | 39 | soft3 | [launch #39: resolve soft3's full sibling closure for the clean-checkout CI gate](https://github.com/cyberia-to/soft3/pull/24) | open |
 
 | 2026-09-24T04:53:00Z | 16 | file | [launch #16 (3): sniff RTF documents by control-word preamble](https://github.com/cyberia-to/file/pull/27) | open |
+| 2026-09-24T05:08:05Z | 40 | foculus | [launch #40 (4): bind verify_certified_ticket's seal to its own beacon/cluster](https://github.com/cyberia-to/foculus/pull/56) | open |
 
 ## cross-references
 
