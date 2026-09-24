@@ -2,7 +2,7 @@
 
 Verdict: RED. All macOS/Linux ARM64/x64 platforms and shared stack gates ran in
 [Actions run 35975320980](https://github.com/cyberia-to/cyber/actions/runs/35975320980).
-[GitHub draft candidate](https://github.com/cyberia-to/cyber/releases/tag/untagged-ec2ca2ea267ce8d92abf)
+[GitHub draft candidate](https://github.com/cyberia-to/cyber/releases)
 retains their inventories, logs and checksums. No executable was produced.
 
 Product source: `083871d20d30adfd1e31615b1615940ed4b9141f`. Shared qualifier:

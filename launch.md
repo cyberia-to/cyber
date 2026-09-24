@@ -297,9 +297,9 @@ retains its command logs and exact source inventory in its draft assets.
 
 | date (UTC) | candidate | cyber / cyb / soft3 | verdict | receipt |
 |---|---|---|---|---|
-| 2026-09-24 | soft3 candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; full native matrix, no binary | [draft](https://github.com/cyberia-to/soft3/releases/tag/untagged-47fb822e14af390dd809) |
-| 2026-09-24 | cyber candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; full native matrix, no binary | [draft](https://github.com/cyberia-to/cyber/releases/tag/untagged-ec2ca2ea267ce8d92abf) |
-| 2026-09-24 | cyb candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; macOS ARM64 checked, other targets missing; workflow PR requires review | [draft](https://github.com/cyberia-to/cyb/releases/tag/untagged-fcf42f59f737fd27f947) |
+| 2026-09-24 | soft3 candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; full native matrix, no binary | [draft](https://github.com/cyberia-to/soft3/releases) |
+| 2026-09-24 | cyber candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; full native matrix, no binary | [draft](https://github.com/cyberia-to/cyber/releases) |
+| 2026-09-24 | cyb candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; macOS ARM64 checked, other targets missing; workflow PR requires review | [draft](https://github.com/cyberia-to/cyb/releases) |
 
 ### launch worker pull requests
 
