@@ -416,6 +416,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T00:04:08Z | 16 | file | [launch #16: sniff ICO files as Kind::ImageIco](https://github.com/cyberia-to/file/pull/8) | open |
 | 2026-09-24T00:06:00Z | 39 | spark | [launch #39: confirm spark builds clean against file/hemera origin defaults](https://github.com/cyberia-to/spark/pull/10) | open |
 | 2026-09-24T00:09:14Z | 39 | strata | [launch #39: fix Fp3 norm/inv shader bug found by the clean-checkout gate](https://github.com/cyberia-to/strata/pull/12) | open |
+| 2026-09-24T00:12:49Z | 26 | plumb (tok) | [launch #26 (3): service-fee term of the §11 reward equation](https://github.com/cyberia-to/plumb/pull/18) | open |
 
 ## cross-references
 
