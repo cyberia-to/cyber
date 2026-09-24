@@ -365,7 +365,7 @@ ZK + FHE + MPC. Three technologies. One field. Complete privacy.
 ## Cross-references
 
 See [[privacy]] for the stack table and the lessons of the field — every vertex of the triangle, as chains learned it.
-See [[trinity]] for the three-pillar test this trilateral answers, and [[trinity meets polynomial state]] for how algebraic state strengthens it.
+See [[trinity]] for the three-pillar test this trilateral answers, and [polynomial state and the trinity](https://github.com/cyberia-to/trident/blob/master/docs/explanation/trinity-bench.md#polynomial-state-and-the-trinity) for how algebraic state strengthens it.
 See [[rosetta stone]] for the lookup table identity that connects all three technologies.
 See [[Goldilocks homomorphic encryption]] for the full FHE construction.
 See [[trinity]] for how privacy fits into the three-pillar architecture.

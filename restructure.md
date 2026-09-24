@@ -382,7 +382,6 @@ Census additions recorded on 2026-09-08: [[research/oikos|oikos]] carries the mo
 | [[research/nox - frozen provable computer|nox - frozen provable computer]] | 740 | moves → nox | component research goes home |
 | [[analizer|analizer]] | 1009 | moves → research/ | protocol research misfiled at root |
 | [[research/five algebras|five algebras]] | 3619 | moves → strata | component research goes home |
-| [[research/trinity meets polynomial state|trinity meets polynomial state]] | 1496 | moves → trident | component research goes home |
 ---
 
 # 1a · bbg absorption — refine, do not copy
