@@ -498,6 +498,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T07:29:00Z | 40 | zheng | [launch #40: SumcheckVerifier never checked a round polynomial's degree](https://github.com/cyberia-to/zheng/pull/34) | open |
 | 2026-09-24T07:22:00Z | 1 | tru | [launch #1: cover CsrBuilder dedup and CsrMatrix spmv/spmv_add](https://github.com/cyberia-to/tru/pull/27) | open |
 | 2026-09-24T07:43:00Z | 40 | foculus | [launch #40 (5): fold_seal shares verify_receipt's unbound-seal gap](https://github.com/cyberia-to/foculus/pull/59) | open |
+| 2026-09-24T07:48:00Z | 40 | nox | [launch #40 (draft): audit — decider jet trusts its hint, verifies nothing](https://github.com/cyberia-to/nox/pull/20) | draft |
 
 ## cross-references
 
