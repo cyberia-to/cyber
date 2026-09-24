@@ -469,6 +469,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T04:16:00Z | 39 | soma | [launch #39: audit — origin/main has no Rust code, kernel/agent sit on unmerged soma#1](https://github.com/cyberia-to/soma/pull/2) | open |
 | 2026-09-24T04:20:00Z | 16 | cyb | [launch #16 (2): cyb paints decoded pixels for image sparks](https://github.com/cyberia-to/cyb/pull/1401) | open |
 | 2026-09-24T04:35:00Z | 39 | inf | [launch #39: confirm inf builds and tests clean from origin/main](https://github.com/cyberia-to/inf/pull/6) | open |
+| 2026-09-24T04:40:00Z | 16 | file | [launch #16: sniff AIFF/AIFC audio files by FORM container magic](https://github.com/cyberia-to/file/pull/24) | open |
 
 ## cross-references
 
