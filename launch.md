@@ -415,6 +415,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T00:04:59Z | 39 | file | [launch #39: confirm file builds clean against hemera's origin default](https://github.com/cyberia-to/file/pull/9) | open |
 | 2026-09-24T00:04:08Z | 16 | file | [launch #16: sniff ICO files as Kind::ImageIco](https://github.com/cyberia-to/file/pull/8) | open |
 | 2026-09-24T00:06:00Z | 39 | spark | [launch #39: confirm spark builds clean against file/hemera origin defaults](https://github.com/cyberia-to/spark/pull/10) | open |
+| 2026-09-24T00:09:14Z | 39 | strata | [launch #39: fix Fp3 norm/inv shader bug found by the clean-checkout gate](https://github.com/cyberia-to/strata/pull/12) | open |
 
 ## cross-references
 
