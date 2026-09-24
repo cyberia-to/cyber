@@ -460,6 +460,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T03:53:00Z | 39 | neuron | [launch #39: audit — clean checkout blocked on mudra's unpushed neuron/spell modules](https://github.com/cyberia-to/neuron/pull/8) | open |
 | 2026-09-24T03:50:18Z | 40 | bbg | [launch #40 (2): verify_particle_bound checks commitment against trusted state](https://github.com/cyberia-to/bbg/pull/30) | open |
 | 2026-09-24T03:57:39Z | 40 | foculus | [launch #40: verify_sample never checked shard_roots against the trusted root](https://github.com/cyberia-to/foculus/pull/55) | open |
+| 2026-09-24T03:59:25Z | 32 | cybergraph | [launch #32: register_referral publishes the referral naming cyberlink](https://github.com/cyberia-to/cybergraph/pull/11) | open |
 | 2026-09-24T04:10:00Z | 16 | file | [launch #16: sniff Matroska (MKV) and WebM by EBML DocType](https://github.com/cyberia-to/file/pull/21) | open |
 | 2026-09-24T04:10:00Z | 16 | file | [launch #16 (2): distinguish docx/xlsx/pptx/epub from generic ZIP](https://github.com/cyberia-to/file/pull/22) | open |
 | 2026-09-24T04:10:00Z | 16 | file | [launch #16 (3): sniff bare ADTS AAC audio by frame sync](https://github.com/cyberia-to/file/pull/23) | open |
