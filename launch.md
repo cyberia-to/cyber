@@ -479,6 +479,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T04:57:00Z | 1 | tru | [launch #1: cover the spectral kernel against a known Laplacian spectrum](https://github.com/cyberia-to/tru/pull/25) | open |
 | 2026-09-24T04:59:00Z | 1 | tru | [launch #1 (2): cover the tri-kernel operators' degenerate and limiting cases](https://github.com/cyberia-to/tru/pull/26) | open |
 | 2026-09-24T05:08:05Z | 40 | foculus | [launch #40 (4): bind verify_certified_ticket's seal to its own beacon/cluster](https://github.com/cyberia-to/foculus/pull/56) | open |
+| 2026-09-24T05:12:37Z | 39 | soft3 | [launch #39 (draft): clean-checkout CI gate; finds a real cybergraph/local-storage break](https://github.com/cyberia-to/soft3/pull/25) | draft |
 
 ## cross-references
 
