@@ -472,6 +472,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T04:40:00Z | 16 | file | [launch #16: sniff AIFF/AIFC audio files by FORM container magic](https://github.com/cyberia-to/file/pull/24) | open |
 | 2026-09-24T04:45:00Z | 16 | file | [launch #16: sniff legacy Office/CFB containers by magic bytes](https://github.com/cyberia-to/file/pull/25) | open |
 | 2026-09-24T04:49:00Z | 16 | file | [launch #16 (2): sniff gzip archives by RFC 1952 member header](https://github.com/cyberia-to/file/pull/26) | open |
+| 2026-09-24T05:05:00Z | 39 | soft3 | [launch #39: resolve soft3's full sibling closure for the clean-checkout CI gate](https://github.com/cyberia-to/soft3/pull/24) | open |
 
 ## cross-references
 
