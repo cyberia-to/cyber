@@ -4,62 +4,48 @@ tags: cyber, spec, release, soft3
 crystal-type: spec
 crystal-domain: cyber
 ---
+
 # Cyber releases
 
-GitHub Releases in `cyberia-to/cyber` distributes the product executable.
-The Node workflow tests relevant pull requests and changes to `master`.
-A `vVERSION` tag selects a release; VERSION must equal `Cargo.toml`'s package
-version. The current channel publishes development prereleases. A manual
-workflow run builds downloadable CI artifacts.
+Cyber consumes the [soft3 release contract](https://github.com/cyberia-to/soft3/blob/main/specs/releases.md).
+`release/soft3.toml` pins its version and full source revision; the Release train
+workflow uses the same revision. Soft3 owns stack qualification and dependency
+pins. Cyber adds executable acceptance and protocol graph compilation.
 
-## mandatory soft3 inventory
+Friday 12:00 UTC, or manual dispatch, captures default-branch origin inputs and
+creates `candidate-YYYYMMDD.N` as a GitHub draft prerelease. A rehearsal uses
+`cut=false`. Native runners target macOS and Linux, ARM64 and x64. Failed gates
+retain available artifacts and red receipts. The owner decides promotion and
+pushes version tags. Automation creates drafts only.
 
-Every published release must include `soft3-dependencies.md` and
-`soft3-dependencies.json`. The Markdown table is also included in the GitHub
-release description. Each component entry identifies its repository, full
-commit SHA, package names, versions and manifest paths. Vendored third-party
-packages have a separate classification.
+## evidence
 
-The inventory covers the default node's build and test source closure. It is
-generated from the [verified source lock](node-sources.md). Presence in this
-inventory describes build inputs; the [product contract](node-product.md)
-defines available runtime capabilities.
+Every candidate includes `SHA256SUMS`, `sources.json`, `candidate.json`,
+`release-validation.json`, `soft3-dependencies.json` and `soft3-dependencies.md`.
+The release description includes the dependency inventory. Platform archives
+include the executable when built, exact source/package inventories and command
+logs. Missing binaries, failed package resolution, drifted pins and blocked gates
+remain explicit. Collection checks all platform receipts and their checksums.
 
-Each platform's `build.json` binds its binary checksum to the inventory checksum,
-Cargo lock, compiler identity and actual compilation target. All platform
-inventories and source locks must agree with the tagged product commit.
-Missing, altered or mismatched inventories prevent publication.
+The inventory covers the common source set plus resolved package closure.
+Manifest declarations are labelled separately when resolution fails. The product
+contract in [[specs/node-product]] defines runtime capabilities.
 
-## build and publication
+## gates
 
-The initial platform set is Linux x86_64, Linux ARM64 and macOS ARM64. Native
-GitHub runners independently fetch the locked component commits, use the Rust
-version in `rust-toolchain.toml`, run formatting/unit/process checks, build the
-release executable and run process acceptance against that executable.
+Soft3 component and conformance gates must pass. Cyber additionally runs:
 
-Each `cyber-vVERSION-TARGET.tar.gz` contains `cyber`, `build.json`, `SHA256SUMS`,
-both dependency inventories, `sources.lock.json`, `Cargo.lock`, the toolchain
-file and the license. The release also exposes inventories, locks, per-target
-build provenance and archive checksums as separate assets.
+- `cargo test --locked`;
+- `nu scripts/release.nu --locked-sources`, including process acceptance;
+- locked optica builder compilation and `optica build` on the protocol graph;
+- matching `release/soft3.toml`, unchanged source inputs and complete inventories.
 
-Publication waits for every platform. The collector checks the complete
-platform set, source identities, inventory agreement and archive contents.
-Assets are uploaded to a draft, which becomes public after successful upload.
-Failed creation/upload retains the draft for inspection; retry by removing only
-that incomplete draft and rerunning the failed job. Existing published releases
-retain their original assets. Tags and component pins select immutable sources.
+The Node workflow remains development CI for the [node source lock](node-sources.md).
+Its feature-branch inputs must converge with default branches before the common
+release train can turn green. Its artifacts alone do not satisfy the common
+candidate contract.
 
-## maintainer cycle
-
-1. Update reviewed component pins through `node-sources.nu capture` and commit
-   the source lock together with any Cargo lock/version changes.
-2. Merge after the Node workflow passes on all three platforms.
-3. The owner tags the chosen commit `vVERSION` and pushes the tag. The Node workflow builds
-   and publishes the prerelease with its mandatory soft3 inventory.
-4. Download the target archive, verify the attached checksums, unpack it and run
-   `./cyber --help`. `./cyber init` creates a new local home.
-
-Database compatibility with a concrete predecessor remains available through
-the local `release.nu --previous-binary` qualification. The initial GitHub cycle
-records no cross-release database compatibility result. Signed OS distribution
-and further platforms have their own delivery gates.
+From candidate cut until owner verdict, default branches of soft3, cyber and cyb
+are frozen. Candidate fixes and receipts go on `release/<date>`, with receipts in
+`audit/release-<date>/` and a work-log entry in [[launch]]. Version and pin changes
+follow the coordinated bump PR rule in [[cyberia/dev]].

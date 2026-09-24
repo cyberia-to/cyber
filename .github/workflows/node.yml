@@ -14,7 +14,6 @@ on:
       - '.github/workflows/node.yml'
   push:
     branches: [master]
-    tags: ['v*']
     paths:
       - 'src/**'
       - 'tests/**'
@@ -92,35 +91,3 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-  publish:
-    if: github.event_name == 'push' && github.ref_type == 'tag'
-    needs: build
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    permissions:
-      contents: write
-    defaults:
-      run:
-        shell: nu {0}
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - uses: hustcer/setup-nu@9215c80adb545a85c419d5085b76eb6d082f49e7 # v3.27
-        with:
-          version: '0.112.2'
-      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
-        with:
-          pattern: node-*
-          path: artifacts
-      - name: Verify platform inventories and prepare release
-        run: nu analizer/node-release.nu . collect --artifacts artifacts --tag $env.GITHUB_REF_NAME
-      - name: Publish complete prerelease
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          let assets = (glob dist/publish/*)
-          gh release create $env.GITHUB_REF_NAME ...$assets --verify-tag --draft --prerelease --latest=false --title $"Cyber ($env.GITHUB_REF_NAME)" --notes-file dist/release-notes.md
-          if $env.LAST_EXIT_CODE != 0 { error make {msg: "release creation failed; inspect any retained draft before retry"} }
-          gh release edit $env.GITHUB_REF_NAME --draft=false
-          if $env.LAST_EXIT_CODE != 0 { error make {msg: "release publication failed; draft retained"} }
