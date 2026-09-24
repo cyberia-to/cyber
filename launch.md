@@ -427,6 +427,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T00:49:16Z | 16 | spark | [launch #16 (10): PDF page size from the first /MediaBox array](https://github.com/cyberia-to/spark/pull/12) | open |
 | 2026-09-24T00:47:13Z | 39 | vault | [launch #39 (3): vault — cover record.rs's SecretInput and Entry](https://github.com/cyberia-to/vault/pull/8) | open |
 | 2026-09-24T01:20:00Z | 40 | foculus | [launch #40: verify_certified_ticket trusts a fold-seal's beacon/cluster binding](https://github.com/cyberia-to/foculus/pull/51) | open |
+| 2026-09-24T01:13:52Z | 21 | soft3 | [launch #21: audit — soft3 can't wire foculus's settle radio yet](https://github.com/cyberia-to/soft3/pull/23) | open |
 
 ## cross-references
 
