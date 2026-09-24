@@ -1,0 +1,5 @@
+command: ["cargo", "test", "--locked"]
+cwd: /home/runner/work/_temp/sources/nox/rs
+    Updating crates.io index
+error: cannot update the lock file /home/runner/work/_temp/sources/nox/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.

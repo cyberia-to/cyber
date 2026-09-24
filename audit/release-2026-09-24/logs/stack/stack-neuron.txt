@@ -1,0 +1,10 @@
+command: ["cargo", "test", "--locked"]
+cwd: /home/runner/work/_temp/sources/neuron
+error: failed to select a version for `cybergraph`.
+    ... required by package `neuron-node v0.1.0 (/home/runner/work/_temp/sources/neuron/node)`
+versions that meet the requirements `*` (locked to 0.1.1) are: 0.1.1
+
+package `neuron-node` depends on `cybergraph` with feature `legacy-redb-migration` but `cybergraph` does not have that feature.
+
+
+failed to select a version for `cybergraph` which could resolve this conflict

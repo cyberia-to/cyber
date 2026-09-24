@@ -1,0 +1,4 @@
+command: ["cargo", "test", "--locked"]
+cwd: /home/runner/work/_temp/sources/file
+error: cannot create the lock file /home/runner/work/_temp/sources/file/Cargo.lock because --locked was passed to prevent this
+help: to generate the lock file without accessing the network, remove the --locked flag and use --offline instead.

@@ -1,0 +1,12 @@
+command: ["cargo", "test", "--locked"]
+cwd: /Users/runner/work/_temp/sources/cyber
+    Updating crates.io index
+    Updating crates.io index
+error: failed to select a version for `cybergraph`.
+    ... required by package `true-cyber v0.8.0 (/Users/runner/work/_temp/sources/cyber)`
+versions that meet the requirements `*` (locked to 0.1.1) are: 0.1.1
+
+package `true-cyber` depends on `cybergraph` with feature `local-storage` but `cybergraph` does not have that feature.
+
+
+failed to select a version for `cybergraph` which could resolve this conflict
