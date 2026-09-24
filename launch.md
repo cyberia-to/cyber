@@ -484,6 +484,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T05:35:00Z | 16 | file | [launch #16: sniff POSIX/GNU ustar tar archives](https://github.com/cyberia-to/file/pull/28) | open |
 | 2026-09-24T05:39:00Z | 9 | bbg | [launch #9: signals dimension keyed by (neuron, step), not bare step](https://github.com/cyberia-to/bbg/pull/32) | open |
 | 2026-09-24T05:44:14Z | 22 | cyb | [launch #22 (7): cyb-core's first radio dependency — BAO verified decode](https://github.com/cyberia-to/cyb/pull/1402) | open |
+| 2026-09-24T05:49:44Z | 18 | bbg | [launch #18: FjallStore persists a committed write across reopen](https://github.com/cyberia-to/bbg/pull/33) | open |
 
 ## cross-references
 
