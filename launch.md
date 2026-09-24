@@ -442,6 +442,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T02:16:00Z | 19 | file | [launch #19: File::verified — self-authenticating particle binding](https://github.com/cyberia-to/file/pull/16) | open |
 
 | 2026-09-24T02:35:00Z | 22 | radio | [launch #22 (6): expose radio-cli's pure logic as a lib target with tests](https://github.com/cyberia-to/radio/pull/19) | open |
+| 2026-09-24T02:46:00Z | 16 | spark | [launch #16 (11): extract WAV audio duration from raw bytes](https://github.com/cyberia-to/spark/pull/13) | open |
 
 ## cross-references
 
