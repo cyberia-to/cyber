@@ -491,6 +491,8 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T06:16:00Z | 16 | spark | [launch #16 (19): animated GIF duration from Graphic Control Extension delays](https://github.com/cyberia-to/spark/pull/20) | open |
 | 2026-09-24T06:20:00Z | 16 | file | [launch #16 (2): sniff TTF and OTF font files by sfnt version tag](https://github.com/cyberia-to/file/pull/32) | open |
 | 2026-09-24T06:27:37Z | 16 | file | [launch #16: sniff XML documents as Kind::Xml](https://github.com/cyberia-to/file/pull/33) | open |
+| 2026-09-24T06:31:00Z | 8 | foculus | [launch #8: audit — Φ_uncert is a manual CLI param, never computed](https://github.com/cyberia-to/foculus/pull/57) | open |
+| 2026-09-24T06:31:00Z | 8 | foculus | [launch #8 (2): restrict issue_certified so only finalizes() can mint Certified evidence](https://github.com/cyberia-to/foculus/pull/58) | open |
 
 ## cross-references
 
