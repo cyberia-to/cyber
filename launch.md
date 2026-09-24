@@ -495,6 +495,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T07:08:02Z | 18 | bbg | [launch #18: cover Checkpoint::new and advance](https://github.com/cyberia-to/bbg/pull/35) | open |
 | 2026-09-24T06:31:00Z | 8 | foculus | [launch #8: audit — Φ_uncert is a manual CLI param, never computed](https://github.com/cyberia-to/foculus/pull/57) | open |
 | 2026-09-24T06:31:00Z | 8 | foculus | [launch #8 (2): restrict issue_certified so only finalizes() can mint Certified evidence](https://github.com/cyberia-to/foculus/pull/58) | open |
+| 2026-09-24T07:29:00Z | 40 | zheng | [launch #40: SumcheckVerifier never checked a round polynomial's degree](https://github.com/cyberia-to/zheng/pull/34) | open |
 
 ## cross-references
 
