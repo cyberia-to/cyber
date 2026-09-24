@@ -424,6 +424,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T00:38:12Z | 5 | foculus | [launch #5 (2): incremental seen-digest avoids O(k) commitment rehash](https://github.com/cyberia-to/foculus/pull/50) | open |
 | 2026-09-24T00:44:00Z | 16 | file | [launch #16 (8): sniff SVG files as Kind::ImageSvg](https://github.com/cyberia-to/file/pull/10) | open |
 | 2026-09-24T00:46:31Z | 16 | spark | [launch #16 (9): parse SVG width/height from the root svg element](https://github.com/cyberia-to/spark/pull/11) | open |
+| 2026-09-24T00:47:13Z | 39 | vault | [launch #39 (3): vault — cover record.rs's SecretInput and Entry](https://github.com/cyberia-to/vault/pull/8) | open |
 
 ## cross-references
 
