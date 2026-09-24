@@ -483,6 +483,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T05:31:03Z | 21 | soft3 | [launch #21 (5): soft3's first radio dependency — gossip topic id](https://github.com/cyberia-to/soft3/pull/26) | open |
 | 2026-09-24T05:35:00Z | 16 | file | [launch #16: sniff POSIX/GNU ustar tar archives](https://github.com/cyberia-to/file/pull/28) | open |
 | 2026-09-24T05:39:00Z | 9 | bbg | [launch #9: signals dimension keyed by (neuron, step), not bare step](https://github.com/cyberia-to/bbg/pull/32) | open |
+| 2026-09-24T05:44:14Z | 22 | cyb | [launch #22 (7): cyb-core's first radio dependency — BAO verified decode](https://github.com/cyberia-to/cyb/pull/1402) | open |
 
 ## cross-references
 
