@@ -221,7 +221,7 @@ Scenario: Private verifiable AI inference on encrypted medical data
 
 This is not a theoretical composition — it is a practical protocol where each step uses the same field ($\mathbb{F}_p$), the same hash (Poseidon2), and the same polynomial infrastructure (NTT). The trilateral holds together because the algebraic substrate is shared.
 
-Passing this scenario is the privacy leg of the [[trinity]] test: can one system simultaneously achieve quantum security, full privacy, and AI-native intelligence? The trilateral is how the privacy pillar answers — all three technologies over the one field that also proves consensus and runs models, so the mind that thinks in public can still keep its [[neurons]] unobserved. [polynomial state and the trinity](https://github.com/cyberia-to/trident/blob/master/docs/explanation/trinity-bench.md#polynomial-state-and-the-trinity) quantifies how algebraic state strengthens this leg: 32× cheaper bootstrapping, 5× lighter private transactions, MPC shares and committed state becoming the same mathematical object.
+Passing this scenario is the privacy leg of the [[trinity]] test: can one system simultaneously achieve quantum security, full privacy, and AI-native intelligence? The trilateral is how the privacy pillar answers — all three technologies over the one field that also proves consensus and runs models, so the mind that thinks in public can still keep its [[neurons]] unobserved. [[polynomial state across the stack]] quantifies how algebraic state strengthens this leg: 32× cheaper bootstrapping, 5× lighter private transactions, MPC shares and committed state becoming the same mathematical object.
 
 ---
 
@@ -365,7 +365,7 @@ ZK + FHE + MPC. Three technologies. One field. Complete privacy.
 ## Cross-references
 
 See [[privacy]] for the stack table and the lessons of the field — every vertex of the triangle, as chains learned it.
-See [[trinity]] for the three-pillar test this trilateral answers, and [polynomial state and the trinity](https://github.com/cyberia-to/trident/blob/master/docs/explanation/trinity-bench.md#polynomial-state-and-the-trinity) for how algebraic state strengthens it.
+See [[trinity]] for the three-pillar test this trilateral answers, and [[polynomial state across the stack]] for how algebraic state strengthens it.
 See [[rosetta stone]] for the lookup table identity that connects all three technologies.
 See [[Goldilocks homomorphic encryption]] for the full FHE construction.
 See [[trinity]] for how privacy fits into the three-pillar architecture.
