@@ -451,6 +451,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T03:15:00Z | 39 | foculus | [launch #39 (2): migrate net feature's iroh dependency 0.96 to 1.2](https://github.com/cyberia-to/foculus/pull/54) | open |
 | 2026-09-24T03:20:00Z | 16 | file | [launch #16 (16): sniff WebM video via EBML DocType](https://github.com/cyberia-to/file/pull/19) | open |
 | 2026-09-24T03:33:00Z | 16 | file | [launch #16 (17): sniff FLV video by header signature](https://github.com/cyberia-to/file/pull/20) | open |
+| 2026-09-24T03:52:00Z | 39 | cyb | [launch #39: fix open_balance's always-failing balance proof](https://github.com/cyberia-to/cyb/pull/1400) | open |
 
 ## cross-references
 
