@@ -435,6 +435,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T01:38:00Z | 39 | cyber | [launch #39: confirm cyber builds and tests clean from origin/master](https://github.com/cyberia-to/cyber/pull/110) | open |
 | 2026-09-24T01:36:00Z | 16 | file | [launch #16 (3): sniff ZIP containers](https://github.com/cyberia-to/file/pull/13) | open |
 | 2026-09-24T02:05:00Z | 16 | file | [launch #16 (4): sniff MP3, WAV, OGG and FLAC by magic bytes](https://github.com/cyberia-to/file/pull/14) | open |
+| 2026-09-24T01:56:00Z | 40 | mudra | [launch #40 (3): ecdsa::verify accepts a high-S malleable duplicate signature](https://github.com/cyberia-to/mudra/pull/16) | open |
 
 ## cross-references
 
