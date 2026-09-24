@@ -422,6 +422,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T00:38:20Z | 39 | vault | [launch #39 (2): vault — rebuild against mudra's spell rename, cover Header/Keys](https://github.com/cyberia-to/vault/pull/7) | open |
 | 2026-09-24T00:26:12Z | 39 | tade | [launch #39: confirm tade builds and tests clean from origin/main](https://github.com/cyberia-to/tade/pull/7) | open |
 | 2026-09-24T00:38:12Z | 5 | foculus | [launch #5 (2): incremental seen-digest avoids O(k) commitment rehash](https://github.com/cyberia-to/foculus/pull/50) | open |
+| 2026-09-24T00:57:00Z | 16 | file | [launch #16 (8): sniff SVG files as Kind::ImageSvg](https://github.com/cyberia-to/file/pull/10) | open |
 
 ## cross-references
 
