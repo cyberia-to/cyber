@@ -456,6 +456,8 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T03:28:02Z | 14 | bostrom | [launch #14 (9): cover graph_rebuild's work() HTTP dispatch](https://github.com/cyberia-to/bostrom/pull/20) | open |
 | 2026-09-24T03:29:40Z | 14 | bostrom | [launch #14 (10): cover graph_scan's fetch_window() HTTP retry loop](https://github.com/cyberia-to/bostrom/pull/21) | open |
 | 2026-09-24T03:33:54Z | 16 | spark | [launch #16 (18): HEIC/HEIF/AVIF dimensions from the ispe box](https://github.com/cyberia-to/spark/pull/18) | open |
+| 2026-09-24T03:41:00Z | 16 | spark | [launch #16 (15): extract MP3 duration from raw MPEG-1 Layer III frames](https://github.com/cyberia-to/spark/pull/17) | open |
+| 2026-09-24T03:53:00Z | 39 | neuron | [launch #39: audit — clean checkout blocked on mudra's unpushed neuron/spell modules](https://github.com/cyberia-to/neuron/pull/8) | open |
 
 ## cross-references
 
