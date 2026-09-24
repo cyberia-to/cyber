@@ -487,6 +487,9 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T05:49:44Z | 18 | bbg | [launch #18: FjallStore persists a committed write across reopen](https://github.com/cyberia-to/bbg/pull/33) | open |
 | 2026-09-24T06:09:31Z | 16 | file | [launch #16: sniff JSON objects and arrays as Kind::Json](https://github.com/cyberia-to/file/pull/30) | open |
 | 2026-09-24T06:12:18Z | 16 | spark | [launch #16 (2): extract literal text runs from PDF content streams](https://github.com/cyberia-to/spark/pull/19) | open |
+| 2026-09-24T06:13:00Z | 16 | file | [launch #16: sniff WOFF and WOFF2 font files by magic bytes](https://github.com/cyberia-to/file/pull/31) | open |
+| 2026-09-24T06:16:00Z | 16 | spark | [launch #16 (19): animated GIF duration from Graphic Control Extension delays](https://github.com/cyberia-to/spark/pull/20) | open |
+| 2026-09-24T06:20:00Z | 16 | file | [launch #16 (2): sniff TTF and OTF font files by sfnt version tag](https://github.com/cyberia-to/file/pull/32) | open |
 
 ## cross-references
 
