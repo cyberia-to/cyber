@@ -418,6 +418,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T00:09:14Z | 39 | strata | [launch #39: fix Fp3 norm/inv shader bug found by the clean-checkout gate](https://github.com/cyberia-to/strata/pull/12) | open |
 | 2026-09-24T00:12:49Z | 26 | plumb (tok) | [launch #26 (3): service-fee term of the §11 reward equation](https://github.com/cyberia-to/plumb/pull/18) | open |
 | 2026-09-24T00:26:12Z | 39 | hemera | [launch #39: confirm hemera builds and tests clean from origin/main](https://github.com/cyberia-to/hemera/pull/12) | open |
+| 2026-09-24T00:28:52Z | 39 | soft3 | [launch #39 (2): clean-checkout gate reads phase1.toml, fails on sibling drift](https://github.com/cyberia-to/soft3/pull/22) | open |
 | 2026-09-24T00:26:12Z | 39 | tade | [launch #39: confirm tade builds and tests clean from origin/main](https://github.com/cyberia-to/tade/pull/7) | open |
 
 ## cross-references
