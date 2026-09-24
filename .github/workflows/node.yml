@@ -90,4 +90,3 @@ jobs:
           path: ${{ runner.temp }}/node-sources/cyber/dist/release/
           if-no-files-found: error
           retention-days: 14
-
