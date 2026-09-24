@@ -453,6 +453,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T03:33:00Z | 16 | file | [launch #16 (17): sniff FLV video by header signature](https://github.com/cyberia-to/file/pull/20) | open |
 | 2026-09-24T03:52:00Z | 39 | cyb | [launch #39: fix open_balance's always-failing balance proof](https://github.com/cyberia-to/cyb/pull/1400) | open |
 | 2026-09-24T03:16:00Z | 40 | lens | [launch #40: squeeze_field collects enough bytes for wide fields](https://github.com/cyberia-to/lens/pull/16) | open |
+| 2026-09-24T03:28:02Z | 14 | bostrom | [launch #14 (9): cover graph_rebuild's work() HTTP dispatch](https://github.com/cyberia-to/bostrom/pull/20) | open |
 
 ## cross-references
 
