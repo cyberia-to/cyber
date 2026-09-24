@@ -471,6 +471,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T04:35:00Z | 39 | inf | [launch #39: confirm inf builds and tests clean from origin/main](https://github.com/cyberia-to/inf/pull/6) | open |
 | 2026-09-24T04:40:00Z | 16 | file | [launch #16: sniff AIFF/AIFC audio files by FORM container magic](https://github.com/cyberia-to/file/pull/24) | open |
 | 2026-09-24T04:45:00Z | 16 | file | [launch #16: sniff legacy Office/CFB containers by magic bytes](https://github.com/cyberia-to/file/pull/25) | open |
+| 2026-09-24T04:49:00Z | 16 | file | [launch #16 (2): sniff gzip archives by RFC 1952 member header](https://github.com/cyberia-to/file/pull/26) | open |
 
 ## cross-references
 
