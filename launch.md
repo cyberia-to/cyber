@@ -430,6 +430,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T01:13:52Z | 21 | soft3 | [launch #21: audit — soft3 can't wire foculus's settle radio yet](https://github.com/cyberia-to/soft3/pull/23) | open |
 | 2026-09-24T01:45:00Z | 40 | foculus | [launch #40: verify_receipt trusts a settle seal's epoch/beacon binding](https://github.com/cyberia-to/foculus/pull/52) | open |
 | 2026-09-24T01:29:00Z | 16 | file | [launch #16: sniff HEIC/HEIF/AVIF via ftyp major brand](https://github.com/cyberia-to/file/pull/11) | open |
+| 2026-09-24T01:59:00Z | 14 | bostrom | [launch #14 (8): cover extract.py's pools/staking/pubkeys/manifest/smart](https://github.com/cyberia-to/bostrom/pull/19) | open |
 
 ## cross-references
 
