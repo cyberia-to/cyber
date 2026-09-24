@@ -50,8 +50,9 @@ artifact and records sibling-source provenance in `dist/`.
 Rules: `~/cyber/cyberia/dev.md` § release train. A candidate is cut every
 friday 12:00 UTC by an agent from `origin/master` only; a working tree is
 never an input. Gates: `cargo build --release --locked`, `cargo test --locked`,
-`nu scripts/release.nu --locked-sources` (dist/ + SHA256SUMS + sibling
-provenance), and the graph builds with optica. A red gate ships as a red
+format and process acceptance against the release binary, and optica graph
+compilation. `release/soft3.toml` pins the concrete upstream build and its
+checksum manifest; its component revisions and stack verdict are inherited. A red gate ships as a red
 candidate with its evidence. One bump is one PR `chore: cyber <version>`
 (Cargo.toml, CHANGELOG, sibling pins in cyb and soft3). Receipts go to
 `audit/release-<date>/`; the launch page work log gets one row per
@@ -196,8 +197,8 @@ to a separate agent. No two agents should ever touch the same file.
 
 Cyber License: Don't trust. Don't fear. Don't beg.
 
-The shared candidate engine is pinned by `release/soft3.toml` and
-`.github/workflows/release-train.yml`. Soft3 runs shared stack gates; Cyber adds
-`cyber-tests`, `cyber-release`, `optica-build`, `protocol-graph`, and
-`soft3-dependency`. `specs/releases.md` defines the evidence contract. Node CI
+The selected soft3 build is pinned by `release/soft3.toml`. The shared engine
+revision is pinned separately in `.github/workflows/release-train.yml`. Cyber
+inherits `soft3-build` qualification and adds its product gates, source-binding
+checks and `soft3-dependency`. `specs/releases.md` defines the evidence contract. Node CI
 artifacts retain their development status until the shared train passes.

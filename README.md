@@ -77,14 +77,14 @@ storage owner and preserve the original source bytes. Existing configuration
 stays intact; activation is a permanent reader-generation upgrade. See
 [[specs/cli]] and [[specs/cyb-node]] for bounds, exact reports and recovery.
 
-`nu scripts/release.nu --locked-sources` produces a host binary, checksum,
-build provenance and the exact soft3 dependency inventory in `dist/` from a
-pinned checkout. The shared soft3 release train creates Friday draft candidates in
-[GitHub Releases](https://github.com/cyberia-to/cyber/releases), with that inventory,
-gate receipts and available binaries for macOS and Linux on ARM64/x64. The owner
-promotes a candidate after reviewing its verdict. [Node workflow runs](https://github.com/cyberia-to/cyber/actions/workflows/node.yml)
-retain development build artifacts. The [release contract](specs/releases.md)
-describes qualification and publication.
+Cyber releases select one concrete soft3 build in
+[`release/soft3.toml`](release/soft3.toml), including its checksum manifest.
+The [release train](specs/releases.md) inherits that build's component revisions
+and qualification, then adds Cyber's native build and process acceptance.
+[GitHub Releases](https://github.com/cyberia-to/cyber/releases) retains candidate
+binaries, dependency inventories and evidence. The owner promotes candidates.
+`nu scripts/release.nu --locked-sources` and the Node workflow provide standalone
+development artifacts from the development source lock.
 
 The sibling `true-cyber` source now provides a headless
 client over the shared GraphSession and neuron registry: explicit key attachment,
