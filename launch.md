@@ -474,6 +474,8 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T04:49:00Z | 16 | file | [launch #16 (2): sniff gzip archives by RFC 1952 member header](https://github.com/cyberia-to/file/pull/26) | open |
 | 2026-09-24T05:05:00Z | 39 | soft3 | [launch #39: resolve soft3's full sibling closure for the clean-checkout CI gate](https://github.com/cyberia-to/soft3/pull/24) | open |
 
+| 2026-09-24T04:53:00Z | 16 | file | [launch #16 (3): sniff RTF documents by control-word preamble](https://github.com/cyberia-to/file/pull/27) | open |
+
 ## cross-references
 
 [[rewards|rewards]] · [[foculus]] · [[tru]] · [[mudra]] · [[cybics/crystal|crystal]] · [[cyber/tokenomics]] · [[soft3]] · [[bootloader/bostrom|bostrom]] · [[bootloader/tokens/$PUSSY|space-pussy]] · [delivery roadmap](/cyber/roadmap/index)
