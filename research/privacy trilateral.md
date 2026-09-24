@@ -221,7 +221,7 @@ Scenario: Private verifiable AI inference on encrypted medical data
 
 This is not a theoretical composition — it is a practical protocol where each step uses the same field ($\mathbb{F}_p$), the same hash (Poseidon2), and the same polynomial infrastructure (NTT). The trilateral holds together because the algebraic substrate is shared.
 
-Passing this scenario is the privacy leg of the [[trinity]] test: can one system simultaneously achieve quantum security, full privacy, and AI-native intelligence? The trilateral is how the privacy pillar answers — all three technologies over the one field that also proves consensus and runs models, so the mind that thinks in public can still keep its [[neurons]] unobserved. [[trinity meets polynomial state]] quantifies how algebraic state strengthens this leg: 32× cheaper bootstrapping, 5× lighter private transactions, MPC shares and committed state becoming the same mathematical object.
+Passing this scenario is the privacy leg of the [[trinity]] test: can one system simultaneously achieve quantum security, full privacy, and AI-native intelligence? The trilateral is how the privacy pillar answers — all three technologies over the one field that also proves consensus and runs models, so the mind that thinks in public can still keep its [[neurons]] unobserved. [polynomial state and the trinity](https://github.com/cyberia-to/trident/blob/master/docs/explanation/trinity-bench.md#polynomial-state-and-the-trinity) quantifies how algebraic state strengthens this leg: 32× cheaper bootstrapping, 5× lighter private transactions, MPC shares and committed state becoming the same mathematical object.
 
 ---
 
