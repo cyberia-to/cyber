@@ -465,6 +465,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T04:10:00Z | 16 | file | [launch #16 (2): distinguish docx/xlsx/pptx/epub from generic ZIP](https://github.com/cyberia-to/file/pull/22) | open |
 | 2026-09-24T04:10:00Z | 16 | file | [launch #16 (3): sniff bare ADTS AAC audio by frame sync](https://github.com/cyberia-to/file/pull/23) | open |
 | 2026-09-24T03:52:25Z | 11 | mudra | [launch #11: audit — genies now exists, not yet constant-time for stealth](https://github.com/cyberia-to/mudra/pull/17) | open |
+| 2026-09-24T04:08:24Z | 39 | vault | [launch #39 (4): vault — cover model.rs's ids, Revision/Context, Error display](https://github.com/cyberia-to/vault/pull/9) | open |
 
 ## cross-references
 
