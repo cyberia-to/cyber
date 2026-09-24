@@ -444,6 +444,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T02:35:00Z | 22 | radio | [launch #22 (6): expose radio-cli's pure logic as a lib target with tests](https://github.com/cyberia-to/radio/pull/19) | open |
 | 2026-09-24T02:46:00Z | 16 | spark | [launch #16 (11): extract WAV audio duration from raw bytes](https://github.com/cyberia-to/spark/pull/13) | open |
 | 2026-09-24T02:58:00Z | 16 | spark | [launch #16 (12): extract MP4/QuickTime duration from the mvhd box](https://github.com/cyberia-to/spark/pull/14) | open |
+| 2026-09-24T03:08:00Z | 16 | spark | [launch #16 (13): extract FLAC duration from the STREAMINFO block](https://github.com/cyberia-to/spark/pull/15) | open |
 
 ## cross-references
 
