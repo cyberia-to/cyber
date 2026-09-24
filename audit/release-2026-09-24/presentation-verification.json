@@ -1,0 +1,107 @@
+{
+  "verified_at": "2026-09-24T08:58:13.555478+00:00",
+  "renderer_revision": "301c238296da0ed38e2ad429557be63b492443f1",
+  "candidate_source": "083871d20d30adfd1e31615b1615940ed4b9141f",
+  "release_url": "https://github.com/cyberia-to/cyber/releases/tag/untagged-31645a96fe95b591dc5d",
+  "release_id": 395486463,
+  "command": [
+    "gh",
+    "api",
+    "--method",
+    "PATCH",
+    "repos/cyberia-to/cyber/releases/395486463",
+    "--input",
+    "/tmp/cyber-draft-presentation.json"
+  ],
+  "changed_fields": [
+    "name",
+    "body"
+  ],
+  "preserved_fields": [
+    "tag_name",
+    "target_commitish",
+    "draft",
+    "prerelease"
+  ],
+  "body_sha256": "66b673b748862d5b1ec0eaaedc92cc54fbd9985d9cf7ea15a6349568c1a08708",
+  "github_markdown_render": "7 tables and 2 expandable sections verified through POST /markdown",
+  "draft_preserved": true,
+  "source_and_tag_preserved": true,
+  "git_tag_exists": false,
+  "asset_identity_and_bytes_unchanged": true,
+  "original_checksums_verified": true,
+  "asset_fingerprints": [
+    {
+      "id": 585516485,
+      "name": "SHA256SUMS",
+      "size": 1109,
+      "digest": "sha256:9b299c14330169dc30bdb8cb4cccf0a141c80c7d38782b9f39df0db693e52668"
+    },
+    {
+      "id": 585516486,
+      "name": "cyber-candidate-20260924.1-stack.tar.gz",
+      "size": 25229,
+      "digest": "sha256:b2c858b99cec59be62604ea1e694659070e14d29c50d9017532a4454e370c69b"
+    },
+    {
+      "id": 585516489,
+      "name": "cyber-candidate-20260924.1-aarch64-apple-darwin.tar.gz",
+      "size": 14554,
+      "digest": "sha256:835f5ff165f981bd1555826b7f574fc58bd9b9c22097e041a7919f1e17b94edc"
+    },
+    {
+      "id": 585516490,
+      "name": "candidate.json",
+      "size": 1980,
+      "digest": "sha256:9381eae77c01275dd9db640b695eab733b12a6a3848cb119e236fd62c85ff8c8"
+    },
+    {
+      "id": 585516491,
+      "name": "cyber-candidate-20260924.1-aarch64-unknown-linux-gnu.tar.gz",
+      "size": 14506,
+      "digest": "sha256:c28c9b553d832b91f815b72d912acf6b099318f8c0e626d35621e31301a3ad09"
+    },
+    {
+      "id": 585516499,
+      "name": "cyber-candidate-20260924.1-x86_64-unknown-linux-gnu.tar.gz",
+      "size": 14519,
+      "digest": "sha256:46e4aeef54f2776f94f35ac0f5b0a19351079289ce7141a1a09fb8d2a2dab9ff"
+    },
+    {
+      "id": 585516500,
+      "name": "cyber-candidate-20260924.1-x86_64-apple-darwin.tar.gz",
+      "size": 14499,
+      "digest": "sha256:e01b9ac9fd4da3409a9ccc60e258fe1bff14f1ce5614ddd4ce4b2d43231f03f3"
+    },
+    {
+      "id": 585516502,
+      "name": "release-notes.md",
+      "size": 13265,
+      "digest": "sha256:72bfcdea4c6b879083381acb470220d85b83acf95a703fc639a960423f1b608f"
+    },
+    {
+      "id": 585516503,
+      "name": "release-validation.json",
+      "size": 25559,
+      "digest": "sha256:17b4ca271646f59b9ead3add4917e44f50bc05ab57c91c467dca39e69ec38fd0"
+    },
+    {
+      "id": 585516505,
+      "name": "soft3-dependencies.json",
+      "size": 209692,
+      "digest": "sha256:6dd2f973d42d5bb40c4576717b37d3988aa2fe0069dded2fe6a1e8a1f2af9240"
+    },
+    {
+      "id": 585516517,
+      "name": "sources.json",
+      "size": 10403,
+      "digest": "sha256:694ff65834db06a200c350f197d1b3ec1d322eeccf1b1d9ff7af7d5d96310880"
+    },
+    {
+      "id": 585516518,
+      "name": "soft3-dependencies.md",
+      "size": 7327,
+      "digest": "sha256:5ff710c5c268634d0a161927334b01ffb1663b9fa3dab00c998417d22616ef43"
+    }
+  ]
+}
