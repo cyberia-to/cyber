@@ -437,6 +437,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-24T02:05:00Z | 16 | file | [launch #16 (4): sniff MP3, WAV, OGG and FLAC by magic bytes](https://github.com/cyberia-to/file/pull/14) | open |
 | 2026-09-24T01:56:00Z | 40 | mudra | [launch #40 (3): ecdsa::verify accepts a high-S malleable duplicate signature](https://github.com/cyberia-to/mudra/pull/16) | open |
 | 2026-09-24T02:12:06Z | 16 | file | [launch #16: sniff MP4/M4V video via ftyp major brand](https://github.com/cyberia-to/file/pull/17) | open |
+| 2026-09-24T02:19:19Z | 40 | hemera | [launch #40: verify_batch checks a caller-supplied root, not proof.root](https://github.com/cyberia-to/hemera/pull/13) | open |
 | 2026-09-24T02:04:00Z | 6 | foculus | [launch #6 (2): audit — Goldilocks VDF has no unknown-order delay guarantee](https://github.com/cyberia-to/foculus/pull/53) | open |
 | 2026-09-24T02:16:00Z | 19 | file | [launch #19: File::verified — self-authenticating particle binding](https://github.com/cyberia-to/file/pull/16) | open |
 
