@@ -412,6 +412,7 @@ pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd
 | 2026-09-23T23:44:00Z | 16 | spark | [launch #16 (6): ICO dimensions from the directory header](https://github.com/cyberia-to/spark/pull/8) | open |
 | 2026-09-23T23:47:00Z | 16 | file | [launch #16 (7): sniff TIFF images by byte-order magic](https://github.com/cyberia-to/file/pull/7) | open |
 | 2026-09-23T23:56:00Z | 16 | spark | [launch #16 (7): TIFF dimensions from the IFD](https://github.com/cyberia-to/spark/pull/9) | open |
+| 2026-09-24T00:04:59Z | 39 | file | [launch #39: confirm file builds clean against hemera's origin default](https://github.com/cyberia-to/file/pull/9) | open |
 | 2026-09-24T00:04:08Z | 16 | file | [launch #16: sniff ICO files as Kind::ImageIco](https://github.com/cyberia-to/file/pull/8) | open |
 
 ## cross-references
