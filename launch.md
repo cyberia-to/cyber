@@ -290,6 +290,20 @@ a living, self-optimizing knowledge network that learns from every form of input
 
 ## work log
 
+### release candidates · 2026-09-24
+
+Versions and verdicts below come from `candidate.json` and
+`release-validation.json` in [[audit/release-2026-09-24/README]]. Each repository
+retains its command logs and exact source inventory in its draft assets.
+
+| date (UTC) | candidate | cyber / cyb / soft3 | verdict | receipt |
+|---|---|---|---|---|
+| 2026-09-24 | soft3 candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; full native matrix, no binary | [draft](https://github.com/cyberia-to/soft3/releases) |
+| 2026-09-24 | cyber candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; full native matrix, no binary | [draft](https://github.com/cyberia-to/cyber/releases) |
+| 2026-09-24 | cyb candidate-20260924.1 | 0.8.0 / 0.15.1 / 0.10.0 | RED; macOS ARM64 checked, other targets missing; workflow PR requires review | [draft](https://github.com/cyberia-to/cyb/releases) |
+
+### launch worker pull requests
+
 pull requests from the launch workers (`scripts/launch-hour.sh`, sonnet, launchd `to.cyberia.launch-hour`): three parallel slots on lanes A, B and C, a tick every 20 minutes, up to three PRs per run, one row per PR, conflicting open PRs merged with their base first. the owner merges; a merged row flips its registry property when the evidence is in.
 
 | when (UTC) | property | repo | pull request | state |

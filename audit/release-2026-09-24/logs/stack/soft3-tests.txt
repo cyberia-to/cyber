@@ -1,0 +1,11 @@
+command: ["cargo", "test", "--locked"]
+cwd: /home/runner/work/_temp/sources/soft3/crate
+    Updating crates.io index
+error: failed to select a version for `cybergraph`.
+    ... required by package `soft3 v0.10.0 (/home/runner/work/_temp/sources/soft3/crate)`
+versions that meet the requirements `^0.1.1` (locked to 0.1.1) are: 0.1.1
+
+package `soft3` depends on `cybergraph` with feature `local-storage` but `cybergraph` does not have that feature.
+
+
+failed to select a version for `cybergraph` which could resolve this conflict

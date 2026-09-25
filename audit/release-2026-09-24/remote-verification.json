@@ -1,0 +1,81 @@
+{
+  "verified_at": "2026-09-24T08:39:13.185826+00:00",
+  "source_revision": "083871d20d30adfd1e31615b1615940ed4b9141f",
+  "manager_revision": "c5cc2077df510610abb7b5bd69675af6048ed724",
+  "commands": [
+    [
+      "gh",
+      "release",
+      "download",
+      "candidate-20260924.1",
+      "--repo",
+      "cyberia-to/cyber",
+      "--dir",
+      "/tmp/cyber-downloaded-candidate"
+    ],
+    [
+      "gh",
+      "api",
+      "repos/cyberia-to/cyber/releases",
+      "--jq",
+      ".[]|select(.tag_name==\"candidate-20260924.1\")|{id,draft,prerelease,tag_name,target_commitish,html_url,assets:[.assets[]|{name,size,digest}]}"
+    ],
+    [
+      "git",
+      "ls-remote",
+      "--tags",
+      "https://github.com/cyberia-to/cyber.git",
+      "refs/tags/candidate-20260924.1"
+    ]
+  ],
+  "verification": "Python hashlib.sha256 over every downloaded entry in SHA256SUMS; compare asset name sets, target revision and draft state",
+  "result": "green",
+  "candidate_result": "red",
+  "tag_exists": false,
+  "assets": [
+    {
+      "name": "candidate.json",
+      "sha256": "9381eae77c01275dd9db640b695eab733b12a6a3848cb119e236fd62c85ff8c8"
+    },
+    {
+      "name": "cyber-candidate-20260924.1-aarch64-apple-darwin.tar.gz",
+      "sha256": "835f5ff165f981bd1555826b7f574fc58bd9b9c22097e041a7919f1e17b94edc"
+    },
+    {
+      "name": "cyber-candidate-20260924.1-aarch64-unknown-linux-gnu.tar.gz",
+      "sha256": "c28c9b553d832b91f815b72d912acf6b099318f8c0e626d35621e31301a3ad09"
+    },
+    {
+      "name": "cyber-candidate-20260924.1-stack.tar.gz",
+      "sha256": "b2c858b99cec59be62604ea1e694659070e14d29c50d9017532a4454e370c69b"
+    },
+    {
+      "name": "cyber-candidate-20260924.1-x86_64-apple-darwin.tar.gz",
+      "sha256": "e01b9ac9fd4da3409a9ccc60e258fe1bff14f1ce5614ddd4ce4b2d43231f03f3"
+    },
+    {
+      "name": "cyber-candidate-20260924.1-x86_64-unknown-linux-gnu.tar.gz",
+      "sha256": "46e4aeef54f2776f94f35ac0f5b0a19351079289ce7141a1a09fb8d2a2dab9ff"
+    },
+    {
+      "name": "release-notes.md",
+      "sha256": "72bfcdea4c6b879083381acb470220d85b83acf95a703fc639a960423f1b608f"
+    },
+    {
+      "name": "release-validation.json",
+      "sha256": "17b4ca271646f59b9ead3add4917e44f50bc05ab57c91c467dca39e69ec38fd0"
+    },
+    {
+      "name": "soft3-dependencies.json",
+      "sha256": "6dd2f973d42d5bb40c4576717b37d3988aa2fe0069dded2fe6a1e8a1f2af9240"
+    },
+    {
+      "name": "soft3-dependencies.md",
+      "sha256": "5ff710c5c268634d0a161927334b01ffb1663b9fa3dab00c998417d22616ef43"
+    },
+    {
+      "name": "sources.json",
+      "sha256": "694ff65834db06a200c350f197d1b3ec1d322eeccf1b1d9ff7af7d5d96310880"
+    }
+  ]
+}

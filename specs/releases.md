@@ -7,45 +7,36 @@ crystal-domain: cyber
 
 # Cyber releases
 
-Cyber consumes the [soft3 release contract](https://github.com/cyberia-to/soft3/blob/main/specs/releases.md).
-`release/soft3.toml` pins its version and full source revision; the Release train
-workflow uses the same revision. Soft3 owns stack qualification and dependency
-pins. Cyber adds executable acceptance and protocol graph compilation.
+Cyber selects one concrete [soft3 build](https://github.com/cyberia-to/soft3/blob/main/specs/releases.md)
+through `release/soft3.toml`: build name, GitHub release ID and SHA256SUMS digest,
+plus the expected version and source revision. The authenticated build fixes all
+stack component revisions and supplies their original qualification verdict.
 
-Friday 12:00 UTC, or manual dispatch, captures default-branch origin inputs and
-creates `candidate-YYYYMMDD.N` as a GitHub draft prerelease. A rehearsal uses
-`cut=false`. Native runners target macOS and Linux, ARM64 and x64. Failed gates
-retain available artifacts and red receipts. The owner decides promotion and
-pushes version tags. Automation creates drafts only.
+A product cut captures Cyber's own default-branch source, downloads and verifies
+the selected soft3 evidence, and checks out that exact source assembly. Cyber's
+Cargo path dependencies resolve inside it. The shared engine is pinned separately
+in `.github/workflows/release-train.yml`; changing that tool leaves the selected
+stack build intact. External packages remain governed by Cargo.lock; stack-owned
+crates must resolve from the selected assembly.
 
-## evidence
+Cyber runs locked Cargo tests, formatting, the release build, process acceptance
+against that binary, and optica/protocol graph compilation. Soft3's recorded stack
+qualification is inherited. A RED stack keeps Cyber RED even when Cyber's own
+gates pass. The standalone development `sources.lock.json` remains development
+provenance; the release train takes its authority from the selected soft3 build.
 
-Every candidate includes `SHA256SUMS`, `sources.json`, `candidate.json`,
-`release-validation.json`, `soft3-dependencies.json` and `soft3-dependencies.md`.
-The release description includes the dependency inventory. Platform archives
-include the executable when built, exact source/package inventories and command
-logs. Missing binaries, failed package resolution, drifted pins and blocked gates
-remain explicit. Collection checks all platform receipts and their checksums.
+Every candidate carries `SHA256SUMS`, `sources.json`, `candidate.json`,
+`release-validation.json`, `soft3-dependencies.json`, `soft3-dependencies.md`,
+`soft3-build.json` and `soft3-build.tar.gz`. The last two retain the build pin and
+original upstream evidence. Source or checksum substitution fails closed. All
+native platforms must supply matching receipts and a binary for a green verdict.
 
-The inventory covers the common source set plus resolved package closure.
-Manifest declarations are labelled separately when resolution fails. The product
-contract in [[specs/node-product]] defines runtime capabilities.
+Friday 12:00 UTC or manual dispatch creates `candidate-YYYYMMDD.N` as a draft
+prerelease; `cut=false` records a rehearsal. Public soft3 releases require no
+cross-repository secret. Reading a soft3 draft requires `SOFT3_READ_TOKEN` with
+read access to that repository. Existing candidate assets remain unchanged.
 
-## gates
-
-Soft3 component and conformance gates must pass. Cyber additionally runs:
-
-- `cargo test --locked`;
-- `nu scripts/release.nu --locked-sources`, including process acceptance;
-- locked optica builder compilation and `optica build` on the protocol graph;
-- matching `release/soft3.toml`, unchanged source inputs and complete inventories.
-
-The Node workflow remains development CI for the [node source lock](node-sources.md).
-Its feature-branch inputs must converge with default branches before the common
-release train can turn green. Its artifacts alone do not satisfy the common
-candidate contract.
-
-From candidate cut until owner verdict, default branches of soft3, cyber and cyb
-are frozen. Candidate fixes and receipts go on `release/<date>`, with receipts in
-`audit/release-<date>/` and a work-log entry in [[launch]]. Version and pin changes
-follow the coordinated bump PR rule in [[cyberia/dev]].
+From cut until owner verdict, default branches remain frozen. Candidate fixes
+and receipts go to `release/<date>` and `audit/release-<date>/`. The owner merges
+build/version bumps, promotes candidates and pushes version tags. See
+[[specs/node-product]], [[specs/cyb-node]] and [[cyberia/dev]].

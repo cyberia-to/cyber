@@ -1,0 +1,12 @@
+command: ["nu", "scripts/release.nu", "--locked-sources"]
+cwd: /Users/runner/work/_temp/sources/cyber
+Error: nu::shell::error
+
+  x source revision mismatch: bbg
+    ,-[/Users/runner/work/_temp/sources/cyber/analizer/node-sources.nu:75:24]
+ 74 |         if $actual != $repo.revision {
+ 75 |             error make {msg: $"source revision mismatch: ($repo.directory)"}
+    :                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 76 |         }
+    `----
+

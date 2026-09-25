@@ -1,0 +1,11 @@
+command: ["cargo", "test", "--locked"]
+cwd: /home/runner/work/_temp/sources/vault
+    Updating crates.io index
+error: failed to select a version for `cybergraph`.
+    ... required by package `cyber-vault v0.1.0 (/home/runner/work/_temp/sources/vault)`
+versions that meet the requirements `*` (locked to 0.1.1) are: 0.1.1
+
+package `cyber-vault` depends on `cybergraph` with feature `local-storage` but `cybergraph` does not have that feature.
+
+
+failed to select a version for `cybergraph` which could resolve this conflict

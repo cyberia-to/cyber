@@ -1,0 +1,6 @@
+command: ["cargo", "conformance", "--check"]
+cwd: /home/runner/work/_temp/sources/soft3
+error: no such command: `conformance`
+
+help: view all installed commands with `cargo --list`
+help: find a package to install `conformance` with `cargo search cargo-conformance`

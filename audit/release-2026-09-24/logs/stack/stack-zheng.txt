@@ -1,0 +1,13 @@
+command: ["cargo", "test", "--locked"]
+cwd: /home/runner/work/_temp/sources/zheng/rs
+error: failed to load manifest for workspace member `/home/runner/work/_temp/sources/zheng/cli`
+referenced by workspace at `/home/runner/work/_temp/sources/zheng/Cargo.toml`
+
+Caused by:
+  failed to load manifest for dependency `cyber-tape`
+
+Caused by:
+  failed to read `/home/runner/work/_temp/sources/tape/impl/rust/Cargo.toml`
+
+Caused by:
+  No such file or directory (os error 2)
