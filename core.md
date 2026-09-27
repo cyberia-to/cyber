@@ -26,7 +26,7 @@ the semantic core of [[cyber]] — the irreducible set of concepts that explain 
 
 [[cyberlink]]: [[pay]], [[lock]], [[update]], [[mint]], [[burn]]
 
-[[vimputer]]: [[time]], [[step]], [[state]], [[consensus]], [[finality]], [[tri-kernel]], [[tru]], [[cyberank]]
+[[vimputer]]: [[time]], [[step]], [[block]], [[epoch]], [[state]], [[consensus]], [[finality]], [[tri-kernel]], [[tru]], [[cyberank]]
 
 [[knowledge]]: [[observation]], [[learning]], [[inference]], [[training]], [[neural]], [[crystal]], [[memory]]
 
