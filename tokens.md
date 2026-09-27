@@ -23,7 +23,7 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 | genesis supply | 1.87 × 10¹⁷ ¹ | 482.3T ² | 10¹⁸ ² |
 | cap | p = 2⁶⁴ − 2³² + 1 | policy | none |
 | ΔS_E | ultrasound | up fast, then flat | up for years |
-| emission ³ | by time, to φ* | 3× base in year 1 | 9× base in year 1, halving, floor 3 %/yr |
+| emission ³ | by time, to φ* | 3× base in year 1 | 9× base in year 1, then halving |
 | receives | mining · subsidy · annuity | same; founder passive | same + availability |
 | link write | lock | burn b(fill) | lock |
 | link life | until unlock | forever | until unlock |
