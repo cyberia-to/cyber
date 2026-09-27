@@ -15,7 +15,7 @@ the policy of each chain is one identity per epoch, ΔS_E = M_E − B_E, and a r
 
 figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch and are open until the genesis files fix them. halt figures are from the burial at height 25,120,712 ([snapshot.bostrom.network](https://snapshot.bostrom.network)).
 
-| parameter | $CYB | $BOOT | $PUSSY |
+| parameter | \$CYB | \$BOOT | \$PUSSY |
 |---|---|---|---|
 | chain | [[cyber]] | [[bostrom]] | [[space pussy]] |
 | launch | phase 3, after the canary | 2026-11-05 13:22:42 UTC | 2026-11-05 13:37 UTC |
@@ -32,14 +32,14 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 | stake weight per neuron | √-stake | *proposed* capped at 5 % of effective stake | √-stake |
 | founder | — | endowment: the passport contract's 8.97T and the founder's excess above 10 %, locked with v = 0, burned on a ten-year schedule against an equal mint to work (ΔS = 0, owner changes) | none; snapshot as is |
 | dormant genesis balances | — | burned after K = one year of epochs | burned and re-minted into the subsidy budget after K |
-| root fee | — | receives: registering a network or a book, and every checkpointed epoch of a child chain, is a burn of $BOOT | pays: registration and checkpoints in $BOOT |
+| root fee | — | receives: registering a network or a book, and every checkpointed epoch of a child chain, is a burn of \$BOOT | pays: registration and checkpoints in \$BOOT |
 | referral r (a parameter of the root; applies to every book registered in it) | — | *proposed* 2 % of the book's flow; for devices booted from the kernel the endowment is the referrer | *proposed* 10 % of the book's flow, forever |
 | personal books register | — | only when a book needs a place in the kernel | by default |
 | parameters after genesis | fixed | fixed: a kernel does not vote | adjustable per epoch by stake, method open |
 
 the referral is a property of the root, not of the book: a book has no supply at birth, its unit exists only by mint against Δφ⁺ inside it, and the referrer's right is r of every mint and every fee of that book for as long as it lives, computed in fixed point by [[plumb]]. an empty book yields nothing, so the right cannot be farmed. r differs between the roots because the roots want different things: the kernel wants few, deliberate registrations; the community wants many.
 
-the two chains are bound by one obligation only, the root fee: a child pays the kernel in $BOOT for its name and its finality, and the kernel re-emits nothing for it. everything else is a mirror image: bostrom burns, pussy locks; bostrom destroys the dormant, pussy redistributes it; bostrom's parameters are frozen, pussy's are a vote.
+the two chains are bound by one obligation only, the root fee: a child pays the kernel in \$BOOT for its name and its finality, and the kernel re-emits nothing for it. everything else is a mirror image: bostrom burns, pussy locks; bostrom destroys the dormant, pussy redistributes it; bostrom's parameters are frozen, pussy's are a vote.
 
 ## before: the tokens of the bootloader era
 
@@ -47,18 +47,18 @@ the idea arrived in 2016 as cyberChain. the euler network put pagerank inside co
 
 | token | denom | role | at halt |
 |---|---|---|---|
-| [[bootloader/tokens/$BOOT|$BOOT]] | `boot` | consensus and governance; 1.09 % inflation; bonding created $H 1:1 | 482,287,925,778,234 |
-| [[bootloader/tokens/$H|$H]] | `hydrogen` | liquid staking derivative and the everyday unit; burned to mint $V and $A | 305,452,862,328,021 |
-| [[bootloader/tokens/$V|$V]] | `millivolt` | will, bandwidth: a cyberlink burned $V at the dynamic bandwidth price; price doubled every 4B ever minted | 2,182,319,343 |
+| [[bootloader/tokens/$BOOT|$BOOT]] | `boot` | consensus and governance; 1.09 % inflation; bonding created \$H 1:1 | 482,287,925,778,234 |
+| [[bootloader/tokens/$H|$H]] | `hydrogen` | liquid staking derivative and the everyday unit; burned to mint \$V and \$A | 305,452,862,328,021 |
+| [[bootloader/tokens/$V|$V]] | `millivolt` | will, bandwidth: a cyberlink burned \$V at the dynamic bandwidth price; price doubled every 4B ever minted | 2,182,319,343 |
 | [[bootloader/tokens/$A|$A]] | `milliampere` | focus: weighted a neuron's links in the GPU diffusion; never burned by linking; price doubled every 32B | 13,889,231,915 |
-| [[bootloader/tokens/$TOCYB|$TOCYB]] | `tocyb` | the promise: hold tocyb, receive $CYB when the network arrives; 30 % entered genesis, 70 % stayed unallocated | 281,405,532,467,645 → × 666 = $CYB genesis |
+| [[bootloader/tokens/$TOCYB|$TOCYB]] | `tocyb` | the promise: hold tocyb, receive \$CYB when the network arrives; 30 % entered genesis, 70 % stayed unallocated | 281,405,532,467,645 → × 666 = \$CYB genesis |
 | [[bostrom/root/lithium|$LI]] | cw-20 | the late gateway token: 1 peta, stepped-decay emission, 1 % burn per transfer, 10 % to referrals | — |
 
-distribution at genesis followed one structure for $BOOT and $TOCYB: [[cybergift]] 70 %, [[cybercongress]] 11.6 %, epizode zero community 8.3 %, senate 5.1 %, great web foundation 5 %. most of the gift stayed parked in multisigs through the five years (the ledger is [[finalization of $BOOT distribution]]: 603T $BOOT and 700T $TOCYB in the gift multisig, 148T claimed through prog), which is why control of the majority of $BOOT ended with the founder, and why the bootloader's first job after rebirth is to dilute that by work.
+distribution at genesis followed one structure for \$BOOT and \$TOCYB: [[cybergift]] 70 %, [[cybercongress]] 11.6 %, epizode zero community 8.3 %, senate 5.1 %, great web foundation 5 %. most of the gift stayed parked in multisigs through the five years (the ledger is [[finalization of $BOOT distribution]]: 603T \$BOOT and 700T \$TOCYB in the gift multisig, 148T claimed through prog), which is why control of the majority of \$BOOT ended with the founder, and why the bootloader's first job after rebirth is to dilute that by work.
 
-[[space pussy]] launched in 2022 as the community-led soft3 computer with a total supply of 1 exa $PUSSY: 18 heroes at 0.1 % each, the rest in a community pool meant as gifts to the most active cosmos communities. it mirrored bostrom's structure with [[$CUM]] (liquid fuel), [[$VIP]] (will) and [[$AM]] (focus). it halted with 29,112 links recovered and is reborn as the canary.
+[[space pussy]] launched in 2022 as the community-led soft3 computer with a total supply of 1 exa \$PUSSY: 18 heroes at 0.1 % each, the rest in a community pool meant as gifts to the most active cosmos communities. it mirrored bostrom's structure with [[$CUM]] (liquid fuel), [[$VIP]] (will) and [[$AM]] (focus). it halted with 29,112 links recovered and is reborn as the canary.
 
-the resource tokens do not return. $H, $V, $A and their pussy mirrors were the bootloader's way to price bandwidth and focus with separate denominations; the reborn chains price them with the mechanisms of [[rewards|rewards]]: the ICBS position on a link is the spam cost, the surprise gate ρ is the novelty price, stake on two axes moves rank, and the annuity pays foundational links as the graph grows around them. what the resource tokens held at halt enters the genesis bond, so no holder loses what those balances meant.
+the resource tokens do not return. \$H, \$V, \$A and their pussy mirrors were the bootloader's way to price bandwidth and focus with separate denominations; the reborn chains price them with the mechanisms of [[rewards|rewards]]: the ICBS position on a link is the spam cost, the surprise gate ρ is the novelty price, stake on two axes moves rank, and the annuity pays foundational links as the graph grows around them. what the resource tokens held at halt enters the genesis bond, so no holder loses what those balances meant.
 
 ## outside
 
