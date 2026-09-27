@@ -32,7 +32,7 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 | founder ⁵ | — | endowment | — |
 | dormant ⁶ | — | burn | burn → subsidy |
 | root fee ⁷ | — | receives | pays |
-| referral ⁸ | — | r = 2 % | r = 10 % |
+| referral ⁸ | r = 10 % | r = 10 % | r = 10 % |
 | books register | — | by need | by default |
 | parameters | fixed | fixed | vote |
 
@@ -40,11 +40,11 @@ figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch 
 2. at halt, bonded uniformly from the snapshot; milliampere and millivolt counted in the bond.
 3. *proposed.* bostrom mints 3× the halt base in the first year, half of it in the first quarter, then nothing: it dilutes the founder's ≈ 60 % without touching a balance, because passive stake earns rank and never income (§9), and emission goes only to work (mining §7, subsidy §8, annuity). pussy mints 9× the halt base in the first year, then halves each year to a floor of 3 %/yr: a community chain can afford what the root money cannot. cyber's emission is a function of time alone; who receives it is a function of φ*.
 4. *proposed.* weight in rank and consensus per neuron: √-stake on cyber and pussy, a hard cap of 5 % of effective stake on the kernel. owning 60 % never weighs 60 %.
-5. *proposed.* the passport contract's 8.97T and the founder's excess above 10 %, locked with v = 0, burned on a ten-year schedule against an equal mint to work: ΔS = 0, the owner changes. for devices booted from the kernel the endowment is the referrer.
+5. *proposed.* the passport contract's 8.97T and the founder's excess above 10 %, locked with v = 0, burned on a ten-year schedule against an equal mint to work: ΔS = 0, the owner changes. for devices booted from the kernel the endowment is the referrer and receives the same r.
 6. after K = one year of epochs, unclaimed genesis balances burn on bostrom; on pussy they burn and re-mint into the subsidy budget, to work, never to heads.
 7. registering a network or a book in the kernel, and every checkpointed epoch of a child chain, is a burn of \$BOOT; pussy pays it, bostrom re-emits nothing for it. the only obligation between the two chains.
-8. see below: the book premints its own token at birth and r of it goes to the referrer.
-the referral is a premint. when a neuron's book is born it mints its own token, \$ν, a fixed birth amount G in the neuron's name, and a share r of that premint goes to the referrer, the neuron whose registration cyberlink created the book. the share is an ordinary balance: it can be held, transferred, sold, staked back into the book. holding \$ν is the right to a pro-rata share of the fees the book collects for as long as it lives, so the referrer is paid from the referee's own economy and in the referee's own token. a book nobody uses collects no fees, and its token is worth nothing, which is what keeps the referral Sybil-neutral: registering a thousand empty books yields a thousand worthless premints. r is set by the root the book registers in (the kernel wants few, deliberate registrations; the community wants many), G is one number per root, and both are [[plumb]] mint operations at birth, nothing more.
+8. *proposed.* the referral is a property of the book, not of the root: every personal book premints its own token \$ν at birth and r = 10 % of that premint goes to the referrer, wherever the book registers. the root's coin is not involved, so there is nothing for the roots to differ on. detail below.
+the referral is a premint. when a neuron's book is born it mints its own token, \$ν, a fixed birth amount G in the neuron's name, and r = 10 % of that premint goes to the referrer, the neuron whose registration cyberlink created the book. the share is an ordinary balance: it can be held, transferred, sold, staked back into the book. holding \$ν is the right to a pro-rata share of the fees the book collects for as long as it lives, so the referrer is paid from the referee's own economy and in the referee's own token. a book nobody uses collects no fees, and its token is worth nothing, which is what keeps the referral Sybil-neutral: registering a thousand empty books yields a thousand worthless premints. r and G are two constants of the book, the same in every root, and both are [[plumb]] mint operations at birth, nothing more.
 
 the two chains are bound by one obligation only, the root fee: a child pays the kernel in \$BOOT for its name and its finality, and the kernel re-emits nothing for it. everything else is a mirror image: bostrom burns, pussy locks; bostrom destroys the dormant, pussy redistributes it; bostrom's parameters are frozen, pussy's are a vote.
 
