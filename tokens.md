@@ -15,28 +15,35 @@ the policy of each chain is one identity per epoch, ΔS_E = M_E − B_E, and a r
 
 figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch and are open until the genesis files fix them. halt figures are from the burial at height 25,120,712 ([snapshot.bostrom.network](https://snapshot.bostrom.network)).
 
-| parameter | \$CYB | \$BOOT | \$PUSSY |
+| | \$CYB | \$BOOT | \$PUSSY |
 |---|---|---|---|
 | chain | [[cyber]] | [[bostrom]] | [[space pussy]] |
-| launch | phase 3, after the canary | 2026-11-05 13:22:42 UTC | 2026-11-05 13:37 UTC |
-| job | root money of the superintelligence | the bootloader: small, crystalline, boots devices | the community: expansive, fast, fun |
-| genesis supply | 1.87 × 10¹⁷ (every tocyb × 666, ≈ 1 % of the cap) | 482.3T at halt, bonded uniformly from the snapshot, milliampere and millivolt counted in the bond | 1 exa at halt (10¹⁸), same rule |
-| cap | the Goldilocks field order p = 2⁶⁴ − 2³² + 1 | none by arithmetic; bounded by policy | none |
-| sign of ΔS_E | ultrasound: burn can exceed emission | positive and fast at genesis, then flat | positive and large for years |
-| emission | a function of time alone; who receives it is a function of φ* | *proposed*: mint 3× the halt base in the first year, half of it in the first quarter, then 0 | *proposed*: mint 9× the halt base in the first year, then halve each year to a floor of 3 %/yr |
-| why that emission | scarcity is arithmetic, not policy | dilute the founder's ≈ 60 % without touching anyone's balance; a working network owns the kernel | a community chain can afford what the root money cannot |
-| who receives emission | settlement mining (§7), subsidy (§8), annuity; passive stake earns rank, never income | the same three streams; the founder's stake, passive, earns nothing and dilutes | the same, plus paid availability (serving bytes by particle, proven) |
-| writing a link | lock (ICBS position), returns on exit; a burn makes it eternal | burn b(fill) = b₀ · fill / (1 − fill); every kernel link is eternal | lock; eternal only by explicit burn |
-| graph capacity | unbounded | *proposed* 2²² links (4.19M; 2.95M at halt); the tail by φ* is evicted, no refund | unbounded |
-| link lifetime | until unlock or eviction by φ* | forever | until unlock or eviction by φ* |
-| stake weight per neuron | √-stake | *proposed* capped at 5 % of effective stake | √-stake |
-| founder | — | endowment: the passport contract's 8.97T and the founder's excess above 10 %, locked with v = 0, burned on a ten-year schedule against an equal mint to work (ΔS = 0, owner changes) | none; snapshot as is |
-| dormant genesis balances | — | burned after K = one year of epochs | burned and re-minted into the subsidy budget after K |
-| root fee | — | receives: registering a network or a book, and every checkpointed epoch of a child chain, is a burn of \$BOOT | pays: registration and checkpoints in \$BOOT |
-| referral (the book premints its own token at birth; the referrer's share is transferable and tradable) | — | *proposed* r = 2 % of the birth premint; for devices booted from the kernel the endowment is the referrer | *proposed* r = 10 % of the birth premint |
-| personal books register | — | only when a book needs a place in the kernel | by default |
-| parameters after genesis | fixed | fixed: a kernel does not vote | adjustable per epoch by stake, method open |
+| launch | phase 3 | 2026-11-05 13:22:42 UTC | 2026-11-05 13:37 UTC |
+| job | root money | bootloader, crystal | community, expansion |
+| genesis supply | 1.87 × 10¹⁷ ¹ | 482.3T ² | 10¹⁸ ² |
+| cap | p = 2⁶⁴ − 2³² + 1 | policy | none |
+| ΔS_E | ultrasound | up fast, then flat | up for years |
+| emission ³ | by time, to φ* | 3× base in year 1 | 9× base in year 1, halving, floor 3 %/yr |
+| receives | mining · subsidy · annuity | same; founder passive | same + availability |
+| link write | lock | burn b(fill) | lock |
+| link life | until unlock | forever | until unlock |
+| capacity | ∞ | 2²² links | ∞ |
+| stake cap ⁴ | √ | 5 % | √ |
+| founder ⁵ | — | endowment | — |
+| dormant ⁶ | — | burn | burn → subsidy |
+| root fee ⁷ | — | receives | pays |
+| referral ⁸ | — | r = 2 % | r = 10 % |
+| books register | — | by need | by default |
+| parameters | fixed | fixed | vote |
 
+1. every tocyb × 666, ≈ 1 % of the cap; the promise of the bootloader resolved.
+2. at halt, bonded uniformly from the snapshot; milliampere and millivolt counted in the bond.
+3. *proposed.* bostrom mints 3× the halt base in the first year, half of it in the first quarter, then nothing: it dilutes the founder's ≈ 60 % without touching a balance, because passive stake earns rank and never income (§9), and emission goes only to work (mining §7, subsidy §8, annuity). pussy mints 9× the halt base in the first year, then halves each year to a floor of 3 %/yr: a community chain can afford what the root money cannot. cyber's emission is a function of time alone; who receives it is a function of φ*.
+4. *proposed.* weight in rank and consensus per neuron: √-stake on cyber and pussy, a hard cap of 5 % of effective stake on the kernel. owning 60 % never weighs 60 %.
+5. *proposed.* the passport contract's 8.97T and the founder's excess above 10 %, locked with v = 0, burned on a ten-year schedule against an equal mint to work: ΔS = 0, the owner changes. for devices booted from the kernel the endowment is the referrer.
+6. after K = one year of epochs, unclaimed genesis balances burn on bostrom; on pussy they burn and re-mint into the subsidy budget, to work, never to heads.
+7. registering a network or a book in the kernel, and every checkpointed epoch of a child chain, is a burn of \$BOOT; pussy pays it, bostrom re-emits nothing for it. the only obligation between the two chains.
+8. see below: the book premints its own token at birth and r of it goes to the referrer.
 the referral is a premint. when a neuron's book is born it mints its own token, \$ν, a fixed birth amount G in the neuron's name, and a share r of that premint goes to the referrer, the neuron whose registration cyberlink created the book. the share is an ordinary balance: it can be held, transferred, sold, staked back into the book. holding \$ν is the right to a pro-rata share of the fees the book collects for as long as it lives, so the referrer is paid from the referee's own economy and in the referee's own token. a book nobody uses collects no fees, and its token is worth nothing, which is what keeps the referral Sybil-neutral: registering a thousand empty books yields a thousand worthless premints. r is set by the root the book registers in (the kernel wants few, deliberate registrations; the community wants many), G is one number per root, and both are [[plumb]] mint operations at birth, nothing more.
 
 the two chains are bound by one obligation only, the root fee: a child pays the kernel in \$BOOT for its name and its finality, and the kernel re-emits nothing for it. everything else is a mirror image: bostrom burns, pussy locks; bostrom destroys the dormant, pussy redistributes it; bostrom's parameters are frozen, pussy's are a vote.
