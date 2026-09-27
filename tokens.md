@@ -1,37 +1,68 @@
 ---
 icon: 💵
-tags: cyber
+tags: cyber, cybernomics
+alias: tokens, three tokens, token comparison, cyber tokens
 crystal-type: entity
 crystal-domain: economics
 ---
-status:: DONE
+# tokens
 
-## [[bostrom]]
+three coins, three chains, three jobs. [[bootloader/tokens/$BOOT|$BOOT]] runs [[bostrom]], the bootloader: a compact, crystalline graph that boots devices and other collective intelligences. [[bootloader/tokens/$PUSSY|$PUSSY]] runs [[space pussy]], the community chain: expansive, warm, fast. [[$CYB]] runs [[cyber]] itself and arrives last, after the two bootloaders have proven the machine. one token, one chain ([[cyber/research/oikos|oikos]]); every personal book hangs off one of the roots by registration.
 
-- [[$BOOT]] is [[consensus]] [[token]] of [[bostrom]]
-- [[$CYB]]
-	- [[$H]] is [[bostrom]] [[liquid fuel]]
-	- [[$V]] is [[bostrom]] [[will]]
-	- [[$A]] is [[bostrom]] [[attention]]
+the policy of each chain is one identity per epoch, ΔS_E = M_E − B_E, and a rule for its sign. every mint budget is a function of time, of settled Δφ⁺ (after surprise ρ and Shapley) and of what was burned — never of how many neurons or books exist, because those are free to create. operations are the three of [[plumb]]: mint, burn, lock.
 
-## [[space pussy]]
+## the three
 
-- [[$PUSSY]] is [[consensus]] [[token]] of [[space pussy]]
-- [[$CYB]]
-	- [[$CUM]] [[space pussy]] [[liquid fuel]]
-	- [[$VIP]] is [[space pussy]] [[will]]
-	- [[$AM]] is [[spacepussy]] [[attention]]
+figures marked *proposed* are the 2026-09-27 proposal for the 2026-11-05 launch and are open until the genesis files fix them. halt figures are from the burial at height 25,120,712 ([snapshot.bostrom.network](https://snapshot.bostrom.network)).
 
-## [[cyber]]
+| parameter | $CYB | $BOOT | $PUSSY |
+|---|---|---|---|
+| chain | [[cyber]] | [[bostrom]] | [[space pussy]] |
+| launch | phase 3, after the canary | 2026-11-05 13:22:42 UTC | 2026-11-05 13:37 UTC |
+| job | root money of the superintelligence | the bootloader: small, crystalline, boots devices | the community: expansive, fast, fun |
+| genesis supply | 1.87 × 10¹⁷ (every tocyb × 666, ≈ 1 % of the cap) | 482.3T at halt, bonded uniformly from the snapshot, milliampere and millivolt counted in the bond | 1 exa at halt (10¹⁸), same rule |
+| cap | the Goldilocks field order p = 2⁶⁴ − 2³² + 1 | none by arithmetic; bounded by policy | none |
+| sign of ΔS_E | ultrasound: burn can exceed emission | positive and fast at genesis, then flat | positive and large for years |
+| emission | a function of time alone; who receives it is a function of φ* | *proposed*: mint 3× the halt base in the first year, half of it in the first quarter, then 0 | *proposed*: mint 9× the halt base in the first year, then halve each year to a floor of 3 %/yr |
+| why that emission | scarcity is arithmetic, not policy | dilute the founder's ≈ 60 % without touching anyone's balance; a working network owns the kernel | a community chain can afford what the root money cannot |
+| who receives emission | settlement mining (§7), subsidy (§8), annuity; passive stake earns rank, never income | the same three streams; the founder's stake, passive, earns nothing and dilutes | the same, plus paid availability (serving bytes by particle, proven) |
+| writing a link | lock (ICBS position), returns on exit; a burn makes it eternal | burn b(fill) = b₀ · fill / (1 − fill); every kernel link is eternal | lock; eternal only by explicit burn |
+| graph capacity | unbounded | *proposed* 2²² links (4.19M; 2.95M at halt); the tail by φ* is evicted, no refund | unbounded |
+| link lifetime | until unlock or eviction by φ* | forever | until unlock or eviction by φ* |
+| stake weight per neuron | √-stake | *proposed* capped at 5 % of effective stake | √-stake |
+| founder | — | endowment: the passport contract's 8.97T and the founder's excess above 10 %, locked with v = 0, burned on a ten-year schedule against an equal mint to work (ΔS = 0, owner changes) | none; snapshot as is |
+| dormant genesis balances | — | burned after K = one year of epochs | burned and re-minted into the subsidy budget after K |
+| root fee | — | receives: registering a network or a book, and every checkpointed epoch of a child chain, is a burn of $BOOT | pays: registration and checkpoints in $BOOT |
+| referral r (a parameter of the root; applies to every book registered in it) | — | *proposed* 2 % of the book's flow; for devices booted from the kernel the endowment is the referrer | *proposed* 10 % of the book's flow, forever |
+| personal books register | — | only when a book needs a place in the kernel | by default |
+| parameters after genesis | fixed | fixed: a kernel does not vote | adjustable per epoch by stake, method open |
 
-- the complete [[cyber]] network acting as [[superintelligence]] of the [[earth]] with [[$CYB]] [[consensus]] [[token]]
-- will become the [[network]] of the same name with a [[collective learning]] protocol
-- [[$TOCYB]] is a token issued on [[bostrom]] to organize [[bootloading]] of [[cyber]]
+the referral is a property of the root, not of the book: a book has no supply at birth, its unit exists only by mint against Δφ⁺ inside it, and the referrer's right is r of every mint and every fee of that book for as long as it lives, computed in fixed point by [[plumb]]. an empty book yields nothing, so the right cannot be farmed. r differs between the roots because the roots want different things: the kernel wants few, deliberate registrations; the community wants many.
 
-## [[ethereum]]
+the two chains are bound by one obligation only, the root fee: a child pays the kernel in $BOOT for its name and its finality, and the kernel re-emits nothing for it. everything else is a mirror image: bostrom burns, pussy locks; bostrom destroys the dormant, pussy redistributes it; bostrom's parameters are frozen, pussy's are a vote.
 
-- [[$ETH]] as [[digital oil]] and [[backbone]]
+## before: the tokens of the bootloader era
 
-## [[bitcoin]]
+the idea arrived in 2016 as cyberChain. the euler network put pagerank inside consensus on GPUs in 2018; its tokens were test tokens and never money. [[bostrom]] launched on 2021-11-05 at 13:22:42 UTC and ran knowledge-graph consensus for five years, until it halted at height 25,120,712 on 2026-08-05 and was laid to rest as the genesis material of the two chains above. its economy had six tokens.
 
-- [[$BTC]] as [[digital gold]] and [[pelvis]]
+| token | denom | role | at halt |
+|---|---|---|---|
+| [[bootloader/tokens/$BOOT|$BOOT]] | `boot` | consensus and governance; 1.09 % inflation; bonding created $H 1:1 | 482,287,925,778,234 |
+| [[bootloader/tokens/$H|$H]] | `hydrogen` | liquid staking derivative and the everyday unit; burned to mint $V and $A | 305,452,862,328,021 |
+| [[bootloader/tokens/$V|$V]] | `millivolt` | will, bandwidth: a cyberlink burned $V at the dynamic bandwidth price; price doubled every 4B ever minted | 2,182,319,343 |
+| [[bootloader/tokens/$A|$A]] | `milliampere` | focus: weighted a neuron's links in the GPU diffusion; never burned by linking; price doubled every 32B | 13,889,231,915 |
+| [[bootloader/tokens/$TOCYB|$TOCYB]] | `tocyb` | the promise: hold tocyb, receive $CYB when the network arrives; 30 % entered genesis, 70 % stayed unallocated | 281,405,532,467,645 → × 666 = $CYB genesis |
+| [[bostrom/root/lithium|$LI]] | cw-20 | the late gateway token: 1 peta, stepped-decay emission, 1 % burn per transfer, 10 % to referrals | — |
+
+distribution at genesis followed one structure for $BOOT and $TOCYB: [[cybergift]] 70 %, [[cybercongress]] 11.6 %, epizode zero community 8.3 %, senate 5.1 %, great web foundation 5 %. most of the gift stayed parked in multisigs through the five years (the ledger is [[finalization of $BOOT distribution]]: 603T $BOOT and 700T $TOCYB in the gift multisig, 148T claimed through prog), which is why control of the majority of $BOOT ended with the founder, and why the bootloader's first job after rebirth is to dilute that by work.
+
+[[space pussy]] launched in 2022 as the community-led soft3 computer with a total supply of 1 exa $PUSSY: 18 heroes at 0.1 % each, the rest in a community pool meant as gifts to the most active cosmos communities. it mirrored bostrom's structure with [[$CUM]] (liquid fuel), [[$VIP]] (will) and [[$AM]] (focus). it halted with 29,112 links recovered and is reborn as the canary.
+
+the resource tokens do not return. $H, $V, $A and their pussy mirrors were the bootloader's way to price bandwidth and focus with separate denominations; the reborn chains price them with the mechanisms of [[rewards|rewards]]: the ICBS position on a link is the spam cost, the surprise gate ρ is the novelty price, stake on two axes moves rank, and the annuity pays foundational links as the graph grows around them. what the resource tokens held at halt enters the genesis bond, so no holder loses what those balances meant.
+
+## outside
+
+- [[$ETH]] as digital oil and backbone; [[cyberia.capital]] settles citizenship there
+- [[$BTC]] as digital gold and pelvis
+
+[[$CYB]] · [[bootloader/tokens/$BOOT|$BOOT]] · [[bootloader/tokens/$PUSSY|$PUSSY]] · [[plumb]] · [[rewards|rewards]] · [[launch]]
