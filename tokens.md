@@ -7,7 +7,7 @@ crystal-domain: economics
 ---
 # tokens
 
-three coins, three chains, three jobs. [[bootloader/tokens/$BOOT|$BOOT]] runs [[bostrom]], the bootloader: a compact, crystalline graph that boots devices and other collective intelligences. [[bootloader/tokens/$PUSSY|$PUSSY]] runs [[space pussy]], the community chain: expansive, warm, fast. [[$CYB]] runs [[cyber]] itself and arrives last, after the two bootloaders have proven the machine. one token, one chain ([[cyber/research/oikos|oikos]]); every personal book hangs off one of the roots by registration.
+three coins, three chains, three jobs. [[bootloader/tokens/$BOOT|$BOOT]] runs [[bostrom]], the bootloader: a compact, crystalline graph that boots devices and other collective intelligences. [[bootloader/tokens/$PUSSY|$PUSSY]] runs [[space pussy]], the community chain: expansive, warm, fast. [[$CYB]] runs [[cyber]] itself and arrives last, after the two bootloaders have proven the machine. one token, one chain ([[oikos|oikos]]); every personal book hangs off one of the roots by registration.
 
 the policy of each chain is one identity per epoch, ΔS_E = M_E − B_E, and a rule for its sign. every mint budget is a function of time, of settled Δφ⁺ (after surprise ρ and Shapley) and of what was burned — never of how many neurons or books exist, because those are free to create. operations are the three of [[plumb]]: mint, burn, lock.
 

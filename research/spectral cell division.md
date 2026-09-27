@@ -60,7 +60,7 @@ open questions that keep this a proposal:
 
 ## relation to oikos
 
-[[research/oikos|oikos]] describes a token's complete home book under its issuer's
+[[oikos|oikos]] describes a token's complete home book under its issuer's
 rules. Book creation registers an economic domain; shard division changes graph
 coverage and serving responsibility. The operations have separate authorization
 and proof requirements. A book can retain its name and full obligations through

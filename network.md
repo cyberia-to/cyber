@@ -59,7 +59,7 @@ what propagates how:
 ## peer discovery via cybergraph
 
 The graph carries typed routes for endpoints, [[shards]], services, networks and
-[[research/oikos|token books]]. An authorized record binds the name to its role,
+[[oikos|token books]]. An authorized record binds the name to its role,
 network, endpoint or committed state root, and provenance. Resolution discovers
 a route; a consumer separately checks who may publish it, its freshness and the
 proof required for the requested action. A book or shard name has no implicit
@@ -97,7 +97,7 @@ while an older claim retains graph history or rank.
 
 ## paid headers: the lean protocol
 
-> this market is the economic half of the [[research/oikos|oikos]] freshness contract: a condition that demands "tier ≥ τ, no older than t" is a standing bid for fresh counterparty headers, and the header market clears it. staleness is not an error state — it is a price
+> this market is the economic half of the [[oikos|oikos]] freshness contract: a condition that demands "tier ≥ τ, no older than t" is a standing bid for fresh counterparty headers, and the header market clears it. staleness is not an error state — it is a price
 
 
 the block header is the trust anchor — it commits to the full [[BBG]] root and lets any light client verify any claim about the [[cybergraph]]. distributing headers for free means light clients extract full verification value at zero cost. cyber does not do this.
@@ -111,7 +111,7 @@ a new [[neuron]] entering the network must acquire some [[$CYB]] before download
 - receive from another [[neuron]] (gift, payment, grant)
 - earn through relay services (tit-for-tat reciprocity does not require tokens)
 - acquire on an external market through its explicit network adapter, or use a
-  home-book trade when the [[research/oikos|oikos]] settlement profile is available
+  home-book trade when the [[oikos|oikos]] settlement profile is available
 
 once the neuron holds tokens, it buys headers from peers. neighbors can offer headers cheaper — lower relay cost due to proximity, reciprocity credits from prior interactions. this creates geographic price differentiation naturally, without protocol-level sharding.
 

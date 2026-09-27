@@ -103,7 +103,7 @@ each relay computes a CSIDH shared secret with the sender's ephemeral key. every
 
 ## what messages may carry
 
-everything but value. a message moves content, conditions, and receipts — under [[research/oikos|oikos]] no token ever rides a channel, so the transport layer is constitutionally incapable of losing money. a trade travels as two condition-messages and settles as two home-ledger facts; the channel only ever owes *delivery*, which is exactly what it can prove:
+everything but value. a message moves content, conditions, and receipts — under [[oikos|oikos]] no token ever rides a channel, so the transport layer is constitutionally incapable of losing money. a trade travels as two condition-messages and settles as two home-ledger facts; the channel only ever owes *delivery*, which is exactly what it can prove:
 
 ## proof of delivery
 

@@ -57,7 +57,7 @@ optimization subject to disclosure and capacity constraints.
 
 each [[token]] supplies an economic grouping. [[particles]] priced in [[$CYB]]
 can cluster in $CYB regions; trading $CYB for $H crosses books in the token
-dimension. A new token creates a book under [[research/oikos|oikos]]. The
+dimension. A new token creates a book under [[oikos|oikos]]. The
 assignment of one or more books to physical shards is a separate partitioning
 decision, preserving each book's complete obligations and issuer rules.
 

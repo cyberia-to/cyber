@@ -14,7 +14,7 @@ The cell ladder grouped four holders of state under one name. The accepted
 |---|---|---|
 | runtime-cell | [[neuron]] executing progs | Program state, continuations, work history, resource limits and recovery |
 | building-cell | [[aos/apps|service]] and its progs | Shared service state, player governance, admission and delivery |
-| ledger-cell | [[research/oikos|token book and issuer]] | Complete home ledger, issuance rules, conditional settlement and conservation |
+| ledger-cell | [[oikos|token book and issuer]] | Complete home ledger, issuance rules, conditional settlement and conservation |
 | knowledge-cell | [[shard]] | Graph partition, availability, validation, boundary proofs and split/merge lifecycle |
 
 Neuron is the protocol subject. The named robot attaches neurons; programs,

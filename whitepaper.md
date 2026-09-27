@@ -172,7 +172,7 @@ The Goldilocks field ($p = 2^{64} - 2^{32} + 1$) makes this concrete. A field mu
 
 ### 2.6 One Token, One Chain
 
-The proposed [[research/oikos|oikos]] principle: a book is the complete balance sheet of one issuer. One non-fungible name roots it, one fungible token is its monetary state, nested sub-names are its chart of accounts. Two prohibitions define this design: each book issues one token, and every token settles on its home ledger. Trading programs the conditions of movement on those ledgers against proofs of foreign state ([[3c]]). This removes wrapped-token relocation from the model; foreign-state authentication, expiry, delivery receipts and monetary conservation remain settlement obligations.
+The proposed [[oikos|oikos]] principle: a book is the complete balance sheet of one issuer. One non-fungible name roots it, one fungible token is its monetary state, nested sub-names are its chart of accounts. Two prohibitions define this design: each book issues one token, and every token settles on its home ledger. Trading programs the conditions of movement on those ledgers against proofs of foreign state ([[3c]]). This removes wrapped-token relocation from the model; foreign-state authentication, expiry, delivery receipts and monetary conservation remain settlement obligations.
 
 In this proposal the cyber book applies those rules to [[cyber/$CYB|$CYB]], with routing and registration as its distinct utility. Books, services and [[shards]] register their typed names and state roots in the [[cybergraph]]. Their responsibilities follow the [[specs/domain-ladder|domain roles]]: a shard holds a region of graph state, a book holds an issuer's monetary obligations, and a service exposes application behavior. The robot attaches [[neurons]], which authorize and run progs with retained state and resource limits. A prog can operate a book under its issuer's policy; installing a prog alone creates execution state. This preserves one subject model and a common [[3c]] application contract while keeping partition, issuance and execution duties explicit. Oikos remains a proposed monetary profile; the current runtime and native publication contracts declare their implemented validation separately.
 
@@ -832,7 +832,7 @@ The graph also expresses what no formal [[language]] can: collective confidence 
 
 ### 13.1 Tokens
 
-Under the [[research/oikos|oikos]] principle (§2.6) the chain of [[cyber/$CYB|$CYB]] is constitutionally single-token: every other token is born as its own chain and registers here by name. Emission-for-knowledge is prohibition one read as monetary policy.
+Under the [[oikos|oikos]] principle (§2.6) the chain of [[cyber/$CYB|$CYB]] is constitutionally single-token: every other token is born as its own chain and registers here by name. Emission-for-knowledge is prohibition one read as monetary policy.
 
  has two operational modes: circulating (tradeable, stakeable, spendable as fees) and locked as [[will]] — committed for a defined duration in exchange for bandwidth and link-weight influence, with the locked balance provably unspendable for the lock period.
  serve as feedback signals to [[superintelligence]]: [[will]] ([[bandwidth]] and link weight), [[attention]] (rank influence), [[karma]] (reputation and trust weight). These are not tradeable assets — they are measurements of a [[neuron]]'s contribution to collective [[focus]]. [[karma|Karma]] is computed from accumulated [[Bayesian Truth Serum|BTS]] scoring history; [[attention]] tracks stake-weighted participation; [[will]] reflects commitment duration.

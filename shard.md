@@ -42,7 +42,7 @@ while preserving their obligations. The proposal must specify checkpoint
 handoff, data availability, duplicate-spend protection, validator assignment and
 cross-boundary settlement before automatic division can be a protocol rule.
 
-[[research/oikos|Oikos]] describes a token's home book. A token book can use a
+[[oikos|Oikos]] describes a token's home book. A token book can use a
 shard's storage and validation services while retaining its issuer and ledger
 rules. Books, network destinations and graph partitions have separately typed
 identities; their correspondence is an explicit deployment decision.

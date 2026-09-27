@@ -41,6 +41,6 @@ the previous roadmap on this page was written for the cosmos bootloader during i
 | energy reform: $A and $V | superseded by the [[rewards|reward specification]]: mint by Shapley of Δφ⁺, subsidy by settlement mining, stake as amplifier; the resource tokens held at halt count toward the genesis bond |
 | deploy cybernet | superseded by settlement mining and fold, the subsidy and the security of the chain as one computation |
 | cybergraph and memes | phase 2, once user programmability returns |
-| multinetwork support in cyb | done: cyb speaks to any soft3 chain, one token one chain ([[cyber/research/oikos|oikos]]) |
+| multinetwork support in cyb | done: cyb speaks to any soft3 chain, one token one chain ([[oikos|oikos]]) |
 
 discover all [[concepts]]
