@@ -26,7 +26,7 @@ authority.
 The old client mode `cell` is now the partial node mode described in
 [[specs/node-modes|node modes]]. Cyb's former extension organ is
 [[cyb/parts/prog|prog]]. Cybergraph retains history, BBG persists it and
-[[cyb/parts/log|log]] renders it. Tape provides framing.
+[[cy/specs/log|log]] renders it. Tape provides framing.
 
 This page preserves historical links and terminology. Original signed records,
 legacy codec names and migration provenance retain their bytes. Biological

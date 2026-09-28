@@ -562,7 +562,7 @@ the robot as a navigation tree. the repo's `root/` directory dissolves — pages
         - [[security audit private key import]] — incoming from cyber
     - releases — **how it ships**
         - [[cyb/releases/release-process|release-process]] · [[cyb/releases/v0.1.0|v0.1.0]]
-    - [[cyb/parts/ward|ward]] — the guardian
+    - [[cy/specs/ward|ward]] — the guardian
     - legacy/ — *one README over the retired JS era (32 pages fold here)*
     - `.claude/plans/` — the workbench (4 plans)
 
@@ -608,7 +608,7 @@ four claims on the table, each a separate yes/no:
 | [[cyb/reference/scripting|scripting]] | 1061 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/reference/terminal|terminal]] | 947 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/product/truth|truth]] | 234 | stays · reference (flattens to /) | how the robot works |
-| [[cyb/parts/ward|ward]] | 1653 | stays · reference (flattens to /) | how the robot works |
+| [[cy/specs/ward|ward]] | 1653 | stays · reference (flattens to /) | how the robot works |
 | [[cyb/decide/root-README|root/README README]] | 673 | stays · spine (flattens to /) | the product story |
 | [[cyb/product/philosophy|philosophy]] | 597 | stays · spine (flattens to /) | the product story |
 | [[cyb/product/product|product]] | 2471 | stays · spine (flattens to /) | the product story |
