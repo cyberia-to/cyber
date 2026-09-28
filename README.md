@@ -3,7 +3,7 @@ title: Cyber
 tags: cyber, core, nav
 crystal-type: entity
 crystal-domain: cyber
-icon: "🔵"
+icon: "🟢"
 alias: the superintelligence protocol
 menu-order: 0
 ---
