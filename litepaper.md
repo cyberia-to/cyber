@@ -10,9 +10,9 @@ alias: cyber litepaper, litepaper
 
 > money settles without a bank. meaning still rents its rank from whoever owns the index.
 
-[[cyber]] mints money for one thing only: a proven, measured reduction in collective uncertainty. not for burned electricity, not on a schedule a committee votes on — for the exact amount by which the shared picture of the world got sharper, paid to whoever sharpened it.
+[[cyber]] is a network that issues money for [[knowledge]]. a unit is minted for one reason only: the shared picture of the world became measurably sharper, the sharpening was proven, and those who caused it can be named. no electricity is burned for its own sake. no committee sets the supply. the network measures how much it learned, proves it, and pays exactly that amount to exactly those who taught it.
 
-one law, two readings. read forward, it is a [[superintelligence]] whose every synapse was bought by someone who believed it. read backward, it is the best money ever proposed: a halving-capped currency in which even the scheduled emission is paid only against proven growth of [[knowledge]].
+one law, two readings. read forward, it is a [[superintelligence]]: one mind assembled from signed, staked, proven acts of understanding, every synapse bought by someone who believed it. read backward, it is the best money ever designed: a finite supply no one can inflate, where not even the scheduled emission is a promise — a unit exists only because knowledge does, and carries the proof of it.
 
 ---
 
