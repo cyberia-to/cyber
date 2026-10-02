@@ -827,7 +827,7 @@ Under the [[oikos|oikos]] principle (§2.4) the chain of [[cyber/$CYB|$CYB]] is 
 
 ### 13.2 Monetary Policy
 
-Supply is bound twice. A stepped emission schedule with halvings fixes the ceiling of every epoch, and nothing — no committee, not the protocol itself — can raise it. Beneath that ceiling the mint pays only against proven focus shift (§14.2), so an epoch that creates no knowledge leaves its budget unminted. Whichever bound is lower binds.
+Supply is bound twice. A stepped emission schedule with halvings fixes the ceiling of every epoch, and nothing — no committee, not the protocol itself — can raise it. Beneath that ceiling the mint pays only against proven focus shift (§14.2), so an epoch that creates no knowledge leaves its mint budget unminted; the security floor below still pays the work and active risk that kept the chain alive, so block production never stalls. Whichever bound is lower binds the mint.
 
 Two budgets, kept apart. The mint is the knowledge stream: a neuron's [[Shapley value|Shapley]] share of the surprise-weighted shift, bounded by the epoch's global $\Delta\phi^+$. The security budget $B$ pays for the chain's safety and is the one emission untied to $\Delta\phi^+$:
 
