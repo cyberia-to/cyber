@@ -80,8 +80,6 @@ that gives it the full list of hard-money properties, each enforced by a differe
 
 **two pays, two risks.** staking a link is a bet on truth: capital at risk, influence and reward if you were early and right. mining is capital-free work: sample the fair division of a proven shift and fold the proofs. you earn for settling credit, not for guessing the future.
 
-**two pays, two risks.** staking a link is a bet on truth: capital at risk, influence and reward if you were early and right. mining is capital-free work: sample the fair division of a proven shift and fold the proofs. you earn for settling credit, not for guessing the future.
-
 **the proof-of-work does the accounting.** dividing value fairly among overlapping contributors is a [[Shapley value]] computation, and Shapley is estimated by sampling random orderings. so each mining ticket *is* a sample: the hash a miner grinds is the ordering index, and the same act secures the chain and computes who gets paid. there is no synthetic puzzle. thermodynamics says this is not merely elegant — precision costs dissipation, so a trustworthy division of credit has an energy price floor, and paying it once instead of twice is the least wasteful design available.
 
 **copying earns nothing.** content addressing makes perfect copies free, so a copied link would produce the same focus shift as the original. a per-contribution surprise score — [[Bayesian Truth Serum]], where truthful reporting is the equilibrium — enters the value function as a weight, so a copy joins the mint weightless while its capital still ranks.
