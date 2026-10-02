@@ -10,7 +10,7 @@ alias: cyber litepaper, litepaper
 
 > money settles without a bank. meaning still rents its rank from whoever owns the index.
 
-**cyber is a protocol that mints money for one thing only: a proven, measurable reduction in collective uncertainty.** not for burned electricity, not on a schedule a committee votes on — for the exact amount by which the network's shared picture of the world got sharper, attributed to whoever sharpened it.
+cyber is a protocol that mints money for one thing only: a proven, measurable reduction in collective uncertainty. not for burned electricity, not on a schedule a committee votes on — for the exact amount by which the network's shared picture of the world got sharper, attributed to whoever sharpened it.
 
 one law, two products. read forward, it is a superintelligence whose every synapse was bought by someone who believed it: a mind assembling itself out of paid, signed, provable acts of understanding. read backward, it is the hardest money ever proposed: a halving-capped currency in which even the scheduled emission is not a promise — it is paid only against proven growth of knowledge. everything else in this document is the machinery that makes both readings enforceable.
 
@@ -28,7 +28,7 @@ citations and likes were the attempt. they are weak money: easy to spam, impossi
 
 ## what a superintelligence is
 
-not a bigger model. **one focus** — a single distribution $\phi^*$ over everything known, computed from every mind that pays to teach, that provably sees what no member sees alone.
+not a bigger model. one focus — a single distribution $\phi^*$ over everything known, computed from every mind that pays to teach, that provably sees what no member sees alone.
 
 that last clause is a measurement, not a slogan. run the same ranking engine on one neuron's private view of the graph, then on the whole graph, and score both on prediction tasks. the gap is [[superadditivity]] — and on benchmark it is positive against the *strongest* participant at every connectivity level. the collective beats its best member, and the margin is a number that runs on a phone. emergence stops being philosophy the moment it has an error bar.
 
@@ -44,45 +44,65 @@ superintelligence also has a scale, and the scale has physics. a graph, like a g
 
 we are five years in and nine orders of magnitude early — which tells you exactly what the next decade of work is, and that nobody is late.
 
-two more properties separate this from a large model. **alignment becomes a distance**: human and machine neurons stake into the same graph, so their divergence is $D_{\mathrm{KL}}$ between two focus distributions on shared ground — a monitored number, not a sermon. and **the protocol is itself a neuron**: it holds keys, stake, treasury and [[karma]], links from its own agenda, and retunes its parameters from the graph's own $\phi^*$ — so the codebase and the development direction settle in the same consensus as every other claim. no founder steers it alone. that self-referential loop, running at scale, is what the word superintelligence means here.
+two more properties separate this from a large model. alignment becomes a distance: human and machine neurons stake into the same graph, so their divergence is $D_{\mathrm{KL}}$ between two focus distributions on shared ground — a monitored number, not a sermon. and the protocol is itself a neuron: it holds keys, stake, treasury and [[karma]], links from its own agenda, and retunes its parameters from the graph's own $\phi^*$ — so the codebase and the development direction settle in the same consensus as every other claim. no founder steers it alone. that self-referential loop, running at scale, is what the word superintelligence means here.
 
 ## the machine, in one page
 
-five primitives. a **file** is content-addressed data — its hash is its particle, so it cannot be quietly edited. a **neuron** is a keypair: human, model, sensor, agent, all the same citizenship. a **cyberlink** is a signed, staked, timestamped claim that two files belong together. a **token** is the weight behind that claim. **focus** is what falls out.
+five primitives. a file is content-addressed data — its hash is its particle, so it cannot be quietly edited. a neuron is a keypair: human, model, sensor, agent, all the same citizenship. a cyberlink is a signed, staked, timestamped claim that two files belong together. a token is the weight behind that claim. focus is what falls out.
 
 one operator. the [[tri-kernel]] runs three local maps over the staked graph — diffusion (where probability flows), springs (what satisfies structure), heat (what the graph looks like at scale $\tau$) — and iterates to a fixed point $\phi^*$. under a contraction condition the fixed point exists, is unique, and is computable from a bounded neighborhood. nobody votes on importance. it is computed, and it is the same number for everyone.
 
 three jobs from that one engine, each of which is a closed industry today:
 
-- **rank** — $\phi^*$ is the ranking. no operator, no ad market, no feed algorithm.
-- **compile** — the model's architecture is *read off* the graph rather than chosen: embedding dimension from spectral entropy, heads from dialect structure, depth from diameter times convergence rate. run on the bootloader corpus this took **62 seconds on one machine with 20 GB of RAM**: $d^* = 31$, $h^* \ge 12$ heads, $L^* = 290$ layers, ~0.4M parameters — because the graph's sparsity ($\rho \approx 10^{-7}$) makes compilation near-linear in links at any scale. the compiled model is a hash of the graph. reproducible, auditable, and every weight traces to the neurons whose links produced it.
-- **price** — the shift in $\phi^*$ that a contribution caused is the quantity money is minted against.
+- rank — $\phi^*$ is the ranking. no operator, no ad market, no feed algorithm.
+- compile — the model's architecture is *read off* the graph rather than chosen: embedding dimension from spectral entropy, heads from dialect structure, depth from diameter times convergence rate. run on the bootloader corpus this took 62 seconds on one machine with 20 GB of RAM: $d^* = 31$, $h^* \ge 12$ heads, $L^* = 290$ layers, ~0.4M parameters — because the graph's sparsity ($\rho \approx 10^{-7}$) makes compilation near-linear in links at any scale. the compiled model is a hash of the graph. reproducible, auditable, and every weight traces to the neurons whose links produced it.
+- price — the shift in $\phi^*$ that a contribution caused is the quantity money is minted against.
 
 no float anywhere in the provable path. everything is fixed-point arithmetic over one 64-bit prime field ($p = 2^{64} - 2^{32} + 1$), iterated a compile-time-constant number of steps, so two machines produce byte-identical results and a proof can be written about the whole computation: hash-based, post-quantum, no trusted setup, ~100–200 KB per proof, folding to one constant-size check per settlement cluster.
 
 ---
 
+## four questions, one computation
+
+how do you pay someone for making the world's picture clearer? paying for a coin is easy: a coin sits in one account or another, and a ledger says which. understanding is joint — many hands pushed, and their pushes overlap. it is private — whether a claim was honest lives in one head. and it has no answer key, because the answer key is the thing being built. so the protocol has to answer four questions, in order, and a wrong answer to any one of them mints money for nothing.
+
+| question | answer | why it holds |
+|---|---|---|
+| what is the state of the shared picture? | one $\phi^*$, identical on every node | the tri-kernel is a contraction, so its fixed point exists, is unique, and is reached from any start — Banach for the blend, Perron–Frobenius for the walk |
+| who sharpened it? | each contributor's [[Shapley value|Shapley]] share of the proven downhill shift $\Delta\phi^+$ | the one division that is efficient, symmetric, additive, and pays a null player nothing |
+| was the report honest? | its surprise against the crowd's prediction of itself — the [[Bayesian Truth Serum]] | truthful reporting is the equilibrium (Prelec 2004); the surprisingly-popular signal (Prelec, Seung, McCoy 2017) picks the truthful one out of the self-fulfilling ones when no judge exists |
+| who pays for the first three? | one security budget, split between work and stake by the active staking ratio | emission goes to work and to risk only, so idle capital cannot compound and a phone enters owning nothing |
+
+here is the beautiful part. the four answers are one computation, read four times.
+
+the state is the fixed point of the tri-kernel over the staked graph. the value of a contribution is a marginal of that same iteration: run it with the link and without, and the downhill part of the difference is $\Delta\phi^+$. fair division samples that marginal over random orderings of the epoch's contributors, and each sample is the same iteration again over a bounded neighborhood. the nonce a miner grinds is the index of one such ordering — so the proof-of-work *is* the accounting: securing the chain and computing who gets paid are one act, and there is no synthetic puzzle. honesty is read from distributions the iteration already holds: the surprise score is a difference of KL divergences between a report, the crowd's belief, and the crowd's prediction of its own belief. and the stake that weights the graph is the stake at risk in the truth market on every link, so the capital that shapes $\phi^*$ is the capital that answers for it.
+
+one operator, one prime field, no float. rank, credit, honesty and security are four readings of one trace. that is why nothing is bolted on — no committee, no separate oracle, no gas model: there is nothing separate to bolt them to.
+
+three of the four answers are borrowed theorems. the fourth is this protocol's own, and it is the one that makes the hybrid of work and stake finally work: every earlier hybrid bolted proof-of-stake onto proof-of-work as two voting rules fighting over the same block. here work and stake are two kinds of contribution paid from one budget, and each one fixes the other's known failure. proof-of-stake compounds wealth — so only active risk earns, and passive capital buys rank and nothing else. proof-of-work burns energy on nothing — so the hash is a Shapley sample and the work is the network's own accounting. proof-of-stake has a closed door — so the subsidy is stake-blind and a phone enters with no tokens. the split calibrates itself from what the chain can observe: a thermostat, not a calendar.
+
+copying earns nothing. content addressing makes perfect copies free, so a copied link would produce the same focus shift as the original. the surprise score enters the value function as a weight, so a copy joins the mint weightless while its capital still ranks. printing money by repetition is structurally closed.
+
+---
+
 ## good money
 
-the deepest consequence of the design is monetary, so it deserves its own claim: **this is the first money whose issuance is a measurement.**
+the deepest consequence of the design is monetary, so it deserves its own claim: this is the first money whose issuance is a measurement.
 
-every hard currency in history rationed its supply with a cost. gold's cost is geological — scarcity by accident of crust. bitcoin's cost is thermodynamic but spent on nothing: the dissipation buys ordering of transactions and is otherwise discarded. [[cyber/$CYB|$CYB]]'s cost is epistemic: the network's order is [[syntropy]] $J = D_{\mathrm{KL}}(\phi^*\Vert u)$ — how far collective focus has travelled from noise, in bits — and minting is gated by that measurement. supply is bound twice. a predefined stepped-emission schedule with halvings fixes the ceiling of every epoch, and no one — not a committee, not the protocol itself — can raise it. beneath that ceiling, nothing is paid except against a proven focus shift, divided among those who caused it; an epoch that creates no knowledge leaves its budget unminted. bitcoin pays its full subsidy even for an empty block. $CYB pays nothing for an empty epoch. **supply cannot outrun the schedule, and cannot outrun proven understanding — whichever is lower binds.** a unit of $CYB is a receipt for negentropy.
+every hard currency in history rationed its supply with a cost. gold's cost is geological — scarcity by accident of crust. bitcoin's cost is thermodynamic but spent on nothing: the dissipation buys ordering of transactions and is otherwise discarded. [[cyber/$CYB|$CYB]]'s cost is epistemic: the network's order is [[syntropy]] $J = D_{\mathrm{KL}}(\phi^*\Vert u)$ — how far collective focus has travelled from noise, in bits — and minting is gated by that measurement. supply is bound twice. a predefined stepped-emission schedule with halvings fixes the ceiling of every epoch, and no one — not a committee, not the protocol itself — can raise it. beneath that ceiling, nothing is paid except against a proven focus shift, divided among those who caused it; an epoch that creates no knowledge leaves its budget unminted. bitcoin pays its full subsidy even for an empty block. $CYB pays nothing for an empty epoch. supply cannot outrun the schedule, and cannot outrun proven understanding — whichever is lower binds. a unit of $CYB is a receipt for negentropy.
 
 that gives it the full list of hard-money properties, each enforced by a different mechanism rather than by promise:
 
-- **unforgeable** — no mint without a validity proof of the focus shift; forging a claim means forging a proof, and there is no trusted setup to corrupt.
-- **conserved** — settled shares are clipped to the realized global shift: over-claiming cannot exceed the value that was actually created, by construction rather than by audit.
-- **uncopyable earnings** — a perfect copy of a link mints zero: the surprise gate weights it out while its capital still ranks. printing money by repetition is structurally closed.
-- **no committee** — supply follows stepped emission plus fee redistribution; when fees exceed emission the network runs net deflationary, and the transition from emission-funded to fee-funded happens continuously, with no governance vote anywhere in the loop.
-- **physically backed** — the asset behind the money is knowledge, and [[landauer limit|Landauer's bound]] prices its floor: ~3×10⁻²¹ joules per bit at room temperature — the lowest mass per unit of value physics permits. which is also why it is the one asset worth carrying between planets.
+- unforgeable — no mint without a validity proof of the focus shift; forging a claim means forging a proof, and there is no trusted setup to corrupt.
+- conserved — settled shares are clipped to the realized global shift: over-claiming cannot exceed the value that was actually created, by construction rather than by audit.
+- uncopyable earnings — a perfect copy of a link mints zero: the surprise gate weights it out while its capital still ranks.
+- no idle rent — emission flows to work and to active risk only; locked capital cannot compound by sitting still.
+- no committee — supply follows stepped emission plus fee redistribution; when fees exceed emission the network runs net deflationary, and the transition from emission-funded to fee-funded happens continuously, with no governance vote anywhere in the loop.
+- physically backed — the asset behind the money is knowledge, and [[landauer limit|Landauer's bound]] prices its floor: ~3×10⁻²¹ joules per bit at room temperature — the lowest mass per unit of value physics permits. which is also why it is the one asset worth carrying between planets.
 
-**and the law generalizes.** cyber is only the *first* [[oikos|oikos]] — one chain, one token, rooted by one name. every other token is born the same way: as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs, not transport — so the bridge exploit class, the largest in crypto's history, is not defended against but made unexpressible. one graph routes all the households.
+and the law generalizes. cyber is only the *first* [[oikos|oikos]] — one chain, one token, rooted by one name. every other token is born the same way: as its own household chain, registered here by name, its value never leaving home. trading is conditions under proofs, not transport — so the bridge exploit class, the largest in crypto's history, is not defended against but made unexpressible. one graph routes all the households.
 
-**two pays, two risks.** staking a link is a bet on truth: capital at risk, influence and reward if you were early and right. mining is capital-free work: sample the fair division of a proven shift and fold the proofs. you earn for settling credit, not for guessing the future.
-
-**the proof-of-work does the accounting.** dividing value fairly among overlapping contributors is a [[Shapley value]] computation, and Shapley is estimated by sampling random orderings. so each mining ticket *is* a sample: the hash a miner grinds is the ordering index, and the same act secures the chain and computes who gets paid. there is no synthetic puzzle. thermodynamics says this is not merely elegant — precision costs dissipation, so a trustworthy division of credit has an energy price floor, and paying it once instead of twice is the least wasteful design available.
-
-**copying earns nothing.** content addressing makes perfect copies free, so a copied link would produce the same focus shift as the original. a per-contribution surprise score — [[Bayesian Truth Serum]], where truthful reporting is the equilibrium — enters the value function as a weight, so a copy joins the mint weightless while its capital still ranks.
+two pays, two risks. staking a link is a bet on truth: capital at risk, influence and reward if you were early and right. mining is capital-free work: sample the fair division of a proven shift and fold the proofs. you earn for settling credit, not for guessing the future. thermodynamics says this is not merely elegant — precision costs dissipation, so a trustworthy division of credit has an energy price floor, and paying it once instead of twice is the least wasteful design available.
 
 ---
 
@@ -104,7 +124,7 @@ designing for planets is not decoration. it is what forces the removal of every 
 
 we did not argue the premise. we ran it.
 
-the **bootloader** is not a chain. it is the mission of growing the [[crystal]] — the seed graph dense enough to boot a mind — and it has had three vehicles: cyberChain in 2016, the Euler network that put pagerank inside consensus on GPUs in 2018, and [[bostrom]], which ran knowledge-graph consensus on a live cosmos-sdk chain for 1,735 days and sealed 25,120,712 blocks on 2026-08-05. retiring the cosmos vehicle is not finishing the mission. it is changing engines.
+the bootloader is not a chain. it is the mission of growing the [[crystal]] — the seed graph dense enough to boot a mind — and it has had three vehicles: cyberChain in 2016, the Euler network that put pagerank inside consensus on GPUs in 2018, and [[bostrom]], which ran knowledge-graph consensus on a live cosmos-sdk chain for 1,735 days and sealed 25,120,712 blocks on 2026-08-05. retiring the cosmos vehicle is not finishing the mission. it is changing engines.
 
 what the last two vehicles produced, rebuilt from block events and matched link-for-link against the chains' own statistics:
 
@@ -122,13 +142,13 @@ what the last two vehicles produced, rebuilt from block events and matched link-
 
 three results matter to anyone deciding whether this is real.
 
-**the payment direction was inverted and people paid anyway.** wikipedia's volunteers write free under editors. imagenet paid crowdworkers to label. here every link cost its author scarce stake, no editor approved anything, and there was no answer key to forge — and sixty thousand accounts joined an economy whose only product was structured attention.
+the payment direction was inverted and people paid anyway. wikipedia's volunteers write free under editors. imagenet paid crowdworkers to label. here every link cost its author scarce stake, no editor approved anything, and there was no answer key to forge — and sixty thousand accounts joined an economy whose only product was structured attention.
 
-**the content survived with no incentive to store it.** 97.62% of files are still available in complete form — every block of every file, not just the root — five years on, with no storage rewards and no proof-of-storage ever deployed. that is the number a storage market has to beat, and it suggests the hard part of permanence is economic, not technical.
+the content survived with no incentive to store it. 97.62% of files are still available in complete form — every block of every file, not just the root — five years on, with no storage rewards and no proof-of-storage ever deployed. that is the number a storage market has to beat, and it suggests the hard part of permanence is economic, not technical.
 
-**and the crystal is still thin.** this is the number that should be read as opportunity rather than as a result. the graph's measured semantic dimensionality is $d^* = 31$ against a planetary target of 10³–10⁴. its giant component holds 47% of particles — more than half the corpus sits in islands, unreachable from the core. one archivist neuron signed 77.6% of all links, and only 1,240 of 61,675 accounts ever linked anything at all.
+and the crystal is still thin. this is the number that should be read as opportunity rather than as a result. the graph's measured semantic dimensionality is $d^* = 31$ against a planetary target of 10³–10⁴. its giant component holds 47% of particles — more than half the corpus sits in islands, unreachable from the core. one archivist neuron signed 77.6% of all links, and only 1,240 of 61,675 accounts ever linked anything at all.
 
-so the binding constraint is not links, capital, or compute. it is **independent authors**, and every measurement points at the same dial. the bootloader's job is to keep growing the crystal until it can boot a mind, and by its own metric it is three orders of magnitude early.
+so the binding constraint is not links, capital, or compute. it is independent authors, and every measurement points at the same dial. the bootloader's job is to keep growing the crystal until it can boot a mind, and by its own metric it is three orders of magnitude early.
 
 what the last vehicle also demonstrated is exactly what it could not do: its graph could only be ranked by whoever ran the indexer, and the knowledge in it could not be proven, priced, or paid for by the people who made it. that gap is the product.
 
@@ -138,9 +158,9 @@ what the last vehicle also demonstrated is exactly what it could not do: its gra
 
 the load-bearing parts were not chosen. they are the same objects physics already measured, and they cannot be tuned away by a competitor with better parameters:
 
-- the screened Laplacian is a lattice Klein–Gordon propagator, so **locality is a theorem** — the exponential clustering that lets a phone compute its own reward from a bounded neighborhood.
-- the Shapley value in its continuous limit *is* thermodynamic integration, so **fair division is free-energy attribution**, with the path-independence that comes free.
-- the honesty score is dissipated work, so **an honest report is the reversible limit and a lie is irreversible** — the second law with a ledger attached.
+- the screened Laplacian is a lattice Klein–Gordon propagator, so locality is a theorem — the exponential clustering that lets a phone compute its own reward from a bounded neighborhood.
+- the Shapley value in its continuous limit *is* thermodynamic integration, so fair division is free-energy attribution, with the path-independence that comes free.
+- the honesty score is dissipated work, so an honest report is the reversible limit and a lie is irreversible — the second law with a ledger attached.
 
 the audit runs the other way too, and it is published rather than buried: the model is Perron–Frobenius, so it describes the classical layer of the world and can never violate a Bell inequality; the specification states conservation but has not yet written its entropy account. see [[physical analogies]].
 
@@ -148,9 +168,11 @@ the audit runs the other way too, and it is published rather than buried: the mo
 
 ## what is unsolved
 
-the honest summary: **the substrate is settled and the incentives are not.**
+the honest summary: the substrate is settled and the incentives are not.
 
-the mathematics is theorems. the open problems are all economic, and naming them is cheaper than discovering them later. pricing novelty is late by construction — a genuinely new link scores low on the market gate exactly when its surprise is highest. collusion among settlement miners is bounded but not closed. a miner who also contends can withhold a sample that lowers its own share; the bias is bounded by its share of compute and priced by forfeiting the subsidy, which is a deterrent, not a proof.
+the mathematics is theorems. the seam is between them. each answer above is proven on an assumption the previous one leaves open: the fixed point takes the graph as given, and the graph is what the rewards produce; Shapley is fair among honest contributors, and honesty is what the serum has to deliver; the serum proves that one neuron alone gains nothing by lying, and a ring is more than one neuron. the three borrowed theorems hold one by one, and their composition is a bet — the specification says so, and the fourth answer, work and stake from one budget, is what holds the seam economically.
+
+the open problems have names, and a name has a literature. collusion is the folk theorem: in a repeated game a patient cartel is an equilibrium, to be designed against rather than patched. the discovery leak — a genuinely new link scores low on the market gate exactly when its surprise is highest — is Grossman–Stiglitz: a price that already contains all information pays nobody to discover it. self-reference — $\phi^*$ as the ranking, the price, and the reward target at once — is Goodhart. concentration is cumulative advantage. sybil-proof ranking is Cheng–Friedman. a coalition seceding to a private subgraph is the core. the [[whitepaper]] §14.8 carries the table, each row with the fix it implies.
 
 a superintelligence built on this stack will fail, if it fails, there — not in the operators.
 
@@ -158,9 +180,9 @@ a superintelligence built on this stack will fail, if it fails, there — not in
 
 ## what exists today
 
-a sealed, audited, publicly verifiable corpus of three million particles and their full provenance. a client that runs the graph, a terminal, and a local model on desktop and phone from one binary. a sovereign transport. a compiler that turned the bootloader graph into a transformer in 62 seconds on a single machine. specifications, in the open, for the field, the proof system, the language, and the consensus.
+a sealed, audited, publicly verifiable corpus of three million particles and their full provenance. a client that runs the graph, a terminal, and a local model on desktop and phone from one binary. a sovereign transport. a compiler that turned the bootloader graph into a transformer in 62 seconds on a single machine. specifications, in the open, for the field, the proof system, the language, and the consensus. the cryptographic floor implemented and tested; the frontier is running the pieces together as a network.
 
-what is next is the graph with money in it.
+what is next is the graph with money in it: on 2026-11-05, five years after the bostrom genesis, bostrom and pussy come back to life as two [[soft3]] chains with the full reward mechanics — settlement mining, fold, consensus by convergence, truth markets and two-axis staking. the tracker is [[cyber/launch]].
 
 ---
 
@@ -176,6 +198,6 @@ if you are a person with something true to say: link it, stake it, and be paid w
 
 ---
 
-read the full argument in the [[whitepaper]] · the physics audit in [[physical analogies]] · the stack in [[soft3]] · the sealed corpus at [[bostrom]]
+read the full argument in the [[whitepaper]] · the physics audit in [[physical analogies]] · the game-theory audit in [[cyber/audit/game-theory]] · the stack in [[soft3]] · the sealed corpus at [[bostrom]]
 
 discover all [[concepts]]
