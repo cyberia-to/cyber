@@ -113,8 +113,11 @@ learning and adaptation
 - causal inference — separate signal from confounding via intervention tests
 
 economics and mechanism design
-- game theory, mechanism design — incentive alignment with epistemic accuracy
-- prediction markets — [[focus]] as price of [[attention]]
+- cooperative game theory — the [[Shapley value]] as the fair division of a proven shift; the core as the stability question it leaves open
+- peer prediction — the [[Bayesian Truth Serum]] (Prelec 2004) and surprisingly-popular selection (Prelec, Seung, McCoy 2017) as the oracle where no judge exists; collusion-resistant scoring (correlated agreement) as the owed second layer
+- the work/stake hybrid — one security budget split by the active staking ratio, paid to work and risk only; the protocol's own mechanism, answering the compounding-of-wealth result for proof-of-stake (Fanti et al. 2019)
+- prediction markets — [[focus]] as price of [[attention]]; the ICBS bonding surface as liquidity rather than scoring rule
+- results the open problems instantiate — folk theorem (collusion), Grossman–Stiglitz (discovery leak), Goodhart (self-reference), cumulative advantage (concentration), Cheng–Friedman (sybil-proof ranking); see [[whitepaper]] §14.8 and [[cyber/audit/game-theory]]
 - economics of [[attention]], rational inattention — cognitive budget constraints
 
 distributed systems
