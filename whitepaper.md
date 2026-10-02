@@ -1414,11 +1414,11 @@ The launch is a sequence of phases, each a network that must hold before the nex
 | 2 | canary: the two chains under real use and weekly red team | 90 days, all economic invariants hold, no critical bug under attack | 2026-11-05 → 2027-02 |
 | 3 | [[cyber/$CYB|$CYB]] mainnet | implementations in several languages agree on 10⁶ blocks; the formal spine green; the gates of §21.4 answered | after phase 2 |
 
-Phase 1 ships four cores, none cut and none faked: the mint by Shapley and settlement mining (§14.3); the fold of winning tickets into one accumulator per cluster; consensus by convergence on independent nodes (§11); and the hybrid economics of truth markets and two-axis staking (§13.2, §14.4). Personal chains under [[oikos]] and the three privacy invariants (§10) ship with them. Cut from phase 1 and returned in later phases: general programmability on chain, the viewing economy, paid inference, and $CYB itself. A milestone is code that passes its gate. The date exists for phase 1 only, and what does not fit the date is cut, never squeezed.
+Phase 1 ships four cores, none cut and none faked: the mint by Shapley and settlement mining (§14.3); the fold of winning tickets into one accumulator per cluster; consensus by convergence on independent nodes (§11); and the hybrid economics of truth markets and two-axis staking (§13.2, §14.4). Personal chains under [[oikos]] and the three privacy invariants (§10) ship with them. Cut from phase 1 and returned in later phases: general programmability on chain, the viewing economy, paid inference, and [[cyber/$CYB|$CYB]] itself. A milestone is code that passes its gate. The date exists for phase 1 only, and what does not fit the date is cut, never squeezed.
 
 ### 21.4 Mainnet Gates
 
-No patch relay exists between stars. What launches must be correct. Before $CYB mainnet, five questions answered with machine-checked evidence:
+No patch relay exists between stars. What launches must be correct. Before [[cyber/$CYB|$CYB]] mainnet, five questions answered with machine-checked evidence:
 
 | # | Question | Evidence |
 |---|----------|----------|
@@ -1676,7 +1676,7 @@ Work and stake share one budget, and idle capital earns nothing. Emission flows 
 
 Provability closes the trust gap under all of it. [[zheng|Zheng]] proofs — hash-based, post-quantum, no trusted setup, recursively composable — make every state transition, every ranking computation, every mint, and every privacy claim checkable by anyone. The verifier is itself a [[nox]] program. The system closes on itself.
 
-What remains open is named rather than hidden (§14.8), and it is economic rather than mathematical. What remains to build is tracked in [[cyber/launch]]: two chains reborn on 2026-11-05, a canary of ninety days, then $CYB mainnet behind five machine-checked gates.
+What remains open is named rather than hidden (§14.8), and it is economic rather than mathematical. What remains to build is tracked in [[cyber/launch]]: two chains reborn on 2026-11-05, a canary of ninety days, then [[cyber/$CYB|$CYB]] mainnet behind five machine-checked gates.
 
 Three million [[particles]] and 2,949,732 [[cyberlinks]], signed by 1,240 hands over five years and audited to the last block, are the first syllables of a language that will, at sufficient scale, generate concepts no individual mind can hold and discover truths no derivation can reach.
 
