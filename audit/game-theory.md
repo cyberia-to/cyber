@@ -88,7 +88,7 @@ lower priority: explore/exploit (Gittins, UCB) as the principled way to price no
 
 ## 5. drift found on the way
 
-- "honesty is the **dominant strategy**" — `tru/docs/explanation/overview.md:53`, `foculus/docs/explanation/overview.md:23`, `mudra/specs/place.md:97`. every proof in the repos is Bayes–Nash. downgrade the wording.
+- "honesty is the **dominant strategy**" — `tru/docs/explanation/overview.md:53`, `foculus/docs/explanation/overview.md:23`, `foculus/specs/place.md` (then `mudra/specs/place.md:97`). every proof in the repos is Bayes–Nash. downgrade the wording.
 - `cybergraph/specs/cybergraph.md:124` lists honest-linking Nash as *open*; tru docs present it as settled.
 - karma has four definitions: sum of cyberank (`cyber/karma.md:8`), accumulated BTS score (`whitepaper.md:838`), accumulated syntropy (`research/algorithmic essence of superintelligence.md:190`), entropy production (`physical analogies.md:38`). karma multiplies A^eff, so this is a consensus-weight ambiguity.
 - `tru/specs/impulse.md:27` still mints ∝ ‖Δφ*‖, which `rewards.md:41–44` rejects. same stale formula at `tru/docs/explanation/incentives.md:23`, `knowledge-economy.md:45`.
