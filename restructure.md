@@ -703,7 +703,7 @@ the nation as a navigation tree: six shelves, each with a contract README.
 | [[cyberia/foundation/org|org]] | 475 | stays · foundation | why the nation |
 | [[cyberia/foundation/space doctrine|space doctrine]] | 1252 | stays · foundation | why the nation |
 | [[cyberia/foundation/strategy|strategy]] | 771 | stays · foundation | why the nation |
-| [[cyberia/foundation/vision|vision]] | 3287 | stays · foundation | why the nation |
+| [[cyber valley vision|vision]] | 3287 | moved → cyber-valley/vision.md 2026-10-07 | the valley's 2025 pitch |
 | [[cyberia/foundation/whitepaper|whitepaper]] | 1860 | stays · foundation | why the nation |
 | [[cyberia/README|cyberia README]] | 93 | stays · index | the nation face |
 | [[cyberia/community|community]] | 36 | stays · index | the nation face |
