@@ -67,6 +67,55 @@ severity: the highest in the stack. genesis freezes every particle and neuron id
 
 cyber already bet on the right side of the argument — hash and proofs, no curves — and then built the permanent layer on the one hash family the argument is currently breaking; move the permanence onto a conservative hash and the stack is ahead of the field.
 
+## 5. second pass — the argument in full
+
+### 5.1 why ethereum left, and for what
+
+ethereum dropped Poseidon for its post-quantum paths — hash-based signatures and state commitments in leanVM (2027–28) — and replaced it with SHA-2 and BLAKE3 proven through binary-field SNARKs (the Binius route: reshape the proof system to fit the hash). the stated reasons: Gröbner preimage estimates on Poseidon2 fell from 2¹⁶⁴ to 2¹²⁶ and from 2¹⁷⁴ to 2¹²³ — below 128 — after the 2026 round-skipping work (~2^18.5 speedup); the whole threat concentrates on one attack line, polynomial system solving; SHA-2 has twenty-five years of cryptanalysis against Poseidon2's three; and binary-field proving reached parity (~10⁶ SHA calls proven per second on a laptop, ~100× native). their verdict on Poseidon2 was "unbroken, repairable" — and they left anyway, because when the hash is the only assumption, most mature beats most optimized.
+
+### 5.2 efficiency — nothing grows to 64 bytes
+
+the digest stays 32 bytes under any choice. the cost of a conservative hash appears in exactly one place: hashing *inside a proof*. what cyber proves at genesis — impulse Δφ⁺, settlement tickets, folds — is field arithmetic over ids that enter the circuit as opaque 4-limb values and are never rehashed. the hashes that do run inside proofs are Merkle paths in Brakedown and Fiat–Shamir: ephemeral, proof-time objects, where an algebraic permutation is the right tool. only content-binding proofs (storage proofs) must evaluate the identity hash in-circuit — rare, batched, and the stack already holds ethereum's answer for them: the Binius PCS over kuro F₂¹²⁸ in lens.
+
+and the inverse-16 profile is not even the efficient choice. Hemera's own cost model (`hemera/research/permutation-decision.md`): inverse RF8/RP16 = 560 quadratic constraints and 1712 native nonlinear multiplications; reference x⁷ RF8/RP22 = 600 constraints and 600 multiplications. the inverse buys 6.67% fewer constraints at 2.85× the native cost. moving to reference parameters costs ~7% in-circuit and makes native hashing nearly three times cheaper.
+
+### 5.3 the inverse profile — the honest case
+
+there is no break. the claim is weaker and still decisive for a permanent primitive. point by point, from Hemera's own research:
+
+1. the justification failed. "the original justification (huge polynomial degree implies superior security and permits sixteen partial rounds) fails" (`permutation-decision.md`). the attacker never meets degree p−2: x⁻¹ is modelled as x·y = 1, a quadratic relation — the same algebraic cost as the cheapest S-box. against polynomial-system solving, the one line ethereum named as the threat, the inverse's degree buys nothing.
+2. fewer equations, same complexity. partial rounds exist to resist Gröbner; each contributes one quadratic equation. Hemera has 16, the reference 22 — a strictly smaller system of the same kind, with no compensating structure.
+3. extra structure, not less. the zero convention 0→0 adds branch equations `z = xy, x(z−1) = 0, y(z−1) = 0` (`full-round-status.md`); the full-round model needs 1161 variables for a seven-byte input, and solver campaigns "do not establish attack lower bounds".
+4. subspace restriction is live. `research/partial_subspace.py` exhibits, for 15 of the 16 partial rounds, an affine line of inputs on which every active S-box is the identity (input 1 is fixed by both x⁻¹ and x⁷). eprint 2026/1692 does exactly this — "algebraic cancellation of non-linear inverse S-boxes", one S-box per partial round — and reaches CICO-1 on 28 of 31 rounds of Poseidon-KoalaBear when a single initial full round shields the partial layer. Hemera's four full rounds each side shield better; its partial budget is 16 against 23.
+5. the matrices are the attacked component. eprint 2026/306 improves round-skipping by exploiting the structure of the linear layers specifically; Hemera's matrices are not MDS (`specs/matrices.md:87–95`), an unanalysed deviation in exactly the part under attack.
+6. the reference analysis does not transfer: custom constants and a different S-box mean none of Poseidon2's published bounds or bounty exposure apply (`permutation-decision.md`: "would not reproduce it or inherit its analysis").
+
+so the strongest true statement about inverse-16 is "no evidence either way" — with fewer Gröbner equations than the reference, more branch structure, non-MDS matrices, zero published cryptanalysis, and a measured upside of 7% constraints bought at 2.85× native cost. for an ephemeral primitive that is acceptable. for the identity of every particle, frozen at genesis without algorithm agility, the burden of proof is on the design, and the design's own research states it is not met: "neither result has been obtained."
+
+decision rule, two acceptable outcomes: (a) Hemera = reference Poseidon2-Goldilocks (RF8/RP22, x⁷, published constants), plus whatever round margin the 2026 repair recommends, with a public bounty — inherits three years of analysis and a repairable margin; (b) identity by a binary hash (BLAKE3 or Keccak), algebraic permutation only inside proofs, binary-field lens for content-binding proofs — the ethereum route, and the stack already has the pieces.
+
+### 5.4 stealth, seal, veil, quorum
+
+stealth needs a non-interactive agreement; no hash-only NIKE exists, so the choice is which structured assumption carries *privacy only* (spend authority stays separate, `stealth.md:58–60` — keep that line, it is what makes stealth a privacy risk and never a money risk).
+- unify stealth and seal on one KEM. per-payment stealth = encapsulate to the recipient's published key; the ciphertext is the ephemeral. static-static agreement is lost, and the spec already says it gives no forward secrecy anyway.
+- hybrid ML-KEM-768 + X25519: a break of either leaves the other. cost: ~1.1 KB ciphertext against 64 B for CSIDH — the real price, paid once per private output. add a view tag (first bytes of H(shared)) so scanning does not decapsulate every output.
+- CSIDH leaves the genesis path and `delay.md` option C is deleted: the CSIDH-512 class-group structure is known (CSI-FiSh, 2019), the quantum level is disputed, and `stealth.md:73–76` already refuses to certify it. it may return as an optional profile if the literature settles.
+
+seal: FIPS 203 ML-KEM-768, hybrid, from a verified reference implementation. drop the native Goldilocks KEM candidate — inventing a KEM is the one thing the thesis forbids. "one field" does not apply to a primitive that never enters a proof; if one day it must, the ikat lens exists.
+
+veil: split the two needs it currently conflates. private balances (P2) need commitments, nullifiers and a zheng zero-knowledge proof — hash plus proof, no FHE — and `tok/programming-model.md:165–167` already specifies exactly that. computation on encrypted data (private inference, OMR/PIR) is FHE: lattice plus circular security, the least conservative pair in the stack; defer it, label it, and fix the parameters first — at q ≈ 2⁶⁴ the HE-standard tables need n ≥ 4096 for ~128-bit classical (n = 4096 allows log q ≈ 109; n = 1024 allows ~27), so the current "n=1024 ≈ 128 bits" is wrong by two orders of magnitude of work and "n=4096 ≈ 256" is the floor, not the ceiling.
+
+quorum: Shamir over Goldilocks is information-theoretic and stays. the VSS is rewritten hash-only: the dealer publishes a Merkle root over all n shares, each party receives its share with its path, and a zheng proof certifies that the committed shares lie on one polynomial of degree k−1. DKG is then the sum of such sharings. threshold decryption of ML-KEM has no clean construction; threshold applies to a symmetric key (share it, reconstruct under policy) or is replaced by k-of-n proofs under the identity policy. the commit-reveal randomness beacon over quorum shares is hash-only and unbiasable under an honest k.
+
+### 5.5 the VDF
+
+what the beacon needs: unpredictable until propose closes, unbiasable by the last mover, verifiable by everyone. the placeholder `x^(2^T) mod p` provides none of it.
+
+- design target — hash-based proof of sequential work: beacon = H^T(seed), seed = hash of the finalized claim set; a zheng IVC (the HyperNova fold already built for settlement) certifies the chain, so verification is O(1). the only assumption is that iterated Hemera has no shortcut — hash-only, post-quantum, and it fits "one computation": the same fold machinery, the same field. choose T with a ~10× margin over the propose window; ASIC speedup is bounded by clock ratio, the limit every VDF shares.
+- launch fallback if chained IVC is not production by 2026-11-05: the same H^T, verified by recomputation. every node spends T (size it to one or two seconds) once per epoch; fully hash-only, no proof system in the loop; secure as long as the delay exceeds propose-close propagation. swap in the proven form when the fold is ready.
+- classical alternative — Wesolowski over imaginary-quadratic class groups (Chia): mature, transparent, O(1) proofs, not post-quantum — acceptable for a VDF, which needs no long-term secrecy, but it adds an algebra the stack does not have.
+- delete option C. the isogeny VDF rests on an unknown group order that is in fact known.
+
 ## sources
 
 - [Vitalik Buterin on AI and ECDSA, october 2026](https://www.kucoin.com/blog/vitalik-ai-warning-ecdsa-ethereum-wallet-security) · [Justin Drake, ethereum "bunker mode"](https://www.trendingtopics.eu/ethereum-bunker-mode-ai-quantum-bitcoin/)
