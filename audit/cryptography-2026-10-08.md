@@ -92,7 +92,7 @@ there is no break. the claim is weaker and still decisive for a permanent primit
 
 so the strongest true statement about inverse-16 is "no evidence either way" — with fewer Gröbner equations than the reference, more branch structure, non-MDS matrices, zero published cryptanalysis, and a measured upside of 7% constraints bought at 2.85× native cost. for an ephemeral primitive that is acceptable. for the identity of every particle, frozen at genesis without algorithm agility, the burden of proof is on the design, and the design's own research states it is not met: "neither result has been obtained."
 
-decision rule, two acceptable outcomes: (a) Hemera = reference Poseidon2-Goldilocks (RF8/RP22, x⁷, published constants), plus whatever round margin the 2026 repair recommends, with a public bounty — inherits three years of analysis and a repairable margin; (b) identity by a binary hash (BLAKE3 or Keccak), algebraic permutation only inside proofs, binary-field lens for content-binding proofs — the ethereum route, and the stack already has the pieces.
+decision rule: stay algebraic, with parameters chosen by a rule — §5.6. the binary-hash route (b) is ethereum's answer to ethereum's cost model, where in-circuit hashing is rare and Binius made SHA cheap; cyber's stack hashes inside proofs constantly (nox pattern 15, BBG `look`, Brakedown columns, recursion), and Keccak there costs ~25 000 constraints against ~600 — a 40× regression on the hottest path. (b) is retained only for content-binding proofs over foreign formats, where the kuro lens already exists.
 
 ### 5.4 stealth, seal, veil, quorum
 
@@ -115,6 +115,26 @@ what the beacon needs: unpredictable until propose closes, unbiasable by the las
 - launch fallback if chained IVC is not production by 2026-11-05: the same H^T, verified by recomputation. every node spends T (size it to one or two seconds) once per epoch; fully hash-only, no proof system in the loop; secure as long as the delay exceeds propose-close propagation. swap in the proven form when the fold is ready.
 - classical alternative — Wesolowski over imaginary-quadratic class groups (Chia): mature, transparent, O(1) proofs, not post-quantum — acceptable for a VDF, which needs no long-term secrecy, but it adds an algebra the stack does not have.
 - delete option C. the isogeny VDF rests on an unknown group order that is in fact known.
+
+### 5.6 staying algebraic — what parameters buy, and what they do not
+
+output length is orthogonal to the risk. the attacks that moved ethereum solve a polynomial system; their cost depends on the number of nonlinear equations (rounds × S-boxes) and on structure (S-box, matrices), never on digest length. the 2¹²³ preimage estimate is the cost of solving the system, identical at 256 or 512 bits of output. output governs only generic bounds — collision = min(capacity/2, digest/2); Hemera's capacity is 8 × 64 = 512 bits and its digest 256, so 128 bits generic already. a 64-byte digest would defend against an attack nobody runs, at +32 bytes per particle, link and BBG node and 8 limbs instead of 4 in every circuit. the one legitimate reason would be a requirement of 128-bit *quantum* collision resistance (BHT 2^(n/3)), which 48 bytes (6 elements) satisfies — a separate decision.
+
+rounds are what buy margin, and they are cheap. in-circuit cost is linear: a partial round is one S-box ≈ 4 quadratic constraints (x⁷ = three multiplications), a full round 16 S-boxes ≈ 64. on Hemera's own cost model (reference RF8/RP22 = 150 S-boxes = 600 constraints):
+
+| profile | S-boxes | constraints | native multiplications | vs Keccak (~25k) |
+|---|---|---|---|---|
+| Hemera inverse RF8/RP16 (current) | 144 | 560 | 1712 | 45× cheaper |
+| reference Poseidon2 RF8/RP22 | 150 | 600 | 600 | 42× |
+| margin RF8/RP44 | 172 | 688 | 688 | 36× |
+| paranoid RF12/RP48 | 240 | 960 | 960 | 26× |
+
+doubling the partial rounds costs +15% in-circuit; the paranoid profile +60%; Keccak +4000%. the efficiency argument therefore favours an algebraic hash with a large margin over a binary hash by more than an order of magnitude, and margin is nearly free. the decision is to stay algebraic under four conditions.
+
+1. standard S-box and matrices: x⁷ in every round, Poseidon2's MDS external and reference internal diagonal, published constant generation. the inverse adds no strength (it is modelled as xy = 1), costs 2.85× natively, and removes Hemera from every published bound and bounty — it is both dearer and unanalysed.
+2. margin by rule: the best attacks today reach ~14 of 23 partial rounds and strip 2 of 4 initial full rounds (eprint 2026/1692, KoalaBear). rule: best known attack ≤ 50% of the partial budget and ≤ 1/3 of the full budget, doubled for AI acceleration → RF 12 / RP 44–48. rounds are the one parameter that cannot be raised later without rehashing the graph, so the margin is taken now.
+3. two profiles of one permutation: Hemera-id, the heavy profile, for everything permanent — particle, neuron, link, BBG roots; Hemera-fast, the reference profile, for everything ephemeral — Brakedown column hashes, Fiat–Shamir, Merkle inside recursion. the ephemeral profile can change in any release without a rehash, and it carries most in-circuit hashing, so the +60% is paid only on the smaller share. same field, same code, different round constants; "one field" holds.
+4. a public bounty on reduced-round Hemera-id, as the EF ran: the only way to measure margin rather than believe it. while the best claimed attack stays under half the budget, the hash lives.
 
 ## sources
 
