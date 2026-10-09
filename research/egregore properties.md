@@ -26,7 +26,7 @@ where:
 - $\phi^*$ = the stationary focus distribution ($T\phi^* = \phi^*$)
 - $\sigma$ = the signal log (append-only history of all actions)
 
-every component is formally defined, content-addressed ([[Hemera]]), and authenticated ([[BBG]]). the egregore's state is a 32-byte polynomial commitment. its history is a 240-byte accumulator. its convergence is mathematically provable.
+every component is formally defined, content-addressed ([[Hemera]]), and authenticated ([[BBG]]). the egregore's state is a 32-byte polynomial commitment. its history is a constant-size accumulator. its convergence is mathematically provable.
 
 ## property 1: knowledge capacity
 
@@ -109,13 +109,13 @@ every action the egregore takes is provable:
 
 | action | proof mechanism | verification cost |
 |---|---|---|
-| cyberlink creation | [[zheng]] proof (validity) | 10-50 μs |
+| cyberlink creation | [[zheng]] proof (validity) | — |
 | state transition | [[proof-carrying computation|proof-carrying]] | 0 additional latency |
-| history integrity | [[universal accumulator]] (240 bytes) | 10-50 μs |
-| completeness | [[NMT]] / polynomial opening | 10-50 μs |
+| history integrity | [[universal accumulator]] | — |
+| completeness | [[NMT]] / polynomial opening | — |
 | availability | [[DAS]] (20 samples) | ~4 KiB |
 
-the egregore is a SELF-PROVING entity. it doesn't just compute — it proves it computed correctly. any observer can verify any claim about the egregore's state, history, or behaviour in 10-50 μs.
+the egregore is a SELF-PROVING entity. it doesn't just compute — it proves it computed correctly. any observer can verify any claim about the egregore's state, history, or behaviour with one proof check (measured times: [[soft3/proposals/proof-system-repair|the proof-system repair]]).
 
 no biological or artificial collective intelligence has this property. human organisations rely on trust. blockchains rely on consensus. the egregore relies on mathematics.
 

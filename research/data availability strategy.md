@@ -5,6 +5,8 @@ crystal-domain: cyber
 date: 2026-03-23
 ---
 
+> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/proposals/proof-system-repair|soft3 proposals/proof-system-repair]].
+
 # data availability: from sampling to algebraic proofs
 
 how [[cyber]] guarantees that data physically exists without downloading it. layer 4 of [[structural sync]]. the mechanism that closes the gap between "the data is committed" and "the data is retrievable."

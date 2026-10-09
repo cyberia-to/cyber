@@ -4,6 +4,8 @@ crystal-type: pattern
 crystal-domain: cyber
 status: draft
 ---
+> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/proposals/proof-system-repair|soft3 proposals/proof-system-repair]].
+
 # cybergraph as generative model
 
 ## abstract

@@ -667,7 +667,7 @@ The world state $W = (\text{BBG}, \text{edge\_store}, \text{privacy\_state})$. F
 Validity conditions: authorization (signature or ZK proof), sufficient balance, sufficient [[focus]], conservation ($\sum \text{focus}' = 1$, $\sum \text{balance}' = B_{\text{total}}$), index consistency, content availability, no double-spend.
 
 ### 9.3 zheng Verification
-[[zheng]] provides the proof system: a SuperSpartan IOP over CCS with sumcheck, Brakedown polynomial commitments over expander-graph codes, and HyperNova folding. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
+[[zheng]] provides the proof system: a SuperSpartan IOP over CCS with sumcheck and a hash-only polynomial commitment; the commitment and the accumulation scheme are set by [[soft3/proposals/proof-system-repair|the proof-system repair]]. The choice aligns with [[nox]]'s design: no trusted setup, hash-only security (post-quantum), native compatibility with Goldilocks field arithmetic.
 
 | Property | SNARK | zheng |
 |----------|-------|-------|
@@ -1197,7 +1197,7 @@ Each primitive gets an independent base fee updated via the EIP-1559 exponential
 
 Emergent hierarchy follows from [[focus]] + relay economics + [[location proof]]. Nodes in better physical locations with higher bandwidth earn more relay fees, stake more, create more weighted [[cyberlinks]], accumulate higher [[focus]]. Hubs form without permission, and the hierarchy is liquid — reversible in real time as conditions change. No sharding is needed for structure to emerge on a single chain.
 
-The fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). Recursive [[zheng]] composition produces O(1) global state (~22kb) regardless of network scale. Layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
+The fractal [[consensus]] architecture formalizes this emergent structure into layers: L0 (local, massive compute, no [[consensus]]), L1 (neighborhood, local BFT), L2 (shard, shard BFT), L3 (global, verification only). Recursive [[zheng]] composition produces O(1) global state regardless of network scale. Layer boundaries emerge from observed hub structure, then are formalized — not designed in advance.
 
 See [[cyber/architecture]] for the full specification of the five primitives, [[location proof]] construction, economic design principles, and fractal scaling vision.
 

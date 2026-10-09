@@ -9,7 +9,7 @@ status: draft
 
 ## Abstract
 
-We present *structural sync*, a synchronization primitive that achieves verified convergence without consensus protocols. The construction composes three mechanisms from independent mathematical disciplines: conflict-free replicated data types (CRDTs, algebra) for deterministic merge, Namespace Merkle Trees (NMTs, logic) for unconditional completeness, and Data Availability Sampling (DAS, probability) for physical availability. The composition yields a new consistency model — *Verified Eventual Consistency* (VEC) — where a node can locally verify that it has converged on the complete, available state without trusting any peer or participating in any coordination protocol. We extend structural sync with zero-knowledge proofs, hash chains, and verifiable delay functions to construct a self-proving knowledge graph where every edge carries its own proof, every query is verifiable, and the entire history compresses to a constant-size accumulator (~200 bytes). The full pipeline — from signal creation to light client verification — is one continuous fold operation with ~30 field operations per step, eliminating the boundary between computation and proving.
+We present *structural sync*, a synchronization primitive that achieves verified convergence without consensus protocols. The construction composes three mechanisms from independent mathematical disciplines: conflict-free replicated data types (CRDTs, algebra) for deterministic merge, Namespace Merkle Trees (NMTs, logic) for unconditional completeness, and Data Availability Sampling (DAS, probability) for physical availability. The composition yields a new consistency model — *Verified Eventual Consistency* (VEC) — where a node can locally verify that it has converged on the complete, available state without trusting any peer or participating in any coordination protocol. We extend structural sync with zero-knowledge proofs, hash chains, and verifiable delay functions to construct a self-proving knowledge graph where every edge carries its own proof, every query is verifiable, and the entire history compresses to a constant-size accumulator. The full pipeline — from signal creation to light client verification — is one continuous fold operation, eliminating the boundary between computation and proving.
 
 ## 1. Introduction
 
@@ -161,9 +161,11 @@ When all five layers are optimized, the entire pipeline from computation to veri
 A signal is a self-certifying batch of state transitions. During creation:
 
 1. The VM executes each step, generating a trace row
-2. Each trace row is folded into a running accumulator via HyperNova [10] (~30 field operations per step)
-3. Each hash operation uses a folded sponge construction (~30 field operations per absorption)
-4. At computation end, the accumulator *is* the proof — zero additional proving latency
+2. Each trace row is folded into a running accumulator
+3. Each hash operation enters the accumulator through the sponge construction
+4. At computation end, one decider over the accumulator yields the proof
+
+The fold of the earlier design (HyperNova [10] over hemera) was unsound; its per-step costs and the figures derived from them in this section do not hold. The repaired accumulation lives in [[soft3/proposals/proof-system-repair|the proof-system repair]].
 
 This is *proof-carrying computation*: the proof accumulates during execution rather than being generated afterward.
 
@@ -171,7 +173,7 @@ This is *proof-carrying computation*: the proof accumulates during execution rat
 
 When signals enter the network:
 
-1. Each signal's validity proof is folded into a block accumulator (~30 field operations per signal)
+1. Each signal's validity proof is folded into a block accumulator
 2. State updates apply to a unified polynomial commitment replacing separate tree structures
 3. Cross-index consistency is structural (same polynomial) — no separate consistency proof needed
 
@@ -182,13 +184,13 @@ The polynomial commitment replaces 9 independent hash trees, reducing per-operat
 Block accumulators fold into epoch accumulators:
 
 - Current: 1000 blocks × 70,000 constraints for recursive verification = 70M constraints
-- With folding: 1000 folds × 30 field operations + one decider = $\sim$100K constraints (700× improvement)
+- With accumulation: 1000 accumulation steps + one decider (cost set by the proof-system repair)
 
 ### 6.4 Universal Accumulator
 
-All five verification layers fold into a single accumulator of $\sim$200 bytes. The accumulator proves: all signals are valid (layer 1), correctly ordered (layer 2), complete (layer 3), available (layer 4), and correctly merged (layer 5) — for the entire history from genesis.
+All five verification layers fold into a single accumulator. The accumulator proves: all signals are valid (layer 1), correctly ordered (layer 2), complete (layer 3), available (layer 4), and correctly merged (layer 5) — for the entire history from genesis.
 
-A light client downloads 200 bytes, runs one decider ($\sim$10–50 μs), and has full confidence in the chain state.
+A light client downloads the accumulator, runs one decider, and has full confidence in the chain state.
 
 ### 6.5 Algebraic Data Availability
 
@@ -211,12 +213,12 @@ The full pipeline with all optimizations:
 | Proving latency | Separate phase | Zero (proof-carrying) | — |
 | Per-operation constraints | $\sim$107,500 | $\sim$3,200 | 33× |
 | Per-block (1000 ops) | $\sim$148M constraints | $\sim$8.3M | 18× |
-| Epoch composition (1000 blocks) | $\sim$70M constraints | $\sim$100K | 700× |
+| Epoch composition (1000 blocks) | $\sim$70M constraints | — | — |
 | Hash calls/block (state) | 144,000 | 0 (algebraic) | — |
-| Light client join bandwidth | Full chain | < 10 KiB | > 1000× |
-| Light client join verification | $O(\text{chain})$ replay | 10–50 μs | — |
+| Light client join bandwidth | Full chain | — | — |
+| Light client join verification | $O(\text{chain})$ replay | one decider | — |
 | DAS bandwidth | 20 KiB | 4 KiB | 5× |
-| Checkpoint size | Variable | $\sim$232 bytes | — |
+| Checkpoint size | Variable | — | — |
 
 The cost of adding one edge to the permanent, verified, globally-available knowledge graph:
 

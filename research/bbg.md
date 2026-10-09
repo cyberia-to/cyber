@@ -7,6 +7,8 @@ crystal-domain: cyber
 status: draft
 date: 2026-03-24
 ---
+> superseded: this page describes the retired zheng design (Merkle-free Brakedown, unchecked HyperNova fold, ~2 KiB / ~5 μs figures). It is unsound and its numbers do not hold. The repair and the measured numbers live in [[soft3/proposals/proof-system-repair|soft3 proposals/proof-system-repair]].
+
 # BBG: polynomial authenticated state
 
 ## abstract

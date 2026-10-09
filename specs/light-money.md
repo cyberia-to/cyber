@@ -33,7 +33,7 @@ genesis fold is not optional polish. it is how grade 4 is obtained without repla
 Tip = {
   height:          u64
   bbg_root:        Commitment      // BBG_root
-  folding_acc:     Accumulator     // HyperNova / universal acc
+  folding_acc:     Accumulator     // universal acc
   header_hash:     Hash            // optional link to header spine
 }
 ```

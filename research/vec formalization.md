@@ -142,7 +142,7 @@ verify_signal(signal, proof):
   4. assert Brakedown_verify(commitment, r, proof.value, proof.opening)
 ```
 
-cost: O(log N) Hemera hashes + field ops. ~50 μs independent of computation size (recursive proof compresses all history). an invalid signal cannot be constructed — the constraint system (16 deterministic reduction patterns of [[nox]]) prevents it.
+cost: Hemera hashes + field ops, independent of computation size (recursive proof compresses all history). an invalid signal cannot be constructed — the constraint system (16 deterministic reduction patterns of [[nox]]) prevents it.
 
 ### P6: ordering (immutable causal structure)
 
@@ -229,7 +229,7 @@ nebu (Goldilocks field arithmetic, p = 2⁶⁴ - 2³² + 1)
 each layer provides guarantees consumed by the layer above:
 - nebu: field operations are correct (algebraic closure)
 - hemera: hashes are collision-resistant (2^128 security, margin 2^918)
-- zheng: proofs are sound (sumcheck + Brakedown, error ≤ 2^-512 at k=16)
+- zheng: proofs are sound; the error bound is carried by the soundness ledger of [[soft3/proposals/proof-system-repair|the proof-system repair]] (the retired figure does not hold)
 - nox: execution is focus-metered (halt guaranteed)
 - application: state transitions are valid
 

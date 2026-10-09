@@ -45,7 +45,7 @@ the dominant entries are particles and axons. at scale, ~60% of state is particl
 | solar system | 10¹⁸ | 10¹⁹ | 10¹² | ~100 EB | civilization infrastructure |
 | Avogadro | 10²³ | 10²⁴ | 10¹⁵ | ~10 ZB | all participants |
 
-at every scale: BBG_root = 32 bytes. verification = O(1) field ops. a phone verifies a claim about 10 ZB of state in 50 μs.
+at every scale: BBG_root = 32 bytes. a phone verifies a claim about 10 ZB of state with one proof check.
 
 ## the fundamental architecture: composable shards
 
